@@ -1,0 +1,44 @@
+name: "New franchise"
+description: Propose a new franchise (an author's world, a shared universe, or a series) to be researched and added.
+title: "[franchise] <name>"
+labels: ["content:new-franchise", "curator-review"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Franchise name
+    validations:
+      required: true
+  - type: input
+    id: authors
+    attributes:
+      label: Author(s)
+      description: Include any pen names.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind
+      options: ["author", "shared-universe", "series"]
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why this franchise
+      description: Reader demand, a passionate community, an interesting reading-order structure, etc.
+    validations:
+      required: true
+  - type: textarea
+    id: known-orders
+    attributes:
+      label: Known reading orders
+      description: Any established orders and where they come from. Optional but helpful.
+  - type: dropdown
+    id: curate
+    attributes:
+      label: Would you help curate it?
+      options: ["Yes, I can draft the bundle", "Yes, I can review/source", "No, just requesting"]
+    validations:
+      required: true
