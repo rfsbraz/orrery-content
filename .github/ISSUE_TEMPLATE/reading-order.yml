@@ -1,0 +1,50 @@
+name: "Reading order"
+description: Propose a new canon reading order, or a change to an existing one. (The default chronological/all-works order is derived automatically and isn't edited here.)
+title: "[order] <franchise>: <order name>"
+labels: ["content:order", "needs-source", "curator-review"]
+body:
+  - type: input
+    id: franchise
+    attributes:
+      label: Franchise
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Order name
+      description: e.g. "Dark Tower - connected reading order".
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Order type
+      options:
+        - "chronological-inuniverse"
+        - "author-recommended"
+        - "curated"
+        - "community"
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+      description: Why a reader would choose this order over the default.
+    validations:
+      required: true
+  - type: textarea
+    id: order
+    attributes:
+      label: The order
+      description: The works in sequence (titles or stable IDs). Note any contested placements.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: Where this order comes from (official statement, established guide, etc.). Required.
+    validations:
+      required: true

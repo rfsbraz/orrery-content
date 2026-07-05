@@ -1,0 +1,49 @@
+name: "Missing work"
+description: A published work is missing from a franchise's bibliography (the default order must include ALL published works).
+title: "[work] <franchise>: add <title>"
+labels: ["content:work", "needs-source", "curator-review"]
+body:
+  - type: input
+    id: franchise
+    attributes:
+      label: Franchise
+      description: Franchise slug or name (e.g. `stephen-king`).
+    validations:
+      required: true
+  - type: input
+    id: title
+    attributes:
+      label: Work title
+    validations:
+      required: true
+  - type: input
+    id: year
+    attributes:
+      label: Publication year
+      description: Year first published (the default order is publication-chronological).
+    validations:
+      required: true
+  - type: input
+    id: published-as
+    attributes:
+      label: Published as
+      description: Pen name on the cover, if different from the author's real name (e.g. Richard Bachman). Leave blank if the real name.
+  - type: dropdown
+    id: tier
+    attributes:
+      label: Canon tier
+      options: ["core", "extended", "apocrypha"]
+    validations:
+      required: true
+  - type: input
+    id: subseries
+    attributes:
+      label: Subseries
+      description: e.g. "The Dark Tower", "Bill Hodges Trilogy". Leave blank if standalone.
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: URL(s) confirming the work and its publication date. Required.
+    validations:
+      required: true

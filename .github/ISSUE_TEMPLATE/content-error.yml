@@ -1,0 +1,50 @@
+name: "Content error"
+description: Report a factual inaccuracy in canon content - a wrong date, wrong order, mis-attributed work, bad synopsis, etc.
+title: "[error] <franchise>: <short description>"
+labels: ["content:error", "needs-source", "curator-review"]
+body:
+  - type: input
+    id: franchise
+    attributes:
+      label: Franchise
+      description: The franchise slug or name (e.g. `stephen-king`).
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Where
+      description: The file and/or the stable ID affected (e.g. `works.yaml` / `stephen-king/the-stand`, or an order id).
+    validations:
+      required: true
+  - type: textarea
+    id: whats-wrong
+    attributes:
+      label: What's wrong
+      description: What does the content currently say, and why is it incorrect?
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: The correct information
+      description: What it should say instead.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: One or more URLs backing the correction. Required - canon changes are only accepted with a citation.
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - "low - cosmetic (typo, phrasing)"
+        - "med - a wrong fact (date, attribution)"
+        - "high - a wrong ordering or a fabricated/mis-attributed work"
+    validations:
+      required: true
