@@ -1,0 +1,103 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds), so the same person resolves the same everywhere -
+# across franchises and past name collisions. Author-LIFE events live here (they
+# follow the person); franchise-specific events stay in the franchise.
+id: stephen-king
+name: Stephen King
+aka: ["Steve King"]
+born: 1947-09-21
+bio: >
+  American author of horror, supernatural, suspense, crime, and fantasy fiction.
+  Born in Portland, Maine; worked as a high-school English teacher before
+  [[work:stephen-king/carrie|Carrie]] (1974) launched his career. One of the
+  best-selling authors of all time, with a body of work loosely unified by a
+  shared multiverse centred on the Dark Tower.
+pseudonyms:
+  - name: Richard Bachman
+    note: >
+      A pen name used from 1977 for darker, more experimental work and to test
+      whether his success was talent or luck. Publicly unmasked in 1985; he
+      channelled the episode into [[work:stephen-king/the-dark-half|The Dark Half]].
+lifeEvents:
+  - id: king-born-1947
+    date: 1947-09-21
+    title: Born in Portland, Maine
+    impact: low
+    description: >
+      Raised largely in Durham, Maine, which becomes the setting and soul of
+      most of his fiction.
+    spoilerAfter: null
+    sources: [https://en.wikipedia.org/wiki/Stephen_King]
+  - id: king-marries-tabitha-1971
+    date: 1971-01-02
+    title: Marries Tabitha Spruce
+    impact: med
+    description: >
+      Marries fellow writer Tabitha, his lifelong first reader - and, two years
+      on, the reason [[work:stephen-king/carrie|Carrie]] exists.
+    spoilerAfter: null
+    sources: [https://en.wikipedia.org/wiki/Tabitha_King]
+  - id: carrie-rescued-from-trash-1973
+    date: 1973
+    title: Tabitha rescues the Carrie manuscript from the trash
+    impact: high
+    description: >
+      Discouraged, King threw away the opening pages of
+      [[work:stephen-king/carrie|Carrie]]; Tabitha fished them out and told him
+      to keep going. The sale that followed let him quit teaching and write full
+      time - the hinge of his whole career.
+    spoilerAfter: null
+    sources: [https://en.wikipedia.org/wiki/Carrie_(novel)]
+  - id: king-addiction-1980s
+    date: 1979
+    dateRange: "1979-1987"
+    title: Deepening alcohol and cocaine addiction
+    impact: high
+    description: >
+      Through his most prolific and successful years King wrote in the grip of
+      addiction - he has said he barely remembers writing
+      [[work:stephen-king/cujo|Cujo]]. The addiction and its metaphors soak into
+      the work of the decade.
+    spoilerAfter: null
+    sources: [https://en.wikipedia.org/wiki/Stephen_King]
+  - id: bachman-unmasked-1985
+    date: 1985
+    title: Richard Bachman unmasked
+    impact: med
+    description: >
+      A bookstore clerk links King to his pen name. King "kills off" Bachman and
+      later channels the episode into [[work:stephen-king/the-dark-half|The Dark Half]].
+    spoilerAfter: null
+    sources: [https://en.wikipedia.org/wiki/Richard_Bachman]
+  - id: king-intervention-sobriety-1987
+    date: 1987
+    dateRange: "1987-1989"
+    title: Family intervention and the road to sobriety
+    impact: high
+    description: >
+      Tabitha and family stage an intervention; King gets sober by the late
+      1980s. The 1990s work turns markedly more introspective and psychological.
+    spoilerAfter: null
+    sources: [https://en.wikipedia.org/wiki/Stephen_King]
+  - id: king-van-accident-1999
+    date: 1999-06-19
+    title: Near-fatal roadside accident
+    impact: high
+    description: >
+      A van strikes King as he walks near his home, shattering his leg and hip.
+      Chronic pain and mortality reshape the later work - and push him to finally
+      finish the Dark Tower, into which the accident is written.
+    spoilerAfter: stephen-king/song-of-susannah
+    sources: [https://en.wikipedia.org/wiki/Stephen_King]
+  - id: king-national-book-medal-2003
+    date: 2003
+    title: National Book Foundation Medal for Distinguished Contribution
+    impact: med
+    description: >
+      A once-controversial honor for a "popular" writer that helped cement his
+      reappraisal as a serious American author. (National Medal of Arts follows in 2015.)
+    spoilerAfter: null
+    sources: [https://en.wikipedia.org/wiki/Stephen_King]
+sources:
+  - https://en.wikipedia.org/wiki/Stephen_King
+  - https://en.wikipedia.org/wiki/Richard_Bachman
