@@ -22,6 +22,7 @@ Orrery is not a reading-order list; it's contextual reading. The value is situat
 - **Editions vs Works.** Research at the Work level (the abstract book) for orders; capture ISBN/cover/edition detail separately. Orders reference Works only.
 - **Aim for a complete bibliography.** The franchise's **default order is publication-chronological over ALL published works** and is *derived* from the works list (not hand-written). So `works.yaml` completeness is the goal - novels, collections, novellas, nonfiction. Do not author the default/publication order by hand; `orders.yaml` holds only the *additional* orders (in-universe, author-recommended, curated).
 - **Pen names.** Record pen names on the author (`pseudonyms`) and set `publishedAs` on each work published under one. Pen-name works stay in the author's franchise and appear in the default order. A pen name only gets its own franchise if it's a genuinely distinct brand/persona (curator's call). Meta pen-name lore (a staged "death", a reveal) goes in `events`, not as a data hack.
+- **Reference by ID, never by name.** Authors are **global entities** in `content/authors/<slug>.yaml` (so the same person resolves across franchises and past name collisions). Franchises and works reference `authorIds` / `withAuthorIds`. Author-**life** events live on the author entity (`lifeEvents`); franchise `events.yaml` holds only franchise-specific events. In prose (bios, synopses, event/era descriptions, order rationales) link with `[[work:<id>|text]]` and `[[author:<id>|text]]`. Every reference must resolve - `scripts/validate.py` (run in CI) fails the build on dangling ones. Disambiguate name collisions at the slug; add `aka:` for search.
 
 ## Process
 
@@ -37,16 +38,17 @@ Orrery is not a reading-order list; it's contextual reading. The value is situat
 
 ```
 content/
+  authors/
+    <author-slug>.yaml               # GLOBAL author entity: bio, pseudonyms, lifeEvents
   events/
     global.yaml                      # shared world/culture events (reach: global)
   franchises/
     <franchise-slug>/
-      franchise.yaml
-      authors.yaml
+      franchise.yaml                 # references authorIds
       works.yaml
       eras.yaml
-      events.yaml                    # franchise-specific + author-life events
-      orders.yaml
+      events.yaml                    # franchise-specific events only
+      orders.yaml                    # additional orders (default is derived)
       theme.yaml                     # branding preset (see CONCEPT §6)
 ```
 
@@ -61,17 +63,27 @@ authorIds: [stephen-king]
 themePreset: pulp-horror
 ```
 
-**authors.yaml**
+**content/authors/&lt;slug&gt;.yaml** (one global file per author)
 ```yaml
-- id: stephen-king
-  name: Stephen King
-  born: 1947-09-21
-  bio: >
-    Short factual bio.
-  pseudonyms:                      # optional; the person, published under other names
-    - name: Richard Bachman
-      note: When/why used; how it was revealed.
-  sources: [https://...]
+id: stephen-king                   # global, stable; referenced by authorIds everywhere
+name: Stephen King
+aka: ["Steve King"]                # optional alternate names, for search
+born: 1947-09-21
+bio: >
+  Short factual bio, may use [[work:...|links]].
+pseudonyms:                        # optional; the person, published under other names
+  - name: Richard Bachman
+    note: When/why used; how it was revealed.
+lifeEvents:                        # author-life events live here, not in the franchise
+  - id: king-van-accident-1999
+    date: 1999-06-19
+    title: Near-fatal roadside accident
+    impact: high                   # low | med | high
+    description: >
+      What happened and how it colors the work around it.
+    spoilerAfter: null             # or a work id
+    sources: [https://...]
+sources: [https://...]
 ```
 
 **works.yaml**
@@ -83,9 +95,9 @@ themePreset: pulp-horror
   subseries: null                  # e.g. "The Dark Tower" / "Mistborn: Era 1"
   canonTier: core                  # core | extended | apocrypha
   publishedAs: "Richard Bachman"   # optional; only when the cover name differs
-  withAuthors: ["Peter Straub"]    # optional; collaborators
+  withAuthorIds: [peter-straub]    # optional; collaborator author ids (must exist)
   synopsis: >
-    Spoiler-free premise.
+    Spoiler-free premise. May use [[work:...|links]].
   externalIds:
     openLibrary: OL...W
     googleBooks: ...
