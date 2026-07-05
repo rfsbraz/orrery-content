@@ -1,6 +1,39 @@
 # Global aura events - world / culture / industry events shared across ALL franchises.
 # reach: global. Franchise-specific and author-life events live in each franchise's events.yaml.
 # See ../../.claude/skills/franchise-research/SKILL.md for the schema and rules.
-# Seed with high-impact anchors as franchises are added; keep summaries neutral and franchise-agnostic.
+# Seeded with a few high-impact anchors spanning the current franchises' eras;
+# keep summaries neutral and franchise-agnostic. Grow as franchises are added.
 
-events: []
+events:
+  - id: sept-11-2001
+    date: 2001-09-11
+    title: September 11 attacks
+    scope: world
+    reach: global
+    impact: high
+    description: >
+      Coordinated attacks on the United States; a cultural rupture that reshapes
+      a decade of anxieties in Western fiction.
+    sources: [https://en.wikipedia.org/wiki/September_11_attacks]
+
+  - id: financial-crisis-2008
+    date: 2008-09-15
+    title: Global financial crisis
+    scope: world
+    reach: global
+    impact: high
+    description: >
+      The 2008 crash and recession; a backdrop of economic precarity and
+      institutional distrust.
+    sources: [https://en.wikipedia.org/wiki/2008_financial_crisis]
+
+  - id: covid-19-pandemic-2020
+    date: 2020-03-11
+    title: COVID-19 pandemic declared
+    scope: world
+    reach: global
+    impact: high
+    description: >
+      A global pandemic and lockdowns; a period of isolation and mortality that
+      colors fiction written during and after it.
+    sources: [https://en.wikipedia.org/wiki/COVID-19_pandemic]
