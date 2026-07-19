@@ -1,0 +1,100 @@
+id: cosmere
+name: The Cosmere
+kind: shared-universe
+description: >
+  Brandon Sanderson's connected fantasy universe - separate series on separate
+  worlds (Mistborn, The Stormlight Archive, Elantris, Warbreaker and more), bound
+  by a shared cosmology and the travellers who move between them.
+authorIds: [brandon-sanderson]
+themePreset: cosmere-metallic
+
+# Capabilities auto-detect from the data (docs/SCHEMA.md). The Cosmere earns them
+# all: a rich author aura (river/companion), five distinct reading orders
+# (orderDiff), a startHere wizard, and heavy cross-world connective tissue
+# (connections, via characters.yaml). Left on auto.
+features:
+  river: auto
+  orderDiff: auto
+  wizard: auto
+  connections: auto
+  companion: auto
+  hall: auto
+  editions: auto
+
+# "Where to start" - powers the guided onboarding wizard. The Cosmere is famous
+# for having no single right entry, so the paths are honest on-ramps for
+# different appetites; the completionist path points at the derived publication
+# order. Grounded in Sanderson's own FAQ and the standard community guides
+# (see sources).
+startHere:
+  paths:
+    - id: mistborn-first
+      title: Start with Mistborn
+      description: >
+        The standard on-ramp. A tight, self-contained heist-and-revolution
+        trilogy with a clean, rule-bound magic system - short enough to finish,
+        connected enough to show how the Cosmere works.
+      workIds:
+        - cosmere/the-final-empire
+        - cosmere/the-well-of-ascension
+        - cosmere/the-hero-of-ages
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste, arc]
+      note: >
+        Sanderson's own most-recommended starting point for readers who already
+        like fantasy, and the book that won him the Wheel of Time.
+    - id: stormlight-first
+      title: Straight into the Stormlight Archive
+      description: >
+        For readers who want the epic first. The flagship series - vast world,
+        deep characters, doorstop volumes. The biggest commitment and, for many,
+        the biggest payoff.
+      workIds:
+        - cosmere/the-way-of-kings
+      orderId: null
+      fit:
+        experience: [new, returning]
+        commitment: [arc, complete]
+      note: >
+        One of Sanderson's five listed "any of these is a fine start" entry points.
+        Start here only if long books do not scare you.
+    - id: standalones-first
+      title: Test the water with a standalone
+      description: >
+        The lowest-commitment way in - a single beautiful book you can judge the
+        author by before signing up for a series. Try the whimsical Tress, the
+        Hugo-winning Emperor's Soul, or the romance-flavoured Warbreaker.
+      workIds:
+        - cosmere/tress-of-the-emerald-sea
+        - cosmere/the-emperors-soul
+        - cosmere/warbreaker
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        Sanderson explicitly names The Emperor's Soul and Warbreaker as valid
+        first books; Tress is the gentlest modern entry.
+    - id: everything-in-order
+      title: The whole Cosmere, in publication order
+      description: >
+        All of it, in the order it was written - you watch the universe assemble
+        itself and the connections light up as they did for readers in real time.
+        The aura layer is built for exactly this walk.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+
+# First-pass bundle for curator review. Novels, significant novellas, the
+# Arcanum Unbounded collection and the White Sand graphic novels are covered;
+# minor short fiction is tiered apocrypha. The non-Cosmere Frugal Wizard's
+# Handbook is intentionally excluded.
+sources:
+  - https://faq.brandonsanderson.com/knowledge-base/what-order-should-i-read-them-in/
+  - https://www.brandonsanderson.com/pages/where-do-i-start
+  - https://en.wikipedia.org/wiki/Cosmere
+  - https://coppermind.net/wiki/Cosmere
