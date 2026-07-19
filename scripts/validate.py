@@ -20,6 +20,11 @@ INLINE_REF = re.compile(r"\[\[(?P<type>work|author|franchise|character):(?P<id>[
 ORDER_TYPES = {"chronological-inuniverse", "author-recommended", "curated", "community", "official-publication"}
 IMPACTS = {"low", "med", "high"}
 SCOPES = {"author-life", "world", "culture", "industry"}
+FEATURE_KEYS = {"river", "orderDiff", "wizard", "connections", "companion", "hall", "editions"}
+FEATURE_VALUES = {"auto", "on", "off", True, False}
+FIT_EXPERIENCE = {"new", "returning", "completionist"}
+FIT_COMMITMENT = {"taste", "arc", "complete"}
+EDITION_FORMATS = {"hardcover", "paperback", "ebook", "audiobook"}
 
 
 def err(where, msg):
@@ -54,6 +59,7 @@ def main():
     # --- works (per franchise) ---
     work_ids = set()
     franchise_dirs = glob.glob(os.path.join(ROOT, "content", "franchises", "*"))
+    franchise_slugs = {os.path.basename(d) for d in franchise_dirs if os.path.isdir(d)}
     for fdir in franchise_dirs:
         if not os.path.isdir(fdir):
             continue
@@ -81,15 +87,68 @@ def main():
             if w.get("canonTier") not in {"core", "extended", "apocrypha"}:
                 err(loc, f"{wid}: bad canonTier '{w.get('canonTier')}'")
 
-    # --- franchise.yaml authorIds ---
+    # --- work connections (second pass: all work ids known) ---
     for fdir in franchise_dirs:
         if not os.path.isdir(fdir):
             continue
         fslug = os.path.basename(fdir)
+        for w in load(os.path.join(fdir, "works.yaml")) or []:
+            wid = w.get("id", "?")
+            for cid in w.get("connections", []) or []:
+                if cid not in work_ids:
+                    err(f"{fslug}/works.yaml", f"{wid}: connection references unknown work '{cid}'")
+                if cid == wid:
+                    err(f"{fslug}/works.yaml", f"{wid}: work connects to itself")
+
+    # --- franchise.yaml: authorIds, features, startHere ---
+    order_ids_by_franchise = {}
+    for fdir in franchise_dirs:
+        if not os.path.isdir(fdir):
+            continue
+        fslug = os.path.basename(fdir)
+        opath = os.path.join(fdir, "orders.yaml")
+        order_ids_by_franchise[fslug] = {
+            o.get("id") for o in (load(opath) or []) if o.get("id")
+        } if os.path.exists(opath) else set()
+
+    for fdir in franchise_dirs:
+        if not os.path.isdir(fdir):
+            continue
+        fslug = os.path.basename(fdir)
+        loc = f"{fslug}/franchise.yaml"
         fr = load(os.path.join(fdir, "franchise.yaml")) or {}
         for aid in fr.get("authorIds", []):
             if aid not in author_ids:
-                err(f"{fslug}/franchise.yaml", f"unknown authorId '{aid}'")
+                err(loc, f"unknown authorId '{aid}'")
+        for k, v in (fr.get("features") or {}).items():
+            if k not in FEATURE_KEYS:
+                err(loc, f"unknown feature key '{k}' (known: {sorted(FEATURE_KEYS)})")
+            elif v not in FEATURE_VALUES:
+                err(loc, f"feature '{k}' has bad value '{v}' (auto|on|off)")
+        sh = fr.get("startHere")
+        if sh is not None:
+            paths = sh.get("paths") or []
+            if not paths:
+                err(loc, "startHere present but has no paths")
+            for p in paths:
+                pid = p.get("id", "?")
+                has_works = bool(p.get("workIds"))
+                has_order = bool(p.get("orderId"))
+                if has_works == has_order:
+                    err(loc, f"startHere path '{pid}': needs exactly one of workIds or orderId")
+                for wid in p.get("workIds") or []:
+                    if wid not in work_ids:
+                        err(loc, f"startHere path '{pid}': unknown work '{wid}'")
+                oid = p.get("orderId")
+                if oid and oid != "default" and oid not in order_ids_by_franchise.get(fslug, set()):
+                    err(loc, f"startHere path '{pid}': unknown orderId '{oid}' (use 'default' for the derived order)")
+                fit = p.get("fit") or {}
+                for tag in fit.get("experience") or []:
+                    if tag not in FIT_EXPERIENCE:
+                        err(loc, f"startHere path '{pid}': bad experience tag '{tag}'")
+                for tag in fit.get("commitment") or []:
+                    if tag not in FIT_COMMITMENT:
+                        err(loc, f"startHere path '{pid}': bad commitment tag '{tag}'")
 
     # --- orders ---
     for fdir in franchise_dirs:
@@ -138,6 +197,64 @@ def main():
             if e.get("reach") != "global":
                 err("events/global.yaml", f"{e.get('id','?')}: global events must have reach: global")
 
+    # --- characters ---
+    character_ids = set()
+    for fdir in franchise_dirs:
+        if not os.path.isdir(fdir):
+            continue
+        fslug = os.path.basename(fdir)
+        cpath = os.path.join(fdir, "characters.yaml")
+        if not os.path.exists(cpath):
+            continue
+        seen = set()
+        for c in load(cpath) or []:
+            loc = f"{fslug}/characters.yaml"
+            cid = c.get("id", "")
+            if not cid:
+                err(loc, "character missing id")
+                continue
+            if not cid.startswith(fslug + "/"):
+                err(loc, f"character id '{cid}' must start with '{fslug}/'")
+            if cid in seen:
+                err(loc, f"duplicate character id '{cid}'")
+            seen.add(cid)
+            character_ids.add(cid)
+            if not c.get("name"):
+                err(loc, f"{cid}: character missing name")
+            for ap in c.get("appearsIn", []) or []:
+                wid = ap.get("workId")
+                if wid not in work_ids:
+                    err(loc, f"{cid}: appearsIn references unknown work '{wid}'")
+                sa = ap.get("spoilerAfter")
+                if sa and sa not in work_ids:
+                    err(loc, f"{cid}: appearance spoilerAfter '{sa}' is not a known work")
+
+    # --- editions ---
+    for fdir in franchise_dirs:
+        if not os.path.isdir(fdir):
+            continue
+        fslug = os.path.basename(fdir)
+        epath = os.path.join(fdir, "editions.yaml")
+        if not os.path.exists(epath):
+            continue
+        seen = set()
+        for ed in load(epath) or []:
+            loc = f"{fslug}/editions.yaml"
+            eid = ed.get("id", "")
+            if not eid:
+                err(loc, "edition missing id")
+                continue
+            if eid in seen:
+                err(loc, f"duplicate edition id '{eid}'")
+            seen.add(eid)
+            if ed.get("workId") not in work_ids:
+                err(loc, f"{eid}: unknown workId '{ed.get('workId')}'")
+            isbn = str(ed.get("isbn13") or "")
+            if isbn and (len(isbn) != 13 or not isbn.isdigit()):
+                err(loc, f"{eid}: isbn13 '{isbn}' is not 13 digits")
+            if ed.get("format") and ed["format"] not in EDITION_FORMATS:
+                err(loc, f"{eid}: bad format '{ed.get('format')}'")
+
     # --- inline [[type:id|text]] references resolve everywhere ---
     for path in glob.glob(os.path.join(ROOT, "content", "**", "*.yaml"), recursive=True):
         with open(path, encoding="utf-8") as f:
@@ -148,7 +265,10 @@ def main():
                 err(rel(path), f"inline [[work:{rid}]] does not resolve")
             elif t == "author" and rid not in author_ids:
                 err(rel(path), f"inline [[author:{rid}]] does not resolve")
-            # franchise/character refs are not yet a registry - skipped
+            elif t == "character" and rid not in character_ids:
+                err(rel(path), f"inline [[character:{rid}]] does not resolve")
+            elif t == "franchise" and rid not in franchise_slugs:
+                err(rel(path), f"inline [[franchise:{rid}]] does not resolve")
 
     if ERRORS:
         print(f"FAILED - {len(ERRORS)} error(s):\n")

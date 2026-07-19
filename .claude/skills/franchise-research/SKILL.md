@@ -5,9 +5,19 @@ description: Research a book franchise or author for Orrery and emit the git con
 
 # franchise-research
 
-Research one franchise (an author's world, a shared universe, or a series) and produce the **canon content bundle** Orrery renders: who wrote it and what was happening around them (the "aura"), the full bibliography, the eras that group it, and the known reading orders. Output is git YAML under `content/franchises/<slug>/`, reviewed by a curator via PR before it becomes canon.
+Research one franchise (an author's world, a shared universe, or a series) and produce the **canon content bundle** Orrery renders: who wrote it and what was happening around them (the "aura"), the full bibliography, the eras that group it, the known reading orders, and - where the franchise earns them - the recurring characters, work connections, and "where to start" paths. Output is git YAML under `content/franchises/<slug>/`, reviewed by a curator via PR before it becomes canon.
 
-Read `docs/CONCEPT.md` first if unfamiliar - especially §4 (data model), §4a (canon vs user content), and §9 (spoilers).
+**The schema reference is [`docs/SCHEMA.md`](../../../docs/SCHEMA.md) - read it in full before writing YAML.** The examples below are abbreviated; SCHEMA.md is authoritative and `scripts/validate.py` enforces it. Also read the app's `docs/CONCEPT.md` if unfamiliar - especially §4 (data model), §4a (canon vs user content), and §9 (spoilers).
+
+## The framework mindset
+
+Orrery is a framework: **every advanced layer is optional, and the app activates features per franchise based on what the data provides** (the capabilities table in SCHEMA.md). Your job is to judge which layers this franchise *earns*, not to fill every file:
+
+- A sprawling multiverse (King, Cosmere) earns `characters.yaml`, `connections`, and a rich aura.
+- A near-linear series (Wheel of Time) may need few connections but a strong aura (the author transition) and a `startHere` with the prequel debate addressed.
+- A sparse or non-English author (João Tordo) may ship works + eras + a thin aura and nothing else - that is a *complete, correct* bundle, not a failure. Never pad a layer to make the franchise look fuller; empty is better than invented.
+
+State in your PR description which capabilities the bundle activates and why.
 
 ## The DNA: aura over checklist
 
@@ -22,7 +32,11 @@ Orrery is not a reading-order list; it's contextual reading. The value is situat
 - **Editions vs Works.** Research at the Work level (the abstract book) for orders; capture ISBN/cover/edition detail separately. Orders reference Works only.
 - **Aim for a complete bibliography.** The franchise's **default order is publication-chronological over ALL published works** and is *derived* from the works list (not hand-written). So `works.yaml` completeness is the goal - novels, collections, novellas, nonfiction. Do not author the default/publication order by hand; `orders.yaml` holds only the *additional* orders (in-universe, author-recommended, curated).
 - **Pen names.** Record pen names on the author (`pseudonyms`) and set `publishedAs` on each work published under one. Pen-name works stay in the author's franchise and appear in the default order. A pen name only gets its own franchise if it's a genuinely distinct brand/persona (curator's call). Meta pen-name lore (a staged "death", a reveal) goes in `events`, not as a data hack.
-- **Reference by ID, never by name.** Authors are **global entities** in `content/authors/<slug>.yaml` (so the same person resolves across franchises and past name collisions). Franchises and works reference `authorIds` / `withAuthorIds`. Author-**life** events live on the author entity (`lifeEvents`); franchise `events.yaml` holds only franchise-specific events. In prose (bios, synopses, event/era descriptions, order rationales) link with `[[work:<id>|text]]` and `[[author:<id>|text]]`. Every reference must resolve - `scripts/validate.py` (run in CI) fails the build on dangling ones. Disambiguate name collisions at the slug; add `aka:` for search.
+- **Reference by ID, never by name.** Authors are **global entities** in `content/authors/<slug>.yaml` (so the same person resolves across franchises and past name collisions). Franchises and works reference `authorIds` / `withAuthorIds`. Author-**life** events live on the author entity (`lifeEvents`); franchise `events.yaml` holds only franchise-specific events. In prose (bios, synopses, event/era descriptions, order rationales) link with `[[work:<id>|text]]`, `[[author:<id>|text]]`, and `[[character:<id>|text]]`. Every reference must resolve - `scripts/validate.py` (run in CI) fails the build on dangling ones. Disambiguate name collisions at the slug; add `aka:` for search.
+- **Characters are connective tissue, not a wiki.** Add `characters.yaml` only for figures whose recurrence across works is part of how the franchise hangs together. An appearance whose *existence* is a reveal gets `spoilerAfter` on that appearance.
+- **Connections are declared on the later work**, pointing back at the earlier one (the later work is the one whose reading is enriched); the app renders the edge both ways. Do not duplicate what `subseries` already threads - connections are for crossovers, sequels across subseries, and shared-cosmology links.
+- **startHere paths are curation, not marketing.** Each path must be an entry strategy a real community actually recommends (cite it), tagged honestly with who it fits. Two to five paths; always include a completionist path (usually `orderId: default`).
+- **Editions only when verifiable.** Never guess an ISBN. It is fine (normal) to ship no `editions.yaml`; the app falls back to search links and OpenLibrary covers.
 
 ## Process
 
@@ -36,6 +50,8 @@ Orrery is not a reading-order list; it's contextual reading. The value is situat
 
 ## Output schema
 
+Abbreviated tree; **full field-by-field reference in `docs/SCHEMA.md`.**
+
 ```
 content/
   authors/
@@ -44,11 +60,13 @@ content/
     global.yaml                      # shared world/culture events (reach: global)
   franchises/
     <franchise-slug>/
-      franchise.yaml                 # references authorIds
-      works.yaml
+      franchise.yaml                 # identity + features + startHere
+      works.yaml                     # required; connections live on works
       eras.yaml
       events.yaml                    # franchise-specific events only
       orders.yaml                    # additional orders (default is derived)
+      characters.yaml                # optional; recurring/crossover figures
+      editions.yaml                  # optional; verified ISBNs only
       theme.yaml                     # branding preset (see CONCEPT §6)
 ```
 
@@ -164,6 +182,73 @@ palette: { bg: "#...", accent: "#...", ink: "#..." }
 typePairing: { display: "...", body: "..." }
 motif: 80s-paperback-grain
 ```
+
+## Field notes for research agents
+
+Hard-won lessons from bundles already shipped (Stephen King was the first).
+Read these before starting; they are the difference between a mergeable PR and
+a rewrite.
+
+1. **Slug the works before writing anything else.** Every file cross-references
+   work IDs, and IDs are immutable once merged. Draft the complete
+   `works.yaml` ID list first, sanity-check the slugs (lowercase, hyphenated,
+   drop leading articles only when the community does: `the-stand` keeps its
+   "the"; be consistent within the franchise), then write orders/events/
+   characters against that list. Renaming a slug halfway through poisons every
+   file you already wrote.
+2. **Completeness beats depth in works.yaml.** The default order derives from
+   it, so a missing work is a hole in the franchise's spine. A work entry with
+   just id/title/authorIds/published/canonTier and a one-line synopsis is fine;
+   you can skip externalIds entirely (the enrichment bot fills OpenLibrary IDs
+   and flags uncertain matches for humans). Novels, collections, novellas,
+   relevant nonfiction - all of it, each tiered honestly (core / extended /
+   apocrypha).
+3. **Year-precision dates are fine.** `published: 1987` is better than a
+   wrong full date. Use full dates only when a source states one.
+4. **The aura needs anchors, not volume.** Ten well-chosen impact-weighted
+   events beat forty trivia items. Ask of each event: does knowing this change
+   how the book reads? An author's collapse, a co-author handoff, a cultural
+   rupture the book answers - those are `high`. Award seasons are usually not
+   worth an entry at all.
+5. **Global vs franchise events: default to franchise.** Only push an event to
+   `events/global.yaml` when it is genuinely author-agnostic (a war, a
+   pandemic, a publishing-industry shift) AND likely to matter to several
+   franchises. Check global.yaml for an existing entry before adding; append at
+   the end and never edit others' entries (parallel franchise PRs merge into
+   this file, keep your diff append-only).
+6. **Non-English and sparse authors: flag, never fill.** For authors with thin
+   English-language coverage (the João Tordo case), prefer primary sources in
+   the original language (publisher pages, the author's own site, national
+   press). Where the record is ambiguous (reissues vs first editions, series
+   membership), record what you can verify and leave a `note:` calling out the
+   gap. A visibly incomplete bundle with honest notes is mergeable; a plausible
+   guess is not.
+7. **Portugal-market awareness.** For Portuguese authors, capture the original
+   Portuguese titles as canonical `title` values, note translations in the
+   synopsis or a `note:`, and expect store coverage via Wook/Bertrand/FNAC
+   rather than Amazon. Keep prose in English (the app's UI language) but never
+   translate a title that has no published translation.
+8. **Orders need receipts.** Every non-derived order must cite where it comes
+   from (the author's own site, a canonical community guide, a publisher page).
+   Capture the *debate* in `debated:` - contested placements are completionist
+   value, not noise. Do not invent a "curated" order yourself; you are
+   researching orders that exist.
+9. **Spoiler boundaries: pick the damaged work.** `spoilerAfter` is the work
+   whose *experience the detail damages* - usually the book where the reveal
+   lands, not where the referenced thing first appeared (Father Callahan's
+   Dark Tower reappearance is `spoilerAfter: wolves-of-the-calla`, not
+   `salems-lot`).
+10. **Theme: follow the design law.** CONCEPT §6 is non-negotiable - palette +
+    one modern display face + one signature element, readability first, no
+    genre costume. Look at `stephen-king/theme.yaml` for the calibration
+    ("literary-noir", the Beam). Propose; a curator tunes.
+11. **Validate before you finish.** Run `python scripts/validate.py` locally
+    and fix every error. A PR that fails CI on dangling references was not
+    finished.
+12. **Your PR description is part of the deliverable.** List: capabilities the
+    bundle activates, coverage gaps, low-confidence items, contested decisions
+    you made (slugging, tiering, franchise boundaries), and sources you leaned
+    on hardest. The curator reviews your judgment, not just your YAML.
 
 ## Done means
 

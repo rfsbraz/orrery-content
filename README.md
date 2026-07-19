@@ -18,20 +18,25 @@ Content is curated on a different cadence, by different people (eventually commu
 
 ```
 content/
+  authors/
+    <author-slug>.yaml          # GLOBAL author entities: bio, pseudonyms, life events
   events/
     global.yaml                 # world/culture events shared across all franchises (reach: global)
   franchises/
     <franchise-slug>/
-      franchise.yaml            # identity + theme preset
-      authors.yaml              # author(s) + bios
+      franchise.yaml            # identity + features (capabilities) + startHere paths
       works.yaml                # bibliography, with STABLE ids: <franchise-slug>/<work-slug>
       eras.yaml                 # creative-period groupings
-      events.yaml               # author-life + franchise-specific events
-      orders.yaml               # canon reading orders
+      events.yaml               # franchise-specific events
+      orders.yaml               # additional canon reading orders (the default is derived)
+      characters.yaml           # optional: recurring/crossover figures
+      editions.yaml             # optional: verified concrete editions (ISBNs, covers)
       theme.yaml                # branding preset (see Orrery CONCEPT §6)
 ```
 
-The full schema and authoring rules live in the **`franchise-research` skill** at [`.claude/skills/franchise-research/SKILL.md`](.claude/skills/franchise-research/SKILL.md) - it's both the human contribution guide and the assisted-research tool that drafts a franchise bundle for review.
+The **full schema reference is [`docs/SCHEMA.md`](docs/SCHEMA.md)** - field by field, including the capabilities model (which app features a franchise's data activates). The authoring guide and assisted-research tool is the **`franchise-research` skill** at [`.claude/skills/franchise-research/SKILL.md`](.claude/skills/franchise-research/SKILL.md).
+
+**The schema is a framework.** Every advanced layer (aura, characters, connections, editions, start-here paths) is optional per franchise; the app detects what a bundle provides and lights up the matching features. A works-list-only franchise is complete and correct.
 
 ## Hard rules (also enforced in review)
 
@@ -46,4 +51,4 @@ The app does **not** read these files at runtime. A sync step (at deploy / in CI
 
 ## Status
 
-Pre-implementation. No franchises yet. First run: `franchise-research` on Stephen King (prototype data exists to check against).
+Live. First franchise: **Stephen King** (77 works, 4 authors, curated orders, aura, characters, start-here paths). Next wave in progress: Discworld, the Cosmere, The Wheel of Time, Agatha Christie, and João Tordo (the Portuguese-market and sparse-metadata stress case).
