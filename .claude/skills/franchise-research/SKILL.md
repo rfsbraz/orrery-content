@@ -245,6 +245,10 @@ a rewrite.
 11. **Validate before you finish.** Run `python scripts/validate.py` locally
     and fix every error. A PR that fails CI on dangling references was not
     finished.
+    YAML gotcha that has bitten a real bundle: **URLs with query strings break
+    flow sequences** - in `sources: [https://site.com/page?x=y]` the `?`
+    parses as a mapping-key indicator. Quote every URL in a flow sequence
+    (`sources: ["https://site.com/page?x=y"]`) or use block-style lists.
 12. **Your PR description is part of the deliverable.** List: capabilities the
     bundle activates, coverage gaps, low-confidence items, contested decisions
     you made (slugging, tiering, franchise boundaries), and sources you leaned
