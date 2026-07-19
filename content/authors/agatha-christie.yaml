@@ -1,0 +1,146 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds), so the same person resolves the same everywhere -
+# across franchises and past name collisions. Author-LIFE events live here (they
+# follow the person); franchise-specific events stay in the franchise.
+id: agatha-christie
+name: Agatha Christie
+aka: ["Agatha Mary Clarissa Miller", "Agatha Christie Mallowan", "Dame Agatha Christie"]
+born: 1890-09-15
+died: 1976-01-12
+bio: >
+  English writer, the best-selling novelist of all time and the defining author
+  of the Golden Age of detective fiction. Creator of [[character:agatha-christie/hercule-poirot|Hercule Poirot]]
+  and [[character:agatha-christie/miss-marple|Miss Marple]], she published 66
+  detective novels and 14 story collections across five decades, plus six
+  romances as [[author:agatha-christie|Mary Westmacott]]. Her poisons knowledge
+  came from real dispensary work in both World Wars, and her second marriage to
+  the archaeologist Max Mallowan carried her to the Middle East digs that
+  furnished [[work:agatha-christie/murder-on-the-orient-express|Murder on the
+  Orient Express]], [[work:agatha-christie/death-on-the-nile|Death on the Nile]]
+  and [[work:agatha-christie/murder-in-mesopotamia|Murder in Mesopotamia]].
+pseudonyms:
+  - name: Mary Westmacott
+    note: >
+      The pen name under which Christie published six romantic, psychologically
+      probing novels between 1930 and 1956 - work deliberately kept apart from
+      the detective brand. Her authorship was an open secret in the trade and was
+      publicly confirmed in 1949; she valued the freedom the name gave her to
+      write without the crime-fiction expectation.
+lifeEvents:
+  - id: christie-born-1890
+    date: 1890-09-15
+    title: Born in Torquay, Devon
+    impact: low
+    description: >
+      Born Agatha Miller into a comfortable middle-class family at Ashfield;
+      largely home-schooled, a voracious reader, and steeped young in the seaside
+      Devon world that recurs across the novels.
+    spoilerAfter: null
+    sources: [https://www.agathachristie.com/en/about-christie]
+  - id: christie-marries-archie-1914
+    date: 1914-12-24
+    title: Marries Archibald Christie
+    impact: med
+    description: >
+      Marries aviator Archie Christie on Christmas Eve, days into the First World
+      War. The marriage gives her the name she wrote under for life and, a decade
+      on, the crisis of 1926.
+    spoilerAfter: null
+    sources: [https://www.agathachristie.com/en/about-christie]
+  - id: christie-wwi-dispensary-1916
+    date: 1914
+    dateRange: "1914-1918"
+    title: VAD nursing and the apothecary's exam - the poisons knowledge
+    impact: high
+    description: >
+      Christie served as a Voluntary Aid Detachment nurse in Torquay, then worked
+      in the hospital dispensary and passed the Society of Apothecaries exam in
+      1917. The hands-on knowledge of drugs and poisons underwrites the whole
+      body of work - poison is her signature murder weapon, and it is almost
+      always pharmacologically exact. Poirot was invented in these same years.
+    spoilerAfter: null
+    sources:
+      - https://www.agathachristie.com/en/about-christie
+      - https://en.wikipedia.org/wiki/Agatha_Christie
+  - id: christie-disappearance-1926
+    date: 1926-12-03
+    title: The eleven-day disappearance
+    impact: high
+    description: >
+      In the worst year of her life - her mother newly dead, Archie asking for a
+      divorce to marry Nancy Neele - Christie vanished from home one December
+      night. Her abandoned car was found near a chalk pit; a national manhunt and
+      newspaper frenzy followed. Eleven days later she was discovered at a
+      Harrogate spa hotel, registered under the surname of her husband's mistress,
+      apparently in a fugue state and unable to account for herself. She never
+      explained it, wrote it out of her autobiography, and it remains the single
+      most storied episode in crime-fiction history.
+    spoilerAfter: null
+    sources:
+      - https://www.nationalarchives.gov.uk/explore-the-collection/stories/police-report-disappearance-agatha-christie/
+      - https://en.wikipedia.org/wiki/Agatha_Christie
+  - id: christie-divorce-archie-1928
+    date: 1928
+    title: Divorce from Archie Christie
+    impact: med
+    description: >
+      The marriage ends in 1928. Christie keeps his name for its literary value
+      and, single again, takes the Orient Express east - the journey that leads
+      to Max Mallowan and to the Middle East settings.
+    spoilerAfter: null
+    sources: [https://en.wikipedia.org/wiki/Agatha_Christie]
+  - id: christie-marries-mallowan-1930
+    date: 1930-09-11
+    title: Marries Max Mallowan; the archaeology years begin
+    impact: high
+    description: >
+      Christie marries the archaeologist Max Mallowan, fourteen years her junior,
+      and spends the winters from 1930 to 1960 on his digs in Iraq and Syria. The
+      expeditions feed [[work:agatha-christie/murder-in-mesopotamia|Murder in
+      Mesopotamia]], [[work:agatha-christie/death-on-the-nile|Death on the Nile]],
+      [[work:agatha-christie/they-came-to-baghdad|They Came to Baghdad]] and the
+      ancient-Egypt experiment [[work:agatha-christie/death-comes-as-the-end|Death
+      Comes as the End]]. She quipped that an archaeologist was the best husband a
+      woman could have - the older she got, the more interested he was.
+    spoilerAfter: null
+    sources: [https://www.agathachristie.com/en/about-christie]
+  - id: christie-wwii-dispensary-1940s
+    date: 1940
+    dateRange: "1940-1945"
+    title: Second dispensary war-work in the Blitz
+    impact: med
+    description: >
+      With Max serving overseas, Christie returned to hospital dispensary work in
+      wartime London, refreshing the poisons knowledge that shapes
+      [[work:agatha-christie/the-pale-horse|The Pale Horse]] (a thallium-poisoning
+      plot later credited with saving real lives). The war years are among her
+      most productive, and it is now that she writes the two "vault" novels.
+    spoilerAfter: null
+    sources: [https://en.wikipedia.org/wiki/Agatha_Christie]
+  - id: christie-dbe-1971
+    date: 1971
+    title: Made Dame Commander of the Order of the British Empire
+    impact: med
+    description: >
+      Created DBE in 1971 (having been made CBE in 1956), the establishment's
+      belated embrace of a "popular" writer as a national institution - Max had
+      been knighted in 1968 for his archaeology, making them a rare titled couple
+      in their own separate rights.
+    spoilerAfter: null
+    sources: [https://en.wikipedia.org/wiki/Agatha_Christie]
+  - id: christie-death-1976
+    date: 1976-01-12
+    title: Death at Winterbrook House
+    impact: high
+    description: >
+      Christie dies peacefully at 85, months after releasing the long-vaulted
+      [[work:agatha-christie/curtain-poirots-last-case|Curtain]] and just before
+      the posthumous [[work:agatha-christie/sleeping-murder|Sleeping Murder]].
+      Poirot had received a front-page New York Times obituary the previous year -
+      the only fictional character ever so honoured.
+    spoilerAfter: null
+    sources: [https://en.wikipedia.org/wiki/Agatha_Christie]
+sources:
+  - https://www.agathachristie.com/en/about-christie
+  - https://en.wikipedia.org/wiki/Agatha_Christie
+  - https://en.wikipedia.org/wiki/Agatha_Christie_bibliography
