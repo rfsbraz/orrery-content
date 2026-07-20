@@ -1,0 +1,52 @@
+# Português europeu (pt-PT) - sobreposição de prosa curada.
+# Traduz-se apenas prosa. Nunca ids, slugs, nomes de autor, títulos de obra
+# (já são portugueses) nem URLs de fontes.
+#
+# As listas encaixadas fundem-se item a item pelo id (ver SCHEMA.md, "Nested
+# lists merge by id"), pelo que os percursos de startHere trazem apenas o id e a
+# prosa, nunca a estrutura (workIds, orderId, fit).
+
+- id: joao-tordo
+  description: >
+    Duas décadas de ficção literária portuguesa: romances metafísicos, de
+    tonalidade noir, que se reúnem numa trilogia insular atmosférica e, mais
+    tarde, numa viragem para o policial.
+  startHere:
+    paths:
+      - id: the-prizewinner
+        title: Comece pelo livro premiado
+        description: >
+          As Três Vidas é o livro que lhe fez o nome: vencedor do Prémio José
+          Saramago de 2009 e, por amplo consenso da crítica portuguesa, a porta
+          de entrada natural na obra. História de amor, saga familiar e mistério
+          num só volume.
+        note: >
+          Fundamento: o Prémio José Saramago e o seu estatuto de porta de
+          entrada mais recomendada na obra.
+      - id: island-trilogy
+        title: A trilogia insular
+        description: >
+          A Trilogia dos Lugares Sem Nome é o Tordo mais atmosférico e mais
+          autónomo: três romances vagamente ligados, passados em lugares sem
+          nome e batidos pelo mar, com o segundo a dobrar o primeiro dentro de
+          si. Um arco completo sem ter de assumir a estante inteira.
+        note: >
+          Fundamento: o agrupamento numerado pela editora sob o nome Trilogia
+          dos Lugares Sem Nome.
+      - id: the-crime-turn
+        title: A viragem para o policial
+        description: >
+          A partir de 2019, Tordo escreve ficção policial rápida e sombria.
+          Comece pela sua estreia no género e siga depois para as investigações
+          de Pilar Benamor, se quiser o livro que se devora em vez do
+          metafísico.
+        note: >
+          Fundamento: o posicionamento editorial de A Noite em que o Verão
+          Acabou como a sua estreia no policial e a série recorrente de Pilar
+          Benamor.
+      - id: everything
+        title: Tudo, por ordem
+        description: >
+          Duas décadas por ordem de publicação: os primeiros romances
+          filosóficos, a trilogia insular, a viragem para o policial. Vê-se um
+          escritor literário reinventar-se duas vezes.

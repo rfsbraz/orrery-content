@@ -7,6 +7,15 @@ description: >
 authorIds: [joao-tordo]
 themePreset: atlantic-editorial
 
+# A second, distinct Commons photograph (not the portrait): dark wood, hard side
+# light, the subject held to the right with deep negative space at the left, so
+# it crops to a wide banner without losing the face. CC0, so no attribution is
+# legally required; credited anyway.
+images:
+  header: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Joaotordo.png/960px-Joaotordo.png"
+  headerCredit: "Joaotordo1975, CC0 (public domain dedication)"
+  headerSource: "https://commons.wikimedia.org/wiki/File:Joaotordo.png"
+
 # Capabilities are auto-detected from the data. This is a deliberately SPARSE
 # bundle (the framework's thin end): works + a thin aura + eras + a small curated
 # trilogy order + startHere. No characters.yaml and no work connections, so the
@@ -75,11 +84,13 @@ startHere:
         experience: [returning, completionist]
         commitment: [complete]
 
-# First-pass bundle for curator review. Novels sourced primarily from Portuguese
-# references; several post-2019 titles are from the pt.wikipedia list and are
-# flagged in works.yaml for confirmation.
+# Completeness-audited July 2026 against Portuguese primary sources. Every work
+# is now individually verified against the publisher's catalogue or the author's
+# own bibliography; the placeholder entries taken from the pt.wikipedia list have
+# been confirmed or corrected, and five omitted works were added. The publisher's
+# author page lists exactly the 22 trade titles held here as core plus extended.
 sources:
-  - https://pt.wikipedia.org/wiki/Jo%C3%A3o_Tordo
-  - https://joaotordo.com/livros
+  - https://joaotordo.com/lista
   - https://penguinlivros.pt/autores/joao-tordo/
-  - https://www.portaldaliteratura.com/autores.php?autor=848
+  - https://ffms.pt/en/books/we-are-here-12-steps-towards-recovery
+  - https://pt.wikipedia.org/wiki/Jo%C3%A3o_Tordo

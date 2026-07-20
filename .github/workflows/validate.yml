@@ -27,3 +27,9 @@ jobs:
       - run: pip install pyyaml
       - name: Validate canon content
         run: python scripts/validate.py
+      - name: Translation coverage report
+        # Reports only - a partially translated locale is a valid state. This
+        # exists so a file that belongs to no franchise (shared global events,
+        # co-author bios, character rosters) cannot be silently forgotten when
+        # translation work is split by franchise.
+        run: python scripts/i18n_coverage.py

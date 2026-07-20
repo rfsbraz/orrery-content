@@ -129,6 +129,16 @@ def main():
                     err(loc, f"{wid}: unknown withAuthorId '{aid}'")
             if w.get("canonTier") not in {"core", "extended", "apocrypha"}:
                 err(loc, f"{wid}: bad canonTier '{w.get('canonTier')}'")
+            # authorRole defaults to "author"; it only needs stating when the
+            # author did not write the whole book. A contributor or editor entry
+            # must never look like authorship, so the tier has to match.
+            role = w.get("authorRole", "author")
+            if role not in {"author", "co-author", "contributor", "editor"}:
+                err(loc, f"{wid}: bad authorRole '{role}'")
+            if role in {"contributor", "editor"} and w.get("canonTier") != "apocrypha":
+                err(loc, f"{wid}: authorRole '{role}' must be canonTier apocrypha")
+            if w.get("contributionTitle") and role == "author":
+                err(loc, f"{wid}: contributionTitle set but authorRole is 'author'")
             check_images(loc, wid, w.get("images"))
 
     # --- work connections (second pass: all work ids known) ---
@@ -385,10 +395,15 @@ def main():
     # --- translation overlays: every id must resolve, no forbidden fields ---
     # Never translatable anywhere: identifiers, source URLs, edition facts.
     FORBIDDEN = {"id", "sources", "isbn13", "language", "workId"}
-    # A WORK's title is edition data (it must be a real published title, never
-    # an invention), so it is banned in work overlays specifically. Era and
-    # event titles are ordinary prose and SHOULD be translated.
-    FORBIDDEN_IN_WORKS = {"title", "name"}
+    # `title` is prose almost everywhere it appears - era titles, event titles,
+    # nested lifeEvent titles, startHere path titles. The ONE exception is a
+    # work/edition title, which is edition data: it must be a real published
+    # title from editions.yaml, never an invention, or we send a reader after a
+    # book that does not exist.
+    TITLE_FORBIDDEN_IN = {"works.yaml", "editions.yaml"}
+    # `name` is a proper noun (authors, franchises, characters) EXCEPT on an
+    # order, where it is a curated label a reader reads.
+    NAME_ALLOWED_IN = {"orders.yaml"}
     for lpath in glob.glob(os.path.join(ROOT, "content", "i18n", "*")):
         if not os.path.isdir(lpath):
             continue
@@ -420,28 +435,29 @@ def main():
                     err(loc, f"translation for unknown id '{eid}' ({locale})")
                 # Nested id-bearing lists (lifeEvents, startHere.paths) are
                 # merged by id, so validate their entries too.
-                for nested_key in ("lifeEvents",):
-                    for ne in e.get(nested_key) or []:
-                        if isinstance(ne, dict) and not ne.get("id"):
-                            err(loc, f"{eid}: {nested_key} entry missing id")
+                for ne in e.get("lifeEvents") or []:
+                    if isinstance(ne, dict) and not ne.get("id"):
+                        err(loc, f"{eid}: lifeEvents entry missing id")
                 sh = e.get("startHere")
                 if isinstance(sh, dict):
                     for np_ in sh.get("paths") or []:
                         if isinstance(np_, dict) and not np_.get("id"):
                             err(loc, f"{eid}: startHere path missing id")
 
-                is_work_overlay = os.path.basename(path) in ("works.yaml", "editions.yaml")
+                base_name = os.path.basename(path)
                 for field in e:
                     if field == "id":
                         continue
                     if field in FORBIDDEN:
                         err(loc, f"{eid}: '{field}' must never be translated")
-                    elif is_work_overlay and field in FORBIDDEN_IN_WORKS:
+                    elif field == "title" and base_name in TITLE_FORBIDDEN_IN:
                         err(
                             loc,
-                            f"{eid}: a work's '{field}' is edition data - add a published "
+                            f"{eid}: a work's 'title' is edition data - add a published "
                             "edition instead of translating the title",
                         )
+                    elif field == "name" and base_name not in NAME_ALLOWED_IN:
+                        err(loc, f"{eid}: 'name' is a proper noun and is not translated here")
 
     # --- inline [[type:id|text]] references resolve everywhere ---
     for path in glob.glob(os.path.join(ROOT, "content", "**", "*.yaml"), recursive=True):
@@ -457,6 +473,45 @@ def main():
                 err(rel(path), f"inline [[character:{rid}]] does not resolve")
             elif t == "franchise" and rid not in franchise_slugs:
                 err(rel(path), f"inline [[franchise:{rid}]] does not resolve")
+
+    # --- spoilerAfter must sit somewhere the app can actually honour it ---
+    #
+    # The app reads spoilerAfter on events (franchise, global, author lifeEvents)
+    # and on character appearances. Nowhere else. A boundary written onto a work,
+    # an order, an era or a startHere path is accepted by YAML, reads like
+    # protection, and does nothing at all.
+    #
+    # That is the dangerous case: an agent gates a synopsis, sees a green build,
+    # records the spoiler as contained, and ships it in the clear. CI ends up
+    # confirming the wrong belief. So a boundary the engine cannot honour is an
+    # error, not a harmless extra field. Loud beats silent when the failure mode
+    # is a spoiler a reader cannot un-read.
+    def scan_unhonoured(loc, node, path="", inside_event=False):
+        if isinstance(node, dict):
+            here = path.split(".")[-1]
+            # Events are dicts carrying `impact`; appearances carry `workId`.
+            honours = inside_event or "impact" in node or "workId" in node
+            if "spoilerAfter" in node and not honours:
+                where = node.get("id") or node.get("slug") or path or "root"
+                err(
+                    loc,
+                    f"{where}: spoilerAfter is not honoured by the app here "
+                    f"(only events, author lifeEvents and character appearances "
+                    f"support it) - rewrite the prose instead",
+                )
+            for k, v in node.items():
+                child_event = k in {"events", "lifeEvents", "appearsIn"}
+                scan_unhonoured(loc, v, f"{path}.{k}" if path else k, child_event)
+        elif isinstance(node, list):
+            for i, v in enumerate(node):
+                scan_unhonoured(loc, v, f"{path}[{i}]", inside_event)
+
+    for path in glob.glob(os.path.join(ROOT, "content", "**", "*.yaml"), recursive=True):
+        data = load(path)
+        base = os.path.basename(path)
+        # Top-level lists in events.yaml / global.yaml are events themselves.
+        top_is_event = base in {"events.yaml", "global.yaml", "characters.yaml"}
+        scan_unhonoured(rel(path), data, "", top_is_event)
 
     if ERRORS:
         print(f"FAILED - {len(ERRORS)} error(s):\n")
