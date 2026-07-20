@@ -1,0 +1,511 @@
+stage: wing-audit
+summary: >
+  Final pass over the finished Chuck Palahniuk wing: eight merged stages, 28
+  works, 3 eras, 3 franchise events, 5 life events, 1 order, 4 achievements, 34
+  editions, 26 of 28 covers, full pt-PT overlay. Baseline re-derived, not
+  inherited. Nothing found that harms a reader on this wing. The two orphan
+  layers that no validator touches (theme, achievements) came back clean on
+  theme and carrying one real defect on achievements: franchise_complete claims
+  "every Chuck Palahniuk work" while the wing's own note says one of the 28 is
+  an anthology he edited and did not write. The largest finding of the run is
+  not about this wing at all: achievement names and descriptions are structurally
+  untranslatable in the app and invisible to the coverage script, so 11 badges
+  repo-wide render in English at a reported 58/58 complete.
+
+baseline:
+  validate: "green - 328 works, 18 authors, 20 characters, 11 achievements, all references resolve"
+  validateWarnings: 9
+  validateWarningsForThisWing: 0
+  i18nCoverage: "pt-PT 58/58 files fully covered"
+  eventDensity: "16 global events, 2 high of ~4 budget, 1950s empty (not this wing's concern)"
+  note: >
+    Re-run by this stage, not copied from a prior report. The 9 validator
+    warnings are era-coverage warnings on agatha-christie, joao-tordo,
+    stephen-king and wheel-of-time. None is chuck-palahniuk.
+
+correctionToTheBrief:
+  claim: "validate.py now warns on unknown theme displayFace and signature values"
+  finding: >
+    FALSE in this branch. scripts/validate.py contains no occurrence of the
+    strings "theme", "displayFace" or "signature" anywhere in its 601 lines, and
+    never opens theme.yaml. The hardening either landed on a branch that was not
+    merged here, or does not exist. This matters because it means theme.yaml on
+    all seven wings is enforced by nothing but this audit, which is exactly what
+    the skill says to expect. I audited theme.yaml by hand against the app's own
+    registry instead.
+
+blocking: []
+
+missing:
+  - id: franchise-complete-claims-a-book-he-did-not-write
+    severity: high
+    owner: wing-audit (this stage) plus a curator ruling on scope
+    what: >
+      achievements.yaml chuck-palahniuk/every-last-page uses criteria kind
+      franchise_complete, described as "Read every Chuck Palahniuk work in the
+      canon."
+    checked: >
+      Read lib/achievements/evaluate.ts in the app. franchise_complete is
+      works.every(read) over the whole franchise with NO canonTier filter. So
+      the badge requires all 28 works, which includes
+      chuck-palahniuk/burnt-tongues (canonTier apocrypha, authorRole editor)
+      whose own note in works.yaml reads "He contributed no story of his own, so
+      this is completionist data, not a book he wrote", plus two colouring books
+      (bait, legacy).
+    why: >
+      The badge is earnable, so this is not the unearnable-badge failure. It is
+      the description-is-false failure: the wing states in one file that
+      burnt-tongues is not a Palahniuk work and in another that reading it is
+      part of reading "every Chuck Palahniuk work". One of the two is wrong.
+    notFixedBecause: >
+      The three honest fixes differ in what they cost, and picking between them
+      is a scope judgement rather than a mechanical correction. Recommended, in
+      order: (a) reword the description to "Read all 28 works on the Palahniuk
+      shelf, including the anthology he edited", which is true today and costs
+      nothing; (b) drop the badge; (c) propose a tier-scoped franchise_complete
+      to the app, which is the real fix and the most expensive.
+    recommendation: (a)
+
+  - id: achievements-are-structurally-untranslatable
+    severity: high
+    owner: the curator, then the translation skill and whoever owns scripts/
+    scope: repo-wide, not this wing
+    what: >
+      Achievement `name` and `description` are reader-facing prose that no
+      locale can ever receive.
+    checked: >
+      Three independent confirmations. (1) lib/content/index.ts
+      listAchievements() takes no locale argument and applies no overlay, so the
+      app has no mechanism. (2) `find content/i18n -name achievements.yaml`
+      returns nothing, in any locale. (3) scripts/i18n_coverage.py's PROSE dict
+      lists franchise, works, eras, events, orders and characters. achievements
+      is absent, so those slots are never counted.
+    impact: >
+      11 badges repo-wide (4 Palahniuk, 4 Stephen King, 3 global) render in
+      English to a pt-PT reader while the coverage script reports 58/58
+      complete. This is precisely the failure mode the wing-audit skill opens
+      with: a coverage script reporting full while content is visibly English.
+      For Palahniuk that is strings like "Five Deep" and "Read 5 Chuck Palahniuk
+      works."
+    notFixedBecause: >
+      Fixing it needs an app change (a locale-aware listAchievements), a script
+      change (achievements.yaml in PROSE) and then translation work, in that
+      order. Writing overlay files first would produce files nothing reads,
+      which is the exact shape of the spoilerAfter-that-protected-nothing case
+      in the skill.
+
+  - id: stage-3-never-ran
+    severity: medium
+    owner: press-archaeology, the eras skill, the orders skill
+    what: >
+      press-archaeology, eras and reading-orders never ran, because WebSearch
+      was exhausted at 200/200.
+    checked: >
+      git log over content/franchises/chuck-palahniuk/ shows research, then
+      completeness, then event-resonance, where-to-start, spoiler, visual,
+      editions, translation. No stage-3 commit. The aura is stage 1's three
+      events, orders.yaml holds one order, and two of three eras carry
+      provenance: none.
+    verdict: >
+      HONEST, not hidden. eras.yaml opens with a provenance warning naming five
+      academic sources and stating that none proposes named phases. orders.yaml
+      states that no author-recommended or community order was found.
+      franchise.yaml's startHere block states that no path is sourced. This is
+      the correct behaviour under the constraint: three discovery stages that
+      would have invented rather than sourced were skipped, and the wing says so
+      in the files a curator will open.
+    nextAction: >
+      Re-run all three on a search-enabled session. The single highest-value
+      target is named by stage 1 itself: the alleged 2018 embezzlement at his
+      literary agency, omitted for lack of a reachable primary source and
+      flagged as "probably the strongest missing aura entry".
+
+stale:
+  - id: franchise-yaml-comments-fixed-in-place
+    owner: wing-audit (done)
+    what: >
+      Two comments in franchise.yaml stated facts that later stages reversed.
+      Both corrected in this commit, per the skill's allowance for statements of
+      fact that carry no editorial judgement.
+    changes:
+      - >
+        The capabilities block said "No editions.yaml, so editions stays dark
+        until that stage runs." editions.yaml now holds 34 entries covering all
+        28 works, so `editions: auto` is live. Comment updated to say so.
+      - >
+        The closing comment called the file a "First-pass research bundle" with
+        "no editions, no imagery". The wing has since gained 34 editions, 26 of
+        28 covers, a portrait, a header and a full pt-PT overlay. Comment
+        updated, and it now also records that stage 3 never ran so the aura and
+        orders are still first-pass.
+    whyItMattered: >
+      Both read as current to any future agent. The first would tell a reader of
+      the file that a live feature is dark.
+
+  - id: unanswered-questions-from-eight-handoffs
+    owner: the curator
+    what: >
+      Every stage recorded open questions and several named their own weakest
+      decision. Being merged did not answer any of them. Consolidated in
+      openQuestions below.
+
+checkedAndClean:
+  - id: theme-yaml
+    checked: >
+      Read the app's real registry at lib/theme.ts rather than SCHEMA.
+      DISPLAY_FACES = {fraunces, spectral, sourceSerif}; SIGNATURES =
+      {beam, thread, rule, none}. This wing declares displayFace: sourceSerif
+      and signature: rule. BOTH ARE REAL. The wing renders the look it
+      documents.
+    contrast: >
+      Computed WCAG ratios on the declared palette: ink on bg 15.53:1, ink on
+      surface 14.31:1, muted on surface 5.26:1, muted on bg 5.70:1, accent on bg
+      6.99:1. muted on surface is where this usually fails and it clears AA for
+      normal text. No readability floor breached.
+    designDiscipline: >
+      One accent, one display face, one signature. Not genre costume - the
+      notes: field explicitly refuses bruise colours and distressed type, and the
+      palette is not another wing's look rotated: it is the only cold near-black
+      blue-grey ground in the catalogue, deliberately opposed to the King wing.
+    presetString: >
+      theme.yaml preset and franchise.yaml themePreset both read
+      "clinical-minimal" and agree. The app types preset as a free string and
+      themeVars() never reads it, so it is a label, not a lookup. No risk.
+    otherWings: >
+      Checked all seven while I was there, since nothing else does. Clean:
+      chuck-palahniuk, stephen-king (fraunces/beam). NOT clean, all silently
+      falling back to fraunces/thread: agatha-christie (ivar, double-rule),
+      cosmere (signature filament), discworld (instrument-serif, horizon),
+      joao-tordo (canela, tideline), wheel-of-time (signature
+      wheel-and-serpent). That is five wings, confirming the brief's count,
+      though not by the mechanism the brief described.
+
+  - id: era-coverage
+    checked: >
+      Re-derived rather than trusting the validator's silence. Parsed all three
+      periods (1996-1999, 2000-2014, 2015-present), mapped every one of the 28
+      published years against them.
+    result: >
+      Every work falls inside EXACTLY ONE era. No gaps, no overlaps, no
+      orphans. Counts: before-the-film 3, after-the-film 15, from-2015 10.
+      Confirmed still clean after all eight stages, including the date changes
+      the completeness audit made.
+
+  - id: era-boundary-coherence
+    checked: >
+      The from-2015 era justifies itself on "the first Fight Club comic, 27 May
+      2015", but works.yaml dates fight-club-2 to 2016 (the completeness audit
+      settled it there). I checked whether the boundary was left anchored to
+      nothing.
+    result: >
+      It is anchored to events.yaml fight-club-continues-in-comics-2015, dated
+      2015-05-27, which is in the wing. The era description lists fight-club-2
+      and fight-club-3, both of which fall inside 2015-present at 2016 and 2019.
+      Coherent. Not a finding.
+
+  - id: era-reader-badge-arithmetic
+    checked: >
+      Read the app's era_reader implementation, then counted against live data.
+      The app filters works by published year inside the era span and requires
+      count of them read.
+    result: >
+      before-the-film spans 1996-1999 and holds exactly 3 works. The badge asks
+      for 3. Earnable, and it requires all three rather than being trivially
+      satisfiable. Correct.
+
+  - id: order-complete-badge
+    checked: >
+      chuck-palahniuk/fight-club-sequence resolves and holds fight-club,
+      fight-club-2, fight-club-3, all three present in works.yaml, all core.
+    result: Earnable, and the order has not grown since the badge was written.
+
+  - id: the-spoiler-rewrite-reached-portuguese
+    checked: >
+      The highest-risk seam on this wing, checked by reading the text and not by
+      trusting commit order. The spoiler audit rewrote two synopses at 3677b6c;
+      the pt-PT overlay was written at b9c54e7. Ancestry confirms the overlay
+      came after, but ancestry only proves the translator COULD have seen it, so
+      I read both pt-PT strings.
+    result: >
+      Both carry the NEW text. adjustment-day pt-PT ends at "uma lista
+      colaborativa decide quem ha de ser removido" with no partition clause.
+      invisible-monsters-remix pt-PT reads "novos capitulos de memorias e outras
+      cenas com as mesmas personagens", not the removed "different ending".
+      The Portuguese reader is protected exactly as the English one is. This is
+      the stale-overlay trap and this wing did not fall into it.
+
+  - id: globalEvents-block
+    checked: >
+      Nothing validates these ids, so I resolved all nine exclusions against
+      content/events/global.yaml and re-did the lifetime arithmetic.
+    result: >
+      All 9 exclude ids exist. 16 global events; exactly 6 predate 1962 and drop
+      as arithmetic; 10 remain in the lifetime window; 9 excluded, leaving
+      sept-11-2001 as the only global event reaching this wing. The comment's
+      arithmetic is exactly right. The block exists and is reasoned per event,
+      which is better than most wings manage.
+
+  - id: world-events-skip-reasoning
+    checked: >
+      The skip was by rule, not constraint, so I tested the rule. Re-ran
+      event_density.py and counted this author's decades.
+    result: >
+      Palahniuk publishes 1996-2024: 1990s, 2000s, 2010s, 2020s all carry global
+      events already (1, 3, 1, 2 against a budget of 3), and the 2000s is at
+      budget. The only empty decade in the catalogue is the 1950s, which is
+      outside his span entirely. So a new global event for this author would
+      have rendered on all seven wings to serve one, and could not have filled
+      an empty decade. The reasoning holds.
+
+  - id: covers
+    checked: >
+      All 26 cover URLs are covers.openlibrary.org/b/id/<id>-L.jpg, so the
+      ?default=false trap does not apply to any of them. Downloaded four and
+      LOOKED at them: fight-club (7890578), survivor (242039), lullaby
+      (6282943), diary (75147).
+    result: >
+      All four are genuine publisher jackets at usable resolution. No watermark,
+      no retailer mark, no sticker, no placeholder. Given this repo previously
+      shipped a pass where 4 of 6 covers were watermarked retailer scrapes, this
+      is the check that mattered and it came back clean.
+    trapForTheNextAuditor: >
+      3 of the 4 return HTTP 302 with a 9-byte body on a HEAD or a non-following
+      GET. That is NORMAL OpenLibrary behaviour: they redirect to
+      archive.org/download/olcovers<n>/... and all resolve to real JPEGs when
+      followed. Do not read the 302 as a dead image.
+    header: >
+      Header (Wikimedia Portland panorama) returns 200, 229KB image/jpeg.
+      Portrait returns 200, 642KB image/jpeg. Both live.
+
+  - id: editions-and-cover-proportion
+    checked: Counted per work rather than reading the stage's number.
+    result: >
+      34 edition rows covering 28 of 28 works. 26 of 28 covers. The 2 bare
+      covers (fight-club-2, bait) are documented decisions in the
+      visual-metadata handoff, not oversights.
+
+  - id: works-added-late
+    checked: >
+      The canonical cross-stage failure. git log shows the completeness audit
+      (71a7a4e) ran BEFORE visual-metadata (ce2cf35), editions (f5f07d5) and
+      translation (b9c54e7), and its works.yaml diff settled dates rather than
+      adding works.
+    result: >
+      No work entered the wing after the downstream layers ran. There is no
+      hole-with-a-title on this wing. This is the failure that put 23 unaudited
+      works into main previously, and the stage ordering here prevented it.
+
+  - id: startHere-integrity
+    checked: >
+      All four paths resolve: fight-club-first and before-the-film to real work
+      ids, fight-club-thread to chuck-palahniuk/fight-club-sequence which
+      exists, everything to the derived default order. The pt-PT overlay carries
+      all four path ids and both prose fields.
+    result: No drift. No dangling reference.
+
+  - id: overlay-shape
+    checked: >
+      The translation stage flagged that it followed the King exemplar's nested
+      shape but could not see it render, calling that a real gap. I could not
+      fully close it (the live site runs main, and this wing is unmerged), but I
+      compared shapes: the pt-PT franchise overlay is a one-entry list keyed by
+      id carrying description and startHere.paths, identical to all six other
+      wings including the two whose rendering the team has verified.
+    result: >
+      Risk substantially reduced, not eliminated. Still worth one human opening
+      the pt-PT page after merge. Left in openQuestions rather than closed.
+
+  - id: sources-liveness
+    checked: Spot-checked 7 non-image sources with a browser user-agent.
+    result: >
+      6 of 7 return 200, including the Guardian fainting report, the Willamette
+      Week 2003 piece the disputed life-event date rests on, Dark Horse, BNP
+      Portugal and Presenca. dnews.com returns 403 to automated fetches
+      (bot-blocking, not a dead citation).
+    falseAlarm: >
+      A regex sweep flagged "https://en.wikipedia.org/wiki/Chuck_Palahniuk]" as
+      a malformed URL in content/authors/chuck-palahniuk.yaml:49. It is NOT a
+      defect: it is valid YAML flow-sequence syntax, `sources: [url]`, and my
+      pattern swallowed the closing bracket. Recorded so nobody "fixes" working
+      YAML.
+
+  - id: aura-proportion
+    checked: >
+      Compared this wing against all seven, since the skill says the finding
+      only shows up when you look at them together.
+    result: >
+      chuck-palahniuk: 28 works, 3 franchise events, 3 eras, 1 order, 26/28
+      covers, 28/28 editions. It is the best-covered wing in the catalogue on
+      both covers and editions. Its 3 franchise events plus 5 life events on 28
+      works sits at or above the repo norm (joao-tordo 2 on 26, cosmere 3 on
+      28). The genuinely disproportionate wing is stephen-king: 95 works and 1
+      franchise event. That is a press-archaeology finding against King, not
+      against this wing.
+
+  - id: spoiler-boundary-distribution
+    checked: >
+      Zero boundaries before the audit and zero after. On a twist-driven author
+      that is the pattern the skill says means the audit did not happen, so I
+      checked whether it did.
+    result: >
+      It did. The spoiler handoff enumerates 8 gateable slots (3 franchise
+      events, 5 life events), reads each, and finds none states a plot fact. The
+      two real leaks it found were in synopses, which the engine cannot gate at
+      all, so it rewrote them rather than gating them. Zero boundaries is the
+      correct output here, not an absence of work. The absence of
+      characters.yaml removes the densest spoiler vector by design.
+
+notApplicableNotAbsent:
+  - >
+    connections: off and no characters.yaml. Palahniuk has no shared universe.
+    The only work-to-work links are two direct sequel chains already carried by
+    `subseries` (which the schema says connections must not duplicate) plus one
+    genuine edge on Invisible Monsters Remix. A connections map of two nodes and
+    one line teaches a reader the feature is decoration. I re-examined this
+    against the FINISHED wing as asked, and OFF IS STILL RIGHT. Nothing the last
+    seven stages added created a second edge. Do not report this as 0%
+    connections coverage and do not let an enrichment pass flip it to auto.
+  - >
+    One order. His novels are standalone, so there is nothing for a
+    chronological-in-universe or a connected order to do, and no received
+    community order exists to import. One thread filter is the honest ceiling
+    here, not a gap. Adding a second would mean inventing one.
+  - >
+    Portuguese editions at 5 of 28. That is the market, not a research gap.
+    Editorial Noticias and Casa das Letras ran Palahniuk 1999-2007 and stopped;
+    Marcador revived only Fight Club in 2016. Twenty-three works have never been
+    published in Portugal. The editions stage flagged explicitly that a later
+    pass must not "close" this, and it is right: padding it would destroy the
+    signal telling a Portuguese reader they need English for the rest.
+  - >
+    Two works without covers (fight-club-2, bait). Deliberate rulings, not
+    misses. fight-club-2's real jacket states the first novel's reveal, which is
+    this wing's whole spoiler posture; bait had no rights-clean source. The
+    typographic fallback is the intended rendering for both.
+  - >
+    Zero spoiler boundaries. See above - the correct output for a wing whose
+    gateable slots carry publication history and biography rather than plot.
+  - >
+    No global events beyond sept-11-2001. A strict, per-event reasoned exclusion
+    of nine, not an empty block.
+
+openQuestions:
+  - >
+    THE COMICS TIER, and it is the one that unlocks the most. Fight Club 2 and 3
+    are canonTier core. Stage 1 raised it, the completeness audit declined to
+    close it, where-to-start flagged that its weakest path depends on it. If the
+    curator flips them to extended, three things go with them: the
+    fight-club-sequence order, the chuck-palahniuk/the-whole-thread badge, and
+    the fight-club-thread startHere path. That is a single ruling with four
+    dependent consequences and it is the first thing to decide, because
+    everything else about this wing is cheaper to change afterwards.
+  - >
+    THE FRANCHISE_COMPLETE SCOPE. Should "read every Palahniuk work" include an
+    anthology he edited but did not write, and two colouring books? Today it
+    does, and the description says otherwise. See the finding above; my
+    recommendation is to reword rather than to drop or to change the app.
+  - >
+    ERAS 2 AND 3, flagged provenance: none by the stage that wrote them. Merge
+    into one post-1999 era, keep as is, or delete both. Deleting both orphans 25
+    works from era coverage and would trip a validator warning for each, so it
+    is not free. Keeping them is defensible precisely because they are honestly
+    labelled and the titles ("After the Film", "2015 Onward") deliberately
+    assert nothing. My read: keep, and revisit only if a search-enabled
+    press-archaeology run turns up a published periodisation.
+  - >
+    THE ANTHOLOGY TAIL. Nine books carry a Palahniuk contribution rather than a
+    Palahniuk book, none added. "Unquiet Guests" (2025) is the strongest
+    candidate and the completeness stage explicitly says not to add it on its
+    say-so without a contents list, because the attribution runs through a
+    DUPLICATE OpenLibrary author record (OL14057689A, not the main OL24312A).
+    "People, Places, Things" (2021, Scribd) is unresolvable without a human with
+    a Scribd search. Both need one person and a browser.
+  - >
+    THE EMBEZZLEMENT, named by stage 1 as probably the strongest missing aura
+    entry: reporting that Palahniuk lost most of his book earnings to an alleged
+    embezzlement at his agency around 2018. Omitted because no primary source
+    was reachable and it concerns a living person's finances, which the
+    editorial standard says needs two independent sources. Correctly withheld,
+    and it is the first thing a search-enabled run should chase.
+  - >
+    HAUNTED, the spoiler stage's own weakest decision. Three synopses (Haunted,
+    Not Forever But For Now, Shock Induction) were cleared with no publisher
+    copy, on a structural argument. Haunted is a frame narrative, and "what the
+    book turns out to be" is exactly the literary-fiction reveal category. A
+    search-enabled run should pull Doubleday's copy and re-rule.
+  - >
+    THE FOUR CONVERTED PORTUGUESE ISBNs, the editions stage's declared weakest
+    decision: single-sourced ISBN-10s from BNP with the 13-digit forms derived
+    by arithmetic. The stage argues the books are out of print so a wrong ISBN
+    yields a dead link rather than the wrong book. A curator wanting a strictly
+    two-source file cuts these four.
+  - >
+    ENGLISH EDITIONS AS PRECEDENT. This is the first wing in the catalogue to
+    carry English editions; the other six hold 193 entries, all pt-PT. Either
+    the other six get the same treatment or this wing is the odd one out. A
+    catalogue-wide decision that happens to have landed here.
+  - >
+    THE HEADER'S TONE. A bright blue-sky Portland panorama on a wing whose
+    palette is cold near-black. The visual stage names the better match (a
+    public-domain HAER survey of the Burnside Bridge, institutional black and
+    white) and rejected it only because every Commons scan carries film-holder
+    borders and the app crops blindly. A curator who can crop and host one
+    should swap it.
+  - >
+    THE PT-PT PAGE HAS NEVER BEEN SEEN RENDERED. Shape-checked against six other
+    wings and identical, but the translation stage's request stands: after
+    merge, open the pt-PT Palahniuk franchise page and the author page and quote
+    a line back.
+  - >
+    THE INVENTION OF SOUND, the translation stage's declared weakest decision.
+    The English "A Hollywood sound engineer" is gender-neutral by accident of
+    grammar; the Portuguese "Uma engenheira de som" is feminine and states a
+    fact the English withholds, decided from knowledge of the novel rather than
+    from publisher copy. Not a spoiler by any reading I can construct, but it is
+    the one place the overlay says more than the base.
+
+biggestRisk: >
+  Not a content defect. It is that this wing is the most complete-LOOKING one in
+  the catalogue - best cover coverage, best edition coverage, full pt-PT, green
+  validator, 58/58 - while three of its discovery stages never ran. The numbers
+  invite a reader of the reports to conclude the wing is finished. It is not:
+  its aura is a first pass, its orders are a single filter, and two of its three
+  eras are our own coinage. Every one of those is honestly flagged INSIDE the
+  content files, which is why this is a presentation risk rather than a
+  reader-facing one, but the next agent who sees the summary numbers and not the
+  files will believe the wing is done. Ship it with the gaps stated, or run
+  stage 3 before shipping.
+
+fixesMadeHere:
+  - >
+    franchise.yaml: corrected the capabilities comment claiming no editions.yaml
+    exists (34 entries now cover all 28 works, so editions: auto is live).
+  - >
+    franchise.yaml: corrected the closing comment calling the file a first-pass
+    bundle with no editions and no imagery, and recorded that stage 3 never ran.
+  - >
+    Nothing else. No editorial change was made to any layer owned by another
+    skill: no synopsis, no cover, no boundary, no era text, no achievement, no
+    capability flag, no id.
+
+forStages:
+  press-archaeology: >
+    Run on a search-enabled session. Highest-value target is the 2018 agency
+    embezzlement. Also worth chasing: what lockdown did to his live-reading
+    practice, which is a real resonance for the one author in the catalogue
+    whose reception is built on mass in-person readings.
+  eras: >
+    Only if press-archaeology surfaces a published periodisation. Otherwise the
+    two provenance: none eras stay as honestly-flagged coinage.
+  orders: >
+    Only if a received order is found. Do not invent a second one.
+  spoiler-audit: >
+    Re-rule Haunted against Doubleday's jacket copy when fetching is available.
+  visual-metadata: >
+    Optional: a cropped HAER Burnside Bridge header, if a curator can host one.
+  translation: >
+    Blocked on an app change. Do not write achievements overlays until
+    listAchievements() is locale-aware, or the files will be read by nothing.
+  event-resonance: >
+    Revisit booktok-2020 and covid-19-pandemic-2020 only if a source surfaces;
+    both were excluded for absent evidence rather than for disproof.
