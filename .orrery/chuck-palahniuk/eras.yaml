@@ -1,0 +1,85 @@
+stage: eras
+pass: 2
+date: 2026-07-20
+summary: >
+  Deferred second pass on the eras stage (skipped in the first run when the
+  search budget ran out). Fresh searching overturned one first-pass finding
+  and confirmed the rest. Overturned: Keesey 2016 does not organise purely
+  "by novel and theme" - its third chapter is titled "The Horror Trilogy:
+  Lullaby, Diary, Haunted", and the trilogy is Palahniuk's own term (2005
+  Miami appearance, Haunted tour), reaffirmed by a peer-reviewed 2024 article
+  (Humanities 13(5):115) that calls it "self-described" in its abstract. That
+  is a received period, rung 1 corroborated at rung 2, now carved out as era
+  the-horror-trilogy (2002-2005, provenance author). Confirmed: no full
+  periodisation of the career exists anywhere reached; the Wikipedia "career
+  phases" are section headings, not a source, and its own prose names no
+  phases. Partial upgrade: the 2015 boundary now rests on Palahniuk's own
+  May 2015 statement "Comics will also become a lasting aspect of my output"
+  (Bleeding Cool interview), so from-2015 is provenance author for the
+  boundary and the lasting-addition claim only. Carving the trilogy split the
+  old 2000-2014 placeholder into two residues (after-the-film recut to
+  2000-2001, new after-the-trilogy 2006-2014), both provenance none with
+  notes stating that their edges are sourced but the spans are received by
+  nobody. Era 1 (before-the-film) is untouched; its era_reader achievement
+  still counts exactly its three works. Validator green, no era-coverage
+  warnings for this franchise (full 1996-present coverage, no overlaps).
+searched:
+  languages: [en]
+  corpora: >
+    Academic monographs and their tables of contents (Keesey 2016 via Project
+    MUSE, fetched; the Kuhn and Rubin 2009, Sartain 2009, Collado-Rodriguez
+    2013 and McCracken 2016 negatives from the first pass stand); peer-reviewed
+    journals (MDPI Humanities 2024); the author's own interview record
+    (Bleeding Cool 2015, fetched); Fight Club 20th and 25th anniversary press;
+    career-retrospective and later-career criticism searches ("later novels",
+    "middle period", "second act", "new phase"); Wikipedia prose (checked for
+    reported author statements and for the heading trap, not cited for
+    structure).
+  blocked: >
+    mdpi.com refuses automated fetches (HTTP 403 on both article page and PDF);
+    the article's title and abstract, including the "self-described Horror
+    Trilogy" phrasing, were verified through search-result extraction instead.
+    catalog.lib.uchicago.edu served only its interface shell; the Keesey table
+    of contents was verified via Project MUSE instead.
+produced:
+  changedProse:
+    - after-the-film        # title kept, description and note rewritten, period recut to 2000-2001
+    - the-horror-trilogy    # NEW era, 2002-2005, provenance author
+    - after-the-trilogy     # NEW era, 2006-2014, provenance none
+    - from-2015             # description gained the author quote, note rewritten, provenance upgraded
+forStages:
+  - translation: >
+      The pt-PT overlay (content/i18n/pt-PT/franchises/chuck-palahniuk/
+      eras.yaml) is now stale for after-the-film (recut span, new description)
+      and from-2015 (description extended with the quoted author statement),
+      and has no entries for the two new eras the-horror-trilogy and
+      after-the-trilogy. All era ids it references still resolve, so
+      validation holds; the prose needs re-translation. Era titles and
+      descriptions are translated prose. The Palahniuk quote inside from-2015
+      should be translated with the English original retained or glossed, per
+      house judgement.
+  - wing-audit: >
+      Do not close the "fit cost" flagged in the-horror-trilogy's note by
+      re-cutting: the two nonfiction books of 2003-2004 sit inside the trilogy
+      era by year-arithmetic and the description discloses it. The span is the
+      received trilogy's own run and must not be widened or narrowed to tidy
+      the membership.
+openQuestions:
+  - >
+    franchise.yaml's closing comment still says "three eras (one sourced, two
+    flagged unsourced)"; now five (three carrying provenance, two flagged
+    none). Out of this stage's file footprint; whoever next touches
+    franchise.yaml should refresh the sentence.
+  - >
+    Curator call: the two residue eras (after-the-film 2000-2001,
+    after-the-trilogy 2006-2014) exist to keep every work inside an era while
+    honouring the three sourced boundaries. The skill would also permit
+    shipping them as gaps instead (works then render era-less). Kept as
+    flagged bridges because the works in them are interior to an active
+    career, which the skill says is a gap to close, not a legitimate orphan.
+  - >
+    Curator call: "The Horror Trilogy" era plate will greet Fugitives and
+    Refugees and Stranger than Fiction (2003-2004 nonfiction). Disclosed in
+    the era description and note. If this reads as a false claim on those two
+    works, the alternative is narrowing no span but accepting the era label
+    as "the horror years" in the pt-PT translation phrasing.
