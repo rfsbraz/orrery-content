@@ -18,6 +18,23 @@ themePreset: age-of-legends
 features:
   connections: off
 
+# Which shared global events actually reach these authors (docs/SCHEMA.md; the
+# event-resonance skill owns these decisions). Two authors born 27 years apart,
+# so the window runs 1948 to the present and the ruling has to be made twice:
+# pre-2007 entries are judged on Jordan, later ones on Sanderson as completer.
+# Kept by default and deliberately: fantasy-paperback-boom-1965,
+# chain-bookshop-1982, prestige-fantasy-adaptation-2011.
+globalEvents:
+  exclude:
+    - lady-chatterley-trial-1960         # Jordan's constraint was length, never what a novel could describe
+    - carnation-revolution-1974          # Portuguese censorship; nothing in the sequence answers it
+    - online-bookselling-1995            # the fourteen volumes stayed on the chain shelf; the internet story here is fandom
+    - sept-11-2001                       # the Last Battle was plotted from 1984; no volume turns on the rupture
+    - ebook-and-self-publishing-2007     # Sanderson's digital and direct-selling story belongs to the Cosmere wing
+    - financial-crisis-2008              # the succession is the only thing happening to this series in 2008
+    - covid-19-pandemic-2020             # the text was finished in 2013; the pandemic only delayed the television shoot
+    - booktok-2020                       # a thirty-year-old fourteen-volume commitment is not what short video sells
+
 # "Where to start" - powers the guided onboarding wizard. The Wheel of Time's
 # real onboarding question is not "which book" but "where does the prequel go",
 # so the paths encode the documented answers to that debate.

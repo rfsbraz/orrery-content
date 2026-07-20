@@ -21,6 +21,25 @@ features:
   hall: auto
   editions: auto
 
+# Which shared global events actually reach this author (docs/SCHEMA.md; the
+# event-resonance skill owns these decisions). Sanderson was born in 1975, so
+# the lifetime gate already removes everything before it. Kept by default and
+# deliberately: ebook-and-self-publishing-2007, covid-19-pandemic-2020.
+globalEvents:
+  include:
+    # Predates his birth by a decade. It invented the commercial category he
+    # writes into, and he is the author who took it furthest: Tor bought a
+    # debut from an unknown and then backed doorstop secondary-world sequences
+    # at a cadence only a proven mass paperback audience makes payable.
+    - fantasy-paperback-boom-1965
+  exclude:
+    - chain-bookshop-1982                # he was six; the debut sold into the superstore-and-online era instead
+    - online-bookselling-1995            # his direct-to-reader story starts with the 2007 entry, not the catalogue shelf
+    - sept-11-2001                       # the trunk-novel years; no Cosmere book answers it
+    - financial-crisis-2008              # the debut and Mistborn land either side of it and neither notices
+    - prestige-fantasy-adaptation-2011   # his adaptation story is the Wheel of Time series, and it is kept on that wing
+    - booktok-2020                       # his readership was built on Kickstarter, YouTube and Reddit, not short video
+
 # "Where to start" - powers the guided onboarding wizard. The Cosmere is famous
 # for having no single right entry, so the paths are honest on-ramps for
 # different appetites; the completionist path points at the derived publication

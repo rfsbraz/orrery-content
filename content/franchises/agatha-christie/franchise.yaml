@@ -15,6 +15,18 @@ themePreset: interwar-editorial
 # (startHere below), connections (characters.yaml + the Cards on the Table
 # crossover), and hall. No editions.yaml, so editions stays off.
 
+# Which shared global events actually reach this author (docs/SCHEMA.md; the
+# event-resonance skill owns these decisions). Her 1890-1976 window is the only
+# one in the catalogue that reaches the early industry entries, and they are
+# where her resonance is. Kept by default and deliberately: world-war-i-1914,
+# world-war-ii-1939, pulp-magazines-1926, penguin-paperback-1935.
+globalEvents:
+  exclude:
+    - armed-services-editions-1943    # American issues to American troops; her paperback story is Penguin no. 6
+    - lady-chatterley-trial-1960      # the permissive decades arrive and the bloodless puzzle is untouched
+    - fantasy-paperback-boom-1965     # no secondary-world fiction anywhere in her catalogue
+    - carnation-revolution-1974       # Portuguese censorship; she died two years later, having never met it
+
 # "Where to start" - the classic Christie on-ramps, tagged honestly. There is no
 # single official starter list; these are the entries every reputable guide
 # converges on. See orders.yaml/sources.

@@ -23,6 +23,29 @@ images:
 # auto; nothing forced.
 features: {}
 
+# Which shared global events actually reach this author (docs/SCHEMA.md; the
+# event-resonance skill owns these decisions). The global layer is written from
+# the anglophone trade, and almost none of it describes a Portuguese literary
+# novelist with a small home readership. Nothing is kept by default here; the
+# one global event that matters to him is claimed explicitly below.
+globalEvents:
+  include:
+    # Sixteen months before his birth, so the lifetime gate drops it. It is the
+    # single global event that made his career possible: he belongs to the first
+    # Portuguese generation that never wrote around a censor, and he spends that
+    # freedom on interior, metaphysical, deliberately apolitical novels rather
+    # than the resistance-shaped literature the Estado Novo produced.
+    - carnation-revolution-1974
+  exclude:
+    - chain-bookshop-1982                # a British and American shop format; his trade is Portuguese
+    - online-bookselling-1995            # his readership is domestic and bookshop-led; no title answers this
+    - sept-11-2001                       # the New York study years are undated, and no novel of his reaches for it
+    - ebook-and-self-publishing-2007     # traditionally published in Portugal throughout; no self-publishing story
+    - financial-crisis-2008              # Portugal's rupture was the 2011 bailout, and even that stays off his page
+    - prestige-fantasy-adaptation-2011   # he writes for Portuguese television, but not a word of fantasy
+    - covid-19-pandemic-2020             # no evidence any novel answers it; excluded rather than assumed
+    - booktok-2020                       # Lusophone literary fiction is not what short-form video moves
+
 # "Where to start" - powers the guided wizard. Four honest paths, each with a
 # citable basis (a prize, a publisher-acknowledged grouping, or the crime turn).
 startHere:
