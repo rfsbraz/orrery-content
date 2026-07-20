@@ -1,16 +1,45 @@
 # Creative periods. Inline references use [[type:id|text]] and must resolve.
 #
-# PROVENANCE WARNING (see .claude/skills/eras, and the same warning at the top
-# of stephen-king/eras.yaml). NO published periodisation of Palahniuk's career
-# was found. The academic literature on him (Kuhn and Rubin 2009, Sartain 2009,
-# Collado-Rodriguez 2013, Keesey 2016, McCracken 2016) is organised by novel and
-# by theme, not by period, and none of it proposes named phases.
+# PROVENANCE, second pass 2026-07. The first pipeline run skipped this stage
+# (search budget exhausted) and left a deliberately thin three-span placeholder;
+# this pass re-searched with a fresh budget. What the record actually holds:
 #
-# So this file is deliberately THIN: three spans rather than a decade grid, flat
-# titles that assert nothing, and one hard dated boundary that is a fact rather
-# than a verdict (the film, 15 October 1999). Eras 2 and 3 are our own cut and
-# are marked provenance: none for the curator to remove or merge. Fewer eras,
-# honestly labelled, beats a tidy periodisation nobody but us believes.
+#  - NO full periodisation of Palahniuk's career exists anywhere reachable.
+#    The first pass's core finding stands: the academic literature (Kuhn and
+#    Rubin 2009, Sartain 2009, Collado-Rodriguez 2013, McCracken 2016)
+#    organises by novel and by theme, not by period, and career-retrospective
+#    press and the Fight Club anniversary coverage narrate chronologically
+#    without naming phases. The Wikipedia article's five "career phase"
+#    section headings are that article's internal structure, not a published
+#    periodisation; its own prose names no phases. Do not launder them into a
+#    citation.
+#
+#  - ONE received period does exist, and the first pass missed it: Palahniuk
+#    himself, at a 2005 Miami appearance on the Haunted tour, described
+#    Lullaby, Diary and Haunted as a "horror trilogy", and the term was taken
+#    up in print. Douglas Keesey's Understanding Chuck Palahniuk (U of South
+#    Carolina Press, 2016), recorded by the first pass as organising "by novel
+#    and theme", in fact titles its third chapter "The Horror Trilogy:
+#    Lullaby, Diary, Haunted", and a peer-reviewed 2024 article (Humanities
+#    13(5):115) carries "Chuck Palahniuk's Horror Trilogy" in its title and
+#    calls the trilogy "self-described" in its abstract. Rung 1 (author),
+#    corroborated at rung 2 (critical). It is era 3 below.
+#
+#  - The 2015 boundary gained an author source: asked in May 2015 whether he
+#    would keep working in comics, Palahniuk said "Comics will also become a
+#    lasting aspect of my output" (Bleeding Cool interview, 25 May 2015). That
+#    sources the boundary and the claim of a lasting addition; he named no
+#    period, so the era's title stays flat.
+#
+# STRUCTURE. The sourced pre-film era is untouched: an achievement
+# (chuck-palahniuk/before-the-film) counts its three works and franchise.yaml's
+# startHere references its grouping. Carving the trilogy out of the old
+# 2000-2014 span leaves two residues (2000-2001 and 2006-2014), kept as
+# honestly flagged provenance: none spans: every boundary they sit between is
+# sourced, but the spans themselves are received by nobody. The ids
+# after-the-film and from-2015 are retained because the pt-PT overlay resolves
+# against them; their prose changed in this pass, so the overlay needs
+# re-translation (flagged in the handoff).
 
 - id: before-the-film
   title: The Norton Novels
@@ -35,45 +64,115 @@
 
 - id: after-the-film
   title: After the Film
-  period: "2000-2014"
-  themes: [addiction and compulsion, cults and crowds, grief, satire of appetite]
+  period: "2000-2001"
+  themes: [addiction and compulsion, con games, the audience the film built]
   provenance: none
   description: >
-    Palahniuk publishes roughly a book a year to an audience the film built:
-    [[work:chuck-palahniuk/choke|Choke]],
-    [[work:chuck-palahniuk/lullaby|Lullaby]] (written in the wake of his
-    father's murder), [[work:chuck-palahniuk/diary|Diary]],
-    [[work:chuck-palahniuk/haunted|Haunted]] and the readings that made people
-    faint, then the formal experiments - an oral biography, a novel in broken
-    English, a novel in gossip column. The two nonfiction books and the first
-    story collection also fall here.
+    The short stretch between the film and the horror books, holding one
+    novel: [[work:chuck-palahniuk/choke|Choke]], written for the readership
+    the film built and his first New York Times bestseller. Criticism reads it
+    with the pre-film books rather than as a new direction: Keesey's study
+    groups it with Fight Club, Invisible Monsters and Survivor as the novels
+    of the struggle for identity.
   note: >
-    UNSOURCED - our own cut, recommended for curator review. Both boundaries are
-    real dated facts (the film's DVD release in June 2000 that built the
-    readership; the move into comics from May 2015) but no published
-    periodisation of Palahniuk breaks at either point, or anywhere else. The
-    title is flat by design and asserts nothing about the books' quality.
+    UNSOURCED AS A PERIOD, kept as a bridge. Both of its edges are sourced
+    facts (the film on one side, the start of the self-described horror
+    trilogy on the other), but nobody periodises a 2000-2001 span; it is the
+    residue left when two received boundaries are honoured. Keesey's chapter
+    "The Struggle for Identity" runs its grouping through Choke (2001), which
+    is the critical warrant for treating these years as the tail of the
+    beginning rather than the start of something new. Recut in the second pass
+    from the placeholder 2000-2014 span.
   sources:
-    - https://en.wikipedia.org/wiki/Fight_Club
+    - https://muse.jhu.edu/book/47493
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: the-horror-trilogy
+  title: The Horror Trilogy
+  period: "2002-2005"
+  themes: [cursed texts, hauntings, grief, bodily horror]
+  provenance: author
+  description: >
+    The one period in this career received from the author himself: on the
+    2005 Haunted tour Palahniuk described
+    [[work:chuck-palahniuk/lullaby|Lullaby]],
+    [[work:chuck-palahniuk/diary|Diary]] and
+    [[work:chuck-palahniuk/haunted|Haunted]] as a horror trilogy, written in
+    the years after his father's murder and ending in the readings of "Guts"
+    that made audiences faint. Scholarship kept the term. The two nonfiction
+    books, [[work:chuck-palahniuk/fugitives-and-refugees|Fugitives and
+    Refugees]] and
+    [[work:chuck-palahniuk/stranger-than-fiction|Stranger than Fiction]],
+    also fall inside these years.
+  note: >
+    Provenance is the author's own framing (rung 1), corroborated in print at
+    rung 2: Keesey titles his third chapter "The Horror Trilogy: Lullaby,
+    Diary, Haunted" (Understanding Chuck Palahniuk, 2016), and Humanities
+    13(5):115 (2024) names "Chuck Palahniuk's Horror Trilogy" in its title and
+    calls it "self-described" in its abstract. The span is the trilogy's own
+    publication run, 2002 to 2005. Known fit cost, stated rather than hidden:
+    era membership is computed by year, so the two nonfiction books of
+    2003-2004 sit inside a plate named for a trilogy they are not part of; the
+    description says so. The MDPI article page refuses automated fetches
+    (HTTP 403); its abstract was verified through search results.
+  sources:
+    - https://muse.jhu.edu/book/47493
+    - https://www.mdpi.com/2076-0787/13/5/115
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: after-the-trilogy
+  title: After the Trilogy
+  period: "2006-2014"
+  themes: [formal experiments, satire of appetite, celebrity, the afterlife]
+  provenance: none
+  description: >
+    The yearly run continues in standalone experiments: an oral biography
+    ([[work:chuck-palahniuk/rant|Rant]]), a novel narrated from a waiting room
+    ([[work:chuck-palahniuk/snuff|Snuff]]), a novel in broken English
+    ([[work:chuck-palahniuk/pygmy|Pygmy]]), a novel in gossip column
+    ([[work:chuck-palahniuk/tell-all|Tell-All]]), the Hell pair of
+    [[work:chuck-palahniuk/damned|Damned]] and
+    [[work:chuck-palahniuk/doomed|Doomed]], and
+    [[work:chuck-palahniuk/beautiful-you|Beautiful You]]. The restructured
+    [[work:chuck-palahniuk/invisible-monsters-remix|Invisible Monsters
+    Remix]] and the anthology he co-edited,
+    [[work:chuck-palahniuk/burnt-tongues|Burnt Tongues]], also fall here.
+  note: >
+    UNSOURCED - our own cut, recommended for curator review. Like the span
+    before the trilogy, this is a residue: it opens where the self-described
+    horror trilogy closes and ends where the comics turn begins, and both of
+    those edges are sourced, but no published periodisation treats 2006-2014
+    as a period. Criticism covers these books thematically and in
+    chronologically overlapping pairs (Keesey's later chapters interleave the
+    2007-2014 titles), which is itself evidence that no critic periodises this
+    stretch. The title is flat by design and asserts nothing.
+  sources:
+    - https://muse.jhu.edu/book/47493
 
 - id: from-2015
   title: 2015 Onward
   period: "2015-present"
   themes: [returning to Fight Club, illustrated formats, political satire, craft]
-  provenance: none
+  provenance: author
   description: >
     Palahniuk goes back to his first book and continues it in comics
     ([[work:chuck-palahniuk/fight-club-2|Fight Club 2]],
     [[work:chuck-palahniuk/fight-club-3|Fight Club 3]]), publishes two
-    illustrated colouring volumes, turns the craft of the workshop years into a
-    manual ([[work:chuck-palahniuk/consider-this|Consider This]]), and keeps
+    illustrated colouring volumes, turns the craft of the workshop years into
+    a manual ([[work:chuck-palahniuk/consider-this|Consider This]]), and keeps
     writing novels ([[work:chuck-palahniuk/adjustment-day|Adjustment Day]],
-    [[work:chuck-palahniuk/shock-induction|Shock Induction]]).
+    [[work:chuck-palahniuk/shock-induction|Shock Induction]]). As the first
+    comic appeared in May 2015, he framed the move as permanent: "Comics will
+    also become a lasting aspect of my output."
   note: >
-    UNSOURCED - our own cut, recommended for curator review or for merging with
-    the era above. The 2015 boundary is one real publishing fact (the first
-    Fight Club comic, 27 May 2015) doing a lot of work: he did not stop writing
-    prose novels, so this is a period defined by an addition rather than a turn.
-    "2015 Onward" is deliberately not a name.
+    Boundary upgraded by the second pass: the 2015 start now rests on the
+    author's own words (interview with Hannah Means-Shannon, Bleeding Cool,
+    25 May 2015, as the first Fight Club 2 issue appeared), which assert
+    exactly what this era claims - an addition to the output rather than a
+    turn away from novels, since he kept writing prose throughout. He named no
+    period and no critic periodises the career at 2015, so the provenance
+    covers the boundary and the claim of a lasting addition only, and the
+    title stays deliberately not a name.
   sources:
+    - https://bleedingcool.com/2015/05/25/comics-will-become-a-lasting-aspect-of-my-output-chuck-palahniuk-talks-fight-club-2
     - https://en.wikipedia.org/wiki/Fight_Club_2
