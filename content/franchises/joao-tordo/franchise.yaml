@@ -1,0 +1,85 @@
+id: joao-tordo
+name: João Tordo
+kind: author
+description: >
+  Two decades of Portuguese literary fiction - metaphysical, noir-tinged novels
+  that gather into an atmospheric island trilogy and, later, a turn to crime.
+authorIds: [joao-tordo]
+themePreset: atlantic-editorial
+
+# Capabilities are auto-detected from the data. This is a deliberately SPARSE
+# bundle (the framework's thin end): works + a thin aura + eras + a small curated
+# trilogy order + startHere. No characters.yaml and no work connections, so the
+# connections map stays dark by design (see the PR notes). Everything left at
+# auto; nothing forced.
+features: {}
+
+# "Where to start" - powers the guided wizard. Four honest paths, each with a
+# citable basis (a prize, a publisher-acknowledged grouping, or the crime turn).
+startHere:
+  paths:
+    - id: the-prizewinner
+      title: Start with the prizewinner
+      description: >
+        As Três Vidas is the book that made his name - the 2009 Prémio José
+        Saramago winner and, by broad Portuguese critical consensus, the natural
+        way in. Love story, family saga, and mystery in one.
+      workIds:
+        - joao-tordo/as-tres-vidas
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        Basis: the Prémio José Saramago and its standing as his most-recommended
+        entry point.
+    - id: island-trilogy
+      title: The island trilogy
+      description: >
+        The Trilogia dos Lugares Sem Nome is the most atmospheric, self-contained
+        Tordo - three loosely linked novels set in nameless, sea-battered places,
+        the second folding the first inside itself. A complete arc without
+        committing to the whole shelf.
+      workIds: null
+      orderId: joao-tordo/lugares-sem-nome
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        Basis: the publisher-numbered "Trilogia dos Lugares Sem Nome" grouping.
+    - id: the-crime-turn
+      title: The crime turn
+      description: >
+        From 2019 Tordo writes fast, dark detective fiction. Begin with his
+        crime-genre debut, then the Pilar Benamor investigations, if you want the
+        page-turner rather than the metaphysician.
+      workIds:
+        - joao-tordo/a-noite-em-que-o-verao-acabou
+        - joao-tordo/aguas-passadas
+      orderId: null
+      fit:
+        experience: [new, returning]
+        commitment: [taste, arc]
+      note: >
+        Basis: publisher positioning of A Noite em que o Verão Acabou as his crime
+        debut and the recurring Pilar Benamor series.
+    - id: everything
+      title: Everything, in order
+      description: >
+        Two decades in publication order - the philosophical early novels, the
+        island trilogy, the crime turn. You watch a literary writer reinvent
+        himself twice.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+
+# First-pass bundle for curator review. Novels sourced primarily from Portuguese
+# references; several post-2019 titles are from the pt.wikipedia list and are
+# flagged in works.yaml for confirmation.
+sources:
+  - https://pt.wikipedia.org/wiki/Jo%C3%A3o_Tordo
+  - https://joaotordo.com/livros
+  - https://penguinlivros.pt/autores/joao-tordo/
+  - https://www.portaldaliteratura.com/autores.php?autor=848
