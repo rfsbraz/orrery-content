@@ -1,9 +1,11 @@
 # European Portuguese (pt-PT) overlay for the additional canon orders.
-# The order `name` is never translated (validator-enforced); only the rationale
-# and the debated notes are prose. Work titles inside the prose keep their
-# English form unless a Portuguese edition exists.
+# An order's `name` IS translated: it is a curated label a reader picks from,
+# not a proper noun, and validate.py allows it here (NAME_ALLOWED_IN). Names are
+# kept short so they do not wrap in the order selector. Work titles inside the
+# prose keep their English form unless a Portuguese edition exists.
 
 - id: cosmere/recommended-reading-order
+  name: A ordem de leitura recomendada
   rationale: >
     A ordem em que a maioria dos guias do Cosmere converge para quem chega de
     novo: começar pela trilogia autossuficiente de Mistborn, passar pelos
@@ -20,6 +22,7 @@
     - "The Sunlit Man é deliberadamente colocado no fim; traz ligeiras revelações de ligação e lê-se melhor com o contexto de O Arquivo das Tempestades e da segunda era, embora funcione por si só."
 
 - id: cosmere/chronological-inuniverse
+  name: Ordem cronológica interna
   rationale: >
     A ordem pela qual os acontecimentos ocorrem na cronologia interna do
     Cosmere, e não a ordem pela qual os livros foram escritos. Sanderson afirmou
@@ -37,6 +40,7 @@
     - "Sixth of the Dusk e Isles of the Emberdark (First of the Sun) situam-se no fim, mas antes ou à volta de The Sunlit Man, que é a história publicada do Cosmere mais distante no futuro."
 
 - id: cosmere/author-recommended
+  name: A orientação do próprio Sanderson
   rationale: >
     Sanderson recusa-se a impor uma ordem única. As suas FAQ dizem que qualquer
     série do Cosmere é um bom ponto de partida, que se deve ler cada série pela

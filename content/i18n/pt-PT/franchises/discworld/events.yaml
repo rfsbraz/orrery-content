@@ -36,8 +36,11 @@
     continuam, os romances não.
 
 # "GNU Terry Pratchett" is a literal HTTP header value, not prose - it is the
-# same string in every language, so the title is left in the base language.
+# same string in every language and translating it would break the reference.
+# It is repeated here unchanged, rather than left unset, so that the string is
+# deliberately carried into the locale instead of looking like an oversight.
 - id: gnu-terry-pratchett-2015
+  title: "GNU Terry Pratchett"
   description: >
     Os fãs inscreveram o nome de Pratchett na própria infraestrutura da web,
     acrescentando o cabeçalho HTTP "X-Clacks-Overhead: GNU Terry Pratchett" para
