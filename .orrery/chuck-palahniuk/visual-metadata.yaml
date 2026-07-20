@@ -175,15 +175,24 @@ leftBare:
 
 forStages:
   editions: >
-    Two things you can use, and one you must not undo. (1) The Fight Club 2
-    collected hardcover ISBN 9781616559458 DOES resolve to a cover on
-    OpenLibrary, but Fight Club 3's collected hardcover 9781506711805 returns
-    404 - so if you record that edition, expect no coverUrl for it. (2) The
-    English Bait edition ISBN is 9781506703114, Dark Horse 2016, and it has no
-    cover anywhere. (3) IMPORTANT: if editions.yaml grows a coverUrl for any
-    Fight Club 2 edition, it will reintroduce the reveal that this stage
-    deliberately kept out of works.yaml. Same warning the spoiler audit gave me,
-    passed one layer down.
+    CORRECTED after the editions agent flagged it; my original wording here was
+    misleading. (1) Fight Club 3's collected hardcover ISBN is 9781506711782,
+    NOT the 9781506711805 the completeness auditor passed down. I had written
+    that 9781506711805 "returns 404 so expect no coverUrl", which framed a
+    nonexistent ISBN as a missing cover - right symptom, wrong diagnosis. The
+    real position is better than I reported: 9781506711782 resolves to a cover
+    BYTE-IDENTICAL (md5 b9a5825ef8313fa417b2269430239907) to the one I shipped
+    for fight-club-3 via cover id 10156787, so both routes agree and the cover
+    needs no change. (2) Fight Club 2's collected hardcover ISBN 9781616559458
+    does resolve to a cover; that one was right as passed. (3) The English Bait
+    edition ISBN is 9781506703114, Dark Horse 2016, and it has no cover
+    anywhere - checked with ?default=false, an honest 404. (4) IMPORTANT,
+    unchanged: if editions.yaml grows a coverUrl for any Fight Club 2 edition,
+    it reintroduces the reveal this stage deliberately kept out of works.yaml.
+    Same warning the spoiler audit gave me, passed one layer down. (5) The
+    pt-BR trap checked against my set: none of my 26 coverSources points at
+    OL34307280W (Clube da Luta) or OL30918903W (Sobrevivente); Fight Club and
+    Survivor resolve to OL18941W and OL18939W, the English records.
   wing-audit: >
     Coverage is 26/28, which is high because Palahniuk is anglophone. Do not
     read the two gaps as thin sourcing: one is a spoiler refusal and one is a
@@ -232,6 +241,14 @@ openQuestions:
     bear pierced with arrows, credits Palahniuk, Cameron Stewart, Dave McCaig,
     Nate Piekos and David Mack. So the image is right and the record's title is
     junk. Worth an enrichment-bot fix, not a blocker.
+    RESOLVED FURTHER by the editions agent: that single edition's ISBN
+    9781506711782 is the CORRECT collected-hardcover ISBN, confirmed against
+    Dark Horse's own product page and the Library of Congress. So OL20846578W is
+    a real, correctly-identified edition record wearing a junk title - which is
+    a smaller problem than I implied. The lesson I would keep is that I judged
+    this record on its title and its cover and got the right answer, but only
+    because I opened the image; the title alone would have argued for rejecting
+    a record that was actually correct.
   - >
     I DID NOT RE-AUDIT THE 19 COVERS THAT PASSED BOTH PASSES at higher
     magnification than 480px. The Choke sticker was invisible at 300px and
