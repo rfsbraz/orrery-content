@@ -24,11 +24,15 @@
 
 - id: stephen-king/randall-flagg
   name: Randall Flagg
-  aka: ["The Walkin Dude", "The Man in Black", "Walter o'Dim"]
+  # aka: "The Man in Black" and "Walter o'Dim" were removed in the spoiler audit.
+  # Both equate Flagg with a figure whose identity is only confirmed late in
+  # Wizard and Glass, which is precisely what the gated appearances below
+  # protect - and `aka` has no boundary of its own.
+  aka: ["The Walkin Dude"]
   description: >
-    King's wandering agent of chaos - the demagogue of the ruined world, the
-    court magician, the man in black fleeing across the desert. The clearest
-    proof the books share one multiverse.
+    King's wandering agent of chaos: the Walkin Dude of the ruined world, the
+    court magician of Delain. Where he turns up, the books are sharing more
+    than a mood.
   appearsIn:
     - workId: stephen-king/the-stand
       note: The dark man of the post-plague American West.
@@ -47,15 +51,20 @@
 - id: stephen-king/father-callahan
   name: Father Donald Callahan
   description: >
-    The priest of Jerusalem's Lot whose broken faith becomes one of King's
-    longest redemption arcs.
+    The parish priest of Jerusalem's Lot, whose faith is tested past its
+    breaking point by what comes to his town.
   appearsIn:
     - workId: stephen-king/salems-lot
       note: The parish priest who faces Barlow.
+    # Boundary is 'Salem's Lot, not Wolves of the Calla: the fact this appearance
+    # gives away is that Callahan survives 'Salem's Lot, so that is the book whose
+    # experience it damages. It is no surprise in Wolves - the publisher's own
+    # jacket copy introduces him as "once of 'Salem's Lot, Maine".
     - workId: stephen-king/wolves-of-the-calla
-      note: His reappearance here, decades later, is one of the great surprises
-        of the Dark Tower cycle.
-      spoilerAfter: stephen-king/wolves-of-the-calla
+      note: He turns up in the Calla, decades on and a long way from Maine.
+      spoilerAfter: stephen-king/salems-lot
+    # These two stay anchored on Wolves of the Calla: carrying past it is what
+    # they give away, so Wolves is the book they damage.
     - workId: stephen-king/song-of-susannah
       spoilerAfter: stephen-king/wolves-of-the-calla
     - workId: stephen-king/the-dark-tower
