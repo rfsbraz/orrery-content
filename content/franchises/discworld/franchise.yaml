@@ -1,0 +1,104 @@
+id: discworld
+name: Discworld
+kind: series
+description: >
+  Terry Pratchett's flat world on the back of four elephants on a giant turtle -
+  41 novels that grow from fantasy parody into some of the sharpest comic satire
+  in English, threaded into loose subseries you can enter almost anywhere.
+authorIds: [terry-pratchett]
+themePreset: warm-vellum
+
+# Capabilities are auto-detected from the data (see docs/SCHEMA.md). Left as auto;
+# this bundle activates river/companion (events), orderDiff (six subseries orders
+# plus the derived default), wizard (startHere), connections (characters.yaml +
+# a work connection), and hall (always).
+features:
+  river: auto
+  orderDiff: auto
+  wizard: auto
+  connections: auto
+  companion: auto
+  hall: auto
+  editions: auto
+
+# "Where to start" - Discworld is the canonical hard case, because the two books
+# most readers pick up first (the early Rincewind parodies) are the ones the
+# community most often says NOT to start with. These paths encode the standard
+# advice: pick a thread, or a strong standalone, not book one.
+startHere:
+  paths:
+    - id: three-ways-in
+      title: The three usual first books
+      description: >
+        The books most often handed to a new reader: Mort (Death takes an
+        apprentice), Guards! Guards! (the Watch is born), and Small Gods (the
+        standalone many call the best of all). Any one of them is a fair test of
+        whether the Disc is for you.
+      workIds:
+        - discworld/mort
+        - discworld/guards-guards
+        - discworld/small-gods
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        Deliberately not The Colour of Magic. The first two Rincewind books are
+        broad parody and the weakest place to start; the world and the satire
+        both sharpen a few books in.
+    - id: straight-into-the-watch
+      title: Straight into the City Watch
+      description: >
+        The most-loved thread: Sam Vimes and the Ankh-Morpork Watch, from a drunk
+        in a gutter to the conscience of a city. Eight books that read as a single
+        arc about law, power and decency.
+      workIds: null
+      orderId: discworld/city-watch
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+    - id: the-witches
+      title: The Witches
+      description: >
+        Granny Weatherwax, Nanny Ogg and Magrat - headology, borrowed Shakespeare
+        and the tyranny of stories. A self-contained run that also feeds the
+        Tiffany Aching books.
+      workIds: null
+      orderId: discworld/witches
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+    - id: start-young
+      title: Start young, with Tiffany Aching
+      description: >
+        The five Tiffany Aching books are written for younger readers but land
+        just as hard for adults - a chalk-country girl becoming a witch. A clean,
+        modern entry with no earlier reading required.
+      workIds: null
+      orderId: discworld/tiffany-aching
+      fit:
+        experience: [new]
+        commitment: [arc]
+      note: >
+        The best on-ramp for younger readers, and for adults who want a complete,
+        finished arc from a single strong voice.
+    - id: the-whole-disc
+      title: The whole Disc, in order
+      description: >
+        All 41 novels in publication order. You watch the parody grow into
+        satire and the world knit itself together - the aura layer is built for
+        exactly this walk.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+      note: >
+        Publication order means opening on the two weakest books; completionists
+        who know that going in are rewarded as the Disc finds itself around
+        Wyrd Sisters and Guards! Guards!.
+
+sources:
+  - https://en.wikipedia.org/wiki/Discworld
+  - https://www.lspace.org/books/reading-order-guides/
+  - https://www.terrypratchettbooks.com/discworld-reading-order/
