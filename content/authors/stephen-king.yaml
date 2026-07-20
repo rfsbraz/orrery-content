@@ -93,8 +93,12 @@ lifeEvents:
     description: >
       A van strikes King as he walks near his home, shattering his leg and hip.
       Chronic pain and mortality reshape the later work - and push him to finally
-      finish the Dark Tower, into which the accident is written.
-    spoilerAfter: stephen-king/song-of-susannah
+      finish the Dark Tower.
+    # Spoiler audit: was gated behind Song of Susannah for a trailing clause about
+    # how the accident is used inside the cycle. Dropping the clause frees the
+    # biographical fact - the hinge of his late career - to reach every reader,
+    # rather than hiding a high-impact life event behind book VI.
+    spoilerAfter: null
     sources: [https://en.wikipedia.org/wiki/Stephen_King]
   - id: king-national-book-medal-2003
     date: 2003

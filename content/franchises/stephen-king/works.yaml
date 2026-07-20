@@ -509,7 +509,7 @@
   published: 1994
   subseries: null
   canonTier: core
-  synopsis: "An elderly widower's sleeplessness opens his sight to forces guarding the Dark Tower."
+  synopsis: "An elderly widower stops sleeping, starts seeing what other people cannot, and finds Derry sliding toward something violent."
   externalIds:
     openLibrary: OL81603W
   images:
@@ -581,9 +581,12 @@
   subseries: "The Dark Tower"
   canonTier: core
   synopsis: "Roland tells of his first love and first great loss, in the town of Mejis."
+  # Spoiler audit: the Eyes of the Dragon edge was removed here. It points at an
+  # identification confirmed late in this book, and connections carry no boundary.
+  # It is carried instead as a gated appearance on the Randall Flagg character
+  # entry - the remedy docs/SCHEMA.md prescribes for exactly this case.
   connections:
     - stephen-king/the-stand
-    - stephen-king/the-eyes-of-the-dragon
   images:
     cover: "https://covers.openlibrary.org/b/id/14657088-L.jpg"
     coverCredit: "Open Library"
