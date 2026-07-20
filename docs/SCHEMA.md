@@ -415,6 +415,8 @@ translation carries only the prose fields and never restates structure
   prose fields.
 - **Never translate a work `title`.** A translated title is edition data (see
   editions.yaml) because it must be a real published title, not an invention.
+  Era, event, and life-event `title`s are the opposite case - they are curated
+  prose written by the curator, so they are translated like any other prose.
 - **Keep the inline `[[work:id|text]]` references.** Translate the *display
   text* after the pipe; never the id. `[[work:stephen-king/the-stand|A Dança
   da Morte]]` is correct.
