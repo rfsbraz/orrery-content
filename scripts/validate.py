@@ -39,6 +39,13 @@ CRITERIA_KINDS = {
 }
 
 
+def valid_isbn13(isbn):
+    """ISBN-13 check digit (EAN-13): weights 1,3,1,3... over the first 12."""
+    digits = [int(c) for c in isbn]
+    total = sum(d * (1 if i % 2 == 0 else 3) for i, d in enumerate(digits[:12]))
+    return (10 - (total % 10)) % 10 == digits[12]
+
+
 def err(where, msg):
     ERRORS.append(f"{where}: {msg}")
 
@@ -262,8 +269,14 @@ def main():
             if ed.get("workId") not in work_ids:
                 err(loc, f"{eid}: unknown workId '{ed.get('workId')}'")
             isbn = str(ed.get("isbn13") or "")
-            if isbn and (len(isbn) != 13 or not isbn.isdigit()):
-                err(loc, f"{eid}: isbn13 '{isbn}' is not 13 digits")
+            if isbn:
+                if len(isbn) != 13 or not isbn.isdigit():
+                    err(loc, f"{eid}: isbn13 '{isbn}' is not 13 digits")
+                elif not valid_isbn13(isbn):
+                    # A bad check digit means the number is not a real ISBN -
+                    # a transcription slip or an invented one. Either way it
+                    # would send a reader to the wrong book (or nowhere).
+                    err(loc, f"{eid}: isbn13 '{isbn}' fails its check digit - not a real ISBN")
             if ed.get("format") and ed["format"] not in EDITION_FORMATS:
                 err(loc, f"{eid}: bad format '{ed.get('format')}'")
             lang = ed.get("language")
