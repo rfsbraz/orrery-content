@@ -1,0 +1,155 @@
+stage: spoiler-audit
+pass: 2
+date: 2026-07-20
+summary: >
+  Delta audit of the second pass (press-archaeology, eras, reading-orders).
+  Scope was the changed prose plus anything it could destabilise, not the full
+  wing, which passed a complete audit on the first run. Every block ruled
+  CLEAN; no rewrites, no gates added, no gates loosened. Structural fact that
+  simplified the audit: the wing carries no non-null spoilerAfter anywhere
+  (author lifeEvents, franchise events, no characters.yaml), so no existing
+  gate could be defeated by new sibling prose; the whole audit was
+  ungated-prose safety, ruled against publisher jacket copy looked up fresh,
+  not from memory. The franchise.yaml and works.yaml changes are YAML comments
+  only and never render. Validator green with only the pre-existing
+  other-franchise warnings.
+
+findings:
+  - id: palahniuk-agency-embezzlement-2018
+    file: content/authors/chuck-palahniuk.yaml
+    ruling: clean
+    basis: >
+      Court-record and financial biography only; names no book's content. The
+      closing line gestures at the late shelf without stating anything any
+      jacket withholds. spoilerAfter null is correct.
+  - id: palahniuk-spanbauer-dies-2024
+    file: content/authors/chuck-palahniuk.yaml
+    ruling: clean
+    basis: >
+      Obituary fact plus a reading of Consider This, which is nonfiction craft
+      writing with no plot to spoil. spoilerAfter null is correct.
+  - id: palahniuk-father-murdered-1999
+    file: content/authors/chuck-palahniuk.yaml
+    ruling: clean
+    basis: >
+      The amendment adds only public court outcomes (May 1999 date, 2000
+      conviction, Ring v. Arizona, the 2011 resentencing). The Lullaby framing
+      it retains ("a man who discovers he can kill people at will") was ruled
+      fine on the first pass and re-verified now against the Doubleday/Anchor
+      jacket, which itself discloses the culling song killing "whether spoken
+      or even just thought" and Streator accidentally killing with it. The
+      corrected entry stays within the first-pass ruling.
+  - id: greener-pastures-substack-2021
+    file: content/franchises/chuck-palahniuk/events.yaml
+    ruling: clean
+    basis: >
+      Publication mechanics only; states no plot of Shock Induction. Second
+      opinion detailed below. spoilerAfter null is correct.
+  - id: after-the-film (era, recut)
+    file: content/franchises/chuck-palahniuk/eras.yaml
+    ruling: clean
+    basis: >
+      Names Choke, its bestseller status (publication fact) and a critical
+      grouping. No plot of Choke stated at all.
+  - id: the-horror-trilogy (era, new)
+    file: content/franchises/chuck-palahniuk/eras.yaml
+    ruling: clean
+    basis: >
+      The father's murder is public biography already carried ungated by the
+      lifeEvent (first-pass ruling, unchanged). The "Guts" fainting readings
+      are the book's own publicity legend and are recorded in Haunted's own
+      afterword (73 faintings counted by the author), and "Guts" ran in
+      Playboy in 2004 before the book; publisher-level. Themes name premises
+      (cursed texts, hauntings), not resolutions.
+  - id: after-the-trilogy (era, new)
+    file: content/franchises/chuck-palahniuk/eras.yaml
+    ruling: clean
+    basis: >
+      Every characterisation checked against publisher copy. Rant "an oral
+      biography" is the book's own subtitle. Snuff "narrated from a waiting
+      room" is the Doubleday jacket's greenroom premise verbatim (the jacket
+      goes further, naming Mr. 72/137/600 and the possible killing). Pygmy's
+      broken English and Tell-All's gossip-column form are the books' jacket
+      hooks. "The Hell pair of Damned and Doomed": Damned's jacket opens with
+      Madison dead and in Hell; Doomed's own publisher copy names her
+      continuing "the afterlife adventure begun in Damned", so the pairing is
+      jacket-level and is in any case subseries membership, which the skill
+      classes incidental. Invisible Monsters Remix "restructured" is its
+      selling point.
+  - id: from-2015 (era, revised)
+    file: content/franchises/chuck-palahniuk/eras.yaml
+    ruling: clean
+    basis: >
+      Delta is one added sentence quoting a career statement about comics;
+      no plot. The pre-existing "goes back to his first book and continues it
+      in comics" survived the first-pass full audit and Fight Club 2's
+      existence is publisher copy on its own covers; not re-litigated.
+  - id: chuck-palahniuk/horror-trilogy (order, new)
+    file: content/franchises/chuck-palahniuk/orders.yaml
+    ruling: clean
+    basis: >
+      Rationale and both debated entries argue provenance and shelf position
+      only. No late payoff is telegraphed for any of the three novels; the
+      rationale explicitly says they are standalone stories in a shared
+      register, which is the safe framing. The father's-murder mention is the
+      same ungated public biography as above.
+  - id: chuck-palahniuk/fight-club-sequence (order, existing)
+    file: content/franchises/chuck-palahniuk/orders.yaml
+    ruling: clean
+    basis: >
+      Prose untouched by the delta; only a Dark Horse source URL appended.
+      Confirmed unchanged against main.
+  - id: franchise.yaml and works.yaml comment edits
+    ruling: clean
+    basis: YAML comments never render; confirmed the diffs touch nothing else.
+
+secondOpinion:
+  question: >
+    Does naming Greener Pastures as the Substack draft of Shock Induction
+    disclose anything about Shock Induction? (Requested by press-archaeology;
+    their ruling was no.)
+  ruling: concur, no disclosure
+  basis: >
+    Ruled against the actual Simon & Schuster jacket copy, fetched this pass.
+    The name "Greener Pastures" is ON Shock Induction's own jacket as the
+    in-book surveillance and recruitment service that drives the premise, so
+    the only substantive fact the event adds (that the draft shared its title
+    with that service) tells a browsing reader nothing the flap has not
+    already made central. The jacket also already flags that "something far
+    more sinister is occurring beneath the surface", so the old title resolves
+    no ambiguity the publisher preserved. The Substack serialisation itself is
+    publication history (incidental class), announced by Publishers Weekly in
+    2021 and told by Palahniuk himself in the This Is Horror interview the
+    event cites. One correction to the press agent's stated basis: "every
+    review" overstates it; the Publishers Weekly REVIEW of the finished book
+    does not mention the Substack origin at all. The ruling stands anyway, on
+    the jacket and the 2021 announcement, which are the sources that matter.
+
+changedProse: []
+
+forStages:
+  translation: >
+    No spoiler rewrites this pass, so the translation workload is exactly what
+    press-archaeology and eras already handed you; nothing was invalidated or
+    added by this stage. No overlay mirroring is owed to spoiler-audit.
+  wing-audit: >
+    The wing still carries zero non-null spoilerAfter boundaries; that is
+    correct for this catalogue (standalone novels, biography all public), not
+    an omission. If a future pass adds a characters.yaml or gates an event,
+    the entity-sweep rule applies from scratch.
+
+openQuestions:
+  - >
+    The eras and orders prose now names the father's murder in three ungated
+    places (lifeEvent, horror-trilogy era, horror-trilogy order rationale).
+    All within the first-pass ruling that it is public biography and jacket
+    -adjacent context for Lullaby, but if a curator ever decides to gate that
+    biography, all three sites must move together; noting it here so the
+    dependency is on record.
+  - >
+    "Doomed follows Madison after she escapes from Hell" appears in Doomed's
+    own publisher copy but NOT in our prose; if a later enrichment pass pulls
+    Doomed's blurb wholesale into a synopsis, that sentence spoils Damned's
+    ending shape. Damned's works.yaml note is outside this delta so nothing
+    was added, but the landmine is worth a curator-note if synopses are ever
+    re-enriched from publisher copy.
