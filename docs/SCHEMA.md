@@ -382,6 +382,33 @@ Each entry carries the **id** plus only the fields being translated:
   synopsis: "Uma rapariga com poderes telecinéticos vinga-se de forma catastrófica na noite do baile."
 ```
 
+### Nested lists merge by id
+
+Structures that contain a list of id-bearing items - an author's `lifeEvents`,
+a franchise's `startHere.paths` - are merged **item by item, keyed by id**. A
+translation carries only the prose fields and never restates structure
+(`workIds`, `orderId`, `fit`, dates, impact):
+
+```yaml
+# content/i18n/pt-PT/authors/agatha-christie.yaml
+- id: agatha-christie
+  bio: "..."
+  lifeEvents:
+    - id: christie-disappearance-1926
+      title: "O desaparecimento de onze dias"
+      description: "..."
+
+# content/i18n/pt-PT/franchises/stephen-king/franchise.yaml
+- id: stephen-king
+  description: "..."
+  startHere:
+    paths:
+      - id: essentials
+        title: "Os essenciais"
+        description: "..."
+        note: "..."
+```
+
 ### Rules
 
 - **Never translate an `id`, a slug, a `sources` URL, or an author name.** Only

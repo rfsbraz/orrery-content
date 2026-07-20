@@ -418,6 +418,18 @@ def main():
                 )
                 if not known:
                     err(loc, f"translation for unknown id '{eid}' ({locale})")
+                # Nested id-bearing lists (lifeEvents, startHere.paths) are
+                # merged by id, so validate their entries too.
+                for nested_key in ("lifeEvents",):
+                    for ne in e.get(nested_key) or []:
+                        if isinstance(ne, dict) and not ne.get("id"):
+                            err(loc, f"{eid}: {nested_key} entry missing id")
+                sh = e.get("startHere")
+                if isinstance(sh, dict):
+                    for np_ in sh.get("paths") or []:
+                        if isinstance(np_, dict) and not np_.get("id"):
+                            err(loc, f"{eid}: startHere path missing id")
+
                 is_work_overlay = os.path.basename(path) in ("works.yaml", "editions.yaml")
                 for field in e:
                     if field == "id":
