@@ -1,0 +1,78 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds), so the same person resolves the same everywhere.
+# Author-LIFE events live here (they follow the person); franchise-specific
+# events stay in the franchise. "Robert Jordan" is itself the pen name under
+# which James Oliver Rigney Jr. wrote The Wheel of Time; it is the canonical id
+# because it is the name the work is known by.
+id: robert-jordan
+name: Robert Jordan
+aka: ["James Oliver Rigney Jr.", "Jim Rigney"]
+born: 1948-10-17
+died: 2007-09-16
+bio: >
+  Pen name of James Oliver Rigney Jr., American author of
+  [[work:wheel-of-time/the-eye-of-the-world|The Wheel of Time]], one of the
+  defining epic fantasy sequences. Born in Charleston, South Carolina, he served
+  two tours as a helicopter gunner in Vietnam before turning to writing -
+  historical fiction, Conan pastiches, and finally the fourteen-volume secondary
+  world that occupied the last two decades of his life. He died in 2007 with the
+  series one volume from its end, leaving extensive notes from which
+  [[author:brandon-sanderson|Brandon Sanderson]] completed it.
+pseudonyms:
+  - name: Reagan O'Neal
+    note: Historical fiction; the three-book Fallon Saga (Fallon's family novels).
+  - name: Jackson O'Reilly
+    note: The western Cheyenne Raiders.
+  - name: Chang Lung
+    note: A byline used for dance and theatre criticism.
+lifeEvents:
+  - id: rj-born-1948
+    date: 1948-10-17
+    title: Born in Charleston, South Carolina
+    impact: low
+    description: >
+      Charleston stays his home for life and its cadences run under the courtly,
+      old-fashioned formality of his prose.
+    spoilerAfter: null
+    sources: [https://en.wikipedia.org/wiki/Robert_Jordan]
+  - id: rj-vietnam-1968
+    date: 1968
+    dateRange: "1968-1970"
+    title: Two tours in Vietnam as a helicopter gunner
+    impact: med
+    description: >
+      Rigney flew two tours with the U.S. Army, earning the Distinguished Flying
+      Cross, the Bronze Star with "V", and two Vietnamese Gallantry Crosses. The
+      soldier's eye - logistics, command, the weight of the men who follow an
+      order - grounds the vast battles of the later books.
+    spoilerAfter: null
+    sources: [https://en.wikipedia.org/wiki/Robert_Jordan]
+  - id: rj-amyloidosis-2006
+    date: 2006-03-23
+    title: Announces his amyloidosis diagnosis
+    impact: high
+    description: >
+      Rigney tells his readers he has been diagnosed with cardiac amyloidosis, a
+      rare blood disease, and is given a median four years. He vows publicly to
+      beat the odds and finish the series, and writes
+      [[work:wheel-of-time/knife-of-dreams|Knife of Dreams]] and much of the
+      ending against the clock. The whole franchise turns on this moment.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Robert_Jordan
+      - https://dragonmount.com/
+  - id: rj-death-2007
+    date: 2007-09-16
+    title: Dies with the series unfinished
+    impact: high
+    description: >
+      Rigney dies in Charleston at 58, the concluding volume unwritten but
+      exhaustively planned - notes, dictated scenes, and a finished ending he had
+      shared with family. Those notes make completion possible and shape every
+      page of what follows; the soul of this franchise is the gap he left and how
+      it was answered.
+    spoilerAfter: null
+    sources: [https://en.wikipedia.org/wiki/Robert_Jordan]
+sources:
+  - https://en.wikipedia.org/wiki/Robert_Jordan
+  - https://en.wikipedia.org/wiki/The_Wheel_of_Time
