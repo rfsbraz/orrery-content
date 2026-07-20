@@ -213,7 +213,11 @@ def main():
                     err(loc, f"{oid}: order references unknown work '{wid}'")
 
     # --- events: franchise, author lifeEvents, global ---
+    event_ids = set()
+
     def check_event(loc, e, allow_scope=True):
+        if e.get("id"):
+            event_ids.add(e["id"])
         if e.get("impact") not in IMPACTS:
             err(loc, f"{e.get('id','?')}: bad impact '{e.get('impact')}'")
         if allow_scope and e.get("scope") and e["scope"] not in SCOPES:
@@ -326,6 +330,7 @@ def main():
         } if os.path.exists(epath) else set()
 
     all_order_ids = {oid for ids in order_ids_by_franchise.values() for oid in ids}
+    all_era_ids = {eid for ids in era_ids_by_franchise.values() for eid in ids}
     achievement_ids = set()
 
     def check_achievements(loc, items, franchise_slug=None):
@@ -376,6 +381,73 @@ def main():
         apath = os.path.join(fdir, "achievements.yaml")
         if os.path.exists(apath):
             check_achievements(f"{fslug}/achievements.yaml", load(apath) or [], fslug)
+
+    # --- translation overlays: every id must resolve, no forbidden fields ---
+    # Never translatable anywhere: identifiers, source URLs, edition facts.
+    FORBIDDEN = {"id", "sources", "isbn13", "language", "workId"}
+    # `title` is prose almost everywhere it appears - era titles, event titles,
+    # nested lifeEvent titles, startHere path titles. The ONE exception is a
+    # work/edition title, which is edition data: it must be a real published
+    # title from editions.yaml, never an invention, or we send a reader after a
+    # book that does not exist.
+    TITLE_FORBIDDEN_IN = {"works.yaml", "editions.yaml"}
+    # `name` is a proper noun (authors, franchises, characters) EXCEPT on an
+    # order, where it is a curated label a reader reads.
+    NAME_ALLOWED_IN = {"orders.yaml"}
+    for lpath in glob.glob(os.path.join(ROOT, "content", "i18n", "*")):
+        if not os.path.isdir(lpath):
+            continue
+        locale = os.path.basename(lpath)
+        for path in glob.glob(os.path.join(lpath, "**", "*.yaml"), recursive=True):
+            loc = rel(path)
+            data = load(path)
+            if data is None:
+                continue
+            entries = data if isinstance(data, list) else [data]
+            for e in entries:
+                if not isinstance(e, dict):
+                    err(loc, "translation entry must be a mapping")
+                    continue
+                eid = e.get("id")
+                if not eid:
+                    err(loc, "translation entry missing id")
+                    continue
+                known = (
+                    eid in work_ids
+                    or eid in author_ids
+                    or eid in franchise_slugs
+                    or eid in all_order_ids
+                    or eid in character_ids
+                    or eid in event_ids
+                    or eid in all_era_ids
+                )
+                if not known:
+                    err(loc, f"translation for unknown id '{eid}' ({locale})")
+                # Nested id-bearing lists (lifeEvents, startHere.paths) are
+                # merged by id, so validate their entries too.
+                for ne in e.get("lifeEvents") or []:
+                    if isinstance(ne, dict) and not ne.get("id"):
+                        err(loc, f"{eid}: lifeEvents entry missing id")
+                sh = e.get("startHere")
+                if isinstance(sh, dict):
+                    for np_ in sh.get("paths") or []:
+                        if isinstance(np_, dict) and not np_.get("id"):
+                            err(loc, f"{eid}: startHere path missing id")
+
+                base_name = os.path.basename(path)
+                for field in e:
+                    if field == "id":
+                        continue
+                    if field in FORBIDDEN:
+                        err(loc, f"{eid}: '{field}' must never be translated")
+                    elif field == "title" and base_name in TITLE_FORBIDDEN_IN:
+                        err(
+                            loc,
+                            f"{eid}: a work's 'title' is edition data - add a published "
+                            "edition instead of translating the title",
+                        )
+                    elif field == "name" and base_name not in NAME_ALLOWED_IN:
+                        err(loc, f"{eid}: 'name' is a proper noun and is not translated here")
 
     # --- inline [[type:id|text]] references resolve everywhere ---
     for path in glob.glob(os.path.join(ROOT, "content", "**", "*.yaml"), recursive=True):
