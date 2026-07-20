@@ -45,6 +45,12 @@ Authored Claude Code skills under `.claude/skills/`, each with its own rules:
 - **`visual-metadata`** - source author portraits, franchise headers and covers with rights discipline and mandatory credits.
 - **`spoiler-audit`** - place `spoilerAfter` boundaries, preferring a rewrite that needs no boundary over a redaction.
 - **`event-resonance`** - decide which shared global events actually reached a specific author, and why. The engine gates them to the author's lifetime for free; this skill rules on the residue.
+- **`reading-orders`** - author, audit and keep honest the additional reading orders; the default publication order is derived, never hand-written.
+- **`where-to-start`** - entry paths readers actually recommend, sourced rather than invented, each naming what it costs.
+- **`eras`** - creative periods taken from critic, author or community consensus. Fewer, or none, beats coined.
+- **`editions`** - verified buyable editions: ISBN discipline, region-strict language codes, honest coverage.
+- **`translation`** - locale overlays: prose only, region-strict, with the traps that shipped green CI written down.
+- **`wing-audit`** - the final critic. The seams no single agent sees, plus the content types no other skill owns.
 
 ### Completing a whole author
 
