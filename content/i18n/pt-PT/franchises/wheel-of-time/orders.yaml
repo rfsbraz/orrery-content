@@ -1,8 +1,11 @@
 # European Portuguese (pt-PT) overlay for the additional canon orders.
-# The order `name` is never translated (validator-enforced); only the rationale
-# and the debated notes are prose.
+# An order's `name` IS translated: it is a curated label a reader picks from,
+# not a proper noun, and validate.py allows it here (NAME_ALLOWED_IN). Names are
+# kept short so they do not wrap in the order selector. "New Spring" stays in
+# English: Bertrand never published the prequel in Portugal (see editions.yaml).
 
 - id: wheel-of-time/chronological
+  name: Ordem cronológica (interna)
   rationale: >
     Ler estritamente pela cronologia interna: [[work:wheel-of-time/new-spring|New Spring]],
     que decorre cerca de vinte anos antes, vem primeiro, e só depois os catorze
@@ -13,6 +16,7 @@
     - "Ler New Spring em primeiro lugar é largamente desaconselhado a quem chega de novo: antecipa revelações sobre as personagens dos dois primeiros volumes principais. A maioria dos guias reserva a ordem cronológica para releituras."
 
 - id: wheel-of-time/recommended-integrated
+  name: Ordem de publicação com New Spring integrado
   rationale: >
     A recomendação habitual para quem começa: ler a sequência principal por
     ordem de publicação, mas encaixar [[work:wheel-of-time/new-spring|New Spring]]
