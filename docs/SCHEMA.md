@@ -409,6 +409,17 @@ translation carries only the prose fields and never restates structure
         note: "..."
 ```
 
+### Coverage
+
+`python scripts/i18n_coverage.py` reports, per locale, which prose files are
+fully covered, partial, or missing entirely. CI runs it on every PR.
+
+It exists because of a real failure: translation work was split by franchise,
+and the files belonging to **no** franchise - the shared `events/global.yaml`,
+co-author bios, character rosters - were silently skipped and shipped in
+English. Partial coverage is fine and expected; *unnoticed* coverage gaps are
+not. Check the report before declaring a locale done.
+
 ### Rules
 
 - **Never translate an `id`, a slug, a `sources` URL, or an author name.** Only
