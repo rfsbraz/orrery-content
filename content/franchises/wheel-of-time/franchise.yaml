@@ -40,6 +40,13 @@ globalEvents:
 # so the paths encode the documented answers to that debate.
 startHere:
   paths:
+    # Source: https://dragonmount.com/Books/index/ (the long-running major WoT
+    # fan site) - "The short answer is that you should begin by reading The Eye
+    # of the World", and it lists New Spring below the fourteen, not first.
+    # The spoiler rationale is sourced separately:
+    # https://www.tlbranson.com/wheel-of-time-reading-order/ - New Spring
+    # "assumes you already understand the Aes Sedai, Warders, the White Tower,
+    # and several characters the main series introduces more carefully".
     - id: just-start
       title: Just start at The Eye of the World
       description: >
@@ -55,13 +62,26 @@ startHere:
       note: >
         This is what the fandom tells every newcomer. If book one lands, the
         whole turning of the Wheel is open to you.
+    # Sourcing note (where-to-start audit): the insertion point is contested and
+    # this path used to state book five as "the common community recommendation".
+    # Both sources the order itself cites recommend LATER - after Crossroads of
+    # Twilight (book ten), near the prequel's own publication slot:
+    #   https://theshiningwalls.com/when-to-read-new-spring/
+    #     "I recommend reading New Spring after Book 10, Crossroads of Twilight."
+    #   https://www.tlbranson.com/wheel-of-time-reading-order/
+    #     "Begin with The Eye of the World, then read New Spring after
+    #      Crossroads of Twilight."
+    # The consensus claim is therefore dropped here. The ORDER still places New
+    # Spring at position six, which contradicts its own citations - flagged to
+    # the reading-orders skill rather than changed from this side.
     - id: recommended-integrated
       title: Publication order, New Spring slotted in
       description: >
         Read the main sequence in publication order but drop the prequel in
-        partway - the common community recommendation places New Spring after
-        The Fires of Heaven (book five), once you know the characters it
-        reframes.
+        partway, once you know the characters it reframes. Where exactly is
+        contested - guides place it anywhere from book five to book ten - and
+        the tradeoff runs one way: slot it early and it reframes less, slot it
+        late and it interrupts the run to the end.
       workIds: null
       orderId: wheel-of-time/recommended-integrated
       fit:

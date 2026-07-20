@@ -50,21 +50,32 @@ globalEvents:
 # citable basis (a prize, a publisher-acknowledged grouping, or the crime turn).
 startHere:
   paths:
+    # Sourcing note (where-to-start audit): the prize is a verified fact
+    # (https://pt.wikipedia.org/wiki/João_Tordo - "As Três Vidas (Quidnovi),
+    # Setembro de 2008, Prémio José Saramago 2009"). The claim that Portuguese
+    # critics recommend it as the WAY IN was NOT sourced - no Portuguese reader
+    # or critic saying "comece por aqui" could be found - so it is dropped. This
+    # path now rests on the prize, which is a fact, not on a consensus we cannot
+    # show. FLAGGED for the curator: a prize is not a reader saying "start here".
     - id: the-prizewinner
       title: Start with the prizewinner
       description: >
-        As Três Vidas is the book that made his name - the 2009 Prémio José
-        Saramago winner and, by broad Portuguese critical consensus, the natural
-        way in. Love story, family saga, and mystery in one.
+        As Três Vidas is the book that made his name - the novel that won him
+        the 2009 Prémio José Saramago. Love story, family saga, and mystery in
+        one. The cost is that the prize book is not the typical one: it is
+        warmer and more plotted than the metaphysical novels around it.
       workIds:
         - joao-tordo/as-tres-vidas
       orderId: null
       fit:
         experience: [new]
         commitment: [taste]
-      note: >
-        Basis: the Prémio José Saramago and its standing as his most-recommended
-        entry point.
+    # Source: the grouping is real and author-acknowledged. His own site, in the
+    # blurb for O Deslumbre de Cecília Fluss: "No final desta «trilogia dos
+    # lugares sem nome», iniciada com O luto de Elias Gro" (https://joaotordo.com/livros/).
+    # Publisher numbering: https://www.wook.pt/ebook/o-deslumbre-de-cecilia-fluss-trilogia-dos-lugares-sem-nome-3-joao-tordo/21591787
+    # NOT sourced: anyone recommending the trilogy as an ENTRY point. The
+    # grouping is received; using it as a door is our inference. Flagged.
     - id: island-trilogy
       title: The island trilogy
       description: >
@@ -78,7 +89,15 @@ startHere:
         experience: [new, returning]
         commitment: [arc]
       note: >
-        Basis: the publisher-numbered "Trilogia dos Lugares Sem Nome" grouping.
+        The cost is that you skip the decade of novels before it, and the
+        trilogy is the most inward Tordo there is - it shows the atmosphere
+        rather than the range.
+    # Source: his own site describes A Noite em que o Verão Acabou (2019) as a
+    # thriller ("neste thriller imparável", https://joaotordo.com/livros/); the
+    # Pilar Benamor series is carried by the publisher page for Águas Passadas
+    # (https://penguinlivros.pt/loja/companhia-das-letras/livro/aguas-passadas/)
+    # and by works.yaml, which tiers the 2019 novel as predecessor to the series.
+    # NOT sourced: anyone recommending the crime books as an entry point.
     - id: the-crime-turn
       title: The crime turn
       description: >
@@ -93,8 +112,9 @@ startHere:
         experience: [new, returning]
         commitment: [taste, arc]
       note: >
-        Basis: publisher positioning of A Noite em que o Verão Acabou as his crime
-        debut and the recurring Pilar Benamor series.
+        The cost is that this is the newest Tordo and the least like the rest of
+        him: start here and the literary novelist behind the thrillers is still
+        ahead of you.
     - id: everything
       title: Everything, in order
       description: >

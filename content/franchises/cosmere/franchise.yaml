@@ -47,6 +47,11 @@ globalEvents:
 # (see sources).
 startHere:
   paths:
+    # Source: https://www.brandonsanderson.com/pages/where-do-i-start
+    # "If you consider yourself a fantasy reader, try Mistborn: the Final Empire
+    # or The Way of Kings." Mistborn is named alongside The Way of Kings, not
+    # above it - the page's own line is "it really doesn't matter which Cosmere
+    # series you start with".
     - id: mistborn-first
       title: Start with Mistborn
       description: >
@@ -62,8 +67,14 @@ startHere:
         experience: [new]
         commitment: [taste, arc]
       note: >
-        Sanderson's own most-recommended starting point for readers who already
-        like fantasy, and the book that won him the Wheel of Time.
+        One of the two books Sanderson himself points existing fantasy readers
+        to, and the book that won him the Wheel of Time. The cost is that you
+        commit to three volumes before you have read a word of the Cosmere's
+        two flagship epics.
+    # Source: https://www.brandonsanderson.com/pages/where-do-i-start
+    # "it really doesn't matter which Cosmere series you start with, which means
+    # any of these books are good starting points" - Mistborn: the Final Empire,
+    # The Emperor's Soul, The Way of Kings, Elantris, Warbreaker.
     - id: stormlight-first
       title: Straight into the Stormlight Archive
       description: >
@@ -77,31 +88,44 @@ startHere:
         experience: [new, returning]
         commitment: [arc, complete]
       note: >
-        One of Sanderson's five listed "any of these is a fine start" entry points.
-        Start here only if long books do not scare you.
+        One of Sanderson's five listed "any of these is a fine start" entry
+        points. Start here only if long books do not scare you, and knowing the
+        series is unfinished: you are joining a story that has no ending yet.
+    # Source: https://www.brandonsanderson.com/pages/where-do-i-start
+    # The Emperor's Soul, Elantris and Warbreaker are all on Sanderson's list of
+    # five good starting points; Elantris is named a second time, as the on-ramp
+    # for readers who do not usually read fantasy ("If you don't typically read
+    # fantasy, try Steelheart or Elantris"). Tress is NOT on that page - it is
+    # kept here as a low-commitment standalone, not as the author's advice.
     - id: standalones-first
       title: Test the water with a standalone
       description: >
         The lowest-commitment way in - a single beautiful book you can judge the
-        author by before signing up for a series. Try the whimsical Tress, the
-        Hugo-winning Emperor's Soul, or the romance-flavoured Warbreaker.
+        author by before signing up for a series. Try the Hugo-winning Emperor's
+        Soul, the romance-flavoured Warbreaker, or Elantris, the one Sanderson
+        hands to people who do not usually read fantasy.
       workIds:
-        - cosmere/tress-of-the-emerald-sea
         - cosmere/the-emperors-soul
         - cosmere/warbreaker
+        - cosmere/elantris
+        - cosmere/tress-of-the-emerald-sea
       orderId: null
       fit:
         experience: [new]
         commitment: [taste]
       note: >
-        Sanderson explicitly names The Emperor's Soul and Warbreaker as valid
-        first books; Tress is the gentlest modern entry.
+        These are three of the five books Sanderson names as fine places to
+        begin. The cost is that a standalone shows you the writer but not the
+        universe - the connections that make the Cosmere the Cosmere only start
+        to light up across series.
     - id: everything-in-order
       title: The whole Cosmere, in publication order
       description: >
         All of it, in the order it was written - you watch the universe assemble
         itself and the connections light up as they did for readers in real time.
-        The aura layer is built for exactly this walk.
+        The aura layer is built for exactly this walk. The cost is real: you
+        read the early Elantris and Mistborn books before Sanderson was the
+        writer the later ones are by.
       workIds: null
       orderId: default
       fit:
