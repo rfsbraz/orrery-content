@@ -258,11 +258,23 @@ openQuestions:
     I am reporting 26 verified because I did verify 26 by the standard I
     applied; I am not claiming that standard is exhaustive.
   - >
-    THE HAUNTED CASE GENERALISES and someone should check the other wings for
-    it. OpenLibrary's work-level cover_i for Haunted is a SPANISH jacket, even
-    though the work record is the English novel and English editions with covers
-    exist. Path A (the representative work cover) is therefore not
-    language-safe, which the skill does not currently warn about - it warns
-    about ISBN lookups crossing pt-BR into pt-PT, but this failure came through
-    the work-level route instead. Any wing built with Path A alone may be
-    carrying wrong-language jackets nobody looked at.
+    OPENLIBRARY IS NOT LANGUAGE-SAFE AT EITHER LEVEL. This is the sharpest
+    finding of the run and it should probably go into the skill itself. The
+    skill currently warns about ONE route: ISBN lookups crossing pt-BR into
+    pt-PT via the merged work record. Two independent instances this run show
+    the problem is a level up from that.
+    (a) MINE, via the work-level route: OpenLibrary's representative cover_i for
+    Haunted is the SPANISH "Fantasmas" jacket, even though the work record is
+    the English novel and English Doubleday editions with covers exist. Path A
+    inherits the language of whichever edition OL happens to promote, which is
+    arbitrary.
+    (b) THE EDITIONS AGENT'S, via the edition route on this same author:
+    OpenLibrary attaches "Clube da Luta" and "Sobrevivente" to the Portuguese
+    edition records, and both are pt-BR rather than pt-PT.
+    So neither route carries a language guarantee, and checking the ISBN prefix
+    only defends the one the skill already names. The general rule that covers
+    both: a cover's language must be verified against the EDITION it actually
+    came from, never inferred from the work record - and for Path A that means
+    opening the image, because the work record will not tell you. Any wing built
+    with Path A alone may be carrying wrong-language jackets nobody looked at,
+    and the next Lusophone author is where this will hurt.
