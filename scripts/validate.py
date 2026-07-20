@@ -330,6 +330,7 @@ def main():
         } if os.path.exists(epath) else set()
 
     all_order_ids = {oid for ids in order_ids_by_franchise.values() for oid in ids}
+    all_era_ids = {eid for ids in era_ids_by_franchise.values() for eid in ids}
     achievement_ids = set()
 
     def check_achievements(loc, items, franchise_slug=None):
@@ -382,7 +383,12 @@ def main():
             check_achievements(f"{fslug}/achievements.yaml", load(apath) or [], fslug)
 
     # --- translation overlays: every id must resolve, no forbidden fields ---
-    FORBIDDEN = {"id", "title", "sources", "isbn13", "language", "workId", "name"}
+    # Never translatable anywhere: identifiers, source URLs, edition facts.
+    FORBIDDEN = {"id", "sources", "isbn13", "language", "workId"}
+    # A WORK's title is edition data (it must be a real published title, never
+    # an invention), so it is banned in work overlays specifically. Era and
+    # event titles are ordinary prose and SHOULD be translated.
+    FORBIDDEN_IN_WORKS = {"title", "name"}
     for lpath in glob.glob(os.path.join(ROOT, "content", "i18n", "*")):
         if not os.path.isdir(lpath):
             continue
@@ -408,12 +414,22 @@ def main():
                     or eid in all_order_ids
                     or eid in character_ids
                     or eid in event_ids
+                    or eid in all_era_ids
                 )
                 if not known:
                     err(loc, f"translation for unknown id '{eid}' ({locale})")
+                is_work_overlay = os.path.basename(path) in ("works.yaml", "editions.yaml")
                 for field in e:
-                    if field != "id" and field in FORBIDDEN:
+                    if field == "id":
+                        continue
+                    if field in FORBIDDEN:
                         err(loc, f"{eid}: '{field}' must never be translated")
+                    elif is_work_overlay and field in FORBIDDEN_IN_WORKS:
+                        err(
+                            loc,
+                            f"{eid}: a work's '{field}' is edition data - add a published "
+                            "edition instead of translating the title",
+                        )
 
     # --- inline [[type:id|text]] references resolve everywhere ---
     for path in glob.glob(os.path.join(ROOT, "content", "**", "*.yaml"), recursive=True):
