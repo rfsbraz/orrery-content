@@ -474,6 +474,45 @@ def main():
             elif t == "franchise" and rid not in franchise_slugs:
                 err(rel(path), f"inline [[franchise:{rid}]] does not resolve")
 
+    # --- spoilerAfter must sit somewhere the app can actually honour it ---
+    #
+    # The app reads spoilerAfter on events (franchise, global, author lifeEvents)
+    # and on character appearances. Nowhere else. A boundary written onto a work,
+    # an order, an era or a startHere path is accepted by YAML, reads like
+    # protection, and does nothing at all.
+    #
+    # That is the dangerous case: an agent gates a synopsis, sees a green build,
+    # records the spoiler as contained, and ships it in the clear. CI ends up
+    # confirming the wrong belief. So a boundary the engine cannot honour is an
+    # error, not a harmless extra field. Loud beats silent when the failure mode
+    # is a spoiler a reader cannot un-read.
+    def scan_unhonoured(loc, node, path="", inside_event=False):
+        if isinstance(node, dict):
+            here = path.split(".")[-1]
+            # Events are dicts carrying `impact`; appearances carry `workId`.
+            honours = inside_event or "impact" in node or "workId" in node
+            if "spoilerAfter" in node and not honours:
+                where = node.get("id") or node.get("slug") or path or "root"
+                err(
+                    loc,
+                    f"{where}: spoilerAfter is not honoured by the app here "
+                    f"(only events, author lifeEvents and character appearances "
+                    f"support it) - rewrite the prose instead",
+                )
+            for k, v in node.items():
+                child_event = k in {"events", "lifeEvents", "appearsIn"}
+                scan_unhonoured(loc, v, f"{path}.{k}" if path else k, child_event)
+        elif isinstance(node, list):
+            for i, v in enumerate(node):
+                scan_unhonoured(loc, v, f"{path}[{i}]", inside_event)
+
+    for path in glob.glob(os.path.join(ROOT, "content", "**", "*.yaml"), recursive=True):
+        data = load(path)
+        base = os.path.basename(path)
+        # Top-level lists in events.yaml / global.yaml are events themselves.
+        top_is_event = base in {"events.yaml", "global.yaml", "characters.yaml"}
+        scan_unhonoured(rel(path), data, "", top_is_event)
+
     if ERRORS:
         print(f"FAILED - {len(ERRORS)} error(s):\n")
         for e in ERRORS:
