@@ -39,6 +39,29 @@ CRITERIA_KINDS = {
 }
 
 
+IMAGE_FIELDS = {"portrait", "header", "cover"}
+
+
+def check_images(loc, entity_id, images):
+    """Images are URLs (never committed binaries) and must carry a credit."""
+    if not images:
+        return
+    if not isinstance(images, dict):
+        err(loc, f"{entity_id}: images must be a mapping")
+        return
+    for key, value in images.items():
+        base = key.replace("Credit", "").replace("Source", "")
+        if base not in IMAGE_FIELDS:
+            err(loc, f"{entity_id}: unknown image field '{key}' (known: {sorted(IMAGE_FIELDS)})")
+            continue
+        if key == base:
+            if not str(value).startswith("http"):
+                err(loc, f"{entity_id}: image '{key}' must be a URL (never commit binaries)")
+            # Rights discipline: an image without a credit cannot be published.
+            if not images.get(base + "Credit"):
+                err(loc, f"{entity_id}: image '{key}' has no '{base}Credit'")
+
+
 def valid_isbn13(isbn):
     """ISBN-13 check digit (EAN-13): weights 1,3,1,3... over the first 12."""
     digits = [int(c) for c in isbn]
@@ -74,6 +97,7 @@ def main():
             err(rel(path), "author missing id")
         else:
             author_ids.add(a["id"])
+        check_images(rel(path), a.get("id", "?"), a.get("images"))
 
     # --- works (per franchise) ---
     work_ids = set()
@@ -105,6 +129,7 @@ def main():
                     err(loc, f"{wid}: unknown withAuthorId '{aid}'")
             if w.get("canonTier") not in {"core", "extended", "apocrypha"}:
                 err(loc, f"{wid}: bad canonTier '{w.get('canonTier')}'")
+            check_images(loc, wid, w.get("images"))
 
     # --- work connections (second pass: all work ids known) ---
     for fdir in franchise_dirs:
@@ -139,6 +164,7 @@ def main():
         for aid in fr.get("authorIds", []):
             if aid not in author_ids:
                 err(loc, f"unknown authorId '{aid}'")
+        check_images(loc, fslug, fr.get("images"))
         for k, v in (fr.get("features") or {}).items():
             if k not in FEATURE_KEYS:
                 err(loc, f"unknown feature key '{k}' (known: {sorted(FEATURE_KEYS)})")
