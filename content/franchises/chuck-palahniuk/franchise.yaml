@@ -74,15 +74,33 @@ globalEvents:
 
 # "Where to start" - powers the guided wizard.
 #
-# SOURCING, stated plainly: no author-published entry advice exists for
-# Palahniuk, and no community guide with any standing was found recommending a
-# starting point. So these paths rest on facts rather than on a consensus this
-# research cannot show, and each says which fact. Flagged for the curator in the
-# same terms as the audited Stephen King and Joao Tordo files.
+# SOURCING, stated plainly and unchanged by the where-to-start stage: no
+# author-published entry advice exists for Palahniuk, and no community guide
+# with any standing was found recommending a starting point. Searching could not
+# be extended this run (the session's search budget was spent before this stage
+# began), so nothing below has been promoted to SOURCED. Each path still rests
+# on a stated fact rather than on a consensus this repo can show, in the same
+# terms as the audited Stephen King and Joao Tordo files.
+#
+# THE FAMOUS-BOOK RULING, since this author is the case the check exists for.
+# The answer here is that the trap does NOT apply, which is worth writing down
+# because it usually does. Fight Club is not an atypical masterpiece, not a
+# late-career book assuming earlier ones, and not the visible first draft of a
+# writer who found himself later: it is short, it is first, and it is the purest
+# example of the things he does everywhere else (a damaged first-person
+# narrator, chapters built to be read aloud, a chorus line repeated until it
+# turns). The honest cost is not that the book is a bad door, it is that the
+# film is standing in the doorway. So the path keeps the famous book and spends
+# its prose on the film rather than steering the reader away from it.
+#
+# Four paths kept, none added, none removed. The changes this stage made are
+# recorded in .orrery/chuck-palahniuk/where-to-start.yaml.
 startHere:
   paths:
     # Basis: a fact, not a recommendation. It is his debut, the book the film
     # was made from, and by a wide margin the one readers arrive through.
+    # Verdict: REAL BUT UNSOURCED. "Start with Fight Club" is advice anyone who
+    # reads him would recognise, and no citable page for it was reached.
     - id: fight-club-first
       title: Start where everyone starts
       description: >
@@ -98,6 +116,14 @@ startHere:
         experience: [new]
         commitment: [taste]
     # Basis: the publisher's own numbering of the sequels (Dark Horse).
+    # Verdict: UNSOURCED as entry advice - nobody was found recommending the
+    # comics thread as a way INTO Palahniuk, and the order it points at is a
+    # thread filter this repo assembled rather than a received sequence. Kept,
+    # but narrowed to returning readers: sending someone who has read nothing
+    # into two comics is not a defensible first recommendation, and the order's
+    # own `debated` field says the comics' place beside the novel is a real
+    # question. If the curator moves the comics to extended, this path should go
+    # with the order.
     - id: fight-club-thread
       title: The whole Fight Club thread
       description: >
@@ -107,20 +133,26 @@ startHere:
       workIds: null
       orderId: chuck-palahniuk/fight-club-sequence
       fit:
-        experience: [new, returning]
+        experience: [returning]
         commitment: [arc]
       note: >
         The cost is a medium change halfway through: books two and three are
-        comics, drawn by Cameron Stewart, and read nothing like the novel.
+        comics, drawn by Cameron Stewart, and read nothing like the novel. They
+        also divide his readers far more sharply than anything else here.
     # Basis: a fact about the shelf. Three novels exist that were written before
     # the film reframed him, and they are the only ones that can be read without
-    # it. The era boundary they sit in is sourced.
+    # it. The era boundary they sit in is the one sourced era in eras.yaml.
+    # Verdict: UNSOURCED as a recommendation, but the grouping underneath it is
+    # a publishing fact rather than a taste. Strongest path in the set.
     - id: before-the-film
       title: Before the film
       description: >
         The three novels published while nobody was watching: Fight Club,
         Survivor and Invisible Monsters. The voice is already complete, the
         readership was not, and none of them were written by a famous person.
+        The cost is three books before you know whether you like him, and a
+        stopping point just before the formal experiments some readers think are
+        the real range.
       workIds:
         - chuck-palahniuk/fight-club
         - chuck-palahniuk/survivor
@@ -129,12 +161,16 @@ startHere:
       fit:
         experience: [new, returning]
         commitment: [taste]
+    # The completionist path. Points at the derived publication order.
     - id: everything
       title: Everything, in order
       description: >
         Three decades in publication order: the pre-film novels, the yearly run
         the film paid for, the formal experiments, the nonfiction, and the
-        return to Fight Club in comics.
+        return to Fight Club in comics. The cost is that the walk is not all
+        novels, since colouring books and comics take their own numbered slots
+        in it, and the post-film run is uneven in a way a curated few books
+        would hide from you.
       workIds: null
       orderId: default
       fit:

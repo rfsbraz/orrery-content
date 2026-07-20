@@ -1,0 +1,123 @@
+stage: where-to-start
+summary: >
+  Reviewed stage 1's four paths rather than rewriting them. Four in, four out,
+  no path added or deleted and no id changed. Two paths gained the cost clause
+  they were missing, one was narrowed from newcomers to returning readers, and
+  the famous-book ruling this author exists to test is now written down in the
+  file. No path was promoted to SOURCED, because no new source could be reached.
+
+produced:
+  file: content/franchises/chuck-palahniuk/franchise.yaml
+  block: startHere
+  paths:
+    - id: fight-club-first
+      verdict: REAL BUT UNSOURCED
+      points_at: "workIds: [chuck-palahniuk/fight-club]"
+      fit: "experience [new], commitment [taste]"
+      cost: "his most famous rather than his most typical, met through the film"
+      changed: none
+    - id: fight-club-thread
+      verdict: UNSOURCED as entry advice
+      points_at: "orderId: chuck-palahniuk/fight-club-sequence (exists, 3 works)"
+      fit: "experience [returning], commitment [arc]"
+      cost: "a medium change halfway through, and the two comics divide his readers"
+      changed: >
+        Dropped `new` from experience, and extended the note. A first-time
+        reader answering new+arc was being sent into two comics as their
+        introduction to Palahniuk, which no source recommends and which the
+        order's own `debated` field argues against.
+    - id: before-the-film
+      verdict: UNSOURCED as a recommendation, but built on a publishing fact
+      points_at: "workIds: fight-club, survivor, invisible-monsters"
+      fit: "experience [new, returning], commitment [taste]"
+      cost: "three books before you know if you like him, and it stops short of the formal experiments"
+      changed: "Added the cost clause; there was none."
+    - id: everything
+      verdict: "n/a - the completionist path, points at the derived default order"
+      points_at: "orderId: default"
+      fit: "experience [returning, completionist], commitment [complete]"
+      cost: "colouring books and comics take numbered slots in the walk, and the post-film run is uneven"
+      changed: "Added the cost clause; there was none."
+  famousBookRuling: >
+    The trap does not apply here, and that is worth recording because it usually
+    does. Fight Club is not an atypical masterpiece, not a late-career book
+    leaning on earlier ones, and not a visible first draft: it is short, it is
+    first, and it is the purest instance of what he does everywhere else. The
+    cost is not that the book is a bad door, it is that the film stands in the
+    doorway. So the path keeps the famous book and spends its prose on the film
+    rather than steering the reader off it.
+  resolution:
+    allWorkIdsResolve: true
+    allOrderIdsResolve: true
+    ordersReferenced: [chuck-palahniuk/fight-club-sequence, default]
+    noReferenceToUnwrittenOrders: >
+      Confirmed. Stage 3 was skipped this run, so orders.yaml still holds only
+      the single order stage 1 wrote, and no path points anywhere else.
+    completionistPathPresent: true
+    contradictionWithOrderRationale: >
+      None found. Read the fight-club-sequence rationale and both `debated`
+      entries; the narrowed path now agrees with them instead of quietly
+      flattening the comics question.
+
+verified:
+  method: >
+    Repo-only, and this is the honest limit of the stage. WebSearch was
+    exhausted for the session and no fetch was attempted, so stage 1's finding
+    that no received Palahniuk entry recommendation exists could be neither
+    confirmed nor overturned. Nothing was promoted to SOURCED on feel.
+  validator: "green - 328 works, 18 authors, 20 characters, 11 achievements, all references resolve"
+  warnings: "9, all pre-existing era-coverage warnings in Christie, Tordo, King and Wheel of Time. None in this wing."
+  i18n: "52/58 before and after. This wing has no pt-PT overlay at all, so there was nothing to keep in sync."
+  spoilerRead: >
+    Re-read all four paths as someone who has read nothing. The one line worth a
+    second opinion is "does not end the way the film does" on fight-club-first:
+    it discloses neither ending, but it does tell a reader who has seen the film
+    to expect a different one. Kept, because it is the single most useful thing
+    to tell that reader and because withholding it makes the wizard less honest
+    than a back cover. Flagging it for spoiler-audit rather than deciding it
+    alone.
+
+forStages:
+  spoiler-audit: >
+    startHere is ungated and in your scope. One line to adjudicate, above. The
+    three work titles exposed in workIds (Fight Club, Survivor, Invisible
+    Monsters) reveal nothing on their own.
+  translation: >
+    Path prose changed on three of four paths (fight-club-thread note,
+    before-the-film description, everything description), so translate from the
+    current file rather than any cached copy. Overlays carry title, description
+    and note ONLY - never workIds, orderId or fit. Path count unchanged at four,
+    ids unchanged and permanent.
+  wing-audit: >
+    Every path is UNSOURCED or REAL BUT UNSOURCED, none SOURCED. That is the
+    same standing as the audited King file, and it is the wing's weakest content
+    claim. A single citable Palahniuk entry recommendation would upgrade
+    fight-club-first and is the highest-value thing a search-enabled run could
+    find here.
+  reading-orders: >
+    If you ever add a second order, note that fight-club-thread is the only path
+    pointing at a non-default order and it is deliberately returning-only.
+
+openQuestions:
+  - >
+    THE WEAKEST DECISION in this half: keeping fight-club-thread at all. Its
+    basis is a publisher's numbering, which is a fact about the books and not a
+    recommendation about where to start, and I could not find anyone proposing
+    the thread as an entry route. I narrowed it instead of deleting it because
+    removing a path changes what a reader is told and the skill reserves that
+    for the curator. The clean alternative is a three-path wizard, and I would
+    not argue against it. It is also the path most likely to be deleted by
+    something else: if the curator tiers the two comics as extended, the order
+    goes and this path goes with it.
+  - >
+    NO PATH IS SOURCED. Stage 1 said no received entry advice for Palahniuk
+    exists; I could not test that this run. So the wizard currently reports four
+    facts about the shelf rather than a consensus, which is one tier below what
+    the skill asks for. It is stated in the file's comments rather than hidden.
+  - >
+    THE FIT MATRIX now leaves new+arc uncovered, deliberately, after narrowing
+    fight-club-thread. A newcomer wanting one continuous thread falls back to
+    before-the-film, which is three standalone novels rather than an arc. That
+    is a slightly wrong answer to a rare question, and I preferred it to a
+    confident wrong answer sending a first-time reader into comics. Both
+    high-traffic cells (new+taste, completionist+complete) are covered.
