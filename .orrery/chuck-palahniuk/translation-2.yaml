@@ -1,0 +1,77 @@
+stage: translation
+locale: pt-PT
+pass: 2
+date: 2026-07-20
+summary: >
+  Closed the translation delta from the second pass on the Palahniuk wing.
+  Coverage went 54/58 to 58/58 (the four partial files were exactly this
+  wing's). New prose translated: two eras (the-horror-trilogy,
+  after-the-trilogy: title + description), one franchise event
+  (greener-pastures-substack-2021: title + description), two lifeEvents
+  (palahniuk-agency-embezzlement-2018, palahniuk-spanbauer-dies-2024:
+  title + description), one order (chuck-palahniuk/horror-trilogy: name,
+  rationale, both debated entries). Stale prose re-synced against the new
+  base: after-the-film (description rewritten for the recut 2000-2001 span;
+  the old Portuguese described the whole 2000-2014 stretch),
+  from-2015 (description gained the translated May 2015 author quote),
+  palahniuk-father-murdered-1999 (May 1999 dates, the 2000 conviction and
+  the 2011 resentencing to consecutive life terms added; the old Portuguese
+  stopped at death row). Also added translated `themes` to all five eras in
+  this wing's overlay: the translation skill classes era themes as prose and
+  records untranslated themes as a shipped bug, and the joao-tordo overlay
+  already carries them; the coverage script does not count them either way.
+  Published pt-PT titles used where they exist (Clube de Combate, Asfixia,
+  Lullaby canção de embalar, Diário, Monstros invisíveis); every other title
+  left in English per editions.yaml, and the overlay headers list them.
+
+produced:
+  files:
+    - content/i18n/pt-PT/franchises/chuck-palahniuk/eras.yaml
+    - content/i18n/pt-PT/franchises/chuck-palahniuk/events.yaml
+    - content/i18n/pt-PT/franchises/chuck-palahniuk/orders.yaml
+    - content/i18n/pt-PT/authors/chuck-palahniuk.yaml
+  coverageBefore: "pt-PT 54/58"
+  coverageAfter: "pt-PT 58/58 complete"
+  validator: green (only pre-existing other-franchise warnings)
+  registerChecks: >
+    Grepped every added line for estar-auxiliary + gerund (none; the one
+    adverbial gerund, "reconhecendo", is correct pt-PT), for pt-BR vocabulary
+    (none), for structural keys leaking into the overlay (none), and for em
+    dashes (none).
+
+registerCalls:
+  - >
+    The from-2015 Palahniuk quote ("Comics will also become a lasting aspect
+    of my output") was translated into Portuguese without retaining the
+    English original, per standard Portuguese press practice for quotations;
+    the original survives in the base text and its source. If house judgement
+    prefers the gloss form, only that sentence needs revisiting.
+  - >
+    Era title "The Horror Trilogy" rendered literally as "A Trilogia do
+    Terror" (and the order as "A trilogia do terror"), keeping "trilogia"
+    even though two nonfiction books sit inside the era by year-arithmetic;
+    the eras handoff floated "the horror years" as a pt-PT softening but the
+    description already discloses the fit cost, so the received label was
+    kept.
+  - >
+    Legal phrasing chosen for pt-PT: "desfalque" (not "peculato", which is
+    for public office), "declarou-se culpado", "entrou em insolvência" (not
+    "falência"), "contabilista" (not BR "contador"), "homicídios
+    qualificados" for first-degree murder (kept from the existing overlay),
+    "prisão perpétua ... sem possibilidade de liberdade condicional" for life
+    without parole, "corredor da morte" for death row.
+
+openQuestions:
+  - >
+    The stephen-king eras overlay still carries no translated `themes`, so
+    that wing's era plates show English theme chips under Portuguese titles
+    (the exact failure the translation skill records). Out of this wing's
+    work order, so not touched here; a small dedicated pass on
+    content/i18n/pt-PT/franchises/stephen-king/eras.yaml would close it.
+  - >
+    Rendered-page verification was not possible from this environment (no
+    running app instance in the worktree); the gate here is the coverage
+    script, the validator, and the diff-level register checks. The skill's
+    live-sweep of the wing in pt-PT (era plates, the two new lifeEvents, the
+    Substack event, the new order page) should happen at the next deploy
+    check.
