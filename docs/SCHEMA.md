@@ -85,6 +85,40 @@ startHere:                      # optional; powers the wizard (see below)
 sources: [https://...]
 ```
 
+### globalEvents: which shared events reach this author
+
+Optional, on `franchise.yaml`. `reach: global` means "any franchise **could**
+carry this", not "every franchise must".
+
+By default the app filters global events to the span of the authors' lifetimes:
+an event is the weather a writer wrote in, and nobody wrote in weather that
+predates them. A dead author's window closes at death; where a franchise has
+several authors it stays open while any of them is living. That default is
+arithmetic and needs no curation.
+
+This block is the judgement on top:
+
+```yaml
+globalEvents:
+  exclude:
+    - financial-crisis-2008          # lived through it; no book answers it
+  include:
+    - fantasy-paperback-boom-1965    # predates him; created the category he writes in
+```
+
+- **`exclude`** - overlaps the lifetime but never reached the page. The bar is
+  low: an absent event costs a reader nothing, while a page of events that mean
+  nothing to this author teaches them the aura is decoration.
+- **`include`** - outside the lifetime, but the author demonstrably writes out of
+  it. The bar is high, because it overrides a defensible default.
+
+The judgement lives here rather than in `global.yaml` so that the shared file
+stays franchise-agnostic. The `event-resonance` skill owns these decisions.
+
+> This existed because of a real defect: João Tordo, born 1975, opened his page
+> in **1910** and walked the reader through both world wars before his first
+> novel in 2004.
+
 ### startHere: the "where to start" configuration
 
 The wizard is content-driven: the franchise declares *paths* (curated entry
@@ -160,6 +194,8 @@ sources: [https://...]
   canonTier: core                # core | extended | apocrypha
   publishedAs: "Richard Bachman" # optional; only when the cover name differs
   withAuthorIds: [peter-straub]  # optional collaborators (global author ids)
+  authorRole: author             # author | co-author | contributor | editor
+  contributionTitle: "The Reach" # optional; the piece contributed, if not the whole book
   synopsis: >
     Spoiler-free premise. May use [[work:...|links]].
   connections:                   # optional; work-to-work links (crossovers,
@@ -170,6 +206,46 @@ sources: [https://...]
     wikidata: null
   sources: [https://...]
 ```
+
+### authorRole and canonTier: what belongs in a wing
+
+`authorRole` defaults to `author` and only needs stating when it is something
+else. It exists so a wing can hold **honest completionist data without making a
+false claim**. A 2009 vampire anthology containing one story by this author is
+real and a completionist wants to know about it, but it is not a book they wrote:
+
+```yaml
+- id: joao-tordo/contos-de-vampiros
+  title: "Contos de Vampiros"
+  authorIds: [joao-tordo]
+  authorRole: contributor
+  contributionTitle: "A Casa em Sintra"
+  canonTier: apocrypha
+```
+
+The same applies to a book where the author wrote only an introduction
+(`contributor`) or assembled the volume (`editor`).
+
+**`canonTier` is the reading spine, not a quality judgement.**
+
+| Tier | Meaning |
+|---|---|
+| `core` | the works the franchise *is*; the default walk |
+| `extended` | genuinely theirs, off the spine (nonfiction, minor collections) |
+| `apocrypha` | contributions, limited or unfinished works, periodical pieces |
+
+Tier records the **kind of publication, never the researcher's confidence**.
+Uncertainty belongs in a `note:` or `confidence:`, and a work parked in
+`extended` because nobody verified it is a bug: it tells every downstream reader
+something false about the book's status. The João Tordo audit found five novels
+sitting in `extended` for exactly that reason.
+
+> **Known limitation, do not rely on tier to hide anything.** The app currently
+> treats `canonTier` as a **display label only**. It filters nothing, so an
+> `apocrypha` work still appears in the strata walk and still takes a numbered
+> position in the derived publication order. Until the app honours the tier,
+> adding contributor entries to a wing changes that wing's default reading order.
+> Weigh that before bulk-adding anthologies.
 
 `connections` is **directional but rendered both ways**: declare the connection
 on the *later* work pointing back at the earlier one (the later work is the one
@@ -475,13 +551,39 @@ Only reference images you can justify:
 - **Wikimedia Commons / Wikipedia** - check the file's licence; most are CC BY,
   CC BY-SA, or public domain. **Record the licence and the author in
   `*Credit`.** This is the best source for author portraits.
-- **OpenLibrary covers** - fine to hot-link; credit OpenLibrary.
+- **OpenLibrary covers** - fine to hot-link; credit OpenLibrary. **But see the
+  laundering rule below: OpenLibrary is a permitted host, not a blanket
+  permission for whatever it happens to be hosting.**
 - **Publisher press/media pages** - usually permitted for editorial use;
   cite the page in `*Source`.
 - **Never** scrape a retailer's jacket image, never take an image with no
   discoverable licence, and never link something behind a paywall or hotlink
   ban. If you cannot establish the rights, **leave the field empty** - the app
   degrades to typographic covers and text headers by design.
+
+**The rule is about the asset, not the hostname.** A retailer's jacket scan does
+not become usable by being uploaded to a permitted host. The João Tordo visual
+pass found that **4 of the 6 OpenLibrary covers available for that author were
+retailer scrapes with Bertrand and WOOK watermarks burned into the pixels** - so
+"it came from OpenLibrary" and "it is a retailer jacket" were true of the same
+file. Where the two rules point in opposite directions, **the retailer rule
+wins and the slot stays empty.**
+
+Two checks follow from this, and both are mandatory before writing a cover URL:
+
+- **Look at the image.** A watermark passes every HTTP check ever written. No
+  automated test substitutes for opening it.
+- **Pass `?default=false`** on OpenLibrary lookups. Without it OpenLibrary
+  returns HTTP 200 with a blank placeholder, so a naive check reports success on
+  books it holds nothing for. A recorded URL that renders nothing is worse than
+  an empty slot, because it looks like coverage.
+
+**Expect low coverage outside the anglophone canon, and do not pad it.** For a
+Portuguese literary novelist, roughly 20% is the realistic ceiling from open
+sources. There, the typographic fallback is not a degraded path, it is the
+primary rendering. The highest-leverage fix is licensing rather than sourcing:
+for most non-English catalogues a single national publisher holds the entire
+backlist, and one editorial-use agreement covers all of it.
 
 ## theme.yaml
 
