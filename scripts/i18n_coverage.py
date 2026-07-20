@@ -36,15 +36,34 @@ def load(path):
 
 
 def count(path, fields):
+    """Count prose-bearing entries, including NESTED prose.
+
+    Nested lists (an author's lifeEvents, a franchise's startHere paths) are
+    real reader-facing prose. Counting only top-level fields reported a locale
+    as complete while five franchises still had English startHere paths, which
+    is exactly the blindness this script exists to prevent.
+    """
     data = load(path)
     if data is None:
         return 0
     items = data if isinstance(data, list) else [data]
     if isinstance(data, dict) and "events" in data:
         items = data["events"]
-    return sum(
-        1 for i in items if isinstance(i, dict) and any(i.get(f) for f in fields)
-    )
+    n = 0
+    for i in items:
+        if not isinstance(i, dict):
+            continue
+        if any(i.get(f) for f in fields):
+            n += 1
+        for nested in (i.get("lifeEvents") or []):
+            if isinstance(nested, dict) and (nested.get("title") or nested.get("description")):
+                n += 1
+        sh = i.get("startHere")
+        if isinstance(sh, dict):
+            for path_ in (sh.get("paths") or []):
+                if isinstance(path_, dict) and (path_.get("title") or path_.get("description")):
+                    n += 1
+    return n
 
 
 def main():
