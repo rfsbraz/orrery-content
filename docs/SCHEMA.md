@@ -85,6 +85,40 @@ startHere:                      # optional; powers the wizard (see below)
 sources: [https://...]
 ```
 
+### globalEvents: which shared events reach this author
+
+Optional, on `franchise.yaml`. `reach: global` means "any franchise **could**
+carry this", not "every franchise must".
+
+By default the app filters global events to the span of the authors' lifetimes:
+an event is the weather a writer wrote in, and nobody wrote in weather that
+predates them. A dead author's window closes at death; where a franchise has
+several authors it stays open while any of them is living. That default is
+arithmetic and needs no curation.
+
+This block is the judgement on top:
+
+```yaml
+globalEvents:
+  exclude:
+    - financial-crisis-2008          # lived through it; no book answers it
+  include:
+    - fantasy-paperback-boom-1965    # predates him; created the category he writes in
+```
+
+- **`exclude`** - overlaps the lifetime but never reached the page. The bar is
+  low: an absent event costs a reader nothing, while a page of events that mean
+  nothing to this author teaches them the aura is decoration.
+- **`include`** - outside the lifetime, but the author demonstrably writes out of
+  it. The bar is high, because it overrides a defensible default.
+
+The judgement lives here rather than in `global.yaml` so that the shared file
+stays franchise-agnostic. The `event-resonance` skill owns these decisions.
+
+> This existed because of a real defect: João Tordo, born 1975, opened his page
+> in **1910** and walked the reader through both world wars before his first
+> novel in 2004.
+
 ### startHere: the "where to start" configuration
 
 The wizard is content-driven: the franchise declares *paths* (curated entry
