@@ -22,6 +22,12 @@ WARNINGS = []
 INLINE_REF = re.compile(r"\[\[(?P<type>work|author|franchise|character):(?P<id>[^\]|]+)(?:\|[^\]]*)?\]\]")
 ORDER_TYPES = {"chronological-inuniverse", "author-recommended", "curated", "community", "official-publication"}
 IMPACTS = {"low", "med", "high"}
+# Theme values the APP actually implements. A wing may name anything it likes
+# here and the app will silently substitute its default - so a wing can ship a
+# look nobody chose and every check stays green. Keep in sync with the orrery
+# app's `lib/theme.ts` (DISPLAY_FACES and SignatureKind).
+DISPLAY_FACES = {"fraunces", "spectral", "sourceSerif"}
+SIGNATURES = {"beam", "thread", "rule", "none"}
 SCOPES = {"author-life", "world", "culture", "industry"}
 FEATURE_KEYS = {"river", "orderDiff", "wizard", "connections", "companion", "hall", "editions"}
 FEATURE_VALUES = {"auto", "on", "off", True, False}
@@ -369,6 +375,35 @@ def main():
             # without a title is a missed opportunity but not an error.
             if ed.get("title") and not lang:
                 err(loc, f"{eid}: has a published title but no language")
+
+    # --- theme values the app can honour ------------------------------------
+    # `displayFace` and `signature` both fall back silently in the app when it
+    # does not implement the named value, so an invented one costs a wing its
+    # chosen look without failing anything. Warning rather than error: the fix
+    # may legitimately be to implement the value in the app rather than to
+    # change the content.
+    for fdir in franchise_dirs:
+        if not os.path.isdir(fdir):
+            continue
+        fslug = os.path.basename(fdir)
+        tpath = os.path.join(fdir, "theme.yaml")
+        if not os.path.exists(tpath):
+            continue
+        theme = load(tpath) or {}
+        face = theme.get("displayFace")
+        if face and face not in DISPLAY_FACES:
+            warn(
+                f"{fslug}/theme.yaml",
+                f"displayFace '{face}' is not implemented by the app - it will "
+                f"silently render as 'fraunces' (implemented: {sorted(DISPLAY_FACES)})",
+            )
+        sig = theme.get("signature")
+        if sig and sig not in SIGNATURES:
+            warn(
+                f"{fslug}/theme.yaml",
+                f"signature '{sig}' is not implemented by the app - it will "
+                f"silently render as 'thread' (implemented: {sorted(SIGNATURES)})",
+            )
 
     # --- era coverage -------------------------------------------------------
     # Every work should sit under some era: the River renders works against era
