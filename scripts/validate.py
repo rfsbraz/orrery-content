@@ -213,7 +213,11 @@ def main():
                     err(loc, f"{oid}: order references unknown work '{wid}'")
 
     # --- events: franchise, author lifeEvents, global ---
+    event_ids = set()
+
     def check_event(loc, e, allow_scope=True):
+        if e.get("id"):
+            event_ids.add(e["id"])
         if e.get("impact") not in IMPACTS:
             err(loc, f"{e.get('id','?')}: bad impact '{e.get('impact')}'")
         if allow_scope and e.get("scope") and e["scope"] not in SCOPES:
@@ -376,6 +380,40 @@ def main():
         apath = os.path.join(fdir, "achievements.yaml")
         if os.path.exists(apath):
             check_achievements(f"{fslug}/achievements.yaml", load(apath) or [], fslug)
+
+    # --- translation overlays: every id must resolve, no forbidden fields ---
+    FORBIDDEN = {"id", "title", "sources", "isbn13", "language", "workId", "name"}
+    for lpath in glob.glob(os.path.join(ROOT, "content", "i18n", "*")):
+        if not os.path.isdir(lpath):
+            continue
+        locale = os.path.basename(lpath)
+        for path in glob.glob(os.path.join(lpath, "**", "*.yaml"), recursive=True):
+            loc = rel(path)
+            data = load(path)
+            if data is None:
+                continue
+            entries = data if isinstance(data, list) else [data]
+            for e in entries:
+                if not isinstance(e, dict):
+                    err(loc, "translation entry must be a mapping")
+                    continue
+                eid = e.get("id")
+                if not eid:
+                    err(loc, "translation entry missing id")
+                    continue
+                known = (
+                    eid in work_ids
+                    or eid in author_ids
+                    or eid in franchise_slugs
+                    or eid in all_order_ids
+                    or eid in character_ids
+                    or eid in event_ids
+                )
+                if not known:
+                    err(loc, f"translation for unknown id '{eid}' ({locale})")
+                for field in e:
+                    if field != "id" and field in FORBIDDEN:
+                        err(loc, f"{eid}: '{field}' must never be translated")
 
     # --- inline [[type:id|text]] references resolve everywhere ---
     for path in glob.glob(os.path.join(ROOT, "content", "**", "*.yaml"), recursive=True):

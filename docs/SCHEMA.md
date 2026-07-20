@@ -355,6 +355,49 @@ resolves every franchise/order/era reference inside them):
 | `punctual_read` | `withinYears` | any work read within N years of publication |
 | `era_reader` | `franchiseId`, `eraId`, `count` | that many works from one era read |
 
+## Translations (content/i18n/&lt;locale&gt;/)
+
+Curated prose - synopses, era and event descriptions, order rationales, author
+bios, franchise descriptions - is authored in a base language and translated
+via **overlay files keyed by stable ID**. The engine merges base + overlay
+**field by field**, so a partially translated franchise renders the translated
+fields in the reader's language and the rest in the base language, rather than
+breaking or looking empty.
+
+```
+content/i18n/pt-PT/franchises/stephen-king/works.yaml    # synopses only
+content/i18n/pt-PT/franchises/stephen-king/events.yaml
+content/i18n/pt-PT/franchises/stephen-king/eras.yaml
+content/i18n/pt-PT/franchises/stephen-king/orders.yaml   # rationales, debated
+content/i18n/pt-PT/franchises/stephen-king/franchise.yaml
+content/i18n/pt-PT/authors/stephen-king.yaml             # bio + lifeEvent prose
+content/i18n/pt-PT/events/global.yaml
+```
+
+Each entry carries the **id** plus only the fields being translated:
+
+```yaml
+# content/i18n/pt-PT/franchises/stephen-king/works.yaml
+- id: stephen-king/carrie
+  synopsis: "Uma rapariga com poderes telecinéticos vinga-se de forma catastrófica na noite do baile."
+```
+
+### Rules
+
+- **Never translate an `id`, a slug, a `sources` URL, or an author name.** Only
+  prose fields.
+- **Never translate a work `title`.** A translated title is edition data (see
+  editions.yaml) because it must be a real published title, not an invention.
+- **Keep the inline `[[work:id|text]]` references.** Translate the *display
+  text* after the pipe; never the id. `[[work:stephen-king/the-stand|A Dança
+  da Morte]]` is correct.
+- **Partial is fine and expected.** Translate the highest-value prose first
+  (franchise description, era descriptions, high-impact event descriptions,
+  then synopses).
+- An overlay entry whose id does not resolve is a **CI error** - the validator
+  checks every one, so a renamed or deleted work cannot leave a dangling
+  translation.
+
 ## Images (visual metadata)
 
 Orrery is a museum; it needs pictures. Images are **referenced by URL, never
