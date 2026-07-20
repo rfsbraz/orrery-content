@@ -48,14 +48,50 @@ not the gate - it is a better sentence (see *Rewrite before redact*).
 | `eras[].description` | no |
 | `franchise.description`, `startHere[].description`, `startHere[].note` | no |
 
-Two consequences, and both have shipped real spoilers:
+### In ungated fields, rewriting is not preferred - it is the only option
 
-1. **In ungated fields, rewriting is the only tool.** There is no boundary to
-   set. If the sentence cannot be written safely, it does not go in.
-2. **Ungated prose sitting above a gated item defeats the gate.** A character
-   `description` that states the reveal makes the carefully-gated `appearsIn`
-   below it pointless. **Audit the whole entity, not the field with the
-   boundary on it.** This is the single most common real failure.
+There is no boundary to set. If the sentence cannot be written safely, it does
+not go in. A synopsis, a connection, an `aka`, an order rationale: your only
+lever is the words.
+
+**And the failure here is silent.** Adding `spoilerAfter` to a work is not an
+error - the validator accepts it and CI goes green:
+
+```yaml
+- id: stephen-king/carrie
+  synopsis: "..."
+  spoilerAfter: stephen-king/the-stand   # accepted, validates, does NOTHING
+```
+
+Verified against `scripts/validate.py`: it passes. The app never reads the
+field, because `Work` has no such property. So an agent can "gate" a synopsis,
+watch the build go green, believe the reveal is protected, and ship it fully in
+the clear. **A green validator is not evidence that a spoiler is contained.**
+If you find `spoilerAfter` on anything other than an event, a lifeEvent, or a
+character appearance, it is decoration hiding an unprotected spoiler: delete it
+and fix the prose.
+
+### Audit by entity, not by field
+
+**Ungated prose sitting next to a gated item defeats the gate.** The boundary
+protects its own field and nothing else, while everything else on the entity
+renders right beside it.
+
+The canonical case: Randall Flagg's `appearsIn` correctly hid the man-in-black
+identification behind Wizard and Glass, where it is confirmed. Immediately
+above it, ungated and rendering on the same panel, sat
+`aka: [..., "The Man in Black", "Walter o'Dim"]` and a description ending "the
+man in black fleeing across the desert". The gate was real, correct, and worth
+nothing.
+
+> **Whenever you set or trust a boundary, read everything else on that entity
+> that renders near it** - `description`, `aka`, sibling notes, the synopsis of
+> every work it points at - and confirm none of them states the fact you just
+> gated.
+
+A boundary you did not verify this way should not be counted as protection.
+This is the most common real failure, and it looks like diligence while it
+happens.
 
 ## Load-bearing or incidental
 
@@ -79,12 +115,30 @@ Not all spoilers are equal. Grade before you act.
 - premise, setup, inciting incident, anything in the first act
 - a named recurring character who is on the book's own cover
 
-## The publisher test
+## The publisher test (required, not optional)
 
 The most reliable discriminator, and the one that will overturn your
 assumptions most often:
 
 > **Is the fact in the book's own official jacket or back-cover copy?**
+
+**Rule against what the publisher already tells a browsing reader. Never rule
+from memory.** Look the copy up before every judgement that matters. Half-
+remembered plots are confidently wrong in both directions, and both directions
+cost you:
+
+- **Ruling from memory that something is safe** ships an unrecoverable spoiler.
+  This is the failure everyone anticipates.
+- **Ruling from memory that something is dangerous** redacts what is printed on
+  the back cover of a book the reader can see in a shop. This is the failure
+  nobody anticipates, and it is how a spoiler engine loses trust: a reader who
+  meets a shield over the blurb concludes the shields are noise, starts
+  clicking through them on reflex, and is unprotected by the time a real one
+  arrives. Over-redaction does not fail safe. It disarms the mechanism.
+
+On the audit this skill came out of, checking jacket copy **overturned four
+initial rulings, two in each direction**. Budget the lookups; they are the
+expensive half of the work and they are what makes the rest trustworthy.
 
 If the publisher printed it on the object the reader buys, stating it is not
 spoiling - the reader cannot avoid it, and hiding it makes the site look broken
@@ -248,9 +302,13 @@ prose.)
 
 - **Never change an id.** Rewriting prose is encouraged; renaming orphans real
   readers' shelves. This includes work, character, event, and order ids.
-- **Verify the plot before ruling.** Read what actually happens and where it is
-  revealed. Guessing whether something is a spoiler is how you ship one, and
-  half-remembered plots are wrong in both directions.
+- **Verify the plot before ruling, against the publisher's own copy.** Read what
+  actually happens and where it is revealed. Guessing whether something is a
+  spoiler is how you ship one, and half-remembered plots are wrong in both
+  directions.
+- **Never trust a green validator as proof of protection.** It checks that
+  references resolve. It cannot tell a gated reveal from an open one, and it
+  accepts `spoilerAfter` on fields that ignore it.
 - **Record every ruling, including the ones that changed nothing.** "Checked,
   it is jacket copy, left alone" is a result, and it stops the next auditor
   re-litigating it.
@@ -266,16 +324,23 @@ prose.)
    verify it rather than trusting it.
 2. **Inventory** every file in the franchise, plus the author entities its works
    reference and `events/global.yaml`. Not just `events.yaml`.
-3. **Research the plots** before ruling - what happens, where it is revealed,
-   and what the publisher's own copy says. Delegate this if the catalogue is
-   large; it is the expensive half and it is not optional.
+3. **Research the plots and pull the publisher copy** before ruling - what
+   happens, where in the book it is revealed, and what the jacket already says.
+   Delegate this if the catalogue is large; it is the expensive half, it is
+   **not optional**, and it is what stops you ruling from memory.
 4. **Classify** each candidate load-bearing or incidental.
 5. **For each load-bearing one**: try a rewrite first; if it must be stated,
    pick the anchor by asking whose first read it ruins.
-6. **Sweep the false positives** - existing boundaries on publication facts and
-   jacket copy - and loosen them with the reason recorded.
-7. **Mirror every rewrite** into the locale overlays.
-8. **Validate and measure**: `validate.py` green, `i18n_coverage.py` reported.
+6. **Sweep each entity you touched** - read the whole record, not the gated
+   field, and confirm no sibling prose states the fact you just protected.
+7. **Sweep the false positives** - existing boundaries on publication facts and
+   jacket copy - and loosen them with the reason recorded. Also delete any
+   `spoilerAfter` sitting on a field that cannot carry one; it protects nothing
+   and it disguises an open spoiler.
+8. **Mirror every rewrite** into the locale overlays.
+9. **Validate and measure**: `validate.py` green, `i18n_coverage.py` reported.
+   Remember the validator cannot see a spoiler; green means references resolve,
+   not that readers are protected.
 
 ## Done means
 
