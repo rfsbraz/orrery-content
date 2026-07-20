@@ -330,6 +330,7 @@ def main():
         } if os.path.exists(epath) else set()
 
     all_order_ids = {oid for ids in order_ids_by_franchise.values() for oid in ids}
+    all_era_ids = {eid for ids in era_ids_by_franchise.values() for eid in ids}
     achievement_ids = set()
 
     def check_achievements(loc, items, franchise_slug=None):
@@ -382,7 +383,12 @@ def main():
             check_achievements(f"{fslug}/achievements.yaml", load(apath) or [], fslug)
 
     # --- translation overlays: every id must resolve, no forbidden fields ---
-    FORBIDDEN = {"id", "title", "sources", "isbn13", "language", "workId", "name"}
+    # Never translatable anywhere: identifiers, author/order names, edition keys.
+    FORBIDDEN = {"id", "sources", "isbn13", "language", "workId", "name"}
+    # A WORK title is edition data - it must be a real published title from
+    # editions.yaml, never an invention - so it stays forbidden. Era and event
+    # titles are curated prose we wrote ourselves and ARE translatable.
+    TITLE_ALLOWED_IN = {"eras.yaml", "events.yaml"}
     for lpath in glob.glob(os.path.join(ROOT, "content", "i18n", "*")):
         if not os.path.isdir(lpath):
             continue
@@ -408,11 +414,15 @@ def main():
                     or eid in all_order_ids
                     or eid in character_ids
                     or eid in event_ids
+                    or eid in all_era_ids
                 )
                 if not known:
                     err(loc, f"translation for unknown id '{eid}' ({locale})")
+                title_ok = os.path.basename(path) in TITLE_ALLOWED_IN
                 for field in e:
-                    if field != "id" and field in FORBIDDEN:
+                    if field == "id":
+                        continue
+                    if field in FORBIDDEN or (field == "title" and not title_ok):
                         err(loc, f"{eid}: '{field}' must never be translated")
 
     # --- inline [[type:id|text]] references resolve everywhere ---
