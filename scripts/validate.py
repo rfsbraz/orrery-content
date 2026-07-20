@@ -385,10 +385,15 @@ def main():
     # --- translation overlays: every id must resolve, no forbidden fields ---
     # Never translatable anywhere: identifiers, source URLs, edition facts.
     FORBIDDEN = {"id", "sources", "isbn13", "language", "workId"}
-    # A WORK's title is edition data (it must be a real published title, never
-    # an invention), so it is banned in work overlays specifically. Era and
-    # event titles are ordinary prose and SHOULD be translated.
-    FORBIDDEN_IN_WORKS = {"title", "name"}
+    # `title` is prose almost everywhere it appears - era titles, event titles,
+    # nested lifeEvent titles, startHere path titles. The ONE exception is a
+    # work/edition title, which is edition data: it must be a real published
+    # title from editions.yaml, never an invention, or we send a reader after a
+    # book that does not exist.
+    TITLE_FORBIDDEN_IN = {"works.yaml", "editions.yaml"}
+    # `name` is a proper noun (authors, franchises, characters) EXCEPT on an
+    # order, where it is a curated label a reader reads.
+    NAME_ALLOWED_IN = {"orders.yaml"}
     for lpath in glob.glob(os.path.join(ROOT, "content", "i18n", "*")):
         if not os.path.isdir(lpath):
             continue
@@ -420,28 +425,29 @@ def main():
                     err(loc, f"translation for unknown id '{eid}' ({locale})")
                 # Nested id-bearing lists (lifeEvents, startHere.paths) are
                 # merged by id, so validate their entries too.
-                for nested_key in ("lifeEvents",):
-                    for ne in e.get(nested_key) or []:
-                        if isinstance(ne, dict) and not ne.get("id"):
-                            err(loc, f"{eid}: {nested_key} entry missing id")
+                for ne in e.get("lifeEvents") or []:
+                    if isinstance(ne, dict) and not ne.get("id"):
+                        err(loc, f"{eid}: lifeEvents entry missing id")
                 sh = e.get("startHere")
                 if isinstance(sh, dict):
                     for np_ in sh.get("paths") or []:
                         if isinstance(np_, dict) and not np_.get("id"):
                             err(loc, f"{eid}: startHere path missing id")
 
-                is_work_overlay = os.path.basename(path) in ("works.yaml", "editions.yaml")
+                base_name = os.path.basename(path)
                 for field in e:
                     if field == "id":
                         continue
                     if field in FORBIDDEN:
                         err(loc, f"{eid}: '{field}' must never be translated")
-                    elif is_work_overlay and field in FORBIDDEN_IN_WORKS:
+                    elif field == "title" and base_name in TITLE_FORBIDDEN_IN:
                         err(
                             loc,
-                            f"{eid}: a work's '{field}' is edition data - add a published "
+                            f"{eid}: a work's 'title' is edition data - add a published "
                             "edition instead of translating the title",
                         )
+                    elif field == "name" and base_name not in NAME_ALLOWED_IN:
+                        err(loc, f"{eid}: 'name' is a proper noun and is not translated here")
 
     # --- inline [[type:id|text]] references resolve everywhere ---
     for path in glob.glob(os.path.join(ROOT, "content", "**", "*.yaml"), recursive=True):
