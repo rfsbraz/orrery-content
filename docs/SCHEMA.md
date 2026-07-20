@@ -189,7 +189,7 @@ sources: [https://...]
 - id: stephen-king/carrie        # STABLE forever - never rename
   title: "Carrie"
   authorIds: [stephen-king]
-  published: 1974                # year precision fine; full date when confident
+  published: 1974                # YEAR ONLY, a bare integer - never 1974-03-26 (see below)
   subseries: null                # e.g. "The Dark Tower", "Mistborn: Era 1"
   canonTier: core                # core | extended | apocrypha
   publishedAs: "Richard Bachman" # optional; only when the cover name differs
@@ -206,6 +206,24 @@ sources: [https://...]
     wikidata: null
   sources: [https://...]
 ```
+
+### published is a bare year integer, never a full date
+
+`published: 1974`, not `published: 1974-03-26`. This is enforced by the validator.
+
+The reason is that a full date does not survive the trip into the app. YAML
+parses `1974-03-26` as a **string**, and every consumer of `published` is
+year-granular arithmetic: the River keys one layer per year, era spans are year
+ranges, decade rules and era-reader achievements compare against year numbers.
+A string silently loses all of those comparisons - `"2002-09-17" >= 1996` is
+`false` - so the work lands on a layer of its own, outside every era, missing
+from the achievement that should have counted it. Nothing errors; it just
+quietly renders wrong.
+
+This field used to say "full date when confident", and the first new wing
+written against it put five works on dated lines. Day precision has no consumer
+in the product; if the exact date matters editorially, it belongs in an event or
+in `sources`, not here.
 
 ### authorRole and canonTier: what belongs in a wing
 
