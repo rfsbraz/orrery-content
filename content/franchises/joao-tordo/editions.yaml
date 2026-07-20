@@ -1,0 +1,367 @@
+# Portuguese editions - the actual books a Portuguese reader buys.
+#
+# Tordo writes in Portuguese, so there is nothing to translate: every work's
+# `title` in works.yaml IS the published Portuguese title. Per SCHEMA.md, the
+# `title` field is therefore OMITTED throughout - repeating it would duplicate
+# the work title rather than record a genuinely different published title. The
+# publisher's own store renders titles in sentence case ("As três vidas"); that
+# is house styling, not a different title, so it is not recorded either.
+#
+# Every ISBN below was read off the publisher's own product page on
+# penguinlivros.pt (Penguin Random House Portugal, which owns the Companhia das
+# Letras and Alfaguara imprints) and passes ISBN-13 check-digit validation.
+# All carry Portuguese prefixes (978-989-*, 978-98958-*); no Brazilian editions
+# (978-85-*, 978-65-*) are included.
+#
+# COVERAGE: 21 of 21 works have a current in-print pt-PT edition with a verified
+# ISBN. Eight also have a "Livro de Bolso" (pocket) edition, listed after.
+#
+# FIRST EDITIONS ARE NOT HERE. Tordo's early novels first appeared under other
+# imprints (Quidnovi, Publicações Dom Quixote) before the backlist was
+# consolidated at Companhia das Letras, and his 2024+ output is split. Those
+# first-edition ISBNs could not be verified: wook.pt, bertrand.pt, fnac.pt,
+# almedina.net and Porbase/BNP all returned HTTP 403 to automated fetches, and
+# the one portal that was fetchable (portaldaliteratura.com) proved unreliable -
+# it attributes Bruno Vieira Amaral's "Toda a Gente Tem um Plano" to Tordo.
+# Rather than guess a digit, the first editions are simply omitted. See the PR
+# body for the publisher timeline as far as it could be evidenced.
+
+# --- Current trade editions (Companhia das Letras unless noted) ---
+
+- id: joao-tordo/o-livro-dos-homens-sem-luz/companhia-das-letras-2022-pt
+  workId: joao-tordo/o-livro-dos-homens-sem-luz
+  isbn13: "9789897842092"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2022
+  note: >
+    2nd edition, January 2022, 232pp. The debut novel, reissued long after its
+    2004 first appearance.
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/o-livro-dos-homens-sem-luz/"]
+
+- id: joao-tordo/hotel-memoria/companhia-das-letras-2018-pt
+  workId: joao-tordo/hotel-memoria
+  isbn13: "9789896651947"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2018
+  note: >
+    April 2018, 288pp. Confirms the work title as "Hotel Memória" (not
+    "Hotel da Memória").
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/hotel-memoria/"]
+
+- id: joao-tordo/as-tres-vidas/companhia-das-letras-2018-pt
+  workId: joao-tordo/as-tres-vidas
+  isbn13: "9789896656126"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2018
+  note: >
+    May 2018, 480pp. The Prémio José Saramago winner; first published 2008.
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/as-tres-vidas/"]
+
+- id: joao-tordo/o-bom-inverno/companhia-das-letras-2020-pt
+  workId: joao-tordo/o-bom-inverno
+  isbn13: "9789896659790"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2020
+  note: "November 2020, 320pp."
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/o-bom-inverno/"]
+
+- id: joao-tordo/anatomia-dos-martires/companhia-das-letras-2019-pt
+  workId: joao-tordo/anatomia-dos-martires
+  isbn13: "9789896656133"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2019
+  note: >
+    2nd edition, May 2019, 336pp. The publisher lists the title as "Anatomia dos
+    mártires", with no leading article - confirming the works.yaml form against
+    the "A Anatomia dos Mártires" variant seen elsewhere.
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/anatomia-dos-martires/"]
+
+- id: joao-tordo/o-ano-sabatico/companhia-das-letras-2018-pt
+  workId: joao-tordo/o-ano-sabatico
+  isbn13: "9789896656829"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2018
+  note: "October 2018, 240pp."
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/o-ano-sabatico/"]
+
+- id: joao-tordo/biografia-involuntaria-dos-amantes/alfaguara-2019-pt
+  workId: joao-tordo/biografia-involuntaria-dos-amantes
+  isbn13: "9789896722593"
+  language: pt-PT
+  format: paperback
+  publisher: Alfaguara
+  year: 2019
+  note: >
+    3rd edition, October 2019, 424pp. The one title in the bundle carried by the
+    Alfaguara imprint rather than Companhia das Letras (both are Penguin Random
+    House Portugal).
+  sources: ["https://penguinlivros.pt/loja/alfaguara/livro/biografia-involuntaria-dos-amantes-2/"]
+
+- id: joao-tordo/o-luto-de-elias-gro/companhia-das-letras-2018-pt
+  workId: joao-tordo/o-luto-de-elias-gro
+  isbn13: "9789898775337"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2018
+  note: >
+    June 2018, 328pp. Sold as "Trilogia dos Lugares Sem Nome 1"; first published
+    2015.
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/o-luto-de-elias-gro/"]
+
+- id: joao-tordo/o-paraiso-segundo-lars-d/companhia-das-letras-2015-pt
+  workId: joao-tordo/o-paraiso-segundo-lars-d
+  isbn13: "9789896650131"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2015
+  note: >
+    November 2015, 208pp. Sold as "Trilogia dos Lugares Sem Nome 2"; this is the
+    original Companhia das Letras edition, matching the work's 2015 first-edition
+    year.
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/o-paraiso-segundo-lars-d/"]
+
+- id: joao-tordo/o-deslumbre-de-cecilia-fluss/companhia-das-letras-2017-pt
+  workId: joao-tordo/o-deslumbre-de-cecilia-fluss
+  isbn13: "9789896651923"
+  language: pt-PT
+  format: hardcover
+  publisher: Companhia das Letras
+  year: 2017
+  note: >
+    2nd edition, March 2017, 336pp. Sold as "Trilogia dos Lugares Sem Nome 3".
+    The publisher spells the name "Cecilia" without the accent, confirming the
+    works.yaml note; the author's own site does the same.
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/o-deslumbre-de-cecilia-fluss/"]
+
+- id: joao-tordo/ensina-me-a-voar-sobre-os-telhados/companhia-das-letras-2018-pt
+  workId: joao-tordo/ensina-me-a-voar-sobre-os-telhados
+  isbn13: "9789896655297"
+  language: pt-PT
+  format: hardcover
+  publisher: Companhia das Letras
+  year: 2018
+  note: >
+    6th edition, March 2018, 488pp. Settles the year flagged in works.yaml: the
+    book is 2018, not 2021 - the publisher dates it March 2018 and the author's
+    own bibliography lists it under 2018.
+  sources:
+    - https://penguinlivros.pt/loja/companhia-das-letras/livro/ensina-me-a-voar-sobre-os-telhados-2/
+    - https://joaotordo.com/livros
+
+- id: joao-tordo/a-mulher-que-correu-atras-do-vento/companhia-das-letras-2019-pt
+  workId: joao-tordo/a-mulher-que-correu-atras-do-vento
+  isbn13: "9789896657604"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2019
+  note: >
+    5th edition, March 2019, 464pp. Confirms the 2019 year and that this is a
+    substantial literary novel - four women across a century, from 1892 Bavaria
+    to 2015 Lisbon - not the minor title its thin works.yaml entry suggests.
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/a-mulher-que-correu-atras-do-vento/"]
+
+- id: joao-tordo/a-noite-em-que-o-verao-acabou/companhia-das-letras-2019-pt
+  workId: joao-tordo/a-noite-em-que-o-verao-acabou
+  isbn13: "9789896659127"
+  language: pt-PT
+  format: hardcover
+  publisher: Companhia das Letras
+  year: 2019
+  note: "November 2019, 672pp."
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/a-noite-em-que-o-verao-acabou/"]
+
+- id: joao-tordo/felicidade/companhia-das-letras-2020-pt
+  workId: joao-tordo/felicidade
+  isbn13: "9789897840401"
+  language: pt-PT
+  format: hardcover
+  publisher: Companhia das Letras
+  year: 2020
+  note: >
+    8th edition, October 2020, 392pp - the most reprinted title in the bundle.
+    Winner of the Prémio Fernando Namora 2021.
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/felicidade/"]
+
+- id: joao-tordo/manual-de-sobrevivencia-de-um-escritor/companhia-das-letras-2020-pt
+  workId: joao-tordo/manual-de-sobrevivencia-de-um-escritor
+  isbn13: "9789896659752"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2020
+  note: "4th edition, May 2020, 224pp."
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/manual-de-sobrevivencia-de-um-escritor/"]
+
+- id: joao-tordo/aguas-passadas/companhia-das-letras-2021-pt
+  workId: joao-tordo/aguas-passadas
+  isbn13: "9789897841071"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2021
+  note: >
+    6th edition, June 2021, 520pp. First Pilar Benamor case; the publisher names
+    her partner as Cícero Gusmão.
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/aguas-passadas/"]
+
+- id: joao-tordo/naufragio/companhia-das-letras-2022-pt
+  workId: joao-tordo/naufragio
+  isbn13: "9789897845390"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2022
+  note: >
+    April 2022, 320pp. Publisher blurb confirms the standalone reading: the
+    protagonist is the novelist Jaime Toledo, no Benamor involvement.
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/naufragio/"]
+
+- id: joao-tordo/cem-anos-de-perdao/companhia-das-letras-2022-pt
+  workId: joao-tordo/cem-anos-de-perdao
+  isbn13: "9789897847196"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2022
+  note: >
+    November 2022, 576pp. The publisher blurb settles the subseries question
+    flagged in works.yaml: "Depois de Águas Passadas, a dupla Pilar Benamor e
+    Cícero Gusmão regressa para um novo mistério." Benamor membership is
+    confirmed, not inferred.
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/cem-anos-de-perdao/"]
+
+- id: joao-tordo/o-nome-que-a-cidade-esqueceu/companhia-das-letras-2023-pt
+  workId: joao-tordo/o-nome-que-a-cidade-esqueceu
+  isbn13: "9789897849275"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2023
+  note: >
+    November 2023, 376pp. Confirms the 2023 year, and resolves the open
+    subseries question: no Benamor, a standalone. The publisher frames it as
+    Tordo's twentieth book, returning to the city of his debut.
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/o-nome-que-a-cidade-esqueceu/"]
+
+- id: joao-tordo/os-dias-contados/companhia-das-letras-2024-pt
+  workId: joao-tordo/os-dias-contados
+  isbn13: "9789897876127"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2024
+  note: "November 2024, 560pp. Benamor's origin case."
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/os-dias-contados/"]
+
+- id: joao-tordo/inventario-da-solidao/companhia-das-letras-2025-pt
+  workId: joao-tordo/inventario-da-solidao
+  isbn13: "9789895836307"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2025
+  note: >
+    October 2025, 368pp. Confirms the 2025 year and the title form that
+    works.yaml flagged as unverified. A standalone: college friends reunite in
+    Ireland for the funeral of Rebecca Connelly.
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/inventario-da-solidao/"]
+
+# --- "Livro de Bolso" pocket editions (cheaper, widely stocked) ---
+
+- id: joao-tordo/biografia-involuntaria-dos-amantes/companhia-das-letras-bolso-2016-pt
+  workId: joao-tordo/biografia-involuntaria-dos-amantes
+  isbn13: "9789896651510"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2016
+  note: "Livro de Bolso, November 2016, 424pp."
+  sources: ["https://penguinlivros.pt/loja/alfaguara/livro/biografia-involuntaria-dos-amantes/"]
+
+- id: joao-tordo/ensina-me-a-voar-sobre-os-telhados/companhia-das-letras-bolso-2020-pt
+  workId: joao-tordo/ensina-me-a-voar-sobre-os-telhados
+  isbn13: "9789897840654"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2020
+  note: "Livro de Bolso, June 2020, 488pp."
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/ensina-me-a-voar-sobre-os-telhados/"]
+
+- id: joao-tordo/a-noite-em-que-o-verao-acabou/companhia-das-letras-bolso-2021-pt
+  workId: joao-tordo/a-noite-em-que-o-verao-acabou
+  isbn13: "9789897842627"
+  language: pt-PT
+  publisher: Companhia das Letras
+  year: 2021
+  note: >
+    Livro de Bolso, May 2021, 680pp. Binding not recorded - the listing
+    describes the pocket line as having a hardcover presentation.
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/a-noite-em-que-o-verao-acabou-2/"]
+
+- id: joao-tordo/o-luto-de-elias-gro/companhia-das-letras-bolso-2022-pt
+  workId: joao-tordo/o-luto-de-elias-gro
+  isbn13: "9789897844362"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2022
+  note: "Livro de Bolso, May 2022, 328pp."
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/o-luto-de-elias-gro-2/"]
+
+- id: joao-tordo/as-tres-vidas/companhia-das-letras-bolso-2023-pt
+  workId: joao-tordo/as-tres-vidas
+  isbn13: "9789897844379"
+  language: pt-PT
+  publisher: Companhia das Letras
+  year: 2023
+  note: >
+    Livro de Bolso, January 2023, 480pp. Binding not recorded - the listing
+    describes the pocket line as having a hardcover presentation.
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/as-tres-vidas-2/"]
+
+- id: joao-tordo/aguas-passadas/companhia-das-letras-bolso-2023-pt
+  workId: joao-tordo/aguas-passadas
+  isbn13: "9789897849510"
+  language: pt-PT
+  publisher: Companhia das Letras
+  year: 2023
+  note: >
+    Livro de Bolso, March 2023, 520pp. Binding not recorded - the listing
+    describes the pocket line as having a hardcover presentation.
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/aguas-passadas-2/"]
+
+- id: joao-tordo/cem-anos-de-perdao/companhia-das-letras-bolso-2024-pt
+  workId: joao-tordo/cem-anos-de-perdao
+  isbn13: "9789897876158"
+  language: pt-PT
+  format: paperback
+  publisher: Companhia das Letras
+  year: 2024
+  note: "Livro de Bolso, March 2024, 576pp."
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/cem-anos-de-perdao-livro-de-bolso/"]
+
+- id: joao-tordo/os-dias-contados/companhia-das-letras-bolso-2026-pt
+  workId: joao-tordo/os-dias-contados
+  isbn13: "9789895894253"
+  language: pt-PT
+  format: hardcover
+  publisher: Companhia das Letras
+  year: 2026
+  note: "Livro de Bolso, January 2026, 560pp, capa dura. The most recent printing found."
+  sources: ["https://penguinlivros.pt/loja/companhia-das-letras/livro/os-dias-contados-livro-de-bolso/"]

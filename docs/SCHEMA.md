@@ -209,23 +209,47 @@ Rules:
 
 ## editions.yaml (optional)
 
-Concrete published editions. Works power orders; editions power buying and
-covers. Only add editions you can verify (a real ISBN from a real source);
-never guess an ISBN. Sparse is fine: the app falls back to search links and
-OpenLibrary covers when a work has no edition here.
+Concrete published editions. Works power orders; editions power buying,
+covers, and **published translated titles**. Only add editions you can verify
+(a real ISBN from a real source); never guess an ISBN. Sparse is fine: the app
+falls back to search links and OpenLibrary covers when a work has no edition.
 
 ```yaml
-- id: stephen-king/carrie/anchor-2011-pb
-  workId: stephen-king/carrie
-  isbn13: "9780307743664"
-  language: en
+- id: discworld/guards-guards/presenca-2004-pt
+  workId: discworld/guards-guards
+  isbn13: "9789722336840"
+  language: pt-PT                # BCP-47; see "Language codes" below
+  title: "Guardas! Guardas!"     # the title AS PUBLISHED in that language
+  translator: "Ana Saldanha"     # optional; credited translator
   format: paperback              # hardcover | paperback | ebook | audiobook
-  publisher: Anchor
-  year: 2011
-  coverUrl: null                 # optional; else the app derives from ISBN/OLID
-  note: In-print US paperback.
-  sources: [https://...]
+  publisher: Editorial Presença
+  year: 2004
+  coverUrl: null                 # optional; else derived from ISBN/OLID
+  note: Optional curator aside.
+  sources: ["https://www.wook.pt/..."]
 ```
+
+### Published titles are edition data, not translation
+
+A work's `title` is its **original** title and never changes. A translated
+title belongs to the edition that published it, because it is a fact about a
+real book someone can buy. **Never invent one**: if no Portuguese edition of a
+work exists, that work simply has no `pt-PT` edition, and the app shows the
+original title. Inventing a translated title fabricates a book that does not
+exist - the one thing a completionist site can never do.
+
+The app uses `title` when the reader's locale matches the edition's language,
+showing the original alongside it.
+
+### Language codes
+
+Use **BCP-47 with the region when the region matters for books**:
+
+- `pt-PT` and `pt-BR` are **different editions with different translations,
+  titles, and ISBNs**. Never tag a Brazilian edition `pt` or `pt-PT`: a Lisbon
+  reader would be sent to a book they cannot buy locally. Same rule for
+  `en-GB` vs `en-US` where titles genuinely differ.
+- Where the region is irrelevant, a bare code (`fr`, `de`, `it`) is fine.
 
 ## orders.yaml
 
@@ -330,6 +354,51 @@ resolves every franchise/order/era reference inside them):
 | `order_complete` | `orderId` | every work in that reading order read |
 | `punctual_read` | `withinYears` | any work read within N years of publication |
 | `era_reader` | `franchiseId`, `eraId`, `count` | that many works from one era read |
+
+## Images (visual metadata)
+
+Orrery is a museum; it needs pictures. Images are **referenced by URL, never
+uploaded to this repo** (no binaries in content), and every one must be
+legally displayable - see "Image rights" below.
+
+Any of these entities may carry an `images` block; all fields are optional:
+
+```yaml
+# content/authors/<slug>.yaml
+images:
+  portrait: "https://upload.wikimedia.org/.../Terry_Pratchett.jpg"
+  portraitCredit: "Luigi Novi, CC BY 3.0"
+  portraitSource: "https://commons.wikimedia.org/wiki/File:..."
+
+# franchise.yaml
+images:
+  header: "https://..."            # a wide banner for the wing
+  headerCredit: "..."
+  headerSource: "https://..."
+
+# works.yaml (per work) - a cover the app can use when no edition cover exists
+images:
+  cover: "https://covers.openlibrary.org/b/id/12345-L.jpg"
+  coverCredit: "OpenLibrary"
+  coverSource: "https://openlibrary.org/works/..."
+
+# editions.yaml already has coverUrl for a SPECIFIC edition's jacket
+```
+
+### Image rights (hard rule)
+
+Only reference images you can justify:
+
+- **Wikimedia Commons / Wikipedia** - check the file's licence; most are CC BY,
+  CC BY-SA, or public domain. **Record the licence and the author in
+  `*Credit`.** This is the best source for author portraits.
+- **OpenLibrary covers** - fine to hot-link; credit OpenLibrary.
+- **Publisher press/media pages** - usually permitted for editorial use;
+  cite the page in `*Source`.
+- **Never** scrape a retailer's jacket image, never take an image with no
+  discoverable licence, and never link something behind a paywall or hotlink
+  ban. If you cannot establish the rights, **leave the field empty** - the app
+  degrades to typographic covers and text headers by design.
 
 ## theme.yaml
 

@@ -25,6 +25,8 @@ FEATURE_VALUES = {"auto", "on", "off", True, False}
 FIT_EXPERIENCE = {"new", "returning", "completionist"}
 FIT_COMMITMENT = {"taste", "arc", "complete"}
 EDITION_FORMATS = {"hardcover", "paperback", "ebook", "audiobook"}
+# BCP-47-ish: "pt", "pt-PT", "en-GB". Region matters for books (pt-PT vs pt-BR).
+LANG_RE = re.compile(r"^[a-z]{2}(-[A-Z]{2})?$")
 ACHIEVEMENT_TIERS = {"bronze", "silver", "gold"}
 ACHIEVEMENT_CATEGORIES = {"completion", "streak", "context", "social", "discovery", "curation"}
 # criteria kind -> required fields (the app implements one evaluator per kind)
@@ -35,6 +37,36 @@ CRITERIA_KINDS = {
     "punctual_read": {"withinYears"},
     "era_reader": {"franchiseId", "eraId", "count"},
 }
+
+
+IMAGE_FIELDS = {"portrait", "header", "cover"}
+
+
+def check_images(loc, entity_id, images):
+    """Images are URLs (never committed binaries) and must carry a credit."""
+    if not images:
+        return
+    if not isinstance(images, dict):
+        err(loc, f"{entity_id}: images must be a mapping")
+        return
+    for key, value in images.items():
+        base = key.replace("Credit", "").replace("Source", "")
+        if base not in IMAGE_FIELDS:
+            err(loc, f"{entity_id}: unknown image field '{key}' (known: {sorted(IMAGE_FIELDS)})")
+            continue
+        if key == base:
+            if not str(value).startswith("http"):
+                err(loc, f"{entity_id}: image '{key}' must be a URL (never commit binaries)")
+            # Rights discipline: an image without a credit cannot be published.
+            if not images.get(base + "Credit"):
+                err(loc, f"{entity_id}: image '{key}' has no '{base}Credit'")
+
+
+def valid_isbn13(isbn):
+    """ISBN-13 check digit (EAN-13): weights 1,3,1,3... over the first 12."""
+    digits = [int(c) for c in isbn]
+    total = sum(d * (1 if i % 2 == 0 else 3) for i, d in enumerate(digits[:12]))
+    return (10 - (total % 10)) % 10 == digits[12]
 
 
 def err(where, msg):
@@ -65,6 +97,7 @@ def main():
             err(rel(path), "author missing id")
         else:
             author_ids.add(a["id"])
+        check_images(rel(path), a.get("id", "?"), a.get("images"))
 
     # --- works (per franchise) ---
     work_ids = set()
@@ -96,6 +129,7 @@ def main():
                     err(loc, f"{wid}: unknown withAuthorId '{aid}'")
             if w.get("canonTier") not in {"core", "extended", "apocrypha"}:
                 err(loc, f"{wid}: bad canonTier '{w.get('canonTier')}'")
+            check_images(loc, wid, w.get("images"))
 
     # --- work connections (second pass: all work ids known) ---
     for fdir in franchise_dirs:
@@ -130,6 +164,7 @@ def main():
         for aid in fr.get("authorIds", []):
             if aid not in author_ids:
                 err(loc, f"unknown authorId '{aid}'")
+        check_images(loc, fslug, fr.get("images"))
         for k, v in (fr.get("features") or {}).items():
             if k not in FEATURE_KEYS:
                 err(loc, f"unknown feature key '{k}' (known: {sorted(FEATURE_KEYS)})")
@@ -260,10 +295,24 @@ def main():
             if ed.get("workId") not in work_ids:
                 err(loc, f"{eid}: unknown workId '{ed.get('workId')}'")
             isbn = str(ed.get("isbn13") or "")
-            if isbn and (len(isbn) != 13 or not isbn.isdigit()):
-                err(loc, f"{eid}: isbn13 '{isbn}' is not 13 digits")
+            if isbn:
+                if len(isbn) != 13 or not isbn.isdigit():
+                    err(loc, f"{eid}: isbn13 '{isbn}' is not 13 digits")
+                elif not valid_isbn13(isbn):
+                    # A bad check digit means the number is not a real ISBN -
+                    # a transcription slip or an invented one. Either way it
+                    # would send a reader to the wrong book (or nowhere).
+                    err(loc, f"{eid}: isbn13 '{isbn}' fails its check digit - not a real ISBN")
             if ed.get("format") and ed["format"] not in EDITION_FORMATS:
                 err(loc, f"{eid}: bad format '{ed.get('format')}'")
+            lang = ed.get("language")
+            if lang and not LANG_RE.match(str(lang)):
+                err(loc, f"{eid}: bad language '{lang}' (use 'pt-PT', 'en', ...)")
+            # A translated title without a language is unusable (we cannot know
+            # which locale it belongs to); an edition in a non-original language
+            # without a title is a missed opportunity but not an error.
+            if ed.get("title") and not lang:
+                err(loc, f"{eid}: has a published title but no language")
 
     # --- achievements (global + per franchise) ---
     era_ids_by_franchise = {}
