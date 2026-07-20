@@ -1,6 +1,42 @@
 # Overlay pt-PT. Apenas prosa; id, slugs, títulos de obras e sources não são traduzidos.
-id: stephen-king
-description: >
-  Cinco décadas de terror e ficção sombria americana, das assombrações de
-  pequenas cidades do Maine a um multiverso transversal a vários géneros,
-  mantido coeso pela Torre Negra.
+# Os startHere.paths ficam aninhados e são fundidos por id (ver SCHEMA.md,
+# "Nested lists merge by id"): só `title`, `description` e `note`, nunca
+# `workIds`, `orderId` ou `fit`.
+- id: stephen-king
+  description: >
+    Cinco décadas de terror e ficção sombria americana, das assombrações de
+    pequenas cidades do Maine a um multiverso transversal a vários géneros,
+    mantido coeso pela Torre Negra.
+  startHere:
+    paths:
+      - id: essentials
+        title: Os essenciais
+        description: >
+          Cinco livros marcantes que mostram todo o alcance: o hotel assombrado,
+          o pesadelo da passagem à idade adulta, o apocalipse, o quarto fechado
+          e a máquina do tempo. Se estes resultarem, fica tudo o resto em aberto.
+        note: >
+          Deliberadamente espalhados por várias décadas para se sentir todo o
+          alcance, e não só o terror dos anos setenta a que King costuma ser
+          reduzido.
+
+      - id: dark-tower-first
+        title: Direto à Torre Negra
+        description: >
+          A espinha dorsal do multiverso. A ordem com as ligações entrelaça os
+          oito livros da Torre com os romances que os alimentam, nos pontos em
+          que compensam.
+
+      - id: short-first
+        title: Começar pelo curto
+        description: >
+          King é um dos grandes contistas; as coletâneas são uma porta de
+          entrada que exige pouco compromisso, e vários contos deram origem aos
+          romances famosos.
+
+      - id: the-long-walk
+        title: A estrada toda, a partir de Carrie
+        description: >
+          Ordem de publicação, na íntegra. Vê-se o escritor crescer, quebrar,
+          recuperar e continuar; a camada de aura foi construída exatamente para
+          esta caminhada.
