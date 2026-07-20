@@ -1,0 +1,421 @@
+# Bibliography (Works) - the abstract books; editions and covers are separate
+# metadata. IDs are STABLE and permanent (user data references them). Dates are
+# FIRST publication of the complete work.
+#
+# TIERING. canonTier records the KIND of publication, never confidence:
+#   core       the novels, plus the two Fight Club sequels Palahniuk wrote
+#              himself (see the note on fight-club-2)
+#   extended   nonfiction, the story collection, the two illustrated
+#              colouring books, and the restructured Invisible Monsters Remix
+#   apocrypha  the anthology he co-edited rather than wrote
+#
+# DELIBERATELY EXCLUDED, each for a stated reason:
+#   - "You Do Not Talk About Fight Club: I Am Jack's Completely Unauthorized
+#     Essay Collection" (2008). The English Wikipedia article lists this under
+#     Palahniuk's own non-fiction. It is not his book: it is an essay collection
+#     ABOUT him, edited by Read Mercer Schuchardt, and Wikipedia itself lists it
+#     a second time further down among the scholarly works written about him.
+#     Including it would put another editor's book in this author's derived
+#     reading order.
+#   - "Pursuit of Happiness" (1995), the compilation carrying the original
+#     seven-page Fight Club story. Recorded as a life event
+#     (palahniuk-fight-club-origin-1995) rather than as a work, because it is
+#     one short story in someone else's anthology and canonTier does not yet
+#     filter the derived order.
+#   - Individual stories inside a listed collection ("Guts" lives in Haunted).
+#
+# GAPS, flagged rather than filled: see .orrery/chuck-palahniuk/
+# franchise-research.yaml openQuestions for "Greener Pastures", "Unquiet
+# Guests" (2025), and the Kindle-single-era short works, none of which could be
+# confirmed from a source reachable here.
+
+- id: chuck-palahniuk/fight-club
+  title: "Fight Club"
+  authorIds: [chuck-palahniuk]
+  published: 1996
+  subseries: "Fight Club"
+  canonTier: core
+  synopsis: >
+    An insomniac office worker and a soap salesman start a bare-knuckle club in
+    a bar basement, and it does not stay a club for long.
+  sources:
+    - https://en.wikipedia.org/wiki/Fight_Club_(novel)
+
+- id: chuck-palahniuk/survivor
+  title: "Survivor"
+  authorIds: [chuck-palahniuk]
+  published: 1999
+  subseries: null
+  canonTier: core
+  synopsis: >
+    The last surviving member of a death cult dictates his life story into the
+    flight recorder of a hijacked airliner. The chapters and pages count down.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: chuck-palahniuk/invisible-monsters
+  title: "Invisible Monsters"
+  authorIds: [chuck-palahniuk]
+  published: 1999
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A fashion model loses her jaw in a highway shooting and falls in with a
+    self-invented woman who is remaking her from the identity up.
+  note: >
+    Written before [[work:chuck-palahniuk/fight-club|Fight Club]] and rejected
+    by publishers, then published two novels later. First-written, third-out.
+  sources:
+    - https://en.wikipedia.org/wiki/Fight_Club_(novel)
+
+- id: chuck-palahniuk/choke
+  title: "Choke"
+  authorIds: [chuck-palahniuk]
+  published: 2001
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A medical-school dropout funds his mother's care by pretending to choke in
+    restaurants so that strangers will save him and keep paying.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: chuck-palahniuk/lullaby
+  title: "Lullaby"
+  authorIds: [chuck-palahniuk]
+  published: 2002-09-17
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A reporter investigating crib deaths finds the same poem on the same page
+    in every house, and learns what it does when read aloud.
+  note: >
+    Palahniuk has said he wrote it to cope with having taken part in the
+    decision to seek the death penalty for his father's killer.
+  sources:
+    - https://en.wikipedia.org/wiki/Lullaby_(Palahniuk_novel)
+
+- id: chuck-palahniuk/diary
+  title: "Diary"
+  authorIds: [chuck-palahniuk]
+  published: 2003
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A painter keeps a coma diary for her husband on an island resort where the
+    summer people have started losing rooms out of their own houses.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: chuck-palahniuk/fugitives-and-refugees
+  title: "Fugitives and Refugees: A Walk in Portland, Oregon"
+  authorIds: [chuck-palahniuk]
+  published: 2003
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A guidebook to the Portland of runaways, obsessives and pranksters, part
+    walking tour and part memoir. The clearest account of the Cacophony Society
+    milieu that fed Project Mayhem.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: chuck-palahniuk/stranger-than-fiction
+  title: "Stranger than Fiction: True Stories"
+  authorIds: [chuck-palahniuk]
+  published: 2004
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    Collected reportage and essays: amateur wrestlers, combine demolition, the
+    Cacophony Society, and pieces about how he came to write.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: chuck-palahniuk/haunted
+  title: "Haunted"
+  authorIds: [chuck-palahniuk]
+  published: 2005-05-03
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Writers answer an advertisement for a three-month retreat, are sealed in a
+    derelict theatre, and begin competing over whose story is worst. Twenty-three
+    stories inside a frame narrative.
+  note: >
+    Structurally a story cycle rather than a straight novel: each story is
+    followed by a chapter of the frame and, usually, a poem. Contains "Guts",
+    the story behind the fainting readings of 2003 to 2005.
+  sources:
+    - https://en.wikipedia.org/wiki/Haunted_(Palahniuk_novel)
+
+- id: chuck-palahniuk/rant
+  title: "Rant"
+  authorIds: [chuck-palahniuk]
+  published: 2007
+  subseries: null
+  canonTier: core
+  synopsis: >
+    An oral biography, assembled from conflicting witnesses, of a small-town
+    boy who became a rabies superspreader and a demolition-derby legend.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: chuck-palahniuk/snuff
+  title: "Snuff"
+  authorIds: [chuck-palahniuk]
+  published: 2008
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Six hundred men wait their turn on the set of an adult film meant to break
+    a world record, narrated from the waiting room.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: chuck-palahniuk/pygmy
+  title: "Pygmy"
+  authorIds: [chuck-palahniuk]
+  published: 2009
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A teenage agent of an unnamed totalitarian state is placed with an American
+    host family as an exchange student, and reports home in his own broken
+    English.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: chuck-palahniuk/tell-all
+  title: "Tell-All"
+  authorIds: [chuck-palahniuk]
+  published: 2010
+  subseries: null
+  canonTier: core
+  synopsis: >
+    An old-Hollywood star and her fiercely protective assistant, told in the
+    voice of a gossip column, with every famous name in boldface.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: chuck-palahniuk/damned
+  title: "Damned"
+  authorIds: [chuck-palahniuk]
+  published: 2011
+  subseries: "Damned"
+  canonTier: core
+  synopsis: >
+    A thirteen-year-old daughter of celebrities wakes up dead, in Hell, and
+    sets about organising the place.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: chuck-palahniuk/invisible-monsters-remix
+  title: "Invisible Monsters Remix"
+  authorIds: [chuck-palahniuk]
+  published: 2012-06-11
+  subseries: null
+  canonTier: extended
+  connections:
+    - chuck-palahniuk/invisible-monsters
+  synopsis: >
+    The 1999 novel republished in the shape Palahniuk says he first intended:
+    chapters out of sequence, each ending with an instruction on which chapter
+    to read next, plus new material and a different ending.
+  note: >
+    Tiered extended because it is a restructured re-issue of an existing novel
+    rather than a new one. It is NOT a subseries: the connection to
+    [[work:chuck-palahniuk/invisible-monsters|Invisible Monsters]] is recorded
+    as a work connection instead, since the two are one book in two forms.
+  sources:
+    - https://en.wikipedia.org/wiki/Invisible_Monsters_Remix
+
+- id: chuck-palahniuk/doomed
+  title: "Doomed"
+  authorIds: [chuck-palahniuk]
+  published: 2013
+  subseries: "Damned"
+  canonTier: core
+  synopsis: >
+    The sequel to [[work:chuck-palahniuk/damned|Damned]]: the same narrator,
+    now stuck between worlds and blogging from purgatory.
+  note: >
+    Second of a sequence begun in Damned. A third volume was discussed but has
+    not appeared, so the thread is recorded as an open pair rather than an
+    announced trilogy.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: chuck-palahniuk/burnt-tongues
+  title: "Burnt Tongues"
+  authorIds: [chuck-palahniuk]
+  published: 2014-08-12
+  subseries: null
+  canonTier: apocrypha
+  authorRole: editor
+  contributionTitle: "The Power of Persisting: An Introduction"
+  synopsis: >
+    An anthology of twenty transgressive stories by other writers, drawn from
+    submissions to a Palahniuk fan workshop and selected by its editors.
+  note: >
+    Palahniuk is one of three editors (with Richard Thomas and Dennis Widmyer)
+    and wrote the introduction. He contributed no story of his own, so this is
+    completionist data, not a book he wrote. Co-editors are named here rather
+    than in withAuthorIds because neither has an author entity in this repo yet.
+  sources:
+    - https://en.wikipedia.org/wiki/Burnt_Tongues
+
+- id: chuck-palahniuk/beautiful-you
+  title: "Beautiful You"
+  authorIds: [chuck-palahniuk]
+  published: 2014
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A billionaire launches a line of intimate products so effective that women
+    stop leaving their homes. A satire on consumer appetite.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: chuck-palahniuk/make-something-up
+  title: "Make Something Up: Stories You Can't Unread"
+  authorIds: [chuck-palahniuk]
+  published: 2015
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    His first collection of short fiction, gathering stories written across two
+    decades alongside a novella.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: chuck-palahniuk/fight-club-2
+  title: "Fight Club 2"
+  authorIds: [chuck-palahniuk]
+  published: 2016
+  subseries: "Fight Club"
+  canonTier: core
+  synopsis: >
+    A decade on, the narrator is medicated, married and dull, and something he
+    thought was finished is being run again without him. A comic, drawn by
+    Cameron Stewart and David Mack.
+  note: >
+    DATE. Commonly listed as 2015 (when serialisation began) or 2016 (the
+    collected hardcover). Both point at 2016 for FIRST publication of the
+    complete work: the ten-issue Dark Horse series ran from 27 May 2015 to
+    30 March 2016, and the collection followed on 18 May 2016. Serialisation
+    counts as first publication only once the complete work has appeared, which
+    is March 2016 either way.
+    TIER. Kept core rather than extended: this is a graphic novel, but it is
+    Palahniuk's own sole-written direct sequel to the title work, not a
+    licensed spin-off. Flagged for the curator, since a reader walking the core
+    spine will meet a comic between two prose novels.
+  sources:
+    - https://en.wikipedia.org/wiki/Fight_Club_2
+
+- id: chuck-palahniuk/bait
+  title: "Bait: Off-Color Stories for You to Color"
+  authorIds: [chuck-palahniuk]
+  published: 2016
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    Eight short stories printed with full-page illustrations left uncoloured,
+    published as an adult colouring book.
+  note: >
+    Single-sourced date (the English Wikipedia works list). No second
+    independent confirmation was reachable here; flagged for the completeness
+    audit rather than presented as settled.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: chuck-palahniuk/legacy
+  title: "Legacy: An Off-Color Novella for You to Color"
+  authorIds: [chuck-palahniuk]
+  published: 2017
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A novella about an inheritance and a very long-lived debt, printed in the
+    same illustrated, uncoloured format as
+    [[work:chuck-palahniuk/bait|Bait]].
+  note: >
+    Single-sourced date, as with Bait. Flagged for the completeness audit.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: chuck-palahniuk/adjustment-day
+  title: "Adjustment Day"
+  authorIds: [chuck-palahniuk]
+  published: 2018-05-01
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A crowdsourced list decides who is to be removed, and the United States is
+    partitioned into three states organised by identity.
+  sources:
+    - https://en.wikipedia.org/wiki/Adjustment_Day
+
+- id: chuck-palahniuk/fight-club-3
+  title: "Fight Club 3"
+  authorIds: [chuck-palahniuk]
+  published: 2019
+  subseries: "Fight Club"
+  canonTier: core
+  synopsis: >
+    The third part of the comics sequence, again drawn by Cameron Stewart.
+  note: >
+    DATE. The twelve-issue Dark Horse series ran from 30 January 2019 to
+    26 December 2019, so the complete work first appeared in 2019; the
+    collected hardcover followed on 14 April 2020. Same tiering judgement as
+    [[work:chuck-palahniuk/fight-club-2|Fight Club 2]].
+  sources:
+    - https://en.wikipedia.org/wiki/Fight_Club_3
+
+- id: chuck-palahniuk/the-invention-of-sound
+  title: "The Invention of Sound"
+  authorIds: [chuck-palahniuk]
+  published: 2020
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A Hollywood sound engineer produces the industry's most convincing screams,
+    and a father is still looking for a daughter who disappeared.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: chuck-palahniuk/consider-this
+  title: "Consider This: Moments in My Writing Life after Which Everything Was Different"
+  authorIds: [chuck-palahniuk]
+  published: 2020
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    Part craft manual, part memoir: the rules he took from the Portland
+    workshop years, illustrated with what went wrong and right in his own books.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: chuck-palahniuk/not-forever-but-for-now
+  title: "Not Forever, But For Now"
+  authorIds: [chuck-palahniuk]
+  published: 2023
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Two brothers in a Welsh country house, raised into the family trade, narrate
+    their upbringing.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+
+- id: chuck-palahniuk/shock-induction
+  title: "Shock Induction"
+  authorIds: [chuck-palahniuk]
+  published: 2024
+  subseries: null
+  canonTier: core
+  synopsis: >
+    High-achieving students begin disappearing, and the trail runs through what
+    is being sold to them as a way out.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk

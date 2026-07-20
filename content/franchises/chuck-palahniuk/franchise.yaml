@@ -1,0 +1,129 @@
+id: chuck-palahniuk
+name: Chuck Palahniuk
+kind: author
+description: >
+  Three decades of American transgressive fiction: stripped, clinical novels
+  about invented identities and the crowds people join, written in a voice built
+  to be read aloud until somebody faints.
+authorIds: [chuck-palahniuk]
+themePreset: clinical-minimal
+
+# No header image recorded. Rights for the available photographs were not
+# established at this stage; the visual-metadata stage owns imagery, and an
+# empty slot renders as designed typography rather than as a broken promise.
+
+# CAPABILITIES - a deliberate declaration, not a default.
+#
+# connections: OFF, on purpose. This author has no shared universe, and saying
+# so plainly is the honest result rather than a gap to be filled. Every novel
+# here stands alone. The only work-to-work links that exist are:
+#   - Fight Club -> Fight Club 2 -> Fight Club 3, and
+#   - Damned -> Doomed
+# both of which are direct sequels already threaded by `subseries`, which is
+# exactly what the schema says connections must not duplicate; plus one genuine
+# connection recorded on Invisible Monsters Remix pointing back at the 1999
+# novel it restructures. A connections map drawn from that single edge would be
+# two nodes and a line, and a reader who meets it learns that the feature is
+# decoration. There is also no characters.yaml, for the same reason: Tyler
+# Durden and Madison Spencer recur only inside their own sequences, which is a
+# series, not connective tissue - and a roster entry for the first of those
+# would leak a reveal that `aka` and `description` have no way to gate.
+# The underlying data is still recorded truthfully, so a curator who disagrees
+# can flip this to auto and lose nothing.
+#
+# Everything else is left at auto and will light up from the data: river and
+# companion from the events, wizard from startHere below, orderDiff from the one
+# additional order plus the derived default, hall always. No editions.yaml, so
+# editions stays dark until that stage runs.
+features:
+  river: auto
+  orderDiff: auto
+  wizard: auto
+  connections: off
+  companion: auto
+  hall: auto
+  editions: auto
+
+# globalEvents is deliberately ABSENT. Which shared world events actually reach
+# this author is the event-resonance stage's ruling, not this one's; the app's
+# lifetime filter (born 1962) is the arithmetic default until then.
+
+# "Where to start" - powers the guided wizard.
+#
+# SOURCING, stated plainly: no author-published entry advice exists for
+# Palahniuk, and no community guide with any standing was found recommending a
+# starting point. So these paths rest on facts rather than on a consensus this
+# research cannot show, and each says which fact. Flagged for the curator in the
+# same terms as the audited Stephen King and Joao Tordo files.
+startHere:
+  paths:
+    # Basis: a fact, not a recommendation. It is his debut, the book the film
+    # was made from, and by a wide margin the one readers arrive through.
+    - id: fight-club-first
+      title: Start where everyone starts
+      description: >
+        Fight Club is the debut, the shortest book here, and the one almost
+        every reader comes in through. The cost is that you meet him at his most
+        famous rather than his most typical, and with a film sitting on top of
+        the text: the novel is drier, stranger, and does not end the way the
+        film does.
+      workIds:
+        - chuck-palahniuk/fight-club
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+    # Basis: the publisher's own numbering of the sequels (Dark Horse).
+    - id: fight-club-thread
+      title: The whole Fight Club thread
+      description: >
+        The novel and both comic sequels, the only continuous story in the
+        bibliography. A complete arc without committing to twenty standalone
+        books.
+      workIds: null
+      orderId: chuck-palahniuk/fight-club-sequence
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        The cost is a medium change halfway through: books two and three are
+        comics, drawn by Cameron Stewart, and read nothing like the novel.
+    # Basis: a fact about the shelf. Three novels exist that were written before
+    # the film reframed him, and they are the only ones that can be read without
+    # it. The era boundary they sit in is sourced.
+    - id: before-the-film
+      title: Before the film
+      description: >
+        The three novels published while nobody was watching: Fight Club,
+        Survivor and Invisible Monsters. The voice is already complete, the
+        readership was not, and none of them were written by a famous person.
+      workIds:
+        - chuck-palahniuk/fight-club
+        - chuck-palahniuk/survivor
+        - chuck-palahniuk/invisible-monsters
+      orderId: null
+      fit:
+        experience: [new, returning]
+        commitment: [taste]
+    - id: everything
+      title: Everything, in order
+      description: >
+        Three decades in publication order: the pre-film novels, the yearly run
+        the film paid for, the formal experiments, the nonfiction, and the
+        return to Fight Club in comics.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+
+# First-pass research bundle for curator review. 28 works, three eras (one
+# sourced, two flagged unsourced), three franchise events, five author life
+# events, one additional order, no characters, no editions, no imagery.
+sources:
+  - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+  - https://en.wikipedia.org/wiki/Fight_Club_(novel)
+  - https://en.wikipedia.org/wiki/Fight_Club
+  - https://en.wikipedia.org/wiki/Fight_Club_2
+  - https://en.wikipedia.org/wiki/Fight_Club_3
+  - https://en.wikipedia.org/wiki/Burnt_Tongues
