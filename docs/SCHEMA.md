@@ -295,10 +295,48 @@ app:
 Pick the boundary as *the work whose experience the detail damages*, not the
 work where the detail appears.
 
+## achievements.yaml (global) and franchises/&lt;slug&gt;/achievements.yaml
+
+Achievements are **data** (CONCEPT §7): a declarative `criteria` the app
+evaluates over a reader's progress plus the canon. Adding a badge is a content
+PR; only a brand-new criteria *kind* needs app work.
+
+- `content/achievements.yaml` holds franchise-agnostic badges (any reader of
+  any franchise can earn them).
+- `content/franchises/<slug>/achievements.yaml` holds that wing's badges, with
+  ids prefixed by the franchise slug so they never collide.
+
+```yaml
+- id: stephen-king/golden-decade      # franchise badges: "<slug>/<badge>"
+  name: Into the Golden Decade
+  description: Read 5 works from Stephen King's Golden Decade (1980-1989).
+  icon: "🌗"                          # emoji
+  tier: silver                        # bronze | silver | gold
+  category: context                   # completion | streak | context | social | discovery | curation
+  criteria:
+    kind: era_reader                  # see the kinds below
+    franchiseId: stephen-king
+    eraId: the-golden-decade
+    count: 5
+```
+
+Criteria kinds the app implements (the validator rejects anything else, and
+resolves every franchise/order/era reference inside them):
+
+| kind | fields | earned when |
+|---|---|---|
+| `read_count` | `count`, optional `franchiseId` | that many works read (optionally within one franchise) |
+| `franchise_complete` | `franchiseId` | every work in the franchise read |
+| `order_complete` | `orderId` | every work in that reading order read |
+| `punctual_read` | `withinYears` | any work read within N years of publication |
+| `era_reader` | `franchiseId`, `eraId`, `count` | that many works from one era read |
+
 ## theme.yaml
 
 See the app's CONCEPT §6 (the design law). Personality through palette + one
-display face + one signature; readability floor is non-negotiable.
+display face + one signature; readability floor is non-negotiable. All three
+levers are content: the app supplies only the curated *set* each choice picks
+from.
 
 ```yaml
 preset: literary-noir
@@ -308,6 +346,16 @@ signature: beam
 notes: >
   The intent in one paragraph, so future curators keep the restraint.
 ```
+
+- `palette` keys: `bg`, `surface`, `ink`, `muted`, `accent` (each becomes a CSS
+  custom property on the franchise's pages).
+- `displayFace`: one of the app's curated serifs - `fraunces`, `spectral`,
+  `sourceSerif`. An unknown value falls back to the default rather than
+  breaking the page. Adding a face is a deliberate app-side design decision;
+  propose one in the PR if a franchise genuinely needs it.
+- `signature`: the one signature element - `beam` (a bold accent rail the works
+  string along), `thread` (a quiet hairline; the default), `rule` (a firm
+  architectural line), or `none`.
 
 ## Validation
 

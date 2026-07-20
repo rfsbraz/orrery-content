@@ -83,6 +83,8 @@ What readers actually want to know, ranked by how much it changes the reading:
 - **Connections are declared on the later work**, pointing back at the earlier one (the later work is the one whose reading is enriched); the app renders the edge both ways. Do not duplicate what `subseries` already threads - connections are for crossovers, sequels across subseries, and shared-cosmology links.
 - **startHere paths are curation, not marketing.** Each path must be an entry strategy a real community actually recommends (cite it), tagged honestly with who it fits. Two to five paths; always include a completionist path (usually `orderId: default`).
 - **Editions only when verifiable.** Never guess an ISBN. It is fine (normal) to ship no `editions.yaml`; the app falls back to search links and OpenLibrary covers.
+- **Achievements are content, not app code.** A franchise may ship its own badges in `achievements.yaml` (ids prefixed `<slug>/`), using the criteria kinds in `docs/SCHEMA.md`. Tie at least one to the aura where the franchise supports it (an era, a signature order) - those are badges only Orrery can offer. Never invent a criteria kind; if a badge needs one, say so in the PR instead.
+- **Theming is content too.** `theme.yaml`'s `palette`, `displayFace` (curated set), and `signature` (`beam`/`thread`/`rule`/`none`) are all honored by the app - pick them deliberately per the design law, and never assume another franchise's look is the default.
 
 ## Process
 
@@ -104,6 +106,7 @@ content/
     <author-slug>.yaml               # GLOBAL author entity: bio, pseudonyms, lifeEvents
   events/
     global.yaml                      # shared world/culture events (reach: global)
+  achievements.yaml                  # global, franchise-agnostic badges
   franchises/
     <franchise-slug>/
       franchise.yaml                 # identity + features + startHere
@@ -113,6 +116,7 @@ content/
       orders.yaml                    # additional orders (default is derived)
       characters.yaml                # optional; recurring/crossover figures
       editions.yaml                  # optional; verified ISBNs only
+      achievements.yaml              # optional; this wing's badges (data, not code)
       theme.yaml                     # branding preset (see CONCEPT §6)
 ```
 

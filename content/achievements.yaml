@@ -1,0 +1,37 @@
+# Global achievements: franchise-agnostic badges that work for any reader of
+# any franchise. Franchise-specific badges live in
+# content/franchises/<slug>/achievements.yaml (ids prefixed with the slug).
+#
+# Achievements are DATA (see Orrery CONCEPT §7): `criteria` is a declarative
+# predicate the app evaluates over a reader's progress plus the canon. Adding a
+# badge is a content PR; only a NEW criteria kind needs app work.
+
+- id: first-steps
+  name: First Steps
+  description: Marked your first book as read.
+  icon: "📖"
+  tier: bronze
+  category: completion
+  criteria:
+    kind: read_count
+    count: 1
+
+- id: well-read
+  name: Well Read
+  description: Marked 25 books as read.
+  icon: "📚"
+  tier: silver
+  category: completion
+  criteria:
+    kind: read_count
+    count: 25
+
+- id: first-edition-soul
+  name: First-Edition Soul
+  description: Read a book within a year of its publication.
+  icon: "🕰️"
+  tier: silver
+  category: context
+  criteria:
+    kind: punctual_read
+    withinYears: 1

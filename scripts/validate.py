@@ -25,6 +25,16 @@ FEATURE_VALUES = {"auto", "on", "off", True, False}
 FIT_EXPERIENCE = {"new", "returning", "completionist"}
 FIT_COMMITMENT = {"taste", "arc", "complete"}
 EDITION_FORMATS = {"hardcover", "paperback", "ebook", "audiobook"}
+ACHIEVEMENT_TIERS = {"bronze", "silver", "gold"}
+ACHIEVEMENT_CATEGORIES = {"completion", "streak", "context", "social", "discovery", "curation"}
+# criteria kind -> required fields (the app implements one evaluator per kind)
+CRITERIA_KINDS = {
+    "read_count": {"count"},
+    "franchise_complete": {"franchiseId"},
+    "order_complete": {"orderId"},
+    "punctual_read": {"withinYears"},
+    "era_reader": {"franchiseId", "eraId", "count"},
+}
 
 
 def err(where, msg):
@@ -255,6 +265,69 @@ def main():
             if ed.get("format") and ed["format"] not in EDITION_FORMATS:
                 err(loc, f"{eid}: bad format '{ed.get('format')}'")
 
+    # --- achievements (global + per franchise) ---
+    era_ids_by_franchise = {}
+    for fdir in franchise_dirs:
+        if not os.path.isdir(fdir):
+            continue
+        fslug = os.path.basename(fdir)
+        epath = os.path.join(fdir, "eras.yaml")
+        era_ids_by_franchise[fslug] = {
+            e.get("id") for e in (load(epath) or []) if e.get("id")
+        } if os.path.exists(epath) else set()
+
+    all_order_ids = {oid for ids in order_ids_by_franchise.values() for oid in ids}
+    achievement_ids = set()
+
+    def check_achievements(loc, items, franchise_slug=None):
+        for a in items or []:
+            aid = a.get("id", "")
+            if not aid:
+                err(loc, "achievement missing id")
+                continue
+            if franchise_slug and not aid.startswith(franchise_slug + "/"):
+                err(loc, f"achievement id '{aid}' must start with '{franchise_slug}/'")
+            if aid in achievement_ids:
+                err(loc, f"duplicate achievement id '{aid}'")
+            achievement_ids.add(aid)
+            for field in ("name", "description", "icon"):
+                if not a.get(field):
+                    err(loc, f"{aid}: achievement missing {field}")
+            if a.get("tier") not in ACHIEVEMENT_TIERS:
+                err(loc, f"{aid}: bad tier '{a.get('tier')}'")
+            if a.get("category") not in ACHIEVEMENT_CATEGORIES:
+                err(loc, f"{aid}: bad category '{a.get('category')}'")
+
+            c = a.get("criteria") or {}
+            kind = c.get("kind")
+            if kind not in CRITERIA_KINDS:
+                err(loc, f"{aid}: unknown criteria kind '{kind}' (app implements: {sorted(CRITERIA_KINDS)})")
+                continue
+            for field in CRITERIA_KINDS[kind]:
+                if c.get(field) is None:
+                    err(loc, f"{aid}: criteria '{kind}' requires '{field}'")
+            # every reference in the criteria must resolve
+            fid = c.get("franchiseId")
+            if fid and fid not in franchise_slugs:
+                err(loc, f"{aid}: criteria references unknown franchise '{fid}'")
+            oid = c.get("orderId")
+            if oid and oid not in all_order_ids:
+                err(loc, f"{aid}: criteria references unknown order '{oid}'")
+            eid = c.get("eraId")
+            if eid and eid not in era_ids_by_franchise.get(fid or "", set()):
+                err(loc, f"{aid}: criteria references unknown era '{eid}' for franchise '{fid}'")
+
+    gapath = os.path.join(ROOT, "content", "achievements.yaml")
+    if os.path.exists(gapath):
+        check_achievements("achievements.yaml", load(gapath) or [])
+    for fdir in franchise_dirs:
+        if not os.path.isdir(fdir):
+            continue
+        fslug = os.path.basename(fdir)
+        apath = os.path.join(fdir, "achievements.yaml")
+        if os.path.exists(apath):
+            check_achievements(f"{fslug}/achievements.yaml", load(apath) or [], fslug)
+
     # --- inline [[type:id|text]] references resolve everywhere ---
     for path in glob.glob(os.path.join(ROOT, "content", "**", "*.yaml"), recursive=True):
         with open(path, encoding="utf-8") as f:
@@ -275,7 +348,7 @@ def main():
         for e in ERRORS:
             print("  -", e)
         sys.exit(1)
-    print(f"OK - {len(work_ids)} works, {len(author_ids)} authors, all references resolve.")
+    print(f"OK - {len(work_ids)} works, {len(author_ids)} authors, {len(character_ids)} characters, {len(achievement_ids)} achievements, all references resolve.")
 
 
 if __name__ == "__main__":
