@@ -129,6 +129,16 @@ def main():
                     err(loc, f"{wid}: unknown withAuthorId '{aid}'")
             if w.get("canonTier") not in {"core", "extended", "apocrypha"}:
                 err(loc, f"{wid}: bad canonTier '{w.get('canonTier')}'")
+            # authorRole defaults to "author"; it only needs stating when the
+            # author did not write the whole book. A contributor or editor entry
+            # must never look like authorship, so the tier has to match.
+            role = w.get("authorRole", "author")
+            if role not in {"author", "co-author", "contributor", "editor"}:
+                err(loc, f"{wid}: bad authorRole '{role}'")
+            if role in {"contributor", "editor"} and w.get("canonTier") != "apocrypha":
+                err(loc, f"{wid}: authorRole '{role}' must be canonTier apocrypha")
+            if w.get("contributionTitle") and role == "author":
+                err(loc, f"{wid}: contributionTitle set but authorRole is 'author'")
             check_images(loc, wid, w.get("images"))
 
     # --- work connections (second pass: all work ids known) ---
