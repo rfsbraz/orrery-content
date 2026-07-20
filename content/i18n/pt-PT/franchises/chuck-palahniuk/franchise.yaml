@@ -1,0 +1,57 @@
+# Overlay pt-PT. Apenas prosa; id, slugs, títulos de obras e sources não são
+# traduzidos.
+# Os startHere.paths ficam aninhados e são fundidos por id (ver SCHEMA.md,
+# "Nested lists merge by id"): só `title`, `description` e `note`, nunca
+# `workIds`, `orderId` ou `fit`.
+# Os títulos de obras citados na prosa usam a edição portuguesa publicada
+# (content/franchises/chuck-palahniuk/editions.yaml) ou ficam em inglês quando
+# não existe edição portuguesa. Survivor não tem edição portuguesa.
+- id: chuck-palahniuk
+  description: >
+    Três décadas de ficção transgressiva americana: romances despidos e
+    clínicos sobre identidades inventadas e sobre as multidões a que as pessoas
+    aderem, escritos numa voz feita para ser lida em voz alta até alguém
+    desmaiar.
+  startHere:
+    paths:
+      - id: fight-club-first
+        title: Começar onde toda a gente começa
+        description: >
+          Clube de Combate é a estreia, o livro mais curto daqui e aquele por
+          onde quase todos os leitores entram. O custo é conhecê-lo no seu
+          momento mais famoso e não no mais típico, e com um filme pousado em
+          cima do texto: o romance é mais seco, mais estranho, e não acaba como
+          o filme.
+
+      - id: fight-club-thread
+        title: Todo o fio de Clube de Combate
+        description: >
+          O romance e as duas sequelas em banda desenhada, a única história
+          contínua da bibliografia. Um arco completo sem ter de assumir vinte
+          livros independentes.
+        note: >
+          O custo é uma mudança de suporte a meio do caminho: os livros dois e
+          três são banda desenhada, com desenho de Cameron Stewart, e não se
+          leem nada como o romance. Dividem também os seus leitores muito mais
+          do que qualquer outra coisa aqui.
+
+      - id: before-the-film
+        title: Antes do filme
+        description: >
+          Os três romances publicados enquanto ninguém estava a ver: Clube de
+          Combate, Survivor e Monstros invisíveis. A voz já está completa, o
+          público não estava, e nenhum deles foi escrito por uma pessoa famosa.
+          O custo são três livros antes de saber se gosta dele, e um ponto de
+          paragem mesmo antes das experiências formais que alguns leitores
+          acham ser o verdadeiro alcance.
+
+      - id: everything
+        title: Tudo, por ordem
+        description: >
+          Três décadas por ordem de publicação: os romances anteriores ao
+          filme, a série anual que o filme pagou, as experiências formais, a
+          não-ficção e o regresso a Clube de Combate em banda desenhada. O
+          custo é que o percurso não é todo de romances, já que os livros de
+          colorir e a banda desenhada ocupam nele os seus próprios lugares
+          numerados, e a fase pós-filme é irregular de uma maneira que meia
+          dúzia de livros escolhidos lhe esconderia.
