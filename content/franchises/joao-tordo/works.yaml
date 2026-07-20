@@ -5,9 +5,18 @@
 #
 # Dates are first-edition years. Where a year, title form, or series membership
 # is ambiguous between sources, a `note:` records the gap rather than guessing.
-# Almost all of Tordo's books are novels; the one non-fiction title is tiered
-# extended. English coverage is thin - Portuguese sources (pt.wikipedia,
-# joaotordo.com, Companhia das Letras/Penguin, national press) are the base.
+# English coverage is thin - Portuguese sources (joaotordo.com, Companhia das
+# Letras/Penguin, national press) are the base. pt.wikipedia is used only as a
+# lead; it has been wrong here on at least two points (it accents "Cecília
+# Fluss", which the published cover does not, and dates "As Súplicas" to 2018
+# when the Expresso collection ran in 2017).
+#
+# canonTier convention for this franchise, applied consistently:
+#   core      - the 20 novels
+#   extended  - sole-authored non-fiction books (3)
+#   apocrypha - short-form pieces published in newspapers, magazines or digital
+#               collections rather than as standalone books (3)
+# Tier records the KIND of publication, never how confident the research was.
 
 # --- Early period: the metaphysical / international novels (2004-2013) ---
 
@@ -37,9 +46,13 @@
   synopsis: >
     An early novel of memory and displacement. Widely reissued.
   note: >
-    Title confirmed as "Hotel Memória" (not "Hotel da Memória", a common
-    misrendering). Detailed synopsis not verified in English.
-  sources: [https://pt.wikipedia.org/wiki/Jo%C3%A3o_Tordo]
+    Title form RESOLVED: "Hotel Memória", with no "da". Carried on the
+    publisher's own product page and on the author's bibliography; "Hotel da
+    Memória" is a misrendering with no published basis. Detailed synopsis still
+    not verified.
+  sources:
+    - https://penguinlivros.pt/loja/companhia-das-letras/livro/hotel-memoria/
+    - https://joaotordo.com/lista
 
 - id: joao-tordo/as-tres-vidas
   title: "As Três Vidas"
@@ -54,11 +67,13 @@
     most recommended entry point. Translated into several languages (English:
     "The Three Lives").
   note: >
-    First edition 2008; the Prémio José Saramago was awarded in 2009. Some
-    retailers list the book itself as 2009 - the 2008 first-edition year is used
-    here.
+    Year RESOLVED as 2008. First published September 2008 by QuidNovi; the
+    Prémio José Saramago (6th edition) was awarded in October 2009, which is
+    where the competing 2009 date comes from. The prize year is not the
+    publication year.
   sources:
     - https://www.publico.pt/2009/10/18/jornal/premio-jose-saramago-paraas-tres-vidasde-joao-tordo-18039614
+    - https://pt.wikipedia.org/wiki/As_Tr%C3%AAs_Vidas
     - https://penguinlivros.pt/loja/companhia-das-letras/livro/as-tres-vidas/
 
 - id: joao-tordo/o-bom-inverno
@@ -83,11 +98,18 @@
   subseries: null
   canonTier: core
   synopsis: >
-    A novel of guilt and reckoning from the heart of Tordo's early period.
+    An ambitious journalist, out to prove himself during Portugal's financial
+    crisis, writes about Catarina Eufémia - the Alentejo farm worker shot dead
+    by a GNR officer in 1954 and made an icon by the Communist Party. The piece
+    draws threats, his editor is found beaten and comatose, and he falls into an
+    obsessive search through the fog that turns the dead into myths.
   note: >
-    Title given as "Anatomia dos Mártires" on pt.wikipedia; some sources use
-    "A Anatomia dos Mártires". English synopsis not verified.
-  sources: [https://pt.wikipedia.org/wiki/Jo%C3%A3o_Tordo]
+    Title form RESOLVED: "Anatomia dos Mártires", with no leading article. The
+    publisher, Wook and Bertrand all carry it without the "A"; the variant
+    "A Anatomia dos Mártires" appears only in secondary write-ups.
+  sources:
+    - https://penguinlivros.pt/loja/companhia-das-letras/livro/anatomia-dos-martires/
+    - https://www.wook.pt/livro/anatomia-dos-martires-joao-tordo/11688059
 
 - id: joao-tordo/o-ano-sabatico
   title: "O Ano Sabático"
@@ -104,6 +126,31 @@
     coverCredit: "OpenLibrary"
     coverSource: "https://openlibrary.org/books/OL30426158M"
   sources: [https://pt.wikipedia.org/wiki/Jo%C3%A3o_Tordo]
+
+- id: joao-tordo/cidade-liquida
+  title: "Cidade Líquida"
+  authorIds: [joao-tordo]
+  published: 2012
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    A short story. The narrator and the filmmaker Roque dos Santos, last seen in
+    Venice, meet again in Lisbon.
+  note: >
+    Not a book. Published as the second title in the Biblioteca Digital DN, a
+    free digital short-story collection run by the newspaper Diário de Notícias
+    from October 2012 to January 2013, in ePub, PDF and Mobi. Tiered apocrypha
+    as a periodical piece. It continues an earlier Tordo story titled "Águas
+    Passadas" set in Venice, which shares nothing but its name with the 2021
+    novel [[work:joao-tordo/aguas-passadas|Águas Passadas]]; that earlier story
+    could not be dated and is not catalogued.
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9789898507068-L.jpg"
+    coverCredit: "OpenLibrary"
+    coverSource: "https://openlibrary.org/books/OL49375818M"
+  sources:
+    - https://ebookportugal.wordpress.com/2012/10/20/biblioteca-digital-dn-2o-conto-a-cidade-liquida-de-joao-tordo/
+    - https://www.goodreads.com/pt/book/show/16098176-cidade-l-quida
 
 # --- The Lugares Sem Nome period + Biografia (2014-2017) ---
 
@@ -172,13 +219,37 @@
     past reopens the wound. The third volume closes the trilogy on memory, love
     and desolation.
   note: >
-    Published title uses "Cecilia" (no accent) on the cover; the name would
-    ordinarily be "Cecília". Kept as published.
+    Title form RESOLVED: "Cecilia", no accent, as printed. Confirmed on the
+    publisher's product page and the author's own bibliography, though the name
+    would ordinarily be "Cecília" and pt.wikipedia accents it. Kept as
+    published.
   sources:
     - https://www.dn.pt/lusa/o-deslumbre-de-cecilia-fluss-encerra-trilogia-de-joao-tordo-com-publicacao-em-maio-6249642.html
     - https://www.wook.pt/ebook/o-deslumbre-de-cecilia-fluss-trilogia-dos-lugares-sem-nome-3-joao-tordo/21591787
 
 # --- Late 2010s: bridge into the crime turn ---
+
+- id: joao-tordo/as-suplicas
+  title: "As Súplicas"
+  authorIds: [joao-tordo]
+  published: 2017
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    A novella drawing on Japanese culture, told in a deliberately classical
+    shape, about family, power, ambition, friendship and rivalry.
+  note: >
+    Not a standalone book. Published in the Inéditos Expresso collection - twelve
+    previously unpublished texts issued with the weekly Expresso across six
+    volumes between 20 January and 24 February 2017, each volume pairing two
+    Portuguese authors. "As Súplicas" shares Volume II with Afonso Cruz's "O
+    Abençoado" (104pp, ISBN 978-989-99723-1-5), so the physical object is not
+    solely Tordo's; it is tiered apocrypha for that reason. Year corrected to
+    2017 against the pt.wikipedia list, which dates it 2018 - the Expresso run
+    is documented as 2017.
+  sources:
+    - http://quimerainsular.blogspot.com/2018/04/coleccao-ineditos-expresso.html
+    - https://www.goodreads.com/book/show/38235314-o-aben-oado-as-s-plicas
 
 - id: joao-tordo/ensina-me-a-voar-sobre-os-telhados
   title: "Ensina-me a Voar Sobre os Telhados"
@@ -187,28 +258,45 @@
   subseries: null
   canonTier: core
   synopsis: >
-    A tender, memory-steeped novel; a finalist for the 2019 Prémio Oceanos.
+    Two families a century apart. In Japan in 1917 a young man, Katsuro, is
+    exiled by his own father, a powerful governor, and uncovers the Tsukuda
+    family's terrible secret. In Lisbon, a teacher takes his own life at the
+    Liceu Camões and a school employee - a recovering alcoholic - starts a
+    weekly meeting for the colleagues left behind. A tender, memory-steeped
+    novel; a finalist for the 2019 Prémio Oceanos.
   note: >
-    First edition 2018 (pt.wikipedia and joaotordo.com); occasionally cited as
-    2021 from a later edition. Year flagged for curator confirmation.
+    Year RESOLVED as 2018. Four independent sources agree - the publisher's own
+    page, the author's bibliography, the Wook/Bertrand catalogue record, and
+    contemporary Portuguese reviews from 2018. No evidence of a 2021 first
+    edition was found; the 2021 date in circulation appears to trace to a later
+    printing (a Livro de Bolso reissue exists from 2020).
   images:
     cover: "https://covers.openlibrary.org/b/isbn/9789896655297-L.jpg"
     coverCredit: "OpenLibrary"
     coverSource: "https://openlibrary.org/books/OL32270849M"
-  sources: [https://joaotordo.com/livros]
+  sources:
+    - https://joaotordo.com/lista
+    - https://www.wook.pt/livro/ensina-me-a-voar-sobre-os-telhados-joao-tordo/21502924
+    - https://www.intro.pt/ensina-me-a-voar-sobre-os-telhados-joao-tordo-companhia-das-letras-2018/
 
 - id: joao-tordo/a-mulher-que-correu-atras-do-vento
   title: "A Mulher que Correu Atrás do Vento"
   authorIds: [joao-tordo]
   published: 2019
   subseries: null
-  canonTier: extended
+  canonTier: core
   synopsis: >
-    A 2019 novel.
+    Four women across more than a century, from Bavaria in 1892 to Lisbon in
+    2015 - a wide-span literary novel about inheritance and the lives women are
+    handed.
   note: >
-    Sourced from the pt.wikipedia bibliography list; not individually
-    cross-checked. Synopsis unverified - kept minimal. Curator: confirm.
-  sources: [https://pt.wikipedia.org/wiki/Jo%C3%A3o_Tordo]
+    VERIFIED. Exists, is his, and the 2019 year is right: the publisher carries
+    it and the author's own bibliography lists it under 2019. It is a
+    substantial novel, not the minor title the previous placeholder entry
+    implied, so it is tiered core with the rest of the fiction.
+  sources:
+    - https://penguinlivros.pt/loja/companhia-das-letras/livro/a-mulher-que-correu-atras-do-vento/
+    - https://joaotordo.com/lista
 
 - id: joao-tordo/a-noite-em-que-o-verao-acabou
   title: "A Noite em que o Verão Acabou"
@@ -248,49 +336,93 @@
     PSP sub-commissioner Pilar Benamor - brave, dogged, carrying her own painful
     secrets - is first on the scene of a child's murder, where she meets Cícero,
     an isolated ex-police informant. A crime novel of relentless pace.
+  note: >
+    Name collision worth knowing: Tordo also wrote a much earlier short story
+    called "Águas Passadas", set in Venice, which is a different piece entirely
+    and is the one referred back to by
+    [[work:joao-tordo/cidade-liquida|Cidade Líquida]] (2012). That story is not
+    catalogued as a separate work here because no publication date or venue for
+    it could be established. Do not merge the two.
   sources:
     - https://penguinlivros.pt/loja/companhia-das-letras/livro/aguas-passadas/
+    - https://ebookportugal.wordpress.com/2012/10/20/biblioteca-digital-dn-2o-conto-a-cidade-liquida-de-joao-tordo/
 
 - id: joao-tordo/naufragio
   title: "Naufrágio"
   authorIds: [joao-tordo]
   published: 2022
   subseries: null
-  canonTier: extended
+  canonTier: core
   synopsis: >
     Aboard the small boat Narcisse, with an old guitar and a dog named Sozinho,
-    a man tries to make his life mean something again - until a figure from the
-    past changes course. A standalone literary novel, not a Benamor case.
-  sources: [https://pt.wikipedia.org/wiki/Jo%C3%A3o_Tordo]
+    the novelist Jaime Toledo tries to make his life mean something again -
+    until a figure from the past changes course. A standalone literary novel,
+    not a Benamor case.
+  note: >
+    Standalone status confirmed by the publisher blurb, which names the
+    protagonist as the novelist Jaime Toledo and involves no Benamor.
+  sources:
+    - https://penguinlivros.pt/loja/companhia-das-letras/livro/naufragio/
 
 - id: joao-tordo/cem-anos-de-perdao
   title: "Cem Anos de Perdão"
   authorIds: [joao-tordo]
   published: 2022
   subseries: "Pilar Benamor"
-  canonTier: extended
+  canonTier: core
   synopsis: >
-    A Pilar Benamor detective novel, between
-    [[work:joao-tordo/aguas-passadas|Águas Passadas]] and
-    [[work:joao-tordo/os-dias-contados|Os Dias Contados]] in the series.
+    On St Dismas, a small remote island off the English coast, a violent crime
+    between brothers shakes the community, and the investigation runs back into
+    a centuries-old religious sect. The second Pilar Benamor case, after
+    [[work:joao-tordo/aguas-passadas|Águas Passadas]].
   note: >
-    Benamor-series membership inferred from Os Dias Contados being described as
-    following "Águas Passadas and Cem Anos de Perdão"; treat subseries as
-    medium-confidence pending curator confirmation.
-  sources: ["https://books.google.com/books/about/Os_dias_contados.html?id=22cfEQAAQBAJ"]
+    Subseries membership RESOLVED - no longer inferred. The publisher's own
+    blurb states it outright: "Depois de Águas Passadas, a dupla Pilar Benamor e
+    Cícero Gusmão regressa para um novo mistério."
+  sources:
+    - https://penguinlivros.pt/loja/companhia-das-letras/livro/cem-anos-de-perdao/
 
 - id: joao-tordo/o-nome-que-a-cidade-esqueceu
   title: "O Nome Que a Cidade Esqueceu"
   authorIds: [joao-tordo]
   published: 2023
   subseries: null
-  canonTier: extended
+  canonTier: core
   synopsis: >
-    A 2023 novel.
+    New York, 1991. Natasha, a refugee from the collapsing Soviet Union, arrives
+    in America and is offered a strange job by George B., a recluse in a
+    Manhattan apartment: read the telephone directory aloud to him. Taken from a
+    true story reported in the New York Times, and set in the city where Tordo
+    became a writer.
   note: >
-    From the pt.wikipedia bibliography list; not individually cross-checked.
-    Synopsis and subseries membership unverified. Curator: confirm.
-  sources: [https://pt.wikipedia.org/wiki/Jo%C3%A3o_Tordo]
+    VERIFIED. Exists, is his, 2023 confirmed by the publisher (November 2023).
+    Subseries question RESOLVED: it is a standalone, with no Pilar Benamor
+    involvement. The publisher frames it as his twentieth book, written twenty
+    years after his debut - a round-number marketing count that does not
+    reconcile exactly with the full bibliography below, so it is recorded here
+    as framing rather than treated as a census.
+  sources:
+    - https://penguinlivros.pt/loja/companhia-das-letras/livro/o-nome-que-a-cidade-esqueceu/
+
+- id: joao-tordo/cancao-dos-caes-e-das-rosas
+  title: "Canção dos Cães e das Rosas"
+  authorIds: [joao-tordo]
+  published: 2023
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    A family novella: after a quarrel, an estranged son comes home for the
+    holidays. Dark in Tordo's usual register, but not crime.
+  note: >
+    Not a book. Written exclusively for the magazine SÁBADO and published as a
+    serial in eight chapters from 13 July 2023 across that summer, with an
+    audiobook read by Rita Redshoes. No standalone print edition was found, so
+    it is tiered apocrypha. The SÁBADO announcement calls Tordo "the author of
+    19 books" in July 2023, which is a useful independent check on the shape of
+    the bibliography at that date.
+  sources:
+    - https://www.sabado.pt/vida/detalhe/joao-tordo-publica-novela-exclusiva-em-fasciculos-na-sabado
+    - https://www.sabado.pt/ficcao-sabado/cancao-dos-caes-e-das-rosas/detalhe/cancao-dos-caes-e-das-rosas-i-parte
 
 - id: joao-tordo/os-dias-contados
   title: "Os Dias Contados"
@@ -301,7 +433,12 @@
   synopsis: >
     A journey back to the origins of Pilar Benamor - her first days out of the
     academy and the case that woke all her ghosts - following
-    [[work:joao-tordo/aguas-passadas|Águas Passadas]] and Cem Anos de Perdão.
+    [[work:joao-tordo/aguas-passadas|Águas Passadas]] and
+    [[work:joao-tordo/cem-anos-de-perdao|Cem Anos de Perdão]].
+  note: >
+    The Pilar Benamor series stands at three books as of July 2026. A fourth has
+    been trailed in Portuguese coverage as returning the Pilar/Cícero pairing,
+    but it is unpublished and unnamed, so it is not catalogued here.
   sources:
     - https://joaotordo.com/novolivro
     - https://books.google.com/books/about/Os_dias_contados.html?id=22cfEQAAQBAJ
@@ -311,14 +448,18 @@
   authorIds: [joao-tordo]
   published: 2025
   subseries: null
-  canonTier: extended
+  canonTier: core
   synopsis: >
-    A 2025 novel.
+    College friends reunite in Ireland for the funeral of Rebecca Connelly, and
+    what they owe each other comes due. A standalone.
   note: >
-    From the pt.wikipedia bibliography list; the most recent title and the least
-    cross-checked. Year, title form, and synopsis all pending curator
-    confirmation.
-  sources: [https://pt.wikipedia.org/wiki/Jo%C3%A3o_Tordo]
+    VERIFIED. Exists, is his, and the year, title form and standalone status are
+    all confirmed by the publisher: October 2025, 368pp. As of July 2026 this is
+    his most recent book - no 2026 title is announced on the author's site or in
+    the publisher's catalogue.
+  sources:
+    - https://penguinlivros.pt/loja/companhia-das-letras/livro/inventario-da-solidao/
+    - https://joaotordo.com/
 
 # --- Non-fiction ---
 
@@ -330,5 +471,56 @@
   canonTier: extended
   synopsis: >
     A non-fiction book on the writing life, drawn from Tordo's creative-writing
-    workshops. The one non-novel in the bundle.
-  sources: [https://joaotordo.com/livros]
+    workshops.
+  sources: [https://joaotordo.com/lista]
+
+- id: joao-tordo/que-nos-estamos-aqui
+  title: "Que Nós Estamos Aqui"
+  authorIds: [joao-tordo]
+  published: 2020
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A short non-fiction book on addiction and recovery: how the twelve-step
+    programme works, told through the story of Alcoholics Anonymous and its
+    founder Bill Wilson.
+  note: >
+    Full title "Que Nós Estamos Aqui: 12 Passos para a Recuperação". Published
+    February 2020, 72pp, by the Fundação Francisco Manuel dos Santos rather than
+    Companhia das Letras, as part of the foundation's series on Portuguese
+    social realities - which is why it is absent from the publisher's author
+    page. It is listed under "Ensaios" on Tordo's own site alongside
+    [[work:joao-tordo/manual-de-sobrevivencia-de-um-escritor|Manual de
+    Sobrevivência de um Escritor]]. The recovery subject matter rhymes with the
+    recovering-alcoholic narrator of
+    [[work:joao-tordo/ensina-me-a-voar-sobre-os-telhados|Ensina-me a Voar Sobre
+    os Telhados]].
+  sources:
+    - https://joaotordo.com/lista
+    - https://ffms.pt/en/books/we-are-here-12-steps-towards-recovery
+    - https://www.wook.pt/livro/que-nos-estamos-aqui-joao-tordo/23854251
+
+- id: joao-tordo/uma-valsa-com-a-morte
+  title: "Uma Valsa com a Morte"
+  authorIds: [joao-tordo]
+  published: 2023
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    After his grandmother's death, Tordo returns to the essay: linked pieces on
+    music, literature, spirituality and religion, on the fear that narrows a
+    life and the joy that might widen it, circling the presence of death -
+    sombre, intangible, inevitable and sometimes comic.
+  note: >
+    The clearest gap this audit found: a full Companhia das Letras trade book,
+    present on the publisher's own author page, that the bundle omitted
+    entirely. Full title on the record is "Uma valsa com a morte, ou, o pouco
+    que sei sobre música, literatura, melancolia, espiritualidade e a minha
+    avó"; the short form is used as the work title, as the publisher does. The
+    grandmother of the dedication is Dadá, who agreed to dance with death at
+    100. ISBN 9789897849206, 216-224pp depending on printing; the publisher
+    page shows a 2nd edition dated May 2023.
+  sources:
+    - https://penguinlivros.pt/loja/companhia-das-letras/livro/uma-valsa-com-a-morte/
+    - https://books.google.pt/books/about/Uma_valsa_com_a_morte.html?id=tcsH0AEACAAJ
+    - https://deusmelivro.com/mil-folhas/uma-valsa-com-a-morte-joao-tordo-23-8-2023/
