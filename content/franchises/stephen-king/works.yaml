@@ -1,7 +1,13 @@
 # Bibliography (Works) - the abstract books; editions/covers are separate metadata.
 # IDs are STABLE and permanent (user data references them). Dates are year-precision
-# pending curation. First pass: core novels + full Dark Tower cycle + Bachman books +
-# key collections (extended). Long-tail collections/nonfiction still to append.
+# pending curation, and record FIRST publication (see the note on The Eyes of the
+# Dragon, where the limited edition predates the trade edition by three years).
+#
+# Scope: novels (King and Bachman), the full Dark Tower cycle, collections,
+# nonfiction, and novellas that had their own standalone publication event.
+# Deliberately excluded: individual stories inside a listed collection, omnibus
+# reissues of already-listed works (The Bachman Books, The Stand: Complete and
+# Uncut), film-only screenplays, and books King contributed to but did not author.
 
 - id: stephen-king/carrie
   title: "Carrie"
@@ -114,6 +120,16 @@
   externalIds:
     openLibrary: OL149102W
 
+- id: stephen-king/danse-macabre
+  title: "Danse Macabre"
+  authorIds: [stephen-king]
+  published: 1981
+  subseries: null
+  canonTier: extended
+  synopsis: "His book-length survey of horror in print, film and radio from 1950 to 1980, and of why the genre works."
+  sources:
+    - https://en.wikipedia.org/wiki/Danse_Macabre_(book)
+
 - id: stephen-king/the-gunslinger
   title: "The Dark Tower I: The Gunslinger"
   authorIds: [stephen-king]
@@ -143,6 +159,17 @@
   externalIds:
     openLibrary: OL81621W
 
+- id: stephen-king/creepshow
+  title: "Creepshow"
+  authorIds: [stephen-king]
+  published: 1982
+  subseries: null
+  canonTier: extended
+  withAuthorIds: [bernie-wrightson]
+  synopsis: "Five EC-comics horror tales in graphic-novel form, published alongside the film King wrote."
+  sources:
+    - https://en.wikipedia.org/wiki/Creepshow
+
 - id: stephen-king/christine
   title: "Christine"
   authorIds: [stephen-king]
@@ -162,6 +189,19 @@
   synopsis: "A burial ground beyond a family's new home brings back what is buried - wrong."
   externalIds:
     openLibrary: OL81631W
+
+- id: stephen-king/cycle-of-the-werewolf
+  title: "Cycle of the Werewolf"
+  authorIds: [stephen-king]
+  published: 1983
+  subseries: null
+  canonTier: core
+  synopsis: "A small town lives through twelve moonlit months of werewolf killings, one short chapter per month."
+  note: >
+    First published as an illustrated limited edition by Land of Enchantment with
+    artwork by Bernie Wrightson; later the basis for the film Silver Bullet.
+  sources:
+    - https://en.wikipedia.org/wiki/Cycle_of_the_Werewolf
 
 - id: stephen-king/the-talisman
   title: "The Talisman"
@@ -206,10 +246,14 @@
 - id: stephen-king/the-eyes-of-the-dragon
   title: "The Eyes of the Dragon"
   authorIds: [stephen-king]
-  published: 1987
+  published: 1984
   subseries: null
   canonTier: core
   synopsis: "A fairy-tale of two princes and the wizard Flagg, tied to the Dark Tower multiverse."
+  note: >
+    First published in 1984 as a Philtrum Press limited edition of 1,250 copies;
+    the widely read Viking trade edition, slightly revised and newly illustrated,
+    followed in 1987. Dated here to first publication.
   connections:
     - stephen-king/the-stand
 
@@ -240,6 +284,16 @@
   subseries: "The Dark Tower"
   canonTier: core
   synopsis: "Roland draws three companions from our world through doors on a beach."
+
+- id: stephen-king/nightmares-in-the-sky
+  title: "Nightmares in the Sky: Gargoyles and Grotesques"
+  authorIds: [stephen-king]
+  published: 1988
+  subseries: null
+  canonTier: apocrypha
+  synopsis: "A long essay on the stone gargoyles of American buildings, written to accompany photographs by f-stop Fitzgerald."
+  sources:
+    - https://en.wikipedia.org/wiki/Stephen_King_bibliography
 
 - id: stephen-king/the-dark-half
   title: "The Dark Half"
@@ -371,6 +425,18 @@
     - stephen-king/the-stand
     - stephen-king/the-eyes-of-the-dragon
 
+- id: stephen-king/six-stories
+  title: "Six Stories"
+  authorIds: [stephen-king]
+  published: 1997
+  subseries: null
+  canonTier: extended
+  synopsis: "A small limited-edition gathering of six tales, most later folded into the wider collections."
+  note: >
+    Published by King's own Philtrum Press in a limited run; never given a trade edition.
+  sources:
+    - https://en.wikipedia.org/wiki/Six_Stories
+
 - id: stephen-king/bag-of-bones
   title: "Bag of Bones"
   authorIds: [stephen-king]
@@ -401,6 +467,16 @@
   externalIds:
     openLibrary: OL81624W
 
+- id: stephen-king/storm-of-the-century
+  title: "Storm of the Century: An Original Screenplay"
+  authorIds: [stephen-king]
+  published: 1999
+  subseries: null
+  canonTier: extended
+  synopsis: "A published screenplay, written directly for television, in which a blizzard traps an island town with something that knows its secrets."
+  sources:
+    - https://en.wikipedia.org/wiki/Storm_of_the_Century
+
 - id: stephen-king/on-writing
   title: "On Writing: A Memoir of the Craft"
   authorIds: [stephen-king]
@@ -408,6 +484,32 @@
   subseries: null
   canonTier: extended
   synopsis: "Part memoir, part toolbox - his craft book, written partly during recovery from the 1999 accident."
+
+- id: stephen-king/secret-windows
+  title: "Secret Windows: Essays and Fiction on the Craft of Writing"
+  authorIds: [stephen-king]
+  published: 2000
+  subseries: null
+  canonTier: apocrypha
+  synopsis: "A Book-of-the-Month Club companion to On Writing, collecting older essays, speeches and excerpts on the craft."
+  connections:
+    - stephen-king/on-writing
+  sources:
+    - https://en.wikipedia.org/wiki/Secret_Windows
+
+- id: stephen-king/the-plant
+  title: "The Plant"
+  authorIds: [stephen-king]
+  published: 2000
+  subseries: null
+  canonTier: apocrypha
+  synopsis: "An epistolary tale of a paperback house overtaken by a carnivorous vine, serialized and never finished."
+  note: >
+    Begun as Philtrum Press chapbooks in 1982-1985, then revived in 2000 as a
+    self-published pay-what-you-want e-serial that King halted after six
+    installments. Incomplete; included for completeness, not as a finished work.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Plant
 
 - id: stephen-king/dreamcatcher
   title: "Dreamcatcher"
@@ -482,6 +584,17 @@
     - stephen-king/insomnia
     - stephen-king/hearts-in-atlantis
 
+- id: stephen-king/faithful
+  title: "Faithful: Two Diehard Boston Red Sox Fans Chronicle the Historic 2004 Season"
+  authorIds: [stephen-king]
+  published: 2004
+  subseries: null
+  canonTier: extended
+  withAuthorIds: [stewart-onan]
+  synopsis: "Two novelists trade letters and diary entries across the baseball season that broke an 86-year curse."
+  sources:
+    - https://en.wikipedia.org/wiki/Faithful_(book)
+
 - id: stephen-king/the-colorado-kid
   title: "The Colorado Kid"
   authorIds: [stephen-king]
@@ -551,6 +664,45 @@
   externalIds:
     openLibrary: OL14917748W
 
+- id: stephen-king/ur
+  title: "Ur"
+  authorIds: [stephen-king]
+  published: 2009
+  subseries: null
+  canonTier: extended
+  synopsis: "A jilted lecturer buys an e-reader that delivers books and newspapers from worlds next door, including his own."
+  note: >
+    Written for and first released exclusively on the Amazon Kindle (12 February
+    2009); later collected in The Bazaar of Bad Dreams.
+  connections:
+    - stephen-king/the-dark-tower
+  sources:
+    - https://en.wikipedia.org/wiki/Ur_(novella)
+
+- id: stephen-king/stephen-king-goes-to-the-movies
+  title: "Stephen King Goes to the Movies"
+  authorIds: [stephen-king]
+  published: 2009
+  subseries: null
+  canonTier: apocrypha
+  synopsis: "Five previously published stories that became films, reprinted with King's notes on each adaptation."
+  note: >
+    A reprint anthology; every story in it already appears in an earlier collection.
+  sources:
+    - https://en.wikipedia.org/wiki/Stephen_King_Goes_to_the_Movies
+
+- id: stephen-king/blockade-billy
+  title: "Blockade Billy"
+  authorIds: [stephen-king]
+  published: 2010
+  subseries: null
+  canonTier: extended
+  synopsis: "An old third-base coach recalls the 1957 catcher the game erased from its records, and why."
+  note: >
+    First published by Cemetery Dance in April 2010; later collected in The Bazaar of Bad Dreams.
+  sources:
+    - https://en.wikipedia.org/wiki/Blockade_Billy
+
 - id: stephen-king/full-dark-no-stars
   title: "Full Dark, No Stars"
   authorIds: [stephen-king]
@@ -568,6 +720,19 @@
   subseries: null
   canonTier: core
   synopsis: "A teacher steps through a portal to 1958 to try to stop the Kennedy assassination."
+
+- id: stephen-king/mile-81
+  title: "Mile 81"
+  authorIds: [stephen-king]
+  published: 2011
+  subseries: null
+  canonTier: extended
+  synopsis: "A mud-caked station wagon sits at an abandoned rest stop, and everyone who stops to help gets closer."
+  note: >
+    First published as a standalone e-book (1 September 2011); later collected in
+    The Bazaar of Bad Dreams.
+  sources:
+    - https://en.wikipedia.org/wiki/Mile_81
 
 - id: stephen-king/the-wind-through-the-keyhole
   title: "The Dark Tower: The Wind Through the Keyhole"
@@ -649,6 +814,34 @@
   externalIds:
     openLibrary: OL20104649W
 
+- id: stephen-king/charlie-the-choo-choo
+  title: "Charlie the Choo-Choo"
+  authorIds: [stephen-king]
+  published: 2016
+  subseries: "The Dark Tower"
+  canonTier: extended
+  publishedAs: "Beryl Evans"
+  synopsis: "The children's picture book from the Dark Tower novels, published for real under its fictional author's name."
+  connections:
+    - stephen-king/the-waste-lands
+  sources:
+    - https://en.wikipedia.org/wiki/Charlie_the_Choo-Choo
+
+- id: stephen-king/hearts-in-suspension
+  title: "Hearts in Suspension"
+  authorIds: [stephen-king]
+  published: 2016
+  subseries: null
+  canonTier: apocrypha
+  synopsis: "A University of Maine volume pairing King's essay on his campus years with recollections by his classmates."
+  note: >
+    Reprints the novella "Hearts in Atlantis" alongside new essays; King is one
+    contributor among several.
+  connections:
+    - stephen-king/hearts-in-atlantis
+  sources:
+    - https://en.wikipedia.org/wiki/Stephen_King_bibliography
+
 - id: stephen-king/gwendys-button-box
   title: "Gwendy's Button Box"
   authorIds: [stephen-king]
@@ -678,6 +871,31 @@
   synopsis: "An impossible alibi in a child's murder draws investigator Holly Gibney toward the inexplicable."
   externalIds:
     openLibrary: OL17937105W
+
+- id: stephen-king/elevation
+  title: "Elevation"
+  authorIds: [stephen-king]
+  published: 2018
+  subseries: null
+  canonTier: core
+  synopsis: "A Castle Rock man starts losing weight without changing shape, and spends what is left of himself on his neighbours."
+  sources:
+    - https://en.wikipedia.org/wiki/Elevation_(novella)
+    - https://stephenking.com/works/novella/elevation.html
+
+- id: stephen-king/flight-or-fright
+  title: "Flight or Fright"
+  authorIds: [stephen-king]
+  published: 2018
+  subseries: null
+  canonTier: apocrypha
+  synopsis: "An anthology of air-travel terror gathered from many hands, with King contributing an introduction and two stories."
+  withAuthorIds: [bev-vincent]
+  note: >
+    King and Bev Vincent are the editors rather than the sole authors; most of
+    the contents are by other writers.
+  sources:
+    - https://en.wikipedia.org/wiki/Flight_or_Fright
 
 - id: stephen-king/the-institute
   title: "The Institute"
@@ -769,3 +987,18 @@
   synopsis: "Holly guards a controversial activist while a vigilante works a list of the wrongly acquitted."
   externalIds:
     openLibrary: OL41942876W
+
+- id: stephen-king/hansel-and-gretel
+  title: "Hansel and Gretel"
+  authorIds: [stephen-king]
+  published: 2025
+  subseries: null
+  canonTier: extended
+  withAuthorIds: [maurice-sendak]
+  synopsis: "A retelling of the Grimm tale, set to artwork Maurice Sendak made for the opera two decades before."
+  note: >
+    Published 2 September 2025. Sendak died in 2012; the illustrations are his
+    1997 opera designs, paired with King's new text.
+  sources:
+    - https://stephenking.com/news/hansel-and-gretel-764.html
+    - https://www.publishersweekly.com/pw/by-topic/childrens/childrens-book-news/article/97085-hansel-and-gretel-picture-book-due-this-fall-from-stephen-king-and-maurice-sendak.html
