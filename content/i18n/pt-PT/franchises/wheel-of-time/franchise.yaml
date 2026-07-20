@@ -1,8 +1,42 @@
 # European Portuguese (pt-PT) overlay. Only translated prose; the id, name,
-# authorIds and sources stay in the base file.
-id: wheel-of-time
-description: >
-  Uma epopeia de fantasia em catorze volumes sobre profecia, renascimento e uma
-  guerra contra as Trevas - começada por Robert Jordan e, após a sua morte,
-  concluída por [[author:brandon-sanderson|Brandon Sanderson]] a partir das
-  notas que deixou.
+# authorIds and sources stay in the base file. The startHere paths carry only
+# their id and prose - never workIds, orderId or fit (docs/SCHEMA.md, "Nested
+# lists merge by id").
+- id: wheel-of-time
+  description: >
+    Uma epopeia de fantasia em catorze volumes sobre profecia, renascimento e
+    uma guerra contra as Trevas - começada por Robert Jordan e, após a sua
+    morte, concluída por [[author:brandon-sanderson|Brandon Sanderson]] a partir
+    das notas que deixou.
+  startHere:
+    paths:
+      - id: just-start
+        title: Comece simplesmente por O Olho do Mundo
+        description: >
+          O conselho quase universal: começar pelo primeiro livro, por ordem de
+          publicação, e não tocar na prequela senão muito mais tarde. New Spring
+          antecipa revelações dos primeiros livros, por isso conhecer as
+          personagens sem preparação nenhuma é a forma prevista de entrar.
+        note: >
+          É isto que a comunidade de fãs diz a toda a gente que chega de novo.
+          Se o primeiro livro resultar, fica aberto a todo o girar da Roda.
+      - id: recommended-integrated
+        title: Ordem de publicação, com New Spring encaixado
+        description: >
+          Ler a sequência principal por ordem de publicação, mas deixando cair a
+          prequela a meio do caminho - a recomendação mais comum da comunidade
+          coloca New Spring depois de Os Fogos do Céu (o quinto livro), quando
+          já se conhecem as personagens que ele reenquadra.
+      - id: chronological
+        title: Cronológica, com New Spring primeiro
+        description: >
+          Para completistas que insistem na ordem interna do mundo: primeiro a
+          prequela, depois os catorze volumes principais. Trocam-se várias
+          surpresas de primeira leitura por uma cronologia estritamente linear.
+      - id: publication-complete
+        title: Todo o girar da Roda, por ordem de publicação
+        description: >
+          Todos os volumes pela ordem em que foram publicados, prequela e
+          volumes de referência incluídos - sente-se a série a alargar, a
+          estagnar e depois a ser terminada por outra mão. A camada de aura foi
+          construída exatamente para este percurso.
