@@ -85,6 +85,13 @@ brief it cannot miss.
 
 `openQuestions` accumulate across stages and become the curator's list at the end.
 
+**A handoff that does not parse is worse than a missing one.** The next stage is
+told to read it, silently gets nothing, and its resulting gap looks like
+completion. This happened: a stage wrote a mapping key followed by a sequence
+under the same key, which is invalid YAML, and every check stayed green because
+nothing validated `.orrery/`. `validate.py` now errors on an unparseable
+handoff. Write the file, then confirm it loads before you call the stage done.
+
 These files are branch-local working state, not canon. **The integration stage
 deletes `.orrery/` before the final merge** - the PR bodies are the durable
 record.
@@ -210,6 +217,15 @@ do everyone's job.
 **Do this yourself. Do not delegate it.**
 
 1. Merge every stage branch in pipeline order into one integration branch.
+   **Re-read every branch tip at this point; do not trust the merge you did
+   when the agent said it was finished.** An agent that has reported done and
+   gone idle can still commit afterwards - reacting to another agent's finding,
+   or tidying its own handoff. On one run two agents each pushed a further
+   commit after their completion notice, and one of them carried 17 lines of
+   real `editions.yaml` content, not just a handoff note. Merging on the
+   completion signal alone silently drops that work, and nothing downstream
+   fails. `git merge-base --is-ancestor <branch> <integration>` on every stage
+   branch, immediately before the final validation, is the check.
 2. `validate.py`, `i18n_coverage.py`, `event_density.py` - clean, no regression.
 3. **Build the app against the merged content and run its suite.** The content
    validator cannot catch an app-side break, and twice it has not.

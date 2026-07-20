@@ -303,10 +303,25 @@ the search. Prefer the permalink form; a bare search page is not a citation.
 
 ### Portuguese verification blocks automated fetching
 
-Record this, because it will cost you an afternoon otherwise. **Porbase/BNP,
-Wook, Bertrand, Fnac and Almedina all defeat automated fetches** - JS-rendered
-single-page apps or a flat HTTP 403 to anything that is not a browser. The João
-Tordo run hit 403 on all five.
+Record this, because it will cost you an afternoon otherwise. **Wook, Bertrand,
+Fnac and Almedina all defeat automated fetches** - JS-rendered single-page apps
+or a flat HTTP 403 to anything that is not a browser. The João Tordo run hit 403
+on all five.
+
+**Correction, from the Palahniuk run: the BNP catalogue is reachable after all,
+and the block is user-agent based, not absolute.** Send a normal browser
+User-Agent and `catalogo.bnportugal.gov.pt/ipac20/ipac.jsp` serves plain
+server-rendered HTML (verified: HTTP 200, ~37KB). Search by author words with
+`index=.AW&term=<surname>` or by ISBN with `index=ISBN&term=<isbn>`; full
+records hang off the `uri=full%3D...` parameter on the results page. That single
+change took a wing from an expected zero pt-PT editions to six. Note the
+distinction that still holds: `porbase.bnportugal.gov.pt` is a JS app and the
+`urn.porbase.org` resolver rejects the request format, so it is specifically the
+**ipac20 catalogue** that works.
+
+The general lesson is worth more than the endpoint: **"blocked" in these notes
+sometimes means "blocked the way we asked", and is worth one cheap retest before
+you accept a zero.** A documented negative that nobody re-tests becomes folklore.
 
 Consequences:
 
