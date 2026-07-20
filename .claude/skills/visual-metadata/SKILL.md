@@ -37,6 +37,12 @@ The default for covers, and the reason the app already treats
 Library hosts publisher jacket art and permits hot-linking; credit is
 `"Open Library"` and the source is the OL **work** page you took the id from.
 
+**Always append `?default=false` when checking a cover.** Without it, Open
+Library answers a missing cover with **HTTP 200 and a blank placeholder image** -
+so a status check passes, a content-type check passes, and you ship an empty
+grey rectangle. With it, a missing cover is an honest 404. Verify with the
+`?default=false` URL even if you write the plain URL into the YAML.
+
 **2. Wikimedia Commons** - the default for portraits and headers.
 
 Every file has a real, checkable licence. Never assume it: read the file's
@@ -99,6 +105,20 @@ usually *not* in Open Library's cover set, so a Portuguese-editions file will
 give you almost nothing this way. The Stephen King canary hit exactly this - all
 68 editions were `pt-PT`, so every cover came from Path A instead.
 
+Two ISBN traps worth knowing:
+
+- **Open Library merges pt-BR and pt-PT under one work record.** An ISBN lookup
+  keyed off a Portuguese work can therefore hand you a Brazilian jacket. Check
+  the prefix: **`978-85` and `978-65` are Brazil**, `978-972` and `978-989` are
+  Portugal. A Brazilian cover on a `pt-PT` work is the visual version of the
+  invented-translated-title error the schema forbids.
+- **Sweep at author level when a title search fails.** A work that returns
+  nothing by title can still be in the author's works list under a variant or
+  all-caps title. `https://openlibrary.org/authors/<OL…A>/works.json?limit=100&offset=N`
+  paginates the whole bibliography. In the King run this was the only way to
+  find *Ur* (filed as `UR`), and it is also how you prove a gap is real rather
+  than a search failure - which is what makes "no cover" a defensible answer.
+
 **Verify the OL work is the right work.** This is where covers actually go
 wrong. Open Library is full of omnibuses, screenplays, and translated records
 that match a title search. Real failures found in one franchise:
@@ -120,9 +140,28 @@ If `works.yaml` has a **wrong** `externalIds.openLibrary`, use the correct id
 for the image but **do not edit `externalIds`** - that is prose/data outside the
 image block. Report it in the PR so the curator or the enrichment bot fixes it.
 
-**Verify every image URL before writing it.** Fetch it and check the status,
-content type, and byte size. Open Library returns a tiny placeholder rather than
-a 404 for a missing cover, so a size floor (a few kB) is the real test.
+**Verify every image URL before writing it.** Fetch it with `?default=false` and
+check status, content type and byte size.
+
+**Then look at every single one.** An HTTP check cannot see what is *in* the
+pixels, and two failure modes only a human eye catches:
+
+- **Retailer scrapes.** Open Library accepts user uploads, and some are lifted
+  straight from a retailer with the watermark burned in. The Tordo run found
+  **4 of 6** covers carried visible Bertrand or WOOK marks. That is not an
+  Open Library cover in any meaningful sense; it is a retailer image laundered
+  through a third party, and it fails the rights rule as surely as hotlinking
+  the retailer would. Reject it and look for another edition.
+- **Degraded library scans.** Barcodes, spine stickers, county-library stamps
+  and creased dust jackets. Not a rights problem, but shabby in a museum. When
+  the work has other editions, pull the whole edition list
+  (`/works/<id>/editions.json?limit=40`), collect every `covers` id, and pick a
+  clean one - preferring the original publisher and the work's own language.
+  Five of the eighteen King latecomers were replaced this way.
+
+A **labelled contact sheet** makes this practical: download the candidates,
+tile them into one image with the slug under each, and read it in a single
+pass. Sixteen covers audit in one look instead of sixteen.
 
 ## Portraits and headers: dimensions and framing
 
@@ -188,6 +227,25 @@ In order:
 Never fill a slot with a lower-confidence image because the wing looks empty
 without one. Empty is a supported state.
 
+**Leave the gap where the next agent will find it.** A bare slot with no
+explanation gets re-searched by every later run. Put a short YAML comment on the
+entry saying what you looked for and why it came up empty:
+
+```yaml
+- id: stephen-king/six-stories
+  title: "Six Stories"
+  # No cover: a 1100-copy Philtrum Press limited edition with no Open Library
+  # record (checked by title search and by sweeping all 611 works on King's
+  # author record). Nothing else is licensable, so the slot stays empty.
+```
+
+A comment is the right vehicle: it is inside your remit, whereas adding a
+`note:` field edits content a curator owns.
+
+Some categories are *expected* to come up empty - limited editions and
+chapbooks, Kindle-only novellas, self-published serials, and anything never
+finished. Finding no cover for those is a correct result, not a failed search.
+
 ## Sparse and non-English franchises
 
 The Stephen King case is the easy one: an anglophone bestseller with near-total
@@ -210,17 +268,24 @@ Open Library coverage. Expect worse, and do not treat worse as failure.
 1. Read `docs/SCHEMA.md` (Images) and the franchise's `works.yaml`,
    `editions.yaml`, and `content/authors/<slug>.yaml`.
 2. Resolve every work to an Open Library work id - from `externalIds`, else by
-   search - and **verify each match** against the traps above.
-3. Pull `cover_i` for each, build the cover URL, and **fetch every one** to
-   confirm it is a real image.
-4. Find the portrait and the header on Commons; read the licence metadata; look
+   title search, else by sweeping the author's works list - and **verify each
+   match** against the traps above.
+3. Pull `cover_i` for each, build the cover URL, and **fetch every one with
+   `?default=false`** to confirm it is a real image and not the placeholder.
+4. **Build a contact sheet and look at all of them.** Reject retailer
+   watermarks outright; replace degraded library scans from the work's other
+   editions.
+5. Find the portrait and the header on Commons; read the licence metadata; look
    at the images.
-5. Write the `images` blocks. Quote every URL (they contain `?`, `:`, commas and
-   parentheses). Add a YAML comment where a rights nuance needs explaining.
-6. Run `python scripts/validate.py` until green.
-7. Write the PR body: coverage as n/total, the source and licence breakdown,
-   every image rejected on rights grounds, and any data error you found but did
-   not fix.
+6. Write the `images` blocks. Quote every URL (they contain `?`, `:`, commas and
+   parentheses). Comment any slot you deliberately left bare, and any rights
+   nuance that needs explaining.
+7. Run `python scripts/validate.py` until green. Check that the number of unique
+   cover URLs equals the number of covered works - a duplicate means a franchise
+   image got repeated or a work resolved to the wrong record.
+8. Write the PR body: coverage as n/total, the source and licence breakdown,
+   every image rejected on rights grounds, every slot left bare and why, and any
+   data error you found but did not fix.
 
 ## Hard rules
 
@@ -237,8 +302,10 @@ Open Library coverage. Expect worse, and do not treat worse as failure.
 
 ## Done means
 
-A green `scripts/validate.py`, every image URL fetched and confirmed to serve a
-real image, every credit traceable to a licence you actually read, and a PR body
-that states the coverage fraction, the licence breakdown, what you rejected, and
-what you found broken but left alone. A wing with honest gaps ships; a wing with
-one unlicensed image does not.
+A green `scripts/validate.py`, every image URL fetched with `?default=false` and
+confirmed to serve a real image, **every image looked at** and cleared of
+retailer watermarks, every credit traceable to a licence you actually read,
+every deliberate gap commented in place, and a PR body that states the coverage
+fraction, the licence breakdown, what you rejected, and what you found broken
+but left alone. A wing with honest gaps ships; a wing with one unlicensed image
+does not.
