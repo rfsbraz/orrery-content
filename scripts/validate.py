@@ -25,6 +25,8 @@ FEATURE_VALUES = {"auto", "on", "off", True, False}
 FIT_EXPERIENCE = {"new", "returning", "completionist"}
 FIT_COMMITMENT = {"taste", "arc", "complete"}
 EDITION_FORMATS = {"hardcover", "paperback", "ebook", "audiobook"}
+# BCP-47-ish: "pt", "pt-PT", "en-GB". Region matters for books (pt-PT vs pt-BR).
+LANG_RE = re.compile(r"^[a-z]{2}(-[A-Z]{2})?$")
 ACHIEVEMENT_TIERS = {"bronze", "silver", "gold"}
 ACHIEVEMENT_CATEGORIES = {"completion", "streak", "context", "social", "discovery", "curation"}
 # criteria kind -> required fields (the app implements one evaluator per kind)
@@ -264,6 +266,14 @@ def main():
                 err(loc, f"{eid}: isbn13 '{isbn}' is not 13 digits")
             if ed.get("format") and ed["format"] not in EDITION_FORMATS:
                 err(loc, f"{eid}: bad format '{ed.get('format')}'")
+            lang = ed.get("language")
+            if lang and not LANG_RE.match(str(lang)):
+                err(loc, f"{eid}: bad language '{lang}' (use 'pt-PT', 'en', ...)")
+            # A translated title without a language is unusable (we cannot know
+            # which locale it belongs to); an edition in a non-original language
+            # without a title is a missed opportunity but not an error.
+            if ed.get("title") and not lang:
+                err(loc, f"{eid}: has a published title but no language")
 
     # --- achievements (global + per franchise) ---
     era_ids_by_franchise = {}

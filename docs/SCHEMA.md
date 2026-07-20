@@ -209,23 +209,47 @@ Rules:
 
 ## editions.yaml (optional)
 
-Concrete published editions. Works power orders; editions power buying and
-covers. Only add editions you can verify (a real ISBN from a real source);
-never guess an ISBN. Sparse is fine: the app falls back to search links and
-OpenLibrary covers when a work has no edition here.
+Concrete published editions. Works power orders; editions power buying,
+covers, and **published translated titles**. Only add editions you can verify
+(a real ISBN from a real source); never guess an ISBN. Sparse is fine: the app
+falls back to search links and OpenLibrary covers when a work has no edition.
 
 ```yaml
-- id: stephen-king/carrie/anchor-2011-pb
-  workId: stephen-king/carrie
-  isbn13: "9780307743664"
-  language: en
+- id: discworld/guards-guards/presenca-2004-pt
+  workId: discworld/guards-guards
+  isbn13: "9789722336840"
+  language: pt-PT                # BCP-47; see "Language codes" below
+  title: "Guardas! Guardas!"     # the title AS PUBLISHED in that language
+  translator: "Ana Saldanha"     # optional; credited translator
   format: paperback              # hardcover | paperback | ebook | audiobook
-  publisher: Anchor
-  year: 2011
-  coverUrl: null                 # optional; else the app derives from ISBN/OLID
-  note: In-print US paperback.
-  sources: [https://...]
+  publisher: Editorial Presença
+  year: 2004
+  coverUrl: null                 # optional; else derived from ISBN/OLID
+  note: Optional curator aside.
+  sources: ["https://www.wook.pt/..."]
 ```
+
+### Published titles are edition data, not translation
+
+A work's `title` is its **original** title and never changes. A translated
+title belongs to the edition that published it, because it is a fact about a
+real book someone can buy. **Never invent one**: if no Portuguese edition of a
+work exists, that work simply has no `pt-PT` edition, and the app shows the
+original title. Inventing a translated title fabricates a book that does not
+exist - the one thing a completionist site can never do.
+
+The app uses `title` when the reader's locale matches the edition's language,
+showing the original alongside it.
+
+### Language codes
+
+Use **BCP-47 with the region when the region matters for books**:
+
+- `pt-PT` and `pt-BR` are **different editions with different translations,
+  titles, and ISBNs**. Never tag a Brazilian edition `pt` or `pt-PT`: a Lisbon
+  reader would be sent to a book they cannot buy locally. Same rule for
+  `en-GB` vs `en-US` where titles genuinely differ.
+- Where the region is irrelevant, a bare code (`fr`, `de`, `it`) is fine.
 
 ## orders.yaml
 
