@@ -35,35 +35,63 @@ def load(path):
         return None
 
 
-def count(path, fields):
-    """Count prose-bearing entries, including NESTED prose.
+def slots(path, fields):
+    """Every reader-facing prose slot in a file, as (entry-id, field) keys.
 
-    Nested lists (an author's lifeEvents, a franchise's startHere paths) are
-    real reader-facing prose. Counting only top-level fields reported a locale
-    as complete while five franchises still had English startHere paths, which
-    is exactly the blindness this script exists to prevent.
+    Granularity is the whole point, and it has been wrong twice.
+
+    First this counted only top-level fields, and reported a locale complete
+    while five franchises still had English startHere paths. Nested lists (an
+    author's lifeEvents, a franchise's startHere paths) are real prose and are
+    now walked.
+
+    Then it counted an ENTRY as covered if ANY of its fields was translated. An
+    order carrying a translated `rationale` but an English `name` scored as
+    fully done, which is how six order names across three franchises stayed
+    English under a "52/52 complete" report.
+
+    So the unit is one field of one entry. A slot is covered only when that
+    exact field is translated, and keying by id means an overlay cannot score by
+    translating a different entry than the base has.
     """
     data = load(path)
     if data is None:
-        return 0
+        return set()
     items = data if isinstance(data, list) else [data]
     if isinstance(data, dict) and "events" in data:
         items = data["events"]
-    n = 0
+    out = set()
     for i in items:
         if not isinstance(i, dict):
             continue
-        if any(i.get(f) for f in fields):
-            n += 1
+        # A franchise.yaml is a single mapping with no list index; fall back to
+        # the file itself so its one entry still keys stably.
+        key = i.get("id") or i.get("slug") or "_"
+        for f in fields:
+            if i.get(f):
+                out.add((key, f))
         for nested in (i.get("lifeEvents") or []):
-            if isinstance(nested, dict) and (nested.get("title") or nested.get("description")):
-                n += 1
+            if not isinstance(nested, dict):
+                continue
+            nkey = nested.get("id") or "_"
+            for f in ("title", "description"):
+                if nested.get(f):
+                    out.add((f"{key}/lifeEvents/{nkey}", f))
         sh = i.get("startHere")
         if isinstance(sh, dict):
             for path_ in (sh.get("paths") or []):
-                if isinstance(path_, dict) and (path_.get("title") or path_.get("description")):
-                    n += 1
-    return n
+                if not isinstance(path_, dict):
+                    continue
+                pkey = path_.get("id") or "_"
+                for f in ("title", "description"):
+                    if path_.get(f):
+                        out.add((f"{key}/startHere/{pkey}", f))
+    return out
+
+
+def count(path, fields):
+    """Number of prose slots in a file (kept for callers wanting a total)."""
+    return len(slots(path, fields))
 
 
 def main():
@@ -97,19 +125,25 @@ def main():
     for locale in sorted(locales):
         missing, partial, done = [], [], 0
         for rel, fields in targets:
-            base_n = count(os.path.join(ROOT, "content", rel), fields)
-            if not base_n:
+            base = slots(os.path.join(ROOT, "content", rel), fields)
+            if not base:
                 continue
             ov = os.path.join(ROOT, "content", "i18n", locale, rel)
             if not os.path.exists(ov):
-                missing.append(f"{rel} ({base_n})")
+                missing.append(f"{rel} ({len(base)})")
                 continue
-            ov_n = count(ov, fields)
-            if ov_n < base_n:
-                partial.append(f"{rel} {ov_n}/{base_n}")
+            have = slots(ov, fields)
+            gaps = base - have
+            if gaps:
+                # Name the fields, not just a ratio. "6/7" sends someone
+                # hunting; "name" tells them what to write.
+                which = sorted({f for _, f in gaps})
+                partial.append(
+                    f"{rel} {len(base) - len(gaps)}/{len(base)} (missing: {', '.join(which)})"
+                )
             else:
                 done += 1
-        total = len([t for t in targets if count(os.path.join(ROOT, "content", t[0]), t[1])])
+        total = len([t for t in targets if slots(os.path.join(ROOT, "content", t[0]), t[1])])
         print(f"\n=== {locale}: {done}/{total} files fully covered ===")
         if missing:
             failed = True
