@@ -6,6 +6,76 @@ description: >
   hauntings to a genre-spanning multiverse held together by the Dark Tower.
 authorIds: [stephen-king]
 themePreset: pulp-horror
+
+# Capabilities (docs/SCHEMA.md). Everything is auto-detected from the data;
+# listed explicitly here only as the reference example for other franchises.
+features:
+  river: auto
+  orderDiff: auto
+  wizard: auto
+  connections: auto
+  companion: auto
+  hall: auto
+  editions: auto
+
+# "Where to start" - powers the guided onboarding wizard. Paths are curated
+# entry recommendations tagged with who they fit; the app matches a reader's
+# two answers (experience, commitment) against the fit tags.
+startHere:
+  paths:
+    - id: essentials
+      title: The essentials
+      description: >
+        Five landmark books that show the full range - the haunted hotel, the
+        coming-of-age nightmare, the apocalypse, the locked room, and the time
+        machine. If these land, everything else is open.
+      workIds:
+        - stephen-king/the-shining
+        - stephen-king/it
+        - stephen-king/the-stand
+        - stephen-king/misery
+        - stephen-king/11-22-63
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        Deliberately spread across decades so you feel the range, not just the
+        seventies horror King is filed under.
+    - id: dark-tower-first
+      title: Straight into the Dark Tower
+      description: >
+        The spine of the multiverse. The connected order weaves the eight Tower
+        books with the novels that feed them, at the points where they pay off.
+      workIds: null
+      orderId: stephen-king/dark-tower-connected
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+    - id: short-first
+      title: Start short
+      description: >
+        King is one of the great short-story writers; the collections are a
+        low-commitment way in, and several stories seeded the famous novels.
+      workIds:
+        - stephen-king/night-shift
+        - stephen-king/skeleton-crew
+        - stephen-king/different-seasons
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+    - id: the-long-walk
+      title: The whole road, from Carrie on
+      description: >
+        Publication order, all of it. You watch the writer grow up, break,
+        recover, and keep going - the aura layer is built for exactly this walk.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+
 # First-pass bundle for curator review. Core novels, the Dark Tower cycle, the
 # Richard Bachman books, and key collections are covered; the long tail of
 # short-story collections and nonfiction is marked extended and can be appended.
