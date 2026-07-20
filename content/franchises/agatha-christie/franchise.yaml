@@ -1,0 +1,97 @@
+id: agatha-christie
+name: Agatha Christie
+kind: author
+description: >
+  The Golden Age of detective fiction in one career: sixty-six puzzle novels,
+  two immortal sleuths in [[character:agatha-christie/hercule-poirot|Poirot]] and
+  [[character:agatha-christie/miss-marple|Miss Marple]], and the best-selling
+  fiction ever written.
+authorIds: [agatha-christie]
+themePreset: interwar-editorial
+
+# Capabilities are auto-detected from the data (docs/SCHEMA.md); left implicit
+# here. This bundle activates: river + companion (a dense author-life and
+# industry aura), orderDiff (default + Poirot-order + Marple-order), wizard
+# (startHere below), connections (characters.yaml + the Cards on the Table
+# crossover), and hall. No editions.yaml, so editions stays off.
+
+# "Where to start" - the classic Christie on-ramps, tagged honestly. There is no
+# single official starter list; these are the entries every reputable guide
+# converges on. See orders.yaml/sources.
+startHere:
+  paths:
+    - id: the-perfect-standalone
+      title: The perfect standalone
+      description: >
+        Her masterpiece and the best-selling mystery ever written - no series, no
+        detective, no prior reading. Ten strangers on an island, and a nursery
+        rhyme counting down. If one book is going to hook you, it is this one.
+      workIds:
+        - agatha-christie/and-then-there-were-none
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        The near-universal "start here" recommendation for a reason: zero
+        commitment, maximum payoff.
+
+    - id: meet-poirot
+      title: Meet Poirot
+      description: >
+        The two most famous cases of the little Belgian with the egg-shaped head
+        and the order-loving little grey cells - the village twist that made
+        Christie's name, then the snowbound train that is her signature.
+      workIds:
+        - agatha-christie/the-murder-of-roger-ackroyd
+        - agatha-christie/murder-on-the-orient-express
+      orderId: null
+      fit:
+        experience: [new, returning]
+        commitment: [taste]
+      note: >
+        Roger Ackroyd first for the shock, Orient Express for the machine. Save
+        [[work:agatha-christie/curtain-poirots-last-case|Curtain]] for the very
+        end of Poirot's road.
+
+    - id: meet-marple
+      title: Meet Miss Marple
+      description: >
+        The deceptively fluffy old lady of St Mary Mead, who solves murders by
+        analogy to village life. Her first outing, then the book most readers
+        call her best.
+      workIds:
+        - agatha-christie/the-murder-at-the-vicarage
+        - agatha-christie/a-murder-is-announced
+      orderId: null
+      fit:
+        experience: [new, returning]
+        commitment: [taste]
+
+    - id: poirot-in-order
+      title: Poirot, front to back
+      description: >
+        All thirty-three Poirot novels in publication order, from the debut at
+        Styles to the case he came back to Styles to solve. You watch both the
+        detective and the writer age across fifty-five years.
+      workIds: null
+      orderId: agatha-christie/poirot-novels
+      fit:
+        experience: [returning, completionist]
+        commitment: [arc]
+
+    - id: the-whole-shelf
+      title: The whole shelf
+      description: >
+        Everything, in the order it was published - the detective novels, the
+        collections, the Westmacott romances, the memoirs. Five decades of a
+        genre being invented and perfected in real time.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+
+sources:
+  - https://www.agathachristie.com/en/about-christie
+  - https://en.wikipedia.org/wiki/Agatha_Christie_bibliography
