@@ -27,7 +27,20 @@ features:
   hall: auto
   editions: auto
 
-# "Where to start" - powers the guided onboarding wizard. Paths are curated
+# Which shared global events actually reach this author (docs/SCHEMA.md; the
+# event-resonance skill owns these decisions). The app already filters
+# global.yaml to the authors' lifetimes; this is the judgement on top. King has
+# exactly one franchise event of his own across 95 works, so borrowed world
+# history is very easy to over-serve here. Kept by default and deliberately:
+# lady-chatterley-trial-1960, fantasy-paperback-boom-1965, chain-bookshop-1982,
+# sept-11-2001, ebook-and-self-publishing-2007, covid-19-pandemic-2020.
+globalEvents:
+  exclude:
+    - carnation-revolution-1974          # Portuguese censorship; no Maine novel answers it
+    - online-bookselling-1995            # he never went out of print, so backlist rediscovery is not his story
+    - financial-crisis-2008              # one recession job-queue scene opening Mr. Mercedes, and nothing else
+    - prestige-fantasy-adaptation-2011   # the most-adapted author alive, but through horror film since 1976
+    - booktok-2020                       # already the best-selling novelist alive; reader video moved nothing
 # entry recommendations tagged with who they fit; the app matches a reader's
 # two answers (experience, commitment) against the fit tags.
 startHere:
