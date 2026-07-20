@@ -44,9 +44,33 @@ features:
   hall: auto
   editions: auto
 
-# globalEvents is deliberately ABSENT. Which shared world events actually reach
-# this author is the event-resonance stage's ruling, not this one's; the app's
-# lifetime filter (born 1962) is the arithmetic default until then.
+# Which shared global events actually reach this author (docs/SCHEMA.md; the
+# event-resonance skill owns these decisions). The app already filters
+# global.yaml to the authors' lifetimes; born 1962 and living, so the six
+# pre-1962 entries drop as arithmetic and ten candidates were left to rule on.
+#
+# KEPT BY DEFAULT, and only one: sept-11-2001. Two of his 1999 books were read
+# differently from 2001 onward without a word of them changing - Survivor is
+# narrated into the flight recorder of a hijacked airliner as it goes down, and
+# the film made of his debut ends with towers coming apart. He is the rare case
+# where the event did not shape the writing but permanently changed how the
+# already-written page is met, which is resonance in the direction that matters
+# to a reader arriving now.
+#
+# Nine excluded below. This is a strict run on purpose: the wing already carries
+# three franchise events and five life events across 1996-2024, and borrowed
+# world history would be the loudest thing on a page that is mostly his own.
+globalEvents:
+  exclude:
+    - fantasy-paperback-boom-1965        # not his category, not his shelf, not his readership
+    - carnation-revolution-1974          # Portuguese censorship; nothing here answers it
+    - chain-bookshop-1982                # the pre-film novels sold badly on exactly that table
+    - online-bookselling-1995            # he was never out of print; the film carried the backlist, not search
+    - ebook-and-self-publishing-2007     # traditionally published throughout, and no standalone digital work survived the audit
+    - financial-crisis-2008              # no novel answers the crash; Adjustment Day is political collapse, not economic
+    - prestige-fantasy-adaptation-2011   # heavily adapted, but never a line of fantasy
+    - covid-19-pandemic-2020             # the two post-2020 novels do not reach for it, and a page needs no filler tail
+    - booktok-2020                       # his second life with young readers runs through film and meme, not reader video
 
 # "Where to start" - powers the guided wizard.
 #
