@@ -24,10 +24,32 @@
 #     filter the derived order.
 #   - Individual stories inside a listed collection ("Guts" lives in Haunted).
 #
-# GAPS, flagged rather than filled: see .orrery/chuck-palahniuk/
-# franchise-research.yaml openQuestions for "Greener Pastures", "Unquiet
-# Guests" (2025), and the Kindle-single-era short works, none of which could be
-# confirmed from a source reachable here.
+# AUDITED 2026-07 by completeness-auditor. No works added, none removed, no
+# dates changed. Every Palahniuk-authored BOOK in the reachable record is
+# present: the sweep of his OpenLibrary author record (OL24312A, 75 works) and
+# the English Wikipedia works list turned up no missing novel, collection,
+# nonfiction title, colouring book or graphic novel, and nothing published
+# after Shock Induction (2024).
+#
+# WHAT THE AUDIT SETTLED:
+#   - "Greener Pastures" returns zero hits anywhere reachable, including a
+#     direct OpenLibrary query. Treated as not existing under that title.
+#   - The Kindle-single-era short works resolve into
+#     [[work:chuck-palahniuk/make-something-up|Make Something Up]] ("Phoenix"
+#     has no standalone OpenLibrary record), so they fall under the existing
+#     exclusion of individual stories inside a listed collection.
+#   - Bait and Legacy are no longer single-sourced.
+#   - The two comics dates hold; see the notes on each.
+#
+# STILL OPEN, and deliberately NOT filled here because scope on multi-author
+# anthologies is the curator's call and an apocrypha entry still takes a
+# numbered slot in the derived order: a tail of books carrying a Palahniuk
+# contribution rather than a Palahniuk book. "Unquiet Guests" (2025, Dead Ink,
+# ed. Dan Coxon), "Stories" (2010), "Chiral Mad 3" (2016), "It's Alive" (2018),
+# "Expedition" (2015), "Zombies", "Nightmare Magazine" October 2015, his
+# introduction to Lidia Yuknavitch's The Chronology of Water, and an unlabelled
+# "People, Places, Things" (2021, Scribd) stub. See
+# .orrery/chuck-palahniuk/completeness-auditor.yaml.
 
 - id: chuck-palahniuk/fight-club
   title: "Fight Club"
@@ -305,7 +327,14 @@
     complete work: the ten-issue Dark Horse series ran from 27 May 2015 to
     30 March 2016, and the collection followed on 18 May 2016. Serialisation
     counts as first publication only once the complete work has appeared, which
-    is March 2016 either way.
+    is March 2016 either way. Confirmed by the completeness audit: unlike an
+    abridged prose serial, a limited comics series carries the complete work
+    verbatim across its issues, so the run finishing IS first publication and
+    the collection is a reprint.
+    ARTISTS. Cameron Stewart drew it, David Mack did the covers, and neither is
+    recorded in withAuthorIds: the schema has no illustrator role, and the
+    field resolves against author entities this repo does not have. Same
+    reasoning as the Burnt Tongues co-editors. Curator's call to revisit.
     TIER. Kept core rather than extended: this is a graphic novel, but it is
     Palahniuk's own sole-written direct sequel to the title work, not a
     licensed spin-off. Flagged for the curator, since a reader walking the core
@@ -323,11 +352,13 @@
     Eight short stories printed with full-page illustrations left uncoloured,
     published as an adult colouring book.
   note: >
-    Single-sourced date (the English Wikipedia works list). No second
-    independent confirmation was reachable here; flagged for the completeness
-    audit rather than presented as settled.
+    Date confirmed by the completeness audit. Originally single-sourced to the
+    English Wikipedia works list; OpenLibrary independently records the Dark
+    Horse Comics edition under the cover title "Off-Color Stories for You to
+    Color" at 2016.
   sources:
     - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+    - https://openlibrary.org/authors/OL24312A
 
 - id: chuck-palahniuk/legacy
   title: "Legacy: An Off-Color Novella for You to Color"
@@ -340,9 +371,12 @@
     same illustrated, uncoloured format as
     [[work:chuck-palahniuk/bait|Bait]].
   note: >
-    Single-sourced date, as with Bait. Flagged for the completeness audit.
+    Date confirmed by the completeness audit, as with
+    [[work:chuck-palahniuk/bait|Bait]]: OpenLibrary independently records the
+    Dark Horse Comics edition at 2017.
   sources:
     - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+    - https://openlibrary.org/authors/OL24312A
 
 - id: chuck-palahniuk/adjustment-day
   title: "Adjustment Day"
@@ -367,7 +401,10 @@
   note: >
     DATE. The twelve-issue Dark Horse series ran from 30 January 2019 to
     26 December 2019, so the complete work first appeared in 2019; the
-    collected hardcover followed on 14 April 2020. Same tiering judgement as
+    collected hardcover followed on 14 April 2020. Confirmed by the
+    completeness audit against the issue-by-issue run: all twelve issues carry
+    the complete work, so 2019 stands and the 2020 hardcover is a reprint.
+    Same tiering and same artist-credit judgement as
     [[work:chuck-palahniuk/fight-club-2|Fight Club 2]].
   sources:
     - https://en.wikipedia.org/wiki/Fight_Club_3
