@@ -23,6 +23,52 @@ State in your PR description which capabilities the bundle activates and why.
 
 Orrery is not a reading-order list; it's contextual reading. The value is situating each book in its moment. So research is not just "list the books in order" - it's **capturing the life, world, and cultural weather around each book** so the timeline breathes. Weight events by impact (an author's near-fatal accident vs a minor award) so the timeline has anchors and texture.
 
+## The aura editorial standard
+
+The admission test for every event: **does it pass through the author into the
+page?** An event earns its slot only if knowing it changes how a reader reads.
+The impact taxonomy, in editorial terms:
+
+- **high = recolors the text.** After learning it, the same sentences read
+  differently.
+- **med = explains the shelf.** Why the catalog is shaped the way it is.
+- **low = texture of the times.** The weather, kept sparse.
+- Fails all three -> it does not ship. Every noise event cheapens the real
+  anchors (the app renders high-impact events as page-breaking interruptions;
+  imagine each one breaking the page and ask if it deserves to).
+
+What readers actually want to know, ranked by how much it changes the reading:
+
+1. **The author's inner weather - the gold tier.** Illness, addiction, grief,
+   sobriety, fear, recovery. This is where the aura earns its existence:
+   King barely remembering writing one of his own novels; Pratchett's
+   embuggerance not as context for late Discworld but AS late Discworld;
+   Jordan's amyloidosis being the entire meaning of the final volumes. Most
+   high-impact slots should come from this tier. Write it with care - factual,
+   humane, never ghoulish.
+2. **Why this book exists - origin stories.** The manuscript rescued from the
+   bin, the ending written years early and vaulted, the pen name invented
+   because publishers capped output. Readers retell these at dinner; they are
+   the aura's most shareable material.
+3. **World events - rarely, but decisively.** Only where the book ANSWERS the
+   event: dispensary work that became a poisoner's expertise, biowarfare
+   headlines that became a plague novel, a pandemic the author actually wrote
+   into the books. Generic history is filler - roughly one world event in
+   twenty is aura-worthy. Keep `global.yaml` thin and mostly low/med; a war
+   the author merely lived near is not an anchor on their timeline.
+4. **Feuds and reception ruptures - with one filter: did it leave a mark on
+   the canon?** An unmasked pseudonym answered with a novel, an author pulling
+   a book from print, a twist that scandalized the genre's rule-keepers, an
+   establishment snub that reframed a career - all belong. Gossip with no
+   fingerprint on the work does not.
+5. **Industry context - the completionist's tier.** The publishing forces
+   that shaped the shelf (format booms, output rules, estate decisions about
+   what "complete" means). Medium impact at most, never anchors.
+6. **Trivia - the cut tier.** Awards lists, sales milestones, pub-quiz facts:
+   cut, unless the item relocates the reader inside a book (the real hotel
+   behind the fictional one), in which case it is really tier 1 or 2 in
+   disguise.
+
 ## Hard rules
 
 - **Never fabricate.** Books, dates, orders, and events must be verifiable. Cite a source URL per non-obvious claim. When unsure, mark `confidence: low` and leave a `note:` - do not invent. This matters most for sparse authors (e.g. João Tordo: Portuguese literary fiction has thin English coverage - expect gaps and flag them rather than guessing bibliography or order structure).
@@ -43,7 +89,7 @@ Orrery is not a reading-order list; it's contextual reading. The value is situat
 1. **Scope the franchise.** Confirm what it is (single-author series, shared universe, multi-author), its boundaries, and its `canonTier` conventions (what counts as core vs extended vs apocrypha - completionists care). Pick the `<franchise-slug>`.
 2. **Author(s).** Biography and a timeline of **life events** with dates and impact - the raw material of the aura. For multi-author franchises (e.g. Wheel of Time: Jordan → Sanderson) capture each, and the transition itself is usually a high-impact event.
 3. **Bibliography → works.** Every published work - aim for completeness (the default order derives from this): title, publication date, subseries, canon tier, synopsis, `publishedAs` for pen names, `withAuthorIds` for collaborations. Assign stable IDs. **You can leave `externalIds` empty** - the enrichment bot (`scripts/enrich.py`, run by the Enrich CI) fills `openLibrary` IDs from high-confidence matches and opens a PR, flagging anything uncertain for a human.
-4. **World & culture events.** For the span the franchise covers, gather notable world/cultural/industry events. Global ones → `global.yaml`; ones specifically resonant with this franchise → franchise `events.yaml`. Impact-weight everything.
+4. **World & culture events.** For the span the franchise covers, gather the world/cultural/industry events that pass the editorial standard (the book must answer the event - see "The aura editorial standard"). Global ones → `global.yaml`; ones specifically resonant with this franchise → franchise `events.yaml`. Impact-weight everything; expect to reject most candidates.
 5. **Eras.** Group the timeline into named eras (creative periods) with themes and a short characterization - the narrative spine of the aura.
 6. **Known reading orders.** The default publication-chronological order is derived automatically - don't write it. Find the *additional* established orders: chronological/in-universe, author-recommended, and notable community/curated ones (with their rationale and where they diverge). These become `source: canon` orders in `orders.yaml`; note debated points.
 7. **Emit YAML** to `content/franchises/<slug>/` per the schema below, plus any `global.yaml` additions. Summarize gaps and low-confidence items for the curator.
@@ -206,10 +252,12 @@ a rewrite.
 3. **Year-precision dates are fine.** `published: 1987` is better than a
    wrong full date. Use full dates only when a source states one.
 4. **The aura needs anchors, not volume.** Ten well-chosen impact-weighted
-   events beat forty trivia items. Ask of each event: does knowing this change
-   how the book reads? An author's collapse, a co-author handoff, a cultural
-   rupture the book answers - those are `high`. Award seasons are usually not
-   worth an entry at all.
+   events beat forty trivia items. Apply "The aura editorial standard" above
+   to every entry: high = recolors the text, med = explains the shelf, low =
+   texture of the times, and an event that fails all three does not ship.
+   Source events from the ranked tiers (inner weather first, origin stories
+   second, world events only where the book answers them, feuds only with a
+   mark on the canon). Award seasons are usually not worth an entry at all.
 5. **Global vs franchise events: default to franchise.** Only push an event to
    `events/global.yaml` when it is genuinely author-agnostic (a war, a
    pandemic, a publishing-industry shift) AND likely to matter to several

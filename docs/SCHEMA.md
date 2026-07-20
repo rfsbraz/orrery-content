@@ -276,6 +276,11 @@ is derived from `works.yaml`; never write it by hand.
 cultural ruptures, industry shifts). Append, never duplicate; check for an
 existing entry before adding one.
 
+**What earns an event a slot** is editorial, not structural - see "The aura
+editorial standard" in the `franchise-research` skill: high = recolors the
+text, med = explains the shelf, low = texture of the times; an event that does
+none of the three does not ship.
+
 ## Spoilers (cross-cutting)
 
 Any event, character appearance, or note that could spoil carries
