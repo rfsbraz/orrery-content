@@ -189,7 +189,42 @@ So:
 - **A "nothing changed" result still gets diffed.** The only proof a no-op was
   honest rather than lazy is the diff showing it.
 
-## 6. The deliverable doctrine
+## 6. The aura editorial standard
+
+The admission test for every event, life event, and aura fact: **does it pass
+through the author into the page?** It earns a slot only if knowing it changes
+how a reader reads. The impact taxonomy, in editorial terms:
+
+- **high = recolors the text.** After learning it, the same sentences read
+  differently. The app renders these as full-bleed interruptions - imagine
+  each one breaking the page and ask if it deserves to.
+- **med = explains the shelf.** Why the catalogue is shaped the way it is.
+- **low = texture of the times.** The weather, kept sparse.
+- Fails all three: it does not ship. Every noise event cheapens the real
+  anchors.
+
+What changes a reading, ranked - spend effort at the top:
+
+1. **The author's inner weather** - illness, addiction, grief, recovery, fear.
+   Most high-impact slots come from here. Write it with care: factual, humane,
+   never ghoulish. **Distress is not content** - include a hard fact only when
+   it genuinely changes how the books read, and for living people ask whether
+   the author put it in public themselves.
+2. **Origin stories that are actually true** - verified, dated, in the
+   author's own words. Verify the famous ones; many are later inventions.
+3. **World events, rarely but decisively** - only where a book *answers* the
+   event. Roughly one world event in twenty is aura-worthy.
+4. **Feuds and reception ruptures** - only with a mark on the canon.
+5. **Industry context** - medium impact at most, never anchors.
+6. **Trivia** - cut, unless it secretly belongs to tier 1 or 2.
+
+Density: the aura's job is to be sparse and load-bearing. Approximately 6-12
+`lifeEvents` across a career; a wing that gains twenty events has been made
+worse. Ten well-chosen anchors beat forty items. **Two independent sources for
+anything about a living person's health, finances, family, addiction or legal
+trouble** - one source is a rumour with a URL.
+
+## 7. The deliverable doctrine
 
 The report is half the work. Every stage's PR body (or handoff summary)
 carries:
