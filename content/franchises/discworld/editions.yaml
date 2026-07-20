@@ -13,10 +13,13 @@
 # editions (Conrad, Bertrand Brasil) exist with different titles and are
 # deliberately excluded: they are pt-BR, not pt-PT.
 #
-# Every ISBN below comes from the Biblioteca Nacional de Portugal catalogue
-# record for the book. BNP records the pre-2007 ones as ISBN-10; they are
-# converted to ISBN-13 here (the conversion was checked against Wook, which
-# lists 9789727595549 for A Cor da Magia independently). All prefixes are
+# ISBNs come from the Biblioteca Nacional de Portugal catalogue record for each
+# book, except The Wee Free Men, where BNP's number is malformed and Wook's is
+# used instead (see that entry). BNP records the pre-2007 ones as ISBN-10;
+# they are converted to ISBN-13 here, and the conversion is confirmed against
+# independent listings at both ends of the run - Wook lists 9789727595549 for
+# A Cor da Magia and the Viana do Alentejo library network lists 9789727595556
+# for A Luz Fantástica. Every ISBN passes its check digit; all prefixes are
 # 978-972- / 978-989- (Portugal).
 
 # --- Temas e Debates, 2003-2005: Discworld 1-7 in publication order ---
@@ -50,9 +53,12 @@
     The BNP record types the original title as "The night fantastic", which is
     a cataloguing slip - no such Pratchett book exists, the Portuguese title is
     a literal rendering of "The Light Fantastic", and it sits second in the
-    publisher's strictly sequential run.
+    publisher's strictly sequential run. The Viana do Alentejo library network
+    lists this edition with the ISBN-13 in full, independently confirming the
+    conversion from BNP's ISBN-10.
   sources:
     - https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=972-759-555-3
+    - https://biblioteca.cm-vianadoalentejo.pt/cgi-bin/koha/opac-detail.pl?biblionumber=11689
 
 - id: discworld/equal-rites/temas-e-debates-2003-pt
   workId: discworld/equal-rites
@@ -129,17 +135,25 @@
 
 - id: discworld/the-wee-free-men/saida-de-emergencia-2010-pt
   workId: discworld/the-wee-free-men
-  isbn13: "9789896372472"
+  isbn13: "9789896372477"
   language: pt-PT
   title: "Os Homenzinhos Livres"
   translator: "Renato Correia"
+  format: paperback
   publisher: Saída de Emergência
   year: 2010
   note: >
     Published in the "Teen" collection (no. 12), illustrated, five years after
     the Temas e Debates run stopped and by a different house - so it is a
-    standalone Portuguese Tiffany Aching book, not a continuation. BNP types
-    the original as "The wee free man"; the singular is a cataloguing slip.
+    standalone Portuguese Tiffany Aching book, not a continuation.
+    ISBN taken from Wook, which lists 9789896372477 in both its ISBN and EAN
+    fields. The BNP record for this book prints 978-989-637-247-2, whose check
+    digit does not compute - the BNP entry is malformed, not the book. BNP also
+    types the original as "The wee free man"; the singular is a second slip in
+    the same record.
+    Not to be confused with the Brazilian "Os Pequenos Homens Livres"
+    (Conrad 2010 / Bertrand Brasil 2016, translated by Ludimila Hashimoto),
+    which is pt-BR and a different translation.
   sources:
     - https://www.wook.pt/livro/os-homenzinhos-livres-terry-pratchett/9582682
     - https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-637-247-2
