@@ -44,6 +44,7 @@ Authored Claude Code skills under `.claude/skills/`, each with its own rules:
 - **`completeness-auditor`** - audit a bibliography against primary sources for missing works, wrong first-publication dates, and inconsistent tiering.
 - **`visual-metadata`** - source author portraits, franchise headers and covers with rights discipline and mandatory credits.
 - **`spoiler-audit`** - place `spoilerAfter` boundaries, preferring a rewrite that needs no boundary over a redaction.
+- **`event-resonance`** - decide which shared global events actually reached a specific author, and why. The engine gates them to the author's lifetime for free; this skill rules on the residue.
 
 ### Completing a whole author
 
