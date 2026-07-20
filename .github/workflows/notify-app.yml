@@ -1,0 +1,63 @@
+name: Notify app of content change
+
+# Canon merged here should reach the site today, not tomorrow.
+#
+# The app repo already knows how to bump its orrery-content submodule and open a
+# PR (its "Content sync" workflow), but it only ran on a daily cron. That is up
+# to 24 hours between a curator merging content and a reader seeing it, and it
+# is how 23 merged content commits ended up sitting undeployed.
+#
+# So this does not duplicate that logic, it just tells the app to run it now.
+# The cron stays as the safety net for anything this misses.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/**"
+  workflow_dispatch:
+
+# Merging several content PRs in a row should end in one bump, not a stampede.
+# The app's sync always takes the newest canon, so a superseded run loses
+# nothing by being cancelled.
+concurrency:
+  group: notify-app
+  cancel-in-progress: true
+
+permissions: {}
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      # Cross-repo dispatch cannot use GITHUB_TOKEN: it is scoped to this repo.
+      # CONTENT_SYNC_TOKEN is a fine-grained PAT limited to rfsbraz/orrery with
+      # Contents: read and write.
+      #
+      # A missing token warns rather than fails. The daily cron still delivers
+      # the change, so painting every content merge red would be crying wolf
+      # over a latency regression, not a broken build.
+      - name: Tell the app to sync
+        env:
+          GH_TOKEN: ${{ secrets.CONTENT_SYNC_TOKEN }}
+          SHA: ${{ github.sha }}
+        run: |
+          if [ -z "${GH_TOKEN}" ]; then
+            echo "::warning title=App not notified::CONTENT_SYNC_TOKEN is not set. The app's daily cron will still pick this up within 24h. To make it immediate, add a fine-grained PAT scoped to rfsbraz/orrery (Contents: read and write) as the CONTENT_SYNC_TOKEN secret in this repo."
+            {
+              echo "### App was not notified"
+              echo
+              echo "\`CONTENT_SYNC_TOKEN\` is not set, so this content change will"
+              echo "reach the site via the app's daily cron instead of immediately."
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          # The sha goes through an env var, never string-interpolated into the
+          # command: anything carrying commit-authored text is a shell injection
+          # vector, and this workflow runs on every push to main.
+          gh api repos/rfsbraz/orrery/dispatches \
+            --method POST \
+            --raw-field event_type=content-updated \
+            --raw-field "client_payload[sha]=${SHA}"
+
+          echo "Asked rfsbraz/orrery to sync to ${SHA:0:8}." >> "$GITHUB_STEP_SUMMARY"
