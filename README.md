@@ -34,6 +34,13 @@ content/
       theme.yaml                # branding preset (see Orrery CONCEPT §6)
 ```
 
+## Curation skills
+
+Authored Claude Code skills under `.claude/skills/`, each with its own rules:
+
+- **`franchise-research`** - research an author or universe and emit the whole content bundle.
+- **`world-events`** - curate the shared global aura layer, keeping it sparse and impact-weighted (a global event renders on every franchise's timeline, so its bar is much higher). Graded against `scripts/event_density.py`.
+
 The **full schema reference is [`docs/SCHEMA.md`](docs/SCHEMA.md)** - field by field, including the capabilities model (which app features a franchise's data activates). The authoring guide and assisted-research tool is the **`franchise-research` skill** at [`.claude/skills/franchise-research/SKILL.md`](.claude/skills/franchise-research/SKILL.md).
 
 **The schema is a framework.** Every advanced layer (aura, characters, connections, editions, start-here paths) is optional per franchise; the app detects what a bundle provides and lights up the matching features. A works-list-only franchise is complete and correct.
