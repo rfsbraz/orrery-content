@@ -1,0 +1,71 @@
+stage: reading-orders
+run: 2026-07-20 (second pass; the first pipeline run skipped this stage on a
+  spent search budget and left a placeholder header asserting an unsearched
+  negative)
+summary: >
+  Ran the discovery the first pass could not. Confirmed the negative on an
+  author-recommended order and on any community order with standing, and the
+  header now documents what was actually searched instead of asserting.
+  Admitted ONE new order: chuck-palahniuk/horror-trilogy (curated), the
+  Lullaby/Diary/Haunted grouping Palahniuk himself named on the 2005 Haunted
+  tour, contracted with Doubleday as a run of horror novels and since adopted
+  by the scholarship. Verified the existing fight-club-sequence order and
+  added the publisher's own page to its sources; its id, prose and
+  orderedWorkIds are unchanged, so startHere references and the existing
+  pt-PT overlay entry are intact. Rejected with reasons (recorded in the file
+  header): composition order, a Damned/Doomed order, and every listicle
+  pathway.
+
+produced:
+  changedFiles:
+    - content/franchises/chuck-palahniuk/orders.yaml
+  changedProse:
+    - chuck-palahniuk/horror-trilogy   # new: name, rationale, debated (2)
+    # fight-club-sequence prose untouched; only a source URL was appended
+
+forStages:
+  translation: >
+    New order chuck-palahniuk/horror-trilogy needs the pt-PT overlay in
+    content/i18n/pt-PT/franchises/chuck-palahniuk/orders.yaml: name,
+    rationale, and both debated entries. i18n_coverage now reports
+    franchises/chuck-palahniuk/orders.yaml at 2/4 (missing: name, rationale).
+    Order names ARE translatable for orders.yaml (the overlay's header
+    comment claiming otherwise is wrong per the reading-orders skill).
+  where-to-start: >
+    Optional, orchestrator's call, and NOT required by the new order: the
+    startHere matrix currently serves commitment=arc only via the
+    fight-club-thread path, which is narrowed to returning readers, so a new
+    reader wanting an arc has no strong match. A path pointing at
+    chuck-palahniuk/horror-trilogy (experience [new, returning], commitment
+    [arc]) would fill that cell with a received grouping rather than an
+    invented one. If added, franchise.yaml's sourcing comment ("no community
+    guide with any standing was found... searching could not be extended this
+    run") should also be updated: the search HAS now been extended, and the
+    negative on entry advice held, but the horror trilogy is author-named.
+    No existing path's promise changed; nothing must be edited.
+  eras: >
+    The eras.yaml provenance warning states that NO published periodisation of
+    Palahniuk's career was found. The horror-trilogy discovery is a partial
+    counter-datum: Palahniuk himself named a 2002-2005 grouping (Wikipedia,
+    citing the Telegraph, 2005-06-07), and MDPI Humanities 13(5):115 (2024)
+    treats "horror trilogy" as an established label. Not an era boundary by
+    itself, but the after-the-film era's description could carry the fact, and
+    the header's "none" is now slightly too strong.
+
+openQuestions:
+  - >
+    A search-engine summary claimed Palahniuk answered an AMA question with
+    "Start with Fight Club, Invisible Monsters, or Survivor", but returned no
+    citable thread, and the reachable AMA archives (Book Riot highlights,
+    BestofAMA) do not contain the exchange. If a future pass with Reddit
+    access finds it, that is a datable author statement which would both
+    upgrade the before-the-film startHere path to SOURCED and possibly
+    justify an author-recommended entry note. Until then it is treated as
+    unverified.
+  - >
+    The Wikipedia sentence carrying the 2005 Miami "horror trilogy" statement
+    cites a June 2005 Telegraph article ("67 people fainted as I read my
+    horror story") that could not be read directly (paywall). The claim is
+    accepted on Wikipedia's citation plus the independent Doubleday-triad
+    corroboration in the 2006 Strange Horizons interview intro; a curator
+    with Telegraph access could confirm the primary wording.

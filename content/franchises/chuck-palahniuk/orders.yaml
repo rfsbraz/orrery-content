@@ -2,12 +2,46 @@
 # publication-chronological order - is derived from works.yaml and is NOT
 # listed here.
 #
-# ONE order, and it is a thread filter rather than a re-ordering. Orders must be
-# received, not invented (see the franchise-research skill): no
-# author-recommended order exists for Palahniuk, and no community reading order
-# with any standing was found. His novels are standalone, so there is nothing
-# for a chronological-in-universe or connected order to do. Rather than coin
-# one, this file carries the only sequence the publisher itself numbered.
+# DISCOVERY, second pass 2026-07. The first pipeline run wrote this file with
+# its search budget already spent, and its header asserted that no
+# author-recommended or community order existed WITHOUT having searched. This
+# pass ran the discovery the reading-orders skill requires. Consulted:
+#   - Palahniuk's substack ("Plot Spoiler"): its Recommended Reading, Suggested
+#     Reading and Have You Read? posts recommend OTHER authors' books; nothing
+#     there sequences his own catalogue.
+#   - His Reddit AMA appearances (2013-2014, incl. the Chelsea Cain joint AMA):
+#     no verified answer on where to start. One search-engine summary claimed a
+#     "start with Fight Club, Invisible Monsters, or Survivor" answer but
+#     produced no citable thread, and the reachable AMA archives (Book Riot's
+#     highlights, BestofAMA) contain no such exchange, so it is not evidence.
+#   - Interviews: the Strange Horizons horror interview (Sartain, 2006) and
+#     press around the 2005 Haunted tour. These yielded the one real find, the
+#     horror trilogy below.
+#   - The Cult / chuckpalahniuk.net: no reading-order guide reachable.
+#   - Reader guides and listicles (Book Riot 2015, Barnes & Noble's ranking,
+#     the books-in-order sites): rankings and entry advice that agree only on
+#     "start with Fight Club", which is startHere territory and already the
+#     wing's first path. Book Riot's three-book pathway (Fight Club, Invisible
+#     Monsters, Damned) is one outlet's editorial; one blog post is not a
+#     community practice.
+#
+# REJECTED, with reasons, so the next pass does not re-litigate:
+#   - Author-recommended order: none exists anywhere reached. CONFIRMED
+#     NEGATIVE, now actually searched.
+#   - Community order: none with standing. The listicle field never converges
+#     on a sequence, only on an entry book.
+#   - Composition order (Invisible Monsters written first, then Fight Club,
+#     then Survivor): a biographical fact this wing already records on the
+#     works, but no source proposes READING him in written order. Ordering by
+#     it would be invented, not received.
+#   - A Damned/Doomed order: a two-book direct-sequel pair already threaded by
+#     `subseries`; an order of two books in publication sequence carries no
+#     information. This is the stated reason the Fight Club thread has an order
+#     and its sibling pair does not.
+#
+# TWO orders, both thread filters rather than re-orderings: the sequence the
+# publisher numbered, and the grouping the author named. His novels are
+# standalone, so there is nothing for a chronological-in-universe order to do.
 
 - id: chuck-palahniuk/fight-club-sequence
   name: The Fight Club sequence
@@ -38,3 +72,45 @@
   sources:
     - https://en.wikipedia.org/wiki/Fight_Club_2
     - https://en.wikipedia.org/wiki/Fight_Club_3
+    - https://www.darkhorse.com/Books/31-157/Fight-Club-2-Library-Edition-HC
+
+- id: chuck-palahniuk/horror-trilogy
+  name: The horror trilogy
+  type: curated
+  source: canon
+  rationale: >
+    The one grouping in this bibliography the author has named himself. On the
+    2005 tour for [[work:chuck-palahniuk/haunted|Haunted]], Palahniuk called it
+    the last of a "horror trilogy" with
+    [[work:chuck-palahniuk/lullaby|Lullaby]] and
+    [[work:chuck-palahniuk/diary|Diary]], the three novels he contracted with
+    Doubleday as a run of horror after his father's murder. Three books only,
+    in their publication sequence: read them if you want Palahniuk the horror
+    novelist without committing to the career. They are standalone stories in
+    a shared register, not a continuing plot, and the cost is where the path
+    drops you: mid-career, past the early novels that built the voice this run
+    bends toward dread.
+  orderedWorkIds:
+    - chuck-palahniuk/lullaby
+    - chuck-palahniuk/diary
+    - chuck-palahniuk/haunted
+  debated:
+    - >
+      Like the Fight Club sequence, this order is identical to publication
+      order for its three works. Its whole contribution is the filter: on the
+      default shelf the trilogy is interleaved with the two nonfiction books
+      ([[work:chuck-palahniuk/fugitives-and-refugees|Fugitives and Refugees]],
+      [[work:chuck-palahniuk/stranger-than-fiction|Stranger than Fiction]]),
+      and a reader on the default order loses only the label.
+    - >
+      "Trilogy" rests on statements, not packaging: the author's word at a tour
+      appearance, the shape of a Doubleday contract, and the term's later
+      adoption in the scholarship. No jacket numbers these books 1 to 3, and
+      the novels share no characters or story. A curator who requires publisher
+      numbering on the books themselves, as the Fight Club sequence has, would
+      call this a thematic grouping rather than a sequence and could reasonably
+      move the fact into the era prose instead.
+  sources:
+    - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+    - https://strangehorizons.com/wordpress/non-fiction/articles/interview-chuck-palahniuk/
+    - https://www.mdpi.com/2076-0787/13/5/115
