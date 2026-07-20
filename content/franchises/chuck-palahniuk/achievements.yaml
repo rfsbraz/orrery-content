@@ -1,0 +1,48 @@
+# Chuck Palahniuk badges. IDs are prefixed with the franchise slug so they never
+# collide across wings; criteria reference this franchise's own era and order,
+# which the validator resolves.
+
+- id: chuck-palahniuk/five-deep
+  name: Five Deep
+  description: Read 5 Chuck Palahniuk works.
+  icon: "📕"
+  tier: bronze
+  category: completion
+  criteria:
+    kind: read_count
+    count: 5
+    franchiseId: chuck-palahniuk
+
+# Tied to the aura: the three novels published before the film existed, which is
+# the one era boundary in this wing that rests on a hard date.
+- id: chuck-palahniuk/before-the-film
+  name: Before the Film
+  description: Read all 3 novels Palahniuk published before the 1999 film - the books written while nobody was watching.
+  icon: "🎞️"
+  tier: silver
+  category: context
+  criteria:
+    kind: era_reader
+    franchiseId: chuck-palahniuk
+    eraId: before-the-film
+    count: 3
+
+- id: chuck-palahniuk/the-whole-thread
+  name: The Whole Thread
+  description: Completed the Fight Club sequence, novel and both comics.
+  icon: "🧵"
+  tier: gold
+  category: completion
+  criteria:
+    kind: order_complete
+    orderId: chuck-palahniuk/fight-club-sequence
+
+- id: chuck-palahniuk/every-last-page
+  name: Every Last Page
+  description: Read every Chuck Palahniuk work in the canon.
+  icon: "👑"
+  tier: gold
+  category: completion
+  criteria:
+    kind: franchise_complete
+    franchiseId: chuck-palahniuk

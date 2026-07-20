@@ -1,0 +1,208 @@
+id: chuck-palahniuk
+name: Chuck Palahniuk
+kind: author
+description: >
+  Three decades of American transgressive fiction: stripped, clinical novels
+  about invented identities and the crowds people join, written in a voice built
+  to be read aloud until somebody faints.
+authorIds: [chuck-palahniuk]
+themePreset: clinical-minimal
+
+# Header: Portland from the Willamette, the city he has written out of and
+# about for thirty years and the explicit subject of
+# [[work:chuck-palahniuk/fugitives-and-refugees|Fugitives and Refugees]]. It is
+# the honest franchise subject rather than the obvious one: FILM IMAGERY FROM
+# FIGHT CLUB (1999) WAS REJECTED OUTRIGHT, both because it credits the wrong art
+# form and because theme.yaml is built as a deliberate refusal of the film's
+# visual costume. A true 4912x1080 panorama, so the app's horizontal crop has
+# pixels to spare and the skyline sits in the middle band.
+#
+# Known tension, stated rather than hidden: it is a bright blue-sky photograph
+# against a wing whose palette is cold near-black. The better tonal match was a
+# public-domain HAER large-format survey of the Burnside Bridge - institutional
+# black and white, exactly this wing's register - but every HAER scan on Commons
+# carries the black film-holder border and edge notches, and the app crops
+# blindly, so it would ship black bars. A curator who can crop one should.
+images:
+  header: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Panorama_of_Willamette_River_Bridge_and_Downtown_-_Portland_-_Oregon_-_USA.jpg/1920px-Panorama_of_Willamette_River_Bridge_and_Downtown_-_Portland_-_Oregon_-_USA.jpg"
+  headerCredit: "Adam Jones, Ph.D., CC BY-SA 3.0"
+  headerSource: "https://commons.wikimedia.org/wiki/File:Panorama_of_Willamette_River_Bridge_and_Downtown_-_Portland_-_Oregon_-_USA.jpg"
+
+# CAPABILITIES - a deliberate declaration, not a default.
+#
+# connections: OFF, on purpose. This author has no shared universe, and saying
+# so plainly is the honest result rather than a gap to be filled. Every novel
+# here stands alone. The only work-to-work links that exist are:
+#   - Fight Club -> Fight Club 2 -> Fight Club 3, and
+#   - Damned -> Doomed
+# both of which are direct sequels already threaded by `subseries`, which is
+# exactly what the schema says connections must not duplicate; plus one genuine
+# connection recorded on Invisible Monsters Remix pointing back at the 1999
+# novel it restructures. A connections map drawn from that single edge would be
+# two nodes and a line, and a reader who meets it learns that the feature is
+# decoration. There is also no characters.yaml, for the same reason: Tyler
+# Durden and Madison Spencer recur only inside their own sequences, which is a
+# series, not connective tissue - and a roster entry for the first of those
+# would leak a reveal that `aka` and `description` have no way to gate.
+# The underlying data is still recorded truthfully, so a curator who disagrees
+# can flip this to auto and lose nothing.
+#
+# Everything else is left at auto and will light up from the data: river and
+# companion from the events, wizard from startHere below, orderDiff from the one
+# additional order plus the derived default, hall always. The editions stage has
+# since run, so editions is live: 34 entries covering all 28 works.
+features:
+  river: auto
+  orderDiff: auto
+  wizard: auto
+  connections: off
+  companion: auto
+  hall: auto
+  editions: auto
+
+# Which shared global events actually reach this author (docs/SCHEMA.md; the
+# event-resonance skill owns these decisions). The app already filters
+# global.yaml to the authors' lifetimes; born 1962 and living, so the six
+# pre-1962 entries drop as arithmetic and ten candidates were left to rule on.
+#
+# KEPT BY DEFAULT, and only one: sept-11-2001. Two of his 1999 books were read
+# differently from 2001 onward without a word of them changing - Survivor is
+# narrated into the flight recorder of a hijacked airliner as it goes down, and
+# the film made of his debut ends with towers coming apart. He is the rare case
+# where the event did not shape the writing but permanently changed how the
+# already-written page is met, which is resonance in the direction that matters
+# to a reader arriving now.
+#
+# Nine excluded below. This is a strict run on purpose: the wing already carries
+# three franchise events and five life events across 1996-2024, and borrowed
+# world history would be the loudest thing on a page that is mostly his own.
+globalEvents:
+  exclude:
+    - fantasy-paperback-boom-1965        # not his category, not his shelf, not his readership
+    - carnation-revolution-1974          # Portuguese censorship; nothing here answers it
+    - chain-bookshop-1982                # the pre-film novels sold badly on exactly that table
+    - online-bookselling-1995            # he was never out of print; the film carried the backlist, not search
+    - ebook-and-self-publishing-2007     # traditionally published throughout, and no standalone digital work survived the audit
+    - financial-crisis-2008              # no novel answers the crash; Adjustment Day is political collapse, not economic
+    - prestige-fantasy-adaptation-2011   # heavily adapted, but never a line of fantasy
+    - covid-19-pandemic-2020             # the two post-2020 novels do not reach for it, and a page needs no filler tail
+    - booktok-2020                       # his second life with young readers runs through film and meme, not reader video
+
+# "Where to start" - powers the guided wizard.
+#
+# SOURCING, stated plainly and unchanged by the where-to-start stage: no
+# author-published entry advice exists for Palahniuk, and no community guide
+# with any standing was found recommending a starting point. Searching could not
+# be extended this run (the session's search budget was spent before this stage
+# began), so nothing below has been promoted to SOURCED. Each path still rests
+# on a stated fact rather than on a consensus this repo can show, in the same
+# terms as the audited Stephen King and Joao Tordo files.
+#
+# THE FAMOUS-BOOK RULING, since this author is the case the check exists for.
+# The answer here is that the trap does NOT apply, which is worth writing down
+# because it usually does. Fight Club is not an atypical masterpiece, not a
+# late-career book assuming earlier ones, and not the visible first draft of a
+# writer who found himself later: it is short, it is first, and it is the purest
+# example of the things he does everywhere else (a damaged first-person
+# narrator, chapters built to be read aloud, a chorus line repeated until it
+# turns). The honest cost is not that the book is a bad door, it is that the
+# film is standing in the doorway. So the path keeps the famous book and spends
+# its prose on the film rather than steering the reader away from it.
+#
+# Four paths kept, none added, none removed. The changes this stage made are
+# recorded in .orrery/chuck-palahniuk/where-to-start.yaml.
+startHere:
+  paths:
+    # Basis: a fact, not a recommendation. It is his debut, the book the film
+    # was made from, and by a wide margin the one readers arrive through.
+    # Verdict: REAL BUT UNSOURCED. "Start with Fight Club" is advice anyone who
+    # reads him would recognise, and no citable page for it was reached.
+    - id: fight-club-first
+      title: Start where everyone starts
+      description: >
+        Fight Club is the debut, the shortest book here, and the one almost
+        every reader comes in through. The cost is that you meet him at his most
+        famous rather than his most typical, and with a film sitting on top of
+        the text: the novel is drier, stranger, and does not end the way the
+        film does.
+      workIds:
+        - chuck-palahniuk/fight-club
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+    # Basis: the publisher's own numbering of the sequels (Dark Horse).
+    # Verdict: UNSOURCED as entry advice - nobody was found recommending the
+    # comics thread as a way INTO Palahniuk, and the order it points at is a
+    # thread filter this repo assembled rather than a received sequence. Kept,
+    # but narrowed to returning readers: sending someone who has read nothing
+    # into two comics is not a defensible first recommendation, and the order's
+    # own `debated` field says the comics' place beside the novel is a real
+    # question. If the curator moves the comics to extended, this path should go
+    # with the order.
+    - id: fight-club-thread
+      title: The whole Fight Club thread
+      description: >
+        The novel and both comic sequels, the only continuous story in the
+        bibliography. A complete arc without committing to twenty standalone
+        books.
+      workIds: null
+      orderId: chuck-palahniuk/fight-club-sequence
+      fit:
+        experience: [returning]
+        commitment: [arc]
+      note: >
+        The cost is a medium change halfway through: books two and three are
+        comics, drawn by Cameron Stewart, and read nothing like the novel. They
+        also divide his readers far more sharply than anything else here.
+    # Basis: a fact about the shelf. Three novels exist that were written before
+    # the film reframed him, and they are the only ones that can be read without
+    # it. The era boundary they sit in is the one sourced era in eras.yaml.
+    # Verdict: UNSOURCED as a recommendation, but the grouping underneath it is
+    # a publishing fact rather than a taste. Strongest path in the set.
+    - id: before-the-film
+      title: Before the film
+      description: >
+        The three novels published while nobody was watching: Fight Club,
+        Survivor and Invisible Monsters. The voice is already complete, the
+        readership was not, and none of them were written by a famous person.
+        The cost is three books before you know whether you like him, and a
+        stopping point just before the formal experiments some readers think are
+        the real range.
+      workIds:
+        - chuck-palahniuk/fight-club
+        - chuck-palahniuk/survivor
+        - chuck-palahniuk/invisible-monsters
+      orderId: null
+      fit:
+        experience: [new, returning]
+        commitment: [taste]
+    # The completionist path. Points at the derived publication order.
+    - id: everything
+      title: Everything, in order
+      description: >
+        Three decades in publication order: the pre-film novels, the yearly run
+        the film paid for, the formal experiments, the nonfiction, and the
+        return to Fight Club in comics. The cost is that the walk is not all
+        novels, since colouring books and comics take their own numbered slots
+        in it, and the post-film run is uneven in a way a curated few books
+        would hide from you.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+
+# Sources for the wing. 28 works, three eras (one sourced, two flagged
+# unsourced), three franchise events, five author life events, one additional
+# order, no characters. Since the first research pass the wing has also gained
+# 34 editions, 26 of 28 covers, a portrait and a header, and a full pt-PT
+# overlay. Stage 3 (press-archaeology, eras, reading-orders) never ran, so the
+# aura and orders remain as the first pass left them.
+sources:
+  - https://en.wikipedia.org/wiki/Chuck_Palahniuk
+  - https://en.wikipedia.org/wiki/Fight_Club_(novel)
+  - https://en.wikipedia.org/wiki/Fight_Club
+  - https://en.wikipedia.org/wiki/Fight_Club_2
+  - https://en.wikipedia.org/wiki/Fight_Club_3
+  - https://en.wikipedia.org/wiki/Burnt_Tongues
