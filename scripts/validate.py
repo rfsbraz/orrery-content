@@ -155,6 +155,22 @@ def main():
                     err(loc, f"{wid}: unknown withAuthorId '{aid}'")
             if w.get("canonTier") not in {"core", "extended", "apocrypha"}:
                 err(loc, f"{wid}: bad canonTier '{w.get('canonTier')}'")
+            # `published` must be a bare year integer. A full date (1974-03-26)
+            # parses as a string in the app, and every consumer of this field is
+            # year arithmetic - River layers, era spans, decade rules, era-reader
+            # achievements. A string loses all of those comparisons silently:
+            # the work gets a layer of its own, sits outside every era, and is
+            # missing from the achievement that should have counted it. Nothing
+            # throws. Day precision has no consumer, so it is simply forbidden.
+            pub = w.get("published")
+            if isinstance(pub, bool) or not isinstance(pub, int):
+                err(
+                    loc,
+                    f"{wid}: published must be a bare year integer, got "
+                    f"{pub!r} - use the year alone (1974, not 1974-03-26)",
+                )
+            elif not 1000 <= pub <= 2999:
+                err(loc, f"{wid}: published '{pub}' is not a 4-digit year")
             # authorRole defaults to "author"; it only needs stating when the
             # author did not write the whole book. A contributor or editor entry
             # must never look like authorship, so the tier has to match.
