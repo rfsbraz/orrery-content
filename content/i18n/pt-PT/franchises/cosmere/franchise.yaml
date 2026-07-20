@@ -1,8 +1,49 @@
 # European Portuguese (pt-PT) overlay. Only translated prose; the id, name,
-# authorIds and sources stay in the base file.
-id: cosmere
-description: >
-  O universo de fantasia interligado de Brandon Sanderson - séries distintas em
-  mundos distintos (Mistborn, O Arquivo das Tempestades, Elantris, Warbreaker e
-  outros), unidos por uma cosmologia partilhada e pelos viajantes que se movem
-  entre eles.
+# authorIds and sources stay in the base file. The startHere paths carry only
+# their id and prose - never workIds, orderId or fit (docs/SCHEMA.md, "Nested
+# lists merge by id").
+- id: cosmere
+  description: >
+    O universo de fantasia interligado de Brandon Sanderson - séries distintas
+    em mundos distintos (Mistborn, O Arquivo das Tempestades, Elantris,
+    Warbreaker e outros), unidos por uma cosmologia partilhada e pelos
+    viajantes que se movem entre eles.
+  startHere:
+    paths:
+      - id: mistborn-first
+        title: Começar por Mistborn
+        description: >
+          A entrada habitual. Uma trilogia de assalto e revolução, compacta e
+          autossuficiente, com um sistema mágico limpo e regido por regras -
+          curta o suficiente para se terminar, e ligada o suficiente para
+          mostrar como o Cosmere funciona.
+        note: >
+          O ponto de partida que o próprio Sanderson mais recomenda a quem já
+          gosta de fantasia, e o livro que lhe valeu A Roda do Tempo.
+      - id: stormlight-first
+        title: Direto para O Arquivo das Tempestades
+        description: >
+          Para quem quer primeiro a epopeia. A série principal da casa - mundo
+          vasto, personagens profundas, volumes de grande dimensão. O maior
+          compromisso e, para muitos, a maior recompensa.
+        note: >
+          Um dos cinco pontos de entrada que Sanderson considera igualmente
+          válidos. Só comece por aqui se livros longos não o assustarem.
+      - id: standalones-first
+        title: Experimentar a água com um volume autónomo
+        description: >
+          A forma de entrar com menor compromisso - um único livro belo pelo
+          qual pode julgar o autor antes de se comprometer com uma série.
+          Experimente o fantasioso Tress do Mar Esmeralda, o vencedor do Hugo
+          The Emperor's Soul ou Warbreaker, com o seu travo a romance.
+        note: >
+          Sanderson nomeia explicitamente The Emperor's Soul e Warbreaker como
+          primeiros livros válidos; Tress do Mar Esmeralda é a entrada moderna
+          mais suave.
+      - id: everything-in-order
+        title: Todo o Cosmere, por ordem de publicação
+        description: >
+          Tudo, pela ordem em que foi escrito - vê-se o universo a montar-se e
+          as ligações a acenderem-se tal como aconteceu para os leitores em
+          tempo real. A camada de aura foi construída exatamente para este
+          percurso.
