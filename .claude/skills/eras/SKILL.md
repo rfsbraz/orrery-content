@@ -212,6 +212,35 @@ Where the received label and the sourced boundary disagree and you cannot fix
 both, **keep the label, attribute it, and flag the boundary in the PR.** Do not
 silently re-cut a period to make a citation fit.
 
+### Tightening a span orphans whatever fell in the slack
+
+This is the failure mode of doing this job *well*, so read it twice. Replacing a
+rounded decade with a defensible range is the right instinct - but the works
+that sat in the rounding do not move with it. They fall outside every era, and
+the app renders them with `era: null`: no era plate, excluded from `era_reader`
+achievements, floating on the River with no context. **Nothing errors.**
+
+A single pass that re-sourced six wings' boundaries orphaned **nine works**,
+including three major Stephen King novels stranded in a 1979-1980 gap between
+"the Doubleday years" (ending 1978) and Magistrale's second decade (starting
+1981). Both boundaries were correctly sourced. The gap between them was nobody's
+decision.
+
+`scripts/validate.py` now **warns** for every work outside all era spans. It is a
+warning rather than an error because some orphans are legitimate - a posthumous
+release or a companion volume genuinely sits outside the creative eras - so the
+warning is a question, not a verdict. Answer it for each one:
+
+- **Interior gap** (the author was working, the eras just do not meet): close it.
+  Extend a span if the source tolerates it, or add a transitional era with
+  `provenance` set honestly and a `note` saying what it bridges.
+- **Genuinely outside** (posthumous, companion, a form the eras do not cover):
+  leave it, and record why in the era file so the next pass does not "fix" it.
+
+**Run the validator before and after your change and compare the warning list.**
+Any name that appears which was not there before is a work you orphaned, and
+closing that gap is part of your job, not the next agent's.
+
 ## 6. Language follows the author
 
 For a non-anglophone writer, **consensus must be sought in that language's

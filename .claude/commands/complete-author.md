@@ -229,10 +229,38 @@ do everyone's job.
 2. `validate.py`, `i18n_coverage.py`, `event_density.py` - clean, no regression.
 3. **Build the app against the merged content and run its suite.** The content
    validator cannot catch an app-side break, and twice it has not.
-4. **Open the rendered page in every locale.** Four separate i18n bugs shipped
-   with green CI while the non-default locale was visibly wrong. This step is the
-   only one that would have caught any of them.
+4. **Open the rendered page in every locale, in a real browser, and look at it.**
+   Four separate i18n bugs shipped with green CI while the non-default locale was
+   visibly wrong, and this step is the only one that would have caught any of
+   them. On the Palahniuk run it earned its place three more times in one page
+   load: three covers rendering as broken images, era `themes` still in English,
+   and a hardcoded English order label - none of which any script reported.
+   Concretely, on each locale:
+   - **count broken images**, do not eyeball them:
+     `[...document.querySelectorAll('img')].filter(i => i.complete && i.naturalWidth === 0)`.
+     Wait a few seconds first, then re-count - and note that a *persistently*
+     broken image is its own bug, because the designed fallback tile hangs off
+     the img's `onError`, which never fires for an image that already failed
+     before hydration on a statically rendered page.
+   - **read the page text for stray English** (or stray base-locale text) in the
+     non-default locale. Labels rendered from app code, not content, are the
+     usual culprits and no content check can see them.
+   - **take a screenshot and actually look at it.** Note that `next start` does
+     not apply the proxy under `output: standalone`; serve
+     `.next/standalone/server.js`, and copy `.next/static` in first or the page
+     renders unstyled and you will misread a harness artefact as a regression.
 5. Delete `.orrery/`, then open the PRs.
+
+**A stage skipped on purpose is a result; a stage run without its inputs is
+damage.** If the tools a discovery stage depends on are unavailable - web search
+exhausted, an archive unreachable - **skip it and record why in the wing**,
+rather than letting it produce unsourced material to fill the slot.
+`press-archaeology`, `eras` and `reading-orders` are all discovery stages whose
+own skills forbid coining, so running them blind converts a missing input into
+invented canon that looks identical to researched canon. The Palahniuk run
+skipped all three for this reason and shipped honestly flagged gaps instead.
+Say so in the PR body and in the handoffs, because the resulting wing will look
+*more* finished than it is.
 
 ## Verifying the agents, not just the content
 
@@ -247,6 +275,17 @@ these passed every check:
 - `displayFace` and `signature` values outside the app's curated sets, falling
   back silently so five wings render a look nobody chose
 - an agent reporting success on a scripted edit that had silently no-op'd
+- a whole curation stage writing a field **the app never reads**: `coverFor()`
+  ignored `work.images.cover`, so every cover the visual pass had fetched and
+  eyeballed sat unused behind an ISBN guess, on every wing, for months
+- `published: 2002-09-17`, which the schema invited, YAML parses as a *string*,
+  and every comparison against it then silently returns false
+
+The last two are the same shape and the most dangerous one on this list:
+**content that validates, renders, and is simply never consumed.** No error, no
+warning, no visible gap - the field is just inert. When you add or rely on a
+field, grep the app for the thing that reads it. If nothing does, say so; that
+is a finding, not a detail.
 
 So **check artefacts, not reports.** Fetch the URL. Open the image. Read the
 translated line. Re-derive the number with the repo's own scripts. An agent's
@@ -254,6 +293,24 @@ summary of its own work is a claim, not evidence.
 
 And **treat a suspiciously complete number as a reason to look harder.** A wing
 reporting 100% on everything has usually hidden its awkward cases.
+
+**Know what the repo's own scripts do not measure.** `i18n_coverage.py` counts a
+file as covered when the fields it knows about are present, so it has reported
+**58/58 complete** while era `themes` were untranslated on every wing and all 11
+achievement badges rendered in English (`listAchievements()` takes no locale at
+all, so they are not merely untranslated - they are untranslatable). A coverage
+number is evidence about the fields the script counts and nothing else. Before
+quoting one, check what it iterates.
+
+**Re-verify convenience data handed down a handoff.** The completeness auditor
+passed the editions agent two ISBNs "to save you a lookup"; one of them resolved
+to nothing. The editions agent re-checked instead of consuming it, which is the
+behaviour to copy - a fact offered by an upstream stage is a lead, not a source.
+
+**A stage that reports "nothing changed" still has to be diffed.** The
+completeness audit correctly changed no work and no date on its run, and the
+only way to know that was true rather than lazy was `git diff` showing zero
+`published` lines touched. Read the diff, not the summary.
 
 ## What comes back to the curator
 

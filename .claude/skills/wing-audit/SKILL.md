@@ -52,6 +52,27 @@ gap is what you are hunting:
 
 Anything in the right column is yours.
 
+Two entries have since moved left and are now **warnings**, not silence:
+`theme.yaml`'s `displayFace`/`signature` are checked against the values the app
+implements, and every work is checked for falling outside all era spans. Warnings
+are easy to scroll past - read them.
+
+### The field nobody reads
+
+Add one question to this audit that no validator can ask: **is anything writing
+content the app never consumes?**
+
+`coverFor()` did not read `work.images.cover` for months. The `Work` type did not
+model it. So an entire curation stage - fetching, eyeballing and crediting a
+cover for all 93 King works and 26 more elsewhere - produced a field that was
+inert, while the app rendered a guessed ISBN URL instead. Every check was green
+throughout, because inert data is well-formed data.
+
+The check is cheap: for each content field this wing relies on, grep the app for
+the code that reads it. `grep -rn "images\.cover\|images?.cover" lib/ components/`
+returning nothing is the whole finding. Do this for anything newly added, and
+spot-check the fields a wing leans on hardest.
+
 ## What you do not do
 
 **You route editorial work; you do not do it.** A missing cover is not yours to

@@ -165,6 +165,28 @@ sides. A commit that improves an English synopsis and leaves the Portuguese
 saying the old thing has not improved anything - it has introduced a
 contradiction that only a bilingual reader will find.
 
+### The gate is narrower than it looks - do not read "complete" as "translated"
+
+The script counts a file as covered when the fields **it knows about** are
+present. It has reported a confident **58/58 fully covered** while, on that same
+build:
+
+- **era `themes` were untranslated on every single wing.** The overlay carries
+  `title` and `description`, the script is satisfied, and the reader sees
+  `insomnia and dissociation · performed masculinity` in English under a
+  Portuguese era title. Translate `themes`; they are prose.
+- **all 11 achievement badges rendered in English**, and not because nobody
+  translated them: `listAchievements()` takes no locale and never consults the
+  overlay, so they are *untranslatable* until the app changes. Not your bug to
+  fix, but do not let a green number tell you it is not happening.
+- **labels rendered from app code** - the derived order's name
+  ("Complete, in publication order"), a hardcoded `entering` on the era plate -
+  are invisible to a content coverage script by construction.
+
+So: **100% from this script is a floor, not a finish.** Open the rendered page in
+your locale and read it before you claim the wing is done. Every one of the above
+was obvious on sight and invisible to every check we had.
+
 ## The traps that actually happened
 
 Each of these passed CI.

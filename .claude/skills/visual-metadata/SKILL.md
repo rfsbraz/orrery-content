@@ -81,6 +81,20 @@ An image with no discoverable licence is not a candidate.
 
 ## Covers: keying off editions and ISBNs
 
+**What you write here is what the reader sees.** `works.yaml`'s `images.cover`
+is the highest-ranked cover source the app has after an edition-specific
+`coverUrl`, precisely because it is the only one a human has looked at. Everything
+below it is a guessed URL.
+
+That was not always true, and the story is worth carrying: for months
+`coverFor()` did not read `images.cover` at all - the app's `Work` type did not
+even model the field - so every cover this skill had ever fetched and eyeballed
+was ignored in favour of `/b/isbn/<isbn>`, a URL nobody had ever loaded. It
+surfaced only when a Portuguese page rendered three broken images, because
+OpenLibrary holds no cover for most non-anglophone ISBNs. **Fixed now, but the
+lesson generalises: when a stage's output is inert, nothing fails.** If you add
+or rely on a field, confirm something in the app reads it.
+
 The goal is a cover that is really *this work's* cover, not a generic franchise
 image repeated. Two paths in:
 
@@ -262,6 +276,15 @@ Open Library coverage. Expect worse, and do not treat worse as failure.
 - **Publisher pages** (Wook, Bertrand, Presença for Portugal) are a source for
   *verifying an edition*, not a source of images to hotlink, unless their terms
   say otherwise.
+
+**An empty slot is safe; a broken URL is not.** These are not the same outcome,
+though both look like "no cover". A work with no `images.cover` renders as the
+designed typographic tile. A work with a cover URL that 404s renders as the
+browser's broken-image icon **and stays that way**: the fallback tile is wired to
+the img's `onError`, which never fires for an image that already failed before
+hydration on a statically rendered page. So a URL you did not actually load is
+worse than no URL at all. Fetch every one, follow the 302 to the CDN, and if it
+does not resolve to a real image, leave the field out.
 
 ## Process
 

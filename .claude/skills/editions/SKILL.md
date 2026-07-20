@@ -292,6 +292,30 @@ Never silently pick one and drop the distinction. A reader who buys the abridged
    evidence for facts. **Never as a source of images** (see `visual-metadata`).
 4. **The author's own site**, for their own bibliography.
 
+### Negative-control every source before you trust a hit
+
+A source that answers is not the same as a source that knows. **Before you accept
+any lookup as evidence, ask it about an ISBN you invented.** If the fabricated
+one comes back looking like a hit, every real hit from that source is worthless
+too.
+
+This is not hypothetical. `wwnorton.com/books/<isbn>` is an excellent
+per-ISBN catalogue and **returns HTTP 200 on its own "Page Not Found" page**, so
+a status-code check reads every miss as a hit; the `<title>` has to be read
+instead. That was found by trying a made-up ISBN first, and it cost nothing.
+
+Two related traps from the same run:
+
+- **`?default=false` on OpenLibrary ISBN lookups**, or a blank placeholder
+  returns 200 and looks like a cover. (It does not apply to `/b/id/` URLs.)
+- **Honeypots.** `knopfdoubleday.com`'s search plants a `?blackhole=` link that
+  bans anything following it. Read a page's links before walking them.
+
+And know what a *legitimate* zero looks like: **OpenLibrary holds no cover for
+most non-anglophone ISBNs.** All six pt-PT ISBNs on the Palahniuk wing had valid
+records and no cover image. That is the normal state of affairs, not a lookup
+failure to work around.
+
 **Cite the record, not the front door.** A source URL has to let a curator land
 on the same record you read. Every King edition sourced to BNP in this
 catalogue cites the identical string
