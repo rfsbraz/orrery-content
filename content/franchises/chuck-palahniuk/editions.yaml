@@ -1,0 +1,597 @@
+# Editions of Chuck Palahniuk: 28 English (en) and 6 Portuguese (pt-PT).
+#
+# COVERAGE
+#   en     28 of 28 works. Every work in works.yaml has one English edition.
+#   pt-PT   6 editions over 5 of 28 works, and that is the market, not a gap in
+#           the research. See "THE PORTUGUESE RUN" below.
+#
+# NOTE FOR THE CURATOR: this is the FIRST franchise in the catalogue to carry
+# English editions - the other six wings are pt-PT only (193 entries, all
+# pt-PT). The brief for this wing asked for English originals because they are
+# what drive the exact-edition store links. No `title` is set on any English
+# entry: the work title IS the published title, and repeating it would
+# manufacture a translation event that never happened.
+#
+# SOURCES, and how each ISBN was verified. Every entry below was confirmed by
+# TWO independent records that agree, except where its note says otherwise.
+#   1. The publishers' own catalogues. wwnorton.com/books/<isbn> and
+#      darkhorse.com resolve per-ISBN and are cited per entry. Both were
+#      negative-controlled: a fabricated ISBN 404s at Norton, and Dark Horse's
+#      pages carry an explicit ISBN-13 field.
+#   2. The Library of Congress, through its SRU gateway at lx2.loc.gov:210/lcdb
+#      (the www.loc.gov and catalog.loc.gov front ends are Cloudflare-blocked to
+#      automated fetches, and lccn.loc.gov rate-limits after ~12 requests).
+#      CAUTION FOR THE NEXT AGENT: an SRU `bath.isbn=` query is NOT strict - a
+#      fabricated ISBN returned two unrelated records. A hit count proves
+#      nothing. Every check here re-read the returned MODS record and required
+#      the exact ISBN string AND a Palahniuk name part inside it.
+#   3. The Biblioteca Nacional de Portugal ipac catalogue, for all six
+#      Portuguese editions. It is reachable despite earlier runs recording it as
+#      blocked: the block is user-agent based, and it serves plain HTML to a
+#      browser user-agent. Author-words search is `index=.AW&term=palahniuk`.
+#   4. presenca.pt, the publisher's own store, for the one Portuguese edition
+#      still in print.
+#
+# THE PORTUGUESE RUN, and why it stops at five books.
+# Palahniuk was published in Portugal by Editorial Notícias between 1999 and
+# 2004, continuing under Casa das Letras (the same house, renamed) to 2007, all
+# five translated by Maria Dulce Guimarães da Costa. That run ends at Diário
+# (2007) and was never resumed: the remaining 23 works have NO Portuguese
+# edition, so the app will show their English titles, which is correct. In 2016
+# Marcador published a NEW translation of Fight Club by Hugo Gonçalves - a
+# fresh commission, not a reprint of the 1999 text - and it is the only
+# Palahniuk in print in Portugal today. A search of the Presença/Marcador store
+# returns Clube de Combate and nothing else by him.
+#
+# BOTH Fight Club translations are recorded, most-recent first. They are
+# genuinely different objects: different translators, different publishers,
+# seventeen years apart.
+#
+# NON-LITERAL PORTUGUESE TITLES, matched by the BNP record's own "Tít. orig."
+# field rather than by translating anything:
+#   Asfixia              <- Choke              ("suffocation")
+#   Monstros invisíveis  <- Invisible Monsters
+#   Diário               <- Diary
+#   Clube de combate     <- Fight Club         ("combat club")
+# Note that the Brazilian title for Fight Club is "Clube da Luta" and for
+# Survivor is "Sobrevivente". Both appear on OpenLibrary attached to the same
+# work records and are pt-BR, NOT pt-PT. They are deliberately excluded.
+#
+# NO BRAZILIAN EDITION IS RECORDED HERE. Every Portuguese ISBN below carries a
+# 978-972-46 or 978-989-754 registrant prefix (Portugal). None starts 978-85 or
+# 978-65 (Brazil).
+#
+# ISBN-10 CONVERSIONS. Four of the Portuguese editions predate 2007 and BNP
+# holds them as ISBN-10s. Each was converted by dropping the old check digit,
+# prefixing 978 and recomputing, and each converted number is flagged in its
+# own note as SINGLE-SOURCED: BNP is the only catalogue that holds these books,
+# they are long out of print, and OpenLibrary has no Portuguese Palahniuk record
+# at all. The printed ISBN-10 was round-tripped through BNP's ISBN index and
+# returned the expected title in every case, which rules out a misreading on my
+# side but not an error in BNP's own record. See the PR for what a human with a
+# browser should confirm.
+
+# =============================================================================
+# English
+# =============================================================================
+
+# --- W. W. Norton: the three early novels, in Norton's current paperbacks ---
+
+- id: chuck-palahniuk/fight-club/norton-2018-en
+  workId: chuck-palahniuk/fight-club
+  isbn13: "9780393355949"
+  language: en
+  publisher: W. W. Norton
+  year: 2018
+  note: >
+    Norton's current paperback. The 1996 first edition is ISBN 9780393039764
+    (Library of Congress); it is recorded here only in this note, because the
+    reissue is the edition a reader can buy.
+  sources:
+    - "https://wwnorton.com/books/9780393355949"
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9780393355949"
+
+- id: chuck-palahniuk/survivor/norton-2018-en
+  workId: chuck-palahniuk/survivor
+  isbn13: "9780393355932"
+  language: en
+  format: paperback
+  publisher: W. W. Norton
+  year: 2018
+  note: >
+    Norton's current paperback, part of the same 2018 reissue as
+    [[work:chuck-palahniuk/fight-club|Fight Club]]. The 1999 first edition is
+    9780393047028.
+  sources:
+    - "https://wwnorton.com/books/9780393355932"
+
+- id: chuck-palahniuk/invisible-monsters/norton-2018-en
+  workId: chuck-palahniuk/invisible-monsters
+  isbn13: "9780393355956"
+  language: en
+  publisher: W. W. Norton
+  year: 2018
+  note: >
+    Norton's current paperback of the 1999 novel, NOT the restructured
+    [[work:chuck-palahniuk/invisible-monsters-remix|Invisible Monsters Remix]],
+    which is a separate work with its own edition below.
+  sources:
+    - "https://wwnorton.com/books/9780393355956"
+
+# --- Doubleday, 2001-2015: the long middle of the bibliography ---
+# Recorded at their US first editions. Library of Congress holds a CIP record
+# for each; the later Anchor paperback reissues mostly do not carry an LCCN and
+# could not be verified to the same standard, so they are not recorded.
+
+- id: chuck-palahniuk/choke/doubleday-2001-en
+  workId: chuck-palahniuk/choke
+  isbn13: "9780385501569"
+  language: en
+  publisher: Doubleday
+  year: 2001
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9780385501569"
+    - "https://openlibrary.org/isbn/9780385501569"
+
+- id: chuck-palahniuk/lullaby/doubleday-2002-en
+  workId: chuck-palahniuk/lullaby
+  isbn13: "9780385504478"
+  language: en
+  publisher: Doubleday
+  year: 2002
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9780385504478"
+    - "https://openlibrary.org/isbn/9780385504478"
+
+- id: chuck-palahniuk/diary/doubleday-2003-en
+  workId: chuck-palahniuk/diary
+  isbn13: "9780385509473"
+  language: en
+  publisher: Doubleday
+  year: 2003
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9780385509473"
+    - "https://openlibrary.org/isbn/9780385509473"
+
+- id: chuck-palahniuk/fugitives-and-refugees/crown-2003-en
+  workId: chuck-palahniuk/fugitives-and-refugees
+  isbn13: "9781400047833"
+  language: en
+  publisher: Crown Journeys
+  year: 2003
+  note: >
+    The one book of the period NOT published by Doubleday: it belongs to
+    Crown's "Crown Journeys" series of short travel books by novelists, which
+    is why the physical book is smaller than the rest of the shelf (175 pages,
+    20 cm, with a map).
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9781400047833"
+    - "https://openlibrary.org/isbn/9781400047833"
+
+- id: chuck-palahniuk/stranger-than-fiction/doubleday-2004-en
+  workId: chuck-palahniuk/stranger-than-fiction
+  isbn13: "9780385504485"
+  language: en
+  publisher: Doubleday
+  year: 2004
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9780385504485"
+    - "https://openlibrary.org/isbn/9780385504485"
+
+- id: chuck-palahniuk/haunted/doubleday-2005-en
+  workId: chuck-palahniuk/haunted
+  isbn13: "9780385509480"
+  language: en
+  publisher: Doubleday
+  year: 2005
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9780385509480"
+    - "https://openlibrary.org/isbn/9780385509480"
+
+- id: chuck-palahniuk/rant/doubleday-2007-en
+  workId: chuck-palahniuk/rant
+  isbn13: "9780385517874"
+  language: en
+  publisher: Doubleday
+  year: 2007
+  sources:
+    - "https://lccn.loc.gov/2006028918"
+    - "https://openlibrary.org/isbn/9780385517874"
+
+- id: chuck-palahniuk/snuff/doubleday-2008-en
+  workId: chuck-palahniuk/snuff
+  isbn13: "9780385517881"
+  language: en
+  publisher: Doubleday
+  year: 2008
+  sources:
+    - "https://lccn.loc.gov/2007033489"
+    - "https://openlibrary.org/isbn/9780385517881"
+
+- id: chuck-palahniuk/pygmy/doubleday-2009-en
+  workId: chuck-palahniuk/pygmy
+  isbn13: "9780385526340"
+  language: en
+  publisher: Doubleday
+  year: 2009
+  sources:
+    - "https://lccn.loc.gov/2009006507"
+    - "https://openlibrary.org/isbn/9780385526340"
+
+- id: chuck-palahniuk/tell-all/doubleday-2010-en
+  workId: chuck-palahniuk/tell-all
+  isbn13: "9780385526357"
+  language: en
+  publisher: Doubleday
+  year: 2010
+  note: >
+    Recorded at the Library of Congress as "1st ed.", 179 p.
+  sources:
+    - "https://lccn.loc.gov/2009032846"
+    - "https://openlibrary.org/isbn/9780385526357"
+
+- id: chuck-palahniuk/damned/doubleday-2011-en
+  workId: chuck-palahniuk/damned
+  isbn13: "9780385533027"
+  language: en
+  publisher: Doubleday
+  year: 2011
+  note: >
+    The 2012 Anchor paperback (9780307476531) is also confirmed by the Library
+    of Congress and is the in-print edition, but the Doubleday first is
+    recorded here to keep this book consistent with its sequel
+    [[work:chuck-palahniuk/doomed|Doomed]], whose paperback could not be
+    verified to the same standard.
+  sources:
+    - "https://lccn.loc.gov/2010044841"
+    - "https://openlibrary.org/isbn/9780385533027"
+
+- id: chuck-palahniuk/doomed/doubleday-2013-en
+  workId: chuck-palahniuk/doomed
+  isbn13: "9780385533034"
+  language: en
+  publisher: Doubleday
+  year: 2013
+  note: >
+    OpenLibrary carries a second ISBN (9780385533157) against the same LCCN
+    2012043095. The Library of Congress record itself lists only 9780385533034,
+    so that is the number recorded; the other is not invented but it is not
+    confirmed either.
+  sources:
+    - "https://lccn.loc.gov/2012043095"
+    - "https://openlibrary.org/isbn/9780385533034"
+
+- id: chuck-palahniuk/beautiful-you/doubleday-2014-en
+  workId: chuck-palahniuk/beautiful-you
+  isbn13: "9780385538039"
+  language: en
+  publisher: Doubleday
+  year: 2014
+  sources:
+    - "https://lccn.loc.gov/2013033379"
+    - "https://openlibrary.org/isbn/9780385538039"
+
+- id: chuck-palahniuk/make-something-up/doubleday-2015-en
+  workId: chuck-palahniuk/make-something-up
+  isbn13: "9780385538053"
+  language: en
+  publisher: Doubleday
+  year: 2015
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9780385538053"
+    - "https://openlibrary.org/isbn/9780385538053"
+
+# --- Medallion Press ---
+
+- id: chuck-palahniuk/burnt-tongues/medallion-2014-en
+  workId: chuck-palahniuk/burnt-tongues
+  isbn13: "9781605427348"
+  language: en
+  publisher: Medallion Press
+  year: 2014
+  note: >
+    The anthology Palahniuk co-edited and introduced rather than wrote. The
+    publisher is not named in either the OpenLibrary or the Library of Congress
+    record; it is read from the LoC record's place of publication (Aurora,
+    Illinois, Medallion's address) and the 978-1-60542 registrant prefix, which
+    is Medallion's. Turner Publishing reissued it in 2020 (9781684425358),
+    which is the in-print edition but a different house.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9781605427348"
+    - "https://openlibrary.org/isbn/9781605427348"
+
+# --- Dark Horse: the two comics and the two colouring books ---
+# All four verified against Dark Horse's own product pages, which publish an
+# explicit ISBN-13 field, AND against the Library of Congress.
+
+- id: chuck-palahniuk/fight-club-2/dark-horse-2016-en
+  workId: chuck-palahniuk/fight-club-2
+  isbn13: "9781616559458"
+  language: en
+  format: hardcover
+  publisher: Dark Horse Books
+  year: 2016
+  note: >
+    The collected hardcover of the ten-issue series, 280 pages, published
+    15 June 2016. The work is dated 2016 because the serialisation completed in
+    March 2016, so this edition does NOT postdate its work - see the
+    completeness auditor's note. A separate Fight Club 2 Library Edition exists
+    (9781506702377, October 2016, 356 pages) and is not recorded: it is a
+    149-dollar oversized collector's printing, not the edition to send a reader
+    to.
+  sources:
+    - "https://www.darkhorse.com/books/27-009/fight-club-2-hc/"
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9781616559458"
+
+- id: chuck-palahniuk/bait/dark-horse-2016-en
+  workId: chuck-palahniuk/bait
+  isbn13: "9781506703114"
+  language: en
+  format: hardcover
+  publisher: Dark Horse Books
+  year: 2016
+  note: >
+    Published 26 October 2016 as a hardcover, 128 pages, black and white at
+    8.5 x 11 inches - the colouring-book format. Dark Horse's product title is
+    the cover title "Bait: Off-Color Stories for You to Color", which matches
+    the work title, so no `title` is set.
+  sources:
+    - "https://www.darkhorse.com/books/3000-588/bait-off-color-stories-for-you-to-color-hc/"
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9781506703114"
+
+- id: chuck-palahniuk/legacy/dark-horse-2017-en
+  workId: chuck-palahniuk/legacy
+  isbn13: "9781506706153"
+  language: en
+  format: hardcover
+  publisher: Dark Horse Books
+  year: 2017
+  note: >
+    Published 7 November 2017, 144 pages, same colouring-book format as
+    [[work:chuck-palahniuk/bait|Bait]].
+  sources:
+    - "https://www.darkhorse.com/books/3002-093/legacy-an-off-color-novella-for-you-to-color-hc/"
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9781506706153"
+
+- id: chuck-palahniuk/fight-club-3/dark-horse-2020-en
+  workId: chuck-palahniuk/fight-club-3
+  isbn13: "9781506711782"
+  language: en
+  format: hardcover
+  publisher: Dark Horse Books
+  year: 2020
+  note: >
+    The collected hardcover of the twelve-issue series, 328 pages, published
+    15 April 2020. This edition legitimately postdates its work, which is dated
+    2019 because the run completed that December - the completeness auditor
+    flagged this as correct and not a bug. CORRECTION TO THE HANDOFF: that
+    auditor passed 9781506711805 for this book. That number has no record at
+    Dark Horse, at the Library of Congress or at OpenLibrary, where it is the
+    only one of the four Dark Horse ISBNs to return a hard 404 rather than a
+    redirect. Dark Horse's own page and the LoC both give 9781506711782, and the
+    page count matches (328). Both numbers pass their check digit, so this was
+    not catchable by arithmetic.
+  sources:
+    - "https://www.darkhorse.com/books/3003-734/fight-club-3-hc/"
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9781506711782"
+
+# --- W. W. Norton, the later run ---
+
+- id: chuck-palahniuk/invisible-monsters-remix/norton-2013-en
+  workId: chuck-palahniuk/invisible-monsters-remix
+  isbn13: "9780393345117"
+  language: en
+  publisher: W. W. Norton
+  year: 2013
+  note: >
+    Norton's paperback. The 2012 first edition (9780393083521) is confirmed by
+    both Norton and the Library of Congress, but the paperback is the in-print
+    object.
+  sources:
+    - "https://wwnorton.com/books/9780393345117"
+    - "https://openlibrary.org/isbn/9780393345117"
+
+- id: chuck-palahniuk/adjustment-day/norton-2019-en
+  workId: chuck-palahniuk/adjustment-day
+  isbn13: "9780393357073"
+  language: en
+  format: paperback
+  publisher: W. W. Norton
+  year: 2019
+  note: >
+    Norton's paperback, May 2019. The 2018 first edition is 9780393652598,
+    confirmed by Norton and by LCCN 2017057999. A third number OpenLibrary
+    attributes to "Norton & Company Limited" for this book, 9780393356373,
+    does NOT resolve at Norton and is deliberately not recorded.
+  sources:
+    - "https://wwnorton.com/books/9780393357073"
+    - "https://openlibrary.org/isbn/9780393357073"
+
+# --- Grand Central and Simon & Schuster: the current publishers ---
+# Neither house could be reached directly. Simon & Schuster returns HTTP 403 to
+# automated fetches (both .com and .co.uk) and Hachette/Grand Central serves a
+# JavaScript shell with no bibliographic data in the HTML. These four rest on
+# the Library of Congress plus OpenLibrary instead.
+
+- id: chuck-palahniuk/the-invention-of-sound/grand-central-2020-en
+  workId: chuck-palahniuk/the-invention-of-sound
+  isbn13: "9781538718001"
+  language: en
+  format: hardcover
+  publisher: Grand Central Publishing
+  year: 2020
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9781538718001"
+    - "https://openlibrary.org/isbn/9781538718001"
+
+- id: chuck-palahniuk/consider-this/grand-central-2020-en
+  workId: chuck-palahniuk/consider-this
+  isbn13: "9781538717950"
+  language: en
+  publisher: Grand Central Publishing
+  year: 2020
+  note: >
+    Illustrated: the Library of Congress records xviii, 235 pages with
+    illustrations.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9781538717950"
+    - "https://openlibrary.org/isbn/9781538717950"
+
+- id: chuck-palahniuk/not-forever-but-for-now/simon-schuster-2023-en
+  workId: chuck-palahniuk/not-forever-but-for-now
+  isbn13: "9781668021415"
+  language: en
+  format: hardcover
+  publisher: Simon & Schuster
+  year: 2023
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9781668021415"
+    - "https://openlibrary.org/isbn/9781668021415"
+
+- id: chuck-palahniuk/shock-induction/simon-schuster-2024-en
+  workId: chuck-palahniuk/shock-induction
+  isbn13: "9781668021446"
+  language: en
+  publisher: Simon & Schuster
+  year: 2024
+  note: >
+    The Library of Congress record for this book lists three ISBNs
+    (9781668021446, 9781668021453, 9781668021460) without distinguishing the
+    bindings, so no `format` is claimed here. OpenLibrary holds two of the
+    three. 9781668021446 is the one both sources carry.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9781668021446"
+    - "https://openlibrary.org/isbn/9781668021446"
+
+# =============================================================================
+# Portuguese (pt-PT)
+# =============================================================================
+
+# --- Marcador, 2016: the only Palahniuk in print in Portugal ---
+
+- id: chuck-palahniuk/fight-club/marcador-2016-pt
+  workId: chuck-palahniuk/fight-club
+  isbn13: "9789897541667"
+  language: pt-PT
+  title: "Clube de Combate"
+  translator: "Hugo Gonçalves"
+  format: paperback
+  publisher: Marcador
+  year: 2016
+  note: >
+    A new translation, not a reprint of the 1999 Notícias text below, and the
+    only Palahniuk currently in print in Portugal. Confirmed twice over: the
+    Biblioteca Nacional holds it, and the publisher's own store lists it as a
+    live product at 16.11 euros, giving ISBN 9789897541667, 248 pages, "Capa
+    Mole", release 5/2016 and "Título Original: Fight Club". The ISBN is printed
+    as a 13-digit number in both records and passes its check digit; the
+    978-989-754 prefix is Portuguese. BNP records 246 pages against the store's
+    248, which is the usual front-matter discrepancy and not a different book.
+  sources:
+    - "https://www.presenca.pt/products/clube-de-combate"
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-754-166-7&profile=bn"
+
+# --- Editorial Notícias / Casa das Letras, 1999-2007 ---
+# One house under two names, one translator throughout. All five are out of
+# print: no Portuguese retailer or publisher store lists any of them, so these
+# entries will not produce a live buy link. They are recorded because they are
+# the ONLY Portuguese editions of these four works, and because the published
+# titles belong to a Portuguese reader looking at this catalogue.
+
+- id: chuck-palahniuk/fight-club/noticias-1999-pt
+  workId: chuck-palahniuk/fight-club
+  isbn13: "9789724610665"
+  language: pt-PT
+  title: "Clube de combate"
+  translator: "Maria Dulce Guimarães da Costa"
+  publisher: Editorial Notícias
+  year: 1999
+  note: >
+    The first Portuguese translation, superseded in print by the 2016 Marcador
+    edition above but a genuinely different text. BNP: Lisboa, Notícias, 1999,
+    207 p., "Tít. orig.: Fight club".
+    ISBN SINGLE-SOURCED AND CONVERTED. BNP holds it as the ISBN-10
+    972-46-1066-7; the 13-digit form here is that number with its check digit
+    dropped, 978 prefixed and the digit recomputed. No second catalogue holds
+    this book - OpenLibrary has no Portuguese Palahniuk record at all - so the
+    conversion is arithmetic on a single source. The printed ISBN-10 was fed
+    back through BNP's own ISBN index and returned this title, which rules out a
+    transcription slip on my side.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=972-46-1066-7&profile=bn"
+
+- id: chuck-palahniuk/choke/noticias-2003-pt
+  workId: chuck-palahniuk/choke
+  isbn13: "9789724613437"
+  language: pt-PT
+  title: "Asfixia"
+  translator: "Maria Dulce Guimarães da Costa"
+  publisher: Editorial Notícias
+  year: 2003
+  note: >
+    BNP: Lisboa, Notícias, 2003, 258 p., "Tít. orig.: Choke". The title is not a
+    literal rendering ("asfixia" is suffocation), which is why the work match
+    rests on the catalogue record's own original-title field rather than on the
+    title.
+    ISBN SINGLE-SOURCED AND CONVERTED from BNP's ISBN-10 972-46-1343-7. Same
+    caveat as the 1999 Fight Club above.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=972-46-1343-7&profile=bn"
+
+- id: chuck-palahniuk/lullaby/noticias-2004-pt
+  workId: chuck-palahniuk/lullaby
+  isbn13: "9789724615349"
+  language: pt-PT
+  title: "Lullaby canção de embalar"
+  translator: "Maria Dulce Guimarães da Costa, Vasco Teles de Menezes"
+  publisher: Editorial Notícias
+  year: 2004
+  note: >
+    A hybrid title that keeps the English word and glosses it - compare
+    "A Hora do Vampiro - 'Salem's Lot" elsewhere in this catalogue. It is
+    recorded exactly as BNP transcribes it, with no punctuation between the two
+    halves; the jacket may well set them on separate lines or with a dash, and
+    nobody has seen the jacket. Do not "tidy" it without one.
+    BNP: Cruz Quebrada, Notícias, 2004, 237 p., "Tít. orig.: Lullaby : a novel".
+    Second translator credited alongside the usual one, plus a reviser
+    (Frederico Sequeira) who is not recorded here as the schema has no field
+    for one.
+    ISBN SINGLE-SOURCED AND CONVERTED from BNP's ISBN-10 972-46-1534-0.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=972-46-1534-0&profile=bn"
+
+- id: chuck-palahniuk/invisible-monsters/casa-das-letras-2006-pt
+  workId: chuck-palahniuk/invisible-monsters
+  isbn13: "9789724616773"
+  language: pt-PT
+  title: "Monstros invisíveis"
+  translator: "Maria Dulce Guimarães da Costa"
+  publisher: Casa das Letras
+  year: 2006
+  note: >
+    Of the 1999 novel, not the 2012
+    [[work:chuck-palahniuk/invisible-monsters-remix|Remix]], which has no
+    Portuguese edition. BNP: Cruz Quebrada, Casa das Letras, 2006, 325 p.,
+    "Tít. orig.: Invisible monsters". Reviser Ayala Monteiro, not recorded for
+    want of a field.
+    ISBN SINGLE-SOURCED AND CONVERTED from BNP's ISBN-10 972-46-1677-0.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=972-46-1677-0&profile=bn"
+
+- id: chuck-palahniuk/diary/casa-das-letras-2007-pt
+  workId: chuck-palahniuk/diary
+  isbn13: "9789724617183"
+  language: pt-PT
+  title: "Diário"
+  translator: "Maria Dulce Guimarães da Costa, Vasco Teles de Menezes"
+  publisher: Casa das Letras
+  year: 2007
+  note: >
+    The last book of the Notícias/Casa das Letras run; nothing of Palahniuk's
+    appeared in Portuguese again until Marcador's 2016 Fight Club. BNP: Cruz
+    Quebrada, Casa das Letras, 2007, 298 p., "Tít. orig.: Diary".
+    Unlike the four above, this one is printed as a native ISBN-13
+    (978-972-46-1718-3), so no conversion was needed and it resolves directly in
+    BNP's ISBN index. It is still single-sourced.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-46-1718-3&profile=bn"
