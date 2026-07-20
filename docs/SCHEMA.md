@@ -2,8 +2,10 @@
 
 The canonical reference for everything under `content/`. The app (`rfsbraz/orrery`)
 renders exactly what is described here; `scripts/validate.py` enforces it in CI.
-The `franchise-research` skill teaches agents how to *fill* this schema; this file
-defines *what it is*.
+This file defines *what the data is*; `docs/CURATION.md` is the working contract
+for *how* curation is done (sourcing, verification, gates, and the comment
+policy: **content YAML carries data, sources, and data decision logs only -
+never pipeline narration or coordination**; `validate.py` warns on violations).
 
 Two principles frame all of it:
 

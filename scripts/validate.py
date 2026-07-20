@@ -632,6 +632,36 @@ def main():
         top_is_event = base in {"events.yaml", "global.yaml", "characters.yaml"}
         scan_unhonoured(rel(path), data, "", top_is_event)
 
+    # --- comment policy (docs/CURATION.md §2) --------------------------------
+    # Content YAML is a data source of truth: comments carry sources and DATA
+    # decision logs, never pipeline narration or coordination. Process history
+    # belongs in PR bodies, handoffs and git. This is a heuristic scan of
+    # comment lines for pipeline vocabulary; a hit is a question, not a
+    # verdict, hence a warning.
+    PROCESS_COMMENT = re.compile(
+        r"\bpipeline\b|\bhandoff\b|\bfirst pass\b|\bsecond pass\b|\bthis run\b"
+        r"|\bnever ran\b|search budget|\bstage \d\b|\.claude|skills/"
+        r"|\bTODO\b|research agent|curation stage|\bre-?run\b|\bwing-audit\b",
+        re.IGNORECASE,
+    )
+    for path in glob.glob(os.path.join(ROOT, "content", "**", "*.yaml"), recursive=True):
+        try:
+            with open(path, encoding="utf-8") as f:
+                for n, line in enumerate(f, 1):
+                    stripped = line.strip()
+                    if not stripped.startswith("#"):
+                        continue
+                    m = PROCESS_COMMENT.search(stripped)
+                    if m:
+                        warn(
+                            rel(path),
+                            f"line {n}: comment reads as pipeline narration "
+                            f"('{m.group(0)}') - content comments carry data "
+                            f"decisions and sources only (docs/CURATION.md)",
+                        )
+        except OSError:
+            pass
+
     if WARNINGS:
         print(f"{len(WARNINGS)} warning(s) - not blocking, but a curator should look:\n")
         for w in WARNINGS:
