@@ -123,6 +123,21 @@ pendingAgainstPriorStages:
     "nothing published after Shock Induction" still holds for authored works.
 
 forStages:
+  anyLaterCoverPass: >
+    NO ENTRY IN editions.yaml CARRIES A coverUrl AND TWO MUST NEVER GET ONE.
+    This is written in the file header and in the entries themselves, but it
+    belongs here too, because it is exactly the kind of thing a later enrichment
+    pass "fixes". (1) Fight Club 2, 9781616559458: this ISBN DOES resolve to a
+    cover, and that cover prints "SOME IMAGINARY FRIENDS / NEVER GO AWAY" across
+    the artwork, which states Fight Club's reveal outright; the Library Edition
+    jacket is worse, two faces merging behind a "HELLO my name is TYLER" badge.
+    visual-metadata left the work's cover slot empty for this reason, and an
+    editions-level coverUrl would reintroduce the spoiler through the back door.
+    (2) The 2016 Marcador Clube de Combate: the only image available is a
+    publisher store scrape. Also worth knowing, from visual-metadata: Bait
+    (9781506703114) genuinely has no cover anywhere, confirmed against all 73
+    works on OL24312A, with only Turkish and German jackets existing. That blank
+    is a fact, not a missed lookup.
   visual-metadata: >
     READ THE CORRECTION ABOVE FIRST if you used 9781506711805 for a Fight Club 3
     cover - it is not a real ISBN and any cover you got from it belongs to
