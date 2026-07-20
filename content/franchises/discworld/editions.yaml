@@ -1,0 +1,145 @@
+# Portuguese (pt-PT) editions of Discworld.
+#
+# The Portuguese run is SHORT and it stops early. Temas e Debates published the
+# first seven novels in publication order between 2003 and 2005 (Colour of Magic
+# through Pyramids) and then abandoned the series; Saida de Emergencia later
+# published The Wee Free Men on its own as a young-adult title. Editorial
+# Caminho had published two of them a decade earlier (1991-1992) in its
+# "Caminho de Bolso Ficcao Cientifica" pocket line; those are out of print and
+# the Temas e Debates editions are preferred here.
+#
+# The other 40 works in works.yaml have NO Portuguese edition and therefore get
+# no entry - the app will show their original English titles. Brazilian
+# editions (Conrad, Bertrand Brasil) exist with different titles and are
+# deliberately excluded: they are pt-BR, not pt-PT.
+#
+# Every ISBN below comes from the Biblioteca Nacional de Portugal catalogue
+# record for the book. BNP records the pre-2007 ones as ISBN-10; they are
+# converted to ISBN-13 here (the conversion was checked against Wook, which
+# lists 9789727595549 for A Cor da Magia independently). All prefixes are
+# 978-972- / 978-989- (Portugal).
+
+# --- Temas e Debates, 2003-2005: Discworld 1-7 in publication order ---
+
+- id: discworld/the-colour-of-magic/temas-e-debates-2003-pt
+  workId: discworld/the-colour-of-magic
+  isbn13: "9789727595549"
+  language: pt-PT
+  title: "A Cor da Magia"
+  translator: "Mário Dias Correia"
+  format: paperback
+  publisher: Temas e Debates
+  year: 2003
+  note: >
+    Subtitled "um romance da série Discworld" on the title page. The one
+    Portuguese Discworld edition still listed by retailers, and the only one
+    whose ISBN-13 is independently confirmed outside the national catalogue.
+  sources:
+    - https://www.wook.pt/livro/a-cor-da-magia-terry-pratchett/107454
+    - https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=972-759-554-5
+
+- id: discworld/the-light-fantastic/temas-e-debates-2003-pt
+  workId: discworld/the-light-fantastic
+  isbn13: "9789727595556"
+  language: pt-PT
+  title: "A Luz Fantástica"
+  translator: "Mário Dias Correia"
+  publisher: Temas e Debates
+  year: 2003
+  note: >
+    The BNP record types the original title as "The night fantastic", which is
+    a cataloguing slip - no such Pratchett book exists, the Portuguese title is
+    a literal rendering of "The Light Fantastic", and it sits second in the
+    publisher's strictly sequential run.
+  sources:
+    - https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=972-759-555-3
+
+- id: discworld/equal-rites/temas-e-debates-2003-pt
+  workId: discworld/equal-rites
+  isbn13: "9789727595563"
+  language: pt-PT
+  title: "Ritos Iguais"
+  translator: "Mário Dias Correia"
+  publisher: Temas e Debates
+  year: 2003
+  note: >
+    BNP confirms "Tít. orig.: Equal rites". The Portuguese title keeps the
+    "rites" half of the pun and loses the "rights" half.
+  sources:
+    - https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=972-759-556-1
+
+- id: discworld/mort/temas-e-debates-2004-pt
+  workId: discworld/mort
+  isbn13: "9789727595570"
+  language: pt-PT
+  title: "Mort"
+  translator: "Mário Dias Correia"
+  publisher: Temas e Debates
+  year: 2004
+  note: >
+    Published untranslated - the BNP record carries no "Tít. orig." note
+    because the Portuguese title is identical to the original.
+  sources:
+    - https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=972-759-557-X
+
+- id: discworld/sourcery/temas-e-debates-2004-pt
+  workId: discworld/sourcery
+  isbn13: "9789727596874"
+  language: pt-PT
+  title: "Fontiçaria"
+  translator: "Mário Dias Correia"
+  publisher: Temas e Debates
+  year: 2004
+  note: >
+    BNP confirms "Tít. orig.: Sourcery". The invented Portuguese word folds
+    "fonte" into "feitiçaria" the way Pratchett folded "source" into "sorcery".
+  sources:
+    - https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=972-759-687-8
+
+- id: discworld/wyrd-sisters/temas-e-debates-2005-pt
+  workId: discworld/wyrd-sisters
+  isbn13: "9789727596881"
+  language: pt-PT
+  title: "As Três Bruxas"
+  translator: "Mário Dias Correia"
+  publisher: Temas e Debates
+  year: 2005
+  note: >
+    BNP confirms "Tít. orig.: Wyrd sisters". Editorial Caminho had already
+    published this one as "As Três Bruxas" in 1991, translated by Paula Reis
+    (ISBN 9789722106023) - long out of print.
+  sources:
+    - https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=972-759-688-6
+
+- id: discworld/pyramids/temas-e-debates-2005-pt
+  workId: discworld/pyramids
+  isbn13: "9789727596898"
+  language: pt-PT
+  title: "Pirâmides"
+  translator: "Mário Dias Correia"
+  publisher: Temas e Debates
+  year: 2005
+  note: >
+    BNP confirms "Tít. orig.: Pyramids". The last Discworld novel Temas e
+    Debates published - the Portuguese run ends here, at book seven.
+  sources:
+    - https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=972-759-689-4
+
+# --- Saida de Emergencia, 2010: a one-off, published as young-adult ---
+
+- id: discworld/the-wee-free-men/saida-de-emergencia-2010-pt
+  workId: discworld/the-wee-free-men
+  isbn13: "9789896372472"
+  language: pt-PT
+  title: "Os Homenzinhos Livres"
+  translator: "Renato Correia"
+  publisher: Saída de Emergência
+  year: 2010
+  note: >
+    Published in the "Teen" collection (no. 12), illustrated, five years after
+    the Temas e Debates run stopped and by a different house - so it is a
+    standalone Portuguese Tiffany Aching book, not a continuation. BNP types
+    the original as "The wee free man"; the singular is a cataloguing slip.
+  sources:
+    - https://www.wook.pt/livro/os-homenzinhos-livres-terry-pratchett/9582682
+    - https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-637-247-2
