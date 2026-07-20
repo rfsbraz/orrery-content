@@ -75,6 +75,7 @@ assumes this list is stable. A late-arriving work costs a re-run of stages 4-6.
 |---|---|
 | `press-archaeology` | `content/authors/<id>.yaml`, `content/franchises/<slug>/events.yaml` |
 | `world-events` | `content/events/global.yaml` |
+| `event-resonance` | `content/franchises/<slug>/franchise.yaml` (`globalEvents`) |
 | connections and characters pass (`franchise-research`) | `content/franchises/<slug>/{characters,connections}.yaml` |
 
 **`press-archaeology` is where a wing stops being a list and starts being a
