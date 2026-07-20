@@ -119,6 +119,20 @@ def rel(path):
 
 
 def main():
+    # --- pipeline handoffs (.orrery/, branch-local, absent on main) ----------
+    # Stage handoffs are how one curation agent tells the next what it did;
+    # nothing else validates them, because they live outside content/. A
+    # handoff that does not parse is worse than a missing one: the next stage
+    # is told to read it, silently gets nothing, and its gap looks like
+    # completion. This directory is deleted before the final merge, so on main
+    # this check simply finds nothing.
+    for path in glob.glob(os.path.join(ROOT, ".orrery", "**", "*.yaml"), recursive=True):
+        try:
+            with open(path, encoding="utf-8") as f:
+                yaml.safe_load(f)
+        except Exception as e:
+            err(rel(path), f"handoff does not parse: {e}")
+
     # --- authors (global registry) ---
     author_ids = set()
     for path in glob.glob(os.path.join(ROOT, "content", "authors", "*.yaml")):
