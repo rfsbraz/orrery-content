@@ -16,6 +16,9 @@ import yaml
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ERRORS = []
+# Non-fatal: things a curator should look at but which are legitimately a
+# judgement call (a posthumous or companion work may sit outside every era).
+WARNINGS = []
 INLINE_REF = re.compile(r"\[\[(?P<type>work|author|franchise|character):(?P<id>[^\]|]+)(?:\|[^\]]*)?\]\]")
 ORDER_TYPES = {"chronological-inuniverse", "author-recommended", "curated", "community", "official-publication"}
 IMPACTS = {"low", "med", "high"}
@@ -71,6 +74,29 @@ def valid_isbn13(isbn):
 
 def err(where, msg):
     ERRORS.append(f"{where}: {msg}")
+
+
+def warn(where, msg):
+    WARNINGS.append(f"{where}: {msg}")
+
+
+def era_span(period):
+    """[start, end] for an era period ("1974-1978", "2020-present", "1980s").
+
+    Mirrors the app's eraSpan so this guard sees what the River sees.
+    """
+    raw = str(period or "")
+    years = re.findall(r"\d{4}", raw)
+    if not years:
+        return None
+    start = int(years[0])
+    if re.search(r"present|now", raw, re.I):
+        return (start, 9999)
+    if len(years) > 1:
+        return (start, int(years[-1]))
+    if re.search(r"\d{4}s", raw):
+        return (start, start + 9)
+    return (start, start)
 
 
 def load(path):
@@ -328,6 +354,34 @@ def main():
             if ed.get("title") and not lang:
                 err(loc, f"{eid}: has a published title but no language")
 
+    # --- era coverage -------------------------------------------------------
+    # Every work should sit under some era: the River renders works against era
+    # plates, so an uncovered year leaves the work floating with no context.
+    # Re-sourcing an era's boundaries is how this breaks - tightening a span to
+    # a defensible range silently orphans whatever fell in the slack. A warning
+    # rather than an error, because a posthumous release or a companion volume
+    # can legitimately sit outside the creative eras.
+    for fdir in franchise_dirs:
+        if not os.path.isdir(fdir):
+            continue
+        fslug = os.path.basename(fdir)
+        epath = os.path.join(fdir, "eras.yaml")
+        if not os.path.exists(epath):
+            continue
+        spans = [s for s in (era_span(e.get("period")) for e in (load(epath) or [])) if s]
+        if not spans:
+            continue
+        for w in load(os.path.join(fdir, "works.yaml")) or []:
+            year = w.get("published")
+            if not isinstance(year, int):
+                continue
+            if not any(a <= year <= b for a, b in spans):
+                warn(
+                    f"{fslug}/works.yaml",
+                    f"{w.get('id')}: published {year} falls outside every era "
+                    f"(covered: {', '.join(f'{a}-{b}' for a, b in sorted(spans))})",
+                )
+
     # --- achievements (global + per franchise) ---
     era_ids_by_franchise = {}
     for fdir in franchise_dirs:
@@ -512,6 +566,12 @@ def main():
         # Top-level lists in events.yaml / global.yaml are events themselves.
         top_is_event = base in {"events.yaml", "global.yaml", "characters.yaml"}
         scan_unhonoured(rel(path), data, "", top_is_event)
+
+    if WARNINGS:
+        print(f"{len(WARNINGS)} warning(s) - not blocking, but a curator should look:\n")
+        for w in WARNINGS:
+            print("  ~", w)
+        print()
 
     if ERRORS:
         print(f"FAILED - {len(ERRORS)} error(s):\n")
