@@ -1,0 +1,211 @@
+stage: reading-orders
+summary: >
+  The scaffold's premise ("no publisher numbering or author-endorsed
+  entry-path statement was found") was half-superseded by the eras stage and
+  half still true. orders.yaml goes from unwritten to 2 curated orders, one
+  per tetralogy Mae names himself in a directly-quoted, re-verified
+  Observador interview (14 January 2024): "os meus livros tem-se organizado
+  em tetralogias. Houve a primeira, A Idade Inteira, e esta agora chama-se
+  Irmaos, Ilhas e Ausencias." Both orders restate publication order for their
+  four books; what they add is the boundary and the name, both the author's
+  own, not a reshuffle - exactly the `type: curated` case (a real grouping
+  that needs a source, a sequence that does not). No author or publisher
+  statement telling a reader to read either tetralogy in a particular
+  sequence was found, so `author-recommended` was considered and rejected for
+  both. startHere goes from absent to 4 paths, powered by a genuine discovery
+  this pass made: a dated, bylined "where to start" article on Wook's own
+  editorial blog (11 October 2021), the largest Portuguese bookshop and part
+  of the same publishing group as most of Mae's catalogue - the strongest
+  entry-path source actually found, in either language, though not the
+  strongest possible tier (no author FAQ, no canonical community guide).
+  Notably, that source recommends two novels published AFTER the prize-
+  winning "minusculas" tetralogy and never the tetralogy itself as a door in;
+  a third path (the tetralogy itself, for a returning/arc reader) and a
+  fourth (completionist, orderId: default) round out the wizard. Poetry was
+  tested and found to have no citable order or entry role: it is a separate,
+  continuous track per eras.yaml, not itself ordered. The prequel/spoiler
+  vector was checked directly: neither order reshuffles publication order, so
+  neither creates one, and O Filho de Mil Homens (recommended as a startHere
+  pick) precedes everything it could spoil rather than following it.
+  validate.py green (445 works, 29 authors, all references resolve; the only
+  warnings touching this wing are the four pre-existing "outside every era"
+  ones, unchanged in kind). sync_sanctuary_block.py green. i18n_coverage.py:
+  67/73 files fully covered before this pass, 68/74 after - orders.yaml ships
+  with a full pt-PT overlay in the same commit, and franchise.yaml moves from
+  fully-missing to 8/9 fields covered (every startHere field; only the
+  pre-existing, out-of-footprint top-level `description` remains untranslated).
+  No regression anywhere.
+produced:
+  ordersAdded:
+    - id: valter-hugo-mae/tetralogia-das-minusculas
+      name: A Idade Inteira
+      type: curated
+      scope: "the 4 minusculas novels only (2004-2010), complete for that declared scope"
+      basis: "author-named grouping (Observador, 14 Jan 2024, re-verified directly against the live page); sequence is publication order, uncontested"
+    - id: valter-hugo-mae/irmaos-ilhas-e-ausencias
+      name: Irmaos, Ilhas e Ausencias
+      type: curated
+      scope: "the 4 second-tetralogy novels only (2013-2024), complete for that declared scope"
+      basis: "author-named grouping (same Observador interview, plus the author's own note closing Deus na Escuridao and a 12 Jan 2024 RR.pt interview); sequence is publication order, uncontested"
+  startHereWritten:
+    paths:
+      - id: the-unlikely-door
+        pick: valter-hugo-mae/o-filho-de-mil-homens
+        fit: "new / taste"
+        sourced: "Wook's wookacontece blog, 11 Oct 2021, names it their own actual entry point ('a nossa porta de entrada')"
+      - id: gentler-initiation
+        pick: valter-hugo-mae/contos-de-caes-e-maus-lobos
+        fit: "new / taste"
+        sourced: "same Wook article, calls it an excellent first discovery of his prose"
+      - id: the-tetralogy-that-made-him
+        pick: "orderId valter-hugo-mae/tetralogia-das-minusculas"
+        fit: "new+returning / arc"
+        sourced: "the same author-named grouping as the order it points to; not itself sourced as an entry point by anyone - flagged below"
+      - id: everything
+        pick: "orderId default"
+        fit: "completionist / complete"
+        sourced: "n/a, the derived order"
+  franchiseYamlChanged: >
+    Added the startHere block (4 paths above) and a comment naming the Wook
+    source and what it does and does not recommend. Updated the existing
+    capabilities comment's orders.yaml/startHere sentences only; did not
+    touch the aura counts or globalEvents block (event-resonance's territory,
+    left as found).
+  i18n:
+    - "content/i18n/pt-PT/franchises/valter-hugo-mae/orders.yaml (new, full coverage: both orders' name/rationale/debated)"
+    - "content/i18n/pt-PT/franchises/valter-hugo-mae/franchise.yaml (new, startHere.paths only: id/title/description/note for all 4 paths; top-level description deliberately not added, out of this stage's footprint)"
+rejected:
+  - candidate: "type: author-recommended, for either tetralogy order"
+    verdict: "REJECTED, type: curated used instead"
+    why: >
+      Mae names and groups the books ("os meus livros tem-se organizado em
+      tetralogias") but never tells a reader to read them in a particular
+      order, and the sequence he groups them in is simply publication order -
+      the exact shape the skill defines curated for ("this catalogue's
+      editorial arrangement of a real grouping... it still needs a source for
+      the grouping itself, even when the sequence is obvious"). Calling it
+      author-recommended would claim he prescribed a reading sequence, which
+      he did not; he described how his own bibliography happens to be shaped,
+      after the fact, in one case explicitly by his own account
+      ("eu nao falei disso inicialmente").
+  - candidate: "official-publication, for either tetralogy order"
+    verdict: REJECTED (structurally inapplicable)
+    why: >
+      No publisher numbering was found by this pass, confirming the scaffold
+      and completeness-auditor's prior searches. Both novels are simply
+      numbered by year on the publisher's own catalogue pages, the same as
+      every other work.
+  - candidate: "chronological-inuniverse, for anything on this shelf"
+    verdict: REJECTED (structurally inapplicable)
+    why: >
+      Confirmed against franchise-research's finding: no recurring characters
+      or work-to-work connections exist across the 37 works. Each novel
+      stands alone in its own setting and era (medieval Portugal, Bragança,
+      Japan, Iceland, colonial Brazil, Madeira, an imagined mountain
+      village); there is no shared timeline to order.
+  - candidate: "a single 8-book order joining both tetralogies back to back"
+    verdict: REJECTED
+    why: >
+      Mae names two cycles, not one, and O Filho de Mil Homens (2011) sits
+      chronologically between them on an axis he places outside both. A
+      joined order would either silently skip a book the derived default
+      does not skip, or misrepresent the two-cycle scheme the entire order's
+      legitimacy rests on.
+  - candidate: "a 'novels only' order (the 10 core-tier novels, chronological)"
+    verdict: REJECTED
+    why: >
+      No same-year ties to resolve (all 10 years are distinct) and no
+      external source recommends reading "just the novels" as a shape - it
+      would only restate canonTier=core filtered by year, our own schema
+      field standing in for a source. Fails "received, not invented."
+  - candidate: "an order or startHere pick for the O Filho de Mil Homens / Contra Mim autobiographical axis"
+    verdict: REJECTED, matching the eras stage's own rejection of it as an era
+    why: >
+      Real and named by criticism (Revista Pernambuco gives it as a third
+      axis) but two books ten years apart is a startHere pick's shape, not an
+      order's, and no source anywhere recommends reading these two together,
+      in sequence, or as an entry point. Adding it would be inventing a path
+      dressed as reception.
+  - candidate: "a startHere path for the poetry (1996-2018)"
+    verdict: REJECTED
+    why: >
+      No source recommends an entry point inside the 15-book poetry list, and
+      eras.yaml already establishes the poetry runs continuously alongside
+      the novels rather than stopping or clustering - there is no "poetry
+      era" to point a path at, and no critic treats the poetry as a track a
+      new reader should start on before or instead of the fiction.
+  - candidate: "explicitly warning newcomers away from the prize-winning tetralogy as a starting point (the famous-book trap)"
+    verdict: NOT WRITTEN, flagged as an observation instead
+    why: >
+      The Wook article's own two picks are both post-tetralogy novels and it
+      never offers a tetralogy volume as a door in, which fits the pattern
+      the skill calls the famous-book trap. But no source anywhere states
+      "do not start with the minusculas tetralogy" as advice - the omission
+      is suggestive, not a citable warning - so franchise.yaml's comment
+      states the fact (which two books the source picks, and that it names
+      neither tetralogy volume) without writing a sentence claiming the
+      warning is received advice, per the skill's own discipline on this
+      exact trap.
+audit:
+  preExisting: "orders.yaml and startHere did not exist before this pass; nothing to audit for drift, silent drops, or stale rationale."
+  coverageCheck: >
+    Both orders are complete for their own declared scope (4 works each, all
+    4 present, nothing dropped) and each rationale explicitly says what it
+    covers and what it does not (works outside the scope named individually
+    or by count).
+  pathTargetCheck: >
+    the-tetralogy-that-made-him points at
+    valter-hugo-mae/tetralogia-das-minusculas and its prose (the tetralogy's
+    name, the Saramago Prize, the four novels' shape) matches that order's
+    own rationale; no drift, written in the same pass.
+openQuestions:
+  - >
+    RULING, not escalated: order id valter-hugo-mae/tetralogia-das-minusculas
+    keeps the older critical name as its id while the order's `name` field
+    uses the author's own "A Idade Inteira" - deliberately mirroring
+    eras.yaml's own id (unprefixed: tetralogia-das-minusculas) and its own
+    ruling on the same naming question, for the same reason: the id is a
+    permanent slug, not a claim about who coined it, and keeping it aligned
+    with the era's id makes the two artefacts about the same grouping
+    recognisably the same grouping.
+  - >
+    CURATOR CALL: the Wook article (wookacontece, 11 Oct 2021) is a named,
+    dated, bylined source that directly answers "where to start", but it is
+    one article on one bookseller's blog, not a canonical community guide or
+    an author FAQ. It is the strongest entry-path source found in either
+    language for this author - stronger than the prize-based inference
+    joao-tordo/franchise.yaml uses for its own "the-prizewinner" path, which
+    the file itself flags as NOT sourced as an entry point by anyone. If a
+    curator judges a single bookshop blog post too thin a rung for two of
+    four wizard paths, the honest fallback is dropping to 2 paths
+    (the-tetralogy-that-made-him and everything) rather than inventing a
+    stronger source that was not found - not padding back up to 3-4 paths on
+    weaker grounds.
+  - >
+    Not escalated, a live editorial observation: the Wook article never
+    offers any volume of the prize-winning "minusculas" tetralogy as an entry
+    point, recommending instead two novels published after it. This may mean
+    his best-known, most-decorated work is genuinely a harder door in for a
+    newcomer (the famous-book trap), or it may just be one article's two
+    personal favourites. Not enough to write as received advice either way;
+    stated as a fact in franchise.yaml's comment, not as a warning in reader
+    prose.
+  - >
+    Genuinely quiet, not unchecked: searched specifically (multiple query
+    variants, pt-PT and pt-BR) for the author himself ever being asked "where
+    should a new reader start" and answering it, the gold-standard source per
+    the skill. Nothing found. Also searched for any statement that either
+    tetralogy should be READ in a particular order (as opposed to being
+    grouped) - nothing found beyond the grouping itself. Both are reportable
+    negative results, not a sign of an unfinished search.
+forStages:
+  translation: >
+    orders.yaml ships with full pt-PT coverage in the same commit
+    (content/i18n/pt-PT/franchises/valter-hugo-mae/orders.yaml). franchise.yaml's
+    new startHere block also ships fully covered
+    (content/i18n/pt-PT/franchises/valter-hugo-mae/franchise.yaml, startHere.paths
+    only). The wing's pre-existing gap is unchanged by this pass and remains
+    what every prior stage already reported: works.yaml (37), eras.yaml (9),
+    events.yaml (10), authors/valter-hugo-mae.yaml (15), and franchise.yaml's
+    own top-level `description` (1) - none of it this stage's footprint.
+    i18n_coverage.py: 67/73 files fully covered before, 68/74 after.

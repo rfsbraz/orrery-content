@@ -16,11 +16,87 @@ themePreset: village-ink
 # era. No characters.yaml (no recurring figures across works were found - his
 # novels are standalone, each in a different setting) and no work
 # `connections` (no crossovers found), so the connections map stays dark by
-# design. No orders.yaml (no publisher-numbered or author-endorsed reading
-# order beyond the tetralogy's own publication sequence was found) and no
-# startHere (no sourced entry-path recommendation was found either).
-# Everything left at auto; nothing forced.
+# design. orders.yaml holds two curated orders, one per tetralogy Mãe names
+# himself; no publisher-numbered or author-endorsed order was found for
+# anything beyond those two groupings. startHere below rests on a named,
+# dated Portuguese bookshop reading guide, the only entry-path source found
+# in either language. Everything else left at auto; nothing forced.
 features: {}
+
+# "Where to start" - powers the guided wizard. Two of the four paths (start
+# here) rest on a named Portuguese-language source that answers the exact
+# question, published by Wook, the country's largest bookshop and part of
+# the same publishing group (Porto Editora) as most of Mãe's own catalogue:
+# "Por onde começar, se nunca leu Valter Hugo Mãe" (wookacontece, 11 October
+# 2021, bylined Álvaro Curia/Ludgero Cardoso). No author statement recommending
+# a starting point was found in either language. That source picks two novels
+# published after the prize-winning "minúsculas" tetralogy and names neither
+# tetralogy volume as a door in.
+startHere:
+  paths:
+    - id: the-unlikely-door
+      title: The unlikely door in
+      description: >
+        O Filho de Mil Homens, published right after the four-book run that
+        made his name, skips past it entirely: a lone fisherman past forty
+        inventing the family he never had, gentler and more approachable
+        than the typographic experiment around it. Wook's own reading guide
+        names it the way its own writers actually started. The cost: you
+        miss the lowercase tetralogy and the Prémio José Saramago that made
+        him a name in Portuguese letters, which most criticism reaches for
+        first.
+      workIds:
+        - valter-hugo-mae/o-filho-de-mil-homens
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+    - id: gentler-initiation
+      title: A gentler initiation
+      description: >
+        Eleven short stories, each illustrated by a different artist and
+        prefaced by Mia Couto - dogs and wolves standing in for love, loss
+        and the slow work of learning to care, in doses smaller than a
+        novel. The same reading guide that recommends O Filho de Mil Homens
+        calls this collection an excellent way to discover his prose for the
+        first time. The cost: it is a taste of theme and voice, not the
+        plotted, book-length reading experience the prizes were won for.
+      workIds:
+        - valter-hugo-mae/contos-de-caes-e-maus-lobos
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+    - id: the-tetralogy-that-made-him
+      title: The tetralogy that made his name
+      description: >
+        Four novels published without a single capital letter, 2004-2010: a
+        fishing village under the Estado Novo, a medieval marriage curdling
+        into witchcraft, two mourners in Bragança, a nursing home at the end
+        of a life. Mãe calls the run "A Idade Inteira" himself, and its
+        second volume won him the Prémio José Saramago. Read in order,
+        because the order is simply how it was written.
+      workIds: null
+      orderId: valter-hugo-mae/tetralogia-das-minusculas
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        None of the four is a gentle read; a reader wary of that demand
+        should try one of the two entries above first.
+    - id: everything
+      title: Everything, in order
+      description: >
+        Every novel, poetry collection, children's book and the two works of
+        autobiographical prose, in strict publication order from 1996
+        onward: a poet with nine books in verse becomes, in 2004, the
+        novelist criticism knows him as, and every later book takes its
+        place in that same timeline.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
 
 # Which shared global events actually reach this author (docs/SCHEMA.md). Most
 # of the pool is Anglophone trade or genre-industry history that never touches
@@ -53,3 +129,4 @@ sources:
   - https://www.portoeditora.pt/autor/valter-hugo-mae/23096
   - https://www.premiojosesaramago.pt/vencedores/2007/valter-hugo-mae
   - https://hasempreumlivro.blogspot.com/2012/12/o-nosso-reino-de-valter-hugo-mae.html
+  - "https://www.wook.pt/wookacontece/novidades/noticia/ver/por-onde-comecar-se-nunca-leu-valter-hugo-mae/?id=196585"
