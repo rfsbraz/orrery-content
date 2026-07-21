@@ -1,19 +1,30 @@
 # ADDITIONAL canon orders only. The DEFAULT order - all published works in
 # publication-chronological order - is derived automatically from works.yaml and
-# is NOT listed here. The Wheel of Time's one genuine ordering debate is WHERE the
-# prequel New Spring goes, so both orders below are answers to that question. They
-# cover the reading sequence (14 main novels + New Spring); the two reference
-# companions are not part of a narrative reading order.
+# is NOT listed here. Since this wing covers the author's complete works, the
+# derived order opens in 1980 with The Fallon Blood and reaches The Eye of the
+# World eleven books later; every order below is partial by design and says so.
+#
+# Two of the author's shelves carry a real ordering question and each has its
+# order here. The Wheel of Time's is WHERE the prequel New Spring goes, so the
+# first two orders are the two answers to it. The Conan novels' is that Tor
+# published them as episodes scattered across Conan's life rather than in his
+# life's order, so the third order follows the chronology Jordan wrote himself.
+# The Fallon historicals need no order (published in story sequence, and the
+# derived default already gives it), and the remaining works stand alone.
 
 - id: wheel-of-time/chronological
   name: Chronological (in-world) order
   type: chronological-inuniverse
   source: canon
   rationale: >
-    Read strictly by in-world timeline: [[work:wheel-of-time/new-spring|New Spring]],
-    set roughly twenty years earlier, comes first, then the fourteen main volumes
-    in sequence. Chosen by completionists and re-readers who want a linear
-    timeline and do not mind losing a few first-read surprises.
+    The Wheel of Time only, read strictly by in-world timeline:
+    [[work:wheel-of-time/new-spring|New Spring]], set roughly twenty years
+    earlier, comes first, then the fourteen main volumes in sequence. Chosen by
+    completionists and re-readers who want a linear timeline and do not mind
+    losing a few first-read surprises. It covers the fifteen narrative volumes
+    and nothing else on Jordan's shelf: the two reference companions are not a
+    reading sequence, and the early historicals, the western and the Conan
+    novels share no timeline with the series.
   orderedWorkIds:
     - wheel-of-time/new-spring
     - wheel-of-time/the-eye-of-the-world
@@ -41,11 +52,16 @@
   type: curated
   source: canon
   rationale: >
-    The common newcomer recommendation: read the main sequence in publication
-    order but slot [[work:wheel-of-time/new-spring|New Spring]] in partway
-    through, most often after [[work:wheel-of-time/the-fires-of-heaven|The Fires of Heaven]]
-    (book five), by which point you know the characters the prequel reframes and
-    are past the reveals it would spoil.
+    The Wheel of Time only: read the main sequence in publication order but slot
+    [[work:wheel-of-time/new-spring|New Spring]] in partway through, once you
+    know the characters the prequel reframes and are past the reveals it would
+    spoil. This arrangement places it after
+    [[work:wheel-of-time/the-fires-of-heaven|The Fires of Heaven]] (book five),
+    which is the early end of a contested range: it costs you less of the run to
+    the ending than a later slot, and buys that by reframing fewer books than a
+    reader who waits. Guides disagree, and the two cited below both argue for
+    later. Like the chronological order it covers the fifteen narrative volumes
+    and leaves out the companions and the whole pre-1990 shelf.
   orderedWorkIds:
     - wheel-of-time/the-eye-of-the-world
     - wheel-of-time/the-great-hunt
@@ -63,8 +79,55 @@
     - wheel-of-time/towers-of-midnight
     - wheel-of-time/a-memory-of-light
   debated:
-    - "The exact insertion point is contested. Common placements are after book 5 (The Fires of Heaven) or after book 10 (Crossroads of Twilight, near its 2004 publication slot); some guides suggest as early as after book 2."
+    - "The exact insertion point is contested. Common placements are after book 5 (The Fires of Heaven) or after book 10 (Crossroads of Twilight, near its 2004 publication slot); some guides suggest as early as after book 2. Both sources cited for this order argue for after book 10, so the position used here is the minority of the two: it is offered as the early end of the range, not as the consensus."
     - "Purists read New Spring at its publication position (the derived default order places it after Crossroads of Twilight); this integrated order exists because many readers find that slot too late to matter."
   sources:
     - https://theshiningwalls.com/when-to-read-new-spring/
     - https://www.tlbranson.com/wheel-of-time-reading-order/
+
+# The sequence is Jordan's own. "A Conan Chronology" (1987), his attempt to
+# place all Conan material written to that point, was first printed in Steve
+# Perry's Conan the Defiant (Tor, 1987) and is not online in its original form.
+# Two independent reproductions agree on where it puts these seven, and on the
+# in-world years behind the placement (Destroyer 1266 A.A., Magnificent 1267,
+# Invincible 1267, Victorious 1267, Unconquered 1268, Defender 1271,
+# Triumphant 1273):
+#   Wikipedia's Conan chronologies article reproduces the 1987 list directly.
+#   The Barbarian Keep reproduces the version Curtis M. Scott built from
+#   Jordan's article for the GURPS Conan sourcebook, dated "as of 1989", so it
+#   is one remove from the essay rather than a second reading of it.
+# The Barbarian Keep's certificate has expired; the page serves over plain HTTP
+# and to a browser User-Agent.
+- id: wheel-of-time/conan-chronological
+  name: The Conan novels in Conan's own chronology
+  type: chronological-inuniverse
+  source: canon
+  rationale: >
+    Jordan's seven Conan novels, read in the order they happen to Conan rather
+    than the order Tor published them. Tor issued them as free-standing
+    episodes picked from anywhere in the barbarian's career, so publication
+    order walks his life at random: this order follows the chronology Jordan
+    himself compiled in 1987, which starts with
+    [[work:wheel-of-time/conan-the-destroyer|Conan the Destroyer]] and ends,
+    seven years of his life later, with
+    [[work:wheel-of-time/conan-the-triumphant|Conan the Triumphant]]. For a
+    reader who wants the barbarian's career to add up. The costs are real:
+    you lose the three years of Jordan visibly getting faster and surer at
+    work-for-hire, and you are reading seven chapters of a timeline that Jordan
+    built to hold some seventy Conan stories by a dozen hands, most of them by
+    other writers and none of them on this shelf.
+  orderedWorkIds:
+    - wheel-of-time/conan-the-destroyer
+    - wheel-of-time/conan-the-magnificent
+    - wheel-of-time/conan-the-invincible
+    - wheel-of-time/conan-the-victorious
+    - wheel-of-time/conan-the-unconquered
+    - wheel-of-time/conan-the-defender
+    - wheel-of-time/conan-the-triumphant
+  debated:
+    - "Partial by design: these are the seven Conan novels Jordan wrote, and nothing else of his. His chronology interleaves them with Robert E. Howard's originals and with novels by de Camp, Carter, Offutt, Perry, Roberts and others, so a reader following it as printed would move in and out of this shelf constantly."
+    - "Conan chronologies are a long-running argument, not a settled fact. Jordan's revised the earlier Miller/Clark/de Camp chronology and, by Wikipedia's account, seldom gave his reasons for the departures; other chronologists order the same books differently. This one is used because the author of these seven wrote it."
+    - "Every novel here is placed by Jordan himself, so nothing had to be slotted by us. The exception is that three of the seven sit in the same in-world year (1267 A.A.), where the internal sequence is his ruling rather than a dated fact."
+  sources:
+    - "https://en.wikipedia.org/wiki/Conan_chronologies"
+    - "http://barbariankeep.com/chrono89.html"
