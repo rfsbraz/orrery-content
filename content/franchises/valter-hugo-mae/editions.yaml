@@ -1,0 +1,573 @@
+# Portuguese editions - the actual books a Portuguese reader buys.
+#
+# Mãe writes in Portuguese, so there is nothing to translate: every work's
+# `title` in works.yaml IS the published Portuguese title. Per SCHEMA.md, the
+# `title` field is therefore OMITTED throughout - repeating it would duplicate
+# the work title rather than record a genuinely different published title.
+#
+# COVERAGE: 34 of 37 works have at least one verified edition (see below). The
+# three without one: "O Sol Pôs-se Calmo Sem Me Acordar" (1997) and "Entorno
+# a Casa Sobre a Cabeça" (1999), both from tiny, apparently defunct presses
+# (A Mar Arte, Coimbra; Silêncio da Gaveta Edições, Vila do Conde) with no
+# record found in either the Biblioteca Nacional de Portugal (BNP) catalogue
+# or any live retailer; and "Bruno" (2007, Littera Libros, Badajoz, Spain),
+# whose only reported ISBN is not corroborated by any source that could be
+# opened here - not in BNP (a Spanish press falls outside Portuguese legal
+# deposit), not in OpenLibrary, no retailer or library listing found - so it
+# is left out rather than shipped on a single unverified number.
+#
+# SOURCES, two tiers:
+# - The ten core novels, both autobiographical-prose works, the short-story
+#   collection, all eight children's books, and the one apocryphal anthology
+#   piece are sourced to portoeditora.pt product pages (Grupo Porto Editora,
+#   which now holds Mãe's backlist, including the Alfaguara and Assírio &
+#   Alvim imprints). portoeditora.pt returns HTTP 403 to a plain fetch but
+#   serves normally to a browser User-Agent (the workaround CURATION.md §4
+#   records for infopedia.pt/observador.pt applies here too). Each ISBN and
+#   its "Editor"/"Encadernação"/"Edição" fields were read directly off that
+#   book's own product-page spec table.
+# - The four novels reissued from earlier imprints (o nosso reino, o remorso
+#   de baltazar serapião, o apocalipse dos trabalhadores, o filho de mil
+#   homens) and all first-recorded editions of the pre-2011 poetry carry a
+#   second entry sourced to the Biblioteca Nacional de Portugal's ipac20
+#   catalogue (catalogo.bnportugal.gov.pt), which - per CURATION.md §4 -
+#   answers to a browser User-Agent though it 30x-redirects a bare fetch.
+#   Each is cited by its id.bnportugal.gov.pt/bib/catbnp/<id> permalink, the
+#   specific record opened, not the catalogue's search front door. Pre-2007
+#   ISBN-10s recorded there were converted to ISBN-13 by dropping the ISBN-10
+#   check digit, prefixing 978, and recomputing the check digit from scratch,
+#   per the editions skill's own worked method; every converted number is
+#   re-verified by its ISBN-13 check digit here as well as by validate.py.
+#
+# Two of the small-press poetry first editions carry a publisher or date that
+# disagrees with works.yaml's own note; this file does not edit works.yaml, so
+# both stand as an open discrepancy between the two files. "Estou Escondido na
+# Cor Amarga do Fim da Tarde" is catalogued at BNP under "Casa das Letras",
+# Porto, 2000, not "Campo das Letras" as works.yaml states - two real,
+# unrelated Portuguese publishers. "A Cobrição das Filhas" is catalogued at
+# BNP as a first edition dated 2002, one year later than works.yaml's 2001.
+#
+# One poetry title, "Silencioso Corpo de Fuga" (1996, A Mar Arte, Coimbra),
+# has no ISBN in the BNP record at all (only a legal-deposit number,
+# PT-103760/96) - a real pre-ISBN-era small-press edition, not a gap, so it is
+# recorded here with isbn13 omitted rather than left out entirely.
+#
+# Both "Folclore Íntimo" (2008) and "Contabilidade" (2010) carry publisher
+# subtitles confirming they are themselves retrospective collections -
+# "poesia reunida" and "poesia 1996-2010" respectively - read directly off
+# their BNP catalogue records. This corroborates, without resolving, the open
+# question already logged in works.yaml about how "Publicação da Mortalidade"
+# (2018) relates to the individually dated collections that precede it: Mãe
+# has now published at least three such retrospective volumes across his
+# poetry career, not one.
+#
+# "A Cobrição das Filhas" and "Útero" are also both collected in a 2021
+# Officium Lectionis triptych, "Díptico da prédica ; a cobrição das filhas ;
+# seguido de Útero" - the only edition found anywhere for Útero on its own,
+# and, being current, the recommended edition for both works; each is
+# recorded as its own entry pointing at the same ISBN, since the schema does
+# not have a multi-work edition record.
+#
+# "A máquina de fazer espanhóis" has a conflicting first-edition record at
+# BNP - two different ISBNs, both catalogued as "1a ed.", one dated 2009 and
+# one dated 2010, both from Objectiva (works.yaml's own note says Alfaguara,
+# 2010) - genuinely unresolved; no first edition is recorded for that work
+# here, only its two current Porto Editora printings.
+#
+# "Contra Mim" is recorded here as a 2020 first edition (Porto Editora,
+# 8 October 2020, corroborated by observador.pt's 3 September 2020
+# announcement of the "rentrée" and ntradio.pt's 15 October 2020 release
+# notice) though works.yaml dates the work to 2021 - the Associação
+# Portuguesa de Escritores prize it won is styled "2020" and was announced in
+# June 2021, which is consistent with an October 2020 release, not a 2021
+# one. This file does not edit works.yaml, so the discrepancy stands between
+# the two files.
+
+# --- The Tetralogia das Minúsculas (2004-2010) ---
+
+- id: valter-hugo-mae/o-nosso-reino/porto-editora-2015-pt
+  workId: valter-hugo-mae/o-nosso-reino
+  isbn13: "9789720047472"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2015
+  note: >
+    Current printing (June 2015), preface by Ferreira Gullar; carries a
+    "8a ed." (2016) reprint under the same ISBN. Reissued long after the 2004
+    first edition below.
+  sources: ["https://www.portoeditora.pt/produtos/ficha/o-nosso-reino/16250874"]
+
+- id: valter-hugo-mae/o-nosso-reino/temas-e-debates-2004-pt
+  workId: valter-hugo-mae/o-nosso-reino
+  isbn13: "9789727597383"
+  language: pt-PT
+  publisher: Temas e Debates
+  year: 2004
+  note: >
+    First edition (BNP: 1a ed., Lisboa: Temas e Debates, 2004). ISBN
+    converted from the BNP-recorded ISBN-10 972-759-738-6 (check digit
+    recomputed from scratch after prefixing 978, per the editions skill's
+    method); out of print.
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/1361590"]
+
+- id: valter-hugo-mae/o-remorso-de-baltazar-serapiao/porto-editora-2015-pt
+  workId: valter-hugo-mae/o-remorso-de-baltazar-serapiao
+  isbn13: "9789720047342"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2015
+  note: >
+    Current printing (June 2015). Reissued long after the 2006 first edition
+    below, which carries José Saramago's preface and won the 2007 Prémio
+    José Saramago.
+  sources: ["https://www.portoeditora.pt/produtos/ficha/o-remorso-de-baltazar-serapiao/16188108"]
+
+- id: valter-hugo-mae/o-remorso-de-baltazar-serapiao/quidnovi-2006-pt
+  workId: valter-hugo-mae/o-remorso-de-baltazar-serapiao
+  isbn13: "9789728998103"
+  language: pt-PT
+  publisher: QuidNovi
+  year: 2006
+  note: >
+    First edition (BNP: 1a ed., Matosinhos: QuidNovi, 2006). ISBN converted
+    from the BNP-recorded ISBN-10 972-8998-10-4; out of print.
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/1670300"]
+
+- id: valter-hugo-mae/o-apocalipse-dos-trabalhadores/porto-editora-2015-pt
+  workId: valter-hugo-mae/o-apocalipse-dos-trabalhadores
+  isbn13: "9789720047410"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2015
+  note: >
+    Current printing (November 2015). Reissued long after the 2008 first
+    edition below.
+  sources: ["https://www.portoeditora.pt/produtos/ficha/o-apocalipse-dos-trabalhadores/16248415"]
+
+- id: valter-hugo-mae/o-apocalipse-dos-trabalhadores/quidnovi-2008-pt
+  workId: valter-hugo-mae/o-apocalipse-dos-trabalhadores
+  isbn13: "9789896280659"
+  language: pt-PT
+  publisher: QuidNovi
+  year: 2008
+  note: First edition (BNP "1a ed.", Lisboa, QuidNovi, 2008); out of print.
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/1737120"]
+
+- id: valter-hugo-mae/a-maquina-de-fazer-espanhois/porto-editora-2016-pt
+  workId: valter-hugo-mae/a-maquina-de-fazer-espanhois
+  isbn13: "9789720047335"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2016
+  note: Current trade printing (September 2016).
+  sources: ["https://www.portoeditora.pt/produtos/ficha/a-maquina-de-fazer-espanhois/16188109"]
+
+- id: valter-hugo-mae/a-maquina-de-fazer-espanhois/porto-editora-2021-especial-pt
+  workId: valter-hugo-mae/a-maquina-de-fazer-espanhois
+  isbn13: "9789720034724"
+  language: pt-PT
+  format: hardcover
+  publisher: Porto Editora
+  year: 2021
+  note: >
+    "Edição especial" hardcover (November 2021), a genuinely different object
+    from the standard trade paperback above, not a replacement for it.
+  sources: ["https://www.portoeditora.pt/produtos/ficha/a-maquina-de-fazer-espanhois-edicao-especial/25113305"]
+
+# --- Later novels (2011-2026) ---
+
+- id: valter-hugo-mae/o-filho-de-mil-homens/porto-editora-2015-pt
+  workId: valter-hugo-mae/o-filho-de-mil-homens
+  isbn13: "9789720047397"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2015
+  note: "Current printing (June 2015). Reissued from the 2011 first edition below."
+  sources: ["https://www.portoeditora.pt/produtos/ficha/o-filho-de-mil-homens/16248440"]
+
+- id: valter-hugo-mae/o-filho-de-mil-homens/objectiva-2011-pt
+  workId: valter-hugo-mae/o-filho-de-mil-homens
+  isbn13: "9789896721077"
+  language: pt-PT
+  publisher: Objectiva
+  year: 2011
+  note: First edition (BNP "1a ed.", Carnaxide, Objectiva, 2011); out of print.
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/1802252"]
+
+- id: valter-hugo-mae/a-desumanizacao/porto-editora-2013-pt
+  workId: valter-hugo-mae/a-desumanizacao
+  isbn13: "9789720044945"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2013
+  note: First edition (September 2013).
+  sources: ["https://www.portoeditora.pt/produtos/ficha/a-desumanizacao/15081037"]
+
+- id: valter-hugo-mae/homens-imprudentemente-poeticos/porto-editora-2016-pt
+  workId: valter-hugo-mae/homens-imprudentemente-poeticos
+  isbn13: "9789720048868"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2016
+  note: First edition (September 2016).
+  sources: ["https://www.portoeditora.pt/produtos/ficha/homens-imprudentemente-poeticos/18541969"]
+
+- id: valter-hugo-mae/as-doencas-do-brasil/porto-editora-2021-pt
+  workId: valter-hugo-mae/as-doencas-do-brasil
+  isbn13: "9789720034861"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2021
+  note: First edition (September 2021).
+  sources: ["https://www.portoeditora.pt/produtos/ficha/as-doencas-do-brasil/25379457"]
+
+- id: valter-hugo-mae/deus-na-escuridao/porto-editora-2024-pt
+  workId: valter-hugo-mae/deus-na-escuridao
+  isbn13: "9789720030993"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2024
+  note: First edition (January 2024).
+  sources: ["https://www.portoeditora.pt/produtos/ficha/deus-na-escuridao/21841834"]
+
+- id: valter-hugo-mae/o-seculo-dos-imbecis/porto-editora-2026-pt
+  workId: valter-hugo-mae/o-seculo-dos-imbecis
+  isbn13: "9789720031006"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2026
+  note: First edition, trade paperback (June 2026).
+  sources: ["https://www.portoeditora.pt/produtos/ficha/o-seculo-dos-imbecis/21841786"]
+
+- id: valter-hugo-mae/o-seculo-dos-imbecis/porto-editora-2026-capa-dura-pt
+  workId: valter-hugo-mae/o-seculo-dos-imbecis
+  isbn13: "9789720035950"
+  language: pt-PT
+  format: hardcover
+  publisher: Porto Editora
+  year: 2026
+  note: Hardcover printing (July 2026), a month after the trade paperback above.
+  sources: ["https://www.portoeditora.pt/produtos/ficha/o-seculo-dos-imbecis-capa-dura/33584225"]
+
+# --- Autobiographical / essayistic prose ---
+
+- id: valter-hugo-mae/contra-mim/porto-editora-2020-pt
+  workId: valter-hugo-mae/contra-mim
+  isbn13: "9789720033659"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2020
+  note: >
+    First edition, dated 8 October 2020 on the publisher's own product page -
+    see the file header for the discrepancy against works.yaml's 2021.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/contra-mim/24148563"
+    - "https://observador.pt/2020/09/03/valter-hugo-mae-luis-miguel-nava-amalia-e-javier-cercas-na-rentree-da-porto-editora/"
+    - "https://ntradio.pt/2020/10/15/contra-mim-de-valter-hugo-mae-nas-livrarias/"
+
+- id: valter-hugo-mae/educacao-da-tristeza/porto-editora-2025-pt
+  workId: valter-hugo-mae/educacao-da-tristeza
+  isbn13: "9789720055910"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2025
+  note: First edition (May 2025).
+  sources: ["https://www.portoeditora.pt/produtos/ficha/educacao-da-tristeza/31995054"]
+
+# --- Short stories ---
+
+- id: valter-hugo-mae/contos-de-caes-e-maus-lobos/porto-editora-2015-pt
+  workId: valter-hugo-mae/contos-de-caes-e-maus-lobos
+  isbn13: "9789720048103"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2015
+  note: First edition (November 2015).
+  sources: ["https://www.portoeditora.pt/produtos/ficha/contos-de-caes-e-maus-lobos/16898020"]
+
+# --- Children's literature ---
+
+- id: valter-hugo-mae/a-verdadeira-historia-dos-passaros/quidnovi-2009-pt
+  workId: valter-hugo-mae/a-verdadeira-historia-dos-passaros
+  isbn13: "9789896281335"
+  language: pt-PT
+  publisher: QuidNovi
+  year: 2009
+  note: >
+    First and only edition found (BNP: 1a ed., Lisboa: QuidNovi, 2009),
+    collection "Abrir os olhos" no. 1.
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/1756466"]
+
+- id: valter-hugo-mae/a-historia-do-homem-calado/quidnovi-2009-pt
+  workId: valter-hugo-mae/a-historia-do-homem-calado
+  isbn13: "9789896281328"
+  language: pt-PT
+  publisher: QuidNovi
+  year: 2009
+  note: >
+    First and only edition found (BNP: 1a ed., Lisboa: QuidNovi, 2009),
+    catalogued immediately alongside A Verdadeira História dos Pássaros
+    above in the same "Abrir os olhos" collection.
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/1756469"]
+
+- id: valter-hugo-mae/o-rosto/alfaguara-2010-pt
+  workId: valter-hugo-mae/o-rosto
+  isbn13: "9789896720438"
+  language: pt-PT
+  publisher: Alfaguara
+  year: 2010
+  note: >
+    First and only edition found (BNP: Carnaxide: Alfaguara, 2010), collection
+    "Alfaguara infantil".
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/1783836"]
+
+- id: valter-hugo-mae/as-mais-belas-coisas-do-mundo/porto-editora-2019-pt
+  workId: valter-hugo-mae/as-mais-belas-coisas-do-mundo
+  isbn13: "9789720031945"
+  language: pt-PT
+  format: hardcover
+  publisher: Porto Editora
+  year: 2019
+  note: >
+    Current Porto Editora printing (May 2019); works.yaml dates the work's
+    first publication to 2010, an earlier edition not located here.
+  sources: ["https://www.portoeditora.pt/produtos/ficha/as-mais-belas-coisas-do-mundo/23001672"]
+
+- id: valter-hugo-mae/quatro-tesouros/alfaguara-2011-pt
+  workId: valter-hugo-mae/quatro-tesouros
+  isbn13: "9789896721244"
+  language: pt-PT
+  publisher: Alfaguara
+  year: 2011
+  note: >
+    First and only edition found (BNP: 1a ed., Carnaxide: Alfaguara, 2011),
+    illustrated by Patrícia Furtado, confirming the work's existence and year.
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/1806242"]
+
+- id: valter-hugo-mae/o-paraiso-sao-os-outros/porto-editora-2018-pt
+  workId: valter-hugo-mae/o-paraiso-sao-os-outros
+  isbn13: "9789720030399"
+  language: pt-PT
+  format: hardcover
+  publisher: Porto Editora
+  year: 2018
+  note: >
+    Current printing (March 2018, BNP also records it as "1a ed."), without
+    an illustrator credited on the product page; works.yaml dates the work's
+    first publication to 2014, when BNP separately records a Porto Editora
+    edition illustrated by Esgar Acelerado - a different edition, not
+    reconciled here against the one above.
+  sources: ["https://www.portoeditora.pt/produtos/ficha/o-paraiso-sao-os-outros/21041831"]
+
+- id: valter-hugo-mae/serei-sempre-o-teu-abrigo/porto-editora-2020-pt
+  workId: valter-hugo-mae/serei-sempre-o-teu-abrigo
+  isbn13: "9789720005106"
+  language: pt-PT
+  format: hardcover
+  publisher: Porto Editora
+  year: 2020
+  note: >
+    First edition. The publisher's own product page for this ISBN currently
+    shows an August 2024 printing, still in print.
+  sources: ["https://www.portoeditora.pt/produtos/ficha/serei-sempre-o-teu-abrigo/21844797"]
+
+- id: valter-hugo-mae/a-minha-mae-e-a-minha-filha/porto-editora-2022-pt
+  workId: valter-hugo-mae/a-minha-mae-e-a-minha-filha
+  isbn13: "9789720035943"
+  language: pt-PT
+  format: hardcover
+  publisher: Porto Editora
+  year: 2022
+  note: "First edition (25 August 2022), illustrated by Evelina Oliveira."
+  sources: ["https://www.portoeditora.pt/produtos/ficha/a-minha-mae-e-a-minha-filha/27164757"]
+
+# --- Apocrypha: contributions to multi-author works ---
+
+- id: valter-hugo-mae/contos-policiais/porto-editora-2008-pt
+  workId: valter-hugo-mae/contos-policiais
+  isbn13: "9789720041494"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2008
+  note: >
+    First and only edition (October 2008); the volume as a whole is credited
+    to its nine contributors and organiser Pedro Sena-Lino, not to Mãe alone.
+  sources: ["https://www.portoeditora.pt/produtos/ficha/contos-policiais/204243"]
+
+# --- Poetry (1996-2018) ---
+
+- id: valter-hugo-mae/silencioso-corpo-de-fuga/a-mar-arte-1996-pt
+  workId: valter-hugo-mae/silencioso-corpo-de-fuga
+  language: pt-PT
+  publisher: A Mar Arte
+  year: 1996
+  note: >
+    First edition (Coimbra: A Mar Arte, 1996), collection "O Reino dos
+    Loucos" no. 18. No ISBN in the BNP record, only a legal-deposit number
+    (PT -- 103760/96) - a pre-ISBN-era small-press edition, omitted here
+    deliberately rather than left out.
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/640418"]
+
+- id: valter-hugo-mae/egon-schiele-auto-retrato-de-dupla-encarnacao/ajhlp-1999-pt
+  workId: valter-hugo-mae/egon-schiele-auto-retrato-de-dupla-encarnacao
+  isbn13: "9789726220053"
+  language: pt-PT
+  publisher: Associação dos Jornalistas e Homens de Letras do Porto
+  year: 1999
+  note: >
+    First edition, the prize edition (Porto: Associação dos Jornalistas e
+    Homens de Letras, 1999), collection "Explicação das Árvores". ISBN
+    converted from the BNP-recorded ISBN-10 972-622-005-X.
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/1052513"]
+
+- id: valter-hugo-mae/estou-escondido-na-cor-amarga-do-fim-da-tarde/casa-das-letras-2000-pt
+  workId: valter-hugo-mae/estou-escondido-na-cor-amarga-do-fim-da-tarde
+  isbn13: "9789726103134"
+  language: pt-PT
+  publisher: Casa das Letras
+  year: 2000
+  note: >
+    First edition (Porto: Casa das Letras, 2000), collection "Campo da
+    Poesia" no. 30. ISBN converted from the BNP-recorded ISBN-10
+    972-610-313-4. The publisher recorded here, read directly off the BNP
+    record, disagrees with works.yaml's "Campo das Letras" - see the file
+    header.
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/2225809"]
+
+- id: valter-hugo-mae/tres-minutos-antes-de-a-mare-encher/quasi-2000-pt
+  workId: valter-hugo-mae/tres-minutos-antes-de-a-mare-encher
+  isbn13: "9789729850608"
+  language: pt-PT
+  publisher: Quasi Edições
+  year: 2000
+  note: >
+    First edition (Vila Nova de Famalicão: Quasi, 2000), collection
+    "Biblioteca 'Uma Existência de Papel'" no. 7. ISBN converted from the
+    BNP-recorded ISBN-10 972-98506-0-7.
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/1040116"]
+
+- id: valter-hugo-mae/a-cobricao-das-filhas/officium-lectionis-2021-pt
+  workId: valter-hugo-mae/a-cobricao-das-filhas
+  isbn13: "9789898029935"
+  language: pt-PT
+  publisher: Officium Lectionis
+  year: 2021
+  note: >
+    Current, in-print edition: a triptych, "Díptico da Prédica ; A Cobrição
+    das Filhas ; Seguido de Útero" (Porto: Officium Lectionis, 2021),
+    collecting this work together with [[work:valter-hugo-mae/utero|Útero]]
+    and an otherwise uncatalogued third piece, "Díptico da Prédica". The only
+    edition found anywhere for Útero on its own.
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/2090888"]
+
+- id: valter-hugo-mae/a-cobricao-das-filhas/quasi-2002-pt
+  workId: valter-hugo-mae/a-cobricao-das-filhas
+  isbn13: "9789728632472"
+  language: pt-PT
+  publisher: Quasi Edições
+  year: 2002
+  note: >
+    Standalone first edition (Vila Nova de Famalicão: Quasi, 2002 per BNP -
+    one year later than works.yaml's 2001, see the file header). ISBN
+    converted from the BNP-recorded ISBN-10 972-8632-47-9; out of print.
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/1084099"]
+
+- id: valter-hugo-mae/utero/officium-lectionis-2021-pt
+  workId: valter-hugo-mae/utero
+  isbn13: "9789898029935"
+  language: pt-PT
+  publisher: Officium Lectionis
+  year: 2021
+  note: >
+    Current, in-print edition: the same 2021 Officium Lectionis triptych
+    recorded under [[work:valter-hugo-mae/a-cobricao-das-filhas|A Cobrição
+    das Filhas]] above. No standalone 2003 first edition was found in BNP
+    under this or the publisher works.yaml names (Quasi Edições); this is the
+    only edition located for the work.
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/2090888"]
+
+- id: valter-hugo-mae/o-resto-da-minha-alegria/fcd-2003-pt
+  workId: valter-hugo-mae/o-resto-da-minha-alegria
+  isbn13: "9789729541865"
+  language: pt-PT
+  publisher: FCD - Fundação Ciência e Desenvolvimento
+  year: 2003
+  note: >
+    First edition ([Porto]: FCD - Fundação Ciência e Desenvolvimento, 2003),
+    collection "Cadernos do Campo Alegre" no. 7 - the collection works.yaml
+    names as if it were the publisher; FCD is the entity BNP records as
+    publisher of the series. ISBN converted from the BNP-recorded ISBN-10
+    972-95418-6-8.
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/1288944"]
+
+- id: valter-hugo-mae/livro-de-maldicoes/objecto-cardiaco-2006-pt
+  workId: valter-hugo-mae/livro-de-maldicoes
+  isbn13: "9789728983062"
+  language: pt-PT
+  publisher: Objecto Cardíaco
+  year: 2006
+  note: >
+    First edition (Vila do Conde: Objecto Cardíaco, 2006), collection "Aorta.
+    Coisas de Ignição" no. 4. ISBN converted from the BNP-recorded ISBN-10
+    972-8983-06-9.
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/1662689"]
+
+- id: valter-hugo-mae/pornografia-erudita/cosmorama-2007-pt
+  workId: valter-hugo-mae/pornografia-erudita
+  isbn13: "9789898029119"
+  language: pt-PT
+  publisher: Edições Cosmorama
+  year: 2007
+  note: >
+    First edition (Maia: Cosmorama, 2007), collection "Biblioteca. Labirinto".
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/1689484"]
+
+- id: valter-hugo-mae/folclore-intimo/cosmorama-2008-pt
+  workId: valter-hugo-mae/folclore-intimo
+  isbn13: "9789898029317"
+  language: pt-PT
+  publisher: Edições Cosmorama
+  year: 2008
+  note: >
+    First edition (V. Nova de Famalicão: Cosmorama, 2008). BNP's own record
+    subtitles it "poesia reunida" (collected poems) - corroborating, from an
+    independent source, the same open question already logged in works.yaml
+    about whether this is a retrospective volume; see the file header.
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/1751411"]
+
+- id: valter-hugo-mae/contabilidade/alfaguara-2010-pt
+  workId: valter-hugo-mae/contabilidade
+  isbn13: "9789896720599"
+  language: pt-PT
+  publisher: Alfaguara
+  year: 2010
+  note: >
+    First edition (Carnaxide: Alfaguara, 2010). BNP's own record subtitles it
+    "poesia 1996-2010" - a second retrospective/collected volume, alongside
+    Folclore Íntimo (2008) and Publicação da Mortalidade (2018); see the file
+    header.
+  sources: ["https://id.bnportugal.gov.pt/bib/catbnp/1789281"]
+
+- id: valter-hugo-mae/publicacao-da-mortalidade/assirio-e-alvim-2018-pt
+  workId: valter-hugo-mae/publicacao-da-mortalidade
+  isbn13: "9789723720198"
+  language: pt-PT
+  format: hardcover
+  publisher: Assírio & Alvim
+  year: 2018
+  note: First edition (March 2018), 200pp, collection "Documenta Poetica".
+  sources: ["https://www.portoeditora.pt/produtos/ficha/publicacao-da-mortalidade/21406656"]
