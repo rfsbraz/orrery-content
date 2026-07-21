@@ -28,6 +28,23 @@ themePreset: alentejo-plains
 # record either. Everything else left at auto; nothing forced.
 features: {}
 
+globalEvents:
+  exclude:
+    - sept-11-2001                       # no novel reaches for it
+    - financial-crisis-2008              # no work answers it
+    - carnation-revolution-1974          # born at the Revolution's moment, never under censorship; writes freely but does not engage the event or its legacy in any book
+    - chain-bookshop-1982                # a British and American shop format; his trade is small Portuguese presses
+    - online-bookselling-1995            # domestic, bookshop-led readership; no title answers this
+    - ebook-and-self-publishing-2007     # traditionally published throughout; no self-publishing story
+    - prestige-fantasy-adaptation-2011   # he does not write fantasy
+    - portugal-bailout-2011              # emigration in Livro (2010) is post-Salazar historical; contemporary 2011-2014 novels are set in 1984, 1917, North Korea
+    - booktok-2020                       # Lusophone literary fiction is not what short-form video moves; no work here answers book-discovery culture
+  # The pandemic is in neither list on purpose: it falls inside his lifetime, so
+  # it reaches the wing by the app's own arithmetic and needs no ruling. It has
+  # earned its place - Regresso a Casa (2020) is poetry written in confinement,
+  # mapping the walls of a household - which is why it is not excluded.
+  # `include` is only for events that PREDATE an author and still shaped them.
+
 sources:
   - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
   - https://en.wikipedia.org/wiki/José_Luís_Peixoto
