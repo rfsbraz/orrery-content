@@ -77,6 +77,24 @@ never existed and a human had typed the file by hand?** "No usable cover
 exists: checked OL by title and by the author's 611-work sweep" passes. "The
 visual-metadata stage could not run this session" fails.
 
+Two ways this rule gets broken by comments that never use a banned word, both
+caught in the wild:
+
+- **Addressing somebody.** A comment has no audience and no author. "A curator
+  call, not the auditor's", "left to the curator", "flag if a future pass finds
+  a thread this one missed" - all coordination wearing a data hat. State what
+  is and is not in the file, and stop: *"Books he edited rather than wrote, so
+  they sit outside a bibliography of his own work."*
+- **Narrating the research instead of the data.** "Not yet a finished audit",
+  "this list was first built on one source and has since been checked against
+  two", "that remains open". The reader does not care how many passes it took;
+  they care what is known. Collapse it to the present tense: *"Publisher and
+  year are corroborated by two independent sources; the 2018 title rests on
+  one."* The weakness survives, the diary does not.
+
+Both belong to the same instinct: writing to a colleague rather than about the
+author. **A content file is about the author and the work. Nothing else.**
+
 Where process context matters, it lives in the right channel: **handoffs**
 (`.orrery/`, deleted before merge) for stage-to-stage coordination, **PR
 bodies** for the durable record of what was done and rejected, **git history**

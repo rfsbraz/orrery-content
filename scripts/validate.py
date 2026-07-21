@@ -677,9 +677,20 @@ def main():
     # comment lines for pipeline vocabulary; a hit is a question, not a
     # verdict, hence a warning.
     PROCESS_COMMENT = re.compile(
-        r"\bpipeline\b|\bhandoff\b|\bfirst pass\b|\bsecond pass\b|\bthis run\b"
-        r"|\bnever ran\b|search budget|\bstage \d\b|\.claude|skills/"
-        r"|\bTODO\b|research agent|curation stage|\bre-?run\b|\bwing-audit\b",
+        # who is doing the work, or who is being addressed
+        r"\bcurator\b|\bauditor\b|research agent|curation stage|\bthis (?:stage|agent)\b"
+        r"|\bfranchise-research\b|\bcompleteness\b|\bpress-archaeology\b|\bworld-events\b"
+        r"|\bevent-resonance\b|\breading-orders\b|\bspoiler-audit\b|\bvisual-metadata\b"
+        r"|\bwing-audit\b|\bwhats-new\b|\bopen ?questions?\b|\bforStages\b"
+        # when the work happened, or that more of it is owed
+        r"|\bpipeline\b|\bhandoff\b|\b(?:first|second|another|dedicated) pass\b"
+        r"|\bthis (?:pass|run)\b|\bnever ran\b|\bnot yet (?:a )?(?:finished|complete)\b"
+        r"|\bhas since been\b|\bwas (?:first|originally) (?:built|written|drafted)\b"
+        r"|\bstill (?:open|needs|remains)\b|\bfor (?:a )?(?:future|later) pass\b"
+        r"|search budget|\bstage \d\b|\.claude|skills/|\bTODO\b|\bre-?run\b"
+        # self-congratulation about method rather than a statement about the data
+        r"|\brather than (?:papered over|guessed|invented|coined)\b"
+        r"|\bflagged rather than\b|\bleft (?:to|for) the\b",
         re.IGNORECASE,
     )
     for path in glob.glob(os.path.join(ROOT, "content", "**", "*.yaml"), recursive=True):
