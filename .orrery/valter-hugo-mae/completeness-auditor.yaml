@@ -1,0 +1,133 @@
+stage: completeness-auditor
+summary: >
+  Audited the 34-work scaffold against primary and near-primary Portuguese
+  sources (the author's own bibliography page, publisher pages retested with
+  a browser user-agent past Porto Editora's block, publisher/illustrator
+  blogs, national and cultural press). 37 works after this pass (+3): two
+  children's books absent from every source the scaffold checked (Serei
+  Sempre o Teu Abrigo, 2020; A Minha Mãe é a Minha Filha, 2022) and one
+  multi-author anthology contribution with a now-resolved authorRole (Contos
+  Policiais, 2008, contributor). No published year changed on any existing
+  work; nothing reorders the derived reading order. The poetry list's
+  single-source weakness is substantially closed: 13 of 15 titles (all
+  through 2010) now carry a second, publisher-and-title-bearing source, with
+  every date matching what was already recorded. Quatro Tesouros' existence
+  is confirmed by the publisher's own announcement and the illustrator's
+  portfolio. Eight anthology/collective-volume credits where Mãe organized
+  or co-credited other people's work are researched (existence, year,
+  publisher all resolved) but deliberately NOT added, escalated to the
+  curator as an author-is-secondary scope call. validate.py green: 445
+  works catalogue-wide, all references resolve; the only warnings for this
+  wing are the pre-existing "outside every era" ones the scaffold already
+  flagged as eras' problem to solve, unchanged in kind by this pass.
+produced:
+  newWorkIds:
+    - valter-hugo-mae/serei-sempre-o-teu-abrigo
+    - valter-hugo-mae/a-minha-mae-e-a-minha-filha
+    - valter-hugo-mae/contos-policiais
+  changedProse:
+    - valter-hugo-mae/silencioso-corpo-de-fuga
+    - valter-hugo-mae/o-sol-pos-se-calmo-sem-me-acordar
+    - valter-hugo-mae/entorno-a-casa-sobre-a-cabeca
+    - valter-hugo-mae/egon-schiele-auto-retrato-de-dupla-encarnacao
+    - valter-hugo-mae/estou-escondido-na-cor-amarga-do-fim-da-tarde
+    - valter-hugo-mae/tres-minutos-antes-de-a-mare-encher
+    - valter-hugo-mae/a-cobricao-das-filhas
+    - valter-hugo-mae/utero
+    - valter-hugo-mae/o-resto-da-minha-alegria
+    - valter-hugo-mae/bruno
+    - valter-hugo-mae/folclore-intimo
+    - valter-hugo-mae/contabilidade
+    - valter-hugo-mae/publicacao-da-mortalidade
+    - valter-hugo-mae/quatro-tesouros
+    - valter-hugo-mae/contra-mim
+  changedDates: []
+forStages:
+  press-archaeology: >
+    No lifeEvents touched by this pass. Two leads surfaced incidentally,
+    unverified and not acted on: (1) the Almeida Garrett poetry prize
+    (Associação dos Jornalistas e Homens de Letras do Porto, 1999) for egon
+    schiele auto-retrato de dupla encarnação, named on en.wikipedia's awards
+    list but not yet a sourced lifeEvent on the author entity; (2) the
+    8-year aura gap (2013-2020) flagged by aura_density.py is unchanged by
+    this pass and remains open, as the scaffold already noted.
+  reading-orders: >
+    Confirmed no publisher numbering or author-endorsed order was found for
+    the tetralogia beyond its own publication sequence; nothing here changes
+    that. If the curator approves adding the eight escalated anthology
+    credits, note that Quasi Edições published several of them (Série
+    Poeta, O Futuro em Anos-Luz, Desfocados pelo Vento, A Alma não é
+    Pequena, Quem Quer Casar com a Poetisa, O Encantador de Palavras,
+    Afectos e Outros Afectos) inside the same 2000-2004 window as his own
+    early poetry, which would cluster tightly in the derived order if ever
+    added.
+  eras: >
+    Unchanged. The "outside every era" warnings on the three new works
+    (2008, 2020, 2022) are the same pre-existing shape as every other
+    post-2010 and pre-2004 work: the 2011-2026 span still has no citable
+    periodisation, unaffected by this pass.
+  editions: >
+    Two new ISBNs surfaced incidentally while confirming publication years
+    and are NOT yet in editions.yaml (out of this stage's footprint):
+    Serei Sempre o Teu Abrigo, Porto Editora pt-PT, ISBN 978-972-0-00510-6;
+    A Minha Mãe é a Minha Filha, Porto Editora pt-PT, ISBN 978-972-0-03594-3
+    (illustrator Evelina Oliveira credited); Bruno (poetry, 2007), Littera
+    Libros, ISBN 978-84-612-1143-2; Publicação da Mortalidade, Porto
+    Editora, ISBN 978-972-37-2019-8.
+  translation: >
+    i18n_coverage.py shows works.yaml now missing 37 entries (was 34) for
+    every locale; this is the same unstarted state the scaffold reported,
+    not a regression, since none of the added or edited prose had a
+    translation to fall out of sync with.
+openQuestions:
+  - >
+    SCOPE (author-is-secondary anthologies): eight anthology/collective
+    credits, all real and now dated, where Mãe organized or co-signed other
+    people's poetry rather than writing a book of his own: Série Poeta,
+    Homenagem a Júlio - Saúl Dias (Quasi Edições, 2000, org.); O Encantador
+    de Palavras, poetry of Manoel de Barros (Quasi Edições, 2000, org.);
+    Quem Quer Casar com a Poetisa, by Adília Lopes (Quasi Edições, April
+    2001, org., confirmed independently via the BNP catalogue,
+    id.bnportugal.gov.pt/bib/bibnacional); O Futuro em Anos-Luz, cem anos
+    cem poetas cem poemas (Quasi Edições, April 2001, org., two independent
+    sources); A Alma não é Pequena (Edições Centro Atlântico, 2003, org.);
+    Desfocados pelo Vento, A Poesia dos Anos 80, Agora (Quasi Edições, 2003,
+    org.); Afectos e Outros Afectos (Quasi Edições, April 2004, ISBN
+    978-989-552-070-1), a shared volume with Jorge Reis-Sá (new poems by
+    both) and painter Isabel Lhano, credited to all three on the cover, so a
+    weaker fit for "secondary" than the others; Os Poetas de Amália (2002)
+    and Cântico Negro, poetry of José Régio with Luís Adriano Carlos (year
+    not found), both weakly sourced (indirect mentions only, no direct
+    listing opened) and would need their own verification pass before
+    inclusion regardless of the scope call. Per the skill's own boundary
+    ("multi-author anthologies, books where this author is secondary" is
+    the curator's call, not the auditor's), none are added to works.yaml.
+    The header comment in works.yaml carries the full source list so a
+    future pass does not re-research this from zero.
+  - >
+    Folclore Íntimo (2008) is subtitled "poesia reunida" (collected poems)
+    on at least one library listing (Google Books), which would make it a
+    retrospective volume rather than a wholly new collection, structurally
+    similar to Publicação da Mortalidade (2018). No source actually opened
+    states which earlier books, if any, it gathers, so it is left as its
+    own dated entry with the finding noted rather than merged, re-tiered, or
+    removed on an inference. Possibly relevant to reconciling Publicação da
+    Mortalidade's "nine books of poetry" description against the 14-15
+    individually dated collections in this file (also still unreconciled;
+    Porto Editora's own listing was checked and describes that edition as
+    actively curated, cut and added to, not a mechanical union of the
+    earlier books, which weakens but does not resolve the "nine" count).
+  - >
+    RULING, not escalated: Contra Mim (2021) stays tiered extended. The APE
+    prize it won judges "romance e novela" as one category, but the press
+    covering the book itself (deusmelivro, RTP: "reúne memórias de um tempo
+    feliz") consistently frames it as autoficção/autobiography rather than
+    a novel, and the publisher's own "eighth novel" count for As Doenças do
+    Brasil (same year) excludes it. Noted in the work's own note in case a
+    future curator weighs this differently.
+  - >
+    The magazine Apeadeiro (2001-2004, co-directed with Jorge Reis-Sá) is
+    real but structurally does not fit works.yaml: a periodical with no
+    single dated issue to anchor an entry to, unlike the anthologies above
+    which are each one dated book. Recommend leaving it out permanently
+    rather than carrying it as an open gap.

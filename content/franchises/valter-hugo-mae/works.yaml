@@ -22,20 +22,33 @@
 #
 # canonTier convention for this franchise, applied consistently:
 #   core      - the 10 novels (the "minúsculas" tetralogy + the 6 that follow)
-#   extended  - poetry (15 books, 1996-2018), children's literature (6 books),
+#   extended  - poetry (15 books, 1996-2018), children's literature (8 books),
 #               the one short-story collection, and the two works of
 #               autobiographical/essayistic prose (Contra Mim, Educação da
 #               Tristeza) - genuinely his, off the novel-reading spine that
 #               the prizes and the press attention are built on.
+#   apocrypha - contributions to multi-author volumes he did not write alone
+#               or organize (Contos Policiais).
 # Tier records the KIND of publication, never how confident the research was.
 #
-# KNOWN GAP, deliberately left open rather than guessed: a set of anthology
-# appearances, a co-directed magazine (Apeadeiro, 2001-2004) and other
-# editorial credits turned up in search (e.g. "Série Poeta" 2001, "A Alma não
-# é Pequena" 2003, "Desfocados Pelo Vento" 2004, "Contos Policiais" 2008,
-# "O Futuro em Anos-Luz" 2011) where his authorRole (contributor vs editor)
-# and even his inclusion could not be confirmed from any source actually
-# opened. None are included here rather than guessed at apocrypha tier.
+# KNOWN GAP, deliberately left open, SCOPE - a curator call, not the
+# completeness auditor's: the author's own bibliography page
+# (valterhugomae.com/biblio.html) and other sources confirm he organized
+# (authorRole: editor) a run of poetry anthologies collecting OTHER poets'
+# work, none by him: "Série Poeta, Homenagem a Júlio - Saúl Dias" (2000),
+# "O Encantador de Palavras" (Manoel de Barros, 2000), "Quem Quer Casar com a
+# Poetisa" (Adília Lopes, 2001), "O Futuro em Anos-Luz" (2001), "A Alma não é
+# Pequena" (2003), "Desfocados pelo Vento" (2003), plus "Afectos e Outros
+# Afectos" (2004, new poems credited jointly to him, Jorge Reis-Sá and
+# painter Isabel Lhano) and two more weakly sourced (indirect only): "Os
+# Poetas de Amália" (2002) and "Cântico Negro" (poetry of José Régio, with
+# Luís Adriano Carlos, year not found). Existence and dates for these are now
+# resolved; whether a wing about this author's OWN work should carry books
+# he edited but did not write is left to the curator, per the "multi-author
+# anthologies... where this author is secondary" scope rule. Also left out:
+# the magazine Apeadeiro (2001-2004,
+# co-directed) - a periodical with no single dated issue to anchor a
+# works.yaml entry to, structurally unlike the anthologies above.
 
 # --- The Tetralogia das Minúsculas (2004-2010) ---
 
@@ -256,14 +269,21 @@
     Tiered extended (autobiographical prose, not a novel) even though it won
     the Associação Portuguesa de Escritores' Grande Prémio de Romance e
     Novela 2020 (see the author entity's lifeEvents) - a "novel and novella"
-    prize, which is a genuine tension worth flagging rather than resolving
-    silently: the prize committee judged it alongside fiction, but the
-    publisher's own "eighth novel" count for
+    prize, which is a genuine tension: the prize committee judged it
+    alongside fiction, but the publisher's own "eighth novel" count for
     [[work:valter-hugo-mae/as-doencas-do-brasil|As Doenças do Brasil]] (same
-    year) excludes it. Left for a curator's call if it matters.
+    year) excludes it. RULING (kept extended): the press consistently
+    frames the book itself, independent of the prize, as autoficção or
+    autobiography rather than a novel - "o livro mais pessoal" built from
+    fifteen years of notes, RTP describing it as him "reunindo memórias" -
+    and the publisher's own novel count treats it as outside the fiction
+    line. A prize category spanning "romance e novela" is evidence about
+    the prize's scope, not the book's own genre. If a curator later reads it
+    differently, this note documents what was weighed.
   sources:
     - https://deusmelivro.com/mil-folhas/contra-mim-valter-hugo-mae-23-8-2021/
     - https://www.publico.pt/2021/06/18/culturaipsilon/noticia/valter-hugo-mae-vence-premio-romance-novela-ape-1967097
+    - https://www.rtp.pt/noticias/cultura/valter-hugo-mae-reune-memorias-de-um-tempo-feliz-no-seu-novo-livro-contra-mim_n1271172
 
 - id: valter-hugo-mae/educacao-da-tristeza
   title: "Educação da Tristeza"
@@ -301,9 +321,12 @@
     - https://www.fronteiras.com/leia/exibir/entrevista-valter-hugo-mae-contos-de-caes-e-maus-lobos
 
 # --- Children's literature ---
-# Titles and years drawn from the author's Portuguese-Wikipedia bibliography
-# table and corroborated where possible; plot detail was not independently
-# verified for any of the six and is left out rather than guessed.
+# The first six titles (2009-2014) are drawn from the author's
+# Portuguese-Wikipedia bibliography table and corroborated where possible;
+# plot detail was not independently verified for any of the six and is left
+# out rather than guessed. The last two (2020, 2022) fall after that table's
+# coverage, which stops at 2014, and were found only by searching beyond it -
+# see the note on each entry.
 
 - id: valter-hugo-mae/a-verdadeira-historia-dos-passaros
   title: "A Verdadeira História dos Pássaros"
@@ -347,9 +370,19 @@
   published: 2011
   subseries: null
   canonTier: extended
-  synopsis: A children's book; no detailed plot summary was found from a source actually opened.
-  note: Found in only one of the two bibliography sources checked; its existence is unconfirmed by a second source.
-  sources: [https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e]
+  synopsis: >
+    A simple story about the strength of maternal love and the power of
+    fantasy. Illustrated by Patrícia Furtado; published by Objectiva
+    (Lisbon), with proceeds donated to the paediatric ward of Hospital de S.
+    João, Porto.
+  note: >
+    Existence and year confirmed by the publisher's own release announcement
+    and the illustrator's own portfolio, resolving the prior flag that this
+    title appeared in only one bibliography source.
+  sources:
+    - https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e
+    - https://editoraobjectiva.blogspot.com/2011/11/
+    - https://patriciafurtado.net/about/
 
 - id: valter-hugo-mae/o-paraiso-sao-os-outros
   title: "O Paraíso São os Outros"
@@ -360,16 +393,82 @@
   synopsis: A children's book; no detailed plot summary was found from a source actually opened.
   sources: [https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e]
 
+- id: valter-hugo-mae/serei-sempre-o-teu-abrigo
+  title: "Serei Sempre o Teu Abrigo"
+  authorIds: [valter-hugo-mae]
+  published: 2020
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    Grandparents seen through their grandchild's eyes: a grandfather who
+    sees the world in few colours, as if always living at night, and a
+    grandmother with a pacemaker beside her heart, who made of love a lucid,
+    daily practice. Illustrated by the author, continuing the graphic
+    project of As Mais Belas Coisas do Mundo and O Paraíso São os Outros.
+  note: >
+    First published by Porto Editora in 2020 (dated here); a Brazilian
+    edition followed from Biblioteca Azul in August 2021, later and not the
+    first publication.
+  sources:
+    - https://deusmelivro.com/mil-folhas/serei-sempre-o-teu-abrigo-valter-hugo-mae-28-5-2020/
+    - https://rotacult.com.br/2021/08/serei-sempre-teu-abrigo-de-valter-hugo-mae-e-lancado-pela-biblioteca-azul/
+    - https://www.portoeditora.pt/produtos/ficha/serei-sempre-o-teu-abrigo/21844797
+
+- id: valter-hugo-mae/a-minha-mae-e-a-minha-filha
+  title: "A Minha Mãe é a Minha Filha"
+  authorIds: [valter-hugo-mae]
+  published: 2022
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A tale of singular tenderness for everyone who cares for someone: the
+    author on the gratitude and importance of the affection he shares with
+    his own mother, and the moment children become their parents' parents.
+    Began as a chronicle before being adapted into this illustrated book,
+    illustrated by Evelina Oliveira.
+  note: >
+    Published by Porto Editora, 25 August 2022; finalist for the Bertrand
+    Book of the Year 2022, Children's category.
+  sources:
+    - https://comunidadeculturaearte.com/a-minha-mae-e-a-minha-filha-novo-livro-de-valter-hugo-mae-chega-as-livrarias-esta-semana/
+    - https://www.portoeditora.pt/produtos/ficha/a-minha-mae-e-a-minha-filha/27164757
+
+# --- Apocrypha: contributions to multi-author works ---
+
+- id: valter-hugo-mae/contos-policiais
+  title: "Contos Policiais"
+  authorIds: [valter-hugo-mae]
+  authorRole: contributor
+  contributionTitle: "O Criminoso Portuguesinho"
+  published: 2008
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    A themed anthology of nine Portuguese writers each contributing an
+    original detective story, organized by Pedro Sena-Lino. Mãe's
+    contribution, "O Criminoso Portuguesinho", is a near-thirty-page comic
+    take on the detective story, singled out by at least one reviewer as the
+    collection's best-constructed plot.
+  note: >
+    Publisher Porto Editora, Porto, 2008; the anthology itself is credited
+    to its nine contributors plus its organizer, not to Mãe alone.
+  sources:
+    - https://www.portoeditora.pt/produtos/ficha/contos-policiais/204243
+    - https://revistacaliban.net/ix-o-%C3%BAltimo-conto-policial-valter-hugo-m%C3%A3e-e-uma-s%C3%A1tira-como-hist%C3%B3ria-de-detectives-5ffeee2a2971
+
 # --- Poetry (1996-2018) ---
-# Mãe began as a poet nearly a decade before his first novel. This list rests
-# on one detailed source, the author's Portuguese-Wikipedia bibliography
-# table; six of its fifteen titles (três minutos antes de a maré encher, a
-# cobrição das filhas, útero, o resto da minha alegria, livro de maldições,
-# pornografia erudita) were independently corroborated by a second, unrelated
-# web source, which is the only reason the list as a whole carries any
-# weight. No single entry below has had its year verified against a primary
-# publisher record, and none has a synopsis: this is the thinnest-verified
-# section of the wing.
+# Mãe began as a poet nearly a decade before his first novel. This list was
+# first built on one detailed source, the author's Portuguese-Wikipedia
+# bibliography table, with only 6 of 15 titles independently corroborated.
+# It has since been checked against the author's own bibliography page
+# (valterhugomae.com/biblio.html, covering 1996-2004) and his biography at
+# ocheirodoslivros.blogs.sapo.pt (covering 2006-2010), both
+# publisher-and-title-bearing primary/near-primary sources: together they
+# now independently corroborate publisher and year for every title through
+# 2010 (13 of 15), with every date matching what was already
+# here - no reorders. Only "publicação da mortalidade" (2018) still rests on
+# a single source. None has a verified synopsis beyond a one-line
+# description; that remains open.
 
 - id: valter-hugo-mae/silencioso-corpo-de-fuga
   title: "Silencioso Corpo de Fuga"
@@ -377,9 +476,10 @@
   published: 1996
   subseries: null
   canonTier: extended
-  synopsis: Poetry collection; his first book.
-  note: Year and title not independently corroborated beyond the source below.
-  sources: [https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e]
+  synopsis: Poetry collection; his first book. Published by A Mar Arte, Coimbra.
+  sources:
+    - https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e
+    - http://www.valterhugomae.com/biblio.html
 
 - id: valter-hugo-mae/o-sol-pos-se-calmo-sem-me-acordar
   title: "O Sol Pôs-se Calmo Sem Me Acordar"
@@ -387,9 +487,10 @@
   published: 1997
   subseries: null
   canonTier: extended
-  synopsis: Poetry collection.
-  note: Year and title not independently corroborated beyond the source below.
-  sources: [https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e]
+  synopsis: Poetry collection. Published by A Mar Arte, Coimbra.
+  sources:
+    - https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e
+    - http://www.valterhugomae.com/biblio.html
 
 - id: valter-hugo-mae/entorno-a-casa-sobre-a-cabeca
   title: "Entorno a Casa Sobre a Cabeça"
@@ -397,9 +498,10 @@
   published: 1999
   subseries: null
   canonTier: extended
-  synopsis: Poetry collection.
-  note: Year and title not independently corroborated beyond the source below.
-  sources: [https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e]
+  synopsis: Poetry collection. Published by Silêncio da Gaveta Edições, Vila do Conde.
+  sources:
+    - https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e
+    - http://www.valterhugomae.com/biblio.html
 
 - id: valter-hugo-mae/egon-schiele-auto-retrato-de-dupla-encarnacao
   title: "Egon Schiele Auto-Retrato de Dupla Encarnação"
@@ -408,11 +510,19 @@
   subseries: null
   canonTier: extended
   synopsis: >
-    Poetry collection; won a poetry prize from the Associação dos Jornalistas
-    e Homens de Letras do Porto.
+    Poetry collection, inspired by the painter Egon Schiele; won the Almeida
+    Garrett poetry prize from the Associação dos Jornalistas e Homens de
+    Letras do Porto (1999), its first edition published by that association.
+  note: >
+    The author's own bibliography page spells the title with a doubled L
+    ("schielle"); the painter's own name and the majority of independent
+    sources (Goodreads, a book-listing blog, en.wikipedia) spell it "Schiele"
+    (single L), kept here as canonical.
   sources:
     - https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e
     - https://www.valterhugomae.com/
+    - http://www.valterhugomae.com/biblio.html
+    - https://objectosliterarios.blogspot.com/2018/05/valter-hugo-mae-egon-schiele-auto.html
 
 - id: valter-hugo-mae/estou-escondido-na-cor-amarga-do-fim-da-tarde
   title: "Estou Escondido na Cor Amarga do Fim da Tarde"
@@ -420,9 +530,10 @@
   published: 2000
   subseries: null
   canonTier: extended
-  synopsis: Poetry collection.
-  note: Year and title not independently corroborated beyond the source below.
-  sources: [https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e]
+  synopsis: Poetry collection. Published by Campo das Letras, Porto.
+  sources:
+    - https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e
+    - http://www.valterhugomae.com/biblio.html
 
 - id: valter-hugo-mae/tres-minutos-antes-de-a-mare-encher
   title: "Três Minutos Antes de a Maré Encher"
@@ -431,9 +542,15 @@
   subseries: null
   canonTier: extended
   synopsis: Poetry collection, presented by the writer Mário Cláudio.
+  note: >
+    First edition Quasi Edições, V.N. Famalicão, 2000 (dated here per the
+    first-publication rule); the author's own bibliography page also lists a
+    second edition from the same publisher in 2004, which is not a separate
+    work.
   sources:
     - https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e
     - https://www.valterhugomae.com/
+    - http://www.valterhugomae.com/biblio.html
 
 - id: valter-hugo-mae/a-cobricao-das-filhas
   title: "A Cobrição das Filhas"
@@ -441,8 +558,13 @@
   published: 2001
   subseries: null
   canonTier: extended
-  synopsis: Poetry collection.
-  sources: [https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e]
+  synopsis: Poetry collection. Published by Quasi Edições, V.N. Famalicão.
+  note: >
+    A Spanish edition, "cubrise a las hijas" (Celya, Salamanca), appeared the
+    same year; the Portuguese original is dated here.
+  sources:
+    - https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e
+    - http://www.valterhugomae.com/biblio.html
 
 - id: valter-hugo-mae/utero
   title: "Útero"
@@ -450,8 +572,10 @@
   published: 2003
   subseries: null
   canonTier: extended
-  synopsis: Poetry collection.
-  sources: [https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e]
+  synopsis: Poetry collection. Published by Quasi Edições, V.N. Famalicão.
+  sources:
+    - https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e
+    - http://www.valterhugomae.com/biblio.html
 
 - id: valter-hugo-mae/o-resto-da-minha-alegria
   title: "O Resto da Minha Alegria Seguido de a Remoção das Almas"
@@ -459,10 +583,11 @@
   published: 2003
   subseries: null
   canonTier: extended
-  synopsis: Poetry collection, published by Cadernos do Campo Alegre.
+  synopsis: Poetry collection, published by Cadernos do Campo Alegre, Porto.
   sources:
     - https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e
     - https://www.valterhugomae.com/
+    - http://www.valterhugomae.com/biblio.html
 
 - id: valter-hugo-mae/livro-de-maldicoes
   title: "Livro de Maldições"
@@ -470,8 +595,10 @@
   published: 2006
   subseries: null
   canonTier: extended
-  synopsis: Poetry collection.
-  sources: [https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e]
+  synopsis: Poetry collection. Published by Objecto Cardíaco, Vila do Conde.
+  sources:
+    - https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e
+    - https://ocheirodoslivros.blogs.sapo.pt/valter-hugo-mae-biografia-100470
 
 - id: valter-hugo-mae/pornografia-erudita
   title: "Pornografia Erudita"
@@ -479,8 +606,10 @@
   published: 2007
   subseries: null
   canonTier: extended
-  synopsis: Poetry collection.
-  sources: [https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e]
+  synopsis: Poetry collection. Published by Edições Cosmorama, Maia.
+  sources:
+    - https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e
+    - https://ocheirodoslivros.blogs.sapo.pt/valter-hugo-mae-biografia-100470
 
 - id: valter-hugo-mae/bruno
   title: "Bruno"
@@ -488,9 +617,10 @@
   published: 2007
   subseries: null
   canonTier: extended
-  synopsis: Poetry collection.
-  note: Year and title not independently corroborated beyond the source below.
-  sources: [https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e]
+  synopsis: Poetry collection. Published by Littera Libros, Badajoz, Spain.
+  sources:
+    - https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e
+    - https://ocheirodoslivros.blogs.sapo.pt/valter-hugo-mae-biografia-100470
 
 - id: valter-hugo-mae/folclore-intimo
   title: "Folclore Íntimo"
@@ -498,9 +628,19 @@
   published: 2008
   subseries: null
   canonTier: extended
-  synopsis: Poetry collection.
-  note: Year and title not independently corroborated beyond the source below.
-  sources: [https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e]
+  synopsis: Poetry collection, published by Edições Cosmorama, Maia.
+  note: >
+    Subtitled "poesia reunida" (collected poems) on at least one library
+    listing, which would make this a retrospective volume rather than a
+    wholly new collection - the same shape of question left open for
+    Publicação da Mortalidade (2018) below, and possibly related to it.
+    Not resolved here: no source actually opened states which earlier
+    collections, if any, it gathers, so it is kept as its own dated entry
+    rather than merged or re-tiered on an unconfirmed inference.
+  sources:
+    - https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e
+    - https://ocheirodoslivros.blogs.sapo.pt/valter-hugo-mae-biografia-100470
+    - https://books.google.ae/books/about/Folclore_%C3%ADntimo.html?id=oy8rAQAAIAAJ
 
 - id: valter-hugo-mae/contabilidade
   title: "Contabilidade"
@@ -508,9 +648,10 @@
   published: 2010
   subseries: null
   canonTier: extended
-  synopsis: Poetry collection.
-  note: Year and title not independently corroborated beyond the source below.
-  sources: [https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e]
+  synopsis: Poetry collection. Published by Objectiva (Alfaguara), Lisboa.
+  sources:
+    - https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e
+    - https://ocheirodoslivros.blogs.sapo.pt/valter-hugo-mae-biografia-100470
 
 - id: valter-hugo-mae/publicacao-da-mortalidade
   title: "Publicação da Mortalidade"
@@ -519,12 +660,21 @@
   subseries: null
   canonTier: extended
   synopsis: >
-    A collected-poems volume gathering his nine books of poetry into one
-    edition.
+    A collected-poems volume gathering his poetry into one edition.
   note: >
-    Described elsewhere as collecting "nine books of poetry", which is fewer
-    than the 14-15 individually dated collections listed above - an
-    unreconciled discrepancy (some early items may be chapbooks/pamphlets the
-    collected edition does not count, or the count may simply be loose
-    marketing copy). Left open rather than guessed at.
-  sources: [https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e]
+    Described elsewhere as collecting "nine books of poetry", fewer than the
+    14-15 individually dated collections listed above - an unreconciled
+    discrepancy. The publisher's own listing (Porto Editora) describes the
+    edition as actively curated rather than a mechanical union of the earlier
+    books: "para esta edição eliminou poemas, trabalhou os que ficaram e
+    acrescentou um importante número de inéditos" (poems were cut, the
+    remaining ones reworked, and a significant number of unpublished poems
+    added). That supports "nine" being an editorial regrouping rather than a
+    simple count of prior titles, but does not by itself explain the exact
+    number; some early items may be chapbooks the collected edition does not
+    count as one of the nine, or "nine" may be loose marketing copy. Left
+    open rather than guessed at. See also the note on Folclore Íntimo (2008),
+    a possibly-related earlier "poesia reunida" volume.
+  sources:
+    - https://pt.wikipedia.org/wiki/Valter_Hugo_M%C3%A3e
+    - https://www.portoeditora.pt/produtos/ficha/publicacao-da-mortalidade/21406656
