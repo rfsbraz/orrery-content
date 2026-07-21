@@ -3,11 +3,10 @@ slug: jose-luis-peixoto
 status: eras.yaml written as an empty list; validate.py exit 0, sync_skill_blocks.py exit 0
 
 result: >
-  No era shipped. content/franchises/jose-luis-peixoto/eras.yaml exists and
-  parses as [], with a header comment recording what was checked and why the
-  slot is empty. The scaffold was right: this career has no received
-  periodisation. All 27 works sit outside any era, which is the honest picture
-  rather than a coverage defect.
+  No era shipped. eras.yaml exists and parses as [], with a header comment
+  recording what was checked and why the slot is empty. The scaffold was right:
+  this career has no received periodisation. All 27 works sit outside any era,
+  which is the honest picture rather than a coverage defect.
 
 eras_written: none
 
@@ -52,9 +51,9 @@ rejected:
 
   - candidate: poetry and fiction as separate tracks
     why: >
-      His bibliography classifies by genre (Romance, Poesia, Teatro, Narrativa,
-      Viagens), a shelf taxonomy. Eras are chronological spans, so genre tracks
-      would overlap every year and break era membership regardless of sourcing.
+      His bibliography classifies by genre, a shelf taxonomy. Eras are
+      chronological spans, so genre tracks would overlap every year and break
+      era membership regardless of sourcing.
 
   - candidate: publisher progression (Temas e Debates, Bertrand, Quetzal)
     rung: 4
@@ -82,10 +81,10 @@ languages_searched: >
 
 sources_that_refused: >
   quetzaleditores.pt 403s the author page even with the browser user agent.
-  joseluispeixoto.net reached via web.archive.org, its live certificate having
+  joseluispeixoto.net reached via web.archive.org, its certificate having
   expired. researchgate and academia.edu PDFs not fetched: both gate automated
-  access and the abstracts already showed single-work scope. wook, bertrand,
-  infopedia and publico not retested; nothing here depended on them.
+  access and the abstracts showed single-work scope. wook, bertrand, infopedia
+  and publico not retested; nothing here depended on them.
 
 uncovered_years: >
   All of 2000-2025, and honest. validate.py raises no "outside every era"
