@@ -136,11 +136,15 @@ slot that looks finished is worse than an empty one:
 - **Eras** - `eras`. Scaffold only eras you can actually source; any era whose
   label you did not receive carries `provenance: none`, which is exactly what
   triggers that skill. `eras: []` is fine.
-- **Reading orders** - `reading-orders`. Scaffold only orders the publisher
-  itself numbers; everything else (author-recommended, community, curated) is
-  that skill's discovery work.
-- **Entry paths** - `where-to-start` owns `startHere`. Scaffold one only from
-  receipts (a citable community recommendation); otherwise leave it absent.
+- **Reading orders and entry paths** - `reading-orders` owns both `orders.yaml`
+  and `startHere`. Scaffold only orders the publisher itself numbers and paths
+  you have receipts for (a citable community recommendation); everything else
+  is that skill's discovery work.
+- **Achievements** - content, not app code: this wing's badges live in its
+  `achievements.yaml` with ids prefixed `<slug>/`, using only the criteria
+  kinds in SCHEMA.md (never invent one - propose it as an app change instead).
+  Tie at least one to the aura where the franchise supports it; most wings
+  correctly have none. `wing-audit` checks earnability.
 - **Spoiler boundaries** - `spoiler-audit` owns `spoilerAfter` doctrine; tag
   what you know, never guess a boundary.
 - **Imagery** - `visual-metadata` owns portraits, headers, covers and rights.
