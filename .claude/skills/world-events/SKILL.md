@@ -8,16 +8,18 @@ description: Curate the shared global aura layer - the world, cultural, and indu
 Curate `content/events/global.yaml`: the events that belong to **no single
 author** but changed the weather every author was writing in.
 
-Read `docs/SCHEMA.md` (events) and the **"aura editorial standard"** in the
-`franchise-research` skill first. This skill narrows that standard for the
-global layer specifically, where the bar is much higher.
+This skill runs under [`docs/CURATION.md`](../../../docs/CURATION.md) - prime
+directives, comment policy, gates and trap registry apply and are not repeated
+here. Read `docs/SCHEMA.md` (events) first. This skill narrows the aura
+editorial standard (CURATION §6) for the global layer, where the bar is much
+higher.
 
 ## Why the bar is higher here
 
 A franchise event appears on one timeline. **A global event appears on every
-timeline in the catalogue** - six today, and more with every franchise added.
-Its cost scales with the size of the site; its value does not. So the question
-is never "was this historically important?" It is:
+timeline in the catalogue** - six today, more with every franchise added. Its
+cost scales with the size of the site; its value does not. So the question is
+never "was this historically important?" It is:
 
 > **Did this change what fiction was about, how it was written, or how it
 > reached readers - across authors, not just one?**
@@ -66,10 +68,10 @@ reader walking Discworld should not cross a full-width plate for an event with
 no Discworld book anywhere near it. When in doubt grade **down**: `med` for
 "explains the shelf", `low` for "texture of the times".
 
-> **Known debt, fix this first:** all five current entries in `global.yaml` are
-> `impact: high`, which is why world events dominate the timeline. Re-grading
-> them is the first task for this skill. A defensible outcome is one or two
-> remaining high (the World Wars), the rest med.
+The file currently sits inside the budget: 16 entries graded 2 high (the
+Second World War, the COVID-19 pandemic), 9 med and 5 low, with texture in
+every decade the catalogue spans. Measure the live distribution before grading
+against it - an earlier all-high state is why the budget exists.
 
 ## What does not qualify
 
@@ -108,8 +110,6 @@ and no global texture at all is a gap worth filling with one or two `low` or
 
 ## Hard rules
 
-- **Never fabricate.** Every entry carries a `sources` URL and a date you can
-  verify. Quote URLs containing `?` in flow sequences or the YAML breaks.
 - **`global.yaml` is a shared file with parallel PRs.** Keep your diff
   **append-only** where possible, check for an existing entry before adding,
   and never reorder or reformat entries you are not changing. Re-grading an
@@ -119,25 +119,20 @@ and no global texture at all is a gap worth filling with one or two `low` or
 - **Neutral, franchise-agnostic prose.** A global description must read
   correctly under every author's page. No "as King later wrote" - that is a
   franchise event.
-- **Spoiler-check.** A global event can spoil (a real death, a war's outcome
-  inside a novel's frame). Use `spoilerAfter` where it applies.
-- **Translations exist.** Adding or renaming an entry leaves
-  `content/i18n/<locale>/events/global.yaml` incomplete; run
-  `python scripts/i18n_coverage.py` and note the gap in the PR so a translator
-  can follow up.
+- **Spoiler-check.** A global event can spoil; use `spoilerAfter` where it
+  applies - the `spoiler-audit` skill owns the doctrine.
+- **Translations exist.** Adding or renaming an entry leaves the locale
+  overlays incomplete (CURATION §3); note the gap in the PR for the
+  `translation` stage.
 
 ## Process
 
-1. **Measure first.** Get the catalogue's real span and current density:
-   `python scripts/i18n_coverage.py` for translation state, and read
-   `global.yaml` for the existing distribution by decade and impact.
-2. **Re-grade** existing entries against the budget before adding anything.
-3. **Identify gaps** - decades the catalogue spans with no texture, and the
-   under-represented categories.
-4. **Draft candidates**, and for each write one sentence answering the
-   narrative test. If that sentence is weak, drop the candidate.
-5. **Apply the crowding test** per decade.
-6. **Emit** the YAML, run `python scripts/validate.py` until green.
+**Measure first**: read `global.yaml` for the current distribution by decade
+and impact, and `python scripts/i18n_coverage.py` for translation state.
+**Re-grade** existing entries against the budget before adding anything. Then
+identify gap decades and under-represented categories, **draft candidates**
+with a one-sentence narrative-test answer each (a weak sentence drops the
+candidate), apply the crowding test per decade, and emit the YAML.
 
 ## Done means
 

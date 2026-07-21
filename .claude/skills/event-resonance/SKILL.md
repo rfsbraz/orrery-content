@@ -8,10 +8,11 @@ description: Decide which global events actually belong on a specific author's t
 Decide, for one franchise, **which of the shared global events actually reached
 this author's page** - and be able to say what each one meant to them.
 
-Read `.claude/skills/world-events/SKILL.md` and the **aura editorial standard**
-in `franchise-research` first. `world-events` decides whether an event belongs
-in the catalogue at all. This skill decides whether it belongs on *your author*.
-They are different questions and the second one has never been asked.
+This skill runs under [`docs/CURATION.md`](../../../docs/CURATION.md); the aura
+editorial standard is its §6. Read `.claude/skills/world-events/SKILL.md`
+first: that skill decides whether an event belongs in the catalogue at all,
+this one whether it belongs on *your author*. They are different questions and
+the second one has never been asked.
 
 ## The problem this exists to fix
 
@@ -31,10 +32,8 @@ they could not possibly have touched.
 the span of the authors' lifetimes: an event is the weather a writer wrote in,
 and nobody wrote in weather that predates them. A dead author's window closes at
 death; where a franchise has several authors, the window stays open while any of
-them is living.
-
-That rule alone fixed the world wars for Tordo, Sanderson, King and Pratchett,
-and correctly kept both wars for Christie. It costs no curation and never needs
+them is living. That rule alone fixed the world wars for Tordo, Sanderson, King
+and Pratchett, kept both wars for Christie, costs no curation, and never needs
 re-running when a franchise is added.
 
 **Your job is the residue: the events that overlap the author's life but may
@@ -108,9 +107,8 @@ a future curator will otherwise re-litigate from scratch.
 - **Never edit `global.yaml`.** Adding, removing or re-grading a shared event is
   the `world-events` skill's job and its bar is higher. If an event is wrong for
   *everyone*, say so in the PR and let that skill handle it.
-- **Never fabricate a resonance.** If you cannot evidence the link between the
-  event and the work, there is no link. A plausible-sounding connection is worse
-  than an absent one, because it will be believed.
+- **Never fabricate a resonance** (CURATION §1). If you cannot evidence the
+  link between the event and the work, there is no link.
 - **Rule per author, not per franchise-shaped-guess.** A shared universe with
   two authors born 27 years apart does not have one answer.
 - **Silence is a decision too.** An event you neither include nor exclude
@@ -118,15 +116,13 @@ a future curator will otherwise re-litigate from scratch.
   left to the default, so the next agent knows the ground was covered.
 - **Do not use this to fix a bad event.** If an entry is badly written or
   wrongly graded, that is a `world-events` fix, not an exclusion list.
-- No em dashes. Run `python scripts/validate.py` until green.
 
 ## Done means
 
 A PR whose body lists, for this franchise: every global event **kept** with its
 one-sentence resonance, every event **excluded** with the reason, every
 **include** override with what the author does with the inheritance, and the
-events left to the default. Plus green validation.
-
-A run that excludes three events and keeps two, with five sentences a reader
-would recognise as true, is a good run. A run that keeps everything has not
-made a decision, it has just agreed with the machine.
+events left to the default. A run that excludes three events and keeps two,
+with five sentences a reader would recognise as true, is a good run. A run
+that keeps everything has not made a decision, it has just agreed with the
+machine.
