@@ -1,0 +1,88 @@
+stage: editions
+slug: jose-luis-peixoto
+status: content/franchises/jose-luis-peixoto/editions.yaml created (was absent); validate.py and sync_skill_blocks.py green
+
+capability: >
+  editions activates. franchise.yaml sets features: {} (auto-detect) and its
+  own comment currently says "no editions.yaml" in the capabilities summary -
+  that line is now stale since this stage shipped one, but franchise.yaml is
+  out of this stage's scope to touch (owned by franchise-research /
+  completeness-auditor); flagging for whichever stage next touches it.
+
+coverage: 24 of 27 works have a verified edition; 24 entries in the file (one
+  edition per work throughout - no work needed a second edition, since every
+  reissue found was a same-publisher reprint, not a genuinely different
+  object per the skill's tiebreak rules).
+
+with_edition: >
+  All 11 core novels, plus 13 of 16 extended works: abraco, cal,
+  a-crianca-em-ruinas, a-casa-a-escuridao, gaveta-de-papeis, regresso-a-casa,
+  dentro-do-segredo, o-caminho-imperfeito, onde, a-mae-que-chovia,
+  todos-os-escritores-do-mundo-tem-a-cabeca-cheia-de-piolhos, hoje-nao,
+  estrangeiras.
+
+without_edition: >
+  anatema, a-manha, quando-o-inverno-chegar - all three theatre, staged
+  (Anatema in Paris; the other two at Lisbon's Teatro Sao Luiz) but never
+  published as books. Searched fresh, not carried over as an old gap: no
+  book edition of any of them turned up anywhere (no ISBN, no publisher, no
+  retailer listing).
+
+sourcing_shape: >
+  Almost the entire backlist is Quetzal Editores (LeYa), opened directly on
+  quetzaleditores.pt via web.archive.org (blocked live, as the four prior
+  stages already found). 15 of the 24 ISBNs are additionally corroborated by
+  an exact-string match in OpenLibrary's own record for the same work (the
+  remainder are 2014-2025 printings OpenLibrary has not indexed, or a title
+  where OpenLibrary's record is a different, non-matching print run - both
+  states are named per entry). todos-os-escritores... is cross-checked
+  against the BNP catalogue too. hoje-nao (Quasi Edicoes, 2007, distributed
+  free with Sabado magazine, out of print) and estrangeiras (Rosa de
+  Porcelana, 2016) are not Quetzal titles; each rests on an independent
+  retailer/bookseller record opened directly (esconderijodoslivros.pt,
+  europresseditora.pt) since Wook, Bertrand and the publisher's own sites
+  were unreachable.
+
+check_digits_verified: >
+  All 24 arithmetically, by hand, against the file's own numbers before
+  writing them: 9789897226809, 9789897223273, 9789725648223, 9789897227387,
+  9789725648230, 9789725648995, 9789897221798, 9789897222573, 9789897224591,
+  9789897224607, 9789897228919, 9789725649367, 9789725648216, 9789725649978,
+  9789897221729, 9789725649701, 9789897227059, 9789897220609, 9789897223563,
+  9789897228506, 9789897220074, 9789897222603, 9789895522828, 9789899940666.
+  Also checked and rejected as out of scope: the Brazilian Companhia das
+  Letras "Livro" (978-85-359-2019-2, valid, but pt-BR - excluded and named in
+  the header per the region-strict rule).
+
+rejected_as_unverifiable: >
+  Nothing was rejected for a bad check digit - every candidate ISBN found
+  this pass was valid. What was rejected on other grounds: superseded
+  Quetzal/Temas e Debates print runs for morreste-me, nenhum-olhar, cal and
+  gaveta-de-papeis (named in each entry's note rather than recorded as
+  separate editions, since a same-publisher reprint is not "genuinely a
+  different object"); and the Brazilian "Livro" edition (region mismatch).
+
+curator_questions: >
+  None rise to a curator call. One open thread worth a human's eventual
+  attention: estrangeiras' publisher (Rosa de Porcelana) could not be
+  reached directly, so its ISBN rests on a retailer listing rather than the
+  publisher's own catalogue - still two-source-standard (matches Wook,
+  Bertrand and Amazon.com.br), just one tier down from the rest of the file.
+
+tool_calls: >
+  Approximately 70 total; about 34 touched the network - 9 WebSearch
+  discovery queries (Quetzal author-page location, Estrangeiras, Hoje Nao,
+  Antidoto, Gaveta de Papeis, Anatema, A Manha/Quando o Inverno Chegar), one
+  OpenLibrary bulk search.json call covering all 27 works' ISBNs in a single
+  fetch (a second read was a free cache hit), and roughly 24 fetch.py
+  invocations covering about 26 URL fetches. The Quetzal pages themselves
+  batched cleanly (up to 15 URLs per call), but web.archive.org started
+  refusing connections under fetch.py's default 6 concurrent workers partway
+  through the run - every retry after that had to drop to --workers 1 and, a
+  few times, a single URL per call, which is most of why the call count
+  climbed. Worth flagging for the next stage that hits archive.org this
+  hard: start at --workers 2-3 for that host rather than the default 6.
+  ISBN/binding/page-count extraction itself was done locally against the
+  fetch.py JSON cache with small Python snippets (no extra network cost) once
+  simple --grep patterns proved too line-fragile against the ficha pages'
+  one-value-per-line markup.
