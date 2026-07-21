@@ -10,6 +10,9 @@ Write and review the overlays under `content/i18n/<locale>/`. Read the
 This skill is the judgement the schema cannot encode - what a good translation
 is, and the specific ways translation work has silently failed here before.
 
+This skill runs under `docs/CURATION.md`; the shared contract is stated there,
+not repeated here.
+
 Orrery has real Portuguese beta readers. Everything below came from a bug that
 reached one of them.
 
@@ -153,17 +156,11 @@ the place when the place is load-bearing.
 
 ## Coverage is a gate, not a report
 
-Run `python scripts/i18n_coverage.py` **before** you start and record the
-number. Run it again at the end. The rule:
-
-> **No regression against the number recorded before the change.**
-
-Any stage that adds prose and leaves the locale partial has shipped a
-regression, not a feature. This binds the other direction too: **rewriting
-English prose invalidates its translation**, so the same commit fixes both
-sides. A commit that improves an English synopsis and leaves the Portuguese
-saying the old thing has not improved anything - it has introduced a
-contradiction that only a bilingual reader will find.
+CURATION §3 owns the numbers: record `i18n_coverage.py` before starting, no
+regression after, and an English rewrite is fixed on both sides in the same
+commit. The translation-side consequence: a commit that improves an English
+synopsis and leaves the Portuguese saying the old thing has not improved
+anything - it has introduced a contradiction only a bilingual reader will find.
 
 ### The gate is narrower than it looks - do not read "complete" as "translated"
 
@@ -241,9 +238,8 @@ account-only surface - and read them. The coverage script tells you a file
 exists and has entries; it cannot tell you the reader saw them, and trap 1 is
 exactly that gap.
 
-State plainly what you checked and how. **An agent's claim of completeness is
-not evidence.** Neither is a green validator. A quoted line of Portuguese from a
-rendered page is.
+State plainly what you checked and how. Claims and green validators are not
+evidence (CURATION §5); a quoted line of Portuguese from a rendered page is.
 
 ## Adding a new locale
 
@@ -273,12 +269,6 @@ rendered page is.
   An overlay id that does not resolve is a CI error, by design.
 - **Never restate structure** in a nested translation - no `workIds`,
   `orderId`, `fit`, dates, or impact.
-- **Fix both sides in the same commit** when English prose changes.
-- **Never invent to fill a gap.** An untranslated field falls back cleanly;
-  a fabricated one does not.
-- **No em dashes.** Use regular dashes, commas, or separate sentences.
-- **Quote YAML values containing colons or apostrophes**, and quote URLs
-  containing `?` in flow sequences.
 - **Diacritics are content, not decoration.** `instituições`, not
   `instituicoes`. Proofread the rendered text, not the diff.
 

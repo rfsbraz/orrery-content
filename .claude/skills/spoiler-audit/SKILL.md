@@ -13,6 +13,9 @@ Read `docs/SCHEMA.md` ("Spoilers") and `lib/spoilers/index.ts` in the app before
 starting. The schema tells you what the field means; the app tells you what it
 actually does, and the gap between them is where spoilers ship.
 
+This skill runs under `docs/CURATION.md`; the shared contract is stated there,
+not repeated here.
+
 ## The asymmetry decides everything
 
 **A false negative is unrecoverable. A false positive is annoying.**
@@ -272,17 +275,13 @@ original withheld.
 
 ## Translations: mirror every fix
 
-`content/i18n/<locale>/` overlays merge **field by field**. An English rewrite
-that is not mirrored leaves the old string live, so **the locale reader still
-reads the spoiler you just removed.** A spoiler fix in one language is not a
-fix.
-
-For every prose field you rewrite, update the matching overlay entry in the same
-PR, then run `python scripts/i18n_coverage.py` and report the delta. Coverage
-holding steady is the evidence the fix actually landed everywhere.
-
-(Changing only `spoilerAfter` needs no overlay work - it is structure, not
-prose.)
+CURATION §3 owns the mechanics: overlays merge field by field, and both sides
+of a prose change land in the same commit. The spoiler-specific consequence:
+an unmirrored rewrite leaves the old string live, so **the locale reader still
+reads the spoiler you just removed - a fix in one language is not a fix.**
+Coverage holding steady after `i18n_coverage.py` is the evidence the fix landed
+everywhere. (Changing only `spoilerAfter` needs no overlay work - it is
+structure, not prose.)
 
 ## Engine limits worth knowing
 
@@ -300,22 +299,18 @@ prose.)
 
 ## Hard rules
 
-- **Never change an id.** Rewriting prose is encouraged; renaming orphans real
-  readers' shelves. This includes work, character, event, and order ids.
 - **Verify the plot before ruling, against the publisher's own copy.** Read what
   actually happens and where it is revealed. Guessing whether something is a
   spoiler is how you ship one, and half-remembered plots are wrong in both
   directions.
-- **Never trust a green validator as proof of protection.** It checks that
-  references resolve. It cannot tell a gated reveal from an open one, and it
-  accepts `spoilerAfter` on fields that ignore it.
+- **Never trust a green validator as proof of protection.** It cannot tell a
+  gated reveal from an open one, and it accepts `spoilerAfter` on fields that
+  ignore it.
 - **Record every ruling, including the ones that changed nothing.** "Checked,
   it is jacket copy, left alone" is a result, and it stops the next auditor
   re-litigating it.
 - **State your uncertainty.** A redaction you were unsure about must say so, or
   nobody will ever loosen it.
-- No em dashes. Quote YAML values containing colons or apostrophes.
-- `python scripts/validate.py` until green.
 
 ## Process
 
@@ -338,9 +333,8 @@ prose.)
    `spoilerAfter` sitting on a field that cannot carry one; it protects nothing
    and it disguises an open spoiler.
 8. **Mirror every rewrite** into the locale overlays.
-9. **Validate and measure**: `validate.py` green, `i18n_coverage.py` reported.
-   Remember the validator cannot see a spoiler; green means references resolve,
-   not that readers are protected.
+9. **Run the gates** (CURATION §3) and remember the validator cannot see a
+   spoiler: green means references resolve, not that readers are protected.
 
 ## Done means
 
