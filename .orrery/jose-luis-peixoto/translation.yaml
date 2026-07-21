@@ -1,0 +1,78 @@
+stage: translation
+slug: jose-luis-peixoto
+locale: pt-PT
+status: 4 overlay files created; validate.py exit 0, sync_skill_blocks.py exit 0
+
+coverage:
+  before: "74/78 files fully covered (missing: this wing's franchise.yaml,
+    works.yaml, events.yaml, authors/jose-luis-peixoto.yaml)"
+  after: "78/78 files fully covered - complete"
+
+files_created:
+  - content/i18n/pt-PT/franchises/jose-luis-peixoto/franchise.yaml (description)
+  - content/i18n/pt-PT/franchises/jose-luis-peixoto/works.yaml (27 synopses)
+  - content/i18n/pt-PT/franchises/jose-luis-peixoto/events.yaml (3 events,
+    title+description)
+  - content/i18n/pt-PT/authors/jose-luis-peixoto.yaml (bio + 6 lifeEvents,
+    title+description each)
+
+not_owed: >
+  eras.yaml and orders.yaml both ship as empty lists for this wing by design
+  (eras/reading-orders stages found no periodisation or grouping on record);
+  i18n_coverage.py correctly excludes empty files from its targets, so no
+  overlay exists for either and none was needed.
+
+note_fields_not_translated: >
+  Followed the convention already set by joao-tordo and valter-hugo-mae's own
+  pt-PT overlays (and confirmed by i18n_coverage.py's PROSE map, which omits
+  `note` from works.yaml/events.yaml fields, and SCHEMA.md's "Optional curator
+  aside"): `note:` is a curatorial/sourcing aside, not reader prose, so the
+  notes on cemiterio-de-pianos, autobiografia, almoco-de-domingo, a-montanha,
+  onde, anatema and the Francisco Lázaro event were left in English,
+  untranslated, matching precedent rather than re-deciding it here.
+
+spoiler_discipline: >
+  Translated exactly what spoiler-audit left in the base, added nothing back.
+  peixoto-montanha-closes-circle-2025 (author lifeEvent) and the a-montanha
+  synopsis: both hold to the premise only, no restored "closes the circle"
+  framing, no resolution of "até que o impensável acontece" - the redacted
+  shape survives in Portuguese. almoco-de-domingo's synopsis keeps "Rui
+  Nabeiro" exactly as the base names him (not the full "Manuel Rui Azinhais
+  Nabeiro" the novel itself withholds); the author lifeEvent, which the base
+  already names "Manuel Rui Nabeiro" (no Azinhais), is translated at that same
+  level, not expanded. Direct Portuguese quotes already embedded in the
+  English base (father's-death interview, Saramago conviction line, the
+  "sempre me fascinou" and "alguém muito especial" lines, the Morreste-me
+  interview quote on A Montanha) are kept byte-for-byte, with no re-paraphrase
+  and no redundant English gloss re-added in the Portuguese version.
+
+register_calls: >
+  pt-PT discriminators applied throughout: telemóvel (not celular), no
+  estar+gerund constructions, AO90 orthography (coletânea, not colectânea).
+  "saudade de casa" used for "homesickness" on regresso-a-casa's synopsis as
+  the idiomatic reach rather than a literal "nostalgia de casa". Grepped the
+  four new files for estar+gerund patterns and the SKILL.md brasileirismo
+  list after writing; zero hits.
+
+verification: >
+  i18n_coverage.py read directly (78/78, up from 74/78, no regression on any
+  other locale/file). validate.py exit code read directly (0; the 79 warnings
+  printed are all pre-existing, none touch this wing's new files or its base
+  files). sync_skill_blocks.py exit code read directly (0). All four new YAML
+  files re-parsed with yaml.safe_load to confirm entry counts: franchise.yaml
+  1, works.yaml 27, events.yaml 3, authors/jose-luis-peixoto.yaml 1 (with 6
+  nested lifeEvents) - matching the base files exactly.
+  This worktree holds only the content repo (no package.json, no app, no
+  render-check.mjs present) - the Orrery app that renders these pages lives
+  in a separate repo, so an actual rendered-page read was not possible from
+  here. In its place: every translated field was proofread against its
+  English source line by line for completeness, register and the
+  spoiler/name-withholding constraints above, which is the same verification
+  depth the other content-only stages in this wing (eras, reading-orders)
+  relied on for their own YAML-only output.
+
+curator_questions: none rise to a curator call this pass.
+
+tool_calls: >
+  Approximately 30 total; zero touched the network. This stage translates
+  already-sourced base prose and needed no research.
