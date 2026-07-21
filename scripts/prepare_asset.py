@@ -178,13 +178,10 @@ def main() -> int:
             pct = 100 * cleared // (im.size[0] * im.size[1])
             print(f"alpha: recovered from a flattened checkerboard "
                   f"({pct}% of the frame cleared)")
-            print("  WARNING: this is a lossy repair, not a substitute for a real
-"
-                  "  alpha PNG. The flood leaks through soft edges into any drawn
-"
-                  "  sky of the same grey, and the 1px seams between squares
-"
-                  "  survive as a faint grid. Check the result before filing it.",
+            print("  WARNING: a lossy repair, not a substitute for a real alpha "
+                  "PNG. The flood leaks through soft edges into any drawn sky of "
+                  "the same grey, and the 1px seams between squares survive as a "
+                  "faint grid. Look at the result before filing it.",
                   file=sys.stderr)
             im, has_alpha = rec, True
     if not has_alpha and not a.force_opaque:
