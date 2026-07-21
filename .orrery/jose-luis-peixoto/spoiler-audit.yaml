@@ -11,11 +11,10 @@ files_with_prose_changed:
 
 engine_verified: >
   spoilerAfter is consumed only for events (river, timeline, companion) and
-  character appearances: lib/spoilers/index.ts, types.ts
-  AuraEvent/CharacterAppearance, and the four components passing the field.
-  works[].synopsis and works[].note have no consumer, so rewriting was the
-  only lever here. The river is live on this wing (capabilities.ts derives it
-  from timeline.length > 0; nine aura entries), so the aura really renders.
+  character appearances: lib/spoilers/index.ts, types.ts, and the four
+  components passing the field. works[].synopsis and works[].note have no
+  consumer, so rewriting was the only lever. The river is live here
+  (capabilities.ts derives it from timeline.length > 0; nine aura entries).
 
 redactions:
   - file: content/authors/jose-luis-peixoto.yaml
@@ -69,12 +68,11 @@ kept_after_checking:
       words. 1996 is labelled an approximation. Not a spoiler for
       Morreste-me: the father's death is that book's own subject.
   - entry: peixoto-nabeiro-almoco-de-domingo-2019
-    ruling: Kept. Nabeiro's 2023 death postdates the 2021 novel; all press-sourced.
+    ruling: Kept. Nabeiro's 2023 death postdates the 2021 novel.
   - entry: em-teu-ventre synopsis
     ruling: >
       Register checked, kept. The children "reported" the apparitions,
-      adjudicating nothing; only Lúcia and her mother named; nothing stated
-      about the seers who died as children.
+      adjudicating nothing; only Lúcia and her mother named.
   - entry: Saramago (autobiografia, peixoto-saramago-death-2010)
     ruling: >
       Nothing invented about him is stated as fact; both entries flag the
@@ -100,5 +98,4 @@ curator_questions:
 tool_calls: >
   40 total; 9 touched the network - 9 batched fetch.py invocations covering
   15 URL requests, 6 cache-served. Zero WebSearch: publisher pages were found
-  by querying the Wayback CDX API for the ficha URL rather than searching for
-  it, which is why the jacket lookups cost nine calls instead of forty.
+  by querying the Wayback CDX API for the ficha URL rather than searching.
