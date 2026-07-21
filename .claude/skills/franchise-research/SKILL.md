@@ -1,112 +1,157 @@
 ---
 name: franchise-research
-description: Research a book franchise or author for Orrery and emit the git content bundle - author profile + life events, bibliography (works), eras, world/culture events, and known reading orders - as YAML for curator review. Use when adding or refreshing a franchise's canon content in content/franchises/<slug>/.
+description: Scaffold a new franchise wing for Orrery - scope the franchise, slug the works, create the global author entities, draft the bibliography and series structure, map characters and connections, and set the theme, leaving every other layer as an honestly-marked thin pass for its specialist skill. Use only when content/franchises/<slug>/ does not exist yet or its structure is being redrawn; any other work on an existing wing belongs to a specialist skill.
 ---
 
-# franchise-research
+# franchise-research (the scaffold stage)
 
-Research one franchise (an author's world, a shared universe, or a series) and produce the **canon content bundle** Orrery renders: who wrote it and what was happening around them (the "aura"), the full bibliography, the eras that group it, the known reading orders, and - where the franchise earns them - the recurring characters, work connections, and "where to start" paths. Output is git YAML under `content/franchises/<slug>/`, reviewed by a curator via PR before it becomes canon.
+The first stage of `/author` (`.claude/commands/author.md`). It creates a new
+wing's structure, or redraws one, and runs alone because it writes everything.
+It runs rarely: if the wing exists and its structure is sound, the work
+belongs to a specialist skill, not here.
 
-**The schema reference is [`docs/SCHEMA.md`](../../../docs/SCHEMA.md) - read it in full before writing YAML.** The examples below are abbreviated; SCHEMA.md is authoritative and `scripts/validate.py` enforces it. Also read the app's `docs/CONCEPT.md` if unfamiliar - especially §4 (data model), §4a (canon vs user content), and §9 (spoilers).
+Read first: **`docs/SCHEMA.md`** (the data contract; every example below is
+abbreviated and SCHEMA.md is authoritative) and **`docs/CURATION.md`** (the
+working contract: fabrication, permanent ids, received not invented, YAML
+mechanics, gates, verification, and the aura editorial standard in its §6).
+If unfamiliar with the app, also `docs/CONCEPT.md` §4, §4a and §9.
 
 ## The framework mindset
 
-Orrery is a framework: **every advanced layer is optional, and the app activates features per franchise based on what the data provides** (the capabilities table in SCHEMA.md). Your job is to judge which layers this franchise *earns*, not to fill every file:
+Orrery is a framework: every advanced layer is optional, and the app activates
+capabilities per franchise from what the data provides (the capabilities table
+in SCHEMA.md). Judge which layers this franchise *earns* - a sprawling
+multiverse earns characters, connections and a rich aura; a sparse or
+non-English author may ship works plus a thin aura and nothing else, and that
+is a complete, correct wing. Empty is a supported state (CURATION.md §1).
+State in your handoff which capabilities the scaffold activates and why.
 
-- A sprawling multiverse (King, Cosmere) earns `characters.yaml`, `connections`, and a rich aura.
-- A near-linear series (Wheel of Time) may need few connections but a strong aura (the author transition) and a `startHere` with the prequel debate addressed.
-- A sparse or non-English author (João Tordo) may ship works + eras + a thin aura and nothing else - that is a *complete, correct* bundle, not a failure. Never pad a layer to make the franchise look fuller; empty is better than invented.
+## Scoping the franchise
 
-State in your PR description which capabilities the bundle activates and why.
+Confirm what it is (`kind: author | shared-universe | series`), where its
+boundaries lie, and its `canonTier` conventions (what counts as core vs
+extended vs apocrypha - completionists care). Pick `<franchise-slug>`
+deliberately (lowercase, hyphenated, accents stripped); ids are permanent.
 
-## The DNA: aura over checklist
+## Work ids: slug the works before writing anything else
 
-Orrery is not a reading-order list; it's contextual reading. The value is situating each book in its moment. So research is not just "list the books in order" - it's **capturing the life, world, and cultural weather around each book** so the timeline breathes. Weight events by impact (an author's near-fatal accident vs a minor award) so the timeline has anchors and texture.
+Every file cross-references work ids (`<franchise-slug>/<work-slug>`), and ids
+are immutable once merged - user progress references them. Draft the complete
+`works.yaml` id list first, sanity-check the slugs (drop leading articles only
+when the community does: `the-stand` keeps its "the"; be consistent within the
+franchise), and only then write anything that points at them. Renaming a slug
+halfway through poisons every file already written.
 
-## The aura editorial standard
+## The first-draft bibliography
 
-The admission test for every event: **does it pass through the author into the
-page?** An event earns its slot only if knowing it changes how a reader reads.
-The impact taxonomy, in editorial terms:
+Completeness beats depth: the franchise's default order is
+publication-chronological over ALL published works and is *derived* from
+`works.yaml`, so a missing work is a hole in the spine, while an entry with
+just id/title/authorIds/published/canonTier and a one-line synopsis is fine.
+Novels, collections, novellas, relevant nonfiction - all of it, tiered
+honestly. Do not author the default order by hand; `orders.yaml` holds only
+additional orders. Leave `externalIds` empty - the enrichment bot
+(`scripts/enrich.py`) fills OpenLibrary ids and flags uncertain matches.
+This is a first draft, and say so: the **`completeness-auditor`** skill will
+verify it against primary sources and close it - your job is a spine it can
+audit, with gaps flagged rather than papered over.
 
-- **high = recolors the text.** After learning it, the same sentences read
-  differently.
-- **med = explains the shelf.** Why the catalog is shaped the way it is.
-- **low = texture of the times.** The weather, kept sparse.
-- Fails all three -> it does not ship. Every noise event cheapens the real
-  anchors (the app renders high-impact events as page-breaking interruptions;
-  imagine each one breaking the page and ask if it deserves to).
+## Author entities
 
-What readers actually want to know, ranked by how much it changes the reading:
+Authors are **global entities** in `content/authors/<slug>.yaml`, so the same
+person resolves across franchises and name collisions. Franchises and works
+reference `authorIds` / `withAuthorIds`; author-life events live on the author
+entity (`lifeEvents`), never in the franchise's `events.yaml`.
 
-1. **The author's inner weather - the gold tier.** Illness, addiction, grief,
-   sobriety, fear, recovery. This is where the aura earns its existence:
-   King barely remembering writing one of his own novels; Pratchett's
-   embuggerance not as context for late Discworld but AS late Discworld;
-   Jordan's amyloidosis being the entire meaning of the final volumes. Most
-   high-impact slots should come from this tier. Write it with care - factual,
-   humane, never ghoulish.
-2. **Why this book exists - origin stories.** The manuscript rescued from the
-   bin, the ending written years early and vaulted, the pen name invented
-   because publishers capped output. Readers retell these at dinner; they are
-   the aura's most shareable material.
-3. **World events - rarely, but decisively.** Only where the book ANSWERS the
-   event: dispensary work that became a poisoner's expertise, biowarfare
-   headlines that became a plague novel, a pandemic the author actually wrote
-   into the books. Generic history is filler - roughly one world event in
-   twenty is aura-worthy. Keep `global.yaml` thin and mostly low/med; a war
-   the author merely lived near is not an anchor on their timeline.
-4. **Feuds and reception ruptures - with one filter: did it leave a mark on
-   the canon?** An unmasked pseudonym answered with a novel, an author pulling
-   a book from print, a twist that scandalized the genre's rule-keepers, an
-   establishment snub that reframed a career - all belong. Gossip with no
-   fingerprint on the work does not.
-5. **Industry context - the completionist's tier.** The publishing forces
-   that shaped the shelf (format booms, output rules, estate decisions about
-   what "complete" means). Medium impact at most, never anchors.
-6. **Trivia - the cut tier.** Awards lists, sales milestones, pub-quiz facts:
-   cut, unless the item relocates the reader inside a book (the real hotel
-   behind the fictional one), in which case it is really tier 1 or 2 in
-   disguise.
+- **Pen names**: record `pseudonyms` on the author and `publishedAs` on each
+  work published under one. Pen-name works stay in the author's franchise and
+  the default order; a pen name only gets its own franchise if it is a
+  genuinely distinct brand (curator's call). Pen-name lore (a staged death, a
+  reveal) is an event, not a data hack.
+- **Multi-author volumes: record the relationship, never imply authorship.** A
+  book containing one story by this author is not a book by this author, and
+  bare `authorIds` silently drops other people's books into the derived order.
+  Use `authorRole` (`author | co-author | contributor | editor`), name the
+  piece in `contributionTitle`, and tier a contributor entry `apocrypha`. Same
+  for books where this author wrote only an introduction.
 
-## Hard rules
+## Series structure: be authoritative
 
-- **Never fabricate.** Books, dates, orders, and events must be verifiable. Cite a source URL per non-obvious claim. When unsure, mark `confidence: low` and leave a `note:` - do not invent. This matters most for sparse authors (e.g. João Tordo: Portuguese literary fiction has thin English coverage - expect gaps and flag them rather than guessing bibliography or order structure).
-- **Stable Work IDs are permanent.** Assign each work `id: <franchise-slug>/<work-slug>` and never change it later - user data references these (§4a). Choose slugs carefully the first time.
-- **Separate global from franchise-specific events.** World/culture events that any franchise could share (a war, a cultural rupture, a tech shift) go to `content/events/global.yaml` with `reach: global`. Author-life and franchise-specific events stay in the franchise's `events.yaml`.
-- **Tag spoilers.** Any event or note that could spoil a book carries a `spoilerAfter:` boundary (the work ID beyond which it's safe to reveal), per §9.
-- **Editions vs Works.** Research at the Work level (the abstract book) for orders; capture ISBN/cover/edition detail separately. Orders reference Works only.
-- **Aim for a complete bibliography.** The franchise's **default order is publication-chronological over ALL published works** and is *derived* from the works list (not hand-written). So `works.yaml` completeness is the goal - novels, collections, novellas, nonfiction. Do not author the default/publication order by hand; `orders.yaml` holds only the *additional* orders (in-universe, author-recommended, curated).
-- **Pen names.** Record pen names on the author (`pseudonyms`) and set `publishedAs` on each work published under one. Pen-name works stay in the author's franchise and appear in the default order. A pen name only gets its own franchise if it's a genuinely distinct brand/persona (curator's call). Meta pen-name lore (a staged "death", a reveal) goes in `events`, not as a data hack.
-- **Reference by ID, never by name.** Authors are **global entities** in `content/authors/<slug>.yaml` (so the same person resolves across franchises and past name collisions). Franchises and works reference `authorIds` / `withAuthorIds`. Author-**life** events live on the author entity (`lifeEvents`); franchise `events.yaml` holds only franchise-specific events. In prose (bios, synopses, event/era descriptions, order rationales) link with `[[work:<id>|text]]`, `[[author:<id>|text]]`, and `[[character:<id>|text]]`. Every reference must resolve - `scripts/validate.py` (run in CI) fails the build on dangling ones. Disambiguate name collisions at the slug; add `aka:` for search.
-- **Characters are connective tissue, not a wiki.** Add `characters.yaml` only for figures whose recurrence across works is part of how the franchise hangs together. An appearance whose *existence* is a reveal gets `spoilerAfter` on that appearance.
-- **Connections are declared on the later work**, pointing back at the earlier one (the later work is the one whose reading is enriched); the app renders the edge both ways. Do not duplicate what `subseries` already threads - connections are for crossovers, sequels across subseries, and shared-cosmology links.
-- **Be authoritative on series structure. This is your call, not the curator's.** `subseries` is a factual question with a findable answer, and it is one of the few fields a reader will notice being wrong. Settle it: use the **publisher's own numbering** where one exists, then the author's stated grouping, then the community's settled consensus. Emit the decision and record the evidence in a `note:`. Do not hand the curator a menu of defensible options. Two specific traps: (a) **a recurring character is not a series.** King's Bill Hodges trilogy and the later Holly Gibney books share a protagonist but are separately titled, separately marketed sequences, and both labels are correct - a character who spans two series does not merge them. Where a thread genuinely continues under a new name, say so in a `note:` on the hinge work rather than flattening the labels. (b) **A collection containing a series novella is not part of the series**; leave its `subseries` null and let the connection or character entry carry the link. Escalate to the curator only when the sources actively contradict each other, and then quote them.
-- **Multi-author volumes: record the relationship, never imply authorship.** A book containing one story by this author is not a book by this author, and putting it in `works.yaml` with bare `authorIds` silently drops other people's books into the derived reading order. Use `authorRole` to say what they actually did (`author`, `co-author`, `contributor`, `editor`), name the piece in `contributionTitle` where they contributed one, and tier it `apocrypha`. Then it is honest completionist data instead of a false claim. The same applies to books where this author wrote only an introduction or a foreword.
-- **startHere paths are curation, not marketing.** Each path must be an entry strategy a real community actually recommends (cite it), tagged honestly with who it fits. Two to five paths; always include a completionist path (usually `orderId: default`).
-- **Editions only when verifiable.** Never guess an ISBN. It is fine (normal) to ship no `editions.yaml`; the app falls back to search links and OpenLibrary covers.
-- **Translated titles are edition data, never invention.** A work's `title` is its ORIGINAL title, permanently. A translated title lives on the edition that published it (`title` + `language`), because it is a fact about a book someone can actually buy. If no edition exists in a language, that work simply has none - never translate a title yourself. And mind the region: `pt-PT` and `pt-BR` are different translations with different titles and ISBNs, so never tag a Brazilian edition as Portuguese.
-- **Achievements are content, not app code.** A franchise may ship its own badges in `achievements.yaml` (ids prefixed `<slug>/`), using the criteria kinds in `docs/SCHEMA.md`. Tie at least one to the aura where the franchise supports it (an era, a signature order) - those are badges only Orrery can offer. Never invent a criteria kind; if a badge needs one, say so in the PR instead.
-- **Chase the universe connections properly.** Connections are a headline feature, not a footnote: work out how this body of work hangs together and record it. That means (a) `connections` on works for crossovers, sequels across threads, and shared cosmology; (b) `characters.yaml` for the figures who recur, with an appearance list; (c) inter-franchise links where an author's universes touch (a shared character or world across two franchises in this repo). Where the connection is itself a reveal, gate it with `spoilerAfter` rather than dropping it. If a franchise genuinely has none, say so explicitly in the PR instead of leaving it silently empty.
-- **Gather visual metadata.** The app is a museum and needs pictures: an author `portrait`, a franchise `header`, and a `cover` per work where one is available (see "Images" in SCHEMA.md). Reference by URL, never commit binaries, and record `*Credit` and `*Source` for every image. Wikimedia Commons is the best portrait source - check the licence and credit the photographer. OpenLibrary is fine for covers. **Never** take a retailer's jacket image or anything whose licence you cannot establish; an empty field is correct and the app degrades to typography.
-- **Theming is content too, but only the implemented values are real.** `theme.yaml`'s `palette` is free, while `displayFace` and `signature` are closed sets: **`fraunces` | `spectral` | `sourceSerif`** and **`beam` | `thread` | `rule` | `none`**. Anything else is accepted, validated, and then **silently swapped** for `fraunces`/`thread` at render - so an invented value costs the wing its look without failing anything. Five of the six wings built before this was noticed name faces and signatures that do not exist (`ivar`, `instrument-serif`, `canela`, `filament`, `horizon`, `tideline`, `wheel-and-serpent`) and every one of them renders as something nobody chose. `validate.py` warns now. Pick from the implemented set, or propose a new one in the PR as an app change - do not write the name you wish existed.
-- **`published` is a bare year integer.** `1974`, never `1974-03-26`. YAML parses a full date as a string, and every consumer of the field is year arithmetic (River layers, era spans, decade rules, era-reader achievements), so a dated value silently loses every comparison: the work floats on its own layer, outside all eras, missing from the badge that should count it. The validator rejects it now. If an exact date matters editorially, it belongs in an event or in `sources`.
+`subseries` is a factual question with a findable answer, and one of the few
+fields a reader notices being wrong. **Settle it - this is your call, not the
+curator's**: publisher's own numbering first, then the author's stated
+grouping, then settled community consensus. Emit the decision, record the
+evidence in a `note:`, and escalate only when sources actively contradict each
+other (then quote them). Two traps:
 
-## Process
+- **A recurring character is not a series.** Separately titled, separately
+  marketed sequences that share a protagonist stay separate; where a thread
+  genuinely continues under a new name, say so in a `note:` on the hinge work.
+- **A collection containing a series novella is not part of the series.**
+  Leave its `subseries` null; let a connection or character entry carry the
+  link.
 
-1. **Scope the franchise.** Confirm what it is (single-author series, shared universe, multi-author), its boundaries, and its `canonTier` conventions (what counts as core vs extended vs apocrypha - completionists care). Pick the `<franchise-slug>`.
-2. **Author(s).** Biography and a timeline of **life events** with dates and impact - the raw material of the aura. For multi-author franchises (e.g. Wheel of Time: Jordan → Sanderson) capture each, and the transition itself is usually a high-impact event.
-3. **Bibliography → works.** Every published work - aim for completeness (the default order derives from this): title, publication date, subseries, canon tier, synopsis, `publishedAs` for pen names, `withAuthorIds` for collaborations. Assign stable IDs. **You can leave `externalIds` empty** - the enrichment bot (`scripts/enrich.py`, run by the Enrich CI) fills `openLibrary` IDs from high-confidence matches and opens a PR, flagging anything uncertain for a human.
-4. **World & culture events.** For the span the franchise covers, gather the world/cultural/industry events that pass the editorial standard (the book must answer the event - see "The aura editorial standard"). Global ones → `global.yaml`; ones specifically resonant with this franchise → franchise `events.yaml`. Impact-weight everything; expect to reject most candidates.
-5. **Eras.** Group the timeline into named eras (creative periods) with themes and a short characterization - the narrative spine of the aura.
-6. **Known reading orders.** The default publication-chronological order is derived automatically - don't write it. Find the *additional* established orders: chronological/in-universe, author-recommended, and notable community/curated ones (with their rationale and where they diverge). These become `source: canon` orders in `orders.yaml`; note debated points.
-7. **Connections and characters.** Map how the works hold together (crossovers, recurring figures, shared cosmology) and record them per the rules above. This is what the connections map renders.
-8. **Visual metadata.** Find an author portrait, a franchise header, and per-work covers where licensing allows, with credits and sources.
-9. **Emit YAML** to `content/franchises/<slug>/` per the schema below, plus any `global.yaml` additions. Summarize gaps and low-confidence items for the curator.
+## Characters and connections
+
+This skill owns them - no specialist skill exists for this layer.
+
+- **Characters are connective tissue, not a wiki.** Add `characters.yaml` only
+  for figures whose recurrence across works is part of how the franchise hangs
+  together. An appearance whose *existence* is a reveal gets `spoilerAfter` on
+  that appearance.
+- **Connections are declared on the later work**, pointing back at the earlier
+  one (the later work is the one whose reading is enriched); the app renders
+  the edge both ways. Do not duplicate what `subseries` already threads -
+  connections are for crossovers, sequels across subseries, and shared
+  cosmology.
+- **Chase the universe connections properly.** This is a headline feature:
+  `connections` on works, `characters.yaml` with appearance lists,
+  inter-franchise links where an author's universes touch. Gate reveals with
+  `spoilerAfter` rather than dropping them; if the franchise genuinely has
+  none, say so in the handoff instead of leaving it silently empty.
+
+## Theme scaffolding
+
+`theme.yaml`'s `palette` is free; **`displayFace` and `signature` are closed
+sets**: `fraunces | spectral | sourceSerif` and `beam | thread | rule | none`.
+Anything else is accepted, validated, and then **silently swapped** for
+`fraunces`/`thread` at render - an invented value costs the wing its look
+without failing anything (five of the first six wings shipped names that do
+not exist; `validate.py` warns now). Pick from the implemented set or propose
+a new value as an app change in the PR. Follow CONCEPT §6: palette + one
+display face + one signature element, readability first, no genre costume.
+
+## Scaffolding the other layers
+
+A first thin pass at the remaining layers is allowed as scaffolding, but each
+must be honestly marked for the specialist skill that owns it - a scaffold
+slot that looks finished is worse than an empty one:
+
+- **Bibliography closure** - `completeness-auditor` verifies and finalises the
+  work list; flag your known gaps for it.
+- **Aura and life events** - `press-archaeology` (the editorial bar is
+  CURATION.md §6). Scaffold only well-known, sourced anchors.
+- **Shared world events** - `world-events` owns `events/global.yaml`;
+  **which of them reach this timeline** is `event-resonance`'s ruling.
+- **Eras** - `eras`. Scaffold only eras you can actually source; any era whose
+  label you did not receive carries `provenance: none`, which is exactly what
+  triggers that skill. `eras: []` is fine.
+- **Reading orders** - `reading-orders`. Scaffold only orders the publisher
+  itself numbers; everything else (author-recommended, community, curated) is
+  that skill's discovery work.
+- **Entry paths** - `where-to-start` owns `startHere`. Scaffold one only from
+  receipts (a citable community recommendation); otherwise leave it absent.
+- **Spoiler boundaries** - `spoiler-audit` owns `spoilerAfter` doctrine; tag
+  what you know, never guess a boundary.
+- **Imagery** - `visual-metadata` owns portraits, headers, covers and rights.
+- **Editions and translated titles** - `editions`; never guess an ISBN, and a
+  work's `title` is its original title, permanently.
+- **Locales** - `translation` owns `content/i18n/`; `wing-audit` critiques
+  the finished whole.
 
 ## Output schema
 
-Abbreviated tree; **full field-by-field reference in `docs/SCHEMA.md`.**
+Abbreviated tree; full field-by-field reference in `docs/SCHEMA.md`.
 
 ```
 content/
@@ -132,9 +177,8 @@ content/
 ```yaml
 id: stephen-king
 name: Stephen King
-kind: author            # author | shared-universe | series
-description: >
-  One-line essence.
+kind: author                       # author | shared-universe | series
+description: One-line essence.
 authorIds: [stephen-king]
 themePreset: pulp-horror
 ```
@@ -145,21 +189,12 @@ id: stephen-king                   # global, stable; referenced by authorIds eve
 name: Stephen King
 aka: ["Steve King"]                # optional alternate names, for search
 born: 1947-09-21
-bio: >
-  Short factual bio, may use [[work:...|links]].
-pseudonyms:                        # optional; the person, published under other names
+bio: Short factual bio, may use [[work:...|links]].
+pseudonyms:
   - name: Richard Bachman
     note: When/why used; how it was revealed.
-lifeEvents:                        # author-life events live here, not in the franchise
-  - id: king-van-accident-1999
-    date: 1999-06-19
-    title: Near-fatal roadside accident
-    impact: high                   # low | med | high
-    description: >
-      What happened and how it colors the work around it.
-    spoilerAfter: null             # or a work id
-    sources: [https://...]
-sources: [https://...]
+lifeEvents: []                     # author-life events; press-archaeology fills these
+sources: ["https://..."]
 ```
 
 **works.yaml**
@@ -172,148 +207,41 @@ sources: [https://...]
   canonTier: core                  # core | extended | apocrypha
   publishedAs: "Richard Bachman"   # optional; only when the cover name differs
   withAuthorIds: [peter-straub]    # optional; collaborator author ids (must exist)
-  synopsis: >
-    Spoiler-free premise. May use [[work:...|links]].
-  externalIds:
-    openLibrary: OL...W
-    googleBooks: ...
-    wikidata: Q...
-  sources: [https://...]
+  synopsis: Spoiler-free premise. May use [[work:...|links]].
+  sources: ["https://..."]
 ```
 
-**eras.yaml**
-```yaml
-- id: birth-of-the-master
-  title: Birth of the Master
-  period: "1974-1979"
-  themes: [small-town horror, supernatural powers]
-  description: >
-    What defined this creative period.
-```
-
-**events.yaml** (franchise-specific + author-life)
-```yaml
-- id: king-car-accident-1999
-  date: 1999-06-19
-  title: Near-fatal car accident
-  scope: author-life               # author-life | world | culture | industry
-  reach: franchise                 # franchise (here) | global (put in global.yaml)
-  impact: high                     # low | med | high
-  description: >
-    What happened and how it colors the work around it.
-  spoilerAfter: null               # or a work id, per CONCEPT §9
-  sources: [https://...]
-```
-
-**global.yaml** (shared across all franchises)
-```yaml
-- id: sept-11-2001
-  date: 2001-09-11
-  title: September 11 attacks
-  scope: world
-  reach: global
-  impact: high
-  description: >
-    Neutral, franchise-agnostic summary.
-  sources: [https://...]
-```
-
-**orders.yaml** - additional orders only. The default publication-chronological / all-works order is derived from `works.yaml`; do NOT list it here.
-```yaml
-- id: stephen-king/dark-tower-connected
-  name: The Dark Tower - connected reading order
-  type: curated                    # chronological-inuniverse | author-recommended | curated | community
-  source: canon
-  rationale: >
-    Why a reader might choose this order over the default.
-  orderedWorkIds:
-    - stephen-king/the-gunslinger
-    - stephen-king/the-drawing-of-the-three
-  debated: []                      # note contested placements
-  sources: [https://...]
-```
-
-**theme.yaml** (see CONCEPT §6 - a preset a curator can tweak)
+**theme.yaml**
 ```yaml
 preset: pulp-horror
 palette: { bg: "#...", accent: "#...", ink: "#..." }
-typePairing: { display: "...", body: "..." }
-motif: 80s-paperback-grain
+displayFace: fraunces              # fraunces | spectral | sourceSerif - closed set
+signature: beam                    # beam | thread | rule | none - closed set
 ```
 
-## Field notes for research agents
+## Field notes
 
-Hard-won lessons from bundles already shipped (Stephen King was the first).
-Read these before starting; they are the difference between a mergeable PR and
-a rewrite.
+Only the lessons not already carried by CURATION.md or a specialist skill:
 
-1. **Slug the works before writing anything else.** Every file cross-references
-   work IDs, and IDs are immutable once merged. Draft the complete
-   `works.yaml` ID list first, sanity-check the slugs (lowercase, hyphenated,
-   drop leading articles only when the community does: `the-stand` keeps its
-   "the"; be consistent within the franchise), then write orders/events/
-   characters against that list. Renaming a slug halfway through poisons every
-   file you already wrote.
-2. **Completeness beats depth in works.yaml.** The default order derives from
-   it, so a missing work is a hole in the franchise's spine. A work entry with
-   just id/title/authorIds/published/canonTier and a one-line synopsis is fine;
-   you can skip externalIds entirely (the enrichment bot fills OpenLibrary IDs
-   and flags uncertain matches for humans). Novels, collections, novellas,
-   relevant nonfiction - all of it, each tiered honestly (core / extended /
-   apocrypha).
-3. **Year-precision dates are fine.** `published: 1987` is better than a
-   wrong full date. Use full dates only when a source states one.
-4. **The aura needs anchors, not volume.** Ten well-chosen impact-weighted
-   events beat forty trivia items. Apply "The aura editorial standard" above
-   to every entry: high = recolors the text, med = explains the shelf, low =
-   texture of the times, and an event that fails all three does not ship.
-   Source events from the ranked tiers (inner weather first, origin stories
-   second, world events only where the book answers them, feuds only with a
-   mark on the canon). Award seasons are usually not worth an entry at all.
-5. **Global vs franchise events: default to franchise.** Only push an event to
-   `events/global.yaml` when it is genuinely author-agnostic (a war, a
-   pandemic, a publishing-industry shift) AND likely to matter to several
-   franchises. Check global.yaml for an existing entry before adding; append at
-   the end and never edit others' entries (parallel franchise PRs merge into
-   this file, keep your diff append-only).
-6. **Non-English and sparse authors: flag, never fill.** For authors with thin
-   English-language coverage (the João Tordo case), prefer primary sources in
-   the original language (publisher pages, the author's own site, national
-   press). Where the record is ambiguous (reissues vs first editions, series
-   membership), record what you can verify and leave a `note:` calling out the
-   gap. A visibly incomplete bundle with honest notes is mergeable; a plausible
-   guess is not.
-7. **Portugal-market awareness.** For Portuguese authors, capture the original
-   Portuguese titles as canonical `title` values, note translations in the
-   synopsis or a `note:`, and expect store coverage via Wook/Bertrand/FNAC
-   rather than Amazon. Keep prose in English (the app's UI language) but never
-   translate a title that has no published translation.
-8. **Orders need receipts.** Every non-derived order must cite where it comes
-   from (the author's own site, a canonical community guide, a publisher page).
-   Capture the *debate* in `debated:` - contested placements are completionist
-   value, not noise. Do not invent a "curated" order yourself; you are
-   researching orders that exist.
-9. **Spoiler boundaries: pick the damaged work.** `spoilerAfter` is the work
-   whose *experience the detail damages* - usually the book where the reveal
-   lands, not where the referenced thing first appeared (Father Callahan's
-   Dark Tower reappearance is `spoilerAfter: wolves-of-the-calla`, not
-   `salems-lot`).
-10. **Theme: follow the design law.** CONCEPT §6 is non-negotiable - palette +
-    one modern display face + one signature element, readability first, no
-    genre costume. Look at `stephen-king/theme.yaml` for the calibration
-    ("literary-noir", the Beam). Propose; a curator tunes.
-11. **Validate before you finish.** Run `python scripts/validate.py` locally
-    and fix every error. A PR that fails CI on dangling references was not
-    finished.
-    YAML gotcha that has bitten a real bundle: **URLs with query strings break
-    flow sequences** - in `sources: [https://site.com/page?x=y]` the `?`
-    parses as a mapping-key indicator. Quote every URL in a flow sequence
-    (`sources: ["https://site.com/page?x=y"]`) or use block-style lists.
-12. **Your PR description is part of the deliverable.** List: capabilities the
-    bundle activates, coverage gaps, low-confidence items, contested decisions
-    you made (slugging, tiering, franchise boundaries), and sources you leaned
-    on hardest. The curator reviews your judgment, not just your YAML.
+1. **Global vs franchise events: default to franchise.** Push an event to
+   `events/global.yaml` only when it is genuinely author-agnostic AND likely
+   to matter to several franchises. Check for an existing entry first; append
+   at the end and never edit others' entries - parallel franchise PRs merge
+   into this file, keep your diff append-only.
+2. **Portugal-market awareness.** For Portuguese authors, the original
+   Portuguese titles are the canonical `title` values; expect store coverage
+   via Wook/Bertrand/FNAC rather than Amazon, and primary sources in
+   Portuguese (publisher pages, the author's site, national press). Keep prose
+   in English but never translate a title that has no published translation.
+3. **`published` is a bare year** - see SCHEMA.md; the validator rejects full
+   dates.
 
 ## Done means
 
-A reviewable PR: the franchise's files populated, global events appended (not duplicated), every non-obvious claim sourced, low-confidence/gap items called out for the curator, and stable IDs assigned deliberately. Canon is only canon after a curator merges it.
+The wing's structure exists and validates: slugs chosen deliberately, the
+first-draft bibliography honest about its gaps, author entities global,
+`subseries` settled with evidence, characters and connections mapped (or their
+absence stated), theme drawn from the implemented sets, and every scaffolded
+layer marked for its owning skill. The handoff states which capabilities the
+scaffold activates, what was rejected, and what the specialists must close.
+Canon is only canon after a curator merges it.
