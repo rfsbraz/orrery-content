@@ -1,6 +1,6 @@
 ---
 name: wing-audit
-description: Audit a completed franchise wing as a whole - the seams between layers no single agent can see, the content types no other skill owns (eras, theme, achievements, capabilities), density, staleness, and whether the reported numbers are true. Produces a prioritised findings report routed to the owning skills. Use as the final stage of /complete-author, before a wing ships, or when a wing reports 100% on everything.
+description: Audit a completed franchise wing as a whole - the seams between layers no single agent can see, the content types no other skill owns (eras, theme, achievements, capabilities), density, staleness, and whether the reported numbers are true. Produces a prioritised findings report routed to the owning skills. Use as the final stage of /author, before a wing ships, or when a wing reports 100% on everything.
 ---
 
 # wing-audit
@@ -13,7 +13,7 @@ Its output is not a fixed wing. Its output is **the next round of work**: a
 prioritised list of findings, each routed to the skill that owns it.
 
 Read `docs/SCHEMA.md` in full - you are auditing against the whole contract, not
-one section of it. Read `.claude/commands/complete-author.md`, because you are
+one section of it. Read `.claude/commands/author.md`, because you are
 its final stage and its gates are the promises you are testing. Read every skill
 in `.claude/skills/`, because your job is precisely the **seams between them**
 and anything you re-audit inside one of them is wasted effort.
