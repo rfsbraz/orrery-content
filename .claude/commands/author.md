@@ -92,6 +92,42 @@ write `franchise.yaml`** (run them sequentially, resonance first - startHere
 needs the final order set to point at), and **`spoiler-audit` and
 `visual-metadata` both write `works.yaml`**. Never pair either.
 
+## Model and effort per stage
+
+Set these on the `Agent` call. **Skill frontmatter carries no model field and
+nothing reads one** - writing it there would be inert data that looks like
+configuration, which is the failure this pipeline documents everywhere else.
+
+Tier by **failure mode, not by how much searching a stage does.** The
+expensive stages here are the ones deciding *what not to write*, and their
+errors are silent and green.
+
+| Stage | Model | Effort | Why |
+|---|---|---|---|
+| `franchise-research` | sonnet | high | Sets ids and tiers that are permanent. |
+| `completeness-auditor` | sonnet | high | First-publication vs the edition that sold is subtle source-criticism; a wrong year silently reorders every reader's walk. |
+| `press-archaeology` | sonnet | high | Two independent sources on living people's health, money and legal trouble. Judgment, not lookup. |
+| `world-events` | sonnet | medium | Small output, high bar: every entry renders on every wing. |
+| `event-resonance` | haiku | medium | Genuinely narrow. The engine already filtered by lifetime; the agent writes one sentence or excludes, and the default is exclude. |
+| `eras` | opus | high | The largest editorial claim we make, rendered full-bleed as if received. Telling received framing from our own opinion is the hardest call in the repo. |
+| `reading-orders` | sonnet | high | Admission tests plus the prequel spoiler vector. |
+| `spoiler-audit` | opus | high | Asymmetric and permanent: a false negative ruins a first read forever, and the agent must reason about what a reader has *not* read yet. |
+| `visual-metadata` | sonnet | low | Mostly mechanical fetching, but a watermarked scrape or an omnibus cover passes every automated check. Cut effort, not tier. |
+| `editions` | sonnet | medium | Check digits are arithmetic; a valid-but-wrong ISBN is a reader's money. |
+| `translation` | sonnet | high | pt-PT register is subtle and this layer has shipped Brazilianisms before. |
+| `wing-audit` | opus | xhigh | The critic. Its entire value is catching what every other stage missed. |
+
+**Prefer lowering `effort` over lowering the tier.** Sonnet at low effort is
+usually cheaper and safer than a smaller model at default: you keep the
+judgment and cut the deliberation. Reserve haiku for work whose failures are
+loud.
+
+**The haiku-shaped job is verification, not curation.** A sweep that fetches
+every `sources` URL and every image URL in a wing and reports dead links,
+blank OpenLibrary placeholders, wrong ISBN region prefixes and failed check
+digits needs no taste, parallelises freely, and fails loudly. Run it as a
+cheap final pass before integration; do not hand it any editorial decision.
+
 ## Stage order
 
 Within one run, stages that fire execute in this order:
