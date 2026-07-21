@@ -693,12 +693,20 @@ def main():
         r"|\bflagged rather than\b|\bleft (?:to|for) the\b",
         re.IGNORECASE,
     )
+    # Comments are not the only place this leaks: `note:` is curator-only prose
+    # and collects the same "a curator should decide" addressing. Reader-facing
+    # prose is NOT scanned - a Cosmere synopsis legitimately describes librarians
+    # "whose curators collect souls as readily as books", and a scan that cannot
+    # tell that from coordination would train everyone to ignore it.
+    in_note = False
     for path in glob.glob(os.path.join(ROOT, "content", "**", "*.yaml"), recursive=True):
         try:
             with open(path, encoding="utf-8") as f:
                 for n, line in enumerate(f, 1):
                     stripped = line.strip()
-                    if not stripped.startswith("#"):
+                    if re.match(r"^-?\s*\w+:", stripped):
+                        in_note = bool(re.match(r"^-?\s*note:", stripped))
+                    if not stripped.startswith("#") and not in_note:
                         continue
                     m = PROCESS_COMMENT.search(stripped)
                     if m:
