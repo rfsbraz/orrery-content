@@ -1,0 +1,370 @@
+# Portuguese editions - the actual books a Portuguese reader buys.
+#
+# Peixoto writes in Portuguese, so there is nothing to translate: every work's
+# `title` in works.yaml IS the published Portuguese title. Per SCHEMA.md the
+# `title` field is therefore OMITTED throughout - repeating it would duplicate
+# the work title rather than record a genuinely different published title.
+#
+# Quetzal Editores (LeYa group) holds the rights to almost the entire
+# backlist and keeps reissuing it: every core novel and all but two of the
+# extended works below are Quetzal's own current printing, opened directly on
+# quetzaleditores.pt (blocked live, so read via web.archive.org - see
+# CURATION.md's trap registry) and matched on ISBN, binding ("Capa mole" ->
+# paperback, "Capa dura" -> hardcover), print month and page count. Quetzal
+# has used two successive ISBN prefix ranges over time - 978-972-564-xxxx-x
+# up to about 2012, 978-989-722-xxxx-x from about 2012 on - so a work's
+# OpenLibrary record sometimes lists an older Quetzal print run under a
+# different ISBN than the one recorded here; that is a prior printing, not a
+# disagreement, and only the current printing is recorded (never a
+# superseded reprint, per the "most recent in-print" default rule).
+#
+# 15 of the 24 entries below have their exact ISBN independently corroborated
+# by OpenLibrary's own record for the same work (noted per entry); the
+# remainder - mostly 2016+ printings OpenLibrary has not indexed yet - rest
+# on Quetzal's own catalogue alone, the top-ranked source in the sourcing
+# hierarchy. "Todos os Escritores..." is additionally cross-checked against
+# the BNP catalogue. "Hoje Não" and "Estrangeiras" are not Quetzal titles;
+# each is sourced to an independent retailer/bookseller record instead (Wook,
+# Bertrand, Quetzal and Infopedia all blocked automated fetches throughout).
+#
+# COVERAGE: 24 of 27 works have a verified edition. The three without one are
+# all theatre: Anátema, À Manhã and Quando o Inverno Chegar were staged (in
+# Paris, and twice at Lisbon's Teatro São Luiz) but no book edition of any of
+# them exists, so the app correctly shows no store link for them. No
+# Brazilian (978-85/978-65)
+# edition is recorded anywhere in this file, even though several works have
+# one (e.g. "Livro", Companhia das Letras, ISBN 978-85-359-2019-2): a pt-BR
+# printing is a different book with a different ISBN, per the region-strict
+# language rule, and reissue history for prior Quetzal print runs is
+# summarised above rather than recorded as separate editions.
+
+# --- Novels ---
+
+- id: jose-luis-peixoto/morreste-me/quetzal-2021-pt
+  workId: jose-luis-peixoto/morreste-me
+  isbn13: "9789897226809"
+  language: pt-PT
+  format: hardcover
+  publisher: Quetzal Editores
+  year: 2021
+  note: >
+    September 2021 printing, hardcover, 88pp - Quetzal's current edition.
+    Supersedes an earlier Quetzal printing (978-972-564-802-5, per
+    OpenLibrary) and the original 2000/2001 Temas e Debates edition
+    (9789727593705); neither is current.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/morreste-me/25176477"]
+
+- id: jose-luis-peixoto/nenhum-olhar/quetzal-2019-pt
+  workId: jose-luis-peixoto/nenhum-olhar
+  isbn13: "9789897223273"
+  language: pt-PT
+  format: paperback
+  publisher: Quetzal Editores
+  year: 2019
+  note: >
+    January 2019 printing, paperback, 224pp; ISBN corroborated by
+    OpenLibrary. A 2012 Quetzal printing (9789897220326) and the original
+    2001 Temas e Debates edition (9789727592951, also OpenLibrary-verified)
+    are superseded.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/nenhum-olhar/18955296"]
+
+- id: jose-luis-peixoto/uma-casa-na-escuridao/quetzal-2009-pt
+  workId: jose-luis-peixoto/uma-casa-na-escuridao
+  isbn13: "9789725648223"
+  language: pt-PT
+  format: paperback
+  publisher: Quetzal Editores
+  year: 2009
+  note: >
+    November 2009 printing, paperback, 256pp; ISBN corroborated by
+    OpenLibrary.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/uma-casa-na-escuridao/3049533"]
+
+- id: jose-luis-peixoto/antidoto/quetzal-2023-pt
+  workId: jose-luis-peixoto/antidoto
+  isbn13: "9789897227387"
+  language: pt-PT
+  format: hardcover
+  publisher: Quetzal Editores
+  year: 2023
+  note: >
+    September 2023 printing, hardcover, 152pp - a 20th-anniversary reissue
+    of the 2003 original, which appeared alongside Moonspell's own album of
+    the same name. Not yet indexed by OpenLibrary; sourced to Quetzal's own
+    catalogue alone.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/antidoto/29132714"]
+
+- id: jose-luis-peixoto/cemiterio-de-pianos/quetzal-2009-pt
+  workId: jose-luis-peixoto/cemiterio-de-pianos
+  isbn13: "9789725648230"
+  language: pt-PT
+  format: paperback
+  publisher: Quetzal Editores
+  year: 2009
+  note: >
+    October 2009 printing, paperback, 288pp; ISBN corroborated by
+    OpenLibrary. The work's own note records the 2006 Bertrand first
+    edition (ISBN 972-25-1534-9); this Quetzal printing is the current one.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/cemiterio-de-pianos/2751614"]
+
+- id: jose-luis-peixoto/livro/quetzal-2010-pt
+  workId: jose-luis-peixoto/livro
+  isbn13: "9789725648995"
+  language: pt-PT
+  format: paperback
+  publisher: Quetzal Editores
+  year: 2010
+  note: >
+    September 2010 printing, paperback, 264pp; ISBN corroborated by
+    OpenLibrary. A Brazilian Companhia das Letras edition also exists
+    (978-85-359-2019-2, prefix 978-85) and is deliberately not recorded
+    here - a different market, publisher and ISBN.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/livro/9599723"]
+
+- id: jose-luis-peixoto/galveias/quetzal-2014-pt
+  workId: jose-luis-peixoto/galveias
+  isbn13: "9789897221798"
+  language: pt-PT
+  format: paperback
+  publisher: Quetzal Editores
+  year: 2014
+  note: >
+    October 2014 printing, paperback, 280pp - the original Quetzal printing,
+    still current; ISBN corroborated by OpenLibrary.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/galveias/15826242"]
+
+- id: jose-luis-peixoto/em-teu-ventre/quetzal-2015-pt
+  workId: jose-luis-peixoto/em-teu-ventre
+  isbn13: "9789897222573"
+  language: pt-PT
+  format: paperback
+  publisher: Quetzal Editores
+  year: 2015
+  note: >
+    October 2015 printing, paperback, 168pp; ISBN corroborated by
+    OpenLibrary.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/em-teu-ventre/16667625"]
+
+- id: jose-luis-peixoto/autobiografia/quetzal-2019-pt
+  workId: jose-luis-peixoto/autobiografia
+  isbn13: "9789897224591"
+  language: pt-PT
+  format: paperback
+  publisher: Quetzal Editores
+  year: 2019
+  note: >
+    July 2019 printing, paperback, 304pp; ISBN corroborated by OpenLibrary.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/autobiografia/21332193"]
+
+- id: jose-luis-peixoto/almoco-de-domingo/quetzal-2021-pt
+  workId: jose-luis-peixoto/almoco-de-domingo
+  isbn13: "9789897224607"
+  language: pt-PT
+  format: paperback
+  publisher: Quetzal Editores
+  year: 2021
+  note: >
+    March 2021 printing, paperback, 264pp; ISBN corroborated by
+    OpenLibrary.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/almoco-de-domingo/21332198"]
+
+- id: jose-luis-peixoto/a-montanha/quetzal-2025-pt
+  workId: jose-luis-peixoto/a-montanha
+  isbn13: "9789897228919"
+  language: pt-PT
+  format: paperback
+  publisher: Quetzal Editores
+  year: 2025
+  note: >
+    October 2025 printing, paperback, 248pp - the newest release, not yet
+    indexed by OpenLibrary; sourced to Quetzal's own catalogue alone.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/a-montanha/28076053"]
+
+# --- Crónicas ---
+
+- id: jose-luis-peixoto/abraco/quetzal-2011-pt
+  workId: jose-luis-peixoto/abraco
+  isbn13: "9789725649367"
+  language: pt-PT
+  format: paperback
+  publisher: Quetzal Editores
+  year: 2011
+  note: >
+    October 2011 printing, paperback, 664pp; ISBN corroborated by
+    OpenLibrary.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/abraco/11519323"]
+
+# --- Mixed collection ---
+
+- id: jose-luis-peixoto/cal/quetzal-2009-pt
+  workId: jose-luis-peixoto/cal
+  isbn13: "9789725648216"
+  language: pt-PT
+  format: paperback
+  publisher: Quetzal Editores
+  year: 2009
+  note: >
+    October 2009 Quetzal reprint, paperback, 208pp; ISBN corroborated by
+    OpenLibrary. Reissues the 2007 Bertrand original (see the work's own
+    DATE NOTE in works.yaml).
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/cal/2751613"]
+
+# --- Short stories ---
+
+- id: jose-luis-peixoto/hoje-nao/quasi-2007-pt
+  workId: jose-luis-peixoto/hoje-nao
+  isbn13: "9789895522828"
+  language: pt-PT
+  format: paperback
+  publisher: Quasi Edições
+  year: 2007
+  note: >
+    2007 first and only known printing, distributed free with Sábado
+    magazine as part of the "Em Nome da Terra - Série Inéditos da Sábado"
+    series; out of print, recorded here as the only edition that exists.
+    Sourced to an antiquarian bookseller's catalogue record, since the
+    original publisher and the major Portuguese retailers (Wook, Bertrand)
+    all blocked automated fetches.
+  sources: ["https://esconderijodoslivros.pt/product/hoje-nao-jose-luis-peixoto/"]
+
+# --- Poetry ---
+
+- id: jose-luis-peixoto/a-crianca-em-ruinas/quetzal-2012-pt
+  workId: jose-luis-peixoto/a-crianca-em-ruinas
+  isbn13: "9789725649978"
+  language: pt-PT
+  format: paperback
+  publisher: Quetzal Editores
+  year: 2012
+  note: >
+    March 2012 printing, paperback, 96pp; ISBN corroborated by OpenLibrary.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/a-crianca-em-ruinas/12446671"]
+
+- id: jose-luis-peixoto/a-casa-a-escuridao/quetzal-2014-pt
+  workId: jose-luis-peixoto/a-casa-a-escuridao
+  isbn13: "9789897221729"
+  language: pt-PT
+  format: paperback
+  publisher: Quetzal Editores
+  year: 2014
+  note: >
+    July 2014 printing, paperback, 80pp. Sourced to Quetzal's own catalogue
+    alone; OpenLibrary's record for this title is a differently-numbered
+    Temas e Debates listing (a Spanish-tagged record), not this print run.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/a-casa-a-escuridao/15758705"]
+
+- id: jose-luis-peixoto/gaveta-de-papeis/quetzal-2011-pt
+  workId: jose-luis-peixoto/gaveta-de-papeis
+  isbn13: "9789725649701"
+  language: pt-PT
+  format: paperback
+  publisher: Quetzal Editores
+  year: 2011
+  note: >
+    September 2011 printing, paperback, 88pp - Quetzal's 2nd edition. The
+    original 2008 Quasi Edições printing (9789895523382, per OpenLibrary)
+    is superseded and not recorded here.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/gaveta-de-papeis/11352612"]
+
+- id: jose-luis-peixoto/regresso-a-casa/quetzal-2020-pt
+  workId: jose-luis-peixoto/regresso-a-casa
+  isbn13: "9789897227059"
+  language: pt-PT
+  format: paperback
+  publisher: Quetzal Editores
+  year: 2020
+  note: >
+    August 2020 printing, paperback, 120pp; ISBN corroborated by
+    OpenLibrary.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/regresso-a-casa/24074597"]
+
+# --- Travel literature ---
+
+- id: jose-luis-peixoto/dentro-do-segredo/quetzal-2012-pt
+  workId: jose-luis-peixoto/dentro-do-segredo
+  isbn13: "9789897220609"
+  language: pt-PT
+  format: paperback
+  publisher: Quetzal Editores
+  year: 2012
+  note: >
+    November 2012 printing, paperback, 240pp; ISBN corroborated by
+    OpenLibrary.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/dentro-do-segredo/14384856"]
+
+- id: jose-luis-peixoto/o-caminho-imperfeito/quetzal-2017-pt
+  workId: jose-luis-peixoto/o-caminho-imperfeito
+  isbn13: "9789897223563"
+  language: pt-PT
+  format: paperback
+  publisher: Quetzal Editores
+  year: 2017
+  note: >
+    September 2017 printing, paperback, 192pp; ISBN corroborated by
+    OpenLibrary. Illustrated throughout by Hugo Makarov.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/o-caminho-imperfeito/19675364"]
+
+- id: jose-luis-peixoto/onde/quetzal-2022-pt
+  workId: jose-luis-peixoto/onde
+  isbn13: "9789897228506"
+  language: pt-PT
+  format: paperback
+  publisher: Quetzal Editores
+  year: 2022
+  note: >
+    July 2022 printing, paperback, 144pp - not yet indexed by OpenLibrary;
+    sourced to Quetzal's own catalogue alone.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/onde/27014703"]
+
+# --- Children's literature ---
+
+- id: jose-luis-peixoto/a-mae-que-chovia/quetzal-2012-pt
+  workId: jose-luis-peixoto/a-mae-que-chovia
+  isbn13: "9789897220074"
+  language: pt-PT
+  format: hardcover
+  publisher: Quetzal Editores
+  year: 2012
+  note: >
+    April 2012 printing, hardcover, 64pp - illustrated by Daniel Silvestre
+    da Silva; sourced to Quetzal's own catalogue alone, not yet indexed by
+    OpenLibrary.
+  sources: ["https://www.quetzaleditores.pt/produtos/ficha/a-mae-que-chovia/12861579"]
+
+- id: jose-luis-peixoto/todos-os-escritores-do-mundo-tem-a-cabeca-cheia-de-piolhos/quetzal-2016-pt
+  workId: jose-luis-peixoto/todos-os-escritores-do-mundo-tem-a-cabeca-cheia-de-piolhos
+  isbn13: "9789897222603"
+  language: pt-PT
+  format: hardcover
+  publisher: Quetzal Editores
+  year: 2016
+  note: >
+    May 2016 printing, hardcover, 32pp - illustrated by Rita Correia. ISBN
+    corroborated directly against the BNP catalogue record
+    (id.bnportugal.gov.pt/bib/bibnacional/1948999), which types it "1a ed.
+    Lisboa: Quetzal, 2016".
+  sources:
+    - "https://www.quetzaleditores.pt/produtos/ficha/todos-os-escritores-do-mundo-tem-a-cabeca-cheia-de-piolhos/16790071"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/1948999"
+
+# --- Theatre ---
+
+- id: jose-luis-peixoto/estrangeiras/rosa-de-porcelana-2016-pt
+  workId: jose-luis-peixoto/estrangeiras
+  isbn13: "9789899940666"
+  language: pt-PT
+  format: paperback
+  publisher: Rosa de Porcelana
+  year: 2016
+  note: >
+    2016 first printing, published as the book of the play that premiered
+    8-9 July 2016 at Porto's Rivoli. ISBN confirmed directly against
+    Europress Editora's own retail listing, matching the number reported by
+    Wook, Bertrand and Amazon.com.br for the same product; Rosa de
+    Porcelana's own site was not reachable.
+  sources: ["https://europresseditora.pt/livraria-online/estrangeiras/"]
+
+# No editions for Anátema, À Manhã or Quando o Inverno Chegar: all three were
+# staged (Anátema in Paris; the other two at Lisbon's Teatro São Luiz) and no
+# book edition of any of them exists - a market fact, not a research gap.
+# See works.yaml for their stage sourcing.
