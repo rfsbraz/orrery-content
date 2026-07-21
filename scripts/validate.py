@@ -105,10 +105,48 @@ def era_span(period):
     return (start, start)
 
 
+class StrictLoader(yaml.SafeLoader):
+    """SafeLoader that rejects duplicate mapping keys.
+
+    Subclasses SafeLoader deliberately: `yaml.load(f, StrictLoader)` is exactly
+    as safe as `yaml.safe_load(f)` (which is itself `load(stream, SafeLoader)`)
+    because no constructor for arbitrary Python types is registered. Do not
+    swap the base class for `yaml.Loader`.
+
+    PyYAML silently keeps the LAST value for a repeated key, so a file with two
+    `note:` blocks loads clean here and every check goes green - while the app's
+    JS parser (`yaml`) is strict, throws, and takes the whole page down. That
+    exact split shipped once: two stages each appended a `note:` to the same
+    work, Python was happy, and the app could not parse the wing at all.
+
+    The validator must fail wherever the real consumer fails.
+    """
+
+
+def _no_duplicate_keys(loader, node, deep=False):
+    mapping = {}
+    for key_node, value_node in node.value:
+        key = loader.construct_object(key_node, deep=deep)
+        if key in mapping:
+            raise yaml.constructor.ConstructorError(
+                None,
+                None,
+                f"duplicate key '{key}' (the app's parser rejects this file)",
+                key_node.start_mark,
+            )
+        mapping[key] = loader.construct_object(value_node, deep=deep)
+    return mapping
+
+
+StrictLoader.add_constructor(
+    yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, _no_duplicate_keys
+)
+
+
 def load(path):
     try:
         with open(path, encoding="utf-8") as f:
-            return yaml.safe_load(f)
+            return yaml.load(f, StrictLoader)
     except Exception as e:
         err(path, f"YAML parse error: {e}")
         return None
