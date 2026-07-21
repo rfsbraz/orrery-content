@@ -4,25 +4,28 @@
 #
 # Cross-checked against Portuguese and English Wikipedia (both fetched
 # directly; the two lists agree on every date but one, noted below),
-# Portal da Literatura's bibliography, and, for individual titles, the
-# publisher/venue page cited on that entry.
+# Portal da Literatura's bibliography, the author's own bibliography page
+# (joseluispeixoto.net, the only one of the four to list the theatre play
+# Estrangeiras), and, for individual titles, the publisher/venue page cited
+# on that entry.
 #
 # canonTier convention for this franchise:
 #   core      - the 11 novels: the narrative-fiction spine the prizes and
 #               "Principais trabalhos" tag on Wikipedia's own infobox are
 #               built from.
 #   extended  - poetry (4 books), travel writing (3, including "Onde" - see
-#               its own note), children's literature (2), theatre (3), the
+#               its own note), children's literature (2), theatre (4), the
 #               one short-story chapbook (Hoje Não), the one mixed
 #               collection (Cal), and the one crónicas collection (Abraço).
 #               Genuinely his, off the novel-reading spine.
 # No apocrypha entries: no anthology contribution or introduction-only credit
-# is recorded. Poetry anthologies containing single poems by him, if any
-# exist, are not recorded here.
+# is recorded. A search for poetry-anthology contributions turned up prose
+# poems and a preface to another author's anthology but no book-length
+# contribution of his own to record here.
 #
-# DATE NOTE: "Cal" is dated 2007 by both Portuguese Wikipedia and its own
-# publisher/bookshop listings; English Wikipedia alone gives 2008. The two
-# agreeing sources are followed here.
+# DATE NOTE: "Cal" is dated 2007 by Portuguese Wikipedia, its own
+# publisher/bookshop listings, and the author's own bibliography page; English
+# Wikipedia alone gives 2008. The three agreeing sources are followed here.
 #
 # NOT INCLUDED: periodical crónicas for the Jornal de Letras, Visão, GQ,
 # Time Out and Notícias Magazine that were never gathered into a book beyond
@@ -232,6 +235,7 @@
     theme rather than a single form.
   sources:
     - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+    - https://www.joseluispeixoto.net/tag/bibliografia
 
 # --- Short stories ---
 
@@ -298,9 +302,15 @@
   subseries: null
   canonTier: extended
   synopsis: >
-    A poetry collection; no further thematic detail is recorded here.
+    A poetry collection written in confinement, mapping the four walls of a
+    house and the memories held there: solitude, closed doors, a mother, a
+    father, childhood, and a homesickness that runs alongside a restless
+    urge to travel the whole world and always return. Won the Prémio Livro
+    do Ano Bertrand 2020 in poetry; his first return to the form in twelve
+    years.
   sources:
-    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+    - https://www.quetzaleditores.pt/produtos/ficha/regresso-a-casa/24074597
+    - https://www.dnoticias.pt/2020/8/17/70943-jose-luis-peixoto-volta-a-poesia-com-o-livro-regresso-a-casa
 
 # --- Travel literature ---
 
@@ -347,9 +357,13 @@
     Portuguese Wikipedia's own bibliography files this under "Ficção", but
     the publisher's and press's own description (a "roteiro literário" of
     poetic-prose fragments, no characters or plot) reads as travel writing
-    rather than a novel, so it is tiered and grouped here instead.
+    rather than a novel, so it is tiered and grouped here instead. The
+    author's own bibliography page agrees it is not a "Romance": it tags
+    "Onde" as "Narrativa", the only title on that page not sorted into either
+    his novels or his two other travel books ("Viagens").
   sources:
     - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+    - https://www.joseluispeixoto.net/tag/bibliografia
 
 # --- Children's literature ---
 
@@ -374,9 +388,14 @@
   subseries: null
   canonTier: extended
   synopsis: >
-    A children's book; no further plot detail is recorded here.
+    A permanent itch on the heads of every writer in the world, that no
+    anti-lice shampoo can calm: the affliction makes front-page news and
+    intrigues the readers of this book and every other, in a parable about
+    text, reading, books, and the people who write them. Illustrated by
+    Rita Correia.
   sources:
-    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+    - https://www.quetzaleditores.pt/produtos/ficha/todos-os-escritores-do-mundo-tem-a-cabeca-cheia-de-piolhos/16790071
+    - http://id.bnportugal.gov.pt/bib/bibnacional/1948999
 
 # --- Theatre ---
 
@@ -422,3 +441,23 @@
     venue's 2006-2007 season.
   sources:
     - https://www.teatrosaoluiz.pt/temporada/2006-2007/
+
+- id: jose-luis-peixoto/estrangeiras
+  title: "Estrangeiras"
+  authorIds: [jose-luis-peixoto]
+  published: 2016
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A Portuguese, a Brazilian and a Cape Verdean woman, trying to enter the
+    United States, are held together for hours in an airport border-police
+    room, and gradually reveal what each thinks of the others and of her own
+    country: a play about the shared and divided spaces of one language
+    spread across the world. A Teatro Municipal do Porto coproduction
+    directed by João Branco, premiered 8-9 July 2016 at the Rivoli's small
+    auditorium, then staged in Brazil and Cape Verde; published as a book by
+    Rosa de Porcelana.
+  sources:
+    - https://www.teatromunicipaldoporto.pt/pt/programa/joao-branco-estrangeiras-estreia-coproducao/
+    - https://quetzal.blogs.sapo.pt/estrangeiras-de-jose-luis-peixoto-esta-549114
+    - https://observalinguaportuguesa.org/jose-luis-peixoto-lanca-em-livro-peca-teatral-estrangeiras-em-cabo-verde/
