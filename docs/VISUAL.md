@@ -13,8 +13,13 @@ it is wrong even when it is beautiful.
 - warm, lightly textured background; visible paper fibre
 - strong negative space, uncrowded
 - literary rather than technological
-- subtle celestial or orbital geometry, used sparingly and never as decoration
-  for its own sake
+- **the orrery itself, in every sketch**: two or three faint concentric orbital
+  arcs sweeping across the open sky or empty ground, with a few small nodes on
+  them. Drawn as fine ruled-compass lines in the same ink as everything else,
+  barely darker than the paper. This is the one element every asset in the
+  catalogue shares - it is what makes a Pratchett sketch and a Mãe sketch
+  belong to the same publication - so it is not optional, and it never
+  dominates: if a reader notices it before the subject, it is too strong
 - no photorealism, no glossy 3D, no game concept art
 - **no typography inside the image, ever** (the app sets its own type over it)
 
@@ -54,9 +59,9 @@ not the person.
 
 | Asset | Size | Background | References | Renders in |
 |---|---|---|---|---|
-| `era-plate` | `1536x1024` | opaque, wing paper tone | no | the era plate in `river.tsx`, full-bleed behind the title |
-| `life-event` | `1024x1024` | opaque, wing paper tone | no | an event seam in the river / timeline |
-| `franchise-event` | `1024x1024` | opaque, wing paper tone | no | an event seam in the river / timeline |
+| `era-plate` | `1536x1024` | opaque, wing paper tone | no | full-bleed behind the era title, masked by the app (`variant="plate"`) |
+| `life-event` | `1024x1024` | **transparent** | no | the illustrated event card in `river.tsx`, laid beside the prose |
+| `franchise-event` | `1024x1024` | **transparent** | no | the illustrated event card in `river.tsx` |
 | `world-event` | `1024x1024` | **transparent** | no | every wing that carries the event, **tinted with that wing's `accent`** |
 | `work-cover` | - | - | - | not generated: covers are licensed or absent (see `visual-metadata`) |
 | `author-portrait` | - | - | - | not generated: see §3 |
@@ -81,23 +86,34 @@ In order, always:
 For a **world event**, skip step 2 entirely and say "neutral house style, no
 author-specific motifs, transparent background".
 
-## 5a. The app owns the edges
+## 5a. A sketch is a piece of paper lying on the page
 
-**Never prompt an edge treatment** - no vignette, no fade, no torn paper, no
-border, no frame, no drop shadow. Fill the frame edge to edge and let the
-composition breathe inside it.
+Event sketches are **not** rectangular pictures. Each one is a sheet of aged
+paper laid on the page:
 
-The dissolve at the edges is a CSS alpha mask in `components/sketch.tsx`, and
-it belongs there for reasons the prompt cannot satisfy: an edge baked into the
-pixels can only fade to one colour, while these images are drawn on warm paper
-and a wing's page may be near-black umber or pale, so a baked fade reads as a
-card floating on the page. The mask fades to whatever is actually behind it,
-identically on every wing, and can be retuned without regenerating anything. A
-prompted vignette also comes out slightly different every generation, which is
-the "different illustration system" failure this document exists to prevent.
+- **A torn, deckled edge** on all four sides, irregular and hand-made, the
+  fibres visible where it tore. Never a straight cut, never a frame or border.
+- **Transparent everywhere outside the paper.** The page shows through the
+  tear, so the same asset works on a near-black wing and a pale one. This is
+  the part that must not be baked: the drawn edge is artwork, the background
+  behind it is the app's.
+- **One or two objects breaking the lower edge**, drawn in front of the paper
+  and overlapping it, casting a soft shadow onto it - a compass and a strapped
+  journal, a folded newspaper and a flower, whatever the subject earns. This is
+  what makes the sheet sit ON the page rather than inside a box, and the app
+  lets it spill past the card.
 
-The same rule covers anything else the layout can do better than the model:
-cropping, rounding, tinting, opacity. Ask for the picture; let the app place it.
+An earlier version of this document said never to prompt an edge, and had the
+app fade every sketch with a CSS mask. That was wrong in a way worth recording:
+a fade cannot disguise a rectangle of cream paper on a near-black page - only a
+drawn edge can - and a deckled tear with objects breaking it cannot be faked in
+CSS at all. What survives of the old rule is its reason, satisfied differently:
+**nothing in the image may assume what colour is behind it.** So no vignette,
+no drop shadow onto the background, no painted-in page colour, no rounded
+rectangle. Draw the paper and the objects; leave everything else transparent.
+
+Era plates are the exception: they are a full-bleed backdrop behind a title,
+so they fill their frame edge to edge and the app masks them (`variant="plate"`).
 
 ## 6. Shared negative prompt
 
@@ -108,9 +124,10 @@ Append to every prompt:
 > gradients; thick black outlines; crowded compositions; any text, lettering,
 > captions, signatures or watermarks; publisher logos; reproductions of real
 > book covers; UI elements; decorative elements covering faces; excessive stars
-> and planets; literal outer-space imagery unrelated to the subject; vignettes,
-> faded or torn edges, borders, frames, drop shadows or any deliberate edge
-> treatment (the app fades the edges itself).
+> and planets; literal outer-space imagery unrelated to the subject; vignettes;
+> borders, frames or rounded rectangles; any painted-in background colour behind
+> the paper; drop shadows cast onto the background rather than onto the paper
+> itself.
 
 Plus the wing's `art.avoid`, which names that author's specific cliche.
 
