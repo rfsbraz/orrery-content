@@ -1,0 +1,112 @@
+stage: eras
+slug: jose-luis-peixoto
+status: eras.yaml written as an empty list; validate.py exit 0, sync_skill_blocks.py exit 0
+
+result: >
+  No era shipped. eras.yaml exists and parses as [], with a header comment
+  recording what was checked and why the slot is empty. The scaffold was right:
+  this career has no received periodisation. All 27 works sit outside any era,
+  which is the honest picture rather than a coverage defect.
+
+eras_written: none
+
+rejected:
+  - candidate: the author's own "ciclo" (Abraço, 2011)
+    rung: 1
+    why: >
+      Real quote, insufficient framing. Asked "O 'Abraço' é o fechar de um
+      ciclo?" he answers "Sim, este novo livro fecha um ciclo. Não porque
+      abandone alguns temas que, se calhar, não tenho completamente
+      resolvidos". Unnamed, no start date, the framing the interviewer's. Two
+      answers later, on the Alentejo: "ainda só comecei a escrever sobre o
+      tema".
+    source: https://www.joseluispeixoto.net/52928.html
+
+  - candidate: the father's-death cycle, Morreste-me (2000) to A Montanha (2025)
+    rung: 1, proposed by the press
+    why: >
+      The strongest-looking candidate and a clean negative. Diário de Notícias
+      writes that A Montanha "(tenta) fecha o ciclo sobre a dor provocada pelo
+      desaparecimento paternal", then puts it to him. He declines: "Houve uma
+      altura em que pensei que com este livro dizia tudo o que havia sobre esse
+      tema, mas não sei se será assim", and "nenhum esgotou o seu tema".
+      Shipping it would assert a periodisation its subject refuses.
+    source: https://www.dn.pt/cultura/o-romance-sobre-a-pior-doena
+
+  - candidate: an Alentejo cycle or trilogy (Nenhum Olhar, Cal, Galveias)
+    rung: 2
+    why: >
+      Searched the exact phrases "ciclo alentejano", "trilogia alentejana",
+      "romances alentejanos" and the three-title combination. Nothing names
+      them; the Alentejo is a recurring setting, not a period. Also fails on
+      shape: fourteen years apart, unspannable without swallowing a dozen
+      unrelated works.
+
+  - candidate: the travel writing as a named phase (2012, 2017, 2022)
+    rung: 2 and 4
+    why: >
+      Recorded only as his "primeira incursão na literatura de viagens" and its
+      successors. Unnamed, and a parallel track rather than a phase: four
+      novels fall in the same years.
+
+  - candidate: poetry and fiction as separate tracks
+    why: >
+      His bibliography classifies by genre, a shelf taxonomy. Eras are
+      chronological spans, so genre tracks would overlap every year and break
+      era membership regardless of sourcing.
+
+  - candidate: publisher progression (Temas e Debates, Bertrand, Quetzal)
+    rung: 4
+    why: >
+      Rejected on fit, per the Colin Smythe trap. The sequence came only from
+      an aggregated search summary whose underlying records I did not open, so
+      no date is asserted. Even granting it, the three imprints sit inside one
+      group and nobody reads this career by its publisher. Kept out of the
+      content file.
+
+  - candidate: an academic periodisation
+    rung: 2
+    why: >
+      Portuguese and Brazilian criticism treats the works one at a time
+      (metafiction in Livro, mourning in Morreste-me, the tragic in Nenhum
+      Olhar). Two whole-body theses exist (Rego, Poitiers 2015; Maia, PUC-SP
+      2016); neither surfaced as naming phases. One review calls Livro "a
+      grande obra da maturidade", an evaluative verdict on a single book and
+      exactly what rule 3 forbids as an era title.
+
+languages_searched: >
+  Portuguese throughout (interviews, DN, Renascença, O Postigo, Portal da
+  Literatura, the author's site via wayback, Brazilian journals). English only
+  as cross-check.
+
+sources_that_refused: >
+  quetzaleditores.pt 403s the author page even with the browser user agent.
+  joseluispeixoto.net reached via web.archive.org, its certificate having
+  expired. researchgate and academia.edu PDFs not fetched: both gate automated
+  access and the abstracts showed single-work scope. wook, bertrand, infopedia
+  and publico not retested; nothing here depended on them.
+
+uncovered_years: >
+  All of 2000-2025, and honest. validate.py raises no "outside every era"
+  warning for this wing and no new warning mentions the slug.
+
+verification: >
+  validate.py exit 0 read directly. The comment scanner was negative-controlled
+  on this file: replacing line 1 with "Left to the curator for a future pass"
+  made it fire, restoring the real text silenced it, so its silence is
+  evidence. yaml.safe_load confirms the file yields [] and not None.
+  i18n_coverage unchanged: an empty list adds no prose, so no overlay is owed.
+
+curator_questions:
+  - >
+    None are genuinely a curator call; the record supports the ruling. My
+    weakest decision, named: shipping eras.yaml at all rather than leaving it
+    absent. Both are supported states. The file earns its place by storing the
+    negative result where the next reader will look, so the Abraço and A
+    Montanha quotes are not re-researched and, worse, re-read as a
+    periodisation.
+
+tool_calls: >
+  17 total; 9 touched the network - 7 WebSearch queries and 4 batched fetch.py
+  invocations covering 16 URL fetches rather than 16 separate calls, several
+  served from the cache earlier stages left.
