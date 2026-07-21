@@ -75,6 +75,10 @@ features:
 id: stephen-king
 name: Stephen King
 kind: author                    # author | shared-universe | series
+                                # author is the norm: a wing spans its
+                                # author's COMPLETE works (universes/series
+                                # are subseries inside it, never the wing
+                                # boundary - see franchise-research)
 description: >
   One-line essence. May use [[work:...|links]].
 authorIds: [stephen-king]       # global author ids (content/authors/)

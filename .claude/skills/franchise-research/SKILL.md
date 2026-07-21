@@ -28,10 +28,31 @@ State in your handoff which capabilities the scaffold activates and why.
 
 ## Scoping the franchise
 
-Confirm what it is (`kind: author | shared-universe | series`), where its
-boundaries lie, and its `canonTier` conventions (what counts as core vs
-extended vs apocrypha - completionists care). Pick `<franchise-slug>`
-deliberately (lowercase, hyphenated, accents stripped); ids are permanent.
+**A wing is an author's complete published body of work - always** (curator
+ruling, 2026-07-21). The derived main order spans everything they published;
+a shared universe or series lives INSIDE the wing as `subseries`, connections
+and characters, never as the wing's boundary. Do not scope a wing to one
+universe (the Cosmere) or one series (The Wheel of Time) even when it is what
+the author is famous for - that is what `subseries` is for, and the Stephen
+King wing (95 works, The Dark Tower as a thread) is the model. `kind: author`
+is therefore the norm; `shared-universe`/`series` remain only for a wing that
+genuinely has no single author to span.
+
+Two corollaries:
+
+- **A continued universe belongs to its originating author's wing.** The
+  Wheel of Time is Robert Jordan's wing; the Sanderson-finished volumes stay
+  there as `withAuthorIds` works. A collaborator's own wing never duplicates
+  them - a work lives in exactly one franchise - so cross-reference from the
+  collaborator's bio/connections instead.
+- **A cross-author collaboration** (Good Omens) is included in the wing with
+  `withAuthorIds` and `authorRole` per the multi-author rules below.
+
+Also confirm the `canonTier` conventions (what counts as core vs extended vs
+apocrypha - completionists care). Pick `<franchise-slug>` deliberately
+(lowercase, hyphenated, accents stripped); ids are permanent - which also
+means an existing universe-scoped wing being widened to its author KEEPS its
+slug and every existing work id, and new works take the same prefix.
 
 ## Work ids: slug the works before writing anything else
 
