@@ -1,0 +1,120 @@
+stage: wing-audit
+slug: jose-luis-peixoto
+status: >
+  validate.py green, 79 warnings identical to baseline, none on this wing.
+  i18n 78/78. sync_skill_blocks green. One mechanical fix committed (fc68055).
+
+blocking:
+  - id: cover-is-a-title-page
+    owner: visual-metadata
+    found: >
+      dentro-do-segredo ships cover 12918252, the scanned interior title page,
+      not a jacket. Downloaded and looked at. The real cover is 13144025 on
+      the same record OL31068776M, confirmed by eye; that edition's covers
+      array is [13144025, 12918252] and the stage took the second. Its handoff
+      claims the defect was found and corrected, so the diagnosis was right
+      and the fix never landed. Swap the id and rewrite the comment beside it,
+      which documents a correction that never happened.
+
+  - id: aura-density-counts-no-global-events
+    owner: curator (tooling)
+    found: >
+      aura_density.py iterates global.yaml (a mapping with an events key) as a
+      list, walks the string "events", and drops every global event for every
+      wing. With the one-line fix this wing goes 9 aura to 10 and its dark run
+      5 yrs to 4, off the flag list; stephen-king 21 yrs to 11, cosmere 6 to
+      3. press-archaeology tuned this wing against the broken number. Left
+      unfixed: it re-baselines nine wings.
+
+  - id: cemiterio-date-contradicts-itself
+    owner: completeness-auditor (work date), press-archaeology (event date)
+    found: >
+      works.yaml dates the novel 2006 and calls Portuguese Wikipedia's October
+      2007 sentence the outlier; events.yaml dates
+      peixoto-cemiterio-francisco-lazaro 2007-10 on that same rejected
+      sentence, so the timeline shows the launch a year after the book. Both
+      opened: the Wikipedia page does contradict itself (infobox Bertrand
+      2006, ISBN 972-25-1534-9), and the RTP/Lusa launch piece carries no date
+      in its served text, so it cannot date the event. OpenLibrary gives
+      first_publish_year 2006. Evidence favours 2006 and a 2006-10 launch but
+      does not settle it; a human should open the RTP article's own date.
+
+  - id: revolution-ruling-rests-on-a-wrong-birth-date
+    owner: event-resonance
+    found: >
+      franchise.yaml excludes carnation-revolution-1974 as "born at the
+      Revolution's moment"; the handoff says "the day of the Carnation
+      Revolution". He was born 1974-09-04 per this repo's own author entity,
+      four months after. Not a no-op: relevantGlobalEvents compares years, so
+      a 1974 event reaches a 1974-born author and the exclude removes it.
+      joao-tordo includes the same event on near-identical reasoning.
+
+missing:
+  - id: wikipedia-only-sourcing
+    owner: completeness-auditor
+    found: >
+      18 of 27 works cite only wikipedia.org, including 10 of 11 core novels.
+      editions.yaml corroborates 24 works' ISBNs against Quetzal, BNP and
+      OpenLibrary, so the years hold up elsewhere but works.yaml's citation
+      line does not show it. Carry those sources across.
+  - id: magnum-opus-infobox-in-reader-prose
+    owner: completeness-auditor, then translation to mirror
+    found: >
+      morreste-me's synopsis, base and pt-PT, tells the reader the book is
+      tagged "magnum opus" on his Wikipedia infobox, then argues with that in
+      the same sentence. CURATION 1 and 4.
+
+stale:
+  - id: capability-note-counts
+    owner: fixed here (fc68055)
+    found: >
+      Said 26 works, one franchise event, four lifeEvents, no eras.yaml.
+      Actual 27, 3, 6, and eras.yaml exists as an empty list.
+  - id: joao-tordo-theme-values-invalid
+    owner: visual-metadata (joao-tordo wing)
+    found: >
+      displayFace "canela" and signature "tideline" are in neither registry in
+      lib/theme.ts and fall back silently. Two stages here noted it; neither
+      routed it.
+  - id: comment-scanner-blind-to-prose-fields
+    owner: curator
+    found: >
+      spoiler-audit raised it, nobody answered. validate.py scans hash
+      comments but not note, synopsis or description values.
+
+checked_and_clean:
+  - "eras empty is earned: Peixoto does decline the father's-death cycle in
+     the DN interview. orders empty too: all 27 works carry subseries null."
+  - "globalEvents: all 9 exclusion ids resolve."
+  - "covers: all 12 are /b/id/ URLs, so default=false does not apply. Six
+     looked at, five correct and watermark-free."
+  - "theme: sourceSerif and beam are real values in lib/theme.ts, the palette
+     is distinct from both siblings, and no fact is cross-contaminated across
+     the three Portuguese wings."
+  - "capabilities: all auto, every state matching intent (river/companion on
+     with 10 timeline entries, wizard/connections off, editions on with 24)."
+  - "achievements: none, right, since with no eras or orders era_reader and
+     order_complete would be unearnable."
+  - "i18n: 27 of 27 overlay entries resolve and the overlay is the last
+     commit, so it is fresh against final prose."
+  - "coverFor reads work.images.cover (lib/content/editions.ts:68), so the
+     covers are consumed, not inert."
+
+not_applicable_not_absent:
+  - "anatema, a-manha, quando-o-inverno-chegar: staged plays, never books."
+  - "15 works without covers is the Portuguese-market ceiling; the typographic
+     fallback is the primary rendering, not a degraded one."
+
+curators_call:
+  - "carnation-revolution-1974: include as joao-tordo does, or exclude."
+  - "Cemiterio de Pianos: 2006 or 2007, and the event date that follows."
+
+must_fix_before_ship: the three blocking content items (cover, cemiterio
+  date, birth-date claim).
+can_wait: aura-density (urgent repo-wide but not reader-facing), and every
+  item under missing and stale.
+
+tool_calls: >
+  46 total, 11 touched the network: 5 fetch.py invocations over 2 distinct
+  pages, 3 OpenLibrary JSON calls, 2 image-download batches covering 7 covers.
+  6 hit the wire, the rest cache-served.
