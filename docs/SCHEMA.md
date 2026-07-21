@@ -669,7 +669,7 @@ art:
 ```yaml
 images:
   sketch: "https://.../vhm-era-idade-inteira.png"
-  sketchCredit: "Generated for Orrery (DALL-E 3)"
+  sketchCredit: "Generated for Orrery (gpt-image-1)"
   sketchSource: "docs/VISUAL.md#era-plate"   # optional: the spec it was made to
 ```
 
