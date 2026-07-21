@@ -15,8 +15,8 @@ themePreset: interwar-editorial
 # (startHere below), connections (characters.yaml + the Cards on the Table
 # crossover), and hall. No editions.yaml, so editions stays off.
 
-# Which shared global events actually reach this author (docs/SCHEMA.md; the
-# event-resonance skill owns these decisions). Her 1890-1976 window is the only
+# Which shared global events actually reach this author (docs/SCHEMA.md).
+# Her 1890-1976 window is the only
 # one in the catalogue that reaches the early industry entries, and they are
 # where her resonance is. Kept by default and deliberately: world-war-i-1914,
 # world-war-ii-1939, pulp-magazines-1926, penguin-paperback-1935.
@@ -32,14 +32,14 @@ globalEvents:
 # converges on. See orders.yaml/sources.
 startHere:
   paths:
-    # where-to-start audit. Verified: https://www.agathachristie.com/stories/and-then-there-were-none
+    # Verified: https://www.agathachristie.com/stories/and-then-there-were-none
     # calls it "the best selling crime novel of all time" and records that it was
     # voted World's Favourite Christie in the 2015 125th-anniversary global
     # reader vote. NOTE THE GAP: that is an acclaim claim, not a "start here"
     # recommendation, and the official site carries no beginner's guide in its
     # navigation. The entry-point framing below is REAL BUT UNSOURCED - a
-    # near-universal recommendation nobody could produce a citation for in this
-    # pass. Flagged for the curator; not rewritten, because the advice is sound.
+    # near-universal recommendation with no citable page found. Kept, because
+    # the advice is sound.
     - id: the-perfect-standalone
       title: The perfect standalone
       description: >

@@ -19,13 +19,12 @@ images:
 # Capabilities are auto-detected from the data. This is a deliberately SPARSE
 # bundle (the framework's thin end): works + a thin aura + eras + a small curated
 # trilogy order + startHere. No characters.yaml and no work connections, so the
-# connections map stays dark by design (see the PR notes). Everything left at
-# auto; nothing forced.
+# connections map stays dark by design. Everything left at auto; nothing forced.
 features: {}
 
-# Which shared global events actually reach this author (docs/SCHEMA.md; the
-# event-resonance skill owns these decisions). The global layer is written from
-# the anglophone trade, and almost none of it describes a Portuguese literary
+# Which shared global events actually reach this author (docs/SCHEMA.md). The
+# global layer is written from the anglophone trade, and almost none of it
+# describes a Portuguese literary
 # novelist with a small home readership. Nothing is kept by default here; the
 # one global event that matters to him is claimed explicitly below.
 globalEvents:
@@ -50,13 +49,13 @@ globalEvents:
 # citable basis (a prize, a publisher-acknowledged grouping, or the crime turn).
 startHere:
   paths:
-    # Sourcing note (where-to-start audit): the prize is a verified fact
+    # Sourcing note: the prize is a verified fact
     # (https://pt.wikipedia.org/wiki/João_Tordo - "As Três Vidas (Quidnovi),
     # Setembro de 2008, Prémio José Saramago 2009"). The claim that Portuguese
     # critics recommend it as the WAY IN was NOT sourced - no Portuguese reader
-    # or critic saying "comece por aqui" could be found - so it is dropped. This
-    # path now rests on the prize, which is a fact, not on a consensus we cannot
-    # show. FLAGGED for the curator: a prize is not a reader saying "start here".
+    # or critic saying "comece por aqui" could be found - so no such claim is
+    # made. This path rests on the prize, which is a fact, not on a consensus we
+    # cannot show. FLAGGED: a prize is not a reader saying "start here".
     - id: the-prizewinner
       title: Start with the prizewinner
       description: >
@@ -127,10 +126,8 @@ startHere:
         experience: [returning, completionist]
         commitment: [complete]
 
-# Completeness-audited July 2026 against Portuguese primary sources. Every work
-# is now individually verified against the publisher's catalogue or the author's
-# own bibliography; the placeholder entries taken from the pt.wikipedia list have
-# been confirmed or corrected, and five omitted works were added. The publisher's
+# Every work is individually verified against Portuguese primary sources: the
+# publisher's catalogue or the author's own bibliography. The publisher's
 # author page lists exactly the 22 trade titles held here as core plus extended.
 sources:
   - https://joaotordo.com/lista

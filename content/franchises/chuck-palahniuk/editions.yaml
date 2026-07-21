@@ -5,19 +5,17 @@
 #   pt-PT   6 editions over 5 of 28 works, and that is the market, not a gap in
 #           the research. See "THE PORTUGUESE RUN" below.
 #
-# NOTE FOR THE CURATOR: this is the FIRST franchise in the catalogue to carry
-# English editions - the other six wings are pt-PT only (193 entries, all
-# pt-PT). The brief for this wing asked for English originals because they are
-# what drive the exact-edition store links. No `title` is set on any English
-# entry: the work title IS the published title, and repeating it would
-# manufacture a translation event that never happened.
+# English editions are carried here because English originals are what drive
+# the exact-edition store links. No `title` is set on any English entry: the
+# work title IS the published title, and repeating it would manufacture a
+# translation event that never happened.
 #
 # NO ENTRY IN THIS FILE CARRIES A coverUrl, and that is deliberate throughout.
 # The app derives covers from the ISBN or falls back to typographic ones, which
 # is a supported path. Two entries must NEVER be given one: Fight Club 2, whose
 # every jacket prints a tagline that spoils Fight Club (see its note), and the
 # 2016 Marcador Clube de Combate, whose only available image is a publisher
-# store scrape. Read the visual-metadata handoff before adding any cover here.
+# store scrape.
 #
 # SOURCES, and how each ISBN was verified. Every entry below was confirmed by
 # TWO independent records that agree, except where its note says otherwise.
@@ -28,14 +26,14 @@
 #   2. The Library of Congress, through its SRU gateway at lx2.loc.gov:210/lcdb
 #      (the www.loc.gov and catalog.loc.gov front ends are Cloudflare-blocked to
 #      automated fetches, and lccn.loc.gov rate-limits after ~12 requests).
-#      CAUTION FOR THE NEXT AGENT: an SRU `bath.isbn=` query is NOT strict - a
+#      CAUTION: an SRU `bath.isbn=` query is NOT strict - a
 #      fabricated ISBN returned two unrelated records. A hit count proves
 #      nothing. Every check here re-read the returned MODS record and required
 #      the exact ISBN string AND a Palahniuk name part inside it.
 #   3. The Biblioteca Nacional de Portugal ipac catalogue, for all six
-#      Portuguese editions. It is reachable despite earlier runs recording it as
-#      blocked: the block is user-agent based, and it serves plain HTML to a
-#      browser user-agent. Author-words search is `index=.AW&term=palahniuk`.
+#      Portuguese editions. It IS reachable: its block is user-agent based,
+#      and it serves plain HTML to a browser user-agent. Author-words search
+#      is `index=.AW&term=palahniuk`.
 #   4. presenca.pt, the publisher's own store, for the one Portuguese edition
 #      still in print.
 #
@@ -74,9 +72,8 @@
 # own note as SINGLE-SOURCED: BNP is the only catalogue that holds these books,
 # they are long out of print, and OpenLibrary has no Portuguese Palahniuk record
 # at all. The printed ISBN-10 was round-tripped through BNP's ISBN index and
-# returned the expected title in every case, which rules out a misreading on my
-# side but not an error in BNP's own record. See the PR for what a human with a
-# browser should confirm.
+# returned the expected title in every case, which rules out a transcription
+# slip but not an error in BNP's own record.
 
 # =============================================================================
 # English
