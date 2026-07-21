@@ -224,24 +224,33 @@ Every prompt ends with an explicit statement of what file is wanted. Leaving it
 implicit is how a sketch comes back opaque, or square when it needed to be wide,
 and each of those costs a re-roll.
 
-State, always:
+**Do not ask for a transparent background.** It was the obvious approach and it
+does not survive: the model produces real alpha, and the download flattens it
+onto the viewer's checkerboard - a machine-regular grid of two near-white greys.
+Rebuilding alpha from that grid fails, because the checkerboard shares its grey
+with any drawn sky, so the flood eats holes in the artwork and leaves the seams
+behind as a faint lattice.
 
-- **The exact pixel dimensions**, from the asset spec in §4 (`1024x1024` for an
-  event, `1536x1024` for an era plate) - not "square", not an aspect ratio.
-- **Transparency**, in the strongest terms available, plus the failure to
-  forbid: *"the background must be genuinely empty - real alpha transparency,
-  not white and not a drawn pattern. Do not illustrate transparency: no grey
-  and white checkerboard, no grid, no simulated cut-out."* A model asked for a
-  transparent background will sometimes **draw a checkerboard**, because that is
-  how transparency looks in every image it has seen. That is not a file with
-  alpha; it is a picture of a chessboard, and it has happened here.
-- **PNG with an alpha channel**, and a reminder to keep the original file: an
-  export or a screenshot that flattens it produces exactly the same broken
-  result as never having asked.
-- **No borders, no frame, no matte, no drop shadow onto the background.**
+**Ask for a solid chroma background instead, and key it out afterwards.**
 
-`scripts/prepare_asset.py` refuses an image that arrives without alpha and says
-which of the two failures it was, so a bad file cannot be filed by accident.
+- **Flat, fully saturated magenta, `#FF00FF`**, filling every part of the frame
+  the artwork does not occupy. Magenta because nothing in this catalogue's
+  palette is near it - the wings are warm greys, umbers, parchment and
+  terracotta, all in the red-orange hues - so the key can be global and cannot
+  eat the picture. Green would collide with foliage.
+- Say **flat**: no gradient, no texture, no shading, no vignette in the
+  background, and no magenta anywhere inside the artwork itself.
+- Still state **exact pixel dimensions** from §4 (`1024x1024` for an event,
+  `1536x1024` for an era plate) - not "square", not an aspect ratio.
+- Still ban borders, frames, mattes and drop shadows onto the background.
+
+Then file it with:
+
+    python scripts/prepare_asset.py <image.png> <slug> <entity-id> --chroma
+
+which keys the magenta to real alpha with a soft edge, despills the fringe so
+edges do not glow pink on a dark page, trims the empty margins, converts to
+webp under the size cap and prints the YAML to paste.
 
 ## 5a. Choosing the presentation
 

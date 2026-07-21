@@ -80,8 +80,9 @@ Always all six, in this order:
    contain the orrery motif as its **own paragraph** (VISUAL.md §1a - a clause
    bolted onto another sentence is what produces a tangled, illegible motif),
    and it must end with the **technical block** (§5b): exact pixel dimensions,
-   real alpha transparency with an explicit ban on drawing a checkerboard, PNG,
-   and no frame or matte.
+   a flat fully-saturated magenta `#FF00FF` background to be keyed out later
+   (never ask for transparency - it does not survive the download), and no
+   frame or matte.
 3. **Size** - from the spec table (`1536x1024` era plates, `1024x1024` events).
 4. **Background** - opaque, or transparent for world events (and say it must be
    tinted per wing with that accent).
@@ -89,7 +90,7 @@ Always all six, in this order:
    asset that would want them is an author likeness, and we do not generate
    those. Say so explicitly rather than leaving it unstated, and if a future
    asset type does want references, name exactly which images and why.
-6. **Filing** - the YAML to add once the image is hosted, with `sketchCredit`
+6. **Filing** - the `prepare_asset.py --chroma` command and the YAML it prints, with `sketchCredit`
    saying it was generated (the validator rejects a credit that reads like a
    source).
 

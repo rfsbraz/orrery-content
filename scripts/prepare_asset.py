@@ -150,6 +150,48 @@ def recover_alpha(im: Image.Image):
     return out, cleared
 
 
+CHROMA = (255, 0, 255)   # magenta: no ink, umber, parchment or terracotta is near it
+
+
+def key_chroma(im: Image.Image, key=CHROMA, tol: int = 90, soft: int = 60):
+    """Turn a solid chroma background into real alpha.
+
+    Generating on transparency does not survive the download, so we generate on
+    a flat colour instead and key it out here. This works where rebuilding a
+    flattened checkerboard did not, for one reason: magenta is nowhere in this
+    palette, so a GLOBAL key is safe. The checkerboard shared its grey with the
+    drawn sky, which is why that flood ate holes in the artwork.
+
+    Fully keyed below `tol`, fully opaque above `tol + soft`, ramped between so
+    antialiased edges keep partial alpha instead of a hard staircase. Then a
+    despill pass pulls the magenta fringe out of the edge pixels, which would
+    otherwise glow pink against a dark page.
+    """
+    rgb = im.convert("RGB")
+    w, h = rgb.size
+    src = rgb.load()
+    out = Image.new("RGBA", (w, h))
+    dst = out.load()
+    kr, kg, kb = key
+    keyed = 0
+    for y in range(h):
+        for x in range(w):
+            r, g, b = src[x, y]
+            d = abs(r - kr) + abs(g - kg) + abs(b - kb)
+            if d <= tol:
+                dst[x, y] = (0, 0, 0, 0)
+                keyed += 1
+                continue
+            alpha = 255 if d >= tol + soft else int(255 * (d - tol) / soft)
+            # despill: a pixel carrying the key's colour cast gets pulled back
+            # toward neutral rather than left glowing at the edge
+            excess = min(r, b) - g
+            if excess > 0:
+                r, b = r - excess, b - excess
+            dst[x, y] = (r, g, b, alpha)
+    return out, keyed
+
+
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("image")
@@ -158,6 +200,8 @@ def main() -> int:
     p.add_argument("--quality", type=int, default=82)
     p.add_argument("--no-trim", action="store_true")
     p.add_argument("--dry-run", action="store_true")
+    p.add_argument("--chroma", nargs="?", const="magenta", default=None,
+                   help="key out a solid background colour (default magenta)")
     p.add_argument("--recover-alpha", action="store_true",
                    help="last resort: rebuild alpha from a flattened checkerboard (lossy)")
     p.add_argument("--force-opaque", action="store_true",
@@ -170,6 +214,13 @@ def main() -> int:
     im = Image.open(a.image)
     print(f"in : {im.size[0]}x{im.size[1]} {im.mode} "
           f"{os.path.getsize(a.image) // 1000}KB")
+
+    if a.chroma:
+        key = CHROMA if a.chroma == "magenta" else tuple(
+            int(a.chroma.lstrip("#")[i:i + 2], 16) for i in (0, 2, 4))
+        im, keyed = key_chroma(im, key)
+        print(f"chroma: keyed out {100 * keyed // (im.size[0] * im.size[1])}% "
+              f"of the frame as rgb{key}")
 
     has_alpha = im.mode in ("RGBA", "LA") or "transparency" in im.info
     if not has_alpha and a.recover_alpha and looks_checkerboarded(im):
