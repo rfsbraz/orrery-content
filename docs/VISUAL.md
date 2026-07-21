@@ -13,15 +13,43 @@ it is wrong even when it is beautiful.
 - warm, lightly textured background; visible paper fibre
 - strong negative space, uncrowded
 - literary rather than technological
-- **the orrery itself, in every sketch**: two or three faint concentric orbital
-  arcs sweeping across the open sky or empty ground, with a few small nodes on
-  them. Drawn as fine ruled-compass lines in the same ink as everything else,
-  barely darker than the paper. This is the one element every asset in the
-  catalogue shares - it is what makes a Pratchett sketch and a Mãe sketch
-  belong to the same publication - so it is not optional, and it never
-  dominates: if a reader notices it before the subject, it is too strong
+- **the orrery itself, once in every sketch** (see §1a)
 - no photorealism, no glossy 3D, no game concept art
 - **no typography inside the image, ever** (the app sets its own type over it)
+
+## 1a. The orrery motif: found in the scene, not laid over it
+
+Every sketch in the catalogue carries the same mark - **concentric orbital
+rings with small nodes riding on them** - and that shared mark is what makes a
+Pratchett sketch and a Mãe sketch read as one publication.
+
+It is **not** a watermark and not a fixed overlay in the sky. Put it on
+something the scene would plausibly contain, so it looks found rather than
+applied:
+
+- engraved on the face of a compass, a dial, a pocket watch, an astrolabe
+- printed as the cancellation stamp on an envelope, a ticket, a library card
+- woven into a rug, a mat, a tablecloth, a shawl border, a tiled floor
+- pressed into a coin, a medal, a seal, a bookplate, a bottle cap
+- the rings of a cut log, ripples spreading on water, a spiral of birds
+- worked into a gate, a window grille, a bannister, a wheel
+
+Choosing the carrier is part of drawing the scene: pick what that subject
+already has. A writing desk offers a paperweight; a fishing village offers
+net floats and ripples; a hospital corridor offers a wall clock. **Vary it
+between assets in the same wing** - the same compass in six sketches becomes a
+logo, which is the opposite of the point.
+
+Faint arcs across an empty sky are still allowed, but as one option among many
+rather than the default, and only where the composition has real empty sky.
+
+Two constraints hold whichever carrier is used:
+
+- **It never competes with the subject.** Same ink, no heavier than its
+  surroundings. If a reader notices the rings before the scene, it is too
+  strong.
+- **It is never the subject.** No sketch is *about* an orrery, and it is never
+  a floating diagram with nothing holding it.
 
 ## 2. The model
 
@@ -80,6 +108,9 @@ In order, always:
    away - it is the only thing making two assets belong to the same wing.
 3. **The subject**, derived from the entity's own `title` and `description`.
    Draw what the record says happened; do not invent incident.
+3a. **The orrery motif's carrier for this scene** (§1a) - name the specific
+   object that carries the rings here, and vary it from the wing's other
+   assets.
 4. **The composition**, from the asset spec (§4).
 5. **The shared negative prompt** (§6), plus the wing's own `art.avoid`.
 
