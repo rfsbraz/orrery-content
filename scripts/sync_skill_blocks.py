@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Keep the sanctuary rule identical in every curation skill.
+"""Keep the shared rule blocks identical in every curation skill.
 
 The rule that content YAML carries data and never process is the one every
 stage has broken at least once, and an indirection ("see CURATION.md") is what
@@ -7,20 +7,26 @@ let it happen: agents read the contract and still wrote to a colleague. So the
 rule lives verbatim inside every SKILL.md, and this script is what stops the
 copies from drifting.
 
-    python scripts/sync_sanctuary_block.py           # check, exit 1 on drift
-    python scripts/sync_sanctuary_block.py --write   # insert or update it
+    python scripts/sync_skill_blocks.py           # check, exit 1 on drift
+    python scripts/sync_skill_blocks.py --write   # insert or update them
+
+Each block lives in ONE file under scripts/ and is copied verbatim into every
+SKILL.md. Edit the source file, never a copy, then --write.
 """
 import glob
 import os
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BLOCK_PATH = os.path.join(ROOT, "scripts", "sanctuary_block.md")
-HEADING = "## The sanctuary rule"
+# (source file, heading it starts with). Order here is the order they appear.
+BLOCKS = [
+    ("sanctuary_block.md", "## The sanctuary rule"),
+    ("tooling_block.md", "## Cheap tools before expensive habits"),
+]
 
 
-def block() -> str:
-    with open(BLOCK_PATH, encoding="utf-8") as f:
+def block(name: str) -> str:
+    with open(os.path.join(ROOT, "scripts", name), encoding="utf-8") as f:
         return f.read().strip() + "\n"
 
 
@@ -45,9 +51,9 @@ def anchor(lines: list[str]) -> int:
     return len(lines)
 
 
-def current(lines: list[str]) -> tuple[int, int] | None:
+def current(lines: list[str], heading: str) -> tuple[int, int] | None:
     for i, line in enumerate(lines):
-        if line.startswith(HEADING):
+        if line.startswith(heading):
             # the block carries no headings of its own, so it ends at the next
             # one of ANY level - stopping only at "## " swallowed the "###"
             # subsections that follow it in six skills
@@ -60,27 +66,29 @@ def current(lines: list[str]) -> tuple[int, int] | None:
 
 def main() -> int:
     write = "--write" in sys.argv
-    want = block()
     drifted = []
     for path in sorted(glob.glob(os.path.join(ROOT, ".claude", "skills", "*", "SKILL.md"))):
-        with open(path, encoding="utf-8") as f:
-            lines = f.readlines()
-        found = current(lines)
-        have = "".join(lines[found[0]:found[1]]).strip() + "\n" if found else None
-        if have == want:
-            continue
-        drifted.append(os.path.relpath(path, ROOT))
-        if not write:
-            continue
-        if found:
-            lines[found[0]:found[1]] = [want, "\n"]
-        else:
-            lines[anchor(lines):anchor(lines)] = [want, "\n"]
-        with open(path, "w", encoding="utf-8") as f:
-            f.writelines(lines)
+        for name, heading in BLOCKS:
+            want = block(name)
+            with open(path, encoding="utf-8") as f:
+                lines = f.readlines()
+            found = current(lines, heading)
+            have = "".join(lines[found[0]:found[1]]).strip() + "\n" if found else None
+            if have == want:
+                continue
+            drifted.append(f"{os.path.relpath(path, ROOT)} ({name})")
+            if not write:
+                continue
+            if found:
+                lines[found[0]:found[1]] = [want, "\n"]
+            else:
+                at = anchor(lines)
+                lines[at:at] = [want, "\n"]
+            with open(path, "w", encoding="utf-8") as f:
+                f.writelines(lines)
 
     if not drifted:
-        print("OK - the sanctuary rule is identical in every skill.")
+        print(f"OK - {len(BLOCKS)} shared block(s) identical in every skill.")
         return 0
     verb = "updated" if write else "drifted or missing"
     print(f"{len(drifted)} skill(s) {verb}:")

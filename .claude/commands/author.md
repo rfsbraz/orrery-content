@@ -118,7 +118,7 @@ errors are silent and green.
 | `press-archaeology` | sonnet | high | Two independent sources on living people's health, money and legal trouble. Judgment, not lookup. |
 | `world-events` | sonnet | medium | Small output, high bar: every entry renders on every wing. |
 | `event-resonance` | haiku | medium | Genuinely narrow. The engine already filtered by lifetime; the agent writes one sentence or excludes, and the default is exclude. |
-| `eras` | opus | high | The largest editorial claim we make, rendered full-bleed as if received. Telling received framing from our own opinion is the hardest call in the repo. |
+| `eras` | opus on a first build, else sonnet | high | The largest editorial claim we make, rendered full-bleed as if received. Telling received framing from our own opinion is the hardest call in the repo - but that call is made once. Adding a sourced era to a settled scheme is sonnet work. |
 | `reading-orders` | sonnet | high | Admission tests plus the prequel spoiler vector. |
 | `spoiler-audit` | opus | high | Asymmetric and permanent: a false negative ruins a first read forever, and the agent must reason about what a reader has *not* read yet. |
 | `visual-metadata` | sonnet | low | Mostly mechanical fetching, but a watermarked scrape or an omnibus cover passes every automated check. Cut effort, not tier. |
@@ -131,6 +131,58 @@ errors are silent and green.
 usually cheaper and safer than a smaller model at default: you keep the
 judgment and cut the deliberation. Reserve haiku for work whose failures are
 loud.
+
+**Opus is the budget.** On the Valter Hugo Mãe build the three Opus stages were
+26% of the tokens and comfortably over half the cost, and `eras` alone burned
+425k because it ran twice. Before setting `opus`, ask what specifically goes
+wrong at sonnet/high: for `spoiler-audit` and `wing-audit` the answer is
+concrete and permanent, so they stay. `eras` earns it on a first build, where
+the periodisation is being decided; it does not earn it on a re-run that is
+adding one sourced era to a scheme already settled.
+
+## Cost is context times tool calls
+
+Every tool call re-sends the agent's whole context, so an agent's cost is
+roughly its context multiplied by how many calls it makes. That reframes what
+is expensive: on the Valter Hugo Mãe build, 14 agent runs made **983 tool
+calls** at ~3.7k tokens each. The pages fetched were not the expense; fetching
+them one per call was. Shared docs are ~9k tokens all told and re-reading them
+is a rounding error - do not optimise there.
+
+Four rules follow, and they cut far more than trimming prompts does:
+
+1. **Batch the fetching.** `scripts/fetch.py` takes many URLs in one call,
+   caches to `.cache/fetch/` so a later stage inherits what an earlier one paid
+   for, sends the browser User-Agent the trap registry requires, and prints a
+   bounded extract (`--grep`, `--max-chars`) instead of a whole page. The
+   editions stage made 144 sequential fetches; that is one call's worth of work.
+   Tell every stage that searches or verifies links to use it.
+2. **Orient with `scripts/wing_digest.py <slug> --for <stage>` before reading
+   the wing.** It renders a finished wing in ~2.4KB against ~98KB of YAML, and
+   answers "which works still lack a cover / an edition / an era" directly.
+   Read the actual entries you are about to edit; do not read the other 90%.
+3. **Never resume an agent to correct it.** A resume replays the entire
+   transcript: the two corrections on that build cost 434k, *more* than the
+   original runs. Spawn a fresh, narrow agent with just the delta and the
+   evidence, and say what not to reopen.
+4. **Prefer a constructed URL to a search.** Publisher product pages follow a
+   pattern. A WebSearch that only finds a URL you could have built costs
+   several thousand tokens for nothing.
+
+## Cheap checks before expensive stages
+
+A stage that runs and correctly changes nothing has still been paid for:
+`world-events` cost 188k to return a defended zero-diff. Before launching any
+stage whose trigger is a judgement rather than a fact, spend the two thousand
+tokens that would settle it - `event_density.py` for an empty decade,
+`aura_density.py` for a dark run, `wing_digest.py --missing cover|edition|era`,
+a `grep` of `global.yaml` for the region in question. Decide from the numbers,
+then launch or record the skip. **Skipping a stage on evidence is a result and
+belongs in the run report.**
+
+Your own context is part of this too: you re-send it on every call for the
+whole run. Read with `grep -n -A5` and the digest rather than opening whole
+files, and keep stage prompts to what the agent cannot infer from its skill.
 
 **The haiku-shaped job is verification, not curation.** A sweep that fetches
 every `sources` URL and every image URL in a wing and reports dead links,

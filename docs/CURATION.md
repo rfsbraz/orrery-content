@@ -106,8 +106,10 @@ warning is a question, not a verdict - but answer it before merging.
 Because pointing at this section is exactly what failed - every skill already
 said "runs under CURATION.md" while its agent wrote to a colleague anyway - the
 rule is also stated verbatim inside all 13 skill files, where the work actually
-happens. `scripts/sync_sanctuary_block.py` checks the copies are identical and
-`--write` re-syncs them; edit `scripts/sanctuary_block.md`, never a copy.
+happens. `scripts/sync_skill_blocks.py` checks the copies are identical and
+`--write` re-syncs them; edit the source block under `scripts/`, never a copy.
+The same mechanism carries `tooling_block.md`, the batching and digest habits
+that decide what a stage costs.
 
 ## 3. Gates: run before, run after, no regressions
 

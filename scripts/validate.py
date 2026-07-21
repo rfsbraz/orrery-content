@@ -164,12 +164,27 @@ def main():
     # is told to read it, silently gets nothing, and its gap looks like
     # completion. This directory is deleted before the final merge, so on main
     # this check simply finds nothing.
+    # They are also capped. A handoff is read by EVERY later stage, so its cost
+    # is its length times the stages left to run - the last stage of the Valter
+    # Hugo Mãe build read nine of them. Long-form reasoning belongs in the run
+    # report, which is read once, by a human.
+    HANDOFF_WORDS = 700
     for path in glob.glob(os.path.join(ROOT, ".orrery", "**", "*.yaml"), recursive=True):
         try:
             with open(path, encoding="utf-8") as f:
-                yaml.safe_load(f)
+                raw = f.read()
+            yaml.safe_load(raw)
         except Exception as e:
             err(rel(path), f"handoff does not parse: {e}")
+            continue
+        words = len(raw.split())
+        if words > HANDOFF_WORDS:
+            warn(
+                rel(path),
+                f"handoff is {words} words (soft cap {HANDOFF_WORDS}); every later "
+                f"stage pays to read it - move the reasoning to the run report and "
+                f"keep the summary, what changed, and what the next stage must know",
+            )
 
     # --- authors (global registry) ---
     author_ids = set()
