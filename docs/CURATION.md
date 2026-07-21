@@ -200,6 +200,37 @@ So:
 - **When you rely on a field, grep the app for the code that reads it.**
   Content that validates, renders and is simply never consumed fails nothing
   and does nothing. Inert data is the most dangerous shape on this list.
+### Verify cheaply. A browser is not a verification tool here.
+
+**Checking rendered content costs a fetch and a grep, not a browser session.**
+The pages are statically generated: every word and every image URL a reader
+receives is already in the markup. Driving a browser to read it back is slow,
+expensive, and - because it is expensive - gets pointed at one or two pages
+instead of all of them, which is how it misses things a sweep would catch.
+
+The order to reach for, cheapest first:
+
+1. **A repo script.** `render-check.mjs` (app repo) fetches every wing in
+   every locale and reports dead routes, `<img>` sources that do not resolve,
+   `lang` mismatches, base-language leakage, and pages rendering almost no
+   text. `validate.py`, `i18n_coverage.py`, `aura_density.py` and
+   `wing_freshness.py` cover the content side. Extend a script rather than
+   inspecting by hand: the check then runs forever, for free.
+2. **`curl` and `grep`** for a one-off question the scripts do not answer.
+   Quote a line of the served HTML as evidence.
+3. **Nothing else, for content.**
+
+**Do not take screenshots to verify content, and do not drive a browser to
+count broken images or read prose.** If a question genuinely needs a layout
+engine - does this look right, is the spacing wrong, has the layout broken at
+this width - that is a *design* question, not a content one: **report it to
+the curator and let them look.** They have a browser open already.
+
+Two things this is not saying. It is not saying skip the check: an unverified
+render is still how prose that never reaches a reader ships green. And it is
+not saying scripts see everything - a script cannot tell you a cover is the
+wrong book's, only that it loads. Say which you checked.
+
 - **Coverage scripts count what they know.** `i18n_coverage.py` has reported
   full coverage over untranslated era themes and untranslatable achievement
   labels. A number is evidence about the fields the script counts, nothing

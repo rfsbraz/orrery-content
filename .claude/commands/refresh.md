@@ -92,10 +92,10 @@ before final validation** rather than trusting an agent's completion notice.
    no regressions, and read the warnings.
 3. Build the app against the merged content and run its suite. The content
    validator cannot catch an app-side break, and it has repeatedly not.
-4. **Open the changed wings in a browser, in every locale, and look.** Count
-   broken images, read for stray base-language text. On a refresh this step
-   catches the specific failure of a new work rendering with no cover and no
-   fallback.
+4. **Run `node scripts/render-check.mjs` over the changed wings** (app repo),
+   not a browser. On a refresh it catches the specific failure of a new work
+   rendering with a cover URL nobody loaded, which is worse than no cover at
+   all. See CURATION.md §5 for why this is a script and not a browser.
 5. Delete `.orrery/`, merge to `main`, bump the app submodule, keep the
    deployment current.
 

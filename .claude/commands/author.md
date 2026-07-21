@@ -215,14 +215,15 @@ Integration is yours - do not delegate it:
    including the comment-policy scan and any dark run.
 3. **Build the app against the merged content and run its suite.** The content
    validator cannot catch an app-side break, and twice it has not.
-4. **Open the rendered wing in every locale, in a real browser, and look at
-   it.** Count broken images with
-   `[...document.querySelectorAll('img')].filter(i => i.complete && i.naturalWidth === 0)`
-   (wait, then re-count - a persistently broken image is its own bug: the
-   fallback tile hangs off `onError`, which never fires for an image that
-   failed before hydration). Read the page for stray base-language text.
-   Serve `node .next/standalone/server.js` with `.next/static` copied in -
+4. **Check the rendered pages with `node scripts/render-check.mjs`** (in the
+   app repo), never with a browser. The pages are statically generated, so
+   every word and every image URL a reader gets is in the markup: the script
+   fetches each wing in each locale and reports dead routes, `<img>` sources
+   that do not resolve, declared `lang` mismatches, base-language leakage and
+   pages that render almost no text. Serve
+   `node .next/standalone/server.js` with `.next/static` copied in first -
    `next start` does not apply the proxy under `output: standalone`.
+   **Do not drive a browser to verify content** (see CURATION.md §5).
 5. Delete `.orrery/`, merge to `main` directly (content is validator-gated
    data; review adds latency - the standing rule), push, bump the app's
    content submodule, and keep the deployment current.
