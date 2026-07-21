@@ -74,6 +74,17 @@ absent event costs a reader nothing. A page cluttered with events that mean
 nothing to this author teaches them that the aura is decoration, and then they
 stop reading the ones that matter. **Clutter is not neutral, it is corrosive.**
 
+**But "an absent event costs a reader nothing" assumes the timeline is
+otherwise furnished.** On a wing whose aura is already thin it is false: the
+reader gets a decade of books against blank ground, and your exclusions
+helped build it. Run `python scripts/aura_density.py` first. Where the wing
+has a dark run of five or more publishing years, an exclusion landing inside
+that stretch needs a genuinely confident "this never reached the page" rather
+than a shrug - and if the honest answer is that the wing is simply
+under-researched, say so in the report and route it to `press-archaeology`,
+whose material this really is. You prune the shared layer; you do not get to
+leave a wing dark and call it restraint.
+
 **`include`** - outside the lifetime, but the author genuinely writes out of it.
 The bar here is high, because you are overriding a defensible default. Use it
 when the event created the conditions the author's work exists inside and the

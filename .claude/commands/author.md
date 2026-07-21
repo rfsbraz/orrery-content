@@ -27,8 +27,9 @@ stages fire. Before launching anything:
 1. **Resolve the slug** (`content/franchises/<slug>/`; reuse an existing one,
    else lowercase-hyphenated, accents stripped; ids are permanent).
 2. **Record the baseline**: `python scripts/validate.py`,
-   `python scripts/i18n_coverage.py`, `python scripts/event_density.py`. Every
-   later claim of progress is measured against these numbers.
+   `python scripts/i18n_coverage.py`, `python scripts/event_density.py`,
+   `python scripts/aura_density.py`. Every later claim of progress is measured
+   against these numbers.
 3. **Read the wing** (all of it, if it exists) and **build the stage list**
    from the trigger table:
 
@@ -139,7 +140,9 @@ Within one run, stages that fire execute in this order:
    costs a re-run of stages 3-7.
 3. **Enrichment, parallel**: `press-archaeology` · `world-events` · `eras`.
    Gate: validator green, all merged into the stage branch,
-   `event_density.py` re-run if `world-events` ran.
+   `event_density.py` re-run if `world-events` ran, and `aura_density.py`
+   re-run: a wing with a dark run of five or more publishing years has not
+   finished this stage, whatever the entry count says.
 4. **Franchise judgement, sequential**: `event-resonance`, then
    `reading-orders`. Gate: every `globalEvents`, order and path id resolves.
 5. **`spoiler-audit`**, alone - after all prose exists, before translation
@@ -198,8 +201,9 @@ Integration is yours - do not delegate it:
    keep committing after they report done (one carried 17 lines of real
    `editions.yaml` after its completion notice). The check is
    `git merge-base --is-ancestor <branch> <integration>` on every stage branch.
-2. `validate.py`, `i18n_coverage.py`, `event_density.py` - clean, no
-   regression, and **read the warnings**, including the comment-policy scan.
+2. `validate.py`, `i18n_coverage.py`, `event_density.py`,
+   `aura_density.py` - clean, no regression, and **read the warnings**,
+   including the comment-policy scan and any dark run.
 3. **Build the app against the merged content and run its suite.** The content
    validator cannot catch an app-side break, and twice it has not.
 4. **Open the rendered wing in every locale, in a real browser, and look at

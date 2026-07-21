@@ -97,20 +97,49 @@ even when it is true and well sourced.
 For the recently dead, the obituary window is a gift: a great deal gets said
 carefully, once, and then never revisited.
 
-## Density: this is an enrichment pass, not a biography
+## Density: sparse, but never dark
 
 The aura's job is to be sparse and load-bearing. A franchise that gains twenty
-life events has been made worse, not better.
+trivia items has been made worse, not better. But **sparse is not the same as
+absent**, and the second failure is the one this catalogue actually has.
+
+**Scale the budget to the career, not to a fixed number.** An absolute
+"6-12 per author" cap was the old rule, and applied to a fifty-year, ninety-
+five-book career it produced a wing with nine aura entries and a
+**twenty-one-year stretch of books with no context at all**. Use instead:
 
 | Scope | Target |
 |---|---|
-| `lifeEvents` per author, total | roughly 6-12 across a career |
+| aura entries per work (franchise events + lifeEvents) | **roughly 1 per 3-4 works**, as a floor to aim at |
+| `lifeEvents` per decade of active career | 2-4 |
 | New facts per press run | **3-8 that survive the aura standard** |
 | Corrections to existing content | as many as you find, always report them |
 
-If you come back with two excellent facts and one correction, that is a good run.
-If you come back with thirty, you have written a Wikipedia article and the
-curator has to do your editing for you.
+**The distribution matters more than the count.** Aura entries gravitate to
+biographical drama - the accident, the death, the lawsuit - because that is
+what the record shouts about. Those cluster on a handful of years and leave
+the working middle of a career silent, which is exactly where a reader is
+walking the most books. A wing can hit its ratio and still be wrong.
+
+Run `python scripts/aura_density.py` before and after. It reports each wing's
+ratio and its **longest run of consecutive publishing years with no aura at
+all**. Treat a dark run of five or more years as a question, not a verdict,
+and answer it one of two ways:
+
+- **Nobody looked.** Usually the truth. Go and research that period
+  specifically rather than adding more around the peaks you already have.
+- **The period was genuinely quiet** - steady work, no turning points. That
+  is a real finding: record it in the report so the next pass does not
+  re-search the same silence, and leave the years empty.
+
+What you must not do is close a gap by promoting trivia. A thin decade filled
+with award seasons and sales milestones is worse than an honest silence,
+because it teaches readers the aura is decoration. If the only way to light a
+decade is to lower the bar, leave it dark and say so.
+
+If you come back with two excellent facts and one correction, that is a good
+run. If you come back with thirty, you have written a Wikipedia article and
+the curator has to do your editing for you.
 
 ## Output
 
