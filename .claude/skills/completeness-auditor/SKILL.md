@@ -24,7 +24,9 @@ at a time was. Three habits, before you start:
   portoeditora.pt, infopedia.pt, observador.pt and the BNP catalogue require,
   and prints a bounded extract rather than a whole page. Use `--grep 'ISBN|1a ed'`
   to pull just what you need, `--check` for link sweeps, `--max-chars` to tighten.
-  Collect the URLs you want, then make one call.
+  Collect the URLs you want, then make one call. **web.archive.org rate-limits
+  and starts refusing connections at the default 6 workers** - pass
+  `--workers 2` for archive-heavy batches rather than losing the batch.
 - **Orient with the digest before reading the wing.**
   `python scripts/wing_digest.py <slug> --for <your stage>` renders a finished
   wing in ~2.4KB where the YAML is ~98KB, and answers "which works still lack a
