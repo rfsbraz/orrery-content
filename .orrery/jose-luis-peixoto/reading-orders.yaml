@@ -1,0 +1,88 @@
+stage: reading-orders
+slug: jose-luis-peixoto
+status: >
+  content/franchises/jose-luis-peixoto/orders.yaml written as an empty list
+  with a sourced header comment; startHere left absent from franchise.yaml
+  (its header comment updated to explain both). validate.py exit 0 (no new
+  warnings for this slug), sync_skill_blocks.py exit 0.
+
+orders_written: none
+
+orders_rejected:
+  - candidate: an order settling the 2000 Morreste-me/Nenhum Olhar tie
+    test_failed: divergence
+    why: >
+      The only same-year publications in the spine (Morreste-me, self-published
+      author edition, May 2000; Nenhum Olhar, Temas e Debates, 2000, Prémio
+      José Saramago 2001) are the only tie the derived order leaves arbitrary.
+      Fixing it would be exactly one adjacent swap in an eleven-novel spine -
+      the poirot-novels precedent settles five ties across 33 books; this
+      settles one across 11. Fails divergence outright; not pursued to a
+      sourced sequence.
+  - candidate: a novels-only order (11 core works, excluding the 16 extended)
+    test_failed: divergence
+    why: >
+      With the 2000 tie too thin to fix and every other novel dated to a
+      distinct year, a novels-only order would reproduce the derived
+      chronology exactly once you drop the non-novel works - a duplicate
+      wearing a costume (rule 3, "chronological order for a franchise
+      already chronological").
+  - candidate: an Alentejo-setting grouping (Nenhum Olhar, Cal, Galveias)
+    test_failed: no source
+    why: >
+      No publisher, critic or the author names these three a cycle; the
+      eras stage already rejected the same grouping as a period for the
+      same reason (14 years apart, a recurring setting rather than a
+      period or a series).
+  - candidate: no order at all
+    result: shipped
+    why: >
+      Matches João Tordo and Valter Hugo Mãe's own pattern of shipping only
+      what is publisher-numbered or author-named, and this shelf has
+      neither: every work carries subseries null.
+
+startHere_ruling: absent (no wizard)
+
+startHere_evidence:
+  author_recommended: >
+    Not found. Searched Portuguese interview text directly (his own site,
+    A Magazine 2025, TAG Livros) for "por onde começar" and equivalents;
+    the biographical/craft interviews recovered contain no reader-facing
+    entry-point guidance. One search-engine summary claimed he "dislikes
+    the question but recommends Galveias" - retested with three further
+    targeted searches for the distinctive phrasing and found no page
+    containing it. Per the no-laundering rule, an unread summary is not a
+    citation, so this is not used and not repeated as if plausible.
+  bookshop_or_critic: >
+    Not found. Wook and Bertrand's own author pages (both known blockers,
+    confirmed again this pass) return nothing fetchable; no cached or
+    directly-reached page carries a "start here" guide. One Brazilian
+    aggregator (vlibras.com.br) names Morreste-me and A Criança em Ruínas
+    as an easier entry - read directly, not summary-only - but the same
+    page misdates Em Teu Ventre as "Mistério" genre by an "Autor:
+    Desconhecido", auto-generated FAQ boilerplate around an Amazon
+    affiliate storefront. Unreliable enough on its own subject to
+    disqualify it as a source for anyone else's; recorded and rejected in
+    orders.yaml's header, not used.
+  publisher_numbering: none - no subseries anywhere in works.yaml.
+  famous_book_trap: >
+    Not assessed as a path because there is no path to assess it against.
+    Worth naming for a future pass: Nenhum Olhar (the Saramago Prize
+    winner, his most translated book) is also his earliest novel, so the
+    famous-book trap and the first-book-first default happen to coincide
+    here rather than conflict - no correction to flag either way.
+
+curator_questions: >
+  None rise to a curator call. The weakest link in this pass is the
+  unverifiable "recommends Galveias" search summary - flagged and not used,
+  per the same discipline the franchise-research and eras stages already
+  applied to this wing's other unread-summary leads (the publisher-sequence
+  claim, the Serrano pseudonym claim).
+
+tool_calls: >
+  26 total; 12 touched the network - 8 WebSearch queries (start-here advice
+  in Portuguese, the 2000 intra-year order, the "recommends Galveias" retest,
+  publisher reading-guide search) and 4 fetch.py invocations covering 7 URL
+  fetches (Morreste-me's Wikipedia page, the vlibras listicle, papeisjlp,
+  taglivros [404], A Magazine's 2025 interview), 3 served from cache on
+  re-fetch with wider context.
