@@ -1,0 +1,185 @@
+stage: eras
+summary: >
+  The scaffold's premise was wrong in the author's favour. Valter Hugo Mae
+  periodises his own novels and names the periods himself: "os meus livros
+  tem-se organizado em tetralogias. Houve a primeira, A Idade Inteira, e esta
+  agora chama-se Irmaos, Ilhas e Ausencias" (Observador, 14 Jan 2024, direct
+  quote), with the second tetralogy also named in the author's note that
+  closes Deus na Escuridao. eras.yaml goes from 1 era to 3: the existing
+  2004-2010 era is re-provenanced critical -> author and retitled to the
+  author's own name for it; a new author-named era covers 2013-2024; a third,
+  publishing-fact era covers the pre-novel poetry years 1996-2003. Works
+  outside every era drop from 23 to 4, with no work orphaned by this pass
+  (all 4 remaining were already orphans). validate.py green, sanctuary check
+  green, i18n file coverage unchanged at 68/73.
+produced:
+  erasKept:
+    - id: tetralogia-das-minusculas
+      verdict: RECEIVED
+      change: "provenance critical -> author; title 'A Tetralogia das Minusculas' -> 'A Idade Inteira'; id unchanged"
+      rung: 1
+    - id: antes-dos-romances
+      verdict: RECEIVED (publishing fact, name is descriptive)
+      change: new
+      rung: 4
+    - id: irmaos-ilhas-e-ausencias
+      verdict: RECEIVED
+      change: new
+      rung: 1
+  boundaryVerdicts:
+    antes-dos-romances: >
+      Start 1996 = Silencioso Corpo de Fuga, his first published book. End
+      2003 = the year before o nosso reino. Both nameable events; the hinge
+      is stated by Observador. SOURCED, though the period as a period is
+      nobody's coinage.
+    tetralogia-das-minusculas: >
+      Unchanged, 2004-2010, and now sourced at rung 1 rather than inferred:
+      the author's four-book membership matches Infopedia's and Revista
+      Pernambuco's identically. SOURCED.
+    irmaos-ilhas-e-ausencias: >
+      Start 2013 (A Desumanizacao) named as the opening volume by Visao and
+      Revista Pernambuco; end 2024 stated by the author himself in two
+      independent January 2024 interviews (Renascenca, Observador). SOURCED
+      on both ends.
+  orphansBefore: 23
+  orphansAfter: 4
+  orphansCreated: 0
+rejected:
+  - candidate: "The poetry decade as a critic-named or author-named period"
+    verdict: REJECTED as a critical/authorial period, ACCEPTED only as a publishing fact
+    why: >
+      "Poet who became a novelist" is biography, not periodisation. Nobody
+      names the stretch. The author actively denies a phase structure inside
+      the poetry: asked in the same Observador interview whether his
+      relationship with poetry ever had phases of disenchantment, he says
+      "nunca houve uma altura da minha vida em que eu achasse que a poesia me
+      interessava menos" and it "nunca teve uma inflexao". The poetry also
+      does not stop in 2004 (14 books in verse by 2018), so a "poetry period"
+      ending in 2003 would be false. What IS sourced is the narrower
+      bibliographic fact that he published only verse until the first novel,
+      so the era shipped is titled for that fact and provenance: publishing.
+  - candidate: "A proximidade autobiografica (O Filho de Mil Homens + Contra Mim)"
+    verdict: REJECTED as an era
+    why: >
+      Real and named (Revista Pernambuco gives it as a third axis alongside
+      the two tetralogies), but it is a thematic axis, not a period: its two
+      works are ten years apart and the later one falls inside the
+      Irmaos, Ilhas e Ausencias span, so an era for it would overlap another
+      era, which the schema treats as a defect. Belongs to a connections or
+      subseries layer if anywhere, not to eras.yaml.
+  - candidate: "Novels of tenderness / consolation, O Filho de Mil Homens onward"
+    verdict: REJECTED
+    why: >
+      Tested directly against Portuguese and Brazilian sources ("romances da
+      bondade", "trilogia da bondade", "ciclo da bondade"). No such grouping
+      exists in any source reached. It appears to be a reading, not a
+      received framing.
+  - candidate: "A third tetralogy beginning with O Seculo dos Imbecis (2026)"
+    verdict: REJECTED, and flagged as a live misinformation trap
+    why: >
+      A search-engine summary asserts that the 2026 novel "marks 30 years of
+      literary work and the beginning of a new tetralogy". The 30-years claim
+      is real and is Lusa's, from Porto Editora's editorial plan. The new
+      tetralogy claim is not in the Lusa wire (read in full via Radio
+      Festival), not on Porto Editora's product page, and not in the CNN
+      Portugal launch interview. It looks like a conflation of the 30-years
+      line with the two known tetralogies. Do not let it back in without a
+      primary source.
+  - candidate: "Retitling the 2004-2010 era in English"
+    verdict: REJECTED
+    why: "Both received names are Portuguese; an English rendering would be a coinage."
+sourcesUsed:
+  rung1_author:
+    - "https://observador.pt/especiais/valter-hugo-mae-se-nao-puder-fazer-mais-nada-fiz-o-que-me-competia/ (14 Jan 2024) - names both tetralogies in direct quotation, and says he only spoke of completing a cycle when the third island book came out"
+    - "https://pernambucorevista.com.br/secoes/capa/a-relacao-sem-limites-de-dois-irmaos-no-novo-livro-de-valter-hugo-mae - quotes the Nota do autor closing Deus na Escuridao naming the second tetralogy, lists all four, and gives the first tetralogy's name as 'a idade inteira'"
+    - "https://rr.pt/noticia/vida/2024/01/12/valter-hugo-mae-o-amor-de-uma-mae-podera-ser-apenas-comparavel-ao-tamanho-do-amor-de-deus/362455/ - author: 'Este livro encerra uma tetralogia sobre ilhas'"
+    - "https://observador.pt/especiais/valter-hugo-mae-fui-mais-esperto-na-vida-quando-optei-por-um-verso-mais-do-que-por-uma-pessoa/ (21 Mar 2018) - the exclusive-poetry years and the author denying phases in his poetry"
+    - "https://valterhugomae.com/biblio.html - the author's own bibliography, organised by genre (prosa / poesia / antologias), not by period"
+  rung2_reference_and_press:
+    - "https://www.infopedia.pt/artigos/$valter-hugo-mae - Porto Editora's reference work, uses 'a tetralogia das minusculas' without introducing it and lists the four novels"
+    - "https://visao.pt/visaose7e/livros-e-discos/2024-01-30-valter-hugo-mae-nos-meus-livros-tento-sempre-mostrar-que-a-familia-e-uma-coisa-bastante-escangalhada-e-complexa/ - names the four books of the second tetralogy and the 'irmaos, ilhas e ausencias' theme"
+    - "https://repositorio.ufc.br/handle/riufc/79197 - academic paper titled on the tetralogia das minusculas"
+languagesSearched: >
+  Portuguese (pt-PT and pt-BR) throughout: Portuguese press (Publico,
+  Observador, Visao, Renascenca, CNN Portugal, Lusa via Radio Festival),
+  Brazilian press and literary magazines (Revista Pernambuco, Revestres),
+  Porto Editora's Infopedia and product pages, the author's own site,
+  Brazilian university repositories (UFC, PUC-SP). English used only to
+  cross-check names. No conclusion here rests on an English-language search.
+sourcesThatRefused:
+  - "publico.pt - HTTP 403 to the fetch tool and an empty body to a browser user-agent; the June 2026 interview could not be read. Nothing in this file depends on it."
+  - "portoeditora.pt product pages - 403 to the fetch tool; readable with a browser user-agent, and read that way."
+  - "wook.pt - returns a 65-byte stub to automated fetches, as the shared trap registry already records."
+  - "infopedia.pt and observador.pt - 403 to the fetch tool, fine with a browser user-agent. Worth recording: both are usable, they just refuse the default request."
+forStages:
+  translation: >
+    eras.yaml grew from 3 to 9 untranslated fields (3 eras x title/description/
+    themes). This is not a regression: the wing has no pt-PT overlay at all
+    yet, so file-level coverage is unchanged at 68/73. Two era titles are
+    already Portuguese and must NOT be translated or reworded: "A Idade
+    Inteira" and "Irmaos, Ilhas e Ausencias" are the author's own names.
+    "Antes dos Romances" is likewise already Portuguese. The Portuguese
+    quotations inside the descriptions and notes are verbatim and must
+    survive intact.
+  press-archaeology: >
+    Two dated, quotable anchors surfaced that are not yet lifeEvents and that
+    this stage's file footprint could not add: (1) the Prémio Almeida Garrett
+    (1999) for egon schiele auto-retrato de dupla encarnacao is confirmed on
+    the author's own bibliography page, which lists the prize as part of the
+    imprint line, closing the completeness-auditor's open lead; (2) the
+    closing of Irmaos, Ilhas e Ausencias in January 2024 with Deus na
+    Escuridao is a genuine career hinge stated by the author in two
+    interviews, and it sits at the end of the 8-year aura gap aura_density.py
+    flags.
+  reading-orders: >
+    Both tetralogies now have author-endorsed membership and order, which is
+    stronger evidence than the publisher numbering that was looked for and
+    not found. The four-book sequences are: A Idade Inteira = o nosso reino,
+    o remorso de baltazar serapiao, o apocalipse dos trabalhadores, a maquina
+    de fazer espanhois. Irmaos, Ilhas e Ausencias = A Desumanizacao, Homens
+    Imprudentemente Poeticos, As Doencas do Brasil, Deus na Escuridao.
+  completeness-auditor: >
+    A date conflict surfaced: works.yaml dates Homens Imprudentemente
+    Poeticos to 2016, while Revista Pernambuco and Observador both date it
+    2015. Not resolved here and not decisive for any era boundary, so the
+    year is deliberately omitted from the era description with the conflict
+    recorded in the era's note. Also worth reconciling: the same works.yaml
+    header counts 15 poetry collections, while Observador (2018) says
+    "14 livros em verso" and describes nine books published in verse before
+    the first novel in 2004.
+openQuestions:
+  - >
+    NAMING, the one call genuinely escalated. The 2004-2010 era has two
+    received names and I chose the author's. Title is now "A Idade Inteira"
+    (rung 1, his own words) rather than "A Tetralogia das Minusculas" (rung
+    2, and far more widely used: Infopedia, academic criticism, the press,
+    and already the wording in this wing's own events.yaml, theme.yaml and
+    authors/valter-hugo-mae.yaml). Ruling and reasoning: keeping the critical
+    title while raising provenance to author would assert that Mae coined
+    "das minusculas", which he did not, and that is precisely the scope-shift
+    error the eras skill warns about. The description and note carry both
+    names, so nothing is lost to a reader either way. If the curator prefers
+    recognisability over rung, flip the title back and drop provenance to
+    critical; the id stays tetralogia-das-minusculas regardless, and no
+    achievement or overlay references it today.
+  - >
+    MY WEAKEST DECISION: the era antes-dos-romances (1996-2003). Both
+    boundaries are nameable and sourced, the label is flat and makes no
+    verdict, and rung 4 is a legitimate rung the skill calls under-used. But
+    no critic and no reference work treats these years as a period, and the
+    title is descriptive rather than received. The honest alternative is to
+    delete it and let 1996-2003 stay uncovered, which restores 9 poetry works
+    to the orphan list and costs nothing but coverage. Recommendation: keep
+    it, as the repo already ships the same shape for chuck-palahniuk ("The
+    Norton Novels", publishing) and discworld ("Before the Discworld",
+    publishing). Flagging it as the item in this file most likely to be
+    wrong.
+  - >
+    2011-2012 and 2025-2026 are deliberately uncovered, and this is a result
+    rather than a gap to close. O Filho de Mil Homens (2011) is excluded by
+    the author's own scheme, which puts it on a separate axis with Contra Mim
+    rather than in either tetralogy; extending the second tetralogy back to
+    2011 would contradict the source the era borrows its legitimacy from.
+    2025-2026 sits after Irmaos, Ilhas e Ausencias closed, with no successor
+    cycle named by anyone. If a third tetralogy is announced, that is when
+    2025 onward gets an era, not before.
