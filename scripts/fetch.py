@@ -47,6 +47,13 @@ import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE = os.path.join(ROOT, ".cache", "fetch")
+
+# Almost everything fetched here is Portuguese, and the Windows console is not
+# UTF-8: without this, printing an extract containing an accent crashes the tool
+# with a UnicodeEncodeError and the agent loses the whole batch it just paid for.
+for _s in (sys.stdout, sys.stderr):
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8", errors="replace")
 UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/120.0 Safari/537.36"
