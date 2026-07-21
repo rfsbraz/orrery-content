@@ -51,6 +51,7 @@ def main():
     p.add_argument("slug")
     p.add_argument("--since", help="git ref to diff prose against")
     p.add_argument("--locale", default="pt-PT")
+    p.add_argument("--new", action="store_true", help="the wing does not exist yet, this is a first build")
     args = p.parse_args()
     for s in (sys.stdout, sys.stderr):
         try:
@@ -60,6 +61,18 @@ def main():
 
     wing = os.path.join("content", "franchises", args.slug)
     exists = os.path.isdir(os.path.join(ROOT, wing))
+    # A missing wing is ambiguous: either a genuinely new one, or a typo. Both
+    # print the same "run everything" plan, and only one of them is right, so
+    # make the caller say which. Reporting 11 stages triggered against a
+    # mistyped slug is the kind of confident wrong answer this repo keeps
+    # paying for.
+    if not exists and not args.new:
+        print(
+            f"no wing at {wing}. If this is a new wing, pass --new; otherwise "
+            f"check the slug against content/franchises/.",
+            file=sys.stderr,
+        )
+        return 2
     works = load(wing, "works.yaml") or []
     eras = load(wing, "eras.yaml") or []
     orders = load(wing, "orders.yaml") or []

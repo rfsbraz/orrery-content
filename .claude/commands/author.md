@@ -172,13 +172,28 @@ Four rules follow, and they cut far more than trimming prompts does:
 ## Cheap checks before expensive stages
 
 A stage that runs and correctly changes nothing has still been paid for:
-`world-events` cost 188k to return a defended zero-diff. Before launching any
-stage whose trigger is a judgement rather than a fact, spend the two thousand
-tokens that would settle it - `event_density.py` for an empty decade,
-`aura_density.py` for a dark run, `wing_digest.py --missing cover|edition|era`,
-a `grep` of `global.yaml` for the region in question. Decide from the numbers,
-then launch or record the skip. **Skipping a stage on evidence is a result and
-belongs in the run report.**
+`world-events` cost 188k to return a defended zero-diff, and 210k more being
+sent back. Most of the trigger table above is arithmetic over files already on
+disk, and arithmetic is cheaper than an agent.
+
+**Run `python scripts/stage_plan.py <slug>` (add `--new` for a first build,
+`--since <ref>` to answer "did prose change") before you launch anything.** It
+reports RUN / SKIP / JUDGE per stage against the same triggers.
+
+Read its verdicts precisely, because they are not a plan you can follow blindly:
+
+- **RUN** - an input is measurably missing. Launch it.
+- **SKIP** - a claim about *inputs*, never about quality. It has nothing to
+  work on.
+- **JUDGE** - the trigger is genuinely editorial and the script cannot see it.
+  This is not "optional". `completeness-auditor` is always JUDGE, because "the
+  bibliography looks complete" is precisely the belief that ships a wing
+  missing eighteen books.
+
+Then launch, or record the skip with its evidence. **Skipping a stage on
+evidence is a result and belongs in the run report**; skipping it because the
+script said SKIP and you did not read why is how a wing quietly stops being
+audited.
 
 Your own context is part of this too: you re-send it on every call for the
 whole run. Read with `grep -n -A5` and the digest rather than opening whole
