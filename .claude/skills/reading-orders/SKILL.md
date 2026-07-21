@@ -107,10 +107,9 @@ are real.
 - **Personal preference with no community behind it.** You are researching
   orders that exist, not inventing one dressed as `curated`.
 - **One blog post.** A single listicle is not a community reading practice.
-- **An order that exists to make the wing look fuller.** The capabilities
-  table lights `orderDiff` at 2+ orders (the derived default counts as one), a
-  real temptation to pad to two - the worst reason to add an order, because it
-  puts a false path in front of readers to switch on a UI feature.
+- **An order that exists to make the wing look fuller.** Padding the count
+  is the worst reason to add an order, because it puts a false path in front
+  of readers to dress the wing up.
 
 **Where the honest count lands.** No quota, but calibrate: a linear series
 with one genuine debate ships **1-2** orders (`wheel-of-time`); a multi-thread

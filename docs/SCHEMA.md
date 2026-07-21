@@ -52,7 +52,6 @@ still thin, even though events exist).
 | Capability    | Auto-activates when...                              | Powers |
 |---------------|-----------------------------------------------------|--------|
 | `river`       | the franchise has timeline events (aura)            | the atmospheric River view |
-| `orderDiff`   | 2+ reading orders exist (derived default counts)    | side-by-side order comparison |
 | `wizard`      | `startHere` is present in franchise.yaml            | the "where to start" guided onboarding |
 | `connections` | any work has `connections` or characters.yaml exists| the connections map + per-work crossover panels |
 | `companion`   | the franchise has timeline events                   | reading companion mode for in-progress books |
@@ -63,7 +62,6 @@ still thin, even though events exist).
 # franchise.yaml (all optional; omitted keys mean auto)
 features:
   river: auto        # auto | on | off
-  orderDiff: auto
   wizard: auto
   connections: auto
   companion: auto
