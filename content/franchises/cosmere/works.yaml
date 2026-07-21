@@ -3,12 +3,22 @@
 # unless a source states a full date. The default reading order (all works in
 # publication order) is DERIVED from this file - so completeness is the goal.
 #
-# Coverage: all Cosmere novels (Elantris, Mistborn Era 1 + Era 2, the Stormlight
+# Coverage: Brandon Sanderson's complete published bibliography. The Cosmere
+# section: all Cosmere novels (Elantris, Mistborn Era 1 + Era 2, the Stormlight
 # Archive, Warbreaker, the 2023 Secret Projects, Wind and Truth, Isles of the
 # Emberdark), the significant novellas, the Arcanum Unbounded collection, the
-# White Sand graphic novels (extended), and minor short fiction (apocrypha). The
-# non-Cosmere Secret Project (The Frugal Wizard's Handbook) is deliberately
-# excluded - it is not set in the Cosmere.
+# White Sand graphic novels (extended), and minor short fiction (apocrypha).
+# The non-Cosmere sections: the Skyward and Reckoners series, the Alcatraz
+# books, the Legion novellas, The Rithmatist, The Frugal Wizard's Handbook,
+# the standalone novellas and audio originals, the licensed tie-ins, the
+# Tailored Realities collection, and the short-fiction and anthology tail.
+#
+# Deliberately NOT here: Sanderson's three Wheel of Time completion volumes
+# (The Gathering Storm 2009, Towers of Midnight 2010, A Memory of Light 2013).
+# A work lives in exactly one franchise, and a continued universe belongs to
+# its originating author, so they are catalogued in the wheel-of-time
+# franchise as works with withAuthorIds: [brandon-sanderson]. His author bio
+# carries the cross-reference.
 
 # --- Elantris / Sel ---
 - id: cosmere/elantris
@@ -306,3 +316,565 @@
   subseries: "White Sand"
   canonTier: extended
   synopsis: "On a tidally locked world of endless day and dark, a weak sand-mage survives a massacre and must master a fading magic, adapted as a graphic-novel trilogy from an unpublished early Sanderson novel."
+
+# ============================================================================
+# Non-Cosmere works. New works take the same `cosmere/` id prefix as the rest
+# of the wing: the prefix is the wing's permanent slug, not a universe claim.
+# ============================================================================
+
+# --- The Reckoners ---
+- id: cosmere/steelheart
+  title: "Steelheart"
+  authorIds: [brandon-sanderson]
+  published: 2013
+  subseries: "The Reckoners"
+  canonTier: core
+  synopsis: "In a world where ordinary people gained superpowers and promptly became tyrants, a young man who watched the invincible ruler of Chicago kill his father joins the only crew that dares to assassinate the supposedly unkillable."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/mitosis
+  title: "Mitosis"
+  authorIds: [brandon-sanderson]
+  published: 2013
+  subseries: "The Reckoners"
+  canonTier: apocrypha
+  synopsis: "A short story following [[work:cosmere/steelheart|Steelheart]]: a self-duplicating Epic tests the fragile freedom of the newly liberated city."
+  note: >
+    A short ebook original published in December 2013, between Steelheart and
+    Firefight; the same 2013 year as Steelheart is correct for both.
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/firefight
+  title: "Firefight"
+  authorIds: [brandon-sanderson]
+  published: 2015
+  subseries: "The Reckoners"
+  canonTier: core
+  synopsis: "The hunt moves to a flooded, neon-grown Manhattan ruled by an Epic whose powers force the crew to question what they think they know about where the powers come from."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/calamity
+  title: "Calamity"
+  authorIds: [brandon-sanderson]
+  published: 2016
+  subseries: "The Reckoners"
+  canonTier: core
+  synopsis: "The trilogy closes as the crew pursues a fallen friend into a city of living salt and confronts the source of the Epics' corruption itself."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/lux
+  title: "Lux"
+  authorIds: [brandon-sanderson]
+  withAuthorIds: [steven-michael-bohls]
+  authorRole: co-author
+  published: 2021
+  subseries: "The Reckoners"
+  canonTier: extended
+  synopsis: "A spinoff set in the Reckoners' world: in the skies over a ruined Texas, a flying city's inhabitants resist the Epics who would claim it."
+  note: >
+    An audio-original novel (Mainframe, 2021), credited on the cover as by
+    Steven Michael Bohls and Brandon Sanderson, in that order.
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+# --- Skyward (the Cytoverse) ---
+- id: cosmere/defending-elysium
+  title: "Defending Elysium"
+  authorIds: [brandon-sanderson]
+  published: 2008
+  subseries: null
+  canonTier: apocrypha
+  synopsis: "A blind operative for a phone company that holds the monopoly on faster-than-light communication untangles espionage and first contact aboard a distant space platform."
+  note: >
+    A novelette first published in English in Asimov's Science Fiction,
+    October-November 2008. Written years before Skyward, it established the
+    universe (the Cytoverse) that the Skyward novels later inhabit; the
+    connection is declared on [[work:cosmere/skyward|Skyward]], the later work.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?913919"
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+
+- id: cosmere/skyward
+  title: "Skyward"
+  authorIds: [brandon-sanderson]
+  published: 2018
+  subseries: "Skyward"
+  canonTier: core
+  synopsis: "On a besieged world where humanity survives underground, a girl written off as a coward's daughter fights her way into flight school and finds a half-destroyed ship with a mind of its own."
+  connections:
+    - cosmere/defending-elysium
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/starsight
+  title: "Starsight"
+  authorIds: [brandon-sanderson]
+  published: 2019
+  subseries: "Skyward"
+  canonTier: core
+  synopsis: "Carrying a stolen identity, the young pilot infiltrates the alien civilisation that keeps humanity caged and discovers the war looks very different from the other side."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/cytonic
+  title: "Cytonic"
+  authorIds: [brandon-sanderson]
+  published: 2021
+  subseries: "Skyward"
+  canonTier: core
+  synopsis: "The third Skyward novel sends its heroine into the nowhere, a dimension of memory and monsters, to learn what her powers actually are and what the galaxy's jailers fear."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/sunreach
+  title: "Sunreach"
+  authorIds: [brandon-sanderson]
+  withAuthorIds: [janci-patterson]
+  authorRole: co-author
+  published: 2021
+  subseries: "Skyward Flight"
+  canonTier: core
+  synopsis: "The first Skyward Flight novella: with their leader missing, a Skyward Flight pilot and a lovestruck slug-keeper must hold the line against an overwhelming enemy."
+  note: >
+    The three Skyward Flight novellas (Sunreach, ReDawn, Evershore) were each
+    first published individually as ebook and audio originals across late
+    2021, then collected in print as Skyward Flight: The Collection (2022),
+    which is an omnibus of these three works rather than a separate work. They
+    run parallel to [[work:cosmere/cytonic|Cytonic]] and are co-written with
+    Janci Patterson.
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/redawn
+  title: "ReDawn"
+  authorIds: [brandon-sanderson]
+  withAuthorIds: [janci-patterson]
+  authorRole: co-author
+  published: 2021
+  subseries: "Skyward Flight"
+  canonTier: core
+  synopsis: "An alien defector must decide whether the humans she once fought are allies worth trusting, as her own people slide toward surrender to the galaxy's rulers."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/evershore
+  title: "Evershore"
+  authorIds: [brandon-sanderson]
+  withAuthorIds: [janci-patterson]
+  authorRole: co-author
+  published: 2021
+  subseries: "Skyward Flight"
+  canonTier: core
+  synopsis: "The third Skyward Flight novella: a grieving pilot leads a rescue mission to the kitsen homeworld and learns what his strange new abilities are for."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/defiant
+  title: "Defiant"
+  authorIds: [brandon-sanderson]
+  published: 2023
+  subseries: "Skyward"
+  canonTier: core
+  synopsis: "The Skyward arc concludes: humanity's last fighters take the war to the Superiority itself, and their champion must decide what she is willing to become to end it."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/hyperthief
+  title: "Hyperthief"
+  authorIds: [brandon-sanderson]
+  withAuthorIds: [janci-patterson]
+  authorRole: co-author
+  published: 2023
+  subseries: null
+  canonTier: apocrypha
+  synopsis: "A short Cytoverse caper co-written with Janci Patterson, first issued as a slim Dragonsteel booklet."
+  note: >
+    First published 22 November 2023 as an 18-page saddle-stapled Dragonsteel
+    booklet. A side story in the Skyward universe; it is not one of the
+    numbered series entries, so it carries no subseries.
+  connections:
+    - cosmere/skyward
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?3258155"
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+
+# --- Alcatraz vs. the Evil Librarians ---
+- id: cosmere/alcatraz-versus-the-evil-librarians
+  title: "Alcatraz Versus the Evil Librarians"
+  authorIds: [brandon-sanderson]
+  published: 2007
+  subseries: "Alcatraz vs. the Evil Librarians"
+  canonTier: core
+  synopsis: "A foster kid who breaks everything he touches discovers his clumsiness is a hereditary superpower and that the world's information is controlled by a cult of evil librarians."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/alcatraz-versus-the-scriveners-bones
+  title: "Alcatraz Versus the Scrivener's Bones"
+  authorIds: [brandon-sanderson]
+  published: 2008
+  subseries: "Alcatraz vs. the Evil Librarians"
+  canonTier: core
+  synopsis: "Alcatraz's search for his missing father leads into the booby-trapped Library of Alexandria, whose curators collect souls as readily as books."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/alcatraz-versus-the-knights-of-crystallia
+  title: "Alcatraz Versus the Knights of Crystallia"
+  authorIds: [brandon-sanderson]
+  published: 2009
+  subseries: "Alcatraz vs. the Evil Librarians"
+  canonTier: core
+  synopsis: "Alcatraz finally reaches the Free Kingdoms' capital, where his famous name is a burden, politics are lethal, and the librarians are negotiating a treaty nobody should sign."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/alcatraz-versus-the-shattered-lens
+  title: "Alcatraz Versus the Shattered Lens"
+  authorIds: [brandon-sanderson]
+  published: 2010
+  subseries: "Alcatraz vs. the Evil Librarians"
+  canonTier: core
+  synopsis: "The librarians besiege the kingdom of Mokia, and Alcatraz's attempt to help becomes a war story told with teddy-bear grenades and his usual honesty about his own failings."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/the-dark-talent
+  title: "The Dark Talent"
+  authorIds: [brandon-sanderson]
+  published: 2016
+  subseries: "Alcatraz vs. the Evil Librarians"
+  canonTier: core
+  synopsis: "Alcatraz infiltrates the librarians' inner sanctum in the Highbrary, in the volume the whole self-deprecating narration has been building toward."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/bastille-vs-the-evil-librarians
+  title: "Bastille vs. the Evil Librarians"
+  authorIds: [brandon-sanderson]
+  withAuthorIds: [janci-patterson]
+  authorRole: co-author
+  published: 2022
+  subseries: "Alcatraz vs. the Evil Librarians"
+  canonTier: core
+  synopsis: "The series' true ending, narrated by Bastille, who sets out to rescue Alcatraz and finish the story he could not bring himself to tell."
+  note: >
+    Co-written with Janci Patterson, published 2022, sixteen years after the
+    series began. The publisher markets it as the sixth and final Alcatraz
+    book.
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+# --- The Rithmatist ---
+- id: cosmere/the-rithmatist
+  title: "The Rithmatist"
+  authorIds: [brandon-sanderson]
+  published: 2013
+  subseries: null
+  canonTier: core
+  synopsis: "At a gearpunk academy where chalk drawings fight and kill, the one student who can see the patterns but not power them investigates a string of disappearances."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+# --- Legion (the Stephen Leeds novellas) ---
+- id: cosmere/legion
+  title: "Legion"
+  authorIds: [brandon-sanderson]
+  published: 2012
+  subseries: "Legion"
+  canonTier: core
+  synopsis: "A brilliant recluse whose expertise lives in the hallucinated specialists that follow him around takes a case involving a camera that photographs the past."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/legion-skin-deep
+  title: "Legion: Skin Deep"
+  authorIds: [brandon-sanderson]
+  published: 2014
+  subseries: "Legion"
+  canonTier: core
+  synopsis: "Stephen Leeds and his imaginary aspects hunt a corpse whose cells carry data worth killing for."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/legion-lies-of-the-beholder
+  title: "Legion: Lies of the Beholder"
+  authorIds: [brandon-sanderson]
+  published: 2018
+  subseries: "Legion"
+  canonTier: core
+  synopsis: "The closing novella: a summons from the woman who taught Leeds to live with his aspects forces him to confront where they come from and what losing them would mean."
+  note: >
+    First published 18 September 2018 inside the Tor omnibus Legion: The Many
+    Lives of Stephen Leeds, which collects all three novellas; it had no
+    earlier standalone edition, so retail listings for the omnibus and the
+    novella share a date. The omnibus itself is an edition of these three
+    works, not a separate work.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?2400393"
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+
+# --- Standalone novels ---
+- id: cosmere/the-frugal-wizards-handbook
+  title: "The Frugal Wizard's Handbook for Surviving Medieval England"
+  authorIds: [brandon-sanderson]
+  published: 2023
+  subseries: null
+  canonTier: core
+  synopsis: "A man wakes in a medieval England that is not quite history, with no memory and a charred corporate handbook for dimension-hopping tourists, in the one Secret Project novel set outside the Cosmere."
+  note: >
+    The second of the 2023 Year of Sanderson secret novels: Kickstarter backer
+    edition first (April 2023), Tor trade edition later the same year, so the
+    year is uncontested even though the editions differ.
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+# --- Standalone novellas and audio originals ---
+- id: cosmere/perfect-state
+  title: "Perfect State"
+  authorIds: [brandon-sanderson]
+  published: 2015
+  subseries: null
+  canonTier: extended
+  synopsis: "A god-emperor who has conquered his entire world learns how little that means when the simulation that raised him orders him out on a date."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/snapshot
+  title: "Snapshot"
+  authorIds: [brandon-sanderson]
+  published: 2017
+  subseries: null
+  canonTier: extended
+  synopsis: "Two detectives police a perfect one-day replay of their city, where every crime they solve already happened and the one they stumble onto was never supposed to be found."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/the-original
+  title: "The Original"
+  authorIds: [brandon-sanderson]
+  withAuthorIds: [mary-robinette-kowal]
+  authorRole: co-author
+  published: 2020
+  subseries: null
+  canonTier: extended
+  synopsis: "In a surveilled utopia, a temporary copy of a woman is given four days to hunt down her original, who is wanted for murder."
+  note: >
+    An audio-original novella (2020), co-written with Mary Robinette Kowal.
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/children-of-the-nameless
+  title: "Children of the Nameless"
+  authorIds: [brandon-sanderson]
+  published: 2018
+  subseries: null
+  canonTier: extended
+  synopsis: "A Magic: The Gathering novella - on the gothic plane of Innistrad, a girl whose whole village vanished in a night seeks help from a reclusive planeswalker and his impeccably polite geists."
+  note: >
+    A licensed Magic: The Gathering story, released by Wizards of the Coast as
+    a free ebook in December 2018. Genuinely written by Sanderson; the setting
+    belongs to the game.
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/infinity-blade-awakening
+  title: "Infinity Blade: Awakening"
+  authorIds: [brandon-sanderson]
+  published: 2011
+  subseries: "Infinity Blade"
+  canonTier: extended
+  synopsis: "A tie-in novella bridging the Infinity Blade video games: the knight who finally slew the immortal God King wakes to learn what his victory actually bought."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+- id: cosmere/infinity-blade-redemption
+  title: "Infinity Blade: Redemption"
+  authorIds: [brandon-sanderson]
+  published: 2013
+  subseries: "Infinity Blade"
+  canonTier: extended
+  synopsis: "The second Infinity Blade novella: sworn enemies wake imprisoned together and must unravel the deathless technology that rules their world."
+  sources:
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+
+# --- Dark One ---
+- id: cosmere/dark-one
+  title: "Dark One, Vol. One"
+  authorIds: [brandon-sanderson]
+  withAuthorIds: [jackson-lanzing, collin-kelly]
+  authorRole: co-author
+  published: 2021
+  subseries: "Dark One"
+  canonTier: extended
+  synopsis: "A graphic novel in which a young man haunted by visions learns a fantasy world has cast him as its prophesied destroyer, not its saviour."
+  note: >
+    From Sanderson's story; the script is by Jackson Lanzing and Collin Kelly
+    with art by Nathan Gooden (Vault Comics, 2021). Credited to all three
+    writers, like the [[work:cosmere/white-sand|White Sand]] adaptation.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?2854427"
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+
+- id: cosmere/dark-one-forgotten
+  title: "Dark One: Forgotten"
+  authorIds: [brandon-sanderson]
+  withAuthorIds: [dan-wells]
+  authorRole: co-author
+  published: 2023
+  subseries: "Dark One"
+  canonTier: extended
+  synopsis: "An audio-original companion serial: a true-crime podcaster investigates a killer the world cannot seem to remember."
+  note: >
+    Audio-exclusive serial (Recorded Books, January 2023), co-written with Dan
+    Wells.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?3128011"
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+
+# --- Collections, picture book, curiosities ---
+- id: cosmere/the-most-boring-book-ever
+  title: "The Most Boring Book Ever"
+  authorIds: [brandon-sanderson]
+  published: 2024
+  subseries: null
+  canonTier: extended
+  synopsis: "A picture book whose deadpan text insists nothing is happening while the pictures disagree spectacularly."
+  note: >
+    Illustrated by Kazu Kibuishi (Roaring Brook Press, 24 September 2024);
+    Sanderson wrote the text.
+  sources:
+    - "https://us.macmillan.com/books/9781250843661/themostboringbookever/"
+    - "https://www.isfdb.org/cgi-bin/title.cgi?3338600"
+
+- id: cosmere/long-chills-and-case-dough
+  title: "Long Chills & Case Dough"
+  authorIds: [brandon-sanderson]
+  published: 2023
+  subseries: null
+  canonTier: apocrypha
+  synopsis: "A hard-boiled noir novelette, published as a slim collectible hardcover in Dragonsteel's Sanderson Curiosities line."
+  note: >
+    First published 1 December 2023 as a 67-page Dragonsteel Entertainment
+    hardcover chapbook (Sanderson Curiosities). Later reprinted in
+    [[work:cosmere/tailored-realities|Tailored Realities]].
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?3255958"
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+
+- id: cosmere/tailored-realities
+  title: "Tailored Realities"
+  authorIds: [brandon-sanderson]
+  published: 2025
+  subseries: null
+  canonTier: extended
+  synopsis: "The first gathered collection of Sanderson's non-Cosmere short fiction, spanning roughly twenty-five years of stories with an author's postscript on each."
+  note: >
+    Published by Tor on 9 December 2025. Collects previously published stories
+    (among them Snapshot, Perfect State, Defending Elysium, Firstborn, Mitosis
+    and Long Chills & Case Dough) together with fiction new to this volume
+    (Moment Zero, Brain Dump, Probability Approaching Zero); the stories first
+    published here are part of this work, not separate works.
+  sources:
+    - "https://torpublishinggroup.com/tailored-realities/"
+    - "https://www.isfdb.org/cgi-bin/title.cgi?3537436"
+
+# --- Early and anthology short fiction ---
+- id: cosmere/firstborn
+  title: "Firstborn"
+  authorIds: [brandon-sanderson]
+  published: 2005
+  subseries: null
+  canonTier: apocrypha
+  synopsis: "A space-opera novelette about the untalented younger brother of the empire's greatest living admiral, raised for a war he keeps losing."
+  note: >
+    Dated by its first appearance in The Leading Edge #50 (October 2005), per
+    the ISFDB publication record. Most references, including Wikipedia and
+    Coppermind, date it 17 December 2008, which is the Tor.com publication
+    that made it widely read - a reprint, not the first appearance. The 2005
+    printing rests on the single ISFDB record; if that record ever falls, the
+    date moves to 2008.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?1511585"
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+
+- id: cosmere/armored
+  title: "Armored"
+  authorIds: [brandon-sanderson]
+  withAuthorIds: [ethan-skarstedt]
+  authorRole: contributor
+  contributionTitle: "Heuristic Algorithm and Reasoning Response Engine"
+  published: 2012
+  subseries: null
+  canonTier: apocrypha
+  synopsis: "A multi-author anthology of powered-armour military science fiction edited by John Joseph Adams; Sanderson's entry is a novelette co-written with Ethan Skarstedt."
+  note: >
+    Sanderson contributed one story, co-written with Ethan Skarstedt (hence
+    the withAuthorIds on this contributor entry); the anthology is not his
+    book.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?32726"
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+
+- id: cosmere/games-creatures-play
+  title: "Games Creatures Play"
+  authorIds: [brandon-sanderson]
+  authorRole: contributor
+  contributionTitle: "Dreamer"
+  published: 2014
+  subseries: null
+  canonTier: apocrypha
+  synopsis: "A multi-author anthology of supernatural sports stories edited by Charlaine Harris and Toni L. P. Kelner; Sanderson's entry is a short story about body-hopping spirits playing a lethal game of tag."
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?1749392"
+    - "https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography"
+
+- id: cosmere/altered-perceptions
+  title: "Altered Perceptions"
+  authorIds: [brandon-sanderson]
+  withAuthorIds: [dan-wells, robison-wells]
+  authorRole: editor
+  published: 2014
+  subseries: null
+  canonTier: apocrypha
+  synopsis: "A charity anthology of alternate scenes and essays on mental illness from around thirty authors, assembled to help author Robison Wells."
+  note: >
+    Sanderson instigated the project and is credited as co-editor with Dan
+    Wells and Robison Wells; it was published in 2014 through his own
+    Dragonsteel Entertainment after a crowdfunding campaign, with proceeds to
+    Wells and mental-health charity.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?1822625"
+    - "https://www.publishersweekly.com/pw/by-topic/childrens/childrens-book-news/article/62746-ya-anthology-to-benefit-author-robison-wells.html"
