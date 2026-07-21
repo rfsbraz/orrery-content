@@ -19,9 +19,10 @@ So the standard is not "is this a defensible way to group the books". It is:
 If the only source is our own reading, it is not an era. It is our opinion in a
 serif font.
 
-Read `docs/SCHEMA.md` (eras) and the **"aura editorial standard"** in the
-`franchise-research` skill first. This skill governs one file:
-`content/franchises/<slug>/eras.yaml`.
+This skill runs under `docs/CURATION.md`, the shared contract for every
+curation stage; its rules are not repeated here. Read `docs/SCHEMA.md` (eras)
+and the **aura editorial standard** (`docs/CURATION.md` §6) first. This skill
+governs one file: `content/franchises/<slug>/eras.yaml`.
 
 ## 1. An era is received, not coined
 
@@ -205,8 +206,9 @@ whether we took a real term and filed it into a decade. Two real cases:
   consensus it borrows its legitimacy from.
 
 **A boundary you can name is a boundary you can source.** Deaths, diagnoses,
-accidents, a pen name unmasked, a publisher changed, a company founded, a series
-finished, a form abandoned. If you cannot name the event, do not draw the line.
+accidents, a pen name unmasked, a publisher changed, a company founded, a
+series finished, a form abandoned. If you cannot name the event, do not draw
+the line.
 
 Where the received label and the sourced boundary disagree and you cannot fix
 both, **keep the label, attribute it, and flag the boundary in the PR.** Do not
@@ -260,9 +262,10 @@ Two corollaries:
   Sem Nome" is what the author and his publisher call it. That is the era's name.
   A translation we invent is a coinage again. Ship the received form and gloss it
   in the description.
-- **Foreign-language sources are frequently unreachable** - Portuguese newspapers
-  and bookshops block automated fetches aggressively. Blocked is not absent. Say
-  which sources refused you, so nobody reads your gap as a conclusion.
+- **Foreign-language sources are frequently unreachable** (the trap registry,
+  `docs/CURATION.md` §4, records which, and what is worth retesting). Blocked is
+  not absent: say which sources refused you, so nobody reads your gap as a
+  conclusion.
 
 ## 7. Sourcing mechanics
 
@@ -286,16 +289,13 @@ A source that proves the books exist does not source the era.
 - **`provenance`** records which rung of the ladder the era stands on. It is not
   yet rendered and not yet validated, but it makes the claim auditable and stops
   the next agent re-deriving your research.
-- **Never launder a citation.** The URL must support what you say it supports.
-  Fetch it and read it - a search-result snippet is not a source. A real failure
-  from this repo's own history: a research pass attributed the phrase
-  "experimental period" to Britannica's Christie article. The article contains no
-  such phrase and names no phase of her career. The citation looked perfect.
+- **Citation laundering (`docs/CURATION.md` §4) has already bitten this file:**
+  a research pass attributed the phrase "experimental period" to Britannica's
+  Christie article. The article contains no such phrase and names no phase of
+  her career. The citation looked perfect.
 - **Where a term is widely used but hard to pin to one origin** (every fandom
   term), cite **two or three separate uses** and say in the PR that this is what
   you are doing and why. That is honest sourcing, not a weaker citation.
-- **Quote YAML values containing colons or apostrophes.** Quote URLs with `?` in
-  flow sequences or the parse breaks.
 - **A `note:`** is where a known weakness lives: a contested date, a label we
   could not source, a boundary we rounded. A flagged weakness is content. An
   unflagged one is a defect.
@@ -308,8 +308,7 @@ A source that proves the books exist does not source the era.
   renamed id breaks both. Ids are permanent even when the title they were derived
   from is gone - `the-golden-decade` can hold an era titled "The Second Decade".
 - **Any title or description change invalidates the pt-PT overlay.** Fix both
-  sides **in the same commit** and re-run `python scripts/i18n_coverage.py`; do
-  not regress the baseline.
+  sides in the same commit (`docs/CURATION.md` §3); do not regress the baseline.
 - **Renaming an era can strand an achievement.** `stephen-king/golden-decade` is
   named "Into the Golden Decade" and its description quotes the era title. Rename
   the era and the badge is describing something that no longer exists. Grep for
@@ -342,15 +341,10 @@ independently, and an era can have a perfect citation and a fabricated span.
 
 ## Hard rules
 
-- **Never fabricate a source or a consensus.** "Some critics say" with no
-  citation is exactly the failure this skill exists to end. Finding nothing is a
-  valid, useful, reportable result.
-- **Fetch before you cite.** Verify the page says what you claim.
-- **Report what you could not reach.** Blocked sources, exhausted search budgets,
-  paywalls. An unstated limit reads as a finding.
-- **No em dashes.** Quote YAML values containing colons or apostrophes.
-- **`python scripts/validate.py` green**, and `python scripts/i18n_coverage.py`
-  not regressed.
+The prime directives, gates and trap registry are `docs/CURATION.md` §1-§5,
+not repeated here. The one worth restating in this skill's terms: **"some
+critics say" with no citation is exactly the failure this skill exists to
+end.** Finding nothing is a valid, useful, reportable result.
 
 ## Done means
 

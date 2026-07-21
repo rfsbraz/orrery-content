@@ -8,6 +8,9 @@ description: Dig contemporary press, interviews, obituaries, prize coverage and 
 Read what was **written at the time** about an author, and bring back the handful
 of dated, sourced facts that change how their books read.
 
+This skill runs under `docs/CURATION.md`, the shared contract for every
+curation stage; its rules are not repeated here.
+
 Every other agent in this pipeline works from records: bibliographies, catalogues,
 library metadata, cover databases. Records tell you *what exists*. They cannot
 tell you that a book was written in a hospital bed, that a publisher dropped the
@@ -16,9 +19,9 @@ speaking, or that the thing everyone repeats about a famous book is a story the
 author later denied. That lives in interviews, contemporary reviews, obituaries,
 prize coverage and trade reporting, and this skill is how it gets in.
 
-Read `docs/SCHEMA.md` (authors, `lifeEvents`, events) and the **aura editorial
-standard** in the `franchise-research` skill first. That standard is the bar.
-This skill is about *sourcing*, not about lowering it.
+Read `docs/SCHEMA.md` (authors, `lifeEvents`, events) first. The **aura
+editorial standard** (`docs/CURATION.md` §6) is the bar. This skill is about
+*sourcing*, not about lowering it.
 
 ## What you are looking for
 
@@ -68,37 +71,28 @@ non-anglophone author returns a thin, distorted picture and you must not mistake
 that thinness for a quiet life. This is the single most common failure of this
 skill.
 
-## Sourcing rules, and they are strict
+## Sourcing rules, the press-specific ones
 
-- **Two independent sources for anything about a living person's health,
-  finances, family, addiction, or legal trouble.** One source is a rumour with a
-  URL. This is not pedantry: these are real people, several of them alive, and a
-  sourced-once claim about someone's drinking or divorce is not something a
-  reading-order site should be publishing.
-- **Never launder a citation.** If Wikipedia says it and cites a newspaper, cite
-  the newspaper *after reading it*. Citing the source you did not open is how
-  errors propagate with false authority.
-- **Date everything.** An undated fact cannot be placed on a timeline, which
-  makes it useless here regardless of how good it is.
+The general sourcing law is CURATION §4 and §6 - two independent sources for
+anything about a living person's health, finances, family, addiction or legal
+trouble; never launder a citation; paywalled or dead means uncitable;
+listicles are not sources. On top of it:
+
 - **Distinguish claim from fact.** "King has said he has no memory of writing
   *Cujo*" is reportable and true. "King does not remember writing *Cujo*" asserts
   something you cannot know. Attribute in the prose when the evidence is an
   author's own account.
-- **Paywalls and dead links.** If you cannot read it, you cannot cite it. Prefer
-  an archived copy; if none exists, drop the fact rather than trusting a snippet.
-- **Anniversary and listicle content is not a source.** "10 things you didn't
-  know about X" recycles errors. Go to what it recycled.
+- **Spoiler-check every entry.** A life event can spoil a book (a real death
+  inside a novel's frame, the fate a memoir gives away). Use `spoilerAfter`.
 
 ## Living authors, and restraint
 
-Most of this catalogue's authors are alive. Two consequences:
-
-- **Ask whether the author put it in public themselves.** An illness discussed in
-  an interview is fair; an illness inferred from a cancelled tour is not.
-- **Distress is not content.** Include a hard fact only when it genuinely changes
-  how the books read, which is the same test as everything else in the aura.
-  Where it does, write it plainly and without appetite. Where it does not, leave
-  it out, even when it is true and well sourced.
+Most of this catalogue's authors are alive. The test that decides the hard
+cases: **ask whether the author put it in public themselves.** An illness
+discussed in an interview is fair; an illness inferred from a cancelled tour is
+not. And distress is not content (CURATION §6): where a hard fact earns its
+place, write it plainly and without appetite; where it does not, leave it out,
+even when it is true and well sourced.
 
 For the recently dead, the obituary window is a gift: a great deal gets said
 carefully, once, and then never revisited.
@@ -128,39 +122,19 @@ right file: `content/authors/<id>.yaml` (`lifeEvents`) for the author's own life
 and nothing into `content/events/global.yaml` (that file is the `world-events`
 skill's, and its bar is higher).
 
-**2. The findings report** - in the PR body, and this is half the deliverable:
-- each fact added, with its source and why it passes the aura standard
-- **each correction**, with the wrong version, the right version, and the
-  evidence. Flag it loudly if the wrong version is currently live in our content.
-- **facts you found and rejected**, with the reason. This stops the next agent
-  re-researching the same dead ends.
-- **what the record does not contain.** For sparse or non-English authors this is
-  the most useful paragraph in the report: say which archives you could reach,
-  which blocked you, and what a human with a library card could find that you
-  could not.
-
-## Hard rules
-
-- **Never fabricate.** Not a date, not a quote, not a publication. A plausible
-  invented fact is the worst possible output of this skill, because it is exactly
-  the kind of thing nobody downstream will think to check.
-- **Never fabricate a source URL.** Fetch it. If the fetch fails, say so.
-- **Uncertainty goes in a `note:`, not into confident prose.** "Sources disagree
-  on whether X" is publishable; silently picking one is not.
-- **Spoiler-check every entry.** A life event can spoil a book (a real death
-  inside a novel's frame, the fate a memoir gives away). Use `spoilerAfter`.
-- **Stable ids are permanent.** Adding an event never renames an existing one.
-- **Translations exist.** New prose leaves `content/i18n/<locale>/` incomplete.
-  Run `python scripts/i18n_coverage.py` and either fill the gap or report it.
-- No em dashes. Quote YAML values containing colons, apostrophes, or `?`.
-- `python scripts/validate.py` green before you finish.
+**2. The findings report** - the deliverable doctrine (CURATION §7) applied to
+press work: each fact added, with its source and why it passes the aura
+standard; each correction, with the wrong version, the right version and the
+evidence; the facts found and **rejected**, with reasons; and **what the record
+does not contain**. For sparse or non-English authors that last part is the most
+useful paragraph in the report: say which archives you could reach, which
+blocked you, and what a human with a library card could find that you could not.
 
 ## Done means
 
 A PR whose body a curator can act on without repeating your research: every fact
 sourced and dated, every correction evidenced, every rejection explained, and an
-honest account of what the record would not give you. Plus green validation and
-no translation regression.
+honest account of what the record would not give you.
 
 The measure of a good run is not how much you found. It is whether a reader who
 already knew this author learns something true.

@@ -8,6 +8,9 @@ description: Audit a franchise's bibliography against primary sources for missin
 Verify that `works.yaml` says what the record says: every work present, every
 date the date of **first publication**, every tier and series link consistent.
 
+This skill runs under `docs/CURATION.md`, the shared contract for every
+curation stage; its rules are not repeated here.
+
 Orrery's default reading order is **derived from this file**. A missing book is
 not a gap in a list, it is a hole in the spine of the franchise, and it makes the
 site quietly wrong for the completionists it exists for. A wrong year silently
@@ -97,32 +100,21 @@ lists: one audit found a Tordo essay collection missing from the catalogue
 because it was published by a foundation rather than his usual publisher, and
 appeared only on his own site.
 
-**Known access problem, do not rediscover it:** Porbase/BNP, wook.pt, bertrand.pt
-and fnac.pt all defeat automated fetches (JavaScript apps returning redirect
-stubs, or 403). Portuguese verification therefore rests on the publisher's
-catalogue, the author's own bibliography and the press, cross-checked against
-each other. **Say so in the report**, and name any fact resting on a single
-source so a human with a browser can settle it.
+**Check the trap registry (`docs/CURATION.md` §4) before writing off a
+Portuguese source** - it records which catalogues block automated fetches and
+which only looked blocked (BNP's ipac20 catalogue answers a browser
+User-Agent). Where verification ends up resting on the publisher's catalogue,
+the author's own bibliography and the press cross-checked against each other,
+**say so in the report**, and name any fact resting on a single source so a
+human with a browser can settle it.
 
 ## Hard rules
 
-- **Never fabricate.** Every added work needs a source URL. A title whose
-  existence or year you cannot establish gets a `note:` recording the
-  uncertainty, or stays out and goes in the report. Never smooth an ambiguous
-  record into false confidence.
-- **Stable ids are permanent.** Choose slugs consistently with the file's
-  existing convention; strip accents in ids while titles keep them. **Never
-  rename an existing id** - progress and translations reference them.
 - **Report every reorder.** For each corrected date, say whether it moves the
   work's position in the derived order and name the works it now sits between.
   That list is what the curator actually needs.
-- **Adding works breaks translation coverage.** New synopses have no overlay. Run
-  `python scripts/i18n_coverage.py` and either fill the gap in the same pass or
-  report it precisely.
 - **Do not manufacture changes.** Checking 179 works and correcting three is a
   good run.
-- No em dashes. Quote YAML values containing colons or apostrophes.
-- `python scripts/validate.py` green before finishing.
 
 ## What is the curator's call, not yours
 
@@ -141,8 +133,8 @@ Emit a decision where the record supports one. Escalate only these:
 
 A PR whose body reports: works before and after; every work **added** with its
 source; every **correction** with its evidence and whether it reorders; what you
-found and deliberately **did not** add, and why; contested cases left alone;
-inconsistencies flagged but not changed; and the translation-coverage delta.
+found and deliberately **did not** add, and why; contested cases left alone; and
+inconsistencies flagged but not changed.
 
 The rejections and the flags are as much the deliverable as the additions. A wing
 whose gaps are documented is in better shape than one whose gaps are invisible.
