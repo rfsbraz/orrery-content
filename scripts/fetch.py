@@ -133,6 +133,8 @@ def main() -> int:
     p.add_argument("--refresh", action="store_true", help="ignore the cache")
     p.add_argument("--ttl", type=int, default=TTL, help="cache lifetime in seconds, -1 to never expire")
     p.add_argument("--json", action="store_true", help="treat bodies as JSON: no HTML stripping")
+    p.add_argument("--save", metavar="DIR",
+                   help="write raw bytes to DIR instead of decoding (images and other binaries)")
     a = p.parse_args()
 
     urls = list(a.urls)
@@ -142,6 +144,29 @@ def main() -> int:
     if not urls:
         print("no URLs given", file=sys.stderr)
         return 2
+
+    # Binary needs its own path: the normal one decodes as UTF-8 and would
+    # mangle an image. Without this a stage that has to LOOK at a cover writes
+    # its own downloader, which is exactly the duplicated work this tool exists
+    # to remove.
+    if a.save:
+        os.makedirs(a.save, exist_ok=True)
+        ok = 0
+        for u in urls:
+            name = re.sub(r"[^A-Za-z0-9._-]", "_", u.split("/")[-1] or "download")[:80]
+            dest = os.path.join(a.save, name)
+            try:
+                req = urllib.request.Request(u, headers={"User-Agent": UA})
+                with urllib.request.urlopen(req, timeout=a.timeout) as r:
+                    raw = r.read()
+                with open(dest, "wb") as f:
+                    f.write(raw)
+                print(f"[{r.status}] {len(raw):>8}b  {dest}")
+                ok += 1
+            except Exception as e:
+                print(f"[err] {type(e).__name__}: {e}  {u}")
+        print(f"{ok}/{len(urls)} saved to {a.save}")
+        return 0 if ok == len(urls) else 1
 
     started = time.time()
     with concurrent.futures.ThreadPoolExecutor(max_workers=a.workers) as ex:

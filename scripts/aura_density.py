@@ -59,7 +59,12 @@ def main():
         if isinstance(a, dict) and a.get("id"):
             authors[a["id"]] = a
 
-    globals_ = load(os.path.join(ROOT, "content", "events", "global.yaml"))
+    # global.yaml wraps its list in an `events:` key. Iterating the mapping
+    # walked the string "events" instead, so EVERY wing counted zero globals
+    # and every dark run in this report was overstated - press-archaeology
+    # tuned a wing against it and called a 5-year run borderline when it was 4.
+    _g = load(os.path.join(ROOT, "content", "events", "global.yaml"))
+    globals_ = _g.get("events", []) if isinstance(_g, dict) else (_g or [])
     rows = []
 
     for fdir in sorted(glob.glob(os.path.join(ROOT, "content", "franchises", "*"))):
