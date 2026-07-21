@@ -5,13 +5,15 @@ summary: >
   tem-se organizado em tetralogias. Houve a primeira, A Idade Inteira, e esta
   agora chama-se Irmaos, Ilhas e Ausencias" (Observador, 14 Jan 2024, direct
   quote), with the second tetralogy also named in the author's note that
-  closes Deus na Escuridao. eras.yaml goes from 1 era to 3: the existing
-  2004-2010 era is re-provenanced critical -> author and retitled to the
-  author's own name for it; a new author-named era covers 2013-2024; a third,
-  publishing-fact era covers the pre-novel poetry years 1996-2003. Works
-  outside every era drop from 23 to 4, with no work orphaned by this pass
-  (all 4 remaining were already orphans). validate.py green, sanctuary check
-  green, i18n file coverage unchanged at 68/73.
+  closes Deus na Escuridao, and the third named at its opening in the
+  Noticias ao Minuto launch interview for O Seculo dos Imbecis. eras.yaml
+  goes from 1 era to 4: the existing 2004-2010 era is re-provenanced
+  critical -> author and retitled to the author's own name for it; a new
+  author-named era covers 2013-2024; a third, open-ended author-named era
+  opens in 2026; and a publishing-fact era covers the pre-novel poetry years
+  1996-2003. Works outside every era drop from 23 to 3, with no work orphaned
+  by this pass (all 3 remaining were already orphans). validate.py green,
+  sanctuary check green, i18n file coverage unchanged at 68/73.
 produced:
   erasKept:
     - id: tetralogia-das-minusculas
@@ -24,6 +26,10 @@ produced:
       rung: 4
     - id: irmaos-ilhas-e-ausencias
       verdict: RECEIVED
+      change: new
+      rung: 1
+    - id: crimes-e-vindouros
+      verdict: RECEIVED (a cycle opened, not a shape completed)
       change: new
       rung: 1
   boundaryVerdicts:
@@ -41,8 +47,16 @@ produced:
       Revista Pernambuco; end 2024 stated by the author himself in two
       independent January 2024 interviews (Renascenca, Observador). SOURCED
       on both ends.
+    crimes-e-vindouros: >
+      Start 2026 = O Seculo dos Imbecis, the volume the author says begins
+      the cycle. No end: he is writing the second novel and expects a
+      tetralogy "a partida", so the span uses the schema's open-ended form
+      "2026-present" (validate.py parses that to 9999; the literal file
+      convention across chuck-palahniuk, cosmere, joao-tordo and
+      stephen-king is the word "present", not the number). SOURCED at the
+      start, deliberately open at the end.
   orphansBefore: 23
-  orphansAfter: 4
+  orphansAfter: 3
   orphansCreated: 0
 rejected:
   - candidate: "The poetry decade as a critic-named or author-named period"
@@ -74,17 +88,20 @@ rejected:
       bondade", "trilogia da bondade", "ciclo da bondade"). No such grouping
       exists in any source reached. It appears to be a reading, not a
       received framing.
-  - candidate: "A third tetralogy beginning with O Seculo dos Imbecis (2026)"
-    verdict: REJECTED, and flagged as a live misinformation trap
+  - candidate: "A third cycle beginning with O Seculo dos Imbecis (2026)"
+    verdict: REJECTED on first search, then ACCEPTED on a primary source
     why: >
-      A search-engine summary asserts that the 2026 novel "marks 30 years of
-      literary work and the beginning of a new tetralogy". The 30-years claim
-      is real and is Lusa's, from Porto Editora's editorial plan. The new
-      tetralogy claim is not in the Lusa wire (read in full via Radio
-      Festival), not on Porto Editora's product page, and not in the CNN
-      Portugal launch interview. It looks like a conflation of the 30-years
-      line with the two known tetralogies. Do not let it back in without a
-      primary source.
+      Initially rejected: a search-engine summary asserted the 2026 novel
+      "marks 30 years of literary work and the beginning of a new tetralogy",
+      and the new-cycle half of that was absent from the Lusa wire (read in
+      full via Radio Festival), from Porto Editora's product page and from
+      the CNN Portugal launch interview. Only the 30-years line was real, and
+      it is Lusa's from Porto Editora's editorial plan. A Noticias ao Minuto
+      interview (17 June 2026), opened and read in full, then supplied the
+      author saying it in the first person, and the era crimes-e-vindouros is
+      written from that page. The lesson stands rather than being overturned:
+      the search summary named no cycle and could not have produced the name
+      Crimes e Vindouros, which only the interview carries.
   - candidate: "Retitling the 2004-2010 era in English"
     verdict: REJECTED
     why: "Both received names are Portuguese; an English rendering would be a coinage."
@@ -95,6 +112,7 @@ sourcesUsed:
     - "https://rr.pt/noticia/vida/2024/01/12/valter-hugo-mae-o-amor-de-uma-mae-podera-ser-apenas-comparavel-ao-tamanho-do-amor-de-deus/362455/ - author: 'Este livro encerra uma tetralogia sobre ilhas'"
     - "https://observador.pt/especiais/valter-hugo-mae-fui-mais-esperto-na-vida-quando-optei-por-um-verso-mais-do-que-por-uma-pessoa/ (21 Mar 2018) - the exclusive-poetry years and the author denying phases in his poetry"
     - "https://valterhugomae.com/biblio.html - the author's own bibliography, organised by genre (prosa / poesia / antologias), not by period"
+    - "https://www.noticiasaominuto.com/cultura/3005253/enquanto-totalidade-estamos-num-movimento-em-direcao-a-um-fim-do-mundo (17 Jun 2026) - author: 'Este livro comeca um ciclo chamado Crimes e Vindouros... A partida sera uma tetralogia tambem; gosto de funcionar por ciclos de quatro livros'"
   rung2_reference_and_press:
     - "https://www.infopedia.pt/artigos/$valter-hugo-mae - Porto Editora's reference work, uses 'a tetralogia das minusculas' without introducing it and lists the four novels"
     - "https://visao.pt/visaose7e/livros-e-discos/2024-01-30-valter-hugo-mae-nos-meus-livros-tento-sempre-mostrar-que-a-familia-e-uma-coisa-bastante-escangalhada-e-complexa/ - names the four books of the second tetralogy and the 'irmaos, ilhas e ausencias' theme"
@@ -113,12 +131,12 @@ sourcesThatRefused:
   - "infopedia.pt and observador.pt - 403 to the fetch tool, fine with a browser user-agent. Worth recording: both are usable, they just refuse the default request."
 forStages:
   translation: >
-    eras.yaml grew from 3 to 9 untranslated fields (3 eras x title/description/
+    eras.yaml grew from 3 to 12 untranslated fields (4 eras x title/description/
     themes). This is not a regression: the wing has no pt-PT overlay at all
     yet, so file-level coverage is unchanged at 68/73. Two era titles are
     already Portuguese and must NOT be translated or reworded: "A Idade
-    Inteira" and "Irmaos, Ilhas e Ausencias" are the author's own names.
-    "Antes dos Romances" is likewise already Portuguese. The Portuguese
+    Inteira", "Irmaos, Ilhas e Ausencias" and "Crimes e Vindouros" are the
+    author's own names. "Antes dos Romances" is likewise already Portuguese. The Portuguese
     quotations inside the descriptions and notes are verbatim and must
     survive intact.
   press-archaeology: >
@@ -180,6 +198,7 @@ openQuestions:
     the author's own scheme, which puts it on a separate axis with Contra Mim
     rather than in either tetralogy; extending the second tetralogy back to
     2011 would contradict the source the era borrows its legitimacy from.
-    2025-2026 sits after Irmaos, Ilhas e Ausencias closed, with no successor
-    cycle named by anyone. If a third tetralogy is announced, that is when
-    2025 onward gets an era, not before.
+    Educacao da Tristeza (2025) sits between the close of Irmaos, Ilhas e
+    Ausencias in 2024 and the opening of Crimes e Vindouros in 2026, and no
+    source places it in either. It is not swept into the new era to tidy the
+    timeline; 2025 remains honestly uncovered.
