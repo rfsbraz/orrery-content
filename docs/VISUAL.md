@@ -240,6 +240,15 @@ behind as a faint lattice.
   eat the picture. Green would collide with foliage.
 - Say **flat**: no gradient, no texture, no shading, no vignette in the
   background, and no magenta anywhere inside the artwork itself.
+- **Say, in the same breath, that the artwork must not reach the frame.** A
+  chroma instruction reads as "put the picture on a coloured card", and the
+  model will happily fill the canvas corner to corner and give you a neat
+  rectangle - which is exactly the ragged dissolve you were trying to keep.
+  Spell it out: *"the magenta must be visible along all four edges of the
+  frame; the artwork must not touch the border at any point; its outline is
+  irregular and hand-torn, the ink and wash breaking up and stopping unevenly,
+  never a straight edge and never a rectangle."* Naming a rough margin helps -
+  *"leave roughly a tenth of the frame as magenta around the artwork"*.
 - Still state **exact pixel dimensions** from §4 (`1024x1024` for an event,
   `1536x1024` for an era plate) - not "square", not an aspect ratio.
 - Still ban borders, frames, mattes and drop shadows onto the background.
