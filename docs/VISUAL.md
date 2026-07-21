@@ -266,7 +266,12 @@ Plus the wing's `art.avoid`, which names that author's specific cliche.
 4. Shared world events last, in house style.
 5. Put every result side by side before accepting any of it. Reject anything
    that looks like a different illustration system, however good it is alone.
-6. Record the asset with `sketch` + `sketchCredit` saying it was generated.
+6. File it with `python scripts/prepare_asset.py <image.png> <slug> <entity-id>`,
+   which refuses an image that has lost its alpha, trims the empty margins,
+   converts to webp under the size cap and prints the YAML to paste. **Keep the
+   original PNG from the model** - a screenshot or a re-export flattens the
+   transparency onto a checkerboard, and what arrives looks fine until it is on
+   a dark page.
 
 `python scripts/asset_audit.py <slug>` reports what exists and what is next in
 exactly this order; `/asset-prompt` writes the prompt for one asset.
