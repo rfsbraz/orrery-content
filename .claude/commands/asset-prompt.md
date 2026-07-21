@@ -57,11 +57,25 @@ Two rules that override any instinct to make a nicer picture:
 For a `world-event`, drop the wing's art language entirely: neutral house
 style, transparent background, no author-specific motifs.
 
+## Choose the presentation
+
+Per VISUAL.md §5a, decide how this particular sketch should meet the page -
+torn sheet, dissolving panel, objects on an implied surface, panel with a
+break-out, or something else that serves the same end - and judge it on the
+subject, the surface it lands on (a dark card, a half-page era spread, an
+inverted rupture band) and what the neighbouring assets already did. State the
+choice and the reason in the brief; it is an editorial call, not a default.
+
+The transparency invariant is not part of that choice and never bends, and a
+world-event sketch has no latitude at all: line and texture only, or the
+per-wing tint turns it into a coloured blob.
+
 ## Return
 
 Always all six, in this order:
 
-1. **Asset** - type, entity id, and the wing it belongs to.
+1. **Asset** - type, entity id, the wing it belongs to, and the presentation
+   chosen with its one-line reason.
 2. **The prompt** - one block, ready to paste, no commentary inside it.
 3. **Size** - from the spec table (`1536x1024` era plates, `1024x1024` events).
 4. **Background** - opaque, or transparent for world events (and say it must be

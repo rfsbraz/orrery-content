@@ -196,34 +196,51 @@ In order, always:
 For a **world event**, skip step 2 entirely and say "neutral house style, no
 author-specific motifs, transparent background".
 
-## 5a. A sketch is a piece of paper lying on the page
+## 5a. Choosing the presentation
 
-Event sketches are **not** rectangular pictures. Each one is a sheet of aged
-paper laid on the page:
+How a sketch meets the page is a decision per item, not a house rule. The job
+is always the same - **either blend the art into the page or deliberately pop it
+off the page** - but which reads better depends on the subject, the surface it
+lands on, and what the neighbouring assets did.
 
-- **A torn, deckled edge** on all four sides, irregular and hand-made, the
-  fibres visible where it tore. Never a straight cut, never a frame or border.
-- **Transparent everywhere outside the paper.** The page shows through the
-  tear, so the same asset works on a near-black wing and a pale one. This is
-  the part that must not be baked: the drawn edge is artwork, the background
-  behind it is the app's.
-- **One or two objects breaking the lower edge**, drawn in front of the paper
-  and overlapping it, casting a soft shadow onto it - a compass and a strapped
-  journal, a folded newspaper and a flower, whatever the subject earns. This is
-  what makes the sheet sit ON the page rather than inside a box, and the app
-  lets it spill past the card.
+Pick one and say which you picked, and why, in the prompt's brief:
 
-An earlier version of this document said never to prompt an edge, and had the
-app fade every sketch with a CSS mask. That was wrong in a way worth recording:
-a fade cannot disguise a rectangle of cream paper on a near-black page - only a
-drawn edge can - and a deckled tear with objects breaking it cannot be faked in
-CSS at all. What survives of the old rule is its reason, satisfied differently:
-**nothing in the image may assume what colour is behind it.** So no vignette,
-no drop shadow onto the background, no painted-in page colour, no rounded
-rectangle. Draw the paper and the objects; leave everything else transparent.
+- **Torn sheet.** A drawn sheet of aged paper with deckled, irregular edges,
+  fibres showing where it tore. Pops off the page; suits anything documentary
+  or archival - a place remembered, a manuscript, a letter, a record.
+- **Dissolving panel.** The drawing fills its frame and thins out at the edges,
+  ink and wash fading to nothing rather than stopping at a line. Blends into
+  the page; suits vistas, cityscapes, weather, anything atmospheric.
+- **Objects on an implied surface.** No paper and no panel at all: a still-life
+  on a suggested tabletop with soft shadows under the objects, everything else
+  transparent. Blends completely; the natural choice on a rupture band, where
+  the band itself is already warm paper (see §4-impact).
+- **Panel with a break-out.** A dissolving panel plus one element crossing
+  outside its edge - a compass, a branch, a spill of papers. Pops, but keeps
+  the calm of a panel behind it. Good when a scene needs an anchor in the
+  foreground.
 
-Era plates are the exception: they are a full-bleed backdrop behind a title,
-so they fill their frame edge to edge and the app masks them (`variant="plate"`).
+Anything else is allowed if it serves the same end. What is **not** negotiable,
+whichever you choose:
+
+- **Nothing may assume what colour is behind it.** Transparent background
+  always, no vignette, no painted-in page colour, no rounded rectangle, no
+  frame, no drop shadow onto the background - shadows fall onto the paper or
+  the implied surface, never onto the void. This is what lets one asset work on
+  a dark card and on an inverted paper band; it is the reason the whole system
+  holds together, and it is the rule most likely to be broken by accident.
+- **Vary it down a sequence** along with everything else in §4a. Four torn
+  sheets in a row is the same monotony as four vistas.
+
+**World events are the exception and have no latitude.** A shared sketch is
+recoloured per wing by painting the wing's accent through its alpha, so it must
+be **line and texture only, on transparency** - no paper, no panel, no wash, no
+filled shapes. Anything with a solid fill becomes a solid accent-coloured blob.
+
+An earlier version of this section prescribed the torn sheet for everything, and
+said the app owned edges before that. Both were premature: the treatment is an
+editorial judgement about a specific subject, and the only durable rule is the
+transparency invariant above.
 
 ## 6. Shared negative prompt
 
@@ -235,9 +252,9 @@ Append to every prompt:
 > captions, signatures or watermarks; publisher logos; reproductions of real
 > book covers; UI elements; decorative elements covering faces; excessive stars
 > and planets; literal outer-space imagery unrelated to the subject; vignettes;
-> borders, frames or rounded rectangles; any painted-in background colour behind
-> the paper; drop shadows cast onto the background rather than onto the paper
-> itself.
+> borders, frames or rounded rectangles; any painted-in background colour; drop
+> shadows cast onto the background rather than onto the paper or surface within
+> the artwork.
 
 Plus the wing's `art.avoid`, which names that author's specific cliche.
 
