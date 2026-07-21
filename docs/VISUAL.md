@@ -81,6 +81,24 @@ In order, always:
 For a **world event**, skip step 2 entirely and say "neutral house style, no
 author-specific motifs, transparent background".
 
+## 5a. The app owns the edges
+
+**Never prompt an edge treatment** - no vignette, no fade, no torn paper, no
+border, no frame, no drop shadow. Fill the frame edge to edge and let the
+composition breathe inside it.
+
+The dissolve at the edges is a CSS alpha mask in `components/sketch.tsx`, and
+it belongs there for reasons the prompt cannot satisfy: an edge baked into the
+pixels can only fade to one colour, while these images are drawn on warm paper
+and a wing's page may be near-black umber or pale, so a baked fade reads as a
+card floating on the page. The mask fades to whatever is actually behind it,
+identically on every wing, and can be retuned without regenerating anything. A
+prompted vignette also comes out slightly different every generation, which is
+the "different illustration system" failure this document exists to prevent.
+
+The same rule covers anything else the layout can do better than the model:
+cropping, rounding, tinting, opacity. Ask for the picture; let the app place it.
+
 ## 6. Shared negative prompt
 
 Append to every prompt:
@@ -90,7 +108,9 @@ Append to every prompt:
 > gradients; thick black outlines; crowded compositions; any text, lettering,
 > captions, signatures or watermarks; publisher logos; reproductions of real
 > book covers; UI elements; decorative elements covering faces; excessive stars
-> and planets; literal outer-space imagery unrelated to the subject.
+> and planets; literal outer-space imagery unrelated to the subject; vignettes,
+> faded or torn edges, borders, frames, drop shadows or any deliberate edge
+> treatment (the app fades the edges itself).
 
 Plus the wing's `art.avoid`, which names that author's specific cliche.
 
