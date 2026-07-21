@@ -668,10 +668,22 @@ art:
 
 ```yaml
 images:
-  sketch: "https://.../vhm-era-idade-inteira.png"
-  sketchCredit: "Generated for Orrery (gpt-image-1)"
-  sketchSource: "docs/VISUAL.md#era-plate"   # optional: the spec it was made to
+  sketch: assets/valter-hugo-mae/vhm-born-1971.webp   # repo-relative, committed
+  sketchCredit: Generated for Orrery (gpt-image-1)
+  sketchSource: docs/VISUAL.md#4-asset-specs          # optional: the spec it was made to
 ```
+
+Unlike `portrait`, `cover` and `header` - which are third-party images we link
+to and credit - **a sketch is ours and lives in this repo** under
+`assets/<wing-slug>/<entity-id>.webp`, committed alongside the entry that
+references it. The app copies `assets/` into its `public/` at build time.
+
+The validator enforces: the path is repo-relative and under `assets/`, the file
+**exists** (a missing file fails immediately, where a dead link validates green
+forever), the format is `.webp`, and the file is under 320KB. gpt-image-1
+returns PNG, so converting is part of filing the asset - a 1024x1024 PNG was
+1.77MB and became 153KB as webp. PNG is also excluded by the app's
+`.dockerignore`, so a committed PNG would work locally and vanish in production.
 
 `sketchCredit` is required **and must say the image was generated** - the
 validator rejects a credit that reads like a source. A reader has to be able to

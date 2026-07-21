@@ -57,8 +57,56 @@ IMAGE_FIELDS = {"portrait", "header", "cover", "sketch"}
 GENERATED = re.compile(r"\bgenerated\b|\billustration for\b", re.I)
 
 
+ASSET_MAX_BYTES = 320_000
+ASSET_EXT = {".webp"}
+
+
+def check_asset(loc, entity_id, value):
+    """A sketch is a repo-relative path under assets/, and it must be there.
+
+    Checking the file exists is a real guard, unlike checking a URL's syntax: a
+    dead link validates green forever, a missing file fails the moment someone
+    mistypes it or forgets to commit the binary alongside the YAML.
+
+    webp only, and capped: a wing carries dozens of these and a repo full of
+    multi-megabyte PNGs becomes a clone everybody dreads. gpt-image-1 returns
+    PNG, so converting is part of filing the asset, not an optimisation to do
+    later.
+    """
+    if value.startswith("http"):
+        err(loc, f"{entity_id}: sketch is ours - commit it under assets/ rather "
+                 f"than linking to '{value[:60]}'")
+        return
+    if value.startswith("/") or ".." in value:
+        err(loc, f"{entity_id}: sketch path must be repo-relative, got '{value}'")
+        return
+    if not value.startswith("assets/"):
+        err(loc, f"{entity_id}: sketch must live under assets/, got '{value}'")
+        return
+    ext = os.path.splitext(value)[1].lower()
+    if ext not in ASSET_EXT:
+        err(loc, f"{entity_id}: sketch must be {' or '.join(sorted(ASSET_EXT))}, got '{ext or 'no extension'}'")
+        return
+    path = os.path.join(ROOT, value)
+    if not os.path.exists(path):
+        err(loc, f"{entity_id}: sketch '{value}' is not in the repo - commit the file with the entry")
+        return
+    size = os.path.getsize(path)
+    if size > ASSET_MAX_BYTES:
+        err(loc, f"{entity_id}: sketch '{value}' is {size // 1000}KB, over the "
+                 f"{ASSET_MAX_BYTES // 1000}KB cap - re-encode it")
+
+
 def check_images(loc, entity_id, images):
-    """Images are URLs (never committed binaries) and must carry a credit."""
+    """Third-party images are URLs; our own sketches are files in this repo.
+
+    The "never commit binaries" rule was written for LICENSED images - a
+    Wikimedia portrait or an OpenLibrary cover belongs to someone else, so we
+    link to the source and keep the credit honest. A generated sketch is ours,
+    small, and meaningless apart from the entry that references it, so it lives
+    in `assets/` and ships with the content. A committed file also cannot rot,
+    which a link can, silently.
+    """
     if not images:
         return
     if not isinstance(images, dict):
@@ -70,7 +118,9 @@ def check_images(loc, entity_id, images):
             err(loc, f"{entity_id}: unknown image field '{key}' (known: {sorted(IMAGE_FIELDS)})")
             continue
         if key == base:
-            if not str(value).startswith("http"):
+            if base == "sketch":
+                check_asset(loc, entity_id, str(value))
+            elif not str(value).startswith("http"):
                 err(loc, f"{entity_id}: image '{key}' must be a URL (never commit binaries)")
             # Rights discipline: an image without a credit cannot be published.
             credit = images.get(base + "Credit")
