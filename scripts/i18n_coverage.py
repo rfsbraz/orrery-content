@@ -20,7 +20,11 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROSE = {
     "franchise.yaml": ["description"],
     "works.yaml": ["synopsis"],
-    "eras.yaml": ["title", "description"],
+    # `themes` is a list of short noun phrases rendered under the era title on
+    # the era plate. It is prose a reader reads, and leaving it out of this map
+    # let four wings ship Portuguese era plates with English themes underneath
+    # while the script reported full coverage.
+    "eras.yaml": ["title", "description", "themes"],
     "events.yaml": ["title", "description"],
     "orders.yaml": ["name", "rationale"],
     "characters.yaml": ["description"],
