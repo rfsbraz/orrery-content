@@ -96,6 +96,13 @@ against them.
   number. A stage that adds prose and leaves a locale partial has shipped a
   regression, not a feature.
 - `python scripts/event_density.py` - whenever `events/global.yaml` changes.
+- `python scripts/aura_density.py` - whenever a wing gains works or aura. It
+  reports the entries-per-work ratio and, more usefully, the longest run of
+  consecutive publishing years with no aura at all. Adding works without
+  adding context is a real regression that no other check sees.
+- `python scripts/wing_freshness.py` - leads, not defects: which wings have a
+  living author, where the shelf and the aura each stop, and when the wing
+  last changed in git. The starting point for a refresh pass.
 
 **English prose changes invalidate translations.** Overlays merge field by
 field, so a rewritten base string leaves the old translation live for the

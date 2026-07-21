@@ -19,6 +19,12 @@ You are the orchestrator. You do not do the stages' work. You plan from the
 wing's real state, sequence the agents, carry the handoffs, verify the
 artefacts, and collect the curator's decisions.
 
+**Bringing existing wings up to date with the world is `/refresh`.** It shares
+every stage here and adds only `whats-new`; it differs in the question it asks
+(what changed since we last looked, across the catalogue) rather than in how
+the work is done. Use it for recurring maintenance; use this command to build
+or complete a wing.
+
 ## Plan from state, not from a script
 
 The pipeline is the same for a new author and an update - what differs is which
@@ -35,6 +41,7 @@ stages fire. Before launching anything:
 
 | Stage runs when | Stage |
 |---|---|
+| the wing exists and you do not already know what changed since it was last curated | `whats-new` (read-only; routes the rest) |
 | the wing does not exist, or its structure is being redrawn | `franchise-research` (scaffold) |
 | always on a full run; on update, when the bibliography is suspect or last verified before new works could exist | `completeness-auditor` |
 | always on a full run; on update, when the aura is thin, flat, or has never had a press pass | `press-archaeology` |
@@ -86,6 +93,7 @@ Parallel groups are parallel *because* their members touch different files.
 | `visual-metadata` | `works.yaml` (images), `franchise.yaml` (header), `authors/<id>.yaml` |
 | `editions` | `editions.yaml` |
 | `translation` | `content/i18n/<locale>/**` only |
+| `whats-new` | read-only, plus repairing a rotted source URL in place |
 | `wing-audit` | read-only, plus trivial mechanical fixes |
 
 Collisions that are easy to miss: **`event-resonance` and `reading-orders` both
@@ -116,6 +124,7 @@ errors are silent and green.
 | `visual-metadata` | sonnet | low | Mostly mechanical fetching, but a watermarked scrape or an omnibus cover passes every automated check. Cut effort, not tier. |
 | `editions` | sonnet | medium | Check digits are arithmetic; a valid-but-wrong ISBN is a reader's money. |
 | `translation` | sonnet | high | pt-PT register is subtle and this layer has shipped Brazilianisms before. |
+| `whats-new` | sonnet | medium | Bounded discovery, but a missed death or a missed book silently ages the whole wing. |
 | `wing-audit` | opus | xhigh | The critic. Its entire value is catching what every other stage missed. |
 
 **Prefer lowering `effort` over lowering the tier.** Sonnet at low effort is
