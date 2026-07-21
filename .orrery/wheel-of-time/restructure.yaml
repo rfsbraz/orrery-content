@@ -1,0 +1,221 @@
+stage: restructure
+date: 2026-07-21
+summary: >
+  Widened the wheel-of-time wing from The Wheel of Time (kind series, 17
+  works) to Robert Jordan's complete published bibliography (kind author, 30
+  works), per the 2026-07-21 curator ruling that a wing spans its author's
+  complete works and its corollary that the continued universe belongs to the
+  originating author (the Sanderson-finished volumes stay here). Added 13
+  works: the three Fallon historicals as Reagan O'Neal (1980-1982), Cheyenne
+  Raiders as Jackson O'Reilly (1982), the seven Conan novels (1982-1984), The
+  Strike at Shayol Ghul (1996, apocrypha), and Warrior of the Altaii (2019,
+  posthumous trunk debut). Every year was verified against three independent
+  sources that agree on all of them: ISFDB (browser-UA fetch; the plain fetch
+  403s), the Wikipedia Robert Jordan bibliography, and the archived
+  Encyclopaedia WoT non-WoT bibliography (month-level first-edition data).
+  franchise.yaml identity renamed and rewritten; robert-jordan.yaml bio
+  widened and pseudonym notes expanded. The slug and every existing work id
+  are untouched; the existing 17 works and their fields are untouched;
+  startHere, globalEvents, orders and eras are untouched and their staleness
+  is flagged below. Validator green (341 works, all references resolve); the
+  12 new era-coverage warnings and the pt-PT regression are expected and
+  itemised below.
+searched:
+  corpora: >
+    ISFDB author and title records (fetched with a browser User-Agent after
+    the default fetch returned 403 - the trap-registry retest rule paid off);
+    Wikipedia raw wikitext for Robert Jordan, Robert Jordan bibliography, The
+    Fallon Blood (which carries all three Fallon plots), and each of the
+    seven Conan novels; the archived Encyclopaedia WoT non-WoT bibliography
+    (the page Wikipedia itself cites, with first-edition months and the King
+    of Thieves phantom); Dragonmount (the hosted Strike at Shayol Ghul text
+    and the 2019 Warrior of the Altaii announcement with the official blurb);
+    Publishers Weekly for the Cheyenne Raiders premise and reissue.
+  blocked: >
+    isfdb.org and us.macmillan.com refuse default fetches (403); ISFDB
+    answers a browser UA, Macmillan was not needed after PW and Dragonmount
+    covered the same facts. wot.fandom.com returned HTTP 402 to the fetcher;
+    its content was reached via search extraction only and nothing rests on
+    it alone.
+produced:
+  worksBefore: 17
+  worksAfter: 30
+  newWorkIds:
+    - wheel-of-time/the-fallon-blood
+    - wheel-of-time/the-fallon-pride
+    - wheel-of-time/the-fallon-legacy
+    - wheel-of-time/cheyenne-raiders
+    - wheel-of-time/conan-the-invincible
+    - wheel-of-time/conan-the-defender
+    - wheel-of-time/conan-the-unconquered
+    - wheel-of-time/conan-the-triumphant
+    - wheel-of-time/conan-the-magnificent
+    - wheel-of-time/conan-the-destroyer
+    - wheel-of-time/conan-the-victorious
+    - wheel-of-time/the-strike-at-shayol-ghul
+    - wheel-of-time/warrior-of-the-altaii
+  rejected:
+    - >
+      The New Spring novella (Legends, 1998): the existing works.yaml note
+      already rules the 2004 novel supersedes it; upheld, cross-referenced
+      from the Strike entry's note.
+    - >
+      Ravens (2002): a new prologue written for From the Two Rivers, the YA
+      split edition of The Eye of the World. Edition apparatus, not a work.
+    - >
+      River of Souls (Unfettered, 2013) and A Fire in the Ways (Unfettered
+      III, 2019): cut A Memory of Light material completed by Sanderson in
+      multi-author charity anthologies. Multi-author anthology scope is
+      explicitly the curator's call (completeness-auditor), so rejected and
+      escalated in openQuestions rather than added.
+    - >
+      Conan: King of Thieves: a phantom. Working title of the second Conan
+      film; Tor filed the ISBN before the retitle, the book never existed.
+      Defused in a note on conan-the-destroyer so nobody re-adds it.
+    - >
+      The Conan Chronicles (1995), The Conan Chronicles 2 (1997), The Further
+      Chronicles of Conan (1999), The New Adventures of Conan (1984):
+      omnibuses of the seven novels, not works.
+    - >
+      A Conan Chronology (1987): a chronology essay printed in Steve Perry's
+      Conan the Defiant - a contribution of apparatus to another author's
+      novel, below the works bar. Also ISFDB-listed essays Letter (Locus
+      #500, 2002), Glossary (Knife of Dreams, 2006), Mike (2006): periodical
+      pieces and book apparatus.
+    - >
+      Chang Lung dance/theatre criticism: uncollected, unlocatable (by
+      Jordan's own account only he kept copies); nothing citable exists to
+      enter. Recorded on the pseudonym note instead.
+    - >
+      The ghostwritten thriller Jordan mentioned in interviews: never
+      identified, unverifiable by design.
+    - >
+      Unpublished manuscripts in the College of Charleston collection (John
+      One-Eye, Morgan, April the 15th, and others) and the proposed Infinity
+      of Heaven and Vietnam books: unpublished, out of scope by the
+      completeness rules.
+    - >
+      "The Fallon Chronicles" as the subseries label: no source styles the
+      trilogy that way. Sources split between "Fallon" (ISFDB), "the Fallon
+      saga" (Wikipedia), "the Fallon Series" (Encyclopaedia WoT) and "Michael
+      Fallon trilogy" (infobox); went with The Fallon Saga, variants logged
+      in a note on the-fallon-blood.
+forStages:
+  eras: >
+    Twelve of the thirteen new works fall outside every existing era span
+    (covered: 1990-1994, 1996-2003, 2006-2008, 2009-2013) and each now
+    carries an expected validator warning: the-fallon-blood (1980),
+    the-fallon-pride (1981), the-fallon-legacy (1982), cheyenne-raiders
+    (1982), conan-the-invincible (1982), conan-the-defender (1982),
+    conan-the-unconquered (1983), conan-the-triumphant (1983),
+    conan-the-magnificent (1984), conan-the-destroyer (1984),
+    conan-the-victorious (1984), warrior-of-the-altaii (2019).
+    the-strike-at-shayol-ghul (1996) lands inside 1996-2003. The three
+    pre-existing orphans (new-spring 2004, knife-of-dreams 2005, companion
+    2015) are unchanged. The career before 1990 needs received periodisation
+    or documented gaps; eras.yaml was deliberately not touched here.
+  reading-orders: >
+    The derived default order now spans the complete works, so the startHere
+    path publication-complete (orderId: default) no longer matches its own
+    description ("Every volume in the order it was published, prequel and
+    companions included" - a reader now starts at The Fallon Blood, 1980, and
+    walks three historicals, a western and seven Conan novels before reaching
+    The Eye of the World). The other three paths reference explicit
+    workIds/orders and still resolve, but all their prose assumes a
+    WoT-only wing. The pre-existing flagged inconsistency (the
+    recommended-integrated order places New Spring at position six against
+    its own citations) is still open. startHere and orders.yaml were left
+    untouched per the run scope.
+  spoiler-audit: >
+    No new work carries spoilerAfter. Judged none needed: the Conan, Fallon,
+    Cheyenne and Altaii synopses are premise-only, and the Strike at Shayol
+    Ghul synopsis describes series backstory that is the epic's premise, not
+    a reveal. Worth an owning-skill pass, especially on whether the Strike's
+    existence needs gating for WoT newcomers.
+  visual-metadata: >
+    Thirteen new works, no images. The 1980s Tor Conan paperbacks likely have
+    OpenLibrary coverage but are prime retailer-scrape territory (look at
+    every image; ?default=false); Fallon and Cheyenne Raiders coverage will
+    be thin. The wing header/theme still reads as WoT-branded, which is now
+    an editorial question for the wing, not just imagery.
+  editions: >
+    New leads: the Fallon first-edition publisher is contested between
+    Wikipedia's own pages (Popham Press per the bibliography article; Ace
+    Books, 1 February 1980, per the Fallon Blood infobox) - settle before
+    recording 1980 editions. Cheyenne Raiders' 1982 original paperback
+    publisher was not settled here (fantasticfiction lists it in a
+    multi-author "American Indians" line, single unopened source; the Forge
+    2000 hardcover reissue is PW-verified). Conan first-edition months are in
+    the archived Encyclopaedia WoT bibliography already cited on each work;
+    note Conan the Defender and Conan the Victorious were trade paperback
+    firsts with later mass-market editions (catalogues will disagree).
+  translation: >
+    pt-PT regressed exactly as expected: 58/58 files fully covered before,
+    57/58 after, the partial being franchises/wheel-of-time/works.yaml at
+    17/30 synopses (the 13 new works). Two STALE-but-live translations the
+    coverage script cannot see: content/i18n/pt-PT/franchises/wheel-of-time/
+    franchise.yaml still translates the old series-scoped description
+    (base description was rewritten to span the career), and
+    content/i18n/pt-PT/authors/robert-jordan.yaml still translates the old
+    bio (base bio was widened with the pen-name and Conan work links and the
+    posthumous Altaii sentence). Both must be retranslated; the pseudonym
+    notes are never translated so their rewrite carries no i18n debt.
+  wing-audit: >
+    Two consistency questions created deliberately: (1) the 14 WoT volumes,
+    New Spring and the companions keep subseries: null (untouched per scope)
+    while the new early-career works carry subseries labels - in an author
+    wing the WoT sequence itself is arguably a subseries now; (2) the wing's
+    name, theme (age-of-legends preset, wheel-and-serpent signature) and all
+    startHere prose still present a WoT-shaped wing around an author-shaped
+    catalogue. No achievements exist for this wing, so no criteria changed
+    meaning.
+openQuestions:
+  - >
+    Conan tiering (my weakest call, flagged as instructed): all seven Conan
+    novels are core, including the Conan the Destroyer film novelization.
+    Reasoning: tier records the kind of publication, they are full novels he
+    wrote solo, and extended's own definition (nonfiction, minor collections)
+    does not fit novels - the Tordo audit treated novels-in-extended as a
+    bug. The honest alternative reading is that licensed pastiche and a
+    screenplay novelization are off the author's spine and belong in
+    extended. If the curator downgrades any, the novelization is the first
+    candidate.
+  - >
+    Curator scope call: should the wing carry contributor entries for River
+    of Souls (Unfettered, 2013) and A Fire in the Ways (Unfettered III,
+    2019), the cut A Memory of Light material completed by Sanderson?
+    Rejected this run because multi-author anthologies are explicitly the
+    curator's call and the app still counts apocrypha in the derived order.
+    If wanted, they enter as authorRole: contributor, contributionTitle,
+    withAuthorIds: [brandon-sanderson], canonTier: apocrypha.
+  - >
+    Contested date, deliberately left alone: ISFDB's title record for New
+    Spring: The Novel says 2003-12-28 where our entry (and Wikipedia) says
+    2004 (Tor, 6 January 2004). The existing note's ruling (novel dated
+    2004, distinct from the 1998 novella) was kept untouched per the run
+    scope. If the ISFDB date reflects a real earlier release rather than a
+    catalogue ship-date artefact, the year moves and the derived order
+    reorders: New Spring at 2003 would share the year with Crossroads of
+    Twilight (January 2003) instead of sitting alone between it and Knife of
+    Dreams. Needs a primary-source check of the first edition's actual
+    release before anyone edits it.
+  - >
+    franchise.yaml authorIds kept as [robert-jordan, brandon-sanderson] even
+    though the wing is now kind: author around Jordan. Dropping Sanderson
+    would close the globalEvents lifetime window at Jordan's 2007 death and
+    orphan the three post-2007 exclusion rulings (ebook-2007 boundary,
+    financial-crisis-2008, covid/booktok 2020), all of which were judged on
+    Sanderson as completer. Curator call whether the author-wing identity
+    should trump the events window; changing it belongs to event-resonance
+    plus an authorIds edit in one commit.
+  - >
+    content/authors/brandon-sanderson.yaml is owned by a parallel agent this
+    run and was not touched. Its bio should cross-reference that his Wheel of
+    Time completion volumes live in this wing (the corollary: a collaborator's
+    own wing never duplicates them), phrased from his side. Hand this to
+    whoever integrates his file.
+  - >
+    The Fallon first-edition publisher contradiction inside Wikipedia itself
+    (Popham Press vs Ace Books) is recorded in the-fallon-blood's note. A
+    human with the 1980 first edition in hand, or the OCLC record (6137409),
+    settles it in minutes.

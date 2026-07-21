@@ -1,20 +1,28 @@
+# The id predates the widening of this wing to the author's complete works;
+# ids are permanent, so the slug stays wheel-of-time and every work, old and
+# new, keeps the wheel-of-time/ prefix.
 id: wheel-of-time
-name: The Wheel of Time
-kind: series
+name: Robert Jordan
+kind: author
 description: >
-  A fourteen-volume epic fantasy of prophecy, rebirth, and a war against the
-  Dark - begun by Robert Jordan and, after his death, completed by
-  [[author:brandon-sanderson|Brandon Sanderson]] from the notes he left.
+  The complete published work of Robert Jordan, pen name of James Oliver
+  Rigney Jr.: historical fiction and a western under other names, a
+  seven-novel Conan run, and his life's work, The Wheel of Time - a
+  fourteen-volume epic of prophecy, rebirth, and a war against the Dark,
+  completed after his death by [[author:brandon-sanderson|Brandon Sanderson]]
+  from the notes he left.
 authorIds: [robert-jordan, brandon-sanderson]
 themePreset: age-of-legends
 
-# Capabilities (docs/SCHEMA.md). This franchise deliberately runs FEWER layers
-# than a multiverse like Stephen King or the Cosmere. It is one continuous
-# sequence with a single cast and no crossover tissue, so the connections layer
-# earns nothing here - it is forced off rather than left to auto-detect, as a
-# signal to curators that the omission is a judgment, not an oversight. The aura
-# (the author transition) and the where-to-start wizard (the New Spring debate)
-# are where this bundle's value sits.
+# Capabilities (docs/SCHEMA.md). This wing deliberately runs FEWER layers than
+# a multiverse like Stephen King or the Cosmere. Jordan's catalogue has no
+# crossover tissue of its own: the Conan novels are licensed pastiche in
+# another creator's universe, the pen-name historicals stand alone, and The
+# Wheel of Time is one continuous sequence with a single cast. So the
+# connections layer earns nothing here - it is forced off rather than left to
+# auto-detect, as a signal to curators that the omission is a judgment, not an
+# oversight. The aura (the author transition) and the where-to-start wizard
+# (the New Spring debate) are where this bundle's value sits.
 features:
   connections: off
 
@@ -35,9 +43,14 @@ globalEvents:
     - covid-19-pandemic-2020             # the text was finished in 2013; the pandemic only delayed the television shoot
     - booktok-2020                       # a thirty-year-old fourteen-volume commitment is not what short video sells
 
-# "Where to start" - powers the guided onboarding wizard. The Wheel of Time's
-# real onboarding question is not "which book" but "where does the prequel go",
-# so the paths encode the documented answers to that debate.
+# "Where to start" - powers the guided onboarding wizard. Every path here is a
+# way into The Wheel of Time, and that is the honest state of the record: the
+# entry advice that exists for Robert Jordan is entry advice for the series.
+# Nobody publishes a "start with the Conan novels" or "start with the Fallon
+# books" recommendation, so no path claims one, and the full-career walk is
+# offered as the completionist route rather than as a way in. Within the series
+# the onboarding question is not "which book" but "where does the prequel go",
+# so those paths encode the documented answers to that debate.
 startHere:
   paths:
     # Source: https://dragonmount.com/Books/index/ (the long-running major WoT
@@ -50,18 +63,22 @@ startHere:
     - id: just-start
       title: Just start at The Eye of the World
       description: >
-        The near-universal advice: begin with book one in publication order and
-        do not touch the prequel until much later. New Spring spoils reveals in
-        the first books, so meeting the characters cold is the intended way in.
+        The near-universal advice for anyone arriving at Robert Jordan: begin
+        with book one of The Wheel of Time and do not touch the prequel until
+        much later. New Spring spoils reveals in the first books, so meeting the
+        characters cold is the intended way in. One book is also the cheapest
+        possible test of a writer whose main work runs to fourteen volumes.
       workIds:
         - wheel-of-time/the-eye-of-the-world
       orderId: null
       fit:
         experience: [new]
-        commitment: [arc, complete]
+        commitment: [taste, arc, complete]
       note: >
-        This is what the fandom tells every newcomer. If book one lands, the
-        whole turning of the Wheel is open to you.
+        This is what the fandom tells every newcomer, and it skips the eleven
+        pen-name and work-for-hire novels Jordan published first. Those are on
+        the shelf here; no guide recommends them as the door. If book one lands,
+        the whole turning of the Wheel is open to you.
     # Sourcing note: the insertion point is contested, and no citation supports
     # calling book five "the common community recommendation".
     # Both sources the order itself cites recommend LATER - after Crossroads of
@@ -77,11 +94,12 @@ startHere:
     - id: recommended-integrated
       title: Publication order, New Spring slotted in
       description: >
-        Read the main sequence in publication order but drop the prequel in
-        partway, once you know the characters it reframes. Where exactly is
-        contested - guides place it anywhere from book five to book ten - and
-        the tradeoff runs one way: slot it early and it reframes less, slot it
-        late and it interrupts the run to the end.
+        The Wheel of Time on its own: read the main sequence in publication
+        order but drop the prequel in partway, once you know the characters it
+        reframes. Where exactly is contested - guides place it anywhere from
+        book five to book ten - and the tradeoff runs one way: slot it early and
+        it reframes less, slot it late and it interrupts the run to the end.
+        This is the series only, so it leaves the rest of Jordan's shelf out.
       workIds: null
       orderId: wheel-of-time/recommended-integrated
       fit:
@@ -92,25 +110,36 @@ startHere:
       description: >
         For completionists who insist on in-world order: the prequel first, then
         the fourteen main volumes. You trade several first-read surprises for a
-        strictly linear timeline.
+        strictly linear timeline. The Wheel of Time only, since nothing else
+        Jordan wrote shares its world.
       workIds: null
       orderId: wheel-of-time/chronological
       fit:
         experience: [completionist]
         commitment: [complete]
     - id: publication-complete
-      title: The whole turning, publication order
+      title: The whole career, publication order
       description: >
-        Every volume in the order it was published, prequel and companions
-        included - you feel the series widen, stall, and then be finished by
-        another hand. The aura layer is built for exactly this walk.
+        Everything Jordan published, in the order it appeared: eleven early
+        novels under three different names, then the fourteen volumes of The
+        Wheel of Time, the prequel, the companions, and the trunk novel his
+        estate released twelve years after his death. You watch a writer of
+        historicals and licensed sword-and-sorcery become the author of a
+        fourteen-volume epic, and then watch that epic be finished by another
+        hand. The cost is patience: a reader who came for The Wheel of Time
+        waits eleven books to reach it, through work in three genres that has
+        nothing to do with it. The aura layer is built for exactly this walk.
       workIds: null
       orderId: default
       fit:
         experience: [returning, completionist]
         commitment: [complete]
+      note: >
+        This is the only route here that covers the whole shelf. The three
+        series paths above are The Wheel of Time alone.
 
 sources:
   - https://en.wikipedia.org/wiki/The_Wheel_of_Time
+  - https://en.wikipedia.org/wiki/Robert_Jordan_bibliography
   - https://dragonmount.com/
   - https://theshiningwalls.com/when-to-read-new-spring/
