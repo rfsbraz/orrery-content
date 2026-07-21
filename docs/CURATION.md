@@ -99,8 +99,21 @@ against them.
 
 **English prose changes invalidate translations.** Overlays merge field by
 field, so a rewritten base string leaves the old translation live for the
-locale reader. Fix both sides **in the same commit**. A spoiler fix, a date
-correction, or a rewrite that lands in one language has not landed.
+locale reader. A spoiler fix, a date correction, or a rewrite that lands in
+one language has not landed.
+
+**The unit that must be consistent is the merge, not every commit.** Fix both
+sides in the same commit when you are editing prose directly. But the pipeline
+deliberately runs `translation` LAST, because translation copies whatever the
+earlier stages settled - so on a stage branch the English necessarily lands
+some commits before its overlay, and that is correct rather than a violation.
+The rule these two together produce:
+
+> **No merge to `main` may leave base prose and its overlay out of sync.**
+> Intermediate commits on a working branch may; the branch tip may not.
+
+A branch built this way is only correct as a whole and must not be split into
+per-stage PRs at those boundaries.
 
 ## 4. The shared trap registry
 
