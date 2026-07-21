@@ -38,6 +38,13 @@ rather than paraphrased, the subject from the entity's own `title` and
 `description`, the composition from the asset spec, then the shared negative
 prompt plus the wing's `art.avoid`.
 
+**Look at the neighbours first.** For a life or franchise event, read the
+sketches already filed on the two events either side of it in the timeline
+(`scripts/asset_audit.py <slug>` lists them in order) and vary at least two of
+composition type, distance, tonal cast and motif carrier, per VISUAL.md §4a. A
+sequence of individually good sketches that all look alike is the failure this
+stage is most likely to produce, and it is invisible one asset at a time.
+
 Two rules that override any instinct to make a nicer picture:
 
 - **Draw only what the record says.** The description is the brief. Do not add

@@ -15,7 +15,9 @@ it is wrong even when it is beautiful.
 - literary rather than technological
 - **the orrery itself, once in every sketch** (see §1a)
 - no photorealism, no glossy 3D, no game concept art
-- **no typography inside the image, ever** (the app sets its own type over it)
+- **no typography inside the image**, with one narrow exception for era plates
+  (§4b): the app sets its own type over these, and invented lettering is the
+  fastest way to make an illustration look machine-made
 
 ## 1a. The orrery motif: found in the scene, not laid over it
 
@@ -87,7 +89,7 @@ not the person.
 
 | Asset | Size | Background | References | Renders in |
 |---|---|---|---|---|
-| `era-plate` | `1536x1024` | opaque, wing paper tone | no | full-bleed behind the era title, masked by the app (`variant="plate"`) |
+| `era-plate` | `1536x1024` | opaque, wing paper tone | no | the right half of the era plate, bleeding off the page edge; the title and prose hold the left (see §4b) |
 | `life-event` | `1024x1024` | **transparent** | no | the illustrated event card in `river.tsx`, laid beside the prose |
 | `franchise-event` | `1024x1024` | **transparent** | no | the illustrated event card in `river.tsx` |
 | `world-event` | `1024x1024` | **transparent** | no | every wing that carries the event, **tinted with that wing's `accent`** |
@@ -97,6 +99,57 @@ not the person.
 World events are shared, so they are drawn once in the neutral house style with
 no wing-specific motifs, on transparency, and coloured per wing in CSS. A
 world-event sketch that only suits one author is a bug.
+
+## 4a. Breaking monotony in a sequence
+
+A wing's life events are read one after another down a single column, so a set
+of individually good sketches can still fail: six wide landscapes with a warm
+wash and a compass become wallpaper by the third. **Each sketch is drawn
+against its neighbours, not only against its own brief.** Before writing a
+prompt, look at what the two events either side of it already got, and vary at
+least two of these four:
+
+- **Composition type.** Rotate deliberately between: a wide landscape or vista;
+  a cluttered working still-life seen close (a desk, a press, a kitchen table);
+  a single object given the whole frame; and a quiet intimate arrangement (a
+  vase, a candle, a photograph face-down). The 1971 birth is a vista, so the
+  1974 that follows it should not be.
+- **Distance.** Far, middle, near. A landscape then a tabletop then an object
+  in the hand reads as a rhythm; three middle distances read as one picture.
+- **Tonal cast.** Stay inside the wing's palette but let the temperature carry
+  the register: warmer and drier for a beginning, cooler and greyer for
+  hardship, a mauve or ashen cast for grief. This is the cheapest way to make a
+  sequence feel written rather than generated - and it must never break into a
+  colour the wing does not own.
+- **The orrery motif's carrier** (§1a). Six compasses is a logo.
+
+The app alternates which side of the card the illustration sits on as you go
+down the page, so **do not build the composition around a side**: keep the
+subject central enough to read mirrored.
+
+## 4b. The era plate
+
+An era plate is the largest asset in the catalogue and the only one that gets a
+half-page. It is not a background behind text: the prose holds the left side,
+the illustration owns the right and bleeds off the edge of the page.
+
+Compose it as **a place of work with a world behind it** - the near ground
+carries the era's objects in a dense, warm still-life (the books it produced,
+the tools it was made with, a lamp, a cup, the papers), and behind them the
+horizon opens onto the landscape or city that era belongs to, drawn lighter and
+looser so it recedes. Depth is what makes it a plate rather than a picture: near
+clutter, middle distance, far vista.
+
+Two era-specific liberties, both earned by the size:
+
+- **The orrery motif can be large here** - full arcs sweeping the sky with
+  planets on them - because there is room for it to be atmosphere rather than a
+  detail. It still sits behind everything.
+- **Real names may appear on objects** - a book spine, a masthead, a shop sign -
+  where the record actually contains that name (a press the author founded, a
+  magazine they edited). Keep it to two or three short words, and **check the
+  spelling in the returned image**: a misspelt real imprint is worse than no
+  lettering at all, and this is the one place §1's "no typography" rule bends.
 
 ## 5. Assembling a prompt
 
