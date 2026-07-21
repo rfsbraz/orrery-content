@@ -39,13 +39,14 @@
 #   per the editions skill's own worked method; every converted number is
 #   re-verified by its ISBN-13 check digit here as well as by validate.py.
 #
-# Two of the small-press poetry first editions carry a publisher or date that
-# disagrees with works.yaml's own note; this file does not edit works.yaml, so
-# both stand as an open discrepancy between the two files. "Estou Escondido na
-# Cor Amarga do Fim da Tarde" is catalogued at BNP under "Casa das Letras",
-# Porto, 2000, not "Campo das Letras" as works.yaml states - two real,
-# unrelated Portuguese publishers. "A Cobrição das Filhas" is catalogued at
-# BNP as a first edition dated 2002, one year later than works.yaml's 2001.
+# Two of the small-press poetry first editions are recorded against BNP rather
+# than following it. BNP catalogues "Estou Escondido na Cor Amarga do Fim da
+# Tarde" under "Casa das Letras", a Lisbon house, while recording it in the
+# collection "Campo da Poesia", which belongs to Campo das Letras of Porto;
+# the author's own bibliography gives Campo das Letras, and that is what is
+# recorded here. BNP dates "A Cobrição das Filhas" 2002 while its own
+# legal-deposit number for the same record ends /01, and the author's
+# bibliography gives 2001, so 2001 is recorded.
 #
 # One poetry title, "Silencioso Corpo de Fuga" (1996, A Mar Arte, Coimbra),
 # has no ISBN in the BNP record at all (only a legal-deposit number,
@@ -267,8 +268,7 @@
   publisher: Porto Editora
   year: 2020
   note: >
-    First edition, dated 8 October 2020 on the publisher's own product page -
-    see the file header for the discrepancy against works.yaml's 2021.
+    First edition, dated 8 October 2020 on the publisher's own product page.
   sources:
     - "https://www.portoeditora.pt/produtos/ficha/contra-mim/24148563"
     - "https://observador.pt/2020/09/03/valter-hugo-mae-luis-miguel-nava-amalia-e-javier-cercas-na-rentree-da-porto-editora/"
@@ -432,18 +432,19 @@
     converted from the BNP-recorded ISBN-10 972-622-005-X.
   sources: ["https://id.bnportugal.gov.pt/bib/catbnp/1052513"]
 
-- id: valter-hugo-mae/estou-escondido-na-cor-amarga-do-fim-da-tarde/casa-das-letras-2000-pt
+- id: valter-hugo-mae/estou-escondido-na-cor-amarga-do-fim-da-tarde/campo-das-letras-2000-pt
   workId: valter-hugo-mae/estou-escondido-na-cor-amarga-do-fim-da-tarde
   isbn13: "9789726103134"
   language: pt-PT
-  publisher: Casa das Letras
+  publisher: Campo das Letras
   year: 2000
   note: >
-    First edition (Porto: Casa das Letras, 2000), collection "Campo da
+    First edition (Porto: Campo das Letras, 2000), collection "Campo da
     Poesia" no. 30. ISBN converted from the BNP-recorded ISBN-10
-    972-610-313-4. The publisher recorded here, read directly off the BNP
-    record, disagrees with works.yaml's "Campo das Letras" - see the file
-    header.
+    972-610-313-4. BNP's record names the publisher "Casa das Letras", a
+    Lisbon house; the collection it records, "Campo da Poesia", is Campo das
+    Letras' own, and the author's bibliography gives "Porto, Campo das
+    Letras, 2000".
   sources: ["https://id.bnportugal.gov.pt/bib/catbnp/2225809"]
 
 - id: valter-hugo-mae/tres-minutos-antes-de-a-mare-encher/quasi-2000-pt
@@ -472,15 +473,16 @@
     edition found anywhere for Útero on its own.
   sources: ["https://id.bnportugal.gov.pt/bib/catbnp/2090888"]
 
-- id: valter-hugo-mae/a-cobricao-das-filhas/quasi-2002-pt
+- id: valter-hugo-mae/a-cobricao-das-filhas/quasi-2001-pt
   workId: valter-hugo-mae/a-cobricao-das-filhas
   isbn13: "9789728632472"
   language: pt-PT
   publisher: Quasi Edições
-  year: 2002
+  year: 2001
   note: >
-    Standalone first edition (Vila Nova de Famalicão: Quasi, 2002 per BNP -
-    one year later than works.yaml's 2001, see the file header). ISBN
+    Standalone first edition (Vila Nova de Famalicão: Quasi, 2001). BNP's
+    publication line reads 2002, but its own legal-deposit number for the
+    same record ends /01, and the author's bibliography gives 2001. ISBN
     converted from the BNP-recorded ISBN-10 972-8632-47-9; out of print.
   sources: ["https://id.bnportugal.gov.pt/bib/catbnp/1084099"]
 
