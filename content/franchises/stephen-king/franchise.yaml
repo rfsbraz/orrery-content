@@ -27,9 +27,9 @@ features:
   hall: auto
   editions: auto
 
-# Which shared global events actually reach this author (docs/SCHEMA.md; the
-# event-resonance skill owns these decisions). The app already filters
-# global.yaml to the authors' lifetimes; this is the judgement on top. King has
+# Which shared global events actually reach this author (docs/SCHEMA.md). The
+# app already filters global.yaml to the authors' lifetimes; this is the
+# judgement on top. King has
 # exactly one franchise event of his own across 95 works, so borrowed world
 # history is very easy to over-serve here. Kept by default and deliberately:
 # lady-chatterley-trial-1960, fantasy-paperback-boom-1965, chain-bookshop-1982,
@@ -45,16 +45,16 @@ globalEvents:
 # two answers (experience, commitment) against the fit tags.
 startHere:
   paths:
-    # where-to-start audit. FLAGGED, most seriously in this file: this specific
-    # five-book set has the shape of our own curation rather than a received
-    # recommendation, and no guide converging on exactly these five was found.
-    # Verified negative: https://stephenking.com/faq/ carries no "where should I
-    # start" answer and no reading-order guidance at all, so the strongest class
-    # of source (the author's own advice) does not exist for King. Either source
-    # the five against a well-known guide or reframe the path as an explicitly
-    # curated sampler - the curator's call, since it changes what a reader is
-    # told. Not removed: the underlying advice (spread the sample across decades
-    # rather than starting in the seventies) is sound.
+    # FLAGGED, most seriously in this file: this specific five-book set has the
+    # shape of our own curation rather than a received recommendation, and no
+    # guide converging on exactly these five was found. Verified negative:
+    # https://stephenking.com/faq/ carries no "where should I start" answer and
+    # no reading-order guidance at all, so the strongest class of source (the
+    # author's own advice) does not exist for King. Either source the five
+    # against a well-known guide or reframe the path as an explicitly curated
+    # sampler - a curator ruling, since it changes what a reader is told. Kept,
+    # because the underlying advice (spread the sample across decades rather
+    # than starting in the seventies) is sound.
     - id: essentials
       title: The essentials
       description: >
@@ -108,9 +108,9 @@ startHere:
         experience: [returning, completionist]
         commitment: [complete]
 
-# First-pass bundle for curator review. Core novels, the Dark Tower cycle, the
-# Richard Bachman books, and key collections are covered; the long tail of
-# short-story collections and nonfiction is marked extended and can be appended.
+# Core novels, the Dark Tower cycle, the Richard Bachman books, and key
+# collections are covered; the long tail of short-story collections and
+# nonfiction is marked extended and can be appended.
 sources:
   - https://en.wikipedia.org/wiki/Stephen_King_bibliography
   - https://stephenking.com/works/

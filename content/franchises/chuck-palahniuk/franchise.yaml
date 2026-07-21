@@ -22,7 +22,7 @@ themePreset: clinical-minimal
 # public-domain HAER large-format survey of the Burnside Bridge - institutional
 # black and white, exactly this wing's register - but every HAER scan on Commons
 # carries the black film-holder border and edge notches, and the app crops
-# blindly, so it would ship black bars. A curator who can crop one should.
+# blindly, so it would ship black bars.
 images:
   header: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Panorama_of_Willamette_River_Bridge_and_Downtown_-_Portland_-_Oregon_-_USA.jpg/1920px-Panorama_of_Willamette_River_Bridge_and_Downtown_-_Portland_-_Oregon_-_USA.jpg"
   headerCredit: "Adam Jones, Ph.D., CC BY-SA 3.0"
@@ -49,8 +49,8 @@ images:
 #
 # Everything else is left at auto and will light up from the data: river and
 # companion from the events, wizard from startHere below, orderDiff from the one
-# additional order plus the derived default, hall always. The editions stage has
-# since run, so editions is live: 34 entries covering all 28 works.
+# additional order plus the derived default, hall always, and editions from
+# editions.yaml (34 entries covering all 28 works).
 features:
   river: auto
   orderDiff: auto
@@ -60,9 +60,9 @@ features:
   hall: auto
   editions: auto
 
-# Which shared global events actually reach this author (docs/SCHEMA.md; the
-# event-resonance skill owns these decisions). The app already filters
-# global.yaml to the authors' lifetimes; born 1962 and living, so the six
+# Which shared global events actually reach this author (docs/SCHEMA.md). The
+# app already filters global.yaml to the authors' lifetimes; born 1962 and
+# living, so the six
 # pre-1962 entries drop as arithmetic and ten candidates were left to rule on.
 #
 # KEPT BY DEFAULT, and only one: sept-11-2001. Two of his 1999 books were read
@@ -73,7 +73,7 @@ features:
 # already-written page is met, which is resonance in the direction that matters
 # to a reader arriving now.
 #
-# Nine excluded below. This is a strict run on purpose: the wing already carries
+# Nine excluded below. This is a strict cut on purpose: the wing already carries
 # three franchise events and five life events across 1996-2024, and borrowed
 # world history would be the loudest thing on a page that is mostly his own.
 globalEvents:
@@ -82,7 +82,7 @@ globalEvents:
     - carnation-revolution-1974          # Portuguese censorship; nothing here answers it
     - chain-bookshop-1982                # the pre-film novels sold badly on exactly that table
     - online-bookselling-1995            # he was never out of print; the film carried the backlist, not search
-    - ebook-and-self-publishing-2007     # traditionally published throughout, and no standalone digital work survived the audit
+    - ebook-and-self-publishing-2007     # traditionally published throughout, and no standalone digital work exists
     - financial-crisis-2008              # no novel answers the crash; Adjustment Day is political collapse, not economic
     - prestige-fantasy-adaptation-2011   # heavily adapted, but never a line of fantasy
     - covid-19-pandemic-2020             # the two post-2020 novels do not reach for it, and a page needs no filler tail
@@ -92,29 +92,25 @@ globalEvents:
 #
 # SOURCING, stated plainly: no author-published entry advice exists for
 # Palahniuk, and no community guide with any standing was found recommending a
-# starting point. The reading-orders second pass ran the discovery for real
-# (his substack, the AMA record, The Cult, the listicle field - see the
-# orders.yaml header) and confirmed the negative, so nothing below is promoted
+# starting point (searched: his substack, the AMA record, The Cult, the
+# listicle field - see the orders.yaml header), so nothing below is promoted
 # to SOURCED. One unverified lead survives: a search snippet attributing
 # "start with Fight Club, Invisible Monsters, or Survivor" to a Reddit AMA,
-# with no reachable thread; if a future pass finds it, the before-the-film
-# path upgrades. Each path still rests on a stated fact rather than on a
-# consensus this repo can show, in the same terms as the audited Stephen King
-# and Joao Tordo files.
+# with no reachable thread; if that thread ever surfaces, the before-the-film
+# path upgrades. Each path rests on a stated fact rather than on a consensus
+# this repo can show, in the same terms as the Stephen King and Joao Tordo
+# files.
 #
-# THE FAMOUS-BOOK RULING, since this author is the case the check exists for.
-# The answer here is that the trap does NOT apply, which is worth writing down
-# because it usually does. Fight Club is not an atypical masterpiece, not a
-# late-career book assuming earlier ones, and not the visible first draft of a
+# THE FAMOUS-BOOK RULING. The famous-book trap does NOT apply here, which is
+# worth writing down because it usually does. Fight Club is not an atypical
+# masterpiece, not a late-career book assuming earlier ones, and not the
+# visible first draft of a
 # writer who found himself later: it is short, it is first, and it is the purest
 # example of the things he does everywhere else (a damaged first-person
 # narrator, chapters built to be read aloud, a chorus line repeated until it
 # turns). The honest cost is not that the book is a bad door, it is that the
 # film is standing in the doorway. So the path keeps the famous book and spends
 # its prose on the film rather than steering the reader away from it.
-#
-# Four paths kept, none added, none removed. The changes this stage made are
-# recorded in .orrery/chuck-palahniuk/where-to-start.yaml.
 startHere:
   paths:
     # Basis: a fact, not a recommendation. It is his debut, the book the film
@@ -200,10 +196,7 @@ startHere:
 # Sources for the wing. 28 works, five eras (three sourced - one publishing,
 # two author - and two flagged unsourced bridges), four franchise events, seven
 # author life events, two additional orders, no characters. Plus 34 editions,
-# 26 of 28 covers, a portrait and a header, and a full pt-PT overlay. The
-# deferred stage 3 (press-archaeology, eras, reading-orders) ran as a second
-# pass once the search budget allowed; its discovery record lives in each
-# file's header and the branch PR bodies.
+# 26 of 28 covers, a portrait and a header, and a full pt-PT overlay.
 sources:
   - https://en.wikipedia.org/wiki/Chuck_Palahniuk
   - https://en.wikipedia.org/wiki/Fight_Club_(novel)
