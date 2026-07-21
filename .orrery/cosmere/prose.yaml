@@ -1,0 +1,132 @@
+stage: prose
+summary: >
+  Four stages run in order over the widened Brandon Sanderson wing: eras,
+  reading-orders plus startHere, a spoiler-audit delta over the 40 new
+  synopses, and the pt-PT translation close-out. The wing's prose now
+  describes a career rather than a shared universe, the three Cosmere-scoped
+  orders say so in their own names, Sanderson's own non-Cosmere entry advice
+  is represented for the first time, seven new synopses were rewritten back
+  to jacket level, and pt-PT is at 66/66.
+stagesRun: [eras, reading-orders, spoiler-audit, translation]
+commits:
+  - "9dd7892 content(eras): rescope the cosmere era prose to the career-wide wing"
+  - "537fc71 content(orders): scope the cosmere orders and startHere to the widened wing"
+  - "bd8f02b content(spoilers): rewrite seven new synopses that outran their jacket copy"
+  - "0be1f8f content(i18n): close the pt-PT delta for the widened Sanderson wing"
+
+changedProse:
+  eras:
+    - cosmere/the-long-apprenticeship
+    - cosmere/debut-and-the-wheel-of-time
+    - cosmere/building-the-cosmere
+    - cosmere/the-dragonsteel-era
+  orders:
+    - cosmere/recommended-reading-order
+    - cosmere/chronological-inuniverse
+    - cosmere/author-recommended
+  startHerePaths:
+    added: [outside-the-cosmere]
+    changed: [standalones-first, everything-in-order]
+  franchise:
+    - cosmere
+  works:
+    - cosmere/mitosis
+    - cosmere/firefight
+    - cosmere/calamity
+    - cosmere/defending-elysium
+    - cosmere/evershore
+    - cosmere/perfect-state
+    - cosmere/bastille-vs-the-evil-librarians
+  authors:
+    - brandon-sanderson
+
+gates:
+  validate: "green after every stage; the only cosmere line is the pre-existing theme.yaml signature 'filament' warning"
+  i18nCoverage:
+    before: "pt-PT 57/66 files fully covered (8 author files missing, cosmere/works.yaml 28/68 on synopsis)"
+    after: "pt-PT 66/66 files fully covered"
+  eraOrphans: "unchanged; no work fell outside an era span before or after"
+
+forStages:
+  visual-metadata: >
+    Nothing in this pass depends on covers, and nothing here creates a cover
+    requirement. Two prose facts are worth knowing before picking imagery:
+    White Sand is a graphic-novel trilogy and Dark One is a graphic novel, so
+    a cover for either is comics art rather than a jacket, and the startHere
+    wizard now has a fifth path (outside-the-cosmere) whose three works
+    (steelheart, the-rithmatist, alcatraz-versus-the-evil-librarians) are
+    rendered on the entry page and are among the more visible coverless slots.
+  editions: >
+    The pt-PT overlays now assert, in comments, that no Portuguese edition
+    exists for any non-Cosmere work, for the three Wheel of Time volumes
+    Sanderson completed, or for Yumi and the Nightmare Painter, The Sunlit
+    Man, Rhythm of War, The Emperor's Soul, The Alloy of Law, The Lost Metal,
+    Wind and Truth and Arcanum Unbounded, because every one of those keeps its
+    English title in the overlay prose. Those are assumptions inherited from
+    the existing overlays plus this pass, not verified against a Portuguese
+    catalogue. If editions research finds a published pt-PT title for any of
+    them, the overlay display text after the pipe should be updated in the
+    same pass.
+  wing-audit: >
+    Three pieces of prose were deliberately left saying "Cosmere" because they
+    are genuinely about the Cosmere and now label themselves as such: all
+    three orders, the standalones-first and mistborn-first paths, and the
+    era titled "A Construção do Cosmere" / "Building the Cosmere". The era is
+    the weak one and is flagged for removal below. The capability set was not
+    re-derived in this pass.
+
+openQuestions:
+  - >
+    The era cosmere/building-the-cosmere is recommended for REMOVAL. It has no
+    source outside this repo, its title names one strand of a period that also
+    contains Firefight, Calamity, Skyward, Starsight, Snapshot and The
+    Original, and no career-wide replacement title can be coined without
+    inventing a periodisation. Its description was rescoped so the plate no
+    longer misrepresents the reader's walk, and its note records the negative
+    search. Dropping it leaves 2014-2020 with no era plate, which is a
+    legitimate outcome. This is a curator's call because removing an era
+    changes what a reader meets on a full-bleed plate.
+  - >
+    A Skyward reading order was researched and REJECTED, and the lead is worth
+    one browser-based retest. Sunreach, ReDawn, Evershore and Cytonic were all
+    published in 2021, so the derived order's sequence among them is
+    arbitrary, and readers report a recommended placement (Sunreach and ReDawn
+    before Cytonic, Evershore after) traced to a Sanderson and Patterson
+    livestream. That livestream could not be opened; coppermind.net returns
+    403 and skyward-series.fandom.com returns 402 to automated requests. The
+    corroboration actually read was a Goodreads reader thread plus retailer
+    series numbering (2.1, 2.2, 3.1). A human with a browser can probably
+    settle this in five minutes, and if it settles, the order passes the
+    intra-year tie-break test the skill blesses.
+  - >
+    The Reckoners, Alcatraz and Legion threads were rejected for orders with
+    no residual doubt: each was published in story order with at most one
+    within-year tie, so a thread order would reproduce the derived default
+    filtered by subseries. Recorded here so the next pass does not
+    re-research them.
+  - >
+    Era themes were translated into pt-PT for this wing for the first time
+    (the translation skill names untranslated themes as a real reader-visible
+    gap that i18n_coverage.py cannot see). The other wings still have English
+    themes under Portuguese era titles.
+  - >
+    The overlay work could not be verified against rendered pages: the app is
+    not present in this worktree, so there was no way to open a franchise or
+    author page in pt-PT and read it. Verification here was source-side only
+    (id-for-id join of base against overlay re-derived independently of
+    i18n_coverage.py, plus a Brazilianism grep). A live sweep in pt-PT
+    remains outstanding, and per the translation skill it catches a class of
+    failure the source scan cannot.
+  - >
+    CURATION.md and the reading-orders skill both require an English prose
+    change and its overlay to land in the SAME commit. This pass was staged
+    with translation last by instruction, so commits 9dd7892, 537fc71 and
+    bd8f02b each shipped English prose whose pt-PT counterpart arrived in
+    0be1f8f. The branch tip is consistent; the intermediate commits are not.
+    Worth deciding whether the stage ordering or the same-commit rule wins,
+    because they currently contradict each other.
+  - >
+    The spoiler ruling on cosmere/starsight rests on the impersonation being
+    first-act setup rather than a reveal. It is NOT in the publisher copy,
+    which was checked. Named as the weakest spoiler call in this pass and
+    loosenable in either direction by a curator who has read the book.
