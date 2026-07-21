@@ -28,6 +28,13 @@ features: {}
 # novelist with a small home readership. Nothing is kept by default here; the
 # one global event that matters to him is claimed explicitly below.
 globalEvents:
+  # portugal-bailout-2011 (added to the shared pool after this block was
+  # written) is not listed in either block below: it falls inside his lifetime
+  # and renders by default. Anatomia dos Mártires (2011) is built on it
+  # directly - an ambitious journalist "out to prove himself during Portugal's
+  # financial crisis" - so no exclusion is warranted. Contrast
+  # valter-hugo-mae/franchise.yaml, where the same event is excluded: no work
+  # of that author's engages it.
   include:
     # Sixteen months before his birth, so the lifetime gate drops it. It is the
     # single global event that made his career possible: he belongs to the first
@@ -40,7 +47,7 @@ globalEvents:
     - online-bookselling-1995            # his readership is domestic and bookshop-led; no title answers this
     - sept-11-2001                       # the New York study years are undated, and no novel of his reaches for it
     - ebook-and-self-publishing-2007     # traditionally published in Portugal throughout; no self-publishing story
-    - financial-crisis-2008              # Portugal's rupture was the 2011 bailout, and even that stays off his page
+    - financial-crisis-2008              # the 2008 crash itself; no title answers it, unlike the 2011 bailout (see the note above)
     - prestige-fantasy-adaptation-2011   # he writes for Portuguese television, but not a word of fantasy
     - covid-19-pandemic-2020             # no evidence any novel answers it; excluded rather than assumed
     - booktok-2020                       # Lusophone literary fiction is not what short-form video moves

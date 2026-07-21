@@ -22,6 +22,26 @@ themePreset: village-ink
 # Everything left at auto; nothing forced.
 features: {}
 
+# Which shared global events actually reach this author (docs/SCHEMA.md). Most
+# of the pool is Anglophone trade or genre-industry history that never touches
+# a Portuguese literary novelist; excluded below. carnation-revolution-1974 is
+# not listed in either block: it falls inside his lifetime (born 1971) and
+# renders by default. o nosso reino (2004), his debut, is set "in the last
+# years of the Estado Novo" and is read by critics as staging the regime's
+# "censura do pensamento" and "quase meio século de ditadura" (Há Sempre um
+# Livro à Nossa Espera, cited below) - the world the Revolution closed.
+globalEvents:
+  exclude:
+    - chain-bookshop-1982                # a British and American shop format; his trade is small Portuguese presses and Porto Editora
+    - online-bookselling-1995            # domestic, bookshop-led readership; no title or career fact answers this
+    - sept-11-2001                       # no novel reaches for it
+    - ebook-and-self-publishing-2007     # traditionally published throughout (Quasi Edições, Objectiva, Alfaguara, Porto Editora); no self-publishing story
+    - financial-crisis-2008              # no work answers it; the novels of that decade are set in Iceland, Japan and colonial Brazil, not contemporary Portugal
+    - prestige-fantasy-adaptation-2011   # he does not write fantasy
+    - portugal-bailout-2011              # no novel of the decade engages the bailout or austerity; contrast joao-tordo/franchise.yaml, whose Anatomia dos Mártires (2011) is built on it directly
+    - covid-19-pandemic-2020             # no work found addressing the pandemic; Deus na Escuridão (2024) is set 1981-2001, not the present
+    - booktok-2020                       # Lusophone literary fiction is not what short-form video moves; O Século dos Imbecis (2026) satirises social media broadly, not book-discovery culture
+
 # Every work below is checked against at least one Portuguese primary or
 # near-primary source (publisher pages, national press, the official José
 # Saramago prize site). works.yaml records which titles he edited rather than
@@ -32,3 +52,4 @@ sources:
   - https://www.valterhugomae.com/
   - https://www.portoeditora.pt/autor/valter-hugo-mae/23096
   - https://www.premiojosesaramago.pt/vencedores/2007/valter-hugo-mae
+  - https://hasempreumlivro.blogspot.com/2012/12/o-nosso-reino-de-valter-hugo-mae.html
