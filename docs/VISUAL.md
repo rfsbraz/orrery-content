@@ -124,6 +124,10 @@ moment: the objects that person left, and their likeness withheld.
 | `work-cover` | - | - | - | not generated: covers are licensed or absent (see `visual-metadata`) |
 | `author-portrait` | - | - | - | not generated: see §3 |
 
+Shared world-event art lives in `assets/global/`, not under any one wing: it is
+catalogue canon, and filing it beside the author who happened to prompt it
+would imply otherwise.
+
 World events are shared, so they are drawn once in the neutral house style with
 no wing-specific motifs, on transparency, and coloured per wing in CSS. A
 world-event sketch that only suits one author is a bug.
