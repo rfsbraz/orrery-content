@@ -1,0 +1,207 @@
+stage: press-archaeology
+summary: >
+  Portuguese and Brazilian press archaeology on the 5-lifeEvent, 2-event
+  scaffold. Added 4 new aura entries (2 author lifeEvents, 2 franchise
+  events), all sourced from primary interviews and national press actually
+  opened, none laundered from an aggregator. The flagged 8-year dark run
+  (2013-2020) is closed: a 2015 Prémio Oceanos shortlisting (A Desumanização)
+  and the 2016 Japan research trips behind Homens Imprudentemente Poéticos
+  now sit inside it. aura_density.py's worst run moved to a pre-existing,
+  previously-invisible gap, 2000-2006 (4 years after this pass, was 7); one
+  more addition, the 2004 origin of the "minúsculas" lowercase style, closes
+  that too. Both scaffolded leads were run down and rejected, for cause (see
+  openQuestions). validate.py green: 445 works, 29 authors, all references
+  resolve; the only warnings touching this wing are the pre-existing "outside
+  every era" ones eras.yaml already owns. sync_sanctuary_block.py passes.
+  aura_density.py, valter-hugo-mae: 37 works, aura entries 7 -> 12 (7
+  lifeEvents + 5 franchise events), ratio 0.19 -> 0.32, longest dark run
+  8 years (2013-2020, flagged) -> 4 years (2000-2003, unflagged).
+produced:
+  authorLifeEvents:
+    - vhm-multidisciplinary-2007
+    - vhm-isabel-lhano-eduardo-2023
+  franchiseEvents:
+    - vhm-minusculas-style-2004
+    - vhm-oceanos-finalist-2015
+    - vhm-japan-research-2016
+  changedProse: []
+  changedDates: []
+findings:
+  added:
+    - fact: >
+        2004, franchise event vhm-minusculas-style-2004: why Mãe writes the
+        "minúsculas" tetralogy without capital letters - traced in his own
+        words to Al Berto's lowercase poems and a line of Ruy Belo's ("no
+        word should raise its head above the others"), taken literally as a
+        democracy among words; he also calls the ellipsis "the excrement of
+        punctuation."
+      why_it_passes: >
+        Tier-2 origin story (CURATION 6.2), verified in the author's own
+        words rather than assumed from the visible typography, and closes
+        part of the newly-exposed 2000-2006 gap.
+      source: https://visao.pt/jornaldeletras/jornalletrasforum/origami/2010-01-24-as-grandes-minusculas-de-valter-hugo-maef545016/
+      note: >
+        Single-sourced (Jornal de Letras/Visão, opened and quoted directly).
+        Not a living-person health/finance/family/legal claim, so the
+        two-source rule does not apply, but a second confirming source would
+        still strengthen it - flagged for whoever next touches this wing.
+    - fact: >
+        2007, author lifeEvent vhm-multidisciplinary-2007: the same year he
+        wins the Saramago prize, Mãe becomes the vocalist of the band Governo
+        (formed with two Mão Morta musicians, EP "Propaganda Sentimental"
+        2009) and holds his first solo drawing exhibition, at Galeria Símbolo
+        in Porto.
+      why_it_passes: >
+        Med impact, explains the shelf: the visual-art practice is why three
+        of his own children's books (Serei Sempre o Teu Abrigo among them)
+        are illustrated by the author himself, already recorded in
+        works.yaml.
+      sources:
+        - https://pt.wikipedia.org/wiki/Governo_(banda)
+        - https://artebrasileiros.com.br/arte/valter-hugo-mae-na-generosidade-das-palavras-e-na-dificuldade-das-artes-plasticas-cresci/
+        - https://eterogemeas.com/autores/valter-hugo-mae/
+      note: >
+        The exact exhibition month and a possible title ("o rosto de gregor
+        samsa") could not be pinned down - one aggregator claims "end of
+        2006", another "May 2007", a third gives no date at all. Kept the
+        entry to the year both directly-opened sources agree on (2007) and
+        left the title out rather than guess between the two.
+    - fact: >
+        2015-11-11, franchise event vhm-oceanos-finalist-2015: A Desumanização
+        (2013) named one of 14 finalists for the Prémio Oceanos, alongside
+        Chico Buarque's O Irmão Alemão.
+      why_it_passes: >
+        Reception, med impact, resolves the single-source weakness the
+        franchise-research handoff flagged for this exact fact, and lands
+        squarely inside the dark run.
+      sources:
+        - https://www.publico.pt/2015/11/11/culturaipsilon/noticia/valter-hugo-mae-e-chico-buarque-entre-os-finalistas-no-premio-oceanos-1714092
+        - https://observador.pt/2015/11/11/valter-hugo-mae-chico-buarque-os-finalistas-no-premio-oceanos/
+        - https://www.rtp.pt/noticias/cultura/valter-hugo-mae-e-chico-buarque-entre-os-finalistas-no-premio-oceanos_n872953
+    - fact: >
+        2016, franchise event vhm-japan-research-2016: two research trips to
+        Japan for Homens Imprudentemente Poéticos - the first for temples,
+        gardens and everyday gestures, the second to Aokigahara (the
+        "suicide forest" near Mount Fuji that gives the novel its setting)
+        and to the last elderly craftsman in Japan still hand-making
+        traditional folding fans, also near Fuji. Direct quote: "Eu
+        precisava das evidências, de ver."
+      why_it_passes: >
+        Tier-2 origin story, in his own words, dated to two independent
+        interviews three months apart telling the same story consistently
+        (including which trip the forest visit happened on) - the kind of
+        internal consistency that suggests a real memory rather than
+        publicity copy. Directly addresses the dark run.
+      sources:
+        - https://www.nit.pt/cultura/09-30-2016-valter-hugo-mae-o-primeiro-texto-que-escrevi-tinha-seis-anos-e-foi-tao-traumatico-que-ainda-me-lembro
+        - https://www.correio24horas.com.br/literatura/quero-ser-um-agente-do-sonho-diz-escritor-portugues-valter-hugo-mae-1216
+    - fact: >
+        2023-12-10, author lifeEvent vhm-isabel-lhano-eduardo-2023: the
+        visual artist Isabel Lhano, a close friend, dies of an aneurysm aged
+        70; her death and the earlier loss of his teenage nephew Eduardo (16,
+        cancer) are the two griefs behind Educação da Tristeza (2025).
+      why_it_passes: >
+        Tier-1 inner weather, high impact - directly, explicitly the stated
+        origin of an already-catalogued book, put in public by the author
+        himself in interviews about that book's launch. Two-source rule for
+        a living person's family/health matter satisfied twice over: Isabel
+        Lhano's death by two independent national-press obituaries (JN,
+        Correio da Manhã), Eduardo's by two independent outlets quoting
+        Mãe's own words (Quatro Cinco Um, CNN Brasil).
+      sources:
+        - https://www.jn.pt/cultura/artigo/morreu-a-artista-plastica-isabel-lhano-aos-70-anos/17803193
+        - https://www.cmjornal.pt/mais-cm/obituario/detalhe/isabel-lhano-1953-2023
+        - https://quatrocincoum.com.br/trechos/trechos/o-diario-do-luto-de-valter-hugo-mae/
+        - https://www.cnnbrasil.com.br/entretenimento/impossivel-roubarem-as-pessoas-que-amamos-diz-valter-hugo-mae-sobre-luto/
+      note: >
+        Eduardo's exact year of death and his relation beyond "nephew"
+        (some aggregator summaries added "godson", not confirmed in any
+        opened source) could not be established from any source actually
+        read - illness duration ("more than two years", "diagnosed at 14")
+        and death age (16) are consistent across sources, but no calendar
+        year is stated anywhere found. The event is dated to Isabel Lhano's
+        precisely-sourced death instead of guessing a year for Eduardo.
+  rejected:
+    - lead: >
+        Governo band vocal-cord injury (scaffold lead 1): Mãe reportedly had
+        to stop performing after injuring his vocal cords shouting on stage,
+        needing surgery and a period of enforced silence.
+      reason: >
+        Rests on exactly one source (an Observador feature), and that source
+        returned HTTP 402 on every fetch attempt in this session - paywalled,
+        so never actually opened, only seen through a search engine's own
+        summary of it, which CURATION 5 treats as a claim, not evidence.
+        Worse, pt.wikipedia's Governo (banda) page, read directly, gives a
+        different and mundane reason for the band's inactivity ("cada vez
+        maiores solicitações literárias... actividade muito intermitente" -
+        increasingly busy with his writing career) and does not mention an
+        injury at all. One unreadable source contradicted by one readable
+        source fails the two-independent-source bar for a living person's
+        health by a wide margin. Left out entirely, including the
+        surgery/silence details, which never got corroborated either.
+    - lead: >
+        First solo art exhibition, 2007, combined with the Governo/singing
+        fact into one "explains the painterly/musical prose" life event, as
+        the scaffold suggested.
+      reason: >
+        Not rejected outright - added as vhm-multidisciplinary-2007 - but
+        without the interpretive claim the scaffold floated ("explains
+        critical language about his painterly/musical prose"). No source
+        opened makes that critical connection; asserting it here would be
+        this stage's own inference dressed as reception, which CURATION 1
+        ("received, not invented") rules out. The entry states the facts
+        (singer, visual artist) and lets the self-illustrated children's
+        books make the connection, since that link is already in the file.
+  otherLeadsChecked: >
+    A film adaptation of a máquina de fazer espanhóis (guessed at, not in any
+    scaffold or handoff) - searched for, found no evidence one exists; not a
+    real lead, dropped without further action. An RTP claim surfaced
+    repeatedly by search-engine summaries ("Mãe coordinates and presents
+    Todas as Palavras since 2015") turned out to be wrong on direct check: a
+    Diário de Notícias piece on the actual 8 April 2016 premiere names three
+    other presenters (Ana Daniela Soares, Inês Fonseca Santos, Luís Caetano)
+    and never mentions him. This is the second time in this run a search
+    engine's own synthesized answer stated a specific, plausible-sounding
+    fact that a direct fetch of a primary source did not support (the other
+    being the vocal-cord injury's surgery/silence details) - worth naming as
+    a trap for whoever next runs this skill: an AI search summary is not a
+    source, however confident it reads, and paywalled sources cannot be
+    "read" through one either.
+forStages:
+  reading-orders: >
+    No new information relevant to entry paths or the tetralogia's ordering.
+  eras: >
+    Not touched, per file-ownership boundary. The vhm-minusculas-style-2004
+    franchise event added here is adjacent to the tetralogia's date range
+    (2004-2010) that eras.yaml already covers, but stays a franchise event
+    rather than era content.
+  world-events / event-resonance: >
+    Not touched.
+  translation: >
+    i18n_coverage.py will show 2 more author lifeEvents and 3 more franchise
+    events missing pt-PT overlays; not a regression, this content did not
+    exist before this pass.
+openQuestions:
+  - >
+    RULING, not escalated: the vocal-cord injury and the Todas as Palavras
+    presenting claim both stay out. Sourcing did not clear the bar in either
+    case (see findings.rejected and otherLeadsChecked above); a future pass
+    with paywalled-source access to Observador could revisit the injury
+    claim specifically, but it would still need a second, independent,
+    non-contradicting source before it qualifies.
+  - >
+    Genuinely quiet, not unchecked: 2017-2020 (inside the closed 2013-2020
+    span) got a light search pass for prizes, translations and TV work and
+    turned up nothing dated and sourced enough to add. This is a lighter
+    check than the dedicated searches that found the 2015 and 2016 facts, so
+    call it "nobody looked closely yet" rather than "confirmed quiet" - worth
+    a dedicated pass if a future run wants to push the ratio further, but not
+    escalated as a gap since the dark-run threshold is already cleared.
+  - >
+    2000-2006 (the poetry-only years) is now the wing's longest dark
+    stretch at 4 years, under the flag threshold, closed by the 2004
+    minúsculas-style event. Same caveat as above: this got the same kind of
+    single deep dive as the 2015/2016 finds, not an exhaustive sweep of the
+    poetry period. completeness-auditor already flagged this exact span as
+    the wing's weakest-sourced section for existence/count purposes; it is
+    also its weakest-sourced section for aura.
