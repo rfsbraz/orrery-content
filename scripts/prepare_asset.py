@@ -40,20 +40,114 @@ def looks_checkerboarded(im: Image.Image) -> bool:
     """
     rgb = im.convert("RGB")
     w, h = rgb.size
-    step = max(4, min(w, h) // 128)
-    px = [rgb.getpixel((x, y))
-          for y in range(step, min(h, step * 16), step)
-          for x in range(step, min(w, step * 16), step)]
-    light = [p for p in px if min(p) > 230]
-    if len(light) < len(px) * 0.9:
-        return False
-    # Bucket coarsely: re-encoding jitters each square by a few levels, so the
-    # raw tone count runs into the dozens and an exact-match test misses the
-    # very case it exists for - which is worse than no test, because it sends
-    # someone off to re-roll a generation that was fine.
-    tones = {round(sum(p) / 3 / 4) * 4 for p in light}
-    spread = max(tones) - min(tones)
-    return 2 <= len(tones) <= 4 and 3 <= spread <= 24
+    # Sample SMALL patches at all four corners and accept if any one of them is
+    # a two-tone neutral field. One big top-left window fails as soon as the
+    # artwork reaches into that corner - which it did on the second image, so
+    # the check silently reported "no transparency was ever asked for" about a
+    # file that had it.
+    n = max(24, min(w, h) // 24)
+    corners = [(0, 0), (w - n, 0), (0, h - n), (w - n, h - n)]
+    for cx, cy in corners:
+        px = [rgb.getpixel((x, y))
+              for y in range(cy + 2, cy + n, 3)
+              for x in range(cx + 2, cx + n, 3)]
+        light = [q for q in px if min(q) > 230 and max(q) - min(q) <= 6]
+        if len(light) < len(px) * 0.95:
+            continue
+        tones = {round(sum(q) / 3 / 4) * 4 for q in light}
+        spread = max(tones) - min(tones)
+        # The signal is the SPREAD, not how many buckets it lands in. A plain
+        # white or cream background is flat (spread 0-2); a checkerboard always
+        # carries two tones a few levels apart. Counting buckets rejected a real
+        # checkerboard whose re-encoding smeared it across five of them.
+        if len(tones) >= 2 and 3 <= spread <= 28:
+            return True
+    return False
+
+
+def recover_alpha(im: Image.Image):
+    """Undo a flattened transparency checkerboard.
+
+    The ChatGPT export paints alpha onto its viewer checkerboard: a perfectly
+    regular grid of two near-white greys, measured at a 20px pitch with 1px
+    transitions. No illustration produces that, which is how we know the
+    generation DID have alpha and the download lost it.
+
+    Detect the grid, then FLOOD FILL from the border through matching pixels.
+    The flood matters: a drawn sky is the same near-white grey as the
+    checkerboard, so a colour test alone would eat it. The sky is enclosed by
+    the artwork; the checkerboard touches the frame.
+
+    Returns (image, pixels_cleared) or (None, 0) if no grid is found.
+    """
+    g = im.convert("L")
+    w, h = g.size
+    px = g.load()
+
+    row = [px[x, 8] for x in range(min(w, 400))]
+    flips = [x for x in range(1, len(row)) if abs(row[x] - row[x - 1]) >= 4]
+    gaps = [b - a for a, b in zip(flips, flips[1:]) if b - a > 3]
+    if len(gaps) < 3:
+        return None, 0
+    pitch = max(set(gaps), key=gaps.count)
+    if not 4 <= pitch <= 64:
+        return None, 0
+
+    rgb = im.convert("RGB")
+    rp = rgb.load()
+
+    def at(x, y):
+        return px[min(max(x, 0), w - 1), min(max(y, 0), h - 1)]
+
+    def is_checker(x, y):
+        """Phase-independent: a checker pixel matches its neighbour one full
+        square away and differs from the one half a square away.
+
+        Predicting the square from (x // pitch) drifts out of phase, because
+        the export is upscaled and the true pitch is fractional - which left
+        one corner of a plainly checkerboarded image untouched.
+
+        Neighbours are CLAMPED rather than bounds-rejected. Rejecting them
+        meant every border pixel failed, and since the flood starts at the
+        border it could never begin at all.
+        """
+        r, gg, b = rp[x, y]
+        if max(r, gg, b) - min(r, gg, b) > 6 or min(r, gg, b) < 225:
+            return False
+        here = px[x, y]
+        # `pitch` is the SQUARE size, so the pattern's PERIOD is two squares:
+        # the same tone repeats at 2*pitch and the opposite tone sits at
+        # 1*pitch. Testing at pitch/2 compared a pixel with itself and the
+        # whole detector returned nothing.
+        span, step = 2 * pitch, pitch
+        dx = span if x + span < w else -span
+        dy = span if y + span < h else -span
+        hx = step if x + step < w else -step
+        hy = step if y + step < h else -step
+        return (abs(here - at(x + dx, y)) <= 4 and abs(here - at(x + hx, y)) >= 3) or                (abs(here - at(x, y + dy)) <= 4 and abs(here - at(x, y + hy)) >= 3)
+
+    out = im.convert("RGBA")
+    a = Image.new("L", (w, h), 255)
+    ap = a.load()
+    seen = bytearray(w * h)
+    stack = [(x, y) for x in range(w) for y in (0, h - 1)] +             [(x, y) for y in range(h) for x in (0, w - 1)]
+    cleared = 0
+    while stack:
+        x, y = stack.pop()
+        if not (0 <= x < w and 0 <= y < h):
+            continue          # bounds BEFORE the index, or the flood walks off
+        i = y * w + x
+        if seen[i] or not is_checker(x, y):
+            continue
+        seen[i] = 1
+        ap[x, y] = 0
+        cleared += 1
+        stack.extend(((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)))
+
+    if cleared < (w * h) * 0.01:
+        return None, 0
+    out.putalpha(a)
+    return out, cleared
 
 
 def main() -> int:
@@ -64,6 +158,8 @@ def main() -> int:
     p.add_argument("--quality", type=int, default=82)
     p.add_argument("--no-trim", action="store_true")
     p.add_argument("--dry-run", action="store_true")
+    p.add_argument("--recover-alpha", action="store_true",
+                   help="last resort: rebuild alpha from a flattened checkerboard (lossy)")
     p.add_argument("--force-opaque", action="store_true",
                    help="file an image with no alpha anyway (era plates only)")
     a = p.parse_args()
@@ -76,15 +172,33 @@ def main() -> int:
           f"{os.path.getsize(a.image) // 1000}KB")
 
     has_alpha = im.mode in ("RGBA", "LA") or "transparency" in im.info
+    if not has_alpha and a.recover_alpha and looks_checkerboarded(im):
+        rec, cleared = recover_alpha(im)
+        if rec is not None:
+            pct = 100 * cleared // (im.size[0] * im.size[1])
+            print(f"alpha: recovered from a flattened checkerboard "
+                  f"({pct}% of the frame cleared)")
+            print("  WARNING: this is a lossy repair, not a substitute for a real
+"
+                  "  alpha PNG. The flood leaks through soft edges into any drawn
+"
+                  "  sky of the same grey, and the 1px seams between squares
+"
+                  "  survive as a faint grid. Check the result before filing it.",
+                  file=sys.stderr)
+            im, has_alpha = rec, True
     if not has_alpha and not a.force_opaque:
         checker = looks_checkerboarded(im)
         print("\nthis image has NO alpha channel.", file=sys.stderr)
         if checker:
             print(
-                "it looks like a transparency checkerboard has been flattened "
-                "into the pixels - the generation almost certainly DID produce "
-                "alpha and it was lost on the way here (a screenshot, or an "
-                "export that dropped it). Fetch the original PNG.",
+                "a transparency checkerboard has been flattened into the pixels. "
+                "The grid is machine-regular, so the generation DID produce alpha "
+                "and the DOWNLOAD lost it - the prompt is not the problem. Get the "
+                "original PNG with its alpha channel (the API returns one directly "
+                "with background=transparent). --recover-alpha can rebuild it "
+                "approximately, but it eats any drawn sky of the same grey and "
+                "leaves a faint grid, so treat it as a diagnostic.",
                 file=sys.stderr,
             )
         else:
