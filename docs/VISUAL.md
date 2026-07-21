@@ -85,6 +85,14 @@ is the room, the light, the book on a table.
 The same care applies to the recently dead and the bereaved: draw the absence,
 not the person.
 
+The worked example is the 2023 double bereavement on the Mãe wing: a vase of
+dried flowers, a lit tea candle, an open book with a pressed flower, letters in
+a hand nobody can read - and, in a standing frame, a figure **turned away**,
+drawn as a drawing-of-a-photograph rather than a portrait. The frame says a
+person is being mourned; the turned head means we have not invented their face.
+That is the shape to reach for whenever a real person is the subject of a
+moment: the objects that person left, and their likeness withheld.
+
 ## 4. Asset specs
 
 | Asset | Size | Background | References | Renders in |
@@ -99,6 +107,24 @@ not the person.
 World events are shared, so they are drawn once in the neutral house style with
 no wing-specific motifs, on transparency, and coloured per wing in CSS. A
 world-event sketch that only suits one author is a bug.
+
+## 4-impact. A high-impact event is a rupture, and gets the whole width
+
+The river renders `impact: high` events as **ruptures**: full-bleed bands in the
+wing's ink colour, inverted out of the page. On a dark wing that band is warm
+paper, and a transparent sketch lands on it with no edge whatsoever - the
+drawing simply sits on the page. This is the strongest argument for
+transparency in the whole system: one asset reads correctly on a dark card and
+on an inverted paper band, and a baked background would ruin one of them.
+
+Compose a rupture sketch differently from a seam sketch:
+
+- **Wide and centred, under the prose**, not beside it. The app gives it the
+  full column.
+- **Slower and quieter.** This is the moment the reader is meant to stop at, so
+  it earns stillness: fewer objects, more air between them, softer shading.
+- **The register carries it**, not incident. A death is a table after the fact -
+  dried flowers, a lit candle, an open book, letters - lit low and warm.
 
 ## 4a. Breaking monotony in a sequence
 
