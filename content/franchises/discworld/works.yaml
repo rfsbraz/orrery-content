@@ -1,10 +1,12 @@
 # Bibliography (Works) - the abstract books; editions/covers are separate metadata.
 # IDs are STABLE and permanent (user data references them). Dates are year-precision.
-# The 41 Discworld novels (core), the four Science of Discworld books (extended),
-# and a few major companion/map works (apocrypha). Titles keep British spellings
-# (Colour) and are quoted where they contain punctuation. externalIds are
-# deliberately left unset. Subseries follow the community reading-order threads;
-# standalones carry subseries: null (some thread boundaries are contested).
+# The wing spans Terry Pratchett's complete published bibliography: the 41
+# Discworld novels (core) plus the non-Discworld novels and trilogies (core),
+# the Science of Discworld books, collections and non-fiction (extended), and
+# companion works (apocrypha). Titles keep British spellings (Colour) and are
+# quoted where they contain punctuation. externalIds are deliberately left
+# unset. Subseries follow the community reading-order threads; standalones
+# carry subseries: null (some thread boundaries are contested).
 
 # --- Rincewind ---
 - id: discworld/the-colour-of-magic
@@ -14,6 +16,10 @@
   subseries: "Rincewind"
   canonTier: core
   synopsis: "The inept wizard Rincewind guides the Disc's first tourist through a world that parodies every fantasy cliche going."
+  # The disc-world idea was first tried in Strata (1981), whose plot turns on a
+  # flat, built world; the connection is standard record (see the Strata entry).
+  connections:
+    - discworld/strata
   sources: [https://en.wikipedia.org/wiki/The_Colour_of_Magic]
 
 - id: discworld/the-light-fantastic
@@ -457,3 +463,358 @@
   canonTier: apocrypha
   synopsis: "A map of the whole Disc - as authoritative as a map of a world that is mostly made of narrative can be."
   sources: [https://wiki.lspace.org/The_Discworld_Mapp]
+
+# --- Early novels (pre-Discworld) ---
+- id: discworld/the-carpet-people
+  title: "The Carpet People"
+  authorIds: [terry-pratchett]
+  published: 1971
+  subseries: null
+  canonTier: core
+  synopsis: "An epic in miniature: the Munrung tribe treks across the world of the Carpet, where a force called Fray levels whole cities between the hairs. Pratchett's first novel, begun in his teens."
+  note: >
+    Dated by first publication: Colin Smythe, 16 November 1971. Pratchett
+    substantially rewrote the book and Doubleday published the second version
+    on 30 June 1992; catalogues often carry the 1992 date, which is the
+    revision, not the first publication.
+  sources:
+    - "https://colinsmythe.co.uk/the-carpet-people/"
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+- id: discworld/the-dark-side-of-the-sun
+  title: "The Dark Side of the Sun"
+  authorIds: [terry-pratchett]
+  published: 1976
+  subseries: null
+  canonTier: core
+  synopsis: "A young heir sets out to find the world of the Jokers, a vanished race that littered the galaxy with inexplicable artefacts, guided by a probability mathematics that has already predicted his death. Pratchett's first science fiction novel."
+  sources:
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+- id: discworld/strata
+  title: "Strata"
+  authorIds: [terry-pratchett]
+  published: 1981
+  subseries: null
+  canonTier: core
+  synopsis: "A builder of planets discovers a flat, disc-shaped world that should not exist and joins an expedition onto it. The disc idea Pratchett would rebuild two years later as the Discworld."
+  sources:
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+# --- The Bromeliad (the Nome trilogy) ---
+- id: discworld/truckers
+  title: "Truckers"
+  authorIds: [terry-pratchett]
+  published: 1989
+  subseries: "The Bromeliad"
+  canonTier: core
+  synopsis: "Thousands of four-inch nomes live under the floorboards of a department store, certain the Store is the whole universe - until nomes from Outside arrive with news that it is closing down."
+  note: >
+    First published by Doubleday on 25 September 1989 per the publisher's own
+    bibliography (Colin Smythe). Wikipedia's main Terry Pratchett article says
+    1988; the publisher record and the Nome Trilogy article both say 1989, so
+    1989 is kept.
+  sources:
+    - "https://colinsmythe.co.uk/terry-pratchett/truckers-bromeliad/"
+    - "https://en.wikipedia.org/wiki/The_Nome_Trilogy"
+
+- id: discworld/diggers
+  title: "Diggers"
+  authorIds: [terry-pratchett]
+  published: 1990
+  subseries: "The Bromeliad"
+  canonTier: core
+  synopsis: "Resettled in an abandoned quarry, the nomes face the humans' return - and split between digging in to fight and looking for another way out."
+  sources:
+    - "https://colinsmythe.co.uk/terry-pratchett/truckers-bromeliad/"
+    - "https://en.wikipedia.org/wiki/The_Nome_Trilogy"
+
+- id: discworld/wings
+  title: "Wings"
+  authorIds: [terry-pratchett]
+  published: 1990
+  subseries: "The Bromeliad"
+  canonTier: core
+  synopsis: "Masklin's party stows away on Concorde and chases a satellite launch to call down the Ship that first brought the nomes to Earth."
+  note: >
+    Diggers and Wings are both 1990: Diggers on 5 April, Wings on 21
+    September (publisher's bibliography), so Diggers precedes Wings within
+    the year.
+  sources:
+    - "https://colinsmythe.co.uk/terry-pratchett/truckers-bromeliad/"
+    - "https://en.wikipedia.org/wiki/The_Nome_Trilogy"
+
+# --- Collaborations and standalones (1989-1990) ---
+- id: discworld/the-unadulterated-cat
+  title: "The Unadulterated Cat"
+  authorIds: [terry-pratchett]
+  published: 1989
+  subseries: null
+  canonTier: extended
+  synopsis: "A short comic manifesto for Real cats - scarred, opinionated and unimpressed - against the fluffy advertised kind."
+  note: >
+    Illustrated by the cartoonist Gray Jolliffe, credited on the cover. He is
+    named here rather than in withAuthorIds because the schema has no
+    illustrator role. First published by Gollancz, 5 October 1989.
+  sources:
+    - "https://colinsmythe.co.uk/the-unadulterated-cat/"
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+- id: discworld/good-omens
+  title: "Good Omens"
+  authorIds: [terry-pratchett]
+  withAuthorIds: [neil-gaiman]
+  authorRole: co-author
+  published: 1990
+  subseries: null
+  canonTier: core
+  synopsis: "An angel and a demon, gone comfortably native after millennia on Earth, try to derail the apocalypse when the infant Antichrist is mislaid in an English village. Co-written with Neil Gaiman, both hands on the whole book."
+  # A work lives in exactly one franchise: this is the canonical entry, so a
+  # future Neil Gaiman wing must cross-reference it, never duplicate it.
+  note: >
+    Full title "Good Omens: The Nice and Accurate Prophecies of Agnes Nutter,
+    Witch". First published by Gollancz (UK), 10 May 1990.
+  sources:
+    - "https://en.wikipedia.org/wiki/Good_Omens"
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+# --- Johnny Maxwell ---
+- id: discworld/only-you-can-save-mankind
+  title: "Only You Can Save Mankind"
+  authorIds: [terry-pratchett]
+  published: 1992
+  subseries: "Johnny Maxwell"
+  canonTier: core
+  synopsis: "Playing the new computer game ScreeWee, twelve-year-old Johnny Maxwell gets a message nobody else does: the alien fleet wants to surrender. Written against the televised backdrop of the Gulf War."
+  sources:
+    - "https://colinsmythe.co.uk/terry-pratchett/johnny-maxwell-2/"
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+- id: discworld/johnny-and-the-dead
+  title: "Johnny and the Dead"
+  authorIds: [terry-pratchett]
+  published: 1993
+  subseries: "Johnny Maxwell"
+  canonTier: core
+  synopsis: "The council sells the local cemetery to developers, and Johnny - who can see and talk to its residents - helps the dead stand up for their ground."
+  sources:
+    - "https://colinsmythe.co.uk/terry-pratchett/johnny-maxwell-2/"
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+- id: discworld/johnny-and-the-bomb
+  title: "Johnny and the Bomb"
+  authorIds: [terry-pratchett]
+  published: 1996
+  subseries: "Johnny Maxwell"
+  canonTier: core
+  synopsis: "A supermarket trolley, a bag lady and a 1941 air raid: Johnny and his friends fall back in time to the night their town was bombed, and have to put the timeline back."
+  sources:
+    - "https://colinsmythe.co.uk/terry-pratchett/johnny-maxwell-2/"
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+# --- Later standalone novels ---
+- id: discworld/nation
+  title: "Nation"
+  authorIds: [terry-pratchett]
+  published: 2008
+  subseries: null
+  canonTier: core
+  synopsis: "After a wave destroys his people, an island boy and a shipwrecked English girl gather survivors and rebuild a society from nothing, questioning gods, empire and what makes a nation. A parallel-world historical novel, not a Discworld book."
+  sources:
+    - "https://en.wikipedia.org/wiki/Nation_(novel)"
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+- id: discworld/dodger
+  title: "Dodger"
+  authorIds: [terry-pratchett]
+  published: 2012
+  subseries: null
+  canonTier: core
+  synopsis: "A young sewer scavenger in a heightened Victorian London rescues a girl from a beating and climbs from the sewers into history, crossing paths with Charles Dickens himself."
+  sources:
+    - "https://colinsmythe.co.uk/dodger/"
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+# --- The Long Earth (with Stephen Baxter) ---
+- id: discworld/the-long-earth
+  title: "The Long Earth"
+  authorIds: [terry-pratchett]
+  withAuthorIds: [stephen-baxter]
+  authorRole: co-author
+  published: 2012
+  subseries: "The Long Earth"
+  canonTier: core
+  synopsis: "Step Day gives humanity an endless chain of parallel Earths, one potato-powered box away; the loner Joshua Valiente and the artificial intelligence Lobsang set out to find how far the chain goes. First of five novels co-written with Stephen Baxter."
+  sources:
+    - "https://en.wikipedia.org/wiki/The_Long_Earth"
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+- id: discworld/the-long-war
+  title: "The Long War"
+  authorIds: [terry-pratchett]
+  withAuthorIds: [stephen-baxter]
+  authorRole: co-author
+  published: 2013
+  subseries: "The Long Earth"
+  canonTier: core
+  synopsis: "A generation after Step Day, the stepwise colonies chafe under Datum Earth's rule, and the trolls - the Long Earth's gentle humanoids - begin to disappear."
+  sources:
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+- id: discworld/the-long-mars
+  title: "The Long Mars"
+  authorIds: [terry-pratchett]
+  withAuthorIds: [stephen-baxter]
+  authorRole: co-author
+  published: 2014
+  subseries: "The Long Earth"
+  canonTier: core
+  synopsis: "Expeditions push out along the stepwise chains of Mars and Earth, while a new post-human generation, the Next, announces itself."
+  sources:
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+- id: discworld/the-long-utopia
+  title: "The Long Utopia"
+  authorIds: [terry-pratchett]
+  withAuthorIds: [stephen-baxter]
+  authorRole: co-author
+  published: 2015
+  subseries: "The Long Earth"
+  canonTier: core
+  synopsis: "On a quiet colony world deep in the Long Earth, something is methodically rebuilding the planet from within."
+  sources:
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+- id: discworld/the-long-cosmos
+  title: "The Long Cosmos"
+  authorIds: [terry-pratchett]
+  withAuthorIds: [stephen-baxter]
+  authorRole: co-author
+  published: 2016
+  subseries: "The Long Earth"
+  canonTier: core
+  synopsis: "An invitation arrives from the deep galaxy - JOIN US - and the peoples of the Long Earth answer it together. Published posthumously, the year after Pratchett's death."
+  sources:
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+# --- Collections and non-fiction (extended) ---
+- id: discworld/once-more-with-footnotes
+  title: "Once More* with Footnotes"
+  authorIds: [terry-pratchett]
+  published: 2004
+  subseries: null
+  canonTier: extended
+  synopsis: "A collection of short stories, articles and introductions assembled by NESFA Press for the 2004 Worldcon, where Pratchett was Guest of Honour. Most of its contents were later re-collected in [[work:discworld/a-blink-of-the-screen|A Blink of the Screen]] and [[work:discworld/a-slip-of-the-keyboard|A Slip of the Keyboard]]."
+  note: >
+    Edited by Priscilla Olson and Sheila M. Perry, who are named here rather
+    than in withAuthorIds because the schema records collaborating writers,
+    not editors of the author's own material; every piece inside is
+    Pratchett's.
+  sources:
+    - "https://colinsmythe.co.uk/terry-pratchett/discworld/collected-shorter-writings/"
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+- id: discworld/a-blink-of-the-screen
+  title: "A Blink of the Screen"
+  authorIds: [terry-pratchett]
+  published: 2012
+  subseries: null
+  canonTier: extended
+  synopsis: "Pratchett's collected shorter fiction, 1963 to 2010 - from schoolboy stories to Discworld pieces - with a foreword by A. S. Byatt."
+  note: >
+    Dated by the collection (Doubleday, 2012), not by the decades-earlier
+    first appearances of the pieces inside, per the collection dating rule.
+  sources:
+    - "https://colinsmythe.co.uk/terry-pratchett/discworld/collected-shorter-writings/"
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+- id: discworld/a-slip-of-the-keyboard
+  title: "A Slip of the Keyboard"
+  authorIds: [terry-pratchett]
+  published: 2014
+  subseries: null
+  canonTier: extended
+  synopsis: "Pratchett's collected non-fiction: journalism, speeches and essays, from convention pieces to the late writings on Alzheimer's and assisted dying, with a foreword by Neil Gaiman."
+  sources:
+    - "https://colinsmythe.co.uk/terry-pratchett/discworld/collected-shorter-writings/"
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+- id: discworld/dragons-at-crumbling-castle
+  title: "Dragons at Crumbling Castle"
+  authorIds: [terry-pratchett]
+  published: 2014
+  subseries: null
+  canonTier: extended
+  synopsis: "Stories written in Pratchett's teens for the Bucks Free Press children's page, republished with light edits - dragons, carpet people and time-travelling buses already in evidence."
+  note: >
+    First of four collections of the early newspaper stories, illustrated by
+    Mark Beech. Dated by the collection (2014), not the 1960s newspaper
+    appearances of the stories inside.
+  sources:
+    - "https://colinsmythe.co.uk/terry-pratchett/discworld/collected-shorter-writings/"
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+- id: discworld/the-witchs-vacuum-cleaner
+  title: "The Witch's Vacuum Cleaner"
+  authorIds: [terry-pratchett]
+  published: 2016
+  subseries: null
+  canonTier: extended
+  synopsis: "A second helping of the Bucks Free Press juvenilia - stories written in Pratchett's late teens and twenties, illustrated by Mark Beech. Published posthumously."
+  sources:
+    - "https://colinsmythe.co.uk/terry-pratchett/discworld/collected-shorter-writings/"
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+- id: discworld/father-christmass-fake-beard
+  title: "Father Christmas's Fake Beard"
+  authorIds: [terry-pratchett]
+  published: 2017
+  subseries: null
+  canonTier: extended
+  synopsis: "A third posthumous collection of the early newspaper stories, gathered around Christmas."
+  sources:
+    - "https://colinsmythe.co.uk/terry-pratchett/discworld/collected-shorter-writings/"
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+- id: discworld/the-time-travelling-caveman
+  title: "The Time-travelling Caveman"
+  authorIds: [terry-pratchett]
+  published: 2020
+  subseries: null
+  canonTier: extended
+  synopsis: "The fourth and final gathering of Pratchett's early newspaper stories for children, published posthumously."
+  sources:
+    - "https://colinsmythe.co.uk/terry-pratchett/discworld/collected-shorter-writings/"
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+- id: discworld/a-stroke-of-the-pen
+  title: "A Stroke of the Pen"
+  authorIds: [terry-pratchett]
+  published: 2023
+  subseries: null
+  canonTier: extended
+  synopsis: "Twenty rediscovered stories published in regional newspapers in the 1970s and 80s, mostly under the pen name Patrick Kearns, identified as Pratchett's and collected after his death. Foreword by Neil Gaiman."
+  note: >
+    Full title "A Stroke of the Pen: The Lost Stories". Dated by the
+    collection (2023); the stories first ran pseudonymously decades earlier
+    and are dated individually inside the book.
+  sources:
+    - "https://colinsmythe.co.uk/terry-pratchett/discworld/collected-shorter-writings/"
+    - "https://en.wikipedia.org/wiki/Terry_Pratchett"
+
+# --- Non-Discworld companions (apocrypha) ---
+- id: discworld/dodgers-guide-to-london
+  title: "Dodger's Guide to London"
+  authorIds: [terry-pratchett]
+  published: 2013
+  subseries: null
+  canonTier: apocrypha
+  synopsis: "A slim companion to [[work:discworld/dodger|Dodger]]: Victorian London and its underbelly explained in Dodger's own voice."
+  connections:
+    - discworld/dodger
+  note: >
+    "Terry Pratchett presents Dodger's Guide to London", written with Sue
+    Cook (named here rather than in withAuthorIds; the book is a franchise
+    companion and she has no author entity). Doubleday, 25 November 2013.
+  sources:
+    - "https://colinsmythe.co.uk/dodger/"
