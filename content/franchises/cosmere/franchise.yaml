@@ -46,10 +46,12 @@ globalEvents:
     - booktok-2020                       # his readership was built on Kickstarter, YouTube and Reddit, not short video
 
 # "Where to start" - powers the guided onboarding wizard. The Cosmere is famous
-# for having no single right entry, so the paths are honest on-ramps for
-# different appetites; the completionist path points at the derived publication
-# order. Grounded in Sanderson's own FAQ and the standard community guides
-# (see sources).
+# for having no single right entry, and the shelf around it is larger still, so
+# the paths are honest on-ramps for different appetites: four into the Cosmere
+# and one into the books outside it. The completionist path points at the
+# derived publication order, which spans every work in the wing and not the
+# Cosmere alone. Grounded in Sanderson's own FAQ and his "Where do I start?"
+# page, plus the standard community guides (see sources).
 startHere:
   paths:
     # Source: https://www.brandonsanderson.com/pages/where-do-i-start
@@ -103,10 +105,10 @@ startHere:
     # fantasy, try Steelheart or Elantris"). Tress is NOT on that page - it is
     # kept here as a low-commitment standalone, not as the author's advice.
     - id: standalones-first
-      title: Test the water with a standalone
+      title: Test the water with a Cosmere standalone
       description: >
-        The lowest-commitment way in - a single beautiful book you can judge the
-        author by before signing up for a series. Try the Hugo-winning Emperor's
+        The lowest-commitment way into the shared universe - a single beautiful
+        book you can judge the author by before signing up for a series. Try the Hugo-winning Emperor's
         Soul, the romance-flavoured Warbreaker, or Elantris, the one Sanderson
         hands to people who do not usually read fantasy.
       workIds:
@@ -123,14 +125,43 @@ startHere:
         begin. The cost is that a standalone shows you the writer but not the
         universe - the connections that make the Cosmere the Cosmere only start
         to light up across series.
-    - id: everything-in-order
-      title: The whole Cosmere, in publication order
+    # Source: https://www.brandonsanderson.com/pages/where-do-i-start
+    # "If you don't typically read fantasy, try Steelheart or Elantris." For a
+    # younger or funnier appetite the page points at Alcatraz vs. the Evil
+    # Librarians, and for young adults at "Steelheart, Mistborn, or The
+    # Rithmatist". Elantris and Mistborn are on the Cosmere paths above; this
+    # path carries the three titles that are not Cosmere books.
+    - id: outside-the-cosmere
+      title: Start outside the Cosmere
       description: >
-        All of it, in the order it was written - you watch the universe assemble
-        itself and the connections light up as they did for readers in real time.
-        The aura layer is built for exactly this walk. The cost is real: you
-        read the early Elantris and Mistborn books before Sanderson was the
-        writer the later ones are by.
+        Half this shelf is not epic fantasy at all. Steelheart opens a
+        superpowered thriller, The Rithmatist a chalk-duelling school mystery,
+        and Alcatraz vs. the Evil Librarians a very silly adventure for younger
+        readers. Short books, quick hooks, and the three Sanderson himself hands
+        to people who do not usually read fantasy or who are reading young.
+      workIds:
+        - cosmere/steelheart
+        - cosmere/the-rithmatist
+        - cosmere/alcatraz-versus-the-evil-librarians
+      orderId: null
+      fit:
+        experience: [new, returning]
+        commitment: [taste]
+      note: >
+        The cost is that none of this connects: these books share no universe
+        with each other or with the Cosmere, so nothing you learn here carries
+        into the part of the shelf that is one long joined-up story.
+    - id: everything-in-order
+      title: Everything, in publication order
+      description: >
+        The complete shelf, Cosmere and not, in the order it was written - you
+        watch the universe assemble itself and the connections light up as they
+        did for readers in real time, with the superhero books, the space opera
+        and the children's comedies landing between them as they landed for
+        everyone else. The aura layer is built for exactly this walk. The cost is
+        real: you read the early Elantris and Mistborn books before Sanderson was
+        the writer the later ones are by, and you are handed a middle-grade romp
+        and a doorstop epic in the same year with no warning.
       workIds: null
       orderId: default
       fit:
