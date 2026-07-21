@@ -173,6 +173,30 @@ The app alternates which side of the card the illustration sits on as you go
 down the page, so **do not build the composition around a side**: keep the
 subject central enough to read mirrored.
 
+## 4c. Writing a still-life brief without producing clutter
+
+A still-life prompt fails in a specific, repeatable way: **every object you name
+gets drawn.** Name ten and you get ten, evenly weighted, filling the frame, with
+no focal point and none of the negative space §1 requires. The result looks like
+a flatlay rather than a drawing.
+
+- **Name four or five objects, not ten**, and say what the frame should hold
+  *most* of: *"a work table with only a few things on it, and real air between
+  them"*.
+- **Give the composition a subject.** One object leads; the rest support it.
+  Without that the eye has nowhere to land.
+- **Put the orrery motif off centre.** Dead centre makes it the subject, which
+  §1a forbids. Say where it sits: *"toward the lower left, not centred"*.
+- **State the break-out first, not last.** If the presentation is a torn sheet
+  with objects crossing its edge (§5a), that instruction belongs near the top
+  of the brief. Buried after an object list it gets ignored, and everything
+  stays politely inside the rectangle.
+- **Keep tonal variation inside the wing's palette.** §4a asks for a different
+  temperature per asset, and it is easy to overshoot: "cool greys and ink
+  blue-black" on a warm-umber wing produced blue-grey books that belong to a
+  different catalogue. Say *"cooler within the same umbers"*, never a new
+  colour family.
+
 ## 4b. The era plate
 
 An era plate is the largest asset in the catalogue and the only one that gets a
