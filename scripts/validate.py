@@ -48,7 +48,13 @@ CRITERIA_KINDS = {
 }
 
 
-IMAGE_FIELDS = {"portrait", "header", "cover"}
+# `sketch` is the generated-art slot on eras, events and life events. It is
+# credited like any other image, and its credit must say it was generated: a
+# reader who cannot tell a sourced photograph from an illustration we made has
+# been misled by omission, on a site whose whole claim is that the facts are
+# checked.
+IMAGE_FIELDS = {"portrait", "header", "cover", "sketch"}
+GENERATED = re.compile(r"\bgenerated\b|\billustration for\b", re.I)
 
 
 def check_images(loc, entity_id, images):
@@ -67,8 +73,16 @@ def check_images(loc, entity_id, images):
             if not str(value).startswith("http"):
                 err(loc, f"{entity_id}: image '{key}' must be a URL (never commit binaries)")
             # Rights discipline: an image without a credit cannot be published.
-            if not images.get(base + "Credit"):
+            credit = images.get(base + "Credit")
+            if not credit:
                 err(loc, f"{entity_id}: image '{key}' has no '{base}Credit'")
+            elif base == "sketch" and not GENERATED.search(str(credit)):
+                err(
+                    loc,
+                    f"{entity_id}: sketchCredit must say the image was generated "
+                    f"(got '{credit}') - a reader has to be able to tell our "
+                    f"illustration from a sourced photograph",
+                )
 
 
 def valid_isbn13(isbn):
@@ -350,6 +364,9 @@ def main():
         sa = e.get("spoilerAfter")
         if sa and sa not in work_ids:
             err(loc, f"{e.get('id','?')}: spoilerAfter '{sa}' is not a known work")
+        # Franchise events, author lifeEvents and global events all funnel
+        # through here, so one call covers every event kind's `sketch`.
+        check_images(loc, e.get("id", "?"), e.get("images"))
 
     for fdir in franchise_dirs:
         if not os.path.isdir(fdir):
@@ -486,6 +503,8 @@ def main():
         epath = os.path.join(fdir, "eras.yaml")
         if not os.path.exists(epath):
             continue
+        for e in load(epath) or []:
+            check_images(f"{fslug}/eras.yaml", e.get("id", "?"), e.get("images"))
         spans = [s for s in (era_span(e.get("period")) for e in (load(epath) or [])) if s]
         if not spans:
             continue

@@ -633,6 +633,57 @@ notes: >
   string along), `thread` (a quiet hairline; the default), `rule` (a firm
   architectural line), or `none`.
 
+### theme.art: the wing's visual language for generated sketches
+
+Optional. The palette above styles the *interface*; `art` describes how this
+author's **illustrations** should look, so that an era plate drawn today and a
+life-event sketch drawn in a year still belong to the same wing. It is read by
+`/asset-prompt`, never by the app.
+
+```yaml
+art:
+  motifs: [fishing boats, whitewashed walls, ex-voto tin hearts, rain on slate]
+  atmosphere: >
+    Quiet, close, domestic. Weather rather than drama; interiors seen from
+    just inside the door.
+  lineCharacter: fine, slightly tremulous ink, as if drawn with a dip pen
+  backgroundTexture: warm laid paper with a faint umber wash
+  accentUse: burnt terracotta on one element only, never as a fill
+  avoid: [maritime kitsch, azulejo tiling, fado cliches, sunlit postcard blue]
+```
+
+- Every field is prose for a prompt, not an enum. Write it so a competent
+  illustrator could follow it without seeing the other wings.
+- `avoid` is where a wing's specific cliche gets named. Generic negatives
+  (photorealism, text, watermarks) live once in `docs/VISUAL.md` and are added
+  to every prompt automatically - do not repeat them here.
+- Keep it stable. Changing `art` after a wing has sketches means the new ones
+  will not match the old ones, which is the failure this block exists to
+  prevent; if it must change, plan to regenerate the whole wing.
+
+### images on eras, events and life events
+
+`eras.yaml` entries, `events.yaml` entries, `global.yaml` events and an author's
+`lifeEvents` may each carry an `images` block with the **`sketch`** field:
+
+```yaml
+images:
+  sketch: "https://.../vhm-era-idade-inteira.png"
+  sketchCredit: "Generated for Orrery (DALL-E 3)"
+  sketchSource: "docs/VISUAL.md#era-plate"   # optional: the spec it was made to
+```
+
+`sketchCredit` is required **and must say the image was generated** - the
+validator rejects a credit that reads like a source. A reader has to be able to
+tell an illustration we commissioned from a photograph we licensed; on a site
+whose claim is that the facts are checked, blurring the two is a lie of
+omission.
+
+World events in `global.yaml` render on every wing that carries them, so their
+sketch is drawn once in the neutral house style on a transparent background and
+tinted per wing with that wing's `accent`. Do not give a global event a sketch
+that only suits one author.
+
 ## Validation
 
 `python scripts/validate.py` (run by CI on every PR) enforces:
