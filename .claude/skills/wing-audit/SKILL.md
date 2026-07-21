@@ -18,22 +18,17 @@ its final stage and its gates are the promises you are testing. Read every skill
 in `.claude/skills/`, because your job is precisely the **seams between them**
 and anything you re-audit inside one of them is wasted effort.
 
+This skill runs under `docs/CURATION.md`; the shared contract is stated there,
+not repeated here.
+
 ## The principle this exists to enforce
 
-**Green CI means the YAML is well-formed. It does not mean the content is true.**
-
-Every one of these passed every check in this repo:
-
-- prose that validated but never reached the reader, because the loader did not
-  merge that shape
-- a coverage script reporting 48/48 while five franchises were visibly English
-- a `spoilerAfter` written onto a work, which validated and protected nothing
-  because the app has no such field
-- an agent reporting success on a scripted edit that had silently no-op'd
-
-So this skill checks **artefacts, not reports**. Fetch the URL. Read the rendered
-line. Open the image. Re-derive the number with the repo's own scripts. An
-agent's summary of its own work is a claim; the file on disk is evidence.
+The verification doctrine is CURATION §5: green CI proves well-formed YAML, not
+true content, and artefacts outrank reports. This skill is that doctrine
+applied to a whole wing at once - fetch the URL, read the rendered line,
+re-derive every number with the repo's own scripts. What is wing-audit's own is
+the map of where the doctrine bites: what the validator does not cover, and the
+fields nobody reads.
 
 ### What the validator does not cover
 
@@ -96,7 +91,7 @@ judgement inside it goes into the report with an owner against it.
 | unbounded reveal, mis-anchored or over-broad boundary, ungated sibling prose | `spoiler-audit` |
 | missing cover / portrait / header, doubtful rights, dead image URL | `visual-metadata` |
 | missing or wrong edition, ISBN, published title | the editions skill |
-| an order that is wrong, stale, or missing | the orders skill |
+| an order, entry path, or `startHere` block that is wrong, stale, or missing | `reading-orders` |
 | missing, partial, or wrong-register translation | the translation skill |
 | eras, theme, achievements, capabilities | **you** - see below |
 | the schema cannot express what the content needs | the curator |
@@ -132,7 +127,8 @@ since settled. Compare the order's last-touched commit against `works.yaml`'s.
 
 **Eras that no longer span the works.** A date correction moves a work outside
 every era, or a new late work lands past the final era's close. Re-derive it:
-parse every `period`, and check every `published` year falls inside exactly one.
+parse every `period` and check where every `published` year lands (section 2
+says which gaps count as findings).
 
 **References that survived a rename.** `appearsIn[].workId`, `connections`,
 `startHere.workIds`, `orderedWorkIds`, achievement `eraId` / `orderId`. The
@@ -169,10 +165,15 @@ Nobody else audits these. Give each a real pass.
 - **Does every `period` parse?** The forms in use are `1974-1979`, `1980s`,
   `2020-present`. Nothing validates this, so a typo renders as an unlabelled
   band or breaks the strata walk silently.
-- **Do the spans cover the works, without gaps or overlaps?** Re-derive it, do
-  not eyeball it. A year with no era leaves works floating outside the narrative
-  spine; two eras claiming the same year makes an ambiguous strata membership
-  and an `era_reader` achievement that counts differently than it reads.
+- **Do works land where the eras claim them?** Re-derive it, do not eyeball it.
+  Gaps between spans are not defects by default: the eras skill's provenance
+  rule outranks tidiness, and a received periodisation is allowed to leave
+  years uncovered. A gap is a finding only when a received era covers the year
+  and the YAML does not, or when boundary-tightening orphaned a work outside
+  every span (the validator warns on this - read the warnings). Never route
+  "close the gap by tiling". Overlaps are still defects: two eras claiming the
+  same year makes an ambiguous strata membership and an `era_reader`
+  achievement that counts differently than it reads.
 - **Do the boundaries mean anything editorially?** This is the judgement call and
   the one most often skipped. Eras are the wing's argument about how a body of
   work developed. Six eras that each start on a round decade are usually decades
@@ -254,10 +255,10 @@ Re-derive, do not read a previous report.
   publishes into. An empty decade is a `world-events` finding; an over-budget
   one is too.
 - **Is the aura sparse and load-bearing?** Grade the wing's own events against
-  the aura editorial standard in `franchise-research`: high recolors the text,
-  med explains the shelf, low is texture of the times. An event that does none
-  of the three does not ship. Count how many are `low` - a timeline that is
-  mostly texture is a timeline nobody reads twice.
+  the aura standard (CURATION §6): high recolors the text, med explains the
+  shelf, low is texture of the times, fails all three does not ship. Count how
+  many are `low` - a timeline that is mostly texture is a timeline nobody reads
+  twice.
 - **Is the wing proportionate to its size?** Compare event count against work
   count and span across the franchises in the repo. The largest wing having the
   thinnest aura is a finding, and it is the kind that only shows up when you look
@@ -273,11 +274,11 @@ Re-derive, do not read a previous report.
 ## 4. The honesty audit
 
 **A wing reporting 100% on everything has usually hidden its awkward cases.**
-
-The honest artefact of a complete wing includes the covers that do not exist,
-the dates the record will not settle, and the archives that would not open. If
-the wing's reports contain none of those, either the wing is unusually lucky or
-somebody padded, and padding is the more common explanation.
+CURATION §5 makes a suspicious number a reason to look harder, and §7 defines
+the honest artefact; this is where the wing is held to both. If the wing's
+reports name no missing covers, no unsettled dates, no archives that refused,
+either it is unusually lucky or somebody padded, and padding is the more common
+explanation.
 
 So: **any suspiciously complete number gets a manual spot-check.** Not a re-read
 of the number - a look at the artefact behind three or four random rows of it.
@@ -294,17 +295,13 @@ of the number - a look at the artefact behind three or four random rows of it.
   audit did not mention against a source it did not use.
 
 Then require the reverse of a clean report. The wing's findings must name **what
-is genuinely absent**, and each absence must be one of two things:
-
-> **Absent** - the record has it and this wing does not. A finding, with an owner.
->
-> **Not applicable** - the thing does not exist to be had. Not a deficiency.
-
-**Do not confuse them.** The framework is opt-in per franchise and a sparse wing
-is a first-class citizen. A franchise with no crossovers has no `connections` and
-is *complete*; reporting it as 0% connections coverage invents a gap and invites
-somebody to fabricate edges to close it. A Portuguese literary novelist with 20%
-cover coverage has hit the realistic ceiling of open sources, and the typographic
+is genuinely absent**, and classify every absence per CURATION §7: **absent** (a
+finding, with an owner) or **not applicable** (not a deficiency). Do not confuse
+them - the framework is opt-in per franchise and a sparse wing is a first-class
+citizen. A franchise with no crossovers has no `connections` and is *complete*;
+reporting it as 0% connections coverage invents a gap and invites somebody to
+fabricate edges to close it. A Portuguese literary novelist with 20% cover
+coverage has hit the realistic ceiling of open sources, and the typographic
 fallback there is the primary rendering, not a degraded one. An author with one
 pen name has one; an author with none is not missing anything.
 
@@ -338,24 +335,19 @@ Content rots in place, quietly, and nothing in CI has a clock.
 
 - **Never fix an editorial issue that belongs to another skill. Route it.**
   Trivial mechanical fixes only, and list them.
-- **Never report a number you did not re-derive yourself.** Run the script. Count
-  the rows. A number inherited from another agent's report is that agent's claim,
-  not your finding.
-- **Distinguish absent from not applicable**, for every gap you report. A sparse
-  wing is a first-class citizen and the framework is opt-in per franchise.
-- **Check the artefact, not the report.** Fetch the URL, open the image, read the
-  rendered prose, re-run the script.
+- **Never report a number you did not re-derive yourself** (CURATION §5). Run
+  the script. Count the rows. A number inherited from another agent's report is
+  that agent's claim, not your finding.
+- **Distinguish absent from not applicable** (CURATION §7), for every gap you
+  report.
 - **Verify the validator's coverage rather than trusting the table above.** The
   gap between what CI checks and what the schema promises is where the defects
   live, and it moves every time somebody hardens the validator.
-- **Never change an id**, in a finding or a fix. Ids are the source of truth and
-  renaming one orphans real readers' shelves.
 - **Report the ones that came back clean**, with what you checked. "Every OL
   cover is a `/b/id/` URL, so `?default=false` does not apply" stops the next
   auditor re-opening it.
-- No em dashes. Quote YAML values containing colons or apostrophes.
-- `python scripts/validate.py` green before you report, so nothing in your
-  findings is confused with something you broke.
+- **`validate.py` green before you report**, so nothing in your findings is
+  confused with something you broke.
 
 ## Process
 
