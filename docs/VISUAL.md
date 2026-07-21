@@ -45,6 +45,26 @@ logo, which is the opposite of the point.
 Faint arcs across an empty sky are still allowed, but as one option among many
 rather than the default, and only where the composition has real empty sky.
 
+### Write the motif as its own paragraph, and keep it legible
+
+The single most common failure is a **tangled** motif: the rings get drawn on
+top of whatever markings the carrier already had, and the result is a busy
+smudge that reads as neither. A compass already has a rose and degree marks; a
+clock already has numerals; a coin already has a device.
+
+So, in the prompt:
+
+- Give the motif **its own short paragraph**, never a clause tacked onto the
+  end of a sentence about something else. It is a distinct instruction.
+- Say explicitly that it **replaces** the carrier's usual markings rather than
+  being added over them: *"in place of an ordinary compass rose"*, *"in place
+  of the usual numerals"*.
+- Describe the shape concretely and simply: **two or three plain concentric
+  ellipses with three or four small solid dots sitting on them**, and nothing
+  else inside that area. Name the clear space: *"no other engraving, degree
+  marks or lettering on that face"*.
+- Say how big it should read and how much clear space it needs.
+
 Two constraints hold whichever carrier is used:
 
 - **It never competes with the subject.** Same ink, no heavier than its
@@ -192,9 +212,36 @@ In order, always:
    assets.
 4. **The composition**, from the asset spec (§4).
 5. **The shared negative prompt** (§6), plus the wing's own `art.avoid`.
+6. **The technical block** (§5b), verbatim. Never leave the output format to be
+   inferred from the composition.
 
 For a **world event**, skip step 2 entirely and say "neutral house style, no
 author-specific motifs, transparent background".
+
+## 5b. The technical block
+
+Every prompt ends with an explicit statement of what file is wanted. Leaving it
+implicit is how a sketch comes back opaque, or square when it needed to be wide,
+and each of those costs a re-roll.
+
+State, always:
+
+- **The exact pixel dimensions**, from the asset spec in §4 (`1024x1024` for an
+  event, `1536x1024` for an era plate) - not "square", not an aspect ratio.
+- **Transparency**, in the strongest terms available, plus the failure to
+  forbid: *"the background must be genuinely empty - real alpha transparency,
+  not white and not a drawn pattern. Do not illustrate transparency: no grey
+  and white checkerboard, no grid, no simulated cut-out."* A model asked for a
+  transparent background will sometimes **draw a checkerboard**, because that is
+  how transparency looks in every image it has seen. That is not a file with
+  alpha; it is a picture of a chessboard, and it has happened here.
+- **PNG with an alpha channel**, and a reminder to keep the original file: an
+  export or a screenshot that flattens it produces exactly the same broken
+  result as never having asked.
+- **No borders, no frame, no matte, no drop shadow onto the background.**
+
+`scripts/prepare_asset.py` refuses an image that arrives without alpha and says
+which of the two failures it was, so a bad file cannot be filed by accident.
 
 ## 5a. Choosing the presentation
 

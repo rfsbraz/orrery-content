@@ -76,7 +76,12 @@ Always all six, in this order:
 
 1. **Asset** - type, entity id, the wing it belongs to, and the presentation
    chosen with its one-line reason.
-2. **The prompt** - one block, ready to paste, no commentary inside it.
+2. **The prompt** - one block, ready to paste, no commentary inside it. It must
+   contain the orrery motif as its **own paragraph** (VISUAL.md §1a - a clause
+   bolted onto another sentence is what produces a tangled, illegible motif),
+   and it must end with the **technical block** (§5b): exact pixel dimensions,
+   real alpha transparency with an explicit ban on drawing a checkerboard, PNG,
+   and no frame or matte.
 3. **Size** - from the spec table (`1536x1024` era plates, `1024x1024` events).
 4. **Background** - opaque, or transparent for world events (and say it must be
    tinted per wing with that accent).
