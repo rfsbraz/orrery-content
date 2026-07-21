@@ -1,0 +1,589 @@
+# Bibliography (Works) - the abstract books; editions/covers are separate.
+# IDs are STABLE and permanent (user data references them). Titles are the
+# ORIGINAL PORTUGUESE (canonical); prose/synopses are in English.
+#
+# Cross-checked against Portuguese and English Wikipedia (both fetched
+# directly; the two lists agree on every date but one, noted below),
+# Portal da Literatura's bibliography, the author's own bibliography page
+# (joseluispeixoto.net, the only one of the four to list the theatre play
+# Estrangeiras), and, for individual titles, the publisher/venue page cited
+# on that entry.
+#
+# canonTier convention for this franchise:
+#   core      - the 11 novels: the narrative-fiction spine the prizes and
+#               "Principais trabalhos" tag on Wikipedia's own infobox are
+#               built from.
+#   extended  - poetry (4 books), travel writing (3, including "Onde" - see
+#               its own note), children's literature (2), theatre (4), the
+#               one short-story chapbook (Hoje Não), the one mixed
+#               collection (Cal), and the one crónicas collection (Abraço).
+#               Genuinely his, off the novel-reading spine.
+# No apocrypha entries: no anthology contribution or introduction-only credit
+# is recorded. A search for poetry-anthology contributions turned up prose
+# poems and a preface to another author's anthology but no book-length
+# contribution of his own to record here.
+#
+# DATE NOTE: "Cal" is dated 2007 by Portuguese Wikipedia, its own
+# publisher/bookshop listings, and the author's own bibliography page; English
+# Wikipedia alone gives 2008. The three agreeing sources are followed here.
+#
+# NOT INCLUDED: periodical crónicas for the Jornal de Letras, Visão, GQ,
+# Time Out and Notícias Magazine that were never gathered into a book beyond
+# what "Abraço" (2011) already collects - no single dated volume exists for
+# the rest to anchor an entry to. No pen name is used; "authorRole" is
+# "author" throughout. Illustrators credited on children's and travel books
+# (Daniel Silvestre da Silva, Hugo Makarov) are named in the synopsis text
+# only, not modelled as authorIds or withAuthorIds: they illustrate rather
+# than co-write the text.
+
+# --- Novels ---
+
+- id: jose-luis-peixoto/morreste-me
+  title: "Morreste-me"
+  authorIds: [jose-luis-peixoto]
+  published: 2000
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Peixoto's debut: a collection of interlinked fictions confronting the
+    death of a father, the loss he has said made the rest of his books
+    possible.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/10869378-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL24345873W"
+  sources:
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+    - https://en.wikipedia.org/wiki/José_Luís_Peixoto
+
+- id: jose-luis-peixoto/nenhum-olhar
+  title: "Nenhum Olhar"
+  authorIds: [jose-luis-peixoto]
+  published: 2000
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A novel set in a nameless Alentejo village, following generations bound
+    to the same land across an elastic, unnamed span of time. Won the
+    Prémio José Saramago in 2001, the youngest winner in the prize's
+    history at 27; published in English as Blank Gaze (UK, Bloomsbury) and
+    The Implacable Order of Things (US, Doubleday).
+  images:
+    cover: "https://covers.openlibrary.org/b/id/2412127-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL9334424W"
+    # Open Library's representative cover for this work is the Doubleday
+    # (US) jacket, "The Implacable Order of Things" - confirmed the same
+    # book by OL's own description (a poverty-stricken rural Portuguese
+    # village, generations bound to hardship).
+  sources:
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+    - https://en.wikipedia.org/wiki/José_Luís_Peixoto
+
+- id: jose-luis-peixoto/uma-casa-na-escuridao
+  title: "Uma Casa na Escuridão"
+  authorIds: [jose-luis-peixoto]
+  published: 2002
+  subseries: null
+  canonTier: core
+  synopsis: >
+    An allegorical novel built around a house consumed by an encroaching
+    darkness, part of the more fable-like strand of Peixoto's fiction rather
+    than the directly rural one. Published the same year as the poetry
+    collection [[work:jose-luis-peixoto/a-casa-a-escuridao|A Casa, a
+    Escuridão]], its similarly-titled poetic counterpart.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/13915554-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL23419179W"
+  sources:
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+    - https://en.wikipedia.org/wiki/José_Luís_Peixoto
+
+- id: jose-luis-peixoto/antidoto
+  title: "Antídoto"
+  authorIds: [jose-luis-peixoto]
+  published: 2003
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A novella of interlinked stories about love and death, written as the
+    literary twin of Moonspell's album The Antidote: each song pairs with a
+    chapter, and Peixoto worked through the record's own composition
+    alongside the band. Book and album were released together.
+  # No cover: the current Quetzal 2023 anniversary edition (ISBN
+  # 9789897227387) is not yet indexed by Open Library, checked by both title
+  # search and by ISBN cover lookup.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Antidote_(Moonspell_album)
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+
+- id: jose-luis-peixoto/cemiterio-de-pianos
+  title: "Cemitério de Pianos"
+  authorIds: [jose-luis-peixoto]
+  published: 2006
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A novel that moves between a Lisbon piano workshop in the early
+    twentieth century and a marathon runner decades later, threading one
+    family's losses through Portugal's own history. Published in English as
+    The Piano Cemetery (Bloomsbury); won Spain's Premio Cálamo Otra Mirada
+    in 2007 for the year's best foreign novel published there.
+  note: >
+    Dated 2006, against the Portuguese Wikipedia article's own prose, which
+    says the book was launched in October 2007. That article contradicts
+    itself: its infobox gives Bertrand, 2006, ISBN 972-25-1534-9. OpenLibrary
+    records a first publication of 2006 with Bertrand Editora among the
+    publishers, so 2006 stands and the 2007 sentence is the outlier.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/10436450-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL16606078W"
+    # Jacket pictured is the Clipper (UK) English edition, "The Piano
+    # Cemetery" - Open Library holds no cover for a Portuguese printing.
+  sources:
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+    - https://en.wikipedia.org/wiki/José_Luís_Peixoto
+    - https://openlibrary.org/search.json?q=cemiterio+de+pianos+peixoto
+
+- id: jose-luis-peixoto/livro
+  title: "Livro"
+  authorIds: [jose-luis-peixoto]
+  published: 2010
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A novel of Portuguese emigration to France in two parts: a rural
+    village and its inhabitants, including the love story of Ilídio and
+    Adelaide, and a second generation raised in Paris carrying the village
+    forward into a post-Salazar world. Won Italy's Premio Salerno Libro
+    d'Europa for the best European novel.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/9530916-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL15928557W"
+  sources:
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+    - https://en.wikipedia.org/wiki/José_Luís_Peixoto
+
+- id: jose-luis-peixoto/galveias
+  title: "Galveias"
+  authorIds: [jose-luis-peixoto]
+  published: 2014
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Set in Peixoto's own birthplace in January and September 1984, opening
+    when a fallen celestial body craters the ground outside the village and
+    leaves a smell of sulphur in the air, the food and the villagers
+    themselves. Won the Oceanos prize in 2016; the first Portuguese-language
+    novel translated and published in Georgia (2017), and winner of Japan's
+    Best Translation Award in 2019.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/8564615-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL19648139W"
+  sources:
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+    - https://en.wikipedia.org/wiki/José_Luís_Peixoto
+
+- id: jose-luis-peixoto/em-teu-ventre
+  title: "Em Teu Ventre"
+  authorIds: [jose-luis-peixoto]
+  published: 2015
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A novel built around the 1917 Marian apparitions at Fátima, narrated
+    through the mother of Lúcia, the eldest of the three shepherd children
+    who reported them, weaving that religious history with a study of
+    motherhood.
+  sources:
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+    - https://en.wikipedia.org/wiki/José_Luís_Peixoto
+
+- id: jose-luis-peixoto/autobiografia
+  title: "Autobiografia"
+  authorIds: [jose-luis-peixoto]
+  published: 2019
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A metafictional novel in which a young writer in 1990s Lisbon
+    repeatedly crosses paths with José Saramago, blending real episodes
+    from Saramago's life with invented ones. Peixoto's own career was
+    launched by the prize carrying Saramago's name.
+  note: >
+    Quetzal's own synopsis presents the premise (Saramago turned into a
+    character, a novel called Autobiografia) and then withholds where it
+    goes: "uma surpreendente proposta narrativa que, a partir de certo
+    ponto, não se imagina como poderá terminar". The publisher's framing of
+    the younger writer's stance toward the master is "admiração e um
+    incontrolável repúdio", not homage, so the synopsis here names the
+    relationship without characterising it.
+    Source: https://www.quetzaleditores.pt/produtos/ficha/autobiografia/21332193
+    (via web.archive.org, 2019-11-20 capture; the live page 403s).
+  images:
+    cover: "https://covers.openlibrary.org/b/id/10533713-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL20905527W"
+  sources:
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+    - https://en.wikipedia.org/wiki/José_Luís_Peixoto
+
+- id: jose-luis-peixoto/almoco-de-domingo
+  title: "Almoço de Domingo"
+  authorIds: [jose-luis-peixoto]
+  published: 2021
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A biographical novel spanning 1931 to 2021, built around the life of Rui
+    Nabeiro, the founder of Delta Cafés, as he revisits his own memories.
+  note: >
+    The book's subject is publicly known and Peixoto has discussed him by
+    name, but in the novel itself the surname is withheld: he told Visão he
+    left it out so the character could stand as exemplary rather than as one
+    named businessman. This entry names him plainly enough to say what the
+    book is, and stops short of the full "Manuel Rui Azinhais Nabeiro" the
+    novel deliberately avoids.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/13724374-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL32086650W"
+  sources:
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+
+- id: jose-luis-peixoto/a-montanha
+  title: "A Montanha"
+  authorIds: [jose-luis-peixoto]
+  published: 2025
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A novel gathering six strangers - Jorge, Fátima, Alice, João, Daniel
+    and Filipe, drawn from as far afield as Mozambique and Venezuela - who
+    meet in the waiting room of Porto's Instituto Português de Oncologia,
+    bound only by illness.
+  note: >
+    Quetzal's own synopsis carries a second movement this entry stops short
+    of: a writer travelling the world tries to build a novel out of the
+    stories entrusted to him, "até que o impensável acontece". The publisher
+    names the turn without disclosing it, and the synopsis here holds to the
+    premise for the same reason. The novel's relation to the author's own
+    father, a framing the press proposes and he declines, is not a premise
+    fact and is not stated here.
+    Source: https://www.quetzaleditores.pt/produtos/ficha/a-montanha/28076053
+    (via web.archive.org, 2026-02-08 capture).
+  # No cover: October 2025 is too recent for Open Library to have indexed a
+  # cover, checked by both title search and by ISBN cover lookup
+  # (9789897228919).
+  sources:
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+
+# --- Crónicas ---
+
+- id: jose-luis-peixoto/abraco
+  title: "Abraço"
+  authorIds: [jose-luis-peixoto]
+  published: 2011
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    Peixoto's crónicas: 162 short newspaper columns written between 2001
+    and 2011, collected into a single 655-page volume covering childhood,
+    the Alentejo, fatherhood, first loves and writing itself.
+  # No cover: not indexed by Open Library (checked by title search and by
+  # ISBN cover lookup, 9789725649367).
+  sources:
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+
+# --- Mixed collection ---
+
+- id: jose-luis-peixoto/cal
+  title: "Cal"
+  authorIds: [jose-luis-peixoto]
+  published: 2007
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A mixed collection built around old age and rural memory: three poems,
+    seventeen short stories and a short play, gathered under a single
+    theme rather than a single form.
+  # No cover: not indexed by Open Library (checked by title search and by
+  # ISBN cover lookup, 9789725648216).
+  sources:
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+    - https://www.joseluispeixoto.net/tag/bibliografia
+
+# --- Short stories ---
+
+- id: jose-luis-peixoto/hoje-nao
+  title: "Hoje Não"
+  authorIds: [jose-luis-peixoto]
+  published: 2007
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    Six short stories - two new, four expanded from pieces first published
+    in Jornal de Letras - issued as a limited "Inéditos Sábado" edition by
+    Edições Quasi and distributed with Sábado magazine.
+  # No cover: not indexed by Open Library (checked by title search and by
+  # ISBN cover lookup, 9789895522828); an out-of-print 2007 magazine giveaway
+  # is not the kind of edition OL tends to hold anyway.
+  sources:
+    - https://www.portaldaliteratura.com/autores.php?autor=395
+
+# --- Poetry ---
+
+- id: jose-luis-peixoto/a-crianca-em-ruinas
+  title: "A Criança em Ruínas"
+  authorIds: [jose-luis-peixoto]
+  published: 2001
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    Peixoto's poetry debut, reissued several times since first publication.
+    Won the Prémio da Sociedade Portuguesa de Autores in 2013 for the best
+    poetry book published in Portugal the previous year.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/11440739-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL16771733W"
+    # Jacket pictured is "A Child in Ruins" (translated by Hugo Dos Santos),
+    # the only edition Open Library holds a cover for.
+  sources:
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+    - https://en.wikipedia.org/wiki/José_Luís_Peixoto
+
+- id: jose-luis-peixoto/a-casa-a-escuridao
+  title: "A Casa, a Escuridão"
+  authorIds: [jose-luis-peixoto]
+  published: 2002
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    Peixoto's second poetry collection, published the same year as the
+    similarly titled novel [[work:jose-luis-peixoto/uma-casa-na-escuridao|Uma
+    Casa na Escuridão]] and read as its poetic counterpart: chapters that
+    track a relationship from its first stirrings to its ending.
+  # No cover: not indexed by Open Library (checked by title search and by
+  # ISBN cover lookup, 9789897221729); OL's record for this title is a
+  # differently-numbered edition, per editions.yaml's own note.
+  sources:
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+
+- id: jose-luis-peixoto/gaveta-de-papeis
+  title: "Gaveta de Papéis"
+  authorIds: [jose-luis-peixoto]
+  published: 2008
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A poetry collection. Won the Prémio de Poesia Daniel Faria in 2008,
+    awarded to the best poetry book published in Portugal by a poet under
+    35.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/14588250-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL18803052W"
+    # Jacket pictured is the original 2008 Quasi Edições first edition
+    # (ISBN 9789895523382), the only edition Open Library indexes - not the
+    # current Quetzal 2011 printing recorded in editions.yaml.
+  sources:
+    - https://en.wikipedia.org/wiki/José_Luís_Peixoto
+
+- id: jose-luis-peixoto/regresso-a-casa
+  title: "Regresso a Casa"
+  authorIds: [jose-luis-peixoto]
+  published: 2020
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A poetry collection written in confinement, mapping the four walls of a
+    house and the memories held there: solitude, closed doors, a mother, a
+    father, childhood, and a homesickness that runs alongside a restless
+    urge to travel the whole world and always return. Won the Prémio Livro
+    do Ano Bertrand 2020 in poetry; his first return to the form in twelve
+    years.
+  # No cover: not indexed by Open Library (checked by title search and by
+  # ISBN cover lookup, 9789897227059).
+  sources:
+    - https://www.quetzaleditores.pt/produtos/ficha/regresso-a-casa/24074597
+    - https://www.dnoticias.pt/2020/8/17/70943-jose-luis-peixoto-volta-a-poesia-com-o-livro-regresso-a-casa
+
+# --- Travel literature ---
+
+- id: jose-luis-peixoto/dentro-do-segredo
+  title: "Dentro do Segredo"
+  authorIds: [jose-luis-peixoto]
+  published: 2012
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A travel narrative from April 2012, when Peixoto was among the foreign
+    observers admitted to North Korea for the centennial of Kim Il-sung's
+    birth, taken on one of the longest tours the regime had authorised in
+    decades, through places closed to outsiders for sixty years.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/13144025-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL23232612W"
+    # This OL work record wrongly merges two different books: alongside the
+    # correct Quetzal 2012 Portuguese edition (ISBN 9789897220609, matching
+    # editions.yaml) it also carries a Dutch translation of Cemitério de
+    # Pianos mistitled onto the same record. The cover above was checked
+    # against the edition list and belongs to the correct Portuguese
+    # printing, not the Dutch one.
+  sources:
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+
+- id: jose-luis-peixoto/o-caminho-imperfeito
+  title: "O Caminho Imperfeito"
+  authorIds: [jose-luis-peixoto]
+  published: 2017
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A travel narrative that opens as a journey through Thailand beyond its
+    tourist circuit and turns into something closer to an investigation
+    after a discovery of dismembered human remains at a Bangkok post
+    office. Illustrated throughout by Hugo Makarov.
+  # No cover: not indexed by Open Library (checked by title search and by
+  # ISBN cover lookup, 9789897223563).
+  sources:
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+
+- id: jose-luis-peixoto/onde
+  title: "Onde"
+  authorIds: [jose-luis-peixoto]
+  published: 2022
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    Fragments of poetic prose mapping the municipalities of Abrantes,
+    Constância and Sardoal - a literary itinerary through the territory of
+    poets António Botto, Camões and Gil Vicente rather than a plotted
+    narrative.
+  note: >
+    Portuguese Wikipedia's own bibliography files this under "Ficção", but
+    the publisher's and press's own description (a "roteiro literário" of
+    poetic-prose fragments, no characters or plot) reads as travel writing
+    rather than a novel, so it is tiered and grouped here instead. The
+    author's own bibliography page agrees it is not a "Romance": it tags
+    "Onde" as "Narrativa", the only title on that page not sorted into either
+    his novels or his two other travel books ("Viagens").
+  # No cover: not indexed by Open Library (checked by title search and by
+  # ISBN cover lookup, 9789897228506) - a 2022 printing, too recent.
+  sources:
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+    - https://www.joseluispeixoto.net/tag/bibliografia
+
+# --- Children's literature ---
+
+- id: jose-luis-peixoto/a-mae-que-chovia
+  title: "A Mãe que Chovia"
+  authorIds: [jose-luis-peixoto]
+  published: 2012
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    Peixoto's first children's book: a boy who believes rain itself is his
+    mother learns to share that love with the rest of the world.
+    Illustrated by Daniel Silvestre da Silva; the first Portuguese-language
+    book translated and published in Mongolia (2016).
+  # No cover: not indexed by Open Library (checked by title search and by
+  # ISBN cover lookup, 9789897220074).
+  sources:
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+
+- id: jose-luis-peixoto/todos-os-escritores-do-mundo-tem-a-cabeca-cheia-de-piolhos
+  title: "Todos os Escritores do Mundo Têm a Cabeça Cheia de Piolhos"
+  authorIds: [jose-luis-peixoto]
+  published: 2016
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A permanent itch on the heads of every writer in the world, that no
+    anti-lice shampoo can calm: the affliction makes front-page news and
+    intrigues the readers of this book and every other, in a parable about
+    text, reading, books, and the people who write them. Illustrated by
+    Rita Correia.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/13755341-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL34934610W"
+  sources:
+    - https://www.quetzaleditores.pt/produtos/ficha/todos-os-escritores-do-mundo-tem-a-cabeca-cheia-de-piolhos/16790071
+    - http://id.bnportugal.gov.pt/bib/bibnacional/1948999
+
+# --- Theatre ---
+
+- id: jose-luis-peixoto/anatema
+  title: "Anátema"
+  authorIds: [jose-luis-peixoto]
+  published: 2005
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A play, translated into French by Carlos Batista, that premiered in
+    Paris at the Théâtre de la Bastille as part of the Festival d'Automne;
+    reported in the Portuguese press as drawing on the 2002 Moscow theatre
+    hostage crisis.
+  note: >
+    Rests on secondary sourcing: a dated Público headline and convergent
+    mentions on PEN America's and the Teatro Nacional D. Maria II's own
+    pages. The Público article's own text is behind a bot-challenge page
+    that returns no readable content.
+  # No cover: never published as a book (see editions.yaml).
+  sources:
+    - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+
+- id: jose-luis-peixoto/a-manha
+  title: "À Manhã"
+  authorIds: [jose-luis-peixoto]
+  published: 2006
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A play staged by Teatro Meridional at Lisbon's Teatro São Luiz,
+    19 January - 5 February within the venue's 2005-2006 season.
+  # No cover: never published as a book (see editions.yaml).
+  sources:
+    - https://www.teatrosaoluiz.pt/temporada/2005-2006/
+
+- id: jose-luis-peixoto/quando-o-inverno-chegar
+  title: "Quando o Inverno Chegar"
+  authorIds: [jose-luis-peixoto]
+  published: 2007
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A play staged at Lisbon's Teatro São Luiz, 7-30 June, within the
+    venue's 2006-2007 season.
+  # No cover: never published as a book (see editions.yaml).
+  sources:
+    - https://www.teatrosaoluiz.pt/temporada/2006-2007/
+
+- id: jose-luis-peixoto/estrangeiras
+  title: "Estrangeiras"
+  authorIds: [jose-luis-peixoto]
+  published: 2016
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A Portuguese, a Brazilian and a Cape Verdean woman, trying to enter the
+    United States, are held together for hours in an airport border-police
+    room, and gradually reveal what each thinks of the others and of her own
+    country: a play about the shared and divided spaces of one language
+    spread across the world. A Teatro Municipal do Porto coproduction
+    directed by João Branco, premiered 8-9 July 2016 at the Rivoli's small
+    auditorium, then staged in Brazil and Cape Verde; published as a book by
+    Rosa de Porcelana.
+  # No cover: not indexed by Open Library (checked by title search and by
+  # ISBN cover lookup, 9789899940666) - a small-press 2016 title.
+  sources:
+    - https://www.teatromunicipaldoporto.pt/pt/programa/joao-branco-estrangeiras-estreia-coproducao/
+    - https://quetzal.blogs.sapo.pt/estrangeiras-de-jose-luis-peixoto-esta-549114
+    - https://observalinguaportuguesa.org/jose-luis-peixoto-lanca-em-livro-peca-teatral-estrangeiras-em-cabo-verde/

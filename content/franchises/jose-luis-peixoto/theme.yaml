@@ -1,0 +1,62 @@
+# Branding for the José Luís Peixoto wing (see Orrery CONCEPT §6 - the design
+# law, and docs/SCHEMA.md#themeyaml). This is the catalogue's third Lusophone
+# wing. valter-hugo-mae is warm umber and terracotta, rural/coastal, with a
+# dip-pen line and a firm architectural "rule" signature. joao-tordo is
+# Atlantic blue-grey with a thin "tideline" (falls back to "thread", the
+# app's default, since "tideline" is not an implemented signature).
+# Peixoto's country is neither: the Alto Alentejo is inland, flat and dry -
+# wheat plains, cork oaks, whitewashed walls, heat instead of rain. The
+# palette is built around that difference in kind, not just in shade: a
+# parched wheat-gold accent (hue ~40, yellow-gold) rather than either wing's
+# red-toned terracotta (~15) or blue (~200), so a reader who knows all three
+# wings could name this one from the accent alone.
+preset: alentejo-plains
+palette:
+  bg: "#161207"       # near-black, scorched earth at night rather than wet umber
+  surface: "#1e190d"  # a hair lifted, for cards
+  ink: "#f2e8c9"       # bleached limestone/whitewash - high contrast, very readable
+  muted: "#948763"     # dry khaki-grey, for metadata
+  accent: "#c2952a"    # one wheat-gold accent, for links and markers only - dried grass, not fire
+displayFace: sourceSerif  # from the app's implemented set (fraunces | spectral | sourceSerif);
+                           # distinct from valter-hugo-mae's spectral and joao-tordo's fallback fraunces
+signature: beam            # a bold accent rail the works string along - the one signature
+                            # that reads as a horizon line, distinct from vhm's rule and
+                            # tordo's thread
+art:
+  motifs:
+    - wheat plains flat to the horizon, no middle ground
+    - cork oaks (montado) with bark stripped in patches, raw red-brown wood showing
+    - whitewashed cottages with a single band of ochre or blue at the base
+    - dry stone walls and wells
+    - noon heat-shimmer over open ground
+    - long, hard-edged shadows at dusk, the only relief from the glare
+  atmosphere: >
+    Sparse and sunbaked. Heat held rather than dramatized - stillness instead
+    of storm. Wide, flat horizons that dwarf the human figures in the frame;
+    interiors kept dim and cool, felt as shelter from the glare outside
+    rather than as warmth. Rural Alentejo of the late twentieth century, not
+    a wine-tourism postcard.
+  lineCharacter: >
+    Spare, dry strokes with wide untouched paper, closer to sun-bleached
+    graphite than wet ink - the opposite instinct from a tremulous dip pen.
+    Shadows are drawn, not shaded; at noon in this landscape they nearly
+    vanish, and the line should feel that scarcity.
+  backgroundTexture: >
+    Bleached limestone-white paper with a faint wheat-gold wash, grain like
+    sun-cracked earth rather than laid paper's fibre.
+  accentUse: >
+    Wheat-gold on exactly one element per image, never as a fill: a strip of
+    dry grass, a single sunlit wall, a well's stone rim.
+  avoid:
+    - cork-stopper and wine-tourism kitsch
+    - azulejo tiling and fado/saudade cliches (this is inland Alentejo, not Lisbon or the coast)
+    - lush green countryside - the Alentejo plain is dry, not verdant
+    - golden-hour tourist gloss; the light here is flat noon glare, not a sunset
+notes: >
+  A parched, sunbaked edition: near-black scorched-earth paper, bleached
+  limestone type, one wheat-gold accent used only for links and markers. The
+  signature is a bold horizon-line beam rather than either sibling wing's
+  soft thread or firm rule, echoing the flat plains the motifs are built
+  from. No wine-region or tile-pattern costume, no coastal blue - readability
+  first, restraint everywhere. displayFace and signature are both chosen
+  from the app's actually-implemented sets (docs/SCHEMA.md).

@@ -1,0 +1,70 @@
+id: jose-luis-peixoto
+name: José Luís Peixoto
+kind: author
+description: >
+  A voice out of the Alto Alentejo who became, at 27, the youngest-ever
+  winner of the Prémio José Saramago: two decades of novels rooted in rural
+  Portugal and its history, alongside poetry, travel writing, theatre,
+  children's books, newspaper crónicas, and one novella written alongside
+  the band Moonspell as the literary twin of their album.
+authorIds: [jose-luis-peixoto]
+themePreset: alentejo-plains
+
+images:
+  header: "https://upload.wikimedia.org/wikipedia/commons/1/14/Alentejo_banner.jpg"
+  headerCredit: "Nuno Sequeira André and Joaquim Alves Gaspar, cropped by Jjtkk, CC BY-SA 2.0"
+  headerSource: "https://commons.wikimedia.org/wiki/File:Alentejo_banner.jpg"
+  # Isolated cork oaks on a flat, sun-bleached wheat field with no middle
+  # ground - matches theme.yaml's art motifs directly. Preferred over other
+  # free-licensed Alentejo landscapes found (a vineyard, a hazy pine
+  # hillside, a spring pasture) because those were green and lush, which
+  # theme.yaml's avoid list rules out for this wing.
+
+# Capabilities are auto-detected from the data (docs/SCHEMA.md). A
+# deliberately sparse bundle at the thin end of the framework, matching the
+# valter-hugo-mae wing's own shape: 27 works across every form the author has
+# published in (novels, poetry, travel writing, children's literature,
+# theatre, crónicas, one mixed collection, one short-story chapbook) plus
+# three franchise events and six author lifeEvents.
+# No characters.yaml and no work `connections`: no recurring named
+# character or crossover exists across Peixoto's fiction - each novel is
+# set in its own place and time (an unnamed Alentejo village, 1917 Fátima,
+# 1990s Lisbon, a Porto oncology ward, Portuguese emigrant France) - so the
+# connections map stays dark by design. eras.yaml ships as an empty list:
+# unlike Valter Hugo Mãe, who names his own tetralogies in interviews, no
+# author-stated or critical periodisation of Peixoto's work is on record; a
+# periodisation invented rather than received would not belong here. orders.yaml ships as
+# an empty list: no publisher numbering or named grouping exists to give an
+# order a spine, and none of the eleven novels shares subseries with
+# another. No startHere: no entry-point advice from the author, a
+# bookshop or a critic is on record (see orders.yaml's header for the one
+# unreliable source found and rejected). Everything else left at auto;
+# nothing forced.
+features: {}
+
+globalEvents:
+  exclude:
+    - sept-11-2001                       # no novel reaches for it
+    - financial-crisis-2008              # no work answers it
+    - chain-bookshop-1982                # a British and American shop format; his trade is small Portuguese presses
+    - online-bookselling-1995            # domestic, bookshop-led readership; no title answers this
+    - ebook-and-self-publishing-2007     # traditionally published throughout; no self-publishing story
+    - prestige-fantasy-adaptation-2011   # he does not write fantasy
+    - portugal-bailout-2011              # emigration in Livro (2010) is post-Salazar historical; contemporary 2011-2014 novels are set in 1984, 1917, North Korea
+    - booktok-2020                       # Lusophone literary fiction is not what short-form video moves; no work here answers book-discovery culture
+  # The Carnation Revolution is in neither list on purpose. Peixoto was born on
+  # 4 September 1974, four months after it, so he is of the first Portuguese
+  # generation never to have written around a censor - the same ground on which
+  # joao-tordo carries it. The freedom is the condition of the work rather than
+  # its subject, which is a reason to let it stand quietly, not to remove it.
+  #
+  # The pandemic is in neither list on purpose: it falls inside his lifetime, so
+  # it reaches the wing by the app's own arithmetic and needs no ruling. It has
+  # earned its place - Regresso a Casa (2020) is poetry written in confinement,
+  # mapping the walls of a household - which is why it is not excluded.
+  # `include` is only for events that PREDATE an author and still shaped them.
+
+sources:
+  - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
+  - https://en.wikipedia.org/wiki/José_Luís_Peixoto
+  - https://www.portaldaliteratura.com/autores.php?autor=395
