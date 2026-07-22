@@ -1,0 +1,69 @@
+name: Art ready
+
+# Flip an asset issue to `asset:ready` the moment an image is attached to it.
+#
+# The loop was: read the prompt, generate, drag the image onto the issue, then
+# remember to change the label. That last step is the only thing standing
+# between "the art exists" and "the pipeline picks it up", and it is exactly the
+# kind of step that gets forgotten at eleven at night with six images done.
+#
+# `art_intake.py` polls for `asset:ready`, so the label IS the handoff. This
+# makes attaching the image the handoff instead.
+on:
+  issue_comment:
+    types: [created, edited]
+  issues:
+    types: [edited]
+
+permissions:
+  issues: write
+
+concurrency:
+  # Per issue, so two edits in a row cannot race on the same labels.
+  group: art-ready-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  flip:
+    # Only issues already waiting on art. An image on a `needs-prompt` issue
+    # means somebody generated before the prompt was written, which is a thing
+    # worth noticing rather than silently accepting.
+    if: contains(github.event.issue.labels.*.name, 'asset:needs-art')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Flip to asset:ready if an image is attached
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          NUM: ${{ github.event.issue.number }}
+          # Through the environment, never interpolated into the script: this
+          # is attacker-controlled text on a public repo.
+          BODY: ${{ github.event.comment.body || github.event.issue.body }}
+          # Anyone can comment on a public repo. Only people who can actually
+          # be trusted with the wing's state may move it: a stranger dropping
+          # an image should open a conversation, not advance the pipeline.
+          # Art offered by contributors is welcome and goes through
+          # `art:human-offer` instead (see VISUAL.md 1b).
+          WHO: ${{ github.event.comment.author_association || github.event.sender.login }}
+        run: |
+          set -euo pipefail
+
+          case "$WHO" in
+            OWNER|MEMBER|COLLABORATOR|rfsbraz) ;;
+            *)
+              echo "Not flipping: '$WHO' is not a maintainer. Contributed art goes through art:human-offer."
+              exit 0 ;;
+          esac
+
+          # GitHub has used two hosts for uploads over the years and markdown
+          # images can also be plain links, so match the hosts rather than the
+          # markdown syntax.
+          if ! printf '%s' "$BODY" | grep -qE 'user-attachments/assets/|user-images\.githubusercontent\.com|!\[[^]]*\]\(https?://'; then
+            echo "No image attached in this event; nothing to do."
+            exit 0
+          fi
+
+          gh issue edit "$NUM" --repo "$REPO" \
+            --add-label "asset:ready" --remove-label "asset:needs-art"
+
+          echo "Flipped #${NUM} to asset:ready." >> "$GITHUB_STEP_SUMMARY"
