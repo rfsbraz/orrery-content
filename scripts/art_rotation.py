@@ -110,10 +110,20 @@ PROSE = re.compile(
     r"\*\*orrery motif carried by (?P<carrier>.+?)\*\*",
     re.I | re.S,
 )
+# A third form, because two writers given the SAME brief produced two different
+# layouts on the same afternoon: "Rotation for this asset: **peopled scene /
+# middle / neutral mid grey / a ceiling diffuser**". Supporting it is cheaper
+# than re-editing eighteen comments, and it is the clearest possible argument
+# for the canonical `Rotation:` line that asset-prompt.md now mandates.
+SLASHED = re.compile(
+    r"rotation[^:\n]*:\s*\*\*(?P<composition>[^/*]+)/(?P<distance>[^/*]+)/"
+    r"(?P<cast>[^/*]+)/(?P<carrier>[^*]+)\*\*",
+    re.I,
+)
 
 
 def parse_rotation(body: str):
-    for pattern in (CANONICAL, PROSE):
+    for pattern in (CANONICAL, PROSE, SLASHED):
         m = pattern.search(body or "")
         if m:
             return {k: " ".join(v.split()) for k, v in m.groupdict().items()}
@@ -242,12 +252,27 @@ def main() -> int:
         for kind, eid in missing:
             print(f"  {kind:<16}{eid}")
 
+    # A verdict over nothing is not a verdict. The first version of this script
+    # printed "rotation holds" for a wing where all eighteen prompts had failed
+    # to parse: it had checked zero assets and cleared them in the same breath,
+    # which is the exact shape of reassuring output this tool exists to remove.
+    # Coverage gates the verdict now.
+    covered, total = len(rows), len(assets)
+    if unparsed or missing:
+        problems.append(
+            f"only {covered} of {total} assets could be read "
+            f"({len(unparsed)} unparsed, {len(missing)} with no issue) - "
+            f"the counts above are a floor, not a verdict")
+
     if problems:
         print(f"\n{len(problems)} rotation problem(s):")
         for x in problems:
             print(f"  - {x}")
+    elif covered == total and events:
+        print(f"\nrotation holds across all {total} assets: "
+              f"no type over the cap, no neighbour repeats.")
     else:
-        print("\nrotation holds: no type over the cap, no neighbour repeats.")
+        print("\nnothing could be checked.")
 
     if a.check and (problems or unparsed or missing):
         return 1
