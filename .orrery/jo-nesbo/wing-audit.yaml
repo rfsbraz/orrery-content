@@ -1,0 +1,85 @@
+stage: wing-audit
+summary: >
+  Re-derived every number from the artefacts. Gate clean: validate.py OK at 529
+  works, pt-PT 85/93, no jo-nesbo warnings (the "pre-existing theme.yaml
+  art-block error" four handoffs still cite no longer exists). Confirmed: 34
+  works, 13 aura entries (9 franchise + 4 lifeEvents, impact 4 high / 5 med /
+  0 low), 2 orders + 4 startHere paths, 86 editions, 14/34 covers, all 20
+  no-cover works commented, all inline [[work:]] refs resolving in both
+  locales, all 12 globalEvents excludes resolving, the 5 unruled globals all
+  pre-1960. All 86 ISBN check digits pass, no duplicates, market prefixes
+  correct. The check digit was the wrong test: I opened all 14 covers and
+  queried every nb ISBN against nb.no. Findings, in order of harm. (1)
+  rotteoya's entire synopsis asserts an English edition "published the same
+  year" - the translation stage flagged it as a known Wikipedia error and
+  correctly declined to fix base prose; nobody then fixed it, so a false fact
+  ships in both locales. The English-titled edition is real but Gallimard 2024,
+  not 2021. (2) The Politi cover reads "HARRY HOLE ER TILBAKE", announcing the
+  exact thing the spoiler audit redacted from Politi's synopsis; visual ran
+  after spoiler and was never re-audited. (3) Books to Die For (2012, ed.
+  Connolly and Burke) carries a Nesbo essay on Jim Thompson's Pop. 1280 - found
+  on the first editor-axis search the completeness stage says it ran and closed.
+  (4) politi/aschehoug-2013-nb's sole source 404s and its ISBN is absent from
+  both Open Library and nb.no, while its note asserts the ISBN "actually
+  resolves". (5) franchise.description says two short-story collections; there
+  are three. (6) Snomannen's cover is 96x151, a tenth the area of the other
+  thirteen. Sound and not to be re-litigated: zero eras, the no-translation-order
+  ruling, Blod pa sno 1997/2015 dating, the Oleg-accused correction (verified
+  against the Phantom plot summary independently), 12 of 14 covers as clean
+  unwatermarked Aschehoug Norwegian jackets, pt-PT European register, palette
+  contrast (ink/bg 15.1, muted/surface 5.4).
+produced:
+  - .orrery/jo-nesbo/wing-audit.yaml
+  - >
+    content/franchises/jo-nesbo/franchise.yaml, theme.yaml - two stale comments
+    corrected in place and committed separately (0e550de). The capability block
+    claimed no startHere block and no editions.yaml exist, and counted three
+    lifeEvents; all four paths, all 86 editions and a fourth lifeEvent had
+    landed since it was written. theme.yaml said sourceSerif was "used twice"
+    while naming three wings. No editorial content touched.
+forStages:
+  - >
+    completeness-auditor: rewrite rotteoya's synopsis (it describes a
+    non-existent 2021 English edition instead of the book); add or explicitly
+    reject Books to Die For (2012); fix "two short-story collections" to three
+    in franchise.description and mirror to pt-PT; two further leads - the
+    March 2015 Dagbladet "Tom Johansen" mock-documentary named in
+    press-archaeology's own handoff, and "Og derr! var sommeren i gang" (2001,
+    nb.no, creator Nesbo).
+  - >
+    spoiler-audit: re-audit the cover layer, which landed after you. The Politi
+    jacket answers Gjenferd's withheld ending in the wing's own imagery.
+  - >
+    visual-metadata: replace or drop snomannen's 96x151 thumbnail; the two
+    Doktor Proktor Lydbokforlaget audiobook jackets are disclosed but do not
+    depict the Aschehoug editions their coverSource cites.
+  - >
+    editions: politi/aschehoug-2013-nb is unverifiable as recorded; rotteoya's
+    nb.no source URL returns zero results; a Gallimard 2024 English-titled
+    Rat Island edition exists and was ruled non-existent.
+  - >
+    translation: mirror the rotteoya and franchise.description fixes; the
+    Kakerlakkene review quote is Norwegian rendered in English while the
+    overlay header promises quotes stay in the language they were said.
+openQuestions:
+  - >
+    Undocumented field. jo-nesbo/nadeskudd carries forthcoming: 2026-08-19,
+    which docs/SCHEMA.md does not define. The field exists only on branch
+    feat/forthcoming-works, which is not in origin/main. The wing depends on a
+    schema change that has not landed.
+  - >
+    Sanctuary language. Eighteen sites across five files narrate the research
+    rather than the data ("anywhere searched", "as of the sources checked",
+    eras.yaml's "Searched in Norwegian first, then Danish and English").
+    validate.py's regex does not catch these. Collapsing a hedge into an
+    assertion is an editorial call, so routed rather than fixed.
+  - >
+    displayFace and signature. SCHEMA names three faces and four signatures;
+    five wings ship values outside both sets (ivar, canela, instrument-serif,
+    double-rule, filament, tideline, wheel-and-serpent, horizon). Either SCHEMA
+    is stale or those wings render in a fallback nobody chose. jo-nesbo itself
+    is compliant. No app code in this repo, so unresolvable here.
+  - >
+    Palahniuk, Flynn and jo-nesbo all ship sourceSerif + rule. Reasons are not
+    rendered; Flynn and jo-nesbo are both pale-ground crime wings. Palette and
+    accent do carry the difference. Curator's call.
