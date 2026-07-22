@@ -1,0 +1,78 @@
+stage: editions
+summary: >
+  Wrote content/franchises/jo-nesbo/editions.yaml: 86 entries across three
+  markets for all 34 works. Norwegian (nb): 34/34, from Aschehoug's own
+  product pages cross-checked against the National Library of Norway's
+  legal-deposit catalogue (api.nb.no). Found that Aschehoug relaunched the
+  first nine Harry Hole novels (Flaggermusmannen through Gjenferd) in new
+  Pocket editions in a tight window, 4-20 March 2026, timed with the
+  Marekors-based Netflix adaptation; all nine ISBNs cross-confirmed in
+  nb.no independently. Three works (Det hvite hotellet, Stemmer fra Balkan,
+  the Doktor Proktor bestiary D.D.S.Ø.I.F.) have no live Aschehoug
+  storefront and are sourced to nb.no's legal-deposit record alone;
+  Stemmer fra Balkan's isbn13 is a from-scratch conversion of nb.no's
+  recorded ISBN-10, shown in the entry's note. English (en): 28/34, from
+  OpenLibrary per-ISBN records cross-checked against English Wikipedia's
+  bibliography table. Publisher history genuinely shifts: Vintage carries
+  the paperback line for the earlier novels, Harvill Secker is the hardcover
+  imprint of record from Phantom (2012) on, Knopf/Vintage Crime for two
+  recent US-only titles. No English edition for six works: Nådeskudd
+  (unpublished), Det hvite hotellet (Wikipedia's own "(English: The White
+  Hotel)" aside is unbacked by any real edition - zero OpenLibrary hits,
+  zero retailer hits), Karusellmusikk, Stemmer fra Balkan, the bestiary,
+  and Rotteøya og andre fortellinger - the last a genuine discrepancy:
+  Wikipedia claims "(English: Rat island and Other Stories, 2021)" but no
+  such edition exists anywhere checked (OpenLibrary: zero; only a French
+  translation surfaced), while its sibling collection Sjalusimannen WAS
+  translated the same year. Portuguese (pt-PT): 24/34, fuller than earlier
+  research on this wing assumed. Dom Quixote has been Nesbø's constant
+  Portuguese publisher since 2009 (O Pássaro de Peito Vermelho, matching
+  the March 2009 date already established for this catalogue); BIS is a
+  sister pocket imprint. One title breaks the pattern: Macbeth went to
+  Bertrand Editora, not Dom Quixote - the Hogarth Shakespeare commission
+  was licensed to a different LeYa-group house. Caught one region trap in
+  the making: a search-engine summary for A Casa da Noite surfaced a
+  Brazilian Record-house ISBN (978-85 prefix); the entry ships only the
+  directly-fetched Dom Quixote 978-972 number. No Portuguese edition for
+  Nådeskudd, Det hvite hotellet, Karusellmusikk, Stemmer fra Balkan, or any
+  of the six Doktor Proktor titles - Nesbø's Portuguese-language readership
+  appears to be crime-fiction-only, unlike English where five of six
+  Doktor Proktor books exist. Every ISBN recomputed and verified against
+  its check digit; every pt-PT prefix checked against 978-972/978-989.
+  Format recorded only where a fetched page explicitly stated a binding,
+  left blank elsewhere. validate.py --slug jo-nesbo: zero errors, zero
+  warnings.
+produced:
+  - content/franchises/jo-nesbo/editions.yaml
+forStages:
+  - >
+    translation: works with a confirmed pt-PT title (24 of 34, listed in
+    editions.yaml) should NOT get an invented Portuguese title in an i18n
+    overlay - editions.yaml is the only place a published title may live,
+    per docs/SCHEMA.md. The remaining 10 works (Nådeskudd, Det hvite
+    hotellet, Karusellmusikk, Stemmer fra Balkan, and the six Doktor Proktor
+    titles) have no Portuguese edition; translated prose for them still
+    renders under the Norwegian original title, which is correct and not
+    a gap to fill.
+openQuestions:
+  - >
+    Weakest calls, both flagged in-file: (1) Killing Moon (Blodmåne) is
+    dated 2024 on the strength of its own OpenLibrary edition record,
+    against English Wikipedia's inline "(English: Killing Moon, 2023)" - a
+    UK Penguin Random House ISBN independently also resolved to 2024, which
+    is why the primary record was trusted over the encyclopedia aside, but
+    worth a second look if a 2023 printing surfaces. (2) Karusellmusikk's
+    only findable edition is a 2007 downloadable audiobook whose own
+    Aschehoug record carries "Utgitt 2001" (the book's original year) next
+    to "Salgsdato 15.11.2007" (this SKU's release); year: 2007 was chosen
+    as what the ISBN actually is, not the underlying work's year.
+  - >
+    No coverUrl was set on any of the 86 entries - visual-metadata's
+    territory, not this layer's.
+  - >
+    A few English editions (Blood on Snow, Headhunters, the five Doktor
+    Proktor titles) are sourced to an OpenLibrary search.json aggregate
+    rather than a direct per-ISBN record, because the specific ISBN wasn't
+    cleanly isolated from a merged multi-translation search result. All are
+    real, checkable records; tightening these to direct isbn.json citations
+    would strengthen them further.
