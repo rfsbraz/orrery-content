@@ -1,0 +1,89 @@
+stage: press-archaeology
+slug: chuck-palahniuk
+status: validate.py --slug chuck-palahniuk green (exit 0), sync_skill_blocks.py green
+
+dark_run_before_after: >
+  Before: 13 aura entries, 0.46/work, longest dark run 7 years (2004-2010).
+  After: 15 entries, 0.54/work, that run closed to 3 years (1996-1998, the
+  pre-Fight-Club years, already the shortest possible given the shelf starts
+  in 1996). Two new entries land in 2007 and 2009.
+
+added:
+  - id: palahniuk-mother-dies-2009 (authors/chuck-palahniuk.yaml, lifeEvent)
+    what: >
+      His mother, Carol Adele Meader, diagnosed with lung cancer in 2008; he
+      cared for her while starting Damned, she died 9 Feb 2009 aged 68. He
+      inverted the grief rather than writing it straight: not an adult
+      mourning a parent, but a dead child who still misses the parents she
+      left. High: recolors Damned and Doomed, previously filed on file with
+      no personal grounding at all.
+    sources: >
+      failbetter.com interview (direct quote, "I was caring for my mother who
+      was dying of lung cancer"), Wikipedia's Damned article (lung cancer,
+      2009), and Carol Adele Meader's funeral-home obituary (name, exact
+      death date 9 Feb 2009, age 68, lists "Charles Palahniuk of Portland,
+      Oregon" as a son) - all three read directly and independent of each
+      other.
+  - id: rant-sold-as-trilogy-2007 (franchises/chuck-palahniuk/events.yaml)
+    what: >
+      Rant is built from a real nonfiction form (the oral biography, credited
+      to Jean Stein's Edie); in a May 2007 interview, days after publication,
+      Palahniuk called it the first of three books on the same theme, film
+      rights stalled on outlines for the other two. No second volume has
+      appeared since. Med: explains the shelf - why this wing's order treats
+      Rant as a standalone rather than an abandoned series.
+    sources: >
+      Pine Magazine, 8 May 2007, via web.archive.org (direct quote: "It's
+      going to be the first of three books on the same sort of theme"),
+      cross-checked against Rant's own Wikipedia article and its citation
+      trail (same interview cited there).
+
+corrections: []
+
+found_and_rejected:
+  - what: An asteroid named for Palahniuk (2009)
+    why: >
+      Not found anywhere - no Wikipedia entry, no minor-planet naming list, no
+      press coverage. Likely a mistaken or invented lead; nothing to verify.
+  - what: The 2008 Choke film (Clark Gregg directing, Sam Rockwell starring)
+    why: >
+      Real, but a modest adaptation ($3.4M budget, ~$4M gross, mixed reviews)
+      that didn't reshape the book's readership the way the 1999 Fight Club
+      film did - fails the bar that existing entry sets.
+  - what: Choke challenged at Fayetteville High School, Arkansas (2005)
+    why: >
+      Real, but one title on a single complainant's list of 50+ books over
+      "sexually explicit" content, outcome unrecorded - routine culture-war
+      noise, not a rupture that marks this book specifically.
+  - what: Snuff's premise traced to Annabel Chong's 1995 "World's Biggest Gang
+      Bang" record
+    why: >
+      Repeated across secondary sources (including an uncited Wikipedia line)
+      but never located in Palahniuk's own words. Fails "verify the famous
+      ones" - left out rather than laundered forward.
+  - what: Diesel mechanic / Freightliner years and hospice volunteer work
+    why: >
+      Real, already in the bio paragraph, and predate 1991 regardless - don't
+      touch the 2004-2010 gap. A separate lifeEvent would just restate the bio.
+
+could_not_verify: >
+  The 2004-2008 stretch (before the mother's diagnosis) turned up nothing
+  else worth opening a source for - reads as genuinely quiet, steady
+  publication (Haunted, Rant, Snuff), not an unsearched silence. Didn't reach
+  Portland-local press beyond what's already cited (Willamette Week, the
+  Oregonian), which might hold more for a future pass.
+
+curator_questions:
+  - "Rant's oral-biography technique note (Jean Stein's Edie, Citizen
+    Kane/Blair Witch Project as models) sits inside the new trilogy entry
+    for space. Split into its own low-impact craft entry if that description
+    is doing too many things at once?"
+
+tool_calls: >
+  approximately 24 total; 15 network-touching (10 WebSearch, 5 fetch calls:
+  3 WebFetch on Wikipedia/Interview Magazine/failbetter.com/Star Tribune/the
+  funeral-home obituary, 2 scripts/fetch.py calls covering the Rant Wikipedia
+  raw text, its wikitext source, and the archived Pine Magazine interview,
+  one of them with --workers 2 for the archive.org fetch). No blocked domains
+  hit this pass; Star Tribune 429'd once and wasn't retried since Wikipedia
+  and failbetter.com already gave a directly quoted, corroborated fact.
