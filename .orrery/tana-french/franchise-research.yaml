@@ -1,0 +1,86 @@
+stage: franchise-research
+summary: >
+  Scaffolded a new wing from scratch: franchise.yaml, a 10-work bibliography
+  (6 Dublin Murder Squad, 3 Cal Hooper trilogy, 1 standalone), the global
+  author entity with 3 lifeEvents, a 6-character roster covering the
+  Squad's recurring-detective handoffs, and theme.yaml (palette/face/
+  signature, deliberately no art). validate.py --slug tana-french: 1 error
+  (missing theme.art - out of this stage's scope, needs visual-language),
+  0 warnings after fixing an initial contrast failure and 3 comment-policy
+  hits.
+produced:
+  newWorkIds:
+    - tana-french/in-the-woods
+    - tana-french/the-likeness
+    - tana-french/faithful-place
+    - tana-french/broken-harbor
+    - tana-french/the-secret-place
+    - tana-french/the-trespasser
+    - tana-french/the-witch-elm
+    - tana-french/the-searcher
+    - tana-french/the-hunter
+    - tana-french/the-keeper
+  newCharacterIds:
+    - tana-french/rob-ryan
+    - tana-french/cassie-maddox
+    - tana-french/frank-mackey
+    - tana-french/holly-mackey
+    - tana-french/stephen-moran
+    - tana-french/antoinette-conway
+  correctedClaims:
+    - "Tracking-issue lead listed 6 Dublin Murder Squad novels plus 3 standalones through The Hunter (2024), 9 works total. Actual count is 10: The Searcher/The Hunter/The Keeper are a stated trilogy (Cal Hooper), not 2 of 3 independent standalones, and The Keeper (March/April 2026) already exists and closes it - it postdates the lead and was not in the brief."
+    - "Confirmed the birthplace caution in the brief: Portuguese retail bios (WOOK, checked on 3 separate product pages) state she was born in Ireland in 1973. The better-sourced record (Wikipedia's infobox and prose, citing her own publisher-hosted bio at Bookreporter.com, corroborated by Wikipedia category tags) gives Burlington, Vermont, USA, 10 May 1973. Recorded in content/authors/tana-french.yaml with both claims and the reasoning."
+rejected:
+  - "No apocrypha/extended tier needed: unlike Gillian Flynn's mixed prose+screen wing, nothing surfaced (no anthology story, foreword/introduction, or screen credit) beyond the 10 novels. Checked her Wikipedia bibliography table, her own site's 10-book list, and ISFDB (no author entry at all for her - consistent with a crime rather than genre-fiction career)."
+  - "No connections field added to works.yaml. Dublin Murder Squad's recurring detectives are handled entirely through subseries + characters.yaml; adding `connections` too would duplicate what the subseries already threads, per the schema's own guidance."
+  - "No startHere/wizard: her own site sells a 'Dublin Murder Squad Mysteries Volumes 1-6' boxed set, but that is a bundling decision, not a stated reading-order recommendation, so it does not clear the sourcing bar."
+  - "No franchise events.yaml or eras.yaml created: no franchise-specific event or creative-period boundary was sourced yet, and empty is the honest state rather than a padded one."
+forStages:
+  completeness-auditor: >
+    Bibliography checked against 3 independent sources (Wikipedia's own
+    3-way Dublin Murder Squad / Cal Hooper / Other table, her official
+    site's 10-book list, ISFDB's absence of an author entry) and looks
+    complete, but re-verify rather than trusting this count.
+  press-archaeology: >
+    Only 3 thin, well-known author lifeEvents were scaffolded (birth,
+    settling in Dublin 1990, writing the debut between acting jobs).
+    aura_density.py flags an 8-year dark run, 2012-2019. Her explicitly
+    stated preoccupation with the Celtic Tiger boom and the 2008 crash
+    (Broken Harbor's ghost estates are the clearest example) is a strong,
+    evidenced lead worth its own life event or franchise event.
+  world-events: >
+    No Celtic Tiger boom / Irish property-crash global event exists in
+    events/global.yaml yet, and this author's work answers it directly
+    and repeatedly (see press-archaeology note above).
+  event-resonance: >
+    globalEvents is left entirely unset on franchise.yaml. financial-
+    crisis-2008 (already in global.yaml, currently impact: low) is a
+    strong include candidate given how explicitly her Celtic-Tiger/
+    recession theme is documented; a Celtic Tiger event, if world-events
+    adds one, would need the same ruling.
+  reading-orders: >
+    No sourced entry-path found; the boxed-set bundling noted above is
+    the only lead and does not clear the bar on its own.
+  editions: >
+    pt-PT editions are real, not a false lead: confirmed directly on WOOK
+    product pages under 2 imprints - Clube do Autor (O Sítio Secreto/The
+    Secret Place, 2015; Intruso/The Witch Elm, 2020) and the earlier
+    Livraria Civilização Editora (Desaparecidos/In the Woods, 2008; A
+    Semelhança/The Likeness, 2009; Sombras do Passado/Faithful Place,
+    ISBN 9789722632843, 2011). Wook.pt blocks search pages (403) but
+    serves product pages fine; the author page
+    (wook.pt/autor/tana-french/45283) lists further titles ("Ver mais")
+    not yet checked individually.
+  spoiler-audit: >
+    characters.yaml has 6 recurring detectives with spoilerAfter left
+    null throughout; none of their appearances turned on a twist in the
+    sources checked, but review whether the identity of the next book's
+    lead is ever, in itself, a reveal worth gating.
+  visual-language: >
+    theme.yaml has palette/displayFace/signature reasoned and checked
+    against every other wing's hues, but no art block by design.
+    validate.py currently fails this wing on exactly that ground - this
+    stage is the one that must run before the branch can merge.
+openQuestions:
+  - "Broken Harbor vs Broken Harbour: used the US spelling as the work's title (matches her own author site and the book's LA Times Book Prize / Irish Book Award listings), with the Irish/UK spelling recorded in the work's note. This is a spelling-variant call, not a translation one - flagging in case a curator reads it differently."
+  - "No Cal Hooper / Dublin Murder Squad / Witch Elm crossover surfaced in research. If a later pass finds one, characters.yaml would need a new entry rather than an edit to an existing one."
