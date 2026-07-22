@@ -180,12 +180,20 @@ moment: the objects that person left, and their likeness withheld.
 
 | Asset | Size | Background | References | Renders in |
 |---|---|---|---|---|
-| `era-plate` | `1536x1024` | opaque, wing paper tone | no | the right half of the era plate, bleeding off the page edge; the title and prose hold the left (see §4b) |
+| `era-plate` | `1536x1024` | **transparent** (chroma key, §5b) | no | the right half of the era plate, bleeding off the page edge; the title and prose hold the left (see §4b) |
 | `life-event` | `1024x1024` | **transparent** | no | the illustrated event card in `river.tsx`, laid beside the prose |
 | `franchise-event` | `1024x1024` | **transparent** | no | the illustrated event card in `river.tsx` |
 | `world-event` | `1024x1024` | **transparent** | no | every wing that carries the event, **tinted with that wing's `accent`** |
 | `work-cover` | - | - | - | not generated: covers are licensed or absent (see `visual-metadata`) |
 | `author-portrait` | - | - | - | not generated: see §3 |
+
+**Every generated asset is chroma-keyed, era plates included.** This table once
+said era plates were opaque on the wing's paper tone, which was wrong and was
+caught when a prompt writer followed the first plate's actual precedent instead
+of the docs. An era plate has a hand-torn edge that bleeds into the page, and
+that only works with alpha: baked onto paper it becomes a rectangle sitting on
+the page rather than part of it, and a baked paper tone can only match one
+wing's background.
 
 Shared world-event art lives in `assets/global/`, not under any one wing: it is
 catalogue canon, and filing it beside the author who happened to prompt it
