@@ -119,6 +119,28 @@ def body_for(wing: str, kind: str, aid: str, why: str, path: str, accent: str) -
         + ", then flips this to `asset:needs-art`.",
         "",
     ]
+    if not shared:
+        # The queue files one issue per asset, which is the right unit of
+        # RECORD - a permanent address for a moment, so it survives
+        # regeneration and a human art offer can attach to it. It is the wrong
+        # unit of AUTHORING: cohesion is a property of the sequence, and §4a's
+        # cap on any one composition type cannot be checked an asset at a time.
+        # That gap is how the Mãe wing shipped seven of eleven event sketches
+        # as the same close still-life while every prompt passed review alone.
+        lines += [
+            "> **Check the wing's rotation before writing this.** "
+            f"`python scripts/art_rotation.py {wing}` rebuilds the whole wing's "
+            "rotation from the issue history and reports the §4a cap. Vary at "
+            "least two of composition type, distance, tonal cast and motif "
+            "carrier against the neighbours, and state the four fields on the "
+            "`Rotation:` line of your prompt comment or this asset drops out "
+            "of the counts.",
+            "",
+            "> If several assets on this wing are queued at once, that is a "
+            "**wing-level pass**, not N independent prompts: plan the rotation "
+            "across all of them first (docs/VISUAL.md §7 step 2), then write.",
+            "",
+        ]
     if shared:
         lines += [
             "> **Shared asset, catalogue scope.** Drawn ONCE in neutral house "

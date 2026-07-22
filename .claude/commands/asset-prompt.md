@@ -85,8 +85,22 @@ blob.
 
 Always all six, in this order:
 
-1. **Asset** - type, entity id, the wing it belongs to, and the presentation
-   chosen with its one-line reason.
+1. **Asset** - type, entity id, the wing it belongs to.
+
+   Then, on its own line and in exactly this form, the four rotation fields:
+
+       Rotation: composition=<type> | distance=<far|middle|near> | cast=<tonal cast> | carrier=<orrery motif carrier>
+
+   `scripts/art_rotation.py <slug>` parses this line out of the issue comments
+   to rebuild the wing's whole rotation table, which is how §4a's cap can be
+   checked at all. The rotation plan used to live in a branch-local `.orrery/`
+   file that is deleted before merge, so the one artifact needed to write the
+   wing's next asset evaporated the moment the wing was finished. Derived from
+   the issues it cannot go stale, because the issues are what actually happened.
+
+   Keep the line exactly as shown. A prompt whose rotation cannot be parsed is
+   reported as unparsed and left out of the counts, which makes the wing look
+   more varied than it is.
 2. **The prompt** - one block, ready to paste, no commentary inside it. It must
    contain the orrery motif as its **own paragraph** (VISUAL.md §1a - a clause
    bolted onto another sentence is what produces a tangled, illegible motif),
