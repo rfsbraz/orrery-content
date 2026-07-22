@@ -1,0 +1,396 @@
+# Editions of Tana French: 5 pt-PT editions over 5 of 10 works, plus 19 English
+# (US/Ireland/UK) editions over all 10 works bar one partial gap noted below.
+#
+# PORTUGUESE COVERAGE (5 of 10). Established from WOOK's own author-page
+# bibliography (archived copy below; the live page 403s automated fetches, a
+# known WOOK behaviour - see docs/CURATION.md), which lists exactly five
+# Portuguese titles under two imprints and no others ("Ver mais" was not a
+# truncation; filtering the author page to idioma=PT surfaces only these
+# five). Livraria Civilização Editora ran the first three Dublin Murder Squad
+# novels in strict sequence (2008, 2009, 2011) and then stopped; Clube do
+# Autor picked up two later, non-consecutive titles (2015, 2020) and has
+# added nothing since. Broken Harbour (DMS #4), The Witch Elm and the entire
+# Cal Hooper trilogy have never been published in Portuguese as far as this
+# catalogue can establish - a market fact, not a research gap, and no
+# edition is recorded for them here.
+#
+# A TITLE-MATCHING TRAP. "Intruso" (2020) pairs with The Trespasser (2016),
+# not The Witch Elm (2018), even though title and year alone point the other
+# way (Clube do Autor's two releases are her two most recent books at each
+# release, and "Intruso"/"Intruder" reads closer to "Witch Elm" than to
+# "Trespasser" in translation). Intruso's own WOOK synopsis ("Uma jovem é
+# morta em casa... a mesa está posta para um jantar romântico que nunca
+# aconteceu... um dos detetives reconhece aquela rapariga") is unmistakably
+# The Trespasser's plot: a dead woman, a table laid for a dinner that never
+# happened, a detective who recognises her. The Witch Elm has no pt-PT
+# edition recorded here as a result. Every pairing below (title-literal or
+# not) is confirmed the same way, by reading the WOOK synopsis against the
+# work's own synopsis in works.yaml, not by matching titles or years:
+#   - Desaparecidos (Civilização, 2008): 1984, three children vanish into a
+#     Dublin-suburb wood, one found catatonic - In the Woods.
+#   - A Semelhança (Civilização, 2009): Cassie Maddox, "da autora de
+#     Desaparecidos", finds her own double dead under her old undercover
+#     alias Lexie Madison - The Likeness.
+#   - Sombras do Passado (Civilização, 2011): the Biblioteca Nacional de
+#     Portugal's own catalogue record states the original title directly
+#     ("Tít. orig.: Faithful place"), translator Isabel Baptista credited.
+#   - O Sítio Secreto (Clube do Autor, 2015): a boy found dead in a girls'
+#     boarding-school garden, a note reading "Sei quem o matou" ("I know who
+#     killed him") pinned to the school's secret noticeboard, Detective
+#     Stephen - The Secret Place, and a fully literal title besides.
+# No `title` is needed on the English editions below in the region where a
+# work's English title is unchanged; it is set only on the one edition whose
+# title genuinely differs by market (see BROKEN HARBOUR/HARBOR below). No
+# translator is recorded except on Sombras do Passado, the only one whose
+# source names one.
+#
+# ENGLISH COVERAGE. Ireland/UK first editions run under Hodder & Stoughton
+# in Britain and, in Ireland specifically, an imprint that renamed partway
+# through her run - Hodder Headline Ireland becoming Hachette Books Ireland -
+# which is why OpenLibrary's own cataloguing of the same 2012 Broken Harbour
+# printing under the older name is not a second, competing edition. US
+# editions run under Viking throughout, moving from Viking Adult/Viking
+# Press branding in the early books to plain Viking later, all one publisher.
+# The Cal Hooper trilogy is recorded thinner: no Ireland/UK print edition
+# surfaced independently of the US one for The Searcher's US ISBN, and only a
+# UK ebook (not a UK print edition) could be verified for The Hunter and The
+# Keeper - recorded as ebook because that is genuinely what the sourced ISBN
+# resolves to, not a stand-in for an unfound print edition. A UK edition of
+# The Witch Elm under the title "The Wych Elm" (see the work's own note) is
+# real - Wikipedia and OpenLibrary both attest the retitling - but no single
+# record gave a firm publication year for a specific ISBN under that title
+# without contradicting itself (OpenLibrary splits it across "Viking" and
+# "Penguin Books, Limited" catalogue entries with no reliable year on the
+# cleanest one), so no entry is recorded for it.
+#
+# BROKEN HARBOUR / BROKEN HARBOR is a genuine title difference between
+# markets, not a variant field for the same fact (see works.yaml's own TITLE
+# NOTE and canonical spelling "Broken Harbour"). The Ireland/UK edition below
+# needs no `title` override since it matches the work's own title exactly;
+# the Viking US edition carries `language: en-US` and `title: "Broken
+# Harbor"` because that spelling is what is actually printed on that book,
+# confirmed independently by OpenLibrary's own `full_title` field for that
+# ISBN and by the Kirkus/Washington Post reviews already cited in works.yaml.
+#
+# THE KEEPER (2026) is too recent for OpenLibrary to have catalogued by
+# either ISBN checked here (both return empty records); both ISBNs are
+# instead sourced to Wikipedia's own detailed infobox (day-precise pub
+# dates, page count, audiobook narrator), and both pass their check digit.
+#
+# SOURCING. pt-PT facts: WOOK product pages (via web.archive.org, since the
+# live site blocks automated fetches) cross-checked against the Biblioteca
+# Nacional de Portugal's catalogue (catalogo.bnportugal.gov.pt) for Sombras
+# do Passado. English facts: OpenLibrary's per-ISBN records (isbn13,
+# publisher, format, page count), cross-checked against Wikipedia's own
+# infoboxes for the seven titles that have one and against the Kirkus/
+# Guardian/Washington Post reviews already in works.yaml for Broken Harbour.
+# No ISBN below was taken from a single source without an independent check
+# except The Keeper's two, noted above, where OpenLibrary itself carries
+# nothing to check against yet.
+
+- id: tana-french/in-the-woods/civilizacao-2008-pt
+  workId: tana-french/in-the-woods
+  isbn13: "9789722625470"
+  language: pt-PT
+  title: "Desaparecidos"
+  format: paperback
+  publisher: Livraria Civilização Editora
+  year: 2008
+  note: 496 pages; out of print (listed "Esgotado" on WOOK by 2017) but the only pt-PT edition.
+  sources:
+    - "http://web.archive.org/web/20170819083949/https://www.wook.pt/livro/desaparecidos-tana-french/200489"
+
+- id: tana-french/the-likeness/civilizacao-2009-pt
+  workId: tana-french/the-likeness
+  isbn13: "9789722627627"
+  language: pt-PT
+  title: "A Semelhança"
+  format: paperback
+  publisher: Livraria Civilização Editora
+  year: 2009
+  note: 512 pages; out of print (listed "Esgotado" on WOOK by 2017) but the only pt-PT edition.
+  sources:
+    - "http://web.archive.org/web/20170819062828/https://www.wook.pt/livro/a-semelhanca-tana-french/1456889"
+
+- id: tana-french/faithful-place/civilizacao-2011-pt
+  workId: tana-french/faithful-place
+  isbn13: "9789722632843"
+  language: pt-PT
+  title: "Sombras do Passado"
+  translator: "Isabel Baptista"
+  format: paperback
+  publisher: Livraria Civilização Editora
+  year: 2011
+  note: >
+    1st ed., 485 pages; the BNP catalogue record states the original title
+    directly ("Tít. orig.: Faithful place"), the strongest confirmation of
+    any pairing in this file.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789722632843&profile=bn"
+
+- id: tana-french/the-secret-place/clube-do-autor-2015-pt
+  workId: tana-french/the-secret-place
+  isbn13: "9789897242229"
+  language: pt-PT
+  title: "O Sítio Secreto"
+  format: paperback
+  publisher: Clube do Autor
+  year: 2015
+  note: 492 pages; literal translation, and the synopsis (boy found dead in a girls' school garden, the "Sítio Secreto" noticeboard) matches directly.
+  sources:
+    - "http://web.archive.org/web/20200923035732/https://www.wook.pt/livro/o-sitio-secreto-tana-french/16540460"
+
+- id: tana-french/the-trespasser/clube-do-autor-2020-pt
+  workId: tana-french/the-trespasser
+  isbn13: "9789897244155"
+  language: pt-PT
+  title: "Intruso"
+  format: paperback
+  publisher: Clube do Autor
+  year: 2020
+  note: >
+    488 pages. Matched by synopsis, not title: a young woman found dead at
+    home with no forced entry and a table set for a romantic dinner that
+    never happened, a detective who recognises her - The Trespasser's plot,
+    not The Witch Elm's, despite both being Clube do Autor's only two Tana
+    French releases (see this file's header).
+  sources:
+    - "http://web.archive.org/web/20200807163000/https://www.wook.pt/livro/intruso-tana-french/24026037"
+
+- id: tana-french/in-the-woods/viking-2007-us
+  workId: tana-french/in-the-woods
+  isbn13: "9780670038602"
+  language: en
+  format: hardcover
+  publisher: Viking Adult
+  year: 2007
+  sources:
+    - "https://en.wikipedia.org/wiki/In_the_Woods"
+    - "https://openlibrary.org/isbn/9780670038602.json"
+
+- id: tana-french/in-the-woods/hodder-stoughton-2007-uk
+  workId: tana-french/in-the-woods
+  isbn13: "9780340924754"
+  language: en
+  publisher: Hodder & Stoughton
+  year: 2007
+  note: 496 pages; no confirmed binding (OpenLibrary's record for this ISBN carries no physical_format).
+  sources:
+    - "https://openlibrary.org/isbn/9780340924754.json"
+
+- id: tana-french/the-likeness/hachette-ireland-2008-ie
+  workId: tana-french/the-likeness
+  isbn13: "9780340937976"
+  language: en
+  publisher: Hachette Books Ireland
+  year: 2008
+  note: 553 pages, Dublin. OpenLibrary's record cites the book's own title-page verso ("A Hachette Books Ireland book") - the true first edition.
+  sources:
+    - "https://openlibrary.org/books/OL24054539M.json"
+    - "https://en.wikipedia.org/wiki/The_Likeness"
+
+- id: tana-french/the-likeness/penguin-2009-us
+  workId: tana-french/the-likeness
+  isbn13: "9780143115625"
+  language: en
+  format: paperback
+  publisher: Penguin
+  year: 2009
+  note: >
+    No US hardcover first edition (Viking, 2008) could be independently
+    verified with a real ISBN - OpenLibrary's only record for it carries no
+    identifiers at all - so this paperback, the earliest US printing with a
+    confirmed ISBN, is recorded instead.
+  sources:
+    - "https://openlibrary.org/isbn/9780143115625.json"
+
+- id: tana-french/faithful-place/viking-2010-us
+  workId: tana-french/faithful-place
+  isbn13: "9780670021871"
+  language: en
+  format: hardcover
+  publisher: Viking
+  year: 2010
+  note: OpenLibrary's own record for this ISBN is explicitly noted "U.S. edition."
+  sources:
+    - "https://openlibrary.org/isbn/9780670021871.json"
+
+- id: tana-french/faithful-place/hachette-ireland-2010-ie
+  workId: tana-french/faithful-place
+  isbn13: "9781444705089"
+  language: en
+  publisher: Hachette Ireland
+  year: 2010
+  note: 448 pages.
+  sources:
+    - "https://openlibrary.org/isbn/9781444705089.json"
+
+- id: tana-french/broken-harbor/hachette-ireland-2012-ie
+  workId: tana-french/broken-harbor
+  isbn13: "9781444705102"
+  language: en
+  publisher: Hachette Books Ireland
+  year: 2012
+  note: >
+    The original 2 July 2012 edition (see works.yaml's TITLE NOTE); no
+    `title` override needed since it matches the work's own title exactly.
+    OpenLibrary catalogues this identical ISBN under the imprint's earlier
+    name, "Hodder Headline Ireland" - the same publisher mid-rename, not a
+    second edition.
+  sources:
+    - "https://openlibrary.org/isbn/9781444705102.json"
+    - "https://en.wikipedia.org/wiki/Broken_Harbour"
+
+- id: tana-french/broken-harbor/viking-2012-us
+  workId: tana-french/broken-harbor
+  isbn13: "9780670023653"
+  language: en-US
+  title: "Broken Harbor"
+  format: hardcover
+  publisher: Viking
+  year: 2012
+  note: >
+    The US spelling, following the Irish/UK edition by three weeks (24 July
+    2012); OpenLibrary's own `full_title` field for this exact ISBN reads
+    "Broken Harbor", independently confirming the spelling difference
+    already established in works.yaml.
+  sources:
+    - "https://openlibrary.org/isbn/9780670023653.json"
+    - "https://en.wikipedia.org/wiki/Broken_Harbour"
+
+- id: tana-french/the-secret-place/viking-2014-us
+  workId: tana-french/the-secret-place
+  isbn13: "9780670026326"
+  language: en
+  format: hardcover
+  publisher: Viking
+  year: 2014
+  sources:
+    - "https://openlibrary.org/isbn/9780670026326.json"
+
+- id: tana-french/the-secret-place/hachette-ireland-2014-ie
+  workId: tana-french/the-secret-place
+  isbn13: "9781444796506"
+  language: en
+  publisher: Hachette Books Ireland
+  year: 2014
+  note: >
+    518 pages, London. OpenLibrary's record for this ISBN is merged with a
+    second ISBN co-listed under Hodder & Stoughton in the same edition entry
+    - a cataloguing artefact of one book sold under both a UK and an Irish
+    imprint name, not two distinct editions.
+  sources:
+    - "https://openlibrary.org/isbn/9781444796506.json"
+
+- id: tana-french/the-trespasser/hodder-stoughton-2016-uk
+  workId: tana-french/the-trespasser
+  isbn13: "9781444755626"
+  language: en
+  publisher: Hodder & Stoughton
+  year: 2016
+  note: 480 pages; no confirmed binding.
+  sources:
+    - "https://openlibrary.org/isbn/9781444755626.json"
+
+- id: tana-french/the-trespasser/viking-2016-us
+  workId: tana-french/the-trespasser
+  isbn13: "9780670026333"
+  language: en
+  publisher: Viking
+  year: 2016
+  note: 449 pages, 4 October 2016; no confirmed binding.
+  sources:
+    - "https://openlibrary.org/isbn/9780670026333.json"
+
+- id: tana-french/the-witch-elm/viking-2018-us
+  workId: tana-french/the-witch-elm
+  isbn13: "9780735224629"
+  language: en
+  publisher: Viking
+  year: 2018
+  note: >
+    No UK edition recorded: a UK "The Wych Elm" retitling is real (see the
+    work's own note) but no single OpenLibrary record gave a firm
+    publication year for a specific ISBN under that title without
+    contradicting another record, so no UK entry is recorded here.
+  sources:
+    - "https://openlibrary.org/isbn/9780735224629.json"
+    - "https://en.wikipedia.org/wiki/The_Witch_Elm"
+
+- id: tana-french/the-searcher/viking-2020-us
+  workId: tana-french/the-searcher
+  isbn13: "9780735224650"
+  language: en
+  format: hardcover
+  publisher: Viking
+  year: 2020
+  note: 6 October 2020, 464 pages.
+  sources:
+    - "https://openlibrary.org/isbn/9780735224650.json"
+    - "https://en.wikipedia.org/wiki/The_Searcher_(novel)"
+
+- id: tana-french/the-searcher/penguin-2020-uk
+  workId: tana-french/the-searcher
+  isbn13: "9780241459409"
+  language: en
+  publisher: Penguin Books, Limited
+  year: 2020
+  note: 400 pages.
+  sources:
+    - "https://openlibrary.org/isbn/9780241459409.json"
+
+- id: tana-french/the-hunter/viking-2024-us
+  workId: tana-french/the-hunter
+  isbn13: "9780593493434"
+  language: en
+  publisher: Viking
+  year: 2024
+  note: 5 March 2024; no confirmed binding.
+  sources:
+    - "https://openlibrary.org/isbn/9780593493434.json"
+    - "https://en.wikipedia.org/wiki/The_Hunter_(Tana_French_novel)"
+
+- id: tana-french/the-hunter/penguin-2024-uk
+  workId: tana-french/the-hunter
+  isbn13: "9781405963992"
+  language: en
+  format: ebook
+  publisher: Penguin
+  year: 2024
+  note: >
+    Only a UK ebook could be verified independently of the US print edition
+    - recorded as ebook because that is genuinely what this ISBN resolves
+    to, not a stand-in for an unfound UK print edition.
+  sources:
+    - "https://openlibrary.org/isbn/9781405963992.json"
+
+- id: tana-french/the-keeper/viking-2026-us
+  workId: tana-french/the-keeper
+  isbn13: "9780593493465"
+  language: en
+  format: hardcover
+  publisher: Viking
+  year: 2026
+  note: >
+    31 March 2026, 496 pages; audiobook read by Roger Clark. Too recent for
+    OpenLibrary to have catalogued (its ISBN lookup returns nothing yet);
+    sourced instead to Wikipedia's own detailed, day-precise infobox, and
+    the ISBN passes its check digit.
+  sources:
+    - "https://en.wikipedia.org/wiki/The_Keeper_(novel)"
+
+- id: tana-french/the-keeper/viking-2026-uk
+  workId: tana-french/the-keeper
+  isbn13: "9781405991414"
+  language: en
+  format: ebook
+  publisher: Viking Penguin
+  year: 2026
+  note: >
+    2 April 2026, London. Only a UK ebook could be verified independently of
+    the US print edition, the same gap as The Hunter above. OpenLibrary
+    itself carries the record (unlike the US ISBN above), which is this
+    entry's independent check.
+  sources:
+    - "https://openlibrary.org/isbn/9781405991414.json"
+    - "https://en.wikipedia.org/wiki/The_Keeper_(novel)"
