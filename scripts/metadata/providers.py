@@ -283,51 +283,48 @@ class Nasjonalbiblioteket(Provider):
         return out
 
 
-class Wook(Provider):
-    """WOOK, the Portuguese retail catalogue. The best pt-PT cover source there is.
+class PortoEditoraShop(Provider):
+    """Shared base for the Porto Editora group's Portuguese bookshops.
 
-    Authoritative for nothing bibliographically - it is a shop, not a library,
-    so BNP settles a disputed Portuguese date - but it is far and away the best
-    source for the **pt-PT published title, ISBN, publisher and exact release
-    date**, all of which OpenLibrary barely holds for Portugal.
+    WOOK and Bertrand run the same platform: the same product-URL shape, the
+    same `img.*` CDN with a `/1000x` size suffix, and - the part that makes
+    this worth scraping at all - a **JSON-LD `@type: Book` block** on every
+    product page carrying name, isbn, author, publisher, datePublished and
+    inLanguage.
 
-    **Its covers are WATERMARKED and must not be used as catalogue covers.**
-    Every image on `img.wook.pt` carries a diagonal "wook" mark in the
-    bottom-right corner. It is invisible in a thumbnail and obvious at
-    `/1000x`, which is precisely the "watermarked scrape" the visual-metadata
-    skill warns about - it passes every automated check and is not licensable.
-    `cover_url` is still returned because looking at the jacket is a good way
-    to confirm WHICH edition a record is, but it belongs in a candidate table,
-    never in `images.cover`.
+    Reading the structured data rather than the DOM is what keeps a scraper
+    alive: it is data the site publishes deliberately, so it survives a
+    redesign that would break every CSS selector.
 
-    This is a SCRAPER, and the first one here, so it is the worked example of
-    the contract. Two things make it a well-behaved one:
+    Both sit behind Cloudflare and **403 a User-Agent-only request**. They
+    serve `core.BROWSER_HEADERS` normally. That distinction cost real work:
+    earlier runs concluded "the live site 403s" and fell back to
+    web.archive.org, which serves a stale catalogue.
 
-    - **It reads JSON-LD, not the DOM.** WOOK publishes a `@type: Book` block
-      on every product page carrying name, isbn, author, publisher,
-      datePublished, inLanguage and image. That is structured data the site
-      exposes deliberately, so it survives redesigns that would break a
-      selector. Parse the markup only where there is no structured data.
-    - **It sends full browser headers** (`core.BROWSER_HEADERS`). WOOK is
-      behind Cloudflare and 403s a User-Agent-only request. That cost real
-      work: earlier runs concluded "the live site 403s" and fell back to
-      web.archive.org, which serves a stale catalogue.
+    Neither is a bibliographic authority - they are shops, so BNP settles a
+    disputed Portuguese date. They are the best available source for the
+    **pt-PT published title, ISBN, publisher and exact release date**, which
+    OpenLibrary barely holds for Portugal.
 
-    Covers are sized by a path suffix; `/1000x` is the useful maximum
-    (`/1500x` returns the same bytes). Higher resolution makes the watermark
-    MORE visible, not less, so there is no size that solves it.
-
-    Searching by ISBN does NOT work - the search falls back to unrelated
-    recommendations rather than returning nothing, which is worse than an empty
-    result because it looks like an answer. Search by author or title only.
+    Subclasses set `name`, `BASE`, `search_url()` and `covers_watermarked`.
     """
 
-    name = "wook"
     interval = 1.5  # somebody else's shop; do not hammer it
-    authoritative_for = "pt-PT covers and published titles; not a bibliographic authority"
-
-    BASE = "https://www.wook.pt"
+    BASE = ""
+    #: whether this shop stamps its own mark on cover images (see Wook)
+    covers_watermarked = False
     PRODUCT = re.compile(r'href="(/livro/[^"?#]+/\d+)"')
+
+    def search_url(self, term: str) -> str:
+        raise NotImplementedError
+
+    @staticmethod
+    def _name_of(v):
+        if isinstance(v, dict):
+            return v.get("name")
+        if isinstance(v, list):
+            return ", ".join(filter(None, (PortoEditoraShop._name_of(x) for x in v)))
+        return v
 
     def _product(self, path: str) -> MetaRecord | None:
         html = get_html(self.BASE + path, interval=self.interval)
@@ -345,45 +342,38 @@ class Wook(Provider):
         if not book:
             return None
 
-        def name_of(v):
-            if isinstance(v, dict):
-                return v.get("name")
-            if isinstance(v, list):
-                return ", ".join(filter(None, (name_of(x) for x in v)))
-            return v
-
         cover = book.get("image")
-        if cover and "/500x" not in cover:
-            cover = cover.rstrip("/") + "/1000x"   # the useful maximum
-        elif cover:
-            cover = cover.replace("/500x", "/1000x")
-        author = name_of(book.get("author"))
+        if cover:
+            cover = re.sub(r"/\d+x$", "", cover.rstrip("/")) + "/1000x"
+        author = self._name_of(book.get("author"))
+        # Bertrand prints the ISBN hyphenated, WOOK does not. Normalise, or
+        # every downstream check digit and prefix test sees a different shape.
+        isbn = "".join(c for c in str(book.get("isbn") or "") if c.isdigit()) or None
+        lang = str(book.get("inLanguage") or "")
         return MetaRecord(
             source=self.name,
             title=book.get("name") or "",
             source_url=self.BASE + path,
             authors=[a.strip() for a in str(author).split(",")] if author else [],
-            publisher=name_of(book.get("publisher")),
+            publisher=self._name_of(book.get("publisher")),
             published=book.get("datePublished"),
-            # WOOK writes the language as a Portuguese word ("Português"), not
-            # a code. Normalise rather than passing a display string on.
-            language="pt-PT" if str(book.get("inLanguage", "")).lower().startswith("portug") else book.get("inLanguage"),
-            isbn13=str(book.get("isbn") or "") or None,
+            # Both write the language as a Portuguese word, not a code.
+            language="pt-PT" if lang.lower().startswith("portug") else (lang or None),
+            isbn13=isbn,
             cover_url=cover,
-            identifiers={"wook": path.rsplit("/", 1)[-1]},
+            identifiers={self.name: path.rsplit("/", 1)[-1]},
             raw=book,
         )
 
     def by_author(self, author: str, limit: int = 40) -> list[MetaRecord]:
-        import urllib.parse
-        url = f"{self.BASE}/pesquisa?keyword={urllib.parse.quote(author)}"
-        html = get_html(url, interval=self.interval)
+        html = get_html(self.search_url(author), interval=self.interval)
         if not html:
             return []
-        seen, out = [], []
+        seen: list[str] = []
         for m in self.PRODUCT.finditer(html):
             if m.group(1) not in seen:
                 seen.append(m.group(1))
+        out = []
         for path in seen[:limit]:
             rec = self._product(path)
             if rec:
@@ -391,8 +381,58 @@ class Wook(Provider):
         return out
 
 
+class Wook(PortoEditoraShop):
+    """WOOK. Good for pt-PT records; **its covers are watermarked and unusable.**
+
+    Every `img.wook.pt` image carries a diagonal "wook" mark in the
+    bottom-right corner - invisible in a thumbnail, obvious at `/1000x`, and
+    worse the higher the resolution goes. That is precisely the "watermarked
+    scrape" the visual-metadata skill names: it passes every automated check
+    and is not licensable. `cover_url` is still returned, because looking at a
+    jacket is a good way to confirm WHICH edition a record is, but it belongs
+    in a candidate table and never in `images.cover`. Use Bertrand instead.
+
+    Searching WOOK **by ISBN does not work** - it falls back to unrelated
+    recommendations rather than returning nothing, which is worse than an empty
+    result because it looks like an answer. Search by author or title.
+    """
+
+    name = "wook"
+    BASE = "https://www.wook.pt"
+    covers_watermarked = True
+    authoritative_for = "pt-PT records; covers are watermarked, do not use them"
+
+    def search_url(self, term: str) -> str:
+        return f"{self.BASE}/pesquisa?keyword={urllib.parse.quote(term)}"
+
+
+class Bertrand(PortoEditoraShop):
+    """Bertrand. The same records as WOOK, and **clean, unwatermarked covers.**
+
+    This is the pt-PT cover source. Checked at `/1000x` (1000x1547) with the
+    corner cropped and inspected: no retailer mark anywhere on the image, where
+    the equivalent WOOK image is stamped.
+
+    Note the search path differs from WOOK's - `/pesquisa/<term>` rather than a
+    query parameter - which is why `search_url` is a method rather than a
+    format string on the base.
+
+    **Rights:** these are publisher jacket images on a retailer's CDN. Anything
+    written into `images.cover` from here needs `coverCredit` and `coverSource`
+    filled the same way any other sourced image does.
+    """
+
+    name = "bertrand"
+    BASE = "https://www.bertrand.pt"
+    covers_watermarked = False
+    authoritative_for = "pt-PT records AND clean covers; the pt cover source"
+
+    def search_url(self, term: str) -> str:
+        return f"{self.BASE}/pesquisa/{urllib.parse.quote(term)}"
+
+
 #: Registration order is preference order for callers that merge sources:
 #: batching and breadth first, then the gap-filler, then the narrow authority.
-ALL: list[Provider] = [OpenLibrary(), GoogleBooks(), Nasjonalbiblioteket(), Wook()]
+ALL: list[Provider] = [OpenLibrary(), GoogleBooks(), Nasjonalbiblioteket(), Bertrand(), Wook()]
 
 BY_NAME = {p.name: p for p in ALL}
