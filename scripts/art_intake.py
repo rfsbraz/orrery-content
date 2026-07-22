@@ -10,6 +10,10 @@ capped webp, write the `images.sketch` field on the right entry, and close the
 issue. One `gh` call lists everything pending, so the whole queue costs one
 round trip regardless of how deep it is.
 
+It writes files and stops there. `main` is protected and every content change
+goes through a pull request that Rodrigo merges himself, so this never commits
+and never pushes: branch, PR, wait.
+
 The `asset:` block in the issue body says exactly which file and entry the
 image belongs to. It is parsed, never inferred - an image with no block is
 refused rather than filed somewhere plausible, because a sketch written onto
@@ -197,7 +201,8 @@ def main() -> int:
             print("  NOT closing any issue - validate is red, fix before committing")
             print((v.stdout or "")[-1500:])
             return 1
-        print("  commit the change, then close the issues with:")
+        print("  main is protected: branch, open a PR, and let Rodrigo merge it.")
+        print("  Close the issues only AFTER that PR is merged:")
         for i in issues:
             print(f"    gh issue close {i['number']} --repo {REPO}")
 
