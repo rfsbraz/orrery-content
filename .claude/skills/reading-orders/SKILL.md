@@ -16,6 +16,26 @@ reader how to walk a shelf:
   most asked question about any large body of work, and a wrong answer is the
   one piece of content that can cost a reader the whole shelf.
 
+## A translation sequence is never a reading order
+
+**Do not weigh foreign release dates.** Orrery is for experiencing an author
+**as they were**, not as publishers handled them market by market. When a
+translation appeared somewhere is a fact about a licensing deal, and it has no
+bearing on how a reader should walk the shelf. Editions exist to help someone
+browse in their own language; they are not evidence about order.
+
+This is settled, so do not re-derive it per wing. The Jo Nesbo wing spent a
+stage establishing that the first two Harry Hole novels reached English twelve
+years after the rest - so English readers met the series at book three - and
+then correctly shipped no order for it. The sourcing question ("did anyone
+actually recommend starting at book three?") was the long way round to an
+answer the catalogue's purpose already gives: **no, because that is the
+publisher's sequence, not the author's.**
+
+The author's own publication order is the spine. It is what the derived default
+already is, in the author's own language, because `works.yaml` carries original
+titles and original first-publication years.
+
 This skill runs under **`docs/CURATION.md`** (the working contract, including
 the aura editorial standard) and does not repeat it. Read it first, then
 `docs/SCHEMA.md` (orders, `startHere`, the capabilities table). The `/author`
