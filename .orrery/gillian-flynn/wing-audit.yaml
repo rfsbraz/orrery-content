@@ -1,0 +1,141 @@
+stage: wing-audit
+slug: gillian-flynn
+status: >
+  Re-run by me, all green: validate.py --slug gillian-flynn (exit 0, zero
+  warnings here) and catalogue-wide, i18n_coverage.py (pt-PT 82/82),
+  event_density.py, aura_density.py, sync_skill_blocks.py, asset_audit.py.
+
+blocking:
+  - finding: A Portuguese global event reaches this American wing.
+    owner: event-resonance
+    evidence: >
+      exclude lists 9 ids. Re-deriving the app's filter (index.ts
+      relevantGlobalEvents; born 1971, died null, window 1971-9999) leaves
+      carnation-revolution-1974, "The end of Portuguese censorship", live on the
+      timeline; asset_audit agrees ("world 1/1"). The stage excluded
+      portugal-bailout-2011 as "Portuguese; she's American" and missed the other
+      Portuguese event in the same file. Fix: exclude it; aura -> 6.
+
+  - finding: muted-on-surface fails the AA floor, uniquely in the catalogue.
+    owner: curator (validate.py never opens theme.yaml)
+    evidence: >
+      muted #726d68 on surface #eae7e1 = 4.15:1, under 4.5:1 for body text;
+      every other wing sits 4.92-5.60. ink/bg fine at 13.04:1. Hits metadata.
+      About #6a655f clears it without changing the palette's character.
+
+missing:
+  - finding: The dark run press-archaeology reported closed has re-opened.
+    owner: press-archaeology
+    evidence: >
+      Its handoff claims "4 years (2016-2019), below the 5-year threshold";
+      aura_density now reports 5 yrs (2016-2020) and flags it. Press did not
+      regress - event-resonance later excluded the globals bridging the gap.
+      Low urgency: 0.64 aura/work is the densest wing here (next 0.60, King 0.17).
+
+  - finding: authorRole and contributionTitle are inert.
+    owner: curator / schema
+    evidence: >
+      grep of the app returns nothing for either and neither is on the Work
+      interface in types.ts, yet both apocrypha entries use them to hold the
+      "she did not write this book" distinction. Mitigated, not harmless: the
+      synopses say it outright in both languages and the McNamara jacket credits
+      "MICHELLE McNAMARA / With an introduction by GILLIAN FLYNN". Separately,
+      canonTier renders raw and untranslated (river.tsx:272, timeline.tsx:95),
+      so pt-PT readers see "apocrypha" - catalogue-wide, pre-existing.
+
+stale_fixed_in_place:
+  - >
+    Commit e6af493, no editorial judgement in any: works.yaml said "nine-work
+    wing" (eleven) and called the extended tier "five screen and television
+    works" (four screen plus Masks, a comic); franchise.yaml claimed no
+    events.yaml or editions.yaml exists and that river, companion and editions
+    "sit dark" (all three live - capabilities.ts activates river/companion on
+    timeline.length, editions on editions.length); authors/gillian-flynn.yaml
+    said events.yaml "does not exist yet". One root cause: comments written
+    before press-archaeology and editions landed, never re-read. Also
+    Jean-Marc Vallee gained the accent pt-PT already carried.
+
+stale_open:
+  - "eras-stage flags its own weakest call: Flynn's 2018 'I haven't published a book since Gone Girl' could read as her dividing her career (one era from 2012). It shipped none. I agree, but merging ratifies it."
+  - "editions-stage asks first-region vs current-in-print ISBNs. Unanswered."
+
+checked_and_clean:
+  spoilers: >
+    The wing's whole risk, and it holds. Read every reader-facing field in both
+    languages (11 synopses, 3 events, 3 life events, bio, description) and swept
+    all 8 files with an EN+PT reveal regex (faked, staged, diary, alive,
+    pregnant, framed, twist, guilty, assassino, gravida). Three hits, all
+    benign: "adorably flawed heroine" inside Flynn's TIME quote about women in
+    fiction generally, and "frames Gone Girl" meaning provides the frame. Zero
+    reveals. Gone Girl stops at a missing wife and a suspected husband in both
+    languages; The Grownup leaves the haunting open.
+  redactions: >
+    Both landed. Press's handoff records the original as an editor's "the ending
+    is a risk, there's no hero"; shipped prose reads "privately thought its
+    ending was a risk", base and overlay alike. The un-rewrapped long line in
+    the misogynist event is the second redaction's fingerprint.
+  overlay: >
+    pt-PT mirrors the base field for field, no drift, no restored phrasing - the
+    risk I was sent for. Quotes left in English with a stated reason. The author
+    overlay exists with bio and all three lifeEvents, so 82/82 hides nothing.
+  press_output: >
+    Present and complete despite committing nothing in its own worktree: 3
+    lifeEvents, 3 franchise events, bio, handoff. Checked every stage the same
+    way - all content files, both overlay dirs, 10 handoffs. Nothing else went
+    the same way.
+  covers: >
+    Downloaded all 5 and looked. Each is the right book, unwatermarked, matching
+    its comment: Sharp Objects debossed black with the Coben blurb; Dark Places
+    padlock and hasp; Gone Girl black/red with a bestseller band and NO film
+    sticker (the UK rejection held); The Grownup smoke on black; I'll Be Gone in
+    the Dark crediting McNamara with Flynn's introduction. All ~330x500 real
+    images, so the missing ?default=false did not bite, though it is unguarded
+    on re-fetch. Portrait and header 200.
+  screen_credits: >
+    All four verified at source, accurate in both languages: Gone Girl
+    "Screenplay by Gillian Flynn" alone; Widows "Flynn, Steve McQueen"; Sharp
+    Objects exactly three episodes (Dirt solo, Falling with Scott Brown, Milk
+    with Noxon), Noxon creator/showrunner, so the 2-to-3 correction is right;
+    Utopia eight "Written by Gillian Flynn" rows plus showrunner.
+  contributed_introductions: >
+    Neither reads as hers in either language: both synopses lead with the real
+    author and name Flynn's contribution last, both editions notes say "this is
+    X's book, not Flynn's", neither puts her in withAuthorIds.
+  theme: >
+    displayFace sourceSerif and signature rule are both in the app's registry
+    (theme.ts), so it renders as documented. Accent hue 318 is unclaimed
+    (nearest 202, 164, 148, 42); at 87% lightness / 12% saturation it is the only
+    cold light ground, against Christie's warm ivory (91%/45%).
+  empty_layers: >
+    eras and orders are earned: reasons-only headers rejecting named candidates
+    with sources. The novels-only order does fail the divergence test - three
+    different years, no tie to settle.
+  achievements: >
+    None, correctly. Without eras or orders, era_reader and order_complete
+    cannot exist, and franchise_complete would demand finishing McNamara's and
+    Graff's books - the unearnable-badge case.
+  field_consumption: "images.cover IS read (editions.ts:66 coverFor, ahead of the edition), so the covers reach the reader."
+
+not_applicable_not_absent:
+  - "6 of 11 works without a cover: 4 screen works and Masks have no ISBN; the 2025 Graff book has an OL record with no image."
+  - "No characters.yaml: nothing recurs across standalone novels."
+  - "No eras, orders, startHere or achievements: researched, argued, correctly declined."
+  - "No pt-PT editions: every edition is English, as the overlay states."
+  - "Zero spoilerAfter boundaries: not a skipped audit. The strategy was holding all aura above the turn rather than gating reveals, and nothing needs gating."
+
+curators_call:
+  - "The 4.15:1 contrast - a design call, but the one finding that degrades reading."
+  - "Whether authorRole/contributionTitle gain a consumer or leave the schema."
+  - "editions: first-region vs current-in-print."
+
+could_not_verify: >
+  render-check.mjs not run: the app builds from the orrery-content submodule,
+  this wing is not merged into it, and no server was running, so it would have
+  checked the wrong content. What I could close otherwise I did - images.cover
+  consumed, all 7 image URLs 200, capabilities re-derived from source. Run it
+  after merge, before deploy.
+
+tool_calls: >
+  70 total; 5 network-touching, all fetch.py batches covering 12 distinct URLs
+  (5 covers saved and viewed, 4 Wikipedia pages, 2 image checks, 1 cached).
+  No WebSearch, no browser.
