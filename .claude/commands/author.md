@@ -298,10 +298,12 @@ Integration is yours - do not delegate it:
    protected and every change to this repo goes through a PR that Rodrigo
    merges himself - never push to `main`, never self-merge, never enable
    auto-merge. The run report is the PR body.
-6. **After he merges**, bump the app's content submodule and keep the
-   deployment current. Work that merged but never deployed is the same
-   failure wearing a different hat, so check the running revision against
-   `main` rather than assuming the bump shipped.
+
+   **The PR is the end of the run.** Everything downstream of his merge is
+   automatic and is not yours to watch: dispatch, submodule bump, image
+   build, deployment. Do not tail workflow runs, do not compare running
+   revisions, do not report on propagation, and never call a change "live".
+   Describe what you did - "PR open" - and leave the rest to him.
 
 ## Verify the agents, not just the content
 

@@ -97,10 +97,9 @@ before final validation** rather than trusting an agent's completion notice.
    rendering with a cover URL nobody loaded, which is worse than no cover at
    all. See CURATION.md §5 for why this is a script and not a browser.
 5. Delete `.orrery/`, then **open a pull request and stop.** `main` is
-   protected; Rodrigo merges it. Never push to `main` or self-merge.
-6. **After he merges**, bump the app submodule and keep the deployment
-   current, verifying the running revision rather than assuming the bump
-   shipped.
+   protected; Rodrigo merges it. Never push to `main` or self-merge, and do
+   not follow the change downstream - the submodule bump and deploy are
+   automatic and not yours to watch or report on.
 
 ## Cadence
 
