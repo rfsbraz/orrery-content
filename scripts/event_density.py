@@ -10,6 +10,7 @@ Usage: python scripts/event_density.py
 import collections
 import glob
 import os
+import sys
 
 import yaml
 
@@ -60,4 +61,6 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # sys.exit(main()) so a non-zero return actually reaches the shell; bare
+    # main() swallowed it and every run looked successful.
+    sys.exit(main() or 0)

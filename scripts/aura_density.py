@@ -144,6 +144,17 @@ def main():
             }
         )
 
+    # A stage builds ONE wing, so it should read one row. Printing all nine
+    # buries its own number, invites it to tune against a neighbour's, and
+    # costs context for nothing. Pass a slug to scope it.
+    scope = next((a for a in sys.argv[1:] if not a.startswith("-")), None)
+    if scope:
+        known = {r["slug"] for r in rows}
+        if scope not in known:
+            print(f"no wing '{scope}' - known: {', '.join(sorted(known))}", file=sys.stderr)
+            return 2
+        rows = [r for r in rows if r["slug"] == scope]
+
     print("Aura density per wing (entries = franchise events + author life events + globals reaching the wing)\n")
     print(f"{'wing':<20}{'works':>6}{'aura':>6}{'per work':>10}{'span':>12}   longest dark run")
     flagged = []

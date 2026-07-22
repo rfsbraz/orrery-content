@@ -19,6 +19,8 @@ ERRORS = []
 # Non-fatal: things a curator should look at but which are legitimately a
 # judgement call (a posthumous or companion work may sit outside every era).
 WARNINGS = []
+# Set by --slug. Narrows the warning REPORT to one wing; never narrows checking.
+SCOPE = None
 INLINE_REF = re.compile(r"\[\[(?P<type>work|author|franchise|character):(?P<id>[^\]|]+)(?:\|[^\]]*)?\]\]")
 ORDER_TYPES = {"chronological-inuniverse", "author-recommended", "curated", "community", "official-publication"}
 IMPACTS = {"low", "med", "high"}
@@ -804,10 +806,23 @@ def main():
             pass
 
     if WARNINGS:
-        print(f"{len(WARNINGS)} warning(s) - not blocking, but a curator should look:\n")
-        for w in WARNINGS:
-            print("  ~", w)
-        print()
+        # Checking is always catalogue-wide: a broken reference crosses wings,
+        # so scoping the CHECK would hide real breakage. Only the REPORT
+        # narrows. A stage building one wing was reading ~78 warnings belonging
+        # to eight other wings, which buries its own and invites it to "fix" a
+        # wing nobody asked it to touch.
+        shown, hidden = WARNINGS, 0
+        if SCOPE:
+            shown = [w for w in WARNINGS if SCOPE in w]
+            hidden = len(WARNINGS) - len(shown)
+        if shown:
+            print(f"{len(shown)} warning(s) - not blocking, but a curator should look:\n")
+            for w in shown:
+                print("  ~", w)
+            print()
+        if hidden:
+            print(f"({hidden} warning(s) on other wings hidden by --slug {SCOPE}; "
+                  f"run without it to see the whole catalogue)\n")
 
     if ERRORS:
         print(f"FAILED - {len(ERRORS)} error(s):\n")
@@ -818,4 +833,10 @@ def main():
 
 
 if __name__ == "__main__":
+    # --slug <wing> reports only that wing's warnings. Errors and the catalogue
+    # summary are always global, because correctness is not per-wing.
+    if "--slug" in sys.argv:
+        i = sys.argv.index("--slug")
+        SCOPE = sys.argv[i + 1] if i + 1 < len(sys.argv) else None
+        del sys.argv[i:i + 2]
     main()

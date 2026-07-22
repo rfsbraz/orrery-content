@@ -46,6 +46,15 @@ at a time was. Three habits, before you start:
   cover, an edition, a synopsis, an era" directly (`--missing cover`). Then read
   in full the entries you are actually going to edit - the digest orients, it
   never substitutes for reading what you edit.
+- **Scope every check to your own wing.** You are building one author; a report
+  covering nine buries your own numbers, costs context for nothing, and tempts
+  you to tune against a neighbour's figures or "fix" a wing nobody asked you to
+  touch. Pass the slug:
+  `validate.py --slug <slug>` (checking stays catalogue-wide - a broken
+  reference crosses wings - only the warning list narrows),
+  `aura_density.py <slug>`, `wing_digest.py <slug>`, `asset_audit.py <slug>`,
+  `stage_plan.py <slug>`. `event_density.py` has no slug on purpose: it measures
+  the shared `global.yaml` budget, which is catalogue-wide by nature.
 - **Build the URL instead of searching for it.** Publisher product pages and
   catalogue records follow patterns. A search whose only output is a URL you
   could have constructed costs thousands of tokens for nothing. Search when you
