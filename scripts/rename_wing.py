@@ -71,7 +71,18 @@ def main() -> int:
     # Anything that is the slug but NOT one of the shapes above: prose.
     prose = re.compile(rf"\b{re.escape(old)}\b(?!/)", re.I)
 
-    changed, edits, prose_left = [], 0, 0
+    # URLs are masked out before any rule runs, and restored after.
+    #
+    # `<slug>/` is our id shape, but it is ALSO a path segment shape, and a
+    # source URL belongs to somebody else's namespace. The first run of this
+    # script rewrote four live links into 404s, among them
+    # `.../the-idea-of-the-cosmere/` -> `.../the-idea-of-the-brandon-sanderson/`
+    # and colinsmythe.co.uk/terry-pratchett/discworld/ -> /terry-pratchett/
+    # twice over. A dead source is worse than an unrenamed one: the citation
+    # still looks supported.
+    URL = re.compile(r"https?://\S+")
+
+    changed, edits, prose_left, urls_seen = [], 0, 0, 0
     targets = sorted(
         glob.glob(os.path.join(ROOT, "content", "**", "*.yaml"), recursive=True)
         + glob.glob(os.path.join(ROOT, "docs", "**", "*.md"), recursive=True)
@@ -81,9 +92,13 @@ def main() -> int:
             src = f.read()
         if old not in src.lower():
             continue
-        out = src
+        urls = URL.findall(src)
+        urls_seen += len(urls)
+        out = URL.sub("\x00URL\x00", src)
         for rx, sub in rules:
             out = rx.sub(sub, out)
+        it = iter(urls)
+        out = re.sub("\x00URL\x00", lambda _: next(it).replace("\\", "\\\\"), out)
         n = sum(1 for _ in re.finditer(re.escape(new), out)) - sum(
             1 for _ in re.finditer(re.escape(new), src)
         )
@@ -105,6 +120,7 @@ def main() -> int:
     print(f"\n  {edits} identifier(s) rewritten across {len(changed)} file(s)")
     print(f"  {prose_left} prose occurrence(s) of '{old}' left untouched (expected: "
           f"the fictional universe is named in synopses and notes)")
+    print(f"  {urls_seen} URL(s) held out of the rewrite entirely")
     if not a.apply:
         print("\n  dry run - nothing written. Re-run with --apply")
     return 0
