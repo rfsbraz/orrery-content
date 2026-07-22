@@ -1,0 +1,45 @@
+stage: translation-delta
+summary: >
+  Closed the gap completeness-delta opened: two apocrypha entries
+  (tana-french/down-these-green-streets, tana-french/books-to-die-for) had
+  no pt-PT synopsis. Added both to the existing overlay, translating prose
+  only. Neither anthology has a Portuguese edition, so both titles stay
+  English, matching the five tana-french novels already handled the same
+  way in this file; Donna Tartt's The Secret History, named inside the
+  books-to-die-for synopsis, has no verified pt-PT title in this catalogue
+  either and is left English for the same reason. Editor names (Declan
+  Burke, John Connolly, Fintan O'Toole) are proper nouns and untouched.
+  French's own three-word characterization "tired, lazy distinction" is
+  kept in her original English, following this wing's established
+  convention of leaving the author's own quoted phrasing untranslated
+  (events.yaml does the same with longer quotes); the surrounding frame is
+  Portuguese.
+  Register matches the existing ten: "urbanizações fantasma" reuses the
+  term already established for broken-harbor's synopsis (plural here, since
+  the anthology discusses the phenomenon rather than one estate); "romance
+  policial" reuses the established genre term from franchise/events/author
+  overlays rather than a literal "mistério e crime". No progressive
+  gerunds needed; no other Brazilian-Portuguese discriminators found on
+  re-read.
+  Did not touch the file's header comment or any of the ten existing
+  entries - this is a narrow delta, not a re-pass.
+produced:
+  changedFiles:
+    - content/i18n/pt-PT/franchises/tana-french/works.yaml
+  coverageBefore: "pt-PT 79/88; franchises/tana-french/works.yaml 10/12 (missing: synopsis)"
+  coverageAfter: "pt-PT 80/88; franchises/tana-french/works.yaml fully covered"
+forStages:
+  wing-audit: >
+    The wing is back to fully covered on its only locale. As with the full
+    translation pass, no app tree was available in this content-only
+    worktree to render and read the pages; verification stopped at
+    i18n_coverage.py and validate.py. A rendered check of the two new
+    synopses on the franchise page in pt-PT is still owed.
+openQuestions:
+  - >
+    Register call worth a native reviewer's eye: keeping "tired, lazy
+    distinction" in English rather than translating it. It is short enough
+    that a translated idiom ("distinção cansada e batida") would also read
+    naturally; English was chosen to match this wing's own precedent of
+    never translating French's directly quoted words, not because the
+    phrase is unusually hard to render.
