@@ -287,6 +287,124 @@ def key_chroma(im: Image.Image, key=CHROMA, tol: int = 90, soft: int = 60):
     return Image.fromarray(np.clip(out, 0, 255).astype(np.uint8), "RGBA"), keyed
 
 
+def dissolve_edge(im, slug_seed: str, depth: float = 0.04):
+    """Erode the artwork's edge into an uneven, ink-running-out fade.
+
+    THE EDGE IS A FILTER, NOT A PROMPT INSTRUCTION. This is the highest-leverage
+    cohesion decision in the pipeline and it took two finished wings to see it:
+    asking the model for a hand-torn or dissolving edge produces forty slightly
+    different edges, and "these don't feel like one publication" is mostly the
+    sum of those differences. OpenAI list layout and framing as a known weakness
+    of the model, so the edge was being decided by the least reliable part of
+    the process and then never corrected. Applied here it is identical in
+    character across the whole catalogue, by construction, for free.
+
+    It must not look like a filter, which rules out the obvious radial vignette:
+    a machine-even fade reads as Photoshop, and §5a's whole point is artwork
+    that dissolves the way ink runs out. So the alpha is modulated by smoothed
+    value noise at two frequencies before the ramp is applied, which makes the
+    boundary advance and retreat irregularly and at different rates on different
+    sides - the thing a prompt was being asked for and could not guarantee.
+
+    Seeded from the asset's own slug, so an asset's edge is stable across
+    re-runs (re-filing one does not silently change it) while no two assets get
+    the same one.
+
+    KNOWN COST: thin structures that reach close to the outside get eroded -
+    flower stems, wires, bare branches, a mast. That is inherent to an edge
+    treatment and not a bug, but it is a reason to compose with the subject
+    inside the frame rather than running off it (§5b already asks for a margin).
+    If an asset genuinely needs its filigree, `--no-dissolve` is there; using it
+    means that asset's edge no longer matches the catalogue, so it is a real
+    decision rather than an escape hatch.
+    """
+    import numpy as np
+    from PIL import ImageFilter
+
+    rng = np.random.default_rng(abs(hash(slug_seed)) % (2 ** 32))
+    a = np.asarray(im).astype(np.float32)
+    rgb, alpha = a[..., :3], a[..., 3]
+    h, w = alpha.shape
+
+    def noise(cells):
+        """Smoothed value noise, one value per `cells`-ish block, scaled up."""
+        gh, gw = max(2, h // cells), max(2, w // cells)
+        small = rng.random((gh, gw)).astype(np.float32)
+        img = Image.fromarray((small * 255).astype(np.uint8), "L").resize((w, h), Image.BICUBIC)
+        return np.asarray(img.filter(ImageFilter.GaussianBlur(3))).astype(np.float32) / 255.0
+
+    # Two frequencies: the coarse one decides which whole stretches of the edge
+    # pull back, the fine one breaks those stretches into grain. One frequency
+    # alone gives either a wobbly outline or a fuzzy one, never ink.
+    n = 0.6 * noise(max(8, min(h, w) // 12)) + 0.4 * noise(max(3, min(h, w) // 60))
+
+    # How far in the fade reaches, as a fraction of the smaller side, so a 1024
+    # event and a 1536 plate dissolve by the same visual amount.
+    reach = max(6.0, depth * min(h, w))
+
+    # Proximity to the OUTSIDE, not to any transparency. Blurring the alpha
+    # channel directly was the first attempt and it mauls the artwork: on a
+    # composition with gaps between its objects the blur never recovers to 1.0
+    # anywhere, so the noise term bites into the interior and the result is a
+    # blotchy, moth-eaten drawing rather than a dissolving edge. Verified by
+    # looking at it - `vhm-two-losses-2023` lost its flowers.
+    #
+    # The artwork's edge is where it meets the OUTSIDE specifically, which is
+    # the transparent region connected to the frame border. Holes between
+    # objects are interior and must not dissolve.
+    outside = _flood_from_border(alpha < 20)
+    prox = np.asarray(
+        Image.fromarray((outside * 255).astype(np.uint8), "L").filter(ImageFilter.GaussianBlur(reach))
+    ).astype(np.float32) / 255.0
+
+    # In the deep interior prox is ~0, so the numerator is at least 0.55 and the
+    # ramp clips to 1 no matter what the noise says. That is the invariant that
+    # keeps this an edge treatment: the noise can only ever act where prox has
+    # already risen, which is within `reach` of the outside.
+    fade = np.clip((0.55 + 0.40 * n - prox) / 0.30, 0.0, 1.0)
+    out = np.stack([rgb[..., 0], rgb[..., 1], rgb[..., 2], alpha * fade], axis=-1)
+    return Image.fromarray(np.clip(out, 0, 255).astype(np.uint8), "RGBA")
+
+
+def neutralise(im, strength: float = 1.0):
+    """Pull the paper white point back to neutral.
+
+    gpt-image output skews warm - widely reported, not officially acknowledged,
+    and visible in this catalogue: the Palahniuk wing's `theme.art` asks for
+    "cold white or pale institutional grey stock, not warm paper" and four of
+    its assets came back warm cream anyway. The prompt was not being ignored;
+    the model's own bias was overriding it, and no amount of rewording fixes a
+    global cast.
+
+    So it is corrected deterministically. The brightest opaque decile is the
+    paper, and a per-channel gain that makes THAT neutral leaves the drawing's
+    own colour relationships intact while removing the cast sitting over all of
+    them. `strength` scales the correction, since a warm wing (umber, terracotta)
+    is meant to be warm and only wants the cast taken off, not the character.
+    """
+    import numpy as np
+
+    a = np.asarray(im).astype(np.float32)
+    rgb, alpha = a[..., :3], a[..., 3]
+    opaque = alpha > 200
+    if not opaque.any():
+        return im
+
+    lum = 0.2126 * rgb[..., 0] + 0.7152 * rgb[..., 1] + 0.0722 * rgb[..., 2]
+    cut = np.percentile(lum[opaque], 90)
+    paper = opaque & (lum >= cut)
+    if paper.sum() < 64:
+        return im
+
+    mean = rgb[paper].mean(axis=0)
+    target = mean.mean()
+    gain = np.where(mean > 1.0, target / np.maximum(mean, 1.0), 1.0)
+    gain = 1.0 + (gain - 1.0) * strength
+
+    out = np.concatenate([np.clip(rgb * gain, 0, 255), alpha[..., None]], axis=-1)
+    return Image.fromarray(out.astype(np.uint8), "RGBA"), mean, gain
+
+
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("image")
@@ -301,6 +419,12 @@ def main() -> int:
                    help="last resort: rebuild alpha from a flattened checkerboard (lossy)")
     p.add_argument("--force-opaque", action="store_true",
                    help="file an image with no alpha anyway (era plates only)")
+    p.add_argument("--no-dissolve", action="store_true",
+                   help="skip the edge dissolve (VISUAL.md §5a applies it by default)")
+    p.add_argument("--neutral", nargs="?", type=float, const=1.0, default=None,
+                   metavar="STRENGTH",
+                   help="correct the model's warm cast toward a neutral paper "
+                        "white point; 1.0 for a cold wing, ~0.4 for a warm one")
     a = p.parse_args()
 
     if not os.path.exists(a.image):
@@ -362,6 +486,18 @@ def main() -> int:
             im = im.crop(box)
             print(f"trim: {before[0]}x{before[1]} -> {im.size[0]}x{im.size[1]} "
                   f"(dropped empty margins)")
+
+    # Order matters. Neutralise before dissolving: the white-point sample wants
+    # the artwork's real edge, not one already eaten into by the fade.
+    if a.neutral is not None and im.mode == "RGBA":
+        im, mean, gain = neutralise(im, a.neutral)
+        print(f"neutral: paper was rgb({mean[0]:.0f},{mean[1]:.0f},{mean[2]:.0f}), "
+              f"gain ({gain[0]:.3f},{gain[1]:.3f},{gain[2]:.3f}) at strength {a.neutral}")
+
+    if not a.no_dissolve and im.mode == "RGBA":
+        im = dissolve_edge(im, a.entity_id)
+        print("dissolve: edge eroded with seeded two-frequency noise "
+              "(deterministic per entity-id; the same asset always gets the same edge)")
 
     rel = os.path.join("assets", a.slug, f"{a.entity_id}.webp")
     out = os.path.join(ROOT, rel)
