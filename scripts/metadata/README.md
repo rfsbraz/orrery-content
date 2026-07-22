@@ -80,6 +80,8 @@ stack add a source without touching its callers. The difference: ours must
 | `nb.no` | Norwegian first editions | legal deposit, so silence is evidence |
 | `bertrand` | pt-PT records **and clean covers** | scraper; **the pt-PT cover source** |
 | `wook` | pt-PT titles, ISBNs, publishers, dates | scraper; **covers are watermarked, do not use them** |
+| `almadoslivros` | its own pt-PT list | Shopify JSON, no scraping, clean covers |
+| `presenca` | its own pt-PT list | Shopify JSON, no scraping, clean covers |
 
 ### Google Books needs a key
 
@@ -147,6 +149,52 @@ Notes worth copying into the next scraper:
 - Searching **by ISBN does not work** - it falls back to unrelated
   recommendations rather than returning nothing, which is worse than an empty
   result because it looks like an answer. Search by author or title.
+
+## Shopify bookshops - the cheapest source in the stack
+
+Portuguese publishing has a long tail of small houses on Shopify, and they all
+speak the same three endpoints, so **one class covers every one of them**:
+
+```
+/search/suggest.json?q=...&resources[type]=product   discovery
+/products/<handle>.json                              the full record
+/products.json?limit=250&page=N                      the whole catalogue
+```
+
+No HTML, no selectors, nothing to break on a redesign. `barcode` (usually
+`sku` too) on the first variant is the **ISBN-13**, which is what makes these
+worth having. Covers are the publisher's own CDN uploads, with no retailer
+watermark.
+
+Adding another is a subclass with three attributes:
+
+```python
+class MyShop(ShopifyShop):
+    name = "myshop"
+    BASE = "https://example.pt"
+    vendor_is = "publisher"   # or "author", or None
+```
+
+Two traps found by checking rather than assuming:
+
+- **`vendor` is not reliably the publisher.** Alma dos Livros puts the AUTHOR
+  there ("Robert Bryndza"); Presença puts the IMPRINT ("Marcador"). Mapping it
+  blindly would make the catalogue assert something the source never said, so
+  each shop declares `vendor_is` and anything else is left empty.
+- **`/products.json` omits `barcode`.** The listing is good for discovering
+  handles and useless for ISBNs; fetch the per-product `.json` for those.
+
+### Sources that refuse
+
+**FNAC (`fnac.pt`) and Worten (`worten.pt`) both return 403**, Worten
+explicitly from Cloudflare, and neither yields to `BROWSER_HEADERS` the way
+WOOK and Bertrand do. Not pursued: beating a bot wall is maintenance forever,
+and per `docs/SCHEMA.md` editions are a browsing convenience rather than
+something the catalogue's substance depends on.
+
+**Almedina (`almedina.net`) fetches fine but publishes no JSON-LD** - it would
+need real DOM parsing, which is the fragile kind. Left unbuilt; Bertrand and
+the Shopify shops already cover the pt-PT market well.
 
 ## Adding a source
 

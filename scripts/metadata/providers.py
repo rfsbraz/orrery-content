@@ -431,8 +431,114 @@ class Bertrand(PortoEditoraShop):
         return f"{self.BASE}/pesquisa/{urllib.parse.quote(term)}"
 
 
+class ShopifyShop(Provider):
+    """Any Shopify bookshop. No scraping at all - Shopify exposes JSON.
+
+    Portuguese publishing has a long tail of small houses on Shopify, and they
+    all speak the same three endpoints, so one class covers every one of them:
+
+        /search/suggest.json?q=...&resources[type]=product   discovery
+        /products/<handle>.json                              the full record
+        /products.json?limit=250&page=N                      the whole catalogue
+
+    This is the cheapest source in the stack: no HTML, no selectors, nothing to
+    break on a redesign. `barcode` (and usually `sku`) on the first variant is
+    the **ISBN-13**, which is what makes these shops worth having at all.
+
+    **`vendor` is NOT reliably the publisher.** almadoslivros puts the AUTHOR
+    there ("Robert Bryndza"), Presença puts the IMPRINT ("Presença"). Mapping
+    it blindly would make the catalogue assert something the source does not
+    say, so each shop declares `vendor_is` and anything else stays empty.
+
+    **The catalogue listing omits `barcode`.** `/products.json` is fine for
+    discovering handles and useless for ISBNs; fetch the per-product `.json`
+    for those.
+
+    Covers come from the Shopify CDN and are the publisher's own uploads - no
+    retailer watermark, unlike WOOK. Checked at full size on almadoslivros
+    (914x1386, clean; the "alma dos livros" mark on the jacket is the imprint's
+    own, printed on the book).
+
+    To add another Shopify bookshop: subclass, set `name`, `BASE` and
+    `vendor_is`. Nothing else.
+    """
+
+    interval = 1.0
+    BASE = ""
+    #: what this shop puts in `vendor`: "author", "publisher", or None if unknown
+    vendor_is: str | None = None
+
+    def _record(self, product: dict, handle: str) -> MetaRecord | None:
+        if not product.get("title"):
+            return None
+        variants = product.get("variants") or []
+        isbn = None
+        for v in variants:
+            cand = str(v.get("barcode") or v.get("sku") or "")
+            digits = "".join(c for c in cand if c.isdigit())
+            if len(digits) == 13:
+                isbn = digits
+                break
+        images = product.get("images") or []
+        vendor = product.get("vendor")
+        return MetaRecord(
+            source=self.name,
+            title=product.get("title"),
+            source_url=f"{self.BASE}/products/{handle}",
+            authors=[vendor] if (vendor and self.vendor_is == "author") else [],
+            publisher=vendor if self.vendor_is == "publisher" else None,
+            published=(product.get("published_at") or "")[:10] or None,
+            language="pt-PT",   # these are Portuguese-market shops
+            isbn13=isbn,
+            cover_url=(images[0].get("src") if images else None),
+            identifiers={self.name: handle},
+            raw=product,
+        )
+
+    def _by_handle(self, handle: str) -> MetaRecord | None:
+        d = get_json(f"{self.BASE}/products/{handle}.json", interval=self.interval)
+        if not isinstance(d, dict):
+            return None
+        return self._record(d.get("product") or {}, handle)
+
+    def by_author(self, author: str, limit: int = 20) -> list[MetaRecord]:
+        url = (f"{self.BASE}/search/suggest.json?q={urllib.parse.quote(author)}"
+               f"&resources[type]=product&resources[limit]={min(limit, 10)}")
+        d = get_json(url, interval=self.interval) or {}
+        prods = (((d.get("resources") or {}).get("results") or {}).get("products")) or []
+        out = []
+        for p in prods[:limit]:
+            handle = p.get("handle")
+            if not handle:
+                continue
+            rec = self._by_handle(handle)
+            if rec:
+                out.append(rec)
+        return out
+
+
+class AlmaDosLivros(ShopifyShop):
+    """Alma dos Livros. Shopify; `vendor` holds the AUTHOR."""
+
+    name = "almadoslivros"
+    BASE = "https://almadoslivros.pt"
+    vendor_is = "author"
+    authoritative_for = "its own pt-PT list; clean covers"
+
+
+class Presenca(ShopifyShop):
+    """Editorial Presença. Shopify; `vendor` holds the IMPRINT."""
+
+    name = "presenca"
+    BASE = "https://www.presenca.pt"
+    vendor_is = "publisher"
+    authoritative_for = "its own pt-PT list; clean covers"
+
+
+
 #: Registration order is preference order for callers that merge sources:
 #: batching and breadth first, then the gap-filler, then the narrow authority.
-ALL: list[Provider] = [OpenLibrary(), GoogleBooks(), Nasjonalbiblioteket(), Bertrand(), Wook()]
+ALL: list[Provider] = [OpenLibrary(), GoogleBooks(), Nasjonalbiblioteket(),
+                       Bertrand(), Wook(), AlmaDosLivros(), Presenca()]
 
 BY_NAME = {p.name: p for p in ALL}
