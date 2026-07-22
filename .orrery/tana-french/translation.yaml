@@ -1,0 +1,81 @@
+stage: translation
+summary: >
+  Wrote the wing's first pt-PT overlay: franchise.yaml (description),
+  works.yaml (10 synopses), eras.yaml (2 titles/descriptions/themes),
+  events.yaml (6 titles/descriptions), characters.yaml (6 descriptions), and
+  authors/tana-french.yaml (bio + 3 lifeEvents). editions.yaml is never
+  overlaid per SCHEMA.md; orders.yaml is empty in the base and carries no
+  prose; theme.yaml's art block is not reader-facing. None of the three got
+  an overlay file.
+  Published Portuguese titles, from this wing's own editions.yaml, are the
+  display text of every [[work:...]] reference to the five works with a real
+  pt-PT edition - In the Woods -> Desaparecidos, The Likeness -> A
+  Semelhança, Faithful Place -> Sombras do Passado, The Secret Place -> O
+  Sítio Secreto, The Trespasser -> Intruso - matching the established
+  pattern (stephen-king/the-stand -> A Dança da Morte). The other five works
+  (Broken Harbour, The Witch Elm, The Searcher, The Hunter, The Keeper) have
+  no pt-PT edition, so every reference to them, inline or as a work's own
+  title, keeps the English.
+  Carried the spoiler-audit rewrites forward rather than translating from an
+  older reading: Stephen Moran's description stops at "ainda à espera da sua
+  oportunidade na Brigada de Homicídios" (still waiting for his shot),
+  matching The Secret Place's own jacket rather than what The Trespasser
+  resolves; The Searcher's synopsis keeps the recruiting child unnamed and
+  ungendered ("uma criança da zona" rather than rapaz/rapariga - "criança"
+  reads as neutral in Portuguese regardless of the referent's gender); the
+  elided quote in french-hunter-trilogy-decision-2023 keeps its ellipsis,
+  nothing restored. Rob Ryan's and Frank Mackey's appearsIn notes are
+  curator-only per-appearance fields and are never translated, so neither
+  needed a pt-PT mirror.
+  Direct quotes from French and third parties (Barnes & Noble Review, Irish
+  Times, CrimeReads, TODAY.com, Cultured, The Independent) stay in the
+  English actually spoken; only the framing prose is translated, matching
+  gillian-flynn/events.yaml's convention.
+  Register: pt-PT throughout, grounded in the wing's own published
+  Portuguese jacket copy fetched fresh this pass (WOOK archived pages for
+  Desaparecidos, A Semelhança, O Sítio Secreto, Intruso) - "detetive" (not
+  "detective"), "Brigada de Homicídios" for Murder Squad, "urbanização
+  fantasma" for ghost estate, "panelinhas" for cliques, "beco sem saída" for
+  cul-de-sac (a literal match, Faithful Place's own street). A grep sweep of
+  the skill's Brazilian-Portuguese discriminator list found nothing.
+  validate.py --slug tana-french: 0 new errors, 0 new warnings, after fixing
+  one self-introduced pipeline-narration warning (an events.yaml comment
+  naming "spoiler-audit" directly; reworded to describe the data instead).
+  i18n_coverage.py: 74/88 -> 80/88 files fully covered; all six of this
+  wing's files move from MISSING to fully covered; the eight PARTIAL files
+  belonging to other wings are unchanged - no regression.
+produced:
+  changedFiles:
+    - content/i18n/pt-PT/franchises/tana-french/franchise.yaml
+    - content/i18n/pt-PT/franchises/tana-french/works.yaml
+    - content/i18n/pt-PT/franchises/tana-french/eras.yaml
+    - content/i18n/pt-PT/franchises/tana-french/events.yaml
+    - content/i18n/pt-PT/franchises/tana-french/characters.yaml
+    - content/i18n/pt-PT/authors/tana-french.yaml
+  coverageBefore: "74/88 files fully covered (pt-PT); tana-french: 6 files MISSING"
+  coverageAfter: "80/88 files fully covered (pt-PT); tana-french: 6/6 files fully covered, no regression elsewhere"
+forStages:
+  wing-audit: >
+    This is the wing's only locale and it is now fully covered by
+    i18n_coverage.py's own count. No app rendering was available in this
+    content-only worktree (no render-check script, no dev server, no app
+    tree) - verification stopped at validate.py and i18n_coverage.py, the
+    same ceiling every earlier stage in this wing worked under. A rendered
+    read of a franchise page, an author page and one account-only surface in
+    pt-PT, per the translation skill's own "Verification" section, is still
+    owed by whoever next has the app checked out.
+openQuestions:
+  - >
+    Register calls least certain, flagged for a native pt-PT reviewer: (1)
+    "assessor de imprensa" for Toby Hennessy's "art-gallery publicist"; (2)
+    "trabalhos de voz" for "voiceover" acting, chosen over "dobragens"
+    because the source never specifies dubbing versus narration; (3)
+    "lugarejo" used throughout for "townland", an Irish land-division term
+    with no exact Portuguese equivalent, picked for brevity; (4) "lesão
+    cerebral" for the brain injury in The Witch Elm's synopsis, a plain
+    clinical rendering with no pt-PT jacket to check it against.
+  - >
+    The Witch Elm has no published pt-PT title and sits outside both eras;
+    its prose translates cleanly on its own, but nothing here changes that
+    it renders with an English title and no era plate in every locale, pt-PT
+    included.
