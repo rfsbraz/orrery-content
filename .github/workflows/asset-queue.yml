@@ -1,0 +1,183 @@
+name: Asset queue
+
+# Keep the art backlog on GitHub matching what the content actually needs.
+#
+# Merging a wing creates real work that nobody has written down: a new author
+# arrives with era plates, life events and franchise events, and every one of
+# them needs a prompt and then an image. That queue used to be filed by running
+# `issue_sync.py --apply` by hand, which means it was filed when someone
+# remembered - and the point of a tracker is to be the thing you do not have to
+# remember.
+#
+# The queue is DERIVED, never hand-kept. `asset_audit.py` computes what the
+# content needs; `issue_sync.py` makes GitHub match it, in both directions: a
+# missing asset gets an issue filed at `asset:needs-prompt`, and an asset that
+# has since been drawn gets its issue closed. An issue that disagrees with the
+# repo is simply wrong, and this run corrects it.
+#
+# Idempotent by construction: every issue body carries a `key:` line stable for
+# the life of the asset, and existing issues are fetched in one call and matched
+# locally. Running this twice files nothing the second time.
+#
+# SCOPED TO THE WINGS THE MERGE ACTUALLY TOUCHED, deliberately. `issue_sync.py`
+# with no argument sweeps the whole catalogue, and the catalogue carries a large
+# standing backlog of un-drawn assets on wings nobody is working on - a blanket
+# sweep would open them all at once on a public repo, as a side effect of an
+# unrelated merge. Filing that backlog is a real decision and it belongs to a
+# human: run this workflow manually (`workflow_dispatch`) to sweep everything.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/**"
+      - "assets/**"
+      - "scripts/asset_audit.py"
+      - "scripts/issue_sync.py"
+      - ".github/workflows/asset-queue.yml"
+  workflow_dispatch:
+    inputs:
+      wing:
+        description: "Wing slug to sync, or blank to sweep the whole catalogue"
+        required: false
+        default: ""
+
+permissions:
+  issues: write
+  contents: read
+
+concurrency:
+  # Never two at once: both would read the same "already tracked" set before
+  # either had filed anything, and file every issue twice. Not
+  # cancel-in-progress - a half-cancelled run leaves a partial queue, and
+  # letting each finish costs nothing because the second is a no-op.
+  group: asset-queue
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Need the previous commit to see which wings the push touched.
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+
+      - name: Work out which wings to sync
+        id: scope
+        env:
+          BEFORE: ${{ github.event.before }}
+          SHA: ${{ github.sha }}
+          DISPATCH_WING: ${{ github.event.inputs.wing }}
+        run: |
+          set -euo pipefail
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            # A human asked for this explicitly, so a blank input means the
+            # whole catalogue and that is a deliberate choice, not a default.
+            echo "wings=${DISPATCH_WING}" >> "$GITHUB_OUTPUT"
+            echo "sweep=$([ -z "$DISPATCH_WING" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # A brand-new branch or a force-push gives an all-zero or unreachable
+          # `before`. Do not guess a diff from it: fall back to no wings and say
+          # so, rather than silently syncing nothing while looking successful.
+          if ! git rev-parse --quiet --verify "${BEFORE}^{commit}" >/dev/null 2>&1; then
+            echo "::notice::No usable previous commit; run this workflow manually to reconcile."
+            echo "wings=" >> "$GITHUB_OUTPUT"
+            echo "sweep=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          CHANGED=$(git diff --name-only "$BEFORE" "$SHA" || true)
+
+          # A shared file changes what every wing carries, so it earns a full
+          # sweep even on a push.
+          if printf '%s\n' "$CHANGED" | grep -qE '^(content/events/global\.yaml|content/authors/|scripts/(asset_audit|issue_sync)\.py)'; then
+            echo "::notice::A shared file changed; sweeping every wing."
+            echo "wings=" >> "$GITHUB_OUTPUT"
+            echo "sweep=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          WINGS=$(printf '%s\n' "$CHANGED" \
+            | sed -n -E 's#^(content/franchises|assets)/([^/]+)/.*#\2#p' \
+            | sort -u | tr '\n' ' ')
+          echo "wings=${WINGS}" >> "$GITHUB_OUTPUT"
+          echo "sweep=false" >> "$GITHUB_OUTPUT"
+          echo "Wings touched: ${WINGS:-(none)}"
+
+      - name: Sync the queue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WINGS: ${{ steps.scope.outputs.wings }}
+          SWEEP: ${{ steps.scope.outputs.sweep }}
+        run: |
+          set -euo pipefail
+
+          # A cap, because this opens issues on a public repo and one bad
+          # content change should not be able to open hundreds. It is not a
+          # silent cap: if it bites, the run says so, and the remainder lands
+          # on the next run because the sync is idempotent and simply resumes.
+          LIMIT=60
+
+          if [ "$SWEEP" != "true" ] && [ -z "${WINGS// /}" ]; then
+            echo "No wing content changed; nothing to sync." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          # Empty TARGETS means one pass with no wing argument, which is the
+          # whole-catalogue sweep.
+          TARGETS="$WINGS"
+          [ "$SWEEP" = "true" ] && TARGETS=""
+
+          run_one() {
+            local wing="${1:-}"
+            local label="${wing:-<whole catalogue>}"
+            echo "## ${label}" >> "$GITHUB_STEP_SUMMARY"
+
+            # Plan first, so the summary records what was wanted even when the
+            # cap trims what was filed.
+            python scripts/issue_sync.py ${wing:+$wing} > /tmp/plan.txt
+            cat /tmp/plan.txt
+
+            local wanted
+            wanted=$(grep -oE '^[[:space:]]+[0-9]+ to file' /tmp/plan.txt \
+              | grep -oE '[0-9]+' | head -1 || echo 0)
+            if [ "${wanted:-0}" -gt "$LIMIT" ]; then
+              echo "::warning::${label}: ${wanted} issues wanted, filing ${LIMIT}. Re-run to continue."
+              echo "**Capped:** ${wanted} wanted, ${LIMIT} filed. Re-run to continue." >> "$GITHUB_STEP_SUMMARY"
+            fi
+
+            # A wing with no `theme.art` has no visual law, so nothing can be
+            # drawn and no prompt can be written. Real state, and it should be
+            # visible here rather than looking like an empty queue.
+            if grep -q 'blocked  ' /tmp/plan.txt; then
+              grep 'blocked  ' /tmp/plan.txt >> "$GITHUB_STEP_SUMMARY"
+              echo "::notice::${label} needs theme.art before any asset can be queued (run the visual-language stage)."
+            fi
+
+            python scripts/issue_sync.py ${wing:+$wing} --apply --limit "$LIMIT" > /tmp/done.txt
+            cat /tmp/done.txt
+            {
+              echo '```'
+              cat /tmp/done.txt
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+          }
+
+          if [ -z "$TARGETS" ]; then
+            run_one
+          else
+            for w in $TARGETS; do
+              # `assets/global/` is catalogue-wide, not a wing, and there is no
+              # `content/franchises/global` for the audit to read.
+              [ "$w" = "global" ] && continue
+              [ -d "content/franchises/$w" ] || { echo "skip '$w': not a wing"; continue; }
+              run_one "$w"
+            done
+          fi
