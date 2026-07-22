@@ -1,0 +1,101 @@
+name: Source link check
+
+# Canon is only as good as its citations, and citations rot quietly. A dead
+# source still looks like a source: the claim keeps its footnote, the validator
+# stays green, and nobody notices until someone clicks.
+#
+# Four live URLs were silently turned into 404s by a slug rename on
+# 2026-07-22 and found by accident. This runs weekly so the next four are found
+# on purpose.
+#
+# Weekly rather than per-PR on purpose: it is slow, it depends on other
+# people's servers, and a flaky third-party host must never be able to block a
+# content merge.
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: link-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+
+      - name: Collect every source URL
+        run: |
+          python - <<'PY'
+          import glob, re, os
+          urls = set()
+          for p in glob.glob("content/**/*.yaml", recursive=True):
+              for m in re.finditer(r"https?://[^\s\"'\]<>)]+", open(p, encoding="utf-8").read()):
+                  u = m.group(0).rstrip(".,;")
+                  # Cover images and portraits are checked by the app's render
+                  # check against a running build; this is about citations.
+                  if "covers.openlibrary.org" in u or "upload.wikimedia.org" in u:
+                      continue
+                  urls.add(u)
+          os.makedirs(".cache", exist_ok=True)
+          open("/tmp/urls.txt", "w", encoding="utf-8").write("\n".join(sorted(urls)))
+          print(f"{len(urls)} source URLs to check")
+          PY
+
+      - name: Check them
+        id: check
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          # --workers 2: archive.org starts refusing connections above that,
+          # and a rate-limit refusal is indistinguishable from a dead link.
+          python scripts/fetch.py --check --workers 2 $(cat /tmp/urls.txt | tr '\n' ' ') \
+            > /tmp/result.txt 2>&1
+          echo "rc=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Report
+        run: |
+          {
+            echo "### Source link check"
+            echo '```'
+            tail -40 /tmp/result.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open or update an issue when links are dead
+        if: steps.check.outputs.rc != 'rc=0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          dead=$(grep -E "^\[(4|5)[0-9]{2}\]|^\[---\]" /tmp/result.txt || true)
+          [ -n "$dead" ] || exit 0
+
+          body=$(printf '%s\n' \
+            "The weekly check found source URLs that no longer resolve." \
+            "" \
+            "A dead citation is worse than a missing one: the claim still looks supported." \
+            "Fix by finding the moved page, replacing it with an archive.org snapshot, or" \
+            "removing the claim if it cannot be re-sourced." \
+            "" \
+            '```' "$dead" '```')
+
+          existing=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open \
+                       --search "Dead source links in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --repo "$GITHUB_REPOSITORY" --body "$body"
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" \
+              --title "Dead source links" --label "content:error" --body "$body"
+          fi
