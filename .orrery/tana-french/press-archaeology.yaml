@@ -1,0 +1,102 @@
+stage: press-archaeology
+summary: >
+  Closed both of this wing's dark runs by creating
+  content/franchises/tana-french/events.yaml (did not exist before this
+  stage) with six franchise events, none touching content/authors/tana-
+  french.yaml. The flagged 2012-2019 run (8 years) is closed with four
+  entries: the choice of Broken Harbour's narrator growing directly out of
+  Ireland's ghost estates (2012, Barnes & Noble Review interview, her own
+  words); the research encounter with her police source that gave The
+  Trespasser its premise (2016, an Irish Times piece bylined by French
+  herself); the structural break that produced the standalone Witch Elm
+  (2018, CrimeReads interview, her own words); and the Starz/BBC/RTE
+  television adaptation of the first two novels (2019, Deadline + Irish
+  Times + Wikipedia for the broadcast facts). Re-running aura_density.py
+  after those four surfaced a second run the scaffold had not flagged,
+  2021-2026 (6 years, the Cal Hooper trilogy's own era, previously broken
+  only by the covid-19-pandemic-2020 global event at its edge). Closed that
+  one too with two more entries: the decision that turned The Searcher from
+  a planned standalone into a trilogy (2023, TODAY.com, her own words) and
+  the real-world policing debate and pandemic-era Ireland the trilogy
+  answers, tied to The Keeper's close (2026, Cultured Magazine, her own
+  words). Final dark run: 3 years (2013-2015), well under the 5-year
+  threshold. No corrections to existing content surfaced; no changes to
+  works.yaml, characters.yaml or the author entity. validate.py --slug
+  tana-french: same one pre-existing error as before this stage
+  (theme.yaml missing art:, owned by visual-language) and the same one
+  pre-existing warning (franchise-research.yaml's handoff length, not this
+  stage's to fix); no new errors or warnings.
+produced:
+  newFranchiseEventIds:
+    - tana-french/french-broken-harbor-ghost-estates-2012
+    - tana-french/french-trespasser-interrogation-power-2016
+    - tana-french/french-witch-elm-steps-outside-squad-2018
+    - tana-french/french-dublin-murders-tv-2019
+    - tana-french/french-hunter-trilogy-decision-2023
+    - tana-french/french-keeper-trilogy-context-2026
+  newLifeEventIds: []
+  changedAuthorProse: []
+  auraDarkRun:
+    before: "8 years (2012-2019)"
+    after: "3 years (2013-2015)"
+    ratio: "1.30 -> 1.90 (aura entries per work)"
+forStages:
+  translation: >
+    All six event descriptions are new English prose requiring pt-PT
+    overlays: content/i18n/pt-PT/franchises/tana-french/events.yaml does not
+    exist yet. Every direct quote from French is attributed and should stay
+    attributed in translation (do not silently paraphrase a direct quote
+    into indirect speech). Titles are curated prose, not work titles, so
+    they translate like any other event title per SCHEMA.md.
+  event-resonance: >
+    Two of the six events (french-dublin-murders-tv-2019,
+    french-keeper-trilogy-context-2026) touch real-world context (a TV
+    industry deal; the 2020 US policing debate and the pandemic) but both
+    are written as franchise events, not as globalEvents inclusions -
+    financial-crisis-2008 and any future Celtic Tiger event remain
+    unruled on franchise.yaml, exactly as franchise-research left them.
+    covid-19-pandemic-2020 already reaches this wing by the default
+    lifetime filter and needed no ruling to help close the second dark
+    run; that default is arithmetic, not a decision this stage made.
+  spoiler-audit: >
+    All six new events carry spoilerAfter: null. None describe a case's
+    solution or a twist; the two closest to plot (broken-harbor-ghost-
+    estates-2012 naming Scorcher Kennedy as a Faithful Place supporting
+    character, keeper-trilogy-context-2026 describing Cal's arc as
+    concluding) stay at the level of characterization and shelf-context
+    already present in characters.yaml and works.yaml notes, not a reveal.
+    Worth a second pair of eyes given this stage does not own spoiler
+    judgment.
+  world-events: >
+    No new global.yaml candidate surfaced. The ghost-estates and Celtic
+    Tiger material stayed franchise-scoped (scope: author-life, not a
+    global event) because it is specifically about how French built one
+    book's narrator choice, not a reachable claim about the crash itself;
+    franchise-research's suggested "Celtic Tiger" global event, if it gets
+    built, would still need its own event-resonance ruling on this wing's
+    franchise.yaml independent of what is recorded here.
+  editions: >
+    No new lead. Confirms via the Deadline/Irish Times sourcing that the
+    TV tie-in is a BBC/RTE/Starz production (Dublin Murders, 2019), in case
+    a tie-in edition cover or ISBN surfaces later.
+openQuestions:
+  - >
+    My weakest call: scope on french-dublin-murders-tv-2019 is "industry"
+    (matching how the Gillian Flynn wing scopes its own screen-adaptation
+    events) rather than "culture" (matching how SCHEMA.md's own worked
+    example, king-bachman-outed-1985, scopes a different kind of media
+    event). Both readings are defensible; I matched the nearer precedent
+    rather than the schema's literal example and could be second-guessed.
+  - >
+    Cal Hooper's own origin (French reading Westerns and mapping their
+    tropes onto the west of Ireland, sourced in both the CrimeReads and
+    Cultured interviews) is real, well-sourced and not currently recorded
+    anywhere in this wing. I left it out on purpose to avoid crowding 2019-
+    2020, which already carries the covid-19-pandemic-2020 global event,
+    rather than for any weakness in the source. If a future pass wants a
+    fourth Cal Hooper-era anchor, this is the strongest unused lead.
+  - >
+    The birthplace question (Vermont vs. the Portuguese retail "born in
+    Ireland" claim) was completeness-auditor's and franchise-research's to
+    settle, not mine; nothing in the press record checked this run adds
+    evidence either way, so it stays exactly as they left it.
