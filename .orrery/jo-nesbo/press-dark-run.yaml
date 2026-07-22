@@ -1,0 +1,75 @@
+stage: press-dark-run
+summary: >
+  event-resonance's later, correct rejection of jo-nesbo's twelve reachable
+  globalEvents dropped this wing's aura from 20 entries to 9 and reopened a
+  1998-2003 dark run (six years) that both earlier press handoffs had
+  reported closed to three. Verified with aura_density.py before starting:
+  9 aura entries, 0.26/work, 34 works, worst run 6 yrs (1998-2003). Added
+  four new franchise events, three inside that window and one more inside a
+  second dark run the fix exposed: Kakerlakkene (1998), reviewed on release
+  by Dagbladet's Terje Thorsen as a slack, exoticized rehash of the debut,
+  its child-prostitution plot device called "period-appropriate political
+  correctness" rather than earned material; Stemmer fra Balkan (1999),
+  Nesbø's only work of war reportage, sent by Aschehoug to cover NATO's
+  Kosovo campaign alongside Espen Søbye, reviewed by Dagbladet's Christopher
+  Hals Gylseth as restrained and "at times almost poetic"; Rødstrupe (2000),
+  whose frontkjemper plot Nesbø confirmed in a BBC interview is drawn from
+  his own father's history, sourced independently by NRK's contemporary
+  review (the plot's Eastern Front basis), nordics.info's scholarly account
+  (the father parallel, stated plainly), and Dagbladet (Nesbø's own quote,
+  "I saw him in the German Nazi helmet"); and Kniv (prize ceremony 2020, for
+  the 2019 book), which won Nesbø a second Riverton Prize 22 years after his
+  first, presented by the same jury chair, with his own reflection on 22
+  years of learning it "isn't easy" to be the best. The fourth entry closes
+  a second, previously invisible 5-year dark run (2018-2022) that the first
+  three additions exposed as the new worst span once 1998-2003 stopped
+  hiding it. Aura moved from 9 to 13 entries, 0.26 to 0.38 per work. Worst
+  remaining dark run: 4 yrs (2008-2011), under the flagged threshold and
+  outside this pass's mandate. validate.py --slug jo-nesbo shows no new
+  errors; the one failure is the pre-existing theme.yaml art-block gap,
+  unrelated to this wing's press work.
+produced:
+  newFranchiseEventIds:
+    - jo-nesbo/kakerlakkene-reprise-1998
+    - jo-nesbo/stemmer-fra-balkan-nato-1999
+    - jo-nesbo/rodstrupe-fathers-history-2000
+    - jo-nesbo/kniv-riverton-loop-2020
+forStages:
+  - >
+    translation: four new dated entries need pt-PT coverage; nothing
+    existing was reworded, so no orphaned overlay results from this pass.
+  - >
+    event-resonance: untouched here, as scoped. Nothing in this pass
+    proposes a globalEvents.include; the NATO/Kosovo context sits inside
+    the Stemmer fra Balkan entry as author-life texture, not a bid for
+    shared reach.
+  - >
+    editions: no ISBN or rights data surfaced in this pass.
+openQuestions:
+  - >
+    Weakest call: dating jo-nesbo/kniv-riverton-loop-2020 to the 6 May 2020
+    prize ceremony rather than to Kniv's own 2019 publication year. The
+    prize is formally "Rivertonprisen 2019," but every quote and both
+    sources describe the ceremony itself, which the record places in May
+    2020; dating the entry to the event actually reported, not the book's
+    year, is the call made here.
+  - >
+    Not mine to close: aura_density.py now reports 2008-2011 (4 years) as
+    the wing's worst remaining dark run - below the 5-year flag and outside
+    this pass's mandate (the original 1998-2003 window), but worth a future
+    press pass's attention before it becomes the next surprise.
+  - >
+    Rejected: no press-archaeology-grade material surfaced for
+    Karusellmusikk (2001), Sorgenfri (2002) or Marekors (2003) beyond
+    routine, positive contemporary reviews (Dagbladet's Kurt Hanssen calling
+    Sorgenfri "simply the best of Nesbø's crime novels" so far, and flagging
+    Tom Waaler's rise as a Ripley-esque antagonist in Marekors) - real, but
+    craft commentary rather than material that recolors a reading. Left out
+    rather than padded in; the 1999/2000/2020 anchors were judged sufficient
+    to close both dark runs without thinning the standard.
+  - >
+    Rejected: Macbeth (2018) origin coverage found only publisher and press
+    description of the Hogarth Shakespeare commission (its
+    four-hundredth-anniversary occasion, Nesbø's own "crime noir" framing
+    already recorded in works.yaml) - nothing in Nesbø's own words beyond
+    that framing turned up in the sources checked.
