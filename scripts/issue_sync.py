@@ -104,27 +104,36 @@ def existing() -> dict[str, dict]:
 
 
 def body_for(wing: str, kind: str, aid: str, why: str, path: str, accent: str) -> str:
-    dest_dir = "global" if kind == "world-event" else wing
+    # A world event is CATALOGUE canon: one drawing, shared by every wing that
+    # carries the event and recoloured per wing in CSS. So it is scoped to the
+    # catalogue, never to whichever wing's audit happened to surface it - the
+    # wing is an accident of discovery, not a property of the asset.
     shared = kind == "world-event"
+    owner = "global" if shared else wing
+    dest_dir = "global" if shared else wing
     lines = [
         f"**{why}**",
         "",
-        "No prompt yet. A curator writes it against `docs/VISUAL.md` and the "
-        "wing's `theme.art`, then flips this to `asset:needs-art`.",
+        "No prompt yet. A curator writes it against `docs/VISUAL.md`"
+        + ("" if shared else " and the wing's `theme.art`")
+        + ", then flips this to `asset:needs-art`.",
         "",
     ]
     if shared:
         lines += [
-            "> Shared asset. This is drawn ONCE for the catalogue in neutral "
-            "house style and tinted per wing by the app, so do not draw it in "
-            "any wing's palette.",
+            "> **Shared asset, catalogue scope.** Drawn ONCE in neutral house "
+            "style, line and texture only on transparency, and recoloured per "
+            "wing in CSS - so it must not be drawn in any wing's palette, and "
+            "must contain no filled shapes or a tint turns it into a blob. "
+            "It belongs to no author: the wing that surfaced it is an accident "
+            "of which audit ran.",
             "",
         ]
     lines += [
         "```yaml",
         "asset:",
-        f"  key:   {wing}/{kind}/{aid}",
-        f"  wing:  {wing}",
+        f"  key:   {owner}/{kind}/{aid}",
+        f"  wing:  {owner}",
         f"  type:  {kind}",
         f"  file:  {path}",
         f"  entry: {aid}",
@@ -132,7 +141,8 @@ def body_for(wing: str, kind: str, aid: str, why: str, path: str, accent: str) -
         f"  dest:  assets/{dest_dir}/{aid}.webp",
         # Quoted: a hex colour starts with '#', which unquoted opens a YAML
         # comment and silently parses the accent as null.
-        f'  accent: "{accent}"' if accent else "  accent: null",
+        ("  accent: null   # tinted per wing; a shared asset has no single accent"
+         if shared else (f'  accent: "{accent}"' if accent else "  accent: null")),
         "```",
         "",
         "<sub>Filed by `scripts/issue_sync.py`. The block above is parsed on "
@@ -165,7 +175,12 @@ def main() -> int:
             blocked.append(wing)
             continue
         for kind, aid, why in A.jobs(r):
-            key = f"{wing}/{kind}/{aid}"
+            # Same scoping as the body: a world event is keyed to the catalogue
+            # so two wings carrying it cannot file two issues for one drawing.
+            # portugal-bailout-2011 was filed twice (#210 palahniuk, #296
+            # joao-tordo) and covid-19-pandemic-2020 twice as well before this.
+            owner = "global" if kind == "world-event" else wing
+            key = f"{owner}/{kind}/{aid}"
             if key in have:
                 continue
             path = (homes.get(aid) if kind == "life-event"
@@ -173,11 +188,12 @@ def main() -> int:
             if not path:
                 print(f"  ?? no home for {key}, skipping")
                 continue
-            to_file.append((wing, kind, aid, why, path, accent, key))
+            to_file.append((owner, kind, aid, why, path, accent, key))
 
         # An asset drawn since the issue was filed: close it, do not leave a
         # tracker item describing work that is already in main.
-        done = {f"{wing}/{k}/{i}" for k, i, _ in A.jobs(r)}
+        done = {f"{'global' if k == 'world-event' else wing}/{k}/{i}"
+                for k, i, _ in A.jobs(r)}
         for key, issue in have.items():
             if not (key.startswith(f"{wing}/") and key not in done):
                 continue
@@ -204,6 +220,30 @@ def main() -> int:
                 continue
             to_close.append((key, issue["number"]))
 
+    # World-event issues are keyed to the catalogue, so no wing's pass owns
+    # them and the per-wing sweep above can never close one. Reconcile them
+    # once, against the union of what every wing still needs: an asset is only
+    # finished when NO wing is still waiting on it.
+    if not a.wing:
+        wanted_global = set()
+        for wing in targets:
+            r = A.audit(wing)
+            if not r["art"]:
+                continue
+            for kind, aid, _ in A.jobs(r):
+                if kind == "world-event":
+                    wanted_global.add(f"global/{kind}/{aid}")
+        for key, issue in have.items():
+            if not key.startswith("global/") or key in wanted_global:
+                continue
+            if issue["state"] != "OPEN":
+                continue
+            labels = {l.get("name") for l in (issue.get("labels") or [])}
+            if labels & {"asset:ready", "art:human-offer"}:
+                print(f"  keep     #{issue['number']} {key} (art attached)")
+                continue
+            to_close.append((key, issue["number"]))
+
     if a.limit:
         to_file = to_file[: a.limit]
 
@@ -225,7 +265,8 @@ def main() -> int:
            "--description", desc, "--force", check=False)
 
     for wing, kind, aid, why, path, accent, key in to_file:
-        title = f"[art] {wing}: {kind} - {aid}"
+        title = (f"[art] {kind} - {aid}" if wing == "global"
+                 else f"[art] {wing}: {kind} - {aid}")
         gh("issue", "create", "--repo", REPO, "--title", title,
            "--body", body_for(wing, kind, aid, why, path, accent),
            "--label", "asset:needs-prompt")
