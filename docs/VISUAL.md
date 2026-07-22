@@ -501,21 +501,47 @@ in this document were all *stated clearly and then violated anyway*: the opaque
 era plate, the four presentation modes, the mauve corona. A rule nobody measures
 is a rule nobody follows.
 
-| Check | Fails when | Catches |
-|---|---|---|
-| `alpha-present` | opaque pixel fraction ≥ 0.98 | an asset that lost its alpha (`antes-dos-romances` was 1.00) |
-| `edge-dissolve` | any frame edge has > 2% of its length opaque | a hard crop or a baked rectangle |
-| `no-chroma-cast` | mean magenta excess > 8 over pixels with alpha > 120 | an un-keyed halo or spill |
-| `world-event-flat` | a `global` asset has any large filled region | a sketch that will tint to a blob |
+| Check | Fails when | Catches | Separation on the catalogue |
+|---|---|---|---|
+| `alpha-present` | opaque pixel fraction ≥ 0.98 | an asset that lost its alpha | fails 1.00; next worst 0.94 |
+| `edge-dissolve` | any frame edge is > 15% opaque along its length | a hard crop or a baked rectangle | fails 1.00, 1.00, 0.44; next worst 0.05 |
+| `world-event-flat` | a `global` asset is > 50% opaque | a sketch that will tint to a blob | current globals 0.09 and 0.12 |
 
-Each check reports the measured number, not a pass/fail word. A check that can
-only say "ok" teaches nobody anything and cannot be argued with when it is
-wrong.
+Each check reports the measured number, not a pass/fail word, and every
+threshold above was set from the real distribution rather than chosen in
+advance. `python scripts/validate.py --explain <slug>` prints the numbers per
+asset so a borderline case can be judged rather than obeyed.
 
-**Watch these fail before trusting them.** Every one of them was written against
-a known-bad asset and confirmed to reject it before being pointed at the
-catalogue. `python scripts/validate.py --assets --explain <slug>` prints the
-numbers per asset so a borderline case can be judged rather than obeyed.
+Note `edge-dissolve`'s threshold is loose on purpose. `prepare_asset.py` trims
+to the alpha bounding box, so by construction the artwork touches all four
+edges somewhere and a few percent of edge contact is geometrically inevitable.
+Fifteen percent of an edge running solid is a crop; two percent is a corner.
+
+### What is not checkable, and why it is written down here
+
+**The mauve corona has no reliable automated test, and no check for it ships.**
+This was attempted properly before being abandoned, and the attempt is recorded
+so nobody spends the afternoon again:
+
+- The obvious detector is magenta chroma, `min(r, b) - g`. Measured across the
+  whole catalogue it is ~0.0 on every asset including all five with a visible
+  corona. The coronas are not magenta. They average RGB (148, 122, 124), a warm
+  grey-pink where blue and green are nearly equal, which is a *painted vignette*
+  rather than key spill.
+- The next detector is rim-versus-core warmth, comparing an eroded interior to
+  the outer band. It scores 2 of the 5 known-bad assets above every clean one,
+  misses the other 3 entirely, and ranks the deliberate mauve grief wash on
+  `vhm-saramago-death-2010` as the single worst offender in the catalogue. Two
+  out of five, with a false positive on the one asset that is right on purpose.
+
+A check with that record is worse than no check, because a wing that passes it
+looks cleared. So the corona is handled where it is actually solvable: banned
+explicitly in the prompt (§5b), and looked for by a person at §7 step 5. When a
+defect is a judgement call, say so and route it to a judge.
+
+`prepare_asset.py` does still despill genuine key spill, and its despill is
+tested against a synthetic corona in `scripts/test_prepare_asset.py` - a test
+written to fail first, which it did three times before it passed.
 
 ## 6. Shared negative prompt
 

@@ -153,6 +153,39 @@ def recover_alpha(im: Image.Image):
 CHROMA = (255, 0, 255)   # magenta: no ink, umber, parchment or terracotta is near it
 
 
+def _flood_from_border(mask):
+    """Which cells of a boolean mask are reachable from the frame border?
+
+    Four-way flood, seeded from every border cell already in the mask. Used to
+    separate key spill (contiguous with the background, which §5b guarantees
+    touches all four edges) from an intentional magenta-hued wash inside the
+    picture, which is not.
+
+    Plain iterative dilation rather than anything cleverer: this is an
+    authoring tool run on one image at a time, a corona is at most a couple of
+    hundred pixels deep, and a dependency on scipy to save a second of wall
+    clock is a bad trade.
+    """
+    import numpy as np
+
+    reach = np.zeros_like(mask)
+    reach[0, :] = mask[0, :]
+    reach[-1, :] = mask[-1, :]
+    reach[:, 0] = mask[:, 0]
+    reach[:, -1] = mask[:, -1]
+
+    while True:
+        grown = reach.copy()
+        grown[1:, :] |= reach[:-1, :]
+        grown[:-1, :] |= reach[1:, :]
+        grown[:, 1:] |= reach[:, :-1]
+        grown[:, :-1] |= reach[:, 1:]
+        grown &= mask
+        if grown.sum() == reach.sum():
+            return grown
+        reach = grown
+
+
 def key_chroma(im: Image.Image, key=CHROMA, tol: int = 90, soft: int = 60):
     """Turn a solid chroma background into real alpha.
 
@@ -163,33 +196,95 @@ def key_chroma(im: Image.Image, key=CHROMA, tol: int = 90, soft: int = 60):
     drawn sky, which is why that flood ate holes in the artwork.
 
     Fully keyed below `tol`, fully opaque above `tol + soft`, ramped between so
-    antialiased edges keep partial alpha instead of a hard staircase. Then a
-    despill pass pulls the magenta fringe out of the edge pixels, which would
-    otherwise glow pink against a dark page.
+    antialiased edges keep partial alpha instead of a hard staircase.
+
+    THE DESPILL PASS
+
+    The first version of this despilled with `excess = min(r, b) - g`, which is
+    only correct when the spill is balanced - true magenta, red and blue equal.
+    Real spill is a warm mauve where red leads: the measured corona on five
+    shipped assets sat at RGB (148, 122, 124), for which that formula computes
+    an excess of 2 and returns (146, 122, 122). Still magenta, still visible,
+    and it shipped five times because nothing measured the output.
+
+    The correct operation for a magenta key is to lift green to the mean of the
+    other two channels: (148, 136, 124) is a warm neutral tan, which is what
+    that pixel was before the key bled into it. Green is the minimum channel in
+    magenta by definition, so the gate is `r > g and b > g` - and no colour in
+    this catalogue's palette has green as its minimum, which is exactly why
+    magenta was chosen as the key.
+
+    Except one: an intentional mauve or ashen cast, which docs/VISUAL.md §4a
+    explicitly allows for grief. A global despill would flatten that to grey and
+    silently overrule an editorial decision. So the strength is weighted by
+    PROXIMITY TO THE KEYED REGION - spill is a boundary phenomenon and decays
+    inward, while an intentional wash sits in the middle of the picture. The
+    blurred key mask is that proximity field, for free.
     """
-    rgb = im.convert("RGB")
-    w, h = rgb.size
-    src = rgb.load()
-    out = Image.new("RGBA", (w, h))
-    dst = out.load()
+    try:
+        import numpy as np
+    except ImportError:  # pragma: no cover - authoring tool, not CI
+        raise SystemExit(
+            "--chroma needs numpy (pip install numpy). It is not a CI "
+            "dependency: this is an authoring tool."
+        )
+    from PIL import ImageFilter
+
+    rgb = np.asarray(im.convert("RGB")).astype(np.float32)
+    r, g, b = rgb[..., 0], rgb[..., 1], rgb[..., 2]
     kr, kg, kb = key
-    keyed = 0
-    for y in range(h):
-        for x in range(w):
-            r, g, b = src[x, y]
-            d = abs(r - kr) + abs(g - kg) + abs(b - kb)
-            if d <= tol:
-                dst[x, y] = (0, 0, 0, 0)
-                keyed += 1
-                continue
-            alpha = 255 if d >= tol + soft else int(255 * (d - tol) / soft)
-            # despill: a pixel carrying the key's colour cast gets pulled back
-            # toward neutral rather than left glowing at the edge
-            excess = min(r, b) - g
-            if excess > 0:
-                r, b = r - excess, b - excess
-            dst[x, y] = (r, g, b, alpha)
-    return out, keyed
+
+    # Pass 1: the flat background, by distance to the key colour. This finds
+    # only the untouched chroma, which is the point - it is the one region we
+    # can identify with no risk of eating artwork.
+    d = np.abs(r - kr) + np.abs(g - kg) + np.abs(b - kb)
+    flat = d <= tol
+    keyed = int(flat.sum())
+
+    # Pass 2: magenta CHROMA, not distance to the key. A corona is a gradient
+    # from the key into the artwork, and its outer half is unambiguously
+    # background while sitting far outside `tol` - (201, 61, 189) is 181 away
+    # from pure magenta and survived every earlier version of this function.
+    # Green is the minimum channel in magenta, so `min(r,b) - g` measures how
+    # magenta a pixel is regardless of how bright or washed out it has become.
+    m = np.minimum(r, b) - g
+    # Deliberately near zero, and NOT the same threshold the alpha ramp uses
+    # below. This one only decides which pixels belong to the spill REGION, and
+    # the innermost tip of a corona is barely magenta at all - the measured one
+    # tapers to min(r,b) - g == 2 while still carrying a visible cast. Set this
+    # to the ramp's 20 and that tip escapes, which is worth 8 points of residual
+    # cast. Nothing in the palette has green as its minimum channel, so a low
+    # threshold cannot leak into artwork, and reachability is doing the real
+    # work of keeping it out.
+    magentaish = m > 4.0
+
+    # Which of those are spill? An intentional mauve or ashen wash (VISUAL.md
+    # §4a allows one for grief) is magenta-hued too, and no per-pixel colour
+    # test can tell them apart. CONNECTIVITY can: §5b requires the chroma to be
+    # visible along all four edges, so the background touches the border, and a
+    # corona is by definition contiguous with it. A wash inside the picture is
+    # not - it is surrounded by artwork.
+    #
+    # A proximity blur was tried here first and is the wrong primitive: it
+    # decays over a fixed radius while a corona has no fixed width, so the
+    # inner half of a wide one kept its cast. Reachability has no radius.
+    reach = _flood_from_border(magentaish)
+    soft_reach = np.asarray(
+        Image.fromarray((reach * 255).astype(np.uint8), "L").filter(ImageFilter.GaussianBlur(1.5))
+    ).astype(np.float32) / 255.0
+
+    cut = np.clip((m - 20.0) / 70.0, 0.0, 1.0) * soft_reach
+    alpha = np.clip((d - tol) / soft, 0.0, 1.0) * (1.0 - cut) * 255.0
+
+    # Whatever survives inside the spill region is despilled by lifting green to
+    # the mean of the other two channels, the correct operation for a magenta
+    # key. Artwork outside that region is never touched.
+    spill = np.maximum((r + b) / 2.0 - g, 0.0)
+    spill[(r <= g) | (b <= g)] = 0.0
+    g = g + spill * soft_reach
+
+    out = np.stack([r, g, b, alpha], axis=-1)
+    return Image.fromarray(np.clip(out, 0, 255).astype(np.uint8), "RGBA"), keyed
 
 
 def main() -> int:
