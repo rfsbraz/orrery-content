@@ -1,0 +1,78 @@
+stage: visual-metadata
+summary: >
+  Filled the images blocks for the Jo Nesbø wing: one portrait, one franchise
+  header, fourteen work covers out of thirty-four. Cover-market policy, stated
+  and applied without exception: only a verified Norwegian-language Aschehoug
+  edition's cover counts, matching this wing's own Norwegian title field;
+  never a translated edition's jacket, however well the OL work record's
+  display title reads in Norwegian. Verifying this required checking each
+  candidate at the edition level, not the work level - Open Library's own
+  "representative" cover_i for a work is frequently the wrong edition. Caught
+  this way and rejected: flaggermusmannen and kakerlakkene's covers belonged
+  to 2015 Catalan editions (Proa), rødstrupe's to a German one, blod-pa-sno's
+  to the English "Blood on Snow", and kongeriket's entire OL work record -
+  titled "Kongeriket" - turns out to hold only English "Kingdom" editions, no
+  Norwegian one at all. gjenferd's sole Norwegian-tagged "cover" was a scan of
+  the title page, not the jacket, caught by opening the image. An alternate
+  Norwegian snømannen cover was rejected for a visible US library barcode and
+  property stamp; the smaller but clean original was used instead. Every
+  image was fetched with ?default=false and looked at, not just HTTP-checked;
+  built a labelled contact sheet of all fifteen initial candidates to review
+  in one pass. Fourteen covers shipped: rødstrupe, sorgenfri, marekors,
+  frelseren, snømannen, politi, tørst, kniv, blodmåne, natthuset,
+  karusellmusikk, and three Doktor Proktor titles. Two of those three
+  (tidsbadekar, verdens undergang) are Norwegian Lydbokforlaget audiobook
+  jackets, not print covers - disclosed per-work, the only Aschehoug-credited
+  art Open Library holds for either title. Twenty works carry no cover, each
+  with a comment distinguishing "the Norwegian edition exists but has no
+  cover image" from "no Norwegian edition is catalogued at all" from "no
+  Open Library record exists for this title at all" (kongen-av-os, minnesota,
+  det-hvite-hotellet, the Doktor Proktor bestiary - all confirmed by
+  sweeping the author's full 496-work Open Library listing, not just a
+  failed title search). Portrait: a 2007 Gothenburg Book Fair photograph,
+  public domain, photographer's own upload, no restrictions - the cleanest
+  licence of four real candidates checked, all clearly Nesbø. Header: a
+  snowbound Oslo residential street (Sognsveien, Dec 2020, CC BY-SA 4.0,
+  Ryan Hodnett), matching the vinterlys palette and cold-daylight atmosphere,
+  avoiding both a single adaptation's imagery and tourist iconography.
+  validate.py --slug jo-nesbo is unchanged from baseline (green, no new
+  warnings). asset_audit.py jo-nesbo: portrait 0/1 to 1/1, covers 0/34 to
+  14/34.
+produced:
+  - content/franchises/jo-nesbo/works.yaml (images blocks, 14 covers + a
+    no-cover comment on the other 20; one top-of-file policy comment)
+  - content/franchises/jo-nesbo/franchise.yaml (header image)
+  - content/authors/jo-nesbo.yaml (portrait image)
+forStages:
+  - >
+    editions: the fourteen OL edition ids and cover ids used here (recorded
+    in each work's coverSource) are verified Norwegian Aschehoug printings
+    (or, for two Doktor Proktor titles, Lydbokforlaget audiobooks) and can
+    seed editions.yaml entries directly rather than re-deriving them.
+  - >
+    Any future press or asset-generation pass: portrait and header are both
+    real photographs now, so theme.art's "real people are photographed"
+    constraint is satisfied and no life-event sketch needs to stand in for a
+    likeness.
+openQuestions:
+  - >
+    Least confident: karusellmusikk's cover is a cloth hardcover binding
+    stamped with the Norwegian coat of arms, not a printed dust jacket -
+    unusual but the only cover Open Library holds for this title's one
+    catalogued edition, and nothing about it reads as wrong-book or
+    watermarked.
+  - >
+    Twelve titles across the standalone, short-fiction and Doktor Proktor
+    strands have no Norwegian-language Open Library record at all
+    (macbeth, sønnen, mere-blod, det-hvite-hotellet, prompepulver, the
+    bestiary, kan-doktor-proktor-redde-jula, sjalusimannen,
+    rotteøya, stemmer-fra-balkan, minnesota, kongen-av-os). This is a
+    completeness gap in Open Library's Norwegian cataloguing for this
+    author, not a rights question - nothing here would change under a
+    different policy, since no Norwegian cover exists to choose regardless.
+  - >
+    kongeriket is the one case worth a second look by a future pass: Open
+    Library's own work record carries the Norwegian title but holds only
+    English editions. Should a Norwegian Aschehoug edition surface there
+    later under a different work id, it would give this wing its fifteenth
+    cover without changing the policy at all.
