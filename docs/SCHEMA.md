@@ -204,6 +204,7 @@ sources: [https://...]
   title: "Carrie"
   authorIds: [stephen-king]
   published: 1974                # YEAR ONLY, a bare integer - never 1974-03-26 (see below)
+  forthcoming: 2026-08-19        # optional; ANNOUNCED but not out yet (see below)
   subseries: null                # e.g. "The Dark Tower", "Mistborn: Era 1"
   canonTier: core                # core | extended | apocrypha
   publishedAs: "Richard Bachman" # optional; only when the cover name differs
@@ -238,6 +239,40 @@ This field used to say "full date when confident", and the first new wing
 written against it put five works on dated lines. Day precision has no consumer
 in the product; if the exact date matters editorially, it belongs in an event or
 in `sources`, not here.
+
+### forthcoming: a book that is announced but not out
+
+Optional, on a work. Its presence means **this has not been published yet**;
+the value is the announced release date, `YYYY-MM-DD`.
+
+`published` still carries the expected year, and must agree with it. Every
+consumer of `published` is year arithmetic - River layers, era spans, decade
+rules, the derived default order - and a forthcoming book still belongs in its
+year. What `published` cannot express is that the event has not happened:
+a bare `published: 2026` asserts the book *was* published in 2026.
+
+```yaml
+- id: jo-nesbo/nadeskudd
+  title: "Nådeskudd"
+  published: 2026
+  forthcoming: 2026-08-19        # Aschehoug, announced 19 Jun 2026
+```
+
+**The date is what makes this honest rather than a promise.** Once it passes,
+the validator warns and keeps warning until someone confirms the book actually
+shipped and drops the field. An announced title therefore cannot sit in the
+catalogue looking like a published one, and nobody has to remember to check.
+
+Two rules the validator enforces:
+
+- the value is a real `YYYY-MM-DD` date (a quoted `"2026-02-31"` is rejected);
+- its year equals `published`, so the ordering and the announcement cannot
+  disagree.
+
+Use it only where the date is **sourced**, not inferred from a season or a
+publisher's catalogue slot. If all that is known is "next year", the work does
+not belong in the catalogue yet - a documented negative is the honest record,
+and `/refresh` is the stage that re-tests it.
 
 ### authorRole and canonTier: what belongs in a wing
 
