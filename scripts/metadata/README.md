@@ -78,8 +78,8 @@ stack add a source without touching its callers. The difference: ours must
 | `openlibrary` | breadth, and the only ISBN batching here | 20 ISBNs per call |
 | `googlebooks` | non-anglophone editions, best cover resolution | **needs an API key in practice** |
 | `nb.no` | Norwegian first editions | legal deposit, so silence is evidence |
-| `bertrand` | pt-PT records **and clean covers** | scraper; **the pt-PT cover source** |
-| `wook` | pt-PT titles, ISBNs, publishers, dates | scraper; **covers are watermarked, do not use them** |
+| `bertrand` | pt-PT **and international** editions, clean covers | scraper; **the pt-PT cover source** |
+| `wook` | pt-PT **and international** editions | scraper; **covers are watermarked, do not use them** |
 | `almadoslivros` | its own pt-PT list | Shopify JSON, no scraping, clean covers |
 | `presenca` | its own pt-PT list | Shopify JSON, no scraping, clean covers |
 
@@ -107,7 +107,12 @@ WOOK and Bertrand are the worked scraper examples. They run the same Porto
 Editora platform, so they share a base class (`PortoEditoraShop`) and differ in
 three things: the search URL, and whether the covers are usable.
 
-**Use Bertrand for pt-PT covers. Use either for pt-PT records.**
+**Use Bertrand for pt-PT covers. Use either for records.**
+
+**They are not only Portuguese-market.** Both carry international editions -
+searching Bertrand for *The Snowman* returns three Vintage English printings
+with 978-1/978-0 ISBNs. That makes them useful well beyond pt-PT, and it is
+why the language must come from the record rather than be assumed.
 
 | | records | covers | search |
 |---|---|---|---|
@@ -145,6 +150,10 @@ Notes worth copying into the next scraper:
 - **Send `core.BROWSER_HEADERS`, not just a User-Agent.** WOOK is behind
   Cloudflare and 403s UA-only requests. Earlier runs concluded "the live site
   403s" and fell back to web.archive.org, which serves a stale catalogue.
+- **They write the language as a Portuguese WORD** ("Inglês", "Português"),
+  not a code. `core.normalise_language()` maps it; an unrecognised value comes
+  back as `None` rather than a plausible guess, because a wrong language on an
+  edition row sends a reader to a book they cannot read.
 - **ISBNs come hyphenated from Bertrand and bare from WOOK.** The base class strips to digits; a downstream check digit or prefix test sees a different shape otherwise.
 - Searching **by ISBN does not work** - it falls back to unrelated
   recommendations rather than returning nothing, which is worse than an empty
@@ -183,6 +192,10 @@ Two traps found by checking rather than assuming:
   each shop declares `vendor_is` and anything else is left empty.
 - **`/products.json` omits `barcode`.** The listing is good for discovering
   handles and useless for ISBNs; fetch the per-product `.json` for those.
+- **Shopify exposes no language field at all.** `default_language` is a stated
+  assumption per shop (pt-PT for these two, which are Portuguese houses selling
+  their own list), not a fact from the source. Set it to `None` for a shop that
+  carries imports.
 
 ### Sources that refuse
 

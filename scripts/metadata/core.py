@@ -23,6 +23,7 @@ import dataclasses
 import hashlib
 import json
 import os
+import re
 import sys
 import threading
 import time
@@ -249,6 +250,45 @@ def get_html(
         except OSError:
             pass
     return body
+
+
+# Portuguese bookshops write the language as a Portuguese WORD ("Inglês"),
+# not a code, and they carry international editions as well as their own
+# market's - so a provider that assumed pt-PT, or passed the word straight
+# through, would mislabel every import it found.
+PT_LANGUAGE_NAMES = {
+    "portugues": "pt-PT", "português": "pt-PT",
+    "ingles": "en", "inglês": "en",
+    "frances": "fr", "francês": "fr",
+    "espanhol": "es", "castelhano": "es",
+    "alemao": "de", "alemão": "de",
+    "italiano": "it",
+    "holandes": "nl", "holandês": "nl", "neerlandes": "nl", "neerlandês": "nl",
+    "sueco": "sv", "norueguês": "no", "noruegues": "no", "dinamarques": "da",
+    "dinamarquês": "da", "finlandes": "fi", "finlandês": "fi",
+    "russo": "ru", "polaco": "pl", "japones": "ja", "japonês": "ja",
+    "chines": "zh", "chinês": "zh", "grego": "el", "latim": "la",
+    "catalao": "ca", "catalão": "ca", "galego": "gl", "brasileiro": "pt-BR",
+}
+
+
+def normalise_language(value: str | None) -> str | None:
+    """A language name or code -> a code. None when it cannot be resolved.
+
+    Never guesses: an unrecognised value comes back as None rather than as a
+    plausible code, because a wrong language on an edition row sends a reader
+    to a book they cannot read.
+    """
+    v = str(value or "").strip()
+    if not v:
+        return None
+    low = v.lower()
+    if low in PT_LANGUAGE_NAMES:
+        return PT_LANGUAGE_NAMES[low]
+    # already a code?
+    if re.fullmatch(r"[a-z]{2}(-[A-Za-z]{2,4})?", v):
+        return v if "-" not in v else v.split("-")[0] + "-" + v.split("-")[1].upper()
+    return None
 
 
 def chunked(seq: list, n: int) -> list[list]:

@@ -35,7 +35,7 @@ import urllib.parse
 import json
 import re
 
-from core import MetaRecord, chunked, get_html, get_json
+from core import MetaRecord, chunked, get_html, get_json, normalise_language
 
 
 class Provider:
@@ -349,7 +349,11 @@ class PortoEditoraShop(Provider):
         # Bertrand prints the ISBN hyphenated, WOOK does not. Normalise, or
         # every downstream check digit and prefix test sees a different shape.
         isbn = "".join(c for c in str(book.get("isbn") or "") if c.isdigit()) or None
-        lang = str(book.get("inLanguage") or "")
+        # These shops carry INTERNATIONAL editions, not just the Portuguese
+        # market, and they write the language as a Portuguese word. Passing
+        # "Inglês" through raw would label a Vintage paperback with a display
+        # string no consumer can match on.
+        lang = normalise_language(book.get("inLanguage"))
         return MetaRecord(
             source=self.name,
             title=book.get("name") or "",
@@ -358,7 +362,7 @@ class PortoEditoraShop(Provider):
             publisher=self._name_of(book.get("publisher")),
             published=book.get("datePublished"),
             # Both write the language as a Portuguese word, not a code.
-            language="pt-PT" if lang.lower().startswith("portug") else (lang or None),
+            language=lang,
             isbn13=isbn,
             cover_url=cover,
             identifiers={self.name: path.rsplit("/", 1)[-1]},
@@ -400,7 +404,7 @@ class Wook(PortoEditoraShop):
     name = "wook"
     BASE = "https://www.wook.pt"
     covers_watermarked = True
-    authoritative_for = "pt-PT records; covers are watermarked, do not use them"
+    authoritative_for = "pt-PT AND international editions; covers watermarked, do not use"
 
     def search_url(self, term: str) -> str:
         return f"{self.BASE}/pesquisa?keyword={urllib.parse.quote(term)}"
@@ -425,7 +429,7 @@ class Bertrand(PortoEditoraShop):
     name = "bertrand"
     BASE = "https://www.bertrand.pt"
     covers_watermarked = False
-    authoritative_for = "pt-PT records AND clean covers; the pt cover source"
+    authoritative_for = "pt-PT AND international editions, with clean covers"
 
     def search_url(self, term: str) -> str:
         return f"{self.BASE}/pesquisa/{urllib.parse.quote(term)}"
@@ -467,6 +471,10 @@ class ShopifyShop(Provider):
     BASE = ""
     #: what this shop puts in `vendor`: "author", "publisher", or None if unknown
     vendor_is: str | None = None
+    #: Shopify exposes no language field. These are Portuguese houses selling
+    #: their own list, so pt-PT is a stated assumption rather than a fact from
+    #: the source - set it to None for a shop that carries imports.
+    default_language: str | None = "pt-PT"
 
     def _record(self, product: dict, handle: str) -> MetaRecord | None:
         if not product.get("title"):
@@ -488,7 +496,7 @@ class ShopifyShop(Provider):
             authors=[vendor] if (vendor and self.vendor_is == "author") else [],
             publisher=vendor if self.vendor_is == "publisher" else None,
             published=(product.get("published_at") or "")[:10] or None,
-            language="pt-PT",   # these are Portuguese-market shops
+            language=self.default_language,
             isbn13=isbn,
             cover_url=(images[0].get("src") if images else None),
             identifiers={self.name: handle},
