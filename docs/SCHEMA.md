@@ -313,8 +313,8 @@ covers, and **published translated titles**. Only add editions you can verify
 falls back to search links and OpenLibrary covers when a work has no edition.
 
 ```yaml
-- id: discworld/guards-guards/presenca-2004-pt
-  workId: discworld/guards-guards
+- id: terry-pratchett/guards-guards/presenca-2004-pt
+  workId: terry-pratchett/guards-guards
   isbn13: "9789722336840"
   language: pt-PT                # BCP-47; see "Language codes" below
   title: "Guardas! Guardas!"     # the title AS PUBLISHED in that language

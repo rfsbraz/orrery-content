@@ -1,0 +1,169 @@
+# The slug stays "discworld" and every existing work id keeps its
+# "terry-pratchett/" prefix even though the wing now spans the whole author - ids
+# are permanent, and new works take the same prefix.
+id: terry-pratchett
+name: Terry Pratchett
+kind: author
+description: >
+  Terry Pratchett's complete shelf, from a first novel written in his teens
+  through science fiction, the children's trilogies and the collaborations, to
+  the posthumous story collections. At its heart sit the 41 Discworld novels -
+  the flat world on four elephants on a giant turtle, where fantasy parody
+  grows into some of the sharpest comic satire in English.
+authorIds: [terry-pratchett]
+themePreset: warm-vellum
+
+# Capabilities are auto-detected from the data (see docs/SCHEMA.md). Left as auto;
+# this bundle activates river/companion (events), wizard (startHere),
+# connections (characters.yaml +
+# a work connection), and hall (always).
+features:
+  river: auto
+  wizard: auto
+  connections: auto
+  companion: auto
+  hall: auto
+  editions: auto
+
+# Which shared global events actually reach this author (docs/SCHEMA.md).
+# Pratchett's aura is already dense with his own life, so the global layer
+# earns very little here. Kept by default and deliberately:
+# fantasy-paperback-boom-1965, chain-bookshop-1982.
+globalEvents:
+  exclude:
+    - lady-chatterley-trial-1960         # what a novel could describe was never the constraint on comic fantasy
+    - carnation-revolution-1974          # Portuguese censorship; nothing on the Disc answers it
+    - online-bookselling-1995            # continuously in print and piled by the door; the shelf never limited him
+    - sept-11-2001                       # the satire keeps to perennial targets; no Disc novel answers the rupture
+    - ebook-and-self-publishing-2007     # traditionally published throughout; 2007 is the Alzheimer's year, not this
+    - financial-crisis-2008              # Making Money got to banking and confidence in 2007 and owes the crash nothing
+    - prestige-fantasy-adaptation-2011   # the prestige-era adaptations are posthumous; the novels were finished
+
+# "Where to start" - Discworld is the canonical hard case, because the two books
+# most readers pick up first (the early Rincewind parodies) are the ones the
+# community most often says NOT to start with. These paths encode the standard
+# advice: pick a thread, or a strong standalone, not book one.
+#
+# NO ENTRY PATH FOR THE NON-DISCWORLD SHELF, and not for want of looking. Four
+# of the five paths below are Discworld-scoped and now say so; the fifth walks
+# everything. What is missing is a "taste" path into the standalones (Good
+# Omens, Nation), which would be the obvious sixth. It is absent for two
+# reasons: the wizard takes two to five paths and five are declared, and the
+# advice does not meet this file's sourcing bar. What the search returned was
+# content-farm and Q&A listicles (HobbyLark, Quora, Goodreads shelves), not the
+# author, the estate or a canonical community guide. The estate's own site
+# groups the standalones as a category but recommends no entry into them, and
+# its Discworld page states only "The books can be read in any order".
+startHere:
+  paths:
+    # Mixed provenance.
+    # SOURCED for Mort and Guards! Guards! as standard entry points:
+    #   https://bookriot.com/discworld-reading-order/ names "The Death Books
+    #   (beginning with Mort)" and "The City Watch Books (beginning with
+    #   Guards! Guards!)"; the canonical community flowchart lives at
+    #   https://www.lspace.org/books/reading-order-guides/ and orders.yaml
+    #   already cites it for the same subseries entry points.
+    # UNSOURCED, both flagged and deliberately NOT rewritten:
+    #   (a) Small Gods as the third standard first book - genuinely common
+    #       advice, no citation found (it is a standalone, so subseries-shaped
+    #       guides do not list it at all).
+    #   (b) the anti-Colour-of-Magic framing in the note. The official
+    #       https://www.terrypratchettbooks.com/discworld-reading-order/ says
+    #       "The books can be read in any order" and issues no warning, and Book
+    #       Riot lists The Colour of Magic as a viable Rincewind entry. This is
+    #       the famous-book trap in its purest form and almost certainly real
+    #       fandom consensus, but it is stated here with more confidence than
+    #       the evidence gathered supports. A curator ruling either way.
+    - id: three-ways-in
+      title: The three usual first Discworld books
+      description: >
+        The Discworld novels most often handed to a new reader: Mort (Death
+        takes an apprentice), Guards! Guards! (the Watch is born), and Small
+        Gods (the standalone many call the best of all). Any one of them is a
+        fair test of whether the Disc is for you. It costs you the rest of the
+        shelf for now: this is a way into the series, not into Pratchett, and
+        it leaves out the children's books and the collaborations entirely.
+      workIds:
+        - terry-pratchett/mort
+        - terry-pratchett/guards-guards
+        - terry-pratchett/small-gods
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        Deliberately not The Colour of Magic. The first two Rincewind books are
+        broad parody and the weakest place to start; the world and the satire
+        both sharpen a few books in.
+    - id: straight-into-the-watch
+      title: Straight into the City Watch
+      description: >
+        The most-loved Discworld thread: Sam Vimes and the Ankh-Morpork Watch,
+        from a drunk in a gutter to the conscience of a city. Eight books that
+        read as a single arc about law, power and decency, pulled out of a
+        41-novel series you otherwise meet in passing.
+      workIds: null
+      orderId: terry-pratchett/city-watch
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+    - id: the-witches
+      title: The Witches
+      description: >
+        Granny Weatherwax, Nanny Ogg and Magrat - headology, borrowed Shakespeare
+        and the tyranny of stories. A self-contained Discworld run that also
+        feeds the Tiffany Aching books, which is also what it costs: the six
+        books are a complete arc, but not the whole story they belong to.
+      workIds: null
+      orderId: terry-pratchett/witches
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+    - id: start-young
+      title: Start young, with Tiffany Aching
+      description: >
+        The five Tiffany Aching books are written for younger readers but land
+        just as hard for adults - a chalk-country girl becoming a witch. A clean,
+        modern entry into Discworld with no earlier reading required, at the
+        price of starting at the series' late end and meeting its older witches
+        with a history you have not read yet.
+      workIds: null
+      orderId: terry-pratchett/tiffany-aching
+      fit:
+        experience: [new]
+        commitment: [arc]
+      note: >
+        The best on-ramp for younger readers, and for adults who want a complete,
+        finished arc from a single strong voice.
+    # Scope note for the next curator: this path points at the DERIVED default,
+    # which walks every work in works.yaml. That is now the whole career (75
+    # works, opening on The Carpet People in 1971), not the 41 Discworld
+    # novels, so the prose is written to the career. The official site's
+    # "In total, there are 41 Discworld novels published over 32 years"
+    # (https://www.terrypratchettbooks.com/discworld-reading-order/) is still
+    # the right figure for the SERIES and is used that way above.
+    - id: the-whole-disc
+      title: Everything, in order
+      description: >
+        The complete shelf in publication order, all the way from the novel
+        Pratchett started as a teenager to the stories gathered after his
+        death. You watch a jobbing science fiction writer turn into a comic
+        novelist and then into a satirist, with the 41 Discworld novels running
+        through the middle of it. The aura layer is built for exactly this walk.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+      note: >
+        This route does not open on Discworld at all: it starts with three
+        early novels from the 1970s and 1981 that read nothing like the books
+        Pratchett became known for, and the Disc itself begins with its two
+        most divided-opinion volumes. Completionists who know that going in are
+        rewarded as the writing sharpens in front of them.
+
+sources:
+  - https://en.wikipedia.org/wiki/Terry_Pratchett
+  - https://en.wikipedia.org/wiki/Discworld
+  - https://www.lspace.org/books/reading-order-guides/
+  - https://www.terrypratchettbooks.com/discworld-reading-order/

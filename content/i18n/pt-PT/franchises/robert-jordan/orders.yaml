@@ -1,0 +1,62 @@
+# European Portuguese (pt-PT) overlay for the additional canon orders.
+# An order's `name` IS translated: it is a curated label a reader picks from,
+# not a proper noun, and validate.py allows it here (NAME_ALLOWED_IN). Names are
+# kept short so they do not wrap in the order selector. "New Spring" stays in
+# English: Bertrand never published the prequel in Portugal (see editions.yaml).
+# The Conan novels have no Portuguese edition either, so their titles stand in
+# English as well.
+
+- id: robert-jordan/chronological
+  name: Ordem cronológica (interna)
+  rationale: >
+    Só A Roda do Tempo, lida estritamente pela cronologia interna:
+    [[work:robert-jordan/new-spring|New Spring]], que decorre cerca de vinte
+    anos antes, vem primeiro, e só depois os catorze volumes principais pela sua
+    ordem. É a escolha de completistas e de quem relê, procurando uma cronologia
+    linear e não se importando de perder algumas surpresas de primeira leitura.
+    Cobre os quinze volumes narrativos e mais nada da estante de Jordan: os dois
+    volumes de referência não são uma sequência de leitura, e os romances
+    históricos do início, o western e os romances de Conan não partilham
+    cronologia nenhuma com a série.
+  debated:
+    - "Ler New Spring em primeiro lugar é largamente desaconselhado a quem chega de novo: antecipa revelações sobre as personagens dos dois primeiros volumes principais. A maioria dos guias reserva a ordem cronológica para releituras."
+
+- id: robert-jordan/recommended-integrated
+  name: Ordem de publicação com New Spring integrado
+  rationale: >
+    Só A Roda do Tempo: ler a sequência principal por ordem de publicação, mas
+    encaixar [[work:robert-jordan/new-spring|New Spring]] a meio, quando já se
+    conhecem as personagens que a prequela reenquadra e já se passou pelas
+    revelações que ela estragaria. Esta disposição coloca-o depois de
+    [[work:robert-jordan/the-fires-of-heaven|Os Fogos do Céu]] (o quinto
+    volume), que é o extremo inicial de um intervalo contestado: custa menos da
+    corrida para o desfecho do que um lugar mais tardio, e paga-o reenquadrando
+    menos livros do que aconteceria a quem esperasse. Os guias divergem, e as
+    duas fontes citadas abaixo defendem ambas um lugar mais tardio. Tal como a
+    ordem cronológica, cobre os quinze volumes narrativos e deixa de fora os
+    volumes de referência e toda a estante anterior a 1990.
+  debated:
+    - "O ponto exato de inserção é contestado. As colocações mais comuns são depois do livro 5 (Os Fogos do Céu) ou depois do livro 10 (Crossroads of Twilight, perto do seu lugar de publicação em 2004); alguns guias sugerem-no logo a seguir ao livro 2. As duas fontes citadas para esta ordem defendem ambas o lugar depois do livro 10, pelo que a posição aqui usada é a minoritária das duas: é oferecida como o extremo inicial do intervalo, não como o consenso."
+    - "Os puristas leem New Spring na sua posição de publicação (a ordem predefinida, derivada automaticamente, coloca-o depois de Crossroads of Twilight); esta ordem integrada existe porque muitos leitores acham esse lugar demasiado tardio para fazer diferença."
+
+- id: robert-jordan/conan-chronological
+  name: Os romances de Conan pela cronologia do próprio Conan
+  rationale: >
+    Os sete romances de Conan escritos por Jordan, lidos pela ordem em que
+    acontecem a Conan e não pela ordem em que a Tor os publicou. A Tor lançou-os
+    como episódios avulsos colhidos em qualquer ponto da carreira do bárbaro,
+    pelo que a ordem de publicação percorre-lhe a vida ao acaso: esta ordem
+    segue a cronologia que o próprio Jordan compilou em 1987, que começa em
+    [[work:robert-jordan/conan-the-destroyer|Conan the Destroyer]] e termina,
+    sete anos de vida depois, em
+    [[work:robert-jordan/conan-the-triumphant|Conan the Triumphant]]. Para quem
+    quer que a carreira do bárbaro faça sentido de fio a pavio. Os custos são
+    reais: perdem-se os três anos em que se vê Jordan a ganhar rapidez e
+    segurança no trabalho por encomenda, e leem-se sete capítulos de uma
+    cronologia que Jordan montou para albergar umas setenta histórias de Conan
+    saídas de uma dúzia de mãos, quase todas de outros autores e nenhuma delas
+    nesta estante.
+  debated:
+    - "Parcial por desenho: são os sete romances de Conan que Jordan escreveu, e mais nada da sua obra. A cronologia dele intercala-os com os originais de Robert E. Howard e com romances de de Camp, Carter, Offutt, Perry, Roberts e outros, pelo que quem a seguisse tal como está impressa entraria e sairia desta estante a cada passo."
+    - "As cronologias de Conan são uma discussão antiga, não um facto assente. A de Jordan revê a anterior cronologia de Miller, Clark e de Camp e, segundo a Wikipédia, raramente explica as razões das divergências; outros cronologistas ordenam os mesmos livros de outra maneira. Usa-se esta porque foi escrita pelo autor destes sete."
+    - "Todos os romances aqui foram colocados pelo próprio Jordan, pelo que nada teve de ser encaixado por nós. A exceção é que três dos sete ficam no mesmo ano interno (1267 A.A.), onde a sequência é uma decisão dele e não uma data."

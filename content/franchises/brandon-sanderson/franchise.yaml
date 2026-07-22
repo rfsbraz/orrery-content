@@ -1,0 +1,183 @@
+# The franchise id and every work id keep the `cosmere` prefix, chosen when
+# this wing covered only the shared universe. Ids are permanent (user progress
+# references them), so the author-spanning wing keeps the slug and new works,
+# Cosmere or not, take the same `brandon-sanderson/` prefix.
+id: brandon-sanderson
+name: Brandon Sanderson
+kind: author
+description: >
+  The complete published work of Brandon Sanderson - the Cosmere at its
+  connected heart (Mistborn, The Stormlight Archive, Elantris, Warbreaker and
+  the standalones that bind them into one universe), alongside the science
+  fiction of Skyward and the Reckoners, the young-readers Alcatraz books, the
+  Legion novellas, and a long tail of stories, collaborations and curiosities.
+authorIds: [brandon-sanderson]
+themePreset: cosmere-metallic
+
+# Capabilities auto-detect from the data (docs/SCHEMA.md). The Cosmere earns them
+# all: a rich author aura (river/companion), five distinct reading orders,
+# a startHere wizard, and heavy cross-world connective tissue
+# (connections, via characters.yaml). Left on auto.
+features:
+  river: auto
+  wizard: auto
+  connections: auto
+  companion: auto
+  hall: auto
+  editions: auto
+
+# Which shared global events actually reach this author (docs/SCHEMA.md).
+# Sanderson was born in 1975, so the lifetime gate already removes everything
+# before it. Kept by default and deliberately: ebook-and-self-publishing-2007,
+# covid-19-pandemic-2020.
+globalEvents:
+  include:
+    # Predates his birth by a decade. It invented the commercial category he
+    # writes into, and he is the author who took it furthest: Tor bought a
+    # debut from an unknown and then backed doorstop secondary-world sequences
+    # at a cadence only a proven mass paperback audience makes payable.
+    - fantasy-paperback-boom-1965
+  exclude:
+    - chain-bookshop-1982                # he was six; the debut sold into the superstore-and-online era instead
+    - online-bookselling-1995            # his direct-to-reader story starts with the 2007 entry, not the catalogue shelf
+    - sept-11-2001                       # the trunk-novel years; no Cosmere book answers it
+    - financial-crisis-2008              # the debut and Mistborn land either side of it and neither notices
+    - prestige-fantasy-adaptation-2011   # his adaptation story is the Wheel of Time series, and it is kept on that wing
+    - booktok-2020                       # his readership was built on Kickstarter, YouTube and Reddit, not short video
+
+# "Where to start" - powers the guided onboarding wizard. The Cosmere is famous
+# for having no single right entry, and the shelf around it is larger still, so
+# the paths are honest on-ramps for different appetites: four into the Cosmere
+# and one into the books outside it. The completionist path points at the
+# derived publication order, which spans every work in the wing and not the
+# Cosmere alone. Grounded in Sanderson's own FAQ and his "Where do I start?"
+# page, plus the standard community guides (see sources).
+startHere:
+  paths:
+    # Source: https://www.brandonsanderson.com/pages/where-do-i-start
+    # "If you consider yourself a fantasy reader, try Mistborn: the Final Empire
+    # or The Way of Kings." Mistborn is named alongside The Way of Kings, not
+    # above it - the page's own line is "it really doesn't matter which Cosmere
+    # series you start with".
+    - id: mistborn-first
+      title: Start with Mistborn
+      description: >
+        The standard on-ramp. A tight, self-contained heist-and-revolution
+        trilogy with a clean, rule-bound magic system - short enough to finish,
+        connected enough to show how the Cosmere works.
+      workIds:
+        - brandon-sanderson/the-final-empire
+        - brandon-sanderson/the-well-of-ascension
+        - brandon-sanderson/the-hero-of-ages
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste, arc]
+      note: >
+        One of the two books Sanderson himself points existing fantasy readers
+        to, and the book that won him the Wheel of Time. The cost is that you
+        commit to three volumes before you have read a word of the Cosmere's
+        two flagship epics.
+    # Source: https://www.brandonsanderson.com/pages/where-do-i-start
+    # "it really doesn't matter which Cosmere series you start with, which means
+    # any of these books are good starting points" - Mistborn: the Final Empire,
+    # The Emperor's Soul, The Way of Kings, Elantris, Warbreaker.
+    - id: stormlight-first
+      title: Straight into the Stormlight Archive
+      description: >
+        For readers who want the epic first. The flagship series - vast world,
+        deep characters, doorstop volumes. The biggest commitment and, for many,
+        the biggest payoff.
+      workIds:
+        - brandon-sanderson/the-way-of-kings
+      orderId: null
+      fit:
+        experience: [new, returning]
+        commitment: [arc, complete]
+      note: >
+        One of Sanderson's five listed "any of these is a fine start" entry
+        points. Start here only if long books do not scare you, and knowing the
+        series is unfinished: you are joining a story that has no ending yet.
+    # Source: https://www.brandonsanderson.com/pages/where-do-i-start
+    # The Emperor's Soul, Elantris and Warbreaker are all on Sanderson's list of
+    # five good starting points; Elantris is named a second time, as the on-ramp
+    # for readers who do not usually read fantasy ("If you don't typically read
+    # fantasy, try Steelheart or Elantris"). Tress is NOT on that page - it is
+    # kept here as a low-commitment standalone, not as the author's advice.
+    - id: standalones-first
+      title: Test the water with a Cosmere standalone
+      description: >
+        The lowest-commitment way into the shared universe - a single beautiful
+        book you can judge the author by before signing up for a series. Try the Hugo-winning Emperor's
+        Soul, the romance-flavoured Warbreaker, or Elantris, the one Sanderson
+        hands to people who do not usually read fantasy.
+      workIds:
+        - brandon-sanderson/the-emperors-soul
+        - brandon-sanderson/warbreaker
+        - brandon-sanderson/elantris
+        - brandon-sanderson/tress-of-the-emerald-sea
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        These are three of the five books Sanderson names as fine places to
+        begin. The cost is that a standalone shows you the writer but not the
+        universe - the connections that make the Cosmere the Cosmere only start
+        to light up across series.
+    # Source: https://www.brandonsanderson.com/pages/where-do-i-start
+    # "If you don't typically read fantasy, try Steelheart or Elantris." For a
+    # younger or funnier appetite the page points at Alcatraz vs. the Evil
+    # Librarians, and for young adults at "Steelheart, Mistborn, or The
+    # Rithmatist". Elantris and Mistborn are on the Cosmere paths above; this
+    # path carries the three titles that are not Cosmere books.
+    - id: outside-the-cosmere
+      title: Start outside the Cosmere
+      description: >
+        Half this shelf is not epic fantasy at all. Steelheart opens a
+        superpowered thriller, The Rithmatist a chalk-duelling school mystery,
+        and Alcatraz vs. the Evil Librarians a very silly adventure for younger
+        readers. Short books, quick hooks, and the three Sanderson himself hands
+        to people who do not usually read fantasy or who are reading young.
+      workIds:
+        - brandon-sanderson/steelheart
+        - brandon-sanderson/the-rithmatist
+        - brandon-sanderson/alcatraz-versus-the-evil-librarians
+      orderId: null
+      fit:
+        experience: [new, returning]
+        commitment: [taste]
+      note: >
+        The cost is that none of this connects: these books share no universe
+        with each other or with the Cosmere, so nothing you learn here carries
+        into the part of the shelf that is one long joined-up story.
+    - id: everything-in-order
+      title: Everything, in publication order
+      description: >
+        The complete shelf, Cosmere and not, in the order it was written - you
+        watch the universe assemble itself and the connections light up as they
+        did for readers in real time, with the superhero books, the space opera
+        and the children's comedies landing between them as they landed for
+        everyone else. The aura layer is built for exactly this walk. The cost is
+        real: you read the early Elantris and Mistborn books before Sanderson was
+        the writer the later ones are by, and you are handed a middle-grade romp
+        and a doorstop epic in the same year with no warning.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+
+# The bibliography spans the complete published Sanderson catalogue: the
+# Cosmere novels, novellas and collections, the non-Cosmere series (Skyward,
+# The Reckoners, Alcatraz, Legion), the standalones, the collaborations, and
+# the short-fiction tail tiered apocrypha. His three Wheel of Time completion
+# volumes are catalogued in the wheel-of-time franchise, not here (a work
+# lives in exactly one franchise, and a continued universe stays with its
+# originating author).
+sources:
+  - https://faq.brandonsanderson.com/knowledge-base/what-order-should-i-read-them-in/
+  - https://www.brandonsanderson.com/pages/where-do-i-start
+  - https://en.wikipedia.org/wiki/Cosmere
+  - https://en.wikipedia.org/wiki/Brandon_Sanderson_bibliography
+  - https://coppermind.net/wiki/Cosmere
