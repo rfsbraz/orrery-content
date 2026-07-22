@@ -4,7 +4,9 @@
 # franchise.yaml): titles are original-language Norwegian, and the derived
 # default reading order runs over these years, not over any translation's.
 #
-# SHAPE OF THIS WING: thirty-four works across six groupings.
+# SHAPE OF THIS WING: thirty-four works of his own across six groupings, plus
+# one apocrypha entry for a contribution to an anthology edited by other
+# people (grouped at the end of this file, after the Nonfiction entry).
 #
 #   Harry Hole (14) - Flaggermusmannen (1997) through Nådeskudd (2026). The
 #     spine of the catalogue: a Norwegian detective across three decades,
@@ -340,10 +342,16 @@
     "this time, Harry can't help anyone." Both are marketing for this novel
     that answer a question Gjenferd's own jacket leaves open, so neither is
     used in the synopsis above.
-  images:
-    cover: "https://covers.openlibrary.org/b/id/7258876-L.jpg"
-    coverCredit: "Open Library"
-    coverSource: "https://openlibrary.org/books/OL25428415M"
+  # No cover: this work's only Norwegian-tagged Open Library edition
+  # (Aschehoug, 2013, ISBN 9788203352942, cover id 7258876) reads "HARRY
+  # HOLE ER TILBAKE" [Harry Hole is back] across the jacket - confirming, in
+  # the image itself, exactly what this synopsis and Gjenferd's own jacket
+  # both withhold: whether Harry survives what Gjenferd leaves open.
+  # Rejected on spoiler grounds, not a rights or cataloguing one. A clean
+  # Aschehoug pocket cover without the tagline exists at retail (ark.no,
+  # 2017, ISBN 9788203361906) but is not catalogued on Open Library, so it
+  # is not used here, per this catalogue's cover-sourcing rule (verified
+  # Open Library editions only, never a scraped retailer jacket).
   sources:
     - https://no.wikipedia.org/wiki/Harry_Hole
     - https://aschehoug.no/politi
@@ -752,12 +760,27 @@
   subseries: null
   canonTier: extended
   synopsis: >
-    A second 2021 short-story collection, published in English the same
-    year as Rat Island and Other Stories.
+    Five stories set in a future unsettlingly close to the present, built
+    around power, lawlessness and surveillance. The title story strands a
+    walled elite atop a skyscraper roof, waiting out a societal collapse
+    while the masses fight to survive in the streets below; the four that
+    follow turn the same pressure on a psychologist moonlighting as a killer
+    for hire, two friends undone by falling for the same woman at the
+    Pamplona bull run, and a man chasing a way to forget everything before
+    it's too late.
+  note: >
+    No English-language edition of this collection exists. English
+    Wikipedia's bibliography section credits one "the same year" (2021);
+    the only translation confirmed beyond Portuguese is a French edition
+    (Nesbø/Romand-Monnier, Gallimard, 2024), which several retail catalogues
+    mislabel with an English working title - most likely the source of the
+    Wikipedia claim.
   # No cover: the Norwegian record exists on Open Library but carries no
   # cover image.
   sources:
-    - https://en.wikipedia.org/wiki/Jo_Nesb%C3%B8
+    - https://aschehoug.no/litteratur/bokmagasin/krim-og-spenning/rotteoya-et-lyddrama-fra-jo-nesbo
+    - https://www.ark.no/produkt/boker/skjonnlitteratur/rotteoya-og-andre-fortellinger-9788203368264
+    - https://www.salomonssonagency.se/books/rotteoya-og-andre-fortellinger/
     - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
 
 # --- Doktor Proktor (6) ---
@@ -912,3 +935,55 @@
   # cover image.
   sources:
     - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+# --- Apocrypha (1) ---
+#
+# APOCRYPHA: the sources above all index by author-as-primary-creator, which
+# is structurally blind to a contribution filed under an editor's name -
+# the same class of miss the Tana French wing found in the same anthology.
+# Searching the editor/title axis instead surfaces one further work, added
+# below: an essay on Jim Thompson's Pop. 1280 in Books to Die For (Connolly
+# & Burke, eds., 2012). Searched further on the same axis and found nothing
+# else to add: no introduction, foreword, or further contributor credit
+# under Nesbø's name surfaced in any other crime-fiction or Nordic noir
+# anthology checked. Two weaker leads were run down and neither is added
+# here. (1) A March 2015 Dagbladet piece has Nesbø describing a planned
+# "Tom Johansen" kidnapping mockumentary - part of the same authorship hoax
+# already recorded as the jo-nesbo/tom-johansen-scheme-2013 franchise event,
+# announced for the year after the hoax's lawyers-forced unravelling. No
+# title, broadcast or publication under any name was found for it; it reads
+# as a scrapped promotional idea for the hoax, not a shipped work. (2) "Og
+# derr! var sommeren i gang" (2001) is genuinely credited to Nesbø alone and
+# is catalogued as a Book (ISBN 8299586410, Den norske bokhandlerforening)
+# in the National Library of Norway's own legal-deposit record - but
+# Aschehoug's and Norli's own current pages for the later (2005, 2014)
+# audio editions of the same title state outright that these stories "exist
+# only as audio files, made for radio," which contradicts the 2001 print
+# cataloguing rather than confirming it. Left out on that unresolved
+# contradiction rather than added on the strength of one library record.
+
+- id: jo-nesbo/books-to-die-for
+  title: "Books to Die For: The World's Greatest Mystery Writers on the World's Greatest Mystery Novels"
+  authorIds: [jo-nesbo]
+  published: 2012
+  subseries: null
+  canonTier: apocrypha
+  authorRole: contributor
+  contributionTitle: "Pop. 1280 by Jim Thompson"
+  synopsis: >
+    An anthology of personal essays by more than 100 mystery and crime
+    writers from twenty countries, each championing one favorite genre
+    novel, edited by John Connolly and Declan Burke. Nesbø's entry argues
+    for Jim Thompson's Pop. 1280.
+  note: >
+    Publisher Hodder & Stoughton (UK); Goodreads records first publication
+    30 August 2012. Confirmed by Goodreads' own publisher description,
+    which lists "Jo Nesbø on Jim Thompson's Pop. 1280" among the
+    collection's contents. Essays in this anthology are organized as one
+    contributor per book discussed rather than independently titled pieces;
+    contributionTitle records the book his essay is about. This is Connolly
+    and Burke's anthology, not Nesbø's, so neither editor is recorded in
+    withAuthorIds.
+  sources:
+    - https://www.goodreads.com/book/show/15745863
+    - https://www.johnconnollybooks.com/other-books/books-to-die-for
