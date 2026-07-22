@@ -1,0 +1,60 @@
+stage: completeness-auditor
+summary: >
+  Re-verified the scaffold's 10-work bibliography independently: Wikipedia's
+  bibliography table, French's author site, Penguin Random House's author
+  page and Goodreads' full 24-entry works list (foreign editions, boxed
+  sets, ten novels, nothing else) agree on the same ten titles; ISFDB
+  confirms no author entry. Checked the categories a novel-only list drops:
+  no anthology contribution (checked by table of contents against Dublin
+  Noir, Belfast Noir, Trouble Is Our Business and In Sunlight or in Shadow,
+  the four Irish-crime/crime-noir anthologies her contemporaries appear in),
+  no non-fiction, essay, introduction, foreword, novella, or translated-only
+  edition. Two Goodreads leads were run down and confirmed not works of her
+  own authorship: "What the World Is Reading" (2010) is a Penguin
+  promotional excerpts sampler; Strand Magazine Issue 53 (2017) credits her
+  for an interview, not a story. 10 works before, 10 after; no published
+  year changed; nothing reorders the derived reading order. Settled the
+  Broken Harbor/Harbour open item: the Irish/UK edition (Hachette Books
+  Ireland, "Broken Harbour") published 2 July 2012, three weeks ahead of the
+  Viking US edition ("Broken Harbor") on 24 July 2012 - corroborated by
+  reading the Guardian's 15 Jul 2012 review, the Washington Post's 22 Jul
+  2012 review, and Kirkus's 24 Jul 2012 pub date for the Viking ISBN. Title
+  changed to "Broken Harbour", the first-published spelling; full reasoning
+  in the work's own note. canonTier, subseries, withAuthorIds and authorRole
+  all checked and consistent; no correction needed. validate.py --slug
+  tana-french: same pre-existing error (theme.yaml missing art:, out of
+  scope) as before this stage; no new errors.
+produced:
+  newWorkIds: []
+  changedProse:
+    - tana-french/broken-harbor
+  changedDates: []
+forStages:
+  visual-metadata: >
+    No new works; the 10-work list is final. Nothing beyond what
+    wing_digest.py already reports (0/10 covers).
+  editions: >
+    No new works to add ISBNs for. The fourth Dublin Murder Squad novel's
+    title is now "Broken Harbour" (was "Broken Harbor"); match the corrected
+    spelling. No new edition lead surfaced beyond what franchise-research
+    already handed off; the wook.pt "Ver mais" titles it flagged as
+    unchecked remain unchecked, that being editions' own work.
+  translation: >
+    No new synopses; all 10 are unchanged from the scaffold. The one prose
+    change (broken-harbor's note) is not a synopsis. The title itself
+    changed, but per SCHEMA.md a work's title is never translated, so no
+    i18n follow-up.
+  aura-and-ordering-stages: >
+    Covers press-archaeology, world-events, event-resonance, reading-orders,
+    spoiler-audit: all out of this stage's footprint (works.yaml only),
+    unchanged by this pass. The Cal Hooper / Dublin Murder Squad / Witch Elm
+    crossover question franchise-research raised is still unresolved: none
+    surfaced here either.
+openQuestions:
+  - >
+    Genuinely unresolved, left open: no source found states whether the
+    Hodder & Stoughton UK edition (as opposed to Hachette Books Ireland) used
+    the same spelling and release date as the Irish edition, or ran on its
+    own UK schedule. Every source checked treated "Ireland and the UK" as
+    one release; no UK-specific date was independently found. Does not
+    affect the title or year decided here either way.
