@@ -411,11 +411,22 @@ class Wook(PortoEditoraShop):
 
 
 class Bertrand(PortoEditoraShop):
-    """Bertrand. The same records as WOOK, and **clean, unwatermarked covers.**
+    """Bertrand. Excellent records. **Its covers may not be used, watermark or not.**
 
-    This is the pt-PT cover source. Checked at `/1000x` (1000x1547) with the
-    corner cropped and inspected: no retailer mark anywhere on the image, where
-    the equivalent WOOK image is stamped.
+    Its images are visually clean where WOOK's are stamped - checked at
+    `/1000x` with the corner cropped - and that is beside the point.
+    `docs/SCHEMA.md` forbids scraping **a retailer's jacket image**, and says
+    in terms that *"the rule is about the asset, not the hostname"*: a
+    retailer's jacket scan does not become usable by looking clean or by being
+    re-hosted somewhere permitted. The Joao Tordo pass found 4 of 6 OpenLibrary
+    covers for that author were retailer scrapes with Bertrand and WOOK
+    watermarks burned in - both rules true of one file, and the retailer rule
+    wins.
+
+    So `cover_url` here is for **identification only** - looking at a jacket is
+    the cheapest way to confirm which edition a record is - and never for
+    `images.cover`. Covers come from OpenLibrary, publisher press pages, or the
+    slot stays empty, which the app is designed to degrade to.
 
     Note the search path differs from WOOK's - `/pesquisa/<term>` rather than a
     query parameter - which is why `search_url` is a method rather than a
@@ -429,7 +440,7 @@ class Bertrand(PortoEditoraShop):
     name = "bertrand"
     BASE = "https://www.bertrand.pt"
     covers_watermarked = False
-    authoritative_for = "pt-PT AND international editions, with clean covers"
+    authoritative_for = "pt-PT AND international edition RECORDS; covers not usable"
 
     def search_url(self, term: str) -> str:
         return f"{self.BASE}/pesquisa/{urllib.parse.quote(term)}"
@@ -458,8 +469,12 @@ class ShopifyShop(Provider):
     discovering handles and useless for ISBNs; fetch the per-product `.json`
     for those.
 
-    Covers come from the Shopify CDN and are the publisher's own uploads - no
-    retailer watermark, unlike WOOK. Checked at full size on almadoslivros
+    Covers come from the Shopify CDN. Note these two shops are **publishers
+    selling their own list**, not retailers, so their product pages fall under
+    SCHEMA's "publisher press/media pages - usually permitted for editorial
+    use; cite the page" rather than under its retailer-jacket ban. That
+    distinction is the publisher/retailer one, not a watermark check - Bertrand
+    is visually clean and still forbidden. Checked at full size on almadoslivros
     (914x1386, clean; the "alma dos livros" mark on the jacket is the imprint's
     own, printed on the book).
 
@@ -531,7 +546,7 @@ class AlmaDosLivros(ShopifyShop):
     name = "almadoslivros"
     BASE = "https://almadoslivros.pt"
     vendor_is = "author"
-    authoritative_for = "its own pt-PT list; clean covers"
+    authoritative_for = "its own pt-PT list; publisher-hosted, so covers are usable"
 
 
 class Presenca(ShopifyShop):
@@ -540,7 +555,7 @@ class Presenca(ShopifyShop):
     name = "presenca"
     BASE = "https://www.presenca.pt"
     vendor_is = "publisher"
-    authoritative_for = "its own pt-PT list; clean covers"
+    authoritative_for = "its own pt-PT list; publisher-hosted, so covers are usable"
 
 
 

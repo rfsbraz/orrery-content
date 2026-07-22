@@ -78,10 +78,10 @@ stack add a source without touching its callers. The difference: ours must
 | `openlibrary` | breadth, and the only ISBN batching here | 20 ISBNs per call |
 | `googlebooks` | non-anglophone editions, best cover resolution | **needs an API key in practice** |
 | `nb.no` | Norwegian first editions | legal deposit, so silence is evidence |
-| `bertrand` | pt-PT **and international** editions, clean covers | scraper; **the pt-PT cover source** |
+| `bertrand` | pt-PT **and international** edition records | scraper; **covers are a retailer's, do not use** |
 | `wook` | pt-PT **and international** editions | scraper; **covers are watermarked, do not use them** |
-| `almadoslivros` | its own pt-PT list | Shopify JSON, no scraping, clean covers |
-| `presenca` | its own pt-PT list | Shopify JSON, no scraping, clean covers |
+| `almadoslivros` | its own pt-PT list | Shopify JSON; **publisher-hosted, covers usable** |
+| `presenca` | its own pt-PT list | Shopify JSON; **publisher-hosted, covers usable** |
 
 ### Google Books needs a key
 
@@ -107,7 +107,23 @@ WOOK and Bertrand are the worked scraper examples. They run the same Porto
 Editora platform, so they share a base class (`PortoEditoraShop`) and differ in
 three things: the search URL, and whether the covers are usable.
 
-**Use Bertrand for pt-PT covers. Use either for records.**
+**Use either for records. Use NEITHER for covers.**
+
+`docs/SCHEMA.md` forbids scraping a retailer's jacket image and says *"the rule
+is about the asset, not the hostname"* - a retailer scan is not made usable by
+looking clean, or by being re-hosted somewhere permitted. Bertrand's images are
+visually clean where WOOK's are watermarked, and **both are equally
+unusable**, because both are retailers.
+
+The distinction that matters is **publisher vs retailer**, not
+watermark-vs-clean. A publisher's own product page falls under SCHEMA's
+"publisher press/media pages - usually permitted for editorial use; cite the
+page". That is why the Shopify shops below (Alma dos Livros, Presença - both
+houses selling their own list) are a different case from Bertrand and WOOK.
+
+I got this wrong first time: I checked for a watermark, found none on Bertrand,
+and called it the pt-PT cover source. The watermark is a symptom, not the
+rule.
 
 **They are not only Portuguese-market.** Both carry international editions -
 searching Bertrand for *The Snowman* returns three Vintage English printings
@@ -131,7 +147,7 @@ Good for the pt-PT **published title, ISBN, publisher and exact release date** -
 a sweep of one author returns those in seconds, and OpenLibrary holds almost
 none of it for Portugal.
 
-**WOOK's covers are watermarked.** The mark is invisible at thumbnail size and
+**WOOK's covers are watermarked, and that is the lesser problem.** The mark is invisible at thumbnail size and
 obvious at `/1000x`, and it gets worse the higher the resolution goes - exactly
 the "watermarked scrape" the visual-metadata skill names, passing every
 automated check and not licensable. The provider still returns `cover_url`,
