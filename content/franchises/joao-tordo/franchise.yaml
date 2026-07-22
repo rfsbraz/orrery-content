@@ -28,20 +28,12 @@ features: {}
 # novelist with a small home readership. Nothing is kept by default here; the
 # one global event that matters to him is claimed explicitly below.
 globalEvents:
-  # portugal-bailout-2011 (added to the shared pool after this block was
-  # written) is not listed in either block below: it falls inside his lifetime
-  # and renders by default. Anatomia dos Mártires (2011) is built on it
-  # directly - an ambitious journalist "out to prove himself during Portugal's
-  # financial crisis" - so no exclusion is warranted. Contrast
-  # valter-hugo-mae/franchise.yaml, where the same event is excluded: no work
-  # of that author's engages it.
   include:
-    # Sixteen months before his birth, so the lifetime gate drops it. It is the
-    # single global event that made his career possible: he belongs to the first
-    # Portuguese generation that never wrote around a censor, and he spends that
-    # freedom on interior, metaphysical, deliberately apolitical novels rather
-    # than the resistance-shaped literature the Estado Novo produced.
     - carnation-revolution-1974
+    - portugal-bailout-2011      # inherited from the lifetime default, not yet ruled on
+  # Considered and refused. Nothing renders unless it is in `include`
+  # above, so these change nothing; they are kept as the record of a
+  # judgement already made, so it is not re-litigated from scratch.
   exclude:
     - chain-bookshop-1982                # a British and American shop format; his trade is Portuguese
     - online-bookselling-1995            # his readership is domestic and bookshop-led; no title answers this
@@ -51,7 +43,6 @@ globalEvents:
     - prestige-fantasy-adaptation-2011   # he writes for Portuguese television, but not a word of fantasy
     - covid-19-pandemic-2020             # no evidence any novel answers it; excluded rather than assumed
     - booktok-2020                       # Lusophone literary fiction is not what short-form video moves
-
 # "Where to start" - powers the guided wizard. Four honest paths, each with a
 # citable basis (a prize, a publisher-acknowledged grouping, or the crime turn).
 startHere:

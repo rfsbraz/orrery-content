@@ -121,6 +121,11 @@ startHere:
 # "censura do pensamento" and "quase meio século de ditadura" (Há Sempre um
 # Livro à Nossa Espera, cited below) - the world the Revolution closed.
 globalEvents:
+  include:
+    - carnation-revolution-1974  # inherited from the lifetime default, not yet ruled on
+  # Considered and refused. Nothing renders unless it is in `include`
+  # above, so these change nothing; they are kept as the record of a
+  # judgement already made, so it is not re-litigated from scratch.
   exclude:
     - chain-bookshop-1982                # a British and American shop format; his trade is small Portuguese presses and Porto Editora
     - online-bookselling-1995            # domestic, bookshop-led readership; no title or career fact answers this
@@ -131,7 +136,6 @@ globalEvents:
     - portugal-bailout-2011              # no novel of the decade engages the bailout or austerity; contrast joao-tordo/franchise.yaml, whose Anatomia dos Mártires (2011) is built on it directly
     - covid-19-pandemic-2020             # no work found addressing the pandemic; Deus na Escuridão (2024) is set 1981-2001, not the present
     - booktok-2020                       # Lusophone literary fiction is not what short-form video moves, and no work here answers book-discovery culture
-
 # Every work below is checked against at least one Portuguese primary or
 # near-primary source (publisher pages, national press, the official José
 # Saramago prize site). works.yaml records which titles he edited rather than

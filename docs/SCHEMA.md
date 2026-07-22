@@ -94,27 +94,37 @@ sources: [https://...]
 Optional, on `franchise.yaml`. `reach: global` means "any franchise **could**
 carry this", not "every franchise must".
 
-By default the app filters global events to the span of the authors' lifetimes:
-an event is the weather a writer wrote in, and nobody wrote in weather that
-predates them. A dead author's window closes at death; where a franchise has
-several authors it stays open while any of them is living. That default is
-arithmetic and needs no curation.
-
-This block is the judgement on top:
+**A global event renders on a wing if and only if that wing names it in
+`include`.** There is no arithmetic default and no implicit membership: silence
+means absent.
 
 ```yaml
 globalEvents:
-  exclude:
-    - financial-crisis-2008          # lived through it; no book answers it
   include:
     - fantasy-paperback-boom-1965    # predates him; created the category he writes in
+  exclude:
+    - financial-crisis-2008          # lived through it; no book answers it
 ```
 
-- **`exclude`** - overlaps the lifetime but never reached the page. The bar is
-  low: an absent event costs a reader nothing, while a page of events that mean
-  nothing to this author teaches them the aura is decoration.
-- **`include`** - outside the lifetime, but the author demonstrably writes out of
-  it. The bar is high, because it overrides a defensible default.
+- **`include`** - the operative list. Every entry is a claim that this event
+  reached this author's page, and carries a short note saying how.
+- **`exclude`** - **gates nothing.** Nothing renders unless it is included, so
+  an exclusion changes no output. It is kept as the record of a judgement
+  already made, so a later pass knows the ground was covered and does not
+  re-litigate it from scratch.
+
+This used to work the other way: an event rendered on every wing whose author
+lifespan covered it, unless that wing excluded it. The lifetime test was cheap
+and needed no curation, which made it attractive - and it was quietly wrong,
+because it was only ever correct for the events that existed when a wing was
+ruled. Adding one to `global.yaml` retroactively opted in every wing already
+curated, and nobody re-runs resonance across the catalogue when an event lands.
+
+> This also existed because of a real defect: `portugal-bailout-2011` was added
+> a day after the Palahniuk wing was ruled, and rendered on his timeline and on
+> four other foreign wings until it was spotted. Wrong content costs more than
+> absent content - an unclaimed event is a gap someone can grep for, where a
+> wrongly-claimed one just looks like curation.
 
 The judgement lives here rather than in `global.yaml` so that the shared file
 stays franchise-agnostic. The `event-resonance` skill owns these decisions.
