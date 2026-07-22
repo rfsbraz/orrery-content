@@ -137,6 +137,30 @@ def check_images(loc, entity_id, images):
                 )
 
 
+def _lin(c):
+    c /= 255
+    return c / 12.92 if c <= 0.03928 else ((c + 0.055) / 1.055) ** 2.4
+
+
+def luminance(hex_colour):
+    h = hex_colour.lstrip("#")
+    if len(h) != 6:
+        return None
+    try:
+        r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
+    except ValueError:
+        return None
+    return 0.2126 * _lin(r) + 0.7152 * _lin(g) + 0.0722 * _lin(b)
+
+
+def contrast(a, b):
+    la, lb = luminance(a), luminance(b)
+    if la is None or lb is None:
+        return None
+    hi, lo = max(la, lb), min(la, lb)
+    return (hi + 0.05) / (lo + 0.05)
+
+
 def valid_isbn13(isbn):
     """ISBN-13 check digit (EAN-13): weights 1,3,1,3... over the first 12."""
     digits = [int(c) for c in isbn]
@@ -540,6 +564,23 @@ def main():
                 f"signature '{sig}' is not implemented by the app - it will "
                 f"silently render as 'thread' (implemented: {sorted(SIGNATURES)})",
             )
+        # CONCEPT §6 calls the readability floor non-negotiable, and nothing
+        # enforced it: a wing shipped `muted` at 4.15:1 on its own surface and
+        # every check stayed green, because no script had ever opened a palette.
+        # WCAG AA for body text is 4.5:1.
+        palette = theme.get("palette") or {}
+        for fg, bg, why in (("ink", "bg", "body text"),
+                            ("ink", "surface", "text on cards"),
+                            ("muted", "surface", "metadata on cards"),
+                            ("muted", "bg", "metadata on the page")):
+            if palette.get(fg) and palette.get(bg):
+                ratio = contrast(palette[fg], palette[bg])
+                if ratio is not None and ratio < 4.5:
+                    err(
+                        f"{fslug}/theme.yaml",
+                        f"{fg} {palette[fg]} on {bg} {palette[bg]} is "
+                        f"{ratio:.2f}:1, under the 4.5:1 AA floor for {why}",
+                    )
 
     # --- era coverage -------------------------------------------------------
     # Every work should sit under some era: the River renders works against era
