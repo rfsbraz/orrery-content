@@ -25,53 +25,64 @@ Every sketch in the catalogue carries the same mark - **concentric orbital
 rings with small nodes riding on them** - and that shared mark is what makes a
 Pratchett sketch and a Mãe sketch read as one publication.
 
-It is **not** a watermark and not a fixed overlay in the sky. Put it on
-something the scene would plausibly contain, so it looks found rather than
-applied:
+**It is an afterthought, and it should feel like one.** The reader meets the
+scene first. Somewhere after that, they notice the rings and think *oh, that's
+fun*. That reaction is the whole specification. If the motif is the first thing
+seen, or if it needed its own clearing in the composition to be readable, it
+has been drawn wrong no matter how well it was drawn.
 
-- engraved on the face of a compass, a dial, a pocket watch, an astrolabe
-- printed as the cancellation stamp on an envelope, a ticket, a library card
-- woven into a rug, a mat, a tablecloth, a shawl border, a tiled floor
-- pressed into a coin, a medal, a seal, a bookplate, a bottle cap
+**The sky is its home.** Faint arcs high in an open sky is the default and the
+best version: it sits in the one part of the picture nothing else is using, it
+never has to fight a carrier's existing markings, and it stays incidental
+without effort. Reach for it first.
+
+**Vary away from the sky when the scene has none, or when a wing is getting
+repetitive** - not as a matter of course. An interior, a close still life or a
+night scene may have no sky to use, and then the motif goes on something the
+scene already plausibly contains:
+
 - the rings of a cut log, ripples spreading on water, a spiral of birds
-- worked into a gate, a window grille, a bannister, a wheel
+- woven into a rug, a mat, a tablecloth, a shawl border, a tiled floor
+- worked into a gate, a window grille, a bannister, a cartwheel
+- printed as the cancellation stamp on an envelope, a ticket, a library card
+- pressed into a coin, a medal, a seal, a bookplate
 
-Choosing the carrier is part of drawing the scene: pick what that subject
-already has. A writing desk offers a paperweight; a fishing village offers
-net floats and ripples; a hospital corridor offers a wall clock. **Vary it
-between assets in the same wing** - the same compass in six sketches becomes a
-logo, which is the opposite of the point.
+**Do not default to a small round object.** Compasses, dials, pocket watches,
+floats and bottle caps are the obvious carriers and therefore the ones that
+turn into a tic: a run of sketches each hiding the rings on a little disc reads
+as a game of spot-the-logo. If the scene has sky, use the sky.
 
-Faint arcs across an empty sky are still allowed, but as one option among many
-rather than the default, and only where the composition has real empty sky.
+**Vary it between assets in the same wing** - the same compass in six sketches
+becomes a logo, which is the opposite of the point.
 
-### Write the motif as its own paragraph, and keep it legible
+### Write the motif as its own paragraph, and keep it quiet
 
-The single most common failure is a **tangled** motif: the rings get drawn on
-top of whatever markings the carrier already had, and the result is a busy
-smudge that reads as neither. A compass already has a rose and degree marks; a
-clock already has numerals; a coin already has a device.
+Give the motif **its own short paragraph**, never a clause tacked onto the end
+of a sentence about something else, because a tangled clause is how it gets
+missed entirely. But write that paragraph to make it *recede*:
 
-So, in the prompt:
-
-- Give the motif **its own short paragraph**, never a clause tacked onto the
-  end of a sentence about something else. It is a distinct instruction.
-- Say explicitly that it **replaces** the carrier's usual markings rather than
-  being added over them: *"in place of an ordinary compass rose"*, *"in place
-  of the usual numerals"*.
 - Describe the shape concretely and simply: **two or three plain concentric
   ellipses with three or four small solid dots sitting on them**, and nothing
-  else inside that area. Name the clear space: *"no other engraving, degree
-  marks or lettering on that face"*.
-- Say how big it should read and how much clear space it needs.
+  else inside that area.
+- Say it is **faint, small, and off to one side**: *"high in the upper left,
+  well away from the centre"*. Never say it should be legible, prominent, or
+  given clear space around it. Those words are what turn an afterthought into a
+  centrepiece, and the generator obeys them.
+- Say it is drawn in the **same ink and no heavier** than its surroundings.
+
+When the carrier is an object rather than sky, one extra failure appears: the
+rings get drawn on top of markings the carrier already had, and the result is a
+busy smudge reading as neither. A compass already has a rose, a clock has
+numerals, a coin has a device. So say the motif **replaces** those markings
+rather than joining them: *"in place of the usual numerals"*.
 
 Two constraints hold whichever carrier is used:
 
-- **It never competes with the subject.** Same ink, no heavier than its
-  surroundings. If a reader notices the rings before the scene, it is too
-  strong.
-- **It is never the subject.** No sketch is *about* an orrery, and it is never
-  a floating diagram with nothing holding it.
+- **It never competes with the subject.** If a reader notices the rings before
+  the scene, it is too strong.
+- **It is never the subject.** No sketch is *about* an orrery, it never gets
+  its own careful attention in the prompt, and it is never a floating diagram
+  with nothing holding it.
 
 ## 2. The model
 
@@ -171,7 +182,22 @@ least two of these four:
   hardship, a mauve or ashen cast for grief. This is the cheapest way to make a
   sequence feel written rather than generated - and it must never break into a
   colour the wing does not own.
-- **The orrery motif's carrier** (§1a). Six compasses is a logo.
+- **Where the orrery motif sits** (§1a). Sky is the default, so most of a
+  wing's sketches carry it there; when a scene has no sky, vary the carrier.
+  Six compasses is a logo, and so is six little discs of any kind.
+
+**Read the wing's prompt history before writing a new one.** Every prompt is
+posted as a comment on its own GitHub issue, and the issue title carries the
+slug, so the wing's whole visual record is one query:
+
+    gh issue list --repo rfsbraz/orrery-content --state all \
+      --search "<wing-slug> in:title" --json number,title,comments
+
+That is the only way monotony can actually be checked. An agent writing a
+wing's seventh sketch cannot otherwise know what the first six chose, and
+"vary it between assets" becomes an instruction nobody is able to follow.
+Skim the previous prompts for the distances, the carriers, the tonal casts and
+the objects already used, then deliberately go somewhere else.
 
 The app alternates which side of the card the illustration sits on as you go
 down the page, so **do not build the composition around a side**: keep the
@@ -235,9 +261,10 @@ In order, always:
    away - it is the only thing making two assets belong to the same wing.
 3. **The subject**, derived from the entity's own `title` and `description`.
    Draw what the record says happened; do not invent incident.
-3a. **The orrery motif's carrier for this scene** (§1a) - name the specific
-   object that carries the rings here, and vary it from the wing's other
-   assets.
+3a. **Where the orrery motif sits in this scene** (§1a) - the sky by default,
+   an object only when the scene has no sky to use. Keep it faint, small and
+   off-centre; it is an afterthought a reader finds on second look, never
+   something the prompt dwells on.
 4. **The composition**, from the asset spec (§4).
 5. **The shared negative prompt** (§6), plus the wing's own `art.avoid`.
 6. **The technical block** (§5b), verbatim. Never leave the output format to be
