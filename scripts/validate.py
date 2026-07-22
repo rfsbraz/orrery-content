@@ -576,13 +576,28 @@ def main():
                 "no `art:` block - the wing has no visual law, so nothing can "
                 "be drawn for it (run the visual-language stage)")
         else:
-            missing = [k for k in ("motifs", "atmosphere", "lineCharacter",
+            missing = [k for k in ("emblem", "motifs", "atmosphere", "lineCharacter",
                                    "backgroundTexture", "accentUse", "avoid")
                        if not art.get(k)]
             if missing:
                 err(f"{fslug}/theme.yaml",
                     f"`art:` is missing {', '.join(missing)} - a partial visual "
                     f"law reads as settled and is not")
+
+            # The emblem is the one small object that carries this author's
+            # essence, and it earns its place by being traceable: `why` must
+            # say what in the works, the life or the history makes the object
+            # theirs. An emblem nobody can source is decoration, and this is
+            # where that gets caught rather than in review.
+            em = art.get("emblem")
+            if isinstance(em, dict):
+                for k in ("object", "why"):
+                    if not em.get(k):
+                        err(f"{fslug}/theme.yaml",
+                            f"`art.emblem` has no `{k}`")
+            elif em is not None:
+                err(f"{fslug}/theme.yaml",
+                    "`art.emblem` must be a mapping with `object` and `why`")
 
         # CONCEPT §6 calls the readability floor non-negotiable, and nothing
         # enforced it: a wing shipped `muted` at 4.15:1 on its own surface and
