@@ -1,0 +1,104 @@
+stage: translation
+mode: delta
+scope: >
+  The new/rewritten prose named in refresh-spoiler-audit.yaml's changed_prose
+  list, across six wings: agatha-christie, chuck-palahniuk, discworld
+  (Pratchett author), stephen-king, wheel-of-time (Jordan author), joao-tordo.
+  Found precisely via i18n_coverage.py (10 PARTIAL files) and
+  git diff main -- content/authors content/franchises. No existing overlay
+  entry was retranslated.
+
+coverage:
+  before: "pt-PT 72/82 files fully covered"
+  after: "pt-PT 82/82 files fully covered - no regression"
+
+gates:
+  i18n_coverage: "82/82, complete"
+  validate: "exit 0, 483 works, all references resolve; warning list unchanged from baseline (all pre-existing, none in files I touched)"
+  sync_skill_blocks: "exit 0, 2 shared blocks identical"
+
+files_touched:
+  - content/i18n/pt-PT/authors/agatha-christie.yaml
+  - content/i18n/pt-PT/franchises/agatha-christie/events.yaml
+  - content/i18n/pt-PT/authors/chuck-palahniuk.yaml
+  - content/i18n/pt-PT/franchises/chuck-palahniuk/events.yaml
+  - content/i18n/pt-PT/authors/stephen-king.yaml
+  - content/i18n/pt-PT/franchises/stephen-king/events.yaml
+  - content/i18n/pt-PT/authors/robert-jordan.yaml
+  - content/i18n/pt-PT/franchises/wheel-of-time/events.yaml
+  - content/i18n/pt-PT/authors/terry-pratchett.yaml
+  - content/i18n/pt-PT/franchises/discworld/events.yaml
+
+new_entries_translated: 22
+# 5 christie lifeEvents + witness-for-the-prosecution-1953; 1 palahniuk
+# lifeEvent + rant-sold-as-trilogy-2007; 2 king lifeEvents + 3 king events;
+# 2 jordan lifeEvents + 3 wot events; 3 pratchett lifeEvents +
+# discworld-convention-1996. eras.yaml and franchise.yaml for agatha-christie
+# were already mirrored correctly (Ackroyd rewrite, styles-years, meet-poirot)
+# and needed no work - verified only.
+
+spoiler_handling: >
+  Verified the Ackroyd-adjacent entries already in pt-PT (roger-ackroyd-
+  breaks-the-rules, the-styles-years era, meet-poirot startHere) carry the
+  audit's non-spoiler rewrite correctly - no "reviravolta" or "truque"
+  present. The one new Christie event, witness-for-the-prosecution-1953,
+  translates the audit's fixed line ("how far her standing had travelled in
+  thirty years") without reintroducing the dropped Ackroyd-scandal framing.
+  discworld-convention-1996 translates the corrected account only (health
+  reasons, on-camera Q&A, hat as guest of honour) - never touched the
+  "costumed stand-in" claim the audit removed, since it isn't in the source.
+
+sensitive_entries: >
+  christie-late-novels-vocabulary-decline: kept the negation exact ("nunca
+  foi diagnosticada com Alzheimer nem com qualquer outra forma de demência")
+  and did not add a diagnosis the source doesn't state. palahniuk-mother-
+  dies-2009: factual register, no added pathos ("a chorar um progenitor
+  morto", "continua com saudades"). Both titles lead with the same framing
+  the audit chose (writing on; the invert, not the loss).
+
+joao_tordo: >
+  tordo-bom-inverno-identity-crisis-2010 was already translated and matches
+  the audit's retitled (non-clinical) version field for field. No error
+  found; nothing changed.
+
+base_file_errors_found: none this pass.
+
+quote_convention: >
+  Direct first-person quotes attributed to the subject (Christie's "an
+  employed wage slave", Jordan's "I can do better than that" and the two WoT
+  pacing quotes, King's LA Times quote, Pratchett's "four nuclear power
+  stations on my patch") were left in English rather than translated,
+  matching existing precedent (Pratchett's "an embuggerance", "AT LAST, SIR
+  TERRY..."). A pre-existing outlier (Barnard's Postern of Fate review,
+  translated in eras.yaml) was left alone as out of scope.
+
+flag_for_native_reviewer:
+  - "wot-slows-pace-1994: kept 'the slog' in English per the audit's own call
+    that it is settled fan vocabulary. A PT-reading Jordan fan may prefer a
+    Portuguese equivalent - worth a second opinion."
+  - "christie-honours-1955-56 and man-in-black-suit-prize-1995 keep MWA/O.
+    Henry/World Fantasy award names in English, matching how Edgar Award was
+    already handled elsewhere in this wing - consistent, not obviously wrong."
+
+fixed_during_proofread:
+  - "chuck-palahniuk.yaml: 'lêem-se' -> 'leem-se' (AO90; the corpus already
+    uses unaccented 'leem' everywhere else)."
+  - "discworld/events.yaml: a stray Cyrillic 'а' typed into 'Sacha Hotel' by
+    my own keystroke, caught by diffing against the base spelling."
+  - "chuck-palahniuk/events.yaml: reworded a stiff literal rendering of 'a
+    series the record never delivered' to the more idiomatic 'uma série que
+    nunca se chegou a concretizar'."
+
+verification: >
+  No live app in this content-only worktree to render-check against; done
+  means here is the three green gates above plus a full re-read of every
+  inserted block against the base diff, work-by-work title cross-reference
+  against editions.yaml (Postern of Fate/A Porta do Destino, Bag of Bones/
+  Saco de Ossos, etc.), and a targeted AO90/Brazilianism proofread pass.
+
+tool_calls:
+  total: approx 95
+  note: >
+    Not tracked precisely in real time; dominated by Read/Bash lookups
+    (base diffs, existing overlay context, editions.yaml title
+    cross-references) rather than network fetches - zero network calls made.
