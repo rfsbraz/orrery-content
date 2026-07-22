@@ -50,6 +50,7 @@ stages fire. Before launching anything:
 | discovery for orders/entry paths has never actually run, works changed since orders were written, or startHere predates the current order set | `reading-orders` |
 | `world-events` ran, or `globalEvents` include/exclude has never been ruled on | `event-resonance` |
 | any prose was added or changed upstream | `spoiler-audit` |
+| **the wing has no `theme.art`**, or its bibliography or eras have changed enough that the art language no longer describes the books | `visual-language` |
 | works were added, covers/editions coverage is stale against the work list, or slots are empty with no documented reason | `visual-metadata`, `editions` |
 | any prose was added or changed (runs last) | `translation` (per locale) |
 | a full run; or any run that touched three or more layers | `wing-audit` |
@@ -90,6 +91,7 @@ Parallel groups are parallel *because* their members touch different files.
 | `event-resonance` | `franchise.yaml` (`globalEvents`) |
 | `reading-orders` | `orders.yaml`, `franchise.yaml` (`startHere`) |
 | `spoiler-audit` | cross-cutting: works, events, characters, authors, orders |
+| `visual-language` | `theme.yaml` (`art` only) |
 | `visual-metadata` | `works.yaml` (images), `franchise.yaml` (header), `authors/<id>.yaml` |
 | `editions` | `editions.yaml` |
 | `translation` | `content/i18n/<locale>/**` only |
@@ -121,6 +123,7 @@ errors are silent and green.
 | `eras` | opus on a first build, else sonnet | high | The largest editorial claim we make, rendered full-bleed as if received. Telling received framing from our own opinion is the hardest call in the repo - but that call is made once. Adding a sourced era to a settled scheme is sonnet work. |
 | `reading-orders` | sonnet | high | Admission tests plus the prequel spoiler vector. |
 | `spoiler-audit` | opus | high | Asymmetric and permanent: a false negative ruins a first read forever, and the agent must reason about what a reader has *not* read yet. |
+| `visual-language` | sonnet | high | Sets the visual law for every drawing the wing will ever get, and it is written once. Getting it generic costs nothing today and everything in a year. |
 | `visual-metadata` | sonnet | low | Mostly mechanical fetching, but a watermarked scrape or an omnibus cover passes every automated check. Cut effort, not tier. |
 | `editions` | sonnet | medium | Check digits are arithmetic; a valid-but-wrong ISBN is a reader's money. |
 | `translation` | sonnet | high | pt-PT register is subtle and this layer has shipped Brazilianisms before. |
