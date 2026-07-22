@@ -79,6 +79,7 @@ curator_questions:
     plate built on it would be our inference wearing her quote.
 
 tool_calls: >
-  23 total; 12 network-touching (7 fetch.py invocations covering 9 distinct
-  URLs, plus 5 WebSearch calls to discover candidate framings before fetching
-  the pages). The single Wayback lookup ran at --workers 2.
+  43 total; 20 network-touching (12 fetch.py invocations covering 12 distinct
+  URLs, 4 of those invocations served entirely from cache, plus 8 WebSearch
+  calls to discover candidate framings before fetching the pages themselves).
+  The Wayback lookups ran at --workers 2.
