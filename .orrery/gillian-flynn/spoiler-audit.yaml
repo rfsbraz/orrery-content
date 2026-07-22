@@ -1,0 +1,91 @@
+stage: spoiler-audit
+wing: gillian-flynn
+branch: gillian-flynn/spoil2
+
+engine_verified: >
+  Checked against the app rather than the skill table. lib/content/types.ts
+  gives spoilerAfter to AuraEvent (line 37) and CharacterAppearance (line 97)
+  only; the Work interface (68-90) has neither spoilerAfter nor note, so
+  works[].note is never loaded and the SPOILER CARE blocks in works.yaml are
+  inert and safe to keep. theme.yaml art motifs are read by no component.
+  franchise.description renders twice: on the wing page and as the page meta
+  description, so it reaches search results as well as readers.
+
+files_changed:
+  - path: content/franchises/gillian-flynn/franchise.yaml
+    field: description
+  - path: content/franchises/gillian-flynn/works.yaml
+    field: gillian-flynn/the-grownup synopsis and note
+  - path: content/authors/gillian-flynn.yaml
+    field: bio
+  - path: content/franchises/gillian-flynn/theme.yaml
+    field: art.motifs (not rendered; art direction only)
+
+redactions:
+  - work: The Grownup
+    file: content/franchises/gillian-flynn/works.yaml
+    revealed: >
+      The synopsis closed on "a family with much stranger problems than a
+      ghost", which resolves the one thing the publisher deliberately leaves
+      open. Weidenfeld & Nicolson (9781474603041) ends its copy on the
+      narrator beginning to feel the house too, "waiting, biding its time".
+      Rewritten to that altitude; a note now records why, so a later
+      enrichment pass does not re-resolve it.
+  - work: Sharp Objects
+    file: content/franchises/gillian-flynn/franchise.yaml
+    revealed: >
+      The wing description named Camille as "a reporter carving words into
+      her own skin". The Orion jacket (9780753822210) states only "Some
+      scars never heal", "long-haunted by a childhood tragedy" and "dogged
+      by her own demons". The publisher keeps this an allusion, so we do
+      too. Replaced with "a reporter sent back to the home town that haunts
+      her".
+  - work: Gone Girl (art direction, downstream risk only)
+    file: content/franchises/gillian-flynn/theme.yaml
+    revealed: >
+      The motif "a hand-written diary page, the handwriting a little too
+      careful" encodes the falsity of the diary. Nothing renders it today,
+      but it is an instruction to an illustrator, and visual-metadata has
+      not run. Trimmed to "a hand-written diary page, closed on the table".
+
+kept_after_checking:
+  - item: >
+      "unreliable narrators and false domestic surfaces" (franchise
+      description) and "helped establish the unreliable-narrator thriller as
+      a commercial category" (bio). My first instinct was to cut both. The
+      publisher test overturned it: Orion's own Gone Girl page prints
+      "she wields her unreliable narrators to stunning effect" (Observer),
+      "Nothing's as it seems" twice (Times, Marie Claire), "gasp-inducing
+      twist" (Grazia) and "told by Nick, then Amy, but who's telling the
+      truth?" (Essentials). That a twist exists is unavoidable publisher
+      copy; what it is appears nowhere here. Loosenable in the other
+      direction if a curator disagrees.
+  - item: >
+      Gone Girl synopsis, Dark Places synopsis, Sharp Objects synopsis. All
+      sit at or below their own jackets, which go further than we do
+      (Dark Places: "uncovers an unimaginable truth... on the run from a
+      killer"). No change.
+  - item: >
+      flynn-ew-layoff-2008 life event. The Dunnes losing their media jobs
+      and leaving New York is first-act setup, not a reveal. Ungated, kept.
+  - item: >
+      Adaptations. gone-girl-film and sharp-objects-tv carry cast, director
+      and credit only. Nothing about the film's changed third act survives
+      anywhere in this wing.
+
+sources_used:
+  - https://www.orionbooks.co.uk/titles/gillian-flynn/gone-girl/9780753827666/
+  - https://www.orionbooks.co.uk/titles/gillian-flynn/sharp-objects/9780753822210/
+  - https://www.orionbooks.co.uk/titles/gillian-flynn/dark-places/9780753827031/
+  - https://www.orionbooks.co.uk/titles/gillian-flynn/the-grownup/9781474603041/
+
+trap_recorded: >
+  orionbooks.co.uk ignores the slug and keys on the ISBN, returning HTTP 200
+  with a different book rather than a 404. A guessed Dark Places ISBN served
+  Boris Akunin's "She Lover of Death". Confirm a Flynn page by grepping for
+  a character name before quoting it.
+
+gates:
+  validate_py: "green, exit 0, run after the last write including this file"
+  sync_skill_blocks: green
+  i18n: "no pt-PT overlay exists for this wing yet, so nothing to mirror"
