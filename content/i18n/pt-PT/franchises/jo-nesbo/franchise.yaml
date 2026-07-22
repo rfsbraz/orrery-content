@@ -1,0 +1,68 @@
+# Overlay pt-PT. Apenas prosa; id, slugs, títulos de obras (fora do texto de
+# exibição das referências inline a obras) e sources não são traduzidos.
+# Os startHere.paths ficam aninhados e são fundidos por id (ver SCHEMA.md,
+# "Nested lists merge by id"): só `title`, `description` e `note`, nunca
+# `workIds`, `orderId` ou `fit`.
+# Títulos de obras citados na prosa usam a edição portuguesa publicada
+# (content/franchises/jo-nesbo/editions.yaml, 24 das 34 obras) ou ficam no
+# original norueguês quando não existe edição portuguesa - nunca um título
+# inventado (ver docs/SCHEMA.md, "Never translate a published title").
+
+- id: jo-nesbo
+  description: >
+    Catorze romances de Harry Hole acompanham um detetive alcoólico de Oslo
+    ao longo de três décadas, de [[work:jo-nesbo/flaggermusmannen|O
+    Morcego]] (1997) a [[work:jo-nesbo/nadeskudd|Nådeskudd]] (2026), a par
+    da duologia Kongeriket, dos romances de Olav Johansen, de um Macbeth de
+    2018 para a coleção Hogarth Shakespeare, de mais cinco romances
+    policiais autónomos, de duas coletâneas de contos, e da série infantil
+    Doktor Proktor, de cinco romances (mais um bestiário complementar), que
+    decorre em paralelo com tudo isto.
+  startHere:
+    paths:
+      - id: one-quiet-book
+        title: Uma noite tranquila e brutal
+        description: >
+          Uma novela autónoma sobre um homem de confiança de Oslo a quem é
+          ordenado matar a mulher do patrão - e que se apaixona por ela em
+          vez de cumprir a missão. Sem detetive, sem série, sem história
+          para pôr em dia - apenas uma leitura curta e controlada que mostra
+          o que Nesbø faz com uma frase.
+        note: >
+          A crítica destaca-o como a forma mais fácil de entrar na obra de
+          Nesbø para quem tem adiado os seus livros mais longos - acaba
+          quase assim que começa.
+
+      - id: harry-hole-front-to-back
+        title: Harry Hole, do princípio ao fim
+        description: >
+          Os catorze livros que lhe deram o nome: o primeiro caso de um
+          detetive norueguês em Sydney, e tudo o que a bebida, o exílio e o
+          regresso lhe custaram ao longo de três décadas de invernos em
+          Oslo.
+        note: >
+          Catorze livros são um compromisso a sério antes de sabermos se a
+          voz nos convence - é essa a troca que este caminho faz, para
+          conhecermos Harry logo no primeiro caso, e não a meio da sua
+          história.
+
+      - id: doktor-proktor-for-a-different-reader
+        title: Para um leitor muito mais jovem
+        description: >
+          Um Nesbø completamente diferente: um inventor excêntrico, o seu
+          jovem vizinho destemido e um pó de peidos capaz de mandar uma
+          pessoa para órbita. Cinco livros escritos para crianças, sem
+          partilhar mundo, personagens ou tom com o resto desta prateleira.
+        note: >
+          Escolha este caminho para uma criança, ou para uma pausa total da
+          ficção policial - não como um aquecimento antes de Harry Hole. Não
+          é isso que este caminho prepara.
+
+      - id: the-whole-shelf
+        title: A prateleira inteira
+        description: >
+          As trinta e quatro obras pela ordem em que foram escritas: catorze
+          romances de Harry Hole, duas sagas familiares, dois romances de
+          Olav Johansen, uma releitura de Shakespeare, contos, e a série
+          infantil Doktor Proktor, todos a decorrer lado a lado exatamente
+          como foram publicados.
