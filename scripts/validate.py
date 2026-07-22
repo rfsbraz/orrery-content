@@ -564,6 +564,26 @@ def main():
                 f"signature '{sig}' is not implemented by the app - it will "
                 f"silently render as 'thread' (implemented: {sorted(SIGNATURES)})",
             )
+        # A wing with no `art:` block cannot have a single asset generated for
+        # it: `asset_audit.py` refuses to list jobs, because ten drawings made
+        # months apart with no shared visual law are ten unrelated pictures.
+        # Seven of ten wings sat in exactly this state, which was 156 assets
+        # blocked behind a decision nobody had recorded. Error, not warning:
+        # the whole point is that it stops the wing rather than annotating it.
+        art = theme.get("art") or {}
+        if not art:
+            err(f"{fslug}/theme.yaml",
+                "no `art:` block - the wing has no visual law, so nothing can "
+                "be drawn for it (run the visual-language stage)")
+        else:
+            missing = [k for k in ("motifs", "atmosphere", "lineCharacter",
+                                   "backgroundTexture", "accentUse", "avoid")
+                       if not art.get(k)]
+            if missing:
+                err(f"{fslug}/theme.yaml",
+                    f"`art:` is missing {', '.join(missing)} - a partial visual "
+                    f"law reads as settled and is not")
+
         # CONCEPT §6 calls the readability floor non-negotiable, and nothing
         # enforced it: a wing shipped `muted` at 4.15:1 on its own surface and
         # every check stayed green, because no script had ever opened a palette.
