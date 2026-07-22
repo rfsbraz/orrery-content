@@ -1,0 +1,85 @@
+stage: completeness-delta
+summary: >
+  Fixed the gap found: two anthology contributions invisible to every
+  author-indexed source the original completeness check used. Both
+  confirmed by searching editor and book title instead of author. Down
+  These Green Streets (Declan Burke, ed., Liberties Press, 2011, ISBN
+  9781907593192): publisher/editor/year confirmed by the National Library
+  of Ireland catalogue; French's contribution and its content confirmed by
+  editor Declan Burke's own blog (1 June 2011, pre publication), quoting
+  her describing the piece: a passage naming the ghost-estate setting and
+  previewing the still-unpublished Broken Harbour's plot beat for beat
+  (family attacked, father and two children dead, mother in intensive
+  care, Scorcher assigned the case). That is a writer discussing her own
+  forthcoming novel, not a self-contained story, so it is recorded as
+  nonfiction; the wing's "no short fiction" claim survives. Books to Die
+  For (Connolly & Burke, eds., Hodder & Stoughton, 2012): confirmed by
+  Goodreads' publisher synopsis, which lists "Tana French on The Secret
+  History by Donna Tartt" among the contents, and independently by an
+  archived review (materialwitness.typepad.com, 21 Sep 2012) quoting her
+  essay directly. Both recorded as canonTier apocrypha, authorRole
+  contributor, following the precedent already in this repo (gillian-flynn,
+  brandon-sanderson, valter-hugo-mae contributor entries): id and title are
+  the anthology's, contributionTitle is the piece where one could be
+  established. Neither editor is in withAuthorIds - the anthology is
+  theirs, not French's.
+  Searched the same axis further and found nothing else: the four
+  anthologies already checked by table of contents (Dublin Noir, Belfast
+  Noir, Trouble Is Our Business, In Sunlight or in Shadow) still exclude
+  her; a fifth lead from a web search ("Looking at the Stars", a Munster
+  Literature Centre charity anthology) was checked against its full
+  published contributor list (stingingfly.org) and does not include her
+  either - a genuine negative-control catch, since the search engine's own
+  summary had wrongly asserted she contributed to it. No foreword,
+  introduction or further essay surfaced under her name.
+  Rewrote works.yaml's header comment: removed the false "COMPLETE" and
+  "no anthology contribution surfaced" claims, split it into a NOVELS
+  section (unchanged reasoning) and an APOCRYPHA section stating the
+  structural blind spot and what the editor/title search did and did not
+  find. externalIds count corrected 10 -> 12.
+  validate.py --slug tana-french: same 3 pre-existing warnings as baseline
+  (2 handoff-length warnings on other stages' files, the-witch-elm outside
+  every era); no new warnings, no errors. 493 -> 495 works catalogue-wide.
+  Both new works land inside the Dublin Murder Squad era span (2007-2016),
+  so no new era-gap warning.
+produced:
+  newWorkIds:
+    - tana-french/down-these-green-streets
+    - tana-french/books-to-die-for
+  changedProse:
+    - tana-french/works.yaml (header comment)
+  changedDates: []
+forStages:
+  editions: >
+    Neither new work has an edition entry. Down These Green Streets: Dublin,
+    Liberties Press, 2011, ISBN 9781907593192 (independently confirmed
+    against the NLI catalogue). Books to Die For: Hodder & Stoughton UK
+    hardcover, ISBN unconfirmed here; Goodreads records a US edition
+    (Atria/Simon & Schuster) too - check whether both markets need entries.
+  visual-metadata: >
+    No cover on either work; not checked at all, not checked and rejected.
+  translation: >
+    No pt-PT synopsis for either work; i18n_coverage.py now reports
+    franchises/tana-french/works.yaml at 10/12 (was 10/10, fully covered),
+    dropping the pt-PT locale's fully-covered count from 80/88 to 79/88. Not
+    a regression against previously translated content, both entries being
+    new, but the next translation pass needs to know the wing is no longer
+    fully covered.
+  aura-and-ordering-stages: >
+    Untouched; aura_density.py now reports 12 works / 9 aura entries / 0.75
+    per work (was 10 works) for this wing, worth knowing but not a change
+    either stage needs to act on.
+openQuestions:
+  - >
+    Curator's call, carried over from wing-audit: whether these two
+    contributions (and now formally, the wing's shape) sit comfortably next
+    to a header that used to describe the wing as ten novels and nothing
+    else. The apocrypha tier and the rewritten header comment are the
+    documented decision; whether the wing's public-facing framing elsewhere
+    (if any exists outside works.yaml) should also change is not this file's
+    call.
+  - >
+    Genuinely unresolved: no source found gives a discrete title for the
+    Down These Green Streets piece itself, only its subject and content.
+    contributionTitle is left blank rather than guessed. If a table of
+    contents ever surfaces, it settles this in one line.

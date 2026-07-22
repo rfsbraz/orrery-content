@@ -3,9 +3,9 @@
 # publication year of the complete work.
 #
 # SHAPE OF THIS WING: ten novels across three groupings, all of them French's
-# own prose fiction and all tiered core - there is no apocrypha or off-spine
-# extended work to record, unlike wings with screen credits or introductions
-# to other people's books.
+# own prose fiction and all tiered core, plus two apocrypha entries for
+# contributions to anthologies edited by other people (grouped at the end of
+# this file, after the Cal Hooper trilogy).
 #
 #   Dublin Murder Squad (6) - In the Woods through The Trespasser. The
 #     series' own defining structure: each book has a new lead detective, and
@@ -35,25 +35,42 @@
 # Angeles Times Book Prize and Irish Book Award listings, both checked
 # directly.
 #
-# COMPLETE against the reachable record: French's own Wikipedia bibliography
-# table (which splits her output into exactly these three groupings), her
-# own author site's ten-book list, Penguin Random House's author page and
-# Goodreads' full 24-entry works list (foreign editions, boxed sets and the
-# ten novels; nothing else) all agree on the same ten titles; ISFDB has no
-# author entry for her at all (checked directly), consistent with a career
-# in crime rather than SF/fantasy short fiction. No anthology contribution
-# surfaced: she does not appear in Dublin Noir, Belfast Noir, Trouble Is Our
-# Business or In Sunlight or in Shadow, the four Irish-crime or crime-noir
-# anthologies her contemporaries and peers appear in, all checked by table
-# of contents. Two Goodreads-listed items are not works of her own writing
-# and are excluded on that basis rather than overlooked: "What the World Is
+# NOVELS: French's own Wikipedia bibliography table (which splits her output
+# into exactly these three groupings), her own author site's ten-book list,
+# Penguin Random House's author page and Goodreads' full 24-entry works list
+# (foreign editions, boxed sets and the ten novels; nothing else) all agree
+# on the same ten titles; ISFDB has no author entry for her at all (checked
+# directly), consistent with a career in crime rather than SF/fantasy short
+# fiction. Two Goodreads-listed items are not works of her own writing and
+# are excluded on that basis rather than overlooked: "What the World Is
 # Reading" (2010) is a Penguin promotional sampler of excerpts from already
 # published novels, not new prose; Strand Magazine Issue 53 (2017) credits
-# her for an interview, not a story. No introduction, foreword or
-# screen-writing credit under her name surfaced either, unlike the Gillian
-# Flynn wing's mixed-medium bibliography.
+# her for an interview, not a story.
+#
+# APOCRYPHA: every source above indexes by author-as-primary-creator, which
+# is structurally blind to a contribution filed under an editor's name.
+# Searching by editor and by book title instead of by author surfaces two
+# further works, both now recorded at the end of this file: an essay on
+# Donna Tartt's The Secret History in Books to Die For (Connolly & Burke,
+# eds., 2012), and a nonfiction piece discussing the real "ghost estates"
+# behind the then-unpublished Broken Harbour in Down These Green Streets
+# (Burke, ed., 2011). Neither is a novel of hers, so neither belongs among
+# the ten above; both are hers, so this bibliography is not complete without
+# them. Searching that same editor/title axis further turned up nothing
+# else: she does not appear in Dublin Noir, Belfast Noir, Trouble Is Our
+# Business or In Sunlight or in Shadow, the four Irish-crime or crime-noir
+# anthologies her contemporaries and peers appear in (checked by table of
+# contents), nor in Looking at the Stars, a charity anthology of Irish
+# writing whose full published contributor list does not include her. No
+# introduction, foreword or screen-writing credit under her name surfaced
+# either, unlike the Gillian Flynn wing's mixed-medium bibliography.
+#
+# This bibliography is complete against every source reachable by both the
+# author-indexed and the editor/title-indexed search; that is not the same
+# claim as no further editor-filed contribution existing anywhere, only that
+# none surfaced under either method.
 # externalIds are empty throughout: no external identifier is recorded for
-# any of the ten works.
+# any of the twelve works.
 
 - id: tana-french/in-the-woods
   title: "In the Woods"
@@ -364,3 +381,72 @@
     cover: "https://covers.openlibrary.org/b/id/15205400-L.jpg"
     coverCredit: "Open Library"
     coverSource: "https://openlibrary.org/works/OL45093452W"
+
+# --- Apocrypha: contributions to multi-author works ---
+
+- id: tana-french/down-these-green-streets
+  title: "Down These Green Streets: Irish Crime Writing in the 21st Century"
+  authorIds: [tana-french]
+  published: 2011
+  subseries: null
+  canonTier: apocrypha
+  authorRole: contributor
+  synopsis: >
+    Declan Burke's anthology of essays, interviews and short fiction
+    surveying Irish crime writing, published by Liberties Press with an
+    afterword by Fintan O'Toole. French's contribution discusses the
+    half-built "ghost estates" left behind by the property crash, the real
+    setting behind her own then-forthcoming novel Broken Harbour.
+  note: >
+    Publisher, editor and year are confirmed by the National Library of
+    Ireland's own catalogue record (Dublin: Liberties Press, 2011, 368p.);
+    ISBN 9781907593192. French's presence as a contributor, and the content
+    of her piece, rest on editor Declan Burke's own blog, which quotes her
+    describing the piece ahead of the book's release: "It's set somewhere
+    out past Balbriggan [north County Dublin], on one of those half-built
+    'ghost estates' ... A family has been attacked and the father and two
+    children are dead, the mother's in intensive care and Scorcher ... has
+    been assigned this case" - a description of the still-unpublished
+    Broken Harbour rather than a self-contained story, so this entry is
+    recorded as nonfiction and not as short fiction. No title for the piece
+    itself surfaced in any source checked; the book's own billing as
+    "essays, interviews and short fictions" was not resolved to a
+    per-contributor table of contents, so contributionTitle is left blank.
+    This is Burke's anthology, not French's, so he is not recorded in
+    withAuthorIds.
+  sources:
+    - "https://catalogue.nli.ie/Search/Results?lookfor=Down+These+Green+Streets&type=AllFields"
+    - "https://crimealwayspays.blogspot.com/2011/06/this-world-is-mostly-broken.html"
+    - "https://crimealwayspays.blogspot.com/2011/03/emerald-noir-gem-by-any-other-name.html"
+
+- id: tana-french/books-to-die-for
+  title: "Books to Die For: The World's Greatest Mystery Writers on the World's Greatest Mystery Novels"
+  authorIds: [tana-french]
+  published: 2012
+  subseries: null
+  canonTier: apocrypha
+  authorRole: contributor
+  contributionTitle: "The Secret History by Donna Tartt"
+  synopsis: >
+    An anthology of personal essays by more than 100 mystery and crime
+    writers from twenty countries, each championing one favorite genre
+    novel, edited by John Connolly and Declan Burke. French's entry argues
+    for Donna Tartt's The Secret History as an early treatment of a
+    friendship circle as the engine of a crime novel, against what she
+    calls the "tired, lazy distinction" between literary and crime fiction.
+  note: >
+    Publisher Hodder & Stoughton (UK); Goodreads records first publication
+    30 August 2012 and shelves the book under Nonfiction and Essays.
+    Confirmed independently by Goodreads' own publisher synopsis, which
+    lists "Tana French on The Secret History by Donna Tartt" among the
+    collection's contents, and by a review of the finished book
+    (materialwitness.typepad.com, 21 September 2012) that quotes French's
+    own line from the essay. Essays in this anthology are organized as one
+    contributor per book discussed rather than independently titled pieces;
+    contributionTitle records the book her essay is about. This is
+    Connolly and Burke's anthology, not French's, so neither editor is
+    recorded in withAuthorIds.
+  sources:
+    - "https://www.goodreads.com/book/show/15745863"
+    - "https://materialwitness.typepad.com/material_witness/2012/09/review-books-to-die-for-edited-by-john-connolly-and-declan-burke.html"
+    - "https://www.johnconnollybooks.com/other-books/books-to-die-for"
