@@ -1,0 +1,82 @@
+stage: reading-orders
+summary: >
+  Ships orders.yaml empty and franchise.yaml with no startHere block: a
+  complete, correct bundle, not a gap. Tested the brief's central question -
+  does "start anywhere" clear the sourcing bar for this rotating-narrator
+  series - and it does not. The claim appears only in SEO reading-order
+  farms; neither French nor her publisher states it (her site sells the
+  "Volumes 1-6" boxed set, a bundling decision, not advice); the one real
+  literary-outlet claim (Electric Literature's ranking piece, "there's
+  really no wrong reading order") contradicts itself a sentence later,
+  insisting The Likeness sit directly against In the Woods; and a
+  long-running Goodreads thread on the exact question splits, several
+  answers recommending publication order through the first three books. No
+  source clears community, author-recommended or widely-cited-article
+  tier. Rejected two order candidates (subseries-filtered orders per
+  grouping, duplicates of the derived default) and a further startHere
+  candidate (Cal Hooper-first, resting only on the absence of crossover
+  cast, not on any reader recommending it). Confirmed the prequel/spoiler
+  vector does not apply - both groupings publish in strict chronological
+  and in-universe order. Documented the real cost publication order
+  avoids: the rotating-detective structure means reading out of sequence
+  can spoil an earlier book's own career arc (The Trespasser reveals
+  Stephen Moran made the Murder Squad, the outcome The Secret Place builds
+  toward). validate.py --slug tana-french: same pre-existing error
+  (theme.yaml missing art:, owned by visual-language) and same
+  pre-existing warnings (two overlong earlier handoffs, The Witch Elm
+  outside every era); no new errors.
+produced:
+  changedFiles:
+    - content/franchises/tana-french/orders.yaml
+    - content/franchises/tana-french/franchise.yaml
+  newOrders: 0
+  startHerePaths: 0
+rejected:
+  - "Dublin Murder Squad in order (6) and Cal Hooper trilogy in order (3)
+    as curated orders: each is exactly the derived default filtered to
+    works.yaml's own subseries field, adding nothing the field does not
+    already carry, and no community or publisher guide backs either
+    grouping the way the L-Space guide backs Discworld's thread orders."
+  - "A 'start anywhere' startHere path: tested against the sourcing bar
+    (author statement, canonical community guide, widely-cited article,
+    uniform fandom consensus) and it clears none of them - see summary."
+  - "A Cal Hooper-first startHere path (skip the Squad, start with The
+    Searcher): the trilogy's break from Dublin Murder Squad is a real,
+    sourced bibliographic fact (no shared cast, per characters.yaml), but
+    no reader, critic, or the author recommends entering there instead of
+    at the Squad. Recommending it on the absence alone would be invention."
+  - "A completionist-only startHere (orderId: default, no other paths):
+    the sparse-shelf exception is for an author whose only honest advice
+    is 'start at the beginning', itself a real finding; here there is no
+    sourced entry-path insight of any kind, so no startHere at all is the
+    honest bundle, matching gillian-flynn's precedent."
+forStages:
+  spoiler-audit: >
+    No new prose beyond two YAML comments (orders.yaml, franchise.yaml),
+    neither reader-facing. Worth your attention: reading out of
+    publication order is a real spoiler vector here (an
+    outcome-of-career-arc spoiler, not a whodunit one) - Stephen Moran's
+    promotion visible in The Trespasser spoils what The Secret Place
+    builds toward, and the same shape likely holds for Frank Mackey and
+    Antoinette Conway. Nothing ships as reader-facing prose since no order
+    or path exists to carry it; characters.yaml's appearsIn notes are
+    where this would surface if one ever did.
+  translation: >
+    No new reader-facing prose. orders.yaml is empty (nothing to overlay)
+    and franchise.yaml gained no startHere block. The one prose change is
+    a content-comment, not translatable per SCHEMA.md's overlay rules.
+openQuestions:
+  - >
+    Weakest call: whether Electric Literature's ranking piece should count
+    for more than it was given here. A named critic in a real literary
+    outlet is a real rung above the SEO farms, but the same paragraph both
+    claims "no wrong reading order" and insists two specific books stay
+    adjacent - not a coherent recommendation to cite as settled. A second,
+    non-self-contradicting outlet making the same claim would change this.
+  - >
+    Left genuinely open: no source settles whether Cal Hooper readers who
+    never touch Dublin Murder Squad are common in practice, or simply
+    undocumented rather than untrue. An author interview framing the new
+    protagonist and country as entry-point advice, not just a craft note,
+    would be the strongest lead toward a legitimate second startHere path
+    this stage did not find.
