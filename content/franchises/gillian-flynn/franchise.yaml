@@ -10,6 +10,18 @@ description: >
 authorIds: [gillian-flynn]
 themePreset: heartland-noir
 
+globalEvents:
+  exclude:
+    - sept-11-2001            # lived through it; domestic thrillers never touched post-9/11 anxiety
+    - financial-crisis-2008   # published across 2008-2012; no book answers it
+    - chain-bookshop-1982     # industry infrastructure; bookshop culture never reached the page
+    - online-bookselling-1995 # Amazon-era discovery; text contains no Amazon/online commerce
+    - ebook-and-self-publishing-2007 # Kindle era; no ebook technology in her work
+    - prestige-fantasy-adaptation-2011 # genre mismatch; Flynn writes crime thrillers, not fantasy
+    - booktok-2020            # Gone Girl phenomenon predates this by 8 years; social media discovery not in text
+    - covid-19-pandemic-2020  # Utopia aired Sept 2020 with eerie pandemic resonance, but written 2014-2015 (coincidence)
+    - portugal-bailout-2011   # Portuguese; she's American, no connection
+
 # CAPABILITIES - left at auto rather than declared, because auto already
 # produces the honest result. No eras.yaml, events.yaml, orders.yaml,
 # characters.yaml or editions.yaml exists in this wing, so river, companion,
