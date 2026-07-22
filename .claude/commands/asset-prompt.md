@@ -33,10 +33,12 @@ entire point.
 
 ## Assemble
 
-Follow `docs/VISUAL.md` §5 in order: house style, the wing's `art` quoted
-rather than paraphrased, the subject from the entity's own `title` and
-`description`, the composition from the asset spec, then the shared negative
-prompt plus the wing's `art.avoid`.
+Follow `docs/VISUAL.md` §5: **labelled sections** (`STYLE`, `SCENE`, `SUBJECT`,
+`DETAIL`, `COMPOSITION`, `CONSTRAINTS`), never one long paragraph, with the
+wing's `art` quoted rather than paraphrased and the constraints last. Keep the
+whole prompt under ~6,000 characters: the documented cap is far higher, but long
+prompts are reported to fail silently, returning an image with little relation
+to the instructions and no error.
 
 **Look at the neighbours first.** For a life or franchise event, read the
 sketches already filed on the two events either side of it in the timeline
@@ -44,6 +46,13 @@ sketches already filed on the two events either side of it in the timeline
 composition type, distance, tonal cast and motif carrier, per VISUAL.md §4a. A
 sequence of individually good sketches that all look alike is the failure this
 stage is most likely to produce, and it is invisible one asset at a time.
+
+**Draw the moment, not a table of objects.** §3's ban on inventing a real
+person's face is not a ban on people, scenes or incident (§3a). Anonymous
+figures, crowds, rooms in use and weather are all in scope, and a wing whose
+sketches are mostly close still-lifes has failed §4a - the Mãe wing shipped
+seven of eleven that way. No composition type may take more than a third of a
+wing.
 
 Two rules that override any instinct to make a nicer picture:
 
@@ -57,18 +66,20 @@ Two rules that override any instinct to make a nicer picture:
 For a `world-event`, drop the wing's art language entirely: neutral house
 style, transparent background, no author-specific motifs.
 
-## Choose the presentation
+## The presentation is not a choice any more
 
-Per VISUAL.md §5a, decide how this particular sketch should meet the page -
-torn sheet, dissolving panel, objects on an implied surface, panel with a
-break-out, or something else that serves the same end - and judge it on the
-subject, the surface it lands on (a dark card, a half-page era spread, an
-inverted rupture band) and what the neighbouring assets already did. State the
-choice and the reason in the brief; it is an editorial call, not a default.
+VISUAL.md §5a used to offer four modes per asset. It offers one: every event
+sketch is a dissolving panel, and **the dissolve itself is applied by
+`prepare_asset.py`, not drawn by the model**. Do not describe the edge in the
+prompt - no torn paper, no fading, no ragged ink. Ask only that the artwork
+leaves roughly a tenth of the frame as magenta all the way around.
 
-The transparency invariant is not part of that choice and never bends, and a
-world-event sketch has no latitude at all: line and texture only, or the
-per-wing tint turns it into a coloured blob.
+Every event now lands on the same dark card, ruptures included (they get scale,
+not an inverted band), so there is no per-surface judgement left to make either.
+
+The transparency invariant never bends, and a world-event sketch has no latitude
+at all: line and texture only, or the per-wing tint turns it into a coloured
+blob.
 
 ## Return
 
@@ -81,18 +92,28 @@ Always all six, in this order:
    bolted onto another sentence is what produces a tangled, illegible motif),
    and it must end with the **technical block** (§5b): exact pixel dimensions,
    a flat fully-saturated magenta `#FF00FF` background to be keyed out later
-   (never ask for transparency - it does not survive the download), and no
+   (never ask for transparency - it does not survive the download, and the
+   parameter knocks out light regions inside the drawing), an explicit ban on
+   any glow, halo, mist or gradient between the artwork and the magenta, and no
    frame or matte.
 3. **Size** - from the spec table (`1536x1024` era plates, `1024x1024` events).
 4. **Background** - opaque, or transparent for world events (and say it must be
    tinted per wing with that accent).
-5. **Reference images** - for Orrery assets the answer is **no**: the only
-   asset that would want them is an author likeness, and we do not generate
-   those. Say so explicitly rather than leaving it unstated, and if a future
-   asset type does want references, name exactly which images and why.
-6. **Filing** - the `prepare_asset.py --chroma` command and the YAML it prints, with `sketchCredit`
-   saying it was generated (the validator rejects a credit that reads like a
-   source).
+5. **Reference images** - name the wing's **anchor image** (§5d) and say to
+   attach it, plus up to two other accepted assets from the same wing that
+   differ in subject. This is the strongest cohesion tool available and the
+   first two wings were built without it: there is no seed and no style token
+   for this model, so a style block in the prompt is necessary and not
+   sufficient. Always re-anchor to the original; never chain off the asset
+   generated immediately before, which compounds drift.
+
+   The only exception is the wing's own first era plate, which has no anchor
+   yet because it becomes one, and world events, which belong to the catalogue
+   rather than to a wing.
+6. **Filing** - the `prepare_asset.py --chroma` command, plus `--neutral` (full
+   strength on a cold wing, ~0.4 on a warm one) to correct the model's warm
+   cast, and the YAML it prints, with `sketchCredit` saying it was generated
+   (the validator rejects a credit that reads like a source).
 
 Then one line on what to check when the image comes back: whether it sits
 beside the wing's existing assets without looking like a different system.
