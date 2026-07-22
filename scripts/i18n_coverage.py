@@ -100,6 +100,12 @@ def count(path, fields):
 
 def main():
     strict = "--strict" in sys.argv
+    # --json makes this gateable in CI. The human report says "74/82 files
+    # covered", which tells you there is work but not WHICH files regressed;
+    # comparing that number across branches also breaks the moment a base file
+    # is added. Per-file status compares cleanly.
+    as_json = "--json" in sys.argv
+    status = {}
     locales = [
         os.path.basename(p)
         for p in glob.glob(os.path.join(ROOT, "content", "i18n", "*"))
@@ -145,8 +151,10 @@ def main():
                 partial.append(
                     f"{rel} {len(base) - len(gaps)}/{len(base)} (missing: {', '.join(which)})"
                 )
+                status[f"{locale}/{rel}"] = "partial"
             else:
                 done += 1
+                status[f"{locale}/{rel}"] = "complete"
         total = len([t for t in targets if slots(os.path.join(ROOT, "content", t[0]), t[1])])
         print(f"\n=== {locale}: {done}/{total} files fully covered ===")
         if missing:
@@ -160,6 +168,10 @@ def main():
                 print(f"    - {p}")
         if not missing and not partial:
             print("  complete")
+
+    if as_json:
+        import json
+        print(json.dumps(status, indent=0, sort_keys=True))
 
     if strict and failed:
         sys.exit(1)

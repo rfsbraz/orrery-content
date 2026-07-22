@@ -1,16 +1,16 @@
 name: Validate content
 
+# Everything a machine can check, checked by a machine.
+#
+# These used to be run by hand or by an agent, which meant they were run when
+# someone remembered. Agent time is the expensive resource here and CI minutes
+# are free on a public repo, so anything mechanical belongs on this side of the
+# line. An agent that skips these because CI will catch them is doing the right
+# thing.
 on:
   pull_request:
-    paths:
-      - "content/**"
-      - "scripts/validate.py"
-      - ".github/workflows/validate.yml"
   push:
     branches: [main]
-    paths:
-      - "content/**"
-      - "scripts/validate.py"
 
 concurrency:
   group: validate-${{ github.event.pull_request.number || github.ref }}
@@ -25,11 +25,84 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pyyaml
+
+      - name: Scripts parse
+        # Cheap, and it catches real breakage: a heredoc mangling an escape
+        # inside a Python string shipped a syntax error twice in one session,
+        # both times found by running the script rather than by reading it.
+        run: |
+          python -m compileall -q scripts/
+          for f in scripts/*.sh; do [ -e "$f" ] || continue; sh -n "$f"; done
+
       - name: Validate canon content
         run: python scripts/validate.py
-      - name: Translation coverage report
-        # Reports only - a partially translated locale is a valid state. This
-        # exists so a file that belongs to no franchise (shared global events,
-        # co-author bios, character rosters) cannot be silently forgotten when
-        # translation work is split by franchise.
+
+      - name: Skill blocks are in sync
+        # The sanctuary and tooling blocks are duplicated verbatim into every
+        # SKILL.md. Editing one copy and not the rest is silent: the agent
+        # reading the stale copy simply behaves by the old rule.
+        run: python scripts/sync_skill_blocks.py
+
+      - name: Translation coverage
         run: python scripts/i18n_coverage.py
+
+  i18n-regression:
+    # A partially translated locale is a valid state, so coverage is not
+    # required to be complete. What is not acceptable is a file that WAS
+    # complete quietly becoming partial, which is what happens when prose is
+    # added upstream and the translation delta is left for later and forgotten.
+    # That happened today: four wings gained aura entries and coverage fell
+    # from 82/82 to 74/82 with nothing complaining.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+
+      - name: Compare coverage against the base branch
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+          # An escape hatch, because sometimes the translation genuinely lands
+          # in a following PR. Label the PR and this reports instead of failing.
+          LABELS: ${{ join(github.event.pull_request.labels.*.name, ',') }}
+        run: |
+          set -euo pipefail
+          python scripts/i18n_coverage.py --json > /tmp/head.json 2>/dev/null || true
+          git checkout -q "$BASE"
+          python scripts/i18n_coverage.py --json > /tmp/base.json 2>/dev/null || true
+          git checkout -q "$HEAD"
+          python scripts/i18n_gate.py /tmp/base.json /tmp/head.json
+
+  report:
+    # Never gates. These are the numbers someone would otherwise ask an agent
+    # for, printed where they are free to read.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - name: Wing health
+        run: |
+          {
+            echo "### Aura density"
+            echo '```'
+            python scripts/aura_density.py || true
+            echo '```'
+            echo "### Visual assets"
+            echo '```'
+            python scripts/asset_audit.py || true
+            echo '```'
+            echo "### Shared global event budget"
+            echo '```'
+            python scripts/event_density.py || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
