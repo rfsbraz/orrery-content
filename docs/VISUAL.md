@@ -36,6 +36,28 @@ best version: it sits in the one part of the picture nothing else is using, it
 never has to fight a carrier's existing markings, and it stays incidental
 without effort. Reach for it first.
 
+**In the sky, draw it enormous and open, never small and closed.** This is the
+counterintuitive part and it is the one that keeps going wrong. Asking for a
+small mark produces a compact ellipse system in one corner: a discrete object,
+a little diagram parked in the air, and the eye goes straight to it. Asking for
+a vast one produces something the eye reads as *sky*.
+
+So for any scene with open sky:
+
+- **Shallow arcs spanning the full width of the frame**, running off both edges
+  rather than closing. Segments of circles far larger than the picture.
+- **Concentric with the horizon**, echoing its curve, as if the rings belonged
+  to the earth's own curvature rather than sitting in front of it.
+- **No part of it reads as a shape.** If you can point at the motif and trace
+  its outline, it is too small and too closed.
+- The dots ride **far apart** along the arcs, a few across the whole sky, never
+  clustered into a cluster that reads as a diagram.
+- Faint enough to pass for high cirrus or the ruled lines of an old chart the
+  weather has nearly taken back.
+
+Never a closed ellipse, never an orbit diagram, never a compact device in the
+upper corner.
+
 **Vary away from the sky when the scene has none, or when a wing is getting
 repetitive** - not as a matter of course. An interior, a close still life or a
 night scene may have no sky to use, and then the motif goes on something the
@@ -64,10 +86,13 @@ missed entirely. But write that paragraph to make it *recede*:
 - Describe the shape concretely and simply: **two or three plain concentric
   ellipses with three or four small solid dots sitting on them**, and nothing
   else inside that area.
-- Say it is **faint, small, and off to one side**: *"high in the upper left,
-  well away from the centre"*. Never say it should be legible, prominent, or
-  given clear space around it. Those words are what turn an afterthought into a
-  centrepiece, and the generator obeys them.
+- **Never say "small".** In the sky it produces a compact diagram in a corner,
+  which is the single most persistent failure this section has. Say **vast**,
+  **spanning the whole sky**, **running off both edges of the frame**, and say
+  it is faint. Size and prominence are opposites here.
+- Never say it should be legible, prominent, or given clear space around it.
+  Those words turn an afterthought into a centrepiece, and the generator obeys
+  them exactly.
 - Say it is drawn in the **same ink and no heavier** than its surroundings.
 
 When the carrier is an object rather than sky, one extra failure appears: the

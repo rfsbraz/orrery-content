@@ -68,9 +68,16 @@ elliptical arcs with three or four small solid dots sitting on them.**
 mark later, thinking *oh, that's fun*. If it is the first thing seen, it is
 wrong.
 
-- **Its home is the sky.** Faint arcs high in open sky, off to one side, well
-  away from the centre, drawn thinner than everything beneath them, partly lost
-  in cloud or haze.
+- **Its home is the sky, and there it is vast, not small.** Shallow arcs
+  spanning the full width of the frame and running off both edges, concentric
+  with the horizon and echoing its curve, as if they belonged to the curvature
+  of the earth. Drawn fainter and thinner than everything beneath them, partly
+  lost in cloud or haze. A few dots spaced far apart along the arcs.
+- **Never a compact ellipse system in a corner of the sky.** A closed ring
+  diagram floating in the air is a discrete object and the eye finds it first,
+  which is the failure this whole rule exists to prevent. If you can trace its
+  outline as a shape, it is too small and too closed. Drawn large enough, it
+  stops reading as an object and starts reading as sky.
 - When a scene has no sky (an interior, a close still life), the prompt will
   name an object to carry it instead: ripples on water, the rings of a cut log,
   a woven border, a gate's ironwork, a postal cancellation stamp. On an object,
