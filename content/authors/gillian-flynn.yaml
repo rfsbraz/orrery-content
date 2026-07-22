@@ -1,9 +1,26 @@
 # Global author entity. Authors are referenced by id from franchises and works
 # (authorIds / withAuthorIds), so the same person resolves the same everywhere.
 # Author-LIFE events live here (they follow the person); franchise-specific
-# events live in content/franchises/gillian-flynn/events.yaml. The three
+# events live in content/franchises/gillian-flynn/events.yaml. The four
 # lifeEvents below are a small set of well-sourced, clearly dated anchors
 # rather than a complete account of the life.
+#
+# Candidates tested and left out on the 2026-07 press pass:
+#   - the Entertainment Weekly critic years themselves (what she covered
+#     week to week, 1998-2008): the 2008 layoff already carries the
+#     substance of that decade as a life event below; no additional dated,
+#     sourced specifics about her beat surfaced beyond what that entry
+#     already states
+#   - the Northwestern Medill journalism master's and reporting-as-training-
+#     for-fiction: already folded into the bio field above and into the
+#     1971 entry's account of her upbringing; nothing further, dated and
+#     sourced, distinguished it as its own anchor
+#   - 2025 reporting on the delayed fourth novel and how hard it is to
+#     follow Gone Girl: real, but it describes an unpublished, unannounced-
+#     title work seven years after this wing's actual gap, and risks
+#     characterizing a book that does not exist yet; the 2018 entry below
+#     carries the same anxiety from inside the gap itself, on the record,
+#     without speculating about the book that eventually answers it
 id: gillian-flynn
 name: Gillian Flynn
 aka: ["Gillian Schieber Flynn"]
@@ -72,6 +89,26 @@ lifeEvents:
       - https://en.wikipedia.org/wiki/Gillian_Flynn
       - https://time.com/3429666/gillian-flynns-marriage-plot/
       - https://www.hollywoodreporter.com/movies/movie-features/gillian-flynn-talks-utopia-and-6-year-journey-to-screen-we-were-playing-a-little-bit-of-a-game-of-chicken-4060720/
+
+  - id: flynn-anxious-no-novel-2018
+    date: 2018-11-12
+    title: Anxious, six years and no novel since Gone Girl
+    impact: high
+    description: >
+      By the fall of 2018, Flynn had adapted her own
+      [[work:gillian-flynn/gone-girl|Gone Girl]] for the screen, written
+      three episodes of HBO's Sharp Objects and co-written Widows with
+      Steve McQueen, but had not published a novel since Gone Girl in
+      2012. "I am starting to get anxious because I haven't published a
+      book since Gone Girl," she told Interview magazine that November,
+      "aside from The Grownup. I've done a lot of screenwriting, but
+      that's different." The remark, made in her own words mid-way
+      through the run of screen work that filled the gap, is the clearest
+      on-the-record account of what the silence between novels actually
+      felt like from inside it.
+    spoilerAfter: null
+    sources:
+      - https://www.interviewmagazine.com/culture/gillian-flynn-brings-her-mid-western-noir-to-a-boil-in-widows
 
   - id: flynn-zando-imprint-2021
     date: 2021-09-21
