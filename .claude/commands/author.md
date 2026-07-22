@@ -294,9 +294,14 @@ Integration is yours - do not delegate it:
    `node .next/standalone/server.js` with `.next/static` copied in first -
    `next start` does not apply the proxy under `output: standalone`.
    **Do not drive a browser to verify content** (see CURATION.md §5).
-5. Delete `.orrery/`, merge to `main` directly (content is validator-gated
-   data; review adds latency - the standing rule), push, bump the app's
-   content submodule, and keep the deployment current.
+5. Delete `.orrery/`, then **open a pull request and stop.** `main` is
+   protected and every change to this repo goes through a PR that Rodrigo
+   merges himself - never push to `main`, never self-merge, never enable
+   auto-merge. The run report is the PR body.
+6. **After he merges**, bump the app's content submodule and keep the
+   deployment current. Work that merged but never deployed is the same
+   failure wearing a different hat, so check the running revision against
+   `main` rather than assuming the bump shipped.
 
 ## Verify the agents, not just the content
 

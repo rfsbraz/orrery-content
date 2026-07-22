@@ -96,8 +96,11 @@ before final validation** rather than trusting an agent's completion notice.
    not a browser. On a refresh it catches the specific failure of a new work
    rendering with a cover URL nobody loaded, which is worse than no cover at
    all. See CURATION.md §5 for why this is a script and not a browser.
-5. Delete `.orrery/`, merge to `main`, bump the app submodule, keep the
-   deployment current.
+5. Delete `.orrery/`, then **open a pull request and stop.** `main` is
+   protected; Rodrigo merges it. Never push to `main` or self-merge.
+6. **After he merges**, bump the app submodule and keep the deployment
+   current, verifying the running revision rather than assuming the bump
+   shipped.
 
 ## Cadence
 
