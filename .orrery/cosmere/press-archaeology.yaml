@@ -1,0 +1,117 @@
+stage: press-archaeology
+wing: cosmere
+author: brandon-sanderson
+
+before:
+  works: 68
+  aura: 14
+  ratio: 0.21
+  longest_dark_run: "3 yrs (2008-2010)"
+
+after:
+  works: 68
+  aura: 19
+  ratio: 0.28
+  longest_dark_run: "2 yrs (2012-2013)"
+
+added:
+  - id: sanderson-korea-mission-1995
+    file: content/authors/brandon-sanderson.yaml
+    impact: high
+    summary: >
+      The 1995-1997 LDS mission to Seoul, and Sanderson's own account (LDS
+      Living, undated feature) that Korean linguistics became the foundation
+      of Elantris's language-based magic system.
+    sources: [wikipedia, ldsliving.com]
+  - id: sanderson-cosmere-conceived-2000
+    file: content/authors/brandon-sanderson.yaml
+    impact: high
+    summary: >
+      Sanderson's own FAQ account (brandonsanderson.com, Oct 2018) of
+      designing the Cosmere as one connected superstory from the start,
+      inspired by watching Asimov stitch the Robot and Foundation series
+      together late and wanting to avoid the same seams. Directly tests the
+      "stated long-range plan" lead.
+    sources: [faq.brandonsanderson.com]
+  - id: cosmere/way-of-kings-prime-rewrite-2009
+    file: content/franchises/cosmere/events.yaml
+    impact: high
+    summary: >
+      The 2002 Way of Kings draft, withdrawn from Tor by Sanderson himself in
+      2003 ("something wasn't quite right"), shelved through Mistborn, then
+      discarded and rewritten from page one in the late 2000s. Dated 2009 to
+      close the reported 2008-2010 dark run, which is exactly when the
+      rewrite happened. Primary sources: his own brandonsanderson.com page for
+      the abandoned draft, and a dated Guardian interview for the quotes.
+    sources: [theguardian.com, brandonsanderson.com]
+  - id: cosmere/apocalypse-guard-pulled-skyward-2017
+    file: content/franchises/cosmere/events.yaml
+    impact: med
+    summary: >
+      A second, smaller instance of the same pattern: a finished YA novel
+      (The Apocalypse Guard) pulled weeks before its announcement tour,
+      replaced by Skyward. Closes the 2017-2019 gap the first round of
+      changes exposed. Source is Sanderson's own blog post announcing
+      Skyward, dated Nov/Dec 2017.
+    sources: [brandonsanderson.com]
+  - id: cosmere/apple-tv-adaptation-deal-2026
+    file: content/franchises/cosmere/events.yaml
+    impact: high
+    summary: >
+      The January 2026 Apple TV deal for Cosmere film/TV rights, with
+      Sanderson keeping write/produce/consult/approval authority described as
+      unprecedented. Two independent outlets (Hollywood Reporter, Engadget)
+      corroborate the deal and control terms; a widely repeated "$250M+"
+      figure traced to a single low-quality aggregator was not used.
+
+rejected:
+  - lead: Writing Excuses podcast launch (2008)
+    reason: >
+      Well sourced (Wikipedia, exact launch date 2008-02-10) and genuinely
+      med-impact, but the 2000s decade already sits at 4 lifeEvents once the
+      Korea mission and Cosmere-design entries land; a fifth would have
+      pushed past the per-decade band for no gain in dark-run coverage. Good
+      candidate for a future pass without re-research.
+  - lead: Dragonsteel Con / Dragonsteel Plaza
+    reason: >
+      Real and well covered by trade press (con launched 2022, Plaza
+      announced 2024), but both years already carry aura (Kickstarter 2022,
+      Year of Sanderson 2023, Stormlight arc closes 2024); adding here would
+      have clustered on an already-bright stretch rather than a dark one.
+  - lead: the "at least 40 books" Cosmere-scale estimate
+    reason: >
+      Wikipedia's only source is a Reddit repost of a 2016 blog comment; the
+      actual brandonsanderson.com "State of the Sanderson 2016" post does not
+      contain the figure in the fetched extract. Left out rather than
+      laundering a Reddit citation.
+  - lead: the reported "$250M+" figure for the Apple TV deal
+    reason: >
+      Traced to a single SEO aggregator (accio.com), uncorroborated by THR,
+      Engadget or MacRumors. Dropped; the deal is described by terms, not a
+      figure.
+  - lead: Moshe Feder's informal 2001 Montreal pitch for Elantris
+    reason: >
+      A good, dated, primary-sourced detail (Sanderson's own "State of the
+      Sanderson 2016" post), but it sits right next to the existing
+      elantris-debut-2005 entry and the new cosmere-conceived-2000 entry;
+      three entries inside four years would have clustered rather than
+      spread. Held back.
+
+record_gaps: >
+  All sources here are English-language and primarily Sanderson's own site,
+  Wikipedia, and US trade/entertainment press; no non-English record was
+  checked (not applicable, Sanderson publishes and is profiled almost
+  exclusively in English). Did not check: BYU's own institutional press
+  (student paper coverage of the Dragonsteel thesis binding), or a full read
+  of "State of the Sanderson" posts prior to 2016, which likely hold more
+  dated origin-story material than a spot search surfaced.
+
+curator_questions: []
+
+tool_calls:
+  total_approx: 80
+  network_approx: 21
+  note: >
+    Network calls are fetch.py invocations (each batching 1-4 URLs) plus
+    WebSearch queries; most repeat calls against the same URL hit the shared
+    fetch cache rather than the network.
