@@ -1,0 +1,91 @@
+stage: press-archaeology
+wing: agatha-christie
+refresh: true
+
+darkRun:
+  before: "18 years, 1953-1970"
+  after: "11 years, 1941-1951 is now the longest run (the 1953-1970 stretch no longer appears)"
+  note: >
+    The 1941-1951 run predates this pass and was not in scope; a future
+    press-archaeology run should target it next - the WWII dispensary entry
+    already anchors 1940 but nothing lands between roughly 1946 and 1951.
+
+added:
+  - id: christie-nimrud-writing-room-1950s
+    file: content/authors/agatha-christie.yaml
+    fact: >
+      Christie paid to add her own writing room to the Nimrud dig house in
+      the early 1950s and worked every season through 1958, when Mallowan's
+      Nimrud directorship passed to David Oates; she also photographed,
+      cleaned and restored finds each season.
+    sources: [en.wikipedia.org/wiki/Agatha_Christie, en.wikipedia.org/wiki/Nimrud]
+  - id: christie-agatha-christie-ltd-1955
+    file: content/authors/agatha-christie.yaml
+    fact: >
+      Formed Agatha Christie Limited in 1955 to hold her rights, unhappy
+      (her words) at being "an employed wage slave" under postwar tax.
+    sources: [en.wikipedia.org/wiki/Agatha_Christie, agathachristie.com/about-agatha-christie-limited]
+  - id: christie-honours-1955-56
+    file: content/authors/agatha-christie.yaml
+    fact: First MWA Grand Master (1955), then CBE in the 1956 New Year Honours.
+    sources: [en.wikipedia.org/wiki/Agatha_Christie]
+  - id: christie-booker-sale-1968
+    file: content/authors/agatha-christie.yaml
+    fact: Sold a 51% stake in Agatha Christie Limited to Booker Books in 1968.
+    sources: [en.wikipedia.org/wiki/Agatha_Christie]
+  - id: christie-late-novels-vocabulary-decline
+    file: content/authors/agatha-christie.yaml
+    fact: >
+      1971-1973 health decline; a 2009 Lancashire/Hirst computational study
+      found a 31% vocabulary drop in Elephants Can Remember (1972) against
+      Destination Unknown (1954), argued as consistent with dementia. Written
+      as a reported claim, never a diagnosis - she was never diagnosed in her
+      lifetime. Two independent sources (U of T Magazine, CrimeReads), both
+      naming the study and its authors, not laundered through each other.
+  - id: witness-for-the-prosecution-1953
+    file: content/franchises/agatha-christie/events.yaml
+    fact: >
+      West End opening 28 Oct 1953, Broadway Dec 1954, MWA Edgar for best
+      play in 1955.
+    sources: [en.wikipedia.org/wiki/Witness_for_the_Prosecution_(play)]
+
+rejected:
+  - lead: "Tax dispute with the US authorities"
+    reason: >
+      Could not verify. Two WebSearch passes and direct fetches (FactCheck.org,
+      fullstackeconomics.com, a Substack essay quoting her autobiography) found
+      only a 1920s UK Inland Revenue episode already superseded by other
+      research, one AI-search-summary claim about America withholding
+      royalties that no fetched source actually stated, and an irrelevant hit
+      about NJ governor Chris Christie. Used the well-documented 1955 Agatha
+      Christie Limited formation instead - a real, dated tax event, just not
+      the American one asked about.
+  - lead: "1961 honorary Exeter doctorate"
+    reason: Real and sourced but does not clear the aura bar - pure trivia.
+  - lead: "1959 Greenway transfer to daughter Rosalind"
+    reason: Estate paperwork, no bearing on how the books read.
+  - lead: "1958 Iraqi revolution ending the Mallowans' Iraq seasons"
+    reason: >
+      A fan blog claimed they "left for good in 1960" but I could not
+      corroborate an end date or a causal link to the 1958 coup from any
+      source with editorial accountability; left out rather than guess.
+
+recordNotAsked:
+  - >
+    The Nimrud writing-room dating is precise: Mallowan directed 1949-1958,
+    confirmed against the Nimrud article, not just the Christie bio.
+  - >
+    The disappearance, both dispensary wars, and the Mousetrap opening were
+    already covered by the prior pass and were not touched.
+
+curatorQuestions:
+  - none - the tax-dispute framing was resolved by substitution and explained
+    above rather than escalated as an open question.
+
+toolCalls:
+  total: 34
+  networkFetches: 17
+  note: >
+    17 = 12 fetch.py batch calls (spanning ~17 distinct URLs, several
+    Wikipedia grep passes reused the cache) + 5 WebSearch queries used only
+    for discovery, never as a citation source themselves.
