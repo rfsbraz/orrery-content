@@ -1,0 +1,91 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds), so the same person resolves the same everywhere.
+# Author-LIFE events live here (they follow the person); franchise-specific
+# events live in content/franchises/gillian-flynn/events.yaml. The three
+# lifeEvents below are a small set of well-sourced, clearly dated anchors
+# rather than a complete account of the life.
+id: gillian-flynn
+name: Gillian Flynn
+aka: ["Gillian Schieber Flynn"]
+born: 1971-02-24
+died: null
+bio: >
+  American novelist, screenwriter and producer from Kansas City, Missouri,
+  known for character-driven crime fiction about the false surfaces of
+  Midwestern domestic life. She earned degrees in English and journalism at
+  the University of Kansas, then a master's at Northwestern's Medill School of
+  Journalism, and worked as a feature writer and later television critic at
+  Entertainment Weekly from 1998 until she was laid off in 2008. Her debut
+  novel [[work:gillian-flynn/sharp-objects|Sharp Objects]] (2006) was followed
+  by [[work:gillian-flynn/dark-places|Dark Places]] (2009) and
+  [[work:gillian-flynn/gone-girl|Gone Girl]] (2012), which became a cultural
+  phenomenon and helped establish the unreliable-narrator thriller as a
+  commercial category of its own. Since adapting Gone Girl for the screen in
+  2014 she has written steadily for film and television alongside her
+  fiction: the screenplay for [[work:gillian-flynn/widows|Widows]] (2018,
+  with Steve McQueen), three episodes of HBO's
+  [[work:gillian-flynn/sharp-objects-tv|Sharp Objects]] miniseries (2018),
+  and the creation and writing in full of Amazon's
+  [[work:gillian-flynn/utopia|Utopia]] (2020). In 2021 she was named to lead
+  her own imprint, Gillian Flynn Books, at the independent publisher Zando;
+  as of 2025 she was at work on a fourth novel for Penguin Random House, and
+  an HBO limited series adapting Dark Places, on which she is a co-creator
+  and co-showrunner, had been announced but had not yet aired.
+pseudonyms: []
+images:
+  portrait: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Gillian_Flynn_2014_%28cropped%29.jpg"
+  portraitCredit: "aphrodite-in-nyc, CC BY 2.0"
+  portraitSource: "https://commons.wikimedia.org/wiki/File:Gillian_Flynn_2014_(cropped).jpg"
+  # A tighter head-and-shoulders crop of a Flickr photo from the Gone Girl
+  # premiere at the 52nd New York Film Festival, October 2014 (the parent
+  # file carries the same Commons category and event). Chosen over
+  # File:Gillian_Flynn.jpg, a 2009 bookshop-event photo where she is small,
+  # off-centre and back-lit with audience heads in the foreground.
+lifeEvents:
+  - id: flynn-born-1971
+    date: 1971-02-24
+    title: Born in Kansas City, raised on horror films
+    impact: med
+    description: >
+      Born Gillian Schieber Flynn in Kansas City, Missouri, and raised in its
+      Coleman Highlands neighborhood; both of her parents taught for a
+      living, her mother reading comprehension, her father film. She has
+      described a painfully shy childhood spent reading and writing, and
+      credited her father's love of horror movies with cultivating her
+      interest in dark storytelling.
+    spoilerAfter: null
+    sources: [https://en.wikipedia.org/wiki/Gillian_Flynn]
+
+  - id: flynn-ew-layoff-2008
+    date: 2008
+    title: Laid off from Entertainment Weekly
+    impact: high
+    description: >
+      After a decade as a feature writer and television critic at
+      Entertainment Weekly, Flynn was made redundant in December 2008, in the
+      same recession that frames [[work:gillian-flynn/gone-girl|Gone Girl]]:
+      Nick and Amy Dunne both lose their media jobs to the same downturn, and
+      it is what drags them out of New York and into the marriage the novel
+      spends itself taking apart.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Gillian_Flynn
+      - https://time.com/3429666/gillian-flynns-marriage-plot/
+      - https://www.hollywoodreporter.com/movies/movie-features/gillian-flynn-talks-utopia-and-6-year-journey-to-screen-we-were-playing-a-little-bit-of-a-game-of-chicken-4060720/
+
+  - id: flynn-zando-imprint-2021
+    date: 2021-09-21
+    title: Becomes a publisher herself
+    impact: low
+    description: >
+      Flynn was named to lead Gillian Flynn Books, a new imprint at the
+      independent publisher Zando, alongside a parallel imprint from Lena
+      Waithe. It sits inside the long gap between
+      [[work:gillian-flynn/gone-girl|Gone Girl]] and the fourth novel she
+      confirmed writing in 2023, and marks a turn toward the wider business
+      of books alongside making them.
+    spoilerAfter: null
+    sources: [https://en.wikipedia.org/wiki/Gillian_Flynn]
+
+sources:
+  - https://en.wikipedia.org/wiki/Gillian_Flynn
