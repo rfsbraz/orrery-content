@@ -1,0 +1,104 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds), so the same person resolves the same everywhere.
+# Author-LIFE events live here; franchise-specific events belong in
+# content/franchises/tana-french/events.yaml. The three lifeEvents below are a
+# small set of well-sourced anchors rather than a complete account of the life.
+#
+# BIRTHPLACE, stated carefully because a wrong version is in wide circulation.
+# Wikipedia's infobox and prose give Burlington, Vermont, United States (10 May
+# 1973), sourced to French's own publisher-hosted biography at Bookreporter.com
+# and corroborated by her Wikipedia category tags ("Actors from Burlington,
+# Vermont", "American emigrants to Ireland"). Portuguese retail listings for
+# her books (WOOK's own author bio, checked directly on three separate product
+# pages) instead state she was "born in Ireland" ("Tana French nasceu em 1973,
+# na Irlanda"), with no citation of its own. The Vermont birth, an itinerant
+# childhood, and her permanent move to Dublin in 1990 are the more heavily
+# sourced and internally consistent account and are what this entry records;
+# the Irish-birth claim looks like retail-copy shorthand for "the Irish
+# novelist" rather than a competing biographical fact.
+id: tana-french
+name: Tana French
+aka: ["Tana Elizabeth French"]
+born: 1973-05-10
+died: null
+# PORTRAIT. No licensed photograph is recorded: Wikidata's entry for her
+# (Q271423) carries no image claim, the English, German and French Wikipedia
+# articles all carry no infobox image, and Wikimedia Commons holds no author
+# photograph of her (checked by an exact-title search, a broader
+# author-plus-"writer" search, and by attempting her own Commons category,
+# which does not exist - the only file matches are unrelated photographs
+# that happen to be captioned with quotes from her novels). The slot stays
+# empty.
+bio: >
+  American-born Irish crime novelist and stage actress. Born in Burlington,
+  Vermont, to an economist father whose work took the family to Ireland,
+  Italy and Malawi during her childhood, she attended Trinity College
+  Dublin, trained as a professional actor, and has lived in Dublin since
+  1990. She worked in theatre, film and voiceover through her twenties,
+  writing her debut novel [[work:tana-french/in-the-woods|In the Woods]]
+  (2007) in the lulls between castings; it won the Edgar, Anthony, Macavity
+  and Barry awards for best first novel and began the six-book Dublin Murder
+  Squad series, which rotates its lead detective from book to book while
+  supporting characters recur and take the case in turn. She followed it
+  with the standalone [[work:tana-french/the-witch-elm|The Witch Elm]]
+  (2018) and the Cal Hooper trilogy set in rural County Ireland
+  ([[work:tana-french/the-searcher|The Searcher]],
+  [[work:tana-french/the-hunter|The Hunter]] and
+  [[work:tana-french/the-keeper|The Keeper]], 2020-2026). She lives in
+  Dublin with her husband and two daughters.
+pseudonyms: []
+lifeEvents:
+  - id: french-born-1973
+    date: 1973-05-10
+    title: Born in Vermont, raised across four countries
+    impact: med
+    description: >
+      Born Tana Elizabeth French in Burlington, Vermont, to Elena
+      Hvostoff-Lombardi and David French, an economist who worked on
+      resource management for the developing world. His postings took the
+      family to Ireland, Italy, the United States and Malawi during her
+      childhood, an itinerant, outsider-looking-in upbringing that recurs in
+      her fiction's own outsiders: Rob Ryan's invented English accent in
+      [[work:tana-french/in-the-woods|In the Woods]], and, most literally,
+      the retired Chicago detective who moves to rural Ireland in the Cal
+      Hooper trilogy.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Tana_French
+      - https://www.bookreporter.com/authors/au-french-tana.asp
+
+  - id: french-settles-dublin-1990
+    date: 1990
+    title: Settles permanently in Dublin
+    impact: med
+    description: >
+      Enrolled at Trinity College Dublin and trained there as a professional
+      actor; has lived in Dublin ever since. Every one of her ten novels to
+      date is set in Ireland, and all but the Cal Hooper trilogy in Dublin
+      itself, making the city and its Murder Squad the constant her rotating
+      cast of detectives investigates against.
+    spoilerAfter: null
+    sources: [https://en.wikipedia.org/wiki/Tana_French]
+
+  - id: french-debut-written-between-castings-2007
+    date: 2007-01-30
+    title: Writes a debut novel between acting jobs
+    impact: high
+    description: >
+      Trained and working as a stage, film and voiceover actor through her
+      twenties, French wrote [[work:tana-french/in-the-woods|In the Woods]]
+      in her early 30s during the months-long lulls between castings. It won
+      the 2008 Edgar, Anthony, Macavity and Barry awards for best first
+      novel and made her, in The Independent's phrase, "the First Lady of
+      Irish Crime" - a career pivot from performing other people's words to
+      writing detectives whose defining trait is how convincingly they
+      perform for one another and for their suspects.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Tana_French
+      - https://www.washingtonpost.com/lifestyle/style/in-tana-frenchs-broken-harbor-the-mundane-sets-stage-for-mayhem/2012/08/02/gJQAiCmRSX_story.html
+
+sources:
+  - https://en.wikipedia.org/wiki/Tana_French
+  - https://www.bookreporter.com/authors/au-french-tana.asp
+  - https://www.tanafrench.com/

@@ -1,0 +1,102 @@
+id: tana-french
+name: Tana French
+kind: author
+description: >
+  Six Dublin Murder Squad novels that rotate their lead detective from book
+  to book while the last book's supporting cast steps up to take the next case,
+  the standalone [[work:tana-french/the-witch-elm|The Witch Elm]], and the
+  Cal Hooper trilogy that follows a retired Chicago detective into a rural
+  Irish townland's own buried grudges.
+authorIds: [tana-french]
+themePreset: bog-noir
+images:
+  header: "https://upload.wikimedia.org/wikipedia/commons/6/68/Cityscape_At_Sunset_Dublin_Ireland_Cityscape_Photography_%28179394129%29.jpeg"
+  headerCredit: "Giuseppe Milo, CC BY 3.0"
+  headerSource: "https://commons.wikimedia.org/wiki/File:Cityscape_At_Sunset_Dublin_Ireland_Cityscape_Photography_(179394129).jpeg"
+  # The Liffey quays and the Custom House at sunset: Dublin itself, the city
+  # six of the ten works are set in and where French has lived since 1990,
+  # rather than any one book's specific setting. No adaptation stills
+  # considered (see docs/VISUAL.md's caution against dating a wing to one
+  # screen version).
+
+# CAPABILITIES - left mostly at auto, one deliberate override.
+# connections: forced ON. Auto would already activate it correctly (this
+# wing ships characters.yaml), but it is called out because it is this
+# wing's headline structural feature rather than incidental crossover
+# dressing: Dublin Murder Squad's own conceit is that each book's
+# supporting detective becomes the next book's lead, so Ryan and Maddox
+# (In the Woods) hand off to Maddox alone (The Likeness), Frank Mackey
+# recurs across three books as handler, protagonist and then a supporting
+# figure, and Stephen Moran and Antoinette Conway rotate the same way
+# across Faithful Place, The Secret Place and The Trespasser. See
+# characters.yaml.
+# river / companion: auto, on the strength of the three author lifeEvents
+# recorded so far - thin but real.
+# wizard: auto, currently off. No startHere block: no sourced "where to
+# start" claim clears the bar. Her own site sells a "Dublin Murder Squad
+# Mysteries Volumes 1-6" boxed set, a bundling decision rather than a
+# stated reading-order recommendation. The rotating-narrator structure
+# invites a "start anywhere" claim - checked directly, and it does not
+# hold up: it appears only in SEO reading-order farms (Speechify,
+# Tertulia, bookseriesinorder.com and near-identical sites), never in a
+# statement from French or her publisher. The one claim from a real
+# literary outlet (Electric Literature's ranking piece, "there's really
+# no wrong reading order... just pick the one that piques your interest")
+# contradicts itself in the next sentence, insisting The Likeness sit
+# directly against In the Woods for character continuity, and a Goodreads
+# reader thread on the same question splits, several answers recommending
+# publication order through at least the first three books. Nothing
+# converges. Publication order also does the real work the "any order"
+# claim glosses over: each book's lead detective is a previous book's
+# supporting character (see characters.yaml), and a detective's standing
+# in a later book is often the very thing an earlier book is built around
+# reaching, so reading out of sequence can hand over an earlier book's
+# payoff before it is earned. This holds across the Squad run rather than
+# at one seam, which is why no "any order" path ships.
+# editions: auto, on. Five pt-PT editions exist, over five of the ten
+# works: Livraria Civilização Editora ran the first three Dublin Murder
+# Squad novels (In the Woods as "Desaparecidos", 2008; The Likeness as "A
+# Semelhança", 2009; Faithful Place as "Sombras do Passado", 2011), and
+# Clube do Autor added two later, non-consecutive titles (The Secret Place
+# as "O Sítio Secreto", 2015; The Trespasser as "Intruso", 2020). Broken
+# Harbour, The Witch Elm and the Cal Hooper trilogy have no Portuguese
+# edition. "Intruso" pairs with The Trespasser, not The Witch Elm, despite
+# title and year proximity; see editions.yaml's own TITLE-MATCHING TRAP.
+features: {}
+
+# Which shared global events actually reach this author (docs/SCHEMA.md). All
+# ten fall inside her lifetime (born 1973) except carnation-revolution-1974,
+# which she was already born for; nothing else in global.yaml overlaps her
+# life at all. Two of these are real, sourced connections rather than mere
+# lifetime overlap - the 2008 crash behind Broken Harbour's ghost estates and
+# the lockdown Ardnakelty of The Keeper - but both are already told, in her
+# own words, by this wing's own events.yaml and the Dublin Murder Squad era's
+# "celtic tiger and the crash" theme, so the generic global entry would only
+# repeat a story already better told. Nothing is kept by default.
+globalEvents:
+  exclude:
+    - sept-11-2001                      # working actor in Dublin at 28; no novel or interview in the record reaches for it
+    - financial-crisis-2008             # its Irish resonance is already told by french-broken-harbor-ghost-estates-2012 and the Dublin Murder Squad era's own theme
+    - covid-19-pandemic-2020            # The Keeper's lockdown-marked Ardnakelty is already told by french-keeper-trilogy-context-2026
+    - carnation-revolution-1974         # a Portuguese event; nothing in her Vermont/Ireland/Italy/Malawi childhood or her ten Irish novels touches Portugal
+    - chain-bookshop-1982               # generic bookselling backdrop of her childhood; no sourced link to her work
+    - online-bookselling-1995           # Amazon's founding, over a decade before her 2007 debut; no sourced connection
+    - ebook-and-self-publishing-2007    # traditionally published throughout (Viking, Hodder & Stoughton); no ebook or self-publishing story
+    - prestige-fantasy-adaptation-2011  # a fantasy-genre event; she writes crime fiction
+    - booktok-2020                      # no sourced link between short-form-video discovery and her sales or career
+    - portugal-bailout-2011             # Portugal's crisis, not Ireland's; her own recession material is the Celtic Tiger collapse, already covered above
+
+sources:
+  - https://en.wikipedia.org/wiki/Tana_French
+  - https://en.wikipedia.org/wiki/In_the_Woods
+  - https://en.wikipedia.org/wiki/The_Likeness
+  - https://en.wikipedia.org/wiki/Faithful_Place
+  - https://en.wikipedia.org/wiki/Broken_Harbour
+  - https://en.wikipedia.org/wiki/The_Secret_Place_(book)
+  - https://en.wikipedia.org/wiki/The_Trespasser_(book)
+  - https://en.wikipedia.org/wiki/The_Witch_Elm
+  - https://en.wikipedia.org/wiki/The_Searcher_(novel)
+  - https://en.wikipedia.org/wiki/The_Keeper_(novel)
+  - https://www.bookreporter.com/authors/au-french-tana.asp
+  - https://www.tanafrench.com/
+  - https://www.wook.pt/autor/tana-french/45283
