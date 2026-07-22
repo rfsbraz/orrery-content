@@ -42,6 +42,25 @@ themePreset: vinterlys
 # editions: auto, currently off - no editions.yaml exists.
 features: {}
 
+# GLOBAL EVENTS - none pass the resonance test. Nesbø (b. 1960-03-29, living)
+# overlaps every entry in content/events/global.yaml dated 1960 or later;
+# each was weighed against his own record and the wing's sourced bibliography
+# and found to shape only "the era he wrote in," never a specific book.
+globalEvents:
+  exclude:
+    - sept-11-2001                     # lived through it in Oslo; no book answers it
+    - financial-crisis-2008            # left finance for writing a decade earlier; no book is plotted around the 2008 crash itself
+    - covid-19-pandemic-2020           # no work in this wing's 2020-2026 window shows it
+    - lady-chatterley-trial-1960       # inside his life by months; no case in his own record ties the era's permissiveness to his violence
+    - fantasy-paperback-boom-1965      # wrong genre; the category it created is epic fantasy, not crime
+    - carnation-revolution-1974        # Portuguese censorship history; no bearing on a Norwegian author
+    - chain-bookshop-1982              # generic bookselling backdrop; no book-specific answer
+    - online-bookselling-1995          # no documented backlist-discovery story tied to online bookselling for this wing
+    - ebook-and-self-publishing-2007   # Aschehoug has published him traditionally throughout; no self-pub/ebook story
+    - prestige-fantasy-adaptation-2011 # fantasy-specific; his own screen adaptation (Snømannen, 2017) is already a franchise event
+    - booktok-2020                     # no documented BookTok-driven surge for any title here
+    - portugal-bailout-2011            # Portugal-specific; no bearing on a Norwegian author
+
 sources:
   - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
   - https://en.wikipedia.org/wiki/Jo_Nesb%C3%B8
