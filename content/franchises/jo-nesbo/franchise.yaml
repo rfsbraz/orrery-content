@@ -1,0 +1,50 @@
+id: jo-nesbo
+name: Jo Nesbø
+kind: author                       # author is the norm: this wing spans Nesbø's
+                                    # complete published work, not just Harry Hole
+description: >
+  Fourteen Harry Hole novels track an alcoholic Oslo detective across three
+  decades, from [[work:jo-nesbo/flaggermusmannen|Flaggermusmannen]] (1997) to
+  [[work:jo-nesbo/nadeskudd|Nådeskudd]] (2026), alongside the Kongeriket
+  duology, the Olav Johansen novels, a 2018 Macbeth for the Hogarth
+  Shakespeare series, four further standalone crime novels, two short-story
+  collections, and the five-book Doktor Proktor children's series that runs
+  in parallel to all of it.
+authorIds: [jo-nesbo]
+themePreset: vinterlys
+
+# TITLE RULING FOR THIS WING (applied throughout works.yaml, not re-derived
+# per entry): `title` is the Norwegian original; `published` is the Norwegian
+# first-publication year. English and Portuguese titles are edition data, not
+# recorded here. This matters more here than in most wings in the catalogue,
+# because English publishing translated the first two Harry Hole novels
+# (Flaggermusmannen, 1997; Kakerlakkene, 1998) only in 2012 and 2013, well
+# after books three through eleven - so English-language readers met the
+# series at book three (Rødstrupe / The Redbreast). Recording Norwegian years
+# makes the derived publication-chronological default order the correct
+# Norwegian order automatically; an English or pt-PT reading order is
+# additional data, not written here.
+
+# CAPABILITIES - left entirely at auto; no override earned yet.
+# river / companion: auto, on the strength of the three author lifeEvents
+# recorded in content/authors/jo-nesbo.yaml - thin but real.
+# connections / characters: auto, currently off, because no characters.yaml
+# exists and no work carries a `connections` entry. Harry Hole's recurring
+# supporting cast (his wife Rakel Fauke, her son Oleg, his friend Øystein
+# Eikeland, colleagues Bjørn Holm, Beate Lønn and Katrine Bratt) is real and
+# documented in general sources, but which specific novels each of them
+# appears in is not established here, and no crossover is established
+# connecting Harry Hole to the Kongeriket, Olav Johansen or standalone
+# novels. A characters.yaml built only from "Harry Hole appears in the
+# fourteen Harry Hole novels" would only restate what `subseries` already
+# conveys.
+# wizard: auto, currently off - no startHere block exists.
+# editions: auto, currently off - no editions.yaml exists.
+features: {}
+
+sources:
+  - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+  - https://en.wikipedia.org/wiki/Jo_Nesb%C3%B8
+  - https://no.wikipedia.org/wiki/Harry_Hole
+  - https://en.wikipedia.org/wiki/Harry_Hole
+  - https://nbl.snl.no/Jo_Nesb%C3%B8

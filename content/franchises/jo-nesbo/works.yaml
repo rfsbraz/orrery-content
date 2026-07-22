@@ -1,0 +1,622 @@
+# Bibliography (Works) - the abstract works; editions and covers are separate
+# metadata not recorded here. IDs are STABLE and permanent. Dates are the
+# NORWEGIAN first-publication year, per this wing's own ruling (see
+# franchise.yaml): titles are original-language Norwegian, and the derived
+# default reading order runs over these years, not over any translation's.
+#
+# SHAPE OF THIS WING: thirty-three works across six groupings.
+#
+#   Harry Hole (14) - Flaggermusmannen (1997) through Nådeskudd (2026). The
+#     spine of the catalogue: a Norwegian detective across three decades,
+#     drawn from Norwegian Wikipedia's dedicated Harry Hole article, which
+#     lists all fourteen with years and matches Aschehoug's own count ("since
+#     1997... thirteen books," cited there as of a 2024 access date, one book
+#     before Nådeskudd). English titles (checked on English Wikipedia's
+#     Bibliography section, cross-referenced work by work) are recorded only
+#     in sources/notes, never in `title` - see the ORIGINAL TITLES note below.
+#   Kongeriket (2) - Kongeriket (2020) and its 2024 sequel, which Norwegian
+#     Wikipedia's own bibliography table numbers "Kongeriket 2: Kongen av
+#     Os" - the publisher's own sequel numbering, not an inference.
+#   Olav Johansen (2) - Blod på snø and Mere blod, both 2015 (see the YEAR
+#     CORRECTION note below). English Wikipedia's own structure groups them
+#     as "The Olav Johansen novels," though only the first book's narrator is
+#     Olav Johansen himself - see the note on Mere blod.
+#   Standalone crime (6) - Det hvite hotellet, Hodejegerne, Sønnen, Macbeth,
+#     Natthuset, Minnesota: six further crime novels sharing no subseries,
+#     each with a different narrator or premise from Harry Hole.
+#   Short fiction (3) - Karusellmusikk (2001) and the two 2021 collections,
+#     Sjalusimannen og andre fortellinger and Rotteøya og andre fortellinger.
+#     Tiered extended, matching this catalogue's own convention for an
+#     author's own short-story collections (see agatha-christie/works.yaml).
+#   Doktor Proktor (5) - the children's series, 2007-2016. Genuinely his own
+#     and a real second career ("hugely successful" per English Wikipedia),
+#     but tiered extended rather than core: it is a distinct children's
+#     strand off the crime-fiction spine the rest of this wing walks, the
+#     same call this catalogue already makes for Pratchett's and Valter Hugo
+#     Mãe's own children's titles.
+#   Nonfiction (1) - Stemmer fra Balkan / Atten dager i mai (1999), written
+#     with journalist Espen Søbye; recorded with authorRole: co-author on
+#     Nesbø's own entry rather than by adding a second global author id for
+#     a one-off collaborator outside this catalogue's scope.
+#
+# ORIGINAL TITLES. This wing's founding decision (see franchise.yaml): title
+# is the Norwegian original, published is the Norwegian first-publication
+# year. English titles are edition data, recorded here only in sources/notes
+# so the fact is not lost, never in `title`. This
+# matters more here than in any other wing in the catalogue: the first two
+# Harry Hole novels were translated into English only in 2012 and 2013,
+# years after books three through eleven, so an English-language reading
+# order built on translation dates would open with book three (Rødstrupe /
+# The Redbreast) rather than book one - publication order over Norwegian
+# years, which is what `published` being Norwegian gives for free, is the
+# only order that is actually chronological.
+#
+# YEAR CORRECTION: Blod på snø and Mere blod. English Wikipedia's dedicated
+# "Blood on Snow (novel)" article infobox states an original Norwegian
+# publication date of 14 October 2014 - contradicted by every Norwegian
+# source checked. Norwegian Wikipedia's own dedicated article states "gitt ut
+# i 2015" ["published in 2015"], categorizes the book under "Bøker fra 2015,"
+# and cites two Norwegian reviews (VG and NRK) both dated 3 March 2015 - a
+# publication date and matching review dates line up. Norsk biografisk
+# leksikon (Store norske leksikon, authored by Fredrik Wandrup and Hans H.
+# Skei) independently states both Blod på snø and Mere blod are "begge frå
+# 2015" ["both from 2015"]. Two independent, native-language, dated sources
+# against one English infobox: 2015 is used here for both books. The English
+# article's 2014 date most likely preserves the original October 2013
+# announcement of an "autumn 2014" release under the pen name "Tom
+# Johansen" (see content/authors/jo-nesbo.yaml), a schedule that slipped by
+# several months and changed authorial name before publication.
+#
+# NÅDESKUDD (2026), the fourteenth Harry Hole novel, rests on a single
+# source: Norwegian Wikipedia's Harry Hole article, itself citing a 27 March
+# 2026 BOK365.no piece reporting that the title had just been revealed. No
+# second source (an Aschehoug product page, a review, a second outlet) was
+# found to corroborate either the year or that publication has actually
+# occurred rather than being still forthcoming. Recorded here because it is
+# the only year on record, not because it is doubly sourced.
+#
+# KAN DOKTOR PROKTOR REDDE JULA? - a year conflict. Norwegian Wikipedia's
+# bibliography table gives 2016, citing an archived Aschehoug (the
+# publisher's own) page; English Wikipedia's Doctor Proctor bibliography
+# section gives 2017 for the same Norwegian original (and 2018 for the
+# English translation). The publisher citation is weighted here as the
+# stronger source, but the archived page itself was not opened directly, so
+# 2016 is recorded with the conflict on record rather than as settled.
+#
+# GAPS NOT CLOSED. Two short stories recur in Nesbø's filmography without a
+# located print home: "Twelve," adapted into the 2011 film Jackpot, and "I Am
+# Victor," attached to a planned (and later abandoned) NBC adaptation. Neither
+# surfaced in either Wikipedia's bibliography section or in Norsk biografisk
+# leksikon's account of the short fiction, and neither is recorded as a work
+# here: their print home is absent from the sources checked, not established
+# well enough to place in either 2021 collection or as its own entry.
+#
+# externalIds are empty throughout: no external identifier is recorded for
+# any of the thirty-three works.
+
+# --- Harry Hole (14) ---
+
+- id: jo-nesbo/flaggermusmannen
+  title: "Flaggermusmannen"
+  authorIds: [jo-nesbo]
+  published: 1997
+  subseries: "Harry Hole"
+  canonTier: core
+  synopsis: >
+    Harry Hole's first case sends him to Sydney to observe the local
+    investigation into a young Norwegian woman's murder, in a city he does
+    not know and cannot control.
+  sources:
+    - https://no.wikipedia.org/wiki/Harry_Hole
+    - https://nbl.snl.no/Jo_Nesb%C3%B8
+
+- id: jo-nesbo/kakerlakkene
+  title: "Kakerlakkene"
+  authorIds: [jo-nesbo]
+  published: 1998
+  subseries: "Harry Hole"
+  canonTier: core
+  synopsis: >
+    The murder of a Norwegian ambassador in Bangkok pulls Harry into a case
+    that will not stay contained to one city or one motive.
+  sources:
+    - https://no.wikipedia.org/wiki/Harry_Hole
+    - https://nbl.snl.no/Jo_Nesb%C3%B8
+
+- id: jo-nesbo/rodstrupe
+  title: "Rødstrupe"
+  authorIds: [jo-nesbo]
+  published: 2000
+  subseries: "Harry Hole"
+  canonTier: core
+  synopsis: >
+    Back in Oslo, Harry follows a decades-old thread from Norwegian
+    volunteers on the Eastern Front in the Second World War into a present-day
+    conspiracy, while his own drinking and his standing in the police both
+    come under strain.
+  note: >
+    The most awarded of the fourteen: winner of the Booksellers' Prize
+    (2000) and repeatedly voted the best Norwegian crime novel ever written,
+    including in a national radio poll and a newspaper readers' poll. Because
+    English publishing translated the Harry Hole novels out of Norwegian
+    order, this is the book that introduced most English-language readers to
+    the series - as book three, not book one.
+  sources:
+    - https://no.wikipedia.org/wiki/Harry_Hole
+    - https://nbl.snl.no/Jo_Nesb%C3%B8
+
+- id: jo-nesbo/sorgenfri
+  title: "Sorgenfri"
+  authorIds: [jo-nesbo]
+  published: 2002
+  subseries: "Harry Hole"
+  canonTier: core
+  synopsis: >
+    A prison escape and an old case both come back for Harry at once.
+  sources:
+    - https://no.wikipedia.org/wiki/Harry_Hole
+
+- id: jo-nesbo/marekors
+  title: "Marekors"
+  authorIds: [jo-nesbo]
+  published: 2003
+  subseries: "Harry Hole"
+  canonTier: core
+  synopsis: >
+    A killer leaving a small red star at each scene forces Harry into an
+    uneasy partnership with the colleague he trusts least.
+  note: >
+    Season one of the 2026 Netflix television adaptation, Jo Nesbøs Harry
+    Hole, is based on this novel.
+  sources:
+    - https://no.wikipedia.org/wiki/Harry_Hole
+
+- id: jo-nesbo/frelseren
+  title: "Frelseren"
+  authorIds: [jo-nesbo]
+  published: 2005
+  subseries: "Harry Hole"
+  canonTier: core
+  synopsis: >
+    A Salvation Army officer is shot dead in an Oslo square in front of
+    witnesses, and the assassin does not behave like anyone Harry has hunted
+    before.
+  sources:
+    - https://no.wikipedia.org/wiki/Harry_Hole
+
+- id: jo-nesbo/snomannen
+  title: "Snømannen"
+  authorIds: [jo-nesbo]
+  published: 2007
+  subseries: "Harry Hole"
+  canonTier: core
+  synopsis: >
+    A serial killer who leaves a snowman at each disappearance draws Harry
+    into hunting for a pattern across missing wives and mothers.
+  note: >
+    Sold 160,000 copies in its first week in Norway, the fastest-selling
+    Norwegian novel on record at the time. Adapted into the 2017 film The
+    Snowman, directed by Tomas Alfredson (replacing Martin Scorsese, who
+    stayed on as executive producer) and starring Michael Fassbender.
+  sources:
+    - https://no.wikipedia.org/wiki/Harry_Hole
+    - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+- id: jo-nesbo/panserhjerte
+  title: "Panserhjerte"
+  authorIds: [jo-nesbo]
+  published: 2009
+  subseries: "Harry Hole"
+  canonTier: core
+  synopsis: >
+    A killer working through an unlikely, brutal weapon forces Harry back
+    from a self-imposed exile in Hong Kong.
+  sources:
+    - https://no.wikipedia.org/wiki/Harry_Hole
+
+- id: jo-nesbo/gjenferd
+  title: "Gjenferd"
+  authorIds: [jo-nesbo]
+  published: 2011
+  subseries: "Harry Hole"
+  canonTier: core
+  synopsis: >
+    Harry returns to Oslo to investigate the shooting of Oleg, the son of
+    the woman he loves, and finds the city's drug trade rebuilt around a
+    figure he cannot touch.
+  sources:
+    - https://no.wikipedia.org/wiki/Harry_Hole
+
+- id: jo-nesbo/politi
+  title: "Politi"
+  authorIds: [jo-nesbo]
+  published: 2013
+  subseries: "Harry Hole"
+  canonTier: core
+  synopsis: >
+    Police officers are being killed at the scenes of their own past
+    unsolved cases, and Harry's own status - alive, missing, or worse - is
+    itself held back from the reader at the start.
+  sources:
+    - https://no.wikipedia.org/wiki/Harry_Hole
+
+- id: jo-nesbo/torst
+  title: "Tørst"
+  authorIds: [jo-nesbo]
+  published: 2017
+  subseries: "Harry Hole"
+  canonTier: core
+  synopsis: >
+    A killer using an online dating app pulls Harry, now teaching at the
+    police academy, back into the field for a case that turns on new
+    technology he does not trust.
+  sources:
+    - https://no.wikipedia.org/wiki/Harry_Hole
+    - https://en.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+- id: jo-nesbo/kniv
+  title: "Kniv"
+  authorIds: [jo-nesbo]
+  published: 2019
+  subseries: "Harry Hole"
+  canonTier: core
+  synopsis: >
+    Harry wakes with no memory of the previous night beside a murdered
+    woman he knew, and has to investigate a crime he cannot rule himself
+    out of.
+  note: >
+    Won Nesbø a second Riverton Prize, twenty-two years after his first for
+    Flaggermusmannen.
+  sources:
+    - https://no.wikipedia.org/wiki/Harry_Hole
+
+- id: jo-nesbo/blodmane
+  title: "Blodmåne"
+  authorIds: [jo-nesbo]
+  published: 2022
+  subseries: "Harry Hole"
+  canonTier: core
+  synopsis: >
+    Living in Los Angeles and drinking himself toward the end, Harry takes
+    a paid job hunting a serial killer back in Oslo, purely to buy a
+    friend's freedom from a debt to a drug cartel.
+  sources:
+    - https://no.wikipedia.org/wiki/Harry_Hole
+    - https://nbl.snl.no/Jo_Nesb%C3%B8
+
+- id: jo-nesbo/nadeskudd
+  title: "Nådeskudd"
+  authorIds: [jo-nesbo]
+  published: 2026
+  subseries: "Harry Hole"
+  canonTier: core
+  synopsis: >
+    The fourteenth Harry Hole novel; no plot summary was located in the
+    sources checked.
+  note: >
+    Recorded on a single source (see the file header's NÅDESKUDD note):
+    Norwegian Wikipedia's Harry Hole article lists it under 2026, citing a
+    27 March 2026 report that the title had just been revealed. Neither a
+    publisher listing nor a review was found to confirm the year or that
+    the book has been released rather than still being forthcoming.
+  sources:
+    - https://no.wikipedia.org/wiki/Harry_Hole
+
+# --- Kongeriket (2) ---
+
+- id: jo-nesbo/kongeriket
+  title: "Kongeriket"
+  authorIds: [jo-nesbo]
+  published: 2020
+  subseries: "Kongeriket"
+  canonTier: core
+  synopsis: >
+    A first-person narrator responsible for a string of monstrous acts
+    keeps getting away with them, tangled together with his younger
+    brother, on a farm above a village where the past does not stay buried
+    once the local sheriff starts digging.
+  note: >
+    The third best-selling book in Norway in 2020, per the Norwegian
+    Booksellers' Association's own bestseller list.
+  sources:
+    - https://nbl.snl.no/Jo_Nesb%C3%B8
+    - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+- id: jo-nesbo/kongen-av-os
+  title: "Kongen av Os"
+  authorIds: [jo-nesbo]
+  published: 2024
+  subseries: "Kongeriket"
+  canonTier: core
+  synopsis: >
+    The sequel to Kongeriket; no further plot detail was located in the
+    sources checked.
+  note: >
+    Numbered "Kongeriket 2: Kongen av Os" in Norwegian Wikipedia's own
+    bibliography table - the publisher's own sequel numbering, recorded
+    here as the basis for treating Kongeriket as a two-book subseries rather
+    than a single standalone. The third best-selling book in Norway in 2024.
+  sources:
+    - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+# --- Olav Johansen (2) ---
+
+- id: jo-nesbo/blod-pa-sno
+  title: "Blod på snø"
+  authorIds: [jo-nesbo]
+  published: 2015
+  subseries: "Olav Johansen"
+  canonTier: core
+  synopsis: >
+    Olav Johansen, a fixer for an Oslo crime boss, is ordered to kill his
+    employer's unfaithful wife, and falls for her instead of carrying it
+    out.
+  note: >
+    See the file header's YEAR CORRECTION note on why 2015, not 2014, is
+    recorded here. Attached at various points to adaptations involving
+    Martin Scorsese (producing), Leonardo DiCaprio and Tobey Maguire; a film
+    is in production as of the most recent source checked.
+  sources:
+    - https://no.wikipedia.org/wiki/Blod_p%C3%A5_sn%C3%B8
+    - https://nbl.snl.no/Jo_Nesb%C3%B8
+    - https://en.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+- id: jo-nesbo/mere-blod
+  title: "Mere blod"
+  authorIds: [jo-nesbo]
+  published: 2015
+  subseries: "Olav Johansen"
+  canonTier: core
+  synopsis: >
+    A drug courier's flight from Oslo to Norway's far north, published as
+    Olav Johansen's own sequel although Olav is not this book's narrator.
+  note: >
+    Norwegian Wikipedia's general Jo Nesbø bibliography describes this
+    book's protagonist as "pusheren Jon Hansen" [the pusher Jon Hansen], a
+    different character from Olav Johansen; English Wikipedia nonetheless
+    groups both books under "The Olav Johansen novels" and its own marketing
+    citation names this one "Midnight Sun: Blood on Snow 2." The exact
+    thread connecting the two narrators was not established in the sources
+    checked, so the subseries grouping here follows the publisher's own
+    packaging rather than a confirmed shared narrator.
+  sources:
+    - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+    - https://nbl.snl.no/Jo_Nesb%C3%B8
+    - https://en.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+# --- Standalone crime (6) ---
+
+- id: jo-nesbo/det-hvite-hotellet
+  title: "Det hvite hotellet"
+  authorIds: [jo-nesbo]
+  published: 2007
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A short crime novel whose sales proceeds went to Redd Barna (Save the
+    Children Norway); no further plot detail was located in the sources
+    checked.
+  note: >
+    Tiered extended rather than core: a charity-driven minor entry outside
+    the fourteen-book Harry Hole spine and the other standalone novels,
+    per Norwegian Wikipedia's own bibliography note on where its proceeds
+    went.
+  sources:
+    - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+- id: jo-nesbo/hodejegerne
+  title: "Hodejegerne"
+  authorIds: [jo-nesbo]
+  published: 2008
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Roger Brown, an elite corporate headhunter who moonlights as an art
+    thief, targets the wrong mark and has to survive the fallout.
+  note: >
+    Its film rights and proceeds were donated to the Harry Hole Foundation,
+    which works on literacy for children in developing countries - despite
+    Harry Hole not appearing in the book itself. The 2011 film adaptation,
+    starring Aksel Hennie, was the first film based on a Nesbø novel.
+  sources:
+    - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+    - https://en.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+- id: jo-nesbo/sonnen
+  title: "Sønnen"
+  authorIds: [jo-nesbo]
+  published: 2014
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A prison inmate, framed for crimes he did not commit and fed a
+    fabricated confession, breaks out to find out who actually killed his
+    father and his closest friend.
+  note: >
+    Investigator Simon Kefas, not Harry Hole, leads the case - one of
+    Norwegian Wikipedia's own named exceptions to the Harry Hole-led run of
+    Nesbø's crime novels.
+  sources:
+    - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+    - https://en.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+- id: jo-nesbo/macbeth
+  title: "Macbeth"
+  authorIds: [jo-nesbo]
+  published: 2018
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A hard-boiled retelling of Shakespeare's tragedy: Inspector Macbeth of
+    a paramilitary police unit turns on drug dealers, bikers and his own
+    colleagues in a corrupt industrial town combining Scandinavian and
+    Scottish texture, set in 1970.
+  note: >
+    Commissioned for the Hogarth Shakespeare series, marking four hundred
+    years since Shakespeare's death; Nesbø has described his brief as a
+    "crime noir" retelling.
+  sources:
+    - https://en.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+- id: jo-nesbo/natthuset
+  title: "Natthuset"
+  authorIds: [jo-nesbo]
+  published: 2023
+  subseries: null
+  canonTier: core
+  synopsis: >
+    No plot summary was located in the sources checked; recorded from
+    English Wikipedia's bibliography entry (as "The Night House," 2023) and
+    its own listing among Nesbø's other novels.
+  sources:
+    - https://en.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+- id: jo-nesbo/minnesota
+  title: "Minnesota"
+  authorIds: [jo-nesbo]
+  published: 2025
+  subseries: null
+  canonTier: core
+  synopsis: >
+    No plot summary was located in the sources checked; a VG review (4
+    January 2025) calls it grotesque. Won Nesbø the 2026 Riverton Prize.
+  sources:
+    - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+    - https://en.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+# --- Short fiction (3) ---
+
+- id: jo-nesbo/karusellmusikk
+  title: "Karusellmusikk"
+  authorIds: [jo-nesbo]
+  published: 2001
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A short-story collection; no further detail on its contents was
+    located in the sources checked.
+  note: >
+    Shares its title with an unrelated solo studio album Nesbø released the
+    same year (2001), listed separately under his discography - two
+    different works, same title, same year, per Norwegian Wikipedia's own
+    bibliography and discography sections.
+  sources:
+    - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+- id: jo-nesbo/sjalusimannen-og-andre-fortellinger
+  title: "Sjalusimannen og andre fortellinger"
+  authorIds: [jo-nesbo]
+  published: 2021
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A short-story collection, published in English the same year as The
+    Jealousy Man and Other Stories.
+  sources:
+    - https://en.wikipedia.org/wiki/Jo_Nesb%C3%B8
+    - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+- id: jo-nesbo/rotteoya-og-andre-fortellinger
+  title: "Rotteøya og andre fortellinger"
+  authorIds: [jo-nesbo]
+  published: 2021
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A second 2021 short-story collection, published in English the same
+    year as Rat Island and Other Stories.
+  sources:
+    - https://en.wikipedia.org/wiki/Jo_Nesb%C3%B8
+    - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+# --- Doktor Proktor (5) ---
+
+- id: jo-nesbo/doktor-proktors-prompepulver
+  title: "Doktor Proktors prompepulver"
+  authorIds: [jo-nesbo]
+  published: 2007
+  subseries: "Doktor Proktor"
+  canonTier: extended
+  synopsis: >
+    An eccentric inventor in Oslo befriends Nilly, a fearless new
+    neighbor, and Lisa, and the three team up around Proctor's
+    odorless-fart powder and its increasingly explosive uses.
+  note: >
+    Nesbø's first children's book; adapted into a 2014 Norwegian-language
+    film.
+  sources:
+    - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+    - https://en.wikipedia.org/wiki/Doctor_Proctor%27s_Fart_Powder
+
+- id: jo-nesbo/doktor-proktors-tidsbadekar
+  title: "Doktor Proktors tidsbadekar"
+  authorIds: [jo-nesbo]
+  published: 2008
+  subseries: "Doktor Proktor"
+  canonTier: extended
+  synopsis: >
+    Doctor Proctor, Nilly and Lisa build a time-traveling bathtub; no
+    further plot detail was located in the sources checked.
+  note: >
+    Adapted into a 2015 film made with German involvement.
+  sources:
+    - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+- id: jo-nesbo/doktor-proktor-og-verdens-undergang-kanskje
+  title: "Doktor Proktor og verdens undergang. Kanskje."
+  authorIds: [jo-nesbo]
+  published: 2010
+  subseries: "Doktor Proktor"
+  canonTier: extended
+  synopsis: >
+    No plot detail was located in the sources checked beyond the title
+    itself.
+  sources:
+    - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+- id: jo-nesbo/doktor-proktor-og-det-store-gullroveriet
+  title: "Doktor Proktor og det store gullrøveriet"
+  authorIds: [jo-nesbo]
+  published: 2012
+  subseries: "Doktor Proktor"
+  canonTier: extended
+  synopsis: >
+    No plot detail was located in the sources checked beyond the title
+    itself.
+  sources:
+    - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+- id: jo-nesbo/kan-doktor-proktor-redde-jula
+  title: "Kan Doktor Proktor redde jula?"
+  authorIds: [jo-nesbo]
+  published: 2016
+  subseries: "Doktor Proktor"
+  canonTier: extended
+  synopsis: >
+    No plot detail was located in the sources checked beyond the title
+    itself.
+  note: >
+    See the file header's note on a year conflict with English Wikipedia
+    (which gives 2017 for this same Norwegian original); 2016 is recorded
+    here as the publisher-cited year, with the conflict on record.
+  sources:
+    - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+# --- Nonfiction (1) ---
+
+- id: jo-nesbo/stemmer-fra-balkan
+  title: "Stemmer fra Balkan: Atten dager i mai"
+  authorIds: [jo-nesbo]
+  authorRole: co-author
+  published: 1999
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A nonfiction account written jointly with journalist Espen Søbye; no
+    further detail was located in the sources checked.
+  note: >
+    Co-written with Espen Søbye, who has no entry in this catalogue and is
+    therefore not recorded in withAuthorIds; the collaboration is stated
+    here instead through authorRole and this note.
+  sources:
+    - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8

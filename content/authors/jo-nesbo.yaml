@@ -1,0 +1,110 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds), so the same person resolves the same everywhere.
+# Author-LIFE events live here; franchise-specific events belong in
+# content/franchises/jo-nesbo/events.yaml. The three lifeEvents below are a
+# small set of well-sourced anchors rather than a complete account of the life.
+#
+# NAME AND BIRTH. Norwegian and English Wikipedia agree: born Jon Nesbø,
+# 29 March 1960, Oslo, raised in Molde. Norsk biografisk leksikon (NBL,
+# authored by Fredrik Wandrup and Hans H. Skei) corroborates the date and adds
+# the parents: Per Nesbø (1922-1994), a business manager, and Kirsten
+# Hammervold (b. 1928), a librarian.
+id: jo-nesbo
+name: Jo Nesbø
+aka: ["Jon Nesbø"]
+born: 1960-03-29
+died: null
+bio: >
+  Norwegian crime novelist and musician, born in Oslo and raised in Molde.
+  Trained as an economist at the Norwegian School of Economics (graduated
+  1986) and worked as a financial analyst and stockbroker while fronting the
+  country-pop band Di Derre, whose second album went to double platinum in
+  Norway. Wrote his first novel, [[work:jo-nesbo/flaggermusmannen|Flaggermusmannen]]
+  (1997), introducing the alcoholic Oslo detective Harry Hole, reportedly
+  during and after an extended stay in Sydney; it won the Riverton Prize and
+  the Glass Key, and he left finance for writing the following year. The
+  Harry Hole series has run to fourteen novels since, alongside a parallel
+  run of Doktor Proktor children's books (from 2007), the standalone crime
+  novels that make up the rest of his catalogue, a 2018 retelling of Macbeth
+  for the Hogarth Shakespeare series, and two short-story collections
+  (2021). By his own publisher's account his books have sold over 60 million
+  copies worldwide in more than 50 languages. He lives in Oslo.
+pseudonyms: []
+# A pseudonym that never shipped: Nesbø's publisher announced in October 2013
+# that he had written the Olav Johansen novels under the pen name "Tom
+# Johansen," with publication planned for autumn 2014 and spring 2015. Both
+# books (see jo-nesbo/blod-pa-sno and jo-nesbo/mere-blod) were ultimately
+# published under Nesbø's own name in 2015, so no pseudonym field is recorded
+# here; the abandoned pen name is left as a footnote rather than a fact about
+# how the books were published.
+lifeEvents:
+  - id: nesbo-father-eastern-front-1975
+    date: 1975
+    title: Learns his father fought for Germany in the war
+    impact: high
+    description: >
+      At fifteen, Nesbø's father Per sat him down and told him that as an
+      eighteen-year-old he had volunteered for the Eastern Front under German
+      command during the Second World War, and served a three-year prison
+      sentence for it afterward. Nesbø has described the conversation as the
+      point where he first felt "a lot of distance" from a father he knew and
+      admired, and as formative in how he came to see people and the choices
+      they make. A body of fiction organized around morally compromised men
+      who cross a line and then have to live in the world they made -
+      Harry Hole's own violence and addiction, the hitman narrator of
+      [[work:jo-nesbo/blod-pa-sno|Blod på snø]] - traces to a real
+      conversation about a real choice, not a novelist's invention.
+    spoilerAfter: null
+    # The base fact (Per Nesbø's Eastern Front service and prison sentence) is
+    # stated directly in English Wikipedia's own prose. The quote on how the
+    # conversation shaped Nesbø ("a lot of distance," "formed me as a person
+    # and how I see people and the choices we make") is Aftenposten's (Riseng,
+    # 3 April 2021); it is quoted here from Norwegian Wikipedia's reference
+    # list, which reproduces it directly, rather than from the original
+    # article itself.
+    sources:
+      - https://en.wikipedia.org/wiki/Jo_Nesb%C3%B8
+      - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+
+  - id: nesbo-debut-1997
+    date: 1997
+    title: Writes a bestselling debut between finance and music
+    impact: high
+    description: >
+      Nesbø wrote [[work:jo-nesbo/flaggermusmannen|Flaggermusmannen]] while
+      working as a financial analyst and fronting Di Derre, reportedly
+      finishing much of it during and after an extended stay in Sydney's
+      King's Cross, which becomes the novel's own setting. Sent to his
+      eventual publisher, Aschehoug, under the pseudonym "Kim Erik Lokker" so
+      that Nesbø's already-recognizable name from music would not affect the
+      reading, it won the Riverton Prize for best Norwegian crime novel and
+      the Glass Key for best Nordic crime novel of the year. He gave up
+      finance for writing full time the following year.
+    spoilerAfter: null
+    sources:
+      - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+      - https://nbl.snl.no/Jo_Nesb%C3%B8
+
+  - id: nesbo-doctor-proctor-2007
+    date: 2007
+    title: Starts a second, parallel career writing for children
+    impact: med
+    description: >
+      The same year [[work:jo-nesbo/snomannen|Snømannen]] became the
+      fastest-selling Norwegian novel to that date, Nesbø published Doktor
+      Proktors prompepulver, his first children's book, introducing the
+      Doktor Proktor series. It ran to five books over the following decade
+      and was, by his publisher's account, hugely successful in its own
+      right - explaining why a bibliography built around alcoholic detectives
+      and hired killers also contains an inventor who arms schoolchildren
+      with fart powder.
+    spoilerAfter: null
+    sources:
+      - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+      - https://en.wikipedia.org/wiki/Doctor_Proctor%27s_Fart_Powder
+
+sources:
+  - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+  - https://en.wikipedia.org/wiki/Jo_Nesb%C3%B8
+  - https://nbl.snl.no/Jo_Nesb%C3%B8
+  - https://no.wikipedia.org/wiki/Harry_Hole
