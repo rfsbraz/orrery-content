@@ -49,6 +49,22 @@ UA = (
 )
 TTL = 7 * 24 * 3600  # a catalogue record does not change during a run
 
+# A User-Agent alone is no longer enough for a Cloudflare-fronted site. WOOK
+# 403s on UA-only and serves 200 to this full set - which is why earlier runs
+# concluded "the live site 403s" and fell back to web.archive.org, losing the
+# current catalogue. Send these whenever fetching HTML.
+BROWSER_HEADERS = {
+    "User-Agent": UA,
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+    "Accept-Language": "pt-PT,pt;q=0.9,en;q=0.8",
+    "Accept-Encoding": "identity",   # no gzip: urllib will not transparently inflate
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
+}
+
 
 @dataclasses.dataclass
 class MetaRecord:
@@ -132,8 +148,13 @@ def get_json(
     be able to record "this one had no record" without the run dying, and a
     provider that raises on a 404 turns a normal absence into an outage.
 
-    Retries only on 429 and 5xx, with a widening backoff. A 404 is an answer
-    and is cached as one, so a re-run does not pay for it twice.
+    Retries only on 429 and 5xx, with a widening backoff.
+
+    **Failures are never cached.** An earlier version cached them like any
+    other answer, and a burst of 429s from an unauthenticated Google Books
+    poisoned the cache for a week: adding a working API key then changed
+    nothing, because every lookup was served the stored failure. Re-fetching a
+    genuine 404 next run is far cheaper than not noticing that.
     """
     os.makedirs(CACHE, exist_ok=True)
     path = _cache_path(url)
@@ -169,10 +190,64 @@ def get_json(
             body = None
             break
 
-    try:
-        json.dump({"at": time.time(), "body": body}, open(path, "w", encoding="utf-8"))
-    except OSError:
-        pass  # an unwritable cache slows the next run; it does not break this one
+    if body is not None:
+        try:
+            json.dump({"at": time.time(), "body": body}, open(path, "w", encoding="utf-8"))
+        except OSError:
+            pass  # an unwritable cache slows the next run; it does not break this one
+    return body
+
+
+def get_html(
+    url: str,
+    *,
+    interval: float = 1.0,
+    ttl: int = TTL,
+    refresh: bool = False,
+    timeout: int = 45,
+    tries: int = 3,
+) -> str | None:
+    """GET an HTML page with full browser headers, cached and rate-limited.
+
+    Same contract as `get_json`: None means the page could not be fetched, and
+    failures are never cached. Scraping providers are slower by default
+    (`interval=1.0`) because a retail catalogue is somebody else's server.
+    """
+    os.makedirs(CACHE, exist_ok=True)
+    path = _cache_path("html:" + url)
+    if not refresh and os.path.exists(path):
+        try:
+            blob = json.load(open(path, encoding="utf-8"))
+            if time.time() - blob.get("at", 0) < ttl:
+                return blob.get("body")
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    host = urllib.parse.urlparse(url).netloc
+    body = None
+    for attempt in range(tries):
+        LIMITER.wait(host, interval)
+        try:
+            req = urllib.request.Request(url, headers=BROWSER_HEADERS)
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                body = r.read().decode("utf-8", "replace")
+            break
+        except urllib.error.HTTPError as e:
+            if e.code in (429, 500, 502, 503, 504) and attempt < tries - 1:
+                time.sleep(2 ** attempt * 2)
+                continue
+            break
+        except (urllib.error.URLError, TimeoutError, OSError):
+            if attempt < tries - 1:
+                time.sleep(2 ** attempt)
+                continue
+            break
+
+    if body is not None:
+        try:
+            json.dump({"at": time.time(), "body": body}, open(path, "w", encoding="utf-8"))
+        except OSError:
+            pass
     return body
 
 

@@ -78,6 +78,7 @@ stack add a source without touching its callers. The difference: ours must
 | `openlibrary` | breadth, and the only ISBN batching here | 20 ISBNs per call |
 | `googlebooks` | non-anglophone editions, best cover resolution | **needs an API key in practice** |
 | `nb.no` | Norwegian first editions | legal deposit, so silence is evidence |
+| `wook` | pt-PT titles, ISBNs, publishers, dates | scraper; **covers are watermarked, do not use them** |
 
 ### Google Books needs a key
 
@@ -96,6 +97,35 @@ outside the anglophone trade, and cover resolution. CWA's `google.py` has the
 trick, lifted here - strip `&edge=curl` and append `&fife=w800-h900` to get an
 800x900 image instead of the ~128px thumbnail. That is the fix for the
 `snømannen` cover shipped at 96x151.
+
+## WOOK, and what a scraper is good for
+
+WOOK is the worked scraper example and it makes the point well: **it is
+excellent for the data and unusable for the pictures.**
+
+Good for the pt-PT **published title, ISBN, publisher and exact release date** -
+a sweep of one author returns those in seconds, and OpenLibrary holds almost
+none of it for Portugal.
+
+**Its covers are watermarked.** Every `img.wook.pt` image carries a diagonal
+"wook" mark in the bottom-right corner, invisible at thumbnail size and obvious
+at `/1000x`. Raising the resolution makes it worse. That is exactly the
+"watermarked scrape" the visual-metadata skill names: it passes every automated
+check and is not licensable. The provider still returns `cover_url`, because
+looking at a jacket is a good way to confirm which edition a record is, but it
+belongs in a candidate table and never in `images.cover`.
+
+Two implementation notes worth copying into the next scraper:
+
+- **Read JSON-LD, not the DOM.** WOOK publishes a `@type: Book` block with
+  everything needed. Structured data the site exposes deliberately survives
+  redesigns that break selectors.
+- **Send `core.BROWSER_HEADERS`, not just a User-Agent.** WOOK is behind
+  Cloudflare and 403s UA-only requests. Earlier runs concluded "the live site
+  403s" and fell back to web.archive.org, which serves a stale catalogue.
+- Searching WOOK **by ISBN does not work** - it falls back to unrelated
+  recommendations rather than returning nothing, which is worse than an empty
+  result because it looks like an answer. Search by author or title.
 
 ## Adding a source
 

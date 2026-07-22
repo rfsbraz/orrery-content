@@ -32,7 +32,10 @@ from __future__ import annotations
 import os
 import urllib.parse
 
-from core import MetaRecord, chunked, get_json
+import json
+import re
+
+from core import MetaRecord, chunked, get_html, get_json
 
 
 class Provider:
@@ -280,8 +283,116 @@ class Nasjonalbiblioteket(Provider):
         return out
 
 
+class Wook(Provider):
+    """WOOK, the Portuguese retail catalogue. The best pt-PT cover source there is.
+
+    Authoritative for nothing bibliographically - it is a shop, not a library,
+    so BNP settles a disputed Portuguese date - but it is far and away the best
+    source for the **pt-PT published title, ISBN, publisher and exact release
+    date**, all of which OpenLibrary barely holds for Portugal.
+
+    **Its covers are WATERMARKED and must not be used as catalogue covers.**
+    Every image on `img.wook.pt` carries a diagonal "wook" mark in the
+    bottom-right corner. It is invisible in a thumbnail and obvious at
+    `/1000x`, which is precisely the "watermarked scrape" the visual-metadata
+    skill warns about - it passes every automated check and is not licensable.
+    `cover_url` is still returned because looking at the jacket is a good way
+    to confirm WHICH edition a record is, but it belongs in a candidate table,
+    never in `images.cover`.
+
+    This is a SCRAPER, and the first one here, so it is the worked example of
+    the contract. Two things make it a well-behaved one:
+
+    - **It reads JSON-LD, not the DOM.** WOOK publishes a `@type: Book` block
+      on every product page carrying name, isbn, author, publisher,
+      datePublished, inLanguage and image. That is structured data the site
+      exposes deliberately, so it survives redesigns that would break a
+      selector. Parse the markup only where there is no structured data.
+    - **It sends full browser headers** (`core.BROWSER_HEADERS`). WOOK is
+      behind Cloudflare and 403s a User-Agent-only request. That cost real
+      work: earlier runs concluded "the live site 403s" and fell back to
+      web.archive.org, which serves a stale catalogue.
+
+    Covers are sized by a path suffix; `/1000x` is the useful maximum
+    (`/1500x` returns the same bytes). Higher resolution makes the watermark
+    MORE visible, not less, so there is no size that solves it.
+
+    Searching by ISBN does NOT work - the search falls back to unrelated
+    recommendations rather than returning nothing, which is worse than an empty
+    result because it looks like an answer. Search by author or title only.
+    """
+
+    name = "wook"
+    interval = 1.5  # somebody else's shop; do not hammer it
+    authoritative_for = "pt-PT covers and published titles; not a bibliographic authority"
+
+    BASE = "https://www.wook.pt"
+    PRODUCT = re.compile(r'href="(/livro/[^"?#]+/\d+)"')
+
+    def _product(self, path: str) -> MetaRecord | None:
+        html = get_html(self.BASE + path, interval=self.interval)
+        if not html:
+            return None
+        book = None
+        for m in re.finditer(r'<script[^>]+application/ld\+json[^>]*>(.*?)</script>', html, re.S):
+            try:
+                d = json.loads(m.group(1))
+            except json.JSONDecodeError:
+                continue
+            if isinstance(d, dict) and d.get("@type") == "Book":
+                book = d
+                break
+        if not book:
+            return None
+
+        def name_of(v):
+            if isinstance(v, dict):
+                return v.get("name")
+            if isinstance(v, list):
+                return ", ".join(filter(None, (name_of(x) for x in v)))
+            return v
+
+        cover = book.get("image")
+        if cover and "/500x" not in cover:
+            cover = cover.rstrip("/") + "/1000x"   # the useful maximum
+        elif cover:
+            cover = cover.replace("/500x", "/1000x")
+        author = name_of(book.get("author"))
+        return MetaRecord(
+            source=self.name,
+            title=book.get("name") or "",
+            source_url=self.BASE + path,
+            authors=[a.strip() for a in str(author).split(",")] if author else [],
+            publisher=name_of(book.get("publisher")),
+            published=book.get("datePublished"),
+            # WOOK writes the language as a Portuguese word ("Português"), not
+            # a code. Normalise rather than passing a display string on.
+            language="pt-PT" if str(book.get("inLanguage", "")).lower().startswith("portug") else book.get("inLanguage"),
+            isbn13=str(book.get("isbn") or "") or None,
+            cover_url=cover,
+            identifiers={"wook": path.rsplit("/", 1)[-1]},
+            raw=book,
+        )
+
+    def by_author(self, author: str, limit: int = 40) -> list[MetaRecord]:
+        import urllib.parse
+        url = f"{self.BASE}/pesquisa?keyword={urllib.parse.quote(author)}"
+        html = get_html(url, interval=self.interval)
+        if not html:
+            return []
+        seen, out = [], []
+        for m in self.PRODUCT.finditer(html):
+            if m.group(1) not in seen:
+                seen.append(m.group(1))
+        for path in seen[:limit]:
+            rec = self._product(path)
+            if rec:
+                out.append(rec)
+        return out
+
+
 #: Registration order is preference order for callers that merge sources:
 #: batching and breadth first, then the gap-filler, then the narrow authority.
-ALL: list[Provider] = [OpenLibrary(), GoogleBooks(), Nasjonalbiblioteket()]
+ALL: list[Provider] = [OpenLibrary(), GoogleBooks(), Nasjonalbiblioteket(), Wook()]
 
 BY_NAME = {p.name: p for p in ALL}
