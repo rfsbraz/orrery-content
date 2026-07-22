@@ -322,6 +322,22 @@ covers, and **published translated titles**. Only add editions you can verify
 (a real ISBN from a real source); never guess an ISBN. Sparse is fine: the app
 falls back to search links and OpenLibrary covers when a work has no edition.
 
+> **Editions are a convenience for browsing locally, and nothing more.**
+> Orrery exists to experience an author **as they were** - not as publishers
+> handled them country by country. A foreign release date is a fact about a
+> licensing deal, not about the author's work, so **it never bears on a
+> reading order, an era boundary or a `startHere` path.**
+>
+> The concrete case: the first two Harry Hole novels reached English twelve
+> years after the rest, so English readers met the series at book three. That
+> is a real and interesting fact about the English market. It is not a reading
+> order, and no amount of sourcing would make it one.
+>
+> It follows that **a translated title must never be the only title a reader
+> sees**. Inline references in a translated wing carry the published local
+> title for readability, and the app renders the author's own title beside it.
+> The edition is the convenience; the original is the substance.
+
 ```yaml
 - id: terry-pratchett/guards-guards/presenca-2004-pt
   workId: terry-pratchett/guards-guards
