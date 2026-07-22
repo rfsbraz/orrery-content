@@ -1,12 +1,13 @@
 # Português europeu (pt-PT) - sinopses.
 # Os títulos de obras NÃO são traduzidos aqui (ver docs/SCHEMA.md, "Never
 # translate a published title"): um título traduzido só existe como edição,
-# em editions.yaml. Vinte e quatro das trinta e quatro obras desta ala têm
+# em editions.yaml. Vinte e quatro das trinta e cinco obras desta ala têm
 # uma edição pt-PT real e verificada (Dom Quixote, com Macbeth na Bertrand
-# Editora); as outras dez - Nådeskudd (ainda não publicado), Det hvite
-# hotellet, Karusellmusikk, Stemmer fra Balkan e as seis obras de Doktor
-# Proktor - não têm edição portuguesa, pelo que ficam com o título norueguês
-# original em qualquer referência.
+# Editora); as outras onze - Nådeskudd (ainda não publicado), Det hvite
+# hotellet, Karusellmusikk, Stemmer fra Balkan, as seis obras de Doktor
+# Proktor e Books to Die For - não têm edição portuguesa, pelo que ficam com
+# o título original em qualquer referência (norueguês nas primeiras dez,
+# inglês em Books to Die For, a antologia sem edição portuguesa).
 # `note:` não é traduzido: o campo não é lido pela aplicação em Work (só
 # `synopsis` chega ao leitor), verificado em lib/content/types.ts do
 # repositório da aplicação.
@@ -181,8 +182,15 @@
 
 - id: jo-nesbo/rotteoya-og-andre-fortellinger
   synopsis: >
-    Uma segunda coletânea de contos de 2021, publicada em inglês nesse
-    mesmo ano com o título Rat Island and Other Stories.
+    Cinco contos passados num futuro inquietantemente próximo do presente,
+    construídos em torno do poder, da ausência de lei e da vigilância. O
+    conto-título isola uma elite murada no topo de um arranha-céus, à espera
+    que passe um colapso social, enquanto as massas lutam para sobreviver
+    nas ruas lá em baixo; os quatro que se seguem aplicam essa mesma pressão
+    a um psicólogo que, nas horas vagas, mata por encomenda, a dois amigos
+    destruídos por se apaixonarem pela mesma mulher no encerro de Pamplona,
+    e a um homem que persegue uma forma de esquecer tudo antes que seja
+    tarde demais.
 
 - id: jo-nesbo/doktor-proktors-prompepulver
   synopsis: >
@@ -226,3 +234,10 @@
   synopsis: >
     Um relato de não-ficção escrito em conjunto com o jornalista Espen
     Søbye; não foi encontrado mais nenhum detalhe nas fontes consultadas.
+
+- id: jo-nesbo/books-to-die-for
+  synopsis: >
+    Uma antologia de ensaios pessoais de mais de 100 escritores de mistério
+    e ficção policial de vinte países, cada um a defender o seu romance
+    preferido do género, editada por John Connolly e Declan Burke. O texto
+    de Nesbø defende Pop. 1280, de Jim Thompson.
