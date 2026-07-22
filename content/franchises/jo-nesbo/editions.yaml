@@ -1,0 +1,1214 @@
+# Editions of Jo Nesbø across three markets: Norwegian (nb, the original),
+# English (en) and Portuguese (pt-PT). This wing needed all three more than any
+# other in the catalogue, because Norwegian is neither the language most
+# readers buy in (English) nor the language most of this catalogue's readers
+# read in (Portuguese) - so unlike Christie or Pratchett, where editions.yaml
+# only ever needed to add pt-PT on top of the base-language title, here the
+# base language itself (works.yaml's own `title`) is unfamiliar to nearly
+# every reader, and BOTH the English and Portuguese layers below are load-
+# bearing, not optional polish.
+#
+# THE WING'S HEADLINE FACT, why an edition's `year` is never the work's own
+# `published` year for this author. Aschehoug published the first two Harry
+# Hole novels in 1997 and 1998; English publishing did not translate either
+# until 2012 (Flaggermusmannen -> The Bat) and 2013 (Kakerlakkene ->
+# Cockroaches) - twelve and fifteen years after Rødstrupe (2000) reached
+# English as The Redbreast in 2006/2007. English readers met the series at
+# book three, not book one, purely by licensing accident (see works.yaml's
+# own ORIGINAL TITLES note - no reading order is built on this gap, but the
+# edition years below are exactly what make it checkable rather than
+# folkloric).
+#
+# NORWEGIAN (nb) - 34 of 34 works, all Aschehoug. Sourced primarily from
+# Aschehoug's own product pages (aschehoug.no), cross-checked against the
+# National Library of Norway's legal-deposit catalogue (api.nb.no), which is
+# mandatory and therefore strong negative evidence when silent for a print
+# edition. That inference does not extend to ebook/audiobook-only SKUs: Politi,
+# Hodejegerne, Karusellmusikk, Doktor Proktors prompepulver, Doktor Proktors
+# tidsbadekar and Kan Doktor Proktor redde jula are all live, current Aschehoug
+# digital SKUs (ISBN, price and format read directly off aschehoug.no) with
+# zero nb.no results for their ISBN - deposit silence there is a gap in nb.no's
+# digital intake, not evidence against the book. Every other ISBN below was
+# independently found in one or both. Aschehoug relaunched the
+# first NINE Harry Hole novels
+# (Flaggermusmannen through Gjenferd, i.e. every book that had not already had
+# its own standalone pocket reissue) in new Pocket editions in a tight window,
+# 4-20 March 2026 - timed with the Marekors-based Netflix adaptation (Jo
+# Nesbøs Harry Hole, 2026, see works.yaml). Those nine 2026 ISBNs are recorded
+# here as the current Norwegian edition; all nine were independently
+# cross-confirmed in nb.no's catalogue within days of their Aschehoug listing.
+# Three works (Det hvite hotellet, Stemmer fra Balkan, Doktor Proktors
+# sensasjonelle samling av dyr du skulle ønske ikke fantes) have no current
+# Aschehoug storefront page at all - all three are recorded from nb.no's
+# legal-deposit record alone, which is this catalogue's accepted floor for an
+# out-of-print book (see docs/CURATION.md "when there is no ISBN" precedent,
+# extended here to "when there is no live storefront"). Stemmer fra Balkan's
+# ISBN-13 is converted from nb.no's recorded ISBN-10 (8203182127); the
+# conversion is shown as a comment on that entry. Karusellmusikk's only
+# findable edition is a 2007 downloadable audiobook (read by Mads Ousdal)
+# whose own Aschehoug record confusingly carries "Utgitt 2001" (the book's
+# original year) alongside "Salgsdato 15.11.2007" (this SKU's actual release);
+# the audiobook's own year is recorded as 2007, since that is what the ISBN
+# in hand actually is, and the discrepancy is noted on the entry.
+#
+# ENGLISH (en) - 28 of 34 works. Sourced from OpenLibrary's per-ISBN records
+# (isbn13, publisher, format, pagination), cross-checked against English
+# Wikipedia's own bibliography table (which gives translation years
+# independent of OpenLibrary) and, for two 2024-2025 titles too recent for
+# OpenLibrary's search index, WOOK's own English-language stock (WOOK sells
+# English imports as a distinct product line from its Portuguese
+# translations; both are cited, and neither is confused with the other
+# below). Publisher history genuinely shifts partway through the backlist:
+# Vintage (Random House UK) carries the paperback line for the earlier Harry
+# Hole novels; Harvill Secker is the hardcover imprint of record from Phantom
+# (2012) on; Knopf/Vintage Crime is used for two recent US-only titles
+# (Blood on Snow, Killing Moon) where a UK ISBN did not independently
+# resolve as cleanly. No English edition is recorded for six works, checked
+# rather than assumed:
+#   - Nådeskudd - not yet released anywhere (2026-08-19 street date).
+#   - Det hvite hotellet - the 2007 Redd Barna charity title. English
+#     Wikipedia's bibliography parenthetically offers "(English: The White
+#     Hotel)" with no year; OpenLibrary returns zero records for that title
+#     under this author, and no English-language retailer listing surfaced
+#     anywhere searched. Recorded here as unverified and NOT shipped -
+#     Wikipedia's aside is not a book until an edition proves it.
+#   - Karusellmusikk (2001 story collection) - no translation found.
+#   - Stemmer fra Balkan (1999, war reportage with Espen Søbye) - no
+#     translation found.
+#   - Doktor Proktors sensasjonelle samling av dyr du skulle ønske ikke
+#     fantes (2010 bestiary) - absent from English Wikipedia's own
+#     bibliography, which otherwise lists every other Doktor Proktor title in
+#     translation; no edition found.
+#   - Rotteøya og andre fortellinger (2021) - the interesting negative.
+#     English Wikipedia's bibliography claims "(English: Rat island and
+#     Other Stories, 2021)", but OpenLevel search returns nothing by this
+#     author under any "Rat Island" title, and a genuine French translation
+#     (Nesbø/Romand-Monnier, Gallimard) turned up instead. Its sibling
+#     collection, Sjalusimannen, WAS translated into English the same year
+#     (The Jealousy Man). Rotteøya was not, despite what the reference page
+#     says - a real, checked gap, not a search failure (see the note on that
+#     work's absence below).
+# The five numbered Doktor Proktor novels use Simon & Schuster's UK line
+# where isolated, Aladdin (Simon & Schuster's US children's imprint)
+# otherwise; the American titling diverges book to book (Who Cut the
+# Cheese?, The Magical Fruit) from the more literal UK/Norwegian ones, per
+# English Wikipedia's bibliography, which is followed here since it is the
+# printed cover title, not this file's invention.
+#
+# PORTUGUESE (pt-PT) - 24 of 34 works: fuller coverage than any prior pass on
+# this wing assumed. Dom Quixote (Grupo LeYa) is the constant Portuguese
+# publisher for the crime fiction and has been since 2009 (O Pássaro de Peito
+# Vermelho, matching the arrival date already established for this
+# catalogue's Norwegian-vs-Portuguese chronology); BIS, a
+# sister LeYa pocket imprint, carries newer budget reissues of several
+# backlist titles. ONE title breaks the Dom Quixote pattern entirely: Macbeth
+# was published in Portugal by Bertrand Editora (April 2018) - a different
+# LeYa-group publisher, matching how the Hogarth Shakespeare commission was
+# licensed market by market rather than following Nesbø's usual house. All
+# ISBNs are sourced to WOOK product pages (wook.pt) or, where WOOK's live
+# fetch was blocked (a documented WOOK behaviour, see docs/CURATION.md §4),
+# its Bertrand.pt mirror carrying the identical ISBN and product id. Every
+# ISBN below was read directly off a fetched product page, not taken from a
+# search-engine summary - one such summary, for A Casa da Noite, surfaced a
+# Brazilian Record-house ISBN (978-85 prefix) alongside the real Dom Quixote
+# one; the direct fetch below carries only the verified 978-972 Portuguese
+# edition, and the Brazilian number is not repeated here even as a rejected
+# note, per the rule against reproducing a pt-BR identifier in a pt-PT file.
+# No Portuguese edition exists for Nådeskudd (unpublished), the Doktor
+# Proktor series (six for six, no Portuguese translation found anywhere -
+# unlike English, where five of six exist; Nesbø's Portuguese-language
+# readership appears to be crime-fiction-only), Det hvite hotellet,
+# Karusellmusikk, or Stemmer fra Balkan.
+#
+# A note on formats: `format` is recorded only where a fetched product page
+# explicitly stated a binding (Aschehoug's "Format" field, OpenLibrary's
+# physical_format, WOOK's "Encadernação"). Left blank on entries where the
+# source itself didn't state one. Most WOOK Dom Quixote/BIS editions
+# read "Capa mole" (paperback) and are marked so; a few (O Morcego, Baratas,
+# O Leopardo) simply didn't carry the field on the page fetched, so format is
+# omitted on those three rather than assumed from the pattern.
+
+# --- Harry Hole (14) ---
+
+- id: jo-nesbo/flaggermusmannen/aschehoug-2026-nb
+  workId: jo-nesbo/flaggermusmannen
+  isbn13: "9788203462252"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2026
+  note: Part of Aschehoug's March 2026 relaunch of the first nine Harry Hole novels (see file header); confirmed independently in nb.no's legal-deposit catalogue.
+  sources:
+    - https://aschehoug.no/flaggermusmannen-4
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203462252
+
+- id: jo-nesbo/flaggermusmannen/vintage-2013-en
+  workId: jo-nesbo/flaggermusmannen
+  isbn13: "9780099581871"
+  language: en
+  title: "The Bat"
+  format: paperback
+  publisher: Vintage
+  year: 2013
+  note: "Vintage paperback; the notes on OpenLibrary's own record state \"Originally published: London: Harvill & Secker, 2012\" - the first English edition, twelve years after the book's own 1997 Norwegian one."
+  sources:
+    - https://openlibrary.org/isbn/9780099581871.json
+
+- id: jo-nesbo/flaggermusmannen/dom-quixote-2015-pt
+  workId: jo-nesbo/flaggermusmannen
+  isbn13: "9789722056342"
+  language: pt-PT
+  title: "O Morcego"
+  publisher: Dom Quixote
+  year: 2015
+  note: February 2015, 392 pages, matching the roughly-2015 arrival date already established for this catalogue's Norwegian-vs-Portuguese chronology.
+  sources:
+    - https://www.bertrand.pt/livro/o-morcego-jo-nesb-/16180708
+
+- id: jo-nesbo/kakerlakkene/aschehoug-2026-nb
+  workId: jo-nesbo/kakerlakkene
+  isbn13: "9788203462269"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2026
+  note: Part of the March 2026 relaunch (see file header).
+  sources:
+    - https://aschehoug.no/kakerlakkene-3
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203462269
+
+- id: jo-nesbo/kakerlakkene/vintage-2014-en
+  workId: jo-nesbo/kakerlakkene
+  isbn13: "9780099590323"
+  language: en
+  title: "Cockroaches"
+  format: paperback
+  publisher: Vintage
+  year: 2014
+  note: Subtitled "Harry Hole 2" on the cover; the second English translation, thirteen years after the book's own 1998 Norwegian one.
+  sources:
+    - https://openlibrary.org/isbn/9780099590323.json
+
+- id: jo-nesbo/kakerlakkene/dom-quixote-2016-pt
+  workId: jo-nesbo/kakerlakkene
+  isbn13: "9789722059213"
+  language: pt-PT
+  title: "Baratas"
+  publisher: Dom Quixote
+  year: 2016
+  sources:
+    - https://www.wook.pt/livro/baratas-jo-nesb/17389872
+
+- id: jo-nesbo/rodstrupe/aschehoug-2026-nb
+  workId: jo-nesbo/rodstrupe
+  isbn13: "9788203462276"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2026
+  note: Part of the March 2026 relaunch (see file header).
+  sources:
+    - https://aschehoug.no/rodstrupe-4
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203462276
+
+- id: jo-nesbo/rodstrupe/vintage-2007-en
+  workId: jo-nesbo/rodstrupe
+  isbn13: "9780099478546"
+  language: en
+  title: "The Redbreast"
+  publisher: Vintage
+  year: 2007
+  note: Vintage paperback, 23 Oct 2007; the HarperCollins hardcover (English Wikipedia's bibliography table) came a year earlier, in 2006.
+  sources:
+    - https://openlibrary.org/isbn/9780099478546.json
+
+- id: jo-nesbo/rodstrupe/dom-quixote-2009-pt
+  workId: jo-nesbo/rodstrupe
+  isbn13: "9789722037686"
+  language: pt-PT
+  title: "O Pássaro de Peito Vermelho"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2009
+  note: March 2009, 560 pages - the earliest Portuguese Nesbø edition found, matching the March 2009 arrival date already established for this catalogue.
+  sources:
+    - https://www.bertrand.pt/livro/o-passaro-de-peito-vermelho-jo-nesb-/1461054
+
+- id: jo-nesbo/sorgenfri/aschehoug-2026-nb
+  workId: jo-nesbo/sorgenfri
+  isbn13: "9788203462283"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2026
+  note: Part of the March 2026 relaunch (see file header).
+  sources:
+    - https://aschehoug.no/sorgenfri-5
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203462283
+
+- id: jo-nesbo/sorgenfri/vintage-2008-en
+  workId: jo-nesbo/sorgenfri
+  isbn13: "9780099505938"
+  language: en
+  title: "Nemesis"
+  publisher: Vintage Books
+  year: 2008
+  sources:
+    - https://openlibrary.org/isbn/9780099505938.json
+
+- id: jo-nesbo/sorgenfri/bis-2020-pt
+  workId: jo-nesbo/sorgenfri
+  isbn13: "9789896607425"
+  language: pt-PT
+  title: "Vingança a Sangue-Frio"
+  format: paperback
+  publisher: BIS
+  year: 2020
+  note: >
+    March 2020 pocket edition, 512 pages; matched by synopsis, not title -
+    Anna's death, Harry's memory loss and the bank robberies, and his
+    long-time adversary Tom Waaler leading the investigation, is Sorgenfri's
+    plot, not a literal rendering of its title.
+  sources:
+    - https://www.wook.pt/livro/vinganca-a-sangue-frio-jo-nesb/23897275
+
+- id: jo-nesbo/marekors/aschehoug-2026-nb
+  workId: jo-nesbo/marekors
+  isbn13: "9788203462290"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2026
+  note: Part of the March 2026 relaunch (see file header) - the book the 2026 Netflix adaptation is based on (see works.yaml).
+  sources:
+    - https://aschehoug.no/marekors-3
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203462290
+
+- id: jo-nesbo/marekors/vintage-2010-en
+  workId: jo-nesbo/marekors
+  isbn13: "9780099546764"
+  language: en
+  title: "The Devil's Star"
+  format: paperback
+  publisher: Vintage
+  year: 2010
+  sources:
+    - https://openlibrary.org/isbn/9780099546764.json
+
+- id: jo-nesbo/marekors/dom-quixote-2011-pt
+  workId: jo-nesbo/marekors
+  isbn13: "9789722047753"
+  language: pt-PT
+  title: "A Estrela do Diabo"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2011
+  note: September 2011, 476 pages.
+  sources:
+    - https://www.bertrand.pt/livro/a-estrela-do-diabo-jo-nesb-/11152330
+
+- id: jo-nesbo/frelseren/aschehoug-2026-nb
+  workId: jo-nesbo/frelseren
+  isbn13: "9788203462313"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2026
+  note: Part of the March 2026 relaunch (see file header).
+  sources:
+    - https://aschehoug.no/frelseren-4
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203462313
+
+- id: jo-nesbo/frelseren/vintage-2009-en
+  workId: jo-nesbo/frelseren
+  isbn13: "9780099540441"
+  language: en
+  title: "The Redeemer"
+  publisher: Vintage
+  year: 2009
+  sources:
+    - https://openlibrary.org/isbn/9780099540441.json
+
+- id: jo-nesbo/frelseren/dom-quixote-2013-pt
+  workId: jo-nesbo/frelseren
+  isbn13: "9789722052009"
+  language: pt-PT
+  title: "O Redentor"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2013
+  note: April 2013.
+  sources:
+    - https://www.wook.pt/livro/o-redentor-jo-nesb/14875345
+
+- id: jo-nesbo/snomannen/aschehoug-2026-nb
+  workId: jo-nesbo/snomannen
+  isbn13: "9788203462320"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2026
+  note: Part of the March 2026 relaunch (see file header).
+  sources:
+    - https://aschehoug.no/snomannen-5
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203462320
+
+- id: jo-nesbo/snomannen/vintage-2010-en
+  workId: jo-nesbo/snomannen
+  isbn13: "9780099551744"
+  language: en
+  title: "The Snowman"
+  format: paperback
+  publisher: Vintage
+  year: 2010
+  sources:
+    - https://openlibrary.org/isbn/9780099551744.json
+
+- id: jo-nesbo/snomannen/dom-quixote-2013-pt
+  workId: jo-nesbo/snomannen
+  isbn13: "9789722053594"
+  language: pt-PT
+  title: "O Boneco de Neve"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2013
+  note: November 2013.
+  sources:
+    - https://www.wook.pt/livro/o-boneco-de-neve-jo-nesb/15283670
+
+- id: jo-nesbo/panserhjerte/aschehoug-2026-nb
+  workId: jo-nesbo/panserhjerte
+  isbn13: "9788203462337"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2026
+  note: Part of the March 2026 relaunch (see file header).
+  sources:
+    - https://aschehoug.no/panserhjerte-5
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203462337
+
+- id: jo-nesbo/panserhjerte/vintage-2011-en
+  workId: jo-nesbo/panserhjerte
+  isbn13: "9780099548973"
+  language: en
+  title: "The Leopard"
+  publisher: Vintage Books
+  year: 2011
+  sources:
+    - https://openlibrary.org/isbn/9780099548973.json
+
+- id: jo-nesbo/panserhjerte/dom-quixote-2014-pt
+  workId: jo-nesbo/panserhjerte
+  isbn13: "9789722055994"
+  language: pt-PT
+  title: "O Leopardo"
+  publisher: Dom Quixote
+  year: 2014
+  note: November 2014, 648 pages.
+  sources:
+    - https://www.wook.pt/livro/o-leopardo-jo-nesb/16031891
+
+- id: jo-nesbo/gjenferd/aschehoug-2026-nb
+  workId: jo-nesbo/gjenferd
+  isbn13: "9788203462344"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2026
+  note: Part of the March 2026 relaunch (see file header) - the last of the nine.
+  sources:
+    - https://aschehoug.no/gjenferd-5
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203462344
+
+- id: jo-nesbo/gjenferd/harvill-secker-2012-en
+  workId: jo-nesbo/gjenferd
+  isbn13: "9781846555213"
+  language: en
+  title: "Phantom"
+  format: hardcover
+  publisher: Harvill Secker
+  year: 2012
+  note: 464 pages - the first title in this wing's English run to carry the Harvill Secker hardcover imprint rather than a Vintage paperback-first release.
+  sources:
+    - https://openlibrary.org/isbn/9781846555213.json
+
+- id: jo-nesbo/gjenferd/dom-quixote-2015-pt
+  workId: jo-nesbo/gjenferd
+  isbn13: "9789722058278"
+  language: pt-PT
+  title: "O Fantasma"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2015
+  note: November 2015.
+  sources:
+    - https://www.wook.pt/livro/o-fantasma-jo-nesb/16960842
+
+- id: jo-nesbo/politi/aschehoug-2013-nb
+  workId: jo-nesbo/politi
+  isbn13: "9788203355530"
+  language: nb
+  format: ebook
+  publisher: Aschehoug
+  year: 2013
+  note: >
+    No current print/pocket edition surfaced for this title; this ebook is
+    the verified edition, read directly off Aschehoug's own product page
+    (Utgitt 2013, Salgsdato 05.06.2013, orig. tittel "Police"). The ISBN is
+    absent from OpenLibrary and from nb.no's legal-deposit catalogue by isbn
+    query - the same gap as on Hodejegerne, Karusellmusikk and three Doktor
+    Proktor ebook/audiobook editions in this wing, none of which carry any
+    nb.no record either despite being live Aschehoug storefront items.
+  sources:
+    - https://aschehoug.no/politi-2
+
+- id: jo-nesbo/politi/harvill-secker-2013-en
+  workId: jo-nesbo/politi
+  isbn13: "9781846555978"
+  language: en
+  title: "Police"
+  publisher: Harvill Secker
+  year: 2013
+  note: London, 518 pages, "Harry Hole -- 10".
+  sources:
+    - https://openlibrary.org/isbn/9781846555978.json
+
+- id: jo-nesbo/politi/dom-quixote-2016-pt
+  workId: jo-nesbo/politi
+  isbn13: "9789722061407"
+  language: pt-PT
+  title: "Polícia"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2016
+  note: November 2016.
+  sources:
+    - https://www.wook.pt/livro/policia-jo-nesb/18909924
+
+- id: jo-nesbo/torst/aschehoug-2018-nb
+  workId: jo-nesbo/torst
+  isbn13: "9788203363221"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2018
+  sources:
+    - https://aschehoug.no/torst-2
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203363221
+
+- id: jo-nesbo/torst/vintage-2017-en
+  workId: jo-nesbo/torst
+  isbn13: "9781784705091"
+  language: en
+  title: "The Thirst"
+  format: paperback
+  publisher: Vintage
+  year: 2017
+  note: Subtitled "Harry Hole 11" on the cover.
+  sources:
+    - https://openlibrary.org/isbn/9781784705091.json
+
+- id: jo-nesbo/torst/dom-quixote-2017-pt
+  workId: jo-nesbo/torst
+  isbn13: "9789722063654"
+  language: pt-PT
+  title: "A Sede"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2017
+  note: November 2017.
+  sources:
+    - https://www.wook.pt/livro/a-sede-jo-nesb/20915992
+
+- id: jo-nesbo/kniv/aschehoug-2020-nb
+  workId: jo-nesbo/kniv
+  isbn13: "9788203266645"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2020
+  sources:
+    - https://aschehoug.no/kniv-2
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203266645
+
+- id: jo-nesbo/kniv/harvill-secker-2019-en
+  workId: jo-nesbo/kniv
+  isbn13: "9781787300774"
+  language: en
+  title: "Knife"
+  format: paperback
+  publisher: Random House UK
+  year: 2019
+  note: >
+    20 June 2019, "Harry Hole 12". The bookseller feed this record is sourced
+    from stylises the title "THE KNIFE"; the title recorded here follows the
+    plain "Knife" used consistently elsewhere (Norwegian Wikipedia, the
+    Knopf US edition's own listing).
+  sources:
+    - https://openlibrary.org/isbn/9781787300774.json
+
+- id: jo-nesbo/kniv/dom-quixote-2020-pt
+  workId: jo-nesbo/kniv
+  isbn13: "9789722070768"
+  language: pt-PT
+  title: "A Faca"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2020
+  note: September 2020.
+  sources:
+    - https://www.wook.pt/livro/a-faca-jo-nesb/24291378
+
+- id: jo-nesbo/blodmane/aschehoug-2023-nb
+  workId: jo-nesbo/blodmane
+  isbn13: "9788203397585"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2023
+  sources:
+    - https://aschehoug.no/blodmane-3
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203397585
+
+- id: jo-nesbo/blodmane/knopf-2024-en
+  workId: jo-nesbo/blodmane
+  isbn13: "9780593684894"
+  language: en
+  title: "Killing Moon"
+  publisher: Knopf Doubleday
+  year: 2024
+  note: >
+    Subtitled "A Harry Hole Novel". English Wikipedia's inline bibliography
+    text gives 2023, but this edition's own OpenLibrary record independently
+    dates it 2024, as does a UK Penguin Random House ISBN checked
+    alongside it - recorded as 2024 on the strength of the primary edition
+    record over the encyclopedia aside.
+  sources:
+    - https://openlibrary.org/isbn/9780593684894.json
+
+- id: jo-nesbo/blodmane/dom-quixote-2024-pt
+  workId: jo-nesbo/blodmane
+  isbn13: "9789722079488"
+  language: pt-PT
+  title: "Lua de Sangue"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2024
+  note: January 2024.
+  sources:
+    - https://www.wook.pt/livro/lua-de-sangue-jo-nesb/29515123
+
+- id: jo-nesbo/nadeskudd/aschehoug-2026-nb
+  workId: jo-nesbo/nadeskudd
+  isbn13: "9788203462627"
+  language: nb
+  format: hardcover
+  publisher: Aschehoug
+  year: 2026
+  note: >
+    Forthcoming, 19 August 2026 street date; not yet in nb.no's legal-deposit
+    catalogue as of the check made here (expected - Norwegian deposit follows
+    publication). No English or Portuguese edition exists yet for an
+    unpublished book; none is recorded.
+  sources:
+    - https://aschehoug.no/nadeskudd
+
+# --- Kongeriket (2) ---
+
+- id: jo-nesbo/kongeriket/aschehoug-2021-nb
+  workId: jo-nesbo/kongeriket
+  isbn13: "9788203366741"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2021
+  note: Pocket reissue; the original hardcover was 2020, the work's own `published` year.
+  sources:
+    - https://aschehoug.no/kongeriket-3
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203366741
+
+- id: jo-nesbo/kongeriket/harvill-secker-2020-en
+  workId: jo-nesbo/kongeriket
+  isbn13: "9781787300798"
+  language: en
+  title: "The Kingdom"
+  format: hardcover
+  publisher: Harvill Secker
+  year: 2020
+  note: London, 549 pages; OpenLibrary's own record carries translated_from nor.
+  sources:
+    - https://openlibrary.org/isbn/9781787300798.json
+
+- id: jo-nesbo/kongeriket/dom-quixote-2021-pt
+  workId: jo-nesbo/kongeriket
+  isbn13: "9789722073127"
+  language: pt-PT
+  title: "O Reino"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2021
+  note: September 2021.
+  sources:
+    - https://www.wook.pt/livro/o-reino-jo-nesb/25381883
+
+- id: jo-nesbo/kongen-av-os/aschehoug-2024-nb
+  workId: jo-nesbo/kongen-av-os
+  isbn13: "9788203451898"
+  language: nb
+  format: hardcover
+  publisher: Aschehoug
+  year: 2024
+  note: 6 June 2024, 442 pages - first edition, matching the work's own `published` year.
+  sources:
+    - https://aschehoug.no/kongen-av-os
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203451898
+
+- id: jo-nesbo/kongen-av-os/penguin-random-house-2024-en
+  workId: jo-nesbo/kongen-av-os
+  isbn13: "9781787304864"
+  language: en
+  title: "Blood Ties"
+  publisher: Penguin Random House
+  year: 2024
+  note: 416 pages; OpenLibrary's record does not name a specific imprint below the corporate parent, so none is claimed here beyond what the source states.
+  sources:
+    - https://openlibrary.org/isbn/9781787304864.json
+
+- id: jo-nesbo/kongen-av-os/dom-quixote-2025-pt
+  workId: jo-nesbo/kongen-av-os
+  isbn13: "9789722086240"
+  language: pt-PT
+  title: "Laços de Sangue"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2025
+  note: September 2025.
+  sources:
+    - https://www.wook.pt/livro/lacos-de-sangue-jo-nesb/32486741
+
+# --- Olav Johansen (2) ---
+
+- id: jo-nesbo/blod-pa-sno/aschehoug-2016-nb
+  workId: jo-nesbo/blod-pa-sno
+  isbn13: "9788203360350"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2016
+  note: Pocket edition, 172 pages; see works.yaml's own YEAR CORRECTION note on why the work's `published` (2015) differs from this printing's year.
+  sources:
+    - https://aschehoug.no/blod-pa-sno
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203360350
+
+- id: jo-nesbo/blod-pa-sno/knopf-2015-en
+  workId: jo-nesbo/blod-pa-sno
+  isbn13: "9780385354196"
+  language: en
+  title: "Blood on Snow"
+  publisher: Alfred A. Knopf
+  year: 2015
+  sources:
+    - https://openlibrary.org/search.json?q=Blood+on+Snow+Nesbo
+
+- id: jo-nesbo/blod-pa-sno/dom-quixote-2018-pt
+  workId: jo-nesbo/blod-pa-sno
+  isbn13: "9789722064590"
+  language: pt-PT
+  title: "Sangue na Neve"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2018
+  note: March 2018.
+  sources:
+    - https://www.wook.pt/livro/sangue-na-neve-jo-nesb/21502222
+
+- id: jo-nesbo/mere-blod/aschehoug-2016-nb
+  workId: jo-nesbo/mere-blod
+  isbn13: "9788203360367"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2016
+  note: Pocket edition, 235 pages.
+  sources:
+    - https://aschehoug.no/mere-blod
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203360367
+
+- id: jo-nesbo/mere-blod/harvill-secker-2016-en
+  workId: jo-nesbo/mere-blod
+  isbn13: "9781846558597"
+  language: en
+  title: "Midnight Sun"
+  publisher: Harvill Secker
+  year: 2016
+  note: Marketed as "Blood On Snow, Part 2" per the series field on this edition's own record.
+  sources:
+    - https://openlibrary.org/isbn/9781846558597.json
+
+- id: jo-nesbo/mere-blod/dom-quixote-2019-pt
+  workId: jo-nesbo/mere-blod
+  isbn13: "9789722066433"
+  language: pt-PT
+  title: "O Sol da Meia-Noite"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2019
+  note: March 2019, 208 pages.
+  sources:
+    - https://www.wook.pt/livro/o-sol-da-meia-noite-jo-nesb/22884843
+
+# --- Standalone crime (6) ---
+
+- id: jo-nesbo/det-hvite-hotellet/aschehoug-2007-nb
+  workId: jo-nesbo/det-hvite-hotellet
+  isbn13: "9788203193149"
+  language: nb
+  publisher: Aschehoug
+  year: 2007
+  note: >
+    No current Aschehoug storefront page found for this title; recorded from
+    the National Library of Norway's legal-deposit record, which also lists a
+    second isbn13 (9788252567557) against the same digitised copy - almost
+    certainly the simultaneous Bokklubben (book club) co-edition already
+    cited in works.yaml's own source list, not a second Aschehoug printing.
+    Only the Aschehoug number is recorded here. No English or Portuguese
+    edition was found anywhere searched (see file header) - English
+    Wikipedia's own "(English: The White Hotel)" aside is not backed by any
+    edition found anywhere searched, so it is not recorded as one.
+  sources:
+    - https://api.nb.no/catalog/v1/items?q=%22Det%20hvite%20hotellet%22%20Nesb%C3%B8
+
+- id: jo-nesbo/hodejegerne/aschehoug-2011-nb
+  workId: jo-nesbo/hodejegerne
+  isbn13: "9788203196669"
+  language: nb
+  format: ebook
+  publisher: Aschehoug
+  year: 2011
+  note: No current print/pocket edition surfaced for this title; an older 2008 audiobook edition also exists (isbn13 9788242138705) but this ebook is the more recent of the two verified.
+  sources:
+    - https://aschehoug.no/hodejegerne
+
+- id: jo-nesbo/hodejegerne/vintage-2012-en
+  workId: jo-nesbo/hodejegerne
+  isbn13: "9780099587064"
+  language: en
+  title: "Headhunters"
+  publisher: Vintage
+  year: 2012
+  sources:
+    - https://openlibrary.org/search.json?q=Headhunters+Nesbo+publisher:Vintage
+
+- id: jo-nesbo/hodejegerne/dom-quixote-2012-pt
+  workId: jo-nesbo/hodejegerne
+  isbn13: "9789722049856"
+  language: pt-PT
+  title: "Caçadores de Cabeças"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2012
+  note: June 2012.
+  sources:
+    - https://www.wook.pt/livro/cacadores-de-cabecas-jo-nesb/12940511
+
+- id: jo-nesbo/sonnen/aschehoug-2015-nb
+  workId: jo-nesbo/sonnen
+  isbn13: "9788203358791"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2015
+  note: Pocket edition, 510 pages.
+  sources:
+    - https://aschehoug.no/sonnen
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203358791
+
+- id: jo-nesbo/sonnen/vintage-2015-en
+  workId: jo-nesbo/sonnen
+  isbn13: "9780099582144"
+  language: en
+  title: "The Son"
+  publisher: Vintage
+  year: 2015
+  note: The US Knopf hardcover (English Wikipedia's cited translation year, 2014) came a year earlier than this UK Vintage paperback.
+  sources:
+    - https://openlibrary.org/isbn/9780099582144.json
+
+- id: jo-nesbo/sonnen/dom-quixote-2017-pt
+  workId: jo-nesbo/sonnen
+  isbn13: "9789722062039"
+  language: pt-PT
+  title: "O Filho"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2017
+  note: March 2017.
+  sources:
+    - https://www.wook.pt/livro/o-filho-jo-nesb/19173374
+
+- id: jo-nesbo/macbeth/aschehoug-2017-nb
+  workId: jo-nesbo/macbeth
+  isbn13: "9788203372902"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2017
+  note: >
+    Pocket edition, translator credited on this record as Morten Krogstad
+    (translating the Hogarth Shakespeare commission's English draft into
+    Norwegian - Nesbø wrote this one in English first, per works.yaml's own
+    note on the commission).
+  sources:
+    - https://aschehoug.no/macbeth-3
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203372902
+
+- id: jo-nesbo/macbeth/random-house-uk-2018-en
+  workId: jo-nesbo/macbeth
+  isbn13: "9781781090268"
+  language: en
+  title: "Macbeth"
+  format: paperback
+  publisher: Random House UK
+  year: 2018
+  note: 22 March 2018 - the language Nesbø actually wrote the Hogarth Shakespeare commission in, not a translation.
+  sources:
+    - https://openlibrary.org/isbn/9781781090268.json
+
+- id: jo-nesbo/macbeth/bertrand-2018-pt
+  workId: jo-nesbo/macbeth
+  isbn13: "9789722535014"
+  language: pt-PT
+  title: "Macbeth"
+  format: paperback
+  publisher: Bertrand Editora
+  year: 2018
+  note: >
+    April 2018, 528 pages. The one title in this wing published in Portugal
+    by Bertrand rather than Dom Quixote/BIS - the Hogarth Shakespeare
+    commission was licensed market by market, and Portugal's rights went to
+    a different LeYa-group house than Nesbø's usual one.
+  sources:
+    - https://www.wook.pt/livro/macbeth-jo-nesb/20914901
+
+- id: jo-nesbo/natthuset/aschehoug-2024-nb
+  workId: jo-nesbo/natthuset
+  isbn13: "9788203452383"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2024
+  note: Pocket edition, 219 pages.
+  sources:
+    - https://aschehoug.no/natthuset-2
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203452383
+
+- id: jo-nesbo/natthuset/vintage-2024-en
+  workId: jo-nesbo/natthuset
+  isbn13: "9781529920598"
+  language: en
+  title: "The Night House"
+  format: paperback
+  publisher: Vintage Publishing
+  year: 2024
+  note: October 2024, 304 pages; too recent for OpenLibrary's search index, so sourced to WOOK's own English-language stock (WOOK sells English imports as a separate product line from its Portuguese translations - this is that English edition, not a mislabelled Portuguese one).
+  sources:
+    - https://www.wook.pt/livro/the-night-house-jo-nesb/29559799
+
+- id: jo-nesbo/natthuset/dom-quixote-2025-pt
+  workId: jo-nesbo/natthuset
+  isbn13: "9789722084758"
+  language: pt-PT
+  title: "A Casa da Noite"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2025
+  note: >
+    March 2025, 256 pages. A search-engine summary consulted while sourcing
+    this entry surfaced a Brazilian Record-house ISBN (978-85 prefix) for
+    the same title; that number is a pt-BR edition and is not recorded here -
+    only this directly-fetched Dom Quixote page's own ISBN is used.
+  sources:
+    - https://www.wook.pt/livro/a-casa-da-noite-jo-nesb/31722002
+
+- id: jo-nesbo/minnesota/aschehoug-2026-nb
+  workId: jo-nesbo/minnesota
+  isbn13: "9788203461095"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2026
+  note: Pocket edition, 407 pages; the original 2025 edition was published under a different Aschehoug ISBN (ebok 9788203450822, 2025) not recorded separately here.
+  sources:
+    - https://aschehoug.no/minnesota-3
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203461095
+
+- id: jo-nesbo/minnesota/penguin-random-house-2025-en
+  workId: jo-nesbo/minnesota
+  isbn13: "9781787303768"
+  language: en
+  title: "Wolf Hour"
+  publisher: Penguin Random House
+  year: 2025
+  note: 432 pages.
+  sources:
+    - https://openlibrary.org/isbn/9781787303768.json
+
+- id: jo-nesbo/minnesota/dom-quixote-2026-pt
+  workId: jo-nesbo/minnesota
+  isbn13: "9789722088886"
+  language: pt-PT
+  title: "A Hora do Lobo"
+  publisher: Dom Quixote
+  year: 2026
+  note: Forthcoming, June 2026 - the most recent Portuguese Nesbø edition found.
+  sources:
+    - https://www.wook.pt/livro/a-hora-do-lobo-jo-nesb/33547998
+
+# --- Short fiction (3) ---
+
+- id: jo-nesbo/karusellmusikk/aschehoug-2007-nb
+  workId: jo-nesbo/karusellmusikk
+  isbn13: "9788242127815"
+  language: nb
+  format: audiobook
+  publisher: Aschehoug
+  year: 2007
+  note: >
+    A downloadable audiobook read by Mads Ousdal. This edition's own
+    Aschehoug record carries "Utgitt 2001" (the book's original publication
+    year) alongside "Salgsdato 15.11.2007" (this specific SKU's release
+    date) - the year recorded here is 2007, since that is what this ISBN
+    actually is, not the underlying work's year. No English or Portuguese
+    edition was found for this title anywhere searched.
+  sources:
+    - https://aschehoug.no/karusellmusikk-2
+
+- id: jo-nesbo/sjalusimannen-og-andre-fortellinger/aschehoug-2022-nb
+  workId: jo-nesbo/sjalusimannen-og-andre-fortellinger
+  isbn13: "9788203392436"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2022
+  note: Pocket edition, 596 pages.
+  sources:
+    - https://aschehoug.no/sjalusimannen-og-andre-fortellinger-3
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203392436
+
+- id: jo-nesbo/sjalusimannen-og-andre-fortellinger/penguin-random-house-2021-en
+  workId: jo-nesbo/sjalusimannen-og-andre-fortellinger
+  isbn13: "9781787303126"
+  language: en
+  title: "Jealousy Man"
+  publisher: Penguin Random House
+  year: 2021
+  note: >
+    528 pages, subtitled "Stories from the Author of the Harry Hole
+    Thrillers" on this edition's own record - the title as printed on this
+    specific edition, not the fuller "The Jealousy Man and Other Stories"
+    used in some secondary listings.
+  sources:
+    - https://openlibrary.org/isbn/9781787303126.json
+
+- id: jo-nesbo/sjalusimannen-og-andre-fortellinger/dom-quixote-2022-pt
+  workId: jo-nesbo/sjalusimannen-og-andre-fortellinger
+  isbn13: "9789722075695"
+  language: pt-PT
+  title: "O Homem do Ciúme"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2022
+  note: September 2022, 256 pages.
+  sources:
+    - https://www.wook.pt/livro/o-homem-do-ciume-jo-nesb-/27411398
+
+- id: jo-nesbo/rotteoya-og-andre-fortellinger/aschehoug-2021-nb
+  workId: jo-nesbo/rotteoya-og-andre-fortellinger
+  isbn13: "9788203368264"
+  language: nb
+  format: audiobook
+  publisher: Aschehoug
+  year: 2021
+  note: No print/pocket edition surfaced for this title on Aschehoug's current storefront; this downloadable audiobook is the verified edition.
+  sources:
+    - https://aschehoug.no/rotteoya-og-andre-fortellinger-2
+
+- id: jo-nesbo/rotteoya-og-andre-fortellinger/dom-quixote-2024-pt
+  workId: jo-nesbo/rotteoya-og-andre-fortellinger
+  isbn13: "9789722083133"
+  language: pt-PT
+  title: "A Ilha das Ratazanas e Outros Thrillers"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2024
+  note: >
+    October 2024. No English edition exists for this collection despite
+    English Wikipedia's bibliography claiming "(English: Rat island and
+    Other Stories, 2021)" - OpenLibrary returns zero records for that title
+    under this author, and the only translation confirmed beyond Portuguese
+    is French (Nesbø/Romand-Monnier, Gallimard). Its
+    sibling collection, Sjalusimannen, WAS translated into English the same
+    year; this one was not, which is a real gap in the reference page cited,
+    not a search failure here.
+  sources:
+    - https://www.wook.pt/livro/a-ilha-das-ratazanas-e-outros-thrillers-jo-nesb/30500133
+
+# --- Doktor Proktor (6) ---
+# All six Norwegian; five of six also in English (Simon & Schuster UK /
+# Aladdin US, the children's-imprint line, distinct from the Harvill
+# Secker/Vintage/Knopf line carrying the crime novels). None found in
+# Portuguese - checked directly (Dom Quixote's own author listing, WOOK
+# searches under both the Norwegian and English titles) and not merely
+# assumed; Nesbø's Portuguese-language readership appears to be
+# crime-fiction-only.
+
+- id: jo-nesbo/doktor-proktors-prompepulver/aschehoug-2012-nb
+  workId: jo-nesbo/doktor-proktors-prompepulver
+  isbn13: "9788203255427"
+  language: nb
+  format: ebook
+  publisher: Aschehoug
+  year: 2012
+  sources:
+    - https://aschehoug.no/doktor-proktors-prompepulver-2
+
+- id: jo-nesbo/doktor-proktors-prompepulver/simon-schuster-2010-en
+  workId: jo-nesbo/doktor-proktors-prompepulver
+  isbn13: "9781847386533"
+  language: en
+  title: "Doctor Proctor's Fart Powder"
+  publisher: Simon & Schuster
+  year: 2010
+  note: UK first English translation; translated by Tara Chace, illustrated by Mike Lowery per English Wikipedia's own account.
+  sources:
+    - https://openlibrary.org/search.json?q=Doctor+Proctor%27s+Fart+Powder+Nesbo
+
+- id: jo-nesbo/doktor-proktors-tidsbadekar/aschehoug-2008-nb
+  workId: jo-nesbo/doktor-proktors-tidsbadekar
+  isbn13: "9788242138897"
+  language: nb
+  format: audiobook
+  publisher: Aschehoug
+  year: 2008
+  sources:
+    - https://aschehoug.no/doktor-proktors-tidsbadekar-2
+
+- id: jo-nesbo/doktor-proktors-tidsbadekar/aladdin-2011-en
+  workId: jo-nesbo/doktor-proktors-tidsbadekar
+  isbn13: "9781416979746"
+  language: en
+  title: "Bubble in the Bathtub"
+  publisher: Aladdin
+  year: 2011
+  note: US edition; no UK-specific ISBN independently isolated.
+  sources:
+    - https://openlibrary.org/search.json?q=Bubble+in+the+Bathtub+Nesbo
+
+- id: jo-nesbo/doktor-proktor-og-verdens-undergang-kanskje/aschehoug-2013-nb
+  workId: jo-nesbo/doktor-proktor-og-verdens-undergang-kanskje
+  isbn13: "9788203256165"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2013
+  note: Pocket edition, 316 pages.
+  sources:
+    - https://aschehoug.no/doktor-proktor-og-verdens-undergang-kanskje
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203256165
+
+- id: jo-nesbo/doktor-proktor-og-verdens-undergang-kanskje/simon-schuster-2012-en
+  workId: jo-nesbo/doktor-proktor-og-verdens-undergang-kanskje
+  isbn13: "9781442433076"
+  language: en
+  title: "Doctor Proctor's Fart Powder: Who Cut the Cheese?"
+  publisher: Aladdin
+  year: 2012
+  note: US retitling; not a literal rendering of the Norwegian, per English Wikipedia's own bibliography.
+  sources:
+    - https://openlibrary.org/search.json?q=Who+Cut+the+Cheese+Nesbo
+
+- id: jo-nesbo/doktor-proktors-sensasjonelle-samling-av-dyr-du-skulle-onske-ikke-fantes/aschehoug-2010-nb
+  workId: jo-nesbo/doktor-proktors-sensasjonelle-samling-av-dyr-du-skulle-onske-ikke-fantes
+  isbn13: "9788203253096"
+  language: nb
+  publisher: Aschehoug
+  year: 2010
+  note: >
+    No current Aschehoug storefront page exists for this title, which is
+    also absent from both Wikipedias and Norsk biografisk leksikon; recorded
+    from the National
+    Library of Norway's legal-deposit record, which also lists three
+    alternative titles for the same record ("D.D.S.Ø.I.F.", "Dyr du skulle
+    ønske ikke fantes"). No English or Portuguese edition exists - absent
+    from English Wikipedia's own bibliography of the series, unlike every
+    other Doktor Proktor title.
+  sources:
+    - https://api.nb.no/catalog/v1/items?q=%22sensasjonelle%20samling%22%20Nesb%C3%B8
+
+- id: jo-nesbo/doktor-proktor-og-det-store-gullroveriet/aschehoug-2014-nb
+  workId: jo-nesbo/doktor-proktor-og-det-store-gullroveriet
+  isbn13: "9788203258053"
+  language: nb
+  format: paperback
+  publisher: Aschehoug
+  year: 2014
+  note: Pocket edition, 226 pages.
+  sources:
+    - https://aschehoug.no/doktor-proktor-og-det-store-gullroveriet
+    - https://api.nb.no/catalog/v1/items?q=isbn:9788203258053
+
+- id: jo-nesbo/doktor-proktor-og-det-store-gullroveriet/simon-schuster-2013-en
+  workId: jo-nesbo/doktor-proktor-og-det-store-gullroveriet
+  isbn13: "9781442493421"
+  language: en
+  title: "Doctor Proctor's Fart Powder: The Magical Fruit"
+  publisher: Simon & Schuster/Paula Wiseman Books
+  year: 2013
+  note: US retitling, per English Wikipedia's own bibliography.
+  sources:
+    - https://openlibrary.org/search.json?q=The+Magical+Fruit+Nesbo
+
+- id: jo-nesbo/kan-doktor-proktor-redde-jula/aschehoug-2016-nb
+  workId: jo-nesbo/kan-doktor-proktor-redde-jula
+  isbn13: "9788203262296"
+  language: nb
+  format: ebook
+  publisher: Aschehoug
+  year: 2016
+  sources:
+    - https://aschehoug.no/kan-doktor-proktor-redde-jula-2
+
+- id: jo-nesbo/kan-doktor-proktor-redde-jula/simon-schuster-2017-en
+  workId: jo-nesbo/kan-doktor-proktor-redde-jula
+  isbn13: "9781471167447"
+  language: en
+  title: "Can Doctor Proctor Save Christmas?"
+  publisher: Simon & Schuster
+  year: 2017
+  note: >
+    UK edition; also published as "Silent (but Deadly) Night" in a separate
+    US Simon & Schuster Children's Publishing printing (isbn13
+    9781534410015, 2017) not recorded separately here.
+  sources:
+    - https://openlibrary.org/search.json?q=Can+Doctor+Proctor+Save+Christmas
+
+# --- Nonfiction (1) ---
+
+- id: jo-nesbo/stemmer-fra-balkan/aschehoug-1999-nb
+  workId: jo-nesbo/stemmer-fra-balkan
+  isbn13: "9788203182129"
+  language: nb
+  publisher: Aschehoug
+  year: 1999
+  note: >
+    No current Aschehoug storefront page exists for this title. The National
+    Library of Norway's legal-deposit record gives only an ISBN-10
+    (8203182127); the isbn13 above is that number converted (drop the
+    ISBN-10 check digit, prefix 978, recompute - the recomputed check digit
+    is 9, not the original 7). No English or Portuguese edition was found
+    for this title anywhere searched; a work of Balkan war reportage
+    co-written with a Norwegian-only-published journalist appears to have
+    stayed a Norwegian-market book.
+  sources:
+    - https://api.nb.no/catalog/v1/items?q=%22Stemmer%20fra%20Balkan%22%20Nesb%C3%B8

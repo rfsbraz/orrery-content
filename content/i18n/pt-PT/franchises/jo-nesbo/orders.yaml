@@ -1,0 +1,65 @@
+# Português europeu (pt-PT) - as duas ordens de leitura desta ala.
+# `name`, `rationale` e `debated` são traduzidos; `orderedWorkIds` e `sources`
+# nunca são restabelecidos aqui (ver docs/SCHEMA.md, "Nested lists merge by
+# id" e lib/content/index.ts PROSE_LISTS - `debated` é uma lista de prosa
+# fundida por inteiro, ao contrário de `orderedWorkIds`).
+
+- id: jo-nesbo/harry-hole-novels
+  name: Harry Hole, do princípio ao fim
+  rationale: >
+    Os catorze romances de Harry Hole, pela mesma ordem da lista
+    predefinida, deixando de fora os restantes vinte títulos das trinta e
+    quatro obras desta ala - a série infantil Doktor Proktor, as duologias
+    Kongeriket e Olav Johansen, os romances autónomos, as coletâneas de
+    contos. Para um leitor que veio pelo detetive, e não pela prateleira
+    inteira, esta ordem restaura a sequência que provavelmente já
+    imaginava: um procedimental ininterrupto desde o primeiro caso de
+    [[work:jo-nesbo/flaggermusmannen|O Morcego]] em Sydney, ao longo de
+    três décadas da bebida, do exílio e do regresso de Harry, sem uma
+    aventura infantil de pó de peidos ou um romance autónomo sem ligação a
+    intrometer-se entre um caso e o seguinte. O que perde: tudo o resto que
+    Nesbø escreveu em paralelo, incluindo os seus outros livros mais
+    adaptados ao cinema e mais vendidos, desaparece por completo, e a
+    sensação de a carreira inteira de um romancista em atividade se
+    desenrolar ao mesmo tempo - ficção policial e infantil publicadas com
+    meses de diferença nos mesmos anos - é exatamente o que esta ordem
+    remove para ganhar o impulso do procedimental.
+  debated:
+    - >
+      Esta ordem reproduz a própria sequência da ordem predefinida,
+      restringida a uma subsérie; o seu único contributo é remover as
+      outras vinte obras, seguindo o campo subseries do próprio
+      works.yaml, exatamente como as ordens de fio narrativo do Discworld
+      já fazem neste catálogo. Uma futura alteração ao valor de subseries
+      de qualquer obra desincronizaria esta lista sem aviso.
+    - >
+      Nådeskudd (2026) foi anunciado com uma data de lançamento firme, mas
+      ainda não tinha chegado às lojas à data das fontes consultadas; surge
+      em último lugar aqui apenas porque já tem published: 2026 em
+      works.yaml, à semelhança do tratamento dado pela própria ordem
+      predefinida, e não por um juízo distinto feito aqui.
+
+- id: jo-nesbo/doktor-proktor-novels
+  name: Doktor Proktor, por ordem
+  rationale: >
+    Os cinco romances numerados de Doktor Proktor, por ordem de publicação,
+    isolados da ficção policial adulta que partilha a prateleira desta ala
+    e que, na ordem predefinida, se intercala com eles ano a ano (só 2007
+    já reúne [[work:jo-nesbo/doktor-proktors-prompepulver|o primeiro livro
+    de Doktor Proktor]] e [[work:jo-nesbo/snomannen|O Boneco de Neve]]).
+    Para quem escolhe livros para uma criança, ou para um jovem leitor,
+    esta é a sequência inteira, sem que mais nada da prateleira possa
+    surgir ao lado. O que perde: trata-se de um corpo de obra diferente e
+    sem ligação aos romances de Harry Hole e ao resto da ficção adulta de
+    Nesbø, sem partilhar personagens, mundo ou tom com eles - quem
+    percorrer apenas esta lista não terá provado o autor que esta ala é, na
+    sua maior parte, sobre.
+  debated:
+    - >
+      Este caminho lista apenas os cinco romances numerados. Doktor
+      Proktors sensasjonelle samling av dyr du skulle ønske ikke fantes
+      (2010), um bestiário complementar criado a par do terceiro romance,
+      não tem número na própria listagem da editora ou da agência, e está
+      ausente dos guias de ordem de leitura da comunidade consultados; um
+      leitor pode lê-lo em qualquer altura depois do terceiro romance, mas
+      não é colocado nesta sequência.

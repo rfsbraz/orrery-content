@@ -1,0 +1,156 @@
+id: jo-nesbo
+name: Jo Nesbø
+kind: author                       # author is the norm: this wing spans Nesbø's
+                                    # complete published work, not just Harry Hole
+description: >
+  Fourteen Harry Hole novels track an alcoholic Oslo detective across three
+  decades, from [[work:jo-nesbo/flaggermusmannen|Flaggermusmannen]] (1997) to
+  [[work:jo-nesbo/nadeskudd|Nådeskudd]] (2026), alongside the Kongeriket
+  duology, the Olav Johansen novels, a 2018 Macbeth for the Hogarth
+  Shakespeare series, five further standalone crime novels, three
+  short-story collections, and the five-novel Doktor Proktor children's
+  series (plus a companion bestiary) that runs in parallel to all of it.
+authorIds: [jo-nesbo]
+themePreset: vinterlys
+images:
+  header: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Sognsveien_-_Oslo%2C_Norway_2020-12-26.jpg/1920px-Sognsveien_-_Oslo%2C_Norway_2020-12-26.jpg"
+  headerCredit: "Ryan Hodnett, CC BY-SA 4.0"
+  headerSource: "https://commons.wikimedia.org/wiki/File:Sognsveien_-_Oslo,_Norway_2020-12-26.jpg"
+  # A snowbound Oslo residential street, matching the wing's vinterlys
+  # palette and the cold-daylight atmosphere named in theme.yaml's art block,
+  # rather than a single adaptation's stills or tourist-brochure iconography
+  # (fjord panoramas, City Hall, ski jumps).
+
+# TITLE RULING FOR THIS WING (applied throughout works.yaml, not re-derived
+# per entry): `title` is the Norwegian original; `published` is the Norwegian
+# first-publication year. English and Portuguese titles are edition data, not
+# recorded here. This matters more here than in most wings in the catalogue,
+# because English publishing translated the first two Harry Hole novels
+# (Flaggermusmannen, 1997; Kakerlakkene, 1998) only in 2012 and 2013, well
+# after books three through eleven - so English-language readers met the
+# series at book three (Rødstrupe / The Redbreast). Recording Norwegian years
+# makes the derived publication-chronological default order the correct
+# Norwegian order automatically; an English or pt-PT reading order is
+# additional data, not written here.
+
+# CAPABILITIES - left entirely at auto; no override earned yet.
+# river / companion: auto, and on, carried by nine franchise events here plus
+# four author lifeEvents in content/authors/jo-nesbo.yaml - sparse but real.
+# connections / characters: auto, currently off, because no characters.yaml
+# exists and no work carries a `connections` entry. Harry Hole's recurring
+# supporting cast (his wife Rakel Fauke, her son Oleg, his friend Øystein
+# Eikeland, colleagues Bjørn Holm, Beate Lønn and Katrine Bratt) is real and
+# documented in general sources, but which specific novels each of them
+# appears in is not established here, and no crossover is established
+# connecting Harry Hole to the Kongeriket, Olav Johansen or standalone
+# novels. A characters.yaml built only from "Harry Hole appears in the
+# fourteen Harry Hole novels" would only restate what `subseries` already
+# conveys.
+# wizard: auto, and on, carried by the four startHere paths below.
+# editions: auto, and on, carried by editions.yaml (86 entries across the
+# Norwegian, English and Portuguese markets, covering all 34 works).
+features: {}
+
+# GLOBAL EVENTS - none pass the resonance test. Nesbø (b. 1960-03-29, living)
+# overlaps every entry in content/events/global.yaml dated 1960 or later;
+# each was weighed against his own record and the wing's sourced bibliography
+# and found to shape only "the era he wrote in," never a specific book.
+globalEvents:
+  exclude:
+    - sept-11-2001                     # lived through it in Oslo; no book answers it
+    - financial-crisis-2008            # left finance for writing a decade earlier; no book is plotted around the 2008 crash itself
+    - covid-19-pandemic-2020           # no work in this wing's 2020-2026 window shows it
+    - lady-chatterley-trial-1960       # inside his life by months; no case in his own record ties the era's permissiveness to his violence
+    - fantasy-paperback-boom-1965      # wrong genre; the category it created is epic fantasy, not crime
+    - carnation-revolution-1974        # Portuguese censorship history; no bearing on a Norwegian author
+    - chain-bookshop-1982              # generic bookselling backdrop; no book-specific answer
+    - online-bookselling-1995          # no documented backlist-discovery story tied to online bookselling for this wing
+    - ebook-and-self-publishing-2007   # Aschehoug has published him traditionally throughout; no self-pub/ebook story
+    - prestige-fantasy-adaptation-2011 # fantasy-specific; his own screen adaptation (Snømannen, 2017) is already a franchise event
+    - booktok-2020                     # no documented BookTok-driven surge for any title here
+    - portugal-bailout-2011            # Portugal-specific; no bearing on a Norwegian author
+
+# STARTHERE. Four paths: a one-book taste of his standalone side, the Harry
+# Hole thread front to back, the Doktor Proktor children's series for a
+# different reader, and everything. No path recommends entering the Harry
+# Hole series at Rødstrupe (book three): no source found, official or
+# community, recommends it deliberately - it is where English- and
+# Portuguese-language readers were stranded for over a decade by translation
+# timing, not a route anyone advises taking on purpose. See orders.yaml's
+# header for the sourcing on that.
+startHere:
+  paths:
+    # Source: https://www.bookreporter.com/reviews/blood-on-snow - "BLOOD ON
+    # SNOW has the added strength of being a short work, almost a novella
+    # really. Accordingly, those who may have eschewed sampling Nesbø's prior
+    # wares due to their somewhat intimidating [length]..." Corroborated by
+    # NPR's Alan Cheuse (6 Apr 2015), who calls it "a book you can easily read
+    # in one sitting."
+    - id: one-quiet-book
+      title: One quiet, brutal evening
+      description: >
+        A stand-alone novella about an Oslo fixer ordered to kill his boss's
+        wife, and falling for her instead. No detective, no series, no
+        history to catch up on - just a short, controlled read that shows
+        what Nesbo does with a sentence.
+      workIds:
+        - jo-nesbo/blod-pa-sno
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        Reviewers single it out as the easiest way in for readers who have
+        put off his longer books - it is over almost as soon as it starts.
+
+    - id: harry-hole-front-to-back
+      title: Harry Hole, front to back
+      description: >
+        The fourteen-book run that made his name: a Norwegian detective's
+        first case in Sydney, and everything his drinking, his exile and his
+        return cost him across three decades of Oslo winters.
+      workIds: null
+      orderId: jo-nesbo/harry-hole-novels
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        Fourteen books is a real commitment before you know if the voice
+        suits you - the trade this path makes for meeting Harry at his first
+        case rather than partway into his history.
+
+    - id: doktor-proktor-for-a-different-reader
+      title: For a much younger reader
+      description: >
+        A completely different Nesbo: an eccentric inventor, his fearless
+        young neighbour and a fart powder that can send a person into orbit.
+        Five books, written for children, sharing no world, characters or
+        tone with anything else on this shelf.
+      workIds: null
+      orderId: jo-nesbo/doktor-proktor-novels
+      fit:
+        experience: [new]
+        commitment: [arc]
+      note: >
+        Choose this for a child, or for a break from crime fiction entirely -
+        not as a lighter warm-up before Harry Hole. It does not lead there.
+
+    - id: the-whole-shelf
+      title: The whole shelf
+      description: >
+        All thirty-four works in the order he wrote them: fourteen Harry
+        Hole novels, two family sagas, two Olav Johansen novels, a Shakespeare
+        retelling, short fiction, and the Doktor Proktor children's series,
+        running alongside each other exactly as they were published.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+
+sources:
+  - https://no.wikipedia.org/wiki/Jo_Nesb%C3%B8
+  - https://en.wikipedia.org/wiki/Jo_Nesb%C3%B8
+  - https://no.wikipedia.org/wiki/Harry_Hole
+  - https://en.wikipedia.org/wiki/Harry_Hole
+  - https://nbl.snl.no/Jo_Nesb%C3%B8
