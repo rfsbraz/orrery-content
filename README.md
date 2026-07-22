@@ -46,8 +46,14 @@ validator or a human reading the diff. That is what the gates are for.
 
 ### The data belongs to nobody
 
-Facts about books are not ours to own. This repo exists so that the work of
-assembling them is done once, in the open, in a format anyone can take.
+Everything under `content/` is **[CC0 1.0](LICENSE)**: a full waiver of
+copyright and of the EU database right. Take it, fork it, sell it, build on it.
+No permission, no attribution, no conditions.
+
+Facts about books are not ours to own, and assembling them in the open means the
+work only has to be done once. Portraits, cover images and contributed art are
+third-party works with their own credits and are not covered by the waiver, see
+[`LICENSE-NOTICE.md`](LICENSE-NOTICE.md).
 
 ### Use the tools, or don't
 
