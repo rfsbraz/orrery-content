@@ -22,8 +22,14 @@
 # NORWEGIAN (nb) - 34 of 34 works, all Aschehoug. Sourced primarily from
 # Aschehoug's own product pages (aschehoug.no), cross-checked against the
 # National Library of Norway's legal-deposit catalogue (api.nb.no), which is
-# mandatory and therefore strong negative evidence when silent. Every ISBN
-# below was independently found in one or both. Aschehoug relaunched the
+# mandatory and therefore strong negative evidence when silent for a print
+# edition. That inference does not extend to ebook/audiobook-only SKUs: Politi,
+# Hodejegerne, Karusellmusikk, Doktor Proktors prompepulver, Doktor Proktors
+# tidsbadekar and Kan Doktor Proktor redde jula are all live, current Aschehoug
+# digital SKUs (ISBN, price and format read directly off aschehoug.no) with
+# zero nb.no results for their ISBN - deposit silence there is a gap in nb.no's
+# digital intake, not evidence against the book. Every other ISBN below was
+# independently found in one or both. Aschehoug relaunched the
 # first NINE Harry Hole novels
 # (Flaggermusmannen through Gjenferd, i.e. every book that had not already had
 # its own standalone pocket reissue) in new Pocket editions in a tight window,
@@ -446,9 +452,16 @@
   format: ebook
   publisher: Aschehoug
   year: 2013
-  note: No current print/pocket edition surfaced for this title in the search conducted; the ebook is recorded because it is what the verified ISBN actually resolves to, not a stand-in for an unfound paperback.
+  note: >
+    No current print/pocket edition surfaced for this title; this ebook is
+    the verified edition, read directly off Aschehoug's own product page
+    (Utgitt 2013, Salgsdato 05.06.2013, orig. tittel "Police"). The ISBN is
+    absent from OpenLibrary and from nb.no's legal-deposit catalogue by isbn
+    query - the same gap as on Hodejegerne, Karusellmusikk and three Doktor
+    Proktor ebook/audiobook editions in this wing, none of which carry any
+    nb.no record either despite being live Aschehoug storefront items.
   sources:
-    - https://openlibrary.org/isbn/9788203355530.json
+    - https://aschehoug.no/politi-2
 
 - id: jo-nesbo/politi/harvill-secker-2013-en
   workId: jo-nesbo/politi
@@ -1020,7 +1033,6 @@
   note: No print/pocket edition surfaced for this title on Aschehoug's current storefront; this downloadable audiobook is the verified edition.
   sources:
     - https://aschehoug.no/rotteoya-og-andre-fortellinger-2
-    - https://api.nb.no/catalog/v1/items?q=isbn:9788203368264
 
 - id: jo-nesbo/rotteoya-og-andre-fortellinger/dom-quixote-2024-pt
   workId: jo-nesbo/rotteoya-og-andre-fortellinger
