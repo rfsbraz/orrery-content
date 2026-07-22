@@ -1,0 +1,57 @@
+stage: event-resonance
+summary: >
+  Ruled on all ten global.yaml events that overlap Tana French's lifetime
+  (born 1973-05-10, living): all ten excluded, none included as an
+  outside-lifetime override. Wrote globalEvents.exclude on franchise.yaml
+  with a per-event reason; no other file touched. Eight exclusions are plain
+  no-connection calls (sept-11-2001, carnation-revolution-1974,
+  chain-bookshop-1982, online-bookselling-1995,
+  ebook-and-self-publishing-2007, prestige-fantasy-adaptation-2011,
+  booktok-2020, portugal-bailout-2011). The other two,
+  financial-crisis-2008 and covid-19-pandemic-2020, are the genuinely
+  contested calls: both have a real, sourced textual connection (Broken
+  Harbour's ghost estates; The Keeper's lockdown-marked Ardnakelty) but both
+  are already told, in French's own words, by this wing's own
+  events.yaml (french-broken-harbor-ghost-estates-2012,
+  french-keeper-trilogy-context-2026) and, for the crash, by the Dublin
+  Murder Squad era's own "celtic tiger and the crash" theme. Keeping the
+  generic global entry alongside the specific franchise one would repeat the
+  same beat in weaker prose at a different date, so both are excluded with a
+  citation to the entry that already tells the story. validate.py --slug
+  tana-french: same single pre-existing error (theme.yaml missing art:) and
+  same three pre-existing warnings (two overlong earlier handoffs, The Witch
+  Elm outside every era) as before this stage; no new errors or warnings.
+produced:
+  changedFiles:
+    - content/franchises/tana-french/franchise.yaml
+  globalEventsExcluded: 10
+  globalEventsIncluded: 0
+forStages:
+  reading-orders: >
+    globalEvents.exclude now holds all ten global events reachable within
+    French's lifetime; nothing was added to include. This does not touch
+    orders.yaml, works.yaml or eras.yaml - reading order is unaffected by
+    this stage. The only file this stage wrote is franchise.yaml's new
+    globalEvents block, appended between features and sources.
+  translation: >
+    No new English prose was created. globalEvents ids and comments are not
+    translatable content (ids are stable references; the exclude-list
+    comments are content-file comments, not reader-facing prose), so no
+    i18n follow-up from this stage.
+openQuestions:
+  - >
+    The two contested calls (financial-crisis-2008, covid-19-pandemic-2020)
+    could be read the other way: both pass the one-sentence resonance test
+    on their own terms, and a future curator might prefer the belt-and-braces
+    reading where the generic global entry adds atmospheric weight even
+    where a sharper franchise event already exists. I ruled against that on
+    the instruction to avoid duplicating what the wing's own events.yaml
+    already says, and because the global descriptions genuinely add nothing
+    the franchise events don't already say better and with a source quote.
+  - >
+    Left untouched on purpose: whether a Celtic Tiger-specific global event
+    should eventually be built (flagged by franchise-research and
+    press-archaeology, never actioned). If it is, it would need its own
+    ruling on this wing independent of what is recorded here, and my read is
+    it would very likely land in the same place as financial-crisis-2008 for
+    the same duplication reason.

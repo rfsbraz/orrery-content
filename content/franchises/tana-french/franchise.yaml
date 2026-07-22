@@ -36,6 +36,28 @@ themePreset: bog-noir
 # pages, not just the search index.
 features: {}
 
+# Which shared global events actually reach this author (docs/SCHEMA.md). All
+# ten fall inside her lifetime (born 1973) except carnation-revolution-1974,
+# which she was already born for; nothing else in global.yaml overlaps her
+# life at all. Two of these are real, sourced connections rather than mere
+# lifetime overlap - the 2008 crash behind Broken Harbour's ghost estates and
+# the lockdown Ardnakelty of The Keeper - but both are already told, in her
+# own words, by this wing's own events.yaml and the Dublin Murder Squad era's
+# "celtic tiger and the crash" theme, so the generic global entry would only
+# repeat a story already better told. Nothing is kept by default.
+globalEvents:
+  exclude:
+    - sept-11-2001                      # working actor in Dublin at 28; no novel or interview in the record reaches for it
+    - financial-crisis-2008             # its Irish resonance is already told by french-broken-harbor-ghost-estates-2012 and the Dublin Murder Squad era's own theme
+    - covid-19-pandemic-2020            # The Keeper's lockdown-marked Ardnakelty is already told by french-keeper-trilogy-context-2026
+    - carnation-revolution-1974         # a Portuguese event; nothing in her Vermont/Ireland/Italy/Malawi childhood or her ten Irish novels touches Portugal
+    - chain-bookshop-1982               # generic bookselling backdrop of her childhood; no sourced link to her work
+    - online-bookselling-1995           # Amazon's founding, over a decade before her 2007 debut; no sourced connection
+    - ebook-and-self-publishing-2007    # traditionally published throughout (Viking, Hodder & Stoughton); no ebook or self-publishing story
+    - prestige-fantasy-adaptation-2011  # a fantasy-genre event; she writes crime fiction
+    - booktok-2020                      # no sourced link between short-form-video discovery and her sales or career
+    - portugal-bailout-2011             # Portugal's crisis, not Ireland's; her own recession material is the Celtic Tiger collapse, already covered above
+
 sources:
   - https://en.wikipedia.org/wiki/Tana_French
   - https://en.wikipedia.org/wiki/In_the_Woods
