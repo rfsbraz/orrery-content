@@ -30,6 +30,12 @@ features:
 # earns very little here. Kept by default and deliberately:
 # fantasy-paperback-boom-1965, chain-bookshop-1982.
 globalEvents:
+  include:
+    - fantasy-paperback-boom-1965  # inherited from the lifetime default, not yet ruled on
+    - chain-bookshop-1982          # inherited from the lifetime default, not yet ruled on
+  # Considered and refused. Nothing renders unless it is in `include`
+  # above, so these change nothing; they are kept as the record of a
+  # judgement already made, so it is not re-litigated from scratch.
   exclude:
     - lady-chatterley-trial-1960         # what a novel could describe was never the constraint on comic fantasy
     - carnation-revolution-1974          # Portuguese censorship; nothing on the Disc answers it
@@ -39,7 +45,6 @@ globalEvents:
     - financial-crisis-2008              # Making Money got to banking and confidence in 2007 and owes the crash nothing
     - prestige-fantasy-adaptation-2011   # the prestige-era adaptations are posthumous; the novels were finished
     - portugal-bailout-2011              # a Portuguese national crisis; nothing on the Disc or in his last years answers it
-
 # "Where to start" - Discworld is the canonical hard case, because the two books
 # most readers pick up first (the early Rincewind parodies) are the ones the
 # community most often says NOT to start with. These paths encode the standard

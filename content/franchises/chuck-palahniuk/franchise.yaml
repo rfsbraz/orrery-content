@@ -76,6 +76,11 @@ features:
 # three franchise events and five life events across 1996-2024, and borrowed
 # world history would be the loudest thing on a page that is mostly his own.
 globalEvents:
+  include:
+    - sept-11-2001  # inherited from the lifetime default, not yet ruled on
+  # Considered and refused. Nothing renders unless it is in `include`
+  # above, so these change nothing; they are kept as the record of a
+  # judgement already made, so it is not re-litigated from scratch.
   exclude:
     - fantasy-paperback-boom-1965        # not his category, not his shelf, not his readership
     - carnation-revolution-1974          # Portuguese censorship; nothing here answers it
@@ -87,7 +92,6 @@ globalEvents:
     - covid-19-pandemic-2020             # the two post-2020 novels do not reach for it, and a page needs no filler tail
     - booktok-2020                       # his second life with young readers runs through film and meme, not reader video
     - portugal-bailout-2011              # a Portuguese national crisis; Portland and Oregon are the whole geography here
-
 # "Where to start" - powers the guided wizard.
 #
 # SOURCING, stated plainly: no author-published entry advice exists for

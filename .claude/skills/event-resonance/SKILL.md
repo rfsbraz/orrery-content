@@ -129,8 +129,15 @@ the whole point of this skill.
 
 ## The two directions, and the asymmetry between them
 
-**`exclude`** - overlaps the lifetime, never reached the page. This is most of
-your work and the bar is low: if you cannot write the sentence, exclude it. An
+**Nothing renders unless you include it.** A wing's timeline carries a global
+event if and only if that wing names it in `include`. There is no arithmetic
+default: an event you never rule on is simply absent, and `exclude` gates
+nothing at all.
+
+**`exclude`** - considered and refused. It changes no output, so writing one is
+not how you keep an event off a page: leaving it out of `include` already did
+that. You write it so the next pass knows this ground was covered and does not
+re-litigate it. The bar is low: if you cannot write the sentence, refuse it. An
 absent event costs a reader nothing. A page cluttered with events that mean
 nothing to this author teaches them that the aura is decoration, and then they
 stop reading the ones that matter. **Clutter is not neutral, it is corrosive.**
@@ -146,8 +153,10 @@ under-researched, say so in the report and route it to `press-archaeology`,
 whose material this really is. You prune the shared layer; you do not get to
 leave a wing dark and call it restraint.
 
-**`include`** - outside the lifetime, but the author genuinely writes out of it.
-The bar here is high, because you are overriding a defensible default. Use it
+**`include`** - the operative list, and the only thing that puts a global event
+on a page. The bar is high because every entry is a claim in the author's name.
+An event inside the author's lifetime still has to earn its place here; living
+through something is not writing out of it. Use it
 when the event created the conditions the author's work exists inside and the
 books show it. A real candidate: `fantasy-paperback-boom-1965` predates Brandon
 Sanderson (born 1975), but it created the commercial category epic fantasy is
@@ -165,11 +174,18 @@ judgement belongs where the author knowledge is.
 ```yaml
 # content/franchises/<slug>/franchise.yaml
 globalEvents:
-  exclude:
-    - financial-crisis-2008     # lived through it; no book answers it
   include:
     - fantasy-paperback-boom-1965  # predates him; created the category he writes in
+  exclude:
+    - financial-crisis-2008     # lived through it; no book answers it
 ```
+
+**Clear any `# inherited from the lifetime default, not yet ruled on` marker you
+find.** Those entries were carried over mechanically when this layer moved from
+opt-out to opt-in: they render today because the old arithmetic showed them, not
+because anyone judged them. Ruling on one means either writing its real note or
+moving it to `exclude`. A wing still carrying those markers has not been through
+this stage, whatever its include count says.
 
 Keep the note on the line short and specific. It is the evidence for a decision
 a future curator will otherwise re-litigate from scratch.
@@ -183,9 +199,10 @@ a future curator will otherwise re-litigate from scratch.
   link between the event and the work, there is no link.
 - **Rule per author, not per franchise-shaped-guess.** A shared universe with
   two authors born 27 years apart does not have one answer.
-- **Silence is a decision too.** An event you neither include nor exclude
-  inherits the arithmetic default. Say in the PR which events you considered and
-  left to the default, so the next agent knows the ground was covered.
+- **Silence is absence, not a default.** An event you neither include nor
+  exclude simply does not render. That is safe but undocumented, so record what
+  you considered: an unexamined event and a deliberately refused one look
+  identical in the file otherwise.
 - **Do not use this to fix a bad event.** If an entry is badly written or
   wrongly graded, that is a `world-events` fix, not an exclusion list.
 

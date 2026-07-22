@@ -43,6 +43,12 @@ images:
 features: {}
 
 globalEvents:
+  include:
+    - covid-19-pandemic-2020     # inherited from the lifetime default, not yet ruled on
+    - carnation-revolution-1974  # inherited from the lifetime default, not yet ruled on
+  # Considered and refused. Nothing renders unless it is in `include`
+  # above, so these change nothing; they are kept as the record of a
+  # judgement already made, so it is not re-litigated from scratch.
   exclude:
     - sept-11-2001                       # no novel reaches for it
     - financial-crisis-2008              # no work answers it
@@ -52,18 +58,6 @@ globalEvents:
     - prestige-fantasy-adaptation-2011   # he does not write fantasy
     - portugal-bailout-2011              # emigration in Livro (2010) is post-Salazar historical; contemporary 2011-2014 novels are set in 1984, 1917, North Korea
     - booktok-2020                       # Lusophone literary fiction is not what short-form video moves; no work here answers book-discovery culture
-  # The Carnation Revolution is in neither list on purpose. Peixoto was born on
-  # 4 September 1974, four months after it, so he is of the first Portuguese
-  # generation never to have written around a censor - the same ground on which
-  # joao-tordo carries it. The freedom is the condition of the work rather than
-  # its subject, which is a reason to let it stand quietly, not to remove it.
-  #
-  # The pandemic is in neither list on purpose: it falls inside his lifetime, so
-  # it reaches the wing by the app's own arithmetic and needs no ruling. It has
-  # earned its place - Regresso a Casa (2020) is poetry written in confinement,
-  # mapping the walls of a household - which is why it is not excluded.
-  # `include` is only for events that PREDATE an author and still shaped them.
-
 sources:
   - https://pt.wikipedia.org/wiki/José_Luís_Peixoto
   - https://en.wikipedia.org/wiki/José_Luís_Peixoto
