@@ -3,9 +3,10 @@
 # references them). Dates are FIRST publication of the complete work.
 #
 # SHAPE OF THIS WING, stated plainly because it is unlike every other author
-# in this catalogue: three novels and a novella across two decades, and a
-# screen and television career that is genuinely most of her output since
-# 2012. Both halves are hers; the tiering below sorts them by KIND of
+# in this catalogue: three novels and a novella across two decades, a screen
+# and television career that is genuinely most of her output since 2012, and
+# two front-matter contributions to other people's books. All three halves
+# are hers in different ways; the tiering below sorts them by KIND of
 # publication, not by which one matters more.
 #
 # TIERING.
@@ -14,12 +15,17 @@
 #   extended genuinely hers, off the spine because the medium is different -
 #            five screen and television works, at every real level of
 #            authorship from sole screenwriter and showrunner down to a
-#            two-episode writing credit on an adaptation she did not create.
-#            None of the five is apocrypha: none is a limited or unfinished
-#            contribution, each is a credited, produced, publicly released
-#            work she is named on by the production itself.
-#   apocrypha not used in this wing; see the Rogues note below for the one
-#            case that could have gone here and did not.
+#            three-episode writing credit on an adaptation she did not
+#            create. None of the five is apocrypha: none is a limited or
+#            unfinished contribution, each is a credited, produced, publicly
+#            released work she is named on by the production itself.
+#   apocrypha two books she did not write: an introduction to Michelle
+#            McNamara's "I'll Be Gone in the Dark" (2018) and a foreword to
+#            Keir Graff's "Chicago's Fine Arts Building" (2025), each a named,
+#            credited contribution to someone else's book rather than a work
+#            of hers - the schema's own worked example for this tier. See
+#            also the Rogues note below for the one case that could have
+#            gone here and did not.
 #
 # THE ROGUES QUESTION. "The Grownup" first appeared as "What Do You Do?" in
 # Rogues (2014), a 21-story anthology edited by George R. R. Martin and
@@ -60,12 +66,34 @@
 #   - Individual chapters or scenes are not separately listed; none of her
 #     work has been extracted into a standalone reprint the way, for example,
 #     a single Palahniuk story sometimes has.
+#   - "Gillian Flynn Books", her own fiction and nonfiction imprint launched
+#     with the publisher Zando in 2021: she acquires and gives editorial
+#     input across the imprint's list (e.g. Araminta Hall's 2024 novel "One
+#     of the Good Guys", which carries a Flynn blurb), but is not credited
+#     as author, editor or contributor on the books themselves the way she
+#     is on the two apocrypha entries below. Running an imprint is not
+#     authorship of what it publishes; none of its titles are recorded here.
+#   - A recipe contribution to "The Mystery Writers of America Cookbook"
+#     (Quirk Books), a themed cookbook crediting a dozen-plus crime novelists
+#     including Lee Child, Sue Grafton and James Patterson alongside Flynn:
+#     one recipe among many contributors' in a themed charity-style
+#     collection, not a piece of writing with its own byline the way the
+#     Introduction and Foreword below are, so it sits outside this
+#     bibliography's bar for inclusion.
 #
 # COMPLETE against the reachable record: her own Wikipedia "Published works"
 # and "Filmography" tables (Fiction: 3 novels, one comic short story, one
-# short story; Film and TV: Gone Girl, Widows, Sharp Objects, Utopia) turned
-# up nothing beyond the nine works below and the excluded, unproduced tail
-# above.
+# short story; Film and TV: Gone Girl, Widows, Sharp Objects, Utopia), cross-
+# checked against ISFDB's author bibliography (which independently confirms
+# "What Do You Do?" as her only indexed short fiction and lists no other
+# anthology appearances), OpenLibrary's full author-work list (which turned
+# up nothing beyond translations/editions of the four core works, the
+# excluded cookbook, and Rogues), and a direct search for forewords and
+# introductions, which is what surfaced the two apocrypha entries below -
+# neither is on Wikipedia's bibliography table. Screen credits were checked
+# episode-by-episode against Wikipedia's own episode tables for Sharp
+# Objects and Utopia rather than taken from the summary filmography grid;
+# doing so corrected the Sharp Objects episode count (see that work's note).
 
 - id: gillian-flynn/sharp-objects
   title: "Sharp Objects"
@@ -180,16 +208,23 @@
     A short story told in comics form, written by Flynn and drawn by Dave
     Gibbons.
   note: >
-    First run as a preview in The Guardian's "Weekend comics special" in
-    April 2014, then collected that year in the long-running anthology
-    series Dark Horse Presents. No plot summary is reachable in the sources
-    checked, so none is asserted beyond the form and the collaborators;
-    Gibbons is credited as illustrator only and is not recorded in
-    withAuthorIds, since this repo has no author entity for him and the
-    schema has no illustrator role (the same treatment as the artists on the
-    Chuck Palahniuk wing's Fight Club comics).
+    First published complete in a 26-page Guardian Weekend comics special of
+    April 26, 2014, timed to the British Library's "Comics Unmasked: Art and
+    Anarchy in the UK" exhibition; reprinted as its first U.S. publication in
+    Dark Horse Presents #200, on sale February 18, 2015 (confirmed by the
+    publisher's own announcement and two independent trade reports, Bleeding
+    Cool and CBR - the reprint fell in the following year, not within 2014).
+    No plot summary is reachable in the sources checked, so none is asserted
+    beyond the form and the collaborators; Gibbons is credited as illustrator
+    only and is not recorded in withAuthorIds, since this repo has no author
+    entity for him and the schema has no illustrator role (the same
+    treatment as the artists on the Chuck Palahniuk wing's Fight Club
+    comics).
   sources:
     - https://en.wikipedia.org/wiki/Gillian_Flynn
+    - https://downthetubes.net/the-guardian-makes-comics-26-pages-of-em-in-one-edition/
+    - https://bleedingcool.com/comics/dark-horse-presents-200-will-be-80-pages-feature-masks-by-flynn-and-gibbons-works-by-mignola-van-lente-mccarthy-de-campi-and-more/
+    - https://www.cbr.com/dhp-200-will-include-masks-by-gillian-flynn-dave-gibbons/
 
 - id: gillian-flynn/gone-girl-film
   title: "Gone Girl"
@@ -218,6 +253,36 @@
     - https://en.wikipedia.org/wiki/Gone_Girl_(novel)
     - https://en.wikipedia.org/wiki/Gillian_Flynn
 
+- id: gillian-flynn/ill-be-gone-in-the-dark
+  title: "I'll Be Gone in the Dark: One Woman's Obsessive Search for the Golden State Killer"
+  authorIds: [gillian-flynn]
+  published: 2018
+  subseries: null
+  canonTier: apocrypha
+  authorRole: contributor
+  contributionTitle: "Introduction"
+  synopsis: >
+    Michelle McNamara's true-crime account of her own years-long hunt for
+    the unidentified serial rapist and killer she named the Golden State
+    Killer, published posthumously with an introduction by Flynn.
+  note: >
+    McNamara died in April 2016 while still writing the book; HarperCollins
+    published it on February 27, 2018, with Flynn's introduction and an
+    afterword by McNamara's husband, the comedian Patton Oswalt (confirmed
+    by the publisher's own product page and by Amazon's structured
+    contributor field, which separately credits "Gillian Flynn - Introdução"
+    and "Patton Oswalt - Posfácio" alongside McNamara's authorship). The
+    Golden State Killer was identified and arrested two months after
+    publication, in April 2018. Recorded as apocrypha per the schema's own
+    worked example for a book where the credited author wrote only the
+    introduction: this is McNamara's book, not Flynn's, so Flynn is not
+    recorded in withAuthorIds. Neither McNamara nor Oswalt has an author
+    entity in this repo.
+  sources:
+    - https://en.wikipedia.org/wiki/I%27ll_Be_Gone_in_the_Dark
+    - https://www.harpercollins.com/products/ill-be-gone-in-the-dark-michelle-mcnamara
+    - https://www.amazon.com/Ill-Be-Gone-Dark-Obsessive/dp/0062319795
+
 - id: gillian-flynn/sharp-objects-tv
   title: "Sharp Objects"
   authorIds: [gillian-flynn]
@@ -234,17 +299,21 @@
     Preaker.
   note: >
     CREDIT, stated precisely because it is easy to overclaim. Marti Noxon is
-    the credited creator and showrunner; Flynn is not. Flynn wrote the
-    teleplay for episode 2 ("Dirt") alone and episode 7 ("Falling") together
-    with Scott Brown, and served as an executive producer across all eight
-    episodes (confirmed by her own Wikipedia filmography table: Writer yes,
-    Executive producer yes, Creator no, Showrunner no). That is a real and
-    citable writing credit, which is why the work is recorded at all, but it
-    is a co-author's share of someone else's adaptation rather than a work
-    she made - the reason it sits in extended rather than core alongside
-    Utopia, where she is credited as sole writer of all eight episodes and
-    showrunner. Marti Noxon and Scott Brown are not recorded in
-    withAuthorIds; neither has an author entity in this repo yet.
+    the credited creator and showrunner; Flynn is not. Flynn has a writing
+    credit on three of the eight episodes, per the series' own episode-by-
+    episode writer table: episode 2 ("Dirt") alone, episode 7 ("Falling")
+    with Scott Brown, and episode 8 ("Milk") with Noxon herself, and served
+    as an executive producer across all eight episodes. Her own Wikipedia
+    filmography summary table only records this as Writer yes, Executive
+    producer yes, Creator no, Showrunner no, without a per-episode count -
+    the episode list is the more precise source and is cited below
+    alongside it. Three writing credits is a real and citable share, which
+    is why the work is recorded at all, but it is a co-author's share of
+    someone else's adaptation rather than a work she made - the reason it
+    sits in extended rather than core alongside Utopia, where she is
+    credited as sole writer of all eight episodes and showrunner. Marti
+    Noxon and Scott Brown are not recorded in withAuthorIds; neither has an
+    author entity in this repo yet.
   sources:
     - https://en.wikipedia.org/wiki/Sharp_Objects_(miniseries)
     - https://en.wikipedia.org/wiki/Gillian_Flynn
@@ -300,3 +369,28 @@
   sources:
     - https://en.wikipedia.org/wiki/Utopia_(2020_TV_series)
     - https://en.wikipedia.org/wiki/Gillian_Flynn
+
+- id: gillian-flynn/chicagos-fine-arts-building
+  title: "Chicago's Fine Arts Building: Music, Magic, and Murder"
+  authorIds: [gillian-flynn]
+  published: 2025
+  subseries: null
+  canonTier: apocrypha
+  authorRole: contributor
+  contributionTitle: "Foreword"
+  synopsis: >
+    Keir Graff's illustrated history of Chicago's Fine Arts Building, the
+    Michigan Avenue building built for the 1893 World's Fair and long home
+    to the city's working artists, drawing on interviews with current
+    tenants and the building's own archives, with a foreword by Flynn.
+  note: >
+    Published by Trope Publishing Co. on June 3, 2025 (184 pages, ISBN
+    978-1-951963-33-0), confirmed by both the publisher's own product page
+    and Amazon's listing, which separately credits "Gillian Flynn (Prólogo)"
+    alongside Graff's authorship rather than folding her name into jacket
+    copy. Recorded as apocrypha for the same reason as I'll Be Gone in the
+    Dark: this is Graff's book, not Flynn's, so she is not recorded in
+    withAuthorIds. Graff has no author entity in this repo.
+  sources:
+    - https://trope.com/products/chicagos-fine-arts-building
+    - https://www.amazon.com/Chicagos-Fine-Arts-Building-Murder/dp/1951963334

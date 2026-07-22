@@ -1,0 +1,95 @@
+stage: completeness-auditor
+slug: gillian-flynn
+status: validate.py --slug gillian-flynn green (exit 0), sync_skill_blocks.py green
+
+work_count: 9 before, 11 after
+
+added:
+  - id: gillian-flynn/ill-be-gone-in-the-dark
+    published: 2018
+    canonTier: apocrypha
+    evidence: >
+      Introduction to Michelle McNamara's "I'll Be Gone in the Dark"
+      (HarperCollins, Feb 27, 2018). Confirmed on three independent sources:
+      Wikipedia infobox (pub date, ISBN, publisher), HarperCollins's own
+      product page ("Introduction by Gillian Flynn"), and Amazon's
+      structured contributor field ("Gillian Flynn - Introdução"). Not on
+      Wikipedia's bibliography table - found via a direct forewords/
+      introductions search.
+  - id: gillian-flynn/chicagos-fine-arts-building
+    published: 2025
+    canonTier: apocrypha
+    evidence: >
+      Foreword to Keir Graff's "Chicago's Fine Arts Building: Music, Magic,
+      and Murder" (Trope Publishing Co., June 3, 2025, ISBN
+      978-1-951963-33-0). Confirmed on the publisher's own product page and
+      Amazon's structured contributor field ("Gillian Flynn (Prólogo)").
+      Same search path as above.
+
+corrections:
+  - work: gillian-flynn/sharp-objects-tv
+    what: >
+      Flynn's writing credit was undercounted at 2 of 8 episodes (2 "Dirt"
+      solo, 7 "Falling" with Scott Brown). Wikipedia's own episode-by-episode
+      writer table (not the summary filmography grid) also credits her on
+      episode 8 "Milk", co-written with Marti Noxon. Corrected to 3
+      episodes; note now cites the episode table directly.
+    reorders: "no - published year (2018) unchanged, only the note's detail"
+  - work: gillian-flynn/masks
+    what: >
+      Note said Dark Horse Presents "collected [Masks] that year" (2014).
+      Three independent trade sources (Multiverse's publisher press release,
+      Bleeding Cool, CBR) date DHP #200 to February 18, 2015. Corrected;
+      also specified the Guardian run as April 26, 2014 (a complete 26-page
+      comics special, not an excerpt) and the exhibition as the British
+      Library's "Comics Unmasked" (CBR alone says "British Museum" - not
+      repeated).
+    reorders: >
+      no - published stays 2014 (the Guardian run, which is the actual first
+      publication and was already correct); only the DHP reprint date in the
+      note was wrong.
+
+found_and_rejected:
+  - what: "Gillian Flynn Books, the Zando imprint she runs, launched 2021"
+    why: >
+      She acquires and edits across the imprint's list, e.g. Araminta
+      Hall's "One of the Good Guys" (2024), but is not credited as author,
+      editor or contributor on that book's own title/copyright page - it
+      carries a Flynn blurb, nothing more. Running an imprint is not
+      authorship of what it publishes. Documented in works.yaml's exclusion
+      list so a future sweep doesn't rediscover the imprint and mistake a
+      blurbed title for hers.
+  - what: "recipe contribution to The Mystery Writers of America Cookbook (Quirk Books)"
+    why: >
+      Surfaced via OpenLibrary's author-work list. One recipe among a
+      dozen-plus crime novelists (Lee Child, Sue Grafton, James Patterson)
+      in a themed collection - no individual byline or prose, unlike the
+      introduction/foreword entries added. Judged out of scope rather than
+      left unresolved, since the record is unambiguous; flagged below in
+      case a stricter completionist standard is wanted later.
+
+verified_unchanged:
+  - "Gone Girl film: sole screenwriter credit, confirmed against Wikipedia's infobox/lede independently of the filmography table."
+  - "Widows: joint screenplay credit with Steve McQueen, confirmed against Wikipedia's infobox."
+  - "Utopia: sole writer of all 8 episodes, creator, showrunner, confirmed episode-by-episode (Fogel/Hunt/Dillard/Haynes directed, Flynn wrote all eight)."
+  - "\"What Do You Do?\"/The Grownup: ISFDB's author bibliography (record #144771) lists this as her only indexed short fiction, no other anthology appearance - independent confirmation of the Rogues-only claim."
+  - "Fourth novel: still unpublished/untitled as of this pass."
+
+could_not_verify: >
+  Nothing material. The Masks plot is still not reachable in any source
+  checked; left as-is with no summary asserted.
+
+curator_questions:
+  - >
+    The Mystery Writers of America Cookbook recipe (see found_and_rejected)
+    was excluded on this pass's judgment rather than left unresolved - a
+    second opinion is worth having if this wing is ever held to a stricter
+    completionist standard than "a piece of writing with its own byline."
+
+tool_calls: >
+  41 total; 24 network-touching (18 fetch.py invocations covering roughly 25
+  URLs - Wikipedia, ISFDB, OpenLibrary, publisher/retailer pages for the two
+  new works, and the Masks trade-press trio - plus 6 WebSearch calls to
+  discover candidates before fetching them directly). GCD/comics.org and the
+  LOC catalogue both blocked automated fetches (403) and were abandoned for
+  OpenLibrary and the publisher/press sources actually used instead.
