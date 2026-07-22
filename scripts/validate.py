@@ -7,6 +7,7 @@ authorIds/withAuthorIds, order work IDs, spoiler boundaries, and inline
 
 Usage: python scripts/validate.py
 """
+import datetime
 import glob
 import os
 import re
@@ -334,6 +335,47 @@ def main():
                 )
             elif not 1000 <= pub <= 2999:
                 err(loc, f"{wid}: published '{pub}' is not a 4-digit year")
+            # `forthcoming` marks a work that is ANNOUNCED but not yet out.
+            # `published` still carries the expected year, because every
+            # consumer of it is year arithmetic (River layers, era spans,
+            # decade rules, the derived default order) and a forthcoming book
+            # still belongs in its year. This field says only "this has not
+            # happened yet", which `published` alone cannot express: a bare
+            # `published: 2026` asserts the book WAS published in 2026.
+            #
+            # The date is what makes this self-correcting. Once it passes, the
+            # validator starts asking for confirmation, so an announced title
+            # cannot quietly sit in the catalogue as though it had shipped.
+            fc = w.get("forthcoming")
+            if fc is not None:
+                # YAML resolves an unquoted 2026-08-19 to a datetime.date, and
+                # a malformed one (2026-02-31) stays a string. Accept both and
+                # normalise, rather than demanding one shape - insisting on a
+                # string here rejected every legitimate value, which is what
+                # falsifying this check on real input turned up.
+                when = None
+                if isinstance(fc, datetime.date):
+                    when = fc
+                elif isinstance(fc, str) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", fc):
+                    try:
+                        when = datetime.date.fromisoformat(fc)
+                    except ValueError:
+                        err(loc, f"{wid}: forthcoming '{fc}' is not a real date")
+                else:
+                    err(loc, f"{wid}: forthcoming must be a YYYY-MM-DD date, got {fc!r}")
+                if when is not None:
+                    if isinstance(pub, int) and when.year != pub:
+                        err(
+                            loc,
+                            f"{wid}: forthcoming {fc} disagrees with published {pub} - "
+                            f"the announced date must fall in the published year",
+                        )
+                    if when <= datetime.date.today():
+                        warn(
+                            loc,
+                            f"{wid}: forthcoming {fc} has passed - confirm it actually "
+                            f"published and drop the field, or correct the date",
+                        )
             # authorRole defaults to "author"; it only needs stating when the
             # author did not write the whole book. A contributor or editor entry
             # must never look like authorship, so the tier has to match.
