@@ -22,13 +22,28 @@ locally rather than searched per item; at 181 assets the per-item search was
 
 State machine (one label at a time):
 
-    asset:blocked      the wing has no theme.art - nothing can be drawn yet
-    asset:needs-prompt filed, but nobody has written the prompt (curator's job)
-    asset:needs-art    prompt is ready, paste it into the generator
-    asset:ready        image attached, waiting to be wired in
-    (closed)           committed, validated and rendering
+    asset:blocked       the wing has no theme.art - nothing can be drawn yet
+    asset:needs-prompt  filed, but nobody has written the prompt (curator's job)
+    asset:needs-art     prompt is ready, paste it into the generator
+    asset:ready         image attached, waiting to be wired in
+    asset:needs-redraw  the asset exists and is being replaced anyway
+    (closed)            committed, validated and rendering
 
 Rodrigo touches exactly one of these: he flips needs-art -> ready by uploading.
+
+REGENERATIONS. Everything above reads the filesystem, and the filesystem cannot
+tell a finished asset from one that is about to be replaced - both are a file
+at a path. So a wing being redrawn used to have an empty queue while being the
+busiest thing in the repo, and worse, the sync would close the issues carrying
+the new prompts. `--redraw` is the missing state:
+
+    python scripts/issue_sync.py <wing> --redraw           # dry run
+    python scripts/issue_sync.py <wing> --redraw --apply
+
+It reopens every asset issue on the wing and labels it by evidence: an issue
+whose comments already carry a prompt goes to `asset:needs-art`, one without
+goes to `asset:needs-redraw`. Both are in KEEP_OPEN, so the normal sync stops
+treating those files as proof of finished work.
 """
 from __future__ import annotations
 
@@ -51,6 +66,26 @@ LABELS = {
     "asset:needs-prompt": ("fbca04", "Asset queued, prompt not written yet"),
     "asset:needs-art": ("0e8a16", "Prompt ready - generate and attach the image"),
     "asset:ready": ("1d76db", "Image attached, waiting to be wired into content"),
+    "asset:needs-redraw": ("d93f0b", "Asset exists but is being replaced - do not close on file existence"),
+}
+
+# Labels that mean "this issue is live work, whatever the filesystem says".
+#
+# The queue's whole model is "does a file exist at this path", and that model
+# cannot see a REGENERATION: an asset being replaced looks exactly like an
+# asset that is finished. It has already gone wrong once - #190 was a redraw
+# request, its replacement image was attached, and the sync closed it two hours
+# later, before anything wired it in.
+#
+# So file existence stops being sufficient to close. Any of these means a human
+# or a pass has said there is work here, and the filesystem does not get a vote.
+KEEP_OPEN = {
+    "asset:ready",         # art attached, waiting to be wired in
+    "art:human-offer",     # somebody is offering human art for the slot
+    "asset:needs-redraw",  # explicitly marked for replacement
+    "asset:needs-art",     # a prompt is queued against an asset that already
+                           # exists, which IS a redraw in flight; closing it
+                           # throws the written prompt away
 }
 
 # Where each asset type's sketch field actually lives.
@@ -174,12 +209,99 @@ def body_for(wing: str, kind: str, aid: str, why: str, path: str, accent: str) -
     return "\n".join(lines)
 
 
+def has_prompt(number: int) -> bool:
+    """Does this issue already carry a written prompt?
+
+    Derived from the comments rather than asked for as a flag: a prompt is a
+    fenced block containing the labelled sections docs/VISUAL.md §5 mandates.
+    The point is that a redraw pass does not have to be told twice what it
+    already did - the issue history is the record.
+    """
+    raw = gh("issue", "view", str(number), "--repo", REPO, "--json", "comments",
+             check=False)
+    try:
+        comments = json.loads(raw or "{}").get("comments") or []
+    except json.JSONDecodeError:
+        return False
+    for c in reversed(comments):
+        body = c.get("body") or ""
+        if "STYLE:" in body and "CONSTRAINTS:" in body:
+            return True
+    return False
+
+
+def redraw(wing: str, apply: bool) -> int:
+    """Reopen a wing's asset issues so a regeneration is visible as work.
+
+    The queue reads the filesystem, so after a regeneration decision every one
+    of a wing's assets still LOOKS finished - the files are all there, they are
+    simply the wrong files. Without this, a wing being redrawn has an empty
+    queue and the work exists only in somebody's head.
+
+    The label is derived, not assumed: an issue whose comments already carry a
+    prompt goes to `asset:needs-art` (generate it), one without goes to
+    `asset:needs-redraw` (write the prompt first). That way running this after
+    a prompt pass does the right thing, and running it before also does.
+    """
+    have = existing()
+    keys = sorted(k for k in have if k.startswith(f"{wing}/"))
+    if not keys:
+        print(f"no asset issues for '{wing}' - nothing to redraw", file=sys.stderr)
+        return 2
+
+    plan = []
+    for key in keys:
+        issue = have[key]
+        num = issue["number"]
+        label = "asset:needs-art" if has_prompt(num) else "asset:needs-redraw"
+        plan.append((key, num, issue["state"], label))
+
+    ready = sum(1 for _, _, _, l in plan if l == "asset:needs-art")
+    for key, num, state, label in plan:
+        print(f"  redraw   #{num:<5} {key:<58} {state.lower():<7} -> {label}")
+    print(f"\n  {len(plan)} asset(s): {ready} with a prompt already written, "
+          f"{len(plan) - ready} still needing one")
+
+    if not apply:
+        print("\n  dry run - nothing written. Re-run with --apply")
+        return 0
+
+    for name, (colour, desc) in LABELS.items():
+        gh("label", "create", name, "--repo", REPO, "--color", colour,
+           "--description", desc, "--force", check=False)
+
+    for key, num, state, label in plan:
+        if state != "OPEN":
+            gh("issue", "reopen", str(num), "--repo", REPO, check=False)
+        # Remove the other lifecycle labels so the state machine keeps its
+        # "one label at a time" property; --add-label alone would leave an
+        # asset sitting at needs-prompt AND needs-art.
+        stale = [l for l in LABELS if l != label]
+        gh("issue", "edit", str(num), "--repo", REPO,
+           "--add-label", label,
+           *sum((["--remove-label", s] for s in stale), []),
+           check=False)
+        print(f"  reopened #{num} -> {label}")
+    return 0
+
+
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("wing", nargs="?")
     p.add_argument("--apply", action="store_true")
     p.add_argument("--limit", type=int, help="file at most N new issues this run")
+    p.add_argument("--redraw", action="store_true",
+                   help="mark a wing for regeneration: reopen its asset issues "
+                        "and label them so the sync stops treating an existing "
+                        "file as finished work. Requires a wing.")
     a = p.parse_args()
+
+    if a.redraw:
+        if not a.wing:
+            print("--redraw needs a wing: a catalogue-wide redraw is not a "
+                  "thing anyone means to do by accident.", file=sys.stderr)
+            return 2
+        return redraw(a.wing, a.apply)
 
     targets = [a.wing] if a.wing else wings()
     if a.wing and a.wing not in wings():
@@ -221,24 +343,13 @@ def main() -> int:
                 continue
             if issue["state"] != "OPEN":
                 continue
-            # An asset that exists is normally proof the issue is finished. It
-            # is not, in two cases, and both were learned by getting them wrong:
-            #
-            #   asset:ready      art is attached and waiting to be wired in.
-            #                    Closing here throws that work away silently.
-            #   art:human-offer  somebody is offering human art for a slot a
-            #                    generated placeholder already fills.
-            #
-            # The blind spot is REDRAWS. `asset_audit` asks "does a file exist
-            # at this path", so an issue asking for a BETTER image of something
-            # already drawn looks identical to finished work. That closed #190
-            # - a redraw request whose replacement image had already been
-            # attached - two hours after the art landed and before anything
-            # wired it in.
+            # An asset that exists is NOT proof the issue is finished. See
+            # KEEP_OPEN: the queue reads the filesystem, and the filesystem
+            # cannot tell a finished asset from one being replaced.
             labels = {l.get("name") for l in (issue.get("labels") or [])}
-            if labels & {"asset:ready", "art:human-offer"}:
-                print(f"  keep     #{issue['number']} {key} "
-                      f"({'art attached' if 'asset:ready' in labels else 'human art offered'})")
+            held = labels & KEEP_OPEN
+            if held:
+                print(f"  keep     #{issue['number']} {key} ({', '.join(sorted(held))})")
                 continue
             to_close.append((key, issue["number"]))
 
@@ -261,8 +372,9 @@ def main() -> int:
             if issue["state"] != "OPEN":
                 continue
             labels = {l.get("name") for l in (issue.get("labels") or [])}
-            if labels & {"asset:ready", "art:human-offer"}:
-                print(f"  keep     #{issue['number']} {key} (art attached)")
+            held = labels & KEEP_OPEN
+            if held:
+                print(f"  keep     #{issue['number']} {key} ({', '.join(sorted(held))})")
                 continue
             to_close.append((key, issue["number"]))
 
