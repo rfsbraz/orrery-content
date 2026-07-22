@@ -1,0 +1,106 @@
+# ADDITIONAL orders only. The DEFAULT order - all 34 works in
+# publication-chronological order over the NORWEGIAN first-publication years
+# recorded in works.yaml - is derived automatically and is not written here.
+# That derived default already resolves this wing's founding question (see
+# franchise.yaml): Norwegian publication order is the only order English
+# translation dates ever matched for years, and it is what a reader gets by
+# default, with no order needed to say so.
+#
+# NO ENGLISH OR PT-PT TRANSLATION-ORDER ENTRY EXISTS HERE, DELIBERATELY. Both
+# language markets share the same shape of gap - Rødstrupe (Redbreast) reached
+# English readers in 2000 and Portuguese readers in 2009, while Flaggermusmannen
+# and Kakerlakkene (books one and two) did not reach English until 2012/2013 and
+# Portuguese until roughly 2015 - but neither market's own advice treats that
+# gap as a route to follow. Jo Nesbo's own English-language publisher site
+# (jonesbo.com, Penguin Books Limited) answers "where do I start?" with the
+# full chronological list beginning at The Bat, adding only "you can of course
+# start anywhere" - no publisher-sanctioned reordering. Every independent
+# English-language reading-order guide checked (orderofbooks.com,
+# deadgoodbooks.co.uk, fantasticfiction.com) restores Flaggermusmannen and
+# Kakerlakkene to positions one and two rather than listing them last where
+# English readers actually received them. The Portuguese-language guide checked
+# (osmelhoreslivros.com.br) does the same. The translation gap is a real fact
+# about when two markets could buy each book; it was never itself a reading
+# order, in either language.
+#
+# TWO THREAD ORDERS, for the two subseries where interleaving with the rest of
+# this 34-work, six-strand wing is a real cost to a reader who wants only one
+# thread: the fourteen-book Harry Hole procedural spine, and the five-book
+# Doktor Proktor children's series. Kongeriket and Olav Johansen are also named
+# subseries in works.yaml, but at two books each, already adjacent in the
+# derived default's own numbering (Kongeriket's own sequel is titled "Kongeriket
+# 2" on the cover) and with no reading-order question either external guides or
+# this wing's own research surfaced, an order for either would only restate
+# what the title page already says.
+
+- id: jo-nesbo/harry-hole-novels
+  name: Harry Hole, front to back
+  type: curated
+  source: canon
+  rationale: >
+    All fourteen Harry Hole novels, in the same order as the derived default,
+    with the other thirty-four-work wing's remaining twenty titles - the
+    Doktor Proktor children's series, the Kongeriket and Olav Johansen
+    duologies, the standalones, the short-fiction collections - left out. For
+    a reader who came for the detective, not the whole shelf, this restores
+    the run they are probably picturing: an unbroken procedural from
+    [[work:jo-nesbo/flaggermusmannen|Flaggermusmannen]]'s first case in Sydney
+    through three decades of Harry's drinking, exile and return, without a
+    children's fart-powder adventure or an unrelated standalone landing
+    between one case and the next. What it costs: everything else Nesbo wrote
+    in parallel, including his other most filmed and best-selling books, drops
+    out entirely, and the sense of a working novelist's whole career
+    developing at once - crime and children's fiction published months apart
+    in the same years - is exactly what this order removes to get the
+    procedural momentum.
+  orderedWorkIds:
+    - jo-nesbo/flaggermusmannen
+    - jo-nesbo/kakerlakkene
+    - jo-nesbo/rodstrupe
+    - jo-nesbo/sorgenfri
+    - jo-nesbo/marekors
+    - jo-nesbo/frelseren
+    - jo-nesbo/snomannen
+    - jo-nesbo/panserhjerte
+    - jo-nesbo/gjenferd
+    - jo-nesbo/politi
+    - jo-nesbo/torst
+    - jo-nesbo/kniv
+    - jo-nesbo/blodmane
+    - jo-nesbo/nadeskudd
+  debated:
+    - "This order reproduces the derived default's own sequence, restricted to one subseries; its only contribution is removing the other twenty works, per works.yaml's own subseries field, exactly as this catalogue's Discworld thread orders do. A later change to any work's subseries value would desynchronise this list silently."
+    - "Nådeskudd (2026) is announced with a firm street date but had not reached shops as of the sources checked; it is placed last here only because it already carries published: 2026 in works.yaml, matching the derived default's own treatment, not a separate judgement made here."
+  sources:
+    - https://jonesbo.com/faqs/
+    - https://www.orderofbooks.com/characters/harry-hole/
+    - https://www.deadgoodbooks.co.uk/jo-nesbo-harry-hole-books-in-order/
+
+- id: jo-nesbo/doktor-proktor-novels
+  name: Doktor Proktor, in order
+  type: curated
+  source: canon
+  rationale: >
+    The five numbered Doktor Proktor novels, in publication order, isolated
+    from the adult crime fiction that shares this wing's shelf and, in the
+    derived default, is interleaved with them year by year (2007 alone carries
+    both [[work:jo-nesbo/doktor-proktors-prompepulver|the first Doktor
+    Proktor book]] and [[work:jo-nesbo/snomannen|Snømannen]]). For a reader
+    choosing books for a child, or for a young reader themselves, this is the
+    whole run with nothing else from the shelf able to surface next to it.
+    What it costs: it is a different, unconnected body of work from the
+    Harry Hole novels and the rest of Nesbo's adult fiction, sharing no
+    characters, no world and no tone with them - a reader working through
+    only this list will not have sampled the writer this wing is mostly
+    about.
+  orderedWorkIds:
+    - jo-nesbo/doktor-proktors-prompepulver
+    - jo-nesbo/doktor-proktors-tidsbadekar
+    - jo-nesbo/doktor-proktor-og-verdens-undergang-kanskje
+    - jo-nesbo/doktor-proktor-og-det-store-gullroveriet
+    - jo-nesbo/kan-doktor-proktor-redde-jula
+  debated:
+    - "This path lists the five numbered novels only. Doktor Proktors sensasjonelle samling av dyr du skulle ønske ikke fantes (2010), a companion bestiary created alongside the third novel, carries no number in the publisher's or agency's own listing and is absent from the community reading-order guides checked; a reader can read it any time after the third novel, but it is not placed in this sequence."
+  sources:
+    - https://jonesbo.com/faqs/
+    - https://www.orderofbooks.com/characters/doctor-proctors-fart-powder/

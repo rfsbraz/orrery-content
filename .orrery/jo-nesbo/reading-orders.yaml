@@ -1,0 +1,66 @@
+stage: reading-orders
+summary: >
+  Settled the wing's founding question. English publishing did translate the
+  Harry Hole novels out of order - Rødstrupe (Redbreast, book three) reached
+  English in 2000, twelve years before Flaggermusmannen (2012) and Kakerlakkene
+  (2013) - but that gap was never itself a reading order. Jo Nesbo's own
+  English-language publisher site (jonesbo.com, Penguin Books Limited) answers
+  its own "where do I start?" FAQ with the full chronological list beginning at
+  The Bat, adding only "you can of course start anywhere"; three independent
+  reading-order guides checked (orderofbooks.com, deadgoodbooks.co.uk,
+  fantasticfiction.com) all restore books one and two to their rightful
+  positions rather than listing them last where English readers actually
+  received them. A scattered Goodreads Q&A thread (five answers, split three
+  ways: skip books one and two, read in strict order, or taste-test with book
+  four) is the only material found recommending entry at book three - not a
+  citable community consensus, and it is not shipped. Verdict: the English
+  translation sequence is a licensing accident, not a reading order; nobody,
+  including the publisher, advises following it. The default order (Norwegian
+  chronological, unchanged) is the correct answer for English readers too.
+  pt-PT shows the same shape: Rødstrupe reached Portugal via Dom Quixote in
+  March 2009, while O Morcego (The Bat) did not arrive until roughly 2015 -
+  confirmed independently, not merely assumed - and the one Portuguese-language
+  guide checked (osmelhoreslivros.com.br) likewise presents original numbering,
+  not arrival order. No pt-PT order is warranted, for the same reason as
+  English. Wrote two thread orders instead: Harry Hole (14 novels, isolating
+  the procedural spine from this wing's twenty other concurrently-published
+  works) and Doktor Proktor (5 numbered novels, isolating the children's series
+  from the adult crime fiction it is interleaved with year by year). Both
+  reproduce the derived default filtered by works.yaml's own subseries field,
+  matching this catalogue's Discworld precedent - justified by thread identity
+  plus multiple independent guides, not coined. Kongeriket and Olav Johansen
+  (2 books each) got no order: both are already publisher-sequenced by the
+  title itself ("Kongeriket 2"), and no guide or gap surfaced a genuine
+  ordering question for either. Wrote startHere with four paths: a one-book
+  taste (Blod på snø, sourced to Bookreporter.com and NPR calling it the
+  accessible entry for readers put off by his longer books), the Harry Hole
+  thread front to back, the Doktor Proktor series explicitly framed for a
+  different reader (not a "lighter warm-up" funnelling into Harry Hole), and
+  the whole shelf. validate.py --slug jo-nesbo shows no new errors; the one
+  failure is the pre-existing theme.yaml art-block gap.
+produced:
+  - content/franchises/jo-nesbo/orders.yaml
+  - content/franchises/jo-nesbo/franchise.yaml (startHere block only)
+forStages:
+  - >
+    translation: orders.yaml (2 orders: name, rationale, debated) and
+    franchise.yaml's new startHere block (4 paths: title, description, note)
+    need pt-PT overlays; nothing pre-existing was reworded.
+  - >
+    spoiler-audit: every path and both orders are written at premise level and
+    contain no reveals. The one vector worth a direct look: Rødstrupe's own
+    existing note in works.yaml already says English readers met the series at
+    book three "not book one" - that sentence, plus this stage's own research
+    (a scattered handful of readers do report meeting recurring cast, and
+    Harry's drinking and history, already assumed background when starting
+    there) is real texture but was deliberately kept out of ungated order/path
+    prose per this skill's own rule that these files carry no spoiler gate.
+openQuestions:
+  - >
+    Least confident call: pairing Blod på snø with the taste path over
+    Hodejegerne (Headhunters). Headhunters has the more famous film and is
+    named a standalone on the official FAQ, but the only "good entry point"
+    language found for it was a single reader's aside; Blod på snø has two
+    citable press reviews framing it explicitly as accessible for readers
+    intimidated by his longer books. Both are defensible; this one had the
+    better citation.
