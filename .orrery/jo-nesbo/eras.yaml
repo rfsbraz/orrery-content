@@ -1,0 +1,63 @@
+stage: eras
+summary: >
+  eras.yaml ships as `eras: []`. No source outside this repo periodises Jo
+  Nesbø's career, and the reason is structural rather than a gap in the
+  searching: the strands run concurrently, so no span can describe what it
+  covers. A single year routinely carries a Harry Hole novel, a children's
+  book and a standalone (2007: Snømannen, Doktor Proktors prompepulver,
+  Det hvite hotellet). Store norske leksikon, written by two literary
+  scholars (Fredrik Wandrup, Hans H. Skei), is the fullest Norwegian account
+  of the forfattarskap and divides it by category, not period: its headings
+  are Harry Hole, Andre spenningsbøker, Hodejegerne, Doktor Proktor, Andre
+  sjangrar. Those are subseries, which works.yaml already records. Danish
+  Forfatterweb's portrait (written 2011, updated 2019, 2021, 2025) is
+  organised title by title with a closing "Genrer og tematikker" section for
+  what runs across the whole shelf. Lille norske leksikon splits adults from
+  children and stops. The publishing-historical facts that exist are strand
+  openings, not phases, and each fails the Colin Smythe test: 2007 (first
+  children's book) and 2008 (Hodejegerne, first crime novel without Harry)
+  are both real and sourced, but an era beginning at either would be named
+  for one strand while covering the six-to-nine Harry Hole novels that
+  follow. Aschehoug has published him throughout, so there is no publisher
+  boundary. Three near-misses were checked and rejected: Rødstrupe (2000) as
+  a breakthrough is described everywhere as a peak and never as the start of
+  a named period; the move home to Oslo after two books set abroad is a fact
+  about the settings of two novels, not the career, and leaves Stemmer fra
+  Balkan (1999) undescribed inside its own window; the "Oslo Trilogy" is an
+  English publisher's boxset and in any case a run inside one series. The
+  four Harry-free years between Politi (2013) and Tørst (2017) are visible in
+  the shelf and named by nobody. Searched Norwegian first (SNL, NBL,
+  Norwegian press, Norwegian academic and school writing on krim), then
+  Danish and English. No obituary or researched career retrospective is
+  available: he is alive and still publishing, and the reference-work
+  portraits are the nearest equivalent. All 34 works sit outside any era,
+  intentionally and documented in the file. Nådeskudd (2026, forthcoming
+  19 August) was never allowed near a boundary. validate.py --slug jo-nesbo
+  is unchanged from baseline: same one pre-existing theme.yaml art-block
+  error, no new warnings (an empty span list produces no era-gap warnings).
+produced:
+  - content/franchises/jo-nesbo/eras.yaml
+forStages:
+  - >
+    visual-language: there are no era names and no era moods to render. The
+    app never sets eraStart for this wing and no "ENTERING" plate is drawn,
+    so the visual work rests entirely on theme.yaml (the vinterlys palette:
+    pale cold blue-white ground, cobalt accent, sourceSerif, rule) and on the
+    aura. Design for an unbroken timeline rather than a partitioned one.
+  - >
+    reading-orders: the scheme is that there is no scheme. Nothing in an
+    order may lean on era membership. The wing's actual reading-order story
+    is the Norwegian-versus-English chronology gap already named in
+    franchise.yaml and works.yaml, plus the strand structure (Harry Hole,
+    Doktor Proktor, Olav Johansen, Kongeriket, standalones) which lives in
+    works.yaml as subseries and must not be re-presented as periodisation.
+  - >
+    achievements: no era_reader badge is possible for this wing. Any
+    achievement here has to count works, subseries or years.
+openQuestions:
+  - >
+    The concurrency argument is the load-bearing claim, not the absence of a
+    citation. Should a received periodisation of the crime novels alone
+    surface later, it still cannot ship as an era while the children's books
+    and travel writing fall inside its years, because era membership is
+    computed from the publication year alone.
