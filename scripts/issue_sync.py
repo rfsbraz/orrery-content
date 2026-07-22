@@ -179,8 +179,30 @@ def main() -> int:
         # tracker item describing work that is already in main.
         done = {f"{wing}/{k}/{i}" for k, i, _ in A.jobs(r)}
         for key, issue in have.items():
-            if key.startswith(f"{wing}/") and key not in done and issue["state"] == "OPEN":
-                to_close.append((key, issue["number"]))
+            if not (key.startswith(f"{wing}/") and key not in done):
+                continue
+            if issue["state"] != "OPEN":
+                continue
+            # An asset that exists is normally proof the issue is finished. It
+            # is not, in two cases, and both were learned by getting them wrong:
+            #
+            #   asset:ready      art is attached and waiting to be wired in.
+            #                    Closing here throws that work away silently.
+            #   art:human-offer  somebody is offering human art for a slot a
+            #                    generated placeholder already fills.
+            #
+            # The blind spot is REDRAWS. `asset_audit` asks "does a file exist
+            # at this path", so an issue asking for a BETTER image of something
+            # already drawn looks identical to finished work. That closed #190
+            # - a redraw request whose replacement image had already been
+            # attached - two hours after the art landed and before anything
+            # wired it in.
+            labels = {l.get("name") for l in (issue.get("labels") or [])}
+            if labels & {"asset:ready", "art:human-offer"}:
+                print(f"  keep     #{issue['number']} {key} "
+                      f"({'art attached' if 'asset:ready' in labels else 'human art offered'})")
+                continue
+            to_close.append((key, issue["number"]))
 
     if a.limit:
         to_file = to_file[: a.limit]
