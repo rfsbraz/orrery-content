@@ -10,6 +10,73 @@ The **canon content** for [Orrery](https://github.com/rfsbraz/orrery) (codename)
 
 It deliberately holds **no app code and no secrets**, so it can be opened to community contribution independently of the app.
 
+## How this is made
+
+**This is an AI-assisted project, and it says so up front.**
+
+Reconstructing an author's complete bibliography, their life, the prizes and
+losses and quarrels around the work, and the world events that reached them, is
+a genuinely large amount of research. One wing runs to hundreds of dated,
+sourced claims. Doing ten of them by hand is a multi-year job for a team that
+does not exist here. Agents make it possible at all.
+
+What that does **not** mean is that a model's output goes straight in.
+
+- **Every claim carries a source in the file next to it.** Not a bibliography at
+  the end, a citation on the entry. Anything about a living person's health,
+  money, legal trouble or family needs two independent sources.
+- **A human reads and approves every pull request.** Nothing is canon until a
+  person merges it. That is the whole point of the gate, and it does not get
+  skipped when the queue is long.
+- **`scripts/validate.py` has to be green.** Schema, references, spoiler
+  boundaries, asset rules, contrast floors. It is a real gate, and it fails
+  builds.
+- **The record is the audit.** Every change is a commit with a diff. If a fact
+  is wrong you can see when it arrived, what it replaced, and what was cited for
+  it.
+
+We are also open about where the machinery fails, because that is more useful
+than a reassurance. Agents working on this repo have attributed a tax dispute to
+Agatha Christie from an article about Chris Christie, invented a birth date by
+over-reading a lead, given a novelist a death that belonged to one of his
+characters, and cited backlist sales figures traced to a dozen sites all quoting
+each other. Every one was caught before merge, by the sourcing rules, the
+validator or a human reading the diff. That is what the gates are for.
+[`docs/TOOLING.md`](docs/TOOLING.md) documents the failure modes in full.
+
+### The data belongs to nobody
+
+Facts about books are not ours to own. This repo exists so that the work of
+assembling them is done once, in the open, in a format anyone can take.
+
+### Use the tools, or don't
+
+The agents and scripts that built this are in the repo:
+`.claude/skills/` and `scripts/`. **You are welcome to use them for your own
+contributions**, and equally welcome to write YAML by hand and never touch them.
+Both arrive at the same place: a pull request a human reads.
+
+Being open about your method is not a mark against a contribution here. A PR
+saying "drafted with an agent, I verified the dates against these two sources,
+and I dropped the prize year because I could not confirm it" is a good PR.
+
+See [`docs/TOOLING.md`](docs/TOOLING.md).
+
+### About the art
+
+The illustrations are generated, and they are placeholders with no seniority.
+
+**Human art always wins.** If you draw something that fits a moment on a
+timeline, or know of public-domain or openly-licensed work that does, open an
+issue with the `art:human-offer` label. It replaces the generated image, it
+carries your name in the credit, and the generated file is deleted rather than
+kept as an alternative. That holds even when the generated one is decent and the
+wing looks finished.
+
+The images exist because a few hundred illustrations could not be commissioned,
+not because generation is the preferred outcome. The rule is written down in
+[`docs/VISUAL.md`](docs/VISUAL.md) §1b so it survives us being busy.
+
 ## Why a separate repo
 
 Content is curated on a different cadence, by different people (eventually community curators), than the app is built. Splitting it means content PRs never touch app code, content gets its own review and schema validation, and the "contribute a reading order" flow is a clean, low-barrier pull request.
@@ -46,15 +113,16 @@ Authored Claude Code skills under `.claude/skills/`, each with its own rules:
 - **`spoiler-audit`** - place `spoilerAfter` boundaries, preferring a rewrite that needs no boundary over a redaction.
 - **`event-resonance`** - decide which shared global events actually reached a specific author, and why. The engine gates them to the author's lifetime for free; this skill rules on the residue.
 - **`reading-orders`** - author, audit and keep honest the additional reading orders; the default publication order is derived, never hand-written.
-- **`where-to-start`** - entry paths readers actually recommend, sourced rather than invented, each naming what it costs.
 - **`eras`** - creative periods taken from critic, author or community consensus. Fewer, or none, beats coined.
 - **`editions`** - verified buyable editions: ISBN discipline, region-strict language codes, honest coverage.
 - **`translation`** - locale overlays: prose only, region-strict, with the traps that shipped green CI written down.
+- **`visual-language`** - settle a wing's `theme.art`: the motifs, line character and emblem every drawing for that author must obey. Gates all asset generation.
+- **`whats-new`** - read-only: what changed in the world since a wing was last curated, and which stages that routes to.
 - **`wing-audit`** - the final critic. The seams no single agent sees, plus the content types no other skill owns.
 
 ### Completing a whole author
 
-The **[`/complete-author`](.claude/commands/complete-author.md)** command runs
+The **[`/author`](.claude/commands/author.md)** command runs
 all of the above in dependency order, with the gates between them. Order is not
 cosmetic: stages that write the same file must not run in parallel, completeness
 must settle the work list before anything annotates works, and the spoiler audit
@@ -77,4 +145,8 @@ The app does **not** read these files at runtime. A sync step (at deploy / in CI
 
 ## Status
 
-Live. First franchise: **Stephen King** (77 works, 4 authors, curated orders, aura, characters, start-here paths). Next wave in progress: Discworld, the Cosmere, The Wheel of Time, Agatha Christie, and João Tordo (the Portuguese-market and sparse-metadata stress case).
+Live at [orrery.homeberry.me](https://orrery.homeberry.me). **Ten wings, 483 works, 31 authors**, full pt-PT locale coverage.
+
+Agatha Christie, Stephen King, Terry Pratchett, Robert Jordan, Brandon Sanderson, Chuck Palahniuk, Gillian Flynn, and three Portuguese wings (Valter Hugo Mãe, José Luís Peixoto, João Tordo) which are the sparse-metadata stress case.
+
+A wing is an author and spans their complete works; shared universes are subseries inside it, which is why the Cosmere, the Discworld and the Wheel of Time live under the writers who made them.

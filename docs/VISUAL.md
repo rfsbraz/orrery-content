@@ -109,6 +109,33 @@ Two constraints hold whichever carrier is used:
   its own careful attention in the prompt, and it is never a floating diagram
   with nothing holding it.
 
+## 1b. Generated art is a placeholder with no seniority
+
+Every sketch in this catalogue is generated, and none of it has tenure. **Human
+art always wins.** If someone offers a drawing that fits a moment on a timeline,
+it replaces the generated one, and the generated file is deleted rather than
+kept as an alternative.
+
+That is a standing rule, not a case-by-case judgement, and it holds even when
+the generated image is good and the wing looks settled. The images exist because
+188 assets could not be commissioned, not because generation is the preferred
+outcome.
+
+In practice:
+
+- A generated asset is never a reason to decline an offered one.
+- Human work carries its author's name in `sketchCredit`, and the terms it was
+  given under. Generated assets say `Generated for Orrery (gpt-image-1)`, which
+  is how you tell them apart at a glance and how you find what is replaceable.
+- An offer that does not fit the wing's visual language is a reason to talk
+  about the visual language, not an automatic no. The house style serves the
+  catalogue; it does not outrank a real artist's work.
+- Recommendations count too. If public-domain or openly-licensed art exists that
+  suits a moment, that is worth more than anything we can generate, and the
+  rights check is a normal part of accepting it.
+
+Anyone offering art should open an issue on this repo. See the README.
+
 ## 2. The model
 
 **Target: `gpt-image-1`.** Not DALL-E 3, which cannot take reference images and
