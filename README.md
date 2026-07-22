@@ -1,6 +1,6 @@
 # Orrery content
 
-The **canon content** for [Orrery](https://github.com/rfsbraz/orrery) (codename) - a contextual reading-order platform. This repo is the curated, version-controlled source of truth for everything the app renders as canon:
+The **canon content** for [Orrery](https://github.com/rfsbraz/orrery), a contextual reading-order platform. This repo is the curated, version-controlled source of truth for everything the app renders as canon:
 
 - **Franchises** - an author's world, a shared universe, or a series.
 - **Works** - the bibliography (the abstract books; editions/covers are metadata).
