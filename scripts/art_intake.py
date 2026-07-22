@@ -179,6 +179,11 @@ def main() -> int:
             print(f"        FAILED - no entry '{spec['entry']}' in {spec['file']}")
             failed += 1
             continue
+        # `sketch` without `sketchCredit` fails validation, so writing one
+        # without the other leaves the wing red and the issue un-closable.
+        # The validator wants the credit to say the image was generated.
+        set_field(spec["file"], spec["entry"], "images.sketchCredit",
+                  "Generated for Orrery (gpt-image-1)")
         if not a.keep_temp:
             os.remove(tmp)
         print("        wired in")
