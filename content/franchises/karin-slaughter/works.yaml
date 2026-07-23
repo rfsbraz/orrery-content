@@ -1,11 +1,19 @@
 # Bibliography (works) - IDs are STABLE and permanent (user data references
-# them). Dates are year-precision (docs/SCHEMA.md). Complete first draft: all
-# 6 Grant County novels, all 12 Will Trent novels to date, both North Falls
-# novels (the second still forthcoming), 6 standalone novels, and 10 short
-# stories/novellas that clear the bar. Subseries groupings follow the
-# publisher's own site (karinslaughter.com), which files every book under
-# exactly one of "Will Trent Series", "North Falls Series", "Grant County
-# Series" or "Standalone Novels" - no invented grouping.
+# them). Dates are year-precision (docs/SCHEMA.md). All 6 Grant County
+# novels, all 12 Will Trent novels to date, both North Falls novels (the
+# second still forthcoming), 6 standalone novels, and 17 short stories/
+# novellas that clear the bar. Subseries groupings follow the publisher's
+# own site (karinslaughter.com), which files every book under exactly one of
+# "Will Trent Series", "North Falls Series", "Grant County Series" or
+# "Standalone Novels" - no invented grouping.
+#
+# SHORT FICTION HAS A DEEP REISSUE TRAIL: several of Slaughter's shorts were
+# first published inside someone else's anthology, then later resold as
+# standalone digital singles under their own cover, sometimes years apart.
+# Retail metadata (Google Books, Goodreads, Amazon) generally records the
+# standalone reissue date, not the true first appearance - each short below
+# is dated to the earliest publication a primary or corroborated source
+# could confirm, with the reissue history in its own note.
 #
 # THE WING'S STRUCTURAL SPINE: Sara Linton is the bridge between Grant County
 # and Will Trent. The publisher's own copy states the fact of the crossover
@@ -421,8 +429,31 @@
     A multi-author "novel in sixteen parts" with Lee Child, Peter Robinson,
     John Connolly, Laura Lippman and others credited on the cover; no single
     editor of record was found, and none of the co-authors has an author
-    entity in this catalogue yet, so no withAuthorIds is set.
+    entity in this catalogue yet, so no withAuthorIds is set. Slaughter wrote
+    the opening chapter, "Root Bound", and the closing chapter, "The Blessing
+    of Brokenness" (its own entry below, since it was later resold as an
+    individual digital short).
   sources:
+    - https://www.karinslaughter.com/like-a-charm
+
+- id: karin-slaughter/the-blessing-of-brokenness
+  title: "The Blessing of Brokenness"
+  authorIds: [karin-slaughter]
+  published: 2004
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    Overseeing the repair of a broken altar cross at her small Georgia church
+    in the days before Christmas, Mary Lou Dixon confronts a year of quiet
+    defeat, until an unexpected act of kindness from the work crew's foreman
+    changes what she is willing to accept.
+  note: >
+    Slaughter's closing chapter for Like a Charm (2004; see the entry
+    above), later reissued as its own standalone digital short (Random
+    House, 2012), whose own product listing states it was "previously
+    published in Like a Charm."
+  sources:
+    - https://books.google.com/books/about/The_Blessing_of_Brokenness_Short_Story.html?id=2womlD3WcTgC
     - https://www.karinslaughter.com/like-a-charm
 
 - id: karin-slaughter/martin-misunderstood
@@ -460,13 +491,37 @@
     A collection of Slaughter's standalone short fiction: dark, provocative
     explorations of love, death and the secrets people keep.
   note: >
-    Dated to the original 2011 print collection (four stories). The current
-    audio edition adds "Cold, Cold Heart" (2016) and the previously
-    unpublished "The Truth About Pretty Girls," so the audio edition's full
-    contents postdate this entry's year; both facts are recorded rather than
-    resolved to one date.
+    Dated to the original Mulholland Books print collection (26 May 2011),
+    whose title story won the Edgar Award for Best Short Story in 2013. Its
+    other constituent stories each have an independent publication history
+    of their own and are catalogued separately at their true first
+    publication: The Blessing of Brokenness (2004, in Like a Charm), Cold,
+    Cold Heart (2011, in First Thrills), and Necessary Women, The Mean Time
+    and The Truth About Pretty Girls (2013).
   sources:
     - https://www.karinslaughter.com/the-unremarkable-heart
+    - https://en.wikipedia.org/wiki/The_Unremarkable_Heart
+
+- id: karin-slaughter/cold-cold-heart
+  title: "Cold, Cold Heart"
+  authorIds: [karin-slaughter]
+  published: 2011
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    A spurned ex-wife, facing her ex-husband's terminal illness, sees one
+    last chance to settle the score.
+  note: >
+    First published in First Thrills: Volume 3 (Forge Books, 7 June 2011),
+    an anthology edited by Lee Child; the story was later resold as its own
+    standalone digital short (2016), and the author's own site states
+    plainly that it "was previously in First Thrills... and now available
+    on its own." The other First Thrills Volume 3 contributors (Jeffery
+    Deaver, Rebecca Cantrell, Gregg Hurwitz, Theo Gangi) are unrelated to
+    this author and outside this wing's scope.
+  sources:
+    - https://www.karinslaughter.com/a-cold-cold-heart
+    - https://books.google.com/books/about/First_Thrills_Volume_3.html?id=Db6J_lDToZMC
 
 - id: karin-slaughter/snatched
   title: "Snatched"
@@ -500,6 +555,63 @@
   sources:
     - https://www.karinslaughter.com/busted
 
+- id: karin-slaughter/necessary-women
+  title: "Necessary Women"
+  authorIds: [karin-slaughter]
+  published: 2013
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    In a border town between Georgia and Alabama, a fourteen-year-old girl
+    who has just watched her mother die is told by her father that she must
+    now do all the necessary things a woman does, and grows into her own
+    idea of what that means.
+  note: >
+    First published as a digital short paired with The Mean Time (Random
+    House, 17 October 2013); later included in the audio compilation The
+    Unremarkable Heart and Other Stories.
+  sources:
+    - https://www.overdrive.com/media/1213609/necessary-women-and-the-mean-time-short-stories
+    - https://karinslaughterbooklist.com/karin-slaughter-necessary-women/
+
+- id: karin-slaughter/the-mean-time
+  title: "The Mean Time"
+  authorIds: [karin-slaughter]
+  published: 2013
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    On a sweltering summer day, twelve-year-old Peanut and her cousins ride
+    into a small Georgia town on the back of her Uncle Toby's trailer, at
+    the exact age she is bound to do something she will regret.
+  note: >
+    First published as a digital short paired with Necessary Women (Random
+    House, 17 October 2013); later included in the audio compilation The
+    Unremarkable Heart and Other Stories.
+  sources:
+    - https://www.overdrive.com/media/1213609/necessary-women-and-the-mean-time-short-stories
+    - https://www.goodreads.com/book/show/25532070-the-mean-time
+
+- id: karin-slaughter/the-truth-about-pretty-girls
+  title: "The Truth About Pretty Girls"
+  authorIds: [karin-slaughter]
+  published: 2013
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    Forty-three-year-old Jude Hanson returns to Poulet, the Georgia mountain
+    town she grew up in, and to the mother she had hoped never to see again.
+  note: >
+    Written as the new, previously unpublished story for the audiobook
+    Karin Slaughter: Short Story Collection (Audible, 30 May 2013), where
+    the author's own site describes it as "never-before-seen"; later
+    included in the audio compilation The Unremarkable Heart and Other
+    Stories. A separate Kindle text edition lists 24 December 2014, which
+    postdates the story's audio premiere.
+  sources:
+    - https://www.karinslaughter.com/the-unremarkable-heart
+    - https://www.goodreads.com/book/show/17614641-the-truth-about-pretty-girls
+
 - id: karin-slaughter/blonde-hair-blue-eyes
   title: "Blonde Hair, Blue Eyes"
   authorIds: [karin-slaughter]
@@ -516,17 +628,41 @@
     - https://www.karinslaughter.com/blonde-hair-blue-eyes
     - https://en.wikipedia.org/wiki/Karin_Slaughter
 
-- id: karin-slaughter/cold-cold-heart
-  title: "Cold, Cold Heart"
+- id: karin-slaughter/go-deep
+  title: "Go Deep"
   authorIds: [karin-slaughter]
-  published: 2016
+  published: 2015
   subseries: null
   canonTier: apocrypha
   synopsis: >
-    A standalone digital short: a spurned ex-wife, facing her ex-husband's
-    terminal illness, sees one last chance to settle the score.
+    Charlie Lam has clawed his way from poverty to running an Atlanta car
+    dealership, and a simple, quietly criminal arrangement with a
+    well-connected customer turns into far more trouble than the envelope of
+    cash was worth.
+  note: >
+    Published as an individual digital short and as part of the collection
+    Three Twisted Stories (Random House, 10 February 2015).
   sources:
-    - https://www.karinslaughter.com/a-cold-cold-heart
+    - https://books.google.com/books/about/Go_Deep.html?id=3Ux9AwAAQBAJ
+    - https://karinslaughterbooklist.com/karin-slaughter-go-deep/
+
+- id: karin-slaughter/remmy-rothstein-toes-the-line
+  title: "Remmy Rothstein Toes the Line"
+  authorIds: [karin-slaughter]
+  published: 2015
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    World Record adjudicator Mindy Patel travels into the Georgia bayou to
+    verify Remmy Rothstein's claim on the world's longest tongue, and finds
+    his family stranger, and the stakes higher, than any record she has
+    certified before.
+  note: >
+    Published as an individual digital short and as part of the collection
+    Three Twisted Stories (Random House, 10 February 2015).
+  sources:
+    - https://books.google.com/books/about/Remmy_Rothstein_Toes_the_Line.html?id=R4yDBgAAQBAJ
+    - https://karinslaughterbooklist.com/karin-slaughter-remmy-rothstein-toes-the-line/
 
 - id: karin-slaughter/last-breath
   title: "Last Breath"
@@ -543,6 +679,29 @@
   sources:
     - https://www.karinslaughter.com/last-breath
     - https://en.wikipedia.org/wiki/Karin_Slaughter
+
+- id: karin-slaughter/short-story
+  title: "Short Story"
+  authorIds: [karin-slaughter]
+  published: 2017
+  subseries: "Grant County"
+  canonTier: apocrypha
+  synopsis: >
+    Georgia, 1993: a long weekend goes badly wrong for young Birmingham cop
+    Jeffrey Tolliver, who lands in jail on suspicion of murder just as
+    veteran investigators Joe Pritchard and Lincoln Perry arrive in town
+    chasing a case that turns out to be the same one.
+  note: >
+    A crossover co-written with Michael Koryta, pairing Tolliver with
+    Koryta's Pritchard and Perry, years before Tolliver's move to Heartsdale;
+    the piece is literally titled "Short Story". First published in the
+    anthology MatchUp (Simon & Schuster, edited by Lee Child, 13 June 2017)
+    and later issued as a standalone ebook (23 July 2019). Michael Koryta
+    has no author entity yet in this catalogue, so no withAuthorIds is set
+    here, the same handling as Cleaning the Gold below.
+  sources:
+    - https://www.goodreads.com/book/show/51532100-short-story
+    - https://www.amazon.com/Short-Story-MatchUp-Collection-Slaughter-ebook/dp/B07SJV4DD2
 
 - id: karin-slaughter/cleaning-the-gold
   title: "Cleaning the Gold"
