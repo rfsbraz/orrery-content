@@ -125,7 +125,9 @@ _PIL_WARNED = False
 KNOWN_BAD_ASSETS = {
     "assets/valter-hugo-mae/antes-dos-romances.webp": "fully opaque, no alpha at all",
     "assets/valter-hugo-mae/vhm-ape-prize-2021.webp": "artwork runs off three edges",
-    "assets/chuck-palahniuk/palahniuk-father-murdered-1999.webp": "right edge is a hard crop",
+    # The Palahniuk wing was fully redrawn against the rewritten visual language
+    # and every asset now passes the §5c checks, so its exemption is gone. The
+    # two entries left are Valter Hugo Mãe, still awaiting its redraw.
 }
 _ALLOWED_SEEN_FAILING = set()
 

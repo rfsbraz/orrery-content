@@ -287,7 +287,7 @@ def key_chroma(im: Image.Image, key=CHROMA, tol: int = 90, soft: int = 60):
     return Image.fromarray(np.clip(out, 0, 255).astype(np.uint8), "RGBA"), keyed
 
 
-def dissolve_edge(im, slug_seed: str, depth: float = 0.04):
+def dissolve_edge(im, slug_seed: str, depth: float = 0.08):
     """Erode the artwork's edge into an uneven, ink-running-out fade.
 
     THE EDGE IS A FILTER, NOT A PROMPT INSTRUCTION. This is the highest-leverage
@@ -342,26 +342,32 @@ def dissolve_edge(im, slug_seed: str, depth: float = 0.04):
     # event and a 1536 plate dissolve by the same visual amount.
     reach = max(6.0, depth * min(h, w))
 
-    # Proximity to the OUTSIDE, not to any transparency. Blurring the alpha
-    # channel directly was the first attempt and it mauls the artwork: on a
-    # composition with gaps between its objects the blur never recovers to 1.0
-    # anywhere, so the noise term bites into the interior and the result is a
-    # blotchy, moth-eaten drawing rather than a dissolving edge. Verified by
-    # looking at it - `vhm-two-losses-2023` lost its flowers.
+    # Feather inward from the FRAME EDGE, geometrically - not from existing
+    # transparency. The first version eroded inward from the transparent OUTSIDE
+    # (a flood from the border through `alpha < 20`), which is correct only when
+    # the artwork leaves a transparent margin. It does not, in the style this
+    # catalogue actually settled on: an event sketch is a full-bleed scene, and
+    # `prepare_asset` trims to the alpha bounding box, so after trim the art
+    # touches all four frame edges and there is no transparent outside left to
+    # erode from. The dissolve then bit only the few corner nicks the trim left,
+    # and deepening `reach` did nothing - measured 0.99 -> 0.98 opaque across a
+    # 3x depth increase. The edge has to be defined by the frame, because the
+    # frame is where the card will clip the art.
     #
-    # The artwork's edge is where it meets the OUTSIDE specifically, which is
-    # the transparent region connected to the frame border. Holes between
-    # objects are interior and must not dissolve.
-    outside = _flood_from_border(alpha < 20)
-    prox = np.asarray(
-        Image.fromarray((outside * 255).astype(np.uint8), "L").filter(ImageFilter.GaussianBlur(reach))
-    ).astype(np.float32) / 255.0
+    # Interior holes and detail are still safe: this only ever MULTIPLIES alpha
+    # by `fade`, and `fade` is 1 everywhere more than `reach` from a frame edge,
+    # so a transparent gap between objects stays transparent and an interior
+    # flower stays opaque. The flood-from-outside primitive is kept above for the
+    # chroma despill, where "connected to the border" is exactly the right test.
+    yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
+    edge_dist = np.minimum.reduce([xx, yy, (w - 1) - xx, (h - 1) - yy])
 
-    # In the deep interior prox is ~0, so the numerator is at least 0.55 and the
-    # ramp clips to 1 no matter what the noise says. That is the invariant that
-    # keeps this an edge treatment: the noise can only ever act where prox has
-    # already risen, which is within `reach` of the outside.
-    fade = np.clip((0.55 + 0.40 * n - prox) / 0.30, 0.0, 1.0)
+    # The transparent band's depth varies along the border with the noise, so
+    # the feather is ragged like ink running out, never a ruled soft border.
+    # Eaten to between a quarter of `reach` and all of it.
+    thr = reach * (0.25 + 0.75 * n)
+    fade = np.clip(edge_dist / np.maximum(thr, 1.0), 0.0, 1.0)
+
     out = np.stack([rgb[..., 0], rgb[..., 1], rgb[..., 2], alpha * fade], axis=-1)
     return Image.fromarray(np.clip(out, 0, 255).astype(np.uint8), "RGBA")
 
