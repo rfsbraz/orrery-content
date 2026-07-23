@@ -153,6 +153,39 @@ def recover_alpha(im: Image.Image):
 CHROMA = (255, 0, 255)   # magenta: no ink, umber, parchment or terracotta is near it
 
 
+def _flood_from_border(mask):
+    """Which cells of a boolean mask are reachable from the frame border?
+
+    Four-way flood, seeded from every border cell already in the mask. Used to
+    separate key spill (contiguous with the background, which §5b guarantees
+    touches all four edges) from an intentional magenta-hued wash inside the
+    picture, which is not.
+
+    Plain iterative dilation rather than anything cleverer: this is an
+    authoring tool run on one image at a time, a corona is at most a couple of
+    hundred pixels deep, and a dependency on scipy to save a second of wall
+    clock is a bad trade.
+    """
+    import numpy as np
+
+    reach = np.zeros_like(mask)
+    reach[0, :] = mask[0, :]
+    reach[-1, :] = mask[-1, :]
+    reach[:, 0] = mask[:, 0]
+    reach[:, -1] = mask[:, -1]
+
+    while True:
+        grown = reach.copy()
+        grown[1:, :] |= reach[:-1, :]
+        grown[:-1, :] |= reach[1:, :]
+        grown[:, 1:] |= reach[:, :-1]
+        grown[:, :-1] |= reach[:, 1:]
+        grown &= mask
+        if grown.sum() == reach.sum():
+            return grown
+        reach = grown
+
+
 def key_chroma(im: Image.Image, key=CHROMA, tol: int = 90, soft: int = 60):
     """Turn a solid chroma background into real alpha.
 
@@ -163,33 +196,213 @@ def key_chroma(im: Image.Image, key=CHROMA, tol: int = 90, soft: int = 60):
     drawn sky, which is why that flood ate holes in the artwork.
 
     Fully keyed below `tol`, fully opaque above `tol + soft`, ramped between so
-    antialiased edges keep partial alpha instead of a hard staircase. Then a
-    despill pass pulls the magenta fringe out of the edge pixels, which would
-    otherwise glow pink against a dark page.
+    antialiased edges keep partial alpha instead of a hard staircase.
+
+    THE DESPILL PASS
+
+    The first version of this despilled with `excess = min(r, b) - g`, which is
+    only correct when the spill is balanced - true magenta, red and blue equal.
+    Real spill is a warm mauve where red leads: the measured corona on five
+    shipped assets sat at RGB (148, 122, 124), for which that formula computes
+    an excess of 2 and returns (146, 122, 122). Still magenta, still visible,
+    and it shipped five times because nothing measured the output.
+
+    The correct operation for a magenta key is to lift green to the mean of the
+    other two channels: (148, 136, 124) is a warm neutral tan, which is what
+    that pixel was before the key bled into it. Green is the minimum channel in
+    magenta by definition, so the gate is `r > g and b > g` - and no colour in
+    this catalogue's palette has green as its minimum, which is exactly why
+    magenta was chosen as the key.
+
+    Except one: an intentional mauve or ashen cast, which docs/VISUAL.md §4a
+    explicitly allows for grief. A global despill would flatten that to grey and
+    silently overrule an editorial decision. So the strength is weighted by
+    PROXIMITY TO THE KEYED REGION - spill is a boundary phenomenon and decays
+    inward, while an intentional wash sits in the middle of the picture. The
+    blurred key mask is that proximity field, for free.
     """
-    rgb = im.convert("RGB")
-    w, h = rgb.size
-    src = rgb.load()
-    out = Image.new("RGBA", (w, h))
-    dst = out.load()
+    try:
+        import numpy as np
+    except ImportError:  # pragma: no cover - authoring tool, not CI
+        raise SystemExit(
+            "--chroma needs numpy (pip install numpy). It is not a CI "
+            "dependency: this is an authoring tool."
+        )
+    from PIL import ImageFilter
+
+    rgb = np.asarray(im.convert("RGB")).astype(np.float32)
+    r, g, b = rgb[..., 0], rgb[..., 1], rgb[..., 2]
     kr, kg, kb = key
-    keyed = 0
-    for y in range(h):
-        for x in range(w):
-            r, g, b = src[x, y]
-            d = abs(r - kr) + abs(g - kg) + abs(b - kb)
-            if d <= tol:
-                dst[x, y] = (0, 0, 0, 0)
-                keyed += 1
-                continue
-            alpha = 255 if d >= tol + soft else int(255 * (d - tol) / soft)
-            # despill: a pixel carrying the key's colour cast gets pulled back
-            # toward neutral rather than left glowing at the edge
-            excess = min(r, b) - g
-            if excess > 0:
-                r, b = r - excess, b - excess
-            dst[x, y] = (r, g, b, alpha)
-    return out, keyed
+
+    # Pass 1: the flat background, by distance to the key colour. This finds
+    # only the untouched chroma, which is the point - it is the one region we
+    # can identify with no risk of eating artwork.
+    d = np.abs(r - kr) + np.abs(g - kg) + np.abs(b - kb)
+    flat = d <= tol
+    keyed = int(flat.sum())
+
+    # Pass 2: magenta CHROMA, not distance to the key. A corona is a gradient
+    # from the key into the artwork, and its outer half is unambiguously
+    # background while sitting far outside `tol` - (201, 61, 189) is 181 away
+    # from pure magenta and survived every earlier version of this function.
+    # Green is the minimum channel in magenta, so `min(r,b) - g` measures how
+    # magenta a pixel is regardless of how bright or washed out it has become.
+    m = np.minimum(r, b) - g
+    # Deliberately near zero, and NOT the same threshold the alpha ramp uses
+    # below. This one only decides which pixels belong to the spill REGION, and
+    # the innermost tip of a corona is barely magenta at all - the measured one
+    # tapers to min(r,b) - g == 2 while still carrying a visible cast. Set this
+    # to the ramp's 20 and that tip escapes, which is worth 8 points of residual
+    # cast. Nothing in the palette has green as its minimum channel, so a low
+    # threshold cannot leak into artwork, and reachability is doing the real
+    # work of keeping it out.
+    magentaish = m > 4.0
+
+    # Which of those are spill? An intentional mauve or ashen wash (VISUAL.md
+    # §4a allows one for grief) is magenta-hued too, and no per-pixel colour
+    # test can tell them apart. CONNECTIVITY can: §5b requires the chroma to be
+    # visible along all four edges, so the background touches the border, and a
+    # corona is by definition contiguous with it. A wash inside the picture is
+    # not - it is surrounded by artwork.
+    #
+    # A proximity blur was tried here first and is the wrong primitive: it
+    # decays over a fixed radius while a corona has no fixed width, so the
+    # inner half of a wide one kept its cast. Reachability has no radius.
+    reach = _flood_from_border(magentaish)
+    soft_reach = np.asarray(
+        Image.fromarray((reach * 255).astype(np.uint8), "L").filter(ImageFilter.GaussianBlur(1.5))
+    ).astype(np.float32) / 255.0
+
+    cut = np.clip((m - 20.0) / 70.0, 0.0, 1.0) * soft_reach
+    alpha = np.clip((d - tol) / soft, 0.0, 1.0) * (1.0 - cut) * 255.0
+
+    # Whatever survives inside the spill region is despilled by lifting green to
+    # the mean of the other two channels, the correct operation for a magenta
+    # key. Artwork outside that region is never touched.
+    spill = np.maximum((r + b) / 2.0 - g, 0.0)
+    spill[(r <= g) | (b <= g)] = 0.0
+    g = g + spill * soft_reach
+
+    out = np.stack([r, g, b, alpha], axis=-1)
+    return Image.fromarray(np.clip(out, 0, 255).astype(np.uint8), "RGBA"), keyed
+
+
+def dissolve_edge(im, slug_seed: str, depth: float = 0.04):
+    """Erode the artwork's edge into an uneven, ink-running-out fade.
+
+    THE EDGE IS A FILTER, NOT A PROMPT INSTRUCTION. This is the highest-leverage
+    cohesion decision in the pipeline and it took two finished wings to see it:
+    asking the model for a hand-torn or dissolving edge produces forty slightly
+    different edges, and "these don't feel like one publication" is mostly the
+    sum of those differences. OpenAI list layout and framing as a known weakness
+    of the model, so the edge was being decided by the least reliable part of
+    the process and then never corrected. Applied here it is identical in
+    character across the whole catalogue, by construction, for free.
+
+    It must not look like a filter, which rules out the obvious radial vignette:
+    a machine-even fade reads as Photoshop, and §5a's whole point is artwork
+    that dissolves the way ink runs out. So the alpha is modulated by smoothed
+    value noise at two frequencies before the ramp is applied, which makes the
+    boundary advance and retreat irregularly and at different rates on different
+    sides - the thing a prompt was being asked for and could not guarantee.
+
+    Seeded from the asset's own slug, so an asset's edge is stable across
+    re-runs (re-filing one does not silently change it) while no two assets get
+    the same one.
+
+    KNOWN COST: thin structures that reach close to the outside get eroded -
+    flower stems, wires, bare branches, a mast. That is inherent to an edge
+    treatment and not a bug, but it is a reason to compose with the subject
+    inside the frame rather than running off it (§5b already asks for a margin).
+    If an asset genuinely needs its filigree, `--no-dissolve` is there; using it
+    means that asset's edge no longer matches the catalogue, so it is a real
+    decision rather than an escape hatch.
+    """
+    import numpy as np
+    from PIL import ImageFilter
+
+    rng = np.random.default_rng(abs(hash(slug_seed)) % (2 ** 32))
+    a = np.asarray(im).astype(np.float32)
+    rgb, alpha = a[..., :3], a[..., 3]
+    h, w = alpha.shape
+
+    def noise(cells):
+        """Smoothed value noise, one value per `cells`-ish block, scaled up."""
+        gh, gw = max(2, h // cells), max(2, w // cells)
+        small = rng.random((gh, gw)).astype(np.float32)
+        img = Image.fromarray((small * 255).astype(np.uint8), "L").resize((w, h), Image.BICUBIC)
+        return np.asarray(img.filter(ImageFilter.GaussianBlur(3))).astype(np.float32) / 255.0
+
+    # Two frequencies: the coarse one decides which whole stretches of the edge
+    # pull back, the fine one breaks those stretches into grain. One frequency
+    # alone gives either a wobbly outline or a fuzzy one, never ink.
+    n = 0.6 * noise(max(8, min(h, w) // 12)) + 0.4 * noise(max(3, min(h, w) // 60))
+
+    # How far in the fade reaches, as a fraction of the smaller side, so a 1024
+    # event and a 1536 plate dissolve by the same visual amount.
+    reach = max(6.0, depth * min(h, w))
+
+    # Proximity to the OUTSIDE, not to any transparency. Blurring the alpha
+    # channel directly was the first attempt and it mauls the artwork: on a
+    # composition with gaps between its objects the blur never recovers to 1.0
+    # anywhere, so the noise term bites into the interior and the result is a
+    # blotchy, moth-eaten drawing rather than a dissolving edge. Verified by
+    # looking at it - `vhm-two-losses-2023` lost its flowers.
+    #
+    # The artwork's edge is where it meets the OUTSIDE specifically, which is
+    # the transparent region connected to the frame border. Holes between
+    # objects are interior and must not dissolve.
+    outside = _flood_from_border(alpha < 20)
+    prox = np.asarray(
+        Image.fromarray((outside * 255).astype(np.uint8), "L").filter(ImageFilter.GaussianBlur(reach))
+    ).astype(np.float32) / 255.0
+
+    # In the deep interior prox is ~0, so the numerator is at least 0.55 and the
+    # ramp clips to 1 no matter what the noise says. That is the invariant that
+    # keeps this an edge treatment: the noise can only ever act where prox has
+    # already risen, which is within `reach` of the outside.
+    fade = np.clip((0.55 + 0.40 * n - prox) / 0.30, 0.0, 1.0)
+    out = np.stack([rgb[..., 0], rgb[..., 1], rgb[..., 2], alpha * fade], axis=-1)
+    return Image.fromarray(np.clip(out, 0, 255).astype(np.uint8), "RGBA")
+
+
+def neutralise(im, strength: float = 1.0):
+    """Pull the paper white point back to neutral.
+
+    gpt-image output skews warm - widely reported, not officially acknowledged,
+    and visible in this catalogue: the Palahniuk wing's `theme.art` asks for
+    "cold white or pale institutional grey stock, not warm paper" and four of
+    its assets came back warm cream anyway. The prompt was not being ignored;
+    the model's own bias was overriding it, and no amount of rewording fixes a
+    global cast.
+
+    So it is corrected deterministically. The brightest opaque decile is the
+    paper, and a per-channel gain that makes THAT neutral leaves the drawing's
+    own colour relationships intact while removing the cast sitting over all of
+    them. `strength` scales the correction, since a warm wing (umber, terracotta)
+    is meant to be warm and only wants the cast taken off, not the character.
+    """
+    import numpy as np
+
+    a = np.asarray(im).astype(np.float32)
+    rgb, alpha = a[..., :3], a[..., 3]
+    opaque = alpha > 200
+    if not opaque.any():
+        return im
+
+    lum = 0.2126 * rgb[..., 0] + 0.7152 * rgb[..., 1] + 0.0722 * rgb[..., 2]
+    cut = np.percentile(lum[opaque], 90)
+    paper = opaque & (lum >= cut)
+    if paper.sum() < 64:
+        return im
+
+    mean = rgb[paper].mean(axis=0)
+    target = mean.mean()
+    gain = np.where(mean > 1.0, target / np.maximum(mean, 1.0), 1.0)
+    gain = 1.0 + (gain - 1.0) * strength
+
+    out = np.concatenate([np.clip(rgb * gain, 0, 255), alpha[..., None]], axis=-1)
+    return Image.fromarray(out.astype(np.uint8), "RGBA"), mean, gain
 
 
 def main() -> int:
@@ -206,6 +419,12 @@ def main() -> int:
                    help="last resort: rebuild alpha from a flattened checkerboard (lossy)")
     p.add_argument("--force-opaque", action="store_true",
                    help="file an image with no alpha anyway (era plates only)")
+    p.add_argument("--no-dissolve", action="store_true",
+                   help="skip the edge dissolve (VISUAL.md §5a applies it by default)")
+    p.add_argument("--neutral", nargs="?", type=float, const=1.0, default=None,
+                   metavar="STRENGTH",
+                   help="correct the model's warm cast toward a neutral paper "
+                        "white point; 1.0 for a cold wing, ~0.4 for a warm one")
     a = p.parse_args()
 
     if not os.path.exists(a.image):
@@ -267,6 +486,18 @@ def main() -> int:
             im = im.crop(box)
             print(f"trim: {before[0]}x{before[1]} -> {im.size[0]}x{im.size[1]} "
                   f"(dropped empty margins)")
+
+    # Order matters. Neutralise before dissolving: the white-point sample wants
+    # the artwork's real edge, not one already eaten into by the fade.
+    if a.neutral is not None and im.mode == "RGBA":
+        im, mean, gain = neutralise(im, a.neutral)
+        print(f"neutral: paper was rgb({mean[0]:.0f},{mean[1]:.0f},{mean[2]:.0f}), "
+              f"gain ({gain[0]:.3f},{gain[1]:.3f},{gain[2]:.3f}) at strength {a.neutral}")
+
+    if not a.no_dissolve and im.mode == "RGBA":
+        im = dissolve_edge(im, a.entity_id)
+        print("dissolve: edge eroded with seeded two-frequency noise "
+              "(deterministic per entity-id; the same asset always gets the same edge)")
 
     rel = os.path.join("assets", a.slug, f"{a.entity_id}.webp")
     out = os.path.join(ROOT, rel)

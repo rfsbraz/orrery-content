@@ -138,18 +138,38 @@ Anyone offering art should open an issue on this repo. See the README.
 
 ## 2. The model
 
-**Target: `gpt-image-1`.** Not DALL-E 3, which cannot take reference images and
-whose sizes do not include a portrait ratio we want.
+**Target: `gpt-image-1`**, generated through the ChatGPT interface and
+downloaded, then filed with `prepare_asset.py`. Not DALL-E 3, which cannot take
+reference images.
 
 | Capability | Value |
 |---|---|
-| Sizes | `1024x1024`, `1024x1536` (portrait), `1536x1024` (landscape), `auto` |
-| Reference images | **Supported** - pass via the image-edit endpoint |
-| Transparent background | Supported (`background: transparent`, png or webp) |
-| Quality | `low` / `medium` / `high` |
+| Sizes | `1024x1024`, `1024x1536` (portrait), `1536x1024` (landscape) |
+| Reference images | **Supported** - attach the anchor to the chat (§5d) |
+| Transparent background | Nominally supported; **we do not use it** (§5b) |
+| Seed / style token | **None exists.** Cohesion is engineered, not requested |
 
 There is no 4:5 size. A portrait asset uses `1024x1536` (2:3) and is cropped by
-the app, not by the prompt.
+
+
+**On newer models.** OpenAI now label `gpt-image-1` their previous generation,
+with `gpt-image-1.5` and `gpt-image-2` above it, and those accept arbitrary
+sizes rather than three fixed ones. Two things to know before moving:
+`gpt-image-2` does not support transparent backgrounds at all, which costs us
+nothing since §5b keys a magenta background rather than asking for alpha; and
+moving models mid-catalogue is a cohesion event, so a wing is generated
+end-to-end on one model or regenerated whole. Update `sketchCredit` if the model
+changes - it is how a reader tells our illustration from a sourced photograph,
+and how we find what was made with what.
+
+**Do not use the `transparent` background parameter even where it exists.** It
+knocks out enclosed light regions inside the drawing, not just the background,
+which for pen-and-ink on pale paper means any bright interior area is a
+candidate for accidental erasure. Keying a magenta background (§5b) gives us the
+tolerance control that avoids this, and works identically on every model.
+
+There is no 4:5 size. A portrait asset uses `1024x1536` (2:3) and is cropped by
+
 
 ## 3. Real people are photographed, never generated
 
@@ -176,6 +196,44 @@ person is being mourned; the turned head means we have not invented their face.
 That is the shape to reach for whenever a real person is the subject of a
 moment: the objects that person left, and their likeness withheld.
 
+## 3a. Withholding a likeness is not the same as refusing to draw
+
+§3 forbids one specific thing: **inventing the face of a real person**. It has
+repeatedly been read as forbidding something much larger - people, scenes,
+weather, incident, the world - and the cost of that misreading is visible in
+the first two finished wings. Of eleven Mãe seam sketches, seven were a table
+seen at three-quarters from the middle distance. Not because seven of those
+moments were about a table, but because a still-life of objects is the safest
+thing to draw when you believe you are not allowed to draw anything else.
+
+**Draw the moment.** A sketch may contain:
+
+- **Anonymous figures**, as many as the scene wants: a crowd at a reading, a
+  queue outside a shop, workers on a press, a child in a doorway, a congregation
+  of folding chairs with people actually in them. Turned away, at distance, in
+  silhouette, mid-gesture, cropped by the frame. What is banned is a recognisable
+  likeness of a *named real person*, not the human figure.
+- **Action and incident.** Weather arriving, a room mid-argument, a press
+  running, a street at closing time, a hospital corridor with someone walking
+  down it.
+- **Place at full scale.** A village, a coastline, a city block, an interior with
+  a world visible through its window.
+
+Scale the pictorialism to the wing and to the moment. A wing whose `theme.art`
+asks for the flat register of an instruction manual should stay closer to
+diagram than to landscape - that is its identity, not timidity - but even there,
+the pictogram figures on the safety card are *figures*, and the wing is allowed
+to use them. A wing built on villages, hands and weather should be full of
+villages, hands and weather.
+
+**The test is whether a reader could describe what happened from the picture.**
+Four objects arranged on a table rarely passes it. A room with people in it
+usually does.
+
+The object still-life remains one composition type among several in §4a. It is
+not the default, and a wing where it is the majority has failed §4a whether or
+not each sketch is good on its own.
+
 ## 4. Asset specs
 
 | Asset | Size | Background | References | Renders in |
@@ -190,10 +248,14 @@ moment: the objects that person left, and their likeness withheld.
 **Every generated asset is chroma-keyed, era plates included.** This table once
 said era plates were opaque on the wing's paper tone, which was wrong and was
 caught when a prompt writer followed the first plate's actual precedent instead
-of the docs. An era plate has a hand-torn edge that bleeds into the page, and
-that only works with alpha: baked onto paper it becomes a rectangle sitting on
-the page rather than part of it, and a baked paper tone can only match one
-wing's background.
+of the docs. A plate dissolves into the page, and that only works with alpha:
+baked onto paper it becomes a rectangle sitting on the page rather than part of
+it, and a baked paper tone can only match one wing's background.
+
+The app additionally masks a plate with a soft radial fade (`variant="plate"` in
+`sketch.tsx`), so a plate that also draws its own hard edge gets treated twice
+and reads as a picture inside a picture. Draw it to §5a's dissolve like
+everything else and let the mask do the rest.
 
 Shared world-event art lives in `assets/global/`, not under any one wing: it is
 catalogue canon, and filing it beside the author who happened to prompt it
@@ -203,23 +265,35 @@ World events are shared, so they are drawn once in the neutral house style with
 no wing-specific motifs, on transparency, and coloured per wing in CSS. A
 world-event sketch that only suits one author is a bug.
 
-## 4-impact. A high-impact event is a rupture, and gets the whole width
+## 4-impact. A high-impact event is a rupture, and earns its weight in scale
 
-The river renders `impact: high` events as **ruptures**: full-bleed bands in the
-wing's ink colour, inverted out of the page. On a dark wing that band is warm
-paper, and a transparent sketch lands on it with no edge whatsoever - the
-drawing simply sits on the page. This is the strongest argument for
-transparency in the whole system: one asset reads correctly on a dark card and
-on an inverted paper band, and a baked background would ruin one of them.
+The river renders `impact: high` events as **ruptures**: the same dark card
+every other event gets, at greater scale. Full column width, a taller
+illustration bleeding further into the card, more vertical air, a larger title.
+Nothing inverts.
 
-Compose a rupture sketch differently from a seam sketch:
+**This used to be an inverted band in the wing's ink colour, and that was the
+single worst decision in the visual system.** It was measured before it was
+replaced: on the Palahniuk wing the band's luminance is 233 and its six rupture
+sketches averaged 217, a separation of sixteen points out of 255. The art the
+reader was meant to stop at was the least visible art on the page. The same
+assets sit at ~190 points of separation on the dark card. A wing whose
+`theme.art` calls for a pale, even-weight line - which is a legitimate and
+well-argued identity - could not survive being dropped onto near-white paper,
+so the treatment was punishing wings for having a point of view.
 
-- **Wide and centred, under the prose**, not beside it. The app gives it the
-  full column.
-- **Slower and quieter.** This is the moment the reader is meant to stop at, so
-  it earns stillness: fewer objects, more air between them, softer shading.
-- **The register carries it**, not incident. A death is a table after the fact -
-  dried flowers, a lit candle, an open book, letters - lit low and warm.
+The consequence for prompt writers is the good news: **a rupture sketch and a
+seam sketch have the same specification.** One surface, one spec, one way an
+asset can look wrong. Only these differ:
+
+- **Scale.** A rupture is drawn to hold a bigger box, so it can carry a wider
+  scene and more depth. A seam is read at roughly a third of the column.
+- **Pace.** This is the moment the reader is meant to stop at, so it earns
+  stillness: fewer competing elements, more air between them, softer shading.
+- **Register over incident.** A death is the room after the fact, not the fact.
+
+Hierarchy now comes from size, space and typography, which is where hierarchy
+belongs. It is never carried by a colour the artwork has to survive.
 
 ## 4a. Breaking monotony in a sequence
 
@@ -231,10 +305,16 @@ prompt, look at what the two events either side of it already got, and vary at
 least two of these four:
 
 - **Composition type.** Rotate deliberately between: a wide landscape or vista;
-  a cluttered working still-life seen close (a desk, a press, a kitchen table);
-  a single object given the whole frame; and a quiet intimate arrangement (a
-  vase, a candle, a photograph face-down). The 1971 birth is a vista, so the
-  1974 that follows it should not be.
+  **a peopled scene** (a room in use, a crowd, a street, figures at work - see
+  §3a); a cluttered working still-life seen close (a desk, a press, a kitchen
+  table); a single object given the whole frame; and a quiet intimate
+  arrangement (a vase, a candle, a photograph face-down). The 1971 birth is a
+  vista, so the 1974 that follows it should not be.
+
+  **Count them before accepting a wing.** No composition type may take more
+  than a third of a wing's event sketches. The Mãe wing shipped with seven of
+  eleven as the same close still-life, which no per-asset review caught because
+  each one was individually fine. This is arithmetic, so do the arithmetic.
 - **Distance.** Far, middle, near. A landscape then a tabletop then an object
   in the hand reads as a rhythm; three middle distances read as one picture.
 - **Tonal cast.** Stay inside the wing's palette but let the temperature carry
@@ -313,25 +393,113 @@ Two era-specific liberties, both earned by the size:
 
 ## 5. Assembling a prompt
 
-In order, always:
+**Labelled sections, not a paragraph**, in this order. The ordering is OpenAI's
+own recommendation for these models (scene → subject → details → constraints)
+and the labelling is theirs too: their prompting guide asks for "short labeled
+segments or line breaks instead of one long paragraph" for anything complex,
+and tells you to prioritise maintainability over cleverness. For a templated
+catalogue that settles it - the STYLE block is then mechanically identical
+across every asset in a wing, which is exactly the property we want.
 
-1. **The house style** (§1), stated plainly.
-2. **The wing's `theme.art`** from `theme.yaml`: motifs, atmosphere,
-   lineCharacter, backgroundTexture, accentUse. Quote it, do not paraphrase it
-   away - it is the only thing making two assets belong to the same wing.
-3. **The subject**, derived from the entity's own `title` and `description`.
-   Draw what the record says happened; do not invent incident.
-3a. **Where the orrery motif sits in this scene** (§1a) - the sky by default,
-   an object only when the scene has no sky to use. Keep it faint, small and
-   off-centre; it is an afterthought a reader finds on second look, never
-   something the prompt dwells on.
-4. **The composition**, from the asset spec (§4).
-5. **The shared negative prompt** (§6), plus the wing's own `art.avoid`.
-6. **The technical block** (§5b), verbatim. Never leave the output format to be
-   inferred from the composition.
+```
+STYLE:
+  <the house style, §1, stated plainly>
+  <the wing's theme.art, verbatim: motifs, atmosphere, lineCharacter,
+   backgroundTexture, accentUse - quote it, never paraphrase it away>
 
-For a **world event**, skip step 2 entirely and say "neutral house style, no
-author-specific motifs, transparent background".
+SCENE:
+  <where this happens, as physical material and weather>
+
+SUBJECT:
+  <what happens, from the entity's own title and description; people by role,
+   posture and silhouette, never identity (§3, §3a)>
+
+DETAIL:
+  <the orrery motif and where it sits in this scene (§1a)>
+  <composition type, distance and tonal cast, chosen against the neighbours (§4a)>
+
+COMPOSITION:
+  <framing from the asset spec (§4)>
+  The artwork sits inside the frame with roughly a tenth of the frame as
+  magenta all the way around it.
+
+CONSTRAINTS:
+  <the shared negative prompt (§6), plus the wing's own art.avoid>
+  <the technical block (§5b), verbatim>
+```
+
+For a **world event**, drop the wing's `theme.art` from STYLE entirely and say
+"neutral house style, no author-specific motifs".
+
+### Three things about the model that change how this is written
+
+**Negative phrasing works here, and this is not the usual advice.** The "don't
+think of an elephant" rule is real for diffusion models and wrong for these:
+OpenAI's own guide says to "state exclusions and invariants explicitly" and
+gives *"no watermark"* and *"no extra text"* as its worked examples. So §6's
+list stays. Keep it short and prefer a positive statement where one exists -
+"bare cream paper" beats "no background elements", because it gives the model
+something to draw.
+
+**Keep the whole prompt under roughly 6,000 characters.** The documented cap is
+32,000, but prompts in the several-thousand-token range are reported to fail
+silently - the image comes back with little relation to the instructions, with
+no error. Nothing here needs the length, and the failure mode is invisible.
+
+**An invisible rewrite sits between the prompt and the generator.** These models
+revise the prompt before rendering and, outside the Responses API, do not show
+you the revision or let you turn it off. The mitigation is to write prompts that
+are already complete and specific, since rewriting is described as expanding
+*simple* prompts. A fully specified prompt has less room to be improved, and
+"improvement" is a live source of drift between one asset and the next.
+
+## 5d. The anchor image is the cohesion lever
+
+**Every generation after the first attaches a previously accepted image as a
+style reference.** This is the strongest tool available and the wings were built
+without it.
+
+There is no seed and no style token for these models - OpenAI's own limitations
+note says the model "may occasionally struggle to maintain visual consistency
+for recurring characters or brand elements across multiple generations". A style
+block in the prompt is necessary and *not sufficient*; a reference image is what
+actually carries line weight, palette and density across generations.
+
+The workflow, per wing:
+
+1. Generate the wing's first era plate and iterate until it is genuinely
+   publishable. That image becomes the wing's **anchor**, recorded in its
+   `theme.yaml` notes.
+2. Every later asset in that wing is generated with the anchor attached, and the
+   prompt says what to take from it: *"match the attached image's line weight,
+   ink colour, paper tone, shading density and level of detail exactly; the
+   subject is different."*
+3. Once two or three more assets are accepted, attach those alongside the anchor
+   - a small stack that differs in subject makes the invariant legible as
+   *style* rather than as content.
+4. **Always re-anchor, never chain.** Reference the original anchor, not the
+   asset generated immediately before. Chaining compounds drift, which is
+   precisely how a wing ends up with a first and last asset that do not belong
+   to the same publication.
+
+## 5e. The warm cast is corrected in post, not in the prompt
+
+These models skew warm. It is widely reported and not officially acknowledged,
+and this catalogue has it in writing: the Palahniuk wing's `theme.art` asks for
+"cold white or pale institutional grey stock, not warm paper" and four of its
+assets came back warm cream anyway. The prompt was not being ignored - a global
+cast was sitting on top of it, and no rewording removes a global cast.
+
+    python scripts/prepare_asset.py <image.png> <slug> <entity-id> --chroma --neutral
+
+`--neutral` samples the brightest opaque decile (the paper) and applies the
+per-channel gain that makes *that* neutral, leaving the drawing's own colour
+relationships intact. Use full strength on a cold wing; a warm wing is meant to
+be warm, so `--neutral 0.4` takes the cast off without taking the character.
+
+Do not try to prompt this away. "Avoid yellowish tones" is unreliable, and a
+deterministic correction applied identically to every asset in a wing does more
+for cohesion than any wording.
 
 ## 5b. The technical block
 
@@ -360,10 +528,20 @@ behind as a faint lattice.
   model will happily fill the canvas corner to corner and give you a neat
   rectangle - which is exactly the ragged dissolve you were trying to keep.
   Spell it out: *"the magenta must be visible along all four edges of the
-  frame; the artwork must not touch the border at any point; its outline is
-  irregular and hand-torn, the ink and wash breaking up and stopping unevenly,
-  never a straight edge and never a rectangle."* Naming a rough margin helps -
-  *"leave roughly a tenth of the frame as magenta around the artwork"*.
+  frame; the artwork must not touch the border at any point; leave roughly a
+  tenth of the frame as magenta all the way around the artwork."*
+
+  Ask for the margin and **stop there**. Do not describe how the edge should
+  look - no torn paper, no fading, no dissolving, no ragged ink. §5a applies
+  the edge as a filter, and a prompt that also describes one produces artwork
+  that has already faded before the filter fades it again.
+- **Ban the soft glow explicitly.** The model likes to ease the artwork into
+  the chroma with a haze rather than break it up, and a magenta-to-artwork
+  gradient is the one thing the keyer cannot resolve: it sits too far from the
+  key to be cut and too close to be clean, and survives as an opaque mauve
+  corona. Five shipped assets carry one. Say *"no glow, halo, mist, vignette or
+  gradient between the artwork and the magenta; the transition is broken ink,
+  not a blur"*.
 - Still state **exact pixel dimensions** from §4 (`1024x1024` for an event,
   `1536x1024` for an era plate) - not "square", not an aspect ratio.
 - Still ban borders, frames, mattes and drop shadows onto the background.
@@ -376,51 +554,123 @@ which keys the magenta to real alpha with a soft edge, despills the fringe so
 edges do not glow pink on a dark page, trims the empty margins, converts to
 webp under the size cap and prints the YAML to paste.
 
-## 5a. Choosing the presentation
+## 5a. The presentation is fixed: one mode, every event
 
-How a sketch meets the page is a decision per item, not a house rule. The job
-is always the same - **either blend the art into the page or deliberately pop it
-off the page** - but which reads better depends on the subject, the surface it
-lands on, and what the neighbouring assets did.
+**Every event sketch is a dissolving panel.** The drawing fills its frame and
+thins out at every edge, ink and wash fading to nothing rather than stopping at
+a line. No torn sheet, no deckled edge, no drawn paper, no panel border, no
+floating objects on nothing. The card behind the art supplies the frame, so the
+artwork never draws one for itself.
 
-Pick one and say which you picked, and why, in the prompt's brief:
+This is not a preference. An earlier version of this section offered four modes
+as an editorial choice per asset, and the result was measured across two
+finished wings: within a single column you could find assets that were 100%
+opaque hard rectangles, assets that were 79-94% opaque torn sheets, and assets
+that were 20-33% floating objects. Three incompatible ways of meeting the page,
+stacked one above the other. A reader does not experience that as range. They
+experience it as nobody being in charge.
 
-- **Torn sheet.** A drawn sheet of aged paper with deckled, irregular edges,
-  fibres showing where it tore. Pops off the page; suits anything documentary
-  or archival - a place remembered, a manuscript, a letter, a record.
-- **Dissolving panel.** The drawing fills its frame and thins out at the edges,
-  ink and wash fading to nothing rather than stopping at a line. Blends into
-  the page; suits vistas, cityscapes, weather, anything atmospheric.
-- **Objects on an implied surface.** No paper and no panel at all: a still-life
-  on a suggested tabletop with soft shadows under the objects, everything else
-  transparent. Blends completely; the natural choice on a rupture band, where
-  the band itself is already warm paper (see §4-impact).
-- **Panel with a break-out.** A dissolving panel plus one element crossing
-  outside its edge - a compass, a branch, a spill of papers. Pops, but keeps
-  the calm of a panel behind it. Good when a scene needs an anchor in the
-  foreground.
+The choice was between enforcing "deliberate" across thirty-odd assets and
+removing the decision. Enforcing it had already been tried and had already
+failed, so the decision is removed.
 
-Anything else is allowed if it serves the same end. What is **not** negotiable,
-whichever you choose:
+### The dissolve is a filter, and you do not prompt for it
+
+**Do not ask the model for a dissolving, torn, ragged or faded edge.** The edge
+is applied deterministically by `prepare_asset.py`, identically for every asset
+in the catalogue.
+
+This is the single highest-leverage cohesion decision in the pipeline, and it
+took two finished wings to see it. An edge asked for in a prompt is decided
+forty separate times by the least reliable part of the process - OpenAI list
+framing and layout as a known weakness of the model - and is then never
+corrected. "These don't feel like one publication" is, to a surprising degree,
+just the sum of forty slightly different edges.
+
+Applied as a filter it is identical in character across the whole catalogue, by
+construction, for nothing. **Anything that can be a filter should be a filter.**
+
+What the filter does, so nobody re-prompts for it:
+
+- Erodes the artwork's outer boundary with smoothed two-frequency value noise,
+  so the edge advances and retreats irregularly and at different rates on
+  different sides, the way ink runs out.
+- Seeded from the asset's own id, so an asset's edge never changes between
+  re-runs and no two assets share one.
+- Acts only on the boundary with the OUTSIDE. Holes and gaps between objects
+  inside the picture are interior and are left alone.
+
+It erodes thin structures that reach close to the frame - stems, wires, bare
+branches. Compose with the subject inside its margin and this never comes up.
+
+What you *do* still owe the prompt: the artwork must not reach the frame (§5b),
+and the composition must not depend on a hard edge to work.
+
+What is not negotiable:
 
 - **Nothing may assume what colour is behind it.** Transparent background
   always, no vignette, no painted-in page colour, no rounded rectangle, no
-  frame, no drop shadow onto the background - shadows fall onto the paper or
-  the implied surface, never onto the void. This is what lets one asset work on
-  a dark card and on an inverted paper band; it is the reason the whole system
-  holds together, and it is the rule most likely to be broken by accident.
-- **Vary it down a sequence** along with everything else in §4a. Four torn
-  sheets in a row is the same monotony as four vistas.
+  frame, no drop shadow onto the background - shadows fall onto the surface
+  within the artwork, never onto the void. This is the rule most likely to be
+  broken by accident, and `scripts/validate.py` now checks it (§5c).
+- **No baked paper tone.** The wing's paper is the card. An asset carrying its
+  own paper colour is a rectangle sitting on the page, and it can only ever
+  match one wing.
 
-**World events are the exception and have no latitude.** A shared sketch is
-recoloured per wing by painting the wing's accent through its alpha, so it must
-be **line and texture only, on transparency** - no paper, no panel, no wash, no
+**World events are the exception and have less latitude, not more.** A shared
+sketch is recoloured per wing by painting the wing's accent through its alpha,
+so it must be **line and texture only, on transparency** - no paper, no wash, no
 filled shapes. Anything with a solid fill becomes a solid accent-coloured blob.
 
-An earlier version of this section prescribed the torn sheet for everything, and
-said the app owned edges before that. Both were premature: the treatment is an
-editorial judgement about a specific subject, and the only durable rule is the
-transparency invariant above.
+## 5c. The invariants are checked, not trusted
+
+Every rule in §5a that can be expressed as arithmetic is enforced by
+`scripts/validate.py`. This section exists because the previous three failures
+in this document were all *stated clearly and then violated anyway*: the opaque
+era plate, the four presentation modes, the mauve corona. A rule nobody measures
+is a rule nobody follows.
+
+| Check | Fails when | Catches | Separation on the catalogue |
+|---|---|---|---|
+| `alpha-present` | opaque pixel fraction ≥ 0.98 | an asset that lost its alpha | fails 1.00; next worst 0.94 |
+| `edge-dissolve` | any frame edge is > 15% opaque along its length | a hard crop or a baked rectangle | fails 1.00, 1.00, 0.44; next worst 0.05 |
+| `world-event-flat` | a `global` asset is > 50% opaque | a sketch that will tint to a blob | current globals 0.09 and 0.12 |
+
+Each check reports the measured number, not a pass/fail word, and every
+threshold above was set from the real distribution rather than chosen in
+advance. `python scripts/validate.py --explain <slug>` prints the numbers per
+asset so a borderline case can be judged rather than obeyed.
+
+Note `edge-dissolve`'s threshold is loose on purpose. `prepare_asset.py` trims
+to the alpha bounding box, so by construction the artwork touches all four
+edges somewhere and a few percent of edge contact is geometrically inevitable.
+Fifteen percent of an edge running solid is a crop; two percent is a corner.
+
+### What is not checkable, and why it is written down here
+
+**The mauve corona has no reliable automated test, and no check for it ships.**
+This was attempted properly before being abandoned, and the attempt is recorded
+so nobody spends the afternoon again:
+
+- The obvious detector is magenta chroma, `min(r, b) - g`. Measured across the
+  whole catalogue it is ~0.0 on every asset including all five with a visible
+  corona. The coronas are not magenta. They average RGB (148, 122, 124), a warm
+  grey-pink where blue and green are nearly equal, which is a *painted vignette*
+  rather than key spill.
+- The next detector is rim-versus-core warmth, comparing an eroded interior to
+  the outer band. It scores 2 of the 5 known-bad assets above every clean one,
+  misses the other 3 entirely, and ranks the deliberate mauve grief wash on
+  `vhm-saramago-death-2010` as the single worst offender in the catalogue. Two
+  out of five, with a false positive on the one asset that is right on purpose.
+
+A check with that record is worse than no check, because a wing that passes it
+looks cleared. So the corona is handled where it is actually solvable: banned
+explicitly in the prompt (§5b), and looked for by a person at §7 step 5. When a
+defect is a judgement call, say so and route it to a judge.
+
+`prepare_asset.py` does still despill genuine key spill, and its despill is
+tested against a synthetic corona in `scripts/test_prepare_asset.py` - a test
+written to fail first, which it did three times before it passed.
 
 ## 6. Shared negative prompt
 
@@ -428,25 +678,44 @@ Append to every prompt:
 
 > Avoid: photorealism; cinematic concept art; generic fantasy art; anime;
 > children's-book cartoon styling; glossy 3D rendering; neon colours; heavy
-> gradients; thick black outlines; crowded compositions; any text, lettering,
-> captions, signatures or watermarks; publisher logos; reproductions of real
-> book covers; UI elements; decorative elements covering faces; excessive stars
-> and planets; literal outer-space imagery unrelated to the subject; vignettes;
-> borders, frames or rounded rectangles; any painted-in background colour; drop
-> shadows cast onto the background rather than onto the paper or surface within
-> the artwork.
+> gradients; thick black outlines; cluttered compositions with no focal point;
+> any text, lettering, captions, signatures or watermarks; publisher logos;
+> reproductions of real book covers; UI elements; decorative elements covering
+> faces; excessive stars and planets; literal outer-space imagery unrelated to
+> the subject; vignettes; borders, frames or rounded rectangles; torn-paper,
+> deckled or ragged-sheet edges; any glow, halo, mist or gradient around the
+> artwork; any painted-in background colour; drop shadows cast onto the
+> background rather than onto a surface within the artwork.
+
+Note that this bans **clutter**, not people. A crowded frame with no focal point
+is the failure; a scene with twenty figures in it and one clear subject is not
+(§3a). Earlier versions read "crowded compositions" as "no crowds", which is
+part of how two wings ended up with almost nobody in them.
 
 Plus the wing's `art.avoid`, which names that author's specific cliche.
 
 ## 7. Workflow for a wing
 
 1. Settle `theme.art` in `theme.yaml`. Nothing else may be generated first.
-2. Era plates, largest surfaces first - they set the palette in practice.
-3. Life events, then franchise events.
-4. Shared world events last, in house style.
-5. Put every result side by side before accepting any of it. Reject anything
+2. **Write every prompt for the wing in one pass, before generating any of
+   them.** §4a asks each sketch to be composed against its neighbours, and that
+   is not something a prompt written six sessions later can honour - it is why
+   the Mãe wing ended up seven-elevenths tables. Written together, the rotation
+   of composition type, distance and tonal cast can actually be laid out and
+   counted across the whole wing.
+3. Era plates, largest surfaces first - they set the palette in practice, and
+   the first accepted one becomes the wing's **anchor image** (§5d).
+4. Life events, then franchise events, each generated with the anchor attached.
+5. Shared world events last, in house style, with no anchor - they belong to
+   the catalogue rather than to a wing.
+6. Put every result side by side before accepting any of it. Reject anything
    that looks like a different illustration system, however good it is alone.
-6. File it with `python scripts/prepare_asset.py <image.png> <slug> <entity-id>`,
+   **This is also where the corona is caught** - §5c explains why no automated
+   check for it ships, so this step is the only thing standing between one and
+   the catalogue. Composite them on the wing's own card colour to look at them;
+   judging a transparent asset against a white editor background is how five of
+   them got through.
+7. File it with `python scripts/prepare_asset.py <image.png> <slug> <entity-id>`,
    which refuses an image that has lost its alpha, trims the empty margins,
    converts to webp under the size cap and prints the YAML to paste. **Keep the
    original PNG from the model** - a screenshot or a re-export flattens the

@@ -24,7 +24,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install pyyaml
+      # pillow and numpy are for the sketch checks: docs/VISUAL.md §5c is
+      # enforced by measuring the images, not by asking people to remember it.
+      - run: pip install pyyaml pillow numpy
 
       - name: Scripts parse
         # Cheap, and it catches real breakage: a heredoc mangling an escape
@@ -36,6 +38,11 @@ jobs:
 
       - name: Validate canon content
         run: python scripts/validate.py
+
+      - name: Chroma key despills a corona
+        # The despill shipped broken and stayed broken for five assets because
+        # nothing measured its output. This test fails against the old formula.
+        run: python scripts/test_prepare_asset.py
 
       - name: Skill blocks are in sync
         # The sanctuary and tooling blocks are duplicated verbatim into every

@@ -22,6 +22,9 @@ ERRORS = []
 WARNINGS = []
 # Set by --slug. Narrows the warning REPORT to one wing; never narrows checking.
 SCOPE = None
+# Set by --explain. Prints the measured numbers behind the §5c asset checks, so
+# a borderline asset can be judged rather than obeyed.
+EXPLAIN = False
 INLINE_REF = re.compile(r"\[\[(?P<type>work|author|franchise|character):(?P<id>[^\]|]+)(?:\|[^\]]*)?\]\]")
 ORDER_TYPES = {"chronological-inuniverse", "author-recommended", "curated", "community", "official-publication"}
 IMPACTS = {"low", "med", "high"}
@@ -98,6 +101,114 @@ def check_asset(loc, entity_id, value):
     if size > ASSET_MAX_BYTES:
         err(loc, f"{entity_id}: sketch '{value}' is {size // 1000}KB, over the "
                  f"{ASSET_MAX_BYTES // 1000}KB cap - re-encode it")
+    check_asset_pixels(loc, entity_id, value, path)
+
+
+# Thresholds are set from the measured distribution across the catalogue, not
+# picked in advance - see docs/VISUAL.md §5c, which records the separation each
+# one achieves. A threshold nobody has held up against real data is a guess
+# wearing a number.
+OPAQUE_MAX = 0.98        # an asset this solid has lost its alpha
+EDGE_OPAQUE_MAX = 0.15   # an edge this solid is a crop, not a dissolve
+GLOBAL_OPAQUE_MAX = 0.50 # a world event must be line and texture only
+
+_PIL_WARNED = False
+
+# Assets that fail §5c today and are already scheduled for replacement in the
+# Mãe and Palahniuk regeneration. Landing the checks as warnings instead would
+# have made them decorative on day one, which is the exact failure the checks
+# exist to end.
+#
+# This list may only shrink. An entry whose asset has started PASSING is itself
+# an error (see below), so a regenerated asset forces the entry out rather than
+# leaving a stale exemption nobody remembers granting.
+KNOWN_BAD_ASSETS = {
+    "assets/valter-hugo-mae/antes-dos-romances.webp": "fully opaque, no alpha at all",
+    "assets/valter-hugo-mae/vhm-ape-prize-2021.webp": "artwork runs off three edges",
+    "assets/chuck-palahniuk/palahniuk-father-murdered-1999.webp": "right edge is a hard crop",
+}
+_ALLOWED_SEEN_FAILING = set()
+
+
+def check_asset_pixels(loc, entity_id, value, path):
+    """The §5a invariants that can be expressed as arithmetic.
+
+    Three rules in docs/VISUAL.md were stated clearly and then violated anyway -
+    the opaque era plate, the four presentation modes, the baked paper tone -
+    because nothing measured them. Prose in a doc is not a constraint; this is.
+
+    Deliberately NOT here: any check for the mauve corona. Two detectors were
+    built and measured against the five assets known to carry one, and the best
+    of them caught two while ranking a deliberate grief wash as the worst
+    offender in the catalogue. §5c records why that check does not ship. A
+    guard with that record makes a wing look cleared when it is not.
+    """
+    global _PIL_WARNED
+    try:
+        from PIL import Image
+    except ImportError:  # pragma: no cover
+        if not _PIL_WARNED:
+            _PIL_WARNED = True
+            warn(loc, "Pillow is not installed, so no sketch was checked for "
+                      "alpha or edge dissolve - `pip install pillow` to enable "
+                      "the §5c checks")
+        return
+
+    try:
+        im = Image.open(path).convert("RGBA")
+    except Exception as exc:
+        err(loc, f"{entity_id}: sketch '{value}' could not be read as an image ({exc})")
+        return
+
+    alpha = im.getchannel("A")
+    w, h = im.size
+    # Count via histogram rather than per-pixel Python: this runs over every
+    # asset in the catalogue on every CI run.
+    solid = sum(alpha.histogram()[201:])
+    opaque = solid / float(w * h)
+
+    is_global = value.startswith("assets/global/")
+    allowed = value in KNOWN_BAD_ASSETS
+
+    def report(msg):
+        if allowed:
+            _ALLOWED_SEEN_FAILING.add(value)
+            return
+        err(loc, msg)
+
+    if is_global:
+        if opaque > GLOBAL_OPAQUE_MAX:
+            report(f"{entity_id}: world-event sketch '{value}' is "
+                     f"{opaque:.0%} opaque (cap {GLOBAL_OPAQUE_MAX:.0%}) - a shared "
+                     f"sketch is tinted through its alpha, so a filled region "
+                     f"becomes a solid accent-coloured blob (VISUAL.md §4)")
+    elif opaque >= OPAQUE_MAX:
+        report(f"{entity_id}: sketch '{value}' is {opaque:.0%} opaque - it has "
+                 f"lost its alpha and will render as a rectangle sitting on the "
+                 f"page rather than dissolving into it (VISUAL.md §5a)")
+
+    edges = {
+        "top": im.crop((0, 0, w, 1)),
+        "bottom": im.crop((0, h - 1, w, h)),
+        "left": im.crop((0, 0, 1, h)),
+        "right": im.crop((w - 1, 0, w, h)),
+    }
+    for name, strip in edges.items():
+        px = strip.size[0] * strip.size[1]
+        frac = sum(strip.getchannel("A").histogram()[201:]) / float(px)
+        if frac > EDGE_OPAQUE_MAX:
+            report(f"{entity_id}: sketch '{value}' is {frac:.0%} opaque along "
+                     f"its {name} edge (cap {EDGE_OPAQUE_MAX:.0%}) - the ink and "
+                     f"wash must thin out on all four sides, and an edge running "
+                     f"solid is a crop (VISUAL.md §5a)")
+
+    if EXPLAIN:
+        worst = max(
+            sum(s.getchannel("A").histogram()[201:]) / float(s.size[0] * s.size[1])
+            for s in edges.values()
+        )
+        print(f"  {entity_id:44s} opaque={opaque:5.2f} worst_edge={worst:5.2f} "
+              f"{'(global)' if is_global else ''}")
 
 
 def check_images(loc, entity_id, images):
@@ -923,6 +1034,19 @@ def main():
         except OSError:
             pass
 
+    # An exemption that has stopped being needed is an error. Without this the
+    # allowlist is a place debt goes to be forgotten: the asset gets
+    # regenerated, the entry stays, and the next asset with the same filename
+    # is silently exempt from a check nobody remembers waiving.
+    for value, why in sorted(KNOWN_BAD_ASSETS.items()):
+        if not os.path.exists(os.path.join(ROOT, value)):
+            err("scripts/validate.py", f"KNOWN_BAD_ASSETS lists '{value}' ({why}) "
+                f"but that file is gone - delete the entry")
+        elif value not in _ALLOWED_SEEN_FAILING:
+            err("scripts/validate.py", f"KNOWN_BAD_ASSETS exempts '{value}' ({why}) "
+                f"but it now PASSES the §5c checks - delete the entry so the "
+                f"asset is held to them like every other")
+
     if WARNINGS:
         # Checking is always catalogue-wide: a broken reference crosses wings,
         # so scoping the CHECK would hide real breakage. Only the REPORT
@@ -957,4 +1081,10 @@ if __name__ == "__main__":
         i = sys.argv.index("--slug")
         SCOPE = sys.argv[i + 1] if i + 1 < len(sys.argv) else None
         del sys.argv[i:i + 2]
+    # --explain prints the measured alpha and edge numbers behind the §5c
+    # checks. A check that can only say "ok" teaches nobody anything and cannot
+    # be argued with when it is wrong.
+    if "--explain" in sys.argv:
+        EXPLAIN = True
+        sys.argv.remove("--explain")
     main()
