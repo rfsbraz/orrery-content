@@ -1,0 +1,104 @@
+# A wing spans an author's complete published work; it is not scoped to
+# whichever series made them famous. Jim Butcher writes three
+# separately-marketed series that do not share a universe or a cast - he has
+# said on the record that answering what a crossover between Harry Dresden
+# and Codex Alera's Tavi would even look like "would take a whole book" - so
+# each is modelled as a `subseries` on works.yaml rather than as the wing's
+# boundary, and no characters.yaml or work-to-work `connections` exist
+# anywhere in this wing: there is no crossover between the three to chase.
+id: jim-butcher
+name: Jim Butcher
+kind: author
+description: >
+  The complete published work of Jim Butcher: the ongoing contemporary
+  fantasy [[work:jim-butcher/storm-front|The Dresden Files]] (Harry Dresden,
+  Chicago's only professional wizard, 2000-present), the complete
+  Roman-flavored epic fantasy Codex Alera (2004-2009, six novels), and the
+  steampunk Cinder Spires (2015-present), alongside a handful of
+  short-fiction collections and one licensed Spider-Man tie-in novel. The
+  three series are separate brands with no shared universe or characters.
+authorIds: [jim-butcher]
+themePreset: streetlamp-noir
+
+# No header image: the same reasoning theme.yaml gives for `signature: none`
+# applies to a banner. A real-world photo that reads as this wing (Chicago
+# streets and elevated track at night, the natural fit for the palette) would
+# depict only the Dresden Files' setting; Codex Alera's Roman-analog Alera and
+# the Cinder Spires' invented steampunk world have no equivalent real-world
+# location, and no single found image represents all three without asserting
+# a visual unity the author has said does not exist. Left bare rather than
+# picked to avoid an empty banner slot.
+
+# Capabilities auto-detect from the data (docs/SCHEMA.md). This wing earns a
+# shelf and a derived order across 34 works, but not the connections layer:
+# there is no crossover to map (see above), so `connections` is left auto
+# rather than forced off - it will simply stay dark, which is the honest
+# state, not a broken one. No characters.yaml, no achievements (none earned
+# yet).
+#
+# No startHere. No source recommends which of the three series to start
+# with, which tracks: they share no universe (see above), so there is
+# nothing to weigh a "start here" claim against beyond raw popularity, which
+# is not a reading recommendation. Within the Dresden Files specifically,
+# readers widely call the first two or three novels the weakest entries and
+# some reviewers propose skipping ahead (The Alexandrian's reading-order
+# guide floats Summer Knight, https://thealexandrian.net/wordpress/38243/reviews/dresden-files-reading-order,
+# but recommends against it on the same page; reader forum threads split
+# across Grave Peril, Summer Knight, Death Masks and Blood Rites as the
+# "it gets good here" book, e.g. https://www.goodreads.com/questions/160307-i-heard-that-dresden-files-is-little-slow,
+# with no two answers agreeing), but no two of these converge on the same
+# book and every dedicated reading-order page checked (jim-butcher.com,
+# Destructoid, The Fantasy Review, BookSeriesInOrder) still starts new
+# readers at Storm Front. Scattered, disagreeing opinions are not a settled
+# alternate entry point.
+features:
+  river: auto
+  wizard: auto
+  connections: auto
+  companion: auto
+  hall: auto
+  editions: auto
+
+# Which shared global events actually reach this author (docs/SCHEMA.md).
+# Butcher was born in 1971 and debuted in 2000; only one candidate survives
+# scrutiny as something that actually shaped his shelf rather than merely
+# overlapping his lifespan.
+globalEvents:
+  include:
+    - fantasy-paperback-boom-1965     # predates him; the mass-market paperback
+                                       # category his entire career (Roc/Ace,
+                                       # 2000-present) publishes inside
+  # Considered and refused. Nothing renders unless it is in `include` above,
+  # so these change nothing; they are kept as the record of a judgement
+  # already made.
+  exclude:
+    - chain-bookshop-1982             # he was ten; his career starts in
+                                       # 2000, in a different bookselling era
+    - online-bookselling-1995         # his debut is traditionally published
+                                       # and sold the same way throughout;
+                                       # no direct-to-reader story to tell
+    - ebook-and-self-publishing-2007  # traditionally published across all
+                                       # three series and 25 years; no
+                                       # self-publishing or ebook-first turn
+    - sept-11-2001                    # weeks after Grave Peril (Sept 1,
+                                       # 2001), before Summer Knight (2002);
+                                       # no book engages it and none is set
+                                       # to
+    - financial-crisis-2008           # mid-Dresden-Files (Turn Coat/Changes
+                                       # era); no engagement found
+    - prestige-fantasy-adaptation-2011 # his own TV deal predates this by four
+                                       # years (2007) and no adaptation
+                                       # followed in its wake
+    - covid-19-pandemic-2020          # Peace Talks/Battle Ground were
+                                       # already written and split before
+                                       # 2020; no textual engagement found
+    - booktok-2020                    # searched; ordinary reader engagement
+                                       # only, no sourced claim of a
+                                       # measurable resonance
+    - portugal-bailout-2011           # American author; no connection
+    - carnation-revolution-1974       # he was two; American author, no
+                                       # connection to Portuguese politics
+sources:
+  - https://en.wikipedia.org/wiki/Jim_Butcher
+  - https://en.wikipedia.org/wiki/The_Dresden_Files
+  - https://www.jim-butcher.com

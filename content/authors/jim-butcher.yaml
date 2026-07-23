@@ -1,0 +1,103 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds), so the same person resolves the same everywhere.
+# Author-LIFE events live here (they follow the person); franchise-specific
+# events stay in content/franchises/jim-butcher/events.yaml.
+#
+# Living author (born 1971): the four anchors below rest on his own repeated,
+# on-the-record account of how he broke in and how Codex Alera began, each
+# corroborated by more than one interview or by Wikipedia's cited biography.
+# Nothing about his health, finances, family or legal affairs is recorded here -
+# that bar (two independent sources, and care about what a living person has
+# put in public themselves) belongs to a deeper pass than this one made.
+id: jim-butcher
+name: Jim Butcher
+aka: []
+born: 1971-10-26
+died: null
+bio: >
+  American novelist, born in Independence, Missouri, the youngest of three
+  children. Introduced to fantasy and science fiction by his two older
+  sisters, who handed him The Lord of the Rings and the Han Solo Adventures
+  novels to pass the time during a childhood illness. He wrote his debut,
+  [[work:jim-butcher/storm-front|Storm Front]], as a writing-class technical
+  exercise, launching the ongoing contemporary-fantasy series
+  [[franchise:jim-butcher|The Dresden Files]] in 2000. Between Dresden
+  novels he wrote the six-book epic fantasy Codex Alera (2004-2009),
+  complete, and from 2015 the steampunk Cinder Spires series, ongoing. He
+  has stated the three series share no universe or characters. His son,
+  James J. Butcher, is also a published fantasy novelist.
+pseudonyms: []
+images:
+  portrait: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Jim_Butcher_by_Gage_Skidmore.jpg/1920px-Jim_Butcher_by_Gage_Skidmore.jpg"
+  portraitCredit: "Gage Skidmore, CC BY-SA 3.0"
+  portraitSource: "https://commons.wikimedia.org/wiki/File:Jim_Butcher_by_Gage_Skidmore.jpg"
+lifeEvents:
+  - id: jim-butcher-born-1971
+    date: 1971-10-26
+    title: Born in Independence, Missouri
+    impact: low
+    description: >
+      The youngest of three children. His two older sisters introduce him
+      to fantasy and science fiction while he is laid up with strep
+      throat, reading him The Lord of the Rings and the Han Solo
+      Adventures novels.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Jim_Butcher
+  - id: jim-butcher-storm-front-exercise
+    date: 1996
+    title: A writing-class bet becomes Storm Front
+    impact: high
+    description: >
+      As a student in Deborah Chester's writing course, Butcher resists his
+      teacher's systematic approach to plotting fiction. When she suggests
+      he try a novel in the style of Laurell K. Hamilton's Anita Blake
+      novels and Buffy the Vampire Slayer, both of which he already admires,
+      he sets out to prove her method wrong by following it exactly. The
+      result, needing little editing, is
+      [[work:jim-butcher/storm-front|Storm Front]] - the book that becomes
+      The Dresden Files. He has called the experience "a valuable lesson
+      about humility."
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/The_Dresden_Files
+      - https://en.wikipedia.org/wiki/Jim_Butcher
+  - id: jim-butcher-storm-front-published-2000
+    date: 2000-04-01
+    title: Storm Front published, after two years shopping the manuscript
+    impact: high
+    description: >
+      Butcher floats the Storm Front manuscript among publishers for two
+      years before working the convention circuit to meet industry
+      contacts. Agent Ricia Mainhardt, who discovered Laurell K. Hamilton,
+      signs him after meeting him in person, and Roc/Penguin publishes
+      [[work:jim-butcher/storm-front|Storm Front]] as a paperback six
+      months later - the start of a writing career that, a quarter century
+      on, is still primarily this one series.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Jim_Butcher
+      - https://en.wikipedia.org/wiki/The_Dresden_Files
+  - id: jim-butcher-codex-alera-bet-2003
+    date: 2003
+    title: A dumb bet on the Del Rey writers' workshop becomes Codex Alera
+    impact: high
+    description: >
+      On the then-new Del Rey Online Writers' Workshop, Butcher argues in an
+      all-caps flame war that a skilled enough writer can make any premise
+      work, however weak. Challenged to prove it, he ups the stakes himself -
+      "why don't you give me TWO terrible ideas... and I'll use them BOTH" -
+      and is handed Lost Roman Legion and Pokemon, in his own words, "thus
+      was Alera formed." He builds them into the Roman-flavored elemental-
+      magic world of Alera. Ace wins a bidding war for the result in March
+      2003; [[work:jim-butcher/furies-of-calderon|Furies of Calderon]]
+      publishes the following year as the first of six, a complete series
+      conceived to answer a bet rather than to continue The Dresden Files.
+    spoilerAfter: null
+    sources:
+      - https://web.archive.org/web/20231204121055/https://fantasyliterature.com/author-interviews/jim-butcher/
+      - https://tvtropes.org/pmwiki/pmwiki.php/Trivia/CodexAlera
+sources:
+  - https://en.wikipedia.org/wiki/Jim_Butcher
+  - https://en.wikipedia.org/wiki/The_Dresden_Files
+  - https://www.jim-butcher.com/about-jim/

@@ -1,0 +1,69 @@
+# Additional reading orders. One on record: the Dresden Files novels, filtered
+# out of the whole-shelf default and its one same-year publication tie fixed.
+#
+# Codex Alera is six novels, one continuous story, complete, with no side
+# material and no same-year publication ties to sequence.
+#
+# The Cinder Spires is two novels and one interstitial novella - too short a
+# shelf yet for its own order to earn its keep, the way a Bromeliad-sized
+# grouping doesn't either (see terry-pratchett/orders.yaml). Warriorborn and
+# The Olympian Affair share a publication year (2023); that fact belongs to
+# the works, and the note on jim-butcher/warriorborn carries it.
+#
+# NO CROSS-SERIES ORDER WAS ATTEMPTED. A combined "read all three series
+# interleaved" order would require a claim about how they relate that this
+# wing does not make (see franchise.yaml): the three do not share a universe,
+# so there is no in-universe timeline to interleave them against, only three
+# separate publication timelines already fully expressed by the derived
+# default.
+
+- id: jim-butcher/dresden-files-novels
+  name: The Dresden Files novels, in order
+  type: curated
+  source: canon
+  rationale: >
+    The eighteen Dresden Files novels on their own, in publication order, with
+    Butcher's two unrelated series filtered out. He has said a Dresden/Codex
+    Alera crossover "would take a whole book" to even answer (see
+    franchise.yaml), so a reader who came for Harry Dresden loses nothing by
+    skipping straight from one Dresden novel to the next rather than watching
+    the whole-shelf default interleave a Roman-flavored epic fantasy and a
+    steampunk airship series between them - this is the single most commonly
+    published version of a Jim Butcher reading order for exactly that reason.
+    It also carries one guarantee the default cannot:
+    [[work:jim-butcher/peace-talks|Peace Talks]] and
+    [[work:jim-butcher/battle-ground|Battle Ground]] were one manuscript
+    split into two books ten weeks apart (see events.yaml), and both publish
+    in 2020, so a year-only sort cannot promise Peace Talks lands first. This
+    list does. The cost: it drops the two short-story collections and four
+    standalone novellas, several of which fill real continuity gaps (Aftermath
+    bridges [[work:jim-butcher/changes|Changes]] to
+    [[work:jim-butcher/ghost-story|Ghost Story]]; Backup is the one novella
+    narrated by Thomas, the White Court vampire, rather than Harry himself) - a
+    reader who wants those threaded in has to do it separately.
+  orderedWorkIds:
+    - jim-butcher/storm-front
+    - jim-butcher/fool-moon
+    - jim-butcher/grave-peril
+    - jim-butcher/summer-knight
+    - jim-butcher/death-masks
+    - jim-butcher/blood-rites
+    - jim-butcher/dead-beat
+    - jim-butcher/proven-guilty
+    - jim-butcher/white-night
+    - jim-butcher/small-favor
+    - jim-butcher/turn-coat
+    - jim-butcher/changes
+    - jim-butcher/ghost-story
+    - jim-butcher/cold-days
+    - jim-butcher/skin-game
+    - jim-butcher/peace-talks
+    - jim-butcher/battle-ground
+    - jim-butcher/twelve-months
+  debated:
+    - "Codex Alera and The Cinder Spires are left out entirely, not merely unordered relative to this list - Butcher's own crossover remark (above) means nothing here can place them before, after or alongside a given Dresden novel."
+    - "The two collections (Side Jobs, Brief Cases) and four standalone novellas (Backup, Working for Bigfoot, The Law, Out Law) are left out of this novels-only list. Some guides interleave them at specific points in the internal chronology (jim-butcher.com's own site lists where each story falls); this list stays to the numbered novels so that internal-chronology debate does not need settling here."
+  sources:
+    - https://thealexandrian.net/wordpress/38243/reviews/dresden-files-reading-order
+    - https://www.jim-butcher.com/books/dresden
+    - https://www.newsweek.com/dresden-files-book-17-release-date-battle-ground-peace-talks-1494226
