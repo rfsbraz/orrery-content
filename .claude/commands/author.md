@@ -25,10 +25,36 @@ every stage here and adds only `whats-new`; it differs in the question it asks
 the work is done. Use it for recurring maintenance; use this command to build
 or complete a wing.
 
+## Open the tracking artifact BEFORE the first stage (not optional)
+
+A wing build runs for hours across a dozen agents, and its only home is a
+branch. A branch with no PR is invisible: it is not in the review queue, its
+progress is not watchable, and if the session drops it rots unnoticed - the
+exact failure the top-level rules already forbid for finished work, arriving one
+step earlier. So the tracking artifact comes first, before any stage runs:
+
+1. **Create the wing branch** off `main` (`wing/<slug>`).
+2. **Seed it and open a DRAFT PR** against `main`, linked to the request issue
+   (`Tracks #<n>`). A draft PR is the right tracker: it exists from commit one,
+   it shows the build advancing commit by commit, and it makes the branch
+   non-stranded the moment it exists. Title it `Add the <Name> wing` and mark it
+   draft; mark it ready for review only when the wing-audit has passed.
+   - If the scaffold has not committed yet, seed with an empty commit
+     (`git commit --allow-empty`) or open the draft PR immediately after the
+     scaffold's first commit - either way the PR is open before stage two.
+   - There is usually already a REQUEST issue (like #58). That tracks the
+     *ask*; the draft PR tracks the *work*. Link them; do not conflate them.
+3. Only then start the pipeline. The build's commits land on this branch and the
+   draft PR is where its state is read - by a human, and by the end-of-session
+   stranded-work sweep.
+
+This is a standing rule for every wing build, the same way "push and open the PR
+together" is for every other branch.
+
 ## Plan from state, not from a script
 
 The pipeline is the same for a new author and an update - what differs is which
-stages fire. Before launching anything:
+stages fire. Before launching anything (and after the draft PR is open):
 
 1. **Resolve the slug** (`content/franchises/<slug>/`; reuse an existing one,
    else lowercase-hyphenated, accents stripped; ids are permanent).
