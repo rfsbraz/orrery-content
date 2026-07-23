@@ -49,7 +49,22 @@ its context multiplied by how many calls it makes. One wing's editions stage
 made 144 sequential fetches; the pages were not the expense, fetching them one
 at a time was. Three habits, before you start:
 
-- **Fetch in batches, not one by one.** `python scripts/fetch.py URL [URL...]`
+- **Editions and visual-metadata: reach for `scripts/metadata/lookup.py` FIRST.**
+  For those two stages the whole fetching half is already one tool call:
+  `python scripts/metadata/lookup.py <slug> --author "<name>"` sweeps the
+  registered providers and prints a TSV of edition and cover candidates for the
+  entire wing (`--verify-isbns` checks an existing `editions.yaml`,
+  `--check-covers` HEADs every cover, `--markets no,en,pt` widens the search,
+  `--json` when something parses it). Measured on the Jo Nesbo wing it replaced
+  ~360 sequential fetches (~880k tokens, 57 min) with ~40 HTTP requests inside
+  one call. It does **not** replace the stage's judgement - which market, is
+  this an omnibus, is this a title-page scan - and every real catch on the wings
+  built so far was one of those, not a lookup. So run it, then judge the table.
+  A source it does not cover yet is one provider class in
+  `scripts/metadata/providers.py`; add it there rather than hand-fetching around
+  it. The rest of this section still applies to the verification fetches the
+  table sends you back for.
+- **Every other stage: fetch in batches, not one by one.** `python scripts/fetch.py URL [URL...]`
   takes many URLs in a single call, caches to `.cache/fetch/` (so a URL an
   earlier stage already paid for is free), sends the browser User-Agent that
   portoeditora.pt, infopedia.pt, observador.pt and the BNP catalogue require,
