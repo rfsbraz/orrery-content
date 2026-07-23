@@ -1,14 +1,15 @@
 # Bibliography (Works) - the abstract books; editions/covers are separate metadata.
 # IDs are STABLE and permanent (user data references them). Dates are year-precision
 # unless a source states a full date. The default reading order (all works in
-# publication order) is DERIVED from this file - so completeness is the goal.
+# publication order) is DERIVED from this file, so every published work belongs
+# here.
 #
 # Coverage: every novel across all three series, the two numbered short-fiction
-# collections that stand as their own books (Side Jobs, Brief Cases), two
-# standalone limited-run items later folded into those collections (the
-# illustrated novelette Backup, and the Working for Bigfoot omnibus), the one
-# Cinder Spires novella (Warriorborn), and the licensed Spider-Man tie-in novel
-# (The Darkest Hours).
+# collections that stand as their own books (Side Jobs, Brief Cases), four
+# standalone limited-run novellas (the illustrated Backup and the Working for
+# Bigfoot omnibus, both later folded into those collections; The Law and Out
+# Law, neither yet collected), the one Cinder Spires novella (Warriorborn), and
+# the licensed Spider-Man tie-in novel (The Darkest Hours).
 #
 # Deliberately NOT catalogued as individual works: the several dozen Dresden
 # Files short stories and microfictions published only inside shared
@@ -37,11 +38,18 @@
     police can't explain. When a double murder turns out to be black
     magic, the money looks good - until Harry realizes the killer already
     knows his name.
+  note: >
+    ISFDB dates a Buzzy Multimedia audio edition to 1997, but that edition's
+    own Audible listing carries a 2002 phonogram copyright, and no
+    publisher had bought the manuscript until Roc's 2000 paperback; 2000 is
+    the confirmed first publication.
   externalIds:
     openLibrary: null
   sources:
     - https://www.jim-butcher.com/books/dresden-files/storm-front/
     - https://en.wikipedia.org/wiki/The_Dresden_Files
+    - https://www.isfdb.org/cgi-bin/title.cgi?21523
+    - https://www.audible.com/pd/Storm-Front-Audiobook/B002V8KYMI
 
 - id: jim-butcher/fool-moon
   title: "Fool Moon"
@@ -314,6 +322,27 @@
     - https://en.wikipedia.org/wiki/Battle_Ground_(novel)
     - https://www.newsweek.com/dresden-files-book-17-release-date-battle-ground-peace-talks-1494226
 
+- id: jim-butcher/the-law
+  title: "The Law"
+  authorIds: [jim-butcher]
+  published: 2022
+  subseries: "The Dresden Files"
+  canonTier: apocrypha
+  synopsis: >
+    Not every danger comes in the form of a monster. When one of Chicago's
+    most vulnerable children needs protection, Harry Dresden ends up in two
+    fights at once - a legal one, and the kind with explosions.
+  note: >
+    An Audible-exclusive novella read by Butcher himself, with a limited
+    Subterranean Press print edition; not gathered into any collection.
+    Retailers number it inconsistently within the Dresden Files sequence
+    (Goodreads: #17.2; Amazon: Book 17.5; ISFDB: 17.7). Set after
+    [[work:jim-butcher/battle-ground|Battle Ground]].
+  sources:
+    - https://www.jim-butcher.com/posts/2022/announcing-the-law-read-by-jim-himself
+    - https://www.goodreads.com/book/show/60653694-the-law
+    - https://www.isfdb.org/cgi-bin/title.cgi?3058513
+
 - id: jim-butcher/twelve-months
   title: "Twelve Months"
   authorIds: [jim-butcher]
@@ -326,6 +355,26 @@
     gather around what's left standing.
   sources:
     - https://en.wikipedia.org/wiki/Twelve_Months_(novel)
+
+- id: jim-butcher/out-law
+  title: "Out Law"
+  authorIds: [jim-butcher]
+  published: 2026
+  subseries: "The Dresden Files"
+  canonTier: apocrypha
+  synopsis: >
+    "Gentleman" John Marcone asks Harry to help a small-time crook become a
+    better man - work that pulls Harry into conflict with a new criminal
+    organization backed by a supernatural power tied to his own past.
+  note: >
+    A standalone Podium Publishing novella (paperback, ebook and
+    audiobook), not part of any anthology; not gathered into any
+    collection. Set during the events of
+    [[work:jim-butcher/twelve-months|Twelve Months]].
+  sources:
+    - https://www.jim-butcher.com/posts/2026/out-law-now-available
+    - https://www.libraryjournal.com/review/out-law-a-dresden-files-novella-100009331
+    - https://www.isfdb.org/cgi-bin/title.cgi?3599571
 
 # --- Codex Alera (complete, six novels) ---
 - id: jim-butcher/furies-of-calderon
