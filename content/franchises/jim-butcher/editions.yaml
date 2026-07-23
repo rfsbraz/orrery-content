@@ -1,0 +1,445 @@
+# Editions of Jim Butcher: English (en) only. 33 of 34 works.
+#
+# Butcher writes in English and no pt-PT translation of this wing exists, so
+# every entry here is the ORIGINAL-language edition. It carries no `title`
+# (the work title IS the published title - see
+# SCHEMA.md's rule on omitting `title` when a work is already in that
+# language) and no `coverUrl` anywhere: works.yaml already carries an Open
+# Library cover for every work that has one, and duplicating that here would
+# just be a second place for the two to drift apart.
+#
+# ONE EDITION PER WORK, chosen for being the most clearly-attested currently
+# catalogued printing, not necessarily the very first one:
+#   - Roc / Ace (Penguin Random House US) is used wherever a clean US record
+#     surfaced - Roc for the Dresden Files through Skin Game, Ace for Codex
+#     Alera, and the Ace-descended "Penguin Publishing Group" imprint for
+#     Peace Talks onward and the Cinder Spires.
+#   - Orbit UK (catalogued by OpenLibrary/BookWatch under "Little, Brown Book
+#     Group Limited" or plain "Orbit") is used wherever no clean US ISBN
+#     surfaced for that work (Summer Knight, Death Masks, Blood Rites, Small
+#     Favor, Skin Game, Peace Talks). This is a different, real, currently
+#     catalogued English edition of the same unchanged text - not a fallback
+#     of last resort - so `language: en` (bare, no region) is correct for
+#     both: nothing about the book differs between the US and UK printings.
+#   - Subterranean Press / Podium / Pocket Star for the specialty items and
+#     the licensed Spider-Man tie-in, where those are the only or the
+#     clearly-intended edition.
+#
+# `format` is set ONLY where a source explicitly states the binding (an
+# OpenLibrary `physical_format` field, or an explicit "Roc Hardcover" / "Ace
+# Hardcover" in the publisher name itself). Most backlist mass-market entries
+# below have neither field, so `format` is absent on them, the same as the
+# Palahniuk file's `shock-induction` and first `fight-club` entries.
+#
+# SOURCING: every ISBN below was opened at OpenLibrary (a MARC/library-record
+# aggregator, not a wiki) and its `works` key cross-checked against the
+# correct work id from works.yaml to rule out a same-titled but wrong record.
+# Storm Front's edition is additionally cross-checked against ISFDB, which
+# independently lists the identical ISBN under "Roc / New American Library".
+# The Codex Alera and Cinder Spires Ace/Ace Hardcover records carry LCCNs.
+#
+# THREE TRAPS THIS FILE DELIBERATELY AVOIDS, found while researching it:
+#   - Del Rey's two "Jim Butcher's the Dresden files" OpenLibrary records
+#     (9780345506399, 9780345507464) are the Del Rey GRAPHIC NOVEL
+#     adaptations (Storm Front Vol. 1 and the original story "Welcome to the
+#     Jungle"), confirmed via their own by_statement fields naming an
+#     "adaptation," a penciller and an inker. Neither is a print edition of
+#     any prose work here.
+#   - "Wizard for Hire" (SFBC, 2005) and "Wizard Under Fire" (SFBC, 2007,
+#     754 pages) are Science Fiction Book Club two-novel OMNIBUS bind-ups
+#     (Storm Front+Fool Moon and Grave Peril+Summer Knight respectively, the
+#     754-page count for a single novel being the tell) - excluded per the
+#     rule against an omnibus ISBN standing in for one work.
+#   - The several Buzzy Multimedia CD/audio ISBNs surfacing for Storm Front,
+#     Fool Moon and Summer Knight are audiobooks, not the print editions a
+#     "buy this book" link should point a reader at.
+#
+# WARRIORBORN HAS NO ENTRY, DELIBERATELY. jim-butcher.com's own announcement
+# post states it "was released September 19, 2023 as an ebook and an
+# audiobook" - no print edition exists, and neither format is recorded on
+# OpenLibrary or ISFDB with an ISBN. This matches works.yaml's own note on the
+# work. Nothing to invent here; the app will show the work with no buy link.
+
+# =============================================================================
+# The Dresden Files
+# =============================================================================
+
+- id: jim-butcher/storm-front/roc-2000-en
+  workId: jim-butcher/storm-front
+  isbn13: "9780451457813"
+  language: en
+  publisher: Roc
+  year: 2000
+  note: >
+    OpenLibrary's own record for this ISBN lists the corporate imprint parent
+    "Penguin Putnam" rather than the "Roc" name printed on the book itself;
+    ISFDB independently lists the identical ISBN as "Roc / New American
+    Library", which is the name used throughout this file and by every
+    neighbouring record.
+  sources:
+    - "https://openlibrary.org/isbn/9780451457813"
+    - "https://www.isfdb.org/cgi-bin/title.cgi?21523"
+
+- id: jim-butcher/fool-moon/roc-2001-en
+  workId: jim-butcher/fool-moon
+  isbn13: "9780451458124"
+  language: en
+  publisher: Roc
+  year: 2001
+  sources:
+    - "https://openlibrary.org/books/OL23998623M"
+
+- id: jim-butcher/grave-peril/roc-2001-en
+  workId: jim-butcher/grave-peril
+  isbn13: "9780451458445"
+  language: en
+  publisher: Roc
+  year: 2001
+  sources:
+    - "https://openlibrary.org/books/OL24229926M"
+
+- id: jim-butcher/summer-knight/orbit-2010-en
+  workId: jim-butcher/summer-knight
+  isbn13: "9780748116096"
+  language: en
+  publisher: Orbit
+  year: 2010
+  note: >
+    No US Roc ISBN for this work surfaced in OpenLibrary or ISFDB with a
+    valid check digit; the Orbit UK paperback is recorded instead, the same
+    unchanged English text.
+  sources:
+    - "https://openlibrary.org/books/OL33393352M"
+
+- id: jim-butcher/death-masks/orbit-2010-en
+  workId: jim-butcher/death-masks
+  isbn13: "9780748116102"
+  language: en
+  publisher: Orbit
+  year: 2010
+  note: Same situation as Summer Knight above - no clean US ISBN surfaced.
+  sources:
+    - "https://openlibrary.org/books/OL33415493M"
+
+- id: jim-butcher/blood-rites/orbit-2010-en
+  workId: jim-butcher/blood-rites
+  isbn13: "9780748116119"
+  language: en
+  publisher: Orbit
+  year: 2010
+  sources:
+    - "https://openlibrary.org/books/OL33409949M"
+
+- id: jim-butcher/dead-beat/roc-2006-en
+  workId: jim-butcher/dead-beat
+  isbn13: "9780451460912"
+  language: en
+  publisher: Roc
+  year: 2006
+  note: The mass-market paperback, a year after the 2005 hardcover.
+  sources:
+    - "https://openlibrary.org/books/OL7576304M"
+
+- id: jim-butcher/proven-guilty/roc-2007-en
+  workId: jim-butcher/proven-guilty
+  isbn13: "9780451461032"
+  language: en
+  publisher: Roc
+  year: 2007
+  note: The mass-market paperback, a year after the 2006 hardcover.
+  sources:
+    - "https://openlibrary.org/books/OL7576315M"
+
+- id: jim-butcher/white-night/roc-2008-en
+  workId: jim-butcher/white-night
+  isbn13: "9780451461551"
+  language: en
+  format: paperback
+  publisher: Roc
+  year: 2008
+  note: The mass-market paperback, a year after the 2007 hardcover.
+  sources:
+    - "https://openlibrary.org/books/OL9507050M"
+
+- id: jim-butcher/small-favor/orbit-2009-en
+  workId: jim-butcher/small-favor
+  isbn13: "9780748111787"
+  language: en
+  publisher: Orbit
+  year: 2009
+  note: >
+    The US Roc ISBN for this work (9780451461896) is tagged inconsistently
+    across OpenLibrary records as both "Roc" and "Roc Hardcover" for what
+    claims to be the same object, so the cleanly single-attributed Orbit UK
+    paperback is recorded instead.
+  sources:
+    - "https://openlibrary.org/books/OL33387319M"
+
+- id: jim-butcher/turn-coat/roc-2009-en
+  workId: jim-butcher/turn-coat
+  isbn13: "9780451462565"
+  language: en
+  publisher: Roc
+  year: 2009
+  sources:
+    - "https://openlibrary.org/books/OL23152832M"
+
+- id: jim-butcher/changes/roc-2010-en
+  workId: jim-butcher/changes
+  isbn13: "9780451463173"
+  language: en
+  format: hardcover
+  publisher: Roc
+  year: 2010
+  sources:
+    - "https://openlibrary.org/books/OL24019609M"
+
+- id: jim-butcher/side-jobs/roc-2010-en
+  workId: jim-butcher/side-jobs
+  isbn13: "9780451463654"
+  language: en
+  publisher: Roc
+  year: 2010
+  sources:
+    - "https://openlibrary.org/books/OL24356740M"
+
+- id: jim-butcher/ghost-story/roc-2011-en
+  workId: jim-butcher/ghost-story
+  isbn13: "9780451463791"
+  language: en
+  format: hardcover
+  publisher: Roc
+  year: 2011
+  sources:
+    - "https://openlibrary.org/books/OL24858073M"
+
+- id: jim-butcher/cold-days/roc-2012-en
+  workId: jim-butcher/cold-days
+  isbn13: "9780451464408"
+  language: en
+  publisher: Roc
+  year: 2012
+  sources:
+    - "https://openlibrary.org/books/OL27138222M"
+
+- id: jim-butcher/skin-game/orbit-2014-en
+  workId: jim-butcher/skin-game
+  isbn13: "9780748130825"
+  language: en
+  publisher: Orbit
+  year: 2014
+  note: >
+    A US ISBN (9780451464392) exists but OpenLibrary's record for it carries
+    no publisher field at all; the cleanly-attributed Orbit UK edition is
+    recorded instead.
+  sources:
+    - "https://openlibrary.org/books/OL34601536M"
+
+- id: jim-butcher/working-for-bigfoot/subterranean-press-2015-en
+  workId: jim-butcher/working-for-bigfoot
+  isbn13: "9781596067301"
+  language: en
+  format: hardcover
+  publisher: Subterranean Press
+  year: 2015
+  sources:
+    - "https://openlibrary.org/books/OL28276999M"
+    - "https://en.wikipedia.org/wiki/The_Dresden_Files_short_fiction"
+
+- id: jim-butcher/brief-cases/ace-2019-en
+  workId: jim-butcher/brief-cases
+  isbn13: "9780451492111"
+  language: en
+  publisher: Ace
+  year: 2019
+  note: >
+    The 2019 paperback. The 2018 first edition is 9780451492104 (matches the
+    same table of contents and the work's 2018 publication year), but its
+    OpenLibrary record carries no publisher field, so the confirmed 2019
+    paperback is recorded here instead.
+  sources:
+    - "https://openlibrary.org/books/OL28920369M"
+
+- id: jim-butcher/peace-talks/orbit-2020-en
+  workId: jim-butcher/peace-talks
+  isbn13: "9780356500911"
+  language: en
+  publisher: Orbit
+  year: 2020
+  note: >
+    OpenLibrary also carries an ISBN under this same title dated "2015"
+    (9780748130832), five years before Peace Talks existed - an OL dating
+    error, not a second edition. Not recorded.
+  sources:
+    - "https://openlibrary.org/books/OL29487034M"
+
+- id: jim-butcher/battle-ground/ace-2020-en
+  workId: jim-butcher/battle-ground
+  isbn13: "9780593199329"
+  language: en
+  publisher: Ace
+  year: 2020
+  sources:
+    - "https://openlibrary.org/books/OL34126181M"
+
+- id: jim-butcher/the-law/subterranean-press-2026-en
+  workId: jim-butcher/the-law
+  isbn13: "9781039414808"
+  language: en
+  publisher: Subterranean Press
+  year: 2026
+  note: >
+    ISBN SINGLE-SOURCED. jim-butcher.com's own announcement post states
+    outright that "no print editions are currently planned apart from a
+    collector's edition that is available from Subterranean Press" - ISFDB's
+    record for this novella carries only the Imaginary Empire LLC ebook and a
+    Podium Audio audiobook, neither with an ISBN. This is the only ISBN
+    OpenLibrary holds for the work, its publisher field is blank there, and
+    the record is very recently catalogued (2026); it is recorded on the
+    strength of the author's own confirmation that a Subterranean print
+    edition exists, not on OpenLibrary naming the publisher itself.
+  sources:
+    - "https://openlibrary.org/works/OL45587260W/editions.json"
+    - "https://www.jim-butcher.com/posts/2022/announcing-the-law-read-by-jim-himself"
+
+- id: jim-butcher/twelve-months/ace-2026-en
+  workId: jim-butcher/twelve-months
+  isbn13: "9780593199350"
+  language: en
+  format: hardcover
+  publisher: Ace
+  year: 2026
+  sources:
+    - "https://en.wikipedia.org/wiki/Twelve_Months_(novel)"
+    - "https://www.jim-butcher.com/posts/2022/announcing-the-law-read-by-jim-himself"
+
+- id: jim-butcher/out-law/podium-2026-en
+  workId: jim-butcher/out-law
+  isbn13: "9798347030026"
+  language: en
+  format: paperback
+  publisher: Podium Publishing
+  year: 2026
+  note: Also released as ebook and audiobook (per works.yaml); this is the print ISBN.
+  sources:
+    - "https://www.jim-butcher.com/posts/2026/out-law-now-available"
+    - "https://www.isfdb.org/cgi-bin/title.cgi?3599571"
+
+# =============================================================================
+# Codex Alera
+# =============================================================================
+
+- id: jim-butcher/furies-of-calderon/ace-2005-en
+  workId: jim-butcher/furies-of-calderon
+  isbn13: "9780441012688"
+  language: en
+  publisher: Ace
+  year: 2005
+  sources:
+    - "https://openlibrary.org/books/OL7524271M"
+
+- id: jim-butcher/academs-fury/ace-2006-en
+  workId: jim-butcher/academs-fury
+  isbn13: "9780441013401"
+  language: en
+  publisher: Ace
+  year: 2006
+  sources:
+    - "https://openlibrary.org/books/OL7524293M"
+
+- id: jim-butcher/cursors-fury/ace-2007-en
+  workId: jim-butcher/cursors-fury
+  isbn13: "9780441015474"
+  language: en
+  format: paperback
+  publisher: Ace
+  year: 2007
+  note: The mass-market paperback reprint; the 2006 Ace Hardcover first edition is 9780441014347.
+  sources:
+    - "https://openlibrary.org/books/OL10256211M"
+
+- id: jim-butcher/captains-fury/ace-2007-en
+  workId: jim-butcher/captains-fury
+  isbn13: "9780441015276"
+  language: en
+  format: hardcover
+  publisher: Ace
+  year: 2007
+  sources:
+    - "https://openlibrary.org/books/OL9417448M"
+
+- id: jim-butcher/princeps-fury/ace-2008-en
+  workId: jim-butcher/princeps-fury
+  isbn13: "9780441016389"
+  language: en
+  publisher: Ace
+  year: 2008
+  sources:
+    - "https://openlibrary.org/books/OL17103214M"
+
+- id: jim-butcher/first-lords-fury/ace-2009-en
+  workId: jim-butcher/first-lords-fury
+  isbn13: "9780441017690"
+  language: en
+  publisher: Ace
+  year: 2009
+  sources:
+    - "https://openlibrary.org/books/OL24073864M"
+
+# =============================================================================
+# The Cinder Spires
+# =============================================================================
+
+- id: jim-butcher/the-aeronauts-windlass/orbit-2016-en
+  workId: jim-butcher/the-aeronauts-windlass
+  isbn13: "9780356503660"
+  language: en
+  format: paperback
+  publisher: Orbit
+  year: 2016
+  sources:
+    - "https://openlibrary.org/books/OL26464969M"
+
+# Warriorborn has no entry: see the file header. Ebook/audio-only, no ISBN.
+
+- id: jim-butcher/the-olympian-affair/ace-2023-en
+  workId: jim-butcher/the-olympian-affair
+  isbn13: "9780698138032"
+  language: en
+  publisher: Ace
+  year: 2023
+  sources:
+    - "https://openlibrary.org/books/OL50724977M"
+    - "https://www.penguinrandomhouse.com/books/315101/the-olympian-affair-by-jim-butcher/"
+
+# =============================================================================
+# Other
+# =============================================================================
+
+- id: jim-butcher/backup/subterranean-press-2008-en
+  workId: jim-butcher/backup
+  isbn13: "9781596061828"
+  language: en
+  format: hardcover
+  publisher: Subterranean Press
+  year: 2008
+  note: >
+    OpenLibrary's own summary of the record ends "--Dust jacket," and the
+    Mike Mignola illustration credit matches works.yaml's note on the work.
+  sources:
+    - "https://openlibrary.org/books/OL25534847M"
+
+- id: jim-butcher/the-darkest-hours/pocket-star-2006-en
+  workId: jim-butcher/the-darkest-hours
+  isbn13: "9781416510680"
+  language: en
+  format: paperback
+  publisher: Pocket Star
+  year: 2006
+  note: >
+    The original mass-market paperback. A 2009 Pocket Books trade paperback
+    reissue also exists (9781416594765); the original is recorded as neither
+    is confirmed to still be the in-print SKU for a 20-year-old licensed
+    tie-in.
+  sources:
+    - "https://openlibrary.org/books/OL8456783M"
