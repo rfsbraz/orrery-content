@@ -1,0 +1,635 @@
+# Editions of Karin Slaughter: 39 English (en) editions over 39 of 43 works.
+#
+# COVERAGE
+#   en   39 of 43 works. All 26 novels/standalones covered (Grant County 6,
+#        Will Trent 12, North Falls 1 of 2, standalones 6) plus 14 of 17
+#        short-fiction pieces. Four deliberate absences, explained below.
+#
+# ONE EDITION PER WORK, not a US/UK pair. Slaughter's US and UK editions
+# usually share the same English text (unlike, say, Gillian Flynn's separate
+# Crown/Weidenfeld printings with their own ISBNs), so recording both here
+# would mostly duplicate the same object under two numbers rather than
+# describe two different books. The one exception where the *title* differs
+# (Beyond Reach / UK "Skin Privilege") is recorded as a note on the work
+# already (works.yaml), not as a second edition row, per the rule that a
+# translated-or-retitled edition needs its own row only when a reader would
+# otherwise buy the wrong object. No `title` is set on any entry below: every
+# edition is in English and the work's own title IS the published title.
+#
+# THE PUBLISHING HOUSES, era by era, confirmed edition by edition rather than
+# assumed from the brief: William Morrow (an imprint of HarperCollins) for all
+# six Grant County novels (2001-2007); Delacorte Press for Will Trent through
+# 2013 (Triptych to Unseen); William Morrow again from The Kept Woman (2016)
+# onward for the rest of Will Trent, all of North Falls published so far, and
+# every standalone. Cop Town (2014) is the one standalone still under
+# Delacorte, matching its publication year sitting inside the Delacorte Will
+# Trent run rather than the later Morrow standalone run.
+#
+# SOURCING. Every entry is corroborated by at least the Library of Congress
+# SRU gateway (lx2.loc.gov:210/lcdb, which serves full MARC records including
+# the 020/264/300 fields quoted in each note) or OpenLibrary's per-ISBN record,
+# and the great majority by both. Where only OpenLibrary confirms an entry,
+# that is stated in the note rather than left implicit.
+#
+# LOC CORRECTED TWO OPENLIBRARY-DERIVED CANDIDATES the wing's own cover-source
+# records had already settled on:
+#   - Pretty Girls: works.yaml's coverSource OpenLibrary record carries ISBN
+#     9780062430878, attributed to "William Morrow, 2015". The Library of
+#     Congress CIP record for the actual 2015 First edition (LCCN 2015298108)
+#     gives 9780062429056 instead, and does not list 9780062430878 anywhere,
+#     not even among its cancelled/variant ("z") fields. The LOC number is
+#     used here; OpenLibrary's is not repeated, since a close-but-different
+#     digit run with no corroboration is exactly the kind of number this
+#     skill exists to catch, not to inherit.
+#   - The Kept Woman: works.yaml's coverSource carries ISBN 9780062430236.
+#     The LOC CIP record (LCCN 2016590295) gives the hardcover as 9780062430212
+#     instead. Both numbers pass their check digit and both sit in the same
+#     "978-0-06-2430xxx" block HarperCollins evidently uses across Slaughter's
+#     backlist (Pieces of Her is …0274, The Good Daughter …0243, Pretty Girls'
+#     own wrong candidate above is …0878), so 9780062430236 is not a
+#     transcription error so much as a DIFFERENT real printing (most likely
+#     the reissue paperback that got photographed for the cover) - the LOC
+#     hardcover first edition is recorded here instead, consistent with every
+#     other Grant County/Will Trent entry being a first edition.
+# Neither work's cover image needed to change: a work's `images.cover` and
+# this file's `isbn13` are allowed to point at different real printings of
+# the same book.
+#
+# GIRL, FORGOTTEN carries no Library of Congress record under any ISBN
+# checked (a title-only LOC search returns 44 unrelated books called "Girl,
+# Forgotten"; author-scoped queries against the LOC SRU gateway for this one
+# ISBN returned no hit). It rests on OpenLibrary alone - the same edition
+# record works.yaml already uses for the cover - which is stated plainly
+# rather than presented as equally corroborated to the rest of the file.
+#
+# THE SHARED NECESSARY WOMEN / THE MEAN TIME ISBN IS NOT A DUPLICATE-ISBN
+# BUG. Both stories were released as a single paired ebook (Random House,
+# 17 October 2013, OverDrive catalog id 1213609), so both work entries below
+# correctly carry the identical isbn13 9781448149193 - one real object,
+# two catalogued works, the same relationship Snatched and Busted would have
+# if they had shipped together instead of separately.
+#
+# A DATE DISCREPANCY, NOT CORRECTED HERE. Busted's OpenLibrary/publisher
+# record (bwb:9781448184828) dates the ebook to 2013, one year after
+# works.yaml's `published: 2012` for the same book. Busted was sold as a
+# paperback-exclusive bonus for Unseen, which itself published in 2013, so a
+# 2013 release date for the bonus material is at least as plausible as 2012.
+# Per this skill's scope, only editions.yaml is touched here; the year in
+# works.yaml is left for whoever next reviews that file, flagged in the PR.
+#
+# FOUR DELIBERATE ABSENCES, each checked and confirmed rather than merely
+# unsearched:
+#   - The Secrets We Hide: unpublished at the time this file was written (US
+#     date 11 August 2026). The one OpenLibrary pre-publication record found
+#     (isbn13 9781460768112) is attributed to "Arotahi Agency" - a rights
+#     agency, not a trade publisher of record - carries no year, format or
+#     second source, and was created within the last few months purely from a
+#     rights-listing feed. A single, uncorroborated, non-publisher record is
+#     not enough to ship an edition, the same reason this work has no cover
+#     image either.
+#   - Thorn in My Side: sold exclusively as an Amazon Kindle Single (confirmed
+#     via the author's own site, whose "Buy the Book" link resolves to
+#     amazon.com/.../Thorn-Side-Kindle-Single-ebook/dp/...). Kindle Singles of
+#     this kind carry an ASIN, not an ISBN, and no Library of Congress or
+#     OpenLibrary record exists under this title for this author. A real,
+#     buyable, ISBN-less object - the schema's own documented case.
+#   - The Truth About Pretty Girls: premiered as an Audible-exclusive
+#     recording (30 May 2013) and later as a Kindle edition (24 December
+#     2014, per its own goodreads/karinslaughter.com listings); neither the
+#     Library of Congress nor OpenLibrary holds a record under this title for
+#     this author. Same shape as Thorn in My Side: real, sold, no ISBN found.
+#   - Short Story (the Koryta crossover): its 2019 standalone reissue is sold
+#     only via a Kindle ASIN (amazon.com/dp/B07SJV4DD2, per works.yaml's own
+#     sourcing), not an ISBN. Its first appearance, the MatchUp anthology
+#     (Simon & Schuster, 2017), does carry real ISBNs, but those describe the
+#     multi-author anthology as a whole, not Slaughter and Koryta's individual
+#     contribution - recording one of those ISBNs here would misattribute a
+#     book with a dozen other authors' names on it to a single-story entry,
+#     the same reason First Thrills: Volume 3 itself carries no entry for
+#     Cold, Cold Heart below.
+
+# =============================================================================
+# Grant County (William Morrow, 2001-2005) then Delacorte (2007)
+# =============================================================================
+
+- id: karin-slaughter/blindsighted/william-morrow-2001-en
+  workId: karin-slaughter/blindsighted
+  isbn13: "9780688174576"
+  language: en
+  publisher: William Morrow
+  year: 2001
+  note: >
+    First edition, 311 pages, New York. OpenLibrary's own record (the same
+    one works.yaml cites for the cover) carries only the ISBN-10 0688174574;
+    the 13-digit form here is that number converted (check digit dropped, 978
+    prefixed, recomputed) and matches the "bwb:9780688174576" cross-reference
+    already present in the same OpenLibrary record.
+  sources:
+    - "https://openlibrary.org/books/OL6788098M.json"
+
+- id: karin-slaughter/kisscut/william-morrow-2002-en
+  workId: karin-slaughter/kisscut
+  isbn13: "9780688174590"
+  language: en
+  format: hardcover
+  publisher: William Morrow
+  year: 2002
+  note: Published 3 September 2002, New York; the same edition record works.yaml cites for the cover.
+  sources:
+    - "https://openlibrary.org/books/OL7727546M.json"
+
+- id: karin-slaughter/a-faint-cold-fear/william-morrow-2003-en
+  workId: karin-slaughter/a-faint-cold-fear
+  isbn13: "9780060534059"
+  language: en
+  publisher: William Morrow
+  year: 2003
+  note: The same edition record works.yaml cites for the cover.
+  sources:
+    - "https://openlibrary.org/books/OL3682341M.json"
+
+- id: karin-slaughter/indelible/william-morrow-2004-en
+  workId: karin-slaughter/indelible
+  isbn13: "9780060567101"
+  language: en
+  publisher: William Morrow
+  year: 2004
+  note: >
+    "1st ed.", 360 pages, New York. OpenLibrary's record carries only the
+    ISBN-10 0060567104; the 13-digit form here is that number converted and
+    matches the record's own "bwb:9780060567101" cross-reference.
+  sources:
+    - "https://openlibrary.org/books/OL3302432M.json"
+
+- id: karin-slaughter/faithless/delacorte-2005-en
+  workId: karin-slaughter/faithless
+  isbn13: "9780385339452"
+  language: en
+  publisher: Delacorte Press
+  year: 2005
+  note: >
+    393 pages, New York; the same edition record works.yaml cites for the
+    cover. Delacorte replaces William Morrow starting with this book, ahead
+    of Will Trent's launch under the same house the following year.
+    OpenLibrary's record carries only the ISBN-10 0385339453; the 13-digit
+    form here is that number converted and matches "bwb:9780385339452".
+  sources:
+    - "https://openlibrary.org/books/OL3425215M.json"
+
+- id: karin-slaughter/beyond-reach/delacorte-2007-en
+  workId: karin-slaughter/beyond-reach
+  isbn13: "9780385339476"
+  language: en
+  publisher: Delacorte Press
+  year: 2007
+  note: >
+    Published 31 July 2007. The sixth and final Grant County novel; the UK
+    alternate title "Skin Privilege" is recorded as a note on the work
+    itself, not as a second edition here, since it is the same English text
+    under a different jacket title rather than a different translation.
+  sources:
+    - "https://openlibrary.org/books/OL7439476M.json"
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9780385339476"
+
+# =============================================================================
+# Will Trent (Delacorte Press, 2006-2013)
+# =============================================================================
+
+- id: karin-slaughter/triptych/delacorte-2006-en
+  workId: karin-slaughter/triptych
+  isbn13: "9780385339469"
+  language: en
+  publisher: Delacorte Press
+  year: 2006
+  note: Published 15 August 2006, New York; the same edition record works.yaml cites for the cover.
+  sources:
+    - "https://openlibrary.org/books/OL7439475M.json"
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9780385339469"
+
+- id: karin-slaughter/fractured/delacorte-2008-en
+  workId: karin-slaughter/fractured
+  isbn13: "9780385341950"
+  language: en
+  publisher: Delacorte Press
+  year: 2008
+  note: Published 29 July 2008; the same edition record works.yaml cites for the cover.
+  sources:
+    - "https://openlibrary.org/books/OL10151009M.json"
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9780385341950"
+
+- id: karin-slaughter/undone/delacorte-2009-en
+  workId: karin-slaughter/undone
+  isbn13: "9780385341967"
+  language: en
+  publisher: Delacorte Press
+  year: 2009
+  note: >
+    The same edition record works.yaml cites for the cover. The
+    international title "Genesis" is recorded as a note on the work itself.
+  sources:
+    - "https://openlibrary.org/books/OL23197906M.json"
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9780385341967"
+
+- id: karin-slaughter/broken/delacorte-2010-en
+  workId: karin-slaughter/broken
+  isbn13: "9780385341974"
+  language: en
+  publisher: Delacorte Press
+  year: 2010
+  note: The same edition record works.yaml cites for the cover (a different cover image id was substituted there; the underlying edition is unchanged).
+  sources:
+    - "https://openlibrary.org/books/OL24068874M.json"
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9780385341974"
+
+- id: karin-slaughter/fallen/delacorte-2011-en
+  workId: karin-slaughter/fallen
+  isbn13: "9780345528209"
+  language: en
+  publisher: Delacorte Books
+  year: 2011
+  note: The same edition record works.yaml cites for the cover.
+  sources:
+    - "https://openlibrary.org/books/OL25093993M.json"
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9780345528209"
+
+- id: karin-slaughter/criminal/delacorte-2012-en
+  workId: karin-slaughter/criminal
+  isbn13: "9780345528506"
+  language: en
+  publisher: Delacorte Press
+  year: 2012
+  note: The same edition record works.yaml cites for the cover.
+  sources:
+    - "https://openlibrary.org/books/OL25197868M.json"
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9780345528506"
+
+- id: karin-slaughter/unseen/delacorte-2013-en
+  workId: karin-slaughter/unseen
+  isbn13: "9780345539472"
+  language: en
+  publisher: Delacorte Press
+  year: 2013
+  note: The same edition record works.yaml cites for the cover. Last Will Trent novel before the house returns to William Morrow.
+  sources:
+    - "https://openlibrary.org/books/OL25766741M.json"
+
+# =============================================================================
+# Will Trent and North Falls (William Morrow, 2016-present)
+# =============================================================================
+
+- id: karin-slaughter/the-kept-woman/william-morrow-2016-en
+  workId: karin-slaughter/the-kept-woman
+  isbn13: "9780062430212"
+  language: en
+  format: hardcover
+  publisher: William Morrow
+  year: 2016
+  note: >
+    First edition (LCCN 2016590295). See the file header: works.yaml's own
+    coverSource carries the close-but-different 9780062430236, which LOC does
+    not list even among this book's international/signed-edition variants and
+    is recorded here as most likely a separate paperback printing rather than
+    a transcription error.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9780062430212"
+
+- id: karin-slaughter/the-last-widow/william-morrow-2019-en
+  workId: karin-slaughter/the-last-widow
+  isbn13: "9780062858085"
+  language: en
+  format: hardcover
+  publisher: William Morrow
+  year: 2019
+  note: >
+    448 pages (LCCN 2019299573). The only cover OpenLibrary holds for this
+    work is the HarperLuxe large-print edition (see works.yaml); this is the
+    standard trade hardcover instead, since large print is a special edition
+    and not the object most readers are sent to buy. The ISBN OpenLibrary's
+    candidate search surfaced for this title, 9780062860866, is LOC's own
+    "(international edition)" variant of this same book, not a transcription
+    error, and is not used here.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Last%20Widow%22%20and%20bath.author=Slaughter"
+
+- id: karin-slaughter/the-silent-wife/william-morrow-2020-en
+  workId: karin-slaughter/the-silent-wife
+  isbn13: "9780062858108"
+  language: en
+  format: hardcover
+  publisher: William Morrow
+  year: 2020
+  note: 496 pages, published 4 August 2020; the same edition record works.yaml cites for the cover.
+  sources:
+    - "https://openlibrary.org/books/OL29066054M.json"
+
+- id: karin-slaughter/after-that-night/william-morrow-2023-en
+  workId: karin-slaughter/after-that-night
+  isbn13: "9780063157781"
+  language: en
+  publisher: William Morrow
+  year: 2023
+  note: First edition; the same edition record works.yaml cites for the cover.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9780063157781"
+
+- id: karin-slaughter/this-is-why-we-lied/william-morrow-2024-en
+  workId: karin-slaughter/this-is-why-we-lied
+  isbn13: "9780063336728"
+  language: en
+  format: hardcover
+  publisher: William Morrow
+  year: 2024
+  note: >
+    First edition, 453 pages, New York (LCCN 2024391905). The only cover
+    OpenLibrary holds for this work is its own large-print edition (a
+    different ISBN, 9780063386426; see works.yaml); this is the standard
+    trade hardcover instead.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22This%20Is%20Why%20We%20Lied%22"
+
+- id: karin-slaughter/we-are-all-guilty-here/william-morrow-2025-en
+  workId: karin-slaughter/we-are-all-guilty-here
+  isbn13: "9780063336773"
+  language: en
+  publisher: William Morrow
+  year: 2025
+  note: First edition; the same edition record works.yaml cites for the cover.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9780063336773"
+
+# The Secrets We Hide (North Falls #2) has no edition here: see the file header.
+
+# =============================================================================
+# Standalone novels
+# =============================================================================
+
+- id: karin-slaughter/cop-town/delacorte-2014-en
+  workId: karin-slaughter/cop-town
+  isbn13: "9780345547491"
+  language: en
+  publisher: Delacorte Press
+  year: 2014
+  note: >
+    Published 24 June 2014, the one standalone still under Delacorte rather
+    than William Morrow, matching a publication date inside the Delacorte
+    Will Trent run. The same edition record works.yaml cites for the cover.
+  sources:
+    - "https://openlibrary.org/books/OL25448696M.json"
+
+- id: karin-slaughter/pretty-girls/william-morrow-2015-en
+  workId: karin-slaughter/pretty-girls
+  isbn13: "9780062429056"
+  language: en
+  format: hardcover
+  publisher: William Morrow
+  year: 2015
+  note: >
+    First edition, 396 pages (LCCN 2015298108). See the file header for why
+    this is NOT the ISBN (9780062430878) works.yaml's own coverSource
+    carries - that number appears nowhere in the LOC record for this book,
+    not even among its Barnes & Noble signed and international-edition
+    variants.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22Pretty%20Girls%22%20and%20bath.author=Slaughter"
+
+- id: karin-slaughter/the-good-daughter/william-morrow-2017-en
+  workId: karin-slaughter/the-good-daughter
+  isbn13: "9780062430243"
+  language: en
+  publisher: William Morrow
+  year: 2017
+  note: '"First U.S. edition." The same edition record works.yaml cites for the cover.'
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9780062430243"
+
+- id: karin-slaughter/pieces-of-her/william-morrow-2018-en
+  workId: karin-slaughter/pieces-of-her
+  isbn13: "9780062430274"
+  language: en
+  publisher: William Morrow
+  year: 2018
+  note: First edition, 470 pages; the same edition record works.yaml cites for the cover.
+  sources:
+    - "https://openlibrary.org/books/OL26955815M.json"
+
+- id: karin-slaughter/false-witness/william-morrow-2021-en
+  workId: karin-slaughter/false-witness
+  isbn13: "9780062858092"
+  language: en
+  format: hardcover
+  publisher: William Morrow
+  year: 2021
+  note: >
+    Published 27 July 2021, 440 pages, New York. A different edition record
+    from the one works.yaml cites for the cover (that one is a UK
+    HarperCollins Publishers Limited printing, isbn13 9780008303525); this is
+    the US first edition instead.
+  sources:
+    - "https://openlibrary.org/books/OL31935846M.json"
+
+- id: karin-slaughter/girl-forgotten/harpercollins-2022-en
+  workId: karin-slaughter/girl-forgotten
+  isbn13: "9780062859037"
+  language: en
+  publisher: HarperCollins Publishers
+  year: 2022
+  note: >
+    SINGLE-SOURCED. The same edition record works.yaml cites for the cover,
+    but no Library of Congress record was found under this ISBN or (checked
+    separately) any record for this title that could be scoped to this
+    author rather than the many unrelated books sharing the same title.
+  sources:
+    - "https://openlibrary.org/books/OL36180585M.json"
+
+# =============================================================================
+# Short stories and novellas
+# =============================================================================
+
+- id: karin-slaughter/like-a-charm/william-morrow-2004-en
+  workId: karin-slaughter/like-a-charm
+  isbn13: "9780060583309"
+  language: en
+  publisher: William Morrow
+  year: 2004
+  note: Published 11 May 2004; the same edition record works.yaml cites for the cover. The anthology as a whole, not a Slaughter-only book.
+  sources:
+    - "https://openlibrary.org/books/OL9233933M.json"
+
+- id: karin-slaughter/the-blessing-of-brokenness/random-house-2012-en
+  workId: karin-slaughter/the-blessing-of-brokenness
+  isbn13: "9781448149162"
+  language: en
+  format: ebook
+  publisher: Random House
+  year: 2012
+  note: 20-page standalone digital reissue of the Like a Charm closing chapter.
+  sources:
+    - "https://books.google.com/books/about/The_Blessing_of_Brokenness_Short_Story.html?id=2womlD3WcTgC"
+
+- id: karin-slaughter/martin-misunderstood/arrow-2008-en
+  workId: karin-slaughter/martin-misunderstood
+  isbn13: "9780099525899"
+  language: en
+  publisher: Arrow Books
+  year: 2008
+  note: >
+    Published 15 February 2008, 147 pages (LC record, LCCN 2010478222). No
+    jacket art is on record anywhere for this edition.
+  sources:
+    - "https://openlibrary.org/books/OL26708205M.json"
+
+# Thorn in My Side has no edition here: an Amazon Kindle Single (ASIN, not ISBN). See the file header.
+
+- id: karin-slaughter/the-unremarkable-heart-and-other-stories/mulholland-2011-en
+  workId: karin-slaughter/the-unremarkable-heart-and-other-stories
+  isbn13: "9781609987688"
+  language: en
+  publisher: Mulholland Books
+  year: 2011
+  note: >
+    The original print collection whose title story won the Edgar Award for
+    Best Short Story (2013). Its own constituent stories (The Blessing of
+    Brokenness, Cold Cold Heart, Necessary Women, The Mean Time) are
+    catalogued separately at their true first publications; this entry is the
+    collection as its own object.
+  sources:
+    - "https://en.wikipedia.org/wiki/The_Unremarkable_Heart"
+
+- id: karin-slaughter/cold-cold-heart/harpercollins-2016-en
+  workId: karin-slaughter/cold-cold-heart
+  isbn13: "9780062663290"
+  language: en
+  format: ebook
+  publisher: HarperCollins Publishers
+  year: 2016
+  note: >
+    40-page standalone digital reissue, matching the author's own site's
+    description of the story as "now available on its own." First appeared in
+    First Thrills: Volume 3 (Forge Books, 2011; see works.yaml), which is not
+    recorded here since that anthology carries a dozen other authors and its
+    ISBN would misattribute a multi-author book to this entry.
+  sources:
+    - "https://openlibrary.org/isbn/9780062663290.json"
+
+- id: karin-slaughter/snatched/random-house-2012-en
+  workId: karin-slaughter/snatched
+  isbn13: "9781448149209"
+  language: en
+  format: ebook
+  publisher: Random House
+  year: 2012
+  note: Paperback-exclusive Criminal bonus short, 50 pages.
+  sources:
+    - "https://openlibrary.org/isbn/9781448149209.json"
+
+- id: karin-slaughter/busted/random-house-2013-en
+  workId: karin-slaughter/busted
+  isbn13: "9781448184828"
+  language: en
+  format: ebook
+  publisher: Random House
+  year: 2013
+  note: >
+    Paperback-exclusive Unseen bonus short, 60 pages. The publisher record
+    dates this 2013, one year after works.yaml's `published: 2012` for the
+    same book; see the file header - not corrected here, flagged in the PR.
+  sources:
+    - "https://openlibrary.org/isbn/9781448184828.json"
+
+- id: karin-slaughter/necessary-women/random-house-2013-en
+  workId: karin-slaughter/necessary-women
+  isbn13: "9781448149193"
+  language: en
+  format: ebook
+  publisher: Random House
+  year: 2013
+  note: >
+    SHARED ISBN with The Mean Time below: published 17 October 2013 as one
+    paired ebook, "Necessary Women and the Mean Time (Short Stories)". See
+    the file header - this is deliberate, not a duplicate-ISBN error.
+  sources:
+    - "https://openlibrary.org/search.json?q=Necessary+Women+Karin+Slaughter"
+
+- id: karin-slaughter/the-mean-time/random-house-2013-en
+  workId: karin-slaughter/the-mean-time
+  isbn13: "9781448149193"
+  language: en
+  format: ebook
+  publisher: Random House
+  year: 2013
+  note: SHARED ISBN with Necessary Women above; see that entry and the file header.
+  sources:
+    - "https://openlibrary.org/search.json?q=Necessary+Women+Karin+Slaughter"
+
+# The Truth About Pretty Girls has no edition here: Audible/Kindle exclusive, no ISBN found. See the file header.
+
+- id: karin-slaughter/blonde-hair-blue-eyes/harpercollins-2015-en
+  workId: karin-slaughter/blonde-hair-blue-eyes
+  isbn13: "9780062442871"
+  language: en
+  format: ebook
+  publisher: HarperCollins
+  year: 2015
+  note: >
+    OpenLibrary's own record for this ISBN carries no publisher field; the
+    publisher is confirmed instead from the author's own site, whose "Buy
+    The Book" link for this title points to HarperCollins.
+  sources:
+    - "https://www.karinslaughter.com/blonde-hair-blue-eyes"
+    - "https://openlibrary.org/books/OL26477478M.json"
+
+- id: karin-slaughter/go-deep/random-house-2015-en
+  workId: karin-slaughter/go-deep
+  isbn13: "9781473505957"
+  language: en
+  format: ebook
+  publisher: Random House
+  year: 2015
+  note: 84 pages; also part of the collection Three Twisted Stories (see works.yaml).
+  sources:
+    - "https://books.google.com/books/about/Go_Deep.html?id=3Ux9AwAAQBAJ"
+
+- id: karin-slaughter/remmy-rothstein-toes-the-line/random-house-2015-en
+  workId: karin-slaughter/remmy-rothstein-toes-the-line
+  isbn13: "9781473535336"
+  language: en
+  format: ebook
+  publisher: Random House
+  year: 2015
+  note: 44 pages; also part of the collection Three Twisted Stories (see works.yaml).
+  sources:
+    - "https://books.google.com/books/about/Remmy_Rothstein_Toes_the_Line.html?id=R4yDBgAAQBAJ"
+
+# Short Story (the Michael Koryta crossover) has no edition here: its 2019
+# standalone reissue is Kindle-only (ASIN, not ISBN); its first publication,
+# the multi-author MatchUp anthology, is not recorded under its own ISBN for
+# the same reason as First Thrills: Volume 3 above. See the file header.
+
+- id: karin-slaughter/last-breath/harpercollins-2017-en
+  workId: karin-slaughter/last-breath
+  isbn13: "9780062742155"
+  language: en
+  format: ebook
+  publisher: HarperCollins Publishers
+  year: 2017
+  note: >
+    The US ebook edition. Two UK HarperCollins Publishers Limited editions
+    also exist for this title (isbn13 9780008260620 and 9780008252939,
+    per works.yaml); this US edition is recorded instead for consistency
+    with the rest of this file's US-first convention.
+  sources:
+    - "https://openlibrary.org/search.json?q=Last+Breath+Karin+Slaughter"
+
+- id: karin-slaughter/cleaning-the-gold/harpercollins-2019-en
+  workId: karin-slaughter/cleaning-the-gold
+  isbn13: "9780008358945"
+  language: en
+  format: ebook
+  publisher: HarperCollins Publishers Limited
+  year: 2019
+  note: >
+    The Lee Child/Jack Reacher crossover short; the same edition record
+    works.yaml cites for the cover. A UK imprint, since no US-specific
+    edition record was found distinct from this one.
+  sources:
+    - "https://openlibrary.org/books/OL39264038M.json"
