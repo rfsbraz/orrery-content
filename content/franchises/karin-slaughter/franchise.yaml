@@ -14,9 +14,9 @@ themePreset: kudzu-noir
 # Capabilities are auto-detected from the data (docs/SCHEMA.md); left implicit
 # here. Active from what exists: connections (characters.yaml plus the
 # Broken/Undone crossover and the Pieces of Her -> Girl, Forgotten link),
-# hall (always-on), and river plus companion (events.yaml carries the aura).
-# No wizard: no startHere below. eras.yaml is empty by design (no periodisation
-# on record), so no era plates render. No editions.yaml, so editions stays off.
+# hall (always-on), river plus companion (events.yaml carries the aura), and
+# wizard (startHere below). eras.yaml is empty by design (no periodisation on
+# record), so no era plates render. No editions.yaml, so editions stays off.
 
 globalEvents:
   include:
@@ -35,11 +35,104 @@ globalEvents:
     - carnation-revolution-1974        # Portuguese censorship history; she is American, no bearing found
     - portugal-bailout-2011            # Portugal-specific crisis; no bearing on an American author
 
-# No startHere. Grant County and Will Trent share a bridge character whose
-# crossover spoils a major Grant County event, so any "where to start" path
-# has to route around a boundary that does not exist yet - see
-# characters.yaml (karin-slaughter/jeffrey-tolliver) for the one work that
-# boundary sits on.
+startHere:
+  paths:
+    # Structural note, not a citation: the derived default already keeps this
+    # safe on its own. Every Grant County novel publishes by 2007; Sara
+    # Linton does not appear in Will Trent until Undone (2009, #3;
+    # characters.yaml, karin-slaughter/sara-linton) - so publication order
+    # finishes Grant County before her story continues, with no curated
+    # reordering needed to make that true.
+    - id: everything-in-order
+      title: Everything, in order
+      description: >
+        Every novel and short story, across Grant County, Will Trent, North
+        Falls and the standalones, in publication order. The two main
+        series are timed so that Grant County's ending arrives before Sara
+        Linton's story continues into Will Trent, so nothing here gets
+        ahead of itself.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+      note: >
+        Includes short fiction that started life as paperback-exclusive
+        bonus chapters or anthology contributions rather than as books of
+        their own.
+
+    # Source: https://www.tlbranson.com/karin-slaughter-books-in-order/
+    # "Grant County is the best place to begin if you want Sara Linton's
+    # story from the start... I'd read Grant County before the later Will
+    # Trent books if you care about Sara Linton's full character arc."
+    # Source: https://nextbookintheseries.com/articles/karin-slaughter-will-trent-grant-county/
+    # "Option A - Most Rewarding: Read all 6 Grant County novels in order,
+    # Begin Will Trent from Book 1."
+    - id: grant-county-first
+      title: Start with Grant County
+      description: >
+        The complete Grant County series, from the beginning, so Sara
+        Linton's story is told in the order Slaughter wrote it before her
+        arc continues elsewhere.
+      workIds: null
+      orderId: karin-slaughter/grant-county-in-order
+      fit:
+        experience: [new]
+        commitment: [arc]
+      note: >
+        Blindsighted opens dark and does not soften what happens, and six
+        books pass before you meet Will Trent, the GBI agent behind the
+        more recent TV adaptation.
+
+    # Derived, not stated in these words by any single guide: Sara Linton
+    # does not appear in Will Trent until Undone (#3; characters.yaml,
+    # karin-slaughter/sara-linton), so Triptych and Fractured carry none of
+    # the Grant County crossover. Several guides describe Will Trent as
+    # readable on its own and as many readers' first point of contact via
+    # its TV adaptation, e.g.
+    # https://nextbookintheseries.com/articles/karin-slaughter-will-trent-grant-county/
+    # ("You can read the Will Trent series without reading Grant County
+    # first. Slaughter designed Will Trent as a standalone series.") and
+    # https://www.tlbranson.com/karin-slaughter-books-in-order/ ("Will Trent
+    # is the most popular entry point for many readers, especially after
+    # the TV adaptation."). Bounding the taste at book 2, before Sara's
+    # first appearance, is this catalogue's own reading of where the
+    # crossover actually starts.
+    - id: will-trent-taste
+      title: Try Will Trent
+      description: >
+        Will Trent's first two cases, both before Grant County's Sara
+        Linton joins the series. A safe taste of the GBI agent many readers
+        meet first through the TV series, with no Grant County required.
+      workIds:
+        - karin-slaughter/triptych
+        - karin-slaughter/fractured
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        Will Trent continues past this point into Sara Linton's story from
+        Grant County. If you plan to read Grant County too, read it before
+        going further, so its ending is not spoiled out of order.
+
+    # Source: https://nextbookintheseries.com/articles/karin-slaughter-will-trent-grant-county/
+    # "Option A - Most Rewarding: Read all 6 Grant County novels in order,
+    # Begin Will Trent from Book 1."
+    - id: continue-into-will-trent
+      title: Continue into Will Trent
+      description: >
+        For a reader who has finished Grant County: the complete Will Trent
+        series, where Sara Linton's story continues from Undone on.
+      workIds: null
+      orderId: karin-slaughter/will-trent-in-order
+      fit:
+        experience: [returning]
+        commitment: [arc]
+      note: >
+        Unlike Grant County's closed six-book run, Will Trent is still
+        going, twelve books in and counting, so this is an open commitment
+        rather than a finished shelf.
 
 sources:
   - https://en.wikipedia.org/wiki/Karin_Slaughter
