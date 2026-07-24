@@ -234,6 +234,8 @@ COMPOSITION:
             <the illustration module's framing>
             <the ORGANISATION's art requirement: aspect, the text-safe/quiet
              zone the layout needs, any breakout element, per LAYOUT.md>
+            <direction, where the subject has one: into the depth of the frame
+             or descending, never up and out of the top edge §4a>
             <leave the artwork off the frame; ~a tenth as margin (keyed types)>
 CONSTRAINTS:
             <shared negative §6 + wing art.avoid>

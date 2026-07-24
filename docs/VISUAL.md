@@ -397,6 +397,24 @@ The app alternates which side of the card the illustration sits on as you go
 down the page, so **do not build the composition around a side**: keep the
 subject central enough to read mirrored.
 
+### Point the picture down the page
+
+Editorial layout moves a reader with directional cues - a line, a gaze, a road
+- and a river is read in exactly one direction, downward. So where a subject
+has an implied direction, aim it **into the depth of the frame or downward**,
+never up and out of the top edge. A road receding, a figure seen from behind
+walking away, a stair descending, light falling rather than rising, a gaze
+angled down at the work instead of out at the viewer: all of these hand the
+reader on to the next event. A subject facing up and out of the frame stops
+them, which is occasionally what you want (a death, a final work) and is
+otherwise a leak.
+
+Unlike the four axes above, **this does not rotate** - it is constant across a
+wing, because the page always flows the same way. And it must be expressed as
+depth or descent, **not as a left/right vector**: the app mirrors which side
+the art sits on, so a strong leftward push reads as onward on one card and
+backward on the next.
+
 ## 4c. Writing a still-life brief without producing clutter
 
 A still-life prompt fails in a specific, repeatable way: **every object you name

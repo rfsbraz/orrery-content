@@ -92,6 +92,13 @@ prompt just realises its assigned organisation and type. Still check each
 sketch's composition against its neighbours (§4a): even within one illustration
 type, vary distance, tonal cast and the motif carrier.
 
+**Point the picture down the page** (§4a). Where the subject has an implied
+direction, the `COMPOSITION` block states it: into the depth of the frame or
+descending, never up and out of the top edge. A river is read one way, and a
+picture that faces out of it stops the reader. Say it as depth or descent, not
+as left or right - the app mirrors which side the art sits on. This one is
+constant across the wing, not rotated.
+
 **Draw the moment, not a table of objects.** §3's ban on inventing a real
 person's face is not a ban on people, scenes or incident (§3a). Anonymous
 figures, crowds, rooms in use and weather are all in scope, and a wing whose
