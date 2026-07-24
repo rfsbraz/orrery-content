@@ -797,6 +797,62 @@ Plus the wing's `art.avoid`, which names that author's specific cliche.
 `python scripts/asset_audit.py <slug>` reports what exists and what is next in
 exactly this order; `/asset-prompt` writes the prompt for one asset.
 
+### 7a. What the issue carries, and when it flips itself
+
+Every asset issue's body ends in a fenced `asset:` block. It is the **contract**
+between the four things that touch an asset, and it is parsed rather than read:
+
+```yaml
+asset:
+  key:   <wing>/<kind>/<entity-id>    # stable for the life of the asset
+  wing:  <wing>                       # `global` for a shared world event
+  type:  era-plate | life-event | franchise-event | world-event
+  file:  content/.../x.yaml           # where the sketch path is written
+  entry: <entity-id>
+  field: images.sketch
+  dest:  assets/<wing>/<entity-id>.webp        # slot 1
+  accent: "#3e5c74"
+  organisation: diptych               # docs/LAYOUT.md, when the entry carries it
+  illustration_type: editorial-portrait
+  modifier: breakout
+  size: 1024x1536                     # the exact pixels the prompt asked for
+  images_required: 2
+  slots:
+    - slot: 1
+      dest: assets/<wing>/<entity-id>.webp
+      file: --neutral --chroma --type editorial-portrait --slot 1
+    - slot: 2
+      dest: assets/<wing>/<entity-id>-2.webp
+      file: --neutral --chroma --type editorial-portrait --slot 2
+```
+
+`slots[].file` is the flag set for `prepare_asset.py`, **derived from the
+illustration type, never chosen per issue**: `--type` already forces
+`--no-dissolve` for an artifact type and takes the opaque path for an opaque
+one (§3b), and `--chroma` is omitted for an opaque type because passing both is
+a hard error. Intake used to hardcode `--chroma` for everything, which is wrong
+for every opaque scene in the catalogue.
+
+Two rules decide when an issue is finished, both in `scripts/issue_assets.py`
+and enforced by the `Art ready` workflow and by intake alike:
+
+- **All of `images_required`, not one.** A `diptych` flipping to `asset:ready`
+  on its first image sends a half-finished entry to intake, which files one
+  slot and leaves the other silently empty.
+- **Only images from the current round.** A round begins at the last comment
+  carrying a prompt, so on a **redraw** the previous round's image - the one
+  being replaced - is not counted, and cannot be filed again as its own
+  correction. If the prompt is in the issue BODY rather than a comment (the
+  demo wing is filed that way), every comment counts, because there is no
+  earlier round to be after.
+
+Attaching the last image is therefore the whole handoff: the label flips itself,
+and a partial upload gets a comment saying how many are still missing rather
+than silence, which is indistinguishable from a broken workflow.
+
+`python scripts/art_gate.py <issue>` gives the same verdict by hand when a label
+and the eye disagree.
+
 ## 8. Colour
 
 The interface palette stays stable across the catalogue: deep navy, warm cream,

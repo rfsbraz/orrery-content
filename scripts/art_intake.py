@@ -37,9 +37,12 @@ if hasattr(sys.stdout, "reconfigure"):
 
 import yaml  # noqa: E402
 
-BLOCK = re.compile(r"```yaml\s*\n(asset:.*?)```", re.S)
-# GitHub renders an upload as markdown; newer uploads use user-attachments.
-IMG = re.compile(r"!\[[^\]]*\]\((https?://[^)\s]+)\)|(https://github\.com/user-attachments/assets/[\w-]+)")
+sys.path.insert(0, SCRIPTS)
+# One reading of an asset issue, shared with `art_gate.py` and the `Art ready`
+# workflow: which images belong to the CURRENT round, how many the entry needs,
+# and where each one is filed. Having intake re-implement any of that is how it
+# used to file the previous round's image as the correction to itself.
+import issue_assets as IA  # noqa: E402
 
 
 def gh(*args: str, check: bool = True) -> str:
@@ -49,30 +52,14 @@ def gh(*args: str, check: bool = True) -> str:
     return r.stdout
 
 
-def pending() -> list[dict]:
+def pending() -> list[int]:
+    """Issue numbers labelled `asset:ready`. Numbers only: each one is then
+    re-read through `issue_assets.fetch`, which uses the REST comment endpoint
+    because only that exposes `author_association` - and the trust check is not
+    optional on a public repo."""
     raw = gh("issue", "list", "--repo", REPO, "--label", "asset:ready",
-             "--state", "open", "--limit", "200",
-             "--json", "number,title,body,comments")
-    return json.loads(raw or "[]")
-
-
-def spec_of(issue: dict) -> dict | None:
-    m = BLOCK.search(issue.get("body") or "")
-    if not m:
-        return None
-    try:
-        return (yaml.safe_load(m.group(1)) or {}).get("asset")
-    except yaml.YAMLError:
-        return None
-
-
-def image_of(issue: dict) -> str | None:
-    """The LAST image posted wins - a re-upload is a correction."""
-    found = []
-    for text in [issue.get("body") or ""] + [c.get("body") or "" for c in issue.get("comments") or []]:
-        for a, b in IMG.findall(text):
-            found.append(a or b)
-    return found[-1] if found else None
+             "--state", "open", "--limit", "200", "--json", "number")
+    return [i["number"] for i in json.loads(raw or "[]")]
 
 
 def set_field(path: str, entry_id: str, field: str, value: str) -> bool:
@@ -142,44 +129,88 @@ def main() -> int:
         return 0
 
     done, failed = 0, 0
-    for i in issues:
-        num, spec, url = i["number"], spec_of(i), image_of(i)
+    for num in issues:
+        v = IA.read_number(num, REPO)
+        spec = v["spec"]
         if not spec:
             print(f"  #{num} REFUSED - no `asset:` block in the body")
             failed += 1
             continue
-        if not url:
-            print(f"  #{num} REFUSED - labelled ready but no image attached")
+        # The label is a claim; this is the check. `asset:ready` is set by the
+        # workflow, by a human, or by a stale run, and only one of those three
+        # counted the images. Filing three of a four-image entry leaves a slot
+        # silently empty, which nothing downstream can detect.
+        if not v["ready"]:
+            print(f"  #{num} REFUSED - {v['why']}")
             failed += 1
             continue
-        key, dest = spec.get("key"), spec.get("dest")
-        print(f"  #{num} {key}")
-        print(f"        <- {url[:76]}")
-        print(f"        -> {dest}")
+
+        dests = IA.slot_dests(spec)
+        # `slots` carries a per-slot `file:` line with the flags the entry's
+        # illustration type implies (VISUAL.md §3b). Falling back to bare
+        # `--chroma` only for an issue filed before that existed - and never
+        # inventing flags, because --chroma on an opaque type is a hard error
+        # and on an artifact type would dissolve the drawn edge away.
+        slot_flags = []
+        for i, s in enumerate(spec.get("slots") or [], start=1):
+            raw = (s.get("file") if isinstance(s, dict) else None) or ""
+            slot_flags.append(raw.split() or ["--chroma", "--slot", str(i)])
+        while len(slot_flags) < len(dests):
+            slot_flags.append(["--chroma", "--slot", str(len(slot_flags) + 1)])
+
+        print(f"  #{num} {spec.get('key')}  ({v['required']} image(s))")
+        for i, (url, dest) in enumerate(zip(v["selected"], dests), start=1):
+            print(f"        slot {i} <- {url[:66]}")
+            print(f"               -> {dest}  [{' '.join(slot_flags[i - 1])}]")
         if not a.apply:
             continue
 
-        tmp = os.path.join(ROOT, ".cache", f"intake-{num}.png")
-        os.makedirs(os.path.dirname(tmp), exist_ok=True)
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=60) as r, open(tmp, "wb") as f:
-            f.write(r.read())
+        wrote = []
+        broke = False
+        for i, (url, dest) in enumerate(zip(v["selected"], dests), start=1):
+            tmp = os.path.join(ROOT, ".cache", f"intake-{num}-{i}.png")
+            os.makedirs(os.path.dirname(tmp), exist_ok=True)
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=60) as r, open(tmp, "wb") as f:
+                f.write(r.read())
 
-        out = os.path.join(ROOT, dest)
-        os.makedirs(os.path.dirname(out), exist_ok=True)
-        r = subprocess.run(
-            [sys.executable, os.path.join(SCRIPTS, "prepare_asset.py"), tmp,
-             spec["wing"], spec["entry"], "--chroma"],
-            capture_output=True, text=True, encoding="utf-8")
-        if r.returncode != 0:
-            print(f"        FAILED prepare_asset: {(r.stderr or r.stdout).strip()[:200]}")
+            out = os.path.join(ROOT, dest)
+            os.makedirs(os.path.dirname(out), exist_ok=True)
+            r = subprocess.run(
+                [sys.executable, os.path.join(SCRIPTS, "prepare_asset.py"), tmp,
+                 spec["wing"], spec["entry"], *slot_flags[i - 1]],
+                capture_output=True, text=True, encoding="utf-8")
+            if r.returncode != 0:
+                print(f"        FAILED slot {i} prepare_asset: {(r.stderr or r.stdout).strip()[:200]}")
+                broke = True
+            elif not os.path.exists(out):
+                print(f"        FAILED slot {i} - prepare_asset wrote no file at {dest}")
+                broke = True
+            if not a.keep_temp and os.path.exists(tmp):
+                os.remove(tmp)
+            if broke:
+                break
+            wrote.append(dest)
+
+        if broke:
             failed += 1
             continue
-        if not os.path.exists(out):
-            print(f"        FAILED - prepare_asset wrote no file at {dest}")
-            failed += 1
+        # A DEMO asset has no content entry to write to. The demo wing exists
+        # only in the app (`lib/demo/timeline.ts`) to exercise every layout
+        # organisation at once, so there is no YAML row for a sketch path to
+        # land on - and inventing one would put a fake author in the canon.
+        # Everything before this point still ran, which is the whole point:
+        # the demo issues are how the prompt -> image -> chroma -> dissolve ->
+        # webp -> correct-filename path gets proven end to end without
+        # touching real content.
+        if spec.get("demo"):
+            print(f"        demo asset - files written, no content entry to update")
+            done += 1
             continue
-        if not set_field(spec["file"], spec["entry"], spec["field"], dest):
+        # Slot 1 is the entry's `images.sketch`; the rest are found by the app
+        # from that path (`<id>-2.webp`, ... - see components/river/shared.tsx
+        # `imageSlots`), so only the first is written to content.
+        if not set_field(spec["file"], spec["entry"], spec["field"], wrote[0]):
             print(f"        FAILED - no entry '{spec['entry']}' in {spec['file']}")
             failed += 1
             continue
@@ -188,9 +219,7 @@ def main() -> int:
         # The validator wants the credit to say the image was generated.
         set_field(spec["file"], spec["entry"], "images.sketchCredit",
                   "Generated for Orrery (gpt-image-1)")
-        if not a.keep_temp:
-            os.remove(tmp)
-        print("        wired in")
+        print(f"        wired in ({len(wrote)} slot(s))")
         done += 1
 
     if a.apply and done:

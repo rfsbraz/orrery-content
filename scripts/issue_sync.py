@@ -55,6 +55,8 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import asset_audit as A  # noqa: E402
+import issue_assets as IA  # noqa: E402
+from prepare_asset import OPAQUE_TYPES  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPO = "rfsbraz/orrery-content"
@@ -261,13 +263,39 @@ def body_for(wing: str, kind: str, aid: str, why: str, path: str, accent: str,
     for field in ("organisation", "illustration_type", "modifier"):
         if field in grammar:
             lines.append(f"  {field}: {grammar[field]}")
-    lines.append(f"  images_required: {grammar.get('images_required', 1)}")
+    n_images = int(grammar.get("images_required", 1) or 1)
+    lines.append(f"  images_required: {n_images}")
+
+    # Every destination, written out rather than left to be derived. `dest`
+    # above is slot 1 and stays for compatibility with issues filed before
+    # this list existed; the list is what the ready-gate and intake read, so
+    # a multi-image entry states its own filenames instead of three separate
+    # scripts each re-implementing "<id>-2.webp".
+    #
+    # `file` is derived from the illustration type, never chosen per issue.
+    # `prepare_asset.py --type` already forces --no-dissolve for an artifact
+    # type and takes the opaque path for an opaque one (VISUAL.md 3b), so all
+    # that is recorded here is which of those two paths this entry is on.
+    # Passing --chroma on an opaque type is a hard error, and it is the
+    # mistake intake used to make on every asset it touched.
+    itype = grammar.get("illustration_type")
+    flags = ["--neutral"] + ([] if itype in OPAQUE_TYPES else ["--chroma"])
+    if itype:
+        flags += ["--type", str(itype)]
+    lines.append("  slots:")
+    stem, ext = os.path.splitext(f"assets/{dest_dir}/{aid}.webp")
+    for i in range(1, n_images + 1):
+        suffix = "" if i == 1 else f"-{i}"
+        lines.append(f"    - slot: {i}")
+        lines.append(f"      dest: {stem}{suffix}{ext}")
+        lines.append(f"      file: {' '.join(flags + ['--slot', str(i)])}")
     lines += [
         "```",
         "",
         "<sub>Filed by `scripts/issue_sync.py`. The block above is parsed on "
-        "intake, so please leave it intact. Attach the image and set "
-        "`asset:ready`.</sub>",
+        "intake and by the `asset:ready` gate, so please leave it intact. "
+        f"Attach {'the image' if n_images == 1 else f'all {n_images} images'} "
+        "and the label flips itself.</sub>",
     ]
     return "\n".join(lines)
 
@@ -288,7 +316,7 @@ def has_prompt(number: int) -> bool:
         return False
     for c in reversed(comments):
         body = c.get("body") or ""
-        if "STYLE:" in body and "CONSTRAINTS:" in body:
+        if IA.is_prompt(body):
             return True
     return False
 
