@@ -42,6 +42,8 @@ FIT_COMMITMENT = {"taste", "arc", "complete"}
 EDITION_FORMATS = {"hardcover", "paperback", "ebook", "audiobook"}
 # BCP-47-ish: "pt", "pt-PT", "en-GB". Region matters for books (pt-PT vs pt-BR).
 LANG_RE = re.compile(r"^[a-z]{2}(-[A-Z]{2})?$")
+# How many works a wing may mark `featured` (docs/SCHEMA.md). See the check.
+FEATURED_MAX = 3
 ACHIEVEMENT_TIERS = {"bronze", "silver", "gold"}
 ACHIEVEMENT_CATEGORIES = {"completion", "streak", "context", "social", "discovery", "curation"}
 # criteria kind -> required fields (the app implements one evaluator per kind)
@@ -625,6 +627,9 @@ def main():
                     err(loc, f"{wid}: unknown withAuthorId '{aid}'")
             if w.get("canonTier") not in {"core", "extended", "apocrypha"}:
                 err(loc, f"{wid}: bad canonTier '{w.get('canonTier')}'")
+            if "featured" in w and not isinstance(w.get("featured"), bool):
+                err(loc, f"{wid}: featured must be true or false, got "
+                         f"{w.get('featured')!r}")
             # `published` must be a bare year integer. A full date (1974-03-26)
             # parses as a string in the app, and every consumer of this field is
             # year arithmetic - River layers, era spans, decade rules, era-reader
@@ -693,6 +698,19 @@ def main():
             if w.get("contributionTitle") and role == "author":
                 err(loc, f"{wid}: contributionTitle set but authorRole is 'author'")
             check_images(loc, wid, w.get("images"))
+
+        # `featured` gives a work the river's full-width `hero` treatment. It
+        # only means anything while it is rare: a wing where a third of the
+        # shelf is a hero has simply chosen a bigger default card and lost the
+        # weighting the flag exists to express. Capped as an absolute count for
+        # the same reason `immersion` and `epigraph` are - a fraction of a
+        # 43-work wing would license eight of them.
+        featured = [w.get("id") for w in works if w.get("featured")]
+        if len(featured) > FEATURED_MAX:
+            err(f"{fslug}/works.yaml",
+                f"{len(featured)} works marked featured ({', '.join(featured)}) - "
+                f"at most {FEATURED_MAX} per wing, or the hero treatment stops "
+                f"meaning anything (docs/SCHEMA.md)")
 
     # --- work connections (second pass: all work ids known) ---
     for fdir in franchise_dirs:

@@ -207,6 +207,7 @@ sources: [https://...]
   forthcoming: 2026-08-19        # optional; ANNOUNCED but not out yet (see below)
   subseries: null                # e.g. "The Dark Tower", "Mistborn: Era 1"
   canonTier: core                # core | extended | apocrypha
+  featured: true                 # optional; a work that changed the life (see below)
   publishedAs: "Richard Bachman" # optional; only when the cover name differs
   withAuthorIds: [peter-straub]  # optional collaborators (global author ids)
   authorRole: author             # author | co-author | contributor | editor
@@ -313,6 +314,35 @@ sitting in `extended` for exactly that reason.
 > position in the derived publication order. Until the app honours the tier,
 > adding contributor entries to a wing changes that wing's default reading order.
 > Weigh that before bulk-adding anthologies.
+
+The tier does now drive **weight**, though, which is a different thing from
+filtering. The river gives each work one of three treatments (the app's
+`components/river/work-card.tsx`), because a wing where every book renders as
+the same card is a uniform grid however well its events are paced, and on most
+wings works outnumber events two or three to one:
+
+| Treatment | When | What it looks like |
+|---|---|---|
+| `hero` | `featured: true` | full-width cell, larger cover, synopsis given room |
+| `standard` | the default | the two-up cover-led card |
+| `compact` | `canonTier: apocrypha` | a dense single-line row, no cover, no synopsis |
+
+### `featured`: the one or two books a wing turns on
+
+`featured: true` marks a work that **changed the life** - the debut, the
+breakout, the last one, the one the rest of the shelf is read in the light of.
+It is the only part of this that is authored rather than derived, and it is
+**capped at 3 per wing** by the validator.
+
+The cap is the point. A hero treatment only says "this one mattered" while it is
+rare; a wing with eight of them has just chosen a bigger default card and thrown
+away the weighting. Cap it as an absolute count, not a fraction, for the same
+reason `immersion` and `epigraph` are capped that way in `docs/LAYOUT.md` - a
+percentage of a 43-work wing would license eight.
+
+`featured` is not a quality judgement and not a recommendation, the same
+discipline as `canonTier`: it records that a book is a hinge in this author's
+story. If two people would argue about whether a book is a hinge, it is not one.
 
 `connections` is **directional but rendered both ways**: declare the connection
 on the *later* work pointing back at the earlier one (the later work is the one
