@@ -464,7 +464,7 @@ existing entry before adding one.
 An event (or life event) may carry the layout-grammar fields that decide how its
 cell is shaped and what its art depicts. All optional; an event with none renders
 as `beside` with a default illustration. Full contract in `docs/LAYOUT.md` (the
-15 organisations, the render specs, the compatibility rules) and `docs/VISUAL.md`
+16 organisations, the render specs, the compatibility rules) and `docs/VISUAL.md`
 (the 25 illustration types).
 
 ```yaml
@@ -475,7 +475,18 @@ as `beside` with a default illustration. Full contract in `docs/LAYOUT.md` (the
   images_required: 1                   # image slots this entry needs (default 1; diptych 2, strip N)
 ```
 
-Validation: `organisation` in LAYOUT.md's 15, `illustration_type` in VISUAL.md's
+One organisation, `epigraph`, is artless and carries fields of its own instead
+(the quotation IS the illustration - see LAYOUT.md):
+
+```yaml
+  organisation: epigraph
+  quote: "..."                         # REQUIRED - the author's words, verbatim
+  title: "..."                         # the attribution (work, interview, occasion)
+  images_required: 0                   # no art, no prompt, no issue
+  sources: [...]                       # REQUIRED - a quotation we cannot source does not ship
+```
+
+Validation: `organisation` in LAYOUT.md's 16, `illustration_type` in VISUAL.md's
 25, `modifier` compatible with the `organisation`, `illustration_type` in the
 organisation's Holds list, `images_required` a positive integer matching the
 organisation's spec. The rotation budget (caps, no-repeat-neighbour) is checked

@@ -38,7 +38,7 @@ retreat.
 ## Schema fields (on an event / life-event)
 
 ```yaml
-organisation: artifact-spread          # one of the 15 below; default `beside`
+organisation: artifact-spread          # one of the 16 below; default `beside`
 illustration_type: manuscript-proof    # one of VISUAL.md's 25; drives the art
 treatment: [photocopy-grain]           # optional surface finishes
 modifier: breakout                     # optional; must be compatible (below)
@@ -46,10 +46,11 @@ images_required: 1                     # how many image slots this entry needs
 ```
 
 `images_required` is the field that makes the pipeline future-proof: a `beside`
-needs 1, a `diptych` needs 2, a `strip` may need several. The issue writer
-records it, and the asset processor uses it to know how many images to pull from
-an issue and how to file them (`<id>.webp`, `<id>-2.webp`, ...). It is **1**
-unless the organisation's spec says otherwise.
+needs 1, a `diptych` needs 2, a `strip` may need several, an `epigraph` needs
+none. The issue writer records it, and the asset processor uses it to know how
+many images to pull from an issue and how to file them (`<id>.webp`,
+`<id>-2.webp`, ...). It is **1** unless the organisation's spec says otherwise;
+at **0** no art issue is opened at all.
 
 ## The organisations
 
@@ -199,6 +200,37 @@ period into one transition; short prose (1-3 sentences), a date **range**.
 - **Holds**: `serial-contact-sheet`, `journey-transit`, `process-diagram`, `atmospheric-motif-field`.
 - **Use**: teaching years, ongoing work, research periods, slow recovery, years that matter collectively not individually.
 
+### `epigraph` - the author's own words
+A quotation set as the illustration. The only organisation with **no artwork at
+all**: the author's own sentence is given the space and the weight a picture
+would have had, with its attribution beneath.
+- **Desktop**: centred on a narrow measure, large display type, generous air above and below; **no card** - no border, no surface fill, no padding box. It is a hole in the run of cells, and that is the whole device.
+- **Mobile**: the same break, type stepped down one size; never boxed back into a card to reclaim vertical space, which would turn it into just another entry.
+- **Images**: **0** · no illustration type, no asset, no prompt, no issue.
+- **Holds**: none. The quotation is the illustration.
+- **Use**: a line from the work, a sentence from an interview, an epigraph the author chose for a book, a stated intention or a refusal. One that earns its size - not a convenient pull-quote from the prose we already wrote.
+
+Extra fields, this organisation only:
+
+```yaml
+organisation: epigraph
+quote: "..."          # REQUIRED - the words, verbatim
+title: "..."          # the attribution: the work, the interview, the occasion
+description: "..."    # optional one-line gloss, shown small beneath
+images_required: 0
+sources: [...]        # REQUIRED - where the quotation comes from
+```
+
+**A quotation is a fact, and it is the easiest fact in this repo to invent.**
+Everywhere else a fabrication would be an invented detail in a drawing; here it
+would be words put in a living person's mouth, in their own voice, under their
+own name. So `quote` is verbatim or it does not ship: never paraphrased, never
+tidied, never reconstructed from memory of what an author "says a lot", never
+translated by us when a published translation exists (use it and credit the
+translator). It carries `sources` like any other claim, and the validator
+requires them. If the exact wording cannot be sourced, the moment is not an
+`epigraph` - write it as prose in a `beside` and say who reported it.
+
 ### `chapter-gate` - the era opening
 A large transitional section introducing a new era (this is the era-plate slot,
 not an event). Eyebrow, large era title, date range, a thematic line, a short
@@ -240,9 +272,15 @@ organisation's **Holds** list (above). An illegal pairing (a `map-route` in a
 `medallion`, a `branch` on a `floating-object`) is a content error, not a
 rendering surprise.
 
+`epigraph` holds nothing and takes no modifier: it has no artwork for either to
+apply to, so an `illustration_type` or a `modifier` on one is an error rather
+than a harmless extra field. It is also the only organisation with required
+fields of its own (`quote`, `sources`), which the validator checks in the same
+pass.
+
 ## The rotation budget: rhythm is authored, not random
 
-Fifteen organisations used freely is drift again; two used repeatedly is the
+Sixteen organisations used freely is drift again; two used repeatedly is the
 monotony we are fixing. So a wing's organisations are **assigned deliberately
 down the timeline**, the same discipline as the composition rotation
 (`art_rotation.py`), now on the organisation axis too:
@@ -255,6 +293,11 @@ down the timeline**, the same discipline as the composition rotation
 - **`immersion` is capped at 1-2 per wing** (the biggest ruptures only). Same
   for `chapter-gate` (one per era) and `interlude` (a real silence, not a
   convenience).
+- **`epigraph` is capped at 2-3 per wing.** It costs nothing to produce, which
+  is exactly why it needs a cap: an unlimited free organisation would get used
+  as filler wherever a good line exists, and a page of quotations is its own
+  kind of monotony. It also loses its force by repetition - the beat works
+  because the reader has been looking at pictures.
 - **No two consecutive events share an organisation.** A vista then a beside
   then an artifact-spread reads as rhythm; three besides read as a table.
 - **The shape should track the life**: open a period with `full-bleed-vista` or
@@ -271,7 +314,7 @@ composed (see `.claude/commands/asset-prompt.md`).
 
 The app renders a dispatcher: one component per `organisation`, chosen by the
 event's field, each responsive (desktop + mobile per the specs above). The old
-single `RiverEventCard` becomes `beside`, one of fifteen. The event carries
+single `RiverEventCard` becomes `beside`, one of sixteen. The event carries
 `organisation`, `illustration_type` (for alt/analytics only - the app renders
 the filed image), `images_required` (how many image slots to lay out), and any
 `modifier`. Aspect and background come from the filed asset, never assumed.

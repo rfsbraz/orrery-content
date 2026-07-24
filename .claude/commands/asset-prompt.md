@@ -22,7 +22,7 @@ Two axes decide each entry (kept separate on purpose - see `docs/LAYOUT.md`):
 
 Sources of truth, read them, do not restate them: `docs/VISUAL.md` (house style,
 §3b illustration catalogue, §5b technical block, §6 negative prompt), `docs/LAYOUT.md`
-(the 15 organisations, the compatibility rules, the rotation budget), and
+(the 16 organisations, the compatibility rules, the rotation budget), and
 `docs/PROMPT-MODULES.md` (the per-illustration-type authoring modules). This
 command owns the assembly and the *composition of the wing as a story*.
 
@@ -53,7 +53,19 @@ writing a single prompt:
   organisation (LAYOUT.md's Holds), and rotated on composition/distance/tonal
   cast per VISUAL.md §4a so no type dominates.
 - **`images_required`** per event, from the organisation (1 for most; 2 for
-  `diptych`/`split-counterpoint`; more for a `strip`).
+  `diptych`/`split-counterpoint`; more for a `strip`; **0 for an `epigraph`**).
+
+**`epigraph` produces no prompt.** It is the one organisation with no artwork:
+the author's own words are the illustration, so it gets no `illustration_type`,
+no `Rotation:` illustration fields, no size, no reference image, no filing
+command and **no issue** - it is assigned in Step 1 like any other
+organisation, and then Step 2 simply skips it. What it needs instead is the
+`quote` itself, verbatim and sourced, written straight onto the event in
+content (`quote`, `title` as attribution, `sources`, `images_required: 0`).
+Never reconstruct a quotation from memory or paraphrase one into place: an
+invented drawing is an invented detail, but an invented quotation is words put
+in a real person's mouth in their own voice. If the exact wording cannot be
+sourced, do not make it an `epigraph`.
 
 Run `scripts/art_rotation.py <slug> --check` against the plan once assigned; it
 scores both axes and fails on a broken cap or a repeated neighbour. Revise until
