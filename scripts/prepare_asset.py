@@ -31,6 +31,60 @@ from PIL import Image
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MAX_BYTES = 320_000
 
+# --- docs/VISUAL.md §3b: illustration_type drives background handling ------
+# The 25 illustration-type slugs, kept here as a query-time reference for
+# `--type`; docs/VISUAL.md is the source of truth.
+ILLUSTRATION_TYPES = {
+    "establishing-landscape", "place-portrait", "domestic-interior",
+    "workplace-workshop", "aftermath-scene", "public-event-tableau",
+    "journey-transit", "historical-context-tableau", "editorial-portrait",
+    "relationship-tableau", "portrait-of-absence", "isolated-object",
+    "symbolic-still-life", "book-object", "document-facsimile",
+    "manuscript-proof", "archive-stack", "press-media-collage", "map-route",
+    "process-diagram", "network-constellation", "serial-contact-sheet",
+    "emblem-seal", "palimpsest-erasure", "atmospheric-motif-field",
+}
+
+# Strictly OPAQUE per §3b's table - no transparent alternative is offered at
+# all for these, unlike "opaque or transparent" / "opaque pale or transparent"
+# types, which stay on the default chroma+dissolve path because the doc
+# genuinely asks gpt-image for alpha on them.
+#
+# AMBIGUOUS IN THE SPEC: the brief that produced this list named only three
+# examples - `establishing-landscape`, an "immersion" subject, and
+# `full-bleed-vista` - and the last of those is actually an ORGANISATION
+# (docs/LAYOUT.md), not one of §3b's illustration types; LAYOUT.md does fix
+# full-bleed-vista's background as opaque too, but its Holds list mixes
+# strictly-opaque types with "opaque or transparent" ones (place-portrait,
+# map-route, journey-transit). This set generalises the examples to every
+# §3b type whose background is unambiguously "opaque" in the table, which is
+# the closest concrete reading; worth a second look against VISUAL.md if a
+# narrower list (just the named examples) was actually intended.
+OPAQUE_TYPES = {
+    "establishing-landscape", "place-portrait", "domestic-interior",
+    "workplace-workshop", "aftermath-scene", "public-event-tableau",
+    "historical-context-tableau", "relationship-tableau", "portrait-of-absence",
+}
+
+# §3b's edge rule: these draw their own paper edge and must SKIP the frame
+# dissolve outright - equivalent to always passing --no-dissolve.
+ARTIFACT_TYPES = {"document-facsimile", "manuscript-proof", "archive-stack"}
+
+
+def dest_name(entity_id: str, slot: int) -> str:
+    """<id>.webp for slot 1 (unchanged default), <id>-2.webp / -3.webp beyond.
+
+    LAYOUT.md: a composed organisation (diptych, strip, ...) may need more
+    than one image slot; `images_required` on the entity/issue is how many.
+    Slot 1 stays the entity's `images.sketch` field exactly as before - what
+    a multi-slot entry records for slots 2+ is deliberately NOT fixed yet
+    (LAYOUT.md's whole-image ruling still prefers one composed image over
+    per-slot ones, and names the per-slot retreat as a fallback to keep open,
+    not a shipped schema), so this only files the pixels at a predictable
+    path and does not assert an entity field for them.
+    """
+    return f"{entity_id}.webp" if slot <= 1 else f"{entity_id}-{slot}.webp"
+
 
 def looks_checkerboarded(im: Image.Image) -> bool:
     """A flattened transparent export carries the viewer's checkerboard.
@@ -387,10 +441,16 @@ def neutralise(im, strength: float = 1.0):
     own colour relationships intact while removing the cast sitting over all of
     them. `strength` scales the correction, since a warm wing (umber, terracotta)
     is meant to be warm and only wants the cast taken off, not the character.
+
+    Also accepts a plain RGB image (the OPAQUE illustration-type path below has
+    no alpha channel at all): treated as fully opaque throughout, and the
+    result comes back RGB, never upgrading the caller's image to RGBA behind
+    its back.
     """
     import numpy as np
 
-    a = np.asarray(im).astype(np.float32)
+    has_alpha = im.mode == "RGBA"
+    a = np.asarray(im.convert("RGBA")).astype(np.float32)
     rgb, alpha = a[..., :3], a[..., 3]
     opaque = alpha > 200
     if not opaque.any():
@@ -407,8 +467,11 @@ def neutralise(im, strength: float = 1.0):
     gain = np.where(mean > 1.0, target / np.maximum(mean, 1.0), 1.0)
     gain = 1.0 + (gain - 1.0) * strength
 
-    out = np.concatenate([np.clip(rgb * gain, 0, 255), alpha[..., None]], axis=-1)
-    return Image.fromarray(out.astype(np.uint8), "RGBA"), mean, gain
+    out_rgb = np.clip(rgb * gain, 0, 255)
+    if has_alpha:
+        out = np.concatenate([out_rgb, alpha[..., None]], axis=-1)
+        return Image.fromarray(out.astype(np.uint8), "RGBA"), mean, gain
+    return Image.fromarray(out_rgb.astype(np.uint8), "RGB"), mean, gain
 
 
 def main() -> int:
@@ -431,7 +494,51 @@ def main() -> int:
                    metavar="STRENGTH",
                    help="correct the model's warm cast toward a neutral paper "
                         "white point; 1.0 for a cold wing, ~0.4 for a warm one")
+    p.add_argument("--type", dest="illustration_type", choices=sorted(ILLUSTRATION_TYPES),
+                   metavar="ILLUSTRATION_TYPE",
+                   help="the event's illustration_type (VISUAL.md §3b) - an "
+                        "ARTIFACT type (document-facsimile, manuscript-proof, "
+                        "archive-stack) forces --no-dissolve; an OPAQUE-only "
+                        "type (see OPAQUE_TYPES) infers --opaque")
+    p.add_argument("--opaque", action="store_true",
+                   help="file as an opaque full-bleed scene: skip chroma-key, "
+                        "trim and dissolve outright, just neutralise + convert "
+                        "+ cap (VISUAL.md §3b's opaque illustration types; "
+                        "inferred automatically from --type when it names one)")
+    p.add_argument("--slot", type=int, default=1, metavar="N",
+                   help="which image this call is for on a multi-image entry "
+                        "(diptych, strip, ...): 1 (default) files <id>.webp, "
+                        "2 files <id>-2.webp, 3 files <id>-3.webp, and so on")
     a = p.parse_args()
+
+    if a.slot < 1:
+        print(f"--slot must be >= 1, got {a.slot}", file=sys.stderr)
+        return 2
+
+    if a.illustration_type in ARTIFACT_TYPES and not a.no_dissolve:
+        print(f"type: '{a.illustration_type}' draws its own edge (VISUAL.md "
+              f"§3b) - forcing --no-dissolve", file=sys.stderr)
+        a.no_dissolve = True
+
+    opaque_active = a.opaque
+    if not opaque_active and a.illustration_type in OPAQUE_TYPES:
+        print(f"type: '{a.illustration_type}' is authored opaque (VISUAL.md "
+              f"§3b) - taking the --opaque path", file=sys.stderr)
+        opaque_active = True
+
+    if opaque_active and a.chroma:
+        print("--opaque and --chroma are contradictory: an opaque scene is "
+              "never chroma-keyed - drop one", file=sys.stderr)
+        return 2
+
+    if opaque_active:
+        # No alpha at all, ever: chroma-key, trim and dissolve all assume an
+        # alpha channel is the point, which is exactly what an opaque scene
+        # type does not have. `force_opaque` reuses the existing "no alpha,
+        # file it anyway" bypass rather than a second one.
+        a.no_trim = True
+        a.no_dissolve = True
+        a.force_opaque = True
 
     if not os.path.exists(a.image):
         print(f"no such file: {a.image}", file=sys.stderr)
@@ -439,6 +546,14 @@ def main() -> int:
     im = Image.open(a.image)
     print(f"in : {im.size[0]}x{im.size[1]} {im.mode} "
           f"{os.path.getsize(a.image) // 1000}KB")
+
+    if opaque_active and im.mode in ("RGBA", "LA"):
+        # The model may hand back alpha anyway even when we asked for an
+        # opaque scene; an opaque illustration type is never filed with
+        # transparency, so flatten it rather than leaving a channel nobody
+        # asked for and the app does not expect for this type.
+        im = im.convert("RGB")
+        print("opaque: flattened an alpha channel the opaque scene type doesn't use")
 
     if a.chroma:
         key = CHROMA if a.chroma == "magenta" else tuple(
@@ -495,7 +610,9 @@ def main() -> int:
 
     # Order matters. Neutralise before dissolving: the white-point sample wants
     # the artwork's real edge, not one already eaten into by the fade.
-    if a.neutral is not None and im.mode == "RGBA":
+    # `opaque_active` has no alpha to check `im.mode` against, so it is its
+    # own condition - neutralise() accepts plain RGB and stays RGB.
+    if a.neutral is not None and (im.mode == "RGBA" or opaque_active):
         im, mean, gain = neutralise(im, a.neutral)
         print(f"neutral: paper was rgb({mean[0]:.0f},{mean[1]:.0f},{mean[2]:.0f}), "
               f"gain ({gain[0]:.3f},{gain[1]:.3f},{gain[2]:.3f}) at strength {a.neutral}")
@@ -505,7 +622,7 @@ def main() -> int:
         print("dissolve: edge eroded with seeded two-frequency noise "
               "(deterministic per entity-id; the same asset always gets the same edge)")
 
-    rel = os.path.join("assets", a.slug, f"{a.entity_id}.webp")
+    rel = os.path.join("assets", a.slug, dest_name(a.entity_id, a.slot))
     out = os.path.join(ROOT, rel)
     if a.dry_run:
         print(f"would write {rel}")
@@ -524,10 +641,18 @@ def main() -> int:
         print(f"still over the {MAX_BYTES // 1000}KB cap - shrink the image",
               file=sys.stderr)
         return 1
-    print(f"\nfile it on the entity:\n"
-          f"    images:\n"
-          f"      sketch: {rel.replace(os.sep, '/')}\n"
-          f"      sketchCredit: Generated for Orrery (gpt-image-1)")
+    if a.slot <= 1:
+        print(f"\nfile it on the entity:\n"
+              f"    images:\n"
+              f"      sketch: {rel.replace(os.sep, '/')}\n"
+              f"      sketchCredit: Generated for Orrery (gpt-image-1)")
+    else:
+        print(f"\nslot {a.slot} filed at {rel.replace(os.sep, '/')} - "
+              f"images.sketch on the entity stays slot 1. How a multi-image "
+              f"entry records slots beyond the first is not fixed in the "
+              f"schema yet (LAYOUT.md's whole-image ruling still prefers ONE "
+              f"composed image over per-subject ones), so nothing is asserted "
+              f"here beyond the file existing at this path.")
     return 0
 
 

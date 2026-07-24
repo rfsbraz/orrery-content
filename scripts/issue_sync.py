@@ -118,6 +118,52 @@ def life_event_home(wing: str) -> dict[str, str]:
     return out
 
 
+def entity_for(wing: str, kind: str, aid: str, homes: dict[str, str]) -> dict:
+    """The event/entity dict itself, so the filed issue can carry its own
+    layout-grammar fields (docs/LAYOUT.md, docs/SCHEMA.md) rather than just
+    its id and title. Returns {} if it cannot be found (never fatal - grammar
+    fields are optional on every entity, `asset_audit.py`'s job list stays the
+    source of what to file).
+    """
+    if kind == "era-plate":
+        items = A.load("content", "franchises", wing, "eras.yaml") or []
+    elif kind == "franchise-event":
+        items = A.load("content", "franchises", wing, "events.yaml") or []
+    elif kind == "life-event":
+        home = homes.get(aid)
+        if not home:
+            return {}
+        # A life event's home file is a mapping (the author), not a list.
+        author = A.load(*home.split("/")) or {}
+        items = author.get("lifeEvents") or []
+    elif kind == "world-event":
+        g = A.load("content", "events", "global.yaml") or {}
+        items = (g.get("events") if isinstance(g, dict) else g) or []
+    else:
+        return {}
+    for e in items:
+        if e.get("id") == aid:
+            return e
+    return {}
+
+
+# The layout-grammar fields an issue's `asset:` block carries (docs/LAYOUT.md,
+# docs/SCHEMA.md's "Layout grammar" section). All but `images_required` are
+# absent on most content today - the wing has not been re-cut onto the
+# grammar yet - so they are only written when actually present on the entity.
+# `images_required` always gets a value: it defaults to 1
+# (docs/LAYOUT.md: "It is 1 unless the organisation's spec says otherwise"),
+# and the processor/puller need SOME count to know how many image slots to
+# pull, even before a wing has any other grammar field set.
+GRAMMAR_FIELDS = ("organisation", "illustration_type", "modifier")
+
+
+def grammar_for(entity: dict) -> dict:
+    out = {k: entity[k] for k in GRAMMAR_FIELDS if entity.get(k) is not None}
+    out["images_required"] = entity.get("images_required") or 1
+    return out
+
+
 def gh(*args: str, check: bool = True) -> str:
     r = subprocess.run(["gh", *args], capture_output=True, text=True, encoding="utf-8")
     if check and r.returncode != 0:
@@ -138,7 +184,8 @@ def existing() -> dict[str, dict]:
     return out
 
 
-def body_for(wing: str, kind: str, aid: str, why: str, path: str, accent: str) -> str:
+def body_for(wing: str, kind: str, aid: str, why: str, path: str, accent: str,
+             grammar: dict | None = None) -> str:
     # A world event is CATALOGUE canon: one drawing, shared by every wing that
     # carries the event and recoloured per wing in CSS. So it is scoped to the
     # catalogue, never to whichever wing's audit happened to surface it - the
@@ -200,6 +247,22 @@ def body_for(wing: str, kind: str, aid: str, why: str, path: str, accent: str) -
         # comment and silently parses the accent as null.
         ("  accent: null   # tinted per wing; a shared asset has no single accent"
          if shared else (f'  accent: "{accent}"' if accent else "  accent: null")),
+    ]
+    # The layout-grammar fields (docs/LAYOUT.md, docs/SCHEMA.md), read straight
+    # off the entity. `organisation`/`illustration_type`/`modifier` are only
+    # written when the entity actually carries them - most content predates
+    # the grammar, and an absent field there means "not graded yet", not
+    # "beside" (LAYOUT.md's default is the RENDERER's fallback, not something
+    # worth asserting here). `images_required` always gets a line: the
+    # processor and puller need a count to know how many image slots to pull
+    # for THIS issue even before the wing has any other grammar field set, and
+    # LAYOUT.md fixes the default at 1.
+    grammar = grammar or {}
+    for field in ("organisation", "illustration_type", "modifier"):
+        if field in grammar:
+            lines.append(f"  {field}: {grammar[field]}")
+    lines.append(f"  images_required: {grammar.get('images_required', 1)}")
+    lines += [
         "```",
         "",
         "<sub>Filed by `scripts/issue_sync.py`. The block above is parsed on "
@@ -332,7 +395,8 @@ def main() -> int:
             if not path:
                 print(f"  ?? no home for {key}, skipping")
                 continue
-            to_file.append((owner, kind, aid, why, path, accent, key))
+            grammar = grammar_for(entity_for(wing, kind, aid, homes))
+            to_file.append((owner, kind, aid, why, path, accent, key, grammar))
 
         # An asset drawn since the issue was filed: close it, do not leave a
         # tracker item describing work that is already in main.
@@ -398,11 +462,11 @@ def main() -> int:
         gh("label", "create", name, "--repo", REPO, "--color", colour,
            "--description", desc, "--force", check=False)
 
-    for wing, kind, aid, why, path, accent, key in to_file:
+    for wing, kind, aid, why, path, accent, key, grammar in to_file:
         title = (f"[art] {kind} - {aid}" if wing == "global"
                  else f"[art] {wing}: {kind} - {aid}")
         gh("issue", "create", "--repo", REPO, "--title", title,
-           "--body", body_for(wing, kind, aid, why, path, accent),
+           "--body", body_for(wing, kind, aid, why, path, accent, grammar),
            "--label", "asset:needs-prompt")
         print(f"  filed    {key}")
     for key, num in to_close:

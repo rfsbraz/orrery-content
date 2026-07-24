@@ -43,6 +43,41 @@ if hasattr(sys.stdout, "reconfigure"):
 # A third, expressed the way §4a expresses it.
 CAP_FRACTION = 1 / 3
 
+# --- docs/LAYOUT.md's rotation budget: the organisation axis ----------------
+# The 15 organisation slugs. Kept here as a query-time reference; LAYOUT.md is
+# the source of truth.
+ORGANISATIONS = {
+    "beside", "full-bleed-vista", "immersion", "floating-object",
+    "artifact-spread", "diptych", "strip", "marginalia", "medallion",
+    "split-counterpoint", "layered-stack", "mosaic", "interlude",
+    "passage", "chapter-gate",
+}
+# `beside` defaults absent-organisation events (LAYOUT.md: "an event with none
+# renders as beside"), so it is the implicit value everywhere the field is
+# unset - not "no data".
+DEFAULT_ORGANISATION = "beside"
+
+# AMBIGUOUS IN THE SOURCE: LAYOUT.md states two different ceilings for the
+# same slug in the same sentence - "no single organisation may exceed ~40% of
+# a wing's events, and `beside` specifically should sit around half, not
+# three-quarters." Taken literally, "around half" already breaks a 40% cap.
+# Resolved here by reading the general 40% cap as applying to every
+# organisation OTHER than `beside` (which the same sentence explicitly allows
+# to "be the plurality"), and giving `beside` its own higher ceiling at the
+# "not three-quarters" line, with ~50% as the target rather than a hard
+# boundary. A human should re-read this against LAYOUT.md if the two numbers
+# were meant to compose differently.
+ORG_CAP_FRACTION = 0.40
+BESIDE_CAP_FRACTION = 0.75
+BESIDE_TARGET_FRACTION = 0.50
+# "Capped at 1-2 per wing" - an absolute count, not a fraction.
+IMMERSION_MAX = 2
+# "one per era" - checked against the wing's actual era count, not a fraction.
+# "Used sparingly" for `interlude` names no number at all; this is a judgement
+# call (see the report), set generously so it flags only a wing that has
+# clearly stopped treating it as a rare device.
+INTERLUDE_CAP_FRACTION = 0.15
+
 
 def load(*parts):
     path = os.path.join(ROOT, *parts)
@@ -58,11 +93,22 @@ def year_of(v):
 
 
 def wing_assets(slug: str):
-    """(kind, id, title, year) for every asset slot, in timeline order.
+    """(kind, id, title, year, organisation) for every asset slot, in timeline order.
 
     Era plates are listed but excluded from the composition count: §4b fixes
     their composition and they render on their own half-page, so counting them
-    would dilute the cap the events actually need.
+    would dilute the cap the events actually need. They are also excluded from
+    the organisation count for the same reason - an era plate IS the
+    `chapter-gate` slot by construction (LAYOUT.md: "this is the era-plate
+    slot, not an event"), one per era already, so folding it into the events'
+    organisation budget would double-count a cap that is structural, not
+    authored.
+
+    `organisation` is read straight from the event's own content field where
+    present - the primary, reliable source, unlike the composition axis below
+    which only exists in the issue comment history. An event that has not been
+    graded onto the grammar yet has no field at all, which is not "unknown":
+    LAYOUT.md defaults an ungraded event to `beside`.
     """
     base = ("content", "franchises", slug)
     eras = load(*base, "eras.yaml") or []
@@ -72,7 +118,8 @@ def wing_assets(slug: str):
     out = []
     for e in eras:
         y = year_of((e.get("period") or "").split("-")[0])
-        out.append(("era-plate", e.get("id"), e.get("title"), y or 0))
+        out.append(("era-plate", e.get("id"), e.get("title"), y or 0,
+                    e.get("organisation") or "chapter-gate"))
 
     seen = set()
     for w in works:
@@ -83,11 +130,12 @@ def wing_assets(slug: str):
             a = load("content", "authors", f"{aid}.yaml") or {}
             for e in a.get("lifeEvents") or []:
                 out.append(("life-event", e.get("id"), e.get("title"),
-                            year_of(e.get("date")) or 0))
+                            year_of(e.get("date")) or 0,
+                            e.get("organisation")))
 
     for e in events:
         out.append(("franchise-event", e.get("id"), e.get("title"),
-                    year_of(e.get("date")) or 0))
+                    year_of(e.get("date")) or 0, e.get("organisation")))
 
     return sorted(out, key=lambda r: (r[3], r[0]))
 
@@ -96,11 +144,19 @@ def wing_assets(slug: str):
 # now mandates; the prose one is what the first regeneration pass wrote, and
 # re-editing sixteen comments to satisfy a parser would be the tail wagging the
 # dog.
+#
+# The trailing `organisation=` group is optional and NOT yet written by
+# asset-prompt.md (that command is out of scope for this pass) - it exists so
+# a wing's rotation comments can carry the organisation axis too, once the
+# prompt writer starts stating it, without a second regex format. Until then
+# `organisation` is `None` here and `wing_assets`' content-field read (or the
+# `beside` default) is what actually resolves it.
 CANONICAL = re.compile(
     r"composition\s*=\s*(?P<composition>[^|\n]+)\|"
     r"\s*distance\s*=\s*(?P<distance>[^|\n]+)\|"
     r"\s*cast\s*=\s*(?P<cast>[^|\n]+)\|"
-    r"\s*carrier\s*=\s*(?P<carrier>[^|\n]+)",
+    r"\s*carrier\s*=\s*(?P<carrier>[^|\n]+)"
+    r"(?:\|\s*organisation\s*=\s*(?P<organisation>[^|\n]+))?",
     re.I,
 )
 PROSE = re.compile(
@@ -126,7 +182,12 @@ def parse_rotation(body: str):
     for pattern in (CANONICAL, PROSE, SLASHED):
         m = pattern.search(body or "")
         if m:
-            return {k: " ".join(v.split()) for k, v in m.groupdict().items()}
+            # `organisation` is an optional group (CANONICAL only) and comes
+            # back as None when the line doesn't carry it - leave it None
+            # rather than crashing on `.split()`, since callers treat a
+            # missing organisation as "fall back to the content field".
+            return {k: (" ".join(v.split()) if v is not None else None)
+                    for k, v in m.groupdict().items()}
     return None
 
 
@@ -202,7 +263,7 @@ def main() -> int:
         return 2
 
     rows, missing, unparsed = [], [], []
-    for kind, eid, title, year in assets:
+    for kind, eid, title, year, _content_org in assets:
         found = issues.get(eid)
         if not found:
             missing.append((kind, eid))
@@ -274,7 +335,82 @@ def main() -> int:
     else:
         print("\nnothing could be checked.")
 
-    if a.check and (problems or unparsed or missing):
+    # --- the organisation axis (docs/LAYOUT.md's rotation budget) -----------
+    # Unlike composition, this does NOT need an issue to resolve: the
+    # `organisation` field lives on the event's own content, so coverage here
+    # is never gated on the issue tracker the way composition is. An issue's
+    # `Rotation:` line is only consulted as a fallback for an event that has
+    # neither, and an event with neither at all defaults to `beside`
+    # (LAYOUT.md: "an event with none renders as beside") - never "unknown".
+    era_count = sum(1 for kind, *_ in assets if kind == "era-plate")
+    org_rows = []
+    for kind, eid, title, year, content_org in assets:
+        if kind == "era-plate":
+            continue
+        issue_org = None
+        found = issues.get(eid)
+        if found:
+            _, rot = found
+            if rot:
+                issue_org = rot.get("organisation")
+        org_rows.append((year, kind, eid, content_org or issue_org or DEFAULT_ORGANISATION))
+
+    total_org = len(org_rows)
+    org_counts = Counter(org for *_, org in org_rows)
+    org_problems = []
+
+    print(f"\norganisation types across {total_org} event sketches "
+          f"(era plates excluded - each already IS the `chapter-gate` slot, "
+          f"one per era by construction, not a choice made per event):\n")
+    for name, n in org_counts.most_common():
+        cap = max(1, int(total_org * (BESIDE_CAP_FRACTION if name == "beside" else ORG_CAP_FRACTION)))
+        over = n > cap
+        flag = "  OVER THE CAP" if over else ""
+        if over:
+            org_problems.append(
+                f"organisation '{name}' takes {n} of {total_org} events, over the cap of {cap}")
+        print(f"  {name:<24}{n:>3}  {100 * n // max(total_org, 1):>3}%{flag}")
+
+    immersion_n = org_counts.get("immersion", 0)
+    if immersion_n > IMMERSION_MAX:
+        org_problems.append(
+            f"organisation 'immersion' is used {immersion_n} times, over LAYOUT.md's "
+            f"cap of {IMMERSION_MAX} per wing")
+
+    chapter_gate_n = org_counts.get("chapter-gate", 0)
+    if chapter_gate_n > era_count:
+        org_problems.append(
+            f"organisation 'chapter-gate' is used {chapter_gate_n} times among events, "
+            f"more than the wing's {era_count} era(s) - LAYOUT.md caps it at one per era")
+
+    interlude_n = org_counts.get("interlude", 0)
+    interlude_cap = max(1, int(total_org * INTERLUDE_CAP_FRACTION))
+    if interlude_n > interlude_cap:
+        org_problems.append(
+            f"organisation 'interlude' is used {interlude_n} times, over a "
+            f"judgement-call cap of {interlude_cap} ({INTERLUDE_CAP_FRACTION:.0%} of "
+            f"events) - LAYOUT.md only says 'used sparingly', no number given "
+            f"(see the comment above INTERLUDE_CAP_FRACTION)")
+
+    # Same discipline as the composition axis: a wing can clear every count and
+    # still read as pairs down the page, which is exactly what LAYOUT.md's "no
+    # two consecutive events share an organisation" line is guarding against.
+    for prev, cur in zip(org_rows, org_rows[1:]):
+        if prev[3] == cur[3]:
+            org_problems.append(
+                f"{cur[2]} repeats organisation '{cur[3]}' from its neighbour {prev[2]}")
+
+    if org_problems:
+        print(f"\n{len(org_problems)} organisation-rotation problem(s):")
+        for x in org_problems:
+            print(f"  - {x}")
+    elif org_rows:
+        print(f"\norganisation rotation holds across all {total_org} events: "
+              f"no organisation over its cap, no neighbour repeats.")
+    else:
+        print("\nno events to check on the organisation axis.")
+
+    if a.check and (problems or org_problems or unparsed or missing):
         return 1
     return 0
 

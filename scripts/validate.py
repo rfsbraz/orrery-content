@@ -54,6 +54,159 @@ CRITERIA_KINDS = {
 }
 
 
+# --- Layout grammar (docs/LAYOUT.md, docs/VISUAL.md §3b) --------------------
+# Two orthogonal, both OPTIONAL, fields on an event/life-event: `organisation`
+# (how the app lays the cell out) and `illustration_type` (what the generator
+# draws). An event with neither renders as `beside` with a default
+# illustration, so absence is never an error here - only a present-but-wrong
+# value is. docs/LAYOUT.md is the source of truth; keep this in sync with it.
+ORGANISATIONS = {
+    "beside", "full-bleed-vista", "immersion", "floating-object",
+    "artifact-spread", "diptych", "strip", "marginalia", "medallion",
+    "split-counterpoint", "layered-stack", "mosaic", "interlude",
+    "passage", "chapter-gate",
+}
+
+# docs/VISUAL.md §3b's catalogue of 25 illustration types.
+ILLUSTRATION_TYPES = {
+    "establishing-landscape", "place-portrait", "domestic-interior",
+    "workplace-workshop", "aftermath-scene", "public-event-tableau",
+    "journey-transit", "historical-context-tableau", "editorial-portrait",
+    "relationship-tableau", "portrait-of-absence", "isolated-object",
+    "symbolic-still-life", "book-object", "document-facsimile",
+    "manuscript-proof", "archive-stack", "press-media-collage", "map-route",
+    "process-diagram", "network-constellation", "serial-contact-sheet",
+    "emblem-seal", "palimpsest-erasure", "atmospheric-motif-field",
+}
+
+# The 3 types that draw their own paper edge and skip the dissolve (VISUAL.md
+# §3b's edge rule). Referenced below to encode `beside` and
+# `split-counterpoint`'s Holds lists - see the comment there.
+_ARTIFACT_TYPES = {"document-facsimile", "manuscript-proof", "archive-stack"}
+
+# organisation -> the illustration types it Holds, transcribed from each
+# organisation's "Holds:" line in docs/LAYOUT.md.
+#
+# AMBIGUOUS IN THE SOURCE: `beside` and `split-counterpoint` are the only two
+# organisations LAYOUT.md does NOT give an explicit slug list for - it says
+# "most scene/object illustration types" and "any two compatible scene/object
+# types" respectively, unlike the other 13's concrete enumerations. Encoded
+# here as every type EXCEPT the 3 artifact types above: `beside`'s own spec
+# fixes its background at "transparent (dissolve)", which is structurally
+# incompatible with a type that must SKIP the dissolve, so the artifact types
+# are the one exclusion the prose actually supports. This also has the
+# reassuring property that every one of the 25 types ends up with at least one
+# legal home - 8 types (domestic-interior, workplace-workshop, aftermath-scene,
+# public-event-tableau, historical-context-tableau, relationship-tableau,
+# network-constellation, palimpsest-erasure) appear in no other organisation's
+# Holds list at all, which matches `beside` being called "the workhorse...
+# most of a wing is this". Worth a human read against LAYOUT.md if that
+# organisation ever grows a real slug list.
+_GENERIC_HOLDS = ILLUSTRATION_TYPES - _ARTIFACT_TYPES
+HOLDS = {
+    "beside": _GENERIC_HOLDS,
+    "full-bleed-vista": {"establishing-landscape", "place-portrait", "map-route", "journey-transit"},
+    "immersion": {"portrait-of-absence", "establishing-landscape", "symbolic-still-life", "atmospheric-motif-field"},
+    "floating-object": {"isolated-object", "book-object", "emblem-seal"},
+    "artifact-spread": {"document-facsimile", "manuscript-proof", "book-object"},
+    "diptych": {"manuscript-proof", "place-portrait", "editorial-portrait", "book-object", "symbolic-still-life"},
+    "strip": {"serial-contact-sheet", "process-diagram"},
+    "marginalia": {"isolated-object", "emblem-seal"},
+    "medallion": {"editorial-portrait", "emblem-seal", "portrait-of-absence", "book-object"},
+    "split-counterpoint": _GENERIC_HOLDS,
+    "layered-stack": {"archive-stack", "manuscript-proof", "press-media-collage"},
+    "mosaic": {"press-media-collage", "symbolic-still-life"},
+    "interlude": {"portrait-of-absence", "atmospheric-motif-field"},  # "or none" - absence is handled by the optional-field rule
+    "passage": {"serial-contact-sheet", "journey-transit", "process-diagram", "atmospheric-motif-field"},
+    "chapter-gate": {"atmospheric-motif-field", "symbolic-still-life", "establishing-landscape"},
+}
+
+# modifier -> compatible organisations (docs/LAYOUT.md "## Modifiers"). `branch`
+# is also "the rail itself" per the doc - app-level, not a content field, so
+# the only organisation an EVENT can legally pair it with is
+# `split-counterpoint`.
+MODIFIER_COMPAT = {
+    "breakout": {"beside", "diptych", "artifact-spread", "layered-stack", "medallion"},
+    "pull-focus": {"artifact-spread", "beside", "diptych", "layered-stack", "mosaic"},
+    "fold-reveal": {"artifact-spread", "layered-stack", "diptych", "immersion"},
+    "anchor-with-satellites": {"beside", "immersion", "chapter-gate", "mosaic"},
+    "branch": {"split-counterpoint"},
+}
+
+# organisation -> the valid `images_required` counts, from each entry's
+# "Images:" line. Most fix a single number; `interlude` explicitly allows 0
+# ("or none"); `diptych` and `split-counterpoint` explicitly allow EITHER a
+# single composed image or a per-panel pair (LAYOUT.md's "whole images, even
+# for composed organisations" ruling names this a deliberate hedge against
+# gpt-image's multi-panel weakness, so 1 and 2 are both legitimate, not a
+# range to narrow later). `strip`'s "1 wide strip (or N unit images)" is the
+# vaguest of the lot - no upper bound is given, so this caps it at the 5-12
+# modular units the organisation's own render spec names, as the closest
+# concrete number in the text.
+EXPECTED_IMAGES = {
+    "beside": {1},
+    "full-bleed-vista": {1},
+    "immersion": {1},
+    "floating-object": {1},
+    "artifact-spread": {1},
+    "diptych": {1, 2},
+    "strip": set(range(1, 13)),
+    "marginalia": {1},
+    "medallion": {1},
+    "split-counterpoint": {1, 2},
+    "layered-stack": {1},
+    "mosaic": {1},
+    "interlude": {0, 1},
+    "passage": {1},
+    "chapter-gate": {1},
+}
+
+
+def check_grammar(loc, e):
+    """LAYOUT.md's `organisation` axis and VISUAL.md §3b's `illustration_type`
+    axis, plus `modifier` compatibility and `images_required`.
+
+    Every field here is OPTIONAL - LAYOUT.md: "an event with none renders as
+    beside" - so a missing field is never an error, only a present, invalid
+    one. Most wing content predates this grammar entirely, so this must stay
+    silent on an event that carries none of these fields.
+    """
+    eid = e.get("id", "?")
+
+    org = e.get("organisation")
+    if org is not None and org not in ORGANISATIONS:
+        err(loc, f"{eid}: bad organisation '{org}' (LAYOUT.md's 15: {sorted(ORGANISATIONS)})")
+        org = None  # don't cascade a Holds/images_required error off a value already rejected
+
+    itype = e.get("illustration_type")
+    if itype is not None and itype not in ILLUSTRATION_TYPES:
+        err(loc, f"{eid}: bad illustration_type '{itype}' (VISUAL.md §3b's 25: {sorted(ILLUSTRATION_TYPES)})")
+        itype = None
+
+    if org and itype and itype not in HOLDS.get(org, set()):
+        err(loc, f"{eid}: illustration_type '{itype}' is not in organisation "
+                 f"'{org}'s Holds list (LAYOUT.md: {sorted(HOLDS.get(org, set()))})")
+
+    modifier = e.get("modifier")
+    if modifier is not None:
+        if modifier not in MODIFIER_COMPAT:
+            err(loc, f"{eid}: bad modifier '{modifier}' (LAYOUT.md's 5: {sorted(MODIFIER_COMPAT)})")
+        elif org and org not in MODIFIER_COMPAT[modifier]:
+            err(loc, f"{eid}: modifier '{modifier}' is not compatible with organisation "
+                     f"'{org}' (compatible: {sorted(MODIFIER_COMPAT[modifier])})")
+
+    if "images_required" in e:
+        n = e.get("images_required")
+        if isinstance(n, bool) or not isinstance(n, int) or n < 0:
+            err(loc, f"{eid}: images_required must be a positive integer, got {n!r}")
+        elif n == 0 and org != "interlude":
+            err(loc, f"{eid}: images_required 0 is only valid for organisation "
+                     f"'interlude' (LAYOUT.md: 0 or 1) - got organisation '{org}'")
+        elif org and n not in EXPECTED_IMAGES.get(org, {1}):
+            err(loc, f"{eid}: images_required {n} does not match organisation "
+                     f"'{org}'s expected count {sorted(EXPECTED_IMAGES.get(org, {1}))} (LAYOUT.md)")
+
+
 # `sketch` is the generated-art slot on eras, events and life events. It is
 # credited like any other image, and its credit must say it was generated: a
 # reader who cannot tell a sourced photograph from an illustration we made has
@@ -598,6 +751,7 @@ def main():
         # Franchise events, author lifeEvents and global events all funnel
         # through here, so one call covers every event kind's `sketch`.
         check_images(loc, e.get("id", "?"), e.get("images"))
+        check_grammar(loc, e)
 
     for fdir in franchise_dirs:
         if not os.path.isdir(fdir):
