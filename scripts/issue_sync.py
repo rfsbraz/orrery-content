@@ -55,6 +55,8 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import asset_audit as A  # noqa: E402
+import issue_assets as IA  # noqa: E402
+from prepare_asset import OPAQUE_TYPES  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPO = "rfsbraz/orrery-content"
@@ -118,6 +120,52 @@ def life_event_home(wing: str) -> dict[str, str]:
     return out
 
 
+def entity_for(wing: str, kind: str, aid: str, homes: dict[str, str]) -> dict:
+    """The event/entity dict itself, so the filed issue can carry its own
+    layout-grammar fields (docs/LAYOUT.md, docs/SCHEMA.md) rather than just
+    its id and title. Returns {} if it cannot be found (never fatal - grammar
+    fields are optional on every entity, `asset_audit.py`'s job list stays the
+    source of what to file).
+    """
+    if kind == "era-plate":
+        items = A.load("content", "franchises", wing, "eras.yaml") or []
+    elif kind == "franchise-event":
+        items = A.load("content", "franchises", wing, "events.yaml") or []
+    elif kind == "life-event":
+        home = homes.get(aid)
+        if not home:
+            return {}
+        # A life event's home file is a mapping (the author), not a list.
+        author = A.load(*home.split("/")) or {}
+        items = author.get("lifeEvents") or []
+    elif kind == "world-event":
+        g = A.load("content", "events", "global.yaml") or {}
+        items = (g.get("events") if isinstance(g, dict) else g) or []
+    else:
+        return {}
+    for e in items:
+        if e.get("id") == aid:
+            return e
+    return {}
+
+
+# The layout-grammar fields an issue's `asset:` block carries (docs/LAYOUT.md,
+# docs/SCHEMA.md's "Layout grammar" section). All but `images_required` are
+# absent on most content today - the wing has not been re-cut onto the
+# grammar yet - so they are only written when actually present on the entity.
+# `images_required` always gets a value: it defaults to 1
+# (docs/LAYOUT.md: "It is 1 unless the organisation's spec says otherwise"),
+# and the processor/puller need SOME count to know how many image slots to
+# pull, even before a wing has any other grammar field set.
+GRAMMAR_FIELDS = ("organisation", "illustration_type", "modifier")
+
+
+def grammar_for(entity: dict) -> dict:
+    out = {k: entity[k] for k in GRAMMAR_FIELDS if entity.get(k) is not None}
+    out["images_required"] = entity.get("images_required") or 1
+    return out
+
+
 def gh(*args: str, check: bool = True) -> str:
     r = subprocess.run(["gh", *args], capture_output=True, text=True, encoding="utf-8")
     if check and r.returncode != 0:
@@ -138,7 +186,8 @@ def existing() -> dict[str, dict]:
     return out
 
 
-def body_for(wing: str, kind: str, aid: str, why: str, path: str, accent: str) -> str:
+def body_for(wing: str, kind: str, aid: str, why: str, path: str, accent: str,
+             grammar: dict | None = None) -> str:
     # A world event is CATALOGUE canon: one drawing, shared by every wing that
     # carries the event and recoloured per wing in CSS. So it is scoped to the
     # catalogue, never to whichever wing's audit happened to surface it - the
@@ -200,11 +249,67 @@ def body_for(wing: str, kind: str, aid: str, why: str, path: str, accent: str) -
         # comment and silently parses the accent as null.
         ("  accent: null   # tinted per wing; a shared asset has no single accent"
          if shared else (f'  accent: "{accent}"' if accent else "  accent: null")),
+    ]
+    # The layout-grammar fields (docs/LAYOUT.md, docs/SCHEMA.md), read straight
+    # off the entity. `organisation`/`illustration_type`/`modifier` are only
+    # written when the entity actually carries them - most content predates
+    # the grammar, and an absent field there means "not graded yet", not
+    # "beside" (LAYOUT.md's default is the RENDERER's fallback, not something
+    # worth asserting here). `images_required` always gets a line: the
+    # processor and puller need a count to know how many image slots to pull
+    # for THIS issue even before the wing has any other grammar field set, and
+    # LAYOUT.md fixes the default at 1.
+    grammar = grammar or {}
+    for field in ("organisation", "illustration_type", "modifier"):
+        if field in grammar:
+            lines.append(f"  {field}: {grammar[field]}")
+    n_images = int(grammar.get("images_required", 1) or 1)
+    lines.append(f"  images_required: {n_images}")
+
+    # Every destination, written out rather than left to be derived. `dest`
+    # above is slot 1 and stays for compatibility with issues filed before
+    # this list existed; the list is what the ready-gate and intake read, so
+    # a multi-image entry states its own filenames instead of three separate
+    # scripts each re-implementing "<id>-2.webp".
+    #
+    # `file` is derived from the illustration type, never chosen per issue.
+    # `prepare_asset.py --type` already forces --no-dissolve for an artifact
+    # type and takes the opaque path for an opaque one (VISUAL.md 3b), so all
+    # that is recorded here is which of those two paths this entry is on.
+    # Passing --chroma on an opaque type is a hard error, and it is the
+    # mistake intake used to make on every asset it touched.
+    #
+    # THE ORGANISATION CAN OVERRIDE THE TYPE'S BACKGROUND. `chapter-gate` is
+    # authored transparent whatever its subject (LAYOUT.md: "bleeds off the
+    # page; app applies its plate mask"), because the app fades its edges with
+    # a CSS mask that needs alpha to fade INTO. An `establishing-landscape` is
+    # normally opaque, but as an era plate it must still be keyed - otherwise
+    # the flat magenta it was drawn on survives as a bright halo behind the
+    # plate, which is exactly what shipped on the demo's first era plate. The
+    # frame dissolve is skipped too: the plate mask is the only edge treatment
+    # a gate gets, and doubling them eats into the art.
+    itype = grammar.get("illustration_type")
+    org = grammar.get("organisation")
+    if org == "chapter-gate":
+        flags = ["--neutral", "--chroma", "--no-dissolve"]
+    else:
+        flags = ["--neutral"] + ([] if itype in OPAQUE_TYPES else ["--chroma"])
+        if itype:
+            flags += ["--type", str(itype)]
+    lines.append("  slots:")
+    stem, ext = os.path.splitext(f"assets/{dest_dir}/{aid}.webp")
+    for i in range(1, n_images + 1):
+        suffix = "" if i == 1 else f"-{i}"
+        lines.append(f"    - slot: {i}")
+        lines.append(f"      dest: {stem}{suffix}{ext}")
+        lines.append(f"      file: {' '.join(flags + ['--slot', str(i)])}")
+    lines += [
         "```",
         "",
         "<sub>Filed by `scripts/issue_sync.py`. The block above is parsed on "
-        "intake, so please leave it intact. Attach the image and set "
-        "`asset:ready`.</sub>",
+        "intake and by the `asset:ready` gate, so please leave it intact. "
+        f"Attach {'the image' if n_images == 1 else f'all {n_images} images'} "
+        "and the label flips itself.</sub>",
     ]
     return "\n".join(lines)
 
@@ -225,7 +330,7 @@ def has_prompt(number: int) -> bool:
         return False
     for c in reversed(comments):
         body = c.get("body") or ""
-        if "STYLE:" in body and "CONSTRAINTS:" in body:
+        if IA.is_prompt(body):
             return True
     return False
 
@@ -332,7 +437,8 @@ def main() -> int:
             if not path:
                 print(f"  ?? no home for {key}, skipping")
                 continue
-            to_file.append((owner, kind, aid, why, path, accent, key))
+            grammar = grammar_for(entity_for(wing, kind, aid, homes))
+            to_file.append((owner, kind, aid, why, path, accent, key, grammar))
 
         # An asset drawn since the issue was filed: close it, do not leave a
         # tracker item describing work that is already in main.
@@ -398,11 +504,11 @@ def main() -> int:
         gh("label", "create", name, "--repo", REPO, "--color", colour,
            "--description", desc, "--force", check=False)
 
-    for wing, kind, aid, why, path, accent, key in to_file:
+    for wing, kind, aid, why, path, accent, key, grammar in to_file:
         title = (f"[art] {kind} - {aid}" if wing == "global"
                  else f"[art] {wing}: {kind} - {aid}")
         gh("issue", "create", "--repo", REPO, "--title", title,
-           "--body", body_for(wing, kind, aid, why, path, accent),
+           "--body", body_for(wing, kind, aid, why, path, accent, grammar),
            "--label", "asset:needs-prompt")
         print(f"  filed    {key}")
     for key, num in to_close:

@@ -207,6 +207,7 @@ sources: [https://...]
   forthcoming: 2026-08-19        # optional; ANNOUNCED but not out yet (see below)
   subseries: null                # e.g. "The Dark Tower", "Mistborn: Era 1"
   canonTier: core                # core | extended | apocrypha
+  featured: true                 # optional; a work that changed the life (see below)
   publishedAs: "Richard Bachman" # optional; only when the cover name differs
   withAuthorIds: [peter-straub]  # optional collaborators (global author ids)
   authorRole: author             # author | co-author | contributor | editor
@@ -313,6 +314,35 @@ sitting in `extended` for exactly that reason.
 > position in the derived publication order. Until the app honours the tier,
 > adding contributor entries to a wing changes that wing's default reading order.
 > Weigh that before bulk-adding anthologies.
+
+The tier does now drive **weight**, though, which is a different thing from
+filtering. The river gives each work one of three treatments (the app's
+`components/river/work-card.tsx`), because a wing where every book renders as
+the same card is a uniform grid however well its events are paced, and on most
+wings works outnumber events two or three to one:
+
+| Treatment | When | What it looks like |
+|---|---|---|
+| `hero` | `featured: true` | full-width cell, larger cover, synopsis given room |
+| `standard` | the default | the two-up cover-led card |
+| `compact` | `canonTier: apocrypha` | a dense single-line row, no cover, no synopsis |
+
+### `featured`: the one or two books a wing turns on
+
+`featured: true` marks a work that **changed the life** - the debut, the
+breakout, the last one, the one the rest of the shelf is read in the light of.
+It is the only part of this that is authored rather than derived, and it is
+**capped at 3 per wing** by the validator.
+
+The cap is the point. A hero treatment only says "this one mattered" while it is
+rare; a wing with eight of them has just chosen a bigger default card and thrown
+away the weighting. Cap it as an absolute count, not a fraction, for the same
+reason `immersion` and `epigraph` are capped that way in `docs/LAYOUT.md` - a
+percentage of a 43-work wing would license eight.
+
+`featured` is not a quality judgement and not a recommendation, the same
+discipline as `canonTier`: it records that a book is a hinge in this author's
+story. If two people would argue about whether a book is a hinge, it is not one.
 
 `connections` is **directional but rendered both ways**: declare the connection
 on the *later* work pointing back at the earlier one (the later work is the one
@@ -458,6 +488,39 @@ is derived from `works.yaml`; never write it by hand.
 `global.yaml` holds `reach: global` events shared by every franchise (wars,
 cultural ruptures, industry shifts). Append, never duplicate; check for an
 existing entry before adding one.
+
+### Layout grammar (organisation + illustration)
+
+An event (or life event) may carry the layout-grammar fields that decide how its
+cell is shaped and what its art depicts. All optional; an event with none renders
+as `beside` with a default illustration. Full contract in `docs/LAYOUT.md` (the
+16 organisations, the render specs, the compatibility rules) and `docs/VISUAL.md`
+(the 25 illustration types).
+
+```yaml
+  organisation: artifact-spread        # how the cell lays out (LAYOUT.md); default beside
+  illustration_type: manuscript-proof  # what the art depicts / how authored (VISUAL.md)
+  treatment: [photocopy-grain]         # optional surface finishes (author/era specific)
+  modifier: breakout                   # optional; must be compatible with the organisation
+  images_required: 1                   # image slots this entry needs (default 1; diptych 2, strip N)
+```
+
+One organisation, `epigraph`, is artless and carries fields of its own instead
+(the quotation IS the illustration - see LAYOUT.md):
+
+```yaml
+  organisation: epigraph
+  quote: "..."                         # REQUIRED - the author's words, verbatim
+  title: "..."                         # the attribution (work, interview, occasion)
+  images_required: 0                   # no art, no prompt, no issue
+  sources: [...]                       # REQUIRED - a quotation we cannot source does not ship
+```
+
+Validation: `organisation` in LAYOUT.md's 16, `illustration_type` in VISUAL.md's
+25, `modifier` compatible with the `organisation`, `illustration_type` in the
+organisation's Holds list, `images_required` a positive integer matching the
+organisation's spec. The rotation budget (caps, no-repeat-neighbour) is checked
+per wing by `scripts/art_rotation.py`.
 
 **What earns an event a slot** is editorial, not structural - see "The aura
 editorial standard" in the `franchise-research` skill: high = recolors the

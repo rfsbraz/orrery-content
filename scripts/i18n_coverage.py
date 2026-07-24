@@ -25,7 +25,11 @@ PROSE = {
     # let four wings ship Portuguese era plates with English themes underneath
     # while the script reported full coverage.
     "eras.yaml": ["title", "description", "themes"],
-    "events.yaml": ["title", "description"],
+    # `quote` is the `epigraph` organisation's whole content (docs/LAYOUT.md):
+    # the largest type on the cell, and invisible to this script if left out.
+    # A pt-PT wing shipping an English epigraph would be the loudest possible
+    # translation gap.
+    "events.yaml": ["title", "description", "quote"],
     "orders.yaml": ["name", "rationale"],
     "characters.yaml": ["description"],
 }
@@ -78,7 +82,7 @@ def slots(path, fields):
             if not isinstance(nested, dict):
                 continue
             nkey = nested.get("id") or "_"
-            for f in ("title", "description"):
+            for f in ("title", "description", "quote"):
                 if nested.get(f):
                     out.add((f"{key}/lifeEvents/{nkey}", f))
         sh = i.get("startHere")

@@ -234,6 +234,60 @@ The object still-life remains one composition type among several in §4a. It is
 not the default, and a wing where it is the majority has failed §4a whether or
 not each sketch is good on its own.
 
+## 3b. Illustration types: the catalogue of what a sketch depicts
+
+An event's `illustration_type` names *what the artwork is* and how it is
+authored, independent of how the cell lays it out (that is the `organisation`
+axis - see `docs/LAYOUT.md`). This is where the wing's cohesion lives: every one
+of these is drawn in the same author visual system (`theme.art`), so the *style*
+is uniform while the *subject shape* varies.
+
+The 25 types, with the aspect and background each is authored at. Slugs are the
+contract (content, validator, prompt writer). The full per-type authoring module
+- the concrete "draw this, not that" brief for each - lives in
+`docs/PROMPT-MODULES.md`; this table is the index, and the prompt writer
+(`.claude/commands/asset-prompt.md`) pulls the module when it assembles a prompt.
+
+| slug | essence | aspect | background |
+|---|---|---|---|
+| `establishing-landscape` | the environment that shaped a moment; place is the subject | 16:9 / 3:2 | opaque |
+| `place-portrait` | one meaningful location, oblique and remembered | 3:2 / 4:3 / 1:1 | opaque |
+| `domestic-interior` | a private room implying the people in it | 4:3 / 3:2 | opaque |
+| `workplace-workshop` | a room defined by process and discipline | 4:3 / 3:2 / 1:1 | opaque |
+| `aftermath-scene` | what remains after the action, never the climax | 3:2 / 4:3 | opaque |
+| `public-event-tableau` | a public setting where scale/reception matters | 16:9 / 3:2 | opaque |
+| `journey-transit` | movement between places, biographical not action | 3:2 (scene) / 4:5 (object) | opaque or transparent |
+| `historical-context-tableau` | an external event changing the author's conditions | 3:2 / 4:3 | opaque |
+| `editorial-portrait` | a consistent likeness of a real person (references) | 4:5 / 1:1 | opaque pale or transparent |
+| `relationship-tableau` | two+ people shown through their relationship | 3:2 / 4:3 / 1:1 | opaque |
+| `portrait-of-absence` | a person shown by what they left, never directly | 4:3 / 1:1 | opaque |
+| `isolated-object` | one item, no scene, complete silhouette | 1:1 / 4:5 | **transparent** |
+| `symbolic-still-life` | 2-5 objects communicating a moment metaphorically | 4:3 / 1:1 / 3:2 | opaque or transparent |
+| `book-object` | a volume as a physical artifact, never a cover copy | 4:5 / 2:3 / 1:1 | transparent or neutral |
+| `document-facsimile` | one letter/form/page as narrative evidence | 4:5 / 3:2 / 1:1 | transparent or desk; draws own edge |
+| `manuscript-proof` | working pages showing revision and intervention | 3:2 / 4:3 / 4:5 | transparent or surface; draws own edge |
+| `archive-stack` | documents implying quantity and accumulated history | 4:3 / 1:1 | transparent preferred |
+| `press-media-collage` | dense but organised public response | 3:2 / 4:3 | transparent edges or paper |
+| `map-route` | a geographic/conceptual journey as an editorial map | 16:9 / 3:2 / tall | opaque paper or transparent line |
+| `process-diagram` | how something worked, in objects not boxes | 16:9 / 3:2 | opaque or transparent |
+| `network-constellation` | relationships around a central subject | 1:1 / 4:3 / 3:2 | opaque or transparent |
+| `serial-contact-sheet` | a prepared sequence of small related frames | wide strip | transparent or paper |
+| `emblem-seal` | a compact identity mark for a series/prize/idea | 1:1 | **transparent** |
+| `palimpsest-erasure` | an image built from revision and surviving traces | 4:3 / 3:2 / 4:5 | opaque layered or transparent |
+| `atmospheric-motif-field` | a low-information tone layer for gates/overlays | wide or tall | transparent or paper |
+
+Two rules that cut across the catalogue and interact with the edge filter (§5a):
+
+- **Object types are transparent and get the dissolve.** `isolated-object`,
+  `emblem-seal`, and most single-subject scenes are chroma-keyed and dissolved
+  at the frame per §5a.
+- **Artifact types draw their own edge and SKIP the dissolve.** A
+  `document-facsimile`, `manuscript-proof` or `archive-stack` is *about* the
+  paper - its torn/folded/stacked edge is the subject, not a container. These
+  file with `prepare_asset.py --no-dissolve`. The §5a ban on drawn torn edges
+  applies to scene/object types, not to these. This is the one place the "edge
+  is always a filter" rule is conditional on `illustration_type`.
+
 ## 4. Asset specs
 
 | Asset | Size | Background | References | Renders in |
@@ -342,6 +396,24 @@ the objects already used, then deliberately go somewhere else.
 The app alternates which side of the card the illustration sits on as you go
 down the page, so **do not build the composition around a side**: keep the
 subject central enough to read mirrored.
+
+### Point the picture down the page
+
+Editorial layout moves a reader with directional cues - a line, a gaze, a road
+- and a river is read in exactly one direction, downward. So where a subject
+has an implied direction, aim it **into the depth of the frame or downward**,
+never up and out of the top edge. A road receding, a figure seen from behind
+walking away, a stair descending, light falling rather than rising, a gaze
+angled down at the work instead of out at the viewer: all of these hand the
+reader on to the next event. A subject facing up and out of the frame stops
+them, which is occasionally what you want (a death, a final work) and is
+otherwise a leak.
+
+Unlike the four axes above, **this does not rotate** - it is constant across a
+wing, because the page always flows the same way. And it must be expressed as
+depth or descent, **not as a left/right vector**: the app mirrors which side
+the art sits on, so a strong leftward push reads as onward on one card and
+backward on the next.
 
 ## 4c. Writing a still-life brief without producing clutter
 
@@ -724,6 +796,62 @@ Plus the wing's `art.avoid`, which names that author's specific cliche.
 
 `python scripts/asset_audit.py <slug>` reports what exists and what is next in
 exactly this order; `/asset-prompt` writes the prompt for one asset.
+
+### 7a. What the issue carries, and when it flips itself
+
+Every asset issue's body ends in a fenced `asset:` block. It is the **contract**
+between the four things that touch an asset, and it is parsed rather than read:
+
+```yaml
+asset:
+  key:   <wing>/<kind>/<entity-id>    # stable for the life of the asset
+  wing:  <wing>                       # `global` for a shared world event
+  type:  era-plate | life-event | franchise-event | world-event
+  file:  content/.../x.yaml           # where the sketch path is written
+  entry: <entity-id>
+  field: images.sketch
+  dest:  assets/<wing>/<entity-id>.webp        # slot 1
+  accent: "#3e5c74"
+  organisation: diptych               # docs/LAYOUT.md, when the entry carries it
+  illustration_type: editorial-portrait
+  modifier: breakout
+  size: 1024x1536                     # the exact pixels the prompt asked for
+  images_required: 2
+  slots:
+    - slot: 1
+      dest: assets/<wing>/<entity-id>.webp
+      file: --neutral --chroma --type editorial-portrait --slot 1
+    - slot: 2
+      dest: assets/<wing>/<entity-id>-2.webp
+      file: --neutral --chroma --type editorial-portrait --slot 2
+```
+
+`slots[].file` is the flag set for `prepare_asset.py`, **derived from the
+illustration type, never chosen per issue**: `--type` already forces
+`--no-dissolve` for an artifact type and takes the opaque path for an opaque
+one (§3b), and `--chroma` is omitted for an opaque type because passing both is
+a hard error. Intake used to hardcode `--chroma` for everything, which is wrong
+for every opaque scene in the catalogue.
+
+Two rules decide when an issue is finished, both in `scripts/issue_assets.py`
+and enforced by the `Art ready` workflow and by intake alike:
+
+- **All of `images_required`, not one.** A `diptych` flipping to `asset:ready`
+  on its first image sends a half-finished entry to intake, which files one
+  slot and leaves the other silently empty.
+- **Only images from the current round.** A round begins at the last comment
+  carrying a prompt, so on a **redraw** the previous round's image - the one
+  being replaced - is not counted, and cannot be filed again as its own
+  correction. If the prompt is in the issue BODY rather than a comment (the
+  demo wing is filed that way), every comment counts, because there is no
+  earlier round to be after.
+
+Attaching the last image is therefore the whole handoff: the label flips itself,
+and a partial upload gets a comment saying how many are still missing rather
+than silence, which is indistinguishable from a broken workflow.
+
+`python scripts/art_gate.py <issue>` gives the same verdict by hand when a label
+and the eye disagree.
 
 ## 8. Colour
 

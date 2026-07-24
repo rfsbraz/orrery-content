@@ -1,14 +1,29 @@
 name: Art ready
 
-# Flip an asset issue to `asset:ready` the moment an image is attached to it.
+# Flip an asset issue to `asset:ready` the moment it has EVERYTHING it asked
+# for - not the moment the first image lands.
 #
 # The loop was: read the prompt, generate, drag the image onto the issue, then
 # remember to change the label. That last step is the only thing standing
 # between "the art exists" and "the pipeline picks it up", and it is exactly the
 # kind of step that gets forgotten at eleven at night with six images done.
-#
 # `art_intake.py` polls for `asset:ready`, so the label IS the handoff. This
-# makes attaching the image the handoff instead.
+# makes attaching the images the handoff instead.
+#
+# "Everything it asked for" is two conditions, and the first version of this
+# workflow checked neither:
+#
+#   1. `images_required` from the issue body (docs/LAYOUT.md). A `diptych`
+#      needs two. Flipping on the first one sent a half-finished entry to
+#      intake, which filed one slot and left the other silently empty.
+#   2. Only images from the CURRENT round, where a round begins at the last
+#      comment carrying a prompt. On a redraw the previous round's image is
+#      still sitting on the issue, and it is precisely the image being
+#      replaced - counting it would flip an issue to ready with nothing new
+#      attached at all.
+#
+# Both live in `scripts/issue_assets.py`, shared with `art_intake.py`, so the
+# gate and the thing it gates cannot disagree. The bash here does no judging.
 on:
   issue_comment:
     types: [created, edited]
@@ -17,6 +32,7 @@ on:
 
 permissions:
   issues: write
+  contents: read
 
 concurrency:
   # Per issue, so two edits in a row cannot race on the same labels.
@@ -31,39 +47,80 @@ jobs:
     if: contains(github.event.issue.labels.*.name, 'asset:needs-art')
     runs-on: ubuntu-latest
     steps:
-      - name: Flip to asset:ready if an image is attached
+      # Anyone can comment on a public repo. Only people who can actually be
+      # trusted with the wing's state may move it: a stranger dropping an image
+      # should open a conversation, not advance the pipeline. Contributed art
+      # is welcome and goes through `art:human-offer` (see VISUAL.md 1b).
+      #
+      # `issue_assets.py` re-checks this per comment, because a trusted actor
+      # commenting after an untrusted one must not launder the stranger's
+      # image. This early exit only saves a checkout.
+      - name: Skip events from non-maintainers
+        id: who
+        env:
+          WHO: ${{ github.event.comment.author_association || github.event.sender.login }}
+        run: |
+          set -euo pipefail
+          case "$WHO" in
+            OWNER|MEMBER|COLLABORATOR|rfsbraz)
+              echo "go=true" >> "$GITHUB_OUTPUT" ;;
+            *)
+              echo "Not flipping: '$WHO' is not a maintainer."
+              echo "go=false" >> "$GITHUB_OUTPUT" ;;
+          esac
+
+      - uses: actions/checkout@v4
+        if: steps.who.outputs.go == 'true'
+
+      - uses: actions/setup-python@v5
+        if: steps.who.outputs.go == 'true'
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        if: steps.who.outputs.go == 'true'
+        run: pip install --quiet pyyaml
+
+      - name: Count the images attached this round
+        id: gate
+        if: steps.who.outputs.go == 'true'
+        # "not ready" is exit 1 and is a perfectly normal answer, not a failure.
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORRERY_CONTENT_REPO: ${{ github.repository }}
+        run: python scripts/art_gate.py "${{ github.event.issue.number }}" --github
+
+      - name: Flip to asset:ready
+        if: steps.who.outputs.go == 'true' && steps.gate.outputs.ready == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
           NUM: ${{ github.event.issue.number }}
-          # Through the environment, never interpolated into the script: this
-          # is attacker-controlled text on a public repo.
-          BODY: ${{ github.event.comment.body || github.event.issue.body }}
-          # Anyone can comment on a public repo. Only people who can actually
-          # be trusted with the wing's state may move it: a stranger dropping
-          # an image should open a conversation, not advance the pipeline.
-          # Art offered by contributors is welcome and goes through
-          # `art:human-offer` instead (see VISUAL.md 1b).
-          WHO: ${{ github.event.comment.author_association || github.event.sender.login }}
+          FOUND: ${{ steps.gate.outputs.found }}
+          REQUIRED: ${{ steps.gate.outputs.required }}
         run: |
           set -euo pipefail
-
-          case "$WHO" in
-            OWNER|MEMBER|COLLABORATOR|rfsbraz) ;;
-            *)
-              echo "Not flipping: '$WHO' is not a maintainer. Contributed art goes through art:human-offer."
-              exit 0 ;;
-          esac
-
-          # GitHub has used two hosts for uploads over the years and markdown
-          # images can also be plain links, so match the hosts rather than the
-          # markdown syntax.
-          if ! printf '%s' "$BODY" | grep -qE 'user-attachments/assets/|user-images\.githubusercontent\.com|!\[[^]]*\]\(https?://'; then
-            echo "No image attached in this event; nothing to do."
-            exit 0
-          fi
-
           gh issue edit "$NUM" --repo "$REPO" \
             --add-label "asset:ready" --remove-label "asset:needs-art"
+          echo "Flipped #${NUM} to asset:ready (${FOUND}/${REQUIRED})." >> "$GITHUB_STEP_SUMMARY"
 
-          echo "Flipped #${NUM} to asset:ready." >> "$GITHUB_STEP_SUMMARY"
+      # Silence on a partial upload is indistinguishable from a broken
+      # workflow, and the difference matters most exactly when someone is
+      # midway through a multi-image entry. Say the count out loud, on the
+      # issue, where the person who just uploaded is already looking.
+      - name: Say what is still missing
+        if: >-
+          steps.who.outputs.go == 'true'
+          && steps.gate.outputs.ready == 'false'
+          && steps.gate.outputs.found != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          NUM: ${{ github.event.issue.number }}
+          FOUND: ${{ steps.gate.outputs.found }}
+          REQUIRED: ${{ steps.gate.outputs.required }}
+        run: |
+          set -euo pipefail
+          gh issue comment "$NUM" --repo "$REPO" --body \
+            "**${FOUND}/${REQUIRED}** images attached this round. Waiting on $((REQUIRED - FOUND)) more before this flips to \`asset:ready\`."
