@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Collect finished art off GitHub issues and wire it into content.
 
-    python scripts/art_intake.py            # dry run: what is waiting
-    python scripts/art_intake.py --apply    # download, convert, patch, close
+    python scripts/art_intake.py              # dry run: what is waiting
+    python scripts/art_intake.py --apply      # download, convert, patch
+    python scripts/art_intake.py --wing demo  # only one wing's ready assets
 
 The other half of `issue_sync.py`. An issue labelled `asset:ready` has an image
 attached; this takes it the rest of the way: download, chroma-key, convert to a
@@ -121,6 +122,10 @@ def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--apply", action="store_true")
     p.add_argument("--keep-temp", action="store_true")
+    p.add_argument("--wing", metavar="SLUG",
+                   help="only process assets for this wing (e.g. `demo`), so a "
+                        "run for one wing does not sweep up every other wing's "
+                        "ready assets into the same content branch")
     a = p.parse_args()
 
     issues = pending()
@@ -128,10 +133,14 @@ def main() -> int:
         print("  nothing waiting (no open issue labelled asset:ready)")
         return 0
 
-    done, failed = 0, 0
+    done, failed, skipped = 0, 0, 0
+    processed: list[tuple[int, bool]] = []
     for num in issues:
         v = IA.read_number(num, REPO)
         spec = v["spec"]
+        if a.wing and (spec or {}).get("wing") != a.wing:
+            skipped += 1
+            continue
         if not spec:
             print(f"  #{num} REFUSED - no `asset:` block in the body")
             failed += 1
@@ -206,6 +215,7 @@ def main() -> int:
         if spec.get("demo"):
             print(f"        demo asset - files written, no content entry to update")
             done += 1
+            processed.append((num, True))
             continue
         # Slot 1 is the entry's `images.sketch`; the rest are found by the app
         # from that path (`<id>-2.webp`, ... - see components/river/shared.tsx
@@ -221,8 +231,10 @@ def main() -> int:
                   "Generated for Orrery (gpt-image-1)")
         print(f"        wired in ({len(wrote)} slot(s))")
         done += 1
+        processed.append((num, False))
 
-    if a.apply and done:
+    wrote_content = any(not demo for _, demo in processed)
+    if a.apply and wrote_content:
         v = subprocess.run([sys.executable, os.path.join(SCRIPTS, "validate.py")],
                            capture_output=True, text=True, encoding="utf-8")
         print(f"\n  validate exit={v.returncode}")
@@ -230,12 +242,23 @@ def main() -> int:
             print("  NOT closing any issue - validate is red, fix before committing")
             print((v.stdout or "")[-1500:])
             return 1
-        print("  main is protected: branch, open a PR, and let Rodrigo merge it.")
-        print("  Close the issues only AFTER that PR is merged:")
-        for i in issues:
-            print(f"    gh issue close {i['number']} --repo {REPO}")
 
-    print(f"\n  {done} wired, {failed} refused/failed, {len(issues)} seen")
+    # The demo issues carry no content, so there is nothing to branch or
+    # validate for them - but every processed issue still needs closing once
+    # its result is committed (the demo assets to the app, real assets via a
+    # content PR Rodrigo merges). List exactly the ones this run handled, never
+    # every issue it looked at.
+    if a.apply and processed:
+        if wrote_content:
+            print("  main is protected: branch, open a PR, and let Rodrigo merge it.")
+            print("  Close these issues only AFTER that PR is merged:")
+        else:
+            print("  Close these issues once the assets are committed:")
+        for num, _ in processed:
+            print(f"    gh issue close {num} --repo {REPO}")
+
+    tail = f", {skipped} skipped (other wing)" if skipped else ""
+    print(f"\n  {done} wired, {failed} refused/failed, {len(issues)} seen{tail}")
     return 1 if failed else 0
 
 

@@ -278,10 +278,24 @@ def body_for(wing: str, kind: str, aid: str, why: str, path: str, accent: str,
     # that is recorded here is which of those two paths this entry is on.
     # Passing --chroma on an opaque type is a hard error, and it is the
     # mistake intake used to make on every asset it touched.
+    #
+    # THE ORGANISATION CAN OVERRIDE THE TYPE'S BACKGROUND. `chapter-gate` is
+    # authored transparent whatever its subject (LAYOUT.md: "bleeds off the
+    # page; app applies its plate mask"), because the app fades its edges with
+    # a CSS mask that needs alpha to fade INTO. An `establishing-landscape` is
+    # normally opaque, but as an era plate it must still be keyed - otherwise
+    # the flat magenta it was drawn on survives as a bright halo behind the
+    # plate, which is exactly what shipped on the demo's first era plate. The
+    # frame dissolve is skipped too: the plate mask is the only edge treatment
+    # a gate gets, and doubling them eats into the art.
     itype = grammar.get("illustration_type")
-    flags = ["--neutral"] + ([] if itype in OPAQUE_TYPES else ["--chroma"])
-    if itype:
-        flags += ["--type", str(itype)]
+    org = grammar.get("organisation")
+    if org == "chapter-gate":
+        flags = ["--neutral", "--chroma", "--no-dissolve"]
+    else:
+        flags = ["--neutral"] + ([] if itype in OPAQUE_TYPES else ["--chroma"])
+        if itype:
+            flags += ["--type", str(itype)]
     lines.append("  slots:")
     stem, ext = os.path.splitext(f"assets/{dest_dir}/{aid}.webp")
     for i in range(1, n_images + 1):
