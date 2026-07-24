@@ -62,7 +62,7 @@ Slugs are the contract - use them verbatim in content, validator, and app.
 
 ---
 
-### `beside` — the workhorse
+### `beside` - the workhorse
 Two neighbouring regions in one restrained cell: prose one side, one
 self-contained illustration the other, ~45/55, alternating side down the page.
 Shared surface, no heavy divider.
@@ -74,7 +74,7 @@ Shared surface, no heavy divider.
   `artifact-spread`, which skips the dissolve their drawn edge requires.
 - **Use**: ordinary and medium-weight events. The default; most of a wing is this.
 
-### `full-bleed-vista` — the breath
+### `full-bleed-vista` - the breath
 A wide establishing illustration spanning the full content column; prose in a
 separate block above or below, never overlaid.
 - **Desktop**: panoramic image across the column; prose a narrow block to one side or above.
@@ -83,7 +83,7 @@ separate block above or below, never overlaid.
 - **Holds**: `establishing-landscape`, `place-portrait`, `map-route`, `journey-transit`.
 - **Use**: birthplace, arrival, migration, a new city, the opening of a period. A pause.
 
-### `immersion` — the total stop
+### `immersion` - the total stop
 The artwork is the full-width background surface; prose sits **over** it inside a
 deliberate low-detail quiet zone (~35-45% of the frame).
 - **Desktop**: full-width deep composition; text anchored left or right to the quiet zone.
@@ -92,7 +92,7 @@ deliberate low-detail quiet zone (~35-45% of the frame).
 - **Holds**: `portrait-of-absence`, `establishing-landscape`, `symbolic-still-life`, `atmospheric-motif-field`.
 - **Use**: the one or two largest ruptures in a life - a death, sudden fame, catastrophe, breakthrough. Cap it hard (see rotation budget).
 
-### `floating-object` — the aside on the page
+### `floating-object` - the aside on the page
 One small isolated object placed directly on the editorial page (no card),
 prose wrapping or margined around it.
 - **Desktop**: object 15-28% of the cell, offset into a corner or the wide margin; text wraps.
@@ -101,7 +101,7 @@ prose wrapping or margined around it.
 - **Holds**: `isolated-object`, `book-object`, `emblem-seal`.
 - **Use**: a keepsake, a ticket, a torn note, a small private memory. A minor beat.
 
-### `artifact-spread` — the document is the page
+### `artifact-spread` - the document is the page
 One primary archival artifact (manuscript, letter, proof, newspaper) replaces
 the illustration card and is the principal surface; prose in a disciplined
 supporting column or margin.
@@ -111,7 +111,7 @@ supporting column or margin.
 - **Holds**: `document-facsimile`, `manuscript-proof`, `book-object`.
 - **Use**: rejection, contract, letter, submission, censorship, court record, publication proof. Evidence.
 
-### `diptych` — two states
+### `diptych` - two states
 Two related panels of equal or deliberately contrasting weight, a small
 connector between them, one shared title/prose introducing the relationship.
 - **Desktop**: two frames side by side, relationship across the centre seam.
@@ -120,7 +120,7 @@ connector between them, one shared title/prose introducing the relationship.
 - **Holds**: `manuscript-proof`, `place-portrait`, `editorial-portrait`, `book-object`, `symbolic-still-life`.
 - **Use**: genuine before/after - rejected then rewritten, flop then cult, private then public.
 
-### `strip` — the sequence
+### `strip` - the sequence
 A short wide band of 5-12 repeated modular units in a horizontal sequence,
 readable left to right; title/prose above.
 - **Desktop**: strip spans the content width, most units visible.
@@ -129,7 +129,7 @@ readable left to right; title/prose above.
 - **Holds**: `serial-contact-sheet`, `process-diagram`.
 - **Use**: serialisation, weekly instalments, drafts, submissions, production stages, accumulated incidents.
 
-### `marginalia` — the footnote
+### `marginalia` - the footnote
 A predominantly textual entry with a tiny transparent vignette tucked in the
 outer margin (8-15%), near the gutter/rail.
 - **Desktop**: object outside or partly outside the text column, may overlap the rail/date.
@@ -138,7 +138,7 @@ outer margin (8-15%), near the gutter/rail.
 - **Holds**: `isolated-object`, `emblem-seal`.
 - **Use**: minor honours, brief appearances, side projects, small contextual details.
 
-### `medallion` — the keepsake (the one round shape)
+### `medallion` - the keepsake (the one round shape)
 A circular or oval vignette with a restrained physical frame (rim, seal edge,
 mount), spacious around it so the round form interrupts the rectangular rhythm.
 - **Desktop**: 20-35% of the width, centred above prose or offset beside the title, may align to the timeline node.
@@ -147,7 +147,7 @@ mount), spacious around it so the round form interrupts the rectangular rhythm.
 - **Holds**: `editorial-portrait`, `emblem-seal`, `portrait-of-absence`, `book-object`.
 - **Use**: honours, memorials, membership, recognition, legacy, symbolic remembrance.
 
-### `split-counterpoint` — two simultaneous realities
+### `split-counterpoint` - two simultaneous realities
 Two parallel lanes for events in the same period, each labelled
 (PRIVATE / PUBLIC, WRITING / RECEPTION), connected by a shared baseline or date.
 They **coexist** - one does not become the other (that is `diptych`).
@@ -160,7 +160,7 @@ They **coexist** - one does not become the other (that is `diptych`).
   first uses this organisation.
 - **Use**: contradiction - success during hardship, private loss beside public triumph, personal beside historical.
 
-### `layered-stack` — accumulation
+### `layered-stack` - accumulation
 Several overlapping physical artifacts (3-7) as a believable stack/desk spread,
 one dominant top piece, depth and repeated handling; prose in a separate clear
 zone.
@@ -170,7 +170,7 @@ zone.
 - **Holds**: `archive-stack`, `manuscript-proof`, `press-media-collage`.
 - **Use**: research, repeated rejection, multiple editions, correspondence, years of revision. (Quantity - versus `artifact-spread`'s single document.)
 
-### `mosaic` — public noise
+### `mosaic` - public noise
 4-9 unequal fragments in one irregular editorial field, one dominant, deliberate
 hierarchy, modest overlap, enough negative space to avoid clutter; title/prose
 outside the dense area.
@@ -180,7 +180,7 @@ outside the dense area.
 - **Holds**: `press-media-collage`, `symbolic-still-life`.
 - **Use**: sudden fame, controversy, press response, award season, adaptations, many voices at once.
 
-### `interlude` — the pause
+### `interlude` - the pause
 A deliberately sparse entry with far more empty space than its neighbours: one
 date, one short line, an optional faint trace; the rail may pause, fade or go
 dotted across the gap. The emptiness is the device.
@@ -190,7 +190,7 @@ dotted across the gap. The emptiness is the device.
 - **Holds**: `portrait-of-absence`, `atmospheric-motif-field`, or none.
 - **Use**: grief, disappearance, creative silence, unknown years, illness, missing records.
 
-### `passage` — compressed time
+### `passage` - compressed time
 A shallow full-width band bridging two larger entries, compressing an extended
 period into one transition; short prose (1-3 sentences), a date **range**.
 - **Desktop**: full-width band, progression left to right.
@@ -199,7 +199,7 @@ period into one transition; short prose (1-3 sentences), a date **range**.
 - **Holds**: `serial-contact-sheet`, `journey-transit`, `process-diagram`, `atmospheric-motif-field`.
 - **Use**: teaching years, ongoing work, research periods, slow recovery, years that matter collectively not individually.
 
-### `chapter-gate` — the era opening
+### `chapter-gate` - the era opening
 A large transitional section introducing a new era (this is the era-plate slot,
 not an event). Eyebrow, large era title, date range, a thematic line, a short
 summary, one atmospheric illustration summarising the era; a strong visual reset.
