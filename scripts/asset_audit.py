@@ -42,6 +42,21 @@ def has_sketch(entity) -> bool:
     return bool((entity.get("images") or {}).get("sketch"))
 
 
+def needs_art(entity) -> bool:
+    """False for an entry that carries no artwork BY DESIGN.
+
+    Two of docs/LAYOUT.md's organisations can be artless: `epigraph` always is
+    (the quotation is the illustration - it has no illustration_type, no
+    prompt and no issue), and an `interlude` may declare `images_required: 0`
+    ("0 or 1 - the emptiness is the device"). Counting either as a missing
+    sketch would hold a finished wing permanently below 100% coverage and put
+    an art job on the list that nobody can ever close.
+    """
+    if entity.get("organisation") == "epigraph":
+        return False
+    return entity.get("images_required") != 0
+
+
 def era_span(period):
     per = str(period or "")
     if "-" not in per:
@@ -57,7 +72,7 @@ def audit(slug: str) -> dict:
     base = ("content", "franchises", slug)
     works = load(*base, "works.yaml") or []
     eras = load(*base, "eras.yaml") or []
-    events = load(*base, "events.yaml") or []
+    events = [e for e in (load(*base, "events.yaml") or []) if needs_art(e)]
     theme = load(*base, "theme.yaml") or {}
 
     authors = []
@@ -66,7 +81,7 @@ def audit(slug: str) -> dict:
         if a:
             authors.append(a)
 
-    life = [e for a in authors for e in (a.get("lifeEvents") or [])]
+    life = [e for a in authors for e in (a.get("lifeEvents") or []) if needs_art(e)]
 
     # Which shared events actually reach this wing: inside a lifetime, and not
     # excluded by the wing's own ruling. A global sketch is drawn once for the

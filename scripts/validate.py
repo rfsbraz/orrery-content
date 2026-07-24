@@ -64,7 +64,7 @@ ORGANISATIONS = {
     "beside", "full-bleed-vista", "immersion", "floating-object",
     "artifact-spread", "diptych", "strip", "marginalia", "medallion",
     "split-counterpoint", "layered-stack", "mosaic", "interlude",
-    "passage", "chapter-gate",
+    "passage", "chapter-gate", "epigraph",
 }
 
 # docs/VISUAL.md §3b's catalogue of 25 illustration types.
@@ -119,6 +119,10 @@ HOLDS = {
     "interlude": {"portrait-of-absence", "atmospheric-motif-field"},  # "or none" - absence is handled by the optional-field rule
     "passage": {"serial-contact-sheet", "journey-transit", "process-diagram", "atmospheric-motif-field"},
     "chapter-gate": {"atmospheric-motif-field", "symbolic-still-life", "establishing-landscape"},
+    # `epigraph` has no artwork at all - the quotation IS the illustration - so
+    # it Holds nothing. The empty set is load-bearing, not an omission: it is
+    # what makes any illustration_type on an epigraph an error.
+    "epigraph": set(),
 }
 
 # modifier -> compatible organisations (docs/LAYOUT.md "## Modifiers"). `branch`
@@ -159,7 +163,13 @@ EXPECTED_IMAGES = {
     "interlude": {0, 1},
     "passage": {1},
     "chapter-gate": {1},
+    "epigraph": {0},
 }
+
+# The organisations whose spec allows an entry to carry no artwork at all:
+# `interlude` ("0 or 1 - the emptiness is the device") and `epigraph` (0, the
+# quotation is the illustration).
+ARTLESS_OK = {"interlude", "epigraph"}
 
 
 def check_grammar(loc, e):
@@ -175,7 +185,7 @@ def check_grammar(loc, e):
 
     org = e.get("organisation")
     if org is not None and org not in ORGANISATIONS:
-        err(loc, f"{eid}: bad organisation '{org}' (LAYOUT.md's 15: {sorted(ORGANISATIONS)})")
+        err(loc, f"{eid}: bad organisation '{org}' (LAYOUT.md's 16: {sorted(ORGANISATIONS)})")
         org = None  # don't cascade a Holds/images_required error off a value already rejected
 
     itype = e.get("illustration_type")
@@ -183,7 +193,10 @@ def check_grammar(loc, e):
         err(loc, f"{eid}: bad illustration_type '{itype}' (VISUAL.md §3b's 25: {sorted(ILLUSTRATION_TYPES)})")
         itype = None
 
-    if org and itype and itype not in HOLDS.get(org, set()):
+    # An organisation with an EMPTY Holds list (`epigraph`) holds no type at
+    # all, and check_epigraph below says so in words that actually help. Firing
+    # both would report one mistake twice, the second time as "not in []".
+    if org and itype and HOLDS.get(org) and itype not in HOLDS[org]:
         err(loc, f"{eid}: illustration_type '{itype}' is not in organisation "
                  f"'{org}'s Holds list (LAYOUT.md: {sorted(HOLDS.get(org, set()))})")
 
@@ -199,12 +212,39 @@ def check_grammar(loc, e):
         n = e.get("images_required")
         if isinstance(n, bool) or not isinstance(n, int) or n < 0:
             err(loc, f"{eid}: images_required must be a positive integer, got {n!r}")
-        elif n == 0 and org != "interlude":
-            err(loc, f"{eid}: images_required 0 is only valid for organisation "
-                     f"'interlude' (LAYOUT.md: 0 or 1) - got organisation '{org}'")
+        elif n == 0 and org not in ARTLESS_OK:
+            err(loc, f"{eid}: images_required 0 is only valid for organisations "
+                     f"{sorted(ARTLESS_OK)} (LAYOUT.md) - got organisation '{org}'")
         elif org and n not in EXPECTED_IMAGES.get(org, {1}):
             err(loc, f"{eid}: images_required {n} does not match organisation "
                      f"'{org}'s expected count {sorted(EXPECTED_IMAGES.get(org, {1}))} (LAYOUT.md)")
+
+    if org == "epigraph":
+        check_epigraph(loc, e, eid)
+
+
+def check_epigraph(loc, e, eid):
+    """The one organisation with required fields of its own (LAYOUT.md).
+
+    A quotation is the easiest fact in this repo to invent, and the most
+    damaging one to get wrong: everywhere else a fabrication is an invented
+    detail in a drawing, but here it is words put in a living person's mouth,
+    in their own voice, under their own name. So an `epigraph` does not ship
+    without the words themselves AND a source for them - `sources` is advisory
+    on an ordinary event and mandatory here, deliberately.
+    """
+    if not str(e.get("quote") or "").strip():
+        err(loc, f"{eid}: organisation 'epigraph' requires a `quote` (the words, "
+                 f"verbatim) - LAYOUT.md")
+    if not e.get("sources"):
+        err(loc, f"{eid}: organisation 'epigraph' requires `sources` - a quotation "
+                 f"we cannot source is not an epigraph, it is prose in a `beside`")
+    if e.get("illustration_type") is not None:
+        err(loc, f"{eid}: organisation 'epigraph' takes no illustration_type - it has "
+                 f"no artwork; the quotation is the illustration (LAYOUT.md)")
+    # No modifier check here on purpose: `epigraph` appears in no entry of
+    # MODIFIER_COMPAT, so the generic compatibility check above already rejects
+    # every modifier on it. A second message would report one mistake twice.
 
 
 # `sketch` is the generated-art slot on eras, events and life events. It is

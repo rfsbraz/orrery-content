@@ -44,13 +44,13 @@ if hasattr(sys.stdout, "reconfigure"):
 CAP_FRACTION = 1 / 3
 
 # --- docs/LAYOUT.md's rotation budget: the organisation axis ----------------
-# The 15 organisation slugs. Kept here as a query-time reference; LAYOUT.md is
+# The 16 organisation slugs. Kept here as a query-time reference; LAYOUT.md is
 # the source of truth.
 ORGANISATIONS = {
     "beside", "full-bleed-vista", "immersion", "floating-object",
     "artifact-spread", "diptych", "strip", "marginalia", "medallion",
     "split-counterpoint", "layered-stack", "mosaic", "interlude",
-    "passage", "chapter-gate",
+    "passage", "chapter-gate", "epigraph",
 }
 # `beside` defaults absent-organisation events (LAYOUT.md: "an event with none
 # renders as beside"), so it is the implicit value everywhere the field is
@@ -77,6 +77,11 @@ IMMERSION_MAX = 2
 # call (see the report), set generously so it flags only a wing that has
 # clearly stopped treating it as a rare device.
 INTERLUDE_CAP_FRACTION = 0.15
+# "Capped at 2-3 per wing" - an absolute count, like IMMERSION_MAX. `epigraph`
+# is the only organisation that costs nothing to produce (no prompt, no
+# generation, no issue), which is exactly why its cap needs enforcing rather
+# than trusting: an unlimited free organisation gets reached for as filler.
+EPIGRAPH_MAX = 3
 
 
 def load(*parts):
@@ -382,6 +387,14 @@ def main() -> int:
         org_problems.append(
             f"organisation 'chapter-gate' is used {chapter_gate_n} times among events, "
             f"more than the wing's {era_count} era(s) - LAYOUT.md caps it at one per era")
+
+    epigraph_n = org_counts.get("epigraph", 0)
+    if epigraph_n > EPIGRAPH_MAX:
+        org_problems.append(
+            f"organisation 'epigraph' is used {epigraph_n} times, over LAYOUT.md's "
+            f"cap of {EPIGRAPH_MAX} per wing - it is free to produce, so the cap is "
+            f"what keeps it from becoming filler"
+        )
 
     interlude_n = org_counts.get("interlude", 0)
     interlude_cap = max(1, int(total_org * INTERLUDE_CAP_FRACTION))
