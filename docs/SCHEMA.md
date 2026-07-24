@@ -459,6 +459,28 @@ is derived from `works.yaml`; never write it by hand.
 cultural ruptures, industry shifts). Append, never duplicate; check for an
 existing entry before adding one.
 
+### Layout grammar (organisation + illustration)
+
+An event (or life event) may carry the layout-grammar fields that decide how its
+cell is shaped and what its art depicts. All optional; an event with none renders
+as `beside` with a default illustration. Full contract in `docs/LAYOUT.md` (the
+15 organisations, the render specs, the compatibility rules) and `docs/VISUAL.md`
+(the 25 illustration types).
+
+```yaml
+  organisation: artifact-spread        # how the cell lays out (LAYOUT.md); default beside
+  illustration_type: manuscript-proof  # what the art depicts / how authored (VISUAL.md)
+  treatment: [photocopy-grain]         # optional surface finishes (author/era specific)
+  modifier: breakout                   # optional; must be compatible with the organisation
+  images_required: 1                   # image slots this entry needs (default 1; diptych 2, strip N)
+```
+
+Validation: `organisation` in LAYOUT.md's 15, `illustration_type` in VISUAL.md's
+25, `modifier` compatible with the `organisation`, `illustration_type` in the
+organisation's Holds list, `images_required` a positive integer matching the
+organisation's spec. The rotation budget (caps, no-repeat-neighbour) is checked
+per wing by `scripts/art_rotation.py`.
+
 **What earns an event a slot** is editorial, not structural - see "The aura
 editorial standard" in the `franchise-research` skill: high = recolors the
 text, med = explains the shelf, low = texture of the times; an event that does
