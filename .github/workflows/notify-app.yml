@@ -14,6 +14,12 @@ on:
     branches: [main]
     paths:
       - "content/**"
+      # Generated art the reader actually sees. Real art always lands with a
+      # content change too (intake writes the sketch path into the YAML), so
+      # this was covered in practice - until the first assets-only merge, the
+      # demo plates, which carry no content entry by design. An assets change
+      # is a change a reader sees, so it earns the same same-day sync.
+      - "assets/**"
   workflow_dispatch:
 
 # Merging several content PRs in a row should end in one bump, not a stampede.
