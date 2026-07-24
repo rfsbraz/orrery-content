@@ -69,7 +69,9 @@ Shared surface, no heavy divider.
 - **Desktop**: prose and art side by side; rail + date marker outside the cell.
 - **Mobile**: prose first, art second at its own aspect; never two shrunk columns.
 - **Images**: 1 · aspect `4:3`/`3:2`/`1:1` · background transparent (dissolve).
-- **Holds**: most scene/object illustration types.
+- **Holds**: every illustration type EXCEPT the three artifact types
+  (`document-facsimile`, `manuscript-proof`, `archive-stack`) - those need
+  `artifact-spread`, which skips the dissolve their drawn edge requires.
 - **Use**: ordinary and medium-weight events. The default; most of a wing is this.
 
 ### `full-bleed-vista` — the breath
@@ -152,7 +154,10 @@ They **coexist** - one does not become the other (that is `diptych`).
 - **Desktop**: two parallel columns, equal or intentionally unequal.
 - **Mobile**: lanes stacked, labels prominent, a connector/shared date preserving simultaneity.
 - **Images**: 2 (or 1 composed) · aspect each `4:5`/`1:1` · background per type.
-- **Holds**: any two compatible scene/object types, one per lane.
+- **Holds**: every illustration type EXCEPT the three artifact types (as `beside`).
+- **Schema note**: rendering the lane *labels* (PRIVATE / PUBLIC) needs a
+  per-lane label field the event schema does not carry yet; add it when a wing
+  first uses this organisation.
 - **Use**: contradiction - success during hardship, private loss beside public triumph, personal beside historical.
 
 ### `layered-stack` — accumulation
@@ -242,9 +247,11 @@ monotony we are fixing. So a wing's organisations are **assigned deliberately
 down the timeline**, the same discipline as the composition rotation
 (`art_rotation.py`), now on the organisation axis too:
 
-- **`beside` is the workhorse** and may be the plurality, but **no single
-  organisation may exceed ~40%** of a wing's events, and `beside` specifically
-  should sit around half, not three-quarters.
+- **`beside` is the workhorse** and is exempt from the general cap: it may be
+  the plurality, targeting **around half** of a wing's events (a soft ~60%
+  ceiling, not three-quarters). **Every OTHER organisation is capped at ~40%.**
+  `art_rotation.py` encodes exactly this: beside its own ceiling, all others at
+  the 40% cap.
 - **`immersion` is capped at 1-2 per wing** (the biggest ruptures only). Same
   for `chapter-gate` (one per era) and `interlude` (a real silence, not a
   convenience).
