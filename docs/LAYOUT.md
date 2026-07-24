@@ -310,6 +310,70 @@ and `--check` fails a wing that breaks the caps or repeats a neighbour. The
 prompt writer assigns the whole wing in one pass so the rhythm can actually be
 composed (see `.claude/commands/asset-prompt.md`).
 
+### The contour: caps say how often, not in what order
+
+Every cap above is a frequency, and a wing can clear all of them and still be
+badly paced - six loud cells running, then a flat stretch. Exhibition designers
+name this outright: alternate higher-intensity spaces with lower-intensity
+ones, or the visitor never gets to process anything. So `art_rotation.py` also
+grades each organisation loud / mid / quiet (`immersion`, `full-bleed-vista`,
+`chapter-gate` and `mosaic` are loud; `passage`, `interlude`, `marginalia` and
+`epigraph` are quiet) and checks the SEQUENCE:
+
+- **No two loud cells touching.** A rupture earns its weight from the quiet
+  around it; back to back they cancel.
+- **No plateau**: five or more consecutive cells at the same intensity, however
+  varied the organisations inside it are.
+- **No two loud cells in one screenful.** The caps are counted over a whole
+  wing, so two vistas three events apart look far apart in the arithmetic and
+  land together on the page. Print composes against the spread - the unit the
+  reader takes in at once - and the web's spread is the viewport. The script
+  carries a measured table of roughly how much of a phone viewport each
+  organisation occupies, and slides a one-viewport window down the wing.
+
+The report prints the wing's contour as one line (`#` loud, `=` mid, `.`
+quiet), which is the fastest way to see the shape of a life at a glance. A wing
+that has not been cut onto the grammar yet prints as `=============`, thirteen
+identical mid cells, and that string is the original monotony complaint stated
+exactly.
+
+## Transitions: the gutter is part of the grammar
+
+Sixteen organisations describe the CELLS. Nothing above describes what happens
+**between** two of them, and in every sequential medium that is where the
+reading actually happens: comics grammar puts elapsed time not in the panel but
+in the gutter, and the reader crossing that space is what supplies the passage
+of time. Our only sequencing rule until now was negative - "no two consecutive
+events share an organisation" - which says avoid a repeat, never *compose a
+transition*.
+
+Three transitions, and **all three are DERIVED from the dates the content
+already carries**. There is no `transition:` field and there should not be one:
+a curator writing "this follows closely from the last one" next to two dates
+that say otherwise is a fact that can drift, and the dates cannot.
+
+| Between | Reads as | What the app does |
+|---|---|---|
+| Same year | facets of one moment | already grouped: one stratum, one year heading, one ghosted numeral |
+| 1-3 years | an ordinary cut | the standard gap between strata |
+| **4+ years** | **a leap, a silence** | a **gutter**: extra space scaled to the span, and the span said out loud ("29 anos depois") |
+
+The threshold is 4 because a working writer publishes most years, so three
+quiet years is ordinary and four begins to be something. The gutter's height
+steps up at 7 and again at 15, so a three-decade silence looks like one.
+
+**Saying the span is the load-bearing half**, not the empty space. A big gap on
+its own is ambiguous - it reads as a layout decision rather than as a silence -
+and a reader has no way to tell four years from forty without subtracting two
+ghosted numerals themselves.
+
+What this means for composing a wing: an `interlude` is no longer the only way
+to show a silence, and it should not be spent on one the dates already state.
+Reach for `interlude` when the silence is **the event** (grief, illness,
+a disappearance, a refusal to write) and there is something to say about it.
+The gutter covers the case where nothing was recorded at all, which is most of
+them, and it costs no entry and no artwork.
+
 ## How this reaches the app
 
 The app renders a dispatcher: one component per `organisation`, chosen by the
