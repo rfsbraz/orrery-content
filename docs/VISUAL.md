@@ -244,8 +244,9 @@ is uniform while the *subject shape* varies.
 
 The 25 types, with the aspect and background each is authored at. Slugs are the
 contract (content, validator, prompt writer). The full per-type authoring module
-- the concrete "draw this, not that" brief for each - lives in the prompt
-writer, `.claude/commands/asset-prompt.md`; this table is the index.
+- the concrete "draw this, not that" brief for each - lives in
+`docs/PROMPT-MODULES.md`; this table is the index, and the prompt writer
+(`.claude/commands/asset-prompt.md`) pulls the module when it assembles a prompt.
 
 | slug | essence | aspect | background |
 |---|---|---|---|

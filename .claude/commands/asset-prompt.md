@@ -1,51 +1,84 @@
 ---
-description: Write the image-generation prompt for one Orrery visual asset - identify the asset type, assemble it from the house style and the wing's own art language, and state size, background, reference-image policy and where it lands.
-argument-hint: <slug> <asset-type> <entity-id>   (or just <slug> to take the next job)
+description: Compose a whole author wing's visual layer at once - assign each event an organisation (how it lays out) and an illustration type (what it depicts), as one told story, then write every ready-to-paste gpt-image-1 prompt with the rhythm already planned across the wing.
+argument-hint: <slug>   (the whole wing; or <slug> <entity-id> for one asset against an already-planned wing)
 ---
 
 # /asset-prompt
 
-Produce a ready-to-paste **gpt-image-1** prompt for one asset of **$ARGUMENTS**,
-plus everything needed to generate and file it.
+Compose the visual layer for the **$ARGUMENTS** wing. The default and correct
+mode is **the whole wing in one pass**: a life is told down a page, and its
+rhythm - the shape of each cell and the kind of picture in it - can only be
+composed by seeing the whole timeline at once. A prompt written for one event in
+isolation cannot know it is the fourth still-life in a row.
 
-`docs/VISUAL.md` is the source of truth for the house style, the asset specs and
-the negative prompt. This command owns only the assembly: reading the right
-entity, pulling the wing's art language, and returning a prompt that could not
-have come from another wing.
+Two axes decide each entry (kept separate on purpose - see `docs/LAYOUT.md`):
 
-## Resolve the job
+- **`organisation`** - how the cell lays image and text out; the app renders one
+  of 15. This is where *variety* lives, and it is assigned as **rhythm** across
+  the wing (the budget below).
+- **`illustration_type`** - what the artwork depicts and how it is authored; one
+  of 25 (`docs/PROMPT-MODULES.md` has the authoring brief for each). This is
+  where *cohesion* lives: every one is drawn in the wing's own `theme.art`.
 
-With a slug only, take the next job from
-`python scripts/asset_audit.py <slug> --next`. With an explicit asset type and
-id, use that.
+Sources of truth, read them, do not restate them: `docs/VISUAL.md` (house style,
+§3b illustration catalogue, §5b technical block, §6 negative prompt), `docs/LAYOUT.md`
+(the 15 organisations, the compatibility rules, the rotation budget), and
+`docs/PROMPT-MODULES.md` (the per-illustration-type authoring modules). This
+command owns the assembly and the *composition of the wing as a story*.
 
-Then read, and read nothing else:
+## Read the whole wing first
 
-- `content/franchises/<slug>/theme.yaml` -> `art` (the wing's visual language)
-  and `palette.accent`.
-- the entity itself: the era in `eras.yaml`, the event in `events.yaml`, the
-  life event on `content/authors/<id>.yaml`, or the world event in
-  `content/events/global.yaml`.
+Read the wing's `theme.art` and `palette.accent` (`theme.yaml`), and **every**
+event in timeline order: the eras (`eras.yaml`), the life events
+(`content/authors/<id>.yaml`), and the franchise events (`events.yaml`), plus
+the shared world events that reach it. Use `scripts/wing_digest.py <slug>` to
+orient cheaply, then read the entries you will plan.
 
-**If `theme.art` is missing, stop.** Say so and ask for it to be settled first;
-a sketch generated without it will not match the wing, and matching is the
-entire point.
+**If `theme.art` is missing, stop.** A wing generated without it will not cohere,
+and cohesion is the entire point.
 
-## Assemble
+## Step 1: compose the wing (before any prompt)
 
-Follow `docs/VISUAL.md` §5: **labelled sections** (`STYLE`, `SCENE`, `SUBJECT`,
-`DETAIL`, `COMPOSITION`, `CONSTRAINTS`), never one long paragraph, with the
-wing's `art` quoted rather than paraphrased and the constraints last. Keep the
-whole prompt under ~6,000 characters: the documented cap is far higher, but long
-prompts are reported to fail silently, returning an image with little relation
-to the instructions and no error.
+Assign every event two fields, as one told story, and write the plan down before
+writing a single prompt:
 
-**Look at the neighbours first.** For a life or franchise event, read the
-sketches already filed on the two events either side of it in the timeline
-(`scripts/asset_audit.py <slug>` lists them in order) and vary at least two of
-composition type, distance, tonal cast and motif carrier, per VISUAL.md §4a. A
-sequence of individually good sketches that all look alike is the failure this
-stage is most likely to produce, and it is invisible one asset at a time.
+- **`organisation`** per event, honouring the LAYOUT.md **rotation budget**:
+  `beside` is the workhorse (~half); every other organisation capped at ~40%;
+  `immersion` 1-2 for the largest ruptures only; `chapter-gate` one per era;
+  `interlude` for a real silence; **no two consecutive events share an
+  organisation**. Assign to track the life - open a period with `full-bleed-vista`
+  or `chapter-gate`, carry dead years with `passage`/`interlude`, stop at a death
+  with `immersion`, file evidence with `artifact-spread`.
+- **`illustration_type`** per event, from the 25, compatible with that event's
+  organisation (LAYOUT.md's Holds), and rotated on composition/distance/tonal
+  cast per VISUAL.md §4a so no type dominates.
+- **`images_required`** per event, from the organisation (1 for most; 2 for
+  `diptych`/`split-counterpoint`; more for a `strip`).
+
+Run `scripts/art_rotation.py <slug> --check` against the plan once assigned; it
+scores both axes and fails on a broken cap or a repeated neighbour. Revise until
+it holds. This is the step that makes the wing a story rather than a stack.
+
+## Step 2: assemble each prompt from the two axes
+
+Follow `docs/VISUAL.md` §5 and the skeleton in `PROMPT-MODULES.md`: **labelled
+sections** (`STYLE`, `SCENE`, `SUBJECT`, `DETAIL`, `COMPOSITION`, `CONSTRAINTS`),
+never one paragraph, the wing's `art` quoted not paraphrased, constraints last,
+under ~6,000 characters (long prompts fail silently).
+
+The two axes meet in the `COMPOSITION` block: the **illustration module**
+(`PROMPT-MODULES.md`) says what the picture is; the **organisation**
+(`LAYOUT.md`) says what shape it must be and where the text will sit. State the
+organisation's art requirement explicitly - a `full-bleed-vista` is a wide
+opaque scene with no reserved text zone; an `immersion` reserves a 35-45%
+low-detail quiet zone for text over the art; a `medallion` centres the subject
+in a circular safe area; an `artifact-spread` is the document itself. Aspect and
+background come from the illustration type (§3b), never assumed square.
+
+**The wing was composed in Step 1, so the rhythm is already planned** - each
+prompt just realises its assigned organisation and type. Still check each
+sketch's composition against its neighbours (§4a): even within one illustration
+type, vary distance, tonal cast and the motif carrier.
 
 **Draw the moment, not a table of objects.** §3's ban on inventing a real
 person's face is not a ban on people, scenes or incident (§3a). Anonymous
@@ -66,20 +99,19 @@ Two rules that override any instinct to make a nicer picture:
 For a `world-event`, drop the wing's art language entirely: neutral house
 style, transparent background, no author-specific motifs.
 
-## The presentation is not a choice any more
+## The edge is still the processor's job, not the prompt's
 
-VISUAL.md §5a used to offer four modes per asset. It offers one: every event
-sketch is a dissolving panel, and **the dissolve itself is applied by
-`prepare_asset.py`, not drawn by the model**. Do not describe the edge in the
-prompt - no torn paper, no fading, no ragged ink. Ask only that the artwork
-leaves roughly a tenth of the frame as magenta all the way around.
+For every keyed type (object and scene types, per §3b), **the dissolve is applied
+by `prepare_asset.py`, not drawn by the model**. Do not describe the edge - no
+torn paper, no fading, no ragged ink - ask only that the artwork leaves ~a tenth
+of the frame as magenta. The exception is the three **artifact types**
+(`document-facsimile`, `manuscript-proof`, `archive-stack`): those ARE about the
+paper, so they draw their own torn/folded/stacked edge and file `--no-dissolve`.
+And **opaque scene types** (`full-bleed-vista`, `immersion`, `establishing-landscape`
+et al. per §3b) are opaque, not keyed - no magenta, no dissolve, filed `--opaque`.
 
-Every event now lands on the same dark card, ruptures included (they get scale,
-not an inverted band), so there is no per-surface judgement left to make either.
-
-The transparency invariant never bends, and a world-event sketch has no latitude
-at all: line and texture only, or the per-wing tint turns it into a coloured
-blob.
+A shared world event still has no latitude: line and texture only, or the
+per-wing tint turns it into a coloured blob.
 
 ## Return
 
@@ -87,20 +119,20 @@ Always all six, in this order:
 
 1. **Asset** - type, entity id, the wing it belongs to.
 
-   Then, on its own line and in exactly this form, the four rotation fields:
+   Then, on its own line and in exactly this form, the grammar + rotation
+   fields (both axes, so `art_rotation.py` can score the wing from the issues):
 
-       Rotation: composition=<type> | distance=<far|middle|near> | cast=<tonal cast> | carrier=<orrery motif carrier>
+       Rotation: organisation=<org> | illustration=<type> | images=<n> | composition=<type> | distance=<far|middle|near> | cast=<tonal cast> | carrier=<orrery motif carrier>
 
-   `scripts/art_rotation.py <slug>` parses this line out of the issue comments
-   to rebuild the wing's whole rotation table, which is how §4a's cap can be
-   checked at all. The rotation plan used to live in a branch-local `.orrery/`
-   file that is deleted before merge, so the one artifact needed to write the
-   wing's next asset evaporated the moment the wing was finished. Derived from
-   the issues it cannot go stale, because the issues are what actually happened.
+   `scripts/art_rotation.py <slug>` parses this line out of the issue comments to
+   rebuild the wing's rotation on both axes, which is how the budget and the §4a
+   cap are checked at all. Keep the line exactly as shown; an unparsed line drops
+   the asset from the counts and makes the wing look more varied than it is.
 
-   Keep the line exactly as shown. A prompt whose rotation cannot be parsed is
-   reported as unparsed and left out of the counts, which makes the wing look
-   more varied than it is.
+   Also record the grammar fields onto the event itself in content
+   (`organisation`, `illustration_type`, `images_required`, any `modifier`) - the
+   app and the validator read them there; the issue line is for the rotation
+   tracker.
 2. **The prompt** - one block, ready to paste, no commentary inside it. It must
    contain the orrery motif as its **own paragraph** (VISUAL.md §1a - a clause
    bolted onto another sentence is what produces a tangled, illegible motif),
@@ -110,9 +142,13 @@ Always all six, in this order:
    parameter knocks out light regions inside the drawing), an explicit ban on
    any glow, halo, mist or gradient between the artwork and the magenta, and no
    frame or matte.
-3. **Size** - from the spec table (`1536x1024` era plates, `1024x1024` events).
-4. **Background** - opaque, or transparent for world events (and say it must be
-   tinted per wing with that accent).
+3. **Size** - the exact pixel dimensions for the illustration type's aspect
+   (§3b), e.g. `1536x1024` for a `16:9` vista, `1024x1024` for a square object,
+   `1024x1536` for a `4:5` portrait. State exact pixels, never a ratio.
+4. **Background** - keyed magenta for object/scene types, **opaque** for the
+   opaque scene types, per §3b; world events are line-and-texture only, tinted
+   per wing. Multi-image entries (`images_required > 1`) list each image's
+   subject and slot.
 5. **Reference images** - name the wing's **anchor image** (§5d) and say to
    attach it, plus up to two other accepted assets from the same wing that
    differ in subject. This is the strongest cohesion tool available and the
@@ -124,10 +160,13 @@ Always all six, in this order:
    The only exception is the wing's own first era plate, which has no anchor
    yet because it becomes one, and world events, which belong to the catalogue
    rather than to a wing.
-6. **Filing** - the `prepare_asset.py --chroma` command, plus `--neutral` (full
-   strength on a cold wing, ~0.4 on a warm one) to correct the model's warm
-   cast, and the YAML it prints, with `sketchCredit` saying it was generated
-   (the validator rejects a credit that reads like a source).
+6. **Filing** - the `prepare_asset.py` command with the flags the illustration
+   type needs: `--chroma --neutral` for keyed types; add `--type <illustration_type>`
+   so the processor applies the right edge (artifact types skip the dissolve,
+   opaque types skip chroma); `--opaque` for opaque scene types; `--slot N` for
+   each image of a multi-image entry. `--neutral` full strength on a cold wing,
+   ~0.4 on a warm one. Then the YAML it prints, with `sketchCredit` saying it was
+   generated (the validator rejects a credit that reads like a source).
 
 Then one line on what to check when the image comes back: whether it sits
 beside the wing's existing assets without looking like a different system.
