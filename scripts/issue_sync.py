@@ -56,7 +56,11 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import asset_audit as A  # noqa: E402
 import issue_assets as IA  # noqa: E402
-from prepare_asset import OPAQUE_TYPES  # noqa: E402
+# From art_types, NOT prepare_asset: prepare_asset imports Pillow, and this
+# script runs in the Asset queue CI job that installs only pyyaml. Importing
+# the constant via prepare_asset is what killed that job with a
+# ModuleNotFoundError for PIL.
+from art_types import OPAQUE_TYPES  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REPO = "rfsbraz/orrery-content"

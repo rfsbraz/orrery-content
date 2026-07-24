@@ -32,43 +32,11 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MAX_BYTES = 320_000
 
 # --- docs/VISUAL.md §3b: illustration_type drives background handling ------
-# The 25 illustration-type slugs, kept here as a query-time reference for
-# `--type`; docs/VISUAL.md is the source of truth.
-ILLUSTRATION_TYPES = {
-    "establishing-landscape", "place-portrait", "domestic-interior",
-    "workplace-workshop", "aftermath-scene", "public-event-tableau",
-    "journey-transit", "historical-context-tableau", "editorial-portrait",
-    "relationship-tableau", "portrait-of-absence", "isolated-object",
-    "symbolic-still-life", "book-object", "document-facsimile",
-    "manuscript-proof", "archive-stack", "press-media-collage", "map-route",
-    "process-diagram", "network-constellation", "serial-contact-sheet",
-    "emblem-seal", "palimpsest-erasure", "atmospheric-motif-field",
-}
-
-# Strictly OPAQUE per §3b's table - no transparent alternative is offered at
-# all for these, unlike "opaque or transparent" / "opaque pale or transparent"
-# types, which stay on the default chroma+dissolve path because the doc
-# genuinely asks gpt-image for alpha on them.
-#
-# AMBIGUOUS IN THE SPEC: the brief that produced this list named only three
-# examples - `establishing-landscape`, an "immersion" subject, and
-# `full-bleed-vista` - and the last of those is actually an ORGANISATION
-# (docs/LAYOUT.md), not one of §3b's illustration types; LAYOUT.md does fix
-# full-bleed-vista's background as opaque too, but its Holds list mixes
-# strictly-opaque types with "opaque or transparent" ones (place-portrait,
-# map-route, journey-transit). This set generalises the examples to every
-# §3b type whose background is unambiguously "opaque" in the table, which is
-# the closest concrete reading; worth a second look against VISUAL.md if a
-# narrower list (just the named examples) was actually intended.
-OPAQUE_TYPES = {
-    "establishing-landscape", "place-portrait", "domestic-interior",
-    "workplace-workshop", "aftermath-scene", "public-event-tableau",
-    "historical-context-tableau", "relationship-tableau", "portrait-of-absence",
-}
-
-# §3b's edge rule: these draw their own paper edge and must SKIP the frame
-# dissolve outright - equivalent to always passing --no-dissolve.
-ARTIFACT_TYPES = {"document-facsimile", "manuscript-proof", "archive-stack"}
+# The type sets live in `art_types`, a module with no heavy imports, so that
+# `issue_sync.py` can read OPAQUE_TYPES without dragging Pillow into a CI job
+# that never touches an image (see art_types.py's own docstring). Re-exported
+# here so this module's public surface is unchanged.
+from art_types import ARTIFACT_TYPES, ILLUSTRATION_TYPES, OPAQUE_TYPES  # noqa: E402,F401
 
 
 def dest_name(entity_id: str, slot: int) -> str:
