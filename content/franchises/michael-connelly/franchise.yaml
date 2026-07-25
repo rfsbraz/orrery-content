@@ -1,0 +1,39 @@
+# A wing spans an author's complete published work; it is not scoped to
+# whichever character made them famous. Connelly himself describes his body
+# of work as one big canvas his characters cross and recross, so the six
+# threads below - Harry Bosch, Mickey Haller, Renée Ballard, Jack McEvoy,
+# Terry McCaleb and the new Catalina books - are modelled as `subseries` on
+# works.yaml inside this one wing, never as separate franchises. See
+# works.yaml's header for how the five Bosch/Ballard joint novels and the
+# one Bosch/McCaleb joint novel are each assigned a single subseries.
+id: michael-connelly
+name: Michael Connelly
+kind: author
+description: >
+  The complete published fiction of Michael Connelly: the ongoing LAPD
+  procedural [[work:michael-connelly/the-black-echo|Harry Bosch]] series
+  (1992-present, 26 novels), the legal thrillers of Bosch's half-brother
+  [[work:michael-connelly/the-lincoln-lawyer|Mickey Haller]] (2005-present, 8
+  novels), Detective Renée Ballard's own run alongside five further novels
+  she shares with Bosch, crime reporter Jack McEvoy's three novels
+  (bookended by [[work:michael-connelly/the-poet|The Poet]] and
+  [[work:michael-connelly/fair-warning|Fair Warning]]), FBI profiler Terry
+  McCaleb's two, the new Catalina Island series introducing Detective
+  Sergeant Stilwell (2025-present), two standalone thrillers, three
+  short-fiction ebook collections, and one nonfiction collection of
+  Connelly's own crime journalism. Every thread shares one Los Angeles and
+  one continuous cast that recurs across all of them.
+authorIds: [michael-connelly]
+themePreset: murder-book-noir
+
+# Capabilities auto-detect from the data (docs/SCHEMA.md). This wing earns a
+# real connections layer: characters.yaml carries the six-character
+# throughline (Bosch, Haller, Ballard, McEvoy, McCaleb, Rachel Walling), and
+# works.yaml carries the specific crossover links (Bosch/McCaleb,
+# Bosch/Haller, Bosch-Ballard, McEvoy/Haller, Ballard/Catalina). No
+# theme.art, eras.yaml, editions.yaml, orders.yaml or achievements.yaml
+# exists yet, and there is no startHere.
+sources:
+  - https://en.wikipedia.org/wiki/Michael_Connelly
+  - https://en.wikipedia.org/wiki/Harry_Bosch
+  - https://www.michaelconnelly.com/series/

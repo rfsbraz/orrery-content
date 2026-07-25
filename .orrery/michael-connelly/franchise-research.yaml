@@ -1,0 +1,105 @@
+stage: franchise-research
+summary: >
+  Scaffolded the Michael Connelly wing: 47 works across 6 subseries (Harry
+  Bosch 26 core novels + 3 apocrypha short-fiction ebook collections, The
+  Lincoln Lawyer 8, Jack McEvoy 3, Terry McCaleb 1, Renée Ballard 1, Catalina
+  2), 2 standalones + 1 nonfiction (subseries: null). Author entity with 6
+  sourced lifeEvents. characters.yaml: 6 figures (Bosch, Haller, Ballard,
+  McEvoy, McCaleb, Rachel Walling), all sourced to the author's own
+  "Series Order" page. theme.yaml set (palette, sourceSerif, thread); no art
+  block. validate.py --slug michael-connelly clean except the expected
+  missing theme.art.
+produced:
+  workIds:
+    - michael-connelly/the-black-echo
+    - michael-connelly/the-black-ice
+    - michael-connelly/the-concrete-blonde
+    - michael-connelly/the-last-coyote
+    - michael-connelly/the-poet
+    - michael-connelly/trunk-music
+    - michael-connelly/blood-work
+    - michael-connelly/angels-flight
+    - michael-connelly/void-moon
+    - michael-connelly/a-darkness-more-than-night
+    - michael-connelly/city-of-bones
+    - michael-connelly/chasing-the-dime
+    - michael-connelly/lost-light
+    - michael-connelly/the-narrows
+    - michael-connelly/the-closers
+    - michael-connelly/the-lincoln-lawyer
+    - michael-connelly/echo-park
+    - michael-connelly/the-overlook
+    - michael-connelly/the-brass-verdict
+    - michael-connelly/the-scarecrow
+    - michael-connelly/nine-dragons
+    - michael-connelly/the-reversal
+    - michael-connelly/the-fifth-witness
+    - michael-connelly/the-drop
+    - michael-connelly/angle-of-investigation
+    - michael-connelly/suicide-run
+    - michael-connelly/the-black-box
+    - michael-connelly/mulholland-dive
+    - michael-connelly/the-gods-of-guilt
+    - michael-connelly/the-burning-room
+    - michael-connelly/the-crossing
+    - michael-connelly/the-wrong-side-of-goodbye
+    - michael-connelly/the-late-show
+    - michael-connelly/two-kinds-of-truth
+    - michael-connelly/dark-sacred-night
+    - michael-connelly/the-night-fire
+    - michael-connelly/fair-warning
+    - michael-connelly/the-law-of-innocence
+    - michael-connelly/the-dark-hours
+    - michael-connelly/desert-star
+    - michael-connelly/resurrection-walk
+    - michael-connelly/the-waiting
+    - michael-connelly/nightshade
+    - michael-connelly/the-proving-ground
+    - michael-connelly/ironwood
+    - michael-connelly/the-hollow
+    - michael-connelly/crime-beat
+  subseriesDecisions: >
+    Dual-billed books resolved to ONE subseries each, tagged "Harry Bosch":
+    A Darkness More Than Night (also McCaleb's 2nd) and the five books Dark
+    Sacred Night through The Waiting (also Ballard #2-6). Bosch's own
+    numbering runs unbroken across all of them; the other character's does
+    not. Joint billing is recorded in a note on each hinge work, not as an
+    invented combined subseries label.
+  connectionsSet:
+    - "the-brass-verdict -> the-black-echo (first Bosch/Haller crossover)"
+    - "a-darkness-more-than-night -> blood-work (first Bosch/McCaleb crossover)"
+    - "dark-sacred-night -> the-late-show (first Bosch/Ballard crossover)"
+    - "the-proving-ground -> fair-warning (Haller/McEvoy crossover)"
+    - "ironwood -> the-waiting (Catalina/Ballard crossover)"
+    - "the-hollow -> resurrection-walk (Haller opens the case)"
+  capabilitiesActivated: >
+    Auto throughout. connections and hall will activate (characters.yaml +
+    works.yaml connections exist). river/companion/wizard/editions stay dark
+    (no events/lifeEvents-aura pass, no startHere, no editions.yaml).
+forStages:
+  completeness-auditor: >
+    Sourced from michaelconnelly.com/series/ + Wikipedia's numbered table,
+    both fetched directly - re-verify rather than trusting this. Open dates:
+    A Darkness More Than Night (used 2001; Wikipedia infobox says Nov 8 2000)
+    and Crime Beat (used 2005; 2004/2005/2006 all appear - see work notes).
+  press-archaeology: "Only 6 career/origin lifeEvents scaffolded. Nothing on health, family or finances."
+  eras: "No eras.yaml; no periodisation sourced from outside this repo."
+  reading-orders: >
+    No orders.yaml, no startHere. michaelconnelly.com/series/ gives a
+    publisher-numbered order for all 6 subseries by name, ready to use.
+  event-resonance: >
+    globalEvents untouched. Three candidates with direct textual evidence:
+    sept-11-2001, financial-crisis-2008 (Fifth Witness is built on the
+    foreclosure crisis), covid-19-pandemic-2020 (Dark Hours is set in it).
+  spoiler-audit: >
+    Left open rather than guessed: Bosch/Haller half-brother spoilerAfter
+    (already plain fact on both Wikipedia infoboxes), and whether the
+    Ballard/Bosch note on Dark Sacred Night oversteps its own marketing.
+  visual-metadata: "All 47 works need covers; author.yaml needs a portrait."
+  editions: "No editions.yaml; heavily translated but no ISBN verified this session."
+openQuestions:
+  - "RULING NEEDED: dual-subseries books tagged Harry Bosch (not an invented combined label) on the tie-break that Bosch's numbering is unbroken. A curator wanting dual billing IN subseries itself needs a schema change, since subseries is one string per work."
+  - "The Hollow's date: author's Series Order page says Nov 3 2026 (twice); its own book page AND publisher Hachette say Oct 27 2026. Used Oct 27; site's internal conflict noted on the work."
+  - "Crime Beat's year is 3-way contested (2004/2005/2006); used 2005. Low stakes (extended tier, off the reading spine)."
+  - "No orders.yaml/startHere: left for reading-orders per this run's scope. Publisher's per-subseries numbered lists are ready the moment that stage runs."
+  - "Maggie McPherson left out of characters.yaml: could not source her appearsIn list as cleanly as the other six; did not want to guess work ids."
