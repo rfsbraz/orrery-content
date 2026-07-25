@@ -91,8 +91,8 @@ def main():
     if not exists:
         say("franchise-research", "RUN", "no wing at content/franchises/%s" % args.slug)
         for s in ("completeness-auditor", "press-archaeology", "eras", "reading-orders",
-                  "event-resonance", "spoiler-audit", "visual-metadata", "editions",
-                  "translation", "wing-audit"):
+                  "event-resonance", "spoiler-audit", "visual-language", "art-rotation",
+                  "visual-metadata", "editions", "translation", "wing-audit"):
             say(s, "RUN", "new wing, every layer is empty")
         render(plan)
         return 0
@@ -174,6 +174,35 @@ def main():
             f"no file changed since {args.since}")
     else:
         say("spoiler-audit", "JUDGE", "pass --since <ref> to answer this mechanically")
+
+    # visual-language: a wing with no theme.art cannot be drawn at all. stage_plan
+    # used to omit this stage entirely, so it silently never ran.
+    theme = load(wing, "theme.yaml")
+    theme = theme if isinstance(theme, dict) else {}
+    if not theme.get("art"):
+        say("visual-language", "RUN", "theme.yaml has no `art` block; nothing can be drawn")
+    else:
+        say("visual-language", "JUDGE",
+            "theme.art exists; re-run only if the bibliography or eras shifted enough to outrun it")
+
+    # art-rotation: every event, lifeEvent and era needs an `organisation`, or the
+    # river renders a flat wall of `beside` (a plateau).
+    life = []
+    for aid in (franchise.get("authorIds") or []):
+        a = load("content", "authors", f"{aid}.yaml")
+        if isinstance(a, list):
+            a = a[0] if a else {}
+        if isinstance(a, dict):
+            life += a.get("lifeEvents") or []
+    units = [u for u in (list(events) + list(eras) + life) if isinstance(u, dict)]
+    ungraded = [u for u in units if not u.get("organisation")]
+    if units and ungraded:
+        say("art-rotation", "RUN",
+            f"{len(ungraded)}/{len(units)} events/eras have no organisation (unset renders as beside)")
+    elif units:
+        say("art-rotation", "JUDGE", "all graded; run art_rotation.py --check to confirm the contour")
+    else:
+        say("art-rotation", "SKIP", "no events or eras to grade")
 
     no_cover = [w for w in works if not (w.get("images") or {}).get("cover")]
     ed_ids = {e.get("workId") for e in editions}

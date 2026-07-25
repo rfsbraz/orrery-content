@@ -426,9 +426,14 @@ Content rots in place, quietly, and nothing in CI has a clock.
 
 ## Process
 
-1. **Establish the baseline.** Run `validate.py`, `i18n_coverage.py` and
-   `event_density.py` yourself and keep the numbers. Every claim below is
-   measured against these, not against a previous report.
+1. **Establish the baseline.** Run `validate.py`, `i18n_coverage.py`,
+   `event_density.py`, `aura_density.py <slug>` and **`art_rotation.py --check
+   <slug>`** yourself and keep the numbers. Every claim below is measured against
+   these, not against a previous report. `art_rotation --check` must report 0
+   organisation-rotation and 0 pacing problems - a plateau or a wall of `beside`
+   means `art-rotation` never ran or is stale, and the wing ships a flat, unpaced
+   river. (Its third, composition axis - "N assets with no issue" - stays flagged
+   pre-art and is not this gate.)
 2. **Read the wing's history.** `git log --reverse` over the franchise directory.
    Which stages ran, in what order, and what ran before the work list closed.
 3. **Read the wing.** Every file in `content/franchises/<slug>/`, the author

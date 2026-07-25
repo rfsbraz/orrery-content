@@ -91,6 +91,7 @@ stages fire. Before launching anything (and after the draft PR is open):
 | `world-events` ran, or `globalEvents` include/exclude has never been ruled on | `event-resonance` |
 | any prose was added or changed upstream | `spoiler-audit` |
 | **the wing has no `theme.art`**, or its bibliography or eras have changed enough that the art language no longer describes the books | `visual-language` |
+| events/life events/era plates carry no `organisation` (unset renders as a flat `beside` plateau), or events were added or changed since the last rotation pass | `art-rotation` |
 | works were added, covers/editions coverage is stale against the work list, or slots are empty with no documented reason | `visual-metadata`, `editions` |
 | any prose was added or changed (runs last) | `translation` (per locale) |
 | a full run; or any run that touched three or more layers | `wing-audit` |
@@ -132,6 +133,7 @@ Parallel groups are parallel *because* their members touch different files.
 | `reading-orders` | `orders.yaml`, `franchise.yaml` (`startHere`) |
 | `spoiler-audit` | cross-cutting: works, events, characters, authors, orders |
 | `visual-language` | `theme.yaml` (`art` only) |
+| `art-rotation` | `events.yaml`, `authors/<id>.yaml` (lifeEvents), `eras.yaml` - the `organisation` / `illustration_type` / `images_required` / `modifier` fields |
 | `visual-metadata` | `works.yaml` (images), `franchise.yaml` (header), `authors/<id>.yaml` |
 | `editions` | `editions.yaml` |
 | `translation` | `content/i18n/<locale>/**` only |
@@ -140,8 +142,11 @@ Parallel groups are parallel *because* their members touch different files.
 
 Collisions that are easy to miss: **`event-resonance` and `reading-orders` both
 write `franchise.yaml`** (run them sequentially, resonance first - startHere
-needs the final order set to point at), and **`spoiler-audit` and
-`visual-metadata` both write `works.yaml`**. Never pair either.
+needs the final order set to point at), **`spoiler-audit` and
+`visual-metadata` both write `works.yaml`**, and **`art-rotation` and
+`visual-metadata` both write `authors/<id>.yaml`** (art-rotation the lifeEvents'
+`organisation`, visual-metadata the portrait) - so art-rotation runs before the
+artefact group, never in parallel with it. Never pair any of these.
 
 ## Model and effort per stage
 
@@ -164,6 +169,7 @@ errors are silent and green.
 | `reading-orders` | sonnet | high | Admission tests plus the prequel spoiler vector. |
 | `spoiler-audit` | opus | high | Asymmetric and permanent: a false negative ruins a first read forever, and the agent must reason about what a reader has *not* read yet. |
 | `visual-language` | sonnet | high | Sets the visual law for every drawing the wing will ever get, and it is written once. Getting it generic costs nothing today and everything in a year. |
+| `art-rotation` | sonnet | high | A whole-wing composition; each organisation is a content-fit judgement and a plateau ships a monotonous wing. |
 | `visual-metadata` | sonnet | low | Mostly mechanical fetching, but a watermarked scrape or an omnibus cover passes every automated check. Cut effort, not tier. |
 | `editions` | sonnet | medium | Check digits are arithmetic; a valid-but-wrong ISBN is a reader's money. |
 | `translation` | sonnet | high | pt-PT register is subtle and this layer has shipped Brazilianisms before. |
@@ -268,16 +274,28 @@ Within one run, stages that fire execute in this order:
    (translation copies prose; a spoiler fixed after must be fixed twice and
    the second fix is the one that gets forgotten). Gate: validator green;
    when in doubt this stage redacts and says so.
-6. **Artefacts, parallel**: `visual-metadata` · `editions` - after the work
+6. **`visual-language`** - sets `theme.yaml`'s `art` block (the visual law) once
+   the bibliography and eras are settled. Easy to forget: `stage_plan.py` does
+   not flag it and a wing with no `theme.art` cannot be drawn. Gate: `theme.yaml`
+   complete (a partial one hard-errors the validator), validator green.
+7. **`art-rotation`** - grades every event/lifeEvent/era's `organisation` into a
+   paced contour; without it every entry defaults to `beside` and the wing ships
+   a flat plateau. Runs after all events are final and after visual-language, and
+   **sequential with visual-metadata** (both write author `lifeEvents`). Gate:
+   `art_rotation.py --check <slug>` reports 0 organisation-rotation and 0 pacing
+   problems (its separate composition axis stays flagged until the art issues
+   exist, so its exit code is not the gate - read those two lines), validator green.
+8. **Artefacts, parallel**: `visual-metadata` · `editions` - after the work
    list and all prose are final. Read stage 2's handoff: newly added works are
    exactly what gets missed. Gate: validator green, every image URL fetched
    and confirmed real.
-7. **`translation`**, one agent per locale - last, because it copies whatever
+9. **`translation`**, one agent per locale - last, because it copies whatever
    the earlier stages settled. Gate: `i18n_coverage.py` shows no regression
    against the baseline, **and** every stale overlay named in a handoff was
    re-synced (coverage cannot see staleness).
-8. **`wing-audit`** - the critic. Its output is the next round of work, routed
-   to the owning skill. It does not do everyone's job.
+10. **`wing-audit`** - the critic. Its output is the next round of work, routed
+    to the owning skill. It does not do everyone's job. It re-runs
+    `art_rotation.py --check` among its gates.
 
 ## The handoff contract
 
