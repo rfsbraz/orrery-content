@@ -1,0 +1,43 @@
+# Branding for the Cormac McCarthy wing (see Orrery CONCEPT §6 - the design
+# law, and docs/SCHEMA.md#themeyaml). A stub: palette, display face and
+# signature only. `art` (theme.yaml's illustration-language block) is left
+# unset here by design; the app degrades to a neutral default without it.
+#
+# Checked against every existing wing before choosing. The catalogue's other
+# arid, near-black wing is jose-luis-peixoto's alentejo-plains: scorched
+# earth, wheat-gold. McCarthy's country runs harder and colder than that -
+# desert, ash and bone rather than dry farmland - so the palette below keeps
+# the same family of near-black grounds but moves the accent from Peixoto's
+# wheat-gold (hue ~40) into an ember orange (hue ~21), and stephen-king's
+# oxblood (hue ~12, a paperback-spine red) is avoided on the same logic: this
+# accent is meant to read as one small coal of warmth against overwhelming
+# ash and dark, closer to "the fire" the father and son carry in The Road
+# than to blood at all - a restrained, literary choice over the obvious one.
+preset: borderland-ash
+palette:
+  bg: "#100f0d"       # near-black with a warm ash-brown cast - burnt ground
+                      # at night, not pure black and not King's warm paper-brown
+  surface: "#1a1714"  # a shade lifted, for cards
+  ink: "#e9e2d3"      # bone/parchment - high contrast, very readable
+  muted: "#8f8779"    # ash-grey, for metadata
+  accent: "#c1662c"   # one banked ember-orange, for links and markers only
+displayFace: fraunces # from the app's implemented set (fraunces | spectral |
+                      # sourceSerif); a characterful literary serif suited to
+                      # prose that runs from the King James-cadenced,
+                      # near-Biblical sentences of Blood Meridian to the
+                      # stripped, unpunctuated dialogue of The Road and Stella
+                      # Maris - already used by stephen-king and tana-french,
+                      # each for its own reason
+signature: rule       # a firm, unadorned architectural line: the flat,
+                      # indifferent horizon his landscapes are built from,
+                      # and the same discipline as his own famously spare
+                      # punctuation
+notes: >
+  An ash-and-bone register: near-black ground with a warm ash cast, bone-
+  parchment ink, and a single banked ember-orange accent used only for links
+  and markers, standing for one small warmth persisting through otherwise
+  indifferent, violent landscapes rather than for blood or gunfire. No desert
+  cliche (skulls, cacti, six-guns), no genre costume; readability first. The
+  firm rule signature matches the flat horizons and the discipline of the
+  prose itself. `art` is deliberately unset; this palette and these notes are
+  the anchor any future illustration language for this wing needs to match.

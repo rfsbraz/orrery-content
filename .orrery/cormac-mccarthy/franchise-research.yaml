@@ -1,0 +1,78 @@
+stage: franchise-research
+summary: >
+  Scaffolded the Cormac McCarthy wing: 16 works (12 novels core, 2 plays,
+  1 screenplay, 1 essay all extended) across 2 subseries (The Border
+  Trilogy, 3 works; The Passenger, 2 works), the global author entity, and
+  a theme stub (palette, fraunces, rule signature, no art). validate.py
+  --slug cormac-mccarthy is clean except the expected missing theme.art.
+produced:
+  workIds:
+    - cormac-mccarthy/the-orchard-keeper
+    - cormac-mccarthy/outer-dark
+    - cormac-mccarthy/child-of-god
+    - cormac-mccarthy/suttree
+    - cormac-mccarthy/blood-meridian
+    - cormac-mccarthy/all-the-pretty-horses
+    - cormac-mccarthy/the-crossing
+    - cormac-mccarthy/cities-of-the-plain
+    - cormac-mccarthy/no-country-for-old-men
+    - cormac-mccarthy/the-road
+    - cormac-mccarthy/the-passenger
+    - cormac-mccarthy/stella-maris
+    - cormac-mccarthy/the-stonemason
+    - cormac-mccarthy/the-sunset-limited
+    - cormac-mccarthy/the-counselor
+    - cormac-mccarthy/the-kekule-problem
+  subseriesDecisions:
+    - "The Border Trilogy (All the Pretty Horses/The Crossing/Cities of the
+      Plain): publisher-numbered on the bibliography page itself (Book
+      1/2/3), matches the name given by the orchestrator brief exactly."
+    - "The Passenger/Stella Maris: ruled a subseries, not standalones linked
+      by connections. Wikipedia's own bibliography numbers them Book 1/2 in
+      'The Passenger Series'; Czech (Argo 2024) and Greek (Gutenberg 2022)
+      editions both print Stella Maris on the book itself as 'The
+      Passenger, 2'. Named subseries 'The Passenger', identical to the
+      first work's own title - sourced, not accidental, and flagged below."
+  rejectedFromScope:
+    - "4 uncollected pre-1965 magazine stories (Wake for Susan, A Drowning
+      Incident, Bounty, The Dark Waters): never gathered into a book; his
+      own infobox count (three) does not even match his own bibliography
+      page's table (four), a second reason not to coin an entry."
+    - "3 unpublished/unproduced screenplays (a 1978 script literally titled
+      'Cities of the Plain', unrelated to the 1998 novel beyond the title;
+      'Whales and Men', late 1980s; a 1987 script titled 'No Country for
+      Old Men', a wholly different work from the 2005 novel of the same
+      name): no purchasable text exists for any of the three."
+forStages:
+  completeness-auditor: >
+    Known gap: "The Gardener's Son" is a real, published 1996 screenplay
+    book (ISBN 0-88001-481-4, aired as a 1977 PBS teleplay) with no entry
+    yet. Flagged rather than added, since it fell outside this build's given
+    bibliography.
+  press-archaeology: >
+    lifeEvents is empty by design. Strong candidate anchors are already
+    named in the bio: the 1981 MacArthur Fellowship funding Blood Meridian's
+    research, Suttree's ~20-year gestation, the 2007 Pulitzer. Also on
+    record on the main Wikipedia article (its own "Augusta Britt" section):
+    a relationship beginning in the 1970s when McCarthy was in his 40s and
+    she was a teenager, disclosed publicly in 2024 reporting. Surfacing it
+    here rather than in any content file, given CURATION.md's two-source
+    and distress-content bar for exactly this kind of fact.
+openQuestions:
+  - "The Sunset Limited and The Stonemason are tiered `extended` alongside
+    plays generally, not `core`. The Sunset Limited's own paperback carries
+    the subtitle 'A Novel in Dramatic Form' and some critics read it as
+    closer to a novel; Wikipedia's own bibliography still files it under
+    Plays, which this scaffold followed. A curator who weighs the subtitle
+    more heavily could move it to core instead."
+  - "`featured: true` is set on Blood Meridian, All the Pretty Horses and
+    The Road, filling the 3-work cap. All three are widely uncontested
+    hinges (magnum opus, first commercial breakthrough, final Pulitzer-
+    winning novel) but the cap leaves no room for a fourth if a curator
+    weighs Suttree or The Passenger/Stella Maris pair differently."
+  - "No characters.yaml and no globalEvents were scaffolded, per the brief's
+    scope. Both are real absences worth a second look, not settled rulings:
+    Border Trilogy's Grady Cole/Parham and Passenger/Stella Maris's Western
+    siblings stay inside their own subseries with no known cross-subseries
+    thread, but that finding was not stress-tested as hard as a full
+    characters pass would."
