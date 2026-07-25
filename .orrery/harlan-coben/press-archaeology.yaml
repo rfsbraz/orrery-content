@@ -1,0 +1,142 @@
+stage: press-archaeology
+summary: >
+  4 lifeEvents added to content/authors/harlan-coben.yaml (previously empty);
+  11 franchise events added to content/franchises/harlan-coben/events.yaml
+  (previously nonexistent). 15 new aura entries total, 0 before. Ratio 0.34
+  entries/work (44 works). validate.py --slug harlan-coben green throughout,
+  no new warnings (the two shown - the completeness-auditor handoff length
+  and franchise.yaml's "curator" wording - predate this stage). One accident
+  caught and fixed before commit: an id (coben-triple-award-1997) was
+  initially written into both the author file and events.yaml; removed the
+  events.yaml copy since an award belongs to the person, not one book.
+darkRunClosed: >
+  aura_density.py's own reported dark run moved from 8yr (2012-2019) to 4yr
+  (1991-1994), but that headline number is inflated by the script's lifetime
+  global-event fallback (any franchise with no globalEvents.include/exclude
+  ruling gets every global.yaml event within the author's lifespan credited
+  toward its density, even though none of them actually render - the app
+  only shows a global event a wing explicitly includes). Harlan Coben has no
+  globalEvents ruling yet (event-resonance's job), so I did not trust that
+  number. I independently recomputed using ONLY this wing's own lifeEvents +
+  events.yaml, no fallback: worst run is still 4yr (1991-1994), confirmed
+  with a standalone script reading both files directly. The gate passes on
+  real content, not on the tool's optimism.
+  The original 2012-2019 run is closed by three genuinely dated events: 2015
+  (No Second Chance, the first French TV adaptation of a non-Tell-No-One
+  novel), 2016 (The Five, his first wholly original TV series, Sky1), and
+  2018 (Safe's Netflix premiere plus the exclusive 14-book Netflix overall
+  deal signed that August - the single highest-impact event in the wing).
+  Closing it exposed a second, earlier dark run I had not been told about:
+  1991-1995, between Miracle Cure and Deal Breaker, where the initial
+  handoffs' own bibliography has a real 4-year publishing gap. Closed with
+  two events I would not have looked for otherwise: Win's introduction in
+  Deal Breaker (1995, "loosely based on my college roommate," Coben's own
+  words) and the 1996-97 Edgar/Shamus/Anthony triple (moved here from a
+  vaguer placement once I checked the actual award years on Wikipedia's own
+  list-of-wins table: Deal Breaker won the 1996 Anthony, Fade Away won both
+  the 1997 Edgar and Shamus).
+added:
+  lifeEvents:
+    - id: coben-travel-agency-writing-1990
+      what: "Six years at his grandfather's Union, NJ travel agency, writing Play Dead on the side."
+      impact: med
+      sources: two independent (Wikipedia; Big Issue interview, Jan 2025, Coben's own account)
+    - id: coben-father-dies-1988
+      what: >
+        His father's fatal heart attack at 59, the first of "quite a bit of
+        tragedy" in his 20s (his own words, 2025) that he has said directly
+        "helped push me and made my writing better"; the 2003 NYT essay
+        that followed was the first original fiction the paper's op-ed page
+        had commissioned in over a decade.
+      impact: high
+      sources: three independent (Wikipedia citing NYT; Big Issue interview with Coben's direct quotes; harlancoben.com bio for the NYT op-ed detail)
+    - id: coben-triple-award-1997
+      what: First author to win the Edgar, Shamus and Anthony (Deal Breaker's 1996 Anthony, Fade Away's 1997 Edgar+Shamus).
+      impact: med
+      sources: two independent (Wikipedia's own list-of-wins table; harlancoben.com bio)
+    - id: coben-daughter-charlotte-writer-2020
+      what: Daughter Charlotte's first screenwriting credit, on The Stranger's 2020 Netflix adaptation.
+      impact: low
+      sources: two independent (Wikipedia; tyla.com/Express interview with Coben)
+  franchiseEvents:
+    - id: coben-win-modeled-on-roommate-1995
+      what: Win's debut in Deal Breaker, "loosely based on my college roommate" (Coben's own words).
+      impact: low
+    - id: coben-tell-no-one-standalone-2001
+      what: The deliberate break from Myron to write Tell No One, "the most decorated thriller of the year" (Coben's own account); explains why 18 of 44 works are standalones.
+      impact: med
+    - id: coben-tell-no-one-cesars-2006
+      what: The French film's 4-César sweep and Lumière win, the first proof a Coben plot travels internationally.
+      impact: med
+    - id: coben-hold-tight-bestseller-2008
+      what: His first simultaneous US/UK No. 1 bestseller debut.
+      impact: med
+    - id: coben-live-wire-rba-prize-2010
+      what: Spain's RBA Prize for Crime Writing (125,000 euros), early evidence of a large foreign readership.
+      impact: low
+    - id: coben-no-second-chance-tv-2015
+      what: The first non-Tell-No-One screen adaptation (French TF1 miniseries), directly preceding The Five and Safe.
+      impact: low
+    - id: coben-the-five-tv-debut-2016
+      what: His first wholly original TV series (not adapted from a book), Sky1.
+      impact: med
+    - id: coben-netflix-overall-deal-2018
+      what: Safe's Netflix premiere and the exclusive 14-book overall deal signed that August. Highest-impact event in the wing.
+      impact: high
+    - id: coben-fool-me-once-global-hit-2024
+      what: Fool Me Once's record viewership (37.1M views/238.2M hours week one; 98M in three months), and how the TV expansion of Sami Kierce feeds directly into Nobody's Fool.
+      impact: med
+    - id: coben-witherspoon-collaboration-announced-2024
+      what: The October 2024 announcement of Gone Before Goodbye's co-authorship.
+      impact: low
+    - id: coben-nobodys-fool-tv-inspired-2025
+      what: >
+        Coben's own correction, to The Hollywood Reporter, that Nobody's
+        Fool is "almost more of a sequel to the TV series than the book" -
+        "I don't know any time that's ever happened... certainly, it hasn't
+        happened in my career."
+      impact: med
+rejected:
+  - "The 2010 RBA Prize was initially considered trivia-tier and nearly cut; kept once the 1991-1995 gap analysis showed it does real distribution work and is genuinely international recognition (125,000 euros, one of the largest crime-fiction purses), not just a name-check."
+  - "Foreign-award nominations that did not win: 2023 Mystery Writers of Japan nomination for Win (Japanese edition); Fade Away's 1997 Anthony/Barry/Dilys nominations and Back Spin's 1998 Dilys/Shamus nominations (Back Spin DID win a 1998 Barry Award, a secondary genre prize - considered and cut, no mark on the book itself, and the Edgar/Shamus/Anthony triple already carries the 1996-97 award story)."
+  - "2013 Little League Baseball Hall of Excellence and the Amherst basketball hall of fame (harlancoben.com's own bio): personal honors, no connection to any book."
+  - "2022 Amazon Studios plan for a Shelter series and the 2026 Netflix deal extension covering Myron Bolitar: both real, sourced announcements, but without a premiere yet to anchor a dated, load-bearing event to. Worth revisiting once Shelter and the Myron Bolitar Netflix series actually air."
+  - "2003 Bookspan naming No Second Chance its first-ever 'International Book of the Month': a marketing credit, not a rupture."
+  - "The Vermeil Medal of Honor from the Mayor of Paris (harlancoben.com bio): a real civic honor, but no citable date found anywhere and no mark on any book - left out rather than guess a year."
+  - "A claimed autobiographical link between Coben's own Amherst basketball career and Myron Bolitar's fictional NBA-ending knee injury surfaced in secondary aggregator summaries with no traceable primary source. Did not use it: an unverified causal claim about a character's origin is exactly the fabrication risk this skill exists to catch, however plausible it reads."
+livingAuthorRestraint: >
+  Two independent sources required and met for the one entry that touches
+  health/family (the father's death, and by extension the "tragedy in his
+  20s" framing that also names his mother's death without a specific date -
+  I did not invent one). No illness, addiction, marital or legal-trouble
+  material surfaced anywhere in the record searched; the wing's quietness on
+  those fronts appears to be a real, sourced feature of a fairly private
+  life, not an artifact of under-research. Distress is not content: the
+  father's-death entry states the fact and Coben's own causal claim about
+  his writing, and stops there.
+recordDidNotGive: >
+  No exact date exists anywhere in the accessible record for when Coben
+  actually left his grandfather's travel agency (sources agree only on "about
+  six to eight years" after his 1984 graduation and that Deal Breaker's 1995
+  success is what let him go full-time) - stated as a span rather than a
+  specific year change. Coben's mother's death, which he confirms happened in
+  the same "tragedy in my 20s" decade as his father's, has no discoverable
+  date in any source reached; left undated rather than inferred. No
+  interview surfaced that explains the 1991-1995 gap between Miracle Cure and
+  Deal Breaker from the inside (rejection letters, a shelved manuscript,
+  anything beyond "I wrote them in my early to mid-twenties") - a human with
+  access to trade-press archives from that specific window (Publishers
+  Weekly's early-90s back issues are not indexed anywhere I could reach)
+  might find more than I could.
+residualGap: >
+  2021-2023 is a real 3-year quiet stretch (under the 5-year gate, so not
+  flagged, but worth naming): the Netflix deal's extension and Fool Me
+  Once's greenlight both happened in this window per Wikipedia but without a
+  dated announcement I could pin down and source independently. Revisit once
+  event-resonance rules on globalEvents for this wing - a global event
+  landing here would be legitimate texture rather than padding.
+gate: >
+  python scripts/validate.py --slug harlan-coben: green, no new warnings.
+  python scripts/aura_density.py harlan-coben: 4yr dark run (1991-1994),
+  independently reconfirmed against own-content-only computation (ignoring
+  the tool's global-event lifetime fallback). No 5+ year dark run remains.
