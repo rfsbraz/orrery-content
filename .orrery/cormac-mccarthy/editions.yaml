@@ -1,0 +1,71 @@
+stage: editions
+summary: >
+  29 editions across 16 of 17 works: 16 English (Vintage International trade
+  paperback for 15 novels/plays/screenplay, plus a converted-ISBN Ecco Press
+  entry for The Gardener's Son) and 13 Portuguese (Relogio D'Agua, all
+  translated by Paulo Faria, covering all 12 novels plus The Counselor).
+  Every ISBN-13 hand-verified by check digit and by scripts/metadata/
+  lookup.py --verify-isbns cormac-mccarthy ("29 editions, 0 suspect").
+  validate.py --slug cormac-mccarthy is clean bar the pre-existing missing
+  theme.art (visual-language's scope). No duplicate ISBNs.
+produced:
+  editionCount: 29
+  worksCovered: 16
+  worksTotal: 17
+  languages: [en, pt-PT]
+verified:
+  - "Every isbn13 recomputed by hand (weights 1,3,1,3..., check = 10 - (sum
+    mod 10)); all pass. Worked example, Blood Meridian's paperback
+    9780679728757: sum over the first 12 digits is 143, 143 mod 10 = 3,
+    check digit = 7 -> matches. Every pt-PT prefix checked against the
+    table (972/989 = Portugal); none is 978-85 or 978-65 (Brazil)."
+  - "English editions sourced to penguinrandomhouse.com's own per-ISBN
+    product pages (Vintage/Knopf Doubleday is a PRH imprint) - publisher's
+    own catalogue, rank 1. Portuguese editions sourced to relogiodagua.pt's
+    own product pages AND cross-checked against a second independent
+    listing (WOOK, Bertrand, Fnac, Worten or Amazon) for every one of the
+    13 entries."
+  - "Caught and excluded one Brazilian decoy: an Alfaguara 'A estrada'
+    edition (EAN 9788556522580, 978-85 prefix) that would have wrongly
+    tagged The Road's pt-PT slot."
+  - "Caught a data-entry trap on the publisher's own site: 6 of 13 Relogio
+    D'Agua product pages render their title in ALL CAPS on the identical
+    template that renders the other 7 in normal case - not a house style,
+    a CMS inconsistency. All 6 corrected to the mixed case WOOK and other
+    retailers show before being recorded here."
+worksWithoutEdition:
+  - id: cormac-mccarthy/the-kekule-problem
+    why: >
+      McCarthy's only essay ran in Nautilus magazine (2017) and was never
+      collected into a book with an ISBN, per Wikipedia, the Santa Fe
+      Institute and Nautilus itself. A fact about the work, not a gap.
+  - note: >
+      The Stonemason, The Gardener's Son and The Sunset Limited have an
+      English edition but no pt-PT one: Relogio D'Agua's full author-page
+      listing (fetched in one call) has no product for any of the three,
+      and no other Portuguese publisher's catalogue surfaced one.
+forStages:
+  visual-metadata: >
+    No coverUrl anywhere in the file; left to that stage per SKILL.md.
+  translation: >
+    13 pt-PT published titles ready as localized inline references: O
+    Guarda do Pomar (Orchard Keeper), Nas Trevas Exteriores (Outer Dark),
+    Filho de Deus (Child of God), Suttree (unchanged), Meridiano de Sangue
+    (Blood Meridian), Belos Cavalos (All the Pretty Horses), A Travessia
+    (The Crossing), Cidades da Planicie (Cities of the Plain), Este Pais
+    Nao E para Velhos (No Country for Old Men), A Estrada (The Road), O
+    Passageiro (The Passenger), Stella Maris (unchanged), O Conselheiro
+    (The Counselor) - all one translator (Paulo Faria), one publisher. The
+    other 4 works have no Portuguese title anywhere; keep English.
+openQuestions:
+  - "The Orchard Keeper has two valid Relogio D'Agua ISBNs 22 years apart
+    (1996: 9789727083114; 2018: 9789896416898 recorded here), both out of
+    print. A curator reading the gap as a meaningfully different print run
+    could add the 1996 ISBN as a second entry."
+  - "Blood Meridian's Modern Library hardcover (9780679641049, 2001) is not
+    recorded, in favor of the Vintage paperback matching every other
+    novel's format. Noted in-file in case a curator weighs it differently."
+  - "The Gardener's Son's isbn13 (9780880014816) is hand-derived from its
+    only ever-printed identifier, ISBN-10 0-88001-481-4 - no source prints
+    the 13-digit form directly. Mechanical conversion, double-checked, but
+    a second pair of eyes would be useful confirmation."
