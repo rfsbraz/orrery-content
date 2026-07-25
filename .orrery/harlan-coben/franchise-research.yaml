@@ -1,0 +1,89 @@
+stage: franchise-research
+summary: >
+  New wing scaffolded from scratch. 40 works (35 core, 5 extended), 2 global
+  author entities, a thin franchise.yaml, no theme.yaml yet. validate.py is
+  green (0 errors).
+produced:
+  authors:
+    - harlan-coben (bio + identity only, lifeEvents left empty for a press pass)
+    - reese-witherspoon (minimal collaborator stub, for withAuthorIds only)
+  franchise: harlan-coben/franchise.yaml (identity, description, authorIds,
+    themePreset only; no globalEvents, no startHere - those belong to
+    event-resonance and reading-orders)
+  works: 40 total - 12 Myron Bolitar, 3 Mickey Bolitar, 2 Sami Kierce, 2
+    Wilde, 1 Windsor Horne Lockwood III ("Win"), 18 standalones, 1 children's
+    picture book, 1 forthcoming memoir (Plot Twist, 2026-09-08)
+  theme: NOT written (see openQuestions - the validator's art-block gate
+    changed the plan)
+identityVerification: >
+  Request issue #61 flagged that a prior pass in this catalogue acted on a
+  confidently-stated lead about the wrong person. Verified before anything
+  was built: Wikipedia's infobox and harlancoben.com's own bio agree exactly
+  on birth date (1962-01-04), birthplace (Newark, NJ), Livingston upbringing,
+  Amherst College, and the Myron Bolitar series as the breakout work. No
+  ambiguity found with any other Harlan Coben.
+bibliographyJudgement:
+  - "Cross-checked two independent primary sources (Wikipedia's raw
+     'Published works' table, fetched directly rather than AI-summarised,
+     against harlancoben.com's own novel list) and they agree on all 39
+     fiction titles and years exactly. Caught one real trap doing this: an
+     AI-summarised fetch of the same Wikipedia article scrambled Home (2016)
+     and Think Twice (2024) against each other; the raw table and the
+     awards-nomination years (Home nominated for a 2017 Audie, one year after
+     a 2016 pub date, the pattern every other entry follows) both confirm
+     2016/2024 is correct."
+  - "Sami Kierce and Wilde are catalogued as subseries, which the request
+     issue's brief did not mention (it named only Myron and Mickey). Both are
+     Wikipedia's and Goodreads' own groupings, not an invention - Nobody's
+     Fool is explicitly billed by the Hollywood Reporter as Fool Me Once's
+     sequel, and Wilde/The Match's shared protagonist is corroborated
+     independently."
+  - "canonTier: the 18 standalones are core (they dominate the shelf and are
+     exactly as central as any series entry); Mickey Bolitar is extended (a
+     YA-imprint spin-off, not the adult-thriller spine); The Magical
+     Fantastical Fridge (a Dial picture book, illustrated by Leah Tinari) and
+     Plot Twist (a craft memoir) are extended as genuinely his but off-genre."
+  - "Gone Before Goodbye (2025) is authorRole: co-author with withAuthorIds:
+     [reese-witherspoon], not a solo work - Wikipedia's own account has Coben
+     plotting and writing it alongside Witherspoon, not merely blessing it."
+rejected:
+  - "No title was dropped for lack of a source - every one of the 40 resolved
+     against at least one primary source, most against two independent ones."
+forStages:
+  press-archaeology: "lifeEvents is empty; aura_density reports an 8-year
+    dark run 2012-2019 to close."
+  completeness-auditor: "40 works scaffolded from two agreeing primary
+    sources; nothing flagged as missing, but this pass did not check foreign
+    editions or short fiction for franchise-agnostic anthology pieces."
+  eras: "0 eras; no periodisation researched yet."
+  reading-orders: "0 orders, no startHere; the five subseries all have their
+    own internal numbering already matching publication order, so no
+    curated in-series order is obviously needed, but entry paths are
+    entirely unresearched."
+  event-resonance: "no globalEvents ruling yet."
+  visual-language: "theme.yaml does not exist - see openQuestions, this is
+    the one open item this stage would normally close itself."
+openQuestions:
+  - "validate.py now hard-errors any theme.yaml lacking a full `art:` block
+     (scripts/validate.py ~line 895), which conflicts with this skill's
+     documented split (franchise-research sets palette/displayFace/signature,
+     visual-language adds art separately later). Rather than ship an
+     invalid file or do visual-language's job, theme.yaml was left
+     unwritten entirely, so validate.py stays green. A palette decision is
+     drafted here for visual-language to adopt verbatim alongside its art
+     block, rather than re-deciding it: preset cul-de-sac-noir; palette bg
+     #12181d (near-black cool navy-slate, a suburban street after the porch
+     lights go out), surface #1b2329, ink #e7ece9, muted #8b9896, accent
+     #d99a3d (warm porch-light amber - the one domestic light still on when
+     it shouldn't be); displayFace sourceSerif (matches the plain, fast
+     prose register Connelly/Flynn/Nesbo/Slaughter already use it for);
+     signature beam (every 'quiet hairline' thread slot already belongs to
+     this catalogue's more atmospheric crime wings; Coben's shelf runs on one
+     bold recurring device - an ordinary life struck through by a single
+     hidden fact - across eighteen standalones and five character threads).
+     Checked against every existing wing's palette/face/signature before
+     choosing; none currently claims this cool suburban-dusk register."
+  - "Win (1 novel) is tagged as its own subseries on the strength of
+     Wikipedia's/the publisher's explicit 'Windsor Horne Lockwood III series'
+     label, not just a recurring-character appearance - flagging in case a
+     later stage weighs it differently once more Win novels exist or don't."
