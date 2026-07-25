@@ -1,0 +1,61 @@
+stage: event-resonance
+summary: >
+  Ruled all 11 global events inside Coben's lifespan (b. 1962, living): 1
+  include, 10 exclude. The 6 pre-1962 events (both world wars, pulp
+  magazines, sixpenny paperback, armed-services editions, Lady Chatterley
+  trial) left unruled, matching Christie/Sanderson/Flynn/Palahniuk's own
+  files - out-of-lifetime events never enter the fallback and none clears
+  the inheritance bar. validate.py --slug harlan-coben green, 3 pre-existing
+  warnings, 0 new. All 11 ids resolve against global.yaml (17 total; 6
+  unruled + 11 ruled accounts for all of them).
+correctedAuraCount: >
+  16 (was 26). Own content 15 (4 lifeEvents + 11 franchise events) + 1 real
+  include = 16; the 10-entry drop is exactly the lifetime-fallback inflation
+  press-archaeology flagged. Dark run unchanged at 4yr (1991-1994).
+include:
+  - id: sept-11-2001
+    reason: >
+      Long Lost (2009, Myron #9) answers the attacks directly: Myron's
+      girlfriend at the book's start, Ali Wilder, is a 9/11 widow, and the
+      plot runs through a terrorist-cell/black-site story. Confirmed via two
+      independent sources (a Publishers Weekly review and a contemporaneous
+      book-blog review, both naming Ali Wilder's 9/11-widow backstory) plus
+      Wikipedia's plot summary for the terrorist/black-site material.
+exclude:
+  - id: financial-crisis-2008
+    reason: "Hold Tight (2008)/Long Lost (2009)/Caught (2010) land either side of it; none is about money or collapse - the skill's own worked-example event, true here too."
+  - id: covid-19-pandemic-2020
+    reason: "Win (2021) was finished under lockdown, but its cold-case plot never reaches for the pandemic; no later book does either."
+  - id: fantasy-paperback-boom-1965
+    reason: "Wrong genre, wrong shelf, wrong readership."
+  - id: carnation-revolution-1974
+    reason: "Portuguese censorship history; no Portuguese material anywhere in the shelf."
+  - id: chain-bookshop-1982
+    reason: "Real bestseller career, but no sourced account ties the superstore era to his trajectory specifically - searched and found nothing beyond generic era backdrop."
+  - id: online-bookselling-1995
+    reason: "Coincides with Deal Breaker's year; coincidence of dates, not a sourced resonance."
+  - id: ebook-and-self-publishing-2007
+    reason: "Traditionally published throughout; never self-published, no interview ties Kindle-era sales to his career."
+  - id: prestige-fantasy-adaptation-2011
+    reason: "Wrong genre (fantasy TV); his real screen-adaptation arc runs through the Netflix deal (2018) and is already carried by this wing's own franchise events."
+  - id: booktok-2020
+    reason: "Already a decades-established bestseller by 2020, unlike the backlist-revival stories BookTok is usually credited with; no title's discovery traces to it."
+  - id: portugal-bailout-2011
+    reason: "Portuguese national crisis; no connection to an American thriller writer."
+unruledOutOfLifetime: >
+  world-war-i-1914, world-war-ii-1939, pulp-magazines-1926,
+  penguin-paperback-1935, armed-services-editions-1943,
+  lady-chatterley-trial-1960 - all predate his January 1962 birth, left
+  unruled per the pattern on every other wing checked. None clears the
+  pre-birth inheritance bar the way fantasy-paperback-boom-1965 does for
+  Sanderson.
+unsure: >
+  None. financial-crisis-2008 and the chain-bookshop/online-bookselling/
+  ebook trio were the genuine judgment calls the brief flagged; each got a
+  real search pass and came back with no sourced link, excluded on that
+  evidence rather than a shrug.
+gate: >
+  validate.py --slug harlan-coben green, 3 pre-existing warnings, 0 new; all
+  11 ids verified against global.yaml. aura_density.py harlan-coben: 44
+  works, 16 aura entries (was 26), 1990-2026 span, 4yr dark run (1991-1994)
+  unchanged.

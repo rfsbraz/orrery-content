@@ -32,3 +32,28 @@ sources:
   - "https://en.wikipedia.org/wiki/Harlan_Coben"
   - "https://www.harlancoben.com/novels/"
   - "https://en.wikipedia.org/wiki/Myron_Bolitar_series"
+
+# Six events in global.yaml predate Coben's 1962 birth (both world wars, the
+# pulp magazines, the sixpenny paperback, the armed-services editions, the
+# Lady Chatterley trial) and fall outside even the inheritance test, so they
+# are left unruled rather than padded with a mechanical exclude - none of
+# them created a category or condition his career runs on the way the
+# 1965 fantasy boom does for a secondary-world writer. The eleven events that
+# fall inside his lifespan are ruled below.
+globalEvents:
+  include:
+    - sept-11-2001   # Long Lost (2009) plots straight through it: Myron's girlfriend Ali Wilder is a 9/11 widow, and the book's terror-cell plot runs through a black site
+  # Considered and refused. Nothing renders unless it is in `include`
+  # above, so these change nothing; they are kept as the record of a
+  # judgement already made, so it is not re-litigated from scratch.
+  exclude:
+    - financial-crisis-2008              # published either side of the crash (Hold Tight 2008, Long Lost 2009, Caught 2010); none is about money or the crisis
+    - covid-19-pandemic-2020             # Win (2021) was finished under lockdown but its cold-case plot never reaches for the pandemic; no later book does either
+    - fantasy-paperback-boom-1965        # not his genre, not his shelf, not his readership
+    - carnation-revolution-1974          # Portuguese censorship history; an American thriller writer with no Portuguese material
+    - chain-bookshop-1982                # a commercial-bestseller career, but no sourced account ties the superstore era specifically to his trajectory
+    - online-bookselling-1995            # coincides with Deal Breaker's year, but no interview or bio ties Amazon's arrival to his career; coincidence, not resonance
+    - ebook-and-self-publishing-2007     # traditionally published throughout; no account of Kindle-era backlist or digital sales shaping his career surfaced
+    - prestige-fantasy-adaptation-2011   # his own screen-adaptation arc runs through the Netflix deal (2018), not fantasy TV, and is already carried on this wing's own events
+    - booktok-2020                       # already a multi-decade bestseller by 2020; no title's discovery or resurgence traces to it
+    - portugal-bailout-2011              # a Portuguese national crisis; no connection to an American thriller writer
