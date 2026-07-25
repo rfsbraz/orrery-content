@@ -36,13 +36,18 @@ as the orrery *because it was never asked for*, and re-rolling the same prompt
 cannot summon a thing the words do not name. The emblem and the orrery motif are
 **two separate paragraphs** in a prompt, never merged.
 
-**A stylized or inverted wing draws the rings in its own line - it does not
-replace them.** Palahniuk's flat ruling-pen technical-diagram register does not
-get a pictogram *instead of* rings; it gets the rings drawn *as* a technical
-diagram - faint concentric orbital ellipses with three or four nodes, printed
-like a schematic on the safety card, stamped in a corner, or ruled faint across
-the ceiling, in that same flat line, with the wing's accent riding on them. The
-carrier and the line change from wing to wing; the rings themselves never do.
+**The rings are decided per image, not per wing.** There is no per-author ring
+treatment and none belongs in `theme.art` - the mark is universal and the same
+everywhere. Add it as the **last step, after the image concept is fully
+described**: for this one image, pick an off-centre place the rings can sit that
+the scene plausibly allows, drawn in the same line and weight as the rest of
+that drawing so they read as part of the picture rather than pasted on. **Vary
+the placement from every other image in the wing** - a different spot and a
+different carrier each time - so the mark never hardens into a logo. That
+per-image invention is the whole creative task: the rings never change, only
+where and how they are found. (So Palahniuk's rings might be a photocopied
+ring-diagram taped to a wall in one sketch and faint arcs over a rooftop in the
+next - decided by the scene, not fixed by the wing.)
 
 **It is an afterthought, and it should feel like one.** The reader meets the
 scene first. Somewhere after that, they notice the rings and think *oh, that's
