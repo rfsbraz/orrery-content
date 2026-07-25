@@ -10,7 +10,7 @@ authorIds: [cormac-mccarthy]
 themePreset: borderland-ash
 
 # Capabilities are auto-detected from the data (docs/SCHEMA.md). A
-# deliberately thin bundle: 16 works (12 novels, 2 plays, 1 screenplay, 1
+# deliberately thin bundle: 17 works (12 novels, 2 plays, 1 screenplay, 1
 # essay) across 2 subseries (The Border Trilogy; The Passenger), no
 # characters.yaml and no work `connections`. No recurring figure crosses
 # subseries or standalone boundaries in this bibliography: John Grady Cole
@@ -18,10 +18,30 @@ themePreset: borderland-ash
 # Western stay inside The Passenger, so neither pair is cross-wing
 # connective tissue in the sense characters.yaml exists for, and the
 # connections map stays dark by design rather than padded. No eras.yaml, no
-# orders.yaml, no events.yaml or lifeEvents, no editions.yaml, no startHere,
-# and globalEvents left unassessed: all first-draft scaffolding decisions,
-# not gaps papered over.
+# orders.yaml, no events.yaml, no editions.yaml, no startHere. globalEvents
+# ruled: only lady-chatterley-trial-1960 reaches this author's page.
 features: {}
+
+globalEvents:
+  include:
+    - lady-chatterley-trial-1960  # opened the permissive decades; McCarthy's career begins four years later writing graphic violence and language this verdict made publishable
+  exclude:
+    - sept-11-2001               # lived through it; No Country and The Road don't engage with it
+    - financial-crisis-2008      # lived through it; no book answers it
+    - covid-19-pandemic-2020     # no evidence his late novels respond to the pandemic
+    - world-war-i-1914           # pre-lifetime
+    - world-war-ii-1939          # lived through it as a child; no book engages it
+    - pulp-magazines-1926        # pre-lifetime
+    - penguin-paperback-1935     # pre-career; format distribution, not thematic resonance
+    - armed-services-editions-1943  # pre-career
+    - fantasy-paperback-boom-1965   # McCarthy didn't write fantasy
+    - carnation-revolution-1974     # geographic/cultural specificity; American author
+    - chain-bookshop-1982           # distribution infrastructure; no thematic resonance
+    - online-bookselling-1995       # distribution infrastructure; no thematic resonance
+    - ebook-and-self-publishing-2007 # late-career; didn't affect his writing
+    - prestige-fantasy-adaptation-2011 # McCarthy didn't write fantasy
+    - booktok-2020                  # late phenomenon; no evidence of influence on his work
+    - portugal-bailout-2011         # geographic/cultural specificity; American author
 
 sources:
   - https://en.wikipedia.org/wiki/Cormac_McCarthy
