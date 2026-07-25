@@ -1,0 +1,71 @@
+stage: eras
+summary: >
+  RULING: eras: []. No received periodisation of Michael Connelly's career
+  exists on any rung of the legitimacy ladder, and a chronological one would
+  be actively wrong because the series are concurrent, not sequential. Wrote
+  content/franchises/michael-connelly/eras.yaml as a reasoned empty list (bare
+  [] with the argument in a header data-decision comment, modelled on the Jim
+  Butcher wing). validate.py --slug michael-connelly is clean for this stage:
+  no eras warnings, no orphaned-work warnings (an empty eras set has no spans
+  for a work to fall outside of). The one remaining error is the pre-existing,
+  expected missing theme.art block, owned by the visual-language stage.
+produced:
+  file: content/franchises/michael-connelly/eras.yaml
+  ruling: "eras: [] (no received periodisation)"
+  laddersChecked:
+    - "Rung 1 (author's own framing): NONE. Connelly names no creative periods.
+       In interviews his 'early work' means the pre-full-time years, with no
+       period label and no boundary year (strandmag.com interview)."
+    - "Rung 2 (critical/scholarly consensus): NONE. Living author, no obituary.
+       Reviewers use generic descriptive phrases ('early Bosch', 'mature',
+       'late-period Bosch') - a described evolution of one character, not a
+       named periodisation of the career. The one career-survey piece (First
+       Things, 'the Michael Connelly literary universe') sorts the work by
+       character series and publication date and names no phases."
+    - "Rung 3 (settled fandom consensus): NONE. Fan resources are all 'books in
+       order' reading guides (a reading-order concern), not a named era. No
+       'the slog'-equivalent term."
+    - "Rung 4 (publishing-historical fact): NONE usable. Connelly has stayed
+       with Little, Brown throughout - no publisher change to anchor a 'years'
+       era. The only structural candidate boundary (Bosch -> Ballard lead) is
+       described by the author and reviewers as integration, not a break
+       (michaelconnelly.com Ballard-and-Bosch page)."
+  positiveArgument: >
+    Beyond the empty sourcing, a publication-chronology periodisation fails on
+    the record: Bosch (since 1992), the Lincoln Lawyer (since 2005) and Ballard
+    (since 2017) run concurrently inside one shared universe, tied by crossover
+    novels (Brass Verdict, A Darkness More Than Night, Dark Sacred Night). An
+    era renders full-bleed across the whole timeline, so any 'early Bosch' span
+    would also swallow the concurrent Lincoln Lawyer legal thrillers under one
+    plate. Structurally identical to the Jim Butcher ruling.
+  sourcesChecked:
+    - https://firstthings.com/the-michael-connelly-literary-universe/
+    - https://strandmag.com/interview-with-michael-connelly/
+    - https://www.michaelconnelly.com/writing/dark-sacred-night/ballard-and-bosch/
+    - "WebSearch: Connelly career phases / periodization (critics use descriptive-evolution language only)"
+    - "WebSearch: Bosch-to-Ballard shift (sources frame it as natural evolution / integration, not a departure)"
+  languagesSearched: "English only. Connelly is an anglophone (US) author; his criticism, press and own site are English, so this is the correct corpus."
+forStages:
+  reading-orders: >
+    No eras means no eraStart anchoring; the reader walks an unbroken timeline.
+    A reading order is the honest structuring device for this wing (the
+    publisher's per-subseries numbered lists, already flagged by
+    franchise-research). Nothing here constrains that stage.
+  event-resonance: >
+    Unaffected. The three globalEvents candidates (sept-11-2001,
+    financial-crisis-2008, covid-19-pandemic-2020) stand on their own textual
+    evidence, not on any era boundary.
+  visual-metadata: "Unaffected. No era plates to illustrate; the theme.art gap is unchanged and still owned by visual-language."
+openQuestions:
+  - "NO ERAS is a deliberate positive ruling, not a gap to be closed. Per the
+     eras skill (rule 4) and the wing-audit override, an uncovered year is not
+     a defect here - do not add a periodisation to 'fill' the timeline. If a
+     future named, sourced periodisation of Connelly's career appears in print
+     (e.g. a retrospective once the series conclude), that would be the moment
+     to revisit; none exists today."
+  - "Not contested, but recorded: the only structural seam anyone points to is
+     the Bosch -> Ballard lead handoff around The Late Show (2017) / Dark
+     Sacred Night (2018). It is sourced as integration rather than a break, so
+     it does not meet the received-periodisation bar. If the curator ever wants
+     a single publishing-fact era, this is the only candidate - and it should
+     stay unbuilt unless a source names it as a period, not just a shift."
