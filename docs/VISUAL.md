@@ -25,6 +25,25 @@ Every sketch in the catalogue carries the same mark - **concentric orbital
 rings with small nodes riding on them** - and that shared mark is what makes a
 Pratchett sketch and a Mãe sketch read as one publication.
 
+**The motif is the rings, on every wing, and never the wing's own emblem.**
+This is the failure that quietly wastes generations. A wing's `theme.art`
+`emblem` (Palahniuk's safety pictogram, Butcher's hand lantern) is a *different*
+mark - the wing's own identity, not the shared one. The orrery motif is the
+concentric rings and nothing else. A prompt that says *"the orrery motif is the
+wing's [pictogram / lantern / stamp]"* has thrown the rings away: the image then
+carries a wing-specific glyph and no shared mark at all, so it fails to appear
+as the orrery *because it was never asked for*, and re-rolling the same prompt
+cannot summon a thing the words do not name. The emblem and the orrery motif are
+**two separate paragraphs** in a prompt, never merged.
+
+**A stylized or inverted wing draws the rings in its own line - it does not
+replace them.** Palahniuk's flat ruling-pen technical-diagram register does not
+get a pictogram *instead of* rings; it gets the rings drawn *as* a technical
+diagram - faint concentric orbital ellipses with three or four nodes, printed
+like a schematic on the safety card, stamped in a corner, or ruled faint across
+the ceiling, in that same flat line, with the wing's accent riding on them. The
+carrier and the line change from wing to wing; the rings themselves never do.
+
 **It is an afterthought, and it should feel like one.** The reader meets the
 scene first. Somewhere after that, they notice the rings and think *oh, that's
 fun*. That reaction is the whole specification. If the motif is the first thing

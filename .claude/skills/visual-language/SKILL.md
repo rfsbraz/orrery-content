@@ -123,6 +123,17 @@ Six fields, and each one is a constraint on a future drawing, not a mood board:
 - **`avoid`** - the wing's specific prohibitions, beyond the shared negative
   prompt in `docs/VISUAL.md` §6. Name the cliche this author's work attracts.
 
+**None of these is the orrery motif.** The shared orrery rings (`docs/VISUAL.md`
+§1a) are a *separate* mark every image carries in addition to this wing's
+identity - and the `emblem` and the accent-carrier named in `accentUse` are the
+two things most easily mistaken for it. They are not it. A prompt writes the
+orrery rings as their own paragraph and never as this wing's emblem, pictogram
+or accent element; substituting one of those for the rings is how a wing loses
+the shared mark (it happened on Palahniuk). If your wing's line is stylized or
+inverted, say in the handoff HOW the rings are drawn in that line (Palahniuk:
+faint concentric ellipses as a technical schematic), so the prompt writer draws
+them, not the emblem.
+
 ## Distinctness is the job
 
 A visual language that could belong to any wing has failed even if every field
