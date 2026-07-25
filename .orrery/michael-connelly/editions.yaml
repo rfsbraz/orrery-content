@@ -1,0 +1,54 @@
+stage: editions
+summary: >
+  Wrote content/franchises/michael-connelly/editions.yaml: 51 editions across
+  all 47 of 47 works. 47 en entries (true first US hardcover of every novel
+  plus Crime Beat's current Little, Brown reissue; ebook-only originals for
+  the three short-fiction bundles), a second Crime Beat entry for its 2004
+  Vascik original, and 3 pt-PT translations (Wook.pt structured data;
+  Bertrand.pt 403'd throughout). Every en hardcover traced to its own Library
+  of Congress CIP record via direct SRU lookup rather than an OpenLibrary
+  author-search hit alone - twelve titles (named in the file header and their
+  own entries) had a plausible signed/large-print/ebook ISBN in circulation
+  that only the LOC record ruled out. validate.py --slug michael-connelly
+  clean; lookup.py --verify-isbns: 51 editions, 0 suspect; wing_digest:
+  editions 47/47.
+produced:
+  file: content/franchises/michael-connelly/editions.yaml
+  coverage: "51 editions over 47 of 47 works"
+  worksWithTwoEditions:
+    - "crime-beat (2004 Vascik original + 2006 Little, Brown reissue)"
+    - "the-brass-verdict (en + pt-PT \"O Veredicto\")"
+    - "the-fifth-witness (en + pt-PT \"A Quinta Testemunha\")"
+    - "the-waiting (en + pt-PT \"A Espera\")"
+  noLccnAvailable:
+    - "angle-of-investigation, suicide-run, mulholland-dive: ebook-only, no print counterpart"
+    - "ironwood, the-hollow: too new; rest on publisher/retailer product data instead"
+forStages:
+  visual-metadata: "Unaffected. All 47 works still need covers; author.yaml still needs a portrait."
+  translation: "editions.yaml is never i18n-overlaid; the three pt-PT titles are edition data, not translatable prose."
+  eras: "Unaffected. eras: [] stands."
+  reading-orders: "Unaffected."
+  spoiler-audit: "Unaffected. The three pt-PT titles are non-spoiling published names."
+  event-resonance: "Unaffected."
+  completeness-auditor: >
+    works.yaml's note on a-darkness-more-than-night cites
+    "https://lccn.loc.gov/00046204" for its 2000 date. That LCCN resolves to
+    an unrelated book (David E. Bernstein, "Only One Place of Redress," Duke
+    University Press, 2001). The correct LCCN is 00031025 (confirmed by
+    direct SRU lookup, cited in this file's entry for the work). The
+    2000-vs-2001 conclusion itself is unaffected - it rests on other
+    evidence already in works.yaml - but the citation needs fixing at the
+    source.
+openQuestions:
+  - "pt-PT coverage is 3 of 47, a first sweep not a ceiling. Two more Wook
+     listings surfaced but 403'd on every retry: \"Luna Funesta\" (id
+     33151327, reads like a plausible non-literal Void Moon title,
+     unconfirmed) and \"As Garras do Mal\" (id 17424077). Neither matched to
+     a work id, so neither recorded."
+  - "Crime Beat's 2004 Vascik original has no Library of Congress record at
+     all (small press) - rests on OpenLibrary plus works.yaml's own
+     pre-existing Amazon citation, weaker sourcing than every other entry."
+  - "The Overlook is genuinely 225 pages per its own LOC record (its
+     magazine-serial origin, per works.yaml) - confirmed fact, not an error."
+  - "Ironwood and The Hollow rest on publisher/retailer product pages, not an
+     LCCN (too new for one yet); worth re-checking against LOC once catalogued."
