@@ -1,0 +1,708 @@
+# Editions of Lee Child: 46 English editions across 45 of 46 works, and 8
+# Portuguese (pt-PT) editions across 7 of the 31 Jack Reacher novels.
+#
+# COVERAGE
+#   en    45 of 46 works. All 31 novels, all 4 extended-tier works (The Hero,
+#         No Middle Name, Safe Enough, Reacher: The Stories Behind the
+#         Stories) and 10 of the 11 apocrypha entries. The one gap, Many
+#         Happy Returns, is explained below: it has no edition at all, by
+#         fact rather than by omission.
+#   pt-PT 8 editions over 7 novels (killing-floor carries two, under two
+#         different titles). See "THE PORTUGUESE HISTORY" below for why
+#         coverage is this thin and where it stops.
+#
+# SOURCING. English: primarily OpenLibrary's own per-edition records (each
+# ISBN traced to its own https://openlibrary.org/books/OL...M permalink,
+# never a search snippet), plus the publisher's own product page
+# (penguinrandomhouse.com, akashicbooks.com, simonandschuster.com) wherever
+# a work is recent enough or obscure enough that OpenLibrary's author sweep
+# did not surface it. Portuguese: WOOK and Bertrand product pages, read via
+# their own JSON-LD "Book" block; both sites currently answer a browser
+# User-Agent with a Cloudflare challenge page rather than the catalogue
+# (checked directly: HTTP 403, "Just a moment..."), so every pt-PT citation
+# below is a web.archive.org Common Crawl capture of the same page rather
+# than a live fetch - a documented, current negative on the live site, not
+# a weaker source; the JSON-LD block is identical either way. Every
+# Portuguese title below was matched to its work by synopsis, not by title,
+# per this skill's method: two of the three earliest-era translations use
+# non-literal titles.
+#
+# ONE EDITION PER WORK, not a US/UK pair, with one deliberate exception. All
+# 31 novels used the same UK/US English text until publication temporarily
+# forked into two different titles for the sixth novel (see below); nothing
+# else in the run needs a second English row, so none of the later novels
+# carries one. For the recent co-authored novels, the current mass-market
+# paperback (Dell/Bantam) is recorded once it exists; where OpenLibrary has
+# not yet indexed one (In Too Deep), the original Delacorte hardcover is
+# recorded instead, and will read as superseded once a paperback ships.
+#
+# THE ONE ENGLISH TITLE SPLIT: THE VISITOR / RUNNING BLIND. Novel six
+# published in the UK on 20 April 2000 as The Visitor (works.yaml's own
+# title) and in the US on 13 July 2000 as Running Blind, at Putnam's
+# request (works.yaml's note cites the reason: the original title tested as
+# sounding too much like science fiction to American readers). Two rows
+# below, per SCHEMA.md's en-GB/en-US rule: the UK edition needs no `title`
+# override since it matches the work's own title exactly; the US edition
+# carries `language: en-US` and `title: "Running Blind"`.
+#
+# CHAIN REACTION is not yet published (works.yaml: forthcoming 2026-10-20;
+# today is 2026-07-25). Its ISBN below is real and pre-assigned by the
+# publisher's own product page, not a rights-agency placeholder, so it ships
+# here rather than being withheld - but the note says plainly that it is a
+# pre-order.
+#
+# SMILE has no printing of its own. Its only English object is Invisible
+# Blood, Maxim Jakubowski's seventeen-story anthology (works.yaml already
+# documents this); the ISBN below is the anthology's, explained in the note
+# rather than passed off as a standalone "Smile" printing.
+#
+# MANY HAPPY RETURNS carries no edition at all, on either side. It ran once,
+# in The Spectator (16 December 2023, works.yaml's own source), and has
+# never been reprinted as a standalone ebook, unlike its three siblings
+# (Christmas Scorpion, Smile, Fourth Man), each of which did get one. No
+# ISBN, ASIN or standalone product record exists for it under any source
+# checked. A magazine page is not a buyable object in the sense this file
+# tracks, so nothing is coined for it; the app will show its English title
+# and nothing else, which is correct.
+#
+# THE PORTUGUESE HISTORY, and why it stops at 7 of 31.
+# Reacher's Portuguese publication is not one continuous program but three
+# unrelated ones, recovered from WOOK's and Bertrand's own "bibliografia"
+# listings for Lee Child (sorted by edition date, so read as a complete
+# record of what each site has ever carried):
+#   1. Edições Asa (Lisbon), 2003-2012: Killing Floor only, as "Do Fundo do
+#      Abismo" (2003), and 61 Hours, as "Jack Reacher - 61 Horas" (2012).
+#      Two unrelated novels almost a decade apart, not a series program.
+#   2. Two standalone one-off deals: Mill Books republished Killing Floor
+#      again in 2008 under a THIRD title, "Dinheiro Sujo" ("Dirty Money") -
+#      confirmed by matching its synopsis, not its title, to the same
+#      Margrave/counterfeit-money plot as "Do Fundo do Abismo" above, a
+#      retitled reissue rather than a duplicate-ISBN error. Livros d'Hoje
+#      published Gone Tomorrow once, in 2010, as "Amanhã Será Outro Dia"
+#      ("Tomorrow Will Be Another Day") - again matched by synopsis (the
+#      subway suicide-bomber plot), since the title is not a translation of
+#      the English one at all.
+#   3. Bertrand Editora's own run, 2015-2018: four consecutive-ish novels,
+#      Never Go Back ("Nunca Voltes Atrás", 2015), Personal ("Uma Questão
+#      Pessoal", 2016), Make Me ("Nem Morto!", 2017, itself a non-literal
+#      title matched by its Mother's Rest synopsis) and Night School
+#      ("Escola da Noite", 2018). Bertrand's own bibliography listing (WOOK
+#      mirrors the same catalogue) shows nothing published after Escola da
+#      Noite: no Portuguese edition of The Midnight Line, Past Tense, Blue
+#      Moon or any of the co-authored novels from The Sentinel on was found
+#      anywhere, on either site, under any title. The program simply
+#      stopped in 2018; the app will correctly show all later titles in
+#      English to a pt-PT reader.
+#
+# STOCK STATUS. Nunca Voltes Atrás (Never Go Back) reads "EM STOCK" (in
+# stock) on Bertrand's own live site as fetched via archive.org. Amanhã Será
+# Outro Dia (Gone Tomorrow) and Dinheiro Sujo (the Mill Books Killing Floor)
+# are both marked "Esgotado" / "ESGOTADO OU NÃO DISPONÍVEL" (sold out / not
+# available) on WOOK; each still earns its slot since no other pt-PT edition
+# of that work exists, per SCHEMA.md's out-of-print rule. Do Fundo do
+# Abismo, Jack Reacher - 61 Horas, Uma Questão Pessoal, Nem Morto! and Escola
+# da Noite carry no explicit stock flag in the captures read; treat them as
+# unconfirmed rather than assumed current.
+
+# =============================================================================
+# English
+# =============================================================================
+
+- id: lee-child/killing-floor/berkley-2004-en
+  workId: lee-child/killing-floor
+  isbn13: "9780425205068"
+  language: en
+  format: paperback
+  publisher: Berkley Trade
+  year: 2004
+  sources:
+    - https://openlibrary.org/books/OL7505202M
+
+- id: lee-child/die-trying/berkley-2005-en
+  workId: lee-child/die-trying
+  isbn13: "9780425206218"
+  language: en
+  format: paperback
+  publisher: Berkley Trade
+  year: 2005
+  sources:
+    - https://openlibrary.org/books/OL23094064M
+
+- id: lee-child/tripwire/berkley-2005-en
+  workId: lee-child/tripwire
+  isbn13: "9780425206225"
+  language: en
+  format: paperback
+  publisher: Berkley Books
+  year: 2005
+  sources:
+    - https://openlibrary.org/books/OL7505243M
+
+- id: lee-child/the-visitor/bantam-2011-en
+  workId: lee-child/the-visitor
+  isbn13: "9780857500076"
+  language: en
+  format: paperback
+  publisher: Bantam
+  year: 2011
+  note: >
+    The UK title, matching works.yaml's own title exactly; no override
+    needed. See the file header for the US/UK split on this novel.
+  sources:
+    - https://openlibrary.org/books/OL28181242M
+
+- id: lee-child/the-visitor/berkley-2005-us
+  workId: lee-child/the-visitor
+  isbn13: "9780425206232"
+  language: en-US
+  title: "Running Blind"
+  format: paperback
+  publisher: Berkley Books
+  year: 2005
+  note: >
+    The US title, at Putnam's own request (works.yaml note); a different
+    title on the same text, not a different edition of a different book.
+  sources:
+    - https://openlibrary.org/books/OL7505244M
+
+- id: lee-child/echo-burning/berkley-2005-en
+  workId: lee-child/echo-burning
+  isbn13: "9780425206249"
+  language: en
+  format: paperback
+  publisher: Berkley Trade
+  year: 2005
+  sources:
+    - https://openlibrary.org/books/OL7505245M
+
+- id: lee-child/without-fail/berkley-2006-en
+  workId: lee-child/without-fail
+  isbn13: "9780425207604"
+  language: en
+  format: paperback
+  publisher: Berkley Trade
+  year: 2006
+  sources:
+    - https://openlibrary.org/books/OL7505319M
+
+- id: lee-child/persuader/dell-2017-en
+  workId: lee-child/persuader
+  isbn13: "9780440245988"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2017
+  sources:
+    - https://openlibrary.org/books/OL49631941M
+
+- id: lee-child/the-enemy/dell-2011-en
+  workId: lee-child/the-enemy
+  isbn13: "9780440245995"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2011
+  sources:
+    - https://openlibrary.org/books/OL24087260M
+
+- id: lee-child/one-shot/dell-2012-en
+  workId: lee-child/one-shot
+  isbn13: "9780345538192"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2012
+  note: The film tie-in-era reprint; still Dell's current mass-market cover.
+  sources:
+    - https://openlibrary.org/books/OL26295058M
+
+- id: lee-child/the-hard-way/dell-2016-en
+  workId: lee-child/the-hard-way
+  isbn13: "9780440246008"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2016
+  sources:
+    - https://openlibrary.org/books/OL24087187M
+
+- id: lee-child/bad-luck-and-trouble/dell-2009-en
+  workId: lee-child/bad-luck-and-trouble
+  isbn13: "9780440246015"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2009
+  sources:
+    - https://openlibrary.org/books/OL24085260M
+
+- id: lee-child/nothing-to-lose/dell-2009-en
+  workId: lee-child/nothing-to-lose
+  isbn13: "9780440243670"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2009
+  sources:
+    - https://openlibrary.org/books/OL24403478M
+
+- id: lee-child/gone-tomorrow/dell-2010-en
+  workId: lee-child/gone-tomorrow
+  isbn13: "9780440243687"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2010
+  sources:
+    - https://openlibrary.org/books/OL26334503M
+
+- id: lee-child/61-hours/dell-2010-en
+  workId: lee-child/61-hours
+  isbn13: "9780440243694"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2010
+  sources:
+    - https://openlibrary.org/books/OL24368331M
+
+- id: lee-child/worth-dying-for/dell-2011-en
+  workId: lee-child/worth-dying-for
+  isbn13: "9780440422907"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2011
+  sources:
+    - https://openlibrary.org/books/OL35445017M
+
+- id: lee-child/the-affair/dell-2012-en
+  workId: lee-child/the-affair
+  isbn13: "9780440246305"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2012
+  sources:
+    - https://openlibrary.org/books/OL26092811M
+
+- id: lee-child/a-wanted-man/dell-2013-en
+  workId: lee-child/a-wanted-man
+  isbn13: "9780440246312"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2013
+  sources:
+    - https://openlibrary.org/books/OL26750308M
+
+- id: lee-child/never-go-back/dell-2016-en
+  workId: lee-child/never-go-back
+  isbn13: "9780399594977"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2016
+  sources:
+    - https://openlibrary.org/books/OL32444087M
+
+- id: lee-child/personal/dell-2017-en
+  workId: lee-child/personal
+  isbn13: "9780804178754"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2017
+  sources:
+    - https://openlibrary.org/books/OL27265507M
+
+- id: lee-child/make-me/dell-2016-en
+  workId: lee-child/make-me
+  isbn13: "9780804178792"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2016
+  sources:
+    - https://openlibrary.org/books/OL29734348M
+
+- id: lee-child/night-school/dell-2017-en
+  workId: lee-child/night-school
+  isbn13: "9780804178822"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2017
+  sources:
+    - https://openlibrary.org/books/OL27265502M
+
+- id: lee-child/the-midnight-line/dell-2018-en
+  workId: lee-child/the-midnight-line
+  isbn13: "9780525618331"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2018
+  sources:
+    - https://openlibrary.org/books/OL35636852M
+
+- id: lee-child/past-tense/dell-2019-en
+  workId: lee-child/past-tense
+  isbn13: "9780399593536"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2019
+  sources:
+    - https://openlibrary.org/books/OL27345112M
+
+- id: lee-child/blue-moon/dell-2020-en
+  workId: lee-child/blue-moon
+  isbn13: "9780399593567"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2020
+  sources:
+    - https://openlibrary.org/books/OL28003663M
+
+- id: lee-child/the-sentinel/dell-2021-en
+  workId: lee-child/the-sentinel
+  isbn13: "9781984818485"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2021
+  sources:
+    - https://openlibrary.org/books/OL32222066M
+
+- id: lee-child/better-off-dead/rhpg-2022-en
+  workId: lee-child/better-off-dead
+  isbn13: "9781984818522"
+  language: en
+  format: paperback
+  publisher: Random House Publishing Group
+  year: 2022
+  sources:
+    - https://openlibrary.org/books/OL37536749M
+
+- id: lee-child/no-plan-b/rhpg-2023-en
+  workId: lee-child/no-plan-b
+  isbn13: "9781984818560"
+  language: en
+  format: paperback
+  publisher: Random House Publishing Group, Bantam
+  year: 2023
+  sources:
+    - https://openlibrary.org/books/OL46771572M
+
+- id: lee-child/the-secret/rhpg-2024-en
+  workId: lee-child/the-secret
+  isbn13: "9781984818607"
+  language: en
+  format: paperback
+  publisher: Random House Publishing Group
+  year: 2024
+  sources:
+    - https://openlibrary.org/books/OL51113831M
+
+- id: lee-child/in-too-deep/delacorte-2024-en
+  workId: lee-child/in-too-deep
+  isbn13: "9780593725801"
+  language: en
+  format: hardcover
+  publisher: Delacorte Press
+  year: 2024
+  note: >
+    The original hardcover; OpenLibrary carries no US mass-market paperback
+    record yet, so this is the current object rather than a superseded one.
+  sources:
+    - https://openlibrary.org/books/OL50970082M
+
+- id: lee-child/exit-strategy/bantam-2026-en
+  workId: lee-child/exit-strategy
+  isbn13: "9780593725863"
+  language: en
+  format: paperback
+  publisher: Bantam
+  year: 2026
+  note: >
+    The mass-market paperback (published Mar 24, 2026, per its own PRH
+    product page), now the more current and cheaper object than the
+    November 2025 Delacorte hardcover (isbn13 9780593725849), which is not
+    recorded separately.
+  sources:
+    - https://www.penguinrandomhouse.com/books/742508/exit-strategy-by-lee-child-and-andrew-child/
+
+- id: lee-child/chain-reaction/bantam-2026-en
+  workId: lee-child/chain-reaction
+  isbn13: "9798217375158"
+  language: en
+  format: hardcover
+  publisher: Bantam
+  year: 2026
+  note: >
+    Not yet published as of this writing: the publisher's own product page
+    lists it "Available on Oct 20, 2026", matching works.yaml's own
+    `forthcoming` date. A real, publisher-assigned pre-order ISBN, not a
+    rights-agency placeholder.
+  sources:
+    - https://www.penguinrandomhouse.com/books/829786/chain-reaction-by-lee-child-and-andrew-child/
+
+- id: lee-child/no-middle-name/dell-2018-en
+  workId: lee-child/no-middle-name
+  isbn13: "9780399593598"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2018
+  sources:
+    - https://openlibrary.org/books/OL26809283M
+
+- id: lee-child/safe-enough/penzler-2025-en
+  workId: lee-child/safe-enough
+  isbn13: "9781613167144"
+  language: en
+  publisher: Penzler Publishers
+  year: 2025
+  note: The paperback reprint of the September 2024 Mysterious Press hardcover.
+  sources:
+    - https://openlibrary.org/books/OL57782895M
+
+- id: lee-child/the-hero/harpercollins-2021-en
+  workId: lee-child/the-hero
+  isbn13: "9780008361877"
+  language: en
+  publisher: HarperCollins Publishers Limited
+  year: 2021
+  sources:
+    - https://openlibrary.org/books/OL34702779M
+
+- id: lee-child/reacher-the-stories-behind-the-stories/mysteriouspress-2025-en
+  workId: lee-child/reacher-the-stories-behind-the-stories
+  isbn13: "9781613167069"
+  language: en
+  format: hardcover
+  publisher: Mysterious Press
+  year: 2025
+  sources:
+    - https://www.simonandschuster.com/books/Reacher/Lee-Child/9781613167069
+
+- id: lee-child/killer-year-stories-to-die-for/minotaur-2008-en
+  workId: lee-child/killer-year-stories-to-die-for
+  isbn13: "9780312374709"
+  language: en
+  publisher: St. Martin's Minotaur
+  year: 2008
+  sources:
+    - https://openlibrary.org/books/OL18512963M
+
+- id: lee-child/first-thrills/forge-2010-en
+  workId: lee-child/first-thrills
+  isbn13: "9780765326485"
+  language: en
+  publisher: Forge
+  year: 2010
+  sources:
+    - https://openlibrary.org/books/OL25059427M
+
+- id: lee-child/best-american-mystery-stories-2010/corvus-2010-en
+  workId: lee-child/best-american-mystery-stories-2010
+  isbn13: "9781848875739"
+  language: en
+  publisher: Corvus
+  year: 2010
+  note: >
+    The UK edition (Corvus/Atlantic Books); the series originates with a US
+    publisher, but no US ISBN for this volume turned up in the sweep.
+  sources:
+    - https://openlibrary.org/books/OL29705782M
+
+- id: lee-child/jack-reachers-rules/delacorte-2012-en
+  workId: lee-child/jack-reachers-rules
+  isbn13: "9780345544292"
+  language: en
+  publisher: Delacorte Press, Random House Publishing Group
+  year: 2012
+  sources:
+    - https://openlibrary.org/books/OL27141391M
+
+- id: lee-child/the-christmas-scorpion/bantam-2018-en
+  workId: lee-child/the-christmas-scorpion
+  isbn13: "9781984818454"
+  language: en
+  format: ebook
+  publisher: Bantam
+  year: 2018
+  sources:
+    - https://www.penguinrandomhouse.com/books/599593/the-christmas-scorpion-a-jack-reacher-story-by-lee-child/
+
+- id: lee-child/anatomy-of-innocence/liveright-2017-en
+  workId: lee-child/anatomy-of-innocence
+  isbn13: "9781631490880"
+  language: en
+  publisher: Liveright Publishing (W.W. Norton)
+  year: 2017
+  sources:
+    - https://www.amazon.com/Anatomy-Innocence-Testimonies-Wrongfully-Convicted/dp/1631490885
+
+- id: lee-child/smile/titan-2019-en
+  workId: lee-child/smile
+  isbn13: "9781789091328"
+  language: en
+  publisher: Titan Books
+  year: 2019
+  note: >
+    No standalone printing of this story exists. This ISBN is Invisible
+    Blood, the seventeen-story Maxim Jakubowski anthology it appeared in
+    (works.yaml) - the only object a reader can buy that contains it, not a
+    "Smile" edition in its own right.
+  sources:
+    - https://www.penguinrandomhouse.com/books/607712/invisible-blood-by-maxim-jakubowski/
+
+- id: lee-child/the-fourth-man/penguin-2019-en
+  workId: lee-child/the-fourth-man
+  isbn13: "9781473567023"
+  language: en
+  format: ebook
+  publisher: Penguin
+  year: 2019
+  sources:
+    - https://www.penguin.co.uk/books/439739/the-fourth-man-by-lee-child/9781473567023
+
+- id: lee-child/the-nicotine-chronicles/akashic-2020-en
+  workId: lee-child/the-nicotine-chronicles
+  isbn13: "9781617758591"
+  language: en
+  format: paperback
+  publisher: Akashic Books
+  year: 2020
+  sources:
+    - https://www.akashicbooks.com/catalog/the-nicotine-chronicles/
+
+- id: lee-child/how-to-write-a-mystery/scribner-2022-en
+  workId: lee-child/how-to-write-a-mystery
+  isbn13: "9781982149444"
+  language: en
+  format: paperback
+  publisher: Scribner
+  year: 2022
+  note: The paperback; Simon & Schuster's own product page dates this printing April 12, 2022, one year after the 2021 hardcover.
+  sources:
+    - https://web.archive.org/web/20250211183506/https://www.simonandschuster.com/books/How-to-Write-a-Mystery/Mystery-Writers-of-America/9781982149444
+
+# =============================================================================
+# Portuguese (pt-PT)
+# =============================================================================
+
+- id: lee-child/killing-floor/asa-2003-pt
+  workId: lee-child/killing-floor
+  isbn13: "9789724134932"
+  language: pt-PT
+  title: "Do Fundo do Abismo"
+  format: paperback
+  publisher: Edições Asa
+  year: 2003
+  note: >
+    Coleção Noites Brancas. Matched to this work by synopsis (Margrave,
+    Georgia; an ex-military-police drifter arrested for murder within hours
+    of arriving), not by title - "Do Fundo do Abismo" ("From the Depths of
+    the Abyss") is not a translation of "Killing Floor". See also the 2008
+    Mill Books reissue below, under a third title again.
+  sources:
+    - https://web.archive.org/web/20240413065838/https://www.wook.pt/livro/do-fundo-do-abismo-lee-child/39094
+
+- id: lee-child/killing-floor/millbooks-2008-pt
+  workId: lee-child/killing-floor
+  isbn13: "9789898185020"
+  language: pt-PT
+  title: "Dinheiro Sujo"
+  format: paperback
+  publisher: Mill Books
+  year: 2008
+  note: >
+    A retitled reissue of the same novel as the Edições Asa entry above, not
+    a duplicate-ISBN error: the isbn13 differs (a real second printing) and
+    the synopsis is the same Margrave/counterfeit-money plot. Marked
+    "Esgotado" (sold out) on WOOK; kept because no other pt-PT edition of
+    this novel exists.
+  sources:
+    - https://web.archive.org/web/20211022230402/https://www.wook.pt/livro/dinheiro-sujo-lee-child/225605
+
+- id: lee-child/gone-tomorrow/livrosdhoje-2010-pt
+  workId: lee-child/gone-tomorrow
+  isbn13: "9789722039512"
+  language: pt-PT
+  title: "Amanhã Será Outro Dia"
+  format: paperback
+  publisher: Livros d'Hoje
+  year: 2010
+  note: >
+    Matched to this work by synopsis (a suicide bomber spotted on a late-
+    night New York subway car, Grand Central Station), not by title -
+    "Amanhã Será Outro Dia" ("Tomorrow Will Be Another Day") is not a
+    translation of "Gone Tomorrow". Marked "ESGOTADO OU NÃO DISPONÍVEL" on
+    WOOK; kept as the only pt-PT edition of this novel found.
+  sources:
+    - https://web.archive.org/web/20240616054217/https://www.wook.pt/livro/amanha-sera-outro-dia-lee-child/3549682
+
+- id: lee-child/61-hours/asa-2012-pt
+  workId: lee-child/61-hours
+  isbn13: "9789892321349"
+  language: pt-PT
+  title: "Jack Reacher - 61 Horas"
+  format: paperback
+  publisher: Edições Asa
+  year: 2012
+  sources:
+    - https://web.archive.org/web/20240424070739/https://www.wook.pt/livro/jack-reacher-61-horas-lee-child/14319628
+
+- id: lee-child/never-go-back/bertrand-2015-pt
+  workId: lee-child/never-go-back
+  isbn13: "9789722530422"
+  language: pt-PT
+  title: "Nunca Voltes Atrás"
+  format: paperback
+  publisher: Bertrand Editora
+  year: 2015
+  note: In stock ("EM STOCK") on Bertrand's own site as fetched via archive.org.
+  sources:
+    - https://web.archive.org/web/20251006235122/https://www.bertrandeditora.pt/produtos/ficha/nunca-voltes-atras-/16448620
+
+- id: lee-child/personal/bertrand-2016-pt
+  workId: lee-child/personal
+  isbn13: "9789722531306"
+  language: pt-PT
+  title: "Uma Questão Pessoal"
+  format: paperback
+  publisher: Bertrand Editora
+  year: 2016
+  sources:
+    - https://web.archive.org/web/20250210222210/https://www.wook.pt/livro/uma-questao-pessoal-lee-child/16806188
+
+- id: lee-child/make-me/bertrand-2017-pt
+  workId: lee-child/make-me
+  isbn13: "9789722532426"
+  language: pt-PT
+  title: "Nem Morto!"
+  format: paperback
+  publisher: Bertrand Editora
+  year: 2017
+  note: >
+    Matched to this work by synopsis (a level crossing at "Mother's Rest",
+    a missing colleague, two hundred deaths) - "Nem Morto!" ("Not Even
+    Dead!") is not a translation of "Make Me".
+  sources:
+    - https://web.archive.org/web/20240221012410/https://www.wook.pt/livro/nem-morto-lee-child/17931542
+
+- id: lee-child/night-school/bertrand-2018-pt
+  workId: lee-child/night-school
+  isbn13: "9789722534598"
+  language: pt-PT
+  title: "Escola da Noite"
+  format: paperback
+  publisher: Bertrand Editora
+  year: 2018
+  note: The most recent Portuguese Reacher translation found; see file header.
+  sources:
+    - https://web.archive.org/web/20250914233708/https://www.wook.pt/livro/escola-da-noite-lee-child/19842462
