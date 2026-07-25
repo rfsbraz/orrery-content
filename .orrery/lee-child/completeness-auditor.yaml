@@ -1,0 +1,187 @@
+stage: completeness-auditor
+wing: lee-child
+summary: >
+  Audited the 34-work scaffold against jackreacher.com's own bibliography
+  page, Wikipedia's Jack Reacher (novel series) article, and independent
+  retail/publisher/review pages for every title. Works before: 34. Works
+  after: 46 (12 added, 0 removed, 0 dates corrected). validate.py green
+  throughout, no new warnings on this wing.
+
+final_count_by_subseries:
+  total_works: 46   # was 34
+  jack_reacher_core_novels: 31   # unchanged: killing-floor (1997) through chain-reaction (forthcoming 2026-10-20)
+  extended_tier: 4   # no-middle-name, the-hero, safe-enough, reacher-the-stories-behind-the-stories
+  apocrypha_tier: 11
+  apocrypha_solo_reacher_stories: 4   # the-christmas-scorpion, smile, the-fourth-man, many-happy-returns
+  apocrypha_editor_or_contributor: 7   # killer-year-stories-to-die-for, first-thrills,
+                                       # best-american-mystery-stories-2010, jack-reachers-rules,
+                                       # anatomy-of-innocence, the-nicotine-chronicles,
+                                       # how-to-write-a-mystery
+
+verified_not_corrected:
+  novel_count_and_co_authorship_boundary: >
+    Fetched en.wikipedia.org/wiki/Jack_Reacher_(novel_series) directly (not
+    just the scaffold's inherited claim). Confirmed verbatim: "Starting with
+    the 25th novel in the series, The Sentinel (2020), all subsequent books
+    in the series have been co-authored by and credited to both brothers."
+    31 novels stands (1997-2026, forthcoming 20 Oct 2026), and books 25-31
+    (the-sentinel through chain-reaction) all correctly carry
+    withAuthorIds:[andrew-child]/authorRole:co-author already. No correction
+    needed. Note: a WebSearch AI-summary independently claimed Andrew Child
+    has written solo since book 29 (In Too Deep, 2024) - checked against the
+    primary Wikipedia source and found false; not acted on.
+  no_middle_name_and_safe_enough_contents: >
+    Cross-referenced Wikipedia's own "No Middle Name" contents list (a
+    novella plus ten stories, all named) against the scaffold's claim: all
+    eleven previously-uncollected Reacher singles (Second Son, Deep Down,
+    Guy Walks into a Bar, James Penney's New Identity, High Heat, Everyone
+    Talks, Not a Drill, Small Wars, The Picture of the Lonely Diner, Maybe
+    They Have a Tradition, No Room at the Motel) are confirmed inside it.
+    None needed a separate entry.
+
+correction_made:
+  safe_enough_synopsis: >
+    The scaffold's synopsis said Safe Enough held "several" Reacher pieces.
+    Checked against jackreacher.com's own list of Child's other short
+    fiction (which matches fourteen of Safe Enough's twenty story titles to
+    named prior anthology appearances, none of them Reacher) plus dozens of
+    independent Goodreads reviews stating plainly that Reacher is absent
+    from the book. Corrected: Safe Enough holds exactly one Reacher
+    connection, an exclusive new Jack Reacher/Maggie Bird crossover written
+    with Tess Gerritsen (confirmed via Goodreads review text and the
+    official short-story list); the other nineteen are non-Reacher.
+    Rewrote the synopsis and added a note plus two further sources
+    (Goodreads, jackreacher.com). Does not reorder anything; corrects a
+    description, not a date.
+
+additions:
+  - id: lee-child/killer-year-stories-to-die-for
+    published: 2008
+    authorRole: editor
+    source: jackreacher.com official bibliography page; Goodreads/Amazon listings
+    reorder: inserted at 2008, between bad-luck-and-trouble (2007) and nothing-to-lose (2008)
+  - id: lee-child/first-thrills
+    published: 2010
+    authorRole: editor
+    source: jackreacher.com; thebigthrill.org (ITW magazine, confirms editor role, no story of his own -
+      corrects an AI-search-summary that wrongly claimed Child's own story "The Bodyguard" was in this
+      anthology; jackreacher.com explicitly says "Lee edited but did not contribute a story")
+    reorder: inserted at 2010, within the 61-hours/worth-dying-for cluster
+  - id: lee-child/best-american-mystery-stories-2010
+    published: 2010
+    authorRole: editor
+    source: jackreacher.com; Goodreads; Kirkus (guest editor alongside series editor Otto Penzler)
+    reorder: inserted at 2010, within the same cluster
+  - id: lee-child/jack-reachers-rules
+    published: 2012
+    authorRole: contributor (introduction only; the compiled text is drawn from the novels)
+    source: PenguinRandomHouse product page; Amazon
+    reorder: inserted at 2012, alongside a-wanted-man
+  - id: lee-child/the-christmas-scorpion
+    published: 2017
+    authorRole: author (solo Reacher story, uncollected)
+    source: jackreacher.com (Dec 2017 Mail on Sunday first publication); PenguinRandomHouse (Oct 2018 ebook)
+    reorder: inserted at 2017, within the night-school/no-middle-name/the-midnight-line cluster
+  - id: lee-child/anatomy-of-innocence
+    published: 2017
+    authorRole: contributor
+    contributionTitle: "The Fortune Cookie"
+    source: jackreacher.com; pressherald.com review (Kirk Bloodsworth exoneration chapter)
+    reorder: inserted at 2017, same cluster
+  - id: lee-child/smile
+    published: 2019
+    authorRole: author (solo Reacher story, uncollected)
+    source: jackreacher.com (July 2019, Invisible Blood); Goodreads (Invisible Blood, ed. Maxim Jakubowski)
+    reorder: inserted at 2019, within the blue-moon/the-hero cluster
+  - id: lee-child/the-fourth-man
+    published: 2019
+    authorRole: author (solo Reacher story, uncollected)
+    source: jackreacher.com (March 2019); Goodreads (first published March 7, 2019)
+    note_on_contested_date: >
+      Wikipedia's in-story chronology list places this at "(2018)", immediately after
+      Past Tense. Two independent sources (jackreacher.com's own bibliography page and
+      Goodreads' first-published date) agree on March 2019, against a single, less specific
+      Wikipedia mention. Went with the two agreeing sources rather than escalating, per the
+      two-source standard; flagging the discrepancy here rather than burying it.
+    reorder: inserted at 2019, same cluster
+  - id: lee-child/the-nicotine-chronicles
+    published: 2019
+    authorRole: editor
+    contributionTitle: "Dying for a Cigarette"
+    source: PenguinRandomHouse ("edited by Lee Child"); Akashic Books catalogue page
+    reorder: inserted at 2019, same cluster
+  - id: lee-child/how-to-write-a-mystery
+    published: 2021
+    authorRole: editor
+    source: Simon & Schuster publisher page; Goodreads
+    reorder: inserted at 2021, alongside better-off-dead
+  - id: lee-child/many-happy-returns
+    published: 2023
+    authorRole: author (solo Reacher story, uncollected)
+    source: spectator.co.uk (the original publisher, primary source); Wikipedia
+    reorder: inserted at 2023, alongside the-secret
+  - id: lee-child/reacher-the-stories-behind-the-stories
+    published: 2025
+    canonTier: extended
+    source: Goodreads; Bookreporter.com
+    reorder: inserted at 2025, alongside exit-strategy
+
+checked_and_deliberately_not_added:
+  crossover_novellas: >
+    Good and Valuable Consideration (2014, with Joseph Finder's Nick Heller,
+    in FaceOff), Faking a Murderer (2017, with Kathy Reichs's Temperance
+    Brennan, in MatchUp), and Cleaning the Gold (2019, with Karin Slaughter's
+    Will Trent) are all real, two-source-confirmed titles (jackreacher.com
+    plus Wikipedia's in-story chronology, which footnotes each collaborator).
+    Not added: each is co-written with a named author who has no global
+    entity in this repo, and creating one purely to catalogue a single
+    crossover story is the scope call this skill reserves for the curator,
+    not the auditor. Full bibliographic data is in this file if the decision
+    is to add them.
+  andrew_child_solo_short_fiction: >
+    New Kid in Town (2022, in the Hotel California anthology) and Bat Out of
+    Hell (2025, in the Don Bruns anthology of the same name) are both
+    confirmed via multiple independent retail/publisher listings (Amazon US
+    and UK, Audible US and UK, Apple Books, Blackstone Publishing) as
+    Andrew Child's own solo work, with no Lee Child involvement at all - a
+    genuine, if easy to miss, first: solo Andrew Child work exists, just not
+    yet a novel. (One aggregator, FantasticFiction, credits both brothers;
+    the five independent primary retail/publisher listings do not, and are
+    weighted higher.) Not added to this wing: Lee Child is not merely
+    secondary here, he is absent, and whether solo-Andrew Reacher work
+    belongs in a wing titled for his brother is exactly the scope question
+    this skill reserves for the curator - and it will recur at larger scale
+    if/when Andrew publishes a solo novel.
+  fractional_serial_chapters: >
+    Like a Charm (2004), The Chopin Manuscript (2007) and The Copper
+    Bracelet (2009, print-collected as Watchlist, 2010) are each a
+    multi-author round-robin serialized novel to which Child contributed a
+    single chapter, credited by chapter number rather than a distinct title
+    of his own (the one exception, "The Snake Eater by the Numbers" from
+    Like a Charm, has its own title and is already collected in Safe
+    Enough). Not added as separate works: Child is one of over a dozen
+    authors on a single collaborative novel in each case, not the author of
+    a distinguishable piece.
+  the_line_up_2010: >
+    "Lee gives the inside story on Reacher and his origins" per
+    jackreacher.com - reads as a promotional essay/interview with no
+    distinct title of its own. Not added, for the same reason as the serial
+    chapters: no standalone authored piece to catalogue.
+
+gates:
+  validate: green, zero new warnings attributable to content/franchises/lee-child/
+  aura_density_before: "34 works, 5 aura, 0.15/work, longest dark run 12yrs (2008-2019)"
+  aura_density_after: "46 works, 5 aura, 0.11/work, longest dark run unchanged (2008-2019)"
+  i18n_coverage: unaffected (lee-child carries no translations yet; not this stage's regression to own)
+
+open_questions_for_curator:
+  - "Add the three crossover novellas (Good and Valuable Consideration/Finder,
+     Faking a Murderer/Reichs, Cleaning the Gold/Slaughter)? Needs a ruling on
+     whether one-off collaborators get their own thin global author entity."
+  - "Andrew Child's solo short fiction (New Kid in Town, Bat Out of Hell): does
+     solo-Andrew Reacher work belong in the lee-child wing at all, and if so,
+     as what - a note on the andrew-child author entity, or works here under
+     authorIds:[andrew-child]? This will matter more the day Andrew publishes
+     a solo novel."
+  - "The Fourth Man's year (2019 vs Wikipedia's 2018): worth a second look with
+     a source able to see Australia's actual Past Tense hardcover imprint page."
