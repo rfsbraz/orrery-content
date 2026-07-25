@@ -152,7 +152,34 @@ Always all six, in this order:
    (`organisation`, `illustration_type`, `images_required`, any `modifier`) - the
    app and the validator read them there; the issue line is for the rotation
    tracker.
-2. **The prompt** - one block, ready to paste, no commentary inside it. Describe
+2. **The prompt** - one block per image, ready to paste, no commentary inside it.
+
+   **One image, one prompt. An entry with `images_required: n` gets `n` complete
+   prompts, never one prompt describing n panels.** A single prompt that says
+   "IMAGE 1 ... IMAGE 2" asks the model to compose a multi-panel layout inside
+   one frame, which is the thing it is worst at, and it contradicts the asset
+   block it is answering (`images_required: 2`, two slots, two destination
+   files). Each prompt repeats the STYLE block verbatim and stands entirely on
+   its own - own SCENE, own SUBJECT, own motif paragraph, own COMPOSITION, own
+   CONSTRAINTS and technical block - because it is pasted on its own. Label them
+   `Slot 1 of n`, `Slot 2 of n`, and say what each one is (the before, the
+   after, the third instalment), so the relationship survives being split.
+
+   **A sequence drawn as one run is the exception.** A comic strip, a contact
+   sheet, a row of weekly instalment panels - `strip`, `mosaic`, `layered-stack`
+   - stays at `images_required: 1` and one prompt: the shared baseline, even
+   spacing and repetition across the run are the picture, and drawing the units
+   separately gives a row of unrelated sketches. Only the two-panel
+   counterpoints (`diptych`, `split-counterpoint`) split.
+
+   **All n prompts go in ONE comment.** `art_rotation.py` reads only the
+   issue's last comment for the `Rotation:` line, and `issue_assets.py` starts
+   the round at the last comment carrying a prompt - so one prompt per comment
+   would drop the asset out of the rotation counts and reset the round halfway
+   through the set. One comment, one `Rotation:` line at the top, n prompt
+   blocks under it.
+
+   Each prompt block: describe
    the whole image concept first; then, as the **last** creative step, add the
    **orrery motif** as its own paragraph (VISUAL.md §1a): the universal
    concentric rings - **never this wing's emblem** - dropped into an off-centre
@@ -170,8 +197,9 @@ Always all six, in this order:
    `1024x1536` for a `4:5` portrait. State exact pixels, never a ratio.
 4. **Background** - keyed magenta for object/scene types, **opaque** for the
    opaque scene types, per §3b; world events are line-and-texture only, tinted
-   per wing. Multi-image entries (`images_required > 1`) list each image's
-   subject and slot.
+   per wing. On a multi-image entry, size, background, reference and filing are
+   stated **under each slot's prompt**, not once for the set - the person
+   generating works one slot at a time.
 5. **Reference images** - name the wing's **anchor image** (§5d) and say to
    attach it, plus up to two other accepted assets from the same wing that
    differ in subject. This is the strongest cohesion tool available and the
@@ -183,6 +211,14 @@ Always all six, in this order:
    The only exception is the wing's own first era plate, which has no anchor
    yet because it becomes one, and world events, which belong to the catalogue
    rather than to a wing.
+
+   On a multi-image entry the slots are **siblings and must be generated in
+   order**: slot 1 against the anchor, then each later slot against the anchor
+   **plus the accepted slot 1**, saying that these panels are one entry and
+   share line weight, paper tone, shading density and object language, only the
+   subject changing. That is not the chaining §5d warns about - the drift being
+   guarded there is across a wing, and two panels rendered side by side in one
+   cell have to match each other or the cell looks broken.
 6. **Filing** - the `prepare_asset.py` command with the flags the illustration
    type needs: `--chroma --neutral` for keyed types; add `--type <illustration_type>`
    so the processor applies the right edge (artifact types skip the dissolve,
