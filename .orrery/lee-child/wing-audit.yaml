@@ -1,0 +1,84 @@
+stage: wing-audit
+wing: lee-child
+summary: >
+  Re-derived every baseline; audited 46 works, orphan layers, seams, honesty,
+  staleness. validate.py GREEN (--slug lee-child; the 6 warnings are all
+  handoff word-count, no content). No content edited this stage. One BLOCKING
+  false fact found (First Thrills note), one real MISSING work (CrimeBits 2024),
+  the rest clean or curator calls.
+
+baseline_rederived:
+  validate: "green; 717 works, all refs resolve; 6 handoff-length warnings only"
+  i18n: "pt-PT lee-child complete (all 6 files), 0 regression; partials are other wings"
+  aura_density: "46 works, 11 aura, 0.24/work, longest dark run 4yrs (1997-2000); no 5+ run"
+  verify_isbns: "54 editions, 0 suspect; all 8 pt-PT carry PT prefixes (978-972/978-989), none pt-BR"
+  asset_audit: "portrait 1/1, covers 42/46; 11 sketches still to generate (art stage, next round)"
+
+blocking:
+  - id: first-thrills-false-note
+    owner: completeness-auditor
+    finding: >
+      works.yaml note on lee-child/first-thrills says Child "did not contribute
+      a story of his own to it." FALSE. The book's own cover reads "Edited by
+      and with a brand new story from Lee Child," and multiple independent
+      sources confirm his non-Reacher story "The Bodyguard" (2010) is in it. The
+      completeness handoff inverted this (treated the AI summary naming "The
+      Bodyguard" as the error). Reader-facing note; renders in EN for all
+      locales (pt-PT overlay carries no notes). Fix the note; consider whether
+      authorRole/contributionTitle should record the contribution.
+
+missing:
+  - id: crimebits-2024
+    owner: completeness-auditor
+    finding: >
+      "CrimeBits: 100 Opening Gambits for Great Thrillers & Linked Mystery
+      Puzzles" (Black Spring Press, hardback 27 Aug 2024, ISBN 9781915406835),
+      "Selected and Introduced by Lee Child" with Luca Veste. Real, multi-source
+      confirmed, genuinely his (introduction + judge's notes) - parallels the
+      wing's existing editor/contributor apocrypha. Missed because it postdates
+      the two completeness sources (jackreacher.com, Wikipedia series article).
+      A pt-PT edition already exists (Alma dos Livros, 9789895704682, Jun 2025,
+      per editions handoff). Add as apocrypha, authorRole editor/contributor;
+      editions can then attach. LEAD: a "CrimeBits 2" sequel also exists - check.
+
+stale_cleanup:
+  - id: theme-coben-forward-ref
+    owner: visual-language
+    severity: low
+    finding: >
+      theme.yaml comment says "Six crime wings are already built" and lists
+      Harlan Coben, but harlan-coben is not in main (unmerged branch, as the
+      visual-language handoff itself noted). The palette-distinctness reasoning
+      deliberately dodges Coben's hue 56, which is prudent; only the word
+      "built" is ahead of reality. Not edited in place because the count is
+      woven into the distinctness argument.
+  - id: andrew-child-born-null
+    owner: completeness-auditor
+    severity: low
+    finding: >
+      andrew-child.yaml has born: null while its bio states "born in Birmingham
+      in 1968." Honest given schema wants YYYY-MM-DD, but set born if a full
+      date is sourced.
+
+curator_calls:
+  - "Andrew-Child-SOLO Reacher shorts (New Kid in Town 2022, Bat Out of Hell 2025): confirmed solo Andrew, zero Lee involvement. Leaving them out of THIS wing is the correct default (wing spans Lee's works; these are not his), but the continued-universe question is genuinely the curator's - and recurs when Andrew publishes a solo novel."
+  - "Crossover novellas (Finder/Reichs/Slaughter): still parked pending a ruling on thin one-off co-author entities (completeness handoff)."
+  - "featured: the-sentinel is the byline-handover book, not an obvious breakout; defensible within the cap, but a curator could swap for a third debut/breakout."
+
+checked_clean:
+  - "Completeness/boundary: 31 novels, books 25-31 (the-sentinel 2020 -> chain-reaction 2026) all carry withAuthorIds:[andrew-child]/co-author. Boundary starts at book 25. Correct."
+  - "eras: [] - co-authorship-is-a-byline-not-a-period argument is sound and sourced; Reacher is one series (concurrent-series route N/A). Correct."
+  - "Spoilers: prequel framing (The Enemy/Secret/Night School/Affair) names no reveal in EN or pt-PT; all 9 spoilerAfter null on events/lifeEvents; none on synopses/notes."
+  - "Aura honesty: both dark runs closed (2008-2019, 2002-2006); no 5+ run; the 2 global includes (9/11, ebook-2007) both real and earned; adaptation arc high/med impact justified."
+  - "Covers: looked at 4 (first-thrills, killing-floor, the-secret, smile/Invisible Blood) - all correct book, no watermark/barcode/omnibus/ELT-reader/audio. images.cover IS consumed by app (lib/content/editions.ts:68) - not the King inert-field bug."
+  - "pt-PT: 8 editions real (Nunca Voltes Atras confirmed live on bertrandeditora.pt); prose is genuine European Portuguese, correct register, no leakage."
+  - "theme.yaml: displayFace sourceSerif + signature rule both resolve in lib/theme.ts; palette 5 keys; contrast re-derived (ink/bg 14.90, muted/surface 5.43, all text pairs >4.5:1 AA); accent hue 344 flare-red, bg/surface 0% sat (achromatic) - distinctness claim holds. NOTE: validate.py now DOES open theme.yaml (face/signature/art/contrast) - SKILL's coverage table is stale."
+  - "globalEvents: all 17 global events covered (2 include / 15 exclude), none missing, none over-reaching."
+  - "Seam - works added late: completeness ran 2nd (commit 2ae249b), BEFORE editions/covers/translation/spoiler, so the 23-works-unaudited failure did NOT recur; the 12 added works all carry editions/covers/pt-PT where applicable."
+
+could_not_verify_here:
+  - "web.archive.org is unfetchable from this environment, so the pt-PT edition ISBNs rest on prefix (PT), verify-isbns (0 suspect), structure, and one live cross-check (Nunca Voltes Atras) rather than re-opening each archive capture."
+  - "Cover/theme visual judgement is content-checked (fetched, looked at, hues computed), not layout-rendered; a browser render is a design question for the curator."
+
+gates:
+  validate: "green (--slug lee-child); no content edited this stage"
