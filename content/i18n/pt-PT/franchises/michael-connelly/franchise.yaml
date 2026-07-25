@@ -1,0 +1,92 @@
+# Overlay pt-PT. Apenas prosa; id, slugs, títulos de obras e sources não são
+# traduzidos.
+# Os startHere.paths ficam aninhados e são fundidos por id (ver SCHEMA.md,
+# "Nested lists merge by id"): só `title`, `description` e `note`, nunca
+# `workIds`, `orderId` ou `fit`.
+# Três obras desta franquia têm edição portuguesa publicada - The Brass
+# Verdict ("O Veredicto"), The Fifth Witness ("A Quinta Testemunha") e The
+# Waiting ("A Espera"), ver editions.yaml - mas nenhuma delas é citada neste
+# ficheiro. As obras aqui referidas (The Poet, Fair Warning) não têm edição
+# portuguesa registada, por isso os seus títulos ficam em inglês; as outras
+# duas referências a obras neste ficheiro já usam o nome da personagem, não o
+# título do livro, e não mudam.
+- id: michael-connelly
+  description: >
+    A obra de ficção completa e publicada de Michael Connelly: a série
+    policial da LAPD ainda em curso
+    [[work:michael-connelly/the-black-echo|Harry Bosch]] (1992-atualidade, 26
+    romances), os thrillers judiciais do advogado de defesa
+    [[work:michael-connelly/the-lincoln-lawyer|Mickey Haller]]
+    (2005-atualidade, 8 romances), o percurso próprio da detetive Renée
+    Ballard a par de mais cinco romances que partilha com Bosch, os três
+    romances do repórter de crime Jack McEvoy (entre
+    [[work:michael-connelly/the-poet|The Poet]] e
+    [[work:michael-connelly/fair-warning|Fair Warning]]), os dois do
+    perfilador do FBI Terry McCaleb, a nova série da ilha de Catalina que
+    apresenta o sargento-detetive Stilwell (2025-atualidade), dois thrillers
+    independentes, três coletâneas de ficção curta em ebook, e uma coletânea
+    de jornalismo policial do próprio Connelly. Todos os fios partilham uma só
+    Los Angeles e um elenco contínuo que atravessa todos eles.
+  startHere:
+    paths:
+      - id: everything-in-order
+        title: Tudo, por ordem
+        description: >
+          Todos os romances de Harry Bosch, do Lincoln Lawyer, de Renée
+          Ballard, de Jack McEvoy, de Terry McCaleb e da nova série de
+          Catalina, mais os dois independentes, por ordem de publicação.
+        note: >
+          Inclui também as três coletâneas de contos de Bosch só em ebook e a
+          coletânea de não-ficção Crime Beat, a par dos romances.
+
+      - id: start-with-bosch
+        title: Começar por Harry Bosch
+        description: >
+          A série original e o eixo por onde acabam por passar todos os
+          outros fios desta obra: a carreira de um detetive da LAPD, desde os
+          seus anos de novato veterano da Guerra do Vietname até uma reforma
+          que nunca aceita de todo.
+        note: >
+          Um compromisso longo, que continua a crescer para lá dos 26
+          romances - a recompensa é uma personagem que visivelmente envelhece
+          e muda ao longo de três décadas de casos, ao custo da estrutura mais
+          compacta das séries mais recentes.
+
+      - id: try-lincoln-lawyer
+        title: Experimentar o Lincoln Lawyer
+        description: >
+          A estreia solo de Mickey Haller: um advogado de defesa de Los
+          Angeles que gere o seu escritório no banco de trás de um carro com
+          motorista, num caso que se revela nada parecido com o pagamento
+          fácil que parecia.
+        note: >
+          Uma amostra segura por si só, mas o livro seguinte traz Harry Bosch
+          para o trabalho de Haller e revela como os dois homens estão
+          ligados um ao outro - se também pretende ler a série própria de
+          Bosch, decida em qual delas quer encontrar primeiro essa revelação.
+
+      - id: try-ballard
+        title: Experimentar Ballard
+        description: >
+          A estreia solo de Renée Ballard: uma detetive da LAPD exilada para o
+          turno noturno depois de uma queixa de assédio não ter dado em nada,
+          a trabalhar por conta própria em dois casos que se recusa a entregar
+          no fim do turno.
+        note: >
+          Uma amostra segura por si só, mas Ballard forma parceria com Harry
+          Bosch já a partir do livro seguinte, e os casos de ambos permanecem
+          ligados durante o resto do seu percurso - se também pretende ler a
+          série própria de Bosch, leia primeiro os seus romances a solo, para
+          não encontrar esse terreno já em curso.
+
+      - id: continue-into-bosch
+        title: Continuar para Bosch
+        description: >
+          Para quem já experimentou o Lincoln Lawyer ou Ballard e quer a
+          série em que ambos acabam por se fundir: os romances completos de
+          Harry Bosch, por ordem.
+        note: >
+          Two Kinds of Truth (2017) é o último romance de Bosch antes de o
+          fio de Ballard se juntar definitivamente ao dele; ler o percurso
+          próprio de Bosch desde o início mantém essa fusão na sua ordem
+          original, em vez de a encontrar já em curso.

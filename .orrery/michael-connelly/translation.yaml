@@ -1,0 +1,128 @@
+stage: translation
+summary: >
+  Wrote the complete pt-PT overlay for the wing: all six files (author bio +
+  9 lifeEvents, franchise description + 5 startHere paths, all 7 franchise
+  events, all 4 orders including their debated entries, all 6 characters,
+  and all 47 work synopses). Coverage went from 0/6 to 6/6 files fully
+  covered (catalogue-wide: pt-PT 96/110 -> 102/110). Translated the CURRENT,
+  spoiler-safe base prose exactly as spoiler-audit left it: the Bosch/Haller
+  half-brother tie and Bosch's Desert Star-era illness appear in no
+  translated string, and the-narrows synopsis keeps the widower's identity
+  unnamed. Register is European Portuguese throughout (estar a + infinitive,
+  ecrã, apartment/apartamento etc. checked against the skill's pt-PT/pt-BR
+  discriminator list); AO90 spelling used (batizado, ação, deteta-family
+  spellings) since the existing corpus in this locale gave no clear signal
+  either way. The three works with a published Portuguese edition (The Brass
+  Verdict / O Veredicto, The Fifth Witness / A Quinta Testemunha, The Waiting
+  / A Espera, per editions.yaml) use that title as the link display text
+  everywhere they are cited inline across all six files (5 inline citations
+  found and updated: 2 in events.yaml, 2 in orders.yaml, 1 in
+  franchise.yaml's own description has none of the three, so really: 2 in
+  events.yaml, 2 in orders.yaml - the-brass-verdict appears twice, in
+  lincoln-lawyer-in-order and jack-mcevoy-in-order's debated entry, plus
+  once in streaming-universe-expands-2022; the-fifth-witness once in
+  double-prize-year-2012; the-waiting once in renee-ballard-in-order). No
+  work synopsis in works.yaml itself links to any of the three. All other
+  work titles, including in the two pending/forthcoming works (Ironwood,
+  The Hollow), stay in English since no Portuguese edition exists for them.
+  characters.yaml overlay carries only `description`, matching the
+  established catalogue convention (karin-slaughter, tana-french): appearsIn
+  notes are never translated, including Terry McCaleb's gated The Narrows
+  row, which this overlay does not touch or reference. orders.yaml also
+  carries `debated` entries (prose, per SCHEMA.md's own comment on the
+  stephen-king example and per reading-orders' own handoff to this stage),
+  one level more than the bare task summary named but consistent with both
+  that handoff and precedent. validate.py --slug michael-connelly is clean
+  but for the pre-existing, expected missing theme.art (visual-language's,
+  untouched here). i18n_coverage.py shows the wing at full coverage and it
+  no longer appears in the missing or partial lists.
+produced:
+  files:
+    - content/i18n/pt-PT/authors/michael-connelly.yaml
+    - content/i18n/pt-PT/franchises/michael-connelly/franchise.yaml
+    - content/i18n/pt-PT/franchises/michael-connelly/events.yaml
+    - content/i18n/pt-PT/franchises/michael-connelly/orders.yaml
+    - content/i18n/pt-PT/franchises/michael-connelly/characters.yaml
+    - content/i18n/pt-PT/franchises/michael-connelly/works.yaml
+  coverageBefore: "pt-PT 96/110 files fully covered; all six michael-connelly files listed as MISSING (0 fields each)"
+  coverageAfter: "pt-PT 102/110 files fully covered; michael-connelly absent from both the MISSING and PARTIAL lists"
+  publishedTitlesUsedInline:
+    - "the-brass-verdict -> \"O Veredicto\": events.yaml (streaming-universe-expands-2022), orders.yaml (lincoln-lawyer-in-order rationale, jack-mcevoy-in-order debated)"
+    - "the-fifth-witness -> \"A Quinta Testemunha\": events.yaml (double-prize-year-2012)"
+    - "the-waiting -> \"A Espera\": orders.yaml (renee-ballard-in-order rationale)"
+  spoilerSafetyPreserved: >
+    No reveal reintroduced. mickey-haller.description, franchise.description,
+    the author bio, the lincoln-lawyer-film-2011 event, and the synopses of
+    the-reversal, the-crossing and resurrection-walk all translate the
+    REWORDED base strings (no half-brother clause, no "and illness"), not an
+    earlier fuller draft. the-narrows synopsis keeps the FBI-agent husband
+    unnamed, matching the base note's own restraint. characters.yaml adds no
+    appearsIn translation, so Terry McCaleb's spoilerAfter-gated The Narrows
+    row is untouched by this overlay entirely.
+  baseContentLeakNoted: >
+    Found the internal curator term "wing" leaking into three RENDERED base
+    fields (not introduced by this stage, pre-existing in the base English):
+    events.yaml's the-poet-breaks-the-bosch-mold-1996 description ("every
+    thread in this wing that isn't Bosch's"), franchise.yaml's start-with-
+    bosch path description ("every other thread in this wing eventually
+    crosses"), and characters.yaml's harry-bosch description (same phrase).
+    Translated naturally as "obra" (body of work) in all three pt-PT
+    strings rather than a literal "ala", since a reader-facing string should
+    read as a real sentence rather than surface an internal term. Left the
+    English base untouched (out of scope: overlays only, per this stage's
+    brief). The same leak recurs in other wings' base content (jo-nesbo's
+    orders.yaml rationale) as a pattern, not a michael-connelly-specific
+    issue.
+  quotedTitleEchoes: >
+    Two work synopses contain a lowercase quoted phrase that echoes another
+    (untranslated) work's own title rather than a formal work link: the-
+    proving-ground's "resurrection walk" (echoing Resurrection Walk) and
+    the-hollow's "the hollow" (echoing The Hollow itself). Neither carries a
+    published Portuguese edition, so both quoted phrases were left in
+    English rather than translated as ordinary prose, to avoid reading as an
+    invented Portuguese title for a book that doesn't have one.
+verification: >
+  This is a content-only repository (no app, no package.json) - there is no
+  running page to render and read in-locale. Verification here is
+  scripts/validate.py --slug michael-connelly (clean but for the
+  pre-existing missing theme.art) and scripts/i18n_coverage.py (wing at
+  full coverage, both before and after this stage's exact numbers stated
+  above), plus a structural check that every produced YAML file parses and
+  that no folded block scalar introduces a stray mid-word space (checked
+  for line-final hyphens before a folded line break; one was found in the
+  franchise.yaml description, "(2005-\natualidade" folding to "(2005-
+  atualidade" with an unwanted space, and rewrapped so the hyphenated
+  compound stays on one physical line).
+forStages:
+  wing-audit: >
+    All six pt-PT overlay files exist and are complete
+    (i18n_coverage.py confirms). validate.py --slug michael-connelly has one
+    remaining error, theme.art, unrelated to translation and owned by
+    visual-language. No base content file was modified by this stage.
+openQuestions:
+  - "AO90 spelling (batizado, ação, deteta-...) was used throughout because
+     the existing pt-PT corpus in this catalogue contains no clean
+     discriminator word (direção/direcção, receção/recepção,
+     ação/acção, aspeto/aspecto) to confirm which convention prior wings
+     followed; every occurrence checked resolved to a spelling identical
+     under both conventions. If the catalogue has a house convention on
+     this that predates this wing, a native reviewer should reconcile."
+  - "Two work synopses (the-proving-ground, the-hollow) keep a lowercase
+     quoted callback to another work's own English title (\"resurrection
+     walk\", \"the hollow\") rather than translating it as ordinary prose,
+     reasoning explained in produced.quotedTitleEchoes above. A native
+     reviewer might prefer these rendered fully in Portuguese since neither
+     is a formal [[work:...]] citation; flagging as a close call rather
+     than a settled one."
+  - "The base-content \"wing\" leak into three rendered English fields
+     (events.yaml, franchise.yaml, characters.yaml - see
+     produced.baseContentLeakNoted) is translated around here (as \"obra\")
+     but not fixed at the source, since this stage's brief is overlays
+     only. Worth a base-content pass across the catalogue at some point,
+     since the same pattern recurs in at least one other wing (jo-nesbo)."
+  - "orders.yaml's `debated` entries were translated even though the task's
+     own one-line file summary named only name+rationale, because SCHEMA.md's
+     own worked comment and the reading-orders stage's handoff to this stage
+     both name debated as translatable prose belonging to this overlay.
+     Flagging the discrepancy between the brief's shorthand and the fuller
+     spec/handoff, resolved in favour of the fuller spec."
