@@ -1,0 +1,92 @@
+stage: editions
+wing: lee-child
+summary: >
+  Wrote content/franchises/lee-child/editions.yaml from scratch (was
+  absent). 54 editions: 46 English across 45 of 46 works, 8 pt-PT across 7
+  of the 31 novels. validate.py green, 0 new warnings; --verify-isbns
+  lee-child reports 54 editions, 0 suspect. 0 duplicate ISBNs, 0 orphaned
+  workIds.
+
+tooling_fix: >
+  lookup.py's candidates() only ever called OpenLibrary, so --markets en,pt
+  returned 633 English candidates and 0 Portuguese, though Bertrand/WOOK/
+  AlmaDosLivros/Presenca were already registered providers, just never
+  wired into the wing sweep. Patched candidates() to call the market-
+  appropriate providers too, and fixed a latent MARKET_LANG case bug
+  ("pt-PT" in a lowercase-compared set), only visible once those providers
+  returned pt-PT-cased strings. Committed separately (fix(metadata): ...).
+  Bertrand and WOOK are both Cloudflare-challenge-blocked live (HTTP 403,
+  "Just a moment...") even with providers.py's documented browser UA - a
+  new, current negative worth a later re-check - so the fix alone still
+  returned little; the pt-PT data below is from web.archive.org captures
+  of the same JSON-LD product pages.
+
+pt_pt_coverage:
+  editions: 8
+  novels_covered: 7
+  fraction: "7 of 31 core novels"
+  titles:
+    - "lee-child/killing-floor -> \"Do Fundo do Abismo\" (Edições Asa, 2003) AND \"Dinheiro Sujo\" (Mill Books, 2008, retitled reissue of the same novel)"
+    - "lee-child/gone-tomorrow -> \"Amanhã Será Outro Dia\" (Livros d'Hoje, 2010)"
+    - "lee-child/61-hours -> \"Jack Reacher - 61 Horas\" (Edições Asa, 2012)"
+    - "lee-child/never-go-back -> \"Nunca Voltes Atrás\" (Bertrand Editora, 2015, confirmed EM STOCK live)"
+    - "lee-child/personal -> \"Uma Questão Pessoal\" (Bertrand Editora, 2016)"
+    - "lee-child/make-me -> \"Nem Morto!\" (Bertrand Editora, 2017)"
+    - "lee-child/night-school -> \"Escola da Noite\" (Bertrand Editora, 2018)"
+  why_it_stops: >
+    Three unrelated publishing efforts, not one program: Edições Asa
+    (2003-2012, two unrelated novels), two one-off retitled reissues (Mill
+    Books, Livros d'Hoje), and Bertrand's own 2015-2018 run. WOOK's and
+    Bertrand's own full "bibliografia" listings for Lee Child (read via
+    archive.org, sorted by edition date) show nothing published after
+    Escola da Noite (2018) - no pt-PT edition of The Midnight Line, Past
+    Tense, Blue Moon, or any co-authored novel from The Sentinel on, under
+    any title, on either site. Three of the seven pt-PT titles are non-
+    literal ("Do Fundo do Abismo", "Dinheiro Sujo", "Nem Morto!") and were
+    matched to their work by synopsis, per the skill's method.
+
+isbns_rejected: []
+  # None rejected. Every candidate considered either verified clean
+  # (54 kept) or was never a candidate in the first place (no invented or
+  # transcribed-wrong ISBN was found to reject).
+
+works_without_edition:
+  - id: lee-child/many-happy-returns
+    reason: >
+      Ran once in The Spectator (16 Dec 2023) and was never reprinted as a
+      standalone ebook, unlike its three siblings (Christmas Scorpion,
+      Smile, Fourth Man), each of which did get one. No ISBN or ASIN found
+      under any source checked. A magazine page, not a buyable object.
+
+decisions_for_curator:
+  - >
+    THE VISITOR / RUNNING BLIND: recorded as two English rows on the same
+    work (en for the UK title matching works.yaml exactly, en-US +
+    title:"Running Blind" for the US retitling), per SCHEMA's own en-GB/
+    en-US rule. No ruling needed, flagged only because it's the one work in
+    this wing that uses the mechanism.
+  - >
+    SMILE has no title field set on its lone English edition: the object's
+    real cover says "Invisible Blood" (Maxim Jakubowski's anthology), not
+    "Smile", and setting title to the anthology name risked being read as a
+    translated title of the work itself. Explained fully in the edition's
+    note instead. Flagging the judgment call rather than the data.
+  - >
+    A NEW WORK SURFACED, OUT OF SCOPE FOR THIS STAGE: "Crimebits: 100
+    Opening Gambits for Great Thrillers & Linked Mystery Puzzles" (Black
+    Spring Press, 2024), "Judged and Introduced by Lee Child and Luca
+    Veste" - a real, verifiable Child anthology-editor credit (Amazon,
+    Goodreads, blackspringpressgroup.com) with its own pt-PT edition
+    already found (Alma dos Livros, isbn13 9789895704682, Jun 2025). Not in
+    the 46-work completeness-auditor list, likely because it is a 2024 UK
+    release outside jackreacher.com's own bibliography page and Wikipedia's
+    Jack Reacher series article (the two sources that audit ran against).
+    Not added here per this skill's scope (touch editions.yaml only); a
+    completeness-auditor re-pass would need to rule on it and place it in
+    works.yaml before an edition could attach.
+
+gates:
+  validate: green, 0 new warnings attributable to content/franchises/lee-child/
+  verify_isbns: "54 editions, 0 suspect"
+  duplicate_isbns: 0
+  orphaned_workids: 0
