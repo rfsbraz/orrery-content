@@ -1,0 +1,45 @@
+stage: eras
+summary: >
+  RULING: McCarthy has a received two-part periodisation, and it clears the bar
+  at Rung 2 (critical/scholarly consensus). Built two sourced eras - The Tennessee
+  Period (1965-1979) and The Western Period (1985-2022). Not a coinage: the
+  division is named, under these terms, by a dedicated scholarly monograph and by
+  the standard reference work, with the boundary fixed to a biographical fact (the
+  1976 move from Tennessee to the Southwest; Blood Meridian, 1985, the first
+  Western novel). No third late period - the 2022 Passenger/Stella Maris duology
+  is a reviewer-described departure, not a named received periodisation, so it
+  sits inside the Western span. validate.py --slug cormac-mccarthy is clean bar
+  the expected missing theme.art; zero works fall outside a span (no orphans).
+produced:
+  eras:
+    - id: the-tennessee-period
+      period: "1965-1979"
+      provenance: critical
+      verdict: RECEIVED
+    - id: the-western-period
+      period: "1985-2022"
+      provenance: critical
+      verdict: RECEIVED
+sourcesChecked:
+  - "Rung 2 monograph: Dianne C. Luce, Reading the World: Cormac McCarthy's Tennessee Period (U South Carolina Press, 2009). Periodises the first four novels as McCarthy's Tennessee period, dated 1959-1979, Suttree its culmination. The King/Twayne model - a scholarly title that periodises in its own subtitle and names its boundary works."
+  - "Rung 2 reference work: The Cambridge Companion to Cormac McCarthy (ed. Steven Frye, Cambridge UP, 2013), built in parts Beginnings in the American South (chapters on McCarthy/Tennessee/Southern Gothic and the Tennessee Novels) and The Move Westward (chapters on McCarthy's Western Novels and The Border Trilogy/The Road/Cold War). The Road is filed under the post-move part, not a late one."
+  - "Press framing (The Week obituary and others): a shift in his focus from the rural South to the Southwest, with Blood Meridian the turn - the same two-phase division stated as common knowledge, without introducing it."
+  - "Biographical boundary (Wikipedia, cross-checked): raised in Tennessee; moved from Tennessee to El Paso in 1976; MacArthur Fellowship funded Southwest research into Blood Meridian (1985). Sources the START of the Western era as a fact, not a verdict."
+  - "Tested and REJECTED, a separate late period: reviews of the 2022 duology (Slate, NYT via search) call it a new era / a different direction steeped in physics and math, but that is described evolution, not a named received periodisation with sourced edges. Folded into the Western span, not coined."
+languagesSearched: >
+  English only. McCarthy is an anglophone US writer; the received corpus (Luce,
+  the Cambridge Companion, US/UK obituaries) is English, so this is the right
+  corpus rather than a gap.
+forStages:
+  visual-language: >
+    Two eras now exist and will render as full-bleed ENTERING <title> plates.
+    theme.yaml still has no art block (the one remaining validate error).
+  press-archaeology: >
+    The 1976 move to El Paso, the MacArthur Fellowship and Blood Meridian (1985)
+    are the Western era's spine and are the strongest lifeEvent anchors already
+    named in the bio handoff. The era boundary reads off them but does not need
+    them as content.
+openQuestions:
+  - "Boundary judgement call (era 2 END): the Western span runs to the last work (2022) with no invented internal boundary, but the Western label is a stretch for the non-Western late works it sweeps in (The Road, and especially the 2022 Passenger/Stella Maris duology and the Kekule essay). This follows the Cambridge Companion, which itself files The Road under The Move Westward, and is flagged in the era note. If a named received late period for the 2022 duology later surfaces, era 2 could be cut at The Road (2006) and a third added - at the cost of the Counselor/Kekule works then orphaning between."
+  - "Boundary judgement call (era 1 END): Luce dates the period 1959-1979; the app span opens at first publication (1965). Suttree (1979) is the sourced close (last Appalachian novel; the 1976 move precedes it because Suttree was ~20 years in the writing). The empty 1980-1984 gap before Blood Meridian orphans nothing."
+  - "Era 2 provenance is tagged critical on the Companion part structure and the press framing; there is no single Western Period monograph mirroring Luce's on the Tennessee side, so the Western name rests on the reference work plus universal press usage rather than one titular source. Solid, but a rung less concentrated than the Tennessee side."
