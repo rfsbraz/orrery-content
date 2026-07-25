@@ -1,0 +1,81 @@
+stage: visual-language
+wing: lee-child
+summary: >
+  Wrote content/franchises/lee-child/theme.yaml whole, since it did not
+  exist and franchise-research had only sketched a palette (which would
+  have hard-errored validate.py on its own): preset, palette, displayFace,
+  signature, notes, and the full art block in one pass. Also added the
+  missing themePreset: hitchhiker-noir to franchise.yaml, which every other
+  wing's franchise.yaml carries and lee-child's did not. validate.py
+  --slug lee-child and the full catalogue run both exit green (0 errors);
+  asset_audit.py lee-child reports art:yes and lists its 11 jobs.
+
+preset: hitchhiker-noir
+
+palette_decision: >
+  Refined rather than adopted verbatim. franchise-research's draft (asphalt
+  bg #17181a, highway-yellow accent #c9a227) collided on a whole-catalogue
+  check: the accent's hue (~46) sits inside the gold/amber band five other
+  wings already hold (Sanderson/Jordan, Peixoto, Pratchett, Butcher, hues
+  30-42) plus a sixth with Coben's bug-light yellow (hue 56, unmerged branch
+  wing/harlan-coben). The bg's hue (~220) sat in the blue-violet-grey band
+  six other wings already hold (Tordo, Palahniuk, Butcher, Sanderson,
+  Jordan, Pratchett, hues 204-267).
+
+  Final: bg/surface pushed to true achromatic neutral (#151515/#1c1c1c, 0%
+  saturation) - no hue family at all, unlike every other crime wing's
+  committed warm-brown/teal-green/peat-green/blue-white. Accent moved to a
+  deep flare-red at hue ~344 (#c62f57), the widest open gap on the whole
+  wheel, equidistant from Flynn's plum (318) and King's oxblood (11 via
+  wraparound). Contrast checked against validate.py's WCAG floor: ink/bg
+  14.9:1, ink/surface 13.9:1, muted/surface 5.4:1, muted/bg 5.8:1 (floor
+  4.5:1); accent/bg 3.4:1, in line with this catalogue's other accent-vs-bg
+  pairs (French 3.3, Tordo 3.2, King 3.5), since accent is one-element
+  marker use, never body text.
+
+displayFace: sourceSerif
+signature: rule
+
+emblem: >
+  A folding toothbrush, closed, alone on a bare surface (motel nightstand,
+  diner counter, depot bench) - Reacher's entire estate besides an ATM card
+  and an expired passport, a fact repeated across the character's own
+  profile since Killing Floor (1997). Not the road itself, which every
+  prose synopsis already leans on, and not the orrery motif (see below).
+
+distinctness_from_neighbours: >
+  Six crime wings exist already (Coben, Flynn, Connelly, Slaughter, French,
+  Nesbo). Each `lineCharacter` commits to one discipline that breaks in
+  exactly one place (Coben's treeline tangle, Connelly's smog-smudge,
+  Slaughter's humidity-blot, French's doubled contour, Nesbo's
+  ruled/freehand split). Lee Child's does the opposite on purpose: one
+  unvarying ballpoint-weight mark for road, counter, face and violence
+  alike, standing for Reacher's own unchanging method town to town. Paper
+  is also new to the catalogue: thin mass-market paperback stock rather
+  than case-file manila, peat, drafting paper or real-estate gloss -
+  matching how these books are actually sold and read.
+
+orrery_motif_placement: >
+  theme.art makes no mention of the shared orrery rings, correctly - per
+  VISUAL.md SS1a the motif is catalogue-wide, applied by the prompt writer
+  per asset, never authored into a wing's own art law. Recording it here so
+  the prompt-writing stage does not reach for the toothbrush emblem by
+  mistake (the exact bug that just broke Palahniuk and VHM): for THIS wing,
+  the rings belong in the open sky over the interstate - the
+  default carrier from VISUAL.md SS1a, and the natural fit for a wing whose
+  whole world is the road and the horizon. Vast, faint arcs spanning the
+  frame's full width, concentric with the horizon line, never a closed
+  ellipse or a small diagram. Where a scene has no sky (the diner interior,
+  the motel room, the police-station desk), the rings should move to
+  something the scene plausibly contains rather than the toothbrush -
+  concentric rings in a diner coffee cup's surface, ripples in a motel
+  pool, the tread pattern on a parked bus's tire - never onto the toothbrush
+  itself, which stays the emblem and nothing else.
+
+uncertainty: >
+  None on the gate (validate.py and asset_audit.py both confirm green /
+  art:yes). One open judgement for whoever writes the first prompt: the
+  emblem's own asset (an emblem-seal type, per docs/VISUAL.md SS3b, if the
+  wing gets one) will be the one image where the toothbrush is legitimately
+  the entire subject - that is expected and is not the same failure as
+  letting it stand in for the orrery motif elsewhere.
