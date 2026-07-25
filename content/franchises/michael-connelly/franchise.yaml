@@ -25,6 +25,26 @@ description: >
   one continuous cast that recurs across all of them.
 authorIds: [michael-connelly]
 themePreset: murder-book-noir
+globalEvents:
+  include:
+    - financial-crisis-2008  # The Fifth Witness is built on the foreclosure-defense beat during the 2008-11 mortgage crisis
+    - covid-19-pandemic-2020  # The Dark Hours is explicitly set during the pandemic, opening on New Year's Eve 2020
+  exclude:
+    - sept-11-2001  # lived through it; no Connelly novel directly addresses it as a central event
+    - world-war-i-1914  # predates his lifetime (born 1956)
+    - world-war-ii-1939  # predates his lifetime (born 1956)
+    - pulp-magazines-1926  # predates him; he is not a pulp writer
+    - penguin-paperback-1935  # shaped the publishing landscape he entered, not the books' content
+    - armed-services-editions-1943  # predates him; not a veteran
+    - lady-chatterley-trial-1960  # predates his publication; no resonance to crime/thriller writer
+    - fantasy-paperback-boom-1965  # Connelly writes crime/thriller, not fantasy
+    - carnation-revolution-1974  # Portuguese history; Connelly is American, LA-set books
+    - chain-bookshop-1982  # shaped retail landscape but not addressed in his books
+    - online-bookselling-1995  # shaped his career but not the books' content
+    - ebook-and-self-publishing-2007  # infrastructure that didn't reach the page
+    - prestige-fantasy-adaptation-2011  # Game of Thrones; Connelly writes crime/procedural, not fantasy
+    - booktok-2020  # shaped his book sales but not the books' content
+    - portugal-bailout-2011  # Portuguese history; American author
 
 # Capabilities auto-detect from the data (docs/SCHEMA.md). This wing earns a
 # real connections layer: characters.yaml carries the six-character

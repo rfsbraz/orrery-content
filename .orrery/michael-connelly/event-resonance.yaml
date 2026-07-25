@@ -1,0 +1,45 @@
+stage: event-resonance
+summary: >
+  Ruled globalEvents for the Michael Connelly wing against the 17-event shared
+  catalogue. Two global events directly reach his books: the 2008 financial
+  crisis (The Fifth Witness is built on the foreclosure-defense beat) and the
+  COVID-19 pandemic (The Dark Hours is explicitly set in it). Excluded 13 other
+  candidates: September 11 lived through but not addressed in the page, world
+  wars predate his lifetime, literary/cultural events (Chatterley trial,
+  fantasy-paperback-boom) with no resonance to a crime/thriller proceduralist,
+  regional history (Carnation Revolution, Portugal bailout), publishing
+  infrastructure events (pulp/paperback/chain-bookshop/online-selling/ebook)
+  that shaped his career but not his books' content, and social phenomena
+  (prestige fantasy adaptation, booktok) outside his genre and work. Per
+  SKILL.md: nothing rendered unless included; exclusions record covered ground
+  so a later pass does not re-litigate.
+produced:
+  included:
+    - financial-crisis-2008
+    - covid-19-pandemic-2020
+  excluded:
+    - sept-11-2001
+    - world-war-i-1914
+    - world-war-ii-1939
+    - pulp-magazines-1926
+    - penguin-paperback-1935
+    - armed-services-editions-1943
+    - lady-chatterley-trial-1960
+    - fantasy-paperback-boom-1965
+    - carnation-revolution-1974
+    - chain-bookshop-1982
+    - online-bookselling-1995
+    - ebook-and-self-publishing-2007
+    - prestige-fantasy-adaptation-2011
+    - booktok-2020
+    - portugal-bailout-2011
+forStages:
+  reading-orders: >
+    startHere configuration comes next; no globalEvents block changes from
+    reading-orders stage, so the include/exclude list stays stable.
+  visual-metadata: >
+    No aura changes from this stage; visual metadata runs independently on
+    works and author portrait.
+  spoiler-audit: >
+    No spoiler-tagged events added; no aura events are spoiler-gated.
+openQuestions: []
