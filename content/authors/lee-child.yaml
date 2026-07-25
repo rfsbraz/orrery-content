@@ -1,0 +1,88 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds), so the same person resolves the same everywhere.
+# Author-LIFE events live here (they follow the person); franchise-specific
+# events stay in content/franchises/lee-child/events.yaml.
+#
+# Living author (born 1954): the two anchors below are both already fully
+# public and heavily reported by the author himself and the trade press - the
+# pen-name/character-name origin story he tells in nearly every interview, and
+# the 2020 succession announcement that explains why this wing's byline
+# changes from book twenty-five on. Nothing about health, finances or family
+# beyond what he has volunteered in print is recorded here; that bar (two
+# independent sources, care about what a living person put in public himself)
+# belongs to a deeper pass than this one made.
+id: lee-child
+name: Lee Child
+aka: ["James Dover Grant", "Jim Grant"]
+born: 1954-10-29
+died: null
+bio: >
+  Pen name of James Dover Grant CBE, British author of the
+  [[franchise:lee-child|Jack Reacher]] thriller series. Born in Coventry,
+  England, and raised in Birmingham; read law at the University of Sheffield
+  without intending to practise. Spent 1977-1995 in British commercial
+  television at Granada, working on productions including Prime Suspect and
+  Cracker, before being made redundant in a corporate restructuring. Began
+  writing what became [[work:lee-child/killing-floor|Killing Floor]] the
+  month he learned his job was ending; its 1997 publication and the Reacher
+  series that followed made him one of the best-selling thriller writers in
+  English. Moved to the United States in 1998 and back to the United Kingdom
+  in 2025. Announced in January 2020 that he was retiring from writing the
+  series and handing it to his younger brother and fellow novelist Andrew
+  Grant, under the new pen name [[author:andrew-child|Andrew Child]]; the two
+  have co-written every Reacher novel since.
+pseudonyms: []
+images:
+  portrait: "https://commons.wikimedia.org/wiki/Special:FilePath/Lee_Child,_Bouchercon_2010.jpg"
+  portraitCredit: "Mark Coggins, CC BY 2.0"
+  portraitSource: "https://commons.wikimedia.org/wiki/File:Lee_Child,_Bouchercon_2010.jpg"
+lifeEvents:
+  - id: lee-child-names-origin
+    date: 1994
+    title: The pen name and the character's name, both family jokes
+    impact: low
+    description: >
+      Grant's pen name comes from a mispronunciation of Renault's "Le Car" as
+      "Lee Car," which became a running family joke; his daughter Ruth was
+      accordingly "Lee Child." Jack Reacher's name has a similar origin: while
+      grocery shopping with his wife Jane, who joked that his height meant he
+      could always find work as a "reacher" in a supermarket if the writing
+      didn't pan out.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Lee_Child
+  - id: lee-child-killing-floor-written-1994
+    date: 1994-09
+    title: Starts Killing Floor the month his job is eliminated
+    impact: high
+    description: >
+      Told in August 1994 that his television job was being eliminated in a
+      restructuring, Grant begins a novel that September, before the
+      redundancy takes effect the following June. The manuscript, reworked at
+      his agent's and publisher's suggestion from a story about drug money
+      into one about counterfeiting, becomes
+      [[work:lee-child/killing-floor|Killing Floor]] - published March 1997
+      and the start of the entire Reacher enterprise. He has since started
+      every new book in the series on the anniversary of that first one.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Lee_Child
+  - id: lee-child-hands-reacher-to-andrew-2020
+    date: 2020-01-18
+    title: Announces he is retiring and passing Reacher to his brother
+    impact: high
+    description: >
+      Grant announces he will retire from writing the Jack Reacher series and
+      hand it to his younger brother, novelist Andrew Grant, who will write
+      it under the new surname "Child." The two co-write the transition
+      novels together before a planned full handover. This is the reason
+      every Reacher novel from [[work:lee-child/the-sentinel|The Sentinel]]
+      (2020) onward carries two names on the cover rather than one.
+    spoilerAfter: null
+    sources:
+      - https://www.bbc.co.uk/news/entertainment-arts-51162838
+      - https://en.wikipedia.org/wiki/Lee_Child
+sources:
+  - https://en.wikipedia.org/wiki/Lee_Child
+  - https://en.wikipedia.org/wiki/Jack_Reacher
+  - https://www.leechild.com/

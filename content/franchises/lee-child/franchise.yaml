@@ -1,0 +1,71 @@
+# A wing spans an author's complete published work. Lee Child's is almost
+# entirely one thing - the Jack Reacher series, works.yaml's subseries "Jack
+# Reacher" - plus two short-fiction collections and one nonfiction essay
+# outside it. See works.yaml's header for how the short fiction is split
+# between the two collections and why several individual Reacher ebook
+# singles do not get their own entries.
+id: lee-child
+name: Lee Child
+kind: author
+description: >
+  The complete published work of Lee Child, pen name of James Dover Grant:
+  the ongoing [[work:lee-child/killing-floor|Jack Reacher]] thriller series
+  (1997-present, 31 novels), two collections of short fiction, and one
+  nonfiction essay on the hero archetype. Every novel from
+  [[work:lee-child/the-sentinel|The Sentinel]] (2020) onward is co-written
+  with his younger brother, novelist Andrew Grant, under Grant's own new pen
+  name [[author:andrew-child|Andrew Child]].
+authorIds: [lee-child, andrew-child]
+
+# Which shared global events actually reach this author (docs/SCHEMA.md).
+# Checked against the Jack Reacher character's own documented biography, not
+# assumed from Child's lifespan.
+globalEvents:
+  include:
+    - sept-11-2001  # Reacher's own post-2001 habits (an ATM card, an expired
+                     # passport, no more casual wire transfers) are stated
+                     # directly on his own Wikipedia page as a consequence of
+                     # the attacks and their aftermath - a rare case of a
+                     # global event reaching a character's daily life rather
+                     # than a book's plot.
+    - ebook-and-self-publishing-2007  # explains a real, unusual shape of this
+                     # shelf: from 2011 on Child released a run of Reacher
+                     # novellas and short stories as standalone ebook singles
+                     # between novels (Second Son, Deep Down, High Heat, Not a
+                     # Drill, Small Wars, Too Much Time), later gathered into
+                     # No Middle Name - a format that did not exist for the
+                     # first decade of the series.
+  # Considered and refused. Nothing renders unless it is in `include` above,
+  # so these change nothing; kept as the record of a judgement already made.
+  exclude:
+    - financial-crisis-2008        # published three novels across this window;
+                                    # no plot found that answers it directly
+    - covid-19-pandemic-2020       # The Sentinel published during the
+                                    # pandemic but its plot (a ransomware
+                                    # attack on a small town) does not
+                                    # reference it; checked the novel's own
+                                    # plot summary rather than assuming from
+                                    # publication timing
+    - world-war-i-1914             # predates his lifetime (born 1954)
+    - world-war-ii-1939             # predates his lifetime (born 1954)
+    - pulp-magazines-1926           # predates him; not a pulp writer
+    - penguin-paperback-1935        # predates him
+    - armed-services-editions-1943  # predates him
+    - lady-chatterley-trial-1960    # he was six years old; no resonance to a
+                                     # commercial thriller writer
+    - fantasy-paperback-boom-1965   # Child writes crime/thriller, not fantasy
+    - carnation-revolution-1974     # Portuguese history; Child is British
+    - chain-bookshop-1982           # shaped the retail landscape his books
+                                     # sold into, not addressed in them
+    - online-bookselling-1995       # coincided with his career's start but
+                                     # not addressed in the books' content
+    - prestige-fantasy-adaptation-2011  # Game of Thrones; not his genre
+    - booktok-2020                  # a video-discovery phenomenon that shaped
+                                     # backlist sales, not the books
+    - portugal-bailout-2011         # Portuguese national crisis; unrelated
+
+sources:
+  - https://en.wikipedia.org/wiki/Lee_Child
+  - https://en.wikipedia.org/wiki/Jack_Reacher
+  - https://en.wikipedia.org/wiki/Andrew_Child
+  - https://www.leechild.com/
