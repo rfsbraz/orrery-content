@@ -1,5 +1,5 @@
 # A wing spans an author's complete published work, not the character or
-# series they are best known for (curator ruling, 2026-07-21). Coben's shelf
+# series they are best known for (the standing rule for every wing). Coben's shelf
 # is dominated by volume, not by one series: 18
 # standalone thrillers outnumber every subseries, so the derived default
 # order (publication-chronological, works.yaml) reads mostly as standalones
@@ -10,10 +10,9 @@
 # wing (works.yaml's header has the sourcing).
 #
 # Capabilities are auto-detected from what the data provides (docs/SCHEMA.md)
-# and none is forced here. Nothing activates yet: no events.yaml, so river
-# and companion stay off; no startHere, so the wizard stays off; no
-# editions.yaml, so editions stays off. All four are open for later stages
-# once their inputs exist - none is refused.
+# and none is forced here. All four activate on their own inputs: events.yaml
+# (11 franchise events) powers river and companion, the startHere block below
+# powers the wizard, and editions.yaml powers editions.
 id: harlan-coben
 name: Harlan Coben
 kind: author
