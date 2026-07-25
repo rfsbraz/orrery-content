@@ -1,0 +1,179 @@
+stage: spoiler-audit
+summary: >
+  Audited the whole wing (works, orders, franchise incl. startHere + the one
+  globalEvents include, events, eras, author bio + lifeEvents) against the
+  publisher test and the load-bearing/incidental split. One real vector found
+  and reworded: the Mickey-trilogy / Live-Wire cross-resolution, which the
+  reading-orders stage flagged and had already half-defused. It appeared in two
+  ungated prose fields (orders.yaml mickey rationale + franchise.yaml
+  mickey-bolitar-ya startHere note), each telegraphing a shared "mystery" that
+  "resolves" - the exact late-payoff telegraph the skill warns against for order
+  prose. Reworded both to name the overlap and the reading-order guidance
+  without announcing a shared reveal. No gates set: none was possible
+  (everything at issue is ungated prose) and none was needed on the gated
+  entities (all 11 events + 4 lifeEvents are publication/adaptation/biographical
+  facts, correctly spoilerAfter: null). validate.py --slug harlan-coben GREEN,
+  0 new warnings (3 pre-existing, all out of scope).
+
+gatedFieldsConfirmed: >
+  Verified against docs/SCHEMA.md "Spoilers": spoilerAfter is honoured ONLY on
+  events (franchise events.yaml + global.yaml) and authors[].lifeEvents.
+  Synopses, order rationales/debated, era descriptions, franchise/startHere
+  descriptions + notes are ungated prose shipped to every reader - the only
+  lever there is the words. Grepped the wing: all 15 spoilerAfter fields (11
+  events, 4 lifeEvents) are null; zero spoilerAfter decoration on works, orders
+  or eras (the silent-failure trap - none present).
+
+spoilersFound:
+  loadBearing:
+    - id: mickey-livewire-cross-resolution
+      whatItIs: >
+        The Mickey Bolitar trilogy (Shelter/Seconds Away/Found) and the Myron
+        novel Live Wire (2011) resolve the same secret from opposite sides:
+        Mickey's father Brad "died in a car accident" before Shelter opens and
+        the trilogy runs on whether he is really dead (Bat Lady: "your father is
+        possibly still alive"), while Live Wire is Myron hunting his missing
+        brother Brad and sister-in-law Kitty and settles Brad's fate. Reading
+        either thread's end spoils the other's central question. A survival/death
+        reveal - load-bearing by the skill's list.
+      verifiedAgainst: >
+        Wikipedia plot summaries for both novels (Shelter: father "possibly
+        still alive, even though Mickey saw him die in a car accident"; Live
+        Wire: Myron "races to locate his missing brother" Brad, with Kitty).
+        Ruled from the plots, not from memory.
+      whereItLived: two ungated prose fields (below)
+      action: reworded in both places (no gate possible - ungated prose)
+      wasTheRevealEverStated: >
+        No. Neither field named Brad, said he dies, or said the father is
+        alive/dead. The leak was by framing: "the trilogy's own family mystery
+        runs alongside the one Myron investigates in Live Wire ... reading one
+        thread's ending before starting the other means already knowing how that
+        mystery resolves." That clause announces a shared reveal exists and
+        cross-resolves - which, next to Shelter's "reeling from his father's
+        death" premise, primes a sharp reader that the death is in question.
+        Telegraphing a late payoff is itself a spoiler (skill, order-rationale
+        section).
+
+reworded:
+  - file: content/franchises/harlan-coben/orders.yaml
+    field: orders[harlan-coben/mickey-bolitar].rationale (last sentence)
+    from: >
+      "Naming the real cost: the trilogy's own family mystery runs alongside the
+      one Myron investigates in his tenth novel, Live Wire (2011), so reading
+      one thread's ending before starting the other means already knowing how
+      that mystery resolves."
+    to: >
+      "Naming the real cost: this thread is woven into the wider Bolitar
+      chronology rather than sealed off from it, overlapping Myron's tenth
+      novel, Live Wire (2011), in family and timeframe, so a reader who means to
+      follow both is best served reading them close together, where the
+      connection between them stays legible, rather than a decade apart on the
+      shelf."
+    why: >
+      Keeps the genuine reading-order guidance (the thread is embedded, not
+      isolated; the overlapping book is Live Wire; read close together) and the
+      symmetry with the Myron order's own named cost, while dropping the
+      "mystery ... resolves" payoff telegraph. Live Wire stays named: that the
+      two threads share the Bolitar family and the same period is derivable from
+      two jackets (Shelter: Mickey is "nephew" of Myron; Live Wire: Myron's
+      missing brother) and is not itself the reveal. The reveal is Brad's fate,
+      which neither version states.
+  - file: content/franchises/harlan-coben/franchise.yaml
+    field: startHere.paths[mickey-bolitar-ya].note
+    from: >
+      "The trilogy's own family mystery runs alongside the one Myron
+      investigates in his tenth novel, Live Wire (2011); reading one thread's
+      ending before starting the other means already knowing how that mystery
+      resolves."
+    to: >
+      "The trilogy is woven into the wider Bolitar chronology, overlapping
+      Myron's tenth novel, Live Wire (2011), in family and timeframe; reading
+      both close together keeps the connection between them legible, where years
+      apart on the shelf would lose it."
+    why: same as above; the two fields carried near-identical wording and were fixed identically.
+
+liveWireMickeyVerdict: >
+  Real cross-spoiler, correctly identified by reading-orders; the reveal was
+  never stated outright, only telegraphed. Fixed by rewording both prose fields,
+  not by a gate. A gate is impossible here (order rationale and startHere note
+  are ungated) and would be the wrong tool even if possible: the fix a reader
+  needs is a sentence that guides without announcing a payoff, which the rewrite
+  gives. The gated entities that touch this thread (Live Wire's own franchise
+  event coben-live-wire-rba-prize-2010, and no lifeEvent) carry no plot and stay
+  null. Live Wire's and Shelter's own synopses were checked and left: Live Wire
+  states only the setup (missing brother/sister-in-law), Shelter states the
+  father's death as settled premise and does not even surface the "possibly
+  alive" hook - both are premise/jacket-level, not the resolution.
+
+checkedNotASpoiler:
+  - item: 'The "supposedly dead person is alive" synopses (Coben''s signature hook)'
+    ruling: >
+      Deal Breaker (Christian's "supposedly dead ex-girlfriend"), Tell No One
+      (anonymous email; the published "dead wife may be alive" premise is not
+      even surfaced), Gone for Good (brother "presumed a killer, is still
+      alive"), Six Years (the widow "is a stranger"), Missing You, The Innocent,
+      Think Twice (Greg Downing "is alive"), Nobody's Fool (girlfriend "alive at
+      the back of his classroom"), I Will Find You (son "may still be alive") -
+      every one states the inciting incident / first-act premise, which is what
+      the jackets sell. None states a late-book turn. Incidental, left as written.
+  - item: Think Twice premise vs earlier Greg Downing books
+    ruling: >
+      "Greg is alive" is Think Twice's own hook; Greg's death is its own backstory
+      (three years prior, no intervening Myron novel). Greg vanishes-and-is-found
+      alive in Fade Away (1996), so Think Twice's premise spoils no earlier
+      ending. Left as written.
+  - item: startHere fool-me-once description ("nanny-cam, is-he-really-dead twist")
+    ruling: >
+      Describes Fool Me Once's own premise (Maya's nanny-cam shows her murdered
+      husband) - the jacket hook, matching the works.yaml synopsis. Not the
+      resolution. Left.
+  - item: franchise globalEvents sept-11 include comment ("Ali Wilder is a 9/11 widow ... black site")
+    ruling: >
+      A YAML comment (does not render) and, in any case, Long Lost character
+      backstory / setup, not a reveal. The rendered global event
+      (sept-11-2001) carries only a franchise-agnostic description with no Coben
+      plot. Left.
+  - item: events.yaml + author lifeEvents (15 gated entities)
+    ruling: >
+      All publication, award, adaptation, or biographical facts (Netflix deal,
+      Cesars sweep, RBA prize, father's death, triple-award, daughter's
+      screenwriting). None reveals a plot point; all correctly null. Publication
+      facts are never gated (skill). Left.
+  - item: eras.yaml
+    ruling: 'Empty ([]) - nothing to audit.'
+
+unsureRedactions: >
+  None. Nothing was gated, and the two rewrites remove a telegraph rather than
+  suppress a fact a reader is entitled to, so there is no over-redaction for a
+  curator to loosen. If a curator judges the rewrites over-cautious, the loosest
+  defensible version still must not restore the "mystery ... resolves" framing;
+  the safe direction to loosen is naming the two books as connected (already
+  kept), never naming that the connection is a resolved secret.
+
+engineLimits: >
+  None hit. Everything at issue was ungated prose, where the engine offers no
+  boundary by design and rewriting is the only remedy - which is what was done.
+
+gates:
+  validate: >
+    python scripts/validate.py --slug harlan-coben - GREEN (715 works, all
+    references resolve). 3 warnings, all pre-existing and out of scope: 2 handoff
+    word-count soft caps (completeness-auditor, press-archaeology), 1
+    franchise.yaml line-2 "curator ruling" comment already flagged out of scope
+    by completeness-auditor. 0 new warnings from this stage (baseline was 3 per
+    event-resonance and reading-orders handoffs; still 3).
+  i18n: >
+    No content/i18n/**/harlan-coben overlay exists (translation has not reached
+    this wing; confirmed by find). The two prose rewrites therefore strand no
+    locale string - there is nothing to mirror and no coverage regression is
+    possible. When translation runs, it will pick up the reworded English as the
+    base, so no pre-emptive overlay work is owed.
+
+forStages:
+  translation: >
+    orders.yaml mickey rationale and franchise.yaml mickey-bolitar-ya note were
+    reworded this stage; translate the current English, not any earlier draft.
+    The spoiler-safe invariant to preserve in pt-PT and every locale: the Mickey
+    thread and Live Wire may be named as connected/overlapping, but the shared
+    secret must never be framed as "a mystery that resolves" or as cross-spoiling
+    - the reveal (Brad's fate) is never stated in any language.
