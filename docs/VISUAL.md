@@ -25,6 +25,30 @@ Every sketch in the catalogue carries the same mark - **concentric orbital
 rings with small nodes riding on them** - and that shared mark is what makes a
 Pratchett sketch and a Mãe sketch read as one publication.
 
+**The motif is the rings, on every wing, and never the wing's own emblem.**
+This is the failure that quietly wastes generations. A wing's `theme.art`
+`emblem` (Palahniuk's safety pictogram, Butcher's hand lantern) is a *different*
+mark - the wing's own identity, not the shared one. The orrery motif is the
+concentric rings and nothing else. A prompt that says *"the orrery motif is the
+wing's [pictogram / lantern / stamp]"* has thrown the rings away: the image then
+carries a wing-specific glyph and no shared mark at all, so it fails to appear
+as the orrery *because it was never asked for*, and re-rolling the same prompt
+cannot summon a thing the words do not name. The emblem and the orrery motif are
+**two separate paragraphs** in a prompt, never merged.
+
+**The rings are decided per image, not per wing.** There is no per-author ring
+treatment and none belongs in `theme.art` - the mark is universal and the same
+everywhere. Add it as the **last step, after the image concept is fully
+described**: for this one image, pick an off-centre place the rings can sit that
+the scene plausibly allows, drawn in the same line and weight as the rest of
+that drawing so they read as part of the picture rather than pasted on. **Vary
+the placement from every other image in the wing** - a different spot and a
+different carrier each time - so the mark never hardens into a logo. That
+per-image invention is the whole creative task: the rings never change, only
+where and how they are found. (So Palahniuk's rings might be a photocopied
+ring-diagram taped to a wall in one sketch and faint arcs over a rooftop in the
+next - decided by the scene, not fixed by the wing.)
+
 **It is an afterthought, and it should feel like one.** The reader meets the
 scene first. Somewhere after that, they notice the rings and think *oh, that's
 fun*. That reaction is the whole specification. If the motif is the first thing

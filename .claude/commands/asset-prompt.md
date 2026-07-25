@@ -152,10 +152,14 @@ Always all six, in this order:
    (`organisation`, `illustration_type`, `images_required`, any `modifier`) - the
    app and the validator read them there; the issue line is for the rotation
    tracker.
-2. **The prompt** - one block, ready to paste, no commentary inside it. It must
-   contain the orrery motif as its **own paragraph** (VISUAL.md §1a - a clause
-   bolted onto another sentence is what produces a tangled, illegible motif),
-   and it must end with the **technical block** (§5b): exact pixel dimensions,
+2. **The prompt** - one block, ready to paste, no commentary inside it. Describe
+   the whole image concept first; then, as the **last** creative step, add the
+   **orrery motif** as its own paragraph (VISUAL.md §1a): the universal
+   concentric rings - **never this wing's emblem** - dropped into an off-centre
+   spot the finished scene allows, in a carrier you have not used elsewhere in
+   this wing (vary it every time). A clause bolted onto another sentence, or the
+   wing's emblem borrowed in its place, is what makes the motif tangle or vanish.
+   It must end with the **technical block** (§5b): exact pixel dimensions,
    a flat fully-saturated magenta `#FF00FF` background to be keyed out later
    (never ask for transparency - it does not survive the download, and the
    parameter knocks out light regions inside the drawing), an explicit ban on
