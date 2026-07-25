@@ -1,0 +1,107 @@
+name: Pacing gate
+
+# A content PR that leaves a wing's river unpaced must not merge. Each event's
+# `organisation` defaults to `beside` when unset, so an ungraded wing renders a
+# flat wall of identical cells; the `art-rotation` stage grades them into a
+# loud/mid/quiet contour. This is the BLOCKING counterpart to the advisory
+# art-review comment: it fails the check (and adds a `pacing:failing` label) when
+# any touched wing has organisation-rotation or pacing problems, and clears both
+# when they are fixed.
+#
+# A failing GitHub check is what actually blocks a merge - a label alone does
+# not. So make "Pacing gate / pacing" a REQUIRED status check in this repo's
+# branch protection for the block to take effect; the label is the visible signal
+# beside it.
+#
+# It gates ONLY the organisation-rotation and pacing axes of `art_rotation.py
+# --check`, NOT its third, composition axis ("N assets with no issue"), which
+# counts the GitHub art issues that only exist after merge and would otherwise
+# fail every pre-art wing.
+on:
+  pull_request:
+    paths:
+      - "content/franchises/**"
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: pacing-gate-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  pacing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet pyyaml
+
+      - name: Which wings did this PR touch?
+        id: scope
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          wings=$(git diff --name-only "$BASE" "$HEAD" \
+            | sed -n -E 's#^content/franchises/([^/]+)/.*#\1#p' | sort -u | tr '\n' ' ')
+          echo "wings=${wings}" >> "$GITHUB_OUTPUT"
+          echo "Wings touched: ${wings:-(none)}"
+
+      - name: Check pacing per wing
+        id: check
+        if: steps.scope.outputs.wings != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORRERY_CONTENT_REPO: ${{ github.repository }}
+          WINGS: ${{ steps.scope.outputs.wings }}
+        run: |
+          set -uo pipefail
+          failed=""
+          echo "### Pacing gate" >> "$GITHUB_STEP_SUMMARY"
+          for w in $WINGS; do
+            [ -d "content/franchises/$w" ] || continue
+            out=$(python scripts/art_rotation.py --check "$w" 2>&1 || true)
+            # Read the two axes we gate on, NOT the composition axis.
+            orgp=$(printf '%s\n' "$out" | grep -oE '[0-9]+ organisation-rotation problem' | grep -oE '^[0-9]+' | head -1 || echo 0)
+            pacep=$(printf '%s\n' "$out" | grep -oE '[0-9]+ pacing problem' | grep -oE '^[0-9]+' | head -1 || echo 0)
+            orgp=${orgp:-0}; pacep=${pacep:-0}
+            echo "- \`$w\`: ${orgp} organisation-rotation, ${pacep} pacing problem(s)" >> "$GITHUB_STEP_SUMMARY"
+            if [ "$orgp" -gt 0 ] || [ "$pacep" -gt 0 ]; then
+              failed="${failed}${w} "
+            fi
+          done
+          echo "failed=${failed}" >> "$GITHUB_OUTPUT"
+
+      - name: Ensure the label exists
+        if: steps.scope.outputs.wings != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh label create "pacing:failing" --repo "$REPO" --force \
+            --color "B60205" --description "A touched wing's river is unpaced (run art-rotation) - blocks merge"
+
+      - name: Label and gate
+        if: steps.scope.outputs.wings != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+          FAILED: ${{ steps.check.outputs.failed }}
+        run: |
+          set -euo pipefail
+          if [ -n "${FAILED// /}" ]; then
+            gh issue edit "$PR" --repo "$REPO" --add-label "pacing:failing" || true
+            echo "::error title=Pacing gate failed::Unpaced wing(s): ${FAILED}. Run the art-rotation stage (give each event an organisation), then: python scripts/art_rotation.py --check <slug>"
+            exit 1
+          fi
+          gh issue edit "$PR" --repo "$REPO" --remove-label "pacing:failing" || true
+          echo "All touched wings paced." >> "$GITHUB_STEP_SUMMARY"
