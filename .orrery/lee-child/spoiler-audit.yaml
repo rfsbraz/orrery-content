@@ -1,0 +1,92 @@
+stage: spoiler-audit
+wing: lee-child
+summary: >
+  Audited the whole wing (46 works, 2 orders, 3 startHere paths, 5 franchise
+  events, 4 author lifeEvents, the 2 included global events, eras=[]). Found
+  zero load-bearing spoilers in any field, gated or ungated. No content
+  changed: nothing rewritten, nothing gated, no existing boundary loosened
+  (there were none to loosen). validate.py --slug lee-child GREEN, all
+  references resolve, no new warnings added.
+
+what_has_a_gate:
+  spoilerAfter_present_on:
+    - "5 franchise events (events.yaml) - all spoilerAfter: null"
+    - "4 author lifeEvents (authors/lee-child.yaml) - all spoilerAfter: null"
+  decoration_check: >
+    Grepped every spoilerAfter in the wing. All 9 sit on events/lifeEvents
+    (the only two fields the app honours) and all are null. Zero spoilerAfter
+    found on any synopsis/rationale/description - so no decoration hiding an
+    open spoiler, the silent-failure vector the skill warns about is absent.
+
+chronological_order_prequel_verdict: PASS_no_change
+chronological_order_detail: >
+  orders.yaml rationale, the startHere `chronological` note, and `debated`
+  all frame the in-universe order as a reread / second-pass / completionist
+  arrangement and steer first-time readers to publication order explicitly
+  ("Every guide consulted... still steers a first-time reader to publication
+  order"; startHere note: "Not the recommended way in... Read publication
+  order first"). The strongest sentence - the four prequels were "written well
+  after, and with full knowledge of, everything that follows them, so reading
+  them first means meeting Reacher's recurring circle of colleagues already
+  shaped by a story this order has not gotten to yet" - names NO specific
+  reveal: no character, no fate, no event, no culprit. It states only the
+  generic prequels-written-late property, which is the honest reason the order
+  is a reread. Safe as written; nothing to reword or gate.
+
+synopses_verdict: all_premise_only_clean
+synopses_detail: >
+  Every synopsis gives the setup Reacher walks into and stops there. None
+  names a culprit, a death, a twist identity, or an ending. Spot-checked the
+  famous twist-terminal ones from memory (Killing Floor - victim not named;
+  One Shot, The Visitor, Make Me, Persuader, 61 Hours cliffhanger, Worth Dying
+  For - none resolve their reveal) and confirmed all read premise-only.
+
+publisher_copy_verified:
+  - "The Secret: synopsis says 'cover-up rooted in a shelved military project'.
+     Checked Penguin/Delacorte jacket copy - it foregrounds 'a long-classified
+     mission' and deaths that 'could be accidents' investigated by an
+     interagency task force. Our line is at or below jacket level. Not a
+     spoiler, left as-is."
+  - "The Hard Way: synopsis says 'a case built on more lies than he expected'.
+     Checked - the jacket sells a kidnap/ransom setup where 'nothing is
+     simple'. Our clause is a generic hook matching jacket framing, reveals no
+     specific twist (not the staged-kidnapping reveal). Left as-is; redacting a
+     jacket-level hook would be the over-redaction failure. Recorded as a
+     deliberate keep, loosenable is moot (nothing gated)."
+
+events_and_bio_verdict: clean
+events_and_bio_detail: >
+  All 5 franchise events are film/adaptation/award industry+culture items with
+  no novel plot content. Both included global events (sept-11-2001,
+  ebook-and-self-publishing-2007) are generic cultural/industry backdrops, no
+  Reacher plot. Author bios and all 4 lifeEvents are biographical (pen-name
+  origin, 1994 redundancy, CWA Diamond Dagger, 2020 succession) - no plot
+  spoilers. andrew-child.yaml is a thin stub, clean.
+
+reworded_vs_gated:
+  reworded: []
+  gated: []
+  deleted: []
+  loosened: []
+
+unsure_redacted: []
+notes_unsure: >
+  Nothing was redacted, so nothing is flagged loosenable. The one judgement
+  that could go either way (The Hard Way's "more lies than he expected") was
+  kept, not gated - it mirrors jacket framing and the asymmetry does not
+  license greying out a jacket-level hook.
+
+i18n: >
+  No prose changed, so no locale strings invalidated. Wing carries 0% pt-PT
+  already (per completeness-auditor); nothing to mirror. No coverage delta.
+
+engine_limits_hit: none
+
+gates:
+  validate: "green, --slug lee-child; all references resolve; the 4 warnings
+    shown are pre-existing handoff-length ones on other stages
+    (completeness-auditor, eras, event-resonance, press-archaeology), not
+    introduced here"
+  pt-PT_overlay: "not applicable - no rewrites this stage"
+
+open_questions_for_curator: []
