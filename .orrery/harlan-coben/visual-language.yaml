@@ -1,0 +1,81 @@
+stage: visual-language
+summary: >
+  content/franchises/harlan-coben/theme.yaml written from scratch (did not
+  exist before this stage). Full file in one pass: palette, displayFace,
+  signature and the complete art block, since validate.py hard-errors a
+  theme.yaml carrying palette without a full art block. preset matches
+  franchise.yaml's themePreset: cul-de-sac-noir. validate.py green
+  (0 errors, no new warnings); asset_audit.py now reports art:yes and lists
+  16 jobs (4 life events, 11 franchise events, 1 world event) that were
+  previously blocked with no visual law to draw against.
+paletteRevisedFromHandoff: >
+  franchise-research.yaml's drafted palette (bg #12181d, surface #1b2329,
+  accent #d99a3d "warm porch-light amber") was checked against every shipped
+  wing rather than adopted directly, and two collisions surfaced. The accent
+  sat a few hex digits from Jim Butcher's own "warm sodium-amber - streetlamp
+  glow" (#d98a3d) - this catalogue's other after-dark-artificial-light
+  accent, the same idea besides - and gold/brass already belongs to four
+  wings (Sanderson, Jordan, Peixoto, Pratchett). The bg/surface pair sat
+  almost on top of Joao Tordo's Atlantic blue-grey (bg #141a1e, surface
+  #1b232a - within one or two hex digits per channel) and, more loosely,
+  Chuck Palahniuk's cold clinical blue-grey. Both are replaced: bg/surface
+  move to a cool, low-chroma teal-grey no wing claims (French's peaty
+  green-grey and Tordo/Palahniuk's blue-grey both sit fifty-plus degrees of
+  hue away), and the accent moves to a cul-de-sac bug-light yellow (the
+  actual yellow bulb sold to keep moths off a suburban porch, distinct in
+  both hue and idea from Butcher's streetlamp glow). displayFace
+  (sourceSerif) and signature (beam) are kept from the handoff and argued in
+  the file's own comments. All four contrast pairs (ink/bg, ink/surface,
+  muted/surface, muted/bg) pass WCAG AA, checked with validate.py's own
+  contrast() function before writing.
+emblem: >
+  A basketball hoop and backboard bolted above a closed garage door, empty
+  driveway, faded net, no ball, no house front. Carries both halves of the
+  bibliography at once: Myron Bolitar's founding wound (drafted first round,
+  eighth overall, by the Boston Celtics; career-ending knee injury in a
+  preseason game, verified against Wikipedia's Myron Bolitar series page)
+  and the single most ordinary marker of the good suburban house the
+  eighteen standalone thrillers keep opening on before it turns out to hide
+  a disappearance.
+artLawCore: >
+  Line character is the load-bearing decision: a fine, even-weight technical
+  (drafting-pen) line held disciplined for everything tended, mown or built
+  - lawns, siding, driveways, hedges - and let come apart in exactly one
+  place per image, the treeline or hedge gap where the tended yard meets
+  what borders it, tangling into a dense overworked scribble there and
+  nowhere else. This is a located failure of discipline, not a second
+  register scattered through the frame the way Nesbo's ruled/freehand split
+  or Connelly's procedural/haze split work - it is keyed to one
+  compositional location (the boundary), which is the point: the shelf is
+  eighteen ordinary lives that hold together until one edge doesn't.
+  Backgrounds are smooth, evenly-toned stock with almost no grain or foxing
+  - a real-estate-listing or HOA-newsletter cleanliness - the one crime wing
+  whose paper is too clean for its subject, deliberately unlike every
+  neighbour's aged/damp/humid paper.
+distinguishedFromNeighbours: >
+  Against Gillian Flynn (bone-dry ballpoint, flat Midwest farmland
+  daylight): Coben is dense inner-ring NJ commuter suburb, not open
+  farmland, and the line is technical-precise/breaks-at-the-edge rather than
+  uniformly clinical throughout. Against Michael Connelly and Karin
+  Slaughter (each a single instrument with one register loosening for
+  atmosphere): Coben's discipline-break is keyed to a location in the
+  composition, not a subject category. Against Tana French (doubled
+  dry-point scratch): no doubling, no incising, a level technical line
+  instead. Against Jim Butcher, the closest register (ordinary contemporary
+  world, one thing wrong in it, and until this pass a near-identical
+  after-dark amber accent): the accent and background both moved off his
+  claimed hues, and the line moves from his flat chiaroscuro ink-pool
+  boundary to a controlled/breaks-at-the-treeline technical line.
+uncertain:
+  - "The teal-grey bg and bug-light-yellow accent are my own hue-distance
+     judgement calls (checked against every wing's palette computationally,
+     not just by eye) rather than a received, externally-sourced design
+     consensus - a curator with the app open may want to see it rendered
+     before treating it as final."
+  - "signature: beam is inherited from the handoff. It is the one crime wing
+     in the catalogue not using `thread`, on the reasoning that the
+     eighteen standalones share no recurring cast to hang a hairline on -
+     worth a second look if a future stage's reading-orders or
+     event-resonance work turns up a stronger connective structure than the
+     five character subseries already known."
+gate: "python scripts/validate.py green (0 errors); python scripts/asset_audit.py harlan-coben reports art:yes and 16 jobs."
