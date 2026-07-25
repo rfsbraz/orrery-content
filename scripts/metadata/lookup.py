@@ -34,8 +34,26 @@ import yaml  # noqa: E402
 from core import ROOT, MetaRecord, isbn13_ok, region_of  # noqa: E402
 from providers import ALL, BY_NAME, OpenLibrary  # noqa: E402
 
+# Lowercase throughout: values are compared against a lowered candidate
+# language, and "pt-PT" (mixed case, as the Portuguese shop providers return
+# it) would never match a set holding "pt-PT" unlowered against a lowered
+# lookup key. Caught only once the shop providers below were wired in - the
+# OpenLibrary-only sweep this replaced never surfaced pt-PT-cased strings, so
+# the bug was latent rather than visible.
 MARKET_LANG = {"no": {"nor", "nob", "nno", "no"}, "en": {"eng", "en"},
-               "pt": {"por", "pt", "pt-PT"}}
+               "pt": {"por", "pt", "pt-pt"}}
+
+#: Non-anglophone market -> the retail providers authoritative for it.
+#: OpenLibrary is "weakest on non-anglophone editions" by its own docstring,
+#: and for an anglophone author's translations that weakness is total: the
+#: Lee Child wing's first sweep returned 633 English candidates and zero
+#: Portuguese ones, even though Bertrand and Wook between them carry a large
+#: pt-PT Reacher backlist. These providers were already registered in
+#: `providers.py` (ALL/BY_NAME) but `candidates()` below never called them.
+MARKET_PROVIDERS = {
+    "pt": ["bertrand", "wook", "almadoslivros", "presenca"],
+    "no": ["nb.no"],
+}
 
 
 def wing_works(slug: str) -> list[dict]:
@@ -154,6 +172,33 @@ def candidates(slug: str, author: str, markets: list[str], limit: int) -> list[d
                 "cover": ed.cover_url or "",
                 "source_url": ed.source_url or "",
             })
+
+    # Non-anglophone retail/library providers, by market. These search by
+    # author directly and each hit IS an edition record (unlike OpenLibrary's
+    # two-step work-then-editions walk above), so no `editions_of` call is
+    # needed. Shops carry international stock too, so still filter on the
+    # record's own resolved language rather than trusting the provider name.
+    for market in markets:
+        for prov_name in MARKET_PROVIDERS.get(market, []):
+            prov = BY_NAME.get(prov_name)
+            if prov is None:
+                continue
+            for rec in prov.by_author(author, limit=limit):
+                lang = (rec.language or "").lower()
+                if lang not in MARKET_LANG.get(market, set()):
+                    continue
+                rows.append({
+                    "work": rec.title,
+                    "market": market,
+                    "title": rec.title,
+                    "publisher": rec.publisher or "",
+                    "published": rec.published or "",
+                    "isbn13": rec.isbn13 or "",
+                    "isbn_ok": isbn13_ok(rec.isbn13) if rec.isbn13 else None,
+                    "region": region_of(rec.isbn13) or "",
+                    "cover": rec.cover_url or "",
+                    "source_url": rec.source_url or "",
+                })
     return rows
 
 
