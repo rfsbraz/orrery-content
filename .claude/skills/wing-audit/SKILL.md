@@ -206,8 +206,8 @@ every era, or a new late work lands past the final era's close. Re-derive it:
 parse every `period` and check where every `published` year lands (section 2
 says which gaps count as findings).
 
-**References that survived a rename.** `appearsIn[].workId`, `connections`,
-`startHere.workIds`, `orderedWorkIds`, achievement `eraId` / `orderId`. The
+**References that survived a rename.** `startHere.workIds`, `orderedWorkIds`,
+achievement `eraId` / `orderId`. The
 validator catches a reference to an id that *does not exist*. It cannot catch a
 reference that still resolves but now points at the wrong thing, which is what
 happens when an id is reused rather than retired.
@@ -308,8 +308,7 @@ rule below is enforced by nothing but this audit.
   built and then hid from itself.
 - **Has a franchise silently gained a half-empty feature?** The inverse and the
   more common one. `auto` means the capability lights up the moment the data
-  appears, so a single connection added by an enrichment pass switches on a
-  connections map with one edge in it, and a wing with two events gets a River
+  appears, so a wing with two events gets a River
   view that is mostly empty sky. **The question is never "does the data exist"
   but "is there enough of it that the feature is worth entering".** Where the
   answer is no, the fix is either to enrich the layer (route it) or to set the
@@ -335,6 +334,11 @@ Re-derive, do not read a previous report.
   shelf, low is texture of the times, fails all three does not ship. Count how
   many are `low` - a timeline that is mostly texture is a timeline nobody reads
   twice.
+- **Does the timeline open on the birth?** The first `lifeEvent` is dated to the
+  author's `born` and names the birthplace (CURATION §6). `validate.py` warns
+  when it is missing, but the warning only catches an absent date - a birth
+  event that never says where, or drops the childhood geography, is a
+  `press-archaeology` finding.
 - **Is the wing proportionate to its size?** Compare event count against work
   count and span across the franchises in the repo. The largest wing having the
   thinnest aura is a finding, and it is the kind that only shows up when you look
@@ -374,9 +378,9 @@ Then require the reverse of a clean report. The wing's findings must name **what
 is genuinely absent**, and classify every absence per CURATION §7: **absent** (a
 finding, with an owner) or **not applicable** (not a deficiency). Do not confuse
 them - the framework is opt-in per franchise and a sparse wing is a first-class
-citizen. A franchise with no crossovers has no `connections` and is *complete*;
-reporting it as 0% connections coverage invents a gap and invites somebody to
-fabricate edges to close it. A Portuguese literary novelist with 20% cover
+citizen. An author writing concurrent series with no single chronological arc
+has no `eras` and is *complete*; reporting it as 0% era coverage invents a gap
+and invites somebody to fabricate periods to close it. A Portuguese literary novelist with 20% cover
 coverage has hit the realistic ceiling of open sources, and the typographic
 fallback there is the primary rendering, not a degraded one. An author with one
 pen name has one; an author with none is not missing anything.
@@ -427,9 +431,14 @@ Content rots in place, quietly, and nothing in CI has a clock.
 
 ## Process
 
-1. **Establish the baseline.** Run `validate.py`, `i18n_coverage.py` and
-   `event_density.py` yourself and keep the numbers. Every claim below is
-   measured against these, not against a previous report.
+1. **Establish the baseline.** Run `validate.py`, `i18n_coverage.py`,
+   `event_density.py`, `aura_density.py <slug>` and **`art_rotation.py --check
+   <slug>`** yourself and keep the numbers. Every claim below is measured against
+   these, not against a previous report. `art_rotation --check` must report 0
+   organisation-rotation and 0 pacing problems - a plateau or a wall of `beside`
+   means `art-rotation` never ran or is stale, and the wing ships a flat, unpaced
+   river. (Its third, composition axis - "N assets with no issue" - stays flagged
+   pre-art and is not this gate.)
 2. **Read the wing's history.** `git log --reverse` over the franchise directory.
    Which stages ran, in what order, and what ran before the work list closed.
 3. **Read the wing.** Every file in `content/franchises/<slug>/`, the author

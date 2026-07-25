@@ -25,7 +25,7 @@ SCOPE = None
 # Set by --explain. Prints the measured numbers behind the §5c asset checks, so
 # a borderline asset can be judged rather than obeyed.
 EXPLAIN = False
-INLINE_REF = re.compile(r"\[\[(?P<type>work|author|franchise|character):(?P<id>[^\]|]+)(?:\|[^\]]*)?\]\]")
+INLINE_REF = re.compile(r"\[\[(?P<type>work|author|franchise):(?P<id>[^\]|]+)(?:\|[^\]]*)?\]\]")
 ORDER_TYPES = {"chronological-inuniverse", "author-recommended", "curated", "community", "official-publication"}
 IMPACTS = {"low", "med", "high"}
 # Theme values the APP actually implements. A wing may name anything it likes
@@ -35,7 +35,7 @@ IMPACTS = {"low", "med", "high"}
 DISPLAY_FACES = {"fraunces", "spectral", "sourceSerif"}
 SIGNATURES = {"beam", "thread", "rule", "none"}
 SCOPES = {"author-life", "world", "culture", "industry"}
-FEATURE_KEYS = {"river", "wizard", "connections", "companion", "hall", "editions"}
+FEATURE_KEYS = {"river", "wizard", "companion", "editions"}
 FEATURE_VALUES = {"auto", "on", "off", True, False}
 FIT_EXPERIENCE = {"new", "returning", "completionist"}
 FIT_COMMITMENT = {"taste", "arc", "complete"}
@@ -712,19 +712,6 @@ def main():
                 f"at most {FEATURED_MAX} per wing, or the hero treatment stops "
                 f"meaning anything (docs/SCHEMA.md)")
 
-    # --- work connections (second pass: all work ids known) ---
-    for fdir in franchise_dirs:
-        if not os.path.isdir(fdir):
-            continue
-        fslug = os.path.basename(fdir)
-        for w in load(os.path.join(fdir, "works.yaml")) or []:
-            wid = w.get("id", "?")
-            for cid in w.get("connections", []) or []:
-                if cid not in work_ids:
-                    err(f"{fslug}/works.yaml", f"{wid}: connection references unknown work '{cid}'")
-                if cid == wid:
-                    err(f"{fslug}/works.yaml", f"{wid}: work connects to itself")
-
     # --- franchise.yaml: authorIds, features, startHere ---
     order_ids_by_franchise = {}
     for fdir in franchise_dirs:
@@ -823,6 +810,18 @@ def main():
         a = load(path) or {}
         for e in a.get("lifeEvents", []):
             check_event(rel(path), e, allow_scope=False)
+        # The river needs a floor. An author whose timeline opens mid-career
+        # drops the reader on a stranger, and the layout grammar already names
+        # the birthplace as `full-bleed-vista`'s first use. So a wing with any
+        # lifeEvents needs one dated to the author's own birth - six wings had
+        # none, because `press-archaeology` ranks press facts and a birth is
+        # not one. Only warned: an author with no lifeEvents at all is a
+        # co-author or a contributor, not an unfinished wing.
+        life = a.get("lifeEvents") or []
+        born = str(a.get("born") or "")
+        if life and born and not any(str(e.get("date") or "") == born for e in life):
+            warn(rel(path), f"{a.get('id','?')}: no lifeEvent dated to born ({born}) - "
+                            "the timeline opens mid-life, with no birthplace")
     gpath = os.path.join(ROOT, "content", "events", "global.yaml")
     if os.path.exists(gpath):
         g = load(gpath) or {}
@@ -830,38 +829,6 @@ def main():
             check_event("events/global.yaml", e)
             if e.get("reach") != "global":
                 err("events/global.yaml", f"{e.get('id','?')}: global events must have reach: global")
-
-    # --- characters ---
-    character_ids = set()
-    for fdir in franchise_dirs:
-        if not os.path.isdir(fdir):
-            continue
-        fslug = os.path.basename(fdir)
-        cpath = os.path.join(fdir, "characters.yaml")
-        if not os.path.exists(cpath):
-            continue
-        seen = set()
-        for c in load(cpath) or []:
-            loc = f"{fslug}/characters.yaml"
-            cid = c.get("id", "")
-            if not cid:
-                err(loc, "character missing id")
-                continue
-            if not cid.startswith(fslug + "/"):
-                err(loc, f"character id '{cid}' must start with '{fslug}/'")
-            if cid in seen:
-                err(loc, f"duplicate character id '{cid}'")
-            seen.add(cid)
-            character_ids.add(cid)
-            if not c.get("name"):
-                err(loc, f"{cid}: character missing name")
-            for ap in c.get("appearsIn", []) or []:
-                wid = ap.get("workId")
-                if wid not in work_ids:
-                    err(loc, f"{cid}: appearsIn references unknown work '{wid}'")
-                sa = ap.get("spoilerAfter")
-                if sa and sa not in work_ids:
-                    err(loc, f"{cid}: appearance spoilerAfter '{sa}' is not a known work")
 
     # --- editions ---
     for fdir in franchise_dirs:
@@ -1087,7 +1054,7 @@ def main():
     # title from editions.yaml, never an invention, or we send a reader after a
     # book that does not exist.
     TITLE_FORBIDDEN_IN = {"works.yaml", "editions.yaml"}
-    # `name` is a proper noun (authors, franchises, characters) EXCEPT on an
+    # `name` is a proper noun (authors, franchises) EXCEPT on an
     # order, where it is a curated label a reader reads.
     NAME_ALLOWED_IN = {"orders.yaml"}
     for lpath in glob.glob(os.path.join(ROOT, "content", "i18n", "*")):
@@ -1113,7 +1080,6 @@ def main():
                     or eid in author_ids
                     or eid in franchise_slugs
                     or eid in all_order_ids
-                    or eid in character_ids
                     or eid in event_ids
                     or eid in all_era_ids
                 )
@@ -1155,15 +1121,13 @@ def main():
                 err(rel(path), f"inline [[work:{rid}]] does not resolve")
             elif t == "author" and rid not in author_ids:
                 err(rel(path), f"inline [[author:{rid}]] does not resolve")
-            elif t == "character" and rid not in character_ids:
-                err(rel(path), f"inline [[character:{rid}]] does not resolve")
             elif t == "franchise" and rid not in franchise_slugs:
                 err(rel(path), f"inline [[franchise:{rid}]] does not resolve")
 
     # --- spoilerAfter must sit somewhere the app can actually honour it ---
     #
-    # The app reads spoilerAfter on events (franchise, global, author lifeEvents)
-    # and on character appearances. Nowhere else. A boundary written onto a work,
+    # The app reads spoilerAfter on events (franchise, global, author
+    # lifeEvents). Nowhere else. A boundary written onto a work,
     # an order, an era or a startHere path is accepted by YAML, reads like
     # protection, and does nothing at all.
     #
@@ -1175,18 +1139,18 @@ def main():
     def scan_unhonoured(loc, node, path="", inside_event=False):
         if isinstance(node, dict):
             here = path.split(".")[-1]
-            # Events are dicts carrying `impact`; appearances carry `workId`.
-            honours = inside_event or "impact" in node or "workId" in node
+            # Events are dicts carrying `impact`.
+            honours = inside_event or "impact" in node
             if "spoilerAfter" in node and not honours:
                 where = node.get("id") or node.get("slug") or path or "root"
                 err(
                     loc,
                     f"{where}: spoilerAfter is not honoured by the app here "
-                    f"(only events, author lifeEvents and character appearances "
-                    f"support it) - rewrite the prose instead",
+                    f"(only events and author lifeEvents support it) - "
+                    f"rewrite the prose instead",
                 )
             for k, v in node.items():
-                child_event = k in {"events", "lifeEvents", "appearsIn"}
+                child_event = k in {"events", "lifeEvents"}
                 scan_unhonoured(loc, v, f"{path}.{k}" if path else k, child_event)
         elif isinstance(node, list):
             for i, v in enumerate(node):
@@ -1196,7 +1160,7 @@ def main():
         data = load(path)
         base = os.path.basename(path)
         # Top-level lists in events.yaml / global.yaml are events themselves.
-        top_is_event = base in {"events.yaml", "global.yaml", "characters.yaml"}
+        top_is_event = base in {"events.yaml", "global.yaml"}
         scan_unhonoured(rel(path), data, "", top_is_event)
 
     # --- comment policy (docs/CURATION.md §2) --------------------------------
@@ -1285,7 +1249,7 @@ def main():
         for e in ERRORS:
             print("  -", e)
         sys.exit(1)
-    print(f"OK - {len(work_ids)} works, {len(author_ids)} authors, {len(character_ids)} characters, {len(achievement_ids)} achievements, all references resolve.")
+    print(f"OK - {len(work_ids)} works, {len(author_ids)} authors, {len(achievement_ids)} achievements, all references resolve.")
 
 
 if __name__ == "__main__":

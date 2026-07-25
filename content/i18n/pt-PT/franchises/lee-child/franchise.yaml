@@ -1,0 +1,62 @@
+# Overlay pt-PT. Apenas prosa; id, slugs, títulos de obras e sources não são
+# traduzidos.
+# Os startHere.paths ficam aninhados e são fundidos por id (ver SCHEMA.md,
+# "Nested lists merge by id"): só `title`, `description` e `note`, nunca
+# `workIds`, `orderId` ou `fit`.
+# "Jack Reacher" na descrição designa a personagem/série, não o título da
+# obra lee-child/killing-floor a que aponta - fica como nome próprio, sem
+# tradução. Onde um título é citado como título (não como nome de
+# personagem), usa-se a edição portuguesa publicada quando existe
+# (editions.yaml): Killing Floor -> "Do Fundo do Abismo" (Edições Asa,
+# 2003). As restantes obras citadas neste ficheiro não têm edição em
+# português e ficam no título original.
+- id: lee-child
+  description: >
+    A obra publicada completa de Lee Child, pseudónimo de James Dover Grant:
+    a série de thrillers [[work:lee-child/killing-floor|Jack Reacher]], em
+    curso (1997-atualidade, 31 romances), duas coletâneas de contos e um
+    ensaio de não-ficção sobre o arquétipo do herói. Todos os romances a
+    partir de [[work:lee-child/the-sentinel|The Sentinel]] (2020) são
+    escritos em conjunto com o seu irmão mais novo, o romancista Andrew
+    Grant, sob o novo pseudónimo do próprio Grant,
+    [[author:andrew-child|Andrew Child]].
+  startHere:
+    paths:
+      - id: start-with-killing-floor
+        title: Comece por Do Fundo do Abismo
+        description: >
+          Jack Reacher desce de um autocarro Greyhound numa pequena cidade
+          da Geórgia e é preso por homicídio poucas horas depois de chegar:
+          o livro que o apresenta e a porta de entrada habitual na série.
+          Um único romance é o teste mais barato possível para saber se
+          este andarilho e esta voz são para si, antes de se comprometer
+          com mais trinta.
+        note: >
+          O próprio site oficial de Jack Reacher afirma explicitamente que
+          os livros "podem ser lidos por qualquer ordem" - Reacher chega
+          sempre como novidade em quase todos os romances e raramente
+          transporta uma trama por resolver para o seguinte - mas mesmo
+          esse site continua a listá-los a começar por aqui, e nenhum guia
+          consultado recomenda uma porta de entrada diferente.
+      - id: whole-shelf
+        title: A estante inteira, por ordem de publicação
+        description: >
+          Todos os romances, contos e as duas peças de não-ficção, pela
+          ordem em que Lee Child, e mais tarde Andrew Child a seu lado, os
+          escreveram e publicaram de facto: uma estreia de 1997 até um
+          romance de 2026 ainda por publicar. A forma como a maioria dos
+          leitores conviveu com Reacher ao longo de três décadas, um livro
+          de cada vez.
+      - id: chronological
+        title: A vida de Reacher, por ordem
+        description: >
+          Os 31 romances reordenados na sequência em que acontecem a
+          Reacher, com as prequelas primeiro. Construída para completistas
+          e para quem relê a série e quer que os seus anos de Exército
+          conduzam diretamente aos anos de andarilho, sem que nenhuma data
+          de publicação se atravesse.
+        note: >
+          Não é a forma recomendada de começar: estas quatro prequelas
+          foram escritas bem depois, e com conhecimento, de tudo o que se
+          segue. Leia primeiro pela ordem de publicação, e guarde este
+          arranjo para a segunda passagem pela série.

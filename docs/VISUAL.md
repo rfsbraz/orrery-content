@@ -25,6 +25,30 @@ Every sketch in the catalogue carries the same mark - **concentric orbital
 rings with small nodes riding on them** - and that shared mark is what makes a
 Pratchett sketch and a Mãe sketch read as one publication.
 
+**The motif is the rings, on every wing, and never the wing's own emblem.**
+This is the failure that quietly wastes generations. A wing's `theme.art`
+`emblem` (Palahniuk's safety pictogram, Butcher's hand lantern) is a *different*
+mark - the wing's own identity, not the shared one. The orrery motif is the
+concentric rings and nothing else. A prompt that says *"the orrery motif is the
+wing's [pictogram / lantern / stamp]"* has thrown the rings away: the image then
+carries a wing-specific glyph and no shared mark at all, so it fails to appear
+as the orrery *because it was never asked for*, and re-rolling the same prompt
+cannot summon a thing the words do not name. The emblem and the orrery motif are
+**two separate paragraphs** in a prompt, never merged.
+
+**The rings are decided per image, not per wing.** There is no per-author ring
+treatment and none belongs in `theme.art` - the mark is universal and the same
+everywhere. Add it as the **last step, after the image concept is fully
+described**: for this one image, pick an off-centre place the rings can sit that
+the scene plausibly allows, drawn in the same line and weight as the rest of
+that drawing so they read as part of the picture rather than pasted on. **Vary
+the placement from every other image in the wing** - a different spot and a
+different carrier each time - so the mark never hardens into a logo. That
+per-image invention is the whole creative task: the rings never change, only
+where and how they are found. (So Palahniuk's rings might be a photocopied
+ring-diagram taped to a wall in one sketch and faint arcs over a rooftop in the
+next - decided by the scene, not fixed by the wing.)
+
 **It is an afterthought, and it should feel like one.** The reader meets the
 scene first. Somewhere after that, they notice the rings and think *oh, that's
 fun*. That reaction is the whole specification. If the motif is the first thing
@@ -502,6 +526,24 @@ CONSTRAINTS:
 
 For a **world event**, drop the wing's `theme.art` from STYLE entirely and say
 "neutral house style, no author-specific motifs".
+
+**One image, one prompt.** An entry whose asset block says `images_required: n`
+gets n complete prompts of the shape above, one per slot - not one prompt with
+"IMAGE 1 / IMAGE 2" inside it. A prompt naming two panels asks the model to lay
+out a diptych inside a single frame, which is the weakest thing it does, and it
+answers a contract that wanted two files. The STYLE block is repeated verbatim
+in each; everything below it belongs to that slot alone.
+
+The exception is a **sequence drawn as one run** - a comic strip, a contact
+sheet, a row of instalment panels. Those stay one image and one prompt: the
+shared baseline and the repetition across the run are the picture, so splitting
+the units gives a row of unrelated drawings. Only the two-panel counterpoints
+split.
+
+All n go in **one comment** on the issue - §7a's round starts at the last comment carrying a
+prompt, and `art_rotation.py` reads only the last comment for the `Rotation:`
+line, so splitting them across comments loses half the set and drops the asset
+from the wing's counts.
 
 ### Three things about the model that change how this is written
 

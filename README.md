@@ -102,7 +102,6 @@ content/
       eras.yaml                 # creative-period groupings
       events.yaml               # franchise-specific events
       orders.yaml               # additional canon reading orders (the default is derived)
-      characters.yaml           # optional: recurring/crossover figures
       editions.yaml             # optional: verified concrete editions (ISBNs, covers)
       theme.yaml                # branding preset (see Orrery CONCEPT §6)
 ```
@@ -136,7 +135,7 @@ must run before translation so a spoiler is not fixed twice in two languages.
 
 The **full schema reference is [`docs/SCHEMA.md`](docs/SCHEMA.md)** - field by field, including the capabilities model (which app features a franchise's data activates). The authoring guide and assisted-research tool is the **`franchise-research` skill** at [`.claude/skills/franchise-research/SKILL.md`](.claude/skills/franchise-research/SKILL.md).
 
-**The schema is a framework.** Every advanced layer (aura, characters, connections, editions, start-here paths) is optional per franchise; the app detects what a bundle provides and lights up the matching features. A works-list-only franchise is complete and correct.
+**The schema is a framework.** Every advanced layer (aura, editions, start-here paths) is optional per franchise; the app detects what a bundle provides and lights up the matching features. A works-list-only franchise is complete and correct.
 
 ## Hard rules (also enforced in review)
 

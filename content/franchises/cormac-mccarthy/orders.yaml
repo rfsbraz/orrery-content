@@ -1,0 +1,74 @@
+# ADDITIONAL canon orders only. The DEFAULT order - all 17 works in
+# publication-chronological order - is derived automatically from works.yaml
+# and is NOT listed here.
+#
+# Two subseries exist (works.yaml's header); both earn an order below. Every
+# other work is a standalone with no grouping to walk apart from the default,
+# so this file holds exactly two entries, not a padded shelf of them.
+
+- id: cormac-mccarthy/border-trilogy-in-order
+  name: The Border Trilogy, in order
+  type: curated
+  source: canon
+  rationale: >
+    The three "Border Trilogy" novels, numbered Book 1/2/3 on McCarthy's own
+    bibliography page, from [[work:cormac-mccarthy/all-the-pretty-horses|All
+    the Pretty Horses]] through [[work:cormac-mccarthy/cities-of-the-plain|
+    Cities of the Plain]]. Each novel stands alone (a new protagonist opens
+    the first two), so strict order is not required to follow any single
+    story, but reading forward is what lets John Grady Cole and Billy
+    Parham's separate arcs land as intended when the third book puts both
+    men on the same New Mexico ranch. This order matches the derived default
+    exactly for these three works (1992, 1994, 1998, no year tie to break);
+    its whole contribution is naming and isolating the publisher's own
+    trilogy as a walkable thread apart from the ten standalone novels around
+    it, the same way João Tordo's lugares-sem-nome order names his trilogy
+    without reshuffling it.
+  orderedWorkIds:
+    - cormac-mccarthy/all-the-pretty-horses
+    - cormac-mccarthy/the-crossing
+    - cormac-mccarthy/cities-of-the-plain
+  sources:
+    - https://en.wikipedia.org/wiki/Cormac_McCarthy_bibliography
+
+# The Passenger subseries is two books, below the Michael Connelly wing's own
+# working floor for a subseries thin enough to leave fully covered by the
+# derived default (that wing left two-book Terry McCaleb and Catalina groups
+# out of orders.yaml for exactly that reason). This pair earns an order
+# anyway, on two grounds neither of those Connelly pairs presented: both
+# books are dated 2022 in works.yaml, where `published` is year-only, so the
+# derived default's within-year placement of the two is arbitrary and cannot
+# be trusted to come out the way every source below agrees it should; and
+# real, sourced reading-order guidance identifies a genuine cost to getting
+# that placement wrong (see rationale). This order's contribution is
+# narrowly that tie-break and that warning, not a claim that two books make
+# a walkable "thread" in the sense the Border Trilogy or a six-book Discworld
+# arc are.
+- id: cormac-mccarthy/the-passenger-and-stella-maris-in-order
+  name: The Passenger and Stella Maris, in publication order
+  type: curated
+  source: canon
+  rationale: >
+    [[work:cormac-mccarthy/the-passenger|The Passenger]] (25 Oct 2022) and
+    [[work:cormac-mccarthy/stella-maris|Stella Maris]] (6 Dec 2022), six
+    weeks apart, McCarthy's last two novels. Stella Maris is set a decade
+    before its companion, but this order is publication order, not
+    chronological order, and that distinction matters here: Stella Maris
+    reads as a dialogue-only prequel to a sibling whose fate The Passenger's
+    own opening pages are built to disclose in their own way, and reading
+    the prequel first tips a reader into that knowledge before the book
+    designed to reveal it gets the chance. Read The Passenger first.
+  orderedWorkIds:
+    - cormac-mccarthy/the-passenger
+    - cormac-mccarthy/stella-maris
+  debated:
+    - "Some readers report the two books stand structurally and tonally far
+       enough apart (a plotted, multi-character novel against a single
+       190-page two-hander) to be read in either order, or Stella Maris
+       alone with no loss - a minority view against the wider critical
+       reading-order recommendation this order follows."
+  sources:
+    - https://en.wikipedia.org/wiki/The_Passenger_(McCarthy_novel)
+    - https://en.wikipedia.org/wiki/Stella_Maris_(novel)
+    - https://biblioklept.org/2022/12/21/the-freed-and-missing-passenger-joy-williams-on-cormac-mccarthys-latest-novels-the-passenger-and-stella-maris/
+    - https://www.goodreads.com/questions/2489756-would-the-passenger-be-required-to-read

@@ -1,0 +1,154 @@
+# ADDITIONAL canon orders only. The DEFAULT order - ALL 47 works in
+# publication-chronological order - is derived automatically from works.yaml
+# and is NOT listed here.
+#
+# These four are the four subseries with enough of their own books to walk as
+# a thread apart from the rest of the shelf, each filtered to the publisher's
+# own numbered list at michaelconnelly.com/series/ - the same pattern Karin
+# Slaughter's grant-county-in-order/will-trent-in-order and Agatha Christie's
+# poirot-novels/marple-novels orders use. Terry McCaleb (one lead novel, one
+# co-lead appearance) and the Catalina series (two books so far) are each too
+# thin to walk as their own thread yet; both stay fully covered by the
+# derived default.
+#
+# No combined Bosch + Ballard order exists here, and none is needed: the
+# derived default already interleaves both by publication year, and every
+# solo Bosch novel through Two Kinds of Truth (2017) precedes Ballard's own
+# debut The Late Show (2017) and every book on which they co-lead, so the
+# default keeps Bosch's earlier solo run intact before her thread joins his.
+# A hand-written copy of that same interleaving, narrowed to just these two
+# threads, would carry no information the default does not already give for
+# free.
+
+- id: michael-connelly/harry-bosch-in-order
+  name: The Harry Bosch novels, in order
+  type: curated
+  source: canon
+  rationale: >
+    All 26 Harry Bosch novels, in the publication order the author's own site
+    numbers them, from [[work:michael-connelly/the-black-echo|The Black Echo]]
+    to the forthcoming [[work:michael-connelly/the-hollow|The Hollow]]. Novels
+    only: the three ebook-only short-story bundles tagged to this subseries
+    (Angle of Investigation, Suicide Run, Mulholland Dive) are left out here
+    because the author's own numbered Bosch list excludes them too, the same
+    grain Agatha Christie's Poirot/Marple orders use for her short-story
+    collections.
+  orderedWorkIds:
+    - michael-connelly/the-black-echo
+    - michael-connelly/the-black-ice
+    - michael-connelly/the-concrete-blonde
+    - michael-connelly/the-last-coyote
+    - michael-connelly/trunk-music
+    - michael-connelly/angels-flight
+    - michael-connelly/a-darkness-more-than-night
+    - michael-connelly/city-of-bones
+    - michael-connelly/lost-light
+    - michael-connelly/the-narrows
+    - michael-connelly/the-closers
+    - michael-connelly/echo-park
+    - michael-connelly/the-overlook
+    - michael-connelly/nine-dragons
+    - michael-connelly/the-drop
+    - michael-connelly/the-black-box
+    - michael-connelly/the-burning-room
+    - michael-connelly/the-crossing
+    - michael-connelly/the-wrong-side-of-goodbye
+    - michael-connelly/two-kinds-of-truth
+    - michael-connelly/dark-sacred-night
+    - michael-connelly/the-night-fire
+    - michael-connelly/the-dark-hours
+    - michael-connelly/desert-star
+    - michael-connelly/the-waiting
+    - michael-connelly/the-hollow
+  debated:
+    - "Angle of Investigation, Suicide Run and Mulholland Dive (the three
+       Bosch short-fiction ebooks) sit outside this novels-only order; a
+       completionist reading them alongside it can place them by their own
+       published years (2011, 2011, 2012)."
+  sources:
+    - https://www.michaelconnelly.com/series/
+
+- id: michael-connelly/lincoln-lawyer-in-order
+  name: The Lincoln Lawyer novels, in order
+  type: curated
+  source: canon
+  rationale: >
+    All eight Mickey Haller
+    novels, numbered #1-#8 on the author's own site, from his 2005 debut
+    through 2025's [[work:michael-connelly/the-proving-ground|The Proving
+    Ground]]. Harry Bosch joins as Haller's investigator from
+    [[work:michael-connelly/the-brass-verdict|The Brass Verdict]] (#2) on,
+    and this order keeps every one of those appearances in place rather than
+    pulling them into a separate Bosch-only list.
+  orderedWorkIds:
+    - michael-connelly/the-lincoln-lawyer
+    - michael-connelly/the-brass-verdict
+    - michael-connelly/the-reversal
+    - michael-connelly/the-fifth-witness
+    - michael-connelly/the-gods-of-guilt
+    - michael-connelly/the-law-of-innocence
+    - michael-connelly/resurrection-walk
+    - michael-connelly/the-proving-ground
+  sources:
+    - https://www.michaelconnelly.com/series/
+
+- id: michael-connelly/renee-ballard-in-order
+  name: The Renée Ballard novels, in order
+  type: curated
+  source: canon
+  rationale: >
+    The six novels the author's own site lists as "The Renée Ballard Series":
+    her 2017 solo debut [[work:michael-connelly/the-late-show|The Late Show]],
+    then the five further novels on which she and
+    Harry Bosch are billed as
+    co-leads, through 2024's [[work:michael-connelly/the-waiting|The
+    Waiting]]. This order crosses `subseries` tags rather than following one:
+    those five later books carry Bosch's own unbroken numbering in works.yaml
+    (see that file's header), but the publisher's own site groups all six as
+    Ballard's series in their own right, and this order follows that
+    grouping - the same shape Karin Slaughter's will-trent-in-order takes for
+    a co-lead thread that starts inside another character's numbering.
+  orderedWorkIds:
+    - michael-connelly/the-late-show
+    - michael-connelly/dark-sacred-night
+    - michael-connelly/the-night-fire
+    - michael-connelly/the-dark-hours
+    - michael-connelly/desert-star
+    - michael-connelly/the-waiting
+  debated:
+    - "The author's own site separates this six-book series list from three
+       further Ballard appearances it calls out on their own: a brief part
+       in Resurrection Walk (2023), and Ironwood (2026) and The Hollow
+       (2026), where she works the case from outside the Bosch/Ballard
+       partnership's usual footing. Left out of this order on the same
+       distinction the publisher draws; the derived default still carries
+       all three in their place."
+  sources:
+    - https://www.michaelconnelly.com/series/
+
+- id: michael-connelly/jack-mcevoy-in-order
+  name: The Jack McEvoy novels, in order
+  type: curated
+  source: canon
+  rationale: >
+    All three Jack McEvoy novels,
+    numbered in order on the author's own site: his 1996 debut
+    [[work:michael-connelly/the-poet|The Poet]], 2009's
+    [[work:michael-connelly/the-scarecrow|The Scarecrow]], and 2020's
+    [[work:michael-connelly/fair-warning|Fair Warning]]. A thirteen-year and
+    an eleven-year gap separate them, each with a dozen or more Bosch,
+    Lincoln Lawyer or Ballard novels published in between - this order lets a
+    reader follow McEvoy's own reporter arc without waiting for those gaps to
+    close.
+  orderedWorkIds:
+    - michael-connelly/the-poet
+    - michael-connelly/the-scarecrow
+    - michael-connelly/fair-warning
+  debated:
+    - "The author's own site also credits McEvoy with a supporting
+       appearance in 2025's The Proving Ground and small parts in A
+       Darkness More Than Night (2000) and The Brass Verdict (2008); left
+       out of this lead-only order the same way the publisher's own listing
+       separates them from his own three-book series."
+  sources:
+    - https://www.michaelconnelly.com/series/

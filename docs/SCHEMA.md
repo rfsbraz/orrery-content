@@ -10,11 +10,11 @@ never pipeline narration or coordination**; `validate.py` warns on violations).
 Two principles frame all of it:
 
 1. **IDs are the source of truth; names are display-only.** Work IDs
-   (`<franchise-slug>/<work-slug>`), author IDs, and character IDs are immutable
+   (`<franchise-slug>/<work-slug>`) and author IDs are immutable
    forever. User data references them, so renaming one orphans real people's
    shelves. Nothing resolves by name.
 2. **The schema is a framework, not a mandate.** Every advanced layer
-   (aura events, eras, characters, connections, editions, start-here paths) is
+   (aura events, eras, editions, start-here paths) is
    optional. The app detects what a franchise provides and lights up the matching
    features (its *capabilities*, see below). A sparse franchise with just a works
    list is a first-class citizen: it gets the derived publication order and a
@@ -35,7 +35,6 @@ content/
       orders.yaml               # additional reading orders (optional)
       eras.yaml                 # creative periods (optional)
       events.yaml               # franchise-specific events (optional)
-      characters.yaml           # recurring characters / crossover figures (optional)
       editions.yaml             # concrete editions: ISBNs, covers (optional)
       theme.yaml                # branding (optional; app has a neutral default)
 ```
@@ -53,9 +52,7 @@ still thin, even though events exist).
 |---------------|-----------------------------------------------------|--------|
 | `river`       | the franchise has timeline events (aura)            | the atmospheric River view |
 | `wizard`      | `startHere` is present in franchise.yaml            | the "where to start" guided onboarding |
-| `connections` | any work has `connections` or characters.yaml exists| the connections map + per-work crossover panels |
 | `companion`   | the franchise has timeline events                   | reading companion mode for in-progress books |
-| `hall`        | always (opt-out only)                               | inclusion in the cross-franchise hall |
 | `editions`    | editions.yaml exists                                | exact-edition store links + curated covers |
 
 ```yaml
@@ -63,9 +60,7 @@ still thin, even though events exist).
 features:
   river: auto        # auto | on | off
   wizard: auto
-  connections: auto
   companion: auto
-  hall: auto
   editions: auto
 ```
 
@@ -214,8 +209,6 @@ sources: [https://...]
   contributionTitle: "The Reach" # optional; the piece contributed, if not the whole book
   synopsis: >
     Spoiler-free premise. May use [[work:...|links]].
-  connections:                   # optional; work-to-work links (crossovers,
-    - stephen-king/the-stand     # sequels, shared characters/cosmology)
   externalIds:
     openLibrary: OL81626W        # enrichment bot fills these; leave empty if unsure
     googleBooks: null
@@ -343,42 +336,6 @@ percentage of a 43-work wing would license eight.
 `featured` is not a quality judgement and not a recommendation, the same
 discipline as `canonTier`: it records that a book is a hinge in this author's
 story. If two people would argue about whether a book is a hinge, it is not one.
-
-`connections` is **directional but rendered both ways**: declare the connection
-on the *later* work pointing back at the earlier one (the later work is the one
-whose reading is enriched). The app renders the edge on both works. A connection
-whose *existence* is itself a spoiler belongs in `characters.yaml` appearances
-with a `spoilerAfter` instead, or as an event.
-
-## characters.yaml (optional)
-
-Recurring figures whose appearances across works are part of the franchise's
-connective tissue. This is what powers the connections map's character layer and
-`[[character:<id>]]` references in prose.
-
-```yaml
-- id: stephen-king/randall-flagg  # STABLE; prefixed by franchise slug
-  name: Randall Flagg
-  aka: ["The Walkin Dude", "The Man in Black"]
-  description: >
-    Spoiler-free essence of who this is. May use [[work:...|links]].
-  appearsIn:
-    - workId: stephen-king/the-stand
-      note: Primary antagonist.
-    - workId: stephen-king/the-eyes-of-the-dragon
-      note: The court magician.
-      spoilerAfter: null          # set when THIS appearance is a reveal:
-                                  # hidden until the reader passes that work
-  sources: [https://...]
-```
-
-Rules:
-- `appearsIn[].workId` must resolve. An appearance with `spoilerAfter` is hidden
-  from readers who have not read that boundary work (and shielded for anonymous
-  visitors), because sometimes *the fact a character shows up at all* is the
-  spoiler.
-- Keep the roster tight: figures that genuinely thread works together, not a
-  full character wiki.
 
 ## editions.yaml (optional)
 
@@ -529,7 +486,7 @@ none of the three does not ship.
 
 ## Spoilers (cross-cutting)
 
-Any event, character appearance, or note that could spoil carries
+Any event or note that could spoil carries
 `spoilerAfter: <work-id>`: the work beyond which it is safe. Semantics in the
 app:
 
@@ -638,7 +595,7 @@ fully covered, partial, or missing entirely. CI runs it on every PR.
 
 It exists because of a real failure: translation work was split by franchise,
 and the files belonging to **no** franchise - the shared `events/global.yaml`,
-co-author bios, character rosters - were silently skipped and shipped in
+co-author bios - were silently skipped and shipped in
 English. Partial coverage is fine and expected; *unnoticed* coverage gaps are
 not. Check the report before declaring a locale done.
 
@@ -824,9 +781,9 @@ that only suits one author.
 
 `python scripts/validate.py` (run by CI on every PR) enforces:
 - required files, stable-ID prefixes, no duplicate IDs
-- every reference resolves: authorIds, withAuthorIds, order workIds, connections,
-  character appearances, startHere paths, spoilerAfter boundaries, and inline
-  `[[type:id|text]]` links (work, author, franchise, character)
+- every reference resolves: authorIds, withAuthorIds, order workIds,
+  startHere paths, spoilerAfter boundaries, and inline
+  `[[type:id|text]]` links (work, author, franchise)
 - enum discipline: canonTier, impact, scope, order type, features keys/values,
   fit tags, edition formats
 - global.yaml events carry `reach: global`

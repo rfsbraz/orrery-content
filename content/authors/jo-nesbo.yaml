@@ -1,8 +1,8 @@
 # Global author entity. Authors are referenced by id from franchises and works
 # (authorIds / withAuthorIds), so the same person resolves the same everywhere.
 # Author-LIFE events live here; franchise-specific events belong in
-# content/franchises/jo-nesbo/events.yaml. The three lifeEvents below are a
-# small set of well-sourced anchors rather than a complete account of the life.
+# content/franchises/jo-nesbo/events.yaml. The lifeEvents below are a small set
+# of well-sourced anchors rather than a complete account of the life.
 #
 # NAME AND BIRTH. Norwegian and English Wikipedia agree: born Jon Nesbø,
 # 29 March 1960, Oslo, raised in Molde. Norsk biografisk leksikon (NBL,
@@ -45,6 +45,21 @@ pseudonyms: []
 # here; the abandoned pen name is left as a footnote rather than a fact about
 # how the books were published.
 lifeEvents:
+  - id: nesbo-born-1960
+    date: 1960-03-29
+    title: Born in Oslo, raised in Molde
+    impact: low
+    description: >
+      Jon Nesbø is born in Oslo to Per Nesbø, a business manager, and Kirsten
+      Hammervold, a librarian, and grows up in Molde on the west coast. Molde
+      is where he plays as a striker for the town's club until torn cruciate
+      ligaments end that first ambition; Oslo is the city he comes back to, and
+      the one the Harry Hole novels are mapped onto street by street.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Jo_Nesb%C3%B8
+      - https://nbl.snl.no/Jo_Nesb%C3%B8
+
   - id: nesbo-father-eastern-front-1975
     date: 1975
     title: Learns his father fought for Germany in the war

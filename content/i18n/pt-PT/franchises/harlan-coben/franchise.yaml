@@ -1,0 +1,79 @@
+# Overlay pt-PT. Apenas prosa; id, slugs, títulos de obras (fora do texto de
+# exibição das referências inline a obras) e sources não são traduzidos.
+# Os startHere.paths ficam aninhados e são fundidos por id (ver SCHEMA.md,
+# "Nested lists merge by id"): só `title`, `description` e `note`, nunca
+# `workIds`, `orderId` ou `fit`.
+# Títulos de obras citados na prosa usam a edição portuguesa publicada
+# (content/franchises/harlan-coben/editions.yaml, 28 das 44 obras) ou ficam
+# no original inglês quando não existe edição portuguesa - nunca um título
+# inventado (ver docs/SCHEMA.md, "Never translate a published title"). Deal
+# Breaker tem duas traduções portuguesas rivais, nenhuma atualmente em
+# circulação; a referência abaixo usa "Myron Bolitar" como nome da série, não
+# como título, pelo que não se coloca a escolha.
+- id: harlan-coben
+  description: >
+    A ficção completa e publicada de Harlan Coben: dezoito thrillers
+    independentes construídos em torno do segredo devastador de uma família
+    suburbana, a série [[work:harlan-coben/deal-breaker|Myron Bolitar]] (12
+    romances, 1995-2024) que lançou a sua carreira, o spin-off juvenil do
+    sobrinho de Myron, Mickey, e mais três séries derivadas do próprio
+    elenco secundário de Myron - Sami Kierce, Wilde, e o melhor amigo de
+    Myron, [[work:harlan-coben/win|Win]] - além de um livro infantil
+    ilustrado e umas memórias, ainda por publicar, sobre o ofício de
+    escrever.
+  startHere:
+    paths:
+      - id: fool-me-once
+        title: Comece pelo livro de que todos falam
+        description: >
+          Só Me Enganas uma Vez é a porta de entrada mais recomendada para
+          quem ainda não leu Coben: um romance completamente autónomo,
+          construído exatamente à volta da câmara da ama e da reviravolta
+          sobre se ele está mesmo morto, o motor dos seus romances
+          independentes. Dois guias da família Penguin (o próprio "Where to
+          start reading Harlan Coben", da Penguin, e o Dead Good Books, da
+          Penguin Random House) apontam-no como o livro por onde começar, e
+          nenhum exige conhecimento prévio do resto da sua obra.
+        note: >
+          Não passa pela série principal: Myron Bolitar nunca aqui aparece.
+          Tem uma sequela direta em 2025, Nobody's Fool, ainda que nada
+          neste percurso exija lê-la também.
+
+      - id: myron-bolitar-start
+        title: Comece a série Myron Bolitar
+        description: >
+          Para um elenco que atravessa três décadas em vez de um romance
+          independente isolado: comece por Deal Breaker (1995) e leia os
+          doze romances de Myron Bolitar por ordem. O próprio guia Novel
+          Suspects da Hachette chama a Deal Breaker "o melhor lugar para
+          começar", mesmo para quem não pretende ler a série inteira, e as
+          próprias perguntas frequentes de Coben listam exatamente esta
+          sequência.
+        note: >
+          Um compromisso a sério ao longo de doze livros; os outros quatro
+          fios que nascem deste (Mickey Bolitar, Win, Wilde, Sami Kierce)
+          ficam de fora e são percorridos à parte.
+
+      - id: mickey-bolitar-ya
+        title: "O fio juvenil de Mickey"
+        description: >
+          O sobrinho adolescente de Myron, Mickey, ganha a sua própria
+          trilogia, vocacionada para o público juvenil, com o próprio Myron
+          a aparecer de passagem. As próprias perguntas frequentes de Coben
+          enquadram-na como uma série para leitores mais novos, e não como
+          outra porta de entrada nos thrillers para adultos, pelo que serve
+          sobretudo quem já acompanha a família Bolitar, ou um leitor
+          adolescente que prefira começar pela única série de Coben pensada
+          para jovens, em vez dos romances independentes.
+        note: >
+          A trilogia está entrelaçada na cronologia mais alargada dos
+          Bolitar, sobrepondo-se ao décimo romance de Myron, Live Wire
+          (2011), em família e em época; ler os dois de perto mantém
+          legível a ligação entre eles, que anos de distância na estante
+          fariam perder.
+
+      - id: complete-shelf
+        title: A estante completa
+        description: >
+          Tudo o que Coben publicou, os romances independentes e os cinco
+          fios de personagens juntos, pela ordem em que os escreveu.

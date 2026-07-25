@@ -1,0 +1,121 @@
+# ADDITIONAL canon order only. The DEFAULT order - all 46 works in
+# publication-chronological order - is derived automatically from works.yaml
+# and is not listed here.
+#
+# The wing's headline curation problem is that Lee Child scattered four
+# prequel novels across a publication run built around Reacher's post-army
+# drifting, so the story Reacher actually lives and the order Child wrote it
+# in diverge by as much as fourteen books. The order below is the
+# well-documented answer: the same 31 novels, resequenced by when they
+# happen to Reacher rather than when they were written. Three independent
+# sources agree on the exact same sequence (Wikipedia's own chronology
+# column, bookseriesinorder.com, and T.L. Branson's independent guide), so
+# nothing here had to be adjudicated.
+#
+# SCOPE: novels only, and for three different reasons. No Middle Name
+# collects stories that span roughly 1974 to the present day of the run (its
+# own contents open with a story set when Reacher is thirteen and close with
+# one set in his current drifting years), so as a single catalogue entry it
+# has no one point on a timeline to occupy. Safe Enough holds exactly one
+# Reacher connection inside nineteen unrelated stories; it is not a
+# Reacher-timeline entry itself. The Hero (nonfiction) and Reacher: The
+# Stories Behind the Stories (a memoir about writing the novels) stand
+# entirely outside Reacher's own story. That leaves the four uncollected
+# solo Reacher stories (The Christmas Scorpion, Smile, The Fourth Man, Many
+# Happy Returns): only one of the guides consulted (T.L. Branson) places any
+# of them on a timeline at all, and it places two of the four (The Christmas
+# Scorpion, The Fourth Man) while leaving the other two (Smile, Many Happy
+# Returns) out of its own chronological list entirely. One source with a
+# 50% hit rate falls short of the two-source agreement the novel sequence
+# below clears easily, so all four stories stay out of this order rather
+# than being half-placed by a guess.
+#
+# NO SECOND "INTEGRATED" ORDER. Wheel of Time-style prequels need a second
+# order because the prequel is released out of numbered sequence and has to
+# be slotted back into a publication read. Reacher's four prequels are not
+# that: each is a numbered, mainline novel that already sits at its own
+# publication-year position in the derived default, so the default already
+# delivers "meet each prequel where Child published it" without any
+# authored order. Only the timeline reader needs a bespoke sequence.
+#
+# REJECTED: a "novels only, publication order" order (mirroring
+# jim-butcher/dresden-files-novels), to skip the eleven editor/contributor
+# anthology entries and the two nonfiction pieces. Jim Butcher's Dresden
+# order earns its keep because Codex Alera and The Cinder Spires are
+# complete, competing fantasy series sharing no universe with Dresden, so
+# filtering them out changes what a reader encounters between books. Here
+# the excluded works are not a competing series, just periphery Child
+# edited or contributed to; the app already renders them as compact,
+# cover-less single-line rows (canonTier: apocrypha, see docs/SCHEMA.md), so
+# the default view already de-emphasizes them without an authored order
+# duplicating that job. No source recommends skipping them as a reading
+# strategy either, so this order was not written.
+#
+# REJECTED: an order split around the change of authorship (Lee Child solo
+# through Blue Moon, Andrew Child co-writing from The Sentinel on). Ruled on
+# already in eras.yaml: both brothers frame the transition as continuity,
+# not a break, and it is the same continuous Reacher story either side of
+# it - there is no materially different reading experience to sequence,
+# only a byline change already visible in works.yaml's
+# withAuthorIds/authorRole fields.
+
+- id: lee-child/chronological-inuniverse
+  name: Reacher's life, in order
+  type: chronological-inuniverse
+  source: canon
+  rationale: >
+    All 31 Jack Reacher novels, resequenced from publication order into the
+    order they happen in Reacher's own life. Four of them reach back into
+    his last years as a serving Military Police officer, well before the
+    post-army drifting that opens the numbered series; this order moves
+    those four to the front and lets the remaining 27 follow in their usual
+    sequence. For a reader who wants Reacher's career to add up start to
+    finish, or a completionist re-reading the whole run with the timeline
+    straight. The cost is real: all four prequels were written well after,
+    and with full knowledge of, everything that follows them, so reading
+    them first means meeting Reacher's recurring circle of colleagues
+    already shaped by a story this order has not gotten to yet. Every guide
+    consulted, including the character's own official site, still steers a
+    first-time reader to publication order for exactly that reason; this
+    sequence is built for the second run through the series, not the first.
+  orderedWorkIds:
+    - lee-child/the-enemy
+    - lee-child/the-secret
+    - lee-child/night-school
+    - lee-child/the-affair
+    - lee-child/killing-floor
+    - lee-child/die-trying
+    - lee-child/tripwire
+    - lee-child/the-visitor
+    - lee-child/echo-burning
+    - lee-child/without-fail
+    - lee-child/persuader
+    - lee-child/one-shot
+    - lee-child/the-hard-way
+    - lee-child/bad-luck-and-trouble
+    - lee-child/nothing-to-lose
+    - lee-child/gone-tomorrow
+    - lee-child/61-hours
+    - lee-child/worth-dying-for
+    - lee-child/a-wanted-man
+    - lee-child/never-go-back
+    - lee-child/personal
+    - lee-child/make-me
+    - lee-child/the-midnight-line
+    - lee-child/past-tense
+    - lee-child/blue-moon
+    - lee-child/the-sentinel
+    - lee-child/better-off-dead
+    - lee-child/no-plan-b
+    - lee-child/in-too-deep
+    - lee-child/exit-strategy
+    - lee-child/chain-reaction
+  debated:
+    - "The sequence itself is not contested: Wikipedia's chronological-order column, bookseriesinorder.com's own chronological list, and T.L. Branson's independently written guide all place the same four novels (The Enemy, The Secret, Night School, The Affair, in that order) ahead of Killing Floor, and none of the three disagrees on any of the remaining 27 novels either."
+    - "Reading the four prequels first is widely discouraged for a first read, for the reason stated in the rationale. jackreacher.com's own reading-order page defaults new readers to publication order despite saying the books can be read in any order, and T.L. Branson's guide states the same preference directly: start with Killing Floor unless you already know you are committing to the whole series."
+    - "The two short-fiction collections, the four uncollected solo Reacher stories, the nonfiction essay and the 2025 memoir are outside this order's scope; see this file's header comment for why each is left out rather than guessed at."
+  sources:
+    - https://en.wikipedia.org/wiki/Jack_Reacher_(novel_series)
+    - https://www.bookseriesinorder.com/jack-reacher/
+    - https://www.tlbranson.com/jack-reacher-books-in-order/
+    - https://www.jackreacher.com/us/books/

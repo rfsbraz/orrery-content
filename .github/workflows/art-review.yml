@@ -1,0 +1,97 @@
+name: Art review
+
+# When a PR touches a wing, surface its visual state where the review happens:
+# how much art exists (`asset_audit.py`) and whether the sequence paces well -
+# the loud/mid/quiet contour and any cap or adjacency violation
+# (`art_rotation.py --check`). The art-ready gate handles one issue at a time;
+# this is the whole-wing picture, inline on the PR, so the rhythm is reviewable
+# without a checkout.
+#
+# Advisory, never blocking: a pacing violation is a judgement to weigh, not a
+# failed build, and the rotation is read from the wing's GitHub issues, which a
+# brand-new wing has none of yet. One comment, rewritten in place each push.
+on:
+  pull_request:
+    paths:
+      - "content/franchises/**"
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: read
+
+concurrency:
+  group: art-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet pyyaml
+
+      - name: Which wings did this PR touch?
+        id: scope
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          wings=$(git diff --name-only "$BASE" "$HEAD" \
+            | sed -n -E 's#^content/franchises/([^/]+)/.*#\1#p' \
+            | sort -u | tr '\n' ' ')
+          echo "wings=${wings}" >> "$GITHUB_OUTPUT"
+          echo "Wings touched: ${wings:-(none)}"
+
+      - name: Build the review comment
+        id: build
+        if: steps.scope.outputs.wings != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORRERY_CONTENT_REPO: ${{ github.repository }}
+          WINGS: ${{ steps.scope.outputs.wings }}
+        run: |
+          set -euo pipefail
+          {
+            echo "<!-- art-review -->"
+            echo "## Art review"
+            echo "_Coverage and pacing for the wings this PR touches. Advisory - a pacing note is a call to weigh, not a failure._"
+            for w in $WINGS; do
+              [ -d "content/franchises/$w" ] || continue
+              echo ""
+              echo "### \`$w\`"
+              echo '```'
+              echo "# coverage"
+              python scripts/asset_audit.py "$w" 2>&1 || true
+              echo ""
+              echo "# rotation & pacing (from the wing's asset issues)"
+              python scripts/art_rotation.py --check "$w" 2>&1 || true
+              echo '```'
+            done
+          } > /tmp/art-review.md
+          cat /tmp/art-review.md
+
+      - name: Upsert the comment
+        if: steps.scope.outputs.wings != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          set -euo pipefail
+          existing=$(gh api "repos/$REPO/issues/$PR/comments" --paginate \
+            --jq 'map(select(.body | startswith("<!-- art-review -->"))) | .[0].id // empty')
+          payload=$(jq -n --arg b "$(cat /tmp/art-review.md)" '{body: $b}')
+          if [ -n "$existing" ]; then
+            printf '%s' "$payload" | gh api -X PATCH "repos/$REPO/issues/comments/$existing" --input -
+            echo "updated comment $existing"
+          else
+            printf '%s' "$payload" | gh api -X POST "repos/$REPO/issues/$PR/comments" --input -
+            echo "posted new comment"
+          fi

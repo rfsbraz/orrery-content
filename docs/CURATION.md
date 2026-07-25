@@ -280,6 +280,18 @@ how a reader reads. The impact taxonomy, in editorial terms:
 - Fails all three: it does not ship. Every noise event cheapens the real
   anchors.
 
+**Before the ranking, one floor: every author's timeline opens with the
+birth.** The first `lifeEvent` is dated to the author's own `born` date and
+names the place - where they were born and where they were actually raised,
+which are often not the same. It is a `low` by the taxonomy above and it is
+still not optional: a river that opens mid-career drops the reader on a
+stranger, and every later event is measured against a place they were never
+given. The layout grammar has always agreed - `full-bleed-vista`'s first listed
+use is "birthplace" (docs/LAYOUT.md). `validate.py` warns when an author with
+`lifeEvents` has none dated to `born`. Six wings opened mid-life before the
+check existed, because the ranking below is a *press* ranking and a birth is
+not a press fact.
+
 What changes a reading, ranked - spend effort at the top:
 
 1. **The author's inner weather** - illness, addiction, grief, recovery, fear.

@@ -87,6 +87,23 @@ never existed and a human had typed the file by hand?** Process belongs in the
 handoff, the PR body and git history. `docs/CURATION.md` §2 is the long form;
 `validate.py` scans content comments and warns.
 
+## The one event that is not a press fact: the birth
+
+**Every author's timeline opens with their birth, and this stage owes it.** The
+first `lifeEvent` is dated to the author's `born` date, titled with the place
+("Born in Providence, Rhode Island", "Born in Oslo, raised in Molde"), and
+carries the childhood geography that follows it - where they were born, where
+they were actually raised, and what that place later became in the books.
+
+It is not in the ranking below, and that is exactly why it kept going missing:
+the ranking is a *press* ranking, a birth is not press, so an agent working the
+list correctly skipped it and six wings opened mid-career - one on a second
+marriage, one on selling package tours. `validate.py` warns when an author with
+`lifeEvents` has none dated to `born`. Grade it `low`; a birth is a floor, not
+a rupture. `full-bleed-vista` is its natural organisation (docs/LAYOUT.md lists
+"birthplace" as its first use), unless the next cell is loud - two loud cells
+cannot touch, so `beside` with a `place-portrait` is the quiet alternative.
+
 ## What you are looking for
 
 Ranked by how much they change a reading. Spend your effort at the top.

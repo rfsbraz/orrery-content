@@ -1,0 +1,93 @@
+# Overlay pt-PT do autor: bio + prosa dos lifeEvents.
+# Os lifeEvents ficam aninhados sob o autor e são fundidos por id (ver
+# SCHEMA.md, "Nested lists merge by id"). Levam `title` + `description`, que
+# são prosa; datas, impact e sources nunca se traduzem, nem o nome do autor.
+# As citações diretas de Coben ficam no inglês em que foram efetivamente
+# ditas: traduzi-las substituiria as suas próprias palavras por outras que
+# nunca disse. Só a prosa à volta da citação é traduzida (mesma convenção de
+# content/i18n/pt-PT/franchises/harlan-coben/events.yaml). Títulos de obras
+# citados usam a edição portuguesa publicada (editions.yaml) ou ficam no
+# original inglês quando não existe edição portuguesa. Deal Breaker tem
+# duas traduções portuguesas rivais, nenhuma atualmente em circulação, pelo
+# que a referência abaixo fica no original inglês.
+- id: harlan-coben
+  bio: >
+    Escritor norte-americano de romance policial e thriller, nascido em
+    Newark, Nova Jérsia, e criado em Livingston, onde se formou na
+    Livingston High School ao lado do futuro governador Chris Christie.
+    Estudou ciência política no Amherst College, licenciando-se em 1984, e
+    trabalhou na agência de viagens do avô antes de o seu primeiro romance,
+    [[work:harlan-coben/play-dead|Play Dead]] (1990), ser aceite para
+    publicação. O terceiro romance,
+    [[work:harlan-coben/deal-breaker|Deal Breaker]] (1995), apresentou o
+    agente desportivo tornado investigador amador Myron Bolitar e deu início
+    a uma série ainda em curso; seguiu-se um grande corpo de romances
+    independentes a partir de
+    [[work:harlan-coben/tell-no-one|Não Contes a Ninguém]] (2001), a que
+    mais tarde se juntaram outras séries construídas em torno de
+    personagens recorrentes do universo de Myron. Coben é o primeiro autor
+    a vencer os prémios Edgar, Shamus e Anthony, e os seus livros já foram
+    traduzidos para 46 línguas. Vive em Ridgewood, Nova Jérsia, com a
+    mulher, a pediatra Anne Armstrong-Coben, e os quatro filhos do casal.
+  lifeEvents:
+    - id: coben-born-1962
+      title: Nasce em Newark, cresce em Livingston
+      description: >
+        Nasce em Newark, no New Jersey, e cresce em Livingston, trinta
+        quilómetros a oeste, onde faz o liceu ao lado de Chris Christie, mais
+        tarde governador do estado. O subúrbio dormitório do New Jersey - as
+        ruas sem saída, os parques de estacionamento das escolas, as famílias
+        com alguma coisa enterrada - é o cenário a que volta em quase tudo o
+        que escreve.
+
+    - id: coben-travel-agency-writing-1990
+      title: "Vende pacotes de viagens organizadas enquanto escreve nas horas vagas"
+      description: >
+        Depois de se formar em Amherst em 1984, Coben passou cerca de seis
+        anos a organizar excursões em grupo na agência de viagens do avô,
+        em Union, Nova Jérsia, escrevendo nas horas vagas.
+        [[work:harlan-coben/play-dead|Play Dead]], a sua estreia, foi aceite
+        para publicação quando tinha 26 anos e saiu em 1990; já disse que a
+        ideia lhe surgiu diretamente desse trabalho. Só deixou o setor das
+        viagens para trás quando a série Myron Bolitar vingou, anos mais
+        tarde.
+
+    - id: coben-father-dies-1988
+      title: A morte súbita do pai, aos 59 anos
+      description: >
+        O pai de Coben morreu de ataque cardíaco aos 59 anos, em 1988, a
+        primeira do que desde então Coben chamou "quite a bit of tragedy" na
+        casa dos vinte anos, uma década que também lhe levou a mãe e que,
+        pelas suas próprias contas, chegou a somar sete funerais. Numa
+        entrevista de 2025, chamou à morte do pai "still the most
+        traumatic" das perdas, "because it was the first one. It came out
+        of nowhere," e atribuiu diretamente a essa década de luto o mérito
+        da sua escrita: "tragedy is a very cruel but effective teacher... it
+        helped push me and made my writing better." Escreveu sobre o pai
+        diretamente uma única vez, em "The Key to My Father", um ensaio de
+        Dia do Pai encomendado pela página de opinião do New York Times em
+        2003, a primeira ficção original que essa página publicava havia
+        mais de uma década.
+
+    - id: coben-triple-award-1997
+      title: O primeiro autor a vencer o Edgar, o Shamus e o Anthony
+      description: >
+        [[work:harlan-coben/deal-breaker|Deal Breaker]] venceu o Prémio
+        Anthony de 1996 para melhor edição original em brochura; no ano
+        seguinte, [[work:harlan-coben/fade-away|O Atleta Desaparecido]]
+        venceu tanto o Edgar como o Shamus na mesma categoria, completando
+        um conjunto que nenhum autor policial tinha reunido antes. É a
+        credencial com que toda a biografia posterior abre, e recaiu sobre
+        o seu segundo e terceiro romances, anos antes de existirem os
+        romances independentes ou qualquer adaptação para ecrã.
+
+    - id: coben-daughter-charlotte-writer-2020
+      title: A filha junta-se a ele como argumentista
+      description: >
+        Charlotte Coben, um dos seus quatro filhos, escreveu o quinto
+        episódio da adaptação da Netflix de 2020 de
+        [[work:harlan-coben/the-stranger|Não Fales com Estranhos]], o seu
+        primeiro crédito de escrita numa série do pai; ele já disse que a
+        ideia foi da produtora Nicola Shindler, não sua, e que hoje conta
+        com ela em todas as produções. Foi depois escrever mais episódios
+        para as adaptações de Stay Close e Shelter.

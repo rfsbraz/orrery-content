@@ -1,0 +1,160 @@
+id: cormac-mccarthy
+name: Cormac McCarthy
+kind: author
+description: >
+  Twelve novels running from Southern Gothic Appalachia through the Mexican
+  borderlands of The Border Trilogy to post-apocalyptic America, framed by
+  two plays, two screenplays and the single essay he published in his last
+  decade working alongside scientists at the Santa Fe Institute.
+authorIds: [cormac-mccarthy]
+themePreset: borderland-ash
+
+# Capabilities are auto-detected from the data (docs/SCHEMA.md). A
+# deliberately thin bundle: 17 works (12 novels, 2 plays, 2 screenplays, 1
+# essay) across 2 subseries (The Border Trilogy; The Passenger), no
+# characters.yaml and no work `connections`. No recurring figure crosses
+# subseries or standalone boundaries in this bibliography: John Grady Cole
+# and Billy Parham stay inside The Border Trilogy, and Bobby and Alicia
+# Western stay inside The Passenger, so neither pair is cross-wing
+# connective tissue in the sense characters.yaml exists for, and the
+# connections map stays dark by design rather than padded. Two received eras
+# (eras.yaml), franchise events (events.yaml) and two curated orders
+# (orders.yaml: the Border Trilogy; The Passenger/Stella Maris pair), 29 editions (editions.yaml) and covers now
+# exist alongside the startHere wizard below.
+# globalEvents ruled: only lady-chatterley-trial-1960 reaches this author's
+# page.
+features: {}
+
+globalEvents:
+  include:
+    - lady-chatterley-trial-1960  # opened the permissive decades; McCarthy's career begins four years later writing graphic violence and language this verdict made publishable
+  exclude:
+    - sept-11-2001               # lived through it; No Country and The Road don't engage with it
+    - financial-crisis-2008      # lived through it; no book answers it
+    - covid-19-pandemic-2020     # no evidence his late novels respond to the pandemic
+    - world-war-i-1914           # pre-lifetime
+    - world-war-ii-1939          # lived through it as a child; no book engages it
+    - pulp-magazines-1926        # pre-lifetime
+    - penguin-paperback-1935     # pre-career; format distribution, not thematic resonance
+    - armed-services-editions-1943  # pre-career
+    - fantasy-paperback-boom-1965   # McCarthy didn't write fantasy
+    - carnation-revolution-1974     # geographic/cultural specificity; American author
+    - chain-bookshop-1982           # distribution infrastructure; no thematic resonance
+    - online-bookselling-1995       # distribution infrastructure; no thematic resonance
+    - ebook-and-self-publishing-2007 # late-career; didn't affect his writing
+    - prestige-fantasy-adaptation-2011 # McCarthy didn't write fantasy
+    - booktok-2020                  # late phenomenon; no evidence of influence on his work
+    - portugal-bailout-2011         # geographic/cultural specificity; American author
+
+# "Where to start" - powers the guided wizard. Four paths, each with a
+# citable basis (the publisher's own editor, the accessible-entry press
+# consensus, or the widely-given caution around Blood Meridian) rather than
+# our own reading. No fifth path was added to fill a cell: no citable
+# "start here" advice was found for the Passenger/Stella Maris pair or for
+# No Country for Old Men as a dedicated entry point, so neither gets one.
+startHere:
+  paths:
+    # Source: https://www.penguinrandomhouse.com/the-read-down/cormac-mccarthy-primer/
+    # Jenny Jackson, Knopf VP and Executive Editor of McCarthy's work: "For
+    # new readers of Cormac McCarthy's work, All the Pretty Horses is a
+    # perfect place to start" (classic McCarthy style, more traditional
+    # plotting than the earlier novels), then recommends continuing straight
+    # through the trilogy.
+    # Corroborating: https://www.panmacmillan.com/blogs/literary/guide-to-cormac-mccarthy-books
+    # ("All the Pretty Horses captures the best of McCarthy's essence and
+    # style, providing a great introduction").
+    - id: start-with-border-trilogy
+      title: Start with the Border Trilogy
+      description: >
+        McCarthy's own longtime editor points new readers here first: All the
+        Pretty Horses is recognisably McCarthy but the most conventionally
+        plotted of his novels, a way in before the style gets harder. The
+        trilogy that follows widens into two more young men's lives on the
+        Texas-Mexico border.
+      workIds: null
+      orderId: cormac-mccarthy/border-trilogy-in-order
+      fit:
+        experience: [new]
+        commitment: [arc]
+      note: >
+        Three books rather than one - the cost is committing to a trilogy
+        before you know the standalones, in exchange for the fullest first
+        taste of the borderland novels this author is best known for.
+
+    # Source: https://www.nypl.org/blog/2017/07/20/where-start-cormac-mccarthy
+    # ("one of McCarthy's bleakest novels" - named alongside All the Pretty
+    # Horses as a common entry point).
+    # Corroborating: https://theconversation.com/cormac-mccarthy-where-to-begin-reading-his-searing-brutal-and-unforgettable-novels-207863
+    # ("The Road is also a popular starting point, demonstrating McCarthy's
+    # style at its most distilled").
+    - id: try-the-road
+      title: Try The Road
+      description: >
+        A father and son walking a devastated America, in the plainest and
+        most stripped-down prose McCarthy ever wrote. No trilogy, no
+        century-old borderland history to pick up first - just one short,
+        harrowing novel and the sentence-level style he is famous for.
+      workIds:
+        - cormac-mccarthy/the-road
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        The cost is that it is his gentlest and most linear book by far -
+        move on to Blood Meridian or the Border Trilogy expecting something
+        considerably harder.
+
+    # Source: https://www.penguinrandomhouse.com/the-read-down/cormac-mccarthy-primer/
+    # Jenny Jackson again: Blood Meridian is McCarthy's "most violent novel"
+    # and the primer places it after the Border Trilogy, for readers ready
+    # for extreme content, not as a first book.
+    # Corroborating, on steering newcomers away from it first:
+    # https://badgerherald.com/books/2025/01/16/blood-meridian-and-violence-in-the-media/
+    # ("if you are new to Cormac McCarthy books, it's recommended to start
+    # with All the Pretty Horses or No Country for Old Men first").
+    - id: the-masterpiece
+      title: "The masterpiece: Blood Meridian"
+      description: >
+        Widely called the strongest candidate for the great American novel,
+        and just as widely called the hardest McCarthy to start on: his most
+        violent book, sustained across nearly unrelieved brutality, with
+        prose that can run a full page unbroken. Read this for the book
+        people mean when they call him a great writer, not for an easy
+        introduction.
+      workIds:
+        - cormac-mccarthy/blood-meridian
+      orderId: null
+      fit:
+        experience: [returning, completionist]
+        commitment: [taste]
+      note: >
+        His own editor recommends coming to this one after the Border
+        Trilogy rather than first - the cost of starting here instead is
+        meeting McCarthy at his most extreme before you know if his quieter
+        register is for you.
+
+    - id: everything
+      title: Everything, in order
+      description: >
+        All seventeen works - the twelve novels, the two plays, the two
+        screenplays and the one essay - in publication order, from his 1965
+        debut to the Passenger/Stella Maris pair that closed his career.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+
+images:
+  header: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Santa_Elena_Canyon_%28Left_Side_is_United_States%2C_Right_Side_is_Mexico%29%2C_Big_Bend_National_Park%2C_Texas_-_66959353.jpg"
+  headerCredit: "Ken Lund, CC BY-SA 2.0"
+  headerSource: "https://commons.wikimedia.org/wiki/File:Santa_Elena_Canyon_(Left_Side_is_United_States,_Right_Side_is_Mexico),_Big_Bend_National_Park,_Texas_-_66959353.jpg"
+  # The Rio Grande gorge at Santa Elena Canyon, Big Bend National Park:
+  # the river the border novels (Blood Meridian, the Border Trilogy, No
+  # Country) are set along, not a single film adaptation's imagery.
+  # 2048x1536, no personality/location restriction flagged on the file.
+
+sources:
+  - https://en.wikipedia.org/wiki/Cormac_McCarthy
+  - https://en.wikipedia.org/wiki/Cormac_McCarthy_bibliography

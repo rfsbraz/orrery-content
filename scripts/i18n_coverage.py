@@ -3,8 +3,8 @@
 
 Finds reader-facing prose in the base content and checks each locale has an
 overlay carrying it. Catches the failure mode that no other check does: content
-that belongs to no franchise (shared global events, co-author bios, character
-rosters) and so gets missed when translation work is split by franchise.
+that belongs to no franchise (shared global events, co-author bios) and so
+gets missed when translation work is split by franchise.
 
 Usage: python scripts/i18n_coverage.py [--strict]
 Exit non-zero with --strict when a locale has any missing file.
@@ -31,7 +31,6 @@ PROSE = {
     # translation gap.
     "events.yaml": ["title", "description", "quote"],
     "orders.yaml": ["name", "rationale"],
-    "characters.yaml": ["description"],
 }
 
 
