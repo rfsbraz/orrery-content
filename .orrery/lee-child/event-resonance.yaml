@@ -1,0 +1,108 @@
+stage: event-resonance
+wing: lee-child
+
+summary: >
+  franchise.yaml's globalEvents was already fully ruled (2 include, 15
+  exclude, all 17 global.yaml events covered, no lifetime-default marker
+  left) when this stage opened, apparently from the wing's scaffold commit
+  rather than a dedicated pass. Rather than trust that at face value, every
+  claim was re-verified against a primary source rather than the run: the
+  sept-11-2001 resonance against Jack Reacher's own Wikipedia page, the
+  ebook-and-self-publishing-2007 novella list against works.yaml, and the
+  plot synopses of every novel published inside the financial-crisis-2008
+  and covid-19-pandemic-2020 windows, confirming neither event is actually
+  answered on the page. Also specifically re-checked both distribution-shift
+  excludes (chain-bookshop, online-bookselling) for a sourceable inheritance
+  case the existing note might have missed; found none beyond generic
+  bestseller status, so both stand excluded. No franchise.yaml edit was
+  needed. validate.py green (--slug lee-child); aura_density.py: 46 works,
+  11 aura, 0.24/work, longest dark run 4yrs (1997-2000), unchanged by this
+  stage since globalEvents contributes no new aura rows.
+
+included:
+  - id: sept-11-2001
+    reason: >
+      Reacher's own biography states, directly, that after 9/11 restrictions
+      on wire transfers force him to carry an ATM card and an expired
+      passport - a global event reaching a character's daily habits, not
+      just backdrop. Verified verbatim on Jack Reacher's Wikipedia page:
+      "After the September 11 attacks, with restrictions on wire transfers in
+      the light of fraud he was obliged to carry an ATM card and photo ID in
+      the form of a (generally expired) American passport."
+  - id: ebook-and-self-publishing-2007
+    reason: >
+      Explains a real, unusual shelf shape: from 2011 Child released a run
+      of Reacher novellas and short stories (Second Son, Deep Down, High
+      Heat, Not a Drill, Small Wars, Too Much Time) as standalone ebook
+      singles between novels, a format the series' first decade did not
+      have. Verified against works.yaml's own header and No Middle Name
+      entry, which independently document the same list.
+
+excluded:
+  - id: financial-crisis-2008
+    reason: >
+      Three novels publish across the window (Nothing to Lose 2008, Gone
+      Tomorrow 2009, 61 Hours and Worth Dying For 2010); their synopses run
+      on small-town conspiracy, a subway bomb scare, a meth operation and a
+      county run on fear, none touching economic collapse. Lived through,
+      not written into.
+  - id: covid-19-pandemic-2020
+    reason: >
+      The Sentinel published during the pandemic, but its synopsis (a fired
+      IT administrator blamed for a ransomware attack) does not reference
+      it; checked the plot rather than assuming from publication timing.
+  - id: chain-bookshop-1982
+    reason: >
+      Checked specifically as a distribution-shift candidate, the way
+      ebook-and-self-publishing-2007 was included. Found no sourced link
+      between Child's success and chain-bookshop retail; the only
+      shelf-placement fact on record is that "Lee" was chosen so his books
+      sit alphabetically between Chandler and Christie, a pen-name anecdote,
+      not a chain-retail one. Shaped the landscape his books sold into, not
+      addressed by them.
+  - id: online-bookselling-1995
+    reason: >
+      Same check, same result: coincides with the start of his career but no
+      source ties his success to online bookselling specifically, and it is
+      not addressed in the books.
+  - id: world-war-i-1914
+    reason: predates his lifetime (born 1954)
+  - id: world-war-ii-1939
+    reason: predates his lifetime (born 1954)
+  - id: pulp-magazines-1926
+    reason: predates him; not a pulp writer
+  - id: penguin-paperback-1935
+    reason: predates him
+  - id: armed-services-editions-1943
+    reason: predates him
+  - id: lady-chatterley-trial-1960
+    reason: he was six years old; no resonance to a commercial thriller writer
+  - id: fantasy-paperback-boom-1965
+    reason: >
+      Child writes crime/thriller, not fantasy; no Sanderson-style inheritance
+      argument found for a genre he does not write in.
+  - id: carnation-revolution-1974
+    reason: Portuguese history; Child is British, no connection found
+  - id: prestige-fantasy-adaptation-2011
+    reason: Game of Thrones; not his genre
+  - id: booktok-2020
+    reason: a video-discovery phenomenon that shaped backlist sales, not the books
+  - id: portugal-bailout-2011
+    reason: Portuguese national crisis; unrelated
+
+unsure: >
+  None. The two candidates the brief flagged as worth checking (9/11, and the
+  distribution-shift trio of chain-bookshop/online-bookselling/ebook) all had
+  clean, sourceable answers rather than judgment calls left open.
+
+gates:
+  validate: "green (--slug lee-child); 4 pre-existing/soft handoff-length warnings only (completeness-auditor, eras, this handoff, press-archaeology), none attributable to franchise.yaml content"
+  aura_density: "46 works, 11 aura entries, 0.24/work, longest dark run 4yrs (1997-2000); unchanged by this stage"
+
+note_to_orchestrator: >
+  franchise.yaml's globalEvents was already fully ruled as of the wing's
+  scaffold commit (caf858a), not left unruled as assumed going in, so there
+  was no lifetime-fallback inflation to remove. This run verified rather than
+  authored the ruling against primary sources rather than trusting the
+  existing comments; no franchise.yaml edit was needed, it was already
+  correct.
