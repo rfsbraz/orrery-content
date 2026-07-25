@@ -1,0 +1,133 @@
+stage: visual-metadata
+wing: lee-child
+summary: >
+  Added images blocks to content/franchises/lee-child/works.yaml (46 works),
+  franchise.yaml (header) and confirmed the existing author portrait in
+  content/authors/lee-child.yaml. validate.py green, 0 new warnings; every
+  cover, header and portrait URL fetched with ?default=false and confirmed to
+  serve a real image (not a blank placeholder); every image looked at.
+
+covers:
+  total_works: 46
+  covered: 42
+  coverless: 4
+  unique_urls: 42
+  breakdown:
+    direct_isbn: 33
+    # ISBN in editions.yaml resolved cleanly via
+    # covers.openlibrary.org/b/isbn/<isbn13>-L.jpg, looked at and clear of
+    # watermarks/library marks on first try.
+    replaced_with_alternate_edition: 9
+    # ISBN-derived cover was dead, blank, or a real defect (see rejected
+    # below); an alternate edition of the SAME confirmed work supplied a
+    # clean cover instead. Listed one per line:
+    works:
+      - "killing-floor: the recorded ISBN (Berkley Trade 2004) resolves to a
+        113x180 thumbnail, too small to use. Used a 2012 Jove mass-market
+        reprint of the same novel (isbn13 9780515153651) instead."
+      - "bad-luck-and-trouble: the recorded ISBN's cover carries a retail
+        price sticker over the top-right corner. Used a clean Open Library
+        id for the same work."
+      - "first-thrills: both the recorded ISBN and the work's default
+        representative cover are the same library-checkout scan (a Boston
+        Public Library barcode and spine label burned into the image, of the
+        BACK cover, not the jacket). Used the Atlantic Books UK edition's
+        cover instead, confirmed clean."
+      - "the-secret: recorded ISBN (9781984818607) has no cover of its own;
+        confirmed it sits on the same Open Library work record as the id
+        used, then used that work's own representative cover."
+      - "exit-strategy: recorded mass-market ISBN (9780593725863) is not yet
+        indexed by Open Library at all (confirmed 404 on isbn.json, not just
+        a missing cover). Used the November 2025 Delacorte hardcover ISBN
+        (9780593725849, already named in editions.yaml's own note) instead,
+        confirmed same work by title/publisher/by-statement."
+      - "the-hero: recorded ISBN has no cover; used the 2019 TLS Books
+        hardcover of the same essay, same Open Library work."
+      - "safe-enough: recorded ISBN has no cover; used the work's own
+        representative cover (Penzler Publishers edition)."
+      - "jack-reachers-rules: recorded ISBN (9780345544292) has no cover; used
+        the Delacorte edition one digit off (9780345544308), same work,
+        matching the exact work title and its Introduction-by-Lee-Child
+        credit exactly."
+      - "how-to-write-a-mystery: recorded ISBN has no cover; used a Blackstone
+        audio edition of the same book that carries the shared print jacket
+        art."
+
+rejected:
+  - "killing-floor's OTHER Open Library id (11089125, the work's own search-
+     API representative cover): a Penguin Readers ELT graded-reader edition
+     (\"Introducing Jack Reacher\"), an abridged-for-language-learners object,
+     not the novel. Confirmed via its own edition record before rejecting."
+  - "bad-luck-and-trouble's recorded-ISBN cover: real price sticker over the
+     jacket art, not a rights problem but shabby; replaced per the skill's
+     degraded-scan guidance."
+  - "first-thrills's recorded-ISBN cover AND the work's own default cover
+     (same underlying scan, cover_i 14424705): a library barcode/spine-label
+     scan of the BACK cover. Replaced."
+
+coverless:
+  - id: lee-child/chain-reaction
+    reason: >
+      Not yet published (forthcoming 2026-10-20). The publisher's own
+      pre-order ISBN (9798217375158) has an Open Library edition record
+      (confirmed) but no cover image anywhere on that work.
+  - id: lee-child/the-christmas-scorpion
+    reason: >
+      The ebook single's ISBN (9781984818454) has no Open Library record at
+      all (confirmed 404 on isbn.json); its work record's only other edition
+      also carries no cover.
+  - id: lee-child/reacher-the-stories-behind-the-stories
+    reason: >
+      ISBN (9781613167069) has no Open Library record at all (confirmed 404);
+      a title search returns nothing. Published May 2025, likely just too
+      recent to be indexed.
+  - id: lee-child/many-happy-returns
+    reason: >
+      Carries no edition at all (editions.yaml: ran once in The Spectator,
+      never reprinted), so there is no object to photograph a jacket from.
+
+portrait:
+  status: already present, verified rather than added
+  source: content/authors/lee-child.yaml (images.portrait)
+  credit: "Mark Coggins, CC BY 2.0"
+  file: "Lee Child, Bouchercon 2010.jpg"
+  verification: >
+    Fetched the file directly (200, 634861 bytes) and read Wikimedia's
+    imageinfo/extmetadata for the exact filename: confirmed under
+    "Photographs by Mark Coggins" with the credit already recorded matching.
+    A real head-and-shoulders portrait, no crop issues. No change needed.
+
+header:
+  file: "Desert Empty Highway (Unsplash).jpg"
+  credit: "John King, CC0"
+  source: "https://commons.wikimedia.org/wiki/File:Desert_Empty_Highway_(Unsplash).jpg"
+  rationale: >
+    An empty two-lane US highway through desert scrubland with a double
+    yellow line, mile-marker post visible: Reacher's own territory (walked
+    and hitchhiked roads recur across the synopses - the Greyhound into
+    Margrave, the hitchhiked rides in Echo Burning and A Wanted Man, the
+    walked road between two Colorado towns in Nothing to Lose). A landscape
+    rather than one novel's specific setting, since the series moves through
+    a new town almost every book. CC0 (public domain dedication),
+    AttributionRequired: false, credited anyway per the skill's practice.
+    No film-still or adaptation imagery considered or used.
+
+gates:
+  validate_scoped: "green, 0 new warnings (5 pre-existing handoff word-count
+    warnings on other .orrery files, not content)"
+  validate_full: "green, same warning count as the stage's own starting
+    baseline (all on other franchises)"
+  cover_url_check: "42/42 recorded cover URLs fetched with ?default=false,
+    all resolve to real images >3000 bytes, 0 dead"
+  unique_urls: "42 covers, 42 unique URLs, no duplicates"
+  lookup_check_covers: "45 checked (46 minus many-happy-returns, which has no
+    ISBN to derive from), 3 dead - exactly the 3 coverless works whose
+    editions.yaml ISBN has no Open Library record (chain-reaction,
+    the-christmas-scorpion, reacher-the-stories-behind-the-stories);
+    consistent with the documented negatives above"
+  header_and_portrait: "both fetched live, 200, real images"
+
+touched_only: >
+  images blocks in works.yaml and franchise.yaml, plus this handoff. No
+  prose, id, externalIds, or sources field edited. content/authors/lee-child.yaml
+  left untouched (portrait already correct).
