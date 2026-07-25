@@ -278,7 +278,7 @@ with a new prose-bearing structure, extend `count()` in the same commit.
 **3. Content that belongs to no franchise.** Translation work gets split by
 franchise, because that is how the content is shaped. Everything that belongs to
 **no** franchise then has no owner: the shared `content/events/global.yaml`, the
-co-author bios, the character rosters, the home page's author descriptions. All
+co-author bios, the home page's author descriptions. All
 of it sat in English long after the locale was called done, because every
 translator had been handed a franchise. This failure is precisely why
 `i18n_coverage.py` exists - it walks the base tree, not the franchise list.

@@ -1,6 +1,6 @@
 ---
 name: franchise-research
-description: Scaffold a new franchise wing for Orrery - scope the franchise, slug the works, create the global author entities, draft the bibliography and series structure, map characters and connections, and set the theme, leaving every other layer as an honestly-marked thin pass for its specialist skill. Use only when content/franchises/<slug>/ does not exist yet or its structure is being redrawn; any other work on an existing wing belongs to a specialist skill.
+description: Scaffold a new franchise wing for Orrery - scope the franchise, slug the works, create the global author entities, draft the bibliography and series structure, and set the theme, leaving every other layer as an honestly-marked thin pass for its specialist skill. Use only when content/franchises/<slug>/ does not exist yet or its structure is being redrawn; any other work on an existing wing belongs to a specialist skill.
 ---
 
 # franchise-research (the scaffold stage)
@@ -97,7 +97,7 @@ handoff, the PR body and git history. `docs/CURATION.md` §2 is the long form;
 Orrery is a framework: every advanced layer is optional, and the app activates
 capabilities per franchise from what the data provides (the capabilities table
 in SCHEMA.md). Judge which layers this franchise *earns* - a sprawling
-multiverse earns characters, connections and a rich aura; a sparse or
+multiverse earns a rich aura and full editions; a sparse or
 non-English author may ship works plus a thin aura and nothing else, and that
 is a complete, correct wing. Empty is a supported state (CURATION.md §1).
 State in your handoff which capabilities the scaffold activates and why.
@@ -106,8 +106,8 @@ State in your handoff which capabilities the scaffold activates and why.
 
 **A wing is an author's complete published body of work - always** (curator
 ruling, 2026-07-21). The derived main order spans everything they published;
-a shared universe or series lives INSIDE the wing as `subseries`, connections
-and characters, never as the wing's boundary. Do not scope a wing to one
+a shared universe or series lives INSIDE the wing as `subseries`,
+never as the wing's boundary. Do not scope a wing to one
 universe (the Cosmere) or one series (The Wheel of Time) even when it is what
 the author is famous for - that is what `subseries` is for, and the Stephen
 King wing (95 works, The Dark Tower as a thread) is the model. `kind: author`
@@ -120,7 +120,7 @@ Two corollaries:
   Wheel of Time is Robert Jordan's wing; the Sanderson-finished volumes stay
   there as `withAuthorIds` works. A collaborator's own wing never duplicates
   them - a work lives in exactly one franchise - so cross-reference from the
-  collaborator's bio/connections instead.
+  collaborator's bio instead.
 - **A cross-author collaboration** (Good Omens) is included in the wing with
   `withAuthorIds` and `authorRole` per the multi-author rules below.
 
@@ -185,27 +185,7 @@ other (then quote them). Two traps:
   marketed sequences that share a protagonist stay separate; where a thread
   genuinely continues under a new name, say so in a `note:` on the hinge work.
 - **A collection containing a series novella is not part of the series.**
-  Leave its `subseries` null; let a connection or character entry carry the
-  link.
-
-## Characters and connections
-
-This skill owns them - no specialist skill exists for this layer.
-
-- **Characters are connective tissue, not a wiki.** Add `characters.yaml` only
-  for figures whose recurrence across works is part of how the franchise hangs
-  together. An appearance whose *existence* is a reveal gets `spoilerAfter` on
-  that appearance.
-- **Connections are declared on the later work**, pointing back at the earlier
-  one (the later work is the one whose reading is enriched); the app renders
-  the edge both ways. Do not duplicate what `subseries` already threads -
-  connections are for crossovers, sequels across subseries, and shared
-  cosmology.
-- **Chase the universe connections properly.** This is a headline feature:
-  `connections` on works, `characters.yaml` with appearance lists,
-  inter-franchise links where an author's universes touch. Gate reveals with
-  `spoilerAfter` rather than dropping them; if the franchise genuinely has
-  none, say so in the handoff instead of leaving it silently empty.
+  Leave its `subseries` null; note the link in a `note:` on the work instead.
 
 ## Theme scaffolding
 
@@ -264,11 +244,10 @@ content/
   franchises/
     <franchise-slug>/
       franchise.yaml                 # identity + features + startHere
-      works.yaml                     # required; connections live on works
+      works.yaml                     # required; the bibliography
       eras.yaml
       events.yaml                    # franchise-specific events only
       orders.yaml                    # additional orders (default is derived)
-      characters.yaml                # optional; recurring/crossover figures
       editions.yaml                  # optional; verified ISBNs only
       achievements.yaml              # optional; this wing's badges (data, not code)
       theme.yaml                     # branding preset (see CONCEPT §6)
@@ -341,8 +320,7 @@ Only the lessons not already carried by CURATION.md or a specialist skill:
 
 The wing's structure exists and validates: slugs chosen deliberately, the
 first-draft bibliography honest about its gaps, author entities global,
-`subseries` settled with evidence, characters and connections mapped (or their
-absence stated), theme drawn from the implemented sets, and every scaffolded
+`subseries` settled with evidence, theme drawn from the implemented sets, and every scaffolded
 layer marked for its owning skill. The handoff states which capabilities the
 scaffold activates, what was rejected, and what the specialists must close.
 Canon is only canon after a curator merges it.

@@ -119,10 +119,7 @@ not the gate - it is a better sentence (see *Rewrite before redact*).
 |---|---|
 | `events[].spoilerAfter` (franchise + `global.yaml`) | **yes** |
 | `authors[].lifeEvents[].spoilerAfter` | **yes** |
-| `characters[].appearsIn[].spoilerAfter` | **yes** |
 | `works[].synopsis` | no |
-| `works[].connections` | no |
-| `characters[].description`, `characters[].aka` | no |
 | `orders[].rationale`, `orders[].debated` | no |
 | `eras[].description` | no |
 | `franchise.description`, `startHere[].description`, `startHere[].note` | no |
@@ -130,7 +127,7 @@ not the gate - it is a better sentence (see *Rewrite before redact*).
 ### In ungated fields, rewriting is not preferred - it is the only option
 
 There is no boundary to set. If the sentence cannot be written safely, it does
-not go in. A synopsis, a connection, an `aka`, an order rationale: your only
+not go in. A synopsis, an order rationale, an era description: your only
 lever is the words.
 
 **And the failure here is silent.** Adding `spoilerAfter` to a work is not an
@@ -146,9 +143,8 @@ Verified against `scripts/validate.py`: it passes. The app never reads the
 field, because `Work` has no such property. So an agent can "gate" a synopsis,
 watch the build go green, believe the reveal is protected, and ship it fully in
 the clear. **A green validator is not evidence that a spoiler is contained.**
-If you find `spoilerAfter` on anything other than an event, a lifeEvent, or a
-character appearance, it is decoration hiding an unprotected spoiler: delete it
-and fix the prose.
+If you find `spoilerAfter` on anything other than an event or a lifeEvent, it
+is decoration hiding an unprotected spoiler: delete it and fix the prose.
 
 ### Audit by entity, not by field
 
@@ -156,12 +152,11 @@ and fix the prose.
 protects its own field and nothing else, while everything else on the entity
 renders right beside it.
 
-The canonical case: Randall Flagg's `appearsIn` correctly hid the man-in-black
-identification behind Wizard and Glass, where it is confirmed. Immediately
-above it, ungated and rendering on the same panel, sat
-`aka: [..., "The Man in Black", "Walter o'Dim"]` and a description ending "the
-man in black fleeing across the desert". The gate was real, correct, and worth
-nothing.
+The canonical shape: an event's `spoilerAfter` correctly hides a death behind
+the book that delivers it - but the event's own `title`, rendered ungated on
+the same row, names the character and the fact. Or a sibling event in the same
+year states outright what the gated one protects. The gate is real, correct,
+and worth nothing.
 
 > **Whenever you set or trust a boundary, read everything else on that entity
 > that renders near it** - `description`, `aka`, sibling notes, the synopsis of
@@ -179,8 +174,8 @@ Not all spoilers are equal. Grade before you act.
 **Load-bearing** - the thing the book spends itself buying. Gate or rewrite:
 
 - a death, especially of a protagonist or a child
-- a survival (the mirror of a death, and far easier to leak: sequels,
-  connections and character rosters leak survival constantly)
+- a survival (the mirror of a death, and far easier to leak: a later book's
+  very existence, or a later event that assumes the character, leaks it)
 - a twist identity - who someone really is, who did it
 - a betrayal, or an allegiance that turns
 - the ending, or the shape of the ending
@@ -287,28 +282,13 @@ Most spoilers are one clause. Cut the clause, keep the entry:
   how it is used inside the fiction: **drop the clause and ungate the event.**
   The biography reaches everyone and the reveal is simply never stated. Both
   directions improve at once - this is the shape to look for.
-- A character description: describe who they are in their first appearance, not
-  what their arc becomes.
-- An `aka` naming a later identity: remove the alias. There is no gate on `aka`,
-  and an alias is exactly a twist identity in a list.
 
 Deleting content is the **last** resort and needs saying out loud in the PR.
-The one clean case is a `connections` edge whose existence is the spoiler:
-`docs/SCHEMA.md` prescribes carrying it as a gated character appearance
-instead, so move it rather than losing it.
+Prefer rewriting the prose so the fact is simply never stated.
 
 ## Vectors to hunt
 
 Work through these deliberately; the obvious file is rarely the worst one.
-
-**`connections`.** Ungated, and a connection is a survival claim: "this
-character/place/thread is still going in a later book". Judge each edge by what
-it discloses about the *earlier* work.
-
-**`characters.yaml`.** The densest vector. An arc summary spoils the book where
-it resolves. Check `description` and `aka` as hard as `appearsIn` - and note
-that a *shielded* appearance row still shows the reader that something exists
-and names the unlocking work (see *Engine limits*).
 
 **`startHere` paths.** Sales copy written to be enticing, which is exactly the
 pressure that leaks endings. "The one where X dies" sells a path and ruins a
@@ -362,15 +342,15 @@ structure, not prose.)
 ## Engine limits worth knowing
 
 - **Shields are not invisible.** `shieldCopy` renders "Hidden until you finish
-  *<Title>*". A shielded row therefore discloses that something exists and names
-  the unlocking work. For a character roster that leaks "this figure recurs, and
-  it starts around book five". If even that is too much, the entry must not
-  exist rather than be shielded.
+  *<Title>*". A shielded event therefore discloses that something exists and
+  names the unlocking work - which can itself be too much (that a gated event
+  exists at book five leaks that *something* happens there). If even that is too
+  much, the entry must not exist rather than be shielded.
 - **Boundaries are single works, and membership is exact.** `isRevealed` is a
   set membership check: a reader who read books 1-7 but not the anchor stays
   shielded. Prefer an anchor readers will actually have read - typically the
   work that reveals the fact, which is also the one they cannot have skipped.
-- **No gate on synopses, connections, descriptions, or order prose.** The big
+- **No gate on synopses, era descriptions, or order prose.** The big
   one. Rewriting is the only remedy there.
 
 ## Hard rules

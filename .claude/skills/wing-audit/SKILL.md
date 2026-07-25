@@ -206,8 +206,8 @@ every era, or a new late work lands past the final era's close. Re-derive it:
 parse every `period` and check where every `published` year lands (section 2
 says which gaps count as findings).
 
-**References that survived a rename.** `appearsIn[].workId`, `connections`,
-`startHere.workIds`, `orderedWorkIds`, achievement `eraId` / `orderId`. The
+**References that survived a rename.** `startHere.workIds`, `orderedWorkIds`,
+achievement `eraId` / `orderId`. The
 validator catches a reference to an id that *does not exist*. It cannot catch a
 reference that still resolves but now points at the wrong thing, which is what
 happens when an id is reused rather than retired.
@@ -308,8 +308,7 @@ rule below is enforced by nothing but this audit.
   built and then hid from itself.
 - **Has a franchise silently gained a half-empty feature?** The inverse and the
   more common one. `auto` means the capability lights up the moment the data
-  appears, so a single connection added by an enrichment pass switches on a
-  connections map with one edge in it, and a wing with two events gets a River
+  appears, so a wing with two events gets a River
   view that is mostly empty sky. **The question is never "does the data exist"
   but "is there enough of it that the feature is worth entering".** Where the
   answer is no, the fix is either to enrich the layer (route it) or to set the
@@ -374,9 +373,9 @@ Then require the reverse of a clean report. The wing's findings must name **what
 is genuinely absent**, and classify every absence per CURATION §7: **absent** (a
 finding, with an owner) or **not applicable** (not a deficiency). Do not confuse
 them - the framework is opt-in per franchise and a sparse wing is a first-class
-citizen. A franchise with no crossovers has no `connections` and is *complete*;
-reporting it as 0% connections coverage invents a gap and invites somebody to
-fabricate edges to close it. A Portuguese literary novelist with 20% cover
+citizen. An author writing concurrent series with no single chronological arc
+has no `eras` and is *complete*; reporting it as 0% era coverage invents a gap
+and invites somebody to fabricate periods to close it. A Portuguese literary novelist with 20% cover
 coverage has hit the realistic ceiling of open sources, and the typographic
 fallback there is the primary rendering, not a degraded one. An author with one
 pen name has one; an author with none is not missing anything.
