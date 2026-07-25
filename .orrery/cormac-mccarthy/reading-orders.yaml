@@ -1,0 +1,70 @@
+stage: reading-orders
+summary: >
+  Wrote orders.yaml (2 curated orders) and startHere (4 paths) for the first
+  time on this wing. The Border Trilogy gets a standard publisher-numbered
+  order; its whole contribution is naming the trilogy apart from the ten
+  standalones, since it already matches the derived default with no year tie
+  to break. The Passenger/Stella Maris pair is only 2 books, below the
+  Michael Connelly wing's own precedent for a subseries too thin to earn an
+  order (its Terry McCaleb and Catalina pairs stay uncovered), but earns one
+  anyway on two grounds that pair lacked: both novels are dated 2022 in
+  works.yaml, where `published` is year-only, so the derived default's
+  within-year placement of the two is arbitrary (confirmed empirically -
+  wing_digest.py's own listing sorts stella-maris before the-passenger); and
+  real critical reading-order guidance (Joy Williams's Harper's essay via
+  biblioklept.org, corroborated and complicated by a Goodreads reader Q&A)
+  names a real cost to reading the later-set "prequel" first. Startpaths: all
+  four sourced to press rather than invented - Knopf editor Jenny Jackson's
+  own primer names All the Pretty Horses the entry point and the Border
+  Trilogy the follow-through, and separately calls Blood Meridian the "most
+  violent novel," to be read after, not first; NYPL and The Conversation
+  independently name The Road the accessible alternative; badgerherald and
+  the Penguin primer both caution newcomers off Blood Meridian directly. No
+  fifth path or a Passenger/Stella Maris entry-path was added: no citable
+  "start here" advice exists for either, and manufacturing one would be
+  padding. validate.py --slug cormac-mccarthy is clean bar the pre-existing
+  missing theme.art. Merged into franchise.yaml without touching event-
+  resonance's globalEvents block (diffed after editing to confirm).
+produced:
+  orderIds:
+    - cormac-mccarthy/border-trilogy-in-order
+    - cormac-mccarthy/the-passenger-and-stella-maris-in-order
+  pathIds:
+    - start-with-border-trilogy
+    - try-the-road
+    - the-masterpiece
+    - everything
+forStages:
+  translation: >
+    orders.yaml and the startHere block are new, untranslated English prose.
+    This wing has no content/i18n/pt-PT/franchises/cormac-mccarthy directory
+    at all yet (confirmed absent), consistent with the pre-existing baseline
+    press-archaeology already flagged for lifeEvents/events - not a
+    regression this stage introduced, but real coverage debt across the
+    whole wing whenever a translation pass runs here.
+  spoiler-audit: >
+    Re-check the Passenger/Stella Maris order's rationale and the
+    the-masterpiece path's Blood Meridian description against an anonymous-
+    newcomer read: both were written to name a cost (a "fate," "extreme
+    content," "nearly unrelieved brutality") without stating what happens,
+    matching the wheel-of-time New Spring model, but this stage is not the
+    dedicated spoiler pass.
+openQuestions:
+  - "The Passenger/Stella Maris order's own 2-book size is a real departure
+    from the Michael Connelly wing's floor and is argued for at length in
+    both orders.yaml's header comment and this summary; a curator weighing
+    thinness more heavily than the tie-break-plus-spoiler argument could
+    still fold it back into the derived default and drop the order."
+  - "No path points at the Passenger/Stella Maris order. That pair's late,
+    demanding, physics-and-math register (per the eras handoff's open
+    question about a possible third era) makes it a poor newcomer path on
+    the evidence gathered, and no source recommends it as an entry point -
+    but a curator who disagrees could add a fifth, completionist-adjacent
+    path for it."
+  - "The capabilities comment atop franchise.yaml was updated in passing to
+    stop claiming 'No eras.yaml, no orders.yaml, no events.yaml... no
+    startHere' now that three of those four are no longer true; this was a
+    stale-comment fix incidental to this stage's own edit, not a full audit
+    of that file's other claims (the top-level description's 'two plays, one
+    screenplay' also undercounts against the 17-work works.yaml and was left
+    alone as outside this stage's footprint)."

@@ -10,16 +10,19 @@ authorIds: [cormac-mccarthy]
 themePreset: borderland-ash
 
 # Capabilities are auto-detected from the data (docs/SCHEMA.md). A
-# deliberately thin bundle: 17 works (12 novels, 2 plays, 1 screenplay, 1
+# deliberately thin bundle: 17 works (12 novels, 2 plays, 2 screenplays, 1
 # essay) across 2 subseries (The Border Trilogy; The Passenger), no
 # characters.yaml and no work `connections`. No recurring figure crosses
 # subseries or standalone boundaries in this bibliography: John Grady Cole
 # and Billy Parham stay inside The Border Trilogy, and Bobby and Alicia
 # Western stay inside The Passenger, so neither pair is cross-wing
 # connective tissue in the sense characters.yaml exists for, and the
-# connections map stays dark by design rather than padded. No eras.yaml, no
-# orders.yaml, no events.yaml, no editions.yaml, no startHere. globalEvents
-# ruled: only lady-chatterley-trial-1960 reaches this author's page.
+# connections map stays dark by design rather than padded. Two received eras
+# (eras.yaml), franchise events (events.yaml) and two curated orders
+# (orders.yaml: the Border Trilogy; The Passenger/Stella Maris pair) now
+# exist alongside the startHere wizard below. No editions.yaml yet.
+# globalEvents ruled: only lady-chatterley-trial-1960 reaches this author's
+# page.
 features: {}
 
 globalEvents:
@@ -42,6 +45,106 @@ globalEvents:
     - prestige-fantasy-adaptation-2011 # McCarthy didn't write fantasy
     - booktok-2020                  # late phenomenon; no evidence of influence on his work
     - portugal-bailout-2011         # geographic/cultural specificity; American author
+
+# "Where to start" - powers the guided wizard. Four paths, each with a
+# citable basis (the publisher's own editor, the accessible-entry press
+# consensus, or the widely-given caution around Blood Meridian) rather than
+# our own reading. No fifth path was added to fill a cell: no citable
+# "start here" advice was found for the Passenger/Stella Maris pair or for
+# No Country for Old Men as a dedicated entry point, so neither gets one.
+startHere:
+  paths:
+    # Source: https://www.penguinrandomhouse.com/the-read-down/cormac-mccarthy-primer/
+    # Jenny Jackson, Knopf VP and Executive Editor of McCarthy's work: "For
+    # new readers of Cormac McCarthy's work, All the Pretty Horses is a
+    # perfect place to start" (classic McCarthy style, more traditional
+    # plotting than the earlier novels), then recommends continuing straight
+    # through the trilogy.
+    # Corroborating: https://www.panmacmillan.com/blogs/literary/guide-to-cormac-mccarthy-books
+    # ("All the Pretty Horses captures the best of McCarthy's essence and
+    # style, providing a great introduction").
+    - id: start-with-border-trilogy
+      title: Start with the Border Trilogy
+      description: >
+        McCarthy's own longtime editor points new readers here first: All the
+        Pretty Horses is recognisably McCarthy but the most conventionally
+        plotted of his novels, a way in before the style gets harder. The
+        trilogy that follows widens into two more young men's lives on the
+        Texas-Mexico border.
+      workIds: null
+      orderId: cormac-mccarthy/border-trilogy-in-order
+      fit:
+        experience: [new]
+        commitment: [arc]
+      note: >
+        Three books rather than one - the cost is committing to a trilogy
+        before you know the standalones, in exchange for the fullest first
+        taste of the borderland novels this author is best known for.
+
+    # Source: https://www.nypl.org/blog/2017/07/20/where-start-cormac-mccarthy
+    # ("one of McCarthy's bleakest novels" - named alongside All the Pretty
+    # Horses as a common entry point).
+    # Corroborating: https://theconversation.com/cormac-mccarthy-where-to-begin-reading-his-searing-brutal-and-unforgettable-novels-207863
+    # ("The Road is also a popular starting point, demonstrating McCarthy's
+    # style at its most distilled").
+    - id: try-the-road
+      title: Try The Road
+      description: >
+        A father and son walking a devastated America, in the plainest and
+        most stripped-down prose McCarthy ever wrote. No trilogy, no
+        century-old borderland history to pick up first - just one short,
+        harrowing novel and the sentence-level style he is famous for.
+      workIds:
+        - cormac-mccarthy/the-road
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        The cost is that it is his gentlest and most linear book by far -
+        move on to Blood Meridian or the Border Trilogy expecting something
+        considerably harder.
+
+    # Source: https://www.penguinrandomhouse.com/the-read-down/cormac-mccarthy-primer/
+    # Jenny Jackson again: Blood Meridian is McCarthy's "most violent novel"
+    # and the primer places it after the Border Trilogy, for readers ready
+    # for extreme content, not as a first book.
+    # Corroborating, on steering newcomers away from it first:
+    # https://badgerherald.com/books/2025/01/16/blood-meridian-and-violence-in-the-media/
+    # ("if you are new to Cormac McCarthy books, it's recommended to start
+    # with All the Pretty Horses or No Country for Old Men first").
+    - id: the-masterpiece
+      title: "The masterpiece: Blood Meridian"
+      description: >
+        Widely called the strongest candidate for the great American novel,
+        and just as widely called the hardest McCarthy to start on: his most
+        violent book, sustained across nearly unrelieved brutality, with
+        prose that can run a full page unbroken. Read this for the book
+        people mean when they call him a great writer, not for an easy
+        introduction.
+      workIds:
+        - cormac-mccarthy/blood-meridian
+      orderId: null
+      fit:
+        experience: [returning, completionist]
+        commitment: [taste]
+      note: >
+        His own editor recommends coming to this one after the Border
+        Trilogy rather than first - the cost of starting here instead is
+        meeting McCarthy at his most extreme before you know if his quieter
+        register is for you.
+
+    - id: everything
+      title: Everything, in order
+      description: >
+        All seventeen works - the twelve novels, the two plays, the two
+        screenplays and the one essay - in publication order, from his 1965
+        debut to the Passenger/Stella Maris pair that closed his career.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
 
 sources:
   - https://en.wikipedia.org/wiki/Cormac_McCarthy
