@@ -527,6 +527,17 @@ CONSTRAINTS:
 For a **world event**, drop the wing's `theme.art` from STYLE entirely and say
 "neutral house style, no author-specific motifs".
 
+**One image, one prompt.** An entry whose asset block says `images_required: n`
+gets n complete prompts of the shape above, one per slot - not one prompt with
+"IMAGE 1 / IMAGE 2" inside it. A prompt naming two panels asks the model to lay
+out a diptych inside a single frame, which is the weakest thing it does, and it
+answers a contract that wanted two files. The STYLE block is repeated verbatim
+in each; everything below it belongs to that slot alone. All n go in **one
+comment** on the issue - §7a's round starts at the last comment carrying a
+prompt, and `art_rotation.py` reads only the last comment for the `Rotation:`
+line, so splitting them across comments loses half the set and drops the asset
+from the wing's counts.
+
 ### Three things about the model that change how this is written
 
 **Negative phrasing works here, and this is not the usual advice.** The "don't

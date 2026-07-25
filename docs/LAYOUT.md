@@ -23,17 +23,23 @@ Two more fields refine an entry:
 - **`modifier`** - a composition twist applied to a compatible organisation
   (`breakout`, `pull-focus`, `fold-reveal`, `anchor-with-satellites`, `branch`).
 
-## Whole images, even for composed organisations
+## Composed organisations: `images_required` decides, and n images means n prompts
 
 A multi-part organisation (`diptych`, `strip`, `mosaic`, `split-counterpoint`,
-`layered-stack`) is generated as **one complete image**, not assembled by the
-app from separate subject assets. This is a deliberate ruling: gpt-image is
-weakest exactly at multi-panel layout, so the risk is real, but the single-image
-route is simpler to render and file, and it is what we are trying first. **If
-composed images come back unreliable, the fallback is app-side composition from
-per-subject assets** - which is why `images_required` (below) already lets an
-entry carry more than one asset. Do not build anything that forecloses that
-retreat.
+`layered-stack`) was first ruled to be generated as **one complete image**,
+composed by the model. That fallback has since been taken for the two-panel
+organisations, because gpt-image is weakest exactly at multi-panel layout:
+`diptych` and `split-counterpoint` default to `images_required: 2` and the app
+composes the cell from `<id>.webp` and `<id>-2.webp`, degrading to a single
+panel if the second is missing. The rest still take one image until they are
+wired the same way.
+
+So the count on the entry is the contract, and it settles how the art is
+written: **an entry with `images_required: n` gets n whole images and n
+complete prompts**, one per slot, never one prompt describing n panels inside a
+frame. The slots are siblings - generated in order, each later one referencing
+the accepted first - and they file as `--slot 1`, `--slot 2` (see
+`.claude/commands/asset-prompt.md`).
 
 ## Schema fields (on an event / life-event)
 
@@ -117,7 +123,7 @@ Two related panels of equal or deliberately contrasting weight, a small
 connector between them, one shared title/prose introducing the relationship.
 - **Desktop**: two frames side by side, relationship across the centre seam.
 - **Mobile**: stacked, sequence preserved, optional vertical connector.
-- **Images**: 2 (or 1 image containing both panels - see whole-image ruling) · aspect each `1:1`/`4:5` · background per illustration type.
+- **Images**: 2, one per panel, each its own prompt (the app composes the pair; never one image containing both panels) · aspect each `1:1`/`4:5` · background per illustration type.
 - **Holds**: `manuscript-proof`, `place-portrait`, `editorial-portrait`, `book-object`, `symbolic-still-life`.
 - **Use**: genuine before/after - rejected then rewritten, flop then cult, private then public.
 
@@ -126,7 +132,7 @@ A short wide band of 5-12 repeated modular units in a horizontal sequence,
 readable left to right; title/prose above.
 - **Desktop**: strip spans the content width, most units visible.
 - **Mobile**: unit size preserved, strip scrolls sideways beyond the viewport, next unit partially cropped to signal scroll. Never shrink all units to illegibility.
-- **Images**: 1 wide strip (or N unit images - whole-image ruling) · aspect wide, e.g. `3:1`/`4:1` · background transparent or paper.
+- **Images**: 1 wide strip today; if a wing sets `images_required: N` for per-unit images, that is N prompts, one per unit · aspect wide, e.g. `3:1`/`4:1` · background transparent or paper.
 - **Holds**: `serial-contact-sheet`, `process-diagram`.
 - **Use**: serialisation, weekly instalments, drafts, submissions, production stages, accumulated incidents.
 
@@ -154,7 +160,7 @@ Two parallel lanes for events in the same period, each labelled
 They **coexist** - one does not become the other (that is `diptych`).
 - **Desktop**: two parallel columns, equal or intentionally unequal.
 - **Mobile**: lanes stacked, labels prominent, a connector/shared date preserving simultaneity.
-- **Images**: 2 (or 1 composed) · aspect each `4:5`/`1:1` · background per type.
+- **Images**: 2, one per lane, each its own prompt (the app composes the pair) · aspect each `4:5`/`1:1` · background per type.
 - **Holds**: every illustration type EXCEPT the three artifact types (as `beside`).
 - **Schema note**: rendering the lane *labels* (PRIVATE / PUBLIC) needs a
   per-lane label field the event schema does not carry yet; add it when a wing
