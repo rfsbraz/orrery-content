@@ -41,6 +41,14 @@ frame. The slots are siblings - generated in order, each later one referencing
 the accepted first - and they file as `--slot 1`, `--slot 2` (see
 `.claude/commands/asset-prompt.md`).
 
+**The exception is a sequence drawn as one run**: a comic strip, a contact
+sheet, a row of instalment panels - `strip`, `mosaic`, `layered-stack` - stays
+at `images_required: 1` and one prompt. The shared baseline, the even spacing
+and the repetition across the run *are* the picture, and generating the units
+separately produces a row of unrelated drawings rather than a sequence. What
+splits is the two-panel counterpoints, where the panels are deliberately
+different pictures set against each other.
+
 ## Schema fields (on an event / life-event)
 
 ```yaml
@@ -132,7 +140,7 @@ A short wide band of 5-12 repeated modular units in a horizontal sequence,
 readable left to right; title/prose above.
 - **Desktop**: strip spans the content width, most units visible.
 - **Mobile**: unit size preserved, strip scrolls sideways beyond the viewport, next unit partially cropped to signal scroll. Never shrink all units to illegibility.
-- **Images**: 1 wide strip today; if a wing sets `images_required: N` for per-unit images, that is N prompts, one per unit · aspect wide, e.g. `3:1`/`4:1` · background transparent or paper.
+- **Images**: 1 wide strip, always - the run is the picture, so it is drawn as one image and one prompt (the exception to one-image-one-prompt above) · aspect wide, e.g. `3:1`/`4:1` · background transparent or paper.
 - **Holds**: `serial-contact-sheet`, `process-diagram`.
 - **Use**: serialisation, weekly instalments, drafts, submissions, production stages, accumulated incidents.
 

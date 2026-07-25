@@ -165,6 +165,13 @@ Always all six, in this order:
    `Slot 1 of n`, `Slot 2 of n`, and say what each one is (the before, the
    after, the third instalment), so the relationship survives being split.
 
+   **A sequence drawn as one run is the exception.** A comic strip, a contact
+   sheet, a row of weekly instalment panels - `strip`, `mosaic`, `layered-stack`
+   - stays at `images_required: 1` and one prompt: the shared baseline, even
+   spacing and repetition across the run are the picture, and drawing the units
+   separately gives a row of unrelated sketches. Only the two-panel
+   counterpoints (`diptych`, `split-counterpoint`) split.
+
    **All n prompts go in ONE comment.** `art_rotation.py` reads only the
    issue's last comment for the `Rotation:` line, and `issue_assets.py` starts
    the round at the last comment carrying a prompt - so one prompt per comment
