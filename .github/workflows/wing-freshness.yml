@@ -1,0 +1,110 @@
+name: Wing freshness
+
+# The world keeps moving after a wing is curated: the author publishes, wins
+# something, gives the interview that finally explains a book, or dies. Nothing
+# in the repo notices on its own. `wing_freshness.py` is the mechanical half of
+# noticing - it produces leads, never conclusions. This turns those leads into a
+# queue: one `refresh:due` issue per stale wing, so a `/refresh` pass has
+# somewhere to start instead of a sweep someone has to remember to run.
+#
+# Weekly, not per-push: staleness is a slow signal (a new book, a death), and
+# nothing here should block a merge. Leads route to the owning stage; the issue
+# says which.
+#
+# Idempotent: one issue per wing, matched by title. A wing that is still stale
+# next week gets a fresh comment, not a duplicate issue. A wing whose leads have
+# cleared is left for a human to close - the script produces leads, and "is this
+# lead now resolved" is exactly the judgement it refuses to make.
+on:
+  schedule:
+    - cron: "0 7 * * 1" # Mondays 07:00 UTC (after the link check at 06:00)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: wing-freshness
+  cancel-in-progress: false
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # last_touched() reads `git log` per wing, so it needs history.
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet pyyaml
+
+      - name: Compute freshness leads
+        run: |
+          set -euo pipefail
+          python scripts/wing_freshness.py --json > /tmp/freshness.json
+          python scripts/wing_freshness.py > /tmp/freshness.txt || true
+          {
+            echo "### Wing freshness"
+            echo '```'
+            cat /tmp/freshness.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Ensure the label exists
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh label create "refresh:due" --repo "$REPO" --force \
+            --color "FBCA04" --description "Wing has fallen behind the world; run /refresh"
+
+      - name: File or refresh one issue per stale wing
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+
+          # The routing footer the script prints, kept with the leads so an issue
+          # is self-contained - a reader knows both what changed and who owns it.
+          routing=$(printf '%s\n' \
+            "**Route each lead to the stage that owns it:**" \
+            "- new or missing works -> completeness-auditor" \
+            "- new life events, press -> press-archaeology" \
+            "- a death -> press-archaeology, then eras (obituaries periodise)" \
+            "- catalogue span extended -> world-events, then event-resonance" \
+            "" \
+            "This is a lead, not a defect. Close the issue once you have looked, whether or not it needed work.")
+
+          count=$(jq '[.[] | select(.leads | length > 0)] | length' /tmp/freshness.json)
+          echo "Stale wings: $count"
+
+          jq -c '.[] | select(.leads | length > 0)' /tmp/freshness.json | while read -r row; do
+            wing=$(jq -r '.wing' <<<"$row")
+            leads=$(jq -r '.leads[] | "- " + .' <<<"$row")
+            title="refresh: ${wing}"
+
+            body=$(printf '%s\n' \
+              "\`${wing}\` has fallen behind the world since it was last curated." \
+              "" \
+              "**Leads (as of this run):**" \
+              "$leads" \
+              "" \
+              "$routing")
+
+            existing=$(gh issue list --repo "$REPO" --state open \
+              --search "${title} in:title" --json number,title \
+              --jq "map(select(.title == \"${title}\")) | .[0].number // empty")
+
+            if [ -n "$existing" ]; then
+              gh issue comment "$existing" --repo "$REPO" --body "$body"
+              echo "updated #${existing} (${wing})"
+            else
+              gh issue create --repo "$REPO" --title "$title" \
+                --label "refresh:due" --body "$body"
+              echo "opened issue for ${wing}"
+            fi
+          done
