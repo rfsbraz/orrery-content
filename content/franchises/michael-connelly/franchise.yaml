@@ -50,9 +50,121 @@ globalEvents:
 # real connections layer: characters.yaml carries the six-character
 # throughline (Bosch, Haller, Ballard, McEvoy, McCaleb, Rachel Walling), and
 # works.yaml carries the specific crossover links (Bosch/McCaleb,
-# Bosch/Haller, Bosch-Ballard, McEvoy/Haller, Ballard/Catalina). No
-# theme.art, eras.yaml, editions.yaml, orders.yaml or achievements.yaml
-# exists yet, and there is no startHere.
+# Bosch/Haller, Bosch-Ballard, McEvoy/Haller, Ballard/Catalina). The wizard
+# is active too (startHere below). No theme.art, eras.yaml (a reasoned empty
+# list, see eras.yaml), editions.yaml or achievements.yaml exists yet.
+
+startHere:
+  paths:
+    # Structural note, not a citation: the derived default already keeps this
+    # safe on its own. Every solo Bosch novel publishes by 2017's Two Kinds
+    # of Truth; Ballard's own thread does not fold into his for good until
+    # Dark Sacred Night the same year (works.yaml, orders.yaml) - so
+    # publication order finishes Bosch's earlier run before her thread joins
+    # it, with no curated reordering needed to make that true.
+    - id: everything-in-order
+      title: Everything, in order
+      description: >
+        Every novel across Harry Bosch, the Lincoln Lawyer, Renée Ballard,
+        Jack McEvoy, Terry McCaleb and the new Catalina series, plus the two
+        standalones, in publication order.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+      note: >
+        Also includes the three ebook-only Bosch short-story bundles and the
+        nonfiction collection Crime Beat, alongside the novels.
+
+    # Source: https://www.novelsuspects.com/series-list/which-michael-connelly-book-should-you-read-first/
+    # "If you want to start at the very beginning... The Black Echo... Michael
+    # Connelly's first novel... introduces readers to his most well-known
+    # character, Hieronymus 'Harry' Bosch."
+    # Source: https://www.tlbranson.com/michael-connelly-books-in-order/
+    # "Michael Connelly's books are easier to follow when you start with Harry
+    # Bosch, since Bosch sits at the center of the larger shared world."
+    - id: start-with-bosch
+      title: Start with Harry Bosch
+      description: >
+        The original series and the hub every other thread in this wing
+        eventually crosses: an LAPD detective's career from his Vietnam-
+        veteran rookie years toward a retirement he never quite accepts.
+      workIds: null
+      orderId: michael-connelly/harry-bosch-in-order
+      fit:
+        experience: [new]
+        commitment: [arc]
+      note: >
+        A long commitment, still growing past 26 novels - the reward is a
+        character who visibly ages and changes across three decades of
+        cases, at the cost of the newer series's tighter shape.
+
+    # Source: https://www.novelsuspects.com/series-list/which-michael-connelly-book-should-you-read-first/
+    # "If you like legal thrillers... The Lincoln Lawyer... introduces readers
+    # to Mickey Haller, a criminal defense attorney who operates out of the
+    # back of his Lincoln Town Car... Note: Mickey Haller also appears in the
+    # Harry Bosch series in Nine Dragons and The Crossing."
+    - id: try-lincoln-lawyer
+      title: Try the Lincoln Lawyer
+      description: >
+        Mickey Haller's solo debut: a Los Angeles defense attorney who runs
+        his practice from the back seat of a chauffeured car, on a case that
+        turns out to be nothing like the easy payday it looked.
+      workIds:
+        - michael-connelly/the-lincoln-lawyer
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        A safe taste on its own, but the next book brings Harry Bosch into
+        Haller's casework and reveals how the two men are tied to each
+        other - if you plan on reading Bosch's own series too, decide which
+        one you want to meet that reveal in first.
+
+    # Source: https://www.novelsuspects.com/series-list/which-michael-connelly-book-should-you-read-first/
+    # "If you want to read the backstory of Renée Ballard... The Late Show."
+    # Source: https://mysterysequels.com/renee-ballard-books-in-order
+    # "Her partnership with Harry Bosch, which begins in Dark Sacred Night,
+    # becomes central to both series from that point forward."
+    - id: try-ballard
+      title: Try Ballard
+      description: >
+        Renée Ballard's solo debut: an LAPD detective exiled to the overnight
+        shift after a harassment complaint went nowhere, working two cases
+        on her own time that she refuses to hand off at shift's end.
+      workIds:
+        - michael-connelly/the-late-show
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        A safe taste on its own, but Ballard partners with Harry Bosch from
+        the very next book and their cases stay joined for the rest of her
+        run - if you plan on reading Bosch's own series too, read his solo
+        novels first so the ground they cover isn't met already underway.
+
+    # Structural note, not a citation: derived directly from the two paths
+    # above and orders.yaml's michael-connelly/harry-bosch-in-order.
+    - id: continue-into-bosch
+      title: Continue into Bosch
+      description: >
+        For a reader who has tried the Lincoln Lawyer or Ballard and wants
+        the series both of them eventually fold into: the complete Harry
+        Bosch novels, in order.
+      workIds: null
+      orderId: michael-connelly/harry-bosch-in-order
+      fit:
+        experience: [returning]
+        commitment: [arc]
+      note: >
+        Two Kinds of Truth (2017) is the last Bosch novel before Ballard's
+        thread joins his for good; reading Bosch's own run from the start
+        keeps that merge in its original order rather than meeting it
+        already underway.
+
 sources:
   - https://en.wikipedia.org/wiki/Michael_Connelly
   - https://en.wikipedia.org/wiki/Harry_Bosch
