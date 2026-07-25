@@ -64,6 +64,78 @@ globalEvents:
                                      # backlist sales, not the books
     - portugal-bailout-2011         # Portuguese national crisis; unrelated
 
+# "Where to start" - Reacher is the rare case where the character's own
+# official site says outright that order barely matters ("The Jack Reacher
+# books can be read in any order, but here they are in the order in which
+# they were written", jackreacher.com/us/books/) while every independent
+# reading-order guide checked (T.L. Branson, SlashFilm, Parade, Dexerto)
+# still opens a new reader at the same book. Both halves are sourced, so
+# both ship: the permission and the actual, converged recommendation. Three
+# paths: the standard newcomer's door, the default completionist walk, and
+# the documented chronological order from orders.yaml, built for a reread.
+startHere:
+  paths:
+    # Source: https://www.jackreacher.com/us/books/ - the character's own
+    # official site lists Killing Floor first on its "Books in order" page.
+    # Echoed as the standard newcomer's pick by every independent guide
+    # checked: T.L. Branson calls it "Lee Child's debut novel and still the
+    # best entry point for most readers"; SlashFilm, Parade and Dexerto all
+    # open their own reading-order guides at the same title.
+    - id: start-with-killing-floor
+      title: Start with Killing Floor
+      description: >
+        Jack Reacher gets off a Greyhound bus in a small Georgia town and is
+        arrested for a murder within hours of arriving: the book that
+        introduces him and the standard door into the series. One novel is
+        the cheapest possible test of whether this drifter and this voice
+        are for you, before committing to thirty more.
+      workIds:
+        - lee-child/killing-floor
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste, arc]
+      note: >
+        The official Jack Reacher site is explicit that the books "can be
+        read in any order" - Reacher arrives new in almost every novel and
+        rarely carries an unresolved plot into the next one - but even it
+        still lists them starting here, and no guide checked recommends a
+        different door in.
+    - id: whole-shelf
+      title: The whole shelf, as published
+      description: >
+        Every novel, short story and the two nonfiction pieces, in the order
+        Lee Child, and later Andrew Child alongside him, actually wrote and
+        published them: a 1997 debut through to a 2026 novel not yet out.
+        The way most readers have lived alongside Reacher for three decades,
+        one book at a time.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+    # Source: see lee-child/chronological-inuniverse in orders.yaml for how
+    # the sequence itself is sourced. jackreacher.com and T.L. Branson's
+    # guide both frame chronological order as a re-read or a committed
+    # completionist's arrangement, never as the way in for a new reader.
+    - id: chronological
+      title: Reacher's life, in order
+      description: >
+        The 31 novels resequenced into the order they happen to Reacher,
+        prequels first. Built for completionists and re-readers who want his
+        Army years to lead straight into his drifting years, with no
+        publication date getting in the way.
+      workIds: null
+      orderId: lee-child/chronological-inuniverse
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+      note: >
+        Not the recommended way in: these four prequels were written well
+        after, and with knowledge of, everything that follows them. Read
+        publication order first, and save this arrangement for the second
+        pass through the series.
+
 sources:
   - https://en.wikipedia.org/wiki/Lee_Child
   - https://en.wikipedia.org/wiki/Jack_Reacher
