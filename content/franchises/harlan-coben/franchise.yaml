@@ -1,0 +1,161 @@
+# A wing spans an author's complete published work, not the character or
+# series they are best known for (the standing rule for every wing). Coben's shelf
+# is dominated by volume, not by one series: 18
+# standalone thrillers outnumber every subseries, so the derived default
+# order (publication-chronological, works.yaml) reads mostly as standalones
+# with five character threads woven through - Myron Bolitar (12 novels,
+# 1995-2024), his nephew Mickey's YA spin-off (3), Sami Kierce (2, spun out
+# of a minor character in Fool Me Once), Wilde (2), and Myron's best friend
+# Win (1 so far). All five share one continuity and cast; none is a separate
+# wing (works.yaml's header has the sourcing).
+#
+# Capabilities are auto-detected from what the data provides (docs/SCHEMA.md)
+# and none is forced here. All four activate on their own inputs: events.yaml
+# (11 franchise events) powers river and companion, the startHere block below
+# powers the wizard, and editions.yaml powers editions.
+id: harlan-coben
+name: Harlan Coben
+kind: author
+description: >
+  The complete published fiction of Harlan Coben: eighteen standalone
+  thrillers built around a suburban family's one shattering secret, the
+  [[work:harlan-coben/deal-breaker|Myron Bolitar]] series (12 novels,
+  1995-2024) that launched his career, Myron's nephew Mickey's young-adult
+  spin-off, and three further series spun from Myron's own supporting
+  cast - Sami Kierce, Wilde, and Myron's best friend
+  [[work:harlan-coben/win|Win]] - plus one illustrated children's book and a
+  forthcoming memoir on the writing life.
+authorIds: [harlan-coben]
+themePreset: cul-de-sac-noir
+images:
+  header: "https://upload.wikimedia.org/wikipedia/commons/3/34/Forest_-_West_Windsor%2C_New_Jersey_2023-03-05_%2802%29.jpg"
+  headerCredit: "Ryan Hodnett, CC BY-SA 4.0"
+  headerSource: "https://commons.wikimedia.org/wiki/File:Forest_-_West_Windsor,_New_Jersey_2023-03-05_(02).jpg"
+  # Bare New Jersey woods at dusk, not a claimed filming location - matching
+  # the recurring literal motif across the shelf (The Woods, The Boy from
+  # the Woods, and the buried-body-in-the-woods opening of several
+  # standalones) rather than any single named place. No author's-house or
+  # inspired-building candidate turned up a checkable licence: searches for
+  # Coben's hometown (Livingston), his current town (Ridgewood) and Amherst
+  # College on Commons surfaced only road-infrastructure photos, historical
+  # scans, and a school with no sourced link to his work.
+sources:
+  - "https://en.wikipedia.org/wiki/Harlan_Coben"
+  - "https://www.harlancoben.com/novels/"
+  - "https://en.wikipedia.org/wiki/Myron_Bolitar_series"
+
+# Six events in global.yaml predate Coben's 1962 birth (both world wars, the
+# pulp magazines, the sixpenny paperback, the armed-services editions, the
+# Lady Chatterley trial) and fall outside even the inheritance test, so they
+# are left unruled rather than padded with a mechanical exclude - none of
+# them created a category or condition his career runs on the way the
+# 1965 fantasy boom does for a secondary-world writer. The eleven events that
+# fall inside his lifespan are ruled below.
+globalEvents:
+  include:
+    - sept-11-2001   # Long Lost (2009) plots straight through it: Myron's girlfriend Ali Wilder is a 9/11 widow, and the book's terror-cell plot runs through a black site
+  # Considered and refused. Nothing renders unless it is in `include`
+  # above, so these change nothing; they are kept as the record of a
+  # judgement already made, so it is not re-litigated from scratch.
+  exclude:
+    - financial-crisis-2008              # published either side of the crash (Hold Tight 2008, Long Lost 2009, Caught 2010); none is about money or the crisis
+    - covid-19-pandemic-2020             # Win (2021) was finished under lockdown but its cold-case plot never reaches for the pandemic; no later book does either
+    - fantasy-paperback-boom-1965        # not his genre, not his shelf, not his readership
+    - carnation-revolution-1974          # Portuguese censorship history; an American thriller writer with no Portuguese material
+    - chain-bookshop-1982                # a commercial-bestseller career, but no sourced account ties the superstore era specifically to his trajectory
+    - online-bookselling-1995            # coincides with Deal Breaker's year, but no interview or bio ties Amazon's arrival to his career; coincidence, not resonance
+    - ebook-and-self-publishing-2007     # traditionally published throughout; no account of Kindle-era backlist or digital sales shaping his career surfaced
+    - prestige-fantasy-adaptation-2011   # his own screen-adaptation arc runs through the Netflix deal (2018), not fantasy TV, and is already carried on this wing's own events
+    - booktok-2020                       # already a multi-decade bestseller by 2020; no title's discovery or resurgence traces to it
+    - portugal-bailout-2011              # a Portuguese national crisis; no connection to an American thriller writer
+
+# startHere: four paths, both cells §10 flags as most-used covered (new+taste,
+# completionist+complete). Tell No One, his 2001 breakout into the bestseller
+# lists, was checked as a candidate entry path and set aside: the two sourced
+# guides below both point a new reader to Fool Me Once instead - a correction
+# to the older, still-common assumption that his first standalone breakout is
+# still the entry point.
+startHere:
+  paths:
+    # Source: https://www.penguin.co.uk/articles/2023/12/where-to-start-reading-harlan-coben
+    # "Fool Me Once is the ideal entry point into Harlan Coben's world - a
+    # fast-paced, twist-driven novel that showcases everything readers love
+    # about him... no background knowledge required."
+    # Corroborating: https://www.deadgoodbooks.co.uk/harlan-coben-books-in-order/
+    # "If you're completely new to Harlan Coben, we'd recommend Fool Me Once."
+    - id: fool-me-once
+      title: Start with the one everyone's talking about
+      description: >
+        Fool Me Once is Coben's most-recommended way in for a reader new to
+        him: fully self-contained, and exactly the nanny-cam, is-he-really-
+        dead twist his standalones are built on. Two Penguin-family guides
+        (Penguin's own "Where to start reading Harlan Coben" and Penguin
+        Random House's Dead Good Books) both call it the book to start with,
+        and neither asks for any background in his other work.
+      workIds:
+        - harlan-coben/fool-me-once
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        Skips his flagship series entirely: Myron Bolitar never appears here.
+        It does have a direct 2025 sequel, Nobody's Fool, though nothing in
+        this path requires reading that too.
+    # Source: https://www.novelsuspects.com/series-list/harlan-coben-myron-bolitar-books-in-order/
+    # "Even if you weren't looking to read the Harlan Coben books in order,
+    # this one is the best place to start!" (of Deal Breaker).
+    # Corroborating: https://www.harlancoben.com/faq/ "What is the order of
+    # the Myron Bolitar novels? DEAL BREAKER, DROP SHOT, FADE AWAY..."
+    - id: myron-bolitar-start
+      title: Start the Myron Bolitar series
+      description: >
+        For a running cast across three decades instead of a single
+        standalone: start at Deal Breaker (1995) and read the twelve Myron
+        Bolitar novels in order. Hachette's own Novel Suspects guide calls
+        Deal Breaker "the best place to start" even for a reader not set on
+        reading the whole series, and Coben's own FAQ lists this exact
+        sequence.
+      workIds: null
+      orderId: harlan-coben/myron-bolitar
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        A real commitment across twelve books; the other four threads that
+        grow out of this one (Mickey Bolitar, Win, Wilde, Sami Kierce) sit
+        outside it and are reached separately.
+    # Source: https://www.harlancoben.com/faq/ "SHELTER, SECONDS AWAY and
+    # FOUND the young adult series featuring Mickey Bolitar are available in
+    # paperback... Myron Bolitar does appear in these" and, on the separate
+    # young-adult site: "The website MickeyBolitar.com is specifically for
+    # the young adult readers."
+    - id: mickey-bolitar-ya
+      title: "Mickey's YA thread"
+      description: >
+        Myron's teenage nephew Mickey gets his own three-book, young-adult-
+        pitched trilogy, with Myron himself dropping in. Coben's own FAQ
+        frames it as a series for younger readers rather than another route
+        into the adult thrillers, so this suits someone already following the
+        Bolitar family, or a teen reader starting with Coben's one YA-pitched
+        series instead of the standalones.
+      workIds: null
+      orderId: harlan-coben/mickey-bolitar
+      fit:
+        experience: [returning, completionist]
+        commitment: [arc]
+      note: >
+        The trilogy is woven into the wider Bolitar chronology, overlapping
+        Myron's tenth novel, Live Wire (2011), in family and timeframe;
+        reading both close together keeps the connection between them
+        legible, where years apart on the shelf would lose it.
+    - id: complete-shelf
+      title: The whole shelf
+      description: >
+        Every work Coben has published, standalones and all five character
+        threads together, in the order he wrote them.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]

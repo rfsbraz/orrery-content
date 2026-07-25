@@ -1,0 +1,903 @@
+# Bibliography (works) - IDs are STABLE and permanent (user data references
+# them). Dates are year-precision (docs/SCHEMA.md). The default reading order
+# (all works in publication order) is DERIVED from this file.
+#
+# Every title and year below is corroborated by two independent primary
+# sources that agree exactly: Wikipedia's own "Published works" table
+# (fetched directly, not summarised - a summarised pass of the same article
+# scrambled Home and Think Twice's years against each other, caught by
+# cross-checking the raw table) and the novel list on harlancoben.com, the
+# author's own site. 39 works of fiction plus the forthcoming nonfiction
+# memoir Plot Twist, 40 total.
+#
+# SUBSERIES follow the grouping both of those sources use, not an invented
+# one: Myron Bolitar (the original series), Mickey Bolitar (Myron's nephew,
+# YA spin-off), Sami Kierce (introduced as a minor character in Fool Me Once,
+# the connective thread the Hollywood Reporter's own headline names for
+# Nobody's Fool), Wilde, and Windsor Horne Lockwood III (Myron's best friend
+# Win, spun off into his own novel). All five subseries share Myron Bolitar's
+# continuity and recurring cast; none is catalogued as a separate wing (a wing
+# is the author's complete work, not one universe within it - see
+# franchise.yaml).
+#
+# CANON TIER is a publication-kind judgment, not a quality one (SCHEMA.md).
+# The 18 standalone thrillers are core: they dominate this bibliography by
+# volume and are exactly as central to Coben's shelf as any series entry, per
+# his own site and Wikipedia's even-handed treatment of both. (Wikipedia's own
+# "Standalone novels" row counts 19, folding in The Magical Fantastical Fridge;
+# this file gives the picture book its own section below, so 18 remain here.)
+# The Mickey Bolitar trilogy is extended: genuinely his and set in the same
+# continuity, but a YA-imprint spin-off rather than the adult-thriller spine
+# every other subseries shares. The Magical Fantastical Fridge (2016) is
+# extended: an illustrated children's picture book (Dial, illustrated by Leah
+# Tinari), a different genre and audience entirely from the thrillers around
+# it. Plot Twist (2026, forthcoming) is extended: a nonfiction memoir on
+# craft, not a novel.
+#
+# GONE BEFORE GOODBYE (2025) is a genuine co-authorship, not a contribution:
+# Reese Witherspoon originated the concept and did much of the research,
+# Coben plotted the novel's key moments and wrote the chapters (Wikipedia,
+# "Background" section, citing Witherspoon's own account) - authorRole:
+# co-author records that honestly rather than filing it as a solo work or
+# leaving it out of a completionist bibliography.
+#
+# APOCRYPHA (4, 1998-2011, at the end of this file): a novel-only sweep of
+# Coben's own site and Wikipedia's "Published works" table misses work filed
+# under an anthology's own title rather than his. Two anthologies he edited
+# each also carry an original piece of his own writing (a story, an
+# introduction); one further story appeared under someone else's anthology;
+# one more is a short story exclusive to a single hardcover printing of The
+# Innocent. Checked and excluded: Coben's own "Essays and Shorts" page lists
+# several personal essays and opinion columns (New York Times, Bloomberg,
+# Parade, the Newark Star-Ledger) including "The Key to My Father" (NYT,
+# 2003) - all periodical pieces never gathered into a book, the same
+# reasoning that excludes uncollected periodical work in this catalogue's
+# other author wings.
+
+# --- Myron Bolitar (12 novels, 1995-2024) ---
+
+- id: harlan-coben/deal-breaker
+  title: "Deal Breaker"
+  authorIds: [harlan-coben]
+  published: 1995
+  subseries: "Myron Bolitar"
+  canonTier: core
+  synopsis: >
+    Sports agent Myron Bolitar lands the client of a lifetime, star NFL
+    prospect Christian Steele, only for a call from Christian's supposedly
+    dead ex-girlfriend to drag Myron back into the case that ended his own
+    playing career.
+  sources:
+    - "https://www.harlancoben.com/novels/deal-breaker/"
+    - "https://en.wikipedia.org/wiki/Myron_Bolitar_series"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780440220442-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780440220442"
+
+- id: harlan-coben/drop-shot
+  title: "Drop Shot"
+  authorIds: [harlan-coben]
+  published: 1996
+  subseries: "Myron Bolitar"
+  canonTier: core
+  synopsis: >
+    A former tennis prodigy is murdered at the US Open while Myron's client is
+    on the court, and the sports agent turned investigator has to clear her
+    name before the tour's oldest secrets bury her along with the truth.
+  sources:
+    - "https://www.harlancoben.com/novels/drop-shot/"
+    - "https://en.wikipedia.org/wiki/Myron_Bolitar_series"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780440220459-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780440220459"
+
+- id: harlan-coben/fade-away
+  title: "Fade Away"
+  authorIds: [harlan-coben]
+  published: 1996
+  subseries: "Myron Bolitar"
+  canonTier: core
+  synopsis: >
+    When a former basketball rival vanishes, Myron gets the chance to lace up
+    and play professionally again himself, until the games end and he is
+    forced to confront the reason his own career was cut short. Won the 1997
+    Edgar Award for Best Paperback Original.
+  sources:
+    - "https://www.harlancoben.com/novels/fade-away/"
+    - "https://en.wikipedia.org/wiki/Harlan_Coben"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780440222682-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780440222682"
+
+- id: harlan-coben/back-spin
+  title: "Back Spin"
+  authorIds: [harlan-coben]
+  published: 1997
+  subseries: "Myron Bolitar"
+  canonTier: core
+  synopsis: >
+    The teenage son of a star golfer is kidnapped from a downtown hotel, and
+    Myron's search for him surfaces a golf-world scandal decades in the
+    making.
+  sources:
+    - "https://www.harlancoben.com/novels/back-spin/"
+    - "https://en.wikipedia.org/wiki/Myron_Bolitar_series"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780440222705-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780440222705"
+
+- id: harlan-coben/one-false-move
+  title: "One False Move"
+  authorIds: [harlan-coben]
+  published: 1998
+  subseries: "Myron Bolitar"
+  canonTier: core
+  synopsis: >
+    Myron takes on a fiercely independent basketball client who needs a
+    bodyguard more than an agent, and his next move puts both their lives on
+    the line.
+  sources:
+    - "https://www.harlancoben.com/novels/one-false-move/"
+    - "https://en.wikipedia.org/wiki/Myron_Bolitar_series"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780440225447-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780440225447"
+
+- id: harlan-coben/the-final-detail
+  title: "The Final Detail"
+  authorIds: [harlan-coben]
+  published: 1999
+  subseries: "Myron Bolitar"
+  canonTier: core
+  synopsis: >
+    Myron returns from a Caribbean retreat to find his business partner
+    Esperanza jailed for murder and his agency collapsing, and has to work
+    the case from outside the system he built.
+  sources:
+    - "https://www.harlancoben.com/novels/the-final-detail/"
+    - "https://en.wikipedia.org/wiki/Myron_Bolitar_series"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780385323710-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780385323710"
+
+- id: harlan-coben/darkest-fear
+  title: "Darkest Fear"
+  authorIds: [harlan-coben]
+  published: 2000
+  subseries: "Myron Bolitar"
+  canonTier: core
+  synopsis: >
+    An ex-girlfriend tells Myron he is the father of a dying thirteen-year-old
+    boy, sending him after a bone-marrow donor whose trail runs straight
+    through a serial killer's unfinished business.
+  sources:
+    - "https://www.harlancoben.com/novels/darkest-fear/"
+    - "https://en.wikipedia.org/wiki/Myron_Bolitar_series"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780385334334-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780385334334"
+
+- id: harlan-coben/promise-me
+  title: "Promise Me"
+  authorIds: [harlan-coben]
+  published: 2006
+  subseries: "Myron Bolitar"
+  canonTier: core
+  synopsis: >
+    Six years retired from playing hero, Myron promises a friend's teenage
+    daughter a safe ride home from a party if she is ever in trouble, and the
+    promise pulls him back into the world he swore off.
+  sources:
+    - "https://www.harlancoben.com/novels/promise-me/"
+    - "https://en.wikipedia.org/wiki/Myron_Bolitar_series"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780451219244-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780451219244"
+
+- id: harlan-coben/long-lost
+  title: "Long Lost"
+  authorIds: [harlan-coben]
+  published: 2009
+  subseries: "Myron Bolitar"
+  canonTier: core
+  synopsis: >
+    A decade after their affair ended, Terese Collins calls Myron from Paris,
+    a suspect in her ex-husband's murder, and what he finds chasing her story
+    reaches back into her buried family tragedy.
+  sources:
+    - "https://www.harlancoben.com/novels/long-lost/"
+    - "https://en.wikipedia.org/wiki/Myron_Bolitar_series"
+  images:
+    cover: "https://covers.openlibrary.org/b/id/6455714-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL79327W"
+
+- id: harlan-coben/live-wire
+  title: "Live Wire"
+  authorIds: [harlan-coben]
+  published: 2011
+  subseries: "Myron Bolitar"
+  canonTier: core
+  synopsis: >
+    A pregnant tennis star asks Myron to find her missing rock-star husband
+    after an anonymous post questions the baby's paternity, and the search
+    reunites Myron with the sister-in-law who vanished along with his own
+    brother years before.
+  sources:
+    - "https://www.harlancoben.com/novels/live-wire/"
+    - "https://en.wikipedia.org/wiki/Myron_Bolitar_series"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780525952060-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780525952060"
+
+- id: harlan-coben/home
+  title: "Home"
+  authorIds: [harlan-coben]
+  published: 2016
+  subseries: "Myron Bolitar"
+  canonTier: core
+  synopsis: >
+    Two boys abducted a decade earlier resurface in London, and Myron and Win
+    have to work out which is which, and what happened to them, before
+    whoever hid them for ten years finds them first.
+  sources:
+    - "https://www.harlancoben.com/novels/home/"
+    - "https://en.wikipedia.org/wiki/Myron_Bolitar_series"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780525955108-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780525955108"
+
+- id: harlan-coben/think-twice
+  title: "Think Twice"
+  authorIds: [harlan-coben]
+  published: 2024
+  subseries: "Myron Bolitar"
+  canonTier: core
+  synopsis: >
+    Three years after eulogizing his former rival Greg Downing, Myron is told
+    by federal agents that Greg is alive and the prime suspect in a double
+    homicide, and he and Win have to find him before the truth does more
+    damage than the lie.
+  sources:
+    - "https://www.harlancoben.com/novels/think-twice/"
+    - "https://en.wikipedia.org/wiki/Myron_Bolitar_series"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9781538756317-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9781538756317"
+
+# --- Mickey Bolitar (3 novels, 2011-2014; YA spin-off, Myron's nephew) ---
+
+- id: harlan-coben/shelter
+  title: "Shelter"
+  authorIds: [harlan-coben]
+  published: 2011
+  subseries: "Mickey Bolitar"
+  canonTier: extended
+  synopsis: >
+    Reeling from his father's death and his mother's stint in rehab, Mickey
+    Bolitar moves in with his uncle Myron and starts at a new high school,
+    where a classmate's disappearance leads him toward the secretive Abeona
+    Shelter.
+  sources:
+    - "https://www.harlancoben.com/novels/shelter/"
+    - "https://en.wikipedia.org/wiki/Myron_Bolitar_series"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780399256509-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780399256509"
+
+- id: harlan-coben/seconds-away
+  title: "Seconds Away"
+  authorIds: [harlan-coben]
+  published: 2012
+  subseries: "Mickey Bolitar"
+  canonTier: extended
+  synopsis: >
+    When a classmate is shot, Mickey and his friends Ema and Spoon race to
+    find out who did it while still chasing the Abeona Shelter's secrets and
+    the truth behind his father's death.
+  sources:
+    - "https://www.harlancoben.com/novels/seconds-away/"
+    - "https://en.wikipedia.org/wiki/Myron_Bolitar_series"
+  images:
+    cover: "https://covers.openlibrary.org/b/id/12578290-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL19872885W"
+
+- id: harlan-coben/found
+  title: "Found"
+  authorIds: [harlan-coben]
+  published: 2014
+  subseries: "Mickey Bolitar"
+  canonTier: extended
+  synopsis: >
+    Eight months after his father's death, Mickey searches for Ema's missing
+    online boyfriend while circling closer to the truth about the Abeona
+    Shelter, in the trilogy's closing volume.
+  sources:
+    - "https://www.harlancoben.com/novels/found/"
+    - "https://en.wikipedia.org/wiki/Myron_Bolitar_series"
+  images:
+    cover: "https://covers.openlibrary.org/b/id/7384726-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL17303315W"
+
+# --- Sami Kierce (2 novels, 2016-2025; introduced as a minor character in
+# Fool Me Once, expanded into his own thread by Nobody's Fool) ---
+
+- id: harlan-coben/fool-me-once
+  title: "Fool Me Once"
+  authorIds: [harlan-coben]
+  published: 2016
+  subseries: "Sami Kierce"
+  canonTier: core
+  synopsis: >
+    Home from the war, former special-ops pilot Maya watches her nanny-cam
+    footage and sees her husband playing with their daughter, two weeks after
+    his murder, and has to decide whether to trust her own eyes or her own
+    past.
+  sources:
+    - "https://www.harlancoben.com/novels/fool-me-once/"
+    - "https://en.wikipedia.org/wiki/Harlan_Coben"
+  images:
+    cover: "https://covers.openlibrary.org/b/id/14566352-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL17356545W"
+
+- id: harlan-coben/nobodys-fool
+  title: "Nobody's Fool"
+  authorIds: [harlan-coben]
+  published: 2025
+  subseries: "Sami Kierce"
+  canonTier: core
+  synopsis: >
+    Twenty-two years after waking up covered in blood beside his girlfriend's
+    body with no memory of what happened, private investigator Sami Kierce
+    spots her alive at the back of his night-school classroom, and she runs
+    the instant their eyes meet.
+  sources:
+    - "https://www.harlancoben.com/novels/nobodys-fool/"
+    - "https://www.hollywoodreporter.com/tv/tv-news/harlan-coben-novel-nobodys-fool-sequel-fool-me-once-series-1236171179/"
+  note: >
+    Officially billed as the sequel to Fool Me Once (Hollywood Reporter),
+    though the connecting character is a minor figure in that novel's text;
+    his much larger role on the Netflix adaptation is what the sequel builds
+    from.
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9781538756355-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9781538756355"
+
+# --- Wilde (2 novels, 2020-2022) ---
+
+- id: harlan-coben/the-boy-from-the-woods
+  title: "The Boy from the Woods"
+  authorIds: [harlan-coben]
+  published: 2020
+  subseries: "Wilde"
+  canonTier: core
+  synopsis: >
+    Found as a feral child living alone in the New Jersey woods with no
+    memory of his past, the man known only as Wilde is drawn back into the
+    town that never accepted him when a local teenager goes missing.
+  sources:
+    - "https://www.harlancoben.com/novels/the-boy-from-the-woods/"
+    - "https://www.goodreads.com/series/321974-wilde"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9781538748145-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9781538748145"
+
+- id: harlan-coben/the-match
+  title: "The Match"
+  authorIds: [harlan-coben]
+  published: 2022
+  subseries: "Wilde"
+  canonTier: core
+  synopsis: >
+    A DNA match gives Wilde his first real lead on the family that abandoned
+    him decades ago, but it links him to a present-day disappearance that is
+    darker than it first appears.
+  sources:
+    - "https://www.harlancoben.com/novels/the-match/"
+    - "https://www.goodreads.com/series/321974-wilde"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9781538739785-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9781538739785"
+
+# --- Windsor Horne Lockwood III ("Win") (1 novel, 2021) ---
+
+- id: harlan-coben/win
+  title: "Win"
+  authorIds: [harlan-coben]
+  published: 2021
+  subseries: "Windsor Horne Lockwood III"
+  canonTier: core
+  synopsis: >
+    A recluse is found murdered in his Manhattan apartment with a stolen
+    Vermeer and a suitcase bearing his initials, and Myron's wealthy,
+    dangerous best friend Win runs his own investigation into a decades-old
+    crime the FBI cannot close without him.
+  sources:
+    - "https://en.wikipedia.org/wiki/Win_(novel)"
+    - "https://www.harlancoben.com/novels/win/"
+  note: >
+    The first novel to center Win rather than Myron, after eleven Myron
+    Bolitar novels and Home's partial chapters from Win's perspective
+    (Wikipedia).
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9781538704233-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9781538704233"
+
+# --- Standalone novels (18, 1990-2025; the bulk of the bibliography) ---
+
+- id: harlan-coben/play-dead
+  title: "Play Dead"
+  authorIds: [harlan-coben]
+  published: 1990
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Coben's debut, a romantic suspense thriller, accepted for publication
+    when he was 26.
+  sources:
+    - "https://en.wikipedia.org/wiki/Harlan_Coben"
+    - "https://www.harlancoben.com/novels/play-dead/"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9781616647858-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9781616647858"
+
+- id: harlan-coben/miracle-cure
+  title: "Miracle Cure"
+  authorIds: [harlan-coben]
+  published: 1991
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Coben's second novel, published the year after his debut, before he
+    turned to the Myron Bolitar series.
+  sources:
+    - "https://en.wikipedia.org/wiki/Harlan_Coben"
+    - "https://www.harlancoben.com/novels/miracle-cure/"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780451234919-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780451234919"
+
+- id: harlan-coben/tell-no-one
+  title: "Tell No One"
+  authorIds: [harlan-coben]
+  published: 2001
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Eight years after his wife was abducted and murdered on their anniversary
+    weekend, a pediatrician gets an anonymous email referencing a phrase only
+    the two of them ever knew.
+  sources:
+    - "https://www.harlancoben.com/novels/tell-no-one/"
+    - "https://en.wikipedia.org/wiki/Harlan_Coben"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780440245902-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780440245902"
+
+- id: harlan-coben/gone-for-good
+  title: "Gone for Good"
+  authorIds: [harlan-coben]
+  published: 2002
+  subseries: null
+  canonTier: core
+  synopsis: >
+    On her deathbed, a mother tells her son his long-vanished brother, presumed
+    a killer, is still alive, sending him on a hunt for the truth that
+    threatens everyone he loves.
+  sources:
+    - "https://www.harlancoben.com/novels/gone-for-good/"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780440236733-M.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780440236733"
+
+- id: harlan-coben/no-second-chance
+  title: "No Second Chance"
+  authorIds: [harlan-coben]
+  published: 2003
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A surgeon wakes from a gunshot wound to find his wife dead and his infant
+    daughter abducted, with only a chilling ransom note warning him against
+    calling the police.
+  sources:
+    - "https://www.harlancoben.com/novels/no-second-chance/"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780451210555-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780451210555"
+
+- id: harlan-coben/just-one-look
+  title: "Just One Look"
+  authorIds: [harlan-coben]
+  published: 2004
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A suburban mother finds an unfamiliar decades-old photograph mixed into
+    her family snapshots, and when her husband recognizes it and disappears
+    with it, she has to find him before whoever else wants that photo does.
+  sources:
+    - "https://www.harlancoben.com/novels/just-one-look/"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780451213204-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780451213204"
+
+- id: harlan-coben/the-innocent
+  title: "The Innocent"
+  authorIds: [harlan-coben]
+  published: 2005
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Nine years after one violent night made him an accidental killer, an
+    ex-con with a pregnant wife and a new life gets an inexplicable video call
+    from her phone, and the unraveling begins.
+  sources:
+    - "https://www.harlancoben.com/novels/the-innocent/"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780525948742-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780525948742"
+
+- id: harlan-coben/the-woods
+  title: "The Woods"
+  authorIds: [harlan-coben]
+  published: 2007
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A county prosecutor whose sister vanished at a summer camp twenty years
+    earlier is drawn back into that unsolved case when a body surfaces
+    carrying evidence that ties directly to her.
+  sources:
+    - "https://www.harlancoben.com/novels/the-woods/"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780525950127-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780525950127"
+
+- id: harlan-coben/hold-tight
+  title: "Hold Tight"
+  authorIds: [harlan-coben]
+  published: 2008
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Two suburban parents install spyware on their withdrawn teenage son's
+    computer after a friend's suicide, and a pair of brutal killings pulls
+    their family and neighborhood into the fallout. Coben's first novel to
+    debut at number one on the New York Times Best Seller list.
+  sources:
+    - "https://www.harlancoben.com/novels/hold-tight/"
+    - "https://en.wikipedia.org/wiki/Harlan_Coben"
+  images:
+    cover: "https://covers.openlibrary.org/b/id/2471068-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL79343W"
+
+- id: harlan-coben/caught
+  title: "Caught"
+  authorIds: [harlan-coben]
+  published: 2010
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A television reporter who publicly exposes sexual predators targets a
+    social worker she is certain is guilty, only for his case to turn out far
+    more complicated than her sting was built for.
+  sources:
+    - "https://www.harlancoben.com/novels/caught/"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780451232700-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780451232700"
+
+- id: harlan-coben/stay-close
+  title: "Stay Close"
+  authorIds: [harlan-coben]
+  published: 2012
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A suburban mother, a washed-up photographer, and a detective who cannot
+    let go of a seventeen-year-old cold case find their buried pasts
+    colliding in the present.
+  sources:
+    - "https://www.harlancoben.com/novels/stay-close/"
+  images:
+    cover: "https://covers.openlibrary.org/b/id/14625701-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL16499139W"
+
+- id: harlan-coben/six-years
+  title: "Six Years"
+  authorIds: [harlan-coben]
+  published: 2013
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Six years after watching the love of his life marry another man, a college
+    professor attends that husband's funeral, only to find the grieving widow
+    is a stranger, unraveling everything he thought he knew about her.
+  sources:
+    - "https://www.harlancoben.com/novels/six-years/"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780525953944-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780525953944"
+
+- id: harlan-coben/missing-you
+  title: "Missing You"
+  authorIds: [harlan-coben]
+  published: 2014
+  subseries: null
+  canonTier: core
+  synopsis: >
+    An NYPD detective recognizes her ex-fiance's photo on a dating site
+    eighteen years after he shattered her heart, and reaching out to him
+    uncovers a conspiracy preying on the vulnerable.
+  sources:
+    - "https://www.harlancoben.com/novels/missing-you/"
+  images:
+    cover: "https://covers.openlibrary.org/b/id/7434798-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL17356815W"
+
+- id: harlan-coben/the-stranger
+  title: "The Stranger"
+  authorIds: [harlan-coben]
+  published: 2015
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A stranger who knows an unbearable secret whispers it to a suburban
+    father with a comfortable marriage and two sons, and the confrontation
+    that follows unravels a conspiracy larger than the lie itself.
+  sources:
+    - "https://www.harlancoben.com/novels/the-stranger/"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9781409156376-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9781409156376"
+
+- id: harlan-coben/dont-let-go
+  title: "Don't Let Go"
+  authorIds: [harlan-coben]
+  published: 2017
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A police detective still living in the New Jersey town where his
+    identical twin brother died fifteen years earlier reopens the case when
+    his own long-vanished girlfriend's fingerprints turn up at a crime scene.
+  sources:
+    - "https://www.harlancoben.com/novels/dont-let-go/"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780525955115-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780525955115"
+
+- id: harlan-coben/run-away
+  title: "Run Away"
+  authorIds: [harlan-coben]
+  published: 2019
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A father spots his drug-addicted, estranged daughter playing guitar in
+    Central Park and follows her back into a dangerous world he never knew
+    existed, risking everything to bring her home.
+  sources:
+    - "https://www.harlancoben.com/novels/run-away/"
+  images:
+    cover: "https://covers.openlibrary.org/b/id/8795357-M.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL20151084W"
+
+- id: harlan-coben/i-will-find-you
+  title: "I Will Find You"
+  authorIds: [harlan-coben]
+  published: 2023
+  subseries: null
+  canonTier: core
+  synopsis: >
+    An innocent man serving life for his young son's murder receives evidence
+    the boy may still be alive, and breaks out of prison to learn the truth
+    himself.
+  sources:
+    - "https://www.harlancoben.com/novels/i-will-find-you/"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9781538748367-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9781538748367"
+
+- id: harlan-coben/gone-before-goodbye
+  title: "Gone Before Goodbye"
+  authorIds: [harlan-coben]
+  withAuthorIds: [reese-witherspoon]
+  authorRole: co-author
+  published: 2025
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A former army combat surgeon who lost her medical license, her husband,
+    and the charity they built together takes a job she cannot refuse, and
+    is drawn into the conspiracy that has already cost her everything else.
+  sources:
+    - "https://en.wikipedia.org/wiki/Gone_Before_Goodbye"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9781538774700-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9781538774700"
+
+# --- Illustrated children's book (1) ---
+
+- id: harlan-coben/the-magical-fantastical-fridge
+  title: "The Magical Fantastical Fridge"
+  authorIds: [harlan-coben]
+  published: 2016
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    An illustrated children's picture book: a boy is magically swept into one
+    of his own kitchen-fridge drawings for a zany adventure that ends in an
+    appreciation of family. Illustrated by Leah Tinari (Dial).
+  sources:
+    - "https://www.harlancoben.com/novels/magical-fantastical-fridge/"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780525428039-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780525428039"
+
+# --- Nonfiction (1, forthcoming) ---
+
+- id: harlan-coben/plot-twist
+  title: "Plot Twist: Life, Craft, and the Messy First Draft"
+  # No cover: forthcoming (Sept 2026), no ISBN assigned yet and no
+  # publisher jacket art released; nothing to source honestly. Revisit
+  # once Hachette publishes cover art ahead of the release date.
+  authorIds: [harlan-coben]
+  published: 2026
+  forthcoming: 2026-09-08
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A memoir on the writing life: Coben's own account of his path into
+    publishing and a look at his creative process, rather than a novel.
+  sources:
+    - "https://www.harlancoben.com/novels/plot-twist/"
+    - "https://www.hachettebookgroup.com/titles/harlan-coben/plot-twist/9781538784624/"
+    - "https://www.kirkusreviews.com/book-reviews/harlan-coben/plot-twist-2/"
+
+# --- Apocrypha: anthology and periodical contributions (4, 1998-2011) ---
+
+- id: harlan-coben/malice-domestic-7
+  title: "Malice Domestic 7"
+  authorIds: [harlan-coben]
+  published: 1998
+  subseries: null
+  canonTier: apocrypha
+  authorRole: contributor
+  contributionTitle: "A Simple Philosophy"
+  synopsis: >
+    An anthology of original traditional mystery stories edited by Sharyn
+    McCrumb. Coben's contribution, a short story, was a finalist for the
+    1999 Anthony and Macavity Awards for Best Short Story.
+  note: >
+    This is McCrumb's anthology, not Coben's, so she is not recorded in
+    withAuthorIds. Story and host anthology are confirmed by Mystery Readers
+    International's own Macavity Awards record, independently by the
+    anthology's own table of contents; the 1999 Anthony Award nomination is
+    corroborated separately by Wikipedia's "Published works" award table.
+  sources:
+    - "https://mysteryreaders.org/macavity-awards/"
+    - "https://booksreadingorder.com/malice-domestic-7/"
+    - "https://en.wikipedia.org/wiki/Harlan_Coben"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780380794065-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780380794065"
+
+- id: harlan-coben/death-do-us-part
+  title: "Mystery Writers of America Presents Death Do Us Part: New Stories about Love, Lust, and Murder"
+  authorIds: [harlan-coben]
+  published: 2006
+  subseries: null
+  canonTier: apocrypha
+  authorRole: editor
+  contributionTitle: "Entrapped"
+  synopsis: >
+    An anthology of 18 mystery stories about relationships by Mystery
+    Writers of America members, assembled and edited by Coben, who also
+    contributed an original short story of his own.
+  note: >
+    Coben is the anthology's sole credited editor (Mystery Readers
+    International's own Macavity Awards record cites the book as "edited by
+    Harlan Coben"), and separately wrote the story "Entrapped" within it,
+    per FictionDB's own anthology-appearance listing for that title.
+  sources:
+    - "https://mysteryreaders.org/macavity-awards/"
+    - "https://www.fictiondb.com/title/entrapped~harlan-coben~147802.htm"
+  images:
+    cover: "https://covers.openlibrary.org/b/isbn/9780316012508-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/isbn/9780316012508"
+
+- id: harlan-coben/best-american-mystery-stories-2011
+  title: "The Best American Mystery Stories 2011"
+  authorIds: [harlan-coben]
+  published: 2011
+  subseries: null
+  canonTier: apocrypha
+  authorRole: editor
+  contributionTitle: "Introduction"
+  synopsis: >
+    The fifteenth volume of the annual series, collecting twenty mystery
+    stories first published in 2010. Coben served as the year's guest
+    editor, selecting the stories and writing the introduction; series
+    editor Otto Penzler writes the foreword every year and is not recorded
+    in withAuthorIds, since he has no author entity in this repo.
+  note: >
+    Publication date (December 1, 2011) and Coben's editor credit are
+    confirmed by Goodreads' own catalogue record, which quotes a line from
+    his introduction ("...taken Elmore Leonard's credo and fed it
+    steroids..."), independently corroborated by FantasticFiction's listing
+    of the same title and credit.
+  sources:
+    - "https://www.goodreads.com/book/show/10675890-the-best-american-mystery-stories-2011"
+    - "https://www.fantasticfiction.com/c/harlan-coben/best-american-mystery-stories-2011.htm"
+  images:
+    cover: "https://covers.openlibrary.org/b/id/6935621-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL16099169W"
+
+- id: harlan-coben/the-rise-and-fall-of-super-d
+  title: "The Rise and Fall of Super D"
+  # No cover: never sold or catalogued as a separate book (works.yaml's
+  # own sourcing) - it exists only as a bonus short story bound into The
+  # Innocent's US hardcover, which is that work's cover, not this one's.
+  authorIds: [harlan-coben]
+  published: 2005
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    A short story exclusive to the Dutton (US) hardcover edition of The
+    Innocent, never sold or collected separately.
+  note: >
+    Confirmed by Coben's own FAQ, answering a reader who asked whether it is
+    a Myron Bolitar novel: "No, ... was a short story ... You can find it in
+    the USA in hardcover editions of THE INNOCENT." Independently
+    catalogued by Goodreads under the same title, author and 2005 date;
+    that record's synopsis and reviews are contaminated with The Innocent's
+    own text (a shared-record mixup), so only its bibliographic metadata is
+    used here. No source read confirms which characters the story features,
+    so it is not linked to the Myron Bolitar subseries despite the fan
+    question that prompted Coben's FAQ answer.
+  sources:
+    - "https://www.harlancoben.com/faq/"
+    - "https://www.goodreads.com/book/show/38881024-the-rise-and-fall-of-super-d"
