@@ -1,0 +1,55 @@
+stage: visual-language
+summary: >
+  Added the `art` block to content/franchises/michael-connelly/theme.yaml,
+  which was the wing's one blocking validate.py error. Emblem is the murder
+  book (a closed LAPD case binder), grounded in Connelly's own decade as a
+  police reporter before he wrote fiction rather than in genre reputation.
+  Checked against all four existing crime wings' art blocks (French's chair,
+  Flynn's copy-desk rule, Nesbo's ledger, Slaughter's exam table) before
+  writing motifs, lineCharacter and avoid, to keep this wing's drawings from
+  converging on any of theirs. python scripts/validate.py --slug
+  michael-connelly now reports 0 errors (only 3 pre-existing, unrelated
+  handoff-length warnings from other stages). python scripts/asset_audit.py
+  michael-connelly reports art:yes and lists 18 assets ready to generate (9
+  life-events, 7 franchise-events, 2 world-events already in the queue).
+produced:
+  file: content/franchises/michael-connelly/theme.yaml
+  emblem: >
+    A closed murder book (dark blue three-ring binder, rubber-banded shut,
+    blank spine tab), drawn resting closed and never opened.
+  motifsCount: 7
+  validateStatus: "0 errors, --slug michael-connelly; theme.art gap closed"
+  assetAuditStatus: "art:yes; 18 assets now unblocked to generate"
+forStages:
+  visual-metadata: >
+    theme.art is settled; no constraint on cover sourcing or the author
+    portrait. The emblem (murder book) and motifs (LA basin, LA River,
+    helicopter searchlight, Lincoln Town Car, courthouse, records shelf,
+    freeway dusk) are available if a future stage wants to cross-check
+    cover imagery against the wing's visual language, though covers are
+    licensed rather than generated (VISUAL.md §4) so no direct conflict
+    is possible.
+  asset-prompt (future, per-asset): >
+    Quote the art block verbatim in STYLE per VISUAL.md §5, never
+    paraphrase it. Rotate the 7 motifs and vary the orrery motif's carrier
+    (sky is default; the murder book, Lincoln's back seat, or a courthouse
+    window grille are motif-appropriate alternate carriers per VISUAL.md
+    §1a) across the wing's 18 queued assets so no single motif or carrier
+    becomes a tic (§4a's one-third rule). The wing has no eras.yaml (eras
+    stage ruled eras: [] - concurrent series, no periodisation), so there
+    is no era plate to anchor the wing's first generation; the first
+    life-event or franchise-event accepted becomes the anchor image
+    instead (§5d).
+openQuestions:
+  - "None blocking. The wing's first generated asset (whichever life-event
+     or franchise-event is drawn first, since there is no era plate to
+     anchor on) should be iterated until genuinely publishable before
+     anything else in the wing is generated, per VISUAL.md §5d step 1 -
+     it becomes the anchor every later asset in this wing references."
+  - "The murder book emblem and the Lincoln Town Car motif both risk
+     drifting toward stock detective-fiction imagery if a future prompt
+     leans on them without the wing's specific line and atmosphere
+     (flat photo-desk exactness, smog-smudge haze, dry heat never rain).
+     Worth a second look the first time either appears in a generated
+     asset, before either becomes the wing's default choice for every
+     later prompt."
