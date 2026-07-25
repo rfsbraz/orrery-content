@@ -1,0 +1,34 @@
+stage: press-archaeology-delta
+summary: >
+  Addressed the wing-audit's live finding: the 1997-2001 five-year aura
+  silence was real, not closed as the prior press-archaeology handoff
+  claimed. Added one sourced, dated franchise event at 1999 - Blood Work
+  (1998) winning three separate mystery prizes in one year: the Anthony
+  Award (Mystery Writers of America, at Bouchercon XXX, Milwaukee,
+  Sept 30-Oct 3 1999), the Macavity Award (Mystery Readers International,
+  1999), and, for the French translation Créance de sang, the Grand Prix de
+  littérature policière (foreign category, 1999). This splits the flagged
+  1997-2001 run into two two-year stretches (1997-1998, 2000-2001), both
+  under the five-year alarm. Did not pad further: the brief's other
+  suggested angles (the reporter-to-novelist transition, a bestseller
+  milestone, an adaptation deal) were checked and either already covered by
+  existing entries (1987, 1992, 1994) or not independently sourceable inside
+  this window without lowering the bar, so left out rather than invented.
+produced:
+  franchiseEventIds:
+    - michael-connelly/blood-work-triple-prize-1999
+  auraDensity: "Before: 18 entries / 47 works (0.38), dark run 5 yrs (1997-2001). After: 19 entries (0.40), dark run 4 yrs (2004-2007) - the flagged run is gone; the new longest run was already there, just not the one being asked about, and stays under the alarm."
+  rejected: >
+    A second Grand Prix source search initially came up short (one hit,
+    lalettredulibraire.com); a follow-up fetch of k-libre.fr's own palmarès
+    independently confirmed the same 1999 winner, so it shipped after all
+    rather than being dropped for a one-source gap. No other 1997-2001
+    candidate cleared the bar: Angels Flight (1999) and Void Moon (2000) have
+    no comparable award or reception rupture found; a precise date for
+    Connelly's actual departure from journalism to full-time novelist did
+    not surface separately from the already-sourced 1994 Clinton event.
+forStages:
+  translation: "1 new entry, no pt-PT yet - consistent with the rest of this wing's events.yaml, not a new regression."
+  spoiler-audit: "Pure production/reception fact, no plot content, no character fate. No spoilerAfter needed."
+openQuestions:
+  - "The 2004-2007 dark run surfaced by this fix is a different gap than the one this task was scoped to; flagging it rather than researching it, since it's outside this delta's brief."
