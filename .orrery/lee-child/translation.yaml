@@ -1,0 +1,76 @@
+stage: translation
+wing: lee-child
+locale: pt-PT
+summary: >
+  Created content/i18n/pt-PT/franchises/lee-child/{franchise,orders,events,
+  works}.yaml and content/i18n/pt-PT/authors/{lee-child,andrew-child}.yaml
+  from scratch (no pt-PT overlay existed before this stage). Translated the
+  franchise description, all 3 startHere paths (title/description/note),
+  the chronological order's name/rationale/debated, all 5 franchise events,
+  the lee-child bio + 4 lifeEvents, the andrew-child bio, and all 46 work
+  synopses. eras.yaml is [] on this wing, nothing to translate there.
+
+coverage:
+  before: "101/115 files (pt-PT); lee-child's 6 files entirely missing"
+  after: "107/115 files (pt-PT); lee-child complete on all 6, 0 partial"
+  command: python scripts/i18n_coverage.py
+  regression: "none - the other 8 pre-existing partial files (christie,
+    jordan, king, pratchett events/author) are unchanged before and after"
+
+title_handling: >
+  Never translate a work `title` field. A published title CITED inside
+  translated prose (inline [[work:id|display]] link or plain-text mention)
+  uses the real pt-PT edition title from editions.yaml when one exists,
+  English otherwise - mirrors stephen-king's existing overlay convention.
+  killing-floor has two pt titles (Asa 2003 "Do Fundo do Abismo"; a 2008
+  Mill Books retitled reissue "Dinheiro Sujo"); used "Do Fundo do Abismo"
+  consistently (7 occurrences) as the primary translation. Franchise.yaml's
+  "[[work:.../killing-floor|Jack Reacher]]" names the character/series, not
+  the work - left untranslated as a proper noun (mirrors jim-butcher's own
+  "The Dresden Files" pattern). The Enemy, The Secret, The Affair, One
+  Shot, The Sentinel, Blue Moon have no pt-PT edition and stay English
+  everywhere cited.
+
+andrew_child: >
+  andrew-child.yaml has no lifeEvents (thin by design, living co-author)
+  but its one-paragraph bio is real prose - translated.
+
+spoiler_invariant: >
+  Re-checked against spoiler-audit.yaml's PASS verdict before translating.
+  The chronological order's rationale, the startHere chronological note,
+  and orders.yaml's debated all state only "written well after, and with
+  [full] knowledge of, everything that follows" - translated to preserve
+  that exact vagueness, naming no character/fate/event/culprit. Spot-
+  checked all 46 translated synopses against English: none adds
+  specificity. Holds in pt-PT.
+
+register: >
+  estar a + infinitive throughout (no Brazilian gerund); autocarro/comboio/
+  ecrã/casa de banho vocabulary; "franco-atirador" for sniper (revised from
+  an initial literal "atirador furtivo" on self-review); Cruise-casting
+  event heights/weight converted to metric (1,70 m / 1,96 m / 113 kg).
+  Direct quotes translated into Portuguese, matching this catalogue's
+  dominant practice rather than the one outlying English-verbatim quote in
+  stephen-king.yaml.
+
+verification: >
+  Content-only repo, no app checkout to render from - could not do the
+  skill's "read the rendered page" step; flagging the gap rather than
+  faking it. Checked instead: validate.py --slug lee-child (green) and
+  i18n_coverage.py (107/115, no regression), plus a full field-by-field
+  re-read of all 6 new files against the English base (id preservation, no
+  workIds/orderId/fit/dates/impact/sources in nested overlays, no
+  translated work `title` anywhere).
+
+engine_limits_hit: >
+  i18n_coverage.py does not gate startHere `note` or orders.yaml `debated`
+  (a documented gap in the skill itself) - translated both anyway since
+  SCHEMA.md names them as real reader-facing prose.
+
+gates:
+  validate: "green, --slug lee-child; only pre-existing handoff-length
+    warnings from earlier stages, none introduced here"
+  i18n_coverage: "107/115 pt-PT (was 101/115); lee-child complete, 0
+    regression elsewhere"
+
+open_questions_for_curator: []
