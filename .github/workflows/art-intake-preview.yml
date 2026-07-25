@@ -1,0 +1,95 @@
+name: Art intake preview
+
+# The last link in the art-ready chain. Once the gate flips an issue to
+# `asset:ready`, filing is one command - `art_intake.py --apply` - but you still
+# have to trust it blind: which entry, which slot, keyed or opaque, what
+# destination file. This posts that plan as a comment the moment the label
+# lands, so approving the filing is a glance rather than a leap.
+#
+# Read-only: it runs `art_intake.py` WITHOUT `--apply`, which lists the plan and
+# downloads nothing. It never touches content. The apply itself stays a
+# deliberate human (or future workflow) step.
+on:
+  issues:
+    types: [labeled]
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: art-intake-preview-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  preview:
+    # Only the flip to asset:ready, and only from a trusted source: the
+    # art-ready bot (which adds the label as github-actions) or the owner. Only
+    # someone with write access can label at all on a public repo, so this is a
+    # belt-and-braces check on a comment-only, read-only job.
+    if: >-
+      github.event.label.name == 'asset:ready'
+      && (
+        github.event.sender.login == 'github-actions[bot]'
+        || github.event.sender.login == 'rfsbraz'
+      )
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet pyyaml
+
+      - name: Work out the wing from the issue
+        id: wing
+        env:
+          BODY: ${{ github.event.issue.body }}
+        run: |
+          set -euo pipefail
+          # The asset block carries a `wing:` line (docs/LAYOUT.md / issue_assets).
+          wing=$(printf '%s\n' "$BODY" | grep -oiE 'wing:[[:space:]]*[a-z0-9-]+' | head -1 \
+                 | sed -E 's/.*:[[:space:]]*//' || true)
+          echo "wing=${wing}" >> "$GITHUB_OUTPUT"
+          echo "wing: ${wing:-(not found in body)}"
+
+      - name: Dry-run intake for the wing
+        id: plan
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORRERY_CONTENT_REPO: ${{ github.repository }}
+          WING: ${{ steps.wing.outputs.wing }}
+        run: |
+          set -euo pipefail
+          if [ -n "$WING" ]; then
+            python scripts/art_intake.py --wing "$WING" > /tmp/plan.txt 2>&1 || true
+          else
+            python scripts/art_intake.py > /tmp/plan.txt 2>&1 || true
+          fi
+          cat /tmp/plan.txt
+
+      - name: Comment the plan on the issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          NUM: ${{ github.event.issue.number }}
+        run: |
+          set -euo pipefail
+          {
+            echo "<!-- art-intake-preview -->"
+            echo "### Ready to file"
+            echo "This is what \`art_intake.py --apply\` would do with the art now attached - the entry, the slots, the destination files and the keying flags. Nothing has been written; run the apply to file it."
+            echo ""
+            echo '```'
+            cat /tmp/plan.txt
+            echo '```'
+          } > /tmp/comment.md
+
+          existing=$(gh api "repos/$REPO/issues/$NUM/comments" --paginate \
+            --jq 'map(select(.body | startswith("<!-- art-intake-preview -->"))) | .[0].id // empty')
+          payload=$(jq -n --arg b "$(cat /tmp/comment.md)" '{body: $b}')
+          if [ -n "$existing" ]; then
+            printf '%s' "$payload" | gh api -X PATCH "repos/$REPO/issues/comments/$existing" --input -
+          else
+            printf '%s' "$payload" | gh api -X POST "repos/$REPO/issues/$NUM/comments" --input -
+          fi

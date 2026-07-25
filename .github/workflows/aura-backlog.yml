@@ -1,0 +1,101 @@
+name: Aura dark-run backlog
+
+# `aura_density.py` grades every wing's timeline and flags a "dark run" - five or
+# more consecutive publishing years with no aura entry, which usually means a
+# press pass stopped short. It is a report you have to remember to run. This
+# keeps its answer visible as a single, always-current issue: the catalogue's
+# dark-run backlog, rewritten in place each month.
+#
+# One rolling issue, edited (not appended) so it never grows stale or noisy. When
+# the catalogue has no dark runs left, the issue is closed rather than left open
+# saying nothing.
+#
+# Monthly, not weekly: closing a dark run is real curation work, not a quick
+# fix, and a monthly cadence matches how fast that backlog actually moves.
+on:
+  schedule:
+    - cron: "0 7 1 * *" # 07:00 UTC on the 1st of each month
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: aura-backlog
+  cancel-in-progress: false
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet pyyaml
+
+      - name: Compute dark runs
+        id: aura
+        run: |
+          set -euo pipefail
+          python scripts/aura_density.py > /tmp/aura.txt 2>&1 || true
+          cat /tmp/aura.txt
+          # The summary line only prints when at least one wing has a dark run.
+          if grep -qE 'have 5\+ consecutive' /tmp/aura.txt; then
+            echo "dark=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "dark=false" >> "$GITHUB_OUTPUT"
+          fi
+          { echo '### Aura dark runs'; echo '```'; cat /tmp/aura.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Ensure the label exists
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh label create "aura:backlog" --repo "$REPO" --force \
+            --color "5319E7" --description "Wings with a 5+ year dark run in the aura"
+
+      - name: Upsert or close the backlog issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          DARK: ${{ steps.aura.outputs.dark }}
+        run: |
+          set -euo pipefail
+          title="Aura dark runs across the catalogue"
+
+          existing=$(gh issue list --repo "$REPO" --state open \
+            --search "${title} in:title" --json number,title \
+            --jq "map(select(.title == \"${title}\")) | .[0].number // empty")
+
+          if [ "$DARK" != "true" ]; then
+            if [ -n "$existing" ]; then
+              gh issue comment "$existing" --repo "$REPO" \
+                --body "No wing carries a 5+ year dark run as of this run. Closing - it reopens automatically if one returns."
+              gh issue close "$existing" --repo "$REPO"
+              echo "closed #${existing}: no dark runs"
+            else
+              echo "no dark runs, no open issue - nothing to do"
+            fi
+            exit 0
+          fi
+
+          body=$(printf '%s\n' \
+            "Wings with a **5+ year silence** in the aura, as of this run. A dark run usually means the press pass stopped short of the newest books - route it to \`press-archaeology\` (the author's own record) before \`world-events\`, which is thin gruel for an author-specific gap." \
+            "" \
+            "Some dark runs are honest (a genuinely obscure pre-fame stretch); the fix there is to confirm and record it, not to invent events. This issue is rewritten each month." \
+            "" \
+            '```' \
+            "$(cat /tmp/aura.txt)" \
+            '```')
+
+          if [ -n "$existing" ]; then
+            gh issue edit "$existing" --repo "$REPO" --body "$body"
+            echo "refreshed #${existing}"
+          else
+            gh issue create --repo "$REPO" --title "$title" \
+              --label "aura:backlog" --body "$body"
+            echo "opened the backlog issue"
+          fi
