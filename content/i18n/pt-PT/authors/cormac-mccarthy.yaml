@@ -1,0 +1,141 @@
+# Overlay pt-PT do autor: bio + prosa dos lifeEvents.
+# Os lifeEvents ficam aninhados sob o autor e são fundidos por id (ver
+# SCHEMA.md, "Nested lists merge by id"): levam `title` + `description`, que
+# são prosa; datas, impact e sources nunca se traduzem, nem o nome do autor.
+# Referências a obras usam o título publicado em Portugal onde existe edição
+# em editions.yaml (Relógio D'Água, tradução de Paulo Faria); The Kekulé
+# Problem não tem edição portuguesa e fica com o título inglês.
+- id: cormac-mccarthy
+  bio: >
+    Nasceu Charles Joseph McCarthy Jr. em Providence, Rhode Island, um de
+    seis filhos, e cresceu a partir de 1937 em Knoxville, no Tennessee, onde
+    o pai trabalhava como advogado para a Tennessee Valley Authority.
+    Matriculou-se na Universidade do Tennessee em 1951, saiu em 1953 para se
+    alistar na Força Aérea dos Estados Unidos (destacado no Alasca, onde leu
+    extensamente pela primeira vez na vida, por sua própria conta), e voltou
+    à universidade em 1957, publicando os primeiros contos na revista
+    estudantil The Phoenix sob o nome C. J. McCarthy, Jr. Mudou o primeiro
+    nome para Cormac, uma alcunha de família que as tias irlandesas tinham
+    dado ao pai, antes de a carreira de escritor começar, em parte (por sua
+    própria conta) para evitar a comparação com o boneco de ventríloquo
+    Charlie McCarthy, de Edgar Bergen. O romance de estreia,
+    [[work:cormac-mccarthy/the-orchard-keeper|O Guarda do Pomar]] (1965),
+    submetido sem convite ao editor da Random House Albert Erskine, que viria
+    a editar os quatro livros seguintes de McCarthy, ganhou o William
+    Faulkner Foundation Award para primeiro romance. Bolsas e prémios
+    literários moldaram as décadas seguintes: um prémio da American Academy
+    of Arts and Letters e uma bolsa da Rockefeller Foundation levaram-no pela
+    Europa do sul enquanto escrevia [[work:cormac-mccarthy/outer-dark|Nas
+    Trevas Exteriores]] (1968), e uma Bolsa MacArthur de 1981 financiou as
+    viagens de investigação pelo sudoeste americano e pelas fronteiras
+    mexicanas que estão por trás de
+    [[work:cormac-mccarthy/blood-meridian|Meridiano de Sangue]] (1985) e,
+    mais tarde, de [[work:cormac-mccarthy/all-the-pretty-horses|Belos
+    Cavalos]] (1992), [[work:cormac-mccarthy/the-crossing|A Travessia]]
+    (1994) e [[work:cormac-mccarthy/cities-of-the-plain|Cidades da
+    Planície]] (1998), publicados em conjunto como a Trilogia da Fronteira.
+    Belos Cavalos, vencedor do National Book Award e do National Book
+    Critics Circle Award, foi o seu primeiro sucesso comercial depois de
+    cinco romances escritos numa obscuridade relativa.
+    [[work:cormac-mccarthy/the-road|A Estrada]] (2006) ganhou o Prémio
+    Pulitzer de Ficção de 2007 e o James Tait Black Memorial Prize. Tinha
+    sido trazido para o Santa Fe Institute, um centro de investigação
+    multidisciplinar, em 1984, pelo físico Murray Gell-Mann, amigo desde a
+    cerimónia MacArthur de 1981 que ambos partilharam, e trabalhou lado a
+    lado com os seus cientistas pelo resto da vida, tornando-se por fim
+    membro vitalício do conselho, antes de publicar o seu único ensaio,
+    [[work:cormac-mccarthy/the-kekule-problem|The Kekulé Problem]] (2017),
+    sobre a origem da linguagem. Os seus dois últimos romances,
+    [[work:cormac-mccarthy/the-passenger|O Passageiro]] e
+    [[work:cormac-mccarthy/stella-maris|Stella Maris]], ambos centrados nos
+    irmãos Bobby e Alicia Western, foram publicados com seis semanas de
+    intervalo no outono de 2022. Morreu a 13 de junho de 2023, em Santa Fe,
+    Novo México, aos 89 anos.
+  lifeEvents:
+    - id: mccarthy-delisle-ibiza-1966
+      title: Um segundo casamento, e o isolamento que molda Nas Trevas Exteriores
+      description: >
+        McCarthy escreveu o primeiro rascunho de
+        [[work:cormac-mccarthy/outer-dark|Nas Trevas Exteriores]] sozinho em
+        Knoxville, depois de a primeira mulher e o filho de ambos o terem
+        deixado na sequência do divórcio de 1963; terminou o rascunho final
+        dezoito meses depois de casar com Anne DeLisle, uma cantora que
+        conhecera a bordo do paquete que o levava para a Europa na bolsa de
+        viagem de 1965. Casaram em Inglaterra em 1966 e instalaram-se em
+        Ibiza, onde o romance foi terminado com o dinheiro da bolsa da
+        Rockefeller Foundation, um casamento que durou até 1981.
+
+    - id: mccarthy-guggenheim-1969
+      title: Uma primeira Bolsa Guggenheim, e uma segunda em 1976
+      description: >
+        Recebeu uma Bolsa Guggenheim para Escrita Criativa em 1969, que
+        financiou o regresso de Ibiza a Rockford, no Tennessee, e os anos
+        passados a escrever [[work:cormac-mccarthy/child-of-god|Filho de
+        Deus]] (1973). Uma segunda bolsa Guggenheim seguiu-se em 1976.
+
+    - id: mccarthy-delisle-separation-el-paso-1976
+      title: Sai de casa a meio do rascunho, e termina Suttree a partir de El Paso
+      description: >
+        A meio do rascunho de duas décadas de
+        [[work:cormac-mccarthy/suttree|Suttree]], McCarthy separou-se de Anne
+        DeLisle e deixou a casa de campo arrendada nos arredores de Knoxville
+        rumo a El Paso, no Texas, a cidade que ancorou o resto da sua vida e,
+        três anos depois, o sudoeste americano de
+        [[work:cormac-mccarthy/blood-meridian|Meridiano de Sangue]].
+        Continuou a enviar páginas pelo correio para Knoxville, para que
+        DeLisle as datilografasse; ela recordou ter esperado que ele voltasse
+        para casa "durante anos e anos". O romance chegou às livrarias em
+        1979, ainda todo passado na Knoxville que ele acabara de deixar.
+
+    - id: mccarthy-macarthur-fellowship-1981
+      title: Uma Bolsa MacArthur financia os anos que produzem Meridiano de Sangue
+      description: >
+        Nomeado para a turma de bolseiros de dezembro de 1981 da MacArthur
+        Foundation aos 48 anos, vivendo então em El Paso. A "bolsa de génio",
+        de cinco anos e sem contrapartidas, libertou-o de dar aulas ou de
+        qualquer outro trabalho remunerado e financiou as viagens de
+        investigação pelo sudoeste e pelas fronteiras mexicanas que estão
+        por trás de [[work:cormac-mccarthy/blood-meridian|Meridiano de
+        Sangue]] (1985) e, mais tarde, da Trilogia da Fronteira. Na cerimónia
+        dos bolseiros conheceu também o físico Murray Gell-Mann, uma
+        amizade que o levaria ao Santa Fe Institute três anos depois.
+
+    - id: mccarthy-santa-fe-institute-1984
+      title: Integrado no Santa Fe Institute desde a sua fundação
+      description: >
+        Murray Gell-Mann, conhecido na cerimónia MacArthur partilhada de
+        1981, cofundou o Santa Fe Institute em 1984 e levou McCarthy
+        consigo. Tornou-se membro vitalício do conselho e, décadas depois,
+        escreveu os Operating Principles do Instituto; os seus cientistas e
+        as perguntas que fazem sobre complexidade e linguagem percorrem o
+        seu único ensaio, [[work:cormac-mccarthy/the-kekule-problem|The
+        Kekulé Problem]] (2017), e os seus últimos dois romances,
+        [[work:cormac-mccarthy/the-passenger|O Passageiro]] e
+        [[work:cormac-mccarthy/stella-maris|Stella Maris]] (2022).
+
+    - id: mccarthy-erskine-fisketjon-1987
+      title: O seu editor de vinte e dois anos reforma-se; a obra muda de mãos
+      description: >
+        Albert Erskine, que tinha defendido
+        [[work:cormac-mccarthy/the-orchard-keeper|O Guarda do Pomar]] sem
+        ter sido convidado a fazê-lo em 1965 e editara os quatro romances de
+        McCarthy depois desse, reformou-se da Random House em 1987 sem que
+        nenhum dos dois tivesse alguma vez tido um êxito de vendas entre
+        eles. Quando [[work:cormac-mccarthy/all-the-pretty-horses|Belos
+        Cavalos]] apareceu em 1992, McCarthy tinha um novo editor, Gary
+        Fisketjon (que se juntara à Alfred A. Knopf em 1990), uma nova
+        editora, e, pela primeira vez na carreira, uma agente literária,
+        Amanda Urban. Fisketjon e Urban também o convenceram a dar a
+        entrevista mais completa que dera em quatro décadas, feita a
+        propósito do novo romance.
+
+    - id: mccarthy-death-2023
+      title: Morre em casa, em Santa Fe
+      description: >
+        Morreu de causas naturais aos 89 anos, ainda membro do conselho e
+        Senior Fellow do Santa Fe Institute, que fora a sua segunda casa
+        desde 1984. O Instituto abriu a sua própria homenagem com uma frase
+        de Harold Bloom, o crítico cuja defesa mais contribuiu para
+        transformar [[work:cormac-mccarthy/blood-meridian|Meridiano de
+        Sangue]] num clássico moderno: "o verdadeiro herdeiro de Melville e
+        Faulkner".
