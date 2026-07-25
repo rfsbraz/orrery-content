@@ -1,0 +1,54 @@
+stage: press-archaeology
+summary: >
+  Added 10 sourced, dated events: 3 author lifeEvents (1994 Clinton
+  photo-op, 2003-2004 MWA presidency, 2018 CWA Diamond Dagger) and 7
+  franchise events (The Poet's 1996 award-winning break from Bosch, the
+  2002 Blood Work film, the 2011 Lincoln Lawyer film with Connelly's own
+  contemporary quote, a 2012 double-prize year for two different books, the
+  2013-2015 Amazon Bosch series, the May 2022 Bosch: Legacy / Netflix
+  Lincoln Lawyer premieres, and the 2025 Ballard series). Both dark runs
+  aura_density flagged now close: the named 2012-2019 gap (8 yrs), and a
+  second one only visible once the first closed, 1996-2000 (5 yrs, now 4,
+  under the alarm threshold). Author entity's header comment rewritten to
+  say plainly that health, marriage and finances were searched and found
+  genuinely quiet, not unresearched. validate.py --slug michael-connelly
+  clean except the pre-existing missing theme.art.
+produced:
+  lifeEventIds:
+    - connelly-clinton-concrete-blonde-1994
+    - connelly-mwa-president-2003
+    - connelly-diamond-dagger-2018
+  franchiseEventIds:
+    - michael-connelly/the-poet-breaks-the-bosch-mold-1996
+    - michael-connelly/blood-work-film-2002
+    - michael-connelly/lincoln-lawyer-film-2011
+    - michael-connelly/double-prize-year-2012
+    - michael-connelly/bosch-amazon-series-2013-2015
+    - michael-connelly/streaming-universe-expands-2022
+    - michael-connelly/ballard-tv-series-2025
+  auraDensity: "18 -> 28 entries / 47 works (0.38 -> 0.60). Dark run: 8 yrs -> 4 yrs."
+  rejected: >
+    Bosch: Start of Watch (no premiere date yet); an exact "years spent
+    pitching Bosch" figure (source gives no precise date); 1990s
+    film-option money funding full-time novelist status (one source only,
+    short of the two-source bar); "only writer ever twice-elected" MWA
+    claim (never verified against an opened source, so only the plain
+    2003+2004 fact shipped); a Nero Award for The Poet (only Anthony and
+    Dilys are in Wikipedia's own sourced awards section).
+forStages:
+  spoiler-audit: >
+    All 10 entries stay in production/reception territory, no plot, no
+    spoilerAfter. Double-prize-year-2012 names The Fifth Witness's back-
+    cover premise (foreclosure-banker plot) - worth your own check.
+  translation: "10 new entries, no pt-PT yet; wing had zero translation before this run too, not a regression."
+  event-resonance: >
+    Fifth Witness/foreclosure-crisis link you flagged is reinforced (Harper
+    Lee Prize committee's own reasoning is now in double-prize-year-2012,
+    sourced). Nothing added to global.yaml itself.
+  eras: "Still none. A solo-novelist-vs-TV-co-creator split around 2013 might inform one, but that call is yours."
+  visual-metadata: "Unchanged: all 47 works and the author portrait still absent."
+  reading-orders: "Unchanged from completeness-auditor's handoff."
+  editions: "Unchanged: no editions.yaml."
+openQuestions:
+  - "1997-2000 (4 yrs) is genuinely quiet in the record checked, not unresearched: no further sourceable event surfaced there without lowering the aura bar."
+  - "RBA + Harper Lee prizes (both 2012, different books) were merged into one event for density discipline; splitting them to match each prize to its own book is a legitimate alternative call, not a correction of this one."
