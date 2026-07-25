@@ -25,6 +25,20 @@ every stage here and adds only `whats-new`; it differs in the question it asks
 the work is done. Use it for recurring maintenance; use this command to build
 or complete a wing.
 
+## Pick the author (when none was named)
+
+`python scripts/queue.py next-author` lists every requested wing (`[wing] X`,
+label `content:new-franchise`) oldest first, marks which are already built or in
+progress, and names the next one to build. It will **not** pick a request that
+carries the `question` label: an open question about scope, identity or schema
+must be answered on the issue (and the label removed) before the build starts,
+or the wing bakes in the wrong answer. Resolve it first, then re-run.
+
+The same tool shows the rest of the pipeline's queue: `queue.py needs-prompt`
+(the `asset:needs-prompt` issues grouped by wing, so a wing's prompts are written
+as one story-telling pass) and `queue.py art-ready` (what is ready for
+`art_intake.py`). All three take `--json`.
+
 ## Open the tracking artifact BEFORE the first stage (not optional)
 
 A wing build runs for hours across a dozen agents, and its only home is a
