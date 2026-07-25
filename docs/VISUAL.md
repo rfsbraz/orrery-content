@@ -670,11 +670,27 @@ webp under the size cap and prints the YAML to paste.
 
 ## 5a. The presentation is fixed: one mode, every event
 
-**Every event sketch is a dissolving panel.** The drawing fills its frame and
-thins out at every edge, ink and wash fading to nothing rather than stopping at
-a line. No torn sheet, no deckled edge, no drawn paper, no panel border, no
+**Every keyed event sketch is a dissolving panel.** The drawing fills its frame
+and thins out at every edge, ink and wash fading to nothing rather than stopping
+at a line. No torn sheet, no deckled edge, no drawn paper, no panel border, no
 floating objects on nothing. The card behind the art supplies the frame, so the
 artwork never draws one for itself.
+
+Three kinds of asset meet the page differently, and all three are decided by
+the illustration type rather than per asset - there is still no editorial choice
+being made here:
+
+| Regime | Which | How it meets the page |
+|---|---|---|
+| keyed | everything not below | chroma-keyed, then dissolved by the filter |
+| **opaque** | §3b's strictly-opaque types | no alpha at all; fills its cell edge to edge (`--opaque`) |
+| **artifact** | `document-facsimile`, `manuscript-proof`, `archive-stack` | keyed, but draws its own paper edge, so no dissolve |
+| **plate** | era plates (`chapter-gate`) | keyed, not dissolved: the app's own plate mask is the edge |
+
+`validate.py` applies the matching rule per entry, and inverts it for an opaque
+type - one that came back *with* alpha did not go down the `--opaque` path and
+is a real defect. The first grammar-graded intake failed 14 assets against the
+keyed rule alone before the validator was taught the other three.
 
 This is not a preference. An earlier version of this section offered four modes
 as an editorial choice per asset, and the result was measured across two

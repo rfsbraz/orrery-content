@@ -262,7 +262,7 @@ ASSET_MAX_BYTES = 320_000
 ASSET_EXT = {".webp"}
 
 
-def check_asset(loc, entity_id, value):
+def check_asset(loc, entity_id, value, grammar=None):
     """A sketch is a repo-relative path under assets/, and it must be there.
 
     Checking the file exists is a real guard, unlike checking a URL's syntax: a
@@ -296,7 +296,7 @@ def check_asset(loc, entity_id, value):
     if size > ASSET_MAX_BYTES:
         err(loc, f"{entity_id}: sketch '{value}' is {size // 1000}KB, over the "
                  f"{ASSET_MAX_BYTES // 1000}KB cap - re-encode it")
-    check_asset_pixels(loc, entity_id, value, path)
+    check_asset_pixels(loc, entity_id, value, path, grammar)
 
 
 # Thresholds are set from the measured distribution across the catalogue, not
@@ -318,16 +318,58 @@ _PIL_WARNED = False
 # an error (see below), so a regenerated asset forces the entry out rather than
 # leaving a stale exemption nobody remembers granting.
 KNOWN_BAD_ASSETS = {
-    "assets/valter-hugo-mae/antes-dos-romances.webp": "fully opaque, no alpha at all",
-    "assets/valter-hugo-mae/vhm-ape-prize-2021.webp": "artwork runs off three edges",
-    # The Palahniuk wing was fully redrawn against the rewritten visual language
-    # and every asset now passes the §5c checks, so its exemption is gone. The
-    # two entries left are Valter Hugo Mãe, still awaiting its redraw.
+    # Empty, and it should stay that way. Both wings that held exemptions -
+    # Palahniuk first, then Valter Hugo Mãe - have now been redrawn against the
+    # layout grammar and pass the §5c checks on their own, so the list shrank to
+    # nothing exactly as intended.
 }
 _ALLOWED_SEEN_FAILING = set()
 
 
-def check_asset_pixels(loc, entity_id, value, path):
+# §3b's strictly-opaque types: authored with no alpha at all, filed down
+# `prepare_asset.py`'s `--opaque` path (no chroma, no trim, no dissolve). Kept
+# in step with `scripts/art_types.py`'s OPAQUE_TYPES, which the processor and
+# `issue_sync` read; duplicated here for the same reason ILLUSTRATION_TYPES is,
+# so the validator imports nothing.
+_OPAQUE_TYPES = {
+    "establishing-landscape", "place-portrait", "domestic-interior",
+    "workplace-workshop", "aftermath-scene", "public-event-tableau",
+    "historical-context-tableau", "relationship-tableau", "portrait-of-absence",
+}
+
+
+def _edge_regime(grammar):
+    """How this entry's asset is supposed to meet the page.
+
+    The §5a rules below - "must have alpha", "must thin out on all four sides" -
+    were written when every sketch was chroma-keyed and dissolved, and they are
+    still right for most of the catalogue. The layout grammar then added two
+    kinds of asset they are wrong for, and the first grammar-graded intake
+    (Palahniuk + Mãe, 34 assets) failed 14 of them for doing exactly what the
+    pipeline had just been told to do:
+
+    - an **opaque type** (§3b) has no alpha on purpose - `prepare_asset --type`
+      takes the `--opaque` path and refuses `--chroma` alongside it;
+    - an **artifact type** draws its own paper edge and is forced
+      `--no-dissolve`, so its edges legitimately run solid;
+    - an **era plate** (`chapter-gate`) is keyed but NOT dissolved: the app
+      fades it with its own plate mask, and doubling the two eats the art.
+
+    Returns one of `keyed` (both rules), `artifact` (alpha only), `opaque`
+    (inverted: it must NOT have kept alpha), `plate` (neither).
+    """
+    g = grammar or {}
+    if g.get("era_plate") or g.get("organisation") == "chapter-gate":
+        return "plate"
+    itype = g.get("illustration_type")
+    if itype in _OPAQUE_TYPES:
+        return "opaque"
+    if itype in _ARTIFACT_TYPES:
+        return "artifact"
+    return "keyed"
+
+
+def check_asset_pixels(loc, entity_id, value, path, grammar=None):
     """The §5a invariants that can be expressed as arithmetic.
 
     Three rules in docs/VISUAL.md were stated clearly and then violated anyway -
@@ -373,16 +415,35 @@ def check_asset_pixels(loc, entity_id, value, path):
             return
         err(loc, msg)
 
+    regime = _edge_regime(grammar)
+
     if is_global:
         if opaque > GLOBAL_OPAQUE_MAX:
             report(f"{entity_id}: world-event sketch '{value}' is "
                      f"{opaque:.0%} opaque (cap {GLOBAL_OPAQUE_MAX:.0%}) - a shared "
                      f"sketch is tinted through its alpha, so a filled region "
                      f"becomes a solid accent-coloured blob (VISUAL.md §4)")
+    elif regime == "opaque":
+        # Inverted rather than skipped: a keyed image filed against an opaque
+        # type is a real defect too, and it is the only way this branch can be
+        # wrong. `--opaque` produces no alpha, so anything under the cap means
+        # the asset did not come down that path.
+        if opaque < OPAQUE_MAX:
+            report(f"{entity_id}: sketch '{value}' is only {opaque:.0%} opaque, "
+                     f"but its illustration_type is authored opaque (VISUAL.md "
+                     f"§3b) - file it with `prepare_asset.py --type <type>`, "
+                     f"which takes the --opaque path")
+    elif regime == "plate":
+        pass  # keyed, never dissolved; the app's plate mask is the edge (§4)
     elif opaque >= OPAQUE_MAX:
         report(f"{entity_id}: sketch '{value}' is {opaque:.0%} opaque - it has "
                  f"lost its alpha and will render as a rectangle sitting on the "
                  f"page rather than dissolving into it (VISUAL.md §5a)")
+
+    if regime in {"opaque", "artifact", "plate"}:
+        # An opaque scene fills its frame, an artifact type draws its own paper
+        # edge, and a plate is masked by the app. None of the three thins out.
+        return
 
     edges = {
         "top": im.crop((0, 0, w, 1)),
@@ -408,7 +469,7 @@ def check_asset_pixels(loc, entity_id, value, path):
               f"{'(global)' if is_global else ''}")
 
 
-def check_images(loc, entity_id, images):
+def check_images(loc, entity_id, images, grammar=None):
     """Third-party images are URLs; our own sketches are files in this repo.
 
     The "never commit binaries" rule was written for LICENSED images - a
@@ -430,7 +491,7 @@ def check_images(loc, entity_id, images):
             continue
         if key == base:
             if base == "sketch":
-                check_asset(loc, entity_id, str(value))
+                check_asset(loc, entity_id, str(value), grammar)
             elif not str(value).startswith("http"):
                 err(loc, f"{entity_id}: image '{key}' must be a URL (never commit binaries)")
             # Rights discipline: an image without a credit cannot be published.
@@ -795,7 +856,9 @@ def main():
             err(loc, f"{e.get('id','?')}: spoilerAfter '{sa}' is not a known work")
         # Franchise events, author lifeEvents and global events all funnel
         # through here, so one call covers every event kind's `sketch`.
-        check_images(loc, e.get("id", "?"), e.get("images"))
+        # The grammar goes with it: `illustration_type` decides whether this
+        # asset is keyed, opaque or draws its own edge (see `_edge_regime`).
+        check_images(loc, e.get("id", "?"), e.get("images"), e)
         check_grammar(loc, e)
 
     for fdir in franchise_dirs:
@@ -966,7 +1029,10 @@ def main():
         if not os.path.exists(epath):
             continue
         for e in load(epath) or []:
-            check_images(f"{fslug}/eras.yaml", e.get("id", "?"), e.get("images"))
+            # An era plate IS the `chapter-gate` slot by construction, whether
+            # or not the entry spells the field out.
+            check_images(f"{fslug}/eras.yaml", e.get("id", "?"), e.get("images"),
+                         {**(e if isinstance(e, dict) else {}), "era_plate": True})
         spans = [s for s in (era_span(e.get("period")) for e in (load(epath) or [])) if s]
         if not spans:
             continue
