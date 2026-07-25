@@ -1,0 +1,71 @@
+stage: visual-metadata
+summary: >
+  44 works, 0 with any prior image. 42/44 now carry images.cover (33 keyed to
+  the edition ISBN already in editions.yaml; 9 keyed to a verified OpenLibrary
+  work id, used where the ISBN-derived cover was dead or, on inspection,
+  defective). 2 works left bare, both documented in a YAML comment: Plot Twist
+  (forthcoming, no ISBN or jacket art yet) and The Rise and Fall of Super D
+  (never sold separately, per works.yaml's own sourcing). Author portrait and
+  franchise header added. python scripts/validate.py --slug harlan-coben green
+  throughout (4 pre-existing warnings unrelated to this stage: 3 oversized
+  handoffs, 1 franchise.yaml pipeline-narration comment from an earlier
+  stage). python scripts/metadata/lookup.py --check-covers harlan-coben:
+  42/42 declared cover URLs resolve.
+coversAdded: "42/44"
+coversRejectedOnSight:
+  - "Fool Me Once (Dutton 2016, id 10665020): a library discard sticker
+    burned into the jacket. Replaced with a clean scan of the same edition,
+    id 14566352 (OL17356545W)."
+  - "Hold Tight (the work's own recorded ISBN, Dutton 2008): a Sausalito
+    Public Library barcode + stamp burned into the jacket - passed the
+    automated HTTP+size check, the strongest case this pass for why every
+    cover needs a look, not just a fetch. Replaced with a clean scan of the
+    same edition, id 2471068 (OL79343W)."
+  - "Long Lost (the work's own recorded ISBN, Dutton 2009): the served image
+    was a blank endpaper/spine scan, not a jacket - passed the size
+    threshold, showed nothing on inspection. Replaced with id 6455714, the
+    same edition's real jacket (OL79327W)."
+  - "Seconds Away (Penguin YA 2014, id 8675345): a Brilliance Audio
+    audiobook sleeve, not a print jacket. Replaced with id 12578290,
+    Penguin's Speak YA paperback (OL19872885W)."
+  - "Stay Close (Penguin paperback 2013, id 7888233): a title-page scan, not
+    a cover. Replaced with id 14625701, the 2012 Dutton hardcover jacket
+    (OL16499139W)."
+coversResolvedViaOpenLibraryWorkSearch:
+  - "Found, Missing You, Run Away, Best American Mystery Stories 2011: the
+    recorded ISBN(s) had no OpenLibrary cover at any size; a title+author
+    search resolved each to the correct non-omnibus work (candidate lists
+    also held the expected omnibus decoys - e.g. 'Shelter / Seconds Away /
+    Found' for Found - rejected on edition_count) and that work's own
+    cover_i was used. Run Away's cover_i 502'd at -L; -M of the same id
+    resolved."
+coversLeftBare:
+  - "Plot Twist (2026, forthcoming memoir): no ISBN yet, no jacket art
+    released."
+  - "The Rise and Fall of Super D: never sold separately (works.yaml's own
+    sourcing) - a bonus story bound into The Innocent's hardcover, which is
+    that work's cover, not this one's."
+portrait:
+  source: "Wikimedia Commons, File:Harlan_Coben_cropped_12_mars_2009.jpg"
+  credit: "KoS, CC BY-SA 3.0"
+  note: >
+    Already cropped to a head-and-shoulders portrait, Fnac Saint-Lazare
+    signing, Paris, 12 March 2009. Passed over two other licensed
+    candidates: a 2008 LA Times Festival of Books shot with a visible event
+    lanyard, and a 2018 Lyon festival photo shot wide in a cluttered venue.
+header:
+  source: "Wikimedia Commons, File:Forest_-_West_Windsor,_New_Jersey_2023-03-05_(02).jpg"
+  credit: "Ryan Hodnett, CC BY-SA 4.0"
+  note: >
+    Bare New Jersey woods at dusk - not a claimed filming location, but a
+    match to a motif literally repeated in the bibliography (The Woods, The
+    Boy from the Woods, more than one buried-in-the-woods opening).
+    Livingston/Ridgewood/Newark/Amherst all searched on Commons first;
+    results were road-infrastructure photos and historical scans, nothing
+    that read as the wing.
+forCurator:
+  - "franchise.yaml declares themePreset: cul-de-sac-noir but no
+    theme.yaml exists for this wing yet, and the preset isn't in
+    docs/VISUAL.md. Out of scope here (a separate file this skill doesn't
+    own), flagging since the wing has no palette/motif file behind its own
+    themePreset."
