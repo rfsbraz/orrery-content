@@ -1,0 +1,85 @@
+stage: completeness-auditor
+summary: >
+  Re-verified all 47 scaffolded works against primary sources (author site,
+  Wikipedia + its footnotes, OpenLibrary, Library of Congress). 47 works ->
+  47: none added or removed; ids/subseries/canonTier/authorIds all check out,
+  no duplicates, no mistiering (29 Harry Bosch incl. 3 apocrypha ebooks, 8
+  Lincoln Lawyer, 3 Jack McEvoy, 1 Terry McCaleb, 1 Renee Ballard, 2 Catalina,
+  2 standalone, 1 nonfiction). Both open dates resolved: A Darkness More
+  Than Night 2001 -> 2000, Crime Beat 2005 -> 2004, each renoted with the
+  fuller evidence trail. The five newest titles (Nightshade, The Proving
+  Ground, Ironwood, forthcoming The Hollow, Resurrection Walk) checked
+  against their own publisher/author pages, accurate as scaffolded. Hunted
+  for missing short fiction: added none, but the file's exclusion note
+  undercounted what it excluded (named only "Bosch/Haller" pieces when four
+  are non-series stand-alones) - rewrote it to name the full checked list.
+  validate.py --slug michael-connelly clean except the pre-existing,
+  expected missing theme.art.
+produced:
+  changedDates:
+    - workId: michael-connelly/a-darkness-more-than-night
+      from: 2001
+      to: 2000
+      reorders: true
+      evidence: >
+        Wikipedia infobox gives the Little, Brown hardcover date as Nov 8,
+        2000; its own year categories and series navbox agree; 10 OpenLibrary
+        editions independently give first-publish 2000; LCCN 00046204 (a
+        year-2000 prefix) matches. The author's own site is the lone 2001.
+    - workId: michael-connelly/crime-beat
+      from: 2005
+      to: 2004
+      reorders: true
+      evidence: >
+        The 2006 Little, Brown edition's own copyright page (quoted in a
+        Wikipedia footnote) states it was "Originally published... in
+        hardcover by Steven C. Vascik Publications, 2004" - SCV Publications
+        is Vascik's imprint. An independent OpenLibrary record for that
+        edition agrees, matching the 2004 Amazon listing already in the
+        file. The author's site's "2005" is the outlier; its "(2006)" label
+        belongs to the later wide trade paperback.
+  changedProse:
+    - "works.yaml header: excluded-works paragraph rewritten to name all
+       checked short stories (Blue on Black, Blood Washes Off, Homicide
+       Special, A Fine Mist of Blood, Red Eye, The Crooked Man, Nighthawks,
+       The Guardian, After Midnight, The Safe Man, The Third Panel, Avalon),
+       noting four are non-series stand-alones, not Bosch/Haller pieces."
+  newWorkIds: []
+  removedWorkIds: []
+  verifiedUnchanged: >
+    All 2025-2026 works checked against publisher/author pages, accurate as
+    scaffolded. Field counts by hand across all 47: matches the subseries
+    tally above, no duplicate ids. Wikipedia's "42 novels (as of May 2026)"
+    reconciles exactly against this file's 43 non-apocrypha novels minus the
+    still-forthcoming The Hollow.
+forStages:
+  visual-metadata: "Unchanged: all 47 still need covers; author needs a portrait."
+  editions: >
+    No editions.yaml. Crime Beat now has 3 sourced editions if this stage
+    ever runs on it: 2004 Vascik hardcover, a 2005 Vascik reprint, 2006
+    Little, Brown trade paperback.
+  reading-orders: >
+    Two date corrections reorder the derived sequence: A Darkness More Than
+    Night now sits ahead of Void Moon (both 2000, was reversed); Crime Beat
+    now sits between Lost Light (2003) and The Narrows (2004), not in the
+    2005 cluster. Not blocking, but a curated order should not hard-code the
+    old positions.
+  press-archaeology: "Unchanged from franchise-research."
+  eras: "Unchanged from franchise-research."
+  event-resonance: "Unchanged from franchise-research."
+  spoiler-audit: "Unchanged from franchise-research."
+openQuestions:
+  - "SCOPE, not resolved: SCHEMA.md's own worked example endorses cataloguing
+     a single story in a multi-author anthology as apocrypha/contributor -
+     exactly what this wing excludes wholesale. Twelve such Connelly stories
+     exist, never bundled into the 3 ebooks (named in works.yaml's header).
+     Avalon (ABC series in development since 2022) and The Safe Man (has its
+     own audio-drama page on the author's site) are the two with the most
+     real-world weight if the curator wants them added. Left the existing
+     exclusion in place rather than add up to twelve thin entries myself,
+     since anthology scope is the curator's call - but it was made once
+     without weighing this SCHEMA.md passage, so flag it as a live question,
+     not a settled one."
+  - "Maggie McPherson still absent from characters.yaml (carried over
+     unchanged): her appearsIn list still isn't sourced cleanly enough to add
+     without guessing work ids."
