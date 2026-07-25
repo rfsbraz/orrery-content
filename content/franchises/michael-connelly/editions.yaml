@@ -1,0 +1,801 @@
+# Editions of Michael Connelly: 51 editions over 47 of 47 works (every work in
+# works.yaml carries at least one edition).
+#
+# COVERAGE
+#   en    47 editions, one per work: the true FIRST US TRADE EDITION of every
+#         novel and the nonfiction collection (hardcover for the 43 novels +
+#         Crime Beat's original printing; the ebook-only originals for the
+#         three short-fiction bundles, since no print edition of those exists).
+#   pt-PT  3 editions, real published Portuguese translations, verified
+#          against Wook's own per-product record: The Brass Verdict, The
+#          Fifth Witness and The Waiting. Coverage here is partial, not
+#          exhaustive - Connelly is one of Porto Editora's and Cultura
+#          Editora's long-running crime backlist authors, and two further
+#          Wook listings ("Luna Funesta", "As Garras do Mal") could not be
+#          opened (the shop returned HTTP 403 on every attempt) and so are
+#          not matched to a work or recorded here.
+#   crime-beat, the-brass-verdict, the-fifth-witness and the-waiting each
+#   carry two editions (an original + a reissue, or an English + a pt-PT);
+#   every other work carries exactly one.
+#
+# WHICH EDITION, AND WHY. Little, Brown and Company (the Hachette Book Group
+# imprint) has published every one of Connelly's 43 novels and Crime Beat's
+# 2006 reissue in US hardcover first, without a single break, for over thirty
+# years - there is no "which house" question on the English side, only which
+# PRINTING. Recorded below is each work's true first hardcover, not whichever
+# ISBN a bulk catalogue search surfaces first, for a documented reason: a
+# single publisher commonly issues FIVE OR MORE parallel SKUs for one hardcover
+# release under adjacent ISBNs - a plain trade edition, a "signed edition", a
+# "B&N signed edition", a "B&N Black Friday signed edition", a large-print
+# edition, an "international edition" and the ebook - all real, valid,
+# catalogued ISBNs attached to the same title, most of them indexed with no
+# ranking as to which is the plain trade hardcover. Twelve of this wing's
+# titles (Echo Park, The Crossing, Two Kinds of Truth, The Wrong Side of
+# Goodbye, Dark Sacred Night, The Night Fire, Fair Warning, The Law of
+# Innocence, The Dark Hours, Desert Star, Resurrection Walk, Nightshade) carry
+# such a variant ISBN that reads as plausible without the LOC record in hand -
+# each is named in its entry's note below, alongside the real ISBN it is not.
+# Every entry below is traced to its Library of Congress cataloguing record
+# (bath.title+bath.author search, lx2.loc.gov SRU gateway) except the three
+# short-fiction ebook bundles (no print CIP record exists for an ebook-only
+# release) and the two 2025-2026 titles (Ironwood, The Hollow), which are too
+# new for an LCCN and are instead corroborated by the publisher's own product
+# page plus a second retailer record (see each entry's sources).
+#
+# A DARKNESS MORE THAN NIGHT'S YEAR IS 2001 ON THIS EDITION, NOT A CONTRADICTION
+# OF WORKS.YAML'S 2000. This edition's own Library of Congress CIP record
+# (LCCN 00031025, confirmed via direct SRU lookup) states "Boston: Little,
+# Brown, c2001" - the edition's own copyright-page year, recorded as-is
+# rather than reconciled against the work's separately-sourced `published:
+# 2000` in works.yaml (a fact about the first release, not about this
+# printing's own copyright date). Editions here never edit works.yaml, so a
+# related problem is flagged instead of fixed: works.yaml's own note cites
+# "https://lccn.loc.gov/00046204" as a source for the 2000 date.
+# That LCCN resolves to an entirely unrelated book - David E. Bernstein's
+# "Only One Place of Redress" (Duke University Press, 2001) - not to any
+# Michael Connelly title. The correct LCCN for this edition is 00031025. The
+# 2000-vs-2001 date question itself is unaffected (it rests on the other,
+# correctly-cited evidence: Wikipedia's infobox and categories, ten
+# independent OpenLibrary editions, and the LCCN this file now uses), but the
+# citation itself is wrong and should be corrected at the source.
+#
+# CRIME BEAT carries two editions on purpose, not a duplicate: the original
+# 2004 Steven C. Vascik Publications hardcover (a small press; "Not Avail" is
+# OpenLibrary's own placeholder for the publisher field, corrected here to the
+# name works.yaml's own note already established from the 2006 edition's
+# copyright-page reprint statement) and the 2006 Little, Brown and Company
+# trade hardcover that superseded it and remains the one a reader can actually
+# buy today. The Vascik original is out of print and included per this
+# skill's "out-of-print editions earn a slot when they are the only one"
+# rule - here it is not the ONLY one, but it is the true first, and dropping
+# it would lose that fact.
+#
+# THE OVERLOOK is genuinely short (225 pages per its own LOC record) - it
+# began as a serialized New York Times Magazine piece before its novel
+# publication (see works.yaml's note) and was not padded out for book form.
+# Not a data error.
+#
+# PUBLISHED TITLES. No `title` field is set on any `en` entry: the work's own
+# title IS the published title throughout, so recording one would manufacture
+# a translation event that never happened. The two pt-PT titles ARE real,
+# non-literal published titles, matched by synopsis rather than by name, per
+# this skill's method: "O Veredicto" ("The Verdict") for The Brass Verdict and
+# "A Quinta Testemunha" ("The Fifth Witness," a literal rendering this time)
+# for The Fifth Witness. "A Espera" for The Waiting is the one literal,
+# unremarkable translation of the three.
+#
+# SOURCING. Every `en` hardcover entry is corroborated by its Library of
+# Congress CIP record (lx2.loc.gov SRU gateway, bath.title+bath.author, cited
+# per-record rather than to the search front door) cross-checked against the
+# matching OpenLibrary edition record. The three ebook-only bundles rest on
+# OpenLibrary alone (no LCCN exists for an ebook with no print counterpart).
+# Ironwood and The Hollow rest on the publisher's own product page
+# (michaelconnelly.com's own store-link block, and Hachette Book Group's own
+# product page respectively) cross-checked against Barnes & Noble's or
+# Hachette's own structured (schema.org) product data, which states the
+# format explicitly. The three pt-PT entries are Wook.pt's own per-product
+# schema.org/Book structured data (JSON-LD), the same source class as this
+# catalogue's other Wook-sourced pt-PT entries; Bertrand.pt returned HTTP 403
+# on every attempt this session and could not be used as the required second
+# source, so each pt-PT entry here rests on Wook alone - stated plainly
+# rather than presented as equally corroborated to the `en` entries.
+#
+# EVERY ISBN-13 CHECK DIGIT WAS COMPUTED, NOT TRUSTED: the standard EAN-13
+# algorithm (weights 1,3,1,3...,1,3 over the first twelve digits, check digit
+# = 10 - (sum mod 10), or 0 when the sum is already a multiple of ten) run
+# over every isbn13 below, independent of what any source's own field said.
+
+# --- Harry Bosch ---
+- id: michael-connelly/the-black-echo/little-brown-1992-en
+  workId: michael-connelly/the-black-echo
+  isbn13: "9780316153614"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 1992
+  note: >
+    First edition, 375 pages, Boston (LCCN 91010870). The ISBN-13 here is
+    converted from the record's own isbn_10 (0316153613: drop the check
+    digit, prefix 978, recompute) and matches the identical "bwb:9780316153614"
+    cross-reference already present in the same OpenLibrary record.
+  sources:
+    - "https://openlibrary.org/books/OL1533174M.json"
+
+- id: michael-connelly/the-black-ice/little-brown-1993-en
+  workId: michael-connelly/the-black-ice
+  isbn13: "9780316153829"
+  language: en
+  format: hardcover
+  publisher: Little, Brown
+  year: 1993
+  note: >
+    First edition, 322 pages, Boston (LCCN 92033500). Converted from isbn_10
+    0316153826 the same way as The Black Echo; matches "bwb:9780316153829".
+  sources:
+    - "https://openlibrary.org/books/OL1729178M.json"
+
+- id: michael-connelly/the-concrete-blonde/little-brown-1994-en
+  workId: michael-connelly/the-concrete-blonde
+  isbn13: "9780316153836"
+  language: en
+  format: hardcover
+  publisher: Little, Brown
+  year: 1994
+  note: First edition, 382 pages, Boston (LCCN 93011802).
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Concrete%20Blonde%22%20and%20bath.author=Connelly"
+    - "https://openlibrary.org/books/OL23245967M.json"
+
+- id: michael-connelly/the-last-coyote/little-brown-1995-en
+  workId: michael-connelly/the-last-coyote
+  isbn13: "9780316153904"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Co.
+  year: 1995
+  note: First edition, Boston (LCCN 94037437).
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Last%20Coyote%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/the-poet/little-brown-1996-en
+  workId: michael-connelly/the-poet
+  isbn13: "9780316153980"
+  language: en
+  format: hardcover
+  publisher: Little, Brown
+  year: 1996
+  note: First edition, 434 pages, Boston (LCCN 95021896).
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Poet%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/trunk-music/little-brown-1997-en
+  workId: michael-connelly/trunk-music
+  isbn13: "9780316152440"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Co.
+  year: 1997
+  note: First edition, Boston (LCCN 96018988).
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22Trunk%20Music%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/blood-work/little-brown-1998-en
+  workId: michael-connelly/blood-work
+  isbn13: "9780316153997"
+  language: en
+  format: hardcover
+  publisher: Little, Brown
+  year: 1998
+  note: >
+    First edition, 393 pages, Boston (LCCN 97028240). Adapted into the 2002
+    Clint Eastwood film (see works.yaml).
+  sources:
+    - "https://openlibrary.org/books/OL681620M.json"
+
+- id: michael-connelly/angels-flight/little-brown-1999-en
+  workId: michael-connelly/angels-flight
+  isbn13: "9780316152198"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Co.
+  year: 1999
+  note: First edition, 393 pages, Boston (LCCN 98028507).
+  sources:
+    - "https://openlibrary.org/books/OL23242775M.json"
+    - "https://openlibrary.org/books/OL367953M.json"
+
+- id: michael-connelly/void-moon/little-brown-2000-en
+  workId: michael-connelly/void-moon
+  isbn13: "9780316154062"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2000
+  note: First edition, Boston (LCCN 99037054).
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22Void%20Moon%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/a-darkness-more-than-night/little-brown-2001-en
+  workId: michael-connelly/a-darkness-more-than-night
+  isbn13: "9780316154079"
+  language: en
+  format: hardcover
+  publisher: Little, Brown
+  year: 2001
+  note: >
+    First edition, 418 pages, Boston, "c2001" (LCCN 00031025, confirmed by
+    direct SRU record lookup - see the file header for the wrong LCCN
+    currently cited in works.yaml's own note, and why this edition's own
+    copyright year differs from the work's `published: 2000`).
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=0316154075"
+    - "https://openlibrary.org/books/OL6782207M.json"
+
+- id: michael-connelly/city-of-bones/little-brown-2002-en
+  workId: michael-connelly/city-of-bones
+  isbn13: "9780316154055"
+  language: en
+  format: hardcover
+  publisher: Little, Brown
+  year: 2002
+  note: >
+    First edition, 393 pages, Boston (LCCN 2001038399). Distinct from the
+    same year's large-print first edition (isbn13 9780316154314, LCCN
+    2001038726), not recorded here.
+  sources:
+    - "https://openlibrary.org/books/OL3948722M.json"
+
+- id: michael-connelly/chasing-the-dime/little-brown-2002-en
+  workId: michael-connelly/chasing-the-dime
+  isbn13: "9780316153911"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2002
+  note: First edition, hardcover (explicitly stated), 371 pages, Boston (LCCN 2002068311).
+  sources:
+    - "https://openlibrary.org/books/OL3568267M.json"
+
+- id: michael-connelly/lost-light/little-brown-2003-en
+  workId: michael-connelly/lost-light
+  isbn13: "9780316154604"
+  language: en
+  format: hardcover
+  publisher: Little, Brown
+  year: 2003
+  note: First edition, 360 pages, Boston (LCCN 2002036848).
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22Lost%20Light%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/the-narrows/little-brown-2004-en
+  workId: michael-connelly/the-narrows
+  isbn13: "9780316155304"
+  language: en
+  format: hardcover
+  publisher: Little, Brown
+  year: 2004
+  note: >
+    First edition, 404 pages (LCCN 2003025681). Distinct from the same
+    release's large-print edition (isbn13 9780316000734), not recorded here.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.isbn=9780316155304"
+    - "https://openlibrary.org/isbn/9780316155304.json"
+
+- id: michael-connelly/the-closers/little-brown-2005-en
+  workId: michael-connelly/the-closers
+  isbn13: "9780316734943"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Co.
+  year: 2005
+  note: First edition, 403 pages, New York (LCCN 2005541267).
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Closers%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/the-lincoln-lawyer/little-brown-2005-en
+  workId: michael-connelly/the-lincoln-lawyer
+  isbn13: "9780316734936"
+  language: en
+  format: hardcover
+  publisher: Little, Brown
+  year: 2005
+  note: >
+    First edition, 404 pages, New York, "c2005" (LCCN 2005012863). Introduces
+    Mickey Haller (see works.yaml).
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Lincoln%20Lawyer%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/echo-park/little-brown-2006-en
+  workId: michael-connelly/echo-park
+  isbn13: "9780316734950"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Co.
+  year: 2006
+  note: >
+    First edition, 405 pages, New York (LCCN 2006009809). Not to be confused
+    with the same book's large-print hardcover (isbn13 9780316017732, whose
+    OpenLibrary edition_name field reads "Lrg edition" despite carrying a
+    Hardcover physical_format tag - the trap this file's header describes).
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22Echo%20Park%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/the-overlook/little-brown-2007-en
+  workId: michael-connelly/the-overlook
+  isbn13: "9780316018951"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Co.
+  year: 2007
+  note: >
+    First edition, 225 pages, New York (LCCN 2007001954). Genuinely short -
+    see the file header.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Overlook%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/the-brass-verdict/little-brown-2008-en
+  workId: michael-connelly/the-brass-verdict
+  isbn13: "9780316166294"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2008
+  note: First edition, 422 pages (LCCN 2008019374).
+  sources:
+    - "https://openlibrary.org/isbn/9780316166294.json"
+
+- id: michael-connelly/the-brass-verdict/porto-editora-2022-pt
+  workId: michael-connelly/the-brass-verdict
+  isbn13: "9789720003669"
+  language: pt-PT
+  title: "O Veredicto"
+  format: paperback
+  publisher: Porto Editora
+  year: 2022
+  note: >
+    Published 5 May 2022, 424 pages, EUR 17.75. Non-literal title ("The
+    Verdict"); matched by synopsis, not by name - the jacket description
+    names Jerry Vincent's murder, the studio-executive client, and Bosch and
+    Haller as "two loners" forced to work together, the same premise as this
+    work (see works.yaml).
+  sources:
+    - "https://www.wook.pt/livro/o-veredicto-michael-connelly/10278789"
+
+- id: michael-connelly/the-scarecrow/little-brown-2009-en
+  workId: michael-connelly/the-scarecrow
+  isbn13: "9780316166300"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Co.
+  year: 2009
+  note: First edition, 419 pages (LCCN 2009000855).
+  sources:
+    - "https://openlibrary.org/isbn/9780316166300.json"
+
+- id: michael-connelly/nine-dragons/little-brown-2009-en
+  workId: michael-connelly/nine-dragons
+  isbn13: "9780316166317"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Co.
+  year: 2009
+  note: First edition, 377 pages, New York (LCCN 2009028913).
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22Nine%20Dragons%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/the-reversal/little-brown-2010-en
+  workId: michael-connelly/the-reversal
+  isbn13: "9780316069489"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Co.
+  year: 2010
+  note: >
+    First edition, 389 pages, New York, "c2010" (LCCN 2010021820). Three
+    other ISBNs circulate for this title under this author's name (isbn13
+    9780316069465, 9780316178716, 9780316150927); none is a Little, Brown
+    printing, and none appears in this edition's own LOC record.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Reversal%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/the-fifth-witness/little-brown-2011-en
+  workId: michael-connelly/the-fifth-witness
+  isbn13: "9780316069359"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2011
+  note: >
+    First edition, 421 pages (LCCN 2011000576). Explicitly set against the
+    2008-11 mortgage-foreclosure crisis; won the 2012 Harper Lee Prize (see
+    works.yaml).
+  sources:
+    - "https://openlibrary.org/isbn/9780316069359.json"
+
+- id: michael-connelly/the-fifth-witness/porto-editora-2020-pt
+  workId: michael-connelly/the-fifth-witness
+  isbn13: "9789720032775"
+  language: pt-PT
+  title: "A Quinta Testemunha"
+  format: paperback
+  publisher: Porto Editora
+  year: 2020
+  note: >
+    Published 27 February 2020, 488 pages, EUR 18.85. Matched by synopsis:
+    Mickey Haller's foreclosure-defense practice, client Lisa Trammel accused
+    of murdering banker Mitchell Bondurant, the same premise as this work
+    (see works.yaml).
+  sources:
+    - "https://www.wook.pt/livro/a-quinta-testemunha-michael-connelly/23762513"
+
+- id: michael-connelly/the-drop/little-brown-2011-en
+  workId: michael-connelly/the-drop
+  isbn13: "9780316069410"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2011
+  note: First edition, hardback (explicitly stated), 388 pages (LCCN 2011034254).
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Drop%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/angle-of-investigation/little-brown-2011-en
+  workId: michael-connelly/angle-of-investigation
+  isbn13: "9780316204255"
+  language: en
+  format: ebook
+  publisher: Little Brown & Company
+  year: 2011
+  note: >
+    100-page ebook-only bundle; no print edition and so no Library of
+    Congress CIP record exists to cross-check against.
+  sources:
+    - "https://openlibrary.org/works/OL25357998W/editions.json"
+
+- id: michael-connelly/suicide-run/little-brown-2011-en
+  workId: michael-connelly/suicide-run
+  isbn13: "9780316204248"
+  language: en
+  format: ebook
+  publisher: Little Brown & Company
+  year: 2011
+  note: Ebook-only bundle; no print edition.
+  sources:
+    - "https://openlibrary.org/works/OL25357998W/editions.json"
+
+- id: michael-connelly/the-black-box/little-brown-2012-en
+  workId: michael-connelly/the-black-box
+  isbn13: "9780316069434"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Co.
+  year: 2012
+  note: >
+    First edition, 403 pages (LCCN 2012030082). The same LOC record cross-
+    references this title's large-print edition, isbn13 9780316069427, not
+    recorded here.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Black%20Box%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/mulholland-dive/little-brown-2012-en
+  workId: michael-connelly/mulholland-dive
+  isbn13: "9780316233675"
+  language: en
+  format: ebook
+  publisher: Little Brown & Company
+  year: 2012
+  note: 57-page ebook-only bundle; no print edition.
+  sources:
+    - "https://openlibrary.org/works/OL26782098W/editions.json"
+
+- id: michael-connelly/the-gods-of-guilt/little-brown-2013-en
+  workId: michael-connelly/the-gods-of-guilt
+  isbn13: "9780316069519"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2013
+  note: >
+    First edition, 387 pages (LCCN 2013032952). Distinct from the same
+    release's large-print edition, isbn13 9780316069496, not recorded here.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Gods%20of%20Guilt%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/the-burning-room/little-brown-2014-en
+  workId: michael-connelly/the-burning-room
+  isbn13: "9780316225939"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2014
+  note: First edition, 388 pages (LCCN 2014940681).
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Burning%20Room%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/the-crossing/little-brown-2015-en
+  workId: michael-connelly/the-crossing
+  isbn13: "9780316225885"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2015
+  note: >
+    First edition, 388 pages (LCCN 2015027456). Not the large-print edition
+    of the same release (isbn13 9780316387798, explicitly labelled "large
+    print : hardcover" in the same LOC record). A third number, isbn13
+    9780316225892, also circulates for this title and likewise does not
+    appear in this edition's own LOC record.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Crossing%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/the-wrong-side-of-goodbye/little-brown-2016-en
+  workId: michael-connelly/the-wrong-side-of-goodbye
+  isbn13: "9780316225946"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2016
+  note: >
+    First edition, 392 pages (LCCN 2016948317). The plain trade hardcover;
+    the same LOC record lists a "signed edition" (isbn13 9780316467100) and a
+    large-print hardcover (isbn13 9780316396752) as separate SKUs of the same
+    release, neither recorded here.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Wrong%20Side%20of%20Goodbye%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/the-late-show/little-brown-2017-en
+  workId: michael-connelly/the-late-show
+  isbn13: "9780316225984"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2017
+  note: >
+    First edition, 405 pages plus a 31-page excerpt from Two Kinds of Truth
+    (LCCN 2017939506). Introduces Renée Ballard (see works.yaml). Distinct
+    from the same release's ebook (isbn13 9780316225977) and large-print
+    editions.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Late%20Show%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/two-kinds-of-truth/little-brown-2017-en
+  workId: michael-connelly/two-kinds-of-truth
+  isbn13: "9780316225908"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2017
+  note: >
+    First edition (LCCN 2017944401), "hardcover" explicitly stated in its own
+    LOC record, with a "signed edition" (isbn13 9780316480765) as a separate
+    SKU of the same release. Two further ISBNs circulate for this title
+    (9780316476676 and 9780316225915, the latter the ebook per its own LOC
+    record); neither appears in this edition's own LOC record.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22Two%20Kinds%20of%20Truth%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/dark-sacred-night/little-brown-2018-en
+  workId: michael-connelly/dark-sacred-night
+  isbn13: "9780316484800"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2018
+  note: >
+    First edition, 433 pages (LCCN 2018945140). The plain trade hardcover;
+    the same LOC record separately lists a "signed edition" (isbn13
+    9780316421546) and a large-print edition (isbn13 9780316526722), neither
+    recorded here. The first Bosch/Ballard joint novel (see works.yaml).
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22Dark%20Sacred%20Night%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/the-night-fire/little-brown-2019-en
+  workId: michael-connelly/the-night-fire
+  isbn13: "9780316485616"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2019
+  note: >
+    First edition, 405 pages (LCCN 2019946507). The plain trade hardcover;
+    the same LOC record lists a large-print edition and three further
+    signed-edition SKUs (B&N and B&N Black Friday variants) of the same
+    release, none recorded here.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Night%20Fire%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/fair-warning/little-brown-2020-en
+  workId: michael-connelly/fair-warning
+  isbn13: "9780316539425"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2020
+  note: >
+    First edition, 399 pages (LCCN 2020930361). The plain trade hardcover;
+    the same LOC record lists a "hardcover; signed edition" (isbn13
+    9780316543019), a "B&N signed edition" (9780316543026) and the ebook
+    (9780316539432), none recorded here.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22Fair%20Warning%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/the-law-of-innocence/little-brown-2020-en
+  workId: michael-connelly/the-law-of-innocence
+  isbn13: "9780316485623"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2020
+  note: >
+    First edition, 423 pages (LCCN 2020943530). Two further ISBNs circulate
+    for this title (9780316498029 and 9780316541732); neither appears in
+    this edition's own LOC record.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Law%20of%20Innocence%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/the-dark-hours/little-brown-2021-en
+  workId: michael-connelly/the-dark-hours
+  isbn13: "9780316485647"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2021
+  note: >
+    First edition (LCCN 2021939727). The plain trade hardcover; the same LOC
+    record lists a large-print edition, a "B&N Black Friday signed edition",
+    a "signed edition", a "B&N signed edition" and an "international edition"
+    (isbn13 9781538709603) as separate SKUs of the same release, none
+    recorded here. Explicitly set during the COVID-19 pandemic (see works.yaml).
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Dark%20Hours%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/desert-star/little-brown-2022-en
+  workId: michael-connelly/desert-star
+  isbn13: "9780316485654"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2022
+  note: >
+    First edition (LCCN 2022943383). The plain trade hardcover; the same LOC
+    record separately lists a signed edition, a "B&N signed edition", a "B&N
+    Black Friday signed edition", an "international edition", an ebook and a
+    large-print edition. No Little, Brown edition of this title is indexed
+    on OpenLibrary at all (only Grand Central and Orion reprint records are);
+    this entry rests on the Library of Congress record directly.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22Desert%20Star%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/resurrection-walk/little-brown-2023-en
+  workId: michael-connelly/resurrection-walk
+  isbn13: "9780316563765"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2023
+  note: >
+    First edition, 405 pages (LCCN 2023943982). Three other ISBNs circulate
+    for this title (9780316563789, 9780316570367, 9780316563772); none
+    matches this edition's own LOC record.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22Resurrection%20Walk%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/the-waiting/little-brown-2024-en
+  workId: michael-connelly/the-waiting
+  isbn13: "9780316563796"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2024
+  note: Hardcover, first edition (confirmed by direct LOC record lookup).
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Waiting%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/the-waiting/cultura-editora-2025-pt
+  workId: michael-connelly/the-waiting
+  isbn13: "9789895774616"
+  language: pt-PT
+  title: "A Espera"
+  format: paperback
+  publisher: Cultura Editora
+  year: 2025
+  note: >
+    Published 31 July 2025, 400 pages, EUR price per Wook's own listing. A
+    literal translation, unlike the other two pt-PT entries in this file;
+    matched by synopsis regardless (Renée Ballard's cold-case unit, Bosch's
+    daughter Maddie as a volunteer, the same premise as this work).
+  sources:
+    - "https://www.wook.pt/livro/a-espera-michael-connelly/32239243"
+
+- id: michael-connelly/nightshade/little-brown-2025-en
+  workId: michael-connelly/nightshade
+  isbn13: "9780316588485"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2025
+  note: >
+    First edition (LCCN 2025933146). The plain trade hardcover; the same LOC
+    record lists a signed edition, a large-print edition, a "B&N signed"
+    edition and the ebook (isbn13 9780316588492) as separate SKUs, none
+    recorded here. Introduces the Catalina subseries (see works.yaml).
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22Nightshade%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/the-proving-ground/little-brown-2025-en
+  workId: michael-connelly/the-proving-ground
+  isbn13: "9780316563826"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2025
+  note: First edition (LCCN 2025943317, this pre-publication CIP record confirmed directly).
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22The%20Lincoln%20Lawyer%22%20and%20bath.author=Connelly"
+
+- id: michael-connelly/ironwood/little-brown-2026-en
+  workId: michael-connelly/ironwood
+  isbn13: "9780316595384"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2026
+  note: >
+    Published 19 May 2026 (Barnes & Noble's own schema.org product data
+    states this ISBN's bookFormat as Hardcover explicitly, publisher "Little,
+    Brown and Company", datePublished 2026-05-19); too new for a Library of
+    Congress CIP record. Cross-checked against the author's own site, which
+    lists the identical ISBN under its "Hardcover" store-link heading.
+  sources:
+    - "https://www.barnesandnoble.com/w/ironwood-michael-connelly/1148712683?ean=9780316595384"
+    - "https://www.michaelconnelly.com/writing/ironwood/"
+
+- id: michael-connelly/the-hollow/little-brown-2026-en
+  workId: michael-connelly/the-hollow
+  isbn13: "9780316563857"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2026
+  note: >
+    Forthcoming 27 October 2026, USD 32.00 (Hachette Book Group's own product
+    page, format-list entry). Not the ISBN in that page's own URL
+    (9780316563888, already cited elsewhere in this edition set to confirm the
+    release date) - that number is the ebook edition per the same page's own
+    format toggle and schema.org bookFormat field, a separate SKU from the
+    hardcover recorded here.
+  sources:
+    - "https://www.hachettebookgroup.com/titles/michael-connelly/the-hollow/9780316563888/"
+
+# --- Nonfiction ---
+- id: michael-connelly/crime-beat/vascik-2004-en
+  workId: michael-connelly/crime-beat
+  isbn13: "9780976287605"
+  language: en
+  format: hardcover
+  publisher: Steven C. Vascik Publications
+  year: 2004
+  note: >
+    The original edition, titled "Crime Beat: Selected Journalism 1984-1992",
+    published December 2004; out of print, included alongside the 2006
+    Little, Brown reissue below because it is the true first (see the file
+    header). OpenLibrary's own publisher field for this record reads "Not
+    Avail"; the actual imprint name is taken from works.yaml's own note,
+    itself sourced to the 2006 reissue's copyright-page reprint statement and
+    an independent Amazon listing for this same 2004 printing.
+  sources:
+    - "https://openlibrary.org/books/OL8587357M.json"
+
+- id: michael-connelly/crime-beat/little-brown-2006-en
+  workId: michael-connelly/crime-beat
+  isbn13: "9780316153775"
+  language: en
+  format: hardcover
+  publisher: Little, Brown and Company
+  year: 2006
+  note: >
+    "1st Little, Brown and Company hardcover ed.", viii + 375 pages, New York
+    (LCCN 2005029074) - the current, in-print edition and the one a reader
+    can actually buy today; see the file header for the 2004 original.
+  sources:
+    - "http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=bath.title=%22Crime%20Beat%22%20and%20bath.author=Connelly"

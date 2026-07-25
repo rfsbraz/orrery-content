@@ -1,0 +1,130 @@
+# Overlay pt-PT do autor: bio + prosa dos lifeEvents.
+# Os lifeEvents ficam aninhados sob o autor e são fundidos por id (ver
+# SCHEMA.md, "Nested lists merge by id"). Levam `title` + `description`, que
+# são prosa; datas, impact e sources nunca se traduzem, nem o nome do autor.
+# Michael Connelly tem três edições portuguesas registadas nesta franquia -
+# The Brass Verdict ("O Veredicto"), The Fifth Witness ("A Quinta Testemunha")
+# e The Waiting ("A Espera"), ver editions.yaml - mas nenhuma delas é citada
+# nesta prosa; a única obra referida aqui, The Black Echo, não tem edição
+# portuguesa registada, por isso o título fica em inglês.
+- id: michael-connelly
+  bio: >
+    Romancista norte-americano, nascido na Filadélfia, o segundo de cinco
+    filhos de um promotor imobiliário e de uma doméstica que o introduziu à
+    ficção policial. Mudou-se para Fort Lauderdale, na Florida, aos 12 anos;
+    um encontro adolescente com uma arma abandonada e, mais tarde, a adaptação
+    de Robert Altman de The Long Goodbye, de Raymond Chandler, transformaram-no
+    de estudante de gestão da construção civil em licenciado em jornalismo com
+    vontade de escrever romances policiais. Trabalhou na ronda policial em
+    três jornais (Daytona Beach, Fort Lauderdale e depois o Los Angeles Times,
+    que o contratou depois de a sua reportagem sobre o voo Delta 191 o tornar
+    finalista do Pulitzer), e ambientou a sua ficção na cidade para onde esse
+    trabalho o levou. A sua estreia,
+    [[work:michael-connelly/the-black-echo|The Black Echo]] (1992), apresentou
+    o detetive da LAPD Hieronymus "Harry" Bosch e venceu o Edgar Award de
+    Melhor Primeiro Romance. Connelly já descreveu a sua obra como uma grande
+    tela que as suas personagens atravessam e voltam a atravessar - as
+    investigações de Bosch decorrem agora lado a lado com as do advogado de
+    defesa Mickey Haller, da detetive Renée Ballard, do repórter de crime Jack
+    McEvoy, do perfilador do FBI Terry McCaleb e, desde 2025, do
+    sargento-detetive Stilwell, da ilha de Catalina. Presidente da Mystery
+    Writers of America, 2003-2004.
+  lifeEvents:
+    - id: connelly-born-1956
+      title: Nascido na Filadélfia
+      description: >
+        O segundo mais velho de cinco filhos de um promotor imobiliário e de
+        uma doméstica; o gosto da própria mãe pela ficção policial introduz-lhe
+        o género. A família muda-se para Fort Lauderdale, na Florida, quando
+        ele tem 12 anos.
+
+    - id: connelly-gun-in-the-hedge-1972
+      title: Um lavador de loiça encontra uma arma numa sebe
+      description: >
+        A caminho de casa depois do trabalho a lavar loiça num hotel,
+        Connelly, com 16 anos, vê um homem atirar algo para dentro de uma
+        sebe, vai investigar e encontra uma pistola embrulhada numa camisa.
+        Segue o homem até um bar e depois vai chamar o pai e a polícia, que
+        chegam tarde de mais. É o seu primeiro contacto verdadeiro com o mundo
+        dos polícias e do crime sobre o qual passaria o resto da vida a
+        escrever.
+
+    - id: connelly-the-long-goodbye-1973
+      title: Uma adaptação de Chandler muda o rumo de um estudante de gestão da construção civil
+      description: >
+        Matriculado na Universidade da Florida a estudar gestão da construção
+        civil (o próprio ofício do pai) e com notas piores do que esperava,
+        Connelly vê The Long Goodbye, de Robert Altman, adaptado do romance de
+        Philip Marlowe, de Raymond Chandler. Vai a casa, lê tudo o que Chandler
+        escreveu e muda-se para jornalismo, com uma especialização secundária
+        em escrita criativa, decidido a tornar-se romancista policial.
+
+    - id: connelly-crime-beat-reporter-1980
+      title: Entra na ronda policial, primeiro na Florida
+      description: >
+        Licencia-se pela Universidade da Florida e consegue um lugar de
+        repórter de crime no Daytona Beach News-Journal, mudando-se no ano
+        seguinte para o Fort Lauderdale News and Sun-Sentinel, onde cobre as
+        guerras da cocaína no sul da Florida. Os anos de jornalismo policial
+        verdadeiro tornam-se o alicerce procedimental de todos os romances que
+        se seguem.
+
+    - id: connelly-delta-191-los-angeles-times-1987
+      title: Uma reportagem sobre um acidente de avião vale-lhe um lugar no LA Times, e em LA
+      description: >
+        Connelly e dois colegas passam meses a entrevistar sobreviventes do
+        acidente do voo Delta 191, em 1985, uma reportagem que o torna
+        finalista do Prémio Pulitzer e lhe vale um lugar de repórter de crime
+        no Los Angeles Times. Ele e a mulher mudam-se para Los Angeles em 1987
+        - a cidade que se torna o cenário fixo de quase tudo o que escreve a
+        partir daí.
+
+    - id: connelly-black-echo-edgar-1992
+      title: The Black Echo apresenta Harry Bosch, e vence o Edgar
+      description: >
+        Depois de três anos no LA Times e de dois romances de treino nunca
+        publicados, Connelly vende
+        [[work:michael-connelly/the-black-echo|The Black Echo]] à Little,
+        Brown. O livro apresenta o detetive de homicídios da LAPD Hieronymus
+        "Harry" Bosch - batizado com o nome do pintor holandês do século XV,
+        cuja gravura do Inferno continua pendurada atrás da secretária de
+        escrita de Connelly - e vence o Edgar Award de Melhor Primeiro Romance
+        da Mystery Writers of America, o início de uma série ainda em curso,
+        já com 26 romances.
+
+    - id: connelly-clinton-concrete-blonde-1994
+      title: Um presidente é fotografado a carregar o seu terceiro romance
+      description: >
+        No início de 1994, câmaras que seguiam o Presidente Bill Clinton
+        apanham-no a sair de uma livraria em Washington, D.C., a carregar um
+        exemplar de [[work:michael-connelly/the-concrete-blonde|The Concrete
+        Blonde]]. Clinton revela-se um verdadeiro fã dos dois primeiros
+        romances de Bosch, e a equipa da Casa Branca organiza um breve
+        encontro noturno entre os dois homens no Aeroporto Internacional de
+        Los Angeles. É o momento em que os romances policiais de Connelly
+        sobre a LAPD deixam de ser uma série de vendas médias, bem recebida
+        pela crítica, e passam a ter uma visibilidade pública muito maior -
+        três livros e dois anos antes de arriscar a marca com um romance sem
+        Bosch.
+
+    - id: connelly-mwa-president-2003
+      title: Eleito para liderar a sua própria profissão, por duas vezes seguidas
+      description: >
+        Connelly exerce a presidência da Mystery Writers of America durante
+        dois mandatos consecutivos de um ano, 2003 e 2004, a organização
+        profissional por trás do Edgar Award que o lançara em 1992. Mais do
+        que um marco de vendas ou de receção crítica, é uma liderança de pares
+        dentro da profissão, e assinala o momento em que os seus colegas, e
+        não só os seus leitores, o reconheceram como uma figura sénior do
+        género.
+
+    - id: connelly-diamond-dagger-2018
+      title: O Diamond Dagger, pela excelência sustentada
+      description: >
+        A Crime Writers' Association do Reino Unido atribui a Connelly o seu
+        Cartier Diamond Dagger, entregue anualmente a uma carreira de
+        "excelência sustentada" na escrita policial, e não a um único livro.
+        Chegando a um quarto de século da série de Bosch, e sendo uma honra
+        britânica a um autor norte-americano, assinala do outro lado do
+        Atlântico o mesmo percurso ininterrupto e reconhecido por prémios que
+        os prémios RBA e Harper Lee já tinham assinalado em casa, em 2012.

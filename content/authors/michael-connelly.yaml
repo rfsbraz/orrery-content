@@ -1,0 +1,196 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds), so the same person resolves the same everywhere.
+# Author-LIFE events live here (they follow the person); franchise-specific
+# events stay in content/franchises/michael-connelly/events.yaml.
+#
+# Living author (born 1956): the nine anchors below rest on Wikipedia's cited
+# biography, the official Mystery Writers of America presidents list, a Gale
+# Newsmakers reference biography and contemporary trade press, which draw on
+# interviews Connelly has given repeatedly over three decades (the
+# gun-in-the-hedge story and the Altman-film conversion are both told in his
+# own words in multiple places). His health and finances are not recorded
+# here: a search of his own interviews, reference biographies and the trade
+# press turned up no on-the-record account of illness or financial
+# difficulty to weigh against the two-source bar for a living person. The
+# marriage itself (Linda McCaleb, met in college, married April 1984, one
+# daughter) is corroborated by two independent reference biographies but
+# stops there; neither carries anything beyond the fact of it, and no
+# divorce or separation is recorded anywhere. That is read here as a quiet
+# record, not an unresearched one.
+id: michael-connelly
+name: Michael Connelly
+aka: []
+born: 1956-07-21
+died: null
+bio: >
+  American novelist, born in Philadelphia, the second of five children of a
+  property developer and a homemaker who introduced him to crime fiction.
+  Moved to Fort Lauderdale, Florida at 12; a teenage encounter with a
+  discarded gun and, later, Robert Altman's film of Raymond Chandler's
+  The Long Goodbye turned him from a construction-management student into a
+  journalism major who wanted to write mysteries. Worked the crime beat at
+  three newspapers (Daytona Beach, Fort Lauderdale, then the Los Angeles
+  Times, which he joined after his Delta Flight 191 reporting made him a
+  Pulitzer finalist), and set his fiction in the city that job moved him to.
+  His debut, [[work:michael-connelly/the-black-echo|The Black Echo]] (1992),
+  introduced LAPD Detective Hieronymus "Harry" Bosch and won the Edgar Award
+  for Best First Novel. Connelly has described his body of work as one big
+  canvas that his characters cross and recross - Bosch's own investigations
+  now run alongside defense attorney Mickey Haller,
+  Detective Renée Ballard, crime reporter Jack McEvoy, FBI profiler Terry
+  McCaleb, and, from 2025, Catalina Island's Detective Sergeant Stilwell.
+  President of the Mystery Writers of America, 2003-2004.
+pseudonyms: []
+images:
+  portrait: "https://upload.wikimedia.org/wikipedia/commons/9/95/MConnelly.jpg"
+  portraitCredit: "Mark Coggins, CC BY 2.0"
+  portraitSource: "https://commons.wikimedia.org/wiki/File:MConnelly.jpg"
+  # The same file Wikipedia's own infobox uses for this article (confirmed via
+  # its pageimages API), which also cross-identifies the subject against two
+  # other independently-credited Commons photos of Connelly (2009 Anthony
+  # Award and a 2014 London signing) - the same round glasses and grey-white
+  # goatee in all three. A fourth candidate surfaced by a Commons author
+  # search ("Michael Connelly at College of DuPage 2014.jpg") does not match
+  # any of them and is not used.
+lifeEvents:
+  - id: connelly-born-1956
+    date: 1956-07-21
+    title: Born in Philadelphia
+    impact: low
+    description: >
+      Second-eldest of five children of a property developer and a
+      homemaker; his mother's own fondness for crime fiction introduces him
+      to the genre. The family relocates to Fort Lauderdale, Florida when he
+      is 12.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Michael_Connelly
+
+  - id: connelly-gun-in-the-hedge-1972
+    date: 1972
+    title: A dishwasher finds a gun in a hedge
+    impact: high
+    description: >
+      Walking home from his job washing dishes at a hotel, 16-year-old
+      Connelly sees a man toss something into a hedge, investigates, and
+      finds a handgun wrapped in a shirt. He follows the man to a bar, then
+      fetches his father and the police, who arrive too late. The night is
+      his first real brush with the world of cops and crime he would spend
+      the rest of his life writing about.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Michael_Connelly
+
+  - id: connelly-the-long-goodbye-1973
+    date: 1973
+    title: A Chandler adaptation redirects a construction-management student
+    impact: high
+    description: >
+      Enrolled at the University of Florida studying construction
+      management (his father's own trade) and earning worse grades than
+      expected, Connelly sees Robert Altman's The Long Goodbye, adapted from
+      Raymond Chandler's Philip Marlowe novel. He goes home, reads
+      everything Chandler wrote, and transfers to journalism with a minor in
+      creative writing, deciding he wants to become a mystery novelist.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Michael_Connelly
+
+  - id: connelly-crime-beat-reporter-1980
+    date: 1980
+    title: Onto the crime beat, first in Florida
+    impact: med
+    description: >
+      Graduates from the University of Florida and takes a crime-reporting
+      job at the Daytona Beach News-Journal, moving the following year to
+      the Fort Lauderdale News and Sun-Sentinel, where he covers the South
+      Florida cocaine wars. The years of real police-beat reporting become
+      the procedural bedrock under every novel that follows.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Michael_Connelly
+
+  - id: connelly-delta-191-los-angeles-times-1987
+    date: 1987
+    title: A plane-crash story earns a ticket to the LA Times, and to LA
+    impact: med
+    description: >
+      Connelly and two colleagues spend months interviewing survivors of the
+      1985 Delta Flight 191 crash, a story that makes him a Pulitzer Prize
+      finalist and lands him a crime-reporting job at the Los Angeles Times.
+      He and his wife relocate to Los Angeles in 1987 - the city that
+      becomes the fixed setting of nearly everything he goes on to write.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Michael_Connelly
+
+  - id: connelly-black-echo-edgar-1992
+    date: 1992
+    title: The Black Echo introduces Harry Bosch, and wins the Edgar
+    impact: high
+    description: >
+      After three years at the LA Times and two unpublished practice novels,
+      Connelly sells [[work:michael-connelly/the-black-echo|The Black Echo]]
+      to Little, Brown. It introduces LAPD homicide detective Hieronymus
+      "Harry" Bosch - named after the 15th-century Dutch painter, whose print
+      of Hell still hangs behind Connelly's writing desk - and wins the
+      Mystery Writers of America's Edgar Award for Best First Novel, the
+      start of a still-running, 26-novel-and-counting series.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Michael_Connelly
+      - https://en.wikipedia.org/wiki/Harry_Bosch
+
+  - id: connelly-clinton-concrete-blonde-1994
+    date: 1994
+    title: A president is photographed carrying his third novel
+    impact: high
+    description: >
+      In early 1994, cameras trailing President Bill Clinton catch him
+      leaving a Washington, D.C. bookstore carrying a copy of
+      [[work:michael-connelly/the-concrete-blonde|The Concrete Blonde]].
+      Clinton turns out to be a genuine fan of the first two Bosch novels,
+      and White House staff arrange a brief, late-night meeting between the
+      two men at Los Angeles International Airport. It is the moment
+      Connelly's LAPD procedurals cross from a well-reviewed midlist series
+      into a much larger public visibility, three books and two years before
+      he risks the brand on a Bosch-free novel.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Michael_Connelly
+      - https://www.notablebiographies.com/newsmakers2/2007-A-Co/Connelly-Michael.html
+
+  - id: connelly-mwa-president-2003
+    date: 2003
+    title: Elected to lead his own profession, twice running
+    impact: med
+    description: >
+      Connelly serves as President of the Mystery Writers of America for two
+      consecutive one-year terms, 2003 and 2004, the professional
+      organization behind the Edgar Award that had launched him in 1992.
+      Peer leadership of the guild rather than a sales or reception
+      milestone, it marks the point his colleagues, not just his readers,
+      recognized him as a senior figure in the genre.
+    spoilerAfter: null
+    sources:
+      - https://mysterywriters.org/about-mwa/mwa-presidents/
+      - https://en.wikipedia.org/wiki/Michael_Connelly
+
+  - id: connelly-diamond-dagger-2018
+    date: 2018-03
+    title: The Diamond Dagger, for sustained excellence
+    impact: med
+    description: >
+      The UK Crime Writers' Association awards Connelly its Cartier Diamond
+      Dagger, given annually for a career of "sustained excellence" in crime
+      writing rather than for any single book. Coming a quarter-century into
+      the Bosch series and a British honor for an American author, it marks
+      the same run of unbroken, prize-recognized output on the other side of
+      the Atlantic that the RBA and Harper Lee prizes mark at home in 2012.
+    spoilerAfter: null
+    sources:
+      - https://www.thebookseller.com/news/connelly-honoured-cwa-diamond-dagger-743301
+      - https://en.wikipedia.org/wiki/Michael_Connelly
+sources:
+  - https://en.wikipedia.org/wiki/Michael_Connelly
+  - https://www.michaelconnelly.com/series/
