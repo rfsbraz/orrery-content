@@ -1,0 +1,54 @@
+stage: editions
+summary: >
+  Built content/franchises/harlan-coben/editions.yaml from scratch: 71 entries,
+  42 English (en) over 38 of 44 works, 29 Portuguese (pt-PT) over 28 of 44
+  works. python scripts/validate.py --slug harlan-coben green (only
+  pre-existing warnings: 3 oversized handoffs, 1 franchise.yaml comment from
+  an earlier stage). python scripts/metadata/lookup.py --verify-isbns
+  harlan-coben: 71 editions, 0 suspect.
+sourcing:
+  en: >
+    Every ISBN verified against its own OpenLibrary edition record
+    (isbn.json or api/books, cited per entry), not a search snippet. Two
+    ISBNs a title-only search surfaced first were rejected on inspection: Hold
+    Tight's first hit (9781436203838, non-trade prefix) in favour of its real
+    Dutton hardcover ISBN; Caught's first hit (9780451232861) for carrying
+    contaminated metadata (an unrelated Signet Classics "Twelfth Night"
+    record) in favour of a clean Signet ISBN for the correct book.
+  pt-PT: >
+    Editorial Presença has published Coben continuously since 2003 and is his
+    only Portuguese publisher; Círculo de Leitores and Temas e Debates also
+    published a handful of the early Myron Bolitar novels under rival
+    translations in the 2000s. Every entry is corroborated by the Biblioteca
+    Nacional de Portugal catalogue (browser-UA reachable), matched to its
+    English work by the catalogue's own "Tít. orig." field, never by title
+    guesswork. The 11 titles currently sold via presenca.pt are double-sourced
+    against that storefront too.
+isbnsRejectedAsWrong:
+  - "Hold Tight: 9781436203838 (unusual non-trade ISBN prefix; real Dutton hardcover ISBN used instead)."
+  - "Caught: 9780451232861 (OpenLibrary record's own 'other_titles' field names an unrelated Signet Classics Twelfth Night edition; a clean same-book ISBN used instead)."
+  - "The Innocent (pt-PT): Presença's live product page states 'Data de Lançamento: 4/2007' for its current ISBN (9789722367271), but the Biblioteca Nacional record for that exact ISBN is the 3a ed. from 2021 - the 2007 date belongs to a different ISBN (9789722337380, the 1a ed., also real but not the one recorded). Not an ISBN rejection, a stale-metadata catch worth flagging."
+worksWithNoEdition:
+  reason_genuinely_absent_in_portuguese_only: >
+    28 works have a pt-PT edition; 16 do not, checked rather than merely
+    unsearched. Darkest Fear, Live Wire and Home (Myron Bolitar) and the
+    entire Mickey Bolitar YA trilogy (Shelter, Seconds Away, Found) return no
+    hit in a 36-record Biblioteca Nacional author-name sweep that otherwise
+    caught every other title including two rival Deal Breaker translations.
+    Stay Close has only a Brazilian edition (Touché Livros, "Fique Comigo" -
+    pt-BR, excluded per docs/SCHEMA.md's region rule). Play Dead and Miracle
+    Cure were never picked up in Portugal. Nobody's Fool (2025) is too recent.
+    The 4 apocrypha, The Magical Fantastical Fridge, and Plot Twist have no
+    Portuguese edition and none is expected.
+  reason_no_confident_en_isbn_found: >
+    6 works got an en edition from a later paperback/reprint rather than a
+    confirmed first hardcover (Tell No One, Gone for Good, No Second Chance,
+    Just One Look, Promise Me, Missing You): each is a real, verified edition,
+    just not confirmed as the true first printing in this pass. Play Dead and
+    Miracle Cure (1990-91) carry only current Signet reissues; their true
+    first editions could not be located under any ISBN.
+forCurator:
+  - "Gone Before Goodbye's pt-PT entry (Antes de Desaparecer, isbn13 9789722377904) is single-sourced to Presença's own storefront - too recent (Nov 2025) for a Biblioteca Nacional record yet. Worth a second check once BNP catches up."
+  - "Deal Breaker carries two independent, non-overlapping pt-PT translations (Círculo de Leitores 2004 and Temas e Debates 2008, different titles, same translator) - both recorded, neither currently in print."
+notesForOtherStages:
+  visual-metadata: "editions.yaml has no coverUrl anywhere; all 71 entries leave it unset. Visual pass starts clean."
