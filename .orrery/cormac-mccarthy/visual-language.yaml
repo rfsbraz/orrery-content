@@ -1,0 +1,68 @@
+stage: visual-language
+summary: >
+  Wrote theme.art on the cormac-mccarthy wing (preset borderland-ash,
+  unchanged). Emblem: a worn portable typewriter alone on a bare table, one
+  sheet in the platen. McCarthy bought a used Olivetti Lettera 32 in a
+  Knoxville pawnshop around 1963 for fifty dollars and typed every book on
+  that one machine for the next forty-six years (about five million words by
+  his own estimate) until its 2009 auction, replaced with an identical used
+  model because the object was interchangeable and the discipline was not.
+  One unchanged machine, bought in Suttree's own city, typed the Tennessee
+  novels and the Western ones alike, so it spans both eras literally rather
+  than thematically. Seven motifs split across both periods (Knoxville
+  river-fog and a market-house street; a dry arroyo, a barbed-wire fence
+  line, far mesas, an ash-dusted road, bone-pale chaparral for the West),
+  plus atmosphere, lineCharacter (a dry, half-starved scoured brush line, no
+  cross-hatching, no retraced contour), backgroundTexture (caliche/ash-pale
+  paper, scorched at the corners), accentUse (the existing banked
+  ember-orange, on one small warmth per image) and a 6-item avoid list
+  refusing cowboy-movie pastiche, sunset postcard glow, blood-splatter
+  shock, skull/cactus/tumbleweed shorthand, Southern-gothic plantation kitsch
+  (and kudzu, already Karin Slaughter's Georgia in this catalogue), and every
+  film adaptation's visual identity. `python scripts/validate.py --slug
+  cormac-mccarthy` is clean (0 errors, 0 warnings for this wing); the
+  theme.art error is gone. `asset_audit.py cormac-mccarthy` now reports
+  `art:yes` and lists 19 unblocked jobs (2 era plates, 6 life events, 9
+  franchise events, 1 world event).
+produced:
+  themeArt:
+    emblem: "a worn portable typewriter, one sheet in the platen, alone on a bare table"
+    motifsCount: 7
+    accent: "#c1662c (unchanged, ember-orange)"
+  validateStatus: "clean for cormac-mccarthy; theme.art error resolved"
+  assetAuditStatus: "art:yes; 19 jobs now listed (was 0)"
+forStages:
+  press-fill: >
+    The emblem's own fact (Lettera 32, Knoxville pawnshop, ~1963, $50, auction
+    2009, Santa Fe Institute proceeds) is verified (Christie's sale record,
+    contemporary press) but lives only in this theme.yaml comment, not in
+    lifeEvents. press-archaeology's handoff already anchors the 1984 Santa Fe
+    Institute affiliation as its own lifeEvent; a curator wanting the
+    typewriter itself as a second, distinct lifeEvent (bought ~1963, retired
+    2009) would be adding real, sourced material, not coining it.
+  reading-orders: >
+    No conflict: this stage touched only theme.yaml's `art` block, nothing
+    era, order or startHere related.
+  translation: >
+    The new art block is prompt-facing prose read by /asset-prompt, not
+    reader-facing content, so it carries no i18n obligation (theme.art is
+    never rendered by the app itself, per docs/SCHEMA.md).
+  asset-prompt: >
+    theme.art is complete; the wing's first era plate (the-tennessee-period
+    or the-western-period) should be generated first per VISUAL.md §7 to
+    become this wing's anchor image before any life-event or franchise-event
+    asset is drawn.
+openQuestions:
+  - "Whether the typewriter's own facts (Knoxville pawnshop purchase ~1963,
+    2009 Christie's auction benefiting the Santa Fe Institute) are worth a
+    dedicated lifeEvent alongside the existing 1984 Santa Fe Institute entry:
+    real and sourced, not yet decided as a separate slot. Left to whichever
+    stage next touches lifeEvents, since aura density and slot count are that
+    stage's call, not this one's."
+  - "The avoid list names kudzu and Southern-gothic plantation kitsch to stay
+    clear of Karin Slaughter's Georgia wing, even though McCarthy's Knoxville
+    is a different part of the South (East Tennessee hill country, not
+    Slaughter's Deep South Georgia). A curator who judges the two settings
+    already read as distinct enough could drop that clause; it was kept in
+    since both wings sit in the catalogue's warm-toned, near-black register
+    and the risk seemed cheap to close."
