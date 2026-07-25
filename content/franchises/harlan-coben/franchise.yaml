@@ -57,3 +57,94 @@ globalEvents:
     - prestige-fantasy-adaptation-2011   # his own screen-adaptation arc runs through the Netflix deal (2018), not fantasy TV, and is already carried on this wing's own events
     - booktok-2020                       # already a multi-decade bestseller by 2020; no title's discovery or resurgence traces to it
     - portugal-bailout-2011              # a Portuguese national crisis; no connection to an American thriller writer
+
+# startHere: four paths, both cells §10 flags as most-used covered (new+taste,
+# completionist+complete). Tell No One, his 2001 breakout into the bestseller
+# lists, was checked as a candidate entry path and set aside: the two sourced
+# guides below both point a new reader to Fool Me Once instead - a correction
+# to the older, still-common assumption that his first standalone breakout is
+# still the entry point.
+startHere:
+  paths:
+    # Source: https://www.penguin.co.uk/articles/2023/12/where-to-start-reading-harlan-coben
+    # "Fool Me Once is the ideal entry point into Harlan Coben's world - a
+    # fast-paced, twist-driven novel that showcases everything readers love
+    # about him... no background knowledge required."
+    # Corroborating: https://www.deadgoodbooks.co.uk/harlan-coben-books-in-order/
+    # "If you're completely new to Harlan Coben, we'd recommend Fool Me Once."
+    - id: fool-me-once
+      title: Start with the one everyone's talking about
+      description: >
+        Fool Me Once is Coben's most-recommended way in for a reader new to
+        him: fully self-contained, and exactly the nanny-cam, is-he-really-
+        dead twist his standalones are built on. Two Penguin-family guides
+        (Penguin's own "Where to start reading Harlan Coben" and Penguin
+        Random House's Dead Good Books) both call it the book to start with,
+        and neither asks for any background in his other work.
+      workIds:
+        - harlan-coben/fool-me-once
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        Skips his flagship series entirely: Myron Bolitar never appears here.
+        It does have a direct 2025 sequel, Nobody's Fool, though nothing in
+        this path requires reading that too.
+    # Source: https://www.novelsuspects.com/series-list/harlan-coben-myron-bolitar-books-in-order/
+    # "Even if you weren't looking to read the Harlan Coben books in order,
+    # this one is the best place to start!" (of Deal Breaker).
+    # Corroborating: https://www.harlancoben.com/faq/ "What is the order of
+    # the Myron Bolitar novels? DEAL BREAKER, DROP SHOT, FADE AWAY..."
+    - id: myron-bolitar-start
+      title: Start the Myron Bolitar series
+      description: >
+        For a running cast across three decades instead of a single
+        standalone: start at Deal Breaker (1995) and read the twelve Myron
+        Bolitar novels in order. Hachette's own Novel Suspects guide calls
+        Deal Breaker "the best place to start" even for a reader not set on
+        reading the whole series, and Coben's own FAQ lists this exact
+        sequence.
+      workIds: null
+      orderId: harlan-coben/myron-bolitar
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        A real commitment across twelve books; the other four threads that
+        grow out of this one (Mickey Bolitar, Win, Wilde, Sami Kierce) sit
+        outside it and are reached separately.
+    # Source: https://www.harlancoben.com/faq/ "SHELTER, SECONDS AWAY and
+    # FOUND the young adult series featuring Mickey Bolitar are available in
+    # paperback... Myron Bolitar does appear in these" and, on the separate
+    # young-adult site: "The website MickeyBolitar.com is specifically for
+    # the young adult readers."
+    - id: mickey-bolitar-ya
+      title: "Mickey's YA thread"
+      description: >
+        Myron's teenage nephew Mickey gets his own three-book, young-adult-
+        pitched trilogy, with Myron himself dropping in. Coben's own FAQ
+        frames it as a series for younger readers rather than another route
+        into the adult thrillers, so this suits someone already following the
+        Bolitar family, or a teen reader starting with Coben's one YA-pitched
+        series instead of the standalones.
+      workIds: null
+      orderId: harlan-coben/mickey-bolitar
+      fit:
+        experience: [returning, completionist]
+        commitment: [arc]
+      note: >
+        The trilogy's own family mystery runs alongside the one Myron
+        investigates in his tenth novel, Live Wire (2011); reading one
+        thread's ending before starting the other means already knowing how
+        that mystery resolves.
+    - id: complete-shelf
+      title: The whole shelf
+      description: >
+        Every work Coben has published, standalones and all five character
+        threads together, in the order he wrote them.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]

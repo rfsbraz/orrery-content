@@ -1,0 +1,80 @@
+# ADDITIONAL reading orders only. The DEFAULT order (all 44 works, publication-
+# chronological) is derived automatically from works.yaml and is not listed
+# here. Both orders below pull one continuity thread out of the wider shelf
+# they are woven through (works.yaml's own header: 18 standalones dominate by
+# volume, with five character threads interleaved). The other three threads -
+# Sami Kierce, Wilde, Win - ship no order: at one or two books each, extracting
+# them from the derived default reorders nothing a reader could feel, so an
+# order would exist only to pad the file. Win (1 novel) cannot have an order at
+# all.
+#
+# Checked and declined: aggregator sites (mysterysequels.com, booksinorder.io)
+# both place the Mickey Bolitar trilogy "after Live Wire and before Home" in a
+# combined Bolitar-family sequence, in near-identical phrasing. That phrasing
+# match, not independent convergence, is the reason it is not used as sourcing
+# for an interleaved order here: it reads like one site's copy recycled by the
+# other rather than two guides agreeing. The trilogy ships its own order
+# below instead, covering only its own three books.
+
+- id: harlan-coben/myron-bolitar
+  name: Myron Bolitar, in series order
+  type: author-recommended
+  source: canon
+  rationale: >
+    The twelve novels centered on sports-agent-turned-investigator Myron
+    Bolitar, pulled out from between the standalones and the other character
+    threads they are interleaved with on the full shelf. Coben's own FAQ gives
+    this exact sequence in answer to a reader's question, ending on Think
+    Twice (2024) as the twelfth entry, and it settles the one tie the derived
+    default leaves arbitrary: Drop Shot and Fade Away were both published in
+    1996, and his own list keeps Drop Shot first. Windsor Horne Lockwood III
+    (Win) and Myron's nephew Mickey share this continuity and recur
+    throughout, but each has grown into a thread of his own; see the Mickey
+    Bolitar order for the family's young-adult branch, and Win for the one
+    novel that centers Myron's best friend instead. The cost of pulling the
+    thread out this way: on the full shelf, Myron's cases arrive spaced across
+    decades with a dozen unconnected standalones between them; read back to
+    back, the sports-agent-turned-investigator setup repeats twelve times
+    running, without the standalones' variety of setting and cast to break it
+    up.
+  orderedWorkIds:
+    - harlan-coben/deal-breaker
+    - harlan-coben/drop-shot
+    - harlan-coben/fade-away
+    - harlan-coben/back-spin
+    - harlan-coben/one-false-move
+    - harlan-coben/the-final-detail
+    - harlan-coben/darkest-fear
+    - harlan-coben/promise-me
+    - harlan-coben/long-lost
+    - harlan-coben/live-wire
+    - harlan-coben/home
+    - harlan-coben/think-twice
+  sources:
+    - "https://www.harlancoben.com/faq/"
+
+- id: harlan-coben/mickey-bolitar
+  name: "Mickey Bolitar: the young-adult thread"
+  type: curated
+  source: canon
+  rationale: >
+    Myron's teenage nephew Mickey gets his own three-book, young-adult-imprint
+    spin-off, running sequentially through one school year: Shelter, Seconds
+    Away and Found. Coben's own FAQ names it as the young-adult series and
+    points to its own dedicated site built for that readership, distinct from
+    the adult thrillers around it, though Myron himself appears in all three
+    (confirmed independently by Wikipedia's own series listing). Framed here
+    as the family's YA-audience branch rather than a first stop in Coben's
+    work: best suited to a reader already invested in the Bolitars, or a
+    teenage reader meeting Coben through his one YA-pitched series rather than
+    the adult standalones. Naming the real cost: the trilogy's own family
+    mystery runs alongside the one Myron investigates in his tenth novel,
+    Live Wire (2011), so reading one thread's ending before starting the
+    other means already knowing how that mystery resolves.
+  orderedWorkIds:
+    - harlan-coben/shelter
+    - harlan-coben/seconds-away
+    - harlan-coben/found
+  sources:
+    - "https://www.harlancoben.com/faq/"
+    - "https://en.wikipedia.org/wiki/Myron_Bolitar_series"

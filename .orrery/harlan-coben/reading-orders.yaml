@@ -1,0 +1,77 @@
+stage: reading-orders
+summary: >
+  No orders.yaml or startHere existed before this stage. Wrote
+  content/franchises/harlan-coben/orders.yaml (2 orders) and franchise.yaml's
+  startHere block (4 paths). validate.py --slug harlan-coben: 0 errors before
+  and after; 3 warnings, all pre-existing (2 handoff word-count soft-caps, 1
+  franchise.yaml pipeline-narration wording already flagged out of scope by
+  completeness-auditor). orders.yaml itself introduced zero warnings after one
+  self-caught fix (a first-draft comment addressed "the reader"; rewritten to
+  state the fact instead).
+ordersAdded:
+  - id: harlan-coben/myron-bolitar
+    type: author-recommended
+    evidence: >
+      harlancoben.com/faq/ answers "What is the order of the Myron Bolitar
+      novels?" with the exact 12-book sequence, settling the one real tie the
+      default leaves open (Drop Shot/Fade Away, both 1996).
+    whoItSuits: >
+      Readers who want Myron's thread pulled from the 44-work shelf without
+      the interleaved standalones. Cost named in the rationale: read back to
+      back, the sports-agent-turned-investigator premise repeats twelve times
+      running, without the standalones' variety between entries.
+  - id: harlan-coben/mickey-bolitar
+    type: curated
+    evidence: >
+      The FAQ names it the young-adult series with its own dedicated site
+      (MickeyBolitar.com), Myron appearing as a guest; Wikipedia's series
+      listing independently confirms the three-book grouping.
+    whoItSuits: >
+      Framed as the family's YA branch, not a first stop: for a reader
+      already invested in the Bolitars, or a teen choosing Coben's one
+      YA-pitched series over the adult standalones. Named cost: this
+      trilogy's own family mystery runs alongside the one Myron investigates
+      in Live Wire (2011, his tenth novel), so finishing either thread before
+      starting the other means already knowing how that mystery resolves.
+      Checked against Wikipedia's own Live Wire plot summary plus independent
+      reader/fan-wiki accounts of the same connection; the rationale names the
+      mystery as shared without naming its resolution, per spoiler-audit.
+startHerePaths:
+  - {id: fool-me-once, fit: "new/taste", sourced: "Penguin's 2025 'Where to start reading Harlan Coben' + Dead Good Books (PRH), both naming Fool Me Once"}
+  - {id: myron-bolitar-start, fit: "new+returning/arc", sourced: "Novel Suspects (Hachette), 'the best place to start' on Deal Breaker; corroborated by the FAQ's own order"}
+  - {id: mickey-bolitar-ya, fit: "returning+completionist/arc", sourced: "the FAQ's YA framing, see mickeyFraming"}
+  - {id: complete-shelf, fit: "completionist/complete", sourced: "structural; orderId default needs no external source"}
+mickeyFraming: >
+  Treated as the family's YA branch rather than a general newcomer's door in,
+  on the author's FAQ (dedicated YA site, Myron as guest, not lead). Declined
+  to place it "after Live Wire, before Home" in a blended sequence: two
+  aggregator sites give that exact placement in near-identical wording, which
+  reads as one site's copy recycled by the other rather than two guides
+  independently agreeing, noted in orders.yaml as checked and declined.
+correctionToReceivedWisdom: >
+  The brief's working assumption was Tell No One (2001) as the standalone
+  entry path, on its historical reception (his first standalone since 1991,
+  first NYT bestseller). Current sourcing does not back that as today's
+  advice: two Penguin-family editorial sources (Penguin's 2025 article, Dead
+  Good Books 2026) both point a new reader to Fool Me Once instead, plausibly
+  its Netflix visibility. Tell No One's breakout is real but is a fact about
+  2001 reception, not current guidance; no path was invented to force it in,
+  noted in franchise.yaml's own startHere header comment.
+declined:
+  - "Orders for Sami Kierce, Wilde, Win: one or two books each, so extracting
+     the thread reorders nothing a reader could feel (divergence test); Win
+     (1 novel) cannot have an order at all. Reasoned in orders.yaml's header
+     since Myron/Mickey having orders makes the asymmetry need a reason."
+  - "A fifth startHere path: declined rather than manufactured to fill a fit
+     cell. The two most-used cells (new+taste, completionist+complete) are
+     already covered."
+forStages:
+  translation: >
+    orders.yaml and the startHere block are new and fully English; the wing
+    has zero pt-PT overlay coverage of anything yet (works.yaml, events.yaml,
+    franchise.yaml were already unlisted pre-stage, confirmed via
+    i18n_coverage.py). Not a regression this stage caused; translation has
+    not reached this wing. When it does: order overlays carry
+    name/rationale only, path overlays title/description/note only.
+  visual-language: "Unaffected; theme.yaml still owed per franchise-research."
+  event-resonance: "Unaffected; no globalEvents change made here."
