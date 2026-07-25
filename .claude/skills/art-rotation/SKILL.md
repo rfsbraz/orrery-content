@@ -77,9 +77,18 @@ You write `organisation`/`illustration_type`/`images_required`/`modifier` onto:
 `events.yaml` (franchise events), `content/authors/<id>.yaml` (author
 `lifeEvents`), and `eras.yaml` (era plates). You touch nothing else.
 
-Gate: **`python scripts/art_rotation.py --check <slug>` passes** (0 problems),
-and `python scripts/validate.py` is GREEN. A wing with any plateau, adjacent
-loud, or over-cap organisation is not finished, however good each single choice.
+Gate: **`python scripts/art_rotation.py --check <slug>` reports 0
+organisation-rotation problems AND 0 pacing problems**, and
+`python scripts/validate.py` is GREEN. A wing with any plateau, adjacent loud,
+or over-cap organisation is not finished, however good each single choice.
+
+`art_rotation --check` has a *third*, separate axis - **composition** ("N assets
+with no issue at all") - which counts the GitHub art issues, populated later by
+`/asset-prompt`, not by you. On a freshly built wing no issues exist yet, so that
+axis stays flagged and the tool's exit code stays 1 even when your two axes are
+clean. That is expected and not yours to fix; drive the organisation-rotation and
+pacing counts to zero, read those two lines specifically, and do not chase the
+composition line.
 
 Hand off the contour you achieved and any moment whose organisation was a genuine
 judgement call.

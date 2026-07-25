@@ -282,7 +282,9 @@ Within one run, stages that fire execute in this order:
    paced contour; without it every entry defaults to `beside` and the wing ships
    a flat plateau. Runs after all events are final and after visual-language, and
    **sequential with visual-metadata** (both write author `lifeEvents`). Gate:
-   `art_rotation.py --check <slug>` passes (0 problems), validator green.
+   `art_rotation.py --check <slug>` reports 0 organisation-rotation and 0 pacing
+   problems (its separate composition axis stays flagged until the art issues
+   exist, so its exit code is not the gate - read those two lines), validator green.
 8. **Artefacts, parallel**: `visual-metadata` · `editions` - after the work
    list and all prose are final. Read stage 2's handoff: newly added works are
    exactly what gets missed. Gate: validator green, every image URL fetched
