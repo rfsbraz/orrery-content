@@ -1,0 +1,113 @@
+stage: translation
+locale: pt-PT
+summary: >
+  Built content/i18n/pt-PT/franchises/harlan-coben/** and
+  content/i18n/pt-PT/authors/harlan-coben.yaml from scratch (no prior
+  overlay existed for this wing). Covered every prose field CURATION §3
+  scopes to translation: franchise description, all 4 startHere paths
+  (title/description/note), both orders (name/rationale), all 11 franchise
+  events (title/description), all 4 author lifeEvents (title/description),
+  all 44 work synopses, and the author bio. Also translated
+  content/i18n/pt-PT/authors/reese-witherspoon.yaml (bio, 1 field): she is
+  a co-author stub pulled into this wing's scope by Gone Before Goodbye's
+  withAuthorIds, and SKILL.md names co-author bios as exactly the kind of
+  no-franchise-owner content that has shipped in English before by
+  accident.
+coverageBeforeAndAfter: >
+  Before: python scripts/i18n_coverage.py reported pt-PT at 101/115 files
+  fully covered, with franchises/harlan-coben/{franchise,works,events,
+  orders}.yaml, authors/harlan-coben.yaml and authors/reese-witherspoon.yaml
+  all listed under MISSING (no overlay existed). After: 107/115 files fully
+  covered, zero MISSING. All 6 gained files verified field-by-field with
+  the repo's own slots() function (not just the summary ratio): franchise.yaml
+  9/9, works.yaml 44/44, events.yaml 22/22, orders.yaml 4/4,
+  authors/harlan-coben.yaml 9/9, authors/reese-witherspoon.yaml 1/1 - zero
+  gaps on every one. The other 8 partial files (agatha-christie,
+  robert-jordan, stephen-king, terry-pratchett events/author files, all
+  missing only `themes`-adjacent nested fields) are pre-existing and
+  untouched; this stage regresses nothing outside its own wing.
+fieldsLeftInEnglishAndWhy:
+  - what: "16 of 44 work synopses' plain-text or inline title mentions where referenced elsewhere (Live Wire, Nobody's Fool, Shelter, Seconds Away, Found, Win, Play Dead)"
+    why: >
+      No pt-PT edition exists for these works (editions.yaml handoff:
+      genuinely absent, checked rather than merely unsearched). Per
+      docs/SCHEMA.md ("Never translate a published title"), a title is
+      never invented; the English title stands in every reference,
+      inline or plain-text, until a real edition exists.
+  - what: "Deal Breaker - every mention, in every file (franchise.yaml, events.yaml, authors/harlan-coben.yaml, orders.yaml)"
+    why: >
+      Two independent, non-overlapping pt-PT translations exist (Círculo
+      de Leitores 2004, "A Última Vez que a Viram"; Temas e Debates 2008,
+      "Uma Vida em Jogo"), neither currently in print (editions.yaml
+      handoff). Picking either as "the" Portuguese title would be
+      inventing a single canonical title where the record has two rivals
+      and no live one; the English title is used throughout instead, with
+      the ambiguity documented in a comment in each affected file's
+      header rather than silently resolved.
+  - what: Direct quotes attributed to Coben (and to Coben's own quoted words inside other people's articles)
+    why: >
+      Kept verbatim in the English he actually said them in, following the
+      house convention already established on gillian-flynn/events.yaml and
+      cited again on jo-nesbo/events.yaml: translating a person's own words
+      would substitute them with words they never said. Only the
+      surrounding narration is translated. Applies in
+      authors/harlan-coben.yaml (coben-father-dies-1988's three quotes) and
+      events.yaml (coben-win-modeled-on-roommate-1995,
+      coben-tell-no-one-standalone-2001, coben-the-five-tv-debut-2016,
+      coben-nobodys-fool-tv-inspired-2025).
+  - what: "French and English TV/film titles named in events.yaml prose (Ne le dis à personne, Une chance de trop, The Five, Safe)"
+    why: >
+      None of these are work ids in this catalogue (they are screen
+      adaptations/original series, not novels), so no inline reference or
+      title-translation rule applies to them at all; they are proper nouns
+      carried as-is from the base text.
+  - what: "works.yaml `note` fields (e.g. Nobody's Fool's note on its sequel status, Win's note on being the first Win-centered novel)"
+    why: >
+      Not reader-facing: i18n_coverage.py's own PROSE map excludes `note`
+      on works.yaml by design, and the field is curatorial annotation not
+      read by the app on the Work screen (same convention already
+      documented in jo-nesbo/works.yaml and gillian-flynn/works.yaml's
+      overlay headers). Left in English deliberately, not an oversight.
+  - what: content/events/global.yaml (the sept-11-2001 include)
+    why: >
+      Shared, no-franchise-owner content already has a pt-PT overlay
+      (content/i18n/pt-PT/events/global.yaml exists and covers it); out of
+      this wing's scope and not touched.
+spoilerInvariantCheck: >
+  Verified in pt: grepped both reworded fields (franchise.yaml
+  startHere.paths[mickey-bolitar-ya].note and orders.yaml
+  orders[harlan-coben/mickey-bolitar].rationale) for "mystery"/"mistério"
+  and "resolve*"/"resolv*" - neither appears in either translated field.
+  Both are faithful translations of the already-reworded English (per
+  spoiler-audit.yaml's handoff, which explicitly named this as the
+  invariant translation must preserve): the Mickey trilogy and Live Wire
+  are named as overlapping in family and timeframe, with reading-order
+  guidance to read them close together, but the shared secret (Brad's
+  fate) is never stated and the connection is never framed as a resolving
+  mystery, in Portuguese exactly as in English.
+regionDiscriminatorCallsForNativeReview: >
+  None flagged as uncertain. Register checked mechanically (grepped for
+  the pt-BR tells in the skill's table - está lendo/vai chegando,
+  quadrinhos, roteiro, beisebol, tela, ônibus, banheiro, celular, arquivo,
+  estar+gerund - zero hits) and read through by eye for idiom (câmara da
+  ama for nanny-cam, telemóvel-adjacent constructions avoided since no
+  synopsis needed one, Nova Jérsia as the standard pt-PT exonym for New
+  Jersey, "casa de banho"-class vocabulary never came up in this wing's
+  actual content).
+verification: >
+  Rendered output was not checked live (no dev server available in this
+  session); verification rests on: python scripts/validate.py (green, 715
+  works, all references resolve, zero new warnings - the one
+  harlan-coben/franchise.yaml warning listed is the pre-existing "curator
+  ruling" comment already flagged out of scope by completeness-auditor,
+  confirmed unchanged); python scripts/i18n_coverage.py (101/115 to
+  107/115, zero regressions); a direct re-derivation of slots() per file
+  confirming 0 gaps on all 6 files (numbers above); yaml.safe_load()
+  parsing every new file without error; a UTF-8 byte-level check
+  confirming diacritics survived (está/entrelaçada/família/época/
+  legível/distância all present as literal characters, not mangled -
+  the terminal's own display of the same string was garbled, which is a
+  console codepage artifact, not a file defect, and was verified as such
+  before being dismissed).
+forCurator:
+  - "Deal Breaker's title ambiguity (two rival, both out-of-print pt-PT translations) is carried in every file's header comment but not resolved to a single choice anywhere; if a curator has a view on which one to surface (or whether to surface neither, as done here), that is a real editorial call this stage deliberately did not make unilaterally."
