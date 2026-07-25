@@ -334,6 +334,11 @@ Re-derive, do not read a previous report.
   shelf, low is texture of the times, fails all three does not ship. Count how
   many are `low` - a timeline that is mostly texture is a timeline nobody reads
   twice.
+- **Does the timeline open on the birth?** The first `lifeEvent` is dated to the
+  author's `born` and names the birthplace (CURATION §6). `validate.py` warns
+  when it is missing, but the warning only catches an absent date - a birth
+  event that never says where, or drops the childhood geography, is a
+  `press-archaeology` finding.
 - **Is the wing proportionate to its size?** Compare event count against work
   count and span across the franchises in the repo. The largest wing having the
   thinnest aura is a finding, and it is the kind that only shows up when you look

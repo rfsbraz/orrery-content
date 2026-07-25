@@ -810,6 +810,18 @@ def main():
         a = load(path) or {}
         for e in a.get("lifeEvents", []):
             check_event(rel(path), e, allow_scope=False)
+        # The river needs a floor. An author whose timeline opens mid-career
+        # drops the reader on a stranger, and the layout grammar already names
+        # the birthplace as `full-bleed-vista`'s first use. So a wing with any
+        # lifeEvents needs one dated to the author's own birth - six wings had
+        # none, because `press-archaeology` ranks press facts and a birth is
+        # not one. Only warned: an author with no lifeEvents at all is a
+        # co-author or a contributor, not an unfinished wing.
+        life = a.get("lifeEvents") or []
+        born = str(a.get("born") or "")
+        if life and born and not any(str(e.get("date") or "") == born for e in life):
+            warn(rel(path), f"{a.get('id','?')}: no lifeEvent dated to born ({born}) - "
+                            "the timeline opens mid-life, with no birthplace")
     gpath = os.path.join(ROOT, "content", "events", "global.yaml")
     if os.path.exists(gpath):
         g = load(gpath) or {}
