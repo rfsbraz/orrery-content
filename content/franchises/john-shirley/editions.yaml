@@ -110,15 +110,13 @@
 # Silver Revolver, and Gurdjieff all have real, verified ISBNs below, drawn
 # from OpenLibrary and independent bookseller listings rather than ISFDB.
 #
-# TWO DATE DISCREPANCIES, NOT CORRECTED HERE (only editions.yaml is touched
-# by this file; both are left for whoever next reviews works.yaml):
-#   - Z-Boyz in the Robot Graveyard: works.yaml dates first publication to
-#     2012; the only ISBN found (IDW Publishing, 9781631400087) is
-#     catalogued at 2017, which may be a later collected printing of an
-#     originally serialized or digital-first 2012 release rather than a
-#     transcription error.
-#   - The Voice of the Burning House: works.yaml dates this 2021; the only
-#     ISBN found (Jackanapes Press, 9781956702125) is catalogued at 2023.
+# TWO EDITIONS POSTDATE THEIR WORK, AND BOTH ARE LATER PRINTINGS RATHER THAN
+# a wrong year in works.yaml. ISFDB lists "Z-Boyz in the Robot Graveyard
+# (2012) [C]" and "The Voice of the Burning House: The Poems of John Shirley
+# (2021)", which are the first-publication years works.yaml records; the only
+# ISBNs in existence for them are the IDW 2017 and Jackanapes 2023 printings
+# recorded below. First publication and the edition that carries an ISBN are
+# different facts, and the works file holds the first.
 #
 # THE FEVERISH STARS is published by Independent Legions Publishing, an
 # Italian small press (hence the 978-88 registrant prefix) that publishes
@@ -708,9 +706,10 @@
   publisher: IDW Publishing
   year: 2017
   note: >
-    The only ISBN found for this title; catalogued at 2017, five years
-    after works.yaml's stated first-publication year of 2012 (see the file
-    header - not corrected here, flagged in the PR).
+    A later printing, not the first edition, and the only ISBN that exists
+    for the title. ISFDB lists the collection as "Z-Boyz in the Robot
+    Graveyard (2012) [C]", which is the first-publication year works.yaml
+    records.
   sources:
     - "https://openlibrary.org/works/OL21078963W/editions.json"
 
@@ -870,9 +869,9 @@
   publisher: Jackanapes Press
   year: 2023
   note: >
-    OpenLibrary catalogues this edition at 2023, two years after
-    works.yaml's stated year of 2021 (see the file header - not corrected
-    here, flagged in the PR).
+    A later printing, not the first edition. ISFDB lists the collection at
+    2021, which is the first-publication year works.yaml records;
+    OpenLibrary carries only this 2023 Jackanapes printing.
   sources:
     - "https://openlibrary.org/works/OL36720929W/editions.json"
 
