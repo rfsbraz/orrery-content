@@ -159,6 +159,16 @@ anything about a living person's health, finances, family, addiction or legal
 trouble; never launder a citation; paywalled or dead means uncitable;
 listicles are not sources. On top of it:
 
+- **A rejection note names the source and the bar it failed, never the claim.**
+  You handle the categories most likely to fail the two-source test, so you are
+  the stage most likely to write a rejection note - and everything here is
+  public, comments and PR bodies and git history alike. Holding a claim out of
+  the data and then explaining the rejection in the claim's own words publishes
+  it anyway, under our name, permanently. Write "a single first-person telling,
+  held out under the two-source bar, and not to be added from that source
+  alone"; the next pass needs nothing more than that to leave it alone. A
+  self-disclosure is not an exemption. See CURATION §6 - this rule exists
+  because this stage broke it.
 - **Distinguish claim from fact.** "King has said he has no memory of writing
   *Cujo*" is reportable and true. "King does not remember writing *Cujo*" asserts
   something you cannot know. Attribute in the prose when the evidence is an
