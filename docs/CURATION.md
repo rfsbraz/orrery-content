@@ -77,7 +77,7 @@ never existed and a human had typed the file by hand?** "No usable cover
 exists: checked OL by title and by the author's 611-work sweep" passes. "The
 visual-metadata stage could not run this session" fails.
 
-Two ways this rule gets broken by comments that never use a banned word, both
+Three ways this rule gets broken by comments that never use a banned word, all
 caught in the wild:
 
 - **Addressing somebody.** A comment has no audience and no author. "A curator
@@ -85,6 +85,21 @@ caught in the wild:
   a thread this one missed" - all coordination wearing a data hat. State what
   is and is not in the file, and stop: *"Books he edited rather than wrote, so
   they sit outside a bibliography of his own work."*
+- **Restating a claim you rejected for being too thin to publish.** The list
+  above permits recording "a known weakness in a value", and that is exactly
+  how this one slips through: a stage holds an under-sourced claim about a
+  living person out of the data under §6's two-source bar, then writes what the
+  claim was into a comment explaining the rejection. **This repository is
+  public.** A rejection note that repeats the allegation publishes it as surely
+  as the field would have, adds our editorial framing to it, and puts it in git
+  history permanently - the rule is followed and its entire purpose defeated in
+  the same commit. So a rejection note names **the source and the bar it
+  failed, never the claim**: *"That 2026 essay carries further first-person
+  disclosures about his private life, each resting on that one telling alone;
+  they are held out under the two-source bar and must not be added from that
+  essay alone."* The next pass needs to know not to re-add it, which that
+  sentence achieves. It does not need to know what it was. (Caught on the John
+  Shirley wing, after the comment had already been pushed.)
 - **Narrating the research instead of the data.** "Not yet a finished audit",
   "this list was first built on one source and has since been checked against
   two", "that remains open". The reader does not care how many passes it took;
@@ -312,6 +327,18 @@ Density: the aura's job is to be sparse and load-bearing. Approximately 6-12
 worse. Ten well-chosen anchors beat forty items. **Two independent sources for
 anything about a living person's health, finances, family, addiction or legal
 trouble** - one source is a rumour with a URL.
+
+**And when it fails that bar, do not write down what it was.** Everything this
+pipeline produces is public: the content files, their comments, the PR bodies
+§7 asks for, and the git history of all three. Holding a claim out of the data
+and then explaining the rejection in the claim's own words publishes it anyway,
+under our name and permanently. Name the source and the bar it failed - "a
+single first-person telling, held out under the two-source bar, and not to be
+added from that source alone" - and stop there. That is enough for the next
+pass not to re-add it, which is the only job the note has. This applies with
+most force to exactly the categories listed above, and a self-disclosure is not
+an exemption: the person chose to tell it once, in their own framing, not to
+have it restated in ours as a permanent record.
 
 ## 7. The deliverable doctrine
 
