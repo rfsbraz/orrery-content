@@ -68,9 +68,20 @@ Two detectors, both cheap and both from git:
   right to redo it, and the fix is to run it first or to stop the first stage
   writing that field at all.
 - **Footprint violations**: a stage writing a field the footprint table gives to
-  another. Detect per commit:
+  another. **Map each commit to the stage that made it FIRST**, from the commit
+  subject, then test only the fields that stage does not own:
 
+      git log --oneline main..<branch>          # commit -> stage
       git show <sha> -- <file> | grep -E "^\+\s*(organisation|illustration_type|images_required|modifier):"
+
+  **The trap, and the first run walked straight into it: a stage writing its own
+  field is not a violation.** `art-rotation`'s commit is full of added
+  `organisation:` lines because that is precisely its job, and a grep run without
+  attribution reports it as the offender. Two commits in one wing were also
+  titled "compose the wing's visual layer" and "source the wing's visual layer" -
+  art-rotation and visual-metadata - so read the subject carefully rather than
+  matching on a word. A false accusation here costs a curator more than the
+  finding is worth.
 
   and the same shape for `theme.art`, `synopsis`, `canonTier`, `published`,
   `images`, `spoilerAfter`. **This is the highest-value detector in the file**,

@@ -188,7 +188,7 @@ errors are silent and green.
 | `visual-metadata` | sonnet | low | Mostly mechanical fetching, but a watermarked scrape or an omnibus cover passes every automated check. Cut effort, not tier. |
 | `editions` | sonnet | medium | Check digits are arithmetic; a valid-but-wrong ISBN is a reader's money. |
 | `translation` | sonnet | high | pt-PT register is subtle and this layer has shipped Brazilianisms before. |
-| `pipeline-audit` | haiku | medium | Arithmetic over a metrics table and `git show`, against a fixed detector list. It proposes rather than applies, so an error costs a curator one reading, not a wrong wing. Capped at 15 tool calls - a stage that hunts waste must not be waste. |
+| `pipeline-audit` | sonnet | medium | Arithmetic over a metrics table is easy; attributing a commit to the stage that made it is not, and haiku failed exactly there on the first run - it read art-rotation's own commit as a footprint violation and invented a second offender. The reasoning is cheap, the forensics are not. Still capped at 15 tool calls: a stage that hunts waste must not be waste. |
 | `whats-new` | sonnet | medium | Bounded discovery, but a missed death or a missed book silently ages the whole wing. |
 | `wing-audit` | opus | xhigh | The critic. Its entire value is catching what every other stage missed. |
 
