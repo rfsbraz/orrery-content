@@ -28,15 +28,105 @@ themePreset: xerox-punk
 # here crosses between the subseries (the tie-ins are each their own closed
 # licensed property; the two pseudonymous series are unrelated pulp lines),
 # so it is left auto rather than forced off, and will simply stay dark. No
-# achievements yet (none earned). No startHere recorded: a catalogue this
-# wide and this genre-mixed (cyberpunk, horror, tie-ins, two pseudonymous
-# pulp series, Westerns) needs a received, citable entry-point
-# recommendation before one is asserted, and none is recorded here yet.
+# achievements yet (none earned).
 features:
   river: auto
   wizard: auto
   companion: auto
   editions: auto
+
+# startHere: no author FAQ and no canonical community "start here" guide
+# exists for a catalogue this genre-mixed, so these four paths are grounded
+# in what is citable rather than in a single received consensus - each path's
+# sourcing comment carries its citation. The famous-book trap applies twice
+# over on this shelf: Wetbones and Black Butterflies are his best-known
+# horror by reputation, but both are extreme splatterpunk (Clive Barker's own
+# cover line for Wetbones calls it a book that confronts the reader with
+# "marvels and horror in equal measure") and neither was found recommended
+# anywhere as a newcomer's first Shirley book, so neither is offered here.
+startHere:
+  paths:
+    # Source: Wikipedia's John Shirley article and john-shirley.com/about.html
+    # both credit William Gibson's introduction to a later edition of this
+    # novel with naming it a direct influence on his own writing; Gibson
+    # discusses the same introduction in his 2014 Vice interview ("Piper at
+    # the Gates of Hell").
+    - id: cyberpunk-origin
+      title: Where cyberpunk began
+      description: >
+        City Come A-Walkin' (1980) predates Neuromancer by three years.
+        William Gibson's own introduction to a later edition names it a
+        direct influence on his writing, which makes this the shortest,
+        least demanding door into the vein Shirley is most remembered for.
+      workIds:
+        - john-shirley/city-come-a-walkin
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        It is an early book, rougher-edged than his later prose, and its
+        surreal city-as-character premise is a narrower slice of this shelf
+        than its reputation suggests - most of the other eighty-odd books
+        are horror, licensed tie-ins or Westerns, not this.
+
+    # Source: sf-encyclopedia.com's John Shirley entry (SFE, ed. John Clute)
+    # names Living Shadows, alongside Darkness Divided and In Extremis, as
+    # collections that "usefully survey his prolific career as a whole"; a
+    # January 2008 New York Times review (cited on the work itself) called
+    # its stories "rigorously horrifying work."
+    - id: short-fiction-sampler
+      title: A sampler of his range
+      description: >
+        Living Shadows (2007) gathers stories a New York Times review called
+        "rigorously horrifying," drawn from across three decades of his
+        short fiction - horror, satire and cyberpunk in a few dozen pages
+        at a time.
+      workIds:
+        - john-shirley/living-shadows
+      fit:
+        experience: [new, returning]
+        commitment: [taste]
+      note: >
+        It skips his novels, his cyberpunk landmarks and his tie-in work
+        entirely, and it still leans horror - a taste of his range in short
+        fiction, not a map of the whole shelf.
+
+    # Source: sf-encyclopedia.com's John Shirley entry: "he created his
+    # finest sf work in the Cyberpunk-coloured Song Called Youth trilogy."
+    - id: song-called-youth-arc
+      title: The signature cyberpunk arc
+      description: >
+        A Song Called Youth - Eclipse (1985), Eclipse Penumbra (1988) and
+        Eclipse Corona (1990) - follows a resistance movement fighting a
+        neofascist regime through a near-future Europe after a third world
+        war. The Science Fiction Encyclopedia calls it his finest science
+        fiction work.
+      workIds:
+        - john-shirley/eclipse
+        - john-shirley/eclipse-penumbra
+        - john-shirley/eclipse-corona
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        Three books before the arc pays off, and its Cold War-flavoured
+        politics show their age more than his later work does - his most
+        acclaimed sequence, but not his easiest first read.
+
+    - id: everything
+      title: Every published word
+      description: >
+        All eighty-plus works on this shelf, from his 1979 debut to his most
+        recent Western, in the order they appeared - cyberpunk, splatterpunk
+        horror, three decades of licensed tie-ins, two pulp pseudonyms and
+        all.
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+      note: >
+        No curation here: genres and pseudonyms that never otherwise share a
+        page sit side by side, exactly as they were published.
 
 globalEvents:
   include:
