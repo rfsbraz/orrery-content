@@ -3,6 +3,82 @@ name: pipeline-audit
 description: Audit the RUN rather than the wing - what each stage cost in tokens, calls and wall clock, which work was done twice, which checks were redundant, and which stage wrote a field it does not own. Produces a prioritised list of proposed edits to the stage skills and to /author, each with its evidence and its expected saving. Use as the last stage of /author, after wing-audit, or on any run whose cost surprised someone.
 ---
 
+## The sanctuary rule (no exceptions, including for this stage)
+
+**A content YAML file is a sanctuary for the author and the work.** A comment in
+one explains the data sitting next to it: the source a value came from, why this
+value and not the rival one, why a slot is deliberately empty and what was
+checked to establish that, a trap the next reader would otherwise fall into.
+That is the whole permitted range.
+
+A comment never mentions the curating. Not the stage, agent, pass, run, budget
+or tooling. Not addressing anyone ("a curator call", "left to the curator",
+"flag if a future pass finds..."). Not narrating the research instead of the
+data ("not yet a finished audit", "first built on one source, since checked
+against two", "that remains open") - collapse those to what is known, in the
+present tense: "publisher and year are corroborated by two independent sources;
+the 2018 title rests on one." The weakness survives the edit. The diary does
+not.
+
+The test: **would this comment still be true and useful if the pipeline had
+never existed and a human had typed the file by hand?** Process belongs in the
+handoff, the PR body and git history. `docs/CURATION.md` §2 is the long form;
+`validate.py` scans content comments and warns.
+
+## Cheap tools before expensive habits (this stage pays for its own calls)
+
+Every tool call re-sends your whole context, so what a stage costs is roughly
+its context multiplied by how many calls it makes. One wing's editions stage
+made 144 sequential fetches; the pages were not the expense, fetching them one
+at a time was. Three habits, before you start:
+
+- **Editions and visual-metadata: reach for `scripts/metadata/lookup.py` FIRST.**
+  For those two stages the whole fetching half is already one tool call:
+  `python scripts/metadata/lookup.py <slug> --author "<name>"` sweeps the
+  registered providers and prints a TSV of edition and cover candidates for the
+  entire wing (`--verify-isbns` checks an existing `editions.yaml`,
+  `--check-covers` HEADs every cover, `--markets no,en,pt` widens the search,
+  `--json` when something parses it). Measured on the Jo Nesbo wing it replaced
+  ~360 sequential fetches (~880k tokens, 57 min) with ~40 HTTP requests inside
+  one call. It does **not** replace the stage's judgement - which market, is
+  this an omnibus, is this a title-page scan - and every real catch on the wings
+  built so far was one of those, not a lookup. So run it, then judge the table.
+  A source it does not cover yet is one provider class in
+  `scripts/metadata/providers.py`; add it there rather than hand-fetching around
+  it. The rest of this section still applies to the verification fetches the
+  table sends you back for.
+- **Every other stage: fetch in batches, not one by one.** `python scripts/fetch.py URL [URL...]`
+  takes many URLs in a single call, caches to `.cache/fetch/` (so a URL an
+  earlier stage already paid for is free), sends the browser User-Agent that
+  portoeditora.pt, infopedia.pt, observador.pt and the BNP catalogue require,
+  and prints a bounded extract rather than a whole page. Use `--grep 'ISBN|1a ed'`
+  to pull just what you need, `--check` for link sweeps, `--max-chars` to tighten.
+  Collect the URLs you want, then make one call. **web.archive.org rate-limits
+  and starts refusing connections at the default 6 workers** - pass
+  `--workers 2` for archive-heavy batches rather than losing the batch.
+- **Orient with the digest before reading the wing.**
+  `python scripts/wing_digest.py <slug> --for <your stage>` renders a finished
+  wing in ~2.4KB where the YAML is ~98KB, and answers "which works still lack a
+  cover, an edition, a synopsis, an era" directly (`--missing cover`). Then read
+  in full the entries you are actually going to edit - the digest orients, it
+  never substitutes for reading what you edit.
+- **Scope every check to your own wing.** You are building one author; a report
+  covering nine buries your own numbers, costs context for nothing, and tempts
+  you to tune against a neighbour's figures or "fix" a wing nobody asked you to
+  touch. Pass the slug:
+  `validate.py --slug <slug>` (checking stays catalogue-wide - a broken
+  reference crosses wings - only the warning list narrows),
+  `aura_density.py <slug>`, `wing_digest.py <slug>`, `asset_audit.py <slug>`,
+  `stage_plan.py <slug>`. `event_density.py` has no slug on purpose: it measures
+  the shared `global.yaml` budget, which is catalogue-wide by nature.
+- **Build the URL instead of searching for it.** Publisher product pages and
+  catalogue records follow patterns. A search whose only output is a URL you
+  could have constructed costs thousands of tokens for nothing. Search when you
+  need to discover *that* something exists; fetch when you know where it is.
+
+None of this licenses thinner research. It buys the same evidence for less, so
+that the budget goes on judgement instead of on transport.
+
 # pipeline-audit
 
 `wing-audit` asks whether the **wing** is right. This one asks whether the
@@ -20,7 +96,13 @@ you are auditing their *effects*, which are in the git history and the metrics.
 
 ## Do not become the thing you are hunting
 
-This stage exists to remove redundant work, so it is held to its own standard:
+This stage exists to remove redundant work, so it is held to its own standard.
+**The two blocks above are synced verbatim into every skill and this one is no
+exception** - the sanctuary rule binds you completely, but the fetching advice in
+"Cheap tools" is written for stages that gather from the web, and you do not
+gather. Where it and this section disagree about calls or fetching, this section
+wins; the batching lesson underneath it is still the thing you are auditing
+other stages against.
 
 - **Budget: 15 tool calls.** If you cannot say it in 15, say what you found and
   what you could not reach.
