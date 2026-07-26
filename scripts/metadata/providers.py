@@ -241,6 +241,17 @@ class GoogleBooks(Provider):
         return out
 
 
+def _nb_lang(languages):
+    """First language code from nb.no, which returns [{"code": "eng"}].
+
+    Tolerates the plain-string shape too, in case the API is ever normalised.
+    """
+    first = (languages or [None])[0]
+    if isinstance(first, dict):
+        return first.get("code")
+    return first
+
+
 class Nasjonalbiblioteket(Provider):
     """The National Library of Norway. Legal deposit, so its silence means something.
 
@@ -263,7 +274,12 @@ class Nasjonalbiblioteket(Provider):
 
     def by_author(self, author: str, limit: int = 100) -> list[MetaRecord]:
         q = urllib.parse.quote(f'creator:"{author}"')
-        url = f"{self.BASE}?q={q}&size={min(limit, 100)}&filter=mediatype:bøker"
+        # "bøker" must be percent-encoded: http.client encodes the request line
+        # as ASCII, so a literal ø here raises UnicodeEncodeError and takes the
+        # whole sweep down - including for authors who have no Norwegian
+        # editions at all, since every provider is queried before filtering.
+        mediatype = urllib.parse.quote("bøker")
+        url = f"{self.BASE}?q={q}&size={min(limit, 100)}&filter=mediatype:{mediatype}"
         data = get_json(url, interval=self.interval) or {}
         out = []
         embedded = (data.get("_embedded") or {}).get("items", [])
@@ -275,7 +291,10 @@ class Nasjonalbiblioteket(Provider):
                 source_url=((it.get("_links") or {}).get("self") or {}).get("href"),
                 authors=[c for c in (md.get("creators") or [])],
                 published=str((md.get("originInfo") or {}).get("issued") or "") or None,
-                language=(md.get("languages") or [None])[0],
+                # nb.no returns languages as [{"code": "eng"}], not ["eng"],
+                # and every caller expects a plain string - lookup.py does
+                # rec.language.lower() and dies on a dict.
+                language=_nb_lang(md.get("languages")),
                 isbn13=next((i for i in (md.get("isbns") or []) if len(str(i).replace("-", "")) == 13), None),
                 identifiers={"nb": it.get("id")},
                 raw=it,
