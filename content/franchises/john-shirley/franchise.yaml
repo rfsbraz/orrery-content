@@ -1,0 +1,166 @@
+# A wing spans an author's complete published work, always, and John
+# Shirley's is unusually wide even by that standard: pioneering cyberpunk,
+# splatterpunk-associated horror, three
+# decades of licensed tie-in novels, two personal pulp pseudonyms, two
+# one-off ghostwriting jobs under someone else's house byline, and, from
+# 2022, an original Western series. All of it sits in this one wing as
+# subseries rather than as separate franchises, per the same reasoning the
+# Jim Butcher and Stephen King wings use.
+id: john-shirley
+name: John Shirley
+kind: author
+description: >
+  The complete published work of John Shirley (born 1953): the pioneering
+  cyberpunk of [[work:john-shirley/city-come-a-walkin|City Come A-Walkin']]
+  and the A Song Called Youth trilogy (1985-1990), the visceral horror that
+  helped define splatterpunk ([[work:john-shirley/wetbones|Wetbones]], the
+  Bram Stoker Award-winning collection
+  [[work:john-shirley/black-butterflies|Black Butterflies]]), three decades
+  of licensed tie-in novels (BioShock, Halo, Borderlands, Predator, Batman,
+  Hellblazer), two 1980s men's-adventure pseudonyms (Traveler as D. B.
+  Drumm, The Specialist as John Cutter), and, from 2022, the Spur
+  Award-winning Cleve Trewe Westerns.
+authorIds: [john-shirley]
+themePreset: xerox-punk
+
+images:
+  header: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Downtown_Portland_Oregon_at_Night_%2818103693355%29.jpg/1920px-Downtown_Portland_Oregon_at_Night_%2818103693355%29.jpg"
+  headerCredit: "Tony Webster, CC BY 2.0"
+  headerSource: "https://commons.wikimedia.org/wiki/File:Downtown_Portland_Oregon_at_Night_(18103693355).jpg"
+  # A night-time downtown Portland street rather than a skyline postcard or
+  # any single adaptation's still, matching theme.yaml's art direction
+  # (cheap fluorescent tubes and all-night neon, a working-class disposable-
+  # media world) and the author's own bio, which places his upbringing and
+  # punk years in and around Portland.
+
+# Capabilities auto-detect from the data (docs/SCHEMA.md). This wing earns a
+# shelf and a derived order across 80+ works, but not `connections`: nothing
+# here crosses between the subseries (the tie-ins are each their own closed
+# licensed property; the two pseudonymous series are unrelated pulp lines),
+# so it is left auto rather than forced off, and will simply stay dark. No
+# achievements yet (none earned).
+features:
+  river: auto
+  wizard: auto
+  companion: auto
+  editions: auto
+
+# startHere: no author FAQ and no canonical community "start here" guide
+# exists for a catalogue this genre-mixed, so these four paths are grounded
+# in what is citable rather than in a single received consensus - each path's
+# sourcing comment carries its citation. The famous-book trap applies twice
+# over on this shelf: Wetbones and Black Butterflies are his best-known
+# horror by reputation, but both are extreme splatterpunk (Clive Barker's own
+# cover line for Wetbones calls it a book that confronts the reader with
+# "marvels and horror in equal measure") and neither was found recommended
+# anywhere as a newcomer's first Shirley book, so neither is offered here.
+startHere:
+  paths:
+    # Source: Wikipedia's John Shirley article and john-shirley.com/about.html
+    # both credit William Gibson's introduction to a later edition of this
+    # novel with naming it a direct influence on his own writing; Gibson
+    # discusses the same introduction in his 2014 Vice interview ("Piper at
+    # the Gates of Hell").
+    - id: cyberpunk-origin
+      title: Where cyberpunk began
+      description: >
+        City Come A-Walkin' (1980) predates Neuromancer by three years.
+        William Gibson's own introduction to a later edition names it a
+        direct influence on his writing, which makes this the shortest,
+        least demanding door into the vein Shirley is most remembered for.
+      workIds:
+        - john-shirley/city-come-a-walkin
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        It is an early book, rougher-edged than his later prose, and its
+        surreal city-as-character premise is a narrower slice of this shelf
+        than its reputation suggests - most of the other eighty-odd books
+        are horror, licensed tie-ins or Westerns, not this.
+
+    # Source: sf-encyclopedia.com's John Shirley entry (SFE, ed. John Clute)
+    # names Living Shadows, alongside Darkness Divided and In Extremis, as
+    # collections that "usefully survey his prolific career as a whole"; a
+    # January 2008 New York Times review (cited on the work itself) called
+    # its stories "rigorously horrifying work."
+    - id: short-fiction-sampler
+      title: A sampler of his range
+      description: >
+        Living Shadows (2007) gathers stories a New York Times review called
+        "rigorously horrifying," drawn from across three decades of his
+        short fiction - horror, satire and cyberpunk in a few dozen pages
+        at a time.
+      workIds:
+        - john-shirley/living-shadows
+      fit:
+        experience: [new, returning]
+        commitment: [taste]
+      note: >
+        It skips his novels, his cyberpunk landmarks and his tie-in work
+        entirely, and it still leans horror - a taste of his range in short
+        fiction, not a map of the whole shelf.
+
+    # Source: sf-encyclopedia.com's John Shirley entry: "he created his
+    # finest sf work in the Cyberpunk-coloured Song Called Youth trilogy."
+    - id: song-called-youth-arc
+      title: The signature cyberpunk arc
+      description: >
+        A Song Called Youth - Eclipse (1985), Eclipse Penumbra (1988) and
+        Eclipse Corona (1990) - follows a resistance movement fighting a
+        neofascist regime through a near-future Europe after a third world
+        war. The Science Fiction Encyclopedia calls it his finest science
+        fiction work.
+      workIds:
+        - john-shirley/eclipse
+        - john-shirley/eclipse-penumbra
+        - john-shirley/eclipse-corona
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        Three books before the arc pays off, and its Cold War-flavoured
+        politics show their age more than his later work does - his most
+        acclaimed sequence, but not his easiest first read.
+
+    - id: everything
+      title: Every published word
+      description: >
+        All eighty-plus works on this shelf, from his 1979 debut to his most
+        recent Western, in the order they appeared - cyberpunk, splatterpunk
+        horror, three decades of licensed tie-ins, two pulp pseudonyms and
+        all.
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+      note: >
+        No curation here: genres and pseudonyms that never otherwise share a
+        page sit side by side, exactly as they were published.
+
+globalEvents:
+  include:
+    - lady-chatterley-trial-1960  # The 1960 verdict freed publishers to print explicit content; Shirley's foundational splatterpunk and cyberpunk directly inherit those freedoms for graphic violence and sexuality
+  exclude:
+    - sept-11-2001  # Lived through it; his post-2001 tie-in work (Halo, BioShock) was set in established franchises by other authors, not his own creative response to 9/11
+    - financial-crisis-2008  # No evidence this economic upheaval reached his work; his cyberpunk addresses power structures, not economic precarity specifically
+    - covid-19-pandemic-2020  # No evidence pandemic themes appear in his work; Western series begins 2022 post-pandemic
+    - world-war-i-1914  # Before his birth (1953)
+    - world-war-ii-1939  # Before his birth
+    - pulp-magazines-1926  # Before his birth
+    - penguin-paperback-1935  # Before his birth; mass-market paperback was already established by his 1979 debut
+    - armed-services-editions-1943  # Before his birth
+    - fantasy-paperback-boom-1965  # Before his birth; Shirley is not primarily a fantasy author and cyberpunk developed through different market forces
+    - carnation-revolution-1974  # American author; Portuguese censorship removal does not reach his work
+    - chain-bookshop-1982  # Retail distribution change does not alter his work or how it reads
+    - online-bookselling-1995  # Backlist availability does not change his writing
+    - ebook-and-self-publishing-2007  # He continued with traditional publishers; does not change his work
+    - prestige-fantasy-adaptation-2011  # Game of Thrones cultural shift toward fantasy; Shirley is not primarily a fantasy author; his SF and Western work unaffected
+    - booktok-2020  # BookTok elevated YA and romance genres; does not reach his work
+    - portugal-bailout-2011  # American author; Portuguese economic crisis does not reach his work
+
+sources:
+  - https://en.wikipedia.org/wiki/John_Shirley
+  - https://www.isfdb.org/cgi-bin/ea.cgi?John_Shirley
+  - https://www.john-shirley.com/about.html
+  - https://www.john-shirley.com/books

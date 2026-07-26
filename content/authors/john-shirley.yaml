@@ -1,0 +1,158 @@
+# Global author entity. Referenced by authorIds/withAuthorIds from
+# content/franchises/john-shirley/ and, for the Mark Tremonti collaboration,
+# from content/authors/mark-tremonti.yaml. Author-LIFE events live here;
+# franchise-specific events belong in the franchise's own events.yaml.
+#
+# Living author (born 1953): the birth is the one lifeEvent the aura
+# standard treats as non-optional regardless of ranking (docs/CURATION.md
+# SS6). His father's death (age 10) is corroborated by two independent
+# tellings, eleven years apart (a 2016 In-Sight Publishing interview and a
+# 2026 Boing Boing essay), and his 1992 marriage by his own account of it
+# alongside the marriage date Wikipedia's infobox already carried, so both
+# are recorded below. That same 2026 essay carries further first-person
+# disclosures about his health and private life, each resting on that one
+# telling alone. They are held out under CURATION SS6's two-source bar for
+# a living person's health and family, and must not be added from that
+# essay alone. The substance is deliberately not restated here: this repo
+# is public, and a rejection note that repeats an under-sourced claim about
+# a living person publishes it just as surely as the field would have.
+id: john-shirley
+name: John Shirley
+aka: []
+# Wikipedia and the Gale Contemporary Authors record (from the St. James
+# Guide to Horror, Ghost and Gothic Writers, 1998) both give 10 February
+# 1953. The SF Encyclopedia gives 1954; it is outvoted here, and the
+# disagreement is recorded so it is not silently flipped later.
+born: 1953-02-10
+died: null
+bio: >
+  American novelist, short-story writer, screenwriter and musician. Born in
+  Houston, Texas, and raised largely in and around Portland, Oregon. Over
+  more than 80 books he has moved between pioneering cyberpunk
+  ([[work:john-shirley/city-come-a-walkin|City Come A-Walkin']], the
+  [[franchise:john-shirley|A Song Called Youth]] trilogy), visceral
+  splatterpunk-associated horror ([[work:john-shirley/wetbones|Wetbones]],
+  the Bram Stoker Award-winning collection
+  [[work:john-shirley/black-butterflies|Black Butterflies]]), a long run of
+  licensed tie-in novels, and, from 2022, the Spur Award-winning Cleve Trewe
+  western series. He was the initial screenwriter on the 1994 film The Crow,
+  before David Schow reworked the script, and has written 23 song lyrics
+  recorded by Blue Öyster Cult while fronting his own punk and post-punk
+  bands (Sado-Nation, Obsession, the Panther Moderns, currently the Screaming
+  Geezers). He married Michelina "Micky" Shirley in 1992; they have three
+  adult sons. He lives in Vancouver, Washington.
+
+# Portrait: a bookstore signing, cropped tight to head and shoulders, already
+# in a 2:3-ish ratio with no other crop needed. Licence read from the file's
+# own extmetadata: CC BY-SA 3.0, own work, credited to the photographer
+# (Commons username Jasonspsyche), no personality restriction recorded.
+images:
+  portrait: "https://upload.wikimedia.org/wikipedia/commons/1/14/John_Shirley_%28cropped%29.jpg"
+  portraitCredit: "Sunni Brock, CC BY-SA 3.0"
+  portraitSource: "https://commons.wikimedia.org/wiki/File:John_Shirley_(cropped).jpg"
+
+pseudonyms:
+  - name: D. B. Drumm
+    note: >
+      House pseudonym for the post-apocalyptic men's-adventure series
+      Traveler, shared across its run with other writers (its creator Ed
+      Naha among them, per ISFDB's series record). Shirley wrote six of its
+      volumes (1984-1986); the other numbered entries are not his and are
+      not part of this bibliography.
+  - name: John Cutter
+    note: >
+      Pseudonym for his own 11-volume mercenary-adventure series The
+      Specialist (1984-1985); unlike D. B. Drumm, ISFDB records every
+      numbered entry as his alone.
+  - name: Ralph Compton
+    note: >
+      Not a personal pen name but the continuing house byline of the
+      Western writer Ralph Compton (d. 1998), used posthumously by a
+      rotating set of ghostwriters for his estate. Shirley wrote two of
+      these novels (2020): Prairie Fire, Kansas and Broken Rider.
+lifeEvents:
+  - id: john-shirley-born-1953
+    organisation: full-bleed-vista
+    illustration_type: establishing-landscape
+    images_required: 1
+    date: 1953-02-10
+    title: Born in Houston, Texas
+    impact: low
+    description: >
+      Grows up largely in and around Portland, Oregon, the setting his later
+      punk-scene years and much of his contemporary fiction return to.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/John_Shirley
+      - https://www.isfdb.org/cgi-bin/ea.cgi?John_Shirley
+  - id: john-shirley-clarion-1972
+    organisation: beside
+    illustration_type: workplace-workshop
+    images_required: 1
+    date: 1972
+    title: A dead father's Social Security check pays his way to Clarion
+    impact: high
+    description: >
+      His father, abandoned as a child to a Catholic orphanage and worn down
+      by ulcers and depression, dies of meningitis when Shirley is ten; the
+      family had just settled in Nevada looking for steadier ground. Nine
+      years later a small break from that death's Social Security survivor
+      money funds his six weeks at the Clarion Writers Workshop in Seattle,
+      where his childhood hero Harlan Ellison is teaching. Stoned on LSD,
+      nineteen-year-old Shirley climbs a tree and drops onto Ellison as he
+      passes below; Ellison is furious, then amused, then his advocate -
+      reads his fiction, calls him talented, and places one of his stories in
+      the Clarion III anthology, his first professional sale. Ellison stays
+      a mentor and something like the father figure he lost.
+    spoilerAfter: null
+    sources:
+      - https://in-sightpublishing.com/2023/02/03/an-interview-with-john-shirley-part-one-2/
+      - https://boingboing.net/2026/02/25/john-shirleys-guide-to-wrecking-your-career-in-science-fiction.html
+      - https://www.vice.com/en/article/piper-at-the-gates-of-hell-an-interview-with-cyberpunk-legend-john-shirley/
+  - id: john-shirley-sado-nation-1978
+    organisation: artifact-spread
+    illustration_type: document-facsimile
+    images_required: 1
+    date: 1978
+    title: Fronts Sado-Nation, and William Gibson comes to a show
+    impact: med
+    description: >
+      Shirley fronts the Portland punk band Sado-Nation, living in a
+      ramshackle group house that doubles as the scene's clubhouse. William
+      Gibson - not yet published, and unsure whether to keep trying - comes
+      to see the band play and photographs Shirley onstage; the picture runs
+      in Heavy Metal magazine. The friendship that follows is the one Gibson
+      later credits with pushing him back toward writing fiction at all,
+      the root of the "Cyberpunk's Patient Zero" tribute he pays Shirley in
+      1996 (see [[franchise:john-shirley|the 1996 reissue introduction]]).
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/John_Shirley
+      - https://www.vice.com/en/article/piper-at-the-gates-of-hell-an-interview-with-cyberpunk-legend-john-shirley/
+  - id: john-shirley-marriage-1992
+    organisation: beside
+    illustration_type: relationship-tableau
+    images_required: 1
+    date: 1992
+    title: A fifth marriage, and the chaos ends
+    impact: high
+    description: >
+      Marries Michelina "Micky" Shirley - his fifth marriage, after four he
+      has since called his own failures, made during what an independent
+      account from the same period describes as years of "drugs, writing,
+      and women" spent chasing "the day-to-day struggle to live drug-free
+      and accept adult responsibilities." Micky becomes his editor and
+      partner; the marriage holds, still standing more than three decades
+      later. It lands at the hinge between the itinerant, chaotic writer of
+      the 1980s and the disciplined, enormously prolific multi-genre career
+      - tie-in novels, screenwriting, a second wind in horror - that follows.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/John_Shirley
+      - https://boingboing.net/2026/02/25/john-shirleys-guide-to-wrecking-your-career-in-science-fiction.html
+      - https://cyberartsweb.org/cpace/scifi/cyberbib/Essays/Shirley-b.htm
+sources:
+  - https://en.wikipedia.org/wiki/John_Shirley
+  - https://www.isfdb.org/cgi-bin/ea.cgi?John_Shirley
+  - https://www.john-shirley.com/about.html
+  - https://www.john-shirley.com/books
