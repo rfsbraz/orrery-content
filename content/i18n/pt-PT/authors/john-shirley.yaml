@@ -1,0 +1,77 @@
+# Overlay pt-PT do autor: bio + prosa dos lifeEvents.
+# Os lifeEvents ficam aninhados sob o autor e são fundidos por id (ver
+# SCHEMA.md, "Nested lists merge by id"). Levam `title` + `description`, que
+# são prosa; datas, impact e sources nunca se traduzem, nem o nome do autor.
+# Não existe edição portuguesa de nenhuma obra de Shirley (ver
+# content/franchises/john-shirley/editions.yaml), pelo que as referências a
+# obras mantêm sempre o título original inglês.
+- id: john-shirley
+  bio: >
+    Romancista, contista, argumentista e músico norte-americano. Nasceu em
+    Houston, Texas, e cresceu sobretudo em Portland, Oregon, e arredores. Ao
+    longo de mais de 80 livros, moveu-se entre o cyberpunk pioneiro
+    ([[work:john-shirley/city-come-a-walkin|City Come A-Walkin']], a
+    trilogia [[franchise:john-shirley|A Song Called Youth]]), o terror
+    visceral associado ao splatterpunk
+    ([[work:john-shirley/wetbones|Wetbones]], a coletânea vencedora do Bram
+    Stoker Award [[work:john-shirley/black-butterflies|Black
+    Butterflies]]), uma longa série de romances licenciados de adaptação, e,
+    a partir de 2022, a série Western Cleve Trewe, vencedora do Spur Award.
+    Foi o argumentista inicial do filme de 1994 The Crow, antes de David
+    Schow reformular o argumento, e escreveu 23 letras de canções gravadas
+    pelos Blue Öyster Cult, enquanto liderava as suas próprias bandas de
+    punk e pós-punk (Sado-Nation, Obsession, os Panther Moderns, atualmente
+    os Screaming Geezers). Casou com Michelina "Micky" Shirley em 1992;
+    têm três filhos adultos. Vive em Vancouver, Washington.
+  lifeEvents:
+    - id: john-shirley-born-1953
+      title: Nasce em Houston, Texas
+      description: >
+        Cresce sobretudo em Portland, Oregon, e arredores, o cenário a que
+        regressam mais tarde os seus anos na cena punk e grande parte da
+        sua ficção contemporânea.
+
+    - id: john-shirley-clarion-1972
+      title: Um cheque da Segurança Social de um pai morto paga-lhe a
+        viagem até Clarion
+      description: >
+        O pai, abandonado em criança num orfanato católico e desgastado por
+        úlceras e depressão, morre de meningite quando Shirley tem dez
+        anos; a família tinha acabado de se instalar no Nevada, à procura
+        de terreno mais firme. Nove anos depois, uma pequena verba dessa
+        pensão de sobrevivência da Segurança Social financia-lhe as seis
+        semanas no Clarion Writers Workshop em Seattle, onde o seu herói de
+        infância Harlan Ellison é professor. Sob o efeito de LSD, Shirley,
+        com dezanove anos, trepa a uma árvore e deixa-se cair em cima de
+        Ellison quando este passa por baixo; Ellison fica furioso, depois
+        divertido, depois seu defensor - lê-lhe a ficção, chama-lhe
+        talentoso, e coloca um dos seus contos na antologia Clarion III, a
+        sua primeira venda profissional. Ellison mantém-se mentor e uma
+        espécie de figura paterna que substitui a que perdeu.
+
+    - id: john-shirley-sado-nation-1978
+      title: Lidera os Sado-Nation, e William Gibson vai a um concerto
+      description: >
+        Shirley lidera a banda punk de Portland Sado-Nation, vivendo numa
+        casa comunitária degradada que também serve de sede à cena local.
+        William Gibson - ainda por publicar, e sem certezas se deveria
+        continuar a tentar - vai ver a banda tocar e fotografa Shirley em
+        palco; a fotografia sai na revista Heavy Metal. A amizade que se
+        segue é aquela a que Gibson mais tarde atribui o mérito de o ter
+        empurrado de volta para a escrita de ficção, a raiz do tributo
+        "Paciente Zero do Cyberpunk" que presta a Shirley em 1996 (ver
+        [[franchise:john-shirley|a introdução da reedição de 1996]]).
+
+    - id: john-shirley-marriage-1992
+      title: Um quinto casamento, e o caos termina
+      description: >
+        Casa com Michelina "Micky" Shirley - o seu quinto casamento, depois
+        de quatro que desde então já chamou fracassos seus, ao longo de
+        anos que um relato independente da mesma época descreve como anos
+        de "drogas, escrita e mulheres" gastos na "luta diária para viver
+        sem drogas e aceitar responsabilidades de adulto". Micky torna-se
+        sua editora e parceira; o casamento mantém-se firme, mais de três
+        décadas depois. Situa-se na charneira entre o escritor itinerante e
+        caótico dos anos 1980 e a carreira disciplinada, enormemente
+        prolífica e multigénero - romances licenciados, argumentos, um
+        segundo fôlego no terror - que se segue.
