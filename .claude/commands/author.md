@@ -95,6 +95,7 @@ stages fire. Before launching anything (and after the draft PR is open):
 | works were added, covers/editions coverage is stale against the work list, or slots are empty with no documented reason | `visual-metadata`, `editions` |
 | any prose was added or changed (runs last) | `translation` (per locale) |
 | a full run; or any run that touched three or more layers | `wing-audit` |
+| **always, last, after `wing-audit`** | `pipeline-audit` (read-only; audits the run's cost, not the wing) |
 
 `--stages` overrides the plan; say in the report that it did.
 
@@ -105,6 +106,19 @@ missing input into invented canon that looks identical to researched canon. If
 web search or an archive is unavailable, skip the stage, record why in the run
 report, and leave the wing honestly flagged. Never leave the record of the skip
 in the content files themselves (see the comment policy in CURATION.md).
+
+## Record what each stage cost, as it finishes
+
+You are the only party that sees every stage complete, and **a subagent cannot
+read a sibling's transcript** - so if you do not write the numbers down as they
+arrive, nobody can ever audit what this run cost. Keep a running table and hand
+it to `pipeline-audit` at the end:
+
+    stage | tokens | tool_calls | duration_ms | model | effort
+
+It costs you one line per stage. Without it the final stage can still find
+duplicated work and footprint violations from git, but it cannot tell you where
+the money went, which is the half that actually changes a skill.
 
 ## The two rules that matter most
 
@@ -139,6 +153,7 @@ Parallel groups are parallel *because* their members touch different files.
 | `translation` | `content/i18n/<locale>/**` only |
 | `whats-new` | read-only, plus repairing a rotted source URL in place |
 | `wing-audit` | read-only, plus trivial mechanical fixes |
+| `pipeline-audit` | read-only; appends one row to `docs/pipeline-runs.md` |
 
 Collisions that are easy to miss: **`event-resonance` and `reading-orders` both
 write `franchise.yaml`** (run them sequentially, resonance first - startHere
@@ -173,6 +188,7 @@ errors are silent and green.
 | `visual-metadata` | sonnet | low | Mostly mechanical fetching, but a watermarked scrape or an omnibus cover passes every automated check. Cut effort, not tier. |
 | `editions` | sonnet | medium | Check digits are arithmetic; a valid-but-wrong ISBN is a reader's money. |
 | `translation` | sonnet | high | pt-PT register is subtle and this layer has shipped Brazilianisms before. |
+| `pipeline-audit` | sonnet | medium | Arithmetic over a metrics table is easy; attributing a commit to the stage that made it is not, and haiku failed exactly there on the first run - it read art-rotation's own commit as a footprint violation and invented a second offender. The reasoning is cheap, the forensics are not. Still capped at 15 tool calls: a stage that hunts waste must not be waste. |
 | `whats-new` | sonnet | medium | Bounded discovery, but a missed death or a missed book silently ages the whole wing. |
 | `wing-audit` | opus | xhigh | The critic. Its entire value is catching what every other stage missed. |
 
