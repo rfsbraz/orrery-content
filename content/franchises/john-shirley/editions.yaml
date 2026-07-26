@@ -1,0 +1,1121 @@
+# Editions of John Shirley: 85 English (en) editions over 82 of 84 works.
+# No pt-PT (or any other non-English) edition was found anywhere in this
+# wing: OpenLibrary, Google Books, and the Portuguese-market providers
+# (Bertrand, WOOK, Almadoslivros, Presenca) were all searched across the
+# full bibliography and returned zero Portuguese-language hits. This is a
+# fact about the market, not an unsearched gap - Shirley has never had a
+# Portuguese publisher.
+#
+# COVERAGE
+#   en   85 editions over 82 of 84 works. The two absences are Her Hunger
+#        (only ever printed inside the multi-author anthology Night Visions
+#        10, whose ISBN would misattribute a book with a dozen other names
+#        on it to a single story - checked and confirmed, not unsearched)
+#        and Watch Dogs: Dark Clouds (an ebook-only tie-in; no ISBN exists
+#        for it, only an ASIN-style digital SKU - confirmed via the work's
+#        own sourcing, not merely unfound).
+#
+# SOURCING. Every ISBN below was traced to a named OpenLibrary edition
+# record (per-ISBN JSON, not the search index alone), cross-checked in most
+# cases against a second source: an Internet Archive physical-item scan
+# (identifiers quoted in the relevant notes), a Library of Congress MARC
+# record, or an independent bookseller product page. Four entries that
+# OpenLibrary does not carry at all (Grimm: The Icy Touch, Blood in Sweet
+# River, The Feverish Stars, and the Stormland print edition) were confirmed
+# instead via the publisher's own retail listing and at least one
+# independent bookseller quoting the identical ISBN.
+#
+# THREE TRAPS THIS FILE DELIBERATELY AVOIDS, all specific to this wing:
+#
+# 1. THE SONG CALLED YOUTH OMNIBUS. Prime Books issued the whole trilogy
+#    under one ISBN in 2012 (9781607013303, "A Song Called Youth"), and
+#    Open Road Integrated Media did the same again in 2024 as an ebook
+#    bundle (9781504095129, "Eclipse Trilogy: Eclipse, Eclipse: Penumbra,
+#    and Eclipse"). Neither appears below under any of the three workIds:
+#    an omnibus ISBN assigned to a single volume would send a reader
+#    shopping for one book to a listing for three. The three entries
+#    recorded instead are Dover Publications' 2017-2018 individual-volume
+#    paperbacks (9780486817897, 9780486817927, 9780486817934), whose
+#    catalog numbers run consecutively and which OpenLibrary confirms as
+#    368/320/336-page standalone books, not a boxed set. Dover published a
+#    second, unconfirmed-format ISBN trio for the same three volumes in the
+#    same two years (9780486825748, 9780486829777, 9780486834986) and Open
+#    Road separately reissued all three as individual ebooks in 2024
+#    (9781504095099, 9781504095105, 9781504095112); neither trio is
+#    recorded here, since the paperback trio is the one OpenLibrary
+#    positively confirms as a physical trade edition.
+#
+# 2. THE TRAVELER AND SPECIALIST PSEUDONYM RUNS ARE FULLY VERIFIED, NOT A
+#    GAP. Traveler was a shared house pseudonym (D. B. Drumm) written by
+#    several authors; OpenLibrary's own "D. B. Drumm" author record mixes
+#    in nine Traveler volumes (First You Fight, Ghost Dancers, The Prey,
+#    The Children's Crusade, Hell on Earth, The Stalking Time, The Road
+#    Ghost) that ISFDB does not credit to Shirley. Only the six titles
+#    works.yaml already restricts to him are recorded here. The Specialist
+#    run (as John Cutter, his own solo pen name) is worse-catalogued in a
+#    different way: OpenLibrary's search index files nine of the eleven
+#    books under bare placeholder titles ("Specialist 02" through
+#    "Specialist 11"), not their real names. Every one was opened at the
+#    per-ISBN record level, where the true title survives in a `subtitle`
+#    or `title` field (e.g. "Specialist 05" / subtitle "Maltese
+#    (Specialist)" / IA scan `maltesevengeance0000cutt` = The Maltese
+#    Vengeance) - matched here one by one rather than assumed from series
+#    order, which is exactly how a title could otherwise land on the wrong
+#    volume.
+#
+# 3. TRANSMANIACON'S ZEBRA 1980 RECORD CARRIES A CAUTION, NOT A CITATION.
+#    OpenLibrary's only record for the 1980 Zebra first edition
+#    (9780890834176) is filed under a separate, near-empty author stub
+#    ("J. Shirley", OL2666664A, distinct from the "John Shirley" key every
+#    other entry in this file uses) and tagged with an unrelated "Romance"
+#    subject. The title is distinctive enough that this is almost certainly
+#    still his book and not a mismatched record, but given the doubt this
+#    file does not cite it as a source; the entry below instead uses Start
+#    Publishing's 2016 ebook reissue, catalogued cleanly under his normal
+#    author key, with the Zebra original noted rather than sourced.
+#
+# THE DEMONS NOVELLA/NOVEL PAIR are two separate, correctly separate works
+# (see works.yaml): the 2000 Cemetery Dance chapbook and the expanded 2002
+# novel. The novel itself has two editions here, not one: the original
+# March 2002 Ballantine hardcover (9780345446473, converted from the ISBN-10
+# already cited in works.yaml's own note, 0-345-44647-X, and confirmed
+# against an Internet Archive scan under LCCN 2001043478) and the April
+# 2003 Del Rey trade paperback that followed it (9780345446497). The
+# paperback is listed first as the standard edition; the hardcover is the
+# true first edition and is recorded because both are genuinely different
+# objects a reader might specifically want, not to inflate the count.
+#
+# THE OTHER END similarly carries two editions: the original April 2007
+# Cemetery Dance limited SIGNED hardcover (9781587671500) and the current
+# Open Road Integrated Media ebook (9781504021807, a 2015 reissue of an
+# earlier 2007/2010 Open Road printing under a different ISBN,
+# 9781480496576, not recorded separately since it is superseded by the
+# 2015 number under the same imprint).
+#
+# BIOSHOCK: RAPTURE carries its two genuine regional first editions, Tor
+# Books (US) and Titan Books (UK), both 2011, the same convention Gillian
+# Flynn's file uses for a transatlantic release.
+#
+# BLACK GLASS's publisher is recorded as Elder Signs Press, not "Biblio
+# Distribution" (the name OpenLibrary's own record shows): Biblio
+# Distribution is the trade distributor, not the publisher, corrected here
+# from the book's own Library of Congress-derived Dublin Core record
+# (title "Black Glass: The Lost Cyberpunk Novel", Elder Signs Press, Lake
+# Orion, MI, 2008), whose synopsis (Richard Candle, UnMinding, the
+# Multisemblant) confirms it is the same novel as works.yaml's entry and
+# not a differently titled book.
+#
+# FOUR GAPS THIS RESEARCH CLOSED that ISFDB does not cover at all (per the
+# request issue): Wyatt in Wichita, the three Cleve Trewe Westerns, The
+# Silver Revolver, and Gurdjieff all have real, verified ISBNs below, drawn
+# from OpenLibrary and independent bookseller listings rather than ISFDB.
+#
+# TWO DATE DISCREPANCIES, NOT CORRECTED HERE (only editions.yaml is touched
+# by this file; both are left for whoever next reviews works.yaml):
+#   - Z-Boyz in the Robot Graveyard: works.yaml dates first publication to
+#     2012; the only ISBN found (IDW Publishing, 9781631400087) is
+#     catalogued at 2017, which may be a later collected printing of an
+#     originally serialized or digital-first 2012 release rather than a
+#     transcription error.
+#   - The Voice of the Burning House: works.yaml dates this 2021; the only
+#     ISBN found (Jackanapes Press, 9781956702125) is catalogued at 2023.
+#
+# THE FEVERISH STARS is published by Independent Legions Publishing, an
+# Italian small press (hence the 978-88 registrant prefix) that publishes
+# English-language genre fiction for the international market; the book
+# itself is in English, so `language: en` here is correct and is not a
+# pt-PT/it mislabel - a 978-88 prefix on an English-language book, not a
+# translation.
+
+# =============================================================================
+# A Song Called Youth (subseries) - see the header for the omnibus trap
+# =============================================================================
+
+- id: john-shirley/eclipse/dover-2017-en
+  workId: john-shirley/eclipse
+  isbn13: "9780486817897"
+  language: en
+  format: paperback
+  publisher: Dover Publications
+  year: 2017
+  note: >
+    368 pages. Not to be confused with Prime Books' 2012 omnibus
+    (9781607013303) or Open Road's 2024 ebook bundle (9781504095129), both
+    of which package all three trilogy volumes under a single ISBN and are
+    deliberately not recorded under any one of the three workIds.
+  sources:
+    - "https://openlibrary.org/books/OL29184868M.json"
+
+- id: john-shirley/eclipse-penumbra/dover-2018-en
+  workId: john-shirley/eclipse-penumbra
+  isbn13: "9780486817927"
+  language: en
+  format: paperback
+  publisher: Dover Publications
+  year: 2018
+  note: >
+    320 pages. Its catalog number sits in the same consecutive block as the
+    confirmed-paperback Eclipse (9780486817897) and Eclipse Corona
+    (9780486817934) editions; a second Dover ISBN for this volume,
+    9780486829777, also exists from the same two-year reissue and is not
+    used here (see the file header).
+  sources:
+    - "https://openlibrary.org/books/OL30595728M.json"
+
+- id: john-shirley/eclipse-corona/dover-2018-en
+  workId: john-shirley/eclipse-corona
+  isbn13: "9780486817934"
+  language: en
+  format: paperback
+  publisher: Dover Publications
+  year: 2018
+  note: 336 pages.
+  sources:
+    - "https://openlibrary.org/books/OL27281296M.json"
+
+# =============================================================================
+# Other core original novels
+# =============================================================================
+
+- id: john-shirley/transmaniacon/start-publishing-2016-en
+  workId: john-shirley/transmaniacon
+  isbn13: "9781633553729"
+  language: en
+  year: 2016
+  publisher: Start Publishing
+  note: >
+    Ebook reissue, catalogued under Shirley's normal author record. The
+    original Zebra Books edition (1980, 9780890834176) is not cited here;
+    see the file header for the cataloging caution on that record.
+  sources:
+    - "https://openlibrary.org/isbn/9781633553729.json"
+
+- id: john-shirley/dracula-in-love/encyclopocalypse-2020-en
+  workId: john-shirley/dracula-in-love
+  isbn13: "9781959205302"
+  language: en
+  year: 2020
+  publisher: Encyclopocalypse Publications
+  note: A modern reissue; the original 1979 Kensington mass-market edition (9780821730010) is out of print.
+  sources:
+    - "https://openlibrary.org/isbn/9781959205302.json"
+    - "https://openlibrary.org/isbn/9780821730010.json"
+
+- id: john-shirley/city-come-a-walkin/four-walls-eight-windows-2001-en
+  workId: john-shirley/city-come-a-walkin
+  isbn13: "9781568581910"
+  language: en
+  format: paperback
+  publisher: Four Walls Eight Windows
+  year: 2001
+  note: >
+    OpenLibrary's own edition name for this printing is "Revised Edition" -
+    almost certainly the edition carrying William Gibson's introduction
+    referenced in works.yaml's synopsis.
+  sources:
+    - "https://openlibrary.org/books/OL8590891M.json"
+    - "https://archive.org/details/citycomeawalkin00shir"
+
+- id: john-shirley/three-ring-psychus/zebra-1980-en
+  workId: john-shirley/three-ring-psychus
+  isbn13: "9780890836743"
+  language: en
+  publisher: Zebra
+  year: 1980
+  note: >
+    The original text this workId tracks. High (Start Publishing, 2014), a
+    rewrite under a different title per works.yaml's own note, is not this
+    edition; a 1990 Zebra reprint under the same title (9780821732861) also
+    exists and is not recorded separately.
+  sources:
+    - "https://openlibrary.org/search.json?q=title%3A%22Three-Ring+Psychus%22"
+
+- id: john-shirley/the-brigade/avon-1981-en
+  workId: john-shirley/the-brigade
+  isbn13: "9780380771561"
+  language: en
+  publisher: Avon
+  year: 1981
+  note: A UK Sphere edition followed in 1982 (9780722177938) and is not recorded separately.
+  sources:
+    - "https://openlibrary.org/works/OL3403748W/editions.json"
+
+- id: john-shirley/cellars/writers-com-books-2006-en
+  workId: john-shirley/cellars
+  isbn13: "9780974290782"
+  language: en
+  format: paperback
+  publisher: Writers.com Books
+  year: 2006
+  note: >
+    Carries an introduction by Edward Lee. A simultaneous Infrapress
+    hardcover (9780974290799, April 2006) is the same reissue in a
+    different binding and is not recorded separately; the original 1982
+    Avon mass-market edition (9780380798711) is out of print.
+  sources:
+    - "https://openlibrary.org/isbn/9780974290782.json"
+
+- id: john-shirley/kamus-of-kadizar/st-martins-press-1988-en
+  workId: john-shirley/kamus-of-kadizar
+  isbn13: "9780312911737"
+  language: en
+  format: paperback
+  publisher: St. Martin's Press
+  year: 1988
+  note: >
+    Catalogued by the publisher as "Kamus of Kadizhar: The Black Hole of
+    Carcosa" (the "h" spelling ISFDB also uses, per works.yaml's own note);
+    confirmed as this book by the matching subtitle and an Internet Archive
+    scan (kamusofkadizharb00shir).
+  sources:
+    - "https://openlibrary.org/isbn/9780312911737.json"
+
+- id: john-shirley/in-darkness-waiting/infrapress-2005-en
+  workId: john-shirley/in-darkness-waiting
+  isbn13: "9780974290737"
+  language: en
+  format: paperback
+  publisher: Infrapress
+  year: 2005
+  note: >
+    A hardcover of the same reissue followed weeks later (9780974290751);
+    the original 1988 Onyx mass-market edition (9780451400802) is out of
+    print.
+  sources:
+    - "https://openlibrary.org/isbn/9780974290737.json"
+
+- id: john-shirley/a-splendid-chaos/babbage-press-2006-en
+  workId: john-shirley/a-splendid-chaos
+  isbn13: "9781930235236"
+  language: en
+  format: paperback
+  publisher: Babbage Press
+  year: 2006
+  note: The original 1988 F. Watts edition carries no ISBN found in any source checked.
+  sources:
+    - "https://openlibrary.org/isbn/9781930235236.json"
+
+- id: john-shirley/wetbones/leisure-books-1999-en
+  workId: john-shirley/wetbones
+  isbn13: "9780843945256"
+  language: en
+  format: paperback
+  publisher: Leisure Books
+  year: 1999
+  note: >
+    Mass-market paperback, 332 pages, the "Dorchester/Leisure" printing
+    whose jacket copy works.yaml's own note already quotes. The original
+    Mark V. Ziesing hardcover (9780929480633) is out of print.
+  sources:
+    - "https://openlibrary.org/isbn/9780843945256.json"
+
+- id: john-shirley/silicon-embrace/mark-v-ziesing-1996-en
+  workId: john-shirley/silicon-embrace
+  isbn13: "9780929480442"
+  language: en
+  publisher: Mark V. Ziesing
+  year: 1996
+  sources:
+    - "https://openlibrary.org/isbn/9780929480442.json"
+
+- id: john-shirley/demons-novella/cemetery-dance-2000-en
+  workId: john-shirley/demons-novella
+  isbn13: "9781587670022"
+  language: en
+  publisher: Cemetery Dance Publications
+  year: 2000
+  note: "Cemetery Dance Novella Series, No. 9."
+  sources:
+    - "https://openlibrary.org/isbn/9781587670022.json"
+
+- id: john-shirley/demons/del-rey-2003-en
+  workId: john-shirley/demons
+  isbn13: "9780345446497"
+  language: en
+  format: paperback
+  publisher: Del Rey
+  year: 2003
+  note: The trade paperback works.yaml's own note describes as following the March 2002 hardcover.
+  sources:
+    - "https://openlibrary.org/isbn/9780345446497.json"
+
+- id: john-shirley/demons/ballantine-2002-en
+  workId: john-shirley/demons
+  isbn13: "9780345446473"
+  language: en
+  format: hardcover
+  publisher: Ballantine
+  year: 2002
+  note: >
+    The true first edition, "1st ed.", 372 pages, LCCN 2001043478; ISBN13
+    converted from the ISBN-10 already cited in works.yaml's own note,
+    0-345-44647-X, and confirmed against an Internet Archive scan
+    (demons00shir).
+  sources:
+    - "https://openlibrary.org/isbn/9780345446473.json"
+    - "https://archive.org/details/demons00shir"
+
+- id: john-shirley/the-view-from-hell/subterranean-press-2001-en
+  workId: john-shirley/the-view-from-hell
+  isbn13: "9781931081092"
+  language: en
+  publisher: Subterranean Press
+  year: 2001
+  sources:
+    - "https://openlibrary.org/isbn/9781931081092.json"
+
+# Her Hunger has no edition here: only ever printed inside the multi-author
+# anthology Night Visions 10 (Subterranean Press, 2001); that ISBN describes
+# an anthology of several writers' work, not a Shirley-only book, the same
+# reason First Thrills: Volume 3 carries no entry in Karin Slaughter's file.
+
+- id: john-shirley/and-the-angel-with-television-eyes/night-shade-books-2001-en
+  workId: john-shirley/and-the-angel-with-television-eyes
+  isbn13: "9781892389138"
+  language: en
+  publisher: Night Shade Books
+  year: 2001
+  note: >
+    A second Night Shade printing pairs this text with another novella,
+    "Box in My Head", in one flip-style binding (9781892389145); that is a
+    different physical object and is not recorded separately.
+  sources:
+    - "https://openlibrary.org/isbn/9781892389138.json"
+
+- id: john-shirley/spider-moon/cemetery-dance-2002-en
+  workId: john-shirley/spider-moon
+  isbn13: "9781587670541"
+  language: en
+  publisher: Cemetery Dance Publications
+  year: 2002
+  sources:
+    - "https://openlibrary.org/isbn/9781587670541.json"
+
+- id: john-shirley/crawlers/del-rey-2003-en
+  workId: john-shirley/crawlers
+  isbn13: "9780345446527"
+  language: en
+  publisher: Del Rey
+  year: 2003
+  note: A 2007 Random House Publishing Group reprint (9780307414847) is not recorded separately.
+  sources:
+    - "https://openlibrary.org/isbn/9780345446527.json"
+
+- id: john-shirley/the-other-end/open-road-2015-en
+  workId: john-shirley/the-other-end
+  isbn13: "9781504021807"
+  language: en
+  format: ebook
+  publisher: Open Road Integrated Media
+  year: 2015
+  note: A 2015 reissue of an earlier Open Road ebook printing under a different ISBN, 9781480496576 (dated 2007/2010).
+  sources:
+    - "https://openlibrary.org/isbn/9781504021807.json"
+
+- id: john-shirley/the-other-end/cemetery-dance-2007-en
+  workId: john-shirley/the-other-end
+  isbn13: "9781587671500"
+  language: en
+  format: hardcover
+  publisher: Cemetery Dance Publications
+  year: 2007
+  note: The original "Ltd Sgd" (limited, signed) edition, 292 pages.
+  sources:
+    - "https://openlibrary.org/isbn/9781587671500.json"
+
+- id: john-shirley/black-glass/elder-signs-press-2008-en
+  workId: john-shirley/black-glass
+  isbn13: "9781934501078"
+  language: en
+  format: paperback
+  publisher: Elder Signs Press
+  year: 2008
+  note: >
+    Marketed as "Black Glass: The Lost Cyberpunk Novel"; see the file
+    header for why the publisher is recorded as Elder Signs Press rather
+    than OpenLibrary's own "Biblio Distribution" (its trade distributor).
+  sources:
+    - "https://archive.org/download/blackglasslostcy0000shir/blackglasslostcy0000shir_dc.xml"
+    - "https://openlibrary.org/isbn/9781934501078.json"
+
+- id: john-shirley/bleak-history/simon-and-schuster-2009-en
+  workId: john-shirley/bleak-history
+  isbn13: "9781416584124"
+  language: en
+  publisher: Simon & Schuster
+  year: 2009
+  sources:
+    - "https://openlibrary.org/isbn/9781416584124.json"
+
+- id: john-shirley/everything-is-broken/prime-books-2012-en
+  workId: john-shirley/everything-is-broken
+  isbn13: "9781607012924"
+  language: en
+  publisher: Prime Books
+  year: 2012
+  sources:
+    - "https://openlibrary.org/isbn/9781607012924.json"
+
+- id: john-shirley/doyle-after-death/harpercollins-2013-en
+  workId: john-shirley/doyle-after-death
+  isbn13: "9780062304995"
+  language: en
+  format: hardcover
+  publisher: HarperCollins
+  year: 2013
+  note: >
+    A same-year Witness Impulse mass-market paperback also exists
+    (9780062305008); this hardcover matches works.yaml's own framing of the
+    original edition.
+  sources:
+    - "https://openlibrary.org/isbn/9780062304995.json"
+
+- id: john-shirley/wyatt-in-wichita/skyhorse-2014-en
+  workId: john-shirley/wyatt-in-wichita
+  isbn13: "9781629143132"
+  language: en
+  publisher: Skyhorse Publishing
+  year: 2014
+  note: Not catalogued by ISFDB; confirmed via OpenLibrary and independent bookseller listings.
+  sources:
+    - "https://openlibrary.org/isbn/9781629143132.json"
+
+- id: john-shirley/a-dying-machine/diversion-publishing-2019-en
+  workId: john-shirley/a-dying-machine
+  isbn13: "9781635766578"
+  language: en
+  publisher: Diversion Publishing
+  year: 2019
+  note: 320 pages; confirms the 2019 first-publication date works.yaml's own note already settles on.
+  sources:
+    - "https://openlibrary.org/works/OL26801124W/editions.json"
+
+- id: john-shirley/stormland/blackstone-publishing-2021-en
+  workId: john-shirley/stormland
+  isbn13: "9781094017822"
+  language: en
+  format: hardcover
+  publisher: Blackstone Publishing
+  year: 2021
+  note: >
+    368 pages, published April 13, 2021. Blackstone also issued this title
+    as an audiobook under two further ISBNs (9781094009193, 9798200834242);
+    those are a different format and are not recorded here.
+  sources:
+    - "https://www.abebooks.com/9781094017822/Stormland-John-Shirley-1094017825/plp"
+    - "https://www.booksamillion.com/p/Stormland/John-Shirley/9781094017822"
+
+- id: john-shirley/a-sorcerer-of-atlantis/hippocampus-press-2021-en
+  workId: john-shirley/a-sorcerer-of-atlantis
+  isbn13: "9781614983323"
+  language: en
+  publisher: Hippocampus Press
+  year: 2021
+  sources:
+    - "https://openlibrary.org/isbn/9781614983323.json"
+
+- id: john-shirley/axle-bust-creek/pinnacle-2022-en
+  workId: john-shirley/axle-bust-creek
+  isbn13: "9780786049257"
+  language: en
+  format: paperback
+  publisher: Pinnacle
+  year: 2022
+  note: Not catalogued by ISFDB; confirmed via OpenLibrary.
+  sources:
+    - "https://openlibrary.org/works/OL27021193W/editions.json"
+
+- id: john-shirley/suborbital-7/titan-books-2023-en
+  workId: john-shirley/suborbital-7
+  isbn13: "9781803363820"
+  language: en
+  publisher: Titan Books
+  year: 2023
+  sources:
+    - "https://openlibrary.org/works/OL31086344W/editions.json"
+
+- id: john-shirley/gunmetal-mountain/pinnacle-2023-en
+  workId: john-shirley/gunmetal-mountain
+  isbn13: "9780786049271"
+  language: en
+  format: paperback
+  publisher: Pinnacle
+  year: 2023
+  note: >
+    Catalogued by OpenLibrary under the parent imprint "Kensington
+    Publishing Corporation"; recorded here as Pinnacle to match the series
+    branding on Axle Bust Creek and Blood in Sweet River. Not catalogued by
+    ISFDB.
+  sources:
+    - "https://openlibrary.org/works/OL29227965W/editions.json"
+
+- id: john-shirley/blood-in-sweet-river/pinnacle-2024-en
+  workId: john-shirley/blood-in-sweet-river
+  isbn13: "9780786049295"
+  language: en
+  format: paperback
+  publisher: Pinnacle
+  year: 2024
+  note: >
+    Published August 20, 2024, 400 pages. Not catalogued by OpenLibrary at
+    all; confirmed via the publisher's own site and independent bookseller
+    listings quoting the identical ISBN.
+  sources:
+    - "https://www.kensingtonbooks.com/9780786049295/blood-in-sweet-river/"
+    - "https://www.amazon.com/Blood-Sweet-River-Cleve-Western/dp/0786049294"
+
+- id: john-shirley/the-silver-revolver/rough-edges-press-2025-en
+  workId: john-shirley/the-silver-revolver
+  isbn13: "9781685496630"
+  language: en
+  publisher: Rough Edges Press
+  year: 2025
+  note: Not catalogued by ISFDB; confirmed via OpenLibrary.
+  sources:
+    - "https://openlibrary.org/works/OL44602692W/editions.json"
+
+# =============================================================================
+# Licensed tie-ins
+# =============================================================================
+
+- id: john-shirley/predator-forever-midnight/dark-horse-2006-en
+  workId: john-shirley/predator-forever-midnight
+  isbn13: "9781595820341"
+  language: en
+  publisher: Dark Horse
+  year: 2006
+  sources:
+    - "https://openlibrary.org/isbn/9781595820341.json"
+
+- id: john-shirley/batman-dead-white/del-rey-2006-en
+  workId: john-shirley/batman-dead-white
+  isbn13: "9780345479440"
+  language: en
+  publisher: Del Rey
+  year: 2006
+  sources:
+    - "https://openlibrary.org/isbn/9780345479440.json"
+
+- id: john-shirley/hellblazer-war-lord/pocket-star-2006-en
+  workId: john-shirley/hellblazer-war-lord
+  isbn13: "9781416503439"
+  language: en
+  publisher: Pocket Star
+  year: 2006
+  sources:
+    - "https://openlibrary.org/isbn/9781416503439.json"
+
+- id: john-shirley/hellblazer-subterranean/pocket-star-2006-en
+  workId: john-shirley/hellblazer-subterranean
+  isbn13: "9781416503446"
+  language: en
+  publisher: Pocket Star
+  year: 2006
+  sources:
+    - "https://openlibrary.org/isbn/9781416503446.json"
+
+- id: john-shirley/aliens-steel-egg/dark-horse-2007-en
+  workId: john-shirley/aliens-steel-egg
+  isbn13: "9781595821140"
+  language: en
+  publisher: Dark Horse
+  year: 2007
+  sources:
+    - "https://openlibrary.org/isbn/9781595821140.json"
+
+- id: john-shirley/bioshock-rapture/tor-books-2011-en
+  workId: john-shirley/bioshock-rapture
+  isbn13: "9780765324849"
+  language: en
+  publisher: Tor Books
+  year: 2011
+  note: The US first edition; a UK first edition followed the same year (see the Titan Books entry below).
+  sources:
+    - "https://openlibrary.org/isbn/9780765324849.json"
+
+- id: john-shirley/bioshock-rapture/titan-books-2011-uk-en
+  workId: john-shirley/bioshock-rapture
+  isbn13: "9781848567047"
+  language: en
+  publisher: Titan Books
+  year: 2011
+  note: The UK first edition, published July 19, 2011.
+  sources:
+    - "https://openlibrary.org/isbn/9781848567047.json"
+
+- id: john-shirley/borderlands-the-fallen/gallery-books-2011-en
+  workId: john-shirley/borderlands-the-fallen
+  isbn13: "9781439198476"
+  language: en
+  publisher: Gallery Books
+  year: 2011
+  note: Confirmed by its own subtitle field, "the fallen", against the generic OpenLibrary title "Borderlands".
+  sources:
+    - "https://openlibrary.org/isbn/9781439198476.json"
+
+- id: john-shirley/borderlands-unconquered/pocket-books-2012-en
+  workId: john-shirley/borderlands-unconquered
+  isbn13: "9781439198483"
+  language: en
+  format: paperback
+  publisher: Pocket Books
+  year: 2012
+  note: >
+    "1st Pocket Books Paperback ed.", confirmed by its own subtitle field,
+    "unconquered", against the generic OpenLibrary title "Borderlands".
+  sources:
+    - "https://openlibrary.org/isbn/9781439198483.json"
+
+- id: john-shirley/borderlands-gunsight/gallery-books-2013-en
+  workId: john-shirley/borderlands-gunsight
+  isbn13: "9781439198490"
+  language: en
+  publisher: Gallery Books
+  year: 2013
+  note: Confirmed by its own subtitle field, "Gunsight", against the generic OpenLibrary title "Borderlands".
+  sources:
+    - "https://openlibrary.org/isbn/9781439198490.json"
+
+- id: john-shirley/grimm-the-icy-touch/titan-books-2013-en
+  workId: john-shirley/grimm-the-icy-touch
+  isbn13: "9781781166543"
+  language: en
+  publisher: Titan Books
+  year: 2013
+  note: Not catalogued by OpenLibrary; confirmed via the publisher's own listing and independent booksellers quoting the identical ISBN.
+  sources:
+    - "https://www.penguinrandomhouse.com/books/226806/grimm-the-icy-touch-by-john-shirley/"
+    - "https://www.amazon.com/Grimm-Icy-Touch-John-Shirley/dp/1781166544"
+
+- id: john-shirley/halo-broken-circle/gallery-books-2014-en
+  workId: john-shirley/halo-broken-circle
+  isbn13: "9781476783598"
+  language: en
+  format: paperback
+  publisher: Gallery Books
+  year: 2014
+  note: "\"First Gallery Books trade paperback edition\", \"Gallery original fiction trade\", 339 pages."
+  sources:
+    - "https://openlibrary.org/isbn/9781476783598.json"
+
+# Watch Dogs: Dark Clouds has no edition here: an ebook-only tie-in with no
+# ISBN found under any source checked, per works.yaml's own note.
+
+- id: john-shirley/z-boyz-in-the-robot-graveyard/idw-publishing-2017-en
+  workId: john-shirley/z-boyz-in-the-robot-graveyard
+  isbn13: "9781631400087"
+  language: en
+  publisher: IDW Publishing
+  year: 2017
+  note: >
+    The only ISBN found for this title; catalogued at 2017, five years
+    after works.yaml's stated first-publication year of 2012 (see the file
+    header - not corrected here, flagged in the PR).
+  sources:
+    - "https://openlibrary.org/works/OL21078963W/editions.json"
+
+- id: john-shirley/the-crow-death-and-rebirth/idw-publishing-2013-en
+  workId: john-shirley/the-crow-death-and-rebirth
+  isbn13: "9781613775585"
+  language: en
+  format: hardcover
+  publisher: IDW Publishing
+  year: 2013
+  note: Published March 26, 2013, 128 pages.
+  sources:
+    - "https://openlibrary.org/works/OL20358414W/editions.json"
+
+# =============================================================================
+# Nonfiction, minor collections, poetry
+# =============================================================================
+
+- id: john-shirley/gurdjieff/tarcher-2004-en
+  workId: john-shirley/gurdjieff
+  isbn13: "9781585422876"
+  language: en
+  publisher: Tarcher
+  year: 2004
+  note: Published March 25, 2004; not catalogued by ISFDB. A library-binding Tandem Library edition (9781417726318) is not recorded separately.
+  sources:
+    - "https://openlibrary.org/isbn/9781585422876.json"
+
+- id: john-shirley/new-taboos/pm-press-2013-en
+  workId: john-shirley/new-taboos
+  isbn13: "9781604867619"
+  language: en
+  publisher: PM Press
+  year: 2013
+  note: >
+    PM Press Outspoken Authors series, No. 11; 110 pages, matching table of
+    contents (New Taboos / State of Imprisonment / Why We Need Forty Years
+    of Hell / an interview). A 2014 reprint pair (9781604868739,
+    9781604868715, 128 pages each) is not recorded separately.
+  sources:
+    - "https://openlibrary.org/isbn/9781604867619.json"
+
+- id: john-shirley/heatseeker/scream-press-1989-en
+  workId: john-shirley/heatseeker
+  isbn13: "9780910489263"
+  language: en
+  format: hardcover
+  publisher: Scream Press
+  year: 1989
+  note: >
+    The original hardcover, 304 pages. A UK Grafton paperback followed in
+    1990 (9780586208373) and Start Publishing issued an ebook reissue in
+    2014 (9781633553651); neither is recorded separately.
+  sources:
+    - "https://openlibrary.org/isbn/9780910489263.json"
+
+- id: john-shirley/new-noir/fiction-collective-two-1993-en
+  workId: john-shirley/new-noir
+  isbn13: "9780932511553"
+  language: en
+  publisher: Fiction Collective Two
+  year: 1993
+  note: 115 pages, "Black Ice Books" series. A Start Publishing ebook reissue (9781633553668, 2014) is not recorded separately.
+  sources:
+    - "https://openlibrary.org/isbn/9780932511553.json"
+
+- id: john-shirley/the-exploded-heart/eyeball-books-1996-en
+  workId: john-shirley/the-exploded-heart
+  isbn13: "9780964250505"
+  language: en
+  format: paperback
+  publisher: Eyeball Books
+  year: 1996
+  note: "\"Revised edition\", 309 pages; Internet Archive scan explodedheart0000john."
+  sources:
+    - "https://openlibrary.org/isbn/9780964250505.json"
+
+- id: john-shirley/black-butterflies/leisure-books-2001-en
+  workId: john-shirley/black-butterflies
+  isbn13: "9780843948448"
+  language: en
+  format: paperback
+  publisher: Leisure Books
+  year: 2001
+  note: >
+    Mass-market paperback, 368 pages. The original Mark V. Ziesing
+    hardcover (9780929480862, June 1998, the Bram Stoker Award-winning
+    edition) is out of print.
+  sources:
+    - "https://openlibrary.org/isbn/9780843948448.json"
+
+- id: john-shirley/really-really-really-really-weird-stories/night-shade-books-1999-en
+  workId: john-shirley/really-really-really-really-weird-stories
+  isbn13: "9781892389022"
+  language: en
+  format: paperback
+  publisher: Night Shade Books
+  year: 1999
+  note: 400 pages; Internet Archive scan reallyreallyreal00shir.
+  sources:
+    - "https://openlibrary.org/isbn/9781892389022.json"
+
+- id: john-shirley/darkness-divided/stealth-press-2001-en
+  workId: john-shirley/darkness-divided
+  isbn13: "9781588810168"
+  language: en
+  publisher: Stealth Press
+  year: 2001
+  sources:
+    - "https://openlibrary.org/isbn/9781588810168.json"
+
+- id: john-shirley/living-shadows/prime-books-2007-en
+  workId: john-shirley/living-shadows
+  isbn13: "9780809557868"
+  language: en
+  publisher: Prime Books
+  year: 2007
+  sources:
+    - "https://openlibrary.org/isbn/9780809557868.json"
+
+- id: john-shirley/in-extremis/underland-press-2011-en
+  workId: john-shirley/in-extremis
+  isbn13: "9780982663943"
+  language: en
+  publisher: Underland Press
+  year: 2011
+  sources:
+    - "https://openlibrary.org/works/OL19915776W/editions.json"
+
+- id: john-shirley/lovecraft-alive/hippocampus-press-2016-en
+  workId: john-shirley/lovecraft-alive
+  isbn13: "9781614981787"
+  language: en
+  publisher: Hippocampus Press
+  year: 2016
+  note: Published August 20, 2016, 254 pages.
+  sources:
+    - "https://openlibrary.org/works/OL19333862W/editions.json"
+
+- id: john-shirley/the-feverish-stars/independent-legions-2021-en
+  workId: john-shirley/the-feverish-stars
+  isbn13: "9788831959872"
+  language: en
+  publisher: Independent Legions Publishing
+  year: 2021
+  note: >
+    An English-language book from an Italian small press (hence the 978-88
+    registrant prefix; see the file header). Not catalogued by OpenLibrary
+    or ISFDB.
+  sources:
+    - "https://www.amazon.com/FEVERISH-STARS-New-Uncollected-Stories/dp/8831959875"
+
+- id: john-shirley/the-voice-of-the-burning-house/jackanapes-press-en
+  workId: john-shirley/the-voice-of-the-burning-house
+  isbn13: "9781956702125"
+  language: en
+  publisher: Jackanapes Press
+  year: 2023
+  note: >
+    OpenLibrary catalogues this edition at 2023, two years after
+    works.yaml's stated year of 2021 (see the file header - not corrected
+    here, flagged in the PR).
+  sources:
+    - "https://openlibrary.org/works/OL36720929W/editions.json"
+
+# =============================================================================
+# Traveler, as D. B. Drumm - see the file header for the shared-pseudonym
+# filtering this series required
+# =============================================================================
+
+- id: john-shirley/traveler-kingdom-come/dell-1984-en
+  workId: john-shirley/traveler-kingdom-come
+  isbn13: "9780440145592"
+  language: en
+  publisher: Dell
+  year: 1984
+  sources:
+    - "https://openlibrary.org/works/OL8123615W/editions.json"
+
+- id: john-shirley/traveler-the-stalkers/dell-1984-en
+  workId: john-shirley/traveler-the-stalkers
+  isbn13: "9780440181071"
+  language: en
+  publisher: Dell
+  year: 1984
+  sources:
+    - "https://openlibrary.org/works/OL8123237W/editions.json"
+
+- id: john-shirley/traveler-to-kill-a-shadow/dell-1984-en
+  workId: john-shirley/traveler-to-kill-a-shadow
+  isbn13: "9780440187059"
+  language: en
+  publisher: Dell
+  year: 1984
+  sources:
+    - "https://openlibrary.org/works/OL8123614W/editions.json"
+
+- id: john-shirley/traveler-road-war/dell-1985-en
+  workId: john-shirley/traveler-road-war
+  isbn13: "9780440174714"
+  language: en
+  publisher: Dell
+  year: 1985
+  note: "Traveler, No. 5."
+  sources:
+    - "https://openlibrary.org/works/OL15157532W/editions.json"
+
+- id: john-shirley/traveler-border-war/dell-1985-en
+  workId: john-shirley/traveler-border-war
+  isbn13: "9780440107620"
+  language: en
+  publisher: Dell
+  year: 1985
+  sources:
+    - "https://openlibrary.org/works/OL17334268W/editions.json"
+
+- id: john-shirley/traveler-terminal-road/dell-1986-en
+  workId: john-shirley/traveler-terminal-road
+  isbn13: "9780440186519"
+  language: en
+  publisher: Dell
+  year: 1986
+  sources:
+    - "https://openlibrary.org/works/OL8123238W/editions.json"
+
+# =============================================================================
+# The Specialist, as John Cutter - see the file header for how each title
+# below was matched against OpenLibrary's placeholder "Specialist NN" index
+# entries rather than assumed from series order
+# =============================================================================
+
+- id: john-shirley/specialist-a-talent-for-revenge/signet-1984-en
+  workId: john-shirley/specialist-a-talent-for-revenge
+  isbn13: "9780451127990"
+  language: en
+  publisher: Signet
+  year: 1984
+  sources:
+    - "https://openlibrary.org/works/OL9366332W/editions.json"
+
+- id: john-shirley/specialist-manhattan-revenge/signet-1984-en
+  workId: john-shirley/specialist-manhattan-revenge
+  isbn13: "9780451128003"
+  language: en
+  format: paperback
+  publisher: Signet
+  year: 1984
+  note: "OpenLibrary indexes this as \"Specialist 02\"; confirmed by its own subtitle field, \"Manhattan (Specialist)\"."
+  sources:
+    - "https://openlibrary.org/isbn/0451128001.json"
+
+- id: john-shirley/specialist-sullivans-revenge/signet-1984-en
+  workId: john-shirley/specialist-sullivans-revenge
+  isbn13: "9780451130495"
+  language: en
+  format: paperback
+  publisher: Signet
+  year: 1984
+  note: >
+    OpenLibrary indexes this as "Specialist 03"; confirmed by its own
+    subtitle field, "Sullivan (Specialist)", and an Internet Archive scan
+    (sullivansrevenge0000cutt).
+  sources:
+    - "https://openlibrary.org/isbn/9780451130495.json"
+
+- id: john-shirley/specialist-the-psycho-soldiers/signet-1984-en
+  workId: john-shirley/specialist-the-psycho-soldiers
+  isbn13: "9780451131058"
+  language: en
+  format: paperback
+  publisher: Signet
+  year: 1984
+  note: "OpenLibrary indexes this as \"Specialist 04\"; confirmed by its own subtitle field, \"Psycho (Specialist)\"."
+  sources:
+    - "https://openlibrary.org/isbn/0451131053.json"
+
+- id: john-shirley/specialist-the-maltese-vengeance/signet-1984-en
+  workId: john-shirley/specialist-the-maltese-vengeance
+  isbn13: "9780451131928"
+  language: en
+  format: paperback
+  publisher: Signet
+  year: 1984
+  note: >
+    OpenLibrary indexes this as "Specialist 05"; confirmed by its own
+    subtitle field, "Maltese (Specialist)", and an Internet Archive scan
+    (maltesevengeance0000cutt).
+  sources:
+    - "https://openlibrary.org/isbn/9780451131928.json"
+
+- id: john-shirley/specialist-the-big-one/signet-1984-en
+  workId: john-shirley/specialist-the-big-one
+  isbn13: "9780451132727"
+  language: en
+  publisher: Signet
+  year: 1984
+  note: "OpenLibrary indexes this as \"Specialist 06\"; confirmed by its own subtitle field, \"Big One (Specialist)\"."
+  sources:
+    - "https://openlibrary.org/isbn/0451132726.json"
+
+- id: john-shirley/specialist-the-vendetta/new-american-library-1985-en
+  workId: john-shirley/specialist-the-vendetta
+  isbn13: "9780451134035"
+  language: en
+  publisher: New American Library
+  year: 1985
+  note: "OpenLibrary carries this one under its real title, \"The Vendetta\" (Specialist, No. 7), rather than a placeholder."
+  sources:
+    - "https://openlibrary.org/isbn/9780451134035.json"
+
+- id: john-shirley/specialist-one-man-army/signet-1985-en
+  workId: john-shirley/specialist-one-man-army
+  isbn13: "9780451135186"
+  language: en
+  format: paperback
+  publisher: Signet
+  year: 1985
+  note: "OpenLibrary indexes this as \"Specialist 08\"; confirmed by its own subtitle field, \"One Man (Specialist)\"."
+  sources:
+    - "https://openlibrary.org/isbn/0451135180.json"
+
+- id: john-shirley/specialist-vengeance-mountain/new-american-library-1985-en
+  workId: john-shirley/specialist-vengeance-mountain
+  isbn13: "9780451136145"
+  language: en
+  publisher: New American Library
+  year: 1985
+  note: "OpenLibrary carries this one under its real title, \"Vengeance Mountain\" (Specialist, No. 9), rather than a placeholder."
+  sources:
+    - "https://openlibrary.org/isbn/0451136144.json"
+
+- id: john-shirley/specialist-beirut-retaliation/signet-1985-en
+  workId: john-shirley/specialist-beirut-retaliation
+  isbn13: "9780451137586"
+  language: en
+  format: paperback
+  publisher: Signet
+  year: 1985
+  note: "OpenLibrary indexes this as \"Specialist 10\"; confirmed by its own subtitle field, \"Beirut (Specialist)\"."
+  sources:
+    - "https://openlibrary.org/isbn/0451137582.json"
+
+- id: john-shirley/specialist-american-vengeance/signet-1985-en
+  workId: john-shirley/specialist-american-vengeance
+  isbn13: "9780451139108"
+  language: en
+  format: paperback
+  publisher: Signet
+  year: 1985
+  note: "OpenLibrary indexes this as \"Specialist 11\"; confirmed by its own subtitle field, \"American (Specialist)\"."
+  sources:
+    - "https://openlibrary.org/isbn/9780451139108.json"
+
+# =============================================================================
+# Apocrypha
+# =============================================================================
+
+- id: john-shirley/doom/pocket-star-books-2005-en
+  workId: john-shirley/doom
+  isbn13: "9781416509950"
+  language: en
+  publisher: Pocket Star Books
+  year: 2005
+  sources:
+    - "https://openlibrary.org/isbn/9781416509950.json"
+
+- id: john-shirley/constantine/pocket-star-2005-en
+  workId: john-shirley/constantine
+  isbn13: "9780743497558"
+  language: en
+  publisher: Pocket Star
+  year: 2005
+  sources:
+    - "https://openlibrary.org/works/OL3403721W/editions.json"
+
+- id: john-shirley/resident-evil-retribution/titan-books-2012-en
+  workId: john-shirley/resident-evil-retribution
+  isbn13: "9781781163153"
+  language: en
+  format: paperback
+  publisher: Titan Books
+  year: 2012
+  note: Published September 18, 2012, mass-market paperback, 320 pages; Internet Archive scan residentevilretr0000shir.
+  sources:
+    - "https://openlibrary.org/isbn/9781781163153.json"
+
+- id: john-shirley/ralph-compton-prairie-fire-kansas/penguin-2020-en
+  workId: john-shirley/ralph-compton-prairie-fire-kansas
+  isbn13: "9780593102329"
+  language: en
+  publisher: Penguin Publishing Group
+  year: 2020
+  note: The first, standard Penguin/Berkley printing. A Cengage Gale large-print edition (9781432883829, 2021) is not recorded separately.
+  sources:
+    - "https://openlibrary.org/works/OL21679052W/editions.json"
+
+- id: john-shirley/ralph-compton-broken-rider/penguin-2020-en
+  workId: john-shirley/ralph-compton-broken-rider
+  isbn13: "9780593102305"
+  language: en
+  publisher: Penguin Publishing Group
+  year: 2020
+  note: >
+    The first, standard Penguin/Berkley printing, matching works.yaml's own
+    note. A Thorndike Press large-print edition followed in 2021
+    (9781432880262) and is not recorded separately.
+  sources:
+    - "https://openlibrary.org/works/OL21672552W/editions.json"
