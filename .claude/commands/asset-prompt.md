@@ -154,6 +154,18 @@ Always all six, in this order:
    tracker.
 2. **The prompt** - one block per image, ready to paste, no commentary inside it.
 
+   **Always put the prompt inside a fenced code block** (```` ```text ````), with
+   nothing else inside the fence: it opens at `STYLE:` and closes after the
+   technical block. The prompt is not something to read on the issue, it is
+   something to copy into a generator in one click, and prose on a GitHub page
+   has to be hand-selected across a page-and-a-half of scrolling. Everything
+   that is *about* the asset - the `Rotation:` line, the slot heading, size,
+   background, reference images, the filing command, what to check - stays
+   OUTSIDE the fence, both because it must not reach the generator and because
+   `art_rotation.py` parses the `Rotation:` line out of the comment body. On a
+   multi-slot entry each slot gets its own fence, with that slot's size,
+   background and filing under it.
+
    **One image, one prompt. An entry with `images_required: n` gets `n` complete
    prompts, never one prompt describing n panels.** A single prompt that says
    "IMAGE 1 ... IMAGE 2" asks the model to compose a multi-panel layout inside
