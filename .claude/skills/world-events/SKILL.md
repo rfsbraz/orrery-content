@@ -56,7 +56,10 @@ at a time was. Three habits, before you start:
   you to tune against a neighbour's figures or "fix" a wing nobody asked you to
   touch. Pass the slug:
   `validate.py --slug <slug>` (checking stays catalogue-wide - a broken
-  reference crosses wings - only the warning list narrows),
+  reference crosses wings - only the warning list narrows). This one is
+  measured and still gets missed: one wing build ran eleven catalogue-wide
+  validations where ten could have been scoped, each re-reading 40+ untouched
+  wings to prove one file parses,
   `aura_density.py <slug>`, `wing_digest.py <slug>`, `asset_audit.py <slug>`,
   `stage_plan.py <slug>`. `event_density.py` has no slug on purpose: it measures
   the shared `global.yaml` budget, which is catalogue-wide by nature.
@@ -104,6 +107,30 @@ The Second World War passes: it reshaped what a generation of novelists could
 write about, and the books sit visibly on either side of it. A general
 election, a moon landing, a famous person's death: almost never, unless the
 books answer them.
+
+## Before you commit an entry: does any author actually reach it?
+
+Your trigger is usually that an author extends the catalogue's span, and that
+makes it easy to add an event for a period **no wing can carry**. The engine
+filters global events by author lifetime, so an entry outside every author's
+lifespan renders nowhere and is dead weight in the file with the widest blast
+radius in the repo.
+
+Check it mechanically, not by intuition - parse `born`/`died` from every
+`content/authors/*.yaml` and count who spans the event's year:
+
+- **Zero authors reach it** - do not add it. Say so in the run report so a
+  later wing that does reach the period can pick it up.
+- **Exactly one reaches it, and it is the wing that triggered you** - fine, but
+  know that `event-resonance` may still decline it on editorial grounds, which
+  leaves it carried by nobody. That is acceptable when the event is
+  well-sourced and a future wing plausibly reaches it, and not acceptable when
+  it was never eligible in the first place.
+
+Two entries on one wing build failed this: one dated thirteen years after the
+only plausible author's death (removed), and one squarely inside her lifetime
+that she then excluded (kept, as provisioned infrastructure). The difference is
+eligibility, not popularity.
 
 ## The two tests
 
