@@ -1,0 +1,93 @@
+stage: press-archaeology
+summary: >
+  lifeEvents grow from 6 to 12; franchise events.yaml created from scratch
+  with 4 entries. aura_density.py: ratio 0.46 -> 0.73, longest dark run
+  6 years (2014-2019) -> 4 years (2003-2006), no wing flagged. validate.py
+  green, scoped and catalogue-wide, 0 new warnings. Both flagged sensitive
+  threads resolved and included, narrowly scoped and multiply sourced.
+produced:
+  lifeEvents:
+    - >
+      rowling-flees-marriage-1993 (high) - the domestic abuse thread. Dated
+      to her November 1993 separation from Jorge Arantes; centres on the
+      manuscript-as-hostage detail from her own February 2023 podcast
+      (Guardian) and June 2020 essay (BBC), corroborated by Arantes's own
+      on-record admission of slapping her. Included because it explains the
+      physical survival of the Philosopher's Stone manuscript, not as
+      biography for its own sake; also verifies and corrects the Elephant
+      House "birthplace" myth (CNN) in the same entry.
+    - >
+      rowling-gender-advocacy-2025 (high) - the gender-advocacy thread.
+      Dated to the 16 April 2025 Supreme Court ruling, bundling the arc from
+      her December 2019 Forstater tweet through the June 2020 essay,
+      Radcliffe/Watson/Grint's reactions, and the ruling itself. Every claim
+      of her own position is her own words; every claim of impact is
+      attributed to whoever made it (Radcliffe's own "tarnished or
+      diminished" statement, via the Trevor Project) rather than asserted.
+      Takes no position on the dispute itself.
+    - rowling-remarries-2001 (low) - closes the single-parent arc; fills 2000s.
+    - >
+      rowling-harvard-speech-2008 (med) - verified origin of Very Good
+      Lives, with her own "rock bottom ... solid foundation" quote.
+    - >
+      rowling-mother-ms-clinic-2010 (high) - £10m gift founding the Anne
+      Rowling clinic the year she turned the age her mother died; closes the
+      grief thread opened by rowling-mother-dies-1990.
+    - >
+      rowling-daily-mail-vindicated-2015 (high) - her 2015 libel win forcing
+      a retraction of a tabloid's "sob story" slur on her single-motherhood
+      account; protects the accuracy of the origin story already told.
+  franchiseEvents:
+    - philosophers-stone-quiet-launch-1997 (med) - 5,650-copy first printing.
+    - stouffer-lawsuit-thrown-out-2002 (med) - fills the 2003-2006 gap.
+    - deathly-hallows-finale-2007 (high) - the series ends, 8.3m copies/day.
+    - cursed-child-premiere-2016 (med) - "the eighth story," no more novels.
+  editsToExisting: >
+    franchise.yaml's comment updated (it said "no events.yaml yet");
+    otherwise no existing prose changed, only reordered chronologically.
+verification: >
+  Every source URL live-checked (200) and its text actually read, not just
+  linked. Two errors caught pre-commit: a folded-YAML line break inside
+  "brother-in-law" (reparsed with PyYAML, grepped catalogue-wide for the
+  same pattern, none found); a paywalled pressreader.com headline claiming
+  the Cursed Child script "broke the Deathly Hallows record," contradicted
+  by the primary Scholastic/CBS figures - corrected and re-sourced.
+rejected: >
+  No candidate fact was dropped for failing the two-source bar - the record
+  on both sensitive threads is unusually well-documented for a living
+  author. Skipped as out of scope rather than rejected: the Ickabog/COVID
+  timing (event-resonance's globalEvents call, not this stage's); the
+  Clapham Junction "true birthplace" claim (verified true, judged too minor
+  to add given density already above floor).
+forStages:
+  eras: >
+    Still 0 eras, but real texture now exists across 4 genres and 28 years
+    to periodise against (incl. the 2003-2006/2021-2024 quiet stretches and
+    the Galbraith-era split from the Potter years).
+  reading-orders: unchanged.
+  event-resonance: >
+    globalEvents still unruled. Ickabog/COVID remains the one
+    already-sourced lead (works.yaml's own note); not this stage's call.
+  spoiler-audit: no new spoiler risk; Beedle the Bard's note untouched.
+  visual-language: >
+    Both sensitive lifeEvents carry no organisation/illustration_type,
+    deliberately, per instruction that they render as consequence and
+    place, never dramatization.
+  editions: unchanged, wide open.
+  visual-metadata: unchanged, wide open.
+openQuestions:
+  - >
+    rowling-gender-advocacy-2025 bundles a 6-year arc under one date (the
+    Supreme Court ruling) rather than splitting into two or three entries -
+    a density call, not a certainty. A curator wanting the 2019 tweet as its
+    own dated anchor can split it without new research.
+  - >
+    The abuse entry's date (1993-11-17, the separation date) anchors an
+    account whose events, per her own telling, span roughly late 1992 (when
+    the manuscript-hiding began, while pregnant) to March 1994 (Arantes's
+    trip to Scotland and the interdict). One date field cannot represent
+    that span; this is the best single anchor found, not a claim the abuse
+    was confined to one day.
+  - >
+    The five minor-foreword apocrypha entries could each carry a one-line
+    "why she wrote this" note on a future pass; not attempted here.
