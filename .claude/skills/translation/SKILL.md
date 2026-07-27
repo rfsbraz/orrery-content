@@ -55,7 +55,10 @@ at a time was. Three habits, before you start:
   you to tune against a neighbour's figures or "fix" a wing nobody asked you to
   touch. Pass the slug:
   `validate.py --slug <slug>` (checking stays catalogue-wide - a broken
-  reference crosses wings - only the warning list narrows),
+  reference crosses wings - only the warning list narrows). This one is
+  measured and still gets missed: one wing build ran eleven catalogue-wide
+  validations where ten could have been scoped, each re-reading 40+ untouched
+  wings to prove one file parses,
   `aura_density.py <slug>`, `wing_digest.py <slug>`, `asset_audit.py <slug>`,
   `stage_plan.py <slug>`. `event_density.py` has no slug on purpose: it measures
   the shared `global.yaml` budget, which is catalogue-wide by nature.
@@ -226,6 +229,24 @@ must not quietly imply it happened in Portugal. The Lady Chatterley verdict was
 a London jury and a limit on what an English-language novel could describe; a
 Portuguese reader must not come away thinking it changed Portuguese law. Name
 the place when the place is load-bearing.
+
+## Your scope is the wing PLUS any shared file this run touched
+
+The obvious reading of this stage is "translate the wing", and it is wrong in
+one specific way that shipped a red build. `world-events` appends to
+`content/events/global.yaml`, which is **shared** and already fully covered in
+every locale - so a run that adds a global event and translates only the wing's
+own tree drops the whole catalogue out of full coverage, and every wing
+carrying that event renders an English string on a Portuguese page.
+
+So before you finish: if this run added anything to `content/events/global.yaml`
+or any other shared file, **those entries are yours**. Only the entries this run
+added - never edit a neighbour's, the same append-only discipline the source
+file has.
+
+`i18n-regression` in CI catches this and neither `wing-audit` nor
+`pipeline-audit` did, because both were looking at the wing and the damage was
+in a file the wing does not own.
 
 ## Coverage is a gate, not a report
 

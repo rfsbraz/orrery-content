@@ -86,7 +86,7 @@ stages fire. Before launching anything (and after the draft PR is open):
 | always on a full run; on update, when the bibliography is suspect or last verified before new works could exist | `completeness-auditor` |
 | always on a full run; on update, when the aura is thin, flat, or has never had a press pass | `press-archaeology` |
 | the author extends the catalogue's span, or publishes in a decade `global.yaml` leaves empty | `world-events` |
-| eras carry `provenance: none`, unsourced boundaries, or works orphaned outside every span | `eras` |
+| eras carry `provenance: none`, unsourced boundaries, or works orphaned outside every span | `eras` - **unless the shelf is one or two works**, where no span can divide anything and the answer is arithmetic rather than discovery: write `eras.yaml` yourself with the reasoning and skip the stage (it cost 195,614 tokens as an agent on an 84-work wing, and ~0 written directly on a 1-work one) |
 | discovery for orders/entry paths has never actually run, works changed since orders were written, or startHere predates the current order set | `reading-orders` |
 | `world-events` ran, or `globalEvents` include/exclude has never been ruled on | `event-resonance` |
 | any prose was added or changed upstream | `spoiler-audit` |

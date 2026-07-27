@@ -24,6 +24,8 @@ from __future__ import annotations
 import argparse
 import io
 import json
+import re
+import unicodedata
 import os
 import sys
 
@@ -146,12 +148,52 @@ def check_covers(slug: str) -> int:
     return dead
 
 
-def candidates(slug: str, author: str, markets: list[str], limit: int) -> list[dict]:
+def _norm_name(s: str) -> str:
+    s = unicodedata.normalize("NFD", s or "")
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    return re.sub(r"[^a-z0-9]+", " ", s.lower()).strip()
+
+
+def author_matches(rec_authors: list[str], wanted: str) -> bool:
+    """Does this record plausibly belong to `wanted`?
+
+    OpenLibrary's author search is fuzzy and its author records are often
+    merged wrong: a sweep for one name has come back carrying other authors'
+    books on two separate wings (Mark Twain inside an Anna Sewell sweep; nine
+    unrelated authors inside a pseudonym's record). Each contaminated row costs
+    a verification call to reject, which is where the real spend goes.
+
+    An empty author list means the provider did not say, so keep it - a silent
+    drop of a real edition is worse than a row to triage. And a MISMATCH is not
+    proof of contamination either: pseudonymous work is genuinely the author's
+    and is genuinely filed under another name. So this only ever labels; the
+    caller decides.
+    """
+    if not rec_authors:
+        return True
+    want = set(_norm_name(wanted).split())
+    if not want:
+        return True
+    for a in rec_authors:
+        got = set(_norm_name(a).split())
+        if got and (want <= got or got <= want):
+            return True
+    return False
+
+
+def candidates(slug: str, author: str, markets: list[str], limit: int,
+               only_author: bool = False) -> list[dict]:
     """Every edition the providers know of, tagged by market. One pass."""
     ol = OpenLibrary()
+    skipped = 0
     works = ol.by_author(author, limit=limit)
     rows: list[dict] = []
     for w in works:
+        by = ", ".join(w.authors or [])
+        same = author_matches(w.authors or [], author)
+        if only_author and not same:
+            skipped += 1
+            continue
         key = (w.identifiers or {}).get("openlibrary_work")
         if not key:
             continue
@@ -171,6 +213,8 @@ def candidates(slug: str, author: str, markets: list[str], limit: int) -> list[d
                 "region": region_of(ed.isbn13) or "",
                 "cover": ed.cover_url or "",
                 "source_url": ed.source_url or "",
+                "by": by,
+                "same_author": same,
             })
 
     # Non-anglophone retail/library providers, by market. These search by
@@ -254,6 +298,8 @@ def main() -> int:
     p.add_argument("--limit", type=int, default=100, help="works to pull from the author search")
     p.add_argument("--verify-isbns", action="store_true", help="check digits and market prefixes only")
     p.add_argument("--check-covers", action="store_true", help="fetch declared and derived cover URLs")
+    p.add_argument("--author-only", action="store_true",
+                   help="drop works whose author name does not match (drops pseudonyms too)")
     p.add_argument("--json", action="store_true")
     p.add_argument("--download-covers", metavar="DIR",
                    help="pull every candidate cover into DIR so they can be LOOKED at; "
@@ -274,7 +320,7 @@ def main() -> int:
         print("--author is required (or use --verify-isbns / --check-covers)", file=sys.stderr)
         return 2
     markets = [m for m in a.markets.split(",") if m]
-    rows = candidates(a.slug, a.author, markets, a.limit)
+    rows = candidates(a.slug, a.author, markets, a.limit, only_author=a.author_only)
     if a.json:
         print(json.dumps(rows, ensure_ascii=False, indent=2))
         return 0
@@ -288,6 +334,13 @@ def main() -> int:
         print("\t".join(str(r.get(c, ""))[:60] for c in cols))
     print(f"\n{len(rows)} candidate editions across {len(set(r['work'] for r in rows))} works",
           file=sys.stderr)
+    odd = sorted({r["by"] for r in rows if r.get("same_author") is False and r.get("by")})
+    if odd:
+        print(f"WARNING: {len(odd)} other author name(s) in this sweep - "
+              f"{', '.join(odd[:6])}. OpenLibrary author matching is fuzzy, so "
+              "triage on the `by` column rather than spending a verification call "
+              "per row. A mismatch can still be genuine pseudonymous work. "
+              "Re-run with --author-only to drop them.", file=sys.stderr)
     return 0
 
 

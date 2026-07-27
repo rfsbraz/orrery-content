@@ -67,7 +67,10 @@ at a time was. Three habits, before you start:
   you to tune against a neighbour's figures or "fix" a wing nobody asked you to
   touch. Pass the slug:
   `validate.py --slug <slug>` (checking stays catalogue-wide - a broken
-  reference crosses wings - only the warning list narrows),
+  reference crosses wings - only the warning list narrows). This one is
+  measured and still gets missed: one wing build ran eleven catalogue-wide
+  validations where ten could have been scoped, each re-reading 40+ untouched
+  wings to prove one file parses,
   `aura_density.py <slug>`, `wing_digest.py <slug>`, `asset_audit.py <slug>`,
   `stage_plan.py <slug>`. `event_density.py` has no slug on purpose: it measures
   the shared `global.yaml` budget, which is catalogue-wide by nature.
@@ -172,7 +175,20 @@ Two detectors, both cheap and both from git:
   redoes it or - worse - never runs, because *a stage that writes a field it
   does not own also disables the trigger of the stage that does*.
 
-### 3. Redundant checks
+### 3. Stages that ran without a record
+
+A stage that was triggered and produced neither a commit nor a written
+rationale is a finding **regardless of whether its outcome turns out safe**.
+Cross-reference `author.md`'s trigger table against `git log main..<branch>`
+and the PR thread. A recorded skip ("deliberately not run, because the shelf is
+one book") is a result; silence is not, because nobody can tell it from an
+oversight later.
+
+This happened once already: `spoiler-audit` was triggered and skipped with no
+note, and only `wing-audit` noticed - and only because it happened to check.
+The substantive outcome was fine. The absence of the record was not.
+
+### 4. Redundant checks
 Count them and name them:
 
 - How many stages ran `validate.py` **catalogue-wide** when `--slug <slug>`
@@ -185,13 +201,13 @@ Count them and name them:
 - Did two stages fetch the same source? `.cache/fetch/` makes the second one
   cheap, but a tool that bypasses the cache does not benefit - say which.
 
-### 4. Ordering and parallelism
+### 5. Ordering and parallelism
 - Stages that ran in sequence but touch disjoint files could have been parallel.
 - Stages that ran in parallel but share a file are a merge risk that happened to
   hold - say so, because it will not always.
 - A stage that ran before its input existed did discovery blind. Name it.
 
-### 5. Tier fit
+### 6. Tier fit
 Compare each stage's model and effort against what it actually did. A stage that
 made one judgement call and eleven lookups may not need the top tier; a stage
 whose errors are silent and permanent needs it even if it is cheap. Propose
