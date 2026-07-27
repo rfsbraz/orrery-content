@@ -39,3 +39,37 @@ saving of the run - written directly because a one-book career cannot have
 creative periods, which is arithmetic rather than discovery, against 195,614
 tokens when the same stage ran as an agent on Shirley. That saving came from
 the orchestrator's own initiative and is not yet written into any skill.
+
+## Findings, and what was done about them
+
+Eleven findings came out of the two runs. All eleven are now closed, seven of
+them by changing a skill or a script rather than by asking anyone to remember
+something.
+
+| # | finding | outcome |
+|---|---|---|
+| 1 | `visual-language` reads every wing's `theme.yaml` to place itself against the catalogue - a cost that grows with the catalogue, not the wing | `scripts/theme_digest.py`: the collision axes in ~8.5KB against ~126KB, then read in full only the wing it shows you are adjacent to |
+| 2 | Eleven catalogue-wide validations in one wing build where ten could have been scoped | `--slug` bullet in the shared tooling block now carries the measured cost |
+| 3 | `visual-metadata` sources `images.header` into `franchise.yaml`, which nothing read | Kept, and the app now renders it (orrery#131). The stage was right and the app was behind |
+| 4 | `eras` cost 195,614 tokens as an agent on an 84-work wing and ~0 written directly on a 1-work one | `author.md` bypasses the stage when the shelf is one or two works, where the answer is arithmetic |
+| 5 | `translation` is wing-scoped but `world-events` appends to a shared file, so a run can leave `global.yaml` short a locale | `translation`'s scope now explicitly includes any shared file the run touched |
+| 6 | Global events were being written that no author in the catalogue could reach | `world-events` now asks whether any author actually reaches an entry before committing it |
+| 7 | A stage skipped without a record is indistinguishable from a stage that failed | `pipeline-audit` gained a silent-skip detector; the silence is the failure, not the judgement |
+| 8 | `lookup.py --author` returned 1,911 contaminated candidate rows across two consecutive wings | `by`/`same_author` columns, an `--author-only` flag, and a stderr warning naming the contaminating authors |
+| 9 | OpenLibrary's ASCII-only URL construction dropped diacritics and Norwegian titles | Fixed in `providers.py`, with a regression test that captures the provider's real URL rather than rebuilding it |
+| 10 | Six wings name a `displayFace` or `signature` the app does not implement, so their argued branding renders as the default | Two implemented (`instrument-serif`, `filament`, orrery#131); the validator's sets now track `lib/theme.ts`. Four remain, blocked on decisions rather than on work |
+| 11 | `Franchise.images` was set by 15 wings but absent from the app's interface and rendered nowhere | Declared and rendered, with the credit, since several are CC BY (orrery#131) |
+
+**A correction to finding 10 as first written.** It was recorded as the app
+discarding branding "with nothing reporting it". That was wrong: `validate.py`
+had been warning on all eight values by name, on every run, with the
+consequence spelled out. The failure was never detection - it was that the
+warning sat among 77 others and no one reads a 77-line list. So the fix is two
+things, not one: the sets now track the app, and an unscoped run rolls its
+warnings up by kind. The rollup earns its place immediately - **41 of the 77
+are a single class** (pipeline narration in content comments), which is more
+than half the catalogue's standing debt hiding in plain sight as sixty-odd
+unrelated-looking lines.
+
+The general lesson is worth more than the specific fix: a check nobody reads is
+not a check, and a long warning list is how a correct check becomes invisible.
