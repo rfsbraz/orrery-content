@@ -32,8 +32,12 @@ IMPACTS = {"low", "med", "high"}
 # here and the app will silently substitute its default - so a wing can ship a
 # look nobody chose and every check stays green. Keep in sync with the orrery
 # app's `lib/theme.ts` (DISPLAY_FACES and SignatureKind).
-DISPLAY_FACES = {"fraunces", "spectral", "sourceSerif"}
-SIGNATURES = {"beam", "thread", "rule", "none"}
+# These mirror the app's curated sets in `lib/theme.ts` (DISPLAY_FACES and
+# SignatureKind) and must be updated in the same breath as that file: a theme
+# naming a value the app does not implement renders as the default with no
+# runtime complaint, which is what the warnings below exist to surface.
+DISPLAY_FACES = {"fraunces", "spectral", "sourceSerif", "instrument-serif"}
+SIGNATURES = {"beam", "thread", "rule", "filament", "none"}
 SCOPES = {"author-life", "world", "culture", "industry"}
 FEATURE_KEYS = {"river", "wizard", "companion", "editions"}
 FEATURE_VALUES = {"auto", "on", "off", True, False}
@@ -1306,6 +1310,31 @@ def main():
             for w in shown:
                 print("  ~", w)
             print()
+            # An unscoped run prints the whole catalogue's standing debt, and at
+            # that length nobody reads it line by line: eight warnings saying a
+            # theme names a display face the app does not implement sat in this
+            # list, printed correctly on every run, and were acted on by no one.
+            # A rollup adds no information - it makes the shape of the list
+            # survivable, so a recurring class is visible as a class.
+            if not SCOPE and len(shown) > 20:
+                kinds = {}
+                for w in shown:
+                    msg = w.split(": ", 1)[-1]
+                    # The variable part of a warning is the value it is
+                    # complaining about, and that is exactly what must be
+                    # dropped for two instances of one class to land in the
+                    # same bucket: quoted values, line numbers, and digits.
+                    msg = re.sub(r"'[^']*'", "X", msg)
+                    msg = re.sub(r"^line \d+:\s*", "", msg)
+                    msg = re.sub(r"\d+", "N", msg)
+                    key = " ".join(msg.split()[:5]).rstrip(" -,")
+                    kinds[key] = kinds.get(key, 0) + 1
+                repeated = [(k, n) for k, n in kinds.items() if n > 1]
+                if repeated:
+                    print("by kind (most common first):")
+                    for k, n in sorted(repeated, key=lambda kv: -kv[1])[:8]:
+                        print(f"  {n:>3}x {k}...")
+                    print()
         if hidden:
             print(f"({hidden} warning(s) on other wings hidden by --slug {SCOPE}; "
                   f"run without it to see the whole catalogue)\n")
