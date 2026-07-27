@@ -6,26 +6,27 @@
 # own "Written works" bibliography table for J. K. Rowling (fetched directly,
 # giving day-precision dates for every entry) cross-checked against the
 # ISFDB bibliography (isfdb.org, which resolves pseudonymous and co-written
-# credits down to the individual title) and, for the two disputed screenplay
-# credits below, the relevant work's own Wikipedia article. 30 works: the
-# seven-novel main series, three companion/supplement volumes, the stage
-# play, the three Fantastic Beasts screenplays, two adult novels published
-# under her own name, the eight-novel Cormoran Strike series published as
-# Robert Galbraith, two standalone children's novels, one nonfiction book,
-# three "Pottermore Presents" ebook shorts, and one short-story charity
-# contribution.
+# credits down to the individual title), rowlingindex.org (a fan-run index
+# that reproduces her shorter nonfiction pieces in full, used to verify the
+# exact nature of each foreword and contribution below) and, for the
+# disputed or easily-conflated credits, the relevant work's own Wikipedia
+# article or contemporary press coverage. 37 works: the seven-novel main
+# series, three companion/supplement volumes, the stage play, the three
+# Fantastic Beasts screenplays, two adult novels published under her own
+# name, the eight-novel Cormoran Strike series published as Robert
+# Galbraith, two standalone children's novels, one nonfiction book, three
+# "Pottermore Presents" ebook shorts, one 2024 curated-writing compilation,
+# and seven short contributions to other people's or multi-author books.
 #
-# NOT included below, on purpose rather than by oversight: a handful of
-# forewords/introductions Rowling contributed to OTHER people's books
-# (Families Just Like Us, 2000; Magic, ed. McNeil & Brown, 2002; a chapter in
-# Gordon Brown's Moving Britain Forward, 2006; Melissa Anelli's Harry, A
-# History, 2008; A Love Letter to Europe, 2016) - genuinely hers but of a
-# different kind (a few paragraphs in someone else's book) from every other
-# apocrypha entry here, which is a standalone piece; and "From the Wizarding
-# Archive: Volumes 1 and 2" (2024), an audio-first Wizarding World Digital
-# release compiling earlier web writing, whose status as a discrete
-# bibliographic work, rather than a new edition of already-listed material,
-# is not settled by the sourcing gathered so far.
+# NOT included below, on purpose rather than by oversight: three newspaper
+# opinion pieces and a book review (Wikipedia's "Written works" table lists
+# them separately, under "Articles" rather than "Book"), which are
+# journalism rather than book-form apocrypha and outside what this
+# bibliography tracks; and any of the various new forewords or expanded
+# content she has written for illustrated, anniversary or house-edition
+# reissues of her OWN books (for example the March 2017 Fantastic Beasts and
+# Where to Find Them re-edition) - these belong to specific editions of
+# already-listed works, not new entries here.
 #
 # SUBSERIES: "Harry Potter" for the main septology and its direct stage
 # continuation (Cursed Child, "the eighth story", marketed and numbered as a
@@ -46,10 +47,17 @@
 # novels, and the two standalone children's novels (Ickabog, Christmas Pig) -
 # all genuine standalone narrative works, whatever their medium. Extended:
 # the three in-universe companion/reference volumes, Very Good Lives
-# (nonfiction), and the three Pottermore Presents ebook shorts - genuinely
-# hers, off the main narrative spine. Apocrypha: the 2008 Harry Potter
-# prequel, an 800-word contribution to a thirteen-author charity anthology,
-# not a book of her own.
+# (nonfiction), the three Pottermore Presents ebook shorts, and From the
+# Wizarding Archive (2024) - genuinely hers, off the main narrative spine.
+# Apocrypha: the 2008 Harry Potter prequel (an 800-word contribution to a
+# thirteen-author charity anthology) plus six more contributions of the same
+# kind - a book she did not write but genuinely contributed a credited piece
+# to, per docs/SCHEMA.md's own worked example for authorRole: contributor
+# ("a book where the author wrote only an introduction"): forewords to
+# Families Just Like Us (2000), Magic (2002) and Harry, A History (2008),
+# a foreword to one chapter of Gordon Brown's Moving Britain Forward (2006),
+# and essays in the multi-author collections A Love Letter to Europe (2019)
+# and The Women Who Wouldn't Wheesht (2024). None is a book of her own.
 #
 # A CORRECTION TO THE WING'S OWN SCOPING NOTES (orrery-content#83): the issue
 # that requested this wing describes "the five Fantastic Beasts films," all
@@ -581,7 +589,95 @@
     - https://www.isfdb.org/cgi-bin/ea.cgi?6304=
     - https://en.wikipedia.org/wiki/J._K._Rowling_bibliography
 
-# --- Apocrypha (1 charity contribution, 2008) ---
+# --- From the Wizarding Archive (curated Pottermore-era writing, 2024) ---
+
+- id: jk-rowling/from-the-wizarding-archive
+  title: "From the Wizarding Archive"
+  authorIds: [jk-rowling]
+  published: 2024
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    Eighty background articles and anecdotes on the wizarding world - character
+    backstories and worldbuilding detail original readers of the novels never
+    got - framed with fresh editorial commentary.
+  note: >
+    Released 29 August 2024 as a two-volume ebook and, for the first time, a
+    single-volume audiobook narrated by Evanna Lynch, Hugh Quarshie, Finlay
+    Robertson and Lara Sawalha, with a new foreword by Lynch. All 80 pieces
+    originated as free writing for Pottermore, later WizardingWorld.com.
+    Volume Two republishes, in audio for the first time, the same 35 pieces
+    already collected as the 2016 Pottermore Presents trio
+    ([[work:jk-rowling/hogwarts-an-incomplete-and-unreliable-guide|Hogwarts:
+    An Incomplete and Unreliable Guide]] and the two Short Stories from
+    Hogwarts volumes); Volume One's 45 pieces are gathered together for the
+    first time here, which is what earns this its own entry rather than
+    treating the whole release as an edition of the existing trio. Author
+    royalties go to the Lumos Foundation.
+  sources:
+    - https://en.wikipedia.org/wiki/J._K._Rowling_bibliography
+    - https://www.harrypotter.com/news/introducing-from-the-wizarding-archive
+    - https://www.pottermorepublishing.com/from-the-wizarding-archive-avaliable-now/
+
+# --- Contributions to other people's or multi-author books (7, 2000-2024) ---
+
+- id: jk-rowling/families-just-like-us
+  title: "Families Just Like Us: The One Parent Families Good Book Guide"
+  authorIds: [jk-rowling]
+  authorRole: contributor
+  contributionTitle: "Foreword"
+  published: 2000
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    A guide to children's books recommended for one-parent families,
+    published by the National Council for One Parent Families with Book
+    Trust.
+  note: >
+    Rowling's foreword draws on her own years as a single parent; published
+    the same year she became the charity's first Ambassador (the charity was
+    later renamed Gingerbread).
+  sources:
+    - https://en.wikipedia.org/wiki/J._K._Rowling_bibliography
+    - https://www.rowlingindex.org/work/fwfjlu/
+
+- id: jk-rowling/magic-mcneil-brown
+  title: "Magic"
+  authorIds: [jk-rowling]
+  authorRole: contributor
+  contributionTitle: "Foreword"
+  published: 2002
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    A short-story collection by British women writers, edited by Gil McNeil
+    and Sarah Brown and published by Bloomsbury in aid of the National
+    Council for One Parent Families.
+  note: >
+    Rowling's foreword recounts becoming the charity's Ambassador and her own
+    time on Income Support as a single mother, in her own words rather than
+    a generic introduction.
+  sources:
+    - https://en.wikipedia.org/wiki/J._K._Rowling_bibliography
+    - https://www.rowlingindex.org/work/fwmgc/
+
+- id: jk-rowling/moving-britain-forward
+  title: "Moving Britain Forward: Selected Speeches 1997-2006"
+  authorIds: [jk-rowling]
+  authorRole: contributor
+  contributionTitle: "Foreword to 'Ending Child Poverty'"
+  published: 2006
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    A collection of Gordon Brown's speeches as Chancellor, published by
+    Bloomsbury.
+  note: >
+    Rowling contributed the foreword to the book's "Ending Child Poverty"
+    section specifically, not the volume as a whole.
+  sources:
+    - https://en.wikipedia.org/wiki/J._K._Rowling_bibliography
+    - https://www.rowlingindex.org/work/fwgbsp/
 
 - id: jk-rowling/harry-potter-prequel
   title: "Harry Potter prequel"
@@ -606,3 +702,65 @@
   sources:
     - https://en.wikipedia.org/wiki/Harry_Potter_prequel
     - https://en.wikipedia.org/wiki/J._K._Rowling_bibliography
+
+- id: jk-rowling/harry-a-history
+  title: "Harry, A History: The True Story of a Boy Wizard, His Fans, and Life Inside the Harry Potter Phenomenon"
+  authorIds: [jk-rowling]
+  authorRole: contributor
+  contributionTitle: "Foreword"
+  published: 2008
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    Melissa Anelli's history of Harry Potter fandom, published by Pocket
+    Books.
+  note: >
+    Rowling's foreword reflects on being asked, over and over, what made the
+    books popular, and on deliberately not looking too closely at the fandom
+    while she was still writing them.
+  sources:
+    - https://en.wikipedia.org/wiki/J._K._Rowling_bibliography
+    - https://www.rowlingindex.org/work/fwhah/
+
+- id: jk-rowling/a-love-letter-to-europe
+  title: "A Love Letter to Europe: An Outpouring of Love, Sadness and Hope"
+  authorIds: [jk-rowling]
+  authorRole: contributor
+  contributionTitle: "A Love Letter to Europe"
+  published: 2019
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    An anthology of over 40 short pieces by British writers, artists and
+    performers on their relationship with continental Europe, published by
+    Coronet on the original Brexit deadline day.
+  note: >
+    Rowling's contribution recalls her teenage trips to France and Italy.
+    Published 31 October 2019, the UK's original scheduled Brexit departure
+    date (corroborated by the publisher's own release announcement, not to
+    be confused with the book's later-published paperback or any other
+    year).
+  sources:
+    - https://en.wikipedia.org/wiki/J._K._Rowling_bibliography
+    - https://www.rowlingindex.org/work/lleu/
+    - https://www.thebookseller.com/news/coronet-release-love-letter-europe-brexit-deadline-day
+
+- id: jk-rowling/the-women-who-wouldnt-wheesht
+  title: "The Women Who Wouldn't Wheesht: Voices from the Frontline of Scotland's Battle for Women's Rights"
+  authorIds: [jk-rowling]
+  authorRole: contributor
+  contributionTitle: "Why I Decided to Stand Up for Women"
+  published: 2024
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    A collection of essays and photographs from contributors to a five-year
+    Scottish campaign for women's sex-based rights, edited by Susan Dalgety
+    and Lucy Hunter Blackburn and published by Constable.
+  note: >
+    Rowling's essay was excerpted by The Times a day ahead of the book's
+    publication.
+  sources:
+    - https://en.wikipedia.org/wiki/J._K._Rowling_bibliography
+    - https://en.wikipedia.org/wiki/The_Women_Who_Wouldn%27t_Wheesht
+    - https://www.rowlingindex.org/work/wisuw/

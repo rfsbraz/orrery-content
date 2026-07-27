@@ -1,0 +1,88 @@
+stage: completeness-auditor
+summary: >
+  Bibliography grows from 30 to 37 works. Added 1 extended work (From the
+  Wizarding Archive, 2024) and 6 apocrypha contributor entries (4 forewords
+  to other people's books, 2 essays in multi-author collections). No
+  existing work's date, tier or credit changed. validate.py green
+  catalogue-wide: 884 works, 0 errors, comment-policy warning count on other
+  wings unchanged (41, same as the scaffold's baseline).
+produced:
+  newWorkIds:
+    - jk-rowling/from-the-wizarding-archive
+    - jk-rowling/families-just-like-us
+    - jk-rowling/magic-mcneil-brown
+    - jk-rowling/moving-britain-forward
+    - jk-rowling/harry-a-history
+    - jk-rowling/a-love-letter-to-europe
+    - jk-rowling/the-women-who-wouldnt-wheesht
+  changedProse: []
+  changedDates: []
+resolutions:
+  - >
+    Forewords: 4 of the scaffold's 5 (Families Just Like Us 2000, Magic
+    2002, Moving Britain Forward 2006, Harry A History 2008) added as
+    apocrypha/contributor, reversing the scaffold's rejection - SCHEMA.md's
+    own worked example for authorRole: contributor names exactly this shape
+    ("a book where the author wrote only an introduction"). Each verified
+    against Wikipedia's bibliography table plus rowlingindex.org, which
+    reproduces the full text.
+  - >
+    The scaffold's fifth item, "A Love Letter to Europe, 2016," was
+    misclassified: Wikipedia lists it as a non-fiction contributor credit
+    dated 2019, not a foreword dated 2016. Added corrected, plus one item
+    the scaffold missed entirely in the same table section: The Women Who
+    Wouldn't Wheesht (2024), a sourced contributor credit written up
+    neutrally (what the book is, who edited it, when published) with no
+    characterisation beyond the sources.
+  - >
+    From the Wizarding Archive (2024): added as one new extended work, not
+    a repackaging. Volume Two audio-republishes the existing Pottermore
+    Presents trio (adds nothing); Volume One's 45 pieces are collected for
+    the first time, the same shape already used to justify Pottermore
+    Presents itself. Note distinguishes the two halves.
+  - >
+    Full sweep against Wikipedia's Written Works table, ISFDB (fiction-only,
+    confirmed nothing missing there) and jkrowling.com. Found and excluded:
+    3 opinion pieces + 1 book review (journalism, not book-form apocrypha)
+    and the March 2017 Fantastic Beasts re-edition (a new foreword to an
+    already-listed work - an edition, not a new entry). No other missing
+    fiction, short fiction or title collisions found.
+reorders: >
+  No date corrections, so nothing reorders. The 7 additions land at: 2000
+  beside Goblet of Fire; 2002 between the companion volumes and Order of the
+  Phoenix; 2006 between Half-Blood Prince and Deathly Hallows; 2008 (x2)
+  beside the existing prequel and Beedle the Bard; 2019 between Lethal White
+  and The Ickabog; 2024 (x2) between The Running Grave and The Hallmarked
+  Man. All apocrypha/extended, so compact/standard river treatment, but
+  canonTier is currently display-only (SCHEMA.md's documented limitation) -
+  they still take numbered slots in the derived order.
+forStages:
+  press-archaeology: >
+    Unchanged: 6 lifeEvents, 2014-2019 dark run (new works carry no aura).
+    The Women Who Wouldn't Wheesht is now a bibliography entry, not
+    background - whether her gender advocacy becomes an aura lifeEvent is
+    still press-archaeology's own call.
+  eras: >
+    Still 0 eras. Bibliography now spans 2000-2025, with apocrypha entries
+    in years the 30-work scaffold had nothing in at all.
+  reading-orders: unchanged, all new works are apocrypha/extended and marginal.
+  event-resonance: unchanged from the scaffold.
+  spoiler-audit: unaffected, no plot content in the new works.
+  visual-language: unaffected.
+  editions: >
+    One lead: the March 2017 Fantastic Beasts re-edition (new foreword and
+    content) is real and sourced, deliberately left for this stage.
+  visual-metadata: unaffected.
+openQuestions:
+  - >
+    This pass decided the foreword/anthology scope questions rather than
+    escalating, per this session's explicit instruction. SCHEMA.md's own
+    caution about bulk contributor entries affecting the derived order
+    (canonTier is display-only) still applies; a curator could reasonably
+    trim some back out. Sourcing for each is in its own note.
+  - >
+    Carried forward unchanged: Cursed Child's authorRole reasoning,
+    theme.yaml shipped complete, and the domestic-abuse/gender-advocacy
+    threads remain named but unasserted. The Women Who Wouldn't Wheesht
+    addition is a sourced publication credit, not a step toward resolving
+    that question.
