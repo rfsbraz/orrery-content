@@ -33,9 +33,11 @@ grammar allows but which must, for any real named individual, fall back to the
 withheld-face treatment: the person shown by their place, their objects, their
 turned back, a face-down photograph, never an invented face. A drawn
 `editorial-portrait` is only for a figure who is *not* a real identifiable
-person (an anonymous archetype, a pictogram). If a moment seems to need a real
-person's face, it becomes `portrait-of-absence`. This is not negotiable and is
-the one place the new grammar bends to an older, load-bearing rule.
+person (an anonymous archetype, a pictogram - **or, on a `franchise-event`
+where it's earned, the author's own fictional character; see `VISUAL.md`
+§3c**). If a moment seems to need a real person's face, it becomes
+`portrait-of-absence`. This is not negotiable and is the one place the new
+grammar bends to an older, load-bearing rule.
 
 ---
 
