@@ -1,0 +1,154 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds), so the same person resolves the same everywhere.
+# Author-LIFE events live here (they follow the person); franchise-specific
+# events stay in content/franchises/jk-rowling/events.yaml.
+#
+# Living author (born 1965): every lifeEvent below is already fully public and
+# extensively reported, both by the trade press and, for the writing-life
+# anchors, by Rowling herself in her own words (the mother's-death quote is
+# hers). Two things a fuller biography would eventually cover stay unguessed
+# and out of this entry: the domestic abuse she has described from her
+# first marriage (Wikipedia's own article covers it, citing her 2023
+# Guardian interview and a 2020 BBC News piece, but weighing it against the
+# two-source, does-it-change-the-reading bar a living person's history needs
+# takes more care than this entry gives it) and her public advocacy on sex
+# and gender, which is current, contested, and unambiguously the single most
+# consequential "does this change how a reader reads the later books"
+# question anywhere in this wing. Nothing about either is asserted here.
+id: jk-rowling
+name: J. K. Rowling
+aka: ["Joanne Rowling", "Jo Rowling"]
+born: 1965-07-31
+died: null
+bio: >
+  Born Joanne Rowling, with no middle name; the "K" (for her paternal
+  grandmother Kathleen) was added at her publisher's suggestion, who believed
+  young boys, the target readership for
+  [[work:jk-rowling/harry-potter-and-the-philosophers-stone|Harry Potter]],
+  would be reluctant to read a book by a woman. Born in Yate, Gloucestershire,
+  and raised mainly in Winterbourne and then Tutshill, on the Welsh border
+  near Chepstow, from age nine. Read French and Classics at the University of
+  Exeter, graduating in 1987. Worked temp jobs in London and Manchester and,
+  from November 1991, taught English as a foreign language in Porto, Portugal,
+  writing during the day. Conceived the Harry Potter series on a delayed train
+  in mid-1990 and continued writing it through her mother's death later that
+  year, a divorce, and a period as a single parent surviving on state benefits
+  in Edinburgh, where she completed
+  [[work:jk-rowling/harry-potter-and-the-philosophers-stone|Harry Potter and
+  the Philosopher's Stone]] in 1995. The seven-book series that followed
+  became the best-selling book series in history. Since 2011 has also
+  published adult fiction under her own name and, as the revealed pseudonym
+  Robert Galbraith, the [[work:jk-rowling/the-cuckoos-calling|Cormoran
+  Strike]] crime series. Lives in Edinburgh, Scotland.
+pseudonyms:
+  - name: Robert Galbraith
+    note: >
+      Adopted in 2013 for the [[work:jk-rowling/the-cuckoos-calling|Cormoran
+      Strike]] crime novels, so the books "could be judged on [their] own
+      merits" without her name attached. Unmasked after four months, on 14
+      July 2013, when the Sunday Times traced the authorship to a leak from
+      her own law firm; the firm later made a substantial charitable donation
+      after Rowling pursued the breach of confidence. She has continued
+      publishing the series under the pseudonym since.
+  - name: Newt Scamander
+    note: >
+      The in-universe fictional "author" credited on the cover of
+      [[work:jk-rowling/fantastic-beasts-and-where-to-find-them|Fantastic
+      Beasts and Where to Find Them]] (2001); Rowling's own name did not
+      appear on the first edition. A charity-book device rather than a
+      concealed identity, distinct from the Galbraith pseudonym.
+  - name: Kennilworthy Whisp
+    note: >
+      The in-universe fictional "author" credited on the cover of
+      [[work:jk-rowling/quidditch-through-the-ages|Quidditch Through the
+      Ages]] (2001), the companion volume to Fantastic Beasts and Where to
+      Find Them and published for the same charity, Comic Relief.
+lifeEvents:
+  - id: rowling-born-1965
+    date: 1965-07-31
+    title: Born in Yate, Gloucestershire
+    impact: low
+    description: >
+      Born to Peter Rowling, an assembly-line worker who later became a
+      chartered engineer, and Anne Rowling (née Volant), later a science
+      technician; the couple met on a train the year before. Raised in
+      Winterbourne and, from around age nine, in Tutshill on the Welsh
+      border, in a house near a family named Potter, a surname she always
+      liked.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/J._K._Rowling
+  - id: rowling-conceives-harry-potter-1990
+    date: 1990-06
+    title: Harry Potter arrives on a delayed train
+    impact: high
+    description: >
+      On a train delayed four hours between Manchester and London, Harry,
+      Ron and Hermione "came plainly into her mind" fully formed. With no pen
+      or paper to hand, she spent the journey working out the characters and
+      story in her head before writing anything down.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/J._K._Rowling
+  - id: rowling-mother-dies-1990
+    date: 1990-12-30
+    title: Her mother dies while she is writing the first book
+    impact: high
+    description: >
+      Anne Rowling dies of multiple sclerosis, aged 45, soon after her
+      daughter began writing what became
+      [[work:jk-rowling/harry-potter-and-the-philosophers-stone|Harry Potter
+      and the Philosopher's Stone]]. Rowling has said, "I really think from
+      that moment on, death became a central, if not the central, theme of
+      the seven books" - the loss she later located in the Mirror of Erised,
+      and in the losses that run through the whole series.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/J._K._Rowling
+  - id: rowling-bloomsbury-accepts-1996
+    date: 1996-08
+    title: Twelve rejections, then an eight-year-old's verdict
+    impact: high
+    description: >
+      Twelve publishers turn the manuscript down before Bloomsbury's Barry
+      Cunningham buys it, reportedly telling her "you'll never make any
+      money out of children's books, Jo." Bloomsbury's chairman Nigel Newton
+      is said to have been swayed after his eight-year-old daughter Alice
+      read the first chapter and immediately demanded the rest. A Scottish
+      Arts Council grant helps support Rowling, then a single parent, while
+      she finishes the sequel.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/J._K._Rowling
+  - id: rowling-name-change-1996
+    date: 1996
+    title: Becomes "J. K. Rowling" at her publisher's suggestion
+    impact: low
+    description: >
+      Bloomsbury staff suggest she publish under two initials rather than
+      "Joanne," believing boy readers would be reluctant to pick up a book
+      by a woman. She has no middle name, so she takes "K" from her paternal
+      grandmother, Kathleen.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/J._K._Rowling
+  - id: rowling-galbraith-unmasked-2013
+    date: 2013-07-14
+    title: Unmasked as Robert Galbraith
+    impact: med
+    description: >
+      Four months after
+      [[work:jk-rowling/the-cuckoos-calling|The Cuckoo's Calling]]'s quiet
+      publication as a debut crime novel, the Sunday Times reveals Rowling as
+      its author, tracing the leak to her own law firm. Sales of the novel,
+      until then a modest seller, jump immediately; Rowling pursues the firm
+      for the breach and directs its resulting settlement to charity.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/J._K._Rowling
+      - https://en.wikipedia.org/wiki/Robert_Galbraith
+sources:
+  - https://en.wikipedia.org/wiki/J._K._Rowling
+  - https://en.wikipedia.org/wiki/J._K._Rowling_bibliography
+  - https://en.wikipedia.org/wiki/Robert_Galbraith
+  - https://www.jkrowling.com/

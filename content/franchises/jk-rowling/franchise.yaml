@@ -1,0 +1,41 @@
+# A wing spans an author's complete published work, not the character or
+# series they are best known for. Rowling's shelf is unusual for how many
+# separate threads that produces: the seven-novel Harry Potter series and
+# its stage continuation, a self-contained Fantastic Beasts screenplay
+# trilogy in the same fictional world, two standalone novels under her own
+# name, an eight-novel crime series under the revealed pseudonym Robert
+# Galbraith, two standalone children's novels, and a handful of companion
+# and charity pieces. All of it sits in this one wing as subseries rather
+# than as separate franchises, including the Galbraith novels - a revealed
+# pseudonym on solo-written work is the same shape as Stephen King writing
+# as Richard Bachman, not a different author (works.yaml's header has the
+# full sourcing and the Fantastic Beasts authorship correction).
+#
+# Capabilities are auto-detected from what the data provides (docs/SCHEMA.md)
+# and none is forced here. No events.yaml yet, so river and companion stay
+# off; no startHere, so the wizard stays off; no editions.yaml, so editions
+# stays off. All four are open once their inputs exist - none is refused.
+# globalEvents (which shared world/culture events reach this author) and
+# startHere (entry-point recommendations) are both left unset: an unruled
+# default (see docs/SCHEMA.md) would silently claim events or an entry path
+# for her page that nobody actually verified against a source.
+id: jk-rowling
+name: J. K. Rowling
+kind: author
+description: >
+  The complete published work of J. K. Rowling: the seven-novel
+  [[work:jk-rowling/harry-potter-and-the-philosophers-stone|Harry Potter]]
+  series (1997-2007) and its stage continuation
+  [[work:jk-rowling/harry-potter-and-the-cursed-child|Harry Potter and the
+  Cursed Child]], the self-contained
+  [[work:jk-rowling/fantastic-beasts-and-where-to-find-them-original-screenplay|
+  Fantastic Beasts]] screenplay trilogy, two novels for adults under her own
+  name, the [[work:jk-rowling/the-cuckoos-calling|Cormoran Strike]] crime
+  series published as Robert Galbraith, and two standalone children's novels.
+authorIds: [jk-rowling]
+themePreset: manuscript-ink
+
+sources:
+  - https://en.wikipedia.org/wiki/J._K._Rowling
+  - https://en.wikipedia.org/wiki/J._K._Rowling_bibliography
+  - https://www.jkrowling.com/
