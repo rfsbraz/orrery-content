@@ -54,7 +54,10 @@ at a time was. Three habits, before you start:
   you to tune against a neighbour's figures or "fix" a wing nobody asked you to
   touch. Pass the slug:
   `validate.py --slug <slug>` (checking stays catalogue-wide - a broken
-  reference crosses wings - only the warning list narrows),
+  reference crosses wings - only the warning list narrows). This one is
+  measured and still gets missed: one wing build ran eleven catalogue-wide
+  validations where ten could have been scoped, each re-reading 40+ untouched
+  wings to prove one file parses,
   `aura_density.py <slug>`, `wing_digest.py <slug>`, `asset_audit.py <slug>`,
   `stage_plan.py <slug>`. `event_density.py` has no slug on purpose: it measures
   the shared `global.yaml` budget, which is catalogue-wide by nature.

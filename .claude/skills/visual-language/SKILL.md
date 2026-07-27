@@ -56,7 +56,10 @@ at a time was. Three habits, before you start:
   you to tune against a neighbour's figures or "fix" a wing nobody asked you to
   touch. Pass the slug:
   `validate.py --slug <slug>` (checking stays catalogue-wide - a broken
-  reference crosses wings - only the warning list narrows),
+  reference crosses wings - only the warning list narrows). This one is
+  measured and still gets missed: one wing build ran eleven catalogue-wide
+  validations where ten could have been scoped, each re-reading 40+ untouched
+  wings to prove one file parses,
   `aura_density.py <slug>`, `wing_digest.py <slug>`, `asset_audit.py <slug>`,
   `stage_plan.py <slug>`. `event_density.py` has no slug on purpose: it measures
   the shared `global.yaml` budget, which is catalogue-wide by nature.
@@ -135,8 +138,22 @@ clearly the wing's own identity; the rings are handled elsewhere.
 ## Distinctness is the job
 
 A visual language that could belong to any wing has failed even if every field
-is filled in. Before writing, read the `art:` block of every wing that already
-has one, and be explicit about how yours differs.
+is filled in. You have to know what the neighbours already claimed - but read
+it the cheap way round:
+
+    python scripts/theme_digest.py --exclude <your-slug>
+
+That prints one block per wing of the axes languages actually collide on -
+preset, accent, background, face, signature, line character, atmosphere,
+emblem - plus an "already claimed" list naming every shared value outright. It
+is ~8KB. **Reading all twenty `theme.yaml` files in full is ~126KB (~31,500
+tokens), and it grows with the CATALOGUE rather than with your wing**, so every
+future wing pays more however small it is.
+
+So: scan the digest, then open in full **only the one or two wings it shows you
+are adjacent to** - same accent family, same face, same genre, same country.
+That is where "be explicit about how yours differs" needs the prose, and
+nowhere else.
 
 Look hard for **adjacency**: wings sharing a palette accent, a display face, a
 language, a genre or a country will converge unless pushed apart deliberately.
