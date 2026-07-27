@@ -108,7 +108,7 @@ class OpenLibrary(Provider):
         return out
 
     def by_author(self, author: str, limit: int = 100) -> list[MetaRecord]:
-        fields = "key,title,first_publish_year,publisher,language,isbn,cover_i,edition_count"
+        fields = "key,title,first_publish_year,publisher,language,isbn,cover_i,edition_count,author_name"
         url = (f"{self.BASE}/search.json?author={urllib.parse.quote(author)}"
                f"&limit={limit}&fields={fields}")
         data = get_json(url, interval=self.interval) or {}
@@ -121,6 +121,11 @@ class OpenLibrary(Provider):
                 source_url=f"{self.BASE}{d.get('key')}" if d.get("key") else None,
                 publisher=", ".join(d.get("publisher", [])[:3]) or None,
                 published=str(d.get("first_publish_year") or "") or None,
+                # OpenLibrary's author search is fuzzy and its author records
+                # are frequently merged wrong: a sweep for one name has come
+                # back holding other authors' books on two separate wings. The
+                # names travel with the record so a caller can filter.
+                authors=d.get("author_name", []) or [],
                 # NOTE: a union over editions, not this record's language.
                 language=",".join(d.get("language", [])) or None,
                 cover_url=f"https://covers.openlibrary.org/b/id/{cover_i}-L.jpg" if cover_i else None,
