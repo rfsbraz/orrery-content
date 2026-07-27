@@ -258,6 +258,67 @@ The object still-life remains one composition type among several in §4a. It is
 not the default, and a wing where it is the majority has failed §4a whether or
 not each sketch is good on its own.
 
+## 3c. A fictional character is not a real person
+
+§3's ban is exact: **a real, named person is never drawn as a likeness.** A
+character who exists only in the author's own fiction is not that - there is no
+photograph to replace, no public figure whose likeness OpenAI's policy refuses,
+no fact being invented in place of a sourced one. Reacher, Bosch, Great A'Tuin
+and Grant County are real *only inside the books*, and a sketch is allowed to
+meet them there.
+
+**Where it belongs.** This is a `franchise-event` question, not a life-event
+one: §3's whole discipline - place, object, consequence, never a face - still
+governs every moment that happened to the *real* author (§3, §3a). A character
+or scene reference is only in scope for a moment that is fundamentally *about
+the fiction itself*: a character's debut, a franchise milestone, a scene whose
+cultural reception is the event, an adaptation announcing its own visual
+identity. Most franchise events still aren't this - a prize, a sales figure, a
+contract dispute is an industry fact with no character in it - so this is
+something to weigh per event in Step 1 of composition, not a default reach.
+
+**What it changes.** When it applies, a character's established silhouette,
+signature object, or a scene's own staging may appear as the subject, drawn
+fresh in the wing's own house style (§1) - the same restraint and register as
+every other sketch, just with a recognisable fictional element allowed into the
+frame. It does not open a new illustration type: stage it through
+`symbolic-still-life` (the character's signature object, arranged the way §3b
+already asks), `isolated-object`, `place-portrait` (a location the fiction made
+famous), or `relationship-tableau`/`editorial-portrait`'s existing
+anonymous-archetype path (a silhouette or figure standing for a role, per
+`PROMPT-MODULES.md`'s note on those two types) - never as a new drawn-portrait
+exception.
+
+**What never changes.**
+
+- **Never trace or recompose existing art.** An original interpretation only -
+  never a cover, a film still, a poster, or fan art redrawn close enough to
+  read as a copy. `book-object`'s "never a cover recreation" is the general
+  case of this rule, not a special one.
+- **An adaptation's real people stay real people.** A cast/showrunner/director
+  event is drawn exactly as §3 already requires for anyone real - the film or
+  show's *existence* can be depicted (a marquee, a set, a script, a premiere
+  crowd), but no actor's face, cast or otherwise, in character or out of it.
+- **Draw only what the record says (§3a's own rule).** The character or scene
+  used has to be one the entry's own sources actually name - never invented to
+  make a nicer picture, and never a spoiler for a work the reader has not
+  reached (`spoiler-audit` still applies in full).
+- **It stays this author's fiction.** No crossover, no borrowed iconography
+  from another wing's catalogue, however visually similar the genres.
+- **World events opt out entirely.** A shared `world-event` sketch (§4) draws
+  in the neutral house style for every wing that carries it - no wing-specific
+  motif, and a fictional character is exactly that.
+
+**A worked case, to make the boundary concrete.** Lee Child's 2012 "Cruise cast
+as Reacher" franchise event is about the casting controversy - a mismatch
+between the books' Reacher (implacable, oversized, silent) and its own casting.
+The event is not really about a set or a marquee; it is about that mismatch,
+which a book-accurate Reacher silhouette (the height, the build, the
+close-cropped economy the novels return to) makes legible in a way an
+anonymous cinema queue cannot. Drawing that silhouette, alone, at scale, is in
+scope for §3c. Drawing Tom Cruise's face - in costume, at a premiere, anywhere
+- is not, and stays banned by §3 regardless of how the fiction is handled.
+
 ## 3b. Illustration types: the catalogue of what a sketch depicts
 
 An event's `illustration_type` names *what the artwork is* and how it is

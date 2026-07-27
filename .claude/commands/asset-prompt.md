@@ -54,6 +54,15 @@ writing a single prompt:
   cast per VISUAL.md §4a so no type dominates.
 - **`images_required`** per event, from the organisation (1 for most; 2 for
   `diptych`/`split-counterpoint`; more for a `strip`; **0 for an `epigraph`**).
+- **For each `franchise-event`, weigh whether it is about the fiction itself**
+  - a character's debut, a franchise milestone, an adaptation announcing its
+  own identity, a scene whose *reception* is the event - and if so, whether a
+  character or scene reference (VISUAL.md §3c) would carry the moment better
+  than staying purely contextual. This is a per-event judgement, not a
+  default: most franchise events (a sale figure, a prize, a contract dispute)
+  have no character in them and should stay exactly as before. Life events are
+  never in scope for this - §3/§3a's real-person discipline is unchanged.
+  Record the call either way; a "no" here is as much a decision as a "yes".
 
 **`epigraph` produces no prompt.** It is the one organisation with no artwork:
 the author's own words are the illustration, so it gets no `illustration_type`,
