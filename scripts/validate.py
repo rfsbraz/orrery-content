@@ -692,6 +692,13 @@ def main():
                     err(loc, f"{wid}: unknown withAuthorId '{aid}'")
             if w.get("canonTier") not in {"core", "extended", "apocrypha"}:
                 err(loc, f"{wid}: bad canonTier '{w.get('canonTier')}'")
+            # `format` defaults to "novel"; it only needs stating when a work
+            # is something else a reader would want to know before picking it
+            # up - a screenplay or a stage play, not a prose book (SCHEMA.md,
+            # orrery-content#83).
+            fmt = w.get("format", "novel")
+            if fmt not in {"novel", "screenplay", "play"}:
+                err(loc, f"{wid}: bad format '{fmt}'")
             if "featured" in w and not isinstance(w.get("featured"), bool):
                 err(loc, f"{wid}: featured must be true or false, got "
                          f"{w.get('featured')!r}")

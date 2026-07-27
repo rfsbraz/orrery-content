@@ -202,6 +202,7 @@ sources: [https://...]
   forthcoming: 2026-08-19        # optional; ANNOUNCED but not out yet (see below)
   subseries: null                # e.g. "The Dark Tower", "Mistborn: Era 1"
   canonTier: core                # core | extended | apocrypha
+  format: novel                  # optional, defaults to novel; screenplay | play (see below)
   featured: true                 # optional; a work that changed the life (see below)
   publishedAs: "Richard Bachman" # optional; only when the cover name differs
   withAuthorIds: [peter-straub]  # optional collaborators (global author ids)
@@ -267,6 +268,34 @@ Use it only where the date is **sourced**, not inferred from a season or a
 publisher's catalogue slot. If all that is known is "next year", the work does
 not belong in the catalogue yet - a documented negative is the honest record,
 and `/refresh` is the stage that re-tests it.
+
+### format: what a reader is actually picking up
+
+Optional, defaults to `novel`. `works.yaml` had no way to say a work is
+anything else, so a screenplay or a stage play rendered identically to a
+prose book with a `published` year - not quite honest about what the reader
+gets. Found on the J.K. Rowling scoping pass (orrery-content#83): the five
+*Fantastic Beasts* books are screenplays she wrote herself, and *Harry Potter
+and the Cursed Child* is a published playscript (she originated the story;
+Jack Thorne wrote the script from their discussions - credit this exactly as
+sourced, never as solo authorship).
+
+```yaml
+- id: jk-rowling/fantastic-beasts-and-where-to-find-them
+  title: "Fantastic Beasts and Where to Find Them: The Original Screenplay"
+  format: screenplay
+```
+
+| Value | Meaning |
+|---|---|
+| `novel` | the default; nothing to state |
+| `screenplay` | a published film/TV script |
+| `play` | a published stage script |
+
+This is display-only, the same as `canonTier` - it does not change where a
+work sits in the reading spine or the river. Add a value here only when a
+real work needs it; do not pre-populate every wing's novels with an explicit
+`format: novel`.
 
 ### authorRole and canonTier: what belongs in a wing
 
@@ -785,7 +814,7 @@ that only suits one author.
   startHere paths, spoilerAfter boundaries, and inline
   `[[type:id|text]]` links (work, author, franchise)
 - enum discipline: canonTier, impact, scope, order type, features keys/values,
-  fit tags, edition formats
+  fit tags, edition formats, work format
 - global.yaml events carry `reach: global`
 
 If the validator and this document ever disagree, fix one of them in the same PR
