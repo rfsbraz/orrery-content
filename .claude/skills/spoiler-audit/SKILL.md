@@ -133,21 +133,28 @@ There is no boundary to set. If the sentence cannot be written safely, it does
 not go in. A synopsis, an order rationale, an era description: your only
 lever is the words.
 
-**And the failure here is silent.** Adding `spoilerAfter` to a work is not an
-error - the validator accepts it and CI goes green:
+**The validator now catches this** (re-verified 2026-07-27, jk-rowling wing
+build): `scripts/validate.py` hard-errors on `spoilerAfter` set anywhere but
+an event or a lifeEvent -
 
 ```yaml
 - id: stephen-king/carrie
   synopsis: "..."
-  spoilerAfter: stephen-king/the-stand   # accepted, validates, does NOTHING
+  spoilerAfter: stephen-king/the-stand   # validate.py: "not honoured by the
+                                          # app here (only events and author
+                                          # lifeEvents support it)" - hard error
 ```
 
-Verified against `scripts/validate.py`: it passes. The app never reads the
-field, because `Work` has no such property. So an agent can "gate" a synopsis,
-watch the build go green, believe the reveal is protected, and ship it fully in
-the clear. **A green validator is not evidence that a spoiler is contained.**
-If you find `spoilerAfter` on anything other than an event or a lifeEvent, it
-is decoration hiding an unprotected spoiler: delete it and fix the prose.
+This section used to say the opposite - that the field was silently accepted
+and CI went green, so an agent could "gate" a synopsis, watch the build pass,
+believe the reveal was protected, and ship it fully in the clear. That is no
+longer true; the guard exists now. **Still verify rather than trust this
+note**, the same way this correction was found: a claim about a guard's
+behaviour is only as current as the last time someone actually tried to break
+it. If you find `spoilerAfter` on anything other than an event or a
+lifeEvent, the validator will already have refused it - the fix is still the
+same, rewrite the prose, since a work-level or era-level reveal never had a
+gate to fall back on regardless of what the validator does with the field.
 
 ### Audit by entity, not by field
 

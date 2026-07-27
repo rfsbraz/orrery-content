@@ -1,0 +1,82 @@
+stage: spoiler-audit
+summary: >
+  7 rewrites, all in works.yaml synopses. 0 boundaries set, 0 loosened, 0
+  deletions. Every ruling was checked against the publisher's copy
+  (jkrowling.com, robert-galbraith.com, Warner) first; that overturned the
+  incoming assumption on Beedle the Bard and caught three leaks nobody had
+  flagged. validate.py green, 0 errors, warnings unchanged.
+  No pt-PT overlay exists, so nothing to mirror.
+engineTruth: >
+  Verified in the app, not the skill's table. types.ts carries
+  spoilerAfter on AuraEvent only; Work and Era have no note field at all, so
+  works.yaml and eras.yaml note: never renders. Ungated: synopses, era and
+  order prose, franchise and startHere copy, pseudonym notes, bio. The skill
+  says validate.py silently accepts spoilerAfter on a work. It does not:
+  added one deliberately, and it hard-errors.
+flaggedItemOne:
+  item: The Tales of Beedle the Bard (franchise-research)
+  verdict: corrected in both directions
+  detail: >
+    The caution sat on the wrong field: the note withheld the tale's identity
+    and never renders, while the synopsis called it "central to the final
+    Harry Potter novel". Jacket copy overturns the premise: jkrowling.com and
+    the Bloomsbury back cover name all five tales and say readers "will know"
+    the Three Brothers from Deathly Hallows. The cross-reference is jacket
+    copy; "central" is not. Now "already familiar to readers of the final
+    Harry Potter novel", title still withheld (over-caution, loosenable). The
+    note now names the tale and the jacket.
+flaggedItemTwo:
+  item: harry-potter order rationale (reading-orders)
+  verdict: confirmed safe, unchanged
+  detail: >
+    Names no outcome, fate or character; only that a resolution exists and
+    Cursed Child depends on it, the incidental "set after X" shape. Read in
+    the rendered field, not inferred.
+cursedChildAndDeathlyHallows: >
+  The one unavoidable statement of part of Deathly Hallows' ending: the play's
+  protagonist is Harry's son, so any synopsis establishes he lives past the
+  seventh novel. Its own copy goes further ("after the Battle of Hogwarts",
+  "father of three"). Kept, since dropping it hides nothing the title, date
+  and "eighth story" framing do not imply anyway, and it states nothing else:
+  not the battle, the outcome, who survived. A note warns off the blurb.
+rewrites:
+  - "prisoner-of-azkaban: cut the twist telegraph about Harry's parents; premise-level now, milder than its jacket."
+  - "deathly-hallows: Dumbledore \"left them\" to \"set them\"; \"left\" reads posthumous, settling Half-Blood Prince's ending."
+  - "beedle-the-bard: see flaggedItemOne."
+  - "crimes-of-grindelwald: cut \"escaped\" - it implies the capture ending the first screenplay, and the identity it withholds to its last pages."
+  - "secrets-of-dumbledore: cut the blood pact, the previous screenplay's closing reveal; replaced with the official Warner line."
+  - "harry-potter-prequel: removed both names (one the third novel introduces long before saying what he was to Harry's parents); fixed a broken clause."
+  - "5 curator-only notes record the jacket copy checked and the blurb that would undo each cut."
+confirmedSafeUnchanged: >
+  The 5 other Potter novels (Half-Blood Prince withholds Dumbledore's fate).
+  All 8 Strike synopses: Lethal White omits Robin's wedding and promotion,
+  both in its own copy. All 12 lifeEvents and 4 franchise events are
+  biography and publication fact, including the Mirror of Erised
+  clause in rowling-mother-dies-1990, kept as a mid-book scene, not a death,
+  twist or ending. Both eras and rationales, franchise and startHere copy,
+  pseudonym notes, the bio, covid-19-pandemic-2020.
+spoilerAfter: >
+  None set, none loosened; all 16 stay null, correctly - every event here is
+  publication or biographical fact, which takes no anchor.
+erredTowardCaution: >
+  Three, all loosenable: Beedle's withheld tale title (the publisher prints
+  it), the prequel's two names (in the story and the press), and "left" to
+  "set", one word that may protect nothing.
+forStages:
+  translation: >
+    6 synopses changed and no overlay exists, so this is a clean base.
+    Translate the corrected English, never the blurbs.
+  visual-language: >
+    Nothing gated, so no shield meets a river cell. Never illustrate what a
+    synopsis withholds.
+  editions: >
+    Every retail blurb checked spoils more than the synopsis beside it.
+  visual-metadata: unaffected.
+openQuestions:
+  - >
+    Cursed Child's synopsis cannot be safe for a reader who has not finished
+    Deathly Hallows: the play's premise is that ending. An engine limit
+    (works carry no boundary), not a curation miss.
+  - >
+    The spoiler-audit skill is wrong where it says validate.py accepts
+    spoilerAfter on a work. Worth fixing.
