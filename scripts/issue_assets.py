@@ -12,14 +12,24 @@ disagree in ways that only showed up as damage:
   replaced - and file it again as the correction;
 - intake always passed `--chroma`, which is contradictory for an opaque
   illustration type and simply wrong for the picture.
+- the ready-check trusted the issue body's `images_required`, a snapshot from
+  whenever `issue_sync.py` filed it. `issue_sync.py` opens and closes issues
+  but never rewrites one already filed, so an entry regraded to a diptych
+  afterwards left its issue claiming `images_required: 1` forever. Two of
+  those went to `ready` on one image, and intake keyed the LAST attachment
+  (the diptych's second/mirror panel) into the first/only slot - the true
+  first panel silently dropped, no error anywhere (2026-07-27, #584).
 
 So the reading lives in one place and the three callers share it.
 
 ## The two rules that matter
 
-**Count against `images_required`.** The issue body carries the count
-(docs/LAYOUT.md); an entry is finished when that many images are attached, not
-when one is.
+**Count against `images_required` - read from content, not the issue body.**
+An entry is finished when that many images are attached, not when one is.
+`content_images_required` looks the entry up in its actual YAML file, because
+the issue body is a snapshot that can go stale (see above); the issue's own
+count is only the fallback when content can't be read (a demo issue with no
+real entry, a renamed id).
 
 **Only images from the current round count.** A round begins at the last
 comment carrying a prompt. Anything attached before that belongs to the
@@ -43,6 +53,7 @@ import sys
 import yaml
 
 REPO = os.environ.get("ORRERY_CONTENT_REPO", "rfsbraz/orrery-content")
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # The machine-readable contract `issue_sync.py` writes into every issue body.
 BLOCK = re.compile(r"```yaml\s*\n(asset:.*?)```", re.S)
@@ -104,24 +115,86 @@ def images_in(text: str) -> list[str]:
     return out
 
 
+def _find_entry(doc, entry_id: str):
+    """The dict with `id: entry_id`, wherever it sits in a content YAML.
+
+    Structure-agnostic on purpose: a top-level list (events.yaml, eras.yaml)
+    and a dict with a nested list (authors.yaml's `lifeEvents`) both show up
+    across the catalogue, and a third shape would not be a surprise. Same
+    "search, don't assume the shape" spirit as `art_intake.set_field`'s line
+    surgery.
+    """
+    if isinstance(doc, dict):
+        if doc.get("id") == entry_id:
+            return doc
+        for v in doc.values():
+            found = _find_entry(v, entry_id)
+            if found is not None:
+                return found
+    elif isinstance(doc, list):
+        for item in doc:
+            found = _find_entry(item, entry_id)
+            if found is not None:
+                return found
+    return None
+
+
+def content_images_required(spec: dict) -> int | None:
+    """The entry's actual `images_required`, read from content - or None if
+    it cannot be determined (a demo issue with no real entry, a missing file,
+    a renamed id).
+
+    The issue body's `images_required` is a snapshot taken when `issue_sync.py`
+    filed the issue; content is the source of truth going forward (its own
+    module docstring says as much) but nothing ever WROTE that back into an
+    already-filed issue's body. An entry regraded to a diptych after its issue
+    existed left the body claiming `images_required: 1` forever, and the
+    stale count is what a caller trusting the body alone would use: the
+    ready-check flips on one image instead of two, and intake keys the LAST
+    attached image (a diptych's second/mirror panel) into the first/only slot,
+    dropping the true first panel with no error anywhere. This is the fix -
+    content, not the issue, decides the count.
+    """
+    file = spec.get("file")
+    entry_id = spec.get("entry")
+    if not file or not entry_id:
+        return None
+    path = os.path.join(ROOT, file)
+    try:
+        with open(path, encoding="utf-8") as f:
+            doc = yaml.safe_load(f)
+    except (OSError, yaml.YAMLError):
+        return None
+    entry = _find_entry(doc, entry_id)
+    if entry is None:
+        return None
+    try:
+        return int(entry.get("images_required") or 1)
+    except (TypeError, ValueError):
+        return None
+
+
 def slot_dests(spec: dict) -> list[str]:
     """Where each of this entry's images is filed.
 
-    Prefers the explicit `slots:` list the issue body carries; falls back to
-    deriving `<id>.webp`, `<id>-2.webp`, ... from `dest` for an issue filed
-    before that list existed, so an old open issue is still processable.
+    `images_required` (by now corrected against content - see `read()`)
+    decides how many. Uses the explicit `slots:` list the issue body carries
+    for the dest paths when it actually covers that many; otherwise derives
+    `<id>.webp`, `<id>-2.webp`, ... from `dest`, which also covers an issue
+    filed before `slots:` existed, or one where content grew past what the
+    body's list still lists.
     """
+    n = int(spec.get("images_required") or 1)
     slots = spec.get("slots")
-    if isinstance(slots, list) and slots:
-        out = []
-        for s in slots:
-            out.append(s.get("dest") if isinstance(s, dict) else str(s))
-        return [d for d in out if d]
+    if isinstance(slots, list) and len(slots) >= n:
+        out = [s.get("dest") if isinstance(s, dict) else str(s) for s in slots[:n]]
+        out = [d for d in out if d]
+        if len(out) == n:
+            return out
 
     dest = spec.get("dest")
     if not dest:
         return []
-    n = int(spec.get("images_required") or 1)
     stem, ext = os.path.splitext(dest)
     return [dest] + [f"{stem}-{i}{ext}" for i in range(2, n + 1)]
 
@@ -156,7 +229,17 @@ def read(issue: dict) -> dict:
     body = issue.get("body") or ""
     comments = issue.get("comments") or []
     spec = spec_of(body)
-    required = int((spec or {}).get("images_required") or 1)
+    declared = int((spec or {}).get("images_required") or 1)
+    # Content decides the count, not the issue body's snapshot of it - see
+    # `content_images_required`. `spec` is copied before the correction is
+    # written back onto it, so `slot_dests(v["spec"])` downstream also sees
+    # the right count instead of re-deriving the stale one.
+    actual = content_images_required(spec) if spec else None
+    required = actual if actual is not None else declared
+    stale = actual is not None and actual != declared
+    if spec is not None and stale:
+        spec = dict(spec)
+        spec["images_required"] = required
 
     cut = 0
     for i, c in enumerate(comments):
@@ -181,12 +264,15 @@ def read(issue: dict) -> dict:
                 images.append(url)
 
     ready = bool(spec) and len(images) >= required
+    stale_note = (f" (issue declared images_required: {declared}, content now "
+                  f"wants {required} - stale, re-run issue_sync.py on this wing)"
+                  if stale else "")
     if not spec:
         why = "no `asset:` block in the body - nothing to file against"
     elif ready:
-        why = f"{len(images)}/{required} image(s) attached this round"
+        why = f"{len(images)}/{required} image(s) attached this round{stale_note}"
     else:
-        why = (f"{len(images)}/{required} image(s) attached this round"
+        why = (f"{len(images)}/{required} image(s) attached this round{stale_note}"
                + (f" (round starts after comment #{cut})" if cut else "")
                + (f"; {skipped_untrusted} comment(s) with images ignored as untrusted"
                   if skipped_untrusted else ""))
@@ -195,6 +281,7 @@ def read(issue: dict) -> dict:
         "number": issue.get("number"),
         "spec": spec,
         "required": required,
+        "stale": stale,
         "images": images,
         # The LAST `required` images win: a re-upload inside the same round is
         # a correction, and for a multi-slot entry the final N are the set the
