@@ -50,6 +50,24 @@ flagged:
     "BEST SELLER" retail sticker bottom-right. Career of Evil: a
     "Copyrighted Material" watermark, an Amazon Look Inside scrape. The Ink
     Black Heart: a Large Print edition jacket. Re-source these four.
+  visual-metadata-resolved: >
+    All 4 re-sourced on jk-rowling/followup-covers, each candidate downloaded
+    and opened before acceptance (not trusted from URL alone). The Casual
+    Vacancy: b/id/10716247, same Sphere 2013 paperback, no barcode. Troubled
+    Blood: b/id/12431452, same UK Little, Brown jacket design, no sticker.
+    Career of Evil: b/id/11416690, same UK Little, Brown jacket design, no
+    watermark. The Ink Black Heart: b/id/14808853, the genuine UK Little,
+    Brown hardback (isbn 9780751584202, confirmed via littlebrown.co.uk and
+    Hachette Australia) rather than the Large Print jacket - this also
+    surfaced that the littlebrown-2022-en edition row's own isbn13
+    (9780751584189) resolves to a Sphere paperback SKU, not the hardcover its
+    format/note claim; the editions.yaml ISBN itself was left uncorrected
+    (out of scope here) and needs an editions-stage look. Also found and
+    fixed in passing: fantastic-beasts-the-secrets-of-dumbledore had no
+    images.cover and its only derived (ISBN-based) cover was a dead link;
+    added a verified cover from the scholastic-2022-us edition row (28 of 37
+    works now carry a declared cover). validate.py clean; check-covers 29/29
+    live.
   translation: >
     pseudonyms[].note renders (components/about-the-author.tsx:83) and is
     untranslated - 3 notes, the Robert Galbraith one load-bearing. Not
