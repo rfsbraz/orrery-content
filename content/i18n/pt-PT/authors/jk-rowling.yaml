@@ -1,0 +1,226 @@
+# Overlay pt-PT do autor: bio + prosa dos lifeEvents (title/description e o
+# quote de rowling-harvard-speech-2008, o único lifeEvent epigraph). Os
+# lifeEvents ficam aninhados sob o autor e são fundidos por id (ver
+# SCHEMA.md, "Nested lists merge by id"); datas, impact e sources nunca se
+# traduzem. `name`, `aka` e as notas de `pseudonyms` também não se traduzem
+# (mesma convenção usada em robert-jordan.yaml).
+# Os dois lifeEvents sensíveis (rowling-flees-marriage-1993,
+# rowling-gender-advocacy-2025) mantêm aqui o mesmo registo factual, neutro
+# e sem adjetivação do original inglês - traduzidos, não abrandados nem
+# dramatizados.
+# Nomes de personagens citados (Harry, Ron, Hermione) ficam como no
+# original, ver a nota em works.yaml.
+- id: jk-rowling
+  bio: >
+    Nasceu Joanne Rowling, sem nome do meio; o "K" (da avó paterna, Kathleen)
+    foi acrescentado por sugestão do editor, que acreditava que os rapazes
+    mais novos, o público-alvo de
+    [[work:jk-rowling/harry-potter-and-the-philosophers-stone|Harry
+    Potter]], relutariam em ler um livro escrito por uma mulher. Nasceu em
+    Yate, Gloucestershire, e cresceu sobretudo em Winterbourne e depois em
+    Tutshill, na fronteira com o País de Gales perto de Chepstow, a partir
+    dos nove anos. Estudou Francês e Clássicas na Universidade de Exeter,
+    licenciando-se em 1987. Trabalhou em empregos temporários em Londres e
+    Manchester e, a partir de novembro de 1991, deu aulas de inglês como
+    língua estrangeira no Porto, em Portugal, escrevendo durante o dia.
+    Concebeu a série Harry Potter num comboio atrasado em meados de 1990 e
+    continuou a escrevê-la depois da morte da mãe nesse mesmo ano, de um
+    divórcio e de um período como mãe solteira a sobreviver de subsídios
+    estatais em Edimburgo, onde terminou
+    [[work:jk-rowling/harry-potter-and-the-philosophers-stone|Harry Potter e
+    a Pedra Filosofal]] em 1995. A série de sete livros que se seguiu
+    tornou-se a série de livros mais vendida da história. Desde 2012
+    publicou também ficção para adultos em nome próprio e, sob o pseudónimo
+    revelado Robert Galbraith, a série policial
+    [[work:jk-rowling/the-cuckoos-calling|Cormoran Strike]]. Vive em
+    Edimburgo, na Escócia.
+  lifeEvents:
+    - id: rowling-born-1965
+      title: Nasce em Yate, Gloucestershire
+      description: >
+        Filha de Peter Rowling, operário de linha de montagem que mais
+        tarde se tornou engenheiro certificado, e de Anne Rowling (nascida
+        Volant), mais tarde técnica de laboratório; o casal conheceu-se num
+        comboio no ano anterior. Cresceu em Winterbourne e, a partir dos
+        nove anos, em Tutshill, na fronteira com o País de Gales, numa casa
+        perto de uma família de apelido Potter, um nome de que sempre
+        gostou.
+
+    - id: rowling-conceives-harry-potter-1990
+      title: Harry Potter surge num comboio atrasado
+      description: >
+        Num comboio com quatro horas de atraso entre Manchester e Londres,
+        Harry, Ron e Hermione "surgem-lhe claramente na mente" já
+        completamente formados. Sem caneta nem papel à mão, passa a viagem a
+        construir as personagens e a história na cabeça antes de escrever
+        fosse o que fosse.
+
+    - id: rowling-mother-dies-1990
+      title: A mãe morre enquanto ela escreve o primeiro livro
+      description: >
+        Anne Rowling morre de esclerose múltipla, aos 45 anos, pouco depois
+        de a filha começar a escrever o que viria a ser
+        [[work:jk-rowling/harry-potter-and-the-philosophers-stone|Harry
+        Potter e a Pedra Filosofal]]. Rowling já disse: "Penso mesmo que, a
+        partir desse momento, a morte se tornou um tema central, senão o
+        tema central, dos sete livros" - a perda que mais tarde situou no
+        Espelho de Ojesed, e nas perdas que atravessam toda a série.
+
+    - id: rowling-flees-marriage-1993
+      title: Foge de um casamento violento com o manuscrito contrabandeado
+        aos poucos
+      description: >
+        Rowling descreveu o seu casamento com Jorge Arantes, com quem casou
+        no Porto em outubro de 1992, como violento e controlador. Já disse
+        que ele revistava a sua mala quando chegava a casa e não a deixava
+        ter uma chave da própria porta de entrada, e que uma vez lhe tirou o
+        manuscrito, então em crescimento, do que viria a ser
+        [[work:jk-rowling/harry-potter-and-the-philosophers-stone|Harry
+        Potter e a Pedra Filosofal]] e o escondeu, usando-o como refém para
+        a impedir de sair. Com medo de que ele o destruísse, começou a
+        tirar o manuscrito de casa aos poucos, em pequenos lotes, para o
+        fotocopiar no trabalho, construindo página a página uma segunda
+        cópia escondida enquanto estava grávida da filha do casal, Jessica.
+        Arantes pô-la fora de casa a 17 de novembro de 1993; ela regressou
+        com a polícia para recolher Jessica e os seus pertences, e partiu
+        depois para Edimburgo, onde terminou o romance em junho de 1995,
+        escrevendo grande parte dele em cafés - o Nicolson's, então
+        copropriedade do seu cunhado, com Jessica a dormir ao seu lado. O
+        Elephant House, o café de Edimburgo que mais tarde se promoveu como
+        o "berço de Harry Potter," veio depois: Rowling já disse que havia
+        anos que escrevia o livro antes de lá pôr os pés pela primeira vez.
+        Revelou o abuso publicamente pela primeira vez em junho de 2020 e
+        deu o relato do manuscrito numa entrevista em podcast de fevereiro
+        de 2023; Arantes confirmou tê-la esbofeteado, ao mesmo tempo que
+        contesta que o abuso tenha sido prolongado.
+
+    - id: rowling-bloomsbury-accepts-1996
+      title: Doze recusas, e depois o veredicto de uma menina de oito anos
+      description: >
+        Doze editoras recusam o manuscrito antes de Barry Cunningham, da
+        Bloomsbury, o comprar, dizendo-lhe segundo consta: "nunca vais
+        ganhar dinheiro com livros infantis, Jo." Nigel Newton, presidente
+        da Bloomsbury, terá sido convencido depois de a filha de oito anos,
+        Alice, ler o primeiro capítulo e exigir imediatamente o resto. Uma
+        bolsa do Scottish Arts Council ajuda a sustentar Rowling, então mãe
+        solteira, enquanto termina a sequela.
+
+    - id: rowling-name-change-1996
+      title: Torna-se "J. K. Rowling" por sugestão do editor
+      description: >
+        A equipa da Bloomsbury sugere que publique sob duas iniciais em vez
+        de "Joanne," por acreditar que os leitores rapazes relutariam em
+        pegar num livro escrito por uma mulher. Como não tem nome do meio,
+        escolhe o "K" a partir do nome da avó paterna, Kathleen.
+
+    - id: rowling-remarries-2001
+      title: Casa de novo, e compra também alguma distância à imprensa
+      description: >
+        Casa com Neil Murray, anestesista, numa cerimónia pequena e secreta
+        em Killiechassie House, a propriedade em Perthshire que acabara de
+        comprar; o casal tinha planeado um casamento nas Galápagos nesse
+        julho, mas mudou os planos depois de os detalhes terem chegado à
+        imprensa. Meses antes, a Press Complaints Commission do Reino Unido
+        tinha decidido que uma revista violara a privacidade da filha
+        Jessica, então com oito anos, ao publicar uma fotografia de
+        paparazzi tirada durante umas férias em família. Este segundo
+        casamento fecha o arco que se abre com a fuga a Arantes em 1993: de
+        mãe solteira a viver de subsídios estatais a autora publicamente
+        rica que agora compra ativamente privacidade à imprensa que tinha
+        acompanhado a sua ascensão.
+
+    - id: rowling-harvard-speech-2008
+      title: Fala a Harvard sobre os benefícios inesperados do fracasso
+      quote: >
+        E assim o fundo do poço tornou-se a base sólida sobre a qual
+        reconstruí a minha vida.
+      description: >
+        Profere o discurso de formatura na Universidade de Harvard, "The
+        Fringe Benefits of Failure and the Importance of Imagination" (Os
+        Benefícios Inesperados do Fracasso e a Importância da Imaginação),
+        descrevendo o "período de fracasso" que precedeu o sucesso de
+        [[work:jk-rowling/harry-potter-and-the-philosophers-stone|Harry
+        Potter]] - "um casamento excecionalmente curto tinha implodido, e
+        eu estava sem emprego, sozinha com uma filha, e tão pobre quanto é
+        possível ser na Grã-Bretanha moderna sem estar sem-abrigo" - e
+        defendendo que "o fundo do poço se tornou a base sólida sobre a
+        qual reconstruí a minha vida." O discurso é a fonte direta de
+        [[work:jk-rowling/very-good-lives|Uma Vida Muito Boa]], publicado
+        como um pequeno livro sete anos depois.
+
+    - id: rowling-mother-ms-clinic-2010
+      title: Faz quarenta e cinco anos e funda uma clínica em nome da mãe
+      description: >
+        No ano em que atinge a idade a que a mãe, Anne, morreu de esclerose
+        múltipla, Rowling doa 10 milhões de libras à Universidade de
+        Edimburgo para fundar a Anne Rowling Regenerative Neurology Clinic,
+        um centro de investigação e tratamento para a EM e outras doenças
+        neurodegenerativas; acrescenta mais 15,3 milhões de libras em 2019.
+        A clínica abre em outubro de 2013. "Não consigo pensar em nada mais
+        importante," disse sobre a doação, "do que ajudar a Universidade de
+        Edimburgo a atrair mentes de craveira mundial na área da
+        neurorregeneração ... e, no limite, procurar uma cura para uma
+        doença muito escocesa."
+
+    - id: rowling-galbraith-unmasked-2013
+      title: Desmascarada como Robert Galbraith
+      description: >
+        Quatro meses depois da publicação discreta de
+        [[work:jk-rowling/the-cuckoos-calling|Quando o Cuco Chama]] como
+        estreia policial, o Sunday Times revela Rowling como autora,
+        traçando a fuga de informação até ao seu próprio escritório de
+        advogados. As vendas do romance, até então modestas, disparam de
+        imediato; Rowling processa o escritório pela violação e destina o
+        acordo resultante a caridade.
+
+    - id: rowling-daily-mail-vindicated-2015
+      title: Obriga a imprensa tabloide a retratar-se de uma alegação de
+        "história lacrimosa"
+      description: >
+        Em setembro de 2013, Rowling escreveu um artigo para a instituição
+        de caridade para famílias monoparentais Gingerbread sobre os seus
+        anos como mãe solteira em Edimburgo enquanto escrevia
+        [[work:jk-rowling/harry-potter-and-the-philosophers-stone|Harry
+        Potter e a Pedra Filosofal]], recordando uma ocasião em que outra
+        pessoa da sua igreja a estigmatizou por isso. Dez dias depois, o
+        Daily Mail publicou uma reportagem de duas páginas alegando que o
+        seu relato era uma "história lacrimosa" que tinha deixado os
+        membros da igreja que a conheciam "transtornados e desconcertados."
+        Rowling processou o jornal por difamação; numa audiência do High
+        Court a 21 de maio de 2015, o editor do jornal aceitou que as
+        alegações eram "completamente falsas e indefensáveis," pediu
+        desculpa e pagou uma indemnização substancial, que Rowling doou a
+        caridade. A decisão estabelece, para o registo público, que o
+        relato de pobreza e maternidade solteira que ela tem contado sobre
+        a escrita do primeiro livro era verdadeiro tal como o contou.
+
+    - id: rowling-gender-advocacy-2025
+      title: Uma decisão do Supremo Tribunal encerra seis anos de ativismo
+        público sobre sexo e género
+      description: >
+        A 19 de dezembro de 2019, Rowling publicou no Twitter apoio a Maya
+        Forstater, uma investigadora que tinha perdido o emprego depois de
+        escrever que o sexo biológico é imutável: "Vistam-se como
+        quiserem ... Mas obrigar mulheres a deixar o emprego por afirmarem
+        que o sexo é real?" Foi o primeiro sinal público amplamente citado
+        de uma posição sobre a autoidentificação de género que passou a
+        defender longamente num ensaio de junho de 2020 no seu próprio
+        site - o mesmo ensaio em que revelou pela primeira vez o abuso
+        descrito acima. Daniel Radcliffe, Emma Watson e Rupert Grint, que
+        interpretaram Harry, Hermione e Ron nos filmes, distanciaram-se
+        todos publicamente da sua posição dentro de poucos dias; Radcliffe,
+        escrevendo que "as mulheres transgénero são mulheres," acrescentou:
+        "A todos os que sentem agora que a sua experiência com os livros
+        foi manchada ou diminuída, lamento profundamente a dor que estes
+        comentários vos causaram. Espero mesmo que não percam por completo
+        o que estas histórias tinham de valioso para vocês." Rowling
+        continuou desde então a financiar o ativismo crítico do género,
+        incluindo o grupo For Women Scotland, cujo processo chegou ao
+        Supremo Tribunal do Reino Unido; a 16 de abril de 2025, o tribunal
+        decidiu por unanimidade que "sexo," ao abrigo do Equality Act 2010,
+        significa sexo biológico, uma decisão que Rowling saudou
+        publicamente como tendo "protegido os direitos das mulheres e das
+        raparigas." Nega que a sua posição seja transfóbica; a posição tem
+        gerado críticas públicas sustentadas, incluindo de organizações
+        LGBT, e, disse em 2023, "tantas ameaças de morte que dava para
+        forrar a casa com elas."
