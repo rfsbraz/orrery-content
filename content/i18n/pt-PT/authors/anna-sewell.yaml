@@ -1,0 +1,116 @@
+# Overlay pt-PT: biografia e eventos de vida. Os lifeEvents são uma lista
+# aninhada com id e fundem-se por id (ver SCHEMA.md, "Nested lists merge by
+# id"): só title e description, nunca date, impact, organisation ou sources.
+#
+# O evento epígrafe (sewell-diary-writing-life-of-a-horse-1871) traduz title e
+# description mas omite quote: o campo base é uma linha verbatim do diário de
+# Anna Sewell, sem tradução portuguesa publicada, e não se inventa uma para uma
+# citação atribuída a uma pessoa real. A mesma regra cobre qualquer excerto
+# citado dentro de uma description (a carta da mãe sobre o cavalo de Lancing,
+# as próprias palavras de Sewell sobre o "little book"): fica em inglês,
+# verbatim, dentro da prosa traduzida.
+#
+# As referências a [[work:anna-sewell/black-beauty]] usam o título da edição
+# portuguesa em publicação, Beleza Negra (Editora Minotauro, 2023 - ver
+# editions.yaml). Os títulos dos livros da própria Mary Sewell citados na
+# biografia (Homely Ballads for the Working Man's Fireside, Mother's Last
+# Words) ficam em inglês: não são obras desta bibliografia e não há registo de
+# edição portuguesa.
+
+- id: anna-sewell
+  bio: >
+    Nasceu em Great Yarmouth, Norfolk, filha de pais quakers, Isaac e Mary
+    Wright Sewell. As mudanças frequentes da família por causa do trabalho do
+    pai levaram-nos por Londres, Sussex e Gloucestershire antes de se fixarem
+    de novo em Norfolk. Aos catorze anos, uma queda a correr para casa da
+    escola, à chuva, lesionou-lhe o tornozelo tão gravemente que teve
+    dificuldade em andar pelo resto da vida, e a partir de 1839 uma doença
+    crónica adicional deixou-a inválida permanente. Nunca casou, viveu sempre
+    com os pais, e ajudava a mãe - ela própria uma autora popular de livros
+    infantis - em obras de caridade e a rever os seus escritos. Gravemente
+    doente e passando a maior parte do tempo confinada a um sofá a partir de
+    1871, passou os últimos anos a escrever
+    [[work:anna-sewell/black-beauty|Beleza Negra]], primeiro ditando-o à mãe
+    e depois, num período de saúde ligeiramente melhorada, escrevendo-o a
+    lápis para a mãe transcrever. Publicado em novembro de 1877, foi o seu
+    único livro. Morreu cinco meses depois, tendo vivido o suficiente para o
+    ver ter sucesso.
+  lifeEvents:
+    - id: sewell-born-1820
+      title: Nascimento em Great Yarmouth
+      description: >
+        Nasceu numa família quaker em Great Yarmouth, Norfolk. Os negócios
+        falhados do pai levaram a família a mudar-se repetidamente por
+        Londres, Sussex e Gloucestershire ao longo das quatro décadas
+        seguintes, até se fixarem de vez em Norfolk, em Old Catton, em 1867.
+
+    - id: sewell-ankle-injury-1834
+      title: A queda que nunca sarou
+      description: >
+        Correndo para casa da escola, à chuva, aos catorze anos, escorregou e
+        torceu gravemente o tornozelo. Nunca foi devidamente tratado e nunca
+        sarou: teve dificuldade em andar pelo resto da vida. Incapaz de
+        voltar à escola, virou-se para a equitação e para a condução de
+        carruagens, e anos mais tarde havia de recorrer exatamente a essa
+        dependência - de cavalos de que não podia prescindir - quando veio a
+        escrever a partir do ponto de vista de outro.
+
+    - id: sewell-first-horse-lancing-1845
+      title: "O primeiro cavalo da família, em Lancing"
+      description: >
+        A mudança para Lancing traz o primeiro cavalo da família e uma
+        charrete puxada por pónei; incapaz de andar longas distâncias, Sewell
+        conduzia o pai de e para a estação ferroviária de Shoreham. A mãe
+        escreveu mais tarde que "between her and her own horse, and horses in
+        general, a mutual confidence and friendship sprang up, and she
+        learned all their secrets" - a arte equestre em que
+        [[work:anna-sewell/black-beauty|Beleza Negra]] se funda.
+
+    - id: sewell-editing-mother-1858
+      title: Torna-se editora da mãe
+      description: >
+        Em Blue Lodge, Wick, perto de Bristol, começa a rever as baladas da
+        mãe, Mary Sewell, que retomara a escrita para ajudar a sustentar a
+        família e se torna uma verdadeira autora de sucesso vitoriana (Homely
+        Ballads for the Working Man's Fireside, mais tarde Mother's Last
+        Words). Sewell trabalha como editora durante quase duas décadas antes
+        de ser, ela própria, alguma vez uma autora publicada.
+
+    - id: sewell-diary-writing-life-of-a-horse-1871
+      title: Diário, 6 de novembro de 1871
+      description: >
+        Gravemente doente e confinada a um sofá durante a maior parte do que
+        lhe restava de vida, anota no diário, a 6 de novembro de 1871: "I am
+        writing the life of a horse..." - a primeira menção, em qualquer
+        parte, a [[work:anna-sewell/black-beauty|Beleza Negra]], seis anos
+        antes de este existir como livro.
+
+    - id: sewell-pencil-manuscript-1876
+      title: A escrever a lápis, para a mãe copiar
+      description: >
+        Num período de saúde ligeiramente melhor, começa a escrever o livro a
+        lápis, ela própria, com a mãe a transcrevê-lo. "I have for six years
+        been confined to the house and to my sofa," escreveu, "and have from
+        time to time, as I was able, been writing what I think will turn out
+        a little book, its special aim being to induce kindness, sympathy,
+        and an understanding treatment of horses."
+
+    - id: sewell-sells-copyright-1877
+      title: "Vende os direitos de autor por 40 libras"
+      description: >
+        A mãe leva o manuscrito terminado ao seu próprio editor, a Jarrold &
+        Sons, de Norwich; Sewell vende os direitos de autor por completo, por
+        40 libras, e recebe as primeiras provas a 21 de agosto de 1877.
+        [[work:anna-sewell/black-beauty|Beleza Negra]] é publicado nesse
+        novembro, a tempo do Natal, e nunca lhe rende mais nenhum tostão além
+        dessas 40 libras.
+
+    - id: sewell-death-1878
+      title: Morre cinco meses após a publicação
+      description: >
+        Morre aos 58 anos; o médico regista hepatite e tuberculose como
+        causa. Vive o suficiente para ver
+        [[work:anna-sewell/black-beauty|Beleza Negra]] vender as suas
+        primeiras dezenas de milhares de exemplares e receber críticas
+        calorosas - o suficiente para saber que tinha tido sucesso, não o
+        suficiente para ver quanto.

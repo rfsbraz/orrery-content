@@ -1,0 +1,43 @@
+# One-work wing, deliberately not padded to look like more of one. Black
+# Beauty is her only book: her mother's works are hers, not Anna's (Anna
+# edited them, which is not authorship - see content/authors/anna-sewell.yaml),
+# and no other original title or published diary/letter collection exists
+# under her name. Checked against: OpenLibrary's full author-work index for
+# "Anna Sewell" (every returned title is Black Beauty itself, an abridgement
+# of it, or a translated edition of it - Azabache, Re Moro, Черная Красота
+# and the rest all resolve to the one novel), the Wikipedia biography's own
+# framing ("known for her only book"), and Project Gutenberg's catalogue for
+# her, which lists nothing else. A single core entry with an honest note is
+# the correct, complete bibliography here, not a gap to be closed.
+id: anna-sewell
+name: Anna Sewell
+kind: author
+description: >
+  One novel, dictated and then hand-written from a sickbed in her last years -
+  the Victorian bestseller that reshaped how England treated its horses.
+authorIds: [anna-sewell]
+themePreset: pasture-plain
+images:
+  header: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Anna_Sewell_House.JPG/1920px-Anna_Sewell_House.JPG"
+  headerCredit: "Northmetpit, public domain (self-published)"
+  headerSource: "https://commons.wikimedia.org/wiki/File:Anna_Sewell_House.JPG"
+  # Her family home at Old Catton, Norfolk, where they settled for good in
+  # 1867 and where she was confined to a sofa from 1871, writing Black
+  # Beauty there in her last years - the real building behind the sickroom
+  # and lap-desk motifs in theme.yaml's art block, not a horse photograph
+  # (theme.yaml's own avoid list rules out exactly that: "greeting-card
+  # pony illustration", "hunting-pink and show-ring glamour"). Chosen over
+  # her Great Yarmouth birthplace (two geograph/Commons photos of the same
+  # building, both crowded with a modern bakery shopfront, a parked
+  # bicycle and traffic-light equipment in frame) and over several
+  # high-resolution Norfolk horse and paddock photographs on Commons.
+sources:
+  - https://en.wikipedia.org/wiki/Anna_Sewell
+  - https://en.wikipedia.org/wiki/Black_Beauty
+  - https://openlibrary.org/works/OL15854658W
+  - https://www.gutenberg.org/files/271/271-h/271-h.htm
+
+globalEvents:
+  include: []
+  exclude:
+    - elementary-education-act-1870  # written for working men who handled horses; Act created schoolchild readers she did not write for; did not shape authorial intent

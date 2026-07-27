@@ -1,0 +1,195 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds). Author-LIFE events live here (they follow the
+# person); franchise-specific events stay in the franchise.
+#
+# Her mother, Mary Wright Sewell (1797-1884), was herself a popular author of
+# religious verse and children's ballads (Homely Ballads for the Working Man's
+# Fireside, Mother's Last Words) and transcribed Black Beauty from dictation in
+# her daughter's last illness. She is named here in prose only: nothing in this
+# wing is published under her name or credits her as author/co-author/editor of
+# a work, so she gets no global author entity of her own.
+id: anna-sewell
+name: Anna Sewell
+born: 1820-03-30
+died: 1878-04-25
+bio: >
+  Born in Great Yarmouth, Norfolk, to Quaker parents Isaac and Mary Wright
+  Sewell. The family's frequent moves for her father's work took them through
+  London, Sussex and Gloucestershire before they settled back in Norfolk. At
+  fourteen a fall running home from school in the rain injured her ankle badly
+  enough that she had difficulty walking for the rest of her life, and from
+  1839 a further chronic illness left her a permanent invalid. She never
+  married, lived with her parents throughout, and helped her mother - herself
+  a popular author of children's books - with charitable work and with editing
+  her mother's writing. Seriously ill and largely confined to a sofa from
+  1871, she spent her last years writing [[work:anna-sewell/black-beauty|Black
+  Beauty]], first dictating it to her mother and later, in a period of
+  slightly improved health, writing it out in pencil for her mother to
+  transcribe. Published in November 1877, it was her only book. She died five
+  months later, having lived to see it succeed.
+images:
+  portrait: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Anna_Sewell%2C_author_of_Black_Beauty.jpg"
+  portraitCredit: "Unknown photographer, before 1922; public domain (US)"
+  portraitSource: "https://commons.wikimedia.org/wiki/File:Anna_Sewell,_author_of_Black_Beauty.jpg"
+  # A genuine period photograph (head turned three-quarter, dark dress with
+  # white collar), not an illustration - it is the current infobox image on
+  # Wikipedia's own Anna Sewell article, corroborating the identification
+  # beyond the Commons upload alone. First traced to print in The Mentor,
+  # October 1922; public domain in the US as published before 1923, no
+  # attribution required. Chosen over File:Anna_Sewell.jpg, a 150px-wide
+  # bust engraving of weak, unsourced provenance (credited only to a
+  # secondary Argentine education site), and over File:Anna_Sewell_
+  # Jugendbild.PNG, an oval-framed painted youth portrait - a painting, not
+  # a photograph, so excluded on medium regardless of its own public-domain
+  # status.
+lifeEvents:
+  - id: sewell-born-1820
+    organisation: beside
+    illustration_type: place-portrait
+    images_required: 1
+    date: 1820-03-30
+    title: Born in Great Yarmouth
+    impact: low
+    description: >
+      Born into a Quaker family in Great Yarmouth, Norfolk. Her father's
+      failed businesses moved the family repeatedly through London, Sussex
+      and Gloucestershire over the next four decades before they settled
+      back in Norfolk for good, at Old Catton, in 1867.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Anna_Sewell
+      - http://sole.org.uk/sole2/annasewe.htm
+  - id: sewell-ankle-injury-1834
+    organisation: immersion
+    illustration_type: establishing-landscape
+    images_required: 1
+    date: 1834
+    title: The fall that never healed
+    impact: high
+    description: >
+      Running home from school in the rain at fourteen, she slipped and
+      sprained her ankle badly. It was never properly treated and never
+      healed: she had difficulty walking for the rest of her life. Unable
+      to return to school, she turned to riding and driving instead, and
+      years later drew on exactly that dependence - on horses she could
+      not do without - when she came to write from one's point of view.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Anna_Sewell
+      - https://en.wikipedia.org/wiki/Black_Beauty
+  - id: sewell-first-horse-lancing-1845
+    organisation: beside
+    illustration_type: journey-transit
+    images_required: 1
+    date: 1845
+    title: "The family's first horse, at Lancing"
+    impact: med
+    description: >
+      The move to Lancing brings the family's first horse and a
+      pony-chaise; unable to walk far, Sewell drives her father to and
+      from the railway station at Shoreham. Her mother later wrote that
+      "between her and her own horse, and horses in general, a mutual
+      confidence and friendship sprang up, and she learned all their
+      secrets" - the horsemanship [[work:anna-sewell/black-beauty|Black
+      Beauty]] is built from.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Anna_Sewell
+      - http://sole.org.uk/sole2/annasewe.htm
+  - id: sewell-editing-mother-1858
+    organisation: artifact-spread
+    illustration_type: manuscript-proof
+    images_required: 1
+    date: 1858
+    title: Becomes her mother's editor
+    impact: med
+    description: >
+      At Blue Lodge, Wick, near Bristol, she begins editing the ballads of
+      her mother Mary Sewell, who has taken up writing again to help
+      support the family and becomes a genuine Victorian bestseller
+      (Homely Ballads for the Working Man's Fireside, later Mother's Last
+      Words). Sewell works as an editor for nearly two decades before she
+      is ever a published author herself.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Anna_Sewell
+      - http://sole.org.uk/sole2/annasewe.htm
+  - id: sewell-diary-writing-life-of-a-horse-1871
+    organisation: epigraph
+    quote: >
+      I am writing the life of a horse, and getting dolls and boxes ready
+      for Christmas.
+    images_required: 0
+    date: 1871-11-06
+    # An epigraph's `title` is the attribution, not a second copy of the
+    # quotation (docs/LAYOUT.md): the quote renders large and this line sits
+    # beneath it saying where the words come from.
+    title: Diary, 6 November 1871
+    impact: high
+    description: >
+      Seriously ill and confined to a sofa for most of what remains of her
+      life, she notes in her diary on 6 November 1871: "I am writing the
+      life of a horse..." - the first mention anywhere of
+      [[work:anna-sewell/black-beauty|Black Beauty]], six years before it
+      exists as a book.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Anna_Sewell
+      - http://sole.org.uk/sole2/annasewe.htm
+  - id: sewell-pencil-manuscript-1876
+    organisation: artifact-spread
+    illustration_type: manuscript-proof
+    images_required: 1
+    date: 1876
+    title: Writing in pencil, for her mother to copy
+    impact: med
+    description: >
+      During a period of slightly better health she starts writing the
+      book out in pencil herself, her mother transcribing it. "I have for
+      six years been confined to the house and to my sofa," she wrote,
+      "and have from time to time, as I was able, been writing what I
+      think will turn out a little book, its special aim being to induce
+      kindness, sympathy, and an understanding treatment of horses."
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Anna_Sewell
+      - http://sole.org.uk/sole2/annasewe.htm
+  - id: sewell-sells-copyright-1877
+    organisation: beside
+    illustration_type: symbolic-still-life
+    images_required: 1
+    date: 1877-08-21
+    title: "Sells the copyright for £40"
+    impact: med
+    description: >
+      Her mother takes the finished manuscript to her own publisher,
+      Jarrold & Sons of Norwich; Sewell sells the copyright outright for
+      £40 and is sent the first proofs on 21 August 1877.
+      [[work:anna-sewell/black-beauty|Black Beauty]] is published that
+      November, in time for Christmas, and never earns her another penny
+      beyond that £40.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Anna_Sewell
+      - https://catherinepope.com/posts/black-beauty/
+  - id: sewell-death-1878
+    organisation: immersion
+    illustration_type: portrait-of-absence
+    images_required: 1
+    date: 1878-04-25
+    title: Dies five months after publication
+    impact: high
+    description: >
+      Dies at 58; her doctor records the cause as hepatitis and
+      tuberculosis. She lives just long enough to see
+      [[work:anna-sewell/black-beauty|Black Beauty]] sell its first tens
+      of thousands of copies and receive warm reviews - long enough to
+      know it succeeded, not long enough to see how much.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Anna_Sewell
+      - https://en.wikipedia.org/wiki/Black_Beauty
+sources:
+  - https://en.wikipedia.org/wiki/Anna_Sewell
+  - https://en.wikipedia.org/wiki/Black_Beauty
+  - https://en.wikipedia.org/wiki/Mary_Wright_Sewell
