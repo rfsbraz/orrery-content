@@ -1,0 +1,94 @@
+stage: reading-orders
+summary: >
+  2 orders, 3 startHere paths, 0 invented. The real editorial question was
+  never the Harry Potter novels (one door, no debate) but whether Cormoran
+  Strike needs Potter context - it doesn't, sourced rather than inferred.
+  validate.py green: 884 works, 0 errors, 0 new warnings (41 pre-existing on
+  other wings, unchanged). orders.yaml and franchise.yaml's startHere join
+  the wing's other five files already MISSING in pt-PT - no regression,
+  since none of it was translated before.
+produced:
+  orders:
+    - >
+      jk-rowling/harry-potter (curated) - the 7 novels plus Cursed Child, 8
+      works, publication order. Matches the default; isolates the thread
+      from the rest of a 37-work, 4-genre shelf rather than reshuffling it.
+      debated names the 3 companion volumes as deliberately excluded
+      (works.yaml already treats them as reference texts, not installments)
+      and states Cursed Child, despite being shelved as "book eight,"
+      assumes the 7 novels are read first.
+    - >
+      jk-rowling/cormoran-strike (curated) - the 8 Galbraith novels,
+      publication order. Same shape. Its rationale carries the session's
+      actual finding - see sourcing.
+  startHere: >
+    3 paths: start-with-harry-potter (orderId, new / arc+complete),
+    start-with-cormoran-strike (orderId, new+returning / arc+complete),
+    the-complete-shelf (orderId default, returning+completionist /
+    complete). Every path names its cost.
+sourcing:
+  - >
+    Cursed Child as "the eighth story": jkrowling.com's own book page, her
+    own words, not the publisher's.
+  - >
+    The Galbraith-only finding, the session's real deliverable: critics at
+    the Times, the Mail, Publishers Weekly and Library Journal reviewed and
+    praised The Cuckoo's Calling by name as a strong standalone crime debut
+    in the 4 months before anyone knew Robert Galbraith was Rowling (New
+    Statesman, 15 Jul 2013, cross-checked against NPR and the Authors
+    Guild). Real readers - professional ones - doing exactly the
+    "Galbraith-only" read asked about, not a hypothetical, so both
+    artefacts state it as documented fact.
+  - >
+    Rowling's own stated motive corroborates the same point without
+    claiming she recommended an order: CBS News, 24 Jul 2013, her own
+    words ("to work without hype or expectation..."), cross-checked
+    against the BBC's contemporary coverage.
+  - >
+    Cormoran Strike's grouping (one continuing series, not a sequence
+    claim, since it differs nothing from publication order):
+    robert-galbraith.com/strike-books/, the character's official site.
+rejected:
+  - >
+    An order for the Fantastic Beasts screenplays: at 3 works it fits a
+    path's workIds outright. No path either - searched for anyone
+    recommending Fantastic Beasts as an entry TO this shelf, not something
+    a Potter reader meets once inside it, and found only mixed, unsourced
+    "helps but isn't required" commentary about the FILMS.
+  - >
+    A 4th, lower-commitment "taste" path. Every taste-tagged path in the
+    catalogue points at workIds, never orderId; a sampler here would have
+    been invention layered onto two entry points that work alone. Left as
+    an honest gap (openQuestions), not padded to fill a matrix cell.
+  - >
+    Treating the 2013 unmasking as a startHere hook ("read it before you
+    find out"). The secrecy is gone and unrepeatable for a new reader;
+    what survives is that the text needs no Potter context, stated instead.
+forStages:
+  spoiler-audit: >
+    No order moves a later-published work earlier, so none creates a new
+    spoiler vector by construction. Worth a direct look anyway: the
+    harry-potter order's rationale says Cursed Child "assumes you already
+    know how that story resolves" without naming the resolution - confirm
+    that reads as safe. Separately, Beedle the Bard's works.yaml note
+    (flagged by franchise-research, unresolved since) still withholds which
+    tale matters late in the series; untouched here, still open.
+  visual-language: unaffected.
+  editions: unaffected.
+  visual-metadata: unaffected.
+  translation: >
+    orders.yaml (4 strings) and franchise.yaml's startHere (7 strings) join
+    the wing's pre-existing pt-PT MISSING list. Overlays take
+    name/rationale/debated (orders) or title/description/note (paths) only.
+  wing-audit: Wizard capability now live (startHere.paths.length > 0).
+openQuestions:
+  - >
+    The new+taste wizard cell is uncovered - both paths point at 8-work
+    orders, tagged arc+complete rather than taste, matching the catalogue's
+    convention that taste pairs with workIds, never orderId. A future pass
+    could source a genuine low-commitment sampler; none was invented here.
+  - >
+    Both orders are filtered slices of the derived default with no
+    reordering - real per the Discworld thread-order precedent, but will
+    silently drift if a completeness pass adds a work to either subseries
+    without the order being re-diffed against works.yaml.
