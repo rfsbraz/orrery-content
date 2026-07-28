@@ -1,0 +1,66 @@
+stage: completeness-auditor
+summary: "8 works held, no additions or removals; corrected El trato de Argel and El cerco de Numancia from composition (1582) to first-print (1784) publication years, sourced to cervantesvirtual.com's own bibliographic record"
+produced:
+  newWorkIds: []
+  changedDates:
+    - "miguel-de-cervantes/el-trato-de-argel: published 1582 -> 1784"
+    - "miguel-de-cervantes/el-cerco-de-numancia: published 1582 -> 1784"
+forStages:
+  press-archaeology: >
+    No change to bio/lifeEvents scope. The BVMC cronologia and biografia
+    pages (cervantesvirtual.com) are a strong primary source if a life
+    event ever covers the 1580s theatrical period or the 1605 Philip III
+    masquerade lead the handoff flagged - both are indexed there year by
+    year, in more depth than either Wikipedia.
+  eras: >
+    The derived reading order (by published year) now runs 1784, 1784,
+    1585, 1605, 1613, 1614, 1615, 1617 - El trato de Argel and El cerco de
+    Numancia sort last, after Persiles y Sigismunda, rather than first.
+    Their composition still belongs to the early 1580s captivity period
+    narratively (each entry's note says so and sources it), so an era
+    covering that period should place them there by composition, not by
+    where the derived order's published-year sort puts them - the same
+    situation the eras skill will already recognize from Poe's The Poetic
+    Principle (published 1850, written 1848, era-placed with the 1848
+    lecture). The 1582-1617 working-life span and the "20-year silence,
+    explosive final decade, posthumous coda" shape the previous stage
+    described are both unchanged; only the derived-order position of these
+    two works moved.
+  reading-orders: >
+    No startHere paths exist yet. If one is ever built, note that these two
+    plays now sit at the very end of the default chronological order,
+    decades after Cervantes's death - a reader following "publication
+    order" naively would read them last, after Persiles, which is
+    historically true (that is when they reached readers) but would be a
+    strange place to encounter them dramatically; a curated order might
+    want to say so explicitly rather than leave it implicit.
+  visual-metadata: >
+    No new works need cover sourcing. The two re-dated plays' covers, if
+    any exist, would logically be the 1784 Sancha edition or a modern
+    facsimile of it rather than anything from the 1580s, since no
+    contemporary edition exists to depict.
+openQuestions:
+  - >
+    "La conquista de Jerusalén por Godofre de Bullón" is a live, unresolved
+    attribution case, stronger than anything else checked this pass: a
+    manuscript play published by the Hispanist Stefano Arata in 1992,
+    proposed as Cervantes's own lost "La Jerusalén" (a title he names among
+    his lost early comedias), with a Cátedra critical edition in 2009 and a
+    further attribution study (Aaron Kahn, 2010) since. This pass did not
+    add it, since the record does not settle the attribution one way or the
+    other and a synopsis would assert an authorship the scholarship itself
+    argues about; a curator who wants to track this case more closely than
+    "excluded" may want to read Arata (1992) and Kahn (2010) directly.
+  - >
+    The Don Quixote one-work-vs-two-works call and the Ocho comedias
+    one-work-vs-split-comedias call, both inherited from franchise-research,
+    were not revisited beyond confirming no new evidence changes them - the
+    reasoning already recorded on those two entries and in the prior
+    handoff still holds.
+  - >
+    Britannica remained unreachable this pass too (403 on every fetch
+    attempt, including via web.archive.org). Every fact in this pass is
+    corroborated by cervantesvirtual.com (Biblioteca Virtual Miguel de
+    Cervantes) directly, which is a stronger primary source for a Spanish-
+    language author than Britannica would have been anyway, so this does
+    not read as a gap - noted for completeness.
