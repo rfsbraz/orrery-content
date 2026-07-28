@@ -8,6 +8,7 @@ tells you which stage was expensive *that time*; three tell you which stage is
 |---|---|---|---|---|---|---|
 | 2026-07-26 | john-shirley | 84 | 2,494,974 | 679 | 11 | `visual-metadata` at 170 calls / 1,942 tok per call, the death-by-fetches shape, on a stage whose skill already says to batch. Two footprint violations: `franchise-research` wrote `theme.art`, `press-archaeology` wrote the art grammar onto 8 events. |
 | 2026-07-27 | anna-sewell | 1 | 1,790,368 | 458 | 10 | `lookup.py --author` returned 1911 contaminated candidate rows across "52 works", inflating both `editions` (74 calls for 3 editions) and `visual-metadata` (66 calls for 3 images). Second consecutive wing hitting it. Zero footprint violations. |
+| 2026-07-28 | robert-bryndza | 25 | 2,489,107 | 963 | 13 | Corrections don't propagate sideways: `press-archaeology` fixed "sold a million copies within five months" to "within a year" in 3 files but never touched `eras.yaml`, which had independently written the same wrong figure from the same About-page source one stage earlier - only `wing-audit` caught the drift. Separately, `editions`' synopsis-match notes reintroduced 3 details `spoiler-audit` had deliberately cut (devils-way's near-drowning, coco-pinchard-the-consequences's remarriage, chasing-shadows's identity), because `editions` runs after `spoiler-audit` and never reads its rewrites - inert today (`edition.note` renders nowhere) but a live trap. Zero footprint violations; opus spend (`eras`, `spoiler-audit`, `wing-audit`) matched real catches. |
 
 ## What two runs already show
 
