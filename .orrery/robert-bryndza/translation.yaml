@@ -1,0 +1,206 @@
+stage: translation
+summary: >
+  pt-PT coverage closed from 0 to complete: 6 base files, 54 prose slots
+  (11 franchise.yaml + 25 works.yaml + 9 eras.yaml + 10 events.yaml +
+  2 orders.yaml + 7 authors/robert-bryndza.yaml), all translated. Catalogue
+  total 120/137 -> 126/137 files fully covered, no other locale or wing
+  touched. Both title-collision traps resolved from editions.yaml's recorded
+  Portuguese titles, not translated independently; all five spoiler-audit
+  omissions preserved; Ján is prose only, no co-author overlay needed.
+
+produced:
+  filesWritten:
+    - "content/i18n/pt-PT/authors/robert-bryndza.yaml (new: bio + 3 lifeEvents)"
+    - "content/i18n/pt-PT/franchises/robert-bryndza/franchise.yaml (new:
+      description + 5 startHere paths, title/description/note each)"
+    - "content/i18n/pt-PT/franchises/robert-bryndza/works.yaml (new: 25
+      synopses)"
+    - "content/i18n/pt-PT/franchises/robert-bryndza/eras.yaml (new: 3 eras,
+      title/description/themes each)"
+    - "content/i18n/pt-PT/franchises/robert-bryndza/events.yaml (new: 5
+      events, title/description each)"
+    - "content/i18n/pt-PT/franchises/robert-bryndza/orders.yaml (new: 1
+      order, name/rationale)"
+
+coverage:
+  before: "i18n_coverage.py: pt-PT 120/137 files fully covered; robert-bryndza's
+    6 base files all MISSING (franchise.yaml 11, works.yaml 25, eras.yaml 9,
+    events.yaml 10, orders.yaml 2, authors/robert-bryndza.yaml 7 - 64 prose
+    slots)."
+  after: "pt-PT 126/137 files fully covered. robert-bryndza no longer appears
+    in MISSING or PARTIAL. No other wing's status changed - the 11 PARTIAL
+    files still listed (agatha-christie, harlan-coben, lee-child,
+    robert-jordan, stephen-king, terry-pratchett, and their authors) are the
+    same pre-existing gaps as before this run, unrelated to this wing."
+  regression: "None. Confirmed by re-running i18n_coverage.py with no wing
+    filter (the script is inherently catalogue-wide) and diffing its output
+    against the before-state above."
+
+titleCollisionTraps:
+  status: AVOIDED, verified against editions.yaml directly rather than
+    translated independently.
+  shadowSands: >
+    Not quoted inline anywhere in this wing's translatable prose (checked by
+    grepping every base file for "shadow-sands" before translating - it
+    appears only as a bare workId string inside franchise.yaml's
+    try-kate-marshall path, which overlays never touch). Its correct
+    Portuguese title per editions.yaml is "A Noite Está a Chegar" (Alma dos
+    Livros, 2021) - recorded in works.yaml's overlay header for the next
+    translator, in case a future prose addition needs it, so the trap stays
+    visible even though this run never had to cross it.
+  devilsWay: >
+    Same situation: appears only as a bare workId, never as inline prose, in
+    the same try-kate-marshall path. Its correct Portuguese title per
+    editions.yaml is "Silêncio Mortal" (Alma dos Livros, 2022) - recorded in
+    the same header comment for the same reason.
+  method: >
+    Grepped every base .yaml file in this wing for "shadow-sands" and
+    "devils-way" before starting (both inline [[work:...]] markup and plain
+    workId lists) to confirm neither trap could actually be sprung this run,
+    rather than assuming from the brief that it would be. It would not have
+    been safe to skip this check: both titles are close enough to a
+    different title in this wing (see editions.yaml's own header) that a
+    translator working from instinct rather than the verified table could
+    have introduced either mix-up into fresh prose without meaning to.
+
+spoilerAuditPreservation:
+  method: >
+    Translated the base English works.yaml and events.yaml as they stand
+    today, entry by entry, rather than from any earlier draft or from
+    publisher copy - the corrected versions are the only ones that exist in
+    the worktree. Verified after translating that no omitted detail was
+    reintroduced by re-reading each of the five against spoiler-audit.yaml's
+    own description of what was cut.
+  devilsWay: >
+    Base synopsis has no near-drowning/hospital opening; Portuguese synopsis
+    likewise opens on the case (decade-old disappearance, camping trip,
+    fast river) with no recovery or hospital detail anywhere in the sentence.
+  cocoPinchardConsequencesOfLoveAndSex: >
+    Base synopsis says "her husband's job troubles" with no name; Portuguese
+    says "os problemas de emprego do marido" (husband, unnamed) throughout -
+    Adam's name never appears in this entry's Portuguese synopsis, matching
+    the English exactly.
+  chasingShadows: >
+    Base keeps the jacket's own hedge ("though his passport gives another
+    name and his criminal record is spotless"), not a flat assertion of a
+    clean new identity. Portuguese mirrors the hedge precisely: "ainda que o
+    passaporte dele traga outro nome e a ficha criminal esteja limpa" -
+    framed as what the passport/record show, not stated as settled fact.
+  nineElms: >
+    Base says "intended fifth victim" (the jacket's own number, not "final").
+    Portuguese says "quinta vítima pretendida" - "quinta" (fifth), not
+    "última" (final/last) anywhere in the sentence.
+  breakingPoint: >
+    Base stops at "Margaret Valance decides she has had enough" - premise
+    only, no plan, no outcome. Portuguese stops at the equivalent point:
+    "Margaret Valance decide que já chega" - nothing about what she does
+    next was added.
+
+janCoAuthorDecision: >
+  No pt-PT author overlay created for Ján. Confirmed from the file structure,
+  not assumed: content/authors/ has no jan-bryndza.yaml or similar (the only
+  Bryndza entity is content/authors/robert-bryndza.yaml), and
+  works.yaml's own CO-AUTHOR note explains why - Bitch Hollywood records
+  authorRole: co-author on the single robert-bryndza author id rather than
+  registering Ján as a second global author entity, "the same pattern already
+  used for a Jo Nesbø co-written title" (works.yaml's own words). Ján exists
+  in this wing only as a named person inside prose (the husband, the
+  co-writer/translator of Bitch Hollywood's Slovak edition), never as an
+  id-bearing entity with fields of his own to translate. His name is a
+  Slovak proper noun and is carried through every Portuguese sentence
+  unchanged (bio, both lifeEvents that mention him, the-self-published-
+  comedies era description) - never declined, never given a Portuguese
+  spelling variant. Mrcha Hollywood (the Slovak title) is likewise a proper
+  noun, quoted as-is wherever it appears.
+
+registerCheck: >
+  Coco Pinchard entries (the-not-so-secret-emails-of-coco-pinchard,
+  coco-pinchards-big-fat-tipsy-wedding, coco-pinchard-the-consequences-of-
+  love-and-sex, a-very-coco-christmas, coco-pinchards-must-have-toy-story,
+  miss-wrong-and-mr-right, the-self-published-comedies era, both franchise.yaml
+  startHere paths that name Coco) use warm, domestic, list-like sentence
+  shapes ("reconstrói a vida numa série de emails às amigas", "caírem todos
+  ao mesmo tempo"), matching the base English's own comic accumulation. The
+  17 crime synopses and 4 crime-side events stay terse and procedural
+  ("arrastando", "descobre que", "e a própria Erika Foster torna-se alvo"),
+  no explanatory padding added. Checked against a length ratio, not just by
+  eye: no Portuguese synopsis or event description runs meaningfully longer
+  than its English original once corrected for Portuguese's normal ~10-15%
+  word-count inflation over English.
+
+fieldsDeliberatelyNotTranslated:
+  workNote: >
+    works.yaml's `note` field (5 entries: devils-way,
+    coco-pinchard-the-consequences-of-love-and-sex, a-very-coco-christmas,
+    coco-pinchards-must-have-toy-story, bitch-hollywood) is NOT translated.
+    Verified directly in the orrery app repo (~/apps/orrery,
+    lib/content/types.ts): the Work interface has no `note` field at all,
+    and grepping the app's .ts/.tsx source for `.note` usage found only
+    Pseudonym.note (about-the-author.tsx) and StartHerePath.note
+    (start-wizard.tsx) actually rendered - never a Work's. This matches a
+    precedent already recorded in an existing sibling overlay
+    (content/i18n/pt-PT/franchises/jo-nesbo/works.yaml's own header), and
+    this run independently re-verified it against the app source rather than
+    trusting the precedent on its word.
+  eraNote: >
+    eras.yaml's `note` field (present on all 3 eras in the base file) is
+    likewise NOT translated, for the same reason: the Era interface in the
+    app has no `note` field and nothing renders it.
+  startHereNote: >
+    By contrast, franchise.yaml's startHere path `note` IS translated (all
+    5 paths) even though i18n_coverage.py does not count it - StartHerePath.note
+    is a real field, rendered by components/wizard/start-wizard.tsx,
+    confirmed the same way. The coverage script's slot count for
+    franchise.yaml (11) omits these 5 notes entirely; this overlay carries
+    them anyway because the rendered page shows them.
+
+verification: >
+  python3 scripts/i18n_coverage.py and python3 scripts/validate.py --slug
+  robert-bryndza both run clean (see coverage and gates above). Every YAML
+  file re-parsed individually with yaml.safe_load to confirm no syntax
+  damage. Grepped all six new files against the skill's Brazilian-tell table
+  (está lendo/vai chegando, quadrinhos, roteiro, beisebol, tela, ônibus,
+  banheiro, celular, arquivo) and against the estar+gerund construction
+  pattern: zero matches. NOT done: rendering the actual pages in a running
+  app. This wing lives only on the robert-bryndza/translation branch inside
+  an isolated worktree - it has not merged to orrery-content main, is not
+  pinned by the orrery app's content submodule, and is not live anywhere, so
+  there is no rendered pt-PT page to open and read yet. The static checks
+  above (coverage gate, validator, parse, register/Brazilianism grep, and
+  the Work/Era/StartHerePath field checks against the app's own
+  lib/content/types.ts and component source) are what a pre-merge stage in
+  a worktree can verify; a live-sweep read of the rendered wing page is the
+  one verification step from this skill's "Done means" section that a
+  future stage (wing-audit, or a post-merge check) still needs to do once
+  this content is live.
+
+forStages:
+  wing-audit: >
+    Two things worth a look: (1) the live-rendered-page read this stage
+    could not do pre-merge - open the pt-PT robert-bryndza franchise page,
+    at least one work page from each register (a Coco Pinchard synopsis and
+    an Erika Foster synopsis), and the wizard/startHere UI, once this
+    content is live, and quote a rendered Portuguese line as evidence per
+    this skill's "Done means"; (2) fear-the-silence's synopsis/jacket
+    discrepancy that spoiler-audit flagged (Croatian-island death vs.
+    hospital-then-island) was translated as-is from the current English
+    text, unchanged and unfixed here, same as every other stage since
+    spoiler-audit left it open.
+
+gates: >
+  python3 scripts/validate.py --slug robert-bryndza: 0 errors, 5 warnings,
+  all five pre-existing handoff-length warnings from earlier stages
+  (visual-metadata, art-rotation, completeness-auditor, editions,
+  spoiler-audit); no new warnings or errors from this stage's own files. An
+  initial run flagged two problems in this stage's own works.yaml, both
+  fixed before this handoff: a literal "[[work:...]]" example string in a
+  header comment that the validator's inline-reference scanner tried to
+  resolve as a real reference (reworded to describe the rule without the
+  bracket syntax), and a comment naming the "spoiler-audit" stage directly
+  (reworded to state the preserved omissions as facts, per the sanctuary
+  rule - no comment in the final files names a stage, pass, or agent).
+  python3 scripts/i18n_coverage.py: 120/137 -> 126/137, robert-bryndza's 6
+  files moved from fully MISSING to fully covered, no other file's status
+  changed.
+
+openQuestions: []
