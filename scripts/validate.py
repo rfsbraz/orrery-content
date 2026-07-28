@@ -439,6 +439,14 @@ def check_asset_pixels(loc, entity_id, value, path, grammar=None):
                      f"which takes the --opaque path")
     elif regime == "plate":
         pass  # keyed, never dissolved; the app's plate mask is the edge (§4)
+    elif regime == "artifact":
+        # Drawn edge, forced --no-dissolve, and trimmed to content by
+        # prepare_asset.py - by the time this measures it, the transparent
+        # margin outside the artifact's own border is already gone, so
+        # reading near-100% opaque here is the correctly-filed case, not a
+        # lost alpha channel. See _edge_regime's docstring: "its edges
+        # legitimately run solid."
+        pass
     elif opaque >= OPAQUE_MAX:
         report(f"{entity_id}: sketch '{value}' is {opaque:.0%} opaque - it has "
                  f"lost its alpha and will render as a rectangle sitting on the "
