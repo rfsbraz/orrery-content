@@ -1,0 +1,45 @@
+# ADDITIONAL canon orders only. The DEFAULT order (all 25 works, publication-
+# chronological) is derived from works.yaml and is NOT listed here.
+#
+# Only one order earns a slot. Kate Marshall (5 books, distinct years) and
+# Jamie Day (2 books, distinct years) already read correctly under the
+# derived default with no ties to break, so a hand-copied "in order" for
+# either would carry no information the default does not give for free -
+# their startHere paths below point straight at works.yaml. Erika Foster is
+# different: three of its nine novels share a publication year (2016) and two
+# more share another (2017), so the derived default's within-year sequence
+# for five of the nine books is arbitrary. The publisher's own numbering
+# settles it, and that numbering is what this order records.
+#
+# The Coco Pinchard trilogy-then-novellas question (see works.yaml's PREQUEL
+# NUMBERING note) is resolved the same way but does not need an order: five
+# books is a startHere path's workIds, not a file entry - see franchise.yaml.
+
+- id: robert-bryndza/erika-foster-in-order
+  name: Detective Erika Foster, in order
+  type: curated
+  source: canon
+  rationale: >
+    All nine [[work:robert-bryndza/the-girl-in-the-ice|Detective Erika
+    Foster]] novels, numbered #1 through #9 on the publisher's own product
+    pages and FAQ. The derived publication order cannot settle this on its
+    own: The Girl in the Ice, The Night Stalker and Dark Water all published
+    in 2016, and Last Breath and Cold Blood both in 2017, so five of the nine
+    books share a tied year and the publisher's numbering is the only source
+    for which comes first. This order changes nothing else - it exists to
+    break those ties correctly, not to reshuffle the series.
+  orderedWorkIds:
+    - robert-bryndza/the-girl-in-the-ice
+    - robert-bryndza/the-night-stalker
+    - robert-bryndza/dark-water
+    - robert-bryndza/last-breath
+    - robert-bryndza/cold-blood
+    - robert-bryndza/deadly-secrets
+    - robert-bryndza/fatal-witness
+    - robert-bryndza/lethal-vengeance
+    - robert-bryndza/chasing-shadows
+  sources:
+    - https://www.robertbryndza.com/pages/faqs
+    - https://www.robertbryndza.com/products/the-night-stalker
+    - https://www.robertbryndza.com/products/dark-water
+    - https://www.robertbryndza.com/products/chasing-shadows

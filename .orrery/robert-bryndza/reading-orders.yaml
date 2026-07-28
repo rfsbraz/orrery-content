@@ -1,0 +1,91 @@
+stage: reading-orders
+summary: >
+  1 order, 5 startHere paths. Solves issue #63 ("two audiences, one byline")
+  entirely through entry paths: scope is unchanged, and a crime reader
+  choosing any of the three series paths never touches the romantic
+  comedies. The three crime series are confirmed independent (no shared
+  characters or setting anywhere in the publisher's own copy), so each got
+  its own path with no cross-series prerequisite. Coco Pinchard's
+  trilogy-vs-novellas ordering question (flagged by franchise-research) is
+  resolved by the author's own FAQ and confirmed by per-book numbering on
+  his product pages: trilogy first, novellas last.
+
+produced:
+  filesWritten:
+    - "content/franchises/robert-bryndza/orders.yaml (new file, 1 order:
+      erika-foster-in-order)"
+    - "content/franchises/robert-bryndza/franchise.yaml (startHere block
+      added, 5 paths)"
+  orderIds: [robert-bryndza/erika-foster-in-order]
+  pathIds:
+    - everything-in-order
+    - start-with-erika-foster
+    - try-kate-marshall
+    - try-jamie-day
+    - start-the-comedies
+
+orders:
+  added:
+    - id: robert-bryndza/erika-foster-in-order
+      type: curated
+      verdict: EARNED
+      reasoning: >
+        Three novels share 2016, two more share 2017 - the derived default's
+        within-year order for 5 of 9 books is arbitrary. Publisher numbering
+        (FAQ + each product page's own "#N" title) settles it. Fixes real
+        ties, changes nothing else.
+  rejected:
+    - candidate: "Kate Marshall, in order"
+      reasoning: "5 books, no shared year - default is already correct; path uses workIds instead."
+    - candidate: "Jamie Day, in order"
+      reasoning: "2 books, one forthcoming - too small for an order; workIds on its path."
+    - candidate: "Coco Pinchard, in order (trilogy-then-novellas)"
+      reasoning: >
+        Real divergence (moves one novella) but fits a single path's workIds
+        (5 works). Sourced to the author's own FAQ, corroborated by book
+        numbers 4/5 printed on the novellas' own product pages - no order
+        file entry needed.
+
+startHere:
+  designPrinciple: >
+    Each crime series path is a closed door - reading only that series
+    touches no romcom content. The fifth path is the only route into Coco
+    Pinchard, so a romcom-only reader skips the 17 crime novels too. 5 paths
+    at the cap: completionist, the three series, the comedies.
+  crossoverCheck: >
+    Erika Foster (Met Police, London, present-day), Kate Marshall
+    (ex-detective P.I., Ashdean/South Devon, present-day), Jamie Day (rookie
+    Met officer, 1987 London) share no named character or setting across the
+    publisher's series pages, FAQ or the Quiet Kill launch post. Independent,
+    confirmed by absence across every source checked.
+  spoilerAudit: >
+    Admission test applied to all three: each book-1 synopsis states
+    pre-series backstory as premise (Erika's husband's death, Kate's
+    disgrace), not a within-series reveal. No later synopsis names an
+    earlier book's culprit. No workIds title reads as a spoiler. Nothing
+    flagged beyond a normal re-read.
+  authorRecommendedNote: >
+    No source states a cross-series order, because none exists. The one "in
+    which order" statement found (the FAQ) is per-series only, which is what
+    the 5 paths reflect.
+
+forStages:
+  spoiler-audit: >
+    Re-check the 5 paths and 1 order's ungated prose as an anonymous
+    newcomer. Two spots worth a second look: "try-jamie-day"'s note quotes
+    Bryndza's own "completely without planning" account (sourced, not
+    invented) - confirm it reads as color, not as undercutting the series;
+    "everything-in-order"'s note names the 2016 genre switch directly, which
+    is deliberate, the whole point of the design.
+  translation: >
+    This wing has zero pt-PT coverage today (i18n_coverage.py confirms), so
+    no overlay was added, matching every prior stage's practice here. Needs,
+    when translation runs: orders.yaml (1 entry) and startHere's 5 paths
+    (title/description/note each).
+
+openQuestions: []
+
+gates: >
+  validate --slug robert-bryndza unchanged before/after: 1 pre-existing
+  error (theme.yaml art: block, not this stage's concern), 1 pre-existing
+  warning (completeness-auditor's handoff length). No new errors.
