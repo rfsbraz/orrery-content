@@ -1,0 +1,100 @@
+stage: spoiler-audit
+summary: "36 spoilers found and redacted across 3 files: 34 work synopses, 2 startHere path descriptions, pt-PT mirrored; no spoilerAfter boundary needed on any of the 11 events"
+produced:
+  redactedIds:
+    - edgar-allan-poe/metzengerstein
+    - edgar-allan-poe/the-duc-de-lomelette
+    - edgar-allan-poe/a-tale-of-jerusalem
+    - edgar-allan-poe/the-assignation
+    - edgar-allan-poe/berenice
+    - edgar-allan-poe/morella
+    - edgar-allan-poe/mystification
+    - edgar-allan-poe/ligeia
+    - edgar-allan-poe/a-predicament
+    - edgar-allan-poe/the-man-that-was-used-up
+    - edgar-allan-poe/the-fall-of-the-house-of-usher
+    - edgar-allan-poe/the-man-of-the-crowd
+    - edgar-allan-poe/never-bet-the-devil-your-head
+    - edgar-allan-poe/eleonora
+    - edgar-allan-poe/three-sundays-in-a-week
+    - edgar-allan-poe/the-oval-portrait
+    - edgar-allan-poe/the-pit-and-the-pendulum
+    - edgar-allan-poe/the-tell-tale-heart
+    - edgar-allan-poe/the-black-cat
+    - edgar-allan-poe/the-spectacles
+    - edgar-allan-poe/a-tale-of-the-ragged-mountains
+    - edgar-allan-poe/the-oblong-box
+    - edgar-allan-poe/thou-art-the-man
+    - edgar-allan-poe/the-purloined-letter
+    - edgar-allan-poe/the-thousand-and-second-tale-of-scheherazade
+    - edgar-allan-poe/the-imp-of-the-perverse
+    - edgar-allan-poe/the-system-of-doctor-tarr-and-professor-fether
+    - edgar-allan-poe/the-facts-in-the-case-of-m-valdemar
+    - edgar-allan-poe/the-sphinx
+    - edgar-allan-poe/the-cask-of-amontillado
+    - edgar-allan-poe/hop-frog
+    - edgar-allan-poe/the-city-in-the-sea
+    - edgar-allan-poe/ulalume
+    - edgar-allan-poe/eldorado
+    - "startHere:essentials"
+    - "startHere:meet-dupin"
+  boundariesSet: []
+  boundariesLoosened: []
+  filesTouched:
+    - content/franchises/edgar-allan-poe/works.yaml
+    - content/franchises/edgar-allan-poe/franchise.yaml
+    - content/i18n/pt-PT/franchises/edgar-allan-poe/franchise.yaml
+forStages:
+  visual-language: >
+    The text now withholds what the art must not restore. Concretely, no
+    bricked-up niche or trowel for The Cask of Amontillado, no heart or
+    lifted floorboard for The Tell-Tale Heart, no cat on a corpse behind a
+    wall for The Black Cat, no ape at the window for The Murders in the Rue
+    Morgue, no shrouded figure in the doorway for The Fall of the House of
+    Usher, no dismantled general for The Man That Was Used Up, no card rack
+    for The Purloined Letter. The 6 era plates are symbolic still lifes
+    drawn from publishing material (unsold pamphlets, an editor's desk, a
+    newsroom, a rented cottage), which is safe as specified; the exposure
+    sits in any per-work cover or tale-level illustration added later.
+    Nineteenth and early twentieth century illustrated Poe (Dore, Clarke,
+    Rackham, Harry Clarke especially) almost always depicts the climax, so
+    a public-domain plate chosen for atmosphere can undo a redaction in one
+    image.
+  visual-metadata: >
+    Same exposure, different surface: a sourced cover for an individual tale
+    is usually a climax illustration. Where a cover shows the reveal, prefer
+    a title page, a first-appearance magazine masthead, or an atmospheric
+    plate from earlier in the tale. Alt text and captions are ungated prose
+    and count as synopsis for this purpose.
+  translation: >
+    The redacted English is final for these 36 strings. The two startHere
+    descriptions are already mirrored in
+    content/i18n/pt-PT/franchises/edgar-allan-poe/franchise.yaml in the same
+    commit. works.yaml, eras.yaml, events.yaml and the author entity have no
+    pt-PT overlay at all yet, so nothing was invalidated there and
+    i18n_coverage is unchanged (pt-PT 130/146 files, franchise.yaml still
+    6/7 with the franchise description untranslated, both pre-existing).
+    Translate the synopses from the redacted text, and note that a
+    Portuguese edition's own contracapa for a Poe selection may state the
+    reveal the English now withholds; the boundary is the redacted string,
+    not the Portuguese blurb.
+  wing-audit: >
+    Three things worth a second look. (1) The 34 rewritten synopses were
+    written to premise level from the tales themselves, not from publisher
+    copy, because per-tale jacket copy does not exist for a body of work
+    published in magazines; the one collection description retrieved
+    verbatim (Standard Ebooks' Poe short fiction) names titles and genres
+    only and states no plots, which is the shape of every Poe collection
+    blurb. (2) The Narrative of Arthur Gordon Pym keeps "an ending that
+    breaks off in mid-sentence", which is a structural reveal, on the ground
+    that the 1838 first edition itself closes with a publisher's Note
+    explaining the missing chapters. (3) orders.yaml's rationale says each
+    Dupin case "moves through a different kind of space: city streets, open
+    riverbank, a locked private study" - not a spoiler, but "city streets"
+    is a loose description of a tale whose scene is a sealed fourth-floor
+    room.
+openQuestions:
+  - "The publisher test could not be completed the way the skill specifies. Individual Poe tales have no jacket copy of their own, three commercial publisher pages (OUP, Penguin Random House, Library of America) returned a Cloudflare challenge, a 404 or a mismatched product, and the web-search budget for the session was exhausted. One collection description was retrieved verbatim and names titles only. So no jacket copy licenses any of the reveals removed here, and the asymmetry decided the ties."
+  - "Three redactions cover material close to public knowledge and are the ones a curator is most likely to want loosened: the heart beneath the floorboards (The Tell-Tale Heart), the immurement (The Cask of Amontillado) and the cat behind the wall (The Black Cat). Each is still the closing revelation of its own tale, and the wing's standard is a reader who has not read that tale, so each was redacted; each is loosenable deliberately."
+  - "The Murders in the Rue Morgue was checked and left alone in all four places it appears (its own synopsis, the franchise event, the meet-dupin path, the order rationale). None names the culprit, and the historical-significance framing never needed it."
+  - "No spoilerAfter was set anywhere. All 3 franchise events and all 8 lifeEvents are reception history or biography and state no plot point of any work, which matches press-archaeology's own handoff note. No spoilerAfter sits on a field that cannot carry one."
