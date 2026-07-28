@@ -1,0 +1,76 @@
+stage: press-archaeology
+summary: >
+  8 lifeEvents added to the author entity plus the required Avellaneda affair
+  franchise event; corrected the Shakespeare "same death day" claim against
+  the Julian/Gregorian calendar gap rather than repeating it.
+produced:
+  lifeEventIds:
+    - cervantes-born-1547
+    - cervantes-lepanto-1571
+    - cervantes-algiers-captivity-1575
+    - cervantes-seville-imprisonment-1597
+    - cervantes-don-quixote-published-1605
+    - cervantes-final-prolific-years-1613
+    - cervantes-persiles-dedication-1616
+    - cervantes-death-1616
+  franchiseEventIds:
+    - avellaneda-affair-1614
+forStages:
+  eras: >
+    aura_density.py's 168-year "dark run" (1617-1784) is a publication-date
+    artefact, not a gap: the two plays landing there are dated by first
+    print (1784), and their 1582 composition period is already covered by
+    cervantes-algiers-captivity-1575 (dateRange 1575-1580) right before it -
+    place them by composition and the run is already lit. Separately,
+    cervantes-don-quixote-published-1605 is the natural boundary between
+    the "20-year silence" and the "explosive final decade," and
+    cervantes-final-prolific-years-1613 (dateRange 1613-1616) is a
+    ready-made span if you want a distinct final era.
+  spoiler-audit: >
+    avellaneda-affair-1614 carries `spoilerAfter:
+    miguel-de-cervantes/don-quixote` - its description covers a Part Two
+    metafictional device (~ch. 59 on). Nothing else added this pass spoils
+    anything; the lifeEvents are biographical, not plot.
+  visual-language: >
+    theme.yaml's `art:` block is still the only pre-existing error on this
+    wing, unchanged by this pass. Illustration types used lean archival and
+    maritime: place-portrait, portrait-of-absence (the disabled hand),
+    atmospheric-motif-field (Algiers), document-facsimile (the Seville
+    prison record), press-media-collage (1605), archive-stack (the final
+    years), book-object (Avellaneda's fake volume), one epigraph (the
+    Persiles dedication). "El manco" (the disabled hand) recurs as a
+    possible visual throughline.
+  art-rotation: >
+    9 aura entries total (8 lifeEvents + 1 franchise event) for 8 works,
+    1.12/work. Organisation cadence assigned deliberately down the
+    timeline: full-bleed-vista -> beside -> immersion -> artifact-spread ->
+    mosaic -> layered-stack -> artifact-spread -> epigraph -> immersion.
+    immersion at its 1-2 cap (Algiers + death, not adjacent); epigraph used
+    once of 2-3; no two loud cells touch. Not verified with
+    art_rotation.py --check - worth running before this ships.
+openQuestions:
+  - >
+    Which imprisonment "engendered" Don Quixote is genuinely unsettled in
+    the scholarship (1597 Seville vs 1592 Castro del Río, per Canavaggio
+    and Astrana Marín) - cervantes-seville-imprisonment-1597 states the
+    dispute rather than picking a side.
+  - >
+    Avellaneda's real identity is deliberately left unnamed, per the
+    ruling already recorded on issue #115. Naming specific proposed
+    identities would be a fresh sourcing question this pass did not take
+    on.
+  - >
+    The 1607 Pausa/Peru masquerade lead franchise-research flagged was
+    checked and not corroborated within reach; only the general New
+    World-reach fact (about 70 copies reaching Lima, then Cuzco, within
+    the year) was solidly sourced, and is folded into
+    cervantes-don-quixote-published-1605 instead.
+  - >
+    Britannica 403'd again this pass, same as both prior stages; every
+    fact here is corroborated across English and Spanish Wikipedia
+    independently.
+  - >
+    Drive-by correction: works.yaml's Persiles entry cited a dead English
+    Wikipedia URL ("The_Trials_of_Persiles_and_Segismunda", 404); the real
+    title is "Los_trabajos_de_Persiles_y_Sigismunda". Fixed since it
+    surfaced directly in this pass's own sourcing.
