@@ -1,0 +1,55 @@
+stage: visual-metadata
+summary: "Portrait sourced (disputed Jauregui attribution, caveat stated in the credit); 7/8 works covered; franchise header left unset per convention"
+produced:
+  portraitSourced: true
+  worksCovered: 7
+forStages:
+  editions: >
+    No overlap touched (editions.yaml untouched, works.yaml's images blocks
+    only). Two works print-dated 1784 (el-trato-de-argel, el-cerco-de-
+    numancia) sit outside all four eras per validate.py's warning - pre-
+    existing, confirmed unchanged by a before/after diff of this stage's
+    validator run, not something this pass introduced or can fix from
+    works.yaml.
+  wing-audit: >
+    The portrait call is the one thing worth a second look. No authenticated
+    likeness of Cervantes survives; the file used (Cervantes Jauregui.jpg)
+    is Wikidata Q5682's own P18 claim and the infobox image on both English
+    and Spanish Wikipedia. Its Commons extmetadata states outright that
+    "modern scholarship does not accept this, or any other graphic
+    representation of Cervantes, to be authentic, nor is there any
+    documentation for Jauregui having painted this portrait" - English
+    Wikipedia's caption for the same file goes further: "unauthenticated. No
+    authenticated image of Cervantes exists." portraitCredit carries that
+    caveat rather than presenting the image as a confirmed likeness:
+    "Traditionally attributed to Juan de Jauregui, circa 1600 - the
+    attribution and the sitter's identity are both disputed by art
+    historians and unauthenticated; no confirmed portrait of Cervantes from
+    life is known to survive. Public domain (artist died 1641)." No
+    alternative candidate exists to weigh against it - this is the only
+    image any reference source associates with Cervantes at all, so the
+    call was whether to caption it honestly or skip it, not which of several
+    images to pick.
+openQuestions:
+  - >
+    El trato de Argel has no cover: Open Library's one edition record
+    (OL575578M) carries a library security-tag sticker across the portrait
+    on both its cover images, and the only other candidate under a variant
+    title (OL24830176W, a 2017 print-on-demand edition) has "Copyrighted
+    Material" stamped into the pixels. Documented in a YAML comment in
+    works.yaml rather than left silent.
+  - >
+    Franchise header: content/franchises/miguel-de-cervantes/franchise.yaml
+    was checked and deliberately left with no images block, matching the
+    wing/edgar-allan-poe branch's franchise.yaml (also no header field) -
+    header images were dropped from the app's franchise-page rendering this
+    session, so new wings should not populate the field. Confirmed by
+    reading that file directly rather than assumed from the instruction
+    alone.
+  - >
+    Novelas ejemplares uses a Penguin Classics "Exemplary Stories" cover
+    (Velazquez's Old Woman Frying Eggs on the jacket) rather than the
+    higher-edition-count default cover on the same Open Library work record,
+    which resolves to an eighteenth-century title-page scan (1739, Tomo
+    Segundo) - both are legitimate, the Penguin jacket was preferred as the
+    cleaner, more identifiable edition image.

@@ -1,0 +1,44 @@
+stage: visual-language
+summary: "Wrote theme.yaml's art block: material honesty over chivalric costume, iron-gall dip pen on rag paper, indigo accent, spoiler-safe avoid list"
+produced:
+  themeArtSet: true
+forStages:
+  art-rotation: >
+    12 jobs now unblocked (asset_audit.py confirms art:yes): 4 era plates, 7
+    life events, 1 franchise event (avellaneda-affair-1614, book-object,
+    already inside its own spoiler gate per spoiler-audit, so its art needs
+    no extra care beyond the wing's normal law). The motifs list gives each
+    era a distinct object set to draw from without repeating a carrier
+    across plates: press/composing-stick for el-ingenioso-hidalgo, mule
+    train/ledger for el-periodo-andaluz, corral-de-comedias trestle and
+    ransom papers for retorno-a-las-letras, crowded writing table for
+    el-taller-cervantino.
+  visual-metadata: >
+    Spoiler-safety note carried into the art law directly: `avoid` names
+    both protected scenes by description rather than leaving them
+    implicit - Alonso Quixano's deathbed/return to sanity, and the
+    Barcelona print-shop/Don Alvaro Tarfe scene from late Part Two. Any
+    cover or header choice should apply the same two exclusions
+    spoiler-audit's handoff already flagged. Separately: the emblem (a
+    chivalric romance buried under a ledger stack) and several motifs
+    reference real printers by name (Juan de la Cuesta, Blas de Robles,
+    Juan de Villarroel) per VISUAL.md 4b's allowance for names on objects -
+    worth keeping in mind if visual-metadata ever sources author-adjacent
+    imagery, since those three are documented historical booksellers, not
+    fictional.
+openQuestions:
+  - >
+    The disabled left hand ("el manco de Lepanto") is carried only as a
+    motif (a gloved or bandaged hand resting still beside an inkwell, never
+    gripping the pen), not as the emblem - kept as an object-adjacent motif
+    rather than a body-part emblem, since every other wing's emblem in the
+    catalogue is an inanimate object. If a future pass wants a stronger
+    throughline for the Lepanto/portrait-of-absence life event specifically,
+    this motif is the intended anchor for it.
+  - >
+    Adjacency check (theme_digest.py --exclude miguel-de-cervantes) found
+    two wings sharing both displayFace (fraunces) and signature (thread):
+    Tana French and J. K. Rowling. Neither shares the accent hue (indigo
+    #5c4fae is unclaimed catalogue-wide), and both were read in full to
+    confirm line/ground/material separation holds - documented in a
+    theme.yaml comment rather than left to be re-derived later.
