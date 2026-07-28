@@ -70,3 +70,28 @@ openQuestions:
   - "raven-street-publishing-2022 still rests on a proxy date (press-archaeology)
     and the Slovak/Czech corpus is still unsearched (eras). Both stand as
     recorded; neither is contradicted by anything found here."
+
+followUp:
+  routedItem: reading-orders
+  resolution: >
+    Closed by re-tagging rather than adding a sixth path: the wing already
+    has 5 startHere paths, the catalogue's cap, so a new path was not an
+    option without cutting one of the existing five, and none of those five
+    is weak enough to cut. start-the-comedies is the wing's only door into
+    the romantic comedies and was already honestly framed ("a different
+    genre... not an earlier draft of it") - the gap was purely that its
+    fit.experience was [new] only, scoring 0 for a returning reader on that
+    axis. Added `returning` alongside `new`, matching how joao-tordo's
+    the-crime-turn (a literary novelist's turn to crime, tagged
+    [new, returning]) and karin-slaughter/michael-connelly's
+    continue-into-will-trent and continue-into-bosch (a reader of one series
+    pointed at a connected one, tagged returning) handle the same shape:
+    one path, two audiences, no new content invented. The description was
+    reworded to speak to both explicitly (naming the three crime series a
+    returning reader may already know) while keeping the existing
+    genuine-genre-shift framing intact rather than reframing the comedies
+    as apprentice work - nothing in works.yaml, the author bio or the FAQ
+    supports that reading, and inventing it would have been the exact
+    editorial overreach this pipeline exists to prevent. Mirrored into the
+    pt-PT overlay in the same commit. validate.py --slug robert-bryndza
+    stays clean (0 errors, same pre-existing handoff-length warnings).
