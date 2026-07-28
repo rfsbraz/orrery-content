@@ -119,9 +119,56 @@ has a real, checkable licence. Never assume it: read the file's `extmetadata`
 and record what it says (see "Reading a Commons licence" below). Most usable
 files are CC BY, CC BY-SA, or public domain.
 
-**3. Publisher press / media kits** - only where the page's own terms
-explicitly permit editorial use. Cite the terms page in `*Source`, not just
-the image.
+**2b. Wikidata, as a discovery layer, not a rights source.** An author's
+Wikidata entity can carry a `P18` (image) claim pointing at a Commons file
+that never made it into the English Wikipedia infobox - editors sometimes
+tag a better or more recent photo on Wikidata without touching the article.
+`https://www.wikidata.org/wiki/Special:EntityData/<Q-id>.json`, read `P18`,
+then treat whatever it names as an ordinary Commons file (tier 2) - fetch its
+own `extmetadata` and record the licence from there, never from the Wikidata
+claim alone.
+
+**3. Flickr, via Openverse, never a raw Flickr search.** A convention or
+signing photo an amateur photographer uploaded to Flickr under CC BY/BY-SA
+often never makes it to Commons at all, and is the single highest-yield
+source for a living author Commons has nothing on. Search
+`https://api.openverse.org/v1/images/?q=<name>&license_type=all-cc`
+(Openverse indexes CC-licensed Flickr plus other open sources and returns
+machine-readable licence metadata per result, which is why it is the entry
+point rather than Flickr's own site). **Verify the licence on the result
+itself, not on Openverse's say-so** - Flickr uploaders mislabel licences
+often enough that this is not optional, the same discipline as reading a
+Commons file's own `extmetadata` rather than trusting a caption.
+
+**4. Library of Congress Prints & Photographs Online Catalog**, for authors
+whose working life predates reliable Commons coverage.
+`https://www.loc.gov/pictures/search/?q=<name>` - read the record's own rights
+statement field (`No known restrictions` or explicit public domain only;
+`Rights status not evaluated` is not a green light, it is an unanswered
+question). Strong for historical/dead authors - weak to absent for anyone
+whose career is mostly post-2000.
+
+**5. Publisher / author official press or media pages** - only where the
+page's own terms explicitly permit editorial use, and the terms text is what
+you cite, not the mere presence of a "press" or "media" URL. A living,
+actively-publicised author (a current bestseller list regular, someone who
+tours) is exactly the case Commons and Flickr are least likely to already
+cover, because their photographer is a paid professional who releases the
+image through the publisher, not to the commons. Check the author's own site
+first (a `/press` or `/media` page with an explicit "for editorial use"
+headshot download is common for this exact profile), then the publisher's
+own author page. Cite the terms page itself in `*Source`, not just the image
+URL - if the page does not say editorial/press use is permitted, it is not a
+candidate regardless of how official it looks.
+
+**Museum/gallery "open access" collections (Smithsonian, Getty Open Content,
+a small marked-open subset of the UK National Portrait Gallery) are a source
+only for the specific images an institution has explicitly flagged open or
+public domain** - most of a gallery's holdings, including most author
+portraits in the NPG's own collection, remain copyrighted regardless of
+being viewable on the institution's site. Do not infer permission from
+"a museum put it online"; look for the institution's own open-licence or
+public-domain marking on that specific record.
 
 **Never**: Google Images, Goodreads, Amazon or any retailer's jacket file, fan
 wikis, Pinterest, or a reverse-image-search result whose origin you cannot

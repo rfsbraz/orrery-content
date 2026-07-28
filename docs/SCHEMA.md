@@ -682,12 +682,29 @@ Only reference images you can justify:
 
 - **Wikimedia Commons / Wikipedia** - check the file's licence; most are CC BY,
   CC BY-SA, or public domain. **Record the licence and the author in
-  `*Credit`.** This is the best source for author portraits.
+  `*Credit`.** This is the best source for author portraits. An author's
+  Wikidata entity (`P18`) can point at a Commons file the Wikipedia infobox
+  never picked up - worth checking, but still read that file's own licence,
+  never take Wikidata's word for it.
+- **Flickr, only via Openverse** (`api.openverse.org`, never a raw Flickr
+  search) - the best source for a living author Commons has nothing on;
+  verify the licence on the actual result, Flickr uploaders mislabel often.
+- **Library of Congress Prints & Photographs** (`loc.gov/pictures`) - strong
+  for authors whose career predates good Commons coverage; read the record's
+  own rights-statement field, "not evaluated" is not clearance.
 - **OpenLibrary covers** - fine to hot-link; credit OpenLibrary. **But see the
   laundering rule below: OpenLibrary is a permitted host, not a blanket
   permission for whatever it happens to be hosting.**
-- **Publisher press/media pages** - usually permitted for editorial use;
-  cite the page in `*Source`.
+- **Publisher / author press-media pages** - only where the page's own terms
+  explicitly permit editorial use; cite the terms page itself in `*Source`,
+  not just the image. Often the only real source for an actively-publicised
+  living bestseller, since their author photo is a paid commission released
+  through the publisher rather than donated to the commons.
+- **Museum "open access" collections** (Smithsonian, Getty Open Content) -
+  only the specific holdings an institution has explicitly marked open or
+  public domain. Most museum portraiture, including most of the UK National
+  Portrait Gallery's own collection, stays copyrighted regardless of being
+  viewable online; do not infer a licence from visibility.
 - **Never** scrape a retailer's jacket image, never take an image with no
   discoverable licence, and never link something behind a paywall or hotlink
   ban. If you cannot establish the rights, **leave the field empty** - the app
