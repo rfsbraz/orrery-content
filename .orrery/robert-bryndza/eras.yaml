@@ -1,0 +1,83 @@
+stage: eras
+summary: >
+  3 eras, all provenance: author, all 25 works covered, no gaps, no overlaps.
+  Bryndza periodises his own career in exactly three parts on his site's Raven
+  Street page (indie, then traditional publishing, then independent again), and
+  named the genre boundary himself in June 2016. The crime years do subdivide,
+  but by publishing model rather than by series or subgenre.
+
+produced:
+  filesWritten: [content/franchises/robert-bryndza/eras.yaml]
+  eraIds:
+    - the-self-published-comedies      # 2012-2015, 7 works
+    - the-traditional-publishing-years # 2016-2021, 9 works
+    - the-raven-street-years           # 2022-present, 9 works
+
+provenance: >
+  Rung 1 (author's own framing) for all three, corroborated by rung 4
+  (publishing fact) on every boundary. Primary source is
+  robertbryndza.com/pages/raven-street-publishing, where the three-part arc is
+  his own sentence. The 2016 boundary is his words at the time ("I started out
+  writing romantic comedies, but I have just switched to writing crime
+  thrillers", Bookaholic Confessions, 2 June 2016), plus his About page and the
+  Feb 2016 chelle's-book-reviews interview naming Bookouture. The 2022 boundary
+  is Fatal Witness (July 2022), the first new novel he published himself, on
+  Raven Street's own ISBN registrant 978-1-914547; Darkness Falls (2021) is the
+  last published for him by another house. Every URL is in the era's sources.
+
+limits: >
+  No critical or scholarly periodisation of Bryndza exists and there is no
+  English Wikipedia article (404). Searched in English only, which is the right
+  corpus for an English-writing author whose site, interviews and publisher copy
+  are English; Slovak and Czech press is unsearched and is where a rival framing
+  would live. The web-search budget ran out mid-stage, so later checks used
+  constructed URLs and the OpenLibrary and 2 Seas records instead.
+
+boundariesRejected:
+  - "2019 (Bookouture to Sphere/Thomas & Mercer). Real and dated, but his own
+     account folds both houses into one traditional-publishing stretch; a
+     three-book era named after two imprints is a contract change rounded up."
+  - "2026 (Jamie Day). His publication-day post calls it 'a third crime thriller
+     series' arrived at 'completely without planning' - same imprint, same
+     police-procedural form (rookie Met officer and team, 1987 London), not a
+     psychological-thriller turn."
+  - "Series as periods. Erika Foster, Kate Marshall and Jamie Day overlap in
+     publication from 2022, so series spans would claim the same years twice."
+
+bitchHollywood: >
+  Era 1. First in print (Slovak, March 2012) and generically a co-written
+  Hollywood satire rather than a Coco Pinchard romcom, but he groups it with
+  Coco Pinchard as the two manuscripts uploaded together to KDP. Era 1 is titled
+  "The Self-Published Comedies" rather than after romantic comedy so it does not
+  misfile this book; the era's note records the gap.
+
+forStages:
+  press-archaeology: >
+    The 2012-2019 dark run stands and the boundaries sit inside it, so the
+    best-sourced moment in the career has no aura. Dates worth anchoring:
+    17 Jan 2012 (the Slovak publisher says yes, his own pivot out of nearly
+    quitting), 12 Feb 2016 (The Girl in the Ice), 22 May 2018 (new publishers,
+    slowing down "for my health and my sanity"), 7 Jul 2022 (Fatal Witness).
+  reading-orders: >
+    Eras 1 and 2 are the genre split, so an era-aware path already warns a crime
+    reader the comedies exist. Eras and series cross: Erika Foster and Kate
+    Marshall each span two eras.
+  visual-language: >
+    Era 1 is comic and domestic (email, London flats, Christmas); eras 2 and 3
+    are procedural (Met London, Dartmoor reservoirs, 1987). Era 3 has to hold
+    both, since Raven Street now carries the comedies too.
+  translation: eras.yaml adds 9 untranslated pt-PT fields.
+
+gates: >
+  validate unchanged before and after: 1 error (theme.yaml has no art: block, by
+  design) and no new warnings; 0 works outside every era. Guard falsified by
+  narrowing era 1 to 2013-2015, which fired the orphan warning on two works and
+  went silent on revert. aura_density unchanged (9 entries, 0.36/work). i18n
+  pt-PT 120/134 to 120/135 files, the expected shape on an untranslated wing.
+
+openQuestions:
+  - "The titles are built from Bryndza's own nouns, not quoted from names he
+     gives to periods. The shape and the boundary years are his; the labels are
+     ours."
+  - "Slovak and Czech press unsearched, the one corpus that could hold a rival
+     periodisation of a British author whose first market was Slovakia."
