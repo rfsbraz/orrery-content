@@ -686,9 +686,16 @@ Only reference images you can justify:
   Wikidata entity (`P18`) can point at a Commons file the Wikipedia infobox
   never picked up - worth checking, but still read that file's own licence,
   never take Wikidata's word for it.
-- **Flickr, only via Openverse** (`api.openverse.org`, never a raw Flickr
-  search) - the best source for a living author Commons has nothing on;
-  verify the licence on the actual result, Flickr uploaders mislabel often.
+- **Openverse, full aggregation** (`api.openverse.org`, never a raw Flickr
+  search) - indexes CC-licensed Flickr plus a dozen other providers under one
+  API; usually the best source for a living author Commons has nothing on.
+  Verify the licence on the actual result, source platforms mislabel often.
+- **Literary festival / book-fair official photography** (check for a
+  festival's own CC-licensed Flickr/media account, and whether a Wikimedia
+  photo-a-thon has ever covered it) and **non-English Wikipedia infoboxes**
+  (a different language edition sometimes has a photo the English one never
+  picked up) - both feed back into an ordinary Commons/Flickr file whose own
+  licence still has to be read, never assumed from where it was found.
 - **Library of Congress Prints & Photographs** (`loc.gov/pictures`) - strong
   for authors whose career predates good Commons coverage; read the record's
   own rights-statement field, "not evaluated" is not clearance.
