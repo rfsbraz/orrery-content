@@ -1,0 +1,744 @@
+# Editions of Robert Bryndza: 43 editions (23 en + 1 sk + 18 pt-PT + 1 pt-BR)
+# over 23 of 25 works. The two gaps are both correct, not oversights: The Burning
+# Lie has no ISBN because it is unpublished (forthcoming 2027-03-04, per
+# works.yaml) and Breaking Point has no ISBN because it was never sold (a
+# free newsletter-subscriber short story, per works.yaml's own APOCRYPHA
+# note).
+#
+# ONE ENGLISH EDITION PER WORK, the most recent in-print, not a full reissue
+# history. This author has been reissued repeatedly - the original
+# self-published (CreateSpace, 2012-2015) and Bookouture-published
+# (2016-2021) backlist is now resold under Raven Street Publishing's own
+# ISBNs, his current imprint - and recording every superseded printing would
+# bury the buyable object in dead numbers. Where an old and a new ISBN both
+# exist for the same text, this file records the new one and states the old
+# one existed, following the same rule Karin Slaughter's file states
+# explicitly: a reissue with an unchanged text is one object, not two.
+#
+# THE REISSUE QUESTION, answered per work: every one of the 21 novels once
+# self-published or Bookouture-published now has a live Raven Street
+# Publishing ISBN on the author's own shop (robertbryndza.com, itself
+# Shopify, fetched product-by-product rather than assumed) - EXCEPT Bitch
+# Hollywood, confirmed absent from the current shop (both "bitch-hollywood"
+# and "lost-in-crazytown" product handles 404). Bitch Hollywood's only
+# edition remains its 2012 CreateSpace original; every other pre-Raven-Street
+# title is superseded, not doubled. The six earliest Erika Foster novels
+# (Girl in the Ice through Deadly Secrets, originally Bookouture 2016-2018)
+# are sold direct from the author only as a "large print" line (tag on each
+# product, GBP 19.95 vs GBP 14.95 for the standard-format later novels) -
+# real, current and the highest-ranked source available, but recorded with a
+# note so a reader is not surprised by the format. The standard-size
+# Bookouture/Sphere paperback these six replace is not re-recorded here,
+# consistent with the one-edition rule above.
+#
+# A DUPLICATE-ISBN BUG ON THE AUTHOR'S OWN SITE, verified twice (including a
+# --refresh fetch to rule out a stale cache): the product pages for Nine Elms,
+# Shadow Sands and Darkness Falls (Private Investigator Kate Marshall #1-3)
+# each carry barcode 9781914547263 - which is The Lost Victim's (#5) real,
+# independently-confirmed ISBN, also carrying that book's own `sku`. All
+# three carry no `sku` of their own, unlike every other product checked on
+# the site, so this reads as three listings created without their own barcode
+# ever being entered. Recording 9781914547263 a second, third or fourth time
+# would both fail the duplicate-ISBN check this skill requires and send a
+# reader to the wrong book, so these three instead use their original
+# Little, Brown Book Group (Sphere) paperback ISBNs, independently confirmed
+# on OpenLibrary against the correct work (matching Open Library work keys
+# and the same author key, OL7527807A, on every record). Devil's Way (#4) and
+# The Lost Victim (#5) carry their own correct, distinct Raven Street ISBNs
+# and are unaffected.
+#
+# PORTUGUESE (PT-PT) COVERAGE IS ESSENTIALLY COMPLETE for the two established
+# crime series and the standalone: all 9 Erika Foster novels, all 5 Kate
+# Marshall novels and Fear the Silence (15 of 15) are in print from Alma dos
+# Livros, cross-checked against Bertrand's retail listing where both carry
+# the same ISBN. None of the fifteen Portuguese titles is a literal
+# translation of the English one - every match below was made by synopsis,
+# not by guessing a Portuguese title from the English, per this skill's own
+# warning. Two pairs are close enough in wording to be a genuine trap for a
+# title-based match and are called out on their own entries: "A Noite Está a
+# Chegar" ("The Night Is Coming") is Shadow Sands, not The Night Stalker;
+# "Silêncio Mortal" ("Deadly/Mortal Silence") is Devil's Way, not Fear the
+# Silence (which is "Antes de Dizer Adeus", "Before Saying Goodbye"). Jamie
+# Day (2026-) has no Portuguese edition yet, plausibly just too new. Coco
+# Pinchard's Portuguese run is partial and recent: Alma dos Livros began
+# publishing the trilogy in 2026 (the two prequel novellas and Miss Wrong and
+# Mr Right are not among them, and neither is Bitch Hollywood) - the third
+# volume, "A Vida, o Amor e Outros Desastres de Coco Pinchard", is in
+# pre-order on the publisher's own shop as this file is written, shipping
+# 12 August 2026; its ISBN is already registered and live on the publisher's
+# own site, so it is recorded, with that status stated on the entry.
+#
+# COLD BLOOD carries three real, differently-registered editions: the current
+# Raven Street English printing, Alma dos Livros' Portuguese "Sangue Frio"
+# (978-989- prefix, Portugal), and a separate Brazilian "Sangue Frio" from
+# Gutenberg (978-85- prefix, Brazil, per the prefix table this skill sets
+# out) - two editions sharing one Portuguese-language title by coincidence,
+# not the same book. Both are recorded, correctly tagged pt-PT and pt-BR.
+#
+# THE SLOVAK EDITION. Bitch Hollywood's true first edition was a Slovak
+# translation, Mrcha Hollywood (Marenčin PT, March 2012, per the author's own
+# account already sourced in works.yaml) - published before either language
+# edition of Coco Pinchard, and worth recording given the author's own
+# Slovakia connection. Martinus.sk, the major Slovak bookshop, carries a live
+# retail record (real cover image, a 8.98-average reader rating, publisher
+# "Marenčin PT", year 2012) - but its own ISBN field for this title reads
+# "0", not null, the value it uses elsewhere in the same result set for a
+# genuinely unlisted field. That is a real book with no registered ISBN, the
+# schema's own documented case, not a search failure - recorded below without
+# isbn13, exactly as this skill directs.
+#
+# SOURCING. English Raven Street editions are the author's own shop,
+# robertbryndza.com (itself Shopify; fetched as JSON per product, which
+# exposes the ISBN in the `barcode` field directly rather than screen-scraping
+# a rendered page). English pre-Raven-Street editions and the Brazilian
+# edition are OpenLibrary per-ISBN records, matched to the correct work by
+# OpenLibrary's own work key and Bryndza's consistent author key
+# (OL7527807A) rather than by title alone. Portuguese editions are Bertrand's
+# retail page and/or Alma dos Livros' own Shopify product JSON, cross-checked
+# against each other where both carry the title; every Portuguese match was
+# verified against the book's own synopsis, not assumed from the title. Every
+# isbn13 below passes its check digit and no isbn13 repeats across two
+# entries.
+
+# --- Erika Foster (9) ---
+
+- id: robert-bryndza/the-girl-in-the-ice/raven-street-2025-en
+  workId: robert-bryndza/the-girl-in-the-ice
+  isbn13: "9781916211704"
+  language: en
+  format: paperback
+  publisher: Raven Street Publishing
+  year: 2025
+  note: >
+    The author's own current shop edition, a large-print printing (his
+    standard-format line only starts at book 7, Fatal Witness). Originally
+    published by Bookouture in 2016; that standard-size paperback is out of
+    Raven Street's own catalogue but not confirmed out of print elsewhere.
+  sources:
+    - https://www.robertbryndza.com/products/the-girl-in-the-ice
+
+- id: robert-bryndza/the-girl-in-the-ice/alma-dos-livros-2018-pt
+  workId: robert-bryndza/the-girl-in-the-ice
+  isbn13: "9789899970588"
+  language: pt-PT
+  title: "A Rapariga no Gelo"
+  format: paperback
+  publisher: Alma dos Livros
+  year: 2018
+  note: >
+    Matched by synopsis: a boy finds a woman's body under ice in a South
+    London park; DCI Erika Foster investigates a link to three earlier
+    stranglings.
+  sources:
+    - https://almadoslivros.pt/products/a-rapariga-no-gelo
+
+- id: robert-bryndza/the-night-stalker/raven-street-2025-en
+  workId: robert-bryndza/the-night-stalker
+  isbn13: "9781916211711"
+  language: en
+  format: paperback
+  publisher: Raven Street Publishing
+  year: 2025
+  note: The author's own current shop edition, a large-print printing (see the-girl-in-the-ice's note).
+  sources:
+    - https://www.robertbryndza.com/products/the-night-stalker
+
+- id: robert-bryndza/the-night-stalker/alma-dos-livros-2025-pt
+  workId: robert-bryndza/the-night-stalker
+  isbn13: "9789895704903"
+  language: pt-PT
+  title: "A Sombra da Noite"
+  format: paperback
+  publisher: Alma dos Livros
+  year: 2025
+  note: >
+    A reissue with a new cover, per the shop's own listing. Matched by
+    synopsis, not title: a doctor is found suffocated in bed with a plastic
+    bag over his head, one of a pattern of identical single-victim killings -
+    the Night Stalker case. Not to be confused with "A Noite Está a Chegar"
+    ("The Night Is Coming"), a different Kate Marshall title that is Shadow
+    Sands (see that entry) - the two Portuguese titles are close enough in
+    wording to invite exactly that mix-up.
+  sources:
+    - https://almadoslivros.pt/products/a-sombra-da-noite-2
+
+- id: robert-bryndza/dark-water/raven-street-2025-en
+  workId: robert-bryndza/dark-water
+  isbn13: "9781916211728"
+  language: en
+  format: paperback
+  publisher: Raven Street Publishing
+  year: 2025
+  note: The author's own current shop edition, a large-print printing (see the-girl-in-the-ice's note).
+  sources:
+    - https://www.robertbryndza.com/products/dark-water
+
+- id: robert-bryndza/dark-water/alma-dos-livros-2025-pt
+  workId: robert-bryndza/dark-water
+  isbn13: "9789895704880"
+  language: pt-PT
+  title: "Águas Profundas"
+  format: paperback
+  publisher: Alma dos Livros
+  year: 2025
+  note: >
+    A reissue with a new cover, per the shop's own listing. Matched by
+    synopsis: an anonymous tip about narcotics evidence in a flooded quarry
+    instead turns up a child's skeleton, identified as Jessica Collins,
+    missing twenty-six years.
+  sources:
+    - https://almadoslivros.pt/products/aguas-profundas-1
+    - https://www.bertrand.pt/livro/aguas-profundas-robert-bryndza/32075101
+
+- id: robert-bryndza/last-breath/raven-street-2025-en
+  workId: robert-bryndza/last-breath
+  isbn13: "9781916211735"
+  language: en
+  format: paperback
+  publisher: Raven Street Publishing
+  year: 2025
+  note: The author's own current shop edition, a large-print printing (see the-girl-in-the-ice's note).
+  sources:
+    - https://www.robertbryndza.com/products/last-breath
+
+- id: robert-bryndza/last-breath/alma-dos-livros-2018-pt
+  workId: robert-bryndza/last-breath
+  isbn13: "9789898907189"
+  language: pt-PT
+  title: "O Último Fôlego"
+  format: paperback
+  publisher: Alma dos Livros
+  year: 2018
+  note: >
+    Matched by synopsis: a murder with wounds matching an earlier case,
+    identical femoral-artery incisions on two victims, traced to a stalker
+    who builds fake online identities.
+  sources:
+    - https://almadoslivros.pt/products/o-ultimo-folego
+
+- id: robert-bryndza/cold-blood/raven-street-2025-en
+  workId: robert-bryndza/cold-blood
+  isbn13: "9781916211742"
+  language: en
+  format: paperback
+  publisher: Raven Street Publishing
+  year: 2025
+  note: The author's own current shop edition, a large-print printing (see the-girl-in-the-ice's note).
+  sources:
+    - https://www.robertbryndza.com/products/cold-blood
+
+- id: robert-bryndza/cold-blood/alma-dos-livros-2025-pt
+  workId: robert-bryndza/cold-blood
+  isbn13: "9789895704897"
+  language: pt-PT
+  title: "Sangue Frio"
+  format: paperback
+  publisher: Alma dos Livros
+  year: 2025
+  note: >
+    A reissue with a new cover, per the shop's own listing. Matched by
+    synopsis: two dismembered bodies in identical suitcases along the
+    Thames, more than one killer at work, a colleague's twin daughters
+    abducted. Not the same object as the Brazilian "Sangue Frio" below -
+    same title in the same language, two different registered editions from
+    two different countries.
+  sources:
+    - https://almadoslivros.pt/products/sangue-frio-1
+
+- id: robert-bryndza/cold-blood/gutenberg-2019-br
+  workId: robert-bryndza/cold-blood
+  isbn13: "9788582355800"
+  language: pt-BR
+  title: "Sangue Frio"
+  translator: "Marcelo Hauck"
+  format: paperback
+  publisher: Gutenberg
+  year: 2019
+  note: >
+    Brazilian edition; 978-85- prefix confirms pt-BR, distinct from Alma dos
+    Livros' Portuguese "Sangue Frio" above despite the identical title.
+  sources:
+    - https://openlibrary.org/isbn/9788582355800
+
+- id: robert-bryndza/deadly-secrets/raven-street-2025-en
+  workId: robert-bryndza/deadly-secrets
+  isbn13: "9781916211759"
+  language: en
+  format: paperback
+  publisher: Raven Street Publishing
+  year: 2025
+  note: The author's own current shop edition, a large-print printing (see the-girl-in-the-ice's note).
+  sources:
+    - https://www.robertbryndza.com/products/deadly-secrets
+
+- id: robert-bryndza/deadly-secrets/alma-dos-livros-2026-pt
+  workId: robert-bryndza/deadly-secrets
+  isbn13: "9789895705689"
+  language: pt-PT
+  title: "Segredos Mortais"
+  format: paperback
+  publisher: Alma dos Livros
+  year: 2026
+  note: >
+    Matched by synopsis: a woman finds her daughter's body at her own front
+    door; Erika Foster's investigation later puts someone on her own team in
+    mortal danger.
+  sources:
+    - https://www.bertrand.pt/livro/segredos-mortais-robert-bryndza/33085301
+
+- id: robert-bryndza/fatal-witness/raven-street-2025-en
+  workId: robert-bryndza/fatal-witness
+  isbn13: "9781914547065"
+  language: en
+  format: paperback
+  publisher: Raven Street Publishing
+  year: 2025
+  note: >
+    The author's own current shop edition, standard format (not large
+    print - Fatal Witness is the first of his own Raven Street originals,
+    2022 onward).
+  sources:
+    - https://www.robertbryndza.com/products/fatal-witness
+
+- id: robert-bryndza/fatal-witness/alma-dos-livros-2022-pt
+  workId: robert-bryndza/fatal-witness
+  isbn13: "9789895700233"
+  language: pt-PT
+  title: "Testemunha Fatal"
+  format: paperback
+  publisher: Alma dos Livros
+  year: 2022
+  note: >
+    Matched by synopsis: a murder near Erika Foster's own new home, the
+    victim an investigative podcast journalist working a story on a
+    predator targeting South London students.
+  sources:
+    - https://almadoslivros.pt/products/testemunha-fatal
+
+- id: robert-bryndza/lethal-vengeance/raven-street-2025-en
+  workId: robert-bryndza/lethal-vengeance
+  isbn13: "9781914547195"
+  language: en
+  format: paperback
+  publisher: Raven Street Publishing
+  year: 2025
+  sources:
+    - https://www.robertbryndza.com/products/lethal-vengeance
+
+- id: robert-bryndza/lethal-vengeance/alma-dos-livros-2024-pt
+  workId: robert-bryndza/lethal-vengeance
+  isbn13: "9789895702312"
+  language: pt-PT
+  title: "Vingança"
+  format: paperback
+  publisher: Alma dos Livros
+  year: 2024
+  note: >
+    Matched by synopsis: politician Neville Lomas found dead, bound, in his
+    own bed.
+  sources:
+    - https://www.bertrand.pt/livro/vinganca-robert-bryndza/29852651
+    - https://almadoslivros.pt/products/vinganca
+
+- id: robert-bryndza/chasing-shadows/raven-street-2025-en
+  workId: robert-bryndza/chasing-shadows
+  isbn13: "9781914547379"
+  language: en
+  format: paperback
+  publisher: Raven Street Publishing
+  year: 2025
+  sources:
+    - https://www.robertbryndza.com/products/chasing-shadows
+
+- id: robert-bryndza/chasing-shadows/alma-dos-livros-2025-pt
+  workId: robert-bryndza/chasing-shadows
+  isbn13: "9789895705313"
+  language: pt-PT
+  title: "À Caça de Sombras"
+  format: paperback
+  publisher: Alma dos Livros
+  year: 2025
+  note: >
+    Matched by synopsis: Erika Foster comes face to face with Jerome
+    Goodman, her husband's killer, travelling under the name Kieron Bagshaw
+    with a clean record.
+  sources:
+    - https://almadoslivros.pt/products/a-caca-de-sombras
+    - https://www.bertrand.pt/livro/a-caca-de-sombras-robert-bryndza/32243574
+
+# --- Kate Marshall (5) ---
+
+- id: robert-bryndza/nine-elms/sphere-2020-en
+  workId: robert-bryndza/nine-elms
+  isbn13: "9780751572711"
+  language: en
+  format: paperback
+  publisher: Little, Brown Book Group
+  year: 2020
+  note: >
+    NOT sourced from the author's own shop: that listing's barcode field
+    (9781914547263) is a verified duplicate of The Lost Victim's ISBN, see
+    this file's header. This is the original Sphere paperback instead,
+    independently confirmed on OpenLibrary against the correct work.
+  sources:
+    - https://openlibrary.org/isbn/9780751572711
+
+- id: robert-bryndza/nine-elms/alma-dos-livros-2023-pt
+  workId: robert-bryndza/nine-elms
+  isbn13: "9789895701216"
+  language: pt-PT
+  title: "Mistério em Nine Elms"
+  format: paperback
+  publisher: Alma dos Livros
+  year: 2023
+  note: >
+    Matched by synopsis: Kate Marshall, the young detective who once caught
+    the Nine Elms serial killer, is pulled back in by a letter from her own
+    past.
+  sources:
+    - https://www.bertrand.pt/livro/misterio-em-nine-elms-robert-bryndza/28417054
+    - https://almadoslivros.pt/products/misterio-em-nine-elms-1
+
+- id: robert-bryndza/shadow-sands/sphere-2021-en
+  workId: robert-bryndza/shadow-sands
+  isbn13: "9780751572773"
+  language: en
+  format: paperback
+  publisher: Little, Brown Book Group
+  year: 2021
+  note: >
+    NOT sourced from the author's own shop: that listing's barcode field
+    (9781914547263) is a verified duplicate of The Lost Victim's ISBN, see
+    this file's header. This is the original Sphere paperback instead,
+    independently confirmed on OpenLibrary against the correct work.
+  sources:
+    - https://openlibrary.org/isbn/9780751572773
+
+- id: robert-bryndza/shadow-sands/alma-dos-livros-2021-pt
+  workId: robert-bryndza/shadow-sands
+  isbn13: "9789898999849"
+  language: pt-PT
+  title: "A Noite Está a Chegar"
+  format: paperback
+  publisher: Alma dos Livros
+  year: 2021
+  note: >
+    Matched by synopsis, not title: a young man's body is found floating in
+    the Shadow Sands reservoir. Not to be confused with "A Sombra da Noite"
+    ("The Shadow of the Night"), a different Erika Foster title that is The
+    Night Stalker (see that entry) - the two Portuguese titles are close
+    enough in wording to invite exactly that mix-up.
+  sources:
+    - https://almadoslivros.pt/products/a-noite-esta-a-chegar
+
+- id: robert-bryndza/darkness-falls/sphere-2021-en
+  workId: robert-bryndza/darkness-falls
+  isbn13: "9780751572780"
+  language: en
+  format: paperback
+  publisher: Little, Brown Book Group
+  year: 2021
+  note: >
+    NOT sourced from the author's own shop: that listing's barcode field
+    (9781914547263) is a verified duplicate of The Lost Victim's ISBN, see
+    this file's header. This is the original Sphere paperback instead,
+    independently confirmed on OpenLibrary against the correct work.
+  sources:
+    - https://openlibrary.org/isbn/9780751572780
+
+- id: robert-bryndza/darkness-falls/alma-dos-livros-2021-pt
+  workId: robert-bryndza/darkness-falls
+  isbn13: "9789899054622"
+  language: pt-PT
+  title: "Momento Final"
+  format: paperback
+  publisher: Alma dos Livros
+  year: 2021
+  note: >
+    Matched by synopsis, not title ("Final Moment"): Kate Marshall reopens a
+    journalist's disappearance and finds two more missing names among her
+    belongings, and a serial killer hiding in plain sight.
+  sources:
+    - https://almadoslivros.pt/products/momento-final
+
+- id: robert-bryndza/devils-way/raven-street-2025-en
+  workId: robert-bryndza/devils-way
+  isbn13: "9781914547102"
+  language: en
+  format: paperback
+  publisher: Raven Street Publishing
+  year: 2025
+  sources:
+    - https://www.robertbryndza.com/products/devils-way
+
+- id: robert-bryndza/devils-way/alma-dos-livros-2022-pt
+  workId: robert-bryndza/devils-way
+  isbn13: "9789895700837"
+  language: pt-PT
+  title: "Silêncio Mortal"
+  format: paperback
+  publisher: Alma dos Livros
+  year: 2022
+  note: >
+    Matched by synopsis, not title ("Deadly Silence"): a three-year-old left
+    alone in a tent vanishes during a camping trip eleven years earlier;
+    Kate Marshall reopens the case while recovering from a near-drowning.
+    Not to be confused with "Antes de Dizer Adeus", the different-sounding
+    Portuguese title actually used for Fear the Silence (see that entry).
+  sources:
+    - https://www.bertrand.pt/livro/silencio-mortal-robert-bryndza/28004702
+    - https://almadoslivros.pt/products/silencio-mortal
+
+- id: robert-bryndza/the-lost-victim/raven-street-2025-en
+  workId: robert-bryndza/the-lost-victim
+  isbn13: "9781914547263"
+  language: en
+  format: paperback
+  publisher: Raven Street Publishing
+  year: 2025
+  sources:
+    - https://www.robertbryndza.com/products/the-lost-victim
+
+- id: robert-bryndza/the-lost-victim/alma-dos-livros-2024-pt
+  workId: robert-bryndza/the-lost-victim
+  isbn13: "9789895703333"
+  language: pt-PT
+  title: "A Vítima Perdida"
+  format: paperback
+  publisher: Alma dos Livros
+  year: 2024
+  note: >
+    The shop's own product description is garbled (an unrelated AI-chat
+    interface fragment, not real jacket copy), but the two lines of real
+    text inside it and the title itself agree with the English synopsis: a
+    case filed for more than thirty years, no body ever found. Corroborated
+    by the identical ISBN on Bertrand's listing.
+  sources:
+    - https://almadoslivros.pt/products/a-vitima-perdida
+    - https://www.bertrand.pt/livro/a-vitima-perdida-robert-bryndza/30862790
+
+# --- Jamie Day (2) ---
+
+- id: robert-bryndza/the-quiet-kill/raven-street-2026-en
+  workId: robert-bryndza/the-quiet-kill
+  isbn13: "9781914547393"
+  language: en
+  format: paperback
+  publisher: Raven Street Publishing
+  year: 2026
+  sources:
+    - https://www.robertbryndza.com/products/the-quiet-kill-stand-alone-crime-thriller-copy
+
+# The Burning Lie has no entry: forthcoming 2027-03-04 per works.yaml, not yet
+# published, no ISBN found anywhere checked.
+
+# --- Standalone crime (1) ---
+
+- id: robert-bryndza/fear-the-silence/raven-street-2026-en
+  workId: robert-bryndza/fear-the-silence
+  isbn13: "9781914547423"
+  language: en
+  format: paperback
+  publisher: Raven Street Publishing
+  year: 2026
+  sources:
+    - https://www.robertbryndza.com/products/fear-the-silence
+
+- id: robert-bryndza/fear-the-silence/alma-dos-livros-2023-pt
+  workId: robert-bryndza/fear-the-silence
+  isbn13: "9789895701773"
+  language: pt-PT
+  title: "Antes de Dizer Adeus"
+  format: paperback
+  publisher: Alma dos Livros
+  year: 2023
+  note: >
+    Matched by synopsis, not title ("Before Saying Goodbye"): Maggie's
+    husband Will is brought into her own hospital with a gunshot wound and
+    dies; ruled a suicide, she later gets a letter in his handwriting after
+    retreating to their Croatian holiday house. Not to be confused with
+    "Silêncio Mortal", the different-sounding Portuguese title actually used
+    for Devil's Way (see that entry).
+  sources:
+    - https://almadoslivros.pt/products/antes-de-dizer-adeus
+
+# --- Coco Pinchard (5) ---
+
+- id: robert-bryndza/the-not-so-secret-emails-of-coco-pinchard/raven-street-2025-en
+  workId: robert-bryndza/the-not-so-secret-emails-of-coco-pinchard
+  isbn13: "9781838487805"
+  language: en
+  format: paperback
+  publisher: Raven Street Publishing
+  year: 2025
+  note: >
+    Originally self-published on CreateSpace in 2012; the current Raven
+    Street reissue is the one edition recorded here (see this file's header
+    on the reissue question).
+  sources:
+    - https://www.robertbryndza.com/products/the-not-so-secret-emails-of-coco-pinchard-coco-pinchard-book-1
+
+- id: robert-bryndza/the-not-so-secret-emails-of-coco-pinchard/alma-dos-livros-2026-pt
+  workId: robert-bryndza/the-not-so-secret-emails-of-coco-pinchard
+  isbn13: "9789895706075"
+  language: pt-PT
+  title: "A Vida Nada Secreta de Coco Pinchard"
+  format: paperback
+  publisher: Alma dos Livros
+  year: 2026
+  note: >
+    The first of Alma dos Livros' Coco Pinchard run. Matched by synopsis:
+    freshly forty, a first novel just published, married to musician Daniel.
+  sources:
+    - https://www.bertrand.pt/livro/a-vida-nada-secreta-de-coco-pinchard-robert-bryndza/33134468
+    - https://almadoslivros.pt/products/a-vida-nada-secreta-de-coco-pinchard
+
+- id: robert-bryndza/coco-pinchards-big-fat-tipsy-wedding/raven-street-2025-en
+  workId: robert-bryndza/coco-pinchards-big-fat-tipsy-wedding
+  isbn13: "9781838487812"
+  language: en
+  format: paperback
+  publisher: Raven Street Publishing
+  year: 2025
+  note: >
+    Originally self-published on CreateSpace in 2013; the current Raven
+    Street reissue is the one edition recorded here (see this file's header
+    on the reissue question).
+  sources:
+    - https://www.robertbryndza.com/products/coco-pinchards-big-fat-tipsy-wedding
+
+- id: robert-bryndza/coco-pinchards-big-fat-tipsy-wedding/alma-dos-livros-2026-pt
+  workId: robert-bryndza/coco-pinchards-big-fat-tipsy-wedding
+  isbn13: "9789895707119"
+  language: pt-PT
+  title: "O Casamento (quase) perfeito de Coco Pinchard"
+  format: paperback
+  publisher: Alma dos Livros
+  year: 2026
+  note: >
+    Matched by synopsis: hours before Coco is due to move in with her new
+    partner Adam, he ends things without explanation and vanishes.
+  sources:
+    - https://almadoslivros.pt/products/o-casamento-quase-perfeito
+
+- id: robert-bryndza/coco-pinchard-the-consequences-of-love-and-sex/raven-street-2025-en
+  workId: robert-bryndza/coco-pinchard-the-consequences-of-love-and-sex
+  isbn13: "9781838487829"
+  language: en
+  format: paperback
+  publisher: Raven Street Publishing
+  year: 2025
+  note: >
+    Originally self-published on CreateSpace in 2014; the current Raven
+    Street reissue is the one edition recorded here (see this file's header
+    on the reissue question). This product page is also the correct source
+    URL for this work in works.yaml, which previously cited a dead /books/
+    path.
+  sources:
+    - https://www.robertbryndza.com/products/the-consequences-of-love-and-sex
+
+- id: robert-bryndza/coco-pinchard-the-consequences-of-love-and-sex/alma-dos-livros-2026-pt
+  workId: robert-bryndza/coco-pinchard-the-consequences-of-love-and-sex
+  isbn13: "9789895707942"
+  language: pt-PT
+  title: "A Vida, o Amor e Outros Desastres de Coco Pinchard"
+  format: paperback
+  publisher: Alma dos Livros
+  year: 2026
+  note: >
+    In pre-order on the publisher's own shop as this file is written,
+    shipping 12 August 2026; the ISBN is already registered and live.
+    Matched by synopsis: remarried to Adam, an unplanned pregnancy at
+    forty-four alongside his job loss and her son's derailed life.
+  sources:
+    - https://almadoslivros.pt/products/a-vida-o-amor-e-outros-desastres-de-coco-pinchard
+
+- id: robert-bryndza/a-very-coco-christmas/raven-street-2025-en
+  workId: robert-bryndza/a-very-coco-christmas
+  isbn13: "9781838487836"
+  language: en
+  format: paperback
+  publisher: Raven Street Publishing
+  year: 2025
+  note: >
+    Originally self-published on CreateSpace in 2013; the current Raven
+    Street reissue is the one edition recorded here (see this file's header
+    on the reissue question). No Portuguese edition found - Alma dos Livros'
+    Coco Pinchard run so far covers only the core trilogy, not this prequel.
+  sources:
+    - https://www.robertbryndza.com/products/a-very-coco-christmas
+
+- id: robert-bryndza/coco-pinchards-must-have-toy-story/raven-street-2025-en
+  workId: robert-bryndza/coco-pinchards-must-have-toy-story
+  isbn13: "9781838487843"
+  language: en
+  format: paperback
+  publisher: Raven Street Publishing
+  year: 2025
+  note: >
+    Originally self-published on CreateSpace in 2015; the current Raven
+    Street reissue is the one edition recorded here (see this file's header
+    on the reissue question). No Portuguese edition found - Alma dos Livros'
+    Coco Pinchard run so far covers only the core trilogy, not this prequel.
+  sources:
+    - https://www.robertbryndza.com/products/coco-pinchards-must-have-toy-story
+
+# --- Standalone romantic comedy (1) ---
+
+- id: robert-bryndza/miss-wrong-and-mr-right/raven-street-2025-en
+  workId: robert-bryndza/miss-wrong-and-mr-right
+  isbn13: "9781914547225"
+  language: en
+  format: paperback
+  publisher: Raven Street Publishing
+  year: 2025
+  note: >
+    Originally self-published on CreateSpace in 2015, with a Bookouture
+    edition in 2016; the current Raven Street reissue is the one edition
+    recorded here (see this file's header on the reissue question). No
+    Portuguese edition found.
+  sources:
+    - https://www.robertbryndza.com/products/miss-wrong-and-mr-right
+
+# --- Comic novel, co-authored (1) ---
+
+- id: robert-bryndza/bitch-hollywood/createspace-2012-en
+  workId: robert-bryndza/bitch-hollywood
+  isbn13: "9781479153947"
+  language: en
+  format: paperback
+  publisher: CreateSpace Independent Publishing Platform
+  year: 2012
+  note: >
+    Out of print and the only English edition: confirmed absent from the
+    author's own current shop (both "bitch-hollywood" and
+    "lost-in-crazytown" product handles return 404), unlike every other
+    pre-Raven-Street title, which has been reissued. Two authors on the
+    OpenLibrary record (Robert Bryndza and Ján Bryndza), matching works.yaml's
+    co-author note.
+  sources:
+    - https://openlibrary.org/isbn/9781479153947
+    - https://www.abebooks.com/9781479153947/Bitch-Hollywood-Bryndza-Robert-J%C3%A1n-147915394X/plp
+
+- id: robert-bryndza/bitch-hollywood/marencin-pt-2012-sk
+  workId: robert-bryndza/bitch-hollywood
+  language: sk
+  title: "Mrcha Hollywood"
+  publisher: "Marenčin PT"
+  year: 2012
+  note: >
+    The true first edition of this text, months ahead of the English
+    CreateSpace release (works.yaml's CO-AUTHOR note has the full account).
+    No isbn13: deliberate, not unsearched. Martinus.sk, the major Slovak
+    bookshop, carries this exact title/year/publisher as a real, rated,
+    cover-illustrated retail listing, but its own ISBN field reads "0" -
+    the value that retailer uses for a genuinely absent ISBN, distinct from
+    the "null" it uses elsewhere for a different kind of gap. Checked, not
+    merely unsearched.
+  sources:
+    - https://www.martinus.sk/search?q=Mrcha%20Hollywood
+
+# --- Apocrypha (1) ---
+
+# Breaking Point has no entry: never sold, no ISBN, per works.yaml's own
+# APOCRYPHA note.
