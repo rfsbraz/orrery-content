@@ -1,0 +1,72 @@
+stage: wing-audit
+summary: >
+  6 defects fixed, 5 routed, 1 curator call. Two flagged-open items closed with
+  primary sources: fear-the-silence's synopsis put Will's death on the Croatian
+  island, which its own jacket does not (morgue first, island afterwards), and
+  the wing claimed "Czech Bestseller of the Year" where the contemporary Czech
+  record gives him one of ten categories. Both were live in English and pt-PT.
+  Every ISBN, every source URL, all 14 covers and both title-collision traps
+  re-derived from the artefact.
+
+produced:
+  filesWritten:
+    - "content/franchises/robert-bryndza/works.yaml (fear-the-silence synopsis
+      corrected + jacket-order note; award wording; fatal-witness cover swapped
+      off the Large Print printing)"
+    - "content/franchises/robert-bryndza/eras.yaml (award wording)"
+    - "content/franchises/robert-bryndza/franchise.yaml (start-the-comedies note:
+      'four crime series' -> three, plus the standalone it also skips)"
+    - "content/authors/robert-bryndza.yaml (bio: 'moved there' read as Los
+      Angeles; names Slovakia)"
+    - "content/i18n/pt-PT/... works.yaml, eras.yaml, franchise.yaml,
+      authors/robert-bryndza.yaml (the same four, mirrored; works.yaml header
+      counts 14/11 -> 18/7)"
+
+fixed:
+  - "fear-the-silence: jacket (robertbryndza.com product JSON) reads morgue,
+    then 'Maggie retreats to their secluded holiday home on a remote Croatian
+    island. There, she discovers a hidden letter in Will's handwriting'. The
+    island is where she goes after, not where he dies. editions.yaml's pt entry
+    already recorded the true sequence. Both locales."
+  - "Czech award: nakladatelstvi-bourdon.cz has the main category of Cesky
+    bestseller 2023 going to Patrik Hartl's Gazely, with Bryndza winning
+    prekladova beletrie (translated fiction) - one of ten categories. events.yaml
+    was right; works.yaml and eras.yaml repeated the author's own site. Same
+    class as the 'five months' correction, from the same About page."
+  - "'the four crime series' - there are three; the wing says so everywhere else."
+  - "fatal-witness cover: OL id 13825374 carries a burned-in LARGE PRINT roundel
+    and belongs to ISBN 9781914547126; editions.yaml records the standard
+    9781914547065. Swapped to 13825373, the same jacket unbadged. Both looked at."
+  - "pt-PT works.yaml header said fourteen pt editions and eleven without,
+    contradicting its own enumeration - those are the cover counts. 18 and 7."
+
+routed:
+  editions: >
+    editions.yaml `note` fields reintroduce three details cut from ungated prose:
+    devils-way ("while recovering from a near-drowning"),
+    coco-pinchard-the-consequences ("remarried to Adam"), chasing-shadows (flat
+    identification plus the alias). Edition.note is inert - nothing in the app
+    renders it, checked against the source - so no reader is exposed, but the
+    next stage reading these notes will re-import them. Reword the synopsis-match
+    evidence without them.
+  reading-orders: >
+    No path is tagged `returning`; this is the only wing of 16 with startHere
+    that leaves an experience value uncovered. The wizard still ranks (score 0 on
+    that axis, commitment decides), so nothing breaks - but the reader issue #63
+    describes, an Erika Foster reader meeting the comedies, is the one with no
+    door built for them.
+  visual-metadata: >
+    The claim "no Large Print editions among the ones actually used" was not
+    true. Worth re-checking the six 978-1-916211 Erika Foster works, whose covers
+    are the standard jackets while editions.yaml records their large-print ISBNs.
+  press-archaeology: >
+    Unrecorded from the About page: Goodreads Choice Award nominations (The Girl
+    in the Ice, Last Breath) and a De Gouden Vleermuis nomination. Optional.
+
+openQuestions:
+  - "editions.yaml's Segredos Mortais (9789895705689) cites a Bertrand page that
+    now refuses automated fetches, and the publisher has no live product page.
+    Corroborated independently on almedina.net; the cited URL is worth replacing."
+  - "raven-street-publishing-2022 still rests on a proxy date (press-archaeology)
+    and the Slovak/Czech corpus is still unsearched (eras). Both stand as
+    recorded; neither is contradicted by anything found here."
