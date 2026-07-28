@@ -1,0 +1,45 @@
+stage: art-rotation
+summary: "17 assets graded (6 era plates, 8 life events, 3 franchise events); retyped 2 life events to clear 2 pacing conflicts; art_rotation.py --check reports 0 organisation-rotation and 0 pacing problems"
+produced:
+  organisationsAssigned: 17
+  changedFromDraft:
+    - "edgar-allan-poe-magazine-editor-years-1846: passage/serial-contact-sheet -> layered-stack/archive-stack"
+    - "edgar-allan-poe-whitman-engagement-ends-1848: beside/relationship-tableau -> diptych/symbolic-still-life, images_required 1 -> 2"
+forStages:
+  visual-metadata: >
+    edgar-allan-poe-whitman-engagement-ends-1848 is now a diptych, so its art
+    slot needs two complete prompts at asset-prompt time (a promise, then its
+    collapse), not one image describing both panels. No cover or portrait
+    sourcing is affected by this pass; the author portrait rule (sourced
+    photograph, never generated) is unchanged.
+  wing-audit: >
+    The 8 life events and 3 franchise events already carried organisation/
+    illustration_type/images_required when this stage opened, hand-assigned
+    by press-archaeology and eras as a preview pass, not by this stage; that
+    draft cleared the frequency caps and the no-repeat-neighbour rule but not
+    the pacing contour. art_rotation.py --check flagged two screenful
+    violations: the-raven-overnight-fame-1845 (mosaic) shared a viewport with
+    edgar-allan-poe-virginia-death-1847 (immersion) across a passage cell too
+    narrow to separate them, and virginia-death-1847 in turn shared one with
+    edgar-allan-poe-death-baltimore-1849 (immersion) across a beside cell.
+    Both fixes reassign the flanking MID cell to a wider-viewport organisation
+    that also fits its content better: a decade of masthead work reads as
+    accumulated archive material (layered-stack/archive-stack) rather than
+    compressed time, and a courtship that both promised and broke reads as a
+    genuine before/after (diptych/symbolic-still-life) rather than a single
+    scene. Neither of the two death-immersions or the Raven mosaic was
+    touched; press-archaeology's own read of those three as the wing's
+    ruptures stands. document-facsimile now sits at 3 of 11 events (27%),
+    under the soft ~third cap but close to it, all three earned independently
+    (a court-martial record, a magazine masthead correction, a doctored
+    memoir) rather than reused for convenience.
+openQuestions:
+  - "art_rotation.py --check still exits 1 because all 17 assets have no
+     GitHub art issue yet (0 of 17 read on the composition axis) - expected
+     at this stage per the skill, not a rotation or pacing problem; confirmed
+     by reading the two specific problem counts (0 and 0), not the exit code."
+  - "diptych's two panels for the Whitman engagement are not yet specified
+     beyond the organisation choice - asset-prompt will need a concrete
+     before/after object pair (the conditional promise; what marks its
+     collapse) that stays inside the wing's avoid list and draws no one's
+     face."
