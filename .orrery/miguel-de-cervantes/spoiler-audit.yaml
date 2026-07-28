@@ -1,0 +1,59 @@
+stage: spoiler-audit
+summary: "One real leak fixed (an ungated era plate stated what the Avellaneda gate protects); the 1614 boundary verified correct and kept; every synopsis checked against publisher copy and left alone"
+produced:
+  redactedIds:
+    - "el-taller-cervantino (era description + themes: the in-fiction answer to Avellaneda removed from ungated prose)"
+    - "miguel-de-cervantes/don-quixote (note: landmine warning added so the Part Two device is never lifted into the synopsis)"
+    - "avellaneda-affair-1614 (boundary unchanged; anchor reasoning and its one-work limit recorded in the file)"
+forStages:
+  visual-language: >
+    The wing's one gated cell is avellaneda-affair-1614 (artifact-spread,
+    book-object). Its art renders inside the gate, so nothing there needs to
+    hide. Everything else is ungated and premise-level; no visual law is
+    constrained by this stage.
+  visual-metadata: >
+    Two covers can undo what the text protects. Don Quixote - do not pick a
+    cover or header image depicting the deathbed or the return to sanity that
+    ends Part Two; the wing describes only the premise (an aging gentleman,
+    a farmer squire, the ride out). El cerco de Numancia is the reverse case
+    the collective end IS the subject and is stated in the synopsis, so a
+    siege image is fine. Also avoid any Don Quixote header art built around
+    the Barcelona press or Don Alvaro Tarfe.
+  translation: >
+    The rewritten strings are final: el-taller-cervantino's description and
+    themes, and don-quixote's note. No pt-PT overlay exists for this wing
+    yet, so nothing was invalidated and coverage is unchanged - translate
+    from the current base and the fix carries automatically.
+  wing-audit: >
+    Two judgement calls worth a second look. (1) franchise.description keeps
+    "the second written to answer an impostor's fake sequel" - ruled
+    publication motive, not the in-fiction device, and it is duplicated in the
+    author bio; a stricter curator could tighten it to "written after an
+    impostor's fake sequel" at no cost. (2) The engine cannot express what
+    this wing needs - the boundary damages Part Two, but both parts are filed
+    as one work, so a reader who has read only Part One is treated as
+    revealed. Splitting Don Quixote into two works would fix it; that is the
+    franchise-research ruling, not this stage's to overturn.
+openQuestions:
+  - >
+    Checked and deliberately left alone, so they are not re-litigated:
+    Don Quixote's synopsis (premise only, and narrower than Penguin's own
+    blurb, which adds windmills and friars); Novelas ejemplares (names three
+    novellas, no outcome from any of them; Oxford World's Classics copy is
+    equally generic); Persiles (the assumed names and the Rome journey are in
+    the standard catalogue copy, and the Book IV identity reveal is nowhere in
+    the wing); El cerco de Numancia (the collective end is the play's subject
+    and is Spanish catalogue copy - "el sacrificio colectivo ante el asedio";
+    it is also documented history); all eight lifeEvents and the three
+    startHere paths, which carry biography and publication history only.
+  - >
+    La Galatea's synopsis was ruled safe on structure rather than on fetched
+    jacket copy - no clean publisher record was reached this pass. It states
+    premise and an interwoven frame, and the book is famously half a work with
+    a sequel that never came, so there is no resolution available to leak.
+  - >
+    Verified rather than trusted, both by breaking them: validate.py rejects a
+    spoilerAfter pointing at an unknown work, and hard-errors on a spoilerAfter
+    set on a work. The app gates event title, description and art together in
+    every one of the sixteen river organisations and in the timeline, so the
+    boundary is honoured wherever the event renders.
