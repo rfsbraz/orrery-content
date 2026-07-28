@@ -1,0 +1,134 @@
+# Português europeu (pt-PT) - eras. Cada entrada leva `title`, `description`
+# e `themes` (docs/SCHEMA.md; `themes` é a lista de frases curtas mostrada
+# sob o título da era na placa - ver a nota em scripts/i18n_coverage.py).
+# `note:` não é traduzido: nenhum overlay pt-PT deste catálogo o traduz, o
+# campo é uma justificação de fronteira dirigida a quem cura a ala, não
+# prosa que o leitor vê.
+#
+# CHAMADA DE JULGAMENTO (títulos): a própria eras.yaml base explica que os
+# quatro títulos são deliberadamente espanhóis, por citarem diretamente os
+# títulos das secções da biografia de Canavaggio de que este ficheiro os
+# retira - não são o nome que o curador inventou para o período, mas o nome
+# que a fonte já lhes dá. Ainda assim, docs/SCHEMA.md trata `title` de era
+# como prosa curada e manda traduzi-lo como qualquer outra prosa (o oposto
+# do `title` de obra, nunca traduzido); e a ala já construída de Edgar Allan
+# Poe traduz os seus quatro títulos de era sem exceção. Este overlay segue
+# essa regra explícita e traduz os quatro títulos; "El ingenioso hidalgo"
+# é a exceção mais delicada, por citar diretamente a primeira metade do
+# título publicado da obra (esse sim intraduzível) - mantém-se aqui como
+# "O Engenhoso Fidalgo", uma tradução literal e transparente (as duas
+# palavras existem em português com o mesmo sentido), não como paráfrase.
+# Vale a pena um segundo olhar nativo sobre esta chamada.
+
+- id: retorno-a-las-letras
+  title: Regresso às Letras
+  themes:
+    - cativeiro relembrado
+    - os corrales de comedias
+    - o romance pastoril
+    - petições recusadas
+  description: >
+    O regresso às letras: os seis anos entre Argel e a Andaluzia, e o único
+    período em que Cervantes escreve para o palco e para a imprensa ao mesmo
+    tempo. Frades trinitários resgatam-no a 19 de setembro de 1580, dias
+    antes de ser embarcado para Constantinopla, e desembarca em Denia nesse
+    mesmo outubro. Um ano a tentar converter o seu historial de guerra num
+    cargo rende-lhe apenas um obscuro serviço em Orão; a partir de 1581,
+    segundo a cronologia do portal, dedica-se a sério ao teatro. Sobrevivem
+    duas peças das "veinte comedias o treinta" que mais tarde diz ter
+    escrito, [[work:miguel-de-cervantes/el-trato-de-argel|El trato de
+    Argel]], que leva à cena os seus próprios cinco anos de escravidão, e
+    [[work:miguel-de-cervantes/el-cerco-de-numancia|El cerco de Numancia]] -
+    todas elas representadas, segundo as suas próprias palavras, "sin que se
+    les ofreciese ofrenda de pepinos ni de otra cosa arrojadiza". Em março de
+    1585 o livreiro Blas de Robles imprime
+    [[work:miguel-de-cervantes/la-galatea|La Galatea]], o primeiro livro que
+    publica e o último durante vinte anos, três meses depois do seu
+    casamento em Esquivias com Catalina de Salazar.
+
+- id: el-periodo-andaluz
+  title: O Período Andaluz
+  themes:
+    - requisitar trigo e azeite
+    - excomunhão e dívidas em atraso
+    - a prisão real de Sevilha
+    - treze anos sem um livro
+  description: >
+    O período andaluz: treze anos nas estradas do sul, e nem um livro. A
+    partir de junho de 1587, Cervantes requisita cereais e azeite para a
+    Armada como comissário real sob as ordens de Antonio de Guevara,
+    trabalho que lhe vale uma excomunhão a pedido de um cónego relutante e
+    uma temporada na cadeia de Castro del Río, em 1592, por vender trigo
+    ilegalmente; a partir de agosto de 1594 anda a cobrar dois milhões e
+    meio de maravedis em dívidas atrasadas no reino de Granada, e quando o
+    comerciante que guardava o dinheiro vai à falência, é lançado na prisão
+    real de Sevilha. O próprio prólogo do Quixote situa a conceção do livro
+    numa cadeia "donde toda incomodidad tiene su asiento". Nada chega à
+    imprensa nestes anos, mas grande parte do que chega mais tarde tem aqui
+    o seu início: Rinconete y Cortadillo e El celoso extremeño, duas das
+    [[work:miguel-de-cervantes/novelas-ejemplares|Novelas ejemplares]],
+    datam deste período, o conto do Cativo do
+    [[work:miguel-de-cervantes/don-quixote|Quixote]] de cerca de 1590, e
+    talvez também o
+    [[work:miguel-de-cervantes/los-trabajos-de-persiles-y-sigismunda|Persiles
+    y Sigismunda]]. Uma petição para um cargo nas Índias volta, a 6 de junho
+    de 1590, com seis palavras na margem: "Busque por acá en que se le haga
+    merced".
+
+- id: el-ingenioso-hidalgo
+  title: O Engenhoso Fidalgo
+  themes:
+    - o regresso a Castela
+    - um livro escrito na obscuridade
+    - Valhadolide
+    - fama súbita
+  description: >
+    Batizada com o nome do livro: os anos em que se escreveu
+    [[work:miguel-de-cervantes/don-quixote|El ingenioso hidalgo don Quijote
+    de la Mancha]], sobre os quais quase nada se sabe. Cervantes deixa
+    Sevilha de vez no verão de 1600, está em Toledo nesse agosto e num
+    batizado em Esquivias em janeiro de 1602, e por 1603 já mudou toda a
+    casa para Valhadolide, para onde Filipe III tinha levado a corte. Aí
+    encontra editor em Francisco de Robles, filho do homem que imprimiu La
+    Galatea, obtém o privilégio real a 26 de setembro de 1604, e nos
+    últimos dias desse dezembro o livro sai da tipografia de Juan de la
+    Cuesta, em Madrid, com 1605 na folha de rosto. O sucesso é imediato e
+    incontrolável: duas edições piratas em Lisboa até março, uma segunda
+    edição de Madrid antes do verão, carregamentos registados para as
+    Índias, e Dom Quixote e Sancho Pança a desfilar nas mascaradas de
+    Valhadolide realizadas nesse junho para o embaixador inglês. Dias
+    depois, um cavaleiro de Santiago é esfaqueado à porta de casa e morre lá
+    dentro, e a investigação leva o autor do Quixote a passar dois dias
+    numa cela.
+
+- id: el-taller-cervantino
+  title: A Oficina Cervantina
+  themes:
+    - trabalho contra o relógio
+    - imprimir peças que ninguém queria encenar
+    - o monopólio de Lope
+    - a contenda com Avellaneda
+  description: >
+    A oficina cervantina: dez anos em Madrid, em quartos alugados atrás do
+    hospital de Atocha e depois na calle de León, em que um homem já com
+    mais de sessenta anos publica cinco dos seus oito livros. As
+    [[work:miguel-de-cervantes/novelas-ejemplares|Novelas ejemplares]] são
+    aprovadas em julho de 1612 e impressas um ano depois, chegando a quatro
+    edições em dez meses e trazendo a única descrição que alguma vez
+    escreveu do próprio rosto; o
+    [[work:miguel-de-cervantes/viaje-del-parnaso|Viaje del Parnaso]],
+    prefaciado em 1613, segue-se em novembro de 1614. Recusado pelos
+    empresários teatrais, que tinham passado para o lado de Lope de Vega,
+    vende antes as peças a um livreiro e imprime-as sem serem representadas
+    como
+    [[work:miguel-de-cervantes/ocho-comedias-y-ocho-entremeses|Ocho comedias
+    y ocho entremeses nuevos, nunca representados]], em setembro de 1615:
+    tinha voltado ao seu antigo ofício, escreve, e "no hallé pájaros en los
+    nidos de antaño". Um desconhecido que se fazia chamar Avellaneda publica
+    em Tarragona, em 1614, uma continuação do
+    [[work:miguel-de-cervantes/don-quixote|Quixote]] quando Cervantes ia a
+    meio da sua própria versão, que termina sob essa pressão e publica no
+    final de novembro de 1615. Dedica o
+    [[work:miguel-de-cervantes/los-trabajos-de-persiles-y-sigismunda|Persiles
+    y Sigismunda]] três dias antes de morrer, tendo-o terminado quatro dias
+    antes, e o livro é impresso em janeiro de 1617.
