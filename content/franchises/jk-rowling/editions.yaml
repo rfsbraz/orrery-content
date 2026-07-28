@@ -1,0 +1,792 @@
+# Editions of J. K. Rowling: 57 editions over 26 of 37 works (English UK/US
+# originals plus pt-PT translations, where they exist).
+#
+# COVERAGE
+#   en/en-US  32 editions over 26 works. One UK edition (Bloomsbury/Little, Brown/Hachette
+#             Children's, current print) per work, except: Philosopher's/
+#             Sorcerer's Stone (UK + the US title variant, see below), the
+#             three Fantastic Beasts screenplays and Harry Potter and the
+#             Cursed Child (UK + US, both genuinely separate objects a reader
+#             might buy, kept as two `en` rows since the text and title do not
+#             differ - see SCHEMA's "more than one edition per work" rule).
+#   pt-PT     25 editions across 25 of 37 works, one per work, all Editorial Presença, the
+#             house that holds Rowling's (and Robert Galbraith's) Portuguese
+#             rights almost in full. See "THE PORTUGUESE MARKET" below.
+#   Not one ISBN below was accepted from a single source: every entry is
+#   corroborated by at least two of {the publisher's own product page,
+#   OpenLibrary's per-ISBN record, Wikipedia's infobox, a Portuguese retailer
+#   record (Wook/Bertrand/Presença)}, and every check digit was recomputed by
+#   hand, not copied.
+#
+# SOURCING METHOD. scripts/metadata/lookup.py jk-rowling --markets en,pt swept
+# ~460 candidate rows in one call. Every row used below was then opened
+# individually at its publisher or OpenLibrary source before being trusted -
+# lookup.py finds candidates, it does not verify which market or which of two
+# same-titled books an ISBN belongs to, and this wing needed exactly that
+# judgement twice (see the two Fantastic Beasts collisions below). A live
+# trap the sweep surfaced and did NOT get used: several "pt"-tagged rows
+# (Pottermore Publishing ebooks of "Harry Potter e a Pedra Filosofal") carry
+# ISBNs prefixed 978-178, a UK ebook-agency block, not 978-972/989 - a
+# Pottermore digital edition reusing its UK ISBN block regardless of the
+# text's language. Real, but not confidently a "pt-PT edition" by this file's
+# region-prefix standard, so none is recorded; the print Presença editions
+# below already cover the market properly.
+#
+# THE PHILOSOPHER'S STONE / SORCERER'S STONE SPLIT. works.yaml's title is
+# fixed to the original UK title, permanently. The US edition is not a
+# separate work, it is a separate EDITION of the same work under a different
+# title, Putnam-style (SCHEMA's own en-GB/en-US rule; see Lee Child's The
+# Visitor/Running Blind and Tana French's Broken Harbour/Broken Harbor for the
+# pattern this follows exactly). Below: the UK edition carries no `title`
+# override since it matches the work's own title; the US edition carries
+# `language: en-US` and `title: "Harry Potter and the Sorcerer's Stone"`.
+# This is the ONLY US title variant in the whole 37-work bibliography - every
+# other Rowling/Galbraith book keeps its UK title in the US market, checked
+# individually for all 36 other works (Cursed Child and the three Fantastic
+# Beasts screenplays included; none retitles).
+#
+# THE CURSED CHILD EDITION QUESTION. The play was published twice in a
+# textually different form, not just reprinted: the "Special Rehearsal
+# Edition Script" (UK 31 Jul 2016, ISBN 978-0-7515-6535-5; US 9781338099133),
+# corresponding to the script used in the first preview performances, and the
+# "Definitive Collector's Edition" (25 Jul 2017), incorporating the changes
+# made to the play after those previews and after official opening
+# (en.wikipedia.org/wiki/Harry_Potter_and_the_Cursed_Child infobox and
+# "Script publication" section, read directly). The two below are the
+# DEFINITIVE text, per this skill's "record the complete/accurate text, not
+# whichever is easiest to find" rule and its "most recent in-print edition"
+# default: both are titled "...The Official Playscript of the Original West
+# End Production" on the jacket (not "Special Rehearsal Edition Script"),
+# both remain the current print (the UK one confirmed live on
+# littlebrown.co.uk, on-sale reprint 6 Oct 2022; the US one confirmed as
+# Scholastic's current paperback listing), and the Special Rehearsal Edition
+# ISBNs above are recorded here in this comment, not as entries, because they
+# are superseded and out of print. The Portuguese translation (Sept 2018)
+# postdates the Definitive Edition by over a year, so it translates that text.
+#
+# THE TWO FANTASTIC BEASTS COLLISIONS. works.yaml already gives the 2001
+# in-universe companion book and the 2016 film screenplay separate ids
+# because English retailers and OpenLibrary both let the two collide under
+# the bare title "Fantastic Beasts and Where to Find Them" - the screenplay's
+# full jacket title carries ": The Original Screenplay" and the companion
+# book's does not. That same collision reappears, unprompted, in the
+# Portuguese editions: Editorial Presença publishes BOTH under variants of
+# "Monstros Fantásticos e Onde Encontrá-los" and their bare OpenLibrary/Wook
+# titles do not disambiguate them either. Resolved here by reading each
+# edition's own product page rather than its title string:
+#   - the companion book's 2018 Portuguese edition (isbn 9789722361545) sits
+#     in Presença's "Biblioteca de Hogwarts" series, 128 pages, and its own
+#     synopsis is explicit: "edição atualizada... com um novo prefácio do
+#     próprio Newt e a revelação de seis monstros" - the international March
+#     2017 re-edition with a new Scamander preface and six new creatures,
+#     translated into Portuguese the following year. The matching English
+#     (both UK and US) editions of that same 2017 re-edition are recorded on
+#     the companion book below for the same reason.
+#   - the screenplay's 2017 Portuguese edition (isbn 9789722359535) sits in
+#     Presença's "HP Guiões e Argumentos" series, 304 pages, subtitled "O
+#     Argumento Original", and its synopsis names it plainly: "assinala a
+#     estreia de J.K. Rowling... como argumentista de filmes."
+# The SAME care applies to the second collision this wing already flagged:
+# the third screenplay is "The Complete Screenplay" (Steve Kloves co-write),
+# never "The Original Screenplay" like the first two, in every market -
+# confirmed on the English jackets (Scholastic's and Little, Brown's own
+# product pages) AND on the Portuguese one, whose own synopsis reads
+# "argumento completo e oficial". No entry below blurs an Original screenplay
+# with the Complete one, or either screenplay with the companion book.
+#
+# THE PORTUGUESE MARKET. Editorial Presença is the sole Portuguese publisher
+# for both the Rowling and the Galbraith bibliography; nothing here is
+# Brazilian (every pt-PT ISBN below starts 978-972, the Portugal block;
+# Brazilian Rocco/Nova Fronteira/Editora Rocco Ltda. editions surfaced by the
+# lookup sweep - "Animais Fantásticos", "Morte súbita", "O Chamado do Cuco",
+# etc, all pt-BR under different titles and translators - are excluded).
+# Two live facts worth carrying forward rather than treating as coverage
+# gaps:
+#   - Presença relaunched the whole seven-novel Harry Potter septology in a
+#     single "HP Clássicos" printing in October 2024 (sequential ISBNs
+#     9789722375047-9789722375108, confirmed individually on presenca.pt),
+#     superseding the older individual printings still current elsewhere in
+#     this catalogue as of mid-2026. All seven entries below use this
+#     current run.
+#   - The Cormoran Strike run currently stands at 7 of 8 published novels in
+#     Portuguese (Cuckoo's Calling through The Running Grave, the last as "A
+#     Sepultura de Água", Feb 2025); The Hallmarked Man (English Sept 2025)
+#     has no Portuguese edition yet as of mid-2026 - a market fact, not a
+#     research gap, so it carries an English edition only.
+#
+# NOT RECORDED, DELIBERATELY.
+#   - The seven apocrypha/contributor entries (forewords to Families Just
+#     Like Us, Magic, Moving Britain Forward, Harry, A History; essays in A
+#     Love Letter to Europe and The Women Who Wouldn't Wheesht; the 2008
+#     charity postcard story). Each is a few paragraphs inside SOMEONE ELSE'S
+#     book - Melissa Anelli's, Gordon Brown's, a thirteen-author charity
+#     anthology's - not an object whose ISBN a reader would look up to buy
+#     "the Rowling book." A reasonable boundary call about a completionist
+#     bibliography's scope, not an oversight; left out rather than
+#     manufacturing seven low-value store links for other authors' books.
+#   - The three Pottermore Presents ebook shorts and From the Wizarding
+#     Archive (2024). All four are Kindle-single/digital-only releases;
+#     searched directly (OpenLibrary, publisher, retailer) and none resolves
+#     to a stable, catalogued ISBN-13 the way every other work here does -
+#     Hogwarts: An Incomplete and Unreliable Guide is sold by ASIN, not ISBN,
+#     on every storefront checked, and From the Wizarding Archive has no
+#     OpenLibrary record at all. No entry is coined for an ASIN-only release.
+
+# --- Harry Potter, the seven novels (1997-2007) ---
+
+- id: jk-rowling/harry-potter-and-the-philosophers-stone/bloomsbury-2014-en
+  workId: jk-rowling/harry-potter-and-the-philosophers-stone
+  isbn13: "9781408855652"
+  language: en
+  format: paperback
+  publisher: Bloomsbury
+  year: 2014
+  note: >
+    The current UK children's paperback (Johnny Duddle cover redesign),
+    matching the work's own title exactly.
+  sources:
+    - https://openlibrary.org/isbn/9781408855652.json
+
+- id: jk-rowling/harry-potter-and-the-philosophers-stone/scholastic-2023-us
+  workId: jk-rowling/harry-potter-and-the-philosophers-stone
+  isbn13: "9781338878929"
+  language: en-US
+  title: "Harry Potter and the Sorcerer's Stone"
+  publisher: Scholastic
+  year: 2023
+  note: >
+    The US retitling, at Scholastic's own request when they bought the
+    American rights (works.yaml/the author bio do not state the reason;
+    widely reported as a fear that British children would read "philosopher"
+    as too dry for a children's book). The only US title variant anywhere in
+    this 37-work bibliography - see the file header.
+  sources:
+    - https://openlibrary.org/isbn/9781338878929.json
+
+- id: jk-rowling/harry-potter-and-the-philosophers-stone/presenca-2024-pt
+  workId: jk-rowling/harry-potter-and-the-philosophers-stone
+  isbn13: "9789722375047"
+  language: pt-PT
+  title: "Harry Potter e a Pedra Filosofal"
+  format: paperback
+  publisher: Editorial Presença
+  year: 2024
+  note: The current "HP Clássicos" printing; see the file header.
+  sources:
+    - https://www.presenca.pt/products/harry-potter-e-a-pedra-filosofal
+
+- id: jk-rowling/harry-potter-and-the-chamber-of-secrets/bloomsbury-2014-en
+  workId: jk-rowling/harry-potter-and-the-chamber-of-secrets
+  isbn13: "9781408855669"
+  language: en
+  format: paperback
+  publisher: Bloomsbury
+  year: 2014
+  sources:
+    - https://openlibrary.org/isbn/9781408855669.json
+
+- id: jk-rowling/harry-potter-and-the-chamber-of-secrets/presenca-2024-pt
+  workId: jk-rowling/harry-potter-and-the-chamber-of-secrets
+  isbn13: "9789722375054"
+  language: pt-PT
+  title: "Harry Potter e a Câmara dos Segredos"
+  format: paperback
+  publisher: Editorial Presença
+  year: 2024
+  sources:
+    - https://www.presenca.pt/products/harry-potter-e-a-camara-dos-segredos
+
+- id: jk-rowling/harry-potter-and-the-prisoner-of-azkaban/bloomsbury-2014-en
+  workId: jk-rowling/harry-potter-and-the-prisoner-of-azkaban
+  isbn13: "9781408855676"
+  language: en
+  format: paperback
+  publisher: Bloomsbury
+  year: 2014
+  sources:
+    - https://openlibrary.org/isbn/9781408855676.json
+
+- id: jk-rowling/harry-potter-and-the-prisoner-of-azkaban/presenca-2024-pt
+  workId: jk-rowling/harry-potter-and-the-prisoner-of-azkaban
+  isbn13: "9789722375061"
+  language: pt-PT
+  title: "Harry Potter e o Prisioneiro de Azkaban"
+  format: paperback
+  publisher: Editorial Presença
+  year: 2024
+  sources:
+    - https://www.presenca.pt/products/harry-potter-e-o-prisioneiro-de-azkaban
+
+- id: jk-rowling/harry-potter-and-the-goblet-of-fire/bloomsbury-2014-en
+  workId: jk-rowling/harry-potter-and-the-goblet-of-fire
+  isbn13: "9781408855683"
+  language: en
+  format: paperback
+  publisher: Bloomsbury
+  year: 2014
+  sources:
+    - https://openlibrary.org/isbn/9781408855683.json
+
+- id: jk-rowling/harry-potter-and-the-goblet-of-fire/presenca-2024-pt
+  workId: jk-rowling/harry-potter-and-the-goblet-of-fire
+  isbn13: "9789722375078"
+  language: pt-PT
+  title: "Harry Potter e o Cálice de Fogo"
+  format: paperback
+  publisher: Editorial Presença
+  year: 2024
+  sources:
+    - https://www.presenca.pt/products/harry-potter-e-o-calice-de-fogo
+
+- id: jk-rowling/harry-potter-and-the-order-of-the-phoenix/bloomsbury-2014-en
+  workId: jk-rowling/harry-potter-and-the-order-of-the-phoenix
+  isbn13: "9781408855690"
+  language: en
+  format: paperback
+  publisher: Bloomsbury
+  year: 2014
+  sources:
+    - https://openlibrary.org/isbn/9781408855690.json
+
+- id: jk-rowling/harry-potter-and-the-order-of-the-phoenix/presenca-2024-pt
+  workId: jk-rowling/harry-potter-and-the-order-of-the-phoenix
+  isbn13: "9789722375085"
+  language: pt-PT
+  title: "Harry Potter e a Ordem da Fénix"
+  format: paperback
+  publisher: Editorial Presença
+  year: 2024
+  sources:
+    - https://www.presenca.pt/products/harry-potter-e-a-ordem-da-fenix
+
+- id: jk-rowling/harry-potter-and-the-half-blood-prince/bloomsbury-2014-en
+  workId: jk-rowling/harry-potter-and-the-half-blood-prince
+  isbn13: "9781408855706"
+  language: en
+  format: paperback
+  publisher: Bloomsbury
+  year: 2014
+  sources:
+    - https://openlibrary.org/isbn/9781408855706.json
+
+- id: jk-rowling/harry-potter-and-the-half-blood-prince/presenca-2024-pt
+  workId: jk-rowling/harry-potter-and-the-half-blood-prince
+  isbn13: "9789722375092"
+  language: pt-PT
+  title: "Harry Potter e o Príncipe Misterioso"
+  format: paperback
+  publisher: Editorial Presença
+  year: 2024
+  note: >
+    "Príncipe Misterioso" (Mysterious Prince), not a literal rendering of
+    "Half-Blood Prince" - the Portuguese title Presença has used since the
+    2005 first edition, carried forward unchanged into this 2024 printing.
+  sources:
+    - https://www.presenca.pt/products/harry-potter-e-o-principe-misterioso
+
+- id: jk-rowling/harry-potter-and-the-deathly-hallows/bloomsbury-2014-en
+  workId: jk-rowling/harry-potter-and-the-deathly-hallows
+  isbn13: "9781408855713"
+  language: en
+  format: paperback
+  publisher: Bloomsbury
+  year: 2014
+  sources:
+    - https://openlibrary.org/isbn/9781408855713.json
+
+- id: jk-rowling/harry-potter-and-the-deathly-hallows/presenca-2024-pt
+  workId: jk-rowling/harry-potter-and-the-deathly-hallows
+  isbn13: "9789722375108"
+  language: pt-PT
+  title: "Harry Potter e os Talismãs da Morte"
+  format: paperback
+  publisher: Editorial Presença
+  year: 2024
+  note: >
+    "Talismãs da Morte" (Talismans of Death), not "Relíquias da Morte" -
+    that literal rendering is the Brazilian (pt-BR) title, a different
+    translation; Presença has used "Talismãs" since the 2007 first edition.
+  sources:
+    - https://www.presenca.pt/collections/harry-potter/products/harry-potter-e-os-talismas-da-morte
+
+# --- Harry Potter companion volumes (2001-2008) ---
+
+- id: jk-rowling/quidditch-through-the-ages/bloomsbury-2018-en
+  workId: jk-rowling/quidditch-through-the-ages
+  isbn13: "9781408894606"
+  language: en
+  publisher: Bloomsbury
+  year: 2018
+  sources:
+    - https://openlibrary.org/isbn/9781408894606.json
+
+- id: jk-rowling/quidditch-through-the-ages/presenca-2018-pt
+  workId: jk-rowling/quidditch-through-the-ages
+  isbn13: "9789722361552"
+  language: pt-PT
+  title: "O Quidditch Através dos Tempos"
+  format: paperback
+  publisher: Editorial Presença
+  year: 2018
+  note: Presença's "Biblioteca de Hogwarts" collection, alongside Beedle the Bard and the Fantastic Beasts companion book below.
+  sources:
+    - https://www.presenca.pt/products/o-quidditch-atraves-dos-tempos
+
+- id: jk-rowling/fantastic-beasts-and-where-to-find-them/bloomsbury-2017-en
+  workId: jk-rowling/fantastic-beasts-and-where-to-find-them
+  isbn13: "9781408880715"
+  language: en
+  publisher: Bloomsbury
+  year: 2017
+  note: >
+    The updated international re-edition (new Newt Scamander preface, six
+    creatures added) rather than the plain 2001 original - see the file
+    header's Fantastic Beasts collision note. Not to be confused with the
+    screenplay book of the same bare title, sold separately below under its
+    own id.
+  sources:
+    - https://openlibrary.org/isbn/9781408880715.json
+
+- id: jk-rowling/fantastic-beasts-and-where-to-find-them/scholastic-2017-us
+  workId: jk-rowling/fantastic-beasts-and-where-to-find-them
+  isbn13: "9781338132311"
+  language: en
+  publisher: Arthur A. Levine Books
+  year: 2017
+  note: The US printing of the same March 2017 re-edition, published 14 March 2017.
+  sources:
+    - https://openlibrary.org/isbn/9781338132311.json
+
+- id: jk-rowling/fantastic-beasts-and-where-to-find-them/presenca-2018-pt
+  workId: jk-rowling/fantastic-beasts-and-where-to-find-them
+  isbn13: "9789722361545"
+  language: pt-PT
+  title: "Monstros Fantásticos e Onde Encontrá-los"
+  format: paperback
+  publisher: Editorial Presença
+  year: 2018
+  note: >
+    Confirmed by its own product page as the updated edition ("edição
+    atualizada... com um novo prefácio do próprio Newt") in the "Biblioteca
+    de Hogwarts" series, 128 pages - not the screenplay, which Presença
+    publishes separately under "O Argumento Original" in a different series
+    (see that work's own pt-PT entry below). See the file header.
+  sources:
+    - https://www.presenca.pt/products/monstros-fantasticos-e-onde-encontra-los-1
+    - https://www.wook.pt/livro/monstros-fantasticos-e-onde-encontra-los-newt-scamander/21325580
+
+- id: jk-rowling/the-tales-of-beedle-the-bard/bloomsbury-2018-en
+  workId: jk-rowling/the-tales-of-beedle-the-bard
+  isbn13: "9781408898673"
+  language: en
+  publisher: Bloomsbury
+  year: 2018
+  sources:
+    - https://openlibrary.org/isbn/9781408898673.json
+
+- id: jk-rowling/the-tales-of-beedle-the-bard/presenca-2018-pt
+  workId: jk-rowling/the-tales-of-beedle-the-bard
+  isbn13: "9789722361569"
+  language: pt-PT
+  title: "Os Contos de Beedle, o Bardo"
+  publisher: Editorial Presença
+  year: 2018
+  sources:
+    - https://openlibrary.org/isbn/9789722361569.json
+
+# --- Harry Potter and the Cursed Child (2016) ---
+
+- id: jk-rowling/harry-potter-and-the-cursed-child/sphere-2017-definitive-en
+  workId: jk-rowling/harry-potter-and-the-cursed-child
+  isbn13: "9780751565362"
+  language: en
+  format: paperback
+  publisher: Sphere (Little, Brown Book Group)
+  year: 2017
+  note: >
+    The Definitive Collector's Edition text ("The Official Playscript of the
+    Original West End Production"), not the earlier Special Rehearsal
+    Edition Script - see the file header for why. Confirmed still the
+    current UK print (littlebrown.co.uk product page, reprint on sale 6 Oct
+    2022).
+  sources:
+    - https://www.littlebrown.co.uk/titles/j-k-rowling/harry-potter-and-the-cursed-child-parts-one-and-two/9780751565362/
+    - https://en.wikipedia.org/wiki/Harry_Potter_and_the_Cursed_Child
+
+- id: jk-rowling/harry-potter-and-the-cursed-child/scholastic-2017-definitive-us
+  workId: jk-rowling/harry-potter-and-the-cursed-child
+  isbn13: "9781338216660"
+  language: en
+  format: paperback
+  publisher: Arthur A. Levine Books (Scholastic)
+  year: 2017
+  note: The US printing of the same Definitive Edition text, published 25 July 2017.
+  sources:
+    - https://openlibrary.org/isbn/9781338216660.json
+
+- id: jk-rowling/harry-potter-and-the-cursed-child/presenca-2018-pt
+  workId: jk-rowling/harry-potter-and-the-cursed-child
+  isbn13: "9789722362030"
+  language: pt-PT
+  title: "Harry Potter e a Criança Amaldiçoada"
+  publisher: Editorial Presença
+  year: 2018
+  note: Published September 2018, over a year after the Definitive Edition superseded the Special Rehearsal text, so it translates the Definitive script.
+  sources:
+    - https://www.bertrand.pt/livro/harry-potter-e-a-crianca-amaldicoada-j-k-rowling/24048767
+
+# --- Fantastic Beasts screenplays (2016-2022) ---
+
+- id: jk-rowling/fantastic-beasts-and-where-to-find-them-original-screenplay/littlebrown-2016-en
+  workId: jk-rowling/fantastic-beasts-and-where-to-find-them-original-screenplay
+  isbn13: "9781408708989"
+  language: en
+  format: hardcover
+  publisher: Little, Brown
+  year: 2016
+  note: Jacket subtitle "The Original Screenplay", matching the work's own full title exactly.
+  sources:
+    - https://openlibrary.org/isbn/9781408708989.json
+
+- id: jk-rowling/fantastic-beasts-and-where-to-find-them-original-screenplay/scholastic-2016-us
+  workId: jk-rowling/fantastic-beasts-and-where-to-find-them-original-screenplay
+  isbn13: "9781338109061"
+  language: en
+  format: hardcover
+  publisher: Arthur A. Levine Books (Scholastic)
+  year: 2016
+  sources:
+    - https://openlibrary.org/isbn/9781338109061.json
+
+- id: jk-rowling/fantastic-beasts-and-where-to-find-them-original-screenplay/presenca-2017-pt
+  workId: jk-rowling/fantastic-beasts-and-where-to-find-them-original-screenplay
+  isbn13: "9789722359535"
+  language: pt-PT
+  title: "Monstros Fantásticos e Onde Encontrá-los: O Argumento Original"
+  format: paperback
+  publisher: Editorial Presença
+  year: 2017
+  note: >
+    Confirmed by its own product page ("HP Guiões e Argumentos" series, 304
+    pages, synopsis names it as Rowling's screenwriting debut) as the
+    screenplay, not the companion book - see the file header.
+  sources:
+    - https://www.presenca.pt/products/monstros-fantasticos-e-onde-encontra-los
+
+- id: jk-rowling/fantastic-beasts-the-crimes-of-grindelwald/littlebrown-2018-en
+  workId: jk-rowling/fantastic-beasts-the-crimes-of-grindelwald
+  isbn13: "9781408711705"
+  language: en
+  publisher: Little, Brown
+  year: 2018
+  note: >
+    Jacket title "Fantastic Beasts: The Crimes of Grindelwald - The Original
+    Screenplay", matching the work's own title exactly.
+  sources:
+    - https://openlibrary.org/isbn/9781408711705.json
+
+- id: jk-rowling/fantastic-beasts-the-crimes-of-grindelwald/scholastic-2018-us
+  workId: jk-rowling/fantastic-beasts-the-crimes-of-grindelwald
+  isbn13: "9781338263893"
+  language: en
+  format: hardcover
+  publisher: Arthur A. Levine Books
+  year: 2018
+  sources:
+    - https://openlibrary.org/isbn/9781338263893.json
+
+- id: jk-rowling/fantastic-beasts-the-crimes-of-grindelwald/presenca-2018-pt
+  workId: jk-rowling/fantastic-beasts-the-crimes-of-grindelwald
+  isbn13: "9789722363242"
+  language: pt-PT
+  title: "Monstros Fantásticos: Os Crimes de Grindelwald - O Argumento Original do Filme"
+  publisher: Editorial Presença
+  year: 2018
+  sources:
+    - https://www.presenca.pt/products/os-crimes-de-grindelwald
+
+- id: jk-rowling/fantastic-beasts-the-secrets-of-dumbledore/littlebrown-2022-en
+  workId: jk-rowling/fantastic-beasts-the-secrets-of-dumbledore
+  isbn13: "9781408717431"
+  language: en
+  format: hardcover
+  publisher: Little, Brown Book Group
+  year: 2022
+  note: >
+    "The Complete Screenplay", not "The Original Screenplay" like the first
+    two - confirmed on the publisher's own product page, on sale 19 July
+    2022 at £25. Matches works.yaml's own title exactly (the co-author
+    credit is carried by authorRole/withAuthorIds on the work, not restated
+    here).
+  sources:
+    - https://www.hachette.co.uk/titles/j-k-rowling/fantastic-beasts-the-secrets-of-dumbledore-%E2%80%93-the-complete-screenplay/9781408717431/
+
+- id: jk-rowling/fantastic-beasts-the-secrets-of-dumbledore/scholastic-2022-us
+  workId: jk-rowling/fantastic-beasts-the-secrets-of-dumbledore
+  isbn13: "9781338853681"
+  language: en
+  publisher: Scholastic
+  year: 2022
+  note: Subtitle "the Complete Screenplay", matching the UK edition.
+  sources:
+    - https://openlibrary.org/isbn/9781338853681.json
+
+- id: jk-rowling/fantastic-beasts-the-secrets-of-dumbledore/presenca-2022-pt
+  workId: jk-rowling/fantastic-beasts-the-secrets-of-dumbledore
+  isbn13: "9789722370004"
+  language: pt-PT
+  title: "Monstros Fantásticos - Os Segredos de Dumbledore"
+  format: paperback
+  publisher: Editorial Presença
+  year: 2022
+  note: >
+    Its own product page opens "Bem-vindos ao argumento completo e oficial"
+    (the complete and official screenplay) - the Complete Screenplay, not
+    the Original, matching the English distinction exactly.
+  sources:
+    - https://www.presenca.pt/products/monstros-fantasticos-os-segredos-de-dumbledore
+
+# --- The Casual Vacancy (2012) ---
+
+- id: jk-rowling/the-casual-vacancy/sphere-2013-en
+  workId: jk-rowling/the-casual-vacancy
+  isbn13: "9780751552867"
+  language: en
+  publisher: Sphere
+  year: 2013
+  sources:
+    - https://openlibrary.org/isbn/9780751552867.json
+
+- id: jk-rowling/the-casual-vacancy/presenca-2012-pt
+  workId: jk-rowling/the-casual-vacancy
+  isbn13: "9789722349321"
+  language: pt-PT
+  title: "Uma Morte Súbita"
+  format: paperback
+  publisher: Editorial Presença
+  year: 2012
+  note: >
+    "Uma Morte Súbita" (A Sudden Death) - not to be confused with the
+    Brazilian (pt-BR) "Morte súbita" without the article, a different
+    translation from a different publisher (Nova Fronteira).
+  sources:
+    - https://www.bertrand.pt/livro/uma-morte-subita-j-k-rowling/14307600
+
+# --- Cormoran Strike, as Robert Galbraith (2013-2025) ---
+
+- id: jk-rowling/the-cuckoos-calling/sphere-2017-en
+  workId: jk-rowling/the-cuckoos-calling
+  isbn13: "9780751571400"
+  language: en
+  format: paperback
+  publisher: Sphere
+  year: 2017
+  sources:
+    - https://openlibrary.org/isbn/9780751571400.json
+
+- id: jk-rowling/the-cuckoos-calling/presenca-2013-pt
+  workId: jk-rowling/the-cuckoos-calling
+  isbn13: "9789722351539"
+  language: pt-PT
+  title: "Quando o Cuco Chama"
+  publisher: Editorial Presença
+  year: 2013
+  sources:
+    - https://www.wook.pt/livro/quando-o-cuco-chama-robert-galbraith/15248901
+
+- id: jk-rowling/the-silkworm/littlebrown-2014-en
+  workId: jk-rowling/the-silkworm
+  isbn13: "9781405514972"
+  language: en
+  publisher: Little, Brown Book Group
+  year: 2014
+  sources:
+    - https://openlibrary.org/isbn/9781405514972.json
+
+- id: jk-rowling/the-silkworm/presenca-2015-pt
+  workId: jk-rowling/the-silkworm
+  isbn13: "9789722354479"
+  language: pt-PT
+  title: "O Bicho-da-Seda"
+  publisher: Editorial Presença
+  year: 2015
+  sources:
+    - https://www.wook.pt/livro/o-bicho-da-seda-robert-galbraith/16123001
+
+- id: jk-rowling/career-of-evil/littlebrown-2018-en
+  workId: jk-rowling/career-of-evil
+  isbn13: "9780751571417"
+  language: en
+  publisher: Little, Brown Book Group
+  year: 2018
+  sources:
+    - https://openlibrary.org/isbn/9780751571417.json
+
+- id: jk-rowling/career-of-evil/presenca-2016-pt
+  workId: jk-rowling/career-of-evil
+  isbn13: "9789722358866"
+  language: pt-PT
+  title: "A Carreira do Mal"
+  publisher: Editorial Presença
+  year: 2016
+  sources:
+    - https://www.wook.pt/livro/a-carreira-do-mal-robert-galbraith/18825720
+
+- id: jk-rowling/lethal-white/littlebrown-2019-en
+  workId: jk-rowling/lethal-white
+  isbn13: "9780751572872"
+  language: en
+  publisher: Little, Brown Book Group
+  year: 2019
+  sources:
+    - https://openlibrary.org/isbn/9780751572872.json
+
+- id: jk-rowling/lethal-white/presenca-2021-pt
+  workId: jk-rowling/lethal-white
+  isbn13: "9789722368117"
+  language: pt-PT
+  title: "Branco Letal"
+  publisher: Editorial Presença
+  year: 2021
+  sources:
+    - https://www.wook.pt/livro/branco-letal-robert-galbraith/25531860
+
+- id: jk-rowling/troubled-blood/littlebrown-2021-en
+  workId: jk-rowling/troubled-blood
+  isbn13: "9780751579956"
+  language: en
+  publisher: Little, Brown Book Group
+  year: 2021
+  sources:
+    - https://openlibrary.org/isbn/9780751579956.json
+
+- id: jk-rowling/troubled-blood/presenca-2022-pt
+  workId: jk-rowling/troubled-blood
+  isbn13: "9789722369701"
+  language: pt-PT
+  title: "Sangue Turvo"
+  publisher: Editorial Presença
+  year: 2022
+  sources:
+    - https://www.wook.pt/livro/sangue-turvo-robert-galbraith/27321037
+
+- id: jk-rowling/the-ink-black-heart/littlebrown-2022-en
+  workId: jk-rowling/the-ink-black-heart
+  isbn13: "9780751584189"
+  language: en
+  format: hardcover
+  publisher: Little, Brown Book Group
+  year: 2022
+  note: No UK paperback record was found and confirmed at verification time; this is the original hardcover.
+  sources:
+    - https://openlibrary.org/isbn/9780751584189.json
+
+- id: jk-rowling/the-ink-black-heart/presenca-2023-pt
+  workId: jk-rowling/the-ink-black-heart
+  isbn13: "9789722372510"
+  language: pt-PT
+  title: "Coração Negro como Tinta"
+  publisher: Editorial Presença
+  translator: "Ana Lourenço"
+  year: 2023
+  sources:
+    - https://www.wook.pt/livro/coracao-negro-como-tinta-robert-galbraith/29397819
+
+- id: jk-rowling/the-running-grave/littlebrown-2023-en
+  workId: jk-rowling/the-running-grave
+  isbn13: "9781408730959"
+  language: en
+  publisher: Little, Brown Book Group
+  year: 2023
+  sources:
+    - https://openlibrary.org/isbn/9781408730959.json
+
+- id: jk-rowling/the-running-grave/presenca-2025-pt
+  workId: jk-rowling/the-running-grave
+  isbn13: "9789722375719"
+  language: pt-PT
+  title: "A Sepultura de Água"
+  publisher: Editorial Presença
+  year: 2025
+  note: Non-literal title (literally "The Water Grave"); published February 2025, book 7 of Presença's run.
+  sources:
+    - https://www.wook.pt/livro/a-sepultura-de-agua-robert-galbraith/31579805
+
+- id: jk-rowling/the-hallmarked-man/littlebrown-2025-en
+  workId: jk-rowling/the-hallmarked-man
+  isbn13: "9781408723784"
+  language: en
+  format: hardcover
+  publisher: Little, Brown Book Group
+  year: 2025
+  note: >
+    No Portuguese edition exists yet (published September 2025 in English,
+    and Presença's run has not reached it as of mid-2026) - a market fact,
+    not an oversight; see the file header.
+  sources:
+    - https://blackwells.co.uk/bookshop/product/The-Hallmarked-Man-by-Robert-Galbraith/9781408723784
+
+# --- Standalone children's fiction (2020-2021) ---
+
+- id: jk-rowling/the-ickabog/hachette-2020-en
+  workId: jk-rowling/the-ickabog
+  isbn13: "9781510202252"
+  language: en
+  publisher: Hachette Children's Group
+  year: 2020
+  sources:
+    - https://openlibrary.org/search.json?q=title%3A%22The+Ickabog%22+publisher%3AHachette
+
+- id: jk-rowling/the-ickabog/presenca-2020-pt
+  workId: jk-rowling/the-ickabog
+  isbn13: "9789722366687"
+  language: pt-PT
+  title: "O Ickabog"
+  format: paperback
+  publisher: Editorial Presença
+  year: 2020
+  note: This Portuguese edition carries its own added illustrations by 34 young Portuguese contest winners, per the publisher's own copy.
+  sources:
+    - https://www.presenca.pt/products/o-ickabog
+
+- id: jk-rowling/the-christmas-pig/hachette-2021-en
+  workId: jk-rowling/the-christmas-pig
+  isbn13: "9781444964912"
+  language: en
+  publisher: Hachette Children's Group
+  year: 2021
+  sources:
+    - https://openlibrary.org/isbn/9781444964912.json
+
+- id: jk-rowling/the-christmas-pig/presenca-2021-pt
+  workId: jk-rowling/the-christmas-pig
+  isbn13: "9789722367967"
+  language: pt-PT
+  title: "O Porquinho de Natal"
+  format: paperback
+  publisher: Editorial Presença
+  year: 2021
+  sources:
+    - https://www.wook.pt/livro/o-porquinho-de-natal-j-k-rowling/25459204
+
+# --- Nonfiction (2015) ---
+
+- id: jk-rowling/very-good-lives/littlebrown-2015-en
+  workId: jk-rowling/very-good-lives
+  isbn13: "9781408706787"
+  language: en
+  publisher: Little, Brown Book Group
+  year: 2015
+  sources:
+    - https://openlibrary.org/isbn/9781408706787.json
+
+- id: jk-rowling/very-good-lives/presenca-2017-pt
+  workId: jk-rowling/very-good-lives
+  isbn13: "9789722361354"
+  language: pt-PT
+  title: "Uma Vida Muito Boa - Os Benefícios do Fracasso e a Importância da Imaginação"
+  translator: "Ana Cardoso, João Cardoso"
+  publisher: Editorial Presença
+  year: 2017
+  sources:
+    - https://www.bertrand.pt/livro/uma-vida-muito-boa-j-k-rowling/21188049

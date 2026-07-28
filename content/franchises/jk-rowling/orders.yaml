@@ -1,0 +1,88 @@
+# ADDITIONAL canon orders only. The DEFAULT order (all 37 works, publication-
+# chronological) is derived from works.yaml and is NOT listed here.
+#
+# Two orders, both thread-scoped rather than reshuffled: the Harry Potter
+# novels and the Cormoran Strike novels are each already published in a
+# single unambiguous sequence with nothing to debate, but the derived default
+# interleaves each of them with the rest of a 28-year, four-genre career - the
+# companion volumes, the standalone adult and children's novels, the
+# nonfiction, the charity pieces. A reader who wants to walk one thread on its
+# own has no way to do that from the default order alone; these two name and
+# isolate the walk. Neither reorders anything - both match publication order
+# exactly, and exist to frame the thread, not to reshuffle it.
+#
+# Considered and not shipped: an order for the three Fantastic Beasts
+# screenplays. At three works it fits inside a startHere path's workIds
+# directly, so a dedicated order would add a file without adding information
+# a path cannot already carry on its own.
+
+- id: jk-rowling/harry-potter
+  name: Harry Potter, the novels and the stage continuation
+  type: curated
+  source: canon
+  rationale: >
+    The seven novels in the order Rowling wrote them, plus
+    [[work:jk-rowling/harry-potter-and-the-cursed-child|Harry Potter and the
+    Cursed Child]], which her own website calls "the eighth story in the
+    Harry Potter series" rather than a separate work. For a reader who
+    wants to walk the Harry Potter story on its own: it skips the three
+    in-universe companion volumes (Quidditch Through the Ages, Fantastic
+    Beasts and Where to Find Them, The Tales of Beedle the Bard - reference
+    texts about the world rather than narrative installments, readable
+    alongside the novels at any point once you know it) and everything else
+    on Rowling's shelf the derived default would otherwise interleave with it
+    by year. Cursed Child is shelved as "book eight" but is a direct sequel
+    set nineteen years after the seventh novel ends; read the seven novels
+    first regardless of pace, since it assumes you already know how that
+    story resolves.
+  orderedWorkIds:
+    - jk-rowling/harry-potter-and-the-philosophers-stone
+    - jk-rowling/harry-potter-and-the-chamber-of-secrets
+    - jk-rowling/harry-potter-and-the-prisoner-of-azkaban
+    - jk-rowling/harry-potter-and-the-goblet-of-fire
+    - jk-rowling/harry-potter-and-the-order-of-the-phoenix
+    - jk-rowling/harry-potter-and-the-half-blood-prince
+    - jk-rowling/harry-potter-and-the-deathly-hallows
+    - jk-rowling/harry-potter-and-the-cursed-child
+  debated:
+    - "The three in-universe companion volumes (Quidditch Through the Ages, Fantastic Beasts and Where to Find Them, The Tales of Beedle the Bard) are deliberately not in this order - works.yaml treats them as reference texts about the Wizarding World rather than installments in the story, and no guide found disagrees. A completionist meets them through the whole-shelf order instead."
+  sources:
+    - https://www.jkrowling.com/book/harry-potter-cursed-child/
+    - https://en.wikipedia.org/wiki/J._K._Rowling_bibliography
+
+- id: jk-rowling/cormoran-strike
+  name: Cormoran Strike, in publication order
+  type: curated
+  source: canon
+  rationale: >
+    The eight Robert Galbraith novels in the order they were published - the
+    grouping Rowling's own Robert Galbraith website presents as one
+    continuing series. For a reader who wants Cormoran Strike on its own:
+    contemporary hardboiled crime fiction, no Wizarding World content, no
+    Harry Potter knowledge required. That is not a theoretical claim -
+    [[work:jk-rowling/the-cuckoos-calling|The Cuckoo's Calling]] was reviewed
+    and praised by name outlets (the Times, the Mail, Publishers Weekly,
+    Library Journal) as a strong standalone debut for the four months before
+    anyone knew who Robert Galbraith really was, and Rowling has said she
+    wrote as Galbraith because she wanted "to work without hype or
+    expectation and to receive totally unvarnished feedback." The cost of
+    this route is the entire Wizarding World and everything else on
+    Rowling's shelf the derived default interleaves with these eight books by
+    year - Very Good Lives, the two standalone children's novels, the
+    Pottermore Presents shorts, From the Wizarding Archive.
+  orderedWorkIds:
+    - jk-rowling/the-cuckoos-calling
+    - jk-rowling/the-silkworm
+    - jk-rowling/career-of-evil
+    - jk-rowling/lethal-white
+    - jk-rowling/troubled-blood
+    - jk-rowling/the-ink-black-heart
+    - jk-rowling/the-running-grave
+    - jk-rowling/the-hallmarked-man
+  debated:
+    - "Rowling's authorship became public four months after The Cuckoo's Calling published (July 2013) and is now widely known, which changes nothing about the order or the books - the series still carries no textual connection to the Wizarding World, and a reader who picks it up as a standalone crime series is reading it the way it was written to be read."
+  sources:
+    - https://robert-galbraith.com/strike-books/
+    - https://www.newstatesman.com/culture/2013/07/what-did-critics-really-think-cuckoos-calling-they-knew-it-was-j-k-rowling
+    - https://www.cbsnews.com/news/jk-rowling-robert-galbraith-pseudonym-was-not-a-marketing-ploy/
+    - https://en.wikipedia.org/wiki/Cormoran_Strike

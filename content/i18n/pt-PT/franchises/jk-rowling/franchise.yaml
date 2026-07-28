@@ -1,0 +1,61 @@
+# Overlay pt-PT. Apenas prosa; id, slugs, títulos de obras e sources não são
+# traduzidos. Os startHere.paths ficam aninhados e são fundidos por id (ver
+# SCHEMA.md, "Nested lists merge by id"): levam title/description/note, nunca
+# workIds, orderId ou fit.
+# Títulos citados dentro da prosa usam a edição portuguesa da Editorial
+# Presença quando existe (ver editions.yaml); "Harry Potter" e "Cormoran
+# Strike" ficam como nomes próprios da série/personagem, não como títulos.
+- id: jk-rowling
+  description: >
+    A obra completa publicada por J. K. Rowling: a série de sete romances
+    [[work:jk-rowling/harry-potter-and-the-philosophers-stone|Harry Potter]]
+    (1997-2007) e a sua continuação em palco
+    [[work:jk-rowling/harry-potter-and-the-cursed-child|Harry Potter e a
+    Criança Amaldiçoada]], a trilogia autónoma de argumentos
+    [[work:jk-rowling/fantastic-beasts-and-where-to-find-them-original-screenplay|
+    Monstros Fantásticos]], um romance para adultos publicado em nome
+    próprio, a série policial
+    [[work:jk-rowling/the-cuckoos-calling|Cormoran Strike]] publicada como
+    Robert Galbraith, e dois romances autónomos para crianças.
+  startHere:
+    paths:
+      - id: start-with-harry-potter
+        title: Começar por Harry Potter
+        description: >
+          Os sete romances, pela ordem em que Rowling os escreveu, mais a
+          sequela em palco que lhes segue diretamente. A porta certa para
+          quem lê esta prateleira pela primeira vez - nada aqui pressupõe que
+          já os leu, e tudo o resto se torna mais fácil de situar depois de
+          os ler. O custo é o próprio compromisso: oito livros antes de
+          experimentar seja o que for do resto do que ela escreveu.
+        note: >
+          Os três volumes complementares dentro do universo - um manual
+          escolar de Hogwarts, uma história do Quidditch, um livro de contos
+          de fadas do mundo mágico - ficam fora deste percurso. São textos de
+          referência sobre o mundo, não capítulos da história, e podem ser
+          lidos ao lado dos romances quando quiser.
+      - id: start-with-cormoran-strike
+        title: Começar por Cormoran Strike
+        description: >
+          Oito romances policiais contemporâneos sob o pseudónimo Robert
+          Galbraith, que seguem os casos de um único detetive privado por uma
+          Londres atual sem qualquer magia - escritos e originalmente
+          publicados para se sustentarem inteiramente por si sós. O custo é
+          prescindir por completo do Mundo Mágico, pelo menos para já.
+        note: >
+          Não é preciso Harry Potter, e não só na teoria: a crítica elogiou
+          Quando o Cuco Chama pelo nome durante meses antes de alguém saber
+          quem era Robert Galbraith. Se nunca leu uma palavra de Harry
+          Potter, isto foi pensado para funcionar exatamente da forma como o
+          vai ler.
+      - id: the-complete-shelf
+        title: Tudo, por ordem
+        description: >
+          As 37 obras por ordem de publicação - os sete romances e a sequela
+          em palco, a trilogia de argumentos Monstros Fantásticos, o romance
+          autónomo para adultos e os dois para crianças, os oito
+          romances de Cormoran Strike, e os textos de não-ficção,
+          complementares e de caridade à sua volta. Uma escritora, quatro
+          géneros, dois nomes, quase três décadas. O custo é o ritmo: este é
+          o caminho longo, com cada um dos fios acima entrelaçado de novo em
+          vez de percorrido sozinho.
