@@ -33,14 +33,15 @@
 # are recorded in this note and on the individual pieces they gathered,
 # never invented as work entries of their own.
 #
-# SHAPE OF THIS WING: one novel, sixty-seven tales, sixty-six poems, and
-# seven nonfiction/incomplete/disputed works (141 total) - see the section
-# breaks below. This is a wide first draft, not a closed one: dates and
-# venues are drawn from Wikipedia's "Edgar Allan Poe bibliography" (itself sourced
-# per-item) cross-checked against the Poe Society of Baltimore's own
-# sixty-nine-tale index and "Books Published by Poe" list, but individual
-# synopses were written from general knowledge of these very widely taught
-# and anthologized texts rather than a fresh read of each.
+# SHAPE OF THIS WING: one novel, sixty-seven tales, sixty-seven poems, and
+# ten nonfiction/incomplete/disputed works (145 total) - see the section
+# breaks below. Every date, venue and tiering call has been checked directly
+# against the Poe Society of Baltimore's per-item bibliographic pages
+# (eapoe.org, which host Mabbott's and Pollin's textual histories), rather
+# than against Wikipedia's summary of them, and against the Library of
+# America's Poe volumes' scope. Individual synopses were written from
+# general knowledge of these very widely taught and anthologized texts
+# rather than a fresh read of each.
 #
 # canonTier convention for this franchise:
 #   core     - a complete, attributed tale or poem published (magazine,
@@ -59,10 +60,11 @@
 #   apocrypha - a single juvenile fragment (see "Poetry", 1824) and one
 #              incomplete play, published only as an unfinished excerpt in
 #              his lifetime.
-# No contributor/editor entries: no anthology piece, introduction or
-# editorial credit by another editor is on record for this author beyond
-# The Conchologist's First Book, itself included below with authorRole
-# recorded as accurately as the sources allow.
+# One contributor entry: The Conchologist's First Book, where Poe wrote the
+# preface and translated its classification text atop Thomas Wyatt's base
+# work (authorRole: contributor, below). No other anthology piece,
+# introduction or editorial credit by another editor is on record for this
+# author.
 #
 # SUBSERIES: C. Auguste Dupin (3 tales) is this wing's one genuine series -
 # not merely a recurring character but an author-declared continuing
@@ -88,12 +90,21 @@
 # - "Deep in Earth" and "Beloved Physician" (both 1847) - explicitly marked
 #   incomplete fragments, never finished or published in his lifetime; the
 #   record has the existence of a fragment, not a work.
-# - Five essays Wikipedia's own bibliography lists alongside the three
-#   included below (Maelzel's Chess Player; The Philosophy of Furniture; A
-#   Few Words on Secret Writing; Morning on the Wissahiccon; "American
-#   Poetry") - real magazine pieces, but minor ones judged not to clear the
-#   bar this first draft is holding for nonfiction. A known gap, not a
-#   silent drop.
+# - "The Trumpet Reveillee" (1839) and "To Miss Louise Olivia Hunter"
+#   (1847) - the Poe Society of Baltimore's own pages mark the first
+#   "doubtful" (unauthenticated attribution) and the second "rejected"
+#   outright (a manuscript in Poe's hand that Ton Fafianie's 2012 research
+#   traced to an adapted William Gilmore Simms poem, not an original
+#   composition); neither clears the bar for a non-obvious claim.
+# - "Morning on the Wissahiccon" (also titled "The Elk") - the Poe Society
+#   of Baltimore's own page files it under Essays, not Tales, agreeing with
+#   Wikipedia's classification; held to the same nonfiction bar as the
+#   essays below it in this note, which it does not clear.
+# - "American Poetry" - Wikipedia's bibliography lists this title twice for
+#   two distinct Poe review-essays on the subject; without a reliable way
+#   to distinguish which (or both) is meant, and given neither is
+#   individually as significant as the three essays now included, both
+#   stay out rather than risk conflating them.
 # - Tales of the Folio Club - a projected linked collection Poe never
 #   completed; its individual tales (so far as identified) are already
 #   present below as standalone entries, so nothing is lost by leaving the
@@ -105,6 +116,17 @@
 #   Philadelphia," attributed to Poe only by modern stylometric analysis;
 #   one method, uncorroborated by an independent source, is short of this
 #   catalogue's bar for a non-obvious claim.
+# - "Epigram for Wall Street" (1845) - the Poe Society of Baltimore traced
+#   it to a British newspaper filler item reprinted in US papers in early
+#   1845, predating any Poe connection, and states plainly it "was clearly
+#   not written by Poe."
+# - "Lines on Ale" (1848) - rests on an 1892 secondhand recollection of a
+#   lost tavern manuscript; textual analysis found it a garbled
+#   misremembering of a stanza from George Arnold's 1867 "Drinking Wine"
+#   (published after Poe's death). The Poe Society of Baltimore classifies
+#   it "rejected"; a rebuttal proposing the reverse (that Arnold plagiarized
+#   Poe) exists but has not moved that classification, and no independent
+#   source corroborates the Poe attribution.
 #
 # externalIds are empty throughout: the enrichment bot fills these.
 
@@ -1288,6 +1310,21 @@
   sources:
     - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
 
+- id: edgar-allan-poe/to-mary
+  title: "To Mary"
+  authorIds: [edgar-allan-poe]
+  published: 1835
+  subseries: null
+  canonTier: extended
+  synopsis: A short love lyric addressed to a woman named Mary, urging her to trust a devotion that will outlast every rival claim on her heart.
+  note: >
+    A distinct poem from "To Elizabeth" (also 1835), despite a shared later
+    history: revised and retitled "To One Departed" in 1842, then further
+    revised for the Broadway Journal and The Raven and Other Poems in 1845
+    under variants of the title "To F——" / "To Frances."
+  sources:
+    - https://www.eapoe.org/works/info/pp053.htm
+
 - id: edgar-allan-poe/to-elizabeth
   title: "To Elizabeth"
   authorIds: [edgar-allan-poe]
@@ -1328,6 +1365,17 @@
   synopsis: A brief hymn fragment written in Latin.
   sources:
     - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/song-of-triumph
+  title: "Song of Triumph"
+  authorIds: [edgar-allan-poe]
+  published: 1836
+  subseries: null
+  canonTier: extended
+  synopsis: A short victory ode sung within the tale "Epimanes" (later "Four Beasts in One"), celebrating the tyrant Antiochus's mock-triumphal entry into Antioch.
+  note: Embedded verse within "Four Beasts in One," first published alongside it (Southern Literary Messenger, March 1836), the same status as "Latin Hymn" from the same tale.
+  sources:
+    - https://www.eapoe.org/works/info/pp052.htm
 
 - id: edgar-allan-poe/bridal-ballad
   title: "Bridal Ballad"
@@ -1450,16 +1498,6 @@
   sources:
     - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
 
-- id: edgar-allan-poe/epigram-for-wall-street
-  title: "Epigram for Wall Street"
-  authorIds: [edgar-allan-poe]
-  published: 1845
-  subseries: null
-  canonTier: extended
-  synopsis: A brief satirical epigram on money and investment.
-  sources:
-    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
-
 - id: edgar-allan-poe/the-raven
   title: "The Raven"
   authorIds: [edgar-allan-poe]
@@ -1484,6 +1522,17 @@
   synopsis: A brief satirical verse on monarchy.
   sources:
     - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/stanzas-to-f-s-o
+  title: "Stanzas [To F. S. O.]"
+  authorIds: [edgar-allan-poe]
+  published: 1845
+  subseries: null
+  canonTier: extended
+  synopsis: A short occasional verse addressed to Frances Sargent Osgood, distinct from Poe's other 1845 poems to her.
+  note: A different poem from the 1827 "Stanzas" (Tamerlane and Other Poems); distinguished here by its subtitle, following Mabbott's own practice.
+  sources:
+    - https://www.eapoe.org/works/info/pp080.htm
 
 - id: edgar-allan-poe/a-valentine
   title: "A Valentine"
@@ -1515,16 +1564,6 @@
   subseries: null
   canonTier: core
   synopsis: A grieving speaker, wandering a night landscape with his own soul personified as Psyche, unknowingly returns to the tomb of a woman he lost exactly a year before.
-  sources:
-    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
-
-- id: edgar-allan-poe/lines-on-ale
-  title: "Lines on Ale"
-  authorIds: [edgar-allan-poe]
-  published: 1848
-  subseries: null
-  canonTier: extended
-  synopsis: A short comic verse in praise of ale, unpublished in Poe's lifetime.
   sources:
     - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
 
@@ -1662,19 +1701,6 @@
   sources:
     - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
 
-- id: edgar-allan-poe/the-poetic-principle
-  title: "The Poetic Principle"
-  authorIds: [edgar-allan-poe]
-  published: 1848
-  subseries: null
-  canonTier: extended
-  synopsis: >
-    Poe's aesthetic manifesto, arguing that a poem should pursue Beauty
-    alone rather than truth or moral instruction, and that a "long poem"
-    is a contradiction in terms.
-  sources:
-    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
-
 - id: edgar-allan-poe/eureka
   title: "Eureka: A Prose Poem"
   authorIds: [edgar-allan-poe]
@@ -1691,6 +1717,66 @@
   sources:
     - https://en.wikipedia.org/wiki/Eureka:_A_Prose_Poem
     - https://www.eapoe.org/works/editions/index.htm
+
+- id: edgar-allan-poe/the-poetic-principle
+  title: "The Poetic Principle"
+  authorIds: [edgar-allan-poe]
+  published: 1850
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    Poe's aesthetic manifesto, arguing that a poem should pursue Beauty
+    alone rather than truth or moral instruction, and that a "long poem"
+    is a contradiction in terms.
+  note: >
+    First delivered as a lecture in Providence in December 1848 and revised
+    for further lectures in Virginia in August 1849, but not published
+    until after Poe's death: Home Journal, August 31, 1850, followed within
+    weeks by Griswold's edition and Sartain's Union Magazine. The lecture
+    dates are often given as its date; the year here is first publication.
+  sources:
+    - https://www.eapoe.org/works/info/petpp.htm
+    - https://en.wikipedia.org/wiki/The_Poetic_Principle
+
+- id: edgar-allan-poe/maelzels-chess-player
+  title: "Maelzel's Chess-Player"
+  authorIds: [edgar-allan-poe]
+  published: 1836
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    An essay dissecting the celebrated chess-playing automaton touring
+    America under Johann Maelzel, arguing through close observation that no
+    true machine could be responsible and a concealed operator must be
+    inside it - an early public display of the analytical method Poe would
+    later dramatize in the Dupin tales.
+  sources:
+    - https://www.eapoe.org/works/info/pemcp.htm
+
+- id: edgar-allan-poe/the-philosophy-of-furniture
+  title: "The Philosophy of Furniture"
+  authorIds: [edgar-allan-poe]
+  published: 1840
+  subseries: null
+  canonTier: extended
+  synopsis: A satirical essay on American interior-decorating taste, contrasting the gaudy over-furnished parlor of the day with Poe's own ideal of restrained, harmonious domestic design.
+  sources:
+    - https://www.eapoe.org/works/info/petpf.htm
+
+- id: edgar-allan-poe/a-few-words-on-secret-writing
+  title: "A Few Words on Secret Writing"
+  authorIds: [edgar-allan-poe]
+  published: 1841
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    An essay on cryptography claiming that human ingenuity cannot construct
+    a cipher that human ingenuity cannot resolve, issued as a public
+    challenge inviting readers to submit ciphers for Poe to solve - the
+    same fascination that resurfaces in "The Gold-Bug."
+  note: Followed by three addenda (August, October and December 1841) reporting on ciphers submitted in response.
+  sources:
+    - https://www.eapoe.org/works/info/peswr.htm
 
 - id: edgar-allan-poe/the-journal-of-julius-rodman
   title: "The Journal of Julius Rodman"
@@ -1712,7 +1798,8 @@
   published: 1839
   subseries: null
   canonTier: apocrypha
-  authorRole: author
+  authorRole: contributor
+  contributionTitle: "Preface and classification text (after Cuvier); base text and plates are Thomas Wyatt's"
   synopsis: >
     An illustrated introductory textbook on shells, published under Poe's
     name at a Philadelphia publisher's request; its base text and
@@ -1722,9 +1809,14 @@
     material into a cheaper student edition.
   note: >
     The only one of Poe's books to reach a second edition in the United
-    States during his lifetime (a third followed in 1845); real, purchasable
-    and credited to him, but built on another author's work rather than an
-    original composition, hence apocrypha rather than core or extended.
+    States during his lifetime (a third followed in 1845); real and
+    purchasable, but built on another author's work rather than an original
+    composition, hence apocrypha rather than core or extended. The title
+    page credited it to Poe alone, which the market saw at the time; the
+    surviving record of who wrote which part is closer to a contributor's
+    credit (preface, introduction, a translated classification section)
+    atop Wyatt's base text and plates, which is what authorRole records
+    here.
   sources:
     - https://en.wikipedia.org/wiki/The_Conchologist%27s_First_Book
     - https://www.eapoe.org/works/editions/index.htm
