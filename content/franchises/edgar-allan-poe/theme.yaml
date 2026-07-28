@@ -1,0 +1,46 @@
+# Branding for the Edgar Allan Poe wing (see Orrery CONCEPT SS6 and
+# docs/SCHEMA.md#themeyaml). `art` is deliberately left unset here - that
+# block belongs to the visual-language stage, which has not run yet.
+#
+# The register is 1840s American gothic interior, not Victorian gaslamp
+# London and not a modern horror-paperback palette: candlelight in a shut
+# room, not a shadow in a street. Checked against the catalogue's existing
+# horror-adjacent wings (docs/theme_digest.py) to hold a genuinely
+# different hue rather than reusing King's warm oxblood-on-brown-black or
+# any of the three existing gold accents (Sanderson/Jordan's clean metal,
+# Pratchett's warm vellum, Peixoto's sunbaked adobe).
+preset: tarnished-gothic
+palette:
+  bg: "#0d0b12"        # a cold black with a violet cast rather than King's
+                       # warm brown-black (#15110d) - midnight rather than
+                       # firelit, closer to ink than to embers
+  surface: "#171320"   # a shade lifted, still cold, for cards
+  ink: "#e9e4da"       # pale aged bone/parchment, warm against the cold
+                       # background - AA-checked, high contrast
+  muted: "#8f8698"     # cool violet-grey for metadata
+  accent: "#9c7a3d"    # a tarnished, oxidised brass - one guttering candle
+                       # in an otherwise dark room, not a clean or bright
+                       # gold. Deliberately duller and darker than every
+                       # other gold in the catalogue (see the check above);
+                       # this one is old metal going dark, not shine
+displayFace: fraunces  # from the app's implemented set (fraunces | spectral
+                       # | sourceSerif); the most overtly Romantic of the
+                       # three, matching prose that is ornate and
+                       # first-person-obsessive rather than the plain,
+                       # commercial register sourceSerif already carries for
+                       # this catalogue's procedural crime wings
+signature: beam        # a single beam the works string along - the
+                       # recurring image of one fixed source of light in the
+                       # dark that Poe returns to across the bibliography:
+                       # the lamp-light streaming in "The Raven", the
+                       # crescent of light through the crevice in "The Pit
+                       # and the Pendulum", the single candle in a walled
+                       # vault. Already used by Coben, Peixoto and King, each
+                       # for an unrelated reason; here it is closer to
+                       # literal than any of those three
+notes: >
+  A shut, candlelit room rather than a haunted moor or a modern slasher's
+  palette: cold near-black, aged bone for text, and exactly one tarnished
+  point of warm light. No raven silhouette, no dripping blood, no
+  Halloween-costume gothic - the dread is interior and the palette stays
+  restrained rather than illustrating the genre literally.
