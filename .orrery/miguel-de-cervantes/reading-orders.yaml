@@ -1,0 +1,67 @@
+stage: reading-orders
+summary: "3 startHere paths (Don Quixote alone, Novelas ejemplares next, everything); zero orders - both candidates considered failed the bar"
+produced:
+  startHerePaths: [start-with-don-quixote, beyond-don-quixote, everything]
+  orderIds: []
+forStages:
+  spoiler-audit: >
+    All three paths and their notes are ungated prose, read as an anonymous
+    newcomer. avellaneda-affair-1614's existing spoilerAfter (Part Two,
+    ~ch. 59) is not touched or restated anywhere here - the "everything"
+    path's note stays at the level of print-vs-composition dates, never the
+    Avellaneda plot device. The translation-choice fact restated in
+    start-with-don-quixote's note duplicates works.yaml's translationNote in
+    substance (Grossman 2003 / Rutherford 2000) because translationNote
+    itself renders nowhere in the app yet (SCHEMA.md) - worth confirming
+    that duplication reads as intentional, not drifted, if translationNote
+    ever gets its own surface later.
+  visual-language: "No new visual material - startHere and orders.yaml carry no layout-grammar fields."
+  art-rotation: "No new visual material - out of scope for this stage's footprint (orders.yaml, franchise.yaml startHere only)."
+  translation: >
+    No pt-PT overlay written this stage - reading-orders' footprint per
+    author.md's file-footprint table is orders.yaml and franchise.yaml
+    startHere only, not content/i18n/**, so the base-and-overlay-same-commit
+    rule in reading-orders/SKILL.md §11 is deferred to your stage rather
+    than applied here. Needs: content/i18n/pt-PT/franchises/miguel-de-cervantes/franchise.yaml
+    (three paths' title/description/note - never workIds/orderId/fit) plus a
+    matching content/i18n/pt-PT/franchises/miguel-de-cervantes/orders.yaml
+    is NOT needed since orders.yaml ships empty (no order names to
+    translate).
+openQuestions:
+  - >
+    Both order candidates were built and rejected in orders.yaml's own
+    header comment rather than left unrecorded: (1) a curated fix for the
+    1784 tie between El trato de Argel and El cerco de Numancia, killed by
+    the divergence test (two adjacent extended-tier plays a reader is very
+    unlikely to feel trade places); (2) a "prose only" order (the four
+    core-tier works), killed for being a bibliographic classification
+    (works.yaml's own Prose/Drama/Verse split) rather than a documented
+    reading practice - no source recommends walking the prose works while
+    skipping drama and verse outright.
+  - >
+    The beyond-don-quixote path rests on one citable source (a bylined,
+    dated bookseller's reading guide, blog.bookstellyouwhy.com) plus one
+    corroborating fact already in works.yaml (reference works naming only
+    Don Quixote and Novelas ejemplares as Cervantes's "notable works"). This
+    clears the path-sourcing bar in SKILL.md §6 but sits at its weaker end -
+    a stronger source (a major paper's books desk, a university Hispanist's
+    public guide, Instituto Cervantes) would firm it up if a later pass
+    finds one. WebSearch was unavailable this session (budget exhausted by
+    an earlier stage); curl against html.duckduckgo.com plus direct WebFetch
+    calls were used instead and turned up nothing stronger on a handful of
+    queries (theconversation.com, penguinrandomhouse.com, widereads.com,
+    gradesaver.com all checked and came up empty on entry-path advice) - a
+    fresh WebSearch budget might still turn up something this pass missed.
+  - >
+    start-with-don-quixote's note restates the translationNote's substance
+    in reader-facing prose because translationNote itself "renders nowhere
+    in the app yet" per SCHEMA.md - flagging in case that changes and the
+    two become genuinely redundant rather than deliberately duplicative.
+  - >
+    Two paths only reach experience:[new]+commitment:[taste] (path 1) and
+    experience:[returning]+commitment:[taste] (path 2) plus
+    [returning,completionist]+[complete] (path 3) - the
+    completionist+complete and new+taste cells SKILL.md §10 flags as the two
+    most-used are both covered; returning+arc and completionist+taste are
+    not, left untagged rather than filled, since nothing sourced supports a
+    distinct fourth path at this shelf's size.
