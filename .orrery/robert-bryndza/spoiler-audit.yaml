@@ -1,0 +1,138 @@
+stage: spoiler-audit
+summary: >
+  5 prose rewrites, 0 boundaries set, 0 loosened, 0 entries deleted. All 25
+  synopses, 3 era descriptions, 8 events/lifeEvents, 5 startHere paths and 1
+  order rationale ruled against the book's own publisher copy, fetched this
+  run for 19 titles. One real catch: Devil's Way opened on the physical
+  aftermath of Darkness Falls' climax, which Darkness Falls' own jacket does
+  not disclose - a later book's blurb sold at an earlier book's expense. Cut.
+  The other four are precautionary rewrites where our prose resolved
+  something the jacket deliberately leaves open. Both items reading-orders
+  flagged are confirmed safe.
+
+engineCheck: >
+  Verified in lib/content/types.ts, not assumed: spoilerAfter exists only on
+  AuraEvent, so it backs events and lifeEvents. Work has no such property -
+  synopses, era descriptions, order rationales and startHere prose are
+  ungated, and rewriting was the only lever for all five fixes. Swept for
+  decorative gates: 0 spoilerAfter on any work; the 8 that exist sit on
+  events or lifeEvents and are correctly null, all publication or career facts.
+
+flaggedByReadingOrders:
+  - item: "try-jamie-day's note and the 'completely without planning' account"
+    verdict: CONFIRMED SAFE, and the flag is off by one
+    finding: >
+      The quote never reached rendered prose. The note reads "it began as an
+      unrelated manuscript that changed direction entirely once Jamie showed
+      up" - no character, situation or outcome from the novel, so nothing to
+      spoil. The literal string survives only in a YAML comment above the path
+      and in eras.yaml's rejected-boundaries comment, neither of which renders.
+      Editorially it reads as a character taking over a book, which flatters
+      the series rather than undercutting it. No change.
+  - item: "everything-in-order's note naming the 2016 genre switch"
+    verdict: CONFIRMED SAFE, no change
+    finding: >
+      Publication history, incidental by the skill's own list: it states no
+      plot from any of the 25 works and describes the shelf, not the books.
+      The same shape is on the author's own shop. It is also the disclosure
+      that stops a crime reader walking into a romantic comedy unwarned,
+      which is what issue #63 asked for - the opposite of a leak.
+
+rewritten:
+  - id: robert-bryndza/devils-way
+    severity: load-bearing
+    change: "cut 'Recovering from a near-drowning'; opens on the case instead, with the child and the river taken from this book's own jacket"
+    reasoning: >
+      Its jacket opens on Kate waking in hospital after nearly drowning;
+      Darkness Falls' jacket ends on the hunt and discloses no water climax.
+      The publisher test asks whether a fact is on the jacket of the book it
+      would spoil, and it is not. A survival plus the shape of a climax is
+      load-bearing and the clause carried no weight. Curator note added.
+  - id: robert-bryndza/coco-pinchard-the-consequences-of-love-and-sex
+    severity: load-bearing
+    change: "'Newly remarried to Adam' -> 'Remarried'; spouse unnamed"
+    reasoning: >
+      Big Fat Tipsy Wedding is built on its own jacket's open question - Adam
+      vanishes hours before move-in day, and the secret behind it "changes
+      both their lives forever". Naming him as the husband next book answers
+      whether they survive it. The second marriage is premise and stays; only
+      the name goes. Curator note added.
+  - id: robert-bryndza/chasing-shadows
+    severity: precautionary
+    change: "'now operates under a clean new identity' -> the jacket's framing (his passport gives another name, his record is spotless)"
+    reasoning: >
+      Naming Goodman stays: it is on this book's jacket, and no jacket for
+      books 2-8 mentions Goodman or Mark, so nothing earlier is given away.
+      The flat assertion was the problem - the jacket keeps open whether Erika
+      is right, against superiors ordering leave and colleagues doubting her.
+      Fidelity, not redaction; nothing is now hidden.
+  - id: robert-bryndza/nine-elms
+    severity: precautionary
+    change: "'realises she was meant to be' -> flat premise; 'final victim' corrected to the jacket's 'fifth'"
+    reasoning: >
+      Jacket copy verbatim and never in doubt, but "realises" framed premise
+      as a within-book discovery, a worse read than the publisher's own.
+  - id: robert-bryndza/jamie-day-launch-2026
+    severity: precautionary
+    change: "cut 'Joanna shrinking to a smaller role as Jamie takes over the book'"
+    reasoning: >
+      The rest is an abandoned draft, which is creation story and safe. That
+      clause was the only one asserting what survives into the published
+      novel, which its jacket does not mention - it told a reader which
+      character not to invest in. Cutting it kept the anecdote whole and let
+      the event stay ungated.
+
+checkedAndLeftAlone:
+  - "Erika Foster internals: clean. Every reveal in books 2-9 is on that book's own jacket and none reaches backwards (Cold Blood's 'more than one killer', Deadly Secrets' 'one of her own in danger', Last Breath's fake-identity killer, Lethal Vengeance's five identical suspects). No later synopsis names an earlier culprit."
+  - "Kate Marshall internals: one leak (Devil's Way, above), rest clean. The Lost Victim's 'Nine Elms Cannibal' is pre-series backstory settled by book 1's own copy, not a reveal. Nine Elms' late twist about Kate's son is absent everywhere, checked deliberately."
+  - "Book-1 premises re-verified against jackets, not trusted: Girl in the Ice states the husband's death, Nine Elms the disgrace and career-ending events, The Quiet Kill tracks its jacket line for line. reading-orders was right on all three."
+  - "Cross-series leaks: none. No prose in one series names a character, setting or event from another; the only cross-series statements are structural."
+  - "Coco Pinchard ordering: risks nothing either way. The prequels' outcome (Coco married to Daniel, with a son) is book 1's opening premise. Our prequel synopsis is more reticent than the publisher's, which names Daniel outright. Big Fat Tipsy Wedding names Adam verbatim from its own jacket: kept, and that is what makes the book-3 fix sufficient."
+  - "Era descriptions: publishing and career facts throughout, no plot resolution or character fate anywhere. The 'protection was itself the leak' mode does not occur here."
+  - "Events: all 8 plus the one global event are publication, sales, award or biography. The 2010 collapse and 2012 phone call state no novel's content; the Kate Bush origin quotes the face-under-ice image, which is that book's title and its jacket's first line; bryndza-born-1979 gives Jamie a hometown the novel's jacket already gives him."
+  - "startHere and the order: clean. erika-foster-in-order is pure tie-breaking (three novels share 2016, two share 2017) and never argues from a payoff, which is the trap this vector usually springs. No path names an ending."
+  - "Breaking Point: the story turns on Margaret resolving to kill her husband and his mistress, then on whether she can. Our synopsis stops at 'decides she has had enough' - neither plan nor outcome. Already reticent, kept."
+
+outOfScope:
+  - change: "eras.yaml, the-traditional-publishing-years: 'in five months' -> 'in under a year'"
+    reasoning: >
+      press-archaeology established from two contemporary sources that the
+      milestone took about twelve months and corrected author.yaml,
+      works.yaml and events.yaml; eras.yaml predates that ruling and kept the
+      old figure, leaving one wing stating two. Not a spoiler; corrected
+      because it is a known-false claim in a file this pass was reading.
+
+openQuestions:
+  - "chasing-shadows is the rewrite to loosen first if a curator disagrees.
+     Naming Goodman is solidly jacket copy; the hedged framing is a judgement
+     about preserving the jacket's own uncertainty, not containment."
+  - "Two works.yaml source URLs now 404: the fatal-witness product page (with
+     and without trailing slash) and the /books/ path for Coco Pinchard 3.
+     Shop-route changes, not removed titles. Flagged for editions."
+  - "fear-the-silence's synopsis places Will's death on the Croatian island,
+     while the jacket has Maggie at a morgue first and retreating there
+     afterwards. Possible factual drift, not a spoiler, not correctable here."
+
+forStages:
+  translation: >
+    Translate from the corrected strings. The wing still has zero pt-PT
+    coverage (i18n_coverage.py 120/137 before and after, all six files
+    uncovered), so there was no overlay to mirror and no locale reader is
+    exposed to the removed text. The five rewrites above are what changed.
+  visual-language, visual-metadata: >
+    No change to their open items, except that nothing may depict Devil's
+    Way's opening hospital scene or the Quiet Kill draft's Joanna, for the
+    same reasons the prose does not.
+
+gates: >
+  validate --slug robert-bryndza: the same 1 pre-existing error (theme.yaml
+  has no art: block, by design until visual-language) and no new errors.
+  Warnings go 1 to 2: this handoff is 1455 words against a 700 soft cap,
+  stated plainly rather than met, because the stage's own rule is to record
+  every ruling including the ones that changed nothing, and dropping the
+  "checked, not a spoiler" list is what makes the next auditor re-litigate
+  it. The argumentation is in the run report; what is left here is the
+  verdicts. i18n pt-PT unchanged at 120/137. For the record: green is not
+  evidence of containment
+  here - the validator accepts spoilerAfter on works, where the app ignores
+  it, so every ruling above rests on publisher copy, not on the gate.
