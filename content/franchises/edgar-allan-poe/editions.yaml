@@ -1,0 +1,1606 @@
+# Editions of Edgar Allan Poe: 126 en editions (126 works) + 8 pt-PT editions
+# (6 works, all already among the 126) = 134 editions over 126 of 145 works
+# (87%).
+#
+# THE STRUCTURAL PROBLEM THIS FILE SOLVES. Poe died in 1849, before ISBNs
+# existed and before any "complete" volume of his own tales or poems did;
+# works.yaml already departs from this catalogue's usual "a short-story
+# collection is one work" rule for exactly that reason (see its own header).
+# So almost none of the 145 works below were ever, or could ever have been,
+# published alone as a book with its own ISBN - a magazine tale or a four-line
+# valentine is not a standalone commercial object. What DOES exist, real and
+# buyable, is a small number of modern scholarly and trade anthologies that
+# each gather many of these works under one ISBN. The schema's `editions.yaml`
+# shape is one edition per one `workId` (SCHEMA.md; validate.py enforces a
+# single workId per entry, resolved against works.yaml) - there is no
+# "one edition, many works" field. This file does not invent one. Instead,
+# where an anthology's actual contents were independently verified against a
+# published table of contents (not assumed from its title or scope), it is
+# recorded as a separate edition entry FOR EACH work it verifiably contains,
+# all entries sharing the same real ISBN/publisher/year - the way a library
+# catalogues a short story: as itself, with the book that holds it named as
+# its edition. No edition below was invented, and no edition was extended to
+# a work whose presence in that book could not be checked.
+#
+# EN: LIBRARY OF AMERICA, the two-volume scholarly edition of Poe's complete
+# work (Patrick Quinn's "Poetry & Tales", LOA No. 19, ISBN 9780940450189, and
+# G.R. Thompson's "Essays & Reviews", LOA No. 20, ISBN 9780940450196, both
+# Literary Classics of the U.S., 1984; publish_date and publisher confirmed
+# against each ISBN's OpenLibrary record). Both are out of print with no
+# reprint scheduled per loa.org's own product pages, and are recorded anyway
+# per SCHEMA.md's own-edition tiebreak rule: they are the only edition, and no
+# in-print alternative with a comparably verifiable table of contents was
+# found. "Poetry & Tales" publishes its full table of contents on its own
+# product page, alphabetised within Poetry and within Tales and Sketches; the
+# 123 works cited to it below (65 tales/the novel, 53 poems, plus Eureka, The
+# Journal of Julius Rodman, The Philosophy of Furniture and the "Scenes from
+# Politian" excerpt, all separately itemised in that same table) were matched
+# against it title by title. "Essays & Reviews" publishes only six section
+# headings, not an itemised table, so the 3 works cited to it (The Philosophy
+# of Composition, The Rationale of Verse, The Poetic Principle) are only the
+# ones its own publisher description names outright in running text - a
+# stricter bar than the itemised volume, deliberately: an essay this file does
+# not name was not confirmed, not merely omitted.
+#
+# EN OMISSIONS FROM LOA, BY REASON:
+#  - A Predicament, The Landscape Garden: not in Poetry & Tales' own itemised
+#    table. Both were later absorbed into a revision LOA does carry under a
+#    different title (Landscape Garden into The Domain of Arnheim), so this
+#    reads as the volume's own "authoritative text" choice rather than a gap.
+#  - Dreams (distinct from the retained "A Dream"), the second untitled 1829
+#    "To —" (opening "I heed not", distinct from the retained "To — [The
+#    bowers whereat]"), A Paean (superseded there by its own revision, Lenore,
+#    which IS in the table), Fanny, To Mary, To Elizabeth, May Queen Ode,
+#    Spiritual Song, Latin Hymn, Song of Triumph, Impromptu to Kate Carol, The
+#    Divine Right of Kings, To Marie Louise, Poetry (1824): none appear in the
+#    itemised poetry table under any spelling checked. To Mary and To
+#    Elizabeth in particular sit inside a tangled revision history (works.yaml
+#    notes both poems as later feeding into separately-retitled pieces); the
+#    likelier reading is that LOA's own text-selection collapsed some of
+#    these fourteen into the poems it does carry rather than dropping them
+#    outright, but that collapse was not traced item by item here, so none of
+#    the fourteen is cited to a survivor poem it was not confirmed against.
+#  - Maelzel's Chess-Player, A Few Words on Secret Writing: plausible
+#    candidates for "Essays & Reviews" (both are exactly its kind of
+#    material) but neither is named in the volume's own running description,
+#    and its table of contents is not itemised online to check further.
+#  - The Conchologist's First Book: Poe's contributor-role preface and
+#    classification-text translation inside Thomas Wyatt's own natural-history
+#    schoolbook, a different physical book by a different primary author, not
+#    a Poe tale or essay; neither LOA volume claims it, correctly.
+#
+# PT-PT: eight real editions across six works, each independently confirmed
+# at the Biblioteca Nacional de Portugal catalogue (catalogo.bnportugal.gov.pt,
+# permalink query cited per entry) and cross-checked against a second source
+# (OpenLibrary's per-ISBN record, or - for the two ISBNs OpenLibrary does not
+# carry - the bertrand.pt and wook.pt retail listings that independently agree
+# on the same ISBN/title/publisher/year). Two further real, currently-selling
+# Portuguese anthologies turned up in the same research and are deliberately
+# NOT recorded: Temas e Debates' "Todos os Contos" (1st ed. 2014, ISBN
+# 9789896443191, still in print as of a 6th edition in 2022) and BIS's
+# "Histórias Extraordinárias" (ISBN 9789896530037, into a 7th edition by
+# 2017). Both are confirmed real books by a real, durable publishing history;
+# neither publisher has an itemised table of contents on record anywhere
+# checked, so neither is matched to any individual work here rather than
+# guessed onto the ~66 tales a "todos os contos" title implies. A third
+# candidate, "Espíritos dos Mortos" (ISBN 9788366589308, G. Floy Studio), is
+# excluded outright: it carries no Biblioteca Nacional de Portugal record at
+# all, and its registrant prefix (978-83) is Polish, not Portuguese - wrong
+# geography for a book with no other confirmation, the same red flag
+# SCHEMA.md's region table exists to catch.
+#
+# =============================================================================
+# EN - Library of America, "Poetry & Tales" and "Essays & Reviews" (1984)
+# =============================================================================
+
+- id: edgar-allan-poe/the-narrative-of-arthur-gordon-pym-of-nantucket/library-of-america-1984-en
+  workId: edgar-allan-poe/the-narrative-of-arthur-gordon-pym-of-nantucket
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/metzengerstein/library-of-america-1984-en
+  workId: edgar-allan-poe/metzengerstein
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-duc-de-lomelette/library-of-america-1984-en
+  workId: edgar-allan-poe/the-duc-de-lomelette
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/a-tale-of-jerusalem/library-of-america-1984-en
+  workId: edgar-allan-poe/a-tale-of-jerusalem
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/loss-of-breath/library-of-america-1984-en
+  workId: edgar-allan-poe/loss-of-breath
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/bon-bon/library-of-america-1984-en
+  workId: edgar-allan-poe/bon-bon
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/ms-found-in-a-bottle/library-of-america-1984-en
+  workId: edgar-allan-poe/ms-found-in-a-bottle
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-assignation/library-of-america-1984-en
+  workId: edgar-allan-poe/the-assignation
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/berenice/library-of-america-1984-en
+  workId: edgar-allan-poe/berenice
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/morella/library-of-america-1984-en
+  workId: edgar-allan-poe/morella
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/lionizing/library-of-america-1984-en
+  workId: edgar-allan-poe/lionizing
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-unparalleled-adventure-of-one-hans-pfaall/library-of-america-1984-en
+  workId: edgar-allan-poe/the-unparalleled-adventure-of-one-hans-pfaall
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/king-pest/library-of-america-1984-en
+  workId: edgar-allan-poe/king-pest
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/shadow-a-parable/library-of-america-1984-en
+  workId: edgar-allan-poe/shadow-a-parable
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/four-beasts-in-one/library-of-america-1984-en
+  workId: edgar-allan-poe/four-beasts-in-one
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/mystification/library-of-america-1984-en
+  workId: edgar-allan-poe/mystification
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/silence-a-fable/library-of-america-1984-en
+  workId: edgar-allan-poe/silence-a-fable
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/ligeia/library-of-america-1984-en
+  workId: edgar-allan-poe/ligeia
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/how-to-write-a-blackwood-article/library-of-america-1984-en
+  workId: edgar-allan-poe/how-to-write-a-blackwood-article
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-devil-in-the-belfry/library-of-america-1984-en
+  workId: edgar-allan-poe/the-devil-in-the-belfry
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-man-that-was-used-up/library-of-america-1984-en
+  workId: edgar-allan-poe/the-man-that-was-used-up
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-fall-of-the-house-of-usher/library-of-america-1984-en
+  workId: edgar-allan-poe/the-fall-of-the-house-of-usher
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/william-wilson/library-of-america-1984-en
+  workId: edgar-allan-poe/william-wilson
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-conversation-of-eiros-and-charmion/library-of-america-1984-en
+  workId: edgar-allan-poe/the-conversation-of-eiros-and-charmion
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/why-the-little-frenchman-wears-his-hand-in-a-sling/library-of-america-1984-en
+  workId: edgar-allan-poe/why-the-little-frenchman-wears-his-hand-in-a-sling
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-business-man/library-of-america-1984-en
+  workId: edgar-allan-poe/the-business-man
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-man-of-the-crowd/library-of-america-1984-en
+  workId: edgar-allan-poe/the-man-of-the-crowd
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-murders-in-the-rue-morgue/library-of-america-1984-en
+  workId: edgar-allan-poe/the-murders-in-the-rue-morgue
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/a-descent-into-the-maelstrom/library-of-america-1984-en
+  workId: edgar-allan-poe/a-descent-into-the-maelstrom
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-island-of-the-fay/library-of-america-1984-en
+  workId: edgar-allan-poe/the-island-of-the-fay
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-colloquy-of-monos-and-una/library-of-america-1984-en
+  workId: edgar-allan-poe/the-colloquy-of-monos-and-una
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/never-bet-the-devil-your-head/library-of-america-1984-en
+  workId: edgar-allan-poe/never-bet-the-devil-your-head
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/eleonora/library-of-america-1984-en
+  workId: edgar-allan-poe/eleonora
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/three-sundays-in-a-week/library-of-america-1984-en
+  workId: edgar-allan-poe/three-sundays-in-a-week
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-oval-portrait/library-of-america-1984-en
+  workId: edgar-allan-poe/the-oval-portrait
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-masque-of-the-red-death/library-of-america-1984-en
+  workId: edgar-allan-poe/the-masque-of-the-red-death
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-mystery-of-marie-roget/library-of-america-1984-en
+  workId: edgar-allan-poe/the-mystery-of-marie-roget
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-pit-and-the-pendulum/library-of-america-1984-en
+  workId: edgar-allan-poe/the-pit-and-the-pendulum
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-tell-tale-heart/library-of-america-1984-en
+  workId: edgar-allan-poe/the-tell-tale-heart
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-gold-bug/library-of-america-1984-en
+  workId: edgar-allan-poe/the-gold-bug
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-black-cat/library-of-america-1984-en
+  workId: edgar-allan-poe/the-black-cat
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/diddling/library-of-america-1984-en
+  workId: edgar-allan-poe/diddling
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-spectacles/library-of-america-1984-en
+  workId: edgar-allan-poe/the-spectacles
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/a-tale-of-the-ragged-mountains/library-of-america-1984-en
+  workId: edgar-allan-poe/a-tale-of-the-ragged-mountains
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-premature-burial/library-of-america-1984-en
+  workId: edgar-allan-poe/the-premature-burial
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/mesmeric-revelation/library-of-america-1984-en
+  workId: edgar-allan-poe/mesmeric-revelation
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-oblong-box/library-of-america-1984-en
+  workId: edgar-allan-poe/the-oblong-box
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-angel-of-the-odd/library-of-america-1984-en
+  workId: edgar-allan-poe/the-angel-of-the-odd
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/thou-art-the-man/library-of-america-1984-en
+  workId: edgar-allan-poe/thou-art-the-man
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-literary-life-of-thingum-bob-esq/library-of-america-1984-en
+  workId: edgar-allan-poe/the-literary-life-of-thingum-bob-esq
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-purloined-letter/library-of-america-1984-en
+  workId: edgar-allan-poe/the-purloined-letter
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-thousand-and-second-tale-of-scheherazade/library-of-america-1984-en
+  workId: edgar-allan-poe/the-thousand-and-second-tale-of-scheherazade
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/some-words-with-a-mummy/library-of-america-1984-en
+  workId: edgar-allan-poe/some-words-with-a-mummy
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-power-of-words/library-of-america-1984-en
+  workId: edgar-allan-poe/the-power-of-words
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-imp-of-the-perverse/library-of-america-1984-en
+  workId: edgar-allan-poe/the-imp-of-the-perverse
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-system-of-doctor-tarr-and-professor-fether/library-of-america-1984-en
+  workId: edgar-allan-poe/the-system-of-doctor-tarr-and-professor-fether
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-facts-in-the-case-of-m-valdemar/library-of-america-1984-en
+  workId: edgar-allan-poe/the-facts-in-the-case-of-m-valdemar
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-sphinx/library-of-america-1984-en
+  workId: edgar-allan-poe/the-sphinx
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-cask-of-amontillado/library-of-america-1984-en
+  workId: edgar-allan-poe/the-cask-of-amontillado
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-domain-of-arnheim/library-of-america-1984-en
+  workId: edgar-allan-poe/the-domain-of-arnheim
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/mellonta-tauta/library-of-america-1984-en
+  workId: edgar-allan-poe/mellonta-tauta
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/hop-frog/library-of-america-1984-en
+  workId: edgar-allan-poe/hop-frog
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/von-kempelen-and-his-discovery/library-of-america-1984-en
+  workId: edgar-allan-poe/von-kempelen-and-his-discovery
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/x-ing-a-paragrab/library-of-america-1984-en
+  workId: edgar-allan-poe/x-ing-a-paragrab
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/landors-cottage/library-of-america-1984-en
+  workId: edgar-allan-poe/landors-cottage
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-balloon-hoax/library-of-america-1984-en
+  workId: edgar-allan-poe/the-balloon-hoax
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/tamerlane/library-of-america-1984-en
+  workId: edgar-allan-poe/tamerlane
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/song-1827/library-of-america-1984-en
+  workId: edgar-allan-poe/song-1827
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/imitation/library-of-america-1984-en
+  workId: edgar-allan-poe/imitation
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/a-dream-1827/library-of-america-1984-en
+  workId: edgar-allan-poe/a-dream-1827
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-lake/library-of-america-1984-en
+  workId: edgar-allan-poe/the-lake
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/spirits-of-the-dead/library-of-america-1984-en
+  workId: edgar-allan-poe/spirits-of-the-dead
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/evening-star/library-of-america-1984-en
+  workId: edgar-allan-poe/evening-star
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/stanzas/library-of-america-1984-en
+  workId: edgar-allan-poe/stanzas
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-happiest-day/library-of-america-1984-en
+  workId: edgar-allan-poe/the-happiest-day
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/to-margaret/library-of-america-1984-en
+  workId: edgar-allan-poe/to-margaret
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/alone/library-of-america-1984-en
+  workId: edgar-allan-poe/alone
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/to-isaac-lea/library-of-america-1984-en
+  workId: edgar-allan-poe/to-isaac-lea
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/to-the-river/library-of-america-1984-en
+  workId: edgar-allan-poe/to-the-river
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/to-1829-bowers-whereat/library-of-america-1984-en
+  workId: edgar-allan-poe/to-1829-bowers-whereat
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/romance/library-of-america-1984-en
+  workId: edgar-allan-poe/romance
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/fairy-land/library-of-america-1984-en
+  workId: edgar-allan-poe/fairy-land
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/sonnet-to-science/library-of-america-1984-en
+  workId: edgar-allan-poe/sonnet-to-science
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/al-aaraaf/library-of-america-1984-en
+  workId: edgar-allan-poe/al-aaraaf
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/an-acrostic/library-of-america-1984-en
+  workId: edgar-allan-poe/an-acrostic
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/elizabeth/library-of-america-1984-en
+  workId: edgar-allan-poe/elizabeth
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/to-helen-1831/library-of-america-1984-en
+  workId: edgar-allan-poe/to-helen-1831
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-sleeper/library-of-america-1984-en
+  workId: edgar-allan-poe/the-sleeper
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-city-in-the-sea/library-of-america-1984-en
+  workId: edgar-allan-poe/the-city-in-the-sea
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-valley-of-unrest/library-of-america-1984-en
+  workId: edgar-allan-poe/the-valley-of-unrest
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/israfel/library-of-america-1984-en
+  workId: edgar-allan-poe/israfel
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/enigma-1833/library-of-america-1984-en
+  workId: edgar-allan-poe/enigma-1833
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-coliseum/library-of-america-1984-en
+  workId: edgar-allan-poe/the-coliseum
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/serenade/library-of-america-1984-en
+  workId: edgar-allan-poe/serenade
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/to-one-in-paradise/library-of-america-1984-en
+  workId: edgar-allan-poe/to-one-in-paradise
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/hymn/library-of-america-1984-en
+  workId: edgar-allan-poe/hymn
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/bridal-ballad/library-of-america-1984-en
+  workId: edgar-allan-poe/bridal-ballad
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/to-zante/library-of-america-1984-en
+  workId: edgar-allan-poe/to-zante
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-haunted-palace/library-of-america-1984-en
+  workId: edgar-allan-poe/the-haunted-palace
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/silence-a-sonnet/library-of-america-1984-en
+  workId: edgar-allan-poe/silence-a-sonnet
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/lines-on-joe-locke/library-of-america-1984-en
+  workId: edgar-allan-poe/lines-on-joe-locke
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-conqueror-worm/library-of-america-1984-en
+  workId: edgar-allan-poe/the-conqueror-worm
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/lenore/library-of-america-1984-en
+  workId: edgar-allan-poe/lenore
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/dream-land/library-of-america-1984-en
+  workId: edgar-allan-poe/dream-land
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/to-f/library-of-america-1984-en
+  workId: edgar-allan-poe/to-f
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/eulalie/library-of-america-1984-en
+  workId: edgar-allan-poe/eulalie
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-raven/library-of-america-1984-en
+  workId: edgar-allan-poe/the-raven
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/stanzas-to-f-s-o/library-of-america-1984-en
+  workId: edgar-allan-poe/stanzas-to-f-s-o
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/a-valentine/library-of-america-1984-en
+  workId: edgar-allan-poe/a-valentine
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/to-m-l-s/library-of-america-1984-en
+  workId: edgar-allan-poe/to-m-l-s
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/ulalume/library-of-america-1984-en
+  workId: edgar-allan-poe/ulalume
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/an-enigma/library-of-america-1984-en
+  workId: edgar-allan-poe/an-enigma
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/to-helen-1848/library-of-america-1984-en
+  workId: edgar-allan-poe/to-helen-1848
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/a-dream-within-a-dream/library-of-america-1984-en
+  workId: edgar-allan-poe/a-dream-within-a-dream
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/eldorado/library-of-america-1984-en
+  workId: edgar-allan-poe/eldorado
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/for-annie/library-of-america-1984-en
+  workId: edgar-allan-poe/for-annie
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/to-my-mother/library-of-america-1984-en
+  workId: edgar-allan-poe/to-my-mother
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/annabel-lee/library-of-america-1984-en
+  workId: edgar-allan-poe/annabel-lee
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-bells/library-of-america-1984-en
+  workId: edgar-allan-poe/the-bells
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/eureka/library-of-america-1984-en
+  workId: edgar-allan-poe/eureka
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-journal-of-julius-rodman/library-of-america-1984-en
+  workId: edgar-allan-poe/the-journal-of-julius-rodman
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-philosophy-of-furniture/library-of-america-1984-en
+  workId: edgar-allan-poe/the-philosophy-of-furniture
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/politian/library-of-america-1984-en
+  workId: edgar-allan-poe/politian
+  isbn13: "9780940450189"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/90-poetry-amp-tales/"
+    - "https://openlibrary.org/isbn/9780940450189.json"
+
+- id: edgar-allan-poe/the-philosophy-of-composition/library-of-america-1984-en
+  workId: edgar-allan-poe/the-philosophy-of-composition
+  isbn13: "9780940450196"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/91-essays-amp-reviews/"
+    - "https://openlibrary.org/isbn/9780940450196.json"
+
+- id: edgar-allan-poe/the-rationale-of-verse/library-of-america-1984-en
+  workId: edgar-allan-poe/the-rationale-of-verse
+  isbn13: "9780940450196"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/91-essays-amp-reviews/"
+    - "https://openlibrary.org/isbn/9780940450196.json"
+
+- id: edgar-allan-poe/the-poetic-principle/library-of-america-1984-en
+  workId: edgar-allan-poe/the-poetic-principle
+  isbn13: "9780940450196"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 1984
+  sources:
+    - "https://www.loa.org/books/91-essays-amp-reviews/"
+    - "https://openlibrary.org/isbn/9780940450196.json"
+
+# =============================================================================
+# PT-PT - verified against the Biblioteca Nacional de Portugal catalogue
+# =============================================================================
+
+- id: edgar-allan-poe/the-narrative-of-arthur-gordon-pym-of-nantucket/assirio-alvim-2009-pt
+  workId: edgar-allan-poe/the-narrative-of-arthur-gordon-pym-of-nantucket
+  isbn13: "9789723713480"
+  language: pt-PT
+  title: "A Narrativa de Artur Gordon Pym de Nantucket"
+  translator: "Jorge Pereirinha Pires"
+  publisher: Assírio & Alvim
+  year: 2009
+  note: >
+    "Artur" (no "h") is the BNP record's own spelling of the name in this
+    edition's title, not a transcription slip - recorded as catalogued.
+    "Beltenebros" collection, no. 12; translator also credited for the
+    prologue and notes.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789723713480&profile=bn"
+
+- id: edgar-allan-poe/the-raven/relogio-dagua-2009-pt
+  workId: edgar-allan-poe/the-raven
+  isbn13: "9789896410759"
+  language: pt-PT
+  title: "O Corvo"
+  translator: "Fernando Pessoa; Machado de Assis"
+  publisher: Relógio D'Água
+  year: 2009
+  note: >
+    A single illustrated volume presenting both the Fernando Pessoa and the
+    Machado de Assis translations of the poem side by side, revised by
+    Francisca Cortesão - not a typo or a duplicate credit.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789896410759&profile=bn"
+
+- id: edgar-allan-poe/the-raven/padroes-culturais-2012-pt
+  workId: edgar-allan-poe/the-raven
+  isbn13: "9789897090165"
+  language: pt-PT
+  title: "O Corvo, seguido de A Entrevista"
+  translator: "Fernando Pessoa"
+  publisher: Padrões Culturais
+  year: 2012
+  note: >
+    "Textos extraordinários" chapbook series, no. 54. The paired second text,
+    "A Entrevista", is credited to a separate translator (Antero de Quental)
+    in the same BNP record and was not confirmed as a Poe work, so this entry
+    covers only the O Corvo portion Fernando Pessoa translated.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897090165&profile=bn"
+
+- id: edgar-allan-poe/the-murders-in-the-rue-morgue/11x17-2013-pt
+  workId: edgar-allan-poe/the-murders-in-the-rue-morgue
+  isbn13: "9789722519151"
+  language: pt-PT
+  title: "Os Crimes da Rua Morgue"
+  translator: "Eduardo Saló"
+  publisher: 11X17
+  year: 2013
+  note: >
+    One of three Dupin tales collected together in "Os Crimes da Rua Morgue e
+    Outras Histórias" - the same trio, in the same order, as this wing's own
+    dupin-in-order reading order. A 2014 reprint under the identical ISBN is
+    not recorded separately. OpenLibrary's own record for this ISBN misdates
+    the book to 2009; the BNP record (1st ed. 2013) is used instead.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789722519151&profile=bn"
+    - "https://openlibrary.org/isbn/9789722519151.json"
+
+- id: edgar-allan-poe/the-mystery-of-marie-roget/11x17-2013-pt
+  workId: edgar-allan-poe/the-mystery-of-marie-roget
+  isbn13: "9789722519151"
+  language: pt-PT
+  title: "O Mistério de Marie Rogêt"
+  translator: "Eduardo Saló"
+  publisher: 11X17
+  year: 2013
+  note: The second of the three Dupin tales in the same "Os Crimes da Rua Morgue e Outras Histórias" volume; see that entry's note.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789722519151&profile=bn"
+    - "https://openlibrary.org/isbn/9789722519151.json"
+
+- id: edgar-allan-poe/the-purloined-letter/11x17-2013-pt
+  workId: edgar-allan-poe/the-purloined-letter
+  isbn13: "9789722519151"
+  language: pt-PT
+  title: "A Carta Roubada"
+  translator: "Eduardo Saló"
+  publisher: 11X17
+  year: 2013
+  note: The third of the three Dupin tales in the same "Os Crimes da Rua Morgue e Outras Histórias" volume; see that entry's note.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789722519151&profile=bn"
+    - "https://openlibrary.org/isbn/9789722519151.json"
+
+- id: edgar-allan-poe/the-black-cat/porto-editora-2020-pt
+  workId: edgar-allan-poe/the-black-cat
+  isbn13: "9789720033093"
+  language: pt-PT
+  title: "O Gato Preto"
+  translator: "J. Teixeira de Aguilar"
+  publisher: Porto Editora
+  year: 2020
+  note: >
+    Published within "O Gato Preto e Outros Contos" ("Clássicos hoje"
+    collection), illustrated by Tamara Alves; the BNP record does not itemise
+    which other tales the volume pairs it with, so this entry covers only the
+    title story.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720033093&profile=bn"
+
+- id: edgar-allan-poe/the-black-cat/book-cover-2022-pt
+  workId: edgar-allan-poe/the-black-cat
+  isbn13: "9789899126091"
+  language: pt-PT
+  title: "O Gato Preto"
+  translator: "Lúcia Nogueira"
+  publisher: Book Cover
+  year: 2022
+  note: >
+    "Essenciais da literatura de terror" collection; a standalone single-tale
+    edition (63 pages), explicitly recorded by BNP as a translation of "The
+    black cat" alone, not a selection.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789899126091&profile=bn"
