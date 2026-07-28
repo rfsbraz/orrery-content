@@ -1,0 +1,33 @@
+stage: completeness-auditor
+summary: "141 works -> 145: 2 removed (misattributed), 6 added, 1 date corrected, 1 authorRole corrected"
+produced:
+  newWorkIds:
+    - edgar-allan-poe/to-mary
+    - edgar-allan-poe/song-of-triumph
+    - edgar-allan-poe/stanzas-to-f-s-o
+    - edgar-allan-poe/maelzels-chess-player
+    - edgar-allan-poe/the-philosophy-of-furniture
+    - edgar-allan-poe/a-few-words-on-secret-writing
+  removedWorkIds:
+    - edgar-allan-poe/epigram-for-wall-street
+    - edgar-allan-poe/lines-on-ale
+  changedProse:
+    - edgar-allan-poe/the-conchologists-first-book
+    - edgar-allan-poe/the-poetic-principle
+  changedDates:
+    - edgar-allan-poe/the-poetic-principle
+  changedTiers: []
+  workCounts:
+    total: 145
+    core: 68
+    extended: 74
+    apocrypha: 3
+forStages:
+  press-archaeology: "No change to the bio/lifeEvents scope this stage flagged; the confirmed 1850 posthumous first publication of The Poetic Principle is a small, usable data point if a life event ever covers Poe's final Richmond/Virginia lecture tour or Griswold's role after his death."
+  eras: "Chronology span is now 1827 (Tamerlane, and To Mary/Song of Triumph-adjacent pieces at 1835-1836) through 1850 (The Poetic Principle, published posthumously, now the latest-dated work in the wing - it postdates Annabel Lee and The Bells at 1849). An era boundary drawn at 1849 for 'Poe's lifetime' should still include The Poetic Principle's 1848 Providence lecture in its narrative even though the published date sorts it after his death."
+  reading-orders: "No startHere paths exist yet. Two 1845 Frances Sargent Osgood poems now sit side by side in the derived order (to-f and the new stanzas-to-f-s-o), both minor and easily confused if a path ever names one - use the id, not the title, if either is referenced."
+  visual-metadata: "6 new works need cover sourcing like the rest of the wing (all pre-1900 US periodical originals, so public-domain sourcing odds are the same as the rest of the wing). The Conchologist's First Book now reads as authorRole contributor; if visual-metadata treats contributor works differently for cover purposes, check that entry specifically."
+openQuestions:
+  - "Tiering ~40 minor tales/poems core vs extended was franchise-research's own call; this pass did not revisit tier boundaries except where the tier attached to a work being removed or added, since the record does not clearly settle borderline tier placements one way or the other."
+  - "To Mary (1835, new) shares an unusually tangled revision history with the existing to-elizabeth/to-f pair - three separate Poe poems all eventually retitled toward 'To Frances' or 'To F--' by 1845. All three are kept as separate work entries on the precedent already set by a-paean/lenore (a major revision earns its own entry); a curator who reads Mabbott's Poems vol. 1 directly may want to double check this three-way split rather than a two- or four-way one."
+  - "American Poetry stays excluded because Wikipedia's bibliography lists two distinct Poe pieces under that exact title with no easy way from secondary sources alone to disambiguate which (or both) belongs; resolving this needs eapoe.org's own essay pages read individually rather than its bibliography summary."

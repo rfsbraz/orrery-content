@@ -1,0 +1,117 @@
+id: edgar-allan-poe
+name: Edgar Allan Poe
+kind: author
+description: >
+  One novel, one philosophical prose poem, and the short stories and poems
+  that invented detective fiction, shaped horror and helped found science
+  fiction: from the amateur analyst
+  [[work:edgar-allan-poe/the-murders-in-the-rue-morgue|C. Auguste Dupin]]
+  through the collapsing minds of
+  [[work:edgar-allan-poe/the-fall-of-the-house-of-usher|The Fall of the
+  House of Usher]] and [[work:edgar-allan-poe/the-tell-tale-heart|The
+  Tell-Tale Heart]] to [[work:edgar-allan-poe/the-raven|The Raven]] (1845),
+  the poem that made him famous, and
+  [[work:edgar-allan-poe/annabel-lee|Annabel Lee]], published after his
+  death.
+authorIds: [edgar-allan-poe]
+themePreset: tarnished-gothic
+
+# Capabilities are auto-detected from the data (docs/SCHEMA.md). A wide
+# bibliography (see works.yaml's header for the full shape and the
+# structural call it documents), with eras.yaml, events.yaml, orders.yaml,
+# editions.yaml and startHere below all present. Two things are absent on
+# purpose: no characters.yaml, since Dupin is the one recurring figure and
+# he sits inside his own three-tale subseries note in orders.yaml rather
+# than a cross-wing connections map; and no globalEvents include list,
+# since no global event in the shared catalogue falls inside Poe's
+# 1809-1849 lifetime at all.
+features: {}
+
+# Sources for startHere: the "famous handful" path converges three
+# independent sources naming the same core of best-known works - the
+# Academy of American Poets' own Poe page, the Poetry Foundation's Poe
+# page, and Wikipedia/Conan Doyle on Rue Morgue founding detective
+# fiction. See the sourcing comments directly above each path below.
+startHere:
+  paths:
+    # Source: https://poets.org/poet/edgar-allan-poe - "He published some
+    # of his best-known stories and poems, including 'The Fall of the
+    # House of Usher,' 'The Tell-Tale Heart,' 'The Murders in the Rue
+    # Morgue,' and 'The Raven.'" Cross-checked against
+    # https://www.poetryfoundation.org/poets/edgar-allan-poe, which names
+    # the same tales of horror ("The Black Cat," "The Cask of
+    # Amontillado," "The Tell-Tale Heart") as his "best and best-known
+    # works," and https://poemuseum.org/edgar-allan-poe/, which calls The
+    # Raven "Poe's most famous piece." Rue Morgue's place is additionally
+    # sourced by Wikipedia quoting Arthur Conan Doyle calling Poe's
+    # detective stories "a root from which a whole literature has
+    # developed."
+    - id: essentials
+      title: The famous handful
+      description: >
+        Four tales and a poem: the ones that decide how most people picture
+        Poe before they have read a word of him. A house and a family
+        failing together, a narrator insisting at length on his own sanity,
+        a grudge and a wine cellar, the first detective in fiction, and the
+        poem that made Poe famous overnight.
+      workIds:
+        - edgar-allan-poe/the-fall-of-the-house-of-usher
+        - edgar-allan-poe/the-tell-tale-heart
+        - edgar-allan-poe/the-cask-of-amontillado
+        - edgar-allan-poe/the-murders-in-the-rue-morgue
+        - edgar-allan-poe/the-raven
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        All five stand alone and can be read in any order. This is five out
+        of a hundred and forty-five works - it skips the poetry beyond The
+        Raven, the rest of the Gothic tales, and all the nonfiction.
+
+    # Source: https://en.wikipedia.org/wiki/C._Auguste_Dupin and
+    # https://en.wikipedia.org/wiki/The_Mystery_of_Marie_Rog%C3%AAt (the
+    # "Sequel to 'The Murders in the Rue Morgue'" subtitle). See
+    # orders.yaml for the full rationale.
+    - id: meet-dupin
+      title: Meet Dupin
+      description: >
+        The amateur Parisian analyst who started the detective story as a
+        form, three cases long: a locked-room murder no one else can parse,
+        a real unsolved case worked from newspaper clippings alone, and a
+        stolen letter the police cannot find in a house they have already
+        taken apart. Sherlock Holmes and Hercule Poirot both descend from
+        him.
+      workIds: null
+      orderId: edgar-allan-poe/dupin-in-order
+      fit:
+        experience: [new, returning]
+        commitment: [taste, arc]
+      note: >
+        Three tales only - a short, complete arc, not a commitment to the
+        rest of the shelf.
+
+    - id: the-whole-shelf
+      title: The whole shelf
+      description: >
+        All hundred and forty-five works in the order Poe wrote them: the
+        unnoticed teenage verse, the Baltimore years writing for prize
+        money, the decade editing magazines that produced Usher and Rue
+        Morgue and the Raven, and the last, grieving years that gave him
+        Annabel Lee. This is not a series read front to back - it is a
+        working writer's whole output, tale by tale and poem by poem.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+      note: >
+        The first stretch is three unsold, little-read poetry pamphlets
+        from 1827-1831 - real Poe, but the thinnest material in the wing.
+        Readers who want the famous work first should start with "The
+        famous handful" instead.
+
+sources:
+  - https://en.wikipedia.org/wiki/Edgar_Allan_Poe
+  - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+  - https://www.eapoe.org/works/index.htm

@@ -1,0 +1,263 @@
+# Global author entity. Referenced by authorIds from
+# content/franchises/edgar-allan-poe/. Author-LIFE events live here.
+#
+# The exact birth date and place are settled beyond dispute (a documented
+# public record, not a later reconstruction): Boston, January 19, 1809.
+#
+# lifeEvents below trace the spine of a life that is unusually well
+# documented for its era: the two ruptures with his foster father John
+# Allan (the 1827 gambling-debt break and enlistment, the 1831 West Point
+# dismissal that becomes permanent), the 1836 marriage to his 13-year-old
+# first cousin Virginia Clemm, a decade trying to live by magazine work
+# alone, Virginia's 1847 death, the broken 1848 engagement to Sarah Helen
+# Whitman, and the unexplained 1849 Baltimore death. All dates and the
+# marriage-bond detail are cross-checked against the Poe Society of
+# Baltimore's own chronology (eapoe.org) rather than taken from a summary
+# source. Publication-history and reception events (The Raven's fame, "The
+# Murders in the Rue Morgue" inventing detective fiction, Rufus Griswold's
+# posthumous character assassination) belong to the work and the
+# franchise's reception rather than to Poe's own life, and are recorded in
+# content/franchises/edgar-allan-poe/events.yaml instead.
+id: edgar-allan-poe
+name: Edgar Allan Poe
+aka: ["Edgar Poe"]
+born: 1809-01-19
+died: 1849-10-07
+images:
+  portrait: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Edgar_Allan_Poe%2C_circa_1849%2C_restored%2C_squared_off.jpg/1280px-Edgar_Allan_Poe%2C_circa_1849%2C_restored%2C_squared_off.jpg"
+  portraitCredit: "Unknown photographer, restored by Yann Forget and Adam Cuerden; public domain"
+  portraitSource: "https://commons.wikimedia.org/wiki/File:Edgar_Allan_Poe,_circa_1849,_restored,_squared_off.jpg"
+  # The "Annie" daguerreotype, taken June 1849 in Lowell, Massachusetts and
+  # given to Poe's friend Annie L. Richmond; this restoration is a Featured
+  # Picture on both Wikimedia Commons and English Wikipedia (used as the
+  # infobox image on over 100 language editions) and traces to the Getty
+  # Museum's own collection record, not an unsourced scan. Poe scholarship
+  # (Michael J. Deas's "The Portraits and Daguerreotypes of Edgar Allan
+  # Poe," the standard reference on this exact question) treats "Annie" and
+  # the separate "Ultima Thule" plate (Nov 1848, also Providence-linked, per
+  # the Poe Society of Baltimore) as the two best-attested surviving
+  # daguerreotypes; only engravings and later copies "made from" Ultima
+  # Thule appear on Commons, not the plate itself, which is why Annie is
+  # used here.
+bio: >
+  American writer, poet, editor and literary critic, born Edgar Poe in
+  Boston to the touring actors David and Eliza Poe. His father left the
+  family in 1810 and his mother died of tuberculosis the following year;
+  the two-year-old Poe was taken in, but never formally adopted, by John and
+  Frances Allan of Richmond, Virginia, who gave him the name he wrote under.
+  A year at the University of Virginia and a stint at West Point both ended
+  in a break with his foster father over money and gambling debts, and by
+  1827 he had turned to writing and to the Army under an assumed name. He
+  spent the rest of his career moving between Baltimore, Richmond,
+  Philadelphia and New York as a magazine editor and critic, becoming one of
+  the first Americans to attempt to live by writing alone. In 1836, aged
+  27, he married his 13-year-old cousin Virginia Clemm, who died of
+  tuberculosis in 1847. Poe is credited with inventing the modern detective
+  story in [[work:edgar-allan-poe/the-murders-in-the-rue-morgue|The Murders
+  in the Rue Morgue]] (1841), contributing significantly to the emergence
+  of science fiction, and writing some of the most enduring short stories
+  and poems in the language, from
+  [[work:edgar-allan-poe/the-fall-of-the-house-of-usher|The Fall of the
+  House of Usher]] to [[work:edgar-allan-poe/the-raven|The Raven]] (1845),
+  the poem that made him a household name without ever making him money.
+  He died in Baltimore on October 7, 1849, four days after being found
+  incoherent and in someone else's clothes; the cause has never been
+  settled, and has been attributed to disease, alcoholism, other substance
+  abuse and suicide among other explanations.
+pseudonyms:
+  - name: a Bostonian
+    note: >
+      The anonymous byline of his first book, Tamerlane and Other Poems
+      (Boston, 1827); only about 50 copies were printed and it drew almost
+      no attention. His two follow-up poetry collections (1829, 1831) were
+      credited to "Edgar A. Poe."
+lifeEvents:
+  - id: edgar-allan-poe-born-1809
+    organisation: full-bleed-vista
+    illustration_type: establishing-landscape
+    images_required: 1
+    date: 1809-01-19
+    title: Born in Boston to a family of travelling actors
+    impact: low
+    description: >
+      Born Edgar Poe to actors David and Eliza Poe. Orphaned before the age
+      of three, he is raised in Richmond, Virginia by John and Frances
+      Allan, who never adopt him but give him the name he becomes famous
+      under.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Edgar_Allan_Poe
+
+  - id: edgar-allan-poe-allan-break-army-1827
+    organisation: beside
+    illustration_type: journey-transit
+    images_required: 1
+    date: 1827-05-26
+    title: Breaks with John Allan over gambling debts, enlists as "Edgar A. Perry"
+    impact: med
+    description: >
+      In March 1827, Poe and his foster father John Allan fall out over
+      $2,000 in gambling debts Poe ran up at the University of Virginia;
+      Allan refuses to cover them and Poe leaves Richmond for Baltimore. On
+      May 26 he enlists as a private in the United States Army under the
+      false name "Edgar A. Perry." The same year his first book,
+      [[work:edgar-allan-poe/tamerlane|Tamerlane and Other Poems]], appears
+      anonymously as the work of "a Bostonian." It is the first of two
+      breaks with Allan; the second, at West Point four years later, will be
+      final.
+    spoilerAfter: null
+    sources:
+      - https://www.eapoe.org/geninfo/poechron.htm
+
+  - id: edgar-allan-poe-west-point-dismissal-1831
+    organisation: artifact-spread
+    illustration_type: document-facsimile
+    images_required: 1
+    date: 1831-03-06
+    title: Engineers his own dismissal from West Point; the break with Allan turns permanent
+    impact: high
+    description: >
+      After his foster mother Frances Allan dies in February 1829 and John
+      Allan remarries within the year, Poe enters West Point in June 1830
+      with Allan's grudging blessing but no real reconciliation. Wanting out
+      and unable to obtain Allan's consent to resign, he deliberately stops
+      attending drills, classes and chapel from January 27, 1831; a
+      court-martial follows on February 8 and he is dismissed on March 6.
+      The break is never repaired: when Allan dies on March 27, 1834, Poe's
+      name is omitted from the will entirely, and he inherits nothing from a
+      fortune that could otherwise have secured him for life.
+    spoilerAfter: null
+    sources:
+      - https://www.eapoe.org/geninfo/poechron.htm
+
+  - id: edgar-allan-poe-marries-virginia-clemm-1836
+    organisation: beside
+    illustration_type: relationship-tableau
+    images_required: 1
+    date: 1836-05-16
+    title: Marries his 13-year-old first cousin Virginia Clemm
+    impact: high
+    description: >
+      Poe, 27, marries Virginia Clemm, his first cousin, not yet 14, at a
+      private evening ceremony in a Richmond boarding house, officiated by
+      the Reverend Amasa Converse; the two, together with Virginia's mother
+      Maria Clemm, had already been sharing a household since 1835. The
+      Richmond marriage bond lists Virginia's age as 21, an affidavit from a
+      family friend attesting to it; since her father was dead, the false
+      age let the marriage proceed without a parent's consent. Virginia
+      remains Poe's wife until her death eleven years later, and grief for
+      her runs through much of what he writes afterward.
+    spoilerAfter: null
+    sources:
+      - https://www.eapoe.org/geninfo/poechron.htm
+      - https://en.wikipedia.org/wiki/Virginia_Eliza_Clemm_Poe
+
+  - id: edgar-allan-poe-magazine-editor-years-1846
+    organisation: layered-stack
+    illustration_type: archive-stack
+    images_required: 1
+    date: 1846
+    dateRange: "1835-1846"
+    title: Ten years trying to live by the pen alone, as somebody else's editor
+    impact: med
+    description: >
+      Poe spends the working core of his career on other people's
+      mastheads: the Southern Literary Messenger from September 1835,
+      Burton's Gentleman's Magazine from May 1839, then Graham's Magazine
+      from 1841, where his editorship coincides with circulation rising
+      from about 5,000 to nearly 37,000, without ever giving him ownership
+      or a stable income. A long-cherished plan for a magazine entirely his
+      own, first advertised in 1840 as the Penn and later revived as the
+      Stylus, never draws enough subscribers to launch. His closest approach
+      is the Broadway Journal, where he becomes an editor in February 1845
+      and, by October, its sole owner; already laden with debt, it collapses
+      on January 3, 1846. He is one of the first Americans to try to support
+      a family by writing and editing alone, and for a decade it barely
+      works.
+    spoilerAfter: null
+    sources:
+      - https://www.eapoe.org/geninfo/poechron.htm
+
+  - id: edgar-allan-poe-virginia-death-1847
+    organisation: immersion
+    illustration_type: portrait-of-absence
+    images_required: 1
+    date: 1847-01-30
+    title: Virginia dies of tuberculosis at the Fordham cottage
+    impact: high
+    description: >
+      Virginia Poe dies of tuberculosis on January 30, 1847, in the small
+      Fordham cottage the family has rented since the previous spring; she
+      is entombed on February 2 in the Valentine family vault at the Dutch
+      Reformed Church. Her illness had been declining since a first
+      hemorrhage while singing, five years earlier. Grief for her runs
+      openly through the poems of Poe's last years,
+      [[work:edgar-allan-poe/ulalume|Ulalume]],
+      [[work:edgar-allan-poe/annabel-lee|Annabel Lee]],
+      [[work:edgar-allan-poe/for-annie|For Annie]] and
+      [[work:edgar-allan-poe/the-bells|The Bells]] among them, and in
+      [[work:edgar-allan-poe/to-my-mother|To My Mother]], addressed to Maria
+      Clemm, who nursed them both.
+    spoilerAfter: null
+    sources:
+      - https://www.eapoe.org/geninfo/poechron.htm
+
+  - id: edgar-allan-poe-whitman-engagement-ends-1848
+    organisation: diptych
+    illustration_type: symbolic-still-life
+    images_required: 2
+    date: 1848-12-23
+    title: A broken engagement to Sarah Helen Whitman ends his last courtship
+    impact: med
+    description: >
+      Poe courts the Providence poet Sarah Helen Whitman from the autumn of
+      1848, the courtship behind that year's
+      [[work:edgar-allan-poe/to-helen-1848|To Helen]]; he secures a
+      conditional promise of marriage, contingent on his total abstinence
+      from alcohol. He fails the condition, and on December 23, 1848,
+      Whitman calls off the engagement; her mother had also worked against
+      the match throughout. It is Poe's last serious courtship before his
+      death the following year. Whitman outlives him by nearly three
+      decades and, in 1860, publishes Edgar Poe and His Critics, one of the
+      first sustained rebuttals of Rufus Griswold's posthumous portrait of
+      Poe.
+    spoilerAfter: null
+    sources:
+      - https://www.eapoe.org/geninfo/poechron.htm
+      - https://www.eapoe.org/people/whitmash.htm
+
+  - id: edgar-allan-poe-death-baltimore-1849
+    organisation: immersion
+    illustration_type: symbolic-still-life
+    images_required: 1
+    date: 1849-10-07
+    title: Found in distress in Baltimore, dead four days later, the cause never settled
+    impact: high
+    description: >
+      On September 27, 1849, Poe leaves Richmond for New York, newly
+      re-engaged to his childhood sweetheart Elmira Royster Shelton and
+      freshly sworn into the Sons of Temperance. He reaches Baltimore the
+      next day, then vanishes from the record for nearly a week. On October
+      3 he is found in great distress at Ryan's Fourth Ward Polls, a tavern
+      serving as an election-day polling place, wearing shabby, ill-fitting
+      clothes that do not appear to be his own; he still carries a cane,
+      also not his, mistakenly taken from a Richmond doctor's office days
+      earlier. Taken to Washington College Hospital, he lapses in and out of
+      consciousness over several days and dies on October 7 without ever
+      coherently explaining what happened to him in the missing time. No
+      death certificate survives; the only official notation is a newspaper
+      mortality count listing "congestion of the brain." The cause has
+      since been attributed, without agreement, to disease, alcoholism,
+      other substance abuse, suicide, even a robbery, and the Poe Society of
+      Baltimore's own verdict, after the fullest documentary review, is that
+      the facts available "lead to no certain conclusion."
+    spoilerAfter: null
+    sources:
+      - https://www.eapoe.org/geninfo/poedeath.htm
+      - https://www.eapoe.org/geninfo/poechron.htm
+sources:
+  - https://en.wikipedia.org/wiki/Edgar_Allan_Poe
+  - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+  - https://www.eapoe.org/works/index.htm
+  - https://www.eapoe.org/geninfo/poechron.htm
+  - https://www.eapoe.org/geninfo/poedeath.htm

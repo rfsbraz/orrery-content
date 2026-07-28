@@ -1,0 +1,35 @@
+stage: editions
+summary: >
+  134 editions added (126 en + 8 pt-PT) covering 126 of 145 works (87 percent);
+  no per-work invention - anthology ISBNs cited only where a published table
+  of contents confirmed the specific work, never assumed from a title
+produced:
+  editionsAdded: 134
+  worksCovered: 126
+  isbnsUsed: 8
+  breakdown:
+    - "Library of America, Poetry & Tales (LOA 19, 9780940450189, 1984, out of print): 123 works, matched title by title against the volume's own itemised online table of contents"
+    - "Library of America, Essays & Reviews (LOA 20, 9780940450196, 1984, out of print): 3 works (Philosophy of Composition, Rationale of Verse, Poetic Principle), matched only against titles the publisher names outright in running copy, since this volume's own table lists section headings, not items"
+    - "pt-PT, 6 works, 8 editions: Assirio & Alvim's Arthur Gordon Pym (2009), Relogio d'Agua's and Padroes Culturais' O Corvo (2009, 2012), 11X17's Rue Morgue/Marie Roget/Purloined Letter trio (2013, table of contents confirmed via OpenLibrary), Porto Editora's and Book Cover's O Gato Preto (2020, 2022) - every one cross-checked at the Biblioteca Nacional de Portugal catalogue"
+forStages:
+  wing-audit: >
+    The structural call worth a second look: this schema has no
+    one-edition-many-works shape, so a single real anthology ISBN is repeated
+    across several separate edition entries, one per work it was verified to
+    contain (never assumed from the anthology's own title or scope). The file
+    header explains the reasoning and cites the John Shirley precedent this
+    departs from (there, an anthology ISBN was withheld from every workId
+    rather than repeated, because the anthology in that case was multi-author
+    or an omission-flattening novel omnibus; Poe's short-fiction anthologies
+    are single-author and single-work-per-entry, a different shape). Also
+    worth checking: two real, durably in-print Portuguese anthologies
+    (Temas e Debates' "Todos os Contos", 6th ed. 2022; BIS's "Historias
+    Extraordinarias", 7th ed. 2017) were found and deliberately left
+    uncited anywhere, because neither publisher has an itemised table of
+    contents on record - a human with a bookshop copy could likely close a
+    large share of the remaining 19-work gap by reading either book's own
+    index.
+openQuestions:
+  - "19 works carry no edition anywhere: A Predicament and The Landscape Garden (both superseded in LOA's own text choice by a later revision it does carry); 14 minor poems not found in LOA's itemised poetry table, including the two poems entangled in the To Mary / To Elizabeth revision history works.yaml already flags; Maelzel's Chess-Player and A Few Words on Secret Writing (plausible Essays & Reviews contents, unconfirmed since that volume's table isn't itemised online); The Conchologist's First Book (correctly absent - a different author's schoolbook, not a Poe tale or essay)."
+  - "Espiritos dos Mortos (ISBN 9788366589308, G. Floy Studio) surfaced in retail listings with a valid check digit but no Biblioteca Nacional de Portugal record and a Polish (978-83) registrant prefix on a Portuguese-titled book - excluded as unverifiable, flagged in the file header rather than silently dropped."
+  - "Neither LOA volume's exact print-run/availability status was checked beyond loa.org's own out-of-stock notice; both are recorded anyway since SCHEMA.md's own tiebreak allows an out-of-print edition when it is the only one, which is the case for both."

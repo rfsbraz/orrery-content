@@ -1,0 +1,37 @@
+stage: reading-orders
+summary: "1 order (Dupin, 3 tales) + 3 startHere paths built; both artefacts and their pt-PT overlays shipped in one pass"
+produced:
+  startHerePaths:
+    - essentials
+    - meet-dupin
+    - the-whole-shelf
+  orderIds:
+    - edgar-allan-poe/dupin-in-order
+forStages:
+  spoiler-audit: >
+    All prose in orders.yaml and startHere is written at premise level; no
+    plot points from any of the 145 works are stated. Checked specifically
+    whether Marie Rogêt or The Purloined Letter spoil Rue Morgue's solution
+    (per eras.yaml's flag that the Dupin path crosses an era plate): they do
+    not - both later tales reference Dupin as an established character and
+    re-introduce his method fresh, but neither restates or depends on
+    knowing how the Rue Morgue murders were solved. The order's rationale
+    says so explicitly rather than inventing a spoiler risk that is not
+    there. spoilerAfter has no surface in either file (no such field exists
+    on orders or paths), so nothing needed setting.
+  visual-language: >
+    No new illustrated surface: orders.yaml and startHere are text-only per
+    SCHEMA.md (no illustration_type on either). Nothing here changes the 6
+    era plates or 3 franchise events already queued for art.
+  art-rotation: >
+    1 order (3 orderedWorkIds) and 3 startHere paths (5 + 3 + all-145
+    workIds/orderId) exist now - 4 curator-authored entities total, none
+    with its own art slot. If a future visual pass ever wants a
+    startHere-specific image (a wizard card, say), essentials and
+    meet-dupin are the two paths with the clearest distinct visual identity
+    (Gothic-tale foursome vs the three-case detective arc); the-whole-shelf
+    has none of its own beyond the existing era plates.
+openQuestions:
+  - "No poetry-only or chronological/era-based startHere path shipped. Checked for real, citable entry-point advice narrower than 'the famous handful' (a poems-specific starting point, an era-based reading plan) and found none beyond general bibliography listings (poets.org's own catalogue page, which is not itself a recommendation) - concluded manufacturing one would be padding per the skill's sparse-author rule, not a finding to act on. If a future pass finds real sourced advice for a poetry-specific entry point, it is a fourth path away."
+  - "essentials leaves out The Fall of the House of Usher's Gothic-tale siblings (Ligeia, The Masque of the Red Death) that Poetry Foundation groups alongside it as equally best-known/enduring; five was kept to the SCHEMA precedent ('landmark books... five') and the strongest single-source convergence (poets.org's own sentence names exactly four of the five). A curator could defensibly swap or extend this list; the two left out are exactly as citable as the two kept from that same source."
+  - "The order's `debated` entry states the Dupin order matches the derived default exactly and defends that on thread-identity grounds (the Discworld precedent in the skill, section 12). Flagging this explicitly for the curator since an order identical to the default is the pattern section 3's 'kill on sight' list warns about in the chronological-inuniverse case - here it survives because type is curated with a named, sourced thread, not an in-universe reshuffle, but it is the closest this file comes to that line."

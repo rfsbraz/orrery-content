@@ -1,0 +1,1973 @@
+# Bibliography (Works) - the abstract poems/tales/novel/nonfiction; editions
+# and covers are a separate layer. IDs are STABLE and permanent (user data
+# references them).
+#
+# STRUCTURAL CALL: the atomic unit here is the individual poem or tale, not
+# the handful of books Poe assembled in his own lifetime. This departs from
+# this catalogue's usual convention (a short-story collection is one work -
+# see agatha-christie/works.yaml, jo-nesbo/works.yaml) deliberately, and the
+# reasoning is checked, not assumed. Poe published exactly three tale
+# collections and four poetry collections in his lifetime (Poe Society of
+# Baltimore's own "Books Published by Poe" list, cross-checked against
+# Wikipedia's bibliography, which agree completely): Tamerlane and Other
+# Poems (1827), Al Aaraaf, Tamerlane, and Minor Poems (1829), Poems (1831),
+# Tales of the Grotesque and Arabesque (1840, 25 of his tales),
+# The Prose Romances of Edgar A. Poe (1843, only one number ever issued,
+# containing just two tales, both already collected elsewhere), Tales
+# (1845, 12 tales selected by his editor Evert Duyckinck - Poe himself was
+# unhappy with the selection and it omitted "Ligeia," which he considered
+# his best story), and The Raven and Other Poems (1845). Together these
+# seven books cover a minority of his sixty-nine tales (eapoe.org's own
+# count, "both short fiction and novels") and stop, for the poems, in 1845 -
+# four years before his death and before "Ulalume," "Annabel Lee," "The
+# Bells," "Eldorado," "For Annie" and "A Dream Within a Dream" even
+# existed. He died before any "complete tales" or "complete poems" of his
+# own assembling could exist. Treating the seven lifetime books as the
+# works would either omit most of what this author is actually known for,
+# or require a "Collected/Complete Poe" work invented after the fact - which
+# this catalogue's own rule against inventing a book that does not exist
+# (SCHEMA.md, editions.yaml) forbids as firmly for a work as for an edition.
+# The individual poem or tale, almost always first (and often only)
+# published in a magazine or newspaper in Poe's own lifetime, is therefore
+# the unit below. The seven historical books are real and significant and
+# are recorded in this note and on the individual pieces they gathered,
+# never invented as work entries of their own.
+#
+# SHAPE OF THIS WING: one novel, sixty-seven tales, sixty-seven poems, and
+# ten nonfiction/incomplete/disputed works (145 total) - see the section
+# breaks below. Every date, venue and tiering call has been checked directly
+# against the Poe Society of Baltimore's per-item bibliographic pages
+# (eapoe.org, which host Mabbott's and Pollin's textual histories), rather
+# than against Wikipedia's summary of them, and against the Library of
+# America's Poe volumes' scope. Individual synopses were written from
+# general knowledge of these very widely taught and anthologized texts
+# rather than a fresh read of each.
+#
+# canonTier convention for this franchise:
+#   core     - a complete, attributed tale or poem published (magazine,
+#              newspaper or book) in Poe's own lifetime, or a small number
+#              of complete pieces first published only after his death from
+#              a surviving manuscript but long since part of his accepted,
+#              widely read body of work (Alone, Elizabeth). Tier here tracks
+#              whether a piece is finished and accepted into the canon, not
+#              fame ranking within it - a minor 1832 magazine sketch and
+#              "The Raven" are both core.
+#   extended - genuinely his, but occasional, minor, or off the main
+#              tale/poem spine: album verse, acrostics, single-joke squibs,
+#              unfinished long-form works (the Rodman novel), and the small
+#              set of magazine essays substantial enough to record but never
+#              gathered into a book of his own.
+#   apocrypha - a single juvenile fragment (see "Poetry", 1824) and one
+#              incomplete play, published only as an unfinished excerpt in
+#              his lifetime.
+# One contributor entry: The Conchologist's First Book, where Poe wrote the
+# preface and translated its classification text atop Thomas Wyatt's base
+# work (authorRole: contributor, below). No other anthology piece,
+# introduction or editorial credit by another editor is on record for this
+# author.
+#
+# SUBSERIES: C. Auguste Dupin (3 tales) is this wing's one genuine series -
+# not merely a recurring character but an author-declared continuing
+# thread: "The Mystery of Marie Rogêt" was originally subtitled "A Sequel to 'The
+# Murders in the Rue Morgue'" on first publication. "The Purloined Letter"
+# continues the same narrator-and-Dupin frame. No other Poe character
+# recurs across separately titled works.
+#
+# FEATURED (cap 3): Tamerlane (1827, the actual debut, however unnoticed at
+# the time), The Murders in the Rue Morgue (1841, the single most
+# consequential work he wrote for literary history - it invented detective
+# fiction as a form), and The Raven (1845, the poem that made him a
+# household name overnight without ever making him money). Three different
+# kinds of hinge, not three favourites.
+#
+# NOT INCLUDED, and why:
+# - "O, Tempora! O, Mores!" (1825) - Wikipedia's own bibliography flags the
+#   attribution to Poe as "likely incorrect"; not authenticated enough to
+#   record as his.
+# - "A Dream" (undated), "The Atlantis" (a serial) and "[Gaffy]" - all
+#   flagged doubtful or textually lost by the Poe Society of Baltimore's
+#   own index; no surviving, attributable text to record.
+# - "Deep in Earth" and "Beloved Physician" (both 1847) - explicitly marked
+#   incomplete fragments, never finished or published in his lifetime; the
+#   record has the existence of a fragment, not a work.
+# - "The Trumpet Reveillee" (1839) and "To Miss Louise Olivia Hunter"
+#   (1847) - the Poe Society of Baltimore's own pages mark the first
+#   "doubtful" (unauthenticated attribution) and the second "rejected"
+#   outright (a manuscript in Poe's hand that Ton Fafianie's 2012 research
+#   traced to an adapted William Gilmore Simms poem, not an original
+#   composition); neither clears the bar for a non-obvious claim.
+# - "Morning on the Wissahiccon" (also titled "The Elk") - the Poe Society
+#   of Baltimore's own page files it under Essays, not Tales, agreeing with
+#   Wikipedia's classification; held to the same nonfiction bar as the
+#   essays below it in this note, which it does not clear.
+# - "American Poetry" - Wikipedia's bibliography lists this title twice for
+#   two distinct Poe review-essays on the subject; without a reliable way
+#   to distinguish which (or both) is meant, and given neither is
+#   individually as significant as the three essays now included, both
+#   stay out rather than risk conflating them.
+# - Tales of the Folio Club - a projected linked collection Poe never
+#   completed; its individual tales (so far as identified) are already
+#   present below as standalone entries, so nothing is lost by leaving the
+#   frame-collection itself out.
+# - The Light-House (1849) - an incomplete fragment, unpublished in his
+#   lifetime, of uncertain intended form (story or novel); the same test
+#   applied to "Deep in Earth" excludes it.
+# - The Philosophy of Animal Magnetism (1837) - credited to "A Gentleman of
+#   Philadelphia," attributed to Poe only by modern stylometric analysis;
+#   one method, uncorroborated by an independent source, is short of this
+#   catalogue's bar for a non-obvious claim.
+# - "Epigram for Wall Street" (1845) - the Poe Society of Baltimore traced
+#   it to a British newspaper filler item reprinted in US papers in early
+#   1845, predating any Poe connection, and states plainly it "was clearly
+#   not written by Poe."
+# - "Lines on Ale" (1848) - rests on an 1892 secondhand recollection of a
+#   lost tavern manuscript; textual analysis found it a garbled
+#   misremembering of a stanza from George Arnold's 1867 "Drinking Wine"
+#   (published after Poe's death). The Poe Society of Baltimore classifies
+#   it "rejected"; a rebuttal proposing the reverse (that Arnold plagiarized
+#   Poe) exists but has not moved that classification, and no independent
+#   source corroborates the Poe attribution.
+#
+# externalIds are empty throughout: the enrichment bot fills these.
+
+# --- The novel ---
+
+- id: edgar-allan-poe/the-narrative-of-arthur-gordon-pym-of-nantucket
+  title: "The Narrative of Arthur Gordon Pym of Nantucket"
+  authorIds: [edgar-allan-poe]
+  published: 1838
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Poe's only complete novel: a young stowaway survives shipwreck, mutiny
+    and cannibalism aboard the whaler Grampus before a rescue leads him and
+    a fellow survivor ever further south, toward a strange and hostile
+    island and an ending that breaks off in mid-sentence at the edge of the
+    unknown.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/7160877-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL40962W"
+  sources:
+    - https://en.wikipedia.org/wiki/The_Narrative_of_Arthur_Gordon_Pym_of_Nantucket
+    - https://www.eapoe.org/works/editions/index.htm
+
+# --- Tales, chronological ---
+
+- id: edgar-allan-poe/metzengerstein
+  title: "Metzengerstein"
+  authorIds: [edgar-allan-poe]
+  published: 1832
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Poe's first published tale: a young Hungarian nobleman, sole heir to a
+    house locked in a centuries-old feud with its neighbours, becomes
+    fixated on a strange fiery-coloured horse that comes out of the blaze
+    at his rival's stables.
+  note: First published anonymously, subtitled "A Tale in Imitation of the German."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-duc-de-lomelette
+  title: "The Duc de L'Omelette"
+  authorIds: [edgar-allan-poe]
+  published: 1832
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A pampered dandy, dead of disgust at the sight of an ill-dressed bird
+    on his dinner plate, wakes in the Devil's apartments and finds his host
+    willing to play him at cards for his soul.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/a-tale-of-jerusalem
+  title: "A Tale of Jerusalem"
+  authorIds: [edgar-allan-poe]
+  published: 1832
+  subseries: null
+  canonTier: extended
+  synopsis: A brief burlesque in which Pharisees besieged in Jerusalem lower a basket of silver over the wall to buy a lamb from their Roman besiegers for the temple sacrifice.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/loss-of-breath
+  title: "Loss of Breath"
+  authorIds: [edgar-allan-poe]
+  published: 1832
+  subseries: null
+  canonTier: extended
+  synopsis: A grotesque comic tale of a husband who literally loses the physical power of breath on his wedding morning, and the mistaken burials that follow.
+  note: Originally titled "A Decided Loss."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/bon-bon
+  title: "Bon-Bon"
+  authorIds: [edgar-allan-poe]
+  published: 1832
+  subseries: null
+  canonTier: extended
+  synopsis: A philosophizing restaurateur and amateur metaphysician tries to out-argue the Devil himself over a bottle of wine.
+  note: Originally titled "The Bargain Lost."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/ms-found-in-a-bottle
+  title: "MS. Found in a Bottle"
+  authorIds: [edgar-allan-poe]
+  published: 1833
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A shipwrecked narrator is swept aboard a spectral vessel crewed by
+    ancient, unseeing sailors, driven inexorably toward a vortex at the
+    South Pole.
+  note: Won a $50 prize in a Baltimore Saturday Visiter contest, Poe's first real public recognition.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-assignation
+  title: "The Assignation"
+  authorIds: [edgar-allan-poe]
+  published: 1834
+  subseries: null
+  canonTier: core
+  synopsis: In Venice by night, a mysterious young nobleman saves a marchesa's child from the canal; the narrator calls on him the next morning among his extravagant collections and finds him strangely elated.
+  note: Originally published anonymously as "The Visionary."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/berenice
+  title: "Berenice"
+  authorIds: [edgar-allan-poe]
+  published: 1835
+  subseries: null
+  canonTier: core
+  synopsis: A scholar whose illness is a monomania of attention, an inability to look away from trivial things, watches his cousin and betrothed waste away under a disease of her own.
+  note: The synopsis stops short of the tale's closing act, deliberately.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/2961866-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL15645808W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/morella
+  title: "Morella"
+  authorIds: [edgar-allan-poe]
+  published: 1835
+  subseries: null
+  canonTier: core
+  synopsis: A husband comes to dread his learned wife and the studies of personal identity she presses on him, and dreads still more the daughter born as she dies. One of Poe's earliest treatments of identity outliving the body.
+  note: The synopsis stops short of the tale's closing reveal, deliberately.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/lionizing
+  title: "Lionizing"
+  authorIds: [edgar-allan-poe]
+  published: 1835
+  subseries: null
+  canonTier: extended
+  synopsis: A satire on literary celebrity, following a young man lionized by society purely for the remarkable size of his nose.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-unparalleled-adventure-of-one-hans-pfaall
+  title: "The Unparalleled Adventure of One Hans Pfaall"
+  authorIds: [edgar-allan-poe]
+  published: 1835
+  subseries: null
+  canonTier: core
+  synopsis: A Rotterdam bellows-mender's elaborate, pseudo-scientific account of a balloon voyage to the moon.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/king-pest
+  title: "King Pest"
+  authorIds: [edgar-allan-poe]
+  published: 1835
+  subseries: null
+  canonTier: extended
+  synopsis: Two drunken sailors stumble into a plague-shuttered London tavern presided over by a grotesque parliament of Death and disease.
+  note: Originally published anonymously as "King Pest the First."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/shadow-a-parable
+  title: "Shadow - A Parable"
+  authorIds: [edgar-allan-poe]
+  published: 1835
+  subseries: null
+  canonTier: extended
+  synopsis: Mourners keeping vigil over a plague-dead friend hear the voice of Shadow itself speak from the darkened room.
+  note: Originally published anonymously as "Siope - A Fable."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/four-beasts-in-one
+  title: "Four Beasts in One - The Homo-Cameleopard"
+  authorIds: [edgar-allan-poe]
+  published: 1836
+  subseries: null
+  canonTier: extended
+  synopsis: A burlesque of the tyrant Antiochus Epiphanes, parading through Antioch disguised as a fantastical composite beast.
+  note: Originally titled "Epimanes."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/mystification
+  title: "Mystification"
+  authorIds: [edgar-allan-poe]
+  published: 1837
+  subseries: null
+  canonTier: extended
+  synopsis: A university student with a genius for hoaxes answers a blustering duellist's challenge by referring him to an obscure treatise on the code of honour.
+  note: Originally titled "Von Jung, the Mystific."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/silence-a-fable
+  title: "Silence - A Fable"
+  authorIds: [edgar-allan-poe]
+  published: 1838
+  subseries: null
+  canonTier: extended
+  synopsis: A demon recounts cursing a man in a desolate landscape with the one thing more terrible than any sound - silence.
+  note: Originally titled "Siope - A Fable."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/ligeia
+  title: "Ligeia"
+  authorIds: [edgar-allan-poe]
+  published: 1838
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A widower recalls his first wife Ligeia, her immense learning and her
+    refusal to submit to death, and the second marriage he made in a
+    half-ruined abbey once she was gone. Poe himself considered it his best
+    tale; it was left out of the 1845 Tales collection over his objections.
+  note: The synopsis stops short of the tale's closing reveal, deliberately.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/872668-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL15646019W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/editions/index.htm
+
+- id: edgar-allan-poe/how-to-write-a-blackwood-article
+  title: "How to Write a Blackwood Article"
+  authorIds: [edgar-allan-poe]
+  published: 1838
+  subseries: null
+  canonTier: extended
+  synopsis: A satirical guide mocking the sensational, first-person "sensation" tales fashionable in Blackwood's Magazine.
+  note: Companion piece to "A Predicament."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/a-predicament
+  title: "A Predicament"
+  authorIds: [edgar-allan-poe]
+  published: 1838
+  subseries: null
+  canonTier: extended
+  synopsis: The companion piece to "How to Write a Blackwood Article," in which its narrator takes the advice literally, climbs a cathedral belfry for a view of the city, and puts her head through the opening in the face of the clock.
+  note: >
+    Originally titled "The Scythe of Time." The synopsis stops short of
+    where the burlesque goes next, deliberately.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-devil-in-the-belfry
+  title: "The Devil in the Belfry"
+  authorIds: [edgar-allan-poe]
+  published: 1839
+  subseries: null
+  canonTier: extended
+  synopsis: A stranger disrupts a smug Dutch village's obsessive clockwork routine by making the church bell strike thirteen.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-man-that-was-used-up
+  title: "The Man That Was Used Up"
+  authorIds: [edgar-allan-poe]
+  published: 1839
+  subseries: null
+  canonTier: core
+  synopsis: A narrator cannot shake the sense that something about the dazzling Indian-campaign hero General John A. B. C. Smith is not quite right, and every attempt to find out what it is gets interrupted before anyone can finish the sentence.
+  note: >
+    One of the two tales in the 1843 pamphlet The Prose Romances of Edgar A.
+    Poe, alongside "The Murders in the Rue Morgue." The synopsis stops short
+    of the tale's closing reveal, deliberately.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/editions/index.htm
+
+- id: edgar-allan-poe/the-fall-of-the-house-of-usher
+  title: "The Fall of the House of Usher"
+  authorIds: [edgar-allan-poe]
+  published: 1839
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A visitor answers a summons from his boyhood friend Roderick Usher and
+    finds him shut up in a decaying mansion with his failing twin sister,
+    the last two of their line, in a house that seems to possess a
+    sentience of its own. Poe's most widely read study of a mind and a
+    house sickening together.
+  note: The synopsis stops short of the tale's closing reveal, deliberately.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/11695570-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL273484W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/william-wilson
+  title: "William Wilson"
+  authorIds: [edgar-allan-poe]
+  published: 1839
+  subseries: null
+  canonTier: core
+  synopsis: A man is pursued through his life by a double who shares his name, face and voice, and who thwarts him at every turn toward vice.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/8917514-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL16088822W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-conversation-of-eiros-and-charmion
+  title: "The Conversation of Eiros and Charmion"
+  authorIds: [edgar-allan-poe]
+  published: 1839
+  subseries: null
+  canonTier: core
+  synopsis: Two souls in the afterlife recount the final days of an Earth destroyed by a comet.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/8916726-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL20259799W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/why-the-little-frenchman-wears-his-hand-in-a-sling
+  title: "Why the Little Frenchman Wears His Hand in a Sling"
+  authorIds: [edgar-allan-poe]
+  published: 1840
+  subseries: null
+  canonTier: extended
+  synopsis: A comic Irish-dialect tale of a duel gone wrong over a woman's honor.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-business-man
+  title: "The Business Man"
+  authorIds: [edgar-allan-poe]
+  published: 1840
+  subseries: null
+  canonTier: extended
+  synopsis: A satire on commercial "method," narrated by a self-styled businessman whose entire career is a string of absurd swindles.
+  note: Originally titled "Peter Pendulum."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-man-of-the-crowd
+  title: "The Man of the Crowd"
+  authorIds: [edgar-allan-poe]
+  published: 1840
+  subseries: null
+  canonTier: core
+  synopsis: A convalescent narrator, reading the passing faces from a London coffee-house window, finds one old man he cannot read at all, and follows him through a night and a day to find out who he is.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-murders-in-the-rue-morgue
+  title: "The Murders in the Rue Morgue"
+  authorIds: [edgar-allan-poe]
+  published: 1841
+  subseries: "C. Auguste Dupin"
+  canonTier: core
+  featured: true
+  synopsis: >
+    The amateur analyst C. Auguste Dupin solves a brutal, seemingly
+    impossible double murder behind a locked door in Paris - widely
+    considered the first modern detective story, and the work Poe called a
+    "tale of ratiocination."
+  # No cover: the Faber & Faber jacket found for this record (Open Library
+  # id 8447831) prints, in legible gold type under the title, the closing
+  # line of a DIFFERENT tale - "For many minutes, the heart beat on with a
+  # muffled sound," The Tell-Tale Heart's own withheld reveal. Caught by
+  # looking at the image, not just resolving the URL; removed rather than
+  # shipped.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/editions/index.htm
+
+- id: edgar-allan-poe/a-descent-into-the-maelstrom
+  title: "A Descent into the Maelstrom"
+  authorIds: [edgar-allan-poe]
+  published: 1841
+  subseries: null
+  canonTier: core
+  synopsis: An old Norwegian fisherman recounts surviving a night trapped in the pull of a colossal whirlpool by reasoning out its physics.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/6033347-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL273476W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-island-of-the-fay
+  title: "The Island of the Fay"
+  authorIds: [edgar-allan-poe]
+  published: 1841
+  subseries: null
+  canonTier: extended
+  synopsis: A meditative sketch of a solitary fairy watching over an island as both it and she fade toward death.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-colloquy-of-monos-and-una
+  title: "The Colloquy of Monos and Una"
+  authorIds: [edgar-allan-poe]
+  published: 1841
+  subseries: null
+  canonTier: extended
+  synopsis: A companion piece to "The Conversation of Eiros and Charmion," in which two souls beyond death discuss humanity's decline and the nature of dying.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/never-bet-the-devil-your-head
+  title: "Never Bet the Devil Your Head"
+  authorIds: [edgar-allan-poe]
+  published: 1841
+  subseries: null
+  canonTier: extended
+  synopsis: A satire on moralizing fiction, subtitled "A Tale with a Moral," in which a young man with a careless habit of offering to bet the Devil his head finally meets someone willing to take him up on it.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/eleonora
+  title: "Eleonora"
+  authorIds: [edgar-allan-poe]
+  published: 1841
+  subseries: null
+  canonTier: core
+  synopsis: Two cousins raised alone in a shut-in valley of many-coloured grass fall in love; when she sickens, he swears he will never bind himself to any woman on earth after her, and she promises to watch over him.
+  note: The synopsis stops short of the tale's closing turn, deliberately.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/three-sundays-in-a-week
+  title: "Three Sundays in a Week"
+  authorIds: [edgar-allan-poe]
+  published: 1841
+  subseries: null
+  canonTier: extended
+  synopsis: A young man's tight-fisted great-uncle promises to consent to his marriage as soon as three Sundays come together in a week, and two sea captains happen to be at dinner.
+  note: Originally titled "A Succession of Sundays."
+  images:
+    cover: "https://covers.openlibrary.org/b/id/11575264-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL24806848W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-oval-portrait
+  title: "The Oval Portrait"
+  authorIds: [edgar-allan-poe]
+  published: 1842
+  subseries: null
+  canonTier: core
+  synopsis: A wounded traveller sheltering in an abandoned chateau is caught by an uncannily lifelike portrait of a young girl, and turns to the volume on his pillow that explains how it came to be painted.
+  note: >
+    Originally titled "Life in Death." The synopsis stops short of the
+    tale's closing reveal, deliberately.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-masque-of-the-red-death
+  title: "The Masque of the Red Death"
+  authorIds: [edgar-allan-poe]
+  published: 1842
+  subseries: null
+  canonTier: core
+  synopsis: A prince and his courtiers wall themselves inside an abbey to escape a plague, only for a masked figure to walk uninvited through their revels.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/11860130-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL41050W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-landscape-garden
+  title: "The Landscape Garden"
+  authorIds: [edgar-allan-poe]
+  published: 1842
+  subseries: null
+  canonTier: extended
+  synopsis: A sketch on landscape gardening as the highest art, later expanded into "The Domain of Arnheim."
+  note: Wikipedia classes it as a sketch rather than a tale; superseded in scope by its own 1847 expansion.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-mystery-of-marie-roget
+  title: "The Mystery of Marie Rogêt"
+  authorIds: [edgar-allan-poe]
+  published: 1842
+  subseries: "C. Auguste Dupin"
+  canonTier: core
+  synopsis: >
+    Dupin solves, from newspaper accounts alone, the murder of a Parisian
+    shopgirl found in the Seine - a thinly veiled fictional treatment of the
+    real, unsolved New York murder of Mary Rogers.
+  note: Originally subtitled "A Sequel to 'The Murders in the Rue Morgue.'" Serialized November 1842 to February 1843.
+  # No cover: the only illustrated Open Library candidate for this specific
+  # work (not a Rue Morgue/Purloined Letter omnibus) depicts the drowned
+  # victim, which this tale's own redacted synopsis withholds; no other
+  # edition on Open Library carries art for this title alone.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-pit-and-the-pendulum
+  title: "The Pit and the Pendulum"
+  authorIds: [edgar-allan-poe]
+  published: 1843
+  subseries: null
+  canonTier: core
+  synopsis: Condemned by the Spanish Inquisition, a prisoner wakes in a lightless cell and maps it out by touch, discovering one at a time the ways it has been designed to kill him.
+  note: The synopsis stops short of the tale's final page, deliberately.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/9787863-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL1742165W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-tell-tale-heart
+  title: "The Tell-Tale Heart"
+  authorIds: [edgar-allan-poe]
+  published: 1843
+  subseries: null
+  canonTier: core
+  synopsis: A narrator sets out to prove how sane he is by recounting, very calmly and in order, the seven nights he spent watching an old man sleep, and what the pale film over the old man's eye did to his nerves.
+  note: The synopsis stops short of the tale's closing reveal, deliberately.
+  # No cover: the Chiltern Library jacket found for this record (Open
+  # Library id 8399175) is a woodcut of the story's own closing image - a
+  # man prising up floorboards with a body in the cavity beneath them -
+  # which is exactly the reveal the synopsis above deliberately withholds.
+  # Caught by looking at the image, not just resolving the URL; removed
+  # rather than shipped.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-gold-bug
+  title: "The Gold-Bug"
+  authorIds: [edgar-allan-poe]
+  published: 1843
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A reclusive eccentric and his companions decode a pirate cipher to
+    unearth Captain Kidd's buried treasure on a South Carolina island.
+    Poe's most widely read tale in his own lifetime, and the winner of a
+    $100 prize, the most he was ever paid for a single work.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/11777143-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL40983W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-black-cat
+  title: "The Black Cat"
+  authorIds: [edgar-allan-poe]
+  published: 1843
+  subseries: null
+  canonTier: core
+  synopsis: Writing on the eve of his execution, a man traces how drink turned him against the household animals he had loved all his life, beginning with the black cat that was his favourite.
+  note: The synopsis stops short of the tale's closing reveal, deliberately.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/11709016-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL41068W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/diddling
+  title: "Diddling Considered as One of the Exact Sciences"
+  authorIds: [edgar-allan-poe]
+  published: 1843
+  subseries: null
+  canonTier: extended
+  synopsis: A tongue-in-cheek essay-tale cataloguing swindling as a fine and exact science, illustrated with comic examples.
+  note: Originally titled "Raising the Wind; or, Diddling Considered as One of the Exact Sciences."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-spectacles
+  title: "The Spectacles"
+  authorIds: [edgar-allan-poe]
+  published: 1844
+  subseries: null
+  canonTier: extended
+  synopsis: A vain young man too short-sighted to see and too proud to wear glasses falls violently in love at the opera with a woman he has only ever looked at from a distance.
+  note: The synopsis stops short of the tale's closing reveal, deliberately.
+  # No cover: the work's own Open Library record's only cover is the same
+  # generic marbled-binding library scan found on several other minor tales
+  # here (no title, no art); rejected as a degraded scan.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/a-tale-of-the-ragged-mountains
+  title: "A Tale of the Ragged Mountains"
+  authorIds: [edgar-allan-poe]
+  published: 1844
+  subseries: null
+  canonTier: extended
+  synopsis: A neuralgic young man under his doctor's mesmeric influence walks out into the Ragged Mountains of Virginia and finds himself, in complete and waking detail, somewhere else entirely.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-premature-burial
+  title: "The Premature Burial"
+  authorIds: [edgar-allan-poe]
+  published: 1844
+  subseries: null
+  canonTier: core
+  synopsis: A narrator obsessed with cases of live burial catalogues real and imagined horrors of premature interment before confronting his own morbid terror of it.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/11239784-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL24583029W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/mesmeric-revelation
+  title: "Mesmeric Revelation"
+  authorIds: [edgar-allan-poe]
+  published: 1844
+  subseries: null
+  canonTier: extended
+  synopsis: A dying man under mesmeric trance delivers a philosophical account of matter, spirit and the afterlife.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-oblong-box
+  title: "The Oblong Box"
+  authorIds: [edgar-allan-poe]
+  published: 1844
+  subseries: null
+  canonTier: core
+  synopsis: A ship passenger cannot stop speculating about the long pine box his friend the artist has brought aboard and keeps in his own stateroom.
+  note: The synopsis stops short of the tale's closing reveal, deliberately.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-angel-of-the-odd
+  title: "The Angel of the Odd"
+  authorIds: [edgar-allan-poe]
+  published: 1844
+  subseries: null
+  canonTier: extended
+  synopsis: A skeptic of coincidence is tormented and finally undone by a grotesque personification of Improbability itself.
+  note: Subtitled "An Extravaganza."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/thou-art-the-man
+  title: "Thou Art the Man"
+  authorIds: [edgar-allan-poe]
+  published: 1844
+  subseries: null
+  canonTier: core
+  synopsis: A country town is certain it knows who murdered the well-liked Mr. Shuttleworthy, and the narrator, who is not certain at all, sets out to settle the question his own way. An early whodunit that also satirizes the era's sentimental crime fiction.
+  note: The synopsis stops short of both the culprit and the tale's closing device, deliberately.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-literary-life-of-thingum-bob-esq
+  title: "The Literary Life of Thingum Bob, Esq."
+  authorIds: [edgar-allan-poe]
+  published: 1844
+  subseries: null
+  canonTier: extended
+  synopsis: A satire of the literary-magazine trade, following a hack who plagiarizes his way to editorial fame.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-purloined-letter
+  title: "The Purloined Letter"
+  authorIds: [edgar-allan-poe]
+  published: 1844
+  subseries: "C. Auguste Dupin"
+  canonTier: core
+  synopsis: >
+    The Paris police know who took a politically damning letter, know where
+    he lives, have taken his rooms apart inch by inch over months, and have
+    found nothing. The Prefect brings the problem to Dupin.
+  note: The synopsis stops short of Dupin's solution, deliberately.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/11674884-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL41065W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-thousand-and-second-tale-of-scheherazade
+  title: "The Thousand-and-Second Tale of Scheherazade"
+  authorIds: [edgar-allan-poe]
+  published: 1845
+  subseries: null
+  canonTier: extended
+  synopsis: A comic sequel to the Arabian Nights, in which Scheherazade risks one more night on one more voyage of Sindbad, this one stocked with the true marvels of nineteenth-century science.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/some-words-with-a-mummy
+  title: "Some Words with a Mummy"
+  authorIds: [edgar-allan-poe]
+  published: 1845
+  subseries: null
+  canonTier: core
+  synopsis: A reanimated ancient Egyptian mummy, revived at a dinner-party experiment, punctures the guests' faith in modern progress.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-power-of-words
+  title: "The Power of Words"
+  authorIds: [edgar-allan-poe]
+  published: 1845
+  subseries: null
+  canonTier: extended
+  synopsis: Two angelic spirits discuss how every word ever spoken sets matter into motion forever, a cosmological companion piece to Poe's afterlife dialogues.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-imp-of-the-perverse
+  title: "The Imp of the Perverse"
+  authorIds: [edgar-allan-poe]
+  published: 1845
+  subseries: null
+  canonTier: core
+  synopsis: An argument for a faculty the moralists have all missed, the impulse to do a thing for no reason whatever beyond knowing that one should not.
+  note: The essay turns into something else in its last pages; the synopsis stops before the turn, deliberately.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/1990130-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL15481077W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-system-of-doctor-tarr-and-professor-fether
+  title: "The System of Doctor Tarr and Professor Fether"
+  authorIds: [edgar-allan-poe]
+  published: 1845
+  subseries: null
+  canonTier: core
+  synopsis: A traveller is shown around a private madhouse in the south of France, celebrated for the "soothing system" that has done away with its restraints, and stays to dinner with the staff.
+  note: The synopsis stops short of the tale's closing reveal, deliberately.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-facts-in-the-case-of-m-valdemar
+  title: "The Facts in the Case of M. Valdemar"
+  authorIds: [edgar-allan-poe]
+  published: 1845
+  subseries: null
+  canonTier: core
+  synopsis: A mesmerist puts a consumptive friend into a trance at the very point of death, and reports, in flat clinical detail, the seven months that follow.
+  note: >
+    Originally titled "The Facts of M. Valdemar's Case;" widely reprinted at
+    the time as a purported true account. The synopsis stops short of the
+    tale's closing image, deliberately.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/2961873-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL40987W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-sphinx
+  title: "The Sphinx"
+  authorIds: [edgar-allan-poe]
+  published: 1846
+  subseries: null
+  canonTier: extended
+  synopsis: Staying at a house on the Hudson during a cholera epidemic, a nervous guest sees a vast and hideous monster descending a distant hillside, and his host declines to be alarmed.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-cask-of-amontillado
+  title: "The Cask of Amontillado"
+  authorIds: [edgar-allan-poe]
+  published: 1846
+  subseries: null
+  canonTier: core
+  synopsis: Montresor, nursing an insult he never names, leads the boastful connoisseur Fortunato down through the family catacombs one carnival night with the promise of a cask of rare amontillado.
+  note: The synopsis stops short of the tale's closing act, deliberately.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/6615652-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL1742162W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-domain-of-arnheim
+  title: "The Domain of Arnheim"
+  authorIds: [edgar-allan-poe]
+  published: 1847
+  subseries: null
+  canonTier: core
+  synopsis: A fabulously wealthy man spends decades creating the perfect landscape as a work of art - an expansion of the earlier sketch "The Landscape Garden."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/mellonta-tauta
+  title: "Mellonta Tauta"
+  authorIds: [edgar-allan-poe]
+  published: 1849
+  subseries: null
+  canonTier: extended
+  synopsis: A letter written aboard a hot-air balloon in the year 2848 satirizes 19th-century democracy, science and faith in progress from a future vantage.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/hop-frog
+  title: "Hop-Frog"
+  authorIds: [edgar-allan-poe]
+  published: 1849
+  subseries: null
+  canonTier: core
+  synopsis: A crippled jester and the dancing girl who is his only friend are humiliated once too often by a king with an appetite for practical jokes, and the jester offers to design the costumes for the coming masquerade.
+  note: >
+    Subtitled "Or, The Eight Chained Ourang-Outangs." The synopsis stops
+    short of the tale's closing act, deliberately.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/11773857-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL41025W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/von-kempelen-and-his-discovery
+  title: "Von Kempelen and His Discovery"
+  authorIds: [edgar-allan-poe]
+  published: 1849
+  subseries: null
+  canonTier: extended
+  synopsis: A hoax report claiming an obscure chemist has solved the ancient dream of transmuting lead into gold.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/x-ing-a-paragrab
+  title: "X-ing a Paragrab"
+  authorIds: [edgar-allan-poe]
+  published: 1849
+  subseries: null
+  canonTier: extended
+  synopsis: A newspaper feud escalates into typographical chaos when a rival printer, out of the letter "o," sets an entire article using "x" instead.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/landors-cottage
+  title: "Landor's Cottage"
+  authorIds: [edgar-allan-poe]
+  published: 1849
+  subseries: null
+  canonTier: extended
+  synopsis: A companion sketch to "The Domain of Arnheim," describing a wanderer's discovery of an exquisitely landscaped rural cottage.
+  note: Originally subtitled "A Pendant to 'The Domain of Arnheim.'"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+- id: edgar-allan-poe/the-balloon-hoax
+  title: "The Balloon-Hoax"
+  authorIds: [edgar-allan-poe]
+  published: 1844
+  subseries: null
+  canonTier: core
+  synopsis: A fabricated newspaper account, printed and widely believed as real news, of the first manned transatlantic balloon crossing - one of Poe's most successful hoaxes.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/tales/index.htm
+
+# --- Poems, chronological ---
+
+- id: edgar-allan-poe/tamerlane
+  title: "Tamerlane"
+  authorIds: [edgar-allan-poe]
+  published: 1827
+  subseries: null
+  canonTier: core
+  featured: true
+  publishedAs: "a Bostonian"
+  synopsis: >
+    A dying Central Asian conqueror confesses to a friar that he traded love
+    for empire and regrets the bargain. The title poem of Poe's first book,
+    published anonymously when he was eighteen and all but unnoticed at the
+    time.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/11726632-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL41067W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/editions/index.htm
+
+- id: edgar-allan-poe/song-1827
+  title: "Song"
+  authorIds: [edgar-allan-poe]
+  published: 1827
+  subseries: null
+  canonTier: extended
+  synopsis: A short lyric on seeing a former love married to another man.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/imitation
+  title: "Imitation"
+  authorIds: [edgar-allan-poe]
+  published: 1827
+  subseries: null
+  canonTier: extended
+  synopsis: A brief meditation on whether life itself is only a dream within a dream, a theme Poe returns to at length in 1849.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/a-dream-1827
+  title: "A Dream"
+  authorIds: [edgar-allan-poe]
+  published: 1827
+  subseries: null
+  canonTier: extended
+  synopsis: A short lyric on a comforting dream of a lost happiness that waking cannot restore.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/the-lake
+  title: "The Lake - To ——"
+  authorIds: [edgar-allan-poe]
+  published: 1827
+  subseries: null
+  canonTier: core
+  synopsis: A solitary young man finds a dark, terrible joy in an isolated lake, discovering that fear itself can hold a kind of pleasure.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/spirits-of-the-dead
+  title: "Spirits of the Dead"
+  authorIds: [edgar-allan-poe]
+  published: 1827
+  subseries: null
+  canonTier: core
+  synopsis: A meditation addressed to a solitary soul, warning that the spirits of the dead will surround it in the stillness of night.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/evening-star
+  title: "Evening Star"
+  authorIds: [edgar-allan-poe]
+  published: 1827
+  subseries: null
+  canonTier: extended
+  synopsis: A young speaker prefers the cold, distant light of a single star to the moon's overwhelming glory.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/dreams
+  title: "Dreams"
+  authorIds: [edgar-allan-poe]
+  published: 1827
+  subseries: null
+  canonTier: extended
+  synopsis: A short lyric preferring a passionate dream-life to the emptier truths of waking reality.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/stanzas
+  title: "Stanzas"
+  authorIds: [edgar-allan-poe]
+  published: 1827
+  subseries: null
+  canonTier: extended
+  synopsis: A meditation, prefaced by an epigraph from Byron, on hidden harmonies that ordinary minds cannot perceive.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/the-happiest-day
+  title: "The Happiest Day, the Happiest Hour"
+  authorIds: [edgar-allan-poe]
+  published: 1827
+  subseries: null
+  canonTier: extended
+  synopsis: A speaker looks back on youthful ambition and pride as a fever now spent, preferring peace to the pain glory brought.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/to-margaret
+  title: "To Margaret"
+  authorIds: [edgar-allan-poe]
+  published: 1827
+  subseries: null
+  canonTier: extended
+  synopsis: A brief early love lyric, unpublished in Poe's lifetime.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/alone
+  title: "Alone"
+  authorIds: [edgar-allan-poe]
+  published: 1829
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A speaker describes a lifelong difference from everyone around him,
+    tracing his dark, passionate temperament to a childhood shaped by storm
+    and demon rather than ordinary joy. Unpublished in Poe's lifetime,
+    discovered in an autograph album decades after his death, and one of
+    his most widely read poems today.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/to-isaac-lea
+  title: "To Isaac Lea"
+  authorIds: [edgar-allan-poe]
+  published: 1829
+  subseries: null
+  canonTier: extended
+  synopsis: A brief occasional verse addressed to the Philadelphia publisher Isaac Lea, unpublished in Poe's lifetime.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/to-the-river
+  title: "To The River ——"
+  authorIds: [edgar-allan-poe]
+  published: 1829
+  subseries: null
+  canonTier: core
+  synopsis: A lyric addressed to a river, comparing its clear water and dark, hidden bed to a woman's beauty and hidden heart.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/to-1829-bowers-whereat
+  title: "To ——"
+  authorIds: [edgar-allan-poe]
+  published: 1829
+  subseries: null
+  canonTier: extended
+  synopsis: A short love lyric beginning "The bowers whereat, in dreams, I see..."
+  note: One of two same-titled 1829 poems in Al Aaraaf, Tamerlane, and Minor Poems, distinguished here by opening line per Wikipedia's own bibliography.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/to-1829-should-my-early-life
+  title: "To ——"
+  authorIds: [edgar-allan-poe]
+  published: 1829
+  subseries: null
+  canonTier: extended
+  synopsis: A short love lyric beginning "Should my early life seem..."
+  note: One of two same-titled 1829 poems in Al Aaraaf, Tamerlane, and Minor Poems, distinguished here by opening line per Wikipedia's own bibliography.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/romance
+  title: "Romance"
+  authorIds: [edgar-allan-poe]
+  published: 1829
+  subseries: null
+  canonTier: core
+  synopsis: An introductory lyric on Romance as a painted bird that taught the young poet his alphabet of feeling.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/fairy-land
+  title: "Fairy-Land"
+  authorIds: [edgar-allan-poe]
+  published: 1829
+  subseries: null
+  canonTier: extended
+  synopsis: A dreamlike description of a land of huge, drooping moons and formless shadows.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/sonnet-to-science
+  title: "Sonnet - To Science"
+  authorIds: [edgar-allan-poe]
+  published: 1829
+  subseries: null
+  canonTier: core
+  synopsis: A sonnet accusing Science of driving away myth and poetry by stripping the world of its mysteries.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/al-aaraaf
+  title: "Al Aaraaf"
+  authorIds: [edgar-allan-poe]
+  published: 1829
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A long, ambitious poem imagining Al Aaraaf, a wandering star between
+    Heaven and Hell where beauty and art are perfect but where love, being
+    an earthly imperfection, is forbidden. The title poem of Poe's second
+    book, and his most ambitious early work.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://www.eapoe.org/works/editions/index.htm
+
+- id: edgar-allan-poe/an-acrostic
+  title: "An Acrostic"
+  authorIds: [edgar-allan-poe]
+  published: 1829
+  subseries: null
+  canonTier: extended
+  synopsis: A short acrostic love poem, unpublished in Poe's lifetime.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/elizabeth
+  title: "Elizabeth"
+  authorIds: [edgar-allan-poe]
+  published: 1829
+  subseries: null
+  canonTier: extended
+  synopsis: A short acrostic poem spelling out the name Elizabeth Rebecca Herring, unpublished in Poe's lifetime.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/to-helen-1831
+  title: "To Helen"
+  authorIds: [edgar-allan-poe]
+  published: 1831
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A short, famous lyric comparing a woman's beauty to the classical world
+    ("the glory that was Greece, and the grandeur that was Rome"), inspired
+    by Jane Stanard, the mother of a childhood friend.
+  note: The earlier of two poems Poe titled "To Helen" - the second (1848) addresses a different woman, Sarah Helen Whitman.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/a-paean
+  title: "A Paean"
+  authorIds: [edgar-allan-poe]
+  published: 1831
+  subseries: null
+  canonTier: extended
+  synopsis: An early elegy for a dead beloved, later substantially revised into "Lenore" (1843).
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/the-sleeper
+  title: "The Sleeper"
+  authorIds: [edgar-allan-poe]
+  published: 1831
+  subseries: null
+  canonTier: core
+  synopsis: A speaker watches over a sleeping woman at midnight, uncertain whether her stillness is sleep or death.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/the-city-in-the-sea
+  title: "The City in the Sea"
+  authorIds: [edgar-allan-poe]
+  published: 1831
+  subseries: null
+  canonTier: core
+  synopsis: Death sits enthroned in a strange city of the west, its shrines and palaces standing motionless under a still, hell-lit sea.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/the-valley-of-unrest
+  title: "The Valley of Unrest"
+  authorIds: [edgar-allan-poe]
+  published: 1831
+  subseries: null
+  canonTier: core
+  synopsis: A once-peaceful valley, now abandoned by its people, is left restless under skies and flowers that seem to weep.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/israfel
+  title: "Israfel"
+  authorIds: [edgar-allan-poe]
+  published: 1831
+  subseries: null
+  canonTier: core
+  synopsis: A meditation on the Quranic angel Israfel, whose song is so perfect that an earthbound poet could never equal it.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/enigma-1833
+  title: "Enigma"
+  authorIds: [edgar-allan-poe]
+  published: 1833
+  subseries: null
+  canonTier: extended
+  synopsis: A short riddle-poem contributed to a newspaper.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/fanny
+  title: "Fanny"
+  authorIds: [edgar-allan-poe]
+  published: 1833
+  subseries: null
+  canonTier: extended
+  synopsis: A light occasional verse on a young woman's flirtatious reputation.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/the-coliseum
+  title: "The Coliseum"
+  authorIds: [edgar-allan-poe]
+  published: 1833
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A meditation spoken among the ruins of the Roman Colosseum on memory,
+    decay and the eternal power of that decayed grandeur; recited within
+    Poe's own unfinished play "Politian."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+    - https://en.wikipedia.org/wiki/Politian_(play)
+
+- id: edgar-allan-poe/serenade
+  title: "Serenade"
+  authorIds: [edgar-allan-poe]
+  published: 1833
+  subseries: null
+  canonTier: extended
+  synopsis: A short night-song lyric.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/to-one-in-paradise
+  title: "To One in Paradise"
+  authorIds: [edgar-allan-poe]
+  published: 1834
+  subseries: null
+  canonTier: core
+  synopsis: A speaker mourns a lost love who was once his entire world, now gone "in a night, or in a day, in a vision, or in none."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/hymn
+  title: "Hymn"
+  authorIds: [edgar-allan-poe]
+  published: 1835
+  subseries: null
+  canonTier: extended
+  synopsis: A short devotional lyric invoking the Virgin Mary through storm and sorrow.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/to-mary
+  title: "To Mary"
+  authorIds: [edgar-allan-poe]
+  published: 1835
+  subseries: null
+  canonTier: extended
+  synopsis: A short love lyric addressed to a woman named Mary, urging her to trust a devotion that will outlast every rival claim on her heart.
+  note: >
+    A distinct poem from "To Elizabeth" (also 1835), despite a shared later
+    history: revised and retitled "To One Departed" in 1842, then further
+    revised for the Broadway Journal and The Raven and Other Poems in 1845
+    under variants of the title "To F——" / "To Frances."
+  sources:
+    - https://www.eapoe.org/works/info/pp053.htm
+
+- id: edgar-allan-poe/to-elizabeth
+  title: "To Elizabeth"
+  authorIds: [edgar-allan-poe]
+  published: 1835
+  subseries: null
+  canonTier: extended
+  synopsis: A short verse-tribute to Elizabeth Rebecca Herring.
+  note: Republished in revised form as "To F——s S. O——d" in 1845, addressed to a different woman, Frances Sargent Osgood.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/may-queen-ode
+  title: "May Queen Ode"
+  authorIds: [edgar-allan-poe]
+  published: 1836
+  subseries: null
+  canonTier: extended
+  synopsis: A short occasional ode, unpublished in Poe's lifetime.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/spiritual-song
+  title: "Spiritual Song"
+  authorIds: [edgar-allan-poe]
+  published: 1836
+  subseries: null
+  canonTier: extended
+  synopsis: A brief devotional verse, unpublished in Poe's lifetime.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/latin-hymn
+  title: "Latin Hymn"
+  authorIds: [edgar-allan-poe]
+  published: 1836
+  subseries: null
+  canonTier: extended
+  synopsis: A brief hymn fragment written in Latin.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/song-of-triumph
+  title: "Song of Triumph"
+  authorIds: [edgar-allan-poe]
+  published: 1836
+  subseries: null
+  canonTier: extended
+  synopsis: A short victory ode sung within the tale "Epimanes" (later "Four Beasts in One"), celebrating the tyrant Antiochus's mock-triumphal entry into Antioch.
+  note: Embedded verse within "Four Beasts in One," first published alongside it (Southern Literary Messenger, March 1836), the same status as "Latin Hymn" from the same tale.
+  sources:
+    - https://www.eapoe.org/works/info/pp052.htm
+
+- id: edgar-allan-poe/bridal-ballad
+  title: "Bridal Ballad"
+  authorIds: [edgar-allan-poe]
+  published: 1837
+  subseries: null
+  canonTier: core
+  synopsis: A new bride tries to convince herself she is happy in her marriage while the memory of a dead former love will not leave her.
+  note: Originally published simply as "Ballad."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/to-zante
+  title: "To Zante"
+  authorIds: [edgar-allan-poe]
+  published: 1837
+  subseries: null
+  canonTier: core
+  synopsis: A sonnet addressed to the Greek island of Zakynthos, whose beautiful name now only reminds the speaker of a lost love.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/the-haunted-palace
+  title: "The Haunted Palace"
+  authorIds: [edgar-allan-poe]
+  published: 1839
+  subseries: null
+  canonTier: core
+  synopsis: >
+    An allegory of a once-glorious palace overtaken by "evil things, in
+    robes of sorrow," figuring a mind's collapse into madness. Later worked
+    into the text of "The Fall of the House of Usher," recited there by
+    Roderick Usher himself.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/silence-a-sonnet
+  title: "Silence - A Sonnet"
+  authorIds: [edgar-allan-poe]
+  published: 1840
+  subseries: null
+  canonTier: extended
+  synopsis: A sonnet distinguishing the silence of desolate, empty places from a more terrible silence belonging to no living body.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/lines-on-joe-locke
+  title: "Lines on Joe Locke"
+  authorIds: [edgar-allan-poe]
+  published: 1843
+  subseries: null
+  canonTier: extended
+  synopsis: A satirical squib mocking a West Point disciplinary officer, drawn from Poe's own cadet days.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/the-conqueror-worm
+  title: "The Conqueror Worm"
+  authorIds: [edgar-allan-poe]
+  published: 1843
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Angels watch a mimed drama of human life end not in triumph but in the
+    entrance of a blood-red conquering Worm, with Madness and Sin as its
+    only real stars. Later incorporated into "Ligeia" as words the dying
+    Ligeia herself is said to have written.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/lenore
+  title: "Lenore"
+  authorIds: [edgar-allan-poe]
+  published: 1843
+  subseries: null
+  canonTier: core
+  synopsis: Mourners argue over how to grieve a dead young woman, some in hollow ritual and one in furious, honest sorrow.
+  note: A substantially revised version of the earlier poem "A Paean" (1831).
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/dream-land
+  title: "Dream-Land"
+  authorIds: [edgar-allan-poe]
+  published: 1844
+  subseries: null
+  canonTier: core
+  synopsis: A traveler passes through an "ultimate dim Thule," a landscape of bottomless lakes and titan woods beyond ordinary time and space.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/impromptu-to-kate-carol
+  title: "Impromptu. To Kate Carol"
+  authorIds: [edgar-allan-poe]
+  published: 1845
+  subseries: null
+  canonTier: extended
+  synopsis: A short occasional verse addressed to the poet Frances Sargent Osgood, who wrote under the pen name "Kate Carol."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/to-f
+  title: "To F——"
+  authorIds: [edgar-allan-poe]
+  published: 1845
+  subseries: null
+  canonTier: extended
+  synopsis: A short love lyric.
+  note: Republished later the same year as "To Frances."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/eulalie
+  title: "Eulalie"
+  authorIds: [edgar-allan-poe]
+  published: 1845
+  subseries: null
+  canonTier: core
+  synopsis: A speaker describes how marriage to the radiant Eulalie lifted him out of a lifetime of loneliness and sorrow.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/the-raven
+  title: "The Raven"
+  authorIds: [edgar-allan-poe]
+  published: 1845
+  subseries: null
+  canonTier: core
+  featured: true
+  synopsis: >
+    A grieving man's midnight study is visited by a talking raven who
+    answers every question about his lost Lenore with the single word
+    "Nevermore." Made Poe a household name overnight; it was not, by his own
+    account, a financial success.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/8246077-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL41081W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/the-divine-right-of-kings
+  title: "The Divine Right of Kings"
+  authorIds: [edgar-allan-poe]
+  published: 1845
+  subseries: null
+  canonTier: extended
+  synopsis: A brief satirical verse on monarchy.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/stanzas-to-f-s-o
+  title: "Stanzas [To F. S. O.]"
+  authorIds: [edgar-allan-poe]
+  published: 1845
+  subseries: null
+  canonTier: extended
+  synopsis: A short occasional verse addressed to Frances Sargent Osgood, distinct from Poe's other 1845 poems to her.
+  note: A different poem from the 1827 "Stanzas" (Tamerlane and Other Poems); distinguished here by its subtitle, following Mabbott's own practice.
+  sources:
+    - https://www.eapoe.org/works/info/pp080.htm
+
+- id: edgar-allan-poe/a-valentine
+  title: "A Valentine"
+  authorIds: [edgar-allan-poe]
+  published: 1846
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A puzzle-poem addressed to Frances Sargent Osgood, whose name is
+    concealed letter by letter within the lines themselves.
+  note: Originally published as "To Her Whose Name Is Written Below."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/to-m-l-s
+  title: "To M. L. S——"
+  authorIds: [edgar-allan-poe]
+  published: 1847
+  subseries: null
+  canonTier: extended
+  synopsis: A short verse of gratitude addressed to Marie Louise Shew, who nursed Poe's wife Virginia through her final illness.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/ulalume
+  title: "Ulalume"
+  authorIds: [edgar-allan-poe]
+  published: 1847
+  subseries: null
+  canonTier: core
+  synopsis: In the lonesome October of a most immemorial year, a grieving speaker walks an ashen, haunted landscape with his own soul personified beside him as Psyche, who begs him to turn back.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/to-marie-louise
+  title: "To Marie Louise"
+  authorIds: [edgar-allan-poe]
+  published: 1848
+  subseries: null
+  canonTier: extended
+  synopsis: A verse of gratitude and affection addressed to Marie Louise Shew.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/an-enigma
+  title: "An Enigma"
+  authorIds: [edgar-allan-poe]
+  published: 1848
+  subseries: null
+  canonTier: extended
+  synopsis: A riddle sonnet in the style of the era's magazine puzzle-verse, its solution spelled out by hidden letters.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/to-helen-1848
+  title: "To Helen"
+  authorIds: [edgar-allan-poe]
+  published: 1848
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A speaker recalls a single transfixing glimpse of a woman standing in
+    moonlit roses, an image that has shaped every idea of beauty he has had
+    since. Addressed to Sarah Helen Whitman, to whom Poe was briefly
+    engaged; the later of his two poems titled "To Helen."
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/a-dream-within-a-dream
+  title: "A Dream Within a Dream"
+  authorIds: [edgar-allan-poe]
+  published: 1849
+  subseries: null
+  canonTier: core
+  synopsis: A speaker, watching grains of sand slip through his fingers, questions whether anything in life is real or whether it is all only a dream within a dream.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/eldorado
+  title: "Eldorado"
+  authorIds: [edgar-allan-poe]
+  published: 1849
+  subseries: null
+  canonTier: core
+  synopsis: A gallant knight rides in sunshine and in shadow, singing, on a lifelong search for the golden land of Eldorado, until his strength fails him and he asks a passing shade where it can be found.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/for-annie
+  title: "For Annie"
+  authorIds: [edgar-allan-poe]
+  published: 1849
+  subseries: null
+  canonTier: core
+  synopsis: A speaker describes surviving a feverish illness of the soul into a strange, peaceful calm, watched over by the devotion of a woman named Annie.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/to-my-mother
+  title: "To My Mother"
+  authorIds: [edgar-allan-poe]
+  published: 1849
+  subseries: null
+  canonTier: core
+  synopsis: A sonnet of gratitude and love addressed to Poe's mother-in-law and aunt, Maria Clemm, who raised his wife Virginia and cared for him after her death.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/annabel-lee
+  title: "Annabel Lee"
+  authorIds: [edgar-allan-poe]
+  published: 1849
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A speaker mourns a young bride taken from him by envious angels in a
+    kingdom by the sea, insisting their love outlasts even the grave. Sold
+    shortly before Poe's death and published only after it.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/11878632-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL273456W"
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/the-bells
+  title: "The Bells"
+  authorIds: [edgar-allan-poe]
+  published: 1849
+  subseries: null
+  canonTier: core
+  synopsis: Four kinds of bells, from a sleigh's silver jingle to a funeral's iron tolling, trace a life from childhood joy to death, entirely through sound.
+  note: Sold shortly before Poe's death and published only after it.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/poetry-1824
+  title: "Poetry"
+  authorIds: [edgar-allan-poe]
+  published: 1824
+  subseries: null
+  canonTier: apocrypha
+  synopsis: A juvenile fragment, the earliest poem attributed to Poe, unpublished in his lifetime.
+  note: Written at about age 15; not part of any of his own collections.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+# --- Nonfiction, incomplete and disputed works ---
+
+- id: edgar-allan-poe/the-philosophy-of-composition
+  title: "The Philosophy of Composition"
+  authorIds: [edgar-allan-poe]
+  published: 1846
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    An essay claiming to reconstruct, step by calculated step, exactly how
+    Poe composed "The Raven" - his most influential single piece of literary
+    theory, still debated as sincere method or elaborate performance.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/the-rationale-of-verse
+  title: "The Rationale of Verse"
+  authorIds: [edgar-allan-poe]
+  published: 1848
+  subseries: null
+  canonTier: extended
+  synopsis: A long technical essay setting out Poe's own theory of poetic meter and versification.
+  sources:
+    - https://en.wikipedia.org/wiki/Edgar_Allan_Poe_bibliography
+
+- id: edgar-allan-poe/eureka
+  title: "Eureka: A Prose Poem"
+  authorIds: [edgar-allan-poe]
+  published: 1848
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    Poe's longest and last major work, a nearly 40,000-word non-fiction
+    essay proposing an intuitive theory of the origin and fate of the
+    universe, dedicated to Alexander von Humboldt. Received poorly, even by
+    friends, in his lifetime; some of its speculative cosmology has since
+    been noted for anticipating later scientific ideas. Poe called it, only
+    half in jest, more important than the discovery of gravity.
+  # No cover: the work's own Open Library record's only cover is a plain
+  # library-binding scan (barcode and spine sticker, no legible title or
+  # art); checked and rejected as a degraded scan rather than left in.
+  sources:
+    - https://en.wikipedia.org/wiki/Eureka:_A_Prose_Poem
+    - https://www.eapoe.org/works/editions/index.htm
+
+- id: edgar-allan-poe/the-poetic-principle
+  title: "The Poetic Principle"
+  authorIds: [edgar-allan-poe]
+  published: 1850
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    Poe's aesthetic manifesto, arguing that a poem should pursue Beauty
+    alone rather than truth or moral instruction, and that a "long poem"
+    is a contradiction in terms.
+  note: >
+    First delivered as a lecture in Providence in December 1848 and revised
+    for further lectures in Virginia in August 1849, but not published
+    until after Poe's death: Home Journal, August 31, 1850, followed within
+    weeks by Griswold's edition and Sartain's Union Magazine. The lecture
+    dates are often given as its date; the year here is first publication.
+  sources:
+    - https://www.eapoe.org/works/info/petpp.htm
+    - https://en.wikipedia.org/wiki/The_Poetic_Principle
+
+- id: edgar-allan-poe/maelzels-chess-player
+  title: "Maelzel's Chess-Player"
+  authorIds: [edgar-allan-poe]
+  published: 1836
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    An essay dissecting the celebrated chess-playing automaton touring
+    America under Johann Maelzel, arguing through close observation that no
+    true machine could be responsible and a concealed operator must be
+    inside it - an early public display of the analytical method Poe would
+    later dramatize in the Dupin tales.
+  sources:
+    - https://www.eapoe.org/works/info/pemcp.htm
+
+- id: edgar-allan-poe/the-philosophy-of-furniture
+  title: "The Philosophy of Furniture"
+  authorIds: [edgar-allan-poe]
+  published: 1840
+  subseries: null
+  canonTier: extended
+  synopsis: A satirical essay on American interior-decorating taste, contrasting the gaudy over-furnished parlor of the day with Poe's own ideal of restrained, harmonious domestic design.
+  sources:
+    - https://www.eapoe.org/works/info/petpf.htm
+
+- id: edgar-allan-poe/a-few-words-on-secret-writing
+  title: "A Few Words on Secret Writing"
+  authorIds: [edgar-allan-poe]
+  published: 1841
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    An essay on cryptography claiming that human ingenuity cannot construct
+    a cipher that human ingenuity cannot resolve, issued as a public
+    challenge inviting readers to submit ciphers for Poe to solve - the
+    same fascination that resurfaces in "The Gold-Bug."
+  note: Followed by three addenda (August, October and December 1841) reporting on ciphers submitted in response.
+  sources:
+    - https://www.eapoe.org/works/info/peswr.htm
+
+- id: edgar-allan-poe/the-journal-of-julius-rodman
+  title: "The Journal of Julius Rodman"
+  authorIds: [edgar-allan-poe]
+  published: 1840
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    An unfinished serialized adventure novel, framed as the recovered diary
+    of a fictional 1792 expedition that crosses the Rocky Mountains decades
+    before Lewis and Clark. Poe abandoned it after six installments when he
+    left Burton's Gentleman's Magazine.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Journal_of_Julius_Rodman
+
+- id: edgar-allan-poe/the-conchologists-first-book
+  title: "The Conchologist's First Book"
+  authorIds: [edgar-allan-poe]
+  published: 1839
+  subseries: null
+  canonTier: apocrypha
+  authorRole: contributor
+  contributionTitle: "Preface and classification text (after Cuvier); base text and plates are Thomas Wyatt's"
+  synopsis: >
+    An illustrated introductory textbook on shells, published under Poe's
+    name at a Philadelphia publisher's request; its base text and
+    illustrations came from Thomas Wyatt's more expensive Manual of
+    Conchology, but Poe wrote the preface and introduction, translated
+    Georges Cuvier's French classification text, and reorganized the
+    material into a cheaper student edition.
+  note: >
+    The only one of Poe's books to reach a second edition in the United
+    States during his lifetime (a third followed in 1845); real and
+    purchasable, but built on another author's work rather than an original
+    composition, hence apocrypha rather than core or extended. The title
+    page credited it to Poe alone, which the market saw at the time; the
+    surviving record of who wrote which part is closer to a contributor's
+    credit (preface, introduction, a translated classification section)
+    atop Wyatt's base text and plates, which is what authorRole records
+    here.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Conchologist%27s_First_Book
+    - https://www.eapoe.org/works/editions/index.htm
+
+- id: edgar-allan-poe/politian
+  title: "Politian"
+  authorIds: [edgar-allan-poe]
+  published: 1835
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    Poe's only known attempt at a play: a blank-verse tragedy transplanting
+    a real 1825 Kentucky murder case to 16th-century Rome. Only two scenes
+    were ever published, in successive 1835-1836 issues of the Southern
+    Literary Messenger, before Poe abandoned it and returned to short
+    fiction.
+  sources:
+    - https://en.wikipedia.org/wiki/Politian_(play)
