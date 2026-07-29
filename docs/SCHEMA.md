@@ -404,6 +404,34 @@ falls back to search links and OpenLibrary covers when a work has no edition.
   sources: ["https://www.wook.pt/..."]
 ```
 
+### readUrl: a free, legal, complete text
+
+Optional. The direct URL to a **complete, free, legally-hosted** full text of
+this exact edition - Project Gutenberg, Standard Ebooks, an author's own site
+giving a book away, that kind of thing. The app surfaces this as a "Read for
+free" link ahead of the store links, because it is strictly better than
+anything `storeLinks()` can offer: no purchase, no search, the actual book.
+
+```yaml
+- id: edgar-allan-poe/the-narrative-of-arthur-gordon-pym-of-nantucket/standard-ebooks-en
+  workId: edgar-allan-poe/the-narrative-of-arthur-gordon-pym-of-nantucket
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  coverUrl: "https://standardebooks.org/ebooks/edgar-allan-poe/the-narrative-of-arthur-gordon-pym-of-nantucket/downloads/cover.jpg"
+  readUrl: "https://standardebooks.org/ebooks/edgar-allan-poe/the-narrative-of-arthur-gordon-pym-of-nantucket"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/the-narrative-of-arthur-gordon-pym-of-nantucket"
+```
+
+`isbn13` is correctly absent here - Gutenberg and Standard Ebooks editions
+mostly don't have one, and inventing one would be exactly the fabrication
+this schema forbids everywhere else. **Verify the URL actually resolves to
+the complete work before citing it** - a search-results page, an excerpt, or
+a paywalled "preview" is not a `readUrl`, the same bar `sources` already
+holds elsewhere in this file. A sample chapter or a paid Kindle edition goes
+in `sources` like any other citation, never in `readUrl`.
+
 ### Published titles are edition data, not translation
 
 A work's `title` is its **original** title and never changes. A translated
