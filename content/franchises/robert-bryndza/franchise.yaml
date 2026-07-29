@@ -1,0 +1,181 @@
+# SCOPE. This catalogue's own rule is that a wing spans an author's complete
+# published work, not just whichever series prompted the request. Only the
+# crime side was named going in; verification found a second, earlier body of
+# work under the identical byline (see content/authors/robert-bryndza.yaml)
+# that belongs here on the same rule. canonTier records kind of publication,
+# not genre fit - the romantic comedies are core, the same as the crime
+# novels, because they are real, complete novels he wrote under his own name,
+# not a lesser or unrelated shelf. How a new reader should be pointed at one
+# body of work versus the other is a question about entry paths, not about
+# whether both belong here - see works.yaml's header for what is known so far
+# about how the two relate.
+id: robert-bryndza
+name: Robert Bryndza
+kind: author
+description: >
+  Detective Chief Inspector Erika Foster (nine novels, from
+  [[work:robert-bryndza/the-girl-in-the-ice|The Girl in the Ice]], 2016) and
+  private investigator [[work:robert-bryndza/nine-elms|Kate Marshall]] (five
+  novels) anchor two Metropolitan Police and English-Riviera crime series,
+  joined in 2026 by a third following Detective Jamie Day. Before any of
+  them, this Slovakia-based British novelist spent four years as a
+  self-published romantic-comedy author under the same name: the five-novel
+  [[work:robert-bryndza/the-not-so-secret-emails-of-coco-pinchard|Coco
+  Pinchard]] series and the standalone
+  [[work:robert-bryndza/miss-wrong-and-mr-right|Miss Wrong and Mr Right]],
+  still sold today alongside the crime backlist under his own imprint.
+authorIds: [robert-bryndza]
+themePreset: harbour-noir
+features: {}
+globalEvents:
+  include:
+    - ebook-and-self-publishing-2007  # enabled his entire career via KDP
+  exclude:
+    - sept-11-2001                    # lived through it; no book answers it
+    - chain-bookshop-1982             # not relevant (age 3)
+    - online-bookselling-1995         # predates the specific KDP platform that enabled him
+    - financial-crisis-2008           # pre-career; no evidence it shaped the work
+    - prestige-fantasy-adaptation-2011 # he writes crime and romcom, not fantasy
+    - portugal-bailout-2011           # not Portuguese; no direct bearing on his work
+    - covid-19-pandemic-2020          # lived through it; already established author; no evidence it shaped the work
+    - booktok-2020                    # crime author (since 2016); not romance/YA
+
+# startHere solves issue #63's "two audiences, one byline": the wing spans
+# both genres, so the entry paths do the sorting rather than the scope. Each
+# of the three crime series gets its own path, confirmed independent of the
+# others - no shared characters or setting were found anywhere on the
+# publisher's own series pages (Erika Foster: Met Police, London, present
+# day; Kate Marshall: ex-detective turned P.I., Ashdean/South Devon, present
+# day; Jamie Day: rookie Met officer, London, 1987) - and the author's own
+# FAQ states plainly that every book, across every series, "works as a
+# stand-alone story, so you can jump in at any point." A crime reader
+# choosing any of the three lands only on crime; the fifth path is the only
+# door into the romantic comedies, so a reader who wants them can walk that
+# thread without meeting the crime backlist first, and nobody reaches the
+# comedies by accident.
+startHere:
+  paths:
+    - id: everything-in-order
+      title: Everything, in order
+      description: >
+        All 25 works - the five-book Coco Pinchard comedies and the
+        standalone Miss Wrong and Mr Right, then Detective Erika Foster,
+        P.I. Kate Marshall and Detective Jamie Day as they published - in
+        publication order.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+      note: >
+        The genre changes without warning partway through, at the real 2016
+        switch from romantic comedy to crime - a deliberate one-way turn in
+        Bryndza's own career, not a curatorial reshuffle. Also includes
+        Breaking Point, a short story given free to newsletter subscribers
+        rather than sold.
+
+    # Source: https://www.robertbryndza.com/collections/detective-erika-foster-crime-thriller-series
+    # "Robert Bryndza's bestselling Detective Erika Foster crime series...
+    # Published in 31 languages and having sold millions of copies..."
+    - id: start-with-erika-foster
+      title: Start with Erika Foster
+      description: >
+        His breakout series and the natural door into the crime side: a
+        Metropolitan Police detective chief inspector investigating brutal
+        murders across London, from her 2016 debut through her ninth case.
+      workIds: null
+      orderId: robert-bryndza/erika-foster-in-order
+      fit:
+        experience: [new]
+        commitment: [arc]
+      note: >
+        Nine books and counting, with no end announced - a real commitment,
+        and one that skips Kate Marshall, Jamie Day and the earlier romantic
+        comedies entirely.
+
+    # Source: https://www.robertbryndza.com/collections/kate-marshall-private-investigator-crime-series
+    # "Kate Marshall was once a rising star in the London Metropolitan
+    # Police... opens a private detective agency with her trusted friend and
+    # researcher, Tristan Harper... Set in the hauntingly atmospheric coastal
+    # town of Ashdean."
+    - id: try-kate-marshall
+      title: Try Kate Marshall
+      description: >
+        A disgraced ex-detective turned private investigator, working cases
+        along the fog-bound reservoirs and moorland of the English Riviera -
+        a different cast and a different coastline from Erika Foster's
+        London, with no crossover between the two.
+      workIds:
+        - robert-bryndza/nine-elms
+        - robert-bryndza/shadow-sands
+        - robert-bryndza/darkness-falls
+        - robert-bryndza/devils-way
+        - robert-bryndza/the-lost-victim
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [arc]
+      note: >
+        Five books, complete to date, and it skips Erika Foster - his
+        best-known series - along with Jamie Day and the comedies.
+
+    # Source: https://www.robertbryndza.com/blogs/blog/how-the-quiet-kill-became-something-completely-different
+    # "So, completely without planning, I now find myself writing a third
+    # crime thriller series!"
+    - id: try-jamie-day
+      title: Try Jamie Day
+      description: >
+        A period procedural set in 1987 London: a rookie Met officer's first
+        day in plain clothes turns into a hunt for a serial killer. Bryndza's
+        first male lead and his newest series, independent of Erika Foster
+        and Kate Marshall.
+      workIds:
+        - robert-bryndza/the-quiet-kill
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        Only one book exists so far - by the author's own account, it began
+        as an unrelated manuscript that changed direction entirely once
+        Jamie showed up. A second, The Burning Lie, is due March 2027.
+
+    # Source: https://www.robertbryndza.com/pages/faqs, "In which order
+    # should your books be read?" - lists the five Coco Pinchard novels
+    # trilogy-then-novellas, matching the publisher's own book numbers 1-5
+    # on each title's own product page (A Very Coco Christmas is "Coco
+    # Pinchard book #4", Must-Have Toy Story "#5") rather than the years they
+    # published in.
+    - id: start-the-comedies
+      title: Start the Coco Pinchard comedies
+      description: >
+        Four years of romantic comedy about Coco Pinchard rebuilding her
+        life after forty, self-published years before Bryndza wrote his
+        first thriller. Whether this is your first Bryndza or you already
+        know him from Erika Foster, Kate Marshall or Jamie Day, it is a
+        genuine change of genre under the same name, not an earlier draft
+        of the crime writer he became.
+      workIds:
+        - robert-bryndza/the-not-so-secret-emails-of-coco-pinchard
+        - robert-bryndza/coco-pinchards-big-fat-tipsy-wedding
+        - robert-bryndza/coco-pinchard-the-consequences-of-love-and-sex
+        - robert-bryndza/a-very-coco-christmas
+        - robert-bryndza/coco-pinchards-must-have-toy-story
+      orderId: null
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        The two later-published entries are prequel novellas set decades
+        before the trilogy; they are placed last here, after the trilogy
+        they were written to follow, rather than by their publication years.
+        Skips the three crime series and the standalone thriller Fear the
+        Silence entirely, plus the standalone comedy Miss Wrong and Mr
+        Right and the co-written Bitch Hollywood, both from the same years.
+
+sources:
+  - https://www.robertbryndza.com/pages/about
+  - https://www.robertbryndza.com/pages/raven-street-publishing
+  - https://www.robertbryndza.com/collections/detective-erika-foster-crime-thriller-series
+  - https://www.robertbryndza.com/collections/kate-marshall-private-investigator-crime-series
+  - https://www.wikidata.org/wiki/Q28530319

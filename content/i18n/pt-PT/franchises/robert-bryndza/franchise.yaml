@@ -1,0 +1,101 @@
+# Overlay pt-PT. Apenas prosa; id, slugs, títulos de obras e sources não são
+# traduzidos.
+# Os startHere.paths ficam aninhados e são fundidos por id (ver SCHEMA.md,
+# "Nested lists merge by id"): só `title`, `description` e `note`, nunca
+# `workIds`, `orderId` ou `fit`. `note` não é contado por i18n_coverage.py mas
+# É lido pelo wizard de leitura (components/wizard/start-wizard.tsx),
+# confirmado no código da aplicação - por isso é traduzido aqui como
+# qualquer outra prosa.
+# Erika Foster e The Girl in the Ice têm edição portuguesa registada em
+# editions.yaml ("A Rapariga no Gelo", Alma dos Livros); Kate Marshall e Coco
+# Pinchard são citados aqui como nomes de personagem/série, não como títulos
+# de obra. Miss Wrong and Mr Right e The Burning Lie não têm edição
+# portuguesa registada e ficam com o título original.
+- id: robert-bryndza
+  description: >
+    A inspetora-chefe Erika Foster (nove romances, a partir de
+    [[work:robert-bryndza/the-girl-in-the-ice|A Rapariga no Gelo]], 2016) e a
+    investigadora privada [[work:robert-bryndza/nine-elms|Kate Marshall]]
+    (cinco romances) sustentam duas séries policiais, uma na Polícia
+    Metropolitana de Londres e outra na Riviera inglesa, às quais se junta em
+    2026 uma terceira protagonizada pelo detetive Jamie Day. Antes de
+    qualquer uma delas, este romancista britânico radicado na Eslováquia
+    passou quatro anos como autor autopublicado de comédia romântica sob o
+    mesmo nome: a série de cinco romances de
+    [[work:robert-bryndza/the-not-so-secret-emails-of-coco-pinchard|Coco
+    Pinchard]] e o romance independente
+    [[work:robert-bryndza/miss-wrong-and-mr-right|Miss Wrong and Mr Right]],
+    ainda hoje vendidos a par do catálogo policial sob o seu próprio selo
+    editorial.
+  startHere:
+    paths:
+      - id: everything-in-order
+        title: Tudo, por ordem
+        description: >
+          As 25 obras - as cinco comédias de Coco Pinchard e o romance
+          independente Miss Wrong and Mr Right, seguidas pela inspetora-chefe
+          Erika Foster, pela investigadora privada Kate Marshall e pelo
+          detetive Jamie Day - por ordem de publicação.
+        note: >
+          O género muda sem aviso a meio do percurso, na verdadeira mudança
+          de 2016 da comédia romântica para o policial - uma viragem
+          deliberada e sem retorno na carreira do próprio Bryndza, não um
+          reordenamento editorial. Inclui também Breaking Point, um conto
+          oferecido a subscritores da newsletter em vez de vendido.
+
+      - id: start-with-erika-foster
+        title: Comece por Erika Foster
+        description: >
+          A série que o lançou e a porta natural de entrada no lado
+          policial: uma inspetora-chefe da Polícia Metropolitana a investigar
+          homicídios brutais por toda Londres, desde a sua estreia em 2016
+          até ao nono caso.
+        note: >
+          Nove livros e a contar, sem fim anunciado - um compromisso a
+          sério, que não passa nem por Kate Marshall, nem por Jamie Day, nem
+          pelas comédias românticas anteriores.
+
+      - id: try-kate-marshall
+        title: Experimente Kate Marshall
+        description: >
+          Uma ex-detetive caída em desgraça, agora investigadora privada, a
+          trabalhar casos junto às barragens e charnecas enevoadas da Riviera
+          inglesa - um elenco e uma costa diferentes da Londres de Erika
+          Foster, sem qualquer cruzamento entre as duas.
+        note: >
+          Cinco livros, completos até à data, e não passa por Erika Foster -
+          a sua série mais conhecida -, nem por Jamie Day, nem pelas
+          comédias.
+
+      - id: try-jamie-day
+        title: Experimente Jamie Day
+        description: >
+          Um procedimental de época passado na Londres de 1987: o primeiro
+          dia de um agente novato da Polícia Metropolitana à paisana
+          transforma-se na caça a um assassino em série. O primeiro
+          protagonista masculino de Bryndza e a sua série mais recente,
+          independente de Erika Foster e Kate Marshall.
+        note: >
+          Só existe um livro até agora - segundo o próprio autor, começou
+          como um manuscrito sem qualquer relação com isto, que mudou
+          completamente de rumo assim que Jamie apareceu. Está previsto um
+          segundo, The Burning Lie, para março de 2027.
+
+      - id: start-the-comedies
+        title: Comece pelas comédias de Coco Pinchard
+        description: >
+          Quatro anos de comédia romântica sobre Coco Pinchard a reconstruir
+          a vida depois dos quarenta, autopublicados anos antes de Bryndza
+          escrever o seu primeiro thriller. Seja este o seu primeiro
+          contacto com Bryndza ou já o conheça por Erika Foster, Kate
+          Marshall ou Jamie Day, trata-se de uma mudança genuína de género
+          sob o mesmo nome, não um rascunho anterior do escritor policial em
+          que se tornou.
+        note: >
+          As duas entradas publicadas mais tarde são novelas-prelúdio
+          passadas décadas antes da trilogia; ficam colocadas aqui no fim,
+          depois da trilogia que foram escritas para seguir, e não pelos seus
+          anos de publicação. Não passa por nenhuma das três séries
+          policiais nem pelo thriller independente Antes de Dizer Adeus,
+          nem pela comédia independente Miss Wrong and Mr Right, nem por
+          Bitch Hollywood, coescrito, ambos dos mesmos anos.
