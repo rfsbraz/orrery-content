@@ -297,6 +297,43 @@ work sits in the reading spine or the river. Add a value here only when a
 real work needs it; do not pre-populate every wing's novels with an explicit
 `format: novel`.
 
+### translationNote: when the translator is part of the decision
+
+Optional, on a work. `editions.yaml`'s `translator` field is metadata on one
+ISBN - it says who translated *that* printing. It has no way to say that the
+translation itself is a well-known, debated choice a reader makes *before*
+any specific edition enters the picture: which English Dostoevsky, which
+English Proust, which English Cervantes. That is a fact about the work, not
+about a printing, so it belongs on the work, once, not repeated or implied
+across a dozen edition entries.
+
+```yaml
+- id: miguel-de-cervantes/don-quixote
+  title: "Don Quixote"
+  translationNote: >
+    Almost no reader of this wing reads the original Spanish, and which
+    English translation they pick changes the book's register more than
+    is usual even for a classic: Edith Grossman's 2003 translation (the
+    modern standard - fast, comic, colloquial) reads as a different book
+    from John Rutherford's 2000 Penguin Classics version (closer to
+    period cadence, more melancholy) or the older public-domain Ormsby
+    (1885) and Putnam (1949) translations still widely reprinted. This is
+    true of the work regardless of which specific printing a reader buys.
+  sources: [https://...]
+```
+
+**This is rare and curator-judged, the same discipline as `featured`.** Most
+translated works do not need it - "this book has been translated" is true of
+nearly every wing outside the English- and Portuguese-language ones and says
+nothing worth a reader's time. `translationNote` exists only for the smaller
+set where the *divergence between translations* is itself documented and
+consequential - sourced the same as any other claim, never a curator's
+personal preference among translators dressed up as a fact about the work.
+
+It renders nowhere in the app yet (a curator-facing field, like `debated` on
+`orders.yaml`); whether and how to surface it to a reader choosing an edition
+is a separate, later decision.
+
 ### authorRole and canonTier: what belongs in a wing
 
 `authorRole` defaults to `author` and only needs stating when it is something

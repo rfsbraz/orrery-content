@@ -1,0 +1,236 @@
+# Concrete published editions: English, Portuguese (pt-PT) and, for the three
+# works whose most substantial modern edition is a scholarly Spanish critical
+# text rather than a translation, the original-language edition itself.
+#
+# Sourcing: publisher own-catalogue pages (wordsworth-editions.com, wook.pt,
+# bertrand.pt) where reachable; archive.org's per-book metadata (scanned from
+# a real physical copy, cross-checked against its embedded WorldCat/xisbn
+# block) and openlibrary.org's /isbn/ endpoint elsewhere. Every ISBN below
+# carries a valid check digit and resolves at one of those sources to the
+# publisher, year and title recorded against it; none is derived from a prefix.
+#
+# COVERAGE: 6 of 8 works have at least one edition; 11 editions total. La
+# Galatea, Novelas ejemplares and El cerco de Numancia are recorded in their
+# original Spanish (no `title` field, since works.yaml's own `title` already
+# is that language) rather than in translation - each is a real, still-cited
+# scholarly critical edition (Cátedra's Letras Hispánicas series, twice), not
+# a token entry. Viaje del Parnaso and El trato de Argel have no edition here:
+# a repeated search (publisher catalogues, archive.org, Cátedra/Castalia's own
+# critical-edition lines) turned up nothing past pre-ISBN 19th-century
+# reprints for the former and a single non-978 identifier of unclear
+# provenance for the latter - a fact about how thin the market is for
+# Cervantes's earliest, least-read work and one of his two rediscovered early
+# plays, not a research gap.
+#
+# Don Quixote alone carries six editions, matching every translator its
+# work.yaml `translationNote` names (Grossman, Rutherford, Ormsby, Putnam)
+# plus one further public-domain-era translation (Motteux) still in print,
+# and one pt-PT edition. Titles that are NOT the bare "Don Quixote" are
+# edition-specific facts, not typos: Rutherford's Penguin printing carries the
+# full title "The Ingenious Hidalgo Don Quixote de la Mancha" on its own
+# title page (confirmed against the scanned book, not just its catalogue
+# record), matching the Spanish-title convention works.yaml itself uses for
+# this book.
+#
+# Two editions carry a note beyond translator/publisher because the object
+# itself needs one to avoid misleading a reader:
+#   - The Wordsworth Classics Don Quixote is Peter Motteux's 18th-century
+#     translation, not Ormsby's - worth flagging since Wordsworth is also a
+#     byword for cheap Ormsby reprints elsewhere, and this one specifically
+#     is not that.
+#   - The Edições Húmus "Entremezes" is only the eight one-act entremeses,
+#     not the eight full-length comedias also bound into the 1615 volume
+#     this catalogue records as one work - a genuinely partial edition, not
+#     an abridgement, and said so plainly rather than left for a buyer to
+#     discover after purchase.
+#
+# Region check: every pt-PT ISBN below carries a 978-972 or 978-989 prefix
+# (Portugal); none is a 978-85/978-65 (Brazil) edition mistagged.
+
+- id: miguel-de-cervantes/don-quixote/ecco-2003-grossman-en
+  workId: miguel-de-cervantes/don-quixote
+  isbn13: "9780060188702"
+  language: en
+  title: "Don Quixote"
+  translator: "Edith Grossman"
+  format: hardcover
+  publisher: Ecco
+  year: 2003
+  sources:
+    - https://archive.org/metadata/isbn_9780060188702
+    - https://en.wikipedia.org/wiki/Don_Quixote
+
+- id: miguel-de-cervantes/don-quixote/penguin-2001-rutherford-en
+  workId: miguel-de-cervantes/don-quixote
+  isbn13: "9780140449099"
+  language: en
+  title: "The Ingenious Hidalgo Don Quixote de la Mancha"
+  translator: "John Rutherford"
+  format: paperback
+  publisher: Penguin Books
+  year: 2001
+  note: >
+    Title as printed on this Penguin Classics printing's own title page
+    (confirmed against the scanned book, not only its catalogue record) -
+    the fuller Spanish-mirroring title, not the bare "Don Quixote" other
+    English editions here use.
+  sources:
+    - https://archive.org/metadata/ingenioushidalgo0000cerv_b0c4
+
+- id: miguel-de-cervantes/don-quixote/modern-library-1998-putnam-en
+  workId: miguel-de-cervantes/don-quixote
+  isbn13: "9780679602866"
+  language: en
+  title: "Don Quixote"
+  translator: "Samuel Putnam"
+  format: hardcover
+  publisher: Modern Library
+  year: 1998
+  note: >
+    This printing's own by-statement: "translated, with a critical text
+    based on the first editions of 1605 and 1615 ... by Samuel Putnam" -
+    Putnam's 1949 translation, reissued.
+  sources:
+    - https://archive.org/details/donquixote0000cerv
+    - https://openlibrary.org/isbn/9780679602866.json
+
+- id: miguel-de-cervantes/don-quixote/norton-1981-ormsby-en
+  workId: miguel-de-cervantes/don-quixote
+  isbn13: "9780393090185"
+  language: en
+  title: "Don Quixote"
+  translator: "John Ormsby, revised by Joseph R. Jones and Kenneth Douglas"
+  format: paperback
+  publisher: W. W. Norton (Norton Critical Edition)
+  year: 1981
+  note: >
+    The public-domain Ormsby translation itself, revised for this Norton
+    Critical Edition rather than reprinted unaltered - the same base text
+    most other 20th-century translators used, per this work's
+    translationNote. Widely held in library catalogues (dozens of
+    institutional records cite this exact ISBN); wwnorton.com's own current
+    catalogue no longer resolves this ISBN, so record status is uncertain -
+    likely superseded rather than reprinted.
+  sources:
+    - https://en.wikipedia.org/wiki/Don_Quixote
+    - https://openlibrary.org/isbn/9780393090185.json
+
+- id: miguel-de-cervantes/don-quixote/wordsworth-1993-motteux-en
+  workId: miguel-de-cervantes/don-quixote
+  isbn13: "9781853260360"
+  language: en
+  title: "Don Quixote"
+  translator: "P. A. Motteux"
+  format: paperback
+  publisher: Wordsworth Editions
+  year: 1993
+  note: >
+    Peter Motteux's 18th-century translation, not Ormsby's - confirmed on
+    the publisher's own current listing ("Translated by P. A. Motteux");
+    still in print at time of sourcing.
+  sources:
+    - https://www.wordsworth-editions.com/product/don-quixote/
+    - https://openlibrary.org/isbn/1853260363.json
+
+- id: miguel-de-cervantes/don-quixote/dom-quixote-2017-pt
+  workId: miguel-de-cervantes/don-quixote
+  isbn13: "9789722057011"
+  language: pt-PT
+  title: "Dom Quixote de La Mancha"
+  format: hardcover
+  publisher: Publicações Dom Quixote
+  year: 2017
+  note: >
+    Single volume combining both parts (published 1605 and 1615), matching
+    this catalogue's one-work treatment of Don Quixote; introduction by
+    Maria Fernanda de Abreu. No translator credited on the product listing.
+  sources:
+    - https://www.wook.pt/livro/dom-quixote-de-la-mancha-miguel-de-cervantes/16219836
+
+- id: miguel-de-cervantes/la-galatea/catedra-1995-es
+  workId: miguel-de-cervantes/la-galatea
+  isbn13: "9788437613154"
+  language: es
+  format: paperback
+  publisher: Cátedra (Letras Hispánicas)
+  year: 1995
+  note: >
+    Original-language critical edition, edited by Francisco López Estrada
+    and María Teresa López García-Berdoy; no `title` recorded since the
+    work's own title is already this edition's language. No English or
+    Portuguese translation of La Galatea was found in print anywhere
+    searched - unlike the rest of this bibliography, it has essentially no
+    modern non-Spanish publishing history, which is itself the honest
+    coverage fact for this work.
+  sources:
+    - https://openlibrary.org/isbn/9788437613154.json
+    - https://archive.org/details/lagalatea00cerv
+
+- id: miguel-de-cervantes/novelas-ejemplares/bertrand-2016-pt
+  workId: miguel-de-cervantes/novelas-ejemplares
+  isbn13: "9789722531733"
+  language: pt-PT
+  title: "Novelas Exemplares"
+  translator: "Aquilino Ribeiro"
+  format: paperback
+  publisher: Bertrand Editora
+  year: 2016
+  note: >
+    Aquilino Ribeiro's own celebrated but famously free rendering, not a
+    literal translation - the publisher's own synopsis says as much
+    ("é mais Aquilino do que Cervantes que aqui aparece"), so a reader
+    reaching for a strictly faithful Novelas ejemplares should know this
+    edition is closer to a Portuguese master novelist's retelling.
+  sources:
+    - https://www.wook.pt/livro/novelas-exemplares-miguel-de-cervantes-saavedra-aquilino-ribeiro/17385011
+
+- id: miguel-de-cervantes/ocho-comedias-y-ocho-entremeses/humus-2022-pt
+  workId: miguel-de-cervantes/ocho-comedias-y-ocho-entremeses
+  isbn13: "9789897557934"
+  language: pt-PT
+  title: "Entremezes"
+  format: paperback
+  publisher: Edições Húmus
+  year: 2022
+  note: >
+    Covers only the eight one-act entremeses from the 1615 volume - not the
+    eight full-length comedias also bound into it, which this catalogue
+    records as one work with them. A genuinely partial edition rather than
+    an abridgement: a reader wanting the comedias will not find them here.
+    Recorded anyway, with this note, because the alternative (no entry)
+    would hide that a real, in-print Portuguese Cervantes drama edition
+    exists at all.
+  sources:
+    - https://www.wook.pt/livro/entremezes-miguel-de-cervantes/27438581
+
+- id: miguel-de-cervantes/el-cerco-de-numancia/catedra-1984-es
+  workId: miguel-de-cervantes/el-cerco-de-numancia
+  isbn13: "9788437604466"
+  language: es
+  format: paperback
+  publisher: Cátedra (Letras Hispánicas)
+  year: 1984
+  note: >
+    Original-language critical edition; no `title` recorded since the
+    work's own title is already this edition's language. Same ISBN carries
+    at least a 4th printing (Open Library dates a copy to 2004), so this
+    has stayed in print across multiple runs rather than being a one-off.
+  sources:
+    - https://archive.org/details/elcercodenumanci0000cerv_w2q2
+    - https://openlibrary.org/isbn/9788437604466.json
+
+- id: miguel-de-cervantes/los-trabajos-de-persiles-y-sigismunda/hackett-2009-en
+  workId: miguel-de-cervantes/los-trabajos-de-persiles-y-sigismunda
+  isbn13: "9780872209701"
+  language: en
+  title: "The Trials of Persiles and Sigismunda: A Northern Story"
+  translator: "Celia Richmond Weller and Clark A. Colahan"
+  publisher: Hackett Publishing Company
+  year: 2009
+  note: >
+    Format (hardcover vs paperback) not recorded - Open Library's record
+    for this ISBN lists a second ISBN (9780872209718) against the same
+    listing with no physical-format field on either, and which ISBN maps
+    to which binding is not stated anywhere in the record.
+  sources:
+    - https://openlibrary.org/isbn/9780872209701.json

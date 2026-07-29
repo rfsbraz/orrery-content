@@ -439,6 +439,14 @@ def check_asset_pixels(loc, entity_id, value, path, grammar=None):
                      f"which takes the --opaque path")
     elif regime == "plate":
         pass  # keyed, never dissolved; the app's plate mask is the edge (§4)
+    elif regime == "artifact":
+        # Drawn edge, forced --no-dissolve, and trimmed to content by
+        # prepare_asset.py - by the time this measures it, the transparent
+        # margin outside the artifact's own border is already gone, so
+        # reading near-100% opaque here is the correctly-filed case, not a
+        # lost alpha channel. See _edge_regime's docstring: "its edges
+        # legitimately run solid."
+        pass
     elif opaque >= OPAQUE_MAX:
         report(f"{entity_id}: sketch '{value}' is {opaque:.0%} opaque - it has "
                  f"lost its alpha and will render as a rectangle sitting on the "
@@ -702,6 +710,15 @@ def main():
             if "featured" in w and not isinstance(w.get("featured"), bool):
                 err(loc, f"{wid}: featured must be true or false, got "
                          f"{w.get('featured')!r}")
+            # `translationNote` is curator prose (SCHEMA.md) about how the
+            # choice of English translation itself changes the book, not
+            # metadata on any one edition - the only shape check worth doing
+            # is that it is actually prose, since there is nothing else to
+            # validate about a sourced editorial judgement.
+            tn = w.get("translationNote")
+            if tn is not None and not isinstance(tn, str):
+                err(loc, f"{wid}: translationNote must be a string, got "
+                         f"{tn!r}")
             # `published` must be a bare year integer. A full date (1974-03-26)
             # parses as a string in the app, and every consumer of this field is
             # year arithmetic - River layers, era spans, decade rules, era-reader
