@@ -1,0 +1,96 @@
+# FRANCHISE-SPECIFIC events only. Author-LIFE events live on the author
+# entity (content/authors/edgar-allan-poe.yaml), since they follow the
+# person across any franchise. Shared world/culture events live in
+# content/events/global.yaml. Inline references use [[type:id|text]] and
+# must resolve.
+#
+# These three are publication-history and reception events: what happened
+# to the WORK and its reputation rather than to Poe the person, which is
+# why they sit here rather than as lifeEvents. All three are cross-checked
+# against the Poe Society of Baltimore's own chronology (eapoe.org) plus,
+# for the detective-fiction lineage and the Griswold forgeries, independent
+# corroboration on Wikipedia's own cited biographies (Quinn, Silverman).
+
+- id: rue-morgue-invents-detective-fiction-1841
+  organisation: artifact-spread
+  illustration_type: document-facsimile
+  images_required: 1
+  date: 1841
+  title: "\"The Murders in the Rue Morgue\" invents the detective story"
+  scope: culture
+  reach: franchise
+  impact: high
+  description: >
+    [[work:edgar-allan-poe/the-murders-in-the-rue-morgue|The Murders in the
+    Rue Morgue]] appears in Graham's Magazine in April 1841, the same year
+    circulation under Poe's editorship climbs toward nearly 37,000. Poe
+    called it a "tale of ratiocination"; it is now widely credited as the
+    first modern detective story, introducing in C. Auguste Dupin the
+    amateur analyst, the baffled official police, and the companion-narrator
+    who tells the case after the fact, a pattern the genre repeats for the
+    next century and more. Arthur Conan Doyle, whose Sherlock Holmes stories
+    openly echo the arrangement, wrote of Poe's detective tales: "Each is a
+    root from which a whole literature has developed... Where was the
+    detective story until Poe breathed the breath of life into it?"
+  spoilerAfter: null
+  sources:
+    - https://www.eapoe.org/geninfo/poechron.htm
+    - https://en.wikipedia.org/wiki/The_Murders_in_the_Rue_Morgue
+    - https://en.wikipedia.org/wiki/Sherlock_Holmes
+
+- id: the-raven-overnight-fame-1845
+  organisation: mosaic
+  illustration_type: press-media-collage
+  images_required: 1
+  date: 1845
+  title: "\"The Raven\" makes him famous overnight, and pays him about nine dollars"
+  scope: culture
+  reach: franchise
+  impact: high
+  description: >
+    [[work:edgar-allan-poe/the-raven|The Raven]] appears in the New York
+    Evening Mirror on January 29, 1845, and is an immediate sensation,
+    reprinted across the country within weeks. It makes Poe, until then a
+    respected but not famous magazine writer, a household name for the
+    first time in his life; he is paid only about nine to fifteen dollars
+    for it (accounts differ on the exact figure) and never sees anything
+    like the financial reward the poem's fame would suggest. His own
+    explanation of how he wrote it,
+    [[work:edgar-allan-poe/the-philosophy-of-composition|The Philosophy of
+    Composition]] (1846), is by his own later admission largely a
+    performance rather than a true account: the most probable record has
+    him writing the poem in late 1844, at the Brennan farm in upper
+    Manhattan, with none of the calculated step-by-step method the essay
+    describes.
+  spoilerAfter: null
+  sources:
+    - https://www.eapoe.org/geninfo/poechron.htm
+
+- id: griswold-character-assassination-1850
+  organisation: artifact-spread
+  illustration_type: document-facsimile
+  images_required: 1
+  date: 1850
+  dateRange: "1842-1850"
+  title: Griswold's posthumous obituary and memoir shape his reputation for a century
+  scope: culture
+  reach: franchise
+  impact: high
+  description: >
+    Rufus Griswold, an anthologist and critic whose work Poe had already
+    reviewed harshly, replaces Poe as editor of Graham's Magazine in May
+    1842; despite the rivalry, Poe later names Griswold his literary
+    executor. Two days after Poe's death, Griswold publishes an unsigned,
+    hostile obituary in the New York Tribune under the byline "Ludwig,"
+    widely reprinted; his 1850 edition of Poe's collected Works then adds a
+    "Memoir of the Author" recasting Poe as a depraved, unstable man of no
+    real character, illustrated with letters now known to have been altered
+    or invented outright by Griswold himself. The portrait sticks for
+    decades, shaping how Poe is read and taught for a century before later
+    scholarship dismantles it; Sarah Helen Whitman's Edgar Poe and His
+    Critics (1860) is among the first sustained rebuttals.
+  spoilerAfter: null
+  sources:
+    - https://www.eapoe.org/geninfo/poechron.htm
+    - https://www.eapoe.org/people/grisworw.htm
+    - https://www.eapoe.org/people/whitmash.htm

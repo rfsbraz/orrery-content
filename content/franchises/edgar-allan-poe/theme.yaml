@@ -1,0 +1,130 @@
+# Branding for the Edgar Allan Poe wing (see Orrery CONCEPT SS6 and
+# docs/SCHEMA.md#themeyaml).
+#
+# The register is 1840s American gothic interior, not Victorian gaslamp
+# London and not a modern horror-paperback palette: candlelight in a shut
+# room, not a shadow in a street. Checked against the catalogue's existing
+# horror-adjacent wings (scripts/theme_digest.py) to hold a genuinely
+# different hue rather than reusing King's warm oxblood-on-brown-black or
+# any of the three existing gold accents (Sanderson/Jordan's clean metal,
+# Pratchett's warm vellum, Peixoto's sunbaked adobe).
+#
+# `art` (below) was checked against Stephen King specifically: the wing
+# nearest this one on every other axis (displayFace fraunces and signature
+# beam both already claimed by King, and his bg #15110d sits close to this
+# wing's own near-black). King draws modern small-town Maine in heavy,
+# grainy scratchboard cut like a woodcut, black doing the work. This wing
+# stays 1830s-40s American print/interior culture and draws with a fine
+# steel-engraver's hatched line instead - the actual illustration
+# technology of Poe's own magazines - so the two read as different hands
+# even sharing a face and a signature shape.
+preset: tarnished-gothic
+palette:
+  bg: "#0d0b12"        # a cold black with a violet cast rather than King's
+                       # warm brown-black (#15110d) - midnight rather than
+                       # firelit, closer to ink than to embers
+  surface: "#171320"   # a shade lifted, still cold, for cards
+  ink: "#e9e4da"       # pale aged bone/parchment, warm against the cold
+                       # background - AA-checked, high contrast
+  muted: "#8f8698"     # cool violet-grey for metadata
+  accent: "#9c7a3d"    # a tarnished, oxidised brass - one guttering candle
+                       # in an otherwise dark room, not a clean or bright
+                       # gold. Deliberately duller and darker than every
+                       # other gold in the catalogue (see the check above);
+                       # this one is old metal going dark, not shine
+displayFace: fraunces  # from the app's implemented set (fraunces |
+                       # instrument-serif | sourceSerif | spectral); the most
+                       # overtly Romantic of them, matching prose that is
+                       # ornate and first-person-obsessive rather than the
+                       # plain, commercial register sourceSerif already
+                       # carries for this catalogue's procedural crime wings
+signature: beam        # a single beam the works string along - the
+                       # recurring image of one fixed source of light in the
+                       # dark that Poe returns to across the bibliography:
+                       # the lamp-light streaming in "The Raven", the
+                       # crescent of light through the crevice in "The Pit
+                       # and the Pendulum", the single candle in a walled
+                       # vault. Already used by Coben, Peixoto and King, each
+                       # for an unrelated reason; here it is closer to
+                       # literal than any of those three
+art:
+  emblem:
+    object: >
+      A single steel dip-pen, its nib sprung from overuse, laid across a
+      galley proof sheet slashed with a critic's cuts and deletions - the
+      marks illegible as text, just ink struck through ink.
+    why: >
+      Poe spent most of his working life as a magazine editor and reviewer
+      before he was anything else - the Southern Literary Messenger,
+      Burton's, Graham's, his own Broadway Journal - and was infamous in
+      his own lifetime for the severity of his notices, earning the
+      nickname "the Tomahawk Man" for how he cut other writers' work in
+      print. The object is the editor's desk, not the horror writer's: it
+      carries the decade of unglamorous magazine labor that funded and
+      surrounded the fiction, and it is a tool doing damage to *someone
+      else's* pages, which keeps it clear of any one tale's own reveal.
+  motifs:
+    - thin, hand-sewn pamphlet volumes, unsold and stacked, string still
+      tied around them
+    - a steel dip-pen and inkwell on a cluttered editor's desk, galley
+      proofs underneath
+    - a single candle or oil lamp burning in an otherwise dark room, its
+      light caught on one nearby surface and nothing past it
+    - a shut door, wall or shutter with only a seam or crevice of light
+      showing through
+    - a sealed letter, or a corked bottle with a curled paper inside, wax
+      dripped and stamped
+    - a mourning token - black crepe, a dark-bordered card, a pressed
+      flower kept under glass
+    - a magazine masthead being set or a press mid-run, ink not yet dry
+    - a rented room's bare furniture - one chair, a narrow bed, a window
+      onto brick or river, nothing decorative
+  atmosphere: >
+    Close, interior and candlelit - one fixed source of light holding back
+    a room's worth of dark, never a haunted moor or a fog-bound street.
+    The dread is domestic and confined rather than staged: a shut door, a
+    seam of light, a sound not yet explained. The three registers this
+    author actually wrote in stay visible rather than collapsing into one
+    horror mood - Gothic interiors sit alongside the cold exactness of the
+    ratiocination tales (a room read like a diagram, nothing supernatural
+    in it) and the plain grief of the late elegies (a chair, a window, an
+    absence). Wit and hoax get their due too: several of these motifs (the
+    sealed letter, the masthead, the press) are as much about a newsroom
+    trick played straight-faced as they are about terror.
+  lineCharacter: >
+    A fine steel-engraver's line - the actual illustration technology of
+    Poe's own magazines - built from close, even, repeated hatching as if
+    cut with a burin rather than laid with a brush or a loaded dip-pen.
+    Controlled and exact, never a wash, never a tremor; where a form needs
+    to go dark it earns it through more passes of hatching, not through a
+    flooded pool of ink.
+  backgroundTexture: >
+    Aged rag paper, faintly toned as if by years under candlelight rather
+    than any painted wash, with fine laid chain-lines visible and the
+    occasional scatter of foxing - period papermaking, not parchment
+    fantasy or scratchboard grain.
+  accentUse: >
+    Tarnished brass on exactly one element per image, never a fill: a
+    candle flame, a sliver of lamplight through a crevice, a wax seal, or
+    gilt lettering worn thin on a book spine.
+  avoid:
+    - drawing a tale's own climax or reveal - no bricked-up niche or
+      trowel, no heart or lifted floorboard, no cat found behind a wall,
+      no ape at a window, no shrouded figure filling a doorway, no
+      dismantled body, no card left in a rack. The scene stops one beat
+      before the payoff, on premise and atmosphere, never the solution
+    - the raven-on-a-bust silhouette - the single most reproduced Poe
+      image, and the genre's own marketing shorthand for him
+    - British Victorian gaslamp fog, moors or a cobwebbed castle - this is
+      1830s-40s America, not a Hammer horror set
+    - skeletons, tombstones, bats or other Halloween-costume gothic props
+    - graphic gore, blood spatter or slasher staging - the dread stays
+      implied and interior
+    - modern mass-market horror-paperback cover styling
+    - legible text on any pamphlet, proof, letter or masthead
+notes: >
+  A shut, candlelit room rather than a haunted moor or a modern slasher's
+  palette: cold near-black, aged bone for text, and exactly one tarnished
+  point of warm light. No raven silhouette, no dripping blood, no
+  Halloween-costume gothic - the dread is interior and the palette stays
+  restrained rather than illustrating the genre literally.

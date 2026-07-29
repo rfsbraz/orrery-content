@@ -1,0 +1,164 @@
+# Overlay pt-PT do autor: bio + prosa dos lifeEvents (title + description).
+# Os lifeEvents ficam aninhados sob o autor e são fundidos por id (ver
+# SCHEMA.md, "Nested lists merge by id"); datas, impact, organisation e
+# sources nunca se traduzem, nem o nome do autor. A nota do pseudónimo "a
+# Bostonian" também não é traduzida, seguindo a mesma convenção já adotada
+# em robert-jordan.yaml e jk-rowling.yaml (as notas de `pseudonyms` ficam de
+# fora da tradução ao longo do catálogo).
+- id: edgar-allan-poe
+  bio: >
+    Escritor, poeta, editor e crítico literário norte-americano, nascido
+    Edgar Poe em Boston, filho dos atores itinerantes David e Eliza Poe. O
+    pai abandonou a família em 1810 e a mãe morreu de tuberculose no ano
+    seguinte; o pequeno Poe, com dois anos, foi acolhido, mas nunca
+    formalmente adotado, por John e Frances Allan, de Richmond, na
+    Virgínia, que lhe deram o nome sob o qual escreveu. Um ano na
+    Universidade da Virgínia e uma passagem por West Point terminaram ambos
+    numa rutura com o pai adotivo por causa de dívidas de jogo, e por 1827
+    já se tinha voltado para a escrita e para o Exército sob nome falso.
+    Passou o resto da carreira a mover-se entre Baltimore, Richmond, a
+    Filadélfia e Nova Iorque como editor e crítico de revistas, tornando-se
+    um dos primeiros americanos a tentar viver apenas da escrita. Em 1836,
+    aos 27 anos, casou com a prima de 13 anos, Virginia Clemm, que morreu
+    de tuberculose em 1847. É-lhe atribuída a invenção do conto policial
+    moderno em [[work:edgar-allan-poe/the-murders-in-the-rue-morgue|The
+    Murders in the Rue Morgue]] (1841), um contributo significativo para o
+    surgimento da ficção científica, e a escrita de alguns dos contos e
+    poemas mais duradouros da língua inglesa, de
+    [[work:edgar-allan-poe/the-fall-of-the-house-of-usher|The Fall of the
+    House of Usher]] a [[work:edgar-allan-poe/the-raven|The Raven]] (1845),
+    o poema que o tornou um nome conhecido sem alguma vez lhe render
+    dinheiro. Morreu em Baltimore a 7 de outubro de 1849, quatro dias
+    depois de ser encontrado incoerente e com roupas que não eram suas; a
+    causa nunca foi apurada, e tem sido atribuída a doença, alcoolismo,
+    outros abusos de substâncias e suicídio, entre outras explicações.
+  lifeEvents:
+    - id: edgar-allan-poe-born-1809
+      title: Nasce em Boston, numa família de atores itinerantes
+      description: >
+        Nasce Edgar Poe, filho dos atores David e Eliza Poe. Órfão antes
+        dos três anos, é criado em Richmond, na Virgínia, por John e
+        Frances Allan, que nunca o adotam mas lhe dão o nome sob o qual se
+        torna famoso.
+
+    - id: edgar-allan-poe-allan-break-army-1827
+      title: Rompe com John Allan por dívidas de jogo e alista-se como
+        "Edgar A. Perry"
+      description: >
+        Em março de 1827, Poe e o pai adotivo, John Allan, desentendem-se
+        por 2000 dólares em dívidas de jogo contraídas por Poe na
+        Universidade da Virgínia; Allan recusa-se a pagá-las e Poe deixa
+        Richmond rumo a Baltimore. A 26 de maio alista-se como soldado no
+        Exército dos Estados Unidos sob o nome falso "Edgar A. Perry". No
+        mesmo ano, o seu primeiro livro,
+        [[work:edgar-allan-poe/tamerlane|Tamerlane and Other Poems]],
+        aparece anonimamente como obra de "a Bostonian" (um bostoniano). É
+        a primeira de duas ruturas com Allan; a segunda, em West Point
+        quatro anos depois, será definitiva.
+
+    - id: edgar-allan-poe-west-point-dismissal-1831
+      title: Provoca a própria expulsão de West Point; a rutura com Allan
+        torna-se definitiva
+      description: >
+        Depois de a mãe adotiva, Frances Allan, morrer em fevereiro de 1829
+        e de John Allan voltar a casar no ano seguinte, Poe entra em West
+        Point em junho de 1830 com a bênção relutante de Allan mas sem
+        reconciliação verdadeira. Querendo sair e sem conseguir o
+        consentimento de Allan para se demitir, deixa deliberadamente de
+        comparecer a instrução, aulas e capela a partir de 27 de janeiro de
+        1831; segue-se um conselho de guerra a 8 de fevereiro e a expulsão
+        a 6 de março. A rutura nunca é reparada: quando Allan morre a 27 de
+        março de 1834, o nome de Poe é totalmente omitido do testamento, e
+        não herda nada de uma fortuna que de outro modo o teria sustentado
+        para toda a vida.
+
+    - id: edgar-allan-poe-marries-virginia-clemm-1836
+      title: Casa com a prima de 13 anos, Virginia Clemm
+      description: >
+        Poe, com 27 anos, casa com Virginia Clemm, sua prima, ainda sem 14
+        anos, numa cerimónia privada ao final da tarde numa pensão de
+        Richmond, oficiada pelo reverendo Amasa Converse; os dois, com a
+        mãe de Virginia, Maria Clemm, já partilhavam casa desde 1835. A
+        licença de casamento de Richmond regista a idade de Virginia como
+        21 anos, com um atestado de uma amiga da família a confirmá-lo;
+        como o pai dela já tinha morrido, a idade falsa permitiu que o
+        casamento se realizasse sem o consentimento de um progenitor.
+        Virginia permanece mulher de Poe até à sua morte, onze anos depois,
+        e o luto por ela atravessa grande parte do que escreve a partir daí.
+
+    - id: edgar-allan-poe-magazine-editor-years-1846
+      title: Dez anos a tentar viver só da pena, como editor de outros
+      description: >
+        Poe passa o núcleo produtivo da carreira ao serviço de revistas
+        alheias: o Southern Literary Messenger a partir de setembro de
+        1835, a Burton's Gentleman's Magazine a partir de maio de 1839, e
+        depois a Graham's Magazine a partir de 1841, onde a sua direção
+        coincide com uma tiragem que sobe de cerca de 5000 para quase
+        37 000 exemplares, sem lhe dar alguma vez propriedade ou um
+        rendimento estável. Um plano há muito acalentado para uma revista
+        inteiramente sua, anunciado pela primeira vez em 1840 como a Penn e
+        depois retomado como a Stylus, nunca reúne subscritores
+        suficientes para arrancar. A aproximação mais próxima é o Broadway
+        Journal, do qual se torna editor em fevereiro de 1845 e, por
+        outubro, único proprietário; já carregado de dívidas, colapsa a 3
+        de janeiro de 1846. É um dos primeiros americanos a tentar sustentar
+        uma família apenas a escrever e a editar, e durante uma década
+        mal resulta.
+
+    - id: edgar-allan-poe-virginia-death-1847
+      title: Virginia morre de tuberculose na casa de Fordham
+      description: >
+        Virginia Poe morre de tuberculose a 30 de janeiro de 1847, na
+        pequena casa de Fordham que a família arrendara desde a primavera
+        anterior; é sepultada a 2 de fevereiro na cripta da família
+        Valentine, na Dutch Reformed Church. A sua doença vinha a
+        agravar-se desde uma primeira hemorragia enquanto cantava, cinco
+        anos antes. O luto por ela atravessa abertamente os poemas dos
+        últimos anos de Poe, entre eles
+        [[work:edgar-allan-poe/ulalume|Ulalume]],
+        [[work:edgar-allan-poe/annabel-lee|Annabel Lee]],
+        [[work:edgar-allan-poe/for-annie|For Annie]] e
+        [[work:edgar-allan-poe/the-bells|The Bells]], e em
+        [[work:edgar-allan-poe/to-my-mother|To My Mother]], dirigido a
+        Maria Clemm, que cuidou de ambos.
+
+    - id: edgar-allan-poe-whitman-engagement-ends-1848
+      title: Um noivado quebrado com Sarah Helen Whitman encerra o seu
+        último namoro
+      description: >
+        Poe corteja a poeta de Providence Sarah Helen Whitman a partir do
+        outono de 1848, o namoro por trás de
+        [[work:edgar-allan-poe/to-helen-1848|To Helen]] desse ano; obtém
+        uma promessa condicional de casamento, dependente da sua
+        abstinência total de álcool. Falha a condição, e a 23 de dezembro
+        de 1848 Whitman rompe o noivado; a mãe dela também trabalhara
+        contra a união ao longo de todo o processo. É o último namoro sério
+        de Poe antes da sua morte, no ano seguinte. Whitman sobrevive-lhe
+        quase três décadas e, em 1860, publica Edgar Poe and His Critics,
+        uma das primeiras refutações sustentadas do retrato póstumo de Poe
+        traçado por Rufus Griswold.
+
+    - id: edgar-allan-poe-death-baltimore-1849
+      title: Encontrado em sofrimento em Baltimore, morto quatro dias
+        depois, a causa nunca apurada
+      description: >
+        A 27 de setembro de 1849, Poe deixa Richmond rumo a Nova Iorque,
+        recém-noivo da namorada de infância Elmira Royster Shelton e
+        acabado de jurar na Sons of Temperance. Chega a Baltimore no dia
+        seguinte, e depois desaparece do registo durante quase uma semana.
+        A 3 de outubro é encontrado em grande sofrimento em Ryan's Fourth
+        Ward Polls, uma taberna a servir de assembleia de voto no dia das
+        eleições, vestindo roupas gastas e mal ajustadas que não parecem
+        ser suas; ainda traz consigo uma bengala, também não sua, tirada
+        por engano do consultório de um médico de Richmond dias antes.
+        Levado para o Washington College Hospital, alterna entre
+        consciência e inconsciência ao longo de vários dias e morre a 7 de
+        outubro sem alguma vez conseguir explicar com coerência o que lhe
+        aconteceu no tempo em que desapareceu. Não sobrevive nenhuma
+        certidão de óbito; a única anotação oficial é uma contagem de
+        mortalidade de jornal que regista "congestão cerebral". A causa
+        tem sido desde então atribuída, sem acordo, a doença, alcoolismo,
+        outros abusos de substâncias, suicídio, até um assalto, e o
+        veredicto da Poe Society of Baltimore, após a mais completa
+        revisão documental, é que os factos disponíveis "não permitem
+        chegar a nenhuma conclusão certa".
