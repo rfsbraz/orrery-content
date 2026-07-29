@@ -297,6 +297,43 @@ work sits in the reading spine or the river. Add a value here only when a
 real work needs it; do not pre-populate every wing's novels with an explicit
 `format: novel`.
 
+### translationNote: when the translator is part of the decision
+
+Optional, on a work. `editions.yaml`'s `translator` field is metadata on one
+ISBN - it says who translated *that* printing. It has no way to say that the
+translation itself is a well-known, debated choice a reader makes *before*
+any specific edition enters the picture: which English Dostoevsky, which
+English Proust, which English Cervantes. That is a fact about the work, not
+about a printing, so it belongs on the work, once, not repeated or implied
+across a dozen edition entries.
+
+```yaml
+- id: miguel-de-cervantes/don-quixote
+  title: "Don Quixote"
+  translationNote: >
+    Almost no reader of this wing reads the original Spanish, and which
+    English translation they pick changes the book's register more than
+    is usual even for a classic: Edith Grossman's 2003 translation (the
+    modern standard - fast, comic, colloquial) reads as a different book
+    from John Rutherford's 2000 Penguin Classics version (closer to
+    period cadence, more melancholy) or the older public-domain Ormsby
+    (1885) and Putnam (1949) translations still widely reprinted. This is
+    true of the work regardless of which specific printing a reader buys.
+  sources: [https://...]
+```
+
+**This is rare and curator-judged, the same discipline as `featured`.** Most
+translated works do not need it - "this book has been translated" is true of
+nearly every wing outside the English- and Portuguese-language ones and says
+nothing worth a reader's time. `translationNote` exists only for the smaller
+set where the *divergence between translations* is itself documented and
+consequential - sourced the same as any other claim, never a curator's
+personal preference among translators dressed up as a fact about the work.
+
+It renders nowhere in the app yet (a curator-facing field, like `debated` on
+`orders.yaml`); whether and how to surface it to a reader choosing an edition
+is a separate, later decision.
+
 ### authorRole and canonTier: what belongs in a wing
 
 `authorRole` defaults to `author` and only needs stating when it is something
@@ -682,12 +719,36 @@ Only reference images you can justify:
 
 - **Wikimedia Commons / Wikipedia** - check the file's licence; most are CC BY,
   CC BY-SA, or public domain. **Record the licence and the author in
-  `*Credit`.** This is the best source for author portraits.
+  `*Credit`.** This is the best source for author portraits. An author's
+  Wikidata entity (`P18`) can point at a Commons file the Wikipedia infobox
+  never picked up - worth checking, but still read that file's own licence,
+  never take Wikidata's word for it.
+- **Openverse, full aggregation** (`api.openverse.org`, never a raw Flickr
+  search) - indexes CC-licensed Flickr plus a dozen other providers under one
+  API; usually the best source for a living author Commons has nothing on.
+  Verify the licence on the actual result, source platforms mislabel often.
+- **Literary festival / book-fair official photography** (check for a
+  festival's own CC-licensed Flickr/media account, and whether a Wikimedia
+  photo-a-thon has ever covered it) and **non-English Wikipedia infoboxes**
+  (a different language edition sometimes has a photo the English one never
+  picked up) - both feed back into an ordinary Commons/Flickr file whose own
+  licence still has to be read, never assumed from where it was found.
+- **Library of Congress Prints & Photographs** (`loc.gov/pictures`) - strong
+  for authors whose career predates good Commons coverage; read the record's
+  own rights-statement field, "not evaluated" is not clearance.
 - **OpenLibrary covers** - fine to hot-link; credit OpenLibrary. **But see the
   laundering rule below: OpenLibrary is a permitted host, not a blanket
   permission for whatever it happens to be hosting.**
-- **Publisher press/media pages** - usually permitted for editorial use;
-  cite the page in `*Source`.
+- **Publisher / author press-media pages** - only where the page's own terms
+  explicitly permit editorial use; cite the terms page itself in `*Source`,
+  not just the image. Often the only real source for an actively-publicised
+  living bestseller, since their author photo is a paid commission released
+  through the publisher rather than donated to the commons.
+- **Museum "open access" collections** (Smithsonian, Getty Open Content) -
+  only the specific holdings an institution has explicitly marked open or
+  public domain. Most museum portraiture, including most of the UK National
+  Portrait Gallery's own collection, stays copyrighted regardless of being
+  viewable online; do not infer a licence from visibility.
 - **Never** scrape a retailer's jacket image, never take an image with no
   discoverable licence, and never link something behind a paywall or hotlink
   ban. If you cannot establish the rights, **leave the field empty** - the app

@@ -191,6 +191,35 @@ even when it is true and well sourced.
 For the recently dead, the obituary window is a gift: a great deal gets said
 carefully, once, and then never revisited.
 
+## Interviews and articles: promotion is not a moment
+
+An interview or feature is a **source**, not automatically a **subject**. Every
+origin story already in this catalogue came from one - Bryndza's "if I didn't
+do it soon, I never would" pivot into crime, the Kate Bush *50 Words for Snow*
+seed for *The Girl in the Ice*, Rowling's Guardian disclosure. That's not new.
+What's worth naming explicitly is the bar, because authors do press for every
+book, and a wing over-mined for coverage produces exactly what this stage
+exists to prevent: entries that are really just publicity with a date on them.
+
+**An interview or article earns its own aura entry only when it is the origin
+or first disclosure of something that reshapes how a specific work or era is
+understood** - a stated inspiration named nowhere else, a revealed
+writing-process fact, a correction to the received story (item 6 above), a
+controversy that measurably changed reception. Never because the author *did*
+press for a book; every book on the shelf has press.
+
+**The test: if you removed the interview, would the fact still be knowable
+some other way** (jacket copy, a plot summary, common knowledge)? If yes, it
+isn't aura, it's promotion - it belongs in `sources:` on whatever entry it's
+supporting, not as an entry of its own. If the fact only exists because the
+author said it in that specific piece, and it changes a reading, it clears
+the bar.
+
+**Hold the line with a test, not a count.** Don't cap interview-sourced
+entries at some number per wing - a wing with three genuine disclosures and a
+wing that force-fits three mediocre ones to hit a quota look identical by
+count alone. Apply the same test to the tenth candidate as the first.
+
 ## Density: sparse, but never dark
 
 The aura's job is to be sparse and load-bearing. A franchise that gains twenty

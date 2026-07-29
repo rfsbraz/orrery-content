@@ -1,0 +1,140 @@
+# A wing spans an author's complete published work, not the character or
+# series they are best known for. Rowling's shelf is unusual for how many
+# separate threads that produces: the seven-novel Harry Potter series and
+# its stage continuation, a self-contained Fantastic Beasts screenplay
+# trilogy in the same fictional world, one standalone novel under her own
+# name, an eight-novel crime series under the revealed pseudonym Robert
+# Galbraith, two standalone children's novels, and a handful of companion
+# and charity pieces. All of it sits in this one wing as subseries rather
+# than as separate franchises, including the Galbraith novels - a revealed
+# pseudonym on solo-written work is the same shape as Stephen King writing
+# as Richard Bachman, not a different author (works.yaml's header has the
+# full sourcing and the Fantastic Beasts authorship correction).
+#
+# Capabilities are auto-detected from what the data provides (docs/SCHEMA.md).
+# events.yaml holds four franchise events (the quiet 1997 launch, the 2002
+# Stouffer lawsuit, the 2007 series finale, the 2016 Cursed Child premiere),
+# so river and companion are live. globalEvents now carries one include (the
+# 2020 pandemic, tied to The Ickabog's free lockdown-era release) after ten
+# candidates were considered and excluded - see the block below. orders.yaml
+# and startHere are live too: two thread-scoped orders (Harry Potter,
+# Cormoran Strike) and a three-path wizard, so the wizard is on. editions.yaml
+# carries 57 editions across 26 of the 37 works (English originals plus the
+# Editorial Presença pt-PT run), so editions is live as well.
+id: jk-rowling
+name: J. K. Rowling
+kind: author
+description: >
+  The complete published work of J. K. Rowling: the seven-novel
+  [[work:jk-rowling/harry-potter-and-the-philosophers-stone|Harry Potter]]
+  series (1997-2007) and its stage continuation
+  [[work:jk-rowling/harry-potter-and-the-cursed-child|Harry Potter and the
+  Cursed Child]], the self-contained
+  [[work:jk-rowling/fantastic-beasts-and-where-to-find-them-original-screenplay|
+  Fantastic Beasts]] screenplay trilogy, a novel for adults under her own
+  name, the [[work:jk-rowling/the-cuckoos-calling|Cormoran Strike]] crime
+  series published as Robert Galbraith, and two standalone children's novels.
+authorIds: [jk-rowling]
+themePreset: manuscript-ink
+globalEvents:
+  include:
+    - covid-19-pandemic-2020  # The Ickabog's pandemic-era online release and donation campaign
+  exclude:
+    - sept-11-2001            # lived through it; no book answers it
+    - financial-crisis-2008   # lived through it; no book answers it
+    - fantasy-paperback-boom-1965  # inherited the category; work doesn't engage the event
+    - carnation-revolution-1974    # not Portuguese; event does not resonate with her work
+    - chain-bookshop-1982          # industry infrastructure; work does not engage the event
+    - online-bookselling-1995      # infrastructure for distribution, not content
+    - ebook-and-self-publishing-2007  # distribution format after main series ended
+    - prestige-fantasy-adaptation-2011  # cultural shift after her work was done; no influence
+    - booktok-2020                 # platform for existing work; didn't shape creation
+    - portugal-bailout-2011        # not Portuguese; event does not resonate with her work
+
+# "Where to start" - powers the guided wizard. This shelf's real entry-path
+# question isn't the Harry Potter novels, which have one unambiguous door and
+# no debate; it's whether the OTHER major thread needs Potter at all. It
+# doesn't, and that's not our own inference - see the Cormoran Strike order's
+# sourcing. Three paths: the famous, correct door into Harry Potter; the
+# door into Cormoran Strike that assumes nothing about it; and everything.
+# No path for the three Fantastic Beasts screenplays or the standalone
+# novels - searched for and not found: no publisher, critic or community
+# guide treating either as a recommended way IN to this shelf, as opposed to
+# something a reader meets once already inside it.
+startHere:
+  paths:
+    # Source: https://www.jkrowling.com/book/harry-potter-cursed-child/
+    # "Harry Potter and the Cursed Child is the eighth story in the Harry
+    # Potter series and the first official Harry Potter story to be
+    # presented on stage." Her own site frames it as a continuation of the
+    # seven novels, not a separate work - see jk-rowling/harry-potter above.
+    - id: start-with-harry-potter
+      title: Start with Harry Potter
+      description: >
+        The seven novels, in the order Rowling wrote them, plus the stage
+        sequel that follows them directly. The correct door for a first-time
+        reader of this shelf - nothing else here assumes you've read it, and
+        everything else is easier to place once you have. The cost is the
+        commitment itself: eight books before you've sampled anything else
+        she's written.
+      workIds: null
+      orderId: jk-rowling/harry-potter
+      fit:
+        experience: [new]
+        commitment: [arc, complete]
+      note: >
+        The three in-universe companion volumes - a Hogwarts textbook, a
+        history of Quidditch, a book of wizarding fairy tales - sit outside
+        this walk. They're reference texts about the world, not chapters in
+        the story, and can be picked up alongside the novels whenever you
+        like.
+    # Source: https://www.newstatesman.com/culture/2013/07/what-did-critics-really-think-cuckoos-calling-they-knew-it-was-j-k-rowling
+    # (15 July 2013) - critics at the Times, the Mail, Publishers Weekly and
+    # Library Journal praised The Cuckoo's Calling as a strong debut in the
+    # four months before Rowling's authorship broke.
+    # Source: https://www.cbsnews.com/news/jk-rowling-robert-galbraith-pseudonym-was-not-a-marketing-ploy/
+    # (24 July 2013) - Rowling: "I was yearning to go back to the beginning
+    # of a writing career in this new genre, to work without hype or
+    # expectation and to receive totally unvarnished feedback."
+    - id: start-with-cormoran-strike
+      title: Start with Cormoran Strike
+      description: >
+        Eight contemporary detective novels under the pen name Robert
+        Galbraith, following one private investigator's cases through a
+        present-day London with no magic in it - written and originally
+        published to stand entirely on their own. The cost is skipping the
+        Wizarding World altogether, at least for now.
+      workIds: null
+      orderId: jk-rowling/cormoran-strike
+      fit:
+        experience: [new, returning]
+        commitment: [arc, complete]
+      note: >
+        No Harry Potter required, and not just in theory: reviewers praised
+        The Cuckoo's Calling by name for months before anyone knew who Robert
+        Galbraith was. If you've never read a word of Harry Potter, this is
+        designed to work exactly the way you'd be reading it.
+    - id: the-complete-shelf
+      title: Everything, in order
+      description: >
+        All 37 works in publication order - the seven novels and the stage
+        sequel, the Fantastic Beasts screenplay trilogy, the standalone adult
+        novel and the two standalone children's novels, the eight Cormoran Strike
+        novels, and the nonfiction, companion and charity pieces around them.
+        One writer, four genres, two names, nearly three decades. The cost is
+        pace: this is the long way through, with every thread above woven
+        back in rather than walked on its own.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+
+# No images block: the wing page does not render a franchise header image
+# (the field was pulled from the page template), so nothing here would
+# reach a reader. The author portrait and per-work covers carry the
+# imagery instead.
+sources:
+  - https://en.wikipedia.org/wiki/J._K._Rowling
+  - https://en.wikipedia.org/wiki/J._K._Rowling_bibliography
+  - https://www.jkrowling.com/

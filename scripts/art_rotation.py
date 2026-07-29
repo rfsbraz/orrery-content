@@ -386,8 +386,16 @@ def fetch_issues(slug: str):
         # and reported the wing as eleven events instead of twelve - which
         # moved a composition type from at-the-cap to over-it. A parser that
         # drops rows quietly is exactly the failure this script exists to end.
+        #
+        # The character class also has to include "/": every franchise-event
+        # id is "<slug>/<entity-id>" (see events.yaml), and without "/" here
+        # the match still succeeds but silently anchors past the slash,
+        # capturing only the tail of the id. That mismatched every
+        # franchise-event id against the content file's real id, so the whole
+        # class of asset was read as "no issue at all" - eight of twelve
+        # dropped from the john-shirley wing's count without an error.
         title = re.sub(r"\s*\([^)]*\)\s*$", "", node["title"])
-        m = re.search(r"-\s*([A-Za-z0-9._-]+)\s*$", title)
+        m = re.search(r"-\s*([A-Za-z0-9._/-]+)\s*$", title)
         if not m:
             continue
         comments = node["comments"]["nodes"]
