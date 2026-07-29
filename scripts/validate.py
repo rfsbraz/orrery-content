@@ -960,6 +960,14 @@ def main():
             # without a title is a missed opportunity but not an error.
             if ed.get("title") and not lang:
                 err(loc, f"{eid}: has a published title but no language")
+            # readUrl claims a complete, free, legally-hosted text - the app
+            # surfaces it ahead of every store link, so a bad one sends a
+            # reader nowhere with no purchase fallback to save them. Shape
+            # only; SCHEMA.md's "verify it resolves to the complete work" bar
+            # is a sourcing judgement no regex can make.
+            read_url = ed.get("readUrl")
+            if read_url and not str(read_url).startswith(("http://", "https://")):
+                err(loc, f"{eid}: readUrl '{read_url}' is not a URL")
 
     # --- theme values the app can honour ------------------------------------
     # `displayFace` and `signature` both fall back silently in the app when it
