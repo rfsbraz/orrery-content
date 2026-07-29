@@ -342,6 +342,17 @@ Re-derive, do not read a previous report.
   when it is missing, but the warning only catches an absent date - a birth
   event that never says where, or drops the childhood geography, is a
   `press-archaeology` finding.
+- **Does every pseudonym with a real story have a dated event?** Read the
+  author's `pseudonyms` list against its `lifeEvents`. A `note` explaining
+  why a name was adopted, or how it was revealed, is not itself an event -
+  it is a fact sitting where a dated, sourced moment should be. Nothing
+  validates this; it shipped wrong on two wings in the same audit (Richard
+  Bachman's 1977 adoption, Mary Westmacott's adoption and exposure, the
+  latter's own note carrying the wrong exposure year for years because
+  nothing near it was ever checked). Not every pseudonym needs this - a
+  shared house name or a boyhood byline with no stated motive and no reveal
+  is a fact, not a story, and correctly stays a note. A `press-archaeology`
+  finding either way.
 - **Is the wing proportionate to its size?** Compare event count against work
   count and span across the franchises in the repo. The largest wing having the
   thinnest aura is a finding, and it is the kind that only shows up when you look

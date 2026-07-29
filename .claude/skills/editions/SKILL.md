@@ -333,6 +333,44 @@ here so nobody assumes the data models something it does not. Until it does:
 Never silently pick one and drop the distinction. A reader who buys the
 abridged *Moving Finger* on this site's recommendation was misled by omission.
 
+## Public domain: link the free, legal, complete text
+
+A buyable edition and a readable one are not the same claim, and for a public
+domain work the second is usually the more useful one. `editions.yaml` carries
+an optional `readUrl` (`docs/SCHEMA.md`, "readUrl: a free, legal, complete
+text") that points a reader straight at a full text they can read for nothing,
+today, instead of only a store link for a book with no rights left to sell.
+
+**When it applies:** the work is genuinely in the public domain in the
+reader's jurisdiction (author dead 70+ years is the safe floor - check, do not
+assume from the century) and a complete, real digitisation exists. Standard
+Ebooks and Project Gutenberg are the two sources worth trusting: both publish
+the whole text, not a preview, and both are stable, permanent URLs. Ignore
+lookalikes - a "free preview" from a retailer, a paywalled "public domain"
+reprint, a scan missing chapters - `readUrl` is a promise of a complete text,
+and a partial one is worse than none because it reads as verified.
+
+**readUrl is not a substitute for `isbn13` and vice versa.** A work can carry
+both: a modern paid edition for the reader who wants the object, and a
+`readUrl` on whichever edition (paid or not) actually has the free complete
+text. They serve different readers and the schema does not force a choice.
+
+**One entry, one edition, per real digitisation** - do not invent a padding
+edition just to hang a `readUrl` off it if the digitisation is not itself an
+edition worth recording; add the field to the edition it actually describes.
+The Poe wing is the model: 239 Standard Ebooks / Project Gutenberg editions
+were added across the catalogue and `readUrl` backfilled onto all of them,
+verified afterward by rendering a real page and counting live "Read for free"
+links rather than trusting the write (121 confirmed across both locales - see
+"Guards must fail before you trust them" in the shared trap registry; the same
+discipline applies to a bulk field backfill as to a validator).
+
+**Prefer Standard Ebooks over raw Gutenberg when both exist** - Standard
+Ebooks re-typesets and proofreads the Gutenberg text and its URLs are
+per-work-per-edition, which is what this field needs; a bare Gutenberg
+`/ebooks/<id>` link is an acceptable fallback when no Standard Ebooks edition
+exists yet.
+
 ## Sourcing
 
 **Source ranking, work down it:**
@@ -424,6 +462,13 @@ check this across works; check it yourself.
 work title translated after the fact. Spot-check any title that reads like a
 literal translation of the English - the fingerprint of the error this skill
 exists to prevent.
+
+**8. Public domain works with no `readUrl`.** A work whose author has been
+dead 70+ years and has no `readUrl` anywhere in its editions is a gap, not a
+neutral state - check Standard Ebooks and Project Gutenberg before moving on.
+`validate.py` only checks that a `readUrl` present is shaped like a URL; it
+does not (and cannot) know a public domain work is missing one, so this one is
+on the auditor.
 
 ## Hard rules
 

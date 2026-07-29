@@ -120,6 +120,21 @@ Ranked by how much they change a reading. Spend your effort at the top.
    journalist embroidery.
 3. **Career ruptures.** Rejected, dropped, bankrupted, sued, banned, filmed,
    suddenly rich. The events that visibly change what the author writes next.
+   **A pen name is one of these, checked separately from everything else
+   here.** `franchise-research` records `pseudonyms` with a `note` explaining
+   why one exists; that note is not an event, and this stage owes the dated
+   one. For every entry with a real adoption motive or a reveal, check
+   whether either end has its own `lifeEvent` - not whether the pseudonym is
+   *mentioned* somewhere, whether the moment is dated and sourced. This
+   shipped wrong twice in the same audit: Richard Bachman had a 1985
+   unmasking event but nothing dated the 1977 adoption and its actual motive
+   (testing whether success was talent or luck), and Mary Westmacott had no
+   dated event on either end - worse, the note's own exposure year was
+   simply wrong (1949, corrected to 1946 against the Christie estate's own
+   site) and nothing near it was ever checked closely enough to catch it. A
+   pseudonym with no real story - a shared house name, a boyhood byline -
+   does not need this: if the note states only what happened (which books,
+   which years) with no stated motive and no reveal, it stays a note.
 4. **Reception at the time, where it differs from reception now.** A book savaged
    on publication and canonised later, or the reverse, tells a reader something
    the current blurb never will.
