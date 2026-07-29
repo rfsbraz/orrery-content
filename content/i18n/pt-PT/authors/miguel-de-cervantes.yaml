@@ -1,0 +1,192 @@
+# Overlay pt-PT do autor: bio + prosa dos lifeEvents (title + description).
+# Os lifeEvents ficam aninhados sob o autor e são fundidos por id (ver
+# SCHEMA.md, "Nested lists merge by id"); datas, impact, organisation e
+# sources nunca se traduzem, nem o nome do autor.
+#
+# NOMES PRÓPRIOS: "Dom Quixote" é a forma convencionada em português (não
+# transliteração do espanhol "Don Quijote" nem tradução literal do inglês) -
+# ver a mesma nota, com a fonte, no cabeçalho do works.yaml desta ala.
+#
+# cervantes-persiles-dedication-1616 (organisation: epigraph) traduz title e
+# description mas omite quote: o campo base é um dístico verbatim de um
+# antigo romance castelhano, citado pelo próprio Cervantes na dedicatória
+# real que escreveu, sem tradução portuguesa publicada encontrada - e não se
+# inventa uma para uma citação atribuída a uma pessoa real, a mesma regra já
+# registada em anna-sewell.yaml. Fica em espanhol, verbatim, tal como no
+# texto base (que também não o verte para inglês).
+
+- id: miguel-de-cervantes
+  bio: >
+    Nasceu em Alcalá de Henares, o segundo filho de um cirurgião-barbeiro
+    itinerante. Pouco se sabe da sua infância ou educação. Por 1569 estava
+    em Roma, ao serviço de um cardeal; em 1570 alistou-se num terço de
+    infantaria espanhol e, em outubro de 1571, ficou gravemente ferido na
+    batalha de Lepanto, com dois ferimentos no peito e um terceiro que lhe
+    deixou a mão esquerda permanentemente inutilizada - a lesão por trás da
+    alcunha que o acompanhou a vida inteira, "El manco de Lepanto" ("o
+    maneta de Lepanto"), uma ferida de que se orgulhava e falava até ao fim
+    da vida. Manteve-se ao serviço no Mediterrâneo até setembro de 1575,
+    quando a galé que o trazia de regresso foi capturada por corsários
+    otomanos e ficou retido para resgate em Argel. A família conseguiu
+    resgatar o irmão em 1577, mas não a ele; fez quatro tentativas de fuga
+    ao longo de quase cinco anos, até que a ordem religiosa dos Trinitários
+    o resgatou em 1580. De volta a Espanha, casou com Catalina de Salazar y
+    Palacios em 1584 e teve uma filha ilegítima, Isabel, com Ana Franca de
+    Rojas. [[work:miguel-de-cervantes/la-galatea|La Galatea]] (1585), o seu
+    primeiro romance, passou quase despercebida, e nas duas décadas
+    seguintes sustentou-se como agente de compras da Armada espanhola e
+    depois como cobrador de impostos, preso duas vezes por questões
+    surgidas do trabalho - em 1592 por uma requisição de trigo não
+    autorizada, e de novo em 1597 por um défice nas suas contas de
+    impostos. A primeira parte de
+    [[work:miguel-de-cervantes/don-quixote|Dom Quixote]], publicada em
+    janeiro de 1605, quando tinha 57 anos, foi um sucesso popular imediato
+    e trouxe-lhe, pela primeira vez, um certo grau de segurança financeira,
+    ainda que a continuação tenha sido adiada por uma década e depois
+    precipitada para a imprensa pela versão de um impostor não autorizado.
+    Os seus últimos anos produtivos, entre 1613 e 1616, foram os mais
+    prolíficos: as Novelas ejemplares, a segunda parte concluída de Dom
+    Quixote, Ocho comedias y ocho entremeses, e o Viaje del Parnaso surgem
+    todos num intervalo de três anos. Aderiu à Ordem Terceira de São
+    Francisco, como leigo, em julho de 1613. Morreu em Madrid a 22 de abril
+    de 1616, dias depois de terminar a dedicatória de
+    [[work:miguel-de-cervantes/los-trabajos-de-persiles-y-sigismunda|Los
+    trabajos de Persiles y Sigismunda]], o romance que considerava a sua
+    melhor obra, e foi sepultado no Convento das Trinitárias Descalças.
+  lifeEvents:
+    - id: cervantes-born-1547
+      title: Nasce em Alcalá de Henares
+      description: >
+        Nasce em Alcalá de Henares, uma cidade universitária perto de
+        Madrid, um dos sete filhos de um pai cirurgião-barbeiro itinerante
+        que ia mudando a família de terra em terra - por Córdova, Sevilha,
+        Toledo e Madrid - atrás de trabalho e a fugir das próprias dívidas.
+        Cervantes não teve educação universitária. A data de 29 de setembro
+        é a tradicional, reconstruída a partir do seu batismo em Santa
+        María la Mayor, e não de qualquer registo de nascimento que tenha
+        sobrevivido.
+
+    - id: cervantes-lepanto-1571
+      title: Ferido na batalha de Lepanto
+      description: >
+        Navegando com a frota da Liga Santa a bordo da Marquesa, Cervantes
+        combate na batalha naval que quebra o poder marítimo otomano no
+        Mediterrâneo, comandando, segundo consta, um pequeno esquife de
+        doze homens apesar de um acesso de febre que devia tê-lo mantido no
+        porão. Recebe três ferimentos - dois no peito, e um terceiro que
+        lhe deixa a mão esquerda permanentemente inutilizada. A lesão
+        dá-lhe a alcunha que o acompanha para o resto da vida, "el manco de
+        Lepanto": manco significa aleijado ou inutilizado, não amputado - a
+        mão ficou presa ao braço, mas inútil para o resto da vida. Usou o
+        título com orgulho até ao fim, e no Viaje del Parnaso, publicado
+        dois anos antes de morrer, escreveu ter "perdido o movimento da mão
+        esquerda pela glória da direita".
+
+    - id: cervantes-algiers-captivity-1575
+      title: Capturado e escravizado em Argel
+      description: >
+        Regressando de Nápoles a bordo da galé Sol, Cervantes e o seu irmão
+        mais novo, Rodrigo, são capturados por corsários otomanos ao largo
+        da costa catalã, a 26 de setembro de 1575, e ficam retidos para
+        resgate em Argel, em vez de vendidos diretamente como escravos.
+        Rodrigo é resgatado em 1577; a família de Cervantes não consegue
+        reunir a quantia pedida por ele, e este permanece. Ao longo de
+        quase cinco anos, organiza ou junta-se a quatro tentativas de fuga,
+        todas elas traídas ou descobertas antes de terem êxito, e em todas
+        insiste que o plano fora só seu, para que os companheiros de
+        cativeiro não partilhassem o castigo. Frades trinitários
+        resgatam-no em 1580, ao que consta pouco antes de os seus captores
+        planearem embarcá-lo rumo a Constantinopla, onde a fuga teria sido
+        praticamente impossível. O cativeiro fornece o material para uma
+        das suas mais antigas peças que sobrevivem,
+        [[work:miguel-de-cervantes/el-trato-de-argel|El trato de Argel]],
+        e para o conto do Cativo, contado dentro de
+        [[work:miguel-de-cervantes/don-quixote|Dom Quixote]].
+
+    - id: cervantes-seville-imprisonment-1597
+      title: Preso em Sevilha por um desfalque nas contas dos impostos
+      description: >
+        De volta a Espanha, Cervantes passa as décadas de 1580 e 1590 num
+        trabalho administrativo pouco glamoroso: fornecedor da Armada
+        espanhola a partir de 1587, requisitando trigo e azeite por toda a
+        província de Sevilha, e depois cobrador de impostos a partir de
+        1594, casa a casa, a cobrar impostos em atraso devidos à coroa.
+        Ambos os cargos põem em risco a sua liberdade. Em 1592 é preso em
+        Castro del Río, em Córdova, depois de o arcebispado de Sevilha o
+        excomungar por causa de um carregamento de trigo da Igreja que
+        tinha requisitado sem autorização. Depois, em 1597, um banco que
+        guardava os seus recibos de impostos colapsa; uma ordem real de 6
+        de setembro dá-lhe trinta dias para justificar um desfalque de
+        quase 80 000 maravedis, e ele passa vários meses, entre setembro e
+        dezembro, na Cárcel Real de Sevilla (a Prisão Real de Sevilha). O
+        prólogo de Dom Quixote diz que o livro foi "engendrado numa
+        prisão" - se isso quer dizer que começou a escrevê-lo ali, ou
+        apenas que a ideia lhe surgiu ali, é uma questão em aberto, e os
+        cervantistas nem sequer concordam sobre a qual das suas duas
+        prisões documentadas se refere: uns defendem Sevilha, em 1597,
+        outros a estadia anterior em Castro del Río, em 1592.
+
+    - id: cervantes-don-quixote-published-1605
+      title: Dom Quixote torna-o famoso, aos 57 anos
+      description: >
+        Vinte anos depois da receção discreta de La Galatea, e já bem
+        dentro de uma segunda carreira pouco glamorosa como fornecedor e
+        cobrador de impostos, Cervantes publica a primeira parte de
+        [[work:miguel-de-cervantes/don-quixote|Dom Quixote]] a 16 de
+        janeiro de 1605. Esgota a primeira tiragem de Madrid em poucos
+        meses, chega a mais duas edições de Madrid e duas de Lisboa no
+        mesmo ano, e viaja depressa: a maior parte dos 400 exemplares da
+        primeira edição segue direta para o Novo Mundo, e, embora a maioria
+        se perca num naufrágio perto de Havana, cerca de 70 chegam a Lima
+        ainda nesse ano e seguem depois para o Cuzco. Aos 57 anos, depois
+        de uma vida de armas, cativeiro e dívidas, Cervantes tem o seu
+        primeiro sucesso popular verdadeiro - ainda que a segurança
+        financeira à altura só viesse anos mais tarde.
+
+    - id: cervantes-final-prolific-years-1613
+      title: Um último ato tardio e prolífico
+      description: >
+        O sucesso de Dom Quixote dá finalmente a Cervantes, já perto dos
+        sessenta anos, algo próximo da segurança financeira, depois de uma
+        vida inteira de dívidas e empregos precários, e os últimos três
+        anos da sua vida tornam-se os mais produtivos: as
+        [[work:miguel-de-cervantes/novelas-ejemplares|Novelas ejemplares]]
+        (1613), o [[work:miguel-de-cervantes/viaje-del-parnaso|Viaje del
+        Parnaso]] (1614),
+        [[work:miguel-de-cervantes/ocho-comedias-y-ocho-entremeses|Ocho
+        comedias y ocho entremeses]] e a verdadeira Segunda Parte de Dom
+        Quixote (ambas de 1615) aparecem num intervalo de três anos, um
+        ritmo que nada nas duas décadas anteriores de cobrança de impostos
+        e contas de prisão tinha permitido. Em julho de 1613 aderiu também
+        à Ordem Terceira de São Francisco, como leigo, uma forma comum de
+        os católicos da época ganharem mérito espiritual.
+
+    - id: cervantes-persiles-dedication-1616
+      title: Dedicatória de Los trabajos de Persiles y Sigismunda
+      description: >
+        Quatro dias antes de morrer, Cervantes escreve a dedicatória de
+        [[work:miguel-de-cervantes/los-trabajos-de-persiles-y-sigismunda|Los
+        trabajos de Persiles y Sigismunda]] ao seu protetor, o Conde de
+        Lemos, abrindo com um verso emprestado de um antigo romance -
+        aproximadamente, "com um pé já no estribo, com as ânsias da morte,
+        grande senhor, escrevo-te isto". Não viverá para ver o livro
+        publicado.
+
+    - id: cervantes-death-1616
+      title: Morre em Madrid, dias depois de terminar o Persiles
+      description: >
+        Cervantes morre em Madrid a 22 de abril de 1616, provavelmente de
+        complicações da diabetes - relatos da época descrevem uma sede
+        insaciável nas suas últimas semanas. É sepultado no dia seguinte,
+        23 de abril, no Convento das Trinitárias Descalças - uma data
+        durante muito tempo confundida com a da sua morte, e não a do seu
+        funeral, e a mesma data, nesse mesmo ano, da morte de William
+        Shakespeare, em Inglaterra. A coincidência é real, mas o "mesmo
+        dia" não é: Espanha usava o calendário gregoriano desde 1582,
+        enquanto a Inglaterra ainda usava o calendário juliano, dez dias
+        atrasado em relação a ele em 1616, pelo que a morte de Shakespeare
+        a 23 de abril (juliano) corresponde a 3 de maio no calendário
+        gregoriano que a data de Cervantes usa - Shakespeare morreu, de
+        facto, onze dias depois de Cervantes, e não no mesmo dia. Ainda
+        assim, a UNESCO fixou o Dia Mundial do Livro e do Direito de Autor
+        a 23 de abril, em 1995, citando essa data "partilhada".

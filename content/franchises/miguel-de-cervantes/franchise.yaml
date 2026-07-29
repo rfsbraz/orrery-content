@@ -1,0 +1,133 @@
+id: miguel-de-cervantes
+name: Miguel de Cervantes
+kind: author
+description: >
+  A soldier, captive and tax collector turned late-blooming novelist, whose
+  one big book - told in two parts, ten years apart, the second written
+  after an impostor's fake sequel - became the first modern novel.
+authorIds: [miguel-de-cervantes]
+themePreset: siglo-de-oro-parchment
+features: {}
+
+globalEvents:
+  include: []
+  exclude:
+    - sept-11-2001                    # postdates his death by 385 years
+    - financial-crisis-2008           # postdates his death by 392 years
+    - covid-19-pandemic-2020          # postdates his death by 404 years
+    - world-war-i-1914                # postdates his death by 298 years
+    - world-war-ii-1939               # postdates his death by 323 years
+    - pulp-magazines-1926             # postdates his death by 310 years
+    - penguin-paperback-1935          # postdates his death by 319 years
+    - armed-services-editions-1943    # postdates his death by 327 years
+    - lady-chatterley-trial-1960      # postdates his death by 344 years
+    - fantasy-paperback-boom-1965     # postdates his death by 349 years
+    - carnation-revolution-1974       # postdates his death by 358 years
+    - chain-bookshop-1982             # postdates his death by 366 years
+    - online-bookselling-1995         # postdates his death by 379 years
+    - ebook-and-self-publishing-2007  # postdates his death by 391 years
+    - prestige-fantasy-adaptation-2011 # postdates his death by 395 years
+    - booktok-2020                    # postdates his death by 404 years
+    - portugal-bailout-2011           # postdates his death by 395 years
+    - elementary-education-act-1870   # postdates his death by 254 years
+
+# "Where to start" - powers the guided wizard. Three honest paths rather than
+# a manufactured four or five: Cervantes is not a series-first author, and
+# almost every real reader's door into this wing is Don Quixote alone, so the
+# wizard says that plainly instead of pretending eight works compete for the
+# newcomer's attention equally.
+startHere:
+  paths:
+    # Source: https://blog.bookstellyouwhy.com/a-reading-guide-to-cervantes
+    # (Leah Dobrinska, Sep 29 2017) - "The first title that comes to mind at
+    # the mention of esteemed author Miguel de Cervantes is undoubtedly Don
+    # Quixote", citing the 2002 poll in which a hundred prominent authors from
+    # 54 countries (organised by the Norwegian Book Clubs/Bokklubben World
+    # Library) named it the best book ever written. Corroborating, on the
+    # translation question:
+    # https://theconversation.com/guide-to-the-classics-don-quixote-the-worlds-first-modern-novel-and-one-of-the-best-94097
+    # (Puchau de Lecea & Pérez de León, 25 Jun 2018) names Rutherford and
+    # Grossman as the two translations "praised for their versions" - the same
+    # divergence works.yaml's translationNote documents. translationNote
+    # renders nowhere in the app (SCHEMA.md), so it is restated here in
+    # reader-facing prose.
+    - id: start-with-don-quixote
+      title: Start with Don Quixote
+      description: >
+        Almost everyone who opens this wing is here for one book. Don
+        Quixote is the reason Cervantes has a shelf at all - a 2002 poll of
+        a hundred leading authors from 54 countries named it the best book
+        ever written - and it was read on its own for a decade before its
+        own sequel existed. The aging gentleman who renames himself a
+        knight, and the practical-minded farmer who rides with him, need
+        nothing else on this shelf first.
+      workIds:
+        - miguel-de-cervantes/don-quixote
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        The one decision it asks before the first page: which English
+        translation. Edith Grossman's fast, colloquial 2003 version and
+        John Rutherford's more period-toned 2000 translation are usually
+        recommended instead of each other, not alongside - picking the one
+        that doesn't suit your ear changes the book's register, not just
+        its edition. The cost of stopping here is the twenty years either
+        side of it: the captivity-inflected plays that came before, and the
+        crowded final decade that came after.
+
+    # Source: https://blog.bookstellyouwhy.com/a-reading-guide-to-cervantes -
+    # "When you've read Don Quixote and you realize that you need more
+    # Cervantes in your life, then we'd direct your attention to his Novelas
+    # ejemplares" - named as the explicit next stop, ahead of La Galatea
+    # (offered only as "a sample of his early work") and the plays (an
+    # afterthought - "if you're looking for even more"). Corroborating:
+    # works.yaml's own tiering note records that standard reference
+    # summaries (the English Wikipedia infobox) name only Don Quixote and
+    # Novelas ejemplares among Cervantes's "notable works" - the same pair
+    # this path treats as the wing's essential two.
+    - id: beyond-don-quixote
+      title: "Beyond Don Quixote: the Novelas ejemplares"
+      description: >
+        For a reader who has read Don Quixote and wants more of the same
+        novelist, not the whole shelf. The Novelas ejemplares are twelve
+        short novels of gypsies, thieves, captives and confidence tricks
+        that Cervantes introduced with a genre-founding claim of his own:
+        the first novelas written in Spanish rather than translated from
+        abroad. Reference summaries of Cervantes name only these two works,
+        alongside each other, as his notable works - this is the second
+        stop, not one option among several.
+      workIds:
+        - miguel-de-cervantes/novelas-ejemplares
+      orderId: null
+      fit:
+        experience: [returning]
+        commitment: [taste]
+      note: >
+        The cost is everything it skips: the early pastoral La Galatea, and
+        the plays and poetry of the wing's extended tier, entirely.
+
+    - id: everything
+      title: Everything, in order
+      description: >
+        All eight works in publication order - the pastoral debut, Don
+        Quixote, the explosive final decade, and the posthumous Persiles -
+        for a reader who already knows Don Quixote and wants the rest of
+        the shelf, or one who wants the whole arc of a soldier and tax
+        collector's late turn to the novel.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+      note: >
+        Publication order here means print order, not composition order:
+        El trato de Argel and El cerco de Numancia belong by composition to
+        Cervantes's earliest years, staged around 1582, but reached print
+        only in 1784 - so "everything, in order" ends with them, a
+        century and a half after his death, rather than opening with them.
+
+sources:
+  - https://en.wikipedia.org/wiki/Miguel_de_Cervantes
+  - https://en.wikipedia.org/wiki/Don_Quixote
