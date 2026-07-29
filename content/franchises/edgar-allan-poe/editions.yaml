@@ -1,12 +1,14 @@
-# Editions of Edgar Allan Poe: 126 en editions (126 works) + 8 pt-PT editions
-# (6 works, all already among the 126) = 134 editions over 126 of 145 works
-# (87%).
+# Editions of Edgar Allan Poe: 364 en editions (131 works) + 8 pt-PT editions
+# (6 works, all already among the 131) = 372 editions over 131 of 144 works
+# (91%). The 364 en editions break down as 125 Library of America (the
+# original pass), 118 Standard Ebooks and 121 Project Gutenberg (both added
+# in a later pass - see that section's own header below for method).
 #
 # THE STRUCTURAL PROBLEM THIS FILE SOLVES. Poe died in 1849, before ISBNs
 # existed and before any "complete" volume of his own tales or poems did;
 # works.yaml already departs from this catalogue's usual "a short-story
 # collection is one work" rule for exactly that reason (see its own header).
-# So almost none of the 145 works below were ever, or could ever have been,
+# So almost none of the 144 works below were ever, or could ever have been,
 # published alone as a book with its own ISBN - a magazine tale or a four-line
 # valentine is not a standalone commercial object. What DOES exist, real and
 # buyable, is a small number of modern scholarly and trade anthologies that
@@ -42,32 +44,66 @@
 # stricter bar than the itemised volume, deliberately: an essay this file does
 # not name was not confirmed, not merely omitted.
 #
-# EN OMISSIONS FROM LOA, BY REASON:
+# EN OMISSIONS FROM LOA, BY REASON (see the Standard Ebooks / Project
+# Gutenberg section below for which of these a later pass closed):
 #  - A Predicament, The Landscape Garden: not in Poetry & Tales' own itemised
 #    table. Both were later absorbed into a revision LOA does carry under a
 #    different title (Landscape Garden into The Domain of Arnheim), so this
 #    reads as the volume's own "authoritative text" choice rather than a gap.
-#  - Dreams (distinct from the retained "A Dream"), the second untitled 1829
-#    "To —" (opening "I heed not", distinct from the retained "To — [The
-#    bowers whereat]"), A Paean (superseded there by its own revision, Lenore,
-#    which IS in the table), Fanny, To Mary, To Elizabeth, May Queen Ode,
-#    Spiritual Song, Latin Hymn, Song of Triumph, Impromptu to Kate Carol, The
-#    Divine Right of Kings, To Marie Louise, Poetry (1824): none appear in the
-#    itemised poetry table under any spelling checked. To Mary and To
-#    Elizabeth in particular sit inside a tangled revision history (works.yaml
-#    notes both poems as later feeding into separately-retitled pieces); the
-#    likelier reading is that LOA's own text-selection collapsed some of
-#    these fourteen into the poems it does carry rather than dropping them
-#    outright, but that collapse was not traced item by item here, so none of
-#    the fourteen is cited to a survivor poem it was not confirmed against.
-#  - Maelzel's Chess-Player, A Few Words on Secret Writing: plausible
-#    candidates for "Essays & Reviews" (both are exactly its kind of
-#    material) but neither is named in the volume's own running description,
-#    and its table of contents is not itemised online to check further.
-#  - The Conchologist's First Book: Poe's contributor-role preface and
-#    classification-text translation inside Thomas Wyatt's own natural-history
-#    schoolbook, a different physical book by a different primary author, not
-#    a Poe tale or essay; neither LOA volume claims it, correctly.
+#    CLOSED by Standard Ebooks' "Short Fiction" and Project Gutenberg #25525,
+#    both of which itemise both tales in their own table of contents.
+#  - Dreams (distinct from the retained "A Dream") and A Paean (superseded
+#    there by its own revision, Lenore, which IS in the table): not in LOA's
+#    itemised poetry table. CLOSED by Standard Ebooks' "Poetry" (both); A
+#    Paean is not in Project Gutenberg #25525's own table of contents either,
+#    so it has only the one non-LOA source.
+#  - To Marie Louise ("Not long ago, the writer of these lines—", Columbian
+#    Magazine, March 1848): not in LOA's itemised poetry table. CLOSED by
+#    both Standard Ebooks' "Poetry" and Project Gutenberg #25525 - both
+#    sources title the section ambiguously ("To Marie Louise" / "To Marie
+#    Louise (Shew)"), shared with the already-LOA-covered "To M. L. S——"
+#    (Marie Louise Shew, 1847, "Of all who hail thy presence as the
+#    morning—"); both poems were matched to their correct workId by first
+#    line against Wikisource and the Wikipedia bibliography's own dates, not
+#    by the ambiguous heading. See the note on each entry.
+#  - The second untitled 1829 "To —" (opening "I heed not that my earthly
+#    lot", distinct from the retained "To — [The bowers whereat]"), Fanny, To
+#    Mary, To Elizabeth, May Queen Ode, Spiritual Song, Latin Hymn, Song of
+#    Triumph, Impromptu to Kate Carol, The Divine Right of Kings, Poetry
+#    (1824): STILL UNCOVERED. None appear in the itemised poetry table of
+#    LOA, Standard Ebooks' "Poetry", or Project Gutenberg #25525 under any
+#    spelling checked - the three most complete public-domain Poe poetry
+#    collections checked for this file agree on excluding them. To Mary and
+#    To Elizabeth in particular sit inside a tangled revision history
+#    (works.yaml notes both poems as later feeding into separately-retitled
+#    pieces); the likelier reading is that each editor's own text-selection
+#    collapsed some of these into poems it does carry rather than dropping
+#    them outright, but that collapse was not traced item by item here, so
+#    none of them is cited to a survivor poem it was not confirmed against.
+#    "I heed not that my earthly lot" is real and independently itemised by
+#    both Standard Ebooks and Project Gutenberg #25525 (as a second, separate
+#    "To —" alongside "The bowers whereat"), but works.yaml has no workId for
+#    it distinct from "to-1829-should-my-early-life" - and that workId's own
+#    synopsis ("beginning 'Should my early life seem...'") does not match
+#    this poem's actual first line either; in both sources checked, "Should
+#    my early life seem" is a line inside the already-covered "Imitation",
+#    not a separate poem's title, so neither text is a confirmed match for
+#    the "Should my early life seem" synopsis and to-1829-should-my-early-life
+#    has no edition below.
+#  - Maelzel's Chess-Player: not named in LOA's "Essays & Reviews" running
+#    description. CLOSED by Project Gutenberg #25525, whose Volume 4 table of
+#    contents itemises it by name; not in Standard Ebooks (its three volumes
+#    are Poetry, Short Fiction and Pym only - no essays).
+#  - A Few Words on Secret Writing: STILL UNCOVERED. Not named in LOA's
+#    running description, and not in either itemised table of contents
+#    checked in Project Gutenberg #25525 (whist/whist-adjacent cipher
+#    material there belongs to "The Gold-Bug" and to "Maelzel's
+#    Chess-Player", not a standalone essay).
+#  - The Conchologist's First Book: STILL UNCOVERED, and expected to stay so.
+#    Poe's contributor-role preface and classification-text translation
+#    inside Thomas Wyatt's own natural-history schoolbook, a different
+#    physical book by a different primary author, not a Poe tale or essay;
+#    none of the three sources checked claims it, correctly.
 #
 # PT-PT: eight real editions across six works, each independently confirmed
 # at the Biblioteca Nacional de Portugal catalogue (catalogo.bnportugal.gov.pt,
@@ -1593,3 +1629,2488 @@
     black cat" alone, not a selection.
   sources:
     - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789899126091&profile=bn"
+# =============================================================================
+# EN - STANDARD EBOOKS AND PROJECT GUTENBERG (free, public-domain editions)
+# =============================================================================
+#
+# Poe's public domain status makes free, direct-to-source digital editions a
+# legitimate primary target here, not just a fallback for gaps LOA leaves -
+# per the wing's own tracking issue (#65). This later pass adds them
+# generously across the whole wing, including onto works LOA already covers,
+# because a reader gets a real, currently-maintained, freely-licensed edition
+# option out of it, and because it breaks up how often the wing's shelf shows
+# the identical LOA "Poetry & Tales" jacket: 103 of the 126 LOA-covered works
+# share that one ISBN/cover, since the schema derives a work's cover from its
+# edition's ISBN when the work has no images.cover of its own.
+#
+# STANDARD EBOOKS (standardebooks.org) publishes exactly three real,
+# currently-maintained editions of Poe, each with its own distinct cover art
+# and its own itemised table of contents (fetched and checked per volume,
+# not assumed from scope): "Poetry" (51 poems, first edition released May
+# 30, 2023), "Short Fiction" (66 tales, released November 18, 2020) and "The
+# Narrative of Arthur Gordon Pym of Nantucket" (the novel, released May 25,
+# 2014). Every one of the 118 works cited below to a Standard Ebooks entry
+# was checked individually against that volume's own table of contents at
+# /ebooks/edgar-allan-poe/<slug>/text.
+#
+# PROJECT GUTENBERG (gutenberg.org) ebook #25525, "The Works of Edgar Allan
+# Poe, The Raven Edition" (a transcription of the 1903 Raven Edition
+# collected works, released May 19, 2008, credited to David Widger and Carlo
+# Traverso), is a single ebook whose own front-matter Contents section and
+# body headings between them itemise the same ~66 tales as Standard Ebooks'
+# "Short Fiction", the same core poem set as Standard Ebooks' "Poetry" (with
+# two differences - it lacks A Paean and it separately carries the "Scenes
+# from Politian" verse-drama excerpt Standard Ebooks does not) and three
+# essays (Maelzel's Chess-Player, The Poetic Principle, The Philosophy of
+# Furniture). Its own printed Contents block undercounts by a few titles (A
+# Dream Within a Dream and To My Mother are both real, present poems in the
+# body with no corresponding Contents line - a transcription omission in the
+# front matter, not evidence of absence), so entries here were confirmed
+# against the actual body heading and text, not the Contents list alone.
+#
+# Both sources are free, non-commercial, born-digital editions with no ISBN
+# to record - `isbn13` is deliberately omitted throughout this section, the
+# same as the two out-of-print no-ISBN cases already noted elsewhere in this
+# catalogue. `coverUrl` on each entry points to that edition's own official
+# cover image (Standard Ebooks' per-volume art, or Project Gutenberg's own
+# ebook-page cover thumbnail), never a retailer scrape.
+#
+# The recurring "To Marie Louise" / "To M. L. S——" trap: both sources title
+# a section ambiguously ("To Marie Louise" on Standard Ebooks; "To Marie
+# Louise (Shew)" used for BOTH poems on Project Gutenberg #25525), covering
+# two different real poems addressed to the same woman (Marie Louise Shew).
+# Every entry below for either workId was matched by the poem's actual first
+# line against Wikisource and the Wikipedia bibliography's own publication
+# dates, never by the ambiguous section heading alone - see the note on each
+# entry.
+#
+# =============================================================================
+# EN - Standard Ebooks: "The Narrative of Arthur Gordon Pym of Nantucket"
+# (2014), "Short Fiction" (2020), "Poetry" (2023)
+# =============================================================================
+- id: edgar-allan-poe/the-narrative-of-arthur-gordon-pym-of-nantucket/standard-ebooks-2014-en
+  workId: edgar-allan-poe/the-narrative-of-arthur-gordon-pym-of-nantucket
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2014
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_the-narrative-of-arthur-gordon-pym-of-nantucket/f9914d68136078183cc0bf943097844998e506e0/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/the-narrative-of-arthur-gordon-pym-of-nantucket"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/the-narrative-of-arthur-gordon-pym-of-nantucket/text"
+- id: edgar-allan-poe/metzengerstein/standard-ebooks-2020-en
+  workId: edgar-allan-poe/metzengerstein
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-duc-de-lomelette/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-duc-de-lomelette
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/a-tale-of-jerusalem/standard-ebooks-2020-en
+  workId: edgar-allan-poe/a-tale-of-jerusalem
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/loss-of-breath/standard-ebooks-2020-en
+  workId: edgar-allan-poe/loss-of-breath
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/bon-bon/standard-ebooks-2020-en
+  workId: edgar-allan-poe/bon-bon
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/ms-found-in-a-bottle/standard-ebooks-2020-en
+  workId: edgar-allan-poe/ms-found-in-a-bottle
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-assignation/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-assignation
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/berenice/standard-ebooks-2020-en
+  workId: edgar-allan-poe/berenice
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/morella/standard-ebooks-2020-en
+  workId: edgar-allan-poe/morella
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/lionizing/standard-ebooks-2020-en
+  workId: edgar-allan-poe/lionizing
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-unparalleled-adventure-of-one-hans-pfaall/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-unparalleled-adventure-of-one-hans-pfaall
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/king-pest/standard-ebooks-2020-en
+  workId: edgar-allan-poe/king-pest
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/shadow-a-parable/standard-ebooks-2020-en
+  workId: edgar-allan-poe/shadow-a-parable
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/four-beasts-in-one/standard-ebooks-2020-en
+  workId: edgar-allan-poe/four-beasts-in-one
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/mystification/standard-ebooks-2020-en
+  workId: edgar-allan-poe/mystification
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/silence-a-fable/standard-ebooks-2020-en
+  workId: edgar-allan-poe/silence-a-fable
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/ligeia/standard-ebooks-2020-en
+  workId: edgar-allan-poe/ligeia
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/how-to-write-a-blackwood-article/standard-ebooks-2020-en
+  workId: edgar-allan-poe/how-to-write-a-blackwood-article
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/a-predicament/standard-ebooks-2020-en
+  workId: edgar-allan-poe/a-predicament
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-devil-in-the-belfry/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-devil-in-the-belfry
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-man-that-was-used-up/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-man-that-was-used-up
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-fall-of-the-house-of-usher/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-fall-of-the-house-of-usher
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/william-wilson/standard-ebooks-2020-en
+  workId: edgar-allan-poe/william-wilson
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-conversation-of-eiros-and-charmion/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-conversation-of-eiros-and-charmion
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/why-the-little-frenchman-wears-his-hand-in-a-sling/standard-ebooks-2020-en
+  workId: edgar-allan-poe/why-the-little-frenchman-wears-his-hand-in-a-sling
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-business-man/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-business-man
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-man-of-the-crowd/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-man-of-the-crowd
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-murders-in-the-rue-morgue/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-murders-in-the-rue-morgue
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/a-descent-into-the-maelstrom/standard-ebooks-2020-en
+  workId: edgar-allan-poe/a-descent-into-the-maelstrom
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-island-of-the-fay/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-island-of-the-fay
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-colloquy-of-monos-and-una/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-colloquy-of-monos-and-una
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/never-bet-the-devil-your-head/standard-ebooks-2020-en
+  workId: edgar-allan-poe/never-bet-the-devil-your-head
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/eleonora/standard-ebooks-2020-en
+  workId: edgar-allan-poe/eleonora
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/three-sundays-in-a-week/standard-ebooks-2020-en
+  workId: edgar-allan-poe/three-sundays-in-a-week
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-oval-portrait/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-oval-portrait
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-masque-of-the-red-death/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-masque-of-the-red-death
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-landscape-garden/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-landscape-garden
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-mystery-of-marie-roget/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-mystery-of-marie-roget
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-pit-and-the-pendulum/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-pit-and-the-pendulum
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-tell-tale-heart/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-tell-tale-heart
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-gold-bug/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-gold-bug
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-black-cat/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-black-cat
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/diddling/standard-ebooks-2020-en
+  workId: edgar-allan-poe/diddling
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-spectacles/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-spectacles
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/a-tale-of-the-ragged-mountains/standard-ebooks-2020-en
+  workId: edgar-allan-poe/a-tale-of-the-ragged-mountains
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-premature-burial/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-premature-burial
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/mesmeric-revelation/standard-ebooks-2020-en
+  workId: edgar-allan-poe/mesmeric-revelation
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-oblong-box/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-oblong-box
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-angel-of-the-odd/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-angel-of-the-odd
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/thou-art-the-man/standard-ebooks-2020-en
+  workId: edgar-allan-poe/thou-art-the-man
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-literary-life-of-thingum-bob-esq/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-literary-life-of-thingum-bob-esq
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-purloined-letter/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-purloined-letter
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-thousand-and-second-tale-of-scheherazade/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-thousand-and-second-tale-of-scheherazade
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/some-words-with-a-mummy/standard-ebooks-2020-en
+  workId: edgar-allan-poe/some-words-with-a-mummy
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-power-of-words/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-power-of-words
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-imp-of-the-perverse/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-imp-of-the-perverse
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-system-of-doctor-tarr-and-professor-fether/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-system-of-doctor-tarr-and-professor-fether
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-facts-in-the-case-of-m-valdemar/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-facts-in-the-case-of-m-valdemar
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-sphinx/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-sphinx
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-cask-of-amontillado/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-cask-of-amontillado
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/the-domain-of-arnheim/standard-ebooks-2020-en
+  workId: edgar-allan-poe/the-domain-of-arnheim
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/mellonta-tauta/standard-ebooks-2020-en
+  workId: edgar-allan-poe/mellonta-tauta
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/hop-frog/standard-ebooks-2020-en
+  workId: edgar-allan-poe/hop-frog
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/von-kempelen-and-his-discovery/standard-ebooks-2020-en
+  workId: edgar-allan-poe/von-kempelen-and-his-discovery
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/x-ing-a-paragrab/standard-ebooks-2020-en
+  workId: edgar-allan-poe/x-ing-a-paragrab
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/landors-cottage/standard-ebooks-2020-en
+  workId: edgar-allan-poe/landors-cottage
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2020
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_short-fiction/113021f2b2d2f3b5cdb4751661bf742b6e3ee6b4/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/short-fiction/text"
+- id: edgar-allan-poe/tamerlane/standard-ebooks-2023-en
+  workId: edgar-allan-poe/tamerlane
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/song-1827/standard-ebooks-2023-en
+  workId: edgar-allan-poe/song-1827
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/dreams/standard-ebooks-2023-en
+  workId: edgar-allan-poe/dreams
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/spirits-of-the-dead/standard-ebooks-2023-en
+  workId: edgar-allan-poe/spirits-of-the-dead
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/evening-star/standard-ebooks-2023-en
+  workId: edgar-allan-poe/evening-star
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/imitation/standard-ebooks-2023-en
+  workId: edgar-allan-poe/imitation
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/stanzas/standard-ebooks-2023-en
+  workId: edgar-allan-poe/stanzas
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/a-dream-1827/standard-ebooks-2023-en
+  workId: edgar-allan-poe/a-dream-1827
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/the-happiest-day/standard-ebooks-2023-en
+  workId: edgar-allan-poe/the-happiest-day
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/the-lake/standard-ebooks-2023-en
+  workId: edgar-allan-poe/the-lake
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/to-the-river/standard-ebooks-2023-en
+  workId: edgar-allan-poe/to-the-river
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/alone/standard-ebooks-2023-en
+  workId: edgar-allan-poe/alone
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/sonnet-to-science/standard-ebooks-2023-en
+  workId: edgar-allan-poe/sonnet-to-science
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/an-acrostic/standard-ebooks-2023-en
+  workId: edgar-allan-poe/an-acrostic
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/elizabeth/standard-ebooks-2023-en
+  workId: edgar-allan-poe/elizabeth
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/al-aaraaf/standard-ebooks-2023-en
+  workId: edgar-allan-poe/al-aaraaf
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/romance/standard-ebooks-2023-en
+  workId: edgar-allan-poe/romance
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/to-1829-bowers-whereat/standard-ebooks-2023-en
+  workId: edgar-allan-poe/to-1829-bowers-whereat
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/to-marie-louise/standard-ebooks-2023-en
+  workId: edgar-allan-poe/to-marie-louise
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  note: >
+    Both this poem and "To M. L. S——" are addressed to Marie Louise Shew; this
+    source titles the section ambiguously (Standard Ebooks: "To Marie Louise"; the
+    Raven Edition: "To Marie Louise (Shew)" for both). Matched to this workId by
+    its actual first line, "Not long ago, the writer of these lines—", against
+    Wikisource's "To Marie Louise" and the March 1848 Columbian Magazine date in
+    the Wikipedia bibliography, not by the section heading alone.
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/fairy-land/standard-ebooks-2023-en
+  workId: edgar-allan-poe/fairy-land
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/the-city-in-the-sea/standard-ebooks-2023-en
+  workId: edgar-allan-poe/the-city-in-the-sea
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/israfel/standard-ebooks-2023-en
+  workId: edgar-allan-poe/israfel
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/a-paean/standard-ebooks-2023-en
+  workId: edgar-allan-poe/a-paean
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/the-sleeper/standard-ebooks-2023-en
+  workId: edgar-allan-poe/the-sleeper
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/to-helen-1831/standard-ebooks-2023-en
+  workId: edgar-allan-poe/to-helen-1831
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/the-valley-of-unrest/standard-ebooks-2023-en
+  workId: edgar-allan-poe/the-valley-of-unrest
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/the-coliseum/standard-ebooks-2023-en
+  workId: edgar-allan-poe/the-coliseum
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/serenade/standard-ebooks-2023-en
+  workId: edgar-allan-poe/serenade
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/to-one-in-paradise/standard-ebooks-2023-en
+  workId: edgar-allan-poe/to-one-in-paradise
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/hymn/standard-ebooks-2023-en
+  workId: edgar-allan-poe/hymn
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/bridal-ballad/standard-ebooks-2023-en
+  workId: edgar-allan-poe/bridal-ballad
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/to-zante/standard-ebooks-2023-en
+  workId: edgar-allan-poe/to-zante
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/the-haunted-palace/standard-ebooks-2023-en
+  workId: edgar-allan-poe/the-haunted-palace
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/silence-a-sonnet/standard-ebooks-2023-en
+  workId: edgar-allan-poe/silence-a-sonnet
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/the-conqueror-worm/standard-ebooks-2023-en
+  workId: edgar-allan-poe/the-conqueror-worm
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/eulalie/standard-ebooks-2023-en
+  workId: edgar-allan-poe/eulalie
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/lenore/standard-ebooks-2023-en
+  workId: edgar-allan-poe/lenore
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/dream-land/standard-ebooks-2023-en
+  workId: edgar-allan-poe/dream-land
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/the-raven/standard-ebooks-2023-en
+  workId: edgar-allan-poe/the-raven
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/to-f/standard-ebooks-2023-en
+  workId: edgar-allan-poe/to-f
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/a-valentine/standard-ebooks-2023-en
+  workId: edgar-allan-poe/a-valentine
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/to-m-l-s/standard-ebooks-2023-en
+  workId: edgar-allan-poe/to-m-l-s
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  note: >
+    Addressed to Marie Louise Shew, distinct from the later "To Marie Louise"
+    (1848). This source titles the section "To Marie Louise (Shew)"; matched to
+    this workId by its actual first line, "Of all who hail thy presence as the
+    morning—", against Wikisource's "To M. L. S——" and the March 13, 1847 Home
+    Journal date in the Wikipedia bibliography.
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/ulalume/standard-ebooks-2023-en
+  workId: edgar-allan-poe/ulalume
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/the-bells/standard-ebooks-2023-en
+  workId: edgar-allan-poe/the-bells
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/eldorado/standard-ebooks-2023-en
+  workId: edgar-allan-poe/eldorado
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/an-enigma/standard-ebooks-2023-en
+  workId: edgar-allan-poe/an-enigma
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/to-helen-1848/standard-ebooks-2023-en
+  workId: edgar-allan-poe/to-helen-1848
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/annabel-lee/standard-ebooks-2023-en
+  workId: edgar-allan-poe/annabel-lee
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/a-dream-within-a-dream/standard-ebooks-2023-en
+  workId: edgar-allan-poe/a-dream-within-a-dream
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/for-annie/standard-ebooks-2023-en
+  workId: edgar-allan-poe/for-annie
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+- id: edgar-allan-poe/to-my-mother/standard-ebooks-2023-en
+  workId: edgar-allan-poe/to-my-mother
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  year: 2023
+  coverUrl: "https://standardebooks.org/images/covers/edgar-allan-poe_poetry/a4995fc216d39b10877b1cb26cbbb7719358b423/cover.jpg"
+  sources:
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry"
+    - "https://standardebooks.org/ebooks/edgar-allan-poe/poetry/text"
+
+# =============================================================================
+# EN - Project Gutenberg #25525, "The Works of Edgar Allan Poe, The Raven
+# Edition" (free, public-domain digital edition; transcription released 2008)
+# =============================================================================
+- id: edgar-allan-poe/the-narrative-of-arthur-gordon-pym-of-nantucket/gutenberg-2008-en
+  workId: edgar-allan-poe/the-narrative-of-arthur-gordon-pym-of-nantucket
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/metzengerstein/gutenberg-2008-en
+  workId: edgar-allan-poe/metzengerstein
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-duc-de-lomelette/gutenberg-2008-en
+  workId: edgar-allan-poe/the-duc-de-lomelette
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/a-tale-of-jerusalem/gutenberg-2008-en
+  workId: edgar-allan-poe/a-tale-of-jerusalem
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/loss-of-breath/gutenberg-2008-en
+  workId: edgar-allan-poe/loss-of-breath
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/bon-bon/gutenberg-2008-en
+  workId: edgar-allan-poe/bon-bon
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/ms-found-in-a-bottle/gutenberg-2008-en
+  workId: edgar-allan-poe/ms-found-in-a-bottle
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-assignation/gutenberg-2008-en
+  workId: edgar-allan-poe/the-assignation
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/berenice/gutenberg-2008-en
+  workId: edgar-allan-poe/berenice
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/morella/gutenberg-2008-en
+  workId: edgar-allan-poe/morella
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/lionizing/gutenberg-2008-en
+  workId: edgar-allan-poe/lionizing
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-unparalleled-adventure-of-one-hans-pfaall/gutenberg-2008-en
+  workId: edgar-allan-poe/the-unparalleled-adventure-of-one-hans-pfaall
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/king-pest/gutenberg-2008-en
+  workId: edgar-allan-poe/king-pest
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/shadow-a-parable/gutenberg-2008-en
+  workId: edgar-allan-poe/shadow-a-parable
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/four-beasts-in-one/gutenberg-2008-en
+  workId: edgar-allan-poe/four-beasts-in-one
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/mystification/gutenberg-2008-en
+  workId: edgar-allan-poe/mystification
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/silence-a-fable/gutenberg-2008-en
+  workId: edgar-allan-poe/silence-a-fable
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/ligeia/gutenberg-2008-en
+  workId: edgar-allan-poe/ligeia
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/how-to-write-a-blackwood-article/gutenberg-2008-en
+  workId: edgar-allan-poe/how-to-write-a-blackwood-article
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/a-predicament/gutenberg-2008-en
+  workId: edgar-allan-poe/a-predicament
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-devil-in-the-belfry/gutenberg-2008-en
+  workId: edgar-allan-poe/the-devil-in-the-belfry
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-man-that-was-used-up/gutenberg-2008-en
+  workId: edgar-allan-poe/the-man-that-was-used-up
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-fall-of-the-house-of-usher/gutenberg-2008-en
+  workId: edgar-allan-poe/the-fall-of-the-house-of-usher
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/william-wilson/gutenberg-2008-en
+  workId: edgar-allan-poe/william-wilson
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-conversation-of-eiros-and-charmion/gutenberg-2008-en
+  workId: edgar-allan-poe/the-conversation-of-eiros-and-charmion
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/why-the-little-frenchman-wears-his-hand-in-a-sling/gutenberg-2008-en
+  workId: edgar-allan-poe/why-the-little-frenchman-wears-his-hand-in-a-sling
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-business-man/gutenberg-2008-en
+  workId: edgar-allan-poe/the-business-man
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-man-of-the-crowd/gutenberg-2008-en
+  workId: edgar-allan-poe/the-man-of-the-crowd
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-murders-in-the-rue-morgue/gutenberg-2008-en
+  workId: edgar-allan-poe/the-murders-in-the-rue-morgue
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/a-descent-into-the-maelstrom/gutenberg-2008-en
+  workId: edgar-allan-poe/a-descent-into-the-maelstrom
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-island-of-the-fay/gutenberg-2008-en
+  workId: edgar-allan-poe/the-island-of-the-fay
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-colloquy-of-monos-and-una/gutenberg-2008-en
+  workId: edgar-allan-poe/the-colloquy-of-monos-and-una
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/never-bet-the-devil-your-head/gutenberg-2008-en
+  workId: edgar-allan-poe/never-bet-the-devil-your-head
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/eleonora/gutenberg-2008-en
+  workId: edgar-allan-poe/eleonora
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/three-sundays-in-a-week/gutenberg-2008-en
+  workId: edgar-allan-poe/three-sundays-in-a-week
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-oval-portrait/gutenberg-2008-en
+  workId: edgar-allan-poe/the-oval-portrait
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-masque-of-the-red-death/gutenberg-2008-en
+  workId: edgar-allan-poe/the-masque-of-the-red-death
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-landscape-garden/gutenberg-2008-en
+  workId: edgar-allan-poe/the-landscape-garden
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-mystery-of-marie-roget/gutenberg-2008-en
+  workId: edgar-allan-poe/the-mystery-of-marie-roget
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-pit-and-the-pendulum/gutenberg-2008-en
+  workId: edgar-allan-poe/the-pit-and-the-pendulum
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-tell-tale-heart/gutenberg-2008-en
+  workId: edgar-allan-poe/the-tell-tale-heart
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-gold-bug/gutenberg-2008-en
+  workId: edgar-allan-poe/the-gold-bug
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-black-cat/gutenberg-2008-en
+  workId: edgar-allan-poe/the-black-cat
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/diddling/gutenberg-2008-en
+  workId: edgar-allan-poe/diddling
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-spectacles/gutenberg-2008-en
+  workId: edgar-allan-poe/the-spectacles
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/a-tale-of-the-ragged-mountains/gutenberg-2008-en
+  workId: edgar-allan-poe/a-tale-of-the-ragged-mountains
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-premature-burial/gutenberg-2008-en
+  workId: edgar-allan-poe/the-premature-burial
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/mesmeric-revelation/gutenberg-2008-en
+  workId: edgar-allan-poe/mesmeric-revelation
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-oblong-box/gutenberg-2008-en
+  workId: edgar-allan-poe/the-oblong-box
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-angel-of-the-odd/gutenberg-2008-en
+  workId: edgar-allan-poe/the-angel-of-the-odd
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/thou-art-the-man/gutenberg-2008-en
+  workId: edgar-allan-poe/thou-art-the-man
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-literary-life-of-thingum-bob-esq/gutenberg-2008-en
+  workId: edgar-allan-poe/the-literary-life-of-thingum-bob-esq
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-purloined-letter/gutenberg-2008-en
+  workId: edgar-allan-poe/the-purloined-letter
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-thousand-and-second-tale-of-scheherazade/gutenberg-2008-en
+  workId: edgar-allan-poe/the-thousand-and-second-tale-of-scheherazade
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/some-words-with-a-mummy/gutenberg-2008-en
+  workId: edgar-allan-poe/some-words-with-a-mummy
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-power-of-words/gutenberg-2008-en
+  workId: edgar-allan-poe/the-power-of-words
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-imp-of-the-perverse/gutenberg-2008-en
+  workId: edgar-allan-poe/the-imp-of-the-perverse
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-system-of-doctor-tarr-and-professor-fether/gutenberg-2008-en
+  workId: edgar-allan-poe/the-system-of-doctor-tarr-and-professor-fether
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-facts-in-the-case-of-m-valdemar/gutenberg-2008-en
+  workId: edgar-allan-poe/the-facts-in-the-case-of-m-valdemar
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-sphinx/gutenberg-2008-en
+  workId: edgar-allan-poe/the-sphinx
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-cask-of-amontillado/gutenberg-2008-en
+  workId: edgar-allan-poe/the-cask-of-amontillado
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-domain-of-arnheim/gutenberg-2008-en
+  workId: edgar-allan-poe/the-domain-of-arnheim
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/mellonta-tauta/gutenberg-2008-en
+  workId: edgar-allan-poe/mellonta-tauta
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/hop-frog/gutenberg-2008-en
+  workId: edgar-allan-poe/hop-frog
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/von-kempelen-and-his-discovery/gutenberg-2008-en
+  workId: edgar-allan-poe/von-kempelen-and-his-discovery
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/x-ing-a-paragrab/gutenberg-2008-en
+  workId: edgar-allan-poe/x-ing-a-paragrab
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/landors-cottage/gutenberg-2008-en
+  workId: edgar-allan-poe/landors-cottage
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/tamerlane/gutenberg-2008-en
+  workId: edgar-allan-poe/tamerlane
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/song-1827/gutenberg-2008-en
+  workId: edgar-allan-poe/song-1827
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/dreams/gutenberg-2008-en
+  workId: edgar-allan-poe/dreams
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/spirits-of-the-dead/gutenberg-2008-en
+  workId: edgar-allan-poe/spirits-of-the-dead
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/evening-star/gutenberg-2008-en
+  workId: edgar-allan-poe/evening-star
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/imitation/gutenberg-2008-en
+  workId: edgar-allan-poe/imitation
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/stanzas/gutenberg-2008-en
+  workId: edgar-allan-poe/stanzas
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/a-dream-1827/gutenberg-2008-en
+  workId: edgar-allan-poe/a-dream-1827
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-happiest-day/gutenberg-2008-en
+  workId: edgar-allan-poe/the-happiest-day
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-lake/gutenberg-2008-en
+  workId: edgar-allan-poe/the-lake
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/to-the-river/gutenberg-2008-en
+  workId: edgar-allan-poe/to-the-river
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/alone/gutenberg-2008-en
+  workId: edgar-allan-poe/alone
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/sonnet-to-science/gutenberg-2008-en
+  workId: edgar-allan-poe/sonnet-to-science
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/an-acrostic/gutenberg-2008-en
+  workId: edgar-allan-poe/an-acrostic
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/elizabeth/gutenberg-2008-en
+  workId: edgar-allan-poe/elizabeth
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/al-aaraaf/gutenberg-2008-en
+  workId: edgar-allan-poe/al-aaraaf
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/romance/gutenberg-2008-en
+  workId: edgar-allan-poe/romance
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/to-1829-bowers-whereat/gutenberg-2008-en
+  workId: edgar-allan-poe/to-1829-bowers-whereat
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/to-marie-louise/gutenberg-2008-en
+  workId: edgar-allan-poe/to-marie-louise
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  note: >
+    Both this poem and "To M. L. S——" are addressed to Marie Louise Shew; this
+    source titles the section ambiguously (Standard Ebooks: "To Marie Louise"; the
+    Raven Edition: "To Marie Louise (Shew)" for both). Matched to this workId by
+    its actual first line, "Not long ago, the writer of these lines—", against
+    Wikisource's "To Marie Louise" and the March 1848 Columbian Magazine date in
+    the Wikipedia bibliography, not by the section heading alone.
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/fairy-land/gutenberg-2008-en
+  workId: edgar-allan-poe/fairy-land
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-city-in-the-sea/gutenberg-2008-en
+  workId: edgar-allan-poe/the-city-in-the-sea
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/israfel/gutenberg-2008-en
+  workId: edgar-allan-poe/israfel
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-sleeper/gutenberg-2008-en
+  workId: edgar-allan-poe/the-sleeper
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/to-helen-1831/gutenberg-2008-en
+  workId: edgar-allan-poe/to-helen-1831
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-valley-of-unrest/gutenberg-2008-en
+  workId: edgar-allan-poe/the-valley-of-unrest
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-coliseum/gutenberg-2008-en
+  workId: edgar-allan-poe/the-coliseum
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/serenade/gutenberg-2008-en
+  workId: edgar-allan-poe/serenade
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/to-one-in-paradise/gutenberg-2008-en
+  workId: edgar-allan-poe/to-one-in-paradise
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/hymn/gutenberg-2008-en
+  workId: edgar-allan-poe/hymn
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/bridal-ballad/gutenberg-2008-en
+  workId: edgar-allan-poe/bridal-ballad
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/to-zante/gutenberg-2008-en
+  workId: edgar-allan-poe/to-zante
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-haunted-palace/gutenberg-2008-en
+  workId: edgar-allan-poe/the-haunted-palace
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/silence-a-sonnet/gutenberg-2008-en
+  workId: edgar-allan-poe/silence-a-sonnet
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-conqueror-worm/gutenberg-2008-en
+  workId: edgar-allan-poe/the-conqueror-worm
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/eulalie/gutenberg-2008-en
+  workId: edgar-allan-poe/eulalie
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/lenore/gutenberg-2008-en
+  workId: edgar-allan-poe/lenore
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/dream-land/gutenberg-2008-en
+  workId: edgar-allan-poe/dream-land
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-raven/gutenberg-2008-en
+  workId: edgar-allan-poe/the-raven
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/to-f/gutenberg-2008-en
+  workId: edgar-allan-poe/to-f
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/a-valentine/gutenberg-2008-en
+  workId: edgar-allan-poe/a-valentine
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/to-m-l-s/gutenberg-2008-en
+  workId: edgar-allan-poe/to-m-l-s
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  note: >
+    Addressed to Marie Louise Shew, distinct from the later "To Marie Louise"
+    (1848). This source titles the section "To Marie Louise (Shew)"; matched to
+    this workId by its actual first line, "Of all who hail thy presence as the
+    morning—", against Wikisource's "To M. L. S——" and the March 13, 1847 Home
+    Journal date in the Wikipedia bibliography.
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/ulalume/gutenberg-2008-en
+  workId: edgar-allan-poe/ulalume
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-bells/gutenberg-2008-en
+  workId: edgar-allan-poe/the-bells
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/eldorado/gutenberg-2008-en
+  workId: edgar-allan-poe/eldorado
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/an-enigma/gutenberg-2008-en
+  workId: edgar-allan-poe/an-enigma
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/to-helen-1848/gutenberg-2008-en
+  workId: edgar-allan-poe/to-helen-1848
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/annabel-lee/gutenberg-2008-en
+  workId: edgar-allan-poe/annabel-lee
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/a-dream-within-a-dream/gutenberg-2008-en
+  workId: edgar-allan-poe/a-dream-within-a-dream
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/for-annie/gutenberg-2008-en
+  workId: edgar-allan-poe/for-annie
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/to-my-mother/gutenberg-2008-en
+  workId: edgar-allan-poe/to-my-mother
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/politian/gutenberg-2008-en
+  workId: edgar-allan-poe/politian
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  note: >
+    Poe never completed or authoritatively arranged Politian; this edition's
+    "Scenes from Politian" is this source's own selection of the surviving verse-
+    drama fragments, and its scene selection is not confirmed identical to the
+    Library of America volume's.
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/maelzels-chess-player/gutenberg-2008-en
+  workId: edgar-allan-poe/maelzels-chess-player
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-poetic-principle/gutenberg-2008-en
+  workId: edgar-allan-poe/the-poetic-principle
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
+- id: edgar-allan-poe/the-philosophy-of-furniture/gutenberg-2008-en
+  workId: edgar-allan-poe/the-philosophy-of-furniture
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  coverUrl: "https://www.gutenberg.org/cache/epub/25525/pg25525.cover.medium.jpg"
+  sources:
+    - "https://www.gutenberg.org/ebooks/25525"
+    - "https://www.gutenberg.org/files/25525/25525-h/25525-h.htm"
