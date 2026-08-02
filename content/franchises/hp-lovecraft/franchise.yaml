@@ -6,9 +6,8 @@
 # boundary between his own Mythos contributions and August Derleth's
 # posthumous extensions, which do not belong in this wing at all).
 #
-# features, startHere and globalEvents are left unset: no wizard entry
-# path or additional order is sourced yet, and no shared-catalogue event's
-# reach into this author's page has been ruled on yet.
+# features and startHere are left unset: no wizard entry path or additional
+# order is sourced yet. globalEvents is ruled below.
 id: hp-lovecraft
 name: H. P. Lovecraft
 kind: author
@@ -31,3 +30,19 @@ themePreset: cosmic-antiquarian
 sources:
   - "https://en.wikipedia.org/wiki/H._P._Lovecraft"
   - "https://www.hplovecraft.com/"
+
+# "Lifetime" is read as Lovecraft's actual 1890-1937 life, the same rule
+# already used for Poe (1809-1849) and Sewell (1820-1878) elsewhere in this
+# catalogue, not stretched to cover the 1938-1959 span his own work kept
+# being newly published across after his death. That stretch is real and
+# is where most of the candidates below actually sit; each was still
+# checked against the sourced posthumous-publishing record in events.yaml
+# rather than waved through or past over on lifetime grounds alone.
+globalEvents:
+  include:
+    - world-war-i-1914     # supplies the literal frame of Dagon (1917), a merchant officer's ship taken by a German sea-raider; he twice tried to enlist and was turned down both times at his mother's doing
+    - pulp-magazines-1926  # the genre-magazine market it names, Weird Tales among it, was his only professional outlet for two decades; its editor's rejections directly shape three works in this wing's own events.yaml
+  exclude:
+    - penguin-paperback-1935      # lived through it, but had no book in print at all yet (his first collection was posthumous, 1939) and never reached British paperback in his lifetime
+    - world-war-ii-1939            # 17 months after his death; Arkham House's own 1939-1945 activity is already dated and sourced in events.yaml with no wartime detail in the record, so nothing ties the war itself to how those books were made
+    - comics-code-authority-1954   # posthumous by 17 years; checked EC Comics' own Tales from the Crypt catalogue directly (Grand Comics Database, EC Comics Wiki) for a claimed Lovecraft adaptation and found no Lovecraft credit or note in the primary record, so no book answers it
