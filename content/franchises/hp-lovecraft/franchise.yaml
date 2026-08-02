@@ -6,8 +6,8 @@
 # boundary between his own Mythos contributions and August Derleth's
 # posthumous extensions, which do not belong in this wing at all).
 #
-# features and startHere are left unset: no wizard entry path or additional
-# order is sourced yet. globalEvents is ruled below.
+# features is left unset (auto). startHere and orders.yaml are ruled below
+# and in orders.yaml's own header; globalEvents is ruled further down.
 id: hp-lovecraft
 name: H. P. Lovecraft
 kind: author
@@ -30,6 +30,125 @@ themePreset: cosmic-antiquarian
 sources:
   - "https://en.wikipedia.org/wiki/H._P._Lovecraft"
   - "https://www.hplovecraft.com/"
+
+# Four paths. No numbered series exists on this shelf to build a wizard
+# around (see orders.yaml's header), so "essentials" and "the whole shelf"
+# do the work a Poe-style wing needs, and each of the two subseries gets
+# its own path pointed at its own order in orders.yaml, on the same terms
+# that order earns its slot - the Randolph Carter path is a real arc, the
+# Cthulhu Mythos path is honestly a thread pulled from the shelf and says
+# so in its own description.
+#
+# Sources for "essentials": four independent publications that cover books
+# converge on the same handful of titles. Book Riot
+# (https://bookriot.com/lovecraft-reading-order-beginners/) opens with The
+# Shadow over Innsmouth ("you really get a feel for Lovecraft's best, and
+# worst, habits in one well-written story") then The Call of Cthulhu, then
+# The Dunwich Horror. Reedsy Discovery
+# (https://reedsy.com/discovery/blog/best-lovecraft-books) calls The Call
+# of Cthulhu "probably Lovecraft's most influential story" and ranks The
+# Shadow over Innsmouth and The Dunwich Horror in its own top five.
+# Penguin Random House
+# (https://www.penguinrandomhouse.com/the-read-down/want-read-lovecraft-heres-start/)
+# opens with The Call of Cthulhu and lists The Dunwich Horror third. The
+# Teeming Brain
+# (https://www.teemingbrain.com/2013/06/03/how-to-read-lovecraft-a-practical-beginners-guide/)
+# recommends starting with The Call of Cthulhu as a "test drive" before
+# anything else, then names The Dunwich Horror and The Colour Out of Space
+# among the five follow-ups. The Colour Out of Space's fourth place here
+# rests on that one source plus Lovecraft's own stated preference for it,
+# already recorded in the work's own synopsis.
+startHere:
+  paths:
+    - id: essentials
+      title: The essentials
+      description: >
+        Four self-contained tales, no series required: the found-manuscript
+        report that gave the whole mythology its name, the decaying
+        fishing town keeping a very old bargain, the New England farm a
+        meteorite slowly poisons, and the monstrous rural birth that
+        threatens a whole valley. Any one stands alone; together they show
+        the range beginner guides most often point to first.
+      workIds:
+        - hp-lovecraft/the-call-of-cthulhu
+        - hp-lovecraft/the-shadow-over-innsmouth
+        - hp-lovecraft/the-colour-out-of-space
+        - hp-lovecraft/the-dunwich-horror
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        All four are independently readable and can be read in any order.
+        This is four out of a hundred and eleven works - it skips the
+        Randolph Carter thread, the wider Cthulhu Mythos, the collaborations
+        and everything outside the fiction core.
+
+    # See orders.yaml for the sourced rationale and the internal-chronology
+    # citations (Wikipedia's Randolph Carter and Silver Key articles,
+    # citing S. T. Joshi).
+    - id: meet-randolph-carter
+      title: Meet Randolph Carter
+      description: >
+        Lovecraft's one recurring protagonist, in the order his own life
+        places the four tales rather than the order they reached print: a
+        young dreamer crossing his own dream-world at will, the testimony
+        of a friend's disappearance dated to his later years, the
+        middle-aged man mourning the gift he has lost, and the sequel
+        E. Hoffmann Price wrote with Lovecraft to settle what became of
+        him.
+      workIds: null
+      orderId: hp-lovecraft/randolph-carter-in-order
+      fit:
+        experience: [new, returning]
+        commitment: [taste, arc]
+      note: >
+        Four tales - a short, complete arc, not a commitment to the rest of
+        the shelf. The Dream-Quest opening this arc is also its longest and
+        most digressive entry.
+
+    # See orders.yaml for the sourced rationale, including what this order
+    # does and does not claim (publication order restricted to the
+    # subseries, no in-universe sequence asserted).
+    - id: the-cthulhu-mythos
+      title: The connected mythology
+      description: >
+        Twenty-five tales carrying Lovecraft's own Necronomicon and
+        pantheon-entity content, set in the order he wrote them: for a
+        reader who came to Lovecraft through Cthulhu and the shared
+        mythology rather than through him as a short-story writer
+        generally.
+      workIds: null
+      orderId: hp-lovecraft/cthulhu-mythos-in-order
+      fit:
+        experience: [returning]
+        commitment: [arc]
+      note: >
+        This is publication order, not a "how the mythology builds"
+        curated sequence - no source found recommends a specific path
+        through these twenty-five beyond the order they appeared, and the
+        tales share no continuous cast or timeline of their own.
+
+    - id: the-whole-shelf
+      title: The whole shelf
+      description: >
+        All hundred and eleven works in the order Lovecraft wrote them:
+        the teenage pastiches, the decade of magazine tales that gave the
+        Mythos its name, the ghostwriting and revision work he did for a
+        fee alongside it, and the fiction still reaching print two decades
+        after his 1937 death. Not a series read front to back - a working
+        writer's whole output, tale by tale.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+      note: >
+        49 of the 111 works are apocrypha by this wing's own tiering -
+        juvenilia, fragments, letter-excerpts and every collaboration
+        regardless of Lovecraft's share in it - so a reader who wants the
+        finished solo fiction first should start with "The essentials"
+        instead.
 
 # "Lifetime" is read as Lovecraft's actual 1890-1937 life, the same rule
 # already used for Poe (1809-1849) and Sewell (1820-1878) elsewhere in this
