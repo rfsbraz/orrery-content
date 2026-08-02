@@ -1,0 +1,144 @@
+stage: editions
+summary: >
+  Built content/franchises/hp-lovecraft/editions.yaml from scratch: 146
+  entries across 76 of 111 works (68%). Answered the public-domain/no-ISBN
+  question explicitly rather than assuming it (see below) instead of
+  defaulting to "he's old, he's PD" or skipping ISBNs on a hunch. Validator
+  green on this slug: 0 errors, 64 warnings, all pre-existing (era-coverage
+  and handoff-length notices from earlier stages) - editions.yaml introduced
+  zero new warnings after one fix (a "this pass" phrase caught by the
+  pipeline-narration scanner, reworded).
+produced:
+  filesChanged: [content/franchises/hp-lovecraft/editions.yaml (new)]
+  entryCount: 146
+  worksCovered: 76
+  worksTotal: 111
+  breakdown:
+    readUrl: "48 works, no isbn13 by design: 40 from Standard Ebooks (38 from
+      its 'Short Fiction' collection, itemised table of contents read
+      directly, not the word-count description + 2 standalone SE ebooks: At
+      the Mountains of Madness, The Case of Charles Dexter Ward), 6 from
+      Project Gutenberg standalone ebooks not on Standard Ebooks (Through the
+      Gates of the Silver Key, The Curse of Yig, Medusa's Coil, The Horror in
+      the Burying-Ground, The Trap, The Last Test), 2 from a Project
+      Gutenberg anthology ('Writings in the United Amateur, 1915-1922',
+      #30637) whose own itemised contents name A Reminiscence of Dr. Samuel
+      Johnson and Poetry and the Gods by title."
+    enPaid: "70 unique works: 51 from the Penguin Classics S. T. Joshi
+      trilogy (Call of Cthulhu 2011 deluxe, Thing on the Doorstep 2001,
+      Dreams in the Witch House 2004 - the default in-print recommendation),
+      22 of those 51 also carry a second Library of America 'Tales' (2005)
+      entry (out of print, kept anyway as a genuinely different hardcover
+      object per SCHEMA's own tiebreak language), 17 more from Race Point/
+      Knickerbocker Classics 'The Complete Fiction' (2014) used ONLY for
+      works outside the Penguin trilogy, to avoid a redundant third English
+      edition on the same 51 works."
+    ptPT: "8 entries, 8 distinct works: Editorial Estampa's 'Os Demónios de
+      Randolph Carter' (4 works, the wing's own Randolph Carter subseries,
+      independently confirmed via 3+ sources), Vega's 'O Terror Sobrenatural
+      na Literatura', Relógio d'Água's 'Nas Montanhas da Loucura', Black
+      Son's 'Os Fungos de Yuggoth' (no ISBN, deliberate), Saída de
+      Emergência's 2018 illustrated anthology (1 of its 22 stories
+      confirmed, The Outsider/O Intruso)."
+  isbnChecks:
+    computed_and_verified: 8
+    checkDigitFailures: 0
+    detail: "Converted 3 ISBN-10s to ISBN-13 by hand (Penguin TD's
+      0-14-218003-3, Penguin DWH's 0-14-243795-6, Estampa's 972-33-0208-X)
+      and independently cross-checked all 3 against a second source (PRH's
+      own product page for the two Penguin ones, WOOK's retailer record for
+      Estampa) - all 3 matched exactly. Recomputed check digits by hand for
+      LOA (9781931082723) and Race Point (9781631060014) against their own
+      publisher pages. No bad check digit found anywhere; nothing was edited
+      to force a pass."
+  regionChecks: "All 4 pt-PT ISBNs verified against the 978-972/978-989
+    Portugal prefix table: 9789723302080, 9789726998525, 9789896412555,
+    9789897731228 - all correctly 972/989-prefixed, none Brazilian."
+  duplicateIsbnCheck: "Every ISBN below is intentionally reused across
+    several works when a single anthology's own itemised table of contents
+    names them (Penguin/LOA/Race Point/Estampa blocks) - not a defect, the
+    same one-book-many-works method the Poe wing's LOA block already uses.
+    No ISBN appears on two DIFFERENT physical editions."
+publicDomainMethodology: >
+  Verified rather than assumed. Works published 1930 or earlier are outright
+  US public domain by term expiration; extensive documented research (cited
+  in the file header) has found no renewal filing for any Lovecraft work,
+  which is why most of the 1931-1937 fiction is treated as public domain too
+  by Standard Ebooks and Project Gutenberg specifically, not by inference
+  from "he died in 1937." Standard Ebooks' own edition preface was read and
+  quoted in the file header: it states directly that verifying this
+  author's full public-domain status is genuinely hard and that its edition
+  is incomplete for that reason - which is also the explanation offered for
+  the 35-work gap rather than treating it as an unexplained shortfall.
+  hplovecraft.com (the author's own scholarly archive, and this file's best
+  bibliographic source for everything else) was explicitly considered and
+  rejected as a THIRD readUrl source: it carries a blanket page-footer
+  copyright notice and no per-work public-domain determination the way SE
+  and PG both publish, so it does not clear the bar SKILL.md sets for that
+  specific field even though its prose texts are almost certainly fine.
+  gutenberg.net.au was also considered and rejected, for mixing an
+  Australia-specific (life+70) public-domain claim under the same "Project
+  Gutenberg" label the file uses for the US-specific gutenberg.org.
+gaps: >
+  35 works with no edition entry at all, listed by name in the file header's
+  closing section: notes-on-writing-weird-fiction (the one non-apocrypha
+  case) plus 34 apocrypha works, mostly minor ghostwrites/revisions credited
+  to other authors and the very late (1959) posthumous juvenilia fragments.
+  None appears in Standard Ebooks, Project Gutenberg, or any of the three
+  English print anthologies checked (Penguin trilogy, LOA, Race Point). The
+  Mound and The Curse of Yig have PS Publishing small-press collector's
+  hardcovers (seen on hplovecraft.com's collections index) not chased
+  individually - short-run signed/numbered items, not the buyable-today
+  class of edition this file otherwise records.
+rejectedCandidates:
+  - "Gollancz's 'Necronomicon: The Best Weird Tales' (2008): real, itemised
+    34-story TOC, but every story is already a subset of the Race Point
+    edition - would add a third English edition for no reader distinction."
+  - "Livros do Brasil's 'Os mortos podem voltar' (1950/1993 reprint, ISBN
+    9789723814590): earliest Portuguese Lovecraft book found, but WOOK marks
+    the reprint ISBN out of stock/unavailable and no source itemises its
+    actual contents - an unverifiable early web-search guess that it was The
+    Case of Charles Dexter Ward could not be confirmed and is not repeated."
+  - "2016 Penguin 'Orange Collection' reissue of Call of Cthulhu (ISBN
+    9780143129455, 368pp vs. the cited 2011 edition's 448pp): its table of
+    contents was not independently confirmed to be unabridged, so the 2011
+    printing is cited instead of assuming the shorter reissue matches."
+  - "Saída de Emergência's multi-volume 'Os Melhores Contos' series (7+
+    volumes, 2008-2021): very likely covers further works, but no per-volume
+    contents list was found and independently confirmed - flagged in the
+    file header as a real gap for a human with a browser, not chased on a
+    guess."
+forStages:
+  wing-audit: >
+    My own weakest calls, in order. (1) Race Point's edition was used only
+    for the 17 works outside the Penguin trilogy rather than also as a
+    second entry on the other 51, on the reasoning that a third English
+    anthology with no distinguishing feature is padding - worth a second
+    opinion, since the same logic could argue LOA shouldn't have gotten a
+    second slot either, and I treated those two cases differently (LOA gets
+    the second slot because it's a genuinely different physical object -
+    single prestige hardcover vs. three paperbacks - Race Point on the
+    Penguin-covered 51 would just be a bigger version of the same kind of
+    book, less distinguishing than that). (2) The Estampa ISBN's year
+    (1987 per WOOK vs. 2003 per BNP) was resolved in the BNP's favour with a
+    note explaining why, rather than left unresolved or split into two
+    entries - the same discipline as the Wee Free Men case in SKILL.md, but
+    a curator with the physical book could settle it directly. (3) The
+    Saída de Emergência 2018 anthology is recorded for exactly one of its
+    22 stories on the strength of one newspaper pre-publication excerpt;
+    that is a real, checked source but a thin basis for citing a 544-page
+    book, and a curator may prefer to drop it until more of the TOC is
+    findable.
+  translation: >
+    Per SCHEMA.md, editions.yaml is never overlaid by i18n (title, isbn13,
+    language and workId are all forbidden in i18n overlays specifically so
+    a translation pass cannot invent a book) - nothing for that stage to do
+    on this file. No i18n_coverage.py regression: editions.yaml was not
+    translatable before this stage and remains not translatable now.
+openQuestions:
+  - "Whether Race Point deserves a second entry on the 51 Penguin-covered
+    works after all (see wing-audit note 1) - argued against here on
+    padding grounds, but it is a judgement call rather than a hard rule."
+  - "Estampa's 1987-vs-2003 date discrepancy on one ISBN (see wing-audit
+    note 2) - resolved with a stated reason, not left open, but a human with
+    the physical book could confirm directly."
