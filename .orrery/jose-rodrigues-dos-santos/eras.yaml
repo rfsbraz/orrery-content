@@ -1,0 +1,40 @@
+stage: eras
+summary: >
+  2 eras, both provenance: publishing (rung 4, the safety net). No rung 1-3
+  periodisation exists for this author in Portuguese or English - searched
+  both, found none - so the wing ships the one defensible split: the Gradiva
+  years and the Planeta years, on the sourced publisher change.
+produced:
+  eras:
+    the-gradiva-years: "2001-2021, ends with O Jardim dos Animais com Alma (2021)"
+    the-planeta-years: "2022-present, opens with A Mulher do Dragão Vermelho (2022)"
+  rejectedCandidates: >
+    (1) A "before/after O Codex 632 (2005)" breakout narrative - Bertrand and a
+    2026 Forbes Portugal 20th-anniversary piece praise the book's impact but
+    periodise nothing; publicity language about one title, not a career
+    division. (2) The three-part war-reportage study (Crónicas de Guerra I/II,
+    A Verdade da Guerra, 2001-2002) - genuinely author-framed as one project
+    (already noted on each work in works.yaml) but a single nonfiction cluster
+    inside one year, not a wing-wide creative period; promoting it to a
+    chapter-gate would misrepresent three linked essays as decade-scale.
+  orphan: >
+    jose-rodrigues-dos-santos/comunicacao (1992) sits outside both eras on
+    purpose - his first book, 9 years before the Gradiva relationship starts,
+    from an unrelated small publisher (Difusão Cultural), with nothing else
+    published in the gap. validate.py's era-coverage warning on it is expected
+    and documented in eras.yaml's header comment; not a defect to close.
+validatorResult: >
+  python scripts/validate.py --slug jose-rodrigues-dos-santos - one error, the
+  expected pre-existing "no art: block" (visual-language's). One new warning,
+  the documented comunicacao orphan above. The other warning shown (the
+  completeness-auditor handoff's word count) predates this stage.
+forStages:
+  art-rotation: >
+    Both eras already carry organisation: chapter-gate, images_required: 1,
+    and a Holds-compatible illustration_type (symbolic-still-life for
+    the-gradiva-years, atmospheric-motif-field for the-planeta-years) - no
+    further decision needed unless the rotation pass wants variety against
+    neighbouring events.
+  visual-language: "No change to what franchise-research already scoped; eras add no new visual-language requirement."
+  wing-audit: "The comunicacao 1992 era-coverage warning is intentional (see orphan note above), not a gap to fill."
+openQuestions: []
