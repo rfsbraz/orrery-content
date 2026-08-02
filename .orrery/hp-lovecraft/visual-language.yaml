@@ -1,0 +1,137 @@
+stage: visual-language
+summary: >
+  theme.yaml's `art` block already existed, fully specified, when this stage
+  started - written at franchise-research/scaffold time (commit 814b38a)
+  rather than by a dedicated visual-language run, and never touched by any
+  stage since. No prior handoff records it as a visual-language deliverable
+  (franchise-research's own handoff lists only preset/displayFace/signature/
+  accent under "theme", not art), so the pipeline's own state did not show
+  this stage as done even though the file did. Read it in full against every
+  requirement in SKILL.md, docs/SCHEMA.md#themeart and docs/VISUAL.md, and
+  found it sound on every axis checked - correctly scoped, well sourced, and
+  already distinct from its neighbours - so it ships unchanged rather than
+  rewritten for the sake of this stage having authored something. `theme.yaml`
+  has zero diff on this branch; the only new file is this handoff.
+verification:
+  sixFieldsPresent: >
+    emblem (object+why), motifs (8), atmosphere, lineCharacter,
+    backgroundTexture, accentUse, avoid (5) - all present, all prose rather
+    than enum values, none describing edges/fades/crops/opacity (VISUAL.md
+    SS5a), none baking in text, none specifying a real person's likeness, none
+    drawn from the books' own cover art or fan heraldry.
+  untouchedFields: >
+    palette/preset/displayFace/signature/notes match franchise-research's
+    scaffold byte for byte (git diff against 814b38a is empty for
+    theme.yaml) - this stage's own "do not touch" list held automatically
+    since nothing was edited.
+  orreryMotifSeparation: >
+    The emblem (a telescope+notebook) and accentUse (verdigris on sea-worn
+    metal) are both concrete physical objects, neither a ring, ellipse or
+    orbital diagram, so neither risks being read as the shared orrery mark.
+    theme.art says nothing about how the rings are drawn, per SKILL.md's own
+    instruction that the rings are not this stage's to define.
+  validate: "python3 scripts/validate.py --slug hp-lovecraft - 0 errors. The
+    art-block-missing error that used to gate this wing is gone (it was
+    already gone before this stage touched anything, since the block has
+    been in the file since scaffold). 62 pre-existing warnings, all
+    attributed to earlier stages in their own handoffs (57 era-coverage, 5
+    handoff-length); zero new."
+  assetAudit: "python3 scripts/asset_audit.py hp-lovecraft - reports art:yes
+    and lists 30 jobs (2 era plates, 18 life events, 9 franchise events, 1
+    world event already generated in-catalogue and tinted to this wing's
+    accent). Confirms the gate this stage exists to clear is actually open."
+distinctness:
+  method: >
+    python3 scripts/theme_digest.py --exclude hp-lovecraft, then read the
+    full theme.yaml of every wing it showed sharing an axis, plus Stephen
+    King's in full specifically because horror-genre adjacency is real even
+    where the digest shows no value collision (the digest only catches exact
+    hex/face/signature matches, not genre proximity).
+  poe: >
+    The nearest neighbour by every measure that matters (genre, period,
+    American gothic-adjacent register) and the one theme.yaml's own header
+    already argues against at length: cold/oceanic/procedural (Lovecraft)
+    vs warm/interior/confessional (Poe), a firm ruled line vs Poe's
+    steel-engraver hatching, spectral vs Poe's fraunces (also claimed by 5
+    other wings), a murky verdigris accent vs Poe's tarnished brass, an
+    unlit ruled signature vs Poe's lit beam.
+  king: >
+    Checked directly (not surfaced by the digest, since it collides with
+    Lovecraft on no axis at all): warm near-black bg (#15110d) vs
+    Lovecraft's cold blue-green-cast void (#080b0d); oxblood accent vs
+    verdigris; fraunces vs spectral; beam vs rule; heavy grainy
+    scratchboard/woodcut line vs a dry level technical-pen line; small-town
+    Maine suburbia (storm drains, gas stations, sagging power lines) vs
+    coastal New England decay and cyclopean masonry; King's own avoid list
+    (no Pennywise/clowns, no fog machines) targets his specific pop-culture
+    reputation the way Lovecraft's avoid list targets tentacle/Cthulhu
+    kitsch - same shape of restraint, entirely different specific target.
+    No axis collides; no explicit differentiation prose was structurally
+    required by SKILL.md's own adjacency test, and none was added to
+    theme.yaml for that reason.
+  straub: "No peter-straub wing exists in the catalogue yet (absent from the
+    25-wing digest output) - nothing to check against."
+  chuckPalahniuk: >
+    Already the header's own named nearest-accent neighbour (#74a89a vs
+    #4a7d72) and the only real hue-family collision; addressed there, not
+    reargued here.
+  oneSentence: >
+    Where Poe is one shut candlelit room and King is dread inside an
+    ordinary Maine street, this wing is a cold coastal document - a report,
+    a deposition, a survey - being read by lamplight after the fact.
+avoidListCoversTheAsk: >
+  The orchestrator's brief specifically asked whether this wing avoids
+  tentacle-monster kitsch and costume-horror shorthand. It already does,
+  explicitly: `avoid` bans tentacles/cartoon Cthulhu iconography,
+  robed-cultist-as-generic-shorthand, glowing/bioluminescent green
+  horror-cliche lighting, pulp-magazine cover camp, and gore for its own
+  sake. The positive case is built the same way: the emblem is Lovecraft's
+  own documented amateur astronomy (Ladd Observatory, a decade of star
+  notebooks, the root of his cosmicism) rather than genre iconography
+  invented after his death, and the atmosphere field states outright that
+  "almost nothing is shown outright; almost everything is read, verified,
+  and found to be true" - the fake-scholarly-apparatus, documentary mode
+  the orchestrator's brief named as this author's real character.
+produced:
+  filesChanged:
+    - .orrery/hp-lovecraft/visual-language.yaml (new - this file)
+  filesConfirmedUnchanged:
+    - content/franchises/hp-lovecraft/theme.yaml
+forStages:
+  art-rotation: >
+    Nothing to re-check that press-archaeology's own aura work didn't
+    already shape; art-rotation should still run its own organisation-cap
+    protocol independently per its usual practice.
+  visual-metadata: >
+    Quote the `art` block verbatim in STYLE per VISUAL.md SS5 for every
+    portrait/cover/era/life-event/franchise-event asset. Two hard
+    constraints already on record from earlier stages that visual-metadata
+    must carry into any Dunwich Horror or Dream-Quest sketch: spoiler-audit's
+    handoff says a Dunwich plate must not depict what the thing on the farm
+    is, and a Dream-Quest plate must not show the sunset city as a
+    recognisable New England town - both would reinstate in the image a
+    reveal the prose deliberately stopped naming. VISUAL.md SS3 also applies
+    as normal: no generated likeness of Lovecraft himself; life-event
+    sketches are place/object/consequence, never a portrait.
+  asset-prompt (future, per-asset): >
+    The emblem (telescope+notebook) is available as an emblem-seal subject
+    if one is ever scoped; nothing currently uses that illustration type.
+    The orrery rings go in the sky by default per VISUAL.md SS1a, vast and
+    faint, on whichever asset's scene has open sky - fog over the wharf and
+    the coastal-house motifs both plausibly do.
+  wing-audit: >
+    Worth a second look, not a defect: this stage found its own deliverable
+    already written by an earlier stage outside its normal mandate
+    (franchise-research's handoff does not list `art` as something it
+    produced, but the file it shipped has one). The content held up under
+    full review against this stage's own skill file, so it was not redone -
+    but the process gap (a scaffold stage writing a downstream stage's
+    field, silently, with no handoff record of having done so) is worth
+    flagging so a future wing's scaffold pass does not repeat it, or so a
+    future visual-language run does not assume theme.yaml's state matches
+    what its own stage's handoffs claim.
+openQuestions:
+  - "Whether franchise-research's skill should be tightened to either not
+    draft theme.art at all, or to draft it and say so in its own handoff -
+    either is fine, the silent middle state is what cost this run its
+    verification time."
