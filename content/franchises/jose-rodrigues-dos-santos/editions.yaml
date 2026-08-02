@@ -1,0 +1,508 @@
+# Portuguese editions - the actual books a pt-PT reader buys.
+#
+# Santos writes in Portuguese, so there is nothing to translate: every work's
+# `title` in works.yaml IS the published Portuguese title. Per SCHEMA.md the
+# `title` field is therefore OMITTED throughout - repeating it would duplicate
+# the work title rather than record a genuinely different published title.
+#
+# COVERAGE: 34 of 34 works have a verified pt-PT edition. The 27 novels and
+# "Comunicação" are sourced to the current publisher's own product page -
+# gradiva.pt (his publisher 2001-2022) or planetadelivros.pt (Grupo Planeta,
+# 2022-present) - read directly for ISBN, year and binding. The three
+# war-reportage essays and all three interview volumes are out of print at
+# both current publishers; those six rest on the Biblioteca Nacional de
+# Portugal's ipac20 catalogue (catalogo.bnportugal.gov.pt, which answers to a
+# browser User-Agent) and, for one, OpenLibrary's aggregation of a Harvard
+# Library MARC record. 24 of the 28 gradiva.pt-sourced ISBNs are additionally
+# corroborated by an independent OpenLibrary record for the same title; the
+# remainder rest on the publisher's own catalogue alone, the top-ranked
+# source in this skill's hierarchy.
+#
+# Region check: every ISBN below carries a 978-972 or 978-989 prefix
+# (Portugal); none is a 978-85/978-65 (Brazil) edition mistagged - checked
+# individually against a search that surfaced a genuine Brazilian edition of
+# "O Sétimo Selo" (Editora Record, 978-85-...) and one of "O Segredo de
+# Espinosa" (Planeta do Brasil, 978-85-...), neither used here.
+#
+# THREE DATA CORRECTIONS, each the product's own catalogue disagreeing with
+# itself or with a second source:
+#
+# - "Conversas de Escritores": gradiva.pt's own product page prints
+#   "ISBN: 378-989-616-366-2" - not a real Bookland prefix, so not a real
+#   ISBN. The Biblioteca Nacional de Portugal's own catalogue record for the
+#   same book (1ª ed., Gradiva, 2010, 254 p.) gives 978-989-616-366-2, which
+#   passes its check digit and is independently corroborated by OpenLibrary.
+#   That number is used below; Gradiva's page is cited as the source of the
+#   typo, not of the ISBN.
+#
+# - "O Protocolo Caos": OpenLibrary carries a user-contributed record with a
+#   different, also check-digit-valid ISBN (978-989-777-955-8) that traces to
+#   no library or publisher source. Planeta's own current product page gives
+#   978-989-777-933-6 for the in-print trade paperback; that is the number
+#   used here.
+#
+# - "O Codex 632" and "A Fórmula de Deus": both were reissued as 2026
+#   Gradiva 20th-anniversary editions (new ISBNs, "Fora de Colecção"/"Gradiva
+#   Romance"), and gradiva.pt's own product pages for the original 2005/2006
+#   printings now link to the anniversary edition as "Também disponível em:
+#   Livro físico" - i.e. the original printing is ebook-only there today. The
+#   anniversary edition is recorded below as the current in-print physical
+#   edition; the two superseded ISBNs (978-989-616-072-2 for the 2005 Codex
+#   632 first edition, per OpenLibrary; 978-989-616-139-2 for the 2006
+#   Fórmula de Deus first edition, per gradiva.pt) are not recorded as
+#   separate entries since a current edition of each exists.
+#
+# THE WAR-REPORTAGE VOLUMES, disentangled from one shared "Fora de Colecção"
+# numbering (174/180/185): BNP's own first-edition record (1ª ed., 2001-2002,
+# id.bnportugal.gov.pt/bib/bibnacional/1078198) catalogues all three volumes
+# as one three-ISBN set and lists them in an order that does not agree with
+# every later record for the same numbers. Every subsequent edition record
+# that catalogues a single volume on its own agrees with the mapping used
+# below: four independent records (3ª-7ª ed., 2001-2003) tie 972-662-816-4 to
+# "Da Crimeia a Dachau" alone; a combined 3ª ed. record
+# (id.bnportugal.gov.pt/bib/bibnacional/1082532, matching each ISBN to a
+# separate legal-deposit number) ties 978-972-662-837-8 to "De Saigão a
+# Bagdade"; and four further standalone records (3ª-6ª ed., 2002-2005) plus
+# an OpenLibrary entry sourced to a Harvard Library MARC record independently
+# catalogue "A verdade da guerra" alone under 972-662-867-9. That is the
+# mapping used below, over the one dissenting first-edition record.
+
+# ---------------------------------------------------------------------------
+# Série Tomás Noronha (14)
+# ---------------------------------------------------------------------------
+
+- id: jose-rodrigues-dos-santos/o-codex-632/gradiva-2026-pt
+  workId: jose-rodrigues-dos-santos/o-codex-632
+  isbn13: "9789897854057"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2026
+  note: >
+    20th-anniversary edition, February 2026, 552pp - the current in-print
+    physical edition; gradiva.pt links its original 2005 printing's page to
+    this one as the book's "physical book" option.
+  sources:
+    - "https://www.gradiva.pt/produto/o-codex-632-edicao-comemorativa-20-anos/"
+    - "https://www.gradiva.pt/produto/o-codex-632/"
+
+- id: jose-rodrigues-dos-santos/a-formula-de-deus/gradiva-2026-pt
+  workId: jose-rodrigues-dos-santos/a-formula-de-deus
+  isbn13: "9789897854521"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2026
+  note: >
+    20th-anniversary edition, May 2026, 496pp - the current in-print physical
+    edition; the original 2006 printing (978-989-616-139-2) is sold out at
+    Gradiva and available there only as an ebook.
+  sources:
+    - "https://www.gradiva.pt/produto/a-formula-de-deus-edicao-comemorativa-20-anos/"
+    - "https://www.gradiva.pt/produto/a-formula-de-deus/"
+
+- id: jose-rodrigues-dos-santos/o-setimo-selo/gradiva-2007-pt
+  workId: jose-rodrigues-dos-santos/o-setimo-selo
+  isbn13: "9789896162085"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2007
+  note: 504pp. ISBN independently corroborated by OpenLibrary.
+  sources:
+    - "https://www.gradiva.pt/produto/o-setimo-selo/"
+
+- id: jose-rodrigues-dos-santos/furia-divina/gradiva-2009-pt
+  workId: jose-rodrigues-dos-santos/furia-divina
+  isbn13: "9789896163389"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2009
+  note: 608pp. ISBN independently corroborated by OpenLibrary.
+  sources:
+    - "https://www.gradiva.pt/produto/furia-divina/"
+
+- id: jose-rodrigues-dos-santos/o-ultimo-segredo/gradiva-2011-pt
+  workId: jose-rodrigues-dos-santos/o-ultimo-segredo
+  isbn13: "9789896164461"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2011
+  note: 564pp. ISBN independently corroborated by OpenLibrary.
+  sources:
+    - "https://www.gradiva.pt/produto/o-ultimo-segredo/"
+
+- id: jose-rodrigues-dos-santos/a-mao-do-diabo/gradiva-2012-pt
+  workId: jose-rodrigues-dos-santos/a-mao-do-diabo
+  isbn13: "9789896164942"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2012
+  note: 592pp. ISBN independently corroborated by OpenLibrary.
+  sources:
+    - "https://www.gradiva.pt/produto/a-mao-do-diabo/"
+
+- id: jose-rodrigues-dos-santos/a-chave-de-salomao/gradiva-2014-pt
+  workId: jose-rodrigues-dos-santos/a-chave-de-salomao
+  isbn13: "9789896166021"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2014
+  note: 624pp. ISBN independently corroborated by OpenLibrary.
+  sources:
+    - "https://www.gradiva.pt/produto/a-chave-de-salomao/"
+
+- id: jose-rodrigues-dos-santos/vaticanum/gradiva-2016-pt
+  workId: jose-rodrigues-dos-santos/vaticanum
+  isbn13: "9789896167332"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2016
+  note: 608pp.
+  sources:
+    - "https://www.gradiva.pt/produto/vaticanum/"
+
+- id: jose-rodrigues-dos-santos/sinal-de-vida/gradiva-2017-pt
+  workId: jose-rodrigues-dos-santos/sinal-de-vida
+  isbn13: "9789896167837"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2017
+  note: 656pp.
+  sources:
+    - "https://www.gradiva.pt/produto/sinal-de-vida/"
+
+- id: jose-rodrigues-dos-santos/imortal/gradiva-2019-pt
+  workId: jose-rodrigues-dos-santos/imortal
+  isbn13: "9789896169176"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2019
+  note: 512pp. ISBN independently corroborated by OpenLibrary.
+  sources:
+    - "https://www.gradiva.pt/produto/imortal/"
+
+- id: jose-rodrigues-dos-santos/o-jardim-dos-animais-com-alma/gradiva-2021-pt
+  workId: jose-rodrigues-dos-santos/o-jardim-dos-animais-com-alma
+  isbn13: "9789897850929"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2021
+  note: 504pp.
+  sources:
+    - "https://www.gradiva.pt/produto/o-jardim-dos-animais-com-alma/"
+
+- id: jose-rodrigues-dos-santos/a-mulher-do-dragao-vermelho/planeta-2022-pt
+  workId: jose-rodrigues-dos-santos/a-mulher-do-dragao-vermelho
+  isbn13: "9789897776168"
+  language: pt-PT
+  format: paperback
+  publisher: Planeta
+  year: 2022
+  note: October 2022, 576pp - his first title with Grupo Planeta.
+  sources:
+    - "https://www.planetadelivros.pt/livro-a-mulher-do-dragao-vermelho/359954"
+
+- id: jose-rodrigues-dos-santos/o-protocolo-caos/planeta-2024-pt
+  workId: jose-rodrigues-dos-santos/o-protocolo-caos
+  isbn13: "9789897779336"
+  language: pt-PT
+  format: paperback
+  publisher: Planeta
+  year: 2024
+  note: October 2024, 624pp.
+  sources:
+    - "https://www.planetadelivros.pt/livro-o-protocolo-caos/406495"
+
+- id: jose-rodrigues-dos-santos/o-sexto-sentido/planeta-2025-pt
+  workId: jose-rodrigues-dos-santos/o-sexto-sentido
+  isbn13: "9789897778377"
+  language: pt-PT
+  format: paperback
+  publisher: Planeta
+  year: 2025
+  note: >
+    October 2025, 576pp - the standard trade paperback. A separate hardcover
+    "Edição de Colecionador" also exists (ISBN 978-989-587-098-1, per Wook)
+    and is not recorded here as a second entry.
+  sources:
+    - "https://www.planetadelivros.pt/livro-o-sexto-sentido/394929"
+
+# ---------------------------------------------------------------------------
+# Série Calouste Gulbenkian (2)
+# ---------------------------------------------------------------------------
+
+- id: jose-rodrigues-dos-santos/o-homem-de-constantinopla/gradiva-2013-pt
+  workId: jose-rodrigues-dos-santos/o-homem-de-constantinopla
+  isbn13: "9789896165499"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2013
+  note: September 2013, 504pp. ISBN independently corroborated by OpenLibrary.
+  sources:
+    - "https://www.gradiva.pt/produto/o-homem-de-constantinopla/"
+
+- id: jose-rodrigues-dos-santos/um-milionario-em-lisboa/gradiva-2013-pt
+  workId: jose-rodrigues-dos-santos/um-milionario-em-lisboa
+  isbn13: "9789896165598"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2013
+  note: November 2013, 672pp. ISBN independently corroborated by OpenLibrary.
+  sources:
+    - "https://www.gradiva.pt/produto/um-milionario-em-lisboa/"
+
+# ---------------------------------------------------------------------------
+# Saga do Lótus (4)
+# ---------------------------------------------------------------------------
+
+- id: jose-rodrigues-dos-santos/as-flores-de-lotus/gradiva-2015-pt
+  workId: jose-rodrigues-dos-santos/as-flores-de-lotus
+  isbn13: "9789896166717"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2015
+  note: 688pp. ISBN independently corroborated by OpenLibrary.
+  sources:
+    - "https://www.gradiva.pt/produto/as-flores-de-lotus/"
+
+- id: jose-rodrigues-dos-santos/o-pavilhao-purpura/gradiva-2016-pt
+  workId: jose-rodrigues-dos-santos/o-pavilhao-purpura
+  isbn13: "9789896167097"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2016
+  note: 704pp.
+  sources:
+    - "https://www.gradiva.pt/produto/o-pavilhao-purpura/"
+
+- id: jose-rodrigues-dos-santos/o-reino-do-meio/gradiva-2017-pt
+  workId: jose-rodrigues-dos-santos/o-reino-do-meio
+  isbn13: "9789896167820"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2017
+  note: 704pp.
+  sources:
+    - "https://www.gradiva.pt/produto/o-reino-do-meio/"
+
+- id: jose-rodrigues-dos-santos/a-amante-do-governador/gradiva-2018-pt
+  workId: jose-rodrigues-dos-santos/a-amante-do-governador
+  isbn13: "9789896168452"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2018
+  note: October 2018, 720pp.
+  sources:
+    - "https://www.gradiva.pt/produto/a-amante-do-governador/"
+
+# ---------------------------------------------------------------------------
+# The Mozambique family saga (2, no subseries label - see works.yaml)
+# ---------------------------------------------------------------------------
+
+- id: jose-rodrigues-dos-santos/a-vida-num-sopro/gradiva-2008-pt
+  workId: jose-rodrigues-dos-santos/a-vida-num-sopro
+  isbn13: "9789896162764"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2008
+  note: 616pp. ISBN independently corroborated by OpenLibrary.
+  sources:
+    - "https://www.gradiva.pt/produto/a-vida-num-sopro/"
+
+- id: jose-rodrigues-dos-santos/o-anjo-branco/gradiva-2010-pt
+  workId: jose-rodrigues-dos-santos/o-anjo-branco
+  isbn13: "9789896163907"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2010
+  note: 680pp. ISBN independently corroborated by OpenLibrary.
+  sources:
+    - "https://www.gradiva.pt/produto/o-anjo-branco/"
+
+# ---------------------------------------------------------------------------
+# The Francisco Latino duology (2, no subseries label - see works.yaml)
+# ---------------------------------------------------------------------------
+
+- id: jose-rodrigues-dos-santos/o-magico-de-auschwitz/gradiva-2020-pt
+  workId: jose-rodrigues-dos-santos/o-magico-de-auschwitz
+  isbn13: "9789896168841"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2020
+  note: September 2020, 456pp.
+  sources:
+    - "https://www.gradiva.pt/produto/o-magico-de-auschwitz/"
+
+- id: jose-rodrigues-dos-santos/o-manuscrito-de-birkenau/gradiva-2020-pt
+  workId: jose-rodrigues-dos-santos/o-manuscrito-de-birkenau
+  isbn13: "9789896169909"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2020
+  note: November 2020, 464pp.
+  sources:
+    - "https://www.gradiva.pt/produto/o-manuscrito-de-birkenau/"
+
+# ---------------------------------------------------------------------------
+# Outros (3)
+# ---------------------------------------------------------------------------
+
+- id: jose-rodrigues-dos-santos/a-ilha-das-trevas/gradiva-2007-pt
+  workId: jose-rodrigues-dos-santos/a-ilha-das-trevas
+  isbn13: "9789896161729"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2007
+  note: >
+    Gradiva's 2007 re-edition, 356pp - the edition works.yaml's own note
+    describes. ISBN independently corroborated by OpenLibrary.
+  sources:
+    - "https://www.gradiva.pt/produto/a-ilha-das-trevas/"
+
+- id: jose-rodrigues-dos-santos/a-filha-do-capitao/gradiva-2004-pt
+  workId: jose-rodrigues-dos-santos/a-filha-do-capitao
+  isbn13: "9789726629948"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2004
+  note: November 2004, 636pp.
+  sources:
+    - "https://www.gradiva.pt/produto/a-filha-do-capitao/"
+
+- id: jose-rodrigues-dos-santos/o-segredo-de-espinosa/planeta-2023-pt
+  workId: jose-rodrigues-dos-santos/o-segredo-de-espinosa
+  isbn13: "9789897776663"
+  language: pt-PT
+  format: paperback
+  publisher: Planeta
+  year: 2023
+  note: >
+    October 2023, 560pp. A Brazilian edition exists (Planeta do Brasil,
+    978-85-422-2383-5) and is not this one.
+  sources:
+    - "https://www.planetadelivros.pt/livro-o-segredo-de-espinosa/373163"
+
+# ---------------------------------------------------------------------------
+# Ensaio (4) - the war-reportage trilogy plus his first book
+# ---------------------------------------------------------------------------
+
+- id: jose-rodrigues-dos-santos/comunicacao/gradiva-2015-pt
+  workId: jose-rodrigues-dos-santos/comunicacao
+  isbn13: "9789896166441"
+  language: pt-PT
+  format: paperback
+  publisher: Gradiva
+  year: 2015
+  note: >
+    Gradiva's current printing, May 2015, 172pp - a later Gradiva edition of
+    the 1992 Difusão Cultural first edition works.yaml records.
+  sources:
+    - "https://www.gradiva.pt/produto/comunicacao/"
+
+- id: jose-rodrigues-dos-santos/cronicas-de-guerra-i-da-crimeia-a-dachau/gradiva-2001-pt
+  workId: jose-rodrigues-dos-santos/cronicas-de-guerra-i-da-crimeia-a-dachau
+  isbn13: "9789726628163"
+  language: pt-PT
+  publisher: Gradiva
+  year: 2001
+  note: >
+    463pp, "Fora de Colecção" no. 174. Not currently sold by Gradiva; this
+    ISBN is the one four independent BNP edition records (3ª-7ª ed.,
+    2001-2003) agree names this volume alone, over one dissenting
+    first-edition record - see the file header.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=972-662-816-4&profile=bn"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/1082533"
+
+- id: jose-rodrigues-dos-santos/cronicas-de-guerra-ii-de-saigao-a-bagdade/gradiva-2001-pt
+  workId: jose-rodrigues-dos-santos/cronicas-de-guerra-ii-de-saigao-a-bagdade
+  isbn13: "9789726628378"
+  language: pt-PT
+  publisher: Gradiva
+  year: 2002
+  note: >
+    591pp, "Fora de Colecção" no. 180. Not currently sold by Gradiva; ISBN
+    per a BNP record (3ª ed.) that pairs each volume's own legal-deposit
+    number to its own ISBN - see the file header.
+  sources:
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/1082532"
+
+- id: jose-rodrigues-dos-santos/a-verdade-da-guerra/gradiva-2002-pt
+  workId: jose-rodrigues-dos-santos/a-verdade-da-guerra
+  isbn13: "9789726628675"
+  language: pt-PT
+  publisher: Gradiva
+  year: 2002
+  note: >
+    258pp, "Fora de Colecção" no. 185. Not currently sold by Gradiva; this
+    ISBN is confirmed as this book's own standalone identifier (not the
+    3-volume set's) by four separate BNP editions (3ª-6ª ed., 2002-2005) and
+    by OpenLibrary's record of a Harvard Library MARC catalogue entry (5ª
+    ed., 2003) - see the file header.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=972-662-867-9&profile=bn"
+    - "https://openlibrary.org/isbn/9789726628675.json"
+
+# ---------------------------------------------------------------------------
+# Livros de entrevistas (3)
+# ---------------------------------------------------------------------------
+
+- id: jose-rodrigues-dos-santos/conversas-de-escritores/gradiva-2010-pt
+  workId: jose-rodrigues-dos-santos/conversas-de-escritores
+  isbn13: "9789896163662"
+  language: pt-PT
+  publisher: Gradiva
+  year: 2010
+  note: >
+    1ª ed., 254pp. See the file header: this is BNP's and OpenLibrary's
+    number, not the one printed on gradiva.pt's own product page.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-616-366-2&profile=bn"
+    - "https://www.gradiva.pt/produto/conversas-de-escritores/"
+
+- id: jose-rodrigues-dos-santos/a-ultima-entrevista-de-jose-saramago/gradiva-2011-pt
+  workId: jose-rodrigues-dos-santos/a-ultima-entrevista-de-jose-saramago
+  isbn13: "9789896164324"
+  language: pt-PT
+  publisher: Gradiva
+  year: 2011
+  note: >
+    1ª ed., 66pp - matches works.yaml's note on this short, separately
+    published volume. gradiva.pt's own product page prints an unrelated
+    "Data de publicação" (01/01/1981, predating the book by three decades);
+    the year here follows BNP, which agrees with gradiva.pt's own "Edição
+    actual" field.
+  sources:
+    - "https://bibliografia.bnportugal.gov.pt/bnp/bnp.exe/registo?1802414"
+    - "https://www.gradiva.pt/produto/a-ultima-entrevista-de-jose-saramago/"
+
+- id: jose-rodrigues-dos-santos/novas-conversas-de-escritores/gradiva-2012-pt
+  workId: jose-rodrigues-dos-santos/novas-conversas-de-escritores
+  isbn13: "9789896164720"
+  language: pt-PT
+  publisher: Gradiva
+  year: 2012
+  note: 264pp. ISBN independently corroborated by OpenLibrary.
+  sources:
+    - "https://www.gradiva.pt/produto/novas-conversas-de-escritores/"

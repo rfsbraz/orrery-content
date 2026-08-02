@@ -1,0 +1,119 @@
+id: jose-rodrigues-dos-santos
+name: José Rodrigues dos Santos
+kind: author
+description: >
+  A journalist and RTP news anchor since 1991 turned Portugal's bestselling
+  novelist: fourteen books of historian-cryptanalyst Tomás Noronha threading
+  real cryptography, science and religious history into a wider shelf of
+  standalone historical fiction, from Calouste Gulbenkian's Lisbon exile to
+  his own family's colonial past in Mozambique.
+authorIds: [jose-rodrigues-dos-santos]
+themePreset: newsroom-cipher
+
+# No header image. Checked and rejected: RTP's own headquarters (a public-
+# domain self-published Commons photo, but the only angle available frames a
+# delivery-truck loading gate, not a newsroom); Macau's Leal Senado square
+# (tied to the author's own start in journalism at Rádio Macau and to Saga do
+# Lótus, but every Commons photo is a sunlit tourist-square shot crowded with
+# modern buses and high-rises behind it, at odds with the newsroom-after-hours
+# register in theme.yaml, and two nominally-matching Commons files under that
+# building's name turned out on inspection to be an unrelated statue and a
+# flower macro); the Gulbenkian Foundation's museum building in Lisbon (clean
+# and quiet, but built in 1969, well after Calouste Gulbenkian's 1955 death -
+# it is the institution his fortune endowed, not a place his own story (or the
+# duology about it) ever occupies, so using it as "the world these books live
+# in" would overstate the connection). No sourced photograph of the author's
+# TV newsroom itself was found on Commons or Openverse.
+features: {}
+
+globalEvents:
+  include:
+    - financial-crisis-2008        # A Mão do Diabo (2012): Noronha decrypts a DVD exposing the crash's own architects
+    - portugal-bailout-2011        # the same novel opens with Noronha's redundancy in the university budget cuts that were the domestic face of post-bailout austerity
+  exclude:
+    - sept-11-2001                 # reported live from Ground Zero for RTP's 2002 anniversary special, but no novel answers the attacks themselves
+    - covid-19-pandemic-2020       # wrote and published through it (2021); no sourced link between any novel and the pandemic
+    - fantasy-paperback-boom-1965  # writes historical thriller, not fantasy; not the category this event created
+    - carnation-revolution-1974    # colonial Portugal recurs across his fiction, but no work dramatizes the Revolution itself and no sourced account ties his family's path out of Mozambique to it
+    - chain-bookshop-1982          # generic publishing-industry background; no sourced connection to how his books reached readers
+    - online-bookselling-1995      # generic publishing-industry background; traditionally published throughout, no sourced Amazon-era angle
+    - ebook-and-self-publishing-2007  # traditionally published by Gradiva then Planeta throughout; no self-publishing or ebook-launch angle
+    - prestige-fantasy-adaptation-2011  # writes historical thriller, not fantasy; unrelated genre
+    - booktok-2020                 # an established bestseller since 2005; no sourced BookTok-driven discovery angle
+
+# "Where to start" - powers the guided wizard. Three honest paths: the whole
+# shelf, the flagship series from its own beginning, and one standalone taste
+# for a reader not ready to commit to a 14-book series. No path was built to
+# fill an empty fit-matrix cell; each rests on real material below.
+startHere:
+  paths:
+    - id: everything-in-order
+      title: Everything, in order
+      description: >
+        Every book he has written, chronologically from 1992 to today: the
+        Tomás Noronha case files, the Calouste Gulbenkian biography, Saga do
+        Lótus, the standalone historical novels, and the war-reportage
+        essays and interview volumes alongside them.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+
+    # Source: https://www.booksonboard.com/order-of-books/jose-rodrigues-dos-santos/
+    # "Ready for a literary adventure? Snag Codex 632 and dive into José
+    # Rodrigues dos Santos's world" - recommends starting with Codex 632.
+    # Source: https://www.bookseriesinorder.com/jose-rodrigues-dos-santos/
+    # notes Codex 632 was "the first to be translated into English and
+    # published for an international audience".
+    # Source: https://www.goodreads.com/series/356698-tom-s-noronha lists it
+    # as book 1 of 14.
+    - id: start-with-noronha
+      title: Start with Tomás Noronha
+      description: >
+        The flagship series from its own beginning: fourteen cases for
+        historian-cryptanalyst Tomás Noronha, threading real cryptography,
+        physics and religious history through international conspiracies.
+        Start with O Codex 632, the book that launched both the character
+        and the author's own international career.
+      workIds: null
+      orderId: jose-rodrigues-dos-santos/tomas-noronha-in-order
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        His best-known and most translated novel, A Fórmula de Deus
+        (published internationally as The Einstein Enigma), is actually the
+        series' second book - starting at Codex 632 means meeting Tomás
+        Noronha from the true beginning. The cost: fourteen books is a long
+        commitment before you have sampled anything else he has written.
+
+    # Source: http://aminhaestante.blogspot.com/2014/07/o-anjo-branco-jose-rodrigues-dos-santos.html
+    # - a reader who deliberately chose this as "o primeiro a ler" (the first
+    # to read) among all this author's books, for the real-history subject
+    # and the father's-life connection also noted on works.yaml. One reader's
+    # account, not a critical consensus - the weakest sourcing tier this
+    # skill allows, and used honestly as exactly that.
+    - id: try-o-anjo-branco
+      title: Try O Anjo Branco
+      description: >
+        A standalone outside the thriller series: a doctor's founding of a
+        Flying Doctors' Service in 1960s Mozambique, inspired by the
+        author's own father's life there, and called by Correio da Manhã his
+        "most intimate and emotional novel". No series to commit to.
+      workIds:
+        - jose-rodrigues-dos-santos/o-anjo-branco
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        The cost: it stands apart from the flagship series and the
+        international-conspiracy thrillers the shelf is best known for, and
+        its colonial-war setting is heavier going than a typical Noronha
+        case.
+
+sources:
+  - "https://pt.wikipedia.org/wiki/Jos%C3%A9_Rodrigues_dos_Santos"
+  - "https://www.gradiva.pt/autor/jose-rodrigues-dos-santos/"
+  - "https://joserodriguesdossantos.com/en/books/"

@@ -1,0 +1,167 @@
+# ADDITIONAL reading orders only. The DEFAULT order (all 34 works, publication-
+# chronological) is derived automatically from works.yaml and is NOT listed
+# here. The 14-book Tomás Noronha series is already publisher-numbered 1-14
+# in strict publication order (works.yaml's own header), so it needs no order
+# to represent internally - what it does need, and gets below, is an order
+# that pulls the whole series out as one walkable thread apart from the other
+# 20 works around it.
+#
+# Five entries below, each earning its place on its own grounds - two pull a
+# named thread out of the wider shelf even though they reorder nothing
+# (Noronha, Saga do Lótus), three fix a same-year tie the derived default
+# cannot resolve on its own, published being year-only (Gulbenkian, Auschwitz,
+# Crónicas de Guerra).
+#
+# Checked and declined: A Vida num Sopro / O Anjo Branco (2008, 2010), the
+# continuing but unnamed Mozambique family-saga pair (works.yaml's header on
+# why no series name is invented for it). Different years, so the derived
+# default already places them correctly with nothing to fix, and at two books
+# with no tie to break, extracting them reorders nothing a reader could feel -
+# the same floor Michael Connelly's wing applies to its own two-book Terry
+# McCaleb and Catalina groups, and Harlan Coben's to its Sami Kierce and Wilde
+# threads. An order here would exist only to pad the file.
+
+- id: jose-rodrigues-dos-santos/tomas-noronha-in-order
+  name: Tomás Noronha, the complete series
+  type: curated
+  source: canon
+  rationale: >
+    The 14 [[work:jose-rodrigues-dos-santos/o-codex-632|Tomás Noronha]] novels
+    (2005-2025) are the flagship of this shelf and its largest thread: a
+    historian-cryptanalyst's cases threading real cryptography, physics and
+    religious history, publisher-numbered 1-14 and independently listed in
+    that same order by Goodreads' own series page. This order matches the
+    derived default exactly for these 14 works (no year ties among them); its
+    whole contribution is naming and isolating the series as a walkable
+    thread apart from the Gulbenkian biography, the Saga do Lótus and the
+    standalone historical novels around it. The cost: reading only these
+    skips some of the author's most acclaimed work off the series, including
+    his own most personal novel, [[work:jose-rodrigues-dos-santos/o-anjo-branco|
+    O Anjo Branco]].
+  orderedWorkIds:
+    - jose-rodrigues-dos-santos/o-codex-632
+    - jose-rodrigues-dos-santos/a-formula-de-deus
+    - jose-rodrigues-dos-santos/o-setimo-selo
+    - jose-rodrigues-dos-santos/furia-divina
+    - jose-rodrigues-dos-santos/o-ultimo-segredo
+    - jose-rodrigues-dos-santos/a-mao-do-diabo
+    - jose-rodrigues-dos-santos/a-chave-de-salomao
+    - jose-rodrigues-dos-santos/vaticanum
+    - jose-rodrigues-dos-santos/sinal-de-vida
+    - jose-rodrigues-dos-santos/imortal
+    - jose-rodrigues-dos-santos/o-jardim-dos-animais-com-alma
+    - jose-rodrigues-dos-santos/a-mulher-do-dragao-vermelho
+    - jose-rodrigues-dos-santos/o-protocolo-caos
+    - jose-rodrigues-dos-santos/o-sexto-sentido
+  sources:
+    - "https://www.goodreads.com/series/356698-tom-s-noronha"
+    - "https://www.gradiva.pt/autor/jose-rodrigues-dos-santos/"
+    - "https://www.bookseriesinorder.com/jose-rodrigues-dos-santos/"
+
+- id: jose-rodrigues-dos-santos/saga-do-lotus-in-order
+  name: Saga do Lótus, in order
+  type: curated
+  source: canon
+  rationale: >
+    Four linked novels (2015-2018) following the same four lives - Satake
+    Fukui, Lian-hua, Nadezhda and Artur Teixeira - from revolutionary-era
+    Japan, China, Russia and Portugal through the rise of fascism into the
+    Second World War and the fall of Portuguese Macau: a real, continuing
+    saga, not four books sharing only a setting. This order matches the
+    derived default exactly for these four works (2015, 2016, 2017, 2018, no
+    year tie to break); its whole contribution is naming and isolating the
+    saga as a walkable arc apart from the Tomás Noronha series and the
+    standalone historical novels around it. The cost: reading only these four
+    skips the flagship series and the rest of the author's historical
+    fiction.
+  orderedWorkIds:
+    - jose-rodrigues-dos-santos/as-flores-de-lotus
+    - jose-rodrigues-dos-santos/o-pavilhao-purpura
+    - jose-rodrigues-dos-santos/o-reino-do-meio
+    - jose-rodrigues-dos-santos/a-amante-do-governador
+  sources:
+    - "https://pt.wikipedia.org/wiki/Jos%C3%A9_Rodrigues_dos_Santos"
+    - "https://www.goodreads.com/series/213891-saga-do-l-tus"
+
+- id: jose-rodrigues-dos-santos/gulbenkian-duology-in-order
+  name: The Calouste Gulbenkian duology, in order
+  type: curated
+  source: canon
+  rationale: >
+    [[work:jose-rodrigues-dos-santos/o-homem-de-constantinopla|O Homem de
+    Constantinopla]] (19 September 2013) and
+    [[work:jose-rodrigues-dos-santos/um-milionario-em-lisboa|Um Milionário em
+    Lisboa]] (18 November 2013), six weeks apart, tell one biography of
+    Calouste Gulbenkian across two volumes: an Armenian childhood in Ottoman
+    Constantinople through the building of the global oil business in the
+    first book, the Armenian genocide, the Second World War and his final
+    years in neutral Lisbon (1942-1955) in the second. A reader review of the
+    pair states plainly that they "constituem apenas uma única obra, dividida
+    em dois volumes, e não dois romances distintos" - one work read backwards
+    if taken out of order. Both books are dated 2013 in works.yaml, where
+    `published` is year-only, so the derived default's placement between them
+    is arbitrary and cannot be trusted to put the man's rise before his exile
+    and death. Read O Homem de Constantinopla first.
+  orderedWorkIds:
+    - jose-rodrigues-dos-santos/o-homem-de-constantinopla
+    - jose-rodrigues-dos-santos/um-milionario-em-lisboa
+  sources:
+    - "https://www.publico.pt/2013/09/13/culturaipsilon/noticia/jose-rodrigues-dos-santos-debrucase-na-vida-de-gulbenkian-em-dois-novos-livros-1605723"
+    - "http://cemiteriodoslivroslidos.blogspot.com/2014/02/livros-n49-e-50-o-homem-de.html"
+    - "https://portalivros.wordpress.com/2013/11/11/um-milionario-em-lisboa-de-jose-rodrigues-dos-santos-completa-o-homem-de-constantinopla/"
+
+- id: jose-rodrigues-dos-santos/auschwitz-duology-in-order
+  name: The Auschwitz duology, in order
+  type: curated
+  source: canon
+  rationale: >
+    [[work:jose-rodrigues-dos-santos/o-magico-de-auschwitz|O Mágico de
+    Auschwitz]] introduces magician Herbert Levin's deportation to the camp
+    and Portuguese soldier Francisco Latino's path into the Nazi elite to
+    follow a Russian woman taken by the SS, and their two paths converge
+    in the camp.
+    [[work:jose-rodrigues-dos-santos/o-manuscrito-de-birkenau|O Manuscrito de
+    Birkenau]] opens with the three of them already allies inside the camp,
+    organising the Sonderkommando revolt, and is described by a French
+    reviewer as "the continuation and ending of" its companion. Reading it
+    first drops a reader into an alliance and a plan already underway,
+    without the meeting that explains it. Both books are dated 2020 in
+    works.yaml, where `published` is year-only, so the derived default's
+    placement between them is arbitrary. Read O Mágico de Auschwitz first.
+  orderedWorkIds:
+    - jose-rodrigues-dos-santos/o-magico-de-auschwitz
+    - jose-rodrigues-dos-santos/o-manuscrito-de-birkenau
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-magician-of-auschwitz/"
+    - "https://joserodriguesdossantos.com/en/portfolio/the-birkenau-scrolls/"
+    - "https://www.hc-editions.com/livres/le-manuscrit-de-birkenau/"
+
+- id: jose-rodrigues-dos-santos/cronicas-de-guerra-in-order
+  name: The war-reportage trilogy, in order
+  type: curated
+  source: canon
+  rationale: >
+    Three nonfiction volumes drawn from the author's own PhD dissertation on
+    war reportage (Universidade Nova de Lisboa), and described as a trilogy
+    on the author's own site in those exact terms:
+    [[work:jose-rodrigues-dos-santos/cronicas-de-guerra-i-da-crimeia-a-dachau|
+    Crónicas de Guerra I]] is "the first of a three-part series on war
+    reporting", [[work:jose-rodrigues-dos-santos/cronicas-de-guerra-ii-de-saigao-a-bagdade|
+    Crónicas de Guerra II]] "the second", and
+    [[work:jose-rodrigues-dos-santos/a-verdade-da-guerra|A Verdade da
+    Guerra]] "the third". The first two are a history of war correspondence,
+    from the Crimean War through Vietnam and the Gulf War; the third turns
+    from history to a philosophical inquiry into whether correspondents can
+    convey war's truth at all, and reads as a conclusion the first two are
+    built to earn. Crónicas de Guerra II and A Verdade da Guerra are both
+    dated 2002 in works.yaml, where `published` is year-only, so the derived
+    default's placement between them is arbitrary; this order settles it to
+    the sequence the author's own site states.
+  orderedWorkIds:
+    - jose-rodrigues-dos-santos/cronicas-de-guerra-i-da-crimeia-a-dachau
+    - jose-rodrigues-dos-santos/cronicas-de-guerra-ii-de-saigao-a-bagdade
+    - jose-rodrigues-dos-santos/a-verdade-da-guerra
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/war-chronicles-vol-i/"
+    - "https://joserodriguesdossantos.com/en/portfolio/war-chronicles-vol-ii/"
+    - "https://joserodriguesdossantos.com/en/portfolio/the-thruth-of-war/"

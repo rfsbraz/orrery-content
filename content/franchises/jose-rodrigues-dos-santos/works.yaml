@@ -1,0 +1,936 @@
+# Bibliography (Works) - the abstract books; editions/covers are separate
+# metadata. IDs are STABLE and permanent. `title` is the original Portuguese
+# title; `published` is the year of first publication.
+#
+# SHAPE OF THIS WING: 34 works - 27 novels (core) and 7 nonfiction books, four
+# essays and three published-interview volumes (extended, off the fiction
+# spine). The 27 novels split into the numbered 14-book Tomás Noronha series
+# plus 13 non-Noronha novels: a two-part biographical novel of Calouste
+# Gulbenkian, a four-book saga set across wartime Macau and China, two
+# unlabelled two-book pairs, and three true standalones. Verified against the
+# author's own official bibliography (joserodriguesdossantos.com), the
+# Portuguese Wikipedia article and his publisher's author page (Gradiva, his
+# publisher 2001-2022; Grupo Planeta since 2022), which independently agree
+# on a count of 27 novels.
+#
+# A CORRECTION TO A RECEIVED GROUPING: Portuguese Wikipedia's "Obras
+# publicadas" section bundles four books - A Vida num Sopro, O Anjo Branco,
+# O Mágico de Auschwitz and O Manuscrito de Birkenau - under a bolded label,
+# "Série Francisco Latino", that (unlike the article's other series headers)
+# carries no actual section markup and no entry in the article's own table of
+# contents - a plain editorial insertion, not a sourced grouping. It is also
+# factually wrong: only the second pair shares a protagonist named Francisco
+# Latino (a Portuguese Foreign Legion soldier at Auschwitz, confirmed on the
+# publisher's and the author's own synopsis pages, and one is press-quoted as
+# "the continuation and ending of" the other). The first pair is a separate,
+# unrelated family saga about a doctor named José Branco in colonial
+# Mozambique, explicitly stated to continue from book to book but sharing no
+# character with the Auschwitz pair. Each pair is recorded below with
+# subseries left null and the link documented in a sourced `note:` instead,
+# per this catalogue's convention for a continuing thread with no citable
+# series name - inventing a combined four-book series name here would
+# publish a Wikipedia editing artefact as received fact.
+#
+# canonTier: all 27 novels are core (this wing's spine is undifferentiated by
+# format or prestige - no juvenilia, no disputed attributions); the 7
+# nonfiction books are extended, genuinely his but off the narrative spine.
+# No apocrypha: no contributor-only or ghost-written volume was found, and
+# the author has repeatedly and publicly denied using any research or writing
+# assistance.
+
+# ---------------------------------------------------------------------------
+# Série Tomás Noronha (14) - the flagship. Publisher-numbered 1-14, and the
+# numbering matches strict publication-chronological order throughout, so no
+# additional orders.yaml entry is needed to represent it: the derived default
+# order already walks it correctly end to end.
+# ---------------------------------------------------------------------------
+
+- id: jose-rodrigues-dos-santos/o-codex-632
+  title: "O Codex 632"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2005
+  subseries: "Tomás Noronha"
+  canonTier: core
+  featured: true
+  synopsis: >
+    Historian and cryptanalyst Tomás Noronha is asked to finish a dead
+    scholar's unresolved research and uncovers a cipher that could rewrite
+    the accepted story of the discovery of the Americas - and the true
+    identity of Christopher Columbus.
+  note: >
+    The book that launched the series and the author's international career:
+    acquired by HarperCollins for the US market in 2005 and published there
+    in 2009 as "Codex 632: The Secret of Christopher Columbus". Gradiva
+    published a 20th-anniversary edition on 24 February 2026 (ISBN
+    978-989-785-405-7), the date and number printed on Gradiva's own product
+    page for it and recorded in editions.yaml.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/13531006-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL34783816W"
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/codex-632/"
+    - "https://pt.wikipedia.org/wiki/Jos%C3%A9_Rodrigues_dos_Santos"
+
+- id: jose-rodrigues-dos-santos/a-formula-de-deus
+  title: "A Fórmula de Deus"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2006
+  subseries: "Tomás Noronha"
+  canonTier: core
+  featured: true
+  synopsis: >
+    CIA operatives shadow a private 1951 meeting between Albert Einstein and
+    Israeli prime minister David Ben-Gurion. Decades later, the search for
+    what Einstein really believed about nuclear weapons and the existence of
+    God draws Tomás Noronha into the physicist's most guarded secret.
+  note: >
+    Published in English as "The Einstein Enigma". The author's best-known
+    and most widely translated novel; Gradiva issued a 20th-anniversary
+    edition in 2026.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/10774197-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL24276579W"
+    # The French edition ("La Formule de Dieu", Pocket) - no pt-PT cover
+    # survived verification. Open Library's own pt-PT edition record for this
+    # work has no cover at all; its "The Einstein Enigma" English edition
+    # (William Morrow, cover id 7111300) turned out on inspection to be a
+    # scanned title page, not jacket art, so it was rejected.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-einstein-enigma/"
+    - "https://www.gradiva.pt/autor/jose-rodrigues-dos-santos/"
+
+- id: jose-rodrigues-dos-santos/o-setimo-selo
+  title: "O Sétimo Selo"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2007
+  subseries: "Tomás Noronha"
+  canonTier: core
+  synopsis: >
+    A vast Antarctic ice shelf breaks away in full view of a scientific
+    station, and the freak event turns out to be the first thread in an
+    investigation that pulls Tomás Noronha toward a hidden climate secret
+    with apocalyptic stakes.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/13281790-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL27110930M"
+    # The Brazilian edition (Editora Record, Rio de Janeiro, ISBN 978-85...)
+    # - the only clean jacket found for this title. The pt-PT (Gradiva)
+    # cover on Open Library is a WOOK scrape with the retailer's diagonal
+    # watermark burned into the pixels (found by inspecting the actual
+    # pixels at full resolution, not by trusting the OpenLibrary hosting);
+    # no unwatermarked pt-PT scan turned up anywhere checked.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-seventh-seal/"
+
+- id: jose-rodrigues-dos-santos/furia-divina
+  title: "Fúria Divina"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2009
+  subseries: "Tomás Noronha"
+  canonTier: core
+  synopsis: >
+    A Chechen commando steals highly enriched uranium from a Russian nuclear
+    complex, and the CIA pulls Tomás Noronha from holiday to decipher an
+    intercepted Al-Qaeda message before the theft becomes a bomb.
+  note: >
+    Published in English as "The Wrath of God".
+  images:
+    cover: "https://img.bertrand.pt/images/furia-divina-jose-rodrigues-dos-santos/NDV8Mjg0MzIzN3wyMzk3OTk3fDE3NzcwMjkwODcwMDB8fDQ2/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/furia-divina-jose-rodrigues-dos-santos/2843237"
+    # Bertrand's own product photo of the Gradiva jacket, clean of any
+    # retailer watermark. Used instead of Open Library's copy of this
+    # edition, which carries a Toronto Public Library barcode and ownership
+    # stamp printed across the top third of the image.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-wrath-of-god/"
+
+- id: jose-rodrigues-dos-santos/o-ultimo-segredo
+  title: "O Último Segredo"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2011
+  subseries: "Tomás Noronha"
+  canonTier: core
+  synopsis: >
+    A killer leaves biblical riddles beside academics murdered in the
+    Vatican Library. Tomás Noronha and an Italian police inspector follow
+    the trail to the Holy Land and the last secret of the New Testament -
+    the true identity of Jesus Christ.
+  note: >
+    Published in English as "The Last Secret". Its 2009-2011 publication
+    drew a public accusation of "intolerance" from the Catholic Church in
+    Portugal, which the author answered by noting no single fact in the book
+    had been disputed.
+  images:
+    cover: "https://img.bertrand.pt/images/o-ultimo-segredo-jose-rodrigues-dos-santos/NDV8MTE1MzI3NDR8NzEwNDAxN3wxNzc4MTY0OTE2MDAwfHw0Ng==/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/o-ultimo-segredo-jose-rodrigues-dos-santos/11532744"
+    # Bertrand product photo of the Gradiva jacket; carries the retailer's
+    # small watermark badge in the bottom-right corner. Open Library's only
+    # edition record for this work is a scanned title page, not jacket art.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-last-secret/"
+    - "https://pt.wikipedia.org/wiki/Jos%C3%A9_Rodrigues_dos_Santos"
+
+- id: jose-rodrigues-dos-santos/a-mao-do-diabo
+  title: "A Mão do Diabo"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2012
+  subseries: "Tomás Noronha"
+  canonTier: core
+  synopsis: >
+    Made redundant in a wave of university budget cuts, Tomás Noronha runs
+    into an old friend fleeing armed men over a DVD that could expose the
+    architects of the global financial crisis - if he can crack the
+    cryptogram hiding where it is.
+  note: >
+    Published in English as "The Devil's Hand".
+  images:
+    cover: "https://covers.openlibrary.org/b/id/12701664-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL23232666W"
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-devils-hand/"
+
+- id: jose-rodrigues-dos-santos/a-chave-de-salomao
+  title: "A Chave de Salomão"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2014
+  subseries: "Tomás Noronha"
+  canonTier: core
+  synopsis: >
+    A CIA director is found dead inside the Large Hadron Collider at the
+    exact moment CERN closes in on the Higgs boson, with a cryptic message
+    naming Tomás Noronha as the killer's key - and its main suspect.
+  note: >
+    Published in English as "The Key of Solomon".
+  images:
+    cover: "https://img.bertrand.pt/images/a-chave-de-salomao-jose-rodrigues-dos-santos/NDV8MTYwMDU0NDl8MTE1MzU0MTF8MTc3NzAyODk0NjAwMHx8NDY=/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/a-chave-de-salomao-jose-rodrigues-dos-santos/16005449"
+    # Bertrand product photo of the Gradiva jacket, clean of any retailer
+    # watermark. Open Library's only edition record for this work is a
+    # scanned title page, not jacket art.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-key-of-solomon/"
+
+- id: jose-rodrigues-dos-santos/vaticanum
+  title: "Vaticanum"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2016
+  subseries: "Tomás Noronha"
+  canonTier: core
+  synopsis: >
+    Islamist militants seize Vatican City and hold the Pope hostage. While
+    the world counts down to a threatened execution, Tomás Noronha's
+    research in the Holy See's own archives surfaces a very real secret at
+    the heart of the Church.
+  images:
+    cover: "https://www.hc-editions.com/wp-content/uploads/2020/08/VATICANUM-1.png"
+    coverCredit: "Éditions Hervé Chopin"
+    coverSource: "https://www.hc-editions.com/livres/vaticanum/"
+    # No Open Library work record exists for this title. The pt-PT jacket on
+    # Bertrand (product 18686066) could not be retrieved (blocks automated
+    # fetches on this specific listing); WOOK's pt-PT jacket carries the
+    # retailer's own diagonal watermark. This is the French edition (Hervé
+    # Chopin, 2017), taken directly from the publisher's own catalogue page -
+    # a clean, unwatermarked jacket, at the cost of being a translated
+    # edition rather than the pt-PT original.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/vaticanum/"
+
+- id: jose-rodrigues-dos-santos/sinal-de-vida
+  title: "Sinal de Vida"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2017
+  subseries: "Tomás Noronha"
+  canonTier: core
+  synopsis: >
+    SETI intercepts an alien transmission, and an unidentified spacecraft is
+    two weeks from Earth orbit. Tomás Noronha joins the international crew
+    sent to meet it, carrying the oldest question of all: is life a cosmic
+    accident, or a cosmic imperative?
+  note: >
+    Published in English as "Signal of Life".
+  images:
+    cover: "https://img.bertrand.pt/images/sinal-de-vida-jose-rodrigues-dos-santos/NDV8MjAyODg4NDB8MTYxNDEzNDJ8MTc3NzAzMzg4NDAwMHx8NDY=/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/sinal-de-vida-jose-rodrigues-dos-santos/20288840"
+    # Bertrand's own product photo of the Gradiva jacket, carrying the
+    # retailer's small watermark badge in the bottom-right corner - used in
+    # preference to Open Library's copy of this edition, which is itself a
+    # WOOK scrape with a larger diagonal watermark burned into the pixels.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/signal-of-life/"
+
+- id: jose-rodrigues-dos-santos/imortal
+  title: "Imortal"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2019
+  subseries: "Tomás Noronha"
+  canonTier: core
+  synopsis: >
+    The abduction of a Chinese scientist who claims to have created the
+    first gene-edited babies pulls Tomás Noronha into a covert project that
+    puts him face to face with the Singularity - the moment machines
+    surpass human minds.
+  note: >
+    Published in English as "The Imortal" [sic] on the author's own site.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/14846630-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL24365532W"
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-imortal/"
+
+- id: jose-rodrigues-dos-santos/o-jardim-dos-animais-com-alma
+  title: "O Jardim dos Animais com Alma"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2021
+  subseries: "Tomás Noronha"
+  canonTier: core
+  synopsis: >
+    A body surfaces in a tank at Lisbon's Oceanarium and every clue points
+    to Maria Flor. To clear his wife, Tomás Noronha has to unravel a secret
+    project hidden inside Hieronymus Bosch's most esoteric painting - and
+    what it says about the minds of animals.
+  note: >
+    Published in English as "The Garden of Animals with Soul".
+  images:
+    cover: "https://covers.openlibrary.org/b/id/13083697-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL42939550M"
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-garden-of-animals-with-soul/"
+
+- id: jose-rodrigues-dos-santos/a-mulher-do-dragao-vermelho
+  title: "A Mulher do Dragão Vermelho"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2022
+  subseries: "Tomás Noronha"
+  canonTier: core
+  synopsis: >
+    A woman's kidnapping in Amritsar draws Tomás Noronha and a CIA contact
+    into an investigation of the Chinese Communist Party's campaign against
+    its own people, and the question of whether Beijing, not Moscow, is the
+    graver threat to open societies.
+  note: >
+    Published in English as "The Red Dragon Woman". His first novel with
+    Grupo Planeta after 21 years with Gradiva.
+  images:
+    cover: "https://img.bertrand.pt/images/a-mulher-do-dragao-vermelho-jose-rodrigues-dos-santos/NDV8Mjc0MjIxODV8MjM3ODY4OTB8MTc3NzAzMzAzODAwMHx8MzY0Mjg=/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/a-mulher-do-dragao-vermelho-jose-rodrigues-dos-santos/27422185"
+    # Bertrand product photo of the Planeta jacket, carrying the retailer's
+    # small watermark badge in the bottom-right corner. Too recent (2022,
+    # Planeta) for an Open Library record.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-red-dragon-woman/"
+    - "https://www.nit.pt/cultura/livros/mercado-editorial-ao-rubro-jose-rodrigues-dos-santos-troca-gradiva-por-planeta"
+
+- id: jose-rodrigues-dos-santos/o-protocolo-caos
+  title: "O Protocolo Caos"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2024
+  subseries: "Tomás Noronha"
+  canonTier: core
+  synopsis: >
+    A masked gunman opens fire on a crowd and, unmasking, reveals himself as
+    Tomás Noronha. Threads from a Russian basement to a disintegrating
+    American family converge on a real-world case: how disinformation and
+    social media are used to destabilise Western democracies.
+  note: >
+    Published in English as "The Chaos Protocol". A finalist for the 2024
+    Prémio Bertrand Livro do Ano in Lusophone fiction.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/14847984-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL57981537M"
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-chaos-protocol/"
+    - "https://www.goodreads.com/book/show/219793222-o-protocolo-caos"
+
+- id: jose-rodrigues-dos-santos/o-sexto-sentido
+  title: "O Sexto Sentido"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2025
+  subseries: "Tomás Noronha"
+  canonTier: core
+  synopsis: >
+    A man falls to his death from a Lisbon hotel, gasping a Latin phrase and
+    leaving Tomás Noronha's name behind. The investigation, and a CIA
+    warning that his life is now in danger, lead into research on
+    entheogens and the outer edges of human consciousness.
+  note: >
+    Launched by Planeta on 25 October 2025 at the Sociedade de Geografia de
+    Lisboa, his 27th novel. The author's own bibliography page (last updated
+    mid-2025, still showing O Protocolo Caos as the latest title) has not
+    caught up; the book is independently confirmed by Portuguese Wikipedia's
+    bibliography, its Bertrand, WOOK and Correio da Manhã retail listings and
+    press coverage of the launch itself.
+  images:
+    cover: "https://img.bertrand.pt/images/o-sexto-sentido-jose-rodrigues-dos-santos/NDV8MzI2MjcyMjJ8MjkwMzY1OTJ8MTc3ODIyNDI2MDAwMHx8MzY0Mjg=/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/o-sexto-sentido-jose-rodrigues-dos-santos/32627222"
+    # Bertrand product photo of the Planeta "Edição de Colecionador" jacket;
+    # carries the retailer's small watermark badge in the bottom-right
+    # corner. Too recent (Oct 2025) for an Open Library record.
+  sources:
+    - "https://www.bertrand.pt/livro/o-sexto-sentido-jose-rodrigues-dos-santos/32627222"
+    - "https://www.wook.pt/en/livro/o-sexto-sentido-jose-rodrigues-dos-santos/32627223"
+    - "https://pt.wikipedia.org/wiki/Jos%C3%A9_Rodrigues_dos_Santos"
+    - "https://chmagazine.pt/o-sexto-sentido-e-o-novo-romance-de-jose-rodrigues-dos-santos/"
+
+# ---------------------------------------------------------------------------
+# Série Calouste Gulbenkian (2) - a two-part biographical novel of the
+# Armenian oil magnate and philanthropist whose foundation is one of
+# Portugal's major cultural institutions. Real section heading in Portuguese
+# Wikipedia's article (not the unlabelled artefact described above);
+# independently corroborated as a genuine two-part work by the publisher's
+# own 2013 press coverage.
+# ---------------------------------------------------------------------------
+
+- id: jose-rodrigues-dos-santos/o-homem-de-constantinopla
+  title: "O Homem de Constantinopla"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2013
+  subseries: "Calouste Gulbenkian"
+  canonTier: core
+  synopsis: >
+    A fictionalised life of Calouste Sarkisian Gulbenkian, from an Armenian
+    childhood in Ottoman Constantinople to completing the architecture of
+    the global oil business and becoming the richest man of his century.
+  note: >
+    Published in English as "The Man from Constantinople". Released
+    19 September 2013, six weeks ahead of its companion volume.
+  images:
+    cover: "https://img.bertrand.pt/images/o-homem-de-constantinopla-jose-rodrigues-dos-santos/NDV8MTUyMzYzNzV8MTA3MjQ2MTB8MTc3NzAyODc4MDAwMHx8NDY=/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/o-homem-de-constantinopla-jose-rodrigues-dos-santos/15236375"
+    # Bertrand product photo of the Gradiva jacket, clean of any retailer
+    # watermark. No Open Library record exists for this title.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-man-from-constantinople/"
+    - "https://www.publico.pt/2013/09/13/culturaipsilon/noticia/jose-rodrigues-dos-santos-debrucase-na-vida-de-gulbenkian-em-dois-novos-livros-1605723"
+
+- id: jose-rodrigues-dos-santos/um-milionario-em-lisboa
+  title: "Um Milionário em Lisboa"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2013
+  subseries: "Calouste Gulbenkian"
+  canonTier: core
+  synopsis: >
+    The Armenian genocide and the chaos of the Second World War strip
+    Calouste Gulbenkian of Paris and London, and his son steers him to the
+    city that becomes his final home: wartime, neutral Lisbon, 1942 to 1955.
+  note: >
+    Published in English as "A Millionaire in Lisbon". Released
+    18 November 2013 as the concluding volume; some reviewers describe the
+    pair as effectively one book issued in two volumes.
+  images:
+    cover: "https://img.bertrand.pt/images/um-milionario-em-lisboa-jose-rodrigues-dos-santos/NDV8MTUyOTQ3Mjh8MTA3ODUyNDF8MTc3ODIyNDQ4MTAwMHx8NDY=/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/um-milionario-em-lisboa-jose-rodrigues-dos-santos/15294728"
+    # Bertrand product photo of the Gradiva jacket, carrying the retailer's
+    # small watermark badge in the bottom-right corner. Open Library holds a
+    # work record for this title but no cover image.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/a-millionaire-in-lisbon/"
+    - "https://portalivros.wordpress.com/2013/11/11/um-milionario-em-lisboa-de-jose-rodrigues-dos-santos-completa-o-homem-de-constantinopla/"
+
+# ---------------------------------------------------------------------------
+# Saga do Lótus (4) - wartime Macau and China across four linked novels
+# sharing recurring characters (Artur Teixeira, Lian-hua, Satake Fukui,
+# Nadezhda). Real section heading in Portuguese Wikipedia and independently
+# used by Goodreads' own series listing. NOTE: the author's own site's press
+# synopsis for the second book calls it "The Lotus Trilogy" ("the sequel to
+# The Lotus Flowers in The Lotus Trilogy") - language consistent with the
+# saga's original three-book plan before a fourth volume, A Amante do
+# Governador, extended it three years later; a FNAC product listing for the
+# second book still carries the old "Trilogia do Lótus" label. "Saga do
+# Lótus" is used here as the name that accurately covers all four books.
+# ---------------------------------------------------------------------------
+
+- id: jose-rodrigues-dos-santos/as-flores-de-lotus
+  title: "As Flores de Lótus"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2015
+  subseries: "Saga do Lótus"
+  canonTier: core
+  synopsis: >
+    Marxist revolution, Leninist Russia and Mussolini's Italy upend the
+    world of four young people - in Japan, China, Russia and Portugal - who
+    will each be swept into the twentieth century's defining catastrophes.
+  note: >
+    Published in English as "The Lotus Flowers".
+  images:
+    cover: "https://covers.openlibrary.org/b/id/7395136-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL17316582W"
+    # Genuine Gradiva jacket art, but the largest size Open Library holds is
+    # 132x200 - the smallest cover in this wing, and small enough to look
+    # soft beside the others.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-lotus-flowers/"
+
+- id: jose-rodrigues-dos-santos/o-pavilhao-purpura
+  title: "O Pavilhão Púrpura"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2016
+  subseries: "Saga do Lótus"
+  canonTier: core
+  synopsis: >
+    The same four lives - Satake Fukui in militarist Japan, Lian-hua caught
+    between Mao's Communists and the Nationalists, Nadezhda under Soviet
+    collectivisation, Artur watching Salazar's dictatorship rise in Portugal
+    - are carried further into the years before the Second World War.
+  note: >
+    Published in English as "The Purple Pavilion".
+  images:
+    cover: "https://img.bertrand.pt/images/o-pavilhao-purpura-jose-rodrigues-dos-santos/NDV8MTc5MzE2MzR8MTM1NzQ0MDB8MTc3NzAyOTc0OTAwMHx8NDY=/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/o-pavilhao-purpura-jose-rodrigues-dos-santos/17931634"
+    # Bertrand product photo of the Gradiva jacket, clean of any retailer
+    # watermark. Open Library's only "O Pavilhão Púrpura" title match is an
+    # unrelated 2016 novel by Domingos Amaral - a same-title collision, not
+    # this book; Bertrand's listing is scoped to this author and confirms
+    # the real jacket instead.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-purple-pavilion/"
+
+- id: jose-rodrigues-dos-santos/o-reino-do-meio
+  title: "O Reino do Meio"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2017
+  subseries: "Saga do Lótus"
+  canonTier: core
+  synopsis: >
+    As Spain burns and Japan invades China, a love affair in the Azores, a
+    bomb plot against Salazar and court intrigue in Tokyo converge on Adolf
+    Hitler's Berlin, where colonial officer Artur Teixeira meets Japanese
+    consul Satake Fukui.
+  note: >
+    Published in English as "The Middle Kingdom".
+  images:
+    cover: "https://img.bertrand.pt/images/o-reino-do-meio-jose-rodrigues-dos-santos/NDV8MTk4MzI2MzR8MTU2Njk1NjV8MTc3NzAzMzM2OTAwMHx8NDY=/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/o-reino-do-meio-jose-rodrigues-dos-santos/19832634"
+    # Bertrand product photo of the Gradiva jacket, clean of any retailer
+    # watermark. No Open Library record exists for this title.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-middle-kingdom/"
+
+- id: jose-rodrigues-dos-santos/a-amante-do-governador
+  title: "A Amante do Governador"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2018
+  subseries: "Saga do Lótus"
+  canonTier: core
+  synopsis: >
+    After Pearl Harbor and the fall of Hong Kong, Japan lays siege to
+    Portuguese Macau. Governor Artur Teixeira, opposed by the Kempeitai's
+    Colonel Sawa, relies on a handful of allies to save the colony -
+    including Sawa's own concubine, Lian-hua, with whom he falls in love.
+  note: >
+    Published in English as "The Governor's Lover". The fourth book in the
+    saga, published three years after what its own publisher synopsis for
+    Book 2 called "The Lotus Trilogy" (see the wing-level note above).
+  images:
+    cover: "https://img.bertrand.pt/images/a-amante-do-governador-jose-rodrigues-dos-santos/NDV8MjIzMTI0Njd8MTgyMDQ5OTZ8MTc3NzAzNjEyMTAwMHx8NDY=/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/a-amante-do-governador-jose-rodrigues-dos-santos/22312467"
+    # Bertrand product photo of the Gradiva jacket, clean of any retailer
+    # watermark. No Open Library record exists for this title.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-governors-lover/"
+
+# ---------------------------------------------------------------------------
+# Two books, unrelated to any of the above: a family saga set in colonial
+# Mozambique, continuing directly from the first book to the second but
+# never formally named as a series anywhere sourced. See the wing-level note
+# on why this is not folded into a subseries label.
+# ---------------------------------------------------------------------------
+
+- id: jose-rodrigues-dos-santos/a-vida-num-sopro
+  title: "A Vida num Sopro"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2008
+  subseries: null
+  canonTier: core
+  synopsis: >
+    In Salazar's newly consolidated Estado Novo, student Luís falls for
+    Amélia at their Bragança secondary school - a love tested by her
+    mother's opposition, an unexplained murder, and the Spanish Civil War
+    across the border.
+  images:
+    cover: "https://img.bertrand.pt/images/a-vida-num-sopro-jose-rodrigues-dos-santos/NDV8MjIxMjU0fDMzNzI0M3wxNzc4MjI0MTc2MDAwfHw0Ng==/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/a-vida-num-sopro-jose-rodrigues-dos-santos/221254"
+    # Bertrand product photo of the Gradiva jacket, carrying the retailer's
+    # small watermark badge in the bottom-right corner. Open Library holds a
+    # work record for this title but no cover image.
+  sources:
+    - "https://www.goodreads.com/book/show/5229136-a-vida-num-sopro"
+    - "https://joserodriguesdossantos.com/critica-a-vida-num-sopro-jornal-de-letras/"
+
+- id: jose-rodrigues-dos-santos/o-anjo-branco
+  title: "O Anjo Branco"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2010
+  subseries: null
+  canonTier: core
+  featured: true
+  synopsis: >
+    Doctor José Branco moves to 1960s Mozambique and founds a Flying
+    Doctors' Service, becoming a legend of the bush known as "the white
+    angel" - until a wartime mission brings him face to face with Portugal's
+    darkest colonial secret.
+  note: >
+    Published in English as "The White Angel". Continues the Branco family
+    of A Vida num Sopro (2008); the author has described it as inspired by
+    his own father's life as a doctor in colonial Mozambique - his father,
+    José da Paz Brandão Rodrigues dos Santos, died in 1986. Called by
+    Correio da Manhã the author's "most intimate and emotional novel".
+    That the two books continue is safe to state and is stated; HOW A Vida
+    num Sopro ends is not, and appears on neither book's jacket copy (the
+    author's own synopsis pages for both, in Portuguese and English, carry
+    no such line). It stays out of the synopsis, and out of any startHere
+    prose pointing readers at this book as a first taste.
+  images:
+    cover: "https://img.bertrand.pt/images/o-anjo-branco-jose-rodrigues-dos-santos/NDV8OTYzMjU1MHw1MjIwODcxfDE3NzgxNjQ2NjYwMDB8fDQ2/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/o-anjo-branco-jose-rodrigues-dos-santos/9632550"
+    # Bertrand product photo of the Gradiva jacket, clean of any retailer
+    # watermark. Open Library holds an edition record for this title with no
+    # cover uploaded.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-white-angel/"
+    - "http://aminhaestante.blogspot.com/2014/07/o-anjo-branco-jose-rodrigues-dos-santos.html"
+    - "https://pt.wikipedia.org/wiki/Jos%C3%A9_Rodrigues_dos_Santos"
+
+# ---------------------------------------------------------------------------
+# Two more books, unrelated to any of the above: a genuine, sourced duology
+# (protagonist Francisco Latino) mistakenly bundled with the pair above under
+# an unsourced Wikipedia label - see the wing-level note.
+# ---------------------------------------------------------------------------
+
+- id: jose-rodrigues-dos-santos/o-magico-de-auschwitz
+  title: "O Mágico de Auschwitz"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2020
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Jewish magician Herbert Levin is deported from occupied Prague to
+    Auschwitz. Portuguese Foreign Legion soldier Francisco Latino, having
+    fought the Red Army at Leningrad, joins the Nazi elite to follow a
+    Russian woman taken by the SS - and their paths converge in the camp.
+  note: >
+    Published in English as "The Magician of Auschwitz", based on
+    documented historical events.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/10552555-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL24153048W"
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-magician-of-auschwitz/"
+
+- id: jose-rodrigues-dos-santos/o-manuscrito-de-birkenau
+  title: "O Manuscrito de Birkenau"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2020
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Inside Auschwitz-Birkenau, the Portuguese soldier, the Russian woman and
+    the Jewish magician must cooperate to survive as prisoners of the death
+    camp's Sonderkommando organise their revolt.
+  note: >
+    Published in English as "The Birkenau Scrolls", the same year as its
+    companion volume; a French reviewer (La Famille Chrétienne) describes
+    its plot as "the continuation and ending of The Magician of Auschwitz".
+    Based on manuscripts buried by Sonderkommando prisoners near the camp
+    and later recovered. Gradiva also sells the pair bundled with a
+    historical dossier.
+  images:
+    cover: "https://img.bertrand.pt/images/o-manuscrito-de-birkenau-jose-rodrigues-dos-santos/NDV8MjQ0Mjg2NDF8MjA1MjE0NzZ8MTc3ODIyNDA3MDAwMHx8NDY=/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/o-manuscrito-de-birkenau-jose-rodrigues-dos-santos/24428641"
+    # Bertrand product photo of the Gradiva jacket, clean of any retailer
+    # watermark. No Open Library record exists for this title (unlike its
+    # companion volume).
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-birkenau-scrolls/"
+    - "https://www.gradiva.pt/autor/jose-rodrigues-dos-santos/"
+
+# ---------------------------------------------------------------------------
+# Outros (3) - true standalones, in no series and sharing no characters with
+# any other work in this wing.
+# ---------------------------------------------------------------------------
+
+- id: jose-rodrigues-dos-santos/a-ilha-das-trevas
+  title: "A Ilha das Trevas"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2002
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Paulino da Conceição carries a secret from East Timor's Indonesian
+    occupation, from the 1975 invasion to the 1999 independence referendum -
+    and the courage, or its absence, to finally disclose it.
+  note: >
+    Published in English as "The Island of Darkness". The author's literary
+    debut, first issued by Temas & Debates in 2002 and re-edited by Gradiva
+    in 2007.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/11650669-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL13477011W"
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-island-of-darkness/"
+    - "https://pt.wikipedia.org/wiki/Jos%C3%A9_Rodrigues_dos_Santos"
+
+- id: jose-rodrigues-dos-santos/a-filha-do-capitao
+  title: "A Filha do Capitão"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2004
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Two months into the Flanders trenches, Portuguese Captain Afonso
+    Brandão spends a night's rest at a château near Armentières and meets a
+    French baroness; an irresistible attraction takes hold - while the
+    German High Command settles on a spring 1918 offensive aimed at the
+    very sector the Portuguese Corps is holding.
+  note: >
+    Published in English as "The Captain's Daughter". Dedicated to the
+    author's own paternal grandfather and maternal great-grandfather, both
+    of whom served in the First World War. The publisher's own copy, in
+    both languages, stops at the attraction and leaves the ending of the
+    affair open; the press quotes it prints alongside pull in opposite
+    directions on it. The synopsis therefore goes no further than the
+    jacket does - a summary that settles the outcome would resolve what the
+    book is written to keep open.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/13274529-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL34320904W"
+    # The Spanish edition ("La amante francesa", Roca) - Open Library's
+    # edition record for it explicitly cross-references "Filha do capitao"
+    # as the work_titles entry, confirming the match; the retitling fits the
+    # French-baroness plot. No pt-PT or English cover survived verification
+    # (Bertrand's jacket carries the retailer's own watermark).
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-captains-daughter/"
+    - "https://pt.wikipedia.org/wiki/Jos%C3%A9_Rodrigues_dos_Santos"
+
+- id: jose-rodrigues-dos-santos/o-segredo-de-espinosa
+  title: "O Segredo de Espinosa"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2023
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Amsterdam, 1640: a child watches a Jew excommunicated from the
+    Portuguese Synagogue for questioning scripture. The child, Bento de
+    Espinosa, carries the seed of that doubt into the philosophical inquiry
+    that will cost him everything - an inquiry the Church calls heresy.
+  note: >
+    Published in English as "The Secret of Espinosa". His first standalone
+    novel with Grupo Planeta.
+  images:
+    cover: "https://img.bertrand.pt/images/o-segredo-de-espinosa-jose-rodrigues-dos-santos/NDV8MjkzNDc3NzZ8MjU3NDM1MzV8MTc3ODIyNDA1MjAwMHx8MzY0Mjg=/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/o-segredo-de-espinosa-jose-rodrigues-dos-santos/29347776"
+    # Bertrand product photo of the Gradiva jacket, carrying the retailer's
+    # small watermark badge in the bottom-right corner. Too recent (2023,
+    # Planeta) for an Open Library record.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-secret-of-espinosa/"
+
+# ---------------------------------------------------------------------------
+# Ensaio (4) - nonfiction essays, extended tier. The two Crónicas de Guerra
+# volumes and A Verdade da Guerra together form a three-part study drawn from
+# the author's own PhD dissertation on war reportage (Universidade Nova de
+# Lisboa), stated explicitly on each volume's own synopsis.
+# ---------------------------------------------------------------------------
+
+- id: jose-rodrigues-dos-santos/comunicacao
+  title: "Comunicação"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 1992
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    The author's first book, a 133-page essay surveying twentieth-century
+    communication theory - from the Magic Bullet and Two-Step Flow models to
+    Marxist and McLuhanite critiques - and how politicians and academics
+    have understood the media's power.
+  note: >
+    First published by Difusão Cultural in 1992; a further edition followed
+    from Prefácio in 2001.
+  images:
+    cover: "https://img.bertrand.pt/images/comunicacao-jose-rodrigues-dos-santos/NDV8MTEwMTMxfDE0MDE5OHwxNzc4MjIzOTM4MDAwfHwxNTc2/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/comunicacao-jose-rodrigues-dos-santos/110131"
+    # Bertrand product photo of the Prefácio 2001 reissue jacket (Coleção
+    # Mocho, ISBN 978-972-8563-46-2), carrying the retailer's small watermark
+    # badge in the bottom-right corner. No cover record exists anywhere
+    # checked for the original 1992 Difusão Cultural edition.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/communication/"
+
+- id: jose-rodrigues-dos-santos/cronicas-de-guerra-i-da-crimeia-a-dachau
+  title: "Crónicas de Guerra I - Da Crimeia a Dachau"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2001
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A history of war correspondence from the Crimean War, the first conflict
+    reported by an embedded press, through the American Civil War and the
+    Spanish-American War to the Portuguese coverage of the First World War
+    and Spanish Civil War.
+  note: >
+    First of a three-part study drawn from the author's PhD dissertation on
+    war reportage (Universidade Nova de Lisboa).
+  images:
+    cover: "https://img.bertrand.pt/images/cronicas-de-guerra-vol-i-jose-rodrigues-dos-santos/NDV8NjA2NzZ8OTA3NDN8MTc3ODIyMzk1OTAwMHx8NDY=/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/cronicas-de-guerra-vol-i-jose-rodrigues-dos-santos/60676"
+    # Bertrand product photo of the Gradiva jacket, carrying the retailer's
+    # small watermark badge in the bottom-right corner. No Open Library
+    # record exists for this title.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/war-chronicles-vol-i/"
+
+- id: jose-rodrigues-dos-santos/cronicas-de-guerra-ii-de-saigao-a-bagdade
+  title: "Crónicas de Guerra II - De Saigão a Bagdade"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2002
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    Portuguese war correspondents from Vietnam to the Gulf War: interviews,
+    photographs and dispatches from Kabul, Kigali, Khe Sanh, Chechnya and
+    Sarajevo.
+  note: >
+    Second of the three-part war-reportage study.
+  images:
+    cover: "https://img.bertrand.pt/images/cronicas-de-guerra-vol-ii-jose-rodrigues-dos-santos/NDV8NjA2OTV8OTA3NjJ8MTc3NzAzNjc0MzAwMHx8NDY=/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/cronicas-de-guerra-vol-ii-jose-rodrigues-dos-santos/60695"
+    # Bertrand product photo of the Gradiva jacket, clean of any retailer
+    # watermark (a "Prix Lusophonie Littérature 2018" band is printed on the
+    # jacket itself, not a retailer overlay). No Open Library record exists
+    # for this title.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/war-chronicles-vol-ii/"
+
+- id: jose-rodrigues-dos-santos/a-verdade-da-guerra
+  title: "A Verdade da Guerra"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2002
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    Rather than a further history, a philosophical and scientific inquiry
+    into whether war correspondents can ever convey the truth of war - the
+    culture, motives and myths of the correspondents themselves, and how
+    military organisations and technology shape what gets reported.
+  note: >
+    Third and concluding volume of the war-reportage study; despite the
+    different title, it is not a standalone essay.
+  images:
+    cover: "https://img.bertrand.pt/images/a-verdade-da-guerra-jose-rodrigues-dos-santos/NDV8NjA3MjJ8OTA3ODl8MTc3ODIyMzk1NjAwMHx8NDY=/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/a-verdade-da-guerra-jose-rodrigues-dos-santos/60722"
+    # Bertrand product photo of the Gradiva jacket, carrying the retailer's
+    # small watermark badge in the bottom-right corner. Open Library holds a
+    # work record for this title but no cover image.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/the-thruth-of-war/"
+
+# ---------------------------------------------------------------------------
+# Livros de entrevistas (3) - published interview volumes, extended tier,
+# drawn from an RTP television interview programme the author hosted.
+# ---------------------------------------------------------------------------
+
+- id: jose-rodrigues-dos-santos/conversas-de-escritores
+  title: "Conversas de Escritores"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2010
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    Ten conversations with major international novelists interviewed for
+    Portuguese television in 2009 - Dan Brown, Ian McEwan, Paulo Coelho,
+    Isabel Allende, José Saramago, Günter Grass, Jeffrey Archer, Miguel
+    Sousa Tavares, Sveva Casati Modignani and Luís Sepúlveda - with the
+    backstage stories of meeting each of them.
+  note: >
+    Published in English as "A Conversation with Authors". The Saramago
+    interview recorded here was republished, expanded, as a standalone
+    volume the following year (see A Última Entrevista de José Saramago).
+  images:
+    cover: "https://img.bertrand.pt/images/conversas-de-escritores-jose-rodrigues-dos-santos/NDV8NjY3MzkxOHwzMjIxMTA0fDE3NzgyMjQ1MDkwMDB8fDQ2/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/conversas-de-escritores-jose-rodrigues-dos-santos/6673918"
+    # Bertrand product photo of the Gradiva jacket, clean of any retailer
+    # watermark. Open Library holds a work record for this title but no
+    # cover image.
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/a-conversation-with-authors/"
+    - "https://bibliografia.bnportugal.gov.pt/bnp/bnp.exe/registo?1802414"
+
+- id: jose-rodrigues-dos-santos/a-ultima-entrevista-de-jose-saramago
+  title: "A Última Entrevista de José Saramago"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2011
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    José Saramago's last long interview, recorded in October 2009 in the
+    Lisbon library where he first encountered fiction as a young man,
+    covering his entire body of work and his views on writing, politics,
+    life and death. He died eight months later.
+  note: >
+    A short (66-page), separately published volume, with a preface by
+    Saramago's widow Pilar del Río, republishing and expanding the Saramago
+    interview first printed in Conversas de Escritores (2010). The national
+    library catalogue (BNP) dates this standalone edition 2011, not 2010.
+  images:
+    cover: "https://img.bertrand.pt/images/a-ultima-entrevista-de-jose-saramago-jose-rodrigues-dos-santos/NDV8MTA5ODQ0NzB8NjU1NDk4NXwxNzc4MTY0ODU4MDAwfHw0Ng==/1000x"
+    coverCredit: "Bertrand"
+    coverSource: "https://www.bertrand.pt/livro/a-ultima-entrevista-de-jose-saramago-jose-rodrigues-dos-santos/10984470"
+    # Bertrand product photo of the Gradiva jacket, carrying the retailer's
+    # watermark badge in the bottom-right corner. No Open Library record
+    # exists for this title.
+  sources:
+    - "https://bibliografia.bnportugal.gov.pt/bnp/bnp.exe/registo?1802414"
+    - "https://joserodriguesdossantos.com/en/portfolio/the-last-interview-of-jose-saramago/"
+
+- id: jose-rodrigues-dos-santos/novas-conversas-de-escritores
+  title: "Novas Conversas de Escritores"
+  authorIds: [jose-rodrigues-dos-santos]
+  published: 2012
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A second volume of author interviews - Philip Roth, Umberto Eco, Arturo
+    Pérez-Reverte, Paul Auster, Peter Carey, Paul Theroux, Robin Cook,
+    Jeffery Deaver, Ken Follett, Martin Amis, Hubert Reeves and Amin Maalouf
+    - continuing the conversations begun in Conversas de Escritores (2010).
+  note: >
+    Published in English, confusingly, under the same title as its
+    predecessor, "A Conversation with Authors".
+  images:
+    cover: "https://covers.openlibrary.org/b/id/14281101-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL22749369W"
+  sources:
+    - "https://joserodriguesdossantos.com/en/portfolio/a-conversation-with-authors-2/"
+    - "https://www.goodreads.com/book/show/15707231-novas-conversas-de-escritores"

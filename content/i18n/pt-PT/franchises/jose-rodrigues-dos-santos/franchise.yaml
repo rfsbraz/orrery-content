@@ -1,0 +1,53 @@
+# Português europeu (pt-PT) - sobreposição de prosa curada.
+# Traduz-se apenas prosa. Nunca ids, slugs, nomes de autor, títulos de obra
+# (já são portugueses) nem URLs de fontes.
+#
+# As listas encaixadas fundem-se item a item pelo id (ver SCHEMA.md, "Nested
+# lists merge by id"), pelo que os percursos de startHere trazem apenas o id
+# e a prosa, nunca a estrutura (workIds, orderId, fit).
+
+- id: jose-rodrigues-dos-santos
+  description: >
+    Jornalista e pivô de informação da RTP desde 1991, tornado o romancista
+    mais vendido de Portugal: catorze livros do historiador-criptanalista
+    Tomás Noronha, entrelaçando criptografia real, ciência e história
+    religiosa numa estante mais vasta de ficção histórica autónoma, desde o
+    exílio de Calouste Gulbenkian em Lisboa até ao passado colonial da sua
+    própria família em Moçambique.
+  startHere:
+    paths:
+      - id: everything-in-order
+        title: Tudo, por ordem
+        description: >
+          Todos os livros que escreveu, cronologicamente desde 1992 até
+          hoje: os casos de Tomás Noronha, a biografia de Calouste
+          Gulbenkian, a Saga do Lótus, os romances históricos autónomos, e
+          os ensaios de reportagem de guerra e os volumes de entrevistas ao
+          lado deles.
+      - id: start-with-noronha
+        title: Comece por Tomás Noronha
+        description: >
+          A série principal desde o seu verdadeiro início: catorze casos do
+          historiador-criptanalista Tomás Noronha, cruzando criptografia
+          real, física e história religiosa com conspirações internacionais.
+          Comece por O Codex 632, o livro que lançou tanto a personagem como
+          a carreira internacional do próprio autor.
+        note: >
+          O seu romance mais conhecido e mais traduzido, A Fórmula de Deus,
+          é na verdade o segundo livro da série - começar por O Codex 632
+          significa conhecer Tomás Noronha desde o verdadeiro início. O
+          custo: catorze livros são um compromisso longo antes de ter
+          experimentado o resto do que escreveu.
+      - id: try-o-anjo-branco
+        title: Experimente O Anjo Branco
+        description: >
+          Um romance autónomo fora da série de thrillers: a fundação de um
+          Serviço Aéreo de Assistência Médica por um médico em Moçambique
+          nos anos 1960, inspirado na vida do próprio pai do autor, e
+          classificado pelo Correio da Manhã como o seu "romance mais
+          íntimo e emocional". Sem série a que se comprometer.
+        note: >
+          O custo: afasta-se da série principal e dos thrillers de
+          conspiração internacional pelos quais esta estante é mais
+          conhecida, e o seu cenário de guerra colonial é uma leitura mais
+          pesada do que um caso típico de Noronha.
