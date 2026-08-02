@@ -1,0 +1,90 @@
+stage: art-rotation
+summary: >
+  The 28 events (17 lifeEvents + 11 franchise events) already carried full
+  organisation/illustration_type/images_required grading, written inline by
+  press-archaeology when it built them rather than by a dedicated pass - the
+  same silent-scaffold pattern visual-language's own handoff flagged for
+  theme.art. Reviewed the whole assignment against LAYOUT.md's fit/pace
+  rules and VISUAL.md's Holds/aspect table rather than trusting the prior
+  stage's self-report: every organisation/illustration_type pairing is a
+  legal Holds match, images_required is correct for every non-default
+  organisation (diptych 2, epigraph 0), and the caps and contour both hold
+  as claimed. Only eras.yaml was genuinely unset (its own stage deferred
+  those fields on purpose, out of its scope); both era plates now carry
+  organisation/illustration_type/images_required, matching the catalogue's
+  own chapter-gate/symbolic-still-life/1 convention on every other wing that
+  has cleared this stage (checked edgar-allan-poe and stephen-king directly).
+  No lifeEvent or franchise-event organisation was changed.
+verification:
+  fitReview: >
+    Checked every entry's organisation against its illustration_type in
+    LAYOUT.md's Holds list by hand, not just the validator's legality
+    check: all 28 pass, and the choices track the life - full-bleed-vista
+    opens the wing (birth) and reopens it (the Providence return),
+    artifact-spread carries every document-grade beat (the father's death
+    record, the 1912 poem, the divorce decree, Howard's death, the Sonia
+    memoir, the Arkham founding), immersion is spent once on the death,
+    epigraph once on his own stated programme, interlude once on the
+    silent 1908-13 years.
+  caps: >
+    beside 7/28 (25%, under its 75% ceiling); every other organisation
+    under the 40% cap (artifact-spread highest, 6/28, 21%); immersion 1
+    (cap 1-2), epigraph 1 (cap 2-3), interlude 1 (cap ~1-2). Illustration
+    types stay under the ~1/3 repetition cap: document-facsimile is the
+    most-used at 5/27 illustrated entries (~19%).
+  pacingContour: "#==.=.====#.====#==#====.==#  -  4 loud beats (birth,
+    Providence return, death, the 1945 Edmund Wilson demolition), each
+    separated by at least one mid/quiet run; no plateau of 5+; no two loud
+    cells touching or sharing a viewport."
+  artRotationCheck: "python3 scripts/art_rotation.py --check hp-lovecraft -
+    'organisation rotation holds across all 28 events: no organisation over
+    its cap, no neighbour repeats' and 'pacing holds: no two loud cells
+    touching or sharing a screenful, no plateau.' Both axes read directly,
+    both zero. Exit code is 1 only because the composition axis (0 of 30
+    assets have an art issue yet) is unbuilt, per SKILL.md's own note that
+    this is expected pre-/asset-prompt and not this stage's line to clear."
+  validate: "python3 scripts/validate.py - OK, 0 errors, 1206 works/53
+    authors/11 achievements, all references resolve. 63 warnings on this
+    slug, all pre-existing and attributed in earlier stages' own handoffs
+    (era-coverage orphans from the eras stage's documented posthumous-tail
+    gap, prior handoffs over the soft word cap); none new from this stage."
+erasDecision: >
+  eras.yaml took organisation: chapter-gate, illustration_type:
+  symbolic-still-life, images_required: 1 on both plates, not
+  establishing-landscape (LAYOUT.md lists it as a legal chapter-gate Holds
+  option, but it is an OPAQUE type and misfiles a plate that must stay
+  keyed/transparent per VISUAL.md's era-plate asset spec and the
+  catalogue's standing note on this exact trap). symbolic-still-life is
+  transparent-compatible and is what edgar-allan-poe and stephen-king both
+  use on every one of their own era plates - followed rather than
+  reinvented.
+produced:
+  filesChanged:
+    - content/franchises/hp-lovecraft/eras.yaml (organisation/
+      illustration_type/images_required added to both eras; nothing else
+      touched)
+  filesUnchanged:
+    - content/franchises/hp-lovecraft/events.yaml (already fully graded)
+    - content/authors/hp-lovecraft.yaml (already fully graded)
+forStages:
+  asset-prompt: >
+    30 image slots to open issues for (2 era plates, 18 life-event slots -
+    17 entries, one of them the mountains-of-madness diptych at 2 images -
+    plus the epigraph's 0, and 11 franchise-event slots). No modifier is
+    set on any entry; none was a strong enough fit to earn one over a plain
+    read of its organisation, so asset-prompt is composing from a clean
+    base every time rather than working around a pre-set twist.
+  visual-metadata: >
+    No interaction - this stage touched no image/cover fields, only the
+    rotation grammar.
+  wing-audit: >
+    Same process gap visual-language flagged for theme.art, now seen
+    twice on one wing: press-archaeology wrote this stage's whole
+    deliverable inline while building the events, with no note in its own
+    handoff that it had done a downstream stage's job (its verification
+    block reports the contour as a self-check, not as "this is normally a
+    separate pass"). The content held up under this stage's own
+    independent review, so nothing was rewritten - but two silent
+    scaffold-does-downstream-work incidents on one wing is worth
+    tightening in the pipeline, not just re-noting per wing.
+openQuestions: []
