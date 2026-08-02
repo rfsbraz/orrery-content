@@ -1,0 +1,94 @@
+stage: completeness-auditor
+summary: >
+  34 works -> 34. Full re-audit against primary sources (author's own
+  bibliography site, Portuguese Wikipedia's "Obras publicadas" list read as
+  raw markup, Gradiva's and Bertrand's catalogues, Portal da Literatura, BNP,
+  WorldCat, and press coverage) found no missing works, no wrong tiers, no
+  missing subseries, and no wrong first-publication years. One note
+  strengthened with better sourcing; no work added, removed, re-tiered or
+  re-dated.
+produced:
+  newWorkIds: []
+  changedProse: [jose-rodrigues-dos-santos/o-sexto-sentido]
+  changedDates: []
+  reordered: []
+forStages:
+  visual-metadata: "No new works, so no new covers needed beyond what franchise-research already scoped."
+  translation: "No new works, so no new synopses needed beyond what franchise-research already scoped."
+  press-archaeology: "No change to the anchors it was handed."
+  eras: "Still 34 works, 1992-2025; small-shelf exception still does not apply."
+openQuestions:
+  - >
+    O Sexto Sentido (2025): CONFIRMED, no date change. Independently
+    re-verified beyond the scaffold's retail listings - Portuguese
+    Wikipedia's own "Obras publicadas" section (not just a passing mention)
+    now lists it as "O Sexto Sentido, Planeta, 2025"; a press article on the
+    25 October 2025 launch event at the Sociedade de Geografia de Lisboa
+    calls it his 27th novel, matching this wing's count exactly; the
+    author's own site (fetched again this session) still has not added it -
+    its "latest novel" still reads O Protocolo Caos and its news page's
+    newest item is from June 2025. Strengthened the work's note and sources
+    with the launch-event article and reworded out a stray reference to
+    "this wing's build".
+  - >
+    The Francisco Latino correction: INDEPENDENTLY VERIFIED, no change.
+    Fetched pt.wikipedia's raw markup directly - "Saga do Lótus" and "Série
+    Calouste Gulbenkian" each carry their own [editar] section-heading
+    marker, while the four books after "Série Francisco Latino" run on with
+    no heading marker at all, exactly as the prior stage described. Fetched
+    both publisher/author synopsis pairs directly: A Vida num Sopro and O
+    Anjo Branco's synopses (goodreads + the author's own site) name only
+    Luís/Amélia and Dr. José Branco, no "Latino" anywhere (a Goodreads
+    review's "Francisco" is an unrelated minor character in the Spanish
+    Civil War subplot, not a surname match); O Mágico de Auschwitz and O
+    Manuscrito de Birkenau's synopses (author's own site) both open on
+    "Portuguese legionnaire Francisco Latino" by name. The split into two
+    unrelated pairs is correct.
+  - >
+    Saga do Lótus naming: left as-is, no change. Found one further data
+    point since the scaffold - Portal da Literatura's own current listing
+    labels book 3 (O Reino do Meio) "Trilogia do Lótus - Livro 3" but does
+    not extend that label to book 4 (A Amante do Governador) at all, which
+    just reinforces the prior stage's point: "Trilogia do Lótus" is real
+    usage but literally excludes the fourth book in circulation today, so it
+    cannot be the wing's subseries label for all four. Saga do Lótus stands.
+  - >
+    canonTier: reviewed the flag that all 27 novels sit in core with no
+    prominence split. Confirmed this is correct rather than merely
+    unexamined - canonTier records the kind of publication (SCHEMA.md), and
+    every one of the 27 is an ordinary trade novel from his regular fiction
+    publisher (Gradiva then Planeta); no format line like Cervantes'
+    prose/verse split or a juvenilia/limited-edition line exists to split on.
+    No curator action needed here.
+  - >
+    One date checked and deliberately NOT changed: A Última Entrevista de
+    José Saramago's `published: 2011`. A Brazilian publisher (Vermelho
+    Marinho, ISBN 978-85-62851-61-2 - the 978-85 Brazil prefix) lists
+    "Lançamento: 2010" on its own catalogue page for a standalone edition of
+    this book, which would undercut the 2011 date on the dating rule's logic
+    (earliest edition anywhere in the language wins) if corroborated. It
+    is not: BNP, WorldCat/OCLC and Gradiva's own current catalogue page all
+    independently agree on 2011 for the original, and a contemporary
+    Portuguese book blog reviewed it as newly out in February 2011. One
+    uncorroborated retailer date against three independent, agreeing primary
+    catalogue sources does not clear this repo's two-source bar for
+    Portuguese-market work (CURATION.md paragraph 4). No content change;
+    recorded here so a future pass does not re-litigate it from the same
+    single source.
+  - >
+    No missing works found. Cross-checked the 27-novel, 4-essay,
+    3-interview-volume, 34-work count against five sources beyond the
+    scaffold's three: Portal da Literatura's author listing, Gradiva's live
+    catalogue page, English Wikipedia's bibliography (found to be stale and
+    miscategorized - it stops at 2022 and files two interview volumes under
+    "Novels", confirming it is not a source to lean on for this author), a
+    live web search for any 2026 title, and Bertrand's author page (blocked,
+    403, consistent with CURATION.md's known Portuguese-retailer block
+    list). Nothing beyond the 34 already in works.yaml turned up anywhere;
+    the only 2026 items found were audiobook re-releases of already-catalogued
+    novels.
+validatorResult: >
+  `python scripts/validate.py --slug jose-rodrigues-dos-santos` - one error,
+  the expected pre-existing "no `art:` block" on theme.yaml (visual-language's
+  to fix, not this stage's). Zero warnings scoped to this wing, before and
+  after the edit.
