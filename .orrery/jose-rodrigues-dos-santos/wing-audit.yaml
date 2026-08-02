@@ -1,0 +1,49 @@
+stage: wing-audit
+summary: >
+  End-to-end audit of the finished wing. Five gates re-derived, not inherited.
+  Found one false fact live in rendered prose in both languages, a date
+  contradiction across three layers, two pt-PT grammar errors in the author
+  bio, and a false cross-wing citation. Six mechanical fixes made; two
+  editorial calls routed to the curator. Full findings in the PR body.
+gates:
+  validate: "0 errors. 5 warnings: 4 handoff word caps, 1 comunicacao 1992 era orphan (intentional). 0 comment-policy hits on this wing."
+  i18n_coverage: "pt-PT 150/163 files covered; this wing in neither MISSING nor PARTIAL, before and after."
+  event_density: "18 globals, high budget 2 of ~17, no decade over budget. Catalogue-level."
+  aura_density: "34 works, 16 aura, 0.47/work, longest dark run 4 yrs, under the gate. Catalogue median ~0.36."
+  art_rotation: "PASS. 0 organisation-rotation and 0 pacing problems, contour #=#.===.=.#=.#. Exit 1 is the composition axis only (16 assets pre-art), not this gate."
+mechanicalFixes:
+  - "eras.yaml + pt-PT overlay, the-gradiva-years: 'both Mozambique-set duologies' was false in rendered, translated prose. Only O Anjo Branco is Mozambique-set; A Vida num Sopro is Braganca, the Auschwitz pair Prague and the camp. Rewritten in both languages."
+  - "works.yaml o-codex-632 note and eras.yaml the-planeta-years note: '20th-anniversary edition in 2025' contradicted editions.yaml. Gradiva's own page gives 24/02/2026. Both corrected."
+  - "i18n pt-PT author bio: 'na Macau' -> 'em Macau', 'na Mocambique colonial' -> 'no Mocambique colonial'. Gender-agreement errors, unique in the i18n tree."
+  - "works.yaml header: removed a false precedent citation to the Joao Tordo island trilogy (those books carry a subseries, the opposite of the convention cited)."
+  - "works.yaml as-flores-de-lotus: recorded the measured 132x200 cover size."
+routed:
+  reading-orders:
+    - "try-o-anjo-branco's 'No series to commit to' is contradicted by the wing's own data. Declining an order for the pair and disclosing the continuity are separate questions."
+    - "Three of five rationales name 'works.yaml' and the field `published` in reader-facing prose, mirrored into pt-PT."
+  translation:
+    - "o-magico-de-auschwitz path count disagrees across four strings (EN works 'their paths', EN orders 'three', pt works 'dois', pt orders 'tres')."
+    - "jrs-auschwitz-holocaust-framing-2020: EN 'a single document', pt-PT 'um documento escrito por uma so pessoa'. Different claims about a named living person."
+  spoiler-audit:
+    - "o-anjo-branco's note ends with an instruction to future prose rather than a fact about the data."
+  curator:
+    - "SCHEMA.md lists 3 displayFaces and 4 signatures; the app implements 4 and 5. SCHEMA is stale. This wing's sourceSerif/beam are both real, so it is unaffected."
+notApplicableNotAbsent:
+  - "No achievements: the two eras are bibliographic, not creative, and a 'read all 14 Noronha' badge would be the generic completion badge the skill warns against."
+  - "0 spoilerAfter: correct, verified against publisher jackets in both languages."
+  - "comunicacao (1992) outside both eras: intentional, documented, warning expected."
+  - "No franchise header: three candidates researched and rejected on the record."
+  - "12/34 covers (35%): above the ~20% ceiling for a Portuguese-market author."
+  - "No pseudonyms: `aka` holds a spelling variant, not a pen name."
+checkedAndClean:
+  - "Capabilities all auto with real data behind each (16 timeline entries, 3 paths, 34 editions). No half-empty feature, no stale off. globalEvents complete: 2 include, 9 exclude, all 11 ruled on individually."
+  - "Contrast: ink/bg 16.23, muted/surface 5.41 (second-best in the catalogue). accent/bg 3.12 is below AA for body text but inside the catalogue's 2.78-10.50 band."
+  - "Covers: 5 of 12 fetched and looked at, corners included. All clean jacket art, no watermarks, no title-page scans."
+  - "Editions: 34 of 34 ISBNs verify. Three resolutions spot-checked against live publisher pages, all matching. The 978-989-785 prefix is a genuine second Gradiva registrant."
+  - "Spoiler fixes verified landed in both languages; translation reintroduced nothing."
+  - "Field consumption: work.images.cover IS read (coverFor); work.note is inert by design, as SCHEMA documents."
+  - "Ids unique, references resolve, no em dashes, 8 sources live. Completeness re-derived: 34 works, featured 3 of 3 at cap."
+openQuestions:
+  - "The two Blocking-class items are the curator's: try-o-anjo-branco's 'No series to commit to', and the three rationales that name works.yaml."
+  - "jrs-auschwitz-holocaust-framing-2020 still carries the standing request for a curator read in full, in both languages. Nothing here displaces it."
+  - "No live render check: this worktree holds only the content repo."
