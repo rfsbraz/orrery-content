@@ -1,0 +1,51 @@
+stage: spoiler-audit
+summary: >
+  Audited every ungated field: 111 synopses, 2 order rationales and 5
+  debated bullets, 4 startHere paths, 2 era descriptions, the franchise
+  description, 11 franchise events, 17 lifeEvents. Five synopses rewritten
+  and one order rationale corrected. No spoilerAfter set anywhere - the
+  aura is entirely publication, reception and biography, none of it a plot
+  reveal. The one load-bearing leak was The Dunwich Horror, whose synopsis
+  gave the story's closing sentence, on a work the essentials path puts in
+  front of newcomers. Publisher copy overturned two suspicions the other
+  way. Validator 0 errors, 0 new warnings; no locale overlay exists here,
+  so nothing needed mirroring.
+produced:
+  filesChanged:
+    - content/franchises/hp-lovecraft/works.yaml
+    - content/franchises/hp-lovecraft/orders.yaml
+  spoilerAfterSet: 0
+  spoilerAfterLoosened: 0
+  misplacedSpoilerAfter: "none - all 28 sit on events or lifeEvents, all null"
+rewritten:
+  - "the-dunwich-horror (load-bearing): named the thing as Wilbur's twin, the story's final sentence, which no publisher blurb checked carries. Now the rite and the thing boarded up on the farm, with a note recording what jacket copy does carry."
+  - "the-dream-quest-of-unknown-kadath (load-bearing): 'read ... as an allegory of that homecoming' gives away where the quest ends, on the work opening the Carter order. Composition date and length kept, the reading held out, reason in the note."
+  - "the-lurking-fear (load-bearing): the degenerate family underground is the last of four instalments; no publisher copy found. Now stops at the Martense history, which the text gives early."
+  - "celephais (unsure, loosenable): 'in dreams and finally in death' is the closing image; no publisher copy found, redacted on the asymmetry."
+  - "winged-death (load-bearing): the dead man's mind in the fly is the last diary entry. Now 'the fly is not finished with him.'"
+  - "orders.yaml randolph-carter-in-order: 'his disappearance at the second tale's end' asserted a false ending for The Statement of Randolph Carter, which the reorder makes the second tale, while pointing at The Silver Key; now names it. 'Watching the diminishment resolve' replaced with what the order does rather than what it pays off."
+checkedNotSpoilers: >
+  Rulings that changed nothing, so they are not relitigated. Left on
+  publisher copy: Charles Dexter Ward, The Shadow Out of Time - the two
+  the publisher test overturned. Left because the reveal is the story's
+  own first paragraph: The Thing on the Doorstep, The Haunter of the Dark,
+  Arthur Jermyn, The Music of Erich Zann. Left on other grounds: The
+  Outsider (the Library of America's own copy frames it as blurring the
+  human and non-human); The Silver Key and Through the Gates (the
+  disappearance is the sequel's premise, on its jacket); Medusa's Coil
+  (the suppressed ending sits in the curator-only note). All 17 lifeEvents
+  and 11 franchise events carry no plot reveal; eras.yaml,
+  franchise.description and the 4 startHere paths are clean.
+crossOrderChecks:
+  randolphCarterReorder: "Dream-Quest first does not spoil Statement (Warren's fate and the voice appear nowhere in the wing) and Statement does not spoil Dream-Quest. The only real vector was Dream-Quest's own synopsis, now fixed."
+  cthulhuMythos25: "No member's synopsis assumes or reveals another's; cross-references inside the 25 are entity and publication facts only. Safe in any sequence, which is what an order claiming no sequence needs."
+  fourEssentials: "None names or resolves another; Dunwich only spoiled itself."
+verification:
+  validate: "validate.py --slug hp-lovecraft - 0 errors, 62 warnings, all pre-existing (57 era-coverage, 5 handoff-length); zero new."
+  i18n: "i18n_coverage.py - wing still wholly untranslated, no pt-PT overlay for any hp-lovecraft file."
+forStages:
+  translation: "Translate the Dunwich, Dream-Quest, Lurking Fear, Celephais and Winged Death synopses from the current English, never an earlier draft - each had a reveal removed. Field counts unchanged; the new notes are curator-only."
+  visual-metadata: "A Dunwich plate must not depict what the thing on the farm is, and a Dream-Quest plate must not show the sunset city as a recognisable New England town; either reinstates in the image what the prose stopped saying."
+  wing-audit: "The Carter order's debated block had The Silver Key losing the dream-gift 'after childhood and only regained it at thirty', reversing both its cited source and its own rationale; corrected to lost at thirty. An accuracy fix found during the sweep, not a spoiler ruling."
+openQuestions:
+  - "Celephais is the one unsure redaction: loosen it if a curator judges the closing image jacket-level."
