@@ -26,6 +26,78 @@ globalEvents:
     - prestige-fantasy-adaptation-2011  # writes historical thriller, not fantasy; unrelated genre
     - booktok-2020                 # an established bestseller since 2005; no sourced BookTok-driven discovery angle
 
+# "Where to start" - powers the guided wizard. Three honest paths: the whole
+# shelf, the flagship series from its own beginning, and one standalone taste
+# for a reader not ready to commit to a 14-book series. No path was built to
+# fill an empty fit-matrix cell; each rests on real material below.
+startHere:
+  paths:
+    - id: everything-in-order
+      title: Everything, in order
+      description: >
+        Every book he has written, chronologically from 1992 to today: the
+        Tomás Noronha case files, the Calouste Gulbenkian biography, Saga do
+        Lótus, the standalone historical novels, and the war-reportage
+        essays and interview volumes alongside them.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+
+    # Source: https://www.booksonboard.com/order-of-books/jose-rodrigues-dos-santos/
+    # "Ready for a literary adventure? Snag Codex 632 and dive into José
+    # Rodrigues dos Santos's world" - recommends starting with Codex 632.
+    # Source: https://www.bookseriesinorder.com/jose-rodrigues-dos-santos/
+    # notes Codex 632 was "the first to be translated into English and
+    # published for an international audience".
+    # Source: https://www.goodreads.com/series/356698-tom-s-noronha lists it
+    # as book 1 of 14.
+    - id: start-with-noronha
+      title: Start with Tomás Noronha
+      description: >
+        The flagship series from its own beginning: fourteen cases for
+        historian-cryptanalyst Tomás Noronha, threading real cryptography,
+        physics and religious history through international conspiracies.
+        Start with O Codex 632, the book that launched both the character
+        and the author's own international career.
+      workIds: null
+      orderId: jose-rodrigues-dos-santos/tomas-noronha-in-order
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        His best-known and most translated novel, A Fórmula de Deus
+        (published internationally as The Einstein Enigma), is actually the
+        series' second book - starting at Codex 632 means meeting Tomás
+        Noronha from the true beginning. The cost: fourteen books is a long
+        commitment before you have sampled anything else he has written.
+
+    # Source: http://aminhaestante.blogspot.com/2014/07/o-anjo-branco-jose-rodrigues-dos-santos.html
+    # - a reader who deliberately chose this as "o primeiro a ler" (the first
+    # to read) among all this author's books, for the real-history subject
+    # and the father's-life connection also noted on works.yaml. One reader's
+    # account, not a critical consensus - the weakest sourcing tier this
+    # skill allows, and used honestly as exactly that.
+    - id: try-o-anjo-branco
+      title: Try O Anjo Branco
+      description: >
+        A standalone outside the thriller series: a doctor's founding of a
+        Flying Doctors' Service in 1960s Mozambique, inspired by the
+        author's own father's life there, and called by Correio da Manhã his
+        "most intimate and emotional novel". No series to commit to.
+      workIds:
+        - jose-rodrigues-dos-santos/o-anjo-branco
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        The cost: it stands apart from the flagship series and the
+        international-conspiracy thrillers the shelf is best known for, and
+        its colonial-war setting is heavier going than a typical Noronha
+        case.
+
 sources:
   - "https://pt.wikipedia.org/wiki/Jos%C3%A9_Rodrigues_dos_Santos"
   - "https://www.gradiva.pt/autor/jose-rodrigues-dos-santos/"

@@ -1,0 +1,194 @@
+stage: reading-orders
+summary: >
+  0 -> 5 orders (orders.yaml, new file), 0 -> 3 startHere paths
+  (franchise.yaml). The 14-book Tomás Noronha series needed no order to
+  represent its own sequence (publisher-numbered, already publication order,
+  per franchise-research/completeness-auditor) but earned one anyway to pull
+  it out as a walkable thread from the other 20 works. Three more orders fix
+  same-year ties the derived default cannot resolve (Gulbenkian 2013,
+  Auschwitz 2020, the Crónicas de Guerra/Verdade da Guerra 2002 pair), each
+  with sourced reading-order evidence beyond the release dates themselves.
+  One candidate (A Vida num Sopro / O Anjo Branco) researched and rejected -
+  different years, no tie, no order earns its place. startHere ships three
+  paths: the derived-default completionist walk, "start with Tomás Noronha"
+  (points at the new 14-book order), and one standalone taste (O Anjo
+  Branco) for a reader not ready to commit to the series.
+produced:
+  orders:
+    - id: jose-rodrigues-dos-santos/tomas-noronha-in-order
+      type: curated
+      works: 14
+      contribution: >
+        Matches the derived default exactly (no year ties among the 14).
+        Whole contribution: names and isolates the flagship series as a
+        thread apart from the Gulbenkian biography, Saga do Lótus and the
+        standalones. Sourced: Goodreads' own Tomás Noronha series page
+        (independently numbers it 1-14, matching works.yaml), Gradiva's
+        author page, bookseriesinorder.com.
+    - id: jose-rodrigues-dos-santos/saga-do-lotus-in-order
+      type: curated
+      works: 4
+      contribution: >
+        Matches the derived default exactly (2015-2018, no tie). Whole
+        contribution: names and isolates the wartime Macau/China saga as a
+        thread apart from the thriller series and standalones. Sourced:
+        pt.wikipedia (already cited on works.yaml), Goodreads' own Saga do
+        Lótus series page.
+    - id: jose-rodrigues-dos-santos/gulbenkian-duology-in-order
+      type: curated
+      works: 2
+      contribution: >
+        Fixes the 2013/2013 tie. Sourced beyond the release dates already on
+        works.yaml: a reader review (cemiteriodoslivroslidos) stating the
+        pair "constituem apenas uma única obra, dividida em dois volumes" -
+        reading them backwards runs Gulbenkian's own life in reverse (his
+        Lisbon exile and death before his rise). Same shape as
+        cormac-mccarthy/the-passenger-and-stella-maris-in-order: a real tie
+        plus sourced cost, not present in a same-year pair with no sourced
+        reason (see rejected candidate below).
+    - id: jose-rodrigues-dos-santos/auschwitz-duology-in-order
+      type: curated
+      works: 2
+      contribution: >
+        Fixes the 2020/2020 tie. O Manuscrito de Birkenau opens with all
+        three principals already allied inside the camp, organising the
+        Sonderkommando revolt - reading it first drops a reader into an
+        alliance already underway. Sourced: both books' own portfolio pages
+        (already cited on works.yaml, which also carries the French
+        reviewer's "continuation and ending of" line), plus the French
+        publisher's own page for the second volume, which a reader review
+        there independently calls "une suite à la hauteur du premier tome".
+    - id: jose-rodrigues-dos-santos/cronicas-de-guerra-in-order
+      type: curated
+      works: 3
+      contribution: >
+        Fixes the 2002/2002 tie between Crónicas de Guerra II and A Verdade
+        da Guerra (Crónicas I, 2001, was never at risk). Strongest sourcing
+        of the five: fetched all three of the author's own portfolio pages
+        directly and confirmed each states its own position in the study
+        verbatim - "the first/second/third of a three-part series on war
+        reporting", based on his PhD dissertation. This is the author's own
+        site describing the structure, not a "read this order" statement, so
+        it is typed `curated` rather than `author-recommended` (that type
+        requires the author naming a reading sequence, not just describing a
+        study's parts - CURATION.md/the skill's own line on
+        `author-recommended` being the heaviest claim in the file).
+  startHerePaths:
+    - id: everything-in-order
+      orderId: default
+      fit: "experience: [returning, completionist], commitment: [complete]"
+    - id: start-with-noronha
+      orderId: jose-rodrigues-dos-santos/tomas-noronha-in-order
+      fit: "experience: [new, returning], commitment: [arc]"
+      sourcing: >
+        booksonboard.com's own order-of-books page explicitly recommends
+        starting with Codex 632 ("Ready for a literary adventure? Snag Codex
+        632..."); bookseriesinorder.com independently notes it was the first
+        translated into English for an international audience; Goodreads'
+        series page lists it as book 1 of 14. Real, if modest, external
+        "start here" evidence - not our own reading standing in for it.
+    - id: try-o-anjo-branco
+      workIds: [jose-rodrigues-dos-santos/o-anjo-branco]
+      fit: "experience: [new], commitment: [taste]"
+      sourcing: >
+        A single identified reader account (aminhaestante.blogspot.com)
+        explicitly names this as the book they deliberately chose to read
+        first among this author's work, for its real-history subject and the
+        author's father connection also documented on works.yaml. This is
+        the weakest sourcing tier the skill allows (a single reader's
+        account, not a critical consensus) and is disclosed as exactly that
+        in the sourcing comment above the path in franchise.yaml - the same
+        honesty joao-tordo/the-prizewinner uses for a fact-based rather than
+        consensus-based path.
+rejectedCandidates:
+  - >
+    An order for A Vida num Sopro / O Anjo Branco (2008, 2010): researched
+    and declined. Different publication years, so the derived default
+    already places them correctly with nothing to fix; at two books with no
+    tie to break, an order here would exist only to pad the file - the same
+    floor michael-connelly's wing applies to its own two-book Terry McCaleb
+    and Catalina groups (cited directly in cormac-mccarthy's own orders.yaml
+    header as the working precedent) and harlan-coben's to its Sami Kierce
+    and Wilde threads. Documented in orders.yaml's own header comment so a
+    future pass does not re-litigate it.
+  - >
+    A fourth startHere path (a taste of Saga do Lótus, or a "returning
+    reader" path pointing at it) was considered and rejected: no external
+    source recommending the Lótus saga as an entry point was found (only
+    sourcing for the *grouping*, which is enough for an order but not enough
+    for a path per this skill's higher bar - "if the only source is our own
+    reading, it is not a path"). Inventing one to fill an unused fit-matrix
+    cell would have been exactly the padding CURATION.md forbids. The order
+    still exists and is reachable from the museum without a wizard path.
+  - >
+    A `startHere` path pointing at any of the three tie-fixing 2-3-book
+    orders (Gulbenkian, Auschwitz, Crónicas de Guerra) was considered and
+    rejected: none is a genuine "way in" for a newcomer - a reader with no
+    context for the shelf is never going to open on the war-reportage essays
+    or a Holocaust duology mid-series. These three orders exist for the
+    museum and for a completionist walking the shelf in the right internal
+    sequence, not for the wizard.
+admissionTestNotes:
+  - >
+    Famous-book trap checked and handled: A Fórmula de Deus (The Einstein
+    Enigma) is sourced elsewhere in this wing as the author's "best-known and
+    most widely translated novel", but it is book 2 of the Noronha series,
+    not book 1. The start-with-noronha path's note says so in one sentence,
+    without claiming any specific plot-continuity cost (no source was found
+    for one) - a structural fact stated plainly, not an unsourced spoiler
+    warning dressed up as advice.
+  - >
+    Prequel/spoiler-vector check: no work in this wing is a later-published
+    prequel to an earlier one. The Noronha series and Saga do Lótus are both
+    strict publication order with no reordering. The three tie-fixing orders
+    (Gulbenkian, Auschwitz, Crónicas de Guerra) each move a book from an
+    arbitrary tie-break position to a stated, sourced position - none moves
+    a later-published work earlier than an earlier-published one, so the
+    "what does this book's first page assume the reader already knows"
+    concern the skill raises for prequels does not apply to any order in
+    this file.
+  - >
+    All prose in orders.yaml and startHere re-read as an anonymous newcomer:
+    no plot beyond what each work's own existing synopsis in works.yaml
+    already discloses; the Auschwitz-duology rationale states that the two
+    books' protagonists "converge" and are later "allied", not what happens
+    to any of them.
+validatorResult: >
+  python scripts/validate.py --slug jose-rodrigues-dos-santos - one error,
+  the expected pre-existing "no art: block" (visual-language's, unchanged by
+  this stage). Two pre-existing warnings (the completeness-auditor handoff
+  word count, the comunicacao 1992 era-coverage gap), both unchanged before
+  and after this stage's edit. One error this stage introduced and fixed
+  before finishing: a literal "[[work:...|...]]" placeholder inside a
+  header comment in the new pt-PT orders.yaml overlay was matched by the
+  inline-reference validator as a dangling reference; reworded the comment
+  to describe the convention in prose instead of showing the bracket syntax
+  literally.
+i18nResult: >
+  python scripts/i18n_coverage.py - the new content/i18n/pt-PT/franchises/
+  jose-rodrigues-dos-santos/orders.yaml overlay is fully covered (all 5
+  orders' name + rationale translated). The franchise.yaml overlay covers the
+  new startHere.paths in full; the wing's pre-existing gap (works.yaml, eras,
+  events, the author bio, and franchise.yaml's own top-level `description`)
+  is unchanged and awaits the wing's translation stage, which had not yet
+  run before this stage started - no regression against the starting point.
+forStages:
+  translation: >
+    When the wing's translation stage runs, franchise.yaml's `description`
+    (and works.yaml/eras.yaml/events.yaml/the author bio) still need pt-PT;
+    orders.yaml and startHere.paths are already fully covered by this
+    stage's own overlay and need no further work unless this stage's English
+    prose changes later.
+  spoiler-audit: >
+    Nothing flagged as needing a second look beyond the admission-test notes
+    above - re-read orders.yaml and franchise.yaml's startHere block as part
+    of the normal sweep; both are ungated prose (no spoilerAfter exists on
+    either artefact) so everything in them must already read safely for an
+    anonymous visitor, which this stage wrote them to do.
+  wing-audit: >
+    5 orders / 3 paths is the full reading-orders picture for this wing
+    until works.yaml changes. If a future completeness pass adds a 15th
+    Noronha novel or a 5th Saga do Lótus book, re-derive each order's scope
+    against the new works.yaml per this skill's audit section before
+    assuming the existing five still cover what they claim to.
+openQuestions: []
