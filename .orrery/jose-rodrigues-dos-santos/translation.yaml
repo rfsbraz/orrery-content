@@ -1,0 +1,79 @@
+stage: translation
+summary: >
+  pt-PT 0 -> full coverage on this wing: works.yaml (34 synopses), eras.yaml
+  (2 eras: title/description/themes), events.yaml (5 franchise events:
+  title/description, epigraph quote mirrored verbatim), authors/jose-
+  rodrigues-dos-santos.yaml (bio + 9 lifeEvents), and franchise.yaml's
+  top-level description (the one field reading-orders left open; its
+  startHere/orders overlays were already complete and untouched).
+  i18n_coverage.py: 145/163 -> 150/163 files fully covered catalogue-wide,
+  no regression elsewhere; this wing no longer appears in MISSING or
+  PARTIAL. validate.py --slug jose-rodrigues-dos-santos: 0 errors, same 4
+  pre-existing warnings as every prior stage. Full-catalogue validate.py: 0
+  errors, all references resolve.
+produced:
+  filesWritten:
+    - content/i18n/pt-PT/franchises/jose-rodrigues-dos-santos/works.yaml (new)
+    - content/i18n/pt-PT/franchises/jose-rodrigues-dos-santos/eras.yaml (new)
+    - content/i18n/pt-PT/franchises/jose-rodrigues-dos-santos/events.yaml (new)
+    - content/i18n/pt-PT/authors/jose-rodrigues-dos-santos.yaml (new)
+    - content/i18n/pt-PT/franchises/jose-rodrigues-dos-santos/franchise.yaml (edited: added top-level description only)
+  untouched: >
+    content/i18n/pt-PT/franchises/jose-rodrigues-dos-santos/orders.yaml -
+    already fully covered by reading-orders' own overlay; re-checked, not
+    redone.
+sourcingApproach: >
+  This author writes and speaks in European Portuguese himself. Rather than
+  translate the English base fields word for word, 33 of 34 works (all but
+  o-sexto-sentido, too recent for the site) were checked against the real
+  Portuguese page at joserodriguesdossantos.com/portfolio/<pt-slug>/ (not
+  the /en/ mirror), and its genuine jacket vocabulary used - never a
+  different plot framing, only the real idiom (criptanalista, inspetora,
+  and "enteógenos" over the English loanword "entheogens", confirmed via
+  the chmagazine.pt launch piece). For the four reception-rupture events and
+  two 2022 lifeEvents where the English base itself quotes a named
+  Portuguese figure or the author's own words, the original Portuguese was
+  recovered from the cited press (nit.pt, visao.pt, sabado.pt, infocul.pt)
+  rather than back-translated - the gas-chamber reasoning quote, Irene
+  Pimentel's and João Pinto Coelho's lines, Roger Lee de Jesus's "vergonha
+  nacional" tweet, and the Sorbonne "com distinção e louvor" wording. The
+  epigraph's `quote` field is already Portuguese in the base file; the
+  overlay repeats it verbatim rather than inventing a translation of
+  something already in the target language.
+registerDecisions: >
+  Followed this wing's own established pt-PT convention (from reading-
+  orders' overlays): AO90 orthography throughout, matching every other
+  pt-PT overlay in the catalogue, not the pre-agreement spelling the
+  author's own site still uses in its house style. No Brazilian vocabulary
+  or "estar fazendo"-type gerunds found on review. One sourced gender
+  choice: O Último Segredo's "an Italian police inspector" renders as "uma
+  inspetora", sourced to the real inspector's name (Valentina Ferro) on the
+  character's own jacket copy - a translation requirement resolved with a
+  sourced fact, not a guess.
+spoilerCheck: >
+  Re-read every synopsis against spoiler-audit's fixed English text before
+  translating: a-filha-do-capitao stops at the attraction being born;
+  o-anjo-branco makes no connection to A Vida num Sopro's ending (its
+  curator-only note stayed untranslated, unrendered by design); the
+  Auschwitz duology's synopses disclose only what each book's own jacket
+  does. No new spoiler-shaped content introduced.
+forStages:
+  wing-audit: >
+    Full pt-PT coverage on this wing as of this commit. The two
+    pre-existing open items (the Auschwitz life event's curator-read
+    request; the comunicacao 1992 era-coverage gap) are unrelated to
+    translation and unchanged.
+openQuestions:
+  - >
+    jrs-auschwitz-holocaust-framing-2020's pt-PT text now carries the exact
+    original Portuguese quotes from every party, recovered rather than
+    back-translated - but a curator fluent in the source register should
+    still read this entry in full before merge, same as the English
+    version required.
+  - >
+    No live render check was run: this worktree holds only the content
+    repo, and render-check.mjs lives in the separate app repo. Verification
+    rests on i18n_coverage.py, validate.py, and a manual re-read of every
+    field against the base English and the original Portuguese press. A
+    curator with the app repo should open the pt-PT wing page and at least
+    one event/era plate before merge.
