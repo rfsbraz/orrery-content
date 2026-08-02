@@ -1,0 +1,78 @@
+stage: franchise-research
+summary: >
+  Scaffolded the wing: 34 works (27 novels core, 4 essays + 3 interview
+  books extended), 1 author entity, first theme pass. Corrected an
+  unsourced Wikipedia grouping that would have merged two unrelated book
+  pairs into one fictional four-book series.
+produced:
+  franchise: "franchise.yaml - kind: author, themePreset: newsroom-cipher, no globalEvents/startHere yet"
+  author: "authors/jose-rodrigues-dos-santos.yaml - full bio; lifeEvents left empty"
+  works: >
+    works.yaml, 34 entries: Tomás Noronha (14, 2005-2025, publisher-numbered
+    and already publication-order so no orders.yaml needed); Calouste
+    Gulbenkian (2, 2013); Saga do Lótus (4, 2015-2018); two unlabelled real
+    duologies (A Vida num Sopro/O Anjo Branco 2008/2010; O Mágico de
+    Auschwitz/O Manuscrito de Birkenau 2020) - see works.yaml's header
+    comment for why these are NOT one merged "Francisco Latino" series
+    despite Wikipedia's bundling; 3 standalones; 4 war-reportage essays;
+    3 interview volumes.
+  theme: "theme.yaml - palette/sourceSerif/beam set; `art` left for visual-language (see below)"
+  tiering: >
+    core = all 27 novels (no format split applies here, unlike Cervantes'
+    prose/verse line); extended = the 7 nonfiction books. No apocrypha found.
+    featured (3/3 cap): O Codex 632, A Fórmula de Deus, O Anjo Branco - each
+    sourced in works.yaml's own note field.
+validatorResult: >
+  One error, and it's the expected by-design one: "no `art:` block" (that
+  field is visual-language's, not this stage's - theme.yaml's comment
+  explains). Zero warnings scoped to this wing, no dangling refs, no
+  duplicate ids.
+forStages:
+  completeness-auditor: >
+    27-novel count independently agreed by the author's own site, pt.wikipedia
+    and Gradiva - but the author's own "NOVELS" list is missing A Vida num
+    Sopro and had not added O Sexto Sentido (2025) yet; reverify both.
+  press-archaeology: >
+    Anchors beyond birth: Macau radio -> BBC internship (funded by his late
+    father's inheritance) -> Gulf War/Telejornal debut (16 Jan 1991) -> 3 CNN
+    awards -> O Codex 632's HarperCollins deal (2005) -> Church "intolerance"
+    row over O Último Segredo (2009) -> Gradiva-to-Planeta move (2022). Open:
+    Gradiva's bio claims a second (Paris) doctorate that no other source
+    confirms - only the sourced Lisbon PhD is used in the author entity.
+    Several public controversies are sourced on pt.wikipedia but not impact-
+    graded here (2004 RTP directorship conflict, 2015 media-ethics rows, the
+    2023 viral newsreading, 2025 RTP election-coverage removal).
+  eras: "Small-shelf exception does not apply; 34 works, 1992-2025, real shape. Run normally."
+  world-events / event-resonance: >
+    Unusually high resonance rate: several Noronha novels answer real, dated
+    events directly (2008 crisis, Higgs boson, gene-edited babies/AI, Uyghur
+    persecution, Russian disinformation) - worth deliberate attention.
+  translation: "No translationNote candidates (unlike Cervantes/Don Quixote). All prose is original English, needs pt-PT like any wing."
+  visual-language: >
+    Only this stage stands between the wing and a clean validate.py run.
+    Palette rationale (broadcast-monitor near-black, cardinal-red tied to
+    journalism and the Vatican thread) is in theme.yaml; extend it rather
+    than defaulting to thriller/conspiracy cover cliches (see its `notes:`).
+openQuestions:
+  - >
+    The two duologies Wikipedia bundles as "Série Francisco Latino" are
+    recorded as separate pairs with subseries null + a sourced note each
+    (works.yaml header comment has the full evidence). Not a judgment call -
+    the "series" has no heading markup or TOC entry in the source article and
+    the pairs share no character - but flagged loudly since the request issue
+    didn't distinguish them at all.
+  - >
+    "Saga do Lótus" used as subseries name for all 4 Macau/China novels even
+    though the author's own site calls the set "The Lotus Trilogy" (pre-2018,
+    before book 4 extended it). Saga do Lótus is the real Wikipedia heading
+    and the only name covering all four; a curator override to "Trilogy"
+    would misdescribe the wing.
+  - >
+    All 27 novels tiered core (no internal extended/apocrypha split) since no
+    comparable format line exists here to Cervantes' prose/verse one -
+    flagging in case a curator wants prominence-based tiering instead
+    (canonTier records publication kind, not prestige, per SCHEMA.md).
+  - >
+    O Sexto Sentido (2025) is sourced from Bertrand/WOOK/CM and pt.wikipedia
+    but not yet on the author's own site (last updated mid-2025) - reconfirm
+    before considering the wing closed.
