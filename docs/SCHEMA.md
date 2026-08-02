@@ -286,16 +286,41 @@ sourced, never as solo authorship).
   format: screenplay
 ```
 
+**Widened 2026-08-01** (orrery#[TBD]): the app used to render a work's
+`canonTier` (`extended`, `apocrypha`) as its badge, which told a reader
+*where the curator filed it*, never *what it is*. A reader doesn't know what
+"apocrypha" means; they want to know it's a short story, or an essay
+collection, or a map. `canonTier` still exists and still drives the river's
+weight (a `core` work gets the `hero`/`standard` treatment; `apocrypha` gets
+`compact` - see below), but the app no longer prints the tier word. `format`
+is what prints now, so it earned a real taxonomy instead of three values.
+
 | Value | Meaning |
 |---|---|
 | `novel` | the default; nothing to state |
-| `screenplay` | a published film/TV script |
+| `novella` | shorter than a novel, longer than a short story, sold as its own object |
+| `short-story` | a single short piece, whether standalone or inside another work's back matter |
+| `short-story-collection` | multiple stories gathered as one book |
+| `poem` | a single poem catalogued as its own work (Poe's juvenilia, mostly) |
+| `poetry-collection` | multiple poems gathered as one book |
+| `essay` | a single essay-length nonfiction piece |
+| `essay-collection` | multiple essays gathered as one book |
+| `memoir` | first-person nonfiction about the author's own life |
+| `nonfiction` | any other nonfiction book that isn't better described as memoir/essay-collection/reference - biography of someone else, travel narrative, craft book, journalism collection |
+| `reference` | a companion guide, encyclopedia, map or bestiary - something a reader looks things up in, not reads start to finish, real-world or in-universe |
 | `play` | a published stage script |
+| `screenplay` | a published film/TV script |
+| `tv-series` | a produced television series the author wrote or co-wrote (not a novel adapted *into* one - the work itself is the show) |
+| `graphic-novel` | comics-form work, whether original or adapting the author's own prose |
+| `picture-book` | an illustrated children's book |
+| `anthology` | a multi-author collection; pairs with `authorRole: contributor` (one piece inside it) or `editor` (assembled it) - the format says what the *volume* is, `authorRole` says what this author did to it |
 
 This is display-only, the same as `canonTier` - it does not change where a
 work sits in the reading spine or the river. Add a value here only when a
 real work needs it; do not pre-populate every wing's novels with an explicit
-`format: novel`.
+`format: novel`. Pick the closest fit rather than inventing a new value -
+this list is deliberately not exhaustive of every publishing category that
+has ever existed, only of the forms that actually recur in this catalogue.
 
 ### translationNote: when the translator is part of the decision
 

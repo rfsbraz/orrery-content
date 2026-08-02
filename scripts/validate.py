@@ -42,6 +42,17 @@ SCOPES = {"author-life", "world", "culture", "industry"}
 FEATURE_KEYS = {"river", "wizard", "companion", "editions"}
 FEATURE_VALUES = {"auto", "on", "off", True, False}
 FIT_EXPERIENCE = {"new", "returning", "completionist"}
+# `format` is what the app's badge now renders (SCHEMA.md) instead of raw
+# `canonTier`, so every value here needs a matching `work.format.<value>` key
+# in the orrery app's `lib/i18n/messages.ts` for every locale, or a reader
+# sees the untranslated enum value print literally on the page - the exact
+# bug this replaced.
+WORK_FORMATS = {
+    "novel", "novella", "short-story", "short-story-collection", "poem",
+    "poetry-collection", "essay", "essay-collection", "memoir", "nonfiction",
+    "reference", "play", "screenplay", "tv-series", "graphic-novel",
+    "picture-book", "anthology",
+}
 FIT_COMMITMENT = {"taste", "arc", "complete"}
 EDITION_FORMATS = {"hardcover", "paperback", "ebook", "audiobook"}
 # BCP-47-ish: "pt", "pt-PT", "en-GB". Region matters for books (pt-PT vs pt-BR).
@@ -702,10 +713,9 @@ def main():
                 err(loc, f"{wid}: bad canonTier '{w.get('canonTier')}'")
             # `format` defaults to "novel"; it only needs stating when a work
             # is something else a reader would want to know before picking it
-            # up - a screenplay or a stage play, not a prose book (SCHEMA.md,
-            # orrery-content#83).
+            # up (SCHEMA.md).
             fmt = w.get("format", "novel")
-            if fmt not in {"novel", "screenplay", "play"}:
+            if fmt not in WORK_FORMATS:
                 err(loc, f"{wid}: bad format '{fmt}'")
             if "featured" in w and not isinstance(w.get("featured"), bool):
                 err(loc, f"{wid}: featured must be true or false, got "
