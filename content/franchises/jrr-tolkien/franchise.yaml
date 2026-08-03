@@ -31,7 +31,16 @@ description: >
   unpublished at his death in 1973 and edited into print across the
   following forty-five years by his son and literary executor,
   [[author:christopher-tolkien|Christopher Tolkien]].
-authorIds: [jrr-tolkien]
+authorIds: [jrr-tolkien, christopher-tolkien]
+# Christopher Tolkien is listed here, not just via withAuthorIds on his
+# individual works, for the same reason Robert Jordan's wing lists Brandon
+# Sanderson and Lee Child's lists Andrew Child: this catalogue's own
+# tooling (aura_density.py, wing_digest.py) reads lifeEvents only from the
+# people named here. Left off, his 12 sourced lifeEvents - the 1967
+# co-author letter, the Silmarillion, the 45-year editing project - would
+# be invisible to the wing's own aura, on an author whose posthumous
+# editorial work is a genuine authorship question (see works.yaml's
+# STRUCTURAL CALL ONE), not a footnote.
 themePreset: legendarium
 
 sources:
