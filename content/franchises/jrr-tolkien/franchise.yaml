@@ -1,0 +1,208 @@
+# Identity + features. Standing rule: a wing spans an author's COMPLETE
+# published body of work, so kind is author. Unusually for this catalogue,
+# Tolkien's bibliography needs no subseries at all - see works.yaml's own
+# header for why - so every work in this wing carries subseries: null.
+#
+# This is also the widest "two famous books vs. everything else" gap in
+# the whole catalogue: The Hobbit and The Lord of the Rings are two of the
+# best-selling novels ever printed, and the other 30 works below - most of
+# it published only after Tolkien's 1973 death, edited from manuscript by
+# his son - are comparatively obscure even among readers who own both.
+# That gap is exactly what canonTier is doing the work of recording here:
+# 3 core, 11 extended, 18 apocrypha (see works.yaml's own header for the
+# full tier rationale and the History of Middle-earth scope decision in
+# particular).
+#
+# features is left unset: every capability this data earns (river, wizard,
+# companion, editions) auto-detects correctly from events, orders and
+# editions.yaml alone, so there is nothing here for an explicit override to
+# do.
+#
+# startHere carries five paths, the top end of this catalogue's two-to-five
+# range, because this wing's gap between "the two famous books" and "the
+# complete works" is the widest in the catalogue (see the description
+# above) and needs more than one step to cross honestly: the two novels
+# alone, the two novels plus the mythology behind them, the three tales that
+# expand pieces of that mythology to full length, Middle-earth's own
+# chronological order (orders.yaml), and the complete thirty-two-work walk.
+# Sourcing for each path is a comment directly above it, per SCHEMA.md's
+# convention for StartHerePath (no sources field of its own).
+id: jrr-tolkien
+name: J. R. R. Tolkien
+kind: author
+description: >
+  An Oxford philologist whose two novels - the children's adventure
+  [[work:jrr-tolkien/the-hobbit|The Hobbit]] (1937) and its vastly larger
+  sequel [[work:jrr-tolkien/the-lord-of-the-rings|The Lord of the Rings]]
+  (1954-1955, one novel split into three volumes for the cost of paper, not
+  a trilogy by design) - effectively founded modern fantasy as a genre. Both
+  sit atop a legendarium forty years deeper than either book shows: private
+  mythology begun in the trenches of the First World War, most of it left
+  unpublished at his death in 1973 and edited into print across the
+  following forty-five years by his son and literary executor,
+  [[author:christopher-tolkien|Christopher Tolkien]].
+authorIds: [jrr-tolkien, christopher-tolkien]
+# Christopher Tolkien is listed here, not just via withAuthorIds on his
+# individual works, for the same reason Robert Jordan's wing lists Brandon
+# Sanderson and Lee Child's lists Andrew Child: this catalogue's own
+# tooling (aura_density.py, wing_digest.py) reads lifeEvents only from the
+# people named here. Left off, his 12 sourced lifeEvents - the 1967
+# co-author letter, the Silmarillion, the 45-year editing project - would
+# be invisible to the wing's own aura, on an author whose posthumous
+# editorial work is a genuine authorship question (see works.yaml's
+# STRUCTURAL CALL ONE), not a footnote.
+themePreset: legendarium
+
+# Wide banner for the wing. The Bodleian Library's Old Schools Quadrangle,
+# Oxford: after Tolkien's 1973 death his estate donated the papers
+# containing the Silmarillion mythology and his academic work to the
+# Bodleian, which held a major exhibition of it in 2018 ("Tolkien: Maker
+# of Middle-earth," English Wikipedia's own "J. R. R. Tolkien" article,
+# "Artist and legacy" section). A real, rights-clear building rather than
+# a manuscript page - the manuscripts themselves stay under the Tolkien
+# Estate's own copyright and are not free to reuse - chosen deliberately
+# to read as this wing's own "manuscript archaeology" visual language (the
+# archive that holds the drafts) without duplicating either author
+# portrait. Wikimedia Commons, CC BY 4.0 (photographer's own work).
+images:
+  header: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Bodleian_Library_Old_Schools_Quadrangle.jpg/1920px-Bodleian_Library_Old_Schools_Quadrangle.jpg"
+  headerCredit: "APK, CC BY 4.0"
+  headerSource: "https://commons.wikimedia.org/wiki/File:Bodleian_Library_Old_Schools_Quadrangle.jpg"
+
+globalEvents:
+  include:
+    - world-war-i-1914  # The war that shaped Tolkien's body and landscape; his 1916 Somme service, trench fever, and the deaths of T.C.B.S. friends set the legendarium in motion during his convalescence, giving it the desolate marshes and soldier's bond that marks the greatest works.
+  exclude:
+    - sept-11-2001  # Posthumous; no resonance with timeless legendarium
+    - financial-crisis-2008  # Contemporary economic event unrelated to legendarium's composition or Christopher's editorial work
+    - covid-19-pandemic-2020  # Christopher dies before the pandemic; outside both authors' working lives
+    - world-war-ii-1939  # Tolkien explicitly denied it shaped LOTR's plot; finished the book before atomic weapons existed; living through it is not the same as it reaching the page
+    - pulp-magazines-1926  # Tolkien's literary fiction was never pulp; transcends the category rather than being shaped by it
+    - penguin-paperback-1935  # Publishing format change; predates his major publications and doesn't shape his writing
+    - armed-services-editions-1943  # WWII book distribution; unrelated to Tolkien's work or Christopher's later editorial approach
+    - lady-chatterley-trial-1960  # Obscenity trial; Tolkien's works were published before this and don't engage with it
+    - fantasy-paperback-boom-1965  # Tolkien's LOTR created this boom; he doesn't write into it, unlike later fantasy authors who inherit the category he created
+    - carnation-revolution-1974  # Portuguese censorship end; no connection to English-published Tolkien works or Christopher's France-based editorial work
+    - chain-bookshop-1982  # Industry format change; Tolkien editorial project already mature by then; didn't shape the books
+    - online-bookselling-1995  # Amazon launch; HoME completed same year; format didn't shape the legendarium's creation or editing
+    - ebook-and-self-publishing-2007  # Kindle launch; Tolkien project decades mature; technology didn't shape the books
+    - prestige-fantasy-adaptation-2011  # Game of Thrones prestige rise; different work, decades after Tolkien's publications
+    - booktok-2020  # Christopher dies before BookTok; social media discovery didn't exist during creation
+    - portugal-bailout-2011  # Portuguese financial crisis; no connection to Tolkien's English works or Christopher's editorial work
+    - elementary-education-act-1870  # Predates Tolkien's birth; too remote a structural change; doesn't reach the page of his work
+    - comics-code-authority-1954  # Comics regulation; Tolkien's work is literary fiction, not comics; didn't affect his writing
+
+startHere:
+  paths:
+    # Source: https://tolkiengateway.net/wiki/Reading_order ("Publication
+    # history" section) and https://booksinorder.io/guides/tolkien-reading-order
+    # ("The Essential Reading Order (Start Here)") and
+    # https://readingorderlist.com/guides/lord-of-the-rings-reading-order
+    # ("Essential reading order") - all three name The Hobbit followed by The
+    # Lord of the Rings as the standard newcomer's door, independent of each
+    # other. Checked and found moot: modern printings of The Hobbit all carry
+    # Tolkien's own 1951 revision to the "Riddles in the Dark" chapter that
+    # reconciles it with The Lord of the Rings, so there is no live edition
+    # choice left for a reader to make here.
+    - id: two-novels
+      title: The Hobbit, then The Lord of the Rings
+      description: >
+        The two novels Tolkien wrote and published for a reader who knew
+        nothing else about Middle-earth - still the door every guide to this
+        shelf agrees on. Bilbo's adventure first, then the much larger
+        sequel his cousin inherits. The cost is what it leaves out: forty
+        years of deeper mythology neither book needs you to know, and that
+        both are written to work without.
+      workIds:
+        - jrr-tolkien/the-hobbit
+        - jrr-tolkien/the-lord-of-the-rings
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste, arc]
+    # Source: the same three guides above all extend their newcomer's order
+    # with The Silmarillion third, after both novels - tolkiengateway.net
+    # calls it a book that "can give the reader insight about the world they
+    # already know"; booksinorder.io: "Read it after the main trilogy;"
+    # readingorderlist.com: "Read it after The Lord of the Rings if you want
+    # to understand the deeper lore... Many people bounce off it on first
+    # try."
+    - id: the-essentials
+      title: "The essentials: add The Silmarillion"
+      description: >
+        The two novels plus the deep history underneath them, in the order
+        every reading guide for this shelf that includes The Silmarillion at
+        all agrees on: read it third, once you already know the world it is
+        the history of. It reads like a mythology, not a novel - dense,
+        genealogical, short on dialogue - and most readers who bounce off it
+        do so by trying it first instead.
+      workIds:
+        - jrr-tolkien/the-hobbit
+        - jrr-tolkien/the-lord-of-the-rings
+        - jrr-tolkien/the-silmarillion
+      orderId: null
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+    # Source: https://pagesunbound.wordpress.com/2018/10/30/what-order-should-you-read-j-r-r-tolkiens-books-in/
+    # ("These three books are all elaborations of stories that are told in
+    # The Silmarillion, so read them next... in terms of chronology, you
+    # probably want to read Beren and Lúthien first here") and
+    # https://tolkiengateway.net/wiki/Reading_order ("rough chronological
+    # order"), which places the same three tales in the same internal
+    # sequence.
+    - id: great-tales
+      title: The First Age's three great tragedies
+      description: >
+        The love story, the family curse, and the fall of the hidden city -
+        the three tales The Silmarillion tells in a few pages each, told
+        here at full length, in the order the First Age itself lived them.
+        A path for a reader continuing from The Silmarillion, not starting
+        cold: it assumes that book's outlines already and spends its length
+        filling them in. Two of the three - Beren and Lúthien and The Fall
+        of Gondolin - present Tolkien's successive drafts side by side
+        rather than one settled narrative, unlike The Children of Húrin's
+        continuous telling; that unevenness is real and is part of what
+        this path costs.
+      workIds:
+        - jrr-tolkien/beren-and-luthien
+        - jrr-tolkien/the-children-of-hurin
+        - jrr-tolkien/the-fall-of-gondolin
+      orderId: null
+      fit:
+        experience: [returning, completionist]
+        commitment: [arc]
+    - id: chronological
+      title: Middle-earth's own chronological order
+      description: >
+        The seven-work walk in orders.yaml: The Silmarillion through the
+        Great Tales and Unfinished Tales to the two novels, in the sequence
+        the story happens rather than the sequence it was published. For a
+        completionist or a re-reader who wants the timeline unbroken. It
+        reorders the two novels behind more than four books of First and
+        Second Age history, and the guides that document this route reserve
+        it for exactly that reader, not a first-timer.
+      workIds: null
+      orderId: jrr-tolkien/chronological
+      fit:
+        experience: [returning, completionist]
+        commitment: [arc]
+    - id: complete
+      title: "Everything, as it was published"
+      description: >
+        All thirty-two works, in the order Tolkien and, after his death,
+        Christopher Tolkien actually published them - scholarly
+        translations, letters, and posthumous editorial projects alongside
+        the two novels and the mythology. The whole shelf, not a curated
+        route through it.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+
+sources:
+  - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+  - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+  - https://en.wikipedia.org/wiki/Christopher_Tolkien
+  - https://en.wikipedia.org/wiki/The_Silmarillion
