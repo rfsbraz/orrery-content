@@ -1,0 +1,92 @@
+stage: spoiler-audit
+summary: >
+  Audited all 52 synopses/notes, both eras, franchise.yaml, the 7 franchise
+  events, the 14 lifeEvents and the one reaching global event against
+  publisher jacket copy fetched for every core novel that could carry a
+  reveal. Two real spoilers rewritten (A Caverna, As Intermitencias da
+  Morte), one factual error in the Blindness synopsis corrected to the
+  jacket's wording, one fable outcome softened, three curator notes added.
+  No spoilerAfter set: everything that survived is on the jacket of the
+  book it would spoil. validate.py --slug jose-saramago green (0 errors;
+  28 era-orphan warnings and the handoff-length warnings are pre-existing).
+produced:
+  changedProse:
+    - jose-saramago/a-caverna
+    - jose-saramago/as-intermitencias-da-morte
+    - jose-saramago/ensaio-sobre-a-cegueira
+    - jose-saramago/a-maior-flor-do-mundo
+  newNotes:
+    - jose-saramago/a-caverna
+    - jose-saramago/as-intermitencias-da-morte
+    - jose-saramago/a-viagem-do-elefante
+  boundariesSet: []
+  boundariesLoosened: []
+rewritten:
+  - work: jose-saramago/a-caverna
+    cut: "the chamber echoing Plato's cave under the shopping-mall complex"
+    why: >
+      The novel's closing discovery and the payoff of its title. Harcourt's
+      jacket deliberately withholds it ("what they find transforms the
+      family's life"); no Portuguese, Catalan or Finnish blurb names it.
+      Replaced with the jacket's own arc.
+  - work: jose-saramago/as-intermitencias-da-morte
+    cut: "Death falling for one of the men she can no longer kill"
+    why: >
+      Resolves what the jacket leaves open. Every Portuguese edition stops
+      at the opening line; the US jacket only poses it as a question.
+      Rewritten to Harcourt's own phrasing ("an experiment of her own").
+  - work: jose-saramago/ensaio-sobre-a-cegueira
+    cut: "a small group who retain their sight"
+    why: >
+      Factually wrong (one woman) and vaguer than the publisher. Harcourt
+      names the epidemic, the asylum and "one eyewitness... who guides
+      seven strangers". Rewritten to match; the ending stays unstated.
+  - work: jose-saramago/a-maior-flor-do-mundo
+    cut: "which he saves by"
+    why: >
+      Soft call, loosenable. No publisher prints any plot for it and the
+      rescue is most of an eight-page fable, so the outcome verb went.
+checkedNotSpoilers: >
+  Left alone, each verified against the publisher copy of the book it
+  would spoil: Ensaio sobre a Lucidez naming the earlier epidemic and its
+  survivors (Harcourt's Seeing jacket says more than we do); the 1992
+  censorship lifeEvent describing O Evangelho's content (Vintage's jacket
+  is blunter still); both Claraboia entries, which carry publication
+  history only and never touch the novel; Ricardo Reis (Pessoa's ghost is
+  Spanish jacket copy, the ending is not stated); Memorial do Convento and
+  Levantado do Chao, both well inside their jackets and neither spoiling
+  the other or Blindness; and the premise-level synopses of A Jangada de
+  Pedra, Todos os Nomes, O Homem Duplicado, Historia do Cerco de Lisboa,
+  Caim, O Conto da Ilha Desconhecida, Objecto Quase, Manual de Pintura e
+  Caligrafia and Alabardas. carnation-revolution-1974 names no work. All
+  21 gated entities carry spoilerAfter: null correctly and none sits on a
+  field that cannot honour it; the validator's guard against that was
+  negative-controlled (a spoilerAfter on a work does hard-error).
+forStages:
+  translation: >
+    Four synopses changed and three notes are new. No pt-PT overlay exists
+    for this wing yet, so nothing was invalidated and nothing needed
+    mirroring - translate the current strings. Leave the two quoted
+    Portuguese fragments in the notes as they are ("No dia seguinte
+    ninguem morreu"; "uma ampla divagacao sobre a vida, a morte, o amor").
+    `note` is curator-only and never rendered, so it needs no overlay.
+  visual-metadata: >
+    Do not let a cover blurb reintroduce what these synopses removed: A
+    Caverna's underground chamber and As Intermitencias da Morte's second
+    half. Both entries carry a note saying so.
+  art-rotation: >
+    Neither of those two may be illustrated on its ending. Safe imagery is
+    the pottery workshop and the Center for A Caverna, and the opening
+    premise plus death's apartment with scythe and filing cabinets (jacket
+    copy) for As Intermitencias. Do not draw the cave, the chamber or the
+    cellist.
+openQuestions:
+  - >
+    A Maior Flor do Mundo's softening is the weakest call and is explicitly
+    loosenable: no publisher prints plot for it, so there was no jacket to
+    rule against and the asymmetry decided it.
+  - >
+    Ensaio sobre a Lucidez keeps "the blindness survivors", which does
+    disclose that people come through the earlier epidemic. It is on both
+    books' jackets so it stays, but it is the wing's one surviving
+    cross-book fact and the first place to look if a reader complains.
