@@ -1,0 +1,47 @@
+stage: eras
+summary: >
+  Shipped eras: [] with the full negative record in the file's own header. No
+  critic, scholar, reference work, settled fan consensus or Grisham himself
+  divides this career into named periods; searched in English (his working and
+  critical language) and Portuguese. All three candidate hinges the earlier
+  handoff flagged fail on the bibliography itself, before sourcing is reached,
+  and the publishing record offers no fallback boundary (Doubleday, unbroken
+  since 1991). validate.py --slug john-grisham is unchanged: same expected
+  error, no new warnings, no orphaned works.
+produced:
+  eras: []
+  filesWritten:
+    - content/franchises/john-grisham/eras.yaml
+  filesNotTouched: [works.yaml, franchise.yaml, theme.yaml, both author files]
+  i18n: >
+    No pt-PT overlay, matching the other wings that ship an empty file
+    (harlan-coben, lee-child, michael-connelly): nothing to translate.
+forStages:
+  event-resonance: >
+    No era spine to hang events on, so nothing here constrains the aura. Two
+    reusable findings. (1) David Marchese's New York Times Magazine interview,
+    2022-06-21, is fetchable in full and sits at the end of the 2012-2019 dark
+    run: quotable on his stated reversals (death penalty, gun control, the Jim
+    Crow South - "It's been an ongoing, gradual transformation"), on the 1990s
+    Hollywood auctions and the record 1996 Runaway Jury film-rights sale, and
+    on the legislature.
+    https://www.nytimes.com/interactive/2022/06/21/magazine/john-grisham-interview.html
+    (2) The strong events here are points, not thresholds - the 1984 courthouse
+    trial, the 1990 Paramount offer for The Firm, the December 2015 Focused
+    Ultrasound TEDx. None should be written as if it opened a phase.
+  reading-orders: >
+    Do not lean on eras; there are none, and the reason shapes the entry paths.
+    The shelf is concurrent, not sequential: subseries, standalones, non-legal
+    novels and the YA all run in parallel from 2001 on, and Grisham's own
+    framing is that the departures were written "in my spare time" around an
+    unbroken annual legal thriller. Cut paths by subseries and by mode, not by
+    an early-to-late progression.
+openQuestions:
+  - "eras: [] is the whole answer, so the count is 0 against a typical 2-5. That is the finding, not a gap. Anything added later needs a source that periodises, not a defensible way to group the books."
+  - "Nearest miss: Mary Beth Pringle's two Greenwood Critical Companions (1997, and Revisiting John Grisham 2007, covering '1997 to the present'). Same two-volume shape as the Twayne King studies the skill cites as legitimate - but Reino and Magistrale periodise in their subtitles and name boundary works, while Pringle's second volume claims no period and its split is simply where the first stopped. Do not read the pair as a 1989-1996 / 1997-present periodisation."
+  - "Second nearest miss: Salem Press (June Harris, via EBSCO) names a boundary work in passing - 'starting with The Chamber, he began to include some social commentary in his stories, and his plots became more intricate'. One sentence, one source, no period named, and it would cut a 37-year shelf into 1989-1993 and everything after. A second independent source saying the same would change the picture."
+  - "Third nearest miss: Newsweek's Malcolm Jones called Grisham 'the best-selling author' of the 1990s (via encyclopedia.com). A sales record for a decade, not a creative period, and the #1 bestsellers run continuously either side of it."
+  - "Blocked, so the gap is not read as a conclusion: britannica.com 403, academia.edu 403 (the paper 'Critical Approaches to John Grisham's Works by Contemporary Scholars'), medium.com 403, mitpressbookstore.mit.edu 403. Britannica is the one general-reference article not read directly; every other one checked came back chronological."
+  - "Pringle's 1997 volume is on the Internet Archive behind a borrow wall (archive.org/details/johngrishamcriti00prin); its contents were inferred from the publisher description ('an individual chapter is devoted to analysis of each of his novels'), not read. A period-naming chapter heading, if one exists at all, would be there."
+  - "Fandom came back unsettled rather than empty: phase language exists only as single-author ranking posts issuing quality verdicts, each with its own boundaries, none picked up elsewhere. The test for any future term is breadth - uses that do not introduce it - not another ranking post."
+  - "One real, dateable structural fact was found and still rejected: the main legal thriller moved from a winter/spring slot (The Firm 1991 through The Associate 2009) to October from The Confession (2010) on, the same year Theodore Boone opened a second imprint and two adult titles a year became normal. Nobody periodises there, and the shift is invisible to a reader of the books."
