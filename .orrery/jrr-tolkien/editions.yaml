@@ -1,0 +1,60 @@
+stage: editions
+summary: >
+  Sourced content/franchises/jrr-tolkien/editions.yaml (new file, 47 entries):
+  32 of 32 works carry a verified edition. 46 English (mostly current
+  HarperCollins reissues, a few Houghton Mifflin Harcourt/Oxford originals,
+  one Books for Libraries Press reprint of the 1947 anthology carrying On
+  Fairy-Stories), 1 Portuguese (Europa-América's Return of the King, 2002).
+  Every isbn13 re-derived by hand and cross-checked against a Wikipedia
+  infobox plus the edition's own openlibrary.org/isbn/<isbn> permalink, both
+  opened individually.
+produced:
+  files:
+    - content/franchises/jrr-tolkien/editions.yaml (new)
+  coverage: "32/32 works; 47 editions (46 en, 1 pt-PT)"
+  multiVolumeHandling: >
+    LOTR (1 workId, 5 editions): current 3-vol HarperCollins English set
+    (2020) + single-volume 50th Anniversary edition + 1 pt-PT volume
+    (Europa-América's O Regresso do Rei, vol. 3 only). Followed
+    stephen-king/editions.yaml's existing one-workId/many-volumes precedent
+    (The Stand), scaled up. History of Middle-earth (1 workId, 12 editions):
+    all 12 constituent volumes individually, tagged "Volume N of 12" - no
+    volume stands in for the set.
+  criticalEditionCalls: >
+    A Secret Vice -> 2016 critical edition (matches synopsis, not the 1983
+    plain text). Letters of J. R. R. Tolkien -> 2023 revised/expanded
+    (matches synopsis, not 1981 original). Homecoming of Beorhtnoth -> 2023
+    standalone retitled "The Battle of Maldon: together with..." per
+    works.yaml's own note. Tree and Leaf -> 2025 edition, whose own subtitle
+    "Including Leaf by Niggle" confirms the two-piece scope the synopsis
+    needs, not the later 3-piece editions.
+checked: >
+  python3 scripts/validate.py --slug jrr-tolkien: 0 errors. Confirmed by
+  script: 47 entries, 32 distinct workIds, zero duplicate isbn13. Every
+  isbn13 independently re-summed against the EAN-13 check-digit formula
+  before being written, not left to the validator alone.
+forStages:
+  visual-metadata: No coverUrl touched anywhere in this file; clean slate.
+openQuestions:
+  - "pt-PT is 1/3 core works, both gaps checked not skipped: a Fellowship
+    candidate (978-989-777-392-1) has an OL record self-contradicting its
+    own Portugal-prefix ISBN with 'publish_places: Brazil', and no BNP
+    match; a Two Towers candidate (978-972-104-144-8) fails its own check
+    digit outright. Both detailed in the file header. Wook/Bertrand (the
+    retailers likeliest to settle either) block automated fetches - a human
+    with a browser is the next step."
+  - "No pt-PT candidate at all turned up for The Hobbit, The Silmarillion or
+    the single-volume LOTR - not rejected, just not found (OL merges every
+    language under one work record for famous books, defeating title
+    search). Same next step."
+  - "Two entries note a second real binding rather than shipping it as a
+    second edition, since no content difference was found beyond binding:
+    Letters 2023 (978-0-00-862878-9 also exists) and Homecoming of
+    Beorhtnoth 2023 paperback (978-0-00-846583-4). Worth splitting into
+    separate entries if either sibling turns out to differ in content."
+  - "Farmer Giles of Ham uses the 1949 first-edition ISBN rather than a
+    current HarperCollins/Unwin Hyman paperback (978-0-261-102088) because
+    that paperback's OL record carries a self-contradictory 1949 publish
+    date on an ISBN block that could not have existed then. A human with a
+    cleaner catalogue record could likely confirm its real reprint year and
+    swap it in as the more-recent-in-print pick."
