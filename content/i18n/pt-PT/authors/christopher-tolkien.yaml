@@ -1,0 +1,213 @@
+# Overlay pt-PT do autor: bio + prosa dos lifeEvents (title + description). Os
+# lifeEvents ficam aninhados sob o autor e são fundidos por id (ver
+# SCHEMA.md, "Nested lists merge by id"); datas, impact, organisation,
+# illustration_type, images_required e sources nunca se traduzem, nem o nome
+# do autor.
+#
+# CITAÇÕES VERBATIM: onde a description de base cita as palavras exatas de
+# Christopher Tolkien, de Randel Helms ou de outra fonte real, entre aspas,
+# essa citação fica em inglês, verbatim, dentro da prosa traduzida, tal como
+# em jrr-tolkien.yaml e hp-lovecraft.yaml - não se inventa aqui uma tradução
+# portuguesa apresentada como as palavras exatas dessa pessoa.
+#
+# "Middle-earth" traduz-se por "Terra-Média", o termo estabelecido nas
+# edições portuguesas de Tolkien; não é título de obra, é o nome do cenário.
+# "The Tolkien Estate" mantém-se em inglês, tratado como o nome próprio da
+# entidade (tolkienestate.com), tal como em eras.yaml desta ala.
+
+- id: christopher-tolkien
+  bio: >
+    Editor académico e escritor inglês, o terceiro filho e testamenteiro
+    literário de [[author:jrr-tolkien|J. R. R. Tolkien]]. Piloto de caça da
+    Royal Air Force na Segunda Guerra Mundial e mais tarde ele próprio
+    leitor de língua inglesa em Oxford, foi o primeiro leitor do pai
+    durante toda a vida e tinha redesenhado os mapas de trabalho de
+    [[work:jrr-tolkien/the-lord-of-the-rings|The Lord of the Rings]]; o pai
+    nomeou-o testamenteiro literário em 1967 e, na mesma carta, seu coautor
+    para o material ainda por publicar do Silmarillion. Depois da morte do
+    pai, em 1973, passou os 45 anos seguintes a organizar, editar e
+    publicar 24 volumes dos manuscritos, em grande parte inacabados, do
+    legendarium que herdou: um
+    [[work:jrr-tolkien/the-silmarillion|The Silmarillion]] (1977, com a
+    assistência de Guy Gavriel Kay) num único volume,
+    [[work:jrr-tolkien/unfinished-tales|Unfinished Tales]] (1980), o
+    [[work:jrr-tolkien/the-history-of-middle-earth|History of
+    Middle-earth]] em doze volumes (1983-1996), a traçar as décadas de
+    rascunhos do legendarium, e as três "Grandes Histórias" autónomas -
+    [[work:jrr-tolkien/the-children-of-hurin|The Children of Húrin]]
+    (2007), [[work:jrr-tolkien/beren-and-luthien|Beren and Lúthien]] (2017)
+    e [[work:jrr-tolkien/the-fall-of-gondolin|The Fall of Gondolin]] (2018)
+    - além da erudição medieval e das traduções do pai deixadas por
+    publicar à sua morte (Beowulf, Sir Gawain and the Green Knight, The
+    Fall of Arthur, The Legend of Sigurd and Gudrún, The Letters of J. R.
+    R. Tolkien, com Humphrey Carpenter). Mudou-se para França em 1975 para
+    trabalhar o material a tempo inteiro e tornou-se cidadão francês;
+    presidiu ao Tolkien Estate até se demitir em 2017, e ganhou a Medalha
+    Bodley em 2016 pelo seu trabalho editorial. Foi publicamente crítico
+    das adaptações cinematográficas de Peter Jackson. Se o Silmarillion
+    publicado se lê melhor como livro do pai ou em parte como seu tem sido
+    uma questão académica em aberto desde pelo menos 1981 (Randel Helms
+    chamou-lhe "the invention of the son not the father"); o próprio
+    prefácio de Christopher chama à questão "certainly debatable" e, sobre
+    apresentar o livro sem qualquer história-enquadramento, "an error".
+  lifeEvents:
+    - id: christopher-tolkien-born-1924
+      title: Nasce em Leeds, o terceiro de quatro filhos
+      description: >
+        Nasce Christopher John Reuel Tolkien em Leeds, onde o pai ocupa uma
+        leitoria de língua inglesa na universidade, o terceiro filho e o
+        mais novo dos filhos homens de J. R. R. e Edith Tolkien. A família
+        regressa a Oxford no ano seguinte, quando o pai ganha a Cátedra
+        Rawlinson e Bosworth; Christopher cresce sobretudo em North Oxford,
+        educado na Dragon School e depois na Oratory School, perto de
+        Reading.
+
+    - id: christopher-tolkien-first-reader-1930
+      title: Cresce como primeiro público do pai, depois seu primeiro crítico
+      description: >
+        Christopher foi, segundo o seu próprio relato posterior, "for a
+        long time part of the critical audience for his father's fiction":
+        primeiro como criança, a ouvir histórias de Bilbo Baggins que se
+        tornariam [[work:jrr-tolkien/the-hobbit|The Hobbit]], depois como
+        adolescente e jovem adulto a dar opinião sobre
+        [[work:jrr-tolkien/the-lord-of-the-rings|The Lord of the Rings]]
+        ao longo dos seus quinze anos de gestação. Redesenhou os mapas de
+        trabalho do pai da Terra-Média para inclusão no livro terminado, e
+        o pai continuou a enviar-lhe capítulos em rascunho pelo correio
+        mesmo depois de Christopher partir para a guerra.
+
+    - id: christopher-tolkien-raf-service-1943
+      title: Deixa Oxford a meio da licenciatura pela RAF, treina como
+        piloto de caça na África do Sul
+      description: >
+        Chamado às armas depois de ano e meio a estudar inglês no Trinity
+        College, Oxford, Christopher entra na Royal Air Force em julho de
+        1943 e é enviado para a África do Sul no início de 1944 para
+        treino de voo, ganhando as suas asas de piloto de caça e sendo
+        nomeado oficial em janeiro de 1945. Reenviado para Inglaterra nesse
+        fevereiro, passa para a Fleet Air Arm em junho de 1945; ainda
+        fardado, retoma a licenciatura em Oxford em abril de 1946 antes de
+        ser desmobilizado no final do ano e de terminar o seu BA em 1948.
+
+    - id: christopher-tolkien-named-coauthor-1967
+      title: A carta do pai nomeia-o testamenteiro literário, e coautor do
+        Silmarillion
+      description: >
+        Em 1967, J. R. R. Tolkien escreve a nomear Christopher seu
+        testamenteiro literário e, na mesma carta, especificamente seu
+        "co-author" para o material ainda inacabado do
+        [[work:jrr-tolkien/the-silmarillion|Silmarillion]] - a designação
+        autoral mais clara que o pai alguma vez lhe deu, e a razão pela
+        qual o works.yaml desta ala define authorRole: co-author só nesse
+        livro, entre tudo o mais que Christopher levaria mais tarde à
+        publicação. Já tinha sido admitido nos Inklings aos vinte e um
+        anos, o que o pai chamou "a quite unprecedented honour".
+
+    - id: christopher-tolkien-father-dies-1973
+      title: O pai morre; converte um celeiro em espaço de trabalho para os
+        manuscritos
+      description: >
+        Quando J. R. R. Tolkien morre, em setembro de 1973, Christopher
+        leva uma grande quantidade de manuscritos do legendarium para a sua
+        casa em Oxfordshire e converte um celeiro em espaço de trabalho,
+        começando a organizá-los com um jovem Guy Gavriel Kay. Por volta de
+        1975, os dois já tinham percebido quão grande e complexa era
+        realmente a tarefa: décadas de rascunhos manuscritos, muitas vezes
+        revistos tantas vezes que até as cópias a limpo eram difíceis de
+        decifrar.
+
+    - id: christopher-tolkien-moves-to-france-1975
+      title: Demite-se do cargo em Oxford e muda-se para França para editar
+        o pai a tempo inteiro
+      description: >
+        Em setembro de 1975, Christopher demite-se do seu lugar de docente
+        no New College, Oxford, para trabalhar exclusivamente nos escritos
+        do pai, e muda-se com a segunda mulher, Baillie, para o sul de
+        França, onde mais tarde adquire cidadania francesa e passa o resto
+        da sua vida de trabalho. Viria a editar e a publicar 24 volumes dos
+        manuscritos do pai ao longo dos 45 anos seguintes, quase todos eles
+        material do legendarium da Terra-Média.
+
+    - id: christopher-tolkien-publishes-silmarillion-1977
+      title: Publica o Silmarillion, depois de ter tido de inventar
+        passagens para fechar as lacunas
+      description: >
+        [[work:jrr-tolkien/the-silmarillion|The Silmarillion]] sai em 1977
+        como a construção de Christopher, num único volume, a partir das
+        décadas de rascunhos inacabados do pai, com a assistência de Guy
+        Gavriel Kay. Mais tarde admitiria, numa entrevista de 2012, "I had
+        had to invent some passages" para fechar lacunas narrativas,
+        sobretudo no capítulo "Of the Ruin of Doriath", e descreveu sonhar
+        que o pai procurava ansiosamente por algo, para depois perceber, no
+        sonho, com horror, que era o próprio Silmarillion.
+
+    - id: christopher-tolkien-editor-or-author-debate-1981
+      title: Os académicos começam a discutir se o Silmarillion é livro
+        dele ou do pai
+      description: >
+        Em 1981, o académico Randel Helms defendeu que o Silmarillion, na
+        forma em que o temos, "is the invention of the son not the
+        father". Christopher respondeu no prefácio ao Book of Lost Tales
+        de 1983, escrevendo que o resultado do seu trabalho editorial "is,
+        I feel, a source of much misapprehension" - mas no mesmo prefácio
+        também admitiu que publicar o livro sem qualquer
+        história-enquadramento no universo, ao contrário de The Lord of
+        the Rings, era "certainly debatable", acrescentando "this I now
+        think to have been an error". A questão manteve-se em aberto
+        através das suas próprias admissões posteriores de invenção (ver
+        1977, acima) e continua a ser discutida entre os investigadores de
+        Tolkien.
+
+    - id: christopher-tolkien-completes-history-of-middle-earth-1983
+      title: Passa treze anos a reunir doze volumes dos rascunhos do pai
+      description: >
+        Entre 1983 e 1996, Christopher edita e publica os doze volumes de
+        [[work:jrr-tolkien/the-history-of-middle-earth|The History of
+        Middle-earth]], traçando rascunho a rascunho como
+        [[work:jrr-tolkien/the-silmarillion|The Silmarillion]] e
+        [[work:jrr-tolkien/the-lord-of-the-rings|The Lord of the Rings]]
+        tinham na realidade tomado forma - apresentando o material como uma
+        edição erudita, com o seu próprio comentário de ligação, em vez de
+        o suavizar numa única narrativa contínua, a abordagem mais
+        estritamente editorial que disse ter passado a preferir.
+
+    - id: christopher-tolkien-new-line-dispute-2008
+      title: Processa a New Line Cinema por direitos de autor de filme não
+        pagos, e depois chega a acordo
+      description: >
+        Christopher tinha manifestado dúvidas, desde 2001, sobre a
+        viabilidade da trilogia cinematográfica de Peter Jackson,
+        sublinhando sempre que era apenas a sua opinião. Em 2008 avança com
+        um processo judicial contra a New Line Cinema, alegando que o
+        estúdio devia à sua família 80 milhões de libras em direitos de
+        autor não pagos; as duas partes chegam a um acordo não divulgado
+        em setembro de 2009, e ele retira a sua objeção legal aos filmes
+        previstos de The Hobbit. Numa entrevista de 2012 foi mais direto
+        sobre os próprios filmes: "They gutted the book, making an action
+        film for 15 to 25-year-olds".
+
+    - id: christopher-tolkien-bodley-medal-resigns-estate-2016
+      title: Ganha a Medalha Bodley, e depois afasta-se da direção do
+        Tolkien Estate
+      description: >
+        Em 2016, Christopher ganha a Medalha Bodley, atribuída a
+        contributos excecionais para a literatura, a cultura, a ciência e
+        a comunicação. Tinha presidido ao Tolkien Estate, a entidade que
+        gere o legado literário do pai, e servido como administrador do
+        Tolkien Charitable Trust; demite-se do cargo de diretor do Estate
+        em 2017, aos noventa e dois anos, entregando o lado empresarial de
+        um legado que já passara mais de quatro décadas a editar.
+
+    - id: christopher-tolkien-dies-2020
+      title: Morre em França; um colega termina o último volume que já
+        tinha organizado
+      description: >
+        Christopher Tolkien morre a 16 de janeiro de 2020, em Draguignan,
+        França, aos 95 anos, encerrando o projeto editorial póstumo de 45
+        anos que começara no ano em que o pai morreu.
+        [[work:jrr-tolkien/the-nature-of-middle-earth|The Nature of
+        Middle-earth]] sai no ano seguinte, editado pelo linguista
+        tolkienista Carl F. Hostetter, ao abrigo de um acordo que
+        Christopher fizera com ele antes de morrer - o primeiro grande
+        volume póstumo que nem Tolkien nem Christopher chegaram a ver
+        terminado.

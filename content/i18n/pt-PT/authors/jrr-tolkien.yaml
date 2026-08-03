@@ -1,0 +1,314 @@
+# Overlay pt-PT do autor: bio + prosa dos lifeEvents (title + description). Os
+# lifeEvents ficam aninhados sob o autor e são fundidos por id (ver
+# SCHEMA.md, "Nested lists merge by id"); datas, impact, organisation,
+# illustration_type, images_required e sources nunca se traduzem, nem o nome
+# do autor.
+#
+# CITAÇÕES VERBATIM: onde a description de base cita as palavras exatas de
+# Tolkien, da sua mãe, ou de um relato de terceiros, entre aspas, essa
+# citação fica em inglês, verbatim, dentro da prosa traduzida, tal como em
+# hp-lovecraft.yaml e miguel-de-cervantes.yaml - não se inventa aqui uma
+# tradução portuguesa apresentada como as palavras exatas dessa pessoa.
+#
+# "Middle-earth" traduz-se por "Terra-Média" e "the Shire" por "o Condado",
+# os termos estabelecidos nas edições portuguesas de Tolkien; não são
+# títulos de obra, são nomes do cenário.
+#
+# CUIDADO COM SPOILERS: a description de jrr-tolkien-cbe-death-1973 foi
+# reescrita pela auditoria de spoilers desta ala para reter deliberadamente
+# o que é revelado sobre o destino de Beren e Lúthien dentro do legendarium.
+# A tradução segue o inglês ATUAL dessa entrada, não um conhecimento mais
+# completo da história que o tradutor possa ter; nenhum detalhe retido é
+# reposto aqui.
+
+- id: jrr-tolkien
+  bio: >
+    Escritor, poeta, filólogo e académico inglês, autor de
+    [[work:jrr-tolkien/the-hobbit|The Hobbit]] (1937) e de
+    [[work:jrr-tolkien/the-lord-of-the-rings|The Lord of the Rings]]
+    (1954-1955). Nascido em Bloemfontein, no Estado Livre de Orange, filho
+    de um gerente bancário inglês e da mulher, foi trazido para Inglaterra
+    ainda pequeno depois da morte do pai, e ficou órfão de vez aos doze
+    anos, quando a mãe morreu de diabetes; foi criado a partir daí por um
+    padre do Oratório de Birmingham, o Padre Francis Xavier Morgan. Serviu
+    como oficial de transmissões nos Lancashire Fusiliers na Batalha do
+    Somme, em 1916, onde a febre das trincheiras acabou por o mandar de
+    volta para casa, inválido, e onde morreram dois dos seus amigos mais
+    próximos de escola; a escrita que se tornaria o seu legendarium começa
+    nas sequelas disso, durante a sua convalescença, com a versão mais
+    antiga do que é hoje
+    [[work:jrr-tolkien/the-fall-of-gondolin|The Fall of Gondolin]]. Depois
+    da guerra trabalhou no Oxford English Dictionary, depois ocupou cargos
+    na Universidade de Leeds antes de regressar a Oxford em 1925 como
+    Professor Rawlinson e Bosworth de Anglo-Saxónico (Pembroke College) e
+    mais tarde, a partir de 1945, como Professor Merton de Língua e
+    Literatura Inglesas (Merton College), reformando-se em 1959. Foi um
+    católico romano devoto e um membro central dos Inklings, o grupo de
+    discussão literária de Oxford que partilhou com C. S. Lewis. Morreu em
+    1973, tendo nomeado o seu terceiro filho e testamenteiro literário,
+    [[author:christopher-tolkien|Christopher Tolkien]], como a pessoa que
+    passaria os 45 anos seguintes a editar e a publicar o vasto conjunto de
+    material inacabado do legendarium - poemas, anais, rascunhos e notas
+    que remontam a 1914 - que Tolkien deixou.
+  lifeEvents:
+    - id: jrr-tolkien-born-1892
+      title: Nasce em Bloemfontein, filho de um gerente bancário destacado
+        para o Estado Livre de Orange
+      description: >
+        Nasce John Ronald Reuel Tolkien em Bloemfontein, capital do Estado
+        Livre de Orange, onde o pai, Arthur Tolkien, gere a agência local
+        do Bank of Africa. Aos três anos parte com a mãe, Mabel, e o irmão
+        mais novo, Hilary, para o que devia ser uma longa visita de família
+        a Inglaterra; a família acaba por se fixar em Sarehole, então uma
+        aldeia de Worcestershire entretanto absorvida por Birmingham, cujo
+        moinho, pântano e colinas lhe serviram, décadas depois, de modelo
+        para o Condado.
+
+    - id: jrr-tolkien-father-dies-1896
+      title: O pai morre na África do Sul antes de poder reunir-se à família
+      description: >
+        Mabel Tolkien leva Ronald e Hilary para Inglaterra em 1895,
+        julgando o clima inglês melhor para a saúde deles; Arthur Tolkien
+        fica em Bloemfontein para encerrar a carreira bancária e nunca mais
+        volta a ver a família. Morre ali a 15 de fevereiro de 1896, de uma
+        hemorragia grave na sequência de febre reumática, antes de ter
+        oportunidade de se lhes juntar, deixando Mabel a criar os dois
+        filhos, então com quatro anos e ainda sem dois, sem rendimento
+        próprio.
+
+    - id: jrr-tolkien-mother-dies-1904
+      title: A mãe morre de diabetes; um padre de Birmingham cria-o a
+        partir dos doze anos
+      description: >
+        A conversão de Mabel Tolkien ao catolicismo, em 1900, custa-lhe o
+        apoio financeiro da família baptista, e a partir daí cria os filhos
+        praticamente sozinha, ensinando ela própria a Ronald, em casa,
+        latim, botânica e desenho. Diagnosticada com diabetes duas décadas
+        antes de existir insulina, morre em 1904 em Fern Cottage, Rednal,
+        com cerca de trinta e quatro anos, deixando Ronald órfão aos doze.
+        Já tinha atribuído a sua tutela ao amigo próximo Padre Francis
+        Xavier Morgan, do Oratório de Birmingham, cuja casa católica
+        moldou o resto da educação de Tolkien; nove anos depois, ele
+        escreveria dela que "was a martyr indeed", atribuindo à morte dela
+        "so easy a way" à fé sua e de Hilary.
+
+    - id: jrr-tolkien-book-of-the-foxrook-1909
+      title: Um hábito de infância de inventar línguas já leva anos de
+        existência
+      description: >
+        O passatempo de toda a vida de Tolkien, o de inventar línguas,
+        começa antes de ele ser adolescente: conhece primeiro o "Animalic",
+        uma língua que as primas Mary e Marjorie Incledon construíram
+        sobretudo a partir de nomes de animais, e depois trabalha com Mary
+        no "Nevbosh" ("novo disparate"), um código de substituição sonora
+        sobreposto ao inglês, ao francês e ao latim. Segundo o seu próprio
+        relato, viria a construir a sua primeira verdadeira língua
+        inventada, o Naffarin, a partir de elementos latinos e espanhóis; a
+        10 de junho de 1909 encheu um caderno de dezasseis páginas, "The
+        Book of the Foxrook", com um dos seus mais antigos alfabetos
+        inventados - um hábito privado já com anos de profundidade quando
+        veio a crescer nas línguas élficas totalmente desenvolvidas por
+        trás do legendarium.
+
+    - id: jrr-tolkien-meets-edith-1909
+      title: Conhece Edith Bratt numa pensão em Birmingham; é-lhe proibido
+        falar com ela
+      description: >
+        No início de 1908, quando o Padre Morgan instala o jovem Tolkien,
+        de dezasseis anos, e o irmão numa pensão de Birmingham, ele conhece
+        uma colega de pensão, Edith Bratt, de dezanove anos, também ela
+        criada em grande parte por um tutor. Os dois passam o ano a
+        frequentar juntos as casas de chá de Birmingham, e por volta do
+        verão de 1909 já se tinham decidido de que estavam apaixonados.
+        Morgan considera o namoro com uma mulher protestante mais velha
+        "altogether unfortunate", culpa-o pelos maus resultados de Tolkien
+        nos exames desse ano, e proíbe todo o contacto entre os dois até
+        Tolkien completar vinte e um anos - uma proibição que Tolkien
+        cumpre à risca, com uma única exceção precoce, por causa da qual
+        Morgan chega a ameaçar acabar de vez com a sua carreira
+        universitária.
+
+    - id: jrr-tolkien-tcbs-founded-1911
+      title: Forma o T.C.B.S. com três amigos de escola, à volta de chá
+        clandestino
+      description: >
+        Na King Edward's School, em Birmingham, Tolkien e três amigos - Rob
+        Gilson, Geoffrey Bache Smith e Christopher Wiseman - formam uma
+        sociedade semissecreta a que chamam Tea Club and Barrovian Society
+        (T.C.B.S.), pelo hábito de fazerem chá na Barrow's Stores e,
+        clandestinamente, na biblioteca da escola. Depois de saírem da
+        escola, os quatro mantêm-se próximos, realizando um "Council of
+        London" em casa de Wiseman, em dezembro de 1914, que deixa Tolkien,
+        segundo o seu próprio relato, com uma forte e nova dedicação à
+        escrita de poesia. Em dois anos, a sociedade perderia metade dos
+        seus membros para a guerra.
+
+    - id: jrr-tolkien-21st-birthday-proposal-1913
+      title: Escreve a Edith no momento em que expira a proibição do tutor,
+        e pede-a em casamento
+      description: >
+        Na noite do seu vigésimo primeiro aniversário, o dia em que expira
+        a proibição do Padre Morgan de contactar Edith Bratt, Tolkien
+        escreve-lhe de imediato, declarando que nunca deixara de a amar e
+        pedindo-a em casamento - ela estava, nessa altura, noiva de outro
+        homem, George Field. Edith encontra-se com ele debaixo de um
+        viaduto ferroviário em Cheltenham e, ao final do dia, já tinha
+        aceitado, devolvendo o anel de Field; a família de Field chama a
+        isto um insulto, e o próprio tutor de Edith avisa que Tolkien, com
+        "poor prospects" e sem profissão, não dava nenhuma ideia clara de
+        quando poderia sustentar uma esposa. Ela converte-se ao catolicismo
+        a pedido de Tolkien, e casam três anos depois.
+
+    - id: jrr-tolkien-marries-edith-1916
+      title: Casa com Edith Bratt semanas antes de embarcar para França
+      description: >
+        Tolkien casa com Edith Bratt em St Mary Immaculate, em Warwick, a
+        22 de março de 1916, tendo sido nomeado oficial dos Lancashire
+        Fusiliers no verão anterior e treinado durante onze meses em
+        Rugeley Camp, Staffordshire. Atravessa para Calais nesse junho; nos
+        meses seguintes, Edith acompanha os seus movimentos num mapa da
+        Frente Ocidental, temendo cada vez que batem à porta. O casamento
+        sobrevive à guerra, e a quase tudo o resto, terminando só com a
+        morte de Edith, cinquenta e cinco anos depois.
+
+    - id: jrr-tolkien-somme-tcbs-deaths-1916
+      title: O Somme, a febre das trincheiras, e as mortes do T.C.B.S. que
+        deram início ao legendarium
+      description: >
+        Tolkien chega ao Somme como oficial de transmissões em julho de
+        1916 e participa nos assaltos ao Schwaben Redoubt e ao Leipzig
+        Salient, vivendo, segundo o relato de um capelão, com "hordes of
+        lice". Rob Gilson é morto a liderar os seus homens em Beaumont
+        Hamel, no primeiro dia da guerra; Geoffrey Bache Smith é morto
+        ainda nesse ano quando um obus atinge um posto de socorros - dos
+        quatro membros do T.C.B.S., dois estavam mortos em poucos meses. A
+        27 de outubro, quando o seu batalhão ataca a Regina Trench, Tolkien
+        contrai febre das trincheiras e é mandado para casa, inválido, a 8
+        de novembro; o seu batalhão fica quase totalmente destruído pouco
+        depois de ele o deixar. Em convalescença ao longo do inverno
+        seguinte, começa a versão mais antiga do que se tornaria
+        [[work:jrr-tolkien/the-fall-of-gondolin|The Fall of Gondolin]] - os
+        investigadores concordam que foi a guerra que pôs o legendarium em
+        movimento, embora o próprio Tolkien tivesse o cuidado de nunca
+        chamar ao resultado uma alegoria dela: o que reconheceu mais tarde
+        foi mais estreito, uma dívida de paisagem (os Pântanos Mortos e a
+        aproximação ao Morannon "owe something to northern France after
+        the Battle of the Somme") e uma dívida de personagem (Sam Gamgee
+        como "a reflexion of the English soldier... of the privates and
+        batmen I knew in the 1914 war").
+
+    - id: jrr-tolkien-oed-leeds-1920
+      title: No pós-guerra, um emprego num dicionário e o mais jovem leitor
+        em Leeds
+      description: >
+        Desmobilizado com a patente mantida mas ainda a recuperar da febre
+        das trincheiras, o primeiro emprego civil de Tolkien, a partir de
+        1918, é no Oxford English Dictionary, a trabalhar sobretudo na
+        história e na etimologia de palavras germânicas começadas por W.
+        Em 1920 assume uma leitoria de língua inglesa na Universidade de
+        Leeds, sendo o mais jovem membro do corpo académico, e produz ali,
+        com E. V. Gordon, A Middle English Vocabulary e uma edição
+        definitiva para estudantes de Sir Gawain and the Green Knight que
+        se mantém texto de referência durante décadas. É promovido a
+        professor catedrático em Leeds em 1924.
+
+    - id: jrr-tolkien-oxford-professor-writes-hobbit-1925
+      title: Regressa a Oxford como professor, e escreve The Hobbit nas
+        margens da correção de exames
+      description: >
+        Em outubro de 1925 Tolkien regressa a Oxford como Professor
+        Rawlinson e Bosworth de Anglo-Saxónico, com uma bolsa no Pembroke
+        College; a partir de 1930 vive no número 20 de Northmoor Road com
+        a família, então em crescimento. Segundo o seu próprio relato,
+        numa carta de 1955 a W. H. Auden, começa
+        [[work:jrr-tolkien/the-hobbit|The Hobbit]] um dia do início da
+        década de 1930 enquanto corrige provas do School Certificate: ao
+        encontrar uma página em branco, escreve, sem premeditação, "In a
+        hole in the ground there lived a hobbit". Termina a história ainda
+        em 1932 e empresta-a a amigos, entre eles C. S. Lewis; só chega a
+        um editor em 1936 porque uma aluna sua, Elaine Griffiths, a mostra
+        a uma funcionária da Allen & Unwin, Susan Dagnall, que pede para a
+        ler ela própria.
+
+    - id: jrr-tolkien-inklings-1933
+      title: Os Inklings tomam forma à volta dele e de C. S. Lewis
+      description: >
+        Uma sociedade de leitura de Oxford anterior, fundada pelo estudante
+        Edward Tangye Lean por volta de 1931, dissolve-se quando Lean sai,
+        em 1933; Tolkien e Lewis, ambos membros, transferem o nome, "the
+        Inklings", para o seu próprio encontro de longa duração de
+        escritores e professores universitários. O grupo reúne-se às
+        quintas-feiras à noite, nos aposentos de Lewis no Magdalen College,
+        para ler em voz alta obra por acabar, e informalmente às
+        terças-feiras no pub Eagle and Child; a receção, mesmo dentro do
+        grupo, era mista - Hugo Dyson queixava-se em voz alta ao longo das
+        leituras de [[work:jrr-tolkien/the-lord-of-the-rings|The Lord of
+        the Rings]], enquanto Lewis lhe chamava um livro capaz de "break
+        your heart". O seu filho Christopher, admitido aos vinte e um anos
+        em 1945, chamou-lhe "a quite unprecedented honour".
+
+    - id: jrr-tolkien-writes-lotr-1937
+      title: Doze anos, um Silmarillion rejeitado, e uma guerra, para
+        terminar um livro
+      description: >
+        O sucesso de The Hobbit leva a Allen & Unwin a pedir uma sequela;
+        Tolkien oferece-lhes primeiro o material mais antigo e inacabado
+        do Silmarillion, que o parecerista do editor rejeita em 1937 por
+        ser "too Celtic", pedindo em vez disso mais sobre hobbits. O que se
+        tornaria [[work:jrr-tolkien/the-lord-of-the-rings|The Lord of the
+        Rings]] cresce muito para além desse pedido ao longo de doze anos,
+        escrito sobretudo à noite, a par de uma carga letiva completa e da
+        Segunda Guerra Mundial; uma abordagem em 1939 sobre trabalho de
+        desencriptação em tempo de guerra não dá em nada. Tolkien
+        escreveria depois que a guerra não moldou o enredo da história -
+        terminou o livro, final incluído, antes de existirem armas
+        atómicas, o que é a prova a que recorre contra leituras do Anel
+        como alegoria da Segunda Guerra Mundial - mas que as duas guerras
+        mundiais foram, nas suas próprias palavras, "no less hideous" como
+        experiência para os jovens soldados da segunda vez do que da
+        primeira.
+
+    - id: jrr-tolkien-retirement-fame-1959
+      title: Reforma-se para uma riqueza inesperada e uma base de fãs que
+        nunca quis
+      description: >
+        Tolkien reforma-se do Merton College em 1959 e, ao longo da década
+        de 1960, vê uma vida académica tranquila transformar-se numa fama
+        internacional que lhe é incómoda: o boom das edições de bolso
+        americanas de The Lord of the Rings torna-o milionário, C. S. Lewis
+        nomeia-o para o Prémio Nobel da Literatura de 1961, e mais tarde
+        admite não gostar de se ter tornado uma figura de culto, embora
+        reconhecendo que "even the nose of a very modest idol... cannot
+        remain entirely untickled by the sweet smell of incense". A
+        atenção dos fãs torna-se intensa ao ponto de ele retirar o seu
+        número de telefone da lista pública; ele e Edith acabam por se
+        mudar para Bournemouth, em parte para que ela pudesse desfrutar de
+        uma vida de anfitriã de sociedade que lhe fora negada em Oxford,
+        ainda que ele sentisse muito a falta dos Inklings.
+
+    - id: jrr-tolkien-edith-dies-1971
+      title: Edith morre em Bournemouth; manda gravar o seu nome ao lado da
+        elfa em quem a inspirou
+      description: >
+        Edith Tolkien morre a 29 de novembro de 1971, em Bournemouth, aos
+        82 anos. Tolkien manda gravar o nome "Lúthien" - a elfa imortal do
+        seu próprio legendarium, que dizia ter sido inspirada por Edith -
+        na campa dela, no Cemitério de Wolvercote, em Oxford, e regressa
+        ele próprio a Oxford, onde o Merton College lhe dá aposentos perto
+        da High Street; sente a falta dela, mas encontra conforto em estar
+        de volta à cidade que amava.
+
+    - id: jrr-tolkien-cbe-death-1973
+      title: Um CBE, um doutoramento honorário, e o nome "Beren"
+        acrescentado à campa
+      description: >
+        Tolkien é nomeado Comandante da Ordem do Império Britânico nas New
+        Year Honours de 1972, recebendo a insígnia das mãos da Rainha, em
+        Buckingham Palace, nesse março, e Oxford dá-lhe um Doutoramento
+        Honorário em Letras no mesmo ano. Morre a 2 de setembro de 1973, 21
+        meses depois de Edith, de uma úlcera hemorrágica e de uma infeção
+        pulmonar, e é sepultado na campa dela, no Cemitério de Wolvercote,
+        com "Beren" acrescentado ao lado do seu "Lúthien" - o homem mortal
+        e a elfa imortal do seu próprio legendarium, o par cujos nomes
+        escolhera para os dois. O seu testamento é homologado nesse
+        dezembro, com um espólio avaliado em £190.577.
