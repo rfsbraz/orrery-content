@@ -1,0 +1,70 @@
+stage: visual-metadata
+summary: >
+  Sourced covers for 31 of 32 works, one author portrait (the other
+  documented empty), and a franchise header - all Open Library/Wikimedia
+  Commons, rights recorded on every field. No externalIds.openLibrary
+  existed anywhere in works.yaml going in, so every work was resolved
+  fresh by title search against the author's OL record and verified
+  against omnibus/wrong-work/junk-year traps. Five works needed a second
+  pass past the work record's own top-ranked cover (a decorative-cloth
+  scan, a 503ing archive.org zip, a blank binding, a defaced library copy,
+  a title-page scan) for a clean alternative of the same OL work.
+  validate.py --slug jrr-tolkien: 0 errors.
+produced:
+  files:
+    - content/franchises/jrr-tolkien/works.yaml (images block on 31 of 32
+      works; the-bovadium-fragments left bare with an in-place comment)
+    - content/franchises/jrr-tolkien/franchise.yaml (images.header added)
+    - content/authors/jrr-tolkien.yaml (images.portrait added)
+    - content/authors/christopher-tolkien.yaml (no portrait exists; a
+      comment above the bio field records what was checked)
+  coverage: >
+    31/32 works (97%). Only gap: the-bovadium-fragments (2025) - all
+    three of its OL editions carry no covers field at all, too new for a
+    jacket scan to exist yet (the exact risk completeness-auditor's
+    handoff flagged). a-secret-vice, the other flagged risk, turned out
+    to have a clean cover.
+  portraits_and_header: >
+    J. R. R. Tolkien: a public-domain 1925/6 studio photo (English
+    Wikipedia's own infobox image). Christopher Tolkien: no free-licensed
+    photo exists anywhere checked (Wikidata P18, fr/de infoboxes, Commons,
+    Openverse) - English Wikipedia's own infobox file is explicit
+    non-free fair use, and his 45-year retreat from public life after
+    1975 is a plausible, sourced reason this gap is real. Header: the
+    Bodleian Library's Old Schools Quadrangle (CC BY 4.0) - the Bodleian
+    holds Tolkien's donated manuscripts and ran a 2018 public exhibition
+    of them, both on his own Wikipedia article; reads as this wing's own
+    "manuscript archaeology" language without duplicating either portrait.
+  checked: >
+    All 31 cover URLs plus the portrait and header fetched with
+    ?default=false and verified live; every cover downloaded and
+    eyeballed via a contact sheet for retailer watermarks/degraded scans
+    (the five replacements are exactly what that pass caught).
+    validate.py --slug jrr-tolkien: 0 errors; 5 pre-existing warnings
+    (handoff-length notices on two other stages, three works outside
+    eras.yaml's date coverage) are outside this stage's footprint.
+forStages:
+  none: >
+    This wing's pipeline has no stage queued after this one. Flagging for
+    whoever next touches works.yaml: externalIds.openLibrary is empty
+    catalogue-wide for this wing; every OL id this stage verified lives
+    only in a cover-field comment, not in that structured field.
+openQuestions:
+  - "No externalIds.openLibrary anywhere in this wing's works.yaml. Every
+    OL work id used above was resolved fresh by title search and cited
+    only in a comment. Worth populating externalIds.openLibrary from the
+    ids this stage already verified, so a future run doesn't repeat the
+    same ~30 searches."
+  - "the-bovadium-fragments (2025) has no cover on Open Library across
+    all three editions - genuinely too new. Worth a re-check in a few
+    months once a jacket is likely to have been uploaded."
+  - "Christopher Tolkien has no free-licensed portrait anywhere checked.
+    Real and sourced, not a shallow search - but worth a fresh check if a
+    Commons photo-a-thon or French press archive ever releases one (he
+    lived in France from 1975)."
+  - "the-history-of-middle-earth's cover is a boxed three-volume
+    compilation standing in for the single grouped entry this twelve-book
+    project gets in works.yaml - a considered call, not a default.
+    Flagging in case a curator would rather it stayed bare than
+    represented by a boxed omnibus object, given this catalogue's general
+    wariness of omnibus covers elsewhere."
