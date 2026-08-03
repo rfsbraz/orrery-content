@@ -1,0 +1,66 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds), so the same person resolves the same everywhere.
+# Author-LIFE events live here (they follow the person); franchise-specific
+# events would stay in content/franchises/john-grisham/events.yaml (none yet).
+#
+# Living author (born 1955). Single confirmed byline throughout his career:
+# no pseudonym, pen name or ghostwriting history was found anywhere in the
+# sources checked (Wikipedia's biography, his own site, and the reporting
+# around each of his co-authored/contributed works below, all of which credit
+# him openly as himself). The two co-authored or multi-author books in this
+# wing (Framed with Jim McCloskey; the Don't Quit Your Day Job and Wavedancer
+# Benefit anthology contributions) are all attributed to "John Grisham" by
+# name, not a shared or alternate identity.
+id: john-grisham
+name: John Grisham
+aka: ["John Ray Grisham Jr."]
+born: 1955-02-08
+died: null
+bio: >
+  American novelist and former lawyer, born in Jonesboro, Arkansas, the second
+  of five children of a construction worker/cotton farmer and a homemaker; the
+  family settled in Southaven, Mississippi, near Memphis, when he was four,
+  and he was raised there. Earned a BS from Mississippi State University and
+  a JD from the University of Mississippi School of Law (1981), practiced
+  criminal and civil law for about a decade, and served in the Mississippi
+  House of Representatives from 1983 to 1990. Wrote his first novel,
+  [[work:john-grisham/a-time-to-kill|A Time to Kill]], longhand on yellow
+  legal pads before work over three years, finishing it in 1987; it was
+  rejected by many publishers before a small press gave it a 5,000-copy
+  printing in 1989. His second novel, [[work:john-grisham/the-firm|The Firm]]
+  (1991), became a bestseller and made him one of the best-selling novelists
+  alive, a position he has held continuously since.
+pseudonyms: []
+lifeEvents:
+  - id: grisham-born-1955
+    date: 1955-02-08
+    title: Born in Jonesboro, Arkansas
+    impact: low
+    description: >
+      Born in Jonesboro, Arkansas, the second of five children; the family
+      settled in Southaven, Mississippi, near Memphis, when he was four, and
+      he was raised there rather than in Arkansas.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/John_Grisham
+  - id: grisham-witnesses-1984-trial
+    date: 1984
+    title: Witnesses a child rape victim's testimony at the DeSoto County courthouse
+    impact: high
+    description: >
+      As a young Mississippi lawyer and state legislator, Grisham watched a
+      12-year-old rape victim testify at the DeSoto County courthouse in
+      Hernando, Mississippi, in the trial of her attacker, Willie James
+      Harris. He has called the novel that grew out of it, A Time to Kill,
+      "very autobiographical" - the book imagines what would have happened
+      had the girl's father killed her assailants himself, and its narrator,
+      small-town lawyer Jake Brigance, is, in Grisham's own words, "basically
+      me." He wrote it longhand before work over the next three years while
+      still serving in the Mississippi legislature.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/A_Time_to_Kill_(Grisham_novel)
+      - https://www.jgrisham.com/a-time-to-kill
+sources:
+  - https://en.wikipedia.org/wiki/John_Grisham
+  - https://www.jgrisham.com/

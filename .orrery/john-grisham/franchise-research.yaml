@@ -1,0 +1,157 @@
+stage: franchise-research
+summary: >
+  Scaffolded the John Grisham wing from scratch: franchise.yaml, works.yaml
+  (58 works), theme.yaml's non-art fields, and two global author entities
+  (john-grisham, jim-mccloskey). 42 core novels, 11 extended (Theodore Boone
+  x7, Ford County, Sparring Partners, The Innocent Man, Framed), 5 apocrypha
+  (Mickey, The Tumor, Partners, Witness to a Trial, Don't Quit Your Day Job).
+  Verified rather than assumed the request issue's "straightforward" framing
+  and found real corrections along the way (see openQuestions and
+  works.yaml's own header). validate.py --slug john-grisham is clean except
+  for the expected missing theme.art block, which is explicitly out of this
+  stage's scope.
+produced:
+  newWorkIds:
+    - john-grisham/a-time-to-kill
+    - john-grisham/the-firm
+    - john-grisham/the-pelican-brief
+    - john-grisham/the-client
+    - john-grisham/the-chamber
+    - john-grisham/the-rainmaker
+    - john-grisham/the-runaway-jury
+    - john-grisham/the-partner
+    - john-grisham/the-street-lawyer
+    - john-grisham/the-testament
+    - john-grisham/the-brethren
+    - john-grisham/a-painted-house
+    - john-grisham/skipping-christmas
+    - john-grisham/the-summons
+    - john-grisham/the-king-of-torts
+    - john-grisham/bleachers
+    - john-grisham/the-last-juror
+    - john-grisham/the-broker
+    - john-grisham/the-innocent-man
+    - john-grisham/playing-for-pizza
+    - john-grisham/the-appeal
+    - john-grisham/the-associate
+    - john-grisham/ford-county
+    - john-grisham/the-confession
+    - john-grisham/dont-quit-your-day-job
+    - john-grisham/theodore-boone-kid-lawyer
+    - john-grisham/theodore-boone-the-abduction
+    - john-grisham/the-litigators
+    - john-grisham/theodore-boone-the-accused
+    - john-grisham/calico-joe
+    - john-grisham/the-racketeer
+    - john-grisham/theodore-boone-the-activist
+    - john-grisham/sycamore-row
+    - john-grisham/gray-mountain
+    - john-grisham/the-tumor
+    - john-grisham/theodore-boone-the-fugitive
+    - john-grisham/rogue-lawyer
+    - john-grisham/partners
+    - john-grisham/witness-to-a-trial
+    - john-grisham/the-whistler
+    - john-grisham/theodore-boone-the-scandal
+    - john-grisham/camino-island
+    - john-grisham/the-rooster-bar
+    - john-grisham/the-reckoning
+    - john-grisham/theodore-boone-the-accomplice
+    - john-grisham/the-guardians
+    - john-grisham/camino-winds
+    - john-grisham/a-time-for-mercy
+    - john-grisham/the-judges-list
+    - john-grisham/sooley
+    - john-grisham/the-boys-from-biloxi
+    - john-grisham/sparring-partners
+    - john-grisham/mickey
+    - john-grisham/the-exchange
+    - john-grisham/camino-ghosts
+    - john-grisham/framed
+    - john-grisham/the-widow
+    - john-grisham/the-french-illusion
+  newAuthorIds:
+    - john-grisham
+    - jim-mccloskey
+  filesWritten:
+    - content/franchises/john-grisham/franchise.yaml
+    - content/franchises/john-grisham/works.yaml
+    - content/franchises/john-grisham/theme.yaml
+    - content/authors/john-grisham.yaml
+    - content/authors/jim-mccloskey.yaml
+  filesDeliberatelyNotWritten:
+    - content/franchises/john-grisham/events.yaml (no franchise-level events scaffolded; the one strong candidate, Grisham witnessing the 1984 courthouse trial that inspired A Time to Kill, is an AUTHOR life event and lives on content/authors/john-grisham.yaml instead)
+    - content/franchises/john-grisham/eras.yaml (not scaffolded; a 37-year, 40+ novel career with no obvious natural break beyond genre asides needs real discovery work, not a guess)
+    - content/franchises/john-grisham/orders.yaml (explicitly out of scope for this stage)
+    - content/franchises/john-grisham/editions.yaml (explicitly out of scope for this stage)
+    - content/franchises/john-grisham/achievements.yaml (none earned yet; premature before eras/aura exist)
+    - theme.yaml's art block (explicitly out of scope for this stage; visual-language owns it)
+    - franchise.yaml's images/startHere/globalEvents (owned by visual-metadata/reading-orders/event-resonance respectively)
+forStages:
+  completeness-auditor: >
+    Verify the 42-novel core spine and its dates against primary sources
+    (publisher/jacket copy, not just Wikipedia) - Wikipedia's own bibliography
+    article was wrong or self-contradictory on at least three points caught
+    here (Theodore Boone's real end date, the Partners/Sparring Partners
+    title collision, The Tumor's year - all detailed in works.yaml's header
+    and in openQuestions below). Also weigh the two considered-and-excluded
+    items (The Gingerbread Man, The Wavedancer Benefit) and the
+    Don't Quit Your Day Job essay's missing contributionTitle, and confirm no
+    Grisham novel has been missed between The Widow (2025) and The French
+    Illusion (announced, 2026-09-29).
+  press-archaeology: >
+    The aura is deliberately thin (2 life events on john-grisham.yaml: birth,
+    and the 1984 courthouse trial that inspired A Time to Kill - both
+    well-sourced, high-impact anchors, left as the only scaffolded ones on
+    purpose). aura_density.py reports an 8-year dark run, 2012-2019, with no
+    aura at all - that gap needs real research, not padding. Also worth
+    covering: his decade in the Mississippi legislature and how it fed the
+    political material in The Brethren/The Appeal; the Ford Motor/tobacco/
+    pharma mass-tort research behind several novels; his board seats
+    (Innocence Project, Centurion Ministries, the Focused Ultrasound
+    Foundation) and how directly the true-crime and Tumor material draws on
+    them; and, since he is a living person, his health/finances/family stay
+    out unless two independent sources exist for anything specific.
+  eras: >
+    No eras.yaml was scaffolded - a 37-year, 40-plus-novel career with no
+    single obvious break (unlike an author with a famous fallow period or a
+    hard genre pivot) needs real discovery, not a guessed periodization.
+    Worth investigating as candidate hinges, not conclusions: the 2001-2007
+    run of non-legal-genre novels (A Painted House, Skipping Christmas,
+    Bleachers, Playing for Pizza) clustered against an otherwise unbroken
+    legal-thriller output; the 24-years-later return to Clanton and Jake
+    Brigance starting with Sycamore Row (2013); and the 2017-onward run where
+    genre departures (Camino Island) and franchise legacy-sequels (The
+    Exchange, Camino Ghosts) both start appearing.
+  reading-orders: >
+    Five real subseries need entry-path thinking distinct from the mostly
+    standalone shelf: Jake Brigance (A Time to Kill -> Sycamore Row -> A Time
+    for Mercy, plus the "Homecoming" novella inside Sparring Partners - direct
+    continuity, read in publication order), Mitch McDeere (The Firm -> The
+    Exchange, a 32-years-later legacy sequel), Sebastian Rudd (Rogue Lawyer,
+    with "Partners" as an optional prequel e-short), Lacy Stoltz (The
+    Whistler -> The Judge's List, with "Witness to a Trial" as an optional
+    prequel e-short), and the non-legal Camino Island trilogy (Camino Island
+    -> Camino Winds -> Camino Ghosts, sharing Mercer Mann and Bruce Cable
+    throughout). Theodore Boone (7 books, 2010-2019) is a complete,
+    self-contained YA entry path of its own for a different readership.
+    Given how much of the shelf is standalone, a publisher-recommended or
+    community "where to start" source should be sought before curating one -
+    none was checked yet at this stage.
+  visual-language: >
+    theme.yaml's palette/displayFace/signature are scaffolded (a pale
+    legal-pad cream ground with dark ink and a single rubber-stamp red
+    accent, sourceSerif, signature: rule) but the `art` block is untouched.
+    The strongest sourced motif available is the yellow legal pad itself
+    (Grisham drafted A Time to Kill longhand on one before dawn for three
+    years - see the author's own lifeEvents); worth building the wing's
+    visual language around that rather than default courtroom/noir imagery.
+openQuestions:
+  - "Theodore Boone ran 2010-2019 (7 books), not 2010-2016 as the build request assumed - the seventh book, The Accomplice, published May 14, 2019. Ruling made here: resolved to the character's own dedicated Wikipedia page/infobox over the main Grisham bibliography article, which dates it 2016 in one place and is otherwise internally consistent nowhere it was checked against a primary source."
+  - "The 2016 'Sparring Partners' Sebastian Rudd novella the main Wikipedia bibliography article lists does not exist as such. The real 2016 Sebastian Rudd e-short is titled 'Partners' (confirmed via PenguinRandomHouse.com and Goodreads); 'Sparring Partners' is the unrelated title novella of the 2022 collection, about the Malloy brothers, with no Sebastian Rudd connection. Catalogued here as the two separate works they are - flagging in case a source disagreeing with this split turns up."
+  - "The Tumor is dated 2015 by its own publisher (Focused Ultrasound Foundation) and ISBN record; the main Wikipedia bibliography article dates it 2016. Resolved to 2015 as the primary-source date; worth a second check."
+  - "Lacy Stoltz's surname is spelled two ways even within Wikipedia's own pages (Stoltz vs Stolz, sometimes in the same article). Used 'Stoltz' here, matching The Whistler's own infobox, but this rests on secondary sources throughout - a book's own jacket copy would settle it properly."
+  - "Two items were considered and left out rather than added: The Gingerbread Man (1998 film, based on a discarded Grisham manuscript but scripted by director Robert Altman, not Grisham) and The Wavedancer Benefit (2002, a charity-event audio recording crediting Grisham alongside three other authors, with no title-page work of his own to catalogue - Stephen King's own wing leaves it out too). Both are judgment calls worth a second opinion rather than settled fact."
+  - "Don't Quit Your Day Job (2010, apocrypha, authorRole: contributor) is missing a contributionTitle - the individual essay's own title was not found in the sources checked. Worth one more look before this ships as canon."
+  - "Framed (2024) is co-authored with Jim McCloskey, whose global author entity here is deliberately thin (his own bibliography and life are out of scope for this wing) and whose birth year (1942) is a derived estimate from a reported 'age 37 in 1979' rather than a stated date - flagging in case a firmer source exists."
+  - "themePreset (yellow-pad-brief) and the palette are a first-draft branding choice, not a final ruling - see theme.yaml's own notes for the reasoning (a pale legal-pad register inverting the rest of the catalogue's dark noir wings) and press-archaeology/visual-language's job to confirm the legal-pad framing holds up once the fuller aura exists."

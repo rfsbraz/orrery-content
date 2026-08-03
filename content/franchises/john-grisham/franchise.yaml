@@ -1,0 +1,42 @@
+# A wing spans an author's complete published work, not just the genre he is
+# famous for. Grisham's shelf is almost entirely legal thrillers, but five
+# real subseries run
+# through it - Jake Brigance, Mitch McDeere, Sebastian Rudd, Lacy Stoltz and
+# the non-legal Camino Island heist trilogy - modelled as `subseries` on
+# works.yaml inside this one wing, never as separate franchises. The
+# Theodore Boone YA series is his one genuinely distinct-audience spin-off.
+# See works.yaml's header for the tiering principle and every sourced
+# correction found along the way.
+id: john-grisham
+name: John Grisham
+kind: author
+description: >
+  The complete published work of John Grisham: forty-plus legal thrillers from
+  his 1989 debut [[work:john-grisham/a-time-to-kill|A Time to Kill]] through
+  his most recent novels, spanning small-town Mississippi courtrooms to
+  Washington power plays; five recurring threads inside that shelf -
+  [[work:john-grisham/a-time-to-kill|Jake Brigance]],
+  [[work:john-grisham/the-firm|Mitch McDeere]],
+  [[work:john-grisham/rogue-lawyer|Sebastian Rudd]],
+  [[work:john-grisham/the-whistler|Lacy Stoltz]] and the non-legal
+  [[work:john-grisham/camino-island|Camino Island]] heist trilogy; the
+  Theodore Boone series for younger readers; two true-crime nonfiction books;
+  two short-story collections; and a handful of ebook-only shorts and
+  contributions.
+authorIds: [john-grisham]
+themePreset: yellow-pad-brief
+
+# Capabilities (docs/SCHEMA.md) are auto-detected from the data and left auto
+# here on purpose: with no theme.art, no events.yaml and no eras.yaml yet,
+# `river` and `companion` will not activate until those exist; `wizard` will
+# not activate until a startHere is written; `editions` will not activate
+# until editions.yaml exists. Nothing needs forcing off in the meantime.
+features:
+  river: auto
+  wizard: auto
+  companion: auto
+  editions: auto
+
+sources:
+  - https://en.wikipedia.org/wiki/John_Grisham
+  - https://www.jgrisham.com/books/

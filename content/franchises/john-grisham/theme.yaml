@@ -1,0 +1,57 @@
+# Branding for the John Grisham wing (see docs/SCHEMA.md#themeyaml). Non-art
+# fields only - the `art` block (motifs, emblem, line, etc.) is scaffolded
+# separately by the visual-language stage, once the bibliography and any eras
+# are settled. Checked against every existing wing's palette before choosing.
+#
+# Every crime/thriller wing built so far commits to a dark, moody near-black:
+# Connelly's warm LA sepia, Coben's cool suburban teal-grey, Slaughter's humid
+# olive, Lee Child's true neutral asphalt, French's peaty green-grey, Nesbo's
+# and Christie's are the only two LIGHT exceptions (a cold Nordic blue-white
+# and a warm interwar cream). Grisham does not fit the noir mould at all: the
+# defining object of his career is not a shadowed street but a legal pad - he
+# drafted A Time to Kill longhand on one before dawn, three years running,
+# before he could afford to quit lawyering (see the author's own lifeEvents).
+# So this wing inverts the pattern on purpose: a pale legal-pad wash for the
+# ground, dark ink for text, and a single vivid rubber-stamp red for the
+# accent - a courthouse filing stamp ("FILED", "OVERRULED"), not a noir glow.
+#
+# The stamp red was checked against every red already in the catalogue
+# (Stephen King's oxblood, JRDS's brick, Rowling's brick, McCarthy's rust,
+# Valter Hugo Mae's terracotta, Lee Child's flare-red) - all six are muted,
+# brownish, earth-toned reds used as an accent glow on a DARK ground. This one
+# is a pure, saturated primary red used as ink on a PALE ground, which reads
+# as a completely different object (a stamped mark on paper, not a light
+# source in the dark) even where the raw hue drifts close.
+preset: yellow-pad-brief
+palette:
+  bg: "#f6f1d6"       # pale legal-pad yellow-cream - the pad itself, not yet
+                      # written on; distinct from Christie's warmer interwar
+                      # cream (#f3ecdf) and Nesbo's cold blue-white (#e6ebee)
+  surface: "#efe8c8"  # a shade deeper, for cards - a page further into the pad
+  ink: "#1c2438"      # near-black navy - fountain-pen/ballpoint ink, for
+                      # maximum contrast on the pale ground
+  muted: "#524d38"    # dulled olive-grey, for metadata (AA-checked against
+                      # bg and surface)
+  accent: "#c0272c"   # one rubber-stamp red, for links and markers only
+displayFace: sourceSerif  # from the app's implemented set (fraunces | spectral
+                          # | sourceSerif); the plainest of the three, fitting
+                          # prose built for speed and clarity rather than
+                          # atmosphere - already used for Coben, Lee Child,
+                          # Connelly and others for the same reason: efficient,
+                          # page-turning commercial thriller prose
+signature: rule       # a firm, straight architectural line - the witness rail,
+                      # the bench's edge, the ruled margin of a legal pad, and
+                      # the pun in "the rule of law". Already used by five
+                      # other wings for their own distinct objects (Palahniuk's
+                      # clinical rule, McCarthy's horizon, Flynn's copy-desk
+                      # strike, Nesbo's ledger column, Lee Child's road line);
+                      # this one is the courtroom's own straight edges
+notes: >
+  A pale legal-pad register rather than a noir one: warm cream-yellow ground,
+  dark navy ink, one rubber-stamp red used only for links and markers. The
+  only wing in the catalogue's crime/thriller cluster to invert light and dark
+  this way, because Grisham's own defining image - a lawyer drafting a novel
+  longhand on a legal pad before dawn - is a bright object, not a shadowed
+  one. First-draft branding: this is a scaffold pass, not a final ruling: the
+  `art` block (motifs, emblem, line character) is intentionally left for the
+  visual-language stage once the fuller bibliography and any eras are settled.
