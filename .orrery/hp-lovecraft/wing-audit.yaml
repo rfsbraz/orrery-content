@@ -1,0 +1,72 @@
+stage: wing-audit
+summary: >
+  Audited the finished wing across all 13 stages. No blocking defect. Two
+  findings change what a reader sees: 17 of 28 aura entries are graded `high`
+  (the catalogue's largest rupture count), and the racism framing on four of
+  the five racially-loaded stories sits in `note`, a field the app's Work type
+  does not model and never renders. One mechanical fix. Full prioritised report
+  in the PR body; this file carries the gates, the routing and what not to
+  re-audit.
+gates:
+  validate: "0 errors, all references resolve. 57 warnings on this slug, all the documented era orphans; the rest are .orrery word-count notices. Zero content-comment warnings."
+  i18nCoverage: "pt-PT 155/169. Every hp-lovecraft franchise file 100%; authors 35/36, epigraph `quote` held out on precedent."
+  eventDensity: "19 globals, 2/11/6 high/med/low, every decade under budget 3."
+  auraDensity: "111 works, 30 aura, 0.27/work, 1916-1959, longest dark run 4 yrs (1955-1958)."
+  artRotation: "0 organisation problems, 0 pacing problems. The one reported problem is the composition axis (no art filed yet), expected pre-asset-prompt."
+mechanicalFixes:
+  - "franchise.yaml globalEvents header: 'past over' -> 'passed over'. The only typo in the wing."
+findings:
+  blocking: []
+  routed:
+    - id: aura-impact-inflation
+      owner: press-archaeology
+      what: "17 high / 10 med / 1 low across 28. 61% high, and 17 is the largest absolute count in the catalogue (next: robert-jordan 14, agatha-christie 9 at the same size, stephen-king 5). The only low is the birth, so the wing has no texture band. `high` renders full-bleed. art_rotation's pacing axis reads `organisation`, not `impact`, so CI cannot see this."
+    - id: racism-framing-in-an-unrendered-field
+      owner: "none - see pipelineGaps"
+      what: "The app's Work type has no `note`; nothing reads it. red-hook, rats-in-the-walls, arthur-jermyn and medusas-coil all put their racism framing there. Only innsmouth carries it in `synopsis`, which does render. Medusa's Coil and Arthur Jermyn have a spoiler reason to stay hidden; Red Hook and Rats in the Walls do not."
+    - id: mythos-25-overclaimed
+      owner: press-archaeology
+      what: "derleth-mythos-1945's rendered text says 'the 25 Mythos stories that are Lovecraft's', which reads as a received figure. The order and the startHere path both hedge it correctly. One sentence, mirrored in pt-PT."
+    - id: pt-br-register-outliers
+      owner: translation
+      what: "resenha / resenhou / resenhado (events.yaml 53, 159, 186) and cartunista (168). No other pt-PT wing uses either; the rest use recensao / critica de and cartoonista."
+    - id: unsourced-clause-1912
+      owner: press-archaeology
+      what: "'and the streets renamed after them' is carried by none of that entry's three sources. Wikipedia carries the four-group displacement verbatim; Joshi and Schultz carry only the Italian-American clause, which is what the entry attributes to them. Source it or drop it."
+    - id: goodreads-as-source
+      owner: editions
+      what: "editions.yaml cites goodreads.com for the Estampa volume. CURATION SS4 excludes aggregators."
+  cleanup:
+    - "13 stale hp-lovecraft/* stage branches on origin, all ancestors of wing/hp-lovecraft."
+    - "PR #693's body is still the tracking stub; no handoff content has reached it, and handoffs are deleted before merge."
+checkedAndClean:
+  - "Ids/references: 0 errors, 111 unique work ids, no duplicates. Negative-controlled by breaking an order reference."
+  - "Comment policy: scanner silent on this wing. Negative-controlled by inserting a curator-addressing comment."
+  - "theme.yaml: displayFace `spectral` and signature `rule` are both in lib/theme.ts's live sets. Contrast ink/bg 15.08 AAA, muted/surface 5.05 AA, accent/bg 4.20 AA-large, mid-pack across 26 wings. Six art fields present; avoid list bans tentacles, cultist shorthand, glowing green, pulp camp, gore. Scaffold-written and correct."
+  - "Art grading re-derived independently: beside 7/28, artifact-spread 6/28, document-facsimile 5/27, 30 slots. Matches art-rotation exactly. Birth takes full-bleed-vista per LAYOUT's own first use; epigraph 0 images; diptych 2; both era plates symbolic-still-life (keyed). Press-archaeology-written and correct."
+  - "Mythos 25: hplovecraft.com's Necronomicon page re-read. ~20 of the 25 named there, plus Through the Gates (deliberately tagged Randolph Carter); 5 rest on the entity test. Matches completeness-auditor."
+  - "Editions/covers re-derived from the files: 146 entries, 76/111, 35 missing (34 apocrypha + 1 essay), 8 covers, 8 unique URLs, 8 pt-PT, 97 ISBN rows over 9 ISBNs. Every reported gap is where claimed."
+  - "All 8 covers downloaded and looked at. All /b/id/ URLs, so ?default=false does not apply. No watermark, no library stamp. The two small files are genuinely plain typographic covers."
+  - "Portrait and header 200 image/jpeg. 78 source URLs swept, all live except two wook.pt records that 403 automated fetches by documented design."
+  - "France-1954, press-archaeology's own self-flagged weakest entry, is fully sourced: retronews carries the October 1954 Paris-Match coverage, the four stories, the 17-years framing, the Poe comparison and Bergier; fr.wikipedia carries 'Presence du futur no 4', 244pp, Papy's translation and Bergier's introduction."
+  - "Translation freshness: overlay is the branch tip, no English prose after it. All five spoiler rewrites present in both languages. The 1912 entry compared line by line: same four groups, same separate-creation argument, nothing added, nothing softened. Innsmouth rendered at full directness."
+  - "Capabilities: features unset, all four auto-detect and are genuinely supported (30 timeline, 4 paths, 146 editions)."
+  - "The 57 era orphans degrade gracefully. buildRiver sets era null outside every span and only advances prevEra on a hit; the plate is a one-time interruption, not a sticky header. 1 of 3 featured works and 2 of 4 Carter-path works fall outside every era."
+  - "Birth event opens the timeline, dated to `born`, names the house and household. pseudonyms is [] and the record supports it."
+  - "The one racism entry recording the 1930s moderation is the only one graded med, so the softest beat gets the least prominence."
+notApplicableNotAbsent:
+  - "achievements.yaml absent: opt-in, nothing specific worth minting here."
+  - "7% covers: he published one book of his own in his lifetime. Ceiling of the record."
+  - "35 works with no edition: absent from SE, PG and all three anthologies. Absent from the record, not the research."
+  - "No era before 1924 or after 1937: no source names the first, the second is after his death. Never close by tiling."
+  - "0 spoilerAfter: the aura is publication, reception and biography, no plot reveal."
+curatorsCall:
+  - "The impact distribution. Defensible entry by entry, indefensible as a shape. Regrading is editorial."
+  - "Whether Red Hook's and Rats in the Walls's racism framing belongs in the rendered synopsis. The wing already decided yes for Innsmouth."
+  - "Whether derleth-mythos-1945's '25' needs the hedge the order already carries."
+  - "The lifetime reading decided nothing here: both posthumous candidates were excluded on sourced merits, not lifetime grounds, so the ruling is safe either way. The general rule for posthumous-heavy wings is still unwritten."
+  - "38 readUrls point at one Standard Ebooks collection page. Legal, documented, the only option SE offers, but 'Read for free' on Dagon lands on a 214,000-word volume."
+pipelineGaps:
+  - "No skill owns whether a work's rendered synopsis is honest about the work. spoiler-audit owns what it must not say; nobody owns what it must."
+  - "Two scaffold-does-downstream-work incidents on one wing. Both re-verified independently here and both held up, so the outcome was right twice; the cost is that a stage cannot trust the pipeline's record of what is done. Fix at source: write another stage's field and say so, or do not write it."
+  - "wing-audit's own SKILL.md still lists theme.yaml as never opened by the validator. It now checks displayFace, signature, palette and the art block."
