@@ -1,0 +1,85 @@
+stage: art-rotation
+summary: >
+  Graded organisation/illustration_type/images_required on J. R. R. Tolkien's
+  16 lifeEvents, Christopher Tolkien's 12, the one franchise event, and
+  confirmed the four era plates. Gate: art_rotation.py --check jrr-tolkien
+  is 0/0 (contour `#=#.====#===.#=.=`). Christopher stays invisible to that
+  gate for a tooling reason unrelated to this stage (see openQuestions) but
+  was graded to the same discipline anyway, verified by hand against the
+  true single river the app renders (both authors' lifeEvents merged and
+  sorted by year) using art_rotation.py's own pacing functions.
+produced:
+  files:
+    - content/franchises/jrr-tolkien/events.yaml (unchanged - already correct)
+    - content/authors/jrr-tolkien.yaml (3 lifeEvents changed)
+    - content/authors/christopher-tolkien.yaml (2 lifeEvents changed)
+    - content/franchises/jrr-tolkien/eras.yaml (unchanged - confirmed, not
+      just inherited; see openQuestions)
+  changes: >
+    jrr-tolkien-father-dies-1896 beside->artifact-spread/document-facsimile
+    (was inside one screenful of the born/mother-dies loud pair).
+    jrr-tolkien-oed-leeds-1920 layered-stack->diptych/book-object,
+    images_required 1->2 (a real before/after: demobilised OED philologist
+    to youngest Leeds professor with the Gawain edition to his name).
+    jrr-tolkien-retirement-fame-1959 mosaic->layered-stack (repeated the
+    franchise event's mosaic next door). christopher-tolkien-first-reader-
+    1930 beside->artifact-spread/manuscript-proof (the LOTR maps he redrew;
+    repeated oxford-professor-writes-hobbit-1925's organisation, its true
+    neighbour once merged). christopher-tolkien-father-dies-1973
+    immersion->layered-stack/archive-stack (a third immersion would break
+    the wing's 1-2 cap; reframed around the inherited manuscripts rather
+    than the death itself, which cbe-death-1973 already carries the same
+    year as artifact-spread).
+  organisationDistribution: >
+    True 29-event merged river: artifact-spread 6 (21%), beside 4 (14%),
+    full-bleed-vista 3, diptych 3, layered-stack 3, immersion 2 (at cap),
+    medallion 2, mosaic 2, interlude 2, marginalia 1, passage 1. No cap
+    exceeded, no adjacent repeats.
+  checked: >
+    art_rotation.py --check jrr-tolkien: 0/0. validate.py --slug jrr-tolkien:
+    0 errors. A scratch script reusing art_rotation.py's real
+    pacing_problems()/INTENSITY/VIEWPORT_SHARE against the true 29-event
+    merged river is clean except the one documented exception below.
+forStages:
+  visual-metadata: >
+    oed-leeds-1920 needs 2 real prompts/slots (book-object: the OED
+    dictionary work vs. the published Gawain edition, both physical volumes,
+    not a portrait). christopher-first-reader-1930's manuscript-proof is
+    Christopher's own redrawn Middle-earth map, a real sourced object, not a
+    domestic scene. father-dies-1896's document-facsimile has no specific
+    surviving letter on record - a period death notice/telegram in register,
+    not a claimed real document. christopher-father-dies-1973's archive-
+    stack is the barn's manuscripts, not a portrait of grief - that device
+    is already spent on mother-dies-1904 and somme-tcbs-deaths-1916.
+  editions: no organisation change here touches edition/cover sourcing.
+openQuestions:
+  - "art_rotation.py --check cannot see christopher-tolkien's lifeEvents:
+    wing_assets() finds authors by walking works.yaml's per-work authorIds,
+    and Christopher only appears there under withAuthorIds (authorRole:
+    editor on everything but The Silmarillion). Real gap between the app's
+    render model (merges every franchise.yaml author into one river) and the
+    checker's discovery model - out of this stage's footprint (script,
+    works.yaml) to fix. Flagging for a future pass to teach wing_assets() to
+    also read withAuthorIds, or read franchise.yaml's authorIds directly."
+  - "One true-sequence pacing issue left unfixed on purpose:
+    christopher-tolkien-raf-service-1943 (full-bleed-vista) sits directly
+    next to auden-wilson-reception-split-1956 (mosaic) once merged - both
+    loud, nothing between them for 13 years across either life. Both are the
+    strongest fit for their content, and LAYOUT.md's own gutter mechanism
+    already gives that gap real visual separation; 'no two loud cells
+    touching' has no written exception for it. Downgrading a correct
+    organisation to satisfy a check the gate doesn't even run today felt
+    like the wrong trade - worth revisiting once/if the gap above is fixed."
+  - "Confirmed rather than inherited: chapter-gate's Holds list genuinely has
+    no artifact-family option. Kept the-christopher-tolkien-years at
+    symbolic-still-life over establishing-landscape/atmospheric-motif-field
+    because it's the only one of the three built around 'one leading
+    object' (VISUAL.md), letting the plate render the wing's tied-bundle
+    emblem or the barn's tools rather than forcing a landscape (the 'fifth
+    Middle-earth vista' visual-language ruled out) or an anchor-less field."
+  - "All four era plates carry symbolic-still-life. Not a cap violation
+    (art_rotation.py excludes era plates from that count on purpose), but
+    four still-lifes still need four visibly different objects - already
+    anticipated by eras.yaml/visual-language's tonal-cast guidance (warm
+    Oxford, cold Somme grey-wash, cooling further for the posthumous plate),
+    not reopened here."
