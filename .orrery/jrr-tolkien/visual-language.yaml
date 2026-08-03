@@ -1,0 +1,56 @@
+stage: visual-language
+summary: >
+  theme.art settled: manuscript archaeology, not magic-system diagram, not
+  weave. theme_digest.py flags brandon-sanderson and robert-jordan as nearest
+  neighbours (same #c8a24a-family gold accent, same epic-fantasy shelf
+  position); both already split "engineered" (Sanderson: ruled instrument,
+  blueprint vellum) from "woven" (Jordan: flowing thread, homespun cloth).
+  This wing takes neither: works.yaml's STRUCTURAL CALL ONE is that 20 of 32
+  works reached print only after Tolkien's 1973 death, excavated from his
+  drafts by Christopher Tolkien over 45 years - the wing's identity is paper,
+  ink and revision passed between two hands across decades. Emblem: a
+  string-tied bundle of foolscap carrying two visibly different hands and
+  inks, sourced to Tolkien posting draft LOTR chapters to Christopher and to
+  Christopher's admitted invention of Silmarillion passages - the authorship
+  question made into one object. Line character is a revising scholar's hand
+  (a correction laid over the first stroke); paper is a working foolscap
+  leaf; accent is bronze-gold on a tied string, wax seal or rubricated
+  initial - never the Ring or a jewel, named explicitly in avoid as the
+  obvious reach not taken. The Ring, Silmarils, Tengwar, Cirth and Angerthas
+  are all out of bounds (the books' own property); the childhood
+  invented-alphabet motif (Book of the Foxrook, 1909) is real biography and
+  stays, drawn as unnamed private notation only.
+produced:
+  franchiseFiles:
+    - content/franchises/jrr-tolkien/theme.yaml
+  artFields: [emblem, motifs, atmosphere, lineCharacter, backgroundTexture, accentUse, avoid]
+  checked: >
+    theme_digest.py --exclude jrr-tolkien (26 wings); full theme.yaml read for
+    brandon-sanderson and robert-jordan only, the two it flagged as adjacent.
+    validate.py --slug jrr-tolkien passes with no errors; asset_audit.py lists
+    all 22 jobs (art:yes).
+forStages:
+  art-rotation: >
+    The type mix already leans on the artifact regime (document-facsimile,
+    manuscript-proof, archive-stack, palimpsest-erasure) because that IS the
+    law - don't flatten toward more landscape/portrait just to diversify.
+    Still-lifes per §4c: one leading object, never a flatlay of the motif
+    list. Tonal cast should track the arc: warm/inky for Oxford, cold
+    grey-wash for the 1916-17 Somme (mud, wire, a treeline, never battle),
+    cooling further for the posthumous era plate, which needs its own idea (a
+    barn, half-erased fair copies) rather than a fifth Middle-earth vista -
+    eras.yaml's own handoff already flagged this. Orrery motif: paper carriers
+    (a ruled margin, a wax seal, laid-paper weave) are legitimate non-sky
+    options this wing supports well; vary rather than defaulting to a disc.
+  visual-metadata: >
+    Both Tolkiens need a licensed portrait per §3, never a generated likeness.
+    Baillie Tolkien has no lifeEvents entity, so no portrait obligation here.
+    Jacket art for the 32 works sources normally, but never let a cover's own
+    heraldic devices (Ring, White Tree, Tengwar lettering) leak into a sketch
+    prompt - covers and sketches follow different rules. For the Somme/T.C.B.S.
+    event, period Western Front reference (trench maps, convalescence photos)
+    fits this wing's register better than any fantasy-adjacent search.
+openQuestions:
+  - "Emblem risk: the tied bundle is well-sourced but visually close to Stephen King's rubber-banded manuscript stack and to this wing's own archive-stack/manuscript-proof types. Differentiated by the two-hands-two-inks detail (authorship, not volume) and string vs. rubber band - worth a second look once sketches sit side by side."
+  - "The invented-alphabet motif must stay unnamed private notation, never Tengwar/Cirth/Angerthas. Easy to blur in practice ('an old notebook page' can drift toward reading as Elvish) - flag it explicitly in the asset-prompt for jrr-tolkien-book-of-the-foxrook-1909 rather than trusting theme.art wording alone."
+  - "The fourth era's chapter-gate is already symbolic-still-life, the right family for a barn-and-decades-of-paper plate - chapter-gate's Holds list permits only symbolic-still-life, atmospheric-motif-field or establishing-landscape, so archive-stack/manuscript-proof aren't options however apt. Left to art-rotation/asset-prompt to compose, not reopened as a type choice."
