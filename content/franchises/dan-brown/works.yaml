@@ -1,0 +1,313 @@
+# Bibliography (works) - the abstract works; editions/covers are separate
+# metadata (SCHEMA.md). IDs are STABLE and permanent (user data references
+# them). Dates are year-precision, never a full date; the default reading
+# order (all works, publication order) is DERIVED from this file, never
+# written by hand.
+#
+# SCOPE, verified rather than taken on the request issue's framing. The
+# request called this "roughly a dozen books" with "one confirmed byline" -
+# both checked and both need correcting. The actual count is nine works
+# under Brown's own name (two early standalones, the six-novel Robert
+# Langdon series, and one children's book) plus one earlier book published
+# under a pseudonym - ten total, not a dozen. And the byline is not singular:
+# see the pseudonym note below and on content/authors/dan-brown.yaml.
+#
+# THE SIXTH LANGDON NOVEL. The request asks whether one exists since Origin
+# (2017): yes. The Secret of Secrets (Doubleday, September 9, 2025) is the
+# sixth Robert Langdon novel, confirmed on Brown's own site (danbrown.com/
+# books/, grouped under "Langdon Series") and by the character's own
+# Wikipedia infobox ("Robert Langdon #6" / last appearance). It was 17 weeks
+# on the New York Times bestseller list as of January 2026 and a Netflix
+# adaptation (Morgan Spector as Langdon) is in production.
+#
+# PUBLICATION ORDER VS STORY ORDER. Verified, not assumed: all six Langdon
+# novels are numbered "Robert Langdon #1" through "#6" on their own
+# Wikipedia infoboxes in the same sequence as publication, each explicitly
+# "following" the one before it in its own lead sentence, and the character's
+# own Wikipedia article states plainly that "the events of The Da Vinci Code
+# follow those of Angels & Demons" in the books (only the FILM adaptations
+# reorder them). No chronology-vs-publication mismatch exists in this series,
+# unlike some other catalogue wings.
+#
+# TIERING. A small, tight shelf, and it mostly does not have the
+# core/extended/apocrypha problem larger wings have - CORE here is simply
+# "every adult thriller novel, standalone or Langdon, full stop": the two
+# early standalones ([[work:dan-brown/digital-fortress|Digital Fortress]],
+# [[work:dan-brown/deception-point|Deception Point]] - both verified
+# genuinely standalone, no Langdon appearance and no character shared with
+# any other Brown book) and the six Langdon novels. EXTENDED holds the two
+# works that are real, complete, self-contained books of his but in a
+# different category entirely: [[work:dan-brown/wild-symphony|Wild
+# Symphony]] (a children's picture book, a different medium and audience
+# from the adult thrillers) and
+# [[work:dan-brown/187-men-to-avoid|187 Men to Avoid]] (nonfiction humor, not
+# fiction, and pre-dating his novelist career by three years). No apocrypha
+# tier is used: nothing here is a fragment, a contribution to someone else's
+# book, or unfinished.
+#
+# THE PSEUDONYM, checked rather than assumed on the request issue's "one
+# confirmed byline." 187 Men to Avoid (1995) - his actual first published
+# book, three years before Digital Fortress - carries the byline "Danielle
+# Brown" on its 1995 first edition; see content/authors/dan-brown.yaml for
+# the sourcing. No other pseudonym or ghostwriting credit was found anywhere
+# in the sources checked.
+#
+# CONSIDERED AND LEFT OUT, each for a stated reason:
+#   - "The Bald Book" (Pinnacle Books, 1998), a humor title about baldness:
+#     published under his then-girlfriend Blythe Newlon's own name (as
+#     "Blythe Brown"), with no Dan Brown byline anywhere on the book itself.
+#     Wikipedia's claim that he "primarily written" it rests on a single
+#     unnamed "representative of the publisher" - one uncorroborated
+#     secondhand source about an unbylined book does not clear this
+#     catalogue's sourcing bar, so it is not catalogued as a work of his.
+#   - "The Da Vinci Code: Young Adult Edition" (Random House Children's
+#     Books, 2016): an abridged adaptation of the existing 2003 novel's own
+#     text for younger readers, with added photographs, not a new authorial
+#     work - the same book, cut down, rather than a book in its own right.
+#     Treated as edition-level data rather than a separate work entry; worth
+#     an editions.yaml line rather than a works.yaml one.
+#   - Three self-released music recordings that predate or overlap the
+#     writing career - the cassette "SynthAnimals," the CD "Perspective"
+#     (1990), and a CD titled "Angels & Demons" (1994, its ambigram artwork
+#     later reused for the novel of the same name) - are music, not
+#     literary works, and outside this schema's bibliography.
+#   - An MGM/Weed Road Pictures animated film of Wild Symphony, announced
+#     March 30, 2022 with Brown attached to write the screenplay and songs:
+#     announced, not produced. Recording an unproduced credit would be
+#     exactly the kind of claim this repo does not make.
+#   - The 2006 "Da Vinci Code" video game and the Langdon film series (2006,
+#     2009, 2016) and TV series (2021, Peacock): adaptations by other
+#     credited writers, not works of Brown's own authorship.
+#
+# COMPLETE against the reachable record: cross-checked Brown's own
+# danbrown.com bibliography (which groups "Langdon Series" against "Other
+# Novels" and independently confirms the standalone/series split used here),
+# his English Wikipedia biography and bibliography section, the Robert
+# Langdon character and book-series articles, and each individual novel's
+# own Wikipedia article and infobox.
+
+- id: dan-brown/digital-fortress
+  title: "Digital Fortress"
+  authorIds: [dan-brown]
+  published: 1998
+  subseries: null
+  canonTier: core
+  featured: true
+  synopsis: >
+    When the NSA's code-breaking supercomputer meets a cipher it cannot
+    crack, head cryptographer Susan Fletcher is called in - and finds
+    herself working against a dying programmer's plan to force the agency's
+    surveillance methods into the open, while her fiance chases a missing
+    ring through the streets of Seville.
+  note: >
+    Brown's actual fiction debut (his real first book, three years earlier,
+    was the pseudonymous humor title
+    [[work:dan-brown/187-men-to-avoid|187 Men to Avoid]]) and, like
+    [[work:dan-brown/deception-point|Deception Point]], genuinely standalone:
+    no Robert Langdon appearance and no character shared with any other
+    Brown novel. Set partly in Seville, where Brown had studied art history
+    in 1985. Sold under 10,000 copies in its first printing; a TV adaptation
+    was announced by Imagine Entertainment in 2014 and has not aired.
+  sources:
+    - https://en.wikipedia.org/wiki/Digital_Fortress
+    - https://en.wikipedia.org/wiki/Dan_Brown
+
+- id: dan-brown/angels-demons
+  title: "Angels & Demons"
+  authorIds: [dan-brown]
+  published: 2000
+  subseries: "Robert Langdon"
+  canonTier: core
+  synopsis: >
+    Called to CERN over the ritual murder of a physicist priest, Harvard
+    symbologist Robert Langdon uncovers the resurgence of the Illuminati and
+    a stolen canister of antimatter timed to destroy Vatican City during a
+    papal conclave.
+  note: >
+    Introduces Robert Langdon, who recurs in every Brown novel since; its
+    ambigram cover art and interior ambigrams were designed by Brown's
+    friend John Langdon, after whom the character is named. Officially
+    "Robert Langdon #1" per its own publication record, even though it was
+    Brown's second published novel - the series numbering follows story
+    chronology, which for this series is also publication order (see the
+    wing-level note above).
+  sources:
+    - https://en.wikipedia.org/wiki/Angels_%26_Demons
+    - https://en.wikipedia.org/wiki/Robert_Langdon
+
+- id: dan-brown/deception-point
+  title: "Deception Point"
+  authorIds: [dan-brown]
+  published: 2001
+  subseries: null
+  canonTier: core
+  synopsis: >
+    When NASA announces a meteorite proving extraterrestrial life days
+    before a presidential election, White House intelligence analyst Rachel
+    Sexton is sent to help verify the find - and finds herself hunted the
+    moment the science stops adding up.
+  note: >
+    Brown's third novel, and like
+    [[work:dan-brown/digital-fortress|Digital Fortress]] genuinely
+    standalone: no Robert Langdon appearance and no character shared with
+    any other Brown book.
+  sources:
+    - https://en.wikipedia.org/wiki/Deception_Point
+    - https://en.wikipedia.org/wiki/Dan_Brown
+
+- id: dan-brown/the-da-vinci-code
+  title: "The Da Vinci Code"
+  authorIds: [dan-brown]
+  published: 2003
+  subseries: "Robert Langdon"
+  canonTier: core
+  featured: true
+  synopsis: >
+    Summoned to the Louvre after the curator's murder, Robert Langdon and
+    cryptologist Sophie Neveu follow a trail of codes hidden in the museum's
+    own masterpieces, pursued by police who believe Langdon is the killer.
+  note: >
+    Brown's fourth novel and by far his best known: it topped the New York
+    Times list in its first week, had sold over 80 million copies by 2009,
+    and is one of the best-selling novels of all time - the hinge that made
+    his three earlier, modestly-selling books bestsellers retroactively (see
+    content/authors/dan-brown.yaml). One chapter draws directly on a
+    childhood treasure hunt devised by Brown's own father. Subject to two
+    unsuccessful copyright infringement suits (Lewis Perdue, 2005; Baigent
+    and Leigh, 2006).
+  sources:
+    - https://en.wikipedia.org/wiki/The_Da_Vinci_Code
+    - https://en.wikipedia.org/wiki/Dan_Brown
+
+- id: dan-brown/the-lost-symbol
+  title: "The Lost Symbol"
+  authorIds: [dan-brown]
+  published: 2009
+  subseries: "Robert Langdon"
+  canonTier: core
+  synopsis: >
+    Summoned to Washington, D.C. by what turns out to be a forged
+    invitation, Robert Langdon has twelve hours to unravel a hidden
+    Masonic history of the capital and find the Lost Word - or his
+    kidnapped mentor, Peter Solomon, dies.
+  note: >
+    Introduces Katherine Solomon, Peter's sister, who returns in
+    [[work:dan-brown/the-secret-of-secrets|The Secret of Secrets]]. Adapted
+    into a 2021 Peacock television series that repositions the story as a
+    younger Langdon's origin.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Lost_Symbol
+    - https://en.wikipedia.org/wiki/Dan_Brown
+
+- id: dan-brown/inferno
+  title: "Inferno"
+  authorIds: [dan-brown]
+  published: 2013
+  subseries: "Robert Langdon"
+  canonTier: core
+  synopsis: >
+    Robert Langdon wakes in a Florence hospital with a head wound, amnesia,
+    and no memory of the last few days - only a biohazard cylinder in his
+    jacket and a woman's voice telling him to "seek and find," as an
+    assassin closes in.
+  note: >
+    Its own Wikipedia article dates it explicitly as "the fourth book in his
+    Robert Langdon series, following Angels & Demons, The Da Vinci Code and
+    The Lost Symbol" - direct confirmation that the series numbering tracks
+    publication order. Draws its structure from Dante's Inferno.
+  sources:
+    - https://en.wikipedia.org/wiki/Inferno_(Brown_novel)
+    - https://en.wikipedia.org/wiki/Dan_Brown
+
+- id: dan-brown/origin
+  title: "Origin"
+  authorIds: [dan-brown]
+  published: 2017
+  subseries: "Robert Langdon"
+  canonTier: core
+  synopsis: >
+    At a Guggenheim Bilbao event meant to unveil a discovery he believes will
+    upend organized religion, futurist Edmond Kirsch is silenced before he
+    can finish - and his former teacher Robert Langdon and the museum's
+    director must find and release what he was about to say.
+  note: >
+    Fifth Langdon novel, published by Doubleday on October 3, 2017.
+  sources:
+    - https://en.wikipedia.org/wiki/Origin_(Dan_Brown_novel)
+    - https://en.wikipedia.org/wiki/Dan_Brown
+
+- id: dan-brown/the-secret-of-secrets
+  title: "The Secret of Secrets"
+  authorIds: [dan-brown]
+  published: 2025
+  subseries: "Robert Langdon"
+  canonTier: core
+  synopsis: >
+    In Prague with noetic scientist Katherine Solomon for the launch of her
+    new book, Robert Langdon is pulled into a bomb scare, a scientist's
+    murder, and a hunt for what Katherine's research into consciousness has
+    made him a target for protecting.
+  note: >
+    The sixth Robert Langdon novel and Brown's most recent book, published
+    by Doubleday on September 9, 2025 (the request issue that opened this
+    wing asked whether a sixth title existed since
+    [[work:dan-brown/origin|Origin]] - it does). 17 weeks on the New York
+    Times bestseller list as of January 2026. A Netflix adaptation with
+    Morgan Spector as Langdon was in production as of this writing.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Secret_of_Secrets_(Brown_novel)
+    - https://en.wikipedia.org/wiki/Robert_Langdon
+
+- id: dan-brown/wild-symphony
+  title: "Wild Symphony"
+  authorIds: [dan-brown]
+  published: 2020
+  subseries: null
+  canonTier: extended
+  format: picture-book
+  synopsis: >
+    Maestro Mouse leads young readers through the animal kingdom - a
+    picture book paired with an original classical-music album Brown
+    composed, played through a free augmented-reality app that triggers
+    each animal's own piece when a phone camera finds its page.
+  note: >
+    Brown's picture-book debut, illustrated by Susan Batori and published by
+    Rodale Kids/Random House Children's Books on September 1, 2020, with a
+    150,000-copy first printing across 27 countries. He donates his US
+    royalties to music education through the New Hampshire Charitable
+    Foundation. Tiered extended rather than core: a genuine, complete book of
+    his, but a children's picture book with a companion album and app is a
+    different medium and audience from the adult thrillers that are this
+    wing's spine. No sequel exists as of this writing - "Wild Symphony: The
+    Sound of the Universe" and similar titles sometimes attributed to him
+    online could not be confirmed against any primary source (his own site,
+    his publisher, or a library catalogue) and are not recorded here.
+  sources:
+    - https://danbrown.com/books/young-readers/wild-symphony/
+    - https://global.penguinrandomhouse.com/announcements/dan-brown-1-nyt-bestselling-author-to-publish-debut-picture-book-wild-symphony-with-rhcb/
+    - https://en.wikipedia.org/wiki/Dan_Brown
+
+- id: dan-brown/187-men-to-avoid
+  title: "187 Men to Avoid: A Survival Guide for the Romantically Frustrated Woman"
+  authorIds: [dan-brown]
+  published: 1995
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  publishedAs: "Danielle Brown"
+  synopsis: >
+    A humor collection of one-line warning signs about men, written from a
+    woman's point of view for "women of all ages and stages" navigating
+    dating.
+  note: >
+    Brown's actual first published book (Penguin/Berkley, 1995), three years
+    before [[work:dan-brown/digital-fortress|Digital Fortress]] and under
+    the pseudonym "Danielle Brown" - see
+    content/authors/dan-brown.yaml for the sourcing on the byline. Reissued
+    under his own name in 2006. Tiered extended: genuinely his and
+    completely his own, but comic nonfiction dating advice from before his
+    novelist career, not part of the thriller shelf this wing is otherwise
+    built from.
+  sources:
+    - https://books.google.com/books/about/187_Men_to_Avoid.html?id=NSQWiM2HH9kC
+    - https://en.wikipedia.org/wiki/Dan_Brown

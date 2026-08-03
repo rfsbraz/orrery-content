@@ -1,0 +1,38 @@
+# A wing spans an author's complete published work. Brown's shelf is small
+# and almost entirely genre-pure (nine works over thirty years under his own
+# name, plus one pseudonymous first book), so it does not need `subseries`
+# for anything beyond the one real, publisher-numbered series: Robert
+# Langdon (see works.yaml's header for the tiering and sourcing behind every
+# entry, including the pseudonym and the two considered-and-excluded books).
+id: dan-brown
+name: Dan Brown
+kind: author
+description: >
+  Two early standalone thrillers - [[work:dan-brown/digital-fortress|Digital
+  Fortress]] (1998, his actual fiction debut) and
+  [[work:dan-brown/deception-point|Deception Point]] (2001) - before the
+  Robert Langdon series that made him one of the best-selling novelists
+  alive: [[work:dan-brown/angels-demons|Angels & Demons]] (2000) through
+  [[work:dan-brown/the-secret-of-secrets|The Secret of Secrets]] (2025), six
+  novels running in the same order as their own internal chronology. A
+  children's picture book, [[work:dan-brown/wild-symphony|Wild Symphony]]
+  (2020), and his real first book - a 1995 humor title published under the
+  pseudonym "Danielle Brown" - complete the shelf.
+authorIds: [dan-brown]
+themePreset: blueprint-cipher
+
+# Capabilities (docs/SCHEMA.md) are left auto on purpose: with no theme.art,
+# no events.yaml and no eras.yaml yet, `river` and `companion` will not
+# activate until those exist; `wizard` will not activate until a startHere
+# is written; `editions` will not activate until editions.yaml exists.
+# Nothing needs forcing off in the meantime.
+features:
+  river: auto
+  wizard: auto
+  companion: auto
+  editions: auto
+
+sources:
+  - https://en.wikipedia.org/wiki/Dan_Brown
+  - https://en.wikipedia.org/wiki/Robert_Langdon
+  - https://danbrown.com/books/

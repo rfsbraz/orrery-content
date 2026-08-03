@@ -1,0 +1,51 @@
+# Branding for the Dan Brown wing (see docs/SCHEMA.md#themeyaml). Non-art
+# fields only - the `art` block (motifs, emblem, line, etc.) is scaffolded
+# separately by the visual-language stage, once the bibliography is settled.
+# Checked against every existing wing's palette before choosing.
+#
+# The obvious reference point for this wing is Brown's own book-cover
+# furniture - gilt crosses, wax seals, candlelit cathedral stone - and that
+# is exactly what this catalogue's design law (no genre costume) and the
+# José Rodrigues dos Santos wing's own notes rule out for a THRILLER wing
+# built around conspiracy trappings. But Brown's actual defining device is
+# more specific and better documented than that furniture: the ambigram -
+# a word redrawn to read identically rotated 180 degrees - designed for his
+# covers and interiors by his friend John Langdon (who the character Robert
+# Langdon is named after), and the character's whole métier, symbology, is a
+# discipline of diagrams, floor plans and cipher grids rather than gothic
+# atmosphere. So this wing draws from the drafting table, not the crypt: a
+# blueprint/cyanotype register - the technical drawing an ambigram or a
+# cipher square is actually built on. Distinct from every blue already in
+# the catalogue: cooler and more saturated than João Tordo's muted Atlantic
+# azulejo blue-grey (#141a1e bg / #3d6f8c accent) and Jo Nesbo's dark cobalt
+# ice-blue (#2a3e8f, on a pale bg); distinct from José Rodrigues dos Santos's
+# cathode-teal near-black next door in the catalogue, which reads as a
+# newsroom monitor rather than a drafting sheet.
+preset: blueprint-cipher
+palette:
+  bg: "#0a141f"        # deep cyanotype blue-black - technical drafting paper
+                       # gone dark, not gothic near-black or newsroom teal
+  surface: "#101d2b"   # a shade lifted, for cards - a page further into the set
+  ink: "#e4ecf2"       # cool blueprint-linework white, high contrast
+  muted: "#8598a7"      # dusty blue-grey, for metadata (AA-checked against
+                        # bg and surface)
+  accent: "#4fa3d1"     # one cyanotype blue, for links and markers only - the
+                        # traced line of a diagram, never a fill or a glow
+displayFace: sourceSerif  # from the app's implemented set (fraunces | spectral
+                          # | sourceSerif); the plainest of the three, matching
+                          # the efficient, page-turning commercial-thriller
+                          # register critics have consistently described his
+                          # prose in (already used for Coben, Lee Child,
+                          # Connelly, JRDS for the same reason)
+signature: rule            # a single firm, straight line - read here as the
+                            # axis of symmetry an ambigram is built and read
+                            # across, not as a generic architectural rule
+notes: >
+  A drafting-table register rather than a cathedral one: deep cyanotype
+  blue-black, blueprint-white ink, one precise cyan-blue line used only for
+  links and markers. Deliberately not the gilt-and-parchment, candlelit-stone
+  costume Brown's own paperback covers use - the wing draws on the actual
+  documented mechanics behind that furniture (the ambigram, the floor plan,
+  the cipher grid) rather than reproducing the genre furniture itself.
+  First-draft branding: this is a scaffold pass, not a final ruling - the
+  `art` block is intentionally left for the visual-language stage.

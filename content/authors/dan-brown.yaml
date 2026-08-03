@@ -1,0 +1,103 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds), so the same person resolves the same everywhere.
+# Author-LIFE events live here (they follow the person); franchise-specific
+# events would stay in content/franchises/dan-brown/events.yaml (none yet).
+#
+# PSEUDONYM, checked rather than assumed. Brown's first published book, "187
+# Men to Avoid: A Survival Guide for the Romantically Frustrated Woman"
+# (Penguin/Berkley, 1995), carries the byline "Danielle Brown" on its
+# original edition - confirmed by three independent bookseller listings of
+# the 1995 first printing and by the Library of Congress catalogue record
+# (PN6231.D3 B76 1995, filed under "Brown, Dan"), which treats "Danielle
+# Brown" as his own pen name rather than a joint credit with a co-author. A
+# 2006 reissue (Berkley, ISBN 9780425215043) carries his real name outright.
+# Recorded on the work itself (dan-brown/187-men-to-avoid) via
+# `publishedAs`. A second 1998 humor book, "The Bald Book", was published
+# under his then-girlfriend Blythe Newlon's own name (as "Blythe Brown") with
+# no Dan Brown byline anywhere on it; Wikipedia's sourcing for his
+# involvement is a single unnamed "representative of the publisher," which
+# does not clear this repo's bar for adding an unbylined book to his
+# bibliography - held out, not catalogued as a work of his.
+id: dan-brown
+name: Dan Brown
+aka: ["Daniel Gerhard Brown", "Danielle Brown"]
+born: 1964-06-22
+died: null
+bio: >
+  American novelist born in Exeter, New Hampshire, where his father Richard
+  G. Brown taught mathematics at Phillips Exeter Academy and his mother
+  Constance trained as a church organist; codes and ciphers ran through the
+  household, and the family's tradition of code-and-clue treasure hunts on
+  birthdays and holidays later supplied the plot engine of his novels and,
+  directly, a chapter of
+  [[work:dan-brown/the-da-vinci-code|The Da Vinci Code]]. He double-majored
+  in English and Spanish at Amherst College (BA, 1986), then pursued music
+  as a singer-songwriter before turning to fiction after reading Sidney
+  Sheldon's "The Doomsday Conspiracy" on a 1993 trip to Tahiti. His first
+  book under his own eventual byline was the humor title
+  [[work:dan-brown/187-men-to-avoid|187 Men to Avoid]] (1995, published under
+  the pseudonym "Danielle Brown"); his first novel,
+  [[work:dan-brown/digital-fortress|Digital Fortress]] (1998), and a second
+  standalone thriller, [[work:dan-brown/deception-point|Deception Point]]
+  (2001), sold modestly before
+  [[work:dan-brown/angels-demons|Angels & Demons]] (2000) introduced Harvard
+  symbologist Robert Langdon, the character who carries every Brown novel
+  since. [[work:dan-brown/the-da-vinci-code|The Da Vinci Code]] (2003) became
+  a publishing phenomenon and one of the best-selling novels of all time,
+  followed by [[work:dan-brown/the-lost-symbol|The Lost Symbol]] (2009),
+  [[work:dan-brown/inferno|Inferno]] (2013),
+  [[work:dan-brown/origin|Origin]] (2017) and
+  [[work:dan-brown/the-secret-of-secrets|The Secret of Secrets]] (2025). In
+  2020 he published his first children's book,
+  [[work:dan-brown/wild-symphony|Wild Symphony]], pairing the text with an
+  original classical-music album and an augmented-reality app. He was
+  married to Blythe Newlon, who did much of the early research and promotion
+  behind his rise, from 1997 until their divorce in 2019.
+pseudonyms:
+  - name: Danielle Brown
+    note: >
+      The byline on the 1995 first edition of
+      [[work:dan-brown/187-men-to-avoid|187 Men to Avoid]], his first
+      published book, three years before Digital Fortress. Reissued under
+      his own name in 2006 once he was established.
+lifeEvents:
+  - id: db-born-1964
+    date: 1964-06-22
+    title: Born in Exeter, New Hampshire, into a household built on puzzles
+    impact: high
+    description: >
+      Born in Exeter, New Hampshire, and raised on the campus of Phillips
+      Exeter Academy, where his father taught mathematics and his mother
+      trained as a church organist. Codes and ciphers were, in his own
+      account, the link between his parents' two disciplines, and the family
+      marked birthdays and holidays with elaborate treasure hunts his father
+      devised, sending the children through coded clues around the house and
+      town rather than straight to a pile of gifts. Brown has said his
+      relationship with his father directly shaped Jacques Sauniere and his
+      granddaughter in [[work:dan-brown/the-da-vinci-code|The Da Vinci
+      Code]], and that one chapter of that novel is drawn straight from a
+      childhood hunt: the puzzle-chain-under-time-pressure structure of
+      every Langdon novel traces to this household, not to an invented
+      thriller convention.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Dan_Brown
+  - id: db-da-vinci-code-breaks-out-2003
+    date: 2003-03-18
+    title: "The Da Vinci Code turns a mid-list thriller writer into a phenomenon"
+    impact: high
+    description: >
+      Brown's first three novels had sold fewer than 10,000 copies each in
+      their first printings. [[work:dan-brown/the-da-vinci-code|The Da Vinci
+      Code]] went to the top of the New York Times bestseller list in its
+      first week, pulled all three earlier novels back onto the list with
+      it, and had sold more than 80 million copies by 2009 - the hinge that
+      turned a struggling genre writer into one of the best-selling authors
+      alive and set the template (Christian history, a 24-hour chase, a
+      secret society) every later Langdon novel works from.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Dan_Brown
+sources:
+  - https://en.wikipedia.org/wiki/Dan_Brown
+  - https://danbrown.com/
