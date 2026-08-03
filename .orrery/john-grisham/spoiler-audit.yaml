@@ -1,0 +1,90 @@
+stage: spoiler-audit
+summary: >
+  Swept 58 works, 13 lifeEvents, 1 franchise event, 4 orders and 4 startHere
+  paths against publisher jacket copy (jgrisham.com and
+  PenguinRandomHouse.com, fetched for every ruling that mattered). Seven
+  synopses stated something their own jacket withholds and now stop where
+  the jacket stops; four of the seven were also factually wrong. One
+  lifeEvent misstated a real man's case. No spoilerAfter was added or
+  loosened: the wing has zero gated entries, correctly, since nothing in the
+  aura or the one franchise event states a plot reveal. Confirmed in the app
+  that spoilerAfter is honoured only on events and lifeEvents, and that a
+  work's `note` is not in the Work type at all, so it is the safe place to
+  record what was withheld.
+produced: 2026-08-03
+rewritten:
+  - "the-brethren: dropped who the blackmail victim turns out to be and what
+    he is being blackmailed over."
+  - "the-reckoning: dropped the outcome of the trial."
+  - "calico-joe: dropped what the pitch does."
+  - "the-guardians: he is serving life, not death row, and the jacket keeps
+    his innocence as his own claim."
+  - "the-exchange: the ransom is $100 million and the person taken is the
+    mentor's daughter, not Mitch's wife."
+  - "witness-to-a-trial: Lacy Stoltz is not in it; the publisher's 'first
+    murder trial' is the presiding judge's."
+  - "theodore-boone-the-accomplice: Theo is an only child; it is his friend
+    Woody Lambert, over an armed robbery."
+  - "authors/john-grisham.yaml grisham-innocent-man-obituary-2004: Ron
+    Williamson came within five days of execution in September 1994 before a
+    stay, and was cleared by DNA in 1999 after eleven years on death row. The
+    two were fused into one date."
+  - "orders.yaml lacy-stoltz-in-order: the rationale no longer claims the
+    short story was written to introduce Lacy."
+notesAdded: >
+  Curator-only `note` on each rewritten work recording what its jacket
+  withholds, plus the-judges-list, theodore-boone-the-abduction and
+  theodore-boone-the-fugitive, whose publisher copy each opens by
+  summarising how the previous book ends. Pulling those blurbs wholesale
+  would ship the spoiler removed here.
+forStages:
+  translation: >
+    No pt-PT overlay exists for this wing, so nothing was invalidated.
+    Seven works[].synopsis strings and one orders[].rationale changed on this
+    branch: translate the current text, not any earlier copy. These synopses
+    are deliberately shorter than the publisher blurbs and stop before a
+    reveal, so do not enrich them from a Portuguese back cover - for The
+    Exchange, The Judge's List and the later Theodore Boones the blurb
+    routinely trades the previous book's ending. works[].note is
+    curator-only and never rendered, so it needs no pt-PT.
+openQuestions:
+  - >
+    Checked against jacket copy and left alone, so they are not
+    re-litigated: The Pelican Brief, The Firm, The Client, The Runaway Jury,
+    The Racketeer, The Confession, The Appeal, The Widow, The Boys from
+    Biloxi, Camino Winds, Camino Ghosts, Sooley, Bleachers, The Chamber, The
+    Whistler, The Litigators, The Street Lawyer, A Time to Kill, Sycamore
+    Row, A Time for Mercy. Each states no more than its own jacket, several
+    noticeably less.
+  - >
+    The Testament says "suicide" and "illegitimate daughter" where the jacket
+    says "with his death just hours away" and "a mysterious woman named
+    Rachel Lane". Both are chapter one, so it was kept as premise rather than
+    redacted. A curator who reads the jacket's coyness as protection rather
+    than marketing would tighten it, and nothing breaks if they do.
+  - >
+    The Reckoning names the victim as the Methodist pastor where the jacket
+    says only "a shocking crime". Kept: the shooting is chapter one and the
+    jacket's own first line places him in that church. Flagged as the one
+    ruling here where the jacket is quieter than the book.
+  - >
+    Lacy Stoltz surviving The Whistler leaks from The Judge's List existing
+    at all, as it does for Mitch McDeere after The Firm, Jake Brigance after
+    A Time to Kill, and Bruce Cable and Mercer Mann across the Camino books.
+    Ruled incidental: a returning protagonist is on the later book's own
+    cover, no synopsis states any of those endings, and a synopsis carries no
+    gate to set in any case.
+  - >
+    Witness to a Trial keeps subseries "Lacy Stoltz" although she is not in
+    it, on the strength of the case it sets up and the publisher's own
+    "prequel to The Whistler" label. A filing call, not a spoiler one;
+    recorded in works.yaml's header and the work's note.
+  - >
+    grisham-mississippi-legislature-1983 cites "Sycamore Row's contested
+    chancery-court race" as an echo of the statehouse years. Not a reveal, so
+    out of scope, but it rests on no cited source.
+  - >
+    The Innocent Man and its lifeEvent both centre Ron Williamson alone,
+    matching the book's title and jacket. Dennis Fritz was convicted of the
+    same murder, cleared by the same DNA, and covered in the book. Worth a
+    sentence if the entry is ever expanded.
