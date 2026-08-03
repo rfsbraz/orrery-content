@@ -3,19 +3,20 @@
 # Tolkien's bibliography needs no subseries at all - see works.yaml's own
 # header for why - so every work in this wing carries subseries: null.
 #
-# This is also the widest "two famous books vs. everything else" gap the
-# request issue flags in the whole catalogue: The Hobbit and The Lord of
-# the Rings are two of the best-selling novels ever printed, and the
-# other 30 works below - most of it published only after Tolkien's 1973
-# death, edited from manuscript by his son - are comparatively obscure even
-# among readers who own both. That gap is exactly what canonTier is doing
-# the work of recording here: 3 core, 11 extended, 18 apocrypha (see
-# works.yaml's own header for the full tier rationale and the History of
-# Middle-earth scope decision in particular).
+# This is also the widest "two famous books vs. everything else" gap in
+# the whole catalogue: The Hobbit and The Lord of the Rings are two of the
+# best-selling novels ever printed, and the other 30 works below - most of
+# it published only after Tolkien's 1973 death, edited from manuscript by
+# his son - are comparatively obscure even among readers who own both.
+# That gap is exactly what canonTier is doing the work of recording here:
+# 3 core, 11 extended, 18 apocrypha (see works.yaml's own header for the
+# full tier rationale and the History of Middle-earth scope decision in
+# particular).
 #
-# features is left unset here: which capabilities this data actually earns
-# is a call that needs the rest of the wing (events, spoiler boundaries) to
-# already exist before it can be made honestly.
+# features is left unset: every capability this data earns (river, wizard,
+# companion, editions) auto-detects correctly from events, orders and
+# editions.yaml alone, so there is nothing here for an explicit override to
+# do.
 #
 # startHere carries five paths, the top end of this catalogue's two-to-five
 # range, because this wing's gap between "the two famous books" and "the
