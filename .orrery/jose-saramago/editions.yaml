@@ -1,0 +1,69 @@
+stage: editions
+summary: >
+  Built editions.yaml from scratch: 46 of 52 works carry a recorded pt-PT
+  edition (18/18 core, 27/31 extended, 1/3 apocrypha), 43 with a verified
+  ISBN-13 and 3 deliberately without one. Discovered Grupo Porto Editora
+  (distinct from LeYa/Caminho) runs a systematic "Obras de José Saramago"
+  paperback reissue of nearly the whole backlist since 2014, confirmed
+  directly on portoeditora.pt product pages and cross-checked against BNP's
+  ipac20 catalogue, which independently shows the same ISBNs across
+  reprints running to 2024-2026. validate.py --slug jose-saramago green,
+  no new warnings.
+produced:
+  editionsAdded: 46
+  isbnsVerified: 43
+  noIsbnByDesign: 3
+  worksWithoutEdition: 6
+counts:
+  coverage: "46/52 (18/18 core, 27/31 extended, 1/3 apocrypha)"
+checkDigitFailures:
+  - >
+    Objecto Quase: BNP's record carries only the ISBN-10 (972-21-0292-3).
+    A naive 978-prefix-and-keep-the-old-check-digit conversion
+    (9789722102923) fails its own check digit; the correctly recomputed
+    ISBN-13 is 9789722102926. Caught by a scripted arithmetic check before
+    writing the file, not by CI.
+sourcingMethod: >
+  Two-tier per entry where possible: portoeditora.pt's own product page
+  (top of the sourcing hierarchy) plus a BNP id.bnportugal.gov.pt permalink
+  independently confirming the same ISBN, publisher and edition statement.
+  37 of 43 ISBN entries carry both; the rest (A Noite; Terra do Pecado;
+  the four Cadernos de Lanzarote volumes, whose BNP records catalogue two
+  volumes at once so cite a re-runnable query instead of a dead permalink;
+  Objecto Quase) rest on one tier alone, each said so in its own note.
+gaps:
+  - "Democracia e Universidade: Spain/Brazil only (Editorial Complutense 2010, UFPA Press 2013); no pt-PT printing found anywhere."
+  - "O Lagarto, Uma Luz Inesperada, O Primeiro Barco: all three sourced in works.yaml to Companhia das Letras (Brazil); no pt-PT edition found in BNP under any title search."
+  - "José Rodrigues Miguéis e José Saramago - Correspondência: Caminho published it per works.yaml's own source, but no BNP catalogue record was found under the title, either author, or the volume's editor (José Albino Pereira)."
+  - "Com o Mar por Meio: sourced in works.yaml to Companhia das Letras (Brazil) only; no pt-PT printing found."
+openQuestions:
+  - >
+    O Evangelho Segundo Jesus Cristo: the ISBN recorded (978-972-0-00581-6)
+    comes from Porto Editora's own live product page plus independently
+    agreeing Wook and Bertrand retail listings (all dated 25-06-2026), but
+    BNP's own most recent catalogue record for the same nominal "2a ed.
+    2026" instead carries the older ISBN 978-972-0-04682-6. Worth a second
+    look with a browser once BNP's catalogue has had time to catch up on
+    this very recent (weeks-old at time of writing) reissue.
+  - >
+    A Jangada de Pedra's 2024 2a ed. (978-972-0-00595-3) adds an epílogo by
+    Saramago himself per BNP's own record - genuinely new back matter, not
+    a reprint. Worth flagging to whoever writes reading-order or
+    spoiler-boundary content: an epilogue added 14 years posthumously
+    means a different textual object than the one most translations are
+    based on.
+  - >
+    A Maior Flor do Mundo has three distinct current Porto Editora
+    illustrated printings (João Caetano 2014, André Letria 2015, Inês
+    Oliveira 2016), each a real, different object per the skill's own
+    "recording more than one edition is allowed" guidance. Only the João
+    Caetano one (continuing Caminho's own last illustrator) is recorded;
+    a future pass could add the other two as genuinely distinct entries
+    rather than a note.
+forStages:
+  visual-metadata: >
+    Every portoeditora.pt product page fetched here (37 of them) carries
+    its own jacket image in the page markup - not checked or recorded here
+    since visual-metadata owns cover sourcing and this file only reads
+    text fields, but portoeditora.pt product pages are a promising primary
+    source to check there (publisher's own site, not a retailer scrape).
