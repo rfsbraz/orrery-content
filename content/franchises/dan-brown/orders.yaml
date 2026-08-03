@@ -1,0 +1,73 @@
+# ADDITIONAL reading orders only. The DEFAULT order - all ten works,
+# publication-chronological - is derived automatically from works.yaml and is
+# NOT listed here.
+#
+# One order ships: the six-novel Robert Langdon series pulled out as its own
+# walkable thread. It reorders nothing against the derived default (all six
+# are different years, no year-tie to resolve) - its whole contribution is
+# isolating the flagship series from the two early standalones, the picture
+# book and the pseudonymous debut sitting around it on the full shelf. Same
+# shape as jose-rodrigues-dos-santos/tomas-noronha-in-order and the Discworld
+# thread orders: a real, named, publisher-grouped series earns a slot even
+# when it changes no positions, because "just this thread" is a materially
+# different reading experience from "the whole shelf" on a ten-work wing.
+#
+# Checked and declined:
+#   - A hand-written "publication order for completionists" order: that IS
+#     the derived default, and writing it by hand would duplicate a computed
+#     view that already updates itself when a work is added (this skill's
+#     own hard rule).
+#   - A "for completionists" grouping of the two early standalones (Digital
+#     Fortress, Deception Point) with 187 Men to Avoid: works.yaml's own
+#     header confirms all three share no character, thread or throughline
+#     with each other or with the Langdon series, so bundling them would not
+#     be documenting a reading practice, it would be inventing one. No source
+#     recommends reading them as a set - the only place they appear together
+#     is retail box sets, which bundle Langdon titles for commerce, the same
+#     non-evidence this skill's own translation-sequence note (and
+#     docs/CURATION.md) warn against for editions. A reader who wants "the
+#     odd ones out" is already served by the derived default; no order is
+#     needed to walk three books that don't relate to each other.
+#   - An in-universe chronological order: unnecessary duplicate. Verified
+#     independently of works.yaml's own header claim - danbrown.com/books/
+#     groups all six under "Robert Langdon Series" in the same order as
+#     publication, and the individual Wikipedia infoboxes for Inferno
+#     ("Robert Langdon #4") and The Secret of Secrets ("Robert Langdon #6")
+#     confirm the numbering tracks publication order throughout. The Robert
+#     Langdon Wikipedia article states plainly that "in the books, the events
+#     of The Da Vinci Code follow those of Angels & Demons" - only the film
+#     adaptations reverse it - so a chronological order here would be the
+#     default order wearing a different name.
+
+- id: dan-brown/robert-langdon-in-order
+  name: The Robert Langdon series, in order
+  type: curated
+  source: canon
+  rationale: >
+    The six [[work:dan-brown/angels-demons|Robert Langdon]] novels
+    (2000-2025), grouped under "Robert Langdon Series" on Brown's own site
+    and numbered #1 through #6 in that same sequence on each novel's own
+    Wikipedia infobox. Publication order and in-story order are the same
+    thing here - Wikipedia's Robert Langdon article states plainly that "in
+    the books, the events of The Da Vinci Code follow those of Angels &
+    Demons" - so this order settles nothing a source disputes; its whole
+    contribution is pulling the flagship thread out from the rest of the
+    shelf. For a reader who wants Langdon and only Langdon: the character's
+    actual debut first, then each later case in the order Brown wrote and
+    set them. The cost: reading only these six skips the two genuinely good
+    standalone thrillers ([[work:dan-brown/digital-fortress|Digital
+    Fortress]], [[work:dan-brown/deception-point|Deception Point]]) and the
+    picture book ([[work:dan-brown/wild-symphony|Wild Symphony]]) that sit
+    around it on the full shelf.
+  orderedWorkIds:
+    - dan-brown/angels-demons
+    - dan-brown/the-da-vinci-code
+    - dan-brown/the-lost-symbol
+    - dan-brown/inferno
+    - dan-brown/origin
+    - dan-brown/the-secret-of-secrets
+  sources:
+    - https://danbrown.com/books/
+    - https://en.wikipedia.org/wiki/Robert_Langdon
+    - https://en.wikipedia.org/wiki/Inferno_(Brown_novel)
+    - https://en.wikipedia.org/wiki/The_Secret_of_Secrets_(Brown_novel)

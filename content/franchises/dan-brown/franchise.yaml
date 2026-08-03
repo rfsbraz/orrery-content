@@ -51,3 +51,80 @@ sources:
   - https://en.wikipedia.org/wiki/Dan_Brown
   - https://en.wikipedia.org/wiki/Robert_Langdon
   - https://danbrown.com/books/
+
+# "Where to start" - a genuine, real reader debate for this specific shelf,
+# not a manufactured menu. Angels & Demons was written and published first
+# and introduces Langdon; The Da Vinci Code is the far more famous, culturally
+# dominant entry, and a large, real body of reader discussion holds that it
+# needs no prior reading. Both paths below are sourced rather than picked by
+# feel - see the citation above each. No path is offered for
+# Digital Fortress, Deception Point, 187 Men to Avoid or Wild Symphony: no
+# source recommends any of them as a door into this author's work rather than
+# a book to read once inside it (checked - see orders.yaml's header on the
+# first three; Wild Symphony has age-range guidance for the book itself but
+# no citable "start Dan Brown here" advice).
+startHere:
+  paths:
+    - id: everything-in-order
+      title: Everything, in order
+      description: >
+        All ten books, chronologically from 1995 to 2025: the pseudonymous
+        debut, the two early standalone thrillers, the six-novel Robert
+        Langdon series, and the picture book that sits outside the thrillers
+        entirely.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+
+    # Source: the 304-comment Goodreads thread "The Da Vinci Code, or Angels
+    # and Demons?" (goodreads.com/topic/show/712143) splits readers roughly
+    # down the middle, several calling The Da Vinci Code's writing and story
+    # the stronger of the two; the pinned Goodreads Q&A "should you read
+    # angels and demons first" (goodreads.com/questions/178301) settles,
+    # across dozens of real answers, on "not necessary, no" - both books are
+    # written to work as standalones, and The Da Vinci Code makes only a
+    # couple of passing references back to the earlier book.
+    - id: start-with-the-da-vinci-code
+      title: Start with The Da Vinci Code
+      description: >
+        His best-known book by a wide margin - the one that made his name a
+        household word and the reason most people have heard of him at all.
+        A self-contained case: a murdered curator, a trail of codes hidden in
+        the Louvre's own collection, no earlier Langdon novel required.
+      workIds:
+        - dan-brown/the-da-vinci-code
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        It carries a couple of passing references to Langdon's life between
+        this book and Angels & Demons, which read differently if you go back
+        to that one afterward - the cost of skipping the character's actual
+        debut for his most famous case instead.
+
+    # Source: https://gobookseries.com/authors/dan-brown/ names Angels &
+    # Demons its "Best Starting Point" for the Robert Langdon series, and
+    # danbrown.com/books/ itself groups the "Robert Langdon Series" opening
+    # on Angels & Demons. The counter-view above is equally real; this path
+    # is for the reader who wants the character's own chronology, not a claim
+    # that it is the one correct door in.
+    - id: start-with-langdon-from-the-start
+      title: Meet Langdon from the beginning
+      description: >
+        The [[work:dan-brown/angels-demons|Robert Langdon]] series exactly as
+        Brown wrote and set it: a Vatican conclave and a stolen canister of
+        antimatter first, then the codes hidden in the Louvre, Washington,
+        Florence, Bilbao and Prague that follow across five more books.
+      workIds: null
+      orderId: dan-brown/robert-langdon-in-order
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        The cost: six books is a longer commitment than trying his single
+        most famous case first, and Angels & Demons carries less cultural
+        name recognition than The Da Vinci Code - the tradeoff for meeting
+        Langdon, and the series' own chronology, from its actual start.
