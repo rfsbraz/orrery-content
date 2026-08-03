@@ -1,0 +1,91 @@
+stage: visual-metadata
+summary: >
+  Sourced cover images for 27/52 works (52%; 16/18 core novels, 89%), a
+  franchise header and an author portrait, all from Open Library covers or
+  Wikimedia Commons with a read licence. lookup.py's --check-covers path
+  doesn't do author-level candidate discovery (only verifies covers already
+  declared), so candidate generation ran as two batched OpenLibrary
+  search/editions.json sweeps (one script call each) instead, replacing what
+  would otherwise have been ~50-100 sequential per-work fetches. Every image
+  URL was fetched with ?default=false and looked at individually - eight of
+  the ~33 first-pass candidates turned out to be blank placeholders, one
+  carried a piracy-scan watermark banner, and three were scanned title/
+  colophon pages misfiled as covers on Open Library itself; all rejected and
+  the working candidate list rebuilt around what survived. validate.py
+  --slug jose-saramago is green (0 errors; only pre-existing warnings, none
+  new); 27 unique cover URLs for 27 covered works, no duplicates.
+coverage:
+  covers: "27/52 (52%)"
+  core: "16/18 (89%) - only terra-do-pecado and caim lack a cover"
+  header: "1/1, franchise.yaml"
+  portrait: "1/1, authors/jose-saramago.yaml"
+toolCalls: >
+  Candidate generation: lookup.py's own author-sweep (--author, no
+  --check-covers) once, then a custom OpenLibrary search.json batch (52
+  titles in one script run) plus a follow-up editions.json/candidate-ranking
+  pass (one run) plus one keyless GoogleBooks batch attempt (all 429,
+  unusable without GOOGLE_BOOKS_API_KEY - not configured in this
+  environment) plus one Bertrand/Wook/AlmaDosLivros/Presença by_author sweep
+  (confirmed a few extended-tier PT editions exist but are watermarked or
+  not a source to hotlink; none usable). All cover-candidate fetching and
+  every cover download/verification ran as batched script calls, not
+  per-work agent fetches - well inside this stage's own cautionary tale (a
+  prior wing's visual-metadata made 176 sequential calls on this same
+  catalogue). Portrait and header used two direct Commons API calls
+  (category sweep, file metadata) plus Wikipedia pageimages lookups.
+rejectedOnInspection:
+  - "que-farei-com-este-livro (cover 11454859): a generic library placeholder captioned on its own face 'this is not the actual book cover'"
+  - "in-nomine-dei's Portuguese Caminho cover (3957633) and a Brazilian Ronsel alternate (10471133): the identical placeholder template as above, different cover id"
+  - "os-poemas-possiveis (12746305): a scanned colophon/title page, not a jacket"
+  - "caim (9642663), Open Library's only cover for the work: a 'PDL - Projeto Democratização da Leitura' scan-credit banner burned into the image, same laundering problem as a retailer watermark"
+  - "as-intermitencias-da-morte's first candidate (8619758): a scanned copyright/colophon page from the same edition record as the good cover (14422897) - the search API surfaced the bad one first"
+  - "o-homem-duplicado: two higher-resolution Portuguese candidates (8701877, 12811014) were both scanned title pages; kept the smaller (128x196) but genuine English Vintage cover instead"
+gaps: >
+  25 works ship without a cover, each with a one-line reason on the entry
+  (data-decision comment, not a diary note): 9 have no Open Library record
+  at all or one that resolves to a blank placeholder with no rescuable
+  alternate edition (terra-do-pecado, o-ano-de-1993, deste-mundo-e-do-outro,
+  as-opinioes-que-o-dl-teve, folhas-politicas, all five Cadernos de
+  Lanzarote I-V minus none rescued, ultimo-caderno-de-lanzarote,
+  don-giovanni, a-estatua-e-a-pedra, democracia-e-universidade,
+  o-silencio-da-agua, uma-luz-inesperada, o-primeiro-barco,
+  jose-rodrigues-migueis correspondence, poetica-dos-cinco-sentidos); 3
+  (a-noite, a-maior-flor-do-mundo, o-lagarto) have a confirmed real
+  Portuguese edition on Wook's own catalogue but Wook covers are watermarked
+  and not a source to hotlink from, so they stay bare rather than borrow one;
+  caim and que-farei-com-este-livro and os-poemas-possiveis had a candidate
+  that was rejected on inspection with nothing to replace it.
+notableChoices:
+  spoilerSafe: >
+    a-caverna's cover (a Spanish edition, stylised flame/silhouette) and
+    as-intermitencias-da-morte's (Caminho pt-PT, a skull motif) were checked
+    against spoiler-audit's warning - neither shows the cave chamber or a
+    cellist.
+  jointAuthorship: >
+    com-o-mar-por-meio's only Open Library cover credits Jorge Amado alone
+    (his name leads the joint byline on Open Library's edition record);
+    confirmed by inspection it is the correct book - the jacket itself
+    carries both names - and used it rather than treating the author
+    mismatch as disqualifying.
+  header: >
+    Franchise header is the Casa dos Bicos in Lisbon (Fundação José
+    Saramago's home, banner naming it visible on the façade) - reads as the
+    whole archive rather than one book. Rejected: the Palácio Nacional de
+    Mafra (too tied to Memorial do Convento specifically) and an Azinhaga
+    birthplace monument photo (only small near-square crops on Commons).
+  portrait: >
+    The Siena 1999 photograph both English and Italian Wikipedia use as
+    their own infobox image (CC BY-SA 4.0, own work); Portuguese
+    Wikipedia's infobox picture is a 221x239 near-square crop, checked and
+    rejected as too small and too tight to use as a portrait.
+forStages:
+  translation: >
+    No prose changed; three data-decision comments were added inside
+    works.yaml entries (terra-do-pecado, caim, etc.) and are curator-only,
+    never rendered - no overlay impact.
+  editions: >
+    Not touched (editions.yaml is out of scope for this stage and was
+    running in a parallel worktree). Two data points worth carrying over if
+    editions gets built later: as-intermitencias-da-morte's Caminho pt-PT
+    edition is Open Library key /books/OL22749431M; com-o-mar-por-meio's
+    edition (Companhia das Letras) is /works/OL26415668W.
