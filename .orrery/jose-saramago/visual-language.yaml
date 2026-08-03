@@ -1,0 +1,85 @@
+stage: visual-language
+summary: >
+  Found the wing's art: block already fully written and committed at scaffold
+  time (d2cf217) - not the normal shape of this stage, which usually finds
+  art empty. Verified rather than trusted it: read it against the skill's
+  six-field bar, ran theme_digest.py --exclude jose-saramago for adjacency,
+  and found one real collision the wing's own header comment had not checked
+  for (it only compares itself to the other three Lusophone wings). Fixed
+  that one field; left the rest as scaffold wrote it. validate.py is green
+  catalogue-wide (0 errors); asset_audit.py jose-saramago reports art:yes and
+  lists all 23 jobs.
+visualLaw:
+  emblem: >
+    A single pale, unlit window in a black volcanic wall at night - no
+    figure. Fuses the two real anchors: 1992 Lanzarote exile (black basalt)
+    and Ensaio sobre a Cegueira (1995, his widest-read novel, written there:
+    white blindness).
+  motifs: >
+    Historical-novel material (baroque scaffolding/unfinished stonework -
+    Mafra, Memorial do Convento; registry ledgers, manuscript pages - Todos
+    os Nomes) sits beside allegorical material (an empty stretch of white or
+    pale grey for total blindness) - the historical/allegorical tension the
+    issue asked for is built into the motif list, not asserted in prose.
+  lineCharacter: >
+    Rewritten this stage: firm dip-pen line, solid unmodulated black, no
+    cross-hatching - a two-value binary (ink/paper) standing for the
+    basalt/blindness edge, explicitly not a print-medium homage.
+  accentUse: deep carmine (#8a1f24) on exactly one element, never a fill.
+  avoid: >
+    Azulejo/fado cliches, lush greenery, devotional iconography played
+    straight, literal blindfolds/bandages, and (added this stage)
+    scratchboard/woodcut cut-away texture.
+distinctness:
+  found: >
+    theme_digest.py --exclude jose-saramago showed cormac-mccarthy and
+    stephen-king both share displayFace fraunces and a near-black bg within a
+    few RGB points of this wing's #141311 (mccarthy #100f0d, king #15110d).
+    Reading both in full: the shipped lineCharacter said "closer to woodcut
+    than watercolour wash," and King's own lineCharacter independently says
+    "coarse woodcut, cut rather than drawn" - same word, nearest wing by face
+    and bg value, on the field the skill calls most load-bearing. Not caught
+    by theme_digest's "already claimed" list (exact hex/enum matches only,
+    not prose) or by this wing's header comment (checks only the 3 other
+    Lusophone wings).
+  fixed: >
+    Dropped the woodcut comparison for a dip-pen/filled-ink description, and
+    added an avoid line naming scratchboard/woodcut cut-away as King's
+    register, not this one - the same "already this catalogue's register for
+    a different author" pattern McCarthy's own avoid list uses against Karin
+    Slaughter.
+  accentHue: >
+    Checked numerically: saramago #8a1f24 is hue 357 (near-true red); nearest
+    accents (king hue 11, mccarthy 23, jose-rodrigues-dos-santos 5, rowling 7)
+    cluster 5-23, an orange-red family this carmine sits outside. No
+    collision, no change (palette is scaffold's, not this stage's).
+  oneSentence: >
+    King's Maine is dread in the ordinary, cut subtractively from black;
+    McCarthy's borderland is dry brush scattering into ash; Saramago's wing is
+    an additive filled-ink binary of black basalt and white blindness with no
+    genre incident at all - registry offices and unfinished stonework, not
+    storms or violence.
+notes: >
+  Did not touch palette/preset/displayFace/signature/notes per the skill's
+  boundary, even though the header comment's adjacency check is now
+  incomplete (3 Lusophone wings only, not mccarthy/king) - that comment is
+  outside this stage's footprint (art only).
+forStages:
+  art-rotation: >
+    Carrying forward spoiler-audit's constraint unchanged: A Caverna and As
+    Intermitencias da Morte must not be illustrated on their endings (no cave
+    chamber, no cellist, no Death falling for a man). Safe imagery per that
+    handoff: the pottery workshop/Center for A Caverna, Death's apartment
+    with scythe and filing cabinets for As Intermitencias. This wing's own
+    motifs (registry ledgers, filing shelves) already supply neutral imagery
+    for the latter for free.
+  visual-metadata: >
+    Same constraint for any licensed cover blurb pulled in - do not let
+    jacket copy reintroduce what spoiler-audit's synopsis rewrite removed.
+  wing-audit: >
+    Worth a second look: this wing's art: block existed at scaffold time,
+    fully formed, which is not this pipeline's normal shape. Content read as
+    sound once checked (met the bar on 5/6 fields, needed one real fix), but
+    how it got there before this stage ran is worth confirming isn't a
+    process gap elsewhere. Also still open: the header comment's adjacency
+    check (mccarthy/king), out of this stage's footprint to fix.
