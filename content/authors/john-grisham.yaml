@@ -1,7 +1,26 @@
 # Global author entity. Authors are referenced by id from franchises and works
 # (authorIds / withAuthorIds), so the same person resolves the same everywhere.
 # Author-LIFE events live here (they follow the person); franchise-specific
-# events would stay in content/franchises/john-grisham/events.yaml (none yet).
+# events stay in content/franchises/john-grisham/events.yaml (the 1990s
+# legal-thriller boom, shared with Scott Turow's readership rather than
+# personal to Grisham).
+#
+# lifeEvents span 1955-2023: two terms in the Mississippi legislature
+# (1983-1990); A Time to Kill's rejection by roughly 28 publishers and its
+# 5,000-copy debut (1989); The Firm's pre-publication Hollywood bidding war
+# (1990); the one lawsuit Grisham tried after leaving the bar, honoring a
+# commitment made before he was famous (1996); the youth ballpark he built
+# in Virginia the same year, the source of the baseball thread running
+# through several later books (1996); the Ron Williamson obituary that
+# becomes his first nonfiction book and the start of his wrongful-
+# conviction advocacy (2004); meeting Jim McCloskey, who turns that
+# advocacy into board seats, a novel and a co-authored book (2009); a New
+# York Times op-ed for a Guantanamo detainee (2013); the 2014
+# sentencing-comments controversy and its next-day apology; a December 2015
+# TEDx talk introducing The Tumor; and joining the Authors Guild's 2023
+# copyright suit against OpenAI. No sourced, load-bearing fact turned up
+# for 2016-2019 or 2020-2022; the press record for those years is book
+# tours and bestseller-list coverage, not aura.
 #
 # Living author (born 1955). Single confirmed byline throughout his career:
 # no pseudonym, pen name or ghostwriting history was found anywhere in the
@@ -33,6 +52,9 @@ bio: >
 pseudonyms: []
 lifeEvents:
   - id: grisham-born-1955
+    organisation: full-bleed-vista
+    illustration_type: establishing-landscape
+    images_required: 1
     date: 1955-02-08
     title: Born in Jonesboro, Arkansas
     impact: low
@@ -43,7 +65,35 @@ lifeEvents:
     spoilerAfter: null
     sources:
       - https://en.wikipedia.org/wiki/John_Grisham
+  - id: grisham-mississippi-legislature-1983
+    organisation: beside
+    illustration_type: workplace-workshop
+    images_required: 1
+    date: 1983
+    dateRange: "1983-1990"
+    title: Serves two terms in the Mississippi House of Representatives
+    impact: med
+    description: >
+      Elected as a Democrat to the Mississippi House of Representatives for
+      DeSoto County's 7th district, serving from 1983 to 1990 while
+      practicing law in Southaven. By his second term he held the vice
+      chairmanship of the Apportionment and Elections Committee alongside
+      seats on the Insurance, Judiciary "A" and Military Affairs committees,
+      and backed an unsuccessful bid for the House speakership in 1987; the
+      incoming speaker's committee reshuffle afterward left him with lighter
+      duties, freeing time he spent finishing The Firm. He chose not to seek
+      re-election in 1990, closing his law office and moving his family to
+      Oxford to write full time. Statehouse politics and small-town judicial
+      elections recur throughout his fiction afterward, from The Brethren
+      and The Appeal to Sycamore Row's contested chancery-court race.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/John_Grisham
+      - https://achievement.org/achiever/john-grisham/
   - id: grisham-witnesses-1984-trial
+    organisation: immersion
+    illustration_type: symbolic-still-life
+    images_required: 1
     date: 1984
     title: Witnesses a child rape victim's testimony at the DeSoto County courthouse
     impact: high
@@ -61,6 +111,224 @@ lifeEvents:
     sources:
       - https://en.wikipedia.org/wiki/A_Time_to_Kill_(Grisham_novel)
       - https://www.jgrisham.com/a-time-to-kill
+  - id: grisham-time-to-kill-rejected-1989
+    organisation: layered-stack
+    illustration_type: archive-stack
+    images_required: 1
+    date: 1989
+    title: A Time to Kill is turned down by roughly 28 publishers before a 5,000-copy printing
+    impact: high
+    description: >
+      After four years writing before dawn and on weekends around his law
+      practice and legislative duties, Grisham's finished manuscript for A
+      Time to Kill is rejected by roughly 28 publishers. Wynwood Press, a
+      small press, eventually agrees to a modest 5,000-copy printing in
+      1989; without a major publisher's marketing behind it, Grisham goes
+      directly to booksellers himself to get the novel onto shelves. It
+      still sells poorly, and when the print run does not move, he collects
+      the unsold stock and destroys it. The book only becomes a bestseller
+      two years later, on the strength of The Firm.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/A_Time_to_Kill_(Grisham_novel)
+      - https://achievement.org/achiever/john-grisham/
+  - id: grisham-firm-hollywood-deal-1990
+    organisation: mosaic
+    illustration_type: press-media-collage
+    images_required: 1
+    date: 1990
+    title: A bootlegged Firm manuscript starts a Hollywood bidding war
+    impact: high
+    description: >
+      Before The Firm has found a publisher, a bootlegged copy of the
+      manuscript begins circulating among Hollywood studios and several
+      start bidding against each other for the film rights. Paramount closes
+      the deal for roughly $600,000 while the novel is still unpublished.
+      Within weeks, Doubleday - one of the many publishers that had rejected
+      A Time to Kill - signs Grisham for The Firm; the novel is published in
+      1991, sells more than seven million copies, and turns the little-known
+      Mississippi novelist into one of the best-selling authors alive almost
+      overnight.
+    spoilerAfter: null
+    sources:
+      - https://oa.candela.io/magazine/issue-3-winter-1993/john-grisham
+      - https://en.wikipedia.org/wiki/The_Firm_(novel)
+      - https://achievement.org/achiever/john-grisham/
+  - id: grisham-railroad-verdict-1996
+    organisation: artifact-spread
+    illustration_type: document-facsimile
+    images_required: 1
+    date: 1996-01-24
+    title: Returns to the courtroom once, for a promise made before he was famous
+    impact: med
+    description: >
+      Grisham had agreed to represent the family of Illinois Central
+      Railroad brakeman John Wayne King, killed on the job in 1991, before
+      he retired from law to write full time. He honors that commitment in
+      January 1996, setting aside work on The Runaway Jury to try the
+      wrongful-death case in person. The jury deliberates two hours and
+      awards King's widow, Barbara, $683,500 - the biggest verdict of
+      Grisham's legal career, and the only case he has tried since leaving
+      the Mississippi bar.
+    spoilerAfter: null
+    sources:
+      - https://www.deseret.com/1996/1/25/19221210/grisham-wins-case-but-will-stick-to-writing/
+      - https://en.wikipedia.org/wiki/John_Grisham
+  - id: grisham-cove-creek-park-1996
+    organisation: full-bleed-vista
+    illustration_type: place-portrait
+    images_required: 1
+    date: 1996-04
+    title: Builds a $3.8 million youth ballpark for a county that had none
+    impact: med
+    description: >
+      After moving his family to a farm outside Charlottesville, Virginia,
+      Grisham finds local children driving twenty miles to Charlottesville,
+      Crozet or Lovingston just to find a field to play on. He personally
+      funds Cove Creek Park, a six-field youth baseball and softball complex
+      in rural Covesville that opens in 1996 at a cost of $3.8 million, and
+      coaches his own children's teams there. He funds Little League fields
+      back in Oxford, Mississippi the same way. Baseball, a boyhood ambition
+      he gave up at eighteen, keeps recurring in his fiction and film work
+      afterward - A Painted House, Bleachers, Calico Joe, Playing for Pizza,
+      Sooley, and the screenplay for Mickey.
+    spoilerAfter: null
+    sources:
+      - https://scholar.lib.vt.edu/VA-news/ROA-Times/issues/1996/rt9604/960430/04300108.htm
+      - https://www.law.com/almID/900005520079/
+      - https://en.wikipedia.org/wiki/John_Grisham
+  - id: grisham-innocent-man-obituary-2004
+    organisation: floating-object
+    illustration_type: isolated-object
+    images_required: 1
+    date: 2004-12-09
+    title: A New York Times obituary becomes his first work of nonfiction
+    impact: high
+    description: >
+      Grisham reads Ron Williamson's obituary in the New York Times on
+      December 9, 2004: a small-town Oklahoma baseball star wrongly
+      convicted of murder, sent to death row, and exonerated by DNA
+      evidence five days before his scheduled execution. Within hours he
+      calls Williamson's family, who agree to let him tell the story, and
+      calls his publisher to say he has his next book - nonfiction, a form
+      he had never written. "Never in my most creative moment could I have
+      come up with a story like this," he says; he has also said that
+      written as fiction, the twists would have seemed too unbelievable to
+      buy. The result, The Innocent Man (2006), is Grisham's first
+      nonfiction book and the true opening chapter of the wrongful-
+      conviction advocacy that runs through the rest of his career.
+    spoilerAfter: null
+    sources:
+      - https://www.npr.org/2006/10/11/6248147/grisham-traces-exoneration-of-an-innocent-man
+      - https://www.oxygen.com/martinis-murder/why-john-grisham-wrote-the-innocent-man-ron-williamson-obituary
+  - id: grisham-meets-mccloskey-2009
+    organisation: beside
+    illustration_type: network-constellation
+    images_required: 1
+    date: 2009
+    title: Meets Jim McCloskey, and the fight for the wrongly convicted becomes his own
+    impact: high
+    description: >
+      Jim McCloskey, a former corporate consultant turned prison chaplain
+      who founded Centurion Ministries to overturn wrongful convictions,
+      invites Grisham to speak at a Centurion Ministries gala in 2009. The
+      meeting starts a friendship: Grisham joins the Innocence Project's
+      board of directors and, later, Centurion Ministries' own board,
+      testifies before Congress on wrongful convictions, and models The
+      Guardians (2019) - a legal-aid lawyer clearing the innocent - on
+      McCloskey himself. Fifteen years after they meet, the two co-author
+      Framed (2024), splitting ten true wrongful-conviction cases between
+      them.
+    spoilerAfter: null
+    sources:
+      - https://centurion.org/2024/10/18/in-framed-john-grisham-teams-with-an-activist-to-spotlight-real-life-injustice/
+      - https://en.wikipedia.org/wiki/John_Grisham
+      - https://www.jgrisham.com/bio/
+  - id: grisham-guantanamo-oped-2013
+    organisation: artifact-spread
+    illustration_type: document-facsimile
+    images_required: 1
+    date: 2013-08-11
+    title: Writes a New York Times op-ed for a Guantanamo fan he tracked down
+    impact: med
+    description: >
+      After learning that some of his own novels are banned reading inside
+      Guantanamo Bay, Grisham tracks down one of the detainees who wanted to
+      read them - Nabil Hadjarab, an Algerian held without charge for eleven
+      years - and writes a New York Times op-ed on August 11, 2013 arguing
+      for his release, an apology and compensation. The op-ed draws both
+      support and pointed rebuttals of its account of Hadjarab's case;
+      either way, it is Grisham putting his growing wrongful-detention and
+      wrongful-conviction advocacy directly under his own byline rather than
+      into his fiction.
+    spoilerAfter: null
+    sources:
+      - https://www.abajournal.com/news/article/john_grisham_backs_release_of_one_of_his_fans_a_gitmo_detainee
+      - https://www.salon.com/2013/08/11/john_grisham_calls_for_justice_for_guantanamo_bay_detainees/
+      - https://www.washingtonexaminer.com/red-alert-politics/1600546/john-grishams-account-of-the-innocent-guantanamo-detainee-is-mostly-fictional/
+  - id: grisham-child-porn-comments-2014
+    organisation: mosaic
+    illustration_type: press-media-collage
+    images_required: 1
+    date: 2014-10-16
+    title: Draws backlash over prison-sentencing comments, and apologizes within a day
+    impact: med
+    description: >
+      Promoting Gray Mountain in an interview published by The Telegraph,
+      Grisham argues that U.S. courts have gone too far sentencing some
+      offenders - grouping child-pornography viewers together with the
+      young Black men on minor drug charges and the white-collar defendants
+      he says are also over-sentenced, and recounting a law-school friend's
+      own child-pornography conviction. The remarks, read by many as
+      minimizing child pornography offenses, draw immediate and widespread
+      backlash. Grisham apologizes within a day: "Anyone who harms a child
+      for profit or pleasure...should be punished to the fullest extent of
+      the law...I regret having made these comments, and apologize to all."
+    spoilerAfter: null
+    sources:
+      - https://www.npr.org/sections/thetwo-way/2014/10/17/356889610/book-news-john-grisham-backs-down-from-comments-on-child-pornography
+      - https://www.cbsnews.com/news/john-grisham-apologizes-for-child-pornography-comments/
+      - https://www.cnn.com/2014/10/16/showbiz/celebrity-news-gossip/john-grisham-child-pornography
+  - id: grisham-tedx-focused-ultrasound-2015
+    organisation: beside
+    illustration_type: public-event-tableau
+    images_required: 1
+    date: 2015-12
+    title: Calls The Tumor "the most important book I've ever written" from a TEDx stage
+    impact: med
+    description: >
+      At a TEDx Charlottesville event in December 2015, Grisham - a
+      longtime board member of the Focused Ultrasound Foundation - appears
+      alongside its chairman, Dr. Neal Kassell, to explain his support for
+      the experimental, incision-free cancer treatment, and announces the
+      free release of The Tumor, a novella imagining a brain-cancer
+      patient's outcome with and without the technology. "It's the most
+      important book I've ever written," he tells the audience, which
+      includes a Parkinson's patient describing how a focused-ultrasound
+      trial ended her uncontrollable shaking.
+    spoilerAfter: null
+    sources:
+      - https://appliedradiology.com/articles/best-selling-author-john-grisham-writes-novel-about-focused-ultrasound
+  - id: grisham-openai-lawsuit-2023
+    organisation: artifact-spread
+    illustration_type: document-facsimile
+    images_required: 1
+    date: 2023-09-20
+    title: Joins the Authors Guild's copyright suit against OpenAI
+    impact: med
+    description: >
+      Grisham is one of 17 named plaintiffs - alongside Scott Turow, George
+      R.R. Martin, Jodi Picoult and Jonathan Franzen among others - in a
+      class-action lawsuit the Authors Guild files
+      against OpenAI in Manhattan federal court, accusing it of copying
+      their novels "wholesale, without permission or consideration" to
+      train ChatGPT. It is the first time Grisham's name appears attached
+      to the industry's fight over generative AI rather than to a courtroom
+      of his own invention.
+    spoilerAfter: null
+    sources:
+      - https://authorsguild.org/news/ag-and-authors-file-class-action-suit-against-openai/
+      - https://www.cnbc.com/2023/09/20/john-grisham-george-rr-martin-other-prominent-authors-sue-openai.html
 sources:
   - https://en.wikipedia.org/wiki/John_Grisham
   - https://www.jgrisham.com/
