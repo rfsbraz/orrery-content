@@ -3,9 +3,6 @@
 # sets (fraunces | spectral | sourceSerif; beam | thread | rule | none) -
 # anything else is silently swapped for fraunces/thread at render, which is
 # what happened to five of the first six wings this catalogue built.
-# theme.art (the generated-sketch visual language: emblem, motifs,
-# atmosphere) has no entry here. An invented placeholder would cost the
-# wing its look at render with nothing to show for it.
 preset: legendarium
 palette:
   bg: "#12160f"       # near-black forest green - Mirkwood, not a cave
@@ -27,3 +24,114 @@ signature: beam       # a single bold rail the works string along, the same
                       # edition) are still all pieces of the one legendarium
                       # Tolkien began in 1914 and his son kept excavating
                       # until 2018 - a continuous rail, not scattered threads.
+# This wing shares its gold/bronze accent family and its fantasy-epic shelf
+# position with brandon-sanderson (#c8a24a, instrument/mechanism) and
+# robert-jordan (#c8a24a, thread/weave) - the two wings theme_digest.py
+# flags as the nearest neighbours, and both already split the obvious
+# "engineered vs. woven" territory between them. This wing is neither: what
+# is actually distinctive about Tolkien's bibliography, read whole in
+# works.yaml and eras.yaml, is that 20 of its 32 works reached print only
+# after his 1973 death, excavated from his own handwritten drafts by his
+# son over the following 45 years (works.yaml's own STRUCTURAL CALL ONE;
+# Christopher's foreword to the 1983 Book of Lost Tales - "I had had to
+# invent some passages"). That is a textual-archaeology identity - paper,
+# ink, revision, a manuscript passed between two hands across decades -
+# not a magic-system diagram and not a loom. The line is drawn as a
+# revising scholar's hand - a correction laid back over the first stroke -
+# where Sanderson draws a ruled instrument and Jordan draws flowing thread; the
+# paper is a working foolscap leaf where Sanderson's is blueprint vellum
+# and Jordan's is homespun cloth. Tolkien's own lifelong habit of private
+# invented alphabets (the 1909 "Book of the Foxrook," Nevbosh, Naffarin -
+# see jrr-tolkien.yaml's jrr-tolkien-book-of-the-foxrook-1909) supplies one
+# motif below, but only as a documented childhood practice rendered as
+# unnamed private notation - never as Tolkien's actual Tengwar, Cirth or
+# Angerthas, which are the books' own established in-world scripts and are
+# out of bounds for the same reason a cover or a film still is (see
+# art.avoid, and the skill's own ban on the books' glyphs as a motif). The
+# One Ring and the Silmarils are deliberately not the emblem or the
+# accent: they are the single most obvious reach for any Tolkien
+# illustration, which is exactly why the interface accent's own comment
+# above calls it "a ring, not a crown jewel" and why the artwork goes
+# looking for the family's less obvious, better-sourced object instead.
+art:
+  emblem:
+    object: >
+      A slim bundle of handwritten foolscap pages tied with plain string,
+      its topmost sheet carrying two visibly different hands and inks -
+      one making corrections and marginal insertions over the other.
+    why: >
+      The literal, sourced shape of this wing's whole authorship question
+      (works.yaml's STRUCTURAL CALL ONE): Tolkien posted draft chapters of
+      The Lord of the Rings to Christopher for comment even while
+      Christopher was training as an RAF pilot (christopher-tolkien.yaml's
+      christopher-tolkien-first-reader-1930), and Christopher's own
+      45-year editorial practice was exactly this - annotating, arranging
+      and sometimes completing his father's drafts, by his own admission
+      inventing passages to close gaps in The Silmarillion. Two hands on
+      one page, not a tool one person uses alone, is what actually
+      distinguishes this bibliography from every other wing on this shelf.
+  motifs:
+    - a manuscript page mid-revision, crossed-out lines and marginal
+      insertions, more than one ink or hand visible on the same sheet
+    - a bundle of handwritten foolscap pages tied with string, passed
+      between two people across years
+    - dictionary slips and index cards filed in rows, the working unit of
+      a philologist's desk
+    - a hand-corrected map with an earlier line still faintly visible
+      beneath the one that replaced it
+    - a private notebook dense with an invented, unnamed alphabet -
+      childhood cipher-invention (Nevbosh, Naffarin), never Tolkien's
+      real Elvish or Dwarvish scripts
+    - mud, wire and a shattered treeline at the edge of an otherwise
+      ordinary English lane or hedgerow
+    - a lamp-lit college room or a garden shed given over entirely to
+      boxes and shelves of paper
+  atmosphere: >
+    Academic and archival rather than heroic-fantasy or storybook-cosy: a
+    philologist's desk under a reading lamp, paper and ink and quiet
+    accumulation across decades, an heir returning to a box of drafts left
+    by someone now gone. Where landscape appears it is real English or
+    French geography, not a fantasy vista - wet marshland, a hedgerow, a
+    lit college window, a garden barn stacked with paper - and where the
+    one true rupture behind the legendarium surfaces (the Somme), it
+    registers only as mud, wire and a broken treeline at the frame's edge,
+    never as battle. Not cosy chocolate-box Shire whimsy; not epic-fantasy
+    wonder or magic-glow spectacle; not gothic or cosmic dread - those
+    belong to other wings on this shelf.
+  lineCharacter: >
+    A fountain-pen scholar's hand, fine and consistent on a first pass -
+    but most lines in a finished drawing carry a second, slightly heavier
+    pass laid back over them: an insertion, a correction, a strikethrough,
+    so the drawing itself looks annotated rather than composed in one
+    sitting. Ruled only where the scene's own object is ruled (a
+    manuscript's margin, a map's border), never for the drawing's own
+    outlines, which stay a living, revising hand - the opposite instinct
+    from Sanderson's drafting-instrument straightedge and from Jordan's
+    flowing, interlacing curve.
+  backgroundTexture: >
+    Pale, faintly foxed foolscap or laid academic paper, creased from
+    having been folded and carried, a ruled margin just visible at one
+    edge - the grain of a working manuscript leaf, not blueprint vellum,
+    not homespun cloth, not engraving stock.
+  accentUse: >
+    Restrained bronze-gold on exactly one element per image, most often
+    the string tying a bundle of pages, occasionally a single wax seal or
+    one rubricated initial letter - never a fill or a wash, and never the
+    Ring or a jewel, which are the obvious reach this wing deliberately
+    does not take.
+  avoid:
+    - glowing rings, radiant magic light, dragons in flight, raised
+      swords, crowns, thrones and other generic epic-fantasy poster trims
+    - cosy chocolate-box hobbit-hole picture-book cuteness - round doors
+      and garden whimsy played as twee rather than as the real
+      Warwickshire/Worcestershire countryside it is drawn from
+    - reproducing Tolkien's actual invented scripts (Tengwar, Cirth,
+      Angerthas) or established in-world heraldry (the Ring's inscription,
+      the White Tree, the Eye) - these are the books' own property, not
+      this wing's; the invented-notebook motif must read as private
+      handwriting, never as a designed, legible logo
+    - crystalline or mineral instrument textures and orthographic diagram
+      framing (brandon-sanderson's territory), and woven textile curves or
+      braid/thread motifs (robert-jordan's territory)
+    - a likeness of J. R. R. Tolkien or Christopher Tolkien in any life
+      event - the man is the paper he left, never his own face
