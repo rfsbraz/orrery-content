@@ -74,10 +74,10 @@
 # pieces - the scope match works.yaml's synopsis needs, not a coincidence of
 # convenience.
 #
-# WHAT WAS CHECKED AND NOT SHIPPED (pt-PT). Two Portuguese candidates were
-# found and neither cleared verification, so The Lord of the Rings carries
-# only ONE pt-PT edition below (The Return of the King) rather than a matched
-# three-volume Portuguese set:
+# WHAT WAS CHECKED (pt-PT). The Lord of the Rings carries TWO pt-PT editions
+# below (The Two Towers, The Return of the King), both the same Europa-América
+# 2002 "11ª edição" run - not a matched three-volume Portuguese set, because
+# the Fellowship candidate below stayed out:
 #   - A 2022 "O Senhor dos Anéis: A Sociedade do Anel" (Fellowship) carries
 #     ISBN 978-989-777-392-1 - a 978-989 prefix, which is Portugal's own
 #     registrant range - but its own openlibrary.org/isbn/9789897773921 record
@@ -86,11 +86,10 @@
 #     holds no record at all under this ISBN. Two disagreeing signals and no
 #     way to break the tie: left out rather than shipped.
 #   - A matching "As Duas Torres" (Two Towers) candidate, ISBN
-#     978-972-104-144-8 from the same Europa-America run as the Return of the
-#     King entry below, FAILS its own check digit (digits 9-7-8-9-7-2-1-0-4-1-
-#     4-4 sum to 109, which forces a check digit of 1; the number as printed
-#     ends in 8). Not corrected, not shipped - see docs/CURATION.md's "Wee Free
-#     Men" case for why a failing check digit is never edited to pass.
+#     978-972-104-144-8: digits 9-7-8-9-7-2-1-0-4-1-4-4 sum to 102, forcing
+#     check digit 8, which is what's printed - a valid ISBN-13. Its Open
+#     Library record (openlibrary.org/books/OL18774656M) confirms the same
+#     Europa-América run as the Return of the King entry, so it ships below.
 # No pt-PT candidate for The Hobbit, The Silmarillion or the single-volume
 # LOTR was found. Wook and Bertrand, the two pt-PT retailers with the fullest
 # catalogues, both block automated fetches; a human with a browser on either
@@ -159,6 +158,22 @@
   sources:
     - https://openlibrary.org/isbn/9780261103207
 
+- id: jrr-tolkien/the-lord-of-the-rings/two-towers-europa-america-2002-pt
+  workId: jrr-tolkien/the-lord-of-the-rings
+  isbn13: "9789721041448"
+  language: pt-PT
+  title: "As duas Torres"
+  publisher: Europa-América
+  year: 2002
+  note: >
+    "11ª edição" per its own record - the same long-running Europa-América
+    run as the Return of the King entry below (volume 2 of 3). No verified
+    pt-PT edition of volume 1 exists in this file; see this file's own
+    header for the Fellowship candidate that was checked and why it stayed
+    out.
+  sources:
+    - https://openlibrary.org/books/OL18774656M
+
 - id: jrr-tolkien/the-lord-of-the-rings/return-of-the-king-europa-america-2002-pt
   workId: jrr-tolkien/the-lord-of-the-rings
   isbn13: "9789721041547"
@@ -170,9 +185,10 @@
     "11ª edição" per its own record - a long-running reprint of Europa-América's
     historical Portuguese translation of The Return of the King (volume 3 of 3),
     the same Portuguese publisher this catalogue already cites for other
-    out-of-print Tolkien-era translations. No verified pt-PT edition of
-    volumes 1-2 exists in this file; see this file's own header for the
-    candidates that were checked and why each stayed out.
+    out-of-print Tolkien-era translations (see the Two Towers entry above,
+    volume 2 of the same run). No verified pt-PT edition of volume 1 exists
+    in this file; see this file's own header for the Fellowship candidate
+    that was checked and why it stayed out.
   sources:
     - https://openlibrary.org/isbn/9789721041547
 
