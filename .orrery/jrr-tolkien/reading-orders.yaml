@@ -1,0 +1,57 @@
+stage: reading-orders
+summary: >
+  One order, five startHere paths. jrr-tolkien/chronological
+  (chronological-inuniverse, 7 of 32 works: The Silmarillion, the three
+  Great Tales in their own internal sequence, Unfinished Tales, then the two
+  novels) sources to Tolkien Gateway's "Reading order" article, Mythopoeic
+  Society bibliographer David Bratman's published guide, and two independent
+  reading-guide sites. Rejected as coined: a standalone "essentials" order
+  and a standalone "Great Tales" order - both real and sourced, but each
+  three books long, so both ship as startHere paths (workIds) instead, per
+  this catalogue's path-vs-order line. Full publication order needed no
+  entry (the derived default). Five startHere paths, the top of the 2-5
+  range, for this wing's unusually wide "two famous books vs. everything"
+  gap: the two novels alone; + Silmarillion; the Great Tales as their own
+  arc; the new chronological order; the complete 32-work walk.
+produced:
+  ordersYaml:
+    - id: jrr-tolkien/chronological
+      type: chronological-inuniverse
+      orderedWorkIds: [the-silmarillion, beren-and-luthien, the-children-of-hurin, the-fall-of-gondolin, unfinished-tales, the-hobbit, the-lord-of-the-rings]
+  startHerePaths:
+    - {id: two-novels, workIds: [the-hobbit, the-lord-of-the-rings], fit: {experience: [new], commitment: [taste, arc]}}
+    - {id: the-essentials, workIds: [the-hobbit, the-lord-of-the-rings, the-silmarillion], fit: {experience: [new, returning], commitment: [arc]}}
+    - {id: great-tales, workIds: [beren-and-luthien, the-children-of-hurin, the-fall-of-gondolin], fit: {experience: [returning, completionist], commitment: [arc]}}
+    - {id: chronological, orderId: jrr-tolkien/chronological, fit: {experience: [returning, completionist], commitment: [arc]}}
+    - {id: complete, orderId: default, fit: {experience: [completionist], commitment: [complete]}}
+forStages:
+  spoiler-audit: >
+    Four admission tests now exist, each leaving a reader with a different
+    read/unread set. (1) two-novels and the-essentials both read in the
+    novels' own intended order (Hobbit, LOTR, then optionally Silmarillion)
+    - nothing assumes knowledge the reader wouldn't have yet. (2) great-tales
+    assumes The Silmarillion's outline is already known (its own description
+    says so): a reader here has the compressed Beren/Túrin/Gondolin stories
+    already, before the expanded versions - check no work's synopsis
+    accidentally spoils the other direction. (3) jrr-tolkien/chronological
+    (and its startHere path) is the wing's live spoiler vector: Silmarillion,
+    the Great Tales and Unfinished Tales all precede the two novels, so a
+    reader on it has the Rings' whole history, Sauron's Second Age arc, and
+    Aragorn's/Elrond's/Arwen's ancestry before either novel reveals them
+    gradually. The order's rationale and debated entries name this cost
+    structurally without stating any specific reveal (per SKILL.md §7) -
+    audit that no other wing prose (works.yaml synopses, era descriptions,
+    life events) states one of those reveals plainly enough to spoil a
+    two-novels reader who hasn't reached that point in LOTR, or a
+    chronological reader mid-Silmarillion. (4) default/complete's other 25
+    works are mostly nonfiction/translations/letters - exposure there is
+    biographical (Christopher Tolkien's own choices), not narrative.
+  translation: >
+    No pt-PT overlay exists for this wing yet; all prose above is new and
+    unmirrored. Per the /author stage order, translation runs after this
+    stage and after spoiler-audit and covers it then.
+openQuestions:
+  - "two-novels has no famous-book-trap problem (SKILL.md §10): the two most famous works ARE the right entry point here, confirmed by every guide checked - noted only because the discipline asks the question every time, not because this wing needed a workaround."
+  - "jrr-tolkien/chronological stops at Unfinished Tales; deeper fan chronologies (Bratman's fuller outline, a now-defunct chapter-by-chapter site he cites) go into individual History of Middle-earth chapters. Left out because this catalogue holds HoME as one 1983-1996 project, not dissectable (works.yaml's STRUCTURAL CALL THREE) - a curator taking a different view of that call would need to revisit this order too."
+  - "the-essentials and jrr-tolkien/chronological both place The Silmarillion, at opposite ends (third vs. first) - deliberate and sourced (the order's own debated entry names the-essentials as the majority practice), not an inconsistency, but worth a second look given how much weight startHere carries on this wing."
+  - "No official-publication or author-recommended order exists here, and none was fabricated: Tolkien died four years before The Silmarillion was published, so there is no author FAQ or estate-numbered sequence to cite, only the community/critical-guide sourcing used above."
