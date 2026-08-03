@@ -1,0 +1,142 @@
+stage: eras
+summary: >
+  Shipped two sourced eras, not the zero the prior two stages expected. The
+  1980-1991/1995-2005 shape both handoffs flagged (via Portuguese Wikipedia's
+  prose) turned out to be real, but was re-sourced from scratch against
+  primary documents actually fetched and read, because the Wikipedia
+  paragraph's own citation (a 2007 print magazine dossier, no URL) is
+  unreachable and unverifiable - citation laundering CURATION.md already
+  warns against. validate.py --slug jose-saramago is green (0 errors, 28
+  pre-existing-shape orphan warnings, all judged legitimate - see below).
+produced:
+  eras:
+    - id: the-historical-novels
+      title: The Historical Novels
+      period: "1980-1991"
+      verdict: RECEIVED
+      rung: "1 (author) + 2 (critical, corroborating) + 4 (publishing fact, end boundary)"
+      labelSource: >
+        Coined here (neutral/descriptive) - no source names this run. The
+        SHAPE is Saramago's own: his Nobel autobiography says "the 1980s were
+        entirely dedicated to the Novel" (naming Levantado do Chão as where
+        his signature narrating style "was born", then Baltasar/Blimunda,
+        Ricardo Reis, A Jangada de Pedra, Cerco de Lisboa). Britannica
+        independently groups O Evangelho Segundo Jesus Cristo (1991) with A
+        Jangada de Pedra as sharing the technique of "setting whimsical
+        parables against realistic historical backgrounds" - the basis for
+        extending past Saramago's literal "the 1980s" to include it.
+      boundarySource: >
+        Start (1980): Saramago's own account of where his style was born.
+        End (1991): the Portuguese government's veto of O Evangelho from a
+        European literary prize nomination in 1992 (offensive to Catholics),
+        which sent Saramago into Lanzarote exile - a real, nameable,
+        independently sourced (Guardian obituary) publishing/censorship
+        event, not "because the next thing starts in 1992."
+    - id: the-allegorical-novels
+      title: The Allegorical Novels
+      period: "1995-2005"
+      verdict: RECEIVED
+      rung: "2 (critical, two independent obituaries)"
+      labelSource: >
+        Coined here (neutral/descriptive). Shape: NYT's obituary (Fernanda
+        Eberstadt, 2010) - "In his later years, Mr. Saramago's fiction became
+        more starkly allegorical," citing Blindness. Guardian's obituary
+        (Amanda Hopkinson, 2010) - "themes were philosophical and,
+        increasingly, millennial," citing Todos os Nomes and A Caverna. Two
+        independent obituaries citing overlapping examples clears the
+        "breadth, not existence" bar even though neither is a formal
+        periodisation essay.
+      boundarySource: >
+        Start (1995): both obituaries anchor the shift to Ensaio sobre a
+        Cegueira/Blindness explicitly. End (2005): NEITHER obituary states an
+        end year - flagged with a `note:` in the file. The 2005 cutoff is my
+        own reading of the works' content (all six core novels 1995-2005 are
+        set in an unnamed city/country; the next two core novels, A Viagem do
+        Elefante 2008 and Caim 2009, both return to named historical/biblical
+        settings, verified from works.yaml's own already-sourced synopses,
+        not invented for this stage).
+  rejected:
+    - what: >
+        Portuguese Wikipedia's own prose grouping (1980-1991 "historical
+        fact" novels / 1995-2005 "unplaced settings" novels) - the exact
+        shape both prior handoffs pointed at.
+      why: >
+        Its only citation is <ref name="Dossiê">Revista Entre Livros, no. 23,
+        Editora Duetto, Sao Paulo (2007)</ref> - a print magazine with no URL,
+        unreachable and unverifiable this session. Wikipedia's phrasing is not
+        that source's phrasing (CURATION.md's trap registry, section 4); a
+        paraphrase of an unreachable citation does not become sourceable by
+        being repeated. Not used, even though the grouping turned out to
+        match what the- historical-novels/the-allegorical-novels
+        independently support from sources actually read.
+    - what: The 1992 Lanzarote exile as an era boundary/name in its own right.
+      why: >
+        Real and well-documented, but as a life event, not a creative period:
+        "the Lanzarote years" would span 1993 to his 2010 death undifferentiated
+        - 34 of 52 works, including the memoir, all five-plus Cadernos
+        volumes, the blog collection, both correspondence volumes and the
+        final unfinished novel. That fails the rung-4 "fit, not truth" test
+        this skill names explicitly (the Colin Smythe trap) - a true
+        publishing/biographical fact that covers too much to mean anything as
+        an era. It already lives on the author entity's lifeEvents
+        (saramago-lanzarote-exile-1992), which is where it belongs.
+    - what: >
+        The "long silence"/"late bloomer" shape both prior stages' handoffs
+        flagged as worth checking (19 years absent from print 1947-1966 in
+        Saramago's own words on the Nobel site; 30 years absent from the
+        novel 1947-1977 per NYT and Guardian obituaries independently).
+      why: >
+        Genuinely real and well-sourced (rung 1, his own account, corroborated
+        rung 2 by two obituaries) but it is an ABSENCE, not a body of work -
+        there is no era plate to open for a span with nothing published in it.
+        Recorded in the eras.yaml top comment as a documented non-era rather
+        than silently dropped; belongs on lifeEvents, not here.
+  orphans: >
+    28 of 52 works fall outside both eras (validate.py warnings, all reviewed
+    individually): pre-1980 works (the silence and its slow end - poetry,
+    crónicas, Manual de Pintura e Caligrafia, Terra do Pecado itself); the
+    1992-1994 gap (In Nomine Dei, Cadernos de Lanzarote I - the exile year and
+    its immediate aftermath); and everything after 2005 (the memoir, the
+    remaining Cadernos volumes, the blog collection, both correspondence
+    volumes, the children's picture books, Democracia e Universidade, and the
+    final trio A Viagem do Elefante/Caim/Claraboia/Alabardas). None read as an
+    interior gap needing a bridge - each sits outside for a stated reason
+    (precursor, diary/essay/memoir genre the eras don't cover, or - for the
+    final trio - a return to named settings the allegorical run's own
+    boundary excludes). Full list in the wing_digest.py output.
+openQuestions:
+  - >
+    content/franchises/jose-saramago/franchise.yaml's own capabilities
+    comment still says "No eras.yaml" and repeats the now-superseded
+    reasoning (the same Wikipedia-paraphrase concern this stage resolved by
+    re-sourcing from scratch). That file is out of this stage's footprint
+    (eras.yaml only) and is now stale; whichever stage next touches
+    franchise.yaml should update that comment to match.
+  - >
+    Neither era's `sources` list was cross-checked against a Portuguese-
+    language critical source (only English-language obituaries, Britannica,
+    and Saramago's own Nobel autobiography, which is itself bilingual/
+    English-translated on the page fetched here). Searched: English obituaries
+    (NYT, Guardian), Britannica, Nobel Foundation site, Fundação José
+    Saramago's own biography page (pt and en), Portuguese Wikipedia's raw
+    wikitext (to trace the Dossiê citation). Not reached this session: the
+    2007 Revista Entre Livros dossiê itself (print, no URL); a live web
+    search for Portuguese-language academic criticism (session's WebSearch
+    quota was already exhausted by other parallel stages before this one
+    started; DuckDuckGo-lite fallback returned no results/rate-limited on
+    every retry). A Portuguese-criticism sweep (Colóquio/Letras, Público, JL,
+    academic essays) is worth a cheap follow-up and could either add a third
+    era or add corroboration/a real name to these two - not attempted here
+    for lack of a working search path this session, not because it was judged
+    unnecessary.
+forStages:
+  reading-orders: >
+    The two eras give reading-orders a structural hook beyond the existing
+    Cadernos de Lanzarote subseries: "the historical novels" (1980-1991) and
+    "the allegorical novels" (1995-2005) are each internally coherent
+    starting points distinct from each other and from the diaries.
+  event-resonance: >
+    The 1992 censorship/exile event this era's end boundary leans on is
+    already the author's own lifeEvent (saramago-lanzarote-exile-1992, per
+    franchise-research's handoff) - no new event needed, but note the
+    boundary in this file now depends on that lifeEvent's continued accuracy.
