@@ -2,21 +2,22 @@
 # Author-LIFE events live here (lifeEvents) since they follow the person;
 # franchise-specific events stay in content/franchises/jrr-tolkien/events.yaml.
 #
-# lifeEvents is left empty rather than filled with unvalidated guesses:
-# life events carry the same layout fields as franchise events
-# (organisation/illustration_type/images_required), each checked against a
-# fixed catalogue of 16 layout organisations and 25 illustration types, and
-# picking those blind would be inventing data rather than recording it. The
-# sourced biography behind the eventual entries is nonetheless real and
-# substantial: childhood and his parents' deaths, the T.C.B.S. and the
-# First World War (the Somme, trench fever, the two closest T.C.B.S.
-# friends killed, beginning The Book of Lost Tales while convalescing), the
-# Oxford English Dictionary job, the Leeds readership then professorship,
-# the 1925 Rawlinson and Bosworth Professorship at Oxford where The Hobbit
-# and the first two volumes of The Lord of the Rings were written, the
-# 1937 publisher rejection of an early Silmarillion draft that redirected
-# him to write a Hobbit sequel, completing The Lord of the Rings in 1948,
-# his 1972 CBE, Edith's death in 1971 and his own in 1973.
+# lifeEvents dates and quotations are cross-checked between Wikipedia's "J. R.
+# R. Tolkien," "Arthur Tolkien," "The Great War and Middle-earth," "Tolkien's
+# influences" and "The Hobbit" articles (themselves citing Humphrey Carpenter's
+# 1977 authorised biography and Tolkien's own published Letters) and, for the
+# invented-languages habit, "Languages constructed by Tolkien." The one
+# popular claim checked hardest here - that The Lord of the Rings is a First
+# World War allegory - does not hold up: Tolkien's own on-the-record denial is
+# specifically of a SECOND World War allegory (the One Ring read as the atomic
+# bomb), which he rebutted by pointing out the book was substantially finished
+# before atomic weapons existed; what he acknowledged of the First World War
+# is narrower and more personal - a landscape debt (the Dead Marshes, the
+# approach to the Morannon) and a character debt (Sam Gamgee as "a reflexion
+# of the English soldier... of the privates and batmen I knew in the 1914
+# war") - never an allegorical claim on either war. See the
+# jrr-tolkien-somme-tcbs-deaths-1916 and jrr-tolkien-writes-lotr-1937 entries
+# below for where that distinction actually sits in his life.
 id: jrr-tolkien
 name: J. R. R. Tolkien
 aka: ["John Ronald Reuel Tolkien", "Ronald Tolkien"]
@@ -48,7 +49,387 @@ bio: >
   and publishing the vast unfinished body of legendarium material - poems,
   annals, drafts and notes going back to 1914 - that Tolkien left behind.
 pseudonyms: []
-lifeEvents: []
+lifeEvents:
+  - id: jrr-tolkien-born-1892
+    organisation: full-bleed-vista
+    illustration_type: establishing-landscape
+    images_required: 1
+    date: 1892-01-03
+    title: Born in Bloemfontein, son of a bank manager posted to the Orange Free State
+    impact: low
+    description: >
+      Born John Ronald Reuel Tolkien in Bloemfontein, capital of the Orange
+      Free State, where his father Arthur Tolkien managed the local office
+      of the Bank of Africa. At three he left with his mother, Mabel, and
+      younger brother, Hilary, for what was meant to be a lengthy family
+      visit to England; the family settled instead in Sarehole, then a
+      Worcestershire village since absorbed into Birmingham, whose mill,
+      bog and hills he drew on for the Shire decades later.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+      - https://en.wikipedia.org/wiki/Arthur_Tolkien
+
+  - id: jrr-tolkien-father-dies-1896
+    organisation: beside
+    illustration_type: portrait-of-absence
+    images_required: 1
+    date: 1896-02-15
+    dateRange: "1895-1896"
+    title: His father dies in South Africa before he can rejoin the family
+    impact: med
+    description: >
+      Mabel Tolkien took Ronald and Hilary to England in 1895, judging the
+      English climate better for their health; Arthur Tolkien stayed in
+      Bloemfontein to close out his banking career and never saw his family
+      again. He died there on 15 February 1896 of a severe haemorrhage
+      following rheumatic fever, before he had the chance to join them,
+      leaving Mabel to raise her two sons, then four and not yet two,
+      without an income of her own.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+      - https://en.wikipedia.org/wiki/Arthur_Tolkien
+
+  - id: jrr-tolkien-mother-dies-1904
+    organisation: immersion
+    illustration_type: portrait-of-absence
+    images_required: 1
+    date: 1904
+    dateRange: "1900-1904"
+    title: His mother dies of diabetes; a Birmingham priest raises him from twelve
+    impact: high
+    description: >
+      Mabel Tolkien's conversion to Catholicism in 1900 cost her the
+      financial support of her Baptist family, and she raised her sons
+      largely alone afterward, teaching Ronald Latin, botany and drawing at
+      home herself. Diagnosed with diabetes two decades before insulin
+      existed, she died in 1904 at Fern Cottage, Rednal, at about
+      thirty-four, orphaning Ronald at twelve. She had already assigned his
+      guardianship to her close friend Father Francis Xavier Morgan of the
+      Birmingham Oratory, whose Catholic household shaped the rest of
+      Tolkien's upbringing; nine years later he wrote of her that she "was
+      a martyr indeed," crediting her death for "so easy a way" to his and
+      Hilary's faith.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+      - https://en.wikipedia.org/wiki/Arthur_Tolkien
+
+  - id: jrr-tolkien-book-of-the-foxrook-1909
+    organisation: marginalia
+    illustration_type: isolated-object
+    images_required: 1
+    date: 1909-06-10
+    title: A childhood habit of inventing languages already has years behind it
+    impact: low
+    description: >
+      Tolkien's lifelong hobby of inventing languages started before he was
+      a teenager: he first met "Animalic," a language his cousins Mary and
+      Marjorie Incledon built mostly from animal names, then worked with
+      Mary on "Nevbosh" ("new nonsense"), a sound-substitution code laid
+      over English, French and Latin. He went on, by his own account, to
+      build his first true invented language, Naffarin, out of Latin and
+      Spanish elements; on 10 June 1909 he filled a sixteen-page notebook,
+      "The Book of the Foxrook," with one of his earliest invented
+      alphabets - a private habit already running years deep by the time it
+      grew into the fully worked Elvish languages behind the legendarium.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Languages_constructed_by_Tolkien
+      - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+
+  - id: jrr-tolkien-meets-edith-1909
+    organisation: beside
+    illustration_type: relationship-tableau
+    images_required: 1
+    date: 1909
+    dateRange: "1908-1909"
+    title: Meets Edith Bratt at a Birmingham boarding house; is forbidden to speak to her
+    impact: med
+    description: >
+      Early in 1908, when Father Morgan moved sixteen-year-old Tolkien and
+      his brother into a Birmingham boarding house, he met a fellow lodger,
+      nineteen-year-old Edith Bratt, herself raised largely by a guardian.
+      The two spent the year frequenting Birmingham teashops together, and
+      by the summer of 1909 had decided they were in love. Morgan judged
+      the romance with an older Protestant woman "altogether unfortunate,"
+      blamed it for Tolkien's poor exam results that year, and forbade all
+      contact between them until Tolkien turned twenty-one - a prohibition
+      Tolkien obeyed to the letter, with one early exception over which
+      Morgan threatened to end his university career outright.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+      - https://en.wikipedia.org/wiki/Edith_Bratt
+
+  - id: jrr-tolkien-tcbs-founded-1911
+    organisation: medallion
+    illustration_type: emblem-seal
+    images_required: 1
+    date: 1911
+    title: Forms the T.C.B.S. with three school friends over illicit tea
+    impact: med
+    description: >
+      At King Edward's School, Birmingham, Tolkien and three friends - Rob
+      Gilson, Geoffrey Bache Smith and Christopher Wiseman - formed a
+      semi-secret society they called the Tea Club and Barrovian Society
+      (T.C.B.S.), named for their habit of brewing tea at Barrow's Stores
+      and, illicitly, in the school library. After leaving school the four
+      stayed close, holding a "Council of London" at Wiseman's home in
+      December 1914 that left Tolkien, by his own account, with a strong
+      new dedication to writing poetry. Within two years the society would
+      lose half its members to the war.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+
+  - id: jrr-tolkien-21st-birthday-proposal-1913
+    organisation: artifact-spread
+    illustration_type: document-facsimile
+    images_required: 1
+    date: 1913-01-03
+    title: Writes to Edith the moment his guardian's ban expires, and proposes
+    impact: med
+    description: >
+      On the evening of his 21st birthday, the day Father Morgan's
+      prohibition on contact with Edith Bratt expired, Tolkien wrote to her
+      at once, declaring he had never stopped loving her and asking her to
+      marry him - by then she was engaged to another man, George Field.
+      Edith met him under a railway viaduct in Cheltenham and, by the end
+      of the day, had accepted, returning Field's ring; Field's family
+      called it an insult, and Edith's own guardian warned that Tolkien,
+      with "poor prospects" and no profession, gave no clear sense of when
+      he could support a wife. She converted to Catholicism at Tolkien's
+      request, and they married three years later.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+      - https://en.wikipedia.org/wiki/Edith_Bratt
+
+  - id: jrr-tolkien-marries-edith-1916
+    organisation: beside
+    illustration_type: relationship-tableau
+    images_required: 1
+    date: 1916-03-22
+    title: Marries Edith Bratt weeks before shipping out to France
+    impact: med
+    description: >
+      Tolkien married Edith Bratt at St Mary Immaculate, Warwick, on 22
+      March 1916, having been commissioned into the Lancashire Fusiliers
+      the previous summer and trained for eleven months at Rugeley Camp,
+      Staffordshire. He crossed to Calais that June; for the months that
+      followed, Edith tracked his movements on a map of the Western Front,
+      dreading every knock at the door. The marriage outlasts the war, and
+      nearly everything else, ending only with Edith's death fifty-five
+      years later.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+      - https://en.wikipedia.org/wiki/Edith_Bratt
+
+  - id: jrr-tolkien-somme-tcbs-deaths-1916
+    organisation: immersion
+    illustration_type: portrait-of-absence
+    images_required: 1
+    date: 1916-10-27
+    dateRange: "1916-1917"
+    title: The Somme, trench fever, and the T.C.B.S. deaths that started the legendarium
+    impact: high
+    description: >
+      Tolkien reached the Somme as a signals officer in July 1916 and took
+      part in the assaults on the Schwaben Redoubt and the Leipzig Salient,
+      living, in one chaplain's account, with "hordes of lice." Rob Gilson
+      was killed leading his men at Beaumont Hamel on the war's first day;
+      Geoffrey Bache Smith was killed later that year when a shell struck a
+      first-aid post - of the T.C.B.S.'s four members, two were dead within
+      months. On 27 October, as his battalion attacked Regina Trench,
+      Tolkien contracted trench fever and was invalided home on 8 November;
+      his battalion was almost wiped out soon after he left it.
+      Convalescing through the following winter, he began the earliest
+      version of what became
+      [[work:jrr-tolkien/the-fall-of-gondolin|The Fall of Gondolin]] -
+      scholars agree the war is what set the legendarium in motion, though
+      Tolkien himself was careful never to call the result an allegory of
+      it: what he later acknowledged was narrower, a landscape debt (the
+      Dead Marshes and the approach to the Morannon "owe something to
+      northern France after the Battle of the Somme") and a character debt
+      (Sam Gamgee as "a reflexion of the English soldier... of the privates
+      and batmen I knew in the 1914 war").
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+      - https://en.wikipedia.org/wiki/The_Great_War_and_Middle-earth
+      - https://en.wikipedia.org/wiki/Tolkien%27s_influences
+
+  - id: jrr-tolkien-oed-leeds-1920
+    organisation: layered-stack
+    illustration_type: archive-stack
+    images_required: 1
+    date: 1920
+    dateRange: "1918-1924"
+    title: Postwar, a dictionary job and the youngest reader at Leeds
+    impact: med
+    description: >
+      Demobilized with his rank retained but still recovering from trench
+      fever, Tolkien's first civilian job, from 1918, was at the Oxford
+      English Dictionary, working mainly on the history and etymology of
+      Germanic words beginning with W. In 1920 he took up a readership in
+      English language at the University of Leeds, its youngest member of
+      academic staff, and there produced, with E. V. Gordon, A Middle
+      English Vocabulary and a definitive student edition of Sir Gawain and
+      the Green Knight that remained a standard text for decades. He was
+      promoted to a professorship at Leeds in 1924.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+
+  - id: jrr-tolkien-oxford-professor-writes-hobbit-1925
+    organisation: beside
+    illustration_type: workplace-workshop
+    images_required: 1
+    date: 1925
+    dateRange: "1925-1937"
+    title: Returns to Oxford as a professor, and writes The Hobbit in the margins of exam-marking
+    impact: med
+    description: >
+      In October 1925 Tolkien returned to Oxford as Rawlinson and Bosworth
+      Professor of Anglo-Saxon, with a fellowship at Pembroke College; from
+      1930 he lived at 20 Northmoor Road with his growing family. By his
+      own account, in a 1955 letter to W. H. Auden, he began
+      [[work:jrr-tolkien/the-hobbit|The Hobbit]] one day in the early
+      1930s while marking School Certificate examination papers: finding a
+      blank page, he wrote, unprompted, "In a hole in the ground there
+      lived a hobbit." He had finished the story by late 1932 and lent it
+      to friends, including C. S. Lewis; it reached a publisher in 1936
+      only because a student of his, Elaine Griffiths, showed it to an
+      Allen & Unwin employee, Susan Dagnall, who asked to borrow it herself.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+      - https://en.wikipedia.org/wiki/The_Hobbit
+
+  - id: jrr-tolkien-inklings-1933
+    organisation: diptych
+    illustration_type: symbolic-still-life
+    images_required: 2
+    date: 1933
+    dateRange: "1930-1949"
+    title: The Inklings take shape around him and C. S. Lewis
+    impact: med
+    description: >
+      An earlier Oxford reading society, founded by the undergraduate
+      Edward Tangye Lean around 1931, folded when Lean left in 1933;
+      Tolkien and Lewis, both members, transferred its name, "the
+      Inklings," to their own long-running gathering of writers and dons.
+      The group met on Thursday evenings in Lewis's Magdalen College rooms
+      to read unfinished work aloud, and informally on Tuesdays at the
+      Eagle and Child pub; reception even within the group was mixed - Hugo
+      Dyson complained loudly through readings of
+      [[work:jrr-tolkien/the-lord-of-the-rings|The Lord of the Rings]],
+      while Lewis called it a book that would "break your heart." His son
+      Christopher, admitted at twenty-one in 1945, called it "a quite
+      unprecedented honour."
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Inklings
+      - https://en.wikipedia.org/wiki/Christopher_Tolkien
+
+  - id: jrr-tolkien-writes-lotr-1937
+    organisation: passage
+    illustration_type: process-diagram
+    images_required: 1
+    date: 1937
+    dateRange: "1937-1949"
+    title: Twelve years, a rejected Silmarillion, and a war, to finish one book
+    impact: high
+    description: >
+      The Hobbit's success led Allen & Unwin to ask for a sequel; Tolkien
+      first offered them the older, unfinished Silmarillion material, which
+      the publisher's reader rejected in 1937 as "too Celtic," asking
+      instead for more about hobbits. What became
+      [[work:jrr-tolkien/the-lord-of-the-rings|The Lord of the Rings]] grew
+      far beyond that brief across twelve years, written mostly by night
+      around a full teaching load and the Second World War; a 1939
+      approach about wartime codebreaking work came to nothing. Tolkien
+      wrote afterward that the war did not shape the story's plot - he
+      finished the book, ending included, before atomic weapons existed,
+      which is the evidence he pointed to against readings of the Ring as
+      an allegory of the Second World War - but that the two world wars
+      were, in his words, "no less hideous" an experience for young
+      soldiers the second time than the first.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/The_Lord_of_the_Rings
+      - https://en.wikipedia.org/wiki/Constructing_The_Lord_of_the_Rings
+      - https://en.wikipedia.org/wiki/Tolkien%27s_influences
+
+  - id: jrr-tolkien-retirement-fame-1959
+    organisation: mosaic
+    illustration_type: press-media-collage
+    images_required: 1
+    date: 1959
+    dateRange: "1959-1968"
+    title: Retires into unexpected wealth and a fan base he never wanted
+    impact: high
+    description: >
+      Tolkien retired from Merton College in 1959 and, through the 1960s,
+      watched a quiet academic life turn into international fame he found
+      uncomfortable: The Lord of the Rings' American paperback boom made
+      him a millionaire, C. S. Lewis nominated him for the 1961 Nobel Prize
+      in Literature, and he later admitted to disliking having become a
+      cult figure, while conceding that "even the nose of a very modest
+      idol... cannot remain entirely untickled by the sweet smell of
+      incense." Fan attention grew intense enough that he took his phone
+      number out of the public directory; he and Edith eventually moved to
+      Bournemouth, in part so she could enjoy a society hostess's life he
+      had denied her at Oxford, though he missed the Inklings badly.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+      - https://en.wikipedia.org/wiki/The_Lord_of_the_Rings
+
+  - id: jrr-tolkien-edith-dies-1971
+    organisation: interlude
+    illustration_type: portrait-of-absence
+    images_required: 1
+    date: 1971-11-29
+    title: Edith dies in Bournemouth; he has her name carved with the elf-woman he modeled her on
+    impact: high
+    description: >
+      Edith Tolkien died on 29 November 1971 in Bournemouth, aged 82.
+      Tolkien had the name "Lúthien" - the immortal elf-woman of his own
+      legendarium, whom he said Edith had inspired - engraved on her
+      tombstone at Wolvercote Cemetery, Oxford, and returned to Oxford
+      himself, where Merton College gave him rooms near the High Street; he
+      missed her, but found comfort in being back in the city he loved.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+      - https://en.wikipedia.org/wiki/Edith_Bratt
+
+  - id: jrr-tolkien-cbe-death-1973
+    organisation: artifact-spread
+    illustration_type: document-facsimile
+    images_required: 1
+    date: 1973-09-02
+    dateRange: "1972-1973"
+    title: A CBE, an honorary doctorate, and "Beren" added to the grave
+    impact: high
+    description: >
+      Tolkien was appointed a Commander of the Order of the British Empire
+      in the 1972 New Year Honours, receiving the insignia from the Queen
+      at Buckingham Palace that March, and Oxford gave him an honorary
+      Doctorate of Letters the same year. He died on 2 September 1973, 21
+      months after Edith, from a bleeding ulcer and chest infection, and
+      was buried in her grave at Wolvercote Cemetery with "Beren" added
+      beside her "Lúthien" - the mortal man and immortal elf-woman of his
+      own legendarium, reunited on the stone as he judged they were reunited
+      in the story. His will was proven that December, his estate valued at
+      £190,577.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/J._R._R._Tolkien
 sources:
   - https://en.wikipedia.org/wiki/J._R._R._Tolkien
   - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
