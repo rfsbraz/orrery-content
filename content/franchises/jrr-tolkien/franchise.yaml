@@ -43,6 +43,29 @@ authorIds: [jrr-tolkien, christopher-tolkien]
 # STRUCTURAL CALL ONE), not a footnote.
 themePreset: legendarium
 
+globalEvents:
+  include:
+    - world-war-i-1914  # The war that shaped Tolkien's body and landscape; his 1916 Somme service, trench fever, and the deaths of T.C.B.S. friends set the legendarium in motion during his convalescence, giving it the desolate marshes and soldier's bond that marks the greatest works.
+  exclude:
+    - sept-11-2001  # Posthumous; no resonance with timeless legendarium
+    - financial-crisis-2008  # Contemporary economic event unrelated to legendarium's composition or Christopher's editorial work
+    - covid-19-pandemic-2020  # Christopher dies before the pandemic; outside both authors' working lives
+    - world-war-ii-1939  # Tolkien explicitly denied it shaped LOTR's plot; finished the book before atomic weapons existed; living through it is not the same as it reaching the page
+    - pulp-magazines-1926  # Tolkien's literary fiction was never pulp; transcends the category rather than being shaped by it
+    - penguin-paperback-1935  # Publishing format change; predates his major publications and doesn't shape his writing
+    - armed-services-editions-1943  # WWII book distribution; unrelated to Tolkien's work or Christopher's later editorial approach
+    - lady-chatterley-trial-1960  # Obscenity trial; Tolkien's works were published before this and don't engage with it
+    - fantasy-paperback-boom-1965  # Tolkien's LOTR created this boom; he doesn't write into it, unlike later fantasy authors who inherit the category he created
+    - carnation-revolution-1974  # Portuguese censorship end; no connection to English-published Tolkien works or Christopher's France-based editorial work
+    - chain-bookshop-1982  # Industry format change; Tolkien editorial project already mature by then; didn't shape the books
+    - online-bookselling-1995  # Amazon launch; HoME completed same year; format didn't shape the legendarium's creation or editing
+    - ebook-and-self-publishing-2007  # Kindle launch; Tolkien project decades mature; technology didn't shape the books
+    - prestige-fantasy-adaptation-2011  # Game of Thrones prestige rise; different work, decades after Tolkien's publications
+    - booktok-2020  # Christopher dies before BookTok; social media discovery didn't exist during creation
+    - portugal-bailout-2011  # Portuguese financial crisis; no connection to Tolkien's English works or Christopher's editorial work
+    - elementary-education-act-1870  # Predates Tolkien's birth; too remote a structural change; doesn't reach the page of his work
+    - comics-code-authority-1954  # Comics regulation; Tolkien's work is literary fiction, not comics; didn't affect his writing
+
 sources:
   - https://en.wikipedia.org/wiki/J._R._R._Tolkien
   - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
