@@ -1,0 +1,1775 @@
+# Editions of H. P. Lovecraft: 146 entries across 76 of 111 works (68%) - 40
+# entries carrying a readUrl free complete text and no ISBN by design, 106
+# carrying a real print or ebook ISBN. 35 works have no entry at all, almost
+# entirely the minor ghostwrites/revisions and the very late (1959) juvenilia
+# fragments; see the closing section of this header for the honest list and
+# why each stayed out.
+#
+# THE STRUCTURAL QUESTION THIS FILE ANSWERS FIRST: Lovecraft published no
+# book of his own fiction in his lifetime bar one privately-printed novella
+# (The Shadow over Innsmouth, 1936, 400 copies). Unlike a living author with
+# one current publisher, or Poe (in this same catalogue) who has effectively
+# no in-print "the" edition at all, Lovecraft sits in a third position: he is
+# public domain in the reader's own country for most of his fiction (see
+# below), AND he has a real, current, scholarly print market - three Penguin
+# Classics volumes edited by S. T. Joshi that are this author's closest thing
+# to an authoritative modern edition, still sold new as of this research.
+# Neither fact cancels the other, and this file records both: a `readUrl`
+# free complete text where one exists from a source this catalogue trusts,
+# and a real ISBN'd print edition where a current one exists, per work,
+# independently. SCHEMA.md is explicit that a work can carry both and that
+# they serve different readers; that is exactly the shape below.
+#
+# THE PUBLIC-DOMAIN QUESTION, ANSWERED RATHER THAN ASSUMED. Works Lovecraft
+# published in 1930 or earlier are outright public domain in the United
+# States by term expiration; a large share of his 1931-1937 fiction is
+# public domain too, on the strength of a documented negative - extensive
+# research by public-domain researchers has found no evidence anyone ever
+# renewed the copyright on any Lovecraft story, and pre-1964 US works needed
+# a renewal filing to keep their copyright at all
+# (legalclarity.org/are-h-p-lovecrafts-works-public-domain/, cross-checked
+# against the H. P. Lovecraft Wiki's own copyright-status page). This is why
+# Standard Ebooks and Project Gutenberg, this catalogue's two trusted
+# `readUrl` sources (see EDITIONS skill), both carry substantial Lovecraft
+# collections despite his relatively recent 1937 death - a fact so
+# specifically documented it is unlikely to be an error the way a casual
+# "he's public domain, he's old" assumption could be. Standard Ebooks' own
+# edition preface concedes the honest complexity directly: "verifying the
+# U.S. public domain status of Lovecraft's corpus is a difficult, if not
+# impossible, academic exercise... This edition will be updated as more
+# transcriptions become verified and available." That sentence is also the
+# explanation for the 35-work gap at the end of this header: SE and PG have
+# not (yet, as of their own most recent revisions checked here) transcribed
+# everything, and this file does not paper over that with a source it does
+# not trust.
+#
+# WHY NOT hplovecraft.com AS A THIRD readUrl SOURCE. The H. P. Lovecraft
+# Archive (hplovecraft.com), maintained by Donovan K. Loucks, is this file's
+# single best bibliographic source for editions (see below) and hosts a full
+# electronic text of nearly every work in this bibliography. It was
+# considered and not used for `readUrl`. The EDITIONS skill names exactly
+# two sources it trusts for this field, Standard Ebooks and Project
+# Gutenberg, on the stated grounds that both publish a complete text (not a
+# preview) from a stable, permanent URL AND both carry an explicit,
+# work-specific public-domain determination a reader can check. hplovecraft.com's
+# own texts carry a blanket page-footer copyright notice ("Copyright (c)
+# 1998-2026 by Donovan K. Loucks. All Rights Reserved.") and no per-work
+# public-domain statement of the kind SE and PG both publish. That
+# copyright notice most plausibly covers the site's own annotations and
+# presentation rather than Lovecraft's underlying text, but "most plausibly"
+# is exactly the judgement call this field is not supposed to require of a
+# reader, and SE's own preface above shows working researchers treat this
+# question as genuinely unsettled for parts of this corpus. So: not used,
+# not because the texts are doubted, but because the site does not carry
+# the explicit rights determination this schema's own bar asks for.
+# gutenberg.net.au (Project Gutenberg Australia) was also considered and
+# rejected for the same reason from the opposite direction - it hosts more
+# Lovecraft under Australia's life+70 term, a real but different
+# jurisdiction's public-domain floor than the "US public domain" claim
+# gutenberg.org and standardebooks.org both make explicitly; mixing the two
+# under one "Project Gutenberg" label would misstate which country's law a
+# given `readUrl` actually clears.
+#
+# readUrl SOURCING METHOD. Standard Ebooks' own "Short Fiction" collection
+# (standardebooks.org/ebooks/h-p-lovecraft/short-fiction) was opened and its
+# own table of contents read directly - 38 stories, itemised by title in the
+# book's own markup, not assumed from its "214,497 words" description. Its
+# two standalone SE volumes (At the Mountains of Madness; The Case of
+# Charles Dexter Ward) add 2 more. Project Gutenberg's own author page
+# (gutenberg.org/ebooks/author/34724) was read in full - it lists exactly 23
+# ebooks credited to Lovecraft (solo or with a co-author), confirmed
+# complete by the page's own "Displaying results 1-23" and "23 by H. P.
+# Lovecraft" headers, not a paginated first page. 17 of the 23 duplicate a
+# Standard Ebooks entry (Standard Ebooks is preferred per the EDITIONS
+# skill, being a re-typeset, proofread text); the 6 that do not - Through
+# the Gates of the Silver Key, The Curse of Yig, Medusa's Coil, The Horror
+# in the Burying-Ground, The Trap, The Last Test - are recorded from
+# Project Gutenberg instead. A 23rd PG item, "Writings in the United
+# Amateur, 1915-1922" (ebooks/30637), is an anthology of Lovecraft's
+# amateur-journalism contributions; its own itemised table of contents (read
+# directly, not inferred from its "essays and articles" description) names
+# two pieces catalogued as their own works here and not covered by Standard
+# Ebooks - A Reminiscence of Dr. Samuel Johnson and Poetry and the Gods -
+# so those two are recorded against that anthology's own URL, the same
+# one-book-many-works method this catalogue's Poe wing uses for the Library
+# of America volumes below. No other PG or SE title beyond these 48 works
+# was found; the gap list at the end of this header is real, not a
+# stopped search.
+#
+# EN PRINT: THE PENGUIN CLASSICS / S. T. JOSHI TRILOGY (the default,
+# in-print recommendation for the 51 works it covers). Three Penguin
+# Classics volumes, all edited with introduction and notes by Lovecraft
+# scholar S. T. Joshi, together anthologise the bulk of the finished solo
+# fiction with corrected, scholarly texts: The Call of Cthulhu and Other
+# Weird Stories (the 2011 "deluxe" paperback, ISBN 9780143106487, ISBN
+# check digit verified - 18 stories), The Thing on the Doorstep and Other
+# Weird Stories (2001, ISBN 9780142180037, converted from the publisher's
+# own ISBN-10 0-14-218003-3 and independently confirmed against Penguin
+# Random House's own product page - 12 stories), and The Dreams in the
+# Witch House and Other Weird Stories (2004, ISBN 9780142437957, likewise
+# converted from ISBN-10 0-14-243795-6 and confirmed against a second,
+# independent retailer record - 21 stories, including The Dream-Quest of
+# Unknown Kadath, which no other source checked here itemises). All three
+# tables of contents were read from hplovecraft.com's own per-edition
+# bibliographic pages, which reproduce each book's actual printed contents
+# list rather than a jacket-copy summary, and each ISBN was cross-checked
+# against Penguin Random House's own product page or an independent
+# retailer record. A newer 2016 "Penguin Orange Collection" reissue of The
+# Call of Cthulhu exists (ISBN 9780143129455) at a shorter page count (368
+# vs. the 2011 edition's 448); its table of contents was not independently
+# confirmed to match the 2011 edition's, so the 2011 printing is cited
+# instead rather than assuming the reissue is unabridged.
+#
+# EN PRINT: LIBRARY OF AMERICA, "Tales" (LOA #155, ed. Peter Straub, 2005,
+# ISBN 9781931082723, check digit verified against the publisher's own
+# product page, which also publishes its full 22-story table of contents).
+# Every one of its 22 stories is also in the Penguin trilogy above, so it is
+# recorded as a SECOND entry on those 22 works rather than the primary one:
+# the publisher's own page states it is currently out of stock with no
+# reprint scheduled, and the tiebreak rule in the EDITIONS skill favours the
+# in-print edition. It earns the second slot anyway because it is a
+# genuinely different object from three separate paperbacks - a single
+# hardcover, one editor's selection, the standard university-library
+# citation for this author - not because it is the only edition.
+#
+# EN PRINT: RACE POINT / KNICKERBOCKER CLASSICS, "The Complete Fiction of
+# H.P. Lovecraft" (2014, ISBN 9781631060014, check digit verified). Its own
+# 68-item table of contents (read directly from hplovecraft.com's
+# bibliographic page for this edition, not the looser "a novel, four
+# novellas, and fifty-three short stories" back-cover count) is a superset
+# of the Penguin trilogy's 51 works. To avoid recording the same book twice
+# on the same 51 works for no distinguishing reason, this edition is used
+# ONLY for the 17 works it covers that the Penguin trilogy does not: The
+# Beast in the Cave, The Alchemist, A Reminiscence of Dr. Samuel Johnson,
+# Memory, Old Bugs, The Transition of Juan Romero, The Street, Sweet
+# Ermengarde, Azathoth, What the Moon Brings, The Descendant, The Very Old
+# Folk, History of the Necronomicon, Ibid, The Evil Clergyman, and The Book
+# (all entirely solo Lovecraft fiction; nothing tiered apocrypha-for-being-a-
+# collaboration appears in its contents, matching its single-author byline).
+#
+# PT-PT: eight editions, one each across eight distinct works, sourced from
+# the Biblioteca Nacional de Portugal catalogue
+# (catalogo.bnportugal.gov.pt, searched for "lovecraft", 29 records; every
+# ISBN below is either taken directly from that catalogue or independently
+# cross-checked against WOOK, and every check digit is verified). The
+# market is thin and mostly Brazilian: the great majority of "Lovecraft em
+# português" search results (Companhia das Letras, DarkSide, Nova
+# Fronteira, L&PM, Hedra) are pt-BR editions sold into Portugal through
+# Portuguese retailers, not pt-PT editions - the exact trap SCHEMA.md warns
+# about, and none of them is recorded here. Editorial Estampa's "Os
+# Demónios de Randolph Carter" (Livro B #17, ISBN 9789723302080, trans.
+# Jorge Silva Melo) is a real, independently-confirmed 4-story anthology
+# (Goodreads, Skoob, WOOK, an Internet Archive scan all list the identical
+# contents) that happens to be exactly this wing's own Randolph Carter
+# subseries; each work below carries its own printed Portuguese title from
+# that contents list, not the anthology's cover title. Vega's "O Terror
+# Sobrenatural na Literatura" (2006, ISBN 9789726998525) is a direct,
+# single-work translation of Supernatural Horror in Literature. Relógio
+# d'Água's "Nas Montanhas da Loucura" (2011, ISBN 9789896412555) was chosen
+# over three older Portuguese translations of At the Mountains of Madness
+# found in the same catalogue (Dom Quixote 1988, Ad Infinitum 2009, 11-17
+# 2010) as the most recent from a currently active literary press; the
+# older three were not independently confirmed still in print and are not
+# recorded. Black Son's "Os Fungos de Yuggoth" (2003, trans. Nicolau Saião)
+# has no ISBN found anywhere checked - see its own note below. Saída de
+# Emergência's 2018 illustrated anthology "Os Contos Mais Arrepiantes de
+# Howard Phillips Lovecraft" (ISBN 9789897731228, 22 stories by 22
+# Portuguese illustrators) is recorded for exactly one of its stories, The
+# Outsider ("O Intruso") - Observador's own pre-publication piece for the
+# book quotes the story's translated opening lines directly and glosses the
+# title against the English original, which is enough to confirm that one
+# story; the volume's other 21 stories were not itemised in any source
+# checked and are not guessed at. Saída de Emergência also publishes a
+# separate multi-volume series, "Os Melhores Contos de Howard Phillips
+# Lovecraft" (at least 7 volumes, 2008-2021), which very likely covers
+# further works in this bibliography; its per-volume contents are not
+# independently confirmed anywhere in this file and it is not recorded - a
+# real gap for a human with a browser, not a rejection of the series.
+#
+# REJECTED CANDIDATES, WITH REASONS. Gollancz's "Necronomicon: The Best
+# Weird Tales of H. P. Lovecraft" (2008, ed. Stephen Jones, ISBN
+# 9780575081567/9780575081574) has a real, itemised 34-story table of
+# contents (read directly from hplovecraft.com), but all 34 stories are
+# already a subset of the Race Point edition above; recording it would add
+# a third English edition on works that already carry two, for no reader
+# distinction the EDITIONS skill's tiebreak rules would recognise. Livros
+# do Brasil's "Os mortos podem voltar" (1950, trans. Silas Cerqueira; a
+# 1993 "Coleção Vampiro" reprint carries ISBN 9789723814590) is real and
+# historically the earliest Portuguese Lovecraft book found in this search,
+# but WOOK's own listing for the reprint ISBN marks it "ESGOTADO OU NÃO
+# DISPONÍVEL" (out of stock/unavailable) and no source checked itemises
+# which story or stories it actually contains - an early, search-engine-
+# generated guess that it was The Case of Charles Dexter Ward could not be
+# confirmed against any page actually opened and is not repeated here.
+#
+# GENUINE GAPS: 35 of 111 works carry no edition entry at all. All but one
+# (notes-on-writing-weird-fiction, an essay, extended tier) are apocrypha:
+# Ashes, Bothon, Collapsing Cosmoses, Deaf Dumb and Blind, Four O'Clock, In
+# the Walls of Eryx, Out of the Aeons, Satan's Servants, The Battle that
+# Ended the Century, The Challenge from Beyond, The Crawling Chaos, The
+# Diary of Alonzo Typer, The Disinterment, The Electric Executioner, The
+# Ghost-Eater, The Green Meadow, The Hoard of the Wizard-Beast, The Horror
+# at Martin's Beach, The Horror in the Museum, The Little Glass Bottle, The
+# Loved Dead, The Man of Stone, The Mound, The Mysterious Ship, The Mystery
+# of the Grave-Yard, The Night Ocean, The Secret Cave (or John Lee's
+# Adventure), The Slaying of the Monster, The Sorcery of Aphlar, The Thing
+# in the Moonlight, The Tree on the Hill, 'Till A' the Seas, Two Black
+# Bottles, and Winged Death. None of these appears in Standard Ebooks,
+# Project Gutenberg, or any of the three print anthologies checked above;
+# most are minor ghostwrites/revisions for other credited authors or the
+# very late (1959) posthumous juvenilia fragments, the parts of this
+# bibliography with the thinnest publication history generally. Several -
+# The Mound and The Curse of Yig among them - have had individual
+# small-press collector's editions from PS Publishing and similar imprints
+# (seen in passing on hplovecraft.com's own collections index); these are
+# short-run signed/numbered hardcovers, not the kind of current, generally-
+# buyable edition this file otherwise records, and were not chased
+# individually. This is the honest fraction, not a padded one: no edition
+# was invented to close any of these 35 gaps.
+
+- id: hp-lovecraft/dagon/penguin-cthulhu-2011-en
+  workId: hp-lovecraft/dagon
+  isbn13: "9780143106487"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2011
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/ccweird2.aspx"
+    - "https://www.penguinrandomhouse.com/books/296478/the-call-of-cthulhu-and-other-weird-stories-by-h-p-lovecraft-edited-by-s-t-joshi/"
+
+- id: hp-lovecraft/the-statement-of-randolph-carter/penguin-cthulhu-2011-en
+  workId: hp-lovecraft/the-statement-of-randolph-carter
+  isbn13: "9780143106487"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2011
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/ccweird2.aspx"
+    - "https://www.penguinrandomhouse.com/books/296478/the-call-of-cthulhu-and-other-weird-stories-by-h-p-lovecraft-edited-by-s-t-joshi/"
+
+- id: hp-lovecraft/facts-concerning-the-late-arthur-jermyn-and-his-family/penguin-cthulhu-2011-en
+  workId: hp-lovecraft/facts-concerning-the-late-arthur-jermyn-and-his-family
+  isbn13: "9780143106487"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2011
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/ccweird2.aspx"
+    - "https://www.penguinrandomhouse.com/books/296478/the-call-of-cthulhu-and-other-weird-stories-by-h-p-lovecraft-edited-by-s-t-joshi/"
+
+- id: hp-lovecraft/celephais/penguin-cthulhu-2011-en
+  workId: hp-lovecraft/celephais
+  isbn13: "9780143106487"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2011
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/ccweird2.aspx"
+    - "https://www.penguinrandomhouse.com/books/296478/the-call-of-cthulhu-and-other-weird-stories-by-h-p-lovecraft-edited-by-s-t-joshi/"
+
+- id: hp-lovecraft/nyarlathotep/penguin-cthulhu-2011-en
+  workId: hp-lovecraft/nyarlathotep
+  isbn13: "9780143106487"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2011
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/ccweird2.aspx"
+    - "https://www.penguinrandomhouse.com/books/296478/the-call-of-cthulhu-and-other-weird-stories-by-h-p-lovecraft-edited-by-s-t-joshi/"
+
+- id: hp-lovecraft/the-picture-in-the-house/penguin-cthulhu-2011-en
+  workId: hp-lovecraft/the-picture-in-the-house
+  isbn13: "9780143106487"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2011
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/ccweird2.aspx"
+    - "https://www.penguinrandomhouse.com/books/296478/the-call-of-cthulhu-and-other-weird-stories-by-h-p-lovecraft-edited-by-s-t-joshi/"
+
+- id: hp-lovecraft/the-outsider/penguin-cthulhu-2011-en
+  workId: hp-lovecraft/the-outsider
+  isbn13: "9780143106487"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2011
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/ccweird2.aspx"
+    - "https://www.penguinrandomhouse.com/books/296478/the-call-of-cthulhu-and-other-weird-stories-by-h-p-lovecraft-edited-by-s-t-joshi/"
+
+- id: hp-lovecraft/herbert-west-reanimator/penguin-cthulhu-2011-en
+  workId: hp-lovecraft/herbert-west-reanimator
+  isbn13: "9780143106487"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2011
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/ccweird2.aspx"
+    - "https://www.penguinrandomhouse.com/books/296478/the-call-of-cthulhu-and-other-weird-stories-by-h-p-lovecraft-edited-by-s-t-joshi/"
+
+- id: hp-lovecraft/the-hound/penguin-cthulhu-2011-en
+  workId: hp-lovecraft/the-hound
+  isbn13: "9780143106487"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2011
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/ccweird2.aspx"
+    - "https://www.penguinrandomhouse.com/books/296478/the-call-of-cthulhu-and-other-weird-stories-by-h-p-lovecraft-edited-by-s-t-joshi/"
+
+- id: hp-lovecraft/the-rats-in-the-walls/penguin-cthulhu-2011-en
+  workId: hp-lovecraft/the-rats-in-the-walls
+  isbn13: "9780143106487"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2011
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/ccweird2.aspx"
+    - "https://www.penguinrandomhouse.com/books/296478/the-call-of-cthulhu-and-other-weird-stories-by-h-p-lovecraft-edited-by-s-t-joshi/"
+
+- id: hp-lovecraft/the-festival/penguin-cthulhu-2011-en
+  workId: hp-lovecraft/the-festival
+  isbn13: "9780143106487"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2011
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/ccweird2.aspx"
+    - "https://www.penguinrandomhouse.com/books/296478/the-call-of-cthulhu-and-other-weird-stories-by-h-p-lovecraft-edited-by-s-t-joshi/"
+
+- id: hp-lovecraft/he/penguin-cthulhu-2011-en
+  workId: hp-lovecraft/he
+  isbn13: "9780143106487"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2011
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/ccweird2.aspx"
+    - "https://www.penguinrandomhouse.com/books/296478/the-call-of-cthulhu-and-other-weird-stories-by-h-p-lovecraft-edited-by-s-t-joshi/"
+
+- id: hp-lovecraft/cool-air/penguin-cthulhu-2011-en
+  workId: hp-lovecraft/cool-air
+  isbn13: "9780143106487"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2011
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/ccweird2.aspx"
+    - "https://www.penguinrandomhouse.com/books/296478/the-call-of-cthulhu-and-other-weird-stories-by-h-p-lovecraft-edited-by-s-t-joshi/"
+
+- id: hp-lovecraft/the-call-of-cthulhu/penguin-cthulhu-2011-en
+  workId: hp-lovecraft/the-call-of-cthulhu
+  isbn13: "9780143106487"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2011
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/ccweird2.aspx"
+    - "https://www.penguinrandomhouse.com/books/296478/the-call-of-cthulhu-and-other-weird-stories-by-h-p-lovecraft-edited-by-s-t-joshi/"
+
+- id: hp-lovecraft/the-colour-out-of-space/penguin-cthulhu-2011-en
+  workId: hp-lovecraft/the-colour-out-of-space
+  isbn13: "9780143106487"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2011
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/ccweird2.aspx"
+    - "https://www.penguinrandomhouse.com/books/296478/the-call-of-cthulhu-and-other-weird-stories-by-h-p-lovecraft-edited-by-s-t-joshi/"
+
+- id: hp-lovecraft/the-whisperer-in-darkness/penguin-cthulhu-2011-en
+  workId: hp-lovecraft/the-whisperer-in-darkness
+  isbn13: "9780143106487"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2011
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/ccweird2.aspx"
+    - "https://www.penguinrandomhouse.com/books/296478/the-call-of-cthulhu-and-other-weird-stories-by-h-p-lovecraft-edited-by-s-t-joshi/"
+
+- id: hp-lovecraft/the-shadow-over-innsmouth/penguin-cthulhu-2011-en
+  workId: hp-lovecraft/the-shadow-over-innsmouth
+  isbn13: "9780143106487"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2011
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/ccweird2.aspx"
+    - "https://www.penguinrandomhouse.com/books/296478/the-call-of-cthulhu-and-other-weird-stories-by-h-p-lovecraft-edited-by-s-t-joshi/"
+
+- id: hp-lovecraft/the-haunter-of-the-dark/penguin-cthulhu-2011-en
+  workId: hp-lovecraft/the-haunter-of-the-dark
+  isbn13: "9780143106487"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2011
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/ccweird2.aspx"
+    - "https://www.penguinrandomhouse.com/books/296478/the-call-of-cthulhu-and-other-weird-stories-by-h-p-lovecraft-edited-by-s-t-joshi/"
+
+- id: hp-lovecraft/the-tomb/penguin-doorstep-2001-en
+  workId: hp-lovecraft/the-tomb
+  isbn13: "9780142180037"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2001
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/tdows.aspx"
+    - "https://www.penguinrandomhouse.com/books/292304/the-thing-on-the-doorstep-and-other-weird-stories-by-h-p-lovecraft/"
+
+- id: hp-lovecraft/beyond-the-wall-of-sleep/penguin-doorstep-2001-en
+  workId: hp-lovecraft/beyond-the-wall-of-sleep
+  isbn13: "9780142180037"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2001
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/tdows.aspx"
+    - "https://www.penguinrandomhouse.com/books/292304/the-thing-on-the-doorstep-and-other-weird-stories-by-h-p-lovecraft/"
+
+- id: hp-lovecraft/the-white-ship/penguin-doorstep-2001-en
+  workId: hp-lovecraft/the-white-ship
+  isbn13: "9780142180037"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2001
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/tdows.aspx"
+    - "https://www.penguinrandomhouse.com/books/292304/the-thing-on-the-doorstep-and-other-weird-stories-by-h-p-lovecraft/"
+
+- id: hp-lovecraft/the-temple/penguin-doorstep-2001-en
+  workId: hp-lovecraft/the-temple
+  isbn13: "9780142180037"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2001
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/tdows.aspx"
+    - "https://www.penguinrandomhouse.com/books/292304/the-thing-on-the-doorstep-and-other-weird-stories-by-h-p-lovecraft/"
+
+- id: hp-lovecraft/the-quest-of-iranon/penguin-doorstep-2001-en
+  workId: hp-lovecraft/the-quest-of-iranon
+  isbn13: "9780142180037"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2001
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/tdows.aspx"
+    - "https://www.penguinrandomhouse.com/books/292304/the-thing-on-the-doorstep-and-other-weird-stories-by-h-p-lovecraft/"
+
+- id: hp-lovecraft/the-music-of-erich-zann/penguin-doorstep-2001-en
+  workId: hp-lovecraft/the-music-of-erich-zann
+  isbn13: "9780142180037"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2001
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/tdows.aspx"
+    - "https://www.penguinrandomhouse.com/books/292304/the-thing-on-the-doorstep-and-other-weird-stories-by-h-p-lovecraft/"
+
+- id: hp-lovecraft/under-the-pyramids/penguin-doorstep-2001-en
+  workId: hp-lovecraft/under-the-pyramids
+  isbn13: "9780142180037"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2001
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/tdows.aspx"
+    - "https://www.penguinrandomhouse.com/books/292304/the-thing-on-the-doorstep-and-other-weird-stories-by-h-p-lovecraft/"
+
+- id: hp-lovecraft/pickmans-model/penguin-doorstep-2001-en
+  workId: hp-lovecraft/pickmans-model
+  isbn13: "9780142180037"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2001
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/tdows.aspx"
+    - "https://www.penguinrandomhouse.com/books/292304/the-thing-on-the-doorstep-and-other-weird-stories-by-h-p-lovecraft/"
+
+- id: hp-lovecraft/the-case-of-charles-dexter-ward/penguin-doorstep-2001-en
+  workId: hp-lovecraft/the-case-of-charles-dexter-ward
+  isbn13: "9780142180037"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2001
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/tdows.aspx"
+    - "https://www.penguinrandomhouse.com/books/292304/the-thing-on-the-doorstep-and-other-weird-stories-by-h-p-lovecraft/"
+
+- id: hp-lovecraft/the-dunwich-horror/penguin-doorstep-2001-en
+  workId: hp-lovecraft/the-dunwich-horror
+  isbn13: "9780142180037"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2001
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/tdows.aspx"
+    - "https://www.penguinrandomhouse.com/books/292304/the-thing-on-the-doorstep-and-other-weird-stories-by-h-p-lovecraft/"
+
+- id: hp-lovecraft/at-the-mountains-of-madness/penguin-doorstep-2001-en
+  workId: hp-lovecraft/at-the-mountains-of-madness
+  isbn13: "9780142180037"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2001
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/tdows.aspx"
+    - "https://www.penguinrandomhouse.com/books/292304/the-thing-on-the-doorstep-and-other-weird-stories-by-h-p-lovecraft/"
+
+- id: hp-lovecraft/the-thing-on-the-doorstep/penguin-doorstep-2001-en
+  workId: hp-lovecraft/the-thing-on-the-doorstep
+  isbn13: "9780142180037"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2001
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/tdows.aspx"
+    - "https://www.penguinrandomhouse.com/books/292304/the-thing-on-the-doorstep-and-other-weird-stories-by-h-p-lovecraft/"
+
+- id: hp-lovecraft/polaris/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/polaris
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/the-doom-that-came-to-sarnath/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/the-doom-that-came-to-sarnath
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/the-terrible-old-man/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/the-terrible-old-man
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/the-tree/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/the-tree
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/the-cats-of-ulthar/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/the-cats-of-ulthar
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/from-beyond/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/from-beyond
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/the-nameless-city/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/the-nameless-city
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/the-moon-bog/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/the-moon-bog
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/the-other-gods/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/the-other-gods
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/hypnos/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/hypnos
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/the-lurking-fear/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/the-lurking-fear
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/the-unnamable/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/the-unnamable
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/the-shunned-house/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/the-shunned-house
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/the-horror-at-red-hook/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/the-horror-at-red-hook
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/in-the-vault/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/in-the-vault
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/the-strange-high-house-in-the-mist/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/the-strange-high-house-in-the-mist
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/the-dream-quest-of-unknown-kadath/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/the-dream-quest-of-unknown-kadath
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/the-silver-key/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/the-silver-key
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/through-the-gates-of-the-silver-key/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/through-the-gates-of-the-silver-key
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/the-dreams-in-the-witch-house/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/the-dreams-in-the-witch-house
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/the-shadow-out-of-time/penguin-witchhouse-2004-en
+  workId: hp-lovecraft/the-shadow-out-of-time
+  isbn13: "9780142437957"
+  language: en
+  format: paperback
+  publisher: Penguin Classics
+  year: 2004
+  sources:
+    - "https://www.hplovecraft.com/writings/sources/dwhows.aspx"
+    - "https://www.penguinrandomhouse.com/books/293411/the-dreams-in-the-witch-house-by-h-p-lovecraft/9780142437957/"
+
+- id: hp-lovecraft/the-statement-of-randolph-carter/library-of-america-2005-en
+  workId: hp-lovecraft/the-statement-of-randolph-carter
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/the-outsider/library-of-america-2005-en
+  workId: hp-lovecraft/the-outsider
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/the-music-of-erich-zann/library-of-america-2005-en
+  workId: hp-lovecraft/the-music-of-erich-zann
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/herbert-west-reanimator/library-of-america-2005-en
+  workId: hp-lovecraft/herbert-west-reanimator
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/the-lurking-fear/library-of-america-2005-en
+  workId: hp-lovecraft/the-lurking-fear
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/the-rats-in-the-walls/library-of-america-2005-en
+  workId: hp-lovecraft/the-rats-in-the-walls
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/the-shunned-house/library-of-america-2005-en
+  workId: hp-lovecraft/the-shunned-house
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/the-horror-at-red-hook/library-of-america-2005-en
+  workId: hp-lovecraft/the-horror-at-red-hook
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/he/library-of-america-2005-en
+  workId: hp-lovecraft/he
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/cool-air/library-of-america-2005-en
+  workId: hp-lovecraft/cool-air
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/the-call-of-cthulhu/library-of-america-2005-en
+  workId: hp-lovecraft/the-call-of-cthulhu
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/pickmans-model/library-of-america-2005-en
+  workId: hp-lovecraft/pickmans-model
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/the-case-of-charles-dexter-ward/library-of-america-2005-en
+  workId: hp-lovecraft/the-case-of-charles-dexter-ward
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/the-colour-out-of-space/library-of-america-2005-en
+  workId: hp-lovecraft/the-colour-out-of-space
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/the-dunwich-horror/library-of-america-2005-en
+  workId: hp-lovecraft/the-dunwich-horror
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/the-whisperer-in-darkness/library-of-america-2005-en
+  workId: hp-lovecraft/the-whisperer-in-darkness
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/at-the-mountains-of-madness/library-of-america-2005-en
+  workId: hp-lovecraft/at-the-mountains-of-madness
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/the-shadow-over-innsmouth/library-of-america-2005-en
+  workId: hp-lovecraft/the-shadow-over-innsmouth
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/the-dreams-in-the-witch-house/library-of-america-2005-en
+  workId: hp-lovecraft/the-dreams-in-the-witch-house
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/the-thing-on-the-doorstep/library-of-america-2005-en
+  workId: hp-lovecraft/the-thing-on-the-doorstep
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/the-shadow-out-of-time/library-of-america-2005-en
+  workId: hp-lovecraft/the-shadow-out-of-time
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/the-haunter-of-the-dark/library-of-america-2005-en
+  workId: hp-lovecraft/the-haunter-of-the-dark
+  isbn13: "9781931082723"
+  language: en
+  format: hardcover
+  publisher: Library of America
+  year: 2005
+  note: >
+    Out of print with no reprint scheduled per the publisher's own product page;
+    kept as a second entry because it is a genuinely different object (a single
+    hardcover, Peter Straub's selection) from the in-print Penguin Classics
+    paperbacks above, not because it is the only edition.
+  sources: ["https://www.loa.org/books/223-tales/"]
+
+- id: hp-lovecraft/the-beast-in-the-cave/race-point-2014-en
+  workId: hp-lovecraft/the-beast-in-the-cave
+  isbn13: "9781631060014"
+  language: en
+  format: hardcover
+  publisher: Race Point Publishing
+  year: 2014
+  sources: ["https://hplovecraft.com/writings/sources/cfhplrp.aspx"]
+
+- id: hp-lovecraft/the-alchemist/race-point-2014-en
+  workId: hp-lovecraft/the-alchemist
+  isbn13: "9781631060014"
+  language: en
+  format: hardcover
+  publisher: Race Point Publishing
+  year: 2014
+  sources: ["https://hplovecraft.com/writings/sources/cfhplrp.aspx"]
+
+- id: hp-lovecraft/a-reminiscence-of-dr-samuel-johnson/race-point-2014-en
+  workId: hp-lovecraft/a-reminiscence-of-dr-samuel-johnson
+  isbn13: "9781631060014"
+  language: en
+  format: hardcover
+  publisher: Race Point Publishing
+  year: 2014
+  sources: ["https://hplovecraft.com/writings/sources/cfhplrp.aspx"]
+
+- id: hp-lovecraft/memory/race-point-2014-en
+  workId: hp-lovecraft/memory
+  isbn13: "9781631060014"
+  language: en
+  format: hardcover
+  publisher: Race Point Publishing
+  year: 2014
+  sources: ["https://hplovecraft.com/writings/sources/cfhplrp.aspx"]
+
+- id: hp-lovecraft/old-bugs/race-point-2014-en
+  workId: hp-lovecraft/old-bugs
+  isbn13: "9781631060014"
+  language: en
+  format: hardcover
+  publisher: Race Point Publishing
+  year: 2014
+  sources: ["https://hplovecraft.com/writings/sources/cfhplrp.aspx"]
+
+- id: hp-lovecraft/the-transition-of-juan-romero/race-point-2014-en
+  workId: hp-lovecraft/the-transition-of-juan-romero
+  isbn13: "9781631060014"
+  language: en
+  format: hardcover
+  publisher: Race Point Publishing
+  year: 2014
+  sources: ["https://hplovecraft.com/writings/sources/cfhplrp.aspx"]
+
+- id: hp-lovecraft/the-street/race-point-2014-en
+  workId: hp-lovecraft/the-street
+  isbn13: "9781631060014"
+  language: en
+  format: hardcover
+  publisher: Race Point Publishing
+  year: 2014
+  sources: ["https://hplovecraft.com/writings/sources/cfhplrp.aspx"]
+
+- id: hp-lovecraft/ex-oblivione/race-point-2014-en
+  workId: hp-lovecraft/ex-oblivione
+  isbn13: "9781631060014"
+  language: en
+  format: hardcover
+  publisher: Race Point Publishing
+  year: 2014
+  sources: ["https://hplovecraft.com/writings/sources/cfhplrp.aspx"]
+
+- id: hp-lovecraft/sweet-ermengarde/race-point-2014-en
+  workId: hp-lovecraft/sweet-ermengarde
+  isbn13: "9781631060014"
+  language: en
+  format: hardcover
+  publisher: Race Point Publishing
+  year: 2014
+  sources: ["https://hplovecraft.com/writings/sources/cfhplrp.aspx"]
+
+- id: hp-lovecraft/azathoth/race-point-2014-en
+  workId: hp-lovecraft/azathoth
+  isbn13: "9781631060014"
+  language: en
+  format: hardcover
+  publisher: Race Point Publishing
+  year: 2014
+  sources: ["https://hplovecraft.com/writings/sources/cfhplrp.aspx"]
+
+- id: hp-lovecraft/what-the-moon-brings/race-point-2014-en
+  workId: hp-lovecraft/what-the-moon-brings
+  isbn13: "9781631060014"
+  language: en
+  format: hardcover
+  publisher: Race Point Publishing
+  year: 2014
+  sources: ["https://hplovecraft.com/writings/sources/cfhplrp.aspx"]
+
+- id: hp-lovecraft/the-descendant/race-point-2014-en
+  workId: hp-lovecraft/the-descendant
+  isbn13: "9781631060014"
+  language: en
+  format: hardcover
+  publisher: Race Point Publishing
+  year: 2014
+  sources: ["https://hplovecraft.com/writings/sources/cfhplrp.aspx"]
+
+- id: hp-lovecraft/the-very-old-folk/race-point-2014-en
+  workId: hp-lovecraft/the-very-old-folk
+  isbn13: "9781631060014"
+  language: en
+  format: hardcover
+  publisher: Race Point Publishing
+  year: 2014
+  sources: ["https://hplovecraft.com/writings/sources/cfhplrp.aspx"]
+
+- id: hp-lovecraft/history-of-the-necronomicon/race-point-2014-en
+  workId: hp-lovecraft/history-of-the-necronomicon
+  isbn13: "9781631060014"
+  language: en
+  format: hardcover
+  publisher: Race Point Publishing
+  year: 2014
+  sources: ["https://hplovecraft.com/writings/sources/cfhplrp.aspx"]
+
+- id: hp-lovecraft/ibid/race-point-2014-en
+  workId: hp-lovecraft/ibid
+  isbn13: "9781631060014"
+  language: en
+  format: hardcover
+  publisher: Race Point Publishing
+  year: 2014
+  sources: ["https://hplovecraft.com/writings/sources/cfhplrp.aspx"]
+
+- id: hp-lovecraft/the-evil-clergyman/race-point-2014-en
+  workId: hp-lovecraft/the-evil-clergyman
+  isbn13: "9781631060014"
+  language: en
+  format: hardcover
+  publisher: Race Point Publishing
+  year: 2014
+  sources: ["https://hplovecraft.com/writings/sources/cfhplrp.aspx"]
+
+- id: hp-lovecraft/the-book/race-point-2014-en
+  workId: hp-lovecraft/the-book
+  isbn13: "9781631060014"
+  language: en
+  format: hardcover
+  publisher: Race Point Publishing
+  year: 2014
+  sources: ["https://hplovecraft.com/writings/sources/cfhplrp.aspx"]
+
+- id: hp-lovecraft/the-statement-of-randolph-carter/estampa-2003-pt
+  workId: hp-lovecraft/the-statement-of-randolph-carter
+  isbn13: "9789723302080"
+  language: pt-PT
+  title: "O Depoimento de Randolph Carter"
+  translator: "Jorge Silva Melo"
+  format: paperback
+  publisher: Editorial Estampa
+  year: 2003
+  note: >
+    This edition's ISBN is catalogued twice in Portuguese sources: WOOK dates the
+    copy it sells 1987 (the 2nd edition), the Biblioteca Nacional de Portugal
+    dates the same ISBN 2003 (3rd edition). The 2003 date is used here, since the
+    BNP record is the one that pairs the ISBN with a specific printing; the
+    retailer listing most likely carried the ISBN forward unchanged across
+    printings.
+  sources:
+    - "https://www.wook.pt/livro/os-demonios-de-randolph-carter-howard-phillips-lovecraft/83790"
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?session=&profile=bn&index=.GW&term=lovecraft"
+
+- id: hp-lovecraft/the-dream-quest-of-unknown-kadath/estampa-2003-pt
+  workId: hp-lovecraft/the-dream-quest-of-unknown-kadath
+  isbn13: "9789723302080"
+  language: pt-PT
+  title: "Em Sonhos, à Procura da Desconhecida Kadath"
+  translator: "Jorge Silva Melo"
+  format: paperback
+  publisher: Editorial Estampa
+  year: 2003
+  note: >
+    This edition's ISBN is catalogued twice in Portuguese sources: WOOK dates the
+    copy it sells 1987 (the 2nd edition), the Biblioteca Nacional de Portugal
+    dates the same ISBN 2003 (3rd edition). The 2003 date is used here, since the
+    BNP record is the one that pairs the ISBN with a specific printing; the
+    retailer listing most likely carried the ISBN forward unchanged across
+    printings.
+  sources:
+    - "https://www.wook.pt/livro/os-demonios-de-randolph-carter-howard-phillips-lovecraft/83790"
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?session=&profile=bn&index=.GW&term=lovecraft"
+
+- id: hp-lovecraft/the-silver-key/estampa-2003-pt
+  workId: hp-lovecraft/the-silver-key
+  isbn13: "9789723302080"
+  language: pt-PT
+  title: "A Chave de Prata"
+  translator: "Jorge Silva Melo"
+  format: paperback
+  publisher: Editorial Estampa
+  year: 2003
+  note: >
+    This edition's ISBN is catalogued twice in Portuguese sources: WOOK dates the
+    copy it sells 1987 (the 2nd edition), the Biblioteca Nacional de Portugal
+    dates the same ISBN 2003 (3rd edition). The 2003 date is used here, since the
+    BNP record is the one that pairs the ISBN with a specific printing; the
+    retailer listing most likely carried the ISBN forward unchanged across
+    printings.
+  sources:
+    - "https://www.wook.pt/livro/os-demonios-de-randolph-carter-howard-phillips-lovecraft/83790"
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?session=&profile=bn&index=.GW&term=lovecraft"
+
+- id: hp-lovecraft/through-the-gates-of-the-silver-key/estampa-2003-pt
+  workId: hp-lovecraft/through-the-gates-of-the-silver-key
+  isbn13: "9789723302080"
+  language: pt-PT
+  title: "Através das Portas da Chave de Prata"
+  translator: "Jorge Silva Melo"
+  format: paperback
+  publisher: Editorial Estampa
+  year: 2003
+  note: >
+    This edition's ISBN is catalogued twice in Portuguese sources: WOOK dates the
+    copy it sells 1987 (the 2nd edition), the Biblioteca Nacional de Portugal
+    dates the same ISBN 2003 (3rd edition). The 2003 date is used here, since the
+    BNP record is the one that pairs the ISBN with a specific printing; the
+    retailer listing most likely carried the ISBN forward unchanged across
+    printings.
+  sources:
+    - "https://www.wook.pt/livro/os-demonios-de-randolph-carter-howard-phillips-lovecraft/83790"
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?session=&profile=bn&index=.GW&term=lovecraft"
+
+- id: hp-lovecraft/supernatural-horror-in-literature/vega-2006-pt
+  workId: hp-lovecraft/supernatural-horror-in-literature
+  isbn13: "9789726998525"
+  language: pt-PT
+  title: "O Terror Sobrenatural na Literatura"
+  translator: "Ana Magalhães, Daniel Seabra Lopes"
+  publisher: Vega
+  year: 2006
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?session=&profile=bn&index=.GW&term=lovecraft"]
+
+- id: hp-lovecraft/at-the-mountains-of-madness/relogio-dagua-2011-pt
+  workId: hp-lovecraft/at-the-mountains-of-madness
+  isbn13: "9789896412555"
+  language: pt-PT
+  title: "Nas Montanhas da Loucura"
+  translator: "Teresa Seixas"
+  publisher: "Relógio d'Água"
+  year: 2011
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?session=&profile=bn&index=.GW&term=lovecraft"]
+
+- id: hp-lovecraft/fungi-from-yuggoth/black-son-2003-pt
+  workId: hp-lovecraft/fungi-from-yuggoth
+  language: pt-PT
+  title: "Os Fungos de Yuggoth"
+  translator: "Nicolau Saião"
+  publisher: Black Son
+  year: 2003
+  note: >
+    No ISBN found for this edition in the Biblioteca Nacional de Portugal
+    catalogue or elsewhere checked; a small-press 2003 booklet, plausibly printed
+    without one. Deliberate omission, not a lookup gap.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?session=&profile=bn&index=.GW&term=lovecraft"
+    - "https://pt.wikipedia.org/wiki/Os_Fungos_de_Yuggoth"
+
+- id: hp-lovecraft/the-outsider/saida-de-emergencia-2018-pt
+  workId: hp-lovecraft/the-outsider
+  isbn13: "9789897731228"
+  language: pt-PT
+  title: "O Intruso"
+  publisher: Saída de Emergência
+  year: 2018
+  note: >
+    One story confirmed by title and text against this specific 544-page, 22-story
+    illustrated anthology (Observador's own pre-publication excerpt of the story,
+    credited to this book); the other 21 stories in the volume were not itemised
+    anywhere checked, so only this one is recorded.
+  sources:
+    - "https://observador.pt/especiais/o-intruso-o-medo-nos-contos-de-h-p-lovecraft-esta-de-volta/"
+    - "https://www.wook.pt/livro/os-contos-mais-arrepiantes-de-howard-phillips-lovecraft-h-p-lovecraft/22169013"
+
+- id: hp-lovecraft/the-alchemist/standard-ebooks-en
+  workId: hp-lovecraft/the-alchemist
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/beyond-the-wall-of-sleep/standard-ebooks-en
+  workId: hp-lovecraft/beyond-the-wall-of-sleep
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/dagon/standard-ebooks-en
+  workId: hp-lovecraft/dagon
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-white-ship/standard-ebooks-en
+  workId: hp-lovecraft/the-white-ship
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-statement-of-randolph-carter/standard-ebooks-en
+  workId: hp-lovecraft/the-statement-of-randolph-carter
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/nyarlathotep/standard-ebooks-en
+  workId: hp-lovecraft/nyarlathotep
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/polaris/standard-ebooks-en
+  workId: hp-lovecraft/polaris
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/ex-oblivione/standard-ebooks-en
+  workId: hp-lovecraft/ex-oblivione
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-picture-in-the-house/standard-ebooks-en
+  workId: hp-lovecraft/the-picture-in-the-house
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-music-of-erich-zann/standard-ebooks-en
+  workId: hp-lovecraft/the-music-of-erich-zann
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/celephais/standard-ebooks-en
+  workId: hp-lovecraft/celephais
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-lurking-fear/standard-ebooks-en
+  workId: hp-lovecraft/the-lurking-fear
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/hypnos/standard-ebooks-en
+  workId: hp-lovecraft/hypnos
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-hound/standard-ebooks-en
+  workId: hp-lovecraft/the-hound
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-rats-in-the-walls/standard-ebooks-en
+  workId: hp-lovecraft/the-rats-in-the-walls
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-festival/standard-ebooks-en
+  workId: hp-lovecraft/the-festival
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-unnamable/standard-ebooks-en
+  workId: hp-lovecraft/the-unnamable
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-temple/standard-ebooks-en
+  workId: hp-lovecraft/the-temple
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-tomb/standard-ebooks-en
+  workId: hp-lovecraft/the-tomb
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-cats-of-ulthar/standard-ebooks-en
+  workId: hp-lovecraft/the-cats-of-ulthar
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-outsider/standard-ebooks-en
+  workId: hp-lovecraft/the-outsider
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-moon-bog/standard-ebooks-en
+  workId: hp-lovecraft/the-moon-bog
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-terrible-old-man/standard-ebooks-en
+  workId: hp-lovecraft/the-terrible-old-man
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/he/standard-ebooks-en
+  workId: hp-lovecraft/he
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-horror-at-red-hook/standard-ebooks-en
+  workId: hp-lovecraft/the-horror-at-red-hook
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-colour-out-of-space/standard-ebooks-en
+  workId: hp-lovecraft/the-colour-out-of-space
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/pickmans-model/standard-ebooks-en
+  workId: hp-lovecraft/pickmans-model
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-call-of-cthulhu/standard-ebooks-en
+  workId: hp-lovecraft/the-call-of-cthulhu
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/cool-air/standard-ebooks-en
+  workId: hp-lovecraft/cool-air
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-silver-key/standard-ebooks-en
+  workId: hp-lovecraft/the-silver-key
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-dunwich-horror/standard-ebooks-en
+  workId: hp-lovecraft/the-dunwich-horror
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-other-gods/standard-ebooks-en
+  workId: hp-lovecraft/the-other-gods
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/from-beyond/standard-ebooks-en
+  workId: hp-lovecraft/from-beyond
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-quest-of-iranon/standard-ebooks-en
+  workId: hp-lovecraft/the-quest-of-iranon
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-shadow-over-innsmouth/standard-ebooks-en
+  workId: hp-lovecraft/the-shadow-over-innsmouth
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-haunter-of-the-dark/standard-ebooks-en
+  workId: hp-lovecraft/the-haunter-of-the-dark
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-thing-on-the-doorstep/standard-ebooks-en
+  workId: hp-lovecraft/the-thing-on-the-doorstep
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/the-shunned-house/standard-ebooks-en
+  workId: hp-lovecraft/the-shunned-house
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/short-fiction"]
+
+- id: hp-lovecraft/at-the-mountains-of-madness/standard-ebooks-en
+  workId: hp-lovecraft/at-the-mountains-of-madness
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/at-the-mountains-of-madness"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/at-the-mountains-of-madness"]
+
+- id: hp-lovecraft/the-case-of-charles-dexter-ward/standard-ebooks-en
+  workId: hp-lovecraft/the-case-of-charles-dexter-ward
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/h-p-lovecraft/the-case-of-charles-dexter-ward"
+  sources: ["https://standardebooks.org/ebooks/h-p-lovecraft/the-case-of-charles-dexter-ward"]
+
+- id: hp-lovecraft/through-the-gates-of-the-silver-key/project-gutenberg-en
+  workId: hp-lovecraft/through-the-gates-of-the-silver-key
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  readUrl: "https://www.gutenberg.org/ebooks/71167"
+  sources: ["https://www.gutenberg.org/ebooks/71167"]
+
+- id: hp-lovecraft/the-curse-of-yig/project-gutenberg-en
+  workId: hp-lovecraft/the-curse-of-yig
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  readUrl: "https://www.gutenberg.org/ebooks/70912"
+  sources: ["https://www.gutenberg.org/ebooks/70912"]
+
+- id: hp-lovecraft/medusas-coil/project-gutenberg-en
+  workId: hp-lovecraft/medusas-coil
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  readUrl: "https://www.gutenberg.org/ebooks/70899"
+  sources: ["https://www.gutenberg.org/ebooks/70899"]
+
+- id: hp-lovecraft/the-horror-in-the-burying-ground/project-gutenberg-en
+  workId: hp-lovecraft/the-horror-in-the-burying-ground
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  readUrl: "https://www.gutenberg.org/ebooks/76113"
+  sources: ["https://www.gutenberg.org/ebooks/76113"]
+
+- id: hp-lovecraft/the-trap/project-gutenberg-en
+  workId: hp-lovecraft/the-trap
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  readUrl: "https://www.gutenberg.org/ebooks/73243"
+  sources: ["https://www.gutenberg.org/ebooks/73243"]
+
+- id: hp-lovecraft/the-last-test/project-gutenberg-en
+  workId: hp-lovecraft/the-last-test
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  readUrl: "https://www.gutenberg.org/ebooks/70606"
+  sources: ["https://www.gutenberg.org/ebooks/70606"]
+
+- id: hp-lovecraft/a-reminiscence-of-dr-samuel-johnson/project-gutenberg-en
+  workId: hp-lovecraft/a-reminiscence-of-dr-samuel-johnson
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  readUrl: "https://www.gutenberg.org/ebooks/30637"
+  note: >
+    From "Writings in the United Amateur, 1915-1922," a Project Gutenberg
+    anthology of Lovecraft's amateur-press contributions; its own itemised
+    contents list names this piece by title, checked directly rather than assumed
+    from the anthology's scope.
+  sources: ["https://www.gutenberg.org/ebooks/30637"]
+
+- id: hp-lovecraft/poetry-and-the-gods/project-gutenberg-en
+  workId: hp-lovecraft/poetry-and-the-gods
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  readUrl: "https://www.gutenberg.org/ebooks/30637"
+  note: >
+    From "Writings in the United Amateur, 1915-1922," a Project Gutenberg
+    anthology of Lovecraft's amateur-press contributions; its own itemised
+    contents list names this piece by title, checked directly rather than assumed
+    from the anthology's scope.
+  sources: ["https://www.gutenberg.org/ebooks/30637"]

@@ -1,0 +1,98 @@
+# Tradução pt-PT (português europeu) da prosa curada da ala H. P. Lovecraft.
+# `startHere.paths` é uma lista aninhada com id: funde-se item a item pela
+# chave `id` (docs/SCHEMA.md, "Nested lists merge by id"), pelo que aqui só
+# vai prosa - nunca `workIds`, `orderId` ou `fit`. `note` também é traduzido
+# em cada path, embora o script de cobertura não o conte (é texto que o
+# leitor vê, não um campo só de curadoria).
+#
+# TÍTULOS DE OBRAS: usa-se o título publicado em português apenas onde existe
+# uma edição portuguesa registada em editions.yaml (At the Mountains of
+# Madness -> Nas Montanhas da Loucura); nos restantes casos mantém-se o
+# título inglês.
+#
+# globalEvents não é overlay - os comentários que acompanham cada entrada em
+# `include`/`exclude` são um registo de decisão editorial, não prosa que o
+# leitor vê (ver docs/CURATION.md SS2), e ficam de fora deste ficheiro tal
+# como em todas as outras alas já traduzidas.
+
+- id: hp-lovecraft
+  description: >
+    Um colaborador de revistas de Providence, Rhode Island, que passou a
+    maior parte da vida ativa a escrever por encomenda e a rever ficção
+    alheia mediante pagamento, e que escreveu, quase como efeito colateral,
+    o conjunto de contos e novelas que deu ao horror do século XX o seu
+    registo cósmico: do pavor do manuscrito encontrado em
+    [[work:hp-lovecraft/the-call-of-cthulhu|The Call of Cthulhu]] (1928),
+    passando pelo relatório de expedição à Antártida de
+    [[work:hp-lovecraft/at-the-mountains-of-madness|Nas Montanhas da
+    Loucura]] (1936), até à última história que terminou,
+    [[work:hp-lovecraft/the-haunter-of-the-dark|The Haunter of the Dark]]
+    (1936). Quase totalmente desconhecido fora do público das revistas pulp
+    quando morreu, em 1937, a sua obra sobrevive sobretudo porque amigos
+    fundaram uma pequena editora, a Arkham House, para a manter em
+    circulação.
+
+  startHere:
+    paths:
+      - id: essentials
+        title: O essencial
+        description: >
+          Quatro contos autónomos, sem exigir nenhuma série: o relatório do
+          manuscrito encontrado que deu nome a toda a mitologia, a vila
+          piscatória em decadência que mantém um pacto muito antigo, a
+          quinta da Nova Inglaterra que um meteorito envenena lentamente, e
+          o nascimento rural monstruoso que ameaça um vale inteiro.
+          Qualquer um deles se sustenta sozinho; juntos, mostram o registo
+          para onde os guias de iniciação mais apontam primeiro.
+        note: >
+          Os quatro podem ler-se de forma independente e por qualquer
+          ordem. São quatro em cento e onze obras - ficam de fora o fio
+          narrativo de Randolph Carter, os Mitos de Cthulhu em geral, as
+          colaborações e tudo o que está fora do núcleo de ficção.
+
+      - id: meet-randolph-carter
+        title: Conhecer Randolph Carter
+        description: >
+          O único protagonista recorrente de Lovecraft, pela ordem em que a
+          própria vida da personagem coloca os quatro contos, e não pela
+          ordem em que chegaram a ser publicados: um jovem sonhador que
+          atravessa à vontade o próprio mundo dos sonhos, o testemunho do
+          desaparecimento de um amigo, datado dos seus anos mais tardios, o
+          homem de meia-idade a lamentar o dom que perdeu, e a sequela que
+          E. Hoffmann Price escreveu com Lovecraft para resolver o que lhe
+          aconteceu.
+        note: >
+          Quatro contos - um arco curto e completo, não um compromisso com
+          o resto da estante. O Dream-Quest, que abre este arco, é também a
+          sua entrada mais longa e mais digressiva.
+
+      - id: the-cthulhu-mythos
+        title: A mitologia conectada
+        description: >
+          Vinte e cinco contos com o próprio Necronomicon de Lovecraft e o
+          seu conteúdo do panteão, pela ordem em que os escreveu: para um
+          leitor que chegou a Lovecraft através de Cthulhu e da mitologia
+          partilhada, e não através dele como contista em geral.
+        note: >
+          Isto é ordem de publicação, não uma sequência curada de "como se
+          constrói a mitologia" - não se encontrou nenhuma fonte que
+          recomende um percurso específico por estes vinte e cinco para
+          além da ordem em que apareceram, e os contos não partilham
+          elenco nem cronologia contínuos.
+
+      - id: the-whole-shelf
+        title: A estante inteira
+        description: >
+          As cento e onze obras pela ordem em que Lovecraft as escreveu: os
+          pastiches de adolescente, a década de contos de revista que deu
+          nome aos Mitos, o trabalho de escrita por encomenda e revisão que
+          fazia mediante pagamento em paralelo, e a ficção que continuou a
+          chegar a público duas décadas depois da sua morte, em 1937. Não é
+          uma série para ler do princípio ao fim - é toda a obra de um
+          escritor a trabalhar, conto a conto.
+        note: >
+          49 das 111 obras são apócrifas segundo a classificação desta ala
+          - juvenília, fragmentos, excertos de cartas e todas as
+          colaborações, independentemente da parte de Lovecraft nelas -
+          pelo que um leitor que queira primeiro a ficção solo terminada
+          deve começar por "O essencial".

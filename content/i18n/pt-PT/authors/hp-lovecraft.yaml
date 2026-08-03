@@ -1,0 +1,373 @@
+# Overlay pt-PT do autor: bio + prosa dos lifeEvents (title + description). Os
+# lifeEvents ficam aninhados sob o autor e são fundidos por id (ver
+# SCHEMA.md, "Nested lists merge by id"); datas, impact, organisation,
+# illustration_type, images_required e sources nunca se traduzem, nem o nome
+# do autor.
+#
+# CITAÇÕES VERBATIM: onde a description de base cita as palavras exatas de
+# uma pessoa real, entre aspas (as de Lovecraft, as da própria Sonia Greene,
+# um certificado de óbito), essa citação fica em inglês, verbatim, dentro da
+# prosa traduzida, tal como em anna-sewell.yaml e miguel-de-cervantes.yaml -
+# não se inventa uma tradução portuguesa para as palavras de uma pessoa real.
+# Isto cobre a maior parte deste ficheiro: é onde está a maior parte do
+# racismo documentado de Lovecraft, escrito pela sua própria mão, e a
+# tradução respeita o registo factual e não editorializante do inglês de
+# base sem o abrandar nem o intensificar.
+#
+# hp-lovecraft-fear-of-the-unknown-1927 (organisation: epigraph) traduz
+# title e description mas omite quote, pela mesma razão: o campo de base é
+# a primeira frase, verbatim, de um ensaio real de Lovecraft, sem inventar
+# aqui uma tradução portuguesa dela. O título deste lifeEvent retoma o
+# título de "Supernatural Horror in Literature" na forma como esse ensaio
+# foi efetivamente publicado em português (Vega, 2006, ver editions.yaml).
+#
+# TÍTULOS DE OBRAS nas referências inline a obras: usa-se o título publicado
+# em português apenas onde existe uma edição portuguesa registada em
+# editions.yaml (At the Mountains of Madness -> Nas Montanhas da Loucura);
+# nos restantes casos mantém-se o título inglês, seguindo a regra de
+# SCHEMA.md de nunca inventar um título traduzido para uma obra sem edição
+# portuguesa.
+
+- id: hp-lovecraft
+  bio: >
+    Escritor norte-americano de ficção estranha, horror e horror cósmico,
+    nascido em Providence, Rhode Island, filho único de Winfield Scott
+    Lovecraft e Sarah Susan Phillips Lovecraft. O pai foi internado num
+    hospital psiquiátrico em 1893, quando Lovecraft tinha dois anos, e
+    morreu lá em 1898; a fortuna da família da mãe, substancial à data do
+    seu nascimento, tinha-se em grande parte dissipado até à morte do pai, e
+    ela própria foi internada no mesmo hospital em 1919, morrendo lá em
+    1921. Escreveu para associações de jornalismo amador a partir de 1914,
+    começou a publicar ficção na revista pulp Weird Tales a partir de 1923
+    e, durante a maior parte da vida ativa, sustentou-se menos da própria
+    ficção do que a escrever por encomenda e a rever, mediante pagamento, o
+    trabalho de outros escritores, muitas vezes bem menos dotados. Casou com
+    Sonia Greene em 1924 e viveu com ela em Nova Iorque durante dois anos,
+    um período que considerou difícil tanto a nível profissional como
+    pessoal; o casamento terminou em separação (nunca formalmente
+    divorciados) e regressou a Providence em 1926, onde viveu o resto da
+    vida e escreveu a maior parte da ficção pela qual é hoje conhecido,
+    incluindo [[work:hp-lovecraft/the-call-of-cthulhu|The Call of
+    Cthulhu]] (1928) e [[work:hp-lovecraft/at-the-mountains-of-madness|Nas
+    Montanhas da Loucura]] (1936). Foi quase totalmente desconhecido fora do
+    público das revistas pulp em vida, e morreu na pobreza em Providence em
+    1937; a sua reputação póstuma foi construída sobretudo através da Arkham
+    House, a pequena editora que os amigos August Derleth e Donald Wandrei
+    fundaram em 1939 especificamente para manter a sua obra em circulação.
+    As suas cartas, das quais sobrevivem vários milhares, documentam
+    extensamente as opiniões racistas e antissemitas que manteve durante a
+    maior parte da vida adulta.
+  lifeEvents:
+    - id: hp-lovecraft-born-1890
+      title: Nasce em Providence, na casa que passa o resto da vida a deixar e à qual regressa sempre
+      description: >
+        Nasce Howard Phillips Lovecraft na casa de família, no número 454
+        (hoje 194) da Angell Street, em Providence, Rhode Island, filho
+        único de Winfield Scott Lovecraft e Sarah Susan Phillips Lovecraft.
+        É criado nessa casa pela mãe, pelas duas irmãs solteiras dela e
+        pelos pais dela. O avô, Whipple Van Buren Phillips, que pagava
+        tudo, ensina-o a ler antes dos quatro anos, põe-lhe nas mãos
+        Bulfinch, As Mil e Uma Noites e Poe, e inventa contos estranhos
+        sobre "winged horrors" para o entreter. Lovecraft só sai de Rhode
+        Island por períodos prolongados duas vezes na vida, e ambienta a
+        maior parte da ficção a menos de um dia de distância dali.
+
+    - id: hp-lovecraft-father-dies-in-butler-hospital-1898
+      title: O pai morre no hospital onde foi internado quando Lovecraft tinha dois anos
+      description: >
+        Winfield Scott Lovecraft, caixeiro-viajante, é trazido de volta a
+        Providence sob contenção depois de um episódio num quarto de hotel
+        em Chicago, na primavera de 1893, e internado no Butler Hospital a
+        25 de abril. Nunca mais sai de lá, morrendo a 19 de julho de 1898; o
+        certificado de óbito regista "general paresis", o termo então usado
+        para a sífilis em fase avançada. Lovecraft tinha dois anos quando o
+        pai foi internado e sete quando morreu, e sustentou até ao fim da
+        vida que o pai tinha ficado paralisado por insónia e excesso de
+        trabalho. Negou repetidamente tê-lo alguma vez visitado. Winfield
+        deixou um património de cerca de 10 000 dólares; a casa que criou o
+        filho era a da família da mulher, não a dele.
+
+    - id: hp-lovecraft-loses-the-family-home-1904
+      title: O dinheiro acaba, a casa acaba, e ele pensa em acabar com tudo
+      description: >
+        Na primavera de 1904, o maior negócio de Whipple Phillips fracassa;
+        poucos meses depois, morre de um AVC aos 70 anos. O que resta do
+        património não chega para manter o número 454 da Angell Street, e
+        Lovecraft e a mãe mudam-se para um pequeno duplex a poucas portas
+        dali. Chamou-lhe um dos períodos mais negros da vida, e escreveu
+        numa carta de 1934 que não via sentido em continuar e chegou a
+        pensar em suicidar-se, fazendo longos passeios de bicicleta só para
+        olhar para a água do rio Barrington; o que o deteve, pelo seu
+        próprio relato, foi a vontade de saber mais sobre o mundo. A casa
+        ancestral perdida, e a família incapaz de guardar o que herdou,
+        estão na ficção desde o início.
+
+    - id: hp-lovecraft-breakdown-leaves-school-1908
+      title: Um colapso põe fim aos estudos, e cinco anos ficam quase sem registo
+      description: >
+        Semanas antes de se formar na Hope Street High School, Lovecraft
+        sofre aquilo a que mais tarde chamaria, em várias ocasiões, um
+        "nervous collapse" e "a sort of breakdown". Nunca se forma, nunca
+        entra na Universidade Brown como sempre dissera que faria, e trata o
+        fracasso como uma vergonha privada pelo resto da vida. Nunca se
+        apurou se a causa foi física, psiquiátrica ou ambas; escreveu depois
+        que era "prey to intense headaches, insomnia, and general nervous
+        weakness which prevents my continuous application to any thing", e
+        que "could hardly bear to see or speak to anyone". Quase nada dos
+        cinco anos seguintes ficou registado. Abandona por completo a
+        ficção, mantém a astronomia amadora, e vive sozinho com a mãe, que
+        disse a uma amiga que o filho era tão medonho que não andava onde
+        as pessoas o pudessem ver.
+
+    - id: hp-lovecraft-first-published-poem-1912
+      title: O primeiro poema publicado profissionalmente é uma sátira xenófoba sobre a própria cidade
+      description: >
+        "Providence in 2000 A.D." sai no Providence Evening Bulletin a 4 de
+        março de 1912: a primeira coisa que Lovecraft publica fora dos seus
+        próprios jornais escolares hectografados. Imagina uma Providence
+        futura em que os americanos de descendência inglesa foram
+        substituídos por imigrantes irlandeses, italianos, portugueses e
+        judeus, com as ruas rebatizadas com os nomes deles, e a enciclopédia
+        da sua obra por Joshi e Schultz descreve-o sem rodeios como uma
+        sátira dirigida aos residentes ítalo-americanos da sua cidade natal.
+        Da mesma época datam mais dois poemas racistas, um deles defendendo
+        que as pessoas negras são uma criação à parte, situada entre o
+        animal e o humano; nenhum dos dois foi publicado em vida. O registo
+        documental do racismo de Lovecraft e o registo documental da sua
+        atividade como autor publicado começam, assim, no mesmo momento, nos
+        mesmos jornais.
+
+    - id: hp-lovecraft-argosy-feud-joins-uapa-1914
+      title: Uma polémica na coluna de cartas tira-o de cinco anos de silêncio
+      description: >
+        Em 1913, Lovecraft, então em profundo isolamento, escreve à revista
+        pulp Argosy a atacar o seu autor de romance Fred Jackson, cujas
+        histórias chama de "trivial, effeminate, and, in places, coarse" e
+        cujas personagens, escreve, mostravam "the delicate passions and
+        emotions proper to negroes and anthropoid apes". Isto desencadeia
+        uma polémica nas páginas de cartas que dura quase um ano inteiro,
+        conduzida do seu lado em dísticos heroicos. Edward F. Daas, da
+        United Amateur Press Association, repara nela e convida tanto
+        Lovecraft como o seu principal opositor a associarem-se; Lovecraft
+        adere em abril de 1914. Disse depois que, antes de o jornalismo
+        amador chegar até ele, tinha estado "as close to the state of
+        vegetation as any animal well can be". Nesse ano é eleito para
+        dirigir o departamento de crítica da associação, publica o primeiro
+        conto no seu jornal principal em 1916, e escreve pouco depois
+        [[work:hp-lovecraft/the-tomb|The Tomb]] e
+        [[work:hp-lovecraft/dagon|Dagon]]: a primeira ficção que escrevia em
+        oito anos.
+
+    - id: hp-lovecraft-mother-committed-1919
+      title: A mãe é internada no hospital onde o pai morreu
+      description: >
+        A saúde de Susie Lovecraft, mental e física, vinha a piorar havia
+        anos; sofre uma crise no inverno de 1918-19 e é internada no Butler
+        Hospital em março de 1919, onde o marido tinha morrido vinte e um
+        anos antes. Uma vizinha, entrevistada muito depois, recordou-a a
+        descrever "weird and fantastic creatures that rushed out from
+        behind buildings and from corners at dark", e a encontrá-la no
+        centro de Providence sem que ela soubesse onde estava. Lovecraft
+        escreveu a um correspondente que "existence seems of little value"
+        e que desejava que "it might terminate". Visitou-a e passeou com
+        ela pelos jardins do hospital. O processo clínico dela foi mais
+        tarde destruído num incêndio no Butler, pelo que hoje não é
+        possível determinar o que realmente se passava com ela.
+
+    - id: hp-lovecraft-mother-dies-1921
+      title: A mãe morre, e seis semanas depois conhece a futura mulher
+      description: >
+        Susie Lovecraft morre no Butler Hospital a 24 de maio de 1921, de
+        complicações de uma operação à vesícula cinco dias antes. Aos 30
+        anos, o filho nunca tinha vivido longe dela. As cartas das semanas
+        seguintes descrevem um luto que o impede de trabalhar e um desejo
+        renovado de que a própria vida terminasse; poucas semanas depois já
+        escrevia que agora conseguia viver de forma independente, e a
+        saúde começa, sem que ele saiba explicar porquê, a melhorar. Mesmo
+        assim, vai a uma convenção de jornalismo amador em Boston a 4 de
+        julho. Ali conhece Sonia Haft Greene, empresária judia nascida na
+        Ucrânia, sete anos mais velha do que ele, que dirigia um negócio de
+        moda feminina na Fifth Avenue e ganhava, pelo seu próprio relato
+        posterior, perto de 10 000 dólares por ano.
+
+    - id: hp-lovecraft-marries-sonia-greene-1924
+      title: Casa com Sonia Greene e muda-se para Brooklyn
+      description: >
+        Casam na St Paul's Chapel, em Manhattan, a 3 de março de 1924. A
+        escolha do local foi dele, escreveu ela mais tarde, porque
+        Washington ali tinha rezado; nisso, como na maior parte das coisas,
+        disse ela, "I let him have his way. In nearly everything he was the
+        'victor' and I the 'vanquished.'" As tias dele, que desaprovavam a
+        união, souberam por carta, depois de consumado o facto. Era ela
+        quem tinha dinheiro: enquanto o sustentava, as tias enviavam-lhe 5
+        dólares por semana dos 15 que lhe cabiam da herança Phillips, e nem
+        sempre com regularidade. Em poucos meses, o negócio de chapéus dela
+        fracassou e as poupanças desapareceram na falência de um banco, e
+        Lovecraft, com 33 anos e sem qualquer histórico de emprego, não
+        conseguia encontrar ninguém disposto a contratá-lo.
+
+    - id: hp-lovecraft-red-hook-and-the-letters-1925
+      title: Sozinho em Red Hook, nas cartas, e entre amigos que discutiam com ele
+      description: >
+        A 1 de janeiro de 1925, Sonia parte para um emprego em Cleveland e
+        Lovecraft muda-se para um quarto único no número 169 da Clinton
+        Street, na periferia de Red Hook. Nesse verão o quarto é assaltado e
+        fica só com a roupa que trazia vestida. Deste período saem
+        [[work:hp-lovecraft/the-horror-at-red-hook|The Horror at Red
+        Hook]] e [[work:hp-lovecraft/he|He]], ambos com o horror encenado
+        na cidade de imigrantes à sua volta, e o esboço de
+        [[work:hp-lovecraft/the-call-of-cthulhu|The Call of Cthulhu]]. O
+        relato em primeira mão mais completo de como ele era nesses dois
+        anos é o da própria mulher, publicado no Providence Sunday Journal
+        a 22 de agosto de 1948. Ela descreveu-o a ficar "livid with rage"
+        no meio das multidões diversas de Nova Iorque, e disse ter sido
+        "this attitude toward minorities and his desire to escape them
+        that eventually prompted him back to Providence". Quando ela
+        protestou por ser incluída entre o que ele chamava as "alien
+        hordes", ele respondeu: "You are now Mrs. H. P. Lovecraft of 598
+        Angell Street, Providence, Rhode Island." Ela registou também uma
+        frase dele citada desde então: "It is more important to know what
+        to hate than it is to know what to love." É também neste período
+        que se forma o círculo de amigos mais próximo. O Kalem Club
+        incluía Samuel Loveman, que era judeu e a quem Lovecraft
+        considerava um amigo próximo, e James F. Morton, um anarquista
+        formado em Harvard, vinte anos mais velho do que ele, que tinha
+        publicado em 1906 um panfleto chamado The Curse of Race Prejudice,
+        integrado comités da NAACP na década de 1910, e vivia em Harlem.
+        Joshi chama às cartas trocadas entre os dois "the single greatest
+        correspondence Lovecraft ever wrote"; a questão racial foi um dos
+        temas sobre os quais discutiram durante anos. Das cerca de 100 000
+        cartas que se calcula Lovecraft ter escrito, sobrevive cerca de um
+        quinto, e é nelas que está a maior parte do racismo documentado:
+        não inferido da ficção, mas escrito pela sua própria mão, a
+        pessoas identificadas, ao longo de décadas, e contestado na altura
+        por pessoas que gostavam dele.
+
+    - id: hp-lovecraft-returns-to-providence-1926
+      title: Regressa a Providence, e escreve quase tudo aquilo por que é lido
+      description: >
+        Lovecraft regressa a Providence a 17 de abril de 1926, para o
+        número 10 da Barnes Street e os cuidados das tias, que já tinham
+        recusado deixar a mulher juntar-se-lhe ali, alegando que uma mulher
+        dedicada ao comércio não seria adequada. O casamento estava
+        terminado em tudo menos na lei. Os onze anos seguintes contêm quase
+        toda a ficção em que assenta esta ala, entre elas
+        [[work:hp-lovecraft/the-call-of-cthulhu|The Call of Cthulhu]],
+        [[work:hp-lovecraft/the-case-of-charles-dexter-ward|The Case of
+        Charles Dexter Ward]],
+        [[work:hp-lovecraft/at-the-mountains-of-madness|Nas Montanhas da
+        Loucura]] e [[work:hp-lovecraft/the-shadow-over-innsmouth|The
+        Shadow over Innsmouth]], a par das viagens antiquárias pela costa
+        leste que descreveu com enorme extensão e de uma correspondência
+        que o tornou o centro de um círculo de escritores muito mais
+        jovens.
+
+    - id: hp-lovecraft-fear-of-the-unknown-1927
+      title: "O Terror Sobrenatural na Literatura, primeira frase"
+      description: >
+        A frase de abertura do longo ensaio sobre ficção estranha que
+        escreveu para o circular amador The Recluse, de W. Paul Cook, e o
+        mais próximo que deixou de uma declaração do seu próprio programa.
+
+    - id: hp-lovecraft-divorce-never-completed-1929
+      title: A sentença de divórcio que nunca assinou
+      description: >
+        Sonia obtém o divórcio em 1929. Lovecraft garantiu-lhe que estava
+        concluído e depois nunca assinou a sentença final, pelo que,
+        perante a lei, continuaram casados até à morte dele. Ela mudou-se
+        para a Califórnia, voltou a casar em 1936, convencida de que estava
+        livre para o fazer, e só soube da morte de Lovecraft em 1945, oito
+        anos depois de esta ter ocorrido. Já perto do fim da vida foi
+        informada de que o segundo casamento tinha sido, tecnicamente,
+        bigamia, e Joshi regista que isso a perturbou consideravelmente.
+
+    - id: hp-lovecraft-mountains-of-madness-rejected-1931
+      title: O livro que a Weird Tales recusou, e o que um subeditor lhe fez cinco anos depois
+      description: >
+        Lovecraft escreve [[work:hp-lovecraft/at-the-mountains-of-madness|Nas
+        Montanhas da Loucura]] em fevereiro e março de 1931 e envia-o à
+        Weird Tales; Farnsworth Wright recusa-o em julho, por razões de
+        extensão. Encaixa o golpe suficientemente mal para guardar o
+        manuscrito na gaveta durante anos, e por essa altura já tinha o
+        hábito de desistir de vender uma história à primeira recusa. O seu
+        agente, Julius Schwartz, coloca-o em 1935 junto de F. Orlin
+        Tremaine, da Astounding Stories, que o aceita aparentemente sem o
+        ler. Sai em três partes, em fevereiro, março e abril de 1936, e
+        rende-lhe 315 dólares, mais do que alguma vez recebeu por qualquer
+        outra coisa; mas volta também com a ortografia e a pontuação
+        alteradas, os parágrafos longos partidos e cerca de mil palavras
+        cortadas do final. Chamou a Tremaine "that god-damn'd dung of a
+        hyaena". Pouco depois de terminar
+        [[work:hp-lovecraft/the-haunter-of-the-dark|The Haunter of the
+        Dark]], a sua última história original, escreveu que a receção
+        hostil a Montanhas tinha feito "more than anything to end my
+        effective fictional career". Um texto integralmente restaurado só
+        existiu impresso com a edição corrigida de S. T. Joshi para a
+        Arkham House, em 1985.
+
+    - id: hp-lovecraft-politics-shift-1930s
+      title: A Depressão torna-o socialista; as suas opiniões raciais moderam-se sem desaparecer
+      description: >
+        Ao longo da década de 1920, Lovecraft foi um anglófilo que se
+        opunha à democracia e considerava que os Estados Unidos deviam ser
+        governados por uma aristocracia. A Depressão veio quebrar isso:
+        torna-se socialista, apoia Franklin Roosevelt ao mesmo tempo que
+        considera o New Deal demasiado tímido, e expõe o seu próprio
+        programa no ensaio de 1933 "Some Repetitions on the Times" -
+        controlo estatal da distribuição de recursos, horários mais
+        curtos, salários mais altos, seguro de desemprego, pensões de
+        velhice, administrados por uma aristocracia de inteligência e não
+        de dinheiro. As suas opiniões sobre raça também se moveram, e o
+        relato honesto desse movimento é o que os seus biógrafos dão. Na
+        década de 1930, escreve Joshi, já se tinham moderado: passara de
+        exigir que as minorias se assimilassem a defender que cada cultura
+        devia poder manter-se a si própria, e escreveu com simpatia sobre
+        as tradições quebequenses e das Primeiras Nações no seu diário de
+        viagem ao Quebeque, o texto mais longo que alguma vez escreveu.
+        Foi uma moderação, não um abandono, e é isso que a mesma
+        investigação académica afirma. Tinha também manifestado, numa fase
+        inicial, apoio a Hitler, com o argumento de que preservaria a
+        cultura alemã, ao mesmo tempo que objetava que uma política racial
+        devia assentar na cultura e não na ascendência; Joshi regista que
+        Lovecraft e a tia ficaram indignados com o relato testemunhal do
+        vizinho do andar de baixo, Harry Brobst, sobre judeus a serem
+        espancados na Alemanha, e que as suas referências a Hitler
+        cessaram depois disso.
+
+    - id: hp-lovecraft-robert-e-howard-dies-1936
+      title: Robert E. Howard suicida-se com um tiro, e Lovecraft escreve o memorial
+      description: >
+        A correspondência começou em 1930, quando Farnsworth Wright
+        reencaminhou a Lovecraft uma carta que Howard tinha enviado à Weird
+        Tales sobre as referências gaélicas em
+        [[work:hp-lovecraft/the-rats-in-the-walls|The Rats in the Walls]].
+        Durou seis anos e trouxe Howard para o círculo que Lovecraft
+        mantinha por correspondência, apresentando-lhe os seus
+        correspondentes uns aos outros, emprestando-lhes os nomes que
+        inventava e incentivando-os a publicar. A 11 de junho de 1936, ao
+        ser informado de que a mãe, em coma, não voltaria a acordar, Howard
+        saiu de casa até ao carro e deu um tiro em si próprio. Lovecraft
+        escreveu quase de imediato um pequeno memorial, "In Memoriam:
+        Robert Ervin Howard", que fez circular entre os seus
+        correspondentes, e consolou o pai de Howard por carta. Tinha nove
+        meses de vida pela frente.
+
+    - id: hp-lovecraft-dies-1937
+      title: Morre aos 46 anos, sem alguma vez ter tido um livro próprio devidamente publicado
+      description: >
+        Com medo de médicos a vida inteira, Lovecraft só foi examinado um
+        mês antes de morrer, altura em que o cancro no intestino delgado já
+        estava para além de tratamento. Deu entrada no Jane Brown Memorial
+        Hospital a 10 de março de 1937, e morreu ali cinco dias depois;
+        fiel aos hábitos científicos de uma vida inteira, manteve um diário
+        dos próprios sintomas até já não conseguir segurar a caneta. Foi
+        sepultado a 18 de março na campa de família dos Phillips, no Swan
+        Point Cemetery, com o nome inscrito no monumento familiar ao lado
+        dos pais. Nada do que escreveu chegou a sair como livro próprio,
+        exceto [[work:hp-lovecraft/the-shadow-over-innsmouth|The Shadow
+        over Innsmouth]], publicado em 1936 por uma pequena editora em 400
+        exemplares cheios de erros, dos quais só cerca de 200 chegaram a
+        ser encadernados, sendo os restantes destruídos quando a editora
+        fechou. Em 1977, os seus leitores pagaram uma lápide própria para
+        ele e gravaram nela uma frase de uma das suas cartas: I AM
+        PROVIDENCE.

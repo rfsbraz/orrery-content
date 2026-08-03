@@ -1,0 +1,153 @@
+# Creative periods - the narrative spine of the aura. Inline references use
+# [[type:id|text]] and must resolve.
+#
+# Lovecraft's working life is periodised, by his own principal biographer and
+# by the specialist archive that maintains his primary-source record, around
+# two addresses rather than around a body of work: New York (he married Sonia
+# Greene on 3 March 1924 and moved into her Brooklyn apartment) and a return to
+# his native Providence on 17 April 1926, which held for the rest of his life.
+# S. T. Joshi's two-volume "I Am Providence: The Life and Times of H. P.
+# Lovecraft" (Hippocampus Press, 2010) splits exactly there - volume one runs
+# to the 1924 marriage and move, volume two covers 1924 to his 1937 death - and
+# the H. P. Lovecraft Archive's own biography (hplovecraft.com, maintained by
+# Donovan K. Loucks) narrates the same two-part shape in its running prose,
+# independent of Joshi's chapter architecture. Both periods below are sourced
+# to those two accounts, not to Wikipedia's own biographical section headings,
+# which are an encyclopedia editor's paragraph breaks rather than a critic's or
+# biographer's periodisation and are not treated as a source here.
+#
+# PUBLICATION YEAR IS THE ONLY AXIS THIS CATALOGUE CAN KEY AN ERA TO, AND IT IS
+# NOT THE AXIS THIS PERIODISATION IS ABOUT. Both biographical sources above
+# periodise Lovecraft's LIFE - where he was living and what he was writing
+# there - not when his fiction reached print, and the two axes diverge widely
+# for this author specifically: Wikipedia's own bibliography table carries
+# separate "Date written" and "date published" columns because so much of his
+# fiction went unsold or unsubmitted in his lifetime and reached print only
+# posthumously, in several cases (History of the Necronomicon, The Descendant,
+# The Book, Ibid - all 1938) within a year or two of his death and in others
+# (Bothon, 1946; Four O'Clock and Satan's Servants, 1949) more than a decade
+# after it. works.yaml's own header records that its `published` field is
+# first-publication year throughout, never composition year, for exactly this
+# reason. The two spans below are therefore stated as the years of Lovecraft's
+# own life that the sources actually periodise - 1924-1925 and 1926-1937 - and
+# checked against `published` because that is the only date this catalogue
+# has, not because it is the date either source is describing. The practical
+# consequence: a work composed inside one of these spans but not published
+# until after Lovecraft's 1937 death renders on the site outside every era,
+# with no plate at all, rather than inside the period it was actually written
+# in. [[work:hp-lovecraft/the-case-of-charles-dexter-ward|The Case of Charles
+# Dexter Ward]] (composed 1927, published 1941) and
+# [[work:hp-lovecraft/the-dream-quest-of-unknown-kadath|The Dream-Quest of
+# Unknown Kadath]] (composed 1926-27, published 1943) are the two clearest
+# cases: both belong, by any biographical account, at the center of the
+# Providence return, and both fall outside its span below because this
+# catalogue can only check the year they reached print. The same applies in
+# the other direction: [[work:hp-lovecraft/he|He]] (composed in New York,
+# published 1926) and [[work:hp-lovecraft/the-horror-at-red-hook|The Horror at
+# Red Hook]] (written out of his unhappy stretch living near Red Hook,
+# published 1927) both dramatise the New York years directly but are not
+# named in that era's own description below, because their publication dates
+# place them a year or more into the Providence span instead. None of this is
+# a gap to be closed by widening a span to catch a stray title - see
+# docs/CURATION.md SS5 on exactly that trap - since Lovecraft was not writing
+# in Providence in, for instance, 1943; he had been dead six years. It is
+# recorded here so the next pass reads every `published >1937` warning
+# `validate.py` raises against this file as what it is: the ordinary shape of
+# a heavily posthumous bibliography, not a boundary drawn wrong.
+#
+# No era is drawn for the years before 1924. Lovecraft resumed writing fiction
+# in the summer of 1917 after a decade-long hiatus (hplovecraft.com dates "The
+# Tomb" and "Dagon", written in quick succession that summer, as the return),
+# joined the United Amateur Press Association in 1914 and served terms as its
+# President, and sold his first stories to the newly founded Weird Tales in
+# 1923 - a real shape, and the 29 works this catalogue publishes across
+# 1916-1923 are its record. But no source checked here gives that shape a
+# name the way "the New York years" or Joshi's own volume split names the two
+# below; Wikipedia's paragraph headings for the same years ("Rejuvenation and
+# tragedy", "Earliest recognition") are, again, not treated as a periodisation
+# here. Left uncovered rather than filed under an invented label.
+
+- id: new-york-years
+  organisation: chapter-gate
+  illustration_type: symbolic-still-life
+  images_required: 1
+  title: The New York Years
+  period: "1924-1925"
+  themes: [marriage and money trouble, the Kalem Club, a professional foothold in Weird Tales, souring on the city]
+  provenance: critical
+  description: >
+    Lovecraft married Sonia Greene on 3 March 1924 and moved into her Brooklyn
+    apartment - the only stretch of his adult life he spent living outside
+    Providence. Weird Tales had begun buying his stories the previous autumn,
+    finally giving his fiction a paying, professional home after a decade in
+    the amateur press, and in New York he fell in with the circle of literary
+    friends - George Kirk, Rheinhart Kleiner, Samuel Loveman, Frank Belknap
+    Long and others - who took to calling themselves the Kalem Club after
+    their surnames' shared initials. The marriage strained under money
+    trouble almost immediately: Sonia's work took her out of state for long
+    stretches, and Lovecraft, unwilling to take steady paid work that would
+    have left no time to write, went through most of what savings the two of
+    them had. Fiction that reached print during these two years includes
+    [[work:hp-lovecraft/the-rats-in-the-walls|The Rats in the Walls]] and
+    [[work:hp-lovecraft/the-hound|The Hound]] (both 1924), and
+    [[work:hp-lovecraft/the-festival|The Festival]] and
+    [[work:hp-lovecraft/the-unnamable|The Unnamable]] (both 1925).
+  note: >
+    Lovecraft did not actually leave New York until 17 April 1926; the span
+    ends at 1925 rather than 1926 so it does not overlap the Providence era
+    below, which claims 1926 on the strength of the roughly nine months
+    Lovecraft spent that year back in Providence against three and a half in
+    Brooklyn. The four titles named above are dated by first publication, as
+    this catalogue's `published` field always is - not a claim that each was
+    written in New York, only that each reached print while Lovecraft was
+    still living there.
+  sources:
+    - "https://www.hplovecraft.com/life/biograph.aspx"
+    - "https://en.wikipedia.org/wiki/H._P._Lovecraft"
+
+- id: return-to-providence
+  organisation: chapter-gate
+  illustration_type: symbolic-still-life
+  images_required: 1
+  title: The Return to Providence
+  period: "1926-1937"
+  themes: [the mature cosmic fiction, ghostwriting to pay the rent, antiquarian New England, poverty and declining health]
+  provenance: critical
+  description: >
+    Lovecraft returned to Providence on 17 April 1926, in part at the urging
+    of his friend Frank Belknap Long, ending the marriage in every sense but
+    the formal one. The H. P. Lovecraft Archive's own biography calls the
+    decade that followed, up to his death on 15 March 1937, "the time of his
+    greatest flowering, both as a writer and as a human being"; S. T. Joshi's
+    "I Am Providence" describes the same return as the point that "spurred
+    the greatest spurt of literary creativity he would ever experience."
+    Fiction reaching print in these years includes
+    [[work:hp-lovecraft/the-call-of-cthulhu|The Call of Cthulhu]] (1928),
+    [[work:hp-lovecraft/the-dunwich-horror|The Dunwich Horror]] (1929),
+    [[work:hp-lovecraft/at-the-mountains-of-madness|At the Mountains of
+    Madness]] and [[work:hp-lovecraft/the-shadow-over-innsmouth|The Shadow
+    over Innsmouth]] (both 1936), and
+    [[work:hp-lovecraft/the-haunter-of-the-dark|The Haunter of the Dark]]
+    (1936), the last story he completed. Selling finished fiction rarely paid
+    enough to live on - Weird Tales rejected several of the titles above on
+    first submission - so Lovecraft supported himself mainly by ghostwriting
+    and revising other writers' manuscripts for a fee; nearly all of the
+    collaboration and revision work catalogued in this wing was done in
+    these years, alongside worsening poverty through the Great Depression and
+    the intestinal cancer that killed him at 46.
+  note: >
+    The span opens at 1926 rather than 1927 because Lovecraft spent most of
+    that calendar year, from mid-April on, back in Providence; see the New
+    York era's own note for the reasoning. It runs to 1937, the year he died,
+    which is a genuine limit on when Lovecraft could have been living or
+    writing in Providence - not a limit on when his Providence-period fiction
+    was published. A large share of what he wrote in this decade reached
+    print only after his death, in some cases (Bothon, 1946; Four O'Clock and
+    Satan's Servants, both 1949) well over a decade later; those works fall
+    outside this span for that reason and are not an interior gap to be
+    closed. See the file header for the fuller accounting and two named
+    examples.
+  sources:
+    - "https://www.hplovecraft.com/life/biograph.aspx"
+    - "https://www.hplovecraft.com/study/bios/iap.aspx"
+    - "https://en.wikipedia.org/wiki/H._P._Lovecraft"

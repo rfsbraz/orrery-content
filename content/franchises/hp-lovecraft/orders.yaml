@@ -1,0 +1,127 @@
+# ADDITIONAL canon orders only. The DEFAULT order - all 111 works in
+# publication-chronological order - is derived automatically from works.yaml
+# and is NOT listed here.
+#
+# This wing has no numbered series of Lovecraft's own: 65 solo tales and
+# novellas published across four decades, almost all independently
+# readable, plus 38 individually-sourced collaborations/revisions/
+# ghostwrites. Two subseries exist inside that shelf (see works.yaml's
+# header), and each earns exactly one order below, on different grounds:
+#
+# - Randolph Carter (4 works) is a genuine author-continued character
+#   thread with a real internal chronology, sourced and reshuffled below.
+# - Cthulhu Mythos (25 works) is a shared-universe thread connected by
+#   recurring entities and the Necronomicon, not a numbered sequence or a
+#   single protagonist's throughline - it earns a thread pulled out of the
+#   shelf (the same justification the Discworld thread orders and Poe's
+#   Dupin order use), not an invented "how to build the mythology" curated
+#   sequence. No source found gives one; several beginner guides checked
+#   for this wing's startHere paths converge on individual essential
+#   stories but explicitly do not converge on a Mythos-specific sequence
+#   beyond publication order, so this order makes no claim beyond that.
+
+- id: hp-lovecraft/randolph-carter-in-order
+  name: The Randolph Carter tales, in order
+  type: chronological-inuniverse
+  source: canon
+  rationale: >
+    The four tales Lovecraft wrote around a single recurring dreamer,
+    reordered from publication order into the order Carter's own life
+    places them. [[work:hp-lovecraft/the-dream-quest-of-unknown-kadath|The
+    Dream-Quest of Unknown Kadath]] comes first: a twenty-year-old Carter,
+    already a hugely practised dream-traveller with friends across the
+    dream-world, crosses the whole of it three times chasing a
+    half-remembered sunset city.
+    [[work:hp-lovecraft/the-statement-of-randolph-carter|The Statement of
+    Randolph Carter]] follows: Wikipedia's Randolph Carter article, citing
+    S. T. Joshi's reading of the chronology
+    [[work:hp-lovecraft/the-silver-key|The Silver Key]] itself gives, dates
+    the Warren disappearance Carter testifies to here to his late forties.
+    [[work:hp-lovecraft/the-silver-key|The Silver Key]] closes the arc's
+    middle: Carter at thirty realising he has lost the gift the first tale
+    showed him using so freely, and at fifty-four finding the key that
+    might return it.
+    [[work:hp-lovecraft/through-the-gates-of-the-silver-key|Through the
+    Gates of the Silver Key]] finishes it - E. Hoffmann Price proposed the
+    story specifically as a sequel picking up Carter's fate from the point
+    The Silver Key leaves him at, and Lovecraft co-wrote it with him.
+    Reading Carter's life in this order, instead of the order the stories
+    reached print, means meeting him young and capable before meeting him
+    diminished, rather than opening on the loss and only afterwards seeing
+    what he could once do. The cost: the Dream-Quest novella
+    Lovecraft never submitted for publication is also the longest and most
+    digressive entry, a real commitment to open on, where the Statement
+    that actually introduced Carter to readers in 1920 is a taut, compact
+    horror short built to work as a first encounter with him.
+  orderedWorkIds:
+    - hp-lovecraft/the-dream-quest-of-unknown-kadath
+    - hp-lovecraft/the-statement-of-randolph-carter
+    - hp-lovecraft/the-silver-key
+    - hp-lovecraft/through-the-gates-of-the-silver-key
+  debated:
+    - "The same Wikipedia chronology that places Dream-Quest, then Statement, before Silver Key and Through the Gates places The Unnamable's own events between Statement and Silver Key, and its narrator is widely identified as Carter. It carries no Randolph Carter subseries tag in this catalogue (see works.yaml's header on why the tag stops at four tales) and sits outside this order's scope for that reason, not because its place in the chronology is unknown."
+    - "Scholars have flagged an unresolved tension this order does not paper over: Dream-Quest portrays Carter as an adult already expert at dream-travel, while The Silver Key opens on him at thirty, having gradually lost the key to the gate of dreams and unable to reach the cities of his youth any longer. Lovecraft did not reconcile the two texts himself; Joshi's chronology is the standard scholarly reading, not a settled authorial fact."
+  sources:
+    - https://en.wikipedia.org/wiki/Randolph_Carter
+    - https://en.wikipedia.org/wiki/The_Silver_Key
+    - https://en.wikipedia.org/wiki/Through_the_Gates_of_the_Silver_Key
+
+- id: hp-lovecraft/cthulhu-mythos-in-order
+  name: The Cthulhu Mythos, in order
+  type: curated
+  source: canon
+  rationale: >
+    The twenty-five tales carrying Lovecraft's own Cthulhu Mythos content -
+    the Necronomicon and Abdul Alhazred, or a named entity from Cthulhu to
+    the Great Race of Yith - pulled out of the wider shelf and set in the
+    order Lovecraft wrote them. This is publication order and nothing more:
+    unlike the Randolph Carter order above, the Mythos tales share no
+    continuous timeline or protagonist, so there is no in-universe sequence
+    to reconstruct, and no reading guide checked for this wing recommends
+    a specific path through them beyond the order they appeared. What this
+    order earns is isolating the connected thread from the eighty-six
+    other works - solo tales with no Mythos content, every collaboration
+    and ghostwrite, the poetry and nonfiction - for a reader who came to
+    Lovecraft through Cthulhu and the shared mythology rather than through
+    him as a short-story writer generally. The cost: these tales were never
+    written as a series and share no continuing cast, so reading them back
+    to back can flatten each one's own separate frame - another scholar
+    piecing together another set of ominous documents - into repetition,
+    and the run skips two of the Mythos's most-cited thematic ancestors,
+    [[work:hp-lovecraft/dagon|Dagon]] and [[work:hp-lovecraft/the-temple|The
+    Temple]], which prefigure its undersea imagery but name no pantheon
+    entity or the Necronomicon and so fall outside this wing's own sourced
+    membership test.
+  orderedWorkIds:
+    - hp-lovecraft/nyarlathotep
+    - hp-lovecraft/the-nameless-city
+    - hp-lovecraft/the-hound
+    - hp-lovecraft/the-festival
+    - hp-lovecraft/the-call-of-cthulhu
+    - hp-lovecraft/the-last-test
+    - hp-lovecraft/the-curse-of-yig
+    - hp-lovecraft/the-dunwich-horror
+    - hp-lovecraft/the-whisperer-in-darkness
+    - hp-lovecraft/the-dreams-in-the-witch-house
+    - hp-lovecraft/the-horror-in-the-museum
+    - hp-lovecraft/out-of-the-aeons
+    - hp-lovecraft/at-the-mountains-of-madness
+    - hp-lovecraft/the-haunter-of-the-dark
+    - hp-lovecraft/the-shadow-out-of-time
+    - hp-lovecraft/the-shadow-over-innsmouth
+    - hp-lovecraft/the-thing-on-the-doorstep
+    - hp-lovecraft/azathoth
+    - hp-lovecraft/history-of-the-necronomicon
+    - hp-lovecraft/the-descendant
+    - hp-lovecraft/the-diary-of-alonzo-typer
+    - hp-lovecraft/medusas-coil
+    - hp-lovecraft/the-mound
+    - hp-lovecraft/the-case-of-charles-dexter-ward
+    - hp-lovecraft/fungi-from-yuggoth
+  debated:
+    - "This order does not reshuffle anything: it sorts the same twenty-five works by published year, the same axis the derived default uses, and settles no same-year ties within it (1928, 1929, 1933, 1936 and 1938 each pair or group two-to-four works with no composition-date field in this schema to break them by). It earns its place as a thread pulled out of a 111-work shelf, the same justification the Discworld thread orders and this catalogue's own Poe/Dupin order use for a subseries filtered and sorted by year, not as a curated sequence in its own right."
+    - "The twenty-five-work membership list is this wing's own sourced test (the Necronomicon/entity-naming rule in works.yaml's header), cross-checked against hplovecraft.com's own Necronomicon-appearances page and the Price/Tierney scholarly distinction between Lovecraft's Mythos and August Derleth's later reshaping. It has not been checked against a third, independently published enumeration of the same twenty-five titles."
+    - "A build-the-mythology sequence - foundational entries first, then the stories that assume them - was considered and rejected for this order: general reading-guide research for this wing's own startHere paths turned up no source recommending a specific path through the Mythos tales beyond publication order, only individual essential titles (The Call of Cthulhu chief among them, already covered by this wing's startHere)."
+  sources:
+    - https://www.hplovecraft.com/creation/necron/stories.aspx
+    - https://en.wikipedia.org/wiki/Cthulhu_Mythos

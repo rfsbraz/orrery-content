@@ -1,0 +1,2185 @@
+# Bibliography (Works) - the abstract stories/poems/essays; editions and
+# covers are a separate layer. IDs are STABLE and permanent (user data
+# references them).
+#
+# STRUCTURAL CALL (the same unit-of-work question the request issue,
+# orrery-content#66, raises explicitly for this author, citing Poe as
+# precedent): the atomic unit for fiction below is the individual tale or
+# novella, not a collection Lovecraft or a later editor assembled - the
+# same call this catalogue already made for edgar-allan-poe/works.yaml, for
+# the same reason. Lovecraft published no story collection of his own in
+# his lifetime at all (a handful of individual tales appeared in
+# anthologies edited by others); the familiar collections a reader meets
+# today - Arkham House's "The Dunwich Horror and Others," "At the
+# Mountains of Madness and Other Novels," Penguin Classics' three
+# S.T. Joshi-edited volumes - are all posthumous editorial groupings, most
+# assembled decades after his death. Treating any of them as a "work"
+# would invent a book that never existed in the sense this catalogue means
+# it; the individual tale, almost always first published in a magazine
+# (chiefly Weird Tales), is the unit.
+#
+# Dates and forms for solo fiction below are taken from Wikipedia's "H. P.
+# Lovecraft bibliography," itself sourced to An H. P. Lovecraft Encyclopedia
+# by S. T. Joshi and D. E. Schultz (Hippocampus Press, New York, 2001) -
+# https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography - cross-checked
+# against the H. P. Lovecraft Archive's own electronic-text listing
+# (hplovecraft.com/writings/texts/), the specialist site maintained by
+# Donovan K. Loucks with the Lovecraft scholarly community's involvement.
+# `published` records first publication (the convention this catalogue's
+# default order and eras both key on), not composition; the two differ
+# widely and sometimes by over a decade, since Lovecraft wrote for his own
+# circle and for magazines that folded, rejected, or simply sat on
+# manuscripts, and a large fraction of his fiction reached print only after
+# his 1937 death. Synopses were written from general knowledge of these
+# widely taught and anthologized texts rather than a fresh read of each.
+#
+# UNIT OF WORK, PART TWO - COLLABORATIONS, REVISIONS AND GHOSTWRITING: the
+# issue's first named problem. Lovecraft spent a large part of his working
+# life revising and ghostwriting fiction for other, usually far less
+# accomplished, writers for a fee - his actual hand in these pieces ranges
+# from a light polish of someone else's finished draft to writing nearly
+# the whole story from a one-paragraph premise. Two things follow from
+# that range, both explicit rather than assumed:
+#
+#   1. They are catalogued here, honestly tiered apocrypha (the schema's
+#      own definition - "contributions, limited or unfinished works" -
+#      fits a paid revision or ghostwrite exactly), rather than either
+#      folded silently into the core bibliography as if they were ordinary
+#      solo Lovecraft stories, or omitted as if the work never happened.
+#      Omission would be the bigger dishonesty: several of these
+#      (The Mound, The Curse of Yig, Medusa's Coil, the Hazel Heald
+#      stories) carry real Mythos content and are routinely read and
+#      reprinted as part of his output.
+#   2. `authorRole` records the documented direction, not a shrug:
+#      `author` where a primary source (Lovecraft's own letters, or a
+#      scholarly consensus resting on them) establishes he wrote
+#      essentially all of the prose from the other party's premise or
+#      earlier draft - the Zealia Bishop trilogy, the five Hazel Heald
+#      stories, the two Adolphe de Castro pieces, the Harry Houdini
+#      ghostwrite, and William Lumley's "Alonzo Typer." `co-author` where
+#      the record shows real two-way authorship - a Lovecraft rewrite of
+#      a peer's own draft (R. H. Barlow, a teenage protege who became his
+#      literary executor; Kenneth Sterling; Duane W. Rimel; Wilfred Blanch
+#      Talman; Henry S. Whitehead; C. M. Eddy Jr.; his wife Sonia Greene;
+#      Winifred V. Jackson; the 1935 five-author round robin), or where
+#      the record does not clearly establish a one-way direction at all
+#      (Anna Helen Crofts; the disputed "Thing in the Moonlight," flagged
+#      below). Where a specific source gives a concrete apportionment
+#      (a word count, a letter quote), it is in the work's own `note`
+#      rather than asserted as a blanket rule for the whole client
+#      relationship. `withAuthorIds` is left empty throughout: most of
+#      these collaborators have no other bibliography in this catalogue
+#      and creating a thin global author entity on the strength of one
+#      credit each is its own, separate editorial decision this scaffold
+#      does not make; the collaborator is named in prose and `sources`
+#      instead, which records the relationship without implying a global
+#      identity resolved elsewhere in the app.
+#      `publishedAs` is set only where a source specifically confirms the
+#      original byline (mostly the case where Lovecraft ghostwrote under
+#      the client's name alone); left unset where that specific fact was
+#      not separately verified even though the underlying relationship is
+#      well documented.
+#
+# NOT INCLUDED, and why:
+# - The sixteen "posthumous collaborations" August Derleth published from
+#   the 1940s onward (The Lurker at the Threshold and others) are excluded
+#   entirely, not merely tiered down. Wikipedia's own bibliography article
+#   states plainly that Derleth wrote these himself, at most incorporating
+#   short fragments of Lovecraft's unfinished notes, and that their status
+#   as genuine collaborations was disputed immediately after Derleth's own
+#   death. See the Cthulhu Mythos subseries note below for why this is a
+#   boundary this wing draws on principle, not only on the specific
+#   evidence for these sixteen pieces.
+# - "The Inevitable Conflict" (Amazing Stories, Dec 1930-Jan 1931, byline
+#   "Paul H. Lovering") - Wikipedia's bibliography article records that
+#   statistical and other evidence has been raised against Lovecraft's
+#   authorship; not solid enough to catalogue as his.
+# - The five nonextant childhood pieces the record itself has no surviving
+#   text for ("The Noble Eavesdropper," "The Secret of the Grave," "The
+#   Haunted House," "John, the Detective," "The Picture") - the same
+#   standard this catalogue already applies on the Poe wing to
+#   attributed-but-lost work.
+# - The great bulk of Lovecraft's amateur-journalism verse and criticism -
+#   several hundred occasional poems (birthday verses, convention squibs,
+#   dedication pieces to fellow amateur journalists) and as many essays and
+#   editorials for small amateur-press circulars, mostly undated or dated
+#   only to a year, several existing only as fragments or in duplicate
+#   drafts. This is a genuinely different case from the Poe wing, which
+#   atomised even Poe's minor verse: poetry and criticism are roughly half
+#   of Poe's own claim on being read today, where for Lovecraft they are
+#   apprentice and hobbyist work that neither he nor later scholarship
+#   treats as part of what he is read for. This wing instead catalogues
+#   his one true poem-cycle (Fungi from Yuggoth, below) and his one
+#   landmark critical work (Supernatural Horror in Literature, below) and
+#   states the rest as a documented, deliberate gap rather than inventing
+#   one hundred-plus thin entries with next to nothing to say about most of
+#   them. A reader who wants the rest of the poetry is pointed, in
+#   Fungi from Yuggoth's own sources, at S. T. Joshi's complete edition.
+#
+# canonTier convention for this franchise (fiction only; poetry, nonfiction
+# and every collaboration/revision/ghostwrite entry is `apocrypha` on the
+# grounds given above, regardless of quality or fame within that group):
+#   core     - a finished, complete solo tale or novella/novel, published in
+#              a recognised venue (magazine or, posthumously, a standard
+#              collection) and long accepted as part of the fiction canon.
+#              Tier here tracks whether a piece is finished and accepted, not fame - an
+#              obscure early tale and "The Call of Cthulhu" are both core.
+#   apocrypha - genuine juvenilia (five childhood pieces with surviving
+#              text, all first published only in 1959 or, for the earliest
+#              substantial one, 1918); unfinished fragments Lovecraft never
+#              completed (Azathoth, The Descendant, The Book); two pieces
+#              that exist only as excerpts from his private letters, not as
+#              stories he wrote to be published (The Very Old Folk, The
+#              Evil Clergyman); and the one in-universe reference document,
+#              History of the Necronomicon (tagged format: reference, the
+#              closest honest fit - it is not a narrative at all).
+#
+# SUBSERIES, PART ONE - CTHULHU MYTHOS (the request issue's second named
+# problem): the Cthulhu Mythos is a shared universe with many hands in it,
+# not a boundary this catalogue draws around one author (this catalogue's
+# standing rule: wings are authors, universes are subseries inside them).
+# The term itself was coined by August Derleth,
+# not Lovecraft - Wikipedia's Cthulhu Mythos article states this directly
+# and cites Lovecraft's own letters calling his invented mythology
+# "Yog-Sothothery," never "the Cthulhu Mythos" - and Derleth spent the
+# decades after Lovecraft's 1937 death systematising and substantially
+# reshaping it: inventing the "Elder Gods" as benevolent counterweights to
+# the "Great Old Ones," recasting what had been background texture into an
+# explicit good-versus-evil cosmology alien to Lovecraft's own cosmic
+# indifference, and folding in other writers' creations (Clark Ashton
+# Smith's Book of Eibon and more) as if they had always been one system.
+# Robert M. Price's essay "H. P. Lovecraft and the Cthulhu Mythos" names
+# these two stages explicitly - "the Cthulhu Mythos proper" under
+# Lovecraft's own guidance during his lifetime, and Derleth's second,
+# reshaping stage after it - and Richard L. Tierney's later term "Derleth
+# Mythos" for the second stage, coined specifically to keep the two apart,
+# is the standard scholarly shorthand for the same distinction (both cited
+# on Wikipedia's Cthulhu Mythos article). This wing's Cthulhu Mythos
+# subseries is Price's first stage only: Lovecraft's own contributions,
+# including the ones he ghostwrote or revised into someone else's story
+# (the Mythos content there is demonstrably his), tagged as a subseries
+# inside his wing exactly as this catalogue's Dupin precedent (Poe) tags a
+# genuine continuing thread. Derleth's own Mythos fiction, and the other
+# fourteen writers' worth of Mythos fiction that followed him, is a
+# different question for a different, not-yet-built wing if one is ever
+# justified - never a "see also" and never folded in here to make the
+# shelf look fuller.
+#
+# Membership test, applied to Lovecraft's own solo and revision/ghostwrite
+# fiction only (never to a Derleth piece, which is excluded outright
+# regardless of content): a work is tagged subseries: "Cthulhu Mythos"
+# where Lovecraft's own text documentably features the Necronomicon or its
+# author Abdul Alhazred, or one of the recurring named cosmic entities
+# (Cthulhu, Yog-Sothoth, Nyarlathotep, Azathoth, Shub-Niggurath, Yig) or
+# interlocking alien races/places (the Deep Ones and R'lyeh, the Great Race
+# of Yith, the Elder Things and Mi-Go, Yuggoth). The Necronomicon
+# appearances are independently confirmed, story by story with quoted
+# passages, by the H. P. Lovecraft Archive's own page on the subject
+# (hplovecraft.com/creation/necron/stories.aspx) - the source list this
+# subseries tag rests on for most of its members; the entity-naming test
+# accounts for the handful of members that page does not cover (Nyarlathotep,
+# The Shadow over Innsmouth, The Curse of Yig, The Mound). Two well-known
+# antecedents are deliberately left untagged rather than stretched to fit:
+# "Dagon" (1917) and "The Temple" (1920) prefigure the Mythos's undersea
+# themes and are widely discussed as its thematic ancestors, but neither
+# names a pantheon entity or the Necronomicon, so the sourced test above
+# does not reach them; a note on each records the relationship without
+# claiming subseries membership the test itself will not support.
+#
+# SUBSERIES, PART TWO - RANDOLPH CARTER: a genuine author-continued
+# character thread, on the same footing as Poe's Dupin trilogy. Four tales
+# narrate or follow the same recurring protagonist and, in one case,
+# explicitly continue a prior entry: "The Statement of Randolph Carter"
+# (1920) introduces him; "The Silver Key" (1929) and "The Dream-Quest of
+# Unknown Kadath" (1943, composed 1926-27) both centre on him; "Through the
+# Gates of the Silver Key" (1934, co-written with E. Hoffmann Price) is a
+# direct sequel Price proposed specifically to continue Carter's story from
+# where "The Silver Key" left him, by Price's own account (cited on the
+# work's entry). Two of these four also touch Cthulhu Mythos entities or
+# the Necronomicon (Dream-Quest features Nyarlathotep; Through the Gates of
+# the Silver Key references the Necronomicon several times) - since a work
+# carries only one subseries value, the tighter, author-declared character
+# thread takes precedence over the broader entity-sharing grouping for all
+# four, and the Mythos touch-points are recorded in each work's own note
+# instead.
+#
+# FEATURED (cap 3, three different kinds of hinge rather than three
+# favourites - the same discipline the Poe wing already documents): The
+# Call of Cthulhu (1928, the story whose title now names his entire
+# legacy and the Mythos itself); The Case of Charles Dexter Ward (1941,
+# his only novel-length work, a formal hinge no other entry shares); The
+# Haunter of the Dark (1936, the last solo story he completed before his
+# 1937 death, a closing hinge).
+#
+# COVERS: Lovecraft published no book of his own in his lifetime except
+# The Shadow over Innsmouth (1936, a 400-copy small-press edition; see
+# that work's own entry) - everything else first reached print as
+# magazine or amateur-press contents, never as a jacketed book of its
+# own. The familiar "single-title" mass-market paperbacks a reader meets
+# today - Panther's, Ballantine's and Del Rey's "At the Mountains of
+# Madness," "The Colour Out of Space," "The Dunwich Horror" and the rest
+# - are S. T. Joshi-edited or August Derleth-edited themed collections
+# bearing the lead story's name on the spine while containing six to
+# eight further stories inside, confirmed by Open Library's own page
+# counts and tables of contents for every title recognisable enough to
+# have a mass-market printing at all. Crediting one of those jackets to
+# the lead story alone would misattribute an anthology's art to a tale
+# that never had its own. images.cover is set only where an Open Library
+# edition record independently confirms one of two honest exceptions
+# instead: a specialist small-press pamphlet (Necronomicon Press,
+# Hippocampus Press) publishing that exact piece alone, or a genuine
+# illustrated deluxe single-work edition (Donald M. Grant). Eight works
+# clear that bar; each carries its own coverSource. The rest of the 111,
+# including two of this wing's three featured works - The Call of Cthulhu
+# (no printing beyond anthologies and unverifiable print-on-demand
+# editions) and The Haunter of the Dark (Necronomicon Press's only
+# single-work release of it is an audio cassette, not a book) - have no
+# jacket that meets it.
+
+# ============================================================
+# FICTION - the core spine (solo original fiction)
+# ============================================================
+
+- id: hp-lovecraft/the-alchemist
+  title: "The Alchemist"
+  authorIds: [hp-lovecraft]
+  published: 1916
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    The last heir of a cursed noble line confronts, in his ancestral
+    castle's ruined tower, the source of the family curse that has killed
+    every count at the same age for six centuries. Written in 1908, when
+    Lovecraft was seventeen - his earliest surviving mature story.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-tomb
+  title: "The Tomb"
+  authorIds: [hp-lovecraft]
+  published: 1922
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A young man grows obsessed with a locked, sealed family tomb near his
+    home and comes to believe he is possessed by an ancestor's spirit.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/dagon
+  title: "Dagon"
+  authorIds: [hp-lovecraft]
+  published: 1919
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A shipwrecked sailor, adrift on a stretch of seabed thrust up by an
+    earthquake, glimpses an immense inhuman creature at worship before a
+    monolith carved with images of a sea-god. Widely read as the thematic
+    seed of the undersea civilisations and worship-cults recurring across
+    the later Mythos, though it names no pantheon entity itself; see the
+    Cthulhu Mythos subseries note above for why it is left untagged rather
+    than assumed into the subseries.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/a-reminiscence-of-dr-samuel-johnson
+  title: "A Reminiscence of Dr. Samuel Johnson"
+  authorIds: [hp-lovecraft]
+  published: 1917
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A pastiche narrated by a fictional acquaintance of the 18th-century
+    lexicographer, written in period style as an exercise in Georgian
+    prose - one of several early pieces indulging Lovecraft's antiquarian
+    love of the 1700s.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/polaris
+  title: "Polaris"
+  authorIds: [hp-lovecraft]
+  published: 1920
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A dreamer watching the Pole Star from an ancient watchtower comes to
+    believe his waking life is the dream and a forgotten war in a lost
+    northern city is the reality.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/beyond-the-wall-of-sleep
+  title: "Beyond the Wall of Sleep"
+  authorIds: [hp-lovecraft]
+  published: 1919
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    An asylum doctor uses a wireless device to enter the dreams of a
+    murderous patient and finds a vast cosmic intelligence trapped inside
+    an ordinary, uneducated man's mind.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/memory
+  title: "Memory"
+  authorIds: [hp-lovecraft]
+  published: 1923
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A very short prose-poem dialogue between a Genie and a Daemon in a
+    ruined valley that was once a human city, on how completely a
+    civilisation can vanish from the world's memory.
+  note: Classed by Wikipedia's bibliography as "flash fiction"; short-story is the closest fit this catalogue's format list offers.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/old-bugs
+  title: "Old Bugs"
+  authorIds: [hp-lovecraft]
+  published: 1959
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A Prohibition-era comic parable set in a Chicago speakeasy, in which a
+    derelict former poet warns a young man off the drink that ruined him.
+    Not published in Lovecraft's lifetime.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-transition-of-juan-romero
+  title: "The Transition of Juan Romero"
+  authorIds: [hp-lovecraft]
+  published: 1944
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    Miners in a Southwestern mine blast open a shaft of unknown depth, and
+    a Mexican labourer undergoes an inexplicable transformation the night
+    something answers from below. Not published in Lovecraft's lifetime.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-white-ship
+  title: "The White Ship"
+  authorIds: [hp-lovecraft]
+  published: 1919
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A lighthouse keeper boards a phantom ship and voyages through a series
+    of dream-lands in search of ultimate beauty, in the Dunsanian mode of
+    Lovecraft's early fantasy fiction.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-doom-that-came-to-sarnath
+  title: "The Doom That Came to Sarnath"
+  authorIds: [hp-lovecraft]
+  published: 1920
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    The prosperous city of Sarnath, built on the ruins of an older city
+    whose people it exterminated a thousand years before, is destroyed in
+    turn on the anniversary of that massacre.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-statement-of-randolph-carter
+  title: "The Statement of Randolph Carter"
+  authorIds: [hp-lovecraft]
+  published: 1920
+  subseries: "Randolph Carter"
+  canonTier: core
+  format: short-story
+  synopsis: >
+    Randolph Carter gives police his account of his friend Harley Warren's
+    disappearance in an ancient cemetery, ending with a voice from below
+    that he can never adequately describe. Introduces the character; based,
+    by Lovecraft's own account, on a dream.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-street
+  title: "The Street"
+  authorIds: [hp-lovecraft]
+  published: 1920
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    An allegorical history of a New England street from colonial founding
+    through industrial decline, tracing Lovecraft's anxieties about
+    immigration and change in overtly allegorical rather than narrative
+    form.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-terrible-old-man
+  title: "The Terrible Old Man"
+  authorIds: [hp-lovecraft]
+  published: 1921
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    Three thieves plan to rob a strange, ancient recluse in a decaying
+    coastal town, unaware of what he keeps in bottles that swing like
+    pendulums and answer him in tiny voices.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-cats-of-ulthar
+  title: "The Cats of Ulthar"
+  authorIds: [hp-lovecraft]
+  published: 1920
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A fable explaining why, by ancient law, no one may kill a cat in the
+    town of Ulthar - after a cruel old couple who did so vanish along with
+    every cat in the district for one night.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-tree
+  title: "The Tree"
+  authorIds: [hp-lovecraft]
+  published: 1921
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    Two rival sculptors of ancient Greece; one dies of illness, and a
+    strangely shaped olive tree grows from his grave beside his rival's
+    studio.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/celephais
+  title: "Celephaïs"
+  authorIds: [hp-lovecraft]
+  published: 1922
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A poor Londoner returns again and again, in dreams, to the dream-city
+    of his childhood imagination - the one place where he has not aged,
+    and the only one he still wants to be in.
+  note: >
+    Where the dreaming finally leaves him in the waking world is the
+    story's closing image and is not stated above.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/from-beyond
+  title: "From Beyond"
+  authorIds: [hp-lovecraft]
+  published: 1934
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A scientist's machine stimulates the pineal gland to perceive beings
+    that share our space but not our senses - with predictably fatal
+    results once they can perceive us in turn.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-temple
+  title: "The Temple"
+  authorIds: [hp-lovecraft]
+  published: 1925
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A German U-boat commander's log records his crew's slow disintegration
+    after they recover an ivory carving from a drowned corpse, ending with
+    a descent toward a sunken city glowing far below. Another widely
+    discussed thematic ancestor of the Mythos's drowned-city imagery,
+    predating it by name; left untagged for the same reason as "Dagon"
+    (see the subseries note above).
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/nyarlathotep
+  title: "Nyarlathotep"
+  authorIds: [hp-lovecraft]
+  published: 1920
+  subseries: "Cthulhu Mythos"
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A prose poem in which a figure calling himself Nyarlathotep tours the
+    world demonstrating uncanny devices, leaving madness, unrest and
+    apocalyptic dread in his wake. Introduces the entity by name; Lovecraft
+    later wrote it came to him directly from a dream.
+  note: Written in collaboration with Winifred Virginia Jackson according to some early accounts of its genesis, but published and catalogued as Lovecraft's solo work by Wikipedia's bibliography and the H. P. Lovecraft Archive alike.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-picture-in-the-house
+  title: "The Picture in the House"
+  authorIds: [hp-lovecraft]
+  published: 1921
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A cyclist caught in a storm shelters in an isolated New England
+    farmhouse with a very old, very strange occupant and a book of
+    engravings depicting a Central African butcher shop.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/facts-concerning-the-late-arthur-jermyn-and-his-family
+  title: "Facts Concerning the Late Arthur Jermyn and His Family"
+  authorIds: [hp-lovecraft]
+  published: 1921
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A scholar of his own family's Africa-trading history discovers the
+    origin of a hereditary strangeness running through his line, and reacts
+    by setting himself alight. First published as "The White Ape."
+  note: Its ending trades on the era's scientific racism and its central "discovery" is framed around fear of interbreeding across a colour line; a fact about how the story works rather than an isolated one.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-nameless-city
+  title: "The Nameless City"
+  authorIds: [hp-lovecraft]
+  published: 1921
+  subseries: "Cthulhu Mythos"
+  canonTier: core
+  format: short-story
+  synopsis: >
+    An explorer alone in the Arabian desert enters a vast, non-human city
+    buried under sand for uncounted ages, and finds evidence of the
+    reptilian race that built it. The first appearance of the "Mad Arab"
+    Abdul Alhazred and his couplet ("That is not dead which can eternal
+    lie...") - the earliest fixed point of what became the Necronomicon,
+    though the book itself is not yet named here.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://www.hplovecraft.com/creation/necron/stories.aspx
+
+- id: hp-lovecraft/the-quest-of-iranon
+  title: "The Quest of Iranon"
+  authorIds: [hp-lovecraft]
+  published: 1935
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A wandering singer searches for the lost golden city of his birth,
+    Aira, refusing every comfortable ordinary life offered along the way -
+    until the truth of what Aira actually was catches up with him.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-moon-bog
+  title: "The Moon-Bog"
+  authorIds: [hp-lovecraft]
+  published: 1926
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    An Irish landowner drains an ancient bog against local warnings and
+    unleashes whatever the drowned Greek ruins beneath it were meant to
+    keep contained.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/ex-oblivione
+  title: "Ex Oblivione"
+  authorIds: [hp-lovecraft]
+  published: 1921
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A very short prose poem on a dreamer's longing to pass, for good,
+    through a gate in a wall he has glimpsed again and again, into final
+    oblivion.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-other-gods
+  title: "The Other Gods"
+  authorIds: [hp-lovecraft]
+  published: 1933
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A priest climbs the sacred mountain Hatheg-Kla to see the earth's gods
+    face to face, against every warning that they left it long ago to be
+    guarded instead by something else entirely.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-outsider
+  title: "The Outsider"
+  authorIds: [hp-lovecraft]
+  published: 1926
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A being who has lived its whole remembered life alone in a lightless
+    castle climbs at last into the outside world in search of other people
+    - and discovers, at a party, exactly what kind of being it is. One of
+    Lovecraft's most widely reprinted and most variously interpreted
+    stories.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-music-of-erich-zann
+  title: "The Music of Erich Zann"
+  authorIds: [hp-lovecraft]
+  published: 1922
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A student lodging above a mute viol player realises his neighbour plays
+    increasingly frantic, otherworldly music at his garret window each
+    night to hold something back - and that the street itself may not
+    exist to be found again afterward.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/sweet-ermengarde
+  title: "Sweet Ermengarde"
+  authorIds: [hp-lovecraft]
+  published: 1943
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A broad comic parody of maudlin rural-romance melodrama, written purely
+    for private amusement and never submitted for publication in
+    Lovecraft's lifetime.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/hypnos
+  title: "Hypnos"
+  authorIds: [hp-lovecraft]
+  published: 1923
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A sculptor and his companion push the boundaries of dream-travel
+    together until the companion goes somewhere, or becomes something, the
+    narrator will not describe.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/what-the-moon-brings
+  title: "What the Moon Brings"
+  authorIds: [hp-lovecraft]
+  published: 1923
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A very short prose poem on a garden that turns hideous under moonlight,
+    and a river that gives up its dead.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/azathoth
+  title: "Azathoth"
+  authorIds: [hp-lovecraft]
+  published: 1938
+  subseries: "Cthulhu Mythos"
+  canonTier: apocrypha
+  format: short-story
+  synopsis: >
+    An unfinished fragment, little more than an opening page, describing a
+    man who seeks dreams because the ordinary waking world has grown too
+    prosaic to bear. Names the "daemon-sultan" Azathoth, the blind idiot god
+    at the centre of the Mythos's cosmology, but the story itself was never
+    continued.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/herbert-west-reanimator
+  title: "Herbert West-Reanimator"
+  authorIds: [hp-lovecraft]
+  published: 1922
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A medical-school reanimation experiment escalates across six
+    installments, each corpse revived a little more disastrously than the
+    last. Written to order as a six-part serial for a small press,
+    something Lovecraft himself later dismissed as hack work, but the
+    direct ancestor of the Re-Animator film franchise.
+  # No cover: Necronomicon Press did publish this alone as a June 1985
+  # pamphlet (Open Library OL10449839M), the kind of solo small-press
+  # printing this wing otherwise accepts, but no cover image survives in
+  # its record. Every other edition is print-on-demand with no verifiable
+  # source behind its cover art.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-hound
+  title: "The Hound"
+  authorIds: [hp-lovecraft]
+  published: 1924
+  subseries: "Cthulhu Mythos"
+  canonTier: core
+  format: short-story
+  synopsis: >
+    Two decadent grave-robbers steal a corpse-eating cult's amulet from a
+    Dutch grave, and are hunted afterward by something that leaves paw
+    prints. The first story to name the Necronomicon and its author, Abdul
+    Alhazred, directly.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://www.hplovecraft.com/creation/necron/stories.aspx
+
+- id: hp-lovecraft/the-lurking-fear
+  title: "The Lurking Fear"
+  authorIds: [hp-lovecraft]
+  published: 1923
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    An investigator camps out during a lightning storm on Tempest Mountain
+    to learn what has been killing squatters around a ruined mansion, and
+    works back through the history of the Martense family who built it and
+    then vanished from it.
+  note: >
+    The Martense history is given early in the text and is stated above;
+    what the fear itself turns out to be belongs to the last of the
+    story's four instalments and is not.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-rats-in-the-walls
+  title: "The Rats in the Walls"
+  authorIds: [hp-lovecraft]
+  published: 1924
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    An American restores his ancestral English priory over local objection
+    and, following the sound of rats moving inside the walls, uncovers what
+    his family did there for centuries in the dark below the crypt.
+  note: The narrator's cat is named with a period-typical racial slur, retained in the original text and reproduced in most standard editions; a documented fact about the text itself rather than an isolated word choice.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-unnamable
+  title: "The Unnamable"
+  authorIds: [hp-lovecraft]
+  published: 1925
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    Two friends debating whether anything can truly be beyond description
+    sit in a haunted graveyard at dusk to test the question, with the
+    obvious result.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-festival
+  title: "The Festival"
+  authorIds: [hp-lovecraft]
+  published: 1925
+  subseries: "Cthulhu Mythos"
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A man returns, as family custom obliges once a generation, to his
+    ancestral town of Kingsport for a secret midwinter rite - and finds the
+    relatives waiting for him are not what family custom implied. The
+    Necronomicon appears on the page here in a lengthy quoted passage.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://www.hplovecraft.com/creation/necron/stories.aspx
+
+- id: hp-lovecraft/the-shunned-house
+  title: "The Shunned House"
+  authorIds: [hp-lovecraft]
+  published: 1937
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A Providence house with an unaccountable history of tenants' deaths is
+    finally investigated in the cellar by the narrator and his uncle,
+    armed with acid rather than superstition.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-horror-at-red-hook
+  title: "The Horror at Red Hook"
+  authorIds: [hp-lovecraft]
+  published: 1927
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A New York police detective investigates a wealthy dilettante's ties to
+    an immigrant Brooklyn neighbourhood he believes is a front for an
+    ancient occult cult.
+  note: Written during Lovecraft's own unhappy period living near Red Hook, and widely read since as one of his most openly xenophobic stories - its horror is explicitly staged through disgust at the immigrant community around the narrator, not incidental to the plot.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/he
+  title: "He"
+  authorIds: [hp-lovecraft]
+  published: 1926
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A disillusioned New York transplant is shown, by a strange guide
+    through the city's oldest hidden corners, both its colonial past and a
+    glimpse of a much worse future. Lovecraft's own account of his
+    disillusionment with New York, thinly fictionalised.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/in-the-vault
+  title: "In the Vault"
+  authorIds: [hp-lovecraft]
+  published: 1925
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    An undertaker locked overnight in a receiving tomb, short of usable
+    caskets, improvises a fix that comes back on him.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/cool-air
+  title: "Cool Air"
+  authorIds: [hp-lovecraft]
+  published: 1928
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A boarder in a New York rooming house befriends the eccentric doctor
+    upstairs, who keeps his rooms unaccountably, obsessively cold, for
+    reasons that become clear only when the refrigeration fails.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-call-of-cthulhu
+  title: "The Call of Cthulhu"
+  authorIds: [hp-lovecraft]
+  published: 1928
+  subseries: "Cthulhu Mythos"
+  canonTier: core
+  format: short-story
+  featured: true
+  synopsis: >
+    A scholar assembles, from a dead relative's papers, three
+    unconnected-seeming accounts - a sculptor's nightmares, a police raid on
+    a Louisiana cult, and a sailor's report of a nightmare island risen from
+    the Pacific - into evidence of an ancient, dreaming entity and the cult
+    that waits for its return. Gave the whole Mythos its name, though
+    Lovecraft himself never used that name for it.
+  # No cover: every printing found under this title, from 1970s Ballantine
+  # paperbacks to current print-on-demand editions, is either a themed
+  # anthology bearing this story's name on a collection of several, or a
+  # self-published edition with no verifiable source behind its cover
+  # image (see the works.yaml header's COVERS note).
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://www.hplovecraft.com/creation/necron/stories.aspx
+
+- id: hp-lovecraft/pickmans-model
+  title: "Pickman's Model"
+  authorIds: [hp-lovecraft]
+  published: 1927
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    An artist recounts to a friend why he abruptly quit the Boston art
+    scene, after a private viewing of an outcast painter's most recent,
+    unbearably realistic canvases in his hidden North End studio. The
+    painter is later said, in a different work, to have owned a copy of
+    the Necronomicon.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-strange-high-house-in-the-mist
+  title: "The Strange High House in the Mist"
+  authorIds: [hp-lovecraft]
+  published: 1931
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A philosopher climbs to a cliffside house above Kingsport that no one
+    else will approach, to meet the entity said to receive very old guests
+    there.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-silver-key
+  title: "The Silver Key"
+  authorIds: [hp-lovecraft]
+  published: 1929
+  subseries: "Randolph Carter"
+  canonTier: core
+  format: short-story
+  synopsis: >
+    Randolph Carter, now middle-aged and unable to reach his childhood
+    dream-worlds any longer, finds a silver key among his late
+    grandfather's effects and vanishes using it. Widely read as
+    Lovecraft's own meditation on ageing out of the imaginative freedom of
+    childhood.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-dream-quest-of-unknown-kadath
+  title: "The Dream-Quest of Unknown Kadath"
+  authorIds: [hp-lovecraft]
+  published: 1943
+  subseries: "Randolph Carter"
+  canonTier: core
+  format: novella
+  synopsis: >
+    Randolph Carter, who has dreamed three times of a marvellous sunset
+    city and been shut out of it since, crosses the whole of the
+    dream-world in search of the unknown gods of Kadath to ask them why.
+    The longest sustained piece of dream-world fiction Lovecraft wrote,
+    composed just after his own 1926 return to Providence. Never
+    submitted for publication in his lifetime; first published in 1943.
+  note: >
+    Nyarlathotep appears here as a central figure; classed under this
+    work's Randolph Carter subseries rather than Cthulhu Mythos for the
+    reason given in the header note above. The standard critical reading
+    of the novella against Lovecraft's own 1926 homecoming is held out of
+    the synopsis deliberately: it names where the quest ends, and this
+    work opens the wing's Randolph Carter reading order, so its synopsis
+    is the first thing a reader on that path meets.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-case-of-charles-dexter-ward
+  title: "The Case of Charles Dexter Ward"
+  authorIds: [hp-lovecraft]
+  published: 1941
+  subseries: "Cthulhu Mythos"
+  canonTier: core
+  format: novel
+  featured: true
+  synopsis: >
+    A Providence doctor investigates his patient's family history after a
+    young man in his care is replaced, by degrees, by his own long-dead
+    warlock ancestor - resurrected using knowledge the ancestor never
+    stopped pursuing from beyond the grave. Lovecraft's only novel-length
+    work; he considered it a failure and never submitted it for
+    publication, and it first appeared in 1941, four years after his death.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/207586-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL152269W"
+    # A Del Rey mass-market paperback (November 1987), the novel alone at
+    # 127 pages with no table of contents beyond it - unlike the "At the
+    # Mountains of Madness" and "Colour Out of Space" jackets from the
+    # same imprint line, which bundle several further stories under the
+    # lead title (see the works.yaml header's COVERS note).
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-colour-out-of-space
+  title: "The Colour Out of Space"
+  authorIds: [hp-lovecraft]
+  published: 1927
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A meteorite lands on a New England farm and slowly poisons the land,
+    the water, the livestock and the family living there with something
+    that behaves like nothing on the periodic table. Lovecraft's own
+    favourite among his stories, by his own stated preference.
+  # No cover: the Lancer, NYRB Classics and Penguin editions bearing this
+  # exact title are all themed collections of six or more stories (Open
+  # Library's own tables of contents and page counts confirm this for
+  # each); Necronomicon Press's 1982 solo pamphlet of it has no cover in
+  # its record (see the works.yaml header's COVERS note).
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-descendant
+  title: "The Descendant"
+  authorIds: [hp-lovecraft]
+  published: 1938
+  subseries: "Cthulhu Mythos"
+  canonTier: apocrypha
+  format: short-story
+  synopsis: >
+    An unfinished fragment about a nobleman whose obsessive reading of
+    forbidden books, including the Necronomicon, has left him terrified of
+    a specific word he will not say aloud. Never completed or titled by
+    Lovecraft himself.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://www.hplovecraft.com/creation/necron/stories.aspx
+
+- id: hp-lovecraft/the-very-old-folk
+  title: "The Very Old Folk"
+  authorIds: [hp-lovecraft]
+  published: 1940
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  synopsis: >
+    A vivid account of a Roman garrison in the Pyrenees destroyed after
+    interfering with a hill-tribe's midwinter rite, existing only as an
+    excerpt from a letter Lovecraft wrote describing a dream, never
+    written up as a story in its own right.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/history-of-the-necronomicon
+  title: "History of the Necronomicon"
+  authorIds: [hp-lovecraft]
+  published: 1938
+  subseries: "Cthulhu Mythos"
+  canonTier: apocrypha
+  format: reference
+  synopsis: >
+    A brief in-universe bibliographic history of the Necronomicon - its
+    author, its Arabic and Greek and Latin titles and translators, the
+    handful of surviving copies and their locations - that Lovecraft wrote
+    for his own and his correspondents' reference rather than as a story.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/4977412-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL15330988W"
+    # The title page of the Rebel Press's June 1938 "Limited Memorial
+    # Edition" pamphlet, the piece's first standalone printing (Necronomicon
+    # Press's 1989 reprint reproduces it); plain typography rather than
+    # jacket art is period-accurate for a small memorial chapbook like this
+    # one, not a scan defect.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://www.hplovecraft.com/creation/necron/stories.aspx
+
+- id: hp-lovecraft/the-dunwich-horror
+  title: "The Dunwich Horror"
+  authorIds: [hp-lovecraft]
+  published: 1929
+  subseries: "Cthulhu Mythos"
+  canonTier: core
+  format: novella
+  synopsis: >
+    Wilbur Whateley, born in strange circumstances to a degenerate rural
+    Massachusetts family and grown to manhood inside a decade, works
+    toward the rite his grandfather's forbidden books describe, while
+    something kept boarded up on the family farm grows alongside him -
+    until it is loose over the whole region and two Miskatonic University
+    scholars go up Sentinel Hill after it. Carries the most extensive
+    quoted passage from the Necronomicon of any Lovecraft story,
+    including the "Yog-Sothoth is the key and guardian of the gate" text
+    later quoted throughout Mythos fiction.
+  note: >
+    Wilbur Whateley by name and his Yog-Sothoth parentage both appear in
+    publishers' own jacket copy for this story, so the synopsis states
+    them. What the thing on the farm turns out to be is the story's
+    closing sentence and appears in no jacket copy checked, so it is
+    stated neither here nor in the startHere path that carries this work.
+  # No cover: Lancer's and Arkham House's own "The Dunwich Horror" editions
+  # are both themed collections of seven or more further stories under
+  # this title (Open Library's own table of contents confirms it for the
+  # Lancer edition); Necronomicon Press's solo edition has no cover in its
+  # record (see the works.yaml header's COVERS note).
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://www.hplovecraft.com/creation/necron/stories.aspx
+
+- id: hp-lovecraft/ibid
+  title: "Ibid"
+  authorIds: [hp-lovecraft]
+  published: 1938
+  subseries: null
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A parody scholarly biography of a fictional Roman-era figure, "Ibidus,"
+    poking fun at the way footnote citations accumulate their own garbled
+    legends. Not published in Lovecraft's lifetime.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-whisperer-in-darkness
+  title: "The Whisperer in Darkness"
+  authorIds: [hp-lovecraft]
+  published: 1931
+  subseries: "Cthulhu Mythos"
+  canonTier: core
+  format: novella
+  synopsis: >
+    A Vermont recluse's letters to a Miskatonic professor, describing
+    fungoid alien beings mining the hills near his farm, grow steadily more
+    controlled and strange, ending in an invitation the professor should
+    not have accepted.
+  # No cover: no Necronomicon Press or Hippocampus Press solo edition of
+  # this novella was found; every other printing under this title bundles
+  # it with the two-novella "Shadow Over Innsmouth" pairing or a wider
+  # collection.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://www.hplovecraft.com/creation/necron/stories.aspx
+
+- id: hp-lovecraft/at-the-mountains-of-madness
+  title: "At the Mountains of Madness"
+  authorIds: [hp-lovecraft]
+  published: 1936
+  subseries: "Cthulhu Mythos"
+  canonTier: core
+  format: novella
+  synopsis: >
+    A Miskatonic University Antarctic expedition uncovers, in mountains
+    taller than the Himalayas, the remains of an intelligent civilisation
+    that predates all life on Earth by hundreds of millions of years - and
+    what that civilisation left sealed away in its deepest tunnels.
+    Rejected by Weird Tales's editor as too long and grim; not published
+    until 1936, five years after it was written.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/715836-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL152268W"
+    # Donald M. Grant Publishers' December 1990 illustrated hardcover, a
+    # 95-page deluxe single-work edition, not one of the several
+    # "and Other..." Panther/Del Rey/Ballantine anthologies that also
+    # circulate under this exact title (see the works.yaml header's COVERS
+    # note).
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://www.hplovecraft.com/creation/necron/stories.aspx
+
+- id: hp-lovecraft/the-shadow-over-innsmouth
+  title: "The Shadow over Innsmouth"
+  authorIds: [hp-lovecraft]
+  published: 1936
+  subseries: "Cthulhu Mythos"
+  canonTier: core
+  format: novella
+  synopsis: >
+    A young man's antiquarian tour of a decaying Massachusetts fishing
+    town uncovers a decades-old pact between the town's founders and an
+    undersea race, the Deep Ones, worshippers of Dagon and Cthulhu - and
+    the town's continued interbreeding with them. Its horror is built,
+    explicitly, out of the era's anxiety about racial interbreeding and
+    "tainted" bloodlines; a documented, widely discussed reading of the
+    text rather than an incidental theme.
+  note: Not tagged in the Necronomicon-appearance source used above, but its Deep One, Dagon and Cthulhu content puts it inside the entity-naming half of the Cthulhu Mythos membership test described in the header.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/4807517-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL8423671W"
+    # Necronomicon Press's 1994 solo edition, edited by S. T. Joshi and
+    # David E. Schultz. This is the only book of his own Lovecraft saw
+    # published in his lifetime (Visionary Publishing Co., 1936, 400
+    # copies, of which about 200 were ever bound) - that original edition
+    # predates ISBNs and carries no cover in Open Library's own record, so
+    # this later scholarly printing stands in for it rather than leaving
+    # the work bare.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-dreams-in-the-witch-house
+  title: "The Dreams in the Witch House"
+  authorIds: [hp-lovecraft]
+  published: 1933
+  subseries: "Cthulhu Mythos"
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A mathematics student renting a notoriously haunted Arkham garret finds
+    his geometry coursework and a 17th-century witch's alleged
+    dimension-crossing may be the same problem, worked from two directions.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://www.hplovecraft.com/creation/necron/stories.aspx
+
+- id: hp-lovecraft/the-thing-on-the-doorstep
+  title: "The Thing on the Doorstep"
+  authorIds: [hp-lovecraft]
+  published: 1937
+  subseries: "Cthulhu Mythos"
+  canonTier: core
+  format: short-story
+  synopsis: >
+    A man explains, to justify shooting his own best friend, the years-long
+    campaign by his friend's occultist wife to swap bodies with him
+    permanently.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://www.hplovecraft.com/creation/necron/stories.aspx
+
+- id: hp-lovecraft/the-book
+  title: "The Book"
+  authorIds: [hp-lovecraft]
+  published: 1938
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  synopsis: >
+    An unfinished fragment, a first-person account of acquiring a
+    forbidden book from a strange bookseller and reading passages that
+    unmoor the narrator's sense of the room around him. Possibly an
+    intended prose companion to the Fungi from Yuggoth sonnet sequence's
+    opening poem, also titled "The Book."
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-evil-clergyman
+  title: "The Evil Clergyman"
+  authorIds: [hp-lovecraft]
+  published: 1939
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  synopsis: >
+    An account of a visit to a locked attic room once occupied by a
+    clergyman who dabbled in the forbidden, existing only as an extract
+    from one of Lovecraft's own letters rather than as fiction he wrote for
+    publication.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-shadow-out-of-time
+  title: "The Shadow Out of Time"
+  authorIds: [hp-lovecraft]
+  published: 1936
+  subseries: "Cthulhu Mythos"
+  canonTier: core
+  format: novella
+  synopsis: >
+    An economics professor who lost five years to a mysterious amnesia
+    gradually recovers memories of having been possessed, during that gap,
+    by a member of an ancient race of time-travelling minds - and finds
+    physical proof in the Australian desert that his memories are literally
+    true.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/732833-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL152260W"
+    # Hippocampus Press's 2001 corrected-text edition, edited by S. T.
+    # Joshi and David E. Schultz - a 136-page solo edition of this
+    # novella alone, not Gollancz's 1968 "and other tales of horror"
+    # anthology also catalogued under this title.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://www.hplovecraft.com/creation/necron/stories.aspx
+
+- id: hp-lovecraft/the-haunter-of-the-dark
+  title: "The Haunter of the Dark"
+  authorIds: [hp-lovecraft]
+  published: 1936
+  subseries: "Cthulhu Mythos"
+  canonTier: core
+  format: short-story
+  featured: true
+  synopsis: >
+    A young writer investigating an abandoned Providence church discovers
+    an occult sect's relic, a "Shining Trapezohedron," still active inside
+    - and that it is both a window and a summons. Written as a reply to
+    Robert Bloch's own story "The Shambler from the Stars" (which had
+    killed off a thinly veiled Lovecraft), it kills off a thinly veiled
+    Bloch in turn, with his blessing. The last solo story Lovecraft
+    completed before his 1937 death.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://www.hplovecraft.com/creation/necron/stories.aspx
+
+# ============================================================
+# JUVENILIA - extant childhood fiction with surviving text
+# (see the header note on the four nonextant pieces this excludes)
+# ============================================================
+
+- id: hp-lovecraft/the-little-glass-bottle
+  title: "The Little Glass Bottle"
+  authorIds: [hp-lovecraft]
+  published: 1959
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  synopsis: >
+    A short nautical adventure sketch, the earliest surviving fiction
+    Lovecraft wrote, composed around age five or six and preserved among
+    family papers. Not published until 1959.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-secret-cave-or-john-lees-adventure
+  title: "The Secret Cave, or John Lee's Adventure"
+  authorIds: [hp-lovecraft]
+  published: 1959
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  synopsis: >
+    A boyhood adventure tale about two children trapped in a cave, written
+    around age eight or nine. Not published until 1959.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-mystery-of-the-grave-yard
+  title: "The Mystery of the Grave-Yard"
+  authorIds: [hp-lovecraft]
+  published: 1959
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  synopsis: >
+    A boyhood detective story subtitled "The Doom of the Robber Gang,"
+    written around age eight or nine in imitation of the dime-novel
+    detective fiction Lovecraft read as a child. Not published until 1959.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-mysterious-ship
+  title: "The Mysterious Ship"
+  authorIds: [hp-lovecraft]
+  published: 1959
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  synopsis: >
+    A short boyhood tale of a derelict ship, written around age twelve. Not
+    published until 1959.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-beast-in-the-cave
+  title: "The Beast in the Cave"
+  authorIds: [hp-lovecraft]
+  published: 1918
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  synopsis: >
+    A visitor lost in Kentucky's Mammoth Cave, down to his last matches,
+    kills what he takes for a dangerous animal stalking him in the dark -
+    and finds, by the last match's light, exactly what it was. Written at
+    fourteen; the earliest piece Lovecraft himself later considered worth
+    circulating, though it went unpublished until 1918.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+# ============================================================
+# POETRY - see the header note on why this bibliography does not
+# atomise the amateur-journalism verse corpus the way it atomises
+# every prose tale
+# ============================================================
+
+- id: hp-lovecraft/fungi-from-yuggoth
+  title: "Fungi from Yuggoth"
+  authorIds: [hp-lovecraft]
+  published: 1943
+  subseries: "Cthulhu Mythos"
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    A cycle of thirty-six linked sonnets - dreams, cosmic vistas, and
+    glimpses of things better not glimpsed, moving from an ordinary
+    secondhand bookshop to visions of Yuggoth and beyond. Composed as one
+    sequence over ten days in December 1929-January 1930, unlike the rest
+    of Lovecraft's poetry: individual sonnets were placed in magazines
+    across 1930-1932, but the complete thirty-six-sonnet cycle he actually
+    composed was not published together until 1943, six years after his
+    death.
+  note: Two sonnets in the cycle are titled "Nyarlathotep" (XXI) and "Azathoth" (XXII) and use those entities directly, which is the basis for this work's Cthulhu Mythos tag; the cycle as a whole ranges well beyond Mythos content into dream-poetry and New England genre pieces.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/12608262-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL27282625W"
+    # Hippocampus Press's annotated edition, edited by David E. Schultz
+    # and illustrated by Jason C. Eckhardt - a dedicated edition of the
+    # cycle alone.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+# ============================================================
+# NONFICTION - see the header note; the amateur-journalism essay
+# and editorial corpus is excluded on the same grounds as the verse
+# ============================================================
+
+- id: hp-lovecraft/supernatural-horror-in-literature
+  title: "Supernatural Horror in Literature"
+  authorIds: [hp-lovecraft]
+  published: 1927
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    A long critical survey of the entire weird-fiction tradition, from
+    Gothic novels through Poe, Machen, Blackwood and Dunsany to Lovecraft's
+    own contemporaries, still cited by scholars as a foundational work of
+    horror criticism. Composed 1925-1927 for the amateur-journalism
+    circular The Recluse and revised through the mid-1930s.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/732830-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL15330905W"
+    # Hippocampus Press's "The Annotated Supernatural Horror in
+    # Literature" (September 2000), edited by S. T. Joshi - a dedicated
+    # edition of the essay alone.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/notes-on-writing-weird-fiction
+  title: "Notes on Writing Weird Fiction"
+  authorIds: [hp-lovecraft]
+  published: 1937
+  subseries: null
+  canonTier: extended
+  format: essay
+  synopsis: >
+    A short, frequently reprinted essay laying out Lovecraft's own method
+    for constructing a weird tale, including his habit of working out a
+    story's background events in careful chronological order before
+    writing a word of the narrative itself.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+# ============================================================
+# COLLABORATIONS, REVISIONS AND GHOSTWRITING - see the header note
+# on the sourced authorRole convention this section follows. All
+# apocrypha; none carries withAuthorIds (see header for why).
+# ============================================================
+
+- id: hp-lovecraft/the-battle-that-ended-the-century
+  title: "The Battle that Ended the Century"
+  authorIds: [hp-lovecraft]
+  published: 1934
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Co-written with R. H. Barlow"
+  synopsis: >
+    A broad parody boxing-match sketch between thinly disguised versions of
+    Lovecraft's own literary friends, written purely as an in-joke for
+    private circulation among the Lovecraft circle.
+  note: R. H. Barlow was a teenage protege of Lovecraft's who later became his literary executor; they collaborated on at least six pieces, this among the least serious of them.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://en.wikipedia.org/wiki/R._H._Barlow
+
+- id: hp-lovecraft/bothon
+  title: "Bothon"
+  authorIds: [hp-lovecraft]
+  published: 1946
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Revision of a story by Henry S. Whitehead"
+  synopsis: >
+    A far-future tale of the last survivors of a dying civilisation,
+    revised by Lovecraft from a draft by his friend Henry S. Whitehead, an
+    Episcopal clergyman and fellow Weird Tales contributor. Not published
+    until 1946, well after both writers' deaths.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-challenge-from-beyond
+  title: "The Challenge from Beyond"
+  authorIds: [hp-lovecraft]
+  published: 1935
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Round-robin contribution, with C. L. Moore, A. Merritt, Robert E. Howard and Frank Belknap Long"
+  synopsis: >
+    A five-author round-robin serial for Fantasy Magazine's fifth
+    anniversary issue, each writer continuing the previous one's episode in
+    turn: C. L. Moore opened it, followed by A. Merritt, Lovecraft, Robert
+    E. Howard, and Frank Belknap Long. Lovecraft's own segment describes a
+    mind-swap with an alien, tentacled scientist.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/13303942-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL8728676W"
+    # Necronomicon Press's 1990 pamphlet, cover art by Robert H. Knox,
+    # naming this round robin's own five authors on its front panel. Its
+    # back panel carries a second, unrelated round robin also titled "The
+    # Challenge from Beyond" (a science-fiction serial by Stanley G.
+    # Weinbaum, Donald Wandrei, Edward E. Smith, Harl Vincent and Murray
+    # Leinster, first published the same month in Fantasy Magazine's
+    # companion science-fiction number) - the pamphlet reprints both under
+    # one cover, not an anthology diluting this one.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/collapsing-cosmoses
+  title: "Collapsing Cosmoses"
+  authorIds: [hp-lovecraft]
+  published: 1938
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Co-written with R. H. Barlow"
+  synopsis: >
+    A brief space-opera fragment written jointly with R. H. Barlow. Not
+    published until 1938, after both Lovecraft's death and near the end of
+    Barlow's own involvement with the Lovecraft circle.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-crawling-chaos
+  title: "The Crawling Chaos"
+  authorIds: [hp-lovecraft]
+  published: 1921
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Co-written with Winifred Virginia Jackson"
+  synopsis: >
+    An opium-dream vision of a coastal city's destruction by tidal wave,
+    written jointly with the poet Winifred Virginia Jackson, an early
+    literary partner of Lovecraft's from amateur-journalism circles, from a
+    dream she reported to him.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-curse-of-yig
+  title: "The Curse of Yig"
+  authorIds: [hp-lovecraft]
+  published: 1929
+  subseries: "Cthulhu Mythos"
+  canonTier: apocrypha
+  format: short-story
+  authorRole: author
+  synopsis: >
+    A settler couple in Indian Territory come to a horrific end after the
+    husband kills a nest of snakes sacred to the serpent-god Yig, in a
+    story built from a premise Zealia Bishop provided. The first of three
+    stories Lovecraft ghostwrote for Bishop; introduces the entity Yig,
+    later recurring across other writers' Mythos fiction.
+  note: Ghostwritten for Zealia Bishop, from her premise.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://en.wikipedia.org/wiki/The_Curse_of_Yig
+
+- id: hp-lovecraft/the-diary-of-alonzo-typer
+  title: "The Diary of Alonzo Typer"
+  authorIds: [hp-lovecraft]
+  published: 1938
+  subseries: "Cthulhu Mythos"
+  canonTier: apocrypha
+  format: short-story
+  authorRole: author
+  synopsis: >
+    A found diary recording an occult investigator's last days inside a
+    haunted Dutch-New-York house, heavily reworked by Lovecraft from a
+    draft by William Lumley, an elderly amateur occultist and one of his
+    revision clients. Named by Wikipedia's main Lovecraft article, alongside
+    The Mound and Winged Death, as an example of the "large amount of
+    ghostwriting" he did in this period.
+  note: Ghostwritten for William Lumley, from his draft.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft
+
+- id: hp-lovecraft/the-disinterment
+  title: "The Disinterment"
+  authorIds: [hp-lovecraft]
+  published: 1937
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Revision of a story by Duane W. Rimel"
+  synopsis: >
+    A brain-transplant horror story revised by Lovecraft from a draft by
+    Duane W. Rimel, a young Idaho-based correspondent and one of several
+    aspiring writers he mentored and revised for in the mid-1930s.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-electric-executioner
+  title: "The Electric Executioner"
+  authorIds: [hp-lovecraft]
+  published: 1930
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Revised from Adolphe de Castro's own 1891 story \"The Automatic Executioner\""
+  synopsis: >
+    A railway journey through the Mexican desert with a stranger carrying
+    a home-made electric execution device turns into something closer to
+    demonic possession than justice. A rewrite of a story de Castro had
+    already published under his own name decades earlier, rather than a
+    ghostwrite from a bare premise.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-green-meadow
+  title: "The Green Meadow"
+  authorIds: [hp-lovecraft]
+  published: 1927
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Co-written with Winifred Virginia Jackson"
+  synopsis: >
+    A framing device presents this as a fragment recovered from a
+    meteorite, describing a man swept down a river past an impossible
+    green meadow toward a void. The second of two dream-based pieces
+    written jointly with Winifred Virginia Jackson.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/four-oclock
+  title: "Four O'Clock"
+  authorIds: [hp-lovecraft]
+  published: 1949
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Revision of a story by Sonia Greene"
+  synopsis: >
+    A short piece revised by Lovecraft from a manuscript by his wife,
+    Sonia Greene, whom he married in 1924. Not published until 1949, well
+    after both their deaths.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-hoard-of-the-wizard-beast
+  title: "The Hoard of the Wizard-Beast"
+  authorIds: [hp-lovecraft]
+  published: 1933
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Co-written with R. H. Barlow"
+  synopsis: >
+    A short fantasy sketch of a hoard guarded by a strange beast, written
+    jointly with R. H. Barlow.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-horror-at-martins-beach
+  title: "The Horror at Martin's Beach"
+  authorIds: [hp-lovecraft]
+  published: 1923
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Revision of a story by Sonia Greene"
+  synopsis: >
+    A sea-monster horror story - published as "The Invisible Monster" -
+    about a captured creature that takes a grim revenge on the coastal town
+    that caught it, revised by Lovecraft from a manuscript by Sonia Greene,
+    the woman he would marry the following year.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-horror-in-the-burying-ground
+  title: "The Horror in the Burying-Ground"
+  authorIds: [hp-lovecraft]
+  published: 1937
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: author
+  synopsis: >
+    A small-town undertaker's habit of premature burial catches up with
+    him. One of five stories Lovecraft ghostwrote for Hazel Heald, a
+    Massachusetts writer introduced to him through a mutual friend.
+  note: Ghostwritten for Hazel Heald, from her premise.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-horror-in-the-museum
+  title: "The Horror in the Museum"
+  authorIds: [hp-lovecraft]
+  published: 1933
+  subseries: "Cthulhu Mythos"
+  canonTier: apocrypha
+  format: short-story
+  authorRole: author
+  synopsis: >
+    A wax museum's proprietor claims one of his most convincing horrors, a
+    tentacled god called Rhan-Tegoth, is not wax at all - and keeps it fed.
+    Lovecraft himself, in a 14 June 1933 letter to Clark Ashton Smith,
+    called this story "mostly my own work... entirely so in wording."
+  note: Ghostwritten for Hazel Heald, from her premise.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://en.wikipedia.org/wiki/The_Horror_in_the_Museum
+
+- id: hp-lovecraft/under-the-pyramids
+  title: "Under the Pyramids"
+  authorIds: [hp-lovecraft]
+  published: 1924
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: author
+  publishedAs: "Harry Houdini"
+  synopsis: >
+    A first-person account, attributed to the illusionist Harry Houdini, of
+    being lowered into a sealed chamber beneath the Giza pyramids and
+    discovering what actually walks Egypt's underground passages. Weird
+    Tales published it under Houdini's byline alone and without credit to
+    Lovecraft, since the narrative is told entirely as Houdini's own
+    testimony; Lovecraft was credited only in a 1939 reprint. Also
+    published, in a text restored by S. T. Joshi, as "Imprisoned with the
+    Pharaohs."
+  note: Ghostwritten for Harry Houdini, told in his first person.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://en.wikipedia.org/wiki/Imprisoned_with_the_Pharaohs
+
+- id: hp-lovecraft/the-last-test
+  title: "The Last Test"
+  authorIds: [hp-lovecraft]
+  published: 1928
+  subseries: "Cthulhu Mythos"
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Revision of a story by Adolphe de Castro"
+  synopsis: >
+    A research scientist's experimental serum, developed with knowledge
+    gained abroad, proves to have a far worse origin than his colleagues
+    suspect. Lovecraft's revision for de Castro invented the Arabic title
+    "Al Azif" for the Necronomicon, used nowhere else in his fiction.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://www.hplovecraft.com/creation/necron/stories.aspx
+
+- id: hp-lovecraft/the-man-of-stone
+  title: "The Man of Stone"
+  authorIds: [hp-lovecraft]
+  published: 1932
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: author
+  synopsis: >
+    Hikers in the Adirondacks find lifelike stone statues on an
+    eccentric sculptor's property, arranged in a way that suggests the
+    petrification was not the sculptor's art at all. One of five stories
+    Lovecraft ghostwrote for Hazel Heald.
+  note: Ghostwritten for Hazel Heald, from her premise.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/medusas-coil
+  title: "Medusa's Coil"
+  authorIds: [hp-lovecraft]
+  published: 1939
+  subseries: "Cthulhu Mythos"
+  canonTier: apocrypha
+  format: novella
+  authorRole: author
+  synopsis: >
+    A visitor to a ruined Missouri plantation hears the story of an artist
+    destroyed by his own wife's inhuman, serpentine hair - a story whose
+    original ending was suppressed by editors and not restored in print
+    until S. T. Joshi's 1989 edition. The last of three stories Lovecraft
+    ghostwrote for Zealia Bishop; not published until 1939, after his
+    death.
+  note: >
+    Ghostwritten for Zealia Bishop, from her premise. The suppressed
+    original ending turns on the revelation that a character believed white
+    is not, framed by the text as the story's worst horror - among the most
+    direct examples of Lovecraft's racism reaching into the actual plot
+    mechanics of a story, not only its incidental language.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://en.wikipedia.org/wiki/Medusa%27s_Coil
+
+- id: hp-lovecraft/the-mound
+  title: "The Mound"
+  authorIds: [hp-lovecraft]
+  published: 1940
+  subseries: "Cthulhu Mythos"
+  canonTier: apocrypha
+  format: novella
+  authorRole: author
+  synopsis: >
+    A folklorist investigating an Oklahoma Indian mound said to be haunted
+    by a headless ghost finds, instead, a 16th-century Spanish explorer's
+    manuscript describing an entrance to a vast subterranean civilisation
+    still connected, however distantly, to Cthulhu and the Great Old Ones.
+    Bishop supplied only a brief plot synopsis about a haunted mound;
+    Wikipedia's own infobox for the story credits Lovecraft as
+    "ghostwriter" and Bishop with "original idea" only, and the resulting
+    29,560-word novella is by scholarly consensus almost entirely
+    Lovecraft's own prose and invention.
+  note: Ghostwritten for Zealia Bishop, from her premise.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://en.wikipedia.org/wiki/The_Mound_(novella)
+
+- id: hp-lovecraft/the-night-ocean
+  title: "The Night Ocean"
+  authorIds: [hp-lovecraft]
+  published: 1939
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Co-written with R. H. Barlow"
+  synopsis: >
+    A painter's off-season stay in an empty seaside cottage turns into a
+    quiet, mounting unease about what moves in the water offshore. Unlike
+    most of this section, later scholarship (S. T. Joshi and David E.
+    Schultz among others) credits this story's prose substantially to R. H.
+    Barlow, with Lovecraft as a lighter-touch collaborator and reviser
+    rather than the reverse - the direction that holds for most of this
+    section does not hold here, and it is recorded as co-author on that
+    basis rather than the ghostwriting authorRole used for Lovecraft's
+    other paid revision work.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://en.wikipedia.org/wiki/R._H._Barlow
+
+- id: hp-lovecraft/out-of-the-aeons
+  title: "Out of the Aeons"
+  authorIds: [hp-lovecraft]
+  published: 1935
+  subseries: "Cthulhu Mythos"
+  canonTier: apocrypha
+  format: short-story
+  authorRole: author
+  synopsis: >
+    A Boston museum's mummy exhibit, recovered from a sunken Pacific
+    island, turns out to be a still-living priest who once looked directly
+    upon a god best not looked at, and paid for it. One of five stories
+    Lovecraft ghostwrote for Hazel Heald.
+  note: Ghostwritten for Hazel Heald, from her premise.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://en.wikipedia.org/wiki/Out_of_the_Aeons
+
+- id: hp-lovecraft/poetry-and-the-gods
+  title: "Poetry and the Gods"
+  authorIds: [hp-lovecraft]
+  published: 1920
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Co-written with Anna Helen Crofts"
+  synopsis: >
+    A young woman despairing of modern poetry's decline falls into a vision
+    of Hellenic gods and the great poets of the past. Credited jointly to
+    Lovecraft (under his amateur-journalism pseudonym Henry Paget-Lowe) and
+    Anna Helen Crofts, a fellow amateur journalist; which of the two wrote
+    how much of it is not established in any source consulted here.
+    Lovecraft never mentioned the piece in his own surviving letters or on
+    his own lists of his fiction, and it was not identified as his until
+    Lovecraft scholar George T. Wetzel republished it decades later.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://en.wikipedia.org/wiki/Poetry_and_the_Gods
+
+- id: hp-lovecraft/the-slaying-of-the-monster
+  title: "The Slaying of the Monster"
+  authorIds: [hp-lovecraft]
+  published: 1933
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Co-written with R. H. Barlow"
+  synopsis: >
+    A brief sword-and-sorcery sketch of a hero facing down a monster,
+    written jointly with R. H. Barlow.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-sorcery-of-aphlar
+  title: "The Sorcery of Aphlar"
+  authorIds: [hp-lovecraft]
+  published: 1934
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Revision of a story by Duane W. Rimel"
+  synopsis: >
+    A brief fantasy piece revised from a draft by Duane W. Rimel.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-thing-in-the-moonlight
+  title: "The Thing in the Moonlight"
+  authorIds: [hp-lovecraft]
+  published: 1941
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: author
+  synopsis: >
+    A very short piece, essentially a dream vision of a hybrid horror
+    glimpsed by moonlight at a lakeside camp.
+  note: Its status as a genuine revision commission is weaker than the rest of this section - the dream account is drawn near-verbatim from a 24 November 1927 Lovecraft letter to Donald Wandrei, with editor J. Chapman Miske contributing only a short wraparound frame and the title; it was first published, in the January 1941 issue of Bizarre (a magazine Miske co-edited), credited to Lovecraft alone rather than to Miske. S. T. Joshi's bibliography groups it with "The Evil Clergyman" and "The Very Old Folk" as the same phenomenon, a letter passage extracted and printed as fiction after Lovecraft's death, rather than a developed collaboration like the rest of this section.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://en.wikipedia.org/wiki/The_Thing_in_the_Moonlight
+
+- id: hp-lovecraft/through-the-gates-of-the-silver-key
+  title: "Through the Gates of the Silver Key"
+  authorIds: [hp-lovecraft]
+  published: 1934
+  subseries: "Randolph Carter"
+  canonTier: apocrypha
+  format: novella
+  authorRole: co-author
+  contributionTitle: "Co-written with E. Hoffmann Price"
+  synopsis: >
+    Randolph Carter's relatives, four years after his disappearance in "The
+    Silver Key," gather to settle his estate and instead learn what
+    actually happened to him beyond the gate - an odyssey across time,
+    space and alien bodies. Price, a fan of "The Silver Key," proposed the
+    sequel and wrote a 6,000-word draft in 1932; Lovecraft's 1933 rewrite
+    expanded it to 14,000 words, leaving, by Price's own later estimate,
+    fewer than fifty of his original words unchanged, though the Yaddith
+    subplot was Lovecraft's own addition to Price's outline.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://en.wikipedia.org/wiki/Through_the_Gates_of_the_Silver_Key
+
+- id: hp-lovecraft/till-a-the-seas
+  title: "'Till A' the Seas"
+  authorIds: [hp-lovecraft]
+  published: 1935
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Co-written with R. H. Barlow"
+  synopsis: >
+    A far-future vision of the last human alive on an Earth slowly drying
+    to dust under a dying sun, written jointly with R. H. Barlow from his
+    original draft and idea.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-trap
+  title: "The Trap"
+  authorIds: [hp-lovecraft]
+  published: 1932
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Revision of a story by Henry S. Whitehead"
+  synopsis: >
+    A schoolteacher and student become trapped inside an antique mirror
+    that serves as a doorway to a cold, silent otherworld, in a story
+    revised by Lovecraft from a draft by Henry S. Whitehead.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-tree-on-the-hill
+  title: "The Tree on the Hill"
+  authorIds: [hp-lovecraft]
+  published: 1940
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Revision of a story by Duane W. Rimel"
+  synopsis: >
+    A hilltop tree marks the site of a doorway to another dimension in a
+    story revised by Lovecraft from a draft by Duane W. Rimel. Not
+    published until 1940, after Lovecraft's death.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/two-black-bottles
+  title: "Two Black Bottles"
+  authorIds: [hp-lovecraft]
+  published: 1927
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Revision of a story by Wilfred Blanch Talman"
+  synopsis: >
+    A young man travels to a remote Dutch settlement in upstate New York to
+    investigate his grandfather's disappearance and the sinister sexton who
+    succeeded him, in a story revised by Lovecraft from a draft by his
+    friend Wilfred Blanch Talman.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/in-the-walls-of-eryx
+  title: "In the Walls of Eryx"
+  authorIds: [hp-lovecraft]
+  published: 1939
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Co-written with Kenneth Sterling"
+  synopsis: >
+    A Venusian prospector, hunting a valuable crystal, becomes lost inside
+    an invisible maze built by the planet's native inhabitants. Sterling,
+    a teenage science-fiction fan and later a physician, provided the
+    original 6,000-8,000-word draft and premise; Lovecraft's rewrite
+    lengthened it to 12,000 words and, though Sterling's original draft
+    does not survive for comparison, is generally credited with most of
+    the finished prose. Not published until 1939, after Lovecraft's death.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://en.wikipedia.org/wiki/In_the_Walls_of_Eryx
+
+- id: hp-lovecraft/winged-death
+  title: "Winged Death"
+  authorIds: [hp-lovecraft]
+  published: 1934
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: author
+  synopsis: >
+    A South African scientist murders a rival using a specially bred,
+    intelligent fly, and then finds the fly is not finished with him.
+    Named by Wikipedia's main Lovecraft
+    article, alongside The Mound and The Diary of Alonzo Typer, as an
+    example of the "large amount of ghostwriting" he did for other authors.
+    One of five stories Lovecraft ghostwrote for Hazel Heald.
+  note: >
+    Ghostwritten for Hazel Heald, from her premise. What becomes of the
+    murdered man is the closing entry of the diary the story is told in
+    and is not stated in the synopsis.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft
+
+- id: hp-lovecraft/satans-servants
+  title: "Satan's Servants"
+  authorIds: [hp-lovecraft]
+  published: 1949
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Written by Robert Bloch, revised with Lovecraft's advice"
+  synopsis: >
+    A New England witch-cult horror story by Robert Bloch, then a teenage
+    correspondent of Lovecraft's who would go on to write Psycho, revised
+    with Lovecraft's editorial input rather than ghostwritten by him -
+    the direction here runs opposite to the Bishop/Heald/de Castro
+    cluster elsewhere in this section, with Bloch as the story's own
+    author. Not published until 1949, well after Lovecraft's death.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/the-loved-dead
+  title: "The Loved Dead"
+  authorIds: [hp-lovecraft]
+  published: 1924
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Revision of a story by C. M. Eddy Jr."
+  synopsis: >
+    A necrophiliac narrator's confession, revised by Lovecraft from a draft
+    by his friend C. M. Eddy Jr. Its explicit content provoked a formal
+    protest from Indiana authorities seeking to have the issue banned, and
+    made Weird Tales's editor markedly more cautious about accepting
+    grim submissions from Lovecraft afterward.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+    - https://en.wikipedia.org/wiki/The_Loved_Dead
+
+- id: hp-lovecraft/the-ghost-eater
+  title: "The Ghost-Eater"
+  authorIds: [hp-lovecraft]
+  published: 1924
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Revision of a story by C. M. Eddy Jr."
+  synopsis: >
+    A traveller lost in the woods takes shelter in what turns out to be a
+    haunted house, in a story revised by Lovecraft from a draft by C. M.
+    Eddy Jr.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/deaf-dumb-and-blind
+  title: "Deaf, Dumb and Blind"
+  authorIds: [hp-lovecraft]
+  published: 1925
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Revision of a story by C. M. Eddy Jr."
+  synopsis: >
+    A blind, deaf and mute writer's isolated household is invaded by
+    something only he, without any of the ordinary senses to be fooled by
+    it, can perceive clearly. Revised by Lovecraft from a draft by C. M.
+    Eddy Jr.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography
+
+- id: hp-lovecraft/ashes
+  title: "Ashes"
+  authorIds: [hp-lovecraft]
+  published: 1924
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  authorRole: co-author
+  contributionTitle: "Revision of a story by C. M. Eddy Jr."
+  synopsis: >
+    A chemist's experiment in matter disintegration is turned to murder, in
+    a story revised by Lovecraft from a draft by C. M. Eddy Jr.
+  sources:
+    - https://en.wikipedia.org/wiki/H._P._Lovecraft_bibliography

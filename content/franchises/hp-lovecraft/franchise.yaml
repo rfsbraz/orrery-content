@@ -1,0 +1,184 @@
+# Identity + features. This catalogue's standing rule is that a wing spans
+# an author's complete published body of work, so kind is author and the
+# wing spans Lovecraft's COMPLETE published body of work,
+# not just the Cthulhu Mythos he is best known for; the Mythos lives inside
+# this wing as a subseries (see works.yaml's header for the sourced
+# boundary between his own Mythos contributions and August Derleth's
+# posthumous extensions, which do not belong in this wing at all).
+#
+# features is left unset (auto). startHere and orders.yaml are ruled below
+# and in orders.yaml's own header; globalEvents is ruled further down.
+id: hp-lovecraft
+name: H. P. Lovecraft
+kind: author
+description: >
+  A Providence, Rhode Island magazine contributor who spent most of his
+  working life ghostwriting and revising other people's fiction for a fee,
+  and who wrote, almost as a side effect, the body of short stories and
+  novellas that gave 20th-century horror its cosmic register: from the
+  found-manuscript dread of
+  [[work:hp-lovecraft/the-call-of-cthulhu|The Call of Cthulhu]] (1928)
+  through the Antarctic expedition report of
+  [[work:hp-lovecraft/at-the-mountains-of-madness|At the Mountains of
+  Madness]] (1936) to the last story he completed,
+  [[work:hp-lovecraft/the-haunter-of-the-dark|The Haunter of the Dark]]
+  (1936). Almost entirely unknown outside pulp-magazine readership at his
+  death in 1937, his work survives mainly because friends founded a small
+  press, Arkham House, to keep it in print.
+authorIds: [hp-lovecraft]
+themePreset: cosmic-antiquarian
+
+# Wide banner for the wing. Ladd Observatory, Brown University's teaching
+# observatory a few blocks from Lovecraft's own Angell Street home: he
+# petitioned as a teenager for permission to use its telescope, wrote his
+# own newspaper astronomy column out of what he learned there from 1906,
+# and kept an astronomical notebook for most of a decade before he
+# published a word of fiction - the documented root of the cosmicism that
+# runs through nearly everything he wrote (see theme.yaml's own emblem
+# note, which rests on the same fact). Reads as the wing rather than as
+# one adaptation, on the same test this catalogue already applies
+# elsewhere. Wikimedia Commons, public domain (photographer's own
+# dedication).
+images:
+  header: "https://upload.wikimedia.org/wikipedia/commons/9/97/BrownUniversity-LaddObservatory.jpg"
+  headerCredit: "Apavlo; public domain"
+  headerSource: "https://commons.wikimedia.org/wiki/File:BrownUniversity-LaddObservatory.jpg"
+
+sources:
+  - "https://en.wikipedia.org/wiki/H._P._Lovecraft"
+  - "https://www.hplovecraft.com/"
+
+# Four paths. No numbered series exists on this shelf to build a wizard
+# around (see orders.yaml's header), so "essentials" and "the whole shelf"
+# do the work a Poe-style wing needs, and each of the two subseries gets
+# its own path pointed at its own order in orders.yaml, on the same terms
+# that order earns its slot - the Randolph Carter path is a real arc, the
+# Cthulhu Mythos path is honestly a thread pulled from the shelf and says
+# so in its own description.
+#
+# Sources for "essentials": four independent publications that cover books
+# converge on the same handful of titles. Book Riot
+# (https://bookriot.com/lovecraft-reading-order-beginners/) opens with The
+# Shadow over Innsmouth ("you really get a feel for Lovecraft's best, and
+# worst, habits in one well-written story") then The Call of Cthulhu, then
+# The Dunwich Horror. Reedsy Discovery
+# (https://reedsy.com/discovery/blog/best-lovecraft-books) calls The Call
+# of Cthulhu "probably Lovecraft's most influential story" and ranks The
+# Shadow over Innsmouth and The Dunwich Horror in its own top five.
+# Penguin Random House
+# (https://www.penguinrandomhouse.com/the-read-down/want-read-lovecraft-heres-start/)
+# opens with The Call of Cthulhu and lists The Dunwich Horror third. The
+# Teeming Brain
+# (https://www.teemingbrain.com/2013/06/03/how-to-read-lovecraft-a-practical-beginners-guide/)
+# recommends starting with The Call of Cthulhu as a "test drive" before
+# anything else, then names The Dunwich Horror and The Colour Out of Space
+# among the five follow-ups. The Colour Out of Space's fourth place here
+# rests on that one source plus Lovecraft's own stated preference for it,
+# already recorded in the work's own synopsis.
+startHere:
+  paths:
+    - id: essentials
+      title: The essentials
+      description: >
+        Four self-contained tales, no series required: the found-manuscript
+        report that gave the whole mythology its name, the decaying
+        fishing town keeping a very old bargain, the New England farm a
+        meteorite slowly poisons, and the monstrous rural birth that
+        threatens a whole valley. Any one stands alone; together they show
+        the range beginner guides most often point to first.
+      workIds:
+        - hp-lovecraft/the-call-of-cthulhu
+        - hp-lovecraft/the-shadow-over-innsmouth
+        - hp-lovecraft/the-colour-out-of-space
+        - hp-lovecraft/the-dunwich-horror
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        All four are independently readable and can be read in any order.
+        This is four out of a hundred and eleven works - it skips the
+        Randolph Carter thread, the wider Cthulhu Mythos, the collaborations
+        and everything outside the fiction core.
+
+    # See orders.yaml for the sourced rationale and the internal-chronology
+    # citations (Wikipedia's Randolph Carter and Silver Key articles,
+    # citing S. T. Joshi).
+    - id: meet-randolph-carter
+      title: Meet Randolph Carter
+      description: >
+        Lovecraft's one recurring protagonist, in the order his own life
+        places the four tales rather than the order they reached print: a
+        young dreamer crossing his own dream-world at will, the testimony
+        of a friend's disappearance dated to his later years, the
+        middle-aged man mourning the gift he has lost, and the sequel
+        E. Hoffmann Price wrote with Lovecraft to settle what became of
+        him.
+      workIds: null
+      orderId: hp-lovecraft/randolph-carter-in-order
+      fit:
+        experience: [new, returning]
+        commitment: [taste, arc]
+      note: >
+        Four tales - a short, complete arc, not a commitment to the rest of
+        the shelf. The Dream-Quest opening this arc is also its longest and
+        most digressive entry.
+
+    # See orders.yaml for the sourced rationale, including what this order
+    # does and does not claim (publication order restricted to the
+    # subseries, no in-universe sequence asserted).
+    - id: the-cthulhu-mythos
+      title: The connected mythology
+      description: >
+        Twenty-five tales carrying Lovecraft's own Necronomicon and
+        pantheon-entity content, set in the order he wrote them: for a
+        reader who came to Lovecraft through Cthulhu and the shared
+        mythology rather than through him as a short-story writer
+        generally.
+      workIds: null
+      orderId: hp-lovecraft/cthulhu-mythos-in-order
+      fit:
+        experience: [returning]
+        commitment: [arc]
+      note: >
+        This is publication order, not a "how the mythology builds"
+        curated sequence - no source found recommends a specific path
+        through these twenty-five beyond the order they appeared, and the
+        tales share no continuous cast or timeline of their own.
+
+    - id: the-whole-shelf
+      title: The whole shelf
+      description: >
+        All hundred and eleven works in the order Lovecraft wrote them:
+        the teenage pastiches, the decade of magazine tales that gave the
+        Mythos its name, the ghostwriting and revision work he did for a
+        fee alongside it, and the fiction still reaching print two decades
+        after his 1937 death. Not a series read front to back - a working
+        writer's whole output, tale by tale.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+      note: >
+        49 of the 111 works are apocrypha by this wing's own tiering -
+        juvenilia, fragments, letter-excerpts and every collaboration
+        regardless of Lovecraft's share in it - so a reader who wants the
+        finished solo fiction first should start with "The essentials"
+        instead.
+
+# "Lifetime" is read as Lovecraft's actual 1890-1937 life, the same rule
+# already used for Poe (1809-1849) and Sewell (1820-1878) elsewhere in this
+# catalogue, not stretched to cover the 1938-1959 span his own work kept
+# being newly published across after his death. That stretch is real and
+# is where most of the candidates below actually sit; each was still
+# checked against the sourced posthumous-publishing record in events.yaml
+# rather than waved through or passed over on lifetime grounds alone.
+globalEvents:
+  include:
+    - world-war-i-1914     # supplies the literal frame of Dagon (1917), a merchant officer's ship taken by a German sea-raider; he twice tried to enlist and was turned down both times at his mother's doing
+    - pulp-magazines-1926  # the genre-magazine market it names, Weird Tales among it, was his only professional outlet for two decades; its editor's rejections directly shape three works in this wing's own events.yaml
+  exclude:
+    - penguin-paperback-1935      # lived through it, but had no book in print at all yet (his first collection was posthumous, 1939) and never reached British paperback in his lifetime
+    - world-war-ii-1939            # 17 months after his death; Arkham House's own 1939-1945 activity is already dated and sourced in events.yaml with no wartime detail in the record, so nothing ties the war itself to how those books were made
+    - comics-code-authority-1954   # posthumous by 17 years; checked EC Comics' own Tales from the Crypt catalogue directly (Grand Comics Database, EC Comics Wiki) for a claimed Lovecraft adaptation and found no Lovecraft credit or note in the primary record, so no book answers it

@@ -1,0 +1,118 @@
+# Branding for the H. P. Lovecraft wing (see Orrery CONCEPT SS6 and
+# docs/SCHEMA.md#themeyaml).
+#
+# Checked against scripts/theme_digest.py before choosing anything, since
+# this wing's nearest neighbour in the catalogue is unmistakably
+# edgar-allan-poe (tarnished-gothic: fraunces, beam, a violet-black bg
+# #0d0b12, a tarnished-brass accent #9c7a3d). The two authors share a genre
+# and a period-adjacent register, so the deliberate choice here is to read
+# as a related but different hand rather than a restyled copy: cold and
+# oceanic where Poe is warm and interior, a firm ruled line where Poe's is
+# an engraver's controlled hatching, spectral rather than fraunces (already
+# Poe's, and also claimed by five other wings), and a verdigris green-teal
+# accent that does not collide with any existing hue in the digest
+# (nearest is chuck-palahniuk's clean clinical #74a89a; this one is darker
+# and murkier - corroded metal, not fluorescent light).
+#
+# The register itself is drawn from two well-documented, non-tentacle facts
+# about the author rather than genre iconography: he was a devoted amateur
+# astronomer from childhood (see the emblem note below), and the great
+# majority of his mature fiction is framed as a document someone found,
+# verified or swore to - a report, a diary, a deposition, a professor's
+# paper - rather than as a story being told. Both point away from Gothic
+# interior drama and toward something colder, more procedural, and coastal.
+preset: cosmic-antiquarian
+palette:
+  bg: "#080b0d"        # near-void black with the barest cold blue-green
+                       # cast - night sky and ocean depth, not Poe's
+                       # violet-black interior
+  surface: "#11171a"   # one step up, still cold, for cards
+  ink: "#e4e1d6"        # pale aged parchment, warm against the cold
+                       # background - AA-checked, high contrast
+  muted: "#7c8a8a"      # cool grey with a faint green cast, for metadata
+  accent: "#4a7d72"     # verdigris - oxidised brass and bronze gone green
+                       # under sea air, not a bioluminescent or "toxic
+                       # slime" green; checked against every accent in
+                       # theme_digest.py, nearest neighbour is
+                       # chuck-palahniuk's brighter, flatter #74a89a
+displayFace: spectral   # from the app's implemented set (fraunces |
+                       # spectral | sourceSerif); fraunces is Poe's in this
+                       # catalogue (and five other wings' besides);
+                       # spectral's cooler, more contemporary optical
+                       # register suits a wing whose prose keeps
+                       # presenting itself as a typed report or a sworn
+                       # statement rather than a told story
+signature: rule         # a firm, level architectural line rather than
+                       # Poe's warm beam - the ruled edge of a surveyor's
+                       # chart, a ledger column, a cyclopean wall measured
+                       # and found not to agree with Euclid. Deliberately
+                       # unlit: this wing's dread is measured and
+                       # documented, not glimpsed by one candle
+notes: >
+  Cold rather than warm, procedural rather than confessional, coastal decay
+  rather than interior gothic. The restraint to hold: no tentacles, no
+  glowing green horror-cliche lighting, no pulp-cover camp - see art.avoid
+  below. Every motif traces to something in the record (an instrument he
+  actually owned or wrote about, a narrative device his stories actually
+  use, a setting his fiction actually returns to), not to fan iconography
+  invented after his death.
+art:
+  emblem:
+    object: >
+      A small brass telescope on a plain wooden tripod, aimed up and out of
+      frame, its fittings dulled with a fine bloom of verdigris; beside it
+      an open notebook ruled into columns and filled with a cramped, exact
+      hand recording star positions.
+    why: >
+      Lovecraft was a devoted amateur astronomer from early boyhood: he
+      petitioned to use Providence's Ladd Observatory as a teenager, wrote
+      his own astronomy column for local newspapers from 1906, and kept an
+      astronomical notebook for most of a decade before he published a
+      word of fiction. Cosmicism - his own name for the philosophy at the
+      centre of nearly everything he wrote, the conviction that human
+      concerns are cosmically insignificant - grew directly out of this
+      habit of looking up and doing the arithmetic, not out of horror
+      fiction he had read. An instrument doing exactly the ordinary,
+      documented thing it was built for is the emblem; nothing in it is
+      invented for the wing.
+  motifs:
+    - a brass telescope, sextant or astronomical instrument, its metal
+      dulled with verdigris
+    - cyclopean, non-Euclidean masonry glimpsed at an angle that will not
+      quite resolve on the page
+    - a sealed academic file, expedition report or sworn deposition,
+      string-tied and stamped, standing in for the monster itself
+    - a shuttered New England coastal house with a gambrel roof, seen from
+      a low tide-flat at dusk
+    - fog over a half-abandoned wharf, the pilings black and slick
+    - a ship's brass fitting, corroded green, half-buried in wet sand
+    - a hand-drawn survey map or star chart with one area left deliberately
+      blank
+    - amphibian anatomy suggested only at the edge of the frame - a webbed
+      hand's shadow, never the whole figure
+  atmosphere: >
+    Cold and vast rather than close and candlelit - the opposite pole from
+    Poe's one shut room. Dread arrives as evidence accumulating in a
+    careful hand: a report, a diary, a sworn statement, a survey. Coastal
+    fog and tide-flat decay do the work interior gothic does elsewhere in
+    this catalogue. Almost nothing is shown outright; almost everything is
+    read, verified, and found to be true.
+  lineCharacter: >
+    A dry technical-pen line held level, like a surveyor's or a
+    draughtsman's hand rather than an illustrator's - fewer, more
+    deliberate strokes than Poe's steel-engraver hatching, with untouched
+    paper doing as much work as ink, so that what the drawing withholds
+    matters as much as what it shows.
+  backgroundTexture: >
+    Damp, foxed archival paper - a manuscript that has spent decades in a
+    humid coastal attic, not a clean drafting sheet.
+  accentUse: >
+    The verdigris green appears only on metal that has been exposed to sea
+    air a long time - an instrument, a ship's fitting, a door handle -
+    never as a wash, a glow, or a fill.
+  avoid:
+    - tentacles or cartoon Cthulhu iconography
+    - robed-cultist imagery used as a generic shorthand
+    - glowing or bioluminescent green horror-cliche lighting
+    - pulp-magazine cover camp
+    - gore for its own sake
