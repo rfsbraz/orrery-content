@@ -32,6 +32,21 @@ features:
   companion: auto
   editions: auto
 
+globalEvents:
+  include:
+    - online-bookselling-1995  # his first book published the month Amazon launched; online backlist discovery was essential when The Da Vinci Code pulled his earlier novels onto bestseller lists in 2003
+  exclude:
+    - fantasy-paperback-boom-1965       # created the commercial category for fantasy authors, not thriller writers; predates him by one year but does not shape his genre
+    - carnation-revolution-1974         # Portuguese political event; Brown is American with no documented connection to his work
+    - chain-bookshop-1982               # shaped bookselling while he was in college; no specific documented influence on his thrillers
+    - sept-11-2001                      # lived through it; his themes predate or bypass it (Digital Fortress 1998 on NSA/cryptography predates 9/11; Da Vinci Code 2003 on religious conspiracy unrelated to terrorism)
+    - financial-crisis-2008             # Inferno's overpopulation theme is independent of financial-crisis ethics; no resonance
+    - ebook-and-self-publishing-2007    # Brown remained traditionally published with Doubleday; self-publishing platforms did not shape his career
+    - prestige-fantasy-adaptation-2011  # Game of Thrones example; Brown writes thrillers, not fantasy; his own film adaptations preceded this shift
+    - portugal-bailout-2011             # Portuguese financial crisis; Brown is American with no documented connection
+    - booktok-2020                      # established bestselling author; BookTok reaches lesser-known and younger writers, not career-defining authors in their peak
+    - covid-19-pandemic-2020            # lived through it; no documented influence on his work or themes
+
 sources:
   - https://en.wikipedia.org/wiki/Dan_Brown
   - https://en.wikipedia.org/wiki/Robert_Langdon
