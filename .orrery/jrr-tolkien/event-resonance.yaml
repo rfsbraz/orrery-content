@@ -1,0 +1,23 @@
+stage: event-resonance
+wing: jrr-tolkien
+
+summary: |
+  Applied the resonance test to all 21 global events in content/events/global.yaml.
+  Only one event passes: world-war-i-1914. It shaped Tolkien's body, landscape, and
+  the legendarium's emotional core through his 1916 Somme service, trench fever, and
+  the deaths of T.C.B.S. friends during the war. All other events fall outside the
+  authors' working periods or show no connection to how the books came into being.
+
+produced:
+  - file: content/franchises/jrr-tolkien/franchise.yaml
+    changes:
+      - added globalEvents field
+      - include: [world-war-i-1914]
+      - exclude: 20 events with specific reasoning for each
+
+forStages:
+  reading-orders: The timeline is now settled on one defining global event. Proceed
+    with constructing reading orders using the completed aura layer (eras, life events,
+    and now global events).
+
+openQuestions: null
