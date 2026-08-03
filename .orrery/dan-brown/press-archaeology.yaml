@@ -1,0 +1,82 @@
+stage: press-archaeology
+summary: >
+  Built the biographical spine: 5 new lifeEvents on
+  content/authors/dan-brown.yaml (marries Blythe Newlon 1997; the 1999
+  self-released "Angels & Demons" CD that names Robert Langdon, correcting
+  the commonly repeated 1994 date; the 2004 Phillips Exeter Technology
+  Endowment; the 2016 Ritman Library gift; the 2019 divorce and 2020-2021
+  lawsuit), plus layout fields on the two pre-existing lifeEvents (birth ->
+  full-bleed-vista, the 2003 breakout -> immersion; both were unset and
+  colliding with new neighbours). New content/franchises/dan-brown/events.yaml
+  with 2 franchise events (the 2006-2007 Baigent and Leigh copyright suits;
+  the 2006 film's simultaneous Vatican boycott call and Louvre tourism
+  boom). Several sources are primary: Brown's own 2006 High Court witness
+  statement (verbatim on johnlangdon.net), the PEA press release (Wayback),
+  the actual settlement reporting on the divorce lawsuit rather than any
+  paraphrase. aura_density.py's longest dark run is now 4 years
+  (2012-2015), down from 8. art_rotation.py --check clean. validate.py
+  --slug dan-brown clean except the expected missing theme.yaml `art:` block.
+produced:
+  newLifeEventIds:
+    - db-marries-blythe-newlon-1997
+    - db-angels-demons-cd-ambigram-1999
+    - db-exeter-technology-endowment-2004
+    - db-ritman-library-donation-2016
+    - db-divorce-and-lawsuit-2021
+  editedLifeEventIds: [db-born-1964, db-da-vinci-code-breaks-out-2003]
+  newFranchiseEventIds:
+    - dan-brown-baigent-leigh-lawsuit-2006
+    - dan-brown-phenomenon-2006
+  filesWritten:
+    - content/authors/dan-brown.yaml
+    - content/franchises/dan-brown/events.yaml
+  rejected: >
+    Inferno (2013, overpopulation) and Origin (2017, AI-vs-religion):
+    everything found was literary-critical discourse, never a documented
+    public controversy (no boycott, no institutional condemnation, no named
+    figure disputing it, unlike the Vatican/Da Vinci Code case). Held out
+    as reception without controversy - also why 2012-2015 is the one
+    remaining dark stretch.
+  correction: >
+    The Angels & Demons CD is dated 1994 almost everywhere reachable,
+    Wikipedia included. Brown's own 2006 witness statement (verbatim on
+    johnlangdon.net) says the CD "was released in 1999." A sworn
+    first-person account outranks an uncredited secondary date, so the
+    lifeEvent is dated 1999, with 1994 named and corrected rather than
+    dropped.
+forStages:
+  eras: >
+    No hinge candidates beyond franchise-research's own open question. If
+    an era split is warranted, birth and the 2003 breakout are the only two
+    moments this pass found rupture-sized; the 1990s music arc (met Newlon
+    early 90s, wound down by the 1999 CD) belongs inside a "before the
+    breakout" era, not its own.
+  visual-language: >
+    New sourced motifs, none a named-person likeness (VISUAL.md §3): a
+    generic NH lakeshore (not the actual private wedding site), a
+    home CD-burning setup with an ambigram taking shape, a PEA gala/stack
+    of math textbooks, an Amsterdam room of alchemical volumes, a UK High
+    Court document seal, a press mosaic (marquee, Louvre queue, placard).
+  reading-orders: No change to the single-series structure.
+  world-events: >
+    Not routed to - 2012-2015 reads as a genuinely quiet writing stretch
+    (see rejected), not a gap a global event would plausibly fill.
+openQuestions:
+  - "1994-vs-1999 CD date rests on one first-person source (written from
+    memory for a 2006 lawsuit) against a widely repeated but uncredited
+    secondary date - worth a second pass if a contemporary 1990s source
+    surfaces."
+  - "The June 2020 NH complaint (courts.nh.gov PDF) didn't extract
+    cleanly and wasn't read beyond what Newsweek/CBS Boston already quote
+    from it directly; a curator wanting more would read it by hand."
+  - "db-divorce-and-lawsuit-2021 keeps Newlon's affair/horse-trainer
+    allegation and Brown's denial as claims, not fact - the case settled
+    without trial and nothing found adjudicates it."
+  - "The 1997 wedding's exact date/venue (commonly given as Pea Porridge
+    Pond, Conway NH) never resolved to an editorially accountable source;
+    held out. The year itself is solid (a 2006 Reuters court piece plus
+    Wikipedia's independent '22 years by 2019' account agree)."
+  - "The 2011 Amherst scholarship is mentioned only inside the 2004 PEA
+    entry, sourced via Wikipedia's own citation of Amherst's campaign PDF
+    - that PDF 403'd on every direct fetch attempt. Worth a retry before
+    treating 2011 as independently pinned."
