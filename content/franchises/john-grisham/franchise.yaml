@@ -130,10 +130,11 @@ startHere:
         commitment: [complete]
 
 # Capabilities (docs/SCHEMA.md) are auto-detected from the data and left auto
-# here on purpose: with no theme.art, no events.yaml and no eras.yaml yet,
-# `river` and `companion` will not activate until those exist; `wizard` will
-# not activate until a startHere is written; `editions` will not activate
-# until editions.yaml exists. Nothing needs forcing off in the meantime.
+# here on purpose. All four resolve on: the timeline carries 14 entries (13
+# author lifeEvents plus the one franchise event), which activates `river` and
+# `companion`; four startHere paths activate `wizard`; 57 editions activate
+# `editions`. None of them lights up a half-empty view, so none needs forcing
+# off.
 features:
   river: auto
   wizard: auto
