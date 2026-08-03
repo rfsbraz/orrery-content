@@ -1,0 +1,118 @@
+stage: spoiler-audit
+wing: jrr-tolkien
+
+summary: >
+  Four prose spoilers found and rewritten; no boundaries set anywhere. Every
+  fix was a rewrite, which is the only lever available for three of the four
+  (a synopsis and an order's debated list carry no gate) and the better one
+  for the fourth. The publisher test overturned two initial rulings toward
+  leaving prose alone. The reading-orders-flagged chronological vector came
+  out clean in both directions.
+
+produced:
+  rewritten:
+    - id: jrr-tolkien/the-adventures-of-tom-bombadil
+      field: synopsis
+      severity: load-bearing
+      before: "...two about Tom Bombadil himself, the enigmatic figure the Ring has no power over."
+      after: "...two about Tom Bombadil himself, the most enigmatic of the figures the novel's hobbits meet on the road."
+      why: >
+        Tom Bombadil's immunity to the Ring is a scene in The Lord of the
+        Rings' own first book and is in no jacket copy for either title;
+        HarperCollins' copy for this collection stops at "one of the most
+        intriguing characters in The Lord of the Rings, the amusing and
+        enigmatic Tom Bombadil". A minor 1962 verse collection was leaking a
+        novel's moment. Curator-only note added so a later enrichment pass
+        does not pull the blurb back.
+    - id: jrr-tolkien/smith-of-wootton-major
+      field: synopsis
+      severity: load-bearing
+      before: "A boy swallows a magic star baked into a festival cake and gains passage into the perilous, beautiful land of Faery for the rest of his life - until the star, and the passage, must be given up in turn."
+      after: "A boy swallows a magic star baked into a festival cake and gains passage into the perilous, beautiful land of Faery, walking in and out of it for years while living an ordinary life as the village smith."
+      why: >
+        The relinquishment of the star is the ending of a sixty-page novella
+        whose whole weight sits there. HarperCollins stops at "a wanderer who
+        finds his way into the perilous realm of Faery". Curator-only note
+        added. See openQuestions - this is the loosenable one.
+    - id: jrr-tolkien/chronological
+      field: debated[2]
+      severity: load-bearing
+      before: "...(Beren's generation predates Húrin's son Túrin; Gondolin falls after Túrin's death)..."
+      after: "...(Beren's generation predates Húrin's, and Gondolin's own years run latest of the three)..."
+      why: >
+        Stated Túrin's death flatly and as a datable marker - the ending of
+        The Children of Húrin, and the one thing this wing's own synopsis for
+        that book carefully withholds. HarperCollins goes as far as "their
+        brief and passionate lives" and "the curse of Morgoth was fulfilled"
+        and never says he dies. The chronological argument does not need it.
+    - id: jrr-tolkien-cbe-death-1973
+      file: content/authors/jrr-tolkien.yaml
+      field: description
+      severity: load-bearing
+      before: '...the mortal man and immortal elf-woman of his own legendarium, reunited on the stone as he judged they were reunited in the story.'
+      after: '...the mortal man and immortal elf-woman of his own legendarium, the pair whose names he had chosen for the two of them.'
+      why: >
+        The trailing clause stated the ending of Beren and Lúthien: that both
+        die and are reunited beyond death, which is also to say Lúthien gives
+        up her immortality. That book's jacket stops at "the supremely heroic
+        attempt to rob Morgoth of a Silmaril". The gravestone fact itself
+        needs no protection; only the interpretive clause did. This is
+        SKILL.md's preferred shape - drop the clause, leave the event
+        ungated, biography still reaches everyone.
+  boundariesSet: []
+  boundariesLoosened: []
+  notesAdded: [jrr-tolkien/the-adventures-of-tom-bombadil, jrr-tolkien/smith-of-wootton-major]
+  filesTouched:
+    - content/franchises/jrr-tolkien/works.yaml
+    - content/franchises/jrr-tolkien/orders.yaml
+    - content/authors/jrr-tolkien.yaml
+
+  checkedNotSpoilers:
+    - "the-fall-of-gondolin, 'betrayal from within' - QUEUED FOR REDACTION, OVERTURNED by the publisher test: HarperCollins reads 'Morgoth learns through an act of supreme treachery all that he needs to mount a devastating attack on the city', and goes further still, naming Tuor, Idril, Eärendel and their escape. Left."
+    - "the-bovadium-fragments, 'a final explosion ended the city' - QUEUED FOR REDACTION, OVERTURNED: Carpenter's description, quoted verbatim in HarperCollins' own announcement, has the motores 'block the streets, asphyxiate the inhabitants, and finally explode'. Left."
+    - "beren-and-luthien - tracks the HarperCollins blurb clause for clause and stops where it stops, at the attempt. No death, no choice of mortality, no Carcharoth. Left."
+    - "the-children-of-hurin - names the curse and the ill luck and stops; nothing of Nienor, the marriage, or either suicide. The publisher goes further than this synopsis does. Left."
+    - "the-silmarillion - 'the drowning of Númenor' is the book's own section title (Akallabêth: The Downfall of Númenor), in every table of contents. Fëanor, the Silmarils' fate, and how Morgoth and Sauron each end are all correctly absent. Left."
+    - "the-hobbit - 'rather more than a share of gold' nods at the ring without naming it, leans on nothing LOTR alone establishes, and withholds Smaug's and Thorin's deaths. Correct as written."
+    - "the-lord-of-the-rings - the ring as Sauron's master weapon and the errand to destroy it are on the back of every edition; 'a war his errand alone can end' states the stake, not the outcome. Jacket copy. Left."
+    - "unfinished-tales - 'how Gandalf came to choose Bilbo' is The Quest of Erebor, a named item in the book's own contents, describing The Hobbit's opening chapter rather than any of its turns. Safe both directions."
+    - "roverandom - 'before he can earn his own shape back' states the outcome of a 1925 bedtime story invented to console a four-year-old; HarperCollins states the quest to be 'returned to normal'. Incidental; redacting a children's fable is the over-shielding that teaches readers to click through. Left."
+    - "the-fall-of-arthur and the-legend-of-sigurd-and-gudrun - both summarise public-domain legend the way their own jackets do. Left."
+    - "the-homecoming-of-beorhtnoth - the lord's death is the premise the dialogue opens on, not its turn. Left."
+    - "christopher-tolkien.yaml - 'Of the Ruin of Doriath' is a printed Silmarillion chapter title; 'no in-world frame story, unlike The Lord of the Rings' restates that novel's own Prologue. Left."
+    - "jrr-tolkien.yaml, writes-lotr-1937 - 'finished the book, ending included, before atomic weapons existed' is his own argument against the atomic-bomb reading; it says the ending exists, never what it is. Left."
+    - "eras.yaml, all four - publication history and biography; no era names what a book resolves. The Estate's gloss on Smith of Wootton Major ('the bereavement of retirement') is about Tolkien's state of mind, not the novella's ending. Left."
+    - "events.yaml, auden-wilson-reception-split-1956 - entirely reception; the Auden, Muir and Wilson quotations attack character and form and give away no event. spoilerAfter: null is right."
+    - "global.yaml, world-war-i-1914 - the wing's one included global event; describes the war, not any book. Nothing to gate."
+    - "franchise.yaml startHere, all five - structural. 'The First Age's three great tragedies' is the received label both publishers use; 'the family curse' and 'the fall of the hidden city' restate a title and a jacket line. No path sells itself on a reveal."
+    - "The four collaborator stubs (baillie-tolkien, humphrey-carpenter, carl-f-hostetter, verlyn-flieger) carry no lifeEvents and no plot prose. Nothing to audit."
+    - "No spoilerAfter sits on a field that cannot carry one - verified by breaking it on purpose rather than trusting the note. Inserting one on jrr-tolkien/the-hobbit made validate.py hard-error ('not honoured by the app here'); removing it went green. The guard is real as of this run."
+
+forStages:
+  translation: >
+    NO pt-PT overlay exists for this wing yet, so nothing needs invalidating.
+    Four passages were rewritten to withhold a reveal and all four must stay
+    withheld: translate the ENGLISH AS IT NOW STANDS, never a fuller
+    knowledge of the story. (1) the-adventures-of-tom-bombadil's synopsis
+    stops at "enigmatic" and must not say what Tom Bombadil is proof against.
+    (2) smith-of-wootton-major's must not carry the story to what Smith does
+    with the star. (3) jrr-tolkien/chronological's third debated entry must
+    not restore Túrin's death as its marker. (4) the jrr-tolkien-cbe-death-1973
+    lifeEvent describes the gravestone and must not say the two are reunited
+    in the story. Head the pt-PT works.yaml with a CUIDADO COM SPOILERS note
+    naming those two work ids, as hp-lovecraft/works.yaml already does. The
+    same two works now carry a `note:`, which the app does not read on a Work
+    and which is not translated, matching the edgar-allan-poe, jo-nesbo and
+    hp-lovecraft overlays. On tone: this wing's prose is plain about both
+    Tolkiens' deaths and stays outside the fiction when it discusses the
+    legendarium. Keep that distance rather than warming it up - warming it up
+    is how the Beren and Lúthien clause got written in the first place.
+
+openQuestions:
+  - "Zero boundaries set is a deliberate result, not a stage that skipped its job: this wing's 28 lifeEvents and one franchise event are biography, scholarship and publishing history, and none narrates a plot. Stating it because a wing with no boundaries looks unaudited, and because 'Hidden until you finish X' over a biographical entry is noise a reader learns to click through."
+  - "FLAGGED VECTOR, VERDICT: clean both ways. Aragorn, Arwen, Elrond, Isildur, Gollum, Sméagol, Fëanor, Galadriel, Saruman and Boromir appear NOWHERE in works.yaml, events.yaml, orders.yaml, eras.yaml, franchise.yaml or either author file - the Line of Isildur, Arwen's choice, Elrond's parentage and Gollum's nature are simply never mentioned, so a chronological-order reader meets them in the novels. What earlier-legendarium prose does say about the novels is framing only ('the deep history Bilbo and Frodo's own story rests on', 'the road that starts The Hobbit'), which points at them without opening them. The order's rationale names the cost in CATEGORIES ('who people are descended from, what became of the Rings, why the war being fought is being fought'), never in facts; considered for tightening and left, since a reader choosing between orders has to be told what the cost is and the categories are already visible from the title and jacket. Loosenable in the other direction if a curator disagrees."
+  - "The reverse direction produced the wing's worst leak, which is the direction nobody looks: the only prose that spoiled a novel was written for a minor book (a 1962 verse collection giving away a Fellowship scene), and the only prose that spoiled a Great Tale was written for a biography (a gravestone giving away Beren and Lúthien's ending)."
+  - "Smith of Wootton Major is the one rewrite I was genuinely unsure about, so it is the loosenable one. The story has no twist; it is an elegy whose shape IS relinquishment, and naming the shape is arguably not spoiling it. Redacted on the asymmetry because the fix cost nothing and no publisher states it. Original clause quoted in full above if a curator wants the elegiac note back."
+  - "Gondolin and Bovadium are recorded above as reversals so the next auditor does not re-litigate them: both read exactly like reveals from memory, and both are printed in HarperCollins' own copy. Ruling from memory would have redacted two things a reader can see on the back of the book."
+  - "Not a spoiler question, so not fixed here, but noticed while reading every line: works.yaml calls Frodo Bilbo's cousin, franchise.yaml's two-novels path calls him his nephew. Both defensible; the wing should pick one. Whoever owns those files next."
+  - "This stage added no CONTENT validator warning. The one error (theme.yaml has no art: block) is pre-existing and belongs to visual-language; the three era warnings are the documented deliberate ones for the 2021, 2024 and 2025 works. It does add one warning of its own: this handoff runs past the 700-word soft cap, and was cut from 2484 to 1855 rather than to the cap. The remainder is the checkedNotSpoilers list and the four before/afters, both of which SKILL.md requires outright ('record every ruling, including the ones that changed nothing' - it is what stops the next auditor re-litigating the two reversals). Two rules genuinely pull against each other here and this stage's own is the stronger; a curator who disagrees should move the rulings to the PR body rather than delete them."
