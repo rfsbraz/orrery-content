@@ -1,0 +1,117 @@
+stage: reading-orders
+summary: >
+  Shipped zero orders and no startHere for jose-saramago, confirming (not
+  assuming) both scaffold placeholders with a dedicated research pass.
+  orders.yaml and franchise.yaml's capabilities comment were rewritten to
+  record what was actually checked, rather than restate the prior stage's
+  "not yet collected" framing as if the question were still open.
+  validate.py --slug jose-saramago is green (0 errors; pre-existing
+  era-orphan and handoff-length warnings only, none touching this change).
+decision:
+  orders: >
+    None. No publisher-numbered sequence or named grouping exists across the
+    18 core novels. The one candidate - the five-volume Cadernos de
+    Lanzarote diary, already carried as subseries "Cadernos de Lanzarote" in
+    works.yaml - was considered and rejected: it is chronological by
+    construction (five volumes, five distinct years, 1994-1998, no
+    same-year ties to settle), no publisher or critic sequences it any other
+    way, and an order that restates publication order over an
+    already-chronological set fails the divergence test the same way a
+    "chronological" order does for a franchise already published in story
+    order. This matches the orchestrator's own framing of the question and
+    the answer is "no order needed," stated as a finding, not a gap.
+  startHere: >
+    None. The request issue's premise (his prose is a genuine reader-facing
+    consideration, and "don't start with the hardest book" is common advice)
+    is half right and half unverifiable. The prose difficulty is real and
+    already well documented elsewhere in this wing (both Wikipedias, the
+    Nobel/Guardian material). But "don't start with the hardest book" as
+    RECEIVED advice specifically about Saramago could not be sourced despite
+    a real search, so it does not ship as a claim, and no specific
+    alternative entry point (Memorial do Convento or otherwise) ships either
+    - inventing one to answer the issue's premise would be exactly the
+      "personal preference with no community behind it" trap the skill
+      names. Ships zero startHere paths: "a franchise with no startHere
+      simply has no wizard... a complete, correct bundle, not a gap."
+prose_difficulty_question:
+  resolution: >
+    Checked directly rather than assumed. Searched (English): the José
+    Saramago Foundation's own site, Guardian, NYT (via en.wikipedia
+    citations, nytimes.com 403s directly per press-archaeology's prior
+    finding), LitHub, The Paris Review, Book Riot, themodernnovel.org,
+    r/books (full search results read). Searched (Portuguese): Público,
+    Observador, Wook's own "por onde começar" reading-guide series - the
+    exact source that supplied Valter Hugo Mãe's startHere on this
+    catalogue, so a real and findable format when it exists for an author.
+    No publisher, critic, translator or bookshop guide ranking Saramago's
+    novels by accessibility was found in either language.
+  whatWasFound: >
+    One 2010 personal blog ("The Selected Ballads") names The Year of the
+    Death of Ricardo Reis and The Gospel According to Jesus Christ as easier
+    starts. One source, one blog post - held out for the same reason José
+    Luís Peixoto's single unreliable aggregator was rejected on this
+    catalogue: a reading practice needs more than one voice. Reddit's
+    r/books (searched in full, not sampled) shows Blindness is both the
+    novel English-language readers overwhelmingly pick up first AND a
+    recurring subject of "struggling to finish it," "ruined by the writing,"
+    and DNF-adjacent threads spanning 10+ years of posts - real texture
+    confirming the difficulty is genuinely felt by real readers, but a
+    pattern of reader reaction is not a guide, and none of those threads
+    converge on recommending an alternative first novel.
+  forCurator: >
+    This is the stage's own weakest call, worth a second look: the
+    Reddit evidence that Blindness specifically frustrates many first-time
+    readers is real and unusually consistent for an informal source, well
+    past "settled fandom consensus" in volume if not in authority. It still
+    falls under the skill's bar ("if the only source is our own reading, it
+    is not a path") because no source recommends reading something else
+    INSTEAD. If a Portuguese-press centenary piece (2022, his birth
+    centenary, a natural occasion for "where to start" journalism) turns up
+    later via a live web search this session could not run
+    (WebSearch was already at 200/200 before this stage started, confirmed
+    by testing it directly), it would be worth revisiting - this absence is
+    reported as a finding, not a proof of non-existence.
+websearch_status: >
+  Confirmed exhausted at the start of this stage (a direct WebSearch call
+  returned the 200/200 budget message). All research used fetch.py against
+  constructed URLs: search.marginalia.nu (several query angles, useful and
+  underused by prior stages - small-web/blog-indexed, not mainstream press),
+  old.reddit.com's own search (works without JS), Bing/Google/DuckDuckGo/
+  Brave (all blocked by a captcha or consent wall, consistent with
+  press-archaeology's prior finding), and direct fetches of Wook's
+  wookacontece property (its "por onde começar" article pattern, learned
+  from valter-hugo-mae/franchise.yaml's own cited URL, did not resolve to a
+  Saramago-specific piece; its search endpoints are JS-rendered and returned
+  only nav chrome).
+filesChanged:
+  - content/franchises/jose-saramago/orders.yaml: >
+      Comment rewritten: explicit Cadernos de Lanzarote rejection reasoning
+      (was previously just asserted as "no grouping exists... beyond" without
+      saying why the diary doesn't count), and the startHere research
+      written up with sources checked and the one rejected source named,
+      matching the joao-tordo / valter-hugo-mae / jose-luis-peixoto
+      convention on this catalogue of using this file's header for both
+      findings. List stays [].
+  - content/franchises/jose-saramago/franchise.yaml: >
+      One clause of the existing capabilities comment rewritten (the
+      orders.yaml/startHere sentence only, not the eras/globalEvents
+      material around it, which stays out of this stage's footprint and was
+      already flagged stale for wing-audit by two prior stages). Changed
+      "no startHere yet... no citable ranked entry-point guidance has been
+      collected here yet" (implying pending work) to a stated finding: what
+      was checked, in which languages, and that nothing was found. No
+      startHere field added - there is nothing to add.
+gates:
+  validate: "python scripts/validate.py --slug jose-saramago: OK, 0 errors, 30 pre-existing warnings (era-orphans + two prior stages' oversized handoffs), none new"
+  i18n: "not run - no new translatable prose was added (no order, no startHere path); nothing to regress"
+forStages:
+  wing-audit: >
+    franchise.yaml's top capabilities comment still has two stale claims
+    outside this stage's footprint, both already flagged by eras.yaml's and
+    event-resonance.yaml's own handoffs and still unfixed: it describes the
+    eras.yaml sourcing history in a way that predates other changes, and its
+    globalEvents description is fine but sits in the same paragraph. This
+    stage only touched the orders/startHere clause; the rest is unchanged
+    and still needs the sweep those two prior handoffs already asked for.
+  spoiler-audit: >
+    Nothing new to check - no order or startHere prose was added this stage.
