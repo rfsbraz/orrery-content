@@ -1,0 +1,142 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds). Author-LIFE events live here (they follow the
+# person); franchise-specific events stay in the franchise.
+#
+# Sourced from Saramago's own Nobel autobiographical statement (written in
+# his own words, translated by Fernando Rodrigues and Tim Crosfield), the
+# NobelPrize.org biographical page, Portuguese and English Wikipedia (both
+# fetched directly and cross-checked against each other), and The Guardian's
+# 2010 obituary (read directly, not via a secondary summary). The four
+# lifeEvents below are the best-known, most heavily corroborated anchors of
+# his life (birth, the 1992 censorship affair and exile, the 1998 Nobel, the
+# 2010 death); illness, feuds and the fuller texture of his years in
+# Lanzarote are not yet represented here.
+id: jose-saramago
+name: José Saramago
+aka: ["José de Sousa Saramago"]  # full civil name; "Saramago" itself was his
+  # father's village nickname, misregistered onto the family by the birth
+  # registrar (see the born-1922 lifeEvent note)
+born: 1922-11-16
+died: 2010-06-18
+bio: >
+  Born into a family of landless peasants in Azinhaga, a Ribatejo village on
+  the Almonda river, and raised mostly in Lisbon from age two. Financial
+  hardship pulled him out of grammar school at twelve for a technical
+  education; he trained as a lathe operator and mechanic, then worked as a
+  civil servant, an editor, a translator and a journalist while writing on
+  the side. His first novel, published as
+  [[work:jose-saramago/terra-do-pecado|Terra do Pecado]] (1947) though he had
+  titled it A Viúva, was followed by 19 years of near-silence before a
+  poetry collection in 1966, and he did not return to fiction until 1977. He
+  found the long-sentence, dialogue-without-quotation-marks style now called
+  "saramaguiano" with [[work:jose-saramago/levantado-do-chao|Levantado do
+  Chão]] (1980), and international recognition followed
+  [[work:jose-saramago/memorial-do-convento|Memorial do Convento]] (1982),
+  translated into English as Baltasar and Blimunda. In 1992 the Portuguese
+  government under Prime Minister Aníbal Cavaco Silva ordered
+  [[work:jose-saramago/o-evangelho-segundo-jesus-cristo|O Evangelho Segundo
+  Jesus Cristo]] removed from the Aristeion Prize shortlist as religiously
+  offensive; Saramago and his wife, Spanish journalist Pilar del Río, left
+  for Lanzarote in the Canary Islands, where he lived for the rest of his
+  life. He won the Nobel Prize in Literature in 1998, the first for a
+  Portuguese-language writer. A lifelong member of the Portuguese Communist
+  Party (from 1969) and a self-described pessimist and atheist, he kept
+  publishing novels, diaries and essays from Lanzarote until his death from
+  leukemia in 2010; an unfinished novel found on his computer,
+  [[work:jose-saramago/alabardas-alabardas-espingardas-espingardas|Alabardas,
+  Alabardas, Espingardas, Espingardas]], appeared in 2014, and a novel
+  written in 1953 and rejected at the time,
+  [[work:jose-saramago/claraboia|Claraboia]], was published in 2011 after
+  being found in a publisher's archive.
+lifeEvents:
+  - id: saramago-born-1922
+    date: 1922-11-16
+    title: Born in Azinhaga, on the Almonda river
+    impact: low
+    description: >
+      Born in Azinhaga, a village in the Ribatejo province about a hundred
+      kilometres northeast of Lisbon, to landless peasants José de Sousa and
+      Maria da Piedade. The surname "Saramago" - a wild herbaceous plant
+      eaten by the poor - was his father's family nickname in the village,
+      mistakenly entered as the child's surname by the civil registrar; he
+      did not learn his own full legal name, José de Sousa Saramago, until
+      he needed an identity document for primary school at seven. The
+      family moved to Lisbon in 1924, though he spent long periods of his
+      childhood back in Azinhaga with his maternal grandparents.
+    note: >
+      Saramago's own Nobel autobiography states he was born on 16 November
+      1922 but that his official documents give 18 November, "thanks to
+      this petty fraud" by which his family avoided a late-registration
+      fine. Dated here to the 16th, per his own account and both Portuguese
+      and English Wikipedia.
+    spoilerAfter: null
+    sources:
+      - https://www.nobelprize.org/prizes/literature/1998/saramago/biographical/
+      - https://pt.wikipedia.org/wiki/José_Saramago
+      - https://en.wikipedia.org/wiki/José_Saramago
+
+  - id: saramago-lanzarote-exile-1992
+    date: 1992
+    title: Censored by his own government, he leaves for Lanzarote
+    impact: high
+    description: >
+      The Portuguese government under Prime Minister Aníbal Cavaco Silva
+      ordered [[work:jose-saramago/o-evangelho-segundo-jesus-cristo|O
+      Evangelho Segundo Jesus Cristo]] (1991) removed from Portugal's
+      nominee slot for the European Aristeion Prize, judging the novel's
+      portrait of a fallible, human Christ and God religiously offensive.
+      Saramago read the move as political censorship of his work. He and
+      his wife, Spanish journalist Pilar del Río, left Portugal for
+      Lanzarote, a volcanic island in Spain's Canary Islands, where they
+      lived for the rest of his life; every novel from
+      [[work:jose-saramago/ensaio-sobre-a-cegueira|Ensaio sobre a
+      Cegueira]] (1995) onward was written there.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/José_Saramago
+      - https://pt.wikipedia.org/wiki/José_Saramago
+      - https://www.theguardian.com/books/2010/jun/18/jose-saramago-obituary
+
+  - id: saramago-nobel-prize-1998
+    date: 1998-10-08
+    title: Wins the Nobel Prize in Literature
+    impact: high
+    description: >
+      Awarded the Nobel Prize in Literature "for parables sustained by
+      imagination, compassion and irony [with which he] continually enables
+      us once again to apprehend an elusory reality" - the first Nobel for a
+      writer working in Portuguese. The announcement reached him as he was
+      about to fly out of the Frankfurt Book Fair, and caught him and his
+      publisher by surprise; the choice was criticized by parts of the
+      Portuguese press and by the Vatican, which called it "yet another
+      ideologically slanted award" over his lifelong Communist Party
+      membership.
+    spoilerAfter: null
+    sources:
+      - https://www.nobelprize.org/prizes/literature/1998/saramago/facts/
+      - https://en.wikipedia.org/wiki/José_Saramago
+
+  - id: saramago-death-2010
+    date: 2010-06-18
+    title: Dies in Lanzarote
+    impact: low
+    description: >
+      Died at his home in Lanzarote of chronic leukemia, aged 87, with Pilar
+      del Río at his side. He was given a state funeral in Lisbon; his
+      ashes were buried a year later, on the anniversary of his death,
+      beneath a hundred-year-old olive tree in front of the José Saramago
+      Foundation. Cavaco Silva, the prime minister behind the 1992
+      Aristeion decision, did not attend, saying he had "never had the
+      privilege to know him" - a remark mourners in Lisbon met by holding up
+      red carnations, the symbol of Portugal's 1974 revolution.
+    spoilerAfter: null
+    sources:
+      - https://www.theguardian.com/books/2010/jun/18/jose-saramago-obituary
+      - https://en.wikipedia.org/wiki/José_Saramago
+      - https://pt.wikipedia.org/wiki/José_Saramago
+sources:
+  - https://www.nobelprize.org/prizes/literature/1998/saramago/biographical/
+  - https://pt.wikipedia.org/wiki/José_Saramago
+  - https://en.wikipedia.org/wiki/José_Saramago
+  - https://www.theguardian.com/books/2010/jun/18/jose-saramago-obituary
+  - https://www.josesaramago.org/
