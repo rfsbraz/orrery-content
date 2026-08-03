@@ -1,0 +1,82 @@
+# Global author entity. Christopher Tolkien is referenced via withAuthorIds
+# on the majority of this wing's extended/apocrypha works, so he needs a
+# full entity rather than a one-line stub: 24 of J. R. R. Tolkien's 28
+# catalogued works here reached print only through his 45 years of editing
+# (1973-2018/2020). The AUTHORSHIP QUESTION this bio exists to record: his
+# father's own 1967 letter names him "co-author" of what became
+# [[work:jrr-tolkien/the-silmarillion|The Silmarillion]] specifically (cited
+# in Wikipedia's "Christopher Tolkien" article, sourced to Ovenden &
+# McIlwaine 2022's "The Great Tales Never End"), and that book's own title
+# page credits both "Christopher Tolkien" and "Guy Gavriel Kay" as Editor
+# against "J. R. R. Tolkien" as Author. Scholar Vincent Ferré and others go
+# further, arguing from Christopher's own admissions (his 1983 Book of Lost
+# Tales foreword: "I had had to invent some passages"; a 2012 Le Monde
+# interview) that his prose style and choices make him "a writer in his own
+# right" on that book, not only an editor of it. No comparably strong
+# "co-author" designation exists for any of his OTHER editorial work, where
+# Wikipedia's own "Christopher Tolkien" bibliography table lists him
+# consistently "As editor" rather than "As author" - hence this wing's
+# works.yaml sets authorRole: co-author on The Silmarillion alone. Every
+# other entry he touches is split further, by how much construction his
+# editing actually required: authorRole: editor plus canonTier: apocrypha
+# where he built a book out of incomplete, scattered or draft material
+# (Unfinished Tales, the three "Great Tales," The History of Middle-earth,
+# The Monsters and the Critics and Other Essays, The Letters of J. R. R.
+# Tolkien); the default authorRole (author, unset) plus canonTier: extended
+# where his father had already finished the text himself and Christopher's
+# part was posthumous publication rather than construction (the Sir Gawain
+# / Pearl / Sir Orfeo translations, The Legend of Sigurd and Gudrún,
+# Beowulf: A Translation and Commentary) - see works.yaml's own header for
+# the full reasoning. lifeEvents is left empty for the same reason given on
+# jrr-tolkien.yaml (organisation/illustration_type validation needs a fixed
+# catalogue this file does not carry); the sourced material for it is
+# nonetheless real: his RAF service as a fighter pilot in the Second World
+# War, his father naming him literary executor and Silmarillion "co-author"
+# in 1967, converting a barn at his Oxfordshire home into a workspace after
+# his father's 1973 death, moving to France in 1975 to work on the
+# legendarium full-time, completing the 12-volume History of Middle-earth
+# in 1996, his 2016 Bodley Medal, and his 2020 death in Draguignan.
+id: christopher-tolkien
+name: Christopher Tolkien
+aka: ["Christopher John Reuel Tolkien"]
+born: 1924-11-21
+died: 2020-01-16
+bio: >
+  English academic editor and writer, the third child and literary executor
+  of [[author:jrr-tolkien|J. R. R. Tolkien]]. A Royal Air Force fighter
+  pilot in the Second World War and later an Oxford English-language
+  lecturer himself, he was his father's lifelong first reader and had
+  redrawn the working maps for
+  [[work:jrr-tolkien/the-lord-of-the-rings|The Lord of the Rings]]; his
+  father named him literary executor in 1967 and, in the same letter, his
+  co-author for the still-unpublished Silmarillion material. After his
+  father's 1973 death he spent the next 45 years organising, editing and
+  publishing 24 volumes of the largely unfinished legendarium manuscripts
+  he inherited: a single-volume
+  [[work:jrr-tolkien/the-silmarillion|The Silmarillion]] (1977, with Guy
+  Gavriel Kay's assistance),
+  [[work:jrr-tolkien/unfinished-tales|Unfinished Tales]] (1980), the
+  twelve-volume [[work:jrr-tolkien/the-history-of-middle-earth|History of
+  Middle-earth]] (1983-1996) tracing the legendarium's decades of drafts,
+  and the three standalone "Great Tales" -
+  [[work:jrr-tolkien/the-children-of-hurin|The Children of Húrin]] (2007),
+  [[work:jrr-tolkien/beren-and-luthien|Beren and Lúthien]] (2017) and
+  [[work:jrr-tolkien/the-fall-of-gondolin|The Fall of Gondolin]] (2018) -
+  plus his father's medieval scholarship and translations left unpublished
+  at his death (Beowulf, Sir Gawain and the Green Knight, The Fall of
+  Arthur, The Legend of Sigurd and Gudrún, The Letters of J. R. R. Tolkien
+  with Humphrey Carpenter). He moved to France in 1975 to work on the
+  material full-time and became a French citizen; he chaired the Tolkien
+  Estate until resigning in 2017, and won the Bodley Medal in 2016 for his
+  editorial work. He was publicly critical of Peter Jackson's film
+  adaptations. Whether the published Silmarillion is best read as his
+  father's book or partly his own has been an open scholarly question since
+  at least 1981 (Randel Helms's "the invention of the son not the father");
+  Christopher's own foreword calls the question "certainly debatable" and,
+  of presenting the book with no frame story at all, "an error."
+pseudonyms: []
+lifeEvents: []
+sources:
+  - https://en.wikipedia.org/wiki/Christopher_Tolkien
+  - https://en.wikipedia.org/wiki/The_Silmarillion
+  - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography

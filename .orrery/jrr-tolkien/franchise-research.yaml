@@ -1,0 +1,100 @@
+stage: franchise-research
+summary: >
+  Scaffolded the J. R. R. Tolkien wing from scratch: 30 works (3 core, 11
+  extended, 16 apocrypha), 6 author entities, franchise identity and a
+  validated theme (displayFace/signature only). No prior content existed
+  for this slug.
+produced:
+  franchiseFiles:
+    - content/franchises/jrr-tolkien/franchise.yaml
+    - content/franchises/jrr-tolkien/works.yaml
+    - content/franchises/jrr-tolkien/theme.yaml
+  authorEntities:
+    - content/authors/jrr-tolkien.yaml
+    - content/authors/christopher-tolkien.yaml
+    - content/authors/baillie-tolkien.yaml
+    - content/authors/humphrey-carpenter.yaml
+    - content/authors/carl-f-hostetter.yaml
+    - content/authors/verlyn-flieger.yaml
+  workIds:
+    - jrr-tolkien/the-hobbit
+    - jrr-tolkien/the-lord-of-the-rings
+    - jrr-tolkien/the-silmarillion
+    - jrr-tolkien/farmer-giles-of-ham
+    - jrr-tolkien/the-adventures-of-tom-bombadil
+    - jrr-tolkien/tree-and-leaf
+    - jrr-tolkien/the-road-goes-ever-on
+    - jrr-tolkien/smith-of-wootton-major
+    - jrr-tolkien/sir-gawain-and-the-green-knight-pearl-and-sir-orfeo
+    - jrr-tolkien/letters-from-father-christmas
+    - jrr-tolkien/mr-bliss
+    - jrr-tolkien/roverandom
+    - jrr-tolkien/the-legend-of-sigurd-and-gudrun
+    - jrr-tolkien/beowulf-a-translation-and-commentary
+    - jrr-tolkien/sir-gawain-and-the-green-knight-middle-english-text
+    - jrr-tolkien/on-fairy-stories
+    - jrr-tolkien/the-homecoming-of-beorhtnoth-beorhthelms-son
+    - jrr-tolkien/unfinished-tales
+    - jrr-tolkien/the-letters-of-jrr-tolkien
+    - jrr-tolkien/the-old-english-exodus
+    - jrr-tolkien/finn-and-hengest
+    - jrr-tolkien/the-monsters-and-the-critics-and-other-essays
+    - jrr-tolkien/the-history-of-middle-earth
+    - jrr-tolkien/the-children-of-hurin
+    - jrr-tolkien/the-fall-of-arthur
+    - jrr-tolkien/the-story-of-kullervo
+    - jrr-tolkien/beren-and-luthien
+    - jrr-tolkien/the-fall-of-gondolin
+    - jrr-tolkien/the-nature-of-middle-earth
+    - jrr-tolkien/the-collected-poems-of-jrr-tolkien
+  notIncluded:
+    - "The History of The Hobbit (2007, Rateliff) - a critical work about Tolkien, not by him"
+    - "The Fall of Númenor (2022, ed. Sibley) - 4 reviews agree it repackages already-published material"
+    - "The Tolkien Reader / Poems and Stories / A Tolkien Miscellany / Tales from the Perilous Realm - omnibuses of works already catalogued individually"
+    - "The Vinyar Tengwar / Parma Eldalamberon invented-language journal corpus and minor lifetime philological articles - excluded as a body"
+    - "The Bovadium Fragments (2025) and standalone 2016 A Secret Vice - minor, not researched to a conclusion"
+forStages:
+  completeness-auditor: >
+    First-draft spine sourced almost entirely from Wikipedia's own
+    bibliography and Christopher Tolkien articles - re-verify every date
+    and credit against primary sources (title pages, ISFDB). Check
+    specifically: whether The Collected Poems of J. R. R. Tolkien (2024)
+    has enough first-published content to earn its tier note's claim;
+    whether the two items in notIncluded's last line belong in the wing;
+    and whether subseries: null (no numbered sequence anywhere in this
+    bibliography) still holds.
+  press-archaeology: >
+    jrr-tolkien.yaml and christopher-tolkien.yaml both have lifeEvents: []
+    with sourced candidate events already named in each file's own header
+    comment - build lifeEvents from those. Wikipedia only was used;
+    Carpenter's Letters and Ovenden & McIlwaine's "The Great Tales Never
+    End" would strengthen every claim.
+  eras: >
+    No eras.yaml yet. The bibliography's shape suggests: juvenilia/Kullervo
+    era (1914-1918), Leeds/Oxford-scholarship-and-Hobbit years
+    (1920-1937), The Lord of the Rings years (1937-1949), the long
+    unpublished-Silmarillion retirement (1949-1973), and the 45-year
+    posthumous Christopher Tolkien editing era (1974-2020) - whether that
+    last one needs internal sub-eras (it spans Unfinished Tales through
+    The Nature of Middle-earth) is an open call.
+  reading-orders: >
+    Do not build a naive publication-order path without accounting for
+    the Silmarillion co-author call and the History of Middle-earth
+    grouping (works.yaml's own header, STRUCTURAL CALL ONE/THREE) - a
+    plain walk puts 2024's scholarly poetry collection ahead of 2007's
+    Children of Húrin in a reader's mind. Obvious paths this data already
+    supports: the two novels alone; +Silmarillion as "the essentials"; the
+    three Great Tales as their own short arc; full publication order for
+    completionists (already free via default).
+  visual-language: >
+    theme.yaml has a validated displayFace/signature but no art: block
+    (hard validator error, left unresolved - out of scope here). Candidate
+    anchors: the One Ring / Silmarils, the manuscript-and-editorial quality
+    unusual to this wing (most of it is literally "edited from Christopher
+    Tolkien's father's drafts"), the WWI origin of the earliest tales.
+openQuestions:
+  - "Silmarillion alone gets authorRole: co-author (sourced to Tolkien's 1967 letter); the three Great Tales get editor+apocrypha despite comparable synthesis work, for lack of an equally direct co-author source. A curator with deeper access might find one."
+  - "The History of Middle-earth as ONE grouped apocrypha entry (not 12 ids, not excluded) is the single biggest structural call in the wing (works.yaml STRUCTURAL CALL THREE) - revisit once eras/reading-orders exist."
+  - "The Lord of the Rings as one work (published: 1954, not 3) rests on Tolkien's own Wikipedia biography quoting printing costs - confirm against a primary source."
+  - "The Fall of Númenor exclusion is the least-precedented exclusion in the wing (repackaging BOOKS' worth of material, not just already-published tales like the Lovecraft/Poe precedent) - worth a second look."
+  - "6 thin author stubs (baillie-tolkien, humphrey-carpenter, carl-f-hostetter, verlyn-flieger) vs. prose-only mentions (E. V. Gordon, Alan Bliss, Joan Turville-Petre, Guy Gavriel Kay, Donald Swann, Scull, Hammond, Sibley) is a line this scaffold drew, not one the schema mandates."

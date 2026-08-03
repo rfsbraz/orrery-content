@@ -1,0 +1,41 @@
+# Identity + features. Standing rule: a wing spans an author's COMPLETE
+# published body of work, so kind is author. Unusually for this catalogue,
+# Tolkien's bibliography needs no subseries at all - see works.yaml's own
+# header for why - so every work in this wing carries subseries: null.
+#
+# This is also the widest "two famous books vs. everything else" gap the
+# request issue flags in the whole catalogue: The Hobbit and The Lord of
+# the Rings are two of the best-selling novels ever printed, and the
+# other 27 works below - most of it published only after Tolkien's 1973
+# death, edited from manuscript by his son - are comparatively obscure even
+# among readers who own both. That gap is exactly what canonTier is doing
+# the work of recording here: 3 core, 11 extended, 16 apocrypha (see
+# works.yaml's own header for the full tier rationale and the History of
+# Middle-earth scope decision in particular).
+#
+# features and startHere are both left unset here: which capabilities this
+# data actually earns, and which entry paths are worth recommending, are
+# calls that need the rest of the wing (eras, orders, spoiler boundaries)
+# to already exist before they can be made honestly.
+id: jrr-tolkien
+name: J. R. R. Tolkien
+kind: author
+description: >
+  An Oxford philologist whose two novels - the children's adventure
+  [[work:jrr-tolkien/the-hobbit|The Hobbit]] (1937) and its vastly larger
+  sequel [[work:jrr-tolkien/the-lord-of-the-rings|The Lord of the Rings]]
+  (1954-1955, one novel split into three volumes for the cost of paper, not
+  a trilogy by design) - effectively founded modern fantasy as a genre. Both
+  sit atop a legendarium forty years deeper than either book shows: private
+  mythology begun in the trenches of the First World War, most of it left
+  unpublished at his death in 1973 and edited into print across the
+  following forty-five years by his son and literary executor,
+  [[author:christopher-tolkien|Christopher Tolkien]].
+authorIds: [jrr-tolkien]
+themePreset: legendarium
+
+sources:
+  - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+  - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+  - https://en.wikipedia.org/wiki/Christopher_Tolkien
+  - https://en.wikipedia.org/wiki/The_Silmarillion

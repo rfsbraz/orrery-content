@@ -1,0 +1,829 @@
+# Bibliography (works). IDs are STABLE and permanent (user data references
+# them). Dates are year-precision (docs/SCHEMA.md). The default reading
+# order (all works in publication order) is DERIVED from this file, so the
+# grouping below - core, then extended, then apocrypha, each internally
+# chronological - is for a human reader of this file only and has no
+# bearing on what the app computes.
+#
+# Corroborated throughout against Wikipedia's own "J. R. R. Tolkien
+# bibliography" (which cross-cites contemporary press coverage per
+# posthumous title - the Guardian, Wall Street Journal, Tolkien Society -
+# for the 21st-century volumes), the "J. R. R. Tolkien" and "Christopher
+# Tolkien" articles, and, for the two structural questions below, the
+# dedicated "The Silmarillion" and "The Fall of Númenor" articles. This is
+# a first-draft spine, not a final one: every date and credit below rests
+# on a single tertiary source and wants re-verification against primary
+# sources (title pages, ISFDB) before it is treated as settled.
+#
+# NO SUBSERIES. Unusually for this catalogue, nothing below carries a
+# subseries value: there is no numbered sequence, sub-series or shared
+# in-world branding comparable to the Dark Tower or the Cosmere anywhere in
+# this bibliography. The Lord of the Rings is one novel, not the first of
+# a trilogy (see its own entry below); the three "Great Tales" are three
+# independently packaged books that happen to share Tolkien's own retrospective
+# label for them (Children of Húrin's own jacket copy), not a marketed series
+# with its own numbering; The History of Middle-earth is numbered 1-12 but is
+# a single scholarly project grouped into one entry below, not a series a
+# reader picks individual volumes of. subseries: null is set explicitly on
+# every entry rather than omitted, so a reader of this file does not have to
+# infer that this is a deliberate finding rather than an oversight.
+#
+# STRUCTURAL CALL ONE - Christopher Tolkien: editor, co-author, or neither?
+# A researched, sourced, per-work answer, not a blanket rule, because his
+# hand genuinely varies by book (his own Wikipedia article, "Editor or
+# author" section, cites named scholars taking different positions on
+# exactly this). Three outcomes below, not two:
+#
+#   1. CO-AUTHOR (The Silmarillion, alone). The one place a source settles
+#      it outright: J. R. R. Tolkien's own 1967 letter names Christopher
+#      his literary executor AND, specifically, his "co-author" for what
+#      becomes The Silmarillion (Ovenden & McIlwaine 2022, cited on
+#      Wikipedia's "Christopher Tolkien" article); the book's own title
+#      page separately credits him and Guy Gavriel Kay as "Editor" against
+#      J. R. R. Tolkien as "Author," and Christopher has admitted (a 2012
+#      Le Monde interview) to inventing whole passages to close narrative
+#      gaps, most extensively in "Of the Ruin of Doriath." No other book
+#      below carries a comparably direct "co-author" designation from
+#      Tolkien himself, so no other entry uses this role. Guy Gavriel Kay
+#      is named in this note and in The Silmarillion's own sources rather
+#      than given a withAuthorIds credit or a global author entity: his own
+#      Wikipedia article and the Silmarillion article both describe his
+#      role as "assistance" secured through a family connection, not a
+#      named co-editor or co-author credit on the book itself.
+#
+#   2. EDITOR, tiered apocrypha (Unfinished Tales, The Monsters and the
+#      Critics and Other Essays, The Letters of J. R. R. Tolkien, the three
+#      "Great Tales," The History of Middle-earth): where the credited book
+#      required Christopher to select, arrange, or construct continuous
+#      material out of drafts, fragments or scattered pieces Tolkien never
+#      assembled into that shape himself. Wikipedia's own bibliography
+#      table lists him "As editor" for these, and its "Christopher Tolkien"
+#      article calls the three "Great Tales" "a synthesis of these and
+#      other sources" rather than new authorship - real editorial
+#      construction, distinct from The Silmarillion's father-designated
+#      co-authorship but also distinct from case 3 below. This catalogue's
+#      schema ties authorRole: editor to canonTier: apocrypha, which reads
+#      right here: a constructed or frankly unfinished volume is exactly
+#      the "limited or unfinished works" case the tier exists for,
+#      whatever its sales figures.
+#
+#   3. DEFAULT authorRole (author, left unset), tiered extended (the Sir
+#      Gawain / Pearl / Sir Orfeo translations, The Legend of Sigurd and
+#      Gudrún, Beowulf: A Translation and Commentary, Letters from Father
+#      Christmas, Mr. Bliss): where Tolkien completed the actual text
+#      himself in his own lifetime - a finished translation, a finished
+#      poem, his own letters and drawings - and the credited editor's part
+#      was posthumous preparation for print rather than construction.
+#      Tolkien is the sole real author of these texts even though someone
+#      else brought the book to shelves after his death, so authorRole
+#      stays at its default and the editor is recorded only via
+#      withAuthorIds plus a note. The Fall of Arthur sits in this same
+#      default-authorRole camp despite carrying canonTier: apocrypha
+#      rather than extended - it is Tolkien's own unfinished draft,
+#      presented as he left it rather than constructed by Christopher, so
+#      the apocrypha tier there tracks the WORK's own incompleteness (the
+#      tier's literal "unfinished works" case) rather than any editorial
+#      construction; see that entry's own note.
+#
+# STRUCTURAL CALL TWO - The Lord of the Rings is ONE novel, not a trilogy.
+# Tolkien wrote and conceived it as a single continuous book, the direct
+# sequel to The Hobbit; his own Wikipedia biography states plainly that
+# "printing costs were very high in 1950s Britain, requiring The Lord of
+# the Rings to be published in three volumes" - a publisher's economic
+# decision made after the fact, not an authorial one, the same distinction
+# this catalogue's other wings already draw for omnibus and split editions
+# (see e.g. brandon-sanderson/works.yaml on Legion or michael-connelly's
+# "Harry Bosch Novels" omnibuses: publication packaging is edition data,
+# not a second or third work). Below, it is a single entry dated to the
+# first volume's 1954 publication, with the three volume titles and their
+# individual 1954-1955 dates recorded in its own note rather than as three
+# ids.
+#
+# STRUCTURAL CALL THREE - The History of Middle-earth: one grouped entry,
+# not twelve, not excluded. Three options were weighed. (a) Twelve separate
+# work ids was rejected: unlike a real series a reader picks volumes of
+# individually, this is explicitly one 45-year scholarly project - Charles
+# Noad's assessment (quoted on Christopher Tolkien's Wikipedia article) is
+# that the twelve volumes collectively "changed people's perspective" on
+# the legendarium, a claim about the set, not about any one book - and
+# twelve ids would flood this wing's derived default order with 1983-1996
+# entries a general reader has no way to tell apart from the three "Great
+# Tales" beside them. (b) Straight exclusion (the standing this-catalogue
+# precedent, applied on edgar-allan-poe and hp-lovecraft, of leaving out
+# posthumous editorial anthologies that only repackage already-published
+# tales) does not fit either: unlike those anthologies, most of The History
+# of Middle-earth is the FIRST publication of previously unseen manuscript
+# material (early Silmarillion drafts, the entire draft history of The
+# Lord of the Rings, poetry, invented-language essays), not a repackaging
+# of books already on this shelf - which is exactly why The Fall of
+# Númenor (2022), which IS a repackaging, is excluded below instead (see
+# that note). (c) One grouped apocrypha entry, chosen: it records that the
+# project exists and is real, without either overstating its status as
+# individually-consumable "books" or erasing it as somehow not real
+# Tolkien. It is best treated as a single unit for spoiler and sequencing
+# purposes rather than twelve separately orderable volumes, though whether
+# that holds is worth revisiting once the rest of the wing exists.
+#
+# NOT INCLUDED, decided rather than overlooked:
+#   - The History of The Hobbit (2007) by John D. Rateliff: a scholarly
+#     book ABOUT Tolkien's drafts, credited to and authored by Rateliff, not
+#     a Tolkien-credited work - the same reason Humphrey Carpenter's own
+#     1977 biography and Tom Shippey's criticism are excluded, even though
+#     Rateliff's book "contains substantial text fragments" per the
+#     Wikipedia bibliography.
+#   - The Fall of Númenor (2022, ed. Brian Sibley): excluded on direct,
+#     repeated scholarly authority rather than judgement call. Four
+#     published reviews (Danehy-Oakes in Tolkien Studies, Dickieson in
+#     Sehnsucht, Kane in Journal of Tolkien Research, Williams in Journal
+#     of Inklings Studies - all cited on the book's own Wikipedia article)
+#     agree it "provides nothing that was not already in print": Sibley
+#     rearranges material already published in The Silmarillion, Unfinished
+#     Tales, The History of Middle-earth and The Nature of Middle-earth
+#     into the chronological shape of the Appendix B "Tale of Years,"
+#     timed to accompany Amazon's The Rings of Power. This is exactly the
+#     posthumous-repackaging case The History of Middle-earth note above
+#     distinguishes itself from, and Brian Sibley accordingly gets no
+#     author entity or works.yaml entry here.
+#   - Omnibus regroupings of works already listed individually below: The
+#     Tolkien Reader (1966), Poems and Stories (1980), A Tolkien Miscellany
+#     (2002), Tales from the Perilous Realm (2008). Each repackages Farmer
+#     Giles of Ham / Tree and Leaf / Smith of Wootton Major / The Adventures
+#     of Tom Bombadil / Roverandom in different combinations; none adds
+#     content beyond what its own entry below already covers, the same
+#     edition-vs-work distinction as the omnibuses named above.
+#   - The large body of narrowly technical journal pieces on Tolkien's
+#     invented languages, published across four decades in Vinyar Tengwar
+#     and Parma Eldalamberon (dozens of entries in the Wikipedia
+#     bibliography's own "Constructed languages" section) plus his minor
+#     philological journal articles in his lifetime (A Middle English
+#     Vocabulary, "Sigelwara Land," "The Devil's Coach Horses," "Ancrene
+#     Wisse and Hali Meiðhad," "Chaucer as a Philologist," "English and
+#     Welsh," his Oxford English Dictionary and Jerusalem Bible
+#     contributions): excluded as a body on the same grounds this
+#     catalogue already excludes H. P. Lovecraft's amateur-press editorials
+#     - too numerous, too narrowly technical, and (for the invented-
+#     language pieces specifically) about his scholarship on his own
+#     languages rather than narrative works in their own right.
+#   - "The Bovadium Fragments" (2025, comic Latin verse squib, edited by
+#     Christopher Tolkien with a historical essay by Richard Ovenden) and
+#     "A Secret Vice" as a standalone 2016 volume (the 1931 lecture is
+#     already collected in The Monsters and the Critics and Other Essays,
+#     below): genuinely minor and not researched further here; either
+#     belongs in the wing on closer look or doesn't, and nothing above
+#     turns on the answer.
+
+# ============================= CORE (3) ==============================
+
+- id: jrr-tolkien/the-hobbit
+  title: "The Hobbit"
+  authorIds: [jrr-tolkien]
+  published: 1937
+  subseries: null
+  canonTier: core
+  featured: true
+  synopsis: >
+    A comfortable, unadventurous hobbit is talked into leaving his hole by
+    a wizard and thirteen dwarves bent on reclaiming their mountain home
+    and its treasure from a dragon, and comes home having found rather
+    more than a share of gold.
+  note: >
+    Written for his own children and reached publication almost by
+    accident: a Tolkien manuscript in circulation among friends came to the
+    attention of a publisher's employee, Susan Dagnall, who persuaded him
+    to submit it. Its commercial success is what led George Allen & Unwin
+    to ask for a sequel, which became The Lord of the Rings.
+  sources:
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+
+- id: jrr-tolkien/the-lord-of-the-rings
+  title: "The Lord of the Rings"
+  authorIds: [jrr-tolkien]
+  published: 1954
+  subseries: null
+  canonTier: core
+  featured: true
+  synopsis: >
+    Years after his cousin Bilbo's adventure, a hobbit inherits a plain
+    gold ring that turns out to be the master weapon of the Dark Lord
+    Sauron, and must carry it across Middle-earth to the one place it can
+    be destroyed, while armies gather for a war his errand alone can end.
+  note: >
+    ONE NOVEL, not a trilogy: Tolkien conceived and wrote it as a single
+    continuous sequel to The Hobbit, and his own Wikipedia biography states
+    that "printing costs were very high in 1950s Britain, requiring The
+    Lord of the Rings to be published in three volumes" - a publisher's
+    decision after the manuscript was finished, not a three-book design.
+    The three volumes and their individual UK first-edition dates: The
+    Fellowship of the Ring (29 July 1954), The Two Towers (11 November
+    1954), The Return of the King (20 October 1955). published above is
+    set to the first volume's year per this catalogue's own convention
+    for a work whose parts released across a date range. Tolkien finished
+    the manuscript itself in 1948, close to a decade after starting it.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Lord_of_the_Rings
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+
+- id: jrr-tolkien/the-silmarillion
+  title: "The Silmarillion"
+  authorIds: [jrr-tolkien]
+  withAuthorIds: [christopher-tolkien]
+  authorRole: co-author
+  published: 1977
+  subseries: null
+  canonTier: core
+  synopsis: >
+    The creation of the world and the earlier ages of Middle-earth: the
+    making of the Two Trees and the jeweled Silmarils that give the book
+    its name, the long wars against the first Dark Lord, and the drowning
+    of the island kingdom of Númenor - the deep history Bilbo and Frodo's
+    own story rests on.
+  note: >
+    Tolkien worked on this material from 1914 on and hoped to publish it
+    alongside The Lord of the Rings, but never finished or unified it in
+    his lifetime; George Allen & Unwin had already rejected an earlier,
+    "too Celtic" draft in 1937, asking for a Hobbit sequel instead. What
+    reached print in 1977 is Christopher Tolkien's single-volume
+    construction from the surviving drafts, assisted by Guy Gavriel Kay
+    (later a fantasy author in his own right); Christopher has said he had
+    to "invent some passages" to close gaps and reconcile threads,
+    especially in the chapter "Of the Ruin of Doriath." authorRole:
+    co-author is set deliberately, on the strength of his father's own
+    1967 letter naming him co-author for this material specifically - see
+    this file's own header for why every OTHER Christopher Tolkien-edited
+    work here carries a different role.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Silmarillion
+    - https://en.wikipedia.org/wiki/Christopher_Tolkien
+
+# ============================ EXTENDED (11) ============================
+
+- id: jrr-tolkien/farmer-giles-of-ham
+  title: "Farmer Giles of Ham"
+  authorIds: [jrr-tolkien]
+  published: 1949
+  subseries: null
+  canonTier: extended
+  format: novella
+  synopsis: >
+    A comic medieval fable in which an unheroic farmer, having driven off a
+    dim-witted giant purely by accident, is mistaken for a dragon-slaying
+    hero and finds the mistake very hard to live down once an actual dragon
+    turns up.
+  sources:
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+
+- id: jrr-tolkien/the-adventures-of-tom-bombadil
+  title: "The Adventures of Tom Bombadil and Other Verses from the Red Book"
+  authorIds: [jrr-tolkien]
+  published: 1962
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    Sixteen light verse poems framed as further pages from the Red Book of
+    Westmarch, the in-world source of The Lord of the Rings - among them
+    two about Tom Bombadil himself, the enigmatic figure the Ring has no
+    power over.
+  sources:
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+
+- id: jrr-tolkien/tree-and-leaf
+  title: "Tree and Leaf"
+  authorIds: [jrr-tolkien]
+  published: 1964
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Tolkien's own account of what fantasy is for and why it matters, paired
+    with a short story about a painter who never finishes his masterpiece.
+  note: >
+    Gathers two pieces with separate earlier histories into the single book
+    Tolkien himself assembled: the essay "On Fairy-Stories" (delivered as
+    the 1939 Andrew Lang Lecture, first fully published in 1947 in the
+    multi-author tribute volume Essays Presented to Charles Williams - see
+    that original appearance catalogued separately below as an apocrypha
+    contributor entry) and the short story "Leaf by Niggle" (first
+    published in The Dublin Review in 1945). A later UK-only 1988 edition
+    adds the poem "Mythopoeia." format: essay-collection reflects the
+    book's dominant piece and intent; it also contains one short story.
+  sources:
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+
+- id: jrr-tolkien/the-road-goes-ever-on
+  title: "The Road Goes Ever On: A Song Cycle"
+  authorIds: [jrr-tolkien]
+  published: 1967
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    Poems from The Lord of the Rings, several in Tolkien's own invented
+    languages, set to music by the composer Donald Swann and published
+    with Tolkien's own notes on the verses and the languages behind them.
+  note: >
+    A genuine collaboration with Swann, who wrote the musical settings;
+    Swann is named here rather than given a global author entity or a
+    withAuthorIds credit, on the same "one-off credit" reasoning this
+    wing's header applies to Guy Gavriel Kay.
+  sources:
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+
+- id: jrr-tolkien/smith-of-wootton-major
+  title: "Smith of Wootton Major"
+  authorIds: [jrr-tolkien]
+  published: 1967
+  subseries: null
+  canonTier: extended
+  format: novella
+  synopsis: >
+    A boy swallows a magic star baked into a festival cake and gains
+    passage into the perilous, beautiful land of Faery for the rest of his
+    life - until the star, and the passage, must be given up in turn.
+  sources:
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+
+- id: jrr-tolkien/sir-gawain-and-the-green-knight-pearl-and-sir-orfeo
+  title: "Sir Gawain and the Green Knight, Pearl, and Sir Orfeo"
+  authorIds: [jrr-tolkien]
+  withAuthorIds: [christopher-tolkien]
+  published: 1975
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    Tolkien's own modern-English verse translations of three anonymous
+    medieval poems: the Arthurian test of honor Sir Gawain and the Green
+    Knight, the elegy Pearl, and the fairy-abduction romance Sir Orfeo.
+  note: >
+    Translated while Tolkien was at Leeds in the 1920s but not published
+    until two years after his death, edited by Christopher Tolkien.
+  sources:
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+
+- id: jrr-tolkien/letters-from-father-christmas
+  title: "The Father Christmas Letters"
+  authorIds: [jrr-tolkien]
+  withAuthorIds: [baillie-tolkien]
+  published: 1976
+  subseries: null
+  canonTier: extended
+  format: picture-book
+  synopsis: >
+    Illustrated letters "from Father Christmas," written and drawn for his
+    own children every Christmas for over twenty years, building into a
+    private, ongoing story of the North Pole and its troubles.
+  note: >
+    Edited for posthumous publication by Baillie Tolkien, Christopher
+    Tolkien's wife - the one work in this wing Christopher himself had no
+    editorial hand in.
+  sources:
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+    - https://en.wikipedia.org/wiki/Christopher_Tolkien
+
+- id: jrr-tolkien/mr-bliss
+  title: "Mr. Bliss"
+  authorIds: [jrr-tolkien]
+  published: 1982
+  subseries: null
+  canonTier: extended
+  format: picture-book
+  synopsis: >
+    A slight, heavily illustrated comic tale of a top-hatted man, his new
+    yellow motor-car, and the chaos it causes his neighbours, three
+    escaped bears among them.
+  note: >
+    Written and illustrated by Tolkien for his own children decades
+    earlier; published posthumously in a facsimile of his original
+    manuscript-book.
+  sources:
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+
+- id: jrr-tolkien/roverandom
+  title: "Roverandom"
+  authorIds: [jrr-tolkien]
+  published: 1998
+  subseries: null
+  canonTier: extended
+  format: novella
+  synopsis: >
+    A dog turned into a toy by an irritable wizard is carried to the Moon
+    and under the sea before he can earn his own shape back - a story
+    Tolkien invented in 1925 to console his son Michael for losing a toy
+    dog on a beach.
+  sources:
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+
+- id: jrr-tolkien/the-legend-of-sigurd-and-gudrun
+  title: "The Legend of Sigurd and Gudrún"
+  authorIds: [jrr-tolkien]
+  withAuthorIds: [christopher-tolkien]
+  published: 2009
+  subseries: null
+  canonTier: extended
+  format: poem
+  synopsis: >
+    Tolkien's own retelling, in Old Norse alliterative verse, of the
+    Volsung and Niflung legend behind the Elder Edda and Wagner's Ring
+    cycle: Sigurd's dragon-slaying, and the doomed love and vengeance that
+    follow it.
+  sources:
+    - https://en.wikipedia.org/wiki/Christopher_Tolkien
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+
+- id: jrr-tolkien/beowulf-a-translation-and-commentary
+  title: "Beowulf: A Translation and Commentary"
+  authorIds: [jrr-tolkien]
+  withAuthorIds: [christopher-tolkien]
+  published: 2014
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    Tolkien's own prose translation of Beowulf, finished in 1926 but never
+    published in his lifetime, with the lecture notes he drew on to teach
+    the poem for decades and "Sellic Spell," his own reconstruction of the
+    folk-tale that may lie behind it.
+  sources:
+    - https://en.wikipedia.org/wiki/Christopher_Tolkien
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+
+# ============================ APOCRYPHA (16) ============================
+
+- id: jrr-tolkien/sir-gawain-and-the-green-knight-middle-english-text
+  title: "Sir Gawain and the Green Knight"
+  authorIds: [jrr-tolkien]
+  authorRole: co-author
+  published: 1925
+  subseries: null
+  canonTier: apocrypha
+  format: reference
+  synopsis: >
+    A scholarly edition of the Middle English poem's original text, with
+    introduction, notes and glossary for students rather than a
+    translation for general readers.
+  note: >
+    Co-prepared with the philologist E. V. Gordon while both were at
+    Leeds; became a standard classroom text for decades and was revised in
+    1967. Not the same book as the 1975 modern-English verse translation
+    catalogued above under extended - that is Tolkien's own rendering of
+    the poem into readable English; this is the critical apparatus around
+    the original. Gordon is named here rather than given a global author
+    entity, on the same one-off-credit grounds as Guy Gavriel Kay and
+    Donald Swann above.
+  sources:
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+    - https://en.wikipedia.org/wiki/E._V._Gordon
+
+- id: jrr-tolkien/on-fairy-stories
+  title: "On Fairy-Stories"
+  authorIds: [jrr-tolkien]
+  authorRole: contributor
+  contributionTitle: "On Fairy-Stories"
+  published: 1947
+  subseries: null
+  canonTier: apocrypha
+  format: anthology
+  synopsis: >
+    Tolkien's first full statement of what he means by "fairy-story" and
+    "sub-creation," and his case for fantasy as a serious form rather than
+    a childish one.
+  note: >
+    First delivered as the 1939 Andrew Lang Lecture at St Andrews; this is
+    its first full-text publication, as one contribution among several
+    scholars' essays in the multi-author tribute volume Essays Presented
+    to Charles Williams. A revised text was collected in Tolkien's own
+    Tree and Leaf in 1964 (catalogued separately under extended) and again
+    in The Monsters and the Critics and Other Essays in 1983 - this entry
+    is only the original 1947 standalone appearance.
+  sources:
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+
+- id: jrr-tolkien/the-homecoming-of-beorhtnoth-beorhthelms-son
+  title: "The Homecoming of Beorhtnoth Beorhthelm's Son"
+  authorIds: [jrr-tolkien]
+  published: 1953
+  subseries: null
+  canonTier: apocrypha
+  format: play
+  synopsis: >
+    A short dramatic dialogue, in alliterative verse, imagining two men
+    recovering bodies from the 991 Battle of Maldon and arguing over what
+    their lord's fatal "overmastering pride" actually cost his men.
+  note: >
+    First published alongside Tolkien's own accompanying essays "Ofermod"
+    and "Beorhtnoth's Death" in the academic annual Essays and Studies,
+    volume 6; republished on its own in 2023 as "The Battle of Maldon:
+    together with The Homecoming of Beorhtnoth."
+  sources:
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+
+- id: jrr-tolkien/unfinished-tales
+  title: "Unfinished Tales of Númenor and Middle-earth"
+  authorIds: [jrr-tolkien]
+  withAuthorIds: [christopher-tolkien]
+  authorRole: editor
+  published: 1980
+  subseries: null
+  canonTier: apocrypha
+  format: short-story-collection
+  synopsis: >
+    A collection of narratives Tolkien left incomplete, spanning every age
+    of Middle-earth: among them the fall of Gondolin's fullest early form,
+    the history of Númenor's downfall, and the story of how Gandalf came
+    to choose Bilbo Baggins for the road that starts The Hobbit.
+  note: >
+    More fragmentary than The Silmarillion by design - Christopher Tolkien
+    presents the pieces with commentary rather than smoothing them into a
+    single continuous narrative, the more strictly editorial approach he
+    later says (in his 1983 Book of Lost Tales foreword) he came to think
+    The Silmarillion itself should also have taken.
+  sources:
+    - https://en.wikipedia.org/wiki/Unfinished_Tales
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+
+- id: jrr-tolkien/the-letters-of-jrr-tolkien
+  title: "The Letters of J. R. R. Tolkien"
+  authorIds: [jrr-tolkien]
+  withAuthorIds: [christopher-tolkien, humphrey-carpenter]
+  authorRole: editor
+  published: 1981
+  subseries: null
+  canonTier: apocrypha
+  format: nonfiction
+  synopsis: >
+    A selection of Tolkien's own correspondence - to his sons, his
+    publishers, fans and fellow scholars - covering his life, his Catholic
+    faith, his views on his own books, and the decades of writing behind
+    them. Revised and expanded in 2023.
+  note: >
+    Co-edited by Christopher Tolkien and Humphrey Carpenter, Tolkien's
+    authorised biographer (whose own 1977 biography is not itself a
+    Tolkien work and is not catalogued here).
+  sources:
+    - https://en.wikipedia.org/wiki/Christopher_Tolkien
+    - https://en.wikipedia.org/wiki/Humphrey_Carpenter
+
+- id: jrr-tolkien/the-old-english-exodus
+  title: "The Old English Exodus"
+  authorIds: [jrr-tolkien]
+  published: 1981
+  subseries: null
+  canonTier: apocrypha
+  format: nonfiction
+  synopsis: >
+    Tolkien's text, translation and commentary on the Old English poetic
+    version of the Book of Exodus, prepared from his Oxford lecture notes.
+  note: >
+    Edited posthumously by Joan Turville-Petre, named here rather than
+    given an entity on the same one-off-credit grounds as this file's
+    other minor academic collaborators.
+  sources:
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+
+- id: jrr-tolkien/finn-and-hengest
+  title: "Finn and Hengest: The Fragment and the Episode"
+  authorIds: [jrr-tolkien]
+  published: 1982
+  subseries: null
+  canonTier: apocrypha
+  format: nonfiction
+  synopsis: >
+    Tolkien's scholarly reconstruction of the historical episode behind
+    two fragmentary Old English poems, the "Finnsburg Fragment" and an
+    episode within Beowulf.
+  note: >
+    Edited posthumously from Tolkien's lecture notes by Alan Bliss, named
+    here rather than given an entity on the same one-off-credit grounds as
+    this file's other minor academic collaborators.
+  sources:
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+
+- id: jrr-tolkien/the-monsters-and-the-critics-and-other-essays
+  title: "The Monsters and the Critics, and Other Essays"
+  authorIds: [jrr-tolkien]
+  withAuthorIds: [christopher-tolkien]
+  authorRole: editor
+  published: 1983
+  subseries: null
+  canonTier: apocrypha
+  format: essay-collection
+  synopsis: >
+    Five of Tolkien's academic essays gathered into one volume for the
+    first time, chief among them the 1936 lecture that reshaped how
+    Beowulf was read by treating its monsters as central rather than
+    embarrassing, plus "On Translating Beowulf," "A Secret Vice," "English
+    and Welsh," and the fuller 1947 text of "On Fairy-Stories."
+  note: >
+    Unlike The Fall of Númenor (excluded above), this collects essays that
+    had never before been gathered into one book - scattered across a
+    1937 pamphlet, academic journals and a multi-author tribute volume -
+    rather than repackaging chapters from other Tolkien books.
+  sources:
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+
+- id: jrr-tolkien/the-history-of-middle-earth
+  title: "The History of Middle-earth"
+  authorIds: [jrr-tolkien]
+  withAuthorIds: [christopher-tolkien]
+  authorRole: editor
+  published: 1983
+  subseries: null
+  canonTier: apocrypha
+  format: nonfiction
+  synopsis: >
+    Twelve volumes tracing, draft by draft, how The Silmarillion and The
+    Lord of the Rings actually took shape across Tolkien's working life -
+    the raw manuscripts, false starts, abandoned versions and Christopher
+    Tolkien's own commentary connecting them.
+  note: >
+    ONE ENTRY for a twelve-volume, 1983-1996 project - see this file's own
+    header ("STRUCTURAL CALL THREE") for the full reasoning. published is
+    set to 1983, the first volume's year. The twelve constituent volumes,
+    for reference: The Book of Lost Tales, Part One (1983); The Book of
+    Lost Tales, Part Two (1984); The Lays of Beleriand (1985); The Shaping
+    of Middle-earth (1986); The Lost Road and Other Writings (1987); The
+    Return of the Shadow (1988); The Treason of Isengard (1989); The War of
+    the Ring (1990); Sauron Defeated (1992, includes "The Notion Club
+    Papers"); Morgoth's Ring (1993); The War of the Jewels (1994); The
+    Peoples of Middle-earth (1996). A combined index volume followed in
+    2002.
+  sources:
+    - https://en.wikipedia.org/wiki/Christopher_Tolkien
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+
+- id: jrr-tolkien/the-children-of-hurin
+  title: "The Children of Húrin"
+  authorIds: [jrr-tolkien]
+  withAuthorIds: [christopher-tolkien]
+  authorRole: editor
+  published: 2007
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    Cursed by the dark lord Morgoth to watch his children's lives unravel
+    from a distance, Húrin's son Túrin grows up marked by ill luck of his
+    own making as much as the curse's, in one of the oldest and darkest
+    tales of Tolkien's First Age.
+  note: >
+    Tolkien brought this story to a near-complete state between 1951 and
+    1957 before setting it aside; Christopher Tolkien's synthesis draws it
+    together from that late work plus earlier versions scattered across
+    The Silmarillion, Unfinished Tales and The History of Middle-earth.
+    First of the three "Great Tales" of the Elder Days Christopher
+    published as standalone books.
+  sources:
+    - https://en.wikipedia.org/wiki/Christopher_Tolkien
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+
+- id: jrr-tolkien/the-fall-of-arthur
+  title: "The Fall of Arthur"
+  authorIds: [jrr-tolkien]
+  withAuthorIds: [christopher-tolkien]
+  published: 2013
+  subseries: null
+  canonTier: apocrypha
+  format: poem
+  synopsis: >
+    An unfinished alliterative-verse retelling of Arthur's last campaign,
+    begun in the early 1930s, in which Arthur takes the war to the Saxons
+    abroad while Mordred's betrayal gathers at home.
+  note: >
+    Tiered apocrypha for what it is - Tolkien's own unfinished draft,
+    abandoned mid-poem - rather than for how it reached print: unlike the
+    "Great Tales" elsewhere in this section, Christopher Tolkien's edition
+    presents the surviving verse as Tolkien left it rather than
+    constructing a continuous narrative from multiple sources, and adds
+    his own separate essays on the poem's place in the Arthurian tradition
+    and the legendarium rather than new connective text of his own, so
+    authorRole stays at its default here.
+  sources:
+    - https://en.wikipedia.org/wiki/Christopher_Tolkien
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+
+- id: jrr-tolkien/the-story-of-kullervo
+  title: "The Story of Kullervo"
+  authorIds: [jrr-tolkien]
+  withAuthorIds: [verlyn-flieger]
+  authorRole: editor
+  published: 2015
+  subseries: null
+  canonTier: apocrypha
+  format: novella
+  synopsis: >
+    Tolkien's own unfinished retelling, begun around 1914 while he was
+    still a student, of the tragic hero Kullervo from the Finnish Kalevala
+    - the Kalevala being one of the deepest early influences on his
+    invented mythology.
+  note: >
+    Breaks off mid-narrative; published with Tolkien's own related essays
+    on the Kalevala as back matter, edited by Verlyn Flieger.
+  sources:
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+    - https://en.wikipedia.org/wiki/Verlyn_Flieger
+
+- id: jrr-tolkien/beren-and-luthien
+  title: "Beren and Lúthien"
+  authorIds: [jrr-tolkien]
+  withAuthorIds: [christopher-tolkien]
+  authorRole: editor
+  published: 2017
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    A mortal man and an immortal elf-woman fall in love against her
+    father's forbidding, and together attempt what no army has managed:
+    stealing a jewel from the Dark Lord's own crown - the tale Tolkien
+    called the origin of the whole legendarium, and had "Beren" carved on
+    his own gravestone.
+  note: >
+    Traces the story's growth across Tolkien's whole writing life by
+    presenting successive drafts side by side rather than a single
+    finished version, unlike The Children of Húrin's continuous narrative.
+    Second of the three "Great Tales."
+  sources:
+    - https://en.wikipedia.org/wiki/Christopher_Tolkien
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+
+- id: jrr-tolkien/the-fall-of-gondolin
+  title: "The Fall of Gondolin"
+  authorIds: [jrr-tolkien]
+  withAuthorIds: [christopher-tolkien]
+  authorRole: editor
+  published: 2018
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    The hidden elven city of Gondolin, built to stay lost from the Dark
+    Lord's sight, falls at last through betrayal from within - the very
+    first story Tolkien wrote in this whole mythology, drafted in 1916-17
+    while recovering from the Somme.
+  note: >
+    Last of the three "Great Tales," and the one Tolkien himself called
+    "the first real story of this imaginary world."
+  sources:
+    - https://en.wikipedia.org/wiki/Christopher_Tolkien
+    - https://en.wikipedia.org/wiki/The_Silmarillion
+
+- id: jrr-tolkien/the-nature-of-middle-earth
+  title: "The Nature of Middle-earth"
+  authorIds: [jrr-tolkien]
+  withAuthorIds: [carl-f-hostetter]
+  authorRole: editor
+  published: 2021
+  subseries: null
+  canonTier: apocrypha
+  format: nonfiction
+  synopsis: >
+    Late essays, mostly never intended for publication, in which Tolkien
+    works through the metaphysics, biology and chronology underlying
+    Middle-earth: Elvish reincarnation and aging, the shape and history of
+    Arda, and related questions his fiction never states outright.
+  note: >
+    Edited by Carl F. Hostetter, a Tolkien linguistics scholar, by
+    arrangement with Christopher Tolkien before the latter's death in
+    January 2020; the first major posthumous volume not edited by
+    Christopher himself. Tolkien scholar Douglas C. Kane's review argues
+    Hostetter "appears to overstep his role as editor" in places by
+    reading his own interpretive framing (particularly around Catholic
+    theology) into the presentation - recorded here as a genuine scholarly
+    dispute, not adjudicated by this catalogue.
+  sources:
+    - https://en.wikipedia.org/wiki/Carl_F._Hostetter
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
+
+- id: jrr-tolkien/the-collected-poems-of-jrr-tolkien
+  title: "The Collected Poems of J. R. R. Tolkien"
+  authorIds: [jrr-tolkien]
+  authorRole: editor
+  published: 2024
+  subseries: null
+  canonTier: apocrypha
+  format: poetry-collection
+  synopsis: >
+    A three-volume scholarly gathering of Tolkien's poetry across his
+    whole life, published and unpublished alike, from teenage verse
+    through the poems inside The Lord of the Rings to late, previously
+    uncollected pieces.
+  note: >
+    Edited by the Tolkien scholars Christina Scull and Wayne G. Hammond,
+    named here rather than given entities on the same one-off-credit
+    grounds as this file's other minor academic collaborators. Largely a
+    definitive scholarly re-gathering of poems already published elsewhere
+    (many inside The Adventures of Tom Bombadil and The History of
+    Middle-earth) rather than a first publication of new material, which
+    is why it sits in apocrypha rather than alongside those two despite
+    being a substantial physical object; exactly how much of its content
+    is genuinely first-published here versus re-gathered wants a closer
+    look at the book itself rather than the secondary sources checked so
+    far.
+  sources:
+    - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography
