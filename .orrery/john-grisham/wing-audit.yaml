@@ -1,0 +1,501 @@
+stage: wing-audit
+summary: >
+  First audit of the John Grisham wing (58 works, 13 lifeEvents, 1 franchise
+  event, 4 orders, 4 startHere paths, 52 covers, 57 editions, full pt-PT).
+  Every gate re-derived from the scripts, not read from a handoff. Five
+  blocking findings, all of them statements of fact that are wrong in content
+  the reader or the next agent sees: an excluded global event the wing's own
+  works.yaml contradicts, a Large Print ISBN recorded as a trade first
+  edition, two "no standard trade cover exists" comments that are false with
+  the clean jacket sitting one API call away, a shipped cover with a retailer
+  sticker burned into it that the sourcing stage said it had already replaced,
+  and a "no ISBN exists anywhere" claim contradicted by the Wikipedia infobox
+  the same wing already cites. The two strong negative claims the build rests
+  on split: eras [] holds and is well-argued; the globalEvents ruling does not.
+  spoiler-audit's work is the best in the wing - every fix spot-checked came
+  back correct - which makes the two stages upstream of it the weak link, not
+  it.
+
+gates:
+  validate: >
+    `python3 scripts/validate.py --slug john-grisham` - OK, 0 errors, 1264
+    works, 55 authors, all references resolve. 4 warnings, all of them
+    handoff-length soft caps on this wing's own .orrery files
+    (franchise-research 1320w, visual-metadata 945w, spoiler-audit 791w, eras
+    731w against a 700 cap); 139 warnings on other wings suppressed by --slug.
+    Zero sanctuary-rule warnings on content comments. Green again after this
+    stage's mechanical fixes.
+  validatorFalsified: >
+    The validator was made to fail on purpose before its green run was
+    trusted: renaming john-grisham/sycamore-row to sycamore-rowX inside
+    orders.yaml produced 2 errors (unknown work in the order, unresolved
+    inline [[work:]]), and restoring it returned OK. The check fires and goes
+    quiet in both directions.
+  i18n: >
+    `python3 scripts/i18n_coverage.py` - pt-PT 161/175 files fully covered.
+    All 6 john-grisham files (franchises works/franchise/events/orders,
+    authors john-grisham/jim-mccloskey) are fully covered; none appears in the
+    PARTIAL list. The 14 partial files are all pre-existing on other wings
+    (agatha-christie, stephen-king, terry-pratchett, robert-jordan,
+    harlan-coben, lee-child, hp-lovecraft, joao-tordo, anna-sewell,
+    miguel-de-cervantes) and are not this wing's.
+  eventDensity: >
+    `python3 scripts/event_density.py` - catalogue span 1585-2027, 19 global
+    events, {med 11, low 6, high 2}, high budget 2 used of ~17. Per-decade
+    counts are within the budget of 3 everywhere (2000s peaks at 3). The empty
+    decades are 1580s-1860s and 1880s-1900s, all pre-Grisham; every decade
+    this wing publishes into (1980s-2020s) already carries at least one global
+    event. Nothing here is a john-grisham finding.
+  auraDensity: >
+    `python3 scripts/aura_density.py john-grisham` - 58 works, 14 aura entries,
+    0.24 per work, span 1989-2026, longest dark run 7 yrs (1997-2003). The
+    script flags this wing as the one with a 5+ year dark run and routes it to
+    press-archaeology. Re-derived by hand from the two YAML files
+    independently of the script and got the same 7 years.
+  artRotation: >
+    `python3 scripts/art_rotation.py --check john-grisham` - the two gate
+    lines both pass: "organisation rotation holds across all 14 events: no
+    organisation over its cap, no neighbour repeats" and "pacing holds: no two
+    loud cells touching or sharing a screenful, no plateau". Contour
+    #=#==.=#===#==. Distribution artifact-spread 4 (28%), full-bleed-vista 2,
+    floating-object 2, beside 2, immersion 1, layered-stack 1, passage 1,
+    mosaic 1. The script also prints "1 rotation problem(s) - only 0 of 14
+    assets could be read (0 unparsed, 14 with no issue)"; that is the third,
+    composition axis, which stays flagged pre-art by design and is not this
+    gate. art-rotation's own handoff reports the gate lines accurately.
+  assetAudit: >
+    `python3 scripts/asset_audit.py john-grisham` - art:yes, portrait 1/1,
+    covers 52/58, eras 0/0, life 0/13, franchise 0/1. 14 assets to generate,
+    none filed yet. Consistent with a wing that has not been through art
+    intake.
+
+blocking:
+  - id: financial-crisis-2008-excluded-against-the-wing's-own-data
+    owner: event-resonance
+    checked: >
+      Read franchise.yaml's globalEvents block against all 58 works.yaml
+      synopses, then fetched en.wikipedia.org/wiki/Gray_Mountain_(Grisham_novel).
+    found: >
+      franchise.yaml excludes financial-crisis-2008 with the comment "The
+      Litigators (2011) engagement with the crisis is unverified; excluded
+      pending press-archaeology review". The stage weighed only The Litigators.
+      It never looked at Gray Mountain (2014), whose synopsis in this same wing
+      opens "Laid off from her New York firm in the 2008 crash". Wikipedia's
+      own lede: "The book is set in Appalachia after the Great Recession and
+      follows third-year associate Samantha Kofer after the Bankruptcy of
+      Lehman Brothers, when she becomes a legal clinic intern"; its cited
+      source is a Bookseller piece headlined "Grisham to tackle recession in
+      Gray Mountain". The global event is dated 2008-09-15, which is the Lehman
+      bankruptcy itself. So the crash is not backdrop here, it is the inciting
+      premise, and the wing's own prose says so next to a comment saying the
+      opposite. Two defects in one: prose contradicting prose, and an
+      unresolved question shipped as a decision. The remedy is
+      globalEvents.include, not the exclude list - see checkedClean, exclude no
+      longer gates anything in the app.
+    alsoWorthWeighing: >
+      The Rooster Bar (2017) - Wikipedia's article carries both "crisis" and
+      "2008" in the law-school-debt framing. Weaker than Gray Mountain; named
+      so the re-ruling covers it rather than reopening later.
+  - id: the-client-records-a-large-print-isbn-as-the-trade-first-edition
+    owner: editions
+    checked: >
+      Fetched every one of the 57 openlibrary.org/isbn/<isbn>.json records in
+      editions.yaml in one batch and compared page counts, edition_name,
+      physical_format and source_records.
+    found: >
+      editions.yaml records 9780385468657 for The Client as "Doubleday, 1993,
+      hardcover". That record is 758 pages, with no edition_name flag and only
+      an Amazon ASIN plus a Better World Books pallet SKU behind it. The
+      Doubleday trade first edition is 9780385424714 - 1993, Doubleday, New
+      York, 401 pages, carrying the front-flap description, an OCLC number and
+      a cover id - and works.yaml already cites exactly that ISBN as The
+      Client's coverSource. 758 pages for a 401-page novel is a Large Print
+      edition; the record simply does not say so, which is why the page-count
+      check catches it and the edition_name check does not. This is the one
+      slip in the sweep: every other 56 records checked out, so the stage's
+      method was right and the tell it used was incomplete. Fix is
+      9780385424714, which the wing has already opened and used elsewhere.
+  - id: two-false-no-trade-cover-exists-claims-with-clean-jackets-available
+    owner: visual-metadata
+    checked: >
+      Fetched the OL work editions lists for both titles and downloaded and
+      looked at every candidate jacket.
+    found: >
+      works.yaml carries the identical comment on The Boys from Biloxi and
+      Camino Ghosts - "The only cover Open Library holds for this title is the
+      Random House Large Print edition jacket; no standard trade edition cover
+      was found" - and both ship a jacket with a LARGE PRINT / RANDOM HOUSE
+      roundel stamped on it. Both claims are false. The Boys from Biloxi's
+      Doubleday trade record 9780385548922, which this wing's own editions.yaml
+      records, carries cover id 12866664: the same artwork with no roundel.
+      Camino Ghosts has a Doubleday Books 2024 record 9780385545990 carrying
+      cover id 14591707, again the trade jacket without the roundel. Both
+      fetched, both looked at, both clean. The comments state a checked
+      negative that was never checked against the work's own editions list, so
+      the wrong image ships and a future pass is told not to look.
+  - id: the-street-lawyer-ships-the-retailer-sticker-it-was-said-to-have-replaced
+    owner: visual-metadata
+    checked: >
+      Downloaded all 52 shipped covers, tiled a sample of 12 and looked at
+      them, then compared against the stage's own rejectedOnInspection list.
+    found: >
+      visual-metadata's handoff lists "the-street-lawyer: 'Save £1' retailer
+      starburst (-> 10692917)" as a rejection it fixed. 10692917 is the URL
+      currently in works.yaml, and it still carries a round red "SAVE £1 / off
+      marked price" starburst burned into the pixels at top right. The
+      replacement was recorded but the defect travelled with it. This is the
+      trap-registry case verbatim: a retailer scrape passes every HTTP check
+      ever written. A clean US Doubleday first-edition jacket exists at OL
+      cover id 9323391 (fetched and looked at, no sticker, 353x500).
+  - id: a-time-to-kill's-wynwood-first-edition-isbn-does-exist
+    owner: editions
+    checked: >
+      Fetched openlibrary.org/isbn/9780922066032.json and re-read the Wikipedia
+      article works.yaml already cites for the work.
+    found: >
+      editions.yaml asserts twice - in its file header and again in the
+      a-time-to-kill entry's note - that the 1989 Wynwood Press printing "has
+      no findable ISBN in any source checked, print or digital - genuinely
+      unrecoverable with the tools available here, not merely unsearched", and
+      reasons that "the printing predates ISBN-13". Open Library holds it:
+      /books/OL2187616M, ISBN-13 9780922066032, ISBN-10 0922066035, publishers
+      ["Wynwood Press"], publish_date 1989, 425pp, New York NY, LCCN 89005760,
+      LC class PS3557.R5355 T56 1989, sourced from three Library of Congress
+      MARC record sets. The same ISBN is printed in the infobox of
+      en.wikipedia.org/wiki/A_Time_to_Kill_(Grisham_novel), which is
+      works.yaml's only source for the work. The stage found one Wynwood work
+      record (OL34706016W), found no ISBN on it, and stopped; the ISBN-bearing
+      edition sits under a different work id (OL77001W). The check-digit
+      recomputes correctly to 2. Whether to swap the recorded edition is a
+      judgement (the skill's default is the most recent in-print edition, so
+      Dell 2009 may still be right) - but two content comments assert a
+      checked absence that is wrong, and that must go either way.
+
+missing:
+  - id: seven-year-aura-hole-across-his-peak-commercial-decade
+    owner: press-archaeology
+    checked: >
+      Ran aura_density.py, then re-derived the run by hand from
+      authors/john-grisham.yaml and events.yaml against works.yaml's publishing
+      years.
+    found: >
+      The longest dark run is 7 years, 1997-2003, covering nine published works
+      (The Partner, The Street Lawyer, The Testament, The Brethren, A Painted
+      House, Skipping Christmas, The Summons, The King of Torts, Bleachers)
+      with no aura entry at all. This is the stretch where he was the
+      best-selling novelist alive and where the genre departures start, so it
+      is not a quiet period. Two problems on top of the gap. First,
+      press-archaeology's own handoff claims "aura_density.py's longest dark
+      run is now 4 years, down from the 2012-2019 gap" - the measured number is
+      7. Second, authors/john-grisham.yaml's header comment states "No sourced,
+      load-bearing fact turned up for 2016-2019 or 2020-2022", which names the
+      wrong years and leaves the real hole undocumented, so the next agent is
+      pointed away from it. The header is a press-archaeology fix, not a
+      mechanical one, because correcting it means restating what was actually
+      searched.
+  - id: the-essay-title-editions-found-and-nobody-folded-in
+    owner: completeness-auditor
+    checked: >
+      Read editions.yaml's notableFinds against works.yaml's
+      dont-quit-your-day-job note.
+    found: >
+      editions.yaml reports that the anthology's table of contents lists
+      "underwear salesman -- John Grisham", giving Grisham's essay the title
+      "The Underwear Salesman", and says explicitly "Reported here for the
+      curator to fold into works.yaml - editions.yaml is not the place to
+      change a work's note". It was never folded in. works.yaml still says "The
+      individual essay's own title is not established in the sources checked",
+      which is now false, and franchise-research and completeness-auditor both
+      still carry it as an open question. SCHEMA.md line 210 defines
+      `contributionTitle` for exactly this. Note the app reads neither
+      `contributionTitle` nor `authorRole` (see pipelineFinding), so the value
+      of the fix is the record, not the render.
+  - id: no-pt-PT-editions-for-a-portuguese-reading-catalogue
+    owner: editions
+    checked: >
+      editions.yaml header and its own openQuestions; confirmed all 57 ISBNs
+      begin 978-0 or 978-1.
+    found: >
+      57 editions, all English. Grisham is extensively published in Portugal
+      and editions.yaml says so plainly ("that is a gap, not a finding of
+      absence"). Honest and correctly classified as absent rather than not
+      applicable, but it is a real gap and it has a knock-on: the pt-PT overlay
+      keeps every work title in English throughout the wing on the stated
+      grounds that no Portuguese published title is recorded anywhere in it. A
+      pt-PT edition sweep would change the reading experience of the whole
+      overlay, not just add rows.
+  - id: eras-ruled-before-the-biographical-spine-existed
+    owner: eras
+    checked: >
+      git log --reverse over the franchise directory, then eras.yaml's header
+      against press-archaeology's forStages.eras.
+    found: >
+      Stage order is completeness-auditor (b55db55) then eras (4bc5485) then
+      press-archaeology (de62c49). eras ruled with 2 lifeEvents on file, before
+      the 13-event spine existed. press-archaeology then handed eras two hinge
+      candidates it had never seen - 1990 closing the lawyer-legislator period
+      and opening the full-time novelist one, and 2004 opening the parallel
+      nonfiction/wrongful-conviction strand - and eras never re-ran. eras.yaml
+      documents three rejected candidate shapes and neither of these two. The
+      ruling itself is very likely unchanged (the argument is a sourcing
+      argument, and neither hinge has a source that periodises), but the
+      negative record is incomplete against what the pipeline actually found,
+      which is the whole value of a documented negative.
+  - id: two-prose-claims-that-the-wing's-own-tiering-contradicts
+    owner: completeness-auditor
+    checked: >
+      Counted core novels by genre from works.yaml's own synopses.
+    found: >
+      franchise.yaml's description opens "forty-plus legal thrillers", and
+      theme.yaml's ART note says "forty-two of the wing's fifty-eight works are
+      still full legal thrillers". 42 is the core tier count, and works.yaml's
+      header argues at length that core here means "every adult novel, full
+      stop, including the non-legal-genre ones". Roughly eleven of the 42 are
+      not legal thrillers (A Painted House, Skipping Christmas, Bleachers, The
+      Broker, Playing for Pizza, Calico Joe, the three Camino Island books,
+      Sooley, The French Illusion), so the real figure is about 31. Both files
+      lifted the tier count and called it a genre count, and the wing's own
+      eras argument - that the departures are concurrent, not a phase - depends
+      on the departures being real and numerous. The pt-PT overlay mirrors it
+      ("mais de quarenta thrillers judiciais"), so any fix lands in three
+      places. Not mechanical: it is a re-count plus a rewrite in two locales.
+  - id: portrait-provenance-is-a-live-rights-question-not-a-noted-wrinkle
+    owner: visual-metadata
+    checked: >
+      Fetched the Commons file page and read the summary, licensing and full
+      upload history; downloaded and looked at the image.
+    found: >
+      The file's Description reads "John Grisham, photograph by Carol
+      Harrison", Source reads "Own work", Author reads "BlakeGrady". The only
+      upload-history row is a 2023 CropTool crop by a third account. So the
+      person claiming "own work" and releasing it CC BY-SA 4.0 is not the
+      person credited with taking the photograph, and the wing credits the
+      photographer, not the uploader. Looked at, it is a professional studio
+      black-and-white author publicity portrait - precisely the shape of image
+      a third party would not hold rights to. visual-metadata called this "a
+      real provenance wrinkle, noted rather than hidden, but not disqualifying:
+      it has stood unchallenged on Commons since 2023". Unchallenged on Commons
+      is not a rights check; Commons hosts unchallenged bad "own work" claims
+      routinely. Routed rather than ruled - see curatorsCall.
+
+stale:
+  - id: dead-citation-on-the-rainmaker
+    status: fixed mechanically by this stage
+    detail: >
+      works.yaml cited en.wikipedia.org/wiki/The_Rainmaker_(Grisham_novel),
+      which 404s. It was the work's only source. The live article is
+      The_Rainmaker_(novel). Checked all 99 distinct http(s) values across the
+      wing's content files plus the sources cited inside comments (novelsuspects,
+      bibliolifestyle, the NYT Magazine interview, jgrisham.com/bio,
+      achievement.org): this was the only dead one, 98/99 live.
+  - id: franchise-capabilities-comment-described-a-wing-that-no-longer-exists
+    status: fixed mechanically by this stage
+    detail: >
+      The comment read "with no theme.art, no events.yaml and no eras.yaml yet,
+      river and companion will not activate until those exist; wizard will not
+      activate until a startHere is written; editions will not activate until
+      editions.yaml exists. Nothing needs forcing off in the meantime." All four
+      now activate. Rewritten to state what each capability resolves on and why
+      none needs forcing off. Also removed the "yet"/"in the meantime" framing,
+      which is status journaling under CURATION §2.
+  - id: theme-header-said-non-art-fields-only-under-an-art-block
+    status: fixed mechanically by this stage
+    detail: >
+      theme.yaml opened "Non-art fields only - the `art` block is scaffolded
+      separately by the visual-language stage, once the bibliography and any
+      eras are settled". The art block is right there in the file, and the
+      sentence names a pipeline stage inside a content comment. Rewritten to
+      describe the file's actual shape.
+  - id: only-two-light-wings-was-wrong
+    status: fixed mechanically by this stage
+    detail: >
+      theme.yaml claimed Nesbo's and Christie's "are the only two LIGHT
+      exceptions" among the crime/thriller wings. Re-derived the relative
+      luminance of every wing's theme.palette.bg: Gillian Flynn's #e2dfda is
+      light too (223 vs Nesbo 234, Christie 237, Grisham 239). visual-language
+      flagged its own comment as inaccurate in its handoff and never corrected
+      it. Now names all three with their hexes.
+  - id: financial-crisis-comment-is-coordination-in-a-content-file
+    owner: event-resonance
+    status: left in place, routed
+    detail: >
+      "excluded pending press-archaeology review" is a status journal and an
+      address to another stage, both banned by CURATION §2. Left rather than
+      silently rewritten, because the honest rewrite depends on the ruling in
+      blocking above, and rewriting it to a flat negative would launder an
+      unresolved question into a settled one - which is how it got here.
+  - id: press-archaeology-open-questions-never-answered
+    owner: press-archaeology
+    status: open
+    detail: >
+      Four flagged and none closed. (1) The Firm's Paramount deal is dated to
+      the bare year because no read source gave the day; a Variety/Hollywood
+      Reporter January 1990 archive would pin it. (2) The Focused Ultrasound
+      Foundation board seat rests on the chairman's quote in Applied Radiology,
+      never on the Foundation's own board page - and the seat is asserted as
+      fact in both the 2015 lifeEvent ("a longtime board member") and
+      works.yaml's The Tumor note ("on whose board Grisham serves"). (3) A 2022
+      DeSoto Times piece on a courthouse historical marker 429'd on every
+      attempt and was never read; it would sit inside the thin 2020-2022
+      stretch. (4) Cove Creek Park is dated 1996-04 rather than to the inferred
+      April 27. All four are the stage naming its own weak points correctly,
+      which means none is resolved by merging.
+  - id: spoiler-audit-open-thread-on-dennis-fritz
+    owner: press-archaeology
+    status: open
+    detail: >
+      The Innocent Man and grisham-innocent-man-obituary-2004 both centre Ron
+      Williamson alone. Confirmed against the Wikipedia article that Dennis
+      Fritz was convicted of the same murder in the same 1988 trials, cleared
+      by the same DNA testing, freed the same day (April 15, 1999) and is
+      covered in the book; Wikipedia's own lede names both men. Defensible as
+      is - the book's title and jacket centre Williamson - but the omission is
+      real and spoiler-audit flagged it.
+  - id: jim-mccloskey-birth-year-still-derived
+    owner: completeness-auditor
+    status: open, likely permanent
+    detail: >
+      born: 1942 is arithmetic from a profile's "at age 37" in 1979, and both
+      franchise-research and completeness-auditor flagged it unresolved.
+      completeness-auditor added that he graduated Bucknell in 1964 (consistent,
+      not pinning) and that en.wikipedia.org/wiki/Jim_McCloskey is an unrelated
+      baseball player. The file's own comment says derived estimate, which is
+      the honest state.
+  - id: event-resonance-handoff-miscounts-and-uses-em-dashes
+    owner: event-resonance
+    status: open, cosmetic
+    detail: >
+      Its summary says "Evaluated all 18 global events"; there are 19, and its
+      own exclude list correctly names all 19. It is also the only handoff in
+      this wing using em dashes, which CURATION §2 bans. Handoffs are deleted
+      before merge so this costs nothing downstream, but a stage that
+      miscounts its own list in its own summary is a signal about the rest of
+      its output, and the rest of its output is the blocking finding above.
+
+mechanicalFixes:
+  - "works.yaml: The Rainmaker source URL The_Rainmaker_(Grisham_novel) -> The_Rainmaker_(novel); the old one 404s and was the work's only source."
+  - "franchise.yaml: rewrote the capabilities comment, which described a wing with no art block, no events, no eras and no startHere. All four capabilities now resolve on; the comment now says what each resolves on."
+  - "theme.yaml: rewrote the header line claiming the file is non-art fields only and that the art block is scaffolded later by a named stage. The art block is in the file."
+  - "theme.yaml: corrected 'Nesbo's and Christie's are the only two LIGHT exceptions' to name Gillian Flynn as the third, with all three hexes, after re-deriving every wing's bg luminance."
+  - "No editorial change was made anywhere. No cover, ISBN, synopsis, era, order, event or translation was touched."
+
+checkedClean:
+  - "eras: [] holds. Read the full negative record and tested it. The three rejected candidate shapes are each falsified on the bibliography itself before sourcing is reached, and the concurrency argument is verifiable from works.yaml's own years (A Painted House/Skipping Christmas 2001 against The Summons 2002, Bleachers against The King of Torts both 2003, Calico Joe against The Racketeer both 2012, Sooley against The Judge's List both 2021). The Pringle two-volume near-miss is correctly read as not a periodisation, and the Salem Press one-sentence Chamber boundary is correctly held to a one-source bar. Three other wings in this catalogue (harlan-coben, lee-child, michael-connelly) ship the same eras: [] with the same header form. This is not a stage taking the easy path; it is the better half of this build."
+  - "sept-11-2001 exclusion is correct. Fetched en.wikipedia.org/wiki/The_Broker and read the full plot: a pardoned Washington lobbyist hidden in Bologna while the CIA waits to see which foreign service kills him over a stolen satellite system. No 9/11 content, no post-9/11 security theme; the one contemporary-politics reading the article records is about presidential pardons, not terrorism. event-resonance's open question here settles negative. Its franchise.yaml comment asserted the negative before it was verified, which was luck, not method."
+  - "covid-19-pandemic-2020 exclusion is correct on the works checked (Camino Winds and A Time for Mercy 2020, Sooley 2021); nothing in any synopsis engages the pandemic."
+  - "globalEvents.exclude is inert by design, not by accident. lib/content/index.ts relevantGlobalEvents filters on `include` only, with a long comment saying exclude no longer gates anything and is kept as the record of a judgement already made, after portugal-bailout-2011 leaked onto five wings under the old arithmetic default. So include: [] is what makes this wing carry zero global events, and the fix for the financial-crisis finding is an include entry, not an exclude deletion. There is an app test (global-relevance.test.ts) asserting nothing renders that is not in include."
+  - "All 52 cover URLs resolve: scripts/fetch.py --check, 52/52 live, no placeholders, no 302 dead ends. The header (1.9MB) and portrait (245KB) also resolve. Downloaded a 12-cover sample and looked at them: all are the right book, all legible, only The Street Lawyer carries a sticker (see blocking). A Time to Kill's 'NATIONAL BEST SELLER!' banner and price box are genuine 1990s Island Books cover furniture, correctly kept and correctly documented by visual-metadata."
+  - "The header image's tie to the 1984 lifeEvent is direct and sourced, and the Ford County / Lafayette County rejection was the right call. en.wikipedia.org/wiki/A_Time_to_Kill_(Grisham_novel): 'In 1984, Grisham witnessed the harrowing testimony of a 12-year-old rape victim at the DeSoto County courthouse in Hernando, Mississippi.' The named building is the pictured building, the lifeEvent's '12-year-old' and the attacker's name both check out, and the image is a red-brick courthouse with a white portico on a civic square - which is also the wing's own second art motif. Ford County is fictional and the only Lafayette/Oxford link visual-metadata found was a scholarly Faulkner parallel; declining that pairing for a sourced one was correct."
+  - "spoiler-audit's factual corrections are real, and independently verified. The Guardians: jgrisham.com's own copy says Quincy Miller was 'tried, convicted, and sent to prison for life' and spent twenty-two years 'maintaining his innocence' - the fix from death row to life, and from settled fact to his own claim, is right. Theodore Boone: The Accomplice: the publisher's copy names 'his good friend Woody Lambert', 'struggling at school and making bad choices', arrested as 'an unwitting accomplice to armed robbery' - the fix from a sibling to a friend is right. The Exchange: the Wikipedia article confirms Luca, his daughter Giovanna, the kidnapping and the ransom - the fix from Mitch's wife to the mentor's daughter is right. The Ron Williamson lifeEvent: 'On September 22, 1994, Williamson was only five days away from being executed when the execution was stayed'; 'After 11 years on death row... cleared by DNA testing... freed on April 15, 1999' - every element of the rewrite checks out against the source. Four for four. The answer to whether spoiler-audit is unusually good or the upstream stages were unusually weak is: both, and in that order. completeness-auditor reported it had 'verified all 58 works against primary/publisher sources', made 'no correction', and specifically upgraded The Exchange's own sourcing to the PenguinRandomHouse product page - the page whose jacket copy shows the synopsis beside it was wrong. Reading a page for its citation and reading it against the prose are not the same act, and only the second one is verification."
+  - "The pt-PT overlay of all seven rewritten synopses is current with the corrected English, read from the shipped file rather than the handoff. the-brethren, the-reckoning, calico-joe, the-guardians, the-exchange, witness-to-a-trial and theodore-boone-the-accomplice all stop exactly where their English now stops; no reveal is restored anywhere. Also spot-read three pt-PT lifeEvents (the 2004 obituary, the 1984 trial, the 2014 controversy) and the franchise description and all four startHere paths: fluent European Portuguese, right register, correct legal vocabulary (réu, procurador, condenação injusta, corredor da morte), Mississípi correctly localised, ids and workIds untranslated. The Ron Williamson pt-PT text carries the corrected 1994/1999/eleven-years facts."
+  - "Subseries and orders do not drift. Re-derived every subseries membership from works.yaml and compared against orders.yaml: Jake Brigance 3/3, Lacy Stoltz 3/3, Camino Island 3/3, Theodore Boone 7/7, all in publication order with no omissions and no extras. Mitch McDeere (2) and Sebastian Rudd (2) correctly carry no order, on stated precedent. The collection rule is applied consistently: Ford County and Sparring Partners both carry subseries: null with a note saying why, matching works.yaml's header. startHere's four paths all resolve (one workIds, two orderIds, one default) and none points at a rewritten order."
+  - "The remaining 56 edition ISBNs are sound. Fetched all 57 OL records in one batch and checked page count, edition_name, physical_format and publisher against the claim. The nine Limited/Signed/Large Print swaps the stage reports are all real and all correctly avoided. Every ISBN begins 978-0 or 978-1, so the pt-BR/pt-PT registrant trap genuinely does not apply to an English-only pass. No ISBN is duplicated. The Client is the only miss."
+  - "Mickey having no edition is a real market fact, not a research gap. OL search for a published Mickey screenplay by Grisham returns numFound 0. The claim stands as a checked negative."
+  - "theme.yaml's unvalidated fields are all legal. displayFace: sourceSerif is in lib/theme.ts DISPLAY_FACES ({fraunces, spectral, sourceSerif}); signature: rule is in SignatureKind ('beam'|'thread'|'rule'|'filament'|'none'). Both would have silently fallen back to fraunces/thread if wrong. Palette contrast recomputed as WCAG ratios: ink on bg 13.59, ink on surface 12.55, muted on bg 7.46, muted on surface 6.88, accent on bg 5.18, accent on surface 4.78. muted on surface is the usual failure point and it clears AA comfortably. The design commits to one accent, one display face, one signature - not three signature moves."
+  - "No achievements.yaml, correctly. The wing has no eras to hang an era_reader on, its four orders are thread pull-outs rather than hard completions, and a franchise_complete over 58 works including a screenplay and an anthology essay would be unearnable. Absence is the right state; see notApplicableNotAbsent."
+  - "No pt-PT eras overlay, correctly. harlan-coben, lee-child and michael-connelly all ship eras: [] with no pt-PT eras file at all. stage_plan.py reports 'pt-PT missing: eras' for this wing; against that precedent it is a false positive, not a gap."
+  - "Capabilities match reality. river and companion activate on a 14-entry timeline (not two), wizard on four startHere paths, editions on 57 editions. Nothing lights up a half-empty view. Verified against lib/content/capabilities.ts autoDetect rather than against the flags."
+  - "No em dashes anywhere in the wing's content files or its pt-PT overlay. Zero sanctuary-rule warnings from validate.py on content comments."
+  - "Spoiler-boundary distribution is right for this wing. Zero spoilerAfter values across 13 lifeEvents and 1 franchise event, which is correct rather than absent: nothing in the aura states a plot reveal, and spoiler-audit confirmed in the app that spoilerAfter is honoured only on events and lifeEvents, never on a synopsis. The protection here lives in the synopses stopping short, which is the right mechanism, and the boundaries are neither absent-by-neglect nor blanketing."
+
+notApplicableNotAbsent:
+  - "eras 0/58 works covered. Not a gap. No source periodises this career; three wings in this catalogue ship the same finding. Closing it means inventing periods."
+  - "achievements: none. Not a gap. Nothing in this wing is specific enough to mark, and generic badges are worse than none."
+  - "globalEvents include: []. Correct as a state - a wing carrying zero shared events is legitimate - but not correct as currently ruled; financial-crisis-2008 belongs in it. The empty list is the wrong answer arrived at by a defensible route."
+  - "covers 0/5 apocrypha. Not a gap. Mickey is a produced screenplay never published as a book; Partners and Witness to a Trial are digital-only e-shorts whose OL records carry no jacket; The Tumor is a free Foundation giveaway; Don't Quit Your Day Job's OL record is an unrelated same-titled book. Each was checked by direct title search, not inferred from absence in a sweep. The typographic fallback is the primary rendering for these five, not a degraded one."
+  - "no cover for The French Illusion. Not a gap yet - the book is not out until September 2026 and no jacket art exists for any edition. Revisit after publication."
+  - "no edition for Mickey. Not a gap. No ISBN exists in any format for a screenplay that was never published."
+  - "Jim McCloskey has no lifeEvents and no portrait. Not a gap. He is a thin co-author entity existing so Framed's withAuthorIds resolves; his own career belongs to his own wing if he ever gets one, and the two-source bar applies to a living person."
+  - "pseudonyms: []. Not a gap. Single confirmed byline across the whole career, checked in three sources. An author with no pen name is not missing one."
+  - "Mitch McDeere and Sebastian Rudd have no reading order. Not a gap. Two-book threads on stated catalogue precedent; the derived default already gives a reader everything an order would."
+  - "1 franchise event. Not thin by neglect - press-archaeology researched the Runaway Jury/King of Torts tobacco and mass-tort parallels at length and found only literary analysis, never a dated statement from Grisham naming a case. Holding it out was right."
+
+pipelineFinding: >
+  Six schema-promised fields this wing writes are read by no app code, and one
+  of them is the exact failure the wing-audit skill was written around. Grepped
+  the app at ~/apps/orrery for every field this wing leans on.
+
+  Read and rendered: images.cover (lib/content/editions.ts coverFor),
+  portraitCredit (components/portrait.tsx), subseries, debated, forthcoming,
+  withAuthorIds, globalEvents.include, features, theme.displayFace,
+  theme.signature.
+
+  Declared in lib/content/types.ts and read nowhere: coverCredit,
+  headerCredit, themePreset, theme.preset. Not present anywhere in the app at
+  all, including the types: authorRole, contributionTitle.
+
+  The coverCredit case is the canonical inert-data failure wearing new
+  clothes. coverFor() famously did not read images.cover for months; that was
+  fixed, but only the URL half. This wing sourced, eyeballed, replaced and
+  credited 52 covers and one header, and every one of those credit strings is
+  well-formed, validated, translated-around and never shown to anybody. If the
+  credit is a licence obligation - and CC BY-SA attribution is exactly that -
+  then a field the app does not render is not compliance, it is a note to
+  ourselves. Worth a ruling: either the app renders cover and header credits
+  the way it already renders portrait credits, or the schema stops asking for
+  them.
+
+  authorRole and contributionTitle are stranger: SCHEMA.md documents both
+  (lines 209-210, 316, 362-374) and the app does not model either. This wing
+  sets authorRole on two works and three separate stages spent research budget
+  hunting the contributionTitle for Don't Quit Your Day Job - a field that
+  cannot render. Not a Grisham defect; a catalogue-wide one that a Grisham
+  build surfaced.
+
+  Second, smaller: PR #733 is still a draft carrying one commit (the scaffold
+  marker). Eleven stage branches sit outside it. That is the orchestrator's to
+  land, not mine, but a draft PR with none of the work in it is invisible in
+  exactly the way the standing rule about stranded branches exists to prevent.
+
+curatorsCall:
+  - question: "Does financial-crisis-2008 go into globalEvents.include?"
+    ruling: >
+      Yes, on the evidence. Gray Mountain is not a novel with a recession in
+      the background; the crash is why the protagonist is in Appalachia at all,
+      it is in this wing's own synopsis, and the trade press headlined the book
+      as Grisham tackling the recession. The aura standard says roughly one
+      world event in twenty is worth including and only where a book answers
+      the event - this is that one. But the same standard makes it a decision
+      about the wing's whole posture (it currently carries zero global events
+      and the timeline is otherwise entirely biographical), and the event is
+      graded low impact in global.yaml, so it would render as texture rather
+      than an anchor. Escalating rather than deciding: the evidence supports
+      inclusion, the editorial weight of breaking a zero is yours.
+  - question: "Ship the author portrait as is?"
+    ruling: >
+      This is a rights judgement, which the skill says is yours. The facts:
+      Commons credits the photograph to Carol Harrison, the CC BY-SA 4.0
+      release is an 'own work' claim by a different account, and the image is a
+      professional studio publicity portrait. Nothing on Commons resolves the
+      conflict; three years unchallenged is weak evidence for a file almost
+      nobody audits. Two clean alternatives were already found by
+      visual-metadata and rejected on quality, not rights: a 240x320px 2009
+      Flickr event photo, and a well-provenanced landscape 1997 Mondadori press
+      photo needing an awkward crop. A wing can also ship with no portrait. My
+      read is that a small correctly-licensed photo beats a large one whose
+      licence rests on a claim the file's own description contradicts, but the
+      risk appetite is yours.
+  - question: "Which A Time to Kill edition does the wing record?"
+    ruling: >
+      Keep Dell 2009 if the skill's 'most recent in-print' default is the rule
+      you want; the Wynwood 1989 printing is a collector's object, not
+      something a reader can buy. But the two comments asserting no ISBN exists
+      must go regardless, and if you would rather record the historically
+      significant first edition, 9780922066032 is verified and available.
+  - question: "Does the pt-PT overlay keep direct quotations in English?"
+    ruling: >
+      It currently does, throughout - Grisham's 'very autobiographical',
+      'basically me', 'Never in my most creative moment...', and his 2014
+      apology all sit in English inside Portuguese prose. This is internally
+      consistent and defensible (a quotation is what was said), but Portuguese
+      trade publishing usually translates quoted speech and marks it as
+      translated. The translation stage did not flag it as a choice, which
+      suggests it may not have been one. A native reviewer's call; it is
+      uniform, so it is cheap to reverse either way.
+  - question: "Does the wing describe itself as forty-plus legal thrillers?"
+    ruling: >
+      No, and it should not. The real count is about 31 legal thrillers among
+      42 core novels, and the wing's own eras finding depends on the departures
+      being numerous and concurrent. But whether to lead the franchise
+      description with a genre count at all, or with the shelf's actual range,
+      is a framing decision, and it lands in English and pt-PT together.
