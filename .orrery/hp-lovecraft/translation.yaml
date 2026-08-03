@@ -1,0 +1,224 @@
+stage: translation
+summary: >
+  First pt-PT pass on this wing, previously wholly untranslated. Coverage
+  went from 149/169 to 155/169 fully-covered files catalogue-wide, with
+  every hp-lovecraft file this wing owns (franchise.yaml, works.yaml,
+  eras.yaml, events.yaml, orders.yaml) now fully covered and
+  authors/hp-lovecraft.yaml at 35/36 - the one gap is the epigraph's
+  `quote`, held out on the same precedent as anna-sewell.yaml,
+  miguel-de-cervantes.yaml and joao-tordo.yaml (a verbatim quotation from a
+  real person is not retranslated into an invented Portuguese rendering).
+  Also translated comics-code-authority-1954 in the shared
+  content/events/global.yaml, which world-events added to this run and
+  which had no pt-PT overlay yet - out of this wing's own file footprint
+  but this run's responsibility per this skill's scope rule. Validator
+  fully green on this slug: 0 errors, 82 pre-existing warnings (era-coverage
+  from the eras stage), zero new.
+produced:
+  filesChanged:
+    - content/i18n/pt-PT/authors/hp-lovecraft.yaml (new)
+    - content/i18n/pt-PT/franchises/hp-lovecraft/franchise.yaml (new)
+    - content/i18n/pt-PT/franchises/hp-lovecraft/works.yaml (new)
+    - content/i18n/pt-PT/franchises/hp-lovecraft/eras.yaml (new)
+    - content/i18n/pt-PT/franchises/hp-lovecraft/events.yaml (new)
+    - content/i18n/pt-PT/franchises/hp-lovecraft/orders.yaml (new)
+    - content/i18n/pt-PT/events/global.yaml (comics-code-authority-1954 added)
+  coverageBefore: "pt-PT 149/169 files fully covered"
+  coverageAfter: "pt-PT 155/169 files fully covered; no file regressed"
+  fieldsTranslated:
+    authorBio: 1
+    lifeEvents: "17 x (title + description); quote held out on 1 (the epigraph)"
+    franchiseDescription: 1
+    startHerePaths: "4 x (title + description + note - note translated for the reader even though i18n_coverage.py does not count it, per SKILL.md 'the gate is narrower than it looks')"
+    eras: "2 x (title + description + themes)"
+    franchiseEvents: "11 x (title + description)"
+    orders: "2 x (name + rationale + debated, 2 debated bullets on the first order and 3 on the second - debated is not counted by the coverage script either but renders in the app and follows the edgar-allan-poe/orders.yaml precedent)"
+    worksSynopses: 111
+    globalEvent: "comics-code-authority-1954 (title + description)"
+racismTreatment:
+  approach: >
+    Every hp-lovecraft/lifeEvents entry press-archaeology built from primary
+    sources (the four racism-specific ones plus the surrounding biographical
+    entries that carry direct quotations) is translated as sourced
+    biographical fact, in the same measured, non-editorialising register as
+    the English - never softened toward euphemism, never sharpened toward
+    condemnation the cited sources don't themselves make. No slur is
+    reproduced, matching the English base (it doesn't reproduce one either).
+  verbatimQuotationRule: >
+    Wherever the English description quotes a real person's own words
+    directly (in double quotes) - Lovecraft's Argosy letter calling Fred
+    Jackson's characters' "the delicate passions and emotions proper to
+    negroes and anthropoid apes", Sonia Greene's memoir describing him
+    "livid with rage" and naming "this attitude toward minorities and his
+    desire to escape them" as what sent him back to Providence, his own
+    "alien hordes" and "You are now Mrs. H. P. Lovecraft..." lines, the
+    death certificate's "general paresis", and the same pattern in the
+    politics-shift and Argosy-feud entries - that quotation is left in
+    English, verbatim, inside the translated Portuguese prose. This is not
+    a choice invented for this wing: it is the standing convention already
+    used for real people's quoted words in anna-sewell.yaml,
+    miguel-de-cervantes.yaml and jose-rodrigues-dos-santos, restated in this
+    file's own header comment. No Portuguese rendering was invented for any
+    of Lovecraft's, Sonia Greene's, Joshi's, Edmund Wilson's or the World
+    Fantasy Award principals' own words anywhere in this wing.
+  specificHardCalls:
+    - >
+      hp-lovecraft-first-published-poem-1912: the base description names
+      "Irish, Italian, Portuguese and Jewish immigrants" as the groups the
+      1912 poem imagines displaced from Providence - Portuguese named
+      explicitly among the targets of Lovecraft's own xenophobic satire.
+      Translated exactly as stated, with no softening of the list and no
+      added editorial framing around the fact that this is aimed, in part,
+      at a Portuguese immigrant community. This is the one place in the
+      wing where the measured-register instruction is hardest to keep
+      steady, because the content lands closer to home for a pt-PT reader
+      than for an English one; the translation does not compensate for that
+      by adding or removing anything the English doesn't already say.
+    - >
+      hp-lovecraft/the-shadow-over-innsmouth (works.yaml synopsis): the base
+      synopsis states plainly that the story's horror "is built,
+      explicitly, out of the era's anxiety about racial interbreeding and
+      'tainted' bloodlines" and is "a documented, widely discussed reading
+      of the text rather than an incidental theme" - translated at the same
+      directness, not hedged into vaguer language. "Deep Ones" is rendered
+      "os Profundos" here (the one place a Mythos-race name appears inside
+      a translated field rather than a comment); a plain descriptive
+      compound in the English original, not an invented proper title.
+    - >
+      hp-lovecraft-politics-shift-1930s: translated the "moderation, not an
+      abandonment" framing exactly as the English states it, including the
+      Hitler-support and the Harry Brobst eyewitness-account material. This
+      is the entry most at risk of drifting toward either "he got better"
+      (too generous) or erasing the moderation entirely (too harsh); stayed
+      on the English's own claim in both directions.
+spoilerVerification:
+  approach: >
+    Read spoiler-audit's handoff before translating and cross-checked its
+    named rewrites against the CURRENT English text in works.yaml (not
+    independent knowledge of the stories) before rendering each into
+    Portuguese.
+  checkedWorks:
+    the-dunwich-horror: >
+      Translated synopsis stops at "something kept boarded up on the family
+      farm grows alongside him" and the Necronomicon passage; does not name
+      what the thing is or reference the twin reveal. Matches the current
+      English exactly.
+    the-dream-quest-of-unknown-kadath: >
+      Translated synopsis states the quest and its motive (the half-glimpsed
+      sunset city, the appeal to the gods of Kadath) without the "read as an
+      allegory of that homecoming" framing the audit removed. Matches.
+    the-lurking-fear: >
+      Translated synopsis stops at "works back through the history of the
+      Martense family," the same point the audit's rewrite stops at - the
+      underground-family reveal from the fourth installment is not present
+      in either language.
+    celephais: >
+      Translated synopsis ends on "the only one he still wants to be in,"
+      the same redaction point as the English; the closing image (where the
+      dreaming actually leaves him) is not stated in either language. This
+      is the one loosenable redaction spoiler-audit flagged as unsure - left
+      exactly as unsure in translation, not resolved either way here.
+    winged-death: >
+      Translated synopsis stops at "the fly is not finished with him," not
+      naming what becomes of the murdered man - matches the audit's own
+      rewrite, "the fly is not finished with him," rendered the same way in
+      Portuguese.
+    randolph-carter-in-order (orders.yaml): >
+      The corrected rationale (naming The Silver Key as what Through the
+      Gates of the Silver Key picks up from, rather than asserting a false
+      ending for The Statement of Randolph Carter) is translated as
+      corrected, not reverted toward the earlier, wrong framing.
+titleConventions:
+  editionsUsed: >
+    editions.yaml carries 8 real pt-PT editions for this wing (Editorial
+    Estampa's "Os Demónios de Randolph Carter" covering all four Randolph
+    Carter tales; Vega's "O Terror Sobrenatural na Literatura"; Relógio
+    d'Água's "Nas Montanhas da Loucura"; Black Son's "Os Fungos de Yuggoth";
+    Saída de Emergência's "O Intruso" for The Outsider). Every inline
+    [[work:...]] reference to one of these 8 works, in any translated file,
+    uses its published Portuguese title; every other reference (103 of 111
+    works have no pt-PT edition) keeps the English title, per SCHEMA.md's
+    "never invent a translated title" rule. works.yaml's own synopses carry
+    no inline work references at all, so this only affected
+    authors/hp-lovecraft.yaml, franchise.yaml, eras.yaml and orders.yaml.
+  mythosTerminology: >
+    "Cthulhu Mythos" renders as "os Mitos de Cthulhu" in flowing Portuguese
+    prose (franchise.yaml, events.yaml, orders.yaml) - a standard, widely
+    used pt-PT rendering, not an invented coinage. Proper names (Cthulhu,
+    Yog-Sothoth, Azathoth, Nyarlathotep, Shub-Niggurath, Yig, the
+    Necronomicon, Abdul Alhazred, Randolph Carter) are unchanged everywhere.
+    Plain descriptive compounds that appear inside a translated field are
+    translated as ordinary prose where they occur (Deep Ones -> "os
+    Profundos" in the-shadow-over-innsmouth's synopsis; Great Old Ones ->
+    "os Grandes Anciões" in the-mound's synopsis) rather than left in
+    English or treated as fixed proper titles - there is no published pt-PT
+    edition of either story to receive a title from, so this is ordinary
+    prose translation, not title invention.
+verification:
+  i18nCoverage: >
+    python3 scripts/i18n_coverage.py - pt-PT 155/169 (was 149/169). Every
+    hp-lovecraft franchise file fully covered;
+    authors/hp-lovecraft.yaml 35/36 (missing: quote, matching the
+    anna-sewell/cervantes/joao-tordo precedent exactly). No other locale's
+    or wing's numbers moved.
+  validate: >
+    python3 scripts/validate.py --slug hp-lovecraft - 0 errors, 82 warnings,
+    all pre-existing era-coverage notices from the eras stage on
+    hp-lovecraft/works.yaml (the same 57-work era-gap already documented in
+    that stage's own handoff), zero new. One real catch during this stage:
+    the file-header comments in both authors/hp-lovecraft.yaml and
+    franchises/hp-lovecraft/works.yaml originally used the literal string
+    "[[work:...]]" to describe the inline-reference convention in prose,
+    which validate.py's own [[type:id|text]] scanner matched as a real,
+    unresolvable reference (id "..."). Caught by running validate rather
+    than assuming a passing draft; reworded both comments to describe the
+    convention without the literal bracket pattern.
+  registerSweep: >
+    Grepped all six new/changed files for the standard pt-BR tells (estar +
+    gerund constructions, quadrinhos, roteiro, beisebol, tela, ônibus,
+    banheiro, celular, arquivo-as-file, você, trem, grama, caminhão,
+    geladeira) - none found. The one "arquivo" hit
+    (lovecraft-estate-and-the-john-hay-papers-1951) is the correct pt-PT
+    sense (archive/repository), not the pt-BR "ficheiro" sense.
+  brazilianVsEuropean: >
+    Register calibrated against edgar-allan-poe's existing pt-PT overlay
+    throughout (closest register comparison in the catalogue: a
+    horror/weird-fiction-adjacent author with a comparably dense,
+    comma-heavy biographical prose style), not against a contemporary
+    thriller author's looser register.
+forStages:
+  wing-audit: >
+    My own weakest calls, in order. (1) The verbatim-quotation rule (leaving
+    every double-quoted real utterance in English inside the Portuguese
+    prose) is precedent-consistent but is my own extension of a rule
+    previously applied only to single epigraph-style quotes on other wings
+    (anna-sewell, cervantes) to a much denser case - this wing's racism-era
+    lifeEvents carry far more embedded quotations per entry than any prior
+    translated wing. Worth a second read to confirm it doesn't read as
+    stilted or evasive in context, particularly in
+    hp-lovecraft-red-hook-and-the-letters-1925, which carries six separate
+    English quotations inside one Portuguese paragraph. (2) "os Profundos"
+    and "os Grandes Anciões" for Deep Ones and Great Old Ones are my own
+    ordinary-prose translations, not sourced from a published pt-PT
+    Lovecraft edition (neither story has one) - defensible as plain
+    descriptive English rendered plainly, but a different translator could
+    reasonably have left either in English as a proper term. (3) The
+    "Cthulhu Mythos" -> "os Mitos de Cthulhu" rendering is used
+    consistently but is likewise not drawn from a specific published pt-PT
+    source naming it that way; it is the term this reviewer judges most
+    natural and most commonly encountered, not a received translation with
+    its own citation the way the 8 edition titles are.
+openQuestions:
+  - >
+    Whether hp-lovecraft-first-published-poem-1912's translation of the
+    "Irish, Italian, Portuguese and Jewish immigrants" list needs any
+    editorial framing for a Portuguese readership beyond what the English
+    already carries. Left exactly as measured as the English, on the
+    principle that adding emphasis either way would be this translator's
+    own editorializing rather than the source record's; flagged rather than
+    decided silently, per the sensitivity note this stage was given.
+  - >
+    Celephais remains the one unsure spoiler redaction spoiler-audit
+    flagged (loosen if a curator judges the closing image jacket-level) -
+    translated as still-redacted, not resolved here, consistent with not
+    being this stage's call to make.
