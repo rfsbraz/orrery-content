@@ -56,16 +56,31 @@
 #   - "The Bald Book" (Pinnacle Books, 1998), a humor title about baldness:
 #     published under his then-girlfriend Blythe Newlon's own name (as
 #     "Blythe Brown"), with no Dan Brown byline anywhere on the book itself.
-#     Wikipedia's claim that he "primarily written" it rests on a single
-#     unnamed "representative of the publisher" - one uncorroborated
-#     secondhand source about an unbylined book does not clear this
-#     catalogue's sourcing bar, so it is not catalogued as a work of his.
+#     The "primarily written by Brown" claim traces to a single unnamed
+#     "representative of the publisher" and does not resolve to any named,
+#     checkable source: it carries no citation of its own even on Wikipedia
+#     (the footnote sitting next to that sentence is a dead link cited for
+#     the unrelated sentence after it), and every other source repeating the
+#     claim - fan bibliographies, biography blogs - is a verbatim copy of
+#     the same uncited sentence, not an independent report. Contrast with
+#     [[work:dan-brown/187-men-to-avoid|187 Men to Avoid]] below, where a
+#     named journalist (New York Times, 2021), a cited biography, and
+#     Brown's own on-the-record quote all corroborate each other - the gap
+#     here is real, not a matter of not having looked. Not catalogued as a
+#     work of his.
 #   - "The Da Vinci Code: Young Adult Edition" (Random House Children's
 #     Books, 2016): an abridged adaptation of the existing 2003 novel's own
 #     text for younger readers, with added photographs, not a new authorial
 #     work - the same book, cut down, rather than a book in its own right.
-#     Treated as edition-level data rather than a separate work entry; worth
-#     an editions.yaml line rather than a works.yaml one.
+#     Confirmed against the catalogue's own precedent: no other wing in this
+#     repo gives an abridged or young-readers edition of an existing adult
+#     novel its own work entry (the closest case, a graded-reader
+#     abridgement of anna-sewell/black-beauty, was rejected outright rather
+#     than catalogued), and ISFDB's own bibliographic model records this
+#     specific book as a "Variant" title under The Da Vinci Code's own
+#     entry, not as a separate title in its own right. Treated as
+#     edition-level data rather than a separate work entry; worth an
+#     editions.yaml line rather than a works.yaml one.
 #   - Three self-released music recordings that predate or overlap the
 #     writing career - the cassette "SynthAnimals," the CD "Perspective"
 #     (1990), and a CD titled "Angels & Demons" (1994, its ambigram artwork
@@ -75,16 +90,29 @@
 #     March 30, 2022 with Brown attached to write the screenplay and songs:
 #     announced, not produced. Recording an unproduced credit would be
 #     exactly the kind of claim this repo does not make.
-#   - The 2006 "Da Vinci Code" video game and the Langdon film series (2006,
-#     2009, 2016) and TV series (2021, Peacock): adaptations by other
-#     credited writers, not works of Brown's own authorship.
+#   - The 2006 "Da Vinci Code" video game, the Langdon film series (2006,
+#     2009, 2016), the 2021 Peacock TV series, and the Da Vinci Code stage
+#     play (licensed for performance 2023, adapted by Rachel Wagstaff and
+#     Duncan Abel): adaptations by other credited writers, not works of
+#     Brown's own authorship.
+#   - The MasterClass video course "Dan Brown Teaches Writing Thrillers"
+#     (2018) and the Museum of Science, Boston planetarium show "God,
+#     Science, and Our Search for Meaning" (2022, written and narrated by
+#     Brown): both real and both his own words, but neither is a published
+#     book, and no book edition of either was found on danbrown.com or
+#     elsewhere.
 #
 # COMPLETE against the reachable record: cross-checked Brown's own
-# danbrown.com bibliography (which groups "Langdon Series" against "Other
-# Novels" and independently confirms the standalone/series split used here),
-# his English Wikipedia biography and bibliography section, the Robert
-# Langdon character and book-series articles, and each individual novel's
-# own Wikipedia article and infobox.
+# danbrown.com bibliography and its full site sitemap (which groups
+# "Langdon Series" against "Other Novels" and independently confirms the
+# standalone/series split used here, and surfaces the site's complete
+# non-novel output - stage play, MasterClass course, planetarium show - none
+# of it a book), ISFDB's summary bibliography (which corroborates every
+# fiction title and year here independently of Wikipedia and models the YA
+# edition as a variant rather than a separate title), his English Wikipedia
+# biography and bibliography section including the underlying wikitext and
+# its own citations, the Robert Langdon character and book-series articles,
+# and each individual novel's own Wikipedia article and infobox.
 
 - id: dan-brown/digital-fortress
   title: "Digital Fortress"
@@ -300,14 +328,24 @@
     woman's point of view for "women of all ages and stages" navigating
     dating.
   note: >
-    Brown's actual first published book (Penguin/Berkley, 1995), three years
-    before [[work:dan-brown/digital-fortress|Digital Fortress]] and under
-    the pseudonym "Danielle Brown" - see
-    content/authors/dan-brown.yaml for the sourcing on the byline. Reissued
-    under his own name in 2006. Tiered extended: genuinely his and
+    Brown's actual first published book (Berkley Books, 1995, 96 pages;
+    confirmed against the original edition's own scan), three years before
+    [[work:dan-brown/digital-fortress|Digital Fortress]] and under the
+    pseudonym "Danielle Brown" - see content/authors/dan-brown.yaml for the
+    sourcing on the byline itself. Co-written with his then-girlfriend
+    (later wife) Blythe Newlon, per Lisa Rogak's biography "Dan Brown: The
+    Unauthorized Biography" (2013) and a rare on-the-record acknowledgment
+    from Brown himself, in a year-2000 interview promoting
+    [[work:dan-brown/angels-demons|Angels & Demons]]: "Yes, I did write a
+    book before 'Digital Fortress.' It was a silly little humor book whose
+    title will forever remain a secret!" Reissued by Berkley Trade in
+    August 2006 under his own name, recast on the cover as "Dan Brown
+    Formerly Writing As Danielle Brown." Tiered extended: genuinely his and
     completely his own, but comic nonfiction dating advice from before his
     novelist career, not part of the thriller shelf this wing is otherwise
     built from.
   sources:
-    - https://books.google.com/books/about/187_Men_to_Avoid.html?id=NSQWiM2HH9kC
+    - https://archive.org/details/187mentoavoidsur00brow
+    - https://openlibrary.org/books/OL7505768M/187_Men_to_Avoid
+    - https://www.nytimes.com/2021/07/29/style/dan-brown-advice-book.html
     - https://en.wikipedia.org/wiki/Dan_Brown
