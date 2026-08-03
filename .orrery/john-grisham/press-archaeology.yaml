@@ -1,0 +1,96 @@
+stage: press-archaeology
+summary: >
+  Built the biographical spine: 12 new lifeEvents on
+  content/authors/john-grisham.yaml (legislature years, A Time to Kill's
+  rejection saga, The Firm's bootlegged-manuscript Hollywood deal, the
+  lawsuit tried after leaving the bar, Cove Creek Park, the Ron Williamson
+  obituary behind The Innocent Man, meeting Jim McCloskey, the 2013
+  Guantanamo op-ed, the 2014 sentencing-comments controversy, the 2015
+  Focused Ultrasound TEDx talk, the 2023 Authors Guild suit against
+  OpenAI), plus layout fields on the two pre-existing lifeEvents and one
+  new content/franchises/john-grisham/events.yaml entry (the 1990s
+  legal-thriller boom, credited to Grisham and Scott Turow). Every source
+  was fetched and read directly. aura_density.py's longest dark run is now
+  4 years, down from the 2012-2019 gap completeness-auditor flagged;
+  validate.py --slug john-grisham is clean except the expected missing
+  theme.yaml `art:` block.
+produced:
+  newLifeEventIds:
+    - grisham-mississippi-legislature-1983
+    - grisham-time-to-kill-rejected-1989
+    - grisham-firm-hollywood-deal-1990
+    - grisham-railroad-verdict-1996
+    - grisham-cove-creek-park-1996
+    - grisham-innocent-man-obituary-2004
+    - grisham-meets-mccloskey-2009
+    - grisham-guantanamo-oped-2013
+    - grisham-child-porn-comments-2014
+    - grisham-tedx-focused-ultrasound-2015
+    - grisham-openai-lawsuit-2023
+  newFranchiseEventIds:
+    - john-grisham-legal-thriller-boom-1991
+  filesWritten:
+    - content/authors/john-grisham.yaml
+    - content/franchises/john-grisham/events.yaml
+  rejectedCandidates: >
+    The Runaway Jury's and The King of Torts' well-documented parallels to
+    real 1990s tobacco and mass-tort/pharma litigation (Mississippi's 1994
+    tobacco suit, the fen-phen cases) were researched at length; every
+    source found was literary analysis or plot-summary framing, never a
+    dated, on-the-record statement from Grisham naming a specific real
+    case as either novel's source. Held out of events.yaml rather than
+    coined - see its header comment.
+forStages:
+  eras: >
+    Two hinge candidates beyond franchise-research's own (the 2001-2007
+    non-legal-genre run, the 2013 Brigance return): 1990 closes a
+    lawyer-legislator period (1955/1983-1990) and opens the full-time-
+    novelist one; 2004 opens a second, parallel strand - the nonfiction/
+    wrongful-conviction advocacy line (The Innocent Man, McCloskey 2009,
+    the Innocence Project and Centurion Ministries seats, The Guardians,
+    Framed) that runs alongside the fiction timeline rather than breaking it.
+  visual-language: >
+    New sourced, non-portrait motifs beyond the legal pad already flagged:
+    a statehouse committee room, a stack of rejection letters, a Hollywood
+    bidding-war press collage, a jury-verdict document, the Cove Creek Park
+    diamond, a folded newspaper obituary, a TEDx stage, a federal-
+    courthouse filing. All place/object/document per VISUAL.md §3, none a
+    likeness of Grisham.
+  reading-orders: No change to the five-subseries structure from this stage.
+  world-events: >
+    Not routed to - the remaining dark years read as genuinely quiet
+    touring/publishing stretches, not gaps a global event would fill.
+openQuestions:
+  - "The Firm's Paramount deal is widely reported at a precise date
+    (commonly given as January 7, 1990) but every source actually read
+    here (the Oxford American's own 1993 Grisham interview, Wikipedia,
+    Academy of Achievement) confirms only the year and the ~$600,000
+    figure, not the day. grisham-firm-hollywood-deal-1990 is dated to the
+    bare year on purpose; a trade-press archive (Variety/Hollywood
+    Reporter, January 1990) would let a future pass pin the exact date."
+  - "The Focused Ultrasound Foundation board seat is confirmed by the
+    Foundation's own chairman, quoted in Applied Radiology's 2016 piece
+    ('a strong supporter and board member... for years'), but the
+    Foundation's own board-listing page was not independently fetched and
+    read. Worth a direct check before treating the seat as fully pinned
+    alongside the confirmed Innocence Project and Centurion Ministries
+    memberships."
+  - "The 2013 Guantanamo op-ed's account of Nabil Hadjarab was publicly
+    disputed at the time (Washington Examiner) as omitting his
+    disciplinary record and extremist ties. grisham-guantanamo-oped-2013
+    reports that the op-ed drew 'pointed rebuttals' without adjudicating
+    which account is correct - deliberately, since the event is about
+    Grisham's act of advocacy, not a ruling on Hadjarab's case. A curator
+    who wants a firmer framing should read the Washington Examiner piece
+    directly before changing it."
+  - "A 2022 DeSoto Times piece on a historical marker honoring Grisham at
+    the DeSoto County courthouse (the same courthouse as the 1984
+    lifeEvent) kept 429-erroring on every fetch attempt and was never
+    read, so nothing from it was used. It may be worth a retry with a
+    different fetch strategy - the courthouse-marker angle would be a
+    clean, low-effort addition to the 2020-2022 stretch if the piece holds
+    up."
+  - "Cove Creek Park's opening is dated 1996-04 (month precision) rather
+    than to the specific Saturday the Roanoke Times' April 30, 1996
+    dateline implies (April 27), since that day was inferred by
+    day-of-week arithmetic rather than stated outright in the source."
