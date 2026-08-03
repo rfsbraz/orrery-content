@@ -1,0 +1,170 @@
+# A wing spans an author's complete published work, not just the genre he is
+# famous for. Grisham's shelf is almost entirely legal thrillers, but five
+# real subseries run
+# through it - Jake Brigance, Mitch McDeere, Sebastian Rudd, Lacy Stoltz and
+# the non-legal Camino Island heist trilogy - modelled as `subseries` on
+# works.yaml inside this one wing, never as separate franchises. The
+# Theodore Boone YA series is his one genuinely distinct-audience spin-off.
+# See works.yaml's header for the tiering principle and every sourced
+# correction found along the way.
+id: john-grisham
+name: John Grisham
+kind: author
+description: >
+  The complete published work of John Grisham: mostly legal thrillers - from
+  his 1989 debut [[work:john-grisham/a-time-to-kill|A Time to Kill]] through
+  his most recent novels, spanning small-town Mississippi courtrooms to
+  Washington power plays - alongside recurring detours into baseball,
+  football and a heist trilogy; five recurring threads inside that shelf -
+  [[work:john-grisham/a-time-to-kill|Jake Brigance]],
+  [[work:john-grisham/the-firm|Mitch McDeere]],
+  [[work:john-grisham/rogue-lawyer|Sebastian Rudd]],
+  [[work:john-grisham/the-whistler|Lacy Stoltz]] and the non-legal
+  [[work:john-grisham/camino-island|Camino Island]] heist trilogy; the
+  Theodore Boone series for younger readers; two true-crime nonfiction books;
+  two short-story collections; and a handful of ebook-only shorts and
+  contributions.
+authorIds: [john-grisham]
+themePreset: yellow-pad-brief
+images:
+  # The DeSoto County Courthouse in Hernando, Mississippi, where Grisham
+  # watched a child rape victim testify at her attacker's 1984 trial - the
+  # case he has called the direct, autobiographical source for A Time to
+  # Kill (see john-grisham.yaml lifeEvents, grisham-witnesses-1984-trial).
+  # A real, sourced link to his own origin story, unlike Ford County's
+  # relationship to Lafayette County/Oxford, which no source checked
+  # actually confirms - so that pairing was set aside for this header.
+  header: "https://upload.wikimedia.org/wikipedia/commons/3/38/Court_House_Hernando_MS.jpg"
+  headerCredit: "Thomas R Machnitzki, CC BY-SA 3.0"
+  headerSource: "https://commons.wikimedia.org/wiki/File:Court_House_Hernando_MS.jpg"
+
+# Four paths: the two entry points Hachette's own Novel Suspects guide and an
+# independent longtime-fan guide (bibliolifestyle.com) both converge on as
+# where new Grisham readers start (The Firm and A Time to Kill, named in
+# different words by each), the one sourced young-reader door, and the
+# completionist walk. Checked and declined: Camino Island as its own entry
+# path - Novel Suspects pitches it only as a follow-up to A Painted House for
+# a reader already past the legal thrillers, not as a first stop, and no
+# second source corroborates it as one; that is a single outlet's secondary
+# recommendation, not the convergence the two paths below have. A path
+# pointing at the Lacy Stoltz or Camino Island orders was considered and set
+# aside for the same reason - real orders, but no sourced "start here" claim
+# for either, and naming every qualifying order here would turn the wizard
+# into a menu instead of advice.
+startHere:
+  paths:
+    # Source: https://bibliolifestyle.com/must-read-john-grisham-book/
+    # "Best place to begin: The Firm - fast, thrilling, and iconic." /
+    # "Read this one if you want the quintessential Grisham experience."
+    # Corroborating: https://www.novelsuspects.com/series-list/which-john-grisham-book-should-you-read-first/
+    # "If you want to start with a bestseller... The Firm... probably his
+    # best-known book."
+    - id: the-firm-start
+      title: Start with the one everyone's heard of
+      description: >
+        The Firm is the most-recommended door into Grisham for a new reader:
+        his first bestseller, his best-known title, and by outside accounts
+        the book that made the most casual readers into fans. Fully
+        self-contained - no series commitment beyond an optional sequel three
+        decades later.
+      workIds:
+        - john-grisham/the-firm
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        Skips the courtroom entirely - The Firm is a corporate-conspiracy
+        thriller, not a trial story, so it undersells how much of Grisham's
+        other work actually happens in front of a jury.
+    # Source: https://www.novelsuspects.com/series-list/which-john-grisham-book-should-you-read-first/
+    # "If you want to start at the very beginning... A Time to Kill... Follow
+    # it up with Sycamore Row, a companion novel to A Time to Kill."
+    # Corroborating: https://bibliolifestyle.com/must-read-john-grisham-book/
+    # "For emotional impact: A Time to Kill - his raw and unforgettable
+    # debut."
+    - id: jake-brigance-start
+      title: Start at the beginning, with Jake Brigance
+      description: >
+        A Time to Kill is Grisham's debut and his most personal book, drawn
+        from a real trial he witnessed as a young lawyer - heavier and more
+        character-driven than the corporate thrillers that followed. Two
+        outside guides both single it out as the true starting point, and
+        both point onward from there into the rest of Jake Brigance's story.
+      workIds: null
+      orderId: john-grisham/jake-brigance-in-order
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        A Time to Kill stands complete on its own if that is as far as you go
+        - Sycamore Row and A Time for Mercy are there for whenever you want
+        to keep going, not required reading.
+    # Source: https://www.novelsuspects.com/series-list/which-john-grisham-book-should-you-read-first/
+    # "If you're a young reader (or young at heart)... Theodore Boone, Kid
+    # Lawyer... the start to a fun series for aspiring lawyers!"
+    - id: theodore-boone-start
+      title: Start with Theodore Boone
+      description: >
+        Grisham's one series written for a younger audience: a Strattenburg
+        thirteen-year-old with a lawyer's instincts, in a middle-grade
+        imprint distinct from the adult thrillers. A publisher-recommended
+        door for a younger reader, or an adult choosing what to hand one.
+      workIds: null
+      orderId: john-grisham/theodore-boone-in-order
+      fit:
+        experience: [new]
+        commitment: [arc]
+      note: >
+        A different readership from the rest of this shelf - none of
+        Grisham's courtroom or crime fiction for adults appears here.
+    - id: complete-shelf
+      title: The whole shelf
+      description: >
+        Every novel, story, and nonfiction book Grisham has published,
+        legal thrillers and every genre departure alike, in the order he
+        wrote them.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+
+# Capabilities (docs/SCHEMA.md) are auto-detected from the data and left auto
+# here on purpose. All four resolve on: the timeline carries 14 entries (13
+# author lifeEvents plus the one franchise event), which activates `river` and
+# `companion`; four startHere paths activate `wizard`; 57 editions activate
+# `editions`. None of them lights up a half-empty view, so none needs forcing
+# off.
+features:
+  river: auto
+  wizard: auto
+  companion: auto
+  editions: auto
+
+globalEvents:
+  include:
+    - financial-crisis-2008  # Gray Mountain's own synopsis opens on it directly ("Laid off from her New York firm in the 2008 crash"); the novel's premise, not backdrop.
+  exclude:
+    - sept-11-2001  # lived through it; no novel centers on post-9/11 security or terrorism
+    - covid-19-pandemic-2020  # lived through it; novels do not write about it
+    - world-war-i-1914  # predate his birth; engine filters these
+    - world-war-ii-1939  # predate his birth; engine filters these
+    - pulp-magazines-1926  # predate his birth
+    - penguin-paperback-1935  # predate his birth
+    - armed-services-editions-1943  # predate his birth
+    - lady-chatterley-trial-1960  # age 5; permissive publishing was industry infrastructure, not in his work
+    - fantasy-paperback-boom-1965  # not a fantasy writer
+    - comics-code-authority-1954  # born 1955; not a comics writer
+    - carnation-revolution-1974  # Portuguese event; his work is set in America
+    - portugal-bailout-2011  # Portuguese event; his work is set in America
+    - chain-bookshop-1982  # benefited sales; not a theme in novels
+    - online-bookselling-1995  # industry mechanism; novels do not write about it
+    - ebook-and-self-publishing-2007  # industry mechanism; novels do not write about it
+    - prestige-fantasy-adaptation-2011  # works adapted but not as fantasy
+    - booktok-2020  # modern phenomenon; career predates and novels do not engage with it
+    - elementary-education-act-1870  # predate his birth
+
+sources:
+  - https://en.wikipedia.org/wiki/John_Grisham
+  - https://www.jgrisham.com/books/
