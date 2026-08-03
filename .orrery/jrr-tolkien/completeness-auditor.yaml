@@ -1,0 +1,50 @@
+stage: completeness-auditor
+summary: >
+  Re-verified all 30 scaffolded works against ISFDB, WorldCat and primary-
+  sourced Wikipedia articles: every existing date and credit held, zero
+  corrections. Added two works with real sourced content: The Bovadium
+  Fragments (2025, world-first publication) and A Secret Vice: Tolkien on
+  Invented Languages (2016, extended critical edition with restored
+  manuscript material) - wing now 32 works (3/11/18). Corrected the
+  Collected Poems (2024) note, which understated its own newness (73/195
+  poems previously unpublished, not "largely a re-gathering"). subseries:
+  null re-confirmed everywhere. Left unresolved: Songs for the Philologists
+  (1936), a real multi-author pamphlet find, scoped as a curator call.
+produced:
+  newWorkIds:
+    - jrr-tolkien/a-secret-vice
+    - jrr-tolkien/the-bovadium-fragments
+  changedProse:
+    - jrr-tolkien/the-collected-poems-of-jrr-tolkien
+  changedDates: []
+  reordersCaused: []
+forStages:
+  press-archaeology: >
+    No existing dates changed. Two new works have press coverage if useful:
+    Bovadium Fragments (Tolkien Society, HarperCollins launch coverage,
+    Oct/Nov 2025); A Secret Vice (Journal of Tolkien Research, Journal of
+    the Fantastic in the Arts reviews, 2016).
+  eras: >
+    A Secret Vice (2016) belongs with the 1974-2020 posthumous-editing era
+    by composition date (1931), not publication date. The Bovadium
+    Fragments (2025) is the first Christopher-Tolkien-edited volume
+    published after his 2020 death - open call on whether the posthumous
+    era's endpoint is his death or this book.
+  reading-orders: >
+    Both new works slot chronologically without moving anything else:
+    A Secret Vice between The Story of Kullervo (2015) and Beren and
+    Lúthien (2017); The Bovadium Fragments after The Collected Poems
+    (2024), now the wing's last work. Confirmed via wing_digest.py.
+  visual-metadata: >
+    Need covers/editions: The Bovadium Fragments (HarperCollins UK ISBN
+    9780008737764 / US 9780008815134, cover art by Emily Langford after
+    Tolkien's own "King's Norton from Bilberry Hill"); A Secret Vice
+    (HarperCollins, ISBN 978-0-00-813139-5).
+  editions: "Same two works/ISBNs as visual-metadata above."
+openQuestions:
+  - "Songs for the Philologists (1936): 30-song pamphlet, 13 songs Tolkien's (with E. V. Gordon and Leeds colleagues), first print of those 13 poems later reprinted whole in Collected Poems (2024). Not added - genuine multi-author-anthology scope call, a curator decision. Would be apocrypha/1936/anthology/contributor if added."
+  - "The Lord of the Rings 1954 dating: now corroborated by the dedicated LOTR article's Publication History, citing Carpenter's 1977 biography (pp.220-221) for all three UK volume dates. Prior openQuestion resolved."
+  - "The Children of Húrin: ISFDB's own title record says 2006; WorldCat (OCLC 78790549) and Wikipedia's Guardian/NYT-sourced publication history both say 2007. Kept 2007 on the two agreeing sources; worth a title-page check."
+  - "The Old English Exodus (1981) and Finn and Hengest (1982) rest on the Wikipedia bibliography's own publisher/imprint citation only - not independently checkable against ISFDB (doesn't carry these) or WorldCat (JS-gated search). Uncontested elsewhere, but single-sourced."
+  - "The Fall of Númenor (2022) exclusion re-checked: already rests on four independent published reviews agreeing it repackages existing material. Sound, not under-precedented as previously flagged; preserved here in case a curator wants a final look."
+  - "The six author-entity stubs all still resolve correctly against the finalized works.yaml. A Secret Vice's editors (Fimi, Higgins) and Bovadium's essayist (Ovenden) are named in-note only, matching the existing one-off-credit convention - no seventh entity needed. Outside this stage's footprint to change; noted for whoever owns author files."
