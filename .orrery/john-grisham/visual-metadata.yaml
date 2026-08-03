@@ -1,0 +1,100 @@
+stage: visual-metadata
+summary: >
+  Sourced cover images for 52/58 works (90%; 41/42 core, 11/11 extended,
+  0/5 apocrypha), a franchise header (DeSoto County Courthouse, Hernando MS)
+  and an author portrait (Wikipedia's own current infobox photo). Candidate
+  generation ran as one lookup.py --json author sweep (1021 edition rows
+  across 96 Open Library work titles, one script call) plus a handful of
+  targeted search.json/editions.json batches for the five works the sweep
+  didn't resolve. Every one of the 52 chosen cover URLs was fetched and
+  confirmed a real, non-placeholder image (scripts/fetch.py --check, 52/52
+  ok); all 52 unique, no duplicate franchise images. Candidates were
+  downloaded and tiled into contact sheets (PIL) and looked at in full: the
+  first pass over the 52 top-ranked picks caught 12 degraded candidates -
+  library discard stickers/barcodes, retailer price stickers, a worn jacket
+  scan, a Large Print badge with no standard-edition alternative - each was
+  replaced from that work's other Open Library editions and re-verified.
+  validate.py --slug john-grisham is green (0 errors; only 3 pre-existing
+  handoff-length warnings from earlier stages, none new).
+coverage:
+  covers: "52/58 (90%)"
+  core: "41/42 (98%) - only the-french-illusion (forthcoming Sep 2026) lacks a cover"
+  extended: "11/11 (100%)"
+  apocrypha: "0/5 (0%) - none of the five ever had a normal trade-book jacket; see gaps"
+  header: "1/1, franchise.yaml"
+  portrait: "1/1, authors/john-grisham.yaml"
+toolCalls: >
+  scripts/metadata/lookup.py --json (one call, 1021 edition rows) for the
+  bulk match; one batched search.json call for the five unresolved works,
+  plus editions.json checks on the three that resolved to a bare work
+  record. Selection ran as a local Python script (title match + heuristic
+  scoring) over the one JSON dump, no per-work fetches. Chosen and candidate
+  covers were downloaded in batched urllib passes and tiled into labelled
+  contact-sheet PNGs for the visual pass. Portrait and header used two
+  Commons API extmetadata calls plus one Wikipedia pageimages call.
+rejectedOnInspection:
+  - "rogue-lawyer: library-discard sticker (9323460 -> 10686619)"
+  - "the-pelican-brief: secondhand-shop inventory label (13313231 -> 10669503)"
+  - "the-rainmaker: library barcode on the top pick, then a price sticker, a '2 for £8' burst and another price sticker on three more before a clean copy (10669490 -> ... -> 10675475)"
+  - "the-street-lawyer: 'Save £1' retailer starburst (-> 10692917)"
+  - "the-summons: 'BORDERS PRICE £8.99' shelf-talker (-> 11412525)"
+  - "theodore-boone-the-accused: 'KING COUNTY LIBRARY SYSTEM' barcode (10687580 -> 10126661)"
+  - "a-time-for-mercy: only candidates were a Large Print jacket and a library-stickered copy of it (-> clean UK edition 10681010)"
+  - "the-chamber: 140x200px original pick, then a library-barcoded alternate, before a clean 318x500px copy (14735799 -> 11412488 -> 10681242)"
+  - "the-brethren: '$15.29 ITEM' price sticker on one copy (9323535 -> 6620812)"
+  - "skipping-christmas: torn/worn jacket corner (10669906 -> 11412534)"
+  - "the-litigators: both top-ranked editions carry an 'ACPL ITEM DISCARDED' sticker (9323431/9323433 -> 10681281)"
+  - "theodore-boone-kid-lawyer: a small red 'DPT' stamp (9322884 -> 11015652)"
+gaps: >
+  Six works ship with no cover, each with a one-line data-decision comment on
+  the entry: mickey (a produced screenplay, never published as a book - no
+  Open Library record at all); dont-quit-your-day-job (the only title match
+  is an unrelated self-help book by a different author; the real 2010
+  anthology has no record found); the-tumor and witness-to-a-trial (Open
+  Library holds a work record for each - OL31593927W, OL45587485W - but
+  neither edition carries a cover); partners (two 2016 work records exist,
+  neither with a cover); the-french-illusion (only a pre-order record for a
+  New Zealand Hachette edition ahead of the September 2026 release, no
+  jacket art anywhere yet). All six match the shape of gap this skill
+  expects (screenplay, promotional novella, e-shorts, an anthology
+  contribution, an unreleased book), each confirmed by direct title search
+  rather than absence from the author-sweep alone.
+notableChoices:
+  editionSpread: >
+    Doubleday hardcovers with Dell/Island Books/Bantam paperback reprints
+    dominate the US run; several later titles ended up on a Hodder &
+    Stoughton UK jacket instead, purely because the US edition's only Open
+    Library cover was Large Print or library-stickered - the same
+    publisher-market mix already established elsewhere in this catalogue.
+  largePrintCompromise: >
+    camino-ghosts and the-boys-from-biloxi each have exactly one Open
+    Library candidate, and both are the Random House Large Print jacket -
+    no standard trade cover exists for either yet (both 2022/2024, likely
+    too recent for fuller edition coverage). Used anyway per the skill's
+    ranking (a real jacket beats an empty slot), with a one-line comment on
+    each entry naming the compromise.
+  aTimeToKill: >
+    The Island Books 1992 cover carries a printed price box and a "NATIONAL
+    BEST SELLER!" banner - genuine 1990s cover-design furniture, not a
+    later sticker, kept as such after checking ink and layering against the
+    art beneath.
+  portrait: >
+    Grisham_John_by_C_Harrison_(cropped).jpg (CC BY-SA 4.0), confirmed via
+    Wikipedia's pageimages API as the article's current infobox photo,
+    1543x1946px, dated 10 January 2016. The file's own description credits
+    the photograph to "Carol Harrison" while the Commons upload is an "own
+    work" claim by a different named account - a real provenance wrinkle,
+    noted rather than hidden, but not disqualifying: it has stood
+    unchallenged on Commons since 2023 under an explicit CC BY-SA 4.0
+    licence. Preferred over a correctly-licensed but 240x320px 2009 Flickr
+    event photo (also linked from Wikidata's P18) and a well-provenanced but
+    landscape 1997 Mondadori press photo needing an awkward crop.
+  header: >
+    The DeSoto County Courthouse in Hernando, Mississippi (Thomas R
+    Machnitzki, CC BY-SA 3.0) - where Grisham watched a 12-year-old rape
+    victim testify at her attacker's 1984 trial, the case he calls the
+    direct source for A Time to Kill. Checked and set aside: pairing the
+    header with Lafayette County/Oxford on the theory that fictional Ford
+    County is modelled on it - no source confirms that, only a scholarly
+    paper drawing a literary parallel to Faulkner - so the header stays with
+    the one link that is directly sourced.
