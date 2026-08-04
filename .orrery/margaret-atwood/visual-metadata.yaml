@@ -1,0 +1,88 @@
+stage: visual-metadata
+summary: >
+  Sourced covers for 63/69 works (91%), a franchise header (Old Victoria
+  College, University of Toronto) and an author portrait (a 2022 Commons
+  photo, currently Wikipedia's own infobox image). One lookup.py --json
+  --limit 200 sweep (1086 rows) plus five targeted OpenLibrary searches
+  closed the works the sweep's own author-search page didn't surface
+  (obscure chapbooks, the 2024/2025 latest titles). All 63 candidates and
+  their replacements were downloaded, tiled into contact sheets and looked
+  at in full; 12 were rejected on inspection and replaced (see below), one
+  kept as the least-bad of a checked pool. Every final URL (63 covers +
+  portrait + header) fetched with `?default=false`/--check and confirmed
+  real. validate.py --slug margaret-atwood: 0 errors, 3 pre-existing
+  handoff-length warnings, none new.
+coverage:
+  covers: "63/69 (91%)"
+  breakdown: >
+    Every core novel and both subseries (Handmaid's Tale/Testaments,
+    MaddAddam) covered, all three Angel Catbird volumes with distinct art.
+    The 6 gaps are all apocrypha-tier: none is a normal trade book.
+  header: "1/1"
+  portrait: "1/1"
+rejectedOnInspection:
+  - "the-edible-woman, survival: French-translation covers standing in for
+     the English work ('la femme comestible', 'Essai sur la littérature
+     canadienne') -> English editions"
+  - "the-journals-of-susanna-moodie: a CBC spoken-word LP sleeve, not a book
+     -> Oxford University Press 1970"
+  - "old-babes-in-the-wood, the-robber-bride: Large Print badges/text with
+     standard trade editions available -> Doubleday 2023 / Anchor 1998"
+  - "murder-in-the-dark, up-in-the-tree, annas-pet: library barcodes/call-
+     number stickers -> cleaner editions found for the first two; annas-pet
+     kept its least-bad option, both its cover-bearing editions are
+     stickered, noted on the entry"
+  - "the-circle-game, the-animals-in-that-country: blank library bindings
+     with no jacket art at all -> editions with real cover art"
+  - "dancing-girls, bashful-bob-and-doleful-dorinda: a worn/creased scan and
+     a corner label -> clean alternates (Vintage 1996, Bloomsbury USA 2006)"
+gaps: >
+  double-persephone, the-trumpets-of-summer, expeditions, snake-poems:
+  1960s-80s small-press/chapbook editions, each with one OL edition record
+  and no cover image. through-the-one-way-mirror: a 1979 essay never issued
+  as its own book, no edition record exists. the-happy-zombie-sunrise-home:
+  a 2013 Wattpad-only serial, never a book. All confirmed by direct title
+  search, not inferred from the sweep's silence.
+notableChoices:
+  angelCatbird: >
+    Title-matching first collapsed all three volumes onto volume 1's OL
+    record; volumes 2/3 are filed under their own subtitles ("To Castle
+    Catula", "The Catbird Roars") and, matched by hand, carry genuinely
+    distinct art.
+  portrait: >
+    File:Margaret_Atwood_(3x4_cropped).jpg, CC BY 2.0 - Wikipedia's current
+    infobox photo, and Wikidata's own preferred P18 independently resolves
+    to the same 2022 Collision-conference source photo. Credited per the
+    file's own ImageDescription (photographer), not the Commons uploader
+    account the Artist field alone would suggest.
+  header: >
+    Old Victoria College, University of Toronto (Maksim Sokolov/Maxergon,
+    CC BY-SA 4.0) - where Atwood earned her BA under Northrop Frye, whose
+    "garrison mentality" theory Survival's own thesis is built on; both
+    facts sourced directly on her Wikipedia article. Set aside: a Quebec/
+    Ontario boreal-forest landscape for her father's fieldwork childhood -
+    true to this wing's own visual-language, but no single sourced place
+    name anchors one photograph the way this building anchors the Frye tie.
+forStages:
+  editions: >
+    No editions.yaml exists yet. Two things the 1086-row sweep surfaced
+    worth carrying over: Wandering Wenda's own OL edition (OL25209319M,
+    ISBN 9781770870000) has its title field mistyped "Wandering Wanda" -
+    confirmed the same book via its Internet Archive id, not a different
+    title, don't let an ISBN pass drop it on a title mismatch. And several
+    later novels carry a co-listed Random House/Diversified "Large Print"
+    ISBN alongside the standard edition on OL - a real, valid record that
+    reads as an ordinary edition unless the publisher field is checked.
+  translation: >
+    the-edible-woman and survival both had a French-translation cover
+    rejected here for standing in for the English work (see above) - the
+    same trap applies to a stray pt cover substituted in, and OpenLibrary
+    is known to merge pt-BR/pt-PT records under one work (CURATION §4).
+  wing-audit: >
+    One accepted compromise: annas-pet's cover still carries a small
+    library sticker, kept because both of its two cover-bearing OL editions
+    have one and no third exists. Everything else is either clean or a
+    commented, confirmed gap. book-of-lives (a 2025 release) is worth a
+    freshness re-check since new books sometimes gain a better OL scan
+    later.
+openQuestions: []
