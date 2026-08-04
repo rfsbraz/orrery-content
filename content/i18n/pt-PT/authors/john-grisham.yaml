@@ -1,0 +1,243 @@
+# Overlay pt-PT do autor: bio + prosa dos lifeEvents.
+# Os lifeEvents ficam aninhados sob o autor e são fundidos por id (ver
+# SCHEMA.md, "Nested lists merge by id"). Levam `title` + `description`, que
+# são prosa; datas, organisation, illustration_type, images_required,
+# impact e sources nunca se traduzem, nem o nome do autor.
+# Títulos de obras citados usam o original inglês em toda a ala: nenhuma
+# edição pt-PT está registada para nenhuma das 58 obras (ver o cabeçalho de
+# content/franchises/john-grisham/editions.yaml) - nunca um título
+# inventado.
+# As citações diretas de Grisham ficam no inglês em que foram efetivamente
+# ditas: traduzi-las substituiria as suas próprias palavras por outras que
+# nunca disse. Só a prosa à volta da citação é traduzida (mesma convenção de
+# content/i18n/pt-PT/franchises/harlan-coben/events.yaml e
+# content/i18n/pt-PT/authors/harlan-coben.yaml).
+# grisham-innocent-man-obituary-2004: a data da execução suspensa (1994) e
+# a da ilibação por ADN (1999) são anos distintos, não o mesmo evento;
+# traduzida exatamente como está, sem fundir as duas datas.
+#
+# TERMINOLOGIA. "Câmara dos Representantes do Mississípi" para a "Mississippi
+# House of Representatives" - segue a tradução corrente da imprensa
+# portuguesa para a câmara baixa do Congresso federal dos EUA, aplicada aqui
+# à câmara equivalente de um legislativo estadual, que não tem paralelo
+# direto na Assembleia da República portuguesa. Os nomes das comissões
+# parlamentares (Apportionment and Elections, Judiciary "A", Military
+# Affairs) são traduzidos como prosa descritiva, não como designações
+# oficiais com equivalente em português. "Chancery-court race" (Sycamore
+# Row) é descrito para a compreensão do leitor - a chancery court do
+# Mississípi trata heranças, sucessões e outras causas de equidade - e não
+# traduzido por um decalque sem correspondência direta em Portugal.
+# "Wrongful-death case" é vertido como "processo por morte indevida": a
+# ação civil de indemnização por morte que a common law distingue do
+# processo-crime, sem figura equivalente isolada no direito português.
+- id: john-grisham
+  bio: >
+    Romancista norte-americano e antigo advogado, nascido em Jonesboro,
+    Arkansas, o segundo de cinco filhos de um operário da construção civil e
+    agricultor de algodão e de uma doméstica; a família instalou-se em
+    Southaven, Mississípi, perto de Memphis, quando ele tinha quatro anos, e
+    foi aí que cresceu. Obteve uma licenciatura pela Mississippi State
+    University e o grau de Juris Doctor (JD) pela Faculdade de Direito da
+    Universidade do Mississípi (1981), exerceu advocacia criminal e civil
+    durante cerca de uma década, e foi deputado na Câmara dos Representantes
+    do Mississípi entre 1983 e 1990. Escreveu o primeiro romance,
+    [[work:john-grisham/a-time-to-kill|A Time to Kill]], à mão, em blocos de
+    folhas amarelas pautadas, antes do trabalho, ao longo de três anos,
+    terminando-o em 1987; foi recusado por muitas editoras até uma pequena
+    editora lhe dar uma tiragem de 5000 exemplares em 1989. O seu segundo
+    romance, [[work:john-grisham/the-firm|The Firm]] (1991), tornou-se um
+    best-seller e transformou-o num dos romancistas mais vendidos vivos,
+    posição que mantém desde então, sem interrupção.
+  lifeEvents:
+    - id: grisham-born-1955
+      title: Nasce em Jonesboro, Arkansas
+      description: >
+        Nasce em Jonesboro, Arkansas, o segundo de cinco filhos; a família
+        instala-se em Southaven, Mississípi, perto de Memphis, quando ele
+        tem quatro anos, e é aí, e não no Arkansas, que cresce.
+
+    - id: grisham-mississippi-legislature-1983
+      title: Cumpre dois mandatos na Câmara dos Representantes do Mississípi
+      description: >
+        Eleito Democrata para a Câmara dos Representantes do Mississípi
+        pelo 7.º distrito do condado de DeSoto, exerce o mandato entre 1983
+        e 1990, ao mesmo tempo que advoga em Southaven. No segundo mandato,
+        ocupa a vice-presidência da Comissão de Repartição Eleitoral e
+        Eleições, além de lugares nas comissões dos Seguros, Judiciária "A"
+        e Assuntos Militares, e apoia uma candidatura falhada à presidência
+        da câmara em 1987; a reorganização das comissões feita depois pelo
+        novo presidente deixa-o com funções mais leves, libertando tempo
+        que usa para terminar The Firm. Em 1990, opta por não se
+        recandidatar, fecha o escritório de advocacia e muda a família para
+        Oxford, para escrever a tempo inteiro. A política estadual e as
+        eleições judiciais de pequenas cidades voltam a aparecer, depois
+        disso, em toda a sua ficção, de The Brethren e The Appeal até à
+        disputada eleição para o tribunal de heranças e sucessões em
+        Sycamore Row.
+
+    - id: grisham-witnesses-1984-trial
+      title: >
+        Testemunha o depoimento de uma vítima infantil de violação no
+        tribunal do condado de DeSoto
+      description: >
+        Ainda jovem advogado e deputado do Mississípi, Grisham assiste ao
+        depoimento de uma vítima de violação de 12 anos no tribunal do
+        condado de DeSoto, em Hernando, Mississípi, no julgamento do seu
+        agressor, Willie James Harris. Já chamou ao romance que daí nasceu,
+        A Time to Kill, "very autobiographical" - o livro imagina o que
+        teria acontecido se o pai da rapariga tivesse ele próprio matado os
+        seus agressores, e o seu narrador, o advogado de pequena cidade
+        Jake Brigance, é, nas suas próprias palavras, "basically me".
+        Escreveu-o à mão, antes do trabalho, ao longo dos três anos
+        seguintes, enquanto ainda exercia mandato na legislatura do
+        Mississípi.
+
+    - id: grisham-time-to-kill-rejected-1989
+      title: >
+        A Time to Kill é recusado por cerca de 28 editoras antes de uma
+        tiragem de 5000 exemplares
+      description: >
+        Depois de quatro anos a escrever antes do amanhecer e aos fins de
+        semana, à volta da advocacia e do mandato parlamentar, o manuscrito
+        terminado de A Time to Kill é recusado por cerca de 28 editoras. A
+        Wynwood Press, uma pequena editora, acaba por aceitar uma tiragem
+        modesta de 5000 exemplares em 1989; sem o marketing de uma grande
+        editora por trás, o próprio Grisham vai diretamente aos livreiros
+        para colocar o romance nas prateleiras. Ainda assim vende mal, e
+        quando a tiragem não escoa, recolhe o stock não vendido e
+        destrói-o. O livro só se torna um best-seller dois anos depois, à
+        boleia do sucesso de The Firm.
+
+    - id: grisham-firm-hollywood-deal-1990
+      title: Um manuscrito pirateado de The Firm desencadeia uma guerra de licitações em Hollywood
+      description: >
+        Antes de The Firm encontrar editora, uma cópia pirateada do
+        manuscrito começa a circular pelos estúdios de Hollywood, e vários
+        começam a licitar entre si pelos direitos de adaptação ao cinema. A
+        Paramount fecha o negócio por cerca de 600 mil dólares enquanto o
+        romance ainda está por publicar. Semanas depois, a Doubleday - uma
+        das muitas editoras que tinham recusado A Time to Kill - assina
+        contrato com Grisham para The Firm; o romance é publicado em 1991,
+        vende mais de sete milhões de exemplares, e transforma o então
+        pouco conhecido romancista do Mississípi num dos autores mais
+        vendidos vivos, quase da noite para o dia.
+
+    - id: grisham-railroad-verdict-1996
+      title: Volta ao tribunal uma última vez, por uma promessa feita antes de ser famoso
+      description: >
+        Grisham tinha aceitado representar a família de John Wayne King,
+        guarda-freios da Illinois Central Railroad morto ao serviço em
+        1991, ainda antes de deixar a advocacia para escrever a tempo
+        inteiro. Cumpre esse compromisso em janeiro de 1996, pondo de lado
+        o trabalho em The Runaway Jury para julgar pessoalmente o processo
+        por morte indevida. O júri delibera durante duas horas e atribui à
+        viúva de King, Barbara, 683 500 dólares - o maior veredicto da
+        carreira jurídica de Grisham, e o único caso que julgou desde que
+        deixou a ordem dos advogados do Mississípi.
+
+    - id: grisham-cove-creek-park-1996
+      title: Constrói, por 3,8 milhões de dólares, um campo de basebol juvenil para um condado que não tinha nenhum
+      description: >
+        Depois de mudar a família para uma quinta nos arredores de
+        Charlottesville, na Virgínia, Grisham descobre crianças da zona a
+        percorrer cerca de 32 quilómetros até Charlottesville, Crozet ou
+        Lovingston só para encontrar um campo onde jogar. Financia
+        pessoalmente o Cove Creek Park, um complexo de seis campos de
+        basebol e softbol juvenil na zona rural de Covesville, inaugurado
+        em 1996 a um custo de 3,8 milhões de dólares, e treina lá as
+        equipas dos próprios filhos. Financia da mesma forma campos da
+        Little League de volta a Oxford, Mississípi. O basebol, uma
+        ambição de infância a que renunciou aos dezoito anos, continua a
+        aparecer depois disso na sua ficção e no seu trabalho para o
+        cinema - A Painted House, Bleachers, Calico Joe, Playing for Pizza,
+        Sooley, e o argumento de Mickey.
+
+    - id: grisham-innocent-man-obituary-2004
+      title: Um obituário do New York Times torna-se o seu primeiro livro de não-ficção
+      description: >
+        Grisham lê o obituário de Ron Williamson no New York Times a 9 de
+        dezembro de 2004: uma estrela do basebol de uma pequena cidade do
+        Oklahoma, condenado injustamente por homicídio em 1988, que chegou
+        a cinco dias da execução em setembro de 1994 antes de um tribunal
+        federal a suspender, e que foi ilibado por provas de ADN em 1999,
+        depois de onze anos no corredor da morte. Em poucas horas telefona
+        à família de Williamson, que aceita deixá-lo contar a história, e
+        liga à editora a dizer que já tem o próximo livro - não-ficção, uma
+        forma que nunca tinha escrito. "Never in my most creative moment
+        could I have come up with a story like this," diz; também já disse
+        que, escritas como ficção, as reviravoltas pareceriam demasiado
+        inverosímeis para se acreditar. O resultado, The Innocent Man
+        (2006), é o primeiro livro de não-ficção de Grisham, e o verdadeiro
+        capítulo de abertura do ativismo por condenações injustas que
+        atravessa o resto da sua carreira.
+
+    - id: grisham-meets-mccloskey-2009
+      title: Conhece Jim McCloskey, e a luta pelos condenados injustamente torna-se também sua
+      description: >
+        Jim McCloskey, antigo consultor empresarial que se tornou capelão
+        prisional e fundou a Centurion Ministries para reverter condenações
+        injustas, convida Grisham a falar numa gala da Centurion Ministries
+        em 2009. O encontro dá início a uma amizade: Grisham entra para o
+        conselho de administração da Innocence Project e, mais tarde, para
+        o da própria Centurion Ministries, testemunha perante o Congresso
+        sobre condenações injustas, e baseia The Guardians (2019) - um
+        advogado de apoio jurídico que liberta inocentes - no próprio
+        McCloskey. Quinze anos depois de se conhecerem, os dois coescrevem
+        Framed (2024), dividindo entre eles dez casos reais de condenação
+        injusta.
+
+    - id: grisham-guantanamo-oped-2013
+      title: Escreve um artigo de opinião no New York Times por um fã de Guantánamo que localizou
+      description: >
+        Depois de saber que alguns dos seus próprios romances são leitura
+        proibida dentro de Guantánamo, Grisham localiza um dos detidos que
+        queria lê-los - Nabil Hadjarab, um argelino detido sem acusação
+        durante onze anos - e escreve um artigo de opinião no New York
+        Times a 11 de agosto de 2013, defendendo a sua libertação, um
+        pedido de desculpas e uma indemnização. O artigo suscita tanto
+        apoio como refutações pontuais ao seu relato do caso de Hadjarab;
+        de qualquer forma, é Grisham a colocar o seu crescente ativismo
+        contra detenções e condenações injustas diretamente sob o próprio
+        nome, em vez de o canalizar para a ficção.
+
+    - id: grisham-child-porn-comments-2014
+      title: Provoca reação negativa por comentários sobre penas de prisão, e pede desculpa no dia seguinte
+      description: >
+        Ao promover Gray Mountain numa entrevista publicada pelo The
+        Telegraph, Grisham defende que os tribunais norte-americanos foram
+        longe demais nas penas aplicadas a alguns condenados - juntando
+        quem consome pornografia infantil aos jovens negros acusados de
+        posse de droga em pequena escala e aos réus de crimes de colarinho
+        branco, que diz estarem também sobrepenalizados, e recordando a
+        condenação por pornografia infantil de um antigo colega da
+        faculdade de Direito. Os comentários, lidos por muitos como uma
+        desvalorização dos crimes de pornografia infantil, provocam uma
+        reação negativa imediata e generalizada. Grisham pede desculpa no
+        dia seguinte: "Anyone who harms a child for profit or
+        pleasure...should be punished to the fullest extent of the
+        law...I regret having made these comments, and apologize to all."
+
+    - id: grisham-tedx-focused-ultrasound-2015
+      title: Chama a The Tumor "the most important book I've ever written" num palco TEDx
+      description: >
+        Num evento TEDx Charlottesville, em dezembro de 2015, Grisham -
+        membro de longa data do conselho da Focused Ultrasound Foundation -
+        surge ao lado do seu presidente, o Dr. Neal Kassell, para explicar
+        o seu apoio a este tratamento experimental contra o cancro, sem
+        incisão, e anuncia o lançamento gratuito de The Tumor, uma novela
+        que imagina o desfecho de um doente com cancro cerebral, com e sem
+        a tecnologia. "It's the most important book I've ever written," diz
+        à plateia, que inclui uma doente de Parkinson a descrever como um
+        ensaio de ultrassom focado pôs fim ao seu tremor incontrolável.
+
+    - id: grisham-openai-lawsuit-2023
+      title: Junta-se ao processo de direitos de autor da Authors Guild contra a OpenAI
+      description: >
+        Grisham é um dos 17 autores da ação - ao lado de, entre outros,
+        Scott Turow, George R.R. Martin, Jodi Picoult e Jonathan Franzen -
+        numa ação coletiva que a Authors Guild move contra a OpenAI no
+        tribunal federal de Manhattan, acusando a empresa de copiar os seus
+        romances "wholesale, without permission or consideration" para
+        treinar o ChatGPT. É a primeira vez que o nome de Grisham surge
+        ligado ao braço de ferro do setor sobre a inteligência artificial
+        generativa, em vez de a um tribunal da sua própria invenção.

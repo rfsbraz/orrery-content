@@ -1,0 +1,732 @@
+# Editions of John Grisham: 57 English (en) editions over 57 of 58 works.
+# English only - Grisham has been widely translated, including into
+# Portuguese, but no pt-PT edition is recorded here; that is a gap, not a
+# finding of absence.
+#
+# SOURCING. Every ISBN is taken from its own OpenLibrary edition record
+# (openlibrary.org/isbn/<isbn>.json, cited per entry) or, for the three
+# entries OpenLibrary does not carry at all (Partners, Witness to a Trial,
+# The French Illusion), from the book's own product page at
+# penguinrandomhouse.com, the publisher's storefront and Source Ranking #1 in
+# docs/CURATION.md. Every OpenLibrary record was opened and read, not taken
+# from a title-only search hit: several editions share an OpenLibrary "work"
+# with a same-year Limited Edition, Large Print, audiobook or e-book record
+# carrying an identical or near-identical title, the single most common trap
+# in this catalogue (see below).
+#
+# WHICH EDITION. Doubleday (via its Bantam/Dell/Vintage paperback imprints)
+# has published nearly the entire adult catalogue since The Firm (1991), so
+# the default pick throughout is that book's own original Doubleday trade
+# hardcover - not a same-year Limited/Signed edition, not a Large Print
+# edition, not an e-book-only OpenLibrary stub - confirmed on each entry by
+# opening its OpenLibrary record and checking for exactly those flags before
+# recording the ISBN. Nine records looked like a plain trade hit from their
+# title alone and turned out to be a Limited Edition or Large Print edition
+# once opened: The Brethren (9780385497480), The Rainmaker (9780385475136),
+# The Pelican Brief (9780385470483 - literally `"edition_name": "Limited
+# Edition"`), The Associate (9780385528030), The Broker (9780385510462), The
+# Last Juror (9780385510448), The Confession (9780385528054), Guardians and
+# Camino Winds each carry a same-year Limited Edition ISBN alongside the
+# plain one. Every one of those was swapped for a same-year, non-flagged
+# Doubleday trade ISBN instead - never for a later reprint unless no plain
+# original could be found.
+#
+# A TIME TO KILL: FIRST EDITION VS. CURRENT PRINT. Grisham's 1989 debut was
+# not a Doubleday book - Wynwood Press published it first, in a famously
+# small initial printing (Doubleday only picked up the backlist after The
+# Firm's success). The Wynwood first edition does have a real, verifiable
+# ISBN (9780922066032, under works/OL77001W, distinct from the ISBN-less
+# work record at works/OL34706016W a narrower search surfaces first) - see
+# the entry's own note for the details. Per this skill's default rule ("the
+# most recent in-print edition... the one a reader can actually buy today"),
+# the edition recorded below is still Dell's current 20th-anniversary
+# mass-market paperback (2009, ISBN 9780440245919) rather than the
+# long out-of-print Wynwood first printing, not because the Wynwood ISBN is
+# unrecoverable.
+#
+# THEODORE BOONE: A DIFFERENT IMPRINT. All seven books are Dutton Children's
+# Books (a Penguin Young Readers imprint), never Doubleday - confirmed
+# individually on each entry, not assumed from the adult pattern. The Scandal
+# (2016) is the one exception where the OpenLibrary record itself omits the
+# `publishers` field; it is still recorded as Dutton on the strength of its
+# ISBN sitting inside the same 978-0-525-4263xx block as every other
+# confirmed Dutton Boone hardcover and its Internet Archive/library holdings,
+# flagged in its own note rather than asserted as fact.
+#
+# THE APOCRYPHA-TIER E-SHORTS DO HAVE ISBNs, JUST DIGITAL ONES. Partners
+# (2016) and Witness to a Trial (2016) are Kindle Single-style digital
+# originals with no print run at all, but PenguinRandomHouse.com assigns each
+# a standard-shaped ISBN-13 for the e-book/audio product itself (9780385541923
+# and 9780385542579) - format `ebook`, recorded here rather than omitted,
+# since a real identifier exists and OpenLibrary simply never indexed either
+# one. The Tumor (2015) is different again: a free promotional short released
+# by the Focused Ultrasound Foundation (not Grisham's usual publisher) that
+# DOES carry a conventional trade ISBN (9781495179402, self-published via
+# CreateSpace) - also recorded. Mickey (2004) is the one apocrypha work with
+# no edition at all: it is a screenplay for a film, never published as a
+# book in any form, and no ISBN, print or digital, was found anywhere for it.
+# That is a market fact, not a research gap - see the note on the work itself.
+#
+# DON'T QUIT YOUR DAY JOB (2010): an anthology, not a Grisham solo book, and
+# harder to source than the numbered novels - OpenLibrary's title search
+# surfaces a dozen unrelated books sharing the generic title before the real
+# one, and the record it does hold under the correct MP Publishing ISBN omits
+# the publisher name entirely. Confirmed instead by its own table of contents
+# (which lists "underwear salesman -- John Grisham" among the 23 essays,
+# matching this catalogue's synopsis) and cross-checked against a second,
+# independent Amazon listing for the same MP Publishing 2010 edition. That
+# same table of contents gives Grisham's own essay a title not otherwise
+# established in works.yaml's own sources: "The Underwear Salesman".
+#
+# THE FRENCH ILLUSION (forthcoming Sep 29, 2026): unpublished, so OpenLibrary
+# carries no record at all. Sourced instead directly from its own
+# PenguinRandomHouse.com product page, which lists a hardcover ISBN, page
+# count and a release date matching works.yaml's own `forthcoming` field. A
+# preorder identifier, not a published book yet - flagged in its own note.
+#
+# ISBN scope check: every ISBN below was independently re-derived (EAN-13
+# check digit recomputed from the first twelve digits, not merely trusted
+# from OpenLibrary's own `isbn_ok`-style flag) and every one begins 978-0 or
+# 978-1 (English-language registrant groups) - no region mismatch is possible
+# for an English-only pass, so the pt-PT/pt-BR trap this skill warns about
+# does not apply here. No ISBN below is duplicated across two entries.
+
+# =============================================================================
+# English (en) - 57 editions, 57 of 58 works
+# =============================================================================
+
+- id: john-grisham/a-time-to-kill/dell-2009-en
+  workId: john-grisham/a-time-to-kill
+  isbn13: "9780440245919"
+  language: en
+  format: paperback
+  publisher: Dell
+  year: 2009
+  note: >
+    Dell's 20th-anniversary mass-market paperback, the current in-print
+    edition, per this catalogue's default rule for a work with no live
+    controversy over which edition to record. Grisham's actual first
+    edition was a small 1989 Wynwood Press printing (Doubleday only
+    acquired the backlist after The Firm's success): ISBN 9780922066032,
+    425 pages, LCCN 89005760 - see the file header.
+  sources:
+    - "https://openlibrary.org/isbn/9780440245919.json"
+
+- id: john-grisham/the-firm/doubleday-1991-en
+  workId: john-grisham/the-firm
+  isbn13: "9780385416344"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 1991
+  sources:
+    - "https://openlibrary.org/isbn/9780385416344.json"
+
+- id: john-grisham/the-pelican-brief/doubleday-1992-en
+  workId: john-grisham/the-pelican-brief
+  isbn13: "9780385421980"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 1992
+  note: >
+    The plain first edition; a same-shaped ISBN one digit off (9780385470483)
+    is explicitly `"edition_name": "Limited Edition"` on its own OpenLibrary
+    record and was not used.
+  sources:
+    - "https://openlibrary.org/isbn/9780385421980.json"
+
+- id: john-grisham/the-client/doubleday-1993-en
+  workId: john-grisham/the-client
+  isbn13: "9780385424714"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 1993
+  note: A same-year Doubleday ISBN (9780385468657) is a 758-page large-print edition and was not used.
+  sources:
+    - "https://openlibrary.org/isbn/9780385424714.json"
+
+- id: john-grisham/the-chamber/doubleday-1994-en
+  workId: john-grisham/the-chamber
+  isbn13: "9780385424721"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 1994
+  note: A same-year Doubleday ISBN (9780385474399) is a large-print edition and was not used.
+  sources:
+    - "https://openlibrary.org/isbn/9780385424721.json"
+
+- id: john-grisham/the-rainmaker/doubleday-1995-en
+  workId: john-grisham/the-rainmaker
+  isbn13: "9780385424738"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 1995
+  note: >
+    The plain first edition; the ISBN a title-only search surfaces first
+    (9780385475136) is explicitly `"edition_name": "Limited Edition"` on its
+    own OpenLibrary record and was not used.
+  sources:
+    - "https://openlibrary.org/isbn/9780385424738.json"
+
+- id: john-grisham/the-runaway-jury/doubleday-1996-en
+  workId: john-grisham/the-runaway-jury
+  isbn13: "9780385472944"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 1996
+  sources:
+    - "https://openlibrary.org/isbn/9780385472944.json"
+
+- id: john-grisham/the-partner/doubleday-1997-en
+  workId: john-grisham/the-partner
+  isbn13: "9780385485920"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 1997
+  sources:
+    - "https://openlibrary.org/isbn/9780385485920.json"
+
+- id: john-grisham/the-street-lawyer/doubleday-1998-en
+  workId: john-grisham/the-street-lawyer
+  isbn13: "9780385490993"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 1998
+  sources:
+    - "https://openlibrary.org/isbn/9780385490993.json"
+
+- id: john-grisham/the-testament/doubleday-1999-en
+  workId: john-grisham/the-testament
+  isbn13: "9780385493802"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 1999
+  note: >
+    A same-year Doubleday ISBN (9780385493826) is catalogued under "Doubleday
+    Religious Publishing Group" - a different imprint edition - and was not
+    used in favour of this plain trade printing.
+  sources:
+    - "https://openlibrary.org/isbn/9780385493802.json"
+
+- id: john-grisham/the-brethren/doubleday-2000-en
+  workId: john-grisham/the-brethren
+  isbn13: "9780385497466"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2000
+  note: >
+    The plain first edition; the ISBN a title-only search surfaces first
+    (9780385497480) is explicitly `"subtitle": "The Limited Edition (Signed)"`
+    on its own OpenLibrary record and was not used.
+  sources:
+    - "https://openlibrary.org/isbn/9780385497466.json"
+
+- id: john-grisham/a-painted-house/doubleday-2001-en
+  workId: john-grisham/a-painted-house
+  isbn13: "9780385501200"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2001
+  sources:
+    - "https://openlibrary.org/isbn/9780385501200.json"
+
+- id: john-grisham/skipping-christmas/doubleday-2001-en
+  workId: john-grisham/skipping-christmas
+  isbn13: "9780385506243"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2001
+  note: >
+    The true first edition (Nov 2001, "1st ed." on its own record); a later
+    same-publisher ISBN dated Oct 2002 on OpenLibrary (9780385508414) is a
+    subsequent printing and was not used.
+  sources:
+    - "https://openlibrary.org/isbn/9780385506243.json"
+
+- id: john-grisham/the-summons/doubleday-2002-en
+  workId: john-grisham/the-summons
+  isbn13: "9780385503839"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2002
+  sources:
+    - "https://openlibrary.org/isbn/9780385503839.json"
+
+- id: john-grisham/the-king-of-torts/doubleday-2003-en
+  workId: john-grisham/the-king-of-torts
+  isbn13: "9780385508049"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2003
+  sources:
+    - "https://openlibrary.org/isbn/9780385508049.json"
+
+- id: john-grisham/bleachers/doubleday-2003-en
+  workId: john-grisham/bleachers
+  isbn13: "9780385511612"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2003
+  note: A same-year Doubleday ISBN (9780385511971) is a Limited Edition and was not used.
+  sources:
+    - "https://openlibrary.org/isbn/9780385511612.json"
+
+- id: john-grisham/the-last-juror/doubleday-2004-en
+  workId: john-grisham/the-last-juror
+  isbn13: "9780385510431"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2004
+  note: A same-year Doubleday ISBN (9780385510448) is a Limited Edition and was not used.
+  sources:
+    - "https://openlibrary.org/isbn/9780385510431.json"
+
+- id: john-grisham/the-broker/doubleday-2005-en
+  workId: john-grisham/the-broker
+  isbn13: "9780385510547"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2005
+  note: A same-year Doubleday ISBN (9780385510462) is a Limited Edition and was not used.
+  sources:
+    - "https://openlibrary.org/isbn/9780385510547.json"
+
+- id: john-grisham/the-innocent-man/doubleday-2006-en
+  workId: john-grisham/the-innocent-man
+  isbn13: "9780385517232"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2006
+  sources:
+    - "https://openlibrary.org/isbn/9780385517232.json"
+
+- id: john-grisham/playing-for-pizza/doubleday-2007-en
+  workId: john-grisham/playing-for-pizza
+  isbn13: "9780385525008"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2007
+  sources:
+    - "https://openlibrary.org/isbn/9780385525008.json"
+
+- id: john-grisham/the-appeal/doubleday-2008-en
+  workId: john-grisham/the-appeal
+  isbn13: "9780385515047"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2008
+  note: A same-year Doubleday ISBN (9780385526333) is a Limited Edition and was not used.
+  sources:
+    - "https://openlibrary.org/isbn/9780385515047.json"
+
+- id: john-grisham/the-associate/doubleday-2009-en
+  workId: john-grisham/the-associate
+  isbn13: "9780385517836"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2009
+  note: A same-year Doubleday ISBN (9780385528030) is literally titled "The Associate (Limited Edition)" and was not used.
+  sources:
+    - "https://openlibrary.org/isbn/9780385517836.json"
+
+- id: john-grisham/ford-county/doubleday-2009-en
+  workId: john-grisham/ford-county
+  isbn13: "9780385532457"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2009
+  sources:
+    - "https://openlibrary.org/isbn/9780385532457.json"
+
+- id: john-grisham/the-confession/knopf-doubleday-2010-en
+  workId: john-grisham/the-confession
+  isbn13: "9780385528047"
+  language: en
+  format: hardcover
+  publisher: Knopf Doubleday Publishing Group
+  year: 2010
+  note: A same-year sibling ISBN (9780385528054) is explicitly "The Confession - Limited Edition" and was not used.
+  sources:
+    - "https://openlibrary.org/isbn/9780385528047.json"
+
+- id: john-grisham/dont-quit-your-day-job/mp-publishing-2010-en
+  workId: john-grisham/dont-quit-your-day-job
+  isbn13: "9781849821087"
+  language: en
+  format: hardcover
+  publisher: MP Publishing
+  year: 2010
+  note: >
+    OpenLibrary's edition record omits the publisher name; identity confirmed
+    instead by its table of contents ("underwear salesman -- John Grisham",
+    among 23 essays matching this catalogue's synopsis) and cross-checked
+    against an independent Amazon listing for the same MP Publishing 2010
+    edition. That table of contents also gives Grisham's own essay a title,
+    "The Underwear Salesman", not otherwise established in works.yaml's own
+    sources.
+  sources:
+    - "https://openlibrary.org/isbn/9781849821087.json"
+    - "https://www.amazon.com/Dont-Quit-Your-Day-Job/dp/1849821089"
+
+- id: john-grisham/theodore-boone-kid-lawyer/dutton-2010-en
+  workId: john-grisham/theodore-boone-kid-lawyer
+  isbn13: "9780525423843"
+  language: en
+  format: hardcover
+  publisher: Dutton Children's Books
+  year: 2010
+  sources:
+    - "https://openlibrary.org/isbn/9780525423843.json"
+
+- id: john-grisham/theodore-boone-the-abduction/dutton-2011-en
+  workId: john-grisham/theodore-boone-the-abduction
+  isbn13: "9780525425571"
+  language: en
+  format: hardcover
+  publisher: Dutton Children's Books
+  year: 2011
+  sources:
+    - "https://openlibrary.org/isbn/9780525425571.json"
+
+- id: john-grisham/the-litigators/doubleday-2011-en
+  workId: john-grisham/the-litigators
+  isbn13: "9780385535137"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2011
+  sources:
+    - "https://openlibrary.org/isbn/9780385535137.json"
+
+- id: john-grisham/theodore-boone-the-accused/dutton-2012-en
+  workId: john-grisham/theodore-boone-the-accused
+  isbn13: "9780525425762"
+  language: en
+  format: hardcover
+  publisher: Dutton Children's Books
+  year: 2012
+  sources:
+    - "https://openlibrary.org/isbn/9780525425762.json"
+
+- id: john-grisham/calico-joe/doubleday-2012-en
+  workId: john-grisham/calico-joe
+  isbn13: "9780385536073"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2012
+  sources:
+    - "https://openlibrary.org/isbn/9780385536073.json"
+
+- id: john-grisham/the-racketeer/doubleday-2012-en
+  workId: john-grisham/the-racketeer
+  isbn13: "9780385535144"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2012
+  sources:
+    - "https://openlibrary.org/isbn/9780385535144.json"
+
+- id: john-grisham/theodore-boone-the-activist/dutton-2013-en
+  workId: john-grisham/theodore-boone-the-activist
+  isbn13: "9780525425779"
+  language: en
+  format: hardcover
+  publisher: Dutton Children's Books
+  year: 2013
+  sources:
+    - "https://openlibrary.org/isbn/9780525425779.json"
+
+- id: john-grisham/sycamore-row/doubleday-2013-en
+  workId: john-grisham/sycamore-row
+  isbn13: "9780385537131"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2013
+  sources:
+    - "https://openlibrary.org/isbn/9780385537131.json"
+
+- id: john-grisham/gray-mountain/doubleday-2014-en
+  workId: john-grisham/gray-mountain
+  isbn13: "9780385537148"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2014
+  sources:
+    - "https://openlibrary.org/isbn/9780385537148.json"
+
+- id: john-grisham/the-tumor/focused-ultrasound-foundation-2015-en
+  workId: john-grisham/the-tumor
+  isbn13: "9781495179402"
+  language: en
+  format: paperback
+  publisher: Focused Ultrasound Foundation
+  year: 2015
+  note: >
+    A free promotional short outside Grisham's usual trade bibliography (see
+    works.yaml's own note); still carries a conventional, self-published
+    trade ISBN rather than none at all.
+  sources:
+    - "https://openlibrary.org/isbn/9781495179402.json"
+
+- id: john-grisham/theodore-boone-the-fugitive/dutton-2015-en
+  workId: john-grisham/theodore-boone-the-fugitive
+  isbn13: "9780525426387"
+  language: en
+  format: hardcover
+  publisher: Dutton Children's Books
+  year: 2015
+  sources:
+    - "https://openlibrary.org/isbn/9780525426387.json"
+
+- id: john-grisham/rogue-lawyer/doubleday-2015-en
+  workId: john-grisham/rogue-lawyer
+  isbn13: "9780385539432"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2015
+  sources:
+    - "https://openlibrary.org/isbn/9780385539432.json"
+
+- id: john-grisham/partners/doubleday-2016-en
+  workId: john-grisham/partners
+  isbn13: "9780385541923"
+  language: en
+  format: ebook
+  publisher: Doubleday
+  year: 2016
+  note: >
+    A digital-only Kindle Single-style e-short (58 pages); OpenLibrary carries
+    no record for it at all, so this ISBN and its publisher are sourced
+    directly from its own PenguinRandomHouse.com product page.
+  sources:
+    - "https://www.penguinrandomhouse.com/books/547015/partners-by-john-grisham/"
+
+- id: john-grisham/witness-to-a-trial/doubleday-2016-en
+  workId: john-grisham/witness-to-a-trial
+  isbn13: "9780385542579"
+  language: en
+  format: ebook
+  publisher: Doubleday
+  year: 2016
+  note: >
+    A digital-only e-short (23 pages); OpenLibrary carries no record for it,
+    so this ISBN and its publisher are sourced directly from its own
+    PenguinRandomHouse.com product page.
+  sources:
+    - "https://www.penguinrandomhouse.com/books/554117/witness-to-a-trial-by-john-grisham/"
+
+- id: john-grisham/the-whistler/doubleday-2016-en
+  workId: john-grisham/the-whistler
+  isbn13: "9780385541190"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2016
+  sources:
+    - "https://openlibrary.org/isbn/9780385541190.json"
+
+- id: john-grisham/theodore-boone-the-scandal/dutton-2016-en
+  workId: john-grisham/theodore-boone-the-scandal
+  isbn13: "9780525426394"
+  language: en
+  format: hardcover
+  publisher: Dutton Children's Books
+  year: 2016
+  note: >
+    This OpenLibrary record omits the `publishers` field outright; recorded
+    as Dutton on the strength of its ISBN sitting in the same 978-0-525-4263xx
+    block used by every other confirmed Dutton Boone hardcover, not on the
+    record's own publisher metadata (which is absent).
+  sources:
+    - "https://openlibrary.org/isbn/9780525426394.json"
+
+- id: john-grisham/camino-island/doubleday-2017-en
+  workId: john-grisham/camino-island
+  isbn13: "9780385543026"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2017
+  sources:
+    - "https://openlibrary.org/isbn/9780385543026.json"
+
+- id: john-grisham/the-rooster-bar/doubleday-2017-en
+  workId: john-grisham/the-rooster-bar
+  isbn13: "9780385541176"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2017
+  sources:
+    - "https://openlibrary.org/isbn/9780385541176.json"
+
+- id: john-grisham/the-reckoning/doubleday-2018-en
+  workId: john-grisham/the-reckoning
+  isbn13: "9780385544153"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2018
+  sources:
+    - "https://openlibrary.org/isbn/9780385544153.json"
+
+- id: john-grisham/theodore-boone-the-accomplice/dutton-2019-en
+  workId: john-grisham/theodore-boone-the-accomplice
+  isbn13: "9780525556268"
+  language: en
+  format: hardcover
+  publisher: Dutton Children's Books
+  year: 2019
+  sources:
+    - "https://openlibrary.org/isbn/9780525556268.json"
+
+- id: john-grisham/the-guardians/doubleday-2019-en
+  workId: john-grisham/the-guardians
+  isbn13: "9780385544184"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2019
+  sources:
+    - "https://openlibrary.org/isbn/9780385544184.json"
+
+- id: john-grisham/camino-winds/doubleday-2020-en
+  workId: john-grisham/camino-winds
+  isbn13: "9780385545938"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2020
+  note: A same-year Doubleday ISBN (9780385545945) is a Limited Edition and was not used.
+  sources:
+    - "https://openlibrary.org/isbn/9780385545938.json"
+
+- id: john-grisham/a-time-for-mercy/doubleday-2020-en
+  workId: john-grisham/a-time-for-mercy
+  isbn13: "9780385545969"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2020
+  sources:
+    - "https://openlibrary.org/isbn/9780385545969.json"
+
+- id: john-grisham/the-judges-list/doubleday-2021-en
+  workId: john-grisham/the-judges-list
+  isbn13: "9780385546027"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2021
+  sources:
+    - "https://openlibrary.org/isbn/9780385546027.json"
+
+- id: john-grisham/sooley/doubleday-2021-en
+  workId: john-grisham/sooley
+  isbn13: "9780385547680"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2021
+  sources:
+    - "https://openlibrary.org/isbn/9780385547680.json"
+
+- id: john-grisham/the-boys-from-biloxi/doubleday-2022-en
+  workId: john-grisham/the-boys-from-biloxi
+  isbn13: "9780385548922"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2022
+  sources:
+    - "https://openlibrary.org/isbn/9780385548922.json"
+
+- id: john-grisham/sparring-partners/doubleday-2022-en
+  workId: john-grisham/sparring-partners
+  isbn13: "9780385549325"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2022
+  sources:
+    - "https://openlibrary.org/isbn/9780385549325.json"
+
+- id: john-grisham/the-exchange/doubleday-2023-en
+  workId: john-grisham/the-exchange
+  isbn13: "9780385548953"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2023
+  sources:
+    - "https://openlibrary.org/isbn/9780385548953.json"
+
+- id: john-grisham/camino-ghosts/knopf-doubleday-2024-en
+  workId: john-grisham/camino-ghosts
+  isbn13: "9780385546003"
+  language: en
+  format: hardcover
+  publisher: Knopf Doubleday Publishing Group
+  year: 2024
+  sources:
+    - "https://openlibrary.org/isbn/9780385546003.json"
+
+- id: john-grisham/framed/knopf-doubleday-2024-en
+  workId: john-grisham/framed
+  isbn13: "9780385550444"
+  language: en
+  format: hardcover
+  publisher: Knopf Doubleday Publishing Group
+  year: 2024
+  sources:
+    - "https://openlibrary.org/isbn/9780385550444.json"
+
+- id: john-grisham/the-widow/doubleday-2025-en
+  workId: john-grisham/the-widow
+  isbn13: "9780385548984"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2025
+  sources:
+    - "https://openlibrary.org/isbn/9780385548984.json"
+
+- id: john-grisham/the-french-illusion/doubleday-2026-en
+  workId: john-grisham/the-french-illusion
+  isbn13: "9780385550543"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2026
+  note: >
+    Not yet published (release date Sep 29, 2026, matching works.yaml's own
+    `forthcoming` field); a preorder ISBN from its own PenguinRandomHouse.com
+    product page, OpenLibrary carrying no record yet.
+  sources:
+    - "https://www.penguinrandomhouse.com/books/742606/the-french-illusion-by-john-grisham/"
