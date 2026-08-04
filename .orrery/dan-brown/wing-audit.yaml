@@ -1,0 +1,166 @@
+stage: wing-audit
+franchise: dan-brown
+status: complete
+
+summary: >
+  Audited the finished wing against the whole contract: every number
+  re-derived, all 12 images fetched and 3 opened, both spoiler redactions
+  checked in English and pt-PT, the bibliography re-corroborated against
+  Wikidata (a source no stage used), and every field this wing leans on
+  grepped in the app for the code that reads it. Two blocking defects, both
+  invisible to any single stage; one real gap; 13 stale or comment-policy
+  fixes made in place. The full findings report is in PR #734's body.
+
+baseline:
+  validate: "--slug dan-brown: 0 errors; only warnings are handoff word-count"
+  i18n_coverage: "pt-PT 160/174 files; dan-brown in neither PARTIAL nor MISSING - all 5 overlays complete"
+  event_density: "19 globals, 2 high of ~17 budget, no decade over 3; no dan-brown finding"
+  aura_density: "10 works, 9 aura, 0.90/work, 1995-2025, longest dark run 9 yrs (2007-2015)"
+  art_rotation: "--check: 0 organisation-rotation, 0 pacing problems; contour #==#==#.="
+
+blocking:
+  - id: young-adult-edition-wins-english
+    owner: editions
+    found: >
+      pickEdition (lib/content/editions.ts:29-49) scores language rank then
+      year, so the 2016 Delacorte Young Adult Adaptation beats the 2003
+      Doubleday first edition for an English reader of The Da Vinci Code, and
+      page.tsx:58-61 puts its ISBN (9781524715847) behind every store link on
+      the English page. pt-PT unaffected (Planeta 2025 wins the same
+      tiebreak). The edition data is correct; the schema has no way to say
+      "verified edition, never the primary one". Found by chasing the cover
+      question both this stage's and visual-metadata's handoffs left open.
+
+  - id: ambigram-cd-career-arithmetic
+    owner: press-archaeology
+    found: >
+      db-angels-demons-cd-ambigram-1999 renders "three years into Brown's
+      published writing career". True against no anchor here: 187 Men to
+      Avoid is 1995 (four years), Digital Fortress 1998 (one). Fetched
+      johnlangdon.net, which reproduces the 2006 witness statement verbatim -
+      it gives 1999 and says nothing about the interval. The 1999-over-1994
+      correction is sound and must survive the edit. Mirrored into pt-PT.
+
+missing:
+  - id: aura-hole-2007-2015
+    owner: press-archaeology
+    found: >
+      9-year dark run covering The Lost Symbol (2009) and Inferno (2013).
+      press-archaeology's handoff reports 4 years (2012-2015), true when it
+      ran; event-resonance then excluded every in-window global, among them
+      the 2007, 2008 and 2011 entries that had been covering those years, and
+      nobody re-measured. The exclusions are individually right; the cost to
+      the aura was never counted.
+  - id: danielle-brown-pseudonym-has-no-event
+    owner: press-archaeology
+    found: >
+      Adoption (1995 Berkley byline) and reveal (August 2006 Berkley Trade
+      reissue, "Dan Brown Formerly Writing As Danielle Brown") are both
+      already sourced in this wing's editions.yaml, and both sit in an inert
+      pseudonyms[].note. Exactly the pattern ea1703c (#632) closed elsewhere.
+  - id: pr-body-carries-no-run-report
+    owner: orchestrator
+    found: "PR #734 still carries only its opening stub after twelve stages."
+
+stale:
+  - "event-resonance handoff reports include_count: 1 with online-bookselling-1995 included; 9e573a9 moved it back to exclude the same day and franchise.yaml has include: []."
+  - "press-archaeology handoff reports the dark run at 4 yrs (2012-2015); it is 9 (2007-2015)."
+  - "editions handoff says 11 en / 14 pt-PT; parsed, it is 12 / 13. The file header said 24 / 10 / 14, wrong on all three - corrected here."
+  - "visual-metadata handoff calls the 187 Men to Avoid first edition G.P. Putnam's; works.yaml, editions.yaml and the archive.org scan all say Berkley."
+  - "Four handoffs over the 700-word cap: eras 1625, spoiler-audit 1499, reading-orders 1086, art-rotation 888."
+
+pipeline:
+  - id: comment-scan-is-line-by-line
+    found: >
+      validate.py:1307 matches PROCESS_COMMENT per line, so a banned phrase
+      wrapping across two comment lines is invisible. Two real violations
+      shipped green on this wing for exactly that reason (editions.yaml "fact
+      this / stage surfaced", theme.yaml "intentionally left / for the
+      visual-language stage"), both found by re-running the same regex over
+      joined comment blocks. The guard has never been made to fail on purpose,
+      and every wing has been scanned with the same blind spot.
+  - id: aura-density-uses-retired-lifetime-default
+    found: >
+      scripts/aura_density.py:109 still counts a global when `eid in included
+      or (lo_life <= y <= hi_life)` - the arithmetic default SCHEMA retired
+      and the app abandoned (lib/content/index.ts:210-212 filters on include
+      only). Harmless here (all 11 in-window globals are explicitly excluded),
+      wrong on any wing leaving one unruled.
+  - id: schema-omits-theme-art-emblem
+    found: "validate.py:1022 requires theme.art.emblem; docs/SCHEMA.md's example never mentions it. The document is behind the validator."
+
+fixedHere:
+  - "authors/dan-brown.yaml: 'events.yaml (none yet)' - it has held 2 events since press-archaeology."
+  - "franchise.yaml: capabilities comment claimed no theme.art, events.yaml, eras.yaml, startHere or editions.yaml. All five since settled."
+  - "theme.yaml x3: header and notes clauses deferring the art block to a later stage (it is in the file), and the ART header's theme_digest.py reference."
+  - "orders.yaml x2: 'this skill's own ...' restated as the rules themselves."
+  - "editions.yaml x3: header counts 24/10/14 -> 25/12/13; 'this stage surfaced rather than a research artefact'; 'passed scripts/validate.py's check-digit test'."
+  - "works.yaml: the excluded Angels & Demons CD was dated 1994, the date this wing's own lifeEvent corrects to 1999. Corrected, superseded date named."
+  - "works.yaml x4: three header passages narrating the request issue's framing, plus the same in the-secret-of-secrets' note."
+  - "works.yaml: the-secret-of-secrets cover comment called ISBN 9780385546928 'the US Doubleday first edition'. editions.yaml and Open Library both make 9780385546898 the 680pp hardcover. Cover URL is right (opened it); the attribution was not."
+
+checkedAndClean:
+  - "Spoiler redaction holds in both languages, field by field: EN 'origins of Christianity' / 'strand of early-Church history' / no kinship word; PT 'origens do Cristianismo' / 'linha da historia do Cristianismo primitivo' / neither 'avo' nor 'neta'."
+  - "works[].note renders nowhere (grepped lib/, components/, app/) - only pseudonyms[].note and startHere path note reach a reader, so the three landmine notes are correctly placed."
+  - "work.images.cover is consumed: editions.ts:68, ahead of the ISBN guess. Not inert."
+  - "All 12 image URLs 200 with real bytes under ?default=false. Opened the 3 edition-keyed picks: no watermark, no library sticker, correct jacket and byline on each."
+  - "theme contrast computed: ink/bg 15.52, muted/surface 5.72, accent/surface 6.08 - all clear AA. displayFace and signature both in the app's implemented sets."
+  - "eras: [] holds on re-reading its own sources; no orphan warning because the coverage check skips a wing with no spans."
+  - "globalEvents complete: 11 of 11 in-window globals explicitly ruled, all excluded; include: [] renders nothing, which the app honours."
+  - "Bibliography corroborated against Wikidata (P50=Q7345): the 8 novels and nothing else authored. The wing holds two works Wikidata lacks, never the reverse."
+  - "No edition carries coverUrl, and that is the convention: 240 of 1466 catalogue-wide, 239 of them the Poe wing. The Young Adult Edition needs no cover of its own."
+  - "startHere: 3 paths, all references resolving correctly, fit matrix covered. No work added since franchise-research, so no order or path predates its works."
+  - "pt-PT overlays are the last commit on the branch - no overlay mirrors a rewritten string."
+  - "Aura proportion 0.90/work is 5th-highest of 27 wings; the wing is not thin, it has one hole. Timeline opens on the birth, dated and placed."
+
+notApplicableNotAbsent:
+  - "eras: [] - a career nobody has periodised. Closing it would mean inventing one."
+  - "No achievements.yaml: no eras means no era_reader; franchise_complete would demand an out-of-print 1995 humor paperback and a picture book; order_complete on the Langdon six is the generic badge the skill warns against."
+  - "0 spoilerAfter boundaries - a ruling (every reveal was removable by rewriting), not a missing audit."
+  - "No externalIds (every work has a curated cover), no readUrl (in copyright), no translationNote / withAuthorIds / apocrypha / forthcoming."
+  - "187 Men to Avoid has no pt-PT edition and none was invented. No pt-BR, no UK firsts - stated scope."
+
+curatorsCall:
+  - "The Young Adult Edition: drop two sourced entries, or keep them and accept English readers are pointed at an abridgement until an edition can be marked non-primary. My read is this wants a schema field, not a deletion."
+  - "Whether The Da Vinci Code's revelation is still worth protecting in 2026. spoiler-audit named this its own most reversible call; I agree with its ruling."
+  - "db-divorce-and-lawsuit-2021 carries a living person's affair allegations from a suit that settled without adjudication. Clears the two-source bar and is written as claims; whether it belongs at all, and at impact: high, is editorial."
+  - "db-marries-blythe-newlon-1997 is impact: high but renders beside. art-rotation flagged this itself and declined because split-counterpoint needs a schema field that does not exist."
+
+forStages:
+  press-archaeology: >
+    Three, in order: fix the interval in db-angels-demons-cd-ambigram-1999
+    (keep 1999 and the 1994 correction; the pt-PT overlay carries the same
+    phrase); the 2007-2015 hole is 9 years, not the 4 your handoff argued
+    against, and two novels now publish into silence; "Danielle Brown" has a
+    dated adoption and a dated reveal, both already sourced in this wing's
+    editions.yaml, and neither is an event.
+  editions: >
+    The Young Adult Edition wins pickEdition for English readers on the
+    recency tiebreak. Nothing about the entry is wrong - route the schema
+    question with it rather than deleting sourced data.
+  event-resonance: >
+    Your handoff still reports online-bookselling-1995 as included; it was
+    reverted in 9e573a9. The ruling itself is complete and correct. Worth
+    knowing the exclusions reopened 2007-2011 and turned a 4-year dark run
+    into a 9-year one - press-archaeology's to fill, not yours to reverse.
+  translation: >
+    One string will change: "ja tres anos dentro da carreira de escritor
+    publicado de Brown" mirrors an English error. Nothing else needs
+    re-reading; the redactions hold and the overlays are current.
+
+openQuestions:
+  - >
+    The pickEdition tiebreak is catalogue-wide, not a dan-brown defect. Any
+    wing holding a verified-but-non-primary edition newer than its first
+    edition has it, and nothing reports it. A sweep for works whose newest
+    same-language edition is not the one to surface is a cheap script and is
+    currently nobody's job.
+  - >
+    validate.py's line-by-line comment scan has been running against every
+    wing. Re-running the joined-block version catalogue-wide before hardening
+    the regex would show how much has been shipping green.
+  - >
+    The Bald Book exclusion rests on the absence of a source rather than on
+    one. Lisa Rogak's biography - which the eras stage also could not open -
+    is the likeliest place to hold a citation that would overturn it. An
+    unopened door, not a checked-empty one.
