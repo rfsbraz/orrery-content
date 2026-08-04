@@ -1,0 +1,62 @@
+stage: editions
+summary: >
+  Built content/franchises/margaret-atwood/editions.yaml from scratch: 41
+  entries, 18 English first editions (all 17 core novels plus the apocrypha
+  short story The Labrador Fiasco) and 23 Portuguese current-in-print
+  editions (15 of 17 core novels plus 8 extended-tier titles). lookup.py's
+  OpenLibrary sweep surfaced only a handful of the 69 works (author-search
+  returns a fixed top-N of duplicate-heavy records); real Portuguese
+  coverage came from reading all five pages of the Biblioteca Nacional de
+  Portugal's 44-record Atwood sweep by hand; English ISBNs came from
+  OpenLibrary per-ISBN records cross-checked against Wikipedia/bookseller
+  pages. Every isbn13 passes valid_isbn13 (lookup.py --verify-isbns: 41
+  editions, 0 suspect); every ISBN-10 found was converted with the check
+  digit recomputed from scratch; every pt-PT prefix checked against the
+  Portugal/Brazil registrant table (all 978-972/978-989). validate.py
+  --slug margaret-atwood: 0 errors, 3 pre-existing handoff-length warnings
+  on other stages, none new here.
+produced:
+  files:
+    - content/franchises/margaret-atwood/editions.yaml
+  editionCounts: {total: 41, en: 18, ptPT: 23}
+  coreCoverage: >
+    All 17 core novels have an English first edition (The Edible Woman's
+    1969 M&S printing carries no isbn13, deliberately - none in
+    OpenLibrary's own 1969 record, and a 2009 Virago reissue was not
+    substituted). 15 of 17 have a pt-PT edition; The Edible Woman and Life
+    Before Man have none, confirmed absent from the full BNP sweep - a
+    market gap, not a research gap.
+  extendedCoverage: "8 extended-tier works carry a pt-PT-only edition (no English ISBN pinned): Payback, Power Politics, Burning Questions, Stone Mattress, Dearly, Up in the Tree, For the Birds, Book of Lives."
+  trapsAvoided:
+    - "pt-BR contamination: OpenLibrary's merged 'pt' bucket returned 13 candidates, all 13 Brazilian; none used. pt-PT sourcing rests on the BNP catalogue instead. 'O Conto da Aia' (Rocco, pt-BR) is flagged on the-handmaids-tale's note as distinct from pt-PT's 'A História de Uma Serva'."
+    - "Omnibus ISBN: 'Quatro Contos Consonantes' (Ponto de Fuga 2021) bundles 4 separate alliterative picture books under one ISBN. None of the 4 works got an entry from it, per this catalogue's existing omnibus-ISBN precedent (Jim Butcher, John Shirley)."
+    - "Excluded work, real edition: Bertrand's Renée Nault Handmaid's Tale graphic-novel adaptation has 2 valid pt-PT ISBNs (2020, 2026) - not recorded, since works.yaml excludes the adaptation as not Atwood's own text."
+  fourteenDaysDecision: >
+    Investigated, not shipped - diverges from this catalogue's Coben
+    precedent (Malice Domestic 7 does carry one English anthology entry).
+    No pt-PT edition exists. One English ISBN (9781784745455) is on
+    Wikipedia's infobox, but OpenLibrary's own record for that number names
+    a different publisher (Penguin Random House vs. Wikipedia's
+    HarperCollins); OpenLibrary (Internet Archive outage) and Google Books
+    (quota exhausted) were both unreachable to settle it. Unresolved
+    conflicts don't ship.
+forStages:
+  visual-metadata: >
+    No file overlap, but: (1) 8 of 23 pt-PT editions here are a Bertrand
+    SECOND edition (2020-2026) of a title Bertrand already published once
+    (2009-2018) - check which printing's jacket a pulled cover actually
+    shows. (2) The excluded Nault graphic-novel adaptation has its own
+    Bertrand cover art circulating under Atwood's name - do not pull it
+    onto the-handmaids-tale's own entry.
+  wing-audit: >
+    Weakest calls: (1) 5 core novels (Life Before Man, The Robber Bride,
+    Oryx and Crake, MaddAddam, The Heart Goes Last) carry a US first
+    edition, not Canadian M&S - no working Canadian ISBN surfaced while
+    OpenLibrary was intermittently unreachable. (2) The Penelopiad's Knopf
+    Canada edition is recorded ahead of Canongate UK, which actually
+    originated the worldwide "Myths" series launch - a debatable tiebreak.
+    (3) Bodily Harm's Círculo de Leitores year is 1993 per BNP, vs. 1982 on
+    one external source - not reconciled. (4) Fourteen Days above is a real
+    open item: a later pass with OpenLibrary/Google Books reachable can
+    settle the HarperCollins-vs.-Penguin-Random-House conflict on ISBN
+    9781784745455 and add the entry.
