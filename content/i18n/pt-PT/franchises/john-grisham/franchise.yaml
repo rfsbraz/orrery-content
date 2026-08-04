@@ -1,0 +1,78 @@
+# Overlay pt-PT. Apenas prosa; id, slugs e sources não são traduzidos.
+# Os startHere.paths ficam aninhados e são fundidos por id (ver SCHEMA.md,
+# "Nested lists merge by id"): só `title`, `description` e `note`, nunca
+# `workIds`, `orderId` ou `fit`.
+# editions.yaml desta ala tem 57 edições em inglês e nenhuma em português
+# (ver o cabeçalho desse ficheiro: "that is a gap, not a finding of
+# absence"); por isso todos os títulos de obras citados na prosa, incluindo
+# nas referências inline abaixo, ficam no original inglês em toda a ala -
+# nunca um título inventado (ver docs/SCHEMA.md, "Never translate a
+# published title"). Os nomes de personagens usados como texto de exibição
+# das referências inline (Mitch McDeere, Sebastian Rudd, Lacy Stoltz) são
+# nomes próprios e não se traduzem.
+- id: john-grisham
+  description: >
+    A obra completa e publicada de John Grisham: sobretudo thrillers
+    judiciais, desde a estreia de 1989,
+    [[work:john-grisham/a-time-to-kill|A Time to Kill]], até aos seus
+    romances mais recentes, percorrendo tribunais de pequenas cidades do
+    Mississípi e os jogos de poder de Washington, com incursões regulares
+    pelo basebol, futebol americano e uma trilogia de assaltos; cinco fios
+    recorrentes
+    dentro dessa estante - [[work:john-grisham/a-time-to-kill|Jake
+    Brigance]], [[work:john-grisham/the-firm|Mitch McDeere]],
+    [[work:john-grisham/rogue-lawyer|Sebastian Rudd]],
+    [[work:john-grisham/the-whistler|Lacy Stoltz]] e a trilogia não jurídica
+    de assaltos [[work:john-grisham/camino-island|Camino Island]]; a série
+    Theodore Boone para leitores mais novos; dois livros de não-ficção sobre
+    crimes reais; duas coletâneas de contos; e um punhado de textos e
+    contributos disponíveis apenas em ebook.
+  startHere:
+    paths:
+      - id: the-firm-start
+        title: Comece pelo livro de que toda a gente já ouviu falar
+        description: >
+          The Firm é a porta mais recomendada para um novo leitor entrar na
+          obra de Grisham: o seu primeiro best-seller, o seu título mais
+          conhecido e, segundo fontes externas, o livro que transformou mais
+          leitores ocasionais em fãs. Completamente autónomo - sem
+          compromisso de série além de uma sequela opcional três décadas
+          depois.
+        note: >
+          Salta completamente o tribunal - The Firm é um thriller de
+          conspiração empresarial, não uma história de julgamento, pelo que
+          dá uma ideia diminuída de quanto do resto da obra de Grisham se
+          passa mesmo à frente de um júri.
+
+      - id: jake-brigance-start
+        title: Comece pelo início, com Jake Brigance
+        description: >
+          A Time to Kill é a estreia de Grisham e o seu livro mais pessoal,
+          inspirado num julgamento real que testemunhou ainda jovem
+          advogado - mais pesado e mais centrado nas personagens do que os
+          thrillers empresariais que se seguiram. Dois guias externos
+          apontam-no, ambos, como o verdadeiro ponto de partida, e ambos
+          remetem a partir daí para o resto da história de Jake Brigance.
+        note: >
+          A Time to Kill fica completo por si só, caso seja até onde queira
+          ir - Sycamore Row e A Time for Mercy estão lá para quando quiser
+          continuar, não são leitura obrigatória.
+
+      - id: theodore-boone-start
+        title: Comece por Theodore Boone
+        description: >
+          A única série de Grisham escrita para um público mais novo: um
+          rapaz de treze anos de Strattenburg com instintos de advogado,
+          numa chancela juvenil distinta dos thrillers para adultos. Uma
+          porta recomendada pela editora para um leitor mais novo, ou para
+          um adulto a escolher o que lhe dar a ler.
+        note: >
+          Um público diferente do resto desta estante - nada da ficção
+          judicial ou policial de Grisham para adultos aparece aqui.
+
+      - id: complete-shelf
+        title: A estante completa
+        description: >
+          Todos os romances, contos e livros de não-ficção que Grisham
+          publicou, tanto os thrillers judiciais como todas as suas
+          incursões noutros géneros, pela ordem em que os escreveu.
