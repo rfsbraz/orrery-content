@@ -1,0 +1,297 @@
+stage: pipeline-audit
+franchise: margaret-atwood
+status: complete
+
+summary: >
+  Audited the run's cost and process, not the wing's content. First wing on
+  this catalogue with complete per-stage cost instrumentation from
+  franchise-research through the final audit-fix pass - 3,489,891 tokens /
+  1,462 tool calls / 16 agent dispatches across 13 named stages plus 3
+  audit-fix follow-ups, all measured (dan-brown, one run earlier, had a
+  5-of-15-stage gap). Confirmed zero footprint violations across all three
+  named collision pairs by diffing each commit's touched fields, not just
+  reading commit order; art-rotation made no content edits at all this run
+  (a fourth confirmed occurrence of the hp-lovecraft pre-write pattern, this
+  time named explicitly in press-archaeology's own handoff rather than
+  discovered by diff). The run's real finding is the three-pass aura
+  whack-a-mole: press-archaeology closed a 12-year dark run to 4, event-
+  resonance's later narrowing of the global-event include list silently
+  reopened an 8-year one nobody re-measured, and closing it took three
+  sequential audit-fix dispatches (~562,596 tokens / 280 calls) because
+  `scripts/aura_density.py` reports only the single longest dark run per
+  wing, never the full list over threshold. Routed three systemic findings
+  to docs/pipeline-runs.md's ledger (rows 16-18).
+
+costTable:
+  measured:
+    - stage: franchise-research
+      tokens: 304714
+      tool_calls: 143
+      duration_ms: 1860767
+      model: sonnet
+    - stage: completeness-auditor (incl. Fourteen Days addition)
+      tokens: 275400
+      tool_calls: 125
+      duration_ms: 1285440
+      model: sonnet
+    - stage: press-archaeology
+      tokens: 276932
+      tool_calls: 116
+      duration_ms: 1581076
+      model: sonnet
+    - stage: eras
+      tokens: 157834
+      tool_calls: 52
+      duration_ms: 745607
+      model: opus
+    - stage: event-resonance
+      tokens: 156632
+      tool_calls: 64
+      duration_ms: 822856
+      model: sonnet
+    - stage: reading-orders
+      tokens: 234653
+      tool_calls: 86
+      duration_ms: 1123771
+      model: sonnet
+    - stage: spoiler-audit
+      tokens: 173340
+      tool_calls: 64
+      duration_ms: 887741
+      model: opus
+    - stage: visual-language
+      tokens: 138959
+      tool_calls: 46
+      duration_ms: 638444
+      model: sonnet
+    - stage: art-rotation
+      tokens: 114699
+      tool_calls: 27
+      duration_ms: 291961
+      model: sonnet
+    - stage: visual-metadata
+      tokens: 307855
+      tool_calls: 176
+      duration_ms: 2657825
+      model: sonnet
+    - stage: editions
+      tokens: 293396
+      tool_calls: 125
+      duration_ms: 2139701
+      model: sonnet
+    - stage: translation
+      tokens: 238533
+      tool_calls: 70
+      duration_ms: 1076854
+      model: sonnet
+    - stage: wing-audit
+      tokens: 254348
+      tool_calls: 88
+      duration_ms: 1284870
+      model: opus
+    - stage: audit-fixes pass 1 (5 findings)
+      tokens: 162249
+      tool_calls: 117
+      duration_ms: 1529166
+      model: opus
+    - stage: audit-fixes pass 2 (2008-2014 aura gap)
+      tokens: 224425
+      tool_calls: 80
+      duration_ms: 1137677
+      model: sonnet
+    - stage: audit-fixes pass 3 (1970-1975/1961-1965 aura gap)
+      tokens: 175922
+      tool_calls: 83
+      duration_ms: 813757
+      model: sonnet
+  totals:
+    tokens: 3489891
+    tool_calls: 1462
+  topThreeByTokens: >
+    visual-metadata (307,855, 176 calls, 1,749 tok/call - death-by-fetches
+    shape persists but is better than jose-rodrigues-dos-santos's 1,645
+    tok/call on the same stage), franchise-research (304,714) and editions
+    (293,396) - 905,965 tokens combined, 26.0% of the run. All three sit
+    within the normal range for these stages across prior wings; none is
+    proposed for a skill change on this run's evidence alone.
+  tierFit: >
+    opus ran on eras, spoiler-audit, wing-audit and audit-fix pass 1 - all
+    four made real judgement calls (era periodisation from a scholarly
+    source, four spoiler redactions, the wing's only blocking finding plus
+    the aura-gap discovery, and a five-finding fix batch including a
+    blocking re-sourcing and two curatorial calls). Audit-fix passes 2 and 3
+    ran sonnet and did the same job well - narrower, single-purpose
+    "find and date a sourced event in this window" tasks, not multi-judgment
+    audits - so the mid-chain downgrade looks correctly tiered rather than
+    cost-driven. No tier change proposed in either direction.
+
+footprintCheck:
+  result: zero violations found
+  collisionPairsChecked:
+    - pair: "event-resonance / reading-orders on franchise.yaml"
+      finding: >
+        event-resonance (23b392a) wrote only the globalEvents block (3
+        include, 12 exclude, 4 left unruled) plus its own header-comment
+        update. reading-orders (562c590) wrote only startHere (5 paths) plus
+        its own orders.yaml, and touched the header comment only to record
+        that orders.yaml/startHere now exist. Sequential per the stage
+        order. Disjoint fields, no collision.
+    - pair: "spoiler-audit / visual-metadata on works.yaml"
+      finding: >
+        spoiler-audit (6750602) rewrote only `note`/`synopsis` prose fields
+        (four bounded redactions). visual-metadata (df2a929) added only
+        `cover`/`coverCredit`/`coverSource`/`images` fields, 274 lines later
+        in the file's life. Sequential (spoiler-audit runs before
+        visual-language/art-rotation/editions/visual-metadata in the commit
+        order). Disjoint fields, no collision.
+    - pair: "art-rotation / visual-metadata on authors/margaret-atwood.yaml"
+      finding: >
+        art-rotation's commit (4a8bd55, "confirm the 14-item river, no
+        changes needed") touched zero content files this run - its full
+        diff is 92 insertions to its own .orrery handoff only. It reviewed
+        press-archaeology's pre-existing organisation/illustration_type/
+        images_required grading (set in ef23b6a) and concurred without
+        writing anything. visual-metadata (df2a929) then added only an
+        `images` block (portrait + credit + source) to the same file. No
+        collision was possible because there was nothing to collide with -
+        confirmed by diff, not inferred from the commit message.
+  auditFixChainScope: >
+    All three audit-fix passes stayed inside the files they were dispatched
+    to touch. Pass 1 (2b5cae1, 4a83c2a, 691f7dc, e9412de, 45bcca8): only
+    works.yaml, events.yaml, franchise.yaml and their pt-PT overlays, one
+    file per finding, matching the five findings routed to it. Pass 2
+    (b20b09d, 66281cb): only events.yaml and authors/margaret-atwood.yaml
+    plus pt-PT overlays, both additive (new dated events), zero deletions.
+    Pass 3 (d65d2c9): only authors/margaret-atwood.yaml and events.yaml plus
+    pt-PT overlays, same additive shape. None of the three touched
+    editions.yaml, orders.yaml, theme.yaml or art-rotation's own handoff -
+    no scope creep from a targeted fix into a full stage re-run.
+  fourthConfirmedPrewriteOccurrence: >
+    press-archaeology's handoff (.orrery/margaret-atwood/press-archaeology.yaml
+    lines 115-120, section forStages.art-rotation) states outright: "Every
+    entry already carries organisation/illustration_type/images_required/
+    modifier... Read the sourcing notes before changing any grading." This
+    is the same pattern confirmed on hp-lovecraft (silent, twice) and
+    dan-brown (documented by the receiving stage after the fact) - but here
+    the WRITING stage names it in its own handoff before the receiving stage
+    ever has to notice. No rework resulted; art-rotation's whole
+    contribution this run was independent verification. Worth naming as the
+    version of this pattern every future wing should produce: not "stop
+    press-archaeology from pre-writing the fields" (its own build needs
+    art_rotation.py --check to pass while it works), but "always say so",
+    which this run did.
+
+whackAMoleAnalysis:
+  chain: >
+    press-archaeology's first pass closed a 12-year aura dark run
+    (1983-1994) to 4 years (1961-1964, pre-career, under the 5-year
+    DARK_RUN_LIMIT), landing at 29 entries / 0.42 per work. event-resonance
+    then replaced the lifetime-arithmetic default (which had been counting
+    every global event falling between her birth and today as reaching the
+    wing) with an explicit 3-item include list, dropping aura from 29 to 17
+    entries - a materially different, and individually correct, editorial
+    ruling. Nobody re-ran aura_density.py between event-resonance and
+    wing-audit. wing-audit found the 1961-1964 gap had become an 8-year gap
+    (1961-1968), the wing's one real weak seam ("aura proportion, not
+    accuracy"). Audit-fix pass 1 closed it with the 1966 Governor General's
+    Award (18 entries / 0.26, longest run now 7 years, 2008-2014 - "a
+    pre-existing stretch the longer one had been masking," per the fix
+    commit's own note). Audit-fix pass 2 closed 2008-2014 with five dated
+    events (Massey Lectures/Payback, the Year of the Flood tour, the Payback
+    documentary, the Twitter debut, the Dan David Prize), which exposed
+    1970-1975 as the new worst. Audit-fix pass 3 closed 1970-1975 (Survival's
+    academic-reception controversy) and, on the same pass, the newly-exposed
+    1961-1965 (the 1961 graduation, Double Persephone, the Woodrow Wilson
+    move to Harvard), landing at 25 entries / 0.36 per work / 4-year longest
+    run, clean.
+  mechanicalCause: >
+    Read scripts/aura_density.py directly (lines ~109-125): the script
+    tracks a single `worst` tuple per wing, overwritten whenever a longer
+    run is found, and never accumulates the full list of runs over its own
+    DARK_RUN_LIMIT (5 years). It prints exactly one dark run per wing. Every
+    party in this chain - wing-audit and all three audit-fix passes - could
+    only ever see the single worst violation at a time. Fixing it and
+    re-running the script was not a chosen "close worst, remeasure, repeat"
+    methodology; it was the only sequence the tool's own output makes
+    possible. Three dispatches (~562,596 tokens / 280 calls combined: pass 1
+    162,249/117 + pass 2 224,425/80 + pass 3 175,922/83) were spent partly on
+    discovering that a second and third violation existed at all, work a
+    single tool call could have surfaced up front.
+  recommendation: >
+    Two changes, not one, because two distinct causes are stacked here.
+    (1) Mechanical, cheap, and this run's actual saving opportunity:
+    change scripts/aura_density.py to report every run >= DARK_RUN_LIMIT per
+    wing, sorted longest first, not just the single worst. A wing-audit or
+    audit-fix pass that can see "8 years here, 7 years there, 6 years over
+    there" in one call can research and close all three in one dispatch
+    instead of three - this alone would likely have collapsed passes 2 and 3
+    into pass 1's dispatch. (2) Already open from dan-brown's
+    aura-hole-recompute-dependency finding, and now confirmed a second time
+    on a larger gap (8 years here vs. dan-brown's 4-to-9): re-run
+    aura_density.py immediately after event-resonance, before the wing
+    proceeds to spoiler-audit/editions/wing-audit, so a narrowing-caused
+    regression is caught and fixed in the same cycle that caused it, by a
+    lightweight press-archaeology follow-up, rather than surfacing stages
+    later at wing-audit and costing a post-hoc fix chain. Fix (1) is a
+    one-function edit to a script already read by every stage that touches
+    aura; fix (2) is a stage_plan ordering change. Neither is "close the
+    worst gap, re-measure, repeat" being validated as correct - that shape
+    is a symptom of (1) not existing, not a procedure worth keeping.
+
+findingsRoutedToLedger:
+  - row: 16
+    finding: >
+      validate.py's PROCESS_COMMENT scanner is English-only, a second and
+      separate blind spot from finding 13's word-wrap gap in the same
+      scanner
+    githubIssue: null
+  - row: 17
+    finding: validate.py has no era-overlap detection at all
+    githubIssue: null
+  note: >
+    The wing-audit ISBN check-digit bug (summed 13 digits instead of 12,
+    would have shipped 37 false BLOCKING findings, caught only because
+    wing-audit double-checked its own tool before trusting it) is folded
+    into this run's ledger narrative rather than given its own numbered row:
+    it is a lesson about the auditor's own ad-hoc verification code, not a
+    catalogue script or skill with a file path to fix.
+
+whatIsAlreadyFine: >
+  All 13 named stages plus all 3 audit-fix passes left a commit and a
+  handoff; no silent-skip finding this run (world-events correctly did not
+  run - every decade the wing publishes into already carries a global
+  event, and that skip is recorded in wing-audit's own eventDensity gate).
+  validate.py ran scoped to --slug margaret-atwood everywhere it was
+  invoked directly in a handoff; no catalogue-wide validation found.
+  franchise-research, completeness-auditor, eras, reading-orders,
+  visual-language, editions and translation show no rework and no footprint
+  issue - nothing proposed for any of them.
+
+whatICouldNotReach: >
+  Nothing significant. The orchestrator's cost table was complete for all
+  16 dispatches this run, unlike dan-brown's 5-of-15 gap - no missing-metrics
+  caveat needed this time. Stayed within a comparable call budget to the
+  skill's 15-call guidance for this stage's own work.
+
+forStages:
+  orchestrator: >
+    Two new systemic findings are open in docs/pipeline-runs.md's ledger
+    (rows 16-17), both against scripts/validate.py; neither has a filed
+    GitHub issue yet. The aura_density.py fix proposed above
+    (whackAMoleAnalysis.recommendation) is this run's highest-value proposal
+    and is not yet in the ledger's numbered findings table because it is
+    process/ordering advice rather than a single-file bug - it is carried
+    in this handoff and in the ledger's largest-finding cell instead.
+
+openQuestions:
+  - >
+    Whether scripts/aura_density.py should gain a --all-gaps (or similar)
+    flag versus changing its default output outright - this stage proposes
+    the change, not the exact interface, since editing shared tooling is
+    outside a single-wing audit's footprint.
+  - >
+    Whether stage_plan should mechanically insert an aura_density.py
+    re-check step right after event-resonance for every future wing, or
+    whether this is left to press-archaeology/event-resonance's own
+    judgement to re-verify when a narrowing is non-trivial - the dan-brown
+    and margaret-atwood occurrences are now two data points, not yet three.
