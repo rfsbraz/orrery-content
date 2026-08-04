@@ -1,0 +1,84 @@
+stage: translation
+summary: >
+  Built content/i18n/pt-PT/franchises/haruki-murakami/{franchise,works,events,
+  eras}.yaml and content/i18n/pt-PT/authors/haruki-murakami.yaml from scratch
+  (none existed - eras.yaml, reading-orders.yaml and spoiler-audit.yaml all
+  confirmed the locale untouched). Translated: the franchise description and
+  all 5 startHere paths (title/description/note); all 29 work synopses; all 3
+  franchise events (title/description); the author bio and all 15 lifeEvents
+  (title/description); both eras' themes and description, with title kept
+  identical to base by deliberate choice (see decisions). Checked
+  content/authors/ for a co-author file this wing might have introduced (the
+  brief flagged Shigesato Itoi and Seiji Ozawa as candidates): neither exists
+  as a file - works.yaml's own notes on lets-meet-in-a-dream and
+  absolutely-on-music record that both collaborators are deliberately outside
+  this catalogue's scope (no authorId, not in withAuthorIds), so there was
+  nothing to translate there. i18n_coverage.py before: haruki-murakami absent
+  from every locale entirely (missing). After: the four franchise files fully
+  covered; the author file 31/33, missing only `quote` on the two epigraph
+  lifeEvents, by deliberate omission (see decisions) - no other locale
+  regressed. validate.py --slug haruki-murakami: 0 errors (three pre-existing
+  handoff-length warnings, none from this stage, plus one pre-existing
+  false-positive "todo" pipeline-narration warning already present
+  identically on stephen-king/robert-jordan/joao-tordo's own pt-PT
+  franchise.yaml - a reader-facing Portuguese word, not a process leak).
+decisions:
+  - >
+    Real pt-PT titles (editions.yaml) used for all 23 works with an edition,
+    both as inline `[[work:...]]` display text and bare prose mentions (e.g.
+    dance-dance-dance's synopsis names A Wild Sheep Chase unmarked in the
+    English base; translated as "Em Busca do Carneiro Selvagem" regardless).
+    The 6 works with no pt-PT edition (after-the-quake, the-strange-library,
+    murakami-t, birthday-stories, lets-meet-in-a-dream, the-tale-of-kaho) keep
+    their English/original title; none is referenced from another entry.
+  - >
+    Quote fields on the two epigraph lifeEvents (Jerusalem 2009, Andersen
+    2016) are omitted, and every verbatim quotation embedded inside a
+    translated `description` (the Kaho message, the Fukushima remarks, the
+    Kawai conversation in commitment's own era text) stays in English rather
+    than getting an invented Portuguese rendering - the majority precedent
+    already in this catalogue (hp-lovecraft.yaml, anna-sewell.yaml,
+    miguel-de-cervantes.yaml, for the same reason: no published Portuguese
+    translation found, and inventing one misattributes a real person's exact
+    words). jk-rowling.yaml breaks from that precedent and translates its one
+    epigraph quote; the majority position is the safer default here.
+  - >
+    "Detachment"/"commitment" (the era names, Murakami's own loanword pair
+    per eras.yaml's ruling) are never translated anywhere in this wing's
+    prose, including inside the Kawai quote and two lifeEvents that use the
+    lowercase generic form - one received term, one rendering, throughout.
+  - >
+    Award names without a fixed English-official form (Kuwabara Takeo, Noma,
+    Yomiuri, International Catalunya, Hans Christian Andersen, Princess of
+    Asturias) render "Prize"/"Award" as "Prémio", matching ordinary
+    Portuguese press usage (Prémio Nobel, Prémio Pulitzer) - unlike
+    margaret-atwood.yaml's Governor General's Award, which stays English
+    because that specific title has no consecrated Portuguese form; both
+    apply the same underlying rule to a different fact pattern.
+  - >
+    "The Trilogy of the Rat" (a curated grouping label, not a published title
+    - works.yaml/orders.yaml call it informal) translates as "A Trilogia do
+    Rato", with "o Rato" for the nickname "the Rat" throughout.
+forStages:
+  wing-audit: >
+    Verify the four spoiler-bounded synopses translate their CURRENT redacted
+    English exactly, restoring nothing: hard-boiled-wonderland-and-the-end-
+    of-the-world names no relation between the two strands; killing-
+    commendatore says only "uma sucessão de acontecimentos" for what the
+    painting/pit reveal, and does NOT reintroduce a statuette (spoiler-audit's
+    own fix corrected that same invented detail, and a fuller Portuguese-
+    market blurb was the flagged risk for exactly this title); pinball-1973
+    gives the machine-search no outcome; 1q84 keeps Aomame/Tengo's bond at
+    "as suas duas histórias vão-se aproximando", never "colegas de infância".
+    Also confirm the author file's 31/33 (missing: quote) is this stage's
+    documented, precedented omission, not a gap.
+openQuestions:
+  - >
+    No live render check was available from this worktree (content-only, no
+    app checkout) - verification rests on i18n_coverage.py, validate.py and
+    close proofreading of the Portuguese text itself, not a rendered page.
+  - >
+    Whether "Prémio X" is the register a native reviewer actually wants for
+    the more obscure Japanese literary prizes (Kuwabara Takeo, Noma) versus
+    leaving the whole English name untouched - flagged as the closest call in
+    this stage's own award-name decision above.
