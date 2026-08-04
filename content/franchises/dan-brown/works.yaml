@@ -4,16 +4,12 @@
 # order (all works, publication order) is DERIVED from this file, never
 # written by hand.
 #
-# SCOPE, verified rather than taken on the request issue's framing. The
-# request called this "roughly a dozen books" with "one confirmed byline" -
-# both checked and both need correcting. The actual count is nine works
-# under Brown's own name (two early standalones, the six-novel Robert
-# Langdon series, and one children's book) plus one earlier book published
-# under a pseudonym - ten total, not a dozen. And the byline is not singular:
-# see the pseudonym note below and on content/authors/dan-brown.yaml.
+# SCOPE. Ten works: nine under Brown's own name (two early standalones, the
+# six-novel Robert Langdon series, and one children's book) plus one earlier
+# book published under a pseudonym. The byline is not singular - see the
+# pseudonym note below and on content/authors/dan-brown.yaml.
 #
-# THE SIXTH LANGDON NOVEL. The request asks whether one exists since Origin
-# (2017): yes. The Secret of Secrets (Doubleday, September 9, 2025) is the
+# THE SIXTH LANGDON NOVEL. The Secret of Secrets (Doubleday, September 9, 2025) is the
 # sixth Robert Langdon novel, confirmed on Brown's own site (danbrown.com/
 # books/, grouped under "Langdon Series") and by the character's own
 # Wikipedia infobox ("Robert Langdon #6" / last appearance). It was 17 weeks
@@ -45,8 +41,7 @@
 # tier is used: nothing here is a fragment, a contribution to someone else's
 # book, or unfinished.
 #
-# THE PSEUDONYM, checked rather than assumed on the request issue's "one
-# confirmed byline." 187 Men to Avoid (1995) - his actual first published
+# THE PSEUDONYM. 187 Men to Avoid (1995) - his actual first published
 # book, three years before Digital Fortress - carries the byline "Danielle
 # Brown" on its 1995 first edition; see content/authors/dan-brown.yaml for
 # the sourcing. No other pseudonym or ghostwriting credit was found anywhere
@@ -83,9 +78,12 @@
 #     editions.yaml line rather than a works.yaml one.
 #   - Three self-released music recordings that predate or overlap the
 #     writing career - the cassette "SynthAnimals," the CD "Perspective"
-#     (1990), and a CD titled "Angels & Demons" (1994, its ambigram artwork
-#     later reused for the novel of the same name) - are music, not
-#     literary works, and outside this schema's bibliography.
+#     (1990), and a CD titled "Angels & Demons" (1999, its ambigram artwork
+#     later reused for the novel of the same name; the 1994 date repeated
+#     for it almost everywhere is corrected by Brown's own 2006 witness
+#     statement - see db-angels-demons-cd-ambigram-1999 on
+#     content/authors/dan-brown.yaml) - are music, not literary works, and
+#     outside this schema's bibliography.
 #   - An MGM/Weed Road Pictures animated film of Wild Symphony, announced
 #     March 30, 2022 with Brown attached to write the screenplay and songs:
 #     announced, not produced. Recording an unproduced credit would be
@@ -330,9 +328,8 @@
     disappearance is what the novel spends itself buying, and no summary of
     it belongs in a rendered field.
     The sixth Robert Langdon novel and Brown's most recent book, published
-    by Doubleday on September 9, 2025 (the request issue that opened this
-    wing asked whether a sixth title existed since
-    [[work:dan-brown/origin|Origin]] - it does). 17 weeks on the New York
+    by Doubleday on September 9, 2025, eight years after
+    [[work:dan-brown/origin|Origin]]. 17 weeks on the New York
     Times bestseller list as of January 2026. A Netflix adaptation with
     Morgan Spector as Langdon was in production as of this writing.
   sources:
@@ -344,8 +341,10 @@
     coverSource: "https://openlibrary.org/works/OL42542598W"
     # Open Library's own representative cover for this work (id 15200463) is
     # the Spanish-language Editorial Planeta jacket ("El último Secreto"),
-    # not an English one. This is the US Doubleday first edition's own
-    # jacket (ISBN 9780385546928), matching the publisher named above.
+    # not an English one. This is the English Doubleday jacket, taken from
+    # Open Library's edition record for ISBN 9780385546928 (Doubleday,
+    # 2025-09-09). The first-edition hardcover ISBN is 9780385546898, the
+    # one editions.yaml records; both printings carry this same jacket art.
 
 - id: dan-brown/wild-symphony
   title: "Wild Symphony"

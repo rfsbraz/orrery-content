@@ -32,11 +32,12 @@ images:
   # panorama, so photographs of it are not reliably free to use regardless
   # of the licence tag attached on upload.
 
-# Capabilities (docs/SCHEMA.md) are left auto on purpose: with no theme.art,
-# no events.yaml and no eras.yaml yet, `river` and `companion` will not
-# activate until those exist; `wizard` will not activate until a startHere
-# is written; `editions` will not activate until editions.yaml exists.
-# Nothing needs forcing off in the meantime.
+# Capabilities (docs/SCHEMA.md) are all left auto, and all four now activate
+# on their own data: `river` and `companion` on the 9-entry aura (7 life
+# events on the author entity, 2 franchise events), `wizard` on the startHere
+# block below, `editions` on editions.yaml. Nothing is forced off - none of
+# the four is thin enough to be worth entering an empty view. eras.yaml is
+# deliberately `[]` (see its own header) and powers no capability.
 features:
   river: auto
   wizard: auto
