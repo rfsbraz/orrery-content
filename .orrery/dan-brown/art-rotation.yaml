@@ -1,0 +1,103 @@
+stage: art-rotation
+summary: >
+  Graded the wing's 9-item river (7 lifeEvents + 2 franchise events; no
+  eras.yaml content to grade - the wing has none by design). All 9 entries
+  already carried organisation/illustration_type/images_required, set by
+  press-archaeology itself when it built the biographical spine: it added 5
+  new lifeEvents plus both franchise events with layout fields already
+  attached, and repaired the 2 pre-existing lifeEvents (birth, the 2003
+  breakout) that were unset and colliding with those new neighbours, so that
+  its own art_rotation.py --check stayed clean throughout. Reviewed all 9
+  placements against LAYOUT.md's "does it fit / does it pace" test rather
+  than treating a clean checker as sufficient on its own, and concur with
+  every organisation and illustration_type choice: full-bleed-vista for the
+  birth (an opening breath), beside for the 1997 marriage, diptych for the
+  1999 ambigram CD-then-novel-cover reuse (a genuine before/after, and the
+  event visual-language itself named as the diptych's natural first use),
+  immersion for the 2003 Da Vinci Code breakout (the one real rupture in a
+  quiet-selling career), floating-object for the low-impact 2004 Exeter
+  endowment, artifact-spread for both the 2006 Baigent-Leigh court case and
+  the 2021 divorce/lawsuit (evidence, and a deliberate thematic echo between
+  the two legal entries), mosaic for the 2006 film phenomenon (boycott calls
+  and Louvre tourism as simultaneous public noise), and marginalia for the
+  low-impact 2016 Ritman Library gift. Made one change: added
+  modifier: anchor-with-satellites to db-da-vinci-code-breaks-out-2003
+  (immersion) - the description's own text supplies the anchor (The Da Vinci
+  Code) and exactly three satellites (the three earlier novels "pulled...
+  back onto the list with it"), squarely inside anchor-with-satellites'
+  3-6-satellite range and compatible with immersion per LAYOUT.md. Left
+  every other entry's modifier unset rather than force one to use the field;
+  none of the other 8 entries has a comparably concrete satellite/detail/fold
+  structure in its own sourced text.
+  Final distribution (9 events): artifact-spread 2 (22%), full-bleed-vista 1,
+  beside 1, diptych 1, immersion 1, floating-object 1, mosaic 1, marginalia 1
+  - no organisation over its cap, no two neighbours share one. Contour:
+  #==#==#.= - loud at db-born-1964, db-da-vinci-code-breaks-out-2003 and
+  dan-brown-phenomenon-2006, none touching or sharing a screenful, longest
+  same-intensity run is 2. illustration_type stays varied (establishing-
+  landscape and document-facsimile each 2/9 = 22%, everything else 1/9).
+  `art_rotation.py --check dan-brown` reports 0 organisation-rotation
+  problems and 0 pacing problems (the composition/issue-history axis stays
+  flagged, as expected on a wing with no art issues opened yet - not this
+  stage's gate). `validate.py --slug dan-brown` is 0 errors (3 pre-existing
+  handoff-length warnings from earlier stages, not touched here).
+produced: 2026-08-04
+forStages:
+  visual-metadata: >
+    No illustration_type changes to react to - all 9 stayed as
+    press-archaeology set them. db-da-vinci-code-breaks-out-2003 now carries
+    modifier: anchor-with-satellites; keep the immersion's illustration_type
+    (establishing-landscape) as the anchor subject and treat the three
+    satellites as smaller vignettes of the same visual register (per
+    visual-language's own reading-devices note), not as three unrelated
+    inset scenes.
+  asset-prompt: >
+    One modifier needs its compatible-organisation prompt text:
+    anchor-with-satellites on db-da-vinci-code-breaks-out-2003 (immersion) -
+    one dominant landmark/landscape anchor with three subordinate vignettes
+    orbiting it, standing for the three earlier novels the breakout book
+    pulled back onto the bestseller list. No specific book cover or title
+    lettering (catalogue-wide rule); the satellites should read as the same
+    kind of object/place as the anchor, scaled down, not as book-cover
+    thumbnails.
+  wing-audit: >
+    Nothing outstanding on this axis. No eras.yaml entries by design, so no
+    chapter-gate jobs exist; both gates (organisation-rotation, pacing) are
+    clean; the composition/issue-history axis is correctly still open,
+    populated by /asset-prompt not by this stage.
+openQuestions:
+  - >
+    A 9-item river is small enough that the frequency caps (beside ~50%,
+    every other organisation ~40%, immersion 1-2) never bound this wing at
+    all - press-archaeology's placements happened to already respect the
+    tighter screenful/loud-adjacency constraint this pipeline learned to
+    check first on comparably small wings (Grisham, 14 items). Confirmed
+    rather than re-derived here: the three loud cells (born, breakout,
+    phenomenon) sit at positions 1, 4 and 7 of 9, which is exactly spaced
+    enough that none touches or shares a screenful with another. Any future
+    edit to this wing's event list (a new lifeEvent inserted near position 1,
+    4 or 7) should re-run the screenful check before trusting the percentage
+    caps.
+  - >
+    db-marries-blythe-newlon-1997 is impact: high in its own field but was
+    left at beside (the workhorse default) rather than upgraded to something
+    louder. Considered and rejected: split-counterpoint would fit the
+    private-life/public-career duality this event actually describes, but
+    the schema note in LAYOUT.md flags that organisation still needs a
+    per-lane label field this wing (and the catalogue generally) hasn't
+    added yet - not a fix to make unilaterally inside this stage's footprint.
+    beside remains a legitimate, deliberate choice (LAYOUT.md: "the default;
+    most of a wing is this," not "only low-impact"), but a future
+    split-counterpoint schema addition would make this event its first
+    natural candidate in this wing.
+  - >
+    The only organisation not reviewed for a fit upgrade at depth is
+    dan-brown-phenomenon-2006 (mosaic). It was a live candidate for
+    modifier: anchor-with-satellites too (Vatican boycott call as anchor,
+    Louvre/Paris/China reaction as satellites) but the event's own text reads
+    as two parallel threads (religious backlash, commercial/tourism boom)
+    rather than one dominant anchor with subordinate vignettes, so
+    anchor-with-satellites would undersell the duality; mosaic's plain "many
+    voices at once" reading was judged the more accurate fit and left
+    unmodified. A future split-counterpoint schema addition would also make
+    this event a candidate to revisit.
