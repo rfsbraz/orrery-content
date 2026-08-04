@@ -1,0 +1,182 @@
+stage: pipeline-audit
+franchise: dan-brown
+status: complete
+
+summary: >
+  Audited the run's cost and process, not the wing's content. Cost data exists
+  for only 5 of the run's 15 stages (visual-metadata finish+verify, editions,
+  translation, wing-audit, audit-fixes - 895,876 tokens / 367 calls, this
+  session); stages 1-7 (franchise-research through art-rotation) ran in a
+  prior session with no metrics table kept, a real gap recorded as missing
+  rather than guessed at. Confirmed zero footprint violations across all
+  three named collision pairs by diffing each commit's touched fields, not
+  just by reading commit order. Found a third occurrence of the hp-lovecraft
+  silent-pre-write pattern (press-archaeology pre-set art-rotation's fields
+  on all 9 events), this time documented rather than silent. Routed four
+  systemic (non-content) findings from wing-audit's own handoff into
+  docs/pipeline-runs.md's findings ledger (rows 12-15) and opened
+  https://github.com/rfsbraz/orrery/issues/161 for the pickEdition tiebreak
+  bug (row 12), since it needs an app-side code fix.
+
+costTable:
+  measured:
+    - stage: visual-metadata (finish + verify)
+      tokens: 102365
+      tool_calls: 39
+      duration_ms: 317279
+      model: sonnet
+      effort: default
+    - stage: editions (full stage)
+      tokens: 217161
+      tool_calls: 92
+      duration_ms: 1334909
+      model: sonnet
+      effort: default
+    - stage: translation (pt-PT)
+      tokens: 188574
+      tool_calls: 83
+      duration_ms: 917656
+      model: sonnet
+      effort: default
+    - stage: wing-audit
+      tokens: 236612
+      tool_calls: 81
+      duration_ms: 1111432
+      model: opus
+      effort: default
+    - stage: audit-fixes (post-audit correction pass)
+      tokens: 151164
+      tool_calls: 72
+      duration_ms: 818756
+      model: opus
+      effort: default
+  totals:
+    tokens: 895876
+    tool_calls: 367
+  unmeasured: >
+    Stages 1-7 (franchise-research, completeness-auditor, press-archaeology,
+    eras, event-resonance, reading-orders, spoiler-audit, visual-language,
+    art-rotation - 9 named skills across the numbered stage-order's steps
+    1-7) ran in a session this orchestrator was not present for. No
+    tokens/calls/duration exist for them. A weak, non-measured proxy from git
+    commit timestamps: scaffold (23:15:52) through visual-language's handoff
+    commit (00:24:58) spans 69 minutes across 13 non-merge commits covering 7
+    of those 9 skills; art-rotation's own timestamp gap (00:24:58 to
+    07:47:28, +7h22m) is contaminated by what looks like an overnight session
+    break and tells nothing about that stage's real cost. This is wall clock
+    across an unknown mix of agent think-time and orchestration overhead, not
+    tokens - presented here only as a trace, never as measured cost.
+
+footprintCheck:
+  result: zero violations found
+  collisionPairsChecked:
+    - pair: "event-resonance / reading-orders on franchise.yaml"
+      finding: >
+        event-resonance (6ea164e) wrote only globalEvents; reading-orders
+        (5dda932) wrote only startHere plus its own orders.yaml. Ran
+        sequentially per the stage order (event-resonance 23:44, reading-
+        orders 23:56). Disjoint fields, no collision.
+    - pair: "spoiler-audit / visual-metadata on works.yaml"
+      finding: >
+        spoiler-audit (f085101) rewrote synopsis/note prose fields;
+        visual-metadata (12771f2) added only the images block per work.
+        Sequential (spoiler-audit 00:07, visual-metadata 11:56, across the
+        session boundary). Disjoint fields, no collision.
+    - pair: "art-rotation / visual-metadata on authors/dan-brown.yaml"
+      finding: >
+        art-rotation (6aa5883) added one modifier line to an
+        already-graded lifeEvent; visual-metadata (12771f2) added only the
+        images block (portrait). Sequential (art-rotation 07:47,
+        visual-metadata 11:56). Disjoint fields, no collision.
+  alsoChecked: >
+    translation (3bc4b58) touched only content/i18n/pt-PT/** (6 files, all
+    under that prefix) - the pt-PT-prose-outside-i18n violation confirmed on
+    edgar-allan-poe and jose-rodrigues-dos-santos did not recur here, the
+    second consecutive clean run (after hp-lovecraft). world-events did not
+    run (not triggered - Dan Brown's 1964-2025 span and decades are already
+    covered in global.yaml); no commits exist for it, correctly.
+
+duplicatedWorkFound:
+  - id: press-archaeology-prewrote-art-rotation-fields
+    shape: >
+      Third confirmed occurrence of the hp-lovecraft "silent pre-write"
+      pattern. press-archaeology (ee2a057) set organisation/
+      illustration_type/images_required on all 9 events and lifeEvents (7
+      lifeEvents + 2 franchise events) while building the biographical
+      spine, to keep its own art_rotation.py --check clean while inserting
+      new events into an already-graded wing - exactly art-rotation's
+      declared footprint. Its own handoff undersold this: it names only
+      "layout fields on the two pre-existing lifeEvents" (the birth and the
+      2003 breakout), not the 7 new ones that also got the same fields.
+    difference_from_hp_lovecraft: >
+      Not silent this time. art-rotation (6aa5883) read its input rather
+      than assuming a blank slate, found all 9 already graded, reviewed
+      every placement against LAYOUT.md's fit/pace test, concurred with all
+      9, and documented the pre-write explicitly in its own commit message
+      ("press-archaeology already set organisation/... on all 9 events...").
+      No rework resulted; the only new work was one modifier field
+      (anchor-with-satellites) art-rotation added on review.
+    recommendation: >
+      Not this stage's call to fix (pipeline-audit proposes, does not edit
+      shared skills) - but press-archaeology's skill should be told to
+      name in its own handoff exactly which events got layout fields, new
+      and pre-existing alike, so a downstream stage never has to discover
+      the true scope by diffing.
+  - id: aura-hole-recompute-dependency
+    shape: >
+      Not a footprint violation - both stages wrote only their own declared
+      fields correctly - but a real cross-stage dependency nothing
+      currently re-checks. press-archaeology's handoff reported the wing's
+      longest dark run as 4 years (2012-2015) when it ran. event-resonance
+      then excluded ten global events, among them entries that had been
+      covering 2007-2011, which silently turned the 4-year hole into 9 years
+      (2007-2015) - each individual exclusion was correct on its own merits,
+      but nobody re-ran aura_density.py after event-resonance to see the
+      combined effect until wing-audit did.
+    outcome: >
+      Closed same-session by a direct audit-fixes pass (6342aff): two new
+      sourced entries plus one global re-judged on its merits brought the
+      longest dark run down to 4 years (2017-2020). No stage re-dispatch was
+      needed.
+
+findingsRoutedToLedger:
+  - row: 12
+    finding: pickEdition tiebreak sends English readers to a non-primary edition
+    githubIssue: https://github.com/rfsbraz/orrery/issues/161
+  - row: 13
+    finding: validate.py comment scanner has a word-wrap blind spot
+    githubIssue: null
+  - row: 14
+    finding: aura_density.py checks the retired arithmetic-lifetime default
+    githubIssue: null
+  - row: 15
+    finding: validate.py requires theme.art.emblem, undocumented in SCHEMA.md
+    githubIssue: null
+
+whatIsAlreadyFine: >
+  All 9 pre-session stages left a handoff and a commit (no silent-skip
+  finding this run). completeness-auditor, event-resonance, reading-orders,
+  visual-language, editions and translation show no rework and no footprint
+  issue - nothing proposed for any of them.
+
+whatICouldNotReach: >
+  Per-stage cost for stages 1-7, because no metrics table exists for the
+  session that ran them (see unmeasured above) - this is the orchestrator's
+  input to provide, not something derivable from git. Stayed within the
+  15-tool-call budget the skill sets for this stage.
+
+forStages:
+  orchestrator: >
+    Four systemic findings are open in docs/pipeline-runs.md's ledger
+    (rows 12-15); row 12 has a filed issue (orrery#161), rows 13-15 are
+    action items against shared tooling (validate.py x2, aura_density.py)
+    that this stage's footprint does not cover.
+
+openQuestions:
+  - >
+    Whether press-archaeology's skill should be edited to name pre-written
+    layout fields by full scope in its handoff (see
+    press-archaeology-prewrote-art-rotation-fields above) - a one-line
+    addition that would have saved wing-audit and this stage the diff work
+    of discovering the true scope themselves. Proposed, not applied (this
+    stage is read-only and does not edit skills).
