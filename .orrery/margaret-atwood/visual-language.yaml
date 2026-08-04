@@ -1,0 +1,111 @@
+stage: visual-language
+summary: >
+  Wrote theme.yaml's `art` block from scratch - scaffold left preset
+  (specimen-ledger), palette, displayFace and signature reasoned but all six
+  art fields empty, this wing's sole validator error. Emblem: a sealed
+  glass specimen jar with a hand-written label on an open card-catalogue
+  drawer - her forest-entomologist father's fieldwork plus the
+  institutional record-keeping (Gilead's ceremonies, Positron's paperwork,
+  MaddAddam's catalogued species) the scaffold's preset note already named,
+  given one concrete object. Eight motifs split between close specimen/
+  document objects and the northern-bush landscape her biography and
+  Surfacing run on, so both this wing's landscape plates and its
+  close-object events have motifs to draw from. Checked via
+  theme_digest.py --exclude margaret-atwood, then read hp-lovecraft and
+  valter-hugo-mae in full (the only two wings sharing both displayFace
+  spectral and signature rule) plus edgar-allan-poe and jose-luis-peixoto
+  (the accent's stated scaffold neighbours) - differentiated explicitly
+  from Lovecraft, the real collision found.
+verification:
+  fields: >
+    All six present as prose, none an enum, none describing edges/fades/
+    opacity (the dissolve filter's job, VISUAL.md SS5a), no text, no
+    real-person likeness, nothing drawn from cover art or fan heraldry.
+  yamlBug: >
+    First draft broke the parser: an unquoted colon in an avoid item
+    ("signage: barbed wire...") read as a nested mapping key. Fixed by
+    parenthesising, then reloaded directly with `yaml.safe_load` before
+    trusting validate.py's own green result.
+  untouchedFieldsAndRings: >
+    git diff: 113 insertions, 0 deletions, confined to `art:` plus one
+    header comment - rest of theme.yaml byte-identical to scaffold
+    (070e6b4). Emblem and accentUse are concrete objects, not rings/
+    ellipses, so neither risks being read as the shared orrery mark, which
+    `art` otherwise says nothing about per SKILL.md.
+  validateAndAssetAudit: >
+    validate.py --slug margaret-atwood: 0 errors, 2 pre-existing
+    handoff-length warnings (not this stage's). asset_audit.py
+    margaret-atwood: art:yes, 17 jobs listed (3 era plates, 6 life events,
+    8 franchise events).
+distinctness:
+  method: >
+    theme_digest.py --exclude margaret-atwood surfaced hp-lovecraft and
+    valter-hugo-mae sharing BOTH displayFace spectral and signature rule.
+    Read both in full, plus edgar-allan-poe and jose-luis-peixoto (accent
+    neighbours) and jose-saramago (the catalogue's other record-keeping
+    wing).
+  hpLovecraft: >
+    The real collision. His emblem is already a naturalist's instrument
+    (telescope, star-notebook) and his motifs already include a sealed,
+    string-tied deposition standing in for the thing itself - the two
+    obvious moves for a scientist's-child author are already his. Separated
+    on direction and scale, not by abandoning either move: his instrument
+    is aimed outward at open sky (cosmic, unknowable); this wing's is
+    sealed shut (a specimen jar, terrarium-scaled, legible) - which also
+    encodes something sourced and Atwood-specific, her own repeated
+    argument (In Other Worlds, 2011) that her speculative fiction
+    extrapolates from what exists rather than reaching for what couldn't
+    happen. His document is sealed with wax/string, sworn once; this
+    wing's is a loose, paperclipped sheaf annotated later in a second hand.
+    Line character differs in kind: his is a continuous dry technical-pen
+    line, this wing's is stippled, built from accumulated dots the way an
+    entomological plate is engraved.
+  others: >
+    valter-hugo-mae shares both axes by an unrelated route (warm umber,
+    tremulous dip-pen, rural village); pushed apart on atmosphere and line
+    since no subject overlap exists. Poe/Peixoto's accent proximity was
+    already argued at scaffold and unmoved here; neither has a competing
+    document or specimen motif. Saramago's ledgers sit inside an unrelated
+    basalt/blindness binary.
+  oneSentence: >
+    Where Lovecraft's wing is an instrument aimed at a cosmos he couldn't
+    touch, this one is a specimen sealed in a jar he could hold.
+spoilerAuditIncorporation: >
+  avoid names the four bounded reveals directly: no cause/agent of the Oryx
+  and Crake collapse; no Year of the Flood closing convergence; no hand or
+  desk implying who wrote the inner Blind Assassin novel; no imagery
+  answering Alias Grace's guilt. Added a fifth of the same shape on this
+  wing's own ground: MaddAddam's survivors never shown assembled or
+  identifiable, mirroring spoiler-audit's own removal of "the identity of
+  the three survivors" from that subseries' rationale.
+produced:
+  filesChanged:
+    - content/franchises/margaret-atwood/theme.yaml (added `art:` + one
+      header comment; rest byte-identical to scaffold)
+    - .orrery/margaret-atwood/visual-language.yaml (new)
+forStages:
+  art-rotation: >
+    margaret-atwood-handmaids-tale-hulu-2017 (mosaic, press-media-collage)
+    is about the red-robe/white-bonnet protest uniform entering real street
+    protest, and `art.avoid` rules out drawing that costume on a figure.
+    Not a contradiction: every sketch here is a generated house-style
+    illustration, not photojournalism, so read the event through press
+    response (headlines, a distant statehouse-steps crowd, a placard)
+    rather than a rendered costume. Motifs split 5 close-object / 3
+    landscape so both this wing's landscape plates and its close-object
+    events have something to draw from; keep the specimen-jar/card-catalogue
+    pairing to 2-3 of 17 assets so it doesn't harden into a logo.
+  visual-metadata: >
+    Quote `art` verbatim in STYLE per VISUAL.md SS5. Carry the five
+    spoiler-bound avoid items into the specific assets they name, not just
+    theme.art generally. The two death-related lifeEvents are already
+    portrait-of-absence, consistent with never generating Atwood's own
+    likeness (VISUAL.md SS3).
+  wing-audit: >
+    Scaffold (070e6b4) reasoned preset/palette/displayFace/signature and
+    even pre-empted the Gilead-costume mistake in its header, but left all
+    six art fields empty - accurately reported as missing by the validator,
+    unlike hp-lovecraft's own silent-partial-completion case. Worth
+    flagging that a reasoned preset next to an empty art block can read as
+    more progress than a wing has actually made.
+openQuestions: []
