@@ -1,13 +1,7 @@
 # Global author entity. Authors are referenced by id from franchises and
 # works (authorIds / withAuthorIds), so the same person resolves the same
 # everywhere. Author-LIFE events live here; franchise-specific events belong
-# in content/franchises/haruki-murakami/events.yaml. lifeEvents is left empty
-# here: the aura (birth anchor, the well-documented 1978 origin story told in
-# Murakami's own words, and whatever else earns a slot under CURATION.md's
-# aura standard) is a structured, sourced set of entries for the press
-# archaeology layer to build with its own layout-grammar fields, not a bare
-# scaffold; the two facts it will draw on are folded into bio prose below so
-# neither is lost in the meantime.
+# in content/franchises/haruki-murakami/events.yaml.
 #
 # NAME AND BIRTH. English Wikipedia's infobox and prose agree: born Murakami
 # Haruki (family name first in Japanese order; rendered Haruki Murakami in
@@ -15,6 +9,20 @@
 # source does), 12 January 1949, in Fushimi-ku, Kyoto, during the Allied
 # occupation of Japan. Raised in Nishinomiya, Ashiya and Kobe, not Kyoto - the
 # birthplace and the childhood home are different places.
+#
+# LIFEEVENTS. Cross-checked against English Wikipedia's "Haruki Murakami"
+# article, Murakami's own essays ("The Moment I Became a Novelist", Lit Hub
+# 2015, the introduction to Wind/Pinball: Two Novels; "Distant Drums"/Tōi
+# Taiko, his 1990 travel memoir of the 1986-89 European years), The Paris
+# Review's 2004 "Art of Fiction" interview, and contemporary press coverage of
+# each dated event (The Guardian, AP, CBC) cited on the entry it supports. The
+# 1978 baseball epiphany and the two award speeches (Jerusalem 2009, Hans
+# Christian Andersen 2016) are quoted from Murakami's own words rather than
+# paraphrased. The two running entries (1996, 2005) are graded low on purpose:
+# no single rupture marks 1996-2008, a genuinely steady working stretch
+# between the Kobe/sarin aftermath and the Jerusalem Prize, and a dated,
+# sourced daily-discipline fact stands in for it rather than a bare prize
+# date or an empty stretch.
 id: haruki-murakami
 name: Haruki Murakami
 aka: ["Murakami Haruki"]
@@ -43,7 +51,282 @@ bio: >
   into Japanese (Raymond Carver, F. Scott Fitzgerald, Raymond Chandler among
   others) and continues to publish from Tokyo.
 pseudonyms: []
-lifeEvents: []
+lifeEvents:
+  - id: haruki-murakami-born-1949
+    organisation: full-bleed-vista
+    illustration_type: establishing-landscape
+    images_required: 1
+    date: 1949-01-12
+    title: Born in Kyoto during the Allied occupation, raised in Nishinomiya, Ashiya and Kobe
+    impact: low
+    description: >
+      Born Murakami Haruki in Fushimi-ku, Kyoto, on 12 January 1949, during
+      the postwar Allied occupation of Japan, to two teachers of Japanese
+      literature. The family soon settled in the Kobe area, and he grew up in
+      Nishinomiya, Ashiya and Kobe rather than in the city where he was born;
+      the port city's steady traffic of foreign sailors and its secondhand
+      paperback shops gave him an early taste for American jazz and hardboiled
+      fiction that the rest of his career never lost.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Haruki_Murakami
+      - https://www.theparisreview.org/interviews/2/the-art-of-fiction-no-182-haruki-murakami
+
+  - id: haruki-murakami-peter-cat-1974
+    organisation: beside
+    illustration_type: workplace-workshop
+    images_required: 1
+    date: 1974
+    dateRange: "1974-1981"
+    title: Opens the jazz bar Peter Cat with his wife Yoko, owing every yen of it
+    impact: med
+    description: >
+      Married straight out of Waseda University with no money between them,
+      Murakami and his wife Yoko spent three years working several jobs at
+      once to scrape together enough to open a small coffee shop and jazz bar,
+      Peter Cat, in Kokubunji in 1974; a landlord's renovation later moved it
+      to larger premises in Sendagaya. He ran it for seven years, by his own
+      account spending his twenties paying off the loan and doing the bar's
+      physical labor - making sandwiches and cocktails, throwing out difficult
+      patrons - from morning till night, with almost no free time beyond
+      reading and listening to records. The debt, the jazz and the late hours
+      of these years run through his early, realist novels.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Haruki_Murakami
+      - https://lithub.com/haruki-murakami-the-moment-i-became-a-novelist/
+
+  - id: haruki-murakami-yakult-swallows-1978
+    organisation: floating-object
+    illustration_type: isolated-object
+    images_required: 1
+    date: 1978-04-01
+    title: Decides he can write a novel, watching the Yakult Swallows' season opener
+    impact: high
+    description: >
+      At the Central League season opener at Jingu Stadium on 1 April 1978,
+      Yakult Swallows against the Hiroshima Carp, Murakami was stretched out
+      with a beer on the grassy outfield slope when the leadoff batter, an
+      unknown American rookie named Dave Hilton, drove the first pitch of the
+      game into left field for a clean double. At the sound of bat meeting
+      ball, by his own account, the thought struck him with no warning and no
+      evident cause: he could write a novel. He took the train to Shinjuku
+      that same evening, bought a fountain pen and a sheaf of writing paper,
+      and began writing at his kitchen table each night after closing the bar;
+      six months later, around the time the baseball season ended, he had a
+      draft of [[work:haruki-murakami/hear-the-wind-sing|Hear the Wind Sing]].
+      That season the Swallows, a perennially weak team, won the Central
+      League pennant and then the Japan Series.
+    spoilerAfter: null
+    sources:
+      - https://lithub.com/haruki-murakami-the-moment-i-became-a-novelist/
+      - https://lithub.com/haruki-murakami-on-the-year-dave-hilton-debuted-for-the-yakult-swallows/
+
+  - id: haruki-murakami-europe-1986
+    organisation: beside
+    illustration_type: place-portrait
+    images_required: 1
+    date: 1986
+    dateRange: "1986-1989"
+    title: Leaves Japan for three years on the road in Italy and Greece, writing Norwegian Wood in Rome
+    impact: med
+    description: >
+      In 1986 Murakami left Japan for an extended stay in Europe, living out
+      of Rome and, briefly, Sicily, and the Greek islands of Spetses and
+      Mykonos, over the three years he later chronicled in his own travel
+      memoir, Tōi Taiko ("Distant Drums", 1990, untranslated into English). He
+      wrote [[work:haruki-murakami/norwegian-wood|Norwegian Wood]] during this
+      stretch, largely in Rome and on Spetses. Its unexpected success on
+      publication in Japan in 1987, selling in the millions, is what made him
+      a recognized public figure he found uncomfortable to be at home - the
+      fame that kept him travelling afterward, rather than what had sent him
+      abroad in the first place.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Haruki_Murakami
+      - https://howtojaponese.com/distant-drums/
+
+  - id: haruki-murakami-princeton-tufts-1991
+    organisation: passage
+    illustration_type: process-diagram
+    images_required: 1
+    date: 1991
+    dateRange: "1991-1995"
+    title: Five years teaching at Princeton, then Tufts, writing two novels in the United States
+    impact: med
+    description: >
+      Murakami moved to the United States in January 1991, first as a
+      visiting scholar at Princeton University (1991-93), then as
+      writer-in-residence at Tufts University in Medford, Massachusetts
+      (1993-95); he later held a fellowship at Harvard as well. He wrote
+      [[work:haruki-murakami/south-of-the-border-west-of-the-sun|South of the
+      Border, West of the Sun]] and
+      [[work:haruki-murakami/the-wind-up-bird-chronicle|The Wind-Up Bird
+      Chronicle]] during these years abroad, the second of them a deliberate
+      departure into Japan's wartime occupation of Manchuria that he later
+      described as the point his fiction turned from private "detachment"
+      toward social "commitment."
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Haruki_Murakami
+      - https://www.theparisreview.org/interviews/2/the-art-of-fiction-no-182-haruki-murakami
+
+  - id: haruki-murakami-kobe-sarin-1995
+    organisation: immersion
+    illustration_type: symbolic-still-life
+    images_required: 1
+    date: 1995-01-17
+    dateRange: "1995"
+    title: The Kobe earthquake and the Tokyo subway sarin attack turn his writing outward
+    impact: high
+    description: >
+      Two catastrophes struck Japan within nine weeks of each other in 1995:
+      the Great Hanshin earthquake that devastated Kobe, the city where
+      Murakami grew up, on 17 January, and the Aum Shinrikyo cult's sarin gas
+      attack on the Tokyo subway on 20 March, which killed fourteen people and
+      injured about a thousand more. Still living in the United States,
+      Murakami returned to Japan in their aftermath and spent 1996
+      interviewing survivors of the subway attack for what became
+      [[work:haruki-murakami/underground|Underground]], alongside a personal
+      essay, "Blind Nightmare: Where Are We Japanese Going?," criticizing the
+      country's rush to dismiss the attack as the act of isolated lunatics
+      rather than examine its causes; the short-story collection
+      [[work:haruki-murakami/after-the-quake|after the quake]] followed in
+      2000. That same year, [[work:haruki-murakami/the-wind-up-bird-chronicle|The
+      Wind-Up Bird Chronicle]] won the Yomiuri Prize, awarded by Kenzaburo Oe,
+      one of his harshest earlier critics. Murakami has since dated his shift
+      from private "detachment" to social "commitment" as a writer to this
+      period.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Haruki_Murakami
+      - https://en.wikipedia.org/wiki/Underground:_The_Tokyo_Gas_Attack_and_the_Japanese_Psyche
+      - https://en.wikipedia.org/wiki/Tokyo_subway_sarin_attack
+
+  - id: haruki-murakami-ultramarathon-1996
+    organisation: marginalia
+    illustration_type: isolated-object
+    images_required: 1
+    date: 1996-06-23
+    title: Completes his first ultramarathon, 100 km around Lake Saroma
+    impact: low
+    description: >
+      Murakami took up long-distance running in the early 1980s to stay
+      healthy after closing Peter Cat, and on 23 June 1996 completed his first
+      ultramarathon, a 100 km race around Lake Saroma in Hokkaido. The daily
+      discipline became one of his most visible habits and, a decade later,
+      the subject of his own memoir on the connection between running and
+      writing.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Haruki_Murakami
+
+  - id: haruki-murakami-nyc-marathon-2005
+    organisation: floating-object
+    illustration_type: emblem-seal
+    images_required: 1
+    date: 2005-11-06
+    title: Trains four months for the New York City Marathon, the spine of his running memoir
+    impact: low
+    description: >
+      What became [[work:haruki-murakami/what-i-talk-about-when-i-talk-about-running|What
+      I Talk About When I Talk About Running]] is built around his four months
+      of training for the New York City Marathon in the autumn of 2005,
+      running courses that range from Tokyo's Jingu Gaien gardens to the
+      Charles River in Boston to, fittingly, an ultramarathon route retracing
+      the original run from Marathon to Athens in Greece, the country he had
+      once lived and written in.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/What_I_Talk_About_When_I_Talk_About_Running
+
+  - id: haruki-murakami-jerusalem-speech-2009
+    organisation: epigraph
+    quote: >
+      If there is a hard, high wall and an egg that breaks against it, no
+      matter how right the wall or how wrong the egg, I will stand on the
+      side of the egg. Why? Because each of us is an egg, a unique soul
+      enclosed in a fragile egg. Each of us is confronting a high wall. The
+      high wall is the system which forces us to do the things we would not
+      ordinarily see fit to do as individuals.
+    images_required: 0
+    date: 2009-02-15
+    title: Jerusalem Prize acceptance speech, "Always on the Side of the Egg"
+    impact: high
+    description: >
+      Accepting the Jerusalem Prize in Israel despite calls to boycott the
+      ceremony over Israel's bombing of Gaza, Murakami told the audience he
+      had chosen to come and speak rather than stay home and say nothing. His
+      remarks named the individual-against-the-system framing that runs
+      through most of his fiction, from A Wild Sheep Chase's corporate
+      underworld to 1Q84's cult.
+    spoilerAfter: null
+    sources:
+      - https://www.theguardian.com/books/2009/feb/16/haruki-murakami-jerusalem-prize
+      - https://en.wikipedia.org/wiki/Jerusalem_Prize
+
+  - id: haruki-murakami-catalunya-fukushima-2011
+    organisation: marginalia
+    illustration_type: isolated-object
+    images_required: 1
+    date: 2011
+    title: Donates his Catalunya Prize winnings to earthquake and Fukushima relief
+    impact: med
+    description: >
+      In 2011 Murakami donated his 80,000 euro prize from the International
+      Catalunya Prize to victims of the 11 March earthquake and tsunami and to
+      those affected by the Fukushima nuclear disaster. Accepting the award,
+      he called the Fukushima crisis "the second major nuclear disaster that
+      the Japanese people have experienced... however, this time it was not a
+      bomb being dropped upon us, but a mistake committed by our very own
+      hands," and argued Japan should have rejected nuclear power after
+      "the sacrifice of the hibakusha" of Hiroshima and Nagasaki had already
+      shown the cost of radiation.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Haruki_Murakami
+
+  - id: haruki-murakami-andersen-speech-2016
+    organisation: epigraph
+    quote: >
+      No matter how high a wall we build to keep intruders out, no matter how
+      strictly we exclude outsiders, no matter how much we rewrite history to
+      suit us, we just end up damaging and hurting ourselves.
+    images_required: 0
+    date: 2016-10-30
+    title: Hans Christian Andersen Literature Award speech, "The Meaning of Shadows"
+    impact: med
+    description: >
+      Receiving the Hans Christian Andersen Literature Award in Odense,
+      Denmark, Murakami titled his speech after Andersen's own story "The
+      Shadow", calling it a "dark and hopeless story," and argued that
+      individuals, societies and nations alike have to learn to live with
+      their own shadow rather than deny or forcibly eliminate it. The theme of
+      a suppressed or estranged double runs through his fiction from Hard-
+      Boiled Wonderland's surrendered shadow to Kafka on the Shore.
+    spoilerAfter: null
+    sources:
+      - https://www.theguardian.com/books/2016/nov/01/haruki-murakami-hans-christian-anderdersen-prize-speech-outsiders
+
+  - id: haruki-murakami-asturias-2023
+    organisation: medallion
+    illustration_type: emblem-seal
+    images_required: 1
+    date: 2023-10-20
+    title: Wins the Princess of Asturias Award for Literature
+    impact: med
+    description: >
+      Awarded the Princess of Asturias Award for Literature in May 2023 and
+      presented with it at a ceremony in Oviedo, Spain, on 20 October
+      alongside that year's Arts laureate, Meryl Streep. The jury's citation
+      named his novels, from Norwegian Wood (1987) to The City and Its
+      Uncertain Walls (2023), for exploring "loneliness, existential
+      uncertainty, dehumanization in big cities and terrorism" - close to a
+      one-line description of the whole bibliography's recurring concerns.
+    spoilerAfter: null
+    sources:
+      - https://lithub.com/haruki-murakami-wins-spains-princess-of-asturias-award-for-literature/
+      - https://japannews.yomiuri.co.jp/culture/books-literature/20231021-144593/
 sources:
   - https://en.wikipedia.org/wiki/Haruki_Murakami
   - https://lithub.com/haruki-murakami-the-moment-i-became-a-novelist/
