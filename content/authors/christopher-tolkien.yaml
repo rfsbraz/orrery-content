@@ -1,0 +1,353 @@
+# Global author entity. Christopher Tolkien is referenced via withAuthorIds
+# on 13 of this wing's 32 catalogued works, so he needs a full entity rather
+# than a one-line stub: 22 of the 32 reached print only after his father's
+# 1973 death, most of them through his own 45 years of editing (1973-2018/
+# 2020). The AUTHORSHIP QUESTION this bio exists to record: his
+# father's own 1967 letter names him "co-author" of what became
+# [[work:jrr-tolkien/the-silmarillion|The Silmarillion]] specifically (cited
+# in Wikipedia's "Christopher Tolkien" article, sourced to Ovenden &
+# McIlwaine 2022's "The Great Tales Never End"), and that book's own title
+# page credits both "Christopher Tolkien" and "Guy Gavriel Kay" as Editor
+# against "J. R. R. Tolkien" as Author. Scholar Vincent Ferré and others go
+# further, arguing from Christopher's own admissions (his 1983 Book of Lost
+# Tales foreword: "I had had to invent some passages"; a 2012 Le Monde
+# interview) that his prose style and choices make him "a writer in his own
+# right" on that book, not only an editor of it. No comparably strong
+# "co-author" designation exists for any of his OTHER editorial work, where
+# Wikipedia's own "Christopher Tolkien" bibliography table lists him
+# consistently "As editor" rather than "As author" - hence this wing's
+# works.yaml sets authorRole: co-author on The Silmarillion alone. Every
+# other entry he touches is split further, by how much construction his
+# editing actually required: authorRole: editor plus canonTier: apocrypha
+# where he built a book out of incomplete, scattered or draft material
+# (Unfinished Tales, the three "Great Tales," The History of Middle-earth,
+# The Monsters and the Critics and Other Essays, The Letters of J. R. R.
+# Tolkien); the default authorRole (author, unset) plus canonTier: extended
+# where his father had already finished the text himself and Christopher's
+# part was posthumous publication rather than construction (the Sir Gawain
+# / Pearl / Sir Orfeo translations, The Legend of Sigurd and Gudrún,
+# Beowulf: A Translation and Commentary) - see works.yaml's own header for
+# the full reasoning. The material below covers: his RAF service as a
+# fighter pilot in the Second World War, his father naming him literary
+# executor and Silmarillion "co-author"
+# in 1967, converting a barn at his Oxfordshire home into a workspace after
+# his father's 1973 death, moving to France in 1975 to work on the
+# legendarium full-time, completing the 12-volume History of Middle-earth
+# in 1996, his 2016 Bodley Medal, and his 2020 death in Draguignan.
+#
+# lifeEvents below are cross-checked between Wikipedia's "Christopher
+# Tolkien" article (itself citing Ovenden & McIlwaine's 2022 "The Great
+# Tales Never End" and contemporary reporting in the Sunday Times, BBC News,
+# Le Monde and the New York Times) and, for the Second World War service,
+# its own cited RAF chronology.
+id: christopher-tolkien
+name: Christopher Tolkien
+aka: ["Christopher John Reuel Tolkien"]
+born: 1924-11-21
+died: 2020-01-16
+# No portrait: no free-licensed photograph of Christopher Tolkien is known
+# to exist. English Wikipedia's own infobox photo (File:Christopher
+# Tolkien.jpg) is explicitly non-free - a fair-use press photo sourced
+# from a 2020 tabloid obituary, usable only under Wikipedia's own
+# editorial rationale, not here. Checked and came up empty: Wikidata
+# (Q82032) carries no P18 image claim; French and German Wikipedia's
+# infoboxes carry no image either; a Commons title/category search under
+# his name returns no portrait (only a CC-BY book PDF); Openverse turns up
+# only photographs of his books, not of him. Consistent with his own
+# choice to move to France in 1975 specifically to work on his father's
+# manuscripts away from public attention - a genuinely different profile
+# from most authors in this catalogue, and a real gap rather than a
+# search failure.
+bio: >
+  English academic editor and writer, the third child and literary executor
+  of [[author:jrr-tolkien|J. R. R. Tolkien]]. A Royal Air Force fighter
+  pilot in the Second World War and later an Oxford English-language
+  lecturer himself, he was his father's lifelong first reader and had
+  redrawn the working maps for
+  [[work:jrr-tolkien/the-lord-of-the-rings|The Lord of the Rings]]; his
+  father named him literary executor in 1967 and, in the same letter, his
+  co-author for the still-unpublished Silmarillion material. After his
+  father's 1973 death he spent the next 45 years organising, editing and
+  publishing 24 volumes of the largely unfinished legendarium manuscripts
+  he inherited: a single-volume
+  [[work:jrr-tolkien/the-silmarillion|The Silmarillion]] (1977, with Guy
+  Gavriel Kay's assistance),
+  [[work:jrr-tolkien/unfinished-tales|Unfinished Tales]] (1980), the
+  twelve-volume [[work:jrr-tolkien/the-history-of-middle-earth|History of
+  Middle-earth]] (1983-1996) tracing the legendarium's decades of drafts,
+  and the three standalone "Great Tales" -
+  [[work:jrr-tolkien/the-children-of-hurin|The Children of Húrin]] (2007),
+  [[work:jrr-tolkien/beren-and-luthien|Beren and Lúthien]] (2017) and
+  [[work:jrr-tolkien/the-fall-of-gondolin|The Fall of Gondolin]] (2018) -
+  plus his father's medieval scholarship and translations left unpublished
+  at his death (Beowulf, Sir Gawain and the Green Knight, The Fall of
+  Arthur, The Legend of Sigurd and Gudrún, The Letters of J. R. R. Tolkien
+  with Humphrey Carpenter). He moved to France in 1975 to work on the
+  material full-time and became a French citizen; he chaired the Tolkien
+  Estate until resigning in 2017, and won the Bodley Medal in 2016 for his
+  editorial work. He was publicly critical of Peter Jackson's film
+  adaptations. Whether the published Silmarillion is best read as his
+  father's book or partly his own has been an open scholarly question since
+  at least 1981 (Randel Helms's "the invention of the son not the father");
+  Christopher's own foreword calls the question "certainly debatable" and,
+  of presenting the book with no frame story at all, "an error."
+pseudonyms: []
+lifeEvents:
+  - id: christopher-tolkien-born-1924
+    organisation: full-bleed-vista
+    illustration_type: establishing-landscape
+    images_required: 1
+    date: 1924-11-21
+    title: Born in Leeds, the third of four children
+    impact: low
+    description: >
+      Born Christopher John Reuel Tolkien in Leeds, where his father held
+      an English language readership at the university, the third child and
+      youngest son of J. R. R. and Edith Tolkien. The family returned to
+      Oxford the following year when his father won the Rawlinson and
+      Bosworth Professorship; Christopher grew up largely in North Oxford,
+      educated at the Dragon School and then the Oratory School near
+      Reading.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Christopher_Tolkien
+      - https://en.wikipedia.org/wiki/J._R._R._Tolkien
+
+  - id: christopher-tolkien-first-reader-1930
+    organisation: artifact-spread
+    illustration_type: manuscript-proof
+    images_required: 1
+    date: 1930
+    dateRange: "1930-1949"
+    title: Grows up as his father's first audience, then his first critic
+    impact: med
+    description: >
+      Christopher was, by his own later account, "for a long time part of
+      the critical audience for his father's fiction": first as a child
+      listening to tales of Bilbo Baggins that became
+      [[work:jrr-tolkien/the-hobbit|The Hobbit]], then as a teenager and
+      young adult offering feedback on
+      [[work:jrr-tolkien/the-lord-of-the-rings|The Lord of the Rings]]
+      throughout its twelve-year gestation. He redrew his father's working
+      maps of Middle-earth for inclusion in the finished book, and his
+      father continued sending him draft chapters by post even after
+      Christopher left for the war.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Christopher_Tolkien
+      - https://en.wikipedia.org/wiki/Constructing_The_Lord_of_the_Rings
+
+  - id: christopher-tolkien-raf-service-1943
+    organisation: full-bleed-vista
+    illustration_type: journey-transit
+    images_required: 1
+    date: 1943-07
+    dateRange: "1943-1946"
+    title: Leaves Oxford mid-degree for the RAF, trains as a fighter pilot in South Africa
+    impact: high
+    description: >
+      Called up after a year and a half reading English at Trinity College,
+      Oxford, Christopher joined the Royal Air Force in July 1943 and was
+      sent to South Africa at the start of 1944 for flight training,
+      earning his wings as a fighter pilot and being commissioned in
+      January 1945. Posted back to England that February, he switched to
+      the Fleet Air Arm in June 1945; still in uniform, he resumed his
+      Oxford degree in April 1946 before being demobilised at the year's
+      end and completing his BA in 1948.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Christopher_Tolkien
+
+  - id: christopher-tolkien-named-coauthor-1967
+    organisation: artifact-spread
+    illustration_type: document-facsimile
+    images_required: 1
+    date: 1967
+    title: His father's letter names him literary executor, and Silmarillion co-author
+    impact: high
+    description: >
+      In 1967 J. R. R. Tolkien wrote to name Christopher his literary
+      executor and, in the same letter, specifically his "co-author" for
+      the still-unfinished [[work:jrr-tolkien/the-silmarillion|Silmarillion]]
+      material - the single clearest authorial designation his father ever
+      gave him, and the reason this wing's works.yaml sets authorRole:
+      co-author on that book alone among everything else Christopher later
+      brought to print. He had already been admitted to the Inklings at
+      twenty-one, which his father called "a quite unprecedented honour."
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Christopher_Tolkien
+      - https://en.wikipedia.org/wiki/The_Silmarillion
+
+  - id: christopher-tolkien-father-dies-1973
+    organisation: layered-stack
+    illustration_type: archive-stack
+    images_required: 1
+    date: 1973-09-02
+    dateRange: "1973-1975"
+    title: His father dies; he converts a barn into a workspace for the manuscripts
+    impact: high
+    description: >
+      When J. R. R. Tolkien died in September 1973, Christopher took a
+      large quantity of legendarium manuscripts to his Oxfordshire home and
+      converted a barn into a workspace, beginning to sort them with a
+      young Guy Gavriel Kay. By 1975 the two had discovered how large and
+      complex the task actually was: decades of handwritten drafts, often
+      revised so many times that even the fair copies were hard to decipher.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Christopher_Tolkien
+
+  - id: christopher-tolkien-moves-to-france-1975
+    organisation: beside
+    illustration_type: journey-transit
+    images_required: 1
+    date: 1975-09
+    title: Resigns his Oxford post and moves to France to edit his father full-time
+    impact: high
+    description: >
+      In September 1975 Christopher resigned his lectureship at New College,
+      Oxford, to work exclusively on his father's writings, and moved with
+      his second wife, Baillie, to the south of France, where he later
+      acquired French citizenship and spent the rest of his working life.
+      He would go on to edit and publish 24 volumes of his father's
+      manuscripts over the following 45 years, nearly all of them Middle-earth
+      legendarium material.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Christopher_Tolkien
+
+  - id: christopher-tolkien-publishes-silmarillion-1977
+    organisation: diptych
+    illustration_type: manuscript-proof
+    images_required: 2
+    date: 1977
+    title: Publishes The Silmarillion, having had to invent passages to close the gaps
+    impact: high
+    description: >
+      [[work:jrr-tolkien/the-silmarillion|The Silmarillion]] appeared in
+      1977 as Christopher's single-volume construction from his father's
+      decades of unfinished drafts, assisted by Guy Gavriel Kay. He later
+      admitted, in a 2012 interview, "I had had to invent some passages" to
+      close narrative gaps, most extensively in the chapter "Of the Ruin of
+      Doriath," and described dreaming that his father was anxiously
+      searching for something, then realising in the dream, in horror, that
+      it was The Silmarillion itself.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Christopher_Tolkien
+      - https://en.wikipedia.org/wiki/The_Silmarillion
+
+  - id: christopher-tolkien-editor-or-author-debate-1981
+    organisation: mosaic
+    illustration_type: press-media-collage
+    images_required: 1
+    date: 1981
+    dateRange: "1981-2012"
+    title: Scholars start arguing over whether The Silmarillion is his book or his father's
+    impact: med
+    description: >
+      In 1981 the scholar Randel Helms argued that the single-volume
+      Silmarillion "in the shape that we have it is the invention of the
+      son not the father." Christopher pushed back in his foreword to the
+      1983 Book of Lost Tales, writing that the outcome of his editorial
+      work "is, I feel, a source of much misapprehension" - but in the same
+      foreword also allowed that publishing the book with no in-world frame
+      story, unlike The Lord of the Rings, was "certainly debatable," adding
+      "this I now think to have been an error." The question stayed open
+      through his own later admissions of invention (see 1977, above) and
+      is still argued over among Tolkien scholars.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Christopher_Tolkien
+
+  - id: christopher-tolkien-completes-history-of-middle-earth-1983
+    organisation: layered-stack
+    illustration_type: archive-stack
+    images_required: 1
+    date: 1996
+    dateRange: "1983-1996"
+    title: Spends thirteen years assembling twelve volumes of his father's drafts
+    impact: med
+    description: >
+      Between 1983 and 1996 Christopher edited and published the twelve
+      volumes of
+      [[work:jrr-tolkien/the-history-of-middle-earth|The History of
+      Middle-earth]], tracing draft by draft how
+      [[work:jrr-tolkien/the-silmarillion|The Silmarillion]] and
+      [[work:jrr-tolkien/the-lord-of-the-rings|The Lord of the Rings]] had
+      actually taken shape - presenting the material as a scholarly edition
+      with his own connecting commentary rather than smoothing it into a
+      single continuous narrative, the more strictly editorial approach he
+      said he had come to prefer.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Christopher_Tolkien
+
+  - id: christopher-tolkien-new-line-dispute-2008
+    organisation: artifact-spread
+    illustration_type: document-facsimile
+    images_required: 1
+    date: 2009-09
+    dateRange: "2008-2009"
+    title: Sues New Line Cinema over unpaid film royalties, then settles
+    impact: med
+    description: >
+      Christopher had voiced doubts since 2001 about the viability of Peter
+      Jackson's film trilogy, while stressing it was only his opinion. In
+      2008 he brought legal proceedings against New Line Cinema, claiming
+      the studio owed his family £80 million in unpaid royalties; the two
+      sides reached an undisclosed settlement in September 2009, and he
+      withdrew his legal objection to the planned Hobbit films. In a 2012
+      interview he was blunter about the films themselves: "They gutted the
+      book, making an action film for 15 to 25-year-olds."
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Christopher_Tolkien
+
+  - id: christopher-tolkien-bodley-medal-resigns-estate-2016
+    organisation: medallion
+    illustration_type: emblem-seal
+    images_required: 1
+    date: 2016
+    dateRange: "2016-2017"
+    title: Wins the Bodley Medal, then steps back from running the Tolkien Estate
+    impact: med
+    description: >
+      In 2016 Christopher won the Bodley Medal, recognising outstanding
+      contributions to literature, culture, science and communication. He
+      had chaired the Tolkien Estate, the business entity handling his
+      father's literary legacy, and served as a trustee of the Tolkien
+      Charitable Trust; he resigned as the Estate's director in 2017, at
+      ninety-two, handing on the business side of a legacy he had already
+      spent more than four decades editing.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Christopher_Tolkien
+
+  - id: christopher-tolkien-dies-2020
+    organisation: interlude
+    illustration_type: portrait-of-absence
+    images_required: 1
+    date: 2020-01-16
+    dateRange: "2020-2021"
+    title: Dies in France; a colleague finishes the last volume he had already arranged
+    impact: high
+    description: >
+      Christopher Tolkien died on 16 January 2020 in Draguignan, France, at
+      95, ending the 45-year posthumous editing project he began the year
+      his father died.
+      [[work:jrr-tolkien/the-nature-of-middle-earth|The Nature of
+      Middle-earth]] appeared the following year, edited by the Tolkien
+      linguistics scholar Carl F. Hostetter under an arrangement Christopher
+      had made with him before his death - the first major posthumous
+      volume neither Tolkien himself nor Christopher lived to finish
+      editing.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Christopher_Tolkien
+      - https://en.wikipedia.org/wiki/Carl_F._Hostetter
+sources:
+  - https://en.wikipedia.org/wiki/Christopher_Tolkien
+  - https://en.wikipedia.org/wiki/The_Silmarillion
+  - https://en.wikipedia.org/wiki/J._R._R._Tolkien_bibliography

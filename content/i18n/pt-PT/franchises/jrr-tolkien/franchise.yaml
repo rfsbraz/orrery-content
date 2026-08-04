@@ -1,0 +1,98 @@
+# Tradução pt-PT (português europeu) da prosa curada da ala J. R. R. Tolkien.
+# `startHere.paths` é uma lista aninhada com id: funde-se item a item pela
+# chave `id` (docs/SCHEMA.md, "Nested lists merge by id"), pelo que aqui só
+# vai prosa - nunca `workIds`, `orderId` ou `fit`. Nenhum dos cinco paths tem
+# `note` na base, pelo que não há nenhum aqui.
+#
+# TÍTULOS DE OBRAS: mantêm-se em inglês em toda esta ala. Não existe edição
+# portuguesa registada (editions.yaml) de The Hobbit, de The Silmarillion nem
+# do romance único The Lord of the Rings - a única edição pt-PT catalogada
+# nesta ala é apenas do terceiro volume, "O Regresso do Rei" (Europa-América,
+# 2002), que não cobre a obra tal como aqui catalogada - pelo que nenhum
+# título de obra tem tradução publicada a usar (docs/SCHEMA.md, "Never
+# translate a published title").
+#
+# "Middle-earth" traduz-se por "Terra-Média", o termo estabelecido nas
+# edições portuguesas de Tolkien (Bertrand); não é título de uma obra, é o
+# nome do cenário.
+#
+# globalEvents não é overlay - os comentários que acompanham cada entrada em
+# include/exclude são um registo de decisão editorial, não prosa que o leitor
+# vê (docs/CURATION.md SS2), e ficam de fora deste ficheiro tal como em todas
+# as outras alas já traduzidas.
+
+- id: jrr-tolkien
+  description: >
+    Um filólogo de Oxford cujos dois romances - a aventura infantil
+    [[work:jrr-tolkien/the-hobbit|The Hobbit]] (1937) e a sua sequela muito
+    maior [[work:jrr-tolkien/the-lord-of-the-rings|The Lord of the Rings]]
+    (1954-1955, um único romance dividido em três volumes pelo custo do
+    papel, não uma trilogia por conceção) - fundaram, na prática, a fantasia
+    moderna como género. Ambos assentam sobre um legendarium quarenta anos
+    mais profundo do que qualquer um dos dois livros deixa ver: uma
+    mitologia privada iniciada nas trincheiras da Primeira Guerra Mundial, a
+    maior parte dela por publicar à sua morte em 1973 e editada e publicada,
+    ao longo dos quarenta e cinco anos seguintes, pelo seu filho e
+    testamenteiro literário, [[author:christopher-tolkien|Christopher
+    Tolkien]].
+
+  startHere:
+    paths:
+      - id: two-novels
+        title: "The Hobbit, depois The Lord of the Rings"
+        description: >
+          Os dois romances que Tolkien escreveu e publicou para um leitor
+          que não sabia mais nada sobre a Terra-Média - ainda a porta de
+          entrada em que todos os guias desta estante concordam. Primeiro a
+          aventura de Bilbo, depois a sequela muito maior que o seu primo
+          herda. O custo é o que fica de fora: quarenta anos de mitologia
+          mais profunda que nenhum dos dois livros exige conhecer, e que
+          ambos estão escritos para funcionar sem ela.
+
+      - id: the-essentials
+        title: "O essencial: acrescentar The Silmarillion"
+        description: >
+          Os dois romances mais a história profunda por baixo deles, pela
+          ordem em que concordam todos os guias de leitura desta estante que
+          incluem The Silmarillion: lê-lo em terceiro lugar, depois de já se
+          conhecer o mundo de que é a história. Lê-se como uma mitologia, não
+          como um romance - denso, genealógico, pobre em diálogo - e a
+          maioria dos leitores que desiste dele fá-lo por tentar lê-lo
+          primeiro.
+
+      - id: great-tales
+        title: As três grandes tragédias da Primeira Era
+        description: >
+          A história de amor, a maldição familiar e a queda da cidade
+          escondida - as três histórias que The Silmarillion conta em poucas
+          páginas cada, aqui contadas em toda a extensão, pela ordem em que a
+          própria Primeira Era as viveu. Um percurso para um leitor que
+          continua a partir de The Silmarillion, não que começa do zero: já
+          pressupõe conhecidos os seus contornos e passa o tempo a
+          preenchê-los. Duas das três - Beren and Lúthien e The Fall of
+          Gondolin - apresentam lado a lado os sucessivos rascunhos de
+          Tolkien em vez de uma narrativa única e definida, ao contrário da
+          narrativa contínua de The Children of Húrin; essa irregularidade é
+          real e faz parte do que este percurso custa.
+
+      - id: chronological
+        title: A ordem cronológica da própria Terra-Média
+        description: >
+          O percurso de sete obras em orders.yaml: de The Silmarillion,
+          passando pelas Grandes Histórias e por Unfinished Tales, até aos
+          dois romances, pela sequência em que a história acontece e não pela
+          sequência em que foi publicada. Para um completista ou um releitor
+          que quer a cronologia da Terra-Média sem interrupções. Reordena os
+          dois romances para depois de mais de quatro livros de história da
+          Primeira e da Segunda Era, e os guias que documentam este percurso
+          reservam-no exatamente para esse leitor, não para quem começa
+          agora.
+
+      - id: complete
+        title: "Tudo, pela ordem em que foi publicado"
+        description: >
+          As trinta e duas obras, pela ordem em que Tolkien e, depois da sua
+          morte, Christopher Tolkien as foram efetivamente publicando -
+          traduções eruditas, cartas e projetos editoriais póstumos ao lado
+          dos dois romances e da mitologia. A estante inteira, não um
+          percurso curado por ela.

@@ -1,0 +1,76 @@
+# ADDITIONAL canon orders only. The DEFAULT order - all 32 works in
+# publication-chronological order - is derived automatically from works.yaml
+# and is not listed here.
+#
+# This wing carries the widest gap in the catalogue between "the two books
+# everyone has read" and "the complete works" (see franchise.yaml's own
+# header), which makes the shelf's one live ordering question worth a real
+# order rather than a footnote: does a reader walk Middle-earth in the
+# sequence Tolkien and his son published it, or in the sequence it happens
+# in-world? Only one answer earns a slot here.
+#
+# REJECTED as coined: a full "essentials" order (Hobbit + Lord of the Rings +
+# Silmarillion) and a Great Tales internal order (Beren and Lúthien, The
+# Children of Húrin, The Fall of Gondolin) are both real, sourced practices -
+# see franchise.yaml's startHere - but both are three books long, which this
+# catalogue's own convention (SKILL.md, "more than about five works in a path
+# means you are describing an order") makes a startHere path's workIds, not
+# an order. Writing them here as well would duplicate the same three ids in
+# two files that can drift apart.
+#
+# REJECTED as coined: a "chronological" order for the two novels alone, or for
+# the Great Tales alone against publication order - neither reshuffles enough
+# on its own to pass the divergence test; both are folded into the one order
+# below, which is the only reshuffle actually documented at whole-work
+# granularity.
+
+- id: jrr-tolkien/chronological
+  name: Middle-earth's own chronological order
+  type: chronological-inuniverse
+  source: canon
+  rationale: >
+    The seven works that tell one continuous Middle-earth story, read in the
+    order the story itself unfolds rather than the order it reached print:
+    the creation of the world and the wars of the First Age
+    ([[work:jrr-tolkien/the-silmarillion|The Silmarillion]]), the three tales
+    it tells in summary at their full length
+    ([[work:jrr-tolkien/beren-and-luthien|Beren and Lúthien]],
+    [[work:jrr-tolkien/the-children-of-hurin|The Children of Húrin]], and
+    [[work:jrr-tolkien/the-fall-of-gondolin|The Fall of Gondolin]], in that
+    internal sequence), the Second and early Third Age material in
+    [[work:jrr-tolkien/unfinished-tales|Unfinished Tales]], and only then the
+    two published novels. For a completionist or a re-reader who wants
+    Middle-earth's own timeline unbroken, not the order Tolkien and his son
+    happened to publish it in across sixty years. The cost is structural, not
+    a matter of taste: both novels were written and published for a reader
+    who knew none of this, and arriving at them already holding four and a
+    half books of First and Second Age history means meeting several of
+    their own reveals - who people are descended from, what became of the
+    Rings, why the war being fought is being fought - already settled rather
+    than discovered. It is also a narrower walk than it looks: it covers only
+    the seven works that tell a continuous Middle-earth story, not this
+    wing's other twenty-five - the scholarly translations, letters, poetry
+    and one-off tales that sit outside Middle-earth's own timeline entirely,
+    and [[work:jrr-tolkien/the-history-of-middle-earth|The History of
+    Middle-earth]], which this catalogue holds as one 1983-1996 scholarly
+    project documenting how the legendarium was drafted, not as an in-world
+    narrative with a chronological slot of its own (see works.yaml's own
+    header, "STRUCTURAL CALL THREE").
+  orderedWorkIds:
+    - jrr-tolkien/the-silmarillion
+    - jrr-tolkien/beren-and-luthien
+    - jrr-tolkien/the-children-of-hurin
+    - jrr-tolkien/the-fall-of-gondolin
+    - jrr-tolkien/unfinished-tales
+    - jrr-tolkien/the-hobbit
+    - jrr-tolkien/the-lord-of-the-rings
+  debated:
+    - "Reading The Silmarillion before The Hobbit and The Lord of the Rings is the minority practice among the guides that document this order at all - most, including Tolkien Gateway's own 'reading order' article, recommend it only for a second read or a completionist, precisely because it settles reveals the two novels are written to deliver as discoveries. This wing's own default admission path (see franchise.yaml's startHere) puts the two novels first for that reason."
+    - "Unfinished Tales spans Second Age material (the downfall of Númenor) and Third Age material (the Istari, the founding of Rohan) that a chapter-by-chapter fan chronology would split across the timeline; this order keeps it as the single 1980 work this catalogue holds it as (see works.yaml), placed as one block after the Great Tales and just before The Hobbit, which is where its majority Third Age content and its own function as annotation to the two novels put it."
+    - "The internal order of the three Great Tales - Beren and Lúthien before The Children of Húrin before The Fall of Gondolin - reflects when each is set in the First Age (Beren's generation predates Húrin's, and Gondolin's own years run latest of the three), not the order Christopher Tolkien published the standalone books in (2007, 2017, 2018)."
+    - "The scholarly translations (the two Gawain volumes, the Sigurd and Gudrún poem, Beowulf), the letters, the poetry collections, and the one-off tales not set in Middle-earth (The Story of Kullervo, The Fall of Arthur, The Bovadium Fragments) have no in-world chronological slot at all and are not part of this order; a reader wanting the whole wing wants the derived default (orderId: default) instead."
+  sources:
+    - https://tolkiengateway.net/wiki/Reading_order
+    - https://www.dbratman.net/tolkien_order.html
+    - https://pagesunbound.wordpress.com/2018/10/30/what-order-should-you-read-j-r-r-tolkiens-books-in/
+    - https://fictionhorizon.com/tolkiens-middle-earth-books-reading-order/

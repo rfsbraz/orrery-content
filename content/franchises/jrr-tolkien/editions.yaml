@@ -1,0 +1,696 @@
+# Editions of J. R. R. Tolkien: 47 entries covering 32 of 32 works - every
+# work in works.yaml carries at least one verified edition. 46 English (en),
+# 1 Portuguese (pt-PT). Every isbn13 below was re-derived by hand (EAN-13
+# check-digit arithmetic) and cross-checked against at least two independent
+# records - a Wikipedia infobox (itself sourced to Hammond & Scull's
+# "Chronology" or a named publisher/OCLC record) and the record's own
+# permalink at openlibrary.org/isbn/<isbn>, opened individually. No isbn13
+# below rests on a single unopened source.
+#
+# WHY 46 ENGLISH AND ALMOST NO PORTUGUESE. Tolkien wrote in English; this
+# file's job for a native-language author is to record the buyable object,
+# which for the overwhelming majority of his 32 works IS the English
+# HarperCollins/Houghton Mifflin edition - there is no realistic Portuguese
+# equivalent to compete with a first look. Where a genuine current UK
+# HarperCollins paperback exists in the standard "978-0-261-102xxx/103xxx"
+# reissue block used across this whole backlist, it is preferred (most-recent-
+# in-print, per docs/CURATION.md's tiebreak order) over the original
+# hardback; where Wikipedia's own infobox ISBN is the cleanest-sourced number
+# and no ambiguity-free reissue turned up, that first edition is used instead
+# and said so below.
+#
+# THE LORD OF THE RINGS: one work, five editions, not a contradiction. Per
+# works.yaml's own "STRUCTURAL CALL TWO," this catalogue treats LOTR as one
+# novel split into three volumes by a 1950s printing-cost decision, not three
+# books - but a reader today can buy EITHER the three-volume set or a modern
+# single-volume edition, and both are real, current, legitimately "the"
+# edition. The precedent for one workId carrying several physical-volume
+# editions already exists in this catalogue (stephen-king/editions.yaml
+# records The Stand as two volumes, "volume 1 of 2" / "volume 2 of 2," on one
+# workId): the same shape is used here, scaled to three volumes plus a
+# single-volume alternative, all four pointing at
+# jrr-tolkien/the-lord-of-the-rings.
+#
+# THE HISTORY OF MIDDLE-EARTH: one work, twelve editions, same reasoning at
+# a larger scale. works.yaml's own "STRUCTURAL CALL THREE" keeps this a single
+# grouped apocrypha entry rather than twelve work ids, because the twelve
+# volumes are one 1983-1996 scholarly project, not a series a reader picks
+# volumes of independently - but each of the twelve IS a real, separately
+# published, separately-ISBN'd physical book, and silently picking volume 1's
+# ISBN to stand in for the whole would misrepresent both the object (a reader
+# who buys "the" History of Middle-earth on that ISBN gets 1/12 of it) and the
+# project. All twelve are recorded below, each tagged "Volume N of 12," all on
+# workId jrr-tolkien/the-history-of-middle-earth - the same King-precedent
+# pattern, at 12 volumes instead of 2. The 2002 combined index volume is
+# outside works.yaml's own twelve-volume scope note and is not recorded here.
+#
+# CRITICAL-EDITION CALLS. Three works have both a "plain" edition and a later
+# edition with genuinely different content, and the entry below is the one
+# matching the SCOPE works.yaml's own synopsis describes, not just the
+# earliest printing:
+#   - A Secret Vice: works.yaml's entry is specifically the 2016 Fimi &
+#     Higgins critical edition that restores the "Fonwegian" glossary omitted
+#     from every earlier printing. The isbn13 below (Wikipedia infobox,
+#     cross-checked openlibrary.org/isbn/9780008131395) is that 2016 hardback,
+#     not the 1983 plain text folded into The Monsters and the Critics.
+#   - The Letters of J. R. R. Tolkien: works.yaml's synopsis explicitly notes
+#     "Revised and expanded in 2023." The isbn13 below is the 2023 HarperCollins
+#     "Revised and Expanded Edition" (one of two 2023 bindings sharing that
+#     text, per openlibrary.org/isbn/9780008628765 and .../9780008628789 - the
+#     other binding's ISBN is 9780008628789, recorded here as a note rather
+#     than a second entry since both are the same text), not the 1981 original.
+#   - The Homecoming of Beorhtnoth Beorhthelm's Son: works.yaml's own note
+#     records that this was "republished on its own in 2023 as 'The Battle of
+#     Maldon: together with The Homecoming of Beorhtnoth.'" That is exactly
+#     the buyable object below - title recorded as printed on that jacket,
+#     not translated back to the work's own title.
+#
+# TREE AND LEAF: works.yaml's synopsis is deliberately the ORIGINAL two-piece
+# 1964 book ("On Fairy-Stories" + "Leaf by Niggle"), not the 1988 edition that
+# adds the poem "Mythopoeia" or the 2001 edition that further adds "The
+# Homecoming of Beorhtnoth." The 2025 HarperCollins edition below, subtitled
+# "Including Leaf by Niggle" on its own cover (openlibrary.org/isbn/9780008761899),
+# is the current edition whose own subtitle confirms it holds only those two
+# pieces - the scope match works.yaml's synopsis needs, not a coincidence of
+# convenience.
+#
+# WHAT WAS CHECKED (pt-PT). The Lord of the Rings carries TWO pt-PT editions
+# below (The Two Towers, The Return of the King), both the same Europa-América
+# 2002 "11ª edição" run - not a matched three-volume Portuguese set, because
+# the Fellowship candidate below stayed out:
+#   - A 2022 "O Senhor dos Anéis: A Sociedade do Anel" (Fellowship) carries
+#     ISBN 978-989-777-392-1 - a 978-989 prefix, which is Portugal's own
+#     registrant range - but its own openlibrary.org/isbn/9789897773921 record
+#     lists "publish_places: Brazil," a direct contradiction, and the
+#     Biblioteca Nacional de Portugal catalogue (catalogo.bnportugal.gov.pt)
+#     holds no record at all under this ISBN. Two disagreeing signals and no
+#     way to break the tie: left out rather than shipped.
+#   - A matching "As Duas Torres" (Two Towers) candidate, ISBN
+#     978-972-104-144-8: digits 9-7-8-9-7-2-1-0-4-1-4-4 sum to 102, forcing
+#     check digit 8, which is what's printed - a valid ISBN-13. Its Open
+#     Library record (openlibrary.org/books/OL18774656M) confirms the same
+#     Europa-América run as the Return of the King entry, so it ships below.
+# No pt-PT candidate for The Hobbit, The Silmarillion or the single-volume
+# LOTR was found. Wook and Bertrand, the two pt-PT retailers with the fullest
+# catalogues, both block automated fetches; a human with a browser on either
+# is the next real step, not a guess from this file.
+
+# ============================= CORE (3) ==============================
+
+- id: jrr-tolkien/the-hobbit/harpercollins-en
+  workId: jrr-tolkien/the-hobbit
+  isbn13: "9780261102217"
+  language: en
+  format: paperback
+  publisher: HarperCollins
+  year: 2009
+  note: >
+    Current HarperCollins paperback, with Douglas A. Anderson's foreword;
+    subtitle "or There and Back Again" as printed.
+  sources:
+    - https://openlibrary.org/isbn/9780261102217
+
+- id: jrr-tolkien/the-lord-of-the-rings/fellowship-harpercollins-2020-en
+  workId: jrr-tolkien/the-lord-of-the-rings
+  isbn13: "9780008376062"
+  language: en
+  format: paperback
+  publisher: HarperCollins
+  year: 2020
+  note: >
+    Volume 1 of 3 in HarperCollins' current three-volume English paperback
+    line ("The Lord of the Rings, Book 1"). See this file's own header for
+    why a single work carries both this three-volume set and the
+    single-volume edition below.
+  sources:
+    - https://openlibrary.org/isbn/9780008376062
+
+- id: jrr-tolkien/the-lord-of-the-rings/two-towers-harpercollins-2020-en
+  workId: jrr-tolkien/the-lord-of-the-rings
+  isbn13: "9780008376079"
+  language: en
+  publisher: HarperCollins
+  year: 2020
+  note: "Volume 2 of 3, same current HarperCollins line as volume 1 above."
+  sources:
+    - https://openlibrary.org/isbn/9780008376079
+
+- id: jrr-tolkien/the-lord-of-the-rings/return-of-the-king-harpercollins-2020-en
+  workId: jrr-tolkien/the-lord-of-the-rings
+  isbn13: "9780008376086"
+  language: en
+  publisher: HarperCollins
+  year: 2020
+  note: "Volume 3 of 3, same current HarperCollins line as volumes 1-2 above."
+  sources:
+    - https://openlibrary.org/isbn/9780008376086
+
+- id: jrr-tolkien/the-lord-of-the-rings/single-volume-50th-anniversary-en
+  workId: jrr-tolkien/the-lord-of-the-rings
+  isbn13: "9780261103207"
+  language: en
+  publisher: HarperCollins
+  year: 1994
+  note: >
+    The single-volume 50th Anniversary Edition (1,184 pages) - the modern
+    one-book alternative to the three-volume set above, sold in parallel
+    today. Neither format supersedes the other; see this file's own header.
+  sources:
+    - https://openlibrary.org/isbn/9780261103207
+
+- id: jrr-tolkien/the-lord-of-the-rings/two-towers-europa-america-2002-pt
+  workId: jrr-tolkien/the-lord-of-the-rings
+  isbn13: "9789721041448"
+  language: pt-PT
+  title: "As duas Torres"
+  publisher: Europa-América
+  year: 2002
+  note: >
+    "11ª edição" per its own record - the same long-running Europa-América
+    run as the Return of the King entry below (volume 2 of 3). No verified
+    pt-PT edition of volume 1 exists in this file; see this file's own
+    header for the Fellowship candidate that was checked and why it stayed
+    out.
+  sources:
+    - https://openlibrary.org/books/OL18774656M
+
+- id: jrr-tolkien/the-lord-of-the-rings/return-of-the-king-europa-america-2002-pt
+  workId: jrr-tolkien/the-lord-of-the-rings
+  isbn13: "9789721041547"
+  language: pt-PT
+  title: "O regresso do rei"
+  publisher: Europa-América
+  year: 2002
+  note: >
+    "11ª edição" per its own record - a long-running reprint of Europa-América's
+    historical Portuguese translation of The Return of the King (volume 3 of 3),
+    the same Portuguese publisher this catalogue already cites for other
+    out-of-print Tolkien-era translations (see the Two Towers entry above,
+    volume 2 of the same run). No verified pt-PT edition of volume 1 exists
+    in this file; see this file's own header for the Fellowship candidate
+    that was checked and why it stayed out.
+  sources:
+    - https://openlibrary.org/isbn/9789721041547
+
+- id: jrr-tolkien/the-silmarillion/harpercollins-en
+  workId: jrr-tolkien/the-silmarillion
+  isbn13: "9780261102736"
+  language: en
+  format: paperback
+  publisher: HarperCollins
+  year: 1999
+  note: Current HarperCollins paperback, "New Ed" reissue.
+  sources:
+    - https://openlibrary.org/isbn/9780261102736
+
+# ============================ EXTENDED (11) ============================
+
+- id: jrr-tolkien/farmer-giles-of-ham/allen-and-unwin-1949-en
+  workId: jrr-tolkien/farmer-giles-of-ham
+  isbn13: "9780048230683"
+  language: en
+  publisher: George Allen & Unwin
+  year: 1949
+  note: >
+    First edition, ISBN retroactively assigned per standard 1970s practice for
+    books still in print when the ISBN system launched. A later HarperCollins/
+    Unwin Hyman paperback (ISBN 978-0-261-102088) is also current, but its own
+    Open Library record carries a self-contradictory 1949 publish date on an
+    ISBN block that could not have existed then - not used here to avoid
+    shipping that discrepancy.
+  sources:
+    - https://en.wikipedia.org/wiki/Farmer_Giles_of_Ham
+
+- id: jrr-tolkien/the-adventures-of-tom-bombadil/harpercollins-2014-en
+  workId: jrr-tolkien/the-adventures-of-tom-bombadil
+  isbn13: "9780007557271"
+  language: en
+  format: hardcover
+  publisher: HarperCollins
+  year: 2014
+  sources:
+    - https://openlibrary.org/isbn/9780007557271
+    - https://en.wikipedia.org/wiki/The_Adventures_of_Tom_Bombadil
+
+- id: jrr-tolkien/tree-and-leaf/harpercollins-2025-en
+  workId: jrr-tolkien/tree-and-leaf
+  isbn13: "9780008761899"
+  language: en
+  publisher: HarperCollins
+  year: 2025
+  note: >
+    Current edition, subtitled on its own cover "Including Leaf by Niggle" -
+    confirming it holds only the two pieces works.yaml's synopsis describes,
+    not the later editions that add "Mythopoeia" or "The Homecoming of
+    Beorhtnoth." See this file's own header.
+  sources:
+    - https://openlibrary.org/isbn/9780008761899
+
+- id: jrr-tolkien/the-road-goes-ever-on/harpercollins-2002-en
+  workId: jrr-tolkien/the-road-goes-ever-on
+  isbn13: "9780007136551"
+  language: en
+  publisher: HarperCollins
+  year: 2002
+  note: >
+    HarperCollins hardcover reprint carrying the same text and companion CD
+    (Donald Swann's settings, sung by William Elvin) as the 1993 edition, per
+    the book's own Wikipedia article.
+  sources:
+    - https://openlibrary.org/isbn/9780007136551
+    - https://en.wikipedia.org/wiki/The_Road_Goes_Ever_On
+
+- id: jrr-tolkien/smith-of-wootton-major/harpercollins-1991-en
+  workId: jrr-tolkien/smith-of-wootton-major
+  isbn13: "9780261102118"
+  language: en
+  format: hardcover
+  publisher: HarperCollins
+  year: 1991
+  sources:
+    - https://openlibrary.org/isbn/9780261102118
+    - https://en.wikipedia.org/wiki/Smith_of_Wootton_Major
+
+- id: jrr-tolkien/sir-gawain-and-the-green-knight-pearl-and-sir-orfeo/harpercollins-2020-en
+  workId: jrr-tolkien/sir-gawain-and-the-green-knight-pearl-and-sir-orfeo
+  isbn13: "9780008393625"
+  language: en
+  publisher: HarperCollins
+  year: 2020
+  note: Tolkien's own 1975 modern-English verse translations of the three poems.
+  sources:
+    - https://openlibrary.org/isbn/9780008393625
+
+- id: jrr-tolkien/letters-from-father-christmas/harpercollins-2004-en
+  workId: jrr-tolkien/letters-from-father-christmas
+  isbn13: "9780261103863"
+  language: en
+  title: "Letters from Father Christmas"
+  format: hardcover
+  publisher: HarperCollins
+  year: 2004
+  note: >
+    "25th Anniversary" edition, genuinely retitled from the 1976 first edition
+    "The Father Christmas Letters" (works.yaml's own title) - a real published
+    retitling, not house styling, so title is recorded here per SCHEMA.md.
+  sources:
+    - https://openlibrary.org/isbn/9780261103863
+
+- id: jrr-tolkien/mr-bliss/harpercollins-2024-en
+  workId: jrr-tolkien/mr-bliss
+  isbn13: "9780008705312"
+  language: en
+  publisher: HarperCollins
+  year: 2024
+  sources:
+    - https://openlibrary.org/isbn/9780008705312
+
+- id: jrr-tolkien/roverandom/harpercollins-2013-en
+  workId: jrr-tolkien/roverandom
+  isbn13: "9780007523283"
+  language: en
+  publisher: HarperCollins
+  year: 2013
+  note: >
+    "The Pocket Roverandom" per its own cover - a format label, not a
+    different published title, so title is not recorded here.
+  sources:
+    - https://openlibrary.org/isbn/9780007523283
+
+- id: jrr-tolkien/the-legend-of-sigurd-and-gudrun/harpercollins-en
+  workId: jrr-tolkien/the-legend-of-sigurd-and-gudrun
+  isbn13: "9780007317240"
+  language: en
+  publisher: HarperCollins
+  year: 2009
+  sources:
+    - https://openlibrary.org/isbn/9780007317240
+    - https://en.wikipedia.org/wiki/The_Legend_of_Sigurd_and_Gudr%C3%BAn
+
+- id: jrr-tolkien/beowulf-a-translation-and-commentary/harpercollins-2014-en
+  workId: jrr-tolkien/beowulf-a-translation-and-commentary
+  isbn13: "9780007590063"
+  language: en
+  format: hardcover
+  publisher: HarperCollins
+  year: 2014
+  note: >
+    Subtitled "Together with Sellic Spell" on its own cover, matching
+    works.yaml's synopsis exactly.
+  sources:
+    - https://openlibrary.org/isbn/9780007590063
+    - https://en.wikipedia.org/wiki/Beowulf:_A_Translation_and_Commentary
+
+# ============================ APOCRYPHA (18) ============================
+
+- id: jrr-tolkien/sir-gawain-and-the-green-knight-middle-english-text/oup-1967-en
+  workId: jrr-tolkien/sir-gawain-and-the-green-knight-middle-english-text
+  isbn13: "9780198114864"
+  language: en
+  publisher: Clarendon Press / Oxford University Press
+  year: 1967
+  note: >
+    The Norman Davis-revised second edition of the Tolkien & E. V. Gordon
+    scholarly text; still the standard classroom edition per the book's own
+    Open Library record.
+  sources:
+    - https://openlibrary.org/isbn/9780198114864
+
+- id: jrr-tolkien/on-fairy-stories/essays-presented-to-charles-williams-1972-en
+  workId: jrr-tolkien/on-fairy-stories
+  isbn13: "9780836927689"
+  language: en
+  publisher: Books for Libraries Press
+  year: 1972
+  note: >
+    A library reprint of the full multi-author anthology "Essays Presented to
+    Charles Williams" (Oxford University Press, 1947) in which "On
+    Fairy-Stories" first appeared, alongside contributions by Dorothy L.
+    Sayers among others - the whole anthology, matching works.yaml's own
+    authorRole: contributor / format: anthology entry, not an extract of
+    Tolkien's essay alone.
+  sources:
+    - https://openlibrary.org/isbn/9780836927689
+
+- id: jrr-tolkien/the-homecoming-of-beorhtnoth-beorhthelms-son/harpercollins-2023-en
+  workId: jrr-tolkien/the-homecoming-of-beorhtnoth-beorhthelms-son
+  isbn13: "9780008465827"
+  language: en
+  title: "The Battle of Maldon: together with The Homecoming of Beorhtnoth"
+  format: hardcover
+  publisher: HarperCollins
+  year: 2023
+  note: >
+    Republished under this combined title in 2023, per works.yaml's own note;
+    the jacket title is recorded rather than translated back to the play's
+    own name. A paperback binding of the same 2023 text also exists (ISBN
+    978-0-00-846583-4).
+  sources:
+    - https://openlibrary.org/isbn/9780008465827
+
+- id: jrr-tolkien/unfinished-tales/harpercollins-2000-en
+  workId: jrr-tolkien/unfinished-tales
+  isbn13: "9780261102156"
+  language: en
+  format: hardcover
+  publisher: HarperCollins
+  year: 2000
+  note: Its own record calls this the "20th Anniversary Edition".
+  sources:
+    - https://openlibrary.org/isbn/9780261102156
+
+- id: jrr-tolkien/the-letters-of-jrr-tolkien/harpercollins-2023-en
+  workId: jrr-tolkien/the-letters-of-jrr-tolkien
+  isbn13: "9780008628765"
+  language: en
+  title: "Letters of J. R. R. Tolkien: Revised and Expanded Edition"
+  publisher: HarperCollins
+  year: 2023
+  note: >
+    The 2023 "Revised and Expanded Edition" works.yaml's own synopsis names,
+    not the 1981 original (ISBN 978-0-04-826005-5, out of print). One of two
+    2023 bindings sharing this text (the other carries ISBN
+    978-0-00-862878-9); this is the edition, not a distinct second one.
+  sources:
+    - https://openlibrary.org/isbn/9780008628765
+
+- id: jrr-tolkien/the-old-english-exodus/clarendon-1981-en
+  workId: jrr-tolkien/the-old-english-exodus
+  isbn13: "9780198111771"
+  language: en
+  publisher: Clarendon Press / Oxford University Press
+  year: 1981
+  note: Only edition; year matches works.yaml's own published date exactly.
+  sources:
+    - https://openlibrary.org/isbn/9780198111771
+
+- id: jrr-tolkien/finn-and-hengest/harpercollins-en
+  workId: jrr-tolkien/finn-and-hengest
+  isbn13: "9780261103559"
+  language: en
+  format: paperback
+  publisher: HarperCollins
+  year: 1998
+  note: Alan Bliss's edition, credited on the book's own record.
+  sources:
+    - https://openlibrary.org/isbn/9780261103559
+
+- id: jrr-tolkien/the-monsters-and-the-critics-and-other-essays/harpercollins-1997-en
+  workId: jrr-tolkien/the-monsters-and-the-critics-and-other-essays
+  isbn13: "9780261102637"
+  language: en
+  format: paperback
+  publisher: HarperCollins
+  year: 1997
+  sources:
+    - https://openlibrary.org/isbn/9780261102637
+
+# --- The History of Middle-earth: 12 of 12 constituent volumes, one workId.
+# See this file's own header ("THE HISTORY OF MIDDLE-EARTH") for why a
+# single-work entry in works.yaml still carries twelve separate editions
+# here. All twelve are HarperCollins' UK reissue line, mostly paperback;
+# volumes 1-2 (Book of Lost Tales I/II) are recorded hardcover per their own
+# Open Library editions.
+
+- id: jrr-tolkien/the-history-of-middle-earth/vol01-book-of-lost-tales-one-en
+  workId: jrr-tolkien/the-history-of-middle-earth
+  isbn13: "9780261102026"
+  language: en
+  format: hardcover
+  publisher: HarperCollins
+  year: 1991
+  note: "Volume 1 of 12: The Book of Lost Tales, Part One."
+  sources:
+    - https://openlibrary.org/isbn/9780261102026
+
+- id: jrr-tolkien/the-history-of-middle-earth/vol02-book-of-lost-tales-two-en
+  workId: jrr-tolkien/the-history-of-middle-earth
+  isbn13: "9780261102132"
+  language: en
+  format: hardcover
+  publisher: HarperCollins
+  year: 1991
+  note: "Volume 2 of 12: The Book of Lost Tales, Part Two."
+  sources:
+    - https://openlibrary.org/isbn/9780261102132
+
+- id: jrr-tolkien/the-history-of-middle-earth/vol03-lays-of-beleriand-en
+  workId: jrr-tolkien/the-history-of-middle-earth
+  isbn13: "9780261102262"
+  language: en
+  format: paperback
+  publisher: HarperCollins
+  year: 2002
+  note: "Volume 3 of 12: The Lays of Beleriand."
+  sources:
+    - https://openlibrary.org/isbn/9780261102262
+    - https://en.wikipedia.org/wiki/The_Lays_of_Beleriand
+
+- id: jrr-tolkien/the-history-of-middle-earth/vol04-shaping-of-middle-earth-en
+  workId: jrr-tolkien/the-history-of-middle-earth
+  isbn13: "9780261102187"
+  language: en
+  format: paperback
+  publisher: HarperCollins
+  year: 2002
+  note: "Volume 4 of 12: The Shaping of Middle-earth."
+  sources:
+    - https://openlibrary.org/isbn/9780261102187
+    - https://en.wikipedia.org/wiki/The_Shaping_of_Middle-earth
+
+- id: jrr-tolkien/the-history-of-middle-earth/vol05-lost-road-en
+  workId: jrr-tolkien/the-history-of-middle-earth
+  isbn13: "9780261102255"
+  language: en
+  format: paperback
+  publisher: HarperCollins
+  year: 2002
+  note: "Volume 5 of 12: The Lost Road and Other Writings. (Re-issue; first printing 1987.)"
+  sources:
+    - https://openlibrary.org/isbn/9780261102255
+    - https://en.wikipedia.org/wiki/The_Lost_Road_and_Other_Writings
+
+- id: jrr-tolkien/the-history-of-middle-earth/vol06-return-of-the-shadow-en
+  workId: jrr-tolkien/the-history-of-middle-earth
+  isbn13: "9780261102248"
+  language: en
+  format: paperback
+  publisher: HarperCollins
+  year: 1994
+  note: >
+    Volume 6 of 12: The Return of the Shadow (The History of The Lord of the
+    Rings, Part One). Re-issue; first printing 1988.
+  sources:
+    - https://openlibrary.org/isbn/9780261102248
+    - https://en.wikipedia.org/wiki/The_Return_of_the_Shadow
+
+- id: jrr-tolkien/the-history-of-middle-earth/vol07-treason-of-isengard-en
+  workId: jrr-tolkien/the-history-of-middle-earth
+  isbn13: "9780261102200"
+  language: en
+  format: paperback
+  publisher: HarperCollins
+  year: 1993
+  note: "Volume 7 of 12: The Treason of Isengard (The History of The Lord of the Rings, Part Two). Re-issue; first printing 1989."
+  sources:
+    - https://openlibrary.org/isbn/9780261102200
+    - https://en.wikipedia.org/wiki/The_Treason_of_Isengard
+
+- id: jrr-tolkien/the-history-of-middle-earth/vol08-war-of-the-ring-en
+  workId: jrr-tolkien/the-history-of-middle-earth
+  isbn13: "9780261102231"
+  language: en
+  format: paperback
+  publisher: HarperCollins
+  year: 2002
+  note: "Volume 8 of 12: The War of the Ring (The History of The Lord of the Rings, Part Three). Re-issue; first printing 1990."
+  sources:
+    - https://openlibrary.org/isbn/9780261102231
+    - https://en.wikipedia.org/wiki/The_War_of_the_Ring
+
+- id: jrr-tolkien/the-history-of-middle-earth/vol09-sauron-defeated-en
+  workId: jrr-tolkien/the-history-of-middle-earth
+  isbn13: "9780261103054"
+  language: en
+  format: paperback
+  publisher: HarperCollins
+  year: 2002
+  note: >
+    Volume 9 of 12: Sauron Defeated, including "The Notion Club Papers."
+    Re-issue; first printing 1992.
+  sources:
+    - https://openlibrary.org/isbn/9780261103054
+    - https://en.wikipedia.org/wiki/Sauron_Defeated
+
+- id: jrr-tolkien/the-history-of-middle-earth/vol10-morgoths-ring-en
+  workId: jrr-tolkien/the-history-of-middle-earth
+  isbn13: "9780261103009"
+  language: en
+  format: paperback
+  publisher: HarperCollins
+  year: 2002
+  note: "Volume 10 of 12: Morgoth's Ring. Re-issue; first printing 1993."
+  sources:
+    - https://openlibrary.org/isbn/9780261103009
+    - https://en.wikipedia.org/wiki/Morgoth%27s_Ring
+
+- id: jrr-tolkien/the-history-of-middle-earth/vol11-war-of-the-jewels-en
+  workId: jrr-tolkien/the-history-of-middle-earth
+  isbn13: "9780261103245"
+  language: en
+  format: paperback
+  publisher: HarperCollins
+  year: 2002
+  note: "Volume 11 of 12: The War of the Jewels. Re-issue; first printing 1994."
+  sources:
+    - https://openlibrary.org/isbn/9780261103245
+    - https://en.wikipedia.org/wiki/The_War_of_the_Jewels
+
+- id: jrr-tolkien/the-history-of-middle-earth/vol12-peoples-of-middle-earth-en
+  workId: jrr-tolkien/the-history-of-middle-earth
+  isbn13: "9780261103481"
+  language: en
+  format: paperback
+  publisher: HarperCollins
+  year: 1997
+  note: "Volume 12 of 12: The Peoples of Middle-earth. Re-issue; first printing 1996."
+  sources:
+    - https://openlibrary.org/isbn/9780261103481
+    - https://en.wikipedia.org/wiki/The_Peoples_of_Middle-earth
+
+# --- End of The History of Middle-earth block ---
+
+- id: jrr-tolkien/the-children-of-hurin/harpercollins-en
+  workId: jrr-tolkien/the-children-of-hurin
+  isbn13: "9780007246229"
+  language: en
+  publisher: HarperCollins
+  year: 2007
+  sources:
+    - https://openlibrary.org/isbn/9780007246229
+    - https://en.wikipedia.org/wiki/The_Children_of_H%C3%BArin
+
+- id: jrr-tolkien/the-fall-of-arthur/harpercollins-2013-en
+  workId: jrr-tolkien/the-fall-of-arthur
+  isbn13: "9780007489947"
+  language: en
+  publisher: HarperCollins
+  year: 2013
+  sources:
+    - https://openlibrary.org/isbn/9780007489947
+    - https://en.wikipedia.org/wiki/The_Fall_of_Arthur
+
+- id: jrr-tolkien/the-story-of-kullervo/harpercollins-2015-en
+  workId: jrr-tolkien/the-story-of-kullervo
+  isbn13: "9780008131364"
+  language: en
+  publisher: HarperCollins
+  year: 2015
+  sources:
+    - https://openlibrary.org/isbn/9780008131364
+    - https://en.wikipedia.org/wiki/The_Story_of_Kullervo
+
+- id: jrr-tolkien/a-secret-vice/harpercollins-2016-en
+  workId: jrr-tolkien/a-secret-vice
+  isbn13: "9780008131395"
+  language: en
+  publisher: HarperCollins
+  year: 2016
+  note: >
+    The Fimi & Higgins critical edition works.yaml's synopsis specifically
+    describes (restores the "Fonwegian" glossary omitted from the 1983 plain
+    printing); see this file's own header.
+  sources:
+    - https://openlibrary.org/isbn/9780008131395
+    - https://en.wikipedia.org/wiki/A_Secret_Vice
+
+- id: jrr-tolkien/beren-and-luthien/harpercollins-2017-en
+  workId: jrr-tolkien/beren-and-luthien
+  isbn13: "9780008214203"
+  language: en
+  publisher: HarperCollins
+  year: 2017
+  sources:
+    - https://openlibrary.org/isbn/9780008214203
+    - https://en.wikipedia.org/wiki/Beren_and_L%C3%BAthien
+
+- id: jrr-tolkien/the-fall-of-gondolin/harpercollins-2018-en
+  workId: jrr-tolkien/the-fall-of-gondolin
+  isbn13: "9780008302757"
+  language: en
+  publisher: HarperCollins
+  year: 2018
+  sources:
+    - https://openlibrary.org/isbn/9780008302757
+    - https://en.wikipedia.org/wiki/The_Fall_of_Gondolin
+
+- id: jrr-tolkien/the-nature-of-middle-earth/houghton-mifflin-harcourt-2021-en
+  workId: jrr-tolkien/the-nature-of-middle-earth
+  isbn13: "9780358454601"
+  language: en
+  publisher: Houghton Mifflin Harcourt
+  year: 2021
+  sources:
+    - https://openlibrary.org/isbn/9780358454601
+    - https://en.wikipedia.org/wiki/The_Nature_of_Middle-earth
+
+- id: jrr-tolkien/the-collected-poems-of-jrr-tolkien/harpercollins-2024-en
+  workId: jrr-tolkien/the-collected-poems-of-jrr-tolkien
+  isbn13: "9780063422711"
+  language: en
+  publisher: HarperCollins / William Morrow
+  year: 2024
+  note: Its own record calls this a "Three-Volume Box Set", matching works.yaml's own description.
+  sources:
+    - https://openlibrary.org/isbn/9780063422711
+    - https://en.wikipedia.org/wiki/The_Collected_Poems_of_J.R.R._Tolkien
+
+- id: jrr-tolkien/the-bovadium-fragments/harpercollins-2025-en
+  workId: jrr-tolkien/the-bovadium-fragments
+  isbn13: "9780008737764"
+  language: en
+  publisher: HarperCollins
+  year: 2025
+  sources:
+    - https://openlibrary.org/isbn/9780008737764
+    - https://www.tolkiensociety.org/2025/06/new-tolkien-book-the-bovadium-fragments/

@@ -1,0 +1,47 @@
+# Tradução pt-PT das ordens de leitura curadas: nome, justificação e os
+# pontos em debate (docs/SCHEMA.md, "orders.yaml (rationales, debated)").
+# `debated` é reescrito integralmente como prosa, tal como `rationale`,
+# ainda que o script de cobertura só conte `name` e `rationale` - é texto que
+# o leitor vê, não um campo só de curadoria. Os `orderedWorkIds` e `sources`
+# são identificadores e não se traduzem.
+#
+# "Middle-earth" traduz-se por "Terra-Média"; "First Age"/"Second Age" pelos
+# termos estabelecidos "Primeira Era"/"Segunda Era".
+
+- id: jrr-tolkien/chronological
+  name: A ordem cronológica da própria Terra-Média
+  rationale: >
+    As sete obras que contam uma única história contínua da Terra-Média,
+    lidas pela ordem em que a própria história se desenrola e não pela
+    ordem em que chegou a ser impressa: a criação do mundo e as guerras da
+    Primeira Era ([[work:jrr-tolkien/the-silmarillion|The Silmarillion]]),
+    as três histórias que ela conta resumidamente, aqui em toda a sua
+    extensão ([[work:jrr-tolkien/beren-and-luthien|Beren and Lúthien]],
+    [[work:jrr-tolkien/the-children-of-hurin|The Children of Húrin]] e
+    [[work:jrr-tolkien/the-fall-of-gondolin|The Fall of Gondolin]], por esta
+    ordem interna), o material da Segunda Era e do início da Terceira Era
+    em [[work:jrr-tolkien/unfinished-tales|Unfinished Tales]], e só depois
+    os dois romances publicados. Para um completista ou um releitor que
+    queira a cronologia da Terra-Média sem interrupções, não a ordem em que
+    Tolkien e o seu filho a foram publicando ao longo de sessenta anos. O
+    custo é estrutural, não uma questão de gosto: os dois romances foram
+    escritos e publicados para um leitor que não sabia nada disto, e chegar
+    a eles já com quatro livros e meio de história da Primeira e da Segunda
+    Era significa encontrar várias das suas próprias revelações - de quem
+    as pessoas descendem, o que aconteceu aos Anéis, porque é travada a
+    guerra que está a ser travada - já resolvidas em vez de descobertas. É
+    também um percurso mais estreito do que parece: cobre apenas as sete
+    obras que contam uma história contínua da Terra-Média, não as outras
+    vinte e cinco desta ala - as traduções eruditas, as cartas, a poesia e
+    as histórias avulsas que ficam inteiramente fora da cronologia da
+    Terra-Média, e [[work:jrr-tolkien/the-history-of-middle-earth|The
+    History of Middle-earth]], que este catálogo trata como um único
+    projeto erudito de 1983-1996 que documenta como o legendarium foi
+    rascunhado, e não como uma narrativa no universo com um lugar
+    cronológico próprio (ver o cabeçalho do próprio works.yaml, "STRUCTURAL
+    CALL THREE").
+  debated:
+    - "Ler The Silmarillion antes de The Hobbit e de The Lord of the Rings é a prática minoritária entre os guias que sequer documentam esta ordem - a maioria, incluindo o próprio artigo \"reading order\" do Tolkien Gateway, recomenda-a só para uma segunda leitura ou para um completista, precisamente porque resolve revelações que os dois romances são escritos para entregar como descobertas. O próprio percurso de entrada por defeito desta ala (ver o startHere de franchise.yaml) coloca os dois romances primeiro por essa razão."
+    - "Unfinished Tales percorre material da Segunda Era (a ruína de Númenor) e material da Terceira Era (os Istari, a fundação de Rohan) que uma cronologia de fãs, capítulo a capítulo, dividiria ao longo da linha do tempo; esta ordem mantém-na como a única obra de 1980 que este catálogo a considera (ver works.yaml), colocada como um único bloco depois das Grandes Histórias e mesmo antes de The Hobbit, que é onde o seu conteúdo maioritariamente da Terceira Era e a sua própria função de anotação aos dois romances a colocam."
+    - "A ordem interna das três Grandes Histórias - Beren and Lúthien antes de The Children of Húrin antes de The Fall of Gondolin - reflete a época em que cada uma se passa na Primeira Era (a geração de Beren é anterior à de Húrin, e os anos de Gondolin são os mais tardios das três), não a ordem em que Christopher Tolkien publicou os livros autónomos (2007, 2017, 2018)."
+    - "As traduções eruditas (os dois volumes de Gawain, o poema de Sigurd e Gudrún, Beowulf), as cartas, as coletâneas de poesia, e as histórias avulsas não passadas na Terra-Média (The Story of Kullervo, The Fall of Arthur, The Bovadium Fragments) não têm lugar cronológico nenhum no universo e não fazem parte desta ordem; um leitor que queira a ala inteira quer antes a ordem derivada por defeito (orderId: default)."
