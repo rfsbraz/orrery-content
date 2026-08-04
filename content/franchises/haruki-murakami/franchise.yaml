@@ -61,6 +61,148 @@ globalEvents:
     - portugal-bailout-2011              # a Portuguese national crisis; no documented connection
     - comics-code-authority-1954         # a 1954 US comics self-censorship code; he was five, writes no comics, and the manga adaptations of his stories (Tuttle, 2023) arrive decades after the Code's authority had already collapsed
 
+startHere:
+  paths:
+    # Source: https://www.theguardian.com/books/2023/jul/27/where-to-start-with-haruki-murakami
+    # (subreddit-pinned - see r/murakami's own mod post linking this piece),
+    # section "If you only read one": "The Wind-Up Bird Chronicle is peak
+    # Murakami... it is Murakami at his most beguiling."
+    # Source: https://www.vulture.com/article/best-haruki-murakami-books-ranked.html
+    # ("22 Best Haruki Murakami Books, Ranked") places it first, ahead of
+    # Norwegian Wood, Kafka on the Shore and every other title.
+    # Corroborated organically on r/murakami and r/books: unprompted reader
+    # accounts call it "a great starting place" and "the best...place to
+    # start" for a first Murakami.
+    - id: essentials
+      title: If you only read one
+      description: >
+        The novel that established the long, dreamlike, historically-haunted
+        form most readers now think of as distinctly his: a man's search for
+        his missing cat widens into a search for his missing wife, and pulls
+        in a psychic, a dry well and a soldier's buried account of wartime
+        Manchuria.
+      workIds:
+        - haruki-murakami/the-wind-up-bird-chronicle
+      orderId: null
+      fit:
+        experience: [new, returning]
+        commitment: [taste]
+      note: >
+        The cost is length and density - over 600 pages, three
+        loosely-joined volumes originally, a plot that resists a tidy
+        summary - the opposite of a quick taste of him.
+
+    # Source: https://www.theguardian.com/books/2023/jul/27/where-to-start-with-haruki-murakami,
+    # section "The entry point": "Norwegian Wood lacks the otherworldly
+    # strangeness that has come to characterise much of Murakami's most
+    # popular work... [it] is Murakami's most accessible novel."
+    # Source: https://www.vulture.com/article/best-haruki-murakami-books-ranked.html
+    # calls it "a rare work of realism" and "proof that Murakami is at least
+    # as effective without his surrealist shtick."
+    - id: the-famous-one
+      title: "Know him by reputation? Start here anyway - carefully"
+      description: >
+        The realist campus love story that made him a bestseller in Japan
+        and, for many readers outside it, the only Murakami title they know
+        by name - a Tokyo student's grief for a childhood friend, split
+        between two very different women.
+      workIds:
+        - haruki-murakami/norwegian-wood
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        The cost is representativeness: this is his least typical major
+        novel, without the surrealism, the wells, the talking animals or
+        the parallel worlds the rest of the shelf runs on. A reader who
+        loves it and expects more of the same will be surprised by
+        everything else here.
+
+    # Source: https://en.wikipedia.org/wiki/Hear_the_Wind_Sing ("It is the
+    # first book in the so-called 'Trilogy of the Rat' series... before the
+    # later epilogue Dance Dance Dance")
+    # Source: https://en.wikipedia.org/wiki/Pinball,_1973 ("The second book
+    # in the 'Trilogy of the Rat' series")
+    # Source: https://en.wikipedia.org/wiki/A_Wild_Sheep_Chase ("the third
+    # book in the so-called 'Trilogy of the Rat'")
+    - id: trilogy-of-the-rat
+      title: The Trilogy of the Rat
+      description: >
+        The same unnamed narrator and his friend the Rat across three early,
+        spare, jazz-inflected novels - a directionless summer, a vanished
+        pinball machine, and a corporate hunt for a sheep with a
+        history-shaping mark - read as the loose, informally-named set
+        critics and readers actually call them.
+      workIds:
+        - haruki-murakami/hear-the-wind-sing
+        - haruki-murakami/pinball-1973
+        - haruki-murakami/a-wild-sheep-chase
+      orderId: null
+      fit:
+        experience: [returning, completionist]
+        commitment: [taste]
+      note: >
+        Not an entry point: Murakami has called the first two "immature,"
+        and one ranked list (Vulture) reads A Wild Sheep Chase's own
+        ideas as "forced" next to his later work. This is for a reader who
+        already knows him and wants the early period as a set, in the
+        order he wrote it - Dance Dance Dance is a later, separate novel
+        that revisits the same narrator, not a fourth volume of this trio.
+
+    # Sourced per title, not as a group: each of these five carries a hard
+    # external distinction none of the extended tier's other seven titles
+    # has. Source: https://en.wikipedia.org/wiki/Blind_Willow,_Sleeping_Woman
+    # (Frank O'Connor International Short Story Award 2006; Kiriyama Prize
+    # 2007, declined). Source:
+    # https://en.wikipedia.org/wiki/Men_Without_Women_(Murakami_short_story_collection)
+    # ("Drive My Car" adapted into the Academy Award-winning 2021 film).
+    # Source: https://en.wikipedia.org/wiki/The_Elephant_Vanishes (adapted
+    # into an internationally-touring Complicite stage production). Source:
+    # https://en.wikipedia.org/wiki/Absolutely_on_Music (Hideo Kobayashi
+    # Prize, 2012). Underground's distinction is this wing's own: eras.yaml
+    # already names it, alongside after the quake, as the direct textual
+    # evidence for the detachment/commitment boundary, corroborated by
+    # Complete Review's "enthusiastic" consensus on the English edition.
+    - id: beyond-the-novels
+      title: Beyond the novels
+      description: >
+        Five works from the short fiction and nonfiction that has run
+        alongside the sixteen novels - an award-winning story collection, a
+        second that became an Academy Award-winning film, a third staged
+        internationally, a prize-winning book of conversations with
+        conductor Seiji Ozawa, and the oral history of the 1995 Tokyo sarin
+        attack that this wing's own eras track as the hinge of his career.
+      workIds:
+        - haruki-murakami/the-elephant-vanishes
+        - haruki-murakami/underground
+        - haruki-murakami/blind-willow-sleeping-woman
+        - haruki-murakami/absolutely-on-music
+        - haruki-murakami/men-without-women
+      orderId: null
+      fit:
+        experience: [completionist]
+        commitment: [taste]
+      note: >
+        This is not the whole extended tier - seven more titles wait here,
+        including two later, warmly-reviewed collections (What I Talk About
+        When I Talk About Running, First Person Singular) left out only for
+        space. The derived default still carries all twelve in publication
+        order; this is a shortcut through them, not a replacement for them.
+
+    - id: everything
+      title: Everything, in order
+      description: >
+        All twenty-nine works in the order he wrote them - sixteen novels,
+        six story collections, six works of nonfiction and one edited
+        anthology, interleaved as they actually appeared across nearly five
+        decades.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+
 sources:
   - https://en.wikipedia.org/wiki/Haruki_Murakami
   - https://en.wikipedia.org/wiki/Template:Haruki_Murakami
