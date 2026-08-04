@@ -8,10 +8,14 @@
 #
 # features is left unset (auto): editions.yaml, eras.yaml, orders.yaml,
 # events.yaml and startHere are all absent (empty is a supported state).
-# globalEvents is likewise unset - a 1939-present lifespan crosses most of
-# this catalogue's shared events, and which of them actually reach the books,
-# rather than merely overlapping her lifetime, is a sourced editorial
-# question with its own answer for each event, not yet answered here.
+# globalEvents is ruled below: a 1939-present lifespan crosses most of this
+# catalogue's shared events, and each was judged on whether it actually
+# reaches a page of hers rather than merely overlapping her lifetime (3
+# included, 12 excluded; a further 4 - the 1914 war, 1870 elementary
+# schooling, the 1926 pulp magazines and the 1935 sixpenny paperback all
+# predate her 1939 birth with no inheritance case comparable to a
+# paperback-era genre author - were left unruled as implausible on their
+# face rather than argued down one by one).
 id: margaret-atwood
 name: Margaret Atwood
 kind: author
@@ -24,6 +28,98 @@ description: >
   that has run alongside the novels since 1961, not behind them.
 authorIds: [margaret-atwood]
 themePreset: specimen-ledger
+
+globalEvents:
+  include:
+    # Her own account, "Writing Oryx and Crake" (randomhouse.com, Jan 2003,
+    # cited by Wikipedia's Oryx and Crake article): drafting the novel in
+    # autumn 2001, she stopped writing for several weeks after the
+    # attacks, unable to keep narrating a fictional catastrophe next to a
+    # real one - "It's deeply unsettling when you're writing about a
+    # fictional catastrophe and then a real one happens."
+    - sept-11-2001
+    # Positron, the digital serial she wrote for Byliner between March
+    # 2012 and May 2013, was explicitly framed by her at the time (TIME,
+    # Oct 2012) as an entry in the wave of Kindle-era e-serials this event
+    # opened - "there are a few different organizations trying digital
+    # serials right now, like Byliner, and Amazon launched their own
+    # version recently." Reworked into the full novel The Heart Goes Last
+    # (2015): an actual book on this shelf that exists in the form it
+    # does because the format did.
+    - ebook-and-self-publishing-2007
+    # Fourteen Days (2024), the Authors Guild collaborative novel she
+    # general-edited and contributed one tenant's story to, is set
+    # explicitly during the first fourteen days of the March 2020
+    # lockdown it takes its own title from (see works.yaml's own note).
+    - covid-19-pandemic-2020
+  # Considered and refused. Nothing renders unless it is in `include`
+  # above, so these change nothing; they are kept as the record of a
+  # judgement already made, so it is not re-litigated from scratch.
+  exclude:
+    # Payback (2008) was researched and largely written, then delivered as
+    # the Massey Lectures, before the crash reached its worst; reviewers
+    # called its debt-and-wealth argument "prescient" once it did
+    # (Wikipedia's own article on the book), but that is the crisis being
+    # read back into an already-substantially-finished book, not the
+    # crisis reaching the page - this global event is graded low and
+    # answered by almost nothing in the catalogue, and this wing is no
+    # exception.
+    - financial-crisis-2008
+    # Born 18 November 1939, two and a half months into the war, too
+    # young to hold a memory of it. Her own most autobiographical account
+    # of that 1940s childhood, Cat's Eye (1988), is set in explicitly
+    # postwar Toronto, not the war years themselves - lived through as an
+    # infant, and it does not reach the page.
+    - world-war-ii-1939
+    # No sourced link to Amazon's 1995 launch or to online bookselling
+    # specifically. Her documented digital-publishing engagement is the
+    # later, format-specific Kindle-era serial claimed above under
+    # ebook-and-self-publishing-2007, not backlist retail.
+    - online-bookselling-1995
+    # The Handmaid's Tale's 2010s-2020s resurgence is already carried by
+    # the Hulu adaptation, its own franchise event (events.yaml); no
+    # source found ties a further sales or reception spike specifically
+    # to BookTok rather than to the show.
+    - booktok-2020
+    # She was 21 and at university the year of the verdict. Her own
+    # repeated fights against book bans - the Handmaid's Tale challenges
+    # and the 2022 unburnable-book auction, both already this wing's own
+    # franchise events - belong to a later, mostly American wave of
+    # censorship dispute; no source ties them back to this specific 1960
+    # UK case.
+    - lady-chatterley-trial-1960
+    # Names the paperback category for secondary-world epic fantasy
+    # specifically (the event's own description cites The Lord of the
+    # Rings). She writes speculative fiction and has repeatedly and
+    # publicly drawn the line against being read as science fiction or
+    # fantasy (In Other Worlds: SF and the Human Imagination, 2011; The
+    # Progressive, Dec 2010) - a different shelf, by her own account.
+    - fantasy-paperback-boom-1965
+    # A Portuguese national event; no documented connection found to an
+    # anglophone Canadian writer's life or work.
+    - carnation-revolution-1974
+    # Same basis as carnation-revolution-1974: Portugal-specific austerity
+    # history, no sourced tie to her career.
+    - portugal-bailout-2011
+    # A generic anglophone retail trend; no source found ties her own
+    # career or sales specifically to chain bookselling rather than to
+    # publishing generally.
+    - chain-bookshop-1982
+    # Names Game of Thrones and prestige epic-fantasy television
+    # specifically. Her own television adaptation is the Hulu Handmaid's
+    # Tale, a different show in a different genre and already this wing's
+    # own franchise event - not an instance of this one.
+    - prestige-fantasy-adaptation-2011
+    # Her own comics work, the two Angel Catbird graphic novels (Dark
+    # Horse, from 2016), begins two decades after the Code's authority had
+    # already collapsed (per this event's own description); no plausible
+    # link.
+    - comics-code-authority-1954
+    # A US wartime military book-distribution program. She was an infant
+    # in wartime Canada, not the US; no source ties her family or career
+    # to it.
+    - armed-services-editions-1943
+
 sources:
   - https://en.wikipedia.org/wiki/Margaret_Atwood
   - https://margaretatwood.ca/full-bibliography-2/

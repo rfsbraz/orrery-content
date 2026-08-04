@@ -1,0 +1,81 @@
+stage: event-resonance
+summary: >
+  Ruled on the shared global-event catalogue (19 events, content/events/
+  global.yaml, read in full) for this wing's franchise.yaml: 3 included with
+  a sourced resonance sentence each, 12 considered and excluded, 4 left
+  unruled as implausible on their face (both world wars' wrong one, 1870
+  English schooling, 1926 pulp magazines, 1935 sixpenny paperback - all
+  predate her 1939 birth with no inheritance case comparable to a
+  paperback-era genre author). validate.py --slug margaret-atwood is clean
+  except the pre-existing theme.art error (visual-language's to fix) and
+  two pre-existing handoff-length warnings on eras.yaml/press-archaeology.yaml,
+  neither touched here.
+produced:
+  files:
+    - content/franchises/margaret-atwood/franchise.yaml
+  included:
+    - "sept-11-2001: she stopped drafting Oryx and Crake for weeks after the
+       attacks rather than keep narrating a fictional catastrophe beside a
+       real one (her own essay, Jan 2003)."
+    - "ebook-and-self-publishing-2007: Positron, her 2012-13 Byliner
+       digital serial (her own account, TIME, Oct 2012), became the full
+       novel The Heart Goes Last (2015) - a book that exists because the
+       format did."
+    - "covid-19-pandemic-2020: Fourteen Days (2024), which she
+       general-edited and contributed a story to, is set explicitly in the
+       first fourteen days of the March 2020 lockdown."
+  excluded: >
+    financial-crisis-2008 (Payback (2008) was mostly written before the
+    crash; "prescient" is the crisis read into a finished book, not the
+    crisis reaching the page), world-war-ii-1939 (born 2.5 months in, too
+    young to remember; Cat's Eye is set postwar), online-bookselling-1995
+    (no sourced Amazon-specific tie; her real digital-era work is the
+    Kindle-era serial claimed above), booktok-2020 (resurgence already
+    carried by the Hulu adaptation's own franchise event), lady-chatterley-
+    trial-1960 (she was 21; her own ban fights are a later, different, US
+    wave), fantasy-paperback-boom-1965 (names epic fantasy specifically;
+    she's repeatedly refused that genre label for her own work),
+    carnation-revolution-1974 and portugal-bailout-2011 (both
+    Portugal-specific, no tie to a Canadian), chain-bookshop-1982 (generic
+    retail trend, no sourced tie), prestige-fantasy-adaptation-2011 (names
+    Game of Thrones; her own adaptation is Hulu's Handmaid's Tale, already
+    a franchise event), comics-code-authority-1954 (Angel Catbird, 2016,
+    two decades after the Code's authority collapsed), armed-services-
+    editions-1943 (US wartime program; she was a wartime-Canada infant).
+  unruled: >
+    world-war-i-1914, elementary-education-act-1870, pulp-magazines-1926,
+    penguin-paperback-1935 - all predate 1939 with no plausible inheritance
+    case, left silent per franchise.yaml's own header note rather than
+    argued down individually.
+  correction: >
+    The brief opening this stage named second-wave feminism, the Berlin
+    Wall/Cold War and #MeToo as candidates worth scrutiny. None exists as a
+    catalogued entry in global.yaml (19 events, read in full) - this stage
+    can only rule on events the shared layer actually carries, so no ruling
+    was possible for them.
+  validator: >
+    One real defect caught mid-run: a draft exclusion note for
+    financial-crisis-2008 named the world-events stage by name, which
+    validate.py correctly flagged as pipeline narration in a content
+    comment; rewritten to state the same fact without naming any stage,
+    warning cleared.
+forStages:
+  reading-orders: >
+    No effect on ordering (no orders.yaml, no startHere path touches these
+    events). Worth knowing: ebook-and-self-publishing-2007 and
+    covid-19-pandemic-2020 both anchor on apocrypha-tier works (Positron's
+    Heart Goes Last origin, Fourteen Days) that a "whole shelf" path would
+    walk past silently - the sourced anchor for a future serialized-fiction
+    or contributor-work path, if one is proposed.
+  wing-audit: >
+    Two calls worth a second look. (1) covid-19-pandemic-2020 rests on
+    Fourteen Days, a 36-author anthology where Atwood is general editor and
+    one contributor among many with her specific story not even publicly
+    identified (works.yaml's own note) - thinner than the other two
+    includes, which rest on sole-authored work and her own words; confirm
+    it still clears the bar rather than reaching for a fourth entry to
+    answer the pandemic. (2) financial-crisis-2008 is excluded despite
+    Payback's Massey Lectures landing the same month Lehman collapsed and
+    being widely called "prescient" - the closest call in the file, and
+    the one most likely to look like an omission to a reader who knows the
+    Payback story.
