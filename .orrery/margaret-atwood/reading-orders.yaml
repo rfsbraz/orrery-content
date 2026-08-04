@@ -1,0 +1,66 @@
+stage: reading-orders
+summary: >
+  Built both artefacts. orders.yaml gains two additional orders: the
+  MaddAddam Trilogy (publication order, already verified as subseries and
+  story order by completeness-auditor) and a new curated order, Beyond the
+  Novels, resolving the completionist-path judgment call on the 43
+  extended-tier works - 27 central (award or sustained scholarly attention,
+  each cited), 16 peripheral (children's books, the mixed-reception Angel
+  Catbird trilogy and War Bears, five shorter collections with no
+  distinguishing recognition found). The Handmaid's Tale/Testaments pair
+  gets no order - two books in an unambiguous direct-sequel relationship are
+  path-shaped, not order-shaped - so franchise.yaml's new startHere carries
+  them as a workIds path instead. Five startHere paths total, each sourced:
+  a Gilead pair (Tertulia), a "not into dystopia" literary-realist path
+  (Readings.com.au, Women.com) answering the famous-book trap her own
+  publisher's Virago piece names explicitly, the MaddAddam arc
+  (Readings.com.au), Beyond the Novels, and everything (default). Research
+  leaned on margaretatwood.ca's own complete awards page - which corrected
+  two claims a general web search had produced (an unverifiable "IPPY for
+  Negotiating with the Dead" dropped; The Door's Governor General's Award
+  finalist nod added, moving it from a peripheral guess to central).
+  validate.py --slug margaret-atwood: 0 new errors, 0 new warnings; the
+  pre-existing theme.art error and the two pre-existing handoff-length
+  warnings (eras.yaml, press-archaeology.yaml) are unchanged and not this
+  stage's.
+produced:
+  files:
+    - content/franchises/margaret-atwood/orders.yaml
+    - content/franchises/margaret-atwood/franchise.yaml
+  orders:
+    - {id: margaret-atwood/maddaddam-trilogy, type: curated, works: 3}
+    - {id: margaret-atwood/beyond-the-novels, type: curated, works: 27}
+  startHere:
+    - {id: start-with-gilead, workIds: 2, fit: "new/returning, taste"}
+    - {id: the-other-atwood, workIds: 3, fit: "new, taste"}
+    - {id: the-maddaddam-arc, orderId: margaret-atwood/maddaddam-trilogy, fit: "new/returning, arc"}
+    - {id: beyond-the-novels, orderId: margaret-atwood/beyond-the-novels, fit: "returning/completionist, arc"}
+    - {id: everything, orderId: default, fit: "completionist, complete"}
+forStages:
+  spoiler-audit: >
+    Checked and found safe, worth a second pass anyway: The Testaments is a
+    forward sequel (no prequel risk); The Year of the Flood spoils the
+    identity of Oryx and Crake's three closing survivors if read first, which
+    is exactly why the MaddAddam order keeps publication order - confirm the
+    order's own prose (above) states the risk without naming the reveal
+    itself. Old Babes in the Wood (2023) continues Moral Disorder (2006)
+    forward into the Tig-and-Nell characters' old age and Tig's death, not
+    backward into their past - checked specifically because "continues at
+    either end" in works.yaml's own note could be misread as a prequel
+    structure; it is not one. No short story or poem was found positioned as
+    a pre-written prequel to any novel. Ungated-prose check done on all five
+    path descriptions and both order rationales: none names a plot reveal,
+    only premises.
+  wing-audit: >
+    The Angel Catbird call is the one worth a second look: Volume One won a
+    2017 Aurora Award (Canada's own SF/fantasy award) but is left out of
+    Beyond the Novels on mixed-to-negative critical reception - both facts
+    are in that order's debated block rather than resolved silently either
+    way. Confirm the five startHere paths' fit-matrix coverage still reads
+    right once other stages (art, i18n) touch this wing; new+taste and
+    completionist+complete are both covered as the skill asks.
+openQuestions:
+  - "No pt-PT overlay exists for this wing yet (confirmed absent, same as
+     eras.yaml's handoff found), so orders.yaml and franchise.yaml's new
+     startHere prose ship English-only with nothing to desynchronise -
+     translation is a clean addition whenever that stage runs."

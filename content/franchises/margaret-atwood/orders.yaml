@@ -1,0 +1,125 @@
+# ADDITIONAL canon orders only. The DEFAULT order - all 69 works in
+# publication-chronological order - is derived automatically from works.yaml
+# and is NOT listed here. Two orders below: one groups a publisher-marketed
+# trilogy that is already a works.yaml subseries; the other pulls a curated
+# thread out of the 43 extended-tier works (poetry, essays, short fiction,
+# children's books, graphic novels) for a reader who wants the nonfiction and
+# short-form writing that shaped how she is read, without also working
+# through all forty-three. The Handmaid's Tale / Testaments pair has no order
+# here: two books in an unambiguous direct-sequel relationship need a
+# startHere path, not a traversal (see franchise.yaml).
+
+- id: margaret-atwood/maddaddam-trilogy
+  name: The MaddAddam Trilogy
+  type: curated
+  source: canon
+  rationale: >
+    Oryx and Crake, The Year of the Flood and MaddAddam tell one story - the
+    genetically engineered collapse of civilization and what is left after -
+    from different vantage points, and are marketed and read as a single
+    trilogy. Publication order is the right order and the safe one: The Year
+    of the Flood runs largely parallel to Oryx and Crake rather than strictly
+    after it, but it also answers questions the first book leaves open,
+    including the identity of the three survivors glimpsed at its very end -
+    reading it second keeps that reveal intact rather than spoiling Oryx and
+    Crake's own ending in advance. The cost is committing to three books
+    before the collapse resolves; each volume works alone, but the effect of
+    watching the same catastrophe from three angles only lands read together.
+  orderedWorkIds:
+    - margaret-atwood/oryx-and-crake
+    - margaret-atwood/the-year-of-the-flood
+    - margaret-atwood/maddaddam
+  sources:
+    - https://en.wikipedia.org/wiki/The_Year_of_the_Flood
+    - https://en.wikipedia.org/wiki/MaddAddam
+    - https://en.wikipedia.org/wiki/Oryx_and_Crake
+
+- id: margaret-atwood/beyond-the-novels
+  name: "Beyond the novels"
+  type: curated
+  source: canon
+  rationale: >
+    A completionist who has read the seventeen novels next wants the
+    nonfiction, poetry and short fiction that shaped how Atwood is read and
+    that she herself has kept building on for six decades - not all
+    forty-three extended-tier works, several of which are picture books,
+    limited pamphlets or occasional pieces with no comparable recognition
+    behind them. Every work here carries an award, a defining critical
+    reception, or sustained scholarly attention: two Trillium Awards
+    (Wilderness Tips, Morning in the Burned House), a Governor General's
+    Award for her first trade collection and a Governor General's finalist
+    nod for The Door, four prizes for her first story collection Dancing
+    Girls, an Arthur Ellis Award for Stone Mattress, lecture series at Oxford
+    (Strange Things) and Cambridge (Negotiating with the Dead), and poems
+    and stories - the Circe/Mud sequence in You Are Happy, Two-Headed Poems'
+    title cycle, "Gertrude Talks Back" in Good Bones - that scholars keep
+    writing about decades on. Chronological order, matching the derived
+    default's own logic, because nothing here needs reshuffling. The cost is
+    committing to poetry and essay collections after the novels are done;
+    this is not a way into Atwood, it is what a reader who already loves her
+    reaches for next.
+  orderedWorkIds:
+    - margaret-atwood/the-circle-game
+    - margaret-atwood/the-animals-in-that-country
+    - margaret-atwood/the-journals-of-susanna-moodie
+    - margaret-atwood/power-politics
+    - margaret-atwood/survival
+    - margaret-atwood/you-are-happy
+    - margaret-atwood/dancing-girls
+    - margaret-atwood/two-headed-poems
+    - margaret-atwood/true-stories
+    - margaret-atwood/second-words
+    - margaret-atwood/bluebeards-egg
+    - margaret-atwood/wilderness-tips
+    - margaret-atwood/good-bones
+    - margaret-atwood/morning-in-the-burned-house
+    - margaret-atwood/strange-things
+    - margaret-atwood/negotiating-with-the-dead
+    - margaret-atwood/writing-with-intent
+    - margaret-atwood/moral-disorder
+    - margaret-atwood/the-door
+    - margaret-atwood/payback
+    - margaret-atwood/in-other-worlds
+    - margaret-atwood/stone-mattress
+    - margaret-atwood/dearly
+    - margaret-atwood/burning-questions
+    - margaret-atwood/old-babes-in-the-wood
+    - margaret-atwood/paper-boat
+    - margaret-atwood/book-of-lives
+  debated:
+    - "This is a partial order: sixteen of the forty-three extended-tier
+       works are not here - the seven children's picture books (Up in the
+       Tree, Anna's Pet, For the Birds, Princess Prunella and the Purple
+       Peanut, Rude Ramsay and the Roaring Radishes, Bashful Bob and Doleful
+       Dorinda, Wandering Wenda and Widow Wallop's Wunderground Washery), the
+       three Angel Catbird volumes and War Bears, and five shorter
+       collections with no comparable recognition found behind them
+       (Procedures for Underground, Days of the Rebels, Murder in the Dark,
+       Interlunar, The Tent). None is hidden: works.yaml carries all sixteen
+       and the default publication order still walks past every one in its
+       place."
+    - "Angel Catbird, Volume One won the 2017 Aurora Award for Best Graphic
+       Novel (margaretatwood.ca's own awards page), which argues for
+       inclusion. It is left out anyway: reviews of the trilogy were mixed
+       to negative on the writing specifically (Chicago Review of Books;
+       Goodreads' aggregate sits at 2.75/5), and one review's own verdict -
+       that it will be taught 'to show her range and her love of fun'
+       rather than as essential Atwood - is the closer read of where this
+       sits. A completionist who weighs the Aurora win differently may
+       reasonably add it."
+    - "The Animals in That Country, You Are Happy and Two-Headed Poems rest
+       on sustained scholarly attention rather than a prize, a closer call
+       than Circle Game's Governor General's Award or Wilderness Tips's
+       Trillium. Moral Disorder's inclusion is likewise structural rather
+       than a prize of its own: it is the collection Old Babes in the Wood
+       (2023) continues, and a reader who wants that later book's Tig-and-Nell
+       throughline entire needs this one first."
+  sources:
+    - https://margaretatwood.ca/awards-recognitions/
+    - https://en.wikipedia.org/wiki/Survival:_A_Thematic_Guide_to_Canadian_Literature
+    - https://en.wikipedia.org/wiki/The_Journals_of_Susanna_Moodie
+    - https://en.wikipedia.org/wiki/Two-Headed_Poems
+    - https://en.wikipedia.org/wiki/You_Are_Happy
+    - https://en.wikipedia.org/wiki/Writing_with_Intent
+    - https://en.wikipedia.org/wiki/Old_Babes_in_the_Wood
+    - https://en.wikipedia.org/wiki/Book_of_Lives:_A_Memoir_of_Sorts

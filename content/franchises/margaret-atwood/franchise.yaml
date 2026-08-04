@@ -6,8 +6,9 @@
 # up the larger part of her actual output - see works.yaml's header for the
 # full tiering rationale and what was checked and excluded.
 #
-# features is left unset (auto): editions.yaml, eras.yaml, orders.yaml,
-# events.yaml and startHere are all absent (empty is a supported state).
+# features is left unset (auto). editions.yaml and events.yaml are absent
+# (empty is a supported state); eras.yaml, orders.yaml and startHere are
+# present - see those files and this one's own startHere block below.
 # globalEvents is ruled below: a 1939-present lifespan crosses most of this
 # catalogue's shared events, and each was judged on whether it actually
 # reaches a page of hers rather than merely overlapping her lifetime (3
@@ -119,6 +120,105 @@ globalEvents:
     # in wartime Canada, not the US; no source ties her family or career
     # to it.
     - armed-services-editions-1943
+
+startHere:
+  paths:
+    # Source: https://tertulia.com/article/reading-your-way-through-margaret-atwood
+    # "the book that made Atwood a cultural force"
+    - id: start-with-gilead
+      title: Start with Gilead
+      description: >
+        The book that made her a cultural force, and its direct sequel
+        fifteen years on: a Handmaid's fragmented account of how Gilead took
+        her old life, then three narrators watching the cracks show in it
+        from the inside.
+      workIds:
+        - margaret-atwood/the-handmaids-tale
+        - margaret-atwood/the-testaments
+      orderId: null
+      fit:
+        experience: [new, returning]
+        commitment: [taste]
+      note: >
+        Read them in that order - The Testaments is a direct continuation,
+        not a companion piece, so nothing here is spoiled by reading forward.
+        The cost is that this shows only one register of her: the political
+        dystopia, none of the realist novels or the poetry that has run
+        alongside them since 1961.
+
+    # Source: https://www.readings.com.au/news/a-beginners-guide-to-margaret-atwood
+    # ("Not a fan of dystopia or speculative fiction?" points to Cat's Eye)
+    # Source: https://www.women.com/2191867/best-books-margaret-atwood-arent-the-handmaids-tale/
+    # (groups Alias Grace, Cat's Eye and The Edible Woman as the way past Gilead)
+    - id: the-other-atwood
+      title: "Not into dystopia? Start here"
+      description: >
+        The debut, the breakout and the historical novel that show her
+        realist, character-driven side - the register most readers who met
+        her through Gilead have never seen: a young woman's engagement
+        rebelling against her own body, a painter confronting a childhood
+        friendship that nearly broke her, and a real 1843 murder
+        reconstructed from the accused woman's own sessions with the doctor
+        sent to determine what she remembers.
+      workIds:
+        - margaret-atwood/the-edible-woman
+        - margaret-atwood/cats-eye
+        - margaret-atwood/alias-grace
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        The cost is skipping her speculative fiction entirely - no Gilead,
+        no MaddAddam - to see the literary novelist underneath the dystopias.
+
+    # Source: https://www.readings.com.au/news/a-beginners-guide-to-margaret-atwood
+    # ("speculative fiction at its finest... once you get started you will
+    # want to read them all")
+    - id: the-maddaddam-arc
+      title: The MaddAddam Trilogy
+      description: >
+        A gentler-seeming apocalypse than Gilead's, and a bigger commitment:
+        three novels watching the same engineered collapse of civilization
+        from different survivors' vantage points.
+      workIds: null
+      orderId: margaret-atwood/maddaddam-trilogy
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        The cost is three books before the story resolves. Each stands
+        alone; the payoff of watching the collapse from three angles does
+        not.
+
+    - id: beyond-the-novels
+      title: Beyond the novels
+      description: >
+        The poetry, essays and short fiction that have run alongside the
+        novels rather than behind them since 1961 - Survival's argument
+        that reshaped how Canadian literature is read and taught, the
+        Circe/Mud sequence, the lecture series at Oxford and Cambridge, the
+        memoir that closes the shelf.
+      workIds: null
+      orderId: margaret-atwood/beyond-the-novels
+      fit:
+        experience: [returning, completionist]
+        commitment: [arc]
+      note: >
+        This is not a way into Atwood - it assumes the novels are already
+        read and reaches past them into the larger, quieter part of the
+        shelf.
+
+    - id: everything
+      title: Everything, in order
+      description: >
+        All sixty-nine works in the order she wrote them, novels and poetry
+        and essays interleaved as they actually appeared across six decades.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
 
 sources:
   - https://en.wikipedia.org/wiki/Margaret_Atwood
