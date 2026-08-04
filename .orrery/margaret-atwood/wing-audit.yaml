@@ -1,0 +1,287 @@
+stage: wing-audit
+summary: >
+  First audit of the Margaret Atwood wing (69 works, 3 eras, 8 franchise
+  events, 6 lifeEvents, 3 included globals, 2 orders, 5 startHere paths, 63
+  covers, 41 editions, full pt-PT). Every gate re-run and every headline
+  number re-derived from the scripts or from the YAML directly, never read
+  off a prior handoff - and two of the numbers a prior handoff reports are
+  now wrong. One blocking finding: The Trumpets of Summer's only substantive
+  source is dead (404, and its TLS certificate does not even match the host),
+  and it is the sole support for three specific claims in a reader-facing
+  synopsis that the surviving Wikipedia source does not carry. The wing's two
+  most-flagged risks both came back clean under independent check: all four
+  spoiler redactions survive pt-PT intact, and eras.yaml's 69/69-in-exactly-
+  one-span claim re-derives exactly. The real weak seam is aura proportion,
+  not accuracy: event-resonance's explicit include list cut the wing's aura
+  from press-archaeology's reported 29 entries to 17, which silently reopened
+  an 8-year dark run over 1961-1968 that nobody has re-read since.
+
+gates:
+  validate: >
+    `python3 scripts/validate.py --slug margaret-atwood` - OK, 0 errors, 1337
+    works, 62 authors, all references resolve. 3 warnings, all of them
+    handoff-length soft caps on this wing's own .orrery files
+    (eras 1395w, press-archaeology 1336w, visual-language 852w against a 700
+    cap); 167 warnings on other wings suppressed by --slug. Zero
+    sanctuary-rule warnings on content comments - see findings, because the
+    scan misses this wing's four real ones. Green again after this stage's
+    mechanical fixes.
+  validatorFalsified: >
+    Three guards were made to fail on purpose before their green runs were
+    trusted. (1) theme.art: deleting the whole `art:` block produced
+    "no `art:` block - the wing has no visual law", and deleting one field
+    (accentUse) produced "`art:` is missing accentUse - a partial visual law
+    reads as settled and is not"; restoring returned OK both times. (2) era
+    overlap: widening era 2 to 1970-1985 against era 1's 1961-1972 produced
+    no error and no warning at all - the gap eras.yaml's own handoff reports
+    is real and still open catalogue-wide. (3) editions ISBN check: this
+    stage's own first check-digit routine flagged 37 of 40 shipped ISBNs as
+    invalid, which was the routine summing all thirteen digits instead of
+    twelve; corrected, all 40 pass, and corrupting one digit makes it fail.
+  i18n: >
+    `python3 scripts/i18n_coverage.py` - pt-PT 177/191 files fully covered.
+    None of this wing's 12 files (5 franchise files, margaret-atwood plus the
+    6 co-author bios) appears in the PARTIAL list. Re-derived independently of
+    the script by diffing base against overlay field by field: 69/69 synopses,
+    8/8 event title+description, 3/3 era title+description+themes, 6/6
+    lifeEvent title+description, the bio, the franchise description, 5/5
+    startHere path title+description+note, and both orders' name, rationale
+    and every debated entry. Zero dangling overlay ids. The 14 partial files
+    are pre-existing on other wings and are not this wing's.
+  eventDensity: >
+    `python3 scripts/event_density.py` - 19 global events, {med 11, low 6,
+    high 2}, high budget 2 used of ~17, no decade over the budget of 3. Every
+    decade this wing publishes into (1960s-2020s) already carries at least one
+    global event, so `world-events` was correctly skipped for this author. The
+    empty decades are 1580s-1860s and 1880s-1900s, all pre-Atwood and not this
+    wing's finding.
+  auraDensity: >
+    `python3 scripts/aura_density.py margaret-atwood` - 69 works, 17 aura
+    entries, 0.25 per work, span 1961-2025, longest dark run 8 yrs
+    (1961-1968), and this wing is the one the script flags. Re-derived by hand
+    from the three YAML sources and got 17 (8 franchise + 6 life + 3 included
+    globals) and the same 8-year run. press-archaeology reports 29 entries,
+    0.42 per work and a dark run closed to 4 pre-career years; that was true
+    on its own branch and stopped being true when event-resonance replaced the
+    lifetime-arithmetic default with a 3-event include list. Cross-wing, 0.25
+    is mid-pack (Sanderson 0.26, Lee Child 0.26, Lovecraft 0.27; Poe 0.08 and
+    Shirley 0.15 are thinner), so the wing is not disproportionately thin -
+    the finding is where the aura is missing, not how much there is.
+  artRotation: >
+    `python3 scripts/art_rotation.py margaret-atwood --check` (and with the
+    flags in the other order) - both gate lines pass: "organisation rotation
+    holds across all 14 events: no organisation over its cap, no neighbour
+    repeats" and "pacing holds: no two loud cells touching or sharing a
+    screenful, no plateau". Contour #=.=#=.===#=#=. Distribution
+    artifact-spread / medallion / mosaic / beside / diptych at 2/14 each,
+    full-bleed-vista / passage / interlude / immersion at 1/14. The script
+    also prints "1 rotation problem(s) - only 0 of 17 assets could be read (0
+    unparsed, 17 with no issue)"; that is the third, composition axis, which
+    stays flagged pre-art by design and is not this gate. art-rotation's own
+    handoff reports this distinction accurately.
+  assetAudit: >
+    `python3 scripts/asset_audit.py margaret-atwood` - art:yes, portrait 1/1,
+    covers 63/69, eras 0/3, life 0/6, franchise 0/8, world 3/3. 17 assets to
+    generate, none filed. Consistent with a wing that has not been through art
+    intake.
+
+reDerived:
+  works: "69 (17 core, 43 extended, 9 apocrypha), 3 featured - inside the cap of 3."
+  eraMembership: >
+    Parsed all three `period` strings, walked every work's `published` year
+    against them independently of the validator: 12 / 16 / 41, every one of
+    the 69 works inside exactly one span, zero orphans, zero works in two
+    spans, no gap and no overlap between adjacent spans. eras' own claim
+    re-derives exactly, including its per-tier breakdown (era 1: 2 core / 6
+    extended / 4 apocrypha; era 2: 4 / 11 / 1; era 3: 11 / 26 / 4).
+  editions: >
+    41 entries over 26 of 69 works (18 en over 18 works, 23 pt-PT over 23).
+    All 17 core novels carry an English first edition; 15 of 17 carry a pt-PT
+    edition. All 40 shipped ISBN-13s pass the check digit, none duplicated,
+    every pt-PT prefix is 978-972 or 978-989 (no Brazilian registrant), no
+    dangling workId. The one edition with no isbn13 (The Edible Woman, M&S
+    1969) documents why on the file's own header.
+  covers: >
+    All 63 cover URLs fetched with `?default=false`: 63/63 return a real
+    image, zero placeholders. Eight opened and looked at at full size. Every
+    one is an OpenLibrary `/b/id/` URL, so the `?default=false` placeholder
+    trap does not apply to the recorded form - it was still checked.
+  globalEvents: "3 included, 12 excluded, 4 unruled, 19 total in global.yaml - the header's arithmetic is correct."
+  spoilerRedactions: >
+    All four bounded synopses and the maddaddam-trilogy rationale read side by
+    side, English against pt-PT. Every boundary holds in Portuguese: Alias
+    Grace stops at "diz não se lembrar de nada dos homicídios" and resolves
+    neither guilt nor innocence; Oryx and Crake names corporate compounds and
+    no agent of the collapse; The Year of the Flood uses the jacket's own "a
+    tão temida inundação sem água" with no account of how it happened; The
+    Blind Assassin keeps the inner novel attributed to Laura and says nothing
+    about who wrote it; the trilogy rationale argues publication order without
+    naming who is left standing. Nothing was restored from a fuller Bertrand
+    blurb. translation's claim is accurate.
+
+blocking:
+  - id: trumpets-of-summer-dead-source
+    owner: completeness-auditor
+    finding: >
+      `margaret-atwood/the-trumpets-of-summer`'s primary source,
+      steventemplebooks.com/book/43399/..., is dead: 404 over http, and over
+      https the certificate does not match the hostname at all. It is the only
+      support for three specific claims the synopsis puts in front of a
+      reader - "commissioned by the CBC for the 1964 Shakespeare
+      quatercentenary", "published as a 16-page octavo booklet", and
+      "Performed once, to an audience of 36". The surviving source, Wikipedia's
+      John Beckwith article, was fetched and read: it confirms the 1964 date,
+      Atwood's text and the forces ("Soloists, SATB, narrator, chamber
+      ensemble", Berandol) and carries none of the three. Re-source or drop
+      the three numbers.
+
+missing:
+  - id: aura-1961-1968
+    owner: press-archaeology
+    finding: >
+      `aura_density.py` flags an 8-year dark run over 1961-1968, six published
+      works with no aura entry between them, and it is not pre-career: it
+      opens with her first book. The obvious missing moment sits inside it -
+      the 1966 Governor General's Award for The Circle Game, her first major
+      prize, at 26. The wing already leans on it twice without ever dating it:
+      `margaret-atwood-edible-woman-delayed-1969` says "after she had already
+      won a Governor General's Award for poetry", and beyond-the-novels'
+      rationale cites "a Governor General's Award for her first trade
+      collection". More broadly: the wing catalogues 17 poetry collections and
+      carries zero poetry-facing aura, on a wing whose own eras.yaml argues
+      that era 1 "is mostly a poetry phase". This run only reopened because
+      event-resonance narrowed the globals after press-archaeology measured.
+  - id: thumbnail-covers
+    owner: visual-metadata
+    finding: >
+      Two of the 63 shipped covers are thumbnail-grade, not cover-grade:
+      `days-of-the-rebels` is 128x114px / 2.3KB and `two-headed-poems` is
+      128x211px / 3.0KB, against 300-500px for the other 61. Both were opened
+      and are genuine, correct, unwatermarked jackets - they are simply the
+      only scan OpenLibrary holds, at a size that will render soft in a cover
+      card. `two-headed-poems`' scan also carries what reads as a handwritten
+      mark across the author's name. A contact sheet is exactly the review
+      method that cannot catch this, since a 128px tile looks the same as a
+      500px one at contact-sheet scale. Either find a larger scan or leave the
+      slot empty and let the typographic fallback carry it, which is the
+      better rendering of the two.
+  - id: hulu-costume-constraint-not-in-content
+    owner: art-rotation
+    finding: >
+      `margaret-atwood-handmaids-tale-hulu-2017` (mosaic /
+      press-media-collage / pull-focus) has a description that ends on
+      protesters "in the red robes and white bonnets of the novel's
+      Handmaids" - the single most vivid image in the entry, and the exact
+      thing `theme.art.avoid` rules out. `theme.art` does cover it ("on a
+      figure or as a colour field"), and art-rotation's handoff spells out the
+      specific trap ("the pull-focus inset should zoom on a press artefact...
+      never on the distant crowd's clothing"). But `/asset-prompt` reads
+      `theme.art` and the event entries; it does not read `.orrery/<slug>/`,
+      so the sharpest statement of the constraint lives in the one file the
+      stage that needs it will never open. The four spoiler-bound works
+      already carry this shape as a `note:` on the entry itself; this event
+      carries none. Give it one.
+  - id: covid-include-cites-the-weaker-anchor
+    owner: event-resonance
+    finding: >
+      The `covid-19-pandemic-2020` include holds, but not for the reason it
+      records. Its note rests on Fourteen Days, an apocrypha-tier 36-author
+      book where Atwood's own contribution is not publicly identified - which
+      is why its own handoff called it thin. The wing already contains a
+      stronger, sole-authored anchor nobody cited: Burning Questions (2022),
+      whose synopsis in works.yaml already says it covers "the years from The
+      Year of the Flood through the COVID-19 pandemic". Keep the include,
+      lead the note with Burning Questions and keep Fourteen Days as the
+      second leg. Walking it back would be the wrong correction.
+  - id: fourteen-days-isbn-still-blocked
+    owner: editions
+    finding: >
+      Re-tested this run, not assumed: openlibrary.org still returns 503 (the
+      Internet Archive outage editions hit has not lifted), so the
+      HarperCollins-vs-Penguin-Random-House conflict on ISBN 9781784745455
+      remains unsettleable. Documented honestly on editions.yaml's header and
+      correctly not shipped. This is a genuinely blocked item for `/refresh`,
+      not an omission - recorded here so the next pass knows it was retried.
+
+stale:
+  - "press-archaeology's auraDensity line (29 entries / 0.42 per work / 4-year dark run) is stale post-event-resonance; the live numbers are 17 / 0.25 / 8 years. Its forStages note to wing-audit also counts three Handmaid's Tale franchise events; there are four, since testaments-booker-2019 belongs to the same subseries - half the wing's franchise aura sits on a 2-book subseries."
+  - "works.yaml's header claims its list matches Wikipedia's lead counts work-for-work 'except the children's count'. Re-derived: poetry is 17 here against the cited 18, because the wing deliberately excludes the four Selected/Collected anthologies (which Wikipedia's own poetry list includes) and the two 1965 Cranbrook chapbooks named only in Wikipedia's prose. The exclusions are right and documented; the blanket 'except children's' claim is not. Owner: completeness-auditor."
+  - "spoiler-audit's handoff reports auditing '7 lifeEvents'; there are 6. No content effect - all six were in fact swept - but the number is wrong in the record."
+  - "visual-metadata's handoff dates through-the-one-way-mirror to 1979; the entry says 1986 and Wikipedia's non-fiction list, already cited on the entry, says 1986. Fixed in content by this stage; the handoff still carries the wrong year."
+  - "Expeditions: the entry says published: 1965 (corroborated by Wikipedia's poetry list) and its own no-cover comment said 1966. This stage neutralised the comment rather than pick a year, since OpenLibrary was 503 and could not settle it. The year still rests on one source. Owner: completeness-auditor."
+  - "quillandquire.com/books_young/review.cfm?review_id=7476 (the only source on wandering-wenda) returns 403 to every scripted request including a full browser User-Agent. Almost certainly alive in a real browser, unlike the Trumpets source above; recorded so it is not re-chased."
+  - "The branch is 1 commit behind origin/main (the Grisham merge landed after it forked). git merge-tree reports no conflicts."
+
+pipelineNarration:
+  finding: >
+    validate.py's PROCESS_COMMENT scan reported zero violations on this wing
+    and there were six, in four files. Its regex is English-only and has no
+    pattern for `scaffold`, for a script filename, or for `SKILL.md` - so
+    theme.yaml naming `scripts/theme_digest.py` twice and "the scaffold" three
+    times, editions.yaml's three "per this skill's own rule", and the pt-PT
+    works.yaml and john-beckwith.yaml both citing "o SKILL.md desta fase"
+    (this stage's SKILL.md, in Portuguese) all passed clean. The co-author
+    bios translation flagged as its extra catch were the ones that leaked.
+    All six rewritten by this stage. The regex gap is catalogue-wide and is a
+    curator/validator finding, not this wing's.
+
+fieldsNobodyReads:
+  - "work.images.cover IS read - lib/content/editions.ts:68 falls back to it. The old inert-field defect is fixed; the 63 covers are live."
+  - "era themes and description are read (components/river/chapter-gate.tsx). era `provenance` and `note` are read by nothing in the app and are absent from docs/SCHEMA.md's eras block, although the eras skill mandates provenance and 18 wings carry it. Curator-facing by design, like orders' `debated` - but SCHEMA.md should say so."
+  - "`dateRange` is read, but only rendered by components/river/passage.tsx; every other organisation shows the bare date. margaret-atwood-gibson-family-1973 is a passage and renders its range; margaret-atwood-writers-organizations-1981 is a medallion, so its 1981-1986 range is used for sorting and never shown. No information is lost - its description states both terms in prose - but the field is inert there."
+
+checkedAndClean:
+  - "The four spoiler redactions in pt-PT - the headline risk of this build. Read side by side with the English; all four boundaries hold, plus the order rationale. See reDerived.spoilerRedactions."
+  - "Fourteen Days' two honest gaps both survive intact. No contributionTitle, with works.yaml's note stating in full that the book withholds the author-to-tenant pairing until its own end-of-book bios and that four named sources were checked; no edition, with editions.yaml's header stating the exact publisher conflict and that both APIs were unreachable. Neither was quietly guessed and filled by a later stage."
+  - "eras.yaml's periodisation. The three phases, their names and the 1972 and 1985 edges are David Staines's, cited to the Cambridge Companion chapter and its DOI; the 1973 and 1986 start years are resolutions of his two fuzzy edges and say so on their own entries. 69/69 works in exactly one span, re-derived independently. The scheme is not decades in costume: the boundaries are about her changing relationship to Canada and to a readership outside it, and the 1985/6 line is independently corroborated by the poetry thinning (13 collections to 1984, 4 in the 40 years after)."
+  - "eras.yaml is not overlapping. Checked by re-deriving the spans, and separately by injecting a 3-year overlap and confirming the validator stays silent - so the green run proves nothing here and the hand check is the whole assurance."
+  - "art_rotation's two real gates. Both re-run, both pass; the exit-1 composition line is the pre-art axis, correctly excluded by art-rotation's own handoff."
+  - "theme.yaml. displayFace `spectral` and signature `rule` are both in the app's implemented sets. All five palette keys present; contrast re-computed - ink/bg 14.32, ink/surface 13.15, muted/surface 4.66, muted/bg 5.08, every one over the 4.5 AA floor, with muted/surface the tight one as usual. One accent, one display face, one signature; the specimen-jar register is differentiated from hp-lovecraft in the file itself on direction and scale rather than by abandoning the move."
+  - "The theme.art validator relaxation franchise-research introduced is still correct. Falsified rather than reasoned about: with the wing's current aura, removing `art:` hard-errors and removing a single field hard-errors. The warning path is reachable only by a wing with no events, no eras and no lifeEvents, which is the documented scaffold state."
+  - "The Hulu event's grading itself. mosaic/press-media-collage reads through press response rather than a rendered costume, exactly as visual-language and art-rotation argue; the issue is only that the constraint is not written where the prompt stage will see it."
+  - "Zero spoilerAfter boundaries across all 14 events and lifeEvents is correct here, not an audit that never happened. Every event was read: they are prizes, an adaptation, an auction, a birth, two deaths, an institutional term and a manuscript handover, and none contains a plot point. The protection this wing needed was in ungated synopsis and rationale prose, which carries no boundary mechanism, and that is where spoiler-audit did the work."
+  - "The pseudonym check. Bart Gerrard is a comic-strip byline with no stated motive and no reveal, so it is correctly a `note` on the author entity rather than a dated lifeEvent - the case the density rule explicitly exempts."
+  - "startHere. All five paths resolve; the two orderId paths point at the right orders and the three workIds paths at the right works. Fit matrix covers new+taste (twice), new+arc, returning+taste, returning+arc, completionist+arc and completionist+complete. `everything` claims 'All sixty-nine works' and there are 69. beyond-the-novels' debated block claims 16 of 43 extended works are omitted; the order carries 27 and 43-27 is 16."
+  - "editions integrity. See reDerived.editions - 40/40 ISBNs valid, no pt-BR contamination, no duplicates, the maddaddam pt-PT entry's missing title is deliberate and carries a note saying the Portuguese cover prints it unchanged."
+  - "Capabilities. features is unset, so all four are auto and all four have real data behind them: river and companion on 17 aura entries, wizard on 5 startHere paths, editions on 41 entries. Nothing is auto-lighting an empty view."
+  - "Source sweep. 57 non-Wikipedia, non-OpenLibrary source URLs across works, events, eras, orders, franchise and the author entity: 55 resolve, one 403s to scripts, one is dead (see blocking)."
+  - "The request issue's own schema worry - that a poetry collection has no plot to put in `synopsis` - is settled, not open. All 17 poetry collections carry a scope-describing synopsis, which is the documented approach and matches Saramago and Palahniuk. The issue's other prediction, that the 34-year Handmaid's Tale gap 'just wants an eras boundary', was tested and refused with sourcing: Staines runs era 3 straight through 2019."
+  - "Translation freshness. The overlay is the last commit on the branch, after every prose commit, so there is no window in which a rewrite could have gone unmirrored. Verified by commit order, not assumed."
+
+notApplicableNotAbsent:
+  - "6 works with no cover (double-persephone, the-trumpets-of-summer, expeditions, snake-poems, through-the-one-way-mirror, the-happy-zombie-sunrise-home). 1960s-80s chapbooks with a single coverless OL record, an essay never issued as its own book, and a Wattpad-only serial. Not a sourcing gap - there is no jacket to find. 63/69 is the ceiling here, not 91% of a target of 100."
+  - "43 works with no edition. English scope is deliberately the true first edition of the novels only; pt-PT scope is what the Portuguese market actually holds. The Edible Woman and Life Before Man have no pt-PT edition at all, confirmed against the BNP's full 44-record sweep - a market fact, not a research gap."
+  - "No achievements.yaml. Absence is the norm and a legitimate state; nothing here is broken by it. See curatorsCall for the one argument the other way."
+  - "Zero spoilerAfter boundaries - correct, see checkedAndClean."
+  - "4 unruled global events (world-war-i-1914, elementary-education-act-1870, pulp-magazines-1926, penguin-paperback-1935). All predate her 1939 birth with no inheritance case; silence is the documented and correct state, since nothing renders without an include."
+  - "No world-events run. Every decade she publishes into already carries a global event; the stage had nothing to add."
+
+curatorsCall:
+  - "Fourteen Days' authorRole. It is filed `contributor`; the book's own cover, opened and read at full size this run, says 'Edited by Margaret Atwood / Douglas Preston'. The schema permits exactly one role, the note explains she was both general editor and one of the 36 writers, and the Coben precedent argues for contributor - but `editor` is what the object itself credits her as. Genuinely a choice between two true things."
+  - "Whether this wing should carry an era_reader achievement. Absence is legitimate and generic badges are worse than none, but this is one of the few wings with three sourced, named, scholar-derived eras and two real curated orders behind it - the specific thing the skill says to look for. Counts if it is wanted: 12 / 16 / 41."
+  - "Poetry and essay uniformly `extended` - franchise-research's own named weakest call, and still open. It is right by the tier definition (spine, not quality) and by precedent, and it still means 17 poetry collections and 11 nonfiction books render as off-spine for an author whose poetry opened her career and won her first prize."
+  - "PEN Canada 'President' (her own bio) vs 'co-president with Eugene Benson' (the PEN International archive project). Recorded as a live disagreement on the lifeEvent rather than resolved, which is the honest shape; only institutional records settle it."
+  - "Angel Catbird's 2017 Aurora Award against its exclusion from beyond-the-novels on mixed reception. Both facts are in the order's debated block; it is a real judgement, argued rather than hidden."
+  - "Power Politics's opening couplet in pt-PT, translated directly rather than from Ana Luísa Amaral's Relógio d'Água edition. Needs a copy of that edition, not another pass."
+  - "Validator gap: no era-overlap detection, falsified this run. Catalogue-wide."
+  - "Validator gap: the pipeline-narration scan is English-only and blind to `scaffold`, script filenames and `SKILL.md`. Six real violations passed it on this wing alone, two of them in Portuguese. Catalogue-wide."
+  - "docs/SCHEMA.md's eras block omits `provenance` and `note`, both mandated by the eras skill and carried by 18 wings."
+
+mechanicalFixes:
+  - "franchise.yaml header: it still described editions.yaml and events.yaml as absent. Both exist; rewritten to describe the wing as it now is."
+  - "works.yaml, through-the-one-way-mirror: a comment dated it to 1979, two lines under `published: 1986`, and Wikipedia's non-fiction list (already cited on the entry) says 1986. Corrected to 1986."
+  - "works.yaml, expeditions: a comment dated it to 1966 against `published: 1965`. Changed to 'mid-1960s' rather than asserting a year, since OpenLibrary was down and could not settle it; the year question is routed above."
+  - "Six pipeline-narration comments rewritten to state the data instead: theme.yaml (two `scripts/theme_digest.py`, three `scaffold`), editions.yaml (three `per this skill's own rule`, one `was investigated and deliberately NOT shipped`), and the two pt-PT files citing `SKILL.md desta fase`."
+
+forStages:
+  wing-audit: "Nothing further from this stage."
+  pipeline-audit: >
+    One measurement worth carrying: this stage's own first ISBN check-digit
+    routine reported 37 of 40 shipped ISBNs invalid because it summed
+    thirteen digits instead of twelve. It cost one extra call to catch, and it
+    would have been five false blocking findings if the number had been
+    believed. A verification routine written inside the audit is as
+    falsifiable as the thing it audits.
+
+openQuestions:
+  - "The 1961-1968 dark run is the one finding that needs another agent rather than a curator ruling: it reopened because event-resonance ran after press-archaeology measured, and nothing in the pipeline re-measures aura after the globals are narrowed. Worth considering whether stage_plan should route press-archaeology a second time when event-resonance cuts the include list."
