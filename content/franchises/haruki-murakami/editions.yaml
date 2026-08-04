@@ -1,0 +1,985 @@
+# Concrete published editions: first English edition for every work that has
+# one, plus the Portuguese-market edition wherever Casa das Letras (Leya
+# group) or an earlier house published one. Every work's own `title` in
+# works.yaml is the Japanese original, so unlike a Latin-script wing, EVERY
+# edition here needs its own `title` + `language` - including the English
+# ones - since the work is never already in that language.
+#
+# SOURCES. English: each work's own English Wikipedia infobox (publisher,
+# translator, ISBN, year), cross-checked against OpenLibrary edition records
+# and, for the current Vintage/Vintage Classics reissues, the publisher's own
+# product pages (penguin.co.uk) for imprint and format. pt-PT: the
+# Biblioteca Nacional de Portugal's ipac20 catalogue (catalogo.bnportugal.gov.pt),
+# queried by author name and read as a browser (CURATION Sec.4's "blocked the
+# way we asked" case) - 91 records swept across all pages, giving a title,
+# translator, publisher, city, edition number and ISBN for every printing BNP
+# holds. That catalogue is the source for every pt-PT entry below; the
+# specific query cited in each entry's `sources` is the ISBN-indexed permalink
+# for that exact printing: `ipac.jsp?index=ISBN&term=<isbn>&profile=bn`.
+#
+# WHICH EDITION. Default rule applied throughout: the most recent edition BNP
+# or OpenLibrary/the publisher's own site attests, since that is what a reader
+# can buy today. Where BNP shows a long reprint run under one ISBN root (the
+# ordinary case here - Casa das Letras rarely changes the ISBN between print
+# runs of the same translation), the latest dated printing of that root is
+# cited even when the specific copy on a shelf might be an earlier printing.
+#
+# COVERAGE. 27 of this wing's 29 works have at least one edition; 23 of 29
+# have a pt-PT edition. The two with no edition at all - Let's Meet in a Dream
+# (never translated into English; no Portuguese edition found either) and The
+# Tale of KAHO (July 2026, no translation yet) - both genuinely lack any
+# translated printing to record, not a research gap. Four more have an
+# English edition but no Portuguese one found in BNP's holdings: After the
+# Quake, The Strange Library, Murakami T, Birthday Stories.
+#
+# THE PORTUGUESE PUBLISHER. Casa das Letras (Leya group, Cruz Quebrada then
+# Alfragide) has published nearly the whole backlist since 2006 and remains
+# active - its newest entry here is 2025 - under a single dominant
+# translator, Maria João Lourenço, credited on every Casa das Letras/Bis/Leya
+# printing found. Three earlier, since-superseded pt-PT editions predate her:
+# Civilização's 2004 Norwegian Wood (trad. Alberto Gomes - a genuinely
+# different Portuguese translation, recorded below the same way this
+# catalogue already records chuck-palahniuk/fight-club's superseded 1999
+# Notícias translation, via a plain `note`); and Notícias's own 2005 Sputnik,
+# meu amor and 2006 Kafka à beira-mar / Crónica do pássaro de corda, which
+# Maria João Lourenço translated too and which simply continued under Casa
+# das Letras (Leya bought Notícias), so those two are not a translator change
+# and get no second entry. Underground is the one title Casa das Letras never
+# published in Portuguese: Tinta-da-China put out the only pt-PT edition
+# found (2006, trad. Susana Serras Pereira), a different house and translator
+# from the rest of the wing, worth flagging so a future pass does not assume
+# a transcription error. Absolutely on Music's Portuguese edition is
+# translated "do inglês" (from Jay Rubin's English translation, not directly
+# from the Japanese) per its own BNP record - stated in that entry's note.
+#
+# NON-LITERAL PORTUGUESE TITLE. Blind Willow, Sleeping Woman is published in
+# Portugal as "A Rapariga que Inventou um Sonho" ("The Girl Who Invented a
+# Dream") - confirmed by matching the ISBN'S synopsis and full 24-story
+# contents list (Goodreads edition record for that exact ISBN), not by title,
+# per this catalogue's own method for a non-literal pair.
+#
+# THREE EDITION-LEVEL FACTS DELIBERATELY LEFT OUT: none of them is a
+# translation of a whole work this bibliography lists, so none has a workId
+# it could honestly attach to. "Sono" (Casa das Letras, 2013-2016,
+# illustrated by Kat Menschik) is a single-story gift edition of "Sleep,"
+# one of the seventeen stories inside The Elephant Vanishes, not the full
+# collection. "Os Assaltos a Padaria" (Casa das Letras, 2015, also
+# Menschik-illustrated) pairs "The Second Bakery Attack" with the revised
+# "Pan" piece described in Let's Meet in a Dream's own works.yaml note -
+# again not a translation of any single listed work. "O Sétimo Homem e
+# Outros Contos" (Casa das Letras, 2026) is a comics adaptation by
+# Jean-Christophe Deveney and PMGL, not a translation at all. Recording any
+# of the three under an existing workId would send a reader looking for that
+# whole book to a slim illustrated fragment of it instead.
+#
+# A FOURTH SUPERSEDED-TRANSLATION CASE, found independently of the three this
+# wing's research already flagged (Hear the Wind Sing, Pinball 1973,
+# Norwegian Wood): Hard-Boiled Wonderland and the End of the World's English
+# translation was Alfred Birnbaum's (Kodansha International, 1991) for
+# thirty-three years - unlike the other three, this WAS the general-release
+# text throughout, never a Japan-only student edition - until Jay Rubin's
+# new translation, retitled "End of the World and Hard-Boiled Wonderland"
+# (word order reversed from the Japanese original's own order), replaced it
+# in December 2024. Recorded the same way as the other three: current
+# translation first, Birnbaum's superseded one second with a note.
+
+# --- Hear the Wind Sing / Pinball, 1973 ---
+# Published as a single English-language volume for the first time in 2015
+# (Ted Goossen's translation), and as a single Portuguese-language volume in
+# 2016 - both editions cover both novels under one ISBN, so each novel's
+# workId gets its own entry citing the same object, the same way a reader
+# would meet them on one shelf under one cover.
+
+- id: haruki-murakami/hear-the-wind-sing/knopf-2015-en
+  workId: haruki-murakami/hear-the-wind-sing
+  isbn13: "9780385352123"
+  language: en
+  title: "Hear the Wind Sing"
+  translator: "Ted Goossen"
+  format: hardcover
+  publisher: Alfred A. Knopf
+  year: 2015
+  note: >
+    Published as one physical volume with Pinball, 1973 under the cover
+    title Wind/Pinball: Two Novels - the first time either novel was given a
+    general release outside Japan. Both novels' entries here cite this same
+    ISBN deliberately; it is one book, not a duplicate.
+  sources:
+    - https://en.wikipedia.org/wiki/Hear_the_Wind_Sing
+    - https://openlibrary.org/isbn/9780385352123
+
+- id: haruki-murakami/hear-the-wind-sing/kodansha-1987-en
+  workId: haruki-murakami/hear-the-wind-sing
+  isbn13: "9784061860261"
+  language: en
+  title: "Hear the Wind Sing"
+  translator: "Alfred Birnbaum"
+  format: paperback
+  publisher: Kodansha (Kodansha English Library)
+  year: 1987
+  note: >
+    Superseded, not currently in print. Published only in Japan, as a
+    Kodansha English Library pocket edition for Japanese students of English
+    (with an appendix of the original Japanese text); never given a general
+    release outside Japan, and discontinued there. Ted Goossen's 2015
+    Wind/Pinball translation is the current, generally available English
+    edition. ISBN-10 4-06-186026-7 on the Kodansha English Library printing,
+    converted here (978 prefix, check digit recomputed) and verified against
+    that printing's Wikipedia infobox citation.
+  sources:
+    - https://en.wikipedia.org/wiki/Hear_the_Wind_Sing
+
+- id: haruki-murakami/pinball-1973/knopf-2015-en
+  workId: haruki-murakami/pinball-1973
+  isbn13: "9780385352123"
+  language: en
+  title: "Pinball, 1973"
+  translator: "Ted Goossen"
+  format: hardcover
+  publisher: Alfred A. Knopf
+  year: 2015
+  note: >
+    Published as one physical volume with Hear the Wind Sing under the cover
+    title Wind/Pinball: Two Novels; see that work's own entry for the same
+    ISBN. Deliberate, not a duplicate.
+  sources:
+    - https://en.wikipedia.org/wiki/Pinball,_1973
+    - https://openlibrary.org/isbn/9780385352123
+
+- id: haruki-murakami/pinball-1973/kodansha-1985-en
+  workId: haruki-murakami/pinball-1973
+  isbn13: "9784061860124"
+  language: en
+  title: "Pinball, 1973"
+  translator: "Alfred Birnbaum"
+  format: paperback
+  publisher: Kodansha (Kodansha English Library)
+  year: 1985
+  note: >
+    Superseded, not currently in print - same Kodansha English Library,
+    Japan-only pattern as Hear the Wind Sing's own 1987 Birnbaum printing;
+    superseded by Ted Goossen's 2015 Wind/Pinball translation. ISBN-10
+    4-06-186012-7 per this printing's Wikipedia infobox citation ("US 1st
+    edition"), converted here (978 prefix, check digit recomputed).
+  sources:
+    - https://en.wikipedia.org/wiki/Pinball,_1973
+
+- id: haruki-murakami/hear-the-wind-sing/casa-das-letras-2016-pt
+  workId: haruki-murakami/hear-the-wind-sing
+  isbn13: "9789897415029"
+  language: pt-PT
+  title: "Ouve a Canção do Vento"
+  translator: "Maria João Lourenço"
+  publisher: Casa das Letras
+  year: 2016
+  note: >
+    Published as one physical volume with Flíper, 1973 under the joint cover
+    title "Ouve a Canção do Vento; Flíper, 1973" - the only Portuguese
+    edition of either novel found, and the two works' entries here
+    deliberately cite the same ISBN, one book under two workIds.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-741-502-9&profile=bn"
+
+- id: haruki-murakami/pinball-1973/casa-das-letras-2016-pt
+  workId: haruki-murakami/pinball-1973
+  isbn13: "9789897415029"
+  language: pt-PT
+  title: "Flíper, 1973"
+  translator: "Maria João Lourenço"
+  publisher: Casa das Letras
+  year: 2016
+  note: >
+    Published as one physical volume with Ouve a Canção do Vento; see that
+    work's own entry for the same ISBN. Deliberate, not a duplicate.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-741-502-9&profile=bn"
+
+# --- A Wild Sheep Chase ---
+
+- id: haruki-murakami/a-wild-sheep-chase/vintage-classics-2015-en
+  workId: haruki-murakami/a-wild-sheep-chase
+  isbn13: "9781784870157"
+  language: en
+  title: "A Wild Sheep Chase"
+  translator: "Alfred Birnbaum"
+  format: paperback
+  publisher: Vintage Classics
+  year: 2015
+  note: >
+    Birnbaum's 1989 translation (his and Kodansha editor Elmer Luke's
+    English-language debut for Murakami, the first of his novels given a
+    general release) is still the current text; Vintage Classics' 2015
+    paperback reissue carries it unchanged.
+  sources:
+    - https://en.wikipedia.org/wiki/A_Wild_Sheep_Chase
+    - https://www.penguin.co.uk/books/55817/a-wild-sheep-chase-by-murakami-haruki/9781784870157
+
+- id: haruki-murakami/a-wild-sheep-chase/leya-2017-pt
+  workId: haruki-murakami/a-wild-sheep-chase
+  isbn13: "9789896603946"
+  language: pt-PT
+  title: "Em Busca do Carneiro Selvagem"
+  translator: "Maria João Lourenço"
+  publisher: Leya
+  year: 2017
+  note: >
+    2nd ed.; the 1st (2016, same ISBN) was Casa das Letras' first Portuguese
+    printing of this novel, itself a 2007 retranslation of the same title
+    (then ISBN 978-972-46-1715-2) - one continuous translation across three
+    printings and two imprints of the same publishing group.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-660-394-6&profile=bn"
+
+# --- Hard-Boiled Wonderland and the End of the World ---
+
+- id: haruki-murakami/hard-boiled-wonderland-and-the-end-of-the-world/knopf-2024-en
+  workId: haruki-murakami/hard-boiled-wonderland-and-the-end-of-the-world
+  isbn13: "9780593320020"
+  language: en
+  title: "End of the World and Hard-Boiled Wonderland"
+  translator: "Jay Rubin"
+  format: hardcover
+  publisher: Alfred A. Knopf
+  year: 2024
+  note: >
+    A brand-new translation, not a reissue, subtitled "A New Translation" on
+    its own OpenLibrary record; it replaces Alfred Birnbaum's 1991 text after
+    thirty-three years and reverses the word order of the English title to
+    match the Japanese original's own order (Sekai no Owari to Hado-Boirudo
+    Wandarando, literally "The End of the World and Hard-Boiled Wonderland").
+  sources:
+    - https://en.wikipedia.org/wiki/Hard-Boiled_Wonderland_and_the_End_of_the_World
+    - https://openlibrary.org/isbn/9780593320020
+
+- id: haruki-murakami/hard-boiled-wonderland-and-the-end-of-the-world/kodansha-1991-en
+  workId: haruki-murakami/hard-boiled-wonderland-and-the-end-of-the-world
+  isbn13: "9784770015440"
+  language: en
+  title: "Hard-Boiled Wonderland and the End of the World"
+  translator: "Alfred Birnbaum"
+  format: hardcover
+  publisher: Kodansha International
+  year: 1991
+  note: >
+    Superseded by Jay Rubin's December 2024 retranslation. Unlike Hear the
+    Wind Sing, Pinball 1973 and Norwegian Wood's own Kodansha English
+    Library editions, this WAS the general-release English text throughout
+    - not a Japan-only student edition - and stayed the only English
+    translation for thirty-three years. ISBN-10 4-7700-1544-5 per this
+    printing's Wikipedia infobox citation, converted here.
+  sources:
+    - https://en.wikipedia.org/wiki/Hard-Boiled_Wonderland_and_the_End_of_the_World
+
+- id: haruki-murakami/hard-boiled-wonderland-and-the-end-of-the-world/casa-das-letras-2017-pt
+  workId: haruki-murakami/hard-boiled-wonderland-and-the-end-of-the-world
+  isbn13: "9789724621548"
+  language: pt-PT
+  title: "O Impiedoso País das Maravilhas e o Fim do Mundo"
+  translator: "Maria João Lourenço, Maria João da Rocha Afonso"
+  publisher: Casa das Letras
+  year: 2017
+  note: 4th ed.; 1st published 2013, same ISBN root throughout.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-46-2154-8&profile=bn"
+
+# --- Norwegian Wood ---
+
+- id: haruki-murakami/norwegian-wood/vintage-classics-2023-pt
+  workId: haruki-murakami/norwegian-wood
+  isbn13: "9789896618018"
+  language: pt-PT
+  title: "Norwegian Wood"
+  translator: "Maria João Lourenço"
+  publisher: Casa das Letras
+  year: 2023
+  note: >
+    1st ed. of this ISBN; Casa das Letras had already reprinted the same
+    Maria João Lourenço translation once before (2016, ISBN
+    978-989-741-626-2) under the Portuguese rights it holds since acquiring
+    them from the original 2004 Civilização edition below.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-661-801-8&profile=bn"
+
+- id: haruki-murakami/norwegian-wood/knopf-2000-en
+  workId: haruki-murakami/norwegian-wood
+  isbn13: "9780375704024"
+  language: en
+  title: "Norwegian Wood"
+  translator: "Jay Rubin"
+  format: paperback
+  publisher: Vintage International
+  year: 2000
+  note: >
+    Rubin's translation is stated on its own Wikipedia article as "the
+    authorized version for publication outside Japan"; published the same
+    year in the UK by Harvill Press (ISBN 0-09-944882-3).
+  sources:
+    - https://en.wikipedia.org/wiki/Norwegian_Wood_(novel)
+
+- id: haruki-murakami/norwegian-wood/kodansha-1989-en
+  workId: haruki-murakami/norwegian-wood
+  isbn13: "9780870119439"
+  language: en
+  title: "Norwegian Wood"
+  translator: "Alfred Birnbaum"
+  publisher: Kodansha International
+  year: 1989
+  note: >
+    Superseded, not currently in print. Published only in Japan, as a
+    two-volume Kodansha English Library edition (red and green covers) for
+    Japanese students of English, now discontinued there; superseded outside
+    Japan only by Jay Rubin's 2000 translation. OpenLibrary catalogues the
+    two volumes as one edition record carrying two ISBN-10s - 0-87011-943-5
+    (vol. 1, cited here, converted to ISBN-13) and 4-06-186052-6 (vol. 2) -
+    with no further split available; Internet Archive holds a scan of each
+    volume (norwegianwoodvol01mura / norwegianwoodvol02mura) but neither
+    page states which ISBN belongs to which.
+  sources:
+    - https://en.wikipedia.org/wiki/Norwegian_Wood_(novel)
+    - https://openlibrary.org/books/OL14661734M
+
+- id: haruki-murakami/norwegian-wood/civilizacao-2004-pt
+  workId: haruki-murakami/norwegian-wood
+  isbn13: "9789722621755"
+  language: pt-PT
+  title: "Norwegian Wood"
+  translator: "Alberto Gomes"
+  publisher: Civilização
+  year: 2004
+  note: >
+    The first Portuguese translation, superseded in print by Casa das
+    Letras' Maria João Lourenço translation (current edition above) but a
+    genuinely different text - the same superseded-but-real pattern this
+    catalogue already records for chuck-palahniuk/fight-club's 1999 Notícias
+    edition. BNP: Porto, Civilização, 2004. ISBN-10 972-26-2175-0 converted
+    to ISBN-13 here (978 prefix, check digit recomputed).
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=972-26-2175-0&profile=bn"
+
+# --- Dance Dance Dance ---
+
+- id: haruki-murakami/dance-dance-dance/vintage-2011-en
+  workId: haruki-murakami/dance-dance-dance
+  isbn13: "9781448103676"
+  language: en
+  title: "Dance Dance Dance"
+  translator: "Alfred Birnbaum"
+  format: paperback
+  publisher: Vintage
+  year: 2011
+  note: Birnbaum's 1994 translation, reissued unchanged.
+  sources:
+    - https://en.wikipedia.org/wiki/Dance_Dance_Dance_(novel)
+    - https://openlibrary.org/isbn/9781448103676
+
+- id: haruki-murakami/dance-dance-dance/casa-das-letras-2014-pt
+  workId: haruki-murakami/dance-dance-dance
+  isbn13: "9789724617510"
+  language: pt-PT
+  title: "Dança, Dança, Dança"
+  translator: "Maria João Lourenço"
+  publisher: Casa das Letras
+  year: 2014
+  note: >
+    4th ed.; 1st published 2007. BNP's own record for the 1st edition (2007)
+    displays this same ISBN root with a check digit of 0 in one place and 2
+    in another for two different books in the same result page (Em Busca do
+    Carneiro Selvagem, ISBN ...1715-2, sits beside a Dança, Dança, Dança
+    entry rendered as ...1715-0, which fails the check-digit arithmetic); the
+    later, repeatedly reprinted root ...1751-0 (cited here) passes the check
+    digit and is what every later reprint entry in the same catalogue agrees
+    on, so it is what is recorded.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-46-1751-0&profile=bn"
+
+# --- South of the Border, West of the Sun ---
+
+- id: haruki-murakami/south-of-the-border-west-of-the-sun/vintage-2000-en
+  workId: haruki-murakami/south-of-the-border-west-of-the-sun
+  isbn13: "9780679767398"
+  language: en
+  title: "South of the Border, West of the Sun"
+  translator: "Philip Gabriel"
+  format: paperback
+  publisher: Vintage
+  year: 2000
+  sources:
+    - https://en.wikipedia.org/wiki/South_of_the_Border,_West_of_the_Sun
+
+- id: haruki-murakami/south-of-the-border-west-of-the-sun/casa-das-letras-2017-pt
+  workId: haruki-murakami/south-of-the-border-west-of-the-sun
+  isbn13: "9789724618623"
+  language: pt-PT
+  title: "A Sul da Fronteira, a Oeste do Sol"
+  translator: "Maria João Lourenço"
+  publisher: Casa das Letras
+  year: 2017
+  note: 7th ed.; 1st published 2009, same ISBN root throughout.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-46-1862-3&profile=bn"
+
+# --- The Wind-Up Bird Chronicle ---
+
+- id: haruki-murakami/the-wind-up-bird-chronicle/vintage-classics-2019-en
+  workId: haruki-murakami/the-wind-up-bird-chronicle
+  isbn13: "9781784875411"
+  language: en
+  title: "The Wind-Up Bird Chronicle"
+  translator: "Jay Rubin"
+  format: paperback
+  publisher: Vintage Classics
+  year: 2019
+  note: >
+    Part of the Vintage Classics Japanese Series reissue (per its own
+    OpenLibrary subtitle field); Rubin's 1997 translation unchanged.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Wind-Up_Bird_Chronicle
+    - https://openlibrary.org/isbn/9781784875411
+
+- id: haruki-murakami/the-wind-up-bird-chronicle/casa-das-letras-2024-pt
+  workId: haruki-murakami/the-wind-up-bird-chronicle
+  isbn13: "9789895812240"
+  language: pt-PT
+  title: "Crónica do Pássaro de Corda"
+  translator: "Maria João Lourenço"
+  publisher: Casa das Letras
+  year: 2024
+  note: 1st ed. of this ISBN; the same translation was first published 2006.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-581-224-0&profile=bn"
+
+# --- Sputnik Sweetheart ---
+
+- id: haruki-murakami/sputnik-sweetheart/vintage-classics-2023-en
+  workId: haruki-murakami/sputnik-sweetheart
+  isbn13: "9781529913569"
+  language: en
+  title: "Sputnik Sweetheart"
+  translator: "Philip Gabriel"
+  format: hardcover
+  publisher: Vintage Classics
+  year: 2023
+  sources:
+    - https://en.wikipedia.org/wiki/Sputnik_Sweetheart
+    - https://www.penguin.co.uk/books/55817/sputnik-sweetheart-by-murakami-haruki/9781529913569
+
+- id: haruki-murakami/sputnik-sweetheart/casa-das-letras-2025-pt
+  workId: haruki-murakami/sputnik-sweetheart
+  isbn13: "9789895816323"
+  language: pt-PT
+  title: "Sputnik, Meu Amor"
+  translator: "Maria João Lourenço"
+  publisher: Casa das Letras
+  year: 2025
+  note: >
+    1st ed. of this ISBN; the same Maria João Lourenço translation was first
+    published in 2005 by Notícias (later absorbed into the Leya group
+    alongside Casa das Letras), so this is a continuous translation across
+    twenty years and at least three ISBNs, not a retranslation.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-581-632-3&profile=bn"
+
+# --- Kafka on the Shore ---
+
+- id: haruki-murakami/kafka-on-the-shore/vintage-classics-2022-en
+  workId: haruki-murakami/kafka-on-the-shore
+  isbn13: "9781784877989"
+  language: en
+  title: "Kafka on the Shore"
+  translator: "Philip Gabriel"
+  format: hardcover
+  publisher: Vintage Classics
+  year: 2022
+  note: Part of the "Murakami Collectible Classics" gift-hardback series.
+  sources:
+    - https://en.wikipedia.org/wiki/Kafka_on_the_Shore
+    - https://www.penguin.co.uk/books/55817/kafka-on-the-shore-by-murakami-haruki/9781784877989
+
+- id: haruki-murakami/kafka-on-the-shore/casa-das-letras-2023-pt
+  workId: haruki-murakami/kafka-on-the-shore
+  isbn13: "9789896618025"
+  language: pt-PT
+  title: "Kafka à Beira-Mar"
+  translator: "Maria João Lourenço"
+  publisher: Casa das Letras
+  year: 2023
+  note: >
+    1st ed. of this ISBN; the same translation ran to at least 21 successive
+    printings under an earlier ISBN root (978-972-46-1646-9) between its 2006
+    debut and 2021, plus a separate "Bis" pocket-paperback line (three
+    printings, 2014-2016) and a 2018 prefaced Leya edition - all one
+    continuous Maria João Lourenço translation.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-661-802-5&profile=bn"
+
+# --- After Dark ---
+
+- id: haruki-murakami/after-dark/vintage-international-2008-en
+  workId: haruki-murakami/after-dark
+  isbn13: "9780307278739"
+  language: en
+  title: "After Dark"
+  translator: "Jay Rubin"
+  format: paperback
+  publisher: Vintage International
+  year: 2008
+  sources:
+    - https://en.wikipedia.org/wiki/After_Dark_(novel)
+
+- id: haruki-murakami/after-dark/casa-das-letras-2016-pt
+  workId: haruki-murakami/after-dark
+  isbn13: "9789724618388"
+  language: pt-PT
+  title: "After Dark: Os Passageiros da Noite"
+  translator: "Maria João Lourenço"
+  publisher: Casa das Letras
+  year: 2016
+  note: 5th ed.; 1st published 2008, same ISBN root throughout.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-46-1838-8&profile=bn"
+
+# --- 1Q84 ---
+
+- id: haruki-murakami/1q84/vintage-international-2013-en
+  workId: haruki-murakami/1q84
+  isbn13: "9780307476463"
+  language: en
+  title: "1Q84"
+  translator: "Jay Rubin (Books 1-2), Philip Gabriel (Book 3)"
+  format: paperback
+  publisher: Vintage International
+  year: 2013
+  note: >
+    Single-volume English edition collecting all three Japanese-published
+    volumes; OpenLibrary's own contributor credits confirm the Rubin/Gabriel
+    split by book.
+  sources:
+    - https://en.wikipedia.org/wiki/1Q84
+    - https://openlibrary.org/isbn/9780307476463
+
+- id: haruki-murakami/1q84/casa-das-letras-2017-pt
+  workId: haruki-murakami/1q84
+  isbn13: "9789724620534"
+  language: pt-PT
+  title: "1Q84"
+  translator: "Maria João Lourenço, Maria João da Rocha Afonso"
+  publisher: Casa das Letras
+  year: 2017
+  note: >
+    10th ed.; 1st published 2011, same ISBN root throughout despite several
+    co-issued alternate ISBNs on early printings (including a US-prefix
+    978-0-307-... number on some copies, likely a distribution SKU rather
+    than a separate Portuguese printing).
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-46-2053-4&profile=bn"
+
+# --- Colorless Tsukuru Tazaki and His Years of Pilgrimage ---
+
+- id: haruki-murakami/colorless-tsukuru-tazaki-and-his-years-of-pilgrimage/vintage-2015-en
+  workId: haruki-murakami/colorless-tsukuru-tazaki-and-his-years-of-pilgrimage
+  isbn13: "9780099590385"
+  language: en
+  title: "Colorless Tsukuru Tazaki and His Years of Pilgrimage"
+  translator: "Philip Gabriel"
+  format: paperback
+  publisher: Vintage
+  year: 2015
+  sources:
+    - https://en.wikipedia.org/wiki/Colorless_Tsukuru_Tazaki_and_His_Years_of_Pilgrimage
+
+- id: haruki-murakami/colorless-tsukuru-tazaki-and-his-years-of-pilgrimage/casa-das-letras-2023-pt
+  workId: haruki-murakami/colorless-tsukuru-tazaki-and-his-years-of-pilgrimage
+  isbn13: "9789724622668"
+  language: pt-PT
+  title: "A Peregrinação do Rapaz Sem Cor"
+  translator: "Maria João Lourenço"
+  publisher: Casa das Letras
+  year: 2023
+  note: 3rd ed.; 1st published 2014, same ISBN root throughout.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-46-2266-8&profile=bn"
+
+# --- Killing Commendatore ---
+
+- id: haruki-murakami/killing-commendatore/vintage-2019-en
+  workId: haruki-murakami/killing-commendatore
+  isbn13: "9781784707330"
+  language: en
+  title: "Killing Commendatore"
+  translator: "Philip Gabriel, Ted Goossen"
+  format: paperback
+  publisher: Vintage
+  year: 2019
+  note: >
+    Single English-language volume collecting both Japanese-published parts;
+    per works.yaml, translated by volume (Gabriel and Goossen).
+  sources:
+    - https://en.wikipedia.org/wiki/Killing_Commendatore
+    - https://www.penguin.co.uk/books/55817/killing-commendatore-by-murakami-haruki/9781784707330
+
+- id: haruki-murakami/killing-commendatore/casa-das-letras-2019-pt
+  workId: haruki-murakami/killing-commendatore
+  isbn13: "9789897800344"
+  language: pt-PT
+  title: "A Morte do Comendador"
+  translator: "Ana Lourenço, Maria João Lourenço"
+  publisher: Casa das Letras
+  year: 2019
+  note: >
+    2nd ed.; the 1st (2018) was issued under two ISBNs, 978-989-780-034-4
+    (cited here, reused unchanged for this 2nd ed.) and 978-989-780-085-6,
+    most likely one per volume of a two-volume 1st-edition set matching the
+    Japanese original's own two parts - BNP does not state which is which.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-780-034-4&profile=bn"
+
+# --- The City and Its Uncertain Walls ---
+
+- id: haruki-murakami/the-city-and-its-uncertain-walls/knopf-2024-en
+  workId: haruki-murakami/the-city-and-its-uncertain-walls
+  isbn13: "9780593801970"
+  language: en
+  title: "The City and Its Uncertain Walls"
+  translator: "Philip Gabriel"
+  publisher: Alfred A. Knopf
+  year: 2024
+  sources:
+    - https://en.wikipedia.org/wiki/The_City_and_Its_Uncertain_Walls
+    - https://openlibrary.org/isbn/9780593801970
+
+- id: haruki-murakami/the-city-and-its-uncertain-walls/casa-das-letras-2025-pt
+  workId: haruki-murakami/the-city-and-its-uncertain-walls
+  isbn13: "9789895813896"
+  language: pt-PT
+  title: "A Cidade e as Suas Muralhas Incertas"
+  translator: "Maria João Lourenço, Inês Rocha Silva"
+  publisher: Casa das Letras
+  year: 2025
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-581-389-6&profile=bn"
+
+# --- The Tale of KAHO: no edition. No English or Portuguese translation of
+# this July 2026 novel has been announced as of this bibliography.
+
+# --- Let's Meet in a Dream: no edition. No English translation exists per
+# works.yaml's own note, and no Portuguese one was found either.
+
+# --- The Elephant Vanishes ---
+
+- id: haruki-murakami/the-elephant-vanishes/vintage-international-1994-en
+  workId: haruki-murakami/the-elephant-vanishes
+  isbn13: "9780679750536"
+  language: en
+  title: "The Elephant Vanishes"
+  translator: "Alfred Birnbaum, Jay Rubin"
+  format: paperback
+  publisher: Vintage International
+  year: 1994
+  note: >
+    "1st Vintage International ed." per its own OpenLibrary record, reprinting
+    Gary Fisketjon's 1993 Knopf hardcover selection (ISBN 0-679-42057-6)
+    unchanged.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Elephant_Vanishes
+    - https://openlibrary.org/books/OL1431988M
+
+- id: haruki-murakami/the-elephant-vanishes/casa-das-letras-2016-pt
+  workId: haruki-murakami/the-elephant-vanishes
+  isbn13: "9789724619736"
+  language: pt-PT
+  title: "O Elefante Evapora-se"
+  translator: "Maria João Lourenço"
+  publisher: Casa das Letras
+  year: 2016
+  note: >
+    5th ed.; 1st published 2010, same ISBN root throughout. Distinct from
+    "Sono" (2013-2016) and "Os Assaltos a Padaria" (2015), two later
+    Kat Menschik-illustrated Casa das Letras gift books each covering only
+    one story from this seventeen-story collection - not recorded as
+    editions of it (see file header).
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-46-1973-6&profile=bn"
+
+# --- After the Quake ---
+
+- id: haruki-murakami/after-the-quake/vintage-2003-en
+  workId: haruki-murakami/after-the-quake
+  isbn13: "9780375713279"
+  language: en
+  title: "after the quake"
+  translator: "Jay Rubin"
+  format: paperback
+  publisher: Vintage
+  year: 2003
+  note: >
+    Title printed lower-case on the jacket, per works.yaml's own note on this
+    work; no pt-PT edition found.
+  sources:
+    - https://en.wikipedia.org/wiki/After_the_Quake
+
+# --- Blind Willow, Sleeping Woman ---
+
+- id: haruki-murakami/blind-willow-sleeping-woman/vintage-2007-en
+  workId: haruki-murakami/blind-willow-sleeping-woman
+  isbn13: "9781400096084"
+  language: en
+  title: "Blind Willow, Sleeping Woman"
+  translator: "Philip Gabriel, Jay Rubin"
+  format: paperback
+  publisher: Vintage
+  year: 2007
+  note: Translated jointly, alternating story by story, per works.yaml.
+  sources:
+    - https://en.wikipedia.org/wiki/Blind_Willow,_Sleeping_Woman
+
+- id: haruki-murakami/blind-willow-sleeping-woman/casa-das-letras-2017-pt
+  workId: haruki-murakami/blind-willow-sleeping-woman
+  isbn13: "9789724617909"
+  language: pt-PT
+  title: "A Rapariga que Inventou um Sonho"
+  translator: "Maria João Lourenço"
+  publisher: Casa das Letras
+  year: 2017
+  note: >
+    Non-literal Portuguese title ("The Girl Who Invented a Dream"), matched
+    to this work by its Goodreads edition record's synopsis and full
+    24-story contents list for this exact ISBN, not by title. 8th ed.; 1st
+    published 2008, same ISBN root throughout.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-46-1790-9&profile=bn"
+    - "https://www.goodreads.com/book/show/3599299-a-rapariga-que-inventou-um-sonho"
+
+# --- Men Without Women ---
+
+- id: haruki-murakami/men-without-women/vintage-2018-en
+  workId: haruki-murakami/men-without-women
+  isbn13: "9781784705374"
+  language: en
+  title: "Men Without Women"
+  translator: "Philip Gabriel, Ted Goossen"
+  format: paperback
+  publisher: Vintage
+  year: 2018
+  sources:
+    - https://en.wikipedia.org/wiki/Men_Without_Women_(Murakami_short_story_collection)
+    - https://www.penguin.co.uk/books/55817/men-without-women-by-murakami-haruki/9781784705374
+
+- id: haruki-murakami/men-without-women/casa-das-letras-2020-pt
+  workId: haruki-murakami/men-without-women
+  isbn13: "9789897418105"
+  language: pt-PT
+  title: "Homens Sem Mulheres"
+  translator: "Maria João Lourenço"
+  publisher: Casa das Letras
+  year: 2020
+  note: 3rd ed.; 1st published 2017, same ISBN root throughout.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-741-810-5&profile=bn"
+
+# --- First Person Singular ---
+
+- id: haruki-murakami/first-person-singular/knopf-2021-en
+  workId: haruki-murakami/first-person-singular
+  isbn13: "9780593318072"
+  language: en
+  title: "First Person Singular"
+  translator: "Philip Gabriel"
+  format: hardcover
+  publisher: Alfred A. Knopf
+  year: 2021
+  note: >
+    Wikipedia's own infobox ISBN for this work (978-4-16-391239-4) is the
+    Japanese Bungeishunju hardcover, not this English edition - easy to
+    transpose since the infobox does not label which is which; this ISBN is
+    OpenLibrary's English-language Knopf record instead.
+  sources:
+    - https://en.wikipedia.org/wiki/First_Person_Singular_(short_story_collection)
+    - https://openlibrary.org/search.json?q=title%3A%22First+Person+Singular%22+murakami
+
+- id: haruki-murakami/first-person-singular/casa-das-letras-2021-pt
+  workId: haruki-murakami/first-person-singular
+  isbn13: "9789896612405"
+  language: pt-PT
+  title: "Primeira Pessoa do Singular"
+  translator: "Inês Rocha Silva, Maria João Lourenço"
+  publisher: Casa das Letras
+  year: 2021
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-661-240-5&profile=bn"
+
+# --- The Strange Library ---
+
+- id: haruki-murakami/the-strange-library/knopf-2014-en
+  workId: haruki-murakami/the-strange-library
+  isbn13: "9780385354301"
+  language: en
+  title: "The Strange Library"
+  translator: "Ted Goossen"
+  format: hardcover
+  publisher: Alfred A. Knopf
+  year: 2014
+  note: >
+    Translates the 2014 Kat Menschik-illustrated Shinchosha edition per
+    works.yaml's own note on this work's three-stage publication history; no
+    pt-PT edition found.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Strange_Library
+
+# --- Underground ---
+
+- id: haruki-murakami/underground/vintage-international-2001-en
+  workId: haruki-murakami/underground
+  isbn13: "9780375725807"
+  language: en
+  title: Underground
+  translator: "Alfred Birnbaum, Philip Gabriel"
+  format: paperback
+  publisher: Vintage International
+  year: 2001
+  note: >
+    An abridged combination of Murakami's two separate Japanese volumes on
+    the sarin attack, per works.yaml's own note; also published the same
+    year in the UK by Harvill Press.
+  sources:
+    - https://en.wikipedia.org/wiki/Underground:_The_Tokyo_Gas_Attack_and_the_Japanese_Psyche
+
+- id: haruki-murakami/underground/tinta-da-china-2006-pt
+  workId: haruki-murakami/underground
+  isbn13: "9789728955168"
+  language: pt-PT
+  title: Underground
+  translator: "Susana Serras Pereira"
+  publisher: Tinta-da-China
+  year: 2006
+  note: >
+    The only pt-PT edition found, and the only Murakami title in this
+    bibliography that Tinta-da-China rather than Casa das Letras publishes
+    in Portuguese - a different house and a different translator from the
+    rest of the wing, not a transcription error. ISBN-10 972-8955-16-2
+    converted here (978 prefix, check digit recomputed).
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=972-8955-16-2&profile=bn"
+
+# --- What I Talk About When I Talk About Running ---
+
+- id: haruki-murakami/what-i-talk-about-when-i-talk-about-running/vintage-international-2009-en
+  workId: haruki-murakami/what-i-talk-about-when-i-talk-about-running
+  isbn13: "9780307389831"
+  language: en
+  title: "What I Talk About When I Talk About Running"
+  translator: "Philip Gabriel"
+  format: paperback
+  publisher: Vintage International
+  year: 2009
+  sources:
+    - https://en.wikipedia.org/wiki/What_I_Talk_About_When_I_Talk_About_Running
+
+- id: haruki-murakami/what-i-talk-about-when-i-talk-about-running/casa-das-letras-2018-pt
+  workId: haruki-murakami/what-i-talk-about-when-i-talk-about-running
+  isbn13: "9789724619231"
+  language: pt-PT
+  title: "Auto-Retrato do Escritor Enquanto Corredor de Fundo"
+  translator: "Maria João Lourenço"
+  publisher: Casa das Letras
+  year: 2018
+  note: 5th ed.; 1st published 2009, same ISBN root throughout.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-46-1923-1&profile=bn"
+
+# --- Absolutely on Music ---
+
+- id: haruki-murakami/absolutely-on-music/knopf-2016-en
+  workId: haruki-murakami/absolutely-on-music
+  isbn13: "9780385354349"
+  language: en
+  title: "Absolutely on Music: Conversations"
+  translator: "Jay Rubin"
+  publisher: Alfred A. Knopf
+  year: 2016
+  note: >
+    Not to be confused with the Japanese original's own ISBN
+    (978-4-10-353428-0, Shinchosha, 2011), cited on the same Wikipedia
+    infobox one line above this English edition's - the two are easy to
+    transpose.
+  sources:
+    - https://en.wikipedia.org/wiki/Absolutely_on_Music
+
+- id: haruki-murakami/absolutely-on-music/casa-das-letras-2022-pt
+  workId: haruki-murakami/absolutely-on-music
+  isbn13: "9789896613785"
+  language: pt-PT
+  title: "Música, Só Música"
+  translator: "Maria João Lourenço"
+  publisher: Casa das Letras
+  year: 2022
+  note: >
+    Translated "do inglês" per its own BNP record - i.e. from Jay Rubin's
+    English translation, not directly from the Japanese original, unlike the
+    rest of this wing's Portuguese editions.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-661-378-5&profile=bn"
+
+# --- Novelist as a Vocation ---
+
+- id: haruki-murakami/novelist-as-a-vocation/knopf-2022-en
+  workId: haruki-murakami/novelist-as-a-vocation
+  isbn13: "9780451494641"
+  language: en
+  title: "Novelist as a Vocation"
+  translator: "Philip Gabriel, Ted Goossen"
+  format: hardcover
+  publisher: Alfred A. Knopf
+  year: 2022
+  note: >
+    Also published the same day by Harvill Secker (UK, ISBN
+    978-1-911-21538-7) and Doubleday Canada (ISBN 978-0-385-68947-2) - one
+    translation, three national editions.
+  sources:
+    - https://en.wikipedia.org/wiki/Novelist_as_a_Vocation
+
+- id: haruki-murakami/novelist-as-a-vocation/casa-das-letras-2024-pt
+  workId: haruki-murakami/novelist-as-a-vocation
+  isbn13: "9789896619435"
+  language: pt-PT
+  title: "Romancista como Vocação"
+  translator: "Inês Rocha Silva, Maria João Lourenço"
+  publisher: Casa das Letras
+  year: 2024
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-661-943-5&profile=bn"
+
+# --- Murakami T ---
+
+- id: haruki-murakami/murakami-t/knopf-2021-en
+  workId: haruki-murakami/murakami-t
+  isbn13: "9780593320426"
+  language: en
+  title: "Murakami T: The T-Shirts I Love"
+  translator: "Philip Gabriel"
+  publisher: Alfred A. Knopf
+  year: 2021
+  note: No pt-PT edition found.
+  sources:
+    - https://en.wikipedia.org/wiki/Murakami_T
+
+# --- Birthday Stories (apocrypha; Murakami as editor/contributor) ---
+
+- id: haruki-murakami/birthday-stories/harvill-press-2004-en
+  workId: haruki-murakami/birthday-stories
+  isbn13: "9781843431596"
+  language: en
+  title: "Birthday Stories"
+  format: hardcover
+  publisher: Harvill Press
+  year: 2004
+  note: >
+    An anthology of other authors' stories, printed in their existing
+    English-language texts (per works.yaml's own note), so no single
+    translator credit applies to most of the book. Murakami's own
+    contribution, "Birthday Girl," is translated from Japanese, but no
+    edition record consulted credits a translator for that one piece
+    specifically - an honest gap rather than a guess. No pt-PT edition
+    found.
+  sources:
+    - https://en.wikipedia.org/wiki/Birthday_Stories
+    - https://openlibrary.org/books/OL8931333M
