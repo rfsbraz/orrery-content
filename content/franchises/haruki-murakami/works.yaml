@@ -106,6 +106,22 @@
     the first and only translation published outside Japan.
   sources:
     - https://en.wikipedia.org/wiki/Hear_the_Wind_Sing
+  images:
+    cover: "https://covers.openlibrary.org/b/id/15122409-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL60103157M"
+    # The Chip Kidd-designed jacket of Wind/Pinball: Two Novels (Vintage,
+    # 2016 US paperback of Ted Goossen's 2015 Knopf translation, ISBN
+    # 9780385352123) - the only English translation ever given a general
+    # release outside Japan (see this work's own note), so this is the
+    # current, authorized cover for both this novel and pinball-1973 below,
+    # not a repeat for coverage's sake: the two share one physical book
+    # because their only current English edition is that same omnibus.
+    # Confirmed by fetching editions.json for the omnibus's own OL work
+    # record (OL44032079W) rather than the merged/ambiguous OL2625438W,
+    # whose "representative" cover_i resolves to a dead placeholder. No UK
+    # Vintage/Harvill Secker edition carries its own distinct cover art on
+    # Open Library.
 
 - id: haruki-murakami/pinball-1973
   title: "1973年のピンボール"
@@ -127,6 +143,15 @@
     Ted Goossen's 2015 Wind/Pinball omnibus translation.
   sources:
     - https://en.wikipedia.org/wiki/Pinball,_1973
+  images:
+    cover: "https://covers.openlibrary.org/b/id/15122409-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL60103157M"
+    # Same Wind/Pinball: Two Novels jacket as hear-the-wind-sing above - see
+    # that entry's own note for why the shared cover is not a coverage-padding
+    # repeat. Flagged for editions: both novels' editions.yaml entries should
+    # point at this same Vintage 2016 / Knopf 2015 omnibus edition
+    # (ISBN 9780385352123).
 
 - id: haruki-murakami/a-wild-sheep-chase
   title: "羊をめぐる冒険"
@@ -147,6 +172,15 @@
     general release.
   sources:
     - https://en.wikipedia.org/wiki/A_Wild_Sheep_Chase
+  images:
+    cover: "https://covers.openlibrary.org/b/id/11522007-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL7426704M"
+    # Vintage/Vintage Books, April 2002 (Birnbaum translation, ISBN
+    # 9780375718946) - the current US Vintage International cover. Rejected:
+    # the 1990 Penguin Plume edition (a different, older jacket design) and
+    # a small 116-180px Kodansha International scan, both real but a step
+    # down from this one.
 
 - id: haruki-murakami/hard-boiled-wonderland-and-the-end-of-the-world
   title: "世界の終りとハードボイルド・ワンダーランド"
@@ -169,6 +203,19 @@
     (Vintage/Penguin Random House, US jacket).
   sources:
     - https://en.wikipedia.org/wiki/Hard-Boiled_Wonderland_and_the_End_of_the_World
+  images:
+    cover: "https://covers.openlibrary.org/b/id/8261161-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL1745775M"
+    # Vintage Books, 1993 - an abstract hand/claw, red ball and cube on a
+    # checkerboard ground. Deliberately not the other real, unwatermarked
+    # English candidate on Open Library (Vintage International 1993,
+    # OL25118521M and reprints of it): that jacket mirrors two identical
+    # faces nose to nose - the two Hard-Boiled Wonderland strands read as
+    # one figure or a mirrored self, a depiction this book's own two
+    # separately-narrated strands don't support, even though the art never
+    # stages an actual scene. This cover's abstract objects carry no such
+    # risk.
 
 - id: haruki-murakami/norwegian-wood
   title: "ノルウェイの森"
@@ -196,6 +243,21 @@
     later account.
   sources:
     - https://en.wikipedia.org/wiki/Norwegian_Wood_(novel)
+  images:
+    cover: "https://covers.openlibrary.org/b/id/14774777-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL36270797M"
+    # Current UK Vintage illustrated edition (Penguin Random House, 2022,
+    # ISBN 9781784877996) - Jay Rubin's 2000 translation, the sole
+    # authorized-outside-Japan text (this work's own note). Confirmed
+    # English and current by fetching this specific edition's own
+    # editions.json entry rather than trusting the merged OL work's
+    # "representative" cover_i, which resolves to a 2001 German DUMONT
+    # jacket - exactly the multi-translation/wrong-language trap this wing
+    # was flagged for. Rejected on inspection: the "Now a Major Motion
+    # Picture" Vintage US tie-in cover (a film-adaptation credit this
+    # catalogue's covers otherwise avoid) and a Vintage UK printing with a
+    # visibly creased, scan-damaged surface.
 
 - id: haruki-murakami/dance-dance-dance
   title: "ダンス・ダンス・ダンス"
@@ -216,6 +278,14 @@
     note instead.
   sources:
     - https://en.wikipedia.org/wiki/Dance_Dance_Dance_(novel)
+  images:
+    cover: "https://covers.openlibrary.org/b/id/7886358-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL35886963M"
+    # Kodansha International, 1994 - the first English-language edition's
+    # own jacket (a Matisse-flat dancing figure and shadow). Only one
+    # translation of this novel exists in English, so no multi-edition
+    # trap applies here.
 
 - id: haruki-murakami/south-of-the-border-west-of-the-sun
   title: "国境の南、太陽の西"
@@ -232,6 +302,13 @@
     Hepburn romanization: Kokkyō no Minami, Taiyō no Nishi.
   sources:
     - https://en.wikipedia.org/wiki/South_of_the_Border,_West_of_the_Sun
+  images:
+    cover: "https://covers.openlibrary.org/b/id/225553-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL701136M"
+    # Knopf, 1999 - a 78rpm record label design, a direct match for this
+    # wing's own visual-language motif (a record spinning on a turntable),
+    # found independently of that motif rather than chosen to fit it.
 
 - id: haruki-murakami/the-wind-up-bird-chronicle
   title: "ねじまき鳥クロニクル"
@@ -255,6 +332,17 @@
     mid-career work.
   sources:
     - https://en.wikipedia.org/wiki/The_Wind-Up_Bird_Chronicle
+  images:
+    cover: "https://covers.openlibrary.org/b/id/9271494-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL21503461M"
+    # Vintage International reprint crediting Murakami as "author of Kafka
+    # on the Shore," so post-2005 and current at the time of printing - an
+    # actual wind-up-bird illustration, distinct from the also-real, also
+    # unwatermarked Knopf 1997 hardcover (a stylised bird's-eye Chip Kidd
+    # jacket) and a Vintage International library-copy scan that turned out
+    # to carry a "San Rafael Public Library" ownership stamp on the title
+    # page, not a jacket at all - rejected on inspection.
 
 - id: haruki-murakami/sputnik-sweetheart
   title: "スプートニクの恋人"
@@ -270,6 +358,13 @@
     Hepburn romanization: Supūtoniku no Koibito.
   sources:
     - https://en.wikipedia.org/wiki/Sputnik_Sweetheart
+  images:
+    cover: "https://covers.openlibrary.org/b/id/15088863-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL7426986M"
+    # Vintage, April 2002 (Philip Gabriel translation, ISBN 9780375726057) -
+    # a half-face profile against radiating lines, the current US Vintage
+    # cover.
 
 - id: haruki-murakami/kafka-on-the-shore
   title: "海辺のカフカ"
@@ -286,6 +381,14 @@
     Hepburn romanization: Umibe no Kafuka.
   sources:
     - https://en.wikipedia.org/wiki/Kafka_on_the_Shore
+  images:
+    cover: "https://covers.openlibrary.org/b/id/15090190-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL36270783M"
+    # Current UK Vintage edition (Penguin Random House, 2022, ISBN
+    # 9781784877989) - the widely-reprinted split-face design (also used on
+    # the current US Vintage International printing under this same visual
+    # treatment).
 
 - id: haruki-murakami/after-dark
   title: "アフターダーク"
@@ -302,6 +405,16 @@
     Hepburn romanization: Afutā Dāku.
   sources:
     - https://en.wikipedia.org/wiki/After_Dark_(novel)
+  images:
+    cover: "https://covers.openlibrary.org/b/id/243726-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL7441786M"
+    # Bond Street Books, May 2007 (Jay Rubin translation) - a streaked,
+    # colour-lit corridor, an on-theme match for this wing's own "lamplit
+    # night apartment" register. Rejected: a "Coming soon from Random
+    # House" placeholder graphic that Open Library had filed as this
+    # edition's own jacket, and two otherwise-fine candidates that turned
+    # out to be audiobook cover art rather than a print jacket.
 
 - id: haruki-murakami/1q84
   title: "1Q84"
@@ -333,6 +446,18 @@
   sources:
     - https://en.wikipedia.org/wiki/1Q84
     - https://en.wikipedia.org/wiki/Haruki_Murakami
+  images:
+    cover: "https://covers.openlibrary.org/b/id/13131566-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL40300402M"
+    # Current UK single-volume edition collecting Books 1-3 (Penguin Random
+    # House/Harvill Secker, 2012, ISBN 9781846556692) - a moon, a cicada and
+    # a cat over bare branches. Shows neither Aomame nor Tengo, as children
+    # or together; one moon and a cicada rather than the two-moon sky this
+    # novel's own jacket copy already names as safe to depict, so the art
+    # clears the concern without needing that motif either. Rejected: a
+    # Knopf US hardcover with a library barcode sticker across the top
+    # third of the jacket.
 
 - id: haruki-murakami/colorless-tsukuru-tazaki-and-his-years-of-pilgrimage
   title: "色彩を持たない多崎つくると、彼の巡礼の年"
@@ -349,6 +474,14 @@
     Junrei no Toshi.
   sources:
     - https://en.wikipedia.org/wiki/Colorless_Tsukuru_Tazaki_and_His_Years_of_Pilgrimage
+  images:
+    cover: "https://covers.openlibrary.org/b/id/7852099-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL35261813M"
+    # Alfred A. Knopf, 2014 (Philip Gabriel translation) - the four colour
+    # bars (red, blue, white, black) for the friend group's own colour-coded
+    # names, and the pilgrimage-year circular seal. Current US hardcover
+    # jacket.
 
 - id: haruki-murakami/killing-commendatore
   title: "騎士団長殺し"
@@ -374,6 +507,15 @@
     into one English-language volume in 2018.
   sources:
     - https://en.wikipedia.org/wiki/Killing_Commendatore
+  images:
+    cover: "https://covers.openlibrary.org/b/id/12498354-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL35887141M"
+    # Alfred A. Knopf, 2018 - a single yellow-orange eye on blue linen
+    # texture, an unrelated motif that shows neither the small figure from
+    # the novel's own painting nor its pit freshly opened. Rejected: two
+    # otherwise-identical reprints (Anchor Canada; a second Knopf printing)
+    # each carrying a public-library barcode sticker across the jacket.
 
 - id: haruki-murakami/the-city-and-its-uncertain-walls
   title: "街とその不確かな壁"
@@ -396,6 +538,17 @@
     recent novel as of this bibliography.
   sources:
     - https://en.wikipedia.org/wiki/The_City_and_Its_Uncertain_Walls
+  images:
+    cover: "https://covers.openlibrary.org/b/id/15092549-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL59266410M"
+    # Current UK edition (Harvill Secker, 2024, ISBN 9781787304475) - an
+    # illustrated silhouette at a window, the same current UK Vintage
+    # register as norwegian-wood's own cover. Preferred over the equally
+    # real, equally current US Knopf hardcover (a wall/clock/shadow motif)
+    # for that visual-family consistency across the wing's two Vintage UK
+    # covers, not because the US jacket was rejected on any rights or
+    # quality ground.
 
 - id: haruki-murakami/the-tale-of-kaho
   title: "夏帆─The Tale of KAHO─"
@@ -428,6 +581,11 @@
     - https://apnews.com/article/haruki-murakami-japan-novel-release-kaho-04accdae3413d874b284a128ec3e4616
     - https://www.shinchosha.co.jp/special/kaho/
     - https://www.haruki-m.com/news/news205.html
+  # No cover: no English translation has been announced (this work's own
+  # note), so no English-language jacket exists to source; the Japanese
+  # Shinchosha original (3 July 2026) has no Open Library record at all,
+  # checked by title search and by sweeping the author's OpenLibrary works
+  # list (534 entries).
 
 # --- Short story collections (6) ---
 
@@ -462,6 +620,8 @@
   sources:
     - https://ja.wikipedia.org/wiki/夢で会いましょう
     - https://www.kodansha.co.jp/book/products/0000159872
+  # No cover: no English translation exists (this work's own note); the
+  # Japanese bunko reissue has no cover on its Open Library record either.
 
 - id: haruki-murakami/the-elephant-vanishes
   title: "象の消滅"
@@ -488,6 +648,17 @@
     describes, so reading either first gives nothing away about the other.
   sources:
     - https://en.wikipedia.org/wiki/The_Elephant_Vanishes
+  images:
+    cover: "https://covers.openlibrary.org/b/id/11521992-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL1744979M"
+    # A.A. Knopf, 1993 - the iconic Chip Kidd jacket (a sculptural elephant
+    # built from four gramophone horns). Rejected: this work's OL
+    # "representative" cover, which resolves to a 1998 Rowohlt German
+    # edition, the same wrong-language trap already documented on
+    # norwegian-wood; a genuinely English alternative (current UK Vintage,
+    # an eye-and-eyelash close-up) was set aside only because this Knopf
+    # jacket is the far more widely recognized cover for the title.
 
 - id: haruki-murakami/after-the-quake
   title: "神の子どもたちはみな踊る"
@@ -510,6 +681,15 @@
     unlike The Elephant Vanishes or Blind Willow, Sleeping Woman.
   sources:
     - https://en.wikipedia.org/wiki/After_the_Quake
+  images:
+    cover: "https://covers.openlibrary.org/b/id/226423-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL7425273M"
+    # Knopf, August 2002 (Jay Rubin translation) - a mass of koi crowded
+    # into dark water. This work's OL "representative" cover resolves to a
+    # French 10/18 edition; the real English candidates only surface on
+    # this specific edition's own editions.json, the same pattern as
+    # elephant-vanishes and norwegian-wood above.
 
 - id: haruki-murakami/blind-willow-sleeping-woman
   title: "めくらやなぎと眠る女"
@@ -532,6 +712,15 @@
     Elephant Vanishes.
   sources:
     - https://en.wikipedia.org/wiki/Blind_Willow,_Sleeping_Woman
+  images:
+    cover: "https://covers.openlibrary.org/b/id/12076251-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL3422777M"
+    # Knopf, 2006 - an illustrated eye inside a swirl, matching the Kafka
+    # on the Shore cover's own visual family. Preferred over a real,
+    # unwatermarked Harvill Secker UK edition that photographs a reclining
+    # woman baring her back - not a rights problem, just a busier,
+    # photo-realistic image next to this wing's other illustrated covers.
 
 - id: haruki-murakami/men-without-women
   title: "女のいない男たち"
@@ -550,6 +739,12 @@
     Goossen, English 9 May 2017.
   sources:
     - https://en.wikipedia.org/wiki/Men_Without_Women_(Murakami_short_story_collection)
+  images:
+    cover: "https://covers.openlibrary.org/b/id/13768905-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL47304376M"
+    # Anchor Canada, 2018 (Philip Gabriel/Ted Goossen translation) - two
+    # mirrored magenta/yellow profiles, the current Knopf-family design.
 
 - id: haruki-murakami/first-person-singular
   title: "一人称単数"
@@ -567,6 +762,14 @@
     (Bungeishunju), translated by Philip Gabriel, English 6 April 2021.
   sources:
     - https://en.wikipedia.org/wiki/First_Person_Singular_(short_story_collection)
+  images:
+    cover: "https://covers.openlibrary.org/b/id/14613371-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL33948960M"
+    # Current UK Vintage edition (Penguin Random House, 2022, ISBN
+    # 9781529113594) - an illustrated monkey, for the collection's own
+    # confessing-monkey story, in the same current UK Vintage illustrated
+    # register as norwegian-wood and the-city-and-its-uncertain-walls.
 
 - id: haruki-murakami/the-strange-library
   title: "図書館奇譚"
@@ -592,6 +795,13 @@
     Secker, 2014) as "The Strange Library."
   sources:
     - https://en.wikipedia.org/wiki/The_Strange_Library
+  images:
+    cover: "https://covers.openlibrary.org/b/id/12636110-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL28544743M"
+    # Penguin Random House UK, 2014 (Ted Goossen translation, ISBN
+    # 9781846559211) - an illustrated library card and pocket, thematically
+    # exact for a novella about a boy sent to return library books.
 
 # --- Nonfiction (6) ---
 
@@ -620,6 +830,15 @@
     the first Japanese volume's year, the earlier of the two source books.
   sources:
     - https://en.wikipedia.org/wiki/Underground:_The_Tokyo_Gas_Attack_and_the_Japanese_Psyche
+  images:
+    cover: "https://covers.openlibrary.org/b/id/914992-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL8626271M"
+    # The Harvill Press, 2000 - a Tokyo subway map traced over a body
+    # silhouette, the current cover design shared with the Vintage
+    # International US edition of the same translation. Its OL
+    # "representative" cover resolves to a 2006 Russian Eksmo edition,
+    # again the wrong-language trap.
 
 - id: haruki-murakami/what-i-talk-about-when-i-talk-about-running
   title: "走ることについて語るときに僕の語ること"
@@ -639,6 +858,14 @@
     2008 (Knopf).
   sources:
     - https://en.wikipedia.org/wiki/What_I_Talk_About_When_I_Talk_About_Running
+  images:
+    cover: "https://covers.openlibrary.org/b/id/13981651-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL46942559M"
+    # Bond Street Books, 2008 (Philip Gabriel translation) - a lone runner
+    # on a cream road, a direct, independently-found match for this wing's
+    # own visual-language motif (an empty road at first light, worn running
+    # shoes by a door).
 
 - id: haruki-murakami/absolutely-on-music
   title: "小澤征爾さんと、音楽について話をする"
@@ -664,6 +891,12 @@
     (Shinchosha), translated by Jay Rubin, English 15 November 2016 (Knopf).
   sources:
     - https://en.wikipedia.org/wiki/Absolutely_on_Music
+  images:
+    cover: "https://covers.openlibrary.org/b/id/14613331-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL37868473M"
+    # Harvill Secker, 2016 (Jay Rubin translation) - a hand conducting over
+    # a bar of sheet music, current UK edition.
 
 - id: haruki-murakami/novelist-as-a-vocation
   title: "職業としての小説家"
@@ -682,6 +915,12 @@
     Goossen, English 2022 (Knopf US / Harvill Secker UK / Doubleday Canada).
   sources:
     - https://en.wikipedia.org/wiki/Novelist_as_a_Vocation
+  images:
+    cover: "https://covers.openlibrary.org/b/id/13136749-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL38406452M"
+    # Knopf Doubleday, 2022 - a maze traced into a capital M, current US
+    # edition.
 
 - id: haruki-murakami/murakami-t
   title: "村上T 僕の愛したTシャツたち"
@@ -701,6 +940,13 @@
     I Love."
   sources:
     - https://en.wikipedia.org/wiki/Murakami_T
+  images:
+    cover: "https://covers.openlibrary.org/b/id/11084482-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL32423040M"
+    # Knopf, November 2021 (Philip Gabriel translation) - a photograph of
+    # the actual sewn-in T-shirt label the book's own English title plays
+    # on, shot against denim.
 
 # --- Apocrypha (1) ---
 #
@@ -741,3 +987,9 @@
     folded into his story collection Blind Willow, Sleeping Woman (2006).
   sources:
     - https://en.wikipedia.org/wiki/Birthday_Stories
+  # No cover: the Harvill Press 2004 English edition's only Open Library
+  # cover is a genuine jacket scan but just 95x135px, well under a usable
+  # size; a second candidate at a larger size turned out to be a scanned
+  # German DUMONT title page, not a jacket. Checked by pulling this work's
+  # own editions.json plus a fresh title search rather than trusting the
+  # merged work's single cover_i.

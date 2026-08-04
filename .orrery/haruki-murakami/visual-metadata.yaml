@@ -1,0 +1,86 @@
+stage: visual-metadata
+summary: >
+  Sourced covers for 26/29 works (90%; all novels but the untranslated 2026
+  The Tale of KAHO), a franchise header (a licensed Tokyo jazz kissa photo)
+  and an author portrait (Commons, CC BY-SA 4.0). lookup.py's own
+  --markets en sweep missed real English editions for nine titles outright
+  (Absolutely on Music, Novelist as a Vocation, Murakami T, Birthday
+  Stories, First Person Singular, The Strange Library, After the Quake, The
+  City and Its Uncertain Walls, both halves of the Wind/Pinball omnibus);
+  direct OpenLibrary author/search/editions.json queries found genuine
+  candidates for all but the one untranslated title and one too-small
+  scan. Every merged OL work's "representative" cover_i was checked and
+  repeatedly proved wrong-language (German/French/Russian/Romanian editions
+  surfacing on English-authored works) - five caught this way - so every
+  cover here comes from a specific edition's own `languages: eng` record,
+  never the work-level id alone. validate.py --slug haruki-murakami: 0
+  errors, 2 pre-existing unrelated warnings. 25 unique cover URLs for 26
+  covered works (two novels deliberately share one, see notableChoices).
+coverage:
+  covers: "26/29 (90%)"
+  novels: "15/16 (94%) - only the-tale-of-kaho (2026, no English translation) lacks a cover"
+  header: "1/1, franchise.yaml"
+  portrait: "1/1, authors/haruki-murakami.yaml"
+rejectedOnInspection: >
+  Wrong-language work-level covers (norwegian-wood: German DUMONT;
+  elephant-vanishes: German Rowohlt; underground: Russian Eksmo;
+  after-the-quake: French 10/18; city-and-its-uncertain-walls: Romanian
+  Polirom). Library-scan defects (wind-up-bird-chronicle candidate carried a
+  "San Rafael Public Library" ownership stamp on a title page, not a
+  jacket; killing-commendatore and 1q84 candidates each had a barcode
+  sticker across the jacket). A film-tie-in cover for norwegian-wood set
+  aside for the current illustrated edition. hard-boiled-wonderland's other
+  real English candidate mirrors two identical faces nose to nose - not a
+  book scene, but a mirrored-self image this wing's own visual language
+  avoids for this title - so an abstract-object cover was used instead.
+  birthday-stories' only real jacket scan is 95x135px; a larger second
+  candidate was a scanned German title page, not a jacket.
+gaps: >
+  3 bare, each commented in place: the-tale-of-kaho and lets-meet-in-a-dream
+  have no English translation at all (confirmed by title search and by
+  sweeping the author's full 534-entry OpenLibrary works list);
+  birthday-stories has a real English edition but no cover above thumbnail
+  size on Open Library.
+notableChoices:
+  sharedOmnibusCover: >
+    hear-the-wind-sing and pinball-1973 share one cover (Vintage 2016, Ted
+    Goossen's Wind/Pinball: Two Novels) because that omnibus is the only
+    translation either novel has ever had outside Japan - one real jacket
+    genuinely serves both, confirmed via the omnibus's own edition record
+    rather than the larger merged work, whose own cover_i is a dead
+    placeholder.
+  ukVintageFamily: >
+    norwegian-wood, city-and-its-uncertain-walls and first-person-singular
+    use current UK Vintage/Harvill Secker illustrated covers for
+    visual-family consistency where an equally current US alternative also
+    existed; elsewhere the more iconic or only-available US Knopf/Vintage
+    jacket was used. Not a fixed rule for the whole bibliography - see
+    forStages.wing-audit.
+  header: >
+    Jazz Masako, a real, still-open jazz kissa in Shimokitazawa, Tokyo
+    (Flickr, CC BY 2.0), captioned only for what it is - not tied to
+    Murakami's own defunct bar Peter Cat, no photographic record of which
+    was found. Golden Gai (Shinjuku) rejected: real CC BY-SA candidates
+    exist but show identifiable people mid-frame and no music connection.
+  portrait: >
+    A 2009 CC BY-SA 4.0 headshot (1027x1217) over the current Wikipedia/
+    Wikidata infobox pick (a 2018 Ecuador Ministry of Culture PD photo):
+    that file's only Commons copy is 456x608, well under a usable width,
+    and its uncropped original is a wide press-conference frame requiring
+    blind centre-crop rather than an already-portrait shot.
+forStages:
+  editions: >
+    hear-the-wind-sing and pinball-1973 should both carry ISBN 9780385352123
+    (Vintage 2016 / Knopf 2015 Wind/Pinball omnibus) - one real book behind
+    two work entries. norwegian-wood's cover is a 2022 Vintage UK reprint of
+    Jay Rubin's translation, the same text as the 2000 Harvill/Vintage
+    International editions, not a different one.
+  translation: >
+    No prose changed, only `images` blocks and data-decision comments.
+  wing-audit: >
+    Two loosenable, non-rights judgment calls: after-dark's Bond Street
+    Books cover was preferred over the current US Vintage jacket for
+    matching this wing's own night-interior register more closely; the
+    older, more iconic Knopf 1993 Chip Kidd jacket was used for
+    elephant-vanishes over an equally current, equally clean UK Vintage
+    alternative, on recognizability rather than strict recency.
