@@ -1,0 +1,25 @@
+# TITLE-SCRIPT DECISION (read before touching works.yaml). This is the
+# catalogue's first author whose original language is not written in Latin
+# script. Every other translated wing (Saramago, Nesbo, Cervantes...) keeps
+# its work titles in the author's own language unaltered, because that
+# language happens to share readers' alphabet. The literal extension of the
+# same rule to Japanese is the native script (e.g. 風の歌を聴け), which is
+# what works.yaml carries as `title`, with the Hepburn romanization given
+# alongside every entry. Neither docs/SCHEMA.md, docs/LAYOUT.md nor
+# docs/VISUAL.md say anything about non-Latin glyph support in the app's
+# three closed-set display faces (fraunces, spectral, sourceSerif) or in the
+# inline work-reference renderer, so this is untested, not confirmed working.
+id: haruki-murakami
+name: Haruki Murakami
+kind: author
+description: >
+  A jazz-bar owner turned novelist of missing cats, well-shafts and parallel
+  Tokyos, translated into English across four decades by three principal
+  translators, with two early novels held out of general Western release for
+  over twenty-five years.
+authorIds: [haruki-murakami]
+themePreset: after-hours-tokyo
+features: {}
+sources:
+  - https://en.wikipedia.org/wiki/Haruki_Murakami
+  - https://en.wikipedia.org/wiki/Template:Haruki_Murakami

@@ -1,0 +1,654 @@
+# Bibliography (Works) - the abstract books; editions/covers are separate.
+# IDs are STABLE and permanent (user data references them).
+#
+# TITLE SCRIPT. `title` is the Japanese original, in the native script, per
+# this catalogue's rule that title is the original title, permanently - the
+# same rule every other translated wing already follows for a Latin-script
+# original (Saramago's Portuguese, Nesbo's Norwegian, Cervantes's Spanish).
+# The Hepburn romanization is given on every entry immediately after the
+# native title so the fact is never only in one script. See franchise.yaml's
+# header: no non-Latin-script wing exists yet in this catalogue, and glyph
+# support in the three display faces is unconfirmed.
+#
+# PUBLISHED YEAR. Per this catalogue's fault-line-3 handling (Nesbo's
+# Norwegian years, Saramago's Portuguese years), `published` is the
+# ORIGINAL JAPANESE first-publication year, not the English translation
+# year, for every entry where a Japanese edition genuinely came first - which
+# is most of this bibliography. Two entries invert that: The Elephant
+# Vanishes and Blind Willow, Sleeping Woman were compiled and first
+# published in English, with an equivalent Japanese-language volume of the
+# same selection following years later (see each entry's own note). For
+# those two, `published` is the English year, because that actually is the
+# year the compilation itself first existed as a book - not a translation of
+# a prior Japanese book, but the first publication of that book, full stop.
+#
+# CROSS-CHECKED against English Wikipedia's dedicated article and infobox for
+# every individual work (each independently sourced and cited, not the
+# summary "Works by Haruki Murakami" navbox template, which was checked first
+# and found to carry at least two wrong original-title fields - corrected
+# here after reading each book's own article). OpenLibrary's search API
+# returned HTTP 503 on every attempt and gave no results to cross-check
+# against; ISFDB has no entry for Murakami (he is catalogued there only as a
+# subject of secondary criticism, not as a listed author). Neither source is
+# available for a cross-check of this bibliography.
+#
+# canonTier convention for this franchise:
+#   core      - the 15 novels: the narrative-fiction spine every source
+#               checked (English Wikipedia's own infobox "Notable works",
+#               the "Works by Haruki Murakami" navbox, his English
+#               publishers' own backlists) builds from.
+#   extended  - the 5 short-story collections (his own, not counting the
+#               edited anthology below) and the 6 nonfiction books.
+#               Genuinely his, off the novel-reading spine, matching this
+#               catalogue's own convention for an author's short fiction and
+#               nonfiction (see jo-nesbo/works.yaml, agatha-christie/works.yaml).
+#   apocrypha - one entry: an anthology Murakami edited and translated
+#               (mostly other authors' stories) rather than wrote.
+#
+# THE DUAL-TRANSLATION PATTERN. Three novels, not one, were first given a
+# Japan-only English translation years before the translation most Western
+# readers actually read:
+#   - Hear the Wind Sing and Pinball, 1973: Alfred Birnbaum's 1987/1990
+#     translations were published only in Japan, as part of Kodansha's
+#     "Kodansha English Library" series for Japanese students of English -
+#     pocket-sized, with an appendix of the Japanese text for key phrases.
+#     Murakami has described the two novels as work from his "immature
+#     period" and neither was ever given a general Western release under
+#     that translation. Ted Goossen's translation, published as the omnibus
+#     Wind/Pinball: Two Novels (Knopf, August 2015), is the first and only
+#     translation released outside Japan.
+#   - Norwegian Wood: the same pattern, independently confirmed on its own
+#     Wikipedia article rather than assumed from the first case. Alfred
+#     Birnbaum's 1989 translation was likewise a Kodansha English Library,
+#     Japan-only edition for English learners, now discontinued in Japan.
+#     Jay Rubin's 2000 translation (Harvill Press UK /
+#     Vintage International US) is stated directly as "the authorized
+#     version for publication outside Japan."
+# All three Birnbaum editions carry real ISBNs and are real, once-published
+# books - editions.yaml's free-text `note:` field is enough to record each as
+# superseded/discontinued rather than currently in print; nothing in
+# docs/SCHEMA.md's editions.yaml fields is missing for this.
+#
+# TRANSLATOR-PER-NOVEL. No single translator covers the catalogue. Alfred
+# Birnbaum translated the early, realist novels (through Dance Dance Dance,
+# 1994); Jay Rubin and Philip Gabriel split most of the rest between them
+# from Hard-Boiled Wonderland (1991) onward, sometimes on the same book -
+# 1Q84 (Rubin: Books 1-2, Gabriel: Book 3) and Killing Commendatore (Gabriel
+# and Ted Goossen, split by volume); Goossen alone did the 2015 Wind/Pinball
+# omnibus and The Strange Library (2014). This is per-edition information and
+# lives in editions.yaml's existing `translator` field, one string per book;
+# it does not need a new place to live, and no work below carries a
+# translationNote, because unlike Cervantes's Don Quixote, a reader today has
+# no live choice between competing in-print English translations of any of
+# these three novels - the earlier translation is discontinued or was never
+# for sale outside Japan in the first place, so there is no current
+# edition-choosing decision for translationNote to describe.
+
+# --- Novels (15) ---
+
+- id: haruki-murakami/hear-the-wind-sing
+  title: "風の歌を聴け"
+  authorIds: [haruki-murakami]
+  published: 1979
+  subseries: "Trilogy of the Rat"
+  canonTier: core
+  synopsis: >
+    An unnamed narrator looks back on a directionless summer of 1970,
+    drinking with his friend the Rat and a four-fingered woman he meets in a
+    bar, in Murakami's own restrained, jazz-inflected debut.
+  note: >
+    Hepburn romanization: Kaze no Uta o Kike. First appeared in the June
+    1979 issue of the literary magazine Gunzo, in book form the following
+    month. Alfred Birnbaum's 1987 English translation was published only in
+    Japan, as a Kodansha English Library edition for English-language
+    students, and was never given a general Western release; Ted Goossen's
+    translation, in the omnibus Wind/Pinball: Two Novels (Knopf, 2015), is
+    the first and only translation published outside Japan.
+  sources:
+    - https://en.wikipedia.org/wiki/Hear_the_Wind_Sing
+
+- id: haruki-murakami/pinball-1973
+  title: "1973年のピンボール"
+  authorIds: [haruki-murakami]
+  published: 1980
+  subseries: "Trilogy of the Rat"
+  canonTier: core
+  synopsis: >
+    The same narrator, a year on, splits his time between running a small
+    translation agency and an obsessive, ultimately unresolved search for a
+    vanished pinball machine he once played obsessively.
+  note: >
+    Hepburn romanization: 1973-nen no Pinbōru. Same dual-translation history
+    as its immediate predecessor: Alfred Birnbaum's Japan-only Kodansha
+    English Library translation (1980s), superseded outside Japan only by
+    Ted Goossen's 2015 Wind/Pinball omnibus translation.
+  sources:
+    - https://en.wikipedia.org/wiki/Pinball,_1973
+
+- id: haruki-murakami/a-wild-sheep-chase
+  title: "羊をめぐる冒険"
+  authorIds: [haruki-murakami]
+  published: 1982
+  subseries: "Trilogy of the Rat"
+  canonTier: core
+  synopsis: >
+    The narrator is drawn into a bizarre corporate-underworld search for a
+    sheep possessed by a supernatural, history-shaping spirit, guided by his
+    old friend the Rat's trail across Hokkaido.
+  note: >
+    Hepburn romanization: Hitsuji o Meguru Bōken. Translator Alfred Birnbaum
+    and Kodansha editor Elmer Luke reworked the register toward something
+    more contemporary and more legible to American readers than a literal
+    rendering of the 1970s-set original. First novel of his given a general
+    English-language release (1989), three years before Norwegian Wood's own
+    general release.
+  sources:
+    - https://en.wikipedia.org/wiki/A_Wild_Sheep_Chase
+
+- id: haruki-murakami/hard-boiled-wonderland-and-the-end-of-the-world
+  title: "世界の終りとハードボイルド・ワンダーランド"
+  authorIds: [haruki-murakami]
+  published: 1985
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Two interleaved narratives, a cyberpunk-inflected Tokyo where a
+    "Calcutec" data-launderer is hunted through the city's underground, and a
+    walled, timeless town where the narrator surrenders his shadow, converge
+    on a question of which self is real.
+  note: >
+    Hepburn romanization: Sekai no Owari to Hādo-Boirudo Wandārando.
+  sources:
+    - https://en.wikipedia.org/wiki/Hard-Boiled_Wonderland_and_the_End_of_the_World
+
+- id: haruki-murakami/norwegian-wood
+  title: "ノルウェイの森"
+  authorIds: [haruki-murakami]
+  published: 1987
+  subseries: null
+  canonTier: core
+  featured: true
+  synopsis: >
+    Toru Watanabe recalls his student years in late-1960s Tokyo, torn between
+    Naoko, still grieving their mutual friend's suicide, and the assertive,
+    outgoing Midori - the realist novel that made Murakami a bestselling,
+    and uncomfortably famous, writer in Japan.
+  note: >
+    Hepburn romanization: Noruwei no Mori (literally "Norwegian Forest").
+    Has its own, independently documented dual-translation history, the same
+    shape as Hear the Wind Sing and Pinball, 1973: Alfred Birnbaum's 1989
+    translation was published only in Japan, again as a Kodansha English
+    Library edition for English-language students (keeping the original's
+    two-volume, red-and-green cover division), now discontinued in Japan.
+    Jay Rubin's 2000 translation (Harvill Press UK,
+    Vintage International US) is the authorized version for publication
+    outside Japan. Featured as the novel that turned Murakami from a
+    working novelist into a bestseller uneasy with his own fame, by his own
+    later account.
+  sources:
+    - https://en.wikipedia.org/wiki/Norwegian_Wood_(novel)
+
+- id: haruki-murakami/dance-dance-dance
+  title: "ダンス・ダンス・ダンス"
+  authorIds: [haruki-murakami]
+  published: 1988
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Years after A Wild Sheep Chase, the same unnamed narrator returns to the
+    Dolphin Hotel searching for the sheep man and a vanished woman, in a
+    novel English Wikipedia's own "Trilogy of the Rat" article describes as
+    the trilogy's later epilogue rather than its fourth volume.
+  note: >
+    Hepburn romanization: Dansu Dansu Dansu. Shares its narrator and setting
+    with the Trilogy of the Rat but is described by English Wikipedia as
+    the trilogy's "later epilogue," not its fourth book, so it is left
+    without that subseries value here and the connection is recorded in this
+    note instead.
+  sources:
+    - https://en.wikipedia.org/wiki/Dance_Dance_Dance_(novel)
+
+- id: haruki-murakami/south-of-the-border-west-of-the-sun
+  title: "国境の南、太陽の西"
+  authorIds: [haruki-murakami]
+  published: 1992
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A successful, comfortably married Tokyo jazz-club owner in his late
+    thirties is unsettled by the reappearance of a childhood friend, in a
+    shorter, more intimate novel than the sprawling Wind-Up Bird Chronicle
+    that followed it.
+  note: >
+    Hepburn romanization: Kokkyō no Minami, Taiyō no Nishi.
+  sources:
+    - https://en.wikipedia.org/wiki/South_of_the_Border,_West_of_the_Sun
+
+- id: haruki-murakami/the-wind-up-bird-chronicle
+  title: "ねじまき鳥クロニクル"
+  authorIds: [haruki-murakami]
+  published: 1994
+  subseries: null
+  canonTier: core
+  featured: true
+  synopsis: >
+    Toru Okada's search for his missing cat widens into a search for his
+    vanished wife, and pulls in a psychic sister act, a dry well, and a
+    veteran's buried account of the Japanese occupation of Manchuria - the
+    novel that established the long, dreamlike, multi-stranded form most
+    readers now associate with Murakami.
+  note: >
+    Hepburn romanization: Nejimakidori Kuronikuru. Serialized/published in
+    Japan across three volumes, 1994-1995 (Shinchosha); the English
+    translation (Jay Rubin, 1997) combines and abridges the three-volume
+    original into one book. Featured as the novel most identified with the
+    long, multi-stranded, historically-haunted style that defines his
+    mid-career work.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Wind-Up_Bird_Chronicle
+
+- id: haruki-murakami/sputnik-sweetheart
+  title: "スプートニクの恋人"
+  authorIds: [haruki-murakami]
+  published: 1999
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A young teacher narrates his unrequited love for Sumire, an aspiring
+    novelist obsessed with Jack Kerouac who falls for an older woman and then
+    disappears from a Greek island.
+  note: >
+    Hepburn romanization: Supūtoniku no Koibito.
+  sources:
+    - https://en.wikipedia.org/wiki/Sputnik_Sweetheart
+
+- id: haruki-murakami/kafka-on-the-shore
+  title: "海辺のカフカ"
+  authorIds: [haruki-murakami]
+  published: 2002
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A teenage runaway who calls himself Kafka Tamura and an elderly amnesiac
+    who talks to cats follow two separate, gradually converging paths, in a
+    novel steeped in the Oedipus myth and Shinto ideas about spirit and
+    prophecy.
+  note: >
+    Hepburn romanization: Umibe no Kafuka.
+  sources:
+    - https://en.wikipedia.org/wiki/Kafka_on_the_Shore
+
+- id: haruki-murakami/after-dark
+  title: "アフターダーク"
+  authorIds: [haruki-murakami]
+  published: 2004
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A single night in Tokyo, told largely in present tense from a
+    camera-like, unnamed narrating perspective, follows a young woman who
+    cannot sleep, her older sister who cannot wake, and a handful of
+    strangers who cross paths after midnight.
+  note: >
+    Hepburn romanization: Afutā Dāku.
+  sources:
+    - https://en.wikipedia.org/wiki/After_Dark_(novel)
+
+- id: haruki-murakami/1q84
+  title: "1Q84"
+  authorIds: [haruki-murakami]
+  published: 2009
+  subseries: null
+  canonTier: core
+  featured: true
+  synopsis: >
+    Aomame and Tengo, once childhood classmates, separately notice that 1984
+    Tokyo has quietly become a different world with two moons, and are drawn
+    toward each other across a plot involving a reclusive cult leader and a
+    seventeen-year-old's ghost-written bestseller.
+  note: >
+    Title unchanged in translation: written the same way, "1Q84," in the
+    Japanese original (a pun on the Japanese pronunciation of "9," ku, and
+    the English letter Q, evoking Orwell's Nineteen Eighty-Four). Published
+    in Japan across three volumes: Books 1 and 2 on 29 May 2009, Book 3 on 16
+    April 2010, all Shinchosha. The English translation splits the same way
+    between two translators - Jay Rubin (Books 1-2) and Philip Gabriel (Book
+    3) - collected into one English-language volume in 2011. Featured as
+    the novel a 2019 Asahi Shimbun survey of literary experts ranked the
+    best work of Japan's Heisei era (1989-2019).
+  sources:
+    - https://en.wikipedia.org/wiki/1Q84
+    - https://en.wikipedia.org/wiki/Haruki_Murakami
+
+- id: haruki-murakami/colorless-tsukuru-tazaki-and-his-years-of-pilgrimage
+  title: "色彩を持たない多崎つくると、彼の巡礼の年"
+  authorIds: [haruki-murakami]
+  published: 2013
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Tsukuru Tazaki, the only member of a once-inseparable high school
+    friend group without a color in his name, sets out at 36 to learn why the
+    other four cut him off without explanation sixteen years earlier.
+  note: >
+    Hepburn romanization: Shikisai o Motanai Tazaki Tsukuru to, Kare no
+    Junrei no Toshi.
+  sources:
+    - https://en.wikipedia.org/wiki/Colorless_Tsukuru_Tazaki_and_His_Years_of_Pilgrimage
+
+- id: haruki-murakami/killing-commendatore
+  title: "騎士団長殺し"
+  authorIds: [haruki-murakami]
+  published: 2017
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A portrait painter living in the mountain house of a famous, now
+    incapacitated artist discovers a hidden, decades-old painting of a
+    murder, and a small statuette that lets loose an "Idea" who calls himself
+    the Commendatore.
+  note: >
+    Hepburn romanization: Kishidanchō-goroshi. Published in Japan in two
+    volumes (24 February 2017, Shinchosha): Part 1, "Arawareru Idea hen"
+    ("The Idea Made Visible"), and Part 2, "Utsurou Metafā hen" ("The
+    Shifting Metaphor"). The English translation is likewise split between
+    two translators by volume, Philip Gabriel and Ted Goossen, collected
+    into one English-language volume in 2018.
+  sources:
+    - https://en.wikipedia.org/wiki/Killing_Commendatore
+
+- id: haruki-murakami/the-city-and-its-uncertain-walls
+  title: "街とその不確かな壁"
+  authorIds: [haruki-murakami]
+  published: 2023
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A man who long ago lost the girl he loved to a mysterious walled town
+    finally tries to return there, in a novel built out of a short story of
+    the same name Murakami published in 1980 and long considered unfinished
+    business.
+  note: >
+    Hepburn romanization: Machi to Sono Futashika na Kabe. Expands a short
+    story of the same title (Bungakukai, September 1980) that Murakami says
+    he initially only meant to lightly rewrite; the short story's text forms
+    the novel's first part. Written January 2020 to December 2022, during
+    the COVID-19 pandemic; published in Japan 13 April 2023 (Shinchosha),
+    translated into English by Philip Gabriel, 19 November 2024 - his most
+    recent novel as of this bibliography.
+  sources:
+    - https://en.wikipedia.org/wiki/The_City_and_Its_Uncertain_Walls
+
+# --- Short story collections (5) ---
+
+- id: haruki-murakami/the-elephant-vanishes
+  title: "象の消滅"
+  authorIds: [haruki-murakami]
+  published: 1993
+  subseries: null
+  canonTier: extended
+  format: short-story-collection
+  synopsis: >
+    Seventeen stories written between 1980 and 1991, first gathered as a
+    single volume by Murakami's English-language editor rather than as a
+    Japanese book.
+  note: >
+    Hepburn romanization: Zō no Shōmetsu. Published year is the English
+    year, not a translation year: the seventeen stories were written and
+    published individually in Japan across 1980-1991, but this specific
+    compilation was selected by Gary Fisketjon, Murakami's editor at Knopf,
+    and first existed as a book in English (31 March 1993) - a Japanese
+    edition under this same title and selection followed only in 2005.
+    Translated jointly by Alfred Birnbaum and Jay Rubin.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Elephant_Vanishes
+
+- id: haruki-murakami/after-the-quake
+  title: "神の子どもたちはみな踊る"
+  authorIds: [haruki-murakami]
+  published: 2000
+  subseries: null
+  canonTier: extended
+  format: short-story-collection
+  synopsis: >
+    Six stories, each set in the weeks after the January 1995 Kobe
+    earthquake though none directly depicting it, following characters whose
+    lives are quietly reshaped by a disaster happening elsewhere on their
+    television screens.
+  note: >
+    Hepburn romanization: Kami no Kodomo-tachi wa Mina Odoru (literally "All
+    God's Children Can Dance"). Published Japan February 2000 (Shinchosha),
+    translated by Jay Rubin, English August 2002 (Knopf) under the title
+    "after the quake." Murakami has described this as more a single
+    conceptual collection than a gathering of previously scattered pieces,
+    unlike The Elephant Vanishes or Blind Willow, Sleeping Woman.
+  sources:
+    - https://en.wikipedia.org/wiki/After_the_Quake
+
+- id: haruki-murakami/blind-willow-sleeping-woman
+  title: "めくらやなぎと眠る女"
+  authorIds: [haruki-murakami]
+  published: 2006
+  subseries: null
+  canonTier: extended
+  format: short-story-collection
+  synopsis: >
+    Twenty-four stories written between 1980 and 2005, selected by Murakami
+    himself as his own definitive English-language short-fiction collection.
+  note: >
+    Hepburn romanization: Mekurayanagi to Nemuru Onna. Published year is the
+    English year, for the same reason as The Elephant Vanishes: the
+    selection was made by Murakami and first published as a book in English
+    (Harvill Secker UK, July 2006; Knopf US, August 2006); a Japanese-language
+    edition of the same selection followed in 2009. Translated jointly by
+    Philip Gabriel and Jay Rubin, alternating story by story. Murakami has
+    called this his first real English-language collection since The
+    Elephant Vanishes.
+  sources:
+    - https://en.wikipedia.org/wiki/Blind_Willow,_Sleeping_Woman
+
+- id: haruki-murakami/men-without-women
+  title: "女のいない男たち"
+  authorIds: [haruki-murakami]
+  published: 2014
+  subseries: null
+  canonTier: extended
+  format: short-story-collection
+  synopsis: >
+    Seven stories, each turning on a man who has lost, or never had, the
+    woman he wanted - including "Drive My Car," later adapted into the
+    Academy Award-winning 2021 film of the same name.
+  note: >
+    Hepburn romanization: Onna no Inai Otokotachi. Published Japan 18 April
+    2014 (Bungeishunju), translated jointly by Philip Gabriel and Ted
+    Goossen, English 9 May 2017.
+  sources:
+    - https://en.wikipedia.org/wiki/Men_Without_Women_(Murakami_short_story_collection)
+
+- id: haruki-murakami/first-person-singular
+  title: "一人称単数"
+  authorIds: [haruki-murakami]
+  published: 2020
+  subseries: null
+  canonTier: extended
+  format: short-story-collection
+  synopsis: >
+    Eight stories, all narrated in the first person, ranging from a
+    baseball-poetry pamphlet for a team that no longer plays to a monkey who
+    confesses to falling in love.
+  note: >
+    Hepburn romanization: Ichininshō Tansū. Published Japan 18 July 2020
+    (Bungeishunju), translated by Philip Gabriel, English 6 April 2021.
+  sources:
+    - https://en.wikipedia.org/wiki/First_Person_Singular_(short_story_collection)
+
+- id: haruki-murakami/the-strange-library
+  title: "図書館奇譚"
+  authorIds: [haruki-murakami]
+  published: 2005
+  subseries: null
+  canonTier: extended
+  format: novella
+  synopsis: >
+    A boy sent to return library books is locked in a labyrinthine basement
+    reading room by an old man who intends to eat his brain, in a short,
+    illustrated, fable-like novella.
+  note: >
+    Hepburn romanization: Toshokan Kitan. This work's own publication history
+    runs through three distinct stages, per its dedicated English Wikipedia
+    article: an earlier, shorter story under a different title appeared in
+    the 1983 collection Kangaroo Biyori (reissued by Kodansha in 1986);
+    Murakami substantially rewrote and expanded it into the illustrated book
+    "Toshokan Kitan" in 2005, the edition `published` records here as this
+    work's first appearance in its current book form; Shinchosha issued a
+    further revised edition, illustrated by Kat Menschik, in November 2014,
+    which is the edition Ted Goossen translated into English (Knopf/Harvill
+    Secker, 2014) as "The Strange Library."
+  sources:
+    - https://en.wikipedia.org/wiki/The_Strange_Library
+
+# --- Nonfiction (6) ---
+
+- id: haruki-murakami/underground
+  title: "アンダーグラウンド"
+  authorIds: [haruki-murakami]
+  published: 1997
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    An oral history built from interviews with survivors of, and in a
+    companion volume with members of, the cult behind the 20 March 1995
+    sarin gas attack on the Tokyo subway - Murakami's attempt to understand
+    an atrocity that shook his sense of the country he had spent years
+    writing from a distance.
+  note: >
+    Hepburn romanization: Andāguraundo. Murakami actually published two
+    Japanese volumes on the attack: this one (20 March 1997, Kodansha,
+    victim interviews) and a second, Yakusoku Sareta Basho de ("The Place
+    That Was Promised," 1998, interviews with Aum Shinrikyo members). The
+    single English-language "Underground" (Harvill Press UK / Vintage
+    International US, both 1 June 2000, translated jointly by Alfred
+    Birnbaum and Philip Gabriel) is an abridged combination of both Japanese
+    volumes rather than a translation of either alone; `published` here is
+    the first Japanese volume's year, the earlier of the two source books.
+  sources:
+    - https://en.wikipedia.org/wiki/Underground:_The_Tokyo_Gas_Attack_and_the_Japanese_Psyche
+
+- id: haruki-murakami/what-i-talk-about-when-i-talk-about-running
+  title: "走ることについて語るときに僕の語ること"
+  authorIds: [haruki-murakami]
+  published: 2007
+  subseries: null
+  canonTier: extended
+  format: memoir
+  synopsis: >
+    A memoir on distance running, framed around training for the 2005 New
+    York City Marathon, that doubles as Murakami's most direct account of his
+    own working discipline as a novelist. The title plays on Raymond
+    Carver's story collection "What We Talk About When We Talk About Love."
+  note: >
+    Hepburn romanization: Hashiru Koto ni Tsuite Kataru Toki ni Boku no
+    Kataru Koto. Published Japan 2007, translated by Philip Gabriel, English
+    2008 (Knopf).
+  sources:
+    - https://en.wikipedia.org/wiki/What_I_Talk_About_When_I_Talk_About_Running
+
+- id: haruki-murakami/absolutely-on-music
+  title: "小澤征爾さんと、音楽について話をする"
+  authorIds: [haruki-murakami]
+  authorRole: co-author
+  published: 2011
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    A book-length series of conversations about classical music with
+    conductor Seiji Ozawa, recorded over several years and covering
+    Ozawa's own career alongside close listening sessions on Brahms,
+    Beethoven and Mahler recordings.
+  note: >
+    Hepburn romanization: Ozawa Seiji-san to, Ongaku ni Tsuite Hanashi o
+    Suru (literally "Talking with Mr. Seiji Ozawa about music"). Co-written
+    with conductor Seiji Ozawa, who has no entry in this catalogue and is
+    therefore not recorded in withAuthorIds; the collaboration is stated
+    through authorRole and this note instead, per this catalogue's own
+    convention for a one-off collaborator outside its scope (see
+    jo-nesbo/stemmer-fra-balkan). Published Japan 30 November 2011
+    (Shinchosha), translated by Jay Rubin, English 15 November 2016 (Knopf).
+  sources:
+    - https://en.wikipedia.org/wiki/Absolutely_on_Music
+
+- id: haruki-murakami/novelist-as-a-vocation
+  title: "職業としての小説家"
+  authorIds: [haruki-murakami]
+  published: 2015
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    A collection of essays on the craft and daily discipline of writing,
+    covering how Murakami started, how he works, and what he thinks a novel
+    is for.
+  note: >
+    Hepburn romanization: Shokugyō to shite no Shōsetsuka. Published Japan
+    2015 (Switch Publishing), translated jointly by Philip Gabriel and Ted
+    Goossen, English 2022 (Knopf US / Harvill Secker UK / Doubleday Canada).
+  sources:
+    - https://en.wikipedia.org/wiki/Novelist_as_a_Vocation
+
+- id: haruki-murakami/murakami-t
+  title: "村上T 僕の愛したTシャツたち"
+  authorIds: [haruki-murakami]
+  published: 2020
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Short personal essays built around photographs of T-shirts from
+    Murakami's own collection, originally serialized in the magazine Popeye
+    from 2018 to 2020.
+  note: >
+    Hepburn romanization: Murakami T: Boku no Ai Shita T-shatsu-tachi.
+    Published Japan 4 June 2020 (Magazine House), translated by Philip
+    Gabriel, English 23 November 2021 (Knopf), as "Murakami T: The T-Shirts
+    I Love."
+  sources:
+    - https://en.wikipedia.org/wiki/Murakami_T
+
+# --- Apocrypha (1) ---
+#
+# APOCRYPHA: one anthology found where Murakami is credited as editor rather
+# than as sole author. Not yet checked against a further contributor/editor
+# sweep the way jo-nesbo/works.yaml's own apocrypha section describes running
+# (an introduction, foreword or single-story credit under his name in some
+# other anthology); "Let's Meet in a Dream" (夢で会いましょう, 1981, credited
+# as co-written with copywriter Shigesato Itoi per its Japanese Wikipedia
+# listing) rests on that one source alone, uncorroborated, and is left out
+# rather than added on it.
+
+- id: haruki-murakami/birthday-stories
+  title: "バースデイ・ストーリーズ"
+  authorIds: [haruki-murakami]
+  authorRole: editor
+  contributionTitle: "Birthday Girl"
+  published: 2002
+  subseries: null
+  canonTier: apocrypha
+  format: anthology
+  synopsis: >
+    A themed anthology of stories about birthdays by other writers (Paul
+    Theroux, Denis Johnson, Lynda Barry among others), selected and
+    translated into Japanese by Murakami, who also contributed one original
+    story of his own, "Birthday Girl."
+  note: >
+    Hepburn romanization: Bāsudei Sutōrīzu. Three overlapping editions exist:
+    the 2002 Japanese original (11 stories, Chuokoron-Shinsha); the 2004
+    English-language edition (Harvill Press), using the stories' existing
+    English-language texts rather than fresh translations, for which
+    Murakami wrote a new introduction and added a twelfth story (Claire
+    Keegan's "Close to the Water's Edge"); and a 2006 Japanese reprint adding
+    a thirteenth. "Birthday Girl," Murakami's own contribution, was later
+    folded into his story collection Blind Willow, Sleeping Woman (2006).
+  sources:
+    - https://en.wikipedia.org/wiki/Birthday_Stories
