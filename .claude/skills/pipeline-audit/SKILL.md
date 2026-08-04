@@ -232,11 +232,18 @@ that removes a 300k-token habit outranks a restructure that saves 20k.
 3. **What is already fine** - name the stages you examined and are proposing
    nothing for, so a reader can tell "audited and healthy" from "not looked at".
 4. **What you could not reach**, including a missing metrics table.
-5. Append one row per run to `docs/pipeline-runs.md` (create it if absent):
-   date, wing, total tokens, total calls, stage count, and the single largest
-   finding. **Cross-run trend is the point** - one run tells you which stage was
+5. Put the cost table and findings in the run report (the PR body), the same
+   place every other stage's output lands - never in a shared file in this repo.
+   A single growing ledger that every wing's `pipeline-audit` appends to is a
+   merge-conflict magnet: any two wing PRs open at once collide on it the
+   instant either merges, repeatedly, for as long as both stay open (confirmed
+   twice on the same PR in one day once two other wings merged around it).
+   **Cross-run trend is still the point** - one run tells you which stage was
    expensive here, three runs tell you which stage is always expensive, and only
-   the second is worth rewriting a skill for.
+   the second is worth rewriting a skill for - get it by reading past wings' own
+   PR bodies (`gh pr list --state merged` for prior "Add the `<Name>` wing" PRs)
+   or `git log --all -- content/franchises/*/`, not from a file every wing
+   writes into.
 
 ## Baseline: the John Shirley run, 2026-07-26
 

@@ -153,7 +153,7 @@ Parallel groups are parallel *because* their members touch different files.
 | `translation` | `content/i18n/<locale>/**` only |
 | `whats-new` | read-only, plus repairing a rotted source URL in place |
 | `wing-audit` | read-only, plus trivial mechanical fixes |
-| `pipeline-audit` | read-only; appends one row to `docs/pipeline-runs.md` |
+| `pipeline-audit` | read-only; its cost table and findings go in the run report (the PR body), not a repo file |
 
 Collisions that are easy to miss: **`event-resonance` and `reading-orders` both
 write `franchise.yaml`** (run them sequentially, resonance first - startHere
