@@ -1,0 +1,183 @@
+# Branding for the John Grisham wing (see docs/SCHEMA.md#themeyaml). The `art`
+# block below carries the wing's visual language; everything above it is the
+# palette and typography. Checked against every existing wing's palette before
+# choosing.
+#
+# Most of the crime/thriller wings commit to a dark, moody near-black:
+# Connelly's warm LA sepia, Coben's cool suburban teal-grey, Slaughter's humid
+# olive, Lee Child's true neutral asphalt, French's peaty green-grey. Three are
+# LIGHT exceptions - Nesbo's cold Nordic blue-white (#e6ebee), Christie's warm
+# interwar cream (#f3ecdf) and Gillian Flynn's pale warm grey (#e2dfda), which
+# reads dark at a glance but is not. Grisham does not fit the noir mould at all: the
+# defining object of his career is not a shadowed street but a legal pad - he
+# drafted A Time to Kill longhand on one before dawn, three years running,
+# before he could afford to quit lawyering (see the author's own lifeEvents).
+# So this wing inverts the pattern on purpose: a pale legal-pad wash for the
+# ground, dark ink for text, and a single vivid rubber-stamp red for the
+# accent - a courthouse filing stamp ("FILED", "OVERRULED"), not a noir glow.
+#
+# The stamp red was checked against every red already in the catalogue
+# (Stephen King's oxblood, JRDS's brick, Rowling's brick, McCarthy's rust,
+# Valter Hugo Mae's terracotta, Lee Child's flare-red) - all six are muted,
+# brownish, earth-toned reds used as an accent glow on a DARK ground. This one
+# is a pure, saturated primary red used as ink on a PALE ground, which reads
+# as a completely different object (a stamped mark on paper, not a light
+# source in the dark) even where the raw hue drifts close.
+preset: yellow-pad-brief
+palette:
+  bg: "#f6f1d6"       # pale legal-pad yellow-cream - the pad itself, not yet
+                      # written on; distinct from Christie's warmer interwar
+                      # cream (#f3ecdf) and Nesbo's cold blue-white (#e6ebee)
+  surface: "#efe8c8"  # a shade deeper, for cards - a page further into the pad
+  ink: "#1c2438"      # near-black navy - fountain-pen/ballpoint ink, for
+                      # maximum contrast on the pale ground
+  muted: "#524d38"    # dulled olive-grey, for metadata (AA-checked against
+                      # bg and surface)
+  accent: "#c0272c"   # one rubber-stamp red, for links and markers only
+displayFace: sourceSerif  # from the app's implemented set (fraunces | spectral
+                          # | sourceSerif); the plainest of the three, fitting
+                          # prose built for speed and clarity rather than
+                          # atmosphere - already used for Coben, Lee Child,
+                          # Connelly and others for the same reason: efficient,
+                          # page-turning commercial thriller prose
+signature: rule       # a firm, straight architectural line - the witness rail,
+                      # the bench's edge, the ruled margin of a legal pad, and
+                      # the pun in "the rule of law". Already used by five
+                      # other wings for their own distinct objects (Palahniuk's
+                      # clinical rule, McCarthy's horizon, Flynn's copy-desk
+                      # strike, Nesbo's ledger column, Lee Child's road line);
+                      # this one is the courtroom's own straight edges
+notes: >
+  A pale legal-pad register rather than a noir one: warm cream-yellow ground,
+  dark navy ink, one rubber-stamp red used only for links and markers. The
+  only wing in the catalogue's crime/thriller cluster to invert light and dark
+  this way, because Grisham's own defining image - a lawyer drafting a novel
+  longhand on a legal pad before dawn - is a bright object, not a shadowed
+  one.
+
+# ART. Genuine range runs through this bibliography - baseball novels, a
+# heist trilogy, YA, two nonfiction books, a 2025 whodunit, a 2026 spy novel
+# - but most of the wing's fifty-eight works are still legal thrillers, and
+# Grisham's own courtroom material carries a specific
+# biographical hand-me-down: he practiced law in Southaven for a decade, sat
+# two terms in the Mississippi legislature, and drafted A Time to Kill
+# longhand on yellow legal pads before work, three years running, before he
+# could afford to leave either job (see the author's own lifeEvents). So the
+# wing centres on that material - the pad, the small county courthouse, the
+# storefront practice - rather than the generic gavel-and-scales
+# legal-thriller image every other courtroom-adjacent wing in this catalogue
+# risks reaching for, and leaves genuine, deliberately smaller room for the
+# baseball/small-town thread (Cove Creek Park, the ballfield he built for
+# kids who had none) and the handful of Washington thrillers.
+#
+# Karin Slaughter already owns this catalogue's dark, humid rural-South
+# register (kudzu-noir), which is why this wing's Mississippi stays sunlit
+# and civic rather than swamp-gothic even though both wings share a region.
+# Jo Nesbø's emblem is also a ruled page of illegible handwriting (a
+# financial ledger, from his analyst years), which looks adjacent on paper;
+# the two are kept apart by what the page actually is - a rigid financial
+# grid of columns and rows versus a legal pad's single margin rule and
+# free-running cursive - not by coincidence.
+art:
+  emblem:
+    object: >
+      A single yellow legal pad, propped at an angle as though just set
+      down, its visible pages filled edge to edge with fast, cramped
+      handwriting rendered as loose, illegible pen-strokes rather than
+      legible words; a plain ballpoint or fountain pen left uncapped across
+      it; one or two earlier pages already torn free and stacked loosely
+      beside the pad rather than filed away.
+    why: >
+      Grisham wrote A Time to Kill longhand on yellow legal pads before work,
+      three years running, while still practicing law in Southaven and
+      serving in the Mississippi legislature - the detail his own bio and the
+      DeSoto County courthouse lifeEvent both single out, and the fact this
+      wing's whole palette (a pale legal-pad wash, navy ink, one rubber-stamp
+      red) already stands on. The emblem makes the underlying object literal:
+      not a finished manuscript or a bound book, but the pad itself, mid-use,
+      filled in stolen pre-dawn hours before a full working day. It is
+      formally distinct from Jo Nesbø's ruled ledger page (also illegible
+      handwriting, but a rigid financial grid of columns and rows, from his
+      years as an analyst): a legal pad carries only a single margin rule and
+      faint horizontal guides, and the writing on it runs free across the
+      full width of the line rather than sitting in cells.
+  motifs:
+    - a single yellow legal pad, its pages filled with fast illegible
+      handwriting, earlier pages already torn free and stacked beside it
+    - a small county courthouse, brick with a white portico, a live oak or
+      magnolia on the square outside, the building itself the subject rather
+      than any gavel or bench inside it
+    - a courtroom gallery seen from the back row, wooden pews, tall windows,
+      sun on the floorboards, the bench and witness stand left off-frame
+    - a one-room small-town law office, a hand-lettered shingle in a
+      storefront window, a single case file open on a bare desk, a wall of
+      case-law volumes behind it
+    - a manila case file or banker's box, string-tied, stacked with others,
+      sometimes carrying a stamped but illegible red mark on its cover
+    - a small-town baseball field toward evening, a chain-link backstop,
+      wooden bleachers, ball-field lights just coming on
+    - a marble federal-building corridor or a Beltway rowhouse stoop, seen at
+      a distance and kept plain, for the Washington-set books - used
+      sparingly against the Mississippi majority
+  atmosphere: >
+    Early, working daylight rather than shadow: the specific quiet of a room
+    lit before the house or the office is awake, a lamp still on though the
+    window is going grey, the hour of someone who has a full day of law
+    practice or legislative business ahead and is stealing an hour first.
+    Small-town Mississippi heat is present as fact - open windows, a slow
+    ceiling fan, sun already strong on a courthouse square by mid-morning -
+    never as gothic menace or swamp dread; that register belongs to this
+    catalogue's other rural-South crime wing, not this one. Procedural and
+    unglamorous throughout: the calm of paperwork and a case built one
+    document at a time, not the charged hush of a courtroom-drama verdict
+    scene.
+  lineCharacter: >
+    A workmanlike ballpoint or fountain-pen line, laid down fast and
+    functional rather than composed - the hand of someone drafting before a
+    full day's law practice and legislative session, with no time to spare
+    on flourish. Every drawn scene sits against a faint, felt-rather-than-
+    drawn horizontal rule, as if laid across a legal pad's own guideline:
+    horizons, courthouse porticoes, counter edges and shelf lines fall level
+    to that hidden rule, while figures and incident are free to break it.
+    Not a draftsman's ruled precision, and not a single unvarying weight
+    either - this is specifically the economy of someone who will be a
+    lawyer again in six hours and is writing as fast as legible allows.
+  backgroundTexture: >
+    Legal-pad stock: warm pale-yellow paper carrying a faint horizontal rule
+    and a single vertical margin line in a paler wash of the ink colour, felt
+    rather than emphasised. The sheet's outer edge stays plain, not
+    perforated or torn - a working pad meant to be filled and turned, not a
+    kept or framed document.
+  accentUse: >
+    Stamp red on exactly one element per image, never a fill: a stamp's
+    circular or rectangular impression pressed onto a document, its lettering
+    a dense illegible smudge rather than real words; a single red-ink
+    correction stroke drawn through a line of handwriting; a thin red ribbon
+    marking a place in a thick law-book or binding a closed case file; or one
+    red flag raised on a rural roadside mailbox.
+  avoid:
+    - a gavel, scales of justice, a wigged or robed close-up, or any
+      judge's-bench verdict tableau - the stock legal-thriller image; a
+      courtroom that appears at all is seen from the gallery, never the bench
+    - the visual identity of any film or TV adaptation of his own novels (The
+      Firm, The Pelican Brief, The Client, A Time to Kill, The Chamber, The
+      Rainmaker, A Painted House, Christmas with the Kranks, Mickey) - no
+      cast likeness, poster layout or title-card styling
+    - Southern Gothic swamp, kudzu or moss-draped decay - this catalogue's
+      other rural-South crime wing already owns that dark, humid register;
+      this Mississippi stays a sunlit civic courthouse square, not a swamp
+    - noir shadow, venetian-blind silhouette or smoke lit from below - the
+      wing inverts the noir palette on purpose, and lighting a scene like
+      that undoes it even on the right paper
+    - Beltway spy-movie gloss (trench coats, sunglasses, black SUVs, a marble
+      rotunda shot from below) for the Washington-set books - the same plain
+      daylight economy applies there as in Mississippi
+    - sentimental sports-movie glow for the baseball material - Cove Creek
+      Park was a plain civic ballfield built for kids who had none, not a
+      cornfield-glow movie moment
+    - legible words standing in for the stamp mark or any other lettering
+      inside the artwork - the stamp is an illegible impression, per the
+      house ban on in-image typography
+    - a briefcase-and-glass-tower Big Law cliche as the wing's default
+      register - his own firms are as often a two-partner storefront as a
+      skyscraper, and the storefront should not be crowded out
