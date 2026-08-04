@@ -1,0 +1,173 @@
+# Overlay pt-PT do autor: bio + prosa dos lifeEvents. Os lifeEvents ficam
+# aninhados sob o autor e são fundidos por id (ver SCHEMA.md, "Nested lists
+# merge by id"). Levam `title` + `description`, que são prosa; datas,
+# organisation, illustration_type, images_required, impact, modifier e
+# sources nunca se traduzem, nem o nome do autor. `name` e a nota de
+# `pseudonyms` também não se traduzem (mesma convenção usada em
+# robert-jordan.yaml e jk-rowling.yaml): "Danielle Brown" é o nome impresso
+# na capa de 1995, não uma frase a verter.
+# Referências inline usam o título da edição pt-PT publicada onde existe
+# uma (ver editions.yaml): Fortaleza Digital, Anjos e Demónios, A
+# Conspiração, O Código da Vinci, O Símbolo Perdido, Inferno, Origem, O
+# Segredo dos Segredos, A Sinfonia dos Animais.
+#
+# SPOILER. db-marries-blythe-newlon-1997 fica em "a linha da história do
+# Cristianismo primitivo" (nunca o casamento de Jesus e Maria Madalena nem
+# uma linhagem sobrevivente, a mesma delimitação já presente no inglês);
+# db-born-1964 descreve a relação entre Jacques Sauniere e Sophie Neveu sem
+# nenhuma palavra de parentesco (nem "avô", nem "neta").
+
+- id: dan-brown
+  bio: >
+    Romancista norte-americano nascido em Exeter, New Hampshire, onde o
+    pai, Richard G. Brown, dava aulas de matemática na Phillips Exeter
+    Academy e a mãe, Constance, se formou como organista de igreja;
+    códigos e cifras atravessavam a vida da família, e a tradição familiar
+    de caças ao tesouro com pistas cifradas em aniversários e feriados
+    viria a fornecer o motor narrativo dos seus romances e, diretamente,
+    um capítulo de [[work:dan-brown/the-da-vinci-code|O Código da Vinci]].
+    Licenciou-se em Inglês e Espanhol no Amherst College (BA, 1986),
+    depois dedicou-se à música como cantor-compositor antes de se voltar
+    para a ficção, ao ler "The Doomsday Conspiracy" de Sidney Sheldon numa
+    viagem ao Taiti em 1993. O seu primeiro livro sob o nome que acabaria
+    por usar foi o título de humor
+    [[work:dan-brown/187-men-to-avoid|187 Men to Avoid]] (1995, publicado
+    sob o pseudónimo "Danielle Brown"); o seu primeiro romance,
+    [[work:dan-brown/digital-fortress|Fortaleza Digital]] (1998), e um
+    segundo thriller autónomo,
+    [[work:dan-brown/deception-point|A Conspiração]] (2001), venderam
+    modestamente antes de [[work:dan-brown/angels-demons|Anjos e
+    Demónios]] (2000) apresentar o simbologista de Harvard Robert Langdon,
+    a personagem que atravessa todos os romances de Brown desde então.
+    [[work:dan-brown/the-da-vinci-code|O Código da Vinci]] (2003)
+    tornou-se um fenómeno editorial e um dos romances mais vendidos de
+    sempre, seguido de [[work:dan-brown/the-lost-symbol|O Símbolo
+    Perdido]] (2009), [[work:dan-brown/inferno|Inferno]] (2013),
+    [[work:dan-brown/origin|Origem]] (2017) e
+    [[work:dan-brown/the-secret-of-secrets|O Segredo dos Segredos]]
+    (2025). Em 2020 publicou o seu primeiro livro infantil,
+    [[work:dan-brown/wild-symphony|A Sinfonia dos Animais]], associando o
+    texto a um álbum original de música clássica e a uma aplicação de
+    realidade aumentada. Foi casado com Blythe Newlon, que fez grande
+    parte da investigação e da promoção iniciais por trás da sua ascensão,
+    de 1997 até ao divórcio em 2019.
+  lifeEvents:
+    - id: db-born-1964
+      title: Nasce em Exeter, New Hampshire, numa casa construída à volta de enigmas
+      description: >
+        Nasce em Exeter, New Hampshire, e cresce no campus da Phillips
+        Exeter Academy, onde o pai dava aulas de matemática e a mãe se
+        formou como organista de igreja. Códigos e cifras eram, no seu
+        próprio relato, o elo entre as duas disciplinas dos pais, e a
+        família assinalava aniversários e feriados com elaboradas caças ao
+        tesouro concebidas pelo pai, que levavam as crianças por pistas
+        cifradas pela casa e pela cidade, em vez de as mandar direitas a
+        uma pilha de prendas. Brown já disse que a relação com o pai
+        moldou diretamente a que existe entre Jacques Sauniere e Sophie
+        Neveu em [[work:dan-brown/the-da-vinci-code|O Código da Vinci]], e
+        que um capítulo desse romance vem diretamente de uma caça ao
+        tesouro da infância: a estrutura de enigmas encadeados sob pressão
+        do tempo, presente em todos os romances de Langdon, remonta a esta
+        casa, não a uma convenção inventada do género thriller.
+
+    - id: db-marries-blythe-newlon-1997
+      title: Casa com Blythe Newlon, que molda todos os romances seguintes
+      description: >
+        Brown conhece Blythe Newlon em Los Angeles no início dos anos
+        1990, quando ele é um aspirante a cantor-compositor e ela dirige o
+        desenvolvimento de artistas na National Academy of Songwriters; os
+        dois casam em 1997. Newlon, cerca de doze anos mais velha do que
+        ele e mais tarde historiadora de arte, torna-se a sua principal
+        investigadora e primeira leitora - segundo o seu próprio relato
+        num depoimento em tribunal em 2006, ela é mencionada em mais de um
+        quarto dos parágrafos desse depoimento. Ela lê material de
+        fontes, "destacando ideias interessantes", e, pelo relato do
+        próprio Brown, empurra-o para a linha da história do Cristianismo
+        primitivo que viria a definir
+        [[work:dan-brown/the-da-vinci-code|O Código da Vinci]] - o
+        material que ele atribui a ela e não a si próprio.
+
+    - id: db-angels-demons-cd-ambigram-1999
+      title: Um último CD fracassado dá o nome a Robert Langdon
+      description: >
+        Segundo o próprio depoimento sob juramento de Brown no High Court
+        em 2006, ele vê pela primeira vez os trabalhos de ambigramas de
+        John Langdon - "um amigo próximo do meu pai" - no início dos anos
+        1990, e fica suficientemente impressionado para lhe encomendar a
+        capa de um CD autoproduzido seu, intitulado Angels & Demons, em
+        homenagem aos temas religiosos que já o interessavam. O CD sai em
+        1999 - já três anos dentro da carreira de escritor publicado de
+        Brown, e não em 1994, o ano habitualmente repetido para isto - com
+        o ambigrama de Langdon na capa. Um ano depois, a Simon & Schuster
+        reutiliza o mesmo ambigrama na primeira edição do romance
+        [[work:dan-brown/angels-demons|Anjos e Demónios]], e Langdon
+        empresta o seu nome e, nas palavras do próprio Brown, parte da sua
+        inspiração a Robert Langdon, a personagem que atravessa todos os
+        thrillers de Brown desde então.
+
+    - id: db-da-vinci-code-breaks-out-2003
+      title: "O Código da Vinci transforma um autor de thrillers do meio da tabela num fenómeno"
+      description: >
+        Os primeiros três romances de Brown tinham vendido, cada um,
+        menos de 10 000 exemplares nas respetivas primeiras tiragens.
+        [[work:dan-brown/the-da-vinci-code|O Código da Vinci]] chegou ao
+        topo da lista de mais vendidos do New York Times na primeira
+        semana, arrastou os três romances anteriores de volta para a
+        lista e tinha vendido mais de 80 milhões de exemplares em 2009 -
+        a charneira que transformou um escritor de género com
+        dificuldades num dos autores mais vendidos vivos e definiu o
+        modelo (história do Cristianismo, uma perseguição de 24 horas,
+        uma sociedade secreta) de que todos os romances de Langdon
+        posteriores partem.
+
+    - id: db-exeter-technology-endowment-2004
+      title: Institui um fundo de tecnologia em Exeter em nome do pai
+      description: >
+        Dias antes do lançamento da edição de bolso de O Código da Vinci,
+        Brown e os irmãos Valerie e Gregory anunciam uma doação de 2,2
+        milhões de dólares à escola do pai, a Phillips Exeter Academy, no
+        lançamento a rigor da maior campanha de angariação de fundos de
+        sempre da escola. É criado o Richard G. Brown Technology
+        Endowment, que fornece computadores e equipamento tecnológico a
+        alunos que não os podem pagar, em honra dos 35 anos (1962-1997)
+        que o pai passou a ensinar matemática e a escrever manuais
+        escolares ali. Sete anos depois, a 14 de abril de 2011, Brown e
+        Newlon instituem separadamente um fundo de bolsas voltado para a
+        escrita na sua própria alma mater, o Amherst College, para
+        assinalar o 25.º aniversário da sua turma.
+
+    - id: db-ritman-library-donation-2016
+      title: Financia a digitalização da biblioteca esotérica por trás de dois romances de Langdon
+      description: >
+        Brown doa 300 000 euros (cerca de 340 000 dólares) à Biblioteca
+        Ritman de Amesterdão, que alberga uma coleção privada de cerca de
+        25 000 volumes de textos herméticos, alquímicos e esotéricos que
+        ele tinha visitado repetidamente enquanto investigava para
+        [[work:dan-brown/the-lost-symbol|O Símbolo Perdido]] e
+        [[work:dan-brown/inferno|Inferno]]. A doação financia a
+        digitalização do núcleo do espólio anterior a 1900 da biblioteca;
+        a diretora Esther Ritman chama-lhe "um amigo da biblioteca". A
+        relação leva mais tarde Brown a abrir a Embassy of the Free Mind,
+        um centro público em Amesterdão construído à volta da coleção.
+
+    - id: db-divorce-and-lawsuit-2021
+      title: Divorcia-se ao fim de 22 anos e é depois processado por causa do dinheiro e da história do casamento
+      description: >
+        Brown e Newlon divorciam-se em 2019. Em junho de 2020, Newlon
+        processa-o num tribunal do New Hampshire, chamando à sua conduta
+        "ilegal e flagrante" e alegando que ele ocultou bens do casal -
+        incluindo projetos futuros que ela diz valerem "milhões", entre
+        eles o manuscrito que viria a tornar-se
+        [[work:dan-brown/wild-symphony|A Sinfonia dos Animais]] - ao
+        mesmo tempo que desviava dinheiro para prendas a um treinador de
+        cavalos não identificado, como parte do que ela descreve como um
+        padrão de casos extraconjugais. Brown diz-se "atónito" com as
+        alegações e chama à queixa "escrita sem qualquer respeito pela
+        verdade", acrescentando que Newlon recebeu metade dos bens do
+        casal no divórcio. Nenhuma das versões é testada em tribunal: os
+        dois chegam a acordo e retiram em conjunto "quaisquer e todas as
+        queixas e contraqueixas" em dezembro de 2021, recusando fazer mais
+        comentários. O processo reabre, sem resolver, a questão que o
+        julgamento de direitos de autor de 2006 já tinha posto em
+        registo - quanto da obra atribuída só a Brown era, na verdade, de
+        Newlon.

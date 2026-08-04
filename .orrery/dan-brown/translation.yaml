@@ -1,0 +1,84 @@
+stage: translation
+summary: >
+  First pt-PT pass for this brand-new wing: created all five overlay files
+  it needed (franchises/dan-brown/franchise.yaml, works.yaml, events.yaml,
+  orders.yaml, authors/dan-brown.yaml). i18n_coverage.py: 155/174 -> 160/174
+  files fully covered pt-PT-wide; all 38 dan-brown slots (franchise
+  description + 3 startHere paths, 10 work synopses, 2 franchise events, 1
+  order, the author bio + 7 lifeEvents) moved from MISSING to fully
+  covered, no other locale file regressed. validate.py --slug dan-brown: 0
+  errors, the same 4 pre-existing handoff-length warnings from earlier
+  stages (out of scope here). Added nothing to content/events/global.yaml
+  or any other shared file, so no out-of-wing translation was owed.
+coverage:
+  before: "155/174 files (pt-PT); dan-brown entirely MISSING across all 5
+    files - 38 untranslated slots (franchise.yaml 7, works.yaml 10,
+    events.yaml 4, orders.yaml 2, authors/dan-brown.yaml 15)"
+  after: "160/174 files (pt-PT); all 38 dan-brown slots covered, 0
+    regressions elsewhere"
+editionTitlesUsed: >
+  8 of 10 works have a published pt-PT edition, so every inline
+  [[work:id|text]] reference carries that edition's own title rather than
+  a fresh translation (SCHEMA.md, "a translated title must never be the
+  only title a reader sees"): Fortaleza Digital, Anjos e Demónios, A
+  Conspiração, O Código da Vinci, O Símbolo Perdido, Inferno (same word in
+  both languages), Origem, O Segredo dos Segredos, A Sinfonia dos Animais.
+  187 Men to Avoid has no pt-PT edition and stays English everywhere.
+  "Robert Langdon" as display text for two angels-demons references (in
+  start-with-langdon-from-the-start and the order rationale) is the
+  character's name, not the book title, so it is left unchanged.
+registerDecisions:
+  - "AO90 throughout (ação, arquitetura, direção/diretor), matching
+    jose-saramago and john-grisham's convention in this catalogue."
+  - "Grepped for the skill's pt-BR tells: none found. No synopsis or
+    lifeEvent grew past its English length."
+  - "pseudonyms[].note (\"Danielle Brown\") stays untranslated, same
+    convention as robert-jordan.yaml/jk-rowling.yaml, stated in the author
+    overlay's header rather than silently skipped."
+  - "Maestro Mouse (Wild Symphony's title character) has no confirmed
+    Portuguese name in any reachable source, so it stays English rather
+    than inventing one - flagged in the works.yaml overlay header."
+spoilerVerification: >
+  Translated spoiler-audit's two rewritten fields exactly as they stand,
+  checked against the current English base, not memory of the book:
+  dan-brown-baigent-leigh-lawsuit-2006 stops at "as origens do
+  Cristianismo", not the marriage/bloodline claim - deliberately not using
+  the freer register Portuguese press and the Bertrand/Planeta jacket copy
+  actually use for this same lawsuit, which is exactly what would have
+  reintroduced it. db-marries-blythe-newlon-1997 stays at "a linha da
+  história do Cristianismo primitivo" with the same omission. db-born-1964
+  names Jacques Sauniere and Sophie Neveu with no kinship word either way.
+  inferno's synopsis reports only the opening (hospital, head wound,
+  amnesia, the cylinder, "seek and find") with no framing of what it later
+  means. the-secret-of-secrets stops at Katherine's disappearance with her
+  manuscript, matching the base's rewrite sentence for sentence.
+verification: >
+  i18n_coverage.py and validate.py --slug dan-brown run before (baseline)
+  and after (numbers above; second validate.py pass 0 warnings). The first
+  pass caught 3 sanctuary-rule warnings - header comments naming
+  "spoiler-audit" while explaining a redaction - rewritten to state the
+  sourcing fact without naming the stage (CURATION.md §2). Parsed all 5
+  files with PyYAML individually. Grepped for every skill-named register
+  discriminator and for missing-diacritic patterns; the few substring hits
+  (esta/historia/portuguesa inside estante/historiadora/portuguesa) were
+  correctly-spelled unrelated words on inspection. Could NOT render the
+  live page: this is a content-only worktree with no app checkout, so
+  render-check.mjs is unavailable pre-merge - flagged per CURATION §5
+  rather than implying a render check happened.
+openQuestions:
+  - >-
+    8 of 10 works having a pt-PT edition is a different situation from the
+    two prior translation stages this skill's conventions were drawn from
+    (grisham, saramago). This run used the published edition's own title
+    for every inline reference per SCHEMA.md, including the non-literal "A
+    Conspiração" and "A Sinfonia dos Animais" - worth confirming on the
+    next mixed-edition wing.
+  - >-
+    Maestro Mouse's Portuguese name could not be confirmed against any
+    reachable source and was left English; worth a second pass once the
+    Bertrand edition's own text is reachable.
+forStages:
+  wing-audit: >
+    All 5 overlay files are new and complete; no partial-translation debt.
+    The two openQuestions above are the only things worth a second look,
+    neither blocking for a branch merge.
