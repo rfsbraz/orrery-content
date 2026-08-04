@@ -1,0 +1,439 @@
+# Editions of Dan Brown: 24 editions over all 10 works - 10 English (en)
+# first/notable editions and 14 Portuguese (pt-PT) editions.
+#
+# SCOPE. English coverage is deliberately the FIRST edition only (hardcover,
+# US publisher) per work, not a US+UK pair: Brown's English backlist is
+# reissued constantly across Transworld/Corgi/Bantam/Anchor/Doubleday imprints
+# with dozens of overlapping ISBNs (confirmed on a 235-candidate OpenLibrary
+# sweep), and recording the true first edition is the one choice that stays
+# correct as later printings come and go. Portuguese coverage follows the
+# opposite rule (SCHEMA.md default): the most recent IN-PRINT pt-PT edition,
+# because that is the one a Portuguese reader can actually buy today.
+#
+# THE PLANETA MIGRATION (2025-2026), a real publishing-history fact this
+# stage surfaced rather than a research artefact: Bertrand/LeYa held Brown's
+# Portuguese rights for decades (Fortaleza Digital 2006 on), but Planeta has
+# been re-releasing the Robert Langdon backlist under its own imprint since
+# July 2025 - Anjos e Demónios and O Código da Vinci (July 2025), O Segredo
+# dos Segredos (Sept 2025, day-and-date with the US original), O Símbolo
+# Perdido (Nov 2025) and A Conspiração (Jan 2026) are all now live on
+# Bertrand's own storefront under the Planeta imprint, confirmed by fetching
+# bertrand.pt/wook.pt directly rather than trusting a stale search index. The
+# migration is NOT complete: Inferno, Origem and Fortaleza Digital are still
+# sold under their existing Bertrand Editora printings as of this writing, so
+# those three keep their Bertrand editions here rather than being marked
+# out-of-print for a Planeta reissue that does not yet exist. Wild Symphony
+# (Rodale Kids/Random House Children's Books in English, a different rights
+# chain entirely) is unaffected and stays with Bertrand.
+#
+# NON-LITERAL PT TITLE: Deception Point publishes in Portuguese as "A
+# Conspiração" ("The Conspiracy"), not a literal translation - carried over
+# from the original Bertrand-era translation into the new Planeta edition.
+#
+# THE DA VINCI CODE: YOUNG ADULT EDITION (2016) is recorded here as
+# edition-level data, not a works.yaml entry (see works.yaml's
+# considered-and-left-out note and ISFDB's own "Variant" treatment of the
+# same title): both the English original (Delacorte Press) and its own
+# Portuguese edition (Bertrand's "edição juvenil", which - unlike the adult
+# Código da Vinci - has NOT migrated to Planeta) are below, under
+# dan-brown/the-da-vinci-code.
+#
+# 187 MEN TO AVOID (1995) carries two genuinely different editions, not a
+# reprint and its parent: the 1995 Berkley Books original under the
+# pseudonym "Danielle Brown" (verified against the Internet Archive scan of
+# the actual physical book), and the August 2006 Berkley Trade reissue that
+# put "Dan Brown Formerly Writing As Danielle Brown" on the cover - a
+# different printed byline is a different object, per works.yaml's own note.
+# No Portuguese edition was found for this title in either Bertrand's or
+# Wook's live catalogue.
+#
+# ISBN DISCIPLINE. Every ISBN-10 sourced from a Wikipedia infobox was
+# reconverted to ISBN-13 from scratch (never trusting a printed check digit
+# carried over) and every ISBN-13, sourced or converted, passed
+# scripts/validate.py's check-digit test. Two would-be discrepancies turned
+# out to be real, distinct ISBNs rather than errors: The Secret of Secrets'
+# hardcover (9780385546898, used here) and Kindle edition (9780385546928)
+# both validate and are both genuine, confirmed against Amazon/AbeBooks/
+# Wikipedia's own infobox; likewise the Young Adult Edition's three
+# candidate ISBNs (hardcover 9781524715847, used here; two further ISBN13s
+# seen on OpenLibrary belong to other bindings of the same 2016 book, not to
+# a data error). No entry in this file uses a Brazilian ISBN (978-85-*,
+# 978-65-* were seen for this author on Arqueiro/Sextante and excluded) or a
+# bare `pt` where the region was not verified - every pt-PT prefix below is
+# 978-972-* or 978-989-*.
+#
+# SOURCING. English facts are Wikipedia's own infobox (which for Digital
+# Fortress, Angels & Demons, Deception Point, The Da Vinci Code, The Lost
+# Symbol, Inferno, Origin and The Secret of Secrets explicitly states the
+# ISBN as printed on the book, several marked "(first edition hardcover)"),
+# cross-checked against a publisher product page for the two exceptions
+# (Wild Symphony, the Young Adult Edition) that lack a Wikipedia infobox of
+# their own. Portuguese facts are read from bertrand.pt's/wook.pt's own
+# JSON-LD product data (ISBN, publisher, date, page count, binding), fetched
+# directly rather than taken from a search index - Bertrand 403s a
+# rate-limited fetch; wook.pt, the same underlying platform, answered where
+# Bertrand didn't.
+
+- id: dan-brown/digital-fortress/st-martins-press-1998-us
+  workId: dan-brown/digital-fortress
+  isbn13: "9780312180874"
+  language: en
+  format: hardcover
+  publisher: St. Martin's Press
+  year: 1998
+  note: >
+    First edition hardcover, per its own Wikipedia infobox (ISBN 0-312-18087-X,
+    reconverted to ISBN-13 here rather than trusted pre-converted).
+  sources:
+    - https://en.wikipedia.org/wiki/Digital_Fortress
+
+- id: dan-brown/digital-fortress/bertrand-2009-pt
+  workId: dan-brown/digital-fortress
+  isbn13: "9789722520485"
+  language: pt-PT
+  title: "Fortaleza Digital"
+  format: paperback
+  publisher: Bertrand Editora
+  year: 2009
+  note: >
+    October 2009, 448pp - the current Bertrand trade printing (still Bertrand,
+    not yet a Planeta reissue; see the file header). The first Portuguese
+    translation was Bertrand's own March 2006 edition, ISBN 9789722514699
+    (independently confirmed by Wikipedia's translation list, which gives the
+    equivalent ISBN-10 972-25-1469-5) - a different, earlier printing, not
+    this one.
+  sources:
+    - https://www.bertrand.pt/livro/fortaleza-digital-dan-brown/2843203
+    - https://en.wikipedia.org/wiki/Digital_Fortress
+
+- id: dan-brown/digital-fortress/11x17-2009-pt
+  workId: dan-brown/digital-fortress
+  isbn13: "9789722517751"
+  language: pt-PT
+  title: "Fortaleza Digital"
+  format: paperback
+  publisher: 11 X 17
+  year: 2009
+  note: >
+    "Livro de bolso" (pocket) edition, February 2009, 576pp, smaller trim
+    (111x172mm against the Bertrand trade edition's 151x238mm) - a genuinely
+    different, currently-stocked object, not a duplicate of the trade entry
+    above.
+  sources:
+    - https://www.wook.pt/livro/fortaleza-digital-dan-brown/1458326
+
+- id: dan-brown/angels-demons/pocket-books-2000-us
+  workId: dan-brown/angels-demons
+  isbn13: "9780671027353"
+  language: en
+  format: hardcover
+  publisher: Pocket Books
+  year: 2000
+  note: >
+    First edition, hardcover, 768pp, published 1 May 2000 (Wikipedia infobox
+    ISBN 0-671-02735-2, reconverted here). An unrelated-looking
+    9780743412391 also circulates attached to "Pocket Books, 2000" on
+    OpenLibrary; that prefix (0743-) was not in use by Pocket Books until
+    2001+, so it is a mis-dated later reprint, not this first edition.
+  sources:
+    - https://en.wikipedia.org/wiki/Angels_%26_Demons
+
+- id: dan-brown/angels-demons/planeta-2025-pt
+  workId: dan-brown/angels-demons
+  isbn13: "9789895870714"
+  language: pt-PT
+  title: "Anjos e Demónios"
+  format: paperback
+  publisher: Planeta
+  year: 2025
+  note: >
+    July 2025 - Planeta's new Portuguese edition (see the file header on the
+    2025-2026 rights migration from Bertrand). No earlier Bertrand-era
+    Portuguese ISBN for this title could be verified in the reachable record,
+    so none is recorded.
+  sources:
+    - https://www.wook.pt/livro/anjos-e-demonios-dan-brown/32145345
+
+- id: dan-brown/deception-point/pocket-books-2001-us
+  workId: dan-brown/deception-point
+  isbn13: "9780671027377"
+  language: en
+  format: hardcover
+  publisher: Pocket Books
+  year: 2001
+  note: First edition, hardcover (Wikipedia infobox ISBN 0671027379, reconverted here).
+  sources:
+    - https://en.wikipedia.org/wiki/Deception_Point
+
+- id: dan-brown/deception-point/planeta-2026-pt
+  workId: dan-brown/deception-point
+  isbn13: "9789895871162"
+  language: pt-PT
+  title: "A Conspiração"
+  format: paperback
+  publisher: Planeta
+  year: 2026
+  note: >
+    January 2026 - Planeta's reissue of this work's long-standing non-literal
+    Portuguese title, "A Conspiração" ("The Conspiracy"), carried over from
+    Bertrand's own 2006-10 translation (ISBN 9789722514552, now superseded by
+    this edition; see the file header on the Planeta migration).
+  sources:
+    - https://www.wook.pt/livro/a-conspiracao-dan-brown/32960402
+
+- id: dan-brown/the-da-vinci-code/doubleday-2003-us
+  workId: dan-brown/the-da-vinci-code
+  isbn13: "9780385504201"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2003
+  note: >
+    First edition, hardcover, 689pp, published 18 March 2003 (Wikipedia
+    infobox ISBN 0-385-50420-9, reconverted here).
+  sources:
+    - https://en.wikipedia.org/wiki/The_Da_Vinci_Code
+
+- id: dan-brown/the-da-vinci-code/planeta-2025-pt
+  workId: dan-brown/the-da-vinci-code
+  isbn13: "9789895870707"
+  language: pt-PT
+  title: "O Código da Vinci"
+  format: paperback
+  publisher: Planeta
+  year: 2025
+  note: >
+    July 2025, 154x236x32mm, "capa mole" - Planeta's new adult Portuguese
+    edition (see the file header on the migration from Bertrand). The
+    separate Portuguese Young Adult edition below has NOT migrated and stays
+    with Bertrand.
+  sources:
+    - https://www.bertrand.pt/livro/o-codigo-da-vinci-dan-brown/32145304
+
+- id: dan-brown/the-da-vinci-code/delacorte-2016-us-ya
+  workId: dan-brown/the-da-vinci-code
+  isbn13: "9781524715847"
+  language: en
+  format: hardcover
+  publisher: Delacorte Press
+  year: 2016
+  note: >
+    "The Da Vinci Code: Young Adult Edition" (marketed on danbrown.com as
+    "The Young Adult Adaptation"), published 13 September 2016, 416pp, ages
+    12+. Edition-level data, not a works.yaml entry: an abridged adaptation
+    of this same novel's text with added photographs, not a separate
+    authorial work - ISFDB itself files it as a "Variant" of The Da Vinci
+    Code rather than a distinct title. Sourced to Penguin Random House's own
+    product page rather than a retailer; two further ISBN-13s seen for this
+    same 2016 book on OpenLibrary belong to other bindings, not to a data
+    conflict.
+  sources:
+    - https://www.penguinrandomhouse.com/books/549656/the-da-vinci-code-the-young-adult-adaptation-by-dan-brown/
+    - https://danbrown.com/books/young-readers/the-da-vinci-code-young-adult-edition/
+
+- id: dan-brown/the-da-vinci-code/bertrand-2016-pt-ya
+  workId: dan-brown/the-da-vinci-code
+  isbn13: "9789722533041"
+  language: pt-PT
+  title: "O Código da Vinci - edição juvenil"
+  format: paperback
+  publisher: Bertrand Editora
+  year: 2016
+  note: >
+    November 2016, 392pp - the Portuguese Young Adult edition. Still sold
+    under Bertrand (the adult Código da Vinci above has migrated to Planeta;
+    this juvenile edition has not), confirmed live on Bertrand's own
+    storefront.
+  sources:
+    - https://www.bertrand.pt/livro/o-codigo-da-vinci-edicao-juvenil-dan-brown/18617953
+
+- id: dan-brown/the-lost-symbol/doubleday-2009-us
+  workId: dan-brown/the-lost-symbol
+  isbn13: "9780385504225"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2009
+  note: >
+    First US edition, hardcover, 528pp, published September 2009 (Wikipedia
+    infobox).
+  sources:
+    - https://en.wikipedia.org/wiki/The_Lost_Symbol
+
+- id: dan-brown/the-lost-symbol/planeta-2025-pt
+  workId: dan-brown/the-lost-symbol
+  isbn13: "9789895871155"
+  language: pt-PT
+  title: "O Símbolo Perdido"
+  format: paperback
+  publisher: Planeta
+  year: 2025
+  note: >
+    November 2025 - Planeta's reissue, confirmed live on Bertrand's own
+    storefront (see the file header on the migration). Supersedes the
+    earlier Bertrand (2009, ISBN 9789722520140) and 11 X 17 pocket (2012,
+    ISBN 9789722524889) printings, neither of which is recorded here.
+  sources:
+    - https://www.bertrand.pt/livro/o-simbolo-perdido-dan-brown/32770906
+
+- id: dan-brown/inferno/doubleday-2013-us
+  workId: dan-brown/inferno
+  isbn13: "9780385537858"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2013
+  note: First edition, hardcover, 642pp, published 14 May 2013 (Wikipedia infobox).
+  sources:
+    - https://en.wikipedia.org/wiki/Inferno_(Brown_novel)
+
+- id: dan-brown/inferno/bertrand-2013-pt
+  workId: dan-brown/inferno
+  isbn13: "9789722526449"
+  language: pt-PT
+  format: paperback
+  publisher: Bertrand Editora
+  year: 2013
+  note: >
+    July 2013, 551pp - the current Bertrand trade printing (Inferno has not
+    migrated to Planeta as of this writing; see the file header).
+  sources:
+    - https://www.bertrand.pt/livro/inferno-dan-brown/14952312
+
+- id: dan-brown/inferno/11x17-2016-pt
+  workId: dan-brown/inferno
+  isbn13: "9789722532594"
+  language: pt-PT
+  format: paperback
+  publisher: 11 X 17
+  year: 2016
+  note: >
+    "Livro de bolso" (pocket) edition, September 2016, 752pp, smaller trim
+    (108x172mm against the trade edition's 152x237mm) - a genuinely
+    different, currently-stocked object.
+  sources:
+    - https://www.wook.pt/livro/inferno-dan-brown/17943353
+
+- id: dan-brown/origin/doubleday-2017-us
+  workId: dan-brown/origin
+  isbn13: "9780385514231"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2017
+  note: First edition, hardcover, 461pp, published 3 October 2017 (Wikipedia infobox).
+  sources:
+    - https://en.wikipedia.org/wiki/Origin_(Dan_Brown_novel)
+
+- id: dan-brown/origin/bertrand-2017-pt
+  workId: dan-brown/origin
+  isbn13: "9789722534208"
+  language: pt-PT
+  title: "Origem"
+  format: paperback
+  publisher: Bertrand Editora
+  year: 2017
+  note: >
+    October 2017, 552pp - the current Bertrand trade printing (Origin has
+    not migrated to Planeta as of this writing; see the file header).
+  sources:
+    - https://www.wook.pt/livro/origem-dan-brown/19198452
+
+- id: dan-brown/origin/11x17-2021-pt
+  workId: dan-brown/origin
+  isbn13: "9789722539821"
+  language: pt-PT
+  title: "Origem"
+  format: paperback
+  publisher: 11 X 17
+  year: 2021
+  note: >
+    "Livro de bolso" (pocket) edition, August 2021, 712pp, smaller trim
+    (112x173mm against the trade edition's 151x237mm) - a genuinely
+    different, currently-stocked object.
+  sources:
+    - https://www.wook.pt/livro/origem-dan-brown/23869091
+
+- id: dan-brown/the-secret-of-secrets/doubleday-2025-us
+  workId: dan-brown/the-secret-of-secrets
+  isbn13: "9780385546898"
+  language: en
+  format: hardcover
+  publisher: Doubleday
+  year: 2025
+  note: >
+    First edition, hardcover, 688pp, published 9 September 2025 (Wikipedia
+    infobox, cross-confirmed against Amazon and AbeBooks listings quoting the
+    same ISBN). A second, equally valid ISBN, 9780385546928, belongs to the
+    Kindle edition of the same book, not to a data error.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Secret_of_Secrets_(Brown_novel)
+
+- id: dan-brown/the-secret-of-secrets/planeta-2025-pt
+  workId: dan-brown/the-secret-of-secrets
+  isbn13: "9789895870769"
+  language: pt-PT
+  title: "O Segredo dos Segredos"
+  format: paperback
+  publisher: Planeta
+  year: 2025
+  note: >
+    September 2025 - published day-and-date with the US original, and the
+    only Portuguese edition, since this is Brown's newest book.
+  sources:
+    - https://www.bertrand.pt/livro/o-segredo-dos-segredos-dan-brown/32239005
+
+- id: dan-brown/wild-symphony/rodale-kids-2020-us
+  workId: dan-brown/wild-symphony
+  isbn13: "9780593123843"
+  language: en
+  format: hardcover
+  publisher: Rodale Kids
+  year: 2020
+  note: >
+    First edition picture book, hardcover, 44pp, ages 4-8, published 1
+    September 2020 (an imprint of Random House Children's Books, matching
+    works.yaml).
+  sources:
+    - https://www.penguinrandomhouse.com/books/608421/wild-symphony-by-dan-brown/
+
+- id: dan-brown/wild-symphony/bertrand-2020-pt
+  workId: dan-brown/wild-symphony
+  isbn13: "9789722540025"
+  language: pt-PT
+  title: "A Sinfonia dos Animais"
+  format: hardcover
+  publisher: Bertrand Editora
+  year: 2020
+  note: September 2020, 44pp, "capa dura" - matches the original's own picture-book format.
+  sources:
+    - https://www.wook.pt/livro/a-sinfonia-dos-animais-dan-brown/23894318
+
+- id: dan-brown/187-men-to-avoid/berkley-1995-us
+  workId: dan-brown/187-men-to-avoid
+  isbn13: "9780425147832"
+  language: en
+  format: paperback
+  publisher: Berkley Books
+  year: 1995
+  note: >
+    First edition, published as "Danielle Brown" (per works.yaml). Verified
+    against the Internet Archive's scan of the actual 1995 physical book
+    (LCCN 95190728), not a retailer's after-the-fact listing.
+  sources:
+    - https://archive.org/details/187mentoavoidsur00brow
+
+- id: dan-brown/187-men-to-avoid/berkley-trade-2006-us
+  workId: dan-brown/187-men-to-avoid
+  isbn13: "9780425215043"
+  language: en
+  format: paperback
+  publisher: Berkley Trade
+  year: 2006
+  note: >
+    Reissue, published 1 August 2006, recast on the cover as "Dan Brown
+    Formerly Writing As Danielle Brown" (per works.yaml) - a different
+    printed byline on a different ISBN, not a duplicate of the 1995 entry
+    above.
+  sources:
+    - https://openlibrary.org/books/OL7505768M/187_Men_to_Avoid
