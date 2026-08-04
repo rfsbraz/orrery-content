@@ -33,8 +33,9 @@ images:
   # of the licence tag attached on upload.
 
 # Capabilities (docs/SCHEMA.md) are all left auto, and all four now activate
-# on their own data: `river` and `companion` on the 9-entry aura (7 life
-# events on the author entity, 2 franchise events), `wizard` on the startHere
+# on their own data: `river` and `companion` on the 13-entry aura (9 life
+# events on the author entity, 3 franchise events, 1 included global event),
+# `wizard` on the startHere
 # block below, `editions` on editions.yaml. Nothing is forced off - none of
 # the four is thin enough to be worth entering an empty view. eras.yaml is
 # deliberately `[]` (see its own header) and powers no capability.
@@ -45,7 +46,8 @@ features:
   editions: auto
 
 globalEvents:
-  include: []
+  include:
+    - ebook-and-self-publishing-2007  # the Kindle's format shift landed on his book rather than around it: the e-book edition of The Lost Symbol outsold Amazon's own hardcover of it on its first day on sale, September 15, 2009, advance orders aside (an Amazon spokesman to the Wall Street Journal, reported in Shelf Awareness 2009-09-17) - the first major new novel to do so, and the reason a Langdon release is now planned as a simultaneous print-and-digital event. The event's other half, self-publishing, never touched him: he has been a Doubleday author throughout
   exclude:
     - online-bookselling-1995           # Amazon launched July 1995, a month before his actual debut (August 1995); no documented tie beyond a coincidental near-overlap, and generic backlist-discovery infrastructure isn't specific to this wing
     - fantasy-paperback-boom-1965       # created the commercial category for fantasy authors, not thriller writers; predates him by one year but does not shape his genre
@@ -53,7 +55,6 @@ globalEvents:
     - chain-bookshop-1982               # shaped bookselling while he was in college; no specific documented influence on his thrillers
     - sept-11-2001                      # lived through it; his themes predate or bypass it (Digital Fortress 1998 on NSA/cryptography predates 9/11; Da Vinci Code 2003 on religious conspiracy unrelated to terrorism)
     - financial-crisis-2008             # Inferno's overpopulation theme is independent of financial-crisis ethics; no resonance
-    - ebook-and-self-publishing-2007    # Brown remained traditionally published with Doubleday; self-publishing platforms did not shape his career
     - prestige-fantasy-adaptation-2011  # Game of Thrones example; Brown writes thrillers, not fantasy; his own film adaptations preceded this shift
     - portugal-bailout-2011             # Portuguese financial crisis; Brown is American with no documented connection
     - booktok-2020                      # established bestselling author; BookTok reaches lesser-known and younger writers, not career-defining authors in their peak
