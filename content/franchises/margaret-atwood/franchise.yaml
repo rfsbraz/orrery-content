@@ -1,0 +1,246 @@
+# Identity + features. Per this catalogue's standing rule, the wing spans
+# Atwood's complete published body of work: seventeen novels and novellas
+# (including the Handmaid's Tale/Testaments pair and the MaddAddam Trilogy,
+# both subseries inside this wing, never its boundary), plus the poetry,
+# short fiction, essays, children's books and two graphic novels that make
+# up the larger part of her actual output - see works.yaml's header for the
+# full tiering rationale and what was checked and excluded.
+#
+# features is left unset (auto): every optional layer this wing could carry is
+# present - eras.yaml, events.yaml, orders.yaml, editions.yaml, theme.yaml and
+# the startHere block below - so each capability activates on its own data.
+# globalEvents is ruled below: a 1939-present lifespan crosses most of this
+# catalogue's shared events, and each was judged on whether it actually
+# reaches a page of hers rather than merely overlapping her lifetime (3
+# included, 12 excluded; a further 4 - the 1914 war, 1870 elementary
+# schooling, the 1926 pulp magazines and the 1935 sixpenny paperback all
+# predate her 1939 birth with no inheritance case comparable to a
+# paperback-era genre author - were left unruled as implausible on their
+# face rather than argued down one by one).
+id: margaret-atwood
+name: Margaret Atwood
+kind: author
+description: >
+  A Canadian novelist and poet whose speculative dystopias -
+  [[work:margaret-atwood/the-handmaids-tale|The Handmaid's Tale]] (1985) and
+  its 2019 sequel [[work:margaret-atwood/the-testaments|The Testaments]], the
+  MaddAddam trilogy - sit on the same shelf as realist novels of
+  contemporary Canadian life and a body of poetry, short fiction and essays
+  that has run alongside the novels since 1961, not behind them.
+authorIds: [margaret-atwood]
+themePreset: specimen-ledger
+images:
+  # Old Victoria College at the University of Toronto, where Atwood studied
+  # English 1957-1961 under Northrop Frye and Jay Macpherson. A real,
+  # sourced link rather than a generic "her city" shot: Survival's central
+  # garrison-mentality thesis is Frye's own theory of Canadian literature,
+  # taught to her here (her Wikipedia article cites both facts directly).
+  # Checked and set aside: a generic Quebec/Ontario boreal-forest landscape
+  # for her childhood backwoods summers - true to the biography and to this
+  # wing's own landscape motifs, but no single named place is sourced for
+  # it, where this building and its influence on her are both concrete.
+  header: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/The_Old_Vic%2C_Toronto.jpg/1920px-The_Old_Vic%2C_Toronto.jpg"
+  headerCredit: "Maksim Sokolov (Maxergon), CC BY-SA 4.0"
+  headerSource: "https://commons.wikimedia.org/wiki/File:The_Old_Vic,_Toronto.jpg"
+
+globalEvents:
+  include:
+    # Her own account, "Writing Oryx and Crake" (randomhouse.com, Jan 2003,
+    # cited by Wikipedia's Oryx and Crake article): drafting the novel in
+    # autumn 2001, she stopped writing for several weeks after the
+    # attacks, unable to keep narrating a fictional catastrophe next to a
+    # real one - "It's deeply unsettling when you're writing about a
+    # fictional catastrophe and then a real one happens."
+    - sept-11-2001
+    # Positron, the digital serial she wrote for Byliner between March
+    # 2012 and May 2013, was explicitly framed by her at the time (TIME,
+    # Oct 2012) as an entry in the wave of Kindle-era e-serials this event
+    # opened - "there are a few different organizations trying digital
+    # serials right now, like Byliner, and Amazon launched their own
+    # version recently." Reworked into the full novel The Heart Goes Last
+    # (2015): an actual book on this shelf that exists in the form it
+    # does because the format did.
+    - ebook-and-self-publishing-2007
+    # Burning Questions (2022) is the anchor: a sole-authored collection of
+    # her own essays and occasional prose running to 2021, with the pandemic
+    # among its subjects in her own voice - Kirkus's review (1 Mar 2022,
+    # cited on that entry) has her writing "in the context of The Handmaid's
+    # Tale and Covid-19 ... about how misogynist and epidemiological crises
+    # have habitually repeated themselves throughout history". Fourteen Days
+    # (2024), the Authors Guild collaborative novel she general-edited and
+    # contributed one tenant's story to, is the second leg: set explicitly
+    # during the first fourteen days of the March 2020 lockdown it takes its
+    # own title from, but which of the 36 stories is hers is not publicly
+    # identified (see works.yaml's own note), so it corroborates the include
+    # rather than carrying it.
+    - covid-19-pandemic-2020
+  # Considered and refused. Nothing renders unless it is in `include`
+  # above, so these change nothing; they are kept as the record of a
+  # judgement already made, so it is not re-litigated from scratch.
+  exclude:
+    # Payback (2008) was researched and largely written, then delivered as
+    # the Massey Lectures, before the crash reached its worst; reviewers
+    # called its debt-and-wealth argument "prescient" once it did
+    # (Wikipedia's own article on the book), but that is the crisis being
+    # read back into an already-substantially-finished book, not the
+    # crisis reaching the page - this global event is graded low and
+    # answered by almost nothing in the catalogue, and this wing is no
+    # exception.
+    - financial-crisis-2008
+    # Born 18 November 1939, two and a half months into the war, too
+    # young to hold a memory of it. Her own most autobiographical account
+    # of that 1940s childhood, Cat's Eye (1988), is set in explicitly
+    # postwar Toronto, not the war years themselves - lived through as an
+    # infant, and it does not reach the page.
+    - world-war-ii-1939
+    # No sourced link to Amazon's 1995 launch or to online bookselling
+    # specifically. Her documented digital-publishing engagement is the
+    # later, format-specific Kindle-era serial claimed above under
+    # ebook-and-self-publishing-2007, not backlist retail.
+    - online-bookselling-1995
+    # The Handmaid's Tale's 2010s-2020s resurgence is already carried by
+    # the Hulu adaptation, its own franchise event (events.yaml); no
+    # source found ties a further sales or reception spike specifically
+    # to BookTok rather than to the show.
+    - booktok-2020
+    # She was 21 and at university the year of the verdict. Her own
+    # repeated fights against book bans - the Handmaid's Tale challenges
+    # and the 2022 unburnable-book auction, both already this wing's own
+    # franchise events - belong to a later, mostly American wave of
+    # censorship dispute; no source ties them back to this specific 1960
+    # UK case.
+    - lady-chatterley-trial-1960
+    # Names the paperback category for secondary-world epic fantasy
+    # specifically (the event's own description cites The Lord of the
+    # Rings). She writes speculative fiction and has repeatedly and
+    # publicly drawn the line against being read as science fiction or
+    # fantasy (In Other Worlds: SF and the Human Imagination, 2011; The
+    # Progressive, Dec 2010) - a different shelf, by her own account.
+    - fantasy-paperback-boom-1965
+    # A Portuguese national event; no documented connection found to an
+    # anglophone Canadian writer's life or work.
+    - carnation-revolution-1974
+    # Same basis as carnation-revolution-1974: Portugal-specific austerity
+    # history, no sourced tie to her career.
+    - portugal-bailout-2011
+    # A generic anglophone retail trend; no source found ties her own
+    # career or sales specifically to chain bookselling rather than to
+    # publishing generally.
+    - chain-bookshop-1982
+    # Names Game of Thrones and prestige epic-fantasy television
+    # specifically. Her own television adaptation is the Hulu Handmaid's
+    # Tale, a different show in a different genre and already this wing's
+    # own franchise event - not an instance of this one.
+    - prestige-fantasy-adaptation-2011
+    # Her own comics work, the two Angel Catbird graphic novels (Dark
+    # Horse, from 2016), begins two decades after the Code's authority had
+    # already collapsed (per this event's own description); no plausible
+    # link.
+    - comics-code-authority-1954
+    # A US wartime military book-distribution program. She was an infant
+    # in wartime Canada, not the US; no source ties her family or career
+    # to it.
+    - armed-services-editions-1943
+
+startHere:
+  paths:
+    # Source: https://tertulia.com/article/reading-your-way-through-margaret-atwood
+    # "the book that made Atwood a cultural force"
+    - id: start-with-gilead
+      title: Start with Gilead
+      description: >
+        The book that made her a cultural force, and its direct sequel
+        fifteen years on: a Handmaid's fragmented account of how Gilead took
+        her old life, then three narrators watching the cracks show in it
+        from the inside.
+      workIds:
+        - margaret-atwood/the-handmaids-tale
+        - margaret-atwood/the-testaments
+      orderId: null
+      fit:
+        experience: [new, returning]
+        commitment: [taste]
+      note: >
+        Read them in that order - The Testaments is a direct continuation,
+        not a companion piece, so nothing here is spoiled by reading forward.
+        The cost is that this shows only one register of her: the political
+        dystopia, none of the realist novels or the poetry that has run
+        alongside them since 1961.
+
+    # Source: https://www.readings.com.au/news/a-beginners-guide-to-margaret-atwood
+    # ("Not a fan of dystopia or speculative fiction?" points to Cat's Eye)
+    # Source: https://www.women.com/2191867/best-books-margaret-atwood-arent-the-handmaids-tale/
+    # (groups Alias Grace, Cat's Eye and The Edible Woman as the way past Gilead)
+    - id: the-other-atwood
+      title: "Not into dystopia? Start here"
+      description: >
+        The debut, the breakout and the historical novel that show her
+        realist, character-driven side - the register most readers who met
+        her through Gilead have never seen: a young woman's engagement
+        rebelling against her own body, a painter confronting a childhood
+        friendship that nearly broke her, and a real 1843 murder
+        reconstructed from the accused woman's own sessions with the doctor
+        sent to determine what she remembers.
+      workIds:
+        - margaret-atwood/the-edible-woman
+        - margaret-atwood/cats-eye
+        - margaret-atwood/alias-grace
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        The cost is skipping her speculative fiction entirely - no Gilead,
+        no MaddAddam - to see the literary novelist underneath the dystopias.
+
+    # Source: https://www.readings.com.au/news/a-beginners-guide-to-margaret-atwood
+    # ("speculative fiction at its finest... once you get started you will
+    # want to read them all")
+    - id: the-maddaddam-arc
+      title: The MaddAddam Trilogy
+      description: >
+        A gentler-seeming apocalypse than Gilead's, and a bigger commitment:
+        three novels watching the same collapse of a bioengineered
+        civilization from different survivors' vantage points.
+      workIds: null
+      orderId: margaret-atwood/maddaddam-trilogy
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        The cost is three books before the story resolves. Each stands
+        alone; the payoff of watching the collapse from three angles does
+        not.
+
+    - id: beyond-the-novels
+      title: Beyond the novels
+      description: >
+        The poetry, essays and short fiction that have run alongside the
+        novels rather than behind them since 1961 - Survival's argument
+        that reshaped how Canadian literature is read and taught, the
+        Circe/Mud sequence, the lecture series at Oxford and Cambridge, the
+        memoir that closes the shelf.
+      workIds: null
+      orderId: margaret-atwood/beyond-the-novels
+      fit:
+        experience: [returning, completionist]
+        commitment: [arc]
+      note: >
+        This is not a way into Atwood - it assumes the novels are already
+        read and reaches past them into the larger, quieter part of the
+        shelf.
+
+    - id: everything
+      title: Everything, in order
+      description: >
+        All sixty-nine works in the order she wrote them, novels and poetry
+        and essays interleaved as they actually appeared across six decades.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+
+sources:
+  - https://en.wikipedia.org/wiki/Margaret_Atwood
+  - https://margaretatwood.ca/full-bibliography-2/
