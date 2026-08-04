@@ -20,6 +20,47 @@ description: >
 authorIds: [haruki-murakami]
 themePreset: after-hours-tokyo
 features: {}
+
+# Which shared global events actually reach this author (docs/SCHEMA.md).
+# Born 1949, alive: pre-1949 entries (both world wars, the 1926 pulp
+# magazines, the 1935 sixpenny paperback, the 1943 armed-services editions,
+# the 1870 schooling act) were left unruled as implausible on their face -
+# a Japanese-language literary novelist has no inheritance case comparable
+# to a genre author born into a category those events built - rather than
+# argued down one by one. Of what remains inside his lifetime, one event
+# clears the resonance bar; twelve were considered and refused.
+globalEvents:
+  include:
+    # The City and Its Uncertain Walls (2023) is a 1980 novella he rewrote
+    # during the 2020 lockdown, rarely leaving home while doing it. Asked
+    # about it directly, he named the connection himself rather than having
+    # it read into the book afterward: "The situation of the town
+    # surrounded by walls was also a metaphor of the worldwide lockdown.
+    # How is it possible for both extreme isolation and warm feelings of
+    # empathy to coexist? That was one of the major themes of this novel"
+    # (John Self interview, The Guardian, 23 Nov 2024). Distinct from the
+    # 1995 Kobe earthquake/sarin material already on his lifeEvents: that
+    # pair is the direct subject of Underground and after the quake, this
+    # is a wartime-Japan-era wall metaphor repurposed, by his own account,
+    # for a 2020s pandemic.
+    - covid-19-pandemic-2020
+  # Considered and refused. Nothing renders unless it is in `include`
+  # above, so these change nothing; they are kept as the record of a
+  # judgement already made, so it is not re-litigated from scratch.
+  exclude:
+    - sept-11-2001                       # no sourced link; the terrorism his own work answers is Aum Shinrikyo's 1995 sarin attack, already a lifeEvent
+    - financial-crisis-2008              # world-events' own weakest entry; 1Q84 (2009) was already substantially written and no interview ties it to the crash
+    - lady-chatterley-trial-1960         # a UK obscenity case decided when he was 11; his real censorship fight is Hong Kong's 2018 Killing Commendatore ruling, a different law, already a franchise event
+    - fantasy-paperback-boom-1965        # names the Tolkien-driven secondary-world epic-fantasy category; his surrealism descends from Kafka, Carver and hard-boiled noir, no inheritance case
+    - carnation-revolution-1974          # Portuguese censorship history; no documented connection to a Japanese author
+    - chain-bookshop-1982                # generic bookselling-industry trend; his own real launch events (news blackouts, midnight queues) are already franchise events tied to publisher marketing, not chain-store display
+    - online-bookselling-1995            # no sourced link to Amazon's 1995 launch specifically
+    - ebook-and-self-publishing-2007     # no sourced link found tying his catalogue or career to the Kindle/self-publishing shift
+    - prestige-fantasy-adaptation-2011   # names Game of Thrones and prestige fantasy television specifically; his own screen adaptations (Norwegian Wood, Burning, Drive My Car) are literary arthouse film, a different medium and genre
+    - booktok-2020                       # individual fan videos exist, as they do for most backlist novelists; no source ties a sales spike or reissue to BookTok rather than to his ordinary international sales
+    - portugal-bailout-2011              # a Portuguese national crisis; no documented connection
+    - comics-code-authority-1954         # a 1954 US comics self-censorship code; he was five, writes no comics, and the manga adaptations of his stories (Tuttle, 2023) arrive decades after the Code's authority had already collapsed
+
 sources:
   - https://en.wikipedia.org/wiki/Haruki_Murakami
   - https://en.wikipedia.org/wiki/Template:Haruki_Murakami
