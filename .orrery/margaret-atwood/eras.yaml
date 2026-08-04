@@ -1,0 +1,144 @@
+stage: eras
+summary: >
+  Real, dated, university-press periodisation exists and is now the wing's
+  eras.yaml: David Staines, "Margaret Atwood in Her Canadian Context", the
+  opening chapter of Coral Ann Howells (ed.), The Cambridge Companion to
+  Margaret Atwood (CUP, 1st ed. 2006 pp. 12-27; 2nd ed. 2021 pp. 14-31),
+  divides the career into three named phases - "Mapping her Canada",
+  "Interpreting Canada abroad", "Canada in the world" - and dates the
+  boundaries in his own prose, not in a summary of it. Three eras shipped,
+  all provenance: critical (ladder rung 2), covering 1961-present with no
+  gap, no overlap and no orphan. The scaffold's suspected
+  realist-then-speculative split was rejected, and so was the MaddAddam
+  Trilogy break the completeness-auditor handoff floated: no source cuts the
+  career at 2003 or 2013, and Staines puts the trilogy inside his third
+  phase. The 1985 break that handoff named IS corroborated - it is Staines's
+  own second/third boundary - so one of its two candidates survived
+  verification and one did not.
+produced:
+  files:
+    - content/franchises/margaret-atwood/eras.yaml
+  eras:
+    - {id: mapping-her-canada, title: "Mapping Her Canada", period: "1961-1972", provenance: critical, works: 12}
+    - {id: interpreting-canada-abroad, title: "Interpreting Canada Abroad", period: "1973-1985", provenance: critical, works: 16}
+    - {id: canada-in-the-world, title: "Canada in the World", period: "1986-present", provenance: critical, works: 41}
+  verdicts: >
+    All three RECEIVED, rung 2 (critical/scholarly consensus). Boundary
+    verdicts, reported separately from the label verdicts: the 1972 and 1985
+    edges are Staines's own stated years ("culminates with the 1972
+    publication of Survival"; the second phase "ran from the early seventies
+    until 1985"). The 1973 and 1986 start years are resolutions of his two
+    fuzzy edges ("the early seventies", "the mid-eighties") against the
+    precise adjacent year, chosen as the only reading that leaves the three
+    phases neither overlapping nor leaving a year unassigned; both are
+    flagged in a note: on their own entries. Era 1's 1961 start is the first
+    published book, not a year Staines draws, and says so in its note.
+  sourcing: >
+    Searched in English, which is the correct corpus for an anglophone
+    Canadian writer, and specifically in Canadian sources (The Canadian
+    Encyclopedia, CBC, The Walrus) alongside the international ones. The
+    shipped sources are the publisher's own chapter abstract on Cambridge
+    Core, which states the three stages and their names verbatim, and the
+    chapter DOI. The boundary sentences quoted in the file come from the
+    chapter body, which was read in full through a mirror of the first
+    edition rather than from any abstract or search summary.
+  rejected: >
+    Realist-then-speculative: refused by the dates, as the scaffold suspected.
+    MaddAddam Trilogy (2003-2013): a real publisher-marketed grouping and
+    already a works.yaml subseries, but no source periodises the career at
+    either end of it. The Handmaid's Tale -> Testaments 34-year gap: real,
+    and its near edge coincides with Staines's second/third boundary, but the
+    gap itself is an absence between two books of one subseries, not a period
+    with a body of work in it - the era boundary sits at 1985/1986 and the
+    span runs straight through 2019.
+  poetry: >
+    No exclusion of poetry was needed. Staines periodises "poetry, fiction,
+    and literary criticism" together and his first phase is largely a poetry
+    phase, so the scheme covers the whole catalogue. The completeness-auditor
+    handoff's premise that poetry "runs continuously 1961-2024 with no gap to
+    mark an era edge" is only half right, and the correction is in the file:
+    thirteen collections appear in the twenty-four years to Interlunar (1984)
+    and four in the forty years after, so the poetry does thin sharply, at
+    exactly the 1985/1986 line Staines draws for other reasons. It does not
+    thin at 1972, which is why the first boundary is left resting on Staines
+    alone rather than claimed as corroborated.
+  validator: >
+    eras.yaml itself is clean - 0 errors attributable to it, 0 orphan
+    warnings, every one of the 69 works falling inside exactly one span.
+    The run is not green overall: see openQuestions, the theme.art check.
+  verification: >
+    Guards were falsified before being trusted. Moving era 1 to 1962-1972
+    made the orphan warning fire on Double Persephone and reverting silenced
+    it; corrupting an inline [[work:]] target made the reference check fire
+    and reverting silenced it. Era membership was re-derived independently of
+    the validator with an assert that each work matches exactly one span; it
+    passed for all 69.
+forStages:
+  event-resonance: >
+    Three era boundaries to resonate against, at 1972/1973 and 1985/1986,
+    both of them sourced to a named scholar rather than to us. The
+    highest-value anchors sitting on those lines: Survival (1972) closing era
+    1, and The Handmaid's Tale (1985) closing era 2. Note that Staines's
+    phases are about Atwood's changing relationship to Canada and to a
+    readership outside it, not about genre - an event about her
+    internationalisation (the mid-seventies shift to reviewing for American
+    and British outlets, the 1991 Clarendon Lectures at Oxford, the 2000
+    Empson Lectures at Cambridge) lands harder against these eras than a
+    dystopia-themed one.
+  reading-orders: >
+    Era membership is 12 / 16 / 41 works, so a chronological path through
+    the eras is heavily back-loaded; era 3 alone holds 11 of the 17 core
+    novels. If an era_reader achievement is proposed, the counts by tier are
+    era 1: 2 core, 6 extended, 4 apocrypha; era 2: 4 core, 11 extended, 1
+    apocrypha; era 3: 11 core, 26 extended, 4 apocrypha. The eraIds are
+    mapping-her-canada, interpreting-canada-abroad, canada-in-the-world, and
+    they are permanent - achievement criteria.eraId keys off them.
+  art-rotation: >
+    Three chapter-gate plates, one image each, images_required: 1, nine image
+    slots' worth of nothing else - eras are the only aura this wing has until
+    press-archaeology and event-resonance land. Illustration types are
+    atmospheric-motif-field (era 1), symbolic-still-life (era 2),
+    atmospheric-motif-field (era 3). Both are keyed types: chapter-gate
+    specifies a transparent background because the app applies its own plate
+    mask, and the third type LAYOUT.md lists in chapter-gate's Holds,
+    establishing-landscape, sits in art_types.py's OPAQUE_TYPES and would
+    file the plate opaque - it is deliberately unused here. With only two
+    legal keyed types and three plates one repeat is unavoidable; it is
+    placed non-adjacently.
+  wing-audit: >
+    Do not read the three eras as tiling for tidiness: the tiling is the
+    source's, which periodises the whole career, and rule 4's "gaps are
+    legitimate" did not need invoking. Two things worth a second pair of
+    eyes. (1) The 1973 and 1986 start years are mine, resolved from Staines's
+    "early seventies" and "mid-eighties" against his precise adjacent years;
+    if that resolution is wrong the labels are still right and only the edges
+    move. (2) The validator does not detect era overlaps - deliberately
+    overlapping era 2 into era 1 (1972-1985 against 1961-1972) produced no
+    error or warning at all, though the skill calls overlap a defect
+    regardless of sourcing. That is a catalogue-wide gap, not a
+    margaret-atwood one.
+openQuestions:
+  - "The wing now fails validation on a file this stage does not own, and
+     this was unavoidable rather than a mistake: scripts/validate.py turns
+     theme.yaml's missing `art:` block from a warning into an ERROR the
+     moment a wing gains any aura at all, and eras are aura. The wing is
+     therefore un-green from now until the visual-language stage sets the
+     art block. stage_plan.py orders visual-language after eras, so this is
+     the designed sequence rather than a defect, but the brief's expectation
+     of a green run with only the theme.art warning cannot hold once eras
+     exist. The same trip-wire will fire for press-archaeology the moment it
+     writes a lifeEvent, on its own branch, for the same reason."
+  - "No pt-PT overlay was written. The wing has no content/i18n/pt-PT
+     directory at all yet (franchise-research deliberately shipped none), so
+     eras.yaml is not regressing an existing overlay - but the era titles and
+     descriptions are now the third baseline file awaiting the translation
+     stage, and the titles are the load-bearing part: they are a scholar's
+     English section headings, and a translated era plate would be a coinage
+     in Portuguese unless it glosses rather than renames."
+  - "Era 3 covers 1986-present, 41 works and 40 years, which is a third of
+     the catalogue's span carrying nearly two-thirds of its books. That is
+     faithful to Staines, who has not subdivided it across two editions
+     fifteen years apart, but it is the entry most likely to attract a future
+     proposal to split. Any such split needs its own source; the obvious
+     internal candidates (the MaddAddam Trilogy, the 2016-2019 Handmaid's
+     Tale resurgence) were checked here and none is periodised by anyone."
