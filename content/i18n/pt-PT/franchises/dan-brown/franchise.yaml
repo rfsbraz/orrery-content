@@ -1,0 +1,66 @@
+# Overlay pt-PT. Apenas prosa; id, slugs e sources não são traduzidos.
+# Os startHere.paths ficam aninhados e são fundidos por id (ver SCHEMA.md,
+# "Nested lists merge by id"): só `title`, `description` e `note`, nunca
+# `workIds`, `orderId` ou `fit`.
+# Esta ala tem edições pt-PT publicadas para 8 das 10 obras (ver
+# editions.yaml); as referências inline usam o título dessa edição como
+# texto de exibição (docs/SCHEMA.md, "a translated title must never be the
+# only title a reader sees"): Fortaleza Digital, Anjos e Demónios, A
+# Conspiração, O Código da Vinci, O Símbolo Perdido, Inferno (a mesma
+# palavra nas duas línguas), Origem, O Segredo dos Segredos, A Sinfonia dos
+# Animais. 187 Men to Avoid não tem edição portuguesa e fica no título
+# original em toda a ala. "Robert Langdon", usado como texto de exibição de
+# uma referência a angels-demons no path start-with-langdon-from-the-start,
+# é o nome da personagem, não o título do livro, e não se traduz.
+- id: dan-brown
+  description: >
+    Dois thrillers autónomos iniciais -
+    [[work:dan-brown/digital-fortress|Fortaleza Digital]] (1998, a sua
+    verdadeira estreia de ficção) e
+    [[work:dan-brown/deception-point|A Conspiração]] (2001) - antes da
+    série Robert Langdon que o tornou um dos romancistas mais vendidos
+    vivos: [[work:dan-brown/angels-demons|Anjos e Demónios]] (2000) até
+    [[work:dan-brown/the-secret-of-secrets|O Segredo dos Segredos]] (2025),
+    seis romances pela mesma ordem da sua própria cronologia interna. Um
+    livro infantil ilustrado, [[work:dan-brown/wild-symphony|A Sinfonia dos
+    Animais]] (2020), e o seu verdadeiro primeiro livro - um título de
+    humor de 1995 publicado sob o pseudónimo "Danielle Brown" - completam a
+    estante.
+  startHere:
+    paths:
+      - id: everything-in-order
+        title: Tudo, por ordem
+        description: >
+          Os dez livros, cronologicamente de 1995 a 2025: a estreia
+          pseudónima, os dois thrillers autónomos iniciais, a série de seis
+          romances Robert Langdon e o livro ilustrado que fica
+          completamente à margem dos thrillers.
+
+      - id: start-with-the-da-vinci-code
+        title: Comece por O Código da Vinci
+        description: >
+          De longe o seu livro mais conhecido - o que tornou o seu nome
+          familiar e a razão pela qual a maioria das pessoas já ouviu falar
+          dele. Um caso autónomo: um conservador assassinado, um rasto de
+          códigos escondidos na própria coleção do Louvre, sem exigir
+          nenhum romance anterior de Langdon.
+        note: >
+          Traz algumas referências passageiras à vida de Langdon entre
+          este livro e Anjos e Demónios, que se leem de forma diferente se
+          voltar a esse depois - o custo de saltar a verdadeira estreia da
+          personagem a favor do seu caso mais famoso.
+
+      - id: start-with-langdon-from-the-start
+        title: Conheça Langdon desde o início
+        description: >
+          A série [[work:dan-brown/angels-demons|Robert Langdon]]
+          exatamente como Brown a escreveu e definiu: primeiro um conclave
+          no Vaticano e um cilindro roubado de antimatéria, depois os
+          códigos escondidos no Louvre, em Washington, Florença, Bilbau e
+          Praga que se seguem ao longo de mais cinco livros.
+        note: >
+          O custo: seis livros são um compromisso maior do que
+          experimentar primeiro o seu caso mais famoso, e Anjos e Demónios
+          tem muito menos reconhecimento cultural do que O Código da Vinci
+          - a troca por conhecer Langdon, e a cronologia da própria série,
+          desde o seu verdadeiro início.

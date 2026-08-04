@@ -1,0 +1,339 @@
+# Português europeu (pt-PT) - bio + prosa dos lifeEvents (title + description
+# + quote). Os lifeEvents ficam aninhados sob o autor e fundem-se por id (ver
+# SCHEMA.md, "Nested lists merge by id"); datas, impact, organisation e
+# sources nunca se traduzem, nem o nome do autor. `note` fica na língua de
+# base - é anotação de curadoria, não prosa para o leitor.
+#
+# Onde a base inglesa cita palavras de Saramago, ou de outra figura ligada a
+# ele, entre aspas, a citação abaixo é a fonte portuguesa original, não uma
+# retradução da paráfrase inglesa:
+#   - saramago-dismissed-1949: "por motivos políticos fiquei desempregado em
+#     1949" - a própria autobiografia de Saramago, josesaramago.org/biografia/
+#     (frase exacta).
+#   - saramago-claraboia-rejected-1953: "Saramago sofreu muito com esse
+#     desprezo" - Pilar del Río, no lançamento madrileno de Claraboia em 2012.
+#   - saramago-translator-years-1955: "ao mundo das letras... mas não como
+#     autor" - a mesma autobiografia.
+#   - saramago-returns-to-print-1966: "Durante dezanove anos, até 1966,
+#     quando publicaria Os Poemas Possíveis, estive ausente do mundo
+#     literário português" - a mesma autobiografia.
+#   - saramago-joins-pcp-1969: "comunista inveterado" - as palavras do próprio
+#     L'Osservatore Romano, citadas por pt.wikipedia.
+#   - saramago-diario-de-noticias-1975: "um instrumento nas mãos do povo
+#     português, para a construção do socialismo" - o próprio Saramago,
+#     citado no artigo académico de Pedro Marques Gomes (Revista Tempo e
+#     Argumento, 2019, redalyc.org), que cita por sua vez o Diário de
+#     Notícias de 10 de abril de 1975.
+#   - saramago-nobel-prize-1998: a citação do prémio e o título do discurso
+#     são a tradução oficial da própria Fundação José Saramago
+#     (josesaramago.org/distincoes/); a frase de abertura do discurso é o
+#     texto integral do próprio discurso, também em josesaramago.org.
+# As restantes citações entre aspas da base inglesa (a citação de Pontiero em
+# events.yaml, a resposta ao Vaticano, a frase de Ramalá, a entrevista de
+# 2008 sobre a doença, "para meu alívio" e "a maior sorte da minha vida") não
+# têm original português localizável e foram traduzidas como qualquer outra
+# prosa.
+
+- id: jose-saramago
+  bio: >
+    Nasceu numa família de camponeses sem terra em Azinhaga, uma aldeia
+    ribatejana à beira do rio Almonda, e cresceu sobretudo em Lisboa a
+    partir dos dois anos. As dificuldades económicas tiraram-no do liceu
+    aos doze anos para uma formação técnica; formou-se em serralharia
+    mecânica, e depois trabalhou como funcionário público, editor, tradutor
+    e jornalista, escrevendo nas horas vagas. O primeiro romance, publicado
+    como [[work:jose-saramago/terra-do-pecado|Terra do Pecado]] (1947)
+    apesar de o ter intitulado A Viúva, foi seguido de 19 anos de quase
+    silêncio até uma coletânea de poesia em 1966, e só regressou à ficção em
+    1977. Encontrou o estilo de frase longa e diálogo sem aspas hoje
+    chamado "saramaguiano" com
+    [[work:jose-saramago/levantado-do-chao|Levantado do Chão]] (1980), e o
+    reconhecimento internacional seguiu-se com
+    [[work:jose-saramago/memorial-do-convento|Memorial do Convento]] (1982),
+    traduzido para inglês como Baltasar and Blimunda. Em 1992 o governo
+    português, sob o primeiro-ministro Aníbal Cavaco Silva, mandou retirar
+    [[work:jose-saramago/o-evangelho-segundo-jesus-cristo|O Evangelho
+    Segundo Jesus Cristo]] da lista do Prémio Aristeion por ofensa
+    religiosa; Saramago e a sua mulher, a jornalista espanhola Pilar del
+    Río, partiram para Lanzarote, nas ilhas Canárias, onde viveu o resto da
+    vida. Venceu o Prémio Nobel da Literatura em 1998, o primeiro atribuído
+    a um escritor de língua portuguesa. Militante do Partido Comunista
+    Português a vida toda (desde 1969) e pessimista e ateu assumido,
+    continuou a publicar romances, diários e ensaios a partir de Lanzarote
+    até à sua morte, de leucemia, em 2010; um romance inacabado encontrado
+    no seu computador,
+    [[work:jose-saramago/alabardas-alabardas-espingardas-espingardas|Alabardas,
+    Alabardas, Espingardas, Espingardas]], saiu em 2014, e um romance
+    escrito em 1953 e na altura recusado,
+    [[work:jose-saramago/claraboia|Claraboia]], foi publicado em 2011
+    depois de encontrado no arquivo de uma editora.
+  lifeEvents:
+    - id: saramago-born-1922
+      title: Nasce em Azinhaga, à beira do rio Almonda
+      description: >
+        Nasceu em Azinhaga, uma aldeia da província do Ribatejo a cerca de
+        cem quilómetros a nordeste de Lisboa, filho de camponeses sem
+        terra, José de Sousa e Maria da Piedade. O apelido "Saramago" - uma
+        planta herbácea selvagem comida pelos pobres - era a alcunha da
+        família do pai na aldeia, registada por engano como apelido da
+        criança pelo funcionário do registo civil; só soube o seu nome
+        completo, José de Sousa Saramago, aos sete anos, quando precisou de
+        um documento de identificação para a escola primária. A família
+        mudou-se para Lisboa em 1924, embora tenha passado longos períodos
+        da infância de volta a Azinhaga, com os avós maternos.
+
+    - id: saramago-first-novel-1947
+      title: Um primeiro romance, sob um título que nunca aceitou
+      description: >
+        Aos vinte e quatro anos, a trabalhar como empregado nos serviços de
+        segurança social, terminou um romance a que tinha chamado A Viúva.
+        A editora Minerva aceitou-o com uma condição: o título tinha de
+        mudar para [[work:jose-saramago/terra-do-pecado|Terra do Pecado]],
+        que o editor considerava mais vendável. Nunca se conformou com a
+        mudança. O livro vendeu quase nada e ficou fora de circulação
+        durante meio século; questionado sobre isso mais tarde, disse que
+        foi "para meu alívio". A sua única filha, Violante, nasceu no mesmo
+        ano. Reeditado em 1997, prefaciou-o com um "Aviso" a explicar
+        porque estava a reintegrar na sua obra um livro que passara
+        cinquenta anos a renegar.
+
+    - id: saramago-dismissed-1949
+      title: Despedido por apoiar o candidato da oposição
+      description: >
+        Perdeu o lugar na Caixa de Abono de Família do Pessoal da Indústria
+        de Cerâmica por apoiar a candidatura presidencial de Norton de
+        Matos, o candidato da oposição ao regime de Salazar. No seu
+        próprio relato, a frase tem sete palavras: "por motivos políticos
+        fiquei desempregado em 1949", e um antigo professor da sua escola
+        técnica arranjou-lhe trabalho numa empresa metalúrgica. É a
+        primeira marca registada do Estado sobre ele, vinte anos antes de
+        aderir a um partido.
+
+    - id: saramago-claraboia-rejected-1953
+      title: Um segundo romance fica trinta e seis anos na gaveta de um editor
+      description: >
+        Terminou [[work:jose-saramago/claraboia|Claraboia]] a 5 de janeiro
+        de 1953, um texto dactilografado de 319 páginas assinado com o
+        pseudónimo "Honorato", e pediu a um amigo que o levasse a uma editora
+        lisboeta. Nunca chegou resposta, e o manuscrito nunca foi devolvido.
+        Em 1989, ao mudar de instalações, a mesma editora encontrou-o e
+        escreveu a dizer que seria uma honra publicá-lo. Ele retomou o texto
+        e recusou: o livro não sairia enquanto fosse vivo. A sua viúva, Pilar
+        del Río, ao apresentá-lo em Madrid em 2012, disse que "Saramago
+        sofreu muito com esse desprezo", e que depois disso levou vinte
+        anos a escrever outro romance. Ao silêncio seguiu-se não ficção,
+        mas [[work:jose-saramago/os-poemas-possiveis|Os Poemas Possíveis]]
+        (1966); os romances só regressaram em 1977.
+
+    - id: saramago-translator-years-1955
+      title: Vinte e seis anos com os livros dos outros
+      description: >
+        Para aumentar o rendimento do agregado familiar começou a aceitar
+        trabalhos de tradução em 1955, e manteve-os até 1981: Colette,
+        Maupassant, Tolstói, Baudelaire, Hegel, Pär Lagerkvist, Nikos
+        Poulantzas, Henri Focillon. No final da década entrou para a
+        editora Estúdios Cor como responsável pela produção, o que o
+        devolveu, nas suas próprias palavras, ao mundo das letras, mas não
+        como autor, e lhe deu a amizade da maioria dos escritores
+        portugueses então em atividade. Ao longo de toda a década de 1950 e
+        da maior parte da de 1960, foi esta, de facto, a sua vida
+        profissional em literatura.
+
+    - id: saramago-returns-to-print-1966
+      title: Dezanove anos de silêncio terminam com um livro de poemas
+      description: >
+        "Durante dezanove anos, até 1966, quando publicaria Os Poemas
+        Possíveis, estive ausente do mundo literário português" - nas
+        suas próprias palavras. A coletânea pôs fim ao silêncio que se
+        seguira a [[work:jose-saramago/terra-do-pecado|Terra do Pecado]]
+        (1947); os romances só regressaram em 1977.
+
+    - id: saramago-joins-pcp-1969
+      title: Adere ao Partido Comunista, ainda na clandestinidade
+      description: >
+        Aderiu ao Partido Comunista Português em 1969, cinco anos antes da
+        Revolução dos Cravos e enquanto o partido estava proibido e a
+        operar na clandestinidade sob a ditadura, e manteve-se militante
+        até à morte. Pertenceu à organização de intelectuais de Lisboa do
+        partido e, depois de 1974, à sua célula de escritores.
+        Candidatou-se à assembleia municipal de Lisboa numa lista apoiada
+        pelo PCP em 1989 e foi eleito seu presidente, e integrou a lista da
+        Coligação Democrática Unitária em todas as eleições europeias entre
+        1989 e 2009, sempre numa posição da qual não poderia ser eleito.
+        Nunca suavizou o rótulo: a objeção do Vaticano ao seu Nobel
+        chamou-lhe comunista inveterado, e ele não contestou a descrição.
+
+    - id: saramago-diario-de-noticias-1975
+      title: >-
+        O caso do Diário de Notícias, e o despedimento a que chamou a maior
+        sorte da sua vida
+      description: >
+        A partir de abril de 1975 foi diretor-adjunto do Diário de
+        Notícias, então o maior diário do país, recém-nacionalizado e
+        dirigido por uma direção próxima do Partido Comunista. Disse à
+        redação, ao tomar posse, que queria que o jornal fosse "um
+        instrumento nas mãos do povo português, para a construção do
+        socialismo", e que quem não estivesse empenhado nesse projeto seria
+        melhor abandonar o Diário de Notícias. Os seus cerca de noventa e
+        cinco "Apontamentos" não assinados na primeira página, reunidos no
+        ano seguinte em [[work:jose-saramago/os-apontamentos|Os
+        Apontamentos]], serviam de editoriais ao jornal. A 14 de agosto,
+        com o diretor de férias e Saramago no comando, trinta jornalistas
+        entregaram um documento a exigir a revisão da linha editorial;
+        chegou à imprensa no dia seguinte. Um plenário de trabalhadores,
+        depois de uma intervenção longa e hostil de Saramago, votou o
+        despedimento de vinte e dois deles sem indemnização, e mais dois
+        saíram em solidariedade: o "caso dos 24". O conselho de imprensa
+        português considerou os fundamentos ilegais e ilegítimos no ano
+        seguinte. Depois de o contragolpe de 25 de novembro pôr fim ao
+        período revolucionário, o próprio Saramago foi demitido, acusado de
+        radicalismo marxista e, segundo o Expresso, sem apoio do seu
+        próprio partido. Decidiu não procurar outro emprego. "Ter sido
+        despedido foi a maior sorte da minha vida", disse mais tarde.
+        "Obrigou-me a parar e a refletir. Foi o nascimento da minha vida de
+        escritor."
+
+    - id: saramago-levantado-do-chao-1980
+      title: Meses no Alentejo, e a voz chega
+      description: >
+        Sem emprego e a viver de trabalhos de tradução, mudou-se por alguns
+        meses para Lavre, uma povoação rural do Alentejo perto de
+        Montemor-o-Novo, e viveu entre os trabalhadores da unidade coletiva
+        de produção Boa Esperança, ouvindo e tomando notas para um romance
+        sobre três gerações de trabalhadores sem terra. O resultado,
+        [[work:jose-saramago/levantado-do-chao|Levantado do Chão]] (1980),
+        é onde a pontuação desaparece: sem aspas de diálogo, sem quebras de
+        parágrafo para a fala, frases que se estendem por uma página
+        inteira. Disse mais tarde que foi neste livro que nasceu o modo de
+        narrar que caracteriza a sua ficção, e a crítica portuguesa chama a
+        essa maneira "saramaguiano" desde então. Tinha cinquenta e sete
+        anos.
+
+    - id: saramago-pilar-del-rio-1986
+      title: Pilar del Río, que o leu primeiro em espanhol
+      description: >
+        Jornalista espanhola de Castril, na província de Granada, Pilar
+        del Río leu todos os títulos de Saramago disponíveis em espanhol e
+        depois pediu para conhecer o autor; conheceram-se a 10 de junho de
+        1986, e casaram-se em 1988. Aprendeu português e tornou-se sua
+        tradutora para espanhol, pelo que os seus livros chegaram à grande
+        língua vizinha pela voz da mulher, e foi através dela que Espanha
+        se tornou o lugar para onde se pôde mudar quando Portugal lhe
+        fechou uma porta em 1992. Preside à Fundação José Saramago, e pediu
+        a nacionalidade portuguesa depois da morte dele. A sua relação com
+        a escritora Isabel da Nóbrega, que durava desde 1970 e a quem
+        dedicou [[work:jose-saramago/memorial-do-convento|Memorial do
+        Convento]] e
+        [[work:jose-saramago/o-ano-da-morte-de-ricardo-reis|O Ano da Morte
+        de Ricardo Reis]], terminou no mesmo ano.
+
+    - id: saramago-lanzarote-exile-1992
+      title: Censurado pelo próprio governo, parte para Lanzarote
+      description: >
+        Portugal apresentou uma lista de romances ao Prémio Literário
+        Europeu, o Aristeion, em 1992. O secretário de Estado da Cultura no
+        governo de Aníbal Cavaco Silva, António de Sousa Lara, retirou
+        [[work:jose-saramago/o-evangelho-segundo-jesus-cristo|O Evangelho
+        Segundo Jesus Cristo]] (1991) da lista, alegando que ofendia a
+        moral cristã: o romance dá a Jesus uma vida humana, um corpo, Maria
+        Madalena, e um Deus que não é nem justo nem bondoso, e a hierarquia
+        católica vinha atacando o livro desde a publicação, com o
+        Arcebispo de Braga a chamar à sua beleza literária uma circunstância
+        agravante em vez de uma defesa. Saramago chamou ao veto aquilo que
+        era, censura de um governo a um livro de que não gostava, e em
+        fevereiro de 1993 ele e a mulher, Pilar del Río, deixaram Portugal
+        rumo a Lanzarote, nas Canárias espanholas, onde viveu os dezassete
+        anos que lhe restavam de vida. Tudo o que se seguiu foi escrito
+        ali: [[work:jose-saramago/ensaio-sobre-a-cegueira|Ensaio sobre a
+        Cegueira]] (1995), [[work:jose-saramago/todos-os-nomes|Todos os
+        Nomes]] (1997), o discurso do Nobel, e os cinco volumes de
+        [[work:jose-saramago/cadernos-de-lanzarote-i|Cadernos de
+        Lanzarote]], o diário que começou em 1993 e descreveu como uma
+        longa carta para casa, para quem ficou do outro lado. Dezoito anos
+        depois, o mesmo Cavaco Silva, por essa altura Presidente da
+        República, não compareceu ao seu funeral.
+
+    - id: saramago-nobel-prize-1998
+      quote: >
+        O homem mais sábio que conheci em toda a minha vida não sabia ler
+        nem escrever.
+      title: >-
+        Discurso do Nobel, "De como a personagem foi mestre e o autor seu
+        aprendiz"
+      description: >
+        Recebeu o Prémio Nobel da Literatura "que, com parábolas portadoras
+        de imaginação, compaixão e ironia, torna constantemente
+        compreensível uma realidade fugidia" - o primeiro Nobel para um
+        escritor de língua portuguesa, aos setenta e cinco anos, no ano em
+        que Portugal foi o país convidado de honra na Feira do Livro de
+        Frankfurt, onde a notícia o alcançou quando se preparava para ir
+        para o aeroporto. O seu discurso em Estocolmo, "De como a
+        personagem foi mestre e o autor seu aprendiz", abre assim: "O
+        homem mais sábio que conheci em toda a minha vida não sabia ler
+        nem escrever." O homem era o seu avô Jerónimo Meirinho, um
+        porqueiro analfabeto de Azinhaga que dormia debaixo de uma figueira
+        a contar histórias ao neto, e que dava a volta às árvores do seu
+        quintal, abraçando-as e chorando, quando sabia que estava a morrer.
+        O jornal do Vaticano L'Osservatore Romano opôs-se ao prémio por
+        motivos políticos, chamando-lhe comunista inveterado. A sua
+        resposta: "O Vaticano escandaliza-se com facilidade, sobretudo com
+        gente de fora. Deviam concentrar-se nas suas orações e deixar as
+        pessoas em paz. Respeito quem acredita, mas não tenho respeito pela
+        instituição."
+
+    - id: saramago-ramallah-2002
+      title: Ramalá, e a palavra que se recusou a retirar
+      description: >
+        Em visita à cidade cercada de Ramalá, na Cisjordânia, a 25 de março
+        de 2002, com uma delegação do Parlamento Internacional de
+        Escritores, disse aos jornalistas que o que se passava na Palestina
+        era "um crime que podemos pôr no mesmo plano do que aconteceu em
+        Auschwitz". A reação foi imediata e internacional: responsáveis
+        israelitas, o Simon Wiesenthal Center e o romancista Amos Oz
+        condenaram todos a comparação, e a crítica chamou antissemita à
+        declaração, e a um ensaio que publicou no El País no mês seguinte.
+        Nove meses depois disse ao Guardian que tinha dito o que queria
+        dizer, acrescentando que não tinha chamado a Ramalá o mesmo que
+        Auschwitz, mas que o espírito de Auschwitz ali estava presente, e
+        notando que outros sete escritores na mesma visita tinham condenado
+        a ocupação sem provocar nada semelhante à mesma reação. O perfil do
+        Guardian nesse dezembro descrevia um escritor cuja obra
+        intransigente já tinha, a essa altura, ofendido tanto o Vaticano
+        como Israel, e a partir daí seguiu para
+        [[work:jose-saramago/ensaio-sobre-a-lucidez|Ensaio sobre a
+        Lucidez]] e [[work:jose-saramago/caim|Caim]].
+
+    - id: saramago-pneumonia-2007
+      title: >-
+        Um mês e três dias de hospital, e um livro retomado no dia seguinte
+      description: >
+        Tinha começado [[work:jose-saramago/a-viagem-do-elefante|A Viagem
+        do Elefante]] em fevereiro de 2007 e tinha cerca de quarenta
+        páginas em maio, quando a doença o deteve. A 18 de dezembro deu
+        entrada num hospital de Lanzarote com uma pneumonia que evoluiu
+        para complicações graves o suficiente para pôr a sua vida em risco;
+        ficou internado um mês e três dias e teve alta a 22 de janeiro de
+        2008. No dia seguinte a chegar a casa, retomou o romance, passando
+        dois dias a corrigir as quarenta páginas existentes e recomeçando
+        na terceira. A contracapa da primeira edição regista que o livro
+        foi escrito "em condições de saúde muito precárias". "Sabe-se que
+        passei por uma doença muito grave", disse numa entrevista nesse
+        mesmo mês de outubro. "Tive de interromper a escrita do livro.
+        Puseram-me num hospital, mas vinte e quatro horas depois de chegar
+        a casa já estava sentado a escrever." Tinha oitenta e cinco anos, e
+        publicou mais dois romances.
+
+    - id: saramago-death-2010
+      title: Morre em Lanzarote
+      description: >
+        Morreu em casa, em Lanzarote, de leucemia crónica, aos 87 anos, com
+        Pilar del Río a seu lado; tinha tomado o pequeno-almoço e
+        conversado com ela nessa manhã. O funeral em Lisboa, dois dias
+        depois, reuniu milhares de pessoas. Cavaco Silva, o primeiro-ministro
+        por trás da decisão do Aristeion em 1992 e, por essa altura,
+        Presidente da República, não compareceu, dizendo que "nunca tivera
+        o privilégio de o conhecer" - uma frase a que os que choravam a sua
+        morte em Lisboa responderam erguendo cravos vermelhos, o símbolo da
+        revolução portuguesa de 1974. As suas cinzas foram enterradas um
+        ano depois, no aniversário da morte, sob uma oliveira centenária em
+        frente à Fundação José Saramago, na Casa dos Bicos.
