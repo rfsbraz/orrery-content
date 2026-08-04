@@ -1,0 +1,52 @@
+# Branding for the Margaret Atwood wing (see Orrery CONCEPT SS6 and
+# docs/SCHEMA.md#themeyaml).
+#
+# The register is drawn from two well-documented facts rather than genre
+# iconography, deliberately avoiding the one obvious costume (Gilead's red
+# cloak and white bonnet, which would flatten a whole-career wing into its
+# single most-adapted book): her father Carl Atwood was a forest
+# entomologist, and Atwood's own childhood in the Quebec backwoods was spent
+# around his fieldwork and specimen collecting; and her fiction, across
+# realist and speculative books alike, returns again and again to obsessive
+# record-keeping under institutional control - Gilead's ledgers and
+# ceremonies, the Positron Project's paperwork, the catalogued, engineered
+# species of the MaddAddam trilogy. "specimen-ledger" reads both at once: a
+# preserved specimen with its own hand-written label, filed in an official
+# register.
+#
+# Checked against scripts/theme_digest.py before choosing anything. No wing
+# in the catalogue yet covers literary dystopia/speculative fiction as a
+# register, so there is no direct neighbour to differentiate from the way
+# Poe/Lovecraft or the crime wings had to. The accent is a muted
+# iodine-tincture brown - the colour a specimen turns preserved in old
+# formaldehyde, not a costume red - sitting between edgar-allan-poe's
+# brighter brass (#9c7a3d) and jose-luis-peixoto's warmer ochre (#c2952a)
+# without duplicating either.
+preset: specimen-ledger
+palette:
+  bg: "#12140f"        # near-black with a faint olive-brown cast - an
+                       # archive basement or a specimen-drawer's felt lining
+  surface: "#1b1d16"   # one step up, same cast, for cards
+  ink: "#e8e2d0"       # aged specimen-label card, warm cream against the
+                       # cold-dark background - AA-checked, high contrast
+  muted: "#8b8672"     # faded pencil grey-brown, for metadata and captions
+  accent: "#8f6a3a"    # iodine-tincture brown; see the note above on why
+                       # this and not Gilead red
+displayFace: spectral   # from the app's implemented set (fraunces |
+                       # spectral | sourceSerif). fraunces reads warm and
+                       # is heavily used already (8 wings); sourceSerif is
+                       # the catalogue's most common face (12 wings).
+                       # spectral's colder, more architectural letterforms
+                       # suit her exacting, unsentimental prose better than
+                       # either.
+signature: rule         # a firm, ruled line - the field line on a form or
+                       # ledger, the rule under a specimen label - fits the
+                       # record-keeping register directly. Reused rather
+                       # than invented (nine other wings use it), which is
+                       # allowed; the app's closed set is small on purpose,
+                       # and correctness matters more than exclusivity here.
+notes: >
+  Institutional record-keeping and a naturalist's specimen archive, held in
+  one register rather than two: cold, exact, filed. No red, no bonnets, no
+  genre costume - the shelf this wing describes is a career, not one
+  adaptation.

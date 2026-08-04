@@ -1013,11 +1013,39 @@ def main():
         # Seven of ten wings sat in exactly this state, which was 156 assets
         # blocked behind a decision nobody had recorded. Error, not warning:
         # the whole point is that it stops the wing rather than annotating it.
+        #
+        # Exception: a wing with no aura yet at all (no events.yaml, no
+        # eras.yaml, and none of its authors carry lifeEvents) has nothing
+        # for asset_audit.py to block in the first place - the missing `art`
+        # block is a real gap, but not yet a blocked asset, so it is a
+        # warning here rather than an error. This is exactly the state
+        # franchise-research's own scaffold stage ships in (docs/SCHEMA.md,
+        # theme.yaml: "preset only, not the art block - that's
+        # visual-language's job later"): erroring on it would make the
+        # documented scaffold shape unvalidatable on its own.
         art = theme.get("art") or {}
         if not art:
-            err(f"{fslug}/theme.yaml",
-                "no `art:` block - the wing has no visual law, so nothing can "
-                "be drawn for it (run the visual-language stage)")
+            epath2 = os.path.join(fdir, "events.yaml")
+            erpath = os.path.join(fdir, "eras.yaml")
+            has_events = os.path.exists(epath2) and bool(load(epath2) or [])
+            has_eras = os.path.exists(erpath) and bool(load(erpath) or [])
+            fpath = os.path.join(fdir, "franchise.yaml")
+            fr = (load(fpath) if os.path.exists(fpath) else {}) or {}
+            has_life_events = False
+            for aid in fr.get("authorIds", []):
+                apath = os.path.join(ROOT, "content", "authors", f"{aid}.yaml")
+                if os.path.exists(apath) and (load(apath) or {}).get("lifeEvents"):
+                    has_life_events = True
+                    break
+            if has_events or has_eras or has_life_events:
+                err(f"{fslug}/theme.yaml",
+                    "no `art:` block - the wing has no visual law, so nothing can "
+                    "be drawn for it (run the visual-language stage)")
+            else:
+                warn(f"{fslug}/theme.yaml",
+                     "no `art:` block yet - not blocking any asset today since "
+                     "the wing has no aura at all (no events, eras or author "
+                     "lifeEvents), but visual-language still owns setting it")
         else:
             missing = [k for k in ("emblem", "motifs", "atmosphere", "lineCharacter",
                                    "backgroundTexture", "accentUse", "avoid")

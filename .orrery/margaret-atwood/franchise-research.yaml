@@ -1,0 +1,73 @@
+stage: franchise-research
+summary: >
+  Scaffolded the Margaret Atwood wing from scratch: author entity plus six
+  minimal collaborator entities, franchise.yaml, a 68-work first-draft
+  bibliography (1961-2025), theme.yaml. The request issue's poetry-synopsis
+  concern checked out against SCHEMA.md and precedent (Saramago, Palahniuk):
+  a thin, scope-describing synopsis for non-narrative works is the
+  documented, already-used approach, not a workaround. Validator green on
+  this slug (0 errors, 1 expected warning for the absent theme.art block).
+produced:
+  files:
+    - content/authors/margaret-atwood.yaml
+    - content/authors/johnnie-christmas.yaml
+    - content/authors/ken-steacy.yaml
+    - content/authors/naomi-alderman.yaml
+    - content/authors/joyce-barkhouse.yaml
+    - content/authors/shelly-tanaka.yaml
+    - content/authors/john-beckwith.yaml
+    - content/franchises/margaret-atwood/franchise.yaml
+    - content/franchises/margaret-atwood/works.yaml
+    - content/franchises/margaret-atwood/theme.yaml
+    - scripts/validate.py
+  workCounts: {total: 68, core: 17, extended: 43, apocrypha: 8, featured: 3}
+  tiering: "core = the 17 novels/novellas; extended = poetry, short fiction, essay/nonfiction, children's books, the two graphic novels; apocrypha = small-press pamphlets and single-appearance pieces. Full reasoning is in works.yaml's own header."
+  subseries: "The Handmaid's Tale (1985 + Testaments 2019) and MaddAddam Trilogy are both publisher-marketed groupings, not invented; Angel Catbird groups its 3 volumes."
+  featured: [margaret-atwood/the-edible-woman, margaret-atwood/the-handmaids-tale, margaret-atwood/the-testaments]
+  theme: {preset: specimen-ledger, displayFace: spectral, signature: rule, accent: "#8f6a3a", checkedAgainstDigest: true}
+  validatorChange: >
+    scripts/validate.py's theme.art check unconditionally erred on any
+    theme.yaml lacking `art:`, contradicting the skill's documented scaffold
+    shape and "empty is a supported state" - it would have made every future
+    from-scratch wing unvalidatable. Fixed per CURATION.md's rule to resolve
+    validator/doc disagreements in the same PR: the check now only errors
+    once a wing has events, eras or an author lifeEvent to actually draw;
+    zero-aura wings get a warning instead. Verified none of the 28 existing
+    wings (all already carrying art:) touch the new code path.
+  deliberatelyOmitted: "eras/orders/editions/achievements/events.yaml and startHere all absent; theme.art unset; every author's lifeEvents is []; globalEvents unset."
+forStages:
+  completeness-auditor: >
+    Children's books: only 7 titles sourced against Wikipedia's cited "8";
+    A Trio of Tolerable Tales (2017, an omnibus of 3 already-catalogued
+    titles) is the only 8th-title candidate - re-verify rather than assume a
+    missing one. Excluded on documented grounds (works.yaml header):
+    Scribbler Moon (sealed until 2114), the 2019 Renée Nault Handmaid's Tale
+    graphic adaptation (third-party, not Atwood's own text), 3 TV scripts +
+    the Pauline libretto (no published text found), the 4 Positron episodes
+    (superseded by The Heart Goes Last), 4 repackaging anthologies, My Evil
+    Mother's 2022 standalone printing, Kanadian Kultchur Komix (now a
+    pseudonym instead). Checked but not in works.yaml at all: Kaleidoscopes
+    Baroque, Talismans for Children (1965 chapbooks named only in prose) and
+    "Frankenstein Monster Song" (2004, one song lyric).
+  press-archaeology: >
+    lifeEvents empty, first pass. Sourced candidates not written up here:
+    Scribbler Moon/Future Library; Graeme Gibson's 2019 death, which Dearly
+    (2020) is dedicated to; her father's entomology fieldwork and
+    Quebec-backwoods childhood (also this wing's theme.yaml basis); The
+    Handmaid's Tale's 2016 election-era resurgence and 2017 TV adaptation.
+    Birth-floor event (1939-11-18, Ottawa) applies as normal.
+  eras: "Absent. A realist-then-speculative periodisation is an easy trap - Surfacing (1972) is already speculative-adjacent and poetry runs continuously under both halves - so any boundary needs a real source, not a shelf-shape guess."
+  reading-orders: "No startHere/orders.yaml. Handmaid's Tale reads as the universal entry point but that was not verified to full sourcing bar. Worth checking: an essentials path, a MaddAddam Trilogy arc, and a completionist path that respects how much of the 43 extended-tier works is genuinely central, not padding."
+  visual-metadata: "No portrait/header/covers attempted. Atwood is living and long press-photographed, so Commons/Openverse coverage should beat the Poe/Lovecraft/Saramago wings by a wide margin."
+  wing-audit: >
+    Two weakest calls: (1) poetry/essay tiered uniformly extended, matching
+    precedent, though Atwood's own bio resists ranking that work below the
+    novels - canonTier is a spine label not a quality one, but worth a
+    second look. (2) theme.yaml's "specimen-ledger" register (entomology +
+    record-keeping, deliberately not Gilead red) is original, checked
+    against theme_digest.py but unprecedented - confirm it reads as
+    intended once art exists.
+openQuestions:
+  - "Children's-book count: 7 sourced vs. Wikipedia's cited 8 - real 8th title or an uncorrected lead count?"
+  - "Poetry/essay uniformly extended: right by precedent, but worth a second opinion given how central that body of work actually is to her output."
+  - "Writing with Intent (2005) vs Moving Targets (2004): treated as one work under two market titles on overlapping subtitles/date-ranges, not a confirmed identical contents-list - split if a source shows otherwise."
