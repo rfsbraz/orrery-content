@@ -1,0 +1,84 @@
+stage: press-archaeology
+summary: >
+  Third scoped follow-up, closing the 1970-1975 dark run the prior pass
+  exposed. One entry lands inside it and closes it outright. Closing it
+  exposed 1961-1965 (5 yrs, exactly at threshold) as the new worst run -
+  the masking pattern repeating a third time - and one further attempt, the
+  pass's stated budget, closed that one too. Longest dark run is now 4
+  years; no wing is currently flagged.
+leads:
+  - lead: Survival (1972)'s own reception/impact
+    result: added, margaret-atwood-survival-paraphrase-controversy-1974.
+  - lead: House of Anansi editorial board role (1972-73)
+    result: rejected - no source names any board/editorial seat; every
+      source (Wikipedia x2, margaretatwood.ca) describes her only as an
+      author there.
+  - lead: distinct 1970-72 personal moment before the 1973 Gibson event
+    result: nothing found; the record reads as genuinely quiet here.
+  - lead: writer-in-residence position
+    result: found and corroborated (York, 1971-72; U of T, 1972-73) but
+      held out - a teaching stint alone has no narrative hook, and forcing
+      one would be padding. Left here for a future pass, not added.
+  - lead: Power Politics (1971) reception
+    result: rejected - the collection's Wikipedia entry is a stub, one
+      undated line from one 2009 academic book. Too thin.
+  - lead: any award 1970-1975
+    result: nothing beyond what the wing already has.
+fixes:
+  - >
+    margaret-atwood-survival-paraphrase-controversy-1974 - franchise event,
+    mosaic/press-media-collage. Survival sold well from 1972 but the
+    scholars who taught Canadian literature turned on it fast: Frank
+    Davey's "Atwood Walking Backwards" (Open Letter 2:5, 1973), then
+    George Woodcock's "Horizon of Survival" (Canadian Literature 55, 1973),
+    then Davey's "Surviving the Paraphrase," delivered at the founding
+    conference of the Association for Canadian and Quebec Literatures in
+    spring 1974 - later academic accounts (Brydon and Kamboureli, Studies
+    in Canadian Literature 32:2, 2007) say it "took the small world of
+    Canadian literary criticism by storm." Dated to the 1974 delivery, not
+    its 1976 print publication, since the dispute was already running.
+    Sources: Wikipedia (Survival, Frank Davey), The Canadian Encyclopedia.
+  - >
+    margaret-atwood-double-persephone-harvard-1961 - author lifeEvent,
+    medallion/book-object. Graduates University of Toronto in 1961 having
+    studied under Northrop Frye and Jay Macpherson; the same year hand-sets
+    and self-publishes her first book, Double Persephone (220 copies,
+    flatbed press, self-designed linoblock cover), which wins the E.J.
+    Pratt Medal, her first literary prize; leaves the same year for
+    Radcliffe College at Harvard on a Woodrow Wilson Fellowship. Two
+    independent, exactly-agreeing sources for dates/posts (Wikipedia,
+    margaretatwood.ca); the Double Persephone details from Wikipedia's own
+    article on the book.
+  - >
+    art-rotation: both placed without repeating an adjacent neighbour on
+    the first attempt - checked explicitly against the prior pass's own
+    mistake. 1974 sits between artifact-spread and passage, so mosaic;
+    1961 sits between full-bleed-vista and beside, so medallion (echoing
+    future-library-2015's medallion/book-object, non-adjacently).
+i18n: >
+  pt-PT added for both entries in their overlay files, mirroring existing
+  conventions (id/title/description translated; organisation/date/impact/
+  sources and proper nouns - Open Letter, E.J. Pratt Medal, Radcliffe
+  College, Woodrow Wilson Fellowship - left as in the base). i18n_coverage.py
+  confirms margaret-atwood is not in the pt-PT PARTIAL list.
+gates:
+  validate: "OK, 0 errors, 1337 works, 62 authors, 11 achievements, all references resolve."
+  aura: >
+    25 entries (was 23), 0.36 per work, longest dark run now 4 yrs
+    (1962-1965) - under the 5-year threshold, no wing flagged. Both
+    1970-1975 and the newly exposed 1961-1965 are closed; this is the third
+    consecutive pass where closing one gap exposed the next, and the first
+    where the exposed gap resolved under threshold.
+  artRotation: >
+    Organisation rotation holds across all 22 events: no cap exceeded, no
+    neighbour repeats. Pacing contour #===#.=#=.==.#====#=#=, no plateau.
+  i18n: "margaret-atwood not in the pt-PT PARTIAL list - fully covered."
+notFixed: []
+openQuestions:
+  - "No dark run currently over threshold; nothing routes to a further
+    press-archaeology pass on that basis alone. Re-check aura_density.py if
+    works.yaml ever gains a book inside 1962-1965 or another dark stretch."
+  - "Writer-in-residence position (York 1971-72, U of T 1972-73): real,
+    two-source corroborated, unused - a future pass with a real narrative
+    hook for it (e.g. a source tying it to Survival's writing) can use it
+    without re-researching the dates."
