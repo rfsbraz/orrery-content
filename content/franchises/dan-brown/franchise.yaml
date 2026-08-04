@@ -1,0 +1,143 @@
+# A wing spans an author's complete published work. Brown's shelf is small
+# and almost entirely genre-pure (nine works over thirty years under his own
+# name, plus one pseudonymous first book), so it does not need `subseries`
+# for anything beyond the one real, publisher-numbered series: Robert
+# Langdon (see works.yaml's header for the tiering and sourcing behind every
+# entry, including the pseudonym and the two considered-and-excluded books).
+id: dan-brown
+name: Dan Brown
+kind: author
+description: >
+  Two early standalone thrillers - [[work:dan-brown/digital-fortress|Digital
+  Fortress]] (1998, his actual fiction debut) and
+  [[work:dan-brown/deception-point|Deception Point]] (2001) - before the
+  Robert Langdon series that made him one of the best-selling novelists
+  alive: [[work:dan-brown/angels-demons|Angels & Demons]] (2000) through
+  [[work:dan-brown/the-secret-of-secrets|The Secret of Secrets]] (2025), six
+  novels running in the same order as their own internal chronology. A
+  children's picture book, [[work:dan-brown/wild-symphony|Wild Symphony]]
+  (2020), and his real first book - a 1995 humor title published under the
+  pseudonym "Danielle Brown" - complete the shelf.
+authorIds: [dan-brown]
+themePreset: blueprint-cipher
+images:
+  header: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Widener_Library%2C_Harvard_%2823429561069%29.jpg/1920px-Widener_Library%2C_Harvard_%2823429561069%29.jpg"
+  headerCredit: "Tony Webster, CC BY-SA 2.0"
+  headerSource: "https://commons.wikimedia.org/wiki/File:Widener_Library,_Harvard_(23429561069).jpg"
+  # Harvard's Widener Library, home institution of Robert Langdon (a
+  # Harvard symbologist) across all six novels that carry him. A real
+  # building rather than a specific book's setting, chosen over the more
+  # obvious Louvre Pyramid: France's own Wikimedia Commons community treats
+  # I. M. Pei's pyramid as still under design copyright with no freedom of
+  # panorama, so photographs of it are not reliably free to use regardless
+  # of the licence tag attached on upload.
+
+# Capabilities (docs/SCHEMA.md) are all left auto, and all four now activate
+# on their own data: `river` and `companion` on the 13-entry aura (9 life
+# events on the author entity, 3 franchise events, 1 included global event),
+# `wizard` on the startHere
+# block below, `editions` on editions.yaml. Nothing is forced off - none of
+# the four is thin enough to be worth entering an empty view. eras.yaml is
+# deliberately `[]` (see its own header) and powers no capability.
+features:
+  river: auto
+  wizard: auto
+  companion: auto
+  editions: auto
+
+globalEvents:
+  include:
+    - ebook-and-self-publishing-2007  # the Kindle's format shift landed on his book rather than around it: the e-book edition of The Lost Symbol outsold Amazon's own hardcover of it on its first day on sale, September 15, 2009, advance orders aside (an Amazon spokesman to the Wall Street Journal, reported in Shelf Awareness 2009-09-17) - the first major new novel to do so, and the reason a Langdon release is now planned as a simultaneous print-and-digital event. The event's other half, self-publishing, never touched him: he has been a Doubleday author throughout
+  exclude:
+    - online-bookselling-1995           # Amazon launched July 1995, a month before his actual debut (August 1995); no documented tie beyond a coincidental near-overlap, and generic backlist-discovery infrastructure isn't specific to this wing
+    - fantasy-paperback-boom-1965       # created the commercial category for fantasy authors, not thriller writers; predates him by one year but does not shape his genre
+    - carnation-revolution-1974         # Portuguese political event; Brown is American with no documented connection to his work
+    - chain-bookshop-1982               # shaped bookselling while he was in college; no specific documented influence on his thrillers
+    - sept-11-2001                      # lived through it; his themes predate or bypass it (Digital Fortress 1998 on NSA/cryptography predates 9/11; Da Vinci Code 2003 on religious conspiracy unrelated to terrorism)
+    - financial-crisis-2008             # Inferno's overpopulation theme is independent of financial-crisis ethics; no resonance
+    - prestige-fantasy-adaptation-2011  # Game of Thrones example; Brown writes thrillers, not fantasy; his own film adaptations preceded this shift
+    - portugal-bailout-2011             # Portuguese financial crisis; Brown is American with no documented connection
+    - booktok-2020                      # established bestselling author; BookTok reaches lesser-known and younger writers, not career-defining authors in their peak
+    - covid-19-pandemic-2020            # lived through it; no documented influence on his work or themes
+
+sources:
+  - https://en.wikipedia.org/wiki/Dan_Brown
+  - https://en.wikipedia.org/wiki/Robert_Langdon
+  - https://danbrown.com/books/
+
+# "Where to start" - a genuine, real reader debate for this specific shelf,
+# not a manufactured menu. Angels & Demons was written and published first
+# and introduces Langdon; The Da Vinci Code is the far more famous, culturally
+# dominant entry, and a large, real body of reader discussion holds that it
+# needs no prior reading. Both paths below are sourced rather than picked by
+# feel - see the citation above each. No path is offered for
+# Digital Fortress, Deception Point, 187 Men to Avoid or Wild Symphony: no
+# source recommends any of them as a door into this author's work rather than
+# a book to read once inside it (checked - see orders.yaml's header on the
+# first three; Wild Symphony has age-range guidance for the book itself but
+# no citable "start Dan Brown here" advice).
+startHere:
+  paths:
+    - id: everything-in-order
+      title: Everything, in order
+      description: >
+        All ten books, chronologically from 1995 to 2025: the pseudonymous
+        debut, the two early standalone thrillers, the six-novel Robert
+        Langdon series, and the picture book that sits outside the thrillers
+        entirely.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+
+    # Source: the 304-comment Goodreads thread "The Da Vinci Code, or Angels
+    # and Demons?" (goodreads.com/topic/show/712143) splits readers roughly
+    # down the middle, several calling The Da Vinci Code's writing and story
+    # the stronger of the two; the pinned Goodreads Q&A "should you read
+    # angels and demons first" (goodreads.com/questions/178301) settles,
+    # across dozens of real answers, on "not necessary, no" - both books are
+    # written to work as standalones, and The Da Vinci Code makes only a
+    # couple of passing references back to the earlier book.
+    - id: start-with-the-da-vinci-code
+      title: Start with The Da Vinci Code
+      description: >
+        His best-known book by a wide margin - the one that made his name a
+        household word and the reason most people have heard of him at all.
+        A self-contained case: a murdered curator, a trail of codes hidden in
+        the Louvre's own collection, no earlier Langdon novel required.
+      workIds:
+        - dan-brown/the-da-vinci-code
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        It carries a couple of passing references to Langdon's life between
+        this book and Angels & Demons, which read differently if you go back
+        to that one afterward - the cost of skipping the character's actual
+        debut for his most famous case instead.
+
+    # Source: https://gobookseries.com/authors/dan-brown/ names Angels &
+    # Demons its "Best Starting Point" for the Robert Langdon series, and
+    # danbrown.com/books/ itself groups the "Robert Langdon Series" opening
+    # on Angels & Demons. The counter-view above is equally real; this path
+    # is for the reader who wants the character's own chronology, not a claim
+    # that it is the one correct door in.
+    - id: start-with-langdon-from-the-start
+      title: Meet Langdon from the beginning
+      description: >
+        The [[work:dan-brown/angels-demons|Robert Langdon]] series exactly as
+        Brown wrote and set it: a Vatican conclave and a stolen canister of
+        antimatter first, then the codes hidden in the Louvre, Washington,
+        Florence, Bilbao and Prague that follow across five more books.
+      workIds: null
+      orderId: dan-brown/robert-langdon-in-order
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        The cost: six books is a longer commitment than trying his single
+        most famous case first, and Angels & Demons carries less cultural
+        name recognition than The Da Vinci Code - the tradeoff for meeting
+        Langdon, and the series' own chronology, from its actual start.

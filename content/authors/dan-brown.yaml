@@ -1,0 +1,295 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds), so the same person resolves the same everywhere.
+# Author-LIFE events live here (they follow the person); franchise-specific
+# events are in content/franchises/dan-brown/events.yaml.
+#
+# PSEUDONYM, checked rather than assumed. Brown's first published book, "187
+# Men to Avoid: A Survival Guide for the Romantically Frustrated Woman"
+# (Penguin/Berkley, 1995), carries the byline "Danielle Brown" on its
+# original edition - confirmed by three independent bookseller listings of
+# the 1995 first printing and by the Library of Congress catalogue record
+# (PN6231.D3 B76 1995, filed under "Brown, Dan"), which treats "Danielle
+# Brown" as his own pen name rather than a joint credit with a co-author. A
+# 2006 reissue (Berkley, ISBN 9780425215043) carries his real name outright.
+# Recorded on the work itself (dan-brown/187-men-to-avoid) via
+# `publishedAs`. A second 1998 humor book, "The Bald Book", was published
+# under his then-girlfriend Blythe Newlon's own name (as "Blythe Brown") with
+# no Dan Brown byline anywhere on it; Wikipedia's sourcing for his
+# involvement is a single unnamed "representative of the publisher," which
+# does not clear this repo's bar for adding an unbylined book to his
+# bibliography - held out, not catalogued as a work of his.
+id: dan-brown
+name: Dan Brown
+aka: ["Daniel Gerhard Brown", "Danielle Brown"]
+born: 1964-06-22
+died: null
+bio: >
+  American novelist born in Exeter, New Hampshire, where his father Richard
+  G. Brown taught mathematics at Phillips Exeter Academy and his mother
+  Constance trained as a church organist; codes and ciphers ran through the
+  household, and the family's tradition of code-and-clue treasure hunts on
+  birthdays and holidays later supplied the plot engine of his novels and,
+  directly, a chapter of
+  [[work:dan-brown/the-da-vinci-code|The Da Vinci Code]]. He double-majored
+  in English and Spanish at Amherst College (BA, 1986), then pursued music
+  as a singer-songwriter before turning to fiction after reading Sidney
+  Sheldon's "The Doomsday Conspiracy" on a 1993 trip to Tahiti. His first
+  book under his own eventual byline was the humor title
+  [[work:dan-brown/187-men-to-avoid|187 Men to Avoid]] (1995, published under
+  the pseudonym "Danielle Brown"); his first novel,
+  [[work:dan-brown/digital-fortress|Digital Fortress]] (1998), and a second
+  standalone thriller, [[work:dan-brown/deception-point|Deception Point]]
+  (2001), sold modestly before
+  [[work:dan-brown/angels-demons|Angels & Demons]] (2000) introduced Harvard
+  symbologist Robert Langdon, the character who carries every Brown novel
+  since. [[work:dan-brown/the-da-vinci-code|The Da Vinci Code]] (2003) became
+  a publishing phenomenon and one of the best-selling novels of all time,
+  followed by [[work:dan-brown/the-lost-symbol|The Lost Symbol]] (2009),
+  [[work:dan-brown/inferno|Inferno]] (2013),
+  [[work:dan-brown/origin|Origin]] (2017) and
+  [[work:dan-brown/the-secret-of-secrets|The Secret of Secrets]] (2025). In
+  2020 he published his first children's book,
+  [[work:dan-brown/wild-symphony|Wild Symphony]], pairing the text with an
+  original classical-music album and an augmented-reality app. He was
+  married to Blythe Newlon, who did much of the early research and promotion
+  behind his rise, from 1997 until their divorce in 2019.
+images:
+  # National Library of the Czech Republic's own press photography from
+  # Brown's September 2025 Prague visit (the setting of
+  # [[work:dan-brown/the-secret-of-secrets|The Secret of Secrets]]), shot in
+  # the library's historic Baroque hall. CC BY-SA 4.0, VRTS permission on
+  # file confirming the library's own release.
+  portrait: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/N%C3%A1v%C5%A1t%C4%9Bva_Dana_Browna_v_NK_%C4%8CR_17._-_18._2025_03_%28cropped%29.jpg/1920px-N%C3%A1v%C5%A1t%C4%9Bva_Dana_Browna_v_NK_%C4%8CR_17._-_18._2025_03_%28cropped%29.jpg"
+  portraitCredit: "Zuzana Homolka Fedorová / National Library of the Czech Republic, CC BY-SA 4.0"
+  portraitSource: "https://commons.wikimedia.org/wiki/File:N%C3%A1v%C5%A1t%C4%9Bva_Dana_Browna_v_NK_%C4%8CR_17._-_18._2025_03_(cropped).jpg"
+pseudonyms:
+  - name: Danielle Brown
+    note: >
+      The byline on the 1995 first edition of
+      [[work:dan-brown/187-men-to-avoid|187 Men to Avoid]], his first
+      published book, three years before Digital Fortress. Reissued under
+      his own name in 2006 once he was established.
+lifeEvents:
+  - id: db-born-1964
+    organisation: full-bleed-vista
+    illustration_type: establishing-landscape
+    images_required: 1
+    date: 1964-06-22
+    title: Born in Exeter, New Hampshire, into a household built on puzzles
+    impact: high
+    description: >
+      Born in Exeter, New Hampshire, and raised on the campus of Phillips
+      Exeter Academy, where his father taught mathematics and his mother
+      trained as a church organist. Codes and ciphers were, in his own
+      account, the link between his parents' two disciplines, and the family
+      marked birthdays and holidays with elaborate treasure hunts his father
+      devised, sending the children through coded clues around the house and
+      town rather than straight to a pile of gifts. Brown has said his
+      relationship with his father directly shaped the one between Jacques
+      Sauniere and Sophie Neveu in
+      [[work:dan-brown/the-da-vinci-code|The Da Vinci Code]], and that one
+      chapter of that novel is drawn straight from a childhood hunt: the
+      puzzle-chain-under-time-pressure structure of every Langdon novel
+      traces to this household, not to an invented thriller convention.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Dan_Brown
+  - id: db-danielle-brown-pseudonym-1995
+    organisation: diptych
+    illustration_type: book-object
+    images_required: 2
+    date: 1995
+    title: His first published book comes out under a woman's name
+    impact: med
+    description: >
+      Brown's first published book is not a thriller and does not carry his
+      name: [[work:dan-brown/187-men-to-avoid|187 Men to Avoid]], a 96-page
+      humor paperback written with his then-girlfriend Blythe Newlon, which
+      Berkley Books publishes in 1995 under the byline "Danielle Brown". The
+      pen name is part of the book's own joke - its author profile reads
+      "Danielle Brown currently lives in New England: teaching school,
+      writing books, and avoiding men" - and the Library of Congress
+      catalogued it as his pseudonym rather than a second writer, filing the
+      record under "Brown, Dan". He kept it hidden well past the point of
+      embarrassment: asked in a 2000 interview whether anything preceded
+      [[work:dan-brown/digital-fortress|Digital Fortress]], he answered
+      "Yes, I did write a book before 'Digital Fortress.' It was a silly
+      little humor book whose title will forever remain a secret!" The
+      secret lasted until August 2006, when - with the Langdon novels
+      selling in tens of millions - Berkley Trade reissued the same book
+      with the cover byline recast as "Dan Brown Formerly Writing As
+      Danielle Brown". It remains the only book he published under another
+      name.
+    spoilerAfter: null
+    sources:
+      - https://archive.org/details/187mentoavoidsur00brow
+      - https://openlibrary.org/books/OL7505768M/187_Men_to_Avoid
+      - https://www.nytimes.com/2021/07/29/style/dan-brown-advice-book.html
+      - https://en.wikipedia.org/wiki/Dan_Brown
+  - id: db-marries-blythe-newlon-1997
+    organisation: beside
+    illustration_type: relationship-tableau
+    images_required: 1
+    date: 1997
+    title: Marries Blythe Newlon, who reshapes every novel that follows
+    impact: high
+    description: >
+      Brown meets Blythe Newlon in Los Angeles in the early 1990s, when he is
+      an aspiring singer-songwriter and she directs artist development at the
+      National Academy of Songwriters; the two marry in 1997. Newlon, about
+      twelve years his senior and later an art historian, becomes his
+      primary researcher and first reader - by his own account in a 2006
+      court witness statement, she is mentioned in more than a quarter of
+      its paragraphs. She reads source material, "highlighting exciting
+      ideas," and by Brown's own telling pushes him toward the strand of
+      early-Church history that would define
+      [[work:dan-brown/the-da-vinci-code|The Da Vinci Code]] - the material
+      he credits to her rather than to himself.
+    spoilerAfter: null
+    sources:
+      - https://www.today.com/popculture/da-vinci-code-key-dan-brown-s-wife-wbna11865556
+  - id: db-angels-demons-cd-ambigram-1999
+    organisation: diptych
+    illustration_type: symbolic-still-life
+    images_required: 2
+    date: 1999
+    title: A last, failed CD gives Robert Langdon his name
+    impact: high
+    description: >
+      By Brown's own sworn account in his 2006 High Court witness statement,
+      he first sees the ambigram artwork of John Langdon - "a close friend
+      of my father" - in the early 1990s, and is impressed enough to
+      commission Langdon for the cover of a self-produced CD of his own,
+      titled Angels & Demons after the religious themes that already
+      interest him. The CD is released in 1999 - the year after
+      [[work:dan-brown/digital-fortress|Digital Fortress]], his first novel,
+      and not 1994, the year usually repeated for it - with Langdon's
+      ambigram on the cover. A year later, Simon & Schuster
+      reuses the same ambigram on the first edition of
+      [[work:dan-brown/angels-demons|Angels & Demons]] the novel, and
+      Langdon lends both his name and, in Brown's own words, part of his
+      inspiration to Robert Langdon, the character who has carried every
+      Brown thriller since.
+    spoilerAfter: null
+    sources:
+      - https://www.johnlangdon.net/works/angels-demons/
+      - https://drexel.edu/news/archive/2009/may/ambigram-artist-and-drexels-john-langdon-behind-symbols-appearing-in-angels--demons
+  - id: db-da-vinci-code-breaks-out-2003
+    organisation: immersion
+    illustration_type: establishing-landscape
+    images_required: 1
+    modifier: anchor-with-satellites
+    date: 2003-03-18
+    title: "The Da Vinci Code turns a mid-list thriller writer into a phenomenon"
+    impact: high
+    description: >
+      Brown's first three novels had sold fewer than 10,000 copies each in
+      their first printings. [[work:dan-brown/the-da-vinci-code|The Da Vinci
+      Code]] went to the top of the New York Times bestseller list in its
+      first week, pulled all three earlier novels back onto the list with
+      it, and had sold more than 80 million copies by 2009 - the hinge that
+      turned a struggling genre writer into one of the best-selling authors
+      alive and set the template (Christian history, a 24-hour chase, a
+      secret society) every later Langdon novel works from.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Dan_Brown
+  - id: db-exeter-technology-endowment-2004
+    organisation: floating-object
+    illustration_type: book-object
+    images_required: 1
+    date: 2004-10
+    title: Endows a technology fund at Exeter in his father's name
+    impact: low
+    description: >
+      Days before The Da Vinci Code's paperback release, Brown and his
+      siblings Valerie and Gregory announce a $2.2 million gift to their
+      father's school, Phillips Exeter Academy, at the black-tie launch of
+      the school's largest-ever fundraising campaign. It creates the
+      Richard G. Brown Technology Endowment, providing computers and
+      high-tech equipment to students who cannot afford them, in honor of
+      the 35 years (1962-1997) their father spent teaching mathematics and
+      writing textbooks there. Seven years later, on April 14, 2011, Brown
+      and Newlon separately endow a writing-focused scholarship fund at his
+      own alma mater, Amherst College, to mark his 25th class reunion.
+    spoilerAfter: null
+    sources:
+      - https://web.archive.org/web/20090523225741/http://phillips.exeter.edu/ei/news/news_danbrown.html
+      - https://en.wikipedia.org/wiki/Dan_Brown
+  - id: db-lost-symbol-first-day-2009
+    organisation: beside
+    illustration_type: book-object
+    images_required: 1
+    date: 2009-09-15
+    title: A six-year wait ends, and the e-book wins the day
+    impact: high
+    description: >
+      [[work:dan-brown/the-lost-symbol|The Lost Symbol]] reaches shops six
+      years after [[work:dan-brown/the-da-vinci-code|The Da Vinci Code]],
+      having been expected as early as 2006 and pushed back repeatedly under
+      a working title, The Solomon Key, that did not survive to the cover.
+      Doubleday backs it with a five-million-copy North American first
+      printing, the largest in its parent Random House's history, and orders
+      600,000 more within days: by the publisher's count the novel sells
+      over a million hardcover and e-book copies in the United States,
+      Canada and the United Kingdom on its first day on sale. The number
+      that mattered longer was the smaller one. The Kindle edition,
+      published the same day at $9.99, outsold Amazon's own hardcover of the
+      book on that first day once advance orders are set aside - the first
+      time a major new novel had done that, and the moment the format stops
+      being a curiosity in the trade press.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/The_Lost_Symbol
+      - https://www.shelf-awareness.com/theshelf/2009-09-17/notes_lost_symbol_sells_a_million_copies_first_day_out.html
+      - https://www.cbsnews.com/news/lost-symbol-sells-more-than1-m-copies/
+  - id: db-ritman-library-donation-2016
+    organisation: marginalia
+    illustration_type: isolated-object
+    images_required: 1
+    date: 2016-06
+    title: Funds the digitization of the esoteric library behind two Langdon novels
+    impact: low
+    description: >
+      Brown donates 300,000 euros (about $340,000) to Amsterdam's Ritman
+      Library, home to a roughly 25,000-volume private collection of
+      Hermetic, alchemical and esoteric texts he had visited repeatedly
+      while researching [[work:dan-brown/the-lost-symbol|The Lost Symbol]]
+      and [[work:dan-brown/inferno|Inferno]]. The gift funds digitization of
+      the library's core pre-1900 holdings; director Esther Ritman calls him
+      "a friend of the library." The relationship later leads Brown to open
+      the Embassy of the Free Mind, a public center in Amsterdam built
+      around the collection.
+    spoilerAfter: null
+    sources:
+      - https://www.dutchnews.nl/2016/06/92088-2/
+      - https://mymodernmet.com/ritman-library-dan-brown/
+  - id: db-divorce-and-lawsuit-2021
+    organisation: artifact-spread
+    illustration_type: document-facsimile
+    images_required: 1
+    date: 2021-12
+    title: Divorces after 22 years, then is sued over money and the story of the marriage
+    impact: high
+    description: >
+      Brown and Newlon divorce in 2019. In June 2020, Newlon sues him in a
+      New Hampshire court, calling his conduct "unlawful and egregious" and
+      alleging he concealed marital assets - including future projects she
+      says were worth "millions," among them the manuscript that becomes
+      [[work:dan-brown/wild-symphony|Wild Symphony]] - while diverting money
+      toward gifts for an unnamed horse trainer as part of what she
+      describes as a pattern of affairs. Brown says he is "stunned" by the
+      allegations and calls the complaint "written without regard for the
+      truth," adding that Newlon received half their marital assets in the
+      divorce. Neither account is tested in court: the two settle and
+      jointly dismiss "any and all claims and counterclaims" in December
+      2021, declining further comment. The suit reopens, without resolving,
+      the question the 2006 copyright trial had already put on the record -
+      how much of the work credited to Brown alone was actually Newlon's.
+    spoilerAfter: null
+    sources:
+      - https://www.newsweek.com/da-vinci-code-author-dan-brown-ex-wife-settle-lawsuit-over-alleged-affairs-finances-1663718
+      - https://www.cbsnews.com/boston/news/dan-brown-lawsuit-ex-wife-secret-life/
+sources:
+  - https://en.wikipedia.org/wiki/Dan_Brown
+  - https://danbrown.com/

@@ -1,0 +1,81 @@
+stage: visual-metadata
+summary: >
+  Both gates now shut: portrait 1/1, covers 10/10. Verified every image
+  already staged in the working tree rather than trusting it - fetched all
+  12 URLs (portrait, header, 10 covers) with ?default=false where
+  applicable, confirmed each resolves to a real, non-placeholder image, read
+  every Commons licence from its own extmetadata rather than the credit
+  text's say-so, and resolved every work id against Open Library's
+  editions.json to confirm it names the right record (no omnibus, no
+  translation, no wrong-author collision). Built a contact sheet of all 10
+  covers and viewed each at full size: no retailer watermarks, no library
+  stickers, no barcodes. Portrait (Dan Brown at the National Library of the
+  Czech Republic, Sept 2025) and header (Harvard's Widener Library) both
+  check out: portrait's CC BY-SA 4.0 / Zuzana Homolka Fedorová credit and
+  header's CC BY-SA 2.0 / Tony Webster credit both match the Commons API's
+  extmetadata exactly, and both thumbnail URLs match the API's own
+  `thumburl` for iiurlwidth=1920 verbatim (not hand-built). All 10 covers
+  resolve to their stated Open Library work, confirmed by title match and,
+  for the two ISBN-keyed picks (inferno, the-secret-of-secrets), by the
+  ISBN edition record itself: cover 9322678 traces to ISBN 9781400079155
+  (Anchor Books 2014 Inferno reprint, avoiding the work's own representative
+  cover's Sausalito library sticker); cover 15164648 traces to ISBN
+  9780385546928 (Doubleday, The Secret of Secrets, avoiding the work's
+  Spanish-language representative cover); cover 7002975 traces to the 1995
+  first edition of 187 Men to Avoid under the "Danielle Brown" byline
+  (confirmed against the edition's own by_statement field), not the 2006
+  reissue. No rejected candidates from this pass - the prior pass's
+  selections were already correct on inspection, nothing needed replacing.
+  validate.py --slug dan-brown: 0 errors, 4 pre-existing handoff-length
+  warnings from earlier stages (none from this one). asset_audit.py
+  dan-brown confirms art:yes, portrait 1/1, covers 10/10.
+produced:
+  filesWritten:
+    - content/authors/dan-brown.yaml
+    - content/franchises/dan-brown/franchise.yaml
+    - content/franchises/dan-brown/works.yaml
+  filesNotTouched:
+    - content/franchises/dan-brown/theme.yaml
+    - content/franchises/dan-brown/eras.yaml
+    - content/franchises/dan-brown/editions.yaml
+  imagesAdded:
+    portrait: dan-brown (National Library of the Czech Republic press photo, CC BY-SA 4.0)
+    header: dan-brown franchise (Widener Library, Harvard, CC BY-SA 2.0)
+    covers: "10/10 works, all Open Library, licence-clean"
+  rejectedCandidates: []
+forStages:
+  editions: >
+    Three covers are keyed to a specific edition, not the work's Open
+    Library representative cover, because the representative one is wrong
+    for this catalogue (retailer/library-scan defect or wrong-language
+    jacket) - worth matching if editions.yaml adds ISBN-level entries for
+    these three, so the edition-level coverUrl and this work-level cover
+    agree rather than showing two different jackets: dan-brown/inferno
+    (ISBN 9781400079155, Anchor Books 2014 paperback, cover id 9322678, not
+    the work's own representative 9322673 which carries a Sausalito Public
+    Library sticker); dan-brown/the-secret-of-secrets (ISBN 9780385546928,
+    Doubleday, cover id 15164648, not the work's own representative
+    15200463 which is the Spanish Editorial Planeta jacket); dan-brown/
+    187-men-to-avoid (ISBN 0425147835 / 9780425147832-family, the 1995
+    G.P. Putnam's first edition under the "Danielle Brown" byline, cover id
+    7002975, not the 2006 Berkley reissue's cover id 273843). The other 7
+    covers came via Path A (work-level cover_i) and have no edition-pinning
+    dependency.
+  translation: >
+    No pt-PT-specific imagery exists or is needed - portrait, header and
+    all 10 covers are language-agnostic image URLs (a photograph and book
+    jackets), none baked with English text beyond the jacket's own printed
+    title, which is out of this stage's remit to alter. Nothing for
+    translation to do on this stage's fields.
+  wing-audit: >
+    Both image gates (portrait, covers) are shut at 1/1 and 10/10 with every
+    URL fetched and every licence read from source, not assumed. Nothing
+    outstanding on this axis.
+openQuestions:
+  - >
+    None of the 10 covers needed replacing on this pass's re-verification;
+    flagging that explicitly since the brief arrived describing 8/10 done
+    and this pass found the working tree already at 10/10 - the 2 that
+    looked missing (wild-symphony, 187-men-to-avoid) were already staged
+    with correct fields and sourcing comments before this stage's own edits,
+    and both check out under the same scrutiny as the other 8.

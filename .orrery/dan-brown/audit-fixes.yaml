@@ -1,0 +1,96 @@
+# Handoff for the pass that answered wing-audit.yaml's three findings.
+# The press-archaeology and event-resonance handoffs are left as written:
+# their numbers were true when those stages ran, and this file supersedes
+# them rather than rewriting them.
+
+stage: audit-fixes
+franchise: dan-brown
+status: complete
+
+summary: >
+  Closed the two press-archaeology items and the one event-resonance
+  question wing-audit raised. Removed a career interval nothing supports,
+  gave the pseudonym a dated event, and lit the 2007-2015 dark run with two
+  sourced entries plus one global re-judged on its merits. Aura is now 13
+  entries over 10 works (1.30/work) with a longest dark run of 4 years
+  (2017-2020), inside the five-year rule.
+
+produced:
+  corrected:
+    - >
+      db-angels-demons-cd-ambigram-1999: "three years into Brown's published
+      writing career" was arithmetic no anchor in this wing supports (187 Men
+      to Avoid 1995, Digital Fortress 1998) and johnlangdon.net's verbatim
+      2006 witness statement gives only the year. Replaced with "the year
+      after Digital Fortress, his first novel". The 1999-over-1994 correction
+      and its sources are untouched. pt-PT mirrored.
+  newLifeEventIds:
+    - >
+      db-danielle-brown-pseudonym-1995 (diptych / book-object / 2 images):
+      the 1995 Berkley byline, the author profile's own joke ("teaching
+      school, writing books, and avoiding men"), the Library of Congress
+      record filing it under "Brown, Dan", his own 2000 refusal to name the
+      book, and the August 2006 Berkley Trade cover recasting it as "Dan
+      Brown Formerly Writing As Danielle Brown". One entry rather than two:
+      the concealment and the reveal are one arc, and 2006 already carries
+      two franchise events.
+    - >
+      db-lost-symbol-first-day-2009 (beside / book-object): the six-year
+      wait, the five-million first printing (Random House's largest) with
+      600,000 more inside a week, a million copies day one, and the Kindle
+      edition outselling Amazon's own hardcover of the same book that day.
+  newFranchiseEventIds:
+    - >
+      dan-brown-inferno-bunker-translation-2013 (layered-stack /
+      manuscript-proof): eleven translators, six languages including
+      Portuguese, two months in Mondadori's Milan basement under armed
+      guard, for the May 14 2013 simultaneous release.
+  globalEvents:
+    include: [ebook-and-self-publishing-2007]
+    reason: >
+      Re-judged, not restored to fill a hole. The Kindle half of the event
+      landed on his book rather than around it - The Lost Symbol's e-book
+      outsold Amazon's hardcover of it on day one, advance orders aside
+      (Amazon to the Wall Street Journal, in Shelf Awareness 2009-09-17).
+      The self-publishing half never touched him and the note says so.
+    stillExcluded: >
+      financial-crisis-2008 (world-events grades it the file's weakest entry
+      and nothing here answers it), prestige-fantasy-adaptation-2011
+      (fantasy on television; his own adaptations are film and predate it),
+      portugal-bailout-2011 (no documented connection). Each was re-read
+      against the real aura cost and each exclusion stands on its own.
+  filesWritten:
+    - content/authors/dan-brown.yaml
+    - content/franchises/dan-brown/events.yaml
+    - content/franchises/dan-brown/franchise.yaml
+    - content/i18n/pt-PT/authors/dan-brown.yaml
+    - content/i18n/pt-PT/franchises/dan-brown/events.yaml
+  checks:
+    aura_density: "10 works, 13 aura, 1.30/work, longest dark run 4 yrs (2017-2020)"
+    art_rotation: "--check: no organisation over cap, no neighbour repeat, contour #===#==#==.=, pacing holds"
+    validate: "--slug dan-brown: 0 errors; only the pre-existing handoff word-count warnings"
+    i18n_coverage: "pt-PT 160/174, dan-brown in neither PARTIAL nor MISSING - unchanged"
+
+forStages:
+  asset-prompt: >
+    Four new image slots and none of the wing's twelve has an art issue yet:
+    db-danielle-brown-pseudonym-1995 needs 2 (the 1995 Berkley cover byline,
+    then the 2006 reissue's), db-lost-symbol-first-day-2009 needs 1,
+    dan-brown-inferno-bunker-translation-2013 needs 1.
+  press-archaeology: >
+    Your handoff's 4-year dark run and its "2012-2015 reads as genuinely
+    quiet" finding are superseded; the run was 9 years once event-resonance
+    ruled, and it is 4 now.
+  event-resonance: >
+    ebook-and-self-publishing-2007 moved from exclude to include with its
+    evidence on the line. The other ten rulings stand as you wrote them.
+
+openQuestions:
+  - >
+    The Inferno bunker's own dates are contested - trade reporting says
+    February to April 2012, the French translators' accounts the same months
+    of 2013. The entry states the duration and is dated to the uncontested
+    release day; a contemporary Italian source would settle it.
+  - >
+    2017-2020 is now the longest dark run at 4 years, and it holds Origin
+    and Wild Symphony. Under the rule but the thinnest stretch left.

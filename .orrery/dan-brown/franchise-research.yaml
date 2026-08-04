@@ -1,0 +1,77 @@
+stage: franchise-research
+summary: >
+  Scaffolded the Dan Brown wing: franchise.yaml, works.yaml (10 works),
+  theme.yaml's non-art fields, and the dan-brown author entity. 8 core (2
+  standalone thrillers, 6 Robert Langdon novels), 2 extended (Wild Symphony,
+  the pseudonymous 1995 humor book 187 Men to Avoid), 0 apocrypha - see
+  works.yaml's header for why apocrypha isn't needed here. Corrected the
+  request issue's framing: the real count is 10 works, not "a dozen," and a
+  real pseudonym exists ("Danielle Brown," not "one confirmed byline").
+  Confirmed the sixth Langdon novel (The Secret of Secrets, 2025) and that
+  publication order matches story order for the whole series, sourced from
+  each novel's own infobox. validate.py --slug dan-brown is clean except for
+  the expected missing theme.art block, out of this stage's scope.
+produced:
+  newWorkIds:
+    - dan-brown/187-men-to-avoid
+    - dan-brown/digital-fortress
+    - dan-brown/angels-demons
+    - dan-brown/deception-point
+    - dan-brown/the-da-vinci-code
+    - dan-brown/the-lost-symbol
+    - dan-brown/inferno
+    - dan-brown/origin
+    - dan-brown/the-secret-of-secrets
+    - dan-brown/wild-symphony
+  newAuthorIds:
+    - dan-brown
+  filesWritten:
+    - content/franchises/dan-brown/franchise.yaml
+    - content/franchises/dan-brown/works.yaml
+    - content/franchises/dan-brown/theme.yaml
+    - content/authors/dan-brown.yaml
+  filesDeliberatelyNotWritten:
+    - content/franchises/dan-brown/events.yaml (the one candidate - the childhood treasure hunts behind The Da Vinci Code - is an AUTHOR life event, on dan-brown.yaml instead)
+    - content/franchises/dan-brown/eras.yaml (a tight 10-work shelf; left for the eras stage's own judgment, see openQuestions)
+    - content/franchises/dan-brown/orders.yaml, editions.yaml, achievements.yaml (out of scope for this stage)
+    - theme.yaml's art block (visual-language owns it)
+    - franchise.yaml's images/startHere/globalEvents (visual-metadata/reading-orders/event-resonance own these)
+forStages:
+  completeness-auditor: >
+    Verify the 10-work spine against primary sources beyond Wikipedia;
+    danbrown.com's own bibliography page agrees on the split and count but
+    was not checked against a library catalogue. Worth a look: whether "The
+    Da Vinci Code: Young Adult Edition" (2016) deserves an editions.yaml
+    line, and whether any Langdon title has been announced since 2025.
+  press-archaeology: >
+    Aura deliberately thin (2 life events: birth/childhood-treasure-hunts
+    folded into one event to avoid inventing a date for an undated childhood
+    practice, and the 2003 Da Vinci Code breakout). Worth covering: the
+    2005-2006 copyright suits, his stated writing habits (inversion
+    therapy). Living person: his 2019 divorce stays out unless a second
+    independent source corroborates specifics beyond his Wikipedia bio.
+  eras: >
+    Not scaffolded. The one visible hinge - early standalones (1998, 2001)
+    vs. the Langdon breakout (2003-) - may not justify a periodization
+    beyond what `featured` already carries; rule on that explicitly.
+  reading-orders: >
+    One series (Robert Langdon, all six novels, publication order = story
+    order, verified from each novel's own infobox) plus two standalones with
+    no documented Langdon connection (no shared characters, no sourced "read
+    this before that" recommendation found) and two off-spine extended
+    works. The honest default may be the Langdon series alone as "where to
+    start" - this stage's call to make and source, not assumed here.
+  visual-language: >
+    Non-art theme fields scaffolded around a blueprint/cyanotype register
+    built from Brown's documented signature device (the ambigram, by John
+    Langdon) and symbology's working materials, avoiding his own
+    gilt-and-parchment cover costume (design law, and the neighboring JRDS
+    wing's notes, both argue against it). `art` untouched; the ambigram is
+    the natural emblem candidate, alongside the childhood treasure-hunt
+    motif and each novel's real locations.
+openQuestions:
+  - "Corrected the request issue: bibliography is 10 works (not 'a dozen'), and a confirmed pseudonym exists - 'Danielle Brown' on 187 Men to Avoid (1995), his actual first published book - contrary to 'one confirmed byline.'"
+  - "The Bald Book (1998) was left out: no Dan Brown byline (published as Blythe Newlon's own 'Blythe Brown'), and the claim he 'primarily written' it rests on one unnamed publisher source. Genuinely ambiguous record, just not sourced well enough to catalogue - worth a second opinion."
+  - "'The Da Vinci Code: Young Adult Edition' (2016) was treated as edition-level data, not a new work entry - SCHEMA.md has no 'abridged edition' format value. Worth a second opinion, or a new format value, if it should be its own entry."
+  - "No eras.yaml scaffolded; may not be warranted at all for this shelf size given the featured flags already imply the one real split (debut standalones vs. Langdon breakout) - flagging for the eras stage to rule on explicitly."
+  - "themePreset (blueprint-cipher) is a first-draft branding choice built around ambigram/symbology rather than Brown's own cover art - see theme.yaml's notes; visual-language should confirm this framing holds."
