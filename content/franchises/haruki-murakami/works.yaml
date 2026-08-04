@@ -33,11 +33,11 @@
 # available for a cross-check of this bibliography.
 #
 # canonTier convention for this franchise:
-#   core      - the 15 novels: the narrative-fiction spine every source
+#   core      - the 16 novels: the narrative-fiction spine every source
 #               checked (English Wikipedia's own infobox "Notable works",
 #               the "Works by Haruki Murakami" navbox, his English
 #               publishers' own backlists) builds from.
-#   extended  - the 5 short-story collections (his own, not counting the
+#   extended  - the 6 short-story collections (his own, not counting the
 #               edited anthology below) and the 6 nonfiction books.
 #               Genuinely his, off the novel-reading spine, matching this
 #               catalogue's own convention for an author's short fiction and
@@ -84,7 +84,7 @@
 # for sale outside Japan in the first place, so there is no current
 # edition-choosing decision for translationNote to describe.
 
-# --- Novels (15) ---
+# --- Novels (16) ---
 
 - id: haruki-murakami/hear-the-wind-sing
   title: "風の歌を聴け"
@@ -379,7 +379,71 @@
   sources:
     - https://en.wikipedia.org/wiki/The_City_and_Its_Uncertain_Walls
 
-# --- Short story collections (5) ---
+- id: haruki-murakami/the-tale-of-kaho
+  title: "夏帆─The Tale of KAHO─"
+  authorIds: [haruki-murakami]
+  published: 2026
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A 26-year-old picture book author is told by a stranger on a blind date
+    that she is the ugliest woman he has ever met, and finds increasingly
+    bizarre occurrences - an anteater, a jaguar, a termite queen - crowding in
+    around her as she tries to work out what he meant, in Murakami's first
+    full-length novel built around a sole female protagonist.
+  note: >
+    The kanji 夏帆 reads Kaho (the same reading as the given name of actress
+    Kaho, born 1991), which the book's own title confirms by giving it
+    directly in English as part of the printed Japanese title rather than
+    leaving the reading to a romanization note, so none is needed here. Grew
+    from a short story, "Kaho," Murakami read aloud at a Waseda University
+    event with Mieko Kawakami in spring 2024 and then published in the June
+    2024 issue of Shincho; three further Kaho stories followed in Shincho
+    through March 2026 ("The Anteater of Musashi-sakai," "Kaho and the
+    Termite Queen," "Kaho and the Motorcycle Man"), and all four were revised
+    and combined into this 352-page novel, published in Japan by Shinchosha
+    on 3 July 2026 - his first full-length novel in three years, since The
+    City and Its Uncertain Walls. No English translation has been announced
+    as of this bibliography, though the first Kaho story appeared in English
+    in The New Yorker.
+  sources:
+    - https://apnews.com/article/haruki-murakami-japan-novel-release-kaho-04accdae3413d874b284a128ec3e4616
+    - https://www.shinchosha.co.jp/special/kaho/
+    - https://www.haruki-m.com/news/news205.html
+
+# --- Short story collections (6) ---
+
+- id: haruki-murakami/lets-meet-in-a-dream
+  title: "夢で会いましょう"
+  authorIds: [haruki-murakami]
+  authorRole: co-author
+  published: 1981
+  subseries: null
+  canonTier: extended
+  format: short-story-collection
+  synopsis: >
+    A collection of short-shorts, each keyed to a katakana loanword used as
+    its title, alternating between Murakami and copywriter Shigesato Itoi in
+    a friendly competition over the same shared conceit.
+  note: >
+    Hepburn romanization: Yume de Aimashō. Co-written with copywriter
+    Shigesato Itoi, who has no entry in this catalogue and is therefore not
+    recorded in withAuthorIds; the collaboration is stated through
+    authorRole and this note instead, per this catalogue's own convention
+    for a one-off collaborator outside its scope (see
+    jo-nesbo/stemmer-fra-balkan, haruki-murakami/absolutely-on-music).
+    Published 25 November 1981 by Fuyukisha (ISBN 4-06-183685-4 on the 1986
+    Kodansha bunko paperback reissue, still in active reprint as of the
+    sources checked); the two authors' pieces are ordered alphabetically by
+    loanword rather than split into two halves, and the single and bunko
+    editions differ slightly in contents. No English translation exists.
+    One piece, Murakami's "Pan" ("Bread"), was later folded, revised, into
+    the illustrated 2013 book Pan-ya o Osou (パン屋を襲う, Shinchosha,
+    illustrated by Kat Menschik) alongside "The Second Bakery Attack" - an
+    edition-level fact, not recorded as a separate work here.
+  sources:
+    - https://ja.wikipedia.org/wiki/夢で会いましょう
+    - https://www.kodansha.co.jp/book/products/0000159872
 
 - id: haruki-murakami/the-elephant-vanishes
   title: "象の消滅"
@@ -622,10 +686,13 @@
 # than as sole author. Not yet checked against a further contributor/editor
 # sweep the way jo-nesbo/works.yaml's own apocrypha section describes running
 # (an introduction, foreword or single-story credit under his name in some
-# other anthology); "Let's Meet in a Dream" (夢で会いましょう, 1981, credited
-# as co-written with copywriter Shigesato Itoi per its Japanese Wikipedia
-# listing) rests on that one source alone, uncorroborated, and is left out
-# rather than added on it.
+# other anthology). "Let's Meet in a Dream" (夢で会いましょう, 1981,
+# co-written with copywriter Shigesato Itoi) is corroborated beyond its
+# Japanese Wikipedia listing - Kodansha's own catalogue page and a real ISBN
+# on the still-reprinting 1986 bunko edition - and recorded above under
+# Short story collections, extended tier, since Murakami wrote his own full
+# share of it independently rather than contributing one piece to a
+# multi-author volume; see that entry's own note.
 
 - id: haruki-murakami/birthday-stories
   title: "バースデイ・ストーリーズ"
