@@ -353,14 +353,17 @@
     emigration, crime and trade among the era's less-told corners.
   sources:
     - https://www.biblio.com/book/days-rebels-1815-1840-canadas-illustrated/d/1033009431
-  images:
-    cover: "https://covers.openlibrary.org/b/id/4408981-L.jpg"
-    coverCredit: "Open Library"
-    coverSource: "https://openlibrary.org/works/OL675686W"
-    # The only Open Library edition (1977, Fitzhenry & Whiteside's
-    # "Canada's Illustrated Heritage" series) carries this plain text-on-
-    # colour-field cover with no illustration - consistent with the rest of
-    # that series' design, not a scan defect.
+  # No cover shipped. Open Library holds one edition record for this book
+  # (OL4487585M, Natural Science of Canada 1977, ISBN 0919644163) and its
+  # cover master is 128x114px - the `-L` URL redirects to the same file, so
+  # there is no larger variant behind it. Everything else checked is either
+  # empty or not this book: AbeBooks' ISBN image is its generated placeholder
+  # and prints "this is not the actual book cover" across the bottom, Amazon
+  # returns a 1x1 pixel for the ISBN, Goodreads and WorldCat carry no jacket,
+  # and the Internet Archive has no scan. The publisher is long defunct. A
+  # 128px tile renders soft beside the 300-500px covers around it, so the
+  # slot is left to the typographic fallback rather than filled with a
+  # thumbnail.
 
 - id: margaret-atwood/two-headed-poems
   title: "Two-Headed Poems"
@@ -376,9 +379,15 @@
   sources:
     - https://en.wikipedia.org/wiki/Margaret_Atwood
   images:
-    cover: "https://covers.openlibrary.org/b/id/4408084-L.jpg"
+    cover: "https://covers.openlibrary.org/b/id/8273972-L.jpg"
     coverCredit: "Open Library"
-    coverSource: "https://openlibrary.org/books/OL21503195M"
+    coverSource: "https://openlibrary.org/books/OL4479080M"
+    # Open Library holds two records for the same Oxford University Press
+    # 1978 edition (ISBN 0195402928). OL21503195M's scan is the title page,
+    # 128x211px and carrying a previous owner's handwritten inscription
+    # across the author's name; OL4479080M's is the dust jacket itself -
+    # the yellow field with the two coin faces - at 344x500. Same book, same
+    # edition, the jacket and the larger of the two scans.
 
 - id: margaret-atwood/up-in-the-tree
   title: "Up in the Tree"
