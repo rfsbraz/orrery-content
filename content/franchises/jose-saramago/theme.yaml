@@ -1,0 +1,89 @@
+# Branding for the José Saramago wing (see Orrery CONCEPT §6 - the design
+# law, and docs/SCHEMA.md#themeyaml). This is the catalogue's fourth
+# Lusophone wing. valter-hugo-mae is warm umber and terracotta with a
+# dip-pen line and a firm "rule" signature. joao-tordo is Atlantic
+# blue-grey with a thin thread (fraunces by fallback). jose-luis-peixoto is
+# parched Alentejo wheat-gold with a horizon-line "beam". Saramago's own
+# ground is neither warm earth nor Atlantic haze: it is Lanzarote itself -
+# the volcanic island he was exiled to in 1992 and never left, black
+# basalt with almost nothing green growing on it - set against the one
+# image that carries furthest into English-language readership,
+# Ensaio sobre a Cegueira's white blindness (1995, written three years into
+# that exile). The palette is built on that stark, real pairing rather than
+# on any single hue borrowed from the other three wings.
+preset: lanzarote-basalt
+palette:
+  bg: "#141311"        # near-black volcanic basalt, barely warm
+  surface: "#1d1c19"   # a hair lifted, for cards
+  ink: "#f1ece1"        # bone/blindness white - high contrast, very readable
+  muted: "#8c857a"      # ash-grey, for metadata
+  accent: "#8a1f24"     # one deep carmine accent, for links and markers only
+displayFace: fraunces     # from the app's implemented set (fraunces | spectral | sourceSerif);
+                           # a deliberate pick here (vhm uses spectral, peixoto
+                           # sourceSerif, tordo falls back to fraunces rather
+                           # than choosing it outright)
+signature: rule            # a firm architectural line - Memorial do Convento's
+                            # monumental building project and the hard edge
+                            # between the wing's black basalt and bone white,
+                            # distinct from vhm's own use of rule in tone if
+                            # not in what it is drawn from
+art:
+  emblem:
+    object: >
+      A single pale, unlit window in an otherwise black volcanic wall at
+      night - no figure visible behind it, just the light.
+    why: >
+      Fuses the wing's two real anchors rather than illustrating either
+      alone: the black basalt of Lanzarote, where Saramago lived in exile
+      from 1992 until his death, and the white blindness of Ensaio sobre a
+      Cegueira (1995), the novel that carried him furthest into
+      international readership and that he wrote there.
+  motifs:
+    - black volcanic rock, sparse or absent vegetation
+    - whitewashed Lisbon apartment blocks and azulejo-free plain walls
+    - baroque scaffolding and unfinished stonework (Mafra, Memorial do Convento)
+    - registry ledgers, filing shelves, handwritten manuscript pages
+    - an empty stretch of white or pale grey standing in for total blindness
+    - the Atlantic seen from a volcanic shore, not a sandy one
+  atmosphere: >
+    Austere and exposed rather than cosy: hard black rock and wide open
+    pale sky or wall, with very little in between. Interiors are plain and
+    institutional (a registry office, a convent under construction, an
+    apartment block) rather than domestic-warm. Restraint throughout - this
+    is a wing about a writer who distrusted ornament and stripped even his
+    own punctuation down to commas.
+  lineCharacter: >
+    A firm, unhurried dip-pen line laid down in solid, unmodulated black -
+    no cross-hatching, no scratchboard cut-away, no dry-brush scatter - each
+    contour drawn once and filled flat, so a page reads in only two values:
+    ink and untouched paper. That hard binary is the point, not a
+    print-medium homage: it is the same abrupt edge that separates the
+    wing's black basalt from its one field of bone-white blindness.
+  backgroundTexture: >
+    Near-black, faintly grained paper (volcanic ash rather than laid
+    paper's soft fibre), reserving true bone-white for a deliberate void.
+  accentUse: >
+    Deep carmine on exactly one element per image, never as a fill: a
+    single carnation, a wax seal, a thin banner or ribbon.
+  avoid:
+    - azulejo tiling and fado/saudade coastal cliches
+    - lush greenery - Lanzarote is volcanic and largely bare
+    - devotional religious iconography (halos, stained glass) played
+      straight - O Evangelho Segundo Jesus Cristo and Caim argue against
+      that imagery, not for it
+    - literal blindfolds or bandaged eyes as a shorthand for Ensaio sobre a
+      Cegueira - the novel's blindness is a field of whiteness, not an
+      injury
+    - a scratched, cut-away scratchboard texture or literal woodcut
+      printmaking - already this catalogue's register for a different
+      Anglophone wing; this wing's black comes from filled ink laid by a
+      pen, never a carved or scraped block
+notes: >
+  A stark, high-contrast edition: near-black volcanic paper, bone-white
+  ink, one carmine accent used only for links and markers, and a firm
+  architectural rule as the signature line. Built from two sourced facts
+  about the author rather than generic "Portuguese literary" costume: the
+  Lanzarote exile his 1992 censorship forced, and the white-blindness
+  imagery that carried him to his widest readership. displayFace and
+  signature are both chosen from the app's actually-implemented sets
+  (docs/SCHEMA.md).
