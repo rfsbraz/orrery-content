@@ -183,6 +183,20 @@ is legitimate. "It was historically important" is not.
 
 When you `include`, say in the note what the author does with the inheritance.
 
+**Re-run `aura_density.py` again after you finish ruling, not only before.**
+Checking first tells you the wing's state *before* your own rulings take effect;
+it does not tell you what your rulings just did to it. An exclusion can be
+individually correct - the event genuinely never reached the author - and still
+worsen the dark-run figure, because before you ruled, the engine's own
+lifetime-arithmetic fallback was silently covering that stretch, and your
+explicit `exclude` just switched it off. This is not hypothetical: it cost two
+wings in a row a multi-pass, six-figure-token cleanup after the fact (confirmed
+on margaret-atwood and haruki-murakami) before anyone thought to check twice
+instead of once. If your rulings just opened or widened a dark run, do not
+patch it yourself with a padding `include` - that is not this stage's call -
+but name the exact window in your handoff's `forStages.press-archaeology` field
+so the very next pass closes it in one dispatch instead of three.
+
 ## Output
 
 Write the decision into the **franchise's own file**, never into

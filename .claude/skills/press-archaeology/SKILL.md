@@ -279,6 +279,17 @@ If you come back with two excellent facts and one correction, that is a good
 run. If you come back with thirty, you have written a Wikipedia article and
 the curator has to do your editing for you.
 
+**The tool reports only the single worst dark run, never every one over the
+line.** Closing the window it names can expose a second, third or fourth one
+that was there the whole time, sitting just under the reported figure. Confirmed
+on haruki-murakami: `stage_plan.py` flagged one 12-year run; closing it
+revealed the wing actually had four separate stretches of five years or more.
+Closing all four in the same pass (not just the one named) turned three
+expensive later follow-ups into zero. Before calling this stage done, scan the
+whole span yourself rather than re-running the tool once and trusting its
+single number - remove your own additions one at a time and re-check if you
+are not sure whether a second gap is hiding behind the one you just closed.
+
 ## Output
 
 Two things, and keep them separate.
