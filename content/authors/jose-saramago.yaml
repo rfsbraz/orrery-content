@@ -1,0 +1,500 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds). Author-LIFE events live here (they follow the
+# person); franchise-specific events stay in the franchise.
+#
+# The spine of the life comes from Saramago's own autobiographical text (written
+# for the Nobel and reproduced in full on the Fundação José Saramago's site),
+# cross-checked against Expresso's dated chronology of his life, both
+# Wikipedias, and the 2010 obituaries. Where his own account and the press
+# chronology disagree on a year, the disagreement is recorded on the entry.
+id: jose-saramago
+name: José Saramago
+aka: ["José de Sousa Saramago"]  # full civil name; "Saramago" itself was his
+  # father's village nickname, misregistered onto the family by the birth
+  # registrar (see the born-1922 lifeEvent note)
+born: 1922-11-16
+died: 2010-06-18
+bio: >
+  Born into a family of landless peasants in Azinhaga, a Ribatejo village on
+  the Almonda river, and raised mostly in Lisbon from age two. Financial
+  hardship pulled him out of grammar school at twelve for a technical
+  education; he trained as a lathe operator and mechanic, then worked as a
+  civil servant, an editor, a translator and a journalist while writing on
+  the side. His first novel, published as
+  [[work:jose-saramago/terra-do-pecado|Terra do Pecado]] (1947) though he had
+  titled it A Viúva, was followed by 19 years of near-silence before a
+  poetry collection in 1966, and he did not return to fiction until 1977. He
+  found the long-sentence, dialogue-without-quotation-marks style now called
+  "saramaguiano" with [[work:jose-saramago/levantado-do-chao|Levantado do
+  Chão]] (1980), and international recognition followed
+  [[work:jose-saramago/memorial-do-convento|Memorial do Convento]] (1982),
+  translated into English as Baltasar and Blimunda. In 1992 the Portuguese
+  government under Prime Minister Aníbal Cavaco Silva ordered
+  [[work:jose-saramago/o-evangelho-segundo-jesus-cristo|O Evangelho Segundo
+  Jesus Cristo]] removed from the Aristeion Prize shortlist as religiously
+  offensive; Saramago and his wife, Spanish journalist Pilar del Río, left
+  for Lanzarote in the Canary Islands, where he lived for the rest of his
+  life. He won the Nobel Prize in Literature in 1998, the first for a
+  Portuguese-language writer. A lifelong member of the Portuguese Communist
+  Party (from 1969) and a self-described pessimist and atheist, he kept
+  publishing novels, diaries and essays from Lanzarote until his death from
+  leukemia in 2010; an unfinished novel found on his computer,
+  [[work:jose-saramago/alabardas-alabardas-espingardas-espingardas|Alabardas,
+  Alabardas, Espingardas, Espingardas]], appeared in 2014, and a novel
+  written in 1953 and rejected at the time,
+  [[work:jose-saramago/claraboia|Claraboia]], was published in 2011 after
+  being found in a publisher's archive.
+images:
+  portrait: "https://upload.wikimedia.org/wikipedia/commons/4/4b/1999-Saramago_a_Siena.jpg"
+  portraitCredit: "Sampinz, CC BY-SA 4.0"
+  portraitSource: "https://commons.wikimedia.org/wiki/File:1999-Saramago_a_Siena.jpg"
+  # Siena, 1999, at the Santa Maria della Scala conference "Il diritto e le
+  # campane" - the same photograph both English and Italian Wikipedia use as
+  # their own infobox image. Already at its native resolution (686x1000);
+  # Portuguese Wikipedia's infobox picture (JSJoseSaramago, cropped) was
+  # checked and is a nearly-square 221x239 crop, too small and too tightly
+  # cropped to use as a portrait.
+lifeEvents:
+  - id: saramago-born-1922
+    organisation: full-bleed-vista
+    illustration_type: establishing-landscape
+    images_required: 1
+    date: 1922-11-16
+    title: Born in Azinhaga, on the Almonda river
+    impact: low
+    description: >
+      Born in Azinhaga, a village in the Ribatejo province about a hundred
+      kilometres northeast of Lisbon, to landless peasants José de Sousa and
+      Maria da Piedade. The surname "Saramago" - a wild herbaceous plant
+      eaten by the poor - was his father's family nickname in the village,
+      mistakenly entered as the child's surname by the civil registrar; he
+      did not learn his own full legal name, José de Sousa Saramago, until
+      he needed an identity document for primary school at seven. The
+      family moved to Lisbon in 1924, though he spent long periods of his
+      childhood back in Azinhaga with his maternal grandparents.
+    note: >
+      Saramago's own Nobel autobiography states he was born on 16 November
+      1922 but that his official documents give 18 November, "thanks to
+      this petty fraud" by which his family avoided a late-registration
+      fine. Dated here to the 16th, per his own account and both Portuguese
+      and English Wikipedia.
+    spoilerAfter: null
+    sources:
+      - https://www.nobelprize.org/prizes/literature/1998/saramago/biographical/
+      - https://pt.wikipedia.org/wiki/José_Saramago
+      - https://en.wikipedia.org/wiki/José_Saramago
+
+  - id: saramago-first-novel-1947
+    organisation: beside
+    illustration_type: book-object
+    images_required: 1
+    date: 1947
+    title: A first novel, under a title he never accepted
+    impact: med
+    description: >
+      At twenty-four, working as a clerk in the social security service, he
+      finished a novel he had called A Viúva (The Widow). The publisher
+      Minerva took it on one condition: the title had to change to
+      [[work:jose-saramago/terra-do-pecado|Terra do Pecado]], which the
+      publisher judged more saleable. He never reconciled himself to the
+      change. The book sold almost nothing and stayed out of print for half
+      a century; asked about that later, he said it was "to my relief". His
+      only child, Violante, was born the same year. Reissued in 1997, he
+      prefaced it with an "Aviso" explaining why he was taking a book he
+      had spent fifty years disowning back into his own work.
+    spoilerAfter: null
+    sources:
+      - https://www.josesaramago.org/biografia/
+      - https://www.josesaramago.org/livro/terra-do-pecado/
+      - https://www.theguardian.com/books/2010/jun/18/jose-saramago-obituary
+      - https://pt.wikipedia.org/wiki/José_Saramago
+
+  - id: saramago-dismissed-1949
+    organisation: marginalia
+    illustration_type: isolated-object
+    images_required: 1
+    date: 1949
+    title: Sacked for backing the opposition candidate
+    impact: low
+    description: >
+      He lost his post at the Caixa de Abono de Família do Pessoal da
+      Indústria de Cerâmica for supporting the presidential campaign of
+      Norton de Matos, the opposition candidate against Salazar's regime.
+      In his own account the sentence is seven words long, "for political
+      reasons I was unemployed in 1949", and a former teacher from his
+      technical school found him work in a metalworking firm. It is the
+      state's first recorded mark on him, twenty years before he joined a
+      party.
+    spoilerAfter: null
+    sources:
+      - https://www.josesaramago.org/biografia/
+      - https://web.archive.org/web/2015/http://expresso.pt/dossies/dossiest_actualidade/dos_jose_saramago/cronologia-a-vida-de-jose-saramago=f588876
+
+  - id: saramago-claraboia-rejected-1953
+    organisation: artifact-spread
+    illustration_type: manuscript-proof
+    modifier: pull-focus
+    images_required: 1
+    date: 1953-01-05
+    title: A second novel goes into a publisher's drawer for thirty-six years
+    impact: high
+    description: >
+      He finished [[work:jose-saramago/claraboia|Claraboia]] on 5 January
+      1953, a 319-page typescript signed with the pen name "Honorato", and
+      had a friend take it to a Lisbon publishing house. No reply ever came,
+      and the manuscript was never returned. In 1989, moving offices, the
+      same publisher found it and wrote to say it would be an honour to
+      publish him. He took the typescript back and refused: the book would
+      not appear while he lived. His widow Pilar del Río, presenting it in
+      Madrid in 2012, said "Saramago suffered a great deal from that
+      contempt", and that after it he took twenty years to write another
+      novel. What followed the silence was not fiction but
+      [[work:jose-saramago/os-poemas-possiveis|Os Poemas Possíveis]] (1966);
+      the novels did not resume until 1977.
+    note: >
+      The publishing house is not named in the Fundação's account, in the
+      AFP report of the Madrid launch, or in either Wikipedia entry, all of
+      which say only "a Lisbon publisher".
+    spoilerAfter: null
+    sources:
+      - https://www.josesaramago.org/livro/claraboia/
+      - https://g1.globo.com/pop-arte/noticia/2012/03/claraboia-o-livro-perdido-de-jose-saramago.html
+      - https://pt.wikipedia.org/wiki/Claraboia_(livro)
+      - https://en.wikipedia.org/wiki/Skylight_(novel)
+
+  - id: saramago-translator-years-1955
+    organisation: passage
+    illustration_type: process-diagram
+    images_required: 1
+    date: 1955
+    title: Twenty-six years of other people's books
+    impact: low
+    description: >
+      To raise the household income he began taking translation work in
+      1955, and kept at it until 1981: Colette, Maupassant, Tolstoy,
+      Baudelaire, Hegel, Pär Lagerkvist, Nikos Poulantzas, Henri Focillon.
+      At the end of the decade he joined the publishing house Estúdios Cor
+      as production manager, which returned him to the literary world, as
+      he put it, but not as an author, and gave him the friendship of most
+      of the Portuguese writers then working. Through the whole of the
+      1950s and most of the 1960s this is what his working life in
+      literature actually was.
+    spoilerAfter: null
+    sources:
+      - https://www.josesaramago.org/biografia/
+      - https://pt.wikipedia.org/wiki/José_Saramago
+
+  - id: saramago-returns-to-print-1966
+    organisation: marginalia
+    illustration_type: isolated-object
+    images_required: 1
+    date: 1966
+    title: Nineteen years of silence end with a book of poems
+    impact: low
+    description: >
+      "For nineteen years, until 1966, when I would publish Possible
+      Poems, I was absent from the Portuguese literary world" - his own
+      account. The collection ended the silence that had followed
+      [[work:jose-saramago/terra-do-pecado|Terra do Pecado]] (1947); the
+      novels themselves did not resume until 1977.
+    spoilerAfter: null
+    sources:
+      - https://www.josesaramago.org/biografia/
+      - https://pt.wikipedia.org/wiki/José_Saramago
+
+  - id: saramago-joins-pcp-1969
+    organisation: medallion
+    illustration_type: emblem-seal
+    modifier: breakout
+    images_required: 1
+    date: 1969
+    title: Joins the Communist Party, while it is still illegal
+    impact: med
+    description: >
+      He joined the Portuguese Communist Party in 1969, five years before
+      the Carnation Revolution and while the party was banned and operating
+      clandestinely under the dictatorship, and remained a member until his
+      death. He belonged to the party's Lisbon intellectuals' organisation
+      and, after 1974, to its writers' cell. He stood for the Lisbon
+      municipal assembly on a Communist-backed list in 1989 and was elected
+      its presiding officer, and appeared on the Democratic Unity Coalition
+      list at every European election from 1989 to 2009, always in a
+      position from which he could not be elected. He never softened the
+      label: the Vatican's objection to his Nobel called him an
+      unreconstructed communist, and he did not dispute the description.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/José_Saramago
+      - https://pt.wikipedia.org/wiki/José_Saramago
+      - https://www.theguardian.com/books/2010/jun/18/jose-saramago-obituary
+      - https://web.archive.org/web/2015/http://expresso.pt/dossies/dossiest_actualidade/dos_jose_saramago/cronologia-a-vida-de-jose-saramago=f588876
+
+  - id: saramago-diario-de-noticias-1975
+    organisation: mosaic
+    illustration_type: press-media-collage
+    images_required: 1
+    date: 1975
+    title: The Diário de Notícias affair, and the sacking he called his best luck
+    impact: high
+    description: >
+      From April 1975 he was deputy editor-in-chief of the Diário de
+      Notícias, then the country's largest daily, newly nationalised and
+      run by a directorate close to the Communist Party. He told the staff
+      on taking office that he wanted the paper to be "an instrument in the
+      hands of the Portuguese people, for the building of socialism", and
+      that anyone not committed to that project would do better to leave.
+      His roughly ninety-five unsigned front-page "Apontamentos", collected
+      the following year as [[work:jose-saramago/os-apontamentos|Os
+      Apontamentos]], served as the paper's editorials. On 14 August, with
+      the editor on holiday and Saramago in charge, thirty journalists
+      handed in a document demanding the editorial line be revised; it
+      reached the press the next day. A workers' plenary, after a long and
+      hostile intervention by Saramago, voted to dismiss twenty-two of them
+      without compensation, and two more left in solidarity: the "case of
+      the 24". Portugal's press council ruled the grounds illegal and
+      illegitimate the following year. After the counter-coup of 25
+      November ended the revolutionary period, Saramago was himself
+      dismissed, accused of Marxist radicalism and, by Expresso's account,
+      without support from his own party. He decided not to look for
+      another job. "Being fired was the best luck of my life," he said
+      later. "It made me stop and reflect. It was the birth of my life as a
+      writer."
+    note: >
+      The academic study of the case (Pedro Marques Gomes, Revista Tempo e
+      Argumento, 2019) rejects the idea of a single person responsible for
+      the dismissals, while recording that some figures interfered more
+      than others; Saramago, writing in 1990, denied imposing his own
+      political convictions on the paper's workers.
+    spoilerAfter: null
+    sources:
+      - https://www.redalyc.org/journal/3381/338161218019/html/
+      - https://www.josesaramago.org/biografia/
+      - https://en.wikipedia.org/wiki/José_Saramago
+      - https://www.theguardian.com/books/2010/jun/18/jose-saramago-obituary
+      - https://web.archive.org/web/2015/http://expresso.pt/dossies/dossiest_actualidade/dos_jose_saramago/cronologia-a-vida-de-jose-saramago=f588876
+
+  - id: saramago-levantado-do-chao-1980
+    organisation: beside
+    illustration_type: place-portrait
+    images_required: 1
+    date: 1980
+    title: Months in the Alentejo, and the voice arrives
+    impact: high
+    description: >
+      Unemployed and living on translation fees, he moved for some months
+      to Lavre, a rural settlement in the Alentejo near Montemor-o-Novo,
+      and lived among the workers of the Boa Esperança collective
+      production unit, listening and taking notes for a novel about three
+      generations of landless labourers. The result,
+      [[work:jose-saramago/levantado-do-chao|Levantado do Chão]] (1980), is
+      where the punctuation goes: no quotation marks, no paragraph breaks
+      for speech, sentences that run for a page. He said afterwards that it
+      was in this book that the way of narrating which characterises his
+      fiction was born, and Portuguese criticism has called that manner
+      "saramaguiano" ever since. He was fifty-seven.
+    note: >
+      His own autobiography places the stay in Lavre at the beginning of
+      1976; Expresso's chronology dates it to the beginning of 1977. Both
+      agree it lasted some months and produced the 1980 novel.
+    spoilerAfter: null
+    sources:
+      - https://www.josesaramago.org/biografia/
+      - https://web.archive.org/web/2015/http://expresso.pt/dossies/dossiest_actualidade/dos_jose_saramago/cronologia-a-vida-de-jose-saramago=f588876
+      - https://pt.wikipedia.org/wiki/José_Saramago
+
+  - id: saramago-pilar-del-rio-1986
+    organisation: diptych
+    illustration_type: symbolic-still-life
+    images_required: 2
+    date: 1986
+    title: Pilar del Río, who read him first in Spanish
+    impact: med
+    description: >
+      A Spanish journalist from Castril, in the province of Granada, Pilar
+      del Río read every Saramago title available in Spanish and then asked
+      to meet the author; they met on 10 June 1986, and married in 1988.
+      She learned Portuguese and became his Spanish translator, so that his
+      books reached the larger neighbouring language in his wife's voice,
+      and it is through her that Spain became the place he could move to
+      when Portugal closed a door in 1992. She presides over the Fundação
+      José Saramago, and applied for Portuguese nationality after his
+      death. His relationship with the writer Isabel da Nóbrega, which had
+      run since 1970 and to whom he dedicated
+      [[work:jose-saramago/memorial-do-convento|Memorial do Convento]] and
+      [[work:jose-saramago/o-ano-da-morte-de-ricardo-reis|O Ano da Morte de
+      Ricardo Reis]], ended the same year.
+    spoilerAfter: null
+    sources:
+      - https://pt.wikipedia.org/wiki/Pilar_del_Río
+      - https://en.wikipedia.org/wiki/José_Saramago
+      - https://www.josesaramago.org/biografia/
+      - https://web.archive.org/web/2015/http://expresso.pt/dossies/dossiest_actualidade/dos_jose_saramago/cronologia-a-vida-de-jose-saramago=f588876
+
+  - id: saramago-lanzarote-exile-1992
+    organisation: immersion
+    illustration_type: establishing-landscape
+    images_required: 1
+    date: 1992
+    title: Censored by his own government, he leaves for Lanzarote
+    impact: high
+    description: >
+      Portugal put forward a slate of novels for the European Literary
+      Prize, the Aristeion, in 1992. The Under-Secretary of State for
+      Culture in Aníbal Cavaco Silva's government, António de Sousa Lara,
+      struck [[work:jose-saramago/o-evangelho-segundo-jesus-cristo|O
+      Evangelho Segundo Jesus Cristo]] (1991) from the list on the grounds
+      that it offended Christian morality: the novel gives Jesus a human
+      life, a body, Mary Magdalene, and a God who is neither just nor kind,
+      and the Catholic hierarchy had been attacking it since publication,
+      the Archbishop of Braga calling its literary beauty an aggravating
+      circumstance rather than a defence. Saramago called the veto what it
+      was, censorship by a government of a book it disliked, and in
+      February 1993 he and his wife Pilar del Río left Portugal for
+      Lanzarote, in Spain's Canary Islands, where he lived the remaining
+      seventeen years of his life. Everything after this was written there:
+      [[work:jose-saramago/ensaio-sobre-a-cegueira|Ensaio sobre a
+      Cegueira]] (1995), [[work:jose-saramago/todos-os-nomes|Todos os
+      Nomes]] (1997), the Nobel lecture, and the five volumes of
+      [[work:jose-saramago/cadernos-de-lanzarote-i|Cadernos de Lanzarote]],
+      the diary he started in 1993 and described as a long letter home to
+      the people left on the other side. Eighteen years later the same
+      Cavaco Silva, by then President, stayed away from his funeral.
+    note: >
+      The veto is 1992 and the move is February 1993, per Saramago's own
+      autobiography and Expresso's chronology; obituaries and encyclopedia
+      summaries routinely compress both into 1992.
+    spoilerAfter: null
+    sources:
+      - https://pt.wikipedia.org/wiki/O_Evangelho_Segundo_Jesus_Cristo
+      - https://www.josesaramago.org/biografia/
+      - https://en.wikipedia.org/wiki/José_Saramago
+      - https://www.theguardian.com/books/2010/jun/18/jose-saramago-obituary
+      - https://web.archive.org/web/2015/http://expresso.pt/dossies/dossiest_actualidade/dos_jose_saramago/cronologia-a-vida-de-jose-saramago=f588876
+
+  - id: saramago-nobel-prize-1998
+    organisation: epigraph
+    quote: >
+      The wisest man I ever knew in my whole life could not read or write.
+    images_required: 0
+    date: 1998-10-08
+    # An epigraph's `title` is the attribution, not a second copy of the
+    # quotation (docs/LAYOUT.md): the quote renders large and this line sits
+    # beneath it saying where the words come from.
+    title: Nobel lecture, "How characters became the masters and the author their apprentice"
+    impact: high
+    description: >
+      Awarded the Nobel Prize in Literature "for parables sustained by
+      imagination, compassion and irony [with which he] continually enables
+      us once again to apprehend an elusory reality" - the first Nobel for a
+      writer working in Portuguese, at seventy-five, in the year Portugal
+      was guest of honour at the Frankfurt Book Fair, where the news
+      reached him as he was leaving for the airport. His Stockholm lecture,
+      "How characters became the masters and the author their apprentice",
+      opens: "The wisest man I ever knew in my whole life could not read or
+      write." The man was his grandfather Jerónimo Meirinho, an illiterate
+      swineherd from Azinhaga who slept under a fig tree telling his
+      grandson stories, and who went round the trees in his yard embracing
+      them and weeping when he knew he was dying. The Vatican newspaper
+      L'Osservatore Romano objected to the award on political grounds,
+      calling him an unreconstructed communist. His reply: "The Vatican is
+      easily scandalized, especially by people from outside. They should
+      just focus on their prayers and leave people in peace. I respect
+      those who believe, but I have no respect for the institution."
+    spoilerAfter: null
+    sources:
+      - https://www.nobelprize.org/prizes/literature/1998/saramago/facts/
+      - https://www.nobelprize.org/prizes/literature/1998/saramago/lecture/
+      - https://pt.wikipedia.org/wiki/José_Saramago
+      - https://en.wikipedia.org/wiki/José_Saramago
+
+  - id: saramago-ramallah-2002
+    organisation: beside
+    illustration_type: historical-context-tableau
+    images_required: 1
+    date: 2002-03-25
+    title: Ramallah, and the word he refused to withdraw
+    impact: med
+    description: >
+      Visiting the besieged West Bank town of Ramallah on 25 March 2002
+      with a delegation of the International Parliament of Writers, he told
+      reporters that what was happening in Palestine was "a crime we can
+      put on the same plane as what happened at Auschwitz". The reaction
+      was immediate and international: Israeli officials, the Simon
+      Wiesenthal Center and the novelist Amos Oz all condemned the
+      comparison, and critics called the statement, and an essay he
+      published in El País the following month, antisemitic. Nine months
+      later he told the Guardian he had said what he meant to say, adding
+      that he had not called Ramallah the same as Auschwitz but that the
+      spirit of Auschwitz was present there, and noting that seven other
+      writers on the same visit had condemned the occupation without
+      provoking anything like the same response. The Guardian's profile that
+      December described a writer whose uncompromising work had by then
+      offended both the Vatican and Israel, and he went on from it to
+      [[work:jose-saramago/ensaio-sobre-a-lucidez|Ensaio sobre a Lucidez]]
+      and [[work:jose-saramago/caim|Caim]].
+    spoilerAfter: null
+    sources:
+      - https://www.theguardian.com/books/2002/dec/28/featuresreviews.guardianreview11
+      - https://en.wikipedia.org/wiki/José_Saramago
+
+  - id: saramago-pneumonia-2007
+    organisation: interlude
+    illustration_type: portrait-of-absence
+    images_required: 1
+    date: 2007-12-18
+    title: A month and three days in hospital, and a book resumed the next day
+    impact: high
+    description: >
+      He had begun [[work:jose-saramago/a-viagem-do-elefante|A Viagem do
+      Elefante]] in February 2007 and had about forty pages by May, when
+      illness stopped him. On 18 December he was admitted to hospital in
+      Lanzarote with pneumonia that developed complications severe enough
+      to put his life at risk; he stayed a month and three days and was
+      discharged on 22 January 2008. The day after he got home he went back
+      to the novel, spending two days correcting the forty existing pages
+      and starting again on the third. The first edition's own jacket
+      records that the book was written "in very precarious conditions of
+      health". "It is known that I went through a very serious illness," he
+      said in an interview that October. "I had to interrupt the writing of
+      the book. They put me in a hospital, but twenty-four hours after
+      getting home I was already sitting down to write." He was
+      eighty-five, and published two more novels.
+    spoilerAfter: null
+    sources:
+      - https://web.archive.org/web/2015/http://expresso.pt/dossies/dossiest_actualidade/dos_jose_saramago/cronologia-a-vida-de-jose-saramago=f588876
+      - https://www.josesaramago.org/livro/a-viagem-do-elefante/
+      - https://www.theguardian.com/books/2010/jun/18/jose-saramago-writer-nobel-dies
+
+  - id: saramago-death-2010
+    organisation: immersion
+    illustration_type: portrait-of-absence
+    images_required: 1
+    date: 2010-06-18
+    title: Dies in Lanzarote
+    impact: low
+    description: >
+      Died at his home in Lanzarote of chronic leukemia, aged 87, with Pilar
+      del Río at his side; he had had breakfast and talked with her that
+      morning. His funeral in Lisbon two days later drew crowds in the
+      thousands. Cavaco Silva, the prime minister behind the 1992 Aristeion
+      decision and by then President of Portugal, did not attend, saying he
+      had "never had the privilege to know him" - a remark mourners in
+      Lisbon met by holding up red carnations, the symbol of Portugal's
+      1974 revolution. His ashes were buried a year later, on the
+      anniversary of his death, beneath a hundred-year-old olive tree in
+      front of the José Saramago Foundation at the Casa dos Bicos.
+    spoilerAfter: null
+    sources:
+      - https://www.theguardian.com/books/2010/jun/18/jose-saramago-obituary
+      - https://www.theguardian.com/books/2010/jun/18/jose-saramago-writer-nobel-dies
+      - https://www.bbc.co.uk/news/10364807
+      - https://en.wikipedia.org/wiki/José_Saramago
+sources:
+  - https://www.nobelprize.org/prizes/literature/1998/saramago/biographical/
+  - https://www.nobelprize.org/prizes/literature/1998/saramago/lecture/
+  - https://pt.wikipedia.org/wiki/José_Saramago
+  - https://en.wikipedia.org/wiki/José_Saramago
+  - https://www.theguardian.com/books/2010/jun/18/jose-saramago-obituary
+  - https://www.josesaramago.org/
+  - https://www.josesaramago.org/biografia/
+  - https://web.archive.org/web/2015/http://expresso.pt/dossies/dossiest_actualidade/dos_jose_saramago/cronologia-a-vida-de-jose-saramago=f588876

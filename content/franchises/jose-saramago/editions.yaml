@@ -1,0 +1,724 @@
+# Portuguese editions - the actual books a Portuguese reader buys.
+#
+# Saramago writes in Portuguese, so there is nothing to translate: every
+# work's `title` in works.yaml IS the published Portuguese title. Per
+# SCHEMA.md the `title` field is therefore OMITTED throughout.
+#
+# PUBLISHING HISTORY: Caminho (Lisbon, later Alfragide) was Saramago's
+# Portuguese-language publisher from 1980 until Grupo LeYa's acquisition of
+# Caminho. Since 2014, Grupo Porto Editora - a separate company from LeYa -
+# has been running "Obras de José Saramago", a systematic paperback
+# reissue of nearly the entire backlist, confirmed directly on
+# portoeditora.pt's own product pages (Coleção: "Obras de José Saramago")
+# and cross-checked against the Biblioteca Nacional de Portugal's ipac20
+# catalogue (catalogo.bnportugal.gov.pt / id.bnportugal.gov.pt permalinks),
+# which independently records the same ISBNs across repeated reprints
+# running into 2024-2026 (Memorial do Convento alone is at its 64th
+# printing). Where both sources were opened and agree, both are cited;
+# where only Porto Editora's own page could be confirmed (no BND record
+# under that ISBN), the entry says so. The older Caminho printings these
+# superseded are not separately recorded, per the "most recent in-print"
+# default rule; a few (e.g. A Noite, A Jangada de Pedra) remain visible
+# elsewhere in print or on the Fundação's own channels under a different,
+# not-recorded-here ISBN.
+#
+# ISBN-10 CONVERSION: Objecto Quase's BNP record carries only a 10-digit
+# ISBN (972-21-0292-3). Converted here by dropping the ISBN-10 check
+# digit, prefixing 978, and recomputing the check digit from scratch, per
+# the editions skill's own worked method - 9789722102926, re-verified by
+# its own ISBN-13 check digit and by validate.py.
+#
+# COVERAGE: 46 of 52 works have a recorded edition (18/18 core, 27/31
+# extended, 1/3 apocrypha). The six gaps, none padded:
+#   - Democracia e Universidade: first published in Spain (Editorial
+#     Complutense, 2010) and Brazil (UFPA Press, 2013) only; no Portuguese
+#     printing was found in BNP, Porto Editora's own catalogue or
+#     elsewhere.
+#   - O Lagarto, Uma Luz Inesperada, O Primeiro Barco: all three
+#     posthumous picture-book-adjacent texts are sourced in works.yaml to
+#     Companhia das Letras, a Brazilian publisher; no pt-PT edition was
+#     found in BNP under any title search.
+#   - José Rodrigues Miguéis e José Saramago - Correspondência: Caminho's
+#     own site lists this title (cited in works.yaml), but no BNP catalogue
+#     record was found under any search of the title, either author's
+#     name, or the volume's editor.
+#   - Com o Mar por Meio: sourced in works.yaml to a Brazilian
+#     Companhia das Letras edition only; no pt-PT printing found.
+# These are market facts, not a research gap left for later - see each
+# work's own note in works.yaml for the sourcing already on record there.
+#
+# Two entries carry no isbn13 by design, per SCHEMA's "when there is no
+# ISBN" allowance: As Opiniões que o DL Teve (Seara Nova, 1974, pre-ISBN
+# Portugal) and Poética dos Cinco Sentidos - O Ouvido (Bertrand, 1979,
+# no ISBN in its BNP record either). A Estátua e a Pedra also carries none:
+# its only Portuguese-language printing is the Fundação José Saramago's own
+# 2013 bilingual Portuguese/Spanish edition, sold with no ISBN on the
+# Fundação's own shop page.
+
+# --- Novels ---
+
+- id: jose-saramago/terra-do-pecado/porto-editora-2015-pt
+  workId: jose-saramago/terra-do-pecado
+  isbn13: "9789720047588"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2015
+  note: >
+    1a ed., Porto Editora, 2015 - the current printing in the "Obras de José
+    Saramago" collection, superseding Caminho's own run (last confirmed at a
+    10a ed., 2010). Sourced to BNP alone; not found on Porto Editora's own
+    search index at the time of writing.
+  sources:
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/1928021"
+
+- id: jose-saramago/manual-de-pintura-e-caligrafia/porto-editora-2014-pt
+  workId: jose-saramago/manual-de-pintura-e-caligrafia
+  isbn13: "9789720046567"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2014
+  note: 1a ed., Porto Editora, 05-2014, 272pp - the current "Obras de José Saramago" printing.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/manual-de-pintura-e-caligrafia/15612403"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/1893155"
+
+- id: jose-saramago/levantado-do-chao/porto-editora-2014-pt
+  workId: jose-saramago/levantado-do-chao
+  isbn13: "9789720046895"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2014
+  note: >
+    1a ed., Porto Editora, 07-2014, 392pp; BNP's own record for this ISBN
+    runs to a 23a ed. (2022), confirming it as the continuously reprinted
+    current edition.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/levantado-do-chao/15840288"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2120060"
+
+- id: jose-saramago/memorial-do-convento/porto-editora-2014-pt
+  workId: jose-saramago/memorial-do-convento
+  isbn13: "9789720046710"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2014
+  note: 1a ed., Porto Editora, 09-2014, 402pp; BNP's record for this ISBN runs to a 64a ed. (2024).
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/memorial-do-convento/15747444"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2171726"
+
+- id: jose-saramago/o-ano-da-morte-de-ricardo-reis/porto-editora-2021-pt
+  workId: jose-saramago/o-ano-da-morte-de-ricardo-reis
+  isbn13: "9789720039910"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2021
+  note: >
+    1a ed., Porto Editora, 11-2021, 496pp, under the "Obras de José
+    Saramago" collection - a newer ISBN superseding Porto Editora's own
+    first 2016 printing (978-972-0-04882-0), which is not recorded here.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/o-ano-da-morte-de-ricardo-reis/25494687"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2095330"
+
+- id: jose-saramago/a-jangada-de-pedra/porto-editora-2024-pt
+  workId: jose-saramago/a-jangada-de-pedra
+  isbn13: "9789720005953"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2024
+  note: >
+    2a ed., Porto Editora, 08-2024, 372pp, "com epílogo de José Saramago" per
+    BNP's own record - a genuinely new edition adding an epilogue, under a
+    new ISBN that supersedes Porto Editora's own 2015 1a ed.
+    (978-972-0-04759-5), not recorded here.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/a-jangada-de-pedra/16393940"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2182600"
+
+- id: jose-saramago/historia-do-cerco-de-lisboa/porto-editora-2014-pt
+  workId: jose-saramago/historia-do-cerco-de-lisboa
+  isbn13: "9789720046536"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2014
+  note: 1a ed., Porto Editora, 05-2014, 368pp; BNP's record for this ISBN runs to a 13a ed. (2024).
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/historia-do-cerco-de-lisboa/15612443"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2178923"
+
+- id: jose-saramago/o-evangelho-segundo-jesus-cristo/porto-editora-2026-pt
+  workId: jose-saramago/o-evangelho-segundo-jesus-cristo
+  isbn13: "9789720005816"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2026
+  note: >
+    Porto Editora, 06-2026, 456pp - the newest printing, confirmed on
+    Porto Editora's own product page and independently by both Wook's and
+    Bertrand's retail listings (dated 25-06-2026). BNP's own most recent
+    catalogue record for this title, also dated 2026 and also called a "2a
+    ed.", instead carries the earlier ISBN 978-972-0-04682-6 (current since
+    2016); the three retail/publisher sources outweigh it here, per
+    CURATION.md's sourcing hierarchy.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/o-evangelho-segundo-jesus-cristo/15825485"
+
+- id: jose-saramago/ensaio-sobre-a-cegueira/porto-editora-2015-pt
+  workId: jose-saramago/ensaio-sobre-a-cegueira
+  isbn13: "9789720046833"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2015
+  note: 1a ed., Porto Editora, 01-2015, 343pp; BNP's record for this ISBN runs to a 28a ed. (2024).
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/ensaio-sobre-a-cegueira/15825486"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2170445"
+
+- id: jose-saramago/todos-os-nomes/porto-editora-2015-pt
+  workId: jose-saramago/todos-os-nomes
+  isbn13: "9789720047571"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2015
+  note: >
+    1a ed., Porto Editora, 10-2015; BNP's record for this ISBN runs to a
+    14a ed. (2022). BNP's own record for the 2015 1a ed. mistypes the
+    registrant prefix as 978-971 rather than 978-972 (a single-digit slip);
+    Porto Editora's own page and the 2022 BNP record both confirm 972,
+    which is what is recorded here.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/todos-os-nomes/16392341"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2120057"
+
+- id: jose-saramago/a-caverna/porto-editora-2014-pt
+  workId: jose-saramago/a-caverna
+  isbn13: "9789720046543"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2014
+  note: 1a ed., Porto Editora, 05-2014, 368pp - the current printing.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/a-caverna/15612444"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/1893449"
+
+- id: jose-saramago/o-homem-duplicado/porto-editora-2014-pt
+  workId: jose-saramago/o-homem-duplicado
+  isbn13: "9789720046499"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2014
+  note: 1a ed., Porto Editora, 05-2014, 336pp; BNP's record for this ISBN runs to a 7a ed. (2022).
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/o-homem-duplicado/15497956"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2120068"
+
+- id: jose-saramago/ensaio-sobre-a-lucidez/porto-editora-2014-pt
+  workId: jose-saramago/ensaio-sobre-a-lucidez
+  isbn13: "9789720046529"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2014
+  note: 1a ed., Porto Editora, 05-2014, 360pp; BNP's record for this ISBN runs to a 9a ed. (2025).
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/ensaio-sobre-a-lucidez/15612442"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2240218"
+
+- id: jose-saramago/as-intermitencias-da-morte/porto-editora-2014-pt
+  workId: jose-saramago/as-intermitencias-da-morte
+  isbn13: "9789720046673"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2014
+  note: >
+    1a ed., Porto Editora, 05-2014, 232pp - the printing confirmed live on
+    Porto Editora's own site; a newer 2021 ISBN
+    (978-972-0-03997-2) and a 2025 joint Livraria Lello/Porto Editora
+    printing also exist but were not the one the publisher's own current
+    listing pointed to.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/as-intermitencias-da-morte/15723884"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/1893444"
+
+- id: jose-saramago/a-viagem-do-elefante/porto-editora-2014-pt
+  workId: jose-saramago/a-viagem-do-elefante
+  isbn13: "9789720046505"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2014
+  note: 1a ed., Porto Editora, 05-2014, 216pp; BNP's record for this ISBN runs to a 14a ed. (2023).
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/a-viagem-do-elefante/15612435"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2155143"
+
+- id: jose-saramago/caim/porto-editora-2017-pt
+  workId: jose-saramago/caim
+  isbn13: "9789720049858"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2017
+  note: 1a ed., Porto Editora, 01-2017, 146pp - the current printing.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/caim/18941657"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/1976589"
+
+- id: jose-saramago/claraboia/porto-editora-2017-pt
+  workId: jose-saramago/claraboia
+  isbn13: "9789720048554"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2017
+  note: >
+    1a ed., Porto Editora, 06-2017, 328pp; BNP's record for this ISBN runs
+    to a 4a ed. (2024), superseding Caminho's original 2011 printing
+    (978-972-21-2441-6).
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/claraboia/17939506"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2197855"
+
+- id: jose-saramago/alabardas-alabardas-espingardas-espingardas/porto-editora-2014-pt
+  workId: jose-saramago/alabardas-alabardas-espingardas-espingardas
+  isbn13: "9789720046956"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2014
+  note: >
+    1a ed., Porto Editora, 2014, 136pp, carrying the same texts by Fernando
+    Gómez Aguilera and Roberto Saviano, and illustrations by Günter Grass,
+    as the original edition; still in print as of a 05-2023 reprint per
+    Porto Editora's own current listing.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/alabardas-alabardas-espingardas-espingardas/15877062"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/1900632"
+
+# --- Poetry ---
+
+- id: jose-saramago/os-poemas-possiveis/porto-editora-2014-pt
+  workId: jose-saramago/os-poemas-possiveis
+  isbn13: "9789720046857"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2014
+  note: 1a ed., Porto Editora, 07-2014, 184pp - the current printing.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/os-poemas-possiveis/15826007"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/1898784"
+
+- id: jose-saramago/provavelmente-alegria/porto-editora-2014-pt
+  workId: jose-saramago/provavelmente-alegria
+  isbn13: "9789720046864"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2014
+  note: 1a ed., Porto Editora, 07-2014, 96pp; BNP's record for this ISBN runs to a 10a ed. (2022).
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/provavelmente-alegria/15826011"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2113330"
+
+- id: jose-saramago/o-ano-de-1993/porto-editora-2018-pt
+  workId: jose-saramago/o-ano-de-1993
+  isbn13: "9789720030535"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2018
+  note: >
+    "Edição Ilustrada", Porto Editora, 11-2018, 72pp; BNP's record for this
+    ISBN runs to a 5a ed. (2023). Supersedes two earlier illustrated
+    Caminho printings (Graça Morais, 1987; Rogério Ribeiro, 2007), neither
+    recorded here. A second, separately listed Porto Editora product ID
+    for this title (978-972-0-68997-9, same 2018 date) is an ebook SKU of
+    the same text, not a distinct print edition.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/o-ano-de-1993/21190774"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2158682"
+
+# --- Crónicas and political essays ---
+
+- id: jose-saramago/deste-mundo-e-do-outro/porto-editora-2018-pt
+  workId: jose-saramago/deste-mundo-e-do-outro
+  isbn13: "9789720030405"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2018
+  note: Porto Editora, 05-2018, 224pp; BNP records a further 2021 reprint under the same ISBN.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/deste-mundo-e-do-outro/21041874"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2095924"
+
+- id: jose-saramago/a-bagagem-do-viajante/porto-editora-2018-pt
+  workId: jose-saramago/a-bagagem-do-viajante
+  isbn13: "9789720030351"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2018
+  note: 1a ed., Porto Editora, 03-2018, 240pp - the current printing.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/a-bagagem-do-viajante/20132095"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2000658"
+
+- id: jose-saramago/as-opinioes-que-o-dl-teve/seara-nova-1974-pt
+  workId: jose-saramago/as-opinioes-que-o-dl-teve
+  language: pt-PT
+  format: paperback
+  publisher: Seara Nova
+  year: 1974
+  note: >
+    First and, per BNP's own catalogue, only edition; carries no ISBN in
+    either of BNP's two catalogue records for it (pre-ISBN-era Portuguese
+    printing). No Porto Editora reissue was found under this title.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?session=&profile=bn&menu=search&aspect=basic_search&npp=20&ipp=20&spp=20&index=.GW&term=Opinioes+Saramago"
+
+- id: jose-saramago/os-apontamentos/porto-editora-2014-pt
+  workId: jose-saramago/os-apontamentos
+  isbn13: "9789720046888"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2014
+  note: 1a ed., Porto Editora, 07-2014, 440pp - the current printing.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/os-apontamentos/15826009"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/1898783"
+
+- id: jose-saramago/folhas-politicas/porto-editora-2015-pt
+  workId: jose-saramago/folhas-politicas
+  isbn13: "9789720047229"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2015
+  note: >
+    Porto Editora, 02-2015 per Porto Editora's own page, 248pp; BNP's
+    earliest record for this same ISBN instead calls it a "3a ed." dated
+    2014 and its most recent a "4a ed." dated 2022 - a minor year overlap
+    at the publisher's own year-end, not a different edition.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/folhas-politicas/16093917"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2120059"
+
+# --- Travel writing ---
+
+- id: jose-saramago/viagem-a-portugal/porto-editora-2016-pt
+  workId: jose-saramago/viagem-a-portugal
+  isbn13: "9789720048578"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2016
+  note: >
+    1a ed., Porto Editora, 11-2016, 504pp; BNP's record for this ISBN runs
+    to a 29a ed. (2023). A separate, currently in-print photographic
+    edition illustrated with Duarte Belo's own photographs
+    (978-972-0-03473-1, jointly Porto Editora and Círculo de Leitores) is
+    a genuinely different object and not recorded here.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/viagem-a-portugal/17951022"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2158681"
+
+# --- Memoir ---
+
+- id: jose-saramago/as-pequenas-memorias/porto-editora-2014-pt
+  workId: jose-saramago/as-pequenas-memorias
+  isbn13: "9789720046512"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2014
+  note: 1a ed., Porto Editora, 05-2014, 136pp - the only Porto Editora printing found; still current.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/as-pequenas-memorias/15612441"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/1893437"
+
+# --- Diaries ---
+
+- id: jose-saramago/cadernos-de-lanzarote-i/porto-editora-2016-pt
+  workId: jose-saramago/cadernos-de-lanzarote-i
+  isbn13: "9789720048318"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2016
+  note: >
+    1a ed., Porto Editora, 10-2016, 180pp. BNP catalogues volumes I and II
+    together under one shared record (both ISBNs listed on the same
+    entry); the re-runnable query below is that shared record.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/cadernos-de-lanzarote-diario-i/17605451"
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?session=&profile=bn&menu=search&aspect=basic_search&npp=20&ipp=20&spp=20&index=.GW&term=Cadernos+de+Lanzarote+Saramago"
+
+- id: jose-saramago/cadernos-de-lanzarote-ii/porto-editora-2016-pt
+  workId: jose-saramago/cadernos-de-lanzarote-ii
+  isbn13: "9789720048516"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2016
+  note: 1a ed., Porto Editora, 10-2016, 268pp - see volume I's note on BNP's shared cataloguing.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/cadernos-de-lanzarote-diario-ii/17939514"
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?session=&profile=bn&menu=search&aspect=basic_search&npp=20&ipp=20&spp=20&index=.GW&term=Cadernos+de+Lanzarote+Saramago"
+
+- id: jose-saramago/cadernos-de-lanzarote-iii/porto-editora-2017-pt
+  workId: jose-saramago/cadernos-de-lanzarote-iii
+  isbn13: "9789720042392"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2017
+  note: >
+    1a ed., Porto Editora, 02-2017, 224pp. BNP catalogues volumes III and
+    IV together under one shared record.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/cadernos-de-lanzarote-diario-iii/19039912"
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?session=&profile=bn&menu=search&aspect=basic_search&npp=20&ipp=20&spp=20&index=.GW&term=Cadernos+de+Lanzarote+Saramago"
+
+- id: jose-saramago/cadernos-de-lanzarote-iv/porto-editora-2017-pt
+  workId: jose-saramago/cadernos-de-lanzarote-iv
+  isbn13: "9789720049889"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2017
+  note: 1a ed., Porto Editora, 11-2017, 272pp - see volume III's note on BNP's shared cataloguing.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/cadernos-de-lanzarote-diario-iv/18966416"
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?session=&profile=bn&menu=search&aspect=basic_search&npp=20&ipp=20&spp=20&index=.GW&term=Cadernos+de+Lanzarote+Saramago"
+
+- id: jose-saramago/cadernos-de-lanzarote-v/porto-editora-2018-pt
+  workId: jose-saramago/cadernos-de-lanzarote-v
+  isbn13: "9789720030290"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2018
+  note: 1a ed., Porto Editora, 02-2018, 232pp - the current printing.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/cadernos-de-lanzarote-diario-v/19868902"
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?session=&profile=bn&menu=search&aspect=basic_search&npp=20&ipp=20&spp=20&index=.GW&term=Cadernos+de+Lanzarote+Saramago"
+
+- id: jose-saramago/o-caderno/porto-editora-2018-pt
+  workId: jose-saramago/o-caderno
+  isbn13: "9789720030429"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2018
+  note: >
+    1a ed., Porto Editora, 04-2018, 376pp - a single-volume edition of the
+    two Caminho blog-text volumes ("O Caderno" and "O Caderno 2") published
+    separately in 2009-2010.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/o-caderno/21041829"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2003228"
+
+- id: jose-saramago/ultimo-caderno-de-lanzarote/porto-editora-2018-pt
+  workId: jose-saramago/ultimo-caderno-de-lanzarote
+  isbn13: "9789720031280"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2018
+  note: >
+    1a ed., Porto Editora, 10-2018, 272pp - "o diário do ano do Nobel" per
+    both BNP's and Porto Editora's own titling. A second product ID on
+    Porto Editora's site for this title (978-972-0-68057-0) is an ebook
+    SKU, not a distinct print edition.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/ultimo-caderno-de-lanzarote/22175040"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2017405"
+
+# --- Short fiction ---
+
+- id: jose-saramago/objecto-quase/caminho-1999-pt
+  workId: jose-saramago/objecto-quase
+  isbn13: "9789722102926"
+  language: pt-PT
+  format: paperback
+  publisher: Editorial Caminho
+  year: 1999
+  note: >
+    5a ed., Caminho, 1999 - no Porto Editora reissue of this title was
+    found in the "Obras de José Saramago" backlist programme, so this
+    Caminho printing, now out of print, is recorded as the only edition on
+    record. BNP's own record carries the ISBN as its 10-digit form,
+    972-21-0292-3; converted to ISBN-13 here per the standard method (see
+    file header).
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?session=&profile=bn&menu=search&aspect=basic_search&npp=20&ipp=20&spp=20&index=.GW&term=Objecto+Quase+Saramago"
+
+- id: jose-saramago/o-conto-da-ilha-desconhecida/porto-editora-2018-pt
+  workId: jose-saramago/o-conto-da-ilha-desconhecida
+  isbn13: "9789720030825"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2018
+  note: >
+    1a ed., Porto Editora, 11-2018, 40pp, in the "Obras de José Saramago"
+    collection; BNP's record for this ISBN runs to a 19a ed. (2022). A
+    separate, also current illustrated edition (Fatinha Ramos,
+    978-972-0-72668-1, in Porto Editora's "Educação Literária" schools
+    collection) is a genuinely different object and not recorded here.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/o-conto-da-ilha-desconhecida/21484621"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2124543"
+
+# --- Plays ---
+
+- id: jose-saramago/a-noite/porto-editora-2014-pt
+  workId: jose-saramago/a-noite
+  isbn13: "9789720046482"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2014
+  note: >
+    Porto Editora, 05-2014, 136pp, in the "Obras de José Saramago"
+    collection. Sourced to Porto Editora's own catalogue alone: BNP's most
+    recent Saramago-authored record for this title is still Caminho's 2006
+    4a ed., and no BNP record was found under this ISBN.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/a-noite/15497953"
+
+- id: jose-saramago/que-farei-com-este-livro/porto-editora-2015-pt
+  workId: jose-saramago/que-farei-com-este-livro
+  isbn13: "9789720047144"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2015
+  note: 1a ed., Porto Editora, 01-2015, 192pp - the current printing.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/que-farei-com-este-livro-/16031884"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/1905678"
+
+- id: jose-saramago/a-segunda-vida-de-francisco-de-assis/porto-editora-2018-pt
+  workId: jose-saramago/a-segunda-vida-de-francisco-de-assis
+  isbn13: "9789720030436"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2018
+  note: 1a ed., Porto Editora, 06-2018, 144pp; BNP's record for this ISBN runs to a 5a ed. (2025).
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/a-segunda-vida-de-francisco-de-assis/21041827"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2003918"
+
+- id: jose-saramago/in-nomine-dei/porto-editora-2018-pt
+  workId: jose-saramago/in-nomine-dei
+  isbn13: "9789720030443"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2018
+  note: 1a ed., Porto Editora, 09-2018, 200pp - the current printing.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/in-nomine-dei/21041825"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2011901"
+
+- id: jose-saramago/don-giovanni-ou-o-dissoluto-absolvido/porto-editora-2018-pt
+  workId: jose-saramago/don-giovanni-ou-o-dissoluto-absolvido
+  isbn13: "9789720030412"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2018
+  note: 1a ed., Porto Editora, 09-2018, 98pp - the only edition found; still current.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/don-giovanni-ou-o-dissoluto-absolvido/21041872"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2012362"
+
+# --- Essays ---
+
+- id: jose-saramago/a-estatua-e-a-pedra/jose-saramago-foundation-2013-pt
+  workId: jose-saramago/a-estatua-e-a-pedra
+  language: pt-PT
+  format: paperback
+  publisher: José Saramago Foundation
+  year: 2013
+  note: >
+    The only Portuguese-language printing found: the Fundação José
+    Saramago's own 2013 bilingual Portuguese/Spanish edition, 111pp, sold
+    directly on the Fundação's own shop with no ISBN listed anywhere on its
+    product page. BNP's own catalogue holds only the 1999 Italian first
+    print edition and a 2017 Romanian translation, neither Portuguese.
+  sources:
+    - "https://www.josesaramago.org/en/product/the-statue-and-the-stone/"
+
+# --- Children's and illustrated books ---
+
+- id: jose-saramago/a-maior-flor-do-mundo/porto-editora-2014-pt
+  workId: jose-saramago/a-maior-flor-do-mundo
+  isbn13: "9789720728227"
+  language: pt-PT
+  format: hardcover
+  publisher: Porto Editora
+  year: 2014
+  note: >
+    1a ed., Porto Editora, 09-2014, hardcover, 32pp, illustrated by João
+    Caetano - continuing the illustrator of Caminho's own last printing
+    (10a ed., 2013). Two further Porto Editora printings illustrated by
+    different artists also exist (André Letria, 2015; Inês Oliveira, 2016,
+    under separate ISBNs) and are not recorded here.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/a-maior-flor-do-mundo/15870206"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/1901842"
+
+- id: jose-saramago/o-silencio-da-agua/porto-editora-2022-pt
+  workId: jose-saramago/o-silencio-da-agua
+  isbn13: "9789720035189"
+  language: pt-PT
+  format: hardcover
+  publisher: Porto Editora
+  year: 2022
+  note: >
+    1a ed., Porto Editora, 05-2022, hardcover, 32pp, illustrated by Yolanda
+    Mosquera - a new illustrated edition superseding the original 2011
+    Caminho printing illustrated by Manuel Estrada (978-972-21-2393-8),
+    not recorded here.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/o-silencio-da-agua/25512479"
+    - "http://id.bnportugal.gov.pt/bib/bibnacional/2106765"
+
+# --- Apocrypha: a contributor credit ---
+# The two correspondence volumes (with José Rodrigues Miguéis and with
+# Jorge Amado) have no recorded edition here - see the file header's
+# COVERAGE note for why.
+
+- id: jose-saramago/poetica-dos-cinco-sentidos-o-ouvido/bertrand-1979-pt
+  workId: jose-saramago/poetica-dos-cinco-sentidos-o-ouvido
+  language: pt-PT
+  format: paperback
+  publisher: Bertrand
+  year: 1979
+  note: >
+    First and only known edition of the six-author anthology, per BNP's
+    own catalogue record ("Poética dos cinco sentidos : la dame à la
+    licorne / Ana Hatherly... [et al.]. Lisboa : Bertrand, 1979."), which
+    carries no ISBN.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?session=&profile=bn&menu=search&aspect=basic_search&npp=20&ipp=20&spp=20&index=.GW&term=Poetica+Cinco+Sentidos"
