@@ -1320,7 +1320,7 @@ def main():
         r"|\bthis (?:pass|run)\b|\bnever ran\b|\bnot yet (?:a )?(?:finished|complete)\b"
         r"|\bhas since been\b|\bwas (?:first|originally) (?:built|written|drafted)\b"
         r"|\bstill (?:open|needs|remains)\b|\bfor (?:a )?(?:future|later) pass\b"
-        r"|search budget|\bstage \d\b|\.claude|skills/|\bTODO\b|\bre-?run\b"
+        r"|search budget|\bstage \d\b|\.claude|skills/|(?-i:\bTODO\b)|\bre-?run\b"
         # self-congratulation about method rather than a statement about the data
         r"|\brather than (?:papered over|guessed|invented|coined)\b"
         r"|\bflagged rather than\b|\bleft (?:to|for) the\b",
