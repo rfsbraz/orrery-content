@@ -1,0 +1,88 @@
+stage: audit-fixes
+summary: >
+  Closed the five actionable findings wing-audit routed to other owners. The
+  blocking one is gone, and the quatercentenary commission proved recoverable
+  rather than deletable, so only the three unsupported claims came out. The
+  1966 Governor General's Award for The Circle Game is now a dated event,
+  splitting the 1961-1968 dark run and giving era 1 its first poetry-facing
+  aura. One thumbnail cover was replaced with the jacket scan of the same
+  edition; the other has no larger scan anywhere reached and ships empty. The
+  Hulu costume constraint and the covid-19 anchor moved into content.
+gates:
+  validate: "OK, 0 errors, 1337 works. Warnings are handoff-length caps only."
+  aura: >
+    18 entries (was 17), 0.26 per work, longest dark run 7 yrs (2008-2014),
+    was 8 yrs (1961-1968). Still flagged, honestly. The named window did
+    shrink: 1961-1968 splits into 1961-1965 (5) and 1967-1968 (2). The new
+    headline run was always there, masked by the longer one, and is not padded
+    away.
+  artRotation: >
+    Both gates pass on 15 events: no organisation over its cap, no neighbour
+    repeats; pacing holds. Contour #==.=#=.===#=#= - the new mid cell sits at
+    position 2, between full-bleed-vista and artifact-spread. beside 3/15.
+  i18n: "No margaret-atwood file in PARTIAL."
+fixes:
+  - id: trumpets-of-summer-dead-source
+    was: blocking
+    change: >
+      Dropped the three claims whose only source was steventemplebooks.com
+      (404, certificate mismatched to the host): the CBC as commissioner, the
+      16-page octavo booklet, the single performance to 36. The
+      Encyclopedia of Music in Canada's Beckwith article has the piece
+      "commissioned for the Shakespeare quatercentennial", so that survives;
+      Wikipedia's has 1964, Atwood's text and Berandol. The only CBC link on
+      record is a Festival Singers recording (CBC SM 81), not a commission.
+      works.yaml's header justified this title over Pauline on "whose text was
+      published"; now "reached print inside Beckwith's Berandol score". pt-PT
+      mirrors it.
+    sources: [thecanadianencyclopedia.ca/en/article/john-beckwith-emc, "en.wikipedia.org/wiki/John_Beckwith_(composer)"]
+  - id: aura-1961-1968
+    was: missing
+    change: >
+      Added margaret-atwood-circle-game-gg-1966 to events.yaml - a franchise
+      event, since a prize given to a book is what this file holds and the
+      wing's five other prize entries live here. beside / emblem-seal / 1
+      image / impact med. A note records the 1966 date as the award year;
+      winners were announced 27 March 1967.
+    sources: ["en.wikipedia.org/wiki/1966_Governor_General's_Awards", "en.wikipedia.org/wiki/The_Circle_Game_(poetry_collection)"]
+  - id: thumbnail-covers
+    was: missing
+    change: >
+      Two-Headed Poems moves from cover id 4408084 to 8273972: Open Library
+      holds two records for the same Oxford University Press 1978 edition
+      (ISBN 0195402928), and 4408084 is the title page at 128x211 with an
+      owner's inscription over the author's name, while 8273972 is the dust
+      jacket at 344x500. Days of the Rebels ships no cover - OL's master is
+      128x114 and -L redirects to it; AbeBooks' ISBN image is a placeholder
+      printing "this is not the actual book cover", Amazon returns a 1x1,
+      Goodreads and WorldCat carry no jacket, the Internet Archive no scan,
+      the publisher is defunct. The entry records the search. Covers 63/69 to
+      62/69; smallest shipped cover now 300px+.
+  - id: hulu-costume-constraint-not-in-content
+    was: missing
+    change: >
+      note added to margaret-atwood-handmaids-tale-hulu-2017, in the shape
+      spoiler-audit used on the four bounded works: the red-cloak/white-bonnet
+      costume is the wing's own avoid entry, and the pull-focus inset
+      magnifies a press artefact - headline, chyron, podium - never a figure
+      in the crowd or what it wears. Grading unchanged; only where the
+      constraint lives.
+  - id: covid-include-cites-the-weaker-anchor
+    was: missing
+    change: >
+      The include now leads on Burning Questions (2022), sole-authored and
+      with the pandemic as a subject rather than the end of a date range.
+      Fourteen Days stays as the second leg with its limit stated: which of
+      the 36 stories is hers is not publicly identified. Kirkus added to that
+      entry's sources.
+    sources: [kirkusreviews.com/book-reviews/margaret-atwood/burning-questions/]
+notFixed:
+  - "fourteen-days-isbn-still-blocked: openlibrary.org still 503, already recorded as blocked."
+  - "wing-audit's stale and curator's-call items: rulings and catalogue-wide work."
+forStages:
+  asset-prompt: >
+    The Hulu event now carries its costume constraint as a note. One asset
+    more than asset_audit last reported: margaret-atwood-circle-game-gg-1966,
+    beside / emblem-seal, one image - the award as a seal, not a book cover.
+openQuestions:
+  - "The wing still flags on aura, now at 2008-2014: seven publishing years around The Year of the Flood, MaddAddam and Positron with nothing dated in them. Separate research, not padding."
