@@ -1,22 +1,36 @@
 # Global author entity. Authors are referenced by id from franchises and
 # works (authorIds / withAuthorIds), so the same person resolves the same
 # everywhere. Author-LIFE events live here; franchise-specific events belong
-# in content/franchises/gabriel-garcia-marquez/events.yaml. lifeEvents is
-# left empty: real anchors exist (the birth in Aracataca and the
-# grandparents who raised him, the 1955 shipwreck reportage that got him
-# sent abroad, the eighteen months writing Cien años de soledad on borrowed
-# money, the 1982 Nobel, the Mexico City death), but a dated, sourced
-# lifeEvent entry also needs the layout-grammar fields
-# (docs/SCHEMA.md's organisation/illustration_type/images_required) that
-# depend on a visual language this wing does not have yet. The clearest
-# anchors are folded into bio prose below instead, so none of them is lost.
+# in content/franchises/gabriel-garcia-marquez/events.yaml.
+#
+# lifeEvents spans 1927-2016: the Aracataca birth and grandparents who raised
+# him; the Barranquilla Group apprenticeship; the 1955 shipwreck reportage
+# that embarrassed the Rojas Pinilla dictatorship and got him sent abroad; his
+# 1958 marriage to Mercedes Barcha; meeting Fidel Castro in Havana in 1959 and
+# the CIA/Cuban-exile threats that pushed him from Prensa Latina's New York
+# bureau to Mexico City in 1961; the eighteen months writing Cien años de
+# soledad (1965-1966) and the overnight fame that sent him to Barcelona in
+# 1967; writing El otoño del patriarca (1968-1975) on an image he had carried
+# since watching a dictator fall in 1958; breaking, in 1981, a six-year vow
+# not to publish fiction while Pinochet held power; the 1982 Nobel;
+# co-founding a Cuban film school in 1986 and a Colombian journalism
+# foundation in 1994; the 1999 lymphatic-cancer misdiagnosis that prompted his
+# memoir; his papers opening to researchers in Texas in 2016; the dementia of
+# his final years that left En agosto nos vemos unfinished; and his 2014
+# death. No sourced, load-bearing fact turned up for 2002-2006 (Vivir para
+# contarla and Memoria de mis putas tristes both landed as steady, reviewed
+# publications with no rupture behind either) or for the ordinary
+# publicity/awards years around them; recorded here rather than re-searched
+# by a later pass.
 #
 # NAME. English and Spanish Wikipedia agree: born Gabriel José García
 # Márquez (Spanish naming convention - García is the paternal surname,
 # Márquez the maternal one), universally known as "García Márquez" in print
 # and, to family and readers alike, as "Gabo" or "Gabito". He also wrote
 # columns for El Heraldo in Barranquilla under the byline "Septimus" early
-# in his journalism career, recorded here as a pseudonym.
+# in his journalism career, recorded here as a pseudonym; no stated motive or
+# reveal moment turns up for it (a young columnist's byline, not a hidden
+# identity), so it stays a note rather than its own dated event.
 id: gabriel-garcia-marquez
 name: Gabriel García Márquez
 aka: ["Gabo", "Gabito"]
@@ -65,7 +79,391 @@ pseudonyms:
       Byline used for a column in El Heraldo, Barranquilla, in the late
       1940s, early in his journalism career, before he wrote under his
       own name.
-lifeEvents: []
+lifeEvents:
+  - id: garcia-marquez-born-1927
+    organisation: full-bleed-vista
+    illustration_type: establishing-landscape
+    images_required: 1
+    date: 1927-03-06
+    title: Born in Aracataca, raised by his grandparents
+    impact: low
+    description: >
+      Born in Aracataca, a small town on Colombia's Caribbean coast. His
+      father became a pharmacist and moved the family to Barranquilla soon
+      after, leaving young Gabriel behind; he was raised through childhood by
+      his maternal grandparents, Colonel Nicolás Ricardo Márquez Mejía, a
+      veteran of the Thousand Days' War, and Tranquilina Iguarán, who told him
+      folk tales and ghost stories as plain fact. He later said this
+      household, and its house's own atmosphere, shaped both his politics and
+      the deadpan voice in which his fiction tells impossible things.
+      Aracataca itself became the model for the fictional Macondo.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+      - https://www.nobelprize.org/prizes/literature/1982/marquez/biographical/
+  - id: garcia-marquez-barranquilla-group-1950
+    organisation: marginalia
+    illustration_type: isolated-object
+    images_required: 1
+    date: 1950
+    dateRange: "1948-1952"
+    title: Writes his way into the Barranquilla Group
+    impact: low
+    description: >
+      After leaving law school in Bogotá, wrote for El Universal in Cartagena
+      (1948-1949) and then, from 1950 to 1952, a whimsical column under the
+      byline "Septimus" for El Heraldo in Barranquilla, paid three pesos a
+      piece. In Barranquilla he fell in with the informal circle of writers
+      and journalists known as the Barranquilla Group, including bookseller
+      Ramón Vinyes, an Old Catalan émigré later fictionalized as the
+      bookshop-owning "wise Catalonian" in
+      [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cien años de
+      soledad]]. The group also introduced him to Virginia Woolf and William
+      Faulkner, whose techniques marked his own.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+      - https://es.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+  - id: garcia-marquez-shipwreck-exile-1955
+    organisation: artifact-spread
+    illustration_type: document-facsimile
+    images_required: 1
+    date: 1955
+    title: A shipwreck story embarrasses a dictatorship, and gets him sent abroad
+    impact: high
+    description: >
+      As a reporter for El Espectador in Bogotá, interviewed the sole
+      survivor of a Colombian Navy destroyer that had sunk at sea, and
+      serialized his account in fourteen daily installments. The reporting,
+      later the book
+      [[work:gabriel-garcia-marquez/relato-de-un-naufrago|Relato de un
+      náufrago]], contradicted the government's story that a storm sank the
+      ship, revealing instead that a badly stowed load of contraband cargo
+      broke loose on deck. The disclosure embarrassed General Gustavo Rojas
+      Pinilla's military government; El Espectador sent García Márquez to
+      Europe as a foreign correspondent soon after, in what the Nobel
+      Foundation's own biographical note calls "a more or less compulsory
+      exile." He filed dispatches for El Independiente, the paper that
+      briefly replaced El Espectador after Rojas Pinilla's censors shut it
+      down.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+      - https://es.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+      - https://www.nobelprize.org/prizes/literature/1982/marquez/biographical/
+  - id: garcia-marquez-marries-mercedes-1958
+    organisation: beside
+    illustration_type: relationship-tableau
+    images_required: 1
+    date: 1958-03
+    title: Marries Mercedes Barcha, twenty years after he decided to
+    impact: med
+    description: >
+      Married Mercedes Barcha Pardo in March 1958 at the Church of Nuestra
+      Señora del Perpetuo Socorro in Barranquilla, having reportedly proposed
+      to her when he was 18 and she was 13; the two had met years earlier
+      while she was still at school. She waited for him through his European
+      exile. They had two sons, Rodrigo (b. 1959) and Gonzalo (b. 1962), and
+      she managed the household finances through the lean years that
+      followed, including the eighteen months he spent writing
+      [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cien años de
+      soledad]] on credit.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+      - https://es.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+  - id: garcia-marquez-castro-friendship-mexico-1959
+    organisation: passage
+    illustration_type: journey-transit
+    images_required: 1
+    date: 1959-01
+    dateRange: "1959-1961"
+    title: Meets Fidel Castro, and Prensa Latina years push him toward Mexico City
+    impact: med
+    description: >
+      Met Fidel Castro in Havana in January 1959, weeks after the Cuban
+      Revolution's triumph; the friendship itself formed over the following
+      two years while García Márquez worked as a correspondent for Prensa
+      Latina, the Cuban government's news agency, first in Bogotá and then in
+      Havana. Posted to Prensa Latina's New York bureau in 1961, he left after
+      receiving threats and facing hostility from anti-Castro Cuban exiles and
+      the CIA over his reporting, and moved his family to Mexico City instead
+      - the city where he would write
+      [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cien años de
+      soledad]] a few years later. The friendship with Castro lasted the rest
+      of both men's lives and became one of the most publicly scrutinized
+      facts of García Márquez's career: he called it "an intellectual
+      friendship" built on literature, used his access to intervene for
+      Cuban political prisoners by his own account, was for years denied a
+      US visa as a result of his politics (lifted only after Bill Clinton,
+      a declared admirer of
+      [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cien años de
+      soledad]], took office), and drew sustained criticism from Cuban exile
+      writers, most pointedly Reinaldo Arenas.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+      - https://es.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+      - https://www.theguardian.com/books/2014/apr/17/gabriel-garcia-marquez-obituary
+  - id: garcia-marquez-writes-cien-anos-1965
+    organisation: immersion
+    illustration_type: symbolic-still-life
+    images_required: 1
+    date: 1965
+    dateRange: "1965-1966"
+    title: Turns the car around on the road to Acapulco
+    impact: high
+    description: >
+      Driving his family to Acapulco for a vacation in 1965, saw the opening
+      of a novel whole in his head, turned the car around, and drove back to
+      Mexico City. He asked Mercedes to manage the household's finances for
+      the months ahead, sold the family car, and shut himself in a room to
+      write for the next year and a half while she took food on credit from
+      their butcher and baker. The result,
+      [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cien años de
+      soledad]] (1967), sold out its first print run in a week and became the
+      book that defined the Latin American Boom.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/One_Hundred_Years_of_Solitude
+      - https://es.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+  - id: garcia-marquez-fame-barcelona-1967
+    organisation: full-bleed-vista
+    illustration_type: place-portrait
+    images_required: 1
+    date: 1967
+    dateRange: "1967-1974"
+    title: Overnight fame sends him to Barcelona for seven years
+    impact: med
+    description: >
+      [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cien años de
+      soledad]]'s publication in June 1967 turned García Márquez, within
+      months, into the best-known name of the Latin American Boom; he
+      downplayed the reaction, calling the book "a bit of a joke, full of
+      signals to close friends." He moved his family to Barcelona, Spain,
+      for the next seven years, still living under Francisco Franco's
+      dictatorship, and the international standing the novel earned him won
+      the Rómulo Gallegos International Novel Prize and the Neustadt
+      International Prize for Literature, both in 1972, and gave him the
+      public platform he would later use as an informal facilitator between
+      the Colombian government and guerrilla groups.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+  - id: garcia-marquez-writes-otono-del-patriarca-1968
+    organisation: artifact-spread
+    illustration_type: manuscript-proof
+    images_required: 1
+    date: 1968
+    dateRange: "1968-1975"
+    title: Writes a dictator novel he had been carrying since watching one fall
+    impact: med
+    description: >
+      Began writing
+      [[work:gabriel-garcia-marquez/el-otono-del-patriarca|El otoño del
+      patriarca]] in Barcelona in 1968, drawing on an image he had carried
+      for a decade: watching Venezuelan dictator Marcos Pérez Jiménez flee
+      the country in 1958, "the first time we had seen a dictator fall in
+      Latin America." He considered the book finished by 1971 but kept
+      revising it for four more years, publishing it in 1975 as a portrait
+      of absolute power he called "a poem on the solitude of power."
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+  - id: garcia-marquez-vargas-llosa-punch-1976
+    organisation: mosaic
+    illustration_type: press-media-collage
+    images_required: 1
+    date: 1976
+    title: Vargas Llosa punches him in the face, ending a decade of friendship
+    impact: med
+    description: >
+      In 1976, at a movie premiere at the Palacio de Bellas Artes in Mexico
+      City, fellow Boom novelist Mario Vargas Llosa - who five years earlier
+      had published a book-length study of García Márquez's work, García
+      Márquez: historia de un deicidio - punched him in the face as he
+      approached to embrace him. Neither writer ever gave a public account of
+      the reason; the two did not speak again for decades. A photograph of
+      García Márquez sporting a black eye resurfaced in 2007, reigniting
+      public interest in what had become one of modern literature's
+      best-known feuds.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Mario_Vargas_Llosa
+  - id: garcia-marquez-pinochet-silence-broken-1981
+    organisation: interlude
+    illustration_type: portrait-of-absence
+    images_required: 1
+    date: 1981
+    dateRange: "1975-1981"
+    title: Breaks a six-year vow of silence over Pinochet
+    impact: med
+    description: >
+      After
+      [[work:gabriel-garcia-marquez/el-otono-del-patriarca|El otoño del
+      patriarca]] and the move from Barcelona to Mexico City, pledged not to
+      publish fiction again until Chile's dictator Augusto Pinochet was
+      removed from power, a protest against the 1973 coup he had already
+      written about for the leftist magazine Alternativa, which he
+      co-founded in 1974. Pinochet remained in power, and in 1981 García
+      Márquez broke his own vow, publishing
+      [[work:gabriel-garcia-marquez/cronica-de-una-muerte-anunciada|Crónica
+      de una muerte anunciada]] anyway: he "could not remain silent in the
+      face of injustice and repression."
+    spoilerAfter: null
+    sources:
+      - https://www.theguardian.com/books/2014/apr/17/gabriel-garcia-marquez-obituary
+      - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+  - id: garcia-marquez-nobel-prize-1982
+    organisation: beside
+    illustration_type: public-event-tableau
+    images_required: 1
+    date: 1982-12-10
+    title: Wins the Nobel Prize, and delivers two speeches
+    impact: high
+    description: >
+      Awarded the 1982 Nobel Prize in Literature "for his novels and short
+      stories, in which the fantastic and the real are combined in a richly
+      composed world of imagination, reflecting a continent's life and
+      conflicts," the fourth Latin American laureate. On 10 December 1982 he
+      delivered two speeches in Stockholm: the lecture "La soledad de América
+      Latina" ("The Solitude of Latin America"), a political address on the
+      violence and misunderstanding Latin America had endured, later
+      collected in
+      [[work:gabriel-garcia-marquez/yo-no-vengo-a-decir-un-discurso|Yo no
+      vengo a decir un discurso]]; and a separate, much shorter banquet toast,
+      "Brindis por la poesía," closing with a call to drink to poetry itself
+      as, in the words of poet Luis Cardoza y Aragón, "the only concrete proof
+      of the existence of man."
+    spoilerAfter: null
+    sources:
+      - https://www.nobelprize.org/prizes/literature/1982/marquez/facts/
+      - https://www.nobelprize.org/prizes/literature/1982/marquez/lecture/
+      - https://www.nobelprize.org/prizes/literature/1982/marquez/speech/
+  - id: garcia-marquez-founds-eictv-1986
+    organisation: beside
+    illustration_type: workplace-workshop
+    images_required: 1
+    date: 1986-12-15
+    title: Co-founds a film school in Cuba
+    impact: low
+    description: >
+      Co-founded the Escuela Internacional de Cine y Televisión (EICTV) in
+      San Antonio de los Baños, Cuba, on 15 December 1986, together with
+      Cuban filmmakers Julio García Espinosa and Tomás Gutiérrez Alea and
+      Argentine filmmaker Fernando Birri, all four former classmates at
+      Rome's Centro Sperimentale di Cinematografia. The school trains Latin
+      American, African and Asian filmmakers for free and is still active
+      decades later, part of a pattern of using his own fame and money to
+      build teaching institutions, echoed in 1994 by the journalism
+      foundation he set up in Cartagena.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Escuela_Internacional_de_Cine_y_Televisi%C3%B3n
+      - https://www.theguardian.com/books/2014/apr/17/gabriel-garcia-marquez-obituary
+  - id: garcia-marquez-founds-fnpi-1994
+    organisation: beside
+    illustration_type: workplace-workshop
+    images_required: 1
+    date: 1994
+    title: Spends his royalties on a journalism school of his own
+    impact: low
+    description: >
+      Founded the Fundación para un Nuevo Periodismo Iberoamericano (FNPI,
+      later the Fundación Gabo) in Cartagena de Indias in 1994, using
+      royalties from his fiction to fund training for young journalists
+      across Latin America and Spain, taught by working reporters such as
+      Alma Guillermoprieto and Jon Lee Anderson. It runs the same craft he
+      never fully left even at the height of his fame as a novelist.
+    spoilerAfter: null
+    sources:
+      - https://www.theguardian.com/books/2014/apr/17/gabriel-garcia-marquez-obituary
+      - https://es.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+  - id: garcia-marquez-cancer-misdiagnosis-1999
+    organisation: floating-object
+    illustration_type: isolated-object
+    images_required: 1
+    date: 1999
+    title: A cancer diagnosis sends him to write his memoirs instead
+    impact: med
+    description: >
+      Diagnosed in 1999 with lymphatic cancer after having first been
+      misdiagnosed with pneumonia; chemotherapy at a Los Angeles hospital put
+      the illness into remission. "I reduced relations with my friends to a
+      minimum, disconnected the telephone, canceled the trips and all sorts
+      of current and future plans," he told the Colombian newspaper El
+      Tiempo, "and locked myself in to write every day without interruption."
+      The result, three years later, was
+      [[work:gabriel-garcia-marquez/vivir-para-contarla|Vivir para
+      contarla]] (2002), the first and, as it turned out, only volume of a
+      planned three-part memoir.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+      - https://es.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+  - id: garcia-marquez-dementia-final-years-2012
+    organisation: beside
+    illustration_type: book-object
+    images_required: 1
+    date: 2012
+    dateRange: "2012-2014"
+    title: Dementia takes hold, and a novel is left unfinished
+    impact: high
+    description: >
+      His brother Jaime said publicly in mid-2012 that García Márquez was
+      suffering from senile dementia, a report the family disputed at the
+      time by pointing to a video of him celebrating his birthday that March.
+      By the time of his 2014 death, the Guardian's obituary stated plainly
+      that he had died "after suffering from Alzheimer's disease," and his
+      sons later confirmed the fuller picture: worsening memory in his final
+      years left him unable to follow the plot of the novel he had been
+      working on since 1997, eventually titled
+      [[work:gabriel-garcia-marquez/en-agosto-nos-vemos|En agosto nos
+      vemos]], and he never completed it.
+    spoilerAfter: null
+    sources:
+      - https://es.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+      - https://www.theguardian.com/books/2014/apr/17/gabriel-garcia-marquez-obituary
+      - https://en.wikipedia.org/wiki/Until_August
+  - id: garcia-marquez-death-2014
+    organisation: immersion
+    illustration_type: portrait-of-absence
+    images_required: 1
+    date: 2014-04-17
+    title: Dies in Mexico City
+    impact: high
+    description: >
+      Hospitalized in Mexico City in early April 2014 with infections in his
+      lungs and urinary tract and with dehydration; Spanish-language
+      reporting attributed the relapse to the lymphatic cancer diagnosed in
+      1999, which by then had reached a lung, lymph nodes and his liver. He
+      died there on 17 April 2014, at 87, of complications from pneumonia.
+      Colombian president Juan Manuel Santos declared three days of national
+      mourning and called him "the greatest Colombian who ever lived." He was
+      cremated in a private family ceremony; his ashes were moved to a
+      cloister in Cartagena de Indias in 2016.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+      - https://es.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+  - id: garcia-marquez-archive-opens-2016
+    organisation: medallion
+    illustration_type: book-object
+    images_required: 1
+    date: 2016-10-21
+    title: His papers become a public archive in Texas
+    impact: low
+    description: >
+      Following his death, his family placed his personal papers, manuscript
+      drafts, correspondence and photographs at the University of Texas at
+      Austin's Harry Ransom Center, which opened the Gabriel García Márquez
+      Papers to researchers on 21 October 2016; a digitized selection went
+      fully online and freely available in 2018. The five drafts of
+      [[work:gabriel-garcia-marquez/en-agosto-nos-vemos|En agosto nos vemos]]
+      later published against his wishes came from this same collection.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
 sources:
   - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
   - https://es.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
