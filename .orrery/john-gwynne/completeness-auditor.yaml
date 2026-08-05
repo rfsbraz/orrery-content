@@ -1,0 +1,64 @@
+stage: completeness-auditor
+summary: >
+  Swept the 16-work bibliography against ISFDB, Wikipedia, Goodreads,
+  OpenLibrary and Orbit/Hachette. Found one real gap: The Wolves of War
+  (Orbit, forthcoming 2026-11-03), a new novel opening a fourth setting (The
+  Wolfheart Chronicles, Slavic-mythology-inspired) - added via `forthcoming`
+  per docs/SCHEMA.md's jo-nesbo/nadeskudd precedent, sourced to Amazon UK's
+  live listing plus independent Publishers Weekly and OpenLibrary records
+  (ISFDB has no entry yet). Sourced The Fury of the Gods' previously-thin
+  synopsis to Orbit's own publisher copy. Independently re-verified Valour
+  (2014)/Ruin (2015) and the shared-Banished-Lands/separate-Bloodsworn
+  structure - both hold, now with a third independent source each (Gwynne's
+  own dated Goodreads Q&A). Re-checked the three untagged anthology stories
+  against their own ISFDB title records directly: each carries a genuinely
+  blank Series field (unlike the three ISFDB does tag), and all three predate
+  Bloodsworn's 2021 launch - left unconnected, no basis found to assign a
+  subseries.
+worksBefore: 16
+worksAfter: 17
+added:
+  - id: john-gwynne/the-wolves-of-war
+    reordersDefaultOrder: false
+    note: "Publishes 2026, after every existing work - extends the tail only."
+corrections:
+  - work: john-gwynne/the-fury-of-the-gods
+    field: synopsis
+    change: "Thin placeholder -> full synopsis sourced to Orbit US/UK product copy."
+    reordersDefaultOrder: false
+verifiedNoChange:
+  - "Valour 2014, Ruin 2015 (ISFDB + Wikipedia + dated Goodreads Q&A evidence)"
+  - "Shared Banished Lands (Faithful and the Fallen + Of Blood and Bone) vs separate Bloodsworn Saga"
+  - "canonTier: all 11 novels core, all 6 anthology pieces apocrypha - nothing mistiered"
+anthologySubseriesQuestion: >
+  No change. "An Oath Given," "The Sundering," "The Greatest Battle" each
+  have a blank ISFDB Series field (re-verified on their own title records,
+  not just the summary bibliography), unlike the three ISFDB does tag for
+  this author. All three predate Bloodsworn (2021), so a Bloodsworn link is
+  chronologically impossible. No source found tying any to the Banished
+  Lands. Left standalone/unconfirmed per existing notes.
+missingWorksSweep: >
+  No 4th Bloodsworn book (Orbit's own copy calls Fury "the earth-shattering
+  final book" of a trilogy), no novella/companion guide/further anthology
+  piece found beyond The Wolves of War. The 2025 Fury paperback is an
+  edition, not a new work.
+validator: "validate.py --slug john-gwynne -> OK, 0 errors, 1 pre-existing warning (theme.yaml art: block, not this stage's)"
+forStages:
+  press-archaeology: >
+    lifeEvents still []; candidate anchors unchanged (Singapore birth,
+    Brighton, 2013 Morningstar Award, Viking re-enactment). New: Gwynne is
+    confirmed alive and actively publishing (Wolves of War, Nov 2026) - bio
+    stays present tense.
+  eras: >
+    Bibliography now spans 2012-2026 across four settings, not three. Closer
+    to a small set of discrete, already-named worlds than to Grisham's
+    unperiodisable spine - whether that earns an eras.yaml or stays
+    subseries-only is open, not decided here.
+  reading-orders: >
+    Banished-Lands-then-Bloodsworn structure still holds. The Wolves of War
+    adds a fourth, currently unconnected branch, not startHere-relevant until
+    it ships.
+openQuestions:
+  - "The Wolves of War is announced, not published (forthcoming 2026-11-03) - added under SCHEMA.md's `forthcoming` mechanism since the date is publisher-sourced, not inferred; flagging in case a curator prefers holding unreleased titles out until they ship."
+  - "Its subseries name, 'The Wolfheart Chronicles', is taken verbatim from the book's own subtitle - low risk, worth a second look."
+  - "featured is at the wing's cap of 3 (Malice, Wrath, Shadow of the Gods); The Wolves of War was left unfeatured despite opening a 4th setting, both for the cap and because it hasn't shipped - revisit once it has."

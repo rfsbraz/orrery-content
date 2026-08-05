@@ -5,14 +5,24 @@
 # in the spine.
 #
 # Coverage: John Gwynne's complete published bibliography as listed by ISFDB
-# (https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne) - ten novels across three
-# series plus six short-fiction contributions to multi-author anthologies.
-# Excluded as not independent works: "Malice (excerpt)" and "The Shadow of the
-# Gods (excerpt)", both ISFDB title records for promotional samples of the
-# novels themselves, not separate content. Also excluded: the two omnibus
-# editions ISFDB records (The Faithful and the Fallen omnibus; The Bloodsworn
-# Saga omnibus, 2025) - these repackage works already catalogued individually
-# and are edition data, not separate works.
+# (https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne) - ten published novels
+# across three series, one further announced novel opening a fourth series,
+# plus six short-fiction contributions to multi-author anthologies. Excluded
+# as not independent works: "Malice (excerpt)" and "The Shadow of the Gods
+# (excerpt)", both ISFDB title records for promotional samples of the novels
+# themselves, not separate content. Also excluded: the two omnibus editions
+# ISFDB records (The Faithful and the Fallen omnibus; The Bloodsworn Saga
+# omnibus, 2025) - these repackage works already catalogued individually and
+# are edition data, not separate works.
+#
+# THE WOLVES OF WAR (2026): announced after ISFDB's own bibliography page was
+# last updated, so it carries no ISFDB record yet. Sourced instead to its
+# Amazon UK product listing (full jacket copy, ISBN, publisher and page
+# count), corroborated independently by Publishers Weekly's book database
+# (title/author/ISBN registered) and by Open Library's edition record for the
+# same ISBN. Orbit, 3 November 2026, opening a new series (The Wolfheart
+# Chronicles) in a fourth setting inspired by Slavic rather than Norse or
+# invented mythology - a clean break from both the Banished Lands and Vigrid.
 #
 # SERIES STRUCTURE: The Faithful and the Fallen (4 books) and Of Blood and
 # Bone (3 books) share one continuous setting, the Banished Lands - confirmed in
@@ -30,13 +40,15 @@
 # worlds. Modelled as three subseries strings rather than two (Faithful and
 # the Fallen / Of Blood and Bone) plus one, the same pattern this catalogue
 # already uses for one world spanning multiple eras (see brandon-sanderson's
-# "Mistborn: Era 1" / "Mistborn: Era 2").
+# "Mistborn: Era 1" / "Mistborn: Era 2"). The Wolfheart Chronicles, opened by
+# the announced The Wolves of War (2026), is a fourth setting again separate
+# from all three.
 #
-# CANON TIER: all ten novels are core - this is the entire spine of a living
-# author with no juvenilia, ghost-written work, or discarded early drafts on
-# record. The six anthology contributions are apocrypha per authorRole:
-# contributor (SCHEMA.md's own worked example): real, completionist-relevant,
-# but not John Gwynne's own book.
+# CANON TIER: all eleven novels (ten published, one announced) are core -
+# this is the entire spine of a living author with no juvenilia, ghost-written
+# work, or discarded early drafts on record. The six anthology contributions
+# are apocrypha per authorRole: contributor (SCHEMA.md's own worked example):
+# real, completionist-relevant, but not John Gwynne's own book.
 
 # --- The Faithful and the Fallen (Banished Lands) ---
 - id: john-gwynne/malice
@@ -229,19 +241,49 @@
   subseries: "The Bloodsworn Saga"
   canonTier: core
   synopsis: >
-    The Bloodsworn Saga's concluding volume, resolving the war between the
-    revived gods and the mortals of Vigrid begun in The Shadow of the Gods.
+    The Bloodsworn trilogy's concluding volume: Varg, now an accepted member
+    of the Bloodsworn, faces the company's biggest challenge yet, slaying a
+    dragon; Elvar fights to consolidate her power in Snakavik against threats
+    from without and within, and to master a wolf god she can barely control;
+    Biorr's warband marches north for blood while Gudvarr pursues his own
+    plan to win the dragon-god Lik-Rifa's favour. All paths converge on
+    Snakavik for the final battle over the fate of Vigrid.
   note: >
-    No reviewed-source plot summary was found for this entry (Publishers
-    Weekly and Fantasy Book Review both carry pages for it with no review
-    text posted); the synopsis above is limited to what the trilogy's own
-    established arc and the title itself support, and should be verified
-    against a fuller source. Reached number five on the New York Times Trade
-    Fiction Paperback bestseller list in November 2024 and was named the
-    second-best fantasy book of 2024 by ScreenRant.
+    Reached number five on the New York Times Trade Fiction Paperback
+    bestseller list in November 2024 and was named the second-best fantasy
+    book of 2024 by ScreenRant.
   sources:
     - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
     - "https://en.wikipedia.org/wiki/John_Gwynne_(author)"
+    - "https://www.hachettebookgroup.com/titles/john-gwynne/the-fury-of-the-gods/9780316539951/"
+    - "https://www.orbit-books.co.uk/titles/john-gwynne/the-fury-of-the-gods/9780356514260/"
+
+# --- The Wolfheart Chronicles (a fourth, Slavic-mythology-inspired setting) ---
+- id: john-gwynne/the-wolves-of-war
+  title: "The Wolves of War"
+  authorIds: [john-gwynne]
+  published: 2026
+  forthcoming: 2026-11-03
+  subseries: "The Wolfheart Chronicles"
+  canonTier: core
+  synopsis: >
+    The Clans once lived free, honouring their own gods and traditions, until
+    northern invaders broke them with blood and fire. A father's only
+    concern is protecting his daughter Halia, who has been trapped in her
+    own body since birth yet dreams at night of running with wolves and
+    speaking to the fae creatures of the forest - powers many call a curse
+    but that may be the only way her family survives what is coming, as two
+    princes turned mortal enemies and an iron-toothed witch drag whole
+    nations toward war.
+  note: >
+    Opens a new series in a setting drawing on Slavic rather than Norse
+    mythology - a clean break from both the Banished Lands and the Bloodsworn
+    Saga's Vigrid, the same pattern by which Gwynne opened Vigrid as a break
+    from the Banished Lands in 2021.
+  sources:
+    - "https://www.amazon.co.uk/dp/0356527875"
+    - "https://www.publishersweekly.com/9780356527871"
+    - "https://openlibrary.org/isbn/9780356527871"
 
 # --- Short fiction: contributions to multi-author anthologies ---
 # All six are authorRole: contributor / canonTier: apocrypha per SCHEMA.md's
