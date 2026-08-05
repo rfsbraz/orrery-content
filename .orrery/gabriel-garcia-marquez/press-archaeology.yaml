@@ -1,0 +1,82 @@
+stage: press-archaeology
+wing: gabriel-garcia-marquez
+summary: >
+  Built the author's first lifeEvents (17) and the franchise's first
+  events.yaml (6). The trivial 13-year dark run stage_plan.py flagged
+  (2012-2024, an empty aura) closed, then reopened eight times as each
+  closure exposed the next real gap (1966-1973, 1983-1994, 2015-2023,
+  1987-1994, 1968-1973, 1969-1973, 1977-1981, 1990-1994) - closed each
+  with dated, sourced facts across the full 1927-2024 span. One dark run
+  remains: 2002-2006 (5 years), a genuinely quiet late-career stretch
+  (two reviewed, unremarkable books) that a second search pass could not
+  find a rupture for. aura_density.py: 25 works, 37 aura, 1.48/work,
+  longest dark run 5 years. validate.py --slug gabriel-garcia-marquez:
+  1 error, the theme.art block missing - the expected flip from warning
+  to error once an author gains lifeEvents; visual-language's to
+  resolve, not this stage's.
+
+produced:
+  - content/authors/gabriel-garcia-marquez.yaml (lifeEvents: 17 entries; removed the stale header comment explaining why lifeEvents had been left empty)
+  - content/franchises/gabriel-garcia-marquez/events.yaml (new file, 6 entries)
+
+decisions:
+  - >
+    The three requested topics all clear the sourcing bar: the 1955
+    shipwreck reportage and exile (Nobel Foundation's own "more or less
+    compulsory exile"); the Castro friendship (met Jan 1959, plus its real
+    consequences - a US visa ban, exile-writer criticism) as a med-impact
+    lifeEvent; the 1976 Vargas Llosa punch, bracketed by his 1971 thesis
+    (life event) and its 2007 reuse as Cien años de soledad's 40th-
+    anniversary introduction (franchise event, a real mark on the canon).
+  - >
+    Held out: Guillermo Angulo's account of *why* Vargas Llosa punched him
+    (an affair involving his wife) - single-sourced third-party gossip, held
+    to CURATION §6. Also held out: Colombia's Turbay government reportedly
+    accusing him of financing M-19 in 1981 and his flight to Mexico - a
+    "legal trouble" claim on one source (Spanish Wikipedia) I could not
+    corroborate here. Both are candidates for a future pass with a second
+    source (Gerald Martin's biography, for the M-19 claim).
+  - >
+    Dementia and death both clear two sources. Dementia as a correction: the
+    2012 rumor (Telegraph) was disputed at the time (a birthday video), but
+    the Guardian's 2014 obituary states he died "after suffering from
+    Alzheimer's," and Until August's coverage (BBC/NYT/Guardian) has his
+    sons confirming memory loss stopped him finishing it. Death: pneumonia
+    complications after the 1999 cancer relapsed, sourced in English
+    (AP/NYT/CNN) and Spanish (adds it reached a lung, lymph nodes, liver).
+  - >
+    Other dark-run closures: 1965-66 Acapulco/writing-Cien-años, 1967 fame/
+    Barcelona move, 1968-75 writing El otoño del patriarca, 1981 breaking a
+    self-imposed Pinochet-era publishing vow, 1986 EICTV film school + 1994
+    FNPI journalism foundation (a matched pair), 1989 Bolívar-novel
+    controversy, and splitting Netflix into its 2019 rights sale and 2024
+    release rather than one event.
+  - >
+    organisation/illustration_type assigned in this pass (none existed);
+    checked by hand against LAYOUT.md's Holds lists and the no-adjacent-
+    repeat rule across the full merged author+franchise timeline. immersion
+    used exactly twice (the cap), interlude once (the Pinochet silence),
+    diptych twice non-adjacently. Not run through art_rotation.py --check -
+    that script inspects committed art issues and none exist yet.
+
+forStages:
+  eras: >
+    Real seams: 1955 (exile) opens journalism-to-fiction; 1965-67 (Acapulco
+    through Barcelona fame) is a clean Macondo-to-Boom boundary; 1968-89
+    (Otoño del patriarca through the Bolívar novel) reads as a "dictator
+    novels and political engagement" era; 1999 (cancer) opens a late
+    memoir/decline era. Not claimed in eras.yaml, untouched.
+  event-resonance: >
+    franchise.yaml has no globalEvents block. The Cuban Revolution (1959),
+    Chile's coup (1973) and Pinochet's fall (1990) sit under lifeEvents here
+    and are include candidates if global.yaml has matches - not checked.
+  visual-language: >
+    23 entries span 11 organisations; no real-person editorial-portrait used.
+  wing-audit: >
+    Footprint is exactly the two content files above; works/franchise/
+    orders/eras/theme.yaml were read, not touched.
+
+openQuestions:
+  - "Carried from completeness-auditor, unresolved: does En agosto nos vemos belong in canonTier core, published against the author's explicit wishes? This pass adds the sons' own quote and the mixed reception but does not rule."
+  - "The 1981 M-19-financing accusation and Mexican exile is real, dated and high-impact but currently one-sourced (Spanish Wikipedia) - worth a dedicated check against Gerald Martin's biography before it ships."
+  - "2002-2006 reads genuinely quiet, but this pass did not confirm or date his mother Luisa Santiaga Márquez's death, which memory outside any source checked here places in this window - if sourceable, a real inner-weather fact for exactly this gap."
