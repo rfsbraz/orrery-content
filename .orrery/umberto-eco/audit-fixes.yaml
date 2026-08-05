@@ -1,0 +1,100 @@
+stage: press-archaeology
+wing: umberto-eco
+summary: >
+  Follow-up on event-resonance's finding: excluding two global events had
+  widened the wing's worst dark run from 4 years to 13 (1956-1968).
+  Researched the five leads named, added six dated/sourced entries and
+  enriched one existing entry. Closing 1956-1968 exposed three further
+  pre-existing dark runs (8, 6, 5 years) the tool had never surfaced
+  because a worse one hid them; closed all three in the same pass rather
+  than leaving them for later. aura_density.py: 30 -> 26 aura entries,
+  worst dark run now 4 years (1963-1966), no wing flagged. validate.py:
+  1 error, the pre-existing theme.art gap, not this stage's to fix.
+
+produced:
+  - content/authors/umberto-eco.yaml (lifeEvents: +4, one enriched)
+  - content/franchises/umberto-eco/events.yaml (+3 entries)
+
+leadsResearched:
+  filosofi-in-liberta: >
+    The pamphlet itself isn't an event, but its real effect is: Valentino
+    Bompiani discovered Eco through it and in 1959 hired him to edit
+    Bompiani's "Idee nuove" series, starting the 1959-1975 editorial
+    relationship the wing's 1975 entry already references (en.wikipedia).
+    Added at 1959. Flagged, not fixed: it.wikipedia's own Eco bibliography
+    dates the pamphlet to 1958 against works.yaml/pseudonyms' 1959 -
+    outside this stage's remit (lifeEvents, not works.yaml).
+  opera-aperta: >
+    Two moments, five years apart, both from it.wikipedia's "Ricezione"
+    section (citing Peyronie 2024): 60+ articles in the Italian press
+    June 1962-Feb 1963, giving Gruppo 63 its vocabulary and drawing
+    Marxist counter-fire (added 1962); Claude Lévi-Strauss's explicit 1967
+    rejection of the "open work" and Eco's reply, a real feud Eco kept
+    refining through Lector in fabula (added 1967).
+  apocalittici-e-integrati: >
+    Researched, not added. No "Ricezione" section exists on it.wikipedia
+    (unlike Opera aperta's); its ongoing citation in Italian media
+    criticism is real but undated. Adding an entry anyway would have been
+    the reflexive "he published an influential book" event this skill
+    rules out.
+  guerriglia-semiologica-1967: >
+    Resolves press-archaeology's own openQuestion. Three independent
+    sources converge on 1967, New York: it.wikipedia's Eco article states
+    it directly; en.wikipedia's "Faith in Fakes" (citing Bondanella) names
+    the venue as "Vision '67"; "Guerrilla television" corroborates
+    independently. Added at 1967.
+  rai-years-end-date: >
+    Sourced (en.wikipedia: Eco left RAI in 1958 for 18 months' military
+    service) but used as enrichment of the existing rai-corsari-1954
+    entry, not a new entry - a generational conscription departure isn't
+    its own aura moment, and a same-year addendum couldn't have helped the
+    gap regardless (only bare `date` counts).
+
+otherGapsClosed: >
+  1997-2004 (8yr): Der Spiegel's false 1997 claim that Eco co-founded the
+  prankster collective Luther Blissett, peaking in 1999 around the novel
+  Q with Eco's on-record Il Messaggero denial (en.wikipedia "Luther
+  Blissett (pseudonym)"); his 2000 founding presidency of Bologna's Scuola
+  Superiore di Studi Umanistici (it.wikipedia). 1979-1984 (6yr): Il nome
+  della rosa's Strega Prize (1981) and Prix Médicis Étranger (1982) -
+  literary-establishment validation distinct from the 1986 film's mass
+  fame (en.wikipedia). 1991-1995 (5yr): Richard Rorty's published
+  rebuttal of Eco's Tanner Lectures in Interpretation and
+  Overinterpretation (1992), which gave intentio lectoris its canonical
+  form per en.wikipedia's own Eco-infobox citation.
+
+auraDensityResult: >
+  30 -> 26 aura entries (67 works). Worst dark run now 4 years
+  (1963-1966), down from 13. Since the tool reports only the single worst
+  run and it is now under the 5-year gate, every other stretch in the full
+  1956-2022 span is necessarily 4 or fewer.
+
+artRotationResult: >
+  art_rotation.py --check: organisation rotation holds across all 24
+  events (no cap broken, no neighbour repeats), pacing holds. Composition
+  axis still reports 0/24 read - no art issues exist yet, the documented
+  pre-visual-language state, unchanged by this stage.
+
+validatorResult: >
+  validate.py --slug umberto-eco - 1 error, the pre-existing theme.art
+  gap. Same pre-existing oversized-handoff warnings on other stages.
+
+forStages:
+  visual-language: >
+    Six new entries need art treatment once theme.art exists: book-object
+    (floating-object), document-facsimile (artifact-spread x2),
+    press-media-collage (mosaic x2), symbolic-still-life (beside),
+    editorial-portrait (beside), emblem-seal (medallion) - no new
+    illustration_type introduced.
+  wing-audit: >
+    Two calls worth a second read: (1) the Luther Blissett entry is dated
+    1999 rather than 1997 (its origin) - chosen for the most citable,
+    quotable material, not the earliest date. (2) umberto-eco-scuola-
+    superiore-2000 is the thinnest addition (impact: low) - real and
+    sourced but modest, chosen over a routine visiting-lectureship
+    alternative that this stage's own doctrine warns against reaching for.
+
+openQuestions:
+  - >
+    Filosofi in libertà's publication year (see leadsResearched above) -
+    flagged for whichever stage owns works.yaml's bibliographic dates.
