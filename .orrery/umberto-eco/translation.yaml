@@ -1,0 +1,80 @@
+stage: translation
+summary: >
+  Full pt-PT overlay for the wing: franchise description + all 3 startHere
+  paths, all 67 work synopses, the author bio + all 17 lifeEvents, all 7
+  franchise events, the one order's name/rationale/both debated entries, and
+  the two collaborator bio files this wing introduced (Carlo Maria Martini,
+  Jean-Claude Carrière), which had none. i18n_coverage.py moves the wing from
+  MISSING to fully covered (202/224 -> 208/224 files catalogue-wide, no other
+  wing touched). validate.py --slug umberto-eco: 0 errors.
+produced:
+  - "content/i18n/pt-PT/franchises/umberto-eco/franchise.yaml (new; description + 3 startHere paths)"
+  - "content/i18n/pt-PT/franchises/umberto-eco/works.yaml (new; 67 synopses)"
+  - "content/i18n/pt-PT/franchises/umberto-eco/events.yaml (new; 7 events)"
+  - "content/i18n/pt-PT/franchises/umberto-eco/orders.yaml (new; 1 order, name/rationale/4 debated)"
+  - "content/i18n/pt-PT/authors/umberto-eco.yaml (new; bio + 17 lifeEvents)"
+  - "content/i18n/pt-PT/authors/carlo-maria-martini.yaml (new; bio only)"
+  - "content/i18n/pt-PT/authors/jean-claude-carriere.yaml (new; bio only)"
+spoilerPreservation: >
+  Translated only the CURRENT English strings, never a fuller pt-PT jacket or
+  outside plot summary. The one rewritten synopsis,
+  umberto-eco/the-name-of-the-rose, holds the same HarperCollins-jacket
+  boundary in Portuguese: "decifrando manuscritos codificados e símbolos
+  enigmáticos numa pista que os leva até à biblioteca labiríntica da abadia" -
+  no age or nature of the library's secret, no killer, no motive, no
+  mechanism, matching the English word for word in scope. The other three
+  novels carrying a curator-only spoiler `note` (Foucault's Pendulum, Queen
+  Loana, The Prague Cemetery) are translated at the same jacket level; `note`
+  and `translationNote` themselves are never overlaid (confirmed curator-only,
+  absent from the Work interface per spoiler-audit.yaml). eras.yaml is empty
+  ([]) so carries no overlay. The one epigraph quote
+  (umberto-eco-poison-a-monk-1978, "I wanted to poison a monk") stays English
+  verbatim rather than inventing a Portuguese rendering of Eco's own words,
+  the same rule already applied to Cervantes, Lovecraft and Murakami's quoted
+  speech; its title and description are translated.
+titlesAndTerminology: >
+  Every inline [[work:id|text]] reference to a work with a real Gradiva/
+  Relógio d'Água/Presença edition now shows that published title: O Nome da
+  Rosa, A Misteriosa Chama da Rainha Loana, Número Zero, Obra Aberta and
+  Filósofos em Liberdade. Works named inline or in prose with no pt-PT
+  edition (Trattato di semiotica generale, La struttura assente, Il costume
+  di casa, Cinque scritti morali, In cosa crede chi non crede?, Interpretation
+  and Overinterpretation, and orders.yaml's ~29 further `debated` titles) keep
+  their original Italian or English title, this catalogue's standing
+  convention. One exception: "The Name of the Rose (1983)" in the
+  Queen-Loana-translator event names a specific dated English printing
+  (Weaver's), not the work generically, so it stays English rather than
+  misdating the unrelated 2011 Gradiva edition as "O Nome da Rosa (1983)".
+  Semiotics vocabulary uses standard Portuguese academic terms already fixed
+  by Eco's own Portuguese reception (semiótica, semiose, obra aberta, intentio
+  operis/lectoris kept Latin as in the English base).
+coAuthorBios: >
+  Verified rather than assumed: content/authors/carlo-maria-martini.yaml and
+  jean-claude-carriere.yaml both exist as real "minimal collaborator entity"
+  files this wing introduced (each with its own `bio`, `lifeEvents: []`), not
+  named-in-prose-only as the brief guessed. i18n_coverage.py already flagged
+  both as MISSING before this run - exactly the no-franchise-owner trap the
+  translation skill documents - so both got a full overlay, not just the wing
+  proper.
+checked: >
+  i18n_coverage.py: pt-PT 208/224 (was 202/224); all 7 new/target files moved
+  from MISSING to covered, the pre-existing partial list elsewhere (Agatha
+  Christie, Harlan Coben, Lee Child, Robert Jordan, Stephen King, Terry
+  Pratchett, Anna Sewell, Murakami, Lovecraft, João Tordo, Cervantes)
+  untouched. validate.py --slug umberto-eco: 0 errors (a first pass caught 4
+  false-positive "[[work:id]] does not resolve" errors from generic
+  [[work:id|texto]] placeholder syntax written into header comments -
+  reworded to describe the convention without the literal bracket syntax; 3
+  pre-existing oversized-handoff warnings unrelated to this file). Every
+  overlay file parses standalone via yaml.safe_load.
+forStages:
+  wing-audit: >
+    Confirm the Name of the Rose synopsis boundary reads as jacket-level to a
+    native speaker independent of the English comparison above, and that
+    "decifrando... numa pista que os leva até" doesn't accidentally imply more
+    forward momentum/resolution than the English "piecing together... on a
+    trail that runs into." Also worth a second look: the five real pt-PT
+    titles substituted into inline references (listed above) match
+    editions.yaml exactly, letter for letter, since a typo there would ship a
+    wrong book title to a reader.
+openQuestions: []
