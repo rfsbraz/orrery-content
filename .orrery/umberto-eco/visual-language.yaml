@@ -1,0 +1,80 @@
+stage: visual-language
+summary: >
+  Settled theme.yaml's art block, the wing's sole pre-existing validator
+  error. theme_digest.py --exclude umberto-eco flagged three wings sharing
+  both displayFace (fraunces) and signature (thread) - Cervantes, Rowling,
+  Shirley - plus Tolkien on face alone; all four read in full, none
+  colliding on subject (paperwork-vs-fiction, cafe/exercise-book,
+  xerox-punk, manuscript-revision-between-two-hands respectively). Accent
+  (#6f7a4c) and background (#120f0c) were already unique before this stage,
+  so the real risk was subject, not hue - and the one genuine subject
+  adjacency, Dan Brown (a symbologist reading a hidden meaning out of an
+  image, against Eco's own literal semiotics), shares no palette axis but
+  was read in full and separated on atmosphere and explicit prohibition
+  (avoid bans the loupe and the mirror-reflection device by name).
+  Emblem realised as an object native to both of Eco's registers at once -
+  a forged document's careful copy caught mid-stroke - rather than the
+  abbey library (spoiler-adjacent, one novel's set) or a card catalogue
+  (already Tolkien's index-slip motif).
+  validate.py --slug umberto-eco: 0 errors (down from 1); 3 pre-existing
+  oversized-handoff warnings untouched. Two first-pass theme.yaml comments
+  named spoiler-audit.yaml directly and were rewritten to state the
+  constraint as fact before this ran clean.
+
+produced:
+  files: [content/franchises/umberto-eco/theme.yaml]
+  fieldsAdded: [art.emblem, art.motifs, art.atmosphere, art.lineCharacter,
+    art.backgroundTexture, art.accentUse, art.avoid]
+  fieldsTouched: []
+
+emblem:
+  object: >
+    A writing table lit by one lamp, two sheets of paper side by side: an
+    aged document in a settled hand, and its careful copy nearly finished
+    but for one flourish still mid-stroke, the same pen laid across both.
+  spansBothRegisters: >
+    The Prague Cemetery's forger, Baudolino's "gifted liar," Foucault's
+    Pendulum's editors manufacturing a fake conspiracy from real
+    manuscripts, and on the nonfiction side Faith in Fakes: Travels in
+    Hyperreality and A Theory of Semiotics (codes and sign production) all
+    converge on the same act: a sign, genuine or counterfeit, made to mean
+    something. Not one book's plot.
+
+spoilerAuditIncorporated: >
+  All four do-not-draw flags are in art.avoid, each paired with what stays
+  in bounds: the abbey's hidden room and its contents (abbey, scriptorium,
+  stacks stay drawable); the pendulum's scene and the editors' fate (the
+  pendulum as a still object or museum interior stays drawable); any image
+  whose whole idea is one man being two; what Queen Loana's protagonist
+  recovers (attic, comics, magazines, Piedmont fog stay drawable). The
+  wing's pre-existing notes (no rose, no swinging pendulum, no monk's
+  habit) are restated rather than contradicted.
+
+forStages:
+  art-rotation: >
+    The emblem is a writing table with two documents and one pen, not a
+    building, garment or swinging object, so it should rotate cleanly
+    across life events, franchise events and era plates. accentUse names
+    four interchangeable single-touch options (lamp foot, cord, pen
+    ferrule, box hinge) - pick one per image, never more, never a fill.
+    lineCharacter's "short, considered segments" is load-bearing for
+    keeping every asset in one hand: deliberately not a continuous
+    confident stroke (drifts toward Cervantes) and not a doubled revision
+    stroke (drifts toward Tolkien).
+  visual-metadata: >
+    STYLE guidance to quote verbatim: "A private scholar's study at night:
+    warm lamplight over a crowded desk, the rest of a book-lined room in
+    near-black shadow. A fine dip-pen line laid down in short, considered
+    segments, as though checking a mark against a model rather than
+    writing freely. Warm candlelit parchment ground, one aged
+    bronze/verdigris accent on a single small object, never a fill."
+  wing-audit: >
+    The Dan Brown separation rests on atmosphere and prohibition rather
+    than any palette-axis difference (the two wings share no face,
+    signature or accent) - worth re-checking once both wings have actual
+    generated assets to compare, not just written language. Also check the
+    emblem's "two documents, one pen" composition against whatever the
+    editions/covers stages surface for the seven novels' real jacket art,
+    to rule out accidental resemblance to a specific cover.
+
+openQuestions: []

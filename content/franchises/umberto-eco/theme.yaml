@@ -11,7 +11,12 @@
 # second novel takes its name from. No motif here restates a single title's
 # plot (no rose, no visible pendulum swinging) - the register is the
 # scholar's own recurring furniture, not an illustration of either book.
-# `art:` is deliberately left unset.
+# The `art:` block below is the wing's visual language for generated
+# illustrations. Four things stay undrawn regardless of scene: the abbey's
+# hidden room and its contents, the scene directly beneath Foucault's
+# actual pendulum and the three editors' fate, any image whose whole idea
+# is one man secretly being two, and what Queen Loana's protagonist
+# actually recovers.
 preset: abbey-labyrinth
 palette:
   bg: "#120f0c"          # near-black aged oak / library dark
@@ -32,3 +37,135 @@ notes: >
   a classic serif, and a single connecting thread rather than a bold rail or
   a hard architectural rule. Restraint over genre costume - no rose, no
   swinging pendulum, no monk's habit.
+
+# ART. theme_digest.py --exclude umberto-eco flags three wings sharing both
+# displayFace (fraunces) and signature (thread): Miguel de Cervantes,
+# J. K. Rowling and John Shirley, all read in full below alongside
+# J. R. R. Tolkien (fraunces only, but the catalogue's other scholar's-desk
+# wing, already distinguished at scaffold by beam vs. thread). None
+# collides on subject once read: Cervantes draws a jobbing writer's
+# paperwork outweighing his own fiction (ledgers, requisition slips, an
+# iron-gall dip pen browning on rag paper); Rowling draws a cafe table and
+# a biro-filled exercise book; Shirley draws a photocopied gig flyer and
+# xerox culture; Tolkien draws a manuscript passed between two hands across
+# decades, corrected and annotated. This wing's accent (#6f7a4c) and
+# background (#120f0c) are already unique in the catalogue's "already
+# claimed" list, so the real risk was never hue - it was subject.
+#
+# The subject that actually needed separating out is Dan Brown, who shares
+# no axis here (sourceSerif, cyanotype blue, rule) but sits closest on
+# theme: his Robert Langdon is a "symbologist" who reads a familiar image
+# for a second meaning already inside it, under one hard raking lamp, with
+# a magnifying loupe named directly among his motifs. Eco was an actual
+# semiotician, so the two territories border each other for real. The
+# split: Brown's wing is about the moment of recognition, a hidden reading
+# suddenly seen; this wing is about the slower, unglamorous act that
+# precedes and enables any reading at all - checking whether a sign is
+# genuine, copying one carefully enough to pass, building the plain key
+# a private code is transcribed into. No loupe, no raking lamp, no
+# reproduction-plus-mirror device here; see avoid below.
+#
+# The emblem is deliberately not the abbey library (its hidden room stays
+# undrawn per the avoid list below, and the building reads as one novel's
+# set rather than the author's whole territory) and not a
+# card catalogue or index-slip drawer (already Tolkien's "dictionary slips
+# and index cards filed in rows" motif). It is instead the one object
+# native to both of Eco's registers at once: umberto-eco/the-prague-cemetery
+# centres a forger fabricating the documents behind real historical
+# conspiracies; Baudolino is introduced, in this wing's own synopsis, as "a
+# gifted liar" recounting his own life; the three editors of
+# umberto-eco/foucaults-pendulum feed real occult manuscripts into a
+# program that manufactures a fake conspiracy out of them; and on the
+# theory side, umberto-eco/il-costume-di-casa was translated as Faith in
+# Fakes: Travels in Hyperreality, while umberto-eco/trattato-di-semiotica-generale
+# (A Theory of Semiotics) is a general theory of codes and sign production
+# - the study of how a sign, genuine or counterfeit, is made to mean
+# anything at all. A convincing copy caught mid-stroke is the fiction and
+# the theory drawing the same picture.
+art:
+  emblem:
+    object: >
+      A writing table lit by one lamp, holding two sheets of paper side by
+      side: the left an aged document in a settled, confident hand, the
+      right its careful copy, nearly finished but for one flourish still
+      mid-stroke, made with the same pen now laid down across both sheets -
+      so that, at a glance, it is not obvious which is which.
+    why: >
+      The one object native to both of Eco's registers at once rather than
+      to any single title's plot: a forger fabricates historical documents
+      in The Prague Cemetery, Baudolino is introduced by this wing's own
+      synopsis as "a gifted liar," Foucault's Pendulum's editors feed real
+      manuscripts into a machine that manufactures a fake conspiracy, and
+      on the nonfiction side Faith in Fakes: Travels in Hyperreality and A
+      Theory of Semiotics both study how a sign is made to mean, genuine or
+      counterfeit. A convincing copy caught mid-stroke is where the fiction
+      and the theory draw the same picture.
+  motifs:
+    - two handwriting samples set side by side for comparison, a
+      straightedge or a stylus laid along one shared stroke rather than a
+      magnifying loupe
+    - a coded marginal note in a printed page's margin, being transcribed
+      into a plain key on a separate sheet beside it, the transcription
+      still incomplete
+    - a private, floor-to-ceiling personal study lined with more books than
+      the shelving allows, stacked two deep, a rolling ladder against the
+      shelves - a scholar's own working library, domestic rather than
+      institutional
+    - a printed page and a hand-copied facsimile of it pinned together,
+      corrections added between the lines in a second ink
+    - a dossier or bundle of loose sheets tied shut with plain cord, no wax
+      seal
+    - a single reading lamp over a crowded desk at night, the rest of a
+      book-lined room left dark
+    - a hand-drawn tree or branching diagram of cross-referenced terms on
+      one sheet, rectilinear rather than a wheel or a web - a working note,
+      never an occult or mystical device
+  atmosphere: >
+    A private scholar's study at night, not a public reading room and not
+    a gothic archive: warm lamplight over a crowded desk, the rest of a
+    book-lined room left in near-black shadow. The register is patient,
+    forensic attention rather than menace or wonder - someone working out
+    whether a sign is genuine, not someone afraid of what a shadow might
+    hold. The tension sits in the slow labour of comparison itself, never
+    in a sudden moment of revelation (that belongs to this catalogue's Dan
+    Brown wing) and never in awe at a holy or occult presence.
+  lineCharacter: >
+    A fine dip-pen line laid down in short, considered segments rather than
+    one continuous confident stroke - the pen periodically lifted and
+    re-set as though checking the last mark against a model before
+    continuing, closer to careful transcription than to spontaneous
+    handwriting. Never a uniform ruled or draughtsman's line, and never a
+    single stroke doubled straight back over itself as a revision.
+  backgroundTexture: >
+    Warm candlelit parchment, aged unevenly at the edges as if handled by
+    one reader across decades rather than passed between many hands - a
+    private study's own paper stock, not a printed book's page and not an
+    institutional archive's uniform folder stock.
+  accentUse: >
+    The aged bronze/verdigris on exactly one element per image, never a
+    fill: the brass foot of a reading lamp, the cord tying a dossier shut,
+    a single ferrule on a dip pen, or the hinge of a book box.
+  avoid:
+    - the abbey's hidden room at the library's centre or anything inside
+      it, the killer's identity, or the means by which the deaths in The
+      Name of the Rose occur; the abbey, its scriptorium and stacks, and a
+      friar reading with his novice stay in bounds
+    - the pendulum mid-swing, the scene directly beneath it, or the fate of
+      Foucault's Pendulum's three editors; the pendulum as a still object
+      or a museum interior stays in bounds
+    - any image whose whole idea is one man secretly being two people (The
+      Prague Cemetery)
+    - what the protagonist of The Mysterious Flame of Queen Loana actually
+      recovers, or the novel's closing turn; the attic, comics, old
+      magazines and Piedmont fog stay in bounds
+    - a rose of any kind, or a monk's habit worn as generic medieval-mystery
+      costume
+    - a magnifying loupe, linen-tester or hand-lens held over a document,
+      or a reproduction doubled by its own mirror reflection - already this
+      catalogue's Dan Brown territory
+    - dictionary slips or index cards filed in rows at a philologist's desk
+      - already this catalogue's J. R. R. Tolkien territory
+    - an outsized wax seal, an unfurled parchment scroll or an oversized
+      ornate quill used as generic "old book" shorthand
+    - a likeness of Umberto Eco himself in any life event - the discipline
+      he practised is the subject, never his face
