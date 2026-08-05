@@ -1,0 +1,79 @@
+stage: editions
+summary: >
+  Built content/franchises/john-gwynne/editions.yaml from scratch: 19
+  entries covering all 17 works. Ten published novels plus the forthcoming
+  The Wolves of War each carry their first UK (or first-week English, where
+  UK/US launched simultaneously) edition, sourced to ISFDB's own per-title
+  publication listings. All six anthology contributions carry a real
+  edition of the anthology volume, also ISFDB-sourced - no anthology needed
+  a gap. The Portuguese market check found exactly one real translation:
+  Edições Asa's "A Sombra dos Deuses" (The Shadow of the Gods, book 1 of the
+  Bloodsworn Saga), July 2022, recorded in both paperback and ebook.
+produced:
+  files:
+    - content/franchises/john-gwynne/editions.yaml (new)
+  coverage: "17/17 works; 19 editions (16 en, 1 forthcoming en, 2 pt-PT)"
+  ptPtFinding: >
+    A full wook.pt Wayback sweep for any URL ever captured containing
+    "gwynne" returned exactly 4 hits, all for the same book: the paperback
+    and ebook of "A Sombra dos Deuses". No Banished Lands novel, no
+    Hunger/Fury of the Gods, no anthology piece has ever been listed on the
+    site. A 2025-dated reader review on that same product page hopes the
+    next volumes aren't long in coming - direct evidence no sequel had
+    reached Portuguese as of three years after the run opened. Coverage is
+    1/10 published novels, stated as the honest fraction in the file
+    header, not a research gap.
+  forthcomingHandling: >
+    The Wolves of War recorded under the same isbn13/publisher/year/format
+    shape as any other edition (Orbit, 2026, hardcover, 978-0-356-52787-1),
+    matching works.yaml's own forthcoming: 2026-11-03 and independently
+    re-derived from Amazon UK's ISBN-10 (0356527875 -> recompute check digit
+    -> 9780356527871, matches). No isbn13 was invented for it; the number
+    already existed in three independent sources before this file was
+    written.
+  englishPublisherHistory: >
+    Malice-Wrath: Tor UK (Pan Macmillan). Of Blood and Bone trilogy: plain
+    Macmillan UK, same parent, dropped Tor imprint per ISFDB's own
+    publication records - noted in-file so it doesn't read as a
+    transcription slip. Bloodsworn Saga onward: Orbit (Little, Brown Book
+    Group). UK and US editions of every novel from Malice onward release
+    within 0-2 days of each other on ISFDB's own dates - not a Jo-Nesbo-style
+    market lag; noted per-book where the gap is checkable.
+checked: >
+  python3 scripts/validate.py --slug john-gwynne: 0 errors. Confirmed by
+  hand: 19 entries, 17 distinct workIds (each work has exactly one edition
+  except The Shadow of the Gods, which has three: UK en, pt-PT paperback,
+  pt-PT ebook), zero duplicate isbn13, both pt-PT ISBNs carry the 978-989
+  Portugal registrant prefix. Every isbn13 independently re-summed against
+  the EAN-13 check-digit formula before being written; three additional
+  ISBNs surfaced during research and rejected only for being a second
+  binding of an already-recorded edition (Hunger of the Gods
+  978-0-356-51936-4, Legends II hardcover 978-1-907069-81-9, Scent of Tears
+  hardcover 978-1-910935-93-4) had their check digits verified too, so
+  "not used" is a curatorial choice, not a failure to validate.
+forStages:
+  visual-metadata: >
+    No coverUrl touched anywhere in this file; clean slate for cover
+    sourcing. The pt-PT edition's cover is hosted on img.wook.pt - per the
+    shared trap registry, never source a coverUrl from a retailer image even
+    when it is the only jacket found for a translated edition.
+  wing-audit: >
+    Everything in this file traces to a named, individually opened record
+    (ISFDB title.cgi pages for the English/anthology editions, an archived
+    Wook product page for the pt-PT pair, Amazon UK/Publishers
+    Weekly/OpenLibrary for the forthcoming title) - nothing here rests on
+    the aggregate lookup table alone. The three rejected second-binding
+    ISBNs above are the only editions found and not shipped; there is no
+    known real edition missing from this file for any of the 17 works.
+openQuestions:
+  - "Legends II and The Scent of Tears each have a same-week/same-day NewCon
+    Press hardcover alongside the trade paperback recorded here (both valid
+    ISBNs); the choice favoured the wider-distribution paperback over what
+    reads as a specialty-press hardcover run, on no stronger a signal than
+    the price gap and release-order. Worth a second look if a curator
+    weighs it differently for small-press anthologies specifically."
+  - "The Hunger of the Gods has two same-day UK hardcover ISBNs at an
+    identical price with no distinguishing detail found between them
+    (978-0-356-51422-2, recorded, vs 978-0-356-51936-4); a human with a
+    photo of both jackets could likely resolve whether one is a
+    retailer-exclusive cover."
