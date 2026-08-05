@@ -25,7 +25,38 @@ description: >
   Slavic-mythology-inspired setting.
 authorIds: [john-gwynne]
 themePreset: shieldwall-liturgy
+# Ruled against the full 19-entry content/events/global.yaml catalogue. Two
+# include: fantasy-paperback-boom-1965 predates him by three years but opened
+# the secondary-world epic-fantasy market his four-setting shelf sits inside,
+# evidenced by his own Goodreads influences field rather than the genre
+# generally; covid-19-pandemic-2020 halted the Viking-reenactment training he
+# has said shapes his combat writing, in his own words, not a generic
+# lived-through-it claim. The rest are considered and refused: no Gwynne book
+# answers a world event by theme, and no career fact ties him to the
+# industry-mechanism entries (chain bookshops, online bookselling, ebooks,
+# BookTok) beyond writing and publishing during their years. World-war-i-1914,
+# elementary-education-act-1870, pulp-magazines-1926, penguin-paperback-1935,
+# armed-services-editions-1943, lady-chatterley-trial-1960 and
+# comics-code-authority-1954 are left unruled: all predate his 1968 birth with
+# no inheritance case comparable to the paperback-boom one.
+globalEvents:
+  include:
+    - fantasy-paperback-boom-1965  # predates him by 3 years, but created the secondary-world epic-fantasy market his shelf sits inside; his own Goodreads influences field names J. R. R. Tolkien and David Gemmell, and his debut later won the Gemmell-named award
+    - covid-19-pandemic-2020  # stopped his Viking re-enactment training "for the last year or so" (his own 2021 Q&A), the shield-wall practice he has said directly shapes how he writes combat
+  exclude:
+    - sept-11-2001  # was 33 and years from his 2012 debut; no Gwynne book engages with it
+    - financial-crisis-2008  # his sagas run on invented gold, oaths and armies, not real-world markets
+    - world-war-ii-1939  # predates him by 29 years; his father's RAF postings that shaped his own childhood moves are Cold War service, not the war itself
+    - carnation-revolution-1974  # British author with no Portuguese-market presence or connection
+    - chain-bookshop-1982  # was 14 when chains spread; his 2012 debut arrived deep into the online-and-ebook era they had already lost ground to
+    - online-bookselling-1995  # his career is agented and shelved, not an online-discovery story
+    - ebook-and-self-publishing-2007  # Malice went from "pages on my desk" to a traditionally agented and published book; no self-published or ebook-first edition precedes it
+    - prestige-fantasy-adaptation-2011  # no screen adaptation or option exists for any Gwynne work
+    - booktok-2020  # The Fury of the Gods' 2024 bestseller run is the trilogy's own close, not a short-video discovery story
+    - portugal-bailout-2011  # British author with no Portuguese-market presence; his shelf carries no Portuguese translation
 sources:
   - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
   - "https://en.wikipedia.org/wiki/John_Gwynne_(author)"
   - "https://www.goodreads.com/author/show/5898355.John_Gwynne"
+  - "https://asunbookstore.com/john-gwynne-qa/"
+  - "http://web.archive.org/web/20131123220535/http://www.john-gwynne.com/about-john-gwynne-author/"

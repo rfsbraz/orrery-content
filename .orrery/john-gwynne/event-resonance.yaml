@@ -1,0 +1,86 @@
+stage: event-resonance
+wing: john-gwynne
+summary: >
+  Ruled the full 19-entry global.yaml catalogue against Gwynne's life and
+  work. 2 included (1 arithmetic, covid-19-pandemic-2020; 1 pre-birth
+  inheritance, fantasy-paperback-boom-1965), 10 excluded (the other 9 that
+  arithmetically reach his 1968-alive lifetime, plus world-war-ii-1939
+  pulled forward from silence for a specific reason), 7 left unruled as
+  implausible predating his birth with no inheritance case. aura_density.py
+  after ruling:
+  17 works, 7 aura (5 lifeEvents + 2 globals), 0.41/work, longest dark run
+  still 3 yrs (2014-2016) - unchanged from the pre-ruling figure despite aura
+  dropping from 15 to 7, because the two globals dropped from the 2012-2019
+  span (sept-11-2001, financial-crisis-2008) never sat inside the dark run
+  and the two that do fall in-span (covid-19-pandemic-2020, booktok-2020)
+  had one kept. validate.py --slug john-gwynne: 1 error (theme.art, expected,
+  visual-language's to fix), 2 pre-existing warnings on press-archaeology.yaml
+  and eras.yaml (not touched here).
+
+produced:
+  - "content/franchises/john-gwynne/franchise.yaml (globalEvents added: 2
+    include, 9 exclude, 7 left unruled)"
+
+decisions:
+  - >
+    fantasy-paperback-boom-1965 (include): the Sanderson-shaped inheritance
+    case, checked against Gwynne's Norse/Gemmell roots rather than assumed.
+    Holds up, more concretely than Sanderson's own note-free entry: his
+    Goodreads profile names Tolkien and Gemmell as influences in his own
+    words, and Malice won the Morningstar, the award named for Gemmell,
+    whose own career the same 1965 boom enabled. The Norse flavour runs the
+    inheritance through Gemmell rather than Tolkien; both lead to the same
+    market.
+  - >
+    covid-19-pandemic-2020 (include): not a lived-through-it default. His
+    2021 Q&A (asunbookstore.com) states the pandemic stopped his Viking
+    re-enactment training "for the last year or so" - the shield-wall
+    practice he credits for how he writes combat. A dated, sourced
+    disruption to the research behind the page, the shape of Atwood's
+    sept-11 entry (drafting paused, not the event dramatized).
+  - >
+    ebook-and-self-publishing-2007 checked directly and found negative: no
+    self-published or ebook-first edition precedes Malice. His retired
+    website (2013 capture) calls the manuscript "just pages on my desk"
+    before it became "a real book," and the 2021 Q&A credits "agent,
+    editors and a host of team members" for the route to print.
+  - >
+    world-war-ii-1939 pulled out of the implausible-predates-birth silence
+    the other seven old events sit in, since the RAF-childhood angle is the
+    one real temptation. Still fails: his father's postings happened well
+    after 1945, so the RAF in his bio is Cold War service, not the war.
+  - >
+    booktok-2020, prestige-fantasy-adaptation-2011: checked as the
+    genre-shift/self-publishing-era candidates. No source ties either to
+    Gwynne - no adaptation exists for any of his work, and the 2024
+    bestseller run reads as the trilogy's own close, not a viral story.
+
+forStages:
+  reading-orders: >
+    No effect on ordering; globalEvents doesn't touch subseries or
+    startHere. The two included globals land at 1965 (outside the wing's
+    2012-2026 work span) and 2020 (inside it, same slot as the 2013 Gemmell
+    and 2017 Legend-nomination lifeEvents already carry the tetralogy years).
+  press-archaeology: >
+    No dark run was reopened or widened - confirmed by re-running
+    aura_density.py after ruling, not just before. Nothing further needed
+    from this stage on that account. One residual, not urgent: The Fury of
+    the Gods' aura entry sits alone in the 2021-2026 stretch (now backed by
+    only the 2020 covid-19 global on its near side); a second, personal-to-
+    Gwynne dated fact in that stretch would be worth having before the wing
+    is asked to carry any wider aura pruning in future.
+  wing-audit: >
+    Only content/franchises/john-gwynne/franchise.yaml was touched. The
+    9-exclude / 2-include split is real ruling, not a rubber stamp of the
+    lifetime default: 8 of the 10 arithmetically-reaching globals were
+    refused, and the 2 kept both rest on a sourced, Gwynne-specific fact
+    rather than genre or era texture.
+
+openQuestions:
+  - >
+    Whether The Fury of the Gods' NYT listing had any BookTok-driven
+    discovery component was not resolvable here - no source surfaced either
+    way, and this session's general web-search budget was exhausted partway
+    through the check. Currently excluded on absence of evidence, not on a
+    confirmed negative; worth one more look if search budget allows on a
+    future pass.
