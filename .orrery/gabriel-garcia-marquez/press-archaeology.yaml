@@ -1,80 +1,122 @@
 stage: press-archaeology
 wing: gabriel-garcia-marquez
 summary: >
-  Built the author's first lifeEvents (now 18) and the franchise's first
-  events.yaml (6). The trivial 13-year dark run stage_plan.py flagged
-  (2012-2024, an empty aura) closed, then reopened eight times as each
-  closure exposed the next real gap - closed each with dated, sourced facts
-  across the full 1927-2024 span. One 5-year dark run remained after that
-  pass: 2002-2006. This follow-up confirmed the unchecked lead from that
-  pass's own handoff - his mother's death - and closed it: Luisa Santiaga
-  Márquez Iguarán died 9 June 2002 in Cartagena at 97, contemporary press
-  obituary sourced (El Mundo's "Crónica" supplement, 16 June 2002, plus
-  fr.wikipedia.org and it.wikipedia.org corroborating the 1905-2002 dates
-  against Gerald Martin's and Dasso Saldívar's biographies). No dark run of
-  5+ years remains: aura_density.py now reports 25 works, 38 aura, 1.52/work,
-  longest dark run 4 years (1961-1964, unexamined in this pass - a different
-  stretch than the one this pass targeted). validate.py --slug
-  gabriel-garcia-marquez: 1 error, the expected theme.art gap (visual-
-  language's to resolve).
+  Follow-up to the 5-year dark run (1960-1964) that event-resonance's own
+  ruling reopened: excluding lady-chatterley-trial-1960 from
+  franchise.yaml's globalEvents (correctly - no real link to García
+  Márquez) removed the only aura entry that happened to cover 1960, and
+  the window sat between the 1959 Prensa Latina/Mexico City lifeEvent and
+  the 1965 Acapulco/Cien-años lifeEvent with nothing of his own in it.
+  Researched what he actually did in 1961-1964 rather than reaching for
+  another borrowed global event: his manuscript for
+  [[work:gabriel-garcia-marquez/la-mala-hora|La mala hora]] won Colombia's
+  Esso novel prize in 1961, a year before any edition reached print; that
+  1962 edition was then disowned by its own author over a proofreader's
+  changes and not corrected until 1966; and, broke and between novels, he
+  spent the period writing film scripts for Mexican cinema, most
+  substantially El gallo de oro (1964) with Carlos Fuentes. Three new
+  entries, one per year (1961, 1962, 1964), close the run. aura_density.py
+  now reports 25 works, 28 aura, 1.12/work, longest dark run 4 years
+  (1972-1975, not investigated this pass - under the 5-year gate).
+  validate.py --slug gabriel-garcia-marquez: 1 error, the pre-existing
+  theme.art gap (visual-language's to resolve), 21 warnings (all
+  pre-existing eras-coverage gaps on works.yaml, unrelated to this pass).
 
 produced:
   - content/authors/gabriel-garcia-marquez.yaml (added lifeEvent
-    garcia-marquez-mother-death-2002; updated the header comment that
-    previously (wrongly) recorded 2002-2006 as fully checked)
+    garcia-marquez-el-gallo-de-oro-screenplay-1964; updated the header
+    comment to mention the early-1960s screenwriting work)
+  - content/franchises/gabriel-garcia-marquez/events.yaml (added
+    garcia-marquez-mala-hora-esso-prize-1961 and
+    garcia-marquez-mala-hora-disavowed-edition-1962; updated the header
+    comment and entry count)
 
 decisions:
   - >
-    The mother's death was the right lead: contemporary Spanish press (El
-    Mundo, published one week after her death, "La mujer que creó al
-    creador") gives an exact date (9 June 2002), place (her Manga,
-    Cartagena apartment), age (97), and two load-bearing details beyond the
-    bare fact - she was the real-life model for Úrsula Iguarán and refused
-    to read Cien años de soledad ("why would I, when I've lived it"), and
-    she had her own documented Alzheimer's in her final years, years before
-    her son's own memory loss became public in 2012. That parallel is real
-    and sourced, not invented, and it recolors the 2012 dementia entry
-    already in the file.
+    The Esso Prize and the disowned edition went to events.yaml, not the
+    author file, because both are about what happened to one specific
+    book (its manuscript winning a prize, its first printing being
+    disowned), matching this wing's existing distinction between
+    author-life and book-specific events (e.g. the Vargas Llosa thesis and
+    the Bolívar outrage are already there for the same reason). The
+    screenwriting fact went to the author file instead: El gallo de oro is
+    someone else's adaptation of a Juan Rulfo story, not a García Márquez
+    work, so it is his career activity, not a book's event.
   - >
-    Sourcing chain: no dedicated Wikipedia article on her exists (checked
-    en/es directly, both 404 or silent). fr.wikipedia.org and
-    it.wikipedia.org both carry her 1905-2002 dates, footnoted to Gerald
-    Martin's authorized biography (Une vie, Grasset 2009) and Dasso
-    Saldívar's García Márquez: El viaje a la semilla (Alfaguara 1997) on
-    the French side, and to the El Mundo obituary directly on the Italian
-    side (its own footnote 27 links the same URL fetched here). Three
-    independently-editored sources agreeing on the same year, one of them a
-    dated contemporary press piece with the exact day - comfortably past
-    the two-source bar for a family death.
+    Deliberately gave each new entry a distinct `date` year (1961, 1962,
+    1964) rather than folding them into fewer entries with a dateRange:
+    aura_density.py's year_of() only reads the `date` field, never
+    dateRange, which is exactly how the existing 1959-1961 Prensa
+    Latina/Mexico City lifeEvent failed to prevent this dark run in the
+    first place (its dateRange covers 1961, its counted date does not).
+    Three single-year entries close three separate gap-years; one entry
+    with a wide dateRange would have closed only one.
   - >
-    organisation: interlude (grief, matching this wing's one prior use of
-    interlude for a silence - the 1981 Pinochet vow), illustration_type:
-    portrait-of-absence, both already in the wing's vocabulary; no adjacent-
-    organisation conflict (neighbours are floating-object/1999 and
-    diptych/2007). impact: med, in line with sibling family-life entries
-    (marriage, Castro friendship) rather than the high-impact ruptures.
+    The disowned-edition fact is quoted from García Márquez's own words
+    (the Ediciones Era prologue, reproduced in English Wikipedia's
+    bibliography article footnotes): a proofreader "changed certain words
+    and stiffened the style in the name of the purity of language," which
+    he restored in 1966 as "the idiomatic incorrections and stylistic
+    atrocities." This gives a citable primary quote to a fact that was
+    already sitting as a note on works.yaml's la-mala-hora entry with no
+    lifeEvent anchoring it in the aura at all - exactly the gap the
+    follow-up brief flagged.
+  - >
+    Organisation/illustration_type: reused the wing's existing vocabulary
+    throughout rather than introducing new types - marginalia/
+    isolated-object for the Esso Prize (LAYOUT.md: "minor honours, brief
+    appearances, side projects"), diptych/book-object for the disowned
+    edition (LAYOUT.md: "genuine before/after - rejected then rewritten,"
+    matching the wing's other diptych/book-object entry, the 2007 Vargas
+    Llosa thesis reissue, also a two-edition story), and
+    floating-object/isolated-object for the screenwriting lifeEvent
+    (LAYOUT.md: "a keepsake... a minor beat"). No two chronologically
+    adjacent entries share an organisation.
+  - >
+    Did not add a fourth entry for 1963: with 1961, 1962 and 1964 each
+    covered, no remaining stretch in this window reaches 5 years, and no
+    dated, sourced, non-thin fact for 1963 specifically surfaced in this
+    pass's research. Left it empty rather than padding it.
 
 forStages:
   eras: >
-    No change from the prior handoff's read - the 1999-2002 stretch (cancer,
-    memoir, mother's death) plausibly belongs with the "late memoir/decline"
-    era it already proposed opening at 1999. Not claimed in eras.yaml,
-    untouched.
+    No claim made. The new entries fall inside the existing 1955-1967 era
+    gap already flagged in validate.py's warnings (unrelated to this
+    pass) and do not change that boundary question.
   visual-language: >
-    24 lifeEvents + 6 franchise events now span 11 organisations; the new
-    entry adds no new organisation or illustration_type to the wing's
-    vocabulary.
+    27 lifeEvents + 8 franchise events now span the same organisation
+    vocabulary as before this pass (marginalia, diptych, floating-object
+    all pre-existing); no new organisation or illustration_type
+    introduced.
   wing-audit: >
-    Footprint is exactly content/authors/gabriel-garcia-marquez.yaml; no
-    other file touched.
+    Footprint is exactly content/authors/gabriel-garcia-marquez.yaml
+    (one new lifeEvent + header comment) and
+    content/franchises/gabriel-garcia-marquez/events.yaml (two new
+    entries + header comment). No other file touched; works.yaml,
+    orders.yaml, franchise.yaml, theme.yaml and eras.yaml were read for
+    context only.
 
 openQuestions:
-  - "aura_density.py's longest remaining dark run is now 1961-1964 (4 years,
-    under the 5-year gate) - not investigated in this follow-up, which was
-    scoped to the specific 2002-2006 lead. Worth a glance in a future pass
-    since a 4-year run one tool-run away from 5 is exactly how the last
-    dark run stayed hidden."
-  - "Carried from the prior pass, still unresolved: the 1981 M-19-financing
-    accusation and Mexican exile is real, dated and high-impact but
-    currently one-sourced (Spanish Wikipedia) - worth checking against
-    Gerald Martin's biography before it ships."
+  - >
+    aura_density.py's longest remaining dark run is now 1972-1975 (4
+    years, under the 5-year gate) - not investigated in this follow-up,
+    which was scoped to 1960-1964. Same shape of risk as before: a run
+    one tool-run away from the gate is how the last one went unnoticed.
+  - >
+    Could not source, and did not add, any claim that García Márquez
+    worked in advertising or public relations specifically in Mexico
+    City in this period - a detail that circulates in secondary accounts
+    of his life but did not turn up in any directly checkable source
+    this pass could reach (Britannica 403'd; The Paris Review's 1981
+    interview, which likely covers this period in his own words, is
+    paywalled past its opening exchanges; general web search was
+    unavailable this session, its budget already spent). What the record
+    gave up instead - the Esso Prize, the disowned edition, El gallo de
+    oro - covers the same years without that claim. A future pass with
+    search access or a library copy of Gerald Martin's biography could
+    check it properly.
+  - >
+    Carried from both prior passes, still unresolved: the 1981
+    M-19-financing accusation and Mexican exile is real, dated and
+    high-impact but still one-sourced (Spanish Wikipedia) - unrelated to
+    this pass, still open.
