@@ -1,14 +1,26 @@
 # Global author entity. Authors are referenced by id from franchises and works
 # (authorIds / withAuthorIds), so the same person resolves the same everywhere.
 # Author-LIFE events live here (they follow the person); franchise-specific
-# events belong in content/franchises/john-gwynne/events.yaml.
+# events belong in content/franchises/john-gwynne/events.yaml (none exist for
+# this wing - nothing found rose above a fact personal to Gwynne himself into
+# a genre-wide moment).
 #
-# lifeEvents is empty: no life-event pass has been built for this wing yet.
-# Sourced candidate anchors for that pass: the Singapore birth (see the born
-# comment below for the source conflict), the University of Brighton years
-# teaching before he began writing, the 2013 David Gemmell Morningstar Award
-# for Malice, and his ongoing Viking re-enactment, which he has said in
-# interview directly shapes how he depicts combat and equipment.
+# lifeEvents span 1968-2024. The floor (born) plus four picked from a career
+# that is otherwise almost entirely undocumented in the contemporary press:
+# stepping back from university lecturing to help care for his disabled
+# daughter and starting to write during that time (the origin of Malice and
+# the Banished Lands - his own account, corroborated across two separately
+# published tellings six years apart); the 2013 Gemmell Morningstar win;
+# the tetralogy's three straight Gemmell Legend nominations that never
+# convert to a win (2015-2017); and The Fury of the Gods becoming his first
+# New York Times bestseller (2024). Checked and not added: no film/TV option
+# or adaptation found anywhere in the sources below (Wikipedia's article,
+# which tracks adaptations for comparable authors, has no such section for
+# Gwynne); no dated record of a convention guest-of-honour appearance turned
+# up in the sources reachable here. Exactly when he began Viking
+# re-enactment is likewise undated in every source found - only that he does
+# it, with his three sons, and that it informs how he writes combat - so it
+# stays in the bio prose rather than becoming a dateless event.
 id: john-gwynne
 name: John Gwynne
 # ISFDB gives the birthplace as Singapore, sourced to the author's own former
@@ -21,21 +33,120 @@ died: null
 bio: >
   British epic fantasy author, born in Singapore while his father was
   stationed there, and now based on the south coast of England. He studied
-  and later taught at the University of Brighton before turning to writing
-  full time. His debut novel, [[work:john-gwynne/malice|Malice]] (2012),
-  won the David Gemmell Morningstar Award for Best Fantasy Debut in 2013;
-  its three sequels complete the Faithful and the Fallen tetralogy, set in
-  the Banished Lands. The Of Blood and Bone trilogy continues the same
-  world 130 years later, and The Bloodsworn Saga, begun in 2021 with
+  and later taught at the University of Brighton, stepping back from
+  university work to help care for his disabled daughter; it was during
+  that time at home, telling his children bedtime stories, that he started
+  writing what became [[work:john-gwynne/malice|Malice]] (2012), which won
+  the David Gemmell Morningstar Award for Best Fantasy Debut in 2013. Its
+  three sequels complete the Faithful and the Fallen tetralogy, set in the
+  Banished Lands, each in turn shortlisted for the Gemmell Legend Award
+  without a win. The Of Blood and Bone trilogy continues the same world 130
+  years later, and The Bloodsworn Saga, begun in 2021 with
   [[work:john-gwynne/the-shadow-of-the-gods|The Shadow of the Gods]], moves
-  to a separate, Norse-inspired setting drawing on Beowulf and Ragnarok.
-  Gwynne is an active Viking re-enactor and has said the practice directly
-  informs how he writes fighting and equipment; he has named J. R. R.
-  Tolkien, David Gemmell, George R. R. Martin and Bernard Cornwell as
-  influences.
-lifeEvents: []
+  to a separate, Norse-inspired setting drawing on Beowulf and Ragnarok; its
+  closing volume, The Fury of the Gods (2024), became his first New York
+  Times bestseller. Gwynne is an active Viking re-enactor alongside his
+  three sons and has said the practice directly informs how he writes
+  fighting and equipment; he has named J. R. R. Tolkien, David Gemmell,
+  George R. R. Martin and Bernard Cornwell as influences.
+lifeEvents:
+  - id: gwynne-born-1968
+    organisation: beside
+    illustration_type: place-portrait
+    images_required: 1
+    date: 1968-09-21
+    title: Born in Singapore, an RAF childhood on the move
+    impact: low
+    description: >
+      Born in Singapore while his father was posted there with the Royal
+      Air Force. In his own account, the family moved roughly every three
+      years, following his father's postings, until his retirement; Gwynne
+      later studied and lectured at the University of Brighton and now
+      lives on the south coast of England, in East Sussex.
+    spoilerAfter: null
+    sources:
+      - https://www.worldswithoutend.com/author.asp?id=2155
+      - https://www.panmacmillan.com/authors/john-gwynne/6427
+      - https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne
+  - id: gwynne-leaves-teaching-writes-malice-2001
+    organisation: immersion
+    illustration_type: symbolic-still-life
+    images_required: 1
+    date: 2001
+    dateRange: "2001-2012"
+    title: Steps back from lecturing to help care for his daughter, and starts writing
+    impact: high
+    description: >
+      Gwynne steps back from lecturing at the University of Brighton to
+      help care for his daughter Harriett, who is profoundly disabled,
+      splitting his time between her care and working alongside his wife
+      Caroline rejuvenating vintage furniture. "Somehow during this time I
+      started writing," he wrote on his own website around Malice's 2012
+      publication: bedtime stories for his children, which they pestered
+      him to write down, grew into the Banished Lands. He dated the start
+      of that writing more precisely nine years later, in a 2021 interview:
+      "the best part of twenty years since I started writing Malice."
+    spoilerAfter: null
+    sources:
+      - http://web.archive.org/web/20131123220535/http://www.john-gwynne.com/about-john-gwynne-author/
+      - https://asunbookstore.com/john-gwynne-qa/
+      - https://fantasy-hive.co.uk/2021/05/interview-with-john-gwynne-shadow-of-the-gods
+      - https://www.worldswithoutend.com/author.asp?id=2155
+  - id: gwynne-gemmell-morningstar-2013
+    organisation: medallion
+    illustration_type: emblem-seal
+    images_required: 1
+    date: 2013-10
+    title: Malice wins the David Gemmell Morningstar Award
+    impact: med
+    description: >
+      Malice wins the David Gemmell Morningstar Award for Best Newcomer at
+      the awards' October 2013 ceremony. Gwynne has called David Gemmell "a
+      hero of mine and one of the reasons I write," and the Morningstar win,
+      in his own words, "a truly wonderful moment."
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/David_Gemmell_Legend_Award
+      - https://www.goodreads.com/author/show/5898355.John_Gwynne
+  - id: gwynne-gemmell-legend-nominations-2017
+    organisation: passage
+    illustration_type: serial-contact-sheet
+    images_required: 1
+    date: 2017
+    dateRange: "2015-2017"
+    title: Three straight Gemmell Legend nominations, the tetralogy never quite wins
+    impact: med
+    description: >
+      Valour, Ruin and Wrath are shortlisted in turn for the David Gemmell
+      Legend Award for Best Novel at the 2015, 2016 and 2017 ceremonies -
+      the tetralogy Malice opened as a Morningstar winner never lands the
+      main prize, losing in successive years to Brandon Sanderson, Mark
+      Lawrence and Gav Thorpe.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/David_Gemmell_Legend_Award
+  - id: gwynne-nyt-bestseller-2024
+    organisation: mosaic
+    illustration_type: press-media-collage
+    images_required: 1
+    date: 2024-10
+    title: The Fury of the Gods becomes his first New York Times bestseller
+    impact: med
+    description: >
+      The Fury of the Gods, the Bloodsworn Saga's closing volume, becomes
+      an instant New York Times bestseller on publication - the widest
+      commercial recognition of Gwynne's career to date. A Time of Courage
+      (2020), his previous best showing, had reached only Germany's Spiegel
+      bestseller list.
+    spoilerAfter: null
+    sources:
+      - https://www.hachettebookgroup.com/titles/john-gwynne/the-fury-of-the-gods/9780316539951/
+      - https://www.orbit-books.co.uk/titles/john-gwynne/the-fury-of-the-gods/9780356514260/
 sources:
   - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
   - "https://en.wikipedia.org/wiki/John_Gwynne_(author)"
   - "https://www.goodreads.com/author/show/5898355.John_Gwynne"
   - "https://fantasy-hive.co.uk/2021/05/interview-with-john-gwynne-shadow-of-the-gods"
+  - "https://www.worldswithoutend.com/author.asp?id=2155"
+  - "https://asunbookstore.com/john-gwynne-qa/"
+  - "https://www.panmacmillan.com/authors/john-gwynne/6427"
