@@ -6,15 +6,21 @@
 #
 # CROSS-CHECKED against English Wikipedia's dedicated "Umberto Eco
 # bibliography" page and Eco's own article (both fetched directly, not a
-# navbox template), plus the individual English-Wikipedia article for each
-# of the seven novels (each carries its own infobox with translator,
-# original title and both publication dates, independently checked against
-# the bibliography page's summary line for that book). ISFDB has no author
-# entry for Eco (checked directly: "Author not found"), the same gap found
-# on this catalogue's Murakami wing - Eco is outside genre fiction and was
-# never catalogued there. OpenLibrary work records were not swept
-# individually; externalIds are left empty throughout for the
-# enrichment bot.
+# navbox template), the Italian Wikipedia "Umberto Eco" article's own
+# "Opere" bibliography (publisher and ISBN given per title, the standard
+# this catalogue applies to a non-anglophone author), plus the individual
+# English-Wikipedia article for each of the seven novels (each carries its
+# own infobox with translator, original title and both publication dates).
+# ISFDB DOES carry an Umberto Eco author page (Author Record #2171,
+# isfdb.org/cgi-bin/ea.cgi?Umberto_Eco) - corrected here after an earlier
+# pass wrongly recorded "Author not found"; it lists only the novels, the
+# two Carmi-illustrated children's books and a handful of essays, not the
+# academic bibliography, which is why it under-counts against Wikipedia and
+# was not the deciding source for any entry below. OpenLibrary was used
+# per-title to verify original-language and first-publication year on
+# several entries below (noted on those entries individually); a full sweep
+# of all 67 works against it was not done. externalIds are left empty
+# throughout for the enrichment bot.
 #
 # canonTier convention for this franchise, and the two-register question:
 # Eco worked in two registers his whole career - the seven novels for a
@@ -48,8 +54,10 @@
 #
 # THE NAME OF THE ROSE, TRANSLATION AND LATIN. See that entry's own
 # translationNote: unlike the rest of this bibliography, its English text is
-# not simply "translated once and left alone" - see the note for what is and
-# is not confirmed here.
+# not simply "translated once and left alone" - Weaver's Latin and other
+# non-English passages are left untranslated, corroborated by University of
+# Michigan Press's dedicated companion volume of translations for exactly
+# that gap.
 #
 # TRANSLATORS ACROSS THE NOVELS. William Weaver translated the first
 # four novels (The Name of the Rose 1983, Foucault's Pendulum 1989, The
@@ -99,6 +107,24 @@
 #   pamphlets, 1997-98) - no single dated book exists for an entry to anchor
 #   to, the same standard this catalogue already applies to Saramago's
 #   uncollected crónicas.
+# - "Storia di una rivoluzione mai esistita: L'esperimento Vaduz. Appunti del
+#   Servizio opinioni, n.292, settembre 1976" (1976, Rai - Servizio Opinioni):
+#   an internal RAI opinion-research bulletin, not a trade-published book -
+#   same standard as the RAI-era institutional pamphlets above.
+# - "Streit der Interpretationen" (1987, Universitätsverlag Konstanz) and
+#   "Conceito de texto" (1984, São Paulo, Queiroz): lecture texts published
+#   only in German and Portuguese respectively, with no Italian or English
+#   edition found - the same standard already applied to the Streichholzbriefe
+#   pamphlets above.
+# - "Carolina Invernizio, Matilde Serao, Liala" (1979, Firenze), credited on
+#   the Italian Wikipedia bibliography as "con altri" (with others): a
+#   multi-author collective volume, too collective to catalogue as Eco's own
+#   book, the same standard applied to "11/9 La cospirazione impossibile"
+#   above.
+# - "La riscoperta dell'America" (1984), with Gian Paolo Ceserani and
+#   Beniamino Placido: a three-way co-authored book; Eco's own separable
+#   contribution was not independently verified, the same standard applied to
+#   "Da dove si comincia?" above.
 # - Film, television and stage adaptations of Eco's own novels (by other
 #   hands) are out of scope by this catalogue's standing rule.
 
@@ -126,15 +152,21 @@
     revisions to The Name of the Rose" for the English edition in 2014 -
     Weaver had died the previous year. The novel is also dense with real and
     invented Latin quotation throughout its theological debates (Wikipedia's
-    own account of the book's allusions notes this directly). Whether the
-    current English text glosses or translates that Latin, or leaves it in
-    Latin as the Italian original does, is not confirmed by a source cited
-    here - a check against a physical copy would settle it.
+    own account of the book's allusions notes this directly). This Latin,
+    along with the book's other non-English passages (Greek, Provençal,
+    German, medieval vernaculars), is left untranslated and unglossed in the
+    standard English text: University of Michigan Press published a
+    dedicated 216-page companion, "The Key to The Name of the Rose:
+    Including Translations of All Non-English Passages" (Haft, White and
+    White, 1999), specifically because Weaver's edition supplies none - a
+    reader with no Latin is meant to feel the same friction as against the
+    Italian original.
   sources:
     - https://en.wikipedia.org/wiki/The_Name_of_the_Rose
     - https://en.wikipedia.org/wiki/Umberto_Eco_bibliography
     - https://en.wikipedia.org/wiki/Richard_Dixon_(translator)
     - https://en.wikipedia.org/wiki/William_Weaver
+    - https://press.umich.edu/Books/T/The-Key-to-The-Name-of-the-Rose
 
 - id: umberto-eco/foucaults-pendulum
   title: "Il pendolo di Foucault"
@@ -228,7 +260,7 @@
     - https://en.wikipedia.org/wiki/Numero_Zero
     - https://en.wikipedia.org/wiki/Umberto_Eco_bibliography
 
-# --- Academic, semiotic and essay works (46) ---
+# --- Academic, semiotic and essay works (50) ---
 # Chronological. English title given on the same line as the Italian
 # original where a translation exists; untranslated where none was found.
 
@@ -395,6 +427,34 @@
   sources:
     - https://en.wikipedia.org/wiki/Umberto_Eco_bibliography
 
+- id: umberto-eco/stelle-e-stellette
+  title: "Stelle & stellette: La via lattea mormorò"
+  authorIds: [umberto-eco]
+  published: 1976
+  subseries: null
+  canonTier: extended
+  format: picture-book
+  synopsis: >
+    An illustrated fable of the Milky Way, with drawings by the French
+    comics artist Philippe Druillet. Published in English translation as
+    "Stars and Stripes".
+  sources:
+    - https://it.wikipedia.org/wiki/Umberto_Eco
+    - https://www.isfdb.org/cgi-bin/ea.cgi?Umberto_Eco
+
+- id: umberto-eco/dalla-periferia-dellimpero
+  title: "Dalla periferia dell'impero"
+  authorIds: [umberto-eco]
+  published: 1977
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    A collection of Eco's political and media essays from the mid-1970s,
+    published by Bompiani. No English translation was found.
+  sources:
+    - https://it.wikipedia.org/wiki/Umberto_Eco
+
 - id: umberto-eco/come-si-fa-una-tesi-di-laurea
   title: "Come si fa una tesi di laurea"
   authorIds: [umberto-eco]
@@ -476,6 +536,20 @@
   sources:
     - https://en.wikipedia.org/wiki/Umberto_Eco_bibliography
 
+- id: umberto-eco/sette-anni-di-desiderio
+  title: "Sette anni di desiderio: Cronache, 1977-1983"
+  authorIds: [umberto-eco]
+  published: 1983
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    A gathering of Eco's L'Espresso and La Repubblica columns from the years
+    of Italy's "years of lead", including his coverage of the Aldo Moro
+    kidnapping. Published by Bompiani; no English translation was found.
+  sources:
+    - https://it.wikipedia.org/wiki/Umberto_Eco
+
 - id: umberto-eco/semiotica-e-filosofia-del-linguaggio
   title: "Semiotica e filosofia del linguaggio"
   authorIds: [umberto-eco]
@@ -503,6 +577,30 @@
     sciences. No English translation was found.
   sources:
     - https://en.wikipedia.org/wiki/Umberto_Eco_bibliography
+
+- id: umberto-eco/arte-e-bellezza-nellestetica-medievale
+  title: "Arte e bellezza nell'estetica medievale"
+  authorIds: [umberto-eco]
+  published: 1987
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    A survey of medieval aesthetic thought beyond the Aquinas-focused study
+    of Eco's first book, from Carolingian art theory through the medieval
+    idea of beauty as proportion and light. Translated as Art and Beauty in
+    the Middle Ages; featured enough in Eco's own career that the Italian
+    Wikipedia biography's lead image is his autograph on the book's German
+    edition.
+  note: >
+    OpenLibrary's earliest catalogued edition of the English/French
+    translation is dated 1986, a year ahead of this 1987 Italian date from
+    Bompiani's own publication record (Italian Wikipedia's bibliography,
+    citing publisher and place). Which edition genuinely came first was not
+    resolved here.
+  sources:
+    - https://it.wikipedia.org/wiki/Umberto_Eco
+    - https://openlibrary.org/search.json?q=Art+and+Beauty+in+the+Middle+Ages+Eco
 
 - id: umberto-eco/i-limiti-dellinterpretazione
   title: "I limiti dell'interpretazione"
@@ -923,7 +1021,7 @@
   sources:
     - https://en.wikipedia.org/wiki/Umberto_Eco_bibliography
 
-# --- Children's books (4) ---
+# --- Children's books (5) ---
 # All illustrated by Eugenio Carmi except Ammazza l'uccellino.
 
 - id: umberto-eco/la-bomba-e-il-generale
@@ -983,7 +1081,23 @@
   sources:
     - https://en.wikipedia.org/wiki/Umberto_Eco_bibliography
 
-# --- Apocrypha (4) ---
+- id: umberto-eco/la-storia-de-i-promessi-sposi
+  title: 'La storia de "I promessi sposi", raccontata da Umberto Eco'
+  authorIds: [umberto-eco]
+  published: 2010
+  subseries: null
+  canonTier: extended
+  format: picture-book
+  synopsis: >
+    Eco's own retelling of Alessandro Manzoni's nineteenth-century classic
+    for young readers, published in a series pairing well-known writers
+    with the Italian literary canon (Scuola Holden / La Biblioteca di
+    Repubblica-L'Espresso). Not an original Eco story - Manzoni's plot,
+    retold in Eco's own words for the series.
+  sources:
+    - https://it.wikipedia.org/wiki/Umberto_Eco
+
+# --- Apocrypha (5) ---
 
 - id: umberto-eco/filosofi-in-liberta
   title: "Filosofi in libertà"
@@ -1046,3 +1160,25 @@
     essays rather than writing the volume alone.
   sources:
     - https://en.wikipedia.org/wiki/Umberto_Eco_bibliography
+
+- id: umberto-eco/non-sperate-di-liberarvi-dei-libri
+  title: "Non sperate di liberarvi dei libri"
+  authorIds: [umberto-eco]
+  published: 2009
+  subseries: null
+  canonTier: apocrypha
+  authorRole: co-author
+  withAuthorIds: [jean-claude-carriere]
+  synopsis: >
+    A book-length conversation between Eco and the French screenwriter
+    Jean-Claude Carrière on books, libraries and the durability of print,
+    conducted and edited by the journalist Jean-Philippe de Tonnac.
+    Translated as This Is Not the End of the Book (2011).
+  note: >
+    A French edition (Grasset) is also dated 2009; which of the two 2009
+    editions came first was not established here, so the original-language
+    attribution behind this entry's title is not certain the way it is for
+    the rest of this bibliography.
+  sources:
+    - https://it.wikipedia.org/wiki/Umberto_Eco
+    - https://openlibrary.org/search.json?q=Eco+Carri%C3%A8re+non+sperate+di+liberarvi+dei+libri

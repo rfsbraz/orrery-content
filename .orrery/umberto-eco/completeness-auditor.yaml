@@ -1,0 +1,111 @@
+stage: completeness-auditor
+summary: >
+  Full sweep against English/Italian Wikipedia, ISFDB and OpenLibrary. Added
+  6 works (61 -> 67: 7 core, 55 extended, 5 apocrypha), corrected a false
+  "ISFDB has no author entry" sourcing claim (it does: Author Record #2171),
+  resolved the Latin question franchise-research left open, and added 5
+  more verified-but-rightly-excluded titles to the exclusion list.
+  validate.py --slug umberto-eco is green (0 errors; theme.art unset is the
+  same expected warning as before).
+
+corrections:
+  worksAdded:
+    - id: umberto-eco/stelle-e-stellette
+      source: it.wikipedia.org/wiki/Umberto_Eco + ISFDB
+      note: "1976 illustrated fable (Philippe Druillet), missing from the English bibliography page entirely."
+    - id: umberto-eco/dalla-periferia-dellimpero
+      source: it.wikipedia.org/wiki/Umberto_Eco
+      note: "1977 Bompiani essay collection, missing from the English bibliography page entirely."
+    - id: umberto-eco/sette-anni-di-desiderio
+      source: it.wikipedia.org/wiki/Umberto_Eco
+      note: "1983 Bompiani essay collection; Eco's own biography text names this book directly, yet it was absent."
+    - id: umberto-eco/arte-e-bellezza-nellestetica-medievale
+      source: it.wikipedia.org/wiki/Umberto_Eco + OpenLibrary
+      note: >
+        1987 Bompiani nonfiction (Art and Beauty in the Middle Ages);
+        prominent enough to be Eco's own Wikipedia lead image, yet absent.
+        Note on the entry flags an unresolved 1986-vs-1987 edition-priority
+        question.
+    - id: umberto-eco/la-storia-de-i-promessi-sposi
+      source: it.wikipedia.org/wiki/Umberto_Eco
+      note: "2010 retelling of Manzoni's I promessi sposi for young readers, ISBN-carrying, not an original Eco story (noted as such)."
+    - id: umberto-eco/non-sperate-di-liberarvi-dei-libri
+      source: it.wikipedia.org/wiki/Umberto_Eco + OpenLibrary
+      note: >
+        2009 dialogue with Jean-Claude Carrière (English: This Is Not the
+        End of the Book), same shape as the already-catalogued Belief or
+        Nonbelief?. Added a minimal jean-claude-carriere.yaml author entity
+        (verified against his own English Wikipedia article) to support
+        withAuthorIds. Note flags an unresolved French-vs-Italian
+        first-edition question.
+  sourcingCorrected: >
+    Header wrongly claimed ISFDB has no Eco entry. It does (Author Record
+    #2171) - lists the novels and two children's books but not the academic
+    bibliography, so it wasn't decisive for any entry, but the claim of
+    total absence was false and is corrected.
+  exclusionsAdded: >
+    5 more real, checked titles matched to existing exclusion categories:
+    "Storia di una rivoluzione mai esistita" (RAI internal bulletin, not a
+    trade book), "Streit der Interpretationen" and "Conceito de texto"
+    (German-only / Portuguese-only lecture texts, matching the
+    Streichholzbriefe treatment), "Carolina Invernizio, Matilde Serao,
+    Liala" (too collective, matching the 11/9 pamphlet treatment), and
+    "La riscoperta dell'America" (unverified separable co-authorship,
+    matching the Da dove si comincia? treatment).
+  latinQuestionResolved: >
+    Confirmed: Weaver's English "Name of the Rose" leaves Latin (and all
+    other non-English passages) untranslated and unglossed, exactly as the
+    Italian original does. Independent evidence: University of Michigan
+    Press published a dedicated 216-page companion, "The Key to The Name of
+    the Rose: Including Translations of All Non-English Passages" (Haft,
+    White and White, 1999), specifically to supply what Weaver's edition
+    does not. translationNote and header updated from open to confirmed.
+  twoRegisterConsistency: >
+    Spot-checked directly against jose-saramago/works.yaml,
+    haruki-murakami/works.yaml and margaret-atwood/works.yaml: all three
+    genuinely tier off-spine nonfiction/poetry/essays as `extended` by kind
+    of publication, not audience or difficulty, matching Eco's header
+    claim. No inconsistency found.
+  canonTierSpotCheck: >
+    Tier counts (7/55/5) reconcile. No mistiering found beyond the two
+    items franchise-research already flagged for wing-audit's second
+    opinion (Storia della bellezza/bruttezza tier; The Role of the Reader
+    entry-vs-note) - left untouched as genuinely defensible, not errors.
+  englishOriginalWorksVerified: >
+    All four (Six Walks, Interpretation and Overinterpretation, Confessions
+    of a Young Novelist, Experiences in Translation) re-verified via
+    OpenLibrary edition records as genuinely English-original. No year
+    needed correcting.
+
+forStages:
+  press-archaeology: >
+    Rich subject: 1954 Turin philosophy degree (thesis on Aquinas under
+    Luigi Pareyson), RAI 1954-late 1950s alongside fellow "corsari" Furio
+    Colombo and Gianni Vattimo, Bompiani co-direction, Bologna professorship
+    1975 on the strength of Trattato di semiotica generale, fiction debut
+    at 48, married to German graphic designer Renate Ramge (1962, two
+    children), a 30,000-volume Milan library plus a separate medieval/occult
+    library near Urbino, two-year pancreatic cancer illness before his 19
+    February 2016 death. All on English/Italian Wikipedia; needs a second
+    source per fact.
+  eras: >
+    A real progression, not just a shelf-shape guess: pure academic
+    semiotics/aesthetics 1956-1975 culminating in the 1975 Trattato and
+    Bologna professorship; fiction begins only in 1980 (age 48) and runs
+    in parallel with the nonfiction for the rest of his life (4 posthumous
+    nonfiction volumes 2016-2022, zero posthumous novels). "Formation"
+    (pre-1980) vs. "dual practice" (1980 on) is sourced; a flat
+    "semiotician then novelist" split is not.
+  editions: >
+    Translator mapping unchanged (Weaver/Brock/Dixon, already in
+    works.yaml). New: the Name of the Rose translationNote now states as
+    confirmed fact that the standard English edition leaves all
+    non-English passages untranslated - carry the University of Michigan
+    Press "Key to The Name of the Rose" (1999) forward as the companion
+    text worth noting alongside that title's edition record.
+
+openQuestions:
+  - "Arte e bellezza nell'estetica medievale: OpenLibrary's earliest English/French edition is dated 1986, a year ahead of the 1987 Italian date used here. Not resolved."
+  - "Non sperate di liberarvi dei libri: a French edition (Grasset) shares the 2009 year with the Italian edition used here; publication priority not established."
+  - "Storia della bellezza / Storia della bruttezza tier, and The Role of the Reader entry-vs-note: left exactly as franchise-research flagged them for wing-audit."
+  - "The four Wikipedia 'uncollected essay' titles (Il linguaggio della Terra Australe, Il codice Temesvar, Nel segno della parola, Sator Arepo eccetera) remain unchecked past a title-similarity read."
