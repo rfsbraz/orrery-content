@@ -1,0 +1,225 @@
+# TITLE-SCRIPT DECISION (read before touching works.yaml). This is the
+# catalogue's first author whose original language is not written in Latin
+# script. Every other translated wing (Saramago, Nesbo, Cervantes...) keeps
+# its work titles in the author's own language unaltered, because that
+# language happens to share readers' alphabet. The literal extension of the
+# same rule to Japanese is the native script (e.g. 風の歌を聴け), which is
+# what works.yaml carries as `title`, with the Hepburn romanization given
+# alongside every entry. Neither docs/SCHEMA.md, docs/LAYOUT.md nor
+# docs/VISUAL.md say anything about non-Latin glyph support in the app's
+# three closed-set display faces (fraunces, spectral, sourceSerif) or in the
+# inline work-reference renderer, so this is untested, not confirmed working.
+id: haruki-murakami
+name: Haruki Murakami
+kind: author
+description: >
+  A jazz-bar owner turned novelist of missing cats, well-shafts and parallel
+  Tokyos, translated into English across four decades by three principal
+  translators, with two early novels held out of general Western release for
+  over twenty-five years.
+authorIds: [haruki-murakami]
+themePreset: after-hours-tokyo
+features: {}
+images:
+  header: "https://upload.wikimedia.org/wikipedia/commons/0/00/Jazz_%26_Coffee_Masako_10_-_Shimokitazawa%2C_2009-09-24_20.21.01_%28by_Guwashi999%29_-_cropped.jpg"
+  headerCredit: "Guwashi999, CC BY 2.0"
+  headerSource: "https://commons.wikimedia.org/wiki/File:Jazz_%26_Coffee_Masako_10_-_Shimokitazawa,_2009-09-24_20.21.01_(by_Guwashi999)_-_cropped.jpg"
+  # Jazz Masako, a real, still-operating jazz kissa (jazz coffee house) in
+  # Shimokitazawa, Tokyo, open since 1953 per its own signage - a doorway
+  # glowing warm and green through night-time foliage and fairy lights.
+  # Chosen to stand for the jazz-kissaten culture this author's own
+  # lifeEvents place him inside (he ran the jazz bar Peter Cat, 1974-1981,
+  # long since closed with no photographic record found), without claiming
+  # this specific, unrelated venue as his - the caption states only what it
+  # is. Rejected: Golden Gai, Shinjuku's tiny-bar alley (Commons has several
+  # clean CC BY-SA options), passed over for showing identifiable living
+  # people mid-frame and no jazz/record connection at all, a generic
+  # nightlife-alley image rather than one specific to this wing's own music
+  # motif.
+
+
+# Which shared global events actually reach this author (docs/SCHEMA.md).
+# Born 1949, alive: pre-1949 entries (both world wars, the 1926 pulp
+# magazines, the 1935 sixpenny paperback, the 1943 armed-services editions,
+# the 1870 schooling act) were left unruled as implausible on their face -
+# a Japanese-language literary novelist has no inheritance case comparable
+# to a genre author born into a category those events built - rather than
+# argued down one by one. Of what remains inside his lifetime, one event
+# clears the resonance bar; twelve were considered and refused.
+globalEvents:
+  include:
+    # The City and Its Uncertain Walls (2023) is a 1980 novella he rewrote
+    # during the 2020 lockdown, rarely leaving home while doing it. Asked
+    # about it directly, he named the connection himself rather than having
+    # it read into the book afterward: "The situation of the town
+    # surrounded by walls was also a metaphor of the worldwide lockdown.
+    # How is it possible for both extreme isolation and warm feelings of
+    # empathy to coexist? That was one of the major themes of this novel"
+    # (John Self interview, The Guardian, 23 Nov 2024). Distinct from the
+    # 1995 Kobe earthquake/sarin material already on his lifeEvents: that
+    # pair is the direct subject of Underground and after the quake, this
+    # is a wartime-Japan-era wall metaphor repurposed, by his own account,
+    # for a 2020s pandemic.
+    - covid-19-pandemic-2020
+  # Considered and refused. Nothing renders unless it is in `include`
+  # above, so these change nothing; they are kept as the record of a
+  # judgement already made, so it is not re-litigated from scratch.
+  exclude:
+    - sept-11-2001                       # no sourced link; the terrorism his own work answers is Aum Shinrikyo's 1995 sarin attack, already a lifeEvent
+    - financial-crisis-2008              # a thin global entry on its own; 1Q84 (2009) was already substantially written and no interview ties it to the crash
+    - lady-chatterley-trial-1960         # a UK obscenity case decided when he was 11; his real censorship fight is Hong Kong's 2018 Killing Commendatore ruling, a different law, already a franchise event
+    - fantasy-paperback-boom-1965        # names the Tolkien-driven secondary-world epic-fantasy category; his surrealism descends from Kafka, Carver and hard-boiled noir, no inheritance case
+    - carnation-revolution-1974          # Portuguese censorship history; no documented connection to a Japanese author
+    - chain-bookshop-1982                # generic bookselling-industry trend; his own real launch events (news blackouts, midnight queues) are already franchise events tied to publisher marketing, not chain-store display
+    - online-bookselling-1995            # no sourced link to Amazon's 1995 launch specifically
+    - ebook-and-self-publishing-2007     # no sourced link found tying his catalogue or career to the Kindle/self-publishing shift
+    - prestige-fantasy-adaptation-2011   # names Game of Thrones and prestige fantasy television specifically; his own screen adaptations (Norwegian Wood, Burning, Drive My Car) are literary arthouse film, a different medium and genre
+    - booktok-2020                       # individual fan videos exist, as they do for most backlist novelists; no source ties a sales spike or reissue to BookTok rather than to his ordinary international sales
+    - portugal-bailout-2011              # a Portuguese national crisis; no documented connection
+    - comics-code-authority-1954         # a 1954 US comics self-censorship code; he was five, writes no comics, and the manga adaptations of his stories (Tuttle, 2023) arrive decades after the Code's authority had already collapsed
+
+startHere:
+  paths:
+    # Source: https://www.theguardian.com/books/2023/jul/27/where-to-start-with-haruki-murakami
+    # (subreddit-pinned - see r/murakami's own mod post linking this piece),
+    # section "If you only read one": "The Wind-Up Bird Chronicle is peak
+    # Murakami... it is Murakami at his most beguiling."
+    # Source: https://www.vulture.com/article/best-haruki-murakami-books-ranked.html
+    # ("22 Best Haruki Murakami Books, Ranked") places it first, ahead of
+    # Norwegian Wood, Kafka on the Shore and every other title.
+    # Corroborated organically on r/murakami and r/books: unprompted reader
+    # accounts call it "a great starting place" and "the best...place to
+    # start" for a first Murakami.
+    - id: essentials
+      title: If you only read one
+      description: >
+        The novel that established the long, dreamlike, historically-haunted
+        form most readers now think of as distinctly his: a man's search for
+        his missing cat widens into a search for his missing wife, and pulls
+        in a psychic, a dry well and a soldier's buried account of wartime
+        Manchuria.
+      workIds:
+        - haruki-murakami/the-wind-up-bird-chronicle
+      orderId: null
+      fit:
+        experience: [new, returning]
+        commitment: [taste]
+      note: >
+        The cost is length and density - over 600 pages, three
+        loosely-joined volumes originally, a plot that resists a tidy
+        summary - the opposite of a quick taste of him.
+
+    # Source: https://www.theguardian.com/books/2023/jul/27/where-to-start-with-haruki-murakami,
+    # section "The entry point": "Norwegian Wood lacks the otherworldly
+    # strangeness that has come to characterise much of Murakami's most
+    # popular work... [it] is Murakami's most accessible novel."
+    # Source: https://www.vulture.com/article/best-haruki-murakami-books-ranked.html
+    # calls it "a rare work of realism" and "proof that Murakami is at least
+    # as effective without his surrealist shtick."
+    - id: the-famous-one
+      title: "Know him by reputation? Start here anyway - carefully"
+      description: >
+        The realist campus love story that made him a bestseller in Japan
+        and, for many readers outside it, the only Murakami title they know
+        by name - a Tokyo student's grief for a childhood friend, split
+        between two very different women.
+      workIds:
+        - haruki-murakami/norwegian-wood
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        The cost is representativeness: this is his least typical major
+        novel, without the surrealism, the wells, the talking animals or
+        the parallel worlds the rest of the shelf runs on. A reader who
+        loves it and expects more of the same will be surprised by
+        everything else here.
+
+    # Source: https://en.wikipedia.org/wiki/Hear_the_Wind_Sing ("It is the
+    # first book in the so-called 'Trilogy of the Rat' series... before the
+    # later epilogue Dance Dance Dance")
+    # Source: https://en.wikipedia.org/wiki/Pinball,_1973 ("The second book
+    # in the 'Trilogy of the Rat' series")
+    # Source: https://en.wikipedia.org/wiki/A_Wild_Sheep_Chase ("the third
+    # book in the so-called 'Trilogy of the Rat'")
+    - id: trilogy-of-the-rat
+      title: The Trilogy of the Rat
+      description: >
+        The same unnamed narrator and his friend the Rat across three early,
+        spare, jazz-inflected novels - a directionless summer, a vanished
+        pinball machine, and a corporate hunt for a sheep with a
+        history-shaping mark - read as the loose, informally-named set
+        critics and readers actually call them.
+      workIds:
+        - haruki-murakami/hear-the-wind-sing
+        - haruki-murakami/pinball-1973
+        - haruki-murakami/a-wild-sheep-chase
+      orderId: null
+      fit:
+        experience: [returning, completionist]
+        commitment: [taste, arc]
+      note: >
+        Not an entry point: Murakami has called the first two "immature,"
+        and one ranked list (Vulture) reads A Wild Sheep Chase's own
+        ideas as "forced" next to his later work. This is for a reader who
+        already knows him and wants the early period as a set, in the
+        order he wrote it - Dance Dance Dance is a later, separate novel
+        that revisits the same narrator, not a fourth volume of this trio.
+
+    # Sourced per title, not as a group: each of these five carries a hard
+    # external distinction none of the extended tier's other seven titles
+    # has. Source: https://en.wikipedia.org/wiki/Blind_Willow,_Sleeping_Woman
+    # (Frank O'Connor International Short Story Award 2006; Kiriyama Prize
+    # 2007, declined). Source:
+    # https://en.wikipedia.org/wiki/Men_Without_Women_(Murakami_short_story_collection)
+    # ("Drive My Car" adapted into the Academy Award-winning 2021 film).
+    # Source: https://en.wikipedia.org/wiki/The_Elephant_Vanishes (adapted
+    # into an internationally-touring Complicite stage production). Source:
+    # https://en.wikipedia.org/wiki/Absolutely_on_Music (Hideo Kobayashi
+    # Prize, 2012). Underground's distinction is this wing's own: eras.yaml
+    # already names it, alongside after the quake, as the direct textual
+    # evidence for the detachment/commitment boundary, corroborated by
+    # Complete Review's "enthusiastic" consensus on the English edition.
+    - id: beyond-the-novels
+      title: Beyond the novels
+      description: >
+        Five works from the short fiction and nonfiction that has run
+        alongside the sixteen novels - an award-winning story collection, a
+        second that became an Academy Award-winning film, a third staged
+        internationally, a prize-winning book of conversations with
+        conductor Seiji Ozawa, and the oral history of the 1995 Tokyo sarin
+        attack that this wing's own eras track as the hinge of his career.
+      workIds:
+        - haruki-murakami/the-elephant-vanishes
+        - haruki-murakami/underground
+        - haruki-murakami/blind-willow-sleeping-woman
+        - haruki-murakami/absolutely-on-music
+        - haruki-murakami/men-without-women
+      orderId: null
+      fit:
+        experience: [completionist]
+        commitment: [taste]
+      note: >
+        This is not the whole extended tier - seven more titles wait here,
+        including two later, warmly-reviewed collections (What I Talk About
+        When I Talk About Running, First Person Singular) left out only for
+        space. The derived default still carries all twelve in publication
+        order; this is a shortcut through them, not a replacement for them.
+
+    - id: everything
+      title: Everything, in order
+      description: >
+        All twenty-nine works in the order he wrote them - sixteen novels,
+        six story collections, one novella, five works of nonfiction and one
+        edited anthology, interleaved as they actually appeared across nearly
+        five decades.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+
+sources:
+  - https://en.wikipedia.org/wiki/Haruki_Murakami
+  - https://en.wikipedia.org/wiki/Template:Haruki_Murakami

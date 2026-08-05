@@ -1,0 +1,299 @@
+# Português europeu (pt-PT) - bio + prosa dos lifeEvents (title + description).
+# Os lifeEvents ficam aninhados sob o autor e fundem-se por id (ver
+# SCHEMA.md, "Nested lists merge by id"); datas, impact, organisation,
+# illustration_type, images_required e sources nunca se traduzem, nem o
+# nome do autor.
+#
+# CITAÇÕES VERBATIM: onde a description de base cita as palavras exatas de
+# Murakami entre aspas (a "warm sensation" da bio, "Blind Nightmare: Where
+# Are We Japanese Going?" e a frase sobre o desastre nuclear em
+# haruki-murakami-catalunya-fukushima-2011, "dark and hopeless story" em
+# haruki-murakami-andersen-speech-2016), essa citação fica em inglês,
+# verbatim, dentro da prosa traduzida - sem tradução portuguesa publicada
+# localizável, e não se inventa uma para uma citação atribuída a uma pessoa
+# real (mesma regra já registada em hp-lovecraft.yaml, anna-sewell.yaml e
+# miguel-de-cervantes.yaml). Os dois lifeEvents organisation: epigraph
+# (haruki-murakami-jerusalem-speech-2009, haruki-murakami-andersen-
+# speech-2016) traduzem title e description mas omitem quote, pela mesma
+# razão: o campo de base é a fala do próprio Murakami, verbatim, sem
+# tradução portuguesa publicada dela.
+#
+# "Detachment"/"commitment" (haruki-murakami-princeton-tufts-1991,
+# haruki-murakami-kobe-sarin-1995) ficam em inglês em qualquer ocorrência,
+# tal como no título das próprias eras (ver eras.yaml desta ala): é o termo
+# recebido de Murakami, nunca traduzido nesta plataforma.
+#
+# PRÉMIOS: os nomes de prémios sem forma inglesa oficial fixa (Kuwabara
+# Takeo, Noma, Yomiuri, o International Catalunya Prize, o Hans Christian
+# Andersen, o Princess of Asturias) traduzem "Prize"/"Award" como "Prémio",
+# seguindo o uso corrente da imprensa portuguesa para distinções
+# estrangeiras (Prémio Nobel, Prémio Pulitzer); os nomes próprios mantêm-se.
+#
+# Os títulos de obras citados inline usam o título português publicado
+# quando existe uma edição real (editions.yaml): "A Sul da Fronteira, a
+# Oeste do Sol" por "South of the Border, West of the Sun", etc. Norwegian
+# Wood e Underground mantêm-se tal como no mercado português (a edição
+# pt-PT usa o mesmo título inglês).
+#
+# NENHUM FICHEIRO DE AUTOR ADICIONAL FOI ENCONTRADO PARA TRADUZIR. Esta ala
+# introduz dois colaboradores fora do catálogo - o publicitário Shigesato
+# Itoi (Let's Meet in a Dream) e o maestro Seiji Ozawa (Absolutely on
+# Music) - mas works.yaml regista explicitamente, em nota própria em cada
+# entrada, que nenhum dos dois tem entrada nesta plataforma nem authorId
+# próprio; content/authors/ desta ala continua a conter apenas
+# haruki-murakami.yaml.
+
+- id: haruki-murakami
+  bio: >
+    Romancista, contista, ensaísta e tradutor japonês, nascido em Quioto e
+    criado em Nishinomiya, Ashiya e Kobe. Estudou teatro na Universidade de
+    Waseda, em Tóquio, e geriu um café e bar de jazz, o Peter Cat, primeiro
+    em Kokubunji e depois em Sendagaya, de 1974 a 1981. Não escreveu ficção
+    nenhuma até ter, segundo o próprio, uma súbita "warm sensation" de
+    certeza de que podia escrever um romance, ao ver um jogo de basebol dos
+    Tokyo Yakult Swallows no Estádio Jingu, em abril de 1978, com 29 anos;
+    foi a casa nessa noite e começou
+    [[work:haruki-murakami/hear-the-wind-sing|Ouve a Canção do Vento]]
+    (1979), trabalhando em pequenos períodos depois de fechar o bar.
+    Construiu desde então uma bibliografia de dezasseis romances, seis
+    coletâneas de contos e vários livros de não-ficção traduzidos em cerca
+    de cinquenta línguas, vivendo por períodos prolongados na Europa e nos
+    Estados Unidos (lecionou em Princeton e em Tufts) pelo caminho. A sua
+    obra vai dos primeiros romances realistas, de jazz e whisky, até à
+    ficção longa, surreal e onírica pela qual é hoje mais conhecido
+    ([[work:haruki-murakami/the-wind-up-bird-chronicle|Crónica do Pássaro
+    de Corda]], [[work:haruki-murakami/kafka-on-the-shore|Kafka à
+    Beira-Mar]], [[work:haruki-murakami/1q84|1Q84]]), até à obra de
+    não-ficção [[work:haruki-murakami/underground|Underground]], a sua
+    história oral do ataque de gás sarin ao metro de Tóquio em 1995.
+    Traduziu também ficção americana para japonês (Raymond Carver, F. Scott
+    Fitzgerald, Raymond Chandler, entre outros) e continua a publicar a
+    partir de Tóquio.
+  lifeEvents:
+    - id: haruki-murakami-born-1949
+      title: Nasce em Quioto durante a ocupação aliada, cresce em Nishinomiya, Ashiya e Kobe
+      description: >
+        Nasceu Murakami Haruki em Fushimi-ku, Quioto, a 12 de janeiro de
+        1949, durante a ocupação aliada do pós-guerra no Japão, filho de
+        dois professores de literatura japonesa. A família instalou-se
+        pouco depois na área de Kobe, e cresceu em Nishinomiya, Ashiya e
+        Kobe, e não na cidade onde nasceu; o trânsito constante de
+        marinheiros estrangeiros naquela cidade portuária, e as suas
+        livrarias de livros de bolso usados, deram-lhe um gosto precoce
+        pelo jazz americano e pela ficção hard-boiled que nunca mais o
+        abandonou ao longo da carreira.
+
+    - id: haruki-murakami-peter-cat-1974
+      title: Abre o bar de jazz Peter Cat com a mulher, Yoko, a dever até ao último iene
+      description: >
+        Casados logo à saída da Universidade de Waseda, sem dinheiro entre
+        os dois, Murakami e a mulher, Yoko, passaram três anos a acumular
+        vários empregos ao mesmo tempo para juntar o suficiente para abrir
+        um pequeno café e bar de jazz, o Peter Cat, em Kokubunji, em 1974;
+        uma obra do senhorio levou depois o bar para instalações maiores em
+        Sendagaya. Geriu-o durante sete anos, passando, segundo o próprio,
+        os vinte e poucos anos a pagar o empréstimo e a fazer o
+        trabalho físico do bar - preparar sanduíches e cocktails, pôr na
+        rua clientes difíceis - de manhã à noite, com quase nenhum tempo
+        livre para além de ler e ouvir discos. A dívida, o jazz e as horas
+        tardias destes anos atravessam os seus primeiros romances, os
+        realistas.
+
+    - id: haruki-murakami-yakult-swallows-1978
+      title: Decide que pode escrever um romance, a ver o jogo de abertura de época dos Yakult Swallows
+      description: >
+        No jogo de abertura da Liga Central no Estádio Jingu, a 1 de abril
+        de 1978, Yakult Swallows contra Hiroshima Carp, Murakami estava
+        estendido com uma cerveja na relva do outfield quando o primeiro
+        batedor, um jovem e desconhecido americano chamado Dave Hilton,
+        mandou o primeiro lançamento do jogo para o campo esquerdo, um
+        duplo limpo. Ao som do bastão a acertar na bola, segundo o próprio,
+        a ideia ocorreu-lhe sem aviso e sem causa evidente: podia
+        escrever um romance. Nessa mesma noite apanhou o comboio para
+        Shinjuku, comprou uma caneta de tinta permanente e um maço de
+        papel, e começou a escrever à mesa da cozinha todas as noites
+        depois de fechar o bar; seis meses depois, por volta do fim da
+        temporada de basebol, tinha um rascunho de
+        [[work:haruki-murakami/hear-the-wind-sing|Ouve a Canção do
+        Vento]]. Nessa temporada, os Swallows, uma equipa cronicamente
+        fraca, venceram o campeonato da Liga Central e depois a Série do
+        Japão.
+
+    - id: haruki-murakami-full-time-writer-1981
+      title: Vende o Peter Cat para escrever a tempo inteiro, e começa de imediato o romance a que chama o seu verdadeiro início
+      description: >
+        Murakami escreveu [[work:haruki-murakami/pinball-1973|Flíper,
+        1973]] (1980) da mesma forma que Ouve a Canção do Vento antes dele -
+        à mesa da cozinha, tarde da noite, depois de fechar o bar. Segundo
+        o próprio, foi pouco depois de terminar esse manuscrito que
+        decidiu tornar-se escritor a tempo inteiro; ele e a mulher venderam
+        o Peter Cat, pondo fim à série de "romances de mesa de cozinha"
+        escritos à volta do trabalho no bar, e lançou-se de imediato no seu
+        primeiro romance de fôlego,
+        [[work:haruki-murakami/a-wild-sheep-chase|Em Busca do Carneiro
+        Selvagem]] (1982), a que chamou o verdadeiro início da sua carreira
+        como romancista, e não aos seus dois primeiros livros, mais breves.
+        Os próprios editores da Gunzo, que tinham pré-selecionado Ouve a
+        Canção do Vento para o seu prémio de novos autores dois anos antes,
+        terão desagradado com o afastamento do novo romance em relação ao
+        estilo da casa; venceu, em vez disso, o Noma Literary Newcomer's
+        Prize, e foi a sua receção popular que lhe permitiu tornar a aposta
+        permanente.
+
+    - id: haruki-murakami-europe-1986
+      title: Deixa o Japão durante três anos na estrada, entre a Itália e a Grécia, e escreve Norwegian Wood em Roma
+      description: >
+        Em 1986, Murakami deixou o Japão para uma longa estadia na Europa,
+        vivendo a partir de Roma e, por breves períodos, da Sicília e das
+        ilhas gregas de Spetses e Mykonos, ao longo dos três anos que mais
+        tarde relatou no seu próprio livro de memórias de viagem, Tōi Taiko
+        ("Distant Drums", 1990, nunca traduzido para inglês). Escreveu
+        [[work:haruki-murakami/norwegian-wood|Norwegian Wood]] durante esta
+        fase, sobretudo em Roma e em Spetses. O seu sucesso inesperado ao
+        ser publicado no Japão em 1987, vendendo milhões de exemplares, foi
+        o que o tornou uma figura pública reconhecida, coisa que achou
+        desconfortável ser em casa - foi essa fama, e não o que
+        originalmente o tinha levado para o estrangeiro, que o manteve
+        depois em viagem.
+
+    - id: haruki-murakami-princeton-tufts-1991
+      title: Cinco anos a ensinar em Princeton e depois em Tufts, a escrever dois romances nos Estados Unidos
+      description: >
+        Murakami mudou-se para os Estados Unidos em janeiro de 1991,
+        primeiro como investigador visitante na Universidade de Princeton
+        (1991-93), depois como writer-in-residence na Universidade de
+        Tufts, em Medford, Massachusetts (1993-95); mais tarde teve também
+        uma bolsa em Harvard. Escreveu
+        [[work:haruki-murakami/south-of-the-border-west-of-the-sun|A Sul da
+        Fronteira, a Oeste do Sol]] e
+        [[work:haruki-murakami/the-wind-up-bird-chronicle|Crónica do
+        Pássaro de Corda]] durante estes anos no estrangeiro, o segundo
+        deles um desvio deliberado para a ocupação japonesa da Manchúria em
+        tempo de guerra, que mais tarde descreveu como o ponto em que a sua
+        ficção passou do "detachment" privado para o "commitment" social.
+
+    - id: haruki-murakami-kobe-sarin-1995
+      title: O terramoto de Kobe e o ataque de gás sarin no metro de Tóquio voltam a sua escrita para fora
+      description: >
+        Duas catástrofes atingiram o Japão com nove semanas de intervalo em
+        1995: o Grande Terramoto de Hanshin, que devastou Kobe, a cidade
+        onde Murakami cresceu, a 17 de janeiro, e o ataque de gás sarin da
+        seita Aum Shinrikyo ao metro de Tóquio, a 20 de março, que matou
+        catorze pessoas e feriu cerca de mil. Ainda a viver nos Estados
+        Unidos, Murakami regressou ao Japão no rescaldo dos dois
+        acontecimentos e passou 1996 a entrevistar sobreviventes do ataque
+        ao metro para o que se tornaria
+        [[work:haruki-murakami/underground|Underground]], a par de um
+        ensaio pessoal, "Blind Nightmare: Where Are We Japanese Going?," a
+        criticar a pressa do país em atribuir o ataque a loucos isolados em
+        vez de examinar as suas causas; seguiu-se, em 2000, a coletânea de
+        contos [[work:haruki-murakami/after-the-quake|after the quake]].
+        Nesse mesmo ano,
+        [[work:haruki-murakami/the-wind-up-bird-chronicle|Crónica do
+        Pássaro de Corda]] venceu o Prémio Yomiuri, atribuído por Kenzaburo
+        Oe, um dos seus críticos mais duros em anos anteriores. Murakami
+        passou desde então a datar deste período a sua mudança, como
+        escritor, do "detachment" privado para o "commitment" social.
+
+    - id: haruki-murakami-ultramarathon-1996
+      title: Completa a primeira ultramaratona, 100 km em torno do Lago Saroma
+      description: >
+        Murakami começou a correr longas distâncias no início dos anos
+        1980, para se manter em forma depois de fechar o Peter Cat, e a 23
+        de junho de 1996 completou a primeira ultramaratona, uma corrida de
+        100 km em torno do Lago Saroma, em Hokkaido. A disciplina diária
+        tornou-se um dos seus hábitos mais visíveis e, uma década depois, o
+        tema do seu próprio livro de memórias sobre a ligação entre correr
+        e escrever.
+
+    - id: haruki-murakami-kuwabara-takeo-prize-1999
+      title: Vence o Prémio Kuwabara Takeo pelo seu segundo livro de entrevistas sobre o ataque de sarin, do lado da seita
+      description: >
+        As entrevistas de Murakami em 1996 com membros de base da seita Aum
+        Shinrikyo, reunidas como volume complementar a
+        [[work:haruki-murakami/underground|Underground]] e publicadas no
+        Japão como Yakusokusareta Basho de ("The Place That Was Promised"),
+        venceram o segundo Prémio Kuwabara Takeo, em 1999 - um prémio de
+        humanidades patrocinado pela Tide Publishing em memória do estudioso
+        de literatura francesa Takeo Kuwabara. Onde Underground tinha dado
+        voz às vítimas do ataque de sarin, este segundo livro voltou o
+        mesmo método paciente de entrevista para as pessoas que o
+        executaram; as edições inglesas de Underground vieram depois a
+        incluir uma seleção destas entrevistas à Aum sob a mesma capa.
+
+    - id: haruki-murakami-catcher-in-the-rye-translation-2003
+      title: Publica a sua própria tradução japonesa de The Catcher in the Rye, destronando um padrão de cinquenta anos
+      description: >
+        Além da sua própria ficção, Murakami passou décadas como tradutor
+        de literatura americana para japonês - Fitzgerald, Chandler,
+        Irving, Carver, entre outros - e em abril de 2003 a Hakusuisha
+        publicou a sua tradução de The Catcher in the Rye, de J.D.
+        Salinger, transliterada diretamente em katakana como Kyatcha in za
+        Rai, em vez dos títulos japoneses interpretativos anteriores. Foi
+        apenas a terceira versão japonesa do romance, e a primeira em quase
+        quarenta anos, chegando a par da tradução de 1964 de Nobuko
+        Hashimoto, o único padrão de referência durante uma geração e já
+        com mais de 2,5 milhões de exemplares vendidos quando a edição de
+        Murakami apareceu. Murakami já tinha, noutra ocasião, referido
+        Salinger entre os autores que moldaram a sua própria ficção.
+
+    - id: haruki-murakami-nyc-marathon-2005
+      title: Treina quatro meses para a Maratona de Nova Iorque, a espinha dorsal do seu livro de memórias sobre corrida
+      description: >
+        O que veio a ser
+        [[work:haruki-murakami/what-i-talk-about-when-i-talk-about-running|Auto-Retrato
+        do Escritor Enquanto Corredor de Fundo]] constrói-se em torno dos
+        quatro meses de preparação para a Maratona de Nova Iorque no outono
+        de 2005, correndo em percursos que vão dos jardins de Jingu Gaien,
+        em Tóquio, ao rio Charles, em Boston, e, a propósito, uma rota de
+        ultramaratona que refaz a corrida original de Maratona a Atenas, na
+        Grécia, o país onde já tinha vivido e escrito.
+
+    - id: haruki-murakami-jerusalem-speech-2009
+      title: "Discurso de aceitação do Prémio de Jerusalém, \"Sempre do Lado do Ovo\""
+      description: >
+        Ao aceitar o Prémio de Jerusalém em Israel, apesar dos apelos ao
+        boicote da cerimónia devido aos bombardeamentos israelitas em Gaza,
+        Murakami disse à audiência que tinha optado por ir e falar, em vez
+        de ficar em casa e nada dizer. As suas palavras nomeavam o
+        enquadramento do indivíduo contra o sistema que atravessa a maior
+        parte da sua ficção, do submundo empresarial de Em Busca do
+        Carneiro Selvagem à seita de 1Q84.
+
+    - id: haruki-murakami-catalunya-fukushima-2011
+      title: Doa o valor do Prémio Internacional Catalunya à ajuda às vítimas do terramoto e de Fukushima
+      description: >
+        Em 2011, Murakami doou os 80 000 euros do Prémio Internacional
+        Catalunya que recebeu às vítimas do terramoto e tsunami de 11 de
+        março e aos afetados pelo desastre nuclear de Fukushima. Ao receber
+        o prémio, chamou à crise de Fukushima "the second major nuclear
+        disaster that the Japanese people have experienced... however,
+        this time it was not a bomb being dropped upon us, but a mistake
+        committed by our very own hands," e defendeu que o Japão devia ter
+        rejeitado a energia nuclear depois de "the sacrifice of the
+        hibakusha" de Hiroshima e Nagasaki já ter mostrado o custo da
+        radiação.
+
+    - id: haruki-murakami-andersen-speech-2016
+      title: "Discurso do Prémio de Literatura Hans Christian Andersen, \"O Significado das Sombras\""
+      description: >
+        Ao receber o Prémio de Literatura Hans Christian Andersen em
+        Odense, na Dinamarca, Murakami intitulou o seu discurso a partir do
+        conto do próprio Andersen, "A Sombra", chamando-lhe "dark and
+        hopeless story," e defendeu que indivíduos, sociedades e nações têm
+        todos de aprender a viver com a sua própria sombra, em vez de a
+        negar ou eliminar pela força. O tema de um duplo reprimido ou
+        estranhado atravessa a sua ficção, da sombra entregue de O
+        Impiedoso País das Maravilhas e o Fim do Mundo a Kafka à Beira-Mar.
+
+    - id: haruki-murakami-asturias-2023
+      title: Vence o Prémio Princesa das Astúrias das Letras
+      description: >
+        Recebeu o Prémio Princesa das Astúrias das Letras em maio de 2023,
+        entregue numa cerimónia em Oviedo, Espanha, a 20 de outubro, a par
+        da laureada das Artes desse ano, Meryl Streep. A distinção do júri
+        destacou os seus romances, de Norwegian Wood (1987) a A Cidade e as
+        Suas Muralhas Incertas (2023), por explorarem "loneliness,
+        existential uncertainty, dehumanization in big cities and
+        terrorism" - quase uma descrição, numa linha, das preocupações
+        recorrentes de toda a sua bibliografia.
