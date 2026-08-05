@@ -1,0 +1,59 @@
+stage: spoiler-audit
+summary: >
+  Every Gwynne sequel is sold on its predecessor's ending, so the failure
+  mode here is imported publisher copy, not invented spoilers. Nine of
+  seventeen synopses were rewritten against the jacket of the book each
+  describes, never the jacket of the book after it. No boundary was set:
+  there are no franchise events, and the five lifeEvents are publication
+  facts correctly carrying null, so rewriting was the only lever.
+produced:
+  - "works.yaml (9 synopses rewritten, 8 notes added/extended)"
+  - "orders.yaml (banished-lands-in-order rationale, 2 clauses)"
+admissionOrderFinding: >
+  Holds. The rationale, both `debated` entries and all four startHere notes
+  state no outcome of the God-War and name no survivor; `debated` declines
+  to settle whether cold-reading Of Blood and Bone spoils or only confuses.
+  Two clauses tightened anyway, both loosenable. "Names a
+  returning character from the first war" advertised a survival, and A Time
+  of Dread's synopsis named the only long-lived character it could be - the
+  two files together said more than either alone. Also "Wrath's payoff" ->
+  "the tetralogy's finale".
+redactions:
+  - "Malice: a pit-fighting survivor (a Valour thread) and the demon gathering the seven treasures - Kadoshim and Nathair's counsellor enter publisher copy only from Ruin."
+  - "Valour: Dun Carreg fallen, and Maquin's betrayal and survival at Haldis - Malice's ending. Pan Macmillan's Valour copy names what Malice arrives at; Orbit's used instead."
+  - "Wrath: Veradis and Alcyon in flight from Calidus, Ruin's ending. Drassil and the captivity are Wrath's own jacket and stay; it states no outcome either way."
+  - "A Time of Dread: 'the supposedly defeated Kadoshim' and the uneasy-peace framing - the God-War's outcome, on this jacket because it sells the sequel. A Time of Blood: its 'catastrophic ending'. A Time of Courage: the arc-left-open framing."
+  - "Shadow of the Gods: 'widowed', and what the stolen children are wanted for (a late reveal, no jacket). Hunger: Lik-Rifa breaking free, Shadow's climax. Fury: Varg's acceptance and Elvar's hold on Snakavik and her wolf god, Hunger's resolutions."
+checkedAndSafe: >
+  Ruin's synopsis, vaguer than its own jacket - which is unusually free
+  with Valour's ending, so a note now says not to pull it. The Wolves of
+  War. All six anthology entries, both universe-tied ones included: no
+  plot. All five lifeEvents, Gemmell Legend and NYT included: prizes and
+  rivals, never why a plot earned them. The bio, franchise description,
+  startHere paths, eras.yaml, both global events.
+validator: "validate.py --slug john-gwynne -> 1 pre-existing error (theme.yaml art:), 2 pre-existing handoff-length warnings, 0 new. Falsified the unhonoured-spoilerAfter guard: errors on a boundary planted on a work, quiet when removed."
+forStages:
+  visual-language: >
+    Nothing here may be illustrated by its ending. Avoid imagery scoring
+    the God-War (a victor's citadel over a beaten horde), anyone left
+    standing after Drassil or either Banished Lands finale, and a dragon
+    loose over Vigrid - Shadow of the Gods' climax, not its premise. Safe:
+    the shield wall, the bone-scavenged tundra, the prophecy.
+  translation: >
+    No pt-PT overlay exists yet, so nothing needed mirroring and nothing
+    stale is live. Translate from these strings only: each is deliberately
+    narrower than the blurb it came from, so do not reach back to a jacket,
+    and do not resolve what a synopsis leaves open. Work-level `note` is
+    curator-only and never rendered (verified in the app).
+  wing-audit: >
+    Two residuals accepted, not redacted. A Time of Dread cannot be
+    described without saying the Ben-Elim hold authority 130 years on,
+    which implies the horde did not win outright; the retrospective scoring
+    is gone, the implication is structural. And the wing repeats that Of
+    Blood and Bone continues the tetralogy - its thesis, kept. One
+    non-spoiler correction: Shadow of the Gods dated the gods' fall at
+    three hundred years; Orbit says a century, so the jacket figure is
+    used, recorded in the note.
+openQuestions:
+  - "The line drawn: the situation a book opens in is fair, the event that produced it is not. If too tight, loosen Hunger and Fury first - they lost the most."
+  - "Shadow of the Gods' 'widowed' is the least certain call: it lands early and drives everything after, but no Orbit jacket mentions it and it is a death. Redacted on the asymmetry, safe to restore."
