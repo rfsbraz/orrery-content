@@ -1,0 +1,691 @@
+# Bibliography (works) - the abstract books; editions/covers are separate
+# metadata. IDs are STABLE and permanent (user data references them). Dates
+# are year-precision (docs/SCHEMA.md); the default reading order (all
+# works, publication order) is DERIVED from this file, never written by
+# hand.
+#
+# SCOPE. Every novel from La hojarasca (1955) through the posthumous En
+# agosto nos vemos (2024); all four of his own short-story collections; the
+# nonfiction and journalism books with a clear, singular publication event
+# (a shipwreck memoir, a Chilean-exile reportage, a kidnapping account, his
+# one memoir volume, a speeches collection, and a five-volume journalism
+# anthology treated as one entry); his one play; his one screenplay credit.
+# Sourced from Wikipedia's dedicated English bibliography article and the
+# Spanish-language "Anexo:Bibliografía" annex (the more complete of the
+# two, and the one used to cross-check every English-side date), plus each
+# major novel's own dedicated Wikipedia article. The gaps this draft
+# leaves open are named explicitly below, for verification against primary
+# and publisher sources.
+#
+# CANON TIER is a publication-kind judgment, not a fame or quality one
+# (SCHEMA.md, CURATION.md#7) - the same discipline this catalogue already
+# applies to Saramago and Grisham. CORE is the eleven novels: the
+# narrative-fiction spine every source checked (both Wikipedia
+# bibliography pages' own "Novels and novellas" table, the Nobel
+# citation's own "novels and short stories") builds from - including the
+# 1955 debut usually described in English as a novella and the 2024
+# posthumous release (see its own note on why it is tiered here, not
+# resolved). EXTENDED is genuinely his, off the novel-reading spine: the
+# four short-story collections, the nonfiction/reportage/memoir/speeches
+# books, the journalism anthology, and the one play - all had a normal
+# trade-book life. APOCRYPHA is for what never had one: a single
+# occasional-speech pamphlet and one uncredited-as-a-book screenplay
+# credit for a political documentary short.
+#
+# TRANSLATORS. No single translator covers this bibliography, so no work
+# below assumes one and the translationNote field is used exactly once,
+# where the record actually supports it (see cien-anos-de-soledad). Per
+# each work's own English Wikipedia infobox: J. S. Bernstein translated
+# El coronel no tiene quien le escriba; Gregory Rabassa translated La mala
+# hora, Cien años de soledad, El otoño del patriarca and Crónica de una
+# muerte anunciada (and, per his own English Wikipedia entry, also La
+# hojarasca); Edith Grossman translated El amor en los tiempos del cólera
+# onward through Memoria de mis putas tristes; Anne McLean translated the
+# 2024 posthumous En agosto nos vemos. This is per-edition information and
+# belongs in editions.yaml's own translator field once that stage runs;
+# it is recorded here only as the reason no blanket single-translator
+# assumption is made anywhere in this file.
+#
+# THE "TRES DE MIS LIBROS SON UN SOLO LIBRO" GROUPING. García Márquez said,
+# of El coronel no tiene quien le escriba, Los funerales de la Mamá Grande
+# and La mala hora: "Tres de mis libros ... son en verdad un solo libro. Un
+# mismo tema, unos mismos personajes, un mismo ambiente, que se repiten y
+# se mezclan" ("Three of my books ... are really just one book. A single
+# subject matter, the same characters, the same setting, that are repeated
+# and combined") - a genuine author's-own-words grouping (both English and
+# Spanish Wikipedia bibliography pages quote it, sourced there to Centro
+# Gabo). It is recorded as a `note:` on each of the three works rather than
+# forced into `subseries`: the claim is about shared theme/characters/
+# setting across two novels and a short-story collection, not a numbered or
+# titled sequence, and no source checked here names what, if anything, a
+# publisher or critic actually calls the grouping - a real label, if one
+# exists, is not yet in this file. Separately, Macondo itself is a still
+# broader thread - La hojarasca is its first appearance and Cien años de
+# soledad "signals the end of the Macondo period" per both Wikipedia
+# bibliography pages - but that is a periodisation claim about his whole
+# early career, not a work-grouping, and belongs in eras.yaml rather than
+# guessed at here (which is why eras.yaml names both shapes without
+# claiming either).
+#
+# CONSIDERED AND LEFT OUT:
+# - 41 documented prologues/introductions García Márquez wrote for other
+#   people's books (catalogued individually in the Spanish Wikipedia
+#   bibliography annex, 1949-2008) are not catalogued here. Each is a
+#   paratext to a book by someone else, not a book of his own - the same
+#   principle this catalogue already applies to a recorded appearance or a
+#   brief contribution with no title-page work of the author's own
+#   (john-grisham/works.yaml's Wavedancer Benefit note is the precedent).
+# - A cluster of late-life press-article compilations - Cuando era feliz e
+#   indocumentado (1973), Chile, el golpe y los gringos (1974), Crónicas y
+#   reportajes (1976), De viaje por los países socialistas (1978),
+#   Primeros reportajes (1990), El amante inconcluso y otros textos de
+#   prensa (2001), La nostalgia de las almendras amargas (2014) and Gabo
+#   contesta (2015) - is not catalogued as separate entries. The Spanish
+#   Wikipedia annex itself documents at least two of these as overlapping
+#   re-editions rather than distinct books (La nostalgia de las almendras
+#   amargas is stated there as an "ampliación" of El amante inconcluso;
+#   Gabo contesta reuses texts "ya incluidos" in both of the others), and
+#   untangling which of the rest are genuinely separate books versus
+#   reissues of each other needs primary-source verification not done here;
+#   none is guessed at in its place.
+# - Gabo periodista (2013) is a tribute anthology about García Márquez's
+#   journalism - other people's testimony plus a selection of his texts,
+#   assembled by others as a homage volume - not a book of his own, on the
+#   same reasoning as the prologues above.
+# - Three film-workshop transcripts (Cómo se cuenta un cuento, 1995; Me
+#   alquilo para soñar, 1995 - a distinct book from the identically-titled
+#   1980 short story; La bendita manía de contar, 1998) are left out:
+#   the Spanish Wikipedia annex credits at least one explicitly to "Taller
+#   de guion de Gabriel García Márquez" (his screenwriting workshop) rather
+#   than to him as sole author, and his authorship credit on the other two
+#   is not independently confirmed.
+# - La Soledad de América Latina (1982), his Nobel acceptance lecture, is
+#   not catalogued as a work: it is collected inside
+#   [[work:gabriel-garcia-marquez/yo-no-vengo-a-decir-un-discurso|Yo no
+#   vengo a decir un discurso]] rather than separately published on its
+#   own, and reads more naturally as a life event (an epigraph-organisation
+#   entry, the Saramago Nobel-lecture precedent) than as a bibliography
+#   entry, so it is not catalogued as a work here.
+# - "El mar del tiempo perdido" (1961/1962), an early short story, is not
+#   tagged in either Wikipedia bibliography page as belonging to any of the
+#   four story collections below; it may sit only in the posthumously
+#   assembled complete-stories omnibus Cuentos: 1947-1992 (Norma, 1996), so
+#   it is left uncatalogued here rather than assigned to a collection it
+#   may not belong to.
+
+# --- Novels (11) ---
+
+- id: gabriel-garcia-marquez/la-hojarasca
+  title: "La hojarasca"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1955
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A grandfather, his daughter and her young son sit with the corpse of a
+    disgraced French doctor in the fictional town of Macondo, waiting out
+    the hour before the burial the whole town has turned against them for
+    allowing, while each of the three privately relives what brought the
+    doctor there.
+  note: >
+    García Márquez's first published novel, and Macondo's first
+    appearance in his fiction. El Heraldo printed one chapter in 1952; the
+    book itself followed in 1955, per its own dedicated English Wikipedia
+    article (infobox and prose) and both language Wikipedias' bibliography
+    tables' own prose. Both of those same bibliography tables list "1954"
+    in their Year column, contradicting their own prose on the same page;
+    1955 is used here as the more specific, corroborated date. English
+    translation title: Leaf Storm.
+  sources:
+    - https://en.wikipedia.org/wiki/Leaf_Storm
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+
+- id: gabriel-garcia-marquez/el-coronel-no-tiene-quien-le-escriba
+  title: "El coronel no tiene quien le escriba"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1961
+  subseries: null
+  canonTier: core
+  synopsis: >
+    An aging, impoverished colonel and his asthmatic wife wait out year
+    after year for the government pension he was promised for his service
+    in a civil war decades earlier, walking to the harbor every Friday to
+    meet a mail boat that never brings the letter.
+  note: >
+    Written 1956-1957, serialized in the magazine Mito in 1958, published
+    as a book in 1961 (Aguirre Editor, Medellín). One of three books
+    García Márquez himself grouped as "really just one book" - see this
+    file's own header. English translation title: No One Writes to the
+    Colonel.
+  sources:
+    - https://en.wikipedia.org/wiki/No_One_Writes_to_the_Colonel
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+
+- id: gabriel-garcia-marquez/la-mala-hora
+  title: "La mala hora"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1962
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Anonymous lampoons appear overnight on doors across an unnamed river
+    town, airing every resident's secrets and rumors, and the mayor's
+    escalating response to find out who is behind them tips the town
+    toward violence.
+  note: >
+    First published in 1962 (Taller de Artes Gráficas Luis Pérez), an
+    edition whose proofreader altered García Márquez's language and which
+    he later disavowed; a 1966 Ediciones Era edition restored his original
+    text and is the one he recognized as authoritative. `published` is set
+    to 1962, the actual first-publication event, per both Wikipedia
+    bibliography tables' own Year column; the authorship dispute over
+    which edition's text is canonical is recorded here rather than shifting
+    the date. One of three books García Márquez himself grouped as "really
+    just one book" - see this file's own header. English translation
+    title: In Evil Hour.
+  sources:
+    - https://en.wikipedia.org/wiki/In_Evil_Hour
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+
+- id: gabriel-garcia-marquez/cien-anos-de-soledad
+  title: "Cien años de soledad"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1967
+  subseries: null
+  canonTier: core
+  featured: true
+  synopsis: >
+    Seven generations of the Buendía family found, build and eventually
+    lose the town of Macondo, in a history that repeats its own names,
+    obsessions and solitudes across a hundred years until a final storm
+    erases the town along with the family whose story it was always
+    telling.
+  note: >
+    Written over roughly eighteen months in Mexico City; García Márquez
+    sold the family car and his wife took food on credit from their
+    butcher and baker while he worked. Published 1967 by Editorial
+    Sudamericana with a first print run of 8,000 copies; the novel most
+    responsible for both his international fame and the Latin American
+    Boom/magic-realism association. English translation title: One
+    Hundred Years of Solitude.
+  translationNote: >
+    Gregory Rabassa's 1970 English translation carries an unusually
+    strong, if secondhand, endorsement: García Márquez is reported, by
+    Rabassa's own English Wikipedia entry and independently by Paul Elie's
+    history of the novel (as quoted in The Paris Review's 2016 obituary of
+    Rabassa), to have read the Harper & Row English edition and called it
+    better than his own Spanish original, and to have called Rabassa "the
+    best Latin American writer in the English language." No primary
+    recording or transcript of the remark turns up in either source, only
+    these two secondary accounts, so it is recorded as a widely reported
+    anecdote rather than a confirmed direct quotation.
+  sources:
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+    - https://en.wikipedia.org/wiki/Gregory_Rabassa
+    - https://www.theparisreview.org/blog/2016/06/14/gregory-rabassa-1922-2016/
+
+- id: gabriel-garcia-marquez/el-otono-del-patriarca
+  title: "El otoño del patriarca"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1975
+  subseries: null
+  canonTier: core
+  synopsis: >
+    An unnamed, ancient Caribbean dictator's decades in absolute power are
+    told and retold from shifting, overlapping points of view after his
+    death is discovered in his own crumbling palace, building a single
+    portrait of tyranny out of contradictory rumor and memory.
+  note: >
+    García Márquez's first "dictator novel," which he called "a poem on
+    the solitude of power." Published simultaneously by Plaza & Janés and
+    Editorial Sudamericana. English translation title: The Autumn of the
+    Patriarch.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Autumn_of_the_Patriarch
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+
+- id: gabriel-garcia-marquez/cronica-de-una-muerte-anunciada
+  title: "Crónica de una muerte anunciada"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1981
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A reporter reconstructs, witness by witness, the morning an entire
+    small town knew two brothers were going to kill a man for supposedly
+    dishonoring their sister, and still failed to stop it.
+  note: >
+    Built as a "purely realist" narrative technique modeled on a real-life
+    chronicle, in a departure from the more overtly magical-realist
+    register of his two preceding novels; rumor at the time linked García
+    Márquez personally to the real case it draws on. English translation
+    title: Chronicle of a Death Foretold.
+  sources:
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+
+- id: gabriel-garcia-marquez/el-amor-en-los-tiempos-del-colera
+  title: "El amor en los tiempos del cólera"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1985
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A man waits more than fifty years, through two marriages and hundreds
+    of love affairs of his own, to renew the courtship a woman broke off
+    with him in their youth, against the backdrop of a Caribbean port city
+    living under the recurring threat of cholera.
+  note: >
+    Drawn substantially from the courtship of García Márquez's own
+    parents. He called it his own favorite among his books: "Ese es el
+    mejor ... ese es el libro que escribí desde mis entrañas" ("That one
+    is the best ... that one is the book I wrote from the bottom of my
+    heart"). English translation title: Love in the Time of Cholera.
+  sources:
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+
+- id: gabriel-garcia-marquez/el-general-en-su-laberinto
+  title: "El general en su laberinto"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1989
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Simón Bolívar's final, physically ruined seven-month river voyage down
+    the Magdalena toward the coast, stripped of the power and the union of
+    nations he had spent his life building, closes out his last months
+    before his death.
+  note: >
+    García Márquez's second "dictator novel" in theme, this time built
+    around a real, documented historical figure and, per its own English
+    Wikipedia bibliography note, following "documented history with
+    considerable accuracy." English translation title: The General in His
+    Labyrinth.
+  sources:
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+
+- id: gabriel-garcia-marquez/del-amor-y-otros-demonios
+  title: "Del amor y otros demonios"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1994
+  subseries: null
+  canonTier: core
+  synopsis: >
+    In a colonial Caribbean seaport, a marquis's young daughter is bitten
+    by a rabid dog and, as fear of the disease spreads, is instead
+    suspected of demonic possession and handed to the church for exorcism.
+  note: >
+    First edition published simultaneously by Mondadori, Sudamericana,
+    Diana and Norma. English translation title: Of Love and Other Demons.
+  sources:
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+
+- id: gabriel-garcia-marquez/memoria-de-mis-putas-tristes
+  title: "Memoria de mis putas tristes"
+  authorIds: [gabriel-garcia-marquez]
+  published: 2004
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A ninety-year-old bachelor journalist decides to give himself a night
+    with a virgin adolescent as a birthday present, and instead falls into
+    an unexpected, chaste devotion that undoes the solitude of his whole
+    life.
+  note: >
+    García Márquez's last novel published in his lifetime, and his own
+    stated homage to Yasunari Kawabata's The House of the Sleeping
+    Beauties. English translation title: Memories of My Melancholy Whores.
+  sources:
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+
+- id: gabriel-garcia-marquez/en-agosto-nos-vemos
+  title: "En agosto nos vemos"
+  authorIds: [gabriel-garcia-marquez]
+  published: 2024
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Every August, on the anniversary of her mother's death, a woman happily
+    married for twenty-seven years takes a ferry alone to the Caribbean
+    island where her mother is buried, and each year returns with a
+    different lover.
+  note: >
+    Published 6 March 2024, a decade after García Márquez's death, on what
+    would have been his 97th birthday. He worked on it from at least 1997,
+    reading portions publicly at Georgetown University that September,
+    then set it aside to write Memoria de mis putas tristes; by 2004 he
+    called himself satisfied with the protagonist but not with the novel
+    itself, and by his own family's account worsening dementia in his
+    final years left him unable to finish it. He had asked that the
+    unfinished manuscript, of which five drafts existed, be destroyed. His
+    sons Rodrigo and Gonzalo García Barcha instead edited and published it
+    from the drafts held at the University of Texas's Harry Ransom Center,
+    stating publicly that they judged it worth publishing and that they
+    knowingly went against his wishes in doing so ("we decided, yes, it
+    was a betrayal. But that's what children are for"). It is García
+    Márquez's only novel with a female protagonist. Tiered core here as a
+    complete, publisher-released novel in his usual adult mode, the same
+    publication-kind test this catalogue applies everywhere else - but
+    this is not an ordinary posthumous release edited from a finished
+    text: it is publication over the author's own explicit, recorded
+    objection, by his heirs, from drafts he wanted destroyed. That is a
+    materially different kind of authority question than the usual
+    editor-shaped posthumous book, worth weighing on its own terms rather
+    than resolved by the general rule applied above. English translation
+    title: Until August.
+  sources:
+    - https://en.wikipedia.org/wiki/Until_August
+    - https://es.wikipedia.org/wiki/Anexo:Bibliograf%C3%ADa_de_Gabriel_Garc%C3%ADa_M%C3%A1rquez
+
+# --- Short-story collections (4) ---
+
+- id: gabriel-garcia-marquez/los-funerales-de-la-mama-grande
+  title: "Los funerales de la Mamá Grande"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1962
+  subseries: null
+  canonTier: extended
+  format: short-story-collection
+  synopsis: >
+    Eight stories set mostly in and around Macondo and the same unnamed
+    river town as La mala hora, closing with the title story: the death
+    and outsized funeral rites of a fictional matriarch who has quietly
+    run an entire province for decades, told in a deliberately exaggerated,
+    carnival-barker voice that satirizes Latin American power at every
+    level.
+  note: >
+    Published in Xalapa, Mexico, by Universidad Veracruzana Press. Its
+    other seven stories: "La siesta del martes," "Un día de éstos," "En
+    este pueblo no hay ladrones," "La prodigiosa tarde de Baltazar," "La
+    viuda de Montiel," "Un día después del sábado" and "Rosas
+    artificiales." One of three books García Márquez himself grouped as
+    "really just one book" - see this file's own header. English
+    translation title: Big Mama's Funeral (individual story) / No One
+    Writes to the Colonel and Other Stories (the English-language
+    combined edition most commonly sold under this title's stories).
+  sources:
+    - https://en.wikipedia.org/wiki/Big_Mama%27s_Funeral
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+
+- id: gabriel-garcia-marquez/erendira
+  title: "La increíble y triste historia de la cándida Eréndira y de su abuela desalmada"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1972
+  subseries: null
+  canonTier: extended
+  format: short-story-collection
+  synopsis: >
+    A title novella - a teenage girl sold into forced prostitution by her
+    own grandmother after accidentally burning down the old woman's house,
+    and the drifter who falls for her and tries to free her - alongside
+    five shorter stories built around magical, larger-than-life figures:
+    an angel who falls into a poor coastal family's yard, a drowned giant
+    whose beauty transforms the fishing village that finds him, a ghost
+    ship, a traveling con man who trades in miracles, and an old man's
+    late-life awakening to desire.
+  note: >
+    Gathers four stories written January-July 1968, one from 1961 and one
+    from 1970. English translation title: The Incredible and Sad Tale of
+    Innocent Eréndira and Her Heartless Grandmother.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Incredible_and_Sad_Tale_of_Innocent_Er%C3%A9ndira_and_Her_Heartless_Grandmother
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+
+- id: gabriel-garcia-marquez/ojos-de-perro-azul
+  title: "Ojos de perro azul"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1972
+  subseries: null
+  canonTier: extended
+  format: short-story-collection
+  synopsis: >
+    García Márquez's earliest short fiction, written and first published
+    in newspapers between 1947 and 1955 while he was still in his
+    twenties, gathered as a book two decades later - including the story
+    that first put the fictional town of Macondo on the page.
+  note: >
+    Collects eleven early stories: "La tercera resignación," "Eva está
+    dentro de su gato," "La otra costilla de la muerte," "Amargura para
+    tres sonámbulos," "Diálogo del espejo," the title story "Ojos de
+    perro azul," "La mujer que llegaba a las seis," "Nabo, el negro que
+    hizo esperar a los ángeles," "Alguien desordena estas rosas," "La
+    noche de los alcaravanes" and "Monólogo de Isabel viendo llover en
+    Macondo" (1955, Macondo's second recorded appearance in his fiction
+    after La hojarasca). English translation title: Eyes of a Blue Dog
+    (individual story; the collection itself has no single standard
+    English-language edition title).
+  sources:
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+    - https://es.wikipedia.org/wiki/Anexo:Bibliograf%C3%ADa_de_Gabriel_Garc%C3%ADa_M%C3%A1rquez
+
+- id: gabriel-garcia-marquez/doce-cuentos-peregrinos
+  title: "Doce cuentos peregrinos"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1992
+  subseries: null
+  canonTier: extended
+  format: short-story-collection
+  synopsis: >
+    Twelve loosely linked stories, mostly written across the 1970s and
+    80s but not published as a book until 1992, following Latin American
+    characters adrift and out of place across Europe.
+  note: >
+    The twelve: "El rastro de tu sangre en la nieve," "El verano feliz de
+    la señora Forbes," "Sólo vine a hablar por teléfono," "La luz es como
+    el agua," "María dos Prazeres," "Buen viaje, señor presidente," "Me
+    alquilo para soñar," "Diecisiete ingleses envenenados," "Espantos de
+    agosto," "La santa," "Tramontana" and "El avión de la bella durmiente."
+    English translation title: Strange Pilgrims.
+  sources:
+    - https://en.wikipedia.org/wiki/Strange_Pilgrims
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+
+# --- Nonfiction, memoir, journalism (8) ---
+
+- id: gabriel-garcia-marquez/relato-de-un-naufrago
+  title: "Relato de un náufrago"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1970
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    The true account, as told to García Márquez by the sailor himself, of
+    ten days adrift on a life raft with no food or water after falling
+    from a Colombian navy destroyer, and of what the sailor's own story
+    revealed about why the ship had capsized in the first place.
+  note: >
+    First published as a fourteen-part daily serial in El Espectador in
+    1955, under the sailor Luis Alejandro Velasco's own byline; the
+    reporting revealed the destroyer had been carrying contraband cargo
+    (not, as the government claimed, caught in a storm), embarrassing the
+    Rojas Pinilla dictatorship and contributing to García Márquez being
+    sent to Europe as a correspondent soon after. Not published as a book
+    under García Márquez's own name until 1970. English translation
+    title: The Story of a Shipwrecked Sailor.
+  sources:
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+
+- id: gabriel-garcia-marquez/el-olor-de-la-guayaba
+  title: "El olor de la guayaba"
+  authorIds: [gabriel-garcia-marquez]
+  authorRole: co-author
+  published: 1982
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    A book-length conversation, recorded over several years, in which
+    García Márquez talks through his own life, working methods and
+    politics with a close friend and fellow journalist.
+  note: >
+    Co-authored with journalist Plinio Apuleyo Mendoza, credited on the
+    book itself; no catalogue entry exists for Mendoza here, so
+    withAuthorIds is left empty per this catalogue's existing
+    no-entry-collaborator practice (haruki-murakami/absolutely-on-music is
+    the precedent). English translation title: The Fragrance of Guava.
+  sources:
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+
+- id: gabriel-garcia-marquez/la-aventura-de-miguel-littin-clandestino-en-chile
+  title: "La aventura de Miguel Littín clandestino en Chile"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1986
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    Told to García Márquez by the man himself: exiled Chilean filmmaker
+    Miguel Littín's disguised, clandestine return to Pinochet's Chile
+    after twelve years away, to secretly shoot a documentary on conditions
+    under the dictatorship.
+  note: "English translation title: Clandestine in Chile - The Adventures of Miguel Littín."
+  sources:
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+
+- id: gabriel-garcia-marquez/noticia-de-un-secuestro
+  title: "Noticia de un secuestro"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1996
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    A reported nonfiction account of a wave of kidnappings carried out by
+    Pablo Escobar's Medellín cartel against prominent Colombians in the
+    early 1990s, reconstructed from the hostages' own testimony.
+  note: >
+    Published simultaneously in Colombia and Spain in May 1996; marked
+    García Márquez's return to sustained journalistic reporting after
+    years focused on fiction. English translation title: News of a
+    Kidnapping.
+  sources:
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+
+- id: gabriel-garcia-marquez/vivir-para-contarla
+  title: "Vivir para contarla"
+  authorIds: [gabriel-garcia-marquez]
+  published: 2002
+  subseries: null
+  canonTier: extended
+  format: memoir
+  synopsis: >
+    The first and, as it turned out, only volume of García Márquez's own
+    account of his life, covering his Caribbean-coast childhood and youth
+    up to the years just before he left Colombia for Europe.
+  note: "English translation title: Living to Tell the Tale."
+  sources:
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+
+- id: gabriel-garcia-marquez/yo-no-vengo-a-decir-un-discurso
+  title: "Yo no vengo a decir un discurso"
+  authorIds: [gabriel-garcia-marquez]
+  published: 2010
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Twenty-two of García Márquez's own speeches and addresses, spanning
+    1944 to 2007, including his 1982 Nobel acceptance lecture "La soledad
+    de América Latina."
+  note: >
+    format is set to essay-collection as the closest fit in this
+    catalogue's taxonomy; every piece in the book is a delivered speech
+    rather than a written essay, recorded here since no dedicated
+    "speech-collection" value exists. English translation title: I'm Not
+    Here to Give a Speech.
+  sources:
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+
+- id: gabriel-garcia-marquez/obra-periodistica
+  title: "Obra periodística"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1981
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    A five-volume anthology gathering García Márquez's own newspaper
+    writing across four decades of working journalism, from his earliest
+    Caribbean-coast columns through his later reporting for Colombian and
+    international outlets.
+  note: >
+    ONE ENTRY for a five-volume, 1981-1999 anthology, compiled by scholar
+    Jacques Gilard from García Márquez's own previously published
+    newspaper writing - no catalogue entry exists for Gilard, whose role
+    here is editorial compilation rather than authorship of the content
+    itself. published is set to 1981, the first volume's year. The five
+    volumes, per the Spanish Wikipedia bibliography annex: Textos
+    costeños (1981, covering 1948-1952); Entre cachacos (1982, covering
+    1954-1955); De Europa y América (1983, covering 1955-1960); Por la
+    libre (1999, covering 1974-1995, listed as volume 4); Notas de prensa
+    (1991, covering 1980-1984, listed as volume 5). The Spanish Wikipedia
+    annex's own intro states García Márquez "authored five major
+    journalistic works" without naming them; these five volumes are the
+    closest documented match, though that identification is not
+    independently confirmed against a second source.
+  sources:
+    - https://es.wikipedia.org/wiki/Anexo:Bibliograf%C3%ADa_de_Gabriel_Garc%C3%ADa_M%C3%A1rquez
+
+# --- Play (1) ---
+
+- id: gabriel-garcia-marquez/diatriba-de-amor-contra-un-hombre-sentado
+  title: "Diatriba de amor contra un hombre sentado"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1994
+  subseries: null
+  canonTier: extended
+  format: play
+  synopsis: >
+    A single long monologue: a woman confronts her husband of decades,
+    seated silently on stage through the whole performance, with
+    everything unresolved in their marriage.
+  note: >
+    García Márquez's first and only play. Finished in 1987, premiered in
+    1988 to mixed reviews (both the New York Times and the Los Angeles
+    Times covered the split critical reception at the time), published as
+    a book in 1994. English translation title: Diatribe of Love Against a
+    Seated Man.
+  sources:
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+
+# --- Apocrypha (2) ---
+
+- id: gabriel-garcia-marquez/el-cataclismo-de-damocles
+  title: "El cataclismo de Damocles"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1986
+  subseries: null
+  canonTier: apocrypha
+  format: essay
+  synopsis: >
+    A single anti-nuclear-weapons speech, delivered on the anniversary of
+    the Hiroshima bombing and later published as its own short text.
+  note: >
+    Delivered in Ixtapa, Mexico, on 6 August 1986, the 41st anniversary of
+    the atomic bombing of Hiroshima. A single occasional speech rather
+    than a trade book, tiered apocrypha on that basis; also collected
+    inside Yo no vengo a decir un discurso (2010). English translation
+    title: The Cataclysm of Damocles.
+  sources:
+    - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+
+- id: gabriel-garcia-marquez/viva-sandino
+  title: "Viva Sandino"
+  authorIds: [gabriel-garcia-marquez]
+  published: 1982
+  subseries: null
+  canonTier: apocrypha
+  format: screenplay
+  synopsis: >
+    A "relato cinematográfico" (cinematic narrative/screenplay) on the
+    Sandinista revolution in Nicaragua.
+  note: >
+    Listed under "Guiones" (screenplays) in the Spanish Wikipedia
+    bibliography annex; no evidence turns up of it ever being published
+    as a standalone trade book or of a film produced from it under this
+    exact title, so it is tiered apocrypha alongside this catalogue's
+    precedent for a screenplay credit that never had a normal
+    book life (john-grisham/mickey).
+  sources:
+    - https://es.wikipedia.org/wiki/Anexo:Bibliograf%C3%ADa_de_Gabriel_Garc%C3%ADa_M%C3%A1rquez

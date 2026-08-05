@@ -1,0 +1,73 @@
+# Global author entity. Authors are referenced by id from franchises and
+# works (authorIds / withAuthorIds), so the same person resolves the same
+# everywhere. Author-LIFE events live here; franchise-specific events belong
+# in content/franchises/gabriel-garcia-marquez/events.yaml. lifeEvents is
+# left empty: real anchors exist (the birth in Aracataca and the
+# grandparents who raised him, the 1955 shipwreck reportage that got him
+# sent abroad, the eighteen months writing Cien años de soledad on borrowed
+# money, the 1982 Nobel, the Mexico City death), but a dated, sourced
+# lifeEvent entry also needs the layout-grammar fields
+# (docs/SCHEMA.md's organisation/illustration_type/images_required) that
+# depend on a visual language this wing does not have yet. The clearest
+# anchors are folded into bio prose below instead, so none of them is lost.
+#
+# NAME. English and Spanish Wikipedia agree: born Gabriel José García
+# Márquez (Spanish naming convention - García is the paternal surname,
+# Márquez the maternal one), universally known as "García Márquez" in print
+# and, to family and readers alike, as "Gabo" or "Gabito". He also wrote
+# columns for El Heraldo in Barranquilla under the byline "Septimus" early
+# in his journalism career, recorded here as a pseudonym.
+id: gabriel-garcia-marquez
+name: Gabriel García Márquez
+aka: ["Gabo", "Gabito"]
+born: 1927-03-06
+died: 2014-04-17
+bio: >
+  Born in Aracataca, a small town near Colombia's Caribbean coast, and
+  raised there for his first years mostly by his maternal grandparents -
+  a grandfather who fought in the Thousand Days' War and a grandmother
+  who told him folk stories and ghost tales as plain fact, a voice he
+  later said shaped how he wrote fiction. He studied law in Bogotá at the
+  Universidad Nacional de Colombia without finishing the degree, drawn
+  instead into journalism: reporting and columns for El Universal
+  (Cartagena) and El Heraldo (Barranquilla) through the late 1940s, then
+  El Espectador in Bogotá, where his 1955 serialized account of a
+  shipwrecked sailor's ordeal - later the book
+  [[work:gabriel-garcia-marquez/relato-de-un-naufrago|Relato de un
+  náufrago]] - revealed the Colombian navy vessel had been carrying
+  contraband cargo, embarrassing the Rojas Pinilla dictatorship and
+  contributing to the paper sending him to Europe as a correspondent
+  soon after. He married Mercedes Barcha in 1958; they had two sons,
+  Rodrigo and Gonzalo. After early short fiction and the novels
+  [[work:gabriel-garcia-marquez/la-hojarasca|La hojarasca]],
+  [[work:gabriel-garcia-marquez/el-coronel-no-tiene-quien-le-escriba|El
+  coronel no tiene quien le escriba]] and
+  [[work:gabriel-garcia-marquez/la-mala-hora|La mala hora]], he shut
+  himself away in Mexico City for eighteen months, selling the family car
+  and living on credit from the local butcher and baker, to write
+  [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cien años de
+  soledad]] (1967), the novel that made him the best-known figure of the
+  Latin American Boom and one of the central names of magical realism. He
+  won the Nobel Prize in Literature in 1982 "for his novels and short
+  stories, in which the fantastic and the real are combined in a richly
+  composed world of imagination, reflecting a continent's life and
+  conflicts," and delivered the acceptance lecture "La soledad de América
+  Latina." He lived his later decades mainly in Mexico City, kept writing
+  fiction, memoir and journalism into his seventies, and died there in
+  2014 of complications from pneumonia, following a long decline that
+  included the onset of dementia in his final years. A novel he had left
+  unfinished and reportedly wanted destroyed,
+  [[work:gabriel-garcia-marquez/en-agosto-nos-vemos|En agosto nos
+  vemos]], was published by his sons a decade after his death.
+pseudonyms:
+  - name: Septimus
+    note: >
+      Byline used for a column in El Heraldo, Barranquilla, in the late
+      1940s, early in his journalism career, before he wrote under his
+      own name.
+lifeEvents: []
+sources:
+  - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+  - https://es.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+  - https://www.nobelprize.org/prizes/literature/1982/marquez/facts/
+  - https://www.nobelprize.org/prizes/literature/1982/marquez/biographical/

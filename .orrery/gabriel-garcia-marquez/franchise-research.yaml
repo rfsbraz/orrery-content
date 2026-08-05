@@ -1,0 +1,42 @@
+stage: franchise-research
+wing: gabriel-garcia-marquez
+summary: >
+  Scaffolded from scratch: franchise.yaml, works.yaml (25 works: 11 core
+  novels, 12 extended, 2 apocrypha), the global author entity, theme.yaml
+  (preset/palette/displayFace/signature, no art block). eras.yaml,
+  events.yaml, orders.yaml are empty, documented placeholders rather than
+  omitted. Sourced from Wikipedia's dedicated English bibliography article,
+  the more complete Spanish "Anexo:Bibliografía" annex, each major novel's
+  own article, and the Nobel Prize site. validate.py --slug
+  gabriel-garcia-marquez: 0 errors, 1 expected warning (no theme.art).
+
+produced:
+  - content/franchises/gabriel-garcia-marquez/franchise.yaml
+  - content/franchises/gabriel-garcia-marquez/works.yaml
+  - content/franchises/gabriel-garcia-marquez/eras.yaml
+  - content/franchises/gabriel-garcia-marquez/events.yaml
+  - content/franchises/gabriel-garcia-marquez/orders.yaml
+  - content/franchises/gabriel-garcia-marquez/theme.yaml
+  - content/authors/gabriel-garcia-marquez.yaml
+
+decisions:
+  - "canonTier by publication kind: core = 11 novels (including the 1955 debut and the 2024 posthumous En agosto nos vemos); extended = 4 story collections + nonfiction/memoir/speeches/journalism + the one play; apocrypha = 1 speech pamphlet + 1 unconfirmed screenplay credit."
+  - "No single translator assumed: per-work Wikipedia infoboxes show 4 distinct translators (Bernstein, Rabassa, Grossman, McLean), recorded in works.yaml's header."
+  - "Verified rather than trusted the request issue's framing of the Rabassa anecdote: 2 independent sources corroborate it (Rabassa's own Wikipedia article, Paul Elie's history as quoted in The Paris Review) and add a fuller quote the issue lacked. Recorded as translationNote on cien-anos-de-soledad as a reported anecdote, not a confirmed direct quote."
+  - "En agosto nos vemos tiered core on the same publication-kind test as every other work, with the heirs-published-against-his-wishes circumstance fully documented on its own note rather than pre-deciding whether that should change the tier - see openQuestions."
+  - "The 'tres de mis libros son un solo libro' author's-own-words grouping (coronel/funerales/mala-hora) is a note on all three works, not forced into subseries: no source names a formal label for it."
+  - "Obra periodística is one grouped entry for a 5-volume 1981-1999 anthology (History of Middle-earth precedent), not 5 ids or an omission."
+  - "41 prologues to other people's books, a tribute anthology, 3 film-workshop transcripts of uncertain sole authorship, and a cluster of overlapping late-life press compilations are named and left out, with per-item reasoning in works.yaml's own header."
+
+forStages:
+  completeness-auditor: "Untangle the named late-life press-compilation cluster; confirm the Obra periodística 5-volume identification; confirm film-workshop transcript authorship; place or exclude El mar del tiempo perdido; confirm La Soledad de América Latina's exclusion as a life event rather than a work."
+  press-archaeology: "0 lifeEvents by design (theme.art gate); Aracataca birth, grandparents, 1955 shipwreck exile, the 18-month Cien años de soledad write, the 1982 Nobel and the Mexico City death are all sourced in bio prose as ready anchors."
+  eras: "2 real shapes named but not claimed: a Macondo period (1955-1967) and a dictator-novel pairing (Autumn of the Patriarch / General in His Labyrinth); the tres-libros grouping may belong here instead of as a subseries if a real label exists."
+  reading-orders: "No publisher-numbered sequence or startHere path found for an 11-novel shelf with no subseries; orders.yaml and startHere are both empty pending real discovery."
+  editions: "4 distinct translators already identified per-work; do not assume one."
+  visual-language: "theme.yaml has preset/palette/displayFace/signature only; art block untouched."
+
+openQuestions:
+  - "RULING NEEDED: does En agosto nos vemos belong in core given it was published over the author's own explicit objection by his heirs, from drafts he wanted destroyed - a materially different case from an ordinary editor-shaped posthumous release? Tiered core here on the general test; the ethical question is real and undecided. Full circumstance on the work's own note."
+  - "Confirm translationNote is the right field for the Rabassa/Cien años de soledad anecdote versus an editions.yaml note, since no current edition actually offers a reader a live choice between translations the way Cervantes's Don Quixote does."
+  - "No formal name found for the tres-libros three-book grouping; add one only if a publisher or critic source actually supplies it."
