@@ -1,0 +1,59 @@
+stage: spoiler-audit
+wing: gabriel-garcia-marquez
+summary: >
+  One redaction wing-wide: Cien años de soledad's synopsis named the
+  novel's closing pages (the storm that erases Macondo, and the reflexive
+  "the family whose story it was always telling" - the book's structural
+  fold). Cut to what the publishers themselves print. Every other
+  synopsis, event, lifeEvent, era, order and startHere string was checked
+  against real jacket copy and left alone; six reveal materially LESS than
+  the publisher does, recorded below so a later pass does not read the gap
+  as a mistake and pull the blurb wholesale. The wing carries no
+  spoilerAfter anywhere and needs none: eleven standalone novels, no
+  continuing character or plot. validate.py --slug gabriel-garcia-marquez:
+  1 error (the expected theme.art gap), no new warnings.
+
+produced:
+  - content/franchises/gabriel-garcia-marquez/works.yaml (cien-anos-de-soledad synopsis, note, sources)
+
+redactions:
+  - work: gabriel-garcia-marquez/cien-anos-de-soledad
+    field: synopsis
+    severity: load-bearing
+    before: >
+      "... across a hundred years until a final storm erases the town along
+      with the family whose story it was always telling."
+    after: >
+      "... across a hundred years." - the clause is deleted, the rest of the
+      sentence unchanged.
+    basis: >
+      Two publisher blurbs, neither describing the ending. Harper Perennial:
+      "the rise and fall, birth and death of the mythical town of Macondo
+      through the history of the Buendia family". Penguin 2014
+      (9780241968581): "seven generations of the Buendía family and of
+      Macondo, the town they built". Both licence "seven generations" and
+      the town's eventual loss, which the entry keeps; neither says how it
+      ends. The deleted clause gave away the ending's shape AND the
+      structural reveal that the novel contains the account of itself - the
+      literary-fiction failure mode, not a plot beat. The work's note now
+      records the jacket wording, so the bound is legible without
+      re-fetching it.
+
+checked_not_a_spoiler:
+  - "cronica-de-una-muerte-anunciada: names nobody; Vintage (9781400034710) and Penguin (9780241968628) both name Santiago Nasar, Angela Vicario, Bayardo San Román and the twin brothers."
+  - "el-amor-en-los-tiempos-del-colera: Vintage (9780307389732) discloses the husband's death and Florentino's return; we disclose neither, and not the riverboat ending."
+  - "memoria-de-mis-putas-tristes: 'chaste devotion' sits inside Knopf's own 'silent power of a sleeping beauty' / 'uncorrupted love' (9781400044603)."
+  - "en-agosto-nos-vemos: Penguin's blurb is the synopsis nearly line for line; what the grave discloses at the end is not stated."
+  - "erendira: Penguin (9780241968642) gives the burnt house, the debt and the hawking, and asks outright whether love can save her; we stop short. The five other glosses are each the story's own title."
+  - "los-funerales-de-la-mama-grande: the death is the book's title; Penguin's Collected Stories copy puts the President and the Pope at the funeral."
+  - "la-hojarasca, el-coronel, la-mala-hora, el-otono-del-patriarca, el-general-en-su-laberinto, del-amor-y-otros-demonios, doce-cuentos-peregrinos, noticia-de-un-secuestro: all at or below Penguin/Harper/Vintage copy. Three publishers tell more - In Evil Hour's scapegoated boy, Of Love and Other Demons' priest, Leaf Storm's corpse left to rot."
+  - "8 events and 18 lifeEvents: no fiction plot stated anywhere. The 1962 disavowed edition is textual history, the punch and thesis entries carry no plot, Netflix is rights history, the 2024 entry publication and reception. The 1985 courtship entry names two characters the jacket names, plus a real newspaper case as source."
+  - "orders.yaml tres-libros and both startHere paths describe every book at premise level; eras.yaml is periodisation only. No spoilerAfter is set anywhere in the wing: no boundary to loosen, none on a field that cannot carry one."
+
+openQuestions:
+  - "Relato de un náufrago: the contraband finding is withheld in the synopsis (right - Vintage's jacket, 9780679722052, omits it) but stated plainly in the author bio and the 1955 lifeEvent, which defeats that reticence. Left as is: it is the documented public reason for his exile, carried by the Nobel Foundation's own biographical note. Tightening the bio instead is a defensible curator call."
+  - "Outside this stage's footprint: el-amor-en-los-tiempos-del-colera says the man waits 'through two marriages' (only Fermina's happens); ojos-de-perro-azul's synopsis calls Monólogo de Isabel the first Macondo story while its own note calls it the second; erendira's 'an old man' is Muerte constante's senator, who is 42."
+
+forStages:
+  i18n: "One prose string changed; no pt-PT overlay exists for this wing, so nothing was invalidated and there is no coverage delta."
+  wing-audit: "Three accuracy items sit in openQuestions; none is a spoiler, all three are real."
