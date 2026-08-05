@@ -1,82 +1,80 @@
 stage: press-archaeology
 wing: gabriel-garcia-marquez
 summary: >
-  Built the author's first lifeEvents (17) and the franchise's first
+  Built the author's first lifeEvents (now 18) and the franchise's first
   events.yaml (6). The trivial 13-year dark run stage_plan.py flagged
   (2012-2024, an empty aura) closed, then reopened eight times as each
-  closure exposed the next real gap (1966-1973, 1983-1994, 2015-2023,
-  1987-1994, 1968-1973, 1969-1973, 1977-1981, 1990-1994) - closed each
-  with dated, sourced facts across the full 1927-2024 span. One dark run
-  remains: 2002-2006 (5 years), a genuinely quiet late-career stretch
-  (two reviewed, unremarkable books) that a second search pass could not
-  find a rupture for. aura_density.py: 25 works, 37 aura, 1.48/work,
-  longest dark run 5 years. validate.py --slug gabriel-garcia-marquez:
-  1 error, the theme.art block missing - the expected flip from warning
-  to error once an author gains lifeEvents; visual-language's to
-  resolve, not this stage's.
+  closure exposed the next real gap - closed each with dated, sourced facts
+  across the full 1927-2024 span. One 5-year dark run remained after that
+  pass: 2002-2006. This follow-up confirmed the unchecked lead from that
+  pass's own handoff - his mother's death - and closed it: Luisa Santiaga
+  Márquez Iguarán died 9 June 2002 in Cartagena at 97, contemporary press
+  obituary sourced (El Mundo's "Crónica" supplement, 16 June 2002, plus
+  fr.wikipedia.org and it.wikipedia.org corroborating the 1905-2002 dates
+  against Gerald Martin's and Dasso Saldívar's biographies). No dark run of
+  5+ years remains: aura_density.py now reports 25 works, 38 aura, 1.52/work,
+  longest dark run 4 years (1961-1964, unexamined in this pass - a different
+  stretch than the one this pass targeted). validate.py --slug
+  gabriel-garcia-marquez: 1 error, the expected theme.art gap (visual-
+  language's to resolve).
 
 produced:
-  - content/authors/gabriel-garcia-marquez.yaml (lifeEvents: 17 entries; removed the stale header comment explaining why lifeEvents had been left empty)
-  - content/franchises/gabriel-garcia-marquez/events.yaml (new file, 6 entries)
+  - content/authors/gabriel-garcia-marquez.yaml (added lifeEvent
+    garcia-marquez-mother-death-2002; updated the header comment that
+    previously (wrongly) recorded 2002-2006 as fully checked)
 
 decisions:
   - >
-    The three requested topics all clear the sourcing bar: the 1955
-    shipwreck reportage and exile (Nobel Foundation's own "more or less
-    compulsory exile"); the Castro friendship (met Jan 1959, plus its real
-    consequences - a US visa ban, exile-writer criticism) as a med-impact
-    lifeEvent; the 1976 Vargas Llosa punch, bracketed by his 1971 thesis
-    (life event) and its 2007 reuse as Cien años de soledad's 40th-
-    anniversary introduction (franchise event, a real mark on the canon).
+    The mother's death was the right lead: contemporary Spanish press (El
+    Mundo, published one week after her death, "La mujer que creó al
+    creador") gives an exact date (9 June 2002), place (her Manga,
+    Cartagena apartment), age (97), and two load-bearing details beyond the
+    bare fact - she was the real-life model for Úrsula Iguarán and refused
+    to read Cien años de soledad ("why would I, when I've lived it"), and
+    she had her own documented Alzheimer's in her final years, years before
+    her son's own memory loss became public in 2012. That parallel is real
+    and sourced, not invented, and it recolors the 2012 dementia entry
+    already in the file.
   - >
-    Held out: Guillermo Angulo's account of *why* Vargas Llosa punched him
-    (an affair involving his wife) - single-sourced third-party gossip, held
-    to CURATION §6. Also held out: Colombia's Turbay government reportedly
-    accusing him of financing M-19 in 1981 and his flight to Mexico - a
-    "legal trouble" claim on one source (Spanish Wikipedia) I could not
-    corroborate here. Both are candidates for a future pass with a second
-    source (Gerald Martin's biography, for the M-19 claim).
+    Sourcing chain: no dedicated Wikipedia article on her exists (checked
+    en/es directly, both 404 or silent). fr.wikipedia.org and
+    it.wikipedia.org both carry her 1905-2002 dates, footnoted to Gerald
+    Martin's authorized biography (Une vie, Grasset 2009) and Dasso
+    Saldívar's García Márquez: El viaje a la semilla (Alfaguara 1997) on
+    the French side, and to the El Mundo obituary directly on the Italian
+    side (its own footnote 27 links the same URL fetched here). Three
+    independently-editored sources agreeing on the same year, one of them a
+    dated contemporary press piece with the exact day - comfortably past
+    the two-source bar for a family death.
   - >
-    Dementia and death both clear two sources. Dementia as a correction: the
-    2012 rumor (Telegraph) was disputed at the time (a birthday video), but
-    the Guardian's 2014 obituary states he died "after suffering from
-    Alzheimer's," and Until August's coverage (BBC/NYT/Guardian) has his
-    sons confirming memory loss stopped him finishing it. Death: pneumonia
-    complications after the 1999 cancer relapsed, sourced in English
-    (AP/NYT/CNN) and Spanish (adds it reached a lung, lymph nodes, liver).
-  - >
-    Other dark-run closures: 1965-66 Acapulco/writing-Cien-años, 1967 fame/
-    Barcelona move, 1968-75 writing El otoño del patriarca, 1981 breaking a
-    self-imposed Pinochet-era publishing vow, 1986 EICTV film school + 1994
-    FNPI journalism foundation (a matched pair), 1989 Bolívar-novel
-    controversy, and splitting Netflix into its 2019 rights sale and 2024
-    release rather than one event.
-  - >
-    organisation/illustration_type assigned in this pass (none existed);
-    checked by hand against LAYOUT.md's Holds lists and the no-adjacent-
-    repeat rule across the full merged author+franchise timeline. immersion
-    used exactly twice (the cap), interlude once (the Pinochet silence),
-    diptych twice non-adjacently. Not run through art_rotation.py --check -
-    that script inspects committed art issues and none exist yet.
+    organisation: interlude (grief, matching this wing's one prior use of
+    interlude for a silence - the 1981 Pinochet vow), illustration_type:
+    portrait-of-absence, both already in the wing's vocabulary; no adjacent-
+    organisation conflict (neighbours are floating-object/1999 and
+    diptych/2007). impact: med, in line with sibling family-life entries
+    (marriage, Castro friendship) rather than the high-impact ruptures.
 
 forStages:
   eras: >
-    Real seams: 1955 (exile) opens journalism-to-fiction; 1965-67 (Acapulco
-    through Barcelona fame) is a clean Macondo-to-Boom boundary; 1968-89
-    (Otoño del patriarca through the Bolívar novel) reads as a "dictator
-    novels and political engagement" era; 1999 (cancer) opens a late
-    memoir/decline era. Not claimed in eras.yaml, untouched.
-  event-resonance: >
-    franchise.yaml has no globalEvents block. The Cuban Revolution (1959),
-    Chile's coup (1973) and Pinochet's fall (1990) sit under lifeEvents here
-    and are include candidates if global.yaml has matches - not checked.
+    No change from the prior handoff's read - the 1999-2002 stretch (cancer,
+    memoir, mother's death) plausibly belongs with the "late memoir/decline"
+    era it already proposed opening at 1999. Not claimed in eras.yaml,
+    untouched.
   visual-language: >
-    23 entries span 11 organisations; no real-person editorial-portrait used.
+    24 lifeEvents + 6 franchise events now span 11 organisations; the new
+    entry adds no new organisation or illustration_type to the wing's
+    vocabulary.
   wing-audit: >
-    Footprint is exactly the two content files above; works/franchise/
-    orders/eras/theme.yaml were read, not touched.
+    Footprint is exactly content/authors/gabriel-garcia-marquez.yaml; no
+    other file touched.
 
 openQuestions:
-  - "Carried from completeness-auditor, unresolved: does En agosto nos vemos belong in canonTier core, published against the author's explicit wishes? This pass adds the sons' own quote and the mixed reception but does not rule."
-  - "The 1981 M-19-financing accusation and Mexican exile is real, dated and high-impact but currently one-sourced (Spanish Wikipedia) - worth a dedicated check against Gerald Martin's biography before it ships."
-  - "2002-2006 reads genuinely quiet, but this pass did not confirm or date his mother Luisa Santiaga Márquez's death, which memory outside any source checked here places in this window - if sourceable, a real inner-weather fact for exactly this gap."
+  - "aura_density.py's longest remaining dark run is now 1961-1964 (4 years,
+    under the 5-year gate) - not investigated in this follow-up, which was
+    scoped to the specific 2002-2006 lead. Worth a glance in a future pass
+    since a 4-year run one tool-run away from 5 is exactly how the last
+    dark run stayed hidden."
+  - "Carried from the prior pass, still unresolved: the 1981 M-19-financing
+    accusation and Mexican exile is real, dated and high-impact but
+    currently one-sourced (Spanish Wikipedia) - worth checking against
+    Gerald Martin's biography before it ships."
