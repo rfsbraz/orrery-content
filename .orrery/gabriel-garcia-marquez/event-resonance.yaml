@@ -1,0 +1,135 @@
+stage: event-resonance
+wing: gabriel-garcia-marquez
+summary: >
+  This replaces a prior ruling on this wing that never checked
+  content/events/global.yaml before writing a globalEvents block: it
+  included cuban-revolution-1959 and chile-coup-1973 and excluded
+  pinochet-fall-1990, none of which exist anywhere in global.yaml. Those
+  ids came from a line in press-archaeology's own handoff ("The Cuban
+  Revolution (1959), Chile's coup (1973) and Pinochet's fall (1990) sit
+  under lifeEvents here and are include candidates if global.yaml has
+  matches - not checked") that was never actually checked against the
+  file. It was read in full this time, first: 19 entries total, 14 falling
+  inside García Márquez's real 1927-2014 lifetime, none of them the three
+  the prior pass invented. One include, fifteen exclude (the 14
+  lifetime-reachable events plus two post-death entries checked anyway
+  because a manuscript of his published posthumously in 2024).
+
+produced:
+  - >
+    content/franchises/gabriel-garcia-marquez/franchise.yaml - added a
+    globalEvents block, 1 include and 15 exclude. Replaces nothing
+    committed, since the prior fabricated block never made it into a
+    commit on this branch; the branch's reflog shows a reset before this
+    pass started.
+
+decisions:
+  - >
+    Read content/events/global.yaml directly, in full, before ruling on
+    anything - not the press-archaeology handoff's summary of it, which is
+    exactly where the prior attempt went wrong. Confirmed on inspection:
+    no cuban-revolution-1959, chile-coup-1973 or pinochet-fall-1990 id
+    exists in the file, or any id resembling them. The three "include
+    candidates" the handoff floated are real lifeEvents on
+    content/authors/gabriel-garcia-marquez.yaml but have no corresponding
+    global-catalogue entry, so there is nothing for this stage to rule on
+    for them; they are absent from both include and exclude here because
+    ruling on a nonexistent id is the exact mistake being corrected.
+  - >
+    Included ebook-and-self-publishing-2007 on a specific, sourced,
+    non-generic fact: Cien años de soledad had no ebook edition at all
+    until Leer-e (Madrid) issued the first Kindle/ePub release on 6 March
+    2013, six years after the Kindle itself launched - and Colombian paper
+    El Tiempo covered the release as news in its own right ("'Cien años
+    de soledad', ahora en formato de libro electrónico," 6 Mar 2013,
+    cited at es.wikipedia.org/wiki/Cien_años_de_soledad, footnote 60). His
+    best-known novel sat outside the condition this event created for most
+    of a decade; the holdout, not mere contemporaneity, is the resonance.
+    Single-sourced (one dated newspaper citation via Wikipedia) rather than
+    the two-source bar press-archaeology holds itself to for biographical
+    facts, but it is a specific dated claim, not an inference, and this
+    stage's bar is evidenced resonance rather than biographical fact-
+    checking.
+  - >
+    Excluded 14 events that fall inside 1927-2014 (his actual born-died
+    span) and would otherwise render by the engine's lifetime default:
+    sept-11-2001, financial-crisis-2008, world-war-ii-1939,
+    penguin-paperback-1935, armed-services-editions-1943,
+    lady-chatterley-trial-1960, fantasy-paperback-boom-1965,
+    carnation-revolution-1974, chain-bookshop-1982, online-bookselling-1995,
+    prestige-fantasy-adaptation-2011, portugal-bailout-2011,
+    comics-code-authority-1954. None cleared the one-sentence test: no
+    source connects any of them to a specific book, essay or interview.
+    Reasoning for each is written inline in the franchise.yaml exclude
+    list rather than repeated here. Two of these deserve a specific note:
+    lady-chatterley-trial-1960 and world-war-ii-1939 both have adjacent
+    but distinct real material already on this wing (his own censorship
+    fight with the Rojas Pinilla dictatorship; his fiction's actual war,
+    the 19th-century Thousand Days' War) - the existence of *a* nearby
+    true thing is exactly the trap the skill warns about, not a reason to
+    also credit the wrong global event.
+  - >
+    Also excluded two entries dated after his 2014 death -
+    covid-19-pandemic-2020 and booktok-2020 - specifically because this
+    wing's last work, En agosto nos vemos, was published in 2024 and a
+    naive reading of "does this wing's span reach the event" could invite
+    either one back in. Neither survives a check: the manuscript was
+    drafted 1997-2004 and abandoned unfinished well before 2020, and no
+    source ties either the 2024 Netflix adaptation (already a franchise
+    event) or the 2024 book publication to BookTok or the pandemic
+    specifically. Recorded explicitly so a future pass does not re-raise
+    them on the same "but the wing is active until 2024" reasoning.
+  - >
+    Left world-war-i-1914, pulp-magazines-1926 and
+    elementary-education-act-1870 unruled: all three predate his 1927
+    birth with no inheritance case comparable to fantasy-paperback-boom-
+    1965/Sanderson (no commercial category or condition traceable from
+    any of them into his own catalogue), so they were never lifetime-
+    default candidates and writing an exclude for each would be ballast,
+    not evidence, per the skill's "silence is absence" rule.
+
+forStages:
+  press-archaeology: >
+    IMPORTANT - this ruling widened the wing's dark run, not just shifted
+    it. Before this pass: aura_density.py reported 38 aura entries, longest
+    dark run 4 years (1961-1964) - but that 38 included 14 global events
+    rendering purely on the engine's lifetime-default arithmetic, since
+    franchise.yaml had no globalEvents block yet. After this pass: 25 aura
+    entries (1 include replacing that block of 14), longest dark run 5
+    years (1960-1964). The extra year, 1960, was being covered only by
+    lady-chatterley-trial-1960 under the old default - a UK obscenity
+    trial with no real connection to García Márquez, correctly excluded on
+    the merits, but its removal is what opened the gap past the 5-year
+    gate. Per this stage's own rule, that is not patched with a padding
+    include here. The 1960-1964 window sits between the 1958 marriage
+    lifeEvent and the 1965 Acapulco/Cien-años lifeEvent - a real early-
+    career stretch (El coronel no tiene quien le escriba published 1961, La
+    mala hora published 1962) that needs its own sourced material, not a
+    borrowed global event, to close.
+  wing-audit: >
+    Footprint is exactly content/franchises/gabriel-garcia-marquez/
+    franchise.yaml's globalEvents block. No other field in that file
+    touched; works.yaml, orders.yaml, eras.yaml, theme.yaml and the author
+    file were read for context only, not edited. validate.py --slug
+    gabriel-garcia-marquez: 1 error (theme.yaml's missing art: block,
+    visual-language's to resolve, unchanged by this pass) and 20 warnings
+    (all pre-existing eras-coverage gaps on works.yaml, unrelated to
+    globalEvents). No broken-reference warning exists for a globalEvents id
+    today - validate.py does not check global-catalogue ids against
+    globalEvents at all, so this was verified by hand: every id in both
+    include and exclude was checked against content/events/global.yaml's
+    actual id list before writing the file, not after.
+
+openQuestions:
+  - >
+    Carried from press-archaeology's own follow-up handoff: the 1981
+    M-19-financing accusation is real, dated and high-impact but still
+    one-sourced (Spanish Wikipedia) - out of scope here, unrelated to
+    globalEvents, but still open.
+  - >
+    Whether ebook-and-self-publishing-2007's six-year holdout is fully
+    García Márquez's own decision versus a slower Latin American ebook
+    market generally was not resolved - the sourced fact (no edition
+    existed before March 2013) supports the include either way, but a
+    stated personal reason, if one exists in an interview, would make the
+    note sharper. Not chased further within this stage's remit.
