@@ -1,0 +1,127 @@
+stage: visual-metadata
+summary: >
+  Sourced a portrait and franchise header on Wikimedia Commons and covers for
+  14 of 17 works (all ten published novels plus 4 of 6 anthology
+  contributions), all fetched with ?default=false and looked at, not just
+  status-checked. Two anthologies (Journeys, Art of War) have no cover on
+  Open Library at all - genuinely absent, not a search failure, confirmed by
+  checking their OL work records directly. The Wolves of War (forthcoming
+  2026-11-03) has a real UK jacket already live on Amazon, but no source with
+  a statable licence carries it yet, so it stays empty.
+
+produced:
+  - "content/authors/john-gwynne.yaml (images: portrait block)"
+  - "content/franchises/john-gwynne/franchise.yaml (images: header block)"
+  - "content/franchises/john-gwynne/works.yaml (images: cover block on 14 of
+    17 works; a data-decision comment on each of the 3 left bare)"
+
+portraitFinding: >
+  Wikimedia Commons has a clean, current, correctly-identified portrait: John
+  Gwynne at the Imaginales fantasy festival (Epinal, France), 25 May 2024,
+  his own festival badge visible in frame, CC BY-SA 4.0, Damdamdidilolo. This
+  is already the current English Wikipedia infobox image and Wikidata
+  Q117707258's own picture claim - confirmed independently via both APIs, not
+  assumed from one. No workaround for a missing CC portrait was needed.
+
+headerFinding: >
+  A real shieldwall, not book art: reenactors of the Slavic and Wiking
+  Festiwal in Wolin, Poland, lined up with round shields and spears against
+  the festival's wooden palisade before a mock battle - a drilled line, not
+  a fought one, which keeps faith with visual-language.yaml's own emblem
+  logic (gear at rest before use, never a trophy claimed mid-fight). CC
+  BY-SA 4.0, Jakub T. Jankiewicz. A same-festival mid-battle shot from the
+  same photographer (Wolin festiwal 2019 33.jpg) was looked at and set aside
+  - it has spectators and a downed reenactor in frame, reading as a fought
+  battle rather than a drill.
+
+coverFinding: >
+  The Faithful and the Fallen's four UK Tor/Orbit jackets (Malice, Valour,
+  Ruin, Wrath) turned out, on actually looking at full resolution rather
+  than a thumbnail, to be one consistent house design already - a weapon
+  icon on an icy-white ground over a marching-army silhouette, each book its
+  own weapon and accent colour - not two competing eras as the brief's own
+  warning anticipated. Of Blood and Bone (A Time of Dread/Blood/Courage)
+  carries its own matching three-book design (a weapon wreathed in flame).
+  The real trap was in the Bloodsworn Saga: Open Library's search API,
+  which this catalogue's own tooling treats as the representative pick, hands
+  back a sprayed-edge boxed collector's-edition product photo (a 25 Nov 2025
+  Orbit UK reissue) for two of the three books, not the plain jacket - caught
+  only by downloading and looking at the pixels, not by the ?default=false
+  status check, which passes a boxed product photo the same as a jacket.
+  Overridden on all three Bloodsworn books in favour of each work's original
+  2021/2022/2024 trade edition. A "cover to be revealed" placeholder (an
+  unfinished OL upload, not a design) was also caught and rejected on
+  Shadow of the Gods. Blackguards was missing from Gwynne's own OL author
+  record entirely (an OpenLibrary author-matching gap - the record exists,
+  just not linked to him) and only surfaced via a direct title search.
+
+gapFinding: >
+  3 works carry no cover. The Wolves of War (forthcoming) has a real UK
+  jacket already live on Amazon's own product page, but a retailer jacket
+  file carries no statable licence, Open Library has no edition record for
+  its ISBN yet, and orbit-books.co.uk's own product pages were found serving
+  a stale, unrelated stock image on other backlist titles during this
+  wing's own art-rotation and editions passes, so that site's og:image
+  cannot be trusted as a source either - left empty rather than guessed.
+  Journeys and Art of War are each a single self-published or small-press OL
+  edition record with no cover ever attached - checked directly on each
+  work's own OL record, not inferred from a failed search.
+
+validator: >
+  validate.py --slug john-gwynne -> 0 errors. 2 pre-existing handoff-length
+  warnings (press-archaeology.yaml, eras.yaml), unchanged, not touched here.
+  A pipeline-narration warning this stage's own first draft introduced on
+  The Wolves of War's gap comment ("during this pass") was caught by the
+  same validator run and rewritten to present tense before this handoff.
+
+forStages:
+  editions: >
+    Printings used, for cross-check against whatever editions.yaml lands on
+    for the same works: Malice - Pan/Tor UK hardback, 6 Dec 2012, ISBN
+    9780230767270. Valour - Tor, 11 Sep 2014, ISBN 9780330545761. Ruin - Tor,
+    2015, ISBN 9781447259626. Wrath - Orbit, 6 Dec 2016, ISBN 9780316386333.
+    A Time of Dread - Orbit, 20 Feb 2018, ISBN 9780316502238. A Time of Blood
+    - Orbit, 16 Apr 2019, ISBN 9780316502276 (Macmillan/Pan export editions
+    of the same year, ISBNs 9781509812981 and 9781509812974, carry their own
+    OL cover records, not inspected). A Time of Courage - Orbit, 7 Apr 2020,
+    ISBN 9780316502313. The Shadow of the Gods - Little, Brown Book Group
+    (Orbit UK), 2021, ISBN 9780356514208. The Hunger of the Gods - Open
+    Library's work-level cover (not tied to one listed edition in its own
+    editions.json); the 2022 Orbit US paperback, ISBN 9780316539920, carries
+    the same art and is the edition-linked alternative if one is needed. The
+    Fury of the Gods - Orbit, 2024, ISBN 9780316539975. Blackguards -
+    Ragnarok Publications, 2015, ISBN 9781513064079. Legends II - NewCon
+    Press, 21 Aug 2015, ISBN 9781907069819. Unfettered III - Grim Oak Press,
+    19 Mar 2019, ISBN 9781944145262. The Scent of Tears - NewCon Press, 23
+    Oct 2018, ISBN 9781910935941. None of these editions were written into
+    editions.yaml here - that file was not touched, per the visual-metadata
+    remit of images blocks only.
+  translation: >
+    No pt-PT overlay exists yet for this wing, so no image credit or source
+    string needs mirroring. If one is ever built, portraitCredit and
+    headerCredit are attribution strings (photographer names, licence
+    names) and should carry across untranslated per the licence terms, not
+    be rendered into Portuguese.
+  wing-audit: >
+    Every `images:` block has both its URL fetched with ?default=false and
+    the actual pixels looked at (a contact sheet, not a status check) -
+    confirm this against the three rejected boxed-set/placeholder cover ids
+    named in coverFinding above if re-auditing this wing's covers, since
+    those specific ids (10722712, 15150794, 15150795, 15150796) resolve to
+    real, non-default images and would pass a URL-only check. Confirm the
+    3 bare slots (Wolves of War, Journeys, Art of War) still carry their
+    data-decision comments rather than a silently re-added guess. No
+    Banished-Lands or Bloodsworn ending, Ben-Elim/Kadoshim/Vigrid-god
+    iconography, or raised/ring-posed shield appears in the portrait or
+    header chosen (neither is generated art, both are real photographs, but
+    the same check is worth running since the header is Viking-adjacent
+    imagery adjacent to this wing's own withheld iconography).
+
+openQuestions:
+  - "The Hunger of the Gods' chosen cover (id 12817685) is attached at the
+    OL work level rather than to one listed edition - functionally identical
+    to the edition-linked alternative named above, but worth resolving to a
+    concrete ISBN if editions.yaml wants one."
+  - "The Wolves of War's cover: revisit once Open Library or Commons carries
+    a real edition record for ISBN 9780356527871, expected around its
+    2026-11-03 publication."
