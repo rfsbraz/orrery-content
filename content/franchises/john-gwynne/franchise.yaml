@@ -1,0 +1,181 @@
+# A wing spans an author's complete published work. John Gwynne's shelf is
+# ten published novels across three series, one further announced novel
+# opening a fourth, plus six anthology contributions (see works.yaml's header
+# for the full sourcing and the series-structure ruling): The Faithful and
+# the Fallen and Of Blood and Bone share one continuous setting, the Banished
+# Lands, 130 years apart; The Bloodsworn Saga is a separate, Norse-inspired
+# setting; The Wolfheart Chronicles, opening with the announced The Wolves of
+# War (2026), is a fourth, Slavic-mythology-inspired setting. All four are
+# modelled as `subseries` inside this one wing, never as separate franchises.
+id: john-gwynne
+name: John Gwynne
+kind: author
+description: >
+  The complete published work of John Gwynne: the Banished Lands, a world of
+  prophesied holy war between the faithful and the fallen, spanning the
+  [[work:john-gwynne/malice|Faithful and the Fallen]] tetralogy and its
+  direct sequel trilogy, [[work:john-gwynne/a-time-of-dread|Of Blood and
+  Bone]], set 130 years later in the same world; and
+  [[work:john-gwynne/the-shadow-of-the-gods|The Bloodsworn Saga]], a
+  separate, Norse-inspired setting of fallen gods and blood oaths begun in
+  2021. Alongside the ten novels, six short stories contributed to
+  multi-author anthologies round out the shelf, along with
+  [[work:john-gwynne/the-wolves-of-war|The Wolves of War]] (2026), the
+  announced opening volume of a new series, The Wolfheart Chronicles, in a
+  Slavic-mythology-inspired setting.
+authorIds: [john-gwynne]
+themePreset: shieldwall-liturgy
+images:
+  # A real shieldwall, not a book cover or in-world art: reenactors of the
+  # Slavic and Wiking Festiwal in Wolin, Poland, lined up with round shields
+  # and spears against the festival's wooden palisade, before the mock
+  # battle begins - a rehearsal formation, not a battle's ending, matching
+  # this wing's own emblem logic (gear at rest before a drill, never a
+  # trophy claimed mid-fight). Muted, weathered, unglamorous colours over
+  # the shields and gear, no horned helmets or fantasy-poster costume.
+  # Chosen over a same-festival mid-battle shot (File:Wolin festiwal 2019
+  # 33.jpg) which has spectators and a downed reenactor in frame, reading
+  # closer to a fought battle than a drilled line.
+  header: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Wolin_2018_07.jpg/1920px-Wolin_2018_07.jpg"
+  headerCredit: "Jakub T. Jankiewicz, CC BY-SA 4.0"
+  headerSource: "https://commons.wikimedia.org/wiki/File:Wolin_2018_07.jpg"
+# Ruled against the full 19-entry content/events/global.yaml catalogue. Two
+# include: fantasy-paperback-boom-1965 predates him by three years but opened
+# the secondary-world epic-fantasy market his four-setting shelf sits inside,
+# evidenced by his own Goodreads influences field rather than the genre
+# generally; covid-19-pandemic-2020 halted the Viking-reenactment training he
+# has said shapes his combat writing, in his own words, not a generic
+# lived-through-it claim. The rest are considered and refused: no Gwynne book
+# answers a world event by theme, and no career fact ties him to the
+# industry-mechanism entries (chain bookshops, online bookselling, ebooks,
+# BookTok) beyond writing and publishing during their years. World-war-i-1914,
+# elementary-education-act-1870, pulp-magazines-1926, penguin-paperback-1935,
+# armed-services-editions-1943, lady-chatterley-trial-1960 and
+# comics-code-authority-1954 are left unruled: all predate his 1968 birth with
+# no inheritance case comparable to the paperback-boom one.
+globalEvents:
+  include:
+    - fantasy-paperback-boom-1965  # predates him by 3 years, but created the secondary-world epic-fantasy market his shelf sits inside; his own Goodreads influences field names J. R. R. Tolkien and David Gemmell, and his debut later won the Gemmell-named award
+    - covid-19-pandemic-2020  # stopped his Viking re-enactment training "for the last year or so" (his own 2021 Q&A), the shield-wall practice he has said directly shapes how he writes combat
+  exclude:
+    - sept-11-2001  # was 33 and years from his 2012 debut; no Gwynne book engages with it
+    - financial-crisis-2008  # his sagas run on invented gold, oaths and armies, not real-world markets
+    - world-war-ii-1939  # predates him by 29 years; his father's RAF postings that shaped his own childhood moves are Cold War service, not the war itself
+    - carnation-revolution-1974  # British author with no Portuguese-market presence or connection
+    - chain-bookshop-1982  # was 14 when chains spread; his 2012 debut arrived deep into the online-and-ebook era they had already lost ground to
+    - online-bookselling-1995  # his career is agented and shelved, not an online-discovery story
+    - ebook-and-self-publishing-2007  # Malice went from "pages on my desk" to a traditionally agented and published book; no self-published or ebook-first edition precedes it
+    - prestige-fantasy-adaptation-2011  # no screen adaptation or option exists for any Gwynne work
+    - booktok-2020  # The Fury of the Gods' 2024 bestseller run is the trilogy's own close, not a short-video discovery story
+    - portugal-bailout-2011  # British author with no Portuguese-market presence; his shelf carries no Portuguese translation
+
+# "Where to start" - four settings, no periodisation (eras.yaml) and no
+# insertion dispute the way Wheel of Time or Discworld have; the real
+# question readers actually ask is which of the two unconnected settings to
+# open with, and how to handle the fact that the second Banished Lands
+# series is a direct sequel to the first, not a parallel on-ramp. Both
+# questions are answered by a real, converged r/Fantasy thread, cited per
+# path below: some readers are pointed to Malice as
+# the true beginning (especially if they mean to read the whole shelf),
+# others are pointed straight to The Shadow of the Gods by readers who found
+# it the stronger, more polished series and see no reason to make a newcomer
+# commit to four books first. The Wolves of War (forthcoming 2026-11-03,
+# opening a fourth, unconnected setting) gets no path: it has not published,
+# so there is no reception yet to judge what kind of door it is.
+startHere:
+  paths:
+    # Source: https://old.reddit.com/r/Fantasy/comments/1hc16mn/which_john_gwynne_series_should_i_start_with/
+    # scythe_and_stopwatch (+23, top-voted): "Personally, I would start with
+    # Malice, the first book of the Faithful and the Fallen." /
+    # BayazTheGrey: "I started with Malice, and I always suggest others to do
+    # the same, granted, that's only IF you're interested in reading all his
+    # works, since he grows a lot, and it's noticeable in every book."
+    - id: malice-start
+      title: Start at the beginning, with Malice
+      description: >
+        Gwynne's 2012 debut and the true chronological start of his largest,
+        longest-running world - the Banished Lands. The door the fandom
+        points a completionist to, because everything else on the shelf
+        either continues this story directly or was written after it.
+      workIds:
+        - john-gwynne/malice
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste, arc, complete]
+      note: >
+        By the same readers' own account, this is Gwynne at his least
+        practiced: the tetralogy's middle two volumes run long, and several
+        readers who compare all his work call the Bloodsworn Saga the
+        stronger achievement. Starting here means judging him at the
+        beginning of a visible improvement, not at his best.
+    # Source: https://old.reddit.com/r/Fantasy/comments/1hc16mn/which_john_gwynne_series_should_i_start_with/
+    # BayazTheGrey: "If you're only interested in one series, then start with
+    # Bloodsworn." / Admiral-Apathy: "Bloodsworn is just better than his
+    # other works... He found a better balance... I read every scene all the
+    # way to the end, and loved it." / BlazeOfGlory72: "I'd just read
+    # Bloodsworn. It's basically just a better version of Faithful of the
+    # Fallen."
+    - id: bloodsworn-start
+      title: Start with the Bloodsworn Saga instead
+      description: >
+        A completely separate, Norse-inspired setting with no reading
+        requirement from the Banished Lands - three books, not eleven, and
+        by several readers' account the more assured, better-paced version
+        of what Gwynne does. For a reader who wants to judge him at his
+        current best before deciding whether to commit to the older,
+        larger world.
+      workIds:
+        - john-gwynne/the-shadow-of-the-gods
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste, arc]
+      note: >
+        Skips his origin story - the tetralogy that built the Banished Lands
+        and the readership everything after it relies on. Read Malice
+        afterward and the prose can feel like a step back in time as well as
+        in craft.
+    - id: banished-lands-complete
+      title: The complete Banished Lands saga
+      description: >
+        Both connected series, back to back: the Faithful and the Fallen
+        tetralogy, then Of Blood and Bone's direct continuation 130 years
+        later. For a reader who has decided the Banished Lands is the part
+        of this shelf they want, walked start to finish without the two
+        unconnected settings or the interleaved short fiction in between.
+      workIds: null
+      orderId: john-gwynne/banished-lands-in-order
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        Seven books before you reach either of Gwynne's other settings, and
+        the Faithful and the Fallen half is the part of his catalogue
+        readers most often call overlong. Of Blood and Bone is written to
+        continue the first series, not stand apart from it - reading it out
+        of this order is the one sequencing choice on this shelf that
+        multiple independent readers warn against.
+    - id: complete-shelf
+      title: The whole shelf
+      description: >
+        Every novel and short-fiction contribution Gwynne has published,
+        across all four settings, in the order he wrote them.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+      note: >
+        Two of the six anthology short stories ("Better to Live Than to
+        Die" and "The Heir Apparent") are tied to the Faithful and the
+        Fallen universe; the other four are one-off contributions to other
+        editors' anthologies with no further connection to Gwynne's own
+        settings.
+
+sources:
+  - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+  - "https://en.wikipedia.org/wiki/John_Gwynne_(author)"
+  - "https://www.goodreads.com/author/show/5898355.John_Gwynne"
+  - "https://asunbookstore.com/john-gwynne-qa/"
+  - "http://web.archive.org/web/20131123220535/http://www.john-gwynne.com/about-john-gwynne-author/"

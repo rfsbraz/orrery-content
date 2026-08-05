@@ -1,0 +1,628 @@
+# Bibliography (Works) - the abstract books; editions/covers are separate metadata.
+# IDs are STABLE and permanent (user data references them). Dates are year-precision
+# unless a source states a full date. The default reading order (all works in
+# publication order) is DERIVED from this file - so a missing work is a gap
+# in the spine.
+#
+# Coverage: John Gwynne's complete published bibliography as listed by ISFDB
+# (https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne) - ten published novels
+# across three series, one further announced novel opening a fourth series,
+# plus six short-fiction contributions to multi-author anthologies. Excluded
+# as not independent works: "Malice (excerpt)" and "The Shadow of the Gods
+# (excerpt)", both ISFDB title records for promotional samples of the novels
+# themselves, not separate content. Also excluded: the two omnibus editions
+# ISFDB records (The Faithful and the Fallen omnibus; The Bloodsworn Saga
+# omnibus, 2025) - these repackage works already catalogued individually and
+# are edition data, not separate works.
+#
+# THE WOLVES OF WAR (2026): announced after ISFDB's own bibliography page was
+# last updated, so it carries no ISFDB record yet. Sourced instead to its
+# Amazon UK product listing (full jacket copy, ISBN, publisher and page
+# count), corroborated independently by Publishers Weekly's book database
+# (title/author/ISBN registered) and by Open Library's edition record for the
+# same ISBN. Orbit, 3 November 2026, opening a new series (The Wolfheart
+# Chronicles) in a fourth setting inspired by Slavic rather than Norse or
+# invented mythology - a clean break from both the Banished Lands and Vigrid.
+#
+# SERIES STRUCTURE: The Faithful and the Fallen (4 books) and Of Blood and
+# Bone (3 books) share one continuous setting, the Banished Lands - confirmed in
+# Gwynne's own words ("My second series, Of Blood and Bone, is set in the
+# Banished Lands, the same world as the first series. Book 1, A Time of
+# Dread, begins 130 years after the events of the first series," Goodreads
+# author bio) and independently corroborated by Publishers Weekly's review of
+# A Time of Dread, which identifies the character Sig as "a bear-riding giant
+# familiar from Gwynne's The Faithful and the Fallen series." ISFDB models
+# this the same way: both are subseries under one parent "The Faithful and
+# the Fallen universe" listing. The Bloodsworn Saga (3 books, begun 2021) is
+# a genuinely separate setting - Wikipedia states it plainly ("a separate
+# setting drawing on Norse mythology, Beowulf, and the Viking period") and
+# nothing in the Banished Lands novels or their reviews connects the two
+# worlds. Modelled as three subseries strings rather than two (Faithful and
+# the Fallen / Of Blood and Bone) plus one, the same pattern this catalogue
+# already uses for one world spanning multiple eras (see brandon-sanderson's
+# "Mistborn: Era 1" / "Mistborn: Era 2"). The Wolfheart Chronicles, opened by
+# the announced The Wolves of War (2026), is a fourth setting again separate
+# from all three.
+#
+# CANON TIER: all eleven novels (ten published, one announced) are core -
+# this is the entire spine of a living author with no juvenilia, ghost-written
+# work, or discarded early drafts on record. The six anthology contributions
+# are apocrypha per authorRole: contributor (SCHEMA.md's own worked example):
+# real, completionist-relevant, but not John Gwynne's own book.
+
+# --- The Faithful and the Fallen (Banished Lands) ---
+- id: john-gwynne/malice
+  title: "Malice"
+  authorIds: [john-gwynne]
+  published: 2012
+  subseries: "The Faithful and the Fallen"
+  canonTier: core
+  featured: true
+  synopsis: >
+    The world is broken and can never be made whole again. In the Banished
+    Lands, a loosely allied collection of kingdoms with a violent past of
+    men and giants at war, Corban wants nothing more than to be a warrior
+    under King Brenin's rule; Veradis, newest man in the warband of the
+    High Prince Nathair and one of the finest swordsmen of his homeland,
+    lives in his older brother's shadow while Nathair makes plans his
+    father the High King knows nothing of; and Evnis has already sacrificed
+    too much for the power he means to hold. Now the stones weep red, giant
+    wyrms stir, and those who can still read the signs see a danger far
+    worse than anything that has come before.
+  note: >
+    Debut novel; won the David Gemmell Morningstar Award for Best Fantasy
+    Debut in 2013. Marked featured as the hinge the rest of the shelf is read
+    from: the world (the Banished Lands), the central prophecy, and the
+    tetralogy's title all originate here.
+
+    The seven treasures, the Kadoshim and the true nature of Nathair's
+    counsellor are absent from Malice's own jacket copy on both sides of the
+    Atlantic; they enter the publisher's copy from Ruin onward, and the
+    synopsis above holds to what Malice itself is sold on.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/8458717-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL19347291W"
+    # The Pan (Tor UK imprint) hardback, 6 Dec 2012, ISBN 9780230767270 - a
+    # single sword icon on an icy-white ground over a marching army
+    # silhouette, the same house design language Tor/Orbit UK carried
+    # across all four Faithful and the Fallen jackets (see Valour, Ruin,
+    # Wrath below), each book's own weapon and accent colour. This work's
+    # own OL record and the OL search API both surface it as representative.
+    # A separate 2013 US Orbit paperback (ISBN 9780316399739, cover id
+    # 11574415) exists at a lower resolution and is not used.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://www.publishersweekly.com/9780316399739"
+    - "https://en.wikipedia.org/wiki/John_Gwynne_(author)"
+
+- id: john-gwynne/valour
+  title: "Valour"
+  authorIds: [john-gwynne]
+  published: 2014
+  subseries: "The Faithful and the Fallen"
+  canonTier: core
+  synopsis: >
+    War erupts in the Banished Lands as the race for power intensifies.
+    Corban flees his homeland searching for peace and finds no haven in the
+    west, hounded at every step by Queen Rhin's agents and by roaming bands
+    of giants; Veradis leaves the battleground and rushes to his king's
+    side, his duty weighing heavily on him; Maquin seeks only revenge, with
+    pirate slavers and the brutal world of the pit-fights in his way; and
+    Nathair is drawn into the wars of the west as Rhin marches against King
+    Owain.
+  note: >
+    Published 2014, per both ISFDB and Wikipedia's bibliography section - not
+    2013, the year sometimes quoted for it.
+
+    Valour is sold on two different jackets. Pan Macmillan's says
+    considerably more about how Malice ends than Malice's own copy does,
+    including naming outright what Malice spends its length arriving at.
+    The synopsis above follows Orbit's copy instead, which covers the same
+    four threads and states none of it.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/8404705-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL19088187W"
+    # Tor, 11 Sep 2014, ISBN 9780330545761 - an axe icon on the same
+    # icy-white ground as Malice, Ruin and Wrath. This work has two other OL
+    # records under variant capitalisations ("Valor" with no cover, "valour"
+    # lower-cased with a duplicate of this same image) - the one used here
+    # is titled exactly "Valour", matching this file's own title field.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://en.wikipedia.org/wiki/John_Gwynne_(author)"
+    - "https://www.fantasybookreview.co.uk/John-Gwynne/Valour.html"
+
+- id: john-gwynne/ruin
+  title: "Ruin"
+  authorIds: [john-gwynne]
+  published: 2015
+  subseries: "The Faithful and the Fallen"
+  canonTier: core
+  synopsis: >
+    The God-War stops being a looming prophecy and becomes real: the
+    factions of the Banished Lands, gathered around Corban, Maquin and a
+    widening cast on both sides of the widening conflict, are pulled into
+    open sieges and set-piece battles as the alliances that will fight the
+    final war take shape.
+  note: >
+    Published 2015, per both ISFDB and Wikipedia's bibliography section - not
+    2014, the year sometimes quoted for it.
+
+    Ruin's own jacket copy is unusually forthcoming about how Valour ends -
+    who holds what, and which of the two men at the centre of the previous
+    book has learned what about the other. None of that is carried into the
+    synopsis above, which stays with the shape of the war.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/13773681-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL34948197W"
+    # Tor, 2015, ISBN 9781447259626 - a spear icon on the same icy-white
+    # ground as Malice, Valour and Wrath. A second OL work record for "Ruin"
+    # (OL21119971W) carries no cover and is not used.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://en.wikipedia.org/wiki/John_Gwynne_(author)"
+    - "https://www.fantasybookreview.co.uk/John-Gwynne/Ruin.html"
+
+- id: john-gwynne/wrath
+  title: "Wrath"
+  authorIds: [john-gwynne]
+  published: 2016
+  subseries: "The Faithful and the Fallen"
+  canonTier: core
+  featured: true
+  synopsis: >
+    The tetralogy's melee-laden climax. Events come to a head as the war
+    reaches new heights: King Nathair holds the fortress of Drassil and
+    three of the seven treasures, and with Calidus and his ally Queen Rhin
+    behind him he will do anything to take the rest - all seven under one
+    command would open a portal through which Asroth and his demon-horde
+    could break into the Banished Lands and become flesh. Corban, his
+    warband scattered, has been taken prisoner by the Jotun, warrior giants
+    who ride enormous bears into battle, and if he is to counter Nathair at
+    all he must make allies of competing factions of giants who have no
+    reason to give him any. His life hangs in the balance, and with it the
+    fate of the Banished Lands.
+  note: >
+    Won Best Traditionally Published Novel at the 2017 BookNest Awards.
+    Marked featured as the tetralogy's ending, the other hinge alongside
+    Malice's beginning.
+
+    Wrath's own jacket copy ends on the balance and names no outcome; the
+    synopsis above stops in the same place, and states nothing about who is
+    standing at the end or how the God-War is settled. Where Veradis and
+    Alcyon stand by this point belongs to Ruin's ending and is left out for
+    the same reason.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/8737621-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL19913259W"
+    # Orbit, 6 Dec 2016, ISBN 9780316386333 - a warhammer icon closing out
+    # the same icy-white house design as Malice, Valour and Ruin. A sibling
+    # OL work record (OL19913258W, "Wrath (The Faithful and the Fallen)")
+    # carries the identical image at a different cover id.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://www.publishersweekly.com/9780316386340"
+    - "https://en.wikipedia.org/wiki/John_Gwynne_(author)"
+
+# --- Of Blood and Bone (Banished Lands, 130 years later) ---
+- id: john-gwynne/a-time-of-dread
+  title: "A Time of Dread"
+  authorIds: [john-gwynne]
+  published: 2018
+  subseries: "Of Blood and Bone"
+  canonTier: core
+  synopsis: >
+    A century and a third after the God-War, the Banished Lands are held to
+    a peace that is brutally enforced. In the south the hotheaded Riv wants
+    nothing more than to be admitted to the winged Ben-Elim's peacekeeping
+    force, and unearths a deadly secret instead; in the west the giantess
+    Sig investigates demon sightings and turns up signs of an uprising and
+    of black magic; in the snowbound north Drem, a trapper's son, finds
+    mutilated corpses in the forests, the work of a predator or of
+    something far darker; and the hostage prince Bleda is kept at the
+    Ben-Elim's court. It is a time of shifting loyalties, and in the
+    shadows something is gathering.
+  note: >
+    Reviewed by Publishers Weekly as set in the same world as The Faithful
+    and the Fallen, explicitly naming Sig as "a bear-riding giant familiar
+    from Gwynne's The Faithful and the Fallen series" - the strongest
+    external corroboration found for the shared-Banished-Lands ruling on
+    this wing's subseries structure.
+
+    The book's own jacket copy opens by summarising how the God-War ended.
+    That is precisely the question Wrath's jacket leaves standing, so the
+    opening line is deliberately not carried into the synopsis above, which
+    describes the world Of Blood and Bone starts in without scoring the war
+    that produced it. Sig is named because A Time of Dread's own copy names
+    her; nothing here says where else she has been.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/8519260-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL19550170W"
+    # Orbit, 20 Feb 2018, ISBN 9780316502238 - opens Of Blood and Bone's own
+    # house design: a weapon engulfed in flame over an army silhouette,
+    # carried through A Time of Blood and A Time of Courage below (each
+    # book's own weapon: a sword hilt here).
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://www.publishersweekly.com/9780316502245"
+    - "https://www.goodreads.com/author/show/5898355.John_Gwynne"
+
+- id: john-gwynne/a-time-of-blood
+  title: "A Time of Blood"
+  authorIds: [john-gwynne]
+  published: 2019
+  subseries: "Of Blood and Bone"
+  canonTier: core
+  synopsis: >
+    The middle Of Blood and Bone novel: the conflict between the Ben-Elim,
+    the Kadoshim and the human factions of the Banished Lands widens.
+    Fritha, the demons' deadly high priestess, hunts Drem and his friends
+    through the north; the demonic forces multiply and send a host against
+    the angels' stronghold; and Drem grows into the fight's emotional
+    center.
+  note: >
+    Its own jacket copy opens on what the characters carry out of the
+    previous volume's closing battle, and states plainly the thing A Time
+    of Dread's jacket keeps back as "a deadly secret". Neither is carried
+    into the synopsis above.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/8804513-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL20159286W"
+    # Orbit, 16 Apr 2019, ISBN 9780316502276 - a dagger wreathed in red
+    # smoke over the army silhouette, continuing A Time of Dread's design.
+    # Macmillan and Pan export editions of the same year (ISBNs
+    # 9781509812981, 9781509812974) carry their own OL cover records,
+    # not inspected here; this Orbit UK edition is used for consistency
+    # with A Time of Dread and A Time of Courage.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://www.fantasybookreview.co.uk/John-Gwynne/A-Time-of-Blood.html"
+
+- id: john-gwynne/a-time-of-courage
+  title: "A Time of Courage"
+  authorIds: [john-gwynne]
+  published: 2020
+  subseries: "Of Blood and Bone"
+  canonTier: core
+  synopsis: >
+    The trilogy's finale, and the last book set in the Banished Lands:
+    heroes rise and fall, the earth is stained red, and the fate of the
+    Banished Lands is decided once and for all as Riv, Drem and the Order
+    of the Bright Star converge on the final reckoning.
+  note: >
+    Made the Spiegel bestseller list in Germany per Gwynne's own author bio.
+
+    Its own jacket copy opens on the state A Time of Blood leaves the war
+    in, and resolves the secret A Time of Dread's jacket sets up; the
+    synopsis above keeps to the finale's own framing and states neither.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/10188972-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL20869754W"
+    # Orbit, 7 Apr 2020, ISBN 9780316502313 - a burning war-axe over the
+    # army silhouette, closing out the trilogy's design. Chosen over two
+    # other OL cover ids for this same edition family (10143672, an
+    # identical image with a Waterstones-style "staff picks" badge burned
+    # into the corner; 10128947, the same image on an export-labelled
+    # edition) - this one is clean of any retailer or promotional overlay.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://www.fantasybookreview.co.uk/John-Gwynne/A-Time-of-Courage.html"
+    - "https://www.goodreads.com/author/show/5898355.John_Gwynne"
+
+# --- The Bloodsworn Saga (a separate, Norse-inspired setting) ---
+- id: john-gwynne/the-shadow-of-the-gods
+  title: "The Shadow of the Gods"
+  authorIds: [john-gwynne]
+  published: 2021
+  subseries: "The Bloodsworn Saga"
+  canonTier: core
+  featured: true
+  synopsis: >
+    A century has passed since the gods of this world fought and drove
+    themselves to extinction. Only their bones remain, promising great
+    power to whoever is brave enough to dig them out, and the monsters they
+    left behind still roam a Norse-flavored land of fjords and tundra. As
+    whispers of war echo across Vigrid, fate follows three warriors: Orka,
+    a huntress on a dangerous quest; Elvar, a noblewoman pursuing battle
+    fame; and Varg, a thrall seeking vengeance among the mercenary company
+    known as the Bloodsworn.
+  note: >
+    Opens a setting Wikipedia describes as separate from the Banished Lands,
+    drawing on Norse mythology, Beowulf and the Viking period; Gwynne is
+    himself a Viking re-enactor. Marked featured as the start of the wing's
+    third, unconnected world.
+
+    Orbit's jacket copy, UK and US alike, dates the gods' fall at a century
+    and introduces the three leads by role alone - huntress, noblewoman,
+    thrall - without naming what each of them loses or what they are really
+    walking into. Both are followed above. What the stolen children are
+    wanted for is a late reveal and is not stated here. (An earlier
+    three-hundred-year dating for the gods' fall circulates widely outside
+    the jacket; Orbit's own copy, UK and US alike, says a century, and the
+    jacket figure is what is used.)
+  images:
+    cover: "https://covers.openlibrary.org/b/id/12380838-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL24243445W"
+    # Little, Brown Book Group (Orbit UK), 2021, ISBN 9780356514208 - a
+    # dragon's head over a lone figure on ice, opening the Bloodsworn
+    # Saga's own house design (each book its own creature). Rejected: a
+    # "cover to be revealed" placeholder still on file for a 2021
+    # Blackstone/Hachette audio edition (cover id 10722712), and a 25 Nov
+    # 2025 Orbit UK "Deluxe Limited Hardcover" (ISBN 9780356528571) whose OL
+    # cover is a sprayed-edge boxed-set product photo, not a plain jacket.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://www.publishersweekly.com/9780316539883"
+    - "https://en.wikipedia.org/wiki/John_Gwynne_(author)"
+
+- id: john-gwynne/the-hunger-of-the-gods
+  title: "The Hunger of the Gods"
+  authorIds: [john-gwynne]
+  published: 2022
+  subseries: "The Bloodsworn Saga"
+  canonTier: core
+  synopsis: >
+    The dead gods are rising, and a new age of blood and conquest opens
+    over the divided realms of Vigrid. Orka continues the hunt for her
+    missing son; the Bloodsworn sweep south in a desperate race to save one
+    of their own while Varg takes the first steps on the path of vengeance;
+    and Elvar, sworn to a blood oath, must first talk the Battle-Grim into
+    following her. Against the dragon-god Lik-Rifa and her dragon-born
+    followers neither company can stand alone, and their only hope may lie
+    in the mad writings of a chained god - a book of forbidden magic with
+    the power to raise the wolf god Ulfrir from the dead.
+  note: >
+    The jacket copy leads on how The Shadow of the Gods ends. The synopsis
+    above takes the situation the second book opens in without the event
+    that produced it. Ulfrir is named because this book's own copy names
+    him, and as a possibility rather than as something that happens.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/12817685-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL25922920W"
+    # A wolf's head over a mountainside camp, continuing the Bloodsworn
+    # Saga's creature-per-book design. This is the work's own OL cover
+    # (attached at the work level, not tied to one listed edition); the
+    # 2022 Orbit US paperback (ISBN 9780316539920, cover id 13131615) is
+    # the same art and a fine edition-linked alternative if one is needed.
+    # Rejected: a 25 Nov 2025 Orbit UK "Deluxe Limited Hardcover" (ISBN
+    # 9780356528588) whose OL cover is a boxed-set product photo.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://www.publishersweekly.com/9780316539920"
+
+- id: john-gwynne/the-fury-of-the-gods
+  title: "The Fury of the Gods"
+  authorIds: [john-gwynne]
+  published: 2024
+  subseries: "The Bloodsworn Saga"
+  canonTier: core
+  synopsis: >
+    The Bloodsworn trilogy's concluding volume: the final battle for the
+    fate of Vigrid approaches. Varg and the Bloodsworn face their biggest
+    challenge yet, slaying a dragon; Elvar faces threats from without and
+    within as she readies herself for the coming conflict; Biorr and his
+    warband make their way north eager for blood while Gudvarr pursues a
+    mission of his own, hoping to win the dragon-god Lik-Rifa's favour and
+    further his ambitions. All paths lead to Snakavik and a titanic clash
+    that will shake the foundations of the world.
+  note: >
+    Reached number five on the New York Times Trade Fiction Paperback
+    bestseller list in November 2024 and was named the second-best fantasy
+    book of 2024 by ScreenRant.
+
+    Its own jacket copy states where The Hunger of the Gods leaves Varg and
+    Elvar - what Varg has become and what Elvar now holds and commands. The
+    synopsis above keeps both threads running without those resolutions.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/15137058-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL37583354W"
+    # Orbit, 2024, ISBN 9780316539975 - a dragon's head over a fjord and a
+    # longship, closing the Bloodsworn Saga's creature-per-book design.
+    # The OL search API's own representative pick for this work (cover id
+    # 15150796) is instead a 25 Nov 2025 Orbit UK "Standard Hardcover"
+    # (ISBN 9780356528595) whose cover image is a sprayed-edge boxed-set
+    # product photo, not a plain jacket - overridden here for the same
+    # reason as Shadow and Hunger above.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://en.wikipedia.org/wiki/John_Gwynne_(author)"
+    - "https://www.hachettebookgroup.com/titles/john-gwynne/the-fury-of-the-gods/9780316539951/"
+    - "https://www.orbit-books.co.uk/titles/john-gwynne/the-fury-of-the-gods/9780356514260/"
+
+# --- The Wolfheart Chronicles (a fourth, Slavic-mythology-inspired setting) ---
+- id: john-gwynne/the-wolves-of-war
+  title: "The Wolves of War"
+  authorIds: [john-gwynne]
+  published: 2026
+  forthcoming: 2026-11-03
+  subseries: "The Wolfheart Chronicles"
+  canonTier: core
+  synopsis: >
+    The Clans once lived free, honouring their own gods and traditions, until
+    northern invaders broke them with blood and fire. A father's only
+    concern is protecting his daughter Halia, who has been trapped in her
+    own body since birth yet dreams at night of running with wolves and
+    speaking to the fae creatures of the forest - powers many call a curse
+    but that may be the only way her family survives what is coming, as two
+    princes turned mortal enemies and an iron-toothed witch drag whole
+    nations toward war.
+  note: >
+    Opens a new series in a setting drawing on Slavic rather than Norse
+    mythology - a clean break from both the Banished Lands and the Bloodsworn
+    Saga's Vigrid, the same pattern by which Gwynne opened Vigrid as a break
+    from the Banished Lands in 2021.
+  # No cover: a real UK jacket for ISBN 9780356527871 is already live on
+  # Amazon's product page, but a retailer's own jacket file carries no
+  # statable licence. Open Library's edition record for that ISBN resolves
+  # but carries no cover, and the work it hangs off (OL45398326W) is a
+  # duplicate filed under a second author id, OL7519906A, rather than
+  # Gwynne's own OL2501358A - so neither side of that record holds a
+  # jacket. orbit-books.co.uk's own product pages serve a stale, unrelated
+  # stock cover on other backlist titles on the same site, so its og:image
+  # is not a reliable source either. The slot stays empty until a jacket
+  # with a statable licence exists.
+  sources:
+    - "https://www.amazon.co.uk/dp/0356527875"
+    - "https://www.publishersweekly.com/9780356527871"
+    - "https://openlibrary.org/isbn/9780356527871"
+
+# --- Short fiction: contributions to multi-author anthologies ---
+# All six are authorRole: contributor / canonTier: apocrypha per SCHEMA.md's
+# own worked example (a book containing one story by this author is not a
+# book by this author). id/title name the anthology; contributionTitle names
+# Gwynne's own piece.
+
+- id: john-gwynne/blackguards-tales-of-assassins-mercenaries-and-rogues
+  title: "Blackguards: Tales of Assassins, Mercenaries, and Rogues"
+  authorIds: [john-gwynne]
+  authorRole: contributor
+  contributionTitle: "Better to Live Than to Die"
+  published: 2015
+  subseries: null
+  format: anthology
+  canonTier: apocrypha
+  synopsis: >
+    A multi-author anthology of morally ambiguous fantasy fiction edited by
+    J. M. Martin; Gwynne's contribution is tagged by ISFDB to "The Faithful
+    and the Fallen universe," making it a Banished Lands short story rather
+    than an unrelated setting, though its exact placement in the timeline is
+    unconfirmed.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/7360055-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL17187837W"
+    # Ragnarok Publications, 2015, ISBN 9781513064079. Not found under
+    # Gwynne's own OL author record (an OpenLibrary author-matching gap,
+    # not a missing record) - located instead by a direct title search.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?2128408"
+
+- id: john-gwynne/legends-ii-stories-in-honour-of-david-gemmell
+  title: "Legends II: Stories in Honour of David Gemmell"
+  authorIds: [john-gwynne]
+  authorRole: contributor
+  contributionTitle: "An Oath Given"
+  published: 2015
+  subseries: null
+  format: anthology
+  canonTier: apocrypha
+  synopsis: >
+    A tribute anthology edited by Ian Whates for NewCon Press, honouring the
+    fantasy author David Gemmell; Gwynne's debut Malice won the David
+    Gemmell Morningstar Award in 2013, and he has named Gemmell as a direct
+    influence and a personal hero.
+  note: >
+    ISFDB records no series tag for this story, so whether it is set in the
+    Banished Lands or elsewhere is unconfirmed.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/8515191-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL19548388W"
+    # NewCon Press, 21 Aug 2015, ISBN 9781907069819. A second NewCon
+    # printing the same day (ISBN 9781907069826) carries the identical
+    # jacket art at a different cover id.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?2149293"
+    - "https://www.goodreads.com/author/show/5898355.John_Gwynne"
+
+- id: john-gwynne/journeys
+  title: "Journeys"
+  authorIds: [john-gwynne]
+  authorRole: contributor
+  contributionTitle: "The Sundering"
+  published: 2017
+  subseries: null
+  format: anthology
+  canonTier: apocrypha
+  synopsis: >
+    A multi-author fantasy anthology edited by Teresa Edgerton for
+    Woodbridge Press; Gwynne's contribution is "The Sundering."
+  note: >
+    ISFDB records no series tag for this story, so whether it is set in the
+    Banished Lands or elsewhere is unconfirmed.
+  # No cover: a 2017 CreateSpace self-published anthology (ISBN
+  # 9781543043044) with a single OL edition record and no cover attached.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?2464024"
+
+- id: john-gwynne/art-of-war
+  title: "Art of War"
+  authorIds: [john-gwynne]
+  authorRole: contributor
+  contributionTitle: "The Greatest Battle"
+  published: 2018
+  subseries: null
+  format: anthology
+  canonTier: apocrypha
+  synopsis: >
+    A multi-author military fantasy anthology edited by Petros
+    Triantafyllou for BookNest.eu; Gwynne's contribution is "The Greatest
+    Battle."
+  note: >
+    ISFDB records no series tag for this story, so whether it is set in the
+    Banished Lands or elsewhere is unconfirmed.
+  # No cover: the BookNest.eu 2018 anthology's own OL work record
+  # (OL27937925W, confirmed by author list) has a single edition and no
+  # cover attached.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?2330386"
+
+- id: john-gwynne/unfettered-iii-new-tales-by-masters-of-fantasy
+  title: "Unfettered III: New Tales by Masters of Fantasy"
+  authorIds: [john-gwynne]
+  authorRole: contributor
+  contributionTitle: "The Heir Apparent"
+  published: 2019
+  subseries: null
+  format: anthology
+  canonTier: apocrypha
+  synopsis: >
+    A charity anthology edited by Shawn Speakman for Grim Oak Press, with
+    proceeds supporting authors facing medical bills; Gwynne's contribution,
+    "The Heir Apparent," is tagged by ISFDB to The Faithful and the Fallen.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/8624003-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL19831529W"
+    # Grim Oak Press, 19 Mar 2019, ISBN 9781944145262. A second Grim Oak
+    # printing the same day (ISBN 9781944145231) carries the identical
+    # jacket art at a different cover id.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?2551944"
+
+- id: john-gwynne/the-scent-of-tears
+  title: "The Scent of Tears"
+  authorIds: [john-gwynne]
+  authorRole: contributor
+  contributionTitle: "The Message"
+  published: 2018
+  subseries: null
+  format: anthology
+  canonTier: apocrypha
+  synopsis: >
+    A "Tales of the Apt" anthology edited by Adrian Tchaikovsky for NewCon
+    Press, set in Tchaikovsky's own Shadows of the Apt world - not the
+    Banished Lands or the Bloodsworn Saga; Gwynne's contribution is "The
+    Message."
+  note: >
+    Tchaikovsky edited the volume and owns the Shadows of the Apt setting
+    Gwynne wrote this one story into; he is not credited as a co-author of
+    "The Message" itself, so he is named here in prose rather than as a
+    collaborator on the entry.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/8772320-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL20113209W"
+    # NewCon Press, 23 Oct 2018, ISBN 9781910935941.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?2583623"

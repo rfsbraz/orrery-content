@@ -1,0 +1,201 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds), so the same person resolves the same everywhere.
+# Author-LIFE events live here (they follow the person); franchise-specific
+# events belong in content/franchises/john-gwynne/events.yaml (none exist for
+# this wing - nothing found rose above a fact personal to Gwynne himself into
+# a genre-wide moment).
+#
+# lifeEvents span 1968-2024. The floor (born) plus five picked from a career
+# that is otherwise almost entirely undocumented in the contemporary press:
+# stepping back from university lecturing to help care for his disabled
+# daughter and starting to write during that time (the origin of Malice and
+# the Banished Lands - his own account, corroborated across two separately
+# published tellings); the 2013 Gemmell Morningstar win;
+# the tetralogy's three straight Gemmell Legend nominations that never
+# convert to a win (2015-2017); the death of that daughter, Harriett, in
+# September 2021 and the two years in which he wrote nothing; and The Fury
+# of the Gods becoming his first New York Times bestseller (2024). The 2001
+# and 2021 entries are the two halves of one fact and are sourced to the
+# same standard - two independent published tellings each, all four in
+# Gwynne's own words. Checked and not added: no film/TV option
+# or adaptation found anywhere in the sources below (Wikipedia's article,
+# which tracks adaptations for comparable authors, has no such section for
+# Gwynne); no dated record of a convention guest-of-honour appearance turned
+# up in the sources reachable here. Exactly when he began Viking
+# re-enactment is likewise undated in every source found - only that he does
+# it, with his three sons, and that it informs how he writes combat - so it
+# stays in the bio prose rather than becoming a dateless event.
+id: john-gwynne
+name: John Gwynne
+# ISFDB gives the birthplace as Singapore, sourced to the author's own former
+# website, and notes explicitly that Goodreads' "United Kingdom" free-text
+# field disagrees. The more specific, more directly sourced claim (born in
+# Singapore while his father was stationed there) is preferred here over the
+# vaguer one.
+born: 1968-09-21
+died: null
+images:
+  # The current English Wikipedia infobox photo for this article (confirmed
+  # via the pageimages API) and Wikidata's own Q117707258 image claim, both
+  # tracing to the same photo: Gwynne at the Imaginales fantasy festival,
+  # Epinal, France, 25 May 2024, his own festival badge visible in frame.
+  # CC BY-SA 4.0, no personality restriction flagged. A second photo from
+  # the same photographer's Imaginales 2024 set exists
+  # (File:Chris Vuklisevic (3) et John Gwynne.jpg) but pairs him with another
+  # author, so this solo head-and-shoulders shot is used instead.
+  portrait: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/WImaginales24John_Gwynne.jpg/1920px-WImaginales24John_Gwynne.jpg"
+  portraitCredit: "Damdamdidilolo, CC BY-SA 4.0"
+  portraitSource: "https://commons.wikimedia.org/wiki/File:WImaginales24John_Gwynne.jpg"
+bio: >
+  British epic fantasy author, born in Singapore while his father was
+  stationed there, and now based on the south coast of England. He studied
+  and later taught at the University of Brighton, stepping back from
+  university work to help care for his disabled daughter; it was during
+  that time at home, telling his children bedtime stories, that he started
+  writing what became [[work:john-gwynne/malice|Malice]] (2012), which won
+  the David Gemmell Morningstar Award for Best Fantasy Debut in 2013. Its
+  three sequels complete the Faithful and the Fallen tetralogy, set in the
+  Banished Lands, each in turn shortlisted for the Gemmell Legend Award
+  without a win. The Of Blood and Bone trilogy continues the same world 130
+  years later, and The Bloodsworn Saga, begun in 2021 with
+  [[work:john-gwynne/the-shadow-of-the-gods|The Shadow of the Gods]], moves
+  to a separate, Norse-inspired setting drawing on Beowulf and Ragnarok; its
+  closing volume, The Fury of the Gods (2024), became his first New York
+  Times bestseller. Gwynne is an active Viking re-enactor alongside his
+  three sons and has said the practice directly informs how he writes
+  fighting and equipment; he has named J. R. R. Tolkien, David Gemmell,
+  George R. R. Martin and Bernard Cornwell as influences.
+lifeEvents:
+  - id: gwynne-born-1968
+    organisation: beside
+    illustration_type: place-portrait
+    images_required: 1
+    date: 1968-09-21
+    title: Born in Singapore, an RAF childhood on the move
+    impact: low
+    description: >
+      Born in Singapore while his father was posted there with the Royal
+      Air Force. In his own account, the family moved roughly every three
+      years, following his father's postings, until his retirement; Gwynne
+      later studied and lectured at the University of Brighton and now
+      lives on the south coast of England, in East Sussex.
+    spoilerAfter: null
+    sources:
+      - https://www.worldswithoutend.com/author.asp?id=2155
+      - https://www.panmacmillan.com/authors/john-gwynne/6427
+      - https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne
+  - id: gwynne-leaves-teaching-writes-malice-2001
+    organisation: immersion
+    illustration_type: symbolic-still-life
+    images_required: 1
+    date: 2001
+    dateRange: "2001-2012"
+    title: Steps back from lecturing to help care for his daughter, and starts writing
+    impact: high
+    description: >
+      Gwynne steps back from lecturing at the University of Brighton to
+      help care for his daughter Harriett, who is profoundly disabled,
+      splitting his time between her care and working alongside his wife
+      Caroline rejuvenating vintage furniture. "Somehow during this time I
+      started writing," he wrote on his own website around Malice's 2012
+      publication: bedtime stories for his children, which they pestered
+      him to write down, grew into the Banished Lands. He dated the start
+      of that writing more precisely nine years later, in a 2021 interview:
+      "the best part of twenty years since I started writing Malice."
+    spoilerAfter: null
+    sources:
+      - http://web.archive.org/web/20131123220535/http://www.john-gwynne.com/about-john-gwynne-author/
+      - https://asunbookstore.com/john-gwynne-qa/
+      - https://fantasy-hive.co.uk/2021/05/interview-with-john-gwynne-shadow-of-the-gods
+      - https://www.worldswithoutend.com/author.asp?id=2155
+  - id: gwynne-gemmell-morningstar-2013
+    organisation: medallion
+    illustration_type: emblem-seal
+    images_required: 1
+    date: 2013-10
+    title: Malice wins the David Gemmell Morningstar Award
+    impact: med
+    description: >
+      Malice wins the David Gemmell Morningstar Award for Best Newcomer at
+      the awards' October 2013 ceremony. Gwynne has called David Gemmell "a
+      hero of mine and one of the reasons I write," and the Morningstar win,
+      in his own words, "a truly wonderful moment."
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/David_Gemmell_Legend_Award
+      - https://www.goodreads.com/author/show/5898355.John_Gwynne
+  - id: gwynne-gemmell-legend-nominations-2017
+    organisation: passage
+    illustration_type: serial-contact-sheet
+    images_required: 1
+    date: 2017
+    dateRange: "2015-2017"
+    title: Three straight Gemmell Legend nominations, the tetralogy never quite wins
+    impact: med
+    description: >
+      Valour, Ruin and Wrath are shortlisted in turn for the David Gemmell
+      Legend Award for Best Novel at the 2015, 2016 and 2017 ceremonies -
+      the tetralogy Malice opened as a Morningstar winner never lands the
+      main prize, losing in successive years to Brandon Sanderson, Mark
+      Lawrence and Gav Thorpe.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/David_Gemmell_Legend_Award
+  # Two independently published, dated tellings, both first-person and both
+  # about his own bereavement: the Fantasy Hive interview of 22 October 2024
+  # ("I finished The Hunger of the Gods in April 2021, and then in September
+  # 2021 Harriett died"; "I had not written a word since April 2021") and Dan
+  # Bavister's Palatinate profile of 12 February 2025 ("In 2021, his daughter
+  # Harriett passed away unexpectedly"). No source states a cause and none is
+  # stated here. He raised it himself, unprompted, when asked how it felt to
+  # finish the Bloodsworn Saga: "it is impossible to talk about writing it
+  # without talking about my beautiful daughter, Harriett."
+  - id: gwynne-harriett-dies-2021
+    organisation: interlude
+    illustration_type: portrait-of-absence
+    images_required: 1
+    date: 2021-09
+    dateRange: "2021-2023"
+    title: His daughter Harriett dies, and the writing stops
+    impact: high
+    description: >
+      Gwynne finished [[work:john-gwynne/the-hunger-of-the-gods|The Hunger of
+      the Gods]] in April 2021. That September his daughter Harriett died -
+      the daughter he had stepped back from lecturing to help care for, and
+      whom he and his wife Caroline had looked after at home for twenty
+      years. "Work, writing, research, social media, even reading, it all
+      stopped," he said three years later. He did not write a word again
+      until the end of 2023, when he sat down to
+      [[work:john-gwynne/the-fury-of-the-gods|The Fury of the Gods]] and
+      finished it by April 2024. He describes what changed as something in
+      himself rather than in the books: "the loss made me more attuned to the
+      fragility of life. I try to reflect that in my characters."
+    spoilerAfter: null
+    sources:
+      - https://fantasy-hive.co.uk/2024/10/interview-with-john-gwynne-the-fury-of-the-gods/
+      - https://web.archive.org/web/20260104102034/https://www.palatinate.org.uk/john-gwynne-the-loss-made-me-more-attuned-to-the-fragility-of-life/
+  - id: gwynne-nyt-bestseller-2024
+    organisation: mosaic
+    illustration_type: press-media-collage
+    images_required: 1
+    date: 2024-10
+    title: The Fury of the Gods becomes his first New York Times bestseller
+    impact: med
+    description: >
+      The Fury of the Gods, the Bloodsworn Saga's closing volume, becomes
+      an instant New York Times bestseller on publication - the widest
+      commercial recognition of Gwynne's career to date. A Time of Courage
+      (2020), his previous best showing, had reached only Germany's Spiegel
+      bestseller list.
+    spoilerAfter: null
+    sources:
+      - https://www.hachettebookgroup.com/titles/john-gwynne/the-fury-of-the-gods/9780316539951/
+      - https://www.orbit-books.co.uk/titles/john-gwynne/the-fury-of-the-gods/9780356514260/
+sources:
+  - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+  - "https://en.wikipedia.org/wiki/John_Gwynne_(author)"
+  - "https://www.goodreads.com/author/show/5898355.John_Gwynne"
+  - "https://fantasy-hive.co.uk/2021/05/interview-with-john-gwynne-shadow-of-the-gods"
+  - "https://www.worldswithoutend.com/author.asp?id=2155"
+  - "https://asunbookstore.com/john-gwynne-qa/"
+  - "https://www.panmacmillan.com/authors/john-gwynne/6427"
