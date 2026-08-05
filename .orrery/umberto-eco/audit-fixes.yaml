@@ -1,100 +1,87 @@
-stage: press-archaeology
+stage: audit-fixes
 wing: umberto-eco
 summary: >
-  Follow-up on event-resonance's finding: excluding two global events had
-  widened the wing's worst dark run from 4 years to 13 (1956-1968).
-  Researched the five leads named, added six dated/sourced entries and
-  enriched one existing entry. Closing 1956-1968 exposed three further
-  pre-existing dark runs (8, 6, 5 years) the tool had never surfaced
-  because a worse one hid them; closed all three in the same pass rather
-  than leaving them for later. aura_density.py: 30 -> 26 aura entries,
-  worst dark run now 4 years (1963-1966), no wing flagged. validate.py:
-  1 error, the pre-existing theme.art gap, not this stage's to fix.
+  Two corrective passes over the same files, recorded together. The first
+  answered event-resonance's dark-run finding; the second cleared the
+  defects wing-audit routed. Nothing here changed an editorial judgement
+  that was already sound - each edit either corrected a false statement or
+  recorded a decision that had only been assumed.
 
-produced:
-  - content/authors/umberto-eco.yaml (lifeEvents: +4, one enriched)
-  - content/franchises/umberto-eco/events.yaml (+3 entries)
+firstPass:
+  origin: press-archaeology follow-up
+  what: >
+    Excluding two global events had widened the worst dark run from 4 years
+    to 13 (1956-1968). Added six dated, sourced entries and enriched one;
+    closing 1956-1968 exposed three further runs (8, 6, 5 years) a worse one
+    had hidden, all closed in the same pass. Files: authors +4 lifeEvents
+    and one enrichment, events.yaml +3.
+  leads: >
+    Bompiani discovering Eco through Filosofi in libertà and hiring him in
+    1959 (en.wikipedia) - the pamphlet's own 1958 date flagged then, fixed
+    in the second pass. Opera aperta's two moments from it.wikipedia's
+    Ricezione section (60+ press articles June 1962-Feb 1963; Lévi-Strauss's
+    1967 rejection and Eco's reply). Guerriglia semiologica placed at
+    Vision '67, New York, by three independent sources. Apocalittici e
+    integrati researched and not added: no dated reception to anchor to.
+    Eco's 1958 RAI departure enriched the 1954 entry rather than becoming
+    its own. Gaps closed: 1997-2004 (Luther Blissett; the 2000 Scuola
+    Superiore presidency), 1979-1984 (Strega 1981, Médicis 1982), 1991-1995
+    (Rorty 1992). aura_density: 30 -> 26 entries, worst run 4 years.
 
-leadsResearched:
-  filosofi-in-liberta: >
-    The pamphlet itself isn't an event, but its real effect is: Valentino
-    Bompiani discovered Eco through it and in 1959 hired him to edit
-    Bompiani's "Idee nuove" series, starting the 1959-1975 editorial
-    relationship the wing's 1975 entry already references (en.wikipedia).
-    Added at 1959. Flagged, not fixed: it.wikipedia's own Eco bibliography
-    dates the pamphlet to 1958 against works.yaml/pseudonyms' 1959 -
-    outside this stage's remit (lifeEvents, not works.yaml).
-  opera-aperta: >
-    Two moments, five years apart, both from it.wikipedia's "Ricezione"
-    section (citing Peyronie 2024): 60+ articles in the Italian press
-    June 1962-Feb 1963, giving Gruppo 63 its vocabulary and drawing
-    Marxist counter-fire (added 1962); Claude Lévi-Strauss's explicit 1967
-    rejection of the "open work" and Eco's reply, a real feud Eco kept
-    refining through Lector in fabula (added 1967).
-  apocalittici-e-integrati: >
-    Researched, not added. No "Ricezione" section exists on it.wikipedia
-    (unlike Opera aperta's); its ongoing citation in Italian media
-    criticism is real but undated. Adding an entry anyway would have been
-    the reflexive "he published an influential book" event this skill
-    rules out.
-  guerriglia-semiologica-1967: >
-    Resolves press-archaeology's own openQuestion. Three independent
-    sources converge on 1967, New York: it.wikipedia's Eco article states
-    it directly; en.wikipedia's "Faith in Fakes" (citing Bondanella) names
-    the venue as "Vision '67"; "Guerrilla television" corroborates
-    independently. Added at 1967.
-  rai-years-end-date: >
-    Sourced (en.wikipedia: Eco left RAI in 1958 for 18 months' military
-    service) but used as enrichment of the existing rai-corsari-1954
-    entry, not a new entry - a generational conscription departure isn't
-    its own aura moment, and a same-year addendum couldn't have helped the
-    gap regardless (only bare `date` counts).
+secondPass:
+  origin: wing-audit findings
+  lutherBlissettDenial: >
+    The entry claimed Eco denied the rumour "on the record to Il Messaggero
+    on 6 March 1999". That paper only referred back to a denial already made
+    ("who has already denied it"). No source names where or when he first
+    gave it, so the entry now says that, with Panorama's 25 February
+    speculation and La Repubblica's same-day interview carrying the
+    chronology instead. Mirrored into pt-PT.
+  filosofiInLiberta: >
+    published: 1958, from it.wikipedia's Opere line ("Filosofi in libertà,
+    come Dedalus, Torino, Taylor, 1958"), the only source that dates the
+    pamphlet; en.wikipedia's 1959 is the year Bompiani approached Eco. Pen
+    name set to Dedalus here and on the author entity, with the English
+    "Daedalus" spelling recorded in the synopsis and the pseudonyms note
+    rather than dropped. No order contains the pamphlet, so ordering and
+    aura_density are unaffected.
+  beyondTheNovelsDebated: >
+    The 18 theory titles are no longer excluded on "never translated or a
+    university press": Kant and the Platypus went to Harcourt/Mariner and
+    The Search for the Perfect Language to Blackwell, as works.yaml's own
+    cover comments record. The reason given is now density and a specialist
+    readership. Sette anni di desiderio left the "no English edition found"
+    bucket (nine now, not ten) for its own entry - en.wikipedia's Faith in
+    Fakes names it and Il costume di casa as that selection's two source
+    volumes, so its translated part is already on the list. Both synopses
+    and the pt-PT overlays follow.
+  globalEvents: >
+    All 19 now ruled. world-war-i-1914 and elementary-education-act-1870
+    excluded: pre-birth with nothing inheriting them. pulp-magazines-1926
+    excluded on argument, not omission - his popular forms are the
+    feuilleton, American comic books and Italian 1930s-40s comics and
+    magazines, not the Anglo-American genre sorting Amazing Stories began,
+    the same ground as comics-code-authority-1954. covid-19-pandemic-2020
+    and booktok-2020 excluded: he died in February 2016 and all four
+    posthumous volumes gather writing dated 1955-2016.
+  formatsAndCitations: >
+    format: nonfiction on belief-or-nonbelief and
+    non-sperate-di-liberarvi-dei-libri, so only the seven novels default.
+    The Rorty entry now also cites it.wikipedia, the only page carrying the
+    1990 Tanner Lectures. The imbecilli entry drops the unsupported "reported
+    first by La Stampa" for Il Fatto Quotidiano and Il Post, both 11 June
+    2015, which is what the cited pages footnote for the remark itself.
+  epigraphQuote: >
+    pt-PT now carries a Portuguese rendering. The base string is not Eco's
+    words: Postille a «Il nome della rosa», then Bouzaher's French-edition
+    introduction (p. 18, 1985), then Wikiquote's English. Both file headers
+    record the chain.
 
-otherGapsClosed: >
-  1997-2004 (8yr): Der Spiegel's false 1997 claim that Eco co-founded the
-  prankster collective Luther Blissett, peaking in 1999 around the novel
-  Q with Eco's on-record Il Messaggero denial (en.wikipedia "Luther
-  Blissett (pseudonym)"); his 2000 founding presidency of Bologna's Scuola
-  Superiore di Studi Umanistici (it.wikipedia). 1979-1984 (6yr): Il nome
-  della rosa's Strega Prize (1981) and Prix Médicis Étranger (1982) -
-  literary-establishment validation distinct from the 1986 film's mass
-  fame (en.wikipedia). 1991-1995 (5yr): Richard Rorty's published
-  rebuttal of Eco's Tanner Lectures in Interpretation and
-  Overinterpretation (1992), which gave intentio lectoris its canonical
-  form per en.wikipedia's own Eco-infobox citation.
+gates:
+  validate: "0 errors; 4 warnings, all pre-existing handoff word counts"
+  aura_density: "67 works, 26 aura, 0.39/work, 1956-2022, longest dark run 4 yrs (1963-1966) - unchanged"
+  i18n_coverage: "pt-PT 208 -> 209/224 files fully covered; authors/umberto-eco.yaml 36/36"
 
-auraDensityResult: >
-  30 -> 26 aura entries (67 works). Worst dark run now 4 years
-  (1963-1966), down from 13. Since the tool reports only the single worst
-  run and it is now under the 5-year gate, every other stretch in the full
-  1956-2022 span is necessarily 4 or fewer.
-
-artRotationResult: >
-  art_rotation.py --check: organisation rotation holds across all 24
-  events (no cap broken, no neighbour repeats), pacing holds. Composition
-  axis still reports 0/24 read - no art issues exist yet, the documented
-  pre-visual-language state, unchanged by this stage.
-
-validatorResult: >
-  validate.py --slug umberto-eco - 1 error, the pre-existing theme.art
-  gap. Same pre-existing oversized-handoff warnings on other stages.
-
-forStages:
-  visual-language: >
-    Six new entries need art treatment once theme.art exists: book-object
-    (floating-object), document-facsimile (artifact-spread x2),
-    press-media-collage (mosaic x2), symbolic-still-life (beside),
-    editorial-portrait (beside), emblem-seal (medallion) - no new
-    illustration_type introduced.
-  wing-audit: >
-    Two calls worth a second read: (1) the Luther Blissett entry is dated
-    1999 rather than 1997 (its origin) - chosen for the most citable,
-    quotable material, not the earliest date. (2) umberto-eco-scuola-
-    superiore-2000 is the thinnest addition (impact: low) - real and
-    sourced but modest, chosen over a routine visiting-lectureship
-    alternative that this stage's own doctrine warns against reaching for.
-
-openQuestions:
-  - >
-    Filosofi in libertà's publication year (see leadsResearched above) -
-    flagged for whichever stage owns works.yaml's bibliographic dates.
+stillOpen:
+  - "The five 128px covers, handled separately."
+  - "franchise.images.header renders nowhere catalogue-wide - a curator call above this wing."
