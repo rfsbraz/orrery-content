@@ -1,0 +1,85 @@
+stage: editions
+wing: umberto-eco
+summary: >
+  Built content/franchises/umberto-eco/editions.yaml from scratch (63
+  entries): all seven novels covered in Italian, English and Portuguese (22
+  entries), plus the 2014 Mariner Books printing that specifically carries
+  Richard Dixon's "author's revisions" text after Eco's own corrections to
+  the Italian original. 41 more entries across 24 of the 55 extended-tier
+  works, concentrated on 19 of orders.yaml's 20 beyond-the-novels works plus
+  5 bonus finds (Come si fa una tesi di laurea, Opera aperta, Lector in
+  fabula, Filosofi in libertà, Reflexões sobre a Dor). validate.py --slug
+  umberto-eco: 0 errors; lookup.py --verify-isbns: 63/63 clean.
+
+translatorVerification: >
+  All seven novel translators independently re-verified against each book's
+  own English Wikipedia infobox (not copied from works.yaml's summary):
+  William Weaver (Name of the Rose, Foucault's Pendulum, Island of the Day
+  Before, Baudolino), Geoffrey Brock (Mysterious Flame of Queen Loana),
+  Richard Dixon (Prague Cemetery, Numero Zero). All agree with works.yaml;
+  no discrepancy found.
+
+theRevisedNameOfTheRose: >
+  Recorded as umberto-eco/the-name-of-the-rose/mariner-2014-en-revised
+  (isbn13 9780544176560), following the fight-club/noticias-1999-pt
+  superseded-edition pattern. Its own OpenLibrary MARC record independently
+  corroborates the finding: catalogued as a "New edition" (statement from
+  the book's own page 577), by-statement "translated from the Italian by
+  William Weaver ... [translations for the 2014 edition by Richard Dixon]",
+  both listed as contributing translators - matching Dixon's own translator
+  bibliography entry cited in franchise-research.
+
+ptMarket: >
+  Gradiva holds current Portuguese rights to all seven novels plus a good
+  share of the nonfiction; Relógio d'Água and Presença hold three older
+  titles Gradiva hasn't republished. Every pt-PT ISBN confirmed at BNP's
+  ipac20 catalogue by exact permalink, which also supplied every translator
+  credit - except the current O Nome da Rosa printing: BNP holds only the
+  2011 Gradiva edition (Esgotado at the publisher; a newer 2020 and 2026
+  printing exist under different ISBNs per Bertrand/Wook but neither
+  resolves at BNP or on Gradiva's own product page, likely too recent for
+  legal deposit). Recorded the 2011 edition since it's the only one
+  verifiable end to end; the 2020/2026 ISBNs are named in its note as
+  unconfirmed rather than silently substituted. One extended-tier work,
+  Storia della bruttezza, has a Brazilian (pt-BR, Editora Record) edition
+  and no Portuguese one - recorded correctly tagged pt-BR, never pt-PT.
+
+isbnChecks: >
+  Every isbn13 recomputed by hand and cross-checked with
+  lookup.py --verify-isbns (63/63 clean). Four are ISBN-10-to-13 conversions
+  flagged SINGLE-SOURCED AND CONVERTED in their own notes (Il secondo diario
+  minimo, Cinque scritti morali and Storia della bellezza Italian editions,
+  Experiences in Translation English edition) - each cross-checked against a
+  second source_records feed inside the same OpenLibrary entry, not a second
+  independent catalogue. One malformed OpenLibrary ISBN (La vertigine della
+  lista's Italian record, a 12-digit value) was found and NOT used - left as
+  a gap rather than repeating the error.
+
+forStages:
+  visual-metadata: >
+    Every English/Italian ISBN above resolves at OpenLibrary and most carry
+    a cover image already (checked incidentally via lookup.py's candidate
+    sweep, not via --check-covers). Bompiani's 2014-2016 matched paperback
+    reissue of six novels (isbn prefix 978-88-45-278xx) shares one cover
+    design language worth checking as a set. Wook covers are watermarked
+    (per this catalogue's standing rule) - use Bertrand for any pt-PT cover.
+  wing-audit: >
+    Two calls worth a second opinion: (1) O Nome da Rosa's pt-PT edition
+    uses the verified-but-Esgotado 2011 printing over two newer,
+    less-verified ISBNs - defensible under "never guess," but a human with a
+    browser could resolve it in minutes (open gradiva.pt or wook.pt/bertrand.pt
+    directly for isbn13 9789897854385). (2) Postille a «Il nome della rosa»
+    carries no edition at all - it ships bundled inside the 2014 Mariner
+    printing recorded under the novel itself; confirm that reasoning holds
+    rather than treating the absence as an oversight.
+
+openQuestions:
+  - "O Nome da Rosa: are the 2020 (9789897850127) and 2026 (9789897854385)
+     Gradiva ISBNs the same Jorge Vaz de Carvalho translation as the verified
+     2011 printing, just a reprint under a new ISBN? Not confirmed - BNP has
+     no record for either and both publisher/retailer product pages returned
+     HTTP 403 to automated fetches."
+  - "Apocalittici e integrati and La vertigine della lista both lack a
+     usable Italian-original ISBN (the former has none in any catalogue
+     record found; the latter's only OpenLibrary record is malformed). Both
+     left as gaps rather than guessed."
