@@ -1,0 +1,89 @@
+stage: visual-language
+summary: >
+  Settled theme.art on the existing shieldwall-liturgy preset, clearing the
+  wing's sole validator error and moving asset_audit.py to art:yes, 5 jobs
+  ready (the author's 5 lifeEvents). theme_digest.py --exclude john-gwynne
+  flagged real collision risk: this wing's `beam` signature is shared with
+  jrr-tolkien, and its shelf position sits inside the same epic-fantasy
+  cluster as jrr-tolkien, robert-jordan and brandon-sanderson. Read all
+  three in full before writing anything.
+
+produced:
+  - "content/franchises/john-gwynne/theme.yaml (art: block - emblem,
+    motifs, atmosphere, lineCharacter, backgroundTexture, accentUse,
+    avoid - plus a differentiation comment ahead of it)"
+
+collisionFinding: >
+  Resolved by material, not mood, the way the three neighbours already
+  differentiate each other. jrr-tolkien shares this wing's `beam`
+  signature, so its line (a corrective second pass over the first) is
+  named and ruled out - Gwynne's line is one committed cut, never revised.
+  robert-jordan and brandon-sanderson share the shelf position and each
+  other's gold accent (not this wing's oxblood); their materials
+  (thread/weave, ruled instrument) are also named and ruled out. Gwynne's
+  line and texture - a scored cut into oil-dark hide - are a third
+  material: practice gear worn by use, neither woven nor engineered.
+
+emblemFinding: >
+  Sourced to the author, not a book: Gwynne is an active Viking re-enactor
+  who drills shieldwall combat with his own three sons and has said the
+  practice shapes how he writes fighting and equipment (his own account,
+  already in the author bio) - rehearsal, not researched costume, the same
+  grounding as jrr-tolkien's manuscript bundle (Christopher's real
+  editing) and brandon-sanderson's plumb bob (his rule-bound magic). Drawn
+  hung on a peg after a drill, scored by real blows - never raised or
+  posed as a ring/halo, which would risk reading as the shared orrery
+  motif (VISUAL.md §1a) instead of the wing's own.
+
+crossSettingFinding: >
+  Answered above pantheon on purpose: no motif depicts Ben-Elim wings,
+  Kadoshim horns, or Vigrid's specific gods. The connective tissue is the
+  oath, the blood-debt and the battle-worn object (the preset's own name
+  already claimed this at scaffold) - real in all three published
+  settings and portable to the Wolfheart Chronicles once it publishes. One
+  motif also carries the "epic and intimate" throughline: a parent's hand
+  or a drawn cloak before a march, tied to Gwynne's own account of writing
+  Malice while caring for his disabled daughter and to The Wolves of War's
+  father-protects-daughter premise.
+
+spoilerFinding: >
+  spoiler-audit.yaml's three named exclusions (a victor's citadel, anyone
+  left standing after Drassil or either finale, a dragon loose over
+  Vigrid) are in avoid verbatim. Its three safe subjects are each carried
+  into a field: the shield wall into emblem/atmosphere, bone-scavenged
+  tundra into a motif (bones dug from frozen ground - the premise, not the
+  ending), the prophecy into a motif (cast lots, unmarked - no legible
+  glyph, per the sanctuary rule against invented lettering read as
+  content). atmosphere and lineCharacter both state the standing rule: war
+  shows in what it leaves on an object, never in a blow landing or a war
+  ending.
+
+validator: >
+  validate.py --slug john-gwynne -> 0 errors (was 1: theme.art missing), 2
+  pre-existing handoff-length warnings unchanged, not touched here.
+  asset_audit.py john-gwynne: art:yes, 5 assets ready (was none).
+
+forStages:
+  art-rotation: >
+    5 lifeEvent assets unblocked (asset_audit.py john-gwynne). No eras, no
+    franchise events, one shared world event (rendered in house neutral
+    style, tinted with this wing's accent per SCHEMA.md, not from this
+    block). Do not let a rotation drift the emblem's shield into a raised
+    or ring-composed pose - avoid's last entry exists for this.
+  visual-metadata: >
+    Quote the art block verbatim into STYLE per PROMPT-MODULES.md. The
+    orrery's shared concentric-rings motif (VISUAL.md §1a) is added
+    separately, per image, after the scene is otherwise fully described -
+    it is not this wing's emblem and this wing's emblem is not it.
+  wing-audit: >
+    theme.art carries all seven required fields; asset_audit.py confirms
+    art:yes and 5 real jobs. Check that no generated asset shows a
+    Banished-Lands or Bloodsworn ending, the Ben-Elim/Kadoshim/Vigrid-god
+    iconography this block withholds, or a shield in a raised/ring pose -
+    named explicitly in avoid.
+
+openQuestions:
+  - "The Wolfheart Chronicles (forthcoming 2026-11-03) has no
+    jacket-verified imagery beyond works.yaml's synopsis; motifs draw on
+    it only for the father/daughter throughline, already at premise level
+    there. Revisit once it publishes and gets its own spoiler-audit pass."
