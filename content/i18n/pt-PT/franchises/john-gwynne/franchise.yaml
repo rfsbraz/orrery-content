@@ -1,0 +1,87 @@
+# Overlay pt-PT. Apenas prosa; id, slugs, títulos de obras (fora do texto de
+# exibição das referências inline a obras) e sources não são traduzidos.
+# Os startHere.paths ficam aninhados e são fundidos por id (ver SCHEMA.md,
+# "Nested lists merge by id"): só `title`, `description` e `note`, nunca
+# `workIds`, `orderId` ou `fit`.
+# Nomes de série/cenário sem edição portuguesa confirmada (Faithful and the
+# Fallen, Banished Lands, Of Blood and Bone, The Bloodsworn Saga, The
+# Wolfheart Chronicles) ficam no original inglês, incorporados na prosa - a
+# única edição real desta obra (A Sombra dos Deuses, ver editions.yaml) cobre
+# só o primeiro livro de uma série, não dá uma terminologia portuguesa para
+# nomes de série ou de cenário, pelo que nada é inventado. Onde a referência
+# inline aponta para
+# the-shadow-of-the-gods usando o próprio título do livro como texto de
+# exibição, usa-se "A Sombra dos Deuses" (ver author overlay); aqui a
+# referência usa antes "The Bloodsworn Saga" como nome de série, que fica
+# por traduzir pela mesma razão acima.
+- id: john-gwynne
+  description: >
+    A obra publicada completa de John Gwynne: as Banished Lands, um mundo de
+    guerra santa profetizada entre fiéis e caídos, ao longo da tetralogia
+    [[work:john-gwynne/malice|Faithful and the Fallen]] e da sua trilogia de
+    continuação direta, [[work:john-gwynne/a-time-of-dread|Of Blood and
+    Bone]], passada no mesmo mundo 130 anos depois; e
+    [[work:john-gwynne/the-shadow-of-the-gods|The Bloodsworn Saga]], um
+    cenário distinto, de inspiração nórdica, de deuses caídos e juramentos
+    de sangue, iniciado em 2021. Além dos dez romances, seis contos
+    publicados em antologias de vários autores completam a estante, a par
+    de [[work:john-gwynne/the-wolves-of-war|The Wolves of War]] (2026), o
+    anunciado volume de abertura de uma nova série, The Wolfheart
+    Chronicles, num cenário de inspiração eslava.
+  startHere:
+    paths:
+      - id: malice-start
+        title: Comece pelo início, com Malice
+        description: >
+          A estreia de Gwynne, de 2012, e o verdadeiro início cronológico do
+          seu maior e mais duradouro mundo - as Banished Lands. A porta que
+          os fãs indicam a quem quer ler tudo, porque o resto da estante ou
+          continua esta história diretamente ou foi escrito depois dela.
+        note: >
+          Pelo relato dos próprios leitores, este é o Gwynne menos
+          experiente: os dois volumes intermédios da tetralogia arrastam-se,
+          e vários leitores que comparam toda a sua obra consideram The
+          Bloodsworn Saga a conquista mais forte. Começar aqui significa
+          julgá-lo no início de uma melhoria visível, não no seu melhor.
+      - id: bloodsworn-start
+        title: Comece antes por The Bloodsworn Saga
+        description: >
+          Um cenário completamente distinto, de inspiração nórdica, sem
+          exigir qualquer leitura prévia das Banished Lands - três livros,
+          não onze, e, segundo vários leitores, a versão mais segura e mais
+          bem ritmada do que Gwynne faz. Para quem quer julgá-lo no seu
+          melhor momento atual antes de decidir comprometer-se com o mundo
+          mais antigo e maior.
+        note: >
+          Salta a sua história de origem - a tetralogia que construiu as
+          Banished Lands e o público leitor de que tudo o resto depende.
+          Ler Malice depois pode fazer a prosa parecer um recuo no tempo,
+          tanto quanto no ofício.
+      - id: banished-lands-complete
+        title: A saga completa das Banished Lands
+        description: >
+          As duas séries ligadas, seguidas uma da outra: a tetralogia
+          Faithful and the Fallen, depois a continuação direta de Of Blood
+          and Bone, 130 anos mais tarde. Para quem já decidiu que as
+          Banished Lands são a parte desta estante que quer ler, percorrida
+          do início ao fim sem os dois cenários independentes nem os contos
+          intercalados entre eles.
+        note: >
+          Sete livros antes de chegar a qualquer um dos outros cenários de
+          Gwynne, e a metade Faithful and the Fallen é a parte do seu
+          catálogo que os leitores mais vezes consideram demasiado longa. Of
+          Blood and Bone é escrita para continuar a primeira série, não para
+          se distinguir dela - lê-la fora desta ordem é a única escolha de
+          sequência nesta estante contra a qual vários leitores
+          independentes alertam.
+      - id: complete-shelf
+        title: A estante inteira
+        description: >
+          Todos os romances e contribuições de ficção curta que Gwynne
+          publicou, nos quatro cenários, pela ordem em que os escreveu.
+        note: >
+          Dois dos seis contos publicados em antologias ("Better to Live
+          Than to Die" e "The Heir Apparent") estão ligados ao universo
+          Faithful and the Fallen; os outros quatro são contribuições
+          pontuais a antologias de outros editores, sem mais nenhuma ligação
+          aos próprios cenários de Gwynne.

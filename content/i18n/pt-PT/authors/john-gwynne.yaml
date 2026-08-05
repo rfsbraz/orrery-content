@@ -1,0 +1,92 @@
+# Overlay pt-PT do autor: bio + prosa dos lifeEvents.
+# Os lifeEvents ficam aninhados sob o autor e são fundidos por id (ver
+# SCHEMA.md, "Nested lists merge by id"). Levam `title` + `description`, que
+# são prosa; datas, impact, organisation, illustration_type, images_required
+# e sources nunca se traduzem, nem o nome do autor.
+# As citações diretas de Gwynne ficam no inglês em que foram efetivamente
+# ditas: traduzi-las substituiria as suas próprias palavras por outras que
+# nunca disse (mesma convenção do overlay de harlan-coben). Só a prosa à
+# volta da citação é traduzida.
+# Nenhuma edição portuguesa existe para nenhum destes livros mencionados na
+# bio à exceção de The Shadow of the Gods (Edições Asa, "A Sombra dos
+# Deuses", 2022 - ver editions.yaml); essa é a única referência inline a
+# título de obra traduzida para português aqui. Malice não muda de forma:
+# não tem edição portuguesa, e a palavra inglesa e a eventual palavra
+# portuguesa coincidem por acaso, não por tradução.
+# Nomes de série e de cenário sem edição portuguesa confirmada (Faithful and
+# the Fallen, Banished Lands, Of Blood and Bone, The Bloodsworn Saga) ficam
+# no original inglês, incorporados na prosa portuguesa - nunca inventados -
+# porque a única edição real desta obra (A Sombra dos Deuses) cobre um único
+# título e não dá uma terminologia portuguesa para nomes de série ou de
+# cenário.
+- id: john-gwynne
+  bio: >
+    Autor britânico de fantasia épica, nascido em Singapura enquanto o pai
+    ali estava destacado, hoje radicado na costa sul de Inglaterra. Estudou
+    e mais tarde lecionou na Universidade de Brighton, afastando-se do
+    trabalho universitário para ajudar a cuidar da filha, portadora de
+    deficiência; foi nessa altura, em casa, a contar histórias antes de
+    deitar aos filhos, que começou a escrever o que se tornaria
+    [[work:john-gwynne/malice|Malice]] (2012), vencedor do Prémio David
+    Gemmell Morningstar de Melhor Estreia em Fantasia em 2013. As três
+    sequelas completam a tetralogia Faithful and the Fallen, passada nas
+    Banished Lands, cada uma por sua vez finalista do Prémio David Gemmell
+    Legend sem alguma vez o vencer. A trilogia Of Blood and Bone continua o
+    mesmo mundo 130 anos depois, e The Bloodsworn Saga, iniciada em 2021 com
+    [[work:john-gwynne/the-shadow-of-the-gods|A Sombra dos Deuses]], muda
+    para um cenário distinto, de inspiração nórdica, indo beber a Beowulf e
+    ao Ragnarök; o volume que a encerra, The Fury of the Gods (2024),
+    tornou-se o seu primeiro êxito de vendas do New York Times. Gwynne é um
+    recriador histórico viking ativo, ao lado dos três filhos, e já afirmou
+    que essa prática influencia diretamente a forma como escreve os combates
+    e o equipamento; aponta J. R. R. Tolkien, David Gemmell, George R. R.
+    Martin e Bernard Cornwell como influências.
+  lifeEvents:
+    - id: gwynne-born-1968
+      title: Nasce em Singapura, uma infância na RAF sempre em movimento
+      description: >
+        Nasce em Singapura enquanto o pai ali está colocado pela Royal Air
+        Force. Segundo o seu próprio relato, a família muda de casa
+        aproximadamente a cada três anos, seguindo as colocações do pai, até
+        este se reformar; mais tarde, Gwynne estuda e leciona na
+        Universidade de Brighton e vive hoje na costa sul de Inglaterra, em
+        East Sussex.
+    - id: gwynne-leaves-teaching-writes-malice-2001
+      title: Afasta-se da docência para cuidar da filha, e começa a escrever
+      description: >
+        Gwynne afasta-se da docência na Universidade de Brighton para ajudar
+        a cuidar da filha Harriett, profundamente deficiente, dividindo o
+        tempo entre os cuidados a prestar-lhe e o trabalho ao lado da
+        mulher, Caroline, a restaurar mobiliário antigo. "Somehow during
+        this time I started writing," escreveu no seu próprio site por
+        volta da publicação de Malice, em 2012: histórias para adormecer os
+        filhos, que estes insistiram para que pusesse por escrito, deram
+        origem às Banished Lands. Datou o início dessa escrita com mais
+        precisão nove anos depois, numa entrevista de 2021: "the best part
+        of twenty years since I started writing Malice."
+    - id: gwynne-gemmell-morningstar-2013
+      title: Malice vence o Prémio David Gemmell Morningstar
+      description: >
+        Malice vence o Prémio David Gemmell Morningstar de Melhor Estreia na
+        cerimónia de outubro de 2013. Gwynne já chamou a David Gemmell "a
+        hero of mine and one of the reasons I write," e descreveu a vitória
+        do Morningstar, nas suas próprias palavras, como "a truly wonderful
+        moment."
+    - id: gwynne-gemmell-legend-nominations-2017
+      title: Três nomeações seguidas para o Gemmell Legend, sem a tetralogia
+        alguma vez vencer
+      description: >
+        Valour, Ruin e Wrath são, por sua vez, finalistas do Prémio David
+        Gemmell Legend de Melhor Romance nas cerimónias de 2015, 2016 e
+        2017 - a tetralogia que Malice abriu como vencedora do Morningstar
+        nunca chega a arrecadar o prémio principal, perdendo em anos
+        sucessivos para Brandon Sanderson, Mark Lawrence e Gav Thorpe.
+    - id: gwynne-nyt-bestseller-2024
+      title: The Fury of the Gods torna-se o seu primeiro êxito de vendas do
+        New York Times
+      description: >
+        The Fury of the Gods, o volume que encerra The Bloodsworn Saga,
+        torna-se um êxito de vendas instantâneo do New York Times logo após
+        a publicação - o reconhecimento comercial mais amplo da carreira de
+        Gwynne até à data. A Time of Courage (2020), o seu melhor resultado
+        anterior, tinha chegado apenas à lista de vendas alemã da Spiegel.
