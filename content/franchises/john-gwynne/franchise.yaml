@@ -54,6 +54,112 @@ globalEvents:
     - prestige-fantasy-adaptation-2011  # no screen adaptation or option exists for any Gwynne work
     - booktok-2020  # The Fury of the Gods' 2024 bestseller run is the trilogy's own close, not a short-video discovery story
     - portugal-bailout-2011  # British author with no Portuguese-market presence; his shelf carries no Portuguese translation
+
+# "Where to start" - four settings, no periodisation (eras.yaml) and no
+# insertion dispute the way Wheel of Time or Discworld have; the real
+# question readers actually ask is which of the two unconnected settings to
+# open with, and how to handle the fact that the second Banished Lands
+# series is a direct sequel to the first, not a parallel on-ramp. Both
+# questions are answered by a real, converged r/Fantasy thread, cited per
+# path below: some readers are pointed to Malice as
+# the true beginning (especially if they mean to read the whole shelf),
+# others are pointed straight to The Shadow of the Gods by readers who found
+# it the stronger, more polished series and see no reason to make a newcomer
+# commit to four books first. The Wolves of War (forthcoming 2026-11-03,
+# opening a fourth, unconnected setting) gets no path: it has not published,
+# so there is no reception yet to judge what kind of door it is - revisit
+# once it has shipped.
+startHere:
+  paths:
+    # Source: https://old.reddit.com/r/Fantasy/comments/1hc16mn/which_john_gwynne_series_should_i_start_with/
+    # scythe_and_stopwatch (+23, top-voted): "Personally, I would start with
+    # Malice, the first book of the Faithful and the Fallen." /
+    # BayazTheGrey: "I started with Malice, and I always suggest others to do
+    # the same, granted, that's only IF you're interested in reading all his
+    # works, since he grows a lot, and it's noticeable in every book."
+    - id: malice-start
+      title: Start at the beginning, with Malice
+      description: >
+        Gwynne's 2012 debut and the true chronological start of his largest,
+        longest-running world - the Banished Lands. The door the fandom
+        points a completionist to, because everything else on the shelf
+        either continues this story directly or was written after it.
+      workIds:
+        - john-gwynne/malice
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste, arc, complete]
+      note: >
+        By the same readers' own account, this is Gwynne at his least
+        practiced: the tetralogy's middle two volumes run long, and several
+        readers who compare all his work call the Bloodsworn Saga the
+        stronger achievement. Starting here means judging him at the
+        beginning of a visible improvement, not at his best.
+    # Source: https://old.reddit.com/r/Fantasy/comments/1hc16mn/which_john_gwynne_series_should_i_start_with/
+    # BayazTheGrey: "If you're only interested in one series, then start with
+    # Bloodsworn." / Admiral-Apathy: "Bloodsworn is just better than his
+    # other works... He found a better balance... I read every scene all the
+    # way to the end, and loved it." / BlazeOfGlory72: "I'd just read
+    # Bloodsworn. It's basically just a better version of Faithful of the
+    # Fallen."
+    - id: bloodsworn-start
+      title: Start with the Bloodsworn Saga instead
+      description: >
+        A completely separate, Norse-inspired setting with no reading
+        requirement from the Banished Lands - three books, not eleven, and
+        by several readers' account the more assured, better-paced version
+        of what Gwynne does. For a reader who wants to judge him at his
+        current best before deciding whether to commit to the older,
+        larger world.
+      workIds:
+        - john-gwynne/the-shadow-of-the-gods
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste, arc]
+      note: >
+        Skips his origin story - the tetralogy that built the Banished Lands
+        and the readership everything after it relies on. Read Malice
+        afterward and the prose can feel like a step back in time as well as
+        in craft.
+    - id: banished-lands-complete
+      title: The complete Banished Lands saga
+      description: >
+        Both connected series, back to back: the Faithful and the Fallen
+        tetralogy, then Of Blood and Bone's direct continuation 130 years
+        later. For a reader who has decided the Banished Lands is the part
+        of this shelf they want, walked start to finish without the two
+        unconnected settings or the interleaved short fiction in between.
+      workIds: null
+      orderId: john-gwynne/banished-lands-in-order
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        Seven books before you reach either of Gwynne's other settings, and
+        the Faithful and the Fallen half is the part of his catalogue
+        readers most often call overlong. Of Blood and Bone is written to
+        continue the first series, not stand apart from it - reading it out
+        of this order is the one sequencing choice on this shelf that
+        multiple independent readers warn against.
+    - id: complete-shelf
+      title: The whole shelf
+      description: >
+        Every novel and short-fiction contribution Gwynne has published,
+        across all four settings, in the order he wrote them.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+      note: >
+        Two of the six anthology short stories ("Better to Live Than to
+        Die" and "The Heir Apparent") are tied to the Faithful and the
+        Fallen universe; the other four are one-off contributions to other
+        editors' anthologies with no further connection to Gwynne's own
+        settings.
+
 sources:
   - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
   - "https://en.wikipedia.org/wiki/John_Gwynne_(author)"

@@ -1,0 +1,109 @@
+# ADDITIONAL reading orders only. The DEFAULT order - all 17 works in
+# publication-chronological order - is derived automatically from works.yaml
+# and is NOT listed here.
+#
+# This shelf has no ordering *dispute* the way Wheel of Time (where does the
+# prequel go) or Discworld (six threads through one shared world) do. What it
+# has instead is four settings that do not need sorting against each other -
+# eras.yaml found no periodisation, and `subseries` already carries the whole
+# structural signal this shelf has to offer. The one real editorial job is
+# naming the Banished Lands as a single seven-book
+# throughline across its two component series, because a reader can otherwise
+# mistake Of Blood and Bone for a second, independent series rather than a
+# direct continuation - see the order below and startHere for how that risk
+# is handled on both sides.
+#
+# The Bloodsworn Saga (3 books) and The Wolfheart Chronicles (1 forthcoming
+# book) get no order of their own: both are already published in strict story
+# order with no insertion question, so the derived default already gives a
+# reader everything an order would - the same reasoning John Grisham's wing
+# uses to ship no order for his two-book pairs (Mitch McDeere, Sebastian
+# Rudd). Bloodsworn is short enough (3 books) to hand a reader directly as a
+# startHere path's workIds instead.
+#
+# Checked and declined: an "essentials" shortlist across the whole shelf. No
+# single source outside this catalogue ranks Gwynne's books against each
+# other in a way two guides converge on - the r/Fantasy thread cited below is
+# real, converged reader sentiment on WHICH SERIES to start with, not a
+# ranked shortlist of individual titles, and turning it into one would be
+# inventing an order dressed as reader consensus.
+
+# Source: https://old.reddit.com/r/Fantasy/comments/1hc16mn/which_john_gwynne_series_should_i_start_with/
+# (Dec 2024, 31 comments, top-voted answer at +23). The admission-order
+# warning converges independently across several commenters, not one voice:
+#   scythe_and_stopwatch (+23, top comment): "Personally, I would start with
+#     Malice... My one note would be not to read the Of Blood and Bone series
+#     first, as it's a sequel series to tFatF."
+#   Kilroy0497: "just don't go with the Blood and Bone trilogy unless you've
+#     read Faithful and the Fallen. I read the first book of that trilogy...
+#     without knowing of the Faithful and the Fallen when I started reading
+#     his work and just wound up confused at first."
+# Independently corroborated by the review sourcing already in works.yaml:
+# Publishers Weekly's review of A Time of Dread identifies the character Sig
+# as "a bear-riding giant familiar from Gwynne's The Faithful and the Fallen
+# series" - i.e. the sequel's own marketing copy assumes and names a survivor
+# of the first tetralogy's war on its own back cover.
+- id: john-gwynne/banished-lands-in-order
+  name: "The Banished Lands, start to finish"
+  type: curated
+  source: canon
+  rationale: >
+    The two series that share one world, read as the single continuous saga
+    Gwynne himself describes it as: the Faithful and the Fallen tetralogy
+    ([[work:john-gwynne/malice|Malice]] through
+    [[work:john-gwynne/wrath|Wrath]]), then Of Blood and Bone
+    ([[work:john-gwynne/a-time-of-dread|A Time of Dread]] through
+    [[work:john-gwynne/a-time-of-courage|A Time of Courage]]), set 130 years
+    later in the same Banished Lands. Publication order already gives you
+    this sequence for free with one exception: the six short-fiction
+    anthology contributions interleaved with these years in the raw
+    catalogue, which this order leaves out to keep the throughline
+    unbroken - see `debated` for what that skips and why. The real reason
+    this order exists is not the anthology interruption, though: it is that
+    Of Blood and Bone is a direct sequel, not a second on-ramp, and reader
+    reports converge on treating it that way. Its own marketing already
+    names a returning character from the first war, and readers who arrive
+    at it cold report exactly the confusion that implies. The cost of
+    reading it this way is committing to seven books - and reader consensus
+    on the middle two Faithful and the Fallen volumes (Valour, Ruin) is that
+    they run long before Wrath's payoff - before any of Gwynne's other two
+    settings.
+  orderedWorkIds:
+    - john-gwynne/malice
+    - john-gwynne/valour
+    - john-gwynne/ruin
+    - john-gwynne/wrath
+    - john-gwynne/a-time-of-dread
+    - john-gwynne/a-time-of-blood
+    - john-gwynne/a-time-of-courage
+  debated:
+    - >
+      Partial by design: novels only. Two of the six anthology short stories
+      carry an ISFDB series tag into this same universe -
+      [[work:john-gwynne/blackguards-tales-of-assassins-mercenaries-and-rogues|"Better
+      to Live Than to Die"]] is tagged "The Faithful and the Fallen
+      universe" and [[work:john-gwynne/unfettered-iii-new-tales-by-masters-of-fantasy|"The
+      Heir Apparent"]] is tagged "The Faithful and the Fallen" outright - but
+      neither has a confirmed placement in this timeline (works.yaml notes
+      the first as unconfirmed by name), so neither is slotted into the
+      sequence above. A completionist wanting every Banished Lands word
+      Gwynne has written should read both; a reader wanting the novel-only
+      throughline should not wait for them. The other four anthology
+      contributions ("An Oath Given," "The Sundering," "The Greatest
+      Battle," "The Message") carry no series tie to this or any other
+      Gwynne setting and stay out of this order and out of any Banished
+      Lands completionist reading with equal confidence.
+    - >
+      Whether reading Of Blood and Bone cold actually spoils Faithful and
+      the Fallen's ending, or simply confuses a reader who does not yet know
+      the world, is not identical in every account: some commenters in the
+      cited thread report confusion rather than a stated spoiler, and no
+      review states outright "this reveals how book four ends." What is
+      consistent across every independent source checked - the review
+      sourcing already in works.yaml and multiple unconnected reader reports
+      in the thread above - is that no one recommends reading it first, for
+      one reason or the other.
+  sources:
+    - "https://www.goodreads.com/author/show/5898355.John_Gwynne"
+    - "https://www.publishersweekly.com/9780316502245"
+    - "https://old.reddit.com/r/Fantasy/comments/1hc16mn/which_john_gwynne_series_should_i_start_with/"
