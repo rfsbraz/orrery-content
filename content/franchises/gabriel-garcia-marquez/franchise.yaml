@@ -69,3 +69,75 @@ sources:
   - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
   - https://es.wikipedia.org/wiki/Anexo:Bibliograf%C3%ADa_de_Gabriel_Garc%C3%ADa_M%C3%A1rquez
   - https://www.nobelprize.org/prizes/literature/1982/marquez/facts/
+
+# startHere: two paths, both cells §10 flags as most-used covered (new+taste,
+# completionist+complete). Checked and NOT shipped as a path: El coronel no
+# tiene quien le escriba alone as "the gentler classic" - the premise that
+# critics steer new readers to it specifically, ahead of Cien años de
+# soledad, did not hold up. Neither real guide found (the Los Angeles Times,
+# Penguin) singles it out that way: Penguin's own "perfect reading order"
+# excludes it from its seven titles entirely, and the Guardian's 2014
+# obituary calls Cien años de soledad itself "immediately accessible", not a
+# book readers need protecting from. What both real guides actually converge
+# on is broader and different - lead with a short EARLY work (or a small set
+# of them) before the doorstop novel, not "swap in a different novel-length
+# book as the true entry point" - which is what the path below records.
+startHere:
+  paths:
+    # Source: https://www.latimes.com/entertainment-arts/books/story/2021-07-02/reading-gabriel-garcia-marquez
+    # Lisa Alvarez, "A reading guide to legendary Colombian author Gabriel
+    # García Márquez" (LA Times Books, 2 July 2021): "Start with the stories,
+    # I tell my students... I was intimidated by the legend, the epic
+    # novels... Three exemplary collections: [El coronel no tiene quien le
+    # escriba, Leaf Storm and Other Stories, Innocent Eréndira and Other
+    # Stories]... These stories offer a primer-like introduction to the
+    # sensibility and themes that distinguish García Márquez's acclaimed
+    # work."
+    # Corroborating: https://www.penguin.co.uk/discover/articles/gabriel-garcia-marquez-reading-guide-books-order
+    # Penguin's own "perfect reading order" opens with the same early
+    # novella, ahead of Cien años de soledad ("Before you start with some of
+    # Márquez's more famous books, this novella... is the first appearance of
+    # Macondo"), and separately recommends Innocent Eréndira and Other
+    # Stories further down its own list.
+    - id: gabriel-garcia-marquez/early-and-short
+      title: Start with the early, short work
+      description: >
+        Three short early books instead of the doorstop: the novella that
+        gave the world Macondo, a colonel waiting years on a pension letter
+        that never comes, and a title novella about a girl sold into
+        servitude by her own grandmother. A Los Angeles Times reading guide
+        recommends exactly this route for a reader "intimidated by the
+        legend, the epic novels", and García Márquez's own English-language
+        publisher opens its reading order the same way, with the earliest of
+        the three first. The same solitude, love, death and small-town power
+        his novels are known for, in a fraction of the pages - but this path
+        skips [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cien años de
+        soledad]] entirely, the one novel most of the world means when they
+        say his name, and a reader who wants to say they have read García
+        Márquez will still need to come back for it.
+      workIds:
+        - gabriel-garcia-marquez/la-hojarasca
+        - gabriel-garcia-marquez/el-coronel-no-tiene-quien-le-escriba
+        - gabriel-garcia-marquez/erendira
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        The title novella's own grandmother-and-granddaughter pair make a
+        later cameo in Cien años de soledad; reading their own story here
+        first is the safe order either way; nothing about it depends on
+        having read the novel.
+
+    - id: gabriel-garcia-marquez/complete-shelf
+      title: The whole shelf, in order
+      description: >
+        All twenty-five works - eleven novels, four story collections,
+        nonfiction, a memoir, his speeches, one play - in the order he wrote
+        them, from his 1955 debut to the manuscript published a decade after
+        his death.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
