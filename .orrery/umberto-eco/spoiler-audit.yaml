@@ -1,0 +1,90 @@
+stage: spoiler-audit
+summary: >
+  Audited every ungated field (67 synopses, order prose, 3 startHere paths,
+  franchise description, author bio, theme notes) and all 24 gated entries.
+  One synopsis rewrite, four curator-only notes, no spoilerAfter added or
+  loosened: no load-bearing reveal is stated anywhere, and both gated
+  surfaces carry only biography, reception and publication history. Jacket
+  copy for all seven novels came from HarperCollins's own product pages. The
+  field table was verified in the app: only the river's event cells consume
+  lib/spoilers, and works[].note is absent from the Work interface, so it
+  never reaches a reader.
+  validate.py --slug umberto-eco: 0 new errors (the theme.art gap is
+  pre-existing); the spoilerAfter-on-an-ungatable-field guard was falsified
+  both ways.
+
+produced:
+  files: [content/franchises/umberto-eco/works.yaml]
+  rewrites: 1
+  notesAdded: 4
+  spoilerAfterAdded: 0
+  spoilerAfterLoosened: 0
+  deletions: 0
+
+rewritten:
+  work: umberto-eco/the-name-of-the-rose
+  was: "uncovering a decades-old secret hidden inside the abbey's labyrinthine library"
+  bounds: >
+    The old clause gave the abbey's secret an age and a location, past where
+    the jacket stops, and that age is in no source read here. The
+    replacement is HarperCollins's own copy nearly verbatim.
+
+notesAddedOn: >
+  works[].note on the four novels whose reveal is structural
+  (the-name-of-the-rose, foucaults-pendulum, the-prague-cemetery,
+  the-mysterious-flame-of-queen-loana) records the jacket boundary each
+  synopsis stops at, so a later pass does not re-import a plot summary.
+
+checkedAndSafe: >
+  Every novel synopsis sits at or inside its own jacket, three well inside:
+  the jackets name the 1204 frame and Baudolino's lying, Ferrante and the
+  Daphne's missing crew, and the Mussolini body-double theory. Numero Zero's
+  newspaper-never-published detail is its title and first-act premise,
+  graded incidental. The extended tier's 60 synopses describe arguments and
+  lectures; the beyond-the-novels order argues register, venue and
+  translation history, never a plot. All three startHere paths are clean
+  (startHere note is rendered, unlike works[].note, so it was read as
+  reader-facing copy). All 24 events read in full including titles; each is
+  biography, career or reception. eras: [] leaves no era prose; the global
+  events are the war and publishing history.
+  The one call a curator could reasonably take the other way:
+  umberto-eco-poison-a-monk-1978, Eco's "I wanted to poison a monk". It
+  opens Postille a «Il nome della rosa», which works.yaml records as
+  appended to later editions of the novel itself, a stronger bar than jacket
+  copy; it names no victim, killer or motive; and a shield over it would
+  announce that something about the deaths is withheld. Left ungated.
+
+translations: >
+  None mirrored: this wing has no locale overlay, so the rewritten string
+  has no twin to invalidate.
+
+forStages:
+  visual-language: >
+    No art needs a shield, but four things must not be drawn even though the
+    text beside them is safe. The Name of the Rose: not the killer, not the
+    mechanism by which the deaths are caused, not the hidden room at the
+    library's centre or its contents. Abbey, scriptorium, stacks, the maze as a maze, a friar
+    and his novice reading are jacket territory. Foucault's Pendulum: the
+    pendulum is the title and the jacket's own landmark, so draw it as an
+    object or a museum interior, but not the scene beneath it and not what
+    becomes of the three editors. The Prague Cemetery: the forger at
+    his desk, the documents, nineteenth-century Turin, Prague or Paris are
+    fine; no image whose whole idea is one man being two. Queen Loana:
+    attic, comics, records, magazines, Piedmont fog are jacket; not what the
+    protagonist recovers, not the closing section's turn. theme.yaml's own
+    rule (no rose, no swinging pendulum, no monk's habit) agrees.
+  translation: >
+    One synopsis string changed, so translate the current wording of
+    umberto-eco/the-name-of-the-rose, not a cached copy. Nothing was
+    redacted out of a locale string; none exists yet. The constraint that
+    matters: these seven synopses sit deliberately at the level of the
+    English publisher's jacket, and a Portuguese contracapa is often looser,
+    so translate what is here rather than re-blurbing from a pt-PT edition.
+  wing-audit: >
+    The four notes quote HarperCollins copy as it stood at build time, and
+    publisher copy is rewritten between editions. No spoilerAfter exists
+    here, a finding resting on the seven novels being standalone: an added
+    event describing a novel's content rather than its reception breaks that
+    and needs a boundary. The poison-a-monk ruling is worth a second read.
+
+openQuestions: []
