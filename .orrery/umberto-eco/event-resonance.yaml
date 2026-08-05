@@ -1,0 +1,88 @@
+stage: event-resonance
+wing: umberto-eco
+summary: >
+  Ruled on the 14 global events overlapping this author's 1932-2016
+  lifetime (pre-birth/post-death events never reach the arithmetic gate).
+  2 included, 12 excluded. aura_density.py: 30 -> 18 aura entries; longest
+  dark run WIDENED from 4 years (1956-1959) to 13 years (1956-1968), not
+  patched here - see forStages.press-archaeology.
+
+produced:
+  franchise: "content/franchises/umberto-eco/franchise.yaml globalEvents block only"
+  include:
+    - world-war-ii-1939: >
+        Ur-Fascism (1995), his most-cited essay outside the novels, opens
+        on his own eyewitness memory of partisans reaching his Piedmont
+        town in April 1945, published in NYRB on 22 June 1995 explicitly
+        to mark the war's European end at fifty years - the war as the
+        essay's stated occasion, not "he lived through it" (the 1932
+        childhood-evacuation lifeEvent already covers the latter).
+    - ebook-and-self-publishing-2007: >
+        Non sperate di liberarvi dei libri (Bompiani 2009, with Jean-Claude
+        Carriere, tr. This Is Not the End of the Book, 2011) argues at
+        book length that the codex outlasts the post-Kindle digital shift -
+        a sustained answer, not a passing comment. He'd held the
+        underlying position since a 1995 Triennale talk calling
+        multimedia/hypertext book-supports obsolete within a year of the
+        hardware built for them.
+  exclude:
+    - sept-11-2001: "no sourced column/essay/interview ties it to a specific work"
+    - financial-crisis-2008: "world-events' own 'weakest entry' grading holds here; no novel or essay answers it"
+    - penguin-paperback-1935: "British trade-paperback shift; no sourced link to an Italian author at Bompiani"
+    - armed-services-editions-1943: "American wartime book distribution to US troops; he was 11, in rural Piedmont"
+    - lady-chatterley-trial-1960: "British obscenity trial; no sourced connection, checked full Italian Wikipedia text"
+    - fantasy-paperback-boom-1965: "writes semiotic/historical fiction, not fantasy"
+    - carnation-revolution-1974: "Portuguese-specific; Italian author, no sourced link"
+    - chain-bookshop-1982: "generic industry background; no sourced connection"
+    - online-bookselling-1995: "generic industry background; his digital-books reaction is the 2009 Carriere dialogue, already carried by ebook-and-self-publishing-2007"
+    - prestige-fantasy-adaptation-2011: "writes semiotic/historical fiction, not fantasy; died 2016, before its peak"
+    - portugal-bailout-2011: "Portuguese-specific; Italian author, no sourced link"
+    - comics-code-authority-1954: >
+        "Il mito di Superman" (in Apocalittici e integrati, 1964) studies
+        an already Code-compliant hero's mythic structure, not the Code's
+        own 1954 censorship fight - same broad category, not the same
+        event, the trap the skill names explicitly.
+
+validatorResult: >
+  python scripts/validate.py --slug umberto-eco - 1 error, the pre-existing
+  expected theme.art gap (visual-language's, unchanged). 3 pre-existing
+  oversized-handoff warnings on other stages, untouched here.
+
+auraDensityResult: >
+  30 -> 18 aura entries. Longest dark run WIDENED from 4 years (1956-1959)
+  to 13 years (1956-1968) - see forStages.press-archaeology; not patched
+  here per the skill's rule against a padding include.
+
+forStages:
+  press-archaeology: >
+    Your wing's only prior dark run (1956-1959) stayed short only because
+    two now-correctly-excluded globals, lady-chatterley-trial-1960 and
+    fantasy-paperback-boom-1965, sat at 1960 and 1965 - and aura_density
+    credits only an event's bare `date:`, not `dateRange`, so your own
+    1954-1958 RAI-corsari lifeEvent registers only at 1954, before the
+    works span starts. With those two globals gone, 1956 through your own
+    1969 Milan Polytechnic lifeEvent is now one uniform 13-year dark run,
+    the wing's new worst. Neither excluded global has a sourced Eco
+    connection, so this is not a call for a padding include; it's a call
+    for your own material, and works.yaml already has it, undated:
+    Filosofi in libertà (1959, first Daedalus outing), Opera aperta (1962,
+    sourced international impact and the Gruppo 63 grounding), the 1961
+    "Fenomenologia di Mike Bongiorno" essay and the 1963 Diario minimo it
+    appeared in, Apocalittici e integrati (1964, contains "Il mito di
+    Superman"), and the 1967 New York seminar "Per una guerriglia
+    semiologica" (it.wikipedia dates the delivery to 1967, resolving your
+    own openQuestion). Two or three of these close the window without
+    touching a global event.
+  reading-orders: >
+    Only franchise.yaml's globalEvents block was touched. The two included
+    globals (1939, 2007) don't map to a single novel, so neither
+    constrains a reading order.
+  wing-audit: >
+    Two calls worth a second read: (1) world-war-ii-1939 rests on
+    Ur-Fascism's own opening scene and stated 50th-anniversary occasion,
+    not "he lived through the war" (checked and rejected as that sentence).
+    (2) comics-code-authority-1954 was excluded despite real Eco scholarship
+    on American comics, specifically because that work engages the genre's
+    form, not the Code's censorship history.
+
+openQuestions: []
