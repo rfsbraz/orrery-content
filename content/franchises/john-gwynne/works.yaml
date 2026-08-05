@@ -1,0 +1,364 @@
+# Bibliography (Works) - the abstract books; editions/covers are separate metadata.
+# IDs are STABLE and permanent (user data references them). Dates are year-precision
+# unless a source states a full date. The default reading order (all works in
+# publication order) is DERIVED from this file - so a missing work is a gap
+# in the spine.
+#
+# Coverage: John Gwynne's complete published bibliography as listed by ISFDB
+# (https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne) - ten novels across three
+# series plus six short-fiction contributions to multi-author anthologies.
+# Excluded as not independent works: "Malice (excerpt)" and "The Shadow of the
+# Gods (excerpt)", both ISFDB title records for promotional samples of the
+# novels themselves, not separate content. Also excluded: the two omnibus
+# editions ISFDB records (The Faithful and the Fallen omnibus; The Bloodsworn
+# Saga omnibus, 2025) - these repackage works already catalogued individually
+# and are edition data, not separate works.
+#
+# SERIES STRUCTURE: The Faithful and the Fallen (4 books) and Of Blood and
+# Bone (3 books) share one continuous setting, the Banished Lands - confirmed in
+# Gwynne's own words ("My second series, Of Blood and Bone, is set in the
+# Banished Lands, the same world as the first series. Book 1, A Time of
+# Dread, begins 130 years after the events of the first series," Goodreads
+# author bio) and independently corroborated by Publishers Weekly's review of
+# A Time of Dread, which identifies the character Sig as "a bear-riding giant
+# familiar from Gwynne's The Faithful and the Fallen series." ISFDB models
+# this the same way: both are subseries under one parent "The Faithful and
+# the Fallen universe" listing. The Bloodsworn Saga (3 books, begun 2021) is
+# a genuinely separate setting - Wikipedia states it plainly ("a separate
+# setting drawing on Norse mythology, Beowulf, and the Viking period") and
+# nothing in the Banished Lands novels or their reviews connects the two
+# worlds. Modelled as three subseries strings rather than two (Faithful and
+# the Fallen / Of Blood and Bone) plus one, the same pattern this catalogue
+# already uses for one world spanning multiple eras (see brandon-sanderson's
+# "Mistborn: Era 1" / "Mistborn: Era 2").
+#
+# CANON TIER: all ten novels are core - this is the entire spine of a living
+# author with no juvenilia, ghost-written work, or discarded early drafts on
+# record. The six anthology contributions are apocrypha per authorRole:
+# contributor (SCHEMA.md's own worked example): real, completionist-relevant,
+# but not John Gwynne's own book.
+
+# --- The Faithful and the Fallen (Banished Lands) ---
+- id: john-gwynne/malice
+  title: "Malice"
+  authorIds: [john-gwynne]
+  published: 2012
+  subseries: "The Faithful and the Fallen"
+  canonTier: core
+  featured: true
+  synopsis: >
+    In the Banished Lands, a loosely allied collection of kingdoms, a
+    stableboy, a warrior's son, and a scarred survivor of the pit fights are
+    among the many drawn into a prophecy of a coming war between the
+    faithful and the fallen, as old betrayals surface and a demon in human
+    form works to gather the seven treasures that will unleash it.
+  note: >
+    Debut novel; won the David Gemmell Morningstar Award for Best Fantasy
+    Debut in 2013. Marked featured as the hinge the rest of the shelf is read
+    from: the world (the Banished Lands), the central prophecy, and the
+    tetralogy's title all originate here.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://www.publishersweekly.com/9780316399739"
+    - "https://en.wikipedia.org/wiki/John_Gwynne_(author)"
+
+- id: john-gwynne/valour
+  title: "Valour"
+  authorIds: [john-gwynne]
+  published: 2014
+  subseries: "The Faithful and the Fallen"
+  canonTier: core
+  synopsis: >
+    Picking up minutes after Malice's climax, Corban and a growing band of
+    warriors, witches and outcasts flee the fallen stronghold of Dun Carreg,
+    while the betrayed warrior Maquin wakes in the tombs beneath Haldis with
+    nothing left but the need for revenge.
+  note: >
+    Published 2014, per both ISFDB and Wikipedia's bibliography section - not
+    2013, the year sometimes quoted for it.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://en.wikipedia.org/wiki/John_Gwynne_(author)"
+    - "https://www.fantasybookreview.co.uk/John-Gwynne/Valour.html"
+
+- id: john-gwynne/ruin
+  title: "Ruin"
+  authorIds: [john-gwynne]
+  published: 2015
+  subseries: "The Faithful and the Fallen"
+  canonTier: core
+  synopsis: >
+    The God-War stops being a looming prophecy and becomes real: the
+    factions of the Banished Lands, gathered around Corban, Maquin and a
+    widening cast on both sides of the widening conflict, are pulled into
+    open sieges and set-piece battles as the alliances that will fight the
+    final war take shape.
+  note: >
+    Published 2015, per both ISFDB and Wikipedia's bibliography section - not
+    2014, the year sometimes quoted for it.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://en.wikipedia.org/wiki/John_Gwynne_(author)"
+    - "https://www.fantasybookreview.co.uk/John-Gwynne/Ruin.html"
+
+- id: john-gwynne/wrath
+  title: "Wrath"
+  authorIds: [john-gwynne]
+  published: 2016
+  subseries: "The Faithful and the Fallen"
+  canonTier: core
+  featured: true
+  synopsis: >
+    The tetralogy's melee-laden climax: Veradis and Alcyon flee the demon
+    Calidus, who is close to gathering the seven treasures needed to loose a
+    host of demons on the world, while Corban - captured by the Jotun giants
+    after his forces are broken at the fortress of Drassil - and two warring
+    queens converge on the war's final reckoning.
+  note: >
+    Won Best Traditionally Published Novel at the 2017 BookNest Awards.
+    Marked featured as the tetralogy's ending, the other hinge alongside
+    Malice's beginning.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://www.publishersweekly.com/9780316386340"
+    - "https://en.wikipedia.org/wiki/John_Gwynne_(author)"
+
+# --- Of Blood and Bone (Banished Lands, 130 years later) ---
+- id: john-gwynne/a-time-of-dread
+  title: "A Time of Dread"
+  authorIds: [john-gwynne]
+  published: 2018
+  subseries: "Of Blood and Bone"
+  canonTier: core
+  synopsis: >
+    A century and a third after the God-War, humans live alongside the
+    winged Ben-Elim in an uneasy peace policed from the Ben-Elim's citadel,
+    until the supposedly defeated Kadoshim resurface with human allies and
+    monstrous offspring of their own; the hostage prince Bleda, the citadel
+    warrior Riv, the giant Sig, and the trapper's son Drem are each drawn
+    into the fight in different ways.
+  note: >
+    Reviewed by Publishers Weekly as set in the same world as The Faithful
+    and the Fallen, explicitly naming Sig as "a bear-riding giant familiar
+    from Gwynne's The Faithful and the Fallen series" - the strongest
+    external corroboration found for the shared-Banished-Lands ruling on
+    this wing's subseries structure.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://www.publishersweekly.com/9780316502245"
+    - "https://www.goodreads.com/author/show/5898355.John_Gwynne"
+
+- id: john-gwynne/a-time-of-blood
+  title: "A Time of Blood"
+  authorIds: [john-gwynne]
+  published: 2019
+  subseries: "Of Blood and Bone"
+  canonTier: core
+  synopsis: >
+    Continuing directly from A Time of Dread's catastrophic ending, the
+    conflict between the Ben-Elim, the Kadoshim and the human factions of
+    the Banished Lands escalates, with Drem's growth into the fight's
+    emotional center.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://www.fantasybookreview.co.uk/John-Gwynne/A-Time-of-Blood.html"
+
+- id: john-gwynne/a-time-of-courage
+  title: "A Time of Courage"
+  authorIds: [john-gwynne]
+  published: 2020
+  subseries: "Of Blood and Bone"
+  canonTier: core
+  synopsis: >
+    The trilogy's finale, closing out the story arc first begun in Malice:
+    the surviving factions of the Banished Lands converge on a final battle
+    that resolves both this trilogy and the wider Faithful-and-the-Fallen
+    saga it continues.
+  note: >
+    Made the Spiegel bestseller list in Germany per Gwynne's own author bio.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://www.fantasybookreview.co.uk/John-Gwynne/A-Time-of-Courage.html"
+    - "https://www.goodreads.com/author/show/5898355.John_Gwynne"
+
+# --- The Bloodsworn Saga (a separate, Norse-inspired setting) ---
+- id: john-gwynne/the-shadow-of-the-gods
+  title: "The Shadow of the Gods"
+  authorIds: [john-gwynne]
+  published: 2021
+  subseries: "The Bloodsworn Saga"
+  canonTier: core
+  featured: true
+  synopsis: >
+    Three hundred years after the gods of this world fell and shattered
+    their own world-tree, humans in a Norse-flavored land of fjords and
+    tundra scavenge divine bones and fight the monsters now roaming free.
+    The widowed shieldmaiden Orka hunts the trafficker who stole her son to
+    use in a plot to raise the dead gods with children's blood, while the
+    mercenary company called the Bloodsworn is sent to stop the killing.
+  note: >
+    Opens a setting Wikipedia describes as separate from the Banished Lands,
+    drawing on Norse mythology, Beowulf and the Viking period; Gwynne is
+    himself a Viking re-enactor. Marked featured as the start of the wing's
+    third, unconnected world.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://www.publishersweekly.com/9780316539883"
+    - "https://en.wikipedia.org/wiki/John_Gwynne_(author)"
+
+- id: john-gwynne/the-hunger-of-the-gods
+  title: "The Hunger of the Gods"
+  authorIds: [john-gwynne]
+  published: 2022
+  subseries: "The Bloodsworn Saga"
+  canonTier: core
+  synopsis: >
+    The dragon-god Lik-Rifa breaks free of her prison and marches on the
+    divided realms of Vigrid with her dragon-born followers, while Orka and
+    the seidr-witch Uspa, each still hunting their stolen children, lead
+    warbands of their own into a widening war among mortals and newly
+    revived gods alike.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://www.publishersweekly.com/9780316539920"
+
+- id: john-gwynne/the-fury-of-the-gods
+  title: "The Fury of the Gods"
+  authorIds: [john-gwynne]
+  published: 2024
+  subseries: "The Bloodsworn Saga"
+  canonTier: core
+  synopsis: >
+    The Bloodsworn Saga's concluding volume, resolving the war between the
+    revived gods and the mortals of Vigrid begun in The Shadow of the Gods.
+  note: >
+    No reviewed-source plot summary was found for this entry (Publishers
+    Weekly and Fantasy Book Review both carry pages for it with no review
+    text posted); the synopsis above is limited to what the trilogy's own
+    established arc and the title itself support, and should be verified
+    against a fuller source. Reached number five on the New York Times Trade
+    Fiction Paperback bestseller list in November 2024 and was named the
+    second-best fantasy book of 2024 by ScreenRant.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+    - "https://en.wikipedia.org/wiki/John_Gwynne_(author)"
+
+# --- Short fiction: contributions to multi-author anthologies ---
+# All six are authorRole: contributor / canonTier: apocrypha per SCHEMA.md's
+# own worked example (a book containing one story by this author is not a
+# book by this author). id/title name the anthology; contributionTitle names
+# Gwynne's own piece.
+
+- id: john-gwynne/blackguards-tales-of-assassins-mercenaries-and-rogues
+  title: "Blackguards: Tales of Assassins, Mercenaries, and Rogues"
+  authorIds: [john-gwynne]
+  authorRole: contributor
+  contributionTitle: "Better to Live Than to Die"
+  published: 2015
+  subseries: null
+  format: anthology
+  canonTier: apocrypha
+  synopsis: >
+    A multi-author anthology of morally ambiguous fantasy fiction edited by
+    J. M. Martin; Gwynne's contribution is tagged by ISFDB to "The Faithful
+    and the Fallen universe," making it a Banished Lands short story rather
+    than an unrelated setting, though its exact placement in the timeline is
+    unconfirmed.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?2128408"
+
+- id: john-gwynne/legends-ii-stories-in-honour-of-david-gemmell
+  title: "Legends II: Stories in Honour of David Gemmell"
+  authorIds: [john-gwynne]
+  authorRole: contributor
+  contributionTitle: "An Oath Given"
+  published: 2015
+  subseries: null
+  format: anthology
+  canonTier: apocrypha
+  synopsis: >
+    A tribute anthology edited by Ian Whates for NewCon Press, honouring the
+    fantasy author David Gemmell; Gwynne's debut Malice won the David
+    Gemmell Morningstar Award in 2013, and he has named Gemmell as a direct
+    influence and a personal hero.
+  note: >
+    ISFDB records no series tag for this story, so whether it is set in the
+    Banished Lands or elsewhere is unconfirmed.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?2149293"
+    - "https://www.goodreads.com/author/show/5898355.John_Gwynne"
+
+- id: john-gwynne/journeys
+  title: "Journeys"
+  authorIds: [john-gwynne]
+  authorRole: contributor
+  contributionTitle: "The Sundering"
+  published: 2017
+  subseries: null
+  format: anthology
+  canonTier: apocrypha
+  synopsis: >
+    A multi-author fantasy anthology edited by Teresa Edgerton for
+    Woodbridge Press; Gwynne's contribution is "The Sundering."
+  note: >
+    ISFDB records no series tag for this story, so whether it is set in the
+    Banished Lands or elsewhere is unconfirmed.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?2464024"
+
+- id: john-gwynne/art-of-war
+  title: "Art of War"
+  authorIds: [john-gwynne]
+  authorRole: contributor
+  contributionTitle: "The Greatest Battle"
+  published: 2018
+  subseries: null
+  format: anthology
+  canonTier: apocrypha
+  synopsis: >
+    A multi-author military fantasy anthology edited by Petros
+    Triantafyllou for BookNest.eu; Gwynne's contribution is "The Greatest
+    Battle."
+  note: >
+    ISFDB records no series tag for this story, so whether it is set in the
+    Banished Lands or elsewhere is unconfirmed.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?2330386"
+
+- id: john-gwynne/unfettered-iii-new-tales-by-masters-of-fantasy
+  title: "Unfettered III: New Tales by Masters of Fantasy"
+  authorIds: [john-gwynne]
+  authorRole: contributor
+  contributionTitle: "The Heir Apparent"
+  published: 2019
+  subseries: "The Faithful and the Fallen"
+  format: anthology
+  canonTier: apocrypha
+  synopsis: >
+    A charity anthology edited by Shawn Speakman for Grim Oak Press, with
+    proceeds supporting authors facing medical bills; Gwynne's contribution,
+    "The Heir Apparent," is tagged by ISFDB to The Faithful and the Fallen.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?2551944"
+
+- id: john-gwynne/the-scent-of-tears
+  title: "The Scent of Tears"
+  authorIds: [john-gwynne]
+  authorRole: contributor
+  contributionTitle: "The Message"
+  published: 2018
+  subseries: null
+  format: anthology
+  canonTier: apocrypha
+  synopsis: >
+    A "Tales of the Apt" anthology edited by Adrian Tchaikovsky for NewCon
+    Press, set in Tchaikovsky's own Shadows of the Apt world - not the
+    Banished Lands or the Bloodsworn Saga; Gwynne's contribution is "The
+    Message."
+  note: >
+    Tchaikovsky edited the volume and owns the Shadows of the Apt setting
+    Gwynne wrote this one story into; he is not credited as a co-author of
+    "The Message" itself, so he is named here in prose rather than as a
+    collaborator on the entry.
+  sources:
+    - "https://www.isfdb.org/cgi-bin/title.cgi?2583623"

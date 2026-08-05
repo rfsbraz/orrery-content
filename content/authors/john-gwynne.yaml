@@ -1,0 +1,41 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds), so the same person resolves the same everywhere.
+# Author-LIFE events live here (they follow the person); franchise-specific
+# events belong in content/franchises/john-gwynne/events.yaml.
+#
+# lifeEvents is empty: no life-event pass has been built for this wing yet.
+# Sourced candidate anchors for that pass: the Singapore birth (see the born
+# comment below for the source conflict), the University of Brighton years
+# teaching before he began writing, the 2013 David Gemmell Morningstar Award
+# for Malice, and his ongoing Viking re-enactment, which he has said in
+# interview directly shapes how he depicts combat and equipment.
+id: john-gwynne
+name: John Gwynne
+# ISFDB gives the birthplace as Singapore, sourced to the author's own former
+# website, and notes explicitly that Goodreads' "United Kingdom" free-text
+# field disagrees. The more specific, more directly sourced claim (born in
+# Singapore while his father was stationed there) is preferred here over the
+# vaguer one.
+born: 1968-09-21
+died: null
+bio: >
+  British epic fantasy author, born in Singapore while his father was
+  stationed there, and now based on the south coast of England. He studied
+  and later taught at the University of Brighton before turning to writing
+  full time. His debut novel, [[work:john-gwynne/malice|Malice]] (2012),
+  won the David Gemmell Morningstar Award for Best Fantasy Debut in 2013;
+  its three sequels complete the Faithful and the Fallen tetralogy, set in
+  the Banished Lands. The Of Blood and Bone trilogy continues the same
+  world 130 years later, and The Bloodsworn Saga, begun in 2021 with
+  [[work:john-gwynne/the-shadow-of-the-gods|The Shadow of the Gods]], moves
+  to a separate, Norse-inspired setting drawing on Beowulf and Ragnarok.
+  Gwynne is an active Viking re-enactor and has said the practice directly
+  informs how he writes fighting and equipment; he has named J. R. R.
+  Tolkien, David Gemmell, George R. R. Martin and Bernard Cornwell as
+  influences.
+lifeEvents: []
+sources:
+  - "https://www.isfdb.org/cgi-bin/ea.cgi?John_Gwynne"
+  - "https://en.wikipedia.org/wiki/John_Gwynne_(author)"
+  - "https://www.goodreads.com/author/show/5898355.John_Gwynne"
+  - "https://fantasy-hive.co.uk/2021/05/interview-with-john-gwynne-shadow-of-the-gods"

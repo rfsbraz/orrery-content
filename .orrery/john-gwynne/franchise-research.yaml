@@ -1,0 +1,84 @@
+stage: franchise-research
+summary: >
+  Scaffolded the John Gwynne wing from scratch: 16 works (10 core novels, 6
+  apocrypha anthology contributions), 1 author entity, franchise identity and
+  a validated theme (displayFace/signature only). No prior content existed
+  for this slug. Corrected two dates against the request issue's own
+  recollection: Valour is 2014 (not 2013), Ruin is 2015 (not 2014).
+produced:
+  franchiseFiles:
+    - content/franchises/john-gwynne/franchise.yaml
+    - content/franchises/john-gwynne/works.yaml
+    - content/franchises/john-gwynne/theme.yaml
+  authorEntities:
+    - content/authors/john-gwynne.yaml
+  workIds:
+    - john-gwynne/malice
+    - john-gwynne/valour
+    - john-gwynne/ruin
+    - john-gwynne/wrath
+    - john-gwynne/a-time-of-dread
+    - john-gwynne/a-time-of-blood
+    - john-gwynne/a-time-of-courage
+    - john-gwynne/the-shadow-of-the-gods
+    - john-gwynne/the-hunger-of-the-gods
+    - john-gwynne/the-fury-of-the-gods
+    - john-gwynne/blackguards-tales-of-assassins-mercenaries-and-rogues
+    - john-gwynne/legends-ii-stories-in-honour-of-david-gemmell
+    - john-gwynne/journeys
+    - john-gwynne/art-of-war
+    - john-gwynne/unfettered-iii-new-tales-by-masters-of-fantasy
+    - john-gwynne/the-scent-of-tears
+  notIncluded:
+    - "ISFDB's \"Malice (excerpt)\" and \"The Shadow of the Gods (excerpt)\" - promotional samples of the novels, not independent content"
+    - "ISFDB's two omnibus records (Faithful and the Fallen omnibus; Bloodsworn Saga omnibus, 2025) - repackage novels already catalogued; edition data, not works"
+sharedUniverseFinding: >
+  Faithful and the Fallen and Of Blood and Bone share one world, the
+  Banished Lands, 130 years apart - sourced to Gwynne's own Goodreads bio and
+  independently corroborated by Publishers Weekly's A Time of Dread review
+  (names the giant Sig as carried over from Faithful and the Fallen); ISFDB's
+  own series hierarchy agrees. The Bloodsworn Saga is a genuinely separate,
+  Norse-inspired setting per Wikipedia. Modelled as three subseries strings,
+  the pattern this catalogue already uses for one world spanning eras
+  (brandon-sanderson's Mistborn: Era 1 / Era 2), rather than two names plus
+  one.
+forStages:
+  completeness-auditor: >
+    Sourced from ISFDB's summary bibliography, Wikipedia, Goodreads' author
+    bio, and PW/Fantasy Book Review reviews. Gaps to close: (1) The Fury of
+    the Gods has no sourced plot synopsis, flagged in its own note; (2) three
+    anthology stories ("An Oath Given," "The Sundering," "The Greatest
+    Battle") carry no ISFDB series tag, so their in-universe placement (or
+    lack of one) is unconfirmed; (3) no fourth Bloodsworn volume or new
+    series found announced since 2024, but recheck since two years have
+    passed.
+  press-archaeology: >
+    john-gwynne.yaml has lifeEvents: [] with sourced candidate anchors in its
+    header comment: the Singapore birth (vs. Goodreads' "United Kingdom",
+    already resolved toward the more specific self-reported claim), the
+    University of Brighton years, the 2013 Gemmell Morningstar Award, and his
+    Viking re-enactment. A 2021 Fantasy Hive interview (in sources) is the
+    deepest first-person source found and unread beyond the excerpt quoted
+    on Wikipedia.
+  eras: >
+    No eras.yaml. Ten years and two settings across one still-active career
+    is thin for a creative-period argument beyond what subseries already
+    states; whether eras: [] is the honest answer here is open.
+  reading-orders: >
+    No startHere scaffolded - no companion/prequel placement problem exists
+    (Of Blood and Bone continues chronologically with no interleaving
+    question), so default publication order already serves a full-read path.
+    Unresearched but real candidate paths: the tetralogy alone; the full
+    seven-book Banished Lands saga; the Bloodsworn Saga alone (a real
+    completionist question, since it needs no prior reading).
+  visual-language: >
+    theme.yaml has displayFace/signature but no art: block by design.
+    Candidate anchors: the seven treasures / God-War imagery, the
+    shieldwall/blood-oath culture common to all three series, the
+    fallen-god/world-tree imagery specific to Bloodsworn, and Gwynne's own
+    Viking re-enactment (PW's Shadow of the Gods review credits "fine
+    historical details, especially in descriptions of weaponry").
+openQuestions:
+  - "Theme preset 'shieldwall-liturgy' and its oxblood/iron palette are this stage's own read of the wing's identity, not a received fact - open to a curator's stronger view."
+  - "Six of 16 works are apocrypha anthology contributions - in line with precedent (Grisham, Sanderson, Flynn, Rowling all carry the same pattern), but canonTier is display-only and these still count toward the derived default order, so a reader's default walk is 37.5% short fiction Gwynne did not write alone."
+  - "Whether 'An Oath Given,' 'The Sundering' and 'The Greatest Battle' belong to the Banished Lands or elsewhere could not be settled from ISFDB's bare series field; each entry's note says so rather than guessing a subseries."
