@@ -1,0 +1,84 @@
+stage: art-rotation
+wing: john-gwynne
+summary: >
+  All 5 lifeEvents already carried organisation/illustration_type/
+  images_required, written inline by press-archaeology when it built them -
+  the same silent-scaffold pattern visual-language's own handoff flagged for
+  theme.art. Reviewed the whole assignment against LAYOUT.md's fit/pace
+  rules and the now-finished visual-language.yaml rather than trusting the
+  prior stage's self-report: every pairing is a legal Holds match, every
+  illustration_type reads as one of the finished register's motifs, and the
+  caps and contour both hold as claimed. No franchise events.yaml exists for
+  this wing (press-archaeology found nothing that cleared the genre-wide
+  bar); eras.yaml is `[]` by design, confirmed, not just inherited - no
+  plates to grade. No file was changed.
+verification:
+  fitReview: >
+    gwynne-born-1968 (beside/place-portrait): the CURATION floor birth,
+    correctly quiet-mid because the very next event is loud (LAYOUT's named
+    substitution for two loud cells that would otherwise touch).
+    gwynne-leaves-teaching-writes-malice-2001 (immersion/symbolic-still-life):
+    the wing's one real rupture, reads against the finished register as a
+    still-life built from the parent's-hand/bedtime-pages motif rather than a
+    portrait, holding the spoiler line correctly (no book content, only the
+    act of writing). gwynne-gemmell-morningstar-2013 (medallion/emblem-seal):
+    now that the emblem is settled as the drilled shield hung on a peg, this
+    is the strongest pairing in the wing - an award medallion built from the
+    wing's own emblem object. gwynne-gemmell-legend-nominations-2017
+    (passage/serial-contact-sheet): one entry for three straight losing
+    nominations, correctly compressed rather than three near-identical
+    beside cells. gwynne-nyt-bestseller-2024 (mosaic/press-media-collage):
+    public noise, correctly the wing's other loud beat, far enough from the
+    2001 immersion to clear the screenful rule.
+  caps: >
+    5 events, each organisation used once (20% each) - all under every cap
+    (beside's ceiling, the 40% general cap, immersion's 1-2). No neighbour
+    repeats. Illustration types are all distinct, well under the ~1/3
+    repetition cap.
+  pacingContour: "=#=.#  -  two loud beats (the 2001 turn to writing, the
+    2024 bestseller), each isolated by mid/quiet neighbours; no plateau, no
+    two loud cells touching or sharing a screenful across a 56-year span."
+  artRotationCheck: "python3 scripts/art_rotation.py --check john-gwynne -
+    'organisation rotation holds across all 5 events: no organisation over
+    its cap, no neighbour repeats' and 'pacing holds: no two loud cells
+    touching or sharing a screenful, no plateau.' Both axes read directly,
+    both zero. Exit code 1 only because the composition axis (0 of 5 assets
+    have an art issue yet) is unbuilt, per SKILL.md's own note that this is
+    expected pre-/asset-prompt and not this stage's line to clear."
+  validate: "python3 scripts/validate.py --slug john-gwynne - OK, 0 errors,
+    1444 works/71 authors/11 achievements, all references resolve. 2
+    warnings on this slug, both pre-existing handoff-length notices on
+    press-archaeology.yaml and eras.yaml (visual-language's handoff already
+    named these unchanged); none new from this stage."
+erasDecision: >
+  Confirmed rather than inherited: eras.yaml's own comment is a sourced
+  ruling that no periodisation exists for this career (no critic, no
+  publisher break that isn't a single-market artefact, the author's own
+  interviews describing one continuous method). `[]` is correct and there
+  is no chapter-gate slot to grade.
+produced:
+  filesUnchanged:
+    - content/authors/john-gwynne.yaml (already fully graded)
+    - content/franchises/john-gwynne/eras.yaml (empty by design, confirmed)
+forStages:
+  asset-prompt: >
+    5 image slots (no diptych/split-counterpoint on this wing, so every
+    entry needs exactly 1 prompt). No modifier is set on any entry; none was
+    a strong enough fit to earn one, so compose from a plain read of each
+    organisation. Keep the shield off any raised/ring pose per visual-
+    language's avoid list, especially on the medallion.
+  visual-metadata: >
+    No image/cover field touched here, only the rotation grammar.
+  wing-audit: >
+    Same scaffold-does-downstream-work pattern already flagged twice
+    elsewhere in this pipeline (visual-language's theme.art, an earlier
+    hp-lovecraft art-rotation pass) - press-archaeology graded this stage's
+    fields correctly, but silently. Separately: eras.yaml's own comment
+    dates Gwynne's daughter's death to September 2021 and a resulting
+    writing silence into late 2023, sourced to a 2024 Fantasy Hive
+    interview - a tier-1 inner-weather fact under CURATION §6, not
+    currently a lifeEvent. Not this stage's footprint to add (lifeEvents
+    content belongs to press-archaeology), but worth a look on a future
+    pass: it would explain part of the 2021-2026 stretch press-archaeology
+    closed with the 2024 NYT bestseller alone.
+openQuestions: []
