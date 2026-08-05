@@ -1,0 +1,34 @@
+stage: editions
+summary: >
+  Wrote content/franchises/gabriel-garcia-marquez/editions.yaml from scratch:
+  36 editions (19 English, 17 pt-PT) across 21 of 25 works. All eleven core
+  novels have an English edition; ten of eleven also have pt-PT (En agosto
+  nos vemos is Spanish-import-only in Portugal so far). No Spanish-original
+  entries: unlike Cervantes, every work here already has a real EN/PT
+  translation. lookup.py's --markets has no "es" support and its by_author
+  sweep never calls the registered GoogleBooks provider - both real gaps
+  (see openQuestions) - so pt-PT sourcing ran on direct Bertrand
+  product-page fetches instead (JSON-LD Book blocks, or the rendered
+  "Detalhes do Produto" panel), with web.archive.org filling in when
+  Bertrand's search endpoint was Cloudflare-rate-limited mid-session
+  (recovered after ~8 minutes). validate.py --slug gabriel-garcia-marquez:
+  0 errors, 0 sanctuary-comment warnings. lookup.py --verify-isbns: 36
+  editions, 0 suspect.
+
+produced:
+  - content/franchises/gabriel-garcia-marquez/editions.yaml
+
+decisions:
+  - "No Spanish-original entries, unlike the Cervantes precedent (which used `es` only for two works with no translation history at all) - every García Márquez work already has an EN and/or PT edition, so there is no gap a Spanish original would fill."
+  - "Followed the Rabassa/Cien años de soledad translationNote's own steer: the flagship English edition is confirmed live on harpercollins.com as Harper Perennial Modern Classics's current (Sept 2025, Netflix tie-in) paperback, still Rabassa's 1970 translation - the one García Márquez is reported to have praised over his own original."
+  - "Avoided three real omnibus/repackaging traps rather than assigning a shared or partial ISBN to a workId it doesn't belong to: Harper & Row's 'No One Writes to the Colonel and Other Stories' (bundles the novel + the entire Los funerales de la Mamá Grande collection - used Penguin's clean 80pp standalone 2014 printing for the novella instead, and gave Los funerales no English edition at all); Dom Quixote's 2011 'Contos Completos' omnibus (all four story collections under one ISBN, per this catalogue's standing Atwood/Butcher/Shirley rule); and two Dom Quixote 28-page illustrated single-story children's booklets pulled out of Eréndira and Doce cuentos peregrinos respectively (a different object from the collection, not an abridgement of it)."
+  - "Recorded 'most recent in print' only for La mala hora, Crónica de una muerte anunciada and El general en su laberinto, each of which has an older superseded Dom Quixote printing with its own valid ISBN, named but not separately recorded, per this catalogue's default rule."
+  - "Did not record Vivir para contarla's real Brazilian (Editora Record) editions under pt-PT: confirmed 978-85 prefix, a different translation/title/ISBN from any Portuguese printing, none of which turned up on repeated Bertrand searches."
+
+forStages: {}
+
+openQuestions:
+  - "Bertrand sells 'Duas Solidões' (ISBN 9789722073301, Dom Quixote, 2021), credited on its own product page to 'Gabriel García Márquez e Mario Vargas Llosa' - a real, apparently co-authored dialogue/essay volume works.yaml does not catalogue at all. No workId exists for it, so no edition is recorded; worth a completeness-auditor look to confirm what the book actually is and whether it belongs in works.yaml."
+  - "En agosto nos vemos has no pt-PT edition as of sourcing (Bertrand stocks only Spanish imports, two years after original publication) - worth a re-check if a Portuguese translation appears later; not treated as a lookup failure now."
+  - "El olor de la guayaba, Vivir para contarla and the play Diatriba de amor contra un hombre sentado turned up no pt-PT edition on repeated Bertrand searches (multiple title phrasings each); Obra periodística and both apocrypha entries have no edition in either language, matching their own works.yaml notes (scholarly Spanish-only anthology; never had a normal trade-book life). All are named as honest gaps in the file's own header rather than re-attempted here."
+  - "scripts/metadata/lookup.py has two real gaps worth fixing independent of this wing: no 'es' entry in MARKET_LANG/MARKET_PROVIDERS (an --markets es,... call silently returns nothing, rather than erroring or falling back), and candidates() never calls the registered GoogleBooks provider during a by_author sweep even though providers.py registers it as authoritative for non-anglophone editions. Both cost real tool calls on this wing; flagging rather than fixing since editions.yaml is this stage's only footprint."

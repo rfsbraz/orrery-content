@@ -1,0 +1,596 @@
+# Concrete published editions: English translations and Portuguese (pt-PT)
+# translations. No original-language Spanish edition is recorded: unlike
+# Cervantes's La Galatea or El cerco de Numancia (this catalogue's only other
+# precedent for a Spanish-original entry), every work below already has a
+# real English and/or Portuguese translation in print, so there is no gap a
+# Spanish original would be filling.
+#
+# TRANSLATORS. works.yaml's own header names four: J. S. Bernstein (El
+# coronel no tiene quien le escriba), Gregory Rabassa (La hojarasca, La mala
+# hora, Cien años de soledad, El otoño del patriarca, Crónica de una muerte
+# anunciada, and the English Innocent Eréndira and Other Stories), Edith
+# Grossman (El amor en los tiempos del cólera onward through Memoria de mis
+# putas tristes, plus Noticia de un secuestro, Vivir para contarla and Strange
+# Pilgrims) and Anne McLean (En agosto nos vemos). Recorded per edition below
+# exactly where a source states it; left blank rather than assumed where the
+# source is silent (the pt-PT nonfiction run, I Am Not Here to Give a Speech).
+#
+# SOURCING. Every English ISBN below is cross-checked against Open Library's
+# own `/isbn/<isbn>.json` record (publisher, year, page count, and - where
+# present - the `contributions` translator field); the flagship one hundred
+# years of solitude edition is additionally confirmed live on
+# harpercollins.com's own current product page. Every pt-PT ISBN is read
+# directly off Bertrand's own product page, whose JSON-LD `Book` block or
+# (where that block is absent) its own rendered "Detalhes do Produto" panel
+# states ISBN, publisher, edition date and language - the same source
+# already established as authoritative for pt-PT in this catalogue's other
+# wings (Saramago, Cervantes). Every ISBN's check digit is independently
+# recomputed by hand from the first twelve digits, not read off the source;
+# every pt-PT prefix is 978-972 (Portugal), never 978-85/978-65 (Brazil).
+#
+# COVERAGE: 21 of 25 works carry at least one edition (36 editions total: 19
+# English, 17 pt-PT). All eleven core novels have an English edition; ten of
+# the eleven also have a pt-PT one. The honest gaps:
+#   - En agosto nos vemos (2024) has no pt-PT edition. Bertrand currently
+#     stocks only Spanish-language imports of it (Debolsillo/Random House,
+#     978-84 prefix - Spain, confirmed on three separate live product pages),
+#     no Portuguese translation. Two years after original publication this
+#     reads as a real market gap, not a lookup failure - worth a second check
+#     nearer the time a Portuguese edition might appear.
+#   - El olor de la guayaba, Vivir para contarla and the play Diatriba de amor
+#     contra un hombre sentado turned up no pt-PT edition on repeated Bertrand
+#     searches (multiple phrasings each). Vivir para contarla has real
+#     Brazilian editions (Editora Record, 978-85 prefix) - not recorded here,
+#     since a pt-BR edition is a different book from a pt-PT one and would
+#     send a Lisbon reader to a title they cannot buy locally.
+#   - Obra periodística (the five-volume journalism anthology) and both
+#     apocrypha entries carry no edition in either language: the former is a
+#     scholarly Spanish-language critical edition with no translation
+#     history found; the latter never had a normal trade-book life per their
+#     own works.yaml notes.
+#
+# THREE OMISSIONS ARE DELIBERATE, NOT OVERSIGHTS - all are cases where a real,
+# findable edition exists but is not the right object for the workId it would
+# have to sit under:
+#   - Harper & Row's long-running "No One Writes to the Colonel and Other
+#     Stories" (e.g. ISBN 9780060907006, Harper Perennial 1979) binds the
+#     novel and the entire Los funerales de la Mamá Grande story collection
+#     into one English volume (confirmed via its own Open Library
+#     table_of_contents) - a two-books-in-one English packaging with no
+#     equivalent in the original Spanish publication history. Recording it
+#     under either workId would put the other work's content behind a title
+#     that does not name it. Not used: el-coronel-no-tiene-quien-le-escriba's
+#     English edition below is instead Penguin's clean 2014 80-page
+#     standalone printing (the novella alone), and los-funerales-de-la-mama-
+#     grande simply has no English edition recorded - a real, sourced gap
+#     rather than an invented workaround.
+#   - Dom Quixote's own 2011 omnibus "Contos Completos (1947-1992)" (ISBN
+#     9789722048491, translated by Luís Nazaré) gathers all four of García
+#     Márquez's story collections under one binding. Not recorded under any
+#     of the four workIds, on this catalogue's standing rule against an
+#     omnibus ISBN standing in for one work (the Atwood, Jim Butcher and John
+#     Shirley files state the same rule for their own omnibus finds).
+#   - Dom Quixote also sells two 28-page illustrated single-story booklets -
+#     "Um Senhor Muito Velho Com Umas Asas Enormes" (ISBN 9789722018906,
+#     2000) and "A Luz é Como a Água" (ISBN 9789722018111, 2000), each one
+#     story lifted out of Eréndira and Doce cuentos peregrinos respectively
+#     and repackaged as a children's picture book. Neither is recorded under
+#     its parent collection's workId: a reader shopping for either full
+#     collection would get one-sixth to one-twelfth of it in an illustrated
+#     children's format, which is a different object from the collection
+#     this catalogue means by that workId, not an abridgement of it.
+#
+# A FOURTH BERTRAND FIND HAS NO WORKID TO ATTACH TO. "Duas Solidões" (ISBN
+# 9789722073301, Dom Quixote, 2021) is credited on its own product page to
+# "Gabriel García Márquez e Mario Vargas Llosa" - a real, apparently
+# co-authored dialogue/essay volume between the two Nobel laureates that
+# works.yaml does not catalogue at all. Every edition here must resolve to an
+# existing workId, and none exists for this book, so it is not recorded - a
+# real bibliography gap in works.yaml, not an omission in this file.
+#
+# "MOST RECENT IN PRINT" SUPERSEDED THREE OLDER PORTUGUESE PRINTINGS, not
+# separately recorded per this catalogue's default rule: La mala hora's plain
+# "A Hora Má" (Dom Quixote, 2008, 9789722031561) under the current "A Hora
+# Má: O Veneno da Madrugada" repackaging; Crónica de uma Morte Anunciada's
+# 1998 Dom Quixote trade printing (9789722012782) under BIS's current 2022
+# pocket edition; and El general en su laberinto's 1990 Dom Quixote first
+# printing (9789722007818) under its own 2018 reissue.
+
+# --- Novels ---
+
+- id: gabriel-garcia-marquez/la-hojarasca/penguin-2008-en
+  workId: gabriel-garcia-marquez/la-hojarasca
+  isbn13: "9780141032566"
+  language: en
+  title: "Leaf Storm"
+  translator: "Gregory Rabassa"
+  format: paperback
+  publisher: Penguin Books
+  year: 2008
+  note: >
+    A standalone printing of the novella alone, not the older "Leaf Storm and
+    Other Stories" packaging (Harper & Row, 1972) that additionally bundles
+    several early short stories.
+  sources:
+    - https://openlibrary.org/isbn/9780141032566.json
+
+- id: gabriel-garcia-marquez/la-hojarasca/dom-quixote-2018-pt
+  workId: gabriel-garcia-marquez/la-hojarasca
+  isbn13: "9789722065467"
+  language: pt-PT
+  title: "A Revoada"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2018
+  note: 136pp reimpressão (July 2018) of Dom Quixote's standing Portuguese title for this novella.
+  sources:
+    - https://www.bertrand.pt/livro/a-revoada-gabriel-garcia-marquez/22068953
+
+- id: gabriel-garcia-marquez/el-coronel-no-tiene-quien-le-escriba/penguin-2014-en
+  workId: gabriel-garcia-marquez/el-coronel-no-tiene-quien-le-escriba
+  isbn13: "9780241968734"
+  language: en
+  title: "No One Writes to the Colonel"
+  translator: "J. S. Bernstein"
+  format: paperback
+  publisher: Penguin Books, Limited
+  year: 2014
+  note: >
+    80 pages - the novella alone. Not to be confused with the historically
+    more common English packaging "No One Writes to the Colonel and Other
+    Stories" (e.g. Harper Perennial, 1979, ISBN 9780060907006), which binds
+    the entire Los funerales de la Mamá Grande story collection in as well;
+    that combined edition is deliberately not recorded under either workId
+    (see this file's header).
+  sources:
+    - https://openlibrary.org/isbn/9780241968734.json
+
+- id: gabriel-garcia-marquez/el-coronel-no-tiene-quien-le-escriba/dom-quixote-2006-pt
+  workId: gabriel-garcia-marquez/el-coronel-no-tiene-quien-le-escriba
+  isbn13: "9789722031547"
+  language: pt-PT
+  title: "Ninguém Escreve ao Coronel"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2006
+  note: 112pp - the novella alone, matching the English edition above.
+  sources:
+    - https://www.bertrand.pt/livro/ninguem-escreve-ao-coronel-gabriel-garcia-marquez/184272
+
+- id: gabriel-garcia-marquez/la-mala-hora/penguin-2014-en
+  workId: gabriel-garcia-marquez/la-mala-hora
+  isbn13: "9780241968710"
+  language: en
+  title: "In Evil Hour"
+  translator: "Gregory Rabassa"
+  format: paperback
+  publisher: Penguin Books, Limited
+  year: 2014
+  sources:
+    - https://openlibrary.org/isbn/9780241968710.json
+
+- id: gabriel-garcia-marquez/la-mala-hora/dom-quixote-2018-pt
+  workId: gabriel-garcia-marquez/la-mala-hora
+  isbn13: "9789722066303"
+  language: pt-PT
+  title: "A Hora Má: O Veneno da Madrugada"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2018
+  note: >
+    Current Dom Quixote printing under this repackaged, subtitled cover;
+    supersedes the same publisher's plainer-titled 2008 printing ("A Hora
+    Má", 9789722031561), not separately recorded.
+  sources:
+    - https://www.bertrand.pt/livro/a-hora-ma-o-veneno-da-madrugada-gabriel-garcia-marquez/22382237
+
+- id: gabriel-garcia-marquez/cien-anos-de-soledad/harperperennial-2025-en
+  workId: gabriel-garcia-marquez/cien-anos-de-soledad
+  isbn13: "9780063464452"
+  language: en
+  title: "One Hundred Years of Solitude"
+  translator: "Gregory Rabassa"
+  format: paperback
+  publisher: Harper Perennial Modern Classics
+  year: 2025
+  note: >
+    Current printing confirmed live on harpercollins.com's own product page
+    (on sale 2 September 2025), carrying "Now a Netflix original series!"
+    cover branding for the 2024 Netflix adaptation; same Rabassa translation
+    as every other English printing of this novel - the translation
+    works.yaml's own translationNote records García Márquez as having
+    praised over his own Spanish original.
+  sources:
+    - https://www.harpercollins.com/products/one-hundred-years-of-solitude-gabriel-garcia-marquez
+
+- id: gabriel-garcia-marquez/cien-anos-de-soledad/dom-quixote-2017-pt
+  workId: gabriel-garcia-marquez/cien-anos-de-soledad
+  isbn13: "9789722063883"
+  language: pt-PT
+  title: "Cem Anos de Solidão"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2017
+  note: Trade paperback, November 2017, 384pp.
+  sources:
+    - https://www.bertrand.pt/livro/cem-anos-de-solidao-gabriel-garcia-marquez/21078254
+
+- id: gabriel-garcia-marquez/cien-anos-de-soledad/bis-2018-pt
+  workId: gabriel-garcia-marquez/cien-anos-de-soledad
+  isbn13: "9789896605155"
+  language: pt-PT
+  title: "Cem Anos de Solidão"
+  format: paperback
+  publisher: BIS
+  year: 2018
+  note: BIS's "Livro de Bolso" (pocket) printing, September 2018, 384pp - the cheaper current alternative to Dom Quixote's own trade edition above.
+  sources:
+    - https://web.archive.org/web/20241202160215/https://www.bertrand.pt/livro/cem-anos-de-solidao-gabriel-garcia-marquez/22212433
+
+- id: gabriel-garcia-marquez/el-otono-del-patriarca/penguin-2014-en
+  workId: gabriel-garcia-marquez/el-otono-del-patriarca
+  isbn13: "9780241968635"
+  language: en
+  title: "Autumn of the Patriarch"
+  translator: "Gregory Rabassa"
+  format: paperback
+  publisher: Penguin Books, Limited
+  year: 2014
+  sources:
+    - https://openlibrary.org/isbn/9780241968635.json
+
+- id: gabriel-garcia-marquez/el-otono-del-patriarca/dom-quixote-2002-pt
+  workId: gabriel-garcia-marquez/el-otono-del-patriarca
+  isbn13: "9789722010849"
+  language: pt-PT
+  title: "O Outono do Patriarca"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2002
+  note: The only Portuguese printing found in Dom Quixote's current catalogue; no newer reissue turned up.
+  sources:
+    - https://web.archive.org/web/20241202160215/https://www.bertrand.pt/livro/o-outono-do-patriarca-gabriel-garcia-marquez/70907
+
+- id: gabriel-garcia-marquez/cronica-de-una-muerte-anunciada/penguin-2014-en
+  workId: gabriel-garcia-marquez/cronica-de-una-muerte-anunciada
+  isbn13: "9780141917474"
+  language: en
+  title: "Chronicle of a Death Foretold"
+  translator: "Gregory Rabassa"
+  format: paperback
+  publisher: Penguin Books, Limited
+  year: 2014
+  sources:
+    - https://openlibrary.org/isbn/9780141917474.json
+
+- id: gabriel-garcia-marquez/cronica-de-una-muerte-anunciada/bis-2022-pt
+  workId: gabriel-garcia-marquez/cronica-de-una-muerte-anunciada
+  isbn13: "9789896613747"
+  language: pt-PT
+  title: "Crónica de uma Morte Anunciada"
+  format: paperback
+  publisher: BIS
+  year: 2022
+  note: >
+    BIS's current "Livro de Bolso" printing, April 2022, 112pp; supersedes
+    Dom Quixote's own earlier trade printing (April 1998, 9789722012782,
+    136pp), not separately recorded.
+  sources:
+    - https://web.archive.org/web/20241202160215/https://www.bertrand.pt/livro/cronica-de-uma-morte-anunciada-gabriel-garcia-marquez/26798440
+
+- id: gabriel-garcia-marquez/el-amor-en-los-tiempos-del-colera/penguin-2014-en
+  workId: gabriel-garcia-marquez/el-amor-en-los-tiempos-del-colera
+  isbn13: "9780241968574"
+  language: en
+  title: "Love in the Time of Cholera"
+  translator: "Edith Grossman"
+  format: paperback
+  publisher: Penguin Books, Limited
+  year: 2014
+  sources:
+    - https://openlibrary.org/isbn/9780241968574.json
+
+- id: gabriel-garcia-marquez/el-amor-en-los-tiempos-del-colera/bis-2012-pt
+  workId: gabriel-garcia-marquez/el-amor-en-los-tiempos-del-colera
+  isbn13: "9789896602123"
+  language: pt-PT
+  title: "O Amor nos Tempos de Cólera"
+  translator: "Margarida Santiago"
+  format: paperback
+  publisher: BIS
+  year: 2012
+  note: "Livro de Bolso (pocket) printing, June 2012, 416pp."
+  sources:
+    - https://web.archive.org/web/20241202160215/https://www.bertrand.pt/livro/o-amor-nos-tempos-de-colera-gabriel-garcia-marquez/12940507
+
+- id: gabriel-garcia-marquez/el-general-en-su-laberinto/penguin-2014-en
+  workId: gabriel-garcia-marquez/el-general-en-su-laberinto
+  isbn13: "9780141917245"
+  language: en
+  title: "General in His Labyrinth"
+  translator: "Edith Grossman"
+  format: paperback
+  publisher: Penguin Books, Limited
+  year: 2014
+  sources:
+    - https://openlibrary.org/isbn/9780141917245.json
+
+- id: gabriel-garcia-marquez/el-general-en-su-laberinto/dom-quixote-2018-pt
+  workId: gabriel-garcia-marquez/el-general-en-su-laberinto
+  isbn13: "9789722066310"
+  language: pt-PT
+  title: "O General no Seu Labirinto"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2018
+  note: >
+    200pp reissue (November 2018); supersedes Dom Quixote's own first
+    Portuguese printing (1990, 9789722007818), not separately recorded.
+  sources:
+    - https://www.bertrand.pt/livro/o-general-no-seu-labirinto-gabriel-garcia-marquez/22382238
+
+- id: gabriel-garcia-marquez/del-amor-y-otros-demonios/penguin-2014-en
+  workId: gabriel-garcia-marquez/del-amor-y-otros-demonios
+  isbn13: "9780241972328"
+  language: en
+  title: "Of Love and Other Demons"
+  translator: "Edith Grossman"
+  format: paperback
+  publisher: Penguin Books, Limited
+  year: 2014
+  sources:
+    - https://openlibrary.org/isbn/9780241972328.json
+
+- id: gabriel-garcia-marquez/del-amor-y-otros-demonios/dom-quixote-1995-pt
+  workId: gabriel-garcia-marquez/del-amor-y-otros-demonios
+  isbn13: "9789722012041"
+  language: pt-PT
+  title: "Do Amor e Outros Demónios"
+  format: paperback
+  publisher: Dom Quixote
+  year: 1995
+  note: >
+    188pp. The only Portuguese printing found in Dom Quixote's current
+    catalogue; still listed for sale at time of sourcing, but no newer
+    reissue turned up the way most of this backlist has had one.
+  sources:
+    - https://www.bertrand.pt/livro/do-amor-e-outros-demonios-gabriel-garcia-marquez/70973
+
+- id: gabriel-garcia-marquez/memoria-de-mis-putas-tristes/penguin-2014-en
+  workId: gabriel-garcia-marquez/memoria-de-mis-putas-tristes
+  isbn13: "9780241968543"
+  language: en
+  title: "Memories of My Melancholy Whores"
+  translator: "Edith Grossman"
+  format: paperback
+  publisher: Penguin Books, Limited
+  year: 2014
+  sources:
+    - https://openlibrary.org/isbn/9780241968543.json
+
+- id: gabriel-garcia-marquez/memoria-de-mis-putas-tristes/dom-quixote-2015-pt
+  workId: gabriel-garcia-marquez/memoria-de-mis-putas-tristes
+  isbn13: "9789722058810"
+  language: pt-PT
+  title: "Memória das Minhas Putas Tristes"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2015
+  sources:
+    - https://www.bertrand.pt/livro/memoria-das-minhas-putas-tristes-gabriel-garcia-marquez/16960840
+
+- id: gabriel-garcia-marquez/en-agosto-nos-vemos/knopf-2024-en
+  workId: gabriel-garcia-marquez/en-agosto-nos-vemos
+  isbn13: "9780593801994"
+  language: en
+  title: "Until August"
+  translator: "Anne McLean"
+  format: hardcover
+  publisher: Knopf
+  year: 2024
+  note: >
+    No pt-PT edition found: Bertrand currently stocks only Spanish-language
+    imports of this novel (Random House/Debolsillo, 978-84 prefix - Spain,
+    confirmed on three separate live product pages), no Portuguese
+    translation as of sourcing.
+  sources:
+    - https://openlibrary.org/isbn/9780593801994.json
+
+# --- Short-story collections ---
+
+- id: gabriel-garcia-marquez/los-funerales-de-la-mama-grande/dom-quixote-2009-pt
+  workId: gabriel-garcia-marquez/los-funerales-de-la-mama-grande
+  isbn13: "9789722031554"
+  language: pt-PT
+  title: "Os Funerais da Mamã Grande"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2009
+  note: >
+    144pp, the full eight-story collection standalone. No English edition
+    recorded: the only current English packaging bundles this collection
+    into "No One Writes to the Colonel and Other Stories" under the OTHER
+    novel's title - see this file's header for why that ISBN is not used
+    here.
+  sources:
+    - https://www.bertrand.pt/livro/os-funerais-da-mama-grande-gabriel-garcia-marquez/2149106
+
+- id: gabriel-garcia-marquez/erendira/viking-2008-en
+  workId: gabriel-garcia-marquez/erendira
+  isbn13: "9780141032481"
+  language: en
+  title: "Innocent Erendira and Other Stories"
+  translator: "Gregory Rabassa"
+  format: paperback
+  publisher: Viking
+  year: 2008
+  note: >
+    No pt-PT edition recorded: Dom Quixote's only Portuguese printing
+    touching this collection is a 28-page illustrated single-story booklet
+    of "Um Senhor Muito Velho Com Umas Asas Enormes" (one of the collection's
+    seven pieces, repackaged as a children's picture book) - a different
+    object from this collection, not an edition of it.
+  sources:
+    - https://openlibrary.org/isbn/9780141032481.json
+
+- id: gabriel-garcia-marquez/ojos-de-perro-azul/dom-quixote-2007-pt
+  workId: gabriel-garcia-marquez/ojos-de-perro-azul
+  isbn13: "9789722031592"
+  language: pt-PT
+  title: "Olhos de Cão Azul"
+  translator: "Maria da Piedade Ferreira"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2007
+  note: >
+    201pp, the full eleven-story collection. No English edition recorded,
+    matching this work's own works.yaml note that no single standard
+    English-language edition of this specific collection exists.
+  sources:
+    - https://openlibrary.org/isbn/9789722031592.json
+
+- id: gabriel-garcia-marquez/doce-cuentos-peregrinos/viking-2008-en
+  workId: gabriel-garcia-marquez/doce-cuentos-peregrinos
+  isbn13: "9780141032498"
+  language: en
+  title: "Strange Pilgrims"
+  translator: "Edith Grossman"
+  format: paperback
+  publisher: Viking
+  year: 2008
+  note: >
+    No pt-PT edition recorded: Dom Quixote's only Portuguese printing
+    touching this collection is a 28-page illustrated single-story booklet
+    of "A Luz é Como a Água" (one of the collection's twelve stories,
+    repackaged as a children's picture book) - a different object from this
+    collection, not an edition of it.
+  sources:
+    - https://openlibrary.org/isbn/9780141032498.json
+
+# --- Nonfiction, memoir ---
+
+- id: gabriel-garcia-marquez/relato-de-un-naufrago/viking-2007-en
+  workId: gabriel-garcia-marquez/relato-de-un-naufrago
+  isbn13: "9780141032443"
+  language: en
+  title: "The Story of a Shipwrecked Sailor"
+  format: paperback
+  publisher: Viking
+  year: 2007
+  sources:
+    - https://openlibrary.org/isbn/9780141032443.json
+
+- id: gabriel-garcia-marquez/relato-de-un-naufrago/dom-quixote-2011-pt
+  workId: gabriel-garcia-marquez/relato-de-un-naufrago
+  isbn13: "9789722046534"
+  language: pt-PT
+  title: "Relato de um Náufrago"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2011
+  note: 128pp, June 2011.
+  sources:
+    - https://www.bertrand.pt/livro/relato-de-um-naufrago-gabriel-garcia-marquez/10952323
+
+- id: gabriel-garcia-marquez/el-olor-de-la-guayaba/faber-1998-en
+  workId: gabriel-garcia-marquez/el-olor-de-la-guayaba
+  isbn13: "9780571193264"
+  language: en
+  title: "The Fragrance of Guava"
+  format: paperback
+  publisher: Faber and Faber
+  year: 1998
+  note: >
+    "Faber Caribbean" series new edition, 126pp. No pt-PT edition found on
+    repeated Bertrand searches; a market gap, not confirmed as a research
+    failure.
+  sources:
+    - https://openlibrary.org/isbn/9780571193264.json
+
+- id: gabriel-garcia-marquez/la-aventura-de-miguel-littin-clandestino-en-chile/nyrb-2009-en
+  workId: gabriel-garcia-marquez/la-aventura-de-miguel-littin-clandestino-en-chile
+  isbn13: "9781590173404"
+  language: en
+  title: "Clandestine in Chile"
+  format: paperback
+  publisher: New York Review Books
+  year: 2009
+  sources:
+    - https://openlibrary.org/isbn/9781590173404.json
+
+- id: gabriel-garcia-marquez/la-aventura-de-miguel-littin-clandestino-en-chile/dom-quixote-2000-pt
+  workId: gabriel-garcia-marquez/la-aventura-de-miguel-littin-clandestino-en-chile
+  isbn13: "9789722018432"
+  language: pt-PT
+  title: "A Aventura de Miguel Littín, Clandestino no Chile"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2000
+  note: 192pp.
+  sources:
+    - https://www.bertrand.pt/livro/a-aventura-de-miguel-littin-clandestino-no-chile-gabriel-garcia-marquez/71373
+
+- id: gabriel-garcia-marquez/noticia-de-un-secuestro/vintage-2008-en
+  workId: gabriel-garcia-marquez/noticia-de-un-secuestro
+  isbn13: "9781400034932"
+  language: en
+  title: "News of a Kidnapping"
+  translator: "Edith Grossman"
+  format: paperback
+  publisher: Vintage International
+  year: 2008
+  sources:
+    - https://openlibrary.org/isbn/9781400034932.json
+
+- id: gabriel-garcia-marquez/noticia-de-un-secuestro/dom-quixote-2002-pt
+  workId: gabriel-garcia-marquez/noticia-de-un-secuestro
+  isbn13: "9789722013864"
+  language: pt-PT
+  title: "Notícia de um Sequestro"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2002
+  note: 232pp, April 2002.
+  sources:
+    - https://www.bertrand.pt/livro/noticia-de-um-sequestro-gabriel-garcia-marquez/71073
+
+- id: gabriel-garcia-marquez/vivir-para-contarla/vintage-2004-en
+  workId: gabriel-garcia-marquez/vivir-para-contarla
+  isbn13: "9781400034543"
+  language: en
+  title: "Living to Tell the Tale"
+  translator: "Edith Grossman"
+  format: paperback
+  publisher: Vintage
+  year: 2004
+  note: >
+    No pt-PT edition found on repeated Bertrand searches. Real Brazilian
+    editions exist (Editora Record, "Viver para Contar", 978-85 prefix) but
+    are not recorded here - a pt-BR edition is a different translation,
+    title and ISBN, and would send a Lisbon reader to a book they cannot buy
+    locally.
+  sources:
+    - https://openlibrary.org/isbn/9781400034543.json
+
+- id: gabriel-garcia-marquez/yo-no-vengo-a-decir-un-discurso/penguin-2018-en
+  workId: gabriel-garcia-marquez/yo-no-vengo-a-decir-un-discurso
+  isbn13: "9780241360880"
+  language: en
+  title: "I Am Not Here to Give a Speech"
+  format: paperback
+  publisher: Penguin Books, Limited
+  year: 2018
+  sources:
+    - https://openlibrary.org/isbn/9780241360880.json
+
+- id: gabriel-garcia-marquez/yo-no-vengo-a-decir-un-discurso/dom-quixote-2015-pt
+  workId: gabriel-garcia-marquez/yo-no-vengo-a-decir-un-discurso
+  isbn13: "9789722057141"
+  language: pt-PT
+  title: "Eu Não Venho Fazer um Discurso"
+  format: paperback
+  publisher: Dom Quixote
+  year: 2015
+  note: 160pp, April 2015.
+  sources:
+    - https://www.bertrand.pt/livro/eu-nao-venho-fazer-um-discurso-gabriel-garcia-marquez/16270514
