@@ -1,0 +1,57 @@
+stage: event-resonance
+summary: >
+  Read content/events/global.yaml directly (19 entries) and listed every
+  entry whose year falls inside A. J. Finn's (Daniel Mallory's) lifetime
+  (born 1979, living): 9 candidates. Ruled 0 include, 9 exclude - no global
+  event passes the one-sentence resonance test against these two
+  psychological thrillers, and no pre-lifetime event (fantasy-paperback-boom,
+  the world wars, the pulp/paperback/censorship history) is a genuine
+  inheritance either, since none created the domestic-suspense/Hitchcockian
+  category these books sell into. aura_density.py aj-finn: 17 -> 8
+  (8.50 -> 4.00/work); worst dark run held at 2 yrs (2022-2023, pre-existing
+  and reported by press-archaeology as genuinely quiet, not under-researched)
+  - confirmed unchanged after ruling, not just before, since the pandemic and
+  BookTok entries removed both sat on 2020 but 2021 already has its own
+  franchise event (the film) breaking any run there. validate.py --slug
+  aj-finn: 0 errors, 1 expected pre-existing warning (no theme.art).
+decisions:
+  exclude:
+    - id: sept-11-2001
+      why: "lived through it at 22; no book or interview ties either 2018 or 2024 plot to it"
+    - id: financial-crisis-2008
+      why: "this catalogue's own weakest entry; nothing in an agoraphobia/domestic-suspense plot answers economic precarity"
+    - id: covid-19-pandemic-2020
+      why: "delayed the 2021 film's release, but that is already recorded as the film's own franchise event (aj-finn-film-adaptation-delayed-2021); neither novel is about isolation or the pandemic itself"
+    - id: chain-bookshop-1982
+      why: "the debut's #1 NYT run is sourced (in events.yaml) to a two-house auction, a Stephen King blurb and a New Yorker review, not shelf/table merchandising, in every source checked"
+    - id: online-bookselling-1995
+      why: "his route to print was a traditional two-house auction and #1 hardcover debut, not backlist findability or online discovery"
+    - id: ebook-and-self-publishing-2007
+      why: "the opposite of his path: an in-house William Morrow editor sold his own manuscript to his own employer at a traditional print auction; no ebook-first or self-published route in the record"
+    - id: prestige-fantasy-adaptation-2011
+      why: "wrong genre entirely; nothing ties Game of Thrones' rise to two psychological thrillers"
+    - id: booktok-2020
+      why: "no sourced BookTok-driven sales spike for either novel; the debut (2018) predates the platform and no press coverage found ties End of Story (2024) to it"
+    - id: portugal-bailout-2011
+      why: "American author (NYC/Charlotte/Oxford/London) with no Portugal connection anywhere in the sourced biography"
+verification: >
+  content/events/global.yaml read in full directly (19 entries) before any
+  ruling. Lifetime window taken from content/authors/aj-finn.yaml (born:
+  1979, died: null). Each exclude checked against the wing's own sourced
+  files (content/authors/aj-finn.yaml lifeEvents,
+  content/franchises/aj-finn/events.yaml, works.yaml, franchise.yaml
+  description) rather than assumed; the ebook/self-publishing/
+  online-bookselling entries specifically checked against the debut's own
+  traditional-auction, #1-hardcover-bestseller record per the brief, and
+  found to cut against inclusion rather than for it.
+forStages:
+  press-archaeology: >
+    No new gap opened. Excluding covid-19-pandemic-2020 and booktok-2020
+    (both dated 2020) removed the only two aura entries covering that year,
+    but 2021 already carries its own franchise event
+    (aj-finn-film-adaptation-delayed-2021), so the longest dark run inside
+    the 2018-2024 publishing span stays 2 years (2022-2023), unchanged from
+    before this stage's rulings and still below the 5-year flag. The other
+    seven excluded events (1982-2011) fall outside the publishing span
+    entirely and have no effect on the figure.
+openQuestions: []

@@ -19,6 +19,29 @@ description: >
   Francisco novelist's life.
 authorIds: [aj-finn]
 themePreset: brownstone-noir
+# Global events considered against Finn's 1979-birth, living lifetime window
+# (content/events/global.yaml, checked directly). All nine entries that fall
+# inside that window are excluded: none pass the one-sentence resonance test
+# for these two specific novels, as against the world or literature broadly.
+# No pre-lifetime event was found to be a genuine inheritance either (compare
+# fantasy-paperback-boom-1965 for an epic-fantasy author): nothing in the
+# catalogue created the domestic-suspense/Hitchcockian-thriller category
+# these books sell into. The debut's own record cuts specifically against the
+# ebook/self-publishing/online-bookselling entries: it sold at a traditional
+# two-house, two-million-dollar auction run by Mallory's own publishing-house
+# colleagues and debuted at #1 on the NYT hardcover list - the gatekept path,
+# not the self-published or backlist-rediscovery one those events describe.
+globalEvents:
+  exclude:
+    - sept-11-2001  # lived through it at 22; no book or interview ties either plot to it
+    - financial-crisis-2008  # this catalogue's own weakest entry; nothing in an agoraphobia/domestic-suspense plot answers economic precarity
+    - covid-19-pandemic-2020  # delayed the 2021 film (already the film's own franchise event), but neither novel is about isolation or the pandemic
+    - chain-bookshop-1982  # predates the debut by decades with no sourced tie to how Woman in the Window was actually sold
+    - online-bookselling-1995  # his route was a traditional print auction and #1 hardcover debut, not backlist/online discovery
+    - ebook-and-self-publishing-2007  # the opposite of his path: an in-house editor sold to his own publisher at a traditional two-book auction, no ebook-first or self-published route
+    - prestige-fantasy-adaptation-2011  # wrong genre; nothing ties Game of Thrones' rise to two psychological thrillers
+    - booktok-2020  # no sourced BookTok-driven sales spike for either novel; the debut predates the platform
+    - portugal-bailout-2011  # American author with no Portugal connection anywhere in the record
 sources:
   - "https://en.wikipedia.org/wiki/A._J._Finn"
   - "https://www.harpercollins.com/blogs/authors/a-j-finn"
