@@ -1,8 +1,7 @@
-# Português europeu (pt-PT) - `name` e `rationale` (docs/SCHEMA.md;
-# scripts/i18n_coverage.py). `debated` não se traduz: é curador-facing, a
-# mesma classe que translationNote em works.yaml (docs/SCHEMA.md#translationNote
-# diz-lhe explicitamente "the same discipline" uma da outra) e não chega ao
-# leitor.
+# Português europeu (pt-PT) - `name`, `rationale` e `debated` (docs/SCHEMA.md;
+# scripts/i18n_coverage.py). `debated` chega ao leitor no disclosure do
+# seletor de ordens, tal como qualquer outro campo de prosa (docs/SCHEMA.md,
+# secção translationNote) - traduz-se como o resto.
 #
 # TÍTULOS DE OBRAS: mesma regra do resto desta ala (ver franchise.yaml) -
 # título português publicado quando existe edição pt-PT real. As três obras
@@ -32,3 +31,22 @@
     mesmos três livros na mesma sequência que a ordem derivada por defeito
     já lhes dá, isolados dos outros vinte e dois para que um leitor possa
     percorrer exatamente esta afirmação e nada mais.
+  debated:
+    - >
+      Idêntica à ordem de publicação das três obras, e a um trecho da
+      ordem derivada por defeito sem mais nada intercalado (nada mais
+      nesta bibliografia foi publicado entre Ninguém Escreve ao Coronel,
+      em 1961, e Cem Anos de Solidão, em 1967). O seu único contributo é
+      o filtro e o rótulo do próprio autor, exatamente como em
+      chuck-palahniuk/horror-trilogy; um leitor que siga a ordem por
+      defeito não perde nada além do rótulo ao ignorá-la.
+    - >
+      Os Funerais da Mamã Grande e A Hora Má: O Veneno da Madrugada
+      apresentam ambos uma mera datação "1962" em todas as fontes
+      consultadas, sem mês ou data de composição encontrada que permita
+      determinar qual foi escrita primeiro. A sequência acima segue a
+      ordem em que a própria citação de García Márquez as nomeia
+      (Ninguém Escreve ao Coronel, depois Os Funerais da Mamã Grande,
+      depois A Hora Má), e não uma afirmação cronológica sustentada sobre
+      este par; nenhuma fonte consultada estabelece uma prioridade real
+      entre as duas, e esta ordem não a reivindica.
