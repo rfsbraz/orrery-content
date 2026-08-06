@@ -75,3 +75,31 @@ openQuestions:
   - "Sömngångaren's English edition: ISBN reserved (9781838777906) but nothing else confirmable. Recheck after any actual announcement - the reservation alone isn't evidence of an imminent release."
   - "Playground and Sjömannen have no English edition anywhere checked. Playground's absence looks like a real market gap (12 years, never picked up); Sjömannen's may just be too recent (2025) - recheck in a year."
   - "The Black Edition's three 2019 format ISBNs (Storpocket/E-bok/Ljudbok) are named in the note but not given their own entries - only the 2020 Pocket ISBN is a full edition record, on the judgement that four formats of one rewrite are one object. A curator wanting all four represented would add three more entries."
+
+auditFixes:
+  stage: wing-audit
+  summary: >
+    Applied two wing-audit findings to this file.
+
+    rabbit-hunter-missing-its-article (blocking): Kaninjägaren's English
+    title read "Rabbit Hunter", contradicting larskepler.com, the one fully
+    catalogued OpenLibrary edition on OL20641517W, and this wing's own
+    events.yaml/works.yaml. Fixed to "The Rabbit Hunter" on the one entry
+    that carried it (kaninjagaren/knopf-2020-en). The audit's "five records"
+    are OpenLibrary's own editions on that OL work, not rows in this file -
+    this file only ever had the one.
+
+    translator-lineage-header-overstates-its-method (non-blocking): the
+    ENGLISH header claimed a uniform by_statement-sourced method. Re-verified
+    against OpenLibrary: Hypnotisören/Paganinikontraktet/Eldvittnet/
+    Sandmannen/Stalker carry an explicit by_statement; Kaninjägaren,
+    Spegelmannen and Spindeln (per the audit) plus Lazarus (found here while
+    re-checking Neil Smith's four books) do not - resolved instead from each
+    record's co-author key (OL7476119A/OL8476677A = Neil Smith, OL7968563A =
+    Alice Menzies), independently confirmed. Header reworded to state both
+    methods, matching Spegelmannen's own entry note, which already disclosed
+    the co-author-key method correctly. No entry-level notes added to
+    Kaninjägaren/Lazarus - header accuracy was the ask, not new notes.
+  produced:
+    - "content/franchises/lars-kepler/editions.yaml (title fix + header reword)"
+  validate: "--slug lars-kepler: 0 errors, unchanged"
