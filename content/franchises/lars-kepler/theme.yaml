@@ -1,0 +1,59 @@
+# Branding for the Lars Kepler wing (see Orrery CONCEPT §6 - the design law,
+# and docs/SCHEMA.md#themeyaml). Checked hue-by-hue against every existing
+# wing's accent before choosing (34 wings at the time of this scaffold).
+#
+# The obvious first reach for a Swedish crime series is "Nordic noir cold",
+# but Jo Nesbø already owns that specific register (vinterlys: pale, cold
+# blue-white Norwegian daylight, a saturated cobalt accent at hue ~228). A
+# second, equally obvious reach - "clinical, institutional" - is Chuck
+# Palahniuk's clinical-minimal (a pale sage-teal at hue ~164). Neither reads
+# true to what actually distinguishes this shelf: four of its eleven Joona
+# Linna titles name a state between waking and sleep - Hypnotisören (the
+# hypnotist), Sandmannen (the sandman), Sömngångaren (the sleepwalker),
+# Spegelmannen (the mirror man) - and the series' recurring hypnotist-
+# psychiatrist Erik Maria Bark, specialised in "psycho-traumatology and
+# disaster psychiatry" per his own character page, is not incidental to that
+# pattern. That is the actual, sourced, title-level throughline, not a
+# genre-costume guess.
+#
+# Plotted against every existing accent (see scripts/fetch.py research for
+# the full hue table), the widest genuinely open lane on the wheel runs
+# between Tana French's cold blue-violet (bog-noir, hue ~272) and Gillian
+# Flynn's warm pink-plum (heartland-noir, "bruise-plum", hue ~318) - a ~46
+# degree gap. This wing's accent sits at its centre, hue ~295: a muted,
+# restrained violet, cooler than Flynn's warm plum and less blue than
+# French's heather, read as the half-light of a room in the seconds after a
+# hypnotist's watch stops swinging - not injury or a bruise (Flynn's own
+# named register), but the specific violet dusk of the hypnagogic state the
+# titles keep returning to.
+preset: hypnagogic-noir
+palette:
+  bg: "#150e16"       # near-black with a faint violet cast - the same dusk
+                      # colour as the accent, almost drained of it; distinct
+                      # from Edgar Allan Poe's warmer brown-violet gothic
+                      # black and John Shirley's far more saturated magenta-
+                      # black (xerox-punk)
+  surface: "#201622"  # a shade lifted, for cards
+  ink: "#eae5eb"      # pale, cool near-white - high contrast, very readable
+  muted: "#a08fa3"    # dusty violet-grey, for metadata
+  accent: "#974d9d"   # one muted violet, used sparingly - never a wash or a
+                      # fill; see the hue note above
+displayFace: sourceSerif # the plain, commercial workhorse serif this
+                          # catalogue's other bestselling crime series
+                          # (Coben, Flynn, Slaughter, Bryndza, Nesbø,
+                          # Connelly, Gwynne) all reach for - Lars Kepler is
+                          # exactly that kind of book, a translated-into-40-
+                          # languages commercial phenomenon, not a self-aware
+                          # literary outlier the way A. J. Finn's wing earns
+                          # spectral instead
+signature: thread        # a quiet hairline stringing the works together -
+                          # one continuous case file running 2009-2026, with
+                          # Joona Linna, Saga Bauer and the shadow of Jurek
+                          # Walter carried across nearly every title
+notes: >
+  A violet dusk rather than Nordic cold or hospital clinical: near-black with
+  a faint violet cast, pale cool ink, and one muted violet accent used once
+  per surface, never as a fill. No swinging-pendant spiral, no genre-thriller
+  streetlamp or blood-red - the restraint is the point, and the theme.art
+  block (a later pass) is where the actual visual language gets written out
+  in full.

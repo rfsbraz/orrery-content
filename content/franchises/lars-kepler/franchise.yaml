@@ -1,0 +1,50 @@
+# A wing spans an author's complete published work; here the "author" is a
+# shared pen name rather than a single person. Alexandra Coelho Ahndoril and
+# Alexander Ahndoril write every book under Lars Kepler jointly, both from
+# the first page, and have done so since their 2009 debut - a different
+# shape from this catalogue's other multi-author wings, where one author is
+# joined by a second partway through (see the TITLE RULING comment below and
+# works.yaml's header for how the bibliography itself is scoped). Ruling on
+# the identity question (orrery-content#64): two global author
+# entities, jointly credited, rather than a single "Lars Kepler" entity -
+# content/authors/alexandra-coelho-ahndoril.yaml and
+# content/authors/alexander-ahndoril.yaml - because a pen name has a
+# publishing history, not a life to hang lifeEvents on. Each author's solo
+# bibliography under their own name, and their second joint pen name since
+# 2023, Alex Ahndoril (a puzzle-mystery series about private investigator
+# Julia Stark, unrelated to Joona Linna), sits outside this wing - the same
+# shape this catalogue already uses for Andrew Child's solo Andrew Grant
+# novels relative to lee-child.
+id: lars-kepler
+name: Lars Kepler
+kind: author
+description: >
+  The complete published body of work under the joint pen name Lars Kepler:
+  eleven novels of the Joona Linna series, from the 2009 debut
+  [[work:lars-kepler/hypnotisoren|Hypnotisören]] to the forthcoming
+  [[work:lars-kepler/medusa|Medusa]] (2026), following National Operations
+  Department detective Joona Linna and Swedish Security Service officer Saga
+  Bauer through an otherwise-ordinary contemporary Stockholm. Outside the
+  series sit a standalone 2015 novel, [[work:lars-kepler/playground|Playground]],
+  and a 2025 collection of short fiction,
+  [[work:lars-kepler/sjomannen|Sjömannen]]. Unlike this catalogue's other
+  multi-author wings, Lars Kepler was never a single author later joined by
+  a co-author: Alexandra Coelho Ahndoril and Alexander Ahndoril have written
+  every book under the name jointly, from its first page in 2009 on.
+authorIds: [alexandra-coelho-ahndoril, alexander-ahndoril]
+themePreset: hypnagogic-noir
+
+# TITLE RULING FOR THIS WING (applied throughout works.yaml, not re-derived
+# per entry): `title` is the Swedish original; `published` is the Swedish
+# first-publication year, sourced to Albert Bonniers Förlag's own catalogue
+# (the books' Swedish publisher) rather than to any translated edition's
+# release date. English and other translated titles are edition data, not
+# recorded here - see docs/SCHEMA.md's editions.yaml section.
+
+sources:
+  - "https://en.wikipedia.org/wiki/Lars_Kepler"
+  - "https://sv.wikipedia.org/wiki/Lars_Kepler"
+  - "https://en.wikipedia.org/wiki/Alexandra_Coelho_Ahndoril"
+  - "https://en.wikipedia.org/wiki/Alexander_Ahndoril"
+  - "https://www.larskepler.com/"
+  - "https://www.albertbonniersforlag.se/forfattare/lars-kepler/"
