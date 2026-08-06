@@ -1,0 +1,90 @@
+# Branding for the Fernando Pessoa wing (see docs/SCHEMA.md#themeyaml).
+# This is the catalogue's fifth Lusophone wing and the palette is built to be
+# nameable against the other four: joao-tordo is Atlantic blue-grey, rain and
+# the Tejo at night; valter-hugo-mae is warm umber and terracotta, village and
+# dip pen; jose-luis-peixoto is scorched earth and wheat-gold, the inland
+# Alentejo; jose-saramago is volcanic basalt and deep carmine, Lanzarote.
+# Pessoa's is none of those, because his subject is not a landscape at all: it
+# is a room, a desk, a chest of drawers and 25,000 sheets of paper. So the wing
+# is built on ink and office - a cool near-black with a violet-grey cast rather
+# than any earth tone, typing-paper white, and one accent nobody else in the
+# catalogue holds: the verdigris green of oxidised copper and old Baixa
+# shopfronts. Hue-wise the accent sits at ~165 (green), clear of tordo's blue
+# (~200), peixoto's gold (~40) and vhm's and saramago's reds (~15 and ~357).
+preset: arca-tipografica
+palette:
+  bg: "#15141a"       # near-black with a faint violet-grey cast - writing ink, not earth
+  surface: "#1e1d25"  # a hair lifted, for cards
+  ink: "#ebe8e1"      # typing-paper white - high contrast, very readable
+  muted: "#8b8894"    # pencil grey, for metadata
+  accent: "#4f8f7c"   # one verdigris green, for links and markers only - oxidised
+                      # copper and old shopfront paint, not foliage
+displayFace: spectral  # from the app's implemented set (fraunces | spectral | sourceSerif).
+                       # A modern literary serif, cool and slightly severe, for a
+                       # writer whose whole register is cerebral. valter-hugo-mae
+                       # also uses spectral, but against warm umber and terracotta;
+                       # the two wings do not read alike. sourceSerif was considered
+                       # for the typescript association and rejected: it is described
+                       # in this catalogue as the plainest serif, for the plainest
+                       # prose, and Pessoa's prose is the opposite of plain.
+signature: thread      # from the implemented set (beam | thread | rule | none).
+                       # A quiet hairline the works are strung along: one continuous
+                       # line through many hands is literally what this wing is, and
+                       # the line has to carry ninety years of publication dates
+                       # without shouting. `rule` was the near miss - the ruled
+                       # ledger line of Bernardo Soares, assistant bookkeeper - but
+                       # it belongs to one heteronym rather than to the whole shelf.
+art:
+  emblem:
+    object: >
+      A wooden trunk, lid open, packed to the brim with loose sheets of paper
+      of different sizes - typed, handwritten, torn envelopes, letterheads -
+      none of them squared to any other.
+    why: >
+      The arca is the one object this entire bibliography comes out of. Pessoa
+      left more than 25,000 sheets of text in it, now the espólio held by the
+      Biblioteca Nacional de Portugal, and Casa Fernando Pessoa states plainly
+      that the slow work of understanding and ordering those papers is why his
+      books have appeared at such long intervals since 1942. Every work on this
+      shelf published after 1935 was lifted out of it.
+  motifs:
+    - loose manuscript sheets in unequal sizes, some typed, some in pencil
+    - a tall chest of drawers written at standing up
+    - the Baixa's grid at street level, gilt shop lettering on dark wood
+    - an office desk with commercial letterheads in a foreign language
+    - a tobacconist's doorway seen from a window across the street
+    - the same face reappearing with a different signature beneath it
+  atmosphere: >
+    Interior, urban, and lit by one window. Lisbon here is the Baixa and the
+    Chiado of the 1910s to the 1930s - offices, cheap eating houses, trams
+    heard rather than seen - not the river, not the coast, not the countryside.
+    Solitary without being desolate; the city is full of people and the figure
+    in the frame is not with any of them. Paper is everywhere.
+  lineCharacter: >
+    Fine pen and pencil over ruled or typed ground, drawn with the steadiness
+    of a clerk rather than the tremor of an artist. Corrections left visible:
+    struck-through words, marginal notes, a second hand annotating the first.
+    Nothing washed or bled - this wing's line is dry and legible, the opposite
+    of joao-tordo's wet ink.
+  backgroundTexture: >
+    Cream typing paper, foxed at the edges, with the faint blue-grey ghost of
+    ruled lines and the impression of typewriter keys showing through from the
+    other side.
+  accentUse: >
+    Verdigris on exactly one element per image, never as a fill: a shopfront's
+    painted lettering, the oxidised hinge of the trunk, the green shade of a
+    desk lamp, a tram's flank at the end of the street.
+  avoid:
+    - azulejo tiling, fado and saudade shorthand, shawled widows, souvenir Alfama
+    - the yellow tram as a logo, and any postcard-Lisbon framing
+    - literal book-cover pastiche, and the Pessoa statue at A Brasileira as an icon
+    - moustache-and-hat caricature standing in for the man
+    - showing the heteronyms as four different faces; they are one man's handwriting
+    - rural or coastal registers, which belong to other wings in this catalogue
+notes: >
+  A clerk's edition: violet-black ink paper, typing-paper type, one verdigris
+  accent used only for links and markers, and a single hairline for the
+  seventy-year spine. displayFace and signature are both chosen from the app's
+  actually-implemented sets (docs/SCHEMA.md); an invented value is accepted by
+  the validator and then silently swapped at render, which costs a wing its look
+  without failing anything.
