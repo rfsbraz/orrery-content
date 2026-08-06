@@ -1,0 +1,186 @@
+# Português europeu (pt-PT) - bio + prosa dos lifeEvents (title + description).
+# Os lifeEvents ficam aninhados sob o autor e fundem-se por id (ver SCHEMA.md,
+# "Nested lists merge by id"); datas, impact, organisation, illustration_type e
+# sources nunca se traduzem, nem o nome do autor.
+#
+# Onde a base inglesa cita palavras do próprio Pessoa, a citação aqui é o
+# original português e não uma retradução da paráfrase inglesa:
+#   - pessoa-dia-triunfal-1914: "Foi o dia triunfal da minha vida, e nunca
+#     poderei ter outro assim" e "aparecera em mim o meu mestre" são da carta
+#     a Adolfo Casais Monteiro de 13 de janeiro de 1935, o texto de onde vem
+#     todo o relato do dia 8 de março de 1914.
+# As últimas palavras escritas, "I know not what tomorrow will bring", ficam em
+# inglês porque foi em inglês que ele as escreveu; traduzi-las apagava o facto
+# que a entrada regista.
+#
+# O bloco `heteronyms` do ficheiro de base (bio e lifeEvents de Alberto Caeiro,
+# Ricardo Reis, Álvaro de Campos, Bernardo Soares e do Barão de Teive) não tem
+# sobreposição aqui, e a ausência é deliberada: a fusão de traduções de autor na
+# aplicação cobre `bio` e `lifeEvents` e não tem caminho nenhum para
+# `heteronyms`, pelo que um `heteronyms` traduzido é descartado em silêncio e
+# não chega ao leitor. Registado em orrery#170.
+
+- id: fernando-pessoa
+  bio: >
+    Nascido em Lisboa em 1888 e criado sobretudo em Durban, na África do Sul,
+    onde o padrasto era cônsul de Portugal e onde estudou em inglês, Pessoa
+    regressou sozinho a Lisboa aos dezassete anos e nunca mais de lá saiu.
+    Ganhou a vida a escrever correspondência comercial em línguas estrangeiras
+    para casas de comércio da Baixa e passou o resto do tempo a inventar
+    escritores. Num só dia de março de 1914 produziu os poemas de
+    [[work:fernando-pessoa/o-guardador-de-rebanhos|O Guardador de Rebanhos]]
+    sob o nome de Alberto Caeiro, e à volta dessa voz construiu uma roda de
+    autores inventados - Caeiro, Ricardo Reis, Álvaro de Campos, o
+    semi-heterónimo Bernardo Soares e mais de uma centena de outros - cada um
+    com uma biografia, uma filosofia e uma querela com os restantes. Publicou
+    em vida cinco livros finos de poesia, quatro deles em inglês e um em
+    português, [[work:fernando-pessoa/mensagem|Mensagem]] (1934), além de um
+    folheto em defesa da ditadura militar e, numa revista,
+    [[work:fernando-pessoa/o-banqueiro-anarquista|O Banqueiro Anarquista]]. À
+    sua morte, em 1935, deixou uma arca com mais de 25 000 folhas manuscritas,
+    hoje na Biblioteca Nacional de Portugal; a obra que lá está tem vindo a
+    sair em livros desde 1942 e ainda não se esgotou, e é por isso que a
+    estante abaixo se estende setenta anos para lá da vida.
+  lifeEvents:
+    - id: pessoa-born-1888
+      title: Nasce em frente ao teatro de ópera, em Lisboa
+      description: >
+        Nasceu às 15h20 no quarto andar do n.º 4 do Largo de São Carlos, mesmo
+        em frente ao Teatro Nacional de São Carlos, no Chiado, à época
+        freguesia dos Mártires. Morreria quarenta e sete anos mais tarde na
+        mesma cidade, a poucas ruas dali.
+
+    - id: pessoa-durban-1896
+      title: Uma educação inglesa em Durban
+      description: >
+        O pai morreu de tuberculose em 1893, quando Pessoa tinha cinco anos; a
+        mãe voltou a casar, com o cônsul de Portugal em Durban, e a família
+        partiu para a África do Sul em janeiro de 1896. Estudou inteiramente em
+        inglês, fez o exame de admissão à Universidade do Cabo em 1903 e ganhou
+        o Queen Victoria Prize para o melhor ensaio em inglês. O inglês
+        ficou-lhe como língua de trabalho para o resto da vida: os primeiros
+        quatro livros que publicou foram nessa língua, e as suas últimas
+        palavras escritas também.
+
+    - id: pessoa-dia-triunfal-1914
+      title: O dia triunfal
+      description: >
+        Pelo seu próprio relato, dispôs-se a inventar um poeta bucólico como
+        partida ao amigo Mário de Sá-Carneiro, não foi a lado nenhum durante
+        dias, e a 8 de março de 1914 acercou-se de uma cómoda alta e escreveu
+        trinta e tantos poemas a fio, a abrir com o título O Guardador de
+        Rebanhos. "Foi o dia triunfal da minha vida, e nunca poderei ter outro
+        assim." O que se seguiu, disse, foi o aparecimento de alguém dentro de
+        si a quem deu de imediato o nome de Alberto Caeiro: "aparecera em mim o
+        meu mestre". Todos os outros heterónimos se posicionam em relação a
+        essa voz.
+
+    - id: pessoa-english-books-1918
+      title: Imprime dois livros ingleses e envia-os para Londres
+      description: >
+        Em julho de 1918 pagou do seu bolso
+        [[work:fernando-pessoa/antinous|Antinous]] e
+        [[work:fernando-pessoa/35-sonnets|35 Sonnets]], e enviou exemplares a
+        jornais britânicos. Vieram críticas, favoráveis mas com reservas quanto
+        ao arcaísmo do seu inglês, e são a única receção crítica que Pessoa
+        teve em vida fora de Portugal, e a razão de os três livros que publicou
+        a seguir serem também em inglês. Tinha trinta anos, tinham passado
+        quatro sobre o dia em que os heterónimos começaram, e nada dessa obra
+        estava nestes volumes.
+
+    - id: pessoa-ofelia-1920
+      title: A única história de amor de que há registo
+      description: >
+        Conheceu Ophélia Queiroz a 8 de outubro de 1919 na Félix, Valladas &
+        Freitas, onde ele escrevia cartas comerciais em línguas estrangeiras e
+        ela acabara de ser contratada como secretária. A primeira das cartas
+        que lhe escreveu tem a data de 1 de março de 1920; acabou a relação a
+        29 de novembro do mesmo ano, retomou-a em setembro de 1929 e escreveu a
+        última carta a 11 de janeiro de 1930. É a única ligação amorosa da sua
+        vida que alguém documentou, e as cartas, numa linguagem infantil só dos
+        dois e interrompidas por Álvaro de Campos a escrever-lhe ele próprio,
+        foram publicadas em 1978 como
+        [[work:fernando-pessoa/cartas-de-amor|Cartas de Amor]].
+        Sobreviveu-lhe cinquenta e seis anos.
+
+    - id: pessoa-olisipo-seizure-1923
+      title: A sua própria editora é alvo de uma apreensão
+      description: >
+        A Olisipo, a pequena editora que fundou em 1920, reeditou as Canções de
+        António Botto em 1922, livro de um poeta assumidamente homossexual, e
+        publicou em 1923 o folheto Sodoma Divinizada, de Raul Leal. Em
+        fevereiro de 1923 a federação dos estudantes de Lisboa denunciou a
+        "literatura de Sodoma" no jornal A Época; em março o Governo Civil de
+        Lisboa mandou apreender o livro de Botto, o de Leal e o de Judith
+        Teixeira, por imorais. Pessoa respondeu com dois manifestos em defesa
+        dos autores, um deles assinado por Álvaro de Campos e dirigido aos
+        estudantes no registo que lhe é próprio: estudem, divirtam-se e
+        calem-se. É a única vez que tomou publicamente um partido com custos
+        para si, e a Olisipo não sobreviveu.
+
+    - id: pessoa-interregno-1928
+      title: Defende a ditadura por escrito
+      description: >
+        Dois anos depois do golpe militar de 1926 publicou
+        [[work:fernando-pessoa/o-interregno|O Interregno]], um folheto editado
+        pelo Núcleo de Acção Nacional em defesa da ditadura militar como
+        matéria de ciência política: um país cuja opinião pública se desagregou
+        não pode ser governado pela opinião. É o item mais duro da
+        bibliografia, e o registo não fica por aí. A prosa política reunida dos
+        mesmos papéis em 2015 por José Barreto,
+        [[work:fernando-pessoa/sobre-o-fascismo-a-ditadura-militar-e-salazar|Sobre
+        o Fascismo, a Ditadura Militar e Salazar]], mostra-o a virar-se contra
+        o Estado Novo de Salazar, contra o seu corporativismo e contra a sua
+        censura nos últimos anos de vida. Ambos pertencem ao mesmo homem e
+        nenhum anula o outro.
+
+    - id: pessoa-crowley-1930
+      title: Ajuda a encenar o suicídio de um mago
+      description: >
+        Aleister Crowley, com quem se correspondia desde 1929, chegou a Lisboa
+        a 2 de setembro de 1930. A 23 de setembro Crowley fingiu a própria
+        morte na Boca do Inferno, junto a Cascais, depois de uma discussão com
+        a namorada, e Pessoa e o jornalista Augusto Ferreira Gomes ajudaram a
+        encenar o caso; a 5 de outubro o Notícias Ilustrado publicou uma
+        entrevista a Pessoa sobre o desaparecimento que os dois tinham
+        fabricado. O homem de quem se fala como um escriturário que nunca fez
+        nada passou uma quinzena a montar uma aldrabice à imprensa portuguesa,
+        e as leituras ocultistas por trás de livros como
+        [[work:fernando-pessoa/rosea-cruz|Rosea Cruz]] não eram uma
+        excentricidade privada, mas uma correspondência de trabalho com o
+        ocultista mais notório então vivo.
+
+    - id: pessoa-associacoes-secretas-1935
+      title: A última discussão em que se meteu
+      description: >
+        A 4 de fevereiro de 1935, nove meses antes de morrer, publicou no
+        Diário de Lisboa um artigo em defesa das organizações iniciáticas
+        contra um projeto de lei que as ilegalizaria, e o Estado Novo
+        contra-atacou. Não era maçon e passara a vida a guardar para si as
+        leituras ocultistas; esta é a única ocasião em que as defendeu num
+        jornal, semanas depois da carta a Casais Monteiro e semanas depois de
+        [[work:fernando-pessoa/mensagem|Mensagem]] ter recebido um prémio de um
+        organismo do mesmo regime. O artigo e o que o rodeia foram reunidos em
+        2011 em
+        [[work:fernando-pessoa/associacoes-secretas-e-outros-escritos|Associações
+        Secretas e Outros Escritos]].
+
+    - id: pessoa-mensagem-1934
+      title: O único livro português que chegou a ver
+      description: >
+        [[work:fernando-pessoa/mensagem|Mensagem]], quarenta e quatro poemas
+        sobre o mito e o império portugueses, foi o único livro em língua
+        portuguesa que Pessoa publicou em vida. Recebeu nesse mesmo ano o
+        Prémio Antero de Quental, na categoria de poema ou poesia isolada, do
+        Secretariado Nacional de Informação, então dirigido por António Ferro -
+        o mesmo Ferro que, muito novo, tinha sido o editor do Orpheu em 1915.
+
+    - id: pessoa-death-1935
+      title: Fica a arca
+      description: >
+        Deu entrada no hospital a 29 de novembro de 1935 com uma cólica
+        hepática e morreu no dia seguinte de cirrose hepática, aos quarenta e
+        sete anos. As suas últimas palavras escritas, a lápis e em inglês,
+        foram "I know not what tomorrow will bring." Deixou uma arca com mais
+        de 25 000 folhas, na maior parte inéditas; é o trabalho lento de ler e
+        ordenar esses papéis a razão de a sua bibliografia continuar a crescer.
