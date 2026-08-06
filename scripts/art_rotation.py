@@ -242,6 +242,22 @@ def year_of(v):
     return int(s) if s.isdigit() else None
 
 
+def sort_key_of(v):
+    """Full-precision ordering key for a date value, not just its year.
+
+    `year_of` truncates to the display year on purpose, but sorting the
+    timeline by that truncation ties two same-year entries by their tuple's
+    kind string instead of their real date - confirmed live on aj-finn,
+    where a 2019-02-04 and a 2019-02-14 event landed in the wrong order and
+    masked a real two-loud-cells-touching pacing violation. A plain date
+    string sorts correctly regardless of precision ("1979" < "1979-02-04"
+    is already true lexicographically, since a shorter string sorts before
+    one it is a prefix of), so this needs no zero-padding.
+    """
+    s = str(v or "")
+    return s if s else "0000"
+
+
 def wing_assets(slug: str):
     """(kind, id, title, year, organisation) for every asset slot, in timeline order.
 
@@ -267,9 +283,11 @@ def wing_assets(slug: str):
 
     out = []
     for e in eras:
-        y = year_of((e.get("period") or "").split("-")[0])
+        period_start = (e.get("period") or "").split("-")[0]
+        y = year_of(period_start)
         out.append(("era-plate", e.get("id"), e.get("title"), y or 0,
-                    e.get("organisation") or "chapter-gate"))
+                    e.get("organisation") or "chapter-gate",
+                    sort_key_of(period_start)))
 
     seen = set()
     for w in works:
@@ -281,13 +299,16 @@ def wing_assets(slug: str):
             for e in a.get("lifeEvents") or []:
                 out.append(("life-event", e.get("id"), e.get("title"),
                             year_of(e.get("date")) or 0,
-                            e.get("organisation")))
+                            e.get("organisation"),
+                            sort_key_of(e.get("date"))))
 
     for e in events:
         out.append(("franchise-event", e.get("id"), e.get("title"),
-                    year_of(e.get("date")) or 0, e.get("organisation")))
+                    year_of(e.get("date")) or 0, e.get("organisation"),
+                    sort_key_of(e.get("date"))))
 
-    return sorted(out, key=lambda r: (r[3], r[0]))
+    out.sort(key=lambda r: (r[5], r[0]))
+    return [r[:5] for r in out]
 
 
 # Two accepted forms. The canonical one is what .claude/commands/asset-prompt.md

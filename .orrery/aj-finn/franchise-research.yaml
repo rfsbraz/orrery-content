@@ -1,0 +1,55 @@
+stage: franchise-research
+summary: >
+  Scaffolded the A. J. Finn wing from scratch: 2 novels (both core, no
+  subseries), 1 global author entity, franchise identity, and a validated
+  theme (displayFace/signature set; art left for visual-language). Resolved
+  the identity question by research: id/name is the pen name "A. J. Finn,"
+  not "Daniel Mallory" - full reasoning in content/authors/aj-finn.yaml's
+  header comment, summarized below.
+produced:
+  franchiseFiles:
+    - content/franchises/aj-finn/franchise.yaml
+    - content/franchises/aj-finn/works.yaml
+    - content/franchises/aj-finn/theme.yaml
+    - content/franchises/aj-finn/eras.yaml
+    - content/franchises/aj-finn/events.yaml
+    - content/franchises/aj-finn/orders.yaml
+  authorEntities:
+    - content/authors/aj-finn.yaml
+  workIds:
+    - aj-finn/the-woman-in-the-window
+    - aj-finn/end-of-story
+identityFinding: >
+  Inverted from this catalogue's default pseudonym shape (King/Bachman,
+  Rowling/Galbraith, Christie/Westmacott key on the real name). Here the pen
+  name is the dominant identity: English Wikipedia's own article is titled
+  and infoboxed as "A. J. Finn" ("Daniel Mallory" is a bare disambiguation
+  page, not a redirect to it); HarperCollins' author page runs entirely
+  under "A. J. Finn" and never states the legal name; Wikidata labels the
+  entity "A. J. Finn" with "Dan/Daniel Mallory" filed as "also known as."
+  This catalogue already has the precedent for that shape: Lee Child (legal
+  name James Dover Grant) is filed id/name on the pen name, `aka` carrying
+  the legal name, `pseudonyms: []` - followed here instead of King/Bachman's.
+  A negative control (a guessed Goodreads id) resolved to an unrelated
+  person and was dropped rather than cited.
+forStages:
+  completeness-auditor: >
+    Two novels cross-checked across three independent sources, all agreeing
+    this is the complete shelf; nothing else found under either name. Worth
+    a fresh check for any announcement since this pass.
+  press-archaeology: >
+    lifeEvents is []; only plain, undisputed career facts were verified
+    (education, publishing jobs including William Morrow, the two novels,
+    the film). Do not trust Wikidata's "2 January 1979" birth date - it
+    cites English Wikipedia as its source, but the live infobox there
+    carries only the bare year 1979.
+  eras: "eras.yaml already [] with reasoning written directly (two novels, six years apart) - the one-or-two-works exception."
+  reading-orders: "orders.yaml already [] - two standalones need no additional order."
+  visual-language: >
+    theme.yaml sets displayFace (spectral) and signature (rule) but no art:
+    block. Candidate anchors: the window/surveillance motif in The Woman in
+    the Window; the memoir-in-progress conceit of End of Story.
+openQuestions:
+  - "Identity ruling (pen name as id/name) is this stage's own reasoned call via the Lee Child precedent, not a curator-settled one - open to review."
+  - "Theme choices (brownstone-noir, cyan-teal accent, rule signature tied to the author's real editing career) are this stage's own read, not received."
+  - "The 2019 New Yorker profile and the plagiarism claim over The Woman in the Window are real and load-bearing but deliberately not summarized here - press-archaeology's sourcing and framing call under the two-independent-source bar, not foreclosed by this stage."

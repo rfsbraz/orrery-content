@@ -1,0 +1,106 @@
+stage: spoiler-audit
+summary: >
+  Both novels are twist-driven, so every ruling was made against fetched
+  publisher copy, never memory: HarperCollins' own product pages for both
+  books, plus verified plots. Two redactions, both in ungated prose where
+  rewriting is the only lever. Window's synopsis was checked clause by
+  clause against the jacket and left as it stood. No spoilerAfter set or
+  loosened: all eight events/lifeEvents were already null, none states a
+  fiction reveal, and none sits on a field that cannot carry a boundary.
+produced:
+  changedProse: [aj-finn/end-of-story]
+  addedNotes: [aj-finn/end-of-story, aj-finn/the-woman-in-the-window]
+  changedEvents: [aj-finn-plot-similarity-allegations-2019]
+  filesWritten:
+    - content/franchises/aj-finn/works.yaml
+    - content/franchises/aj-finn/events.yaml
+  spoilerAfterSet: []
+  spoilerAfterLoosened: []
+
+redactions:
+  - where: works.yaml, aj-finn/end-of-story synopsis
+    severity: load-bearing
+    before: "the two circle each other, both charming and both possibly unreliable, toward whatever actually happened that New Year's Eve"
+    after: "she settles in among his second wife, his wayward nephew and his protective daughter with a case of real-life detective-fever and a question two decades old: did the perfect crime writer commit the perfect crime?"
+    why: >
+      "Both possibly unreliable" is Publishers Weekly's read, not the
+      publisher's. Morrow's jacket introduces Nicky plainly ("his longtime
+      correspondent... an expert in detective fiction") and puts every doubt
+      on Trapp. Priming a reader to distrust the narrator is the structural
+      reveal, not the premise. The replacement is all jacket copy.
+    jacketSource: "https://www.harpercollins.com/products/end-of-story-a-j-finn"
+    confidence: high
+
+  - where: events.yaml, aj-finn-plot-similarity-allegations-2019
+    severity: precautionary
+    before: "his film's agoraphobic, online-alias-using protagonist"
+    after: "his film's agoraphobic, heavy-drinking, online-chess-playing psychologist"
+    why: >
+      The New Yorker's Copycat comparison has four legs; three are jacket or
+      opening-chapter material. The fourth, the two heroines' forum log-ins,
+      is not, and online identity is machinery Window's last act uses.
+      Copycat's killer pursuing its heroine was left out likewise.
+    jacketSource: "https://www.harpercollins.com/products/the-woman-in-the-window-a-j-finn"
+    confidence: medium
+    loosenable: >
+      The softer of the two, redacted on the asymmetry rather than a
+      confident ruling. A curator who has read Window can restore it.
+
+checkedAndLeftAlone:
+  - "Window synopsis: every clause at or inside the jacket, and it correctly omits Anna's page-one household, which the jacket also omits and Wikipedia states outright."
+  - "Denzil event: quotes the NYT on 'plot twists in the final act' but states no twist, and does not reproduce the Times' correction itemizing which plot points sat in which outline (that would leak three reveals at once). A comment now records the omission as deliberate. Saving April is named but not described."
+  - "Film-adaptation event: its only plot sentence is the jacket's top line. 2018 debut and 2024 return events: pure publication history."
+  - "All 8 event/lifeEvent titles swept for the ungated-prose-beside-a-gate failure; none states a reveal."
+  - "authors/aj-finn.yaml bio + 4 lifeEvents: clean. Gaslight kept as a Finn-stated influence the jacket already frames; Gone Girl, which points harder, is not named."
+  - "franchise.yaml description: mirrors both jackets; End of Story's goes further than ours."
+  - "eras.yaml and orders.yaml empty, no startHere block (grepped), and all nine global events excluded upstream - the highest-risk vectors do not exist here."
+
+engineNotes: >
+  Nothing inexpressible. Both problems sat in ungated prose, where rewriting
+  sufficed; no case wanted a boundary the engine lacked.
+
+forStages:
+  translation: >
+    No pt-PT overlay exists yet (checked both i18n directories), so nothing
+    was stale and nothing needed mirroring. Two strings carry spoiler weight
+    and must not drift back toward their sources: the end-of-story synopsis
+    (see its note:) and the 2019 event's Copycat clause.
+  visual-metadata: >
+    Shares works.yaml. Both works now carry a note: between synopsis and
+    sources; add image fields around them. Neither synopsis should change.
+  visual-language: >
+    Art for the 2019 plot-similarity event must stay on the dispute's
+    paperwork, not the novel's final act; same for the film event.
+  wing-audit: >
+    Re-test rather than trust: the Copycat clause is a medium-confidence
+    precautionary redaction, and naming Saving April is a knowingly accepted
+    second-hop vector.
+
+openQuestions:
+  - >
+    End of Story has no plot summary in any encyclopedic source and every
+    reviewer declines to state its resolution, so the redaction rests on the
+    publisher test alone. Decisive, but the exact shape of what is being
+    protected is not on record.
+  - >
+    The Copycat forum-handle redaction may be stricter than needed: Anna's
+    handle appears early, and whether the forum is also load-bearing at the
+    end could not be established.
+
+auditFixes:
+  - where: events.yaml header comment
+    finding: wing-audit blocking #1 (owner spoiler-audit)
+    found: >
+      The header comment justifying the Copycat redaction named what was
+      withheld rather than only that something was, defeating the
+      redaction it was describing - CURATION §2's third trap: naming what
+      was withheld publishes it, in a public repo, permanently.
+    fixed: >
+      Rewrote the paragraph to state the principle only: some of the New
+      Yorker's similarities are withheld because spelling them out here
+      would undo the entry's own redaction and hand a reader who follows
+      the citation the novel's own reveal regardless. No detail of what is
+      withheld, or where in the book it falls, appears in the comment
+      anymore. Rendered entry title/description (both locales) and the
+      pt-PT overlay were not touched - they were already clean.
+      validate.py --slug aj-finn: 0 errors, unchanged.

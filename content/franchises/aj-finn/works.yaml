@@ -1,0 +1,99 @@
+# Bibliography. Two novels, both published by William Morrow (a HarperCollins
+# imprint), both under the byline "A. J. Finn" - no other title, short story,
+# essay or contribution under either that name or "Daniel Mallory"/"Dan
+# Mallory" turned up on Wikipedia's bibliography sections (author page and
+# each novel's own page), Wikidata's work list for the author entity, or
+# Publishers Weekly's own catalogue record - the two novels below are the
+# complete published shelf as far as these sources establish it.
+#
+# No subseries: the two novels share no characters, setting or timeline
+# (Woman in the Window is New York; End of Story is San Francisco with an
+# unrelated cast) - two standalones, not a series.
+
+- id: aj-finn/the-woman-in-the-window
+  title: "The Woman in the Window"
+  authorIds: [aj-finn]
+  published: 2018
+  subseries: null
+  canonTier: core
+  featured: true # the debut that made the pen name a #1 New York Times
+                 # bestseller and the book the rest of the shelf is read
+                 # against - the hinge, not a padded shelf pretending to more
+                 # than one.
+  synopsis: >
+    Dr. Anna Fox, a child psychologist confined to her Harlem brownstone by
+    agoraphobia, fills her days spying on the neighborhood through a camera
+    lens and losing herself in old film noir - until she witnesses something
+    at the house across the park that no one else believes happened.
+  note: >
+    The synopsis stops where William Morrow's own jacket copy stops. That
+    copy sells the book on the setup and on a question it never answers - "an
+    agoraphobic woman who believes she witnessed a crime in a neighboring
+    house," "What is real? What is imagined? ... Is Anna an unreliable
+    narrator, or is she the only one who knows the truth?" - and names no
+    part of the resolution. Anna's household as of page one is deliberately
+    absent here for the same reason it is absent from the jacket.
+  sources:
+    - "https://en.wikipedia.org/wiki/The_Woman_in_the_Window_(novel)"
+    - "https://en.wikipedia.org/wiki/A._J._Finn"
+    - "https://www.harpercollins.com/products/the-woman-in-the-window-a-j-finn"
+  images:
+    # William Morrow hardcover jacket (ISBN 9780062678416, OL work
+    # OL18147682W - the same work id the search API's own cover_i resolves
+    # to, confirming this is the canonical/representative cover Open Library
+    # itself displays, not an arbitrary pick). A later printing, not the
+    # January 2018 first: the jacket itself carries a "#1 New York Times
+    # bestseller" flash and a "Soon to be a major motion picture" roundel,
+    # neither possible on day one. Chosen over the later Netflix-film-tie-in
+    # reissues (which put Amy Adams' face on the jacket) because a film-cast
+    # photo is studio-owned art that dates the wing and credits the wrong
+    # art form - the same reasoning theme.yaml's own art block gives for
+    # avoiding film stills. No spoiler risk either way: it's title
+    # typography over a striped-blind motif, no plot content shown.
+    cover: "https://covers.openlibrary.org/b/id/8315362-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL18147682W"
+
+- id: aj-finn/end-of-story
+  title: "End of Story"
+  authorIds: [aj-finn]
+  published: 2024
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Sebastian Trapp, a reclusive novelist made rich by a long-running
+    detective series and infamous for the unsolved disappearance of his
+    first wife and teenaged son one New Year's Eve twenty years earlier,
+    is dying and
+    wants his story told. He invites Nicky Hunter, a Manhattan crime-fiction
+    critic and his longtime correspondent, into his Victorian San Francisco
+    mansion to write it. Settling in among his second wife, his wayward
+    nephew and his protective daughter, she catches a case of real-life
+    detective-fever over a question two decades old: did the perfect crime
+    writer commit the perfect crime?
+  note: >
+    The synopsis follows William Morrow's own jacket copy, which introduces
+    Nicky Hunter plainly - Trapp's "longtime correspondent," "an expert in
+    detective fiction" - and puts every doubt on Trapp alone: "Did the
+    perfect crime writer commit the perfect crime?" Publishers Weekly's
+    starred review goes further and calls the pair "both charming but
+    perhaps equally unreliable"; that is a reading of the resolution rather
+    than of the setup, and it appears on no edition of the book, so the
+    premise here does not carry it.
+  sources:
+    - "https://en.wikipedia.org/wiki/End_of_Story"
+    - "https://www.publishersweekly.com/9780062678454"
+    - "https://www.harpercollins.com/products/end-of-story-a-j-finn"
+  images:
+    # HarperCollins 2024 jacket (OL work OL37562837W, cover_i the work's own
+    # search-API record resolves to). The same image is reused, byte-for-
+    # byte identical, across every edition's own cover id on this record
+    # (hardcover, the Hemlock Press variant, both UK ISBNs) - one design,
+    # confirmed rather than assumed. A fountain pen crossing out "END"; no
+    # character or plot content shown, so no spoiler question arises. Only
+    # 145x219px at Open Library's own "-L" size - every ISBN on this record
+    # returns the same small file, so this is the library's ceiling, not a
+    # weak pick; no larger source was found.
+    cover: "https://covers.openlibrary.org/b/id/14586105-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL37562837W"

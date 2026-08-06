@@ -1,0 +1,97 @@
+stage: art-rotation
+summary: >
+  Graded the whole 8-entry timeline against the finalized visual-language
+  handoff rather than trusting press-archaeology's pre-assignment as-is. The
+  register separation for the two real biographical-rupture events already
+  held exactly as required (see registerSeparationCheck) and needed no
+  change. The pacing did not: art_rotation.py --check sorts its contour by
+  (year, entity-kind), which happened to hide a real adjacency - in true
+  chronological order the 2018-01 bestseller debut (mosaic, loud) and the
+  2019-02-04 New Yorker exposure (immersion, loud) are consecutive with
+  nothing between them, only thirteen months apart (inside the 1-3 year
+  "ordinary cut" band, no gutter to separate them). That is LAYOUT.md's
+  own warned case - "two ruptures a few events apart still land on one
+  screen" - and a genuine no-two-loud-touching violation the checker's
+  coarse sort could not see. Fixed by downgrading the 2018 debut from
+  mosaic to layered-stack (still Holds press-media-collage, no
+  illustration_type change) rather than the 2019 entry, since the New
+  Yorker exposure is the wing's one unambiguous rupture and immersion is
+  the correct earned use of it. The wing now carries 2 loud cells (birth,
+  2019 exposure) against 6 mid, no plateau, no adjacency in either the
+  checker's order or the true full-date order.
+produced:
+  changedFields:
+    - where: content/franchises/aj-finn/events.yaml, aj-finn-woman-in-the-window-number-one-2018
+      field: organisation
+      before: mosaic
+      after: layered-stack
+      why: >
+        Removes the loud/loud adjacency against the 2019 immersion entry.
+        layered-stack still Holds press-media-collage (illustration_type
+        untouched) and fits as well: blurbs, list clippings and early
+        reviews accumulating around a debut is a stack, not a single
+        document or public-noise mosaic.
+  unchanged:
+    - ajf-born-1979 (full-bleed-vista / establishing-landscape)
+    - ajf-jake-surgery-emails-2013 (artifact-spread / document-facsimile)
+    - ajf-auction-identity-revealed-2016 (beside / network-constellation)
+    - aj-finn-plot-similarity-allegations-2019 (artifact-spread / document-facsimile)
+    - ajf-new-yorker-trail-of-deceptions-2019 (immersion / portrait-of-absence)
+    - aj-finn-film-adaptation-delayed-2021 (layered-stack / press-media-collage)
+    - aj-finn-end-of-story-return-2024 (beside / aftermath-scene)
+  filesWritten:
+    - content/authors/aj-finn.yaml
+    - content/franchises/aj-finn/events.yaml
+  images_required: all 1 (no diptych/split-counterpoint entries here)
+  modifiers: none set - no moment earned one strongly enough to justify the risk
+organisationCounts:
+  artifact-spread: 2 (25%)
+  beside: 2 (25%)
+  layered-stack: 2 (25%)
+  full-bleed-vista: 1 (12%)
+  immersion: 1 (12%)
+contour: "#====#== (art_rotation.py's own year-bucketed order)"
+trueOrderContour: "#===#=== (full-date order: born/jake/auction/debut/new-yorker/plot-similarity/film/end-of-story)"
+registerSeparationCheck: >
+  Checked against visual-language.yaml's art.atmosphere carve-out, which
+  names both sensitive lifeEvents explicitly and requires "plain paper, an
+  empty room, ordinary daylight ... never this fiction's night-glass
+  register." ajf-jake-surgery-emails-2013 already carried document-facsimile
+  inside artifact-spread (Holds document-facsimile; the fabricated emails
+  as evidence, not atmosphere). ajf-new-yorker-trail-of-deceptions-2019
+  already carried portrait-of-absence inside immersion (Holds
+  portrait-of-absence; organisation governs layout weight only, the sober
+  register lives entirely in illustration_type and theme.art.atmosphere,
+  neither touched by this stage). Both were correct as press-archaeology
+  left them. The 2016 auction/identity-reveal and 2019 plot-similarity
+  entries are NOT covered by the carve-out (it names only the 2013/2019
+  lifeEvents) and were graded on ordinary fit instead.
+checkOutput: >
+  art_rotation.py --check aj-finn: organisation rotation holds (no cap
+  exceeded, no neighbour repeats); pacing holds (no two loud touching or
+  sharing a screenful, no plateau). Composition axis still reports all 8
+  assets unread (expected pre-art, not this stage's to clear).
+  validate.py --slug aj-finn: 0 errors.
+forStages:
+  asset-prompt: >
+    8 jobs, final grammar: born-1979 (full-bleed-vista,
+    establishing-landscape); jake-surgery-2013 (artifact-spread,
+    document-facsimile, sober register); auction-2016 (beside,
+    network-constellation); debut-2018 (layered-stack,
+    press-media-collage); new-yorker-2019 (immersion, portrait-of-absence,
+    sober register - the one earned rupture); plot-similarity-2019
+    (artifact-spread, document-facsimile); film-2021 (layered-stack,
+    press-media-collage); end-of-story-2024 (beside, aftermath-scene). All
+    images_required: 1.
+  wing-audit: >
+    Re-check the two sensitive lifeEvents' generated art against
+    theme.art.atmosphere's carve-out directly (plain paper / empty room /
+    ordinary daylight), not this wing's default night-glass mood.
+openQuestions:
+  - "art_rotation.py --check sorts its contour by (year, entity-kind), not
+    full date - a fine approximation on most wings, but it false-cleaned
+    this wing's pacing by tie-breaking the two 2019 events out of their
+    real Feb 4/Feb 14 order, and separately never had to face the 2018/2019
+    adjacency since those fall in different year buckets. Corrected here by
+    hand; a wing with more same-year or near-year loud entries could hide a
+    real plateau or adjacency the same way."

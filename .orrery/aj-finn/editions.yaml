@@ -1,0 +1,74 @@
+stage: editions
+summary: >
+  Built content/franchises/aj-finn/editions.yaml from scratch: 4 editions
+  across the 2-work bibliography (3 en, 1 pt-PT). Ran
+  scripts/metadata/lookup.py aj-finn --author "A. J. Finn" --markets no,en,pt
+  first (40 candidates across 10 OpenLibrary-matched "works," almost all
+  false hits from unrelated Finn/Finn-adjacent authors - flagged by the
+  script's own author-mismatch warning). The lookup surfaced exactly one pt
+  candidate, a Brazilian Arqueiro edition (isbn13 9788580418323, "A Mulher na
+  Janela", 978-85 prefix) - correctly excluded as a different market/
+  translation, not the pt-PT one wanted. lookup.py has no BNP/Wook/Bertrand
+  provider, so the real pt-PT record came from fetching BNP's ipac20 catalogue
+  directly (index=.GW keyword search, since index=WAU/WRD guesses 404'd;
+  index=ISBN worked once the ISBN was known) rather than from the tool.
+  scripts/metadata/lookup.py --verify-isbns aj-finn: 4 editions, 0 suspect.
+  validate.py --slug aj-finn: 0 errors (1 pre-existing, unrelated warning on
+  visual-language.yaml's word count).
+produced:
+  editionsAdded: 4
+  filesWritten:
+    - content/franchises/aj-finn/editions.yaml
+  breakdown:
+    - aj-finn/the-woman-in-the-window/william-morrow-2018-hc-us (en, hardcover, first edition)
+    - aj-finn/the-woman-in-the-window/william-morrow-2021-pb-tie-in-us (en, paperback, 2021 Netflix film tie-in cover, confirmed by viewing the jacket image)
+    - aj-finn/the-woman-in-the-window/presenca-2021-pt (pt-PT, paperback, translator Maria João Lourenço)
+    - aj-finn/end-of-story/harpercollins-2024-hc-us (en, hardcover, first edition)
+  coverage: "pt-PT: 1 of 2 works (The Woman in the Window only); English: both works, 2 editions on the debut"
+filmTieInFinding: >
+  US market: confirmed real. HarperCollins' own product page for The Woman
+  in the Window (Shopify variant JSON) names isbn13 9780062678423 as the
+  current "Paperback" SKU; its own jacket image (fetched from HarperCollins'
+  CDN, not a retailer) carries a "NETFLIX A Netflix Film" roundel over the
+  original blue-line jacket art. Recorded as a second English edition since
+  it is genuinely a different object, not a padding duplicate of the 2018
+  hardcover. A UK equivalent also exists (isbn13 9780008333324, "NOW A MAJOR
+  MOTION PICTURE" banner, confirmed the same way via its OpenLibrary cover
+  image) but was not added - one confirmed tie-in edition per work is
+  sufficient evidence for the file, and adding a second region duplicates
+  the same fact without adding a different object.
+  Portuguese market: no evidence of a dedicated tie-in edition. The BNP
+  record for Presença's 2021 2nd edition (the same year the film reached
+  Netflix) carries no "edição do filme" marking and keeps the identical
+  "Grandes narrativas" collection number (685) as the 2018 1st edition -
+  consistent with an ordinary reprint rather than a redesigned tie-in
+  release, but this is inference from catalogue metadata, not a confirmed
+  cover. Wook and Bertrand both 403 an automated fetch, so the pt-PT cover
+  itself could not be opened and verified the way the US/UK ones were - the
+  one fact in this file that still wants a human with a browser (see the
+  file header).
+isbnVerification: >
+  All 4 ISBN-13s hand-verified against their EAN-13 check digit (worked by
+  hand per SKILL.md's method, not just trusted from a source) and confirmed
+  by scripts/metadata/lookup.py --verify-isbns aj-finn (4 editions, 0
+  suspect). Both pt-PT-adjacent candidates were prefix-checked: the used one
+  (9789722367257) carries 978-972 (Portugal); the excluded Arqueiro one
+  (9788580418323) carries 978-85 (Brazil) and was never a candidate for
+  inclusion once identified.
+sourcesUsed:
+  - "en.wikipedia.org infoboxes for both novels (first-edition ISBN, publisher, date, page count)"
+  - "harpercollins.com product pages for both novels (Shopify variant JSON: authoritative current-SKU list per format; own CDN jacket images for the tie-in confirmation)"
+  - "catalogo.bnportugal.gov.pt ipac20 (BNP legal-deposit records for both pt-PT Woman in the Window editions, and the negative sweep for End of Story / any other Finn title)"
+  - "openlibrary.org (candidate sweep via lookup.py, and cover images for the UK tie-in edition and the excluded Brazilian edition)"
+forStages:
+  wing-audit: >
+    Two things worth a human-with-a-browser re-check: (1) whether Presença's
+    2021 2nd edition of A Mulher à Janela actually carries film-tie-in cover
+    art - Wook/Bertrand block automated fetches and BNP holds no cover image;
+    (2) whether End of Story has since gained a pt-PT edition - none existed
+    as of this pass (BNP + Presença's own site both checked), but this is a
+    fast-moving book only ~2 years old.
+openQuestions:
+  - "The pt-PT 2021 2nd edition's cover is unconfirmed as tie-in or not - recorded neutrally in the note rather than guessed either way. Presença's own storefront returned zero live results for a 'finn' search (both site search and the predictive-search JSON endpoint), which is suggestive but not proof the title is out of print."
+  - "End of Story pt-PT: no edition found. Absence checked two ways (BNP author-index sweep of all 10 'finn' records; Presença's own site search) rather than assumed, but a translation could still be forthcoming or exist through a channel neither source would catalogue yet."
+  - "The UK film tie-in edition (isbn13 9780008333324) was found and cover-verified but deliberately left out of editions.yaml as a non-additive duplicate of the US tie-in fact - flagging here in case a curator wants both regions recorded."
