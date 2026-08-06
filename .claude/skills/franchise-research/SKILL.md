@@ -193,13 +193,30 @@ other (then quote them). Two traps:
 ## Theme scaffolding
 
 `theme.yaml`'s `palette` is free; **`displayFace` and `signature` are closed
-sets**: `fraunces | spectral | sourceSerif` and `beam | thread | rule | none`.
-Anything else is accepted, validated, and then **silently swapped** for
-`fraunces`/`thread` at render - an invented value costs the wing its look
-without failing anything (five of the first six wings shipped names that do
-not exist; `validate.py` warns now). Pick from the implemented set or propose
-a new value as an app change in the PR. Follow CONCEPT §6: palette + one
-display face + one signature element, readability first, no genre costume.
+sets**: `fraunces | spectral | sourceSerif | instrument-serif` and
+`beam | thread | rule | filament | none` (check `lib/theme.ts` in the app repo
+for the current live sets - they grow, and this list and `docs/SCHEMA.md` both
+drift behind it). Anything else is accepted, validated, and then **silently
+swapped** for `fraunces`/`thread` at render - an invented value costs the wing
+its look without failing anything (five of the first six wings shipped names
+that do not exist; `validate.py` warns now). Pick from the implemented set or
+propose a new value as an app change in the PR. Follow CONCEPT §6: palette +
+one display face + one signature element, readability first, no genre costume.
+
+**Stop at `palette`/`displayFace`/`signature`. Leave `theme.art` entirely for
+`visual-language`, including an empty scaffold.** `art` (`emblem`, `motifs`,
+`atmosphere`, `lineCharacter`, `backgroundTexture`, `accentUse`, `avoid`) is
+that skill's exclusive footprint, composed against the *finished* bibliography,
+eras and heteronym/persona layer - written here, before `completeness-auditor`
+has even closed the work list, it is discovery done blind against inputs that
+have not stopped moving yet. Confirmed live on Fernando Pessoa: this stage's
+own first draft covered barely a third of the wing's eventual 33 art jobs (it
+had no way to know about the nine works `completeness-auditor` would still
+add), and `visual-language` ended up rewriting 62% of it from scratch - not a
+failure of that draft, a guaranteed one given when it ran. The same shape was
+already flagged on John Shirley's wing. Write the palette and the closed-set
+choices with their own reasoning, and say nothing about the art register at
+all; that silence is the honest scaffold, not a gap to fill.
 
 ## Scaffolding the other layers
 
