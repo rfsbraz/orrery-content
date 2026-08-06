@@ -30,12 +30,39 @@ authorIds: [fernando-pessoa]
 themePreset: arca-tipografica
 
 # Capabilities are auto-detected from the data (docs/SCHEMA.md). This wing ships
-# works.yaml (45 works: 16 core, 25 extended, 4 apocrypha) and a 5-lifeEvent
-# author entity carrying a 4-entry `heteronyms` block, which activates `river`
-# and `companion` through the author's life events. There is no franchise
-# events.yaml, no eras.yaml, no orders.yaml, no editions.yaml, no
+# works.yaml (54 works: 16 core, 33 extended, 5 apocrypha), an author entity
+# carrying 11 life events and a 4-entry `heteronyms` block, and events.yaml (20
+# franchise events, 1936 to 2019, the history of the trunk being read), which
+# activates `river` and `companion`. eras.yaml is `[]`, a sourced negative
+# argued in that file. There is no orders.yaml, no editions.yaml, no
 # achievements.yaml and no `startHere`, so `wizard` and `editions` stay off.
 features: {}
+
+globalEvents:
+  include:
+    # Álvaro de Campos's "Ultimatum" (Portugal Futurista, October 1917) is
+    # written out of the war and evicts the Allies and the Germans alike.
+    # Pessoa's own account of it: no ministry could have allowed the piece with
+    # the country at war, the issue escaped the wartime prior censorship by
+    # "sorte inexplicável", and the police seized it in November. It reaches
+    # this shelf as Ultimatum e Páginas de Sociologia Política (1980).
+    #   https://pt.wikipedia.org/wiki/Portugal_Futurista
+    - world-war-i-1914
+    # The dictatorship the 1926 coup installed is the one subject on which this
+    # bibliography argues both sides. O Interregno (1928) defends it as
+    # political science; the prose José Barreto gathered in 2015 turns against
+    # Salazar's Estado Novo, its corporatism and its censorship; and the
+    # February 1935 Diário de Lisboa article defending the initiatic orders
+    # against a bill outlawing them drew the regime's counter-attack in the
+    # last year of his life.
+    - portuguese-censorship-1926
+  # Considered and refused. Nothing renders unless it is in `include` above, so
+  # these change nothing; they are kept as the record of a judgement already
+  # made, so it is not re-litigated from scratch.
+  exclude:
+    - pulp-magazines-1926       # his detective fiction is armchair reasoning in the Poe and Conan Doyle line he read in English, written for no market and printed in 2008; nothing here was written into a genre-magazine category
+    - penguin-paperback-1935    # four months before his death; the five books of his lifetime were small runs he paid for himself, and the Penguin on this shelf is Zenith's Disquiet of 2001
+    - carnation-revolution-1974 # thirty-nine years after the death; the end of the censorship belongs to the publishing history of the trunk, not to anything he wrote
 
 sources:
   - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra"
