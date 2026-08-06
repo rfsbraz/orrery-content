@@ -1,0 +1,71 @@
+stage: visual-metadata
+wing: aj-finn
+summary: >
+  Sourced covers for both novels (2/2), a portrait for the author entity,
+  no header. lookup.py's no,en,pt sweep surfaced both works cleanly amid a
+  lot of noise from unrelated authors sharing "Finn" as a surname fragment
+  (triaged on the `by` column per the tool's own warning). Both covers
+  verified against the OL work-level search API (not just an edition ISBN)
+  to confirm the canonical/representative record, fetched with
+  ?default=false, and looked at. validate.py --slug aj-finn: 0 errors.
+
+produced:
+  files:
+    - "content/franchises/aj-finn/works.yaml (images block on both works)"
+    - "content/authors/aj-finn.yaml (images.portrait only)"
+  coverage: "2/2 - both novels have a real, verified Open Library cover."
+  filmTieInDecision: >
+    The Woman in the Window has three real cover families on OL: the
+    original 2018 William Morrow hardcover, a Netflix-branded reissue
+    (Amy Adams' photo), and a UK reissue (unnamed actress at a window).
+    Used the original (cover id 8315362, ISBN 9780062678416) - also the id
+    OL's own work-level search API resolves to unprompted. Film-tie-in
+    jackets passed over: studio-owned cast art dates the wing to one
+    adaptation and credits the wrong art form, same reasoning as
+    theme.yaml's art.avoid list on film stills. All three checked for
+    spoiler content per this wing's careful synopsis redactions: none
+    shows anything beyond title typography or an unnamed figure, so the
+    choice rests on art-form/dating grounds, not a spoiler difference.
+  endOfStoryNote: >
+    All four ISBN-keyed cover ids OL carries for this work (hardcover, a
+    Hemlock Press variant, two UK ISBNs) are byte-for-byte the same image
+    once downloaded and diffed - confirmed, not assumed, since a shared
+    image across editions is exactly the shape a wrong-work collision
+    takes. Used 14586105, the id the work-level search API resolves to.
+  portrait: >
+    "A.J. Finn 2018.jpg" on Commons (Wikidata Q56084685's own P18 claim) -
+    the author at HeadRead, Tallinn's literary festival, May 2018, credited
+    to Commons user WanderingTrad as "own work," CC BY-SA 4.0, no
+    Restrictions set. Rejected in its favour: the file English Wikipedia's
+    infobox currently shows instead ("Ajfinn2019.png") has no Artist and no
+    Credit field, and Commons itself files it under "Files with no
+    machine-readable author" / "Media lacking author information" - an
+    unverifiable claim, not a citable licence. See scandalContextReasoning.
+  header: >
+    Not sourced. franchise.images.header renders nowhere in the app (the
+    confirmed, repeated finding on this catalogue's recent wings - Isabel
+    Allende and Gabriel Garcia Marquez both skipped it on the same
+    grounds). A two-novel wing is the weakest case yet for spending
+    research time on a field nothing displays.
+
+scandalContextReasoning: >
+  The task asked whether a portrait exists captioned/credited as "A. J.
+  Finn" the working author, versus one whose primary association is the
+  2019 fabrication-scandal coverage. The HeadRead 2018 photo resolves this
+  without forcing a tradeoff: it predates the February 2019 New
+  Yorker/Guardian reporting by nine months, its own Commons description
+  reads as an ordinary festival-appearance caption under the byline, and
+  it has a real chain of rights (named photographer, CC BY-SA 4.0). The
+  Wikipedia-infobox alternative was rejected on a harder rights failure
+  (no author/source Commons can verify), not on scandal-timing - its own
+  metadata date also predates the reporting. So a clean press photo was
+  available and used; rights-verifiability decided it, not scandal
+  proximity.
+
+openQuestions:
+  - >
+    No externalIds.openLibrary field exists on either work (checked -
+    absent, not wrong). Both resolved by title search plus a work-level
+    search-API cross-check instead. Out of this stage's footprint to add
+    (images fields only); worth the editions/enrichment stage filling in
+    OL18147682W and OL37562837W directly, now confirmed correct.
