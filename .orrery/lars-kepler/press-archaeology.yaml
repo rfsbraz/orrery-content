@@ -93,3 +93,39 @@ openQuestions:
     could not be corroborated anywhere else, including the Academy's own
     winners list - left out as a standing correction, not just for this
     wing's dark-run purposes."
+
+auditFixesApplied:
+  stage: wing-audit follow-up (branch lars-kepler/audit-fixes-press)
+  date: 2026-08-06
+  findings:
+    - id: apple-tv-deal-graded-above-the-aura-ceiling
+      change: >
+        events.yaml, nocturne-apple-tv-2023: impact high -> med (CURATION 6
+        caps industry scope at medium; its culture-scope sibling, the 2012
+        film, was already med). art-rotation unaffected: intensity reads
+        organisation, not impact.
+    - id: portuguese-mother-rests-on-one-source-not-two
+      change: >
+        alexandra-coelho-ahndoril.yaml header: dropped the "two
+        independently written encyclopedia articles ... converge" claim.
+        Both English Wikipedia's own footnote and Swedish Wikipedia's own
+        källor list trace to the same source, Albert Bonniers Förlag's
+        author presentation - now stated as one source reproduced in two
+        articles' prose. Fact kept, only the independence claim fixed.
+    - id: a-live-fact-in-a-field-no-reader-sees
+      change: >
+        works.yaml, lars-kepler/somngangaren note (confirmed inert, no
+        `note` field on Work) reworded off an unsupported "top-selling ...
+        per official year-end bestseller lists" to what its actual sources
+        (Bonniers catalogue, larskepler.com) support: publisher promotion,
+        not a verified ranking. Matching no-cover comment softened too.
+        FLAG: touches works.yaml, not this stage's footprint - concurrent
+        audit-fixes-spoiler branch also edits works.yaml (hypnotisoren
+        synopsis, ~line 60), well clear of somngangaren (~line 293); no
+        overlap expected but noted per instruction.
+    - id: dead-citation-on-the-2012-film
+      change: >
+        events.yaml, hypnotisoren-film-oscar-entry-2012: swapped the 403'ing
+        svenskfilmdatabas.se source for a working archive.org snapshot
+        (20200813045406), fetch-verified to render the real SFdb page.
+  validator: "validate.py --slug lars-kepler: 0 errors, baseline handoff-length warnings only"
