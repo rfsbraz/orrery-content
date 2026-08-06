@@ -118,6 +118,26 @@ re-running when a franchise is added.
 **Your job is the residue: the events that overlap the author's life but may
 still not belong, and the rare event outside it that does.**
 
+## Read `content/events/global.yaml` yourself before ruling on anything
+
+A prior run on this catalogue fabricated three global-event ids
+(`cuban-revolution-1959`, `chile-coup-1973`, `pinochet-fall-1990`) that do not
+exist anywhere in `global.yaml`, because it trusted an upstream handoff's hedge
+("include candidates if global.yaml has matches - not checked") instead of
+opening the file. The ruling shipped, got merged into a branch, and only wing-
+audit's independent re-derivation caught it - `validate.py` does not check a
+`globalEvents` id against `global.yaml`'s real contents today, so a fabricated
+ruling passes every automated gate silently.
+
+**Load the actual file first, every time**, and list every entry whose year
+falls in the author's lifetime before writing a single `include` or `exclude`
+line. A handoff naming a candidate event is a lead to verify against the real
+file, never a citation you can rule on directly. If a candidate a prior stage
+named turns out not to exist in `global.yaml`, that is itself worth a one-line
+note in your handoff (the fact was likely conflated with a franchise-specific
+event that belongs in the wing's own `events.yaml` instead, not in the shared
+file) - never invent the id to make the citation true.
+
 ## The test
 
 For each candidate, try to write **one sentence saying what this event meant for

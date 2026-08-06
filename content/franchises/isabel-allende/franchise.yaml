@@ -1,0 +1,62 @@
+# A wing spans an author's complete published work, not the one genre or
+# one book she is famous for. Here that widens the shelf past the
+# historical-fiction novels she is best known for: also her memoirs, her
+# 1970s Chilean journalism and juvenilia, a Spanish-only anthology of her
+# own love scenes, and three recent English-original children's picture
+# books - see works.yaml's own header for the full tiering rationale and
+# what was checked and excluded (four staged-but-unpublished early plays;
+# a story anthologized inside another of her own collections).
+id: isabel-allende
+name: Isabel Allende
+kind: author
+description: >
+  The Chilean-American bestseller of magical realism and historical
+  fiction: from her 1982 debut
+  [[work:isabel-allende/la-casa-de-los-espiritus|La casa de los espíritus]],
+  written in Venezuelan exile after the coup that overthrew her father's
+  cousin, President Salvador Allende, through thirty-six works spanning
+  novels, memoir, a Spanish-only anthology and, most recently, an
+  English-original children's picture-book series - read overwhelmingly in
+  translation outside the Spanish-speaking world.
+authorIds: [isabel-allende]
+themePreset: sepia-archive
+# No startHere: checked, not assumed. Her own official site's FAQ
+# (isabelallende.com/en/faq) does not address where a new reader should
+# begin or in what order to read her; her Isabel Allende tag archive on
+# the Guardian (interviews, reviews, news) carries no dedicated reading
+# guide either. What surfaced instead were books-in-order aggregator
+# sites, which agree with each other only on the obvious default (La casa
+# de los espíritus as "the essential starting point") and none of which
+# clears this catalogue's bar for a real source. Unlike
+# gabriel-garcia-marquez/startHere, no equivalent to the Los Angeles
+# Times' or Penguin's own reading guides was found for her - the
+# "famous-book trap" this catalogue checks for on every wing (a debut this
+# well regarded that critics steer new readers away from) does not apply
+# here on the sourcing actually found: nobody, including the aggregators,
+# recommends a different entry point, a gentler on-ramp via the Alexander
+# Cold YA trilogy, or a memoir-first route. Held out for the same reason
+# jose-saramago ships none: a naive-default recommendation with no citable
+# reader or critic behind it is our own reading, not a path.
+features: {}
+globalEvents:
+  include:
+    - covid-19-pandemic-2020  # Violeta (2022) frames its narrator's life between the 1920 flu and the 2020 pandemic that closes it
+    - sept-11-2001  # Mi país inventado's own synopsis says the attacks prompted the visit home that the memoir is built around; HarperCollins' product page for the book settles it outright, naming the September 11, 2001 attacks on "her adopted homeland" as one of the two life-changing moments the book circles (harpercollins.com/products/my-invented-country-isabel-allende)
+  exclude:
+    - financial-crisis-2008  # lived through it; no book answers it
+    - armed-services-editions-1943  # a US wartime paperback habit decades before her 1974 debut, in a different language and market
+    - lady-chatterley-trial-1960  # a UK obscenity ruling; her frank sexuality (Eva Luna, Afrodita) draws on a Latin American tradition this case never touched
+    - fantasy-paperback-boom-1965  # she does not write epic fantasy; the category it created is not hers
+    - carnation-revolution-1974  # Portuguese censorship history; she was under Chilean, not Portuguese, constraints
+    - chain-bookshop-1982  # a bookselling trend of her debut decade, but no sourced tie beyond general bestseller-era backdrop
+    - online-bookselling-1995  # backlist findability is generic to any prolific author, not specific to her
+    - ebook-and-self-publishing-2007  # traditionally published throughout; no self-publishing or ebook-native narrative
+    - prestige-fantasy-adaptation-2011  # not her genre; her own screen history is the franchise-specific 1993 film and 2026 miniseries
+    - portugal-bailout-2011  # a Portuguese, not Chilean/Venezuelan/American, economic crisis
+    - booktok-2020  # no sourced evidence of a BookTok-driven rediscovery; she has been a bestseller since 1982
+    - comics-code-authority-1954  # she never wrote comics
+sources:
+  - https://en.wikipedia.org/wiki/Isabel_Allende
+  - https://es.wikipedia.org/wiki/Isabel_Allende
+  - https://www.isabelallende.com/en/books
+  - https://www.isabelallende.com/en/timeline

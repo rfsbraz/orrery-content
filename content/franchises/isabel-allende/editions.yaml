@@ -1,0 +1,810 @@
+# Concrete published editions: the first English edition for every work that
+# has one (Allende writes in Spanish; English is the second-most-published
+# language across her catalogue after Portuguese), plus the current
+# Portuguese-market edition for every work Portugal has actually published.
+# 30 of 36 works have at least one edition; 27 of 36 have an English edition;
+# 30 of 36 have a pt-PT edition. The six with none - the three 1974 Chilean
+# juvenilia pieces, the two apocrypha chapbooks, and "Perla and the Princess"
+# (announced for 1 September 2026, not yet released) - have no translated
+# printing found in any source checked, not a research gap.
+#
+# SOURCES. English: each work's own English Wikipedia infobox, cross-checked
+# against the specific OpenLibrary edition record for the ISBN cited (its
+# `by_statement`/`contributions` fields, which come from the book's own
+# copyright page) - not OpenLibrary's aggregated work-level search, which
+# mixes contributors across every language and printing of a title.
+# Margaret Sayers Peden's own English Wikipedia "selected translations" list
+# corroborates eleven of her Allende credits directly; the rest (Eva Luna, The
+# Infinite Plan, Kingdom of the Golden Dragon, Forest of the Pygmies, The Sum
+# of Our Days) are confirmed instead by that title's own OpenLibrary edition
+# record. Portuguese: the Biblioteca Nacional de Portugal's ipac20 catalogue
+# (catalogo.bnportugal.gov.pt), queried by author name and read as a browser -
+# 271 records swept across all 28 result pages, giving publisher, translator,
+# city, edition/reprint number and ISBN for every printing BNP holds. The
+# citation on each pt-PT entry is that printing's own ISBN-indexed permalink
+# (`ipac.jsp?index=ISBN&term=<isbn>&profile=bn`).
+#
+# THE PORTUGUESE PUBLISHER. Difel (Lisboa, later Algés/Miraflores) published
+# essentially the whole backlist from 1982 (the year of the Spanish original)
+# through 2010, alongside parallel Círculo de Leitores book-club printings.
+# Difel's imprint was replaced by a short-lived "Inapa" line in 2009-2010,
+# then the whole backlist moved to Porto Editora from 2011 on, which remains
+# the active Portuguese publisher today (its newest entry here is a 2026
+# forthcoming memoir, already catalogued by BNP). Where BNP shows a long
+# reprint run under one Porto Editora ISBN, the latest dated printing of that
+# root is cited even when a shelf copy might be an earlier printing of it -
+# three titles (A Cidade dos Deuses Selvagens, O Reino do Dragão de Ouro, O
+# Bosque dos Pigmeus) show a 2019 reprint under their original 2014 ISBN,
+# confirming the standard trade edition, not the parallel 2015-16 "11-17"
+# budget line some of these titles also received, is the one still current.
+#
+# TRANSLATOR CONTINUITY AND CHANGE. Most Portuguese translators carried over
+# unchanged from Difel to Porto Editora (Maria Helena Pitta across five
+# titles; Carlos Martins Pereira on O Plano Infinito; Suely Bastos on De Amor
+# e de Sombra). Three titles were genuinely retranslated for the Porto
+# Editora relaunch, not just re-credited: A Casa dos Espíritos and Eva Luna
+# (Contos de Eva Luna too) moved from Carlos Martins Pereira's 1982-2010
+# Difel translation to Cristina Paixão's in 2013; Paula moved from José
+# Carlos Gonzalez's 1995-2008 Difel translation to Ângela Barroqueiro's in
+# 2013. On the English side, no single translator is assumed: Margaret Sayers
+# Peden translated everything checked from Of Love and Shadows (1987) through
+# The Sum of Our Days (2008), sixteen titles. Anne McLean
+# translated Maya's Notebook (2013), Ollie Brock and Frank Wynne translated
+# Ripper (2014), Nick Caistor and Amanda Hopkinson share credit on The
+# Japanese Lover (2015), In the Midst of Winter (2017) and A Long Petal of
+# the Sea (2019), and Frances Riddle translated Violeta (2022), The Wind
+# Knows My Name (2023) and My Name Is Emilia del Valle (2025).
+#
+# THE BOGIN/PEDEN CONTRADICTION. works.yaml's own
+# header credits Margaret Sayers Peden with translating La casa de los
+# espíritus; events.yaml's 1985 English-publication event credits Magda
+# Bogin. Resolved here in Bogin's favour, on four independent sources: (1)
+# English Wikipedia's "The House of the Spirits" article states outright that
+# Alfred A. Knopf's 12 April 1985 first English edition was "Translated by
+# Magda Bogin"; (2) Magda Bogin's own English Wikipedia article lists it
+# under her "Selected bibliography"; (3) OpenLibrary's aggregated contributor
+# list for the work includes "Bogin, Magda" and "Magda Bogin (Translator)";
+# (4) the Knopf 1985 edition's own OpenLibrary record (isbn 9780394539072)
+# carries the MARC-sourced `by_statement` "Isabel Allende ; translated from
+# the Spanish by Magda Bogin." Peden's own English Wikipedia "selected
+# translations" list, by contrast, opens with Of Love and Shadows (1987) and
+# does not include La casa de los espíritus at all. works.yaml's header
+# credit to Peden for this title does not hold up against any of the four
+# sources above and should read Bogin instead.
+#
+# TWO ISBN TRANSCRIPTION FAILURES, not fabricated around. BNP's own records
+# for two Porto Editora 2013/2014 printings fail their own check digit: Contos
+# de Eva Luna's "978-972-0-04448-7" needs check digit 8, not 7 (sum of the
+# first twelve digits is 122); O Meu País Inventado's "978-972-0-04675-5"
+# needs check digit 8, not 5 (sum is also 122 - a coincidence of the
+# arithmetic, not a pattern). The second is doubly suspicious: the adjacent
+# record for a DIFFERENT title, Filha da Fortuna, carries "978-972-0-04675-8"
+# - a valid, different check digit on what should be a different item number
+# entirely, pointing to a BNP data-entry fault rather than two genuine ISBNs
+# sharing a root. No corroborating source (OpenLibrary, Google Books) holds
+# either printing, so both editions are recorded below WITHOUT an isbn13
+# rather than with a guessed one - publisher, translator, year and title
+# are all independently attested and kept.
+#
+# OUT-OF-PRINT SOLE EDITIONS. Zorro: o Começo da Lenda (Difel, 2005) and
+# Afrodite (Difel, 2006, 6th ed.) never reappeared under Porto Editora in any
+# of the 271 records swept; each is recorded here as the only Portuguese
+# edition that exists, out of print but real. BNP's own three records for
+# the Zorro translator's name disagree
+# with each other ("J. Teixeira de Aguillar" / "Teixeira de Aguilar" / "J.
+# Teixeira de Aguilar") - the two-witness spelling is used here.
+#
+# NON-LITERAL TITLE. La Ciudad de las Bestias is published in Portugal as "A
+# Cidade dos Deuses Selvagens" ("The City of the Savage Gods"), not a literal
+# rendering of "City of Beasts" - unambiguous by content (Alexander Cold's
+# Amazon expedition is the only candidate), so matched without a title-vs-
+# title check.
+
+- id: isabel-allende/la-casa-de-los-espiritus/knopf-1985-en
+  workId: isabel-allende/la-casa-de-los-espiritus
+  isbn13: "9780394539072"
+  language: en
+  title: "The House of the Spirits"
+  translator: "Magda Bogin"
+  format: hardcover
+  publisher: Alfred A. Knopf
+  year: 1985
+  sources:
+    - https://en.wikipedia.org/wiki/The_House_of_the_Spirits
+    - https://en.wikipedia.org/wiki/Magda_Bogin
+    - https://openlibrary.org/isbn/9780394539072
+
+- id: isabel-allende/la-casa-de-los-espiritus/porto-editora-2013-pt
+  workId: isabel-allende/la-casa-de-los-espiritus
+  isbn13: "9789720044457"
+  language: pt-PT
+  title: "A Casa dos Espíritos"
+  translator: "Cristina Paixão"
+  publisher: Porto Editora
+  year: 2013
+  note: >
+    Retranslation, superseding Carlos Martins Pereira's 1982 Difel
+    translation, which ran unchanged for three decades and roughly 37
+    editions/reprints. This printing was still current in 2013 for a 40th
+    anniversary special edition sharing the same ISBN.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-04445-7&profile=bn"
+
+- id: isabel-allende/de-amor-y-de-sombra/bantam-1988-en
+  workId: isabel-allende/de-amor-y-de-sombra
+  isbn13: "9780553273601"
+  language: en
+  title: "Of Love and Shadows"
+  translator: "Margaret Sayers Peden"
+  publisher: Bantam Books
+  year: 1988
+  note: Reprint of the 1987 Alfred A. Knopf first English edition; same translation.
+  sources:
+    - https://en.wikipedia.org/wiki/Margaret_Sayers_Peden
+    - https://openlibrary.org/isbn/9780553273601
+
+- id: isabel-allende/de-amor-y-de-sombra/porto-editora-2013-pt
+  workId: isabel-allende/de-amor-y-de-sombra
+  isbn13: "9789720042477"
+  language: pt-PT
+  title: "De Amor e de Sombra"
+  translator: "Suely Bastos (adaptação portuguesa de José Lima Vieira)"
+  publisher: Porto Editora
+  year: 2013
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-04247-7&profile=bn"
+
+- id: isabel-allende/eva-luna/bantam-1989-en
+  workId: isabel-allende/eva-luna
+  isbn13: "9780553280586"
+  language: en
+  title: "Eva Luna"
+  translator: "Margaret Sayers Peden"
+  format: paperback
+  publisher: Bantam Books
+  year: 1989
+  note: Reprint of the 1988 Alfred A. Knopf first English edition; same translation.
+  sources:
+    - https://en.wikipedia.org/wiki/Eva_Luna
+    - https://openlibrary.org/isbn/9780553280586
+
+- id: isabel-allende/eva-luna/porto-editora-2013-pt
+  workId: isabel-allende/eva-luna
+  isbn13: "9789720040954"
+  language: pt-PT
+  title: "Eva Luna"
+  translator: "Cristina Paixão"
+  publisher: Porto Editora
+  year: 2013
+  note: Retranslation, superseding Carlos Martins Pereira's 1988-2008 Difel translation.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-04095-4&profile=bn"
+
+- id: isabel-allende/el-plan-infinito/harpercollins-1993-en
+  workId: isabel-allende/el-plan-infinito
+  isbn13: "9780060992743"
+  language: en
+  title: "The Infinite Plan"
+  translator: "Margaret Sayers Peden"
+  publisher: HarperCollins
+  year: 1993
+  sources:
+    - https://openlibrary.org/isbn/9780060992743
+
+- id: isabel-allende/el-plan-infinito/porto-editora-2015-pt
+  workId: isabel-allende/el-plan-infinito
+  isbn13: "9789720047441"
+  language: pt-PT
+  title: "O Plano Infinito"
+  translator: "Carlos Martins Pereira"
+  publisher: Porto Editora
+  year: 2015
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-04744-1&profile=bn"
+
+- id: isabel-allende/hija-de-la-fortuna/harpercollins-1999-en
+  workId: isabel-allende/hija-de-la-fortuna
+  isbn13: "9780060194918"
+  language: en
+  title: "Daughter of Fortune"
+  translator: "Margaret Sayers Peden"
+  publisher: HarperCollins
+  year: 1999
+  note: The Oprah's Book Club printing of the first US edition.
+  sources:
+    - https://en.wikipedia.org/wiki/Daughter_of_Fortune
+    - https://openlibrary.org/isbn/9780060194918
+
+- id: isabel-allende/hija-de-la-fortuna/porto-editora-2014-pt
+  workId: isabel-allende/hija-de-la-fortuna
+  isbn13: "9789720046758"
+  language: pt-PT
+  title: "Filha da Fortuna"
+  translator: "Maria Helena Pitta"
+  publisher: Porto Editora
+  year: 2014
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-04675-8&profile=bn"
+
+- id: isabel-allende/retrato-en-sepia/harpercollins-2001-en
+  workId: isabel-allende/retrato-en-sepia
+  isbn13: "9780066214016"
+  language: en
+  title: "Portrait in Sepia"
+  translator: "Margaret Sayers Peden"
+  publisher: HarperCollins
+  year: 2001
+  sources:
+    - https://en.wikipedia.org/wiki/Portrait_in_Sepia
+    - https://openlibrary.org/isbn/9780066214016
+
+- id: isabel-allende/retrato-en-sepia/porto-editora-2013-pt
+  workId: isabel-allende/retrato-en-sepia
+  isbn13: "9789720042460"
+  language: pt-PT
+  title: "Retrato a Sépia"
+  translator: "Maria Helena Pitta"
+  publisher: Porto Editora
+  year: 2013
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-04246-0&profile=bn"
+
+- id: isabel-allende/la-ciudad-de-las-bestias/harpercollins-2002-en
+  workId: isabel-allende/la-ciudad-de-las-bestias
+  isbn13: "9780060509170"
+  language: en
+  title: "City of the Beasts"
+  translator: "Margaret Sayers Peden"
+  publisher: HarperCollins
+  year: 2002
+  sources:
+    - https://en.wikipedia.org/wiki/City_of_the_Beasts
+    - https://openlibrary.org/isbn/9780060509170
+
+- id: isabel-allende/la-ciudad-de-las-bestias/porto-editora-2014-pt
+  workId: isabel-allende/la-ciudad-de-las-bestias
+  isbn13: "9789720046741"
+  language: pt-PT
+  title: "A Cidade dos Deuses Selvagens"
+  translator: "Maria Helena Pitta"
+  publisher: Porto Editora
+  year: 2014
+  note: Reprinted as recently as 2019 under this same ISBN.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-04674-1&profile=bn"
+
+- id: isabel-allende/el-reino-del-dragon-de-oro/flamingo-2004-en
+  workId: isabel-allende/el-reino-del-dragon-de-oro
+  isbn13: "9780007177479"
+  language: en
+  title: "The Kingdom of the Golden Dragon"
+  translator: "Margaret Sayers Peden"
+  format: paperback
+  publisher: Flamingo
+  year: 2004
+  sources:
+    - https://en.wikipedia.org/wiki/Kingdom_of_the_Golden_Dragon
+    - https://openlibrary.org/isbn/9780007177479
+
+- id: isabel-allende/el-reino-del-dragon-de-oro/porto-editora-2014-pt
+  workId: isabel-allende/el-reino-del-dragon-de-oro
+  isbn13: "9789720046734"
+  language: pt-PT
+  title: "O Reino do Dragão de Ouro"
+  translator: "Maria Helena Pitta"
+  publisher: Porto Editora
+  year: 2014
+  note: Reprinted as recently as 2019 under this same ISBN.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-04673-4&profile=bn"
+
+- id: isabel-allende/el-bosque-de-los-pigmeos/harpercollins-2005-en
+  workId: isabel-allende/el-bosque-de-los-pigmeos
+  isbn13: "9780007199631"
+  language: en
+  title: "Forest of the Pygmies"
+  translator: "Margaret Sayers Peden"
+  publisher: HarperCollins Publishers Limited
+  year: 2005
+  sources:
+    - https://en.wikipedia.org/wiki/Forest_of_the_Pygmies
+    - https://openlibrary.org/isbn/9780007199631
+
+- id: isabel-allende/el-bosque-de-los-pigmeos/porto-editora-2014-pt
+  workId: isabel-allende/el-bosque-de-los-pigmeos
+  isbn13: "9789720046727"
+  language: pt-PT
+  title: "O Bosque dos Pigmeus"
+  translator: "Maria Helena Pitta"
+  publisher: Porto Editora
+  year: 2014
+  note: Reprinted as recently as 2019 under this same ISBN.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-04672-7&profile=bn"
+
+- id: isabel-allende/el-zorro-comienza-la-leyenda/harper-2005-en
+  workId: isabel-allende/el-zorro-comienza-la-leyenda
+  isbn13: "9780060778972"
+  language: en
+  title: "Zorro"
+  translator: "Margaret Sayers Peden"
+  publisher: Harper
+  year: 2005
+  sources:
+    - https://en.wikipedia.org/wiki/Margaret_Sayers_Peden
+    - https://openlibrary.org/isbn/9780060778972
+
+- id: isabel-allende/el-zorro-comienza-la-leyenda/difel-2005-pt
+  workId: isabel-allende/el-zorro-comienza-la-leyenda
+  isbn13: "9789722907361"
+  language: pt-PT
+  title: "Zorro: o Começo da Lenda"
+  translator: "J. Teixeira de Aguilar"
+  publisher: Difel
+  year: 2005
+  note: >
+    The only Portuguese edition found; never reissued by Porto Editora in
+    the BNP holdings checked here, so out of print. ISBN converted from
+    Difel's own ISBN-10 (972-29-0736-0), the same one printed on both the
+    1st and 2nd editions.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=.AW&term=Allende%2C+Isabel&aspect=basic_search&menu=search&source=~!bnp&profile=bn"
+
+- id: isabel-allende/ines-del-alma-mia/harpercollins-2007-en
+  workId: isabel-allende/ines-del-alma-mia
+  isbn13: "9780007241163"
+  language: en
+  title: "Inés of My Soul"
+  translator: "Margaret Sayers Peden"
+  publisher: HarperCollins Publishers Limited
+  year: 2007
+  sources:
+    - https://en.wikipedia.org/wiki/Margaret_Sayers_Peden
+    - https://openlibrary.org/isbn/9780007241163
+
+- id: isabel-allende/ines-del-alma-mia/porto-editora-2015-pt
+  workId: isabel-allende/ines-del-alma-mia
+  isbn13: "9789720047496"
+  language: pt-PT
+  title: "Inês da Minha Alma"
+  translator: "Ana Mendes Lopes (Phala - Gabinete de Tradução)"
+  publisher: Porto Editora
+  year: 2015
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-04749-6&profile=bn"
+
+- id: isabel-allende/la-isla-bajo-el-mar/harper-2010-en
+  workId: isabel-allende/la-isla-bajo-el-mar
+  isbn13: "9780061988240"
+  language: en
+  title: "Island Beneath the Sea"
+  translator: "Margaret Sayers Peden"
+  publisher: Harper
+  year: 2010
+  sources:
+    - https://en.wikipedia.org/wiki/Island_Beneath_the_Sea
+    - https://openlibrary.org/isbn/9780061988240
+
+- id: isabel-allende/la-isla-bajo-el-mar/porto-editora-2015-pt
+  workId: isabel-allende/la-isla-bajo-el-mar
+  isbn13: "9789720019486"
+  language: pt-PT
+  title: "A Ilha Debaixo do Mar"
+  translator: "Jorge Fallorca"
+  publisher: Porto Editora
+  year: 2015
+  note: 2nd Porto Editora edition; the first Portuguese printing (2009) was Inapa's, before the backlist moved to Porto Editora.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-01948-6&profile=bn"
+
+- id: isabel-allende/el-cuaderno-de-maya/harpercollins-2013-en
+  workId: isabel-allende/el-cuaderno-de-maya
+  isbn13: "9781443413299"
+  language: en
+  title: "Maya's Notebook"
+  translator: "Anne McLean"
+  publisher: HarperCollins
+  year: 2013
+  note: >
+    Translator per OpenLibrary's contributor record for this work; no
+    per-edition copyright-page statement was independently checked.
+  sources:
+    - https://openlibrary.org/isbn/9781443413299
+
+- id: isabel-allende/el-cuaderno-de-maya/porto-editora-2011-pt
+  workId: isabel-allende/el-cuaderno-de-maya
+  isbn13: "9789720043849"
+  language: pt-PT
+  title: "O Caderno de Maya"
+  translator: "Alcinda Marinho"
+  publisher: Porto Editora
+  year: 2011
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-04384-9&profile=bn"
+
+- id: isabel-allende/el-juego-de-ripper/harpercollins-2014-en
+  workId: isabel-allende/el-juego-de-ripper
+  isbn13: "9781443426206"
+  language: en
+  title: "Ripper"
+  translator: "Ollie Brock and Frank Wynne"
+  publisher: HarperCollins Publishers Ltd
+  year: 2014
+  note: First Canadian edition; by-statement reads "translated from the Spanish by Ollie Brock and Frank Wynne."
+  sources:
+    - https://openlibrary.org/isbn/9781443426206
+
+- id: isabel-allende/el-juego-de-ripper/porto-editora-2014-pt
+  workId: isabel-allende/el-juego-de-ripper
+  isbn13: "9789720044983"
+  language: pt-PT
+  title: "O Jogo de Ripper"
+  translator: "Ângela Barroqueiro"
+  publisher: Porto Editora
+  year: 2014
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-04498-3&profile=bn"
+
+- id: isabel-allende/el-amante-japones/atria-2015-en
+  workId: isabel-allende/el-amante-japones
+  isbn13: "9781501116971"
+  language: en
+  title: "The Japanese Lover"
+  translator: "Nick Caistor and Amanda Hopkinson"
+  publisher: Atria Books
+  year: 2015
+  sources:
+    - https://en.wikipedia.org/wiki/The_Japanese_Lover
+    - https://openlibrary.org/isbn/9781501116971
+
+- id: isabel-allende/el-amante-japones/porto-editora-2015-pt
+  workId: isabel-allende/el-amante-japones
+  isbn13: "9789720047748"
+  language: pt-PT
+  title: "O Amante Japonês"
+  translator: "Ângela Barroqueiro"
+  publisher: Porto Editora
+  year: 2015
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-04774-8&profile=bn"
+
+- id: isabel-allende/mas-alla-del-invierno/atria-2017-en
+  workId: isabel-allende/mas-alla-del-invierno
+  isbn13: "9781501178139"
+  language: en
+  title: "In the Midst of Winter"
+  translator: "Nick Caistor and Amanda Hopkinson"
+  publisher: Atria Books
+  year: 2017
+  sources:
+    - https://openlibrary.org/isbn/9781501178139
+
+- id: isabel-allende/mas-alla-del-invierno/porto-editora-2017-pt
+  workId: isabel-allende/mas-alla-del-invierno
+  isbn13: "9789720030221"
+  language: pt-PT
+  title: "Para Lá do Inverno"
+  translator: "Ângela Barroqueiro"
+  publisher: Porto Editora
+  year: 2017
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-03022-1&profile=bn"
+
+- id: isabel-allende/largo-petalo-de-mar/ballantine-2020-en
+  workId: isabel-allende/largo-petalo-de-mar
+  isbn13: "9781984820150"
+  language: en
+  title: "A Long Petal of the Sea"
+  translator: "Nick Caistor and Amanda Hopkinson"
+  publisher: Ballantine Books
+  year: 2020
+  sources:
+    - https://en.wikipedia.org/wiki/A_Long_Petal_of_the_Sea
+    - https://openlibrary.org/isbn/9781984820150
+
+- id: isabel-allende/largo-petalo-de-mar/porto-editora-2019-pt
+  workId: isabel-allende/largo-petalo-de-mar
+  isbn13: "9789720032331"
+  language: pt-PT
+  title: "Longa Pétala de Mar"
+  translator: "José Pedro Leite"
+  publisher: Porto Editora
+  year: 2019
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-03233-1&profile=bn"
+
+- id: isabel-allende/violeta/ballantine-2022-en
+  workId: isabel-allende/violeta
+  isbn13: "9780593496206"
+  language: en
+  title: "Violeta"
+  translator: "Frances Riddle"
+  format: hardcover
+  publisher: Ballantine Books
+  year: 2022
+  sources:
+    - https://en.wikipedia.org/wiki/Violeta_(novel)
+    - https://openlibrary.org/isbn/9780593496206
+
+- id: isabel-allende/violeta/porto-editora-2022-pt
+  workId: isabel-allende/violeta
+  isbn13: "9789720035295"
+  language: pt-PT
+  title: "Violeta"
+  translator: "Carla Ribeiro"
+  publisher: Porto Editora
+  year: 2022
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-03529-5&profile=bn"
+
+- id: isabel-allende/el-viento-conoce-mi-nombre/ballantine-2023-en
+  workId: isabel-allende/el-viento-conoce-mi-nombre
+  isbn13: "9780593598108"
+  language: en
+  title: "The Wind Knows My Name"
+  translator: "Frances Riddle"
+  publisher: Ballantine Books
+  year: 2023
+  sources:
+    - https://openlibrary.org/isbn/9780593598108
+
+- id: isabel-allende/el-viento-conoce-mi-nombre/porto-editora-2023-pt
+  workId: isabel-allende/el-viento-conoce-mi-nombre
+  isbn13: "9789720036933"
+  language: pt-PT
+  title: "O Vento Conhece o Meu Nome"
+  translator: "Carla Ribeiro"
+  publisher: Porto Editora
+  year: 2023
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-03693-3&profile=bn"
+
+- id: isabel-allende/mi-nombre-es-emilia-del-valle/ballantine-2025-en
+  workId: isabel-allende/mi-nombre-es-emilia-del-valle
+  isbn13: "9780593975091"
+  language: en
+  title: "My Name Is Emilia Del Valle"
+  translator: "Frances Riddle"
+  format: hardcover
+  publisher: Ballantine Books
+  year: 2025
+  note: First US edition.
+  sources:
+    - https://openlibrary.org/isbn/9780593975091
+
+- id: isabel-allende/mi-nombre-es-emilia-del-valle/porto-editora-2025-pt
+  workId: isabel-allende/mi-nombre-es-emilia-del-valle
+  isbn13: "9789720055392"
+  language: pt-PT
+  title: "O Meu Nome É Emilia del Valle"
+  translator: "Carla Ribeiro"
+  publisher: Porto Editora
+  year: 2025
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-05539-2&profile=bn"
+
+# --- Extended (6 with an edition) ---
+
+- id: isabel-allende/la-ninfa-de-porcelana/porto-editora-2017-pt
+  workId: isabel-allende/la-ninfa-de-porcelana
+  isbn13: "9789720030054"
+  language: pt-PT
+  title: "A Ninfa de Porcelana"
+  translator: "Ângela Barroqueiro"
+  publisher: Porto Editora
+  year: 2017
+  note: >
+    Illustrated by Ana de Lima. No English edition found. This 2017
+    Portuguese title corroborates works.yaml's own ruling that "La ninfa de
+    porcelana," not the 1984 original "La gorda de porcelana," is the
+    current title for this work.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-03005-4&profile=bn"
+
+- id: isabel-allende/cuentos-de-eva-luna/penguin-1991-en
+  workId: isabel-allende/cuentos-de-eva-luna
+  isbn13: "9780241131039"
+  language: en
+  title: "The Stories of Eva Luna"
+  translator: "Margaret Sayers Peden"
+  publisher: Penguin Books
+  year: 1991
+  sources:
+    - https://en.wikipedia.org/wiki/The_Stories_of_Eva_Luna
+    - https://openlibrary.org/isbn/9780241131039
+
+- id: isabel-allende/cuentos-de-eva-luna/porto-editora-2013-pt
+  workId: isabel-allende/cuentos-de-eva-luna
+  language: pt-PT
+  title: "Contos de Eva Luna"
+  translator: "Cristina Paixão"
+  publisher: Porto Editora
+  year: 2013
+  note: >
+    Retranslation, superseding Carlos Martins Pereira's 1990-2004 Difel
+    translation. No isbn13 recorded: BNP's own record gives
+    "978-972-0-04448-7," which fails its check digit (the first twelve
+    digits sum to 122, requiring check digit 8, not 7), and no
+    corroborating source was found to confirm the true final digit.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=.AW&term=Allende%2C+Isabel&aspect=basic_search&menu=search&source=~!bnp&profile=bn"
+
+- id: isabel-allende/paula/harper-perennial-1996-en
+  workId: isabel-allende/paula
+  isbn13: "9780060927219"
+  language: en
+  title: "Paula"
+  translator: "Margaret Sayers Peden"
+  format: paperback
+  publisher: Harper Perennial
+  year: 1996
+  sources:
+    - https://en.wikipedia.org/wiki/Margaret_Sayers_Peden
+    - https://openlibrary.org/isbn/9780060927219
+
+- id: isabel-allende/paula/porto-editora-2013-pt
+  workId: isabel-allende/paula
+  isbn13: "9789720044426"
+  language: pt-PT
+  title: "Paula"
+  translator: "Ângela Barroqueiro"
+  publisher: Porto Editora
+  year: 2013
+  note: Retranslation, superseding José Carlos Gonzalez's 1995-2008 Difel translation.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-04442-6&profile=bn"
+
+- id: isabel-allende/afrodita/harper-perennial-1999-en
+  workId: isabel-allende/afrodita
+  isbn13: "9780060930172"
+  language: en
+  title: "Aphrodite"
+  translator: "Margaret Sayers Peden"
+  format: paperback
+  publisher: Harper Perennial
+  year: 1999
+  note: A UK Flamingo edition appeared a year earlier, in 1998; its ISBN was not confirmed.
+  sources:
+    - https://en.wikipedia.org/wiki/Margaret_Sayers_Peden
+    - https://openlibrary.org/isbn/9780060930172
+
+- id: isabel-allende/afrodita/difel-2006-pt
+  workId: isabel-allende/afrodita
+  isbn13: "9789722903899"
+  language: pt-PT
+  title: "Afrodite: Histórias, Receitas e Outros Afrodisíacos"
+  translator: "Cristina Rodrigues e Artur Guerra"
+  publisher: Difel
+  year: 2006
+  note: >
+    The only Portuguese edition found (6th printing); never reissued by
+    Porto Editora, so out of print. ISBN converted from Difel's own
+    ISBN-10 (972-29-0389-6), unchanged across every printing from 1997 on.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=.AW&term=Allende%2C+Isabel&aspect=basic_search&menu=search&source=~!bnp&profile=bn"
+
+- id: isabel-allende/mi-pais-inventado/harpercollins-2003-en
+  workId: isabel-allende/mi-pais-inventado
+  isbn13: "9780060545642"
+  language: en
+  title: "My Invented Country"
+  translator: "Margaret Sayers Peden"
+  publisher: HarperCollins
+  year: 2003
+  sources:
+    - https://openlibrary.org/isbn/9780060545642
+
+- id: isabel-allende/mi-pais-inventado/porto-editora-2014-pt
+  workId: isabel-allende/mi-pais-inventado
+  language: pt-PT
+  title: "O Meu País Inventado"
+  translator: "Armando Pereira da Silva"
+  publisher: Porto Editora
+  year: 2014
+  note: >
+    No isbn13 recorded: BNP's own record gives "978-972-0-04675-5," which
+    fails its check digit (the sum requires 8, not 5). The neighbouring BNP
+    record for a DIFFERENT title (Filha da Fortuna) carries the valid
+    "978-972-0-04675-8" on what should be a different item number entirely,
+    pointing to a cataloguing fault rather than a genuine shared root. No
+    corroborating source was found to confirm the true number.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=.AW&term=Allende%2C+Isabel&aspect=basic_search&menu=search&source=~!bnp&profile=bn"
+
+- id: isabel-allende/la-suma-de-los-dias/harper-2008-en
+  workId: isabel-allende/la-suma-de-los-dias
+  isbn13: "9780061551833"
+  language: en
+  title: "The Sum of Our Days"
+  translator: "Margaret Sayers Peden"
+  format: hardcover
+  publisher: Harper
+  year: 2008
+  sources:
+    - https://openlibrary.org/isbn/9780061551833
+
+- id: isabel-allende/la-suma-de-los-dias/porto-editora-2013-pt
+  workId: isabel-allende/la-suma-de-los-dias
+  isbn13: "9789720042453"
+  language: pt-PT
+  title: "A Soma dos Dias"
+  translator: "Isabel Pedrome"
+  publisher: Porto Editora
+  year: 2013
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-04245-3&profile=bn"
+
+- id: isabel-allende/mujeres-del-alma-mia/ballantine-2021-en
+  workId: isabel-allende/mujeres-del-alma-mia
+  isbn13: "9780593355626"
+  language: en
+  title: "The Soul of a Woman"
+  publisher: Ballantine Books
+  year: 2021
+  note: >
+    Non-literal English title, matched by content (Allende's own feminist
+    memoir/essay, published in Spanish the same year). No translator
+    credited in any library-catalogue record found for this edition.
+  sources:
+    - https://openlibrary.org/isbn/9780593355626
+
+- id: isabel-allende/mujeres-del-alma-mia/porto-editora-2021-pt
+  workId: isabel-allende/mujeres-del-alma-mia
+  isbn13: "9789720033802"
+  language: pt-PT
+  title: "Mulheres da Minha Alma: Sobre o Amor Impaciente, a Vida Longa e as Bruxas Boas"
+  translator: "Carla Ribeiro"
+  publisher: Porto Editora
+  year: 2021
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-03380-2&profile=bn"
+
+- id: isabel-allende/la-palabra-magica/porto-editora-2026-pt
+  workId: isabel-allende/la-palabra-magica
+  isbn13: "9789720058249"
+  language: pt-PT
+  title: "A Palavra Mágica: Uma Vida Escrita"
+  translator: "Carla Ribeiro"
+  publisher: Porto Editora
+  year: 2026
+  note: Forthcoming; already catalogued by BNP against the work's own announced 2026 release. No English edition found yet.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-05824-9&profile=bn"
+
+- id: isabel-allende/perla-la-super-perrita/penguin-2024-en
+  workId: isabel-allende/perla-la-super-perrita
+  isbn13: "9780593623596"
+  language: en
+  format: hardcover
+  publisher: Penguin
+  year: 2024
+  note: >
+    English-original edition (this work was composed in English, per
+    works.yaml's own note); `title` omitted per SCHEMA.md since the work's
+    own title already is this edition's title. Illustrated by Sandy
+    Rodríguez.
+  sources:
+    - https://openlibrary.org/isbn/9780593623596
+
+- id: isabel-allende/perla-la-super-perrita/porto-editora-2024-pt
+  workId: isabel-allende/perla-la-super-perrita
+  isbn13: "9789720726193"
+  language: pt-PT
+  title: "Perla, a Cadelinha Poderosa"
+  translator: "Carla Ribeiro"
+  publisher: Porto Editora
+  year: 2024
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-72619-3&profile=bn"
+
+- id: isabel-allende/perla-y-el-pirata/porto-editora-2025-pt
+  workId: isabel-allende/perla-y-el-pirata
+  isbn13: "9789720731081"
+  language: pt-PT
+  title: "Perla e o Pirata"
+  translator: "Carla Ribeiro"
+  publisher: Porto Editora
+  year: 2025
+  note: English-original edition not found in any catalogue checked (OpenLibrary has no record for it).
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-0-73108-1&profile=bn"
