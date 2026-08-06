@@ -25,16 +25,14 @@
 #
 # CANON TIER is a publication-kind judgment, not a fame or quality one
 # (SCHEMA.md, CURATION.md #7) - the same discipline this catalogue already
-# applies to Saramago and Grisham. CORE is the 21 novels: the
-# narrative-fiction spine every source checked builds from, including one
-# thin, little-documented 1984 novella (see its own note) tiered here on
-# the same publication-kind test as the other 20, not on how well-known it
-# is. EXTENDED is genuinely hers, off the novel-reading spine: the 2
-# story/journalism collections, the 6 memoirs, the 3 pieces of 1974
-# juvenilia/journalism, and the 3 English-original children's picture
-# books. APOCRYPHA is for the 2 items that fit neither: a slim
-# story-plus-essay chapbook and a compiled anthology of her own previously
-# published love scenes.
+# applies to Saramago and Grisham. CORE is the 20 novels: the
+# narrative-fiction spine every source checked builds from. EXTENDED is
+# genuinely hers, off the novel-reading spine: 1 short-story collection, 6
+# memoirs, 3 pieces of 1974 juvenilia/journalism, a 1984 illustrated
+# children's story (see this file's own note on its title), and 3
+# English-original children's picture books. APOCRYPHA is for the 2 items
+# that fit neither: a slim story-plus-essay chapbook and a compiled
+# anthology of her own previously published love scenes.
 #
 # TRANSLATORS. Margaret Sayers Peden translated most of her catalogue from
 # Daughter of Fortune (1998) onward into the mid-2010s and, per her own
@@ -78,14 +76,20 @@
 #   to a title inside a collection on other wings in this catalogue.
 #
 # A NOTE ON TITLES. "La ninfa de porcelana" is this file's title for the
-# 1984 item Wikipedia's English Fiction list calls "The Porcelain Fat
-# Lady (La gorda de porcelana)": both her own official site
-# (isabelallende.com/en/book/ninfa, still active) and independent readers'
-# reviews confirm "La gorda de porcelana" was the title it received at its
-# 1984 first publication, later changed to "La ninfa de porcelana" - the
-# name Allende's own site currently uses, and so the one used here,
-# consistent with this catalogue's rule that a living author's own current
-# usage governs where sources disagree on a title.
+# item Alfaguara first published in 1984, illustrated by Fernando Krahn in
+# its "Juvenil" (youth) series, as "La gorda de porcelana." It has its own
+# English Wikipedia article, "The Porcelain Fat Lady," which calls it "a
+# children's story" outright and carries it under the categories "1984
+# children's books" and "Spanish-language children's books" - not a
+# novella, despite the "cuento" length reading closer to a short story
+# than a picture book. Her own official site (isabelallende.com/es/book/
+# ninfa) now uses "La ninfa de porcelana" for the same story - same
+# protagonist (Don Cornelio), same porcelain figure (Fantasía) - reissued
+# in 2017 as an illustrated "cuento para colorear" (colouring-book
+# edition); the retitling is a reissue, not a different work. The current
+# title is used here, consistent with this catalogue's rule that a living
+# author's own current usage governs where sources disagree on a title;
+# `published` stays 1984, the year of the original edition.
 
 # --- 1974: journalism and children's juvenilia ---
 
@@ -145,7 +149,7 @@
     - https://en.wikipedia.org/wiki/Isabel_Allende
     - https://es.wikipedia.org/wiki/Isabel_Allende
 
-# --- Novels (core, 21) ---
+# --- Novels (core, 20) ---
 
 - id: isabel-allende/la-casa-de-los-espiritus
   title: "La Casa de los Espíritus"
@@ -183,30 +187,6 @@
   sources:
     - https://en.wikipedia.org/wiki/Of_Love_and_Shadows
     - https://es.wikipedia.org/wiki/Isabel_Allende
-
-- id: isabel-allende/la-ninfa-de-porcelana
-  title: "La Ninfa de Porcelana"
-  authorIds: [isabel-allende]
-  published: 1984
-  subseries: null
-  canonTier: core
-  format: novella
-  synopsis: >
-    A man who buys a porcelain figurine finds his life transformed after
-    the seller warns him it will change him.
-  note: >
-    Her thinnest, least-documented book: sourced only to a handful of
-    reader reviews and her own official site (which has never issued an
-    English translation of it), not to a dedicated encyclopedia article
-    the way every other work here is. See this file's header on the
-    title change from its 1984 name, "La gorda de porcelana." Tiered core
-    on the same publication-kind test as the rest of this list rather
-    than downgraded for being obscure (CURATION.md #7). Its exact form is
-    not settled here: several reader sources call it a "cuento," which
-    would make short-story the more accurate `format` than novella.
-  sources:
-    - https://www.isabelallende.com/en/book/ninfa
-    - https://en.wikipedia.org/wiki/Isabel_Allende
 
 - id: isabel-allende/eva-luna
   title: "Eva Luna"
@@ -503,6 +483,40 @@
     - https://www.britannica.com/topic/My-Name-Is-Emilia-del-Valle
     - https://historicalnovelsociety.org/reviews/my-name-is-emilia-del-valle/
 
+# --- Children's story, extended ---
+
+- id: isabel-allende/la-ninfa-de-porcelana
+  title: "La Ninfa de Porcelana"
+  authorIds: [isabel-allende]
+  published: 1984
+  subseries: null
+  canonTier: extended
+  format: picture-book
+  synopsis: >
+    A shy, rigidly punctual notary clerk falls for a porcelain figure
+    named Fantasía in a shop window, spends a month's wages to bring her
+    home, and lets her draw him out of two decades of routine until he
+    gives up his job to become a colourfully dressed street vendor.
+  note: >
+    A children's story, not a novel or novella: Alfaguara first published
+    it in 1984 as "La gorda de porcelana," illustrated by Fernando Krahn,
+    in its "Juvenil" (youth) series. It has its own English Wikipedia
+    article, "The Porcelain Fat Lady," which calls it outright "a
+    children's story" and categorizes it under "1984 children's books."
+    Her own official site now titles it "La ninfa de porcelana" for a
+    2017 illustrated reissue as a "cuento para colorear" (colouring
+    book) - same protagonist (Don Cornelio) and same porcelain figure
+    (Fantasía), so a reissue of the same work rather than a different
+    one. `published` stays 1984, the year of the original edition; the
+    title follows this catalogue's rule that a living author's own
+    current usage governs where sources disagree. Tiered here alongside
+    her other children's books (see this file's header) rather than with
+    the 20 novels - a publication-kind correction, not a judgment on the
+    story's quality.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Porcelain_Fat_Lady
+    - https://www.isabelallende.com/en/book/ninfa
+
 # --- Story and journalism collections, extended ---
 
 - id: isabel-allende/cuentos-de-eva-luna
@@ -724,10 +738,22 @@
     Spanish-only text, no English edition), first published in Germany,
     with editions in other languages following - so likely composed and
     first issued in German translation rather than Spanish, an inversion
-    of every other item in this bibliography; not independently verified
-    beyond that one page. No `format` value in this catalogue's taxonomy
+    of every other item in this bibliography; the German edition's own
+    year is not found. `published` follows the first Spanish edition
+    instead, per this catalogue's rule that a non-anglophone author's
+    `published` year tracks the original language, not a foreign
+    first-translation. That Spanish year is itself contested: her own
+    site's Spanish page (isabelallende.com/es/book/amor) reads "Primera
+    edición en español (c)2011," but the Library of Congress catalog
+    record for the first Plaza & Janes trade edition (ISBN
+    978-84-01-35375-8, LCCN 2013369406) gives Nov 8, 2012 - kept here as
+    `published` since it is a dated first-edition record, against a
+    copyright-page year that may predate the book's actual public
+    release; the two sources remain uncorroborated against each other.
+    No `format` value in this catalogue's taxonomy
     covers a self-compiled anthology of an author's own prior fiction
     plus one new essay, so none is set here.
   sources:
     - https://www.isabelallende.com/en/book/amor/summary
+    - https://openlibrary.org/works/OL16805507W/editions.json
     - https://es.wikipedia.org/wiki/Isabel_Allende
