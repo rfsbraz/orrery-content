@@ -1,0 +1,90 @@
+stage: visual-metadata
+summary: >
+  Sourced covers for 10 of 13 works and one portrait shared by both global
+  author entities. `lookup.py` in author-search mode (not --check-covers,
+  which only checks an existing editions.yaml - this wing has none yet)
+  found candidate editions for 9 of the 11 core novels; Open Library search
+  by Swedish title plus author found a clean Swedish-original cover for 7 of
+  those (all but Spegelmannen and Spindeln, which have none there), plus a
+  Dutch-translation cover for Playground. Sömngångaren (2024), Medusa
+  (forthcoming 2026-09-21) and Sjömannen (2025) have no Open Library record
+  under any spelling checked - a cataloguing lag on recent/forthcoming
+  titles, not a rights gap.
+
+  Hypnotisören: verified via its own 37-edition Open Library record that no
+  edition carries the Black Edition's ISBN (9789100186777, per works.yaml's
+  header) - the chosen cover (Bonnier 2010 Swedish paperback,
+  9789100124045) is unambiguously the original 2009 novel.
+
+  Two covers rejected by eye, not by any automated check: FSG's 2011 US
+  "The Hypnotist" (id 9846733) has a Boston Public Library barcode and
+  ownership stamp burned into the jacket; a Swedish "Eldvittnet" (id
+  12800649) is a title-page scan with no jacket art. Clean alternatives
+  existed for both.
+
+  Portrait: one photograph on both alexandra-coelho-ahndoril.yaml and
+  alexander-ahndoril.yaml, not two solo portraits. Unlike this catalogue's
+  other multi-author wings (Lee Child/Andrew Child, Tolkien/Christopher
+  Tolkien, Jordan/Sanderson - sequential single-name bylines credited
+  individually), this couple has never published or appeared as Lars Kepler
+  apart from each other. Commons catalogues several joint photos of them
+  under "Lars Kepler" (not either individual name) alongside candid solo
+  shots of each from 2022/2024. Chose the 2012 Rosenbad photo (Frankie
+  Fouganthin, CC BY-SA 4.0): the only straight-on, evenly lit two-person
+  studio shot among the joint candidates, 883x1280 (true portrait aspect,
+  no crop needed) - a shared image represents an author who never appears
+  alone more accurately than either solo candid would.
+
+  Header: not sourced. franchise.yaml untouched - this catalogue's own
+  carried-forward finding is that `franchise.images.header` is declared in
+  schema but rendered by zero app code, so time was spent on covers instead.
+
+  validate.py --slug lars-kepler: 0 errors, same 3 pre-existing
+  handoff-length warnings this wing already carried. All 10 cover URLs and
+  the portrait URL fetched (`?default=false` on the OpenLibrary ones) and
+  visually inspected - all render the correct real image.
+
+produced:
+  franchiseFiles:
+    - "works.yaml: images.cover/coverCredit/coverSource on 10/13 works; a
+      data-decision comment on each of the 3 left bare"
+  authorFiles:
+    - "alexandra-coelho-ahndoril.yaml: images.portrait/Credit/Source, full
+      joint-vs-solo reasoning in the header comment"
+    - "alexander-ahndoril.yaml: same portrait URL/credit/source, comment
+      cross-references Alexandra's file"
+  coverage: "10/13 works (77%); 2 authors share 1 portrait"
+  coversByWork:
+    lars-kepler/hypnotisoren: "Swedish original, Bonnier 2010 (OL19754844W)"
+    lars-kepler/paganinikontraktet: "Swedish original, Bonnier 2010 (OL15940940W)"
+    lars-kepler/eldvittnet: "Swedish original, Bonniers (OL16584520W)"
+    lars-kepler/sandmannen: "Swedish original, Bonniers 2012 (OL16803046W)"
+    lars-kepler/stalker: "Swedish original, Bonniers 2015 (OL17355119W)"
+    lars-kepler/kaninjagaren: "Swedish original, Bonniers 2016 (OL33839232W)"
+    lars-kepler/lazarus: "Swedish original, Bonniers 2018 (OL44620443W)"
+    lars-kepler/spegelmannen: "No Swedish cover; EN translation 'Mirror Man' 2022 (OL25466922W)"
+    lars-kepler/spindeln: "No Swedish cover; EN translation 'Spider' 2023 (OL31175043W)"
+    lars-kepler/playground: "No Swedish cover; NL translation, Cargo 2015 (OL20778007W)"
+    lars-kepler/somngangaren: "No cover - no OL record yet (2024)"
+    lars-kepler/medusa: "No cover - unpublished (2026-09-21)"
+    lars-kepler/sjomannen: "No cover - no OL record yet (2025)"
+
+forStages:
+  future visual-metadata passes: >
+    Sömngångaren, Medusa, Sjömannen are recency gaps, not rights gaps -
+    worth rechecking on Open Library periodically, especially Medusa after
+    its 2026-09-21 release. If editions.yaml is ever built for this wing,
+    also try covers.openlibrary.org/b/isbn/ against its ISBNs directly.
+  any future stage touching franchise.yaml: >
+    The header slot is empty by judgement (inert in the app per this
+    catalogue's standing finding), not an unfinished task.
+
+openQuestions:
+  - "Spegelmannen and Spindeln (2020, 2022 - the wing's two most recent core
+    entries) are the only 2 of 9 covered core novels using a translated
+    rather than Swedish-original cover; may just be Open Library not yet
+    holding a Swedish scan for either. Worth a recheck later."
+  - "The franchise.images.header inert-in-app finding was carried forward
+    from prior-wing history, not re-verified against the app repo (this
+    worktree holds orrery-content only). Revisit the skip if that has
+    changed."
