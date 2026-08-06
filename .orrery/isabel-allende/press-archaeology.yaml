@@ -1,0 +1,75 @@
+stage: press-archaeology
+summary: >
+  Built 11 lifeEvents (1942 birth through the 2015 Gordon separation) and
+  2 franchise events (the 2023 Florida school ban, the 2026 Amazon Prime
+  miniseries), closing the flagged 12-year dark run (1983-1994) and four
+  more the tool did not flag (1975-1981, 1996-2000, 2002-2006, 2012-2019)
+  down to a worst case of 4 years (1977-1980). Resolved the Salvador
+  Allende family-degree question as "first cousin" (father's generation)
+  via Levine's Twayne biography and a 2003 NYT profile, both independent
+  of her own site and of each other. Checked the citizenship-year
+  conflict hard - found her own official timeline giving 1993 and a
+  dated 2003 DPA wire report giving 2003, both internally consistent with
+  her 1988 California move - and left it genuinely unresolved. Rewrote
+  the author file's header to drop the now-moot "can't add lifeEvents
+  without visual language" reasoning (SCHEMA.md: organisation/
+  illustration_type/images_required are optional, default to `beside`).
+produced:
+  authorFiles: [content/authors/isabel-allende.yaml]
+  franchiseFiles: [content/franchises/isabel-allende/events.yaml]
+  lifeEventCount: {isabel-allende: 11}
+  franchiseEventIds:
+    - allende-florida-book-ban-2023
+    - allende-house-of-spirits-amazon-miniseries-2026
+rejected:
+  - "1978 temporary separation from Miguel Frías: real and dated, but the
+    only source found (her own official timeline) is also the source
+    English Wikipedia's own citation for the same fact points back to -
+    not two independent accounts of a family matter. Held out."
+  - "Amor's 'first published in Germany' and any connection between Mi
+    país inventado and 9/11 (a claim I went looking for and could not
+    source): not found stated anywhere fetchable this run - not added
+    from memory."
+  - "The Florida ban's district/court specifics beyond 'statewide list of
+    673 titles under Florida's content laws': the one solid source found
+    (Infobae) doesn't give more, and PEN America's own tracker and
+    English-language coverage (Tampa Bay Times, Orlando Sentinel, ALA)
+    weren't reachable with the tools this run had (PEN America 403s
+    automated fetches; no web search was available for the second half of
+    this run - see openQuestions)."
+forStages:
+  eras: >
+    Her own timeline supports a sharper exile-era boundary than the
+    scaffold's rough 1975-1988 guess: 1975 (flight) through 1988 (marries
+    Gordon, moves to California) is when she is politically barred from
+    Chile; 1990 (democracy restored, she returns to receive an award) is
+    when that changes personally, two years after the geographic move.
+    Also worth a look: 1996-2006 reads as a "memoir and mission" stretch
+    (Foundation, Paula, My Invented Country) bridging the fiction-only
+    early career and the later historical novels from Inés del alma mía
+    (2006) on.
+  visual-language: >
+    New lifeEvents lean structurally toward document/place cells (a
+    letter, a coup, an exile, a divorce, a death, a medal) rather than
+    portrait-heavy ones - only the birth needs a place-portrait/vista
+    treatment. No fictional-character exceptions needed; the coup and
+    exile events are about real historical persons and places.
+openQuestions:
+  - "This run lost web search access partway through (session budget
+    exhausted) and continued on scripts/fetch.py against known/derived
+    URLs only. Everything added is sourced to a URL actually fetched and
+    checked (200), but a second pass with search would likely find more
+    for the Florida ban and could re-attempt the citizenship tie-break
+    (a Chilean or U.S. immigration-record source, if one is public,
+    would settle it outright)."
+  - "1977-1980 (4 years) is the new worst dark run: her own timeline and
+    the Guardian CV both place her in ordinary Caracas day-jobs
+    (freelance journalism, then school administration) through this
+    stretch with nothing dramatic recorded anywhere checked - read as a
+    genuinely quiet stretch, not an under-researched one, per the
+    skill's own test."
+  - "The Miguel Frías 1962 marriage date (her own site) vs. Spanish
+    Wikipedia's prose, which does the arithmetic as 1959+4=1963: not
+    investigated further since her own site is the more authoritative
+    self-record and no source contradicts 1962 directly; flagging in
+    case a later pass finds a primary record either way."
