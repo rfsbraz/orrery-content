@@ -86,3 +86,21 @@ openQuestions:
     The Copycat forum-handle redaction may be stricter than needed: Anna's
     handle appears early, and whether the forum is also load-bearing at the
     end could not be established.
+
+auditFixes:
+  - where: events.yaml header comment
+    finding: wing-audit blocking #1 (owner spoiler-audit)
+    found: >
+      The header comment justifying the Copycat redaction named what was
+      withheld rather than only that something was, defeating the
+      redaction it was describing - CURATION §2's third trap: naming what
+      was withheld publishes it, in a public repo, permanently.
+    fixed: >
+      Rewrote the paragraph to state the principle only: some of the New
+      Yorker's similarities are withheld because spelling them out here
+      would undo the entry's own redaction and hand a reader who follows
+      the citation the novel's own reveal regardless. No detail of what is
+      withheld, or where in the book it falls, appears in the comment
+      anymore. Rendered entry title/description (both locales) and the
+      pt-PT overlay were not touched - they were already clean.
+      validate.py --slug aj-finn: 0 errors, unchanged.
