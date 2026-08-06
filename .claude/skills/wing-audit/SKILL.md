@@ -317,12 +317,14 @@ rule below is enforced by nothing but this audit.
   answer is no, the fix is either to enrich the layer (route it) or to set the
   capability `off` with a comment saying why and what would turn it back on.
 - **Is `globalEvents` doing its job?** Nothing validates the `include` / `exclude`
-  ids, and the absence of the block entirely is invisible. The default filter is
-  arithmetic - the authors' lifetimes - so any global event inside that window
-  reaches this wing whether or not it ever reached the author. Read the global
-  list against the author and ask, per event, whether it belongs. Route the
-  answers to `event-resonance`; the finding that the block was never written at
-  all is yours.
+  ids, and the absence of the block entirely is invisible. An event renders only
+  if it is named in `include` - `exclude` gates nothing, and there is no
+  arithmetic default (docs/SCHEMA.md). The authors' lifetimes only bound which
+  events are even worth *considering*, in `event-resonance`'s own judgment pass;
+  they never render anything by themselves. Read the global list against the
+  author and ask, per event, whether it belongs. Route the answers to
+  `event-resonance`; the finding that the block was never written at all is
+  yours.
 
 ## 3. Density and proportion
 

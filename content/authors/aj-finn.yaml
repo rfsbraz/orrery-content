@@ -1,0 +1,233 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds), so the same person resolves the same everywhere.
+# Author-LIFE events live here (they follow the person); franchise-specific
+# events belong in content/franchises/aj-finn/events.yaml.
+#
+# IDENTITY. This wing's id/name is the pen name, "A. J. Finn," not the legal
+# name behind it - the opposite of this catalogue's default shape for a
+# pseudonym (Stephen King/Richard Bachman, Agatha Christie/Mary Westmacott,
+# J.K. Rowling/Robert Galbraith all key on the real, publicly-dominant name,
+# with the pen name recorded underneath it). Checked rather than assumed:
+# English Wikipedia's own article is titled and infoboxed as "A. J. Finn"
+# (fields: name = A. J. Finn, pseudonym = A. J. Finn, birth_name = Daniel
+# Mallory); "Daniel Mallory" is not a redirect to that article but a bare
+# disambiguation page pointing three unrelated people, one of them described
+# as "Dan Mallory, an American author who writes under the pseudonym A.J.
+# Finn" - the encyclopedia's own name for the person is the pen name, not the
+# legal one. HarperCollins' own author page (harpercollins.com/blogs/authors/
+# a-j-finn) runs entirely under "A. J. Finn" and never states the legal name
+# once, in the bio or anywhere else on the page - the publisher of both
+# novels markets this identity as the byline itself, not as an alias of a
+# more prominent name the way an "also writes as" line would. Wikidata (item
+# Q56084685) carries the same shape: label "A. J. Finn," description
+# "American author," with "Dan Mallory" / "Daniel Mallory" filed only as
+# "also known as." This exact shape - a pen name so dominant that it, not the
+# legal name, is the identity a reader, a publisher and an encyclopedia all
+# resolve to - already has a precedent in this catalogue: Lee Child (legal
+# name James Dover Grant) is filed the same way, id/name on the pen name,
+# `aka` carrying the legal name, `pseudonyms: []` because the byline never
+# varies. That is the model followed here rather than the King/Bachman one.
+#
+# "Daniel Mallory" and the shorter "Dan Mallory" are both attested in
+# independent press (the Duke alumni magazine profile, the Los Angeles
+# Times, The Guardian) and are recorded in `aka` for search, not in
+# `pseudonyms` - that field is for an alternate byline a person publishes
+# under (a second identity that carries its own `publishedAs` on a work);
+# no work in this wing is published as "Daniel Mallory," so there is nothing
+# for `pseudonyms` to record.
+#
+# Living author. The four lifeEvents below include real, public reporting on
+# fabricated illness and biography (2013, 2019) and an industry reaction to
+# his identity (2016), alongside the required birth entry - all held to the
+# two-independent-source bar for a living person's health, family or
+# professional-reputation history. The 2019 entry rests on Ian Parker's own
+# fact-checked New Yorker investigation (which reproduces primary documents:
+# e-mails, an Oxford application essay, a psychiatrist's own confirmation)
+# corroborated independently the same week by the Guardian's separate
+# reporting from its own unnamed sources inside Little, Brown - not merely
+# the Guardian summarizing the New Yorker, but its own sourcing of the same
+# underlying facts (the brain-cancer claim, the "Jake" e-mails). The 2013
+# entry rests on the same New Yorker investigation (which reproduces the
+# e-mails themselves and the countervailing Facebook evidence) plus the
+# Guardian's independent confirmation, from its own Little, Brown sources, of
+# the same fabrication pattern. The 2016 entry (an industry reaction to a
+# revealed identity, not a health/family/legal claim) rests on the New
+# Yorker and the Guardian both reporting the mid-auction reveal itself, at
+# this repo's ordinary sourcing bar; Parker's characterization of it as
+# reflecting "industry-wide unease" stays attributed to him in-text and
+# needs no second source, since it is presented as his own read rather than
+# an independent factual claim.
+id: aj-finn
+name: A. J. Finn
+aka: ["Daniel Mallory", "Dan Mallory"]
+born: 1979
+died: null
+# PORTRAIT. Checked both Commons candidates a Wikidata P18 walk turns up.
+# English Wikipedia's own infobox currently shows a different file
+# ("Ajfinn2019.png"), but that file's own extmetadata carries no Artist, no
+# Credit, and is filed by Commons itself under "Files with no machine-
+# readable author," "Media lacking author information" and "Images without
+# source" - an unverifiable "own work" claim, not a citable licence chain,
+# regardless of its filename's date. Used instead: "A.J. Finn 2018.jpg,"
+# Wikidata's own P18 claim on this entity, captioned in its own
+# ImageDescription "A.J. Finn at HeadRead in 2018, Tallinn, Estonia" - a
+# literary-festival appearance a year before the 2019 reporting, credited
+# to a named Commons photographer (WanderingTrad, "own work," CC BY-SA 4.0),
+# and captioned under the "A. J. Finn" byline itself rather than the legal
+# name. An ordinary author-at-a-podium press photo, not a photo whose
+# primary association is the scandal.
+images:
+  portrait: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/A.J._Finn_2018.jpg/1920px-A.J._Finn_2018.jpg"
+  portraitCredit: "WanderingTrad, CC BY-SA 4.0"
+  portraitSource: "https://commons.wikimedia.org/wiki/File:A.J._Finn_2018.jpg"
+bio: >
+  Pen name of Daniel Mallory, American author of psychological thrillers.
+  Born in 1979 and raised in Charlotte, North Carolina,
+  where he attended Charlotte Latin School; majored in English at Duke
+  University and later completed a master's degree at the University of
+  Oxford. Worked for several years in publishing in New York and London,
+  including at Little, Brown and Company and at William Morrow, the
+  HarperCollins imprint that went on to publish his own novels. His debut,
+  [[work:aj-finn/the-woman-in-the-window|The Woman in the Window]] (2018),
+  draws explicitly on Hitchcock's Rear Window and the film Gaslight, debuted
+  at number one on the New York Times bestseller list, and was adapted into
+  a 2021 film starring Amy Adams, Julianne Moore and Gary Oldman. In
+  February 2019, a New Yorker investigation reported years of fabricated
+  claims about his own health, education and family in his biography, which
+  he attributed to bipolar II disorder; the novel's plot also drew press
+  scrutiny that same month for similarities to another thriller, rebutted
+  within days on the strength of his own pre-existing outline. His second
+  novel, [[work:aj-finn/end-of-story|End of Story]] (2024), is set in San
+  Francisco. Openly gay; dedicated his first novel to his then-boyfriend.
+pseudonyms: []
+lifeEvents:
+  - id: ajf-born-1979
+    organisation: full-bleed-vista
+    illustration_type: establishing-landscape
+    images_required: 1
+    date: 1979
+    title: Born in 1979, raised in Charlotte, North Carolina
+    impact: low
+    description: >
+      Born in 1979 to Pamela and John Mallory; his maternal
+      grandfather, John Barton Poor, had chaired R.K.O. General, owner of a
+      chain of television and radio stations. The family lived in Garden
+      City, on Long Island, before moving to Virginia and then, when he was
+      about nine, to
+      Charlotte, North Carolina, where he grew up alongside his brother John
+      ("Jake") and two sisters, Hope and Elizabeth, and attended the private
+      Charlotte Latin School. The family spent summers in Amagansett, on
+      Long Island, where his mother has kept a house.
+    spoilerAfter: null
+    sources:
+      - "https://www.newyorker.com/magazine/2019/02/11/a-suspense-novelists-trail-of-deceptions"
+
+  - id: ajf-jake-surgery-emails-2013
+    organisation: artifact-spread
+    illustration_type: document-facsimile
+    images_required: 1
+    date: 2013-02-14
+    title: Emails signed by his brother describe a surgery only he attended
+    impact: high
+    description: >
+      On February 14, 2013, an email to New York publishing contacts, signed
+      "Jake" - the name Mallory's real, living brother John Mallory goes by
+      - described Dan undergoing unplanned overnight surgery, seven hours
+      long, to remove a tumor, with heavy blood loss and two transfusions.
+      Further "Jake" emails over the following weeks reported a lumbar
+      drain, an allergic reaction to a painkiller, and cardiac arrest,
+      before Dan resumed writing under his own name, referring to Vicodin
+      and a healing wound. The emails placed Jake at Dan's bedside in New
+      York throughout; that same week, Jake's fiancee posted a professional
+      "pre-wedding" photograph of the couple to Facebook (they married later
+      that year), and one recipient later supposed that "something crazy was
+      going on." The New Yorker's 2019 investigation reported that several
+      recipients came to suspect "Jake" was Dan writing as him; through a
+      spokesperson, Mallory said he was not the author of the "Jake" emails.
+      The pattern was not limited to this one instance: a former colleague
+      separately told the Guardian that while Mallory worked at Little,
+      Brown in London (2009-2012), he had told the office he had brain
+      cancer, and that he too had received emails from a "brother Jake"
+      describing his illness before growing suspicious it was untrue.
+    spoilerAfter: null
+    sources:
+      - "https://www.newyorker.com/magazine/2019/02/11/a-suspense-novelists-trail-of-deceptions"
+      - "https://www.theguardian.com/books/2019/feb/05/bestselling-author-of-the-woman-at-the-window-lied-about-having-cancer"
+
+  - id: ajf-auction-identity-revealed-2016
+    organisation: beside
+    illustration_type: network-constellation
+    images_required: 1
+    date: 2016
+    title: His identity is revealed mid-auction; most bidders walk, his own employer does not
+    impact: med
+    description: >
+      Partway through the two-book auction for "The Woman in the Window" in
+      2016, the identity of the author writing as A. J. Finn - Dan Mallory,
+      at the time a working editor rather than an outsider - was revealed to
+      the bidding houses, and most withdrew. Ian Parker's 2019 New Yorker
+      investigation reported this as reflecting "an industry-wide unease
+      with Mallory" built up over a decade in London and New York
+      publishing, one that had never become public. It did not stop William
+      Morrow, Mallory's own employer at the time, from continuing to bid and
+      buying the book, in a deal reported at two million dollars for two
+      books.
+    spoilerAfter: null
+    sources:
+      - "https://www.newyorker.com/magazine/2019/02/11/a-suspense-novelists-trail-of-deceptions"
+      - "https://www.theguardian.com/books/2019/feb/05/bestselling-author-of-the-woman-at-the-window-lied-about-having-cancer"
+
+  - id: ajf-new-yorker-trail-of-deceptions-2019
+    organisation: immersion
+    illustration_type: portrait-of-absence
+    images_required: 1
+    date: 2019-02-04
+    title: "A New Yorker investigation, and an admission: there was no cancer"
+    impact: high
+    description: >
+      On February 4, 2019, The New Yorker published Ian Parker's "A
+      Suspense Novelist's Trail of Deceptions," reporting years of
+      instances in which Mallory had stated or allowed colleagues,
+      professors and readers to believe he had cancer, a brain tumor, a
+      doctorate from Oxford (he completed a master's degree there in 2004
+      but never submitted a doctoral thesis), and a mother and brother who
+      had died - while his parents and three siblings were, as the magazine
+      confirmed, all then alive. The pattern had real roots: a 1999 Duke
+      Chronicle essay in which Mallory himself described writing to
+      colleges about his mother's real, then-current cancer diagnosis to
+      win sympathy for his grades - an actual illness, confirmed by
+      Parker's own reporting, that he leveraged rather than invented - and
+      it hardened into outright fabrication in a personal statement
+      submitted with his Oxford doctoral application, describing his
+      mother's death from cancer and his brother's death from cystic
+      fibrosis, neither of which had happened; his tutor, Craig Raine, who
+      had taken the essay as fact, learned from Parker that Mallory's
+      mother was alive and replied, "If she's alive, he lied." Through a
+      publicist, Mallory
+      issued a statement acknowledging that he had "stated, implied, or
+      allowed others to believe" he had cancer rather than a psychological
+      illness, attributing the pattern to severe bipolar II disorder,
+      diagnosed in 2015, and to the "crushing depressions, delusional
+      thoughts, morbid obsessions, and memory problems" it caused him. His
+      own psychiatrist confirmed the diagnosis to the magazine but
+      described only "somatic complaints, fears, and preoccupations" around
+      cancer, not fabricated deaths; psychiatrists interviewed for the
+      piece, including Nigel Blackwood of King's College London, said the
+      condition does not on its own account for sustained, self-serving
+      deception of this kind. The Guardian independently corroborated core
+      elements that same week from its own sources at Little, Brown, where
+      Mallory had worked between 2009 and 2012, including that he had told
+      colleagues there he had brain cancer.
+    spoilerAfter: null
+    sources:
+      - "https://www.newyorker.com/magazine/2019/02/11/a-suspense-novelists-trail-of-deceptions"
+      - "https://www.theguardian.com/books/2019/feb/05/bestselling-author-of-the-woman-at-the-window-lied-about-having-cancer"
+sources:
+  - "https://en.wikipedia.org/wiki/A._J._Finn"
+  - "https://en.wikipedia.org/wiki/Daniel_Mallory"
+  - "https://www.wikidata.org/wiki/Q56084685"
+  - "https://www.harpercollins.com/blogs/authors/a-j-finn"
+  - "https://en.wikipedia.org/wiki/The_Woman_in_the_Window_(novel)"
+  - "https://en.wikipedia.org/wiki/End_of_Story"
+  - "https://www.newyorker.com/magazine/2019/02/11/a-suspense-novelists-trail-of-deceptions"
+  - "https://www.theguardian.com/books/2019/feb/05/bestselling-author-of-the-woman-at-the-window-lied-about-having-cancer"
