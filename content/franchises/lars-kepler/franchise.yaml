@@ -41,6 +41,20 @@ themePreset: hypnagogic-noir
 # release date. English and other translated titles are edition data, not
 # recorded here - see docs/SCHEMA.md's editions.yaml section.
 
+globalEvents:
+  include: []
+  exclude:
+    - sept-11-2001               # lived through it; no book answers it
+    - financial-crisis-2008      # lived through it; no book answers it
+    - covid-19-pandemic-2020     # lived through it; no book answers it
+    - carnation-revolution-1974  # Alexandra's heritage; no book answers it
+    - chain-bookshop-1982        # industry event, not page content
+    - online-bookselling-1995    # industry event, not page content
+    - ebook-and-self-publishing-2007  # industry event, not page content
+    - prestige-fantasy-adaptation-2011  # different genre entirely
+    - booktok-2020               # marketing/social discovery, not page content
+    - portugal-bailout-2011      # Alexandra's heritage country; no book answers it
+
 sources:
   - "https://en.wikipedia.org/wiki/Lars_Kepler"
   - "https://sv.wikipedia.org/wiki/Lars_Kepler"
