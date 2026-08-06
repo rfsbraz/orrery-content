@@ -1,0 +1,131 @@
+stage: press-archaeology
+summary: >
+  Nine dated, sourced aura entries added across the three files this stage
+  owns: 2 lifeEvents each for Alexandra and Alexander (a birth plus one
+  pre-Kepler career event apiece), 5 franchise events. Aura density: 10 ->
+  19 entries, 0.77 -> 1.46 per work. Closed the reported 8-year dark run
+  (2012-2019) to 6, and fully closed the second, unreported one behind it
+  (2021-2026).
+
+  The pen-name origin is now two sourced, dated franchise events: invention
+  in 2008 (two failed joint attempts under their own names, then a third
+  invented author, Lars for Stieg Larsson, Kepler for Johannes Kepler) and
+  the August 2009 Aftonbladet unmasking, both primary-sourced against the
+  authors' own retelling on larskepler.com/about plus contemporary press
+  (Aftonbladet, 2009-08-11; Svenska Dagbladet's independent profile 17
+  days later). Alexandra's 2004 Katapult Prize and Alexander's 2006
+  Regissören/Bergman controversy cover each author's pre-Kepler career.
+  The 2012 Hallström film/Oscar-entry, a 2019 audiobook prize for Lazarus,
+  and the 2023-2026 Apple TV+ "Nocturne" adaptation (one production under
+  three working titles, not two) complete the franchise events.
+
+  One correction-by-omission: Swedish Wikipedia's uncited claim that
+  Kaninjägaren won a 2016 "Adlibris" bestseller prize conflicts with the
+  authors' own site, which dates the Adlibris Awards' founding to 2019 -
+  left out. A Polish "Golden Bullet" award and three vague, undated
+  Swedish Crime Writers' Academy nominations failed the same check
+  (absent from the Academy's own winners list and from Polish Wikipedia)
+  and were dropped too.
+
+followUp: >
+  A second pass closed the 2013-2018 dark run (6 years). The paywalled
+  NYT/Deadline citations on English Wikipedia, opened via
+  web.archive.org, turned out to be a 2011 piece and a 2026 casting
+  story - neither in-window, so that lead closed empty. The find came
+  from a wider non-anglophone sweep: Dutch Wikipedia's Bestseller 60
+  table (corroborated on debestseller60.nl, the CPNB's own chart site)
+  shows Jager, the Dutch Kaninjägaren, hitting No. 1 on 15 Feb 2017 -
+  Kepler's first chart-topper outside Sweden. Added as one franchise
+  event. No individual-author fact or other-market book fact survived
+  for this window beyond that. Remaining gap, 2013-2016 (4yrs, under
+  gate), checked the same way and left dark.
+
+produced:
+  authorFiles:
+    - content/authors/alexandra-coelho-ahndoril.yaml
+    - content/authors/alexander-ahndoril.yaml
+  franchiseFiles:
+    - content/franchises/lars-kepler/events.yaml
+  lifeEventsAdded:
+    alexandra-coelho-ahndoril: 2
+    alexander-ahndoril: 2
+  franchiseEventsAdded: 6
+  auraDensity:
+    before: "13 works, 10 aura, 0.77/work, span 2009-2026, dark run 8yrs (2012-2019)"
+    afterFirstPass: "13 works, 19 aura, 1.46/work, span 2009-2026, dark run 6yrs (2013-2018)"
+    after: "13 works, 20 aura, 1.54/work, span 2009-2026, dark run 4yrs (2013-2016)"
+
+forStages:
+  eras: >
+    Still empty by judgement. The franchise events (2008, 2009, 2012, 2017,
+    2019, 2023-2026) could seed a periodisation if eras wants one, but
+    nothing sourced names one outright.
+  visual-language: >
+    theme.yaml still has no `art:` block (unchanged, not this stage's
+    footprint). Neither author has `images.portrait` yet, so every event
+    above avoids `editorial-portrait` entirely (VISUAL.md §3): the
+    pseudonym's invention is drawn as the manuscript and its secret
+    submission (manuscript-proof), the unmasking and the Regissören
+    controversy as press response (press-media-collage), never as a
+    likeness of either author or of Bergman; the 2017 Dutch chart debut is
+    drawn as the book itself (book-object), not a portrait.
+  completeness-auditor: >
+    No bibliography changes. One more contemporary source (an archived
+    2009 Svenska Dagbladet review) is folded into
+    alexander-ahndoril.yaml's own sources list.
+
+openQuestions:
+  - "2013-2016 (Stalker, Playground, the run-up to Kaninjägaren's own 2016
+    Swedish publication) has no event surviving the sourcing bar and is
+    now the wing's longest dark run, at 4 years - under the 5-year gate,
+    not flagged by aura_density.py. Checked and empty across Swedish,
+    English, French, German, Dutch and Italian Wikipedia, the authors'
+    site in full (News Archive only reaches back to February 2020),
+    Bonniers' catalogue, the CWA International Dagger shortlist history
+    and Deckarakademin's winners list."
+  - "A single 2009 SvD profile states Alexander took the surname Ahndoril
+    at eighteen, on his first marriage - implying one before Alexandra.
+    Single-sourced family history for a living person, held out under the
+    two-independent-source bar; noted on his file without repeating the
+    claim."
+  - "A Polish 'Golden Bullet' award and three unspecified Swedish Crime
+    Writers' Academy nominations (both from uncited Wikipedia lists)
+    could not be corroborated anywhere else, including the Academy's own
+    winners list - left out as a standing correction, not just for this
+    wing's dark-run purposes."
+
+auditFixesApplied:
+  stage: wing-audit follow-up (branch lars-kepler/audit-fixes-press)
+  date: 2026-08-06
+  findings:
+    - id: apple-tv-deal-graded-above-the-aura-ceiling
+      change: >
+        events.yaml, nocturne-apple-tv-2023: impact high -> med (CURATION 6
+        caps industry scope at medium; its culture-scope sibling, the 2012
+        film, was already med). art-rotation unaffected: intensity reads
+        organisation, not impact.
+    - id: portuguese-mother-rests-on-one-source-not-two
+      change: >
+        alexandra-coelho-ahndoril.yaml header: dropped the "two
+        independently written encyclopedia articles ... converge" claim.
+        Both English Wikipedia's own footnote and Swedish Wikipedia's own
+        källor list trace to the same source, Albert Bonniers Förlag's
+        author presentation - now stated as one source reproduced in two
+        articles' prose. Fact kept, only the independence claim fixed.
+    - id: a-live-fact-in-a-field-no-reader-sees
+      change: >
+        works.yaml, lars-kepler/somngangaren note (confirmed inert, no
+        `note` field on Work) reworded off an unsupported "top-selling ...
+        per official year-end bestseller lists" to what its actual sources
+        (Bonniers catalogue, larskepler.com) support: publisher promotion,
+        not a verified ranking. Matching no-cover comment softened too.
+        FLAG: touches works.yaml, not this stage's footprint - concurrent
+        audit-fixes-spoiler branch also edits works.yaml (hypnotisoren
+        synopsis, ~line 60), well clear of somngangaren (~line 293); no
+        overlap expected but noted per instruction.
+    - id: dead-citation-on-the-2012-film
+      change: >
+        events.yaml, hypnotisoren-film-oscar-entry-2012: swapped the 403'ing
+        svenskfilmdatabas.se source for a working archive.org snapshot
+        (20200813045406), fetch-verified to render the real SFdb page.
+  validator: "validate.py --slug lars-kepler: 0 errors, baseline handoff-length warnings only"

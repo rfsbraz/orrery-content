@@ -1,0 +1,552 @@
+# Editions of Lars Kepler across three markets: Swedish (sv, the original),
+# English (en) and Portuguese (pt-PT) - 34 editions over 13 works. Sourced
+# primarily from Albert Bonniers Förlag's own product pages (the books' own
+# Swedish publisher), OpenLibrary's per-ISBN edition records
+# (openlibrary.org/isbn/<isbn>.json?default=false, cited per entry), Porto
+# Editora's own storefront (portoeditora.pt, the exclusive Portuguese
+# publisher) and the Biblioteca Nacional de Portugal catalogue
+# (catalogo.bnportugal.gov.pt, browser-UA reachable per docs/CURATION.md),
+# whose "Tít. orig." field independently confirmed five of the eleven
+# Portuguese titles against the Swedish work each translates, rather than
+# matching them by title alone.
+#
+# SWEDISH (sv) - 13 of 13 works, all Albert Bonniers Förlag, all the first
+# hardcover ("Inbunden") edition read directly off the book's own product
+# page. Medusa's ISBN (9789100182922) is a real, valid, pre-release
+# registration for the announced 2026-09-21 date - not yet a published book,
+# flagged as forthcoming on its entry rather than omitted, matching
+# works.yaml's own treatment of it.
+#
+# THE BLACK EDITION. Hypnotisören carries a second Swedish entry:
+# "Hypnotisören - Black edition" (Pocket, ISBN 9789100186777, 2020-08-06;
+# originally released 2019-06-11 as Storpocket/E-bok/Ljudbok, ISBNs
+# 9789100180447 / 9789100181444 / 9789178273034 - all four format ISBNs read
+# directly off the edition's own Bonniers product page). This is not a
+# reprint: it is a genuine 10th-anniversary REWRITE of the 2009 debut, per
+# the publisher's own words - tempo tightened, chapters restructured, dialogue
+# rewritten, new scenes added, Joona Linna given a bigger role - while
+# "grundberättelsen förstås är densamma" (the underlying story is of course
+# the same). Recorded here as its own edition with `title` set (rather than
+# omitted, as every other sv entry does) precisely because the object on the
+# shelf is titled differently from the work it retells; the note on the entry
+# explains the difference so a reader choosing between the two 2009-era
+# editions knows what separates them. Page count and series position are
+# unchanged from the original, which is why it is an edition of
+# lars-kepler/hypnotisoren rather than a work of its own (see works.yaml's
+# header).
+#
+# ENGLISH (en) - 9 of 13 works: every Joona Linna novel through Spindeln
+# (Spider, 2023). Every ISBN below is read directly off that exact edition's
+# own OpenLibrary record. Translator credits follow that same record but not
+# by one uniform method: where the record carries its own by_statement, the
+# credit is that by-statement quoted directly; where it doesn't, the credit
+# is the name attached to the record's co-author key instead, resolved and
+# independently verified rather than assumed - never taken from a
+# neighbouring printing of the same book either way. TRANSLATOR LINEAGE,
+# confirmed per-book rather than assumed to hold across the run: Ann Long
+# translated the debut (Hypnotisören, both its US Sarah Crichton Books/FSG
+# and UK Blue Door editions carry the identical by-statement, "translated
+# from the Swedish by Ann Long"); Laura A. Wideburg translated the following
+# two (Paganinikontraktet, Eldvittnet - both explicit on their FSG records);
+# Neil Smith translated the next four (Sandmannen and Stalker each carry an
+# explicit by-statement; Kaninjägaren and Lazarus carry none, and are
+# resolved instead from each record's own co-author key - OL7476119A and
+# OL8476677A, both Neil Smith); Alice Menzies has translated the two most
+# recent (Spegelmannen, Spindeln - neither carries a by-statement; both are
+# mislabelled as a second "author" rather than a translator on OpenLibrary's
+# own record, a data-entry quirk resolved here by checking the named
+# co-author id, OL7968563A, which matches Alice Menzies with no other listed
+# works of her own). No English edition exists yet for
+# Sömngångaren (2024): an ISBN is reserved in Bonnier Zaffre's block
+# (9781838777906, ISBN-13 check digit verified, ISBN-only OpenLibrary stub
+# created 2026-06) but no publisher, date, translator, format or storefront
+# listing was found anywhere checked - not shipped, per the "never guess"
+# rule; the ISBN alone is not a book. No English edition exists for Medusa
+# (unpublished), Playground (no translation found in any market checked) or
+# Sjömannen (2025, too recent - the same negative result as the Portuguese
+# search below).
+#
+# PORTUGUESE (pt-PT) - 11 of 13 works. Porto Editora has published Lars
+# Kepler continuously since 2010 and is the sole Portuguese publisher found
+# for this author; all eleven editions carry its house paperback binding
+# ("Capa mole") and were confirmed on its own storefront
+# (portoeditora.pt/produtos/ficha/...) with the Biblioteca Nacional de
+# Portugal catalogue as a second, independent source for translator and
+# title on every entry. TRANSLATOR LINEAGE, distinct from the English one
+# above because these are two independent translations working from the same
+# Swedish text: Jaime Bernardes (O Hipnotista) -> Ulla Baginha (O Executor)
+# -> Ana Diniz (A Vidente, O homem da areia, Stalker) -> Regina Valente (O
+# Porto das Almas, O Caçador, Lazarus) -> Ivan Figueiras (O Homem-Espelho, A
+# Aranha, O Sonâmbulo). Two titles are not literal and were matched by
+# synopsis/series-position, not title: "O Executor" (Portuguese for "The
+# Executor") is Paganinikontraktet/The Nightmare, confirmed the second book
+# in the series by Porto Editora's own product-page copy and reader reviews
+# naming it "o segundo livro da saga"; "A Vidente" ("The Seer") is
+# Eldvittnet/The Fire Witness, confirmed the third book the same way and a
+# natural fit for a novel centred on a self-described spiritualist medium.
+# "O Porto das Almas" ("The Port/Harbour of Souls") is not a Joona Linna
+# novel at all - it is Playground, confirmed word-for-word against the
+# Biblioteca Nacional's "Tít. orig.: Playground" field and against Porto
+# Editora's own synopsis, which opens on "Jasmin", a Swedish soldier wounded
+# in Kosovo whose near-death vision is of a "cidade portuária... um porto de
+# almas" (a port city... a port of souls) - the title is the vision, not a
+# mistranslation. The Portuguese "Stalker" keeps the English title on its
+# spine but adds a subtitle absent from every other market checked, "O
+# Regresso do Hipnotista" (The Hypnotist's Return), naming outright what the
+# English and Swedish jackets both leave for the reader to discover. No
+# Portuguese edition exists for Medusa (unpublished) or Sjömannen (2025, no
+# result on Porto Editora's own storefront search, which otherwise lists
+# every other Kepler title including the 2024 Sömngångaren).
+#
+# PORTUGUESE HERITAGE, CHECKED AND NOT LOAD-BEARING HERE. Co-author Alexandra
+# Coelho Ahndoril has a Portuguese mother (content/authors/alexandra-coelho-
+# ahndoril.yaml). Porto Editora's Portuguese program runs from 2010 -
+# immediately following the 2009 Swedish debut, the same one-year gap as the
+# Swedish-to-first-translation lag this catalogue already documents for
+# several other authors - with no gap, acceleration or promotional framing
+# tying it to that biographical fact in anything checked (the publisher's own
+# author bio on every product page above is the standard house paragraph,
+# naming neither Portugal nor her ancestry). The heritage and the publishing
+# history are both real; nothing found connects them.
+- id: lars-kepler/hypnotisoren/bonniers-2009-sv
+  workId: lars-kepler/hypnotisoren
+  isbn13: "9789100124045"
+  language: sv
+  format: hardcover
+  publisher: Albert Bonniers Förlag
+  year: 2009
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/153581/hypnotisoren/"
+
+- id: lars-kepler/hypnotisoren/bonniers-2020-sv-black
+  workId: lars-kepler/hypnotisoren
+  isbn13: "9789100186777"
+  language: sv
+  title: "Hypnotisören - Black edition"
+  format: paperback
+  publisher: Albert Bonniers Förlag
+  year: 2020
+  note: >
+    A genuine 10th-anniversary REWRITE of the 2009 original, not a reprint:
+    the publisher's own copy states the tempo, chapters, dialogue and scenes
+    were reworked and Joona Linna's role expanded, while "grundberättelsen
+    förstås är densamma" (the underlying story is of course the same). This
+    Pocket printing (2020-08-06) is the one referenced by this ISBN; the
+    rewrite itself was first released 2019-06-11 as Storpocket
+    (9789100180447), E-bok (9789100181444) and Ljudbok (9789178273034). Page
+    count and series position match the original edition above - a reader
+    choosing between the two gets the same case solved by the same detective,
+    told with a different rhythm.
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/267245/hypnotisoren-black-edition/"
+    - "https://www.albertbonniersforlag.se/nyheter/10-arsjubilerande-lars-kepler-firar-med-ny-version-av-hypnotisoren/"
+
+- id: lars-kepler/hypnotisoren/blue-door-2012-en
+  workId: lars-kepler/hypnotisoren
+  isbn13: "9780007359127"
+  language: en
+  title: "The Hypnotist"
+  translator: "Ann Long"
+  format: paperback
+  publisher: Blue Door
+  year: 2012
+  note: >
+    Same translation as the US Sarah Crichton Books/Farrar, Straus and Giroux
+    edition (9780374173951, 2011) - both records carry the identical
+    by-statement, "translated from the Swedish by Ann Long".
+  sources:
+    - "https://openlibrary.org/isbn/9780007359127.json?default=false"
+    - "https://openlibrary.org/isbn/9780374173951.json?default=false"
+
+- id: lars-kepler/hypnotisoren/porto-editora-2010-pt
+  workId: lars-kepler/hypnotisoren
+  isbn13: "9789720040664"
+  language: pt-PT
+  title: "O Hipnotista"
+  translator: "Jaime Bernardes"
+  format: paperback
+  publisher: Porto Editora
+  year: 2010
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/o-hipnotista/2081037"
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720040664"
+
+- id: lars-kepler/paganinikontraktet/bonniers-2010-sv
+  workId: lars-kepler/paganinikontraktet
+  isbn13: "9789100124694"
+  language: sv
+  format: hardcover
+  publisher: Albert Bonniers Förlag
+  year: 2010
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/155847/paganinikontraktet/"
+
+- id: lars-kepler/paganinikontraktet/fsg-2012-en
+  workId: lars-kepler/paganinikontraktet
+  isbn13: "9780374115333"
+  language: en
+  title: "The Nightmare"
+  translator: "Laura A. Wideburg"
+  publisher: "Sarah Crichton Books / Farrar, Straus and Giroux"
+  year: 2012
+  sources:
+    - "https://openlibrary.org/isbn/9780374115333.json?default=false"
+
+- id: lars-kepler/paganinikontraktet/porto-editora-2011-pt
+  workId: lars-kepler/paganinikontraktet
+  isbn13: "9789720043313"
+  language: pt-PT
+  title: "O Executor"
+  translator: "Ulla Baginha"
+  format: paperback
+  publisher: Porto Editora
+  year: 2011
+  note: >
+    Not a literal translation of the Swedish title (which names the Paganini
+    violin contract at the story's centre); matched to this work by series
+    position, confirmed the second Joona Linna book both by Porto Editora's
+    own product-page copy and by reader reviews naming it "o segundo livro da
+    saga".
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/o-executor/10278790"
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720043313"
+
+- id: lars-kepler/eldvittnet/bonniers-2011-sv
+  workId: lars-kepler/eldvittnet
+  isbn13: "9789100126438"
+  language: sv
+  format: hardcover
+  publisher: Albert Bonniers Förlag
+  year: 2011
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/167288/eldvittnet/"
+
+- id: lars-kepler/eldvittnet/fsg-2013-en
+  workId: lars-kepler/eldvittnet
+  isbn13: "9780374298661"
+  language: en
+  title: "The Fire Witness"
+  translator: "Laura A. Wideburg"
+  publisher: "Farrar, Straus and Giroux"
+  year: 2013
+  sources:
+    - "https://openlibrary.org/isbn/9780374298661.json?default=false"
+
+- id: lars-kepler/eldvittnet/porto-editora-2013-pt
+  workId: lars-kepler/eldvittnet
+  isbn13: "9789720044174"
+  language: pt-PT
+  title: "A Vidente"
+  translator: "Ana Diniz"
+  format: paperback
+  publisher: Porto Editora
+  year: 2013
+  note: >
+    Not a literal translation of "Eldvittnet" (fire witness); matched to this
+    work by series position (the third book, per Porto Editora's own copy and
+    reader reviews) and by fit - the Portuguese title ("The Seer") names
+    Flora Hansen, the self-described spiritualist medium at this novel's
+    centre, rather than the fire-scene witness the Swedish title names.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/a-vidente/13053326"
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720044174"
+
+- id: lars-kepler/sandmannen/bonniers-2012-sv
+  workId: lars-kepler/sandmannen
+  isbn13: "9789100130169"
+  language: sv
+  format: hardcover
+  publisher: Albert Bonniers Förlag
+  year: 2012
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/182783/sandmannen/"
+
+- id: lars-kepler/sandmannen/knopf-2018-en
+  workId: lars-kepler/sandmannen
+  isbn13: "9781524732240"
+  language: en
+  title: "The Sandman"
+  translator: "Neil Smith"
+  publisher: Alfred A. Knopf
+  year: 2018
+  sources:
+    - "https://openlibrary.org/isbn/9781524732240.json?default=false"
+
+- id: lars-kepler/sandmannen/porto-editora-2014-pt
+  workId: lars-kepler/sandmannen
+  isbn13: "9789720047076"
+  language: pt-PT
+  title: "O homem da areia"
+  translator: "Ana Diniz"
+  format: paperback
+  publisher: Porto Editora
+  year: 2014
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/o-homem-da-areia/16005465"
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720047076"
+    - "https://openlibrary.org/isbn/9789720047076.json?default=false"
+
+- id: lars-kepler/stalker/bonniers-2014-sv
+  workId: lars-kepler/stalker
+  isbn13: "9789100136741"
+  language: sv
+  format: hardcover
+  publisher: Albert Bonniers Förlag
+  year: 2014
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/190412/stalker/"
+
+- id: lars-kepler/stalker/harpercollins-2017-en
+  workId: lars-kepler/stalker
+  isbn13: "9780007467853"
+  language: en
+  title: "Stalker"
+  translator: "Neil Smith"
+  publisher: HarperCollins Publishers
+  year: 2017
+  note: Catalogued by OpenLibrary as a "Special overseas edition" of the UK printing; the translator credit is explicit on this record.
+  sources:
+    - "https://openlibrary.org/isbn/9780007467853.json?default=false"
+
+- id: lars-kepler/stalker/porto-editora-2016-pt
+  workId: lars-kepler/stalker
+  isbn13: "9789720048097"
+  language: pt-PT
+  title: "Stalker: O Regresso do Hipnotista"
+  translator: "Ana Diniz"
+  format: paperback
+  publisher: Porto Editora
+  year: 2016
+  note: >
+    Keeps the English title but adds a subtitle no other market's edition
+    carries, "O Regresso do Hipnotista" (The Hypnotist's Return) - naming
+    outright the return of Erik Maria Bark that the English and Swedish
+    jackets both leave for the reader to discover.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/stalker/16896413"
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720048097"
+    - "https://openlibrary.org/isbn/9789720048097.json?default=false"
+
+- id: lars-kepler/kaninjagaren/bonniers-2016-sv
+  workId: lars-kepler/kaninjagaren
+  isbn13: "9789100136772"
+  language: sv
+  format: hardcover
+  publisher: Albert Bonniers Förlag
+  year: 2016
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/190415/kaninjagaren/"
+
+- id: lars-kepler/kaninjagaren/knopf-2020-en
+  workId: lars-kepler/kaninjagaren
+  isbn13: "9781524732295"
+  language: en
+  title: "The Rabbit Hunter"
+  translator: "Neil Smith"
+  publisher: Knopf Doubleday Publishing Group
+  year: 2020
+  sources:
+    - "https://openlibrary.org/works/OL20641517W/editions.json?limit=50"
+    - "https://openlibrary.org/authors/OL7476119A.json"
+
+- id: lars-kepler/kaninjagaren/porto-editora-2018-pt
+  workId: lars-kepler/kaninjagaren
+  isbn13: "9789720049353"
+  language: pt-PT
+  title: "O Caçador"
+  translator: "Regina Valente"
+  format: paperback
+  publisher: Porto Editora
+  year: 2018
+  note: "Confirmed against Kaninjägaren directly by the Biblioteca Nacional's \"Tít. orig.: Kaninjägaren\" field."
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/o-cacador/18687337"
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720049353"
+
+- id: lars-kepler/lazarus/bonniers-2018-sv
+  workId: lars-kepler/lazarus
+  isbn13: "9789100142698"
+  language: sv
+  format: hardcover
+  publisher: Albert Bonniers Förlag
+  year: 2018
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/197173/lazarus/"
+
+- id: lars-kepler/lazarus/knopf-2020-en
+  workId: lars-kepler/lazarus
+  isbn13: "9780593317839"
+  language: en
+  title: "Lazarus"
+  translator: "Neil Smith"
+  publisher: Knopf Doubleday Publishing Group
+  year: 2020
+  sources:
+    - "https://openlibrary.org/isbn/9780593317839.json?default=false"
+
+- id: lars-kepler/lazarus/porto-editora-2019-pt
+  workId: lars-kepler/lazarus
+  isbn13: "9789720049360"
+  language: pt-PT
+  translator: "Regina Valente"
+  format: paperback
+  publisher: Porto Editora
+  year: 2019
+  note: "Original-language title kept unchanged; confirmed against this work directly by the Biblioteca Nacional's \"Tít. orig.: Lazarus\" field."
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/lazarus/18687334"
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720049360"
+
+- id: lars-kepler/spegelmannen/bonniers-2020-sv
+  workId: lars-kepler/spegelmannen
+  isbn13: "9789100164218"
+  language: sv
+  format: hardcover
+  publisher: Albert Bonniers Förlag
+  year: 2020
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/208564/spegelmannen/"
+
+- id: lars-kepler/spegelmannen/knopf-2022-en
+  workId: lars-kepler/spegelmannen
+  isbn13: "9780593315590"
+  language: en
+  title: "Mirror Man"
+  translator: "Alice Menzies"
+  publisher: Knopf Doubleday Publishing Group
+  year: 2022
+  note: >
+    OpenLibrary's own record lists Menzies as a second "author" rather than a
+    translator - a data-entry quirk on their end, resolved by checking the
+    named author id, which is Alice Menzies with no other listed works of her
+    own.
+  sources:
+    - "https://openlibrary.org/isbn/9780593315590.json?default=false"
+    - "https://openlibrary.org/authors/OL7968563A.json"
+
+- id: lars-kepler/spegelmannen/porto-editora-2020-pt
+  workId: lars-kepler/spegelmannen
+  isbn13: "9789720033840"
+  language: pt-PT
+  title: "O Homem-Espelho"
+  translator: "Ivan Figueiras"
+  format: paperback
+  publisher: Porto Editora
+  year: 2020
+  note: Confirmed against Spegelmannen directly by the Biblioteca Nacional's "Tít. orig." field.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/o-homem-espelho/24270227"
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720033840"
+
+- id: lars-kepler/spindeln/bonniers-2022-sv
+  workId: lars-kepler/spindeln
+  isbn13: "9789100167110"
+  language: sv
+  format: hardcover
+  publisher: Albert Bonniers Förlag
+  year: 2022
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/209875/spindeln/"
+
+- id: lars-kepler/spindeln/knopf-2023-en
+  workId: lars-kepler/spindeln
+  isbn13: "9780593321041"
+  language: en
+  title: "Spider"
+  translator: "Alice Menzies"
+  publisher: Knopf Doubleday Publishing Group
+  year: 2023
+  sources:
+    - "https://openlibrary.org/isbn/9780593321041.json?default=false"
+    - "https://openlibrary.org/authors/OL7968563A.json"
+
+- id: lars-kepler/spindeln/porto-editora-2022-pt
+  workId: lars-kepler/spindeln
+  isbn13: "9789720036124"
+  language: pt-PT
+  title: "A Aranha"
+  translator: "Ivan Figueiras"
+  format: paperback
+  publisher: Porto Editora
+  year: 2022
+  note: Confirmed against Spindeln directly by the Biblioteca Nacional's "Tít. orig." field.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/a-aranha/27429717"
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720036124"
+    - "https://openlibrary.org/isbn/9789720036124.json?default=false"
+
+- id: lars-kepler/somngangaren/bonniers-2024-sv
+  workId: lars-kepler/somngangaren
+  isbn13: "9789100182915"
+  language: sv
+  format: hardcover
+  publisher: Albert Bonniers Förlag
+  year: 2024
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/269387/somngangaren/"
+
+- id: lars-kepler/somngangaren/porto-editora-2024-pt
+  workId: lars-kepler/somngangaren
+  isbn13: "9789720039163"
+  language: pt-PT
+  title: "O Sonâmbulo"
+  translator: "Ivan Figueiras"
+  format: paperback
+  publisher: Porto Editora
+  year: 2024
+  note: Confirmed against Sömngångaren directly by the Biblioteca Nacional's "Tít. orig." field.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/o-sonambulo/30835385"
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720039163"
+
+- id: lars-kepler/medusa/bonniers-2026-sv
+  workId: lars-kepler/medusa
+  isbn13: "9789100182922"
+  language: sv
+  format: hardcover
+  publisher: Albert Bonniers Förlag
+  year: 2026
+  note: Forthcoming (2026-09-21); the ISBN is a real, check-digit-valid pre-release registration, not yet a published book.
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/269389/medusa/"
+
+- id: lars-kepler/playground/bonniers-2015-sv
+  workId: lars-kepler/playground
+  isbn13: "9789100141066"
+  language: sv
+  format: hardcover
+  publisher: Albert Bonniers Förlag
+  year: 2015
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/194815/playground/"
+
+- id: lars-kepler/playground/porto-editora-2017-pt
+  workId: lars-kepler/playground
+  isbn13: "9789720048417"
+  language: pt-PT
+  title: "O Porto das Almas"
+  translator: "Regina Valente"
+  format: paperback
+  publisher: Porto Editora
+  year: 2017
+  note: >
+    Not a Joona Linna title in Portuguese disguise - this is Playground.
+    Confirmed word-for-word against the Biblioteca Nacional's "Tít. orig.:
+    Playground" field and against Porto Editora's own synopsis, which opens
+    on "Jasmin", the Swedish soldier wounded in Kosovo, whose near-death
+    vision is of a "cidade portuária... um porto de almas" (a port
+    city... a port of souls) - the Portuguese title names the vision at the
+    book's centre rather than translating the English word "Playground".
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/o-porto-das-almas/17827142"
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720048417"
+
+- id: lars-kepler/sjomannen/bonniers-2025-sv
+  workId: lars-kepler/sjomannen
+  isbn13: "9789100809584"
+  language: sv
+  format: hardcover
+  publisher: Albert Bonniers Förlag
+  year: 2025
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/296504/sjomannen/"

@@ -1,0 +1,124 @@
+stage: spoiler-audit
+summary: >
+  One redaction in the whole wing, in Kaninjägaren's synopsis. Every other
+  synopsis, all 10 events/lifeEvents and orders.yaml's rendered prose were
+  checked against each book's own jacket copy in BOTH languages - Albert
+  Bonniers Förlag for the Swedish originals, larskepler.com's own book pages
+  for the English-language jackets - and left alone.
+
+  JUREK WALTER, resolved: the flagged risk is real but it is not about Jurek.
+  Nothing here states his fate - not that he dies, not that he returns, not
+  how any book resolves him. The real cross-book leak was about JOONA:
+  Kaninjägaren's synopsis opened on him two years into a sentence at Kumla,
+  which is where Stalker leaves him (Bonniers: Kaninjägaren "tar vid där den
+  enorma succén Stalker slutade"; sv.wikipedia: two years served "efter
+  händelserna i den förra boken Stalker"), and Stalker's own jacket says
+  nothing about it in either language. The inverse publisher test - book 6's
+  copy trading book 5's ending. Rewritten to the case, which is what the
+  English jacket for the same book opens on anyway.
+
+  SJÖMANNEN, checked and clean: its synopsis names two of the six stories and
+  never mentions Jurek, where the jacket does ("Jurek Walters mörka resa från
+  barndomens katastrofer till att bli en av de mest fruktade seriemördarna
+  någonsin"). It reveals strictly less than the object in the shop, and its
+  note repeats the jacket's framing (origin, never fate).
+
+  No spoilerAfter was needed. All 10 boundary-carrying entries are
+  publication, press, prize or biography facts, which take no anchor by rule;
+  all 10 were already null, so nothing to loosen and nothing misplaced.
+
+produced:
+  contentFiles: [content/franchises/lars-kepler/works.yaml]
+  redactions: 1
+  spoilerAftersAdded: 0
+  spoilerAftersLoosened: 0
+  spoilerAftersDeleted: 0
+
+redaction:
+  work: lars-kepler/kaninjagaren
+  severity: load-bearing
+  protects: lars-kepler/stalker
+  before: "Two years into a sentence at the high-security Kumla prison, Joona Linna is brought to a secret meeting: the police need his help to stop an enigmatic killer known only as the Rabbit Hunter."
+  after: "A masked figure watches a man through his own window and kills him slowly; three more victims follow. The single thread joining them is that each hears a child recite a rhyme about rabbits before the killer arrives, and Joona Linna and Saga Bauer are left to untangle one of the most complex cases of their careers - with the television chef Rex Müller and his son Sammy caught in the middle of it."
+  replacementSourcedTo:
+    - "larskepler.com/books/the-rabbit-hunter - 'A masked stranger stands in the shadows... Soon the Rabbit Hunter has claimed another three victims... Joona Linna and Saga Bauer to untangle one of the most complex cases of their career'"
+    - "Bonniers 190415 - 'Den enda länken mellan offren är att de alla hör ett barn läsa upp en ramsa om kaniner innan mördaren kommer... tevekocken Rex Müller... sin son Sammy'"
+  alsoAdded: "A curator-only note on the work recording that the Swedish copy opens on Kumla and why the synopsis does not, so a later enrichment pass does not pull the blurb wholesale and put it back."
+
+checkedAndLeftAlone:
+  hypnotisoren: "Jacket copy near verbatim; stops short of what the jacket adds (a surviving sister, Bark's broken promise)."
+  paganinikontraktet: "Strict subset; the jacket goes on to the Östermalm hanging and 'Han har givetvis rätt.'"
+  eldvittnet: "The jacket's own framing of Flora Hansen; the jacket goes further (evidence pointing at an inmate who fled)."
+  sandmannen: "Less than either jacket, both of which name Jurek outright, say Joona caught him and that he is confined. Antagonist is on the book's own cover copy; his fate is not stated."
+  stalker: "Narrower than either jacket (Swedish adds Bark lying to the police, English 'Bark is hiding secrets of his own')."
+  lazarus: "Freezer find and the German call are jacket copy; 'unfinished business' is vaguer than either jacket's own return-from-the-dead hint. Names nobody."
+  spegelmannen: "Jacket copy almost sentence for sentence."
+  spindeln: "Jacket copy in both languages, postcard included. Both jackets present it as this book's own backstory, not a prior book's closing beat; the only earlier-book fact disclosed is that both leads are alive, which is the series brand on every cover."
+  somngangaren: "Far narrower than the jacket (no Hugo Sand, no axe, no somnambulism, no Bark)."
+  medusa: "Publisher's own announcement, minus the Queen and her court. Revisit after 2026-09-21."
+  playground: "The jacket's first half only; no crash, no heart surgery."
+  sjomannen: "Reveals less than the jacket. See summary."
+  joona-linna-only: "Rationale/debated render ungated. It names Jurek and Sjömannen's account of his early life - both jacket facts, neither touching his fate or any resolution."
+  events-and-lifeEvents: "All 10 are publication/press/prize/biography. The Nocturne entry says the series is based on Lazarus and Sandmannen - an adaptation fact stating nothing the two jackets do not, and it does not say what the adaptation makes of them. All keep spoilerAfter: null."
+  franchise-yaml: "Audited, not owned here. No startHere path sells a book on its ending; the Hypnotisören path describes what that book's jacket describes. eras.yaml is empty; globalEvents.include is [], so global.yaml renders nothing for this wing."
+
+engineChecks:
+  - "lib/spoilers/index.ts: isRevealed is exact set membership on one work id; shieldCopy renders 'Hidden until you finish <Title>'. Matches the skill's table."
+  - "lib/content/types.ts: Work carries no note field, so a works.yaml note cannot render (verified, not assumed). The rendered note fields are Pseudonym.note and StartHerePath.note."
+  - "validate.py --slug lars-kepler: 1 error (theme.yaml has no art: block - visual-language's). No spoiler-related error."
+
+translations:
+  mirrored: none
+  reason: "content/i18n/pt-PT/franchises/ has no lars-kepler directory (re-confirmed), so there is no locale string to invalidate."
+
+sourcesUsed:
+  - "https://www.albertbonniersforlag.se/bocker/ - product pages 153581, 155847, 167288, 182783, 190412, 190415, 197173, 208564, 209875, 269387, 269389, 194815, 296504 (all 13 works)"
+  - "https://larskepler.com/books/ plus the-hypnotist, the-sandman, stalker, the-rabbit-hunter, lazarus, the-spider, the-mirror-man"
+  - "https://sv.wikipedia.org/wiki/Sandmannen_(roman)"
+  - "https://sv.wikipedia.org/wiki/Kaninj%C3%A4garen"
+
+sourcesRefused:
+  - "WebSearch unavailable again (session budget spent, same condition eras and reading-orders reported). Every source above was reached by constructing the URL and fetching it, which is why the corpus is the two publishers' own pages plus Swedish Wikipedia."
+  - "en.wikipedia has no per-novel article for any Kepler title (The Sandman, Stalker, The Rabbit Hunter all 404). sv.wikipedia has them only for Sandmannen, Paganinikontraktet and Kaninjägaren - Stalker and Lazarus have none."
+
+forStages:
+  translation: "Mirror the REWRITTEN kaninjagaren synopsis. A translator working straight from Bonniers' page would reintroduce the Kumla opening; the work's note says why not."
+  editions: "Nothing here constrains an edition choice. The English jackets used above come from larskepler.com's own book pages, if English blurbs are wanted without hunting product pages."
+  visual-language: "No brief should depict Joona imprisoned, or depict Jurek Walter's fate. His childhood and his infamy are jacket copy (Sjömannen); past that is not."
+
+openQuestions:
+  - "The redaction is confident, not certain, and is loosenable: Stalker has no per-novel article, so 'Stalker ends with Joona convicted' rests on two sources that both describe it from Kaninjägaren's side. Neither states the sentence itself. If a curator with the books finds the conviction is established earlier, the Kumla opening can be restored - it is publisher copy for its own book."
+  - "Accuracy, not spoilers, for enrichment: Hypnotisören's synopsis says 'Only the son survives', while Bonniers' copy has Joona realising a sister is alive and needing to reach her first. Not wrong about the household, but it reads more final than the jacket."
+  - "Same: Sjömannen's note says the other five stories 'stand outside the Joona Linna universe entirely', where Bonniers calls all six 'från Lars Keplers unika universum'. Curator-only, so nothing ships wrong."
+  - "A future 'Jurek Walter arc' order would in practice be a Joona-standing arc as much as an antagonist arc (Sandmannen introduces Jurek, Stalker's ending imprisons Joona, Kaninjägaren opens there, Lazarus brings the past back). Recorded because it changes what such an order is about; the ordering call itself is the curator's."
+
+postAuditFix:
+  - id: hypnotisoren-boy-is-not-mute
+    date: 2026-08-06
+    owner: spoiler-audit (with translation, same commit)
+    what: >
+      wing-audit's blocking finding: Hypnotisören's synopsis described the
+      surviving son as "severely wounded and unable to speak". Re-fetched
+      both jackets - the Swedish (albertbonniersforlag.se/bocker/153581)
+      says he "svävar in och ut ur medvetslösheten" (drifts in and out of
+      consciousness), the English (larskepler.com/books/the-hypnotist)
+      says only that he "can't remember what happened". Neither supports
+      "unable to speak"; the detail was invented. It was live in three
+      places plus one comment this stage did not flag: works.yaml's
+      synopsis, franchise.yaml's where-it-begins path description, the
+      pt-PT mirror of both (works.yaml's synopsis and franchise.yaml's
+      path description), and pt-PT works.yaml's own header comment, which
+      restated "o filho sobrevive mas não fala" as a verified fact when
+      asserting the translation tracked the corrected base text.
+    fix: >
+      All four replaced with "severely wounded and drifting in and out of
+      consciousness" / "entre a consciência e a inconsciência" (pt-PT),
+      matching the Swedish jacket's own wording per this wing's TITLE
+      RULING preference for the Swedish original as authoritative.
+    corrects: >
+      This file's own checkedAndLeftAlone.hypnotisoren entry above called
+      the synopsis "Jacket copy near verbatim" - true of the passage as a
+      whole, but the "unable to speak" clause was not verbatim and was not
+      caught at the time. Treat that line as superseded by this entry.
+    validate: "--slug lars-kepler: 0 errors, unchanged from baseline (only pre-existing handoff word-count warnings)"
+    i18nCoverage: "pt-PT: lars-kepler absent from every PARTIAL entry, full coverage unchanged"

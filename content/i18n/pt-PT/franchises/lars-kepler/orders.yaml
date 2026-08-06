@@ -1,0 +1,31 @@
+# Português europeu (pt-PT) - a única ordem de leitura curada desta ala.
+# `name`, `rationale` e `debated` são traduzidos; `orderedWorkIds` e
+# `sources` nunca são restabelecidos aqui (ver docs/SCHEMA.md, "Nested lists
+# merge by id"; `debated` é uma lista de prosa fundida por inteiro, ao
+# contrário de `orderedWorkIds`, ver lib/content/index.ts PROSE_LISTS).
+# O campo de código `subseries: "Joona Linna"` citado no debated abaixo é um
+# nome de campo, não prosa, e mantém-se tal como no texto de base.
+
+- id: lars-kepler/joona-linna-only
+  name: A série Joona Linna, do princípio ao fim
+  rationale: >
+    Os onze romances da série Joona Linna, pela mesma ordem da lista
+    predefinida, com as duas obras fora da série - o romance autónomo de
+    2015, [[work:lars-kepler/playground|O Porto das Almas]], e a coletânea
+    de contos de 2025, [[work:lars-kepler/sjomannen|Sjömannen]] - deixadas
+    de fora. Leia esta ordem em vez da predefinida de treze obras se
+    quiser apenas o fio dos casos, sem nada mais da prateleira a
+    interromper o percurso: sem missões no Kosovo, sem um conjunto de
+    contos sem ligação, entre uma investigação e a seguinte. O que perde: a
+    história e o cenário completamente à parte de Playground, e os outros
+    cinco contos de Sjömannen, junto com o seu relato dos primeiros anos de
+    Jurek Walter - Lars Kepler genuíno, só que de uma prateleira diferente,
+    não inferior.
+  debated:
+    - >
+      Esta ordem reproduz a própria sequência da ordem predefinida,
+      restrita a uma subsérie, exatamente como já fazem as ordens de fio
+      narrativo do Discworld e de Jo Nesbø neste catálogo; o seu único
+      contributo é remover as duas obras fora do campo `subseries: "Joona
+      Linna"` de works.yaml. Uma futura alteração a esse campo em qualquer
+      obra desincronizaria esta lista sem aviso.

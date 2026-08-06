@@ -1,0 +1,105 @@
+stage: editions
+summary: >
+  Built content/franchises/lars-kepler/editions.yaml from scratch: 34
+  editions across sv/en/pt-PT (see produced.editionCount/coverage below).
+  Every ISBN13 check digit verified by hand and against validate.py; every
+  pt-PT prefix confirmed 978-972 (Portugal, never Brazil's 978-85/978-65).
+
+  Black Edition: recorded as a second sv entry on lars-kepler/hypnotisoren
+  (9789100186777, the Pocket printing) with a note explaining it's a genuine
+  10th-anniversary rewrite, not a reprint. `title` is set on this entry
+  alone (every other sv entry omits it) because the object's own title
+  differs from the work's.
+
+  English translators: checked per-book, not assumed constant. A real
+  four-era lineage surfaced (see produced.translatorLineage), each name
+  confirmed on that exact edition's own OpenLibrary record. Menzies'
+  credits were mislabelled as a co-"author" rather than translator on
+  OpenLibrary - resolved by checking the named author id.
+
+  Portuguese heritage check (unprompted): Alexandra Coelho Ahndoril's
+  Portuguese mother does not appear to correlate with the Portuguese
+  publishing history - Porto Editora's program starts 2010, a normal
+  one-year translation lag, and every product page's author bio is the
+  standard house paragraph naming neither Portugal nor her ancestry.
+  Recorded checked-and-not-connected in the file header.
+
+  Porto Editora publishes 11 of 13 works - a real, previously undocumented
+  pt-PT history, surfaced via OpenLibrary (Sandmannen/Stalker/Spindeln
+  first) and confirmed on portoeditora.pt + the Biblioteca Nacional de
+  Portugal. Two titles needed synopsis-matching, not literal translation:
+  "O Executor" = Paganinikontraktet/The Nightmare (2nd book), "A Vidente" =
+  Eldvittnet/The Fire Witness (3rd book, spiritualist-medium synopsis fit).
+  One is not a Joona Linna book at all: "O Porto das Almas" = Playground,
+  confirmed by BNP's "Tít. orig.: Playground" field and by the Kosovo/
+  near-death synopsis match.
+
+  No edition exists (none invented) for: Medusa in any translated language
+  (unpublished); Sömngångaren in English (an ISBN is reserved,
+  9781838777906, but no publisher/date/translator/listing found anywhere -
+  not shipped); Sjömannen in English or Portuguese (too recent, confirmed
+  by negative results on both OpenLibrary and Porto Editora's own search).
+
+  validate.py --slug lars-kepler: 0 errors, same pre-existing warnings on
+  other stages' handoffs, untouched by this one.
+produced:
+  franchiseFiles:
+    - content/franchises/lars-kepler/editions.yaml
+  editionCount:
+    sv: 14
+    en: 9
+    pt-PT: 11
+    total: 34
+  coverage:
+    sv: "14 editions over 13 of 13 works (hypnotisoren carries 2)"
+    en: "9 of 13 works (every Joona Linna novel hypnotisoren-spindeln; not sömngångaren/medusa/playground/sjömannen)"
+    pt-PT: "11 of 13 works (all 9 Joona Linna novels plus playground; not sjömannen or medusa)"
+  translatorLineage:
+    en:
+      - { books: ["hypnotisoren"], translator: "Ann Long" }
+      - { books: ["paganinikontraktet", "eldvittnet"], translator: "Laura A. Wideburg" }
+      - { books: ["sandmannen", "stalker", "kaninjagaren", "lazarus"], translator: "Neil Smith" }
+      - { books: ["spegelmannen", "spindeln"], translator: "Alice Menzies" }
+    pt-PT:
+      - { books: ["hypnotisoren"], translator: "Jaime Bernardes" }
+      - { books: ["paganinikontraktet"], translator: "Ulla Baginha" }
+      - { books: ["eldvittnet", "sandmannen", "stalker"], translator: "Ana Diniz" }
+      - { books: ["playground", "kaninjagaren", "lazarus"], translator: "Regina Valente" }
+      - { books: ["spegelmannen", "spindeln", "somngangaren"], translator: "Ivan Figueiras" }
+forStages:
+  visual-metadata: >
+    Not this stage's file to touch, but useful context: Porto Editora's own
+    product pages carry pt-PT cover images per ISBN if ever wanted -
+    not scraped or linked here per the no-retailer-images rule.
+openQuestions:
+  - "Sömngångaren's English edition: ISBN reserved (9781838777906) but nothing else confirmable. Recheck after any actual announcement - the reservation alone isn't evidence of an imminent release."
+  - "Playground and Sjömannen have no English edition anywhere checked. Playground's absence looks like a real market gap (12 years, never picked up); Sjömannen's may just be too recent (2025) - recheck in a year."
+  - "The Black Edition's three 2019 format ISBNs (Storpocket/E-bok/Ljudbok) are named in the note but not given their own entries - only the 2020 Pocket ISBN is a full edition record, on the judgement that four formats of one rewrite are one object. A curator wanting all four represented would add three more entries."
+
+auditFixes:
+  stage: wing-audit
+  summary: >
+    Applied two wing-audit findings to this file.
+
+    rabbit-hunter-missing-its-article (blocking): Kaninjägaren's English
+    title read "Rabbit Hunter", contradicting larskepler.com, the one fully
+    catalogued OpenLibrary edition on OL20641517W, and this wing's own
+    events.yaml/works.yaml. Fixed to "The Rabbit Hunter" on the one entry
+    that carried it (kaninjagaren/knopf-2020-en). The audit's "five records"
+    are OpenLibrary's own editions on that OL work, not rows in this file -
+    this file only ever had the one.
+
+    translator-lineage-header-overstates-its-method (non-blocking): the
+    ENGLISH header claimed a uniform by_statement-sourced method. Re-verified
+    against OpenLibrary: Hypnotisören/Paganinikontraktet/Eldvittnet/
+    Sandmannen/Stalker carry an explicit by_statement; Kaninjägaren,
+    Spegelmannen and Spindeln (per the audit) plus Lazarus (found here while
+    re-checking Neil Smith's four books) do not - resolved instead from each
+    record's co-author key (OL7476119A/OL8476677A = Neil Smith, OL7968563A =
+    Alice Menzies), independently confirmed. Header reworded to state both
+    methods, matching Spegelmannen's own entry note, which already disclosed
+    the co-author-key method correctly. No entry-level notes added to
+    Kaninjägaren/Lazarus - header accuracy was the ask, not new notes.
+  produced:
+    - "content/franchises/lars-kepler/editions.yaml (title fix + header reword)"
+  validate: "--slug lars-kepler: 0 errors, unchanged"

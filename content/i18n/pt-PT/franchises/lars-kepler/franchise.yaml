@@ -1,0 +1,72 @@
+# Português europeu (pt-PT) - apenas prosa; id, slugs, authorIds e sources
+# nunca são traduzidos. startHere.paths é uma lista aninhada, fundida por id
+# (ver docs/SCHEMA.md, "Nested lists merge by id"): leva apenas title,
+# description e note, nunca workIds, orderId ou fit.
+# Títulos de obras citados nas referências inline de obra usam a edição
+# portuguesa publicada quando existe - "O Hipnotista" por Hypnotisören, "O
+# Porto das Almas" por Playground - e ficam no título original sueco quando
+# não há edição portuguesa: Medusa (ainda por publicar) e Sjömannen (2025,
+# sem edição portuguesa encontrada) - ver
+# content/franchises/lars-kepler/editions.yaml. Nunca um título inventado
+# (ver docs/SCHEMA.md, "Never translate a published title"). Menções
+# corridas a Playground e Sjömannen fora de uma referência de obra mantêm a
+# mesma palavra do texto de base, pela mesma razão.
+
+- id: lars-kepler
+  description: >
+    O conjunto completo da obra publicada sob o pseudónimo conjunto Lars
+    Kepler: onze romances da série Joona Linna, desde a estreia de 2009,
+    [[work:lars-kepler/hypnotisoren|O Hipnotista]], até ao já anunciado
+    [[work:lars-kepler/medusa|Medusa]] (2026), seguindo o detetive do
+    Departamento Nacional de Operações Joona Linna e a oficial do Serviço de
+    Segurança sueco Saga Bauer numa Estocolmo contemporânea e, fora isso,
+    comum. Fora da série ficam um romance autónomo de 2015,
+    [[work:lars-kepler/playground|O Porto das Almas]], e uma coletânea de
+    contos de 2025, [[work:lars-kepler/sjomannen|Sjömannen]]. Ao contrário de
+    outras alas deste catálogo com mais do que um autor, Lars Kepler nunca
+    foi um único autor mais tarde acompanhado por um coautor: Alexandra
+    Coelho Ahndoril e Alexander Ahndoril escrevem todos os livros em
+    conjunto sob o mesmo nome, desde a primeira página, em 2009.
+  startHere:
+    paths:
+      - id: where-it-begins
+        title: Onde tudo começa
+        description: >
+          Um hipnotista é chamado a ajudar a polícia a chegar a uma
+          testemunha de homicídio entre a consciência e a inconsciência -
+          o primeiro caso de Joona Linna, e o livro que criou o nome Lars
+          Kepler. Os próprios autores dizem que cada romance da série se
+          sustenta sozinho, por isso este é simplesmente o ponto natural
+          para experimentar um.
+        note: >
+          Continuando depois, começar por aqui também significa conhecer
+          Joona Linna e Saga Bauer mesmo no início da sua história contínua
+          - um bónus que, segundo os autores, vem de ler pela ordem, e não
+          um requisito para ler este livro isolado.
+
+      - id: joona-linna-front-to-back
+        title: A série Joona Linna, do princípio ao fim
+        description: >
+          Os onze casos, desde [[work:lars-kepler/hypnotisoren|O
+          Hipnotista]] até ao já anunciado
+          [[work:lars-kepler/medusa|Medusa]], sem nada de fora da série a
+          interromper o percurso.
+        note: >
+          Onze livros são um compromisso a sério antes de sabermos se a voz
+          nos convence - é essa a troca que este caminho faz, por um
+          percurso limpo apenas pelo fio dos casos. Fica de fora, por
+          completo, Playground e Sjömannen - não por serem obra menor,
+          apenas uma prateleira diferente.
+
+      - id: everything-in-order
+        title: Tudo, por ordem
+        description: >
+          As treze obras - os onze romances da série Joona Linna, mais o
+          romance autónomo [[work:lars-kepler/playground|O Porto das
+          Almas]] e a coletânea de contos
+          [[work:lars-kepler/sjomannen|Sjömannen]] - por ordem de
+          publicação.
+        note: >
+          Inclui as duas obras publicadas fora da série Joona Linna
+          propriamente dita, situadas onde foram efetivamente lançadas, em
+          vez de agrupadas à parte.

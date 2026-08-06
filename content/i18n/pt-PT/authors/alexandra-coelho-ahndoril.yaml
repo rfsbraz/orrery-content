@@ -1,0 +1,60 @@
+# Overlay pt-PT: bio e os títulos e a prosa dos lifeEvents, aninhados e
+# fundidos por id. O nome nunca é traduzido, e nenhuma estrutura (datas,
+# impact) é restabelecida aqui.
+# `pseudonyms` (incl. a nota sobre "Lars Kepler" e "Alex Ahndoril") não é
+# traduzido: o mecanismo de overlay só copia campos escalares e listas de
+# strings puras (lib/content/index.ts merge()/PROSE_LISTS); um array de
+# objetos como `pseudonyms` é descartado em silêncio, pelo que não há forma
+# de o traduzir através deste ficheiro enquanto a aplicação não mudar.
+# "Lars Kepler" é o pseudónimo em si e nunca é traduzido, aqui ou em
+# qualquer outro lado. A referência inline [[franchise:lars-kepler|Joona
+# Linna]] usa "Joona Linna" como texto de exibição porque é o nome de uma
+# personagem, não um título de obra - mantém-se igual em qualquer língua.
+# O romance a solo de Alexander Ahndoril, Regissören, é glosado no texto de
+# base como "(The Director, 2006)"; não foi confirmada nenhuma edição
+# portuguesa deste romance (fora do âmbito desta ala, sem entrada em
+# editions.yaml), pelo que a glosa fica tal como no texto de base em vez de
+# se inventar um título.
+
+- id: alexandra-coelho-ahndoril
+  bio: >
+    Romancista e crítica literária sueca, nascida em Helsingborg, filha de
+    pai sueco e mãe portuguesa. Formou-se em interpretação na Academia
+    Nacional de Mímica e Teatro de Estocolmo antes de obter um mestrado em
+    ciências literárias e iniciar uma dissertação de doutoramento sobre o
+    poeta português Fernando Pessoa. Publicou três romances históricos com
+    o seu próprio nome antes de se dedicar à ficção policial: Stjärneborg
+    (2003, sobre o astrónomo Tycho Brahe, vencedor do Prémio Katapult),
+    Birgitta och Katarina (2006, sobre Santa Brígida da Suécia) e Mäster
+    (2009, sobre o agitador socialista August Palm). Escreveu também
+    crítica literária para os jornais Göteborgs-Posten e Dagens Nyheter.
+    Desde 2009, ela e o marido, [[author:alexander-ahndoril|Alexander
+    Ahndoril]], coescrevem a série policial [[franchise:lars-kepler|Joona
+    Linna]] em conjunto, sob o pseudónimo Lars Kepler.
+  lifeEvents:
+    - id: alexandra-coelho-ahndoril-born-1966
+      title: Nasce em Helsingborg
+      description: >
+        Pia Alexandra Coelho Ahndoril nasce na paróquia de Maria, em
+        Helsingborg, na costa sul da Suécia, filha de pai sueco e mãe
+        portuguesa. Cresce na cidade, participa em pequenos papéis no
+        Helsingborg City Theatre e em grupos de teatro independentes, e
+        parte no início da década de 1990 para Estocolmo, onde ingressa na
+        Academia Nacional de Mímica e Teatro - o primeiro passo para longe
+        de Helsingborg e em direção à carreira de escritora e, mais tarde,
+        ao pseudónimo que se seguem.
+
+    - id: alexandra-coelho-ahndoril-katapult-prize-2004
+      title: Uma estreia histórica sobre Tycho Brahe vence o Prémio Katapult
+      description: >
+        Stjärneborg (2003), o seu romance de estreia sobre o astrónomo
+        Tycho Brahe, recebe o Prémio Katapult de melhor estreia literária
+        do ano - reconhecimento de uma carreira a solo com o seu próprio
+        nome, anos antes de Lars Kepler existir, construída em paralelo com
+        a representação, a crítica literária para o Göteborgs-Posten e o
+        Dagens Nyheter, e uma dissertação de doutoramento sobre o poeta
+        Fernando Pessoa. Completa a trilogia histórica, sem ligação
+        estreita entre si, que Stjärneborg começou, com Birgitta och
+        Katarina (2006, sobre Santa Brígida da Suécia) e Mäster (2009,
+        sobre o agitador socialista August Palm) - publicado no mesmo ano
+        em que ela e o marido estreiam como Lars Kepler.
