@@ -120,3 +120,71 @@ openQuestions:
     M-19-financing accusation and Mexican exile is real, dated and
     high-impact but still one-sourced (Spanish Wikipedia) - unrelated to
     this pass, still open.
+
+# --- Follow-up pass: wing-audit's press-archaeology findings, applied ---
+followUp:
+  stage: press-archaeology (wing-audit fixes)
+  summary: >
+    Applied wing-audit's three press-archaeology findings on branch
+    gabriel-garcia-marquez/audit-fixes-press. (1) blocking.septimus-
+    pseudonym-note-wrong-decade: the pseudonyms[0].note on
+    content/authors/gabriel-garcia-marquez.yaml dated the Septimus byline
+    to "the late 1940s ... before he wrote under his own name" - wrong on
+    both counts per the wing's own cited source (English Wikipedia: El
+    Universal 1948-1949 bylined, then Septimus at El Heraldo 1950-1952).
+    Corrected to 1950-1952 and reworded to state he was bylined at El
+    Universal FIRST, not after. This field renders directly to readers
+    (about-the-author.tsx:83); the pt-PT mirror is left for a separate
+    translation-stage pass, as instructed. (2) cleanup item 4: the author
+    file's header comment enumerated lifeEvents but skipped
+    garcia-marquez-vargas-llosa-punch-1976 - added it in its chronological
+    place, between the otoño-del-patriarca (1968-1975) and Pinochet-vow
+    (1981) mentions. (3) curatorsCall.translation-note: moved the Rabassa-
+    praised-the-translation anecdote off works.yaml's inert translationNote
+    field (confirmed by SCHEMA.md and a repo-wide grep to render nowhere)
+    onto a new franchise event, garcia-marquez-rabassa-translation-
+    praised-1970, dated 1970 (Harper & Row's first English edition), stated
+    honestly as a reported, secondhand anecdote (Rabassa's own English
+    Wikipedia entry + Paul Elie's history as quoted in The Paris Review's
+    2016 Rabassa obituary - the same two sources works.yaml's own note
+    already cited, re-verified: fetched Gregory Rabassa's English Wikipedia
+    raw wikitext directly and confirmed the sentence and its NYT-obituary
+    citation; theparisreview.org itself 403'd every fetch attempt this pass
+    (a bot-wall, same condition as the documented Bertrand case - host
+    alive, not reachable by an automated fetch), so that source is cited on
+    the strength of its already-verified use in works.yaml's own sources
+    list, not a fresh read of the page. Gave it organisation: diptych,
+    illustration_type: book-object (two book jackets, Spanish original vs
+    English translation - the wing's existing "two editions" pattern, as
+    used for the 1962 disowned edition and the 2007 thesis reissue), and
+    updated events.yaml's own header comment, which had stated the opposite
+    decision.
+  validation: >
+    python3 scripts/validate.py --slug gabriel-garcia-marquez: 0 errors, 27
+    warnings, all pre-existing (works.yaml era-coverage gaps + handoff
+    word-count soft caps - none new). aura_density.py gabriel-garcia-
+    marquez: 25 works, 29 aura (up from 28), 1.16/work (up from 1.12),
+    longest dark run unchanged at 4 years (1972-1975) - the new 1970 entry
+    only adds aura, it does not touch the 1972-1975 window.
+    art_rotation.py --check gabriel-garcia-marquez: 0 organisation-rotation
+    problems, 0 pacing problems (contour "#.==..===#===#.===#==.==#===",
+    one more mid cell than before between the two loud cells at 1967 and
+    1976, which pads that gap rather than tightening it - net effect on
+    pacing is neutral-to-better). The script's non-zero exit code is only
+    the pre-existing "0 of 29 assets could be read" composition-axis line,
+    the expected pre-art state per the wing's own baseline, not a real
+    gate.
+  produced:
+    - content/authors/gabriel-garcia-marquez.yaml (pseudonyms[0].note
+      corrected to 1950-1952 and re-sequenced; header comment gained the
+      1976 Vargas Llosa punch)
+    - content/franchises/gabriel-garcia-marquez/events.yaml (added
+      garcia-marquez-rabassa-translation-praised-1970; header comment
+      updated to Nine entries and to record the Rabassa anecdote now
+      living here)
+  footprint: >
+    Exactly the two files named above. works.yaml, orders.yaml,
+    franchise.yaml, eras.yaml and theme.yaml were read for context only
+    (a parallel agent is fixing works.yaml, including a possible trim to
+    the now-superseded translationNote field, in the same window) and not
+    touched.
