@@ -68,3 +68,33 @@ openQuestions:
     No further search was possible this run (budget exhausted); a second
     pass with search access might source a real Mi país inventado / 9-11
     link, which would flip sept-11-2001 to include if found.
+auditFixes:
+  - findingId: sept-11-2001-wrongly-excluded
+    date: 2026-08-06
+    what: >
+      The openQuestion above called it: a later pass found the link this
+      stage's exhausted-budget search missed. wing-audit flagged that
+      works.yaml's own synopsis for isabel-allende/mi-pais-inventado
+      already states the September 11, 2001 link ("written after the
+      September 11, 2001 attacks prompted a visit home that reopened her
+      sense of exile and belonging"), and that the book's publisher
+      settles it decisively. sept-11-2001 moved from exclude to include in
+      franchise.yaml's globalEvents, with the original exclude entry above
+      superseded (kept here, not deleted, as the record of what this stage
+      actually ruled and why it was wrong).
+    correctedWhy: >
+      HarperCollins' product page for the book states outright: "The book
+      circles around two life-changing moments. The assassination of her
+      uncle, Salvador Allende Gossens, on September 11, 1973, sent her
+      into exile and transformed her into a literary writer. And the
+      terrorist attacks of September 11, 2001, on her adopted homeland,
+      the United States, brought forth from Allende an overdue
+      acknowledgment that she had indeed left home."
+    verification: >
+      Re-fetched harpercollins.com/products/my-invented-country-isabel-allende
+      directly via scripts/fetch.py (not just taken from wing-audit's
+      quote) and confirmed the passage verbatim. aura_density.py
+      isabel-allende: 19 -> 20 aura (0.53 -> 0.56/work); worst dark run
+      unchanged at 4 yrs (1977-1980) - a 2001 global event does not touch
+      that 1977-1980 span. validate.py --slug isabel-allende: still 0
+      errors.
