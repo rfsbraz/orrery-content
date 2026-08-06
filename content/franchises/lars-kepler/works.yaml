@@ -74,6 +74,16 @@
     - "https://www.albertbonniersforlag.se/bocker/153581/hypnotisoren/"
     - "https://en.wikipedia.org/wiki/Lars_Kepler"
     - "https://sv.wikipedia.org/wiki/Lars_Kepler"
+  # Cover is the Bonnier 2010 Swedish paperback (ISBN 9789100124045,
+  # https://openlibrary.org/books/OL38238414M) - checked against this
+  # work's full Open Library edition list (37 editions) to confirm the
+  # Black Edition's own ISBN (9789100186777, see this file's header) is
+  # not among them, so this is unambiguously the original 2009 novel, not
+  # the 2019/2020 rewrite.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/15173368-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL19754844W"
 
 - id: lars-kepler/paganinikontraktet
   title: "Paganinikontraktet"
@@ -90,6 +100,16 @@
   sources:
     - "https://www.albertbonniersforlag.se/bocker/155847/paganinikontraktet/"
     - "https://sv.wikipedia.org/wiki/Paganinikontraktet"
+  # Cover is the Bonnier 2010 Swedish hardcover (ISBN 9789100124694,
+  # https://openlibrary.org/books/OL24847010M). Open Library files this
+  # edition under its own sparse work record rather than merged with the
+  # English "The Nightmare" work (OL16489867W, 13 editions) - a translation
+  # split rather than a merge error, but worth knowing before assuming the
+  # low edition count means a weak match.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/15173378-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL15940940W"
 
 - id: lars-kepler/eldvittnet
   title: "Eldvittnet"
@@ -106,6 +126,13 @@
     test.
   sources:
     - "https://www.albertbonniersforlag.se/bocker/167288/eldvittnet/"
+  # Cover is the Bonniers Swedish hardcover (ISBN 9789100126438,
+  # https://openlibrary.org/books/OL25269438M), same translation-split
+  # situation as Paganinikontraktet above.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/15173373-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL16584520W"
 
 - id: lars-kepler/sandmannen
   title: "Sandmannen"
@@ -121,6 +148,15 @@
     years earlier, one of serial killer Jurek Walter's presumed victims.
   sources:
     - "https://www.albertbonniersforlag.se/bocker/182783/sandmannen/"
+  # Cover is the Albert Bonniers förlag 2012 Swedish hardcover (ISBN
+  # 9789100130169, https://openlibrary.org/books/OL30718838M), one edition
+  # inside this work's own well-merged 19-edition Open Library record
+  # (unlike Paganinikontraktet/Eldvittnet above, this title's Swedish and
+  # translated editions share one work id).
+  images:
+    cover: "https://covers.openlibrary.org/b/id/15173370-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL16803046W"
 
 - id: lars-kepler/stalker
   title: "Stalker"
@@ -135,6 +171,13 @@
     second film arrives with no way to trace where either came from.
   sources:
     - "https://www.albertbonniersforlag.se/bocker/190412/stalker/"
+  # Cover is the Albert Bonniers Förlag 2015 Swedish edition (ISBN
+  # 9789100146320, https://openlibrary.org/books/OL31880626M), from this
+  # title's own well-merged 11-edition work record.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/10556628-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL17355119W"
 
 - id: lars-kepler/kaninjagaren
   title: "Kaninjägaren"
@@ -163,6 +206,17 @@
   sources:
     - "https://www.albertbonniersforlag.se/bocker/190415/kaninjagaren/"
     - "https://larskepler.com/books/the-rabbit-hunter/"
+  # Cover is the Albert Bonniers Förlag 2016 Swedish edition (ISBN
+  # 9789100136772, https://openlibrary.org/books/OL45818580M). Open
+  # Library's own work title for this record ("Lars Kepler SCHWEDISCH -
+  # Kaninjägaren (Hasenjagd)") is a German import-listing label, not a
+  # mistranslation or a different book - "Hasenjagd" is simply the German
+  # for "Kaninjägaren"/"Rabbit Hunter", parenthesised by whoever catalogued
+  # the import; the ISBN and cover art are the genuine Swedish edition.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/15173371-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL33839232W"
 
 - id: lars-kepler/lazarus
   title: "Lazarus"
@@ -178,6 +232,12 @@
     Linna for help, pulling him back into unfinished business.
   sources:
     - "https://www.albertbonniersforlag.se/bocker/197173/lazarus/"
+  # Cover is the Albert Bonniers Förlag 2018 Swedish edition (ISBN
+  # 9789100142698, https://openlibrary.org/books/OL60953586M).
+  images:
+    cover: "https://covers.openlibrary.org/b/id/15173379-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL44620443W"
 
 - id: lars-kepler/spegelmannen
   title: "Spegelmannen"
@@ -193,6 +253,18 @@
     hold more than anyone realises.
   sources:
     - "https://www.albertbonniersforlag.se/bocker/208564/spegelmannen/"
+  # No Swedish-edition cover: this title's own Swedish Open Library record
+  # (OL36746190W, ISBN 9789100191924) carries no cover image, and no other
+  # Swedish-language edition of Spegelmannen exists on Open Library.
+  # Cover is instead the Knopf Doubleday 2022 English translation, "Mirror
+  # Man" (ISBN 9780593315590, https://openlibrary.org/books/OL38067190M) -
+  # the same choice this file makes for Playground below (a translated
+  # edition's jacket, not the Swedish original, used because it is the
+  # only clean cover Open Library holds for this title).
+  images:
+    cover: "https://covers.openlibrary.org/b/id/14705437-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL25466922W"
 
 - id: lars-kepler/spindeln
   title: "Spindeln"
@@ -207,6 +279,16 @@
     the countdown those bullets represent starts to catch up with them.
   sources:
     - "https://www.albertbonniersforlag.se/bocker/209875/spindeln/"
+  # No Swedish-edition cover found on Open Library (checked by title search
+  # in both spellings and via the author's works list; only a 2022
+  # Portuguese "A Aranha" cover turned up alongside this one). Cover is the
+  # Knopf Doubleday 2023 English translation, "Spider" (ISBN
+  # 9780593321041, https://openlibrary.org/books/OL42825657M) - same
+  # translated-edition tradeoff as Spegelmannen above.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/14382104-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL31175043W"
 
 - id: lars-kepler/somngangaren
   title: "Sömngångaren"
@@ -225,6 +307,11 @@
   sources:
     - "https://www.albertbonniersforlag.se/bocker/269387/somngangaren/"
     - "https://www.larskepler.com/"
+  # No cover: despite being Sweden's top-selling hardcover fiction title of
+  # 2024, Open Library has no record for it at all yet (checked by title
+  # search with and without diacritics, and by title-plus-author search) -
+  # a cataloguing lag rather than a licensing gap. Nothing else on this
+  # skill's source ranking hosts in-copyright cover art to hotlink.
 
 - id: lars-kepler/medusa
   title: "Medusa"
@@ -245,6 +332,9 @@
     eleventh Joona Linna novel.
   sources:
     - "https://www.albertbonniersforlag.se/bocker/269389/medusa/"
+  # No cover: unpublished (forthcoming 2026-09-21), so no edition exists
+  # yet for any catalogue to hold a jacket image for. Revisit after
+  # release.
 
 - id: lars-kepler/playground
   title: "Playground"
@@ -265,6 +355,17 @@
   sources:
     - "https://www.albertbonniersforlag.se/bocker/194815/playground/"
     - "https://sv.wikipedia.org/wiki/Lars_Kepler"
+  # No Swedish-edition cover on Open Library (its Swedish ISBN has no
+  # record there). Cover is the Cargo 2015 Dutch translation - itself
+  # titled plainly "Playground" with no added subtitle, unlike the 2016
+  # German translation's "Playground - Leben oder Sterben" (a different,
+  # separate Open Library work, OL20236225W, rejected for carrying a
+  # subtitle this work's own title field does not) - ISBN 9789023495338,
+  # https://openlibrary.org/books/OL28120759M.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/9863051-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL20778007W"
 
 - id: lars-kepler/sjomannen
   title: "Sjömannen: Sex spänningsberättelser"
@@ -291,3 +392,7 @@
     - "https://www.albertbonniersforlag.se/bocker/296504/sjomannen/"
     - "https://sv.wikipedia.org/wiki/Lars_Kepler"
     - "http://libris.kb.se/bib/m68d3bn8kdv86br2/data.jsonld"
+  # No cover: no Open Library record exists yet for this 2025 title under
+  # any spelling of its title checked (with and without the subtitle, with
+  # and without diacritics). A cataloguing lag like Sömngångaren's above,
+  # not a licensing gap.
