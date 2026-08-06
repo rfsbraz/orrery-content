@@ -24,9 +24,12 @@ bio: >
   the name Alberto Caeiro, and around that voice built a coterie of invented
   authors - Caeiro, Ricardo Reis, Álvaro de Campos, the semi-heteronym Bernardo
   Soares and more than a hundred others - each with a biography, a philosophy and
-  a quarrel with the rest. He published five slim books in his lifetime, four of
-  them in English, and only one in Portuguese:
-  [[work:fernando-pessoa/mensagem|Mensagem]] (1934). At his death in 1935 he left
+  a quarrel with the rest. He published five slim books of poetry in his
+  lifetime, four of them in English and one in Portuguese,
+  [[work:fernando-pessoa/mensagem|Mensagem]] (1934), plus a pamphlet defending
+  the military dictatorship and, in a magazine,
+  [[work:fernando-pessoa/o-banqueiro-anarquista|O Banqueiro Anarquista]]. At his
+  death in 1935 he left
   a trunk holding more than 25,000 manuscript sheets, now in the Biblioteca
   Nacional de Portugal; the work in it has been coming out in books since 1942
   and is still not exhausted, which is why the shelf below runs seventy years
@@ -114,9 +117,15 @@ lifeEvents:
 # in Presença no. 17 (December 1928): a pseudonymous work "is the author's own,
 # save in the name it signs"; a heteronymous work "is the author outside his own
 # person, it is by a complete individuality manufactured by him, as the lines of
-# any character in any drama of his would be". So these four are not pen names
-# and are not filed as `pseudonyms`. Their `born`, `died` and `lifeEvents` are
-# written fiction, which is what `authored: true` marks.
+# any character in any drama of his would be". So the five below are not pen
+# names and are not filed as `pseudonyms`. Their `born`, `died` and `lifeEvents`
+# are written fiction, which is what `authored: true` marks.
+#
+# Two of them, Bernardo Soares and the Barão de Teive, are semi-heteronyms:
+# prose writers whose personality is not another man's but Pessoa's own with the
+# reasoning and the feeling cut away. The term is Pessoa's, applied to Soares in
+# the Casais Monteiro letter; for Teive it is the classification his editors and
+# the criticism use, and the entry says so on itself.
 #
 # The single richest source for all four is Pessoa's letter to Adolfo Casais
 # Monteiro of 13 January 1935, printed in Correspondência 1923-1935 (ed. Manuela
@@ -254,6 +263,56 @@ heteronyms:
       - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra"
       - "https://pt.wikipedia.org/wiki/Bernardo_Soares"
       - "https://en.wikipedia.org/wiki/The_Book_of_Disquiet"
+
+  - id: barao-de-teive
+    name: "Barão de Teive"
+    authored: true
+    died: 1920-07-12
+    # No `born` key: nothing in the papers gives him a birth date, and even the
+    # number on his title is unstable - twentieth Barão de Teive in the
+    # manuscripts, fourteenth in one typescript.
+    #
+    # The death date is the one printed inside the fiction, on the newspaper
+    # notice of his suicide reproduced at the front of A Educação do Estóico. It
+    # rests on that single source. It also falls eight years before the 1928
+    # papers in which Pessoa wrote him, which is the fiction's own chronology
+    # rather than a slip: Teive is dead before the manuscript is found.
+    bio: >
+      Álvaro Coelho de Athayde, twentieth Barão de Teive: a Portuguese nobleman
+      of the Quinta da Macieira outside Lisbon, a stoic by self-education, one
+      leg amputated and the anaesthetic refused, and the most lucid of Pessoa's
+      inventions in the precise sense that the lucidity kills him. He holds that
+      a rational conduct of life is impossible, that his pride will not let him
+      publish anything short of what his intelligence promised, and that the one
+      consistent act left is to end it. So he burns everything he wrote, writes
+      a last unfinished book explaining why - subtitled "the impossibility of
+      making superior art" - and leaves it in a hotel drawer for Fernando Pessoa
+      to find. He is classed with Bernardo Soares as a semi-heteronym, a
+      personality not Pessoa's own yet not another man's either; the term is
+      Pessoa's, used of Soares in the letter of January 1935 and extended to
+      Teive by his editors. The two books are twins seen from opposite ends: one
+      man who cannot stop writing about nothing, one who stops altogether.
+    lifeEvents:
+      - id: teive-suicide-1920
+        date: 1920-07-12
+        title: "Teive kills himself at the Quinta da Macieira (an authored death)"
+        impact: high
+        description: >
+          Within Pessoa's fiction the Barão de Teive takes his own life at his
+          estate outside Lisbon, having destroyed every manuscript he could not
+          finish. No real person died: the date comes from the newspaper notice
+          printed at the front of
+          [[work:fernando-pessoa/a-educacao-do-estoico|A Educação do Estóico]],
+          and Pessoa wrote the papers behind that book in 1928, eight years
+          after the death he had dated. It matters for the reading, because
+          every surviving page of Teive's is written from inside a decision
+          already taken, by a man explaining a suicide rather than debating one.
+        spoilerAfter: null
+        sources:
+          - "https://pt.wikipedia.org/wiki/%C3%81lvaro_Coelho_de_Athayde"
+    sources:
+      - "https://pt.wikipedia.org/wiki/%C3%81lvaro_Coelho_de_Athayde"
+      - "https://en.wikipedia.org/wiki/Heteronym_(literature)"
 
 sources:
   - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"

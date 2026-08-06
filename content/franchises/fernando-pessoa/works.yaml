@@ -20,6 +20,11 @@
 # own right and because it is the text Pessoa named on the day the heteronyms
 # began. Both entries carry a note pointing at the other.
 #
+# DATING. `published` is the year the text first appeared complete, not the year
+# of the volume that later carried it. Two entries below therefore sit at their
+# magazine dates: O Guardador de Rebanhos (Athena, 1925; in book form 1946) and
+# O Banqueiro Anarquista (Contemporânea, 1922; first standalone book 1999).
+#
 # NOT LISTED, and why. Periodical appearances are not works here: the Orpheu
 # odes (1915), the "Ultimatum" in Portugal Futurista (1917), "Tabacaria" in
 # presença (1933), O Marinheiro in A Águia (1915). They are the events of the
@@ -31,11 +36,16 @@
 # editions of 1990 and 1994), and the several Europa-América and Lello
 # gatherings of the 1980s, which redistribute texts already published by Ática.
 #
-# SOURCE. The publisher, editor and year of every posthumous volume below come
+# SOURCE. The publisher, editor and year of the posthumous volumes below come
 # from the "Bibliografia geral de referência" of Arquivo Pessoa (the online form
 # of MultiPessoa, co-edited by Casa Fernando Pessoa), which lists first editions
-# with their editors. The five lifetime books are cross-checked against Casa
-# Fernando Pessoa's own page, which counts exactly five and names them.
+# with their editors. That bibliography closes in 2008: the volumes dated 2009
+# and later come from the catalogue of the Biblioteca Nacional de Portugal,
+# which is also the tiebreaker where two sources give different first-edition
+# years. Casa Fernando Pessoa's own page counts five books published in his
+# lifetime, all of them poetry, and names them; the 1928 pamphlet O Interregno
+# and the 1922 magazine novella O Banqueiro Anarquista sit outside that count
+# and are documented at the Biblioteca Nacional.
 #
 # HETERONYMS. Where a book carries an invented author's name on the cover, the
 # entry uses `heteronym:` (pointing at content/authors/fernando-pessoa.yaml's
@@ -112,6 +122,27 @@
     - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra/fernando-pessoa"
     - "https://en.wikipedia.org/wiki/Fernando_Pessoa"
 
+- id: fernando-pessoa/o-banqueiro-anarquista
+  title: "O Banqueiro Anarquista"
+  authorIds: [fernando-pessoa]
+  published: 1922
+  subseries: null
+  canonTier: core
+  format: novella
+  synopsis: >
+    Over dinner, a rich banker proves to his companion, by pure logic and
+    without once raising his voice, that he is the only consistent anarchist
+    alive and that his fortune is the proof. A satire whose argument is airtight
+    and whose conclusion is monstrous.
+  # The whole novella ran in the first issue of the magazine Contemporânea in
+  # May 1922, which is the year here: it is the one substantial piece of fiction
+  # Pessoa published in his lifetime. Its first standalone book edition is 1999
+  # (ed. Manuela Parreira da Silva, Assírio & Alvim), the year most retail
+  # metadata carries.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+    - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
+
 - id: fernando-pessoa/o-guardador-de-rebanhos
   title: "O Guardador de Rebanhos"
   authorIds: [fernando-pessoa]
@@ -134,6 +165,30 @@
   sources:
     - "https://pt.wikipedia.org/wiki/O_Guardador_de_Rebanhos"
     - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra/alberto-caeiro"
+
+- id: fernando-pessoa/o-interregno
+  title: "O Interregno: Defesa e Justificação da Ditadura Militar em Portugal"
+  authorIds: [fernando-pessoa]
+  published: 1928
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    A pamphlet arguing the military dictatorship installed in 1926 as a matter
+    of political science rather than of politics: a country whose public opinion
+    has disintegrated cannot be governed by opinion, so what it needs is an
+    interregnum, a suspended state held by force until a nation exists to be
+    consulted again. Issued by the Núcleo de Acção Nacional in Lisbon, and the
+    hardest single item in the bibliography to square with the writings against
+    Salazar that came out of the same drawer a few years later.
+  # Absent from the Arquivo Pessoa bibliography. The Biblioteca Nacional de
+  # Portugal holds three copies of the 1928 first edition, one catalogued as a
+  # manifesto, plus a later Nova Ática reprint; the imprint is Lisboa, Núcleo
+  # de Acção Nacional, 1928, printed at the Sociedade Nacional de Typographia,
+  # and the title page spells it "defeza ... da dictadura militar".
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=interregno+pessoa"
+    - "https://openlibrary.org/search?q=Interregno+Pessoa"
 
 - id: fernando-pessoa/mensagem
   title: "Mensagem"
@@ -237,6 +292,28 @@
     1924; this is the volume that made Reis a poet with a book.
   sources:
     - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/paginas-de-doutrina-estetica
+  title: "Páginas de Doutrina Estética"
+  authorIds: [fernando-pessoa]
+  published: 1946
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    The first book of Pessoa's critical prose, selected, prefaced and annotated
+    by the poet Jorge de Sena: sensationism explained by its inventor, the case
+    against the literature of his moment, and the pages on what a poet is and
+    what Portugal was supposed to do with one. It put the theory in readers'
+    hands twenty years before Ática's Páginas volumes.
+  # Absent from the Arquivo Pessoa bibliography. Lisboa, Editorial Inquérito,
+  # 1946, with a second edition in 1962. The Biblioteca Nacional also holds
+  # copies of the Sena selection bearing 1944 and 1947 imprints; 1946 is the
+  # year on the four Library of Congress records and the year the volume is
+  # cited by in the literature.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=paginas+doutrina+estetica+pessoa"
+    - "https://openlibrary.org/search?q=%22doutrina+estetica%22"
 
 - id: fernando-pessoa/poemas-dramaticos
   title: "Poemas Dramáticos"
@@ -381,7 +458,10 @@
   authorIds: [fernando-pessoa]
   published: 1978
   subseries: null
-  canonTier: extended
+  # Correspondence is filed apocrypha throughout this wing, the same as the
+  # Côrtes-Rodrigues, Gaspar Simões and Correspondência volumes: letters Pessoa
+  # wrote, but not books he made.
+  canonTier: apocrypha
   format: nonfiction
   synopsis: >
     The letters to Ophélia Queiroz, the office typist he courted in 1920 and
@@ -394,7 +474,7 @@
 - id: fernando-pessoa/da-republica
   title: "Da República (1910-1935)"
   authorIds: [fernando-pessoa]
-  published: 1979
+  published: 1978
   subseries: null
   canonTier: extended
   format: essay-collection
@@ -403,8 +483,12 @@
     gathered by Joel Serrão: the early monarchist scorn, the mystical
     nationalism, and the late texts against Salazar and the Estado Novo that the
     censorship stopped.
+  # The Arquivo Pessoa bibliography dates this 1979. The Biblioteca Nacional
+  # holds both an Ática 1978 printing, with Serrão's introduction and
+  # organisation named on it, and an Ática 1979 one; 1978 is the first.
   sources:
     - "http://arquivopessoa.net/info/bibliografia"
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=da+republica+pessoa+serrao"
 
 - id: fernando-pessoa/sobre-portugal
   title: "Sobre Portugal: Introdução ao Problema Nacional"
@@ -615,6 +699,7 @@
 - id: fernando-pessoa/a-educacao-do-estoico
   title: "A Educação do Estóico"
   authorIds: [fernando-pessoa]
+  heteronym: barao-de-teive
   publishedAs: "Barão de Teive"
   published: 1999
   subseries: null
@@ -625,32 +710,13 @@
     burned everything else he wrote because he could not finish it, and who
     sets out with total lucidity why he is about to kill himself. Edited by
     Richard Zenith.
-  # No `heteronym:` key: the Barão de Teive has an authored life of the same
-  # kind as the four in content/authors/fernando-pessoa.yaml, but he is not one
-  # of them, and inventing an entry for him here would put a fifth heteronym
-  # into the catalogue on this book's authority alone. `publishedAs` records
-  # the byline the book carries, which is the fact this entry can stand behind.
+  # The full title on the manuscript, and on the book, is "A Educação do
+  # Estóico: o único manuscrito do Barão de Teive". Excerpts signed by Teive had
+  # appeared in 1960, in Maria Aliete Galhoz's preface to the Rio de Janeiro
+  # Obra Poética; 1999 is the first edition of the text as a book of its own.
   sources:
     - "http://arquivopessoa.net/info/bibliografia"
-
-- id: fernando-pessoa/o-banqueiro-anarquista
-  title: "O Banqueiro Anarquista"
-  authorIds: [fernando-pessoa]
-  published: 1999
-  subseries: null
-  canonTier: core
-  format: novella
-  synopsis: >
-    Over dinner, a rich banker proves to his companion, by pure logic and
-    without once raising his voice, that he is the only consistent anarchist
-    alive and that his fortune is the proof. A satire whose argument is airtight
-    and whose conclusion is monstrous.
-  # First published in the magazine Contemporânea in 1922, in Pessoa's
-  # lifetime; the year here is its first standalone book edition, ed. Manuela
-  # Parreira da Silva for Assírio & Alvim.
-  sources:
-    - "http://arquivopessoa.net/info/bibliografia"
-    - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
+    - "https://pt.wikipedia.org/wiki/%C3%81lvaro_Coelho_de_Athayde"
 
 - id: fernando-pessoa/correspondencia-1905-1922
   title: "Correspondência 1905-1922"
@@ -752,3 +818,132 @@
     years after Pessoa's death.
   sources:
     - "http://arquivopessoa.net/info/bibliografia"
+
+# --- Posthumous: the critical editions, 2009 onward ---
+#
+# Everything below this line is later than the Arquivo Pessoa bibliography and
+# is sourced from the Biblioteca Nacional de Portugal's catalogue: three
+# publishing programmes running in parallel on the same trunk of papers, the
+# INCM "Edição Crítica de Fernando Pessoa", the "Obras de Fernando Pessoa. Nova
+# série" at Ática and Assírio & Alvim, and Tinta-da-china's Pessoa series.
+
+- id: fernando-pessoa/sensacionismo-e-outros-ismos
+  title: "Sensacionismo e Outros Ismos"
+  authorIds: [fernando-pessoa]
+  published: 2009
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Seven hundred pages on the movements Pessoa joined, invented or announced
+    and then abandoned: sensationism above all, and around it paulismo,
+    interseccionismo, futurism and the rest of the manifestos the Orpheu
+    generation ran on. Established from the papers by Jerónimo Pizarro as the
+    tenth volume of the national critical edition.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=sensacionismo+outros+ismos+pessoa"
+    - "https://openlibrary.org/search?q=Sensacionismo+e+outros+ismos"
+
+- id: fernando-pessoa/associacoes-secretas-e-outros-escritos
+  title: "Associações Secretas e Outros Escritos"
+  authorIds: [fernando-pessoa]
+  published: 2011
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Pessoa on freemasonry and the initiatic orders, gathered by José Barreto
+    around the article he published in the Diário de Lisboa in February 1935
+    against the bill that would outlaw them. The last public fight he picked,
+    nine months before he died, and the one time the private occultist argued
+    his case in a newspaper.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=associacoes+secretas+outros+escritos+pessoa"
+    - "https://openlibrary.org/search?q=Associa%C3%A7%C3%B5es+secretas+Pessoa"
+
+- id: fernando-pessoa/argumentos-para-filmes
+  title: "Argumentos para Filmes"
+  authorIds: [fernando-pessoa]
+  published: 2011
+  subseries: null
+  canonTier: extended
+  format: screenplay
+  synopsis: >
+    Film treatments written in Portuguese and English for a cinema Pessoa had no
+    way into: outlines, scenarios and pitches, some of them for competitions,
+    printed for the first time with translations by Patrício Ferrari and Claudia
+    J. Fischer. The man who published almost nothing was still drafting for
+    whatever new medium turned up.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=argumentos+para+filmes+pessoa"
+
+- id: fernando-pessoa/iberia
+  title: "Ibéria: Introdução a um Imperialismo Futuro"
+  authorIds: [fernando-pessoa]
+  published: 2012
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    The unfinished book on Iberia: Portugal and Spain argued as one
+    civilisational unit whose future imperialism has to be cultural rather than
+    territorial, because the territorial kind is finished and was never what the
+    peninsula was for. The prose twin of the Fifth Empire that
+    [[work:fernando-pessoa/mensagem|Mensagem]] puts in verse. Established by
+    Jerónimo Pizarro and Pablo Javier Pérez López.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=iberia+introducao+imperialismo+futuro"
+    - "https://openlibrary.org/search?q=Ib%C3%A9ria+Pessoa+imperialismo"
+
+- id: fernando-pessoa/teoria-da-heteronimia
+  title: "Teoria da Heteronímia"
+  authorIds: [fernando-pessoa]
+  published: 2012
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Everything Pessoa wrote about how the invented authors worked, in one
+    volume: the prefaces he drafted and never used, the notes on a drama made of
+    people instead of acts, the bibliographical tables that sort pseudonym from
+    heteronym, and the letters where he explains the system to the few people
+    who asked. Edited by Fernando Cabral Martins and Richard Zenith.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=teoria+da+heteronimia+pessoa"
+    - "https://openlibrary.org/search?q=Teoria+da+heteronimia+Pessoa"
+
+- id: fernando-pessoa/o-regresso-dos-deuses
+  title: "O Regresso dos Deuses e Outros Escritos de António Mora"
+  authorIds: [fernando-pessoa]
+  published: 2013
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    The writings of António Mora, the philosopher Pessoa invented to give
+    Caeiro's paganism a system: the gods argued back into existence as
+    metaphysics rather than as nostalgia, and Christianity treated as an
+    interruption Europe is about to finish with. Edited by Manuela Parreira da
+    Silva.
+  # The byline is Fernando Pessoa's, not Mora's, so no `publishedAs` and no
+  # `heteronym` key: this is a volume about and by an invented author, published
+  # under the real one's name.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=regresso+dos+deuses+mora+pessoa"
+    - "https://openlibrary.org/search?q=regresso+dos+deuses+Ant%C3%B3nio+Mora"
+
+- id: fernando-pessoa/sobre-o-fascismo-a-ditadura-militar-e-salazar
+  title: "Sobre o Fascismo, a Ditadura Militar e Salazar"
+  authorIds: [fernando-pessoa]
+  published: 2015
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    The political writing on the dictatorship, gathered and annotated by José
+    Barreto: the 1926 coup, the military dictatorship, Italian fascism, and the
+    slow turn against Salazar's Estado Novo, corporatism and the censorship in
+    the last years of Pessoa's life.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=sobre+fascismo+ditadura+militar+salazar+pessoa"
+    - "https://openlibrary.org/search?q=Sobre+o+fascismo+a+ditadura+militar+e+Salazar"
