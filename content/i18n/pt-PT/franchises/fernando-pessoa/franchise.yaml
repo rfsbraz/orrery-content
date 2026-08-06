@@ -1,0 +1,81 @@
+# Português europeu (pt-PT) - sobreposição de prosa curada.
+# Traduz-se apenas prosa. Nunca ids, slugs, nomes de autor, títulos de obra
+# (os desta ala já são portugueses ou ingleses de origem) nem URLs de fontes.
+#
+# As listas encaixadas fundem-se item a item pelo id (ver SCHEMA.md, "Nested
+# lists merge by id"), pelo que os percursos de startHere trazem apenas o id e
+# a prosa, nunca a estrutura (workIds, orderId, fit).
+#
+# globalEvents e features são decisões de catálogo, não prosa para o leitor, e
+# ficam de fora desta sobreposição.
+#
+# "arca" e não "baú": é o termo com que a bibliografia portuguesa e a Casa
+# Fernando Pessoa designam o espólio deixado em 1935, e o nome da exposição da
+# própria Casa sobre a posteridade, "A arca eterna".
+
+- id: fernando-pessoa
+  description: >
+    A obra publicada completa de Fernando Pessoa, que deu à estampa cinco
+    livros finos em quarenta e sete anos e deixou o resto numa arca. Quatro dos
+    cinco eram em inglês; o único português,
+    [[work:fernando-pessoa/mensagem|Mensagem]] (1934), saiu no ano anterior à
+    sua morte. Tudo o resto nesta estante foi feito depois de 1935 por editores
+    a ler os seus papéis: a poesia de Alberto Caeiro, Ricardo Reis e Álvaro de
+    Campos, três poetas inventados com biografias próprias e querelas próprias;
+    o fragmentário [[work:fernando-pessoa/livro-do-desassossego|Livro do
+    Desassossego]] atribuído a um guarda-livros lisboeta chamado Bernardo
+    Soares; um Fausto em que trabalhou trinta anos e que nunca acabou; contos
+    policiais, aforismos, polémica política, tratados ocultistas e cartas de
+    amor. É uma bibliografia que se estende setenta anos para lá da vida e
+    ainda não está fechada.
+  startHere:
+    paths:
+      - id: the-school-five
+        title: Os cinco que Portugal ensina
+        description: >
+          Portugal fixa a mesma lista curta para o último ano da escola, e é
+          por aí que começa praticamente todo o leitor português: poemas que
+          Pessoa assinou com o seu próprio nome, poemas de cada um dos três
+          poetas inventados, e [[work:fernando-pessoa/mensagem|Mensagem]]. Os
+          cinco volumes aqui reunidos são os livros de onde esses poemas vêm,
+          de modo que entre eles se encontra o pastor que se recusa a pensar no
+          que vê, o classicista que aconselha distância de uma vida que vai
+          acabar de qualquer maneira, o engenheiro que quer sentir tudo de
+          todas as maneiras, e o livro de brasões do mito português que
+          arrecadou um prémio nacional no ano anterior à sua morte. O custo:
+          isto é só a poesia. Deixa de fora toda a prosa e, com ela, a crítica,
+          a política, a escrita ocultista e as cartas, que são a maior parte da
+          estante.
+        note: >
+          O programa pede um punhado de poemas de cada um destes, e não
+          qualquer um deles por inteiro. Cinco portas, não cinco obrigações.
+      - id: by-signature
+        title: Um nome de cada vez
+        description: >
+          O arranjo que o próprio Pessoa usou e aquele por que Portugal
+          continua a lê-lo: cada autor inventado tomado por inteiro, um a
+          seguir ao outro, em vez de disperso por setenta anos de publicação
+          póstuma. Acrescenta os dois livros de prosa aos cinco acima, e é aqui
+          que fica o [[work:fernando-pessoa/livro-do-desassossego|Livro do
+          Desassossego]], uma autobiografia sem factos em mais de quinhentos
+          fragmentos guardada por um guarda-livros lisboeta que não vai a lado
+          nenhum e não faz nada. O custo: sete volumes em cinquenta e quatro,
+          pelo que o teatro, a ficção, a crítica, a política e a escrita
+          ocultista ficam todos na estante.
+      - id: everything
+        title: Tudo, no ano em que apareceu
+        description: >
+          Os cinquenta e quatro volumes a partir de 1918, cada um no ano em que
+          saiu pela primeira vez. Em Pessoa esse é um percurso mais estranho do
+          que parece: publicou cinco livros finos em vida, e tudo o que vem
+          depois de 1935 é o registo de editores a abrir uma arca de vinte e
+          cinco mil folhas e a fazer livros dela durante os oitenta anos
+          seguintes. Lida assim, a estante é a história de um escritor a ser
+          montado em público, e não a história de ele escrever. O custo é
+          exatamente esse. A ordem diz quando cada livro foi fabricado, não
+          quando foi escrito nem que nome tem na capa, pelo que os autores
+          inventados chegam aos pedaços com décadas de intervalo, e os quarenta
+          e nove poemas de
+          [[work:fernando-pessoa/o-guardador-de-rebanhos|O Guardador de
+          Rebanhos]] aparecem duas vezes, uma em 1925 e outra dentro do volume
+          de 1946 que os reuniu.
