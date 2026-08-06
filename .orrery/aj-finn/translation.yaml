@@ -1,0 +1,59 @@
+stage: translation
+wing: aj-finn
+summary: >
+  Full first pt-PT locale build - zero coverage before this run.
+  i18n_coverage.py --slug aj-finn: 202/221 before (4 MISSING: franchise.yaml,
+  works.yaml, events.yaml, authors/aj-finn.yaml), 206/221 after, no
+  regression elsewhere. eras.yaml/orders.yaml are documented empty lists
+  with zero prose slots - no overlay file for either, same as anna-sewell
+  and isabel-allende. theme.yaml confirmed outside i18n_coverage.py's
+  PROSE map - skipped. validate.py --slug aj-finn: 0 errors (2 pre-existing
+  unrelated handoff-length warnings).
+
+titleChoice: >
+  Precedent from gabriel-garcia-marquez/isabel-allende applied: an inline
+  or generic in-prose title mention uses the real pt-PT edition title when
+  one exists, the original otherwise. editions.yaml records a pt-PT
+  edition ("A Mulher à Janela," Presença) only for The Woman in the
+  Window - used everywhere it's named, including the one plain-text
+  (non-bracketed) mention in the 2016 auction lifeEvent. End of Story has
+  no pt-PT edition and stays in English everywhere, including its own
+  event title. No event here is edition/occasion-specific the way
+  Allende's Knopf-1985 exception was, so no exception was needed. Film
+  titles (Rear Window, Gaslight, Copycat, the 2022 Netflix parody) stayed
+  in English: no pt-PT distribution title sourced this run.
+
+spoilerHandling: >
+  Two synopsis sites and one event carried real spoiler risk, all
+  clause-for-clause translated with no resolution added: works.yaml's two
+  synopses keep their open questions ("that no one else believes
+  happened," "did the perfect crime writer commit the perfect crime?");
+  events.yaml's plot-similarity event omits exactly what the English
+  omits (itemised correction detail, forum handles, the Copycat stalker
+  beat). Full before/after text quoted in the run report. All direct
+  quotations from named real people stayed in English verbatim rather
+  than being translated, matching gillian-flynn/harlan-coben/hp-lovecraft
+  precedent, so no real person's wording was reattributed in translation.
+
+sensitiveContent: >
+  The two highest-impact lifeEvents (2013 "Jake" emails, 2019 New Yorker
+  investigation) document a living person's real, reported health-
+  fabrication history. Translated plainly and factually, matching the
+  English's sourced, non-editorial tone with no added framing.
+
+registerNotes: >
+  European Portuguese throughout - no auxiliary+gerund tells, no
+  Brazilian vocabulary traps triggered, "rapariga" does not occur. Place
+  names follow existing catalogue convention (Nova Iorque, São Francisco,
+  Carolina do Norte, Universidade Duke/de Oxford); real institution/
+  imprint names kept in English as their trading names, matching every
+  other author overlay.
+
+verification: >
+  Rendered output not checked live (no dev server in this worktree);
+  verified by re-reading every field against its English source
+  clause-by-clause plus the two gating scripts. One real bug caught by
+  validate.py: the author overlay's own header comment used the literal
+  string "[[work:...]]" to describe the syntax, which the INLINE_REF
+  regex matched as an unresolvable reference and failed the build - fixed
+  by rewording the comment. No native-reviewer flag beyond that.
