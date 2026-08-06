@@ -1,0 +1,113 @@
+# Editions of A. J. Finn: 4 editions over both works - 3 English (en) and
+# 1 Portuguese (pt-PT), 1 of 2 works covered in pt-PT.
+#
+# SCOPE. English coverage records the true first edition (hardcover, William
+# Morrow) for each work, per Wikipedia's own infobox for each novel, plus one
+# second English entry where a genuinely different object exists: The Woman
+# in the Window's current US trade paperback (isbn13 9780062678423) carries
+# the 2021 Netflix film's own cover art ("NETFLIX A Netflix Film"), confirmed
+# by opening the jacket image itself (HarperCollins' own product page, the
+# Shopify variant JSON naming it "The Woman in the Window - Paperback",
+# cdn image 9780062678423_f5b7b3dc...jpg) rather than trusting a title or a
+# publish-date field alone. End of Story has no film adaptation and no
+# comparable second object, so it keeps a single hardcover entry.
+#
+# PORTUGUESE MARKET. Only The Woman in the Window has a pt-PT edition.
+# Confirmed via the Biblioteca Nacional de Portugal catalogue (two records,
+# both "A mulher à janela / A. J. Finn ; trad. Maria João Lourenço", Lisboa:
+# Presença, in the "Grandes narrativas" collection, no. 685): a 1st edition
+# (2018, ISBN 978-972-23-6187-3, 487pp) and a 2nd edition (2021, ISBN
+# 978-972-23-6725-7, 493pp). The 2nd edition, being the more recent, is
+# recorded here per the default rule (most recent in-print edition); the 1st
+# is not duplicated alongside it since nothing distinguishes the two beyond a
+# routine reprint (same publisher, same translator, same collection slot).
+#
+# FILM TIE-IN CHECK (Portuguese market): no evidence of a dedicated pt-PT
+# film tie-in edition was found. The BNP record for the 2021 2nd edition
+# carries no "edição do filme" marking, uses the same "Grandes narrativas"
+# collection number as the 2018 1st edition, and Presença's own storefront
+# (presenca.pt, a Shopify site) returns zero live results for "finn" via
+# both its site search and predictive-search JSON endpoint - consistent with
+# the book being out of the current catalogue rather than freshly reissued
+# with tie-in art. Wook and Bertrand's own retailer pages could not be
+# fetched to check a cover image directly (both 403 an automated fetch); this
+# is the one fact here that still wants a human with a browser on
+# wook.pt or bertrand.pt.
+#
+# END OF STORY has no pt-PT edition. Searched the BNP catalogue by author
+# ("a. j. finn", 10 records total - the other 8 are an unrelated author,
+# Francis J. Finn, a 1950s-60s children's-fiction author with no connection)
+# and found nothing published after the 2021 Woman in the Window reprint.
+# Presença's own site search likewise returns nothing under "finn". End of
+# Story is a 2024 US release; a Portuguese translation may simply not exist
+# yet.
+#
+# ISBN DISCIPLINE. Every ISBN-13 below was hand-verified against its EAN-13
+# check digit (SKILL.md's worked method). None uses a Brazilian prefix
+# (978-85-*/978-65-*; a Brazilian Arqueiro edition, isbn13 9788580418323,
+# "A Mulher na Janela", was found and excluded on exactly that basis - a
+# different translation, title and market). Both pt-PT ISBNs carry the
+# 978-972-* Portugal prefix.
+
+- id: aj-finn/the-woman-in-the-window/william-morrow-2018-hc-us
+  workId: aj-finn/the-woman-in-the-window
+  isbn13: "9780062678416"
+  language: en
+  format: hardcover
+  publisher: William Morrow
+  year: 2018
+  note: >
+    First edition, hardcover, published January 2, 2018. ISBN per
+    Wikipedia's own infobox for the novel.
+  sources:
+    - "https://en.wikipedia.org/wiki/The_Woman_in_the_Window_(novel)"
+
+- id: aj-finn/the-woman-in-the-window/william-morrow-2021-pb-tie-in-us
+  workId: aj-finn/the-woman-in-the-window
+  isbn13: "9780062678423"
+  language: en
+  format: paperback
+  publisher: William Morrow Paperbacks
+  year: 2021
+  note: >
+    The current US trade paperback, per HarperCollins' own product page
+    (Shopify variant "The Woman in the Window - Paperback", sku
+    9780062678423). Carries the 2021 Netflix film's tie-in cover art (a
+    "NETFLIX A Netflix Film" roundel over the original jacket design),
+    confirmed by opening the jacket image itself rather than trusting a
+    title or date field - a genuinely different object from the 2018
+    hardcover, not a padding duplicate.
+  sources:
+    - "https://www.harpercollins.com/products/the-woman-in-the-window-a-j-finn"
+
+- id: aj-finn/the-woman-in-the-window/presenca-2021-pt
+  workId: aj-finn/the-woman-in-the-window
+  isbn13: "9789722367257"
+  language: pt-PT
+  title: "A Mulher à Janela"
+  translator: "Maria João Lourenço"
+  format: paperback
+  publisher: Editorial Presença
+  year: 2021
+  note: >
+    2nd edition (Presença's "Grandes narrativas" collection, no. 685), 493pp.
+    The BNP record gives no indication this reprint carries different cover
+    art from the 2018 1st edition (isbn13 9789722361873, same collection
+    slot, same translator) - recorded here as the more recent of the two per
+    the default rule, not as a confirmed film tie-in. See the file header on
+    the film tie-in question for this market.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-972-23-6725-7&profile=bn"
+
+- id: aj-finn/end-of-story/harpercollins-2024-hc-us
+  workId: aj-finn/end-of-story
+  isbn13: "9780062678454"
+  language: en
+  format: hardcover
+  publisher: HarperCollins
+  year: 2024
+  note: >
+    First edition, hardcover, published February 20, 2024, 416pp. ISBN per
+    Wikipedia's own infobox for the novel.
+  sources:
+    - "https://en.wikipedia.org/wiki/End_of_Story"
