@@ -7,10 +7,24 @@
 # Pessoa's is none of those, because his subject is not a landscape at all: it
 # is a room, a desk, a chest of drawers and 25,000 sheets of paper. So the wing
 # is built on ink and office - a cool near-black with a violet-grey cast rather
-# than any earth tone, typing-paper white, and one accent nobody else in the
-# catalogue holds: the verdigris green of oxidised copper and old Baixa
-# shopfronts. Hue-wise the accent sits at ~165 (green), clear of tordo's blue
-# (~200), peixoto's gold (~40) and vhm's and saramago's reds (~15 and ~357).
+# than any earth tone, typing-paper white, and a verdigris green accent. By hue
+# it is clear of the other Lusophone wings: ~162, against tordo's blue (~202),
+# peixoto's gold (~40) and vhm's and saramago's reds (~15 and ~357).
+#
+# The accent is not unique in the catalogue, and its nearest neighbour is not a
+# Lusophone wing at all. hp-lovecraft holds #4a7d72 at hue ~167 - five degrees
+# away, a shade darker - over a near-black background, with the same display
+# face, and calls it verdigris too. On the interface those two wings are close.
+# They are separated where a reader actually meets them, in the drawings: here
+# the verdigris is applied paint (shopfront colour, a tram's flank, a lamp
+# shade) and never corroded metal, which is the whole of Lovecraft's use of the
+# same hue; and this wing is interior, clerical and urban where that one is
+# coastal, instrumented and vast. art.accentUse and art.avoid hold that line.
+#
+# Contrast: ink on bg is 14.9:1 and muted 5.3:1, both well past AA. The accent
+# carries links at 4.8:1 on the page background and 4.4:1 on cards - where most
+# of this catalogue's accents sit, and the one value here with no headroom, so
+# it stays on links and markers and never carries body text.
 preset: arca-tipografica
 palette:
   bg: "#15141a"       # near-black with a faint violet-grey cast - writing ink, not earth
@@ -19,7 +33,8 @@ palette:
   muted: "#8b8894"    # pencil grey, for metadata
   accent: "#4f8f7c"   # one verdigris green, for links and markers only - oxidised
                       # copper and old shopfront paint, not foliage
-displayFace: spectral  # from the app's implemented set (fraunces | spectral | sourceSerif).
+displayFace: spectral  # from the app's implemented set (lib/theme.ts DISPLAY_FACES:
+                       # fraunces | spectral | sourceSerif | instrument-serif).
                        # A modern literary serif, cool and slightly severe, for a
                        # writer whose whole register is cerebral. valter-hugo-mae
                        # also uses spectral, but against warm umber and terracotta;
@@ -27,7 +42,8 @@ displayFace: spectral  # from the app's implemented set (fraunces | spectral | s
                        # for the typescript association and rejected: it is described
                        # in this catalogue as the plainest serif, for the plainest
                        # prose, and Pessoa's prose is the opposite of plain.
-signature: thread      # from the implemented set (beam | thread | rule | none).
+signature: thread      # from the implemented set (lib/theme.ts SIGNATURES:
+                       # beam | thread | rule | filament | none).
                        # A quiet hairline the works are strung along: one continuous
                        # line through many hands is literally what this wing is, and
                        # the line has to carry ninety years of publication dates
@@ -41,46 +57,91 @@ art:
       of different sizes - typed, handwritten, torn envelopes, letterheads -
       none of them squared to any other.
     why: >
-      The arca is the one object this entire bibliography comes out of. Pessoa
-      left more than 25,000 sheets of text in it, now the espólio held by the
-      Biblioteca Nacional de Portugal, and Casa Fernando Pessoa states plainly
-      that the slow work of understanding and ordering those papers is why his
-      books have appeared at such long intervals since 1942. Every work on this
-      shelf published after 1935 was lifted out of it.
+      The arca is the one object this entire bibliography comes out of. Casa
+      Fernando Pessoa states it in a single sentence: he left more than 25,000
+      sheets of text, held as espólio by the Biblioteca Nacional de Portugal,
+      and "a demorada compreensão e organização destes papéis explica o longo
+      intervalo com que a obra de Fernando Pessoa tem vindo a ser publicada".
+      Forty-six of this shelf's fifty-four volumes were lifted out of it after
+      1935.
   motifs:
-    - loose manuscript sheets in unequal sizes, some typed, some in pencil
+    # The room, 1888-1935. The wing's home register.
+    - loose manuscript sheets in unequal sizes, some typed, some in pencil, none
+      squared to another
     - a tall chest of drawers written at standing up
-    - the Baixa's grid at street level, gilt shop lettering on dark wood
+    - the Baixa's grid at street level, gilt lettering on dark shopfront wood
     - an office desk with commercial letterheads in a foreign language
     - a tobacconist's doorway seen from a window across the street
-    - the same face reappearing with a different signature beneath it
+    - one hand's writing recurring under five different signature marks, no two
+      alike and none of them legible
+    # The invented authors, given as their objects and their places. The wing's
+    # primary reading order is by the name on the cover, so the five have to be
+    # tellable apart; none of them existed, so none of them has a face to use.
+    - a Ribatejo hillside with the flock kept out of frame, for the shepherd who
+      was never there
+    - a physician's instruments left closed in their case beside a short ode
+      ruled into strict narrow columns
+    - a naval engineer's sectional drawing, riveted plating, a shipyard drawing
+      office under Glasgow rain
+    - an assistant bookkeeper's ledger open on a fourth floor above the Rua dos
+      Douradores, the fabric firm's bolts stacked below
+    - a grate of burned paper and a walking cane propped against a chair in a
+      shuttered country house
+    # The eighty years of opening the trunk, 1936-2019, where twenty of this
+    # wing's events sit. Editors, archives and readers, not the writer.
+    - numbered archival boxes on a reading-room table, one sheet flat under glass
+      with its call slip beside it
+    - the same fragment set in type four different ways, four editions deep
+    - a stone floor slab newly cut into a monastery cloister among much older ones
   atmosphere: >
-    Interior, urban, and lit by one window. Lisbon here is the Baixa and the
-    Chiado of the 1910s to the 1930s - offices, cheap eating houses, trams
-    heard rather than seen - not the river, not the coast, not the countryside.
-    Solitary without being desolate; the city is full of people and the figure
-    in the frame is not with any of them. Paper is everywhere.
+    Two registers, because the record has two and they do not blend. The first
+    is interior, urban, and lit by one window: the Baixa and the Chiado of the
+    1910s to the 1930s, offices, cheap eating houses, trams heard rather than
+    seen. Solitary without being desolate - the city is full of people and the
+    figure in the frame is not with any of them. Paper is everywhere. The second
+    begins in 1936 and is quieter and cooler still: the archive, the reading
+    room, the editorial table, one man's papers being read by other people for
+    eighty years. Nothing is being written in the second register, only opened,
+    sorted and set in type.
+    Everywhere else this wing goes - Durban, the Ribatejo, a Brazilian exile, a
+    cliff at the Boca do Inferno, the sea of Mensagem - is reported rather than
+    visited, and drawn that way: seen through a window, a page, a letter or a
+    remembered room, never as a landscape the wing lives in. He did not leave
+    Lisbon after seventeen, and the invented authors never went anywhere at all.
   lineCharacter: >
-    Fine pen and pencil over ruled or typed ground, drawn with the steadiness
-    of a clerk rather than the tremor of an artist. Corrections left visible:
-    struck-through words, marginal notes, a second hand annotating the first.
-    Nothing washed or bled - this wing's line is dry and legible, the opposite
-    of joao-tordo's wet ink.
+    Fine pen and pencil over ruled or typed ground, drawn with the steadiness of
+    a clerk rather than the tremor of an artist. The mark that makes this wing
+    its own is the correction: struck-through words, marginal notes, a second
+    hand annotating the first, a date added later in a different ink. Not a
+    surveyor's or a draughtsman's line - nothing here is being measured, it is
+    being drafted and revised. Nothing washed or bled; this wing's line is dry
+    and legible, the opposite of joao-tordo's wet ink.
   backgroundTexture: >
     Cream typing paper, foxed at the edges, with the faint blue-grey ghost of
     ruled lines and the impression of typewriter keys showing through from the
     other side.
   accentUse: >
-    Verdigris on exactly one element per image, never as a fill: a shopfront's
-    painted lettering, the oxidised hinge of the trunk, the green shade of a
-    desk lamp, a tram's flank at the end of the street.
+    Verdigris on exactly one element per image, never as a fill, and always as
+    paint or pigment rather than corrosion: a shopfront's painted lettering, the
+    green shade of a desk lamp, a tram's flank at the end of the street, the
+    cloth on a ledger's binding, the glass of an ink bottle. Never a green bloom
+    on metal, which is how the neighbouring hue is used elsewhere in this
+    catalogue.
   avoid:
     - azulejo tiling, fado and saudade shorthand, shawled widows, souvenir Alfama
     - the yellow tram as a logo, and any postcard-Lisbon framing
-    - literal book-cover pastiche, and the Pessoa statue at A Brasileira as an icon
+    - literal book-cover pastiche, the Pessoa statue at A Brasileira, and the
+      1985 tomb monument, as icons
     - moustache-and-hat caricature standing in for the man
-    - showing the heteronyms as four different faces; they are one man's handwriting
-    - rural or coastal registers, which belong to other wings in this catalogue
+    - "faces, for the invented authors as much as for him: they are told apart
+      by their objects, their rooms and their handwriting, and drawing five
+      heads turns a body of work into a cast list"
+    - legible words, titles or names anywhere in the frame - handwriting and type
+      carry the rhythm and pressure of a hand, never anything a reader could read
+    - verdigris on corroded metal, instruments, ships' fittings or anything sea-worn,
+      which reads as another wing using the same green
+    - "becoming a rural or coastal wing: the countryside and the sea enter only
+      at a remove, as places written about"
 notes: >
   A clerk's edition: violet-black ink paper, typing-paper type, one verdigris
   accent used only for links and markers, and a single hairline for the
