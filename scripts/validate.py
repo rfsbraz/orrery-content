@@ -1373,7 +1373,19 @@ def main():
         # wing nobody asked it to touch.
         shown, hidden = WARNINGS, 0
         if SCOPE:
-            shown = [w for w in WARNINGS if SCOPE in w]
+            # A plain substring match against the wing's own slug misses every
+            # warning on an author file: authors/<id>.yaml is named after the
+            # person, never the wing, so a warning there can never contain the
+            # slug. Confirmed live on lars-kepler - a real CURATION §2 warning
+            # sat on the wing's own author file for the whole build while
+            # every --slug run reported it as "another wing's". Resolve the
+            # wing's actual authorIds from its franchise.yaml and match those
+            # filenames too, not just the slug.
+            scope_terms = [SCOPE]
+            fr = load(os.path.join(ROOT, "content", "franchises", SCOPE, "franchise.yaml")) or {}
+            for aid in fr.get("authorIds", []):
+                scope_terms.append(f"authors/{aid}.yaml")
+            shown = [w for w in WARNINGS if any(t in w for t in scope_terms)]
             hidden = len(WARNINGS) - len(shown)
         if shown:
             print(f"{len(shown)} warning(s) - not blocking, but a curator should look:\n")
