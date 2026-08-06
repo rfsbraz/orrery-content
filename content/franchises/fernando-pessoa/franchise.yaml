@@ -1,0 +1,45 @@
+# A wing spans an author's complete published work. Pessoa's is unusual in
+# shape rather than in scope: five thin books in a lifetime, then a shelf that
+# keeps growing seventy years after the death, because the books are still
+# being made out of the 25,000 sheets he left in a trunk. The wing therefore
+# runs 1918 to 2008 and is not closed.
+#
+# The invented authors - Alberto Caeiro, Ricardo Reis, Álvaro de Campos and the
+# semi-heteronym Bernardo Soares - are NOT separate wings and not separate
+# author entities. They are heteronyms: literary personas with authored lives,
+# recorded on content/authors/fernando-pessoa.yaml under `heteronyms` and
+# linked from the works they signed. `authorIds` stays [fernando-pessoa]
+# throughout, because one man wrote all of it.
+id: fernando-pessoa
+name: Fernando Pessoa
+kind: author
+description: >
+  The complete published work of Fernando Pessoa, who published five slim books
+  in forty-seven years and left the rest of it in a trunk. Four of the five were
+  in English; the only Portuguese one,
+  [[work:fernando-pessoa/mensagem|Mensagem]] (1934), came out the year before he
+  died. Everything else on this shelf was made after 1935 by editors reading his
+  papers: the poetry of Alberto Caeiro, Ricardo Reis and Álvaro de Campos, three
+  invented poets with their own biographies and their own quarrels; the
+  fragmentary [[work:fernando-pessoa/livro-do-desassossego|Livro do
+  Desassossego]] ascribed to a Lisbon bookkeeper named Bernardo Soares; a Faust
+  he worked at for thirty years and never finished; detective stories,
+  aphorisms, political polemic, occult treatises and love letters. It is a
+  bibliography that runs seventy years past the life and is still not finished.
+authorIds: [fernando-pessoa]
+themePreset: arca-tipografica
+
+# Capabilities are auto-detected from the data (docs/SCHEMA.md). This wing ships
+# works.yaml (45 works: 16 core, 25 extended, 4 apocrypha) and a 5-lifeEvent
+# author entity carrying a 4-entry `heteronyms` block, which activates `river`
+# and `companion` through the author's life events. There is no franchise
+# events.yaml, no eras.yaml, no orders.yaml, no editions.yaml, no
+# achievements.yaml and no `startHere`, so `wizard` and `editions` stay off.
+features: {}
+
+sources:
+  - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra"
+  - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida"
+  - "http://arquivopessoa.net/info/bibliografia"
+  - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
+  - "https://en.wikipedia.org/wiki/Fernando_Pessoa"

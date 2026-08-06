@@ -1,0 +1,262 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds). Author-LIFE events live here (they follow the
+# person); franchise-specific events stay in the franchise.
+#
+# The life dates and the chronology below come from Portuguese Wikipedia's
+# infobox and "Primeiros anos em Lisboa" section (which cite the birth record
+# down to the hour and the address) and from the abbreviated chronology it
+# reproduces from Casa Fernando Pessoa's own "Cronologia da vida de Fernando
+# Pessoa". Everything about the heteronyms is sourced separately, on the
+# `heteronyms` block itself.
+id: fernando-pessoa
+name: Fernando Pessoa
+aka: ["Fernando António Nogueira Pessoa"]
+born: 1888-06-13
+died: 1935-11-30
+bio: >
+  Born in Lisbon in 1888 and raised largely in Durban, South Africa, where his
+  stepfather was Portuguese consul and where he was educated in English, Pessoa
+  returned to Lisbon alone at seventeen and never left it again. He earned his
+  living writing commercial correspondence in foreign languages for Baixa trading
+  houses and spent the rest of his time inventing writers. In a single day in
+  March 1914 he produced the poems of
+  [[work:fernando-pessoa/o-guardador-de-rebanhos|O Guardador de Rebanhos]] under
+  the name Alberto Caeiro, and around that voice built a coterie of invented
+  authors - Caeiro, Ricardo Reis, Álvaro de Campos, the semi-heteronym Bernardo
+  Soares and more than a hundred others - each with a biography, a philosophy and
+  a quarrel with the rest. He published five slim books in his lifetime, four of
+  them in English, and only one in Portuguese:
+  [[work:fernando-pessoa/mensagem|Mensagem]] (1934). At his death in 1935 he left
+  a trunk holding more than 25,000 manuscript sheets, now in the Biblioteca
+  Nacional de Portugal; the work in it has been coming out in books since 1942
+  and is still not exhausted, which is why the shelf below runs seventy years
+  past the life.
+lifeEvents:
+  # Five anchors: the birth, and four facts that change how the books read -
+  # the English schooling, the day the heteronyms began, the one Portuguese
+  # book, and the trunk left behind.
+  - id: pessoa-born-1888
+    date: 1888-06-13
+    title: Born opposite the opera house in Lisbon
+    impact: low
+    description: >
+      Born at 3.20pm on the fourth floor of no. 4, Largo de São Carlos, directly
+      across from the Teatro Nacional de São Carlos in the Chiado, then the
+      parish of Mártires. He would die forty-seven years later in the same city,
+      a few streets away.
+    spoilerAfter: null
+    sources:
+      - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
+  - id: pessoa-durban-1896
+    date: 1896
+    title: An English education in Durban
+    impact: high
+    description: >
+      His father died of tuberculosis in 1893, when Pessoa was five; his mother
+      remarried the Portuguese consul in Durban and the family sailed for South
+      Africa in January 1896. He was schooled entirely in English, took the Cape
+      University admission examination in 1903 and won the Queen Victoria Prize
+      for the best English essay. English stayed a working language for life: the
+      first four books he published were in it, and so were his last written
+      words.
+    spoilerAfter: null
+    sources:
+      - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
+  - id: pessoa-dia-triunfal-1914
+    date: 1914-03-08
+    title: The triumphal day
+    impact: high
+    description: >
+      By his own account he set out to invent a bucolic poet as a joke on his
+      friend Mário de Sá-Carneiro, got nowhere for days, then on 8 March 1914
+      stood at a tall chest of drawers and wrote thirty-odd poems straight
+      through, opening with the title O Guardador de Rebanhos. "It was the
+      triumphal day of my life, and I shall never have another like it." What
+      followed, he said, was the appearance of someone inside him whom he
+      immediately named Alberto Caeiro: "my master had appeared in me." Every
+      other heteronym is positioned relative to that voice.
+    spoilerAfter: null
+    sources:
+      - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra/alberto-caeiro"
+  - id: pessoa-mensagem-1934
+    date: 1934
+    title: The only Portuguese book he lived to see
+    impact: high
+    description: >
+      [[work:fernando-pessoa/mensagem|Mensagem]], forty-four poems on Portuguese
+      myth and empire, was the single Portuguese-language book Pessoa published
+      in his lifetime. It took the Prémio Antero de Quental that same year, in
+      the "poem or single poetry" category, from the Secretariado Nacional de
+      Informação then run by António Ferro - the same Ferro who as a very young
+      man had been the publisher of Orpheu in 1915.
+    spoilerAfter: null
+    sources:
+      - "https://pt.wikipedia.org/wiki/Mensagem_(livro)"
+  - id: pessoa-death-1935
+    date: 1935-11-30
+    title: The trunk is left behind
+    impact: high
+    description: >
+      Admitted to hospital on 29 November 1935 with hepatic colic and dead the
+      next day of cirrhosis of the liver, at forty-seven. His last written words,
+      in pencil and in English, were "I know not what tomorrow will bring." He
+      left a trunk of more than 25,000 sheets, most of it unpublished; the slow
+      work of reading and ordering those papers is the reason his bibliography
+      keeps growing.
+    spoilerAfter: null
+    sources:
+      - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
+      - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra"
+
+# --- heteronyms -------------------------------------------------------------
+#
+# Pessoa drew the distinction himself, in the "Tábua Bibliográfica" he published
+# in Presença no. 17 (December 1928): a pseudonymous work "is the author's own,
+# save in the name it signs"; a heteronymous work "is the author outside his own
+# person, it is by a complete individuality manufactured by him, as the lines of
+# any character in any drama of his would be". So these four are not pen names
+# and are not filed as `pseudonyms`. Their `born`, `died` and `lifeEvents` are
+# written fiction, which is what `authored: true` marks.
+#
+# The single richest source for all four is Pessoa's letter to Adolfo Casais
+# Monteiro of 13 January 1935, printed in Correspondência 1923-1935 (ed. Manuela
+# Parreira da Silva, Lisboa: Assírio & Alvim, 1999) and quoted at length by Casa
+# Fernando Pessoa. Dates that are not in that letter are marked as such on the
+# entry that carries them, with whatever does support them named.
+heteronyms:
+  - id: alberto-caeiro
+    name: "Alberto Caeiro"
+    authored: true
+    born: 1889-04-16
+    # Day and month come from Pessoa's own papers as read by Jerónimo Pizarro
+    # (2017), not from the Casais Monteiro letter, which gives no date at all;
+    # Casa Fernando Pessoa gives only the year. A rival annotation in the papers
+    # dates him 1887 instead and gives him two suppressed middle names.
+    #
+    # No `died` key: the death year is fixed at 1915 by every source, but no
+    # source gives a day or a month, and the field takes a date. The death
+    # itself is recorded as a lifeEvent below.
+    bio: >
+      The shepherd poet: born in Lisbon, orphaned young, raised by an elderly
+      great-aunt on a farm in the Ribatejo, with a primary-school education, no
+      profession and, by his own boast, no reading. Blond, blue-eyed, frail.
+      He writes free verse of pure sensation, refusing metaphor and refusing to
+      think about what he sees: "the only thing a stone tells him is that it has
+      nothing at all to tell him." Pessoa called him his master, and so do the
+      other heteronyms - Reis, Campos and the orthonymous Pessoa are all
+      positioned as his pupils. Pessoa wrote as Caeiro, he said, "through sheer
+      and unexpected inspiration, without knowing or even suspecting that I was
+      going to write."
+    lifeEvents:
+      - id: caeiro-death-1915
+        date: 1915
+        title: "Caeiro dies of tuberculosis (an authored death)"
+        impact: high
+        description: >
+          Within Pessoa's fiction, Caeiro returns from the Ribatejo to Lisbon,
+          writes the Poemas Inconjuntos and dies of tuberculosis at twenty-six.
+          No real person died: this is a written event, dated by Pessoa inside
+          the invented biography, and 1915 is also the year Orpheu appeared and
+          the year Pessoa's own chronology records simply as "Pessoa kills
+          Alberto Caeiro". The death is load-bearing for the reading, because
+          the surviving heteronyms then write about their master in the past
+          tense, and Álvaro de Campos's memoir of him is written from it.
+        spoilerAfter: null
+        sources:
+          - "https://pt.wikipedia.org/wiki/Alberto_Caeiro"
+          - "https://en.wikipedia.org/wiki/Alberto_Caeiro"
+          - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
+    sources:
+      - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra/alberto-caeiro"
+      - "https://en.wikipedia.org/wiki/Alberto_Caeiro"
+      - "https://pt.wikipedia.org/wiki/Alberto_Caeiro"
+
+  - id: ricardo-reis
+    name: "Ricardo Reis"
+    authored: true
+    # No `born` key, deliberately. The Casais Monteiro letter gives the year
+    # 1887 and the city (Porto) and says plainly that Pessoa does not recall the
+    # day and month. A 19 September date circulates widely and is presented by
+    # Portuguese Wikipedia as his birth date; it does not come from the letter,
+    # and the only document that could carry it is the horoscope Pessoa cast for
+    # Reis, which is reproduced but not transcribed there. The year sits in the
+    # bio, where it can be stated with its qualification attached.
+    #
+    # No `died` key either: Reis's authored biography contains no death. José
+    # Saramago supplied one - 1936, the year after Pessoa's own - in his novel
+    # O Ano da Morte de Ricardo Reis, which is Saramago's invention about
+    # Pessoa's invention and belongs to that wing, not to this field.
+    bio: >
+      Born in Porto in 1887, educated by Jesuits, a physician who does not
+      practise, a Latinist by training and half a Hellenist by his own reading.
+      A monarchist: after the failure of the northern monarchist rising he
+      expatriated himself to Brazil in 1919 and stayed. He writes short,
+      metrically strict pagan odes in the manner of Horace - "a Greek Horace
+      writing in Portuguese", as Pessoa relayed the description - counselling
+      distance, moderation and acceptance of fate: see life from far off, ask it
+      nothing, there is nothing it can tell you. Pessoa said he wrote as Reis
+      "after an abstract deliberation which suddenly takes concrete shape in an
+      ode", and that Reis writes better Portuguese than he does, with a purism
+      he found excessive.
+    lifeEvents: []
+    sources:
+      - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra/ricardo-reis"
+      - "https://pt.wikipedia.org/wiki/Ricardo_Reis"
+
+  - id: alvaro-de-campos
+    name: "Álvaro de Campos"
+    authored: true
+    born: 1890-10-15
+    # From the Casais Monteiro letter, which is unusually precise: born in
+    # Tavira on 15 October 1890 at 1.30 in the afternoon, a time Pessoa says he
+    # had checked against the horoscope. Portuguese Wikipedia's infobox offers
+    # "Tavira or Lisbon, 13 or 15 October" and closes the dash at 1935; the
+    # letter is the primary text and is preferred over all three variants.
+    #
+    # No `died` key: Pessoa never wrote Campos a death. The 1935 in that infobox
+    # is the year Pessoa himself died.
+    bio: >
+      Naval engineer, trained in Glasgow, born in the Algarve; a voyage east in
+      his student holidays produced "Opiário". Tall, thin, clean-shaven, stooping
+      slightly. The most volatile of the heteronyms and the one who feels most:
+      his motto is to feel everything in every way, and his poems swing between
+      Whitmanesque futurist exultation at machines and cities and a flat
+      nostalgic emptiness in which nothing has been worth doing. He is the one
+      who publishes provocations - the "Ultimatum" of 1917 - and the one who
+      writes "Tabacaria". Pessoa wrote as Campos "when I feel a sudden impulse to
+      write and don't know what."
+    lifeEvents: []
+    sources:
+      - "https://pt.wikipedia.org/wiki/%C3%81lvaro_de_Campos"
+      - "https://en.wikipedia.org/wiki/Fernando_Pessoa"
+
+  - id: bernardo-soares
+    name: "Bernardo Soares"
+    authored: true
+    # No dates at all. Soares is the one of the four to whom Pessoa gave a
+    # station, an address and a manner but no birth and no death; the letter
+    # calls him a semi-heteronym precisely because he is not a separate person -
+    # "not being my personality, it is not different from mine but a mere
+    # mutilation of it. It is me minus reasoning and affectivity."
+    bio: >
+      Assistant bookkeeper in a fabric firm on the Rua dos Douradores in Lisbon's
+      Baixa, and the ascribed author of
+      [[work:fernando-pessoa/livro-do-desassossego|Livro do Desassossego]], which
+      he is said to have handed to Fernando Pessoa in a cheap eating house the
+      two of them frequented. Pessoa classed him a semi-heteronym rather than a
+      heteronym: the personality is not Pessoa's own, but neither is it another
+      man's, only Pessoa with the reasoning and the feeling cut away. He appears,
+      Pessoa said, when he is tired or drowsy and his powers of inhibition are
+      suspended; his prose is "an endless reverie", and his book is offered as an
+      autobiography of a man to whom nothing has happened.
+    lifeEvents: []
+    sources:
+      - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra"
+      - "https://pt.wikipedia.org/wiki/Bernardo_Soares"
+      - "https://en.wikipedia.org/wiki/The_Book_of_Disquiet"
+
+sources:
+  - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
+  - "https://en.wikipedia.org/wiki/Fernando_Pessoa"
+  - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra"
+  - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida"
