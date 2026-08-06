@@ -1,0 +1,84 @@
+stage: spoiler-audit
+wing: isabel-allende
+summary: >
+  Every rendered string checked against the book's own publisher copy in
+  English AND Spanish (her site carries the publisher summary for all 32
+  titled books in both languages; HarperCollins corroborates). 6
+  synopses rewritten, 1 boundary loosened, 20 checked and left alone, 0
+  new boundaries - every candidate was either publication fact or
+  curable by a better sentence. No pt-PT overlay exists here: nothing to
+  mirror, no coverage delta. Each ruling sits on the work's own `note:`
+  (curator-only, verified unrendered) so a later enrichment pass cannot
+  silently undo it. validate.py --slug isabel-allende: only the
+  pre-existing theme.art error.
+
+severoDelValle: >
+  Inert, confirmed - and the live cousin of it found and removed.
+  Nothing in rendered prose named Severo, and publication order meets La
+  casa de los espíritus first, so the reading-orders finding ships
+  nothing. But Retrato en sepia's synopsis opened "Aurora del Valle,
+  granddaughter of Daughter of Fortune's Eliza Sommers", stating on the
+  shelf an outcome Hija de la fortuna's own copy withholds (it leaves
+  Eliza in Gold Rush California, no descendants); Retrato's own copy in
+  both languages introduces Aurora through Paulina del Valle and names
+  neither Eliza nor Tao Chi'en. Rewritten to the publisher's framing.
+  Both rulings sit on Retrato's note, with pointers from La casa's and
+  Hija's.
+
+redactions:
+  - "la-casa-de-los-espiritus: dropped 'in the end, a military coup that her granddaughter survives to tell the story' - a survival and the narrator frame in one clause. Copy in both languages stops at 'opposite sides of the barricades', naming neither."
+  - "retrato-en-sepia: the Eliza Sommers descent -> the jacket's own 'raised in privilege by her formidable grandmother Paulina del Valle'."
+  - "la-isla-bajo-el-mar: 'eventually finds freedom in New Orleans' -> 'sets about forging a life and an identity of her own'. Copy goes exactly as far as 'there, Tété finally forges a new life'. The closest call; loosenable."
+  - "de-amor-y-de-sombra: 'investigating a massacre hidden by a military dictatorship' -> the jacket's own assignment, with the find left unnamed as the copy leaves it."
+  - "la-ninfa-de-porcelana: dropped the street-vendor clause - the whole ending of a story a few pages long. Spanish copy (the only copy) stops at 'un hombre gris, cuya vida da un maravilloso vuelco'."
+  - "el-cuaderno-de-maya: 'her late grandmother's native island' was factually wrong, found while pulling the copy - the grandmother is alive and arranges the escape; the dead grandparent is the American grandfather. Rebuilt on the publisher's sentences."
+
+loosened:
+  - id: isabel-allende-paula-dies-1992
+    change: "spoilerAfter: isabel-allende/paula -> null"
+    why: >
+      It protected nothing and cost trust. Four ungated strings on the
+      same page already stated the death - the bio, the 1996 foundation
+      event ("in her daughter's name"), Paula's synopsis and La suma de
+      los días' - so readers met "Hidden until you finish Paula" three
+      lines under a plain statement of it. And it is public biography,
+      not a reveal a book withholds: dated on her own timeline, the
+      reason the Foundation exists, named outright on the sequel
+      memoir's jacket. Keeping the gate would have meant rewriting all
+      four siblings to stop at the coma, leaving the wing unable to
+      explain the Foundation or the 2007 memoir.
+
+paulaSensitivity: >
+  Publisher copy for Paula stops at the coma in both languages, so the
+  synopsis was rebuilt on the publisher's own beats and names the death
+  once, plainly, at the end rather than as a clinical appendix. The
+  bio's "her daughter Paula Frías Allende's fatal 1991-1992 illness"
+  became "begun at the bedside of her daughter Paula Frías Allende and
+  finished after Paula's death in December 1992". The 1992 event's
+  description was already factual and dignified; unchanged.
+
+checkedNotSpoilers: >
+  Checked against their own copy and left alone: Hija de la fortuna, Eva
+  Luna, El plan infinito, El zorro, Inés del alma mía, El juego de
+  Ripper, El amante japonés, Más allá del invierno, Largo pétalo de mar,
+  El viento conoce mi nombre, Mi nombre es Emilia del Valle, Cuentos de
+  Eva Luna, the three Alexander Cold novels (the totems are the series
+  title, named in all three jackets), the six memoirs, the Perla books.
+  Violeta is already more conservative than its own copy, which sells
+  "not one but two pandemics"; the global covid event's description is
+  generic. All five franchise and life events are publication, prize,
+  ban, adaptation or biography facts and take no anchor.
+
+engineNotes: >
+  Verified, not assumed: works[].note renders nowhere in the app, so the
+  rulings are safe there, and event titles sit inside SpoilerGate in
+  timeline.tsx and every river layout. Latent gap: author/[id]/page.tsx
+  renders lifeEvents with no SpoilerGate - harmless here, since a
+  wing-owning author is redirected off that page, but a gated life event
+  on a co-author would render in the clear.
+
+openQuestions:
+  - "La isla bajo el mar's 'finds freedom' is the one redaction made on a genuine tie. If flap text stating the emancipation turns up, loosen it."
+  - "Paula's boundary was loosened, not deleted for tidiness. Restoring it would require rewriting four ungated strings too; the two cannot coexist."
+  - "works.yaml's header credits Margaret Sayers Peden with translating La casa de los espíritus, events.yaml's 1985 entry credits Magda Bogin. Not a spoiler matter, but they contradict and editions will have to settle it."
+  - "Perla and the Pirate is the one synopsis with no reachable publisher copy. Premise-level for a picture book; left as written."
