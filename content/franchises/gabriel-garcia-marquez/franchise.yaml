@@ -1,0 +1,145 @@
+# A wing spans an author's complete published work, not the one genre or
+# one book he is famous for. Here
+# that matters more than usual: outside Cien años de soledad, García
+# Márquez's shelf is mostly short (his novels run well under 400 pages) but
+# genuinely wide - novels, novellas, four story collections, nonfiction
+# reportage, a memoir, a speech collection, a play, a screenplay and a
+# five-volume journalism anthology - see works.yaml's own header for the
+# full tiering rationale and the considered-and-left-out list (41
+# individually documented prologues to other people's books, and a cluster
+# of overlapping late-life press-article compilations neither Wikipedia
+# nor the sources checked so far confidently untangle from one another).
+id: gabriel-garcia-marquez
+name: Gabriel García Márquez
+kind: author
+description: >
+  The Colombian Nobel laureate (1982) of Macondo and the Caribbean coast:
+  eleven novels running from his 1955 debut
+  [[work:gabriel-garcia-marquez/la-hojarasca|La hojarasca]] through
+  [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cien años de
+  soledad]] (1967) to a manuscript found unfinished at his 2014 death and
+  published a decade later, alongside four short-story collections,
+  journalism and reportage, a memoir, a collection of his own speeches, one
+  play and one screenplay - read worldwide almost entirely in translation.
+authorIds: [gabriel-garcia-marquez]
+themePreset: macondo-noon
+features: {}
+
+# Which shared global events actually reach this author (docs/SCHEMA.md).
+# Born 1927, died 2014: pre-1927 entries (the 1870 schooling act, the 1914
+# war, the 1926 pulp magazines) predate him with no inheritance case
+# comparable to a genre author born into a category one of them built, and
+# are left unruled as implausible on their face. Two entries dated after his
+# 2014 death were checked anyway, since a manuscript of his,
+# [[work:gabriel-garcia-marquez/en-agosto-nos-vemos|En agosto nos vemos]],
+# was only published in 2024 - neither clears the bar (see exclude). Of what
+# falls inside 1927-2014, one event is answered by name in his own
+# catalogue's publication history; the rest were considered and refused.
+globalEvents:
+  include:
+    # Cien años de soledad had no ebook edition at all until the Madrid
+    # publisher Leer-e issued the first Kindle/ePub release on 6 March 2013 -
+    # six years after the Kindle launched the format this event names, and
+    # treated as news in its own right by El Tiempo ("'Cien años de
+    # soledad', ahora en formato de libro electrónico", 6 Mar 2013). His
+    # best-known novel sat outside the condition this event created for most
+    # of a decade; the holdout is itself the resonance.
+    - ebook-and-self-publishing-2007
+  # Considered and refused. Nothing renders unless it is in `include` above;
+  # kept as the record of a judgement already made, not re-litigated here.
+  exclude:
+    - sept-11-2001                     # no sourced link; the memoir he was writing at the time, Vivir para contarla (2002), covers his own 1927-1955 youth, and nothing in his later work answers the attacks
+    - financial-crisis-2008            # 81 years old and no longer publishing new fiction; no book or essay answers it
+    - world-war-ii-1939                # Colombia broke relations with the Axis but saw no combat on its soil; the war on his page is the 19th-century Thousand Days' War, a different conflict entirely
+    - penguin-paperback-1935           # a British paperback trade he entered only decades later, in translation, with no documented connection to his own career
+    - armed-services-editions-1943     # a US wartime paperback program; he was a teenager in Colombia, untouched by it
+    - lady-chatterley-trial-1960       # a UK obscenity ruling; his own censorship fight was with the Rojas Pinilla dictatorship's press censors, already a lifeEvent, and a different fight entirely
+    - fantasy-paperback-boom-1965      # names the Tolkien-driven secondary-world fantasy category; magical realism is a different lineage and no source ties the two
+    - carnation-revolution-1974        # Portuguese censorship history; no connection to a Colombian author
+    - chain-bookshop-1982              # a generic bookselling-industry trend; no documented tie to how his own catalogue was marketed or sold
+    - online-bookselling-1995          # no sourced link to Amazon's 1995 launch specifically
+    - prestige-fantasy-adaptation-2011 # names Game of Thrones and prestige fantasy television specifically; his own screen adaptation, Netflix's Cien años de soledad, is a literary drama and already a franchise event
+    - portugal-bailout-2011            # a Portuguese national crisis; no connection to a Colombian author
+    - comics-code-authority-1954       # a 1954 US comics self-censorship code; he wrote no comics
+    - covid-19-pandemic-2020           # died in 2014; En agosto nos vemos was drafted 1997-2004 and left unfinished well before 2020, and no source ties its 2024 publication to the pandemic
+    - booktok-2020                     # no sourced tie between BookTok specifically and any sales spike or the 2024 Netflix adaptation; general backlist attention is not the same as a documented platform-driven event
+
+sources:
+  - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez
+  - https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+  - https://es.wikipedia.org/wiki/Anexo:Bibliograf%C3%ADa_de_Gabriel_Garc%C3%ADa_M%C3%A1rquez
+  - https://www.nobelprize.org/prizes/literature/1982/marquez/facts/
+
+# startHere: two paths, both cells §10 flags as most-used covered (new+taste,
+# completionist+complete). Checked and NOT shipped as a path: El coronel no
+# tiene quien le escriba alone as "the gentler classic" - the premise that
+# critics steer new readers to it specifically, ahead of Cien años de
+# soledad, did not hold up. Neither real guide found (the Los Angeles Times,
+# Penguin) singles it out that way: Penguin's own "perfect reading order"
+# excludes it from its seven titles entirely, and the Guardian's 2014
+# obituary calls Cien años de soledad itself "immediately accessible", not a
+# book readers need protecting from. What both real guides actually converge
+# on is broader and different - lead with a short EARLY work (or a small set
+# of them) before the doorstop novel, not "swap in a different novel-length
+# book as the true entry point" - which is what the path below records.
+startHere:
+  paths:
+    # Source: https://www.latimes.com/entertainment-arts/books/story/2021-07-02/reading-gabriel-garcia-marquez
+    # Lisa Alvarez, "A reading guide to legendary Colombian author Gabriel
+    # García Márquez" (LA Times Books, 2 July 2021): "Start with the stories,
+    # I tell my students... I was intimidated by the legend, the epic
+    # novels... Three exemplary collections: [El coronel no tiene quien le
+    # escriba, Leaf Storm and Other Stories, Innocent Eréndira and Other
+    # Stories]... These stories offer a primer-like introduction to the
+    # sensibility and themes that distinguish García Márquez's acclaimed
+    # work."
+    # Corroborating: https://www.penguin.co.uk/discover/articles/gabriel-garcia-marquez-reading-guide-books-order
+    # Penguin's own "perfect reading order" opens with the same early
+    # novella, ahead of Cien años de soledad ("Before you start with some of
+    # Márquez's more famous books, this novella... is the first appearance of
+    # Macondo"), and separately recommends Innocent Eréndira and Other
+    # Stories further down its own list.
+    - id: gabriel-garcia-marquez/early-and-short
+      title: Start with the shorter work
+      description: >
+        Three short books instead of the doorstop: the novella that gave the
+        world Macondo, a colonel waiting years on a pension letter that never
+        comes, and a title novella about a girl sold into servitude by her
+        own grandmother - the first two early (1955, 1961), the third from
+        1972. A Los Angeles Times reading guide recommends exactly this route
+        for a reader "intimidated by the legend, the epic novels", telling
+        them to "start with the stories"; García Márquez's own
+        English-language publisher opens its reading order the same way,
+        with the earliest of the three first. The same solitude, love, death
+        and small-town power his novels are known for, in a fraction of the
+        pages - but this path
+        skips [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cien años de
+        soledad]] entirely, the one novel most of the world means when they
+        say his name, and a reader who wants to say they have read García
+        Márquez will still need to come back for it.
+      workIds:
+        - gabriel-garcia-marquez/la-hojarasca
+        - gabriel-garcia-marquez/el-coronel-no-tiene-quien-le-escriba
+        - gabriel-garcia-marquez/erendira
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        The title novella's own grandmother-and-granddaughter pair make a
+        later cameo in Cien años de soledad; reading their own story here
+        first is the safe order either way; nothing about it depends on
+        having read the novel.
+
+    - id: gabriel-garcia-marquez/complete-shelf
+      title: The whole shelf, in order
+      description: >
+        All twenty-five works - eleven novels, four story collections,
+        nonfiction, a memoir, his speeches, one play - in the order he wrote
+        them, from his 1955 debut to the manuscript published a decade after
+        his death.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]

@@ -1,0 +1,70 @@
+# Português europeu (pt-PT) - tradução da prosa curada da ala Gabriel García
+# Márquez. `startHere.paths` funde-se item a item pela chave `id`
+# (docs/SCHEMA.md, "Nested lists merge by id"), pelo que aqui só vai prosa
+# (title, description, note) - nunca `workIds`, `orderId` ou `fit`.
+#
+# TÍTULOS DE OBRAS DENTRO DA PROSA. García Márquez escreveu em espanhol; o
+# `title` de cada obra em works.yaml é sempre o original espanhol e nunca se
+# traduz aqui (docs/SCHEMA.md, "Never translate a published title" - o mesmo
+# princípio já seguido nas alas de Miguel de Cervantes e Haruki Murakami,
+# ambas com título original não-inglês). A questão que se põe é outra: que
+# forma usar quando a PROSA - aqui, cada referência interna a uma obra -
+# nomeia essa obra dentro de uma frase em português. Resposta, seguindo
+# exatamente o
+# precedente já fixado em haruki-murakami/eras.yaml (ver o cabeçalho desse
+# ficheiro): usa-se o título português publicado, tal como consta em
+# editions.yaml, sempre que existe uma edição pt-PT real (ex.: "Cem Anos de
+# Solidão" para cien-anos-de-soledad, "A Revoada" para la-hojarasca); onde
+# não há edição pt-PT (en-agosto-nos-vemos, confirmado em editions.yaml
+# como um vazio real de mercado, não uma falha de pesquisa), o título de
+# exibição mantém-se no espanhol original, nunca inventado. Nunca se usa o
+# título inglês de tradução (works.yaml regista-o só como referência de
+# obra, nunca como forma de citação em prosa).
+
+- id: gabriel-garcia-marquez
+  description: >
+    O Nobel colombiano (1982) de Macondo e da costa caribenha: onze
+    romances, desde o seu debute de 1955,
+    [[work:gabriel-garcia-marquez/la-hojarasca|A Revoada]], até
+    [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cem Anos de
+    Solidão]] (1967), e até um manuscrito encontrado inacabado à sua morte
+    em 2014 e publicado uma década depois, a par de quatro coletâneas de
+    contos, jornalismo e reportagem, um livro de memórias, uma coletânea
+    dos seus próprios discursos, uma peça de teatro e um argumento
+    cinematográfico - lido em todo o mundo quase inteiramente em tradução.
+  startHere:
+    paths:
+      - id: gabriel-garcia-marquez/early-and-short
+        title: Comece pela obra mais breve
+        description: >
+          Três livros breves em vez do calhamaço: a novela que deu ao
+          mundo Macondo, um coronel à espera, ano após ano, de uma carta
+          de pensão que nunca chega, e uma novela-título sobre uma
+          rapariga vendida para a servidão pela própria avó - as duas
+          primeiras iniciais (1955, 1961), a terceira de 1972. Um guia de
+          leitura do Los Angeles Times recomenda exatamente este percurso a
+          um leitor "intimidado pela legenda, pelos romances épicos",
+          dizendo-lhe para "começar pelos contos"; o próprio editor de
+          língua inglesa de García Márquez abre a sua ordem de leitura da
+          mesma forma, com o mais antigo dos três primeiro. A mesma solidão,
+          o mesmo amor, a mesma morte e o mesmo poder de povoação pequena
+          pelos quais os seus romances são conhecidos, numa fração das
+          páginas - mas este percurso salta por completo
+          [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cem Anos de
+          Solidão]], o romance em que a maior parte do mundo pensa quando
+          ouve o seu nome, e um leitor que queira poder dizer que leu García
+          Márquez vai, ainda assim, precisar de voltar a ele.
+        note: >
+          A avó e a neta da novela-título fazem mais tarde um breve
+          regresso em Cem Anos de Solidão; ler primeiro a sua própria
+          história aqui é, de qualquer forma, a ordem segura; nada nesta
+          novela depende de se ter lido o romance.
+
+      - id: gabriel-garcia-marquez/complete-shelf
+        title: Toda a estante, por ordem
+        description: >
+          As vinte e cinco obras - onze romances, quatro coletâneas de
+          contos, não-ficção, um livro de memórias, os seus discursos, uma
+          peça de teatro - pela ordem em que as escreveu, desde o seu
+          debute de 1955 até ao manuscrito publicado uma década depois da
+          sua morte.

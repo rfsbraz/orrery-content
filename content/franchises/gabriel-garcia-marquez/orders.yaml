@@ -1,0 +1,89 @@
+# ADDITIONAL reading orders only. The DEFAULT order - all 25 works,
+# publication-chronological - is derived from works.yaml and is not listed
+# here.
+#
+# - The "tres de mis libros son un solo libro" grouping (García Márquez's own
+#   words, already a `note:` on all three works) earns the one order below.
+#   Precedent: chuck-palahniuk/horror-trilogy ships an author-named grouping
+#   with no publisher numbering on the same "curated" basis.
+#
+# - A "Macondo Cycle" order or path, covering the five works 1955-1967 that
+#   eras.yaml names as a real, sourced periodisation, does not appear here.
+#   Nothing is published in this bibliography before 1967 except exactly
+#   those five works (no nonfiction, no story collection, no play falls in
+#   that span), so the cycle is not a thread pulled out of an interleaved
+#   shelf the way the trio below is - it is the literal, unbroken opening
+#   prefix of the derived default order. A reader walking publication order
+#   from the first page already walks this "cycle" for its first five stops
+#   with nothing to skip and nothing to select; "read the first five, then
+#   stop" is indistinguishable from reading in order and stopping wherever,
+#   which is true at any cut point in any bibliography and is not a reading
+#   strategy anyone has to be told. The five-book grouping is real and
+#   already correctly carried as an era; no source recommends walking it as a
+#   deliberate entry or completionist route distinct from the default, so an
+#   order or a startHere path built from it would be structure the sources do
+#   not back.
+#
+# - Whether Cien años de soledad is the right entry point, and whether a
+#   gentler on-ramp exists, is answered in franchise.yaml's startHere instead
+#   of here: what two independent, real "where to start" guides (the Los
+#   Angeles Times and García Márquez's own English-language publisher,
+#   Penguin) actually converge on is path-shaped ("read this short thing
+#   first"), not a full alternative traversal of the whole shelf.
+
+# Source: https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography
+# "In García Márquez's own words, this book, El coronel no tiene quien le
+# escriba, along with Los funerales de la Mamá Grande and La mala hora are
+# really just one book: 'Tres de mis libros [...] son en verdad un solo
+# libro. Un mismo tema, unos mismos personajes, un mismo ambiente, que se
+# repiten y se mezclan [...] Los tres libros pertenecen al realismo
+# tradicional.'" ("Three of my books [...] are really just one book. A
+# single subject matter, the same characters, the same setting, that are
+# repeated and combined [...] The three books belong to traditional
+# realism.")
+- id: gabriel-garcia-marquez/tres-libros
+  name: "Three books, one story"
+  type: curated
+  source: canon
+  rationale: >
+    The one grouping in this bibliography García Márquez named himself. Of
+    [[work:gabriel-garcia-marquez/el-coronel-no-tiene-quien-le-escriba|El
+    coronel no tiene quien le escriba]],
+    [[work:gabriel-garcia-marquez/los-funerales-de-la-mama-grande|Los
+    funerales de la Mamá Grande]] and
+    [[work:gabriel-garcia-marquez/la-mala-hora|La mala hora]], he said
+    plainly that they were "really just one book: a single subject matter,
+    the same characters, the same setting, that are repeated and combined."
+    Read this way for a reader curious what that claim actually looks like on
+    the page: a colonel waiting on a pension letter that never comes, the
+    same unnamed river town's Big Mama and her funeral, and the anonymous
+    lampoons that tip that same town toward violence, all written in the
+    "traditional realism" he contrasted with what came next. The cost: these
+    three sit at the very start of his career and share one register: no
+    magical realism, no Macondo's hundred years, none of what made him
+    famous. This order also does not reorder anything - it is the same three
+    books in the same sequence the derived default already gives them,
+    isolated from the other twenty-two so a reader can walk exactly this
+    claim and nothing else.
+  orderedWorkIds:
+    - gabriel-garcia-marquez/el-coronel-no-tiene-quien-le-escriba
+    - gabriel-garcia-marquez/los-funerales-de-la-mama-grande
+    - gabriel-garcia-marquez/la-mala-hora
+  debated:
+    - >
+      Identical to publication order for all three works, and to a stretch of
+      the derived default with nothing else interleaved in it (nothing else
+      in this bibliography was published between El coronel in 1961 and Cien
+      años de soledad in 1967). Its whole contribution is the filter and the
+      author's own label, exactly like chuck-palahniuk/horror-trilogy; a
+      reader on the default order loses nothing but the label by ignoring it.
+    - >
+      Los funerales de la Mamá Grande and La mala hora both carry a bare
+      "1962" in every source checked, with no month or composition date found
+      that would settle which came first. The sequence above follows the
+      order García Márquez's own quote names them in (El coronel, then Los
+      funerales, then La mala hora), not a sourced chronological claim about
+      the pair; no source checked establishes a real priority between them,
+      and this order does not claim one.
+  sources:
+    - "https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography"
