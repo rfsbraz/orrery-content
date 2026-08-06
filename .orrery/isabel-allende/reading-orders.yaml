@@ -1,0 +1,42 @@
+stage: reading-orders
+wing: isabel-allende
+summary: >
+  orders.yaml stays [] and franchise.yaml gets no startHere - both checked,
+  not assumed. The Trilogía involuntaria (La casa de los espíritus, Hija de
+  la fortuna, Retrato en sepia) does not earn a curated order: unlike
+  gabriel-garcia-marquez/tres-libros or joao-tordo/lugares-sem-nome, no
+  author-acknowledged statement ties the three together (her own site never
+  uses "trilogy"/"trilogía" on any of the three book pages, checked
+  directly), the grouping's retailer numbering is internally inconsistent,
+  and an order for three books with three distinct publication years
+  (1982/1998/2000) would not reorder anything anyway. A chronological
+  in-universe alternative WOULD reorder them but has no source recommending
+  it and would open a real prequel-spoiler vector (Severo del Valle, Clara's
+  father in La casa de los espíritus, is a supporting character in his own
+  right in Retrato en sepia - sourced to English Wikipedia's own character
+  list). No entry-point guide from a serious outlet (Guardian, NPR, LA
+  Times, Penguin, her own FAQ) was found either, unlike the immediately
+  prior García Márquez wing; every real check came back negative, mirroring
+  jose-saramago's honest zero rather than gabriel-garcia-marquez's sourced
+  two-path outcome. validate.py --slug isabel-allende: 0 errors beyond the
+  pre-existing theme.art gap, 1 pre-existing warning (franchise-research.yaml
+  word cap, not from this stage).
+
+produced:
+  - content/franchises/isabel-allende/orders.yaml
+  - content/franchises/isabel-allende/franchise.yaml   # comment only, no startHere key added
+
+decisions:
+  - "Trilogía involuntaria REJECTED as a curated order. Checked her own official site book-by-book (isabelallende.com/en/book/thehouse, /daughter, /portrait and the /es/libro/ equivalents) for 'trilogy'/'trilogía': zero hits on any of the three pages, in either language. The label is retailer- and Goodreads-sourced only, with inconsistent retailer numbering (one lists La casa de los espíritus '#3', per works.yaml's own header) - the opposite of settled practice. Even granted, it would not reorder anything (three distinct publication years, nothing to disambiguate), so it would need the same 'author's own words' justification gabriel-garcia-marquez/tres-libros rested on, which does not exist here."
+  - "Chronological (in-universe) order for the same three REJECTED on different grounds: it WOULD reorder them (Hija de la fortuna's 1840s-50s -> Retrato en sepia's ~1880s-1910s -> La casa de los espíritus's 1910s-70s), clearing the divergence test, but no source anywhere recommends it, and the aggregator sites that attempt a 'reading order' for this trilogy disagree with each other (one sequences La casa de los espíritus, then Retrato en sepia, then Hija de la fortuna - inconsistent with its own stated years). Inventing one would activate a real prequel-spoiler vector (see forStages.spoiler-audit)."
+  - "startHere REJECTED entirely, not narrowed to one path. Checked: her own site's FAQ (silent on where to start or reading order); the Guardian's own Isabel Allende tag archive (interviews, reviews, news - no reading guide); several books-in-order aggregator sites, which converge only on the naive default (La casa de los espíritus as 'the essential starting point') with zero dissent - no famous-book-trap signal, no alternate-entry recommendation (YA trilogy or memoir-first), from anyone. That convergence is exactly 'our own reading in a serif font' per CURATION.md #1 without a citable serious outlet behind it, so nothing ships - matching jose-saramago's zero-startHere precedent, not gabriel-garcia-marquez's sourced LA-Times-plus-Penguin two-path outcome."
+  - "YA trilogy (Las memorias del Águila y del Jaguar) and memoir-first (Paula etc.) checked explicitly as candidate alternate entry paths per the request: no source recommending either as an entry point was found. Both remain covered only by the derived default."
+  - "One further source exists but could not be read: Karen Wooley Martin's 'Isabel Allende's House of the Spirits Trilogy: Narrative Geographies' (Tamesis, 2010), a book-length study of the three as a critical unit, already cited on this wing's own eras.yaml. Its Boydell & Brewer product page 404s and its JSTOR record 403s to an automated fetch (the same block eras.yaml hit). Whether it argues for any reading sequence was not established; nothing from it is carried into orders.yaml."
+
+forStages:
+  spoiler-audit: "REAL FINDING, not acted on here because no order activates it: Severo del Valle (Clara's father in La casa de los espiritus, 1982) is a supporting character in his own right in Retrato en sepia (2000) - his War of the Pacific service and the loss of a leg - and English Wikipedia's own character list for Portrait in Sepia states directly that 'he also appears in The House of the Spirits as Clara's father.' Publication order (the only order this wing ships) meets La casa de los espiritus first, so the risk stays inert; it would only become live if a future stage ever ships a chronological-in-universe order for the Trilogia involuntaria, which this stage explicitly rejected for lack of sourcing. Worth a check of the two novels' own prose (not just Wikipedia's summary) if that ever changes."
+  translation: "orders.yaml is comment-only ([]) and franchise.yaml's startHere key was not added, so there is nothing to mirror into pt-PT for this stage - no i18n coverage delta."
+
+openQuestions:
+  - "General web search was largely unavailable this run: the session's WebSearch budget was already exhausted before this stage started, and the search engines reachable by direct fetch (DuckDuckGo, Bing, Google, Mojeek) all rate-limited or captcha-blocked automated queries after an initial handful of results, the same class of constraint eras.yaml records for its own stage. What DID get through (one successful DuckDuckGo batch, plus direct fetches of Wikipedia, Goodreads, her own site, and the Guardian's tag archive) is real and cited above, but a human with a working browser could re-run the where-to-start question (LA Times, NPR, Penguin, LitHub specifically) with confidence that this stage's negative result is a search-access artifact worth double-checking, not a settled fact the way jose-saramago's equivalent negative was."
+  - "Karen Wooley Martin's monograph (see decisions) is the one lead this stage could not close. A curator with library/JSTOR access could check whether it makes any reading-order claim; if it does, that would be a materially stronger source than anything found here and could revisit the Trilogia involuntaria order decision."
