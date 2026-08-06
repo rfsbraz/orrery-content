@@ -84,3 +84,40 @@ openQuestions:
     live English Wikipedia infobox carries only the bare year 1979, per
     franchise-research's own finding; the birth lifeEvent is dated to the
     year only, matching `born: 1979`."
+
+auditFixesApplied:
+  date: 2026-08-06
+  branch: aj-finn/audit-fixes-press
+  ref: wing-audit.yaml blocking + missing + precision findings, applied to
+    content/authors/aj-finn.yaml and content/franchises/aj-finn/events.yaml
+    plus pt-PT mirrors. Sources refetched and re-read live (NYT, Guardian,
+    New Yorker, WaPo) rather than taken on trust.
+  fixed: >
+    Blocking: every "correction"/"correção" describing the Times' Feb-2019
+    follow-up on Denzil replaced with "update" (the Times' own text never
+    says correction; Wikipedia says revision). Curator's call: the
+    paywalled Publishers Lunch citation dropped for the archived NYT's own
+    line, agent Jennifer Joel confirming the outline dates were "prior to
+    when Ms. Denzil says she began writing her book". Precision: Copycat
+    similarity count fixed 4->5; "same week's" New Yorker profile reworded
+    to "ten days earlier" (2019-02-04 vs 2019-02-14); "one recipient
+    recalled thinking" reworded to present-day supposition, matching the
+    New Yorker's own framing; "former colleagues" fixed to singular,
+    matching the Guardian's actual sourcing; Nora Krug's question reworded
+    from "opened by asking" since it lands in her third paragraph, not the
+    opening. Living-person care: the 1999 Duke Chronicle sentence now
+    distinguishes his mother's real, self-disclosed cancer from the wholly
+    fabricated Oxford-essay deaths. Sourcing: dropped the unsourced "New
+    York City" birth claim (the cited New Yorker gives no birth city);
+    added the Guardian as a second source on ajf-auction-identity-revealed-
+    2016, resolving its single-source flag. New Yorker date checked
+    consistent at 2019-02-04 throughout.
+  notApplied: >
+    pt-PT "tornado famoso" lives in content/i18n/pt-PT/franchises/aj-finn/
+    works.yaml (English: content/franchises/aj-finn/works.yaml), describing
+    the character Sebastian Trapp, not either file this pass's footprint
+    covers. Left untouched per explicit instruction not to touch
+    works.yaml; needs its own follow-up.
+  verified: >
+    validate.py --slug aj-finn: 0 errors. i18n_coverage.py --slug aj-finn:
+    still 206/221, aj-finn not on the PARTIAL list.
