@@ -1,0 +1,161 @@
+stage: wing-audit
+wing: aj-finn
+summary: >
+  Every gate re-derived independently: validate.py 0 errors, aura_density 8
+  entries / 4.00 per work / 2-yr dark run 2022-2023, art_rotation --check 0
+  organisation-rotation and 0 pacing, i18n_coverage 206/221 with aj-finn on no
+  PARTIAL list. All 20 cited URLs fetched live, both covers and the portrait
+  downloaded and looked at, both locales read in full. Two blocking findings,
+  four gaps, three stale claims. Footprint: this file only; no content edited.
+  Full evidence in the PR body.
+
+blocking:
+  - where: events.yaml header comment
+    owner: spoiler-audit
+    found: >
+      The rendered redaction holds in both locales (checked against the
+      archived NYT piece, whose own "(spoilers follow)" block itemises the
+      final twist). The comment explaining the redaction then names both
+      withheld items outright, including that one "lands in Window's last
+      act". CURATION §2's third trap: naming what was withheld publishes it,
+      in a public repo, permanently. works.yaml's note on Anna's household is
+      the model - it says a thing was withheld and never what.
+  - where: events.yaml + pt-PT overlay, aj-finn-plot-similarity-allegations-2019
+    owner: press-archaeology
+    found: >
+      "the correction stands as the record's final word", and the comment's
+      "five-days-later correction". The Times issued no correction: its own
+      note says "additional relevant information that Mr. Mallory's lawyer and
+      agent provided after publication", Publishers Lunch calls it an update,
+      Wikipedia a revision, and the entry's own preceding sentence says
+      "updated". A correction reads as the paper retracting.
+
+missing:
+  - owner: visual-metadata
+    found: >
+      The End of Story cover is 145x219 px (downloaded; the ISBN route returns
+      the identical file, so it is Open Library's ceiling, not a bad pick).
+      "2/2 covers" discloses none of this. Record the weakness or source
+      outside OL.
+  - owner: press-archaeology
+    found: >
+      ajf-auction-identity-revealed-2016 is flagged single-source, but the
+      Guardian piece already cited elsewhere in the file reports the
+      mid-auction reveal itself. Citing it leaves only Parker's "industry-wide
+      unease" characterisation single-sourced, and that is attributed in-text.
+  - owner: press-archaeology
+    found: >
+      ajf-born-1979 asserts New York City; its only source, the New Yorker,
+      gives no birth city and places the family in Garden City, Long Island
+      until he was about nine. Wikipedia carries the claim and is not cited on
+      the event.
+  - owner: curator
+    found: >
+      edition.translator is read by no code in the app (grepped app/,
+      components/, lib/). 16 wings record translator credits; all inert. No
+      skill owns this.
+
+stale:
+  - owner: event-resonance
+    found: >
+      franchise.yaml frames the ruling as "all nine entries that fall inside
+      that window are excluded" - the retired arithmetic lifetime default.
+      SCHEMA and lib/content/index.ts are include-only; exclude gates nothing.
+      The outcome (0 include) is right and the pre-lifetime question was
+      covered. wing-audit's own SKILL.md carries the same stale sentence.
+  - owner: visual-metadata
+    found: >
+      works.yaml calls the debut cover the "Original William Morrow hardcover
+      jacket". The file carries a "#1 New York Times bestseller" flash and a
+      "Soon to be a major motion picture" roundel, neither possible on a
+      January 2018 first printing. Same design, later printing; the reasoning
+      for rejecting the Amy Adams jacket still holds.
+  - owner: none
+    found: >
+      visual-metadata's handoff claims "?default=false"; both URLs are /b/id/,
+      where CURATION says it does not apply. Handoff only.
+
+precision:
+  - "Nora Krug 'opened by asking' - the question is several paragraphs in."
+  - "'one recipient recalled thinking' - the New Yorker frames it as a
+    present-day supposition, not a thought at the time."
+  - "'former colleagues... they too had received emails' - the Guardian
+    attributes the Jake emails to one former colleague."
+  - "The comment counts 'four similarities' then lists three kept plus two
+    withheld."
+  - "'the same week's New Yorker profile' on a 2019-02-14 event, while the
+    wing dates the New Yorker to 2019-02-04."
+  - "The 1999 Duke Chronicle sentence sits inside a list of fabrications, but
+    his mother's cancer was real and self-disclosed. On a living person this
+    wants saying."
+  - "End of Story synopsis: 'his protective daughter with a case of real-life
+    detective-fever' misattaches on first read; mirrored in pt-PT."
+  - "pt-PT 'tornado famoso' loses the negative valence of 'infamous'."
+
+checkedAndClean:
+  identity: >
+    Holds. en.wikipedia titled/infoboxed "A. J. Finn"; "Daniel Mallory" is a
+    disambiguation page; HarperCollins' author page has zero occurrences of
+    "Mallory"; Wikidata labels the pen name with both legal forms as aka. No
+    file treats the legal name as primary. Nuance: Wikipedia's lead sentence
+    still reads "Daniel Mallory... writes under the name A. J. Finn".
+  fabricationSourcing: >
+    Two-source bar holds. The Guardian reported its own sources, not a recap.
+    Every quoted phrase verified verbatim against the New Yorker. "Psychiatrists"
+    plural is correct - Bearden as well as Blackwood.
+  plagiarismEvent: >
+    Neither overstated nor buried; "substantially rebutted" matches the record.
+    The redaction of the Times' itemised overlap is intact in both locales.
+  endOfStorySynopsis: >
+    Accurate and non-spoiling; every clause traces to the HarperCollins jacket
+    or the setup half of the PW review. The PW leak is gone, as are the
+    koi-pond corpse, the cliffside climax and the sibling texts.
+  artRotation: >
+    Both fixes correct, falsified in both directions: old script + mosaic says
+    "pacing holds"; new script + mosaic reports 2 problems; new script +
+    layered-stack is clean. Swept all 34 wings - agatha-christie and
+    margaret-atwood now report pacing problems the truncated sort was masking.
+    Real, pre-existing, not caused here. pacing-gate.yml gates only wings a PR
+    touches, so this PR is unaffected; the next PR touching those two will fail.
+  editionsAndOverlay: >
+    page.tsx swaps in an edition title only when edition.language === locale,
+    so "A Mulher a Janela" reaches a pt-PT reader and End of Story stays
+    English. The overlays match, including plain-prose mentions.
+  globalEvents: >
+    All 9 excluded ids exist in global.yaml (19 entries); no fabrication.
+    Exactly 9 postdate 1979, so the count is right.
+  orphanLayers: >
+    displayFace spectral and signature rule are both in lib/theme.ts.
+    Contrast ink/bg 15.8, muted/surface 5.5, accent/bg 5.6. Accent-hue
+    adjacency claims check out (Lovecraft 167, Brown 201, Tordo 202, here
+    186). eras [] and orders [] correct; no achievements, correctly; no
+    features block - river and companion auto-on with 8 events is
+    proportionate, editions on, wizard off.
+  sourcesAndAssets: >
+    All 20 URLs 200. Both covers are the right book, correct byline, no
+    watermark. Portrait 1920x1616, CC BY-SA 4.0, named photographer.
+    franchise.images.header is read nowhere in the app, so skipping it was
+    right.
+  translation: >
+    Genuine European Portuguese; quotations left in the speaker's English
+    throughout, matching catalogue precedent.
+
+notApplicableNotAbsent:
+  - "eras [] and orders [] - two novels six years apart, nothing to divide."
+  - "no achievements, no startHere - a two-book shelf earns neither."
+  - "pt-PT editions 1 of 2 - End of Story has no Portuguese edition."
+  - "no header image - the app renders no such field."
+
+curatorsCall:
+  - >
+    The Denzil/March-2016 sentence cites a Publishers Lunch post paywalled
+    past the third paragraph, with no archived copy; the visible text does not
+    carry the claim. CURATION §4 says paywalled means uncitable.
+    Recommendation: use the archived Times' own line instead - her agent
+    confirmed the outline dates "prior to when Ms. Denzil says she began
+    writing her book" - which is open, archived and stronger.
+  - >
+    spoiler-audit asked this stage to re-test the Copycat clause. It holds.
+    Agoraphobia and heavy drinking are on HarperCollins' own jacket; the
+    online chess is not, but the New Yorker introduces all of it as "the
+    setup". The forum handles and the stalker stay out. No change needed.
