@@ -1,0 +1,61 @@
+# Overlay pt-PT (português europeu) da prosa curada da ala Umberto Eco:
+# `description` + `startHere.paths` (title, description, note - lista
+# aninhada fundida por id, docs/SCHEMA.md "Nested lists merge by id"). Nunca
+# `workIds`, `orderId` ou `fit`. globalEvents (include/exclude) não é
+# overlay: os comentários que os acompanham são registo de decisão editorial,
+# não prosa que o leitor vê.
+#
+# TÍTULOS DE OBRAS: onde existe edição portuguesa registada em editions.yaml
+# (Gradiva é o editor atual dos sete romances), o texto de exibição de uma
+# referência interna a uma obra usa o título publicado em Portugal - aqui,
+# "O Nome da Rosa" para the-name-of-the-rose. Nenhum outro título de obra é
+# referenciado neste ficheiro.
+- id: umberto-eco
+  description: >
+    O semiólogo italiano cujos sete romances, a começar com
+    [[work:umberto-eco/the-name-of-the-rose|O Nome da Rosa]] (1980), coexistem
+    com quatro décadas de escrita académica e de divulgação sobre signos,
+    interpretação e estética medieval - a erudição que moldou a ficção, não
+    uma carreira à parte.
+
+  startHere:
+    paths:
+      - id: essentials
+        title: Por onde começar
+        description: >
+          O frade franciscano e o seu noviço a investigar uma série de mortes
+          numa abadia do século XIV - a estreia de Eco, o seu livro mais
+          famoso por uma margem larga e, segundo a evidência acima, ainda a
+          porta certa de entrada, não uma armadilha disfarçada de uma.
+        note: >
+          O custo é real e vale a pena saber antes de começar: as primeiras
+          cem e tal páginas avançam devagar por rituais monásticos e debates
+          teológicos antes de a trama policial se impor, e a tradução inglesa
+          de referência deixa por traduzir as passagens em latim, grego e
+          noutras línguas, tal como o original italiano, para que um leitor
+          sem latim sinta o mesmo atrito que Eco construiu de propósito.
+          Ultrapasse o arranque e o mistério do homicídio por baixo sustenta o
+          resto.
+
+      - id: beyond-the-novels
+        title: As suas ideias, sem o seminário de semiótica
+        description: >
+          O jornalismo, os ensaios avulsos, as histórias culturais ilustradas
+          e os ciclos de conferências públicas que Eco escreveu a par dos
+          romances para um público geral, não a teoria semiótica
+          especializada que ocupa a maior parte da sua prateleira académica.
+        note: >
+          Isto é um quinto curado do patamar alargado, não a totalidade dele -
+          a teoria pela qual é igualmente conhecido (A Theory of Semiotics,
+          Kant and the Platypus, The Role of the Reader entre outras) fica no
+          percurso completista abaixo, não por ser um Eco menor mas por pedir
+          mais a um leitor que está apenas a explorar.
+
+      - id: everything
+        title: Tudo, por ordem
+        description: >
+          As sessenta e sete obras pela ordem em que as escreveu - sete
+          romances, toda a prateleira académica e semiótica, os livros
+          infantis e a apócrifa - intercaladas tal como realmente surgiram ao
+          longo de seis décadas de prática paralela como romancista e
+          académico.

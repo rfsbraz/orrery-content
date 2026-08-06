@@ -50,6 +50,29 @@ def year_of(entry):
     return int(m.group()) if m else None
 
 
+def covered_years_of(entry):
+    """Years this entry counts as non-dark for the gap check.
+
+    An entry with a dateRange (e.g. "1954-1958") describes an ongoing
+    situation across that whole span, not a single instant - crediting only
+    its bare `date` undercounts real coverage and can report a dark run that
+    isn't there. Confirmed live on umberto-eco: a 1954-1958 lifeEvent only
+    registered at 1954, leaving 1955-1958 to read as dark. `aura_total`
+    stays keyed on the single anchor year (one entry, one count) - this is
+    only about which years the dark-run scan treats as covered.
+    """
+    if not isinstance(entry, dict):
+        return set()
+    span = str(entry.get("dateRange", ""))
+    m = re.match(r"(\d{4})-(\d{4})", span)
+    if m:
+        lo, hi = int(m.group(1)), int(m.group(2))
+        if lo <= hi:
+            return set(range(lo, hi + 1))
+    y = year_of(entry)
+    return {y} if y else set()
+
+
 def main():
     authors = {}
     for path in glob.glob(os.path.join(ROOT, "content", "authors", "*.yaml")):
@@ -110,12 +133,15 @@ def main():
                 reaching.append(y)
 
         by_year = collections.Counter()
+        covered = set()
         for e in list(fev) + list(life):
             y = year_of(e)
             if y:
                 by_year[y] += 1
+            covered |= covered_years_of(e)
         for y in reaching:
             by_year[y] += 1
+            covered.add(y)
 
         pub_years = sorted({w["published"] for w in works if isinstance(w, dict) and isinstance(w.get("published"), int)})
         if not pub_years:
@@ -123,11 +149,13 @@ def main():
         aura_total = sum(by_year.values())
 
         # Longest run of consecutive years, inside the publishing span, that
-        # contains at least one book and no aura at all.
+        # contains at least one book and no aura at all. A year is "covered"
+        # if any entry's date or dateRange reaches it, not just an entry's
+        # single anchor date.
         run = 0
         worst = (0, None, None)
         for y in range(pub_years[0], pub_years[-1] + 1):
-            if by_year.get(y, 0) == 0:
+            if y not in covered:
                 run += 1
                 if run > worst[0]:
                     worst = (run, y - run + 1, y)

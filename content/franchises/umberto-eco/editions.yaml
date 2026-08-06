@@ -1,0 +1,1097 @@
+# Editions of Umberto Eco: built from scratch (no prior editions.yaml existed
+# for this wing). 63 entries: 22 across the seven novels (7 Italian originals,
+# 8 English - the seven current editions plus the 2014 revised Name of the
+# Rose - and 7 Portuguese), plus 41 more spread across 24 of the 55
+# extended-tier works.
+#
+# COVERAGE
+#   Novels (7 of 7): every novel has an Italian original, a current English
+#     edition and a current Portuguese edition. The Name of the Rose alone
+#     carries a fourth: the 2014 Mariner Books printing that is specifically
+#     Richard Dixon's "author's revisions" text (see its own note).
+#   Extended tier (24 of 55): 19 of orders.yaml's `beyond-the-novels`
+#     completionist order's 20 works - Diario minimo, Apocalittici e
+#     integrati, Il costume di casa, Il secondo diario minimo, Interpretation
+#     and Overinterpretation, Six Walks in the Fictional Woods, Cinque scritti
+#     morali, Serendipities, Experiences in Translation, Sulla letteratura,
+#     Storia della bellezza, A passo di gambero, Storia della bruttezza, La
+#     vertigine della lista, Confessions of a Young Novelist, Costruire il
+#     nemico, Storia delle terre e dei luoghi leggendari, Pape Satàn Aleppe and
+#     Sulle spalle dei giganti - all have at least one edition below (only
+#     Postille a «Il nome della rosa» has none; see its own gap note). Five
+#     more works outside that order carry an edition too, all found
+#     unprompted while researching the surrounding bibliography and fully
+#     verifiable: Come si fa una tesi di laurea (it/en), Opera aperta,
+#     Lector in fabula and Filosofi in libertà (pt-PT each), and Reflexões
+#     sobre a Dor / Riflessioni sul dolore (pt-PT). The remaining 31
+#     extended-tier works (the rest of the specialist semiotic/aesthetic
+#     theory, the six children's books, the apocrypha other than Filosofi in
+#     libertà) carry no edition here - unresearched, not a claim that none
+#     exists.
+#   No entry was invented to close a gap. Absence in this file means either
+#     "not yet researched" (the 40 above) or "researched and no verifiable
+#     current edition found" (Apocalittici e integrati's Italian side, La
+#     vertigine della lista's Italian side, Postille's own edition - each
+#     explained on the relevant entry or in the gap note below).
+#
+# SOURCES AND METHOD.
+#   Italian: Bompiani is Eco's original and, for the seven novels and most of
+#     the pre-2011 backlist, still current publisher. Since roughly 2011 a
+#     second house, La nave di Teseo (a firm co-founded by Eco's own son and
+#     former Bompiani colleagues after the Mondadori-Bompiani merger),
+#     publishes his later and posthumous nonfiction - three entries below
+#     (Come si fa una tesi di laurea, Pape Satàn Aleppe, Sulle spalle dei
+#     giganti) carry a La nave di Teseo ISBN, all sharing its 978-88-9344
+#     registrant block. Every Italian ISBN was checked against OpenLibrary's
+#     MARC-sourced edition records (Library of Congress, Harvard, Columbia and
+#     San Francisco Public Library catalogue feeds, not crowd entries) and its
+#     check digit recomputed by hand; four (marked SINGLE-SOURCED AND
+#     CONVERTED below) exist in OpenLibrary only as an ISBN-10, converted here
+#     by dropping the old check digit, prefixing 978 and recomputing from
+#     scratch.
+#   English: HarperCollins is the current publisher of record for all seven
+#     novels (it absorbed Houghton Mifflin Harcourt's trade list in 2021), but
+#     only gave The Name of the Rose, Foucault's Pendulum and The Prague
+#     Cemetery a fresh 2023/2022 paperback repackage with a new ISBN; the
+#     other four novels are still sold under their long-standing
+#     Harvest Books / Houghton Mifflin Harcourt paperback ISBNs, each
+#     cross-checked against WorldCat (Baudolino, The Island of the Day Before)
+#     or the book's own OpenLibrary MARC record citing a translator
+#     contribution field (The Mysterious Flame of Queen Loana). Translators
+#     were NOT copied from works.yaml's own summary for the seven novels -
+#     each was independently re-verified against that novel's own English
+#     Wikipedia infobox (all seven checked directly here) and, for
+#     five of the seven, against the specific edition's own OpenLibrary MARC
+#     "contributions"/"by_statement" field. All seven agree with each other
+#     and with works.yaml: William Weaver (The Name of the Rose, Foucault's
+#     Pendulum, The Island of the Day Before, Baudolino), Geoffrey Brock (The
+#     Mysterious Flame of Queen Loana), Richard Dixon (The Prague Cemetery,
+#     Numero Zero). Extended-tier English translators were taken from
+#     works.yaml's own already-sourced synopsis credits and, where an edition
+#     ISBN also carried an OpenLibrary "contributions" field, cross-checked
+#     against that too (Five Moral Pieces/Alastair McEwen and
+#     Serendipities/William Weaver both confirmed this way).
+#   Portuguese: Gradiva holds the current Portuguese rights to all seven
+#     novels and a large share of the extended-tier nonfiction; Relógio d'Água
+#     and Editorial Presença hold three older titles Gradiva has not
+#     republished. Every Portuguese ISBN below was confirmed at
+#     catalogo.bnportugal.gov.pt (BNP's own ipac20 catalogue, queried by ISBN
+#     and cited by its exact permalink), which also supplied every translator
+#     credit and legal-deposit number - the one exception is the current
+#     printing of O Nome da Rosa, explained on that entry. `pesquisar por
+#     ISBN` on the same catalogue returned no cross-check for six of these
+#     because BNP simply had the record on the first hit; the two 2026-dated
+#     Gradiva printings that did NOT resolve at BNP (too recent for legal
+#     deposit to have processed) are named in that entry's own note rather
+#     than silently substituted for the verified 2011 printing.
+#
+# REGION CHECK. Every `pt-PT` ISBN below carries a 978-989 or 978-972
+# registrant prefix (Portugal). One extended-tier work, Storia della
+# bruttezza, has NO Portuguese-market (pt-PT) edition - only a Brazilian one
+# (Editora Record, 978-85 prefix) turned up, and it is recorded below tagged
+# `pt-BR`, never `pt-PT`, exactly per this catalogue's region-strict rule.
+#
+# THE 2014 REVISED NAME OF THE ROSE. Eco corrected a number of anachronisms
+# in the Italian original (the "impossible" bell-pepper dish among them,
+# since peppers reached Europe over a century after the novel's 1327 setting)
+# for a revised Italian edition around 2011-2012. Richard Dixon's own
+# translator bibliography (en.wikipedia.org/wiki/Richard_Dixon_(translator))
+# credits "Author's revisions to The Name of the Rose by Umberto Eco, 2014"
+# as a distinct, separately dated piece of work - not a new translation, a
+# revision layered onto Weaver's existing 1983 English text after Weaver's
+# own death in November 2013. OpenLibrary's MARC record for the resulting
+# Mariner Books printing corroborates this independently: it is catalogued as
+# a "New edition" (statement taken from the book's own page 577) with BOTH
+# William Weaver and Richard Dixon listed as translators, and its own
+# by-statement reads "translated from the Italian by William Weaver,
+# including the author's postscript; [translations for the 2014 edition by
+# Richard Dixon]". That is recorded below as its own edition, following this
+# catalogue's established pattern for a genuinely superseded/revised text
+# (chuck-palahniuk/fight-club/noticias-1999-pt): the current 2023 HarperCollins
+# paperback most likely carries this same revised text (any printing after
+# 2014 would), but the 2014 Mariner Books printing is the one edition that IS
+# specifically, citably, the revision event itself.
+#
+# =============================================================================
+# The seven novels - Italian originals (Bompiani)
+# =============================================================================
+
+- id: umberto-eco/the-name-of-the-rose/bompiani-2018-it
+  workId: umberto-eco/the-name-of-the-rose
+  isbn13: "9788845296833"
+  language: it
+  format: paperback
+  publisher: Bompiani
+  year: 2018
+  note: >
+    Current Bompiani printing (624 p.), confirmed via OpenLibrary's edition
+    record (amazon:8845296830 source feed). Any Bompiani printing from this
+    date carries Eco's own 2011-2012 revisions to the Italian text - see the
+    file header on the 2014 English revision this fed into.
+  sources:
+    - "https://openlibrary.org/isbn/9788845296833.json"
+
+- id: umberto-eco/foucaults-pendulum/bompiani-2016-it
+  workId: umberto-eco/foucaults-pendulum
+  isbn13: "9788845278662"
+  language: it
+  format: paperback
+  publisher: Bompiani
+  year: 2016
+  sources:
+    - "https://openlibrary.org/isbn/9788845278662.json"
+
+- id: umberto-eco/the-island-of-the-day-before/bompiani-2014-it
+  workId: umberto-eco/the-island-of-the-day-before
+  isbn13: "9788845278679"
+  language: it
+  format: paperback
+  publisher: Bompiani
+  year: 2014
+  sources:
+    - "https://openlibrary.org/isbn/9788845278679.json"
+
+- id: umberto-eco/baudolino/bompiani-2016-it
+  workId: umberto-eco/baudolino
+  isbn13: "9788845278624"
+  language: it
+  format: paperback
+  publisher: Bompiani
+  year: 2016
+  sources:
+    - "https://openlibrary.org/isbn/9788845278624.json"
+
+- id: umberto-eco/the-mysterious-flame-of-queen-loana/bompiani-2014-it
+  workId: umberto-eco/the-mysterious-flame-of-queen-loana
+  isbn13: "9788845278631"
+  language: it
+  format: paperback
+  publisher: Bompiani
+  year: 2014
+  sources:
+    - "https://openlibrary.org/isbn/9788845278631.json"
+
+- id: umberto-eco/the-prague-cemetery/bompiani-2014-it
+  workId: umberto-eco/the-prague-cemetery
+  isbn13: "9788845278648"
+  language: it
+  format: paperback
+  publisher: Bompiani
+  year: 2014
+  sources:
+    - "https://openlibrary.org/isbn/9788845278648.json"
+
+- id: umberto-eco/numero-zero/bompiani-2016-it
+  workId: umberto-eco/numero-zero
+  isbn13: "9788845282065"
+  language: it
+  format: paperback
+  publisher: Bompiani
+  year: 2016
+  note: >
+    Bompiani reissued Numero zero (originally 2015, isbn13 9788845278518,
+    part of the same matched paperback run as the other five 2014-2016
+    entries above) under this new ISBN the same year; this is the more
+    recent of the two and the one currently listed as in print.
+  sources:
+    - "https://openlibrary.org/isbn/9788845282065.json"
+
+# =============================================================================
+# The seven novels - English (translator independently re-verified against
+# each novel's own Wikipedia infobox; see file header)
+# =============================================================================
+
+- id: umberto-eco/the-name-of-the-rose/harpercollins-2023-en
+  workId: umberto-eco/the-name-of-the-rose
+  isbn13: "9780063279636"
+  language: en
+  translator: "William Weaver"
+  format: paperback
+  publisher: HarperCollins
+  year: 2023
+  note: >
+    Current HarperCollins paperback (592 p.), fetched directly from
+    harpercollins.com/products/the-name-of-the-rose-umberto-eco, which lists
+    it alongside the superseded 2014 Mariner Books printing recorded
+    separately below. OpenLibrary's own MARC record for this ISBN lists
+    William Weaver as translator and "translated_from" Italian directly.
+  sources:
+    - "https://www.harpercollins.com/products/the-name-of-the-rose-umberto-eco"
+    - "https://openlibrary.org/isbn/9780063279636.json"
+    - "https://en.wikipedia.org/wiki/The_Name_of_the_Rose"
+
+- id: umberto-eco/the-name-of-the-rose/mariner-2014-en-revised
+  workId: umberto-eco/the-name-of-the-rose
+  isbn13: "9780544176560"
+  language: en
+  translator: "William Weaver; 2014 author's revisions by Richard Dixon"
+  format: paperback
+  title: "The Name of the Rose (Including Author's Postscript)"
+  publisher: Mariner Books
+  year: 2014
+  note: >
+    The specific edition that carries Richard Dixon's 2014 "author's
+    revisions" to Weaver's 1983 text, made after Eco corrected a number of
+    anachronisms in the Italian original and after Weaver's own death in
+    November 2013. OpenLibrary's MARC record (fed by Harvard, Columbia and
+    San Francisco Public Library catalogues) calls it a "New edition"
+    (statement from the book's own page 577, "with corrections and
+    revisions") and its own by-statement reads "translated from the Italian
+    by William Weaver, including the author's postscript; [translations for
+    the 2014 edition by Richard Dixon]" - both Weaver and Dixon are listed as
+    contributing translators. Independently corroborated by Richard Dixon's
+    own translator bibliography, which credits "Author's revisions to The
+    Name of the Rose by Umberto Eco, 2014" as a separate, dated piece of
+    work. See the file header for the full account; this is the same
+    superseded/revised-edition pattern as
+    chuck-palahniuk/fight-club/noticias-1999-pt, except here the OLDER
+    edition (harpercollins-2023-en's predecessor lineage) is what got
+    superseded, not this one - any English printing from 2014 on should
+    carry this same revised text.
+  sources:
+    - "https://openlibrary.org/isbn/9780544176560.json"
+    - "https://en.wikipedia.org/wiki/Richard_Dixon_(translator)"
+    - "https://en.wikipedia.org/wiki/William_Weaver"
+
+- id: umberto-eco/foucaults-pendulum/harpercollins-2023-en
+  workId: umberto-eco/foucaults-pendulum
+  isbn13: "9780063279650"
+  language: en
+  translator: "William Weaver"
+  format: paperback
+  publisher: HarperCollins
+  year: 2023
+  note: >
+    Current HarperCollins paperback (656 p.); harpercollins.com lists it
+    alongside the older 2007 Harvest Books printing of the same translation.
+  sources:
+    - "https://www.harpercollins.com/products/foucaults-pendulum-umberto-eco"
+    - "https://en.wikipedia.org/wiki/Foucault%27s_Pendulum"
+
+- id: umberto-eco/the-island-of-the-day-before/harvest-2006-en
+  workId: umberto-eco/the-island-of-the-day-before
+  isbn13: "9780156030373"
+  language: en
+  translator: "William Weaver"
+  format: paperback
+  publisher: Harvest Books
+  year: 2006
+  note: >
+    Harcourt's long-standing US trade paperback, still the current English
+    edition (HarperCollins's own product page for this title lists a single
+    undifferentiated "Paperback" variant, i.e. no newer repackage has
+    replaced it, unlike The Name of the Rose/Foucault's Pendulum/The Prague
+    Cemetery above and below).
+  sources:
+    - "https://openlibrary.org/isbn/9780156030373.json"
+    - "https://en.wikipedia.org/wiki/The_Island_of_the_Day_Before"
+
+- id: umberto-eco/baudolino/harvest-2003-en
+  workId: umberto-eco/baudolino
+  isbn13: "9780156029063"
+  language: en
+  translator: "William Weaver"
+  format: paperback
+  publisher: Harvest Books
+  year: 2003
+  note: >
+    Cross-checked at WorldCat, which records it as the "First Harvest
+    edition" (Harcourt, New York, 2003) with William Weaver as translator -
+    agreeing with OpenLibrary's own MARC record for the same ISBN.
+  sources:
+    - "https://openlibrary.org/isbn/9780156029063.json"
+    - "https://search.worldcat.org/title/53436478"
+    - "https://en.wikipedia.org/wiki/Baudolino"
+
+- id: umberto-eco/the-mysterious-flame-of-queen-loana/harvest-2006-en
+  workId: umberto-eco/the-mysterious-flame-of-queen-loana
+  isbn13: "9780156030434"
+  language: en
+  translator: "Geoffrey Brock"
+  format: paperback
+  publisher: Harvest Books
+  year: 2006
+  note: >
+    OpenLibrary's own MARC record for this ISBN lists "Geoffrey Brock
+    (Translator)" directly in its contributions field, independent of
+    works.yaml's own already-sourced credit.
+  sources:
+    - "https://openlibrary.org/isbn/9780156030434.json"
+    - "https://en.wikipedia.org/wiki/The_Mysterious_Flame_of_Queen_Loana"
+
+- id: umberto-eco/the-prague-cemetery/harpercollins-2022-en
+  workId: umberto-eco/the-prague-cemetery
+  isbn13: "9780358719052"
+  language: en
+  translator: "Richard Dixon"
+  format: paperback
+  publisher: HarperCollins
+  year: 2022
+  sources:
+    - "https://openlibrary.org/isbn/9780358719052.json"
+    - "https://en.wikipedia.org/wiki/The_Prague_Cemetery"
+
+- id: umberto-eco/numero-zero/mariner-2016-en
+  workId: umberto-eco/numero-zero
+  isbn13: "9780544811836"
+  language: en
+  translator: "Richard Dixon"
+  format: paperback
+  publisher: Mariner Books
+  year: 2016
+  sources:
+    - "https://openlibrary.org/isbn/9780544811836.json"
+    - "https://en.wikipedia.org/wiki/Numero_Zero"
+
+# =============================================================================
+# The seven novels - Portuguese (Gradiva; every ISBN, translator and legal
+# deposit number below is confirmed at catalogo.bnportugal.gov.pt except
+# O Nome da Rosa, see its own note)
+# =============================================================================
+
+- id: umberto-eco/the-name-of-the-rose/gradiva-2011-pt
+  workId: umberto-eco/the-name-of-the-rose
+  isbn13: "9789896164546"
+  language: pt-PT
+  title: "O Nome da Rosa"
+  translator: "Jorge Vaz de Carvalho"
+  format: paperback
+  publisher: Gradiva
+  year: 2011
+  note: >
+    BNP: "O nome da rosa / Umberto Eco ; trad. Jorge Vaz de Carvalho ; rev.
+    de texto Rui Augusto", 1a ed., Lisboa: Gradiva, 2011, 612 p., DEP. LEGAL
+    PT-336019/11. Gradiva's OWN product page for this exact ISBN bills it as
+    "EM NOVA TRADUÇÃO, VERSÃO REVISTA PELO AUTOR" ("in a new translation, the
+    author-revised version") and "primeira edição em todo o mundo da versão
+    revista pelo autor" ("the first edition anywhere in the world of the
+    author-revised version") - Gradiva's own marketing claim, not
+    independently corroborated here, but a genuinely interesting one to sit
+    beside the 2014 Dixon revision of the English text above. Gradiva's site
+    now marks this ISBN Esgotado (sold out at the publisher) and lists two
+    newer printings under different ISBNs - 9789897850127 (2020-11-24) and
+    9789897854385 (2026-04-21), both confirmed as real Gradiva products by
+    matching Bertrand and Wook search records but NOT independently
+    confirmed for translator or in-print status (BNP holds no record for
+    either, most likely too recent for legal-deposit cataloguing; both
+    publisher product pages returned HTTP 403 to automated fetches). This
+    2011 printing is recorded as the edition because it is the only one
+    fully verifiable end to end; a human with a browser could confirm
+    whether the 2020/2026 ISBNs are simply reprints of the same
+    Carvalho translation under Gradiva's current cover design.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-616-454-6&profile=bn"
+    - "https://www.gradiva.pt/produto/o-nome-da-rosa/"
+
+- id: umberto-eco/foucaults-pendulum/gradiva-2016-pt
+  workId: umberto-eco/foucaults-pendulum
+  isbn13: "9789896167172"
+  language: pt-PT
+  title: "O Pêndulo de Foucault"
+  translator: "José Colaço Barreiros"
+  format: paperback
+  publisher: Gradiva
+  year: 2016
+  note: >
+    BNP: "O pêndulo de Foucault: romance / Umberto Eco ; trad. José Colaço
+    Barreiros", 1a ed., Lisboa: Gradiva, 2016, 716 p., DEP. LEGAL PT-409865/16.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-616-717-2&profile=bn"
+    - "https://www.gradiva.pt/produto/o-pendulo-de-foucault/"
+
+- id: umberto-eco/the-island-of-the-day-before/gradiva-2017-pt
+  workId: umberto-eco/the-island-of-the-day-before
+  isbn13: "9789896167561"
+  language: pt-PT
+  title: "A Ilha do Dia Antes"
+  translator: "José Colaço Barreiros"
+  format: paperback
+  publisher: Gradiva
+  year: 2017
+  note: "BNP: Lisboa, Gradiva, 2017, 472 p."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-616-756-1&profile=bn"
+    - "https://www.gradiva.pt/produto/a-ilha-do-dia-antes/"
+
+- id: umberto-eco/baudolino/gradiva-2016-pt
+  workId: umberto-eco/baudolino
+  isbn13: "9789896167448"
+  language: pt-PT
+  title: "Baudolino"
+  translator: "José Colaço Barreiros"
+  format: paperback
+  publisher: Gradiva
+  year: 2016
+  note: >
+    Title identical to the Italian original by coincidence, not omitted:
+    per this catalogue's rule, `title` is only left off when the edition's
+    own language matches the work's original language, and this edition is
+    Portuguese against an Italian original. BNP: Lisboa, Gradiva, 2016,
+    536 p.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-616-744-8&profile=bn"
+    - "https://www.gradiva.pt/produto/baudolino/"
+
+- id: umberto-eco/the-mysterious-flame-of-queen-loana/gradiva-2018-pt
+  workId: umberto-eco/the-mysterious-flame-of-queen-loana
+  isbn13: "9789896167981"
+  language: pt-PT
+  title: "A Misteriosa Chama da Rainha Loana"
+  translator: "Simonetta Neto"
+  format: paperback
+  publisher: Gradiva
+  year: 2018
+  note: "BNP: Lisboa, Gradiva, 2018, 472 p., DEP. LEGAL PT-442753/18."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-616-798-1&profile=bn"
+    - "https://www.gradiva.pt/produto/a-misteriosa-chama-da-rainha-loana/"
+
+- id: umberto-eco/the-prague-cemetery/gradiva-2011-pt
+  workId: umberto-eco/the-prague-cemetery
+  isbn13: "9789896164089"
+  language: pt-PT
+  title: "O Cemitério de Praga"
+  translator: "Jorge Vaz de Carvalho"
+  format: paperback
+  publisher: Gradiva
+  year: 2011
+  note: >
+    BNP's own record misspells the Italian original title as "Il cemitero di
+    Praga" (should be "Il cimitero"); the Portuguese title, translator,
+    publisher and year are unaffected. DEP. LEGAL PT-324770/2011.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-616-408-9&profile=bn"
+    - "https://www.gradiva.pt/produto/o-cemiterio-de-praga/"
+
+- id: umberto-eco/numero-zero/gradiva-2015-pt
+  workId: umberto-eco/numero-zero
+  isbn13: "9789896166434"
+  language: pt-PT
+  title: "Número Zero"
+  translator: "Jorge Vaz de Carvalho"
+  format: paperback
+  publisher: Gradiva
+  year: 2015
+  note: >
+    BNP: "trad. Jorge Vaz de Carvalho ; rev. Maria de Fátima do Carmo", 1a
+    ed., Lisboa: Gradiva, 2015, 163 p., DEP. LEGAL PT-391139/15. Gradiva's own
+    product page lists this same ISBN as still current as of a 2021 reprint.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=978-989-616-643-4&profile=bn"
+    - "https://www.gradiva.pt/produto/numero-zero/"
+
+# =============================================================================
+# Extended tier - 14 of the 55 works, concentrated on orders.yaml's
+# `beyond-the-novels` completionist order (19 of its 20 works; see header)
+# =============================================================================
+
+- id: umberto-eco/diario-minimo/bompiani-1992-it
+  workId: umberto-eco/diario-minimo
+  isbn13: "9788845218750"
+  language: it
+  format: paperback
+  publisher: Bompiani
+  year: 1992
+  note: >
+    No English edition of Diario minimo as a standalone, identically
+    structured volume was found (works.yaml's own note on Il secondo diario
+    minimo already flags that its English translation, How to Travel with a
+    Salmon, does not correspond 1:1 to either Italian volume) - a genuine
+    gap, not checked further here.
+  sources:
+    - "https://openlibrary.org/isbn/9788845218750.json"
+
+- id: umberto-eco/diario-minimo/gradiva-2023-pt
+  workId: umberto-eco/diario-minimo
+  isbn13: "9789897852190"
+  language: pt-PT
+  title: "Diário Mínimo"
+  translator: "Miguel Serras Pereira"
+  format: paperback
+  publisher: Gradiva
+  year: 2023
+  note: "BNP: Lisboa, Gradiva, 2023, 197 p., DEP. LEGAL PT-516410/23."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897852190&profile=bn"
+
+- id: umberto-eco/apocalittici-e-integrati/indiana-2000-en
+  workId: umberto-eco/apocalittici-e-integrati
+  language: en
+  isbn13: "9780253024190"
+  format: paperback
+  title: "Apocalypse Postponed"
+  publisher: Indiana University Press
+  year: 2000
+  note: >
+    A partial translation only - works.yaml's own synopsis already flags
+    this - so it does not reproduce the full Italian contents. No current
+    Italian-original ISBN was found for Apocalittici e integrati itself: the
+    only edition OpenLibrary records with any bibliographic depth is a 1973
+    4th printing (Bompiani, "I satelliti Bompiani") with no ISBN at all,
+    consistent with a 1964 title that predates the ISBN system and may never
+    have been reprinted under one.
+  sources:
+    - "https://openlibrary.org/search.json?q=Umberto+Eco+Apocalypse+Postponed"
+
+- id: umberto-eco/il-costume-di-casa/bompiani-2012-it
+  workId: umberto-eco/il-costume-di-casa
+  isbn13: "9788845269912"
+  language: it
+  format: paperback
+  publisher: Bompiani
+  year: 2012
+  note: "Tascabili Bompiani no. 462, 1st printing in that line; 482 p."
+  sources:
+    - "https://openlibrary.org/isbn/9788845269912.json"
+
+- id: umberto-eco/il-costume-di-casa/vintage-1995-en
+  workId: umberto-eco/il-costume-di-casa
+  isbn13: "9780749396282"
+  language: en
+  translator: "William Weaver"
+  format: paperback
+  title: "Faith in Fakes"
+  publisher: Vintage
+  year: 1995
+  note: >
+    UK Vintage "New Ed" printing of Faith in Fakes: Travels in Hyperreality.
+    OpenLibrary's own MARC record for the 1986 first edition (Secker &
+    Warburg) gives the identical by-statement "translated from the Italian
+    by William Weaver".
+  sources:
+    - "https://openlibrary.org/works/OL14853082W/editions.json"
+
+- id: umberto-eco/il-secondo-diario-minimo/bompiani-2001-it
+  workId: umberto-eco/il-secondo-diario-minimo
+  isbn13: "9788845249099"
+  language: it
+  format: paperback
+  publisher: Bompiani
+  year: 2001
+  note: >
+    ISBN SINGLE-SOURCED AND CONVERTED. OpenLibrary holds this printing (5th
+    ed., Tascabili Bompiani no. 334, 339 p.) only as ISBN-10 8845249093; the
+    13-digit form here is that number with its check digit dropped, 978
+    prefixed and the digit recomputed. Corroborated as a real record by two
+    independent feeds into the same OpenLibrary entry (San Francisco Public
+    Library's MARC catalogue and an Amazon listing for the identical ISBN-10),
+    but not cross-checked against a second, independent catalogue.
+  sources:
+    - "https://openlibrary.org/works/OL8995683W/editions.json"
+
+- id: umberto-eco/il-secondo-diario-minimo/mariner-1995-en
+  workId: umberto-eco/il-secondo-diario-minimo
+  isbn13: "9780156001250"
+  language: en
+  translator: "William Weaver"
+  format: paperback
+  title: "How to Travel with a Salmon and Other Essays"
+  publisher: Mariner Books
+  year: 1995
+  note: >
+    A partial and reorganised translation, not a complete Il secondo diario
+    minimo - works.yaml's own note on the Italian work states this
+    directly. OpenLibrary's MARC record for the identical 1995 Harcourt Brace
+    edition (isbn 015600125X/10) confirms both the translator and that it
+    corresponds to "Secondo diario minimo" as its work_title.
+  sources:
+    - "https://openlibrary.org/works/OL8995683W/editions.json"
+
+- id: umberto-eco/interpretation-and-overinterpretation/cambridge-1992-en
+  workId: umberto-eco/interpretation-and-overinterpretation
+  isbn13: "9780521402279"
+  language: en
+  format: paperback
+  publisher: Cambridge University Press
+  year: 1992
+  note: >
+    English-original (the 1990 Tanner Lectures at Cambridge); no `title`
+    field, per this catalogue's rule that a title is omitted when the work is
+    already in that language. By-statement: "Umberto Eco with Richard Rorty,
+    Jonathan Culler, Christine Brooke-Rose ; edited by Stefan Collini" -
+    confirming orders.yaml's own note that this is a public argument with
+    three named respondents, not a solo monograph.
+  sources:
+    - "https://openlibrary.org/works/OL8995684W/editions.json"
+
+- id: umberto-eco/six-walks-in-the-fictional-woods/harvard-1998-en
+  workId: umberto-eco/six-walks-in-the-fictional-woods
+  isbn13: "9780674810518"
+  language: en
+  format: paperback
+  publisher: Harvard University Press
+  year: 1998
+  note: "English-original (the 1993 Charles Eliot Norton Lectures at Harvard); no title field."
+  sources:
+    - "https://openlibrary.org/isbn/9780674810518.json"
+
+- id: umberto-eco/six-walks-in-the-fictional-woods/gradiva-2019-pt
+  workId: umberto-eco/six-walks-in-the-fictional-woods
+  isbn13: "9789896169053"
+  language: pt-PT
+  title: "Seis Passeios nos Bosques da Ficção"
+  translator: "Wanda Ramos"
+  format: paperback
+  publisher: Gradiva
+  year: 2019
+  note: >
+    BNP: 1a ed., Lisboa, Gradiva, 2019, 178 p., DEP. LEGAL PT-457049/19. BNP's
+    own author-index entry misspells the translator's first name "Vanda";
+    "Wanda Ramos" as printed in the by-statement is used here.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789896169053&profile=bn"
+
+- id: umberto-eco/cinque-scritti-morali/bompiani-1997-it
+  workId: umberto-eco/cinque-scritti-morali
+  isbn13: "9788845231247"
+  language: it
+  format: paperback
+  publisher: Bompiani
+  year: 1997
+  note: >
+    ISBN SINGLE-SOURCED AND CONVERTED. OpenLibrary holds this 1st edition
+    (PasSaggi Bompiani, 113 p.) only as ISBN-10 8845231240; converted here by
+    dropping the old check digit, prefixing 978 and recomputing. LOC-cited
+    (lccn 97217775) but not cross-checked against a second catalogue.
+  sources:
+    - "https://openlibrary.org/works/OL9962225W/editions.json"
+
+- id: umberto-eco/cinque-scritti-morali/hmh-2002-en
+  workId: umberto-eco/cinque-scritti-morali
+  isbn13: "9780547564050"
+  language: en
+  translator: "Alastair McEwen"
+  format: paperback
+  title: "Five Moral Pieces"
+  publisher: Houghton Mifflin Harcourt
+  year: 2002
+  note: >
+    OpenLibrary's own record for this ISBN lists Alastair McEwen as a
+    co-author entry alongside Eco (his standing OpenLibrary author key,
+    OL7325356A, matches the key on his other Eco translations recorded
+    below), independently confirming works.yaml's credit.
+  sources:
+    - "https://openlibrary.org/isbn/9780547564050.json"
+
+- id: umberto-eco/serendipities/columbia-1998-en
+  workId: umberto-eco/serendipities
+  isbn13: "9780231500142"
+  language: en
+  translator: "William Weaver"
+  format: hardcover
+  publisher: Columbia University Press
+  year: 1998
+  note: >
+    works.yaml's own note already states no separate, identically structured
+    Italian volume was found; this English gathering is the only edition
+    recorded. OpenLibrary's own record for this ISBN lists a second author
+    entry, OpenLibrary author key OL7920296A, confirmed by direct lookup to
+    be William Weaver - independently corroborating the translator.
+  sources:
+    - "https://openlibrary.org/isbn/9780231500142.json"
+    - "https://openlibrary.org/authors/OL7920296A.json"
+
+- id: umberto-eco/experiences-in-translation/toronto-2000-en
+  workId: umberto-eco/experiences-in-translation
+  isbn13: "9780802035332"
+  language: en
+  translator: "Alastair McEwen"
+  format: paperback
+  publisher: University of Toronto Press
+  year: 2000
+  note: >
+    English-original (the 1998 Goggio Public Lectures at Toronto); no title
+    field. ISBN CONVERTED from OpenLibrary's own ISBN-10 (0802035337, the
+    only identifier its record carries) by dropping the check digit,
+    prefixing 978 and recomputing - the resulting 9780802035332 independently
+    matches a Better World Books SKU already present in that same
+    OpenLibrary record's source_records, which rules out a transcription slip
+    on this end.
+  sources:
+    - "https://openlibrary.org/works/OL14853033W/editions.json"
+
+- id: umberto-eco/sulla-letteratura/bompiani-2002-it
+  workId: umberto-eco/sulla-letteratura
+  isbn13: "9788845250699"
+  language: it
+  format: hardcover
+  publisher: Bompiani
+  year: 2002
+  sources:
+    - "https://openlibrary.org/isbn/9788845250699.json"
+
+- id: umberto-eco/sulla-letteratura/harcourt-2005-en
+  workId: umberto-eco/sulla-letteratura
+  isbn13: "9780156032391"
+  language: en
+  translator: "Martin McLaughlin"
+  format: paperback
+  title: "On Literature"
+  publisher: Harcourt
+  year: 2005
+  sources:
+    - "https://openlibrary.org/isbn/9780156032391.json"
+
+- id: umberto-eco/sulla-letteratura/relogio-dagua-2014-pt
+  workId: umberto-eco/sulla-letteratura
+  isbn13: "9789896413712"
+  language: pt-PT
+  title: "Sobre Literatura"
+  translator: "José Colaço Barreiros"
+  format: paperback
+  publisher: "Relógio d'Água"
+  year: 2014
+  note: >
+    BNP: Lisboa, Relógio d'Água, 2014, 310 p., collection "À volta da
+    literatura", DEP. LEGAL PT-372298/14.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789896413712&profile=bn"
+
+- id: umberto-eco/storia-della-bellezza/bompiani-2004-it
+  workId: umberto-eco/storia-della-bellezza
+  isbn13: "9788845232497"
+  language: it
+  format: hardcover
+  publisher: Bompiani
+  year: 2004
+  note: >
+    ISBN SINGLE-SOURCED AND CONVERTED from OpenLibrary's own ISBN-10
+    (8845232492); OpenLibrary's record notes it derives from the contents of
+    the 2002 CD-ROM "Bellezza, Storia di un'idea dell'Occidente", "now
+    revised and enlarged" - LOC-cited (lccn 2004624600) but not
+    cross-checked against a second catalogue.
+  sources:
+    - "https://openlibrary.org/works/OL19378288W/editions.json"
+
+- id: umberto-eco/storia-della-bellezza/rizzoli-2004-en
+  workId: umberto-eco/storia-della-bellezza
+  isbn13: "9780847826469"
+  language: en
+  translator: "Alastair McEwen"
+  format: hardcover
+  title: "History of Beauty"
+  publisher: Rizzoli
+  year: 2004
+  note: >
+    US title; works.yaml's own note records that the UK edition, published
+    the same year, carries the different title "On Beauty" - not recorded as
+    a separate entry here since it is the identical translation and object
+    under a different regional title, not independently verified beyond that
+    note.
+  sources:
+    - "https://openlibrary.org/isbn/9780847826469.json"
+
+- id: umberto-eco/a-passo-di-gambero/bompiani-2006-it
+  workId: umberto-eco/a-passo-di-gambero
+  isbn13: "9788845256202"
+  language: it
+  format: paperback
+  publisher: Bompiani
+  year: 2006
+  sources:
+    - "https://openlibrary.org/isbn/9788845256202.json"
+
+- id: umberto-eco/a-passo-di-gambero/harcourt-2007-en
+  workId: umberto-eco/a-passo-di-gambero
+  isbn13: "9780151013517"
+  language: en
+  translator: "Alastair McEwen"
+  format: hardcover
+  title: "Turning Back the Clock"
+  publisher: Harcourt
+  year: 2007
+  note: >
+    US first edition. OpenLibrary's own record gives the by-statement
+    "translated from the Italian by Alastair McEwen" directly, independently
+    confirming works.yaml's credit.
+  sources:
+    - "https://openlibrary.org/works/OL13623444W/editions.json"
+
+- id: umberto-eco/storia-della-bruttezza/bompiani-2007-it
+  workId: umberto-eco/storia-della-bruttezza
+  isbn13: "9788845259654"
+  language: it
+  format: hardcover
+  publisher: Bompiani
+  year: 2007
+  sources:
+    - "https://openlibrary.org/isbn/9788845259654.json"
+
+- id: umberto-eco/storia-della-bruttezza/rizzoli-2007-en
+  workId: umberto-eco/storia-della-bruttezza
+  isbn13: "9780847829866"
+  language: en
+  translator: "Alastair McEwen"
+  format: hardcover
+  title: "On Ugliness"
+  publisher: Rizzoli
+  year: 2007
+  sources:
+    - "https://openlibrary.org/isbn/9780847829866.json"
+
+- id: umberto-eco/storia-della-bruttezza/record-2007-pt-br
+  workId: umberto-eco/storia-della-bruttezza
+  isbn13: "9788501078643"
+  language: pt-BR
+  title: "História da Feiura"
+  translator: "Eliana Aguiar"
+  format: hardcover
+  publisher: Record
+  year: 2007
+  note: >
+    NO pt-PT EDITION WAS FOUND for this work - only this Brazilian one, which
+    is why it is tagged pt-BR here and not pt-PT: Record is a Rio de Janeiro
+    publisher and the ISBN carries the 978-85 Brazilian registrant prefix.
+    Recorded anyway, correctly labelled, rather than omitted or mistagged -
+    per this catalogue's rule that a pt-BR edition scores below plain English
+    for a pt-PT reader, never as a substitute for one.
+  sources:
+    - "https://openlibrary.org/isbn/9788501078643.json"
+
+- id: umberto-eco/la-vertigine-della-lista/rizzoli-2009-en
+  workId: umberto-eco/la-vertigine-della-lista
+  isbn13: "9781906694821"
+  language: en
+  translator: "Alastair McEwen"
+  format: hardcover
+  title: "The Infinity of Lists"
+  publisher: Rizzoli
+  year: 2009
+  note: >
+    No current Italian-original ISBN recorded: OpenLibrary's own Italian
+    edition record for this title carries a malformed 12-digit value
+    ("978884526345") in its isbn_10 field, one digit short and not a usable
+    identifier - recording it here would repeat the error rather than fix
+    it. Left as a genuine gap.
+  sources:
+    - "https://openlibrary.org/isbn/9781906694821.json"
+
+- id: umberto-eco/confessions-of-a-young-novelist/harvard-2011-en
+  workId: umberto-eco/confessions-of-a-young-novelist
+  isbn13: "9780674058699"
+  language: en
+  format: hardcover
+  publisher: Harvard University Press
+  year: 2011
+  note: >
+    English-original (the 2008 Richard Ellmann Lectures at Emory); no title
+    field. Series "The Richard Ellmann Lectures in Modern Literature",
+    matching works.yaml's own synopsis.
+  sources:
+    - "https://openlibrary.org/isbn/9780674058699.json"
+
+- id: umberto-eco/confessions-of-a-young-novelist/gradiva-2024-pt
+  workId: umberto-eco/confessions-of-a-young-novelist
+  isbn13: "9789897852718"
+  language: pt-PT
+  title: "Confissões de um Jovem Escritor"
+  translator: "Rita Figueiredo"
+  format: paperback
+  publisher: Gradiva
+  year: 2024
+  note: "BNP: 1a/2a ed., Lisboa, Gradiva, 2024."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897852718&profile=bn"
+
+- id: umberto-eco/costruire-il-nemico/bompiani-2011-it
+  workId: umberto-eco/costruire-il-nemico
+  isbn13: "9788845265853"
+  language: it
+  format: paperback
+  publisher: Bompiani
+  year: 2011
+  sources:
+    - "https://openlibrary.org/isbn/9788845265853.json"
+
+- id: umberto-eco/costruire-il-nemico/hmh-2013-en
+  workId: umberto-eco/costruire-il-nemico
+  isbn13: "9780544104686"
+  language: en
+  translator: "Richard Dixon"
+  format: paperback
+  title: "Inventing the Enemy"
+  publisher: Houghton Mifflin Harcourt
+  year: 2013
+  sources:
+    - "https://openlibrary.org/isbn/9780544104686.json"
+
+- id: umberto-eco/storia-delle-terre-e-dei-luoghi-leggendari/bompiani-2013-it
+  workId: umberto-eco/storia-delle-terre-e-dei-luoghi-leggendari
+  isbn13: "9788845273926"
+  language: it
+  format: hardcover
+  publisher: Bompiani
+  year: 2013
+  sources:
+    - "https://openlibrary.org/isbn/9788845273926.json"
+
+- id: umberto-eco/storia-delle-terre-e-dei-luoghi-leggendari/rizzoli-2013-en
+  workId: umberto-eco/storia-delle-terre-e-dei-luoghi-leggendari
+  isbn13: "9780847841219"
+  language: en
+  translator: "Alastair McEwen"
+  format: hardcover
+  title: "The Book of Legendary Lands"
+  publisher: Rizzoli Ex Libris
+  year: 2013
+  sources:
+    - "https://openlibrary.org/isbn/9780847841219.json"
+
+- id: umberto-eco/pape-satan-aleppe/nave-di-teseo-2016-it
+  workId: umberto-eco/pape-satan-aleppe
+  isbn13: "9788893440226"
+  language: it
+  format: paperback
+  publisher: "La nave di Teseo"
+  year: 2016
+  note: >
+    5th printing; La nave di Teseo, not Bompiani - the house Eco's son and
+    former Bompiani colleagues founded to publish his later and posthumous
+    work (see file header).
+  sources:
+    - "https://openlibrary.org/isbn/9788893440226.json"
+
+- id: umberto-eco/pape-satan-aleppe/hmh-2017-en
+  workId: umberto-eco/pape-satan-aleppe
+  isbn13: "9780544974579"
+  language: en
+  translator: "Richard Dixon"
+  format: paperback
+  title: "Chronicles of a Liquid Society"
+  publisher: Houghton Mifflin Harcourt
+  year: 2017
+  sources:
+    - "https://openlibrary.org/isbn/9780544974579.json"
+
+- id: umberto-eco/sulle-spalle-dei-giganti/nave-di-teseo-2017-it
+  workId: umberto-eco/sulle-spalle-dei-giganti
+  isbn13: "9788893442718"
+  language: it
+  format: paperback
+  publisher: "La nave di Teseo"
+  year: 2017
+  note: "1st edition, 442 p.; La nave di Teseo, not Bompiani (see file header)."
+  sources:
+    - "https://openlibrary.org/isbn/9788893442718.json"
+
+- id: umberto-eco/sulle-spalle-dei-giganti/harvard-2019-en
+  workId: umberto-eco/sulle-spalle-dei-giganti
+  isbn13: "9780674242265"
+  language: en
+  translator: "Alastair McEwen"
+  format: hardcover
+  title: "On the Shoulders of Giants"
+  publisher: Harvard University Press
+  year: 2019
+  sources:
+    - "https://openlibrary.org/isbn/9780674242265.json"
+
+# --- Beyond the completionist order: two bonus finds, fully verifiable, that
+# turned up unprompted while researching the surrounding bibliography ---
+
+- id: umberto-eco/come-si-fa-una-tesi-di-laurea/nave-di-teseo-2022-it
+  workId: umberto-eco/come-si-fa-una-tesi-di-laurea
+  isbn13: "9788893441711"
+  language: it
+  format: paperback
+  publisher: "La nave di Teseo"
+  year: 2022
+  sources:
+    - "https://openlibrary.org/isbn/9788893441711.json"
+
+- id: umberto-eco/come-si-fa-una-tesi-di-laurea/mit-2015-en
+  workId: umberto-eco/come-si-fa-una-tesi-di-laurea
+  isbn13: "9780262527132"
+  language: en
+  translator: "Caterina Mongiat Farina and Geoff Farina"
+  format: paperback
+  title: "How to Write a Thesis"
+  publisher: MIT Press
+  year: 2015
+  note: >
+    OpenLibrary's own MARC record for this ISBN lists both translators
+    directly in its contributions field, plus Francesco Erspamer as
+    foreword writer.
+  sources:
+    - "https://openlibrary.org/isbn/9780262527132.json"
+
+# --- Two more Portuguese editions outside the completionist order, found
+# while sweeping Gradiva's current catalogue for the seven novels above ---
+
+- id: umberto-eco/opera-aperta/relogio-dagua-2016-pt
+  workId: umberto-eco/opera-aperta
+  isbn13: "9789896416102"
+  language: pt-PT
+  title: "Obra Aberta"
+  translator: "João Rodrigo Narciso Furtado"
+  format: paperback
+  publisher: "Relógio d'Água"
+  year: 2016
+  note: "BNP: Lisboa, Relógio d'Água, 2016, 281 p., DEP. LEGAL PT-410383/16."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789896416102&profile=bn"
+
+- id: umberto-eco/lector-in-fabula/presenca-1983-pt
+  workId: umberto-eco/lector-in-fabula
+  language: pt-PT
+  title: "Leitura do Texto Literário"
+  translator: "Mário Brito"
+  publisher: Editorial Presença
+  year: 1983
+  note: >
+    NO ISBN: BNP's record for "Leitura do texto literário: a cooperação
+    interpretativa nos textos literários / Umberto Eco ; trad. Mário Brito"
+    (Lisboa: Presença, 1983) carries no ISBN field at all, unlike neighbouring
+    results in the same search that do show one - a 1983 book predating wide
+    Portuguese ISBN adoption, not an oversight here. Matched to this work by
+    subtitle ("a cooperação interpretativa nos textos literários" mirrors
+    Lector in fabula's own Italian subtitle, "la cooperazione interpretativa
+    nei testi narrativi") rather than by a literal title match, per this
+    catalogue's method for a non-literal pair.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=.TW&term=leitura+do+texto+literario&profile=bn"
+
+- id: umberto-eco/filosofi-in-liberta/gradiva-2025-pt
+  workId: umberto-eco/filosofi-in-liberta
+  isbn13: "9789897853845"
+  language: pt-PT
+  title: "Filósofos em Liberdade"
+  translator: "Alessandra Balsamo"
+  format: paperback
+  publisher: Gradiva
+  year: 2025
+  note: >
+    A real Portuguese translation of the 1958 "Dedalus" pamphlet exists,
+    despite its apocrypha tier - BNP records two 2025 Gradiva printings under
+    this same ISBN.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897853845&profile=bn"
+
+- id: umberto-eco/riflessioni-sul-dolore/gradiva-2026-pt
+  workId: umberto-eco/riflessioni-sul-dolore
+  isbn13: "9789897854514"
+  language: pt-PT
+  title: "Reflexões sobre a Dor"
+  translator: "Bárbara Villalobos"
+  format: paperback
+  publisher: Gradiva
+  year: 2026
+  note: >
+    Too recent for a BNP legal-deposit record (published 2026-05-05);
+    confirmed directly from Gradiva's own product page instead, which gives
+    translator, ISBN, page count (64 p.) and format ("Brochada").
+  sources:
+    - "https://www.gradiva.pt/produto/reflexoes-sobre-a-dor/"
+
+# =============================================================================
+# GAP: Postille a «Il nome della rosa» (1983) carries no edition of its own
+# here. It is Eco's short reflective essay appended to later printings of The
+# Name of the Rose itself, not usually sold as a standalone object; the 1995
+# Buccaneer Books "Postscript to the Name of the Rose" (a small
+# library-binding reprint house) is the only English-language standalone
+# printing OpenLibrary records, and was judged too marginal a retail object
+# to record as this work's defining edition. A reader gets this text bundled
+# inside the 2014 Mariner Books "Name of the Rose (Including Author's
+# Postscript)" edition recorded above under umberto-eco/the-name-of-the-rose -
+# named here so the gap reads as a decision, not an oversight.
+# =============================================================================

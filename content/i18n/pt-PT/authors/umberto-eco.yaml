@@ -1,0 +1,270 @@
+# Overlay pt-PT (português europeu) do autor: bio + prosa dos lifeEvents
+# (title + description, e quote apenas onde indicado). Os lifeEvents ficam
+# aninhados sob o autor e fundem-se por id (docs/SCHEMA.md, "Nested lists
+# merge by id"); datas, impact, organisation, illustration_type,
+# images_required e sources nunca se traduzem, nem o nome do autor.
+# `pseudonyms[].note` não é traduzido: não conta para a cobertura
+# (i18n_coverage.py só regista `bio`) e nenhuma ala já traduzida lhe dá
+# overlay (ver stephen-king.yaml, com Richard Bachman).
+#
+# TÍTULOS DE OBRAS: onde existe edição portuguesa registada em editions.yaml,
+# o texto de exibição de uma referência interna a uma obra usa o título
+# publicado em Portugal -
+# "O Nome da Rosa" (the-name-of-the-rose), "Número Zero" (numero-zero) e
+# "Filósofos em Liberdade" (filosofi-in-liberta) e "Obra Aberta"
+# (opera-aperta) na cadeia de livros publicados por Bompiani. Sem edição
+# portuguesa: trattato-di-semiotica-generale, la-struttura-assente e
+# il-costume-di-casa, que ficam com o título original italiano tal como no
+# texto de base.
+#
+# CITAÇÃO DO EPÍGRAFE: umberto-eco-poison-a-monk-1978 (organisation:
+# epigraph) traduz também o campo quote. O texto de base não são as palavras
+# que Eco escreveu: a frase está nas Postille a «Il nome della rosa», passa
+# pela introdução de Myriem Bouzaher à edição francesa (p. 18, 1985) e só aí
+# chega ao inglês, pela mão da en.wikiquote.org, que é a fonte citada. Sendo
+# o inglês já uma tradução de segunda mão, a regra de deixar verbatim uma
+# citação atribuída a uma pessoa real não se aplica - deixá-la em inglês não
+# preservaria a voz de Eco, apenas imporia ao leitor português uma língua
+# terceira. Caso diferente é a citação direta dentro da description de
+# umberto-eco-name-of-the-rose-film-1986 ("I feel blackmailed..."), que o
+# Guardian recolheu de Eco em inglês: essa fica em inglês, verbatim, dentro
+# da prosa traduzida.
+
+- id: umberto-eco
+  bio: >
+    Nascido em Alessandria, no Piemonte, e formado pela Universidade de
+    Turim, onde obteve a licenciatura em filosofia em 1954 com uma tese sobre
+    a estética de Tomás de Aquino orientada por Luigi Pareyson. Depois de
+    vários anos na estação pública de radiodifusão RAI, passou para a vida
+    académica, lecionando comunicação visual em Florença e, a partir de
+    1971, semiótica na Universidade de Bolonha, onde
+    [[work:umberto-eco/trattato-di-semiotica-generale|Trattato di semiotica
+    generale]] (1975) lhe valeu a cátedra plena; aí permaneceu, eventualmente
+    como professor emérito, pelo resto da carreira. A par de uma vasta obra
+    académica e de divulgação sobre semiótica, estética medieval, media e
+    interpretação, publicou sete romances a começar por
+    [[work:umberto-eco/the-name-of-the-rose|O Nome da Rosa]] (1980), um
+    romance policial medieval que se tornou um dos romances mais vendidos do
+    século XX e lhe trouxe um público geral muito para além do académico.
+    Casou com a designer gráfica e professora de arte alemã Renate Ramge em
+    1962; tiveram um filho e uma filha. Eco morreu em sua casa, em Milão, a
+    19 de fevereiro de 2016, de um cancro do pâncreas com que vivia há dois
+    anos, tendo publicado o seu último romance,
+    [[work:umberto-eco/numero-zero|Número Zero]], no ano anterior.
+  lifeEvents:
+    - id: umberto-eco-born-1932
+      title: Nasce em Alessandria, irmão mais velho da atriz Emy Eco
+      description: >
+        Nasce na cidade piemontesa de Alessandria a 5 de janeiro de 1932,
+        filho de Giulio Eco e de Giovanna Bisio, e irmão mais velho da atriz
+        Emy Eco. O fascismo italiano marcou-lhe toda a infância ali: durante
+        a Segunda Guerra Mundial, ele e a mãe deixaram a cidade por uma
+        pequena aldeia nas montanhas do Piemonte, onde a família esperou o
+        fim da guerra até à libertação, em 1945. Na aldeia, Eco teve o seu
+        primeiro contacto com a banda desenhada americana, lado a lado com
+        relatos em primeira mão da Resistência e do Holocausto, o mesmo
+        choque entre cultura popular e história a que a sua ficção e a sua
+        crítica regressariam pelo resto da carreira.
+
+    - id: umberto-eco-ludi-juveniles-1942
+      title: Vence, aos dez anos, um prémio da juventude fascista com um ensaio sobre morrer por Mussolini
+      description: >
+        Aos dez anos, Eco venceu o Primeiro Prémio Provincial dos Ludi
+        Juveniles, um concurso de escrita da juventude fascista, com um
+        ensaio que defendia a resposta afirmativa ao tema proposto: deveriam
+        os italianos morrer pela glória de Mussolini e pelo destino imortal
+        de Itália? Passou grande parte da carreira posterior a estudar a
+        forma da ideologia que tinha posto essa pergunta a uma criança de dez
+        anos, sobretudo no seu ensaio de 1995, amplamente lido, "Ur-Fascism",
+        recolhido em [[work:umberto-eco/cinque-scritti-morali|Cinque scritti
+        morali]] (1997).
+
+    - id: umberto-eco-rai-corsari-1954
+      title: Licencia-se em Turim e junta-se ao grupo reformista dos corsari na RAI
+      description: >
+        Eco obteve a sua Laurea em filosofia na Universidade de Turim em
+        1954, com uma tese sobre a estética de Tomás de Aquino orientada por
+        Luigi Pareyson, e venceu logo a seguir um concurso de admissão na
+        estação pública RAI, ao lado do futuro filósofo Gianni Vattimo e do
+        futuro jornalista e político Furio Colombo. Os três estavam entre os
+        jovens contratados mais tarde apelidados de corsari (corsários),
+        trazidos sob a direção de Filiberto Guala para modernizar a
+        programação televisiva italiana. Eco deixou a RAI em 1958, a meio dos
+        anos dos corsari, para cumprir dezoito meses de serviço militar
+        obrigatório no Exército italiano; até ao final da década, os três
+        contratados originais tinham todos seguido caminhos diferentes de
+        qualquer forma, mas as amizades e os contactos culturais que Eco fez
+        na RAI, incluindo com futuros membros da vanguarda Gruppo 63,
+        atravessaram a sua escrita durante anos.
+
+    - id: umberto-eco-filosofi-in-liberta-bompiani-1959
+      title: Um panfleto pseudónimo de 550 exemplares chama a atenção de um editor
+      description: >
+        Foi [[work:umberto-eco/filosofi-in-liberta|Filósofos em
+        Liberdade]], um panfleto de caricaturas e versos que Eco mandara
+        imprimir numa tiragem de 550 exemplares sob o pseudónimo inspirado em
+        James Joyce, Dedalus, que fez o editor Valentino Bompiani reparar
+        nele pela primeira vez. Bompiani propôs a Eco, em 1959, dirigir uma
+        coleção chamada "Idee nuove" (Ideias Novas) na sua casa editorial em
+        Milão, o início de uma relação editorial que durou até 1975 e que
+        viria a publicar todos os livros posteriores de Eco, de
+        [[work:umberto-eco/opera-aperta|Obra Aberta]] a
+        [[work:umberto-eco/the-name-of-the-rose|O Nome da Rosa]].
+
+    - id: umberto-eco-guerriglia-semiologica-1967
+      title: Cunha a expressão "guerrilha semiológica" num seminário em Nova Iorque
+      description: >
+        Na conferência Vision '67, em Nova Iorque, em 1967, Eco apresentou o
+        seminário "Per una guerriglia semiologica" ("Rumo a uma Guerrilha
+        Semiológica"), defendendo que resistir aos media de massas
+        significava contestar o modo como uma mensagem é descodificada no
+        momento em que é recebida, e não tentar controlar a fonte de
+        emissão. Recolhido mais tarde em
+        [[work:umberto-eco/la-struttura-assente|La struttura assente]] (1968)
+        e em [[work:umberto-eco/il-costume-di-casa|Il costume di casa]]
+        (1973), os termos cunhados pelo ensaio, "guerrilha das comunicações"
+        e "guerrilha cultural", vieram a moldar a teorização posterior da
+        guerrilla television e do culture jamming.
+
+    - id: umberto-eco-milan-polytechnic-1969
+      title: Deixa Florença por uma cátedra de semiótica no Politécnico de Milão
+      description: >
+        Depois de quatro anos como Professor de Comunicação Visual na
+        Universidade de Florença, Eco mudou-se para o Politécnico de Milão
+        como Professor de Semiótica em 1969, passando o primeiro ano como
+        professor visitante na Universidade de Nova Iorque.
+
+    - id: umberto-eco-bologna-versus-1971
+      title: Junta-se a Bolonha, funda a Versus e ajuda a lançar a licenciatura em DAMS
+      description: >
+        Eco assumiu um cargo na Universidade de Bolonha em 1971 e, no mesmo
+        ano, fundou a revista de semiótica Versus - Quaderni di studi
+        semiotici, que dirigiu até à morte, e foi um dos fundadores do
+        primeiro curso de licenciatura em DAMS de Bolonha (Discipline delle
+        Arti, della Musica e dello Spettacolo), o programa de artes, música
+        e espetáculo da universidade.
+
+    - id: umberto-eco-bologna-professorship-1975
+      title: A Theory of Semiotics vale-lhe a cátedra de semiótica em Bolonha
+      description: >
+        A publicação de [[work:umberto-eco/trattato-di-semiotica-generale|
+        Trattato di semiotica generale]] (A Theory of Semiotics), em 1975,
+        valeu a Eco a promoção plena a Professor de Semiótica na Universidade
+        de Bolonha, onde permaneceu, eventualmente como professor emérito,
+        pelo resto da carreira. Nesse mesmo ano deixou o cargo de editor
+        sénior de não-ficção na editora Bompiani, que ocupava desde 1959.
+
+    - id: umberto-eco-poison-a-monk-1978
+      title: Sobre o início de Il nome della rosa
+      quote: >
+        Comecei a escrever [O Nome da Rosa] em março de 1978, movido por
+        uma ideia seminal. Queria envenenar um monge.
+      description: >
+        O próprio relato de Eco sobre como começou o seu primeiro romance:
+        tinha quarenta e seis anos, era um académico estabelecido sem
+        qualquer obra de ficção em seu nome, e passou quase dois anos a
+        escrevê-lo antes de a publicação de 1980 o tornar, aos quarenta e
+        oito anos, um dos romancistas mais vendidos do mundo.
+
+    - id: umberto-eco-bustina-di-minerva-1985
+      title: Lança a coluna quinzenal La Bustina di Minerva
+      description: >
+        A partir de 1985, Eco escreveu uma coluna quinzenal, "La Bustina di
+        Minerva" (A Caixa de Fósforos de Minerva), para a revista L'Espresso,
+        um registo contínuo das suas opiniões sobre política, media e
+        cultura que manteve durante mais de trinta anos. A sua última
+        coluna, sobre as pinturas românticas de Francesco Hayez, foi
+        publicada a 27 de janeiro de 2016, três semanas antes da sua morte.
+
+    - id: umberto-eco-name-of-the-rose-film-1986
+      title: A adaptação de Jean-Jacques Annaud torna-o incontornavelmente famoso
+      description: >
+        A adaptação cinematográfica de Jean-Jacques Annaud, de 1986, de
+        [[work:umberto-eco/the-name-of-the-rose|O Nome da Rosa]], com Sean
+        Connery no papel de William de Baskerville, transformou um romance já
+        vendido aos milhões num acontecimento de cultura de massas, e Eco
+        recusou-se a falar do filme com a imprensa no seu lançamento.
+        Visitado na Universidade de Bolonha nesse ano, descreveu sentir-se
+        prisioneiro do próprio sucesso: "I feel blackmailed by journalists,
+        by myself, by my publisher. I don't feel free any more. When I wrote
+        The Name of the Rose it was half for fun, a free act. Now I ask
+        myself: am I writing a new book because I want to, or because it's
+        expected of me?" Em privado, considerava os monges de Annaud
+        "demasiado grotescos", mas aprovava os cenários do filme.
+
+    - id: umberto-eco-tanner-lectures-1990
+      title: Profere as Tanner Lectures em Cambridge
+      description: >
+        Eco foi convidado a proferir as prestigiadas Tanner Lectures on
+        Human Values na Universidade de Cambridge em 1990, um convite entre
+        vários deste tipo (foi também secretário, vice-presidente e, a
+        partir de 1994, presidente honorário da International Association
+        for Semiotic Studies) que o colocaram entre os conferencistas
+        internacionais mais procurados na sua área.
+
+    - id: umberto-eco-luther-blissett-rumor-1999
+      title: Nega ter fundado o coletivo de partidas Luther Blissett
+      description: >
+        O semanário alemão Der Spiegel apontou Eco, na sua edição de 25 de
+        maio de 1997, como um dos fundadores de Luther Blissett, um
+        pseudónimo coletivo usado por centenas de partidistas e ativistas
+        mediáticos italianos para embustes, panfletos e falsas façanhas
+        académicas. Um panfleto anónimo, nesse mesmo ano, foi mais longe,
+        alegando que todo o projeto era dirigido por um círculo secreto de
+        semiólogos de Bolonha sob a batuta de Eco. O boato atingiu o auge em
+        1999, em torno da publicação de Q, o romance histórico do próprio
+        coletivo: a Panorama voltou a lançar-lhe o nome a 25 de fevereiro e,
+        quando o Il Messaggero passou os suspeitos em revista a 6 de março,
+        só o conseguiu colocar entre eles como aquele "que já desmentiu". O
+        desmentido era, a essa altura, uma posição assumida a que a imprensa
+        italiana remetia em vez de a noticiar de novo, e nenhum relato do
+        caso regista onde a deu pela primeira vez. La Repubblica fechou a
+        questão nesse mesmo dia, com uma entrevista aos quatro autores
+        reais, até então anónimos, de Q.
+
+    - id: umberto-eco-scuola-superiore-2000
+      title: Funda a Scuola Superiore di Studi Umanistici de Bolonha
+      description: >
+        Eco tornou-se presidente fundador da Scuola Superiore di Studi
+        Umanistici da Universidade de Bolonha em 2000, uma escola de
+        pós-graduação que coordena os programas de doutoramento em
+        humanidades da universidade, ecoando o trabalho de construção
+        institucional da Versus e do DAMS três décadas antes. No ano
+        seguinte, concebeu e lançou o seu programa de mestrado em edição
+        impressa e digital (Editoria Cartacea e Digitale).
+
+    - id: umberto-eco-legion-of-honour-2012
+      title: Promovido na Legião de Honra francesa numa cerimónia em Paris
+      description: >
+        Eco foi nomeado Commendatore da Legião de Honra francesa, em Paris,
+        a 13 de janeiro de 2012, depois de já ter sido nomeado Ufficiale da
+        mesma ordem em 2003. Itália tinha-lhe atribuído anteriormente a sua
+        mais alta condecoração civil, Cavaliere di Gran Croce dell'Ordine al
+        merito della Repubblica Italiana (Cavaleiro da Grã-Cruz da Ordem do
+        Mérito da República Italiana), em Roma, a 9 de janeiro de 1996.
+
+    - id: umberto-eco-imbecilli-controversy-2015
+      title: Um discurso de doutoramento honoris causa transforma-se num ataque às redes sociais
+      description: >
+        Ao receber um doutoramento honoris causa em ciências da comunicação
+        da Universidade de Turim, em junho de 2015, Eco aproveitou a ocasião
+        para atacar as redes sociais, dizendo que tinham dado a "legiões de
+        imbecis" (legioni di imbecilli) o mesmo direito de fala que um
+        laureado com o Nobel, um estatuto que, segundo ele, costumava
+        pertencer apenas a quem expunha as suas opiniões num bar, com um
+        copo de vinho, sem fazer mal a ninguém. O comentário correu a
+        imprensa italiana em menos de um dia - o Il Fatto Quotidiano e o Il
+        Post publicaram-no a 11 de junho -, teve repercussão internacional e
+        provocou dias de polémica pública a favor e contra.
+
+    - id: umberto-eco-death-2016
+      title: Morre em Milão de cancro do pâncreas, três semanas depois da última coluna
+      description: >
+        Eco morreu em sua casa, em Milão, de frente para o Castello
+        Sforzesco, às 22h30 de 19 de fevereiro de 2016, aos 84 anos, de um
+        cancro do pâncreas diagnosticado dois anos antes. O seu último
+        romance, [[work:umberto-eco/numero-zero|Número Zero]], tinha sido
+        publicado no ano anterior. Um funeral laico no Castello Sforzesco, a
+        23 de fevereiro, reuniu milhares de pessoas; por vontade própria,
+        deixada por escrito, nenhum seminário ou conferência sobre ele
+        deveria ser autorizado nos dez anos seguintes à sua morte.
