@@ -1,15 +1,68 @@
 # Additional reading orders only - the default (publication-chronological
-# over all works) is derived from works.yaml. Empty: no additional order has
-# been sourced for this wing. The Swedish Wikipedia article on the pseudonym
-# states in its own words that, despite an ongoing continuity across the
-# series (recurring characters age and change between books), each Joona
-# Linna novel opens and closes its own case and "can in principle be read in
-# whatever order one likes" - which speaks to whether an order matters at
-# all, not to what an alternative one should be, so it settles nothing here
-# on its own.
+# over all works) is derived from works.yaml. The authors' own FAQ
+# (larskepler.com/keplers-universe/) states plainly, in their own words:
+# "Yes, every book can be read as a stand-alone. There is always a new case
+# for Joona Linna to solve, a mystery that is given its explanation at the
+# end. But if you chose to read the books in order you will also be able to
+# follow the full story of Joona Linna and Saga Bauer." That is a claim about
+# whether an order matters at all, not a claim about what an alternative
+# sequence should be - it settles nothing about reshuffling the thirteen
+# works, and no order here reshuffles them. It does bear on startHere's entry
+# paths, handled in franchise.yaml.
 #
-# One candidate a future pass should check for a real source rather than
-# inventing one: a "Joona Linna only" path that skips the two works outside
-# the series (Playground, Sjömannen) for a reader who wants the case-file
-# thread alone.
-[]
+# ONE ORDER SHIPS: the eleven Joona Linna novels alone, filtered from the
+# derived default rather than reordered - the same shape as this catalogue's
+# Discworld and Jo Nesbo thread orders. Both the books' own Swedish publisher
+# and Swedish Wikipedia draw exactly this line: Albert Bonniers Förlag's own
+# catalogue page for Medusa calls it "den elfte boken i serien om Joona Linna
+# och Saga Bauer" (the eleventh book in the series about Joona Linna and Saga
+# Bauer), and its page for Playground labels that book "Serie: Playground"
+# instead; Swedish Wikipedia's bibliography divides the same shelf under two
+# headings, "Joona Linna-serien" and "Fristående verk" (standalone works),
+# placing Playground and Sjömannen under the second. The grouping is
+# received, not read into the books ourselves.
+#
+# ONE CANDIDATE CHECKED AND NOT SHIPPED: a narrower order following only the
+# Jurek Walter thread (Sandmannen, 2012, through Lazarus, 2018, the span
+# where that antagonist recurs). The connection is real - Sjömannen (2025)
+# even collects a story telling his backstory - but no publisher page,
+# reference work or review found anywhere names or recommends this specific
+# run of books as a set. A real narrative connection inside the novels is
+# not the same thing as a source recommending readers follow that subset;
+# without the latter this would be our own reading of the plots dressed up
+# as a reading order, so it does not ship.
+
+- id: lars-kepler/joona-linna-only
+  name: The Joona Linna series, front to back
+  type: curated
+  source: canon
+  rationale: >
+    The eleven Joona Linna novels, in the same order as the derived default,
+    with the two works outside the series - the 2015 standalone
+    [[work:lars-kepler/playground|Playground]] and the 2025 story collection
+    [[work:lars-kepler/sjomannen|Sjömannen]] - left out. Read this instead of
+    the full thirteen-work default if you want the case-file thread on its
+    own, with nothing else from the shelf breaking up the run: no tour of
+    duty in Kosovo, no set of unrelated short stories, between one
+    investigation and the next. What it costs: Playground's entirely
+    separate story and setting, and Sjömannen's other five stories along
+    with its own account of Jurek Walter's early life - real Lars Kepler,
+    just a different shelf, not a lesser one.
+  orderedWorkIds:
+    - lars-kepler/hypnotisoren
+    - lars-kepler/paganinikontraktet
+    - lars-kepler/eldvittnet
+    - lars-kepler/sandmannen
+    - lars-kepler/stalker
+    - lars-kepler/kaninjagaren
+    - lars-kepler/lazarus
+    - lars-kepler/spegelmannen
+    - lars-kepler/spindeln
+    - lars-kepler/somngangaren
+    - lars-kepler/medusa
+  debated:
+    - "This order reproduces the derived default's own sequence, restricted to one subseries, exactly as this catalogue's Discworld and Jo Nesbo thread orders do; its only contribution is removing the two works outside works.yaml's `subseries: \"Joona Linna\"` field. A later change to that field on any work would desynchronise this list silently."
+  sources:
+    - "https://sv.wikipedia.org/wiki/Lars_Kepler"
+    - "https://www.albertbonniersforlag.se/bocker/269389/medusa/"
+    - "https://www.albertbonniersforlag.se/bocker/194815/playground/"
