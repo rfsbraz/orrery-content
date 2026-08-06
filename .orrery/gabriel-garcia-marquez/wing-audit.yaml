@@ -1,0 +1,773 @@
+stage: wing-audit
+wing: gabriel-garcia-marquez
+summary: >
+  Every number below was re-derived from the artefact, not read off a prior
+  handoff. Baseline: validate.py --slug 0 errors / 26 warnings (20 works
+  outside every era + 6 handoff word-count caps); aura_density 25 works, 28
+  aura, 1.12 per work, longest dark run 4 yrs (1972-1975), under the 5-year
+  gate; art_rotation --check 0 organisation-rotation and 0 pacing problems
+  (the third composition axis reports "0 of 28 assets could be read", which
+  is the expected pre-art state and not this gate); i18n_coverage all six
+  pt-PT files COMPLETE; 36 editions / 0 suspect ISBNs; 23 of 25 works carry a
+  live cover, all 24 image URLs served a real image.
+  Three BLOCKING defects. Two reach a reader now: a false dated fact in a
+  rendered pseudonym note, and reader-facing English prose in the pt-PT
+  locale that every coverage check reports green. The third is a factual
+  claim contradicted by the author's own foundation, which currently sits in
+  curator-facing notes rather than rendered prose - listed blocking for
+  falsity, not for reach.
+  Three further corrections land on eras.yaml, one of them at blocking
+  priority: its Companion citation misstates what that chapter argues, its
+  "nothing after 1967 is periodised" claim is refuted by a source it did not
+  reach, and its own unverified Harss lead turns out to be CORROBORATED,
+  which upgrades the era's provenance rather than weakening it.
+  Both open editorial questions carried since completeness-auditor now have
+  hard evidence behind them and a recommendation each. Three tooling defects
+  found outside this wing, and one gap in the run's own tracking artefact.
+
+produced:
+  - >
+    content/franchises/gabriel-garcia-marquez/theme.yaml - one mechanical
+    fix only: art.lineCharacter's final continuation line was indented two
+    spaces past the block, so the folded scalar parsed with a hard newline
+    and two leading spaces before "line." Re-indented; the string now folds
+    to a single paragraph. No word changed.
+
+blocking:
+  - id: septimus-pseudonym-note-wrong-decade
+    owner: press-archaeology
+    where: >
+      content/authors/gabriel-garcia-marquez.yaml, pseudonyms[0].note; mirrored
+      in content/i18n/pt-PT/authors/gabriel-garcia-marquez.yaml
+    checked: >
+      The note dates the Septimus byline to "the late 1940s". The wing's own
+      lifeEvent garcia-marquez-barranquilla-group-1950, two entries below it,
+      dates the same byline "from 1950 to 1952". The wing's own cited source
+      settles it: English Wikipedia's Gabriel Garcia Marquez article reads
+      "In 1948 and 1949, he wrote for El Universal in Cartagena. From 1950
+      until 1952, he wrote a 'whimsical' column under the name of 'Septimus'
+      for the local paper El Heraldo in Barranquilla." Verified against the
+      raw wikitext, not a search snippet.
+    found: >
+      The note is wrong by a period and contradicts the event beside it. Its
+      second clause, "before he wrote under his own name", is also doubtful:
+      he was a bylined reporter at El Universal in 1948-1949, before Septimus,
+      not after. pseudonyms[].note IS rendered to readers
+      (orrery/components/about-the-author.tsx:83), so this is live prose, not
+      a curator field. The pt-PT overlay faithfully translated the error
+      ("no final da decada de 1940 ... antes de escrever com o proprio nome").
+    action: >
+      Correct to 1950-1952 and drop or re-source the "before he wrote under
+      his own name" clause; re-mirror the pt-PT overlay in the same change.
+
+  - id: debated-untranslated-in-pt-PT
+    owner: translation
+    where: >
+      content/i18n/pt-PT/franchises/gabriel-garcia-marquez/orders.yaml -
+      gabriel-garcia-marquez/tres-libros carries no `debated`
+    checked: >
+      orders.yaml's `debated` is rendered to readers by
+      orrery/components/orders/order-selector.tsx lines 92-98, under the
+      t("orders.debated") disclosure, and orrery/lib/content/index.ts:97 puts
+      "debated" in PROSE_LISTS precisely so an overlay can translate it.
+      Counted the catalogue: 21 wings carry `debated` in their base
+      orders.yaml; 20 of them translate it in their pt-PT overlay. This wing
+      is the only one that does not.
+    found: >
+      A Portuguese reader who opens "Tres livros, uma so historia" and expands
+      the disclosure gets two paragraphs of English. The overlay's own header
+      states the reason: "`debated` nao se traduz: e curador-facing ... e nao
+      chega ao leitor", citing docs/SCHEMA.md. SCHEMA is what is wrong here
+      (see stale.schema-debated-curator-facing). i18n_coverage.py reports this
+      file COMPLETE because its PROSE map for orders.yaml is ["name",
+      "rationale"] only - the identical failure its own inline comments record
+      having already shipped twice, for eras `themes` and events `quote`.
+    action: >
+      Translate both `debated` strings into pt-PT and correct the overlay
+      header's claim. Separately worth adding "debated" to i18n_coverage.py's
+      PROSE map so the third instance is the last.
+
+  - id: macondo-first-appearance-is-wrong
+    owner: completeness-auditor
+    where: >
+      works.yaml - la-hojarasca note ("Macondo's first appearance in his
+      fiction") and ojos-de-perro-azul note ("Macondo's second recorded
+      appearance in his fiction after La hojarasca")
+    checked: >
+      Read two sources in full, not via snippet. Centro Gabo, the Fundacion
+      Gabo's own site
+      (centrogabo.org/los-arboles-mueren-de-pie-historias-sobre-los-origenes-de-macondo):
+      "Macondo, que aparece por primera vez en el cuento 'Un dia despues del
+      sabado', publicado en 1954, es un escenario... Luego, en su primera
+      novela titulada La hojarasca, Garcia Marquez crea el ficticio Macondo..."
+      WMagazin, Diana M. Horta, "Genesis y presencia de la palabra Macondo en
+      la obra de Garcia Marquez", separates the two questions explicitly: "La
+      primera vez que utilizo ese nombre fue entre 1948 y 1949 cuando empezo a
+      escribir su primera novela, La hojarasca, que se publico en 1955... La
+      verdad es que como hasta 1955 no se publico La hojarasca el nombre
+      publico de Macondo se pudo leer por primera vez en el cuento Un dia
+      despues del sabado", quoting the passage where a boy enters a hotel "sin
+      ver la tablilla: Hotel Macondo". It then places the Monologo second: "La
+      segunda vez que la gente lo lee... es porque lo lleva en el mismo titulo
+      del cuento: Monologo de Isabel viendo llover en Macondo."
+    found: >
+      Not merely unsourced - CONTRADICTED, by the author's own foundation.
+      Macondo was WRITTEN first in La hojarasca (drafted 1948-49) but
+      PUBLISHED first in "Un dia despues del sabado" (1954 per Centro Gabo;
+      also commonly dated 1955, and either way not later than La hojarasca's
+      1955 book). So la-hojarasca's note is true of composition and false of
+      publication, which is not what it says, and ojos-de-perro-azul's note is
+      wrong twice over: the Monologo is plausibly the second published
+      appearance, but after "Un dia despues del sabado", not after La
+      hojarasca.
+      Two mitigations worth stating. The rendered prose SURVIVES: the
+      ojos-de-perro-azul synopsis reads "one of the earliest stories to
+      feature his fictional town of Macondo", which stays true under the
+      corrected record - so nothing false currently reaches a reader, and
+      work.note is not rendered by the app. And the era is unaffected: "Un dia
+      despues del sabado" is one of the eight stories in Los funerales de la
+      Mama Grande, which works.yaml already lists and which already sits
+      inside the 1955-1967 span.
+      Note also that the audit-fixes commit (10ea372) states its reasoning as
+      "the collection's own note and eras.yaml both hold La hojarasca as
+      Macondo's actual first appearance" - it resolved the contradiction by
+      treating the wing's own unsourced note as evidence, which is circular.
+      The edit it made was still the right one; the note it deferred to is
+      what was wrong.
+    action: >
+      Rewrite la-hojarasca's note to distinguish composition from publication
+      (Macondo was invented here, drafted 1948-49, but reached print first in
+      "Un dia despues del sabado"), and rewrite ojos-de-perro-azul's note to
+      drop "after La hojarasca". Cite Centro Gabo. Do not touch the
+      ojos-de-perro-azul synopsis - it is already correct. This is a genuinely
+      nice fact for the wing rather than only a correction: the town that made
+      him famous reached readers first as an unread sign on a hotel.
+
+missing:
+  - id: eras-misstates-what-the-companion-says
+    owner: eras
+    severity: >
+      Not "blocking" only because it lives in a comment and comments are not
+      rendered. It is a misrepresented citation in a content file, which every
+      future pass will read as established. Treat it at blocking priority.
+    where: eras.yaml header, the DICTATOR NOVELS paragraph
+    checked: >
+      The comment claims: "A Companion to Gabriel Garcia Marquez (Boydell &
+      Brewer, 2021) reads the same way: its chapter on El otono del patriarca
+      pairs that novel with the political writings RATHER THAN with El general
+      en su laberinto." I pulled the chapter's own abstract (OpenAlex, DOI
+      10.1017/9781800105331.004, "El otono del patriarca and the Political
+      Writings"). It reads: "there is a continuity to be found in the
+      political themes of Los funerales de la mama grande (1962), El otono del
+      patriarca (1975), and El general en su laberinto (1989). This continuity
+      can be seen as an outline of Garcia Marquez's career as a political
+      writer concerned with issues such as autocratic rule, the nature of
+      power in general, and specific abuses of power in particular."
+    found: >
+      The chapter TITLE supports the claim; the chapter's own CONTENT refutes
+      it. Williams pairs El otono with El general explicitly, and calls the
+      grouping "an outline of Garcia Marquez's career as a political writer" -
+      which is closer to a career thread than the comment allows. The eras
+      stage read the table of contents and inferred the argument.
+      The CONCLUSION still holds, and is arguably strengthened: Williams's
+      thread starts at Los funerales (1962), which this catalogue already
+      places inside the Macondo Cycle era, so a span drawn at 1975-1989 fits
+      his grouping even worse than the comment argues. But the sentence as
+      written misstates a source and must not survive.
+    action: >
+      Rewrite the sentence to what the abstract actually says, and keep the
+      rejection on the corrected ground: the received grouping is a political
+      thread running 1962-1989 that crosses the era boundary, not a period.
+
+  - id: post-1967-claim-is-too-strong
+    owner: eras
+    where: eras.yaml header, "NOTHING AFTER 1967 IS PERIODISED"
+    checked: >
+      Read Eva Lukavska, "Gabriel Garcia Marquez: el «ciclo de Macondo» I",
+      Etudes romanes de Brno XIX (1988), pp. 51-60, PDF in full from Masaryk
+      University's digital library (digilib.phil.muni.cz/sites/default/files/
+      pdf/113439.pdf). Its opening sentence: "La obra del escritor colombiano
+      se puede dividir en dos etapas. La primera, hoy dia ya cerrada, abarca
+      un periodo de veinte anos que se extiende de su cuento primigenio «La
+      tercera resignacion» (1947) a la novela Cien anos de soledad (1967). La
+      segunda etapa comienza con la novela El otono del patriarca (1975),
+      continua por la Cronica de una muerte anunciada (novela, 1981) y El amor
+      en el tiempo del colera... (1985) la esta cerrando por el momento."
+    found: >
+      A real, explicit, published post-1967 periodisation exists. The
+      catalogue's literal wording survives on a technicality - Lukavska's
+      stages are NUMBERED, not named - but the header's absolute framing does
+      not.
+      The RULING should not change. One 1988 article in a Czech romance-studies
+      annual is a single source, and the eras skill's provenance bar asks for a
+      received periodisation, which one article is not. Shipping a 1975-onward
+      era on this alone would be exactly the coining the skill forbids.
+    action: >
+      Soften to what is true and cite the exception: no NAMED phase of the
+      later career recurs across sources; one scholar (Lukavska 1988) divides
+      the career in two with the second stage opening at El otono del
+      patriarca (1975), which is recorded and not adopted, a single source
+      being below this catalogue's bar for a received period.
+
+  - id: macondo-cycle-provenance-can-be-upgraded
+    owner: eras
+    where: "eras.yaml macondo-cycle, its `provenance` value and its `note`"
+    checked: >
+      The eras handoff carried an open question: an unverified lead that Luis
+      Harss's Los nuestros (1966) is where Garcia Marquez himself named the
+      "ciclo de Macondo", which would move the era to rung 1. Harss could not
+      be reached and the claim went unused. Lukavska (1988), the same article
+      above, states it directly: "Garcia Marquez califico sus obras del primer
+      periodo como el «ciclo de Macondo»", and adds his own later
+      qualification that Macondo is the actual setting only of La hojarasca,
+      Cien anos and some of the Los funerales stories.
+    found: >
+      The lead is corroborated by a peer-reviewed source that names the author
+      as the term's originator. The era is not merely critical, it is the
+      author's own label taken up by critics - which is a stronger provenance
+      than the file currently claims and settles the eras stage's own open
+      question in its favour.
+      Two qualifications to carry with it, both from sources read directly.
+      Lukavska dates the first period from "La tercera resignacion" (1947),
+      not 1955, so the catalogue's 1955 start is the first BOOK rather than
+      the period's start - and Williams's own abstract agrees, dating the
+      cycle's construction to "the early 1950s". The era's note currently says
+      "1955 and 1967 are the two dates the sources name", which is true of the
+      two sources it cites and not of the field.
+      Correcting one thing a research pass got wrong, so it is not propagated:
+      Lukavska does NOT count four books against Williams's five. She names
+      four earlier works whose parts are "esparcidas en" Cien anos and treats
+      Cien anos as the culmination and synthesis of the same first period. The
+      five-book count is not contradicted.
+    action: >
+      Consider provenance: authorial, cite Lukavska for the attribution, and
+      adjust the note to say the 1955 endpoint is the cycle's first book while
+      the sources date its construction to the late 1940s / early 1950s.
+
+  - id: companion-citation-year
+    owner: eras
+    found: >
+      eras.yaml cites A Companion to Gabriel Garcia Marquez as "Boydell &
+      Brewer, 2021". Cambridge Core gives online publication 26 May 2022 for
+      the chapter and the volume has an earlier print history. Defensible but
+      worth pinning to the edition actually consulted.
+
+  - id: translation-note-is-inert
+    owner: curator (schema), then press-archaeology
+    checked: >
+      grep for `translationNote` across orrery lib/, components/, app/ and
+      types.ts: zero hits. The Work type does not model it. docs/SCHEMA.md
+      says so itself at the end of its own translationNote section ("It
+      renders nowhere in the app yet").
+    found: >
+      The wing's single most interesting translation fact - Garcia Marquez
+      reported to have called Rabassa's English better than his own Spanish -
+      currently reaches no reader at all. See curatorsCall.translation-note
+      for the recommendation.
+
+  - id: erendira-aggregator-sources
+    owner: completeness-auditor
+    checked: >
+      works.yaml/erendira cites xpressenglish.com and supersummary.com among
+      its five sources. CURATION §4 rules aggregators out as sources. The
+      claim they were carrying (that "El mar del tiempo perdido" belongs to
+      this collection) is independently confirmed by the es.wikipedia article
+      on the collection, which IS already cited on the same entry - re-checked
+      directly against its raw wikitext, which lists all six stories exactly
+      as works.yaml names them.
+    found: >
+      Two sub-bar citations sitting next to a good one. Drop them; the claim
+      does not need them.
+
+  - id: duas-solidoes-exclusion-undocumented
+    owner: completeness-auditor
+    checked: >
+      editions found "Duas Solidões" (ISBN 9789722073301, Dom Quixote, 2021)
+      credited to both García Márquez and Vargas Llosa and asked what it is.
+      Established, and then verified against the catalogue records myself
+      rather than the research summary. Biblioteca Nacional de Portugal
+      (permalink
+      catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?profile=bn&uri=full%3D3100024~!2086402~!0):
+      "Duas solidões : o romance na América Latina / Gabriel García Márquez,
+      Mario Vargas Llosa ; ed. Luis Rodríguez Pastor ; trad. J. Teixeira de
+      Aguilar", Alfragide: D. Quixote, 2021, 1a ed, 175 p., ISBN
+      978-972-20-7330-1, original title "Dos soledades. La novela en América
+      Latina" - Vargas Llosa entered as co-autor, Rodríguez Pastor as ed. lit.
+      The Spanish original is Alfaguara, April 2021, 168 pp, ISBN
+      9788420454160.
+      It is the transcript of a public dialogue the two men held in Lima in
+      September 1967 under the Universidad Nacional de Ingeniería, and it is
+      NOT a 2021 publication event: OpenLibrary OL5721508M records "La novela
+      en América Latina: diálogo", C. Milla Batres, Lima, 1968, 58 p., LCCN
+      70414703, with the note "The dialogue, sponsored by the Departamento de
+      Extensión Cultural de la Universidad Nacional de Ingenieria, was held on
+      September 4, 1967." Further re-editions in 1988 (Perú Andino) and 1991
+      (UNI, 2a ed). The 2021 volume is the first commercial edition, expanded
+      with a prologue by Juan Gabriel Vásquez, an editorial apparatus by six
+      further contributors, two period interviews, a photo selection and
+      Vargas Llosa's present-day assessment; the Portuguese edition adds a
+      preface by Pedro Mexia. The dialogue itself is short - most of the 168
+      pages is third-party material.
+    found: >
+      CORRECTLY EXCLUDED, but the exclusion is undocumented, and this is the
+      one absent exclusion that will actually cost a reader something: a
+      Portuguese reader browsing a Portuguese bookshop finds a 2021 Dom
+      Quixote book under García Márquez's name that this bibliography does not
+      list. It is exactly the trap-defusing note CURATION §2 permits.
+      The grounds are already this catalogue's own, twice over: it is compiled
+      and introduced by someone else rather than assembled by García Márquez
+      (the stated basis for excluding Gabo periodista, "García Márquez habla
+      de García Márquez en 33 grandes reportajes" and "Para que no se las
+      lleve el viento"), and it is a multi-author volume in which his own
+      words are one component among several (the stated basis for excluding
+      Chile, el golpe y los gringos and the standalone La Soledad de América
+      Latina). Be honest in the note about the one adjacent case that cuts the
+      other way: El olor de la guayaba is also a book-length transcribed
+      conversation and IS catalogued (extended, authorRole co-author). The
+      distinguishing fact is that Guayaba was assembled and published as a
+      book by its two participants, while this is a third-party editor's
+      transcript of a single public event.
+    action: >
+      Add it to works.yaml's CONSIDERED AND LEFT OUT header with the BNP and
+      OpenLibrary permalinks and the 1968-first-publication fact. Do not add a
+      work entry. Recommend NOT adding an event either: the 2021 Alfaguara
+      release was paired with a reissue of Historia de un deicidio and read by
+      the press as a posthumous détente after the 1976 punch, which is
+      genuinely tempting, but the wing already carries three Vargas Llosa
+      entries (the 1971 thesis, the 1976 punch, the 2007 reissue) and a fourth
+      would make one feud the loudest thing on the timeline.
+
+  - id: achievements-absent
+    owner: curator
+    checked: >
+      content/achievements.yaml holds 11 achievements catalogue-wide, none
+      referencing this wing.
+    found: >
+      Absence is a legitimate state and generic badges are worse than none.
+      But this wing has two specific, non-generic hooks another wing would
+      not: a real received era holding exactly five books (macondo-cycle) and
+      a curated order the author named himself (tres-libros). An era_reader
+      against macondo-cycle with count <= 5 would be earnable and specific.
+      Raised as an option, not a gap.
+
+stale:
+  - id: works-header-contradicts-eras
+    owner: completeness-auditor
+    where: works.yaml header, the "TRES DE MIS LIBROS" paragraph
+    found: >
+      It says the Macondo periodisation "belongs in eras.yaml rather than
+      guessed at here (which is why eras.yaml names both shapes without
+      claiming either)". eras.yaml does claim it - macondo-cycle ships with
+      provenance: critical and three sources. Prose contradicting prose; the
+      parenthesis was true before the eras stage ran and is false now.
+      Two more in the same header: it calls itself "this draft", and it says
+      the per-work translator information "belongs in editions.yaml's own
+      translator field once that stage runs" - editions.yaml exists and
+      carries it.
+
+  - id: theme-notes-and-displayface-comment
+    owner: visual-language
+    where: theme.yaml `notes:` field and the inline comment on `displayFace`
+    found: >
+      `notes:` still ends "the full `art` block is visual-language's job once
+      the bibliography and any eras are settled" - the art block is directly
+      below it. The displayFace comment still reads "open to revision at
+      visual-language once the full aura exists to weigh it against".
+      visual-language ran, corrected the comment above `art:`, and missed
+      both of these. Both are also CURATION §2 violations (naming a stage,
+      addressing a future pass) inside content. See
+      stale.validator-misses-half-the-stage-names for why nothing caught them.
+
+  - id: schema-debated-curator-facing
+    owner: curator (schema)
+    where: docs/SCHEMA.md, end of the translationNote section
+    found: >
+      It calls `debated` on orders.yaml a curator-facing field that renders
+      nowhere. It does render (order-selector.tsx:92-98). This exact sentence
+      is what the pt-PT overlay cited when it declined to translate it.
+
+  - id: aura-density-implements-a-removed-rule
+    owner: curator (tooling)
+    where: scripts/aura_density.py (and scripts/stage_plan.py, and .claude/skills/wing-audit/SKILL.md)
+    checked: >
+      docs/SCHEMA.md is explicit: "A global event renders on a wing if and
+      only if that wing names it in `include`. There is no arithmetic default
+      and no implicit membership", and "`exclude` gates nothing". The app
+      agrees - orrery/lib/content/index.ts relevantGlobalEvents() filters on
+      `include` alone. But aura_density.py still counts a global as reaching a
+      wing when `lo_life <= year <= hi_life`, stage_plan.py still prints "~4
+      still reaching", and this skill's own §2 still teaches the arithmetic
+      default as current.
+    found: >
+      Catalogue-wide, aura_density.py inflates aura counts and understates
+      dark runs on any wing whose franchise.yaml has no globalEvents block.
+      Checked for THIS wing specifically and the number is unaffected: every
+      global event inside 1927-2014 is either excluded or is
+      ebook-and-self-publishing-2007, which is also the one `include`, so
+      "reaching" is {ebook-2007} under both readings and the 4-year dark run
+      stands either way.
+
+  - id: validator-misses-half-the-stage-names
+    owner: curator (tooling)
+    where: scripts/validate.py, the PROCESS_COMMENT regex and its `note:` gate
+    found: >
+      The pipeline-vocabulary regex names franchise-research, completeness,
+      press-archaeology, world-events, event-resonance, reading-orders,
+      spoiler-audit, visual-metadata and wing-audit - but NOT visual-language,
+      eras, art-rotation, editions, translation or asset-prompt. Both theme.yaml
+      violations above say "visual-language" and pass clean. Separately the
+      note-field scan matches `^-?\s*note:` only, so theme.yaml's `notes:`
+      field is never scanned at all. A check that only ever produces reassuring
+      output is not a check.
+
+  - id: pr-body-carries-none-of-the-record
+    owner: curator (the run's orchestrator)
+    checked: >
+      PR #860 ("Add the Gabriel García Márquez wing", draft, branch
+      wing/gabriel-garcia-marquez, tracking issue #98). Its entire body is
+      "Tracks #98." Zero comments.
+    found: >
+      Nine stages have run and the durable record of what they added,
+      rejected, and could not source exists nowhere except in .orrery/
+      handoffs, which CURATION §2 says are deleted before merge. CURATION §7
+      makes the PR body the place the rejections and the curator questions
+      survive. As it stands, the two editorial questions carried since
+      completeness-auditor, the eras stage's unverified Harss lead, the
+      one-sourced 1981 M-19 accusation and every documented exclusion vanish
+      at merge. This is the staleness sweep's "curator questions raised and
+      never answered" case, one step earlier: they were never raised where a
+      curator would see them.
+
+  - id: visual-metadata-coverage-arithmetic
+    owner: none (handoff only, content is correct)
+    found: >
+      The visual-metadata handoff reports "22/25 works covered" and "extended
+      13/13" while listing 12 extended titles. Re-derived from works.yaml: 11
+      core + 12 extended + 2 apocrypha = 25; 23 carry a cover, 2 do not
+      (en-agosto-nos-vemos, el-cataclismo-de-damocles). Real coverage is
+      23/25, not 22/25. The content is right; only the report was not
+      re-derived.
+
+cleanup:
+  - >
+    works.yaml/la-mala-hora images comment credits "Plaza y Janés edition
+    (2006)". Downloaded and looked at cover 168230: the jacket itself reads
+    DEBOLSILLO, Coleccion Contemporanea, and its ISBN 9780307350497 is a
+    Random House prefix. Open Library's OL9744816M does say "Plaza y Janes",
+    so the comment faithfully repeats the record - the record is what is
+    wrong. Owner: visual-metadata.
+  - >
+    editions.yaml header claims "every pt-PT prefix is 978-972 (Portugal)".
+    Recomputed: 14 are 978-972 and 3 are 978-989. Both are Portugal, so the
+    substance holds; the sentence does not. Owner: editions.
+  - >
+    editions.yaml header says works.yaml's header "names four" translators and
+    then attributes Innocent Erendira to Rabassa - works.yaml does not say
+    that. The attribution is correct; the citation of where it came from is
+    not. Owner: editions.
+  - >
+    content/authors/gabriel-garcia-marquez.yaml's header comment enumerates the
+    lifeEvents and omits garcia-marquez-vargas-llosa-punch-1976. Owner:
+    press-archaeology.
+  - >
+    pt-PT eras.yaml renders the base's Spanish gloss as "o ciclo de Macondo,
+    el ciclo de Macondo em espanhol" - in Portuguese the two forms differ only
+    by the article, so the gloss reads as a stutter. A native reviewer's call.
+    Owner: translation.
+  - >
+    franchise.yaml's early-and-short path is titled "Start with the early,
+    short work" and calls its three books "short early books". La hojarasca
+    (1955) and El coronel (1961) are early; Erendira (1972) is not. The SET is
+    sourced (the LA Times guide names exactly these three); the word "early"
+    is the wing's own gloss on top of a guide that actually says "start with
+    the stories". Owner: reading-orders.
+
+checkedAndClean:
+  - >
+    DARK-RUN GATE, re-derived by hand as well as by script. Publishing years
+    run 1955-2024; aura years are 1927, 1950, 1955, 1958, 1959, 1961 (x2),
+    1962, 1964, 1965, 1967, 1968, 1971, 1976, 1981, 1982, 1985, 1986, 1989,
+    1994, 1999, 2002, 2007 (x2), 2012, 2013, 2014, 2016, 2019, 2024. The only
+    run of 4+ dark publishing years is 1972-1975, between the 1971 thesis and
+    the 1976 punch. 4 < DARK_RUN_LIMIT 5, the script prints no "<--" marker
+    and no flag line. GATE GENUINELY SATISFIED. Note it sits one year off the
+    gate, and press-archaeology's own handoff flagged that risk itself.
+  - >
+    GLOBALEVENTS IDS. Loaded content/events/global.yaml (19 entries) and
+    checked every id in include and exclude against it programmatically: 1
+    include, 15 exclude, 0 nonexistent ids. The fabrication regression from
+    the first event-resonance attempt is genuinely corrected. The 3 unruled
+    ids (elementary-education-act-1870, world-war-i-1914, pulp-magazines-1926)
+    all predate his 1927 birth, and under include-only semantics silence is
+    the correct state for them.
+  - >
+    MACONDO CYCLE MEMBERSHIP. Re-derived from works.yaml: works published
+    1955-1967 are exactly La hojarasca (1955), El coronel (1961), La mala hora
+    (1962), Los funerales de la Mama Grande (1962) and Cien anos de soledad
+    (1967) - five, matching the era's own count and orders.yaml's claim that
+    nothing else in this bibliography falls in that span. The next work is
+    1970. Both load-bearing claims hold arithmetically.
+  - >
+    THE MACONDO CYCLE'S SOURCE, read rather than trusted. Fetched the
+    Cambridge Core page for Raymond Leslie Williams, "Cien años de soledad and
+    the Macondo Cycle", chapter 2 of A Companion to Gabriel García Márquez
+    (Boydell & Brewer, pp. 33-76, DOI 10.1017/9781800105331.003) and extracted
+    its text. Both quotations eras.yaml attributes to it are verbatim and not
+    laundered: the abstract reads "This novel was the culmination of the
+    'cycle of Macondo' fictions that García Márquez began constructing in the
+    early 1950s and continued to elaborate, in short fictions and novels,
+    until 1967", and the chapter body contains "The five books of the cycle of
+    Macondo made that observation prophetic." The term, both endpoints and the
+    count of five are the critic's, not this catalogue's.
+  - >
+    THE DICTATOR-NOVEL REJECTION, conclusion only. The RULING holds: no source
+    treats 1975-1989 as a period of this career, and Williams's own political
+    thread starts in 1962, which fits a 1975 boundary even worse. But I first
+    checked this against the Companion's table of contents and marked it
+    exact, and that was wrong - the chapter's own abstract pairs El otono with
+    El general explicitly. Corrected and routed under
+    missing.eras-misstates-what-the-companion-says. Recording the error here
+    rather than quietly deleting it: a contents list is not an argument, and I
+    treated it as one for the same reason the eras stage did.
+    Separately confirmed from the same contents list: the volume's chapters 3,
+    4 ("Postmodern Gestures") and 5 ("Recent Writing") DO divide the post-1967
+    career. Under this catalogue's own rule that chapter headings are not a
+    periodisation (CURATION §4, stated there for Wikipedia section headings),
+    they are not phases - but see the post-1967 finding, where a real
+    periodisation does turn up in a different source.
+  - >
+    THE GUARDIAN OBITUARY, checked directly rather than via the eras handoff.
+    Nick Caistor's 17 April 2014 obituary uses "period" four times and every
+    one is a historical period, not a creative one: his early childhood, "the
+    period of political violence in the 1950s", "his period in exile during
+    the 1950s". It names no phase of the writing career. eras.yaml's use of it
+    is accurate.
+  - >
+    STARTHERE SOURCING, spot-checked against the live pages rather than the
+    handoff. All four phrases quoted from the LA Times guide ("Start with the
+    stories", "intimidated by the legend", "exemplary collections",
+    "primer-like") are present on latimes.com, and all four from the Penguin
+    guide ("Before you start", "first appearance of Macondo", "Leaf Storm",
+    "Innocent") are present on penguin.co.uk. Received, not coined.
+  - >
+    ERAS COVERAGE. 20 works fall outside every era and validate.py warns on
+    each. Still NOT APPLICABLE, not absent, and the ruling survives the
+    Lukavska find: one 1988 article dividing the career in two is below this
+    catalogue's bar for a received periodisation, and no NAMED later phase
+    recurs anywhere. Per the eras skill's provenance rule, an honestly
+    uncovered career outranks tiling. Do not close it by adding a span - but
+    do soften the header's absolute wording per
+    missing.post-1967-claim-is-too-strong.
+  - >
+    PERIOD FORMAT. The one era's `period` is "1955-1967", a form the strata
+    walk parses. One era means no overlap is possible.
+  - >
+    CAPABILITIES. features is {}, so all four are auto. Checked each against
+    orrery/lib/content/capabilities.ts: river needs timeline.length > 0 (28),
+    wizard needs startHere.paths.length > 0 (2), companion needs
+    timeline.length > 0 (28), editions needs editions.yaml (36 editions across
+    21 works). No capability lights up on empty data; none is forced off over
+    a layer that has since filled.
+  - >
+    THEME AGAINST THE APP'S OWN REGISTRY, not just SCHEMA. orrery/lib/theme.ts
+    DISPLAY_FACES implements fraunces, spectral, sourceSerif and
+    instrument-serif; SIGNATURES implements beam, thread, rule, filament,
+    none. `spectral` and `beam` are both real and will render as chosen.
+    Contrast recomputed from the hex values: ink/bg 14.1:1, ink/surface
+    12.1:1, muted/surface 4.82:1 (the palette comment claims 4.8 AA and is
+    accurate), muted/bg 5.62:1, accent/bg 7.59:1. Readability floor met
+    everywhere. theme.palette is consumed by lib/theme.ts:57; `preset` /
+    `themePreset` are typed as bare strings and read by no app code, which is
+    a catalogue-wide known state, not this wing's defect.
+  - >
+    TRANSLATION FRESHNESS against the three post-spoiler-audit fixes. Read the
+    pt-PT works overlay directly: el-amor gives "atraves do casamento dela com
+    outro homem" (the corrected single marriage, not "two marriages");
+    ojos-de-perro-azul gives "um dos primeiros contos" (the corrected hedge,
+    not "first"); erendira describes all six shorter stories including "uma
+    povoacao costeira decadente ..." for El mar del tiempo perdido;
+    cien-anos-de-soledad stops at "ao longo de cem anos" with no ending
+    disclosed, matching the spoiler redaction. The overlay is current, not
+    stale. Coverage is also real rather than counted: 25/25 works, 8/8 events,
+    19/19 lifeEvents, bio, the pseudonym note, eras title/description/themes,
+    both startHere paths with their notes. The only untranslated reader-facing
+    string on the wing is `debated`, above.
+  - >
+    ERENDIRA CONTENTS, re-verified against a source the erendira entry's own
+    weak citations were standing in for: the Spanish Wikipedia article on the
+    collection lists exactly the six stories works.yaml names, El mar del
+    tiempo perdido among them. The missing sixth-story description is
+    correctly restored and describes the right story.
+  - >
+    EL AMOR SYNOPSIS FIX. Fermina Daza marries once, to Juvenal Urbino;
+    Florentino Ariza never marries. "through her marriage to another man" is
+    correct and "two marriages" was not. The fix introduced no new error.
+  - >
+    IMAGES. All 23 cover URLs plus the portrait fetched: 24/24 HTTP 200 with
+    real image bytes. Six were downloaded and looked at, not just
+    HTTP-checked: cien-anos (Harper & Row jungle jacket, clean, and
+    OL28176709M confirms Harper & Row 1970), la-hojarasca (Sudamericana,
+    clean), erendira (Perennial "Innocent Erendira", clean), la-mala-hora
+    (circus tent and rooster, clean, but see cleanup), viva-sandino (confirms
+    the works.yaml comment exactly - retitled "El asalto", jacket states
+    "Titulo anterior: Viva Sandino", library sticker present and honestly
+    disclosed), obra-periodistica (confirms "Textos costenos, Obra periodistica
+    1, 1948-1952" and the disclosed 128x224 size). No watermarks, no retailer
+    marks. work.images.cover IS consumed by the app
+    (orrery/lib/content/editions.ts:68), so this is not the inert-field trap.
+  - >
+    EDITIONS. Independently recomputed all 36 ISBN-13 check digits: 0 bad. All
+    17 pt-PT ISBNs carry a Portugal prefix (14x 978-972, 3x 978-989), zero
+    Brazilian 978-85/978-65. No duplicate ISBNs, no duplicate edition ids.
+    lookup.py --verify-isbns re-run independently: 36 editions, 0 suspect.
+    Translator-by-work cross-checked against works.yaml's header claim and it
+    holds: Bernstein/El coronel, Rabassa/La hojarasca, La mala hora, Cien
+    anos, El otono, Cronica, Grossman/El amor onward through Memoria (which
+    covers Doce cuentos, Noticia and Vivir), McLean/En agosto.
+  - >
+    SOURCE LIVENESS. Link-checked all 100 distinct source URLs on the wing:
+    94 live. The 6 failures are 5 Bertrand product pages returning 403 and one
+    false positive from my own URL extraction (the Netflix TV-series Wikipedia
+    URL resolves 200 with its closing parenthesis). Bertrand's bot-wall is a
+    documented CURATION §4 condition and five sibling Bertrand URLs returned
+    200 in the same batch, so the host is alive and rate-limiting, not dead.
+  - >
+    BIRTH FLOOR. garcia-marquez-born-1927 is dated 1927-03-06, matching the
+    author's own `born`, and names Aracataca, the grandparents who raised him
+    and the Barranquilla move. Full-bleed-vista / establishing-landscape, the
+    grammar's own first listed use.
+  - >
+    PSEUDONYM. One pseudonym, Septimus. It correctly stays a note rather than
+    an event (no stated motive, no reveal moment) AND is separately dated
+    inside garcia-marquez-barranquilla-group-1950. Better than the rule
+    requires - except the note's own date is wrong, see blocking.
+  - >
+    SPOILER DISTRIBUTION. Zero spoilerAfter across 27 events and 25 works.
+    This is NOT APPLICABLE, not an absent audit: eleven standalone novels with
+    no continuing character or plot, and spoiler-audit made one real redaction
+    (cien-anos) and documented eight entries that reveal materially less than
+    the publisher's own jacket. Neither of the two failure modes the skill
+    names (zero on twist-driven fiction, or blanket boundaries) applies.
+  - >
+    PROPORTION ACROSS THE CATALOGUE. 28 aura entries over 25 works = 1.12 per
+    work, the joint-third highest of 34 wings (behind anna-sewell 10.0 and
+    dan-brown 1.30, level with miguel-de-cervantes and just under
+    cormac-mccarthy 1.18). The dark run of 4 years is at the catalogue median.
+    This wing is not thin. If anything 19 lifeEvents sits above CURATION §6's
+    "approximately 6-12 across a career" - defensible for a 1927-2016 life
+    with a 69-year publishing span, and partly a consequence of the dark-run
+    gate pushing the other way. Naming the rule tension rather than routing it.
+  - >
+    ART ROTATION. Re-ran art_rotation.py --check: 0 organisation-rotation
+    problems, 0 pacing problems, contour #.==..===#==#.===#==.==#===, beside 6
+    of 27 at its exempt-workhorse ceiling, no organisation over cap, no
+    neighbour repeats, no two loud cells touching. The single remaining
+    "problem" line is the composition axis reporting 0 of 28 assets readable,
+    which is the expected pre-art state and explicitly not this gate.
+  - >
+    THE PLAY'S TITLE. The Spanish bibliography annex titles it "Diatriba de
+    amor contra un hombre INTELIGENTEMENTE sentado" while its own cited Centro
+    Virtual Cervantes record, the published Mondadori book and works.yaml all
+    give "Diatriba de amor contra un hombre sentado". works.yaml is right and
+    the annex is the outlier. Recorded so nobody "corrects" it later.
+  - >
+    SCREENPLAY COUNT. Checked the annex's Guiones section directly: it lists
+    only Viva Sandino, though its own infobox counts 2. works.yaml accounts
+    for both (Viva Sandino catalogued as apocrypha; El ano de la peste named
+    and excluded as a three-writer credit adapting Defoe). No missing work.
+  - >
+    NO REFERENCE SURVIVED A RENAME. validate.py resolves all cross-references
+    catalogue-wide (1498 works, 73 authors, 11 achievements). Spot-checked
+    two by hand: tres-libros's three orderedWorkIds and early-and-short's
+    three workIds all resolve to the works their prose describes.
+
+notApplicableNotAbsent:
+  - "20 of 25 works outside every era - the record periodises nothing after 1967."
+  - "0 achievements - opt-in, and generic badges are worse than none (an option is raised above, not a gap)."
+  - "0 spoilerAfter - eleven standalone novels, argued and documented by spoiler-audit."
+  - "2 works with no cover - En agosto nos vemos (2024, no OL cover exists for any of its three ISBNs) and El cataclismo de Damocles (a 1986 speech pamphlet, OL work record has no covers field). Both checked directly."
+  - "4 works with no edition - Obra periodistica (scholarly Spanish-only), Diatriba (no pt-PT found), and both apocrypha entries. Named in editions.yaml's own header."
+  - "0 pt-PT edition for En agosto nos vemos, El olor de la guayaba, Vivir para contarla, Diatriba - real market gaps, not lookup failures."
+  - "franchise.images.header unsourced - the field is declared in the schema and rendered by no app code."
+  - "0 quote fields on events - no epigraph organisation is used anywhere on the wing."
+  - "1 era rather than several - only one periodisation is received."
+
+curatorsCall:
+  - id: en-agosto-nos-vemos-canon-tier
+    recommendation: KEEP core
+    reasoning: >
+      canonTier is defined by this catalogue, and restated in works.yaml's own
+      header, as a publication-KIND judgement, not a fame, quality or
+      authority one. En agosto nos vemos is a complete novel in his usual
+      adult mode, released by Knopf and Penguin, over 250,000 pre-orders, a
+      2024 New York Times bestseller. It had the most normal trade-book life
+      of any book on this shelf. `apocrypha` here means "never had one" - the
+      speech pamphlet and the unproduced screenplay. Demoting a bestseller
+      into that tier would be using the tier to carry a moral judgement it
+      does not express, and would break the tier's own stated definition on
+      the same file where it is written down. The objection is real and it is
+      an AUTHORITY question; the schema has no field for authorship
+      authority, and inventing one is not a wing-level decision. The
+      circumstance is already carried honestly and four times over: on the
+      work's own note, on a high-impact franchise event, in the franchise
+      description and in the author bio. Nothing is hidden by leaving the tier
+      alone. One consequential edit if this ruling stands: the note's closing
+      sentence ("worth weighing on its own terms rather than resolved by the
+      general rule applied above") is an open question addressed to a reader
+      of the pipeline, which CURATION §2 forbids in content - collapse it to
+      the statement of fact once the call is made.
+  - id: translation-note
+    recommendation: MOVE it, and the reason is stronger than a taxonomy argument
+    reasoning: >
+      Two independent grounds, both checked. First, the field is inert:
+      `translationNote` appears nowhere in the app's lib/, components/, app/
+      or its Work type, and SCHEMA says so itself. Wherever this fact belongs,
+      it currently reaches nobody. Second, it fails the field's own stated
+      bar. SCHEMA defines translationNote for the case where "the divergence
+      between translations is itself documented and consequential" - which
+      English Dostoevsky, which English Cervantes - a choice the reader makes
+      before any edition enters the picture. There is no such choice here:
+      Rabassa's 1970 translation is the only English translation, and
+      editions.yaml confirms it is still the one in print (Harper Perennial
+      Modern Classics, 2025). A reader has nothing to decide. What the note
+      actually contains is a reception anecdote about an author praising his
+      translator, which is a fine fact in the wrong container.
+      Recommended home: a franchise event dated 1970, owned by
+      press-archaeology. It is CURATION §6 tier 4 (a reception rupture with a
+      mark on the canon), it would render in the River where the current field
+      renders nowhere, and 1970 currently carries no aura at all while Relato
+      de un naufrago publishes into it. Note that events.yaml's header
+      currently records the opposite decision ("The Rabassa translation
+      anecdote stays on cien-anos-de-soledad's own translationNote in
+      works.yaml rather than duplicated here") and would need updating with it.
+      Weakest point in this recommendation: the anecdote is secondhand in both
+      its sources, which the existing note states honestly and any event must
+      keep stating.
+  - id: erendira-cover-depiction
+    recommendation: a design call, raised not routed
+    reasoning: >
+      Cover 39690 is the genuine 1979 Harper/Perennial "Innocent Erendira and
+      Other Stories" jacket, correctly licensed, clean, and the right edition.
+      Its illustration is a nude adolescent girl, which is the book's own
+      subject. Nothing is wrong with the sourcing; whether the wing wants that
+      image at the size the app renders covers is a judgement about the page,
+      not about the data, and CURATION §5 says a design question goes to the
+      curator with a browser rather than to a content stage.
+
+forStages:
+  press-archaeology: "Fix the Septimus note date (blocking). Own the Rabassa anecdote if the translationNote recommendation is accepted. Add the 1976 punch to the author-file header comment."
+  translation: "Translate `debated` on tres-libros (blocking) and correct the pt-PT orders header. Re-mirror the Septimus note once press-archaeology corrects it. Native-reviewer read on the 'o ciclo de Macondo, el ciclo de Macondo' gloss."
+  completeness-auditor: "Soften the two Macondo-precedence notes (blocking). Drop the two aggregator sources from erendira. Fix the three stale claims in the works.yaml header (self-described draft, 'once that stage runs', and the parenthesis saying eras.yaml claims nothing)."
+  visual-language: "theme.yaml's `notes:` field and displayFace comment both still forward-reference this stage as unrun."
+  visual-metadata: "la-mala-hora's cover comment credits a publisher the jacket contradicts."
+  editions: "Two header sentences overstate (978-972 only; and attributing the Erendira translator to works.yaml)."
+  reading-orders: "'early' is the wing's gloss on a guide that says 'start with the stories'; Erendira is 1972."
+  eras: >
+    Four items, one of them at blocking priority: the Companion sentence
+    misstates its own source (the chapter abstract pairs El otono WITH El
+    general); "NOTHING AFTER 1967 IS PERIODISED" is refuted by Lukavska 1988
+    and needs softening without changing the ruling; the era's provenance can
+    be upgraded to authorial now that the Harss lead is corroborated; and the
+    1955 endpoint is the first book, not the period's start.
+  art-rotation: "Nothing. Re-ran the checker; both gates clean."
+  event-resonance: "Nothing on the ids - all 16 verified against global.yaml. Note only that the reasoning in the handoff is premised on an arithmetic lifetime default the app no longer implements; the rulings are unaffected."

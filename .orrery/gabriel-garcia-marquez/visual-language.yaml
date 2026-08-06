@@ -1,0 +1,81 @@
+stage: visual-language
+wing: gabriel-garcia-marquez
+summary: >
+  theme.yaml's art block set: emblem, motifs, atmosphere, lineCharacter,
+  backgroundTexture, accentUse, avoid, all six required fields present.
+  The header comment above `art:` (previously stating the block was
+  "deliberately left unset") is corrected to describe what is actually
+  below it, matching the pattern already used on finished wings (Grisham,
+  José Rodrigues dos Santos). palette, preset, displayFace, signature and
+  notes are untouched. validate.py --slug gabriel-garcia-marquez: 0
+  errors (the wing's one standing error, missing theme.art, is resolved);
+  23 warnings, all pre-existing eras-coverage gaps on works.yaml named by
+  every prior stage as expected and not this stage's to fix.
+  asset_audit.py gabriel-garcia-marquez now reports art:yes and lists 28
+  jobs (1 era plate, 19 life events, 8 franchise events) that were
+  blocked with no art block to draw against.
+
+produced:
+  - content/franchises/gabriel-garcia-marquez/theme.yaml (art block added;
+    header comment updated to describe it)
+
+decisions:
+  anchor: >
+    The central visual law is newsprint, not Macondo: a torn strip of
+    daily newspaper type, foxed and browning with humidity, corrected by
+    a human hand. It is native to both halves of the bibliography, not
+    just the famous one. García Márquez's whole career is bracketed by
+    newspaper work - a column byline at nineteen, the 1955 shipwreck
+    serial in El Espectador that got him exiled, four decades of it
+    gathered as Obra periodística - and his late-career nonfiction (a
+    Chilean exile's clandestine return, a wave of Escobar-era kidnappings,
+    the memoir) is reported testimony, not fiction. The fiction side
+    shares the same method rather than a different one: Crónica de una
+    muerte anunciada is explicitly a reporter's witness-by-witness
+    reconstruction, and the emblem's corrected line is a real, sourced
+    fact rather than an invented metaphor - the 1962 La mala hora edition
+    a proofreader altered and García Márquez disowned outright, restored
+    by hand four years later (events.yaml). The foxing keeps the emblem
+    inside the humidity/heat anchor franchise-research already set rather
+    than adding an unrelated one; accentUse reuses the existing gold
+    (banana-company light, the yellow butterflies) rather than inventing
+    a second accent meaning.
+  overlap-check: >
+    Ran theme_digest.py --exclude gabriel-garcia-marquez first (33 wings,
+    ~8KB) rather than reading all theme.yaml files. Two real adjacencies
+    surfaced and were checked in full: displayFace spectral (shared with
+    Murakami, Lovecraft, Sanderson, Jim Butcher, Atwood, Robert Jordan,
+    Valter Hugo Mãe - none journalism or Latin American, no motif
+    collision) and signature beam (shared with Poe, Coben, Gwynne, Peixoto,
+    José Rodrigues dos Santos, Tolkien, King - checked all seven's emblems,
+    no shared object). The one substantive risk was José Rodrigues dos
+    Santos, the catalogue's only other journalist-author wing: read in
+    full. That wing is a cold, modern broadcast newsroom (telex ribbon,
+    cipher grid, tape recorder, wire-photo line, cardinal red on a
+    near-black cathode-teal ground) built from a working TV anchor's
+    instrument. This wing is warm, hand-set, pre-broadcast print rotting
+    in tropical humidity, built from a 1950s newspaper stringer's
+    instrument on a jungle-green ground with a gold accent - no shared
+    object, paper stock, or line vocabulary; the avoid list names the
+    distinction explicitly. No other wing in the catalogue is Latin
+    American or magical-realist, so no genre-costume collision existed to
+    check.
+  avoid-list: >
+    Names the wing's specific cliches: magical-realism-as-costume (butterfly
+    wallpaper, floating figures, decorative ghosts), postcard-tropical
+    imagery (beaches, cruise-brochure water, carnival colour), the
+    newsroom wing's cold broadcast vocabulary, Bolívar's or any real
+    person's likeness (VISUAL.md §3), the Cien años de soledad ending and
+    any other reveal in the spoiler ledger, and staged cartel/military
+    violence for the kidnapping and political material.
+
+forStages:
+  art-rotation: >
+    28 jobs now unblocked (1 era plate, 19 life events, 8 franchise
+    events). No portrait or cover assets are sketches (those are
+    third-party images per SCHEMA.md), so they do not appear in this
+    count.
+  editions: "Unaffected; art governs generated sketches only."
+  i18n: "No prose field touched here is translatable; art is read only by /asset-prompt, never the app."
+
+openQuestions: []

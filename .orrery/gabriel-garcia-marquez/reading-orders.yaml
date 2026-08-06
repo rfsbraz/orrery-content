@@ -1,0 +1,91 @@
+stage: reading-orders
+wing: gabriel-garcia-marquez
+summary: >
+  orders.yaml: [] to 1 order (tres-libros, curated, the author's own "really
+  just one book" grouping). franchise.yaml: no startHere to 2 paths (an
+  early-and-short primer for new readers; the completionist default). Cien
+  años de soledad stays the implicit centre of the shelf, but not as an
+  unsourced assumption: the entry-point claim first suspected (that critics
+  steer new readers to El coronel no tiene quien le escriba instead) did not
+  hold up; what two independent real guides actually converge on is "read a
+  short early work before the doorstop," which is what the new path records.
+  A "Macondo Cycle" order/path was considered and rejected: the five-book
+  span is the literal, unbroken opening prefix of the derived default, so
+  nothing needs curating to walk it. validate.py --slug gabriel-garcia-
+  marquez: 0 errors beyond the pre-existing, expected theme.art gap; 0 new
+  warnings on either file.
+
+produced:
+  - content/franchises/gabriel-garcia-marquez/orders.yaml
+  - content/franchises/gabriel-garcia-marquez/franchise.yaml (startHere field only)
+
+verdicts:
+  entry-point: >
+    RECEIVED, not the claim first suspected. No source recommends El coronel
+    as a specific gentler alternative to Cien años de soledad - Penguin's own
+    "perfect reading order" excludes it entirely, and the Guardian's 2014
+    obituary calls Cien años itself "immediately accessible to readers
+    everywhere." What the Los Angeles Times (Lisa Alvarez, 2 Jul 2021) and
+    Penguin's own reading guide (penguin.co.uk, 2021) independently converge
+    on: lead with a short EARLY work first, not "read a different novel
+    instead." Shipped as a new + taste path, not a swap of the default entry
+    point.
+  tres-libros-order: >
+    RECEIVED and shipped, type curated, on the same basis as the existing
+    chuck-palahniuk/horror-trilogy precedent (an author-named grouping, no
+    publisher numbering). Disclosed in `debated`: the order does not reorder
+    anything relative to the default (its whole contribution is the filter
+    and the label), and no source settles which of the two same-year (1962)
+    titles precedes the other.
+  macondo-cycle: >
+    Considered and REJECTED as either an order or a startHere path. The five
+    works 1955-1967 are a real periodisation (already an era), but nothing
+    else in this bibliography is published in that span, so the "cycle" is
+    the unbroken opening prefix of the derived default, not a thread pulled
+    out of an interleaved shelf. Walking it requires no selection; a reader
+    reading in order already walks it for free. No source recommends it as a
+    deliberate stopping point distinct from reading in order.
+  admission-test: >
+    Checked, negative. All eleven novels are standalone; no continuing plot
+    or viewpoint character crosses between them, so publication order carries
+    no prequel-style risk anywhere on the shelf. Two minor real cross-
+    references checked and cleared: Eréndira and her grandmother cameo in
+    Cien años de soledad (Eréndira published after, so no spoiler either
+    direction); La mala hora's characters echo in Cien años de soledad per
+    Wikipedia-cited criticism (La mala hora predates it, so the safe
+    direction is already what the default order gives for free).
+
+rejected:
+  - "El coronel as its own startHere path: no source recommends it specifically over Cien años; it is one ingredient of the LA Times/Penguin three-book primer actually shipped, not a standalone claim any guide makes."
+  - "Macondo Cycle as a curated/official-publication order or as a startHere path: identical to the unbroken opening prefix of the derived default; see macondo-cycle verdict."
+  - "tres-libros pointed at by a startHere path: its real audience is a returning/completionist reader curious about one authorial claim, not a newcomer's entry question; the order stands alone per this skill's own no-path-obligation rule."
+  - "Penguin's 7-title \"perfect reading order\" shipped verbatim as an official-publication order: real but promotional in origin and only path-shaped for this catalogue's purposes; the existing harlan-coben wing treats an identical kind of Penguin article as startHere sourcing, not an orders.yaml entry, and this wing follows that precedent."
+
+sources:
+  - "https://en.wikipedia.org/wiki/Gabriel_Garc%C3%ADa_M%C3%A1rquez_bibliography"
+  - "https://www.latimes.com/entertainment-arts/books/story/2021-07-02/reading-gabriel-garcia-marquez"
+  - "https://www.penguin.co.uk/discover/articles/gabriel-garcia-marquez-reading-guide-books-order"
+  - "https://www.theguardian.com/books/2014/apr/17/gabriel-garcia-marquez-obituary"
+  - "https://en.wikipedia.org/wiki/In_Evil_Hour"
+  - "https://en.wikipedia.org/wiki/Big_Mama%27s_Funeral"
+
+sourcesThatRefused:
+  - "All general search engines (DuckDuckGo, Mojeek, Bing, Google) bot-walled this session; old-search.marginalia.nu was the one working general search surface, rate-limiting after a handful of queries"
+  - "bookriot.com/gabriel-garcia-marquez-books/ (2019): a general survey, not a where-to-start guide - read, not used"
+  - "fivebooks.com, barnesandnoble.com, theculturetrip.com, britishcouncil.org guesses at a where-to-start article: 404 or timeout, no such page found"
+
+forStages:
+  spoiler-audit: "No admission-test warning needed anywhere on this shelf; see the admission-test verdict for the two cross-references checked and cleared. Order and path prose re-read once as an anonymous newcomer; no reveal named in either."
+  i18n: >
+    No pt-PT overlay exists for this wing yet for any file, so there is no
+    directory to extend consistently and creating one falls outside this
+    stage's stated footprint. The order and both paths still need a pt-PT
+    mirror once this wing's i18n pass runs.
+  wing-audit: >
+    If a future pass adds any work published before 1961 or between 1962 and
+    1967, re-check tres-libros's debated note and the macondo-cycle rejection
+    against the new works.yaml - both are load-bearing on the current
+    25-work count.
+
+openQuestions:
+  - "Not pursued: whether Los funerales de la Mamá Grande or La mala hora actually came first within 1962 - every source checked gives only a bare year for each. Does not change the order either way."

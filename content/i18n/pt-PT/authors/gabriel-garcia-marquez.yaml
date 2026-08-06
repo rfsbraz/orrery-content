@@ -1,0 +1,376 @@
+# Português europeu (pt-PT) - `bio` e, em cada lifeEvent, `title` +
+# `description` (docs/SCHEMA.md; scripts/i18n_coverage.py conta exatamente
+# estes campos, mais `quote`, que não existe em nenhum destes 19 eventos).
+# `pseudonyms[].note` também se traduz aqui: embora não seja contado pelo
+# script de cobertura e nenhum outro overlay pt-PT deste catálogo o tenha
+# feito até agora (nenhum ficheiro em content/i18n/pt-PT/authors/ regista
+# `pseudonyms`), docs/SCHEMA.md descreve-o como prosa curada junto de um
+# `aka`, do mesmo tipo que a nota de um startHere path - por isso vai aqui,
+# como valor acrescentado sobre o mínimo do script, não como requisito dele.
+#
+# TÍTULOS DE OBRAS DENTRO DA PROSA: mesma regra fixada em franchise.yaml
+# deste overlay - título português publicado (editions.yaml) sempre que
+# existe edição pt-PT real; espanhol original quando não existe (En agosto
+# nos vemos e Vivir para contarla, ambos confirmados como vazios de mercado
+# em editions.yaml, não falhas de pesquisa).
+#
+# CITAÇÕES DIRETAS. Onde a base preserva as palavras exatas de García
+# Márquez em espanhol - sempre com uma glosa inglesa entre parênteses -
+# mantém-se o espanhol e traduz-se a glosa para português (as três citações
+# do evento da morte da mãe, em 2002, são o caso). Onde a base só regista
+# uma versão inglesa, sem espanhol de origem preservado - a citação da
+# Fundação Nobel, a "amizade intelectual" sobre Castro, a citação ao El
+# Tiempo sobre o cancro, o obituário do Guardian, a citação do presidente
+# Santos - não há original espanhol a citar aqui: é texto relatado,
+# traduzido como qualquer outra prosa.
+
+- id: gabriel-garcia-marquez
+  bio: >
+    Nascido em Aracataca, uma pequena povoação perto da costa caribenha da
+    Colômbia, e ali criado nos primeiros anos, sobretudo pelos avós
+    maternos - um avô que combatera na Guerra dos Mil Dias e uma avó que
+    lhe contava histórias populares e de fantasmas como se fossem factos
+    simples, uma voz que mais tarde disse ter moldado a forma como
+    escrevia ficção. Estudou Direito em Bogotá, na Universidad Nacional de
+    Colombia, sem terminar o curso, atraído em vez disso pelo jornalismo:
+    reportagens e colunas para o El Universal (Cartagena) e o El Heraldo
+    (Barranquilla) até ao final da década de 1940, depois para o El
+    Espectador, em Bogotá, onde o seu relato serializado de 1955 sobre a
+    odisseia de um marinheiro naufragado - mais tarde o livro
+    [[work:gabriel-garcia-marquez/relato-de-un-naufrago|Relato de um
+    Náufrago]] - revelou que o navio da marinha colombiana transportava
+    carga de contrabando, o que envergonhou a ditadura de Rojas Pinilla e
+    contribuiu para que o jornal o enviasse para a Europa como
+    correspondente pouco depois. Casou com Mercedes Barcha em 1958;
+    tiveram dois filhos, Rodrigo e Gonzalo. Depois da ficção breve inicial
+    e dos romances
+    [[work:gabriel-garcia-marquez/la-hojarasca|A Revoada]],
+    [[work:gabriel-garcia-marquez/el-coronel-no-tiene-quien-le-escriba|Ninguém
+    Escreve ao Coronel]] e
+    [[work:gabriel-garcia-marquez/la-mala-hora|A Hora Má: O Veneno da
+    Madrugada]], fechou-se em casa na Cidade do México durante dezoito
+    meses, vendendo o carro da família e vivendo a crédito junto do
+    açougueiro e do padeiro do bairro, para escrever
+    [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cem Anos de
+    Solidão]] (1967), o romance que o tornou a figura mais conhecida do
+    Boom latino-americano e um dos nomes centrais do realismo mágico.
+    Ganhou o Nobel da Literatura em 1982 "pelos seus romances e contos, nos
+    quais o fantástico e o real se combinam num mundo de imaginação
+    ricamente composto, refletindo a vida e os conflitos de um
+    continente," e proferiu a alocução de aceitação "La soledad de América
+    Latina." Viveu as últimas décadas sobretudo na Cidade do México,
+    continuou a escrever ficção, memórias e jornalismo até aos setenta e
+    poucos anos, e morreu ali em 2014, de complicações de pneumonia, após
+    um longo declínio que incluiu o início de demência nos seus últimos
+    anos. Um romance que deixara inacabado e que, segundo se conta, queria
+    destruído,
+    [[work:gabriel-garcia-marquez/en-agosto-nos-vemos|En agosto nos
+    vemos]], foi publicado pelos filhos uma década depois da sua morte.
+  pseudonyms:
+    - name: Septimus
+      note: >
+        Assinatura usada numa coluna no El Heraldo, em Barranquilla, no
+        final da década de 1940, no início da sua carreira jornalística,
+        antes de escrever com o próprio nome.
+  lifeEvents:
+    - id: garcia-marquez-born-1927
+      title: Nasce em Aracataca, criado pelos avós
+      description: >
+        Nasceu em Aracataca, uma pequena povoação na costa caribenha da
+        Colômbia. O pai tornou-se farmacêutico e mudou a família para
+        Barranquilla pouco depois, deixando o jovem Gabriel para trás; foi
+        criado durante a infância pelos avós maternos, o Coronel Nicolás
+        Ricardo Márquez Mejía, veterano da Guerra dos Mil Dias, e
+        Tranquilina Iguarán, que lhe contava histórias populares e de
+        fantasmas como se fossem factos simples. Disse mais tarde que
+        aquele lar, e a atmosfera da própria casa, moldaram tanto a sua
+        política como a voz impassível com que a sua ficção conta coisas
+        impossíveis. A própria Aracataca tornou-se o modelo da fictícia
+        Macondo.
+
+    - id: garcia-marquez-barranquilla-group-1950
+      title: Escreve o seu caminho até ao Grupo de Barranquilla
+      description: >
+        Depois de abandonar a Faculdade de Direito em Bogotá, escreveu
+        para o El Universal, em Cartagena (1948-1949), e depois, entre
+        1950 e 1952, uma coluna despretensiosa sob a assinatura "Septimus"
+        para o El Heraldo, em Barranquilla, pago a três pesos por texto.
+        Em Barranquilla juntou-se ao círculo informal de escritores e
+        jornalistas conhecido como o Grupo de Barranquilla, que incluía o
+        livreiro Ramón Vinyes, um emigrado catalão idoso mais tarde
+        ficcionado como o "sábio catalão" dono da livraria em
+        [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cem Anos de
+        Solidão]]. O grupo apresentou-lhe ainda Virginia Woolf e William
+        Faulkner, cujas técnicas marcaram a sua própria escrita.
+
+    - id: garcia-marquez-shipwreck-exile-1955
+      title: Uma história de naufrágio envergonha uma ditadura e leva-o para o estrangeiro
+      description: >
+        Como repórter do El Espectador, em Bogotá, entrevistou o único
+        sobrevivente de um contratorpedeiro da marinha colombiana que se
+        afundara no mar, e serializou o seu relato em catorze capítulos
+        diários. A reportagem, mais tarde o livro
+        [[work:gabriel-garcia-marquez/relato-de-un-naufrago|Relato de um
+        Náufrago]], contradisse a versão oficial de que uma tempestade
+        afundara o navio, revelando em vez disso que uma carga de
+        contrabando mal estivada se soltara no convés. A revelação
+        envergonhou o governo militar do General Gustavo Rojas Pinilla; o
+        El Espectador enviou García Márquez para a Europa como
+        correspondente estrangeiro pouco depois, no que a própria nota
+        biográfica da Fundação Nobel chama "um exílio mais ou menos
+        obrigatório." Escreveu despachos para o El Independiente, o jornal
+        que substituiu brevemente o El Espectador depois de os censores de
+        Rojas Pinilla o terem fechado.
+
+    - id: garcia-marquez-marries-mercedes-1958
+      title: Casa com Mercedes Barcha, vinte anos depois de ter decidido fazê-lo
+      description: >
+        Casou com Mercedes Barcha Pardo em março de 1958, na Igreja de
+        Nuestra Señora del Perpetuo Socorro, em Barranquilla, tendo-lhe
+        pedido em casamento, segundo se conta, quando ele tinha 18 anos e
+        ela 13; os dois conheciam-se desde anos antes, quando ela ainda
+        andava na escola. Ela esperou por ele durante o seu exílio
+        europeu. Tiveram dois filhos, Rodrigo (n. 1959) e Gonzalo (n.
+        1962), e foi ela quem geriu as finanças da casa nos anos difíceis
+        que se seguiram, incluindo os dezoito meses que ele passou a
+        escrever
+        [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cem Anos de
+        Solidão]] a crédito.
+
+    - id: garcia-marquez-castro-friendship-mexico-1959
+      title: Conhece Fidel Castro, e os anos na Prensa Latina empurram-no para a Cidade do México
+      description: >
+        Conheceu Fidel Castro em Havana, em janeiro de 1959, semanas
+        depois do triunfo da Revolução Cubana; a amizade propriamente dita
+        formou-se ao longo dos dois anos seguintes, enquanto García
+        Márquez trabalhava como correspondente da Prensa Latina, a
+        agência de notícias do governo cubano, primeiro em Bogotá e depois
+        em Havana. Colocado na delegação da Prensa Latina em Nova Iorque
+        em 1961, saiu depois de receber ameaças e enfrentar a hostilidade
+        de exilados cubanos anti-Castro e da CIA por causa das suas
+        reportagens, e mudou a família para a Cidade do México em vez
+        disso - a cidade onde escreveria
+        [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cem Anos de
+        Solidão]] alguns anos depois. A amizade com Castro durou o resto
+        da vida de ambos e tornou-se um dos factos mais escrutinados
+        publicamente da carreira de García Márquez: chamou-lhe "uma
+        amizade intelectual" construída sobre a literatura, usou o seu
+        acesso para interceder, por sua própria conta, por prisioneiros
+        políticos cubanos, viu-lhe negado durante anos um visto para os
+        Estados Unidos por causa da sua política (só levantado depois de
+        Bill Clinton, admirador declarado de
+        [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cem Anos de
+        Solidão]], ter tomado posse), e atraiu críticas persistentes de
+        escritores exilados cubanos, sobretudo Reinaldo Arenas.
+
+    - id: garcia-marquez-el-gallo-de-oro-screenplay-1964
+      title: Paga as contas na Cidade do México a escrever para o cinema
+      description: >
+        Com três romances publicados até 1962 e nenhum deles a garantir-lhe
+        o sustento, passou grande parte do início da década de 1960 a
+        escrever para o cinema mexicano, a par de jornalismo esporádico,
+        para manter a casa na Cidade do México. O seu crédito
+        cinematográfico mais substancial do período, El gallo de oro
+        (1964), adaptava um conto de Juan Rulfo para o realizador Roberto
+        Gavaldón, escrito em conjunto com o também romancista Carlos
+        Fuentes - um dos vários argumentos que escreveu nesses anos, antes
+        de o sucesso de
+        [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cem Anos de
+        Solidão]], em 1967, lhe dar, nas suas próprias palavras,
+        "independência financeira como romancista" pela primeira vez.
+
+    - id: garcia-marquez-writes-cien-anos-1965
+      title: Dá a volta ao carro na estrada para Acapulco
+      description: >
+        A caminho de Acapulco com a família, de férias em 1965, viu de
+        repente na cabeça a abertura completa de um romance, deu a volta
+        ao carro e regressou à Cidade do México. Pediu a Mercedes que
+        gerisse as finanças da casa nos meses seguintes, vendeu o carro da
+        família, e fechou-se num quarto para escrever durante o ano e
+        meio seguinte, enquanto ela comprava comida a crédito junto do
+        açougueiro e do padeiro. O resultado,
+        [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cem Anos de
+        Solidão]] (1967), esgotou a primeira tiragem numa semana e
+        tornou-se o livro que definiu o Boom latino-americano.
+
+    - id: garcia-marquez-fame-barcelona-1967
+      title: A fama repentina leva-o para Barcelona durante sete anos
+      description: >
+        A publicação de
+        [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cem Anos de
+        Solidão]], em junho de 1967, transformou García Márquez, em poucos
+        meses, no nome mais conhecido do Boom latino-americano; ele
+        próprio minimizou a reação, chamando ao livro "uma espécie de
+        piada, cheia de sinais para amigos próximos." Mudou a família para
+        Barcelona, na Espanha, pelos sete anos seguintes, ainda sob a
+        ditadura de Francisco Franco, e o prestígio internacional que o
+        romance lhe granjeou valeu-lhe o Prémio Internacional de Romance
+        Rómulo Gallegos e o Prémio Internacional de Literatura Neustadt,
+        ambos em 1972, e deu-lhe a plataforma pública que mais tarde
+        usaria como facilitador informal entre o governo colombiano e os
+        grupos guerrilheiros.
+
+    - id: garcia-marquez-writes-otono-del-patriarca-1968
+      title: Escreve um romance de ditador que trazia consigo desde que viu um cair
+      description: >
+        Começou a escrever
+        [[work:gabriel-garcia-marquez/el-otono-del-patriarca|O Outono do
+        Patriarca]] em Barcelona, em 1968, a partir de uma imagem que
+        trazia consigo há uma década: ter visto o ditador venezuelano
+        Marcos Pérez Jiménez fugir do país em 1958, "a primeira vez que
+        víamos um ditador cair na América Latina." Considerou o livro
+        terminado por volta de 1971, mas continuou a revê-lo durante mais
+        quatro anos, publicando-o em 1975 como um retrato do poder
+        absoluto a que chamou "um poema sobre a solidão do poder."
+
+    - id: garcia-marquez-vargas-llosa-punch-1976
+      title: Vargas Llosa dá-lhe um murro na cara, pondo fim a uma década de amizade
+      description: >
+        Em 1976, na estreia de um filme no Palacio de Bellas Artes, na
+        Cidade do México, o também romancista do Boom Mario Vargas Llosa -
+        que cinco anos antes publicara um estudo de livro inteiro sobre a
+        obra de García Márquez, García Márquez: historia de un deicidio -
+        deu-lhe um murro na cara quando este se aproximou para o abraçar.
+        Nenhum dos dois escritores deu alguma vez uma explicação pública
+        para o motivo; os dois não voltaram a falar-se durante décadas.
+        Uma fotografia de García Márquez com um olho negro reapareceu em
+        2007, reavivando o interesse público numa das rivalidades mais
+        conhecidas da literatura moderna.
+
+    - id: garcia-marquez-pinochet-silence-broken-1981
+      title: Quebra um voto de silêncio de seis anos sobre Pinochet
+      description: >
+        Depois de
+        [[work:gabriel-garcia-marquez/el-otono-del-patriarca|O Outono do
+        Patriarca]] e da mudança de Barcelona para a Cidade do México,
+        comprometeu-se a não voltar a publicar ficção até que o ditador
+        chileno Augusto Pinochet fosse afastado do poder, um protesto
+        contra o golpe de 1973 sobre o qual já escrevera para a revista de
+        esquerda Alternativa, que cofundara em 1974. Pinochet manteve-se
+        no poder, e em 1981 García Márquez quebrou o próprio voto,
+        publicando
+        [[work:gabriel-garcia-marquez/cronica-de-una-muerte-anunciada|Crónica
+        de uma Morte Anunciada]] apesar disso: "não podia permanecer
+        calado perante a injustiça e a repressão."
+
+    - id: garcia-marquez-nobel-prize-1982
+      title: Ganha o Prémio Nobel, e profere dois discursos
+      description: >
+        Recebeu o Prémio Nobel da Literatura de 1982 "pelos seus romances
+        e contos, nos quais o fantástico e o real se combinam num mundo de
+        imaginação ricamente composto, refletindo a vida e os conflitos de
+        um continente," o quarto laureado latino-americano. A 10 de
+        dezembro de 1982 proferiu dois discursos em Estocolmo: a alocução
+        "La soledad de América Latina" ("A Solidão da América Latina"), um
+        discurso político sobre a violência e a incompreensão que a
+        América Latina sofrera, mais tarde reunido em
+        [[work:gabriel-garcia-marquez/yo-no-vengo-a-decir-un-discurso|Eu
+        Não Venho Fazer um Discurso]]; e um brinde de banquete separado e
+        muito mais breve, "Brindis por la poesía," que terminava com um
+        chamamento para se beber à própria poesia como, nas palavras do
+        poeta Luis Cardoza y Aragón, "a única prova concreta da existência
+        do homem."
+
+    - id: garcia-marquez-founds-eictv-1986
+      title: Cofunda uma escola de cinema em Cuba
+      description: >
+        Cofundou a Escuela Internacional de Cine y Televisión (EICTV), em
+        San Antonio de los Baños, Cuba, a 15 de dezembro de 1986,
+        juntamente com os cineastas cubanos Julio García Espinosa e Tomás
+        Gutiérrez Alea e o cineasta argentino Fernando Birri, os quatro
+        antigos colegas de curso no Centro Sperimentale di Cinematografia,
+        em Roma. A escola forma gratuitamente cineastas latino-americanos,
+        africanos e asiáticos e continua ativa décadas depois, parte de um
+        padrão de usar a própria fama e dinheiro para construir
+        instituições de ensino, repetido em 1994 com a fundação de
+        jornalismo que criou em Cartagena.
+
+    - id: garcia-marquez-founds-fnpi-1994
+      title: Gasta os direitos de autor numa escola de jornalismo própria
+      description: >
+        Fundou a Fundación para un Nuevo Periodismo Iberoamericano (FNPI,
+        mais tarde a Fundación Gabo) em Cartagena de Indias, em 1994,
+        usando os direitos de autor da sua ficção para financiar a
+        formação de jovens jornalistas em toda a América Latina e
+        Espanha, ensinados por repórteres em atividade como Alma
+        Guillermoprieto e Jon Lee Anderson. A fundação mantém viva a mesma
+        profissão que ele nunca deixou por completo, mesmo no auge da fama
+        como romancista.
+
+    - id: garcia-marquez-cancer-misdiagnosis-1999
+      title: Um diagnóstico de cancro leva-o a escrever as memórias
+      description: >
+        Diagnosticado em 1999 com cancro linfático, depois de ter sido
+        primeiro mal diagnosticado com pneumonia; a quimioterapia num
+        hospital de Los Angeles pôs a doença em remissão. "Reduzi ao
+        mínimo as relações com os amigos, desliguei o telefone, cancelei
+        as viagens e todo o tipo de planos, presentes e futuros," contou
+        ao jornal colombiano El Tiempo, "e fechei-me para escrever todos
+        os dias sem interrupção." O resultado, três anos depois, foi
+        [[work:gabriel-garcia-marquez/vivir-para-contarla|Vivir para
+        contarla]] (2002), o primeiro e, como se viria a revelar, único
+        volume de umas memórias planeadas em três partes.
+
+    - id: garcia-marquez-mother-death-2002
+      title: A mãe, Luisa Santiaga, morre em Cartagena aos 97 anos
+      description: >
+        Luisa Santiaga Márquez Iguarán morreu a 9 de junho de 2002, no seu
+        apartamento no bairro de Manga, em Cartagena de Indias - a casa
+        que o filho lhe dera depois de o marido, Gabriel Eligio García,
+        morrer em 1985 - aos 97 anos. Uma amiga da família, a historiadora
+        Silvia Galvis, já notara anos antes o Alzheimer a corroer-lhe a
+        memória, enquanto investigava o seu próprio livro sobre a família,
+        Los García Márquez, embora isso não a impedisse de reconhecer as
+        visitas até ao fim. Quem a conhecia chamava-lhe a réplica viva
+        mais próxima de Úrsula Iguarán, a matriarca de
+        [[work:gabriel-garcia-marquez/cien-anos-de-soledad|Cem Anos de
+        Solidão]], uma semelhança que ela própria desvalorizava: quando
+        lhe perguntaram por que nunca lera o romance, respondeu, "Para
+        qué, si yo lo he vivido" ("Para quê, se eu já vivi isso"). O
+        jornal espanhol El Mundo marcou a sua morte com um perfil
+        completo, "La mujer que creó al creador" ("A mulher que criou o
+        criador"), sob o título "Gabo se queda huérfano" ("Gabo ficou
+        órfão").
+
+    - id: garcia-marquez-dementia-final-years-2012
+      title: A demência instala-se, e um romance fica inacabado
+      description: >
+        O irmão, Jaime, afirmou publicamente em meados de 2012 que García
+        Márquez sofria de demência senil, uma notícia que a família
+        contestou na altura, apontando para um vídeo dele a celebrar o
+        aniversário nesse março. Por ocasião da sua morte, em 2014, o
+        obituário do Guardian afirmou sem rodeios que ele morrera "depois
+        de sofrer da doença de Alzheimer," e os filhos confirmaram mais
+        tarde o quadro completo: a memória cada vez mais debilitada nos
+        últimos anos deixou-o incapaz de seguir o enredo do romance em que
+        trabalhava desde 1997, eventualmente intitulado
+        [[work:gabriel-garcia-marquez/en-agosto-nos-vemos|En agosto nos
+        vemos]], que nunca chegou a terminar.
+
+    - id: garcia-marquez-death-2014
+      title: Morre na Cidade do México
+      description: >
+        Hospitalizado na Cidade do México no início de abril de 2014, com
+        infeções nos pulmões e no trato urinário e com desidratação; a
+        imprensa em língua espanhola atribuiu a recaída ao cancro
+        linfático diagnosticado em 1999, que por essa altura já lhe
+        atingira um pulmão, os gânglios linfáticos e o fígado. Morreu ali
+        a 17 de abril de 2014, aos 87 anos, de complicações de pneumonia.
+        O presidente colombiano Juan Manuel Santos declarou três dias de
+        luto nacional e chamou-lhe "o maior colombiano que já existiu."
+        Foi incinerado numa cerimónia familiar privada; as suas cinzas
+        foram transferidas para um claustro em Cartagena de Indias em
+        2016.
+
+    - id: garcia-marquez-archive-opens-2016
+      title: Os seus arquivos tornam-se um espólio público no Texas
+      description: >
+        Depois da sua morte, a família depositou os seus documentos
+        pessoais, rascunhos de manuscritos, correspondência e fotografias
+        no Harry Ransom Center, da Universidade do Texas em Austin, que
+        abriu o espólio Gabriel García Márquez Papers a investigadores a
+        21 de outubro de 2016; uma seleção digitalizada ficou totalmente
+        disponível online e de acesso livre em 2018. Os cinco rascunhos de
+        [[work:gabriel-garcia-marquez/en-agosto-nos-vemos|En agosto nos
+        vemos]], mais tarde publicados contra a sua vontade, vieram deste
+        mesmo espólio.

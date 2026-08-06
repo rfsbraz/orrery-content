@@ -1,0 +1,190 @@
+stage: press-archaeology
+wing: gabriel-garcia-marquez
+summary: >
+  Follow-up to the 5-year dark run (1960-1964) that event-resonance's own
+  ruling reopened: excluding lady-chatterley-trial-1960 from
+  franchise.yaml's globalEvents (correctly - no real link to García
+  Márquez) removed the only aura entry that happened to cover 1960, and
+  the window sat between the 1959 Prensa Latina/Mexico City lifeEvent and
+  the 1965 Acapulco/Cien-años lifeEvent with nothing of his own in it.
+  Researched what he actually did in 1961-1964 rather than reaching for
+  another borrowed global event: his manuscript for
+  [[work:gabriel-garcia-marquez/la-mala-hora|La mala hora]] won Colombia's
+  Esso novel prize in 1961, a year before any edition reached print; that
+  1962 edition was then disowned by its own author over a proofreader's
+  changes and not corrected until 1966; and, broke and between novels, he
+  spent the period writing film scripts for Mexican cinema, most
+  substantially El gallo de oro (1964) with Carlos Fuentes. Three new
+  entries, one per year (1961, 1962, 1964), close the run. aura_density.py
+  now reports 25 works, 28 aura, 1.12/work, longest dark run 4 years
+  (1972-1975, not investigated this pass - under the 5-year gate).
+  validate.py --slug gabriel-garcia-marquez: 1 error, the pre-existing
+  theme.art gap (visual-language's to resolve), 21 warnings (all
+  pre-existing eras-coverage gaps on works.yaml, unrelated to this pass).
+
+produced:
+  - content/authors/gabriel-garcia-marquez.yaml (added lifeEvent
+    garcia-marquez-el-gallo-de-oro-screenplay-1964; updated the header
+    comment to mention the early-1960s screenwriting work)
+  - content/franchises/gabriel-garcia-marquez/events.yaml (added
+    garcia-marquez-mala-hora-esso-prize-1961 and
+    garcia-marquez-mala-hora-disavowed-edition-1962; updated the header
+    comment and entry count)
+
+decisions:
+  - >
+    The Esso Prize and the disowned edition went to events.yaml, not the
+    author file, because both are about what happened to one specific
+    book (its manuscript winning a prize, its first printing being
+    disowned), matching this wing's existing distinction between
+    author-life and book-specific events (e.g. the Vargas Llosa thesis and
+    the Bolívar outrage are already there for the same reason). The
+    screenwriting fact went to the author file instead: El gallo de oro is
+    someone else's adaptation of a Juan Rulfo story, not a García Márquez
+    work, so it is his career activity, not a book's event.
+  - >
+    Deliberately gave each new entry a distinct `date` year (1961, 1962,
+    1964) rather than folding them into fewer entries with a dateRange:
+    aura_density.py's year_of() only reads the `date` field, never
+    dateRange, which is exactly how the existing 1959-1961 Prensa
+    Latina/Mexico City lifeEvent failed to prevent this dark run in the
+    first place (its dateRange covers 1961, its counted date does not).
+    Three single-year entries close three separate gap-years; one entry
+    with a wide dateRange would have closed only one.
+  - >
+    The disowned-edition fact is quoted from García Márquez's own words
+    (the Ediciones Era prologue, reproduced in English Wikipedia's
+    bibliography article footnotes): a proofreader "changed certain words
+    and stiffened the style in the name of the purity of language," which
+    he restored in 1966 as "the idiomatic incorrections and stylistic
+    atrocities." This gives a citable primary quote to a fact that was
+    already sitting as a note on works.yaml's la-mala-hora entry with no
+    lifeEvent anchoring it in the aura at all - exactly the gap the
+    follow-up brief flagged.
+  - >
+    Organisation/illustration_type: reused the wing's existing vocabulary
+    throughout rather than introducing new types - marginalia/
+    isolated-object for the Esso Prize (LAYOUT.md: "minor honours, brief
+    appearances, side projects"), diptych/book-object for the disowned
+    edition (LAYOUT.md: "genuine before/after - rejected then rewritten,"
+    matching the wing's other diptych/book-object entry, the 2007 Vargas
+    Llosa thesis reissue, also a two-edition story), and
+    floating-object/isolated-object for the screenwriting lifeEvent
+    (LAYOUT.md: "a keepsake... a minor beat"). No two chronologically
+    adjacent entries share an organisation.
+  - >
+    Did not add a fourth entry for 1963: with 1961, 1962 and 1964 each
+    covered, no remaining stretch in this window reaches 5 years, and no
+    dated, sourced, non-thin fact for 1963 specifically surfaced in this
+    pass's research. Left it empty rather than padding it.
+
+forStages:
+  eras: >
+    No claim made. The new entries fall inside the existing 1955-1967 era
+    gap already flagged in validate.py's warnings (unrelated to this
+    pass) and do not change that boundary question.
+  visual-language: >
+    27 lifeEvents + 8 franchise events now span the same organisation
+    vocabulary as before this pass (marginalia, diptych, floating-object
+    all pre-existing); no new organisation or illustration_type
+    introduced.
+  wing-audit: >
+    Footprint is exactly content/authors/gabriel-garcia-marquez.yaml
+    (one new lifeEvent + header comment) and
+    content/franchises/gabriel-garcia-marquez/events.yaml (two new
+    entries + header comment). No other file touched; works.yaml,
+    orders.yaml, franchise.yaml, theme.yaml and eras.yaml were read for
+    context only.
+
+openQuestions:
+  - >
+    aura_density.py's longest remaining dark run is now 1972-1975 (4
+    years, under the 5-year gate) - not investigated in this follow-up,
+    which was scoped to 1960-1964. Same shape of risk as before: a run
+    one tool-run away from the gate is how the last one went unnoticed.
+  - >
+    Could not source, and did not add, any claim that García Márquez
+    worked in advertising or public relations specifically in Mexico
+    City in this period - a detail that circulates in secondary accounts
+    of his life but did not turn up in any directly checkable source
+    this pass could reach (Britannica 403'd; The Paris Review's 1981
+    interview, which likely covers this period in his own words, is
+    paywalled past its opening exchanges; general web search was
+    unavailable this session, its budget already spent). What the record
+    gave up instead - the Esso Prize, the disowned edition, El gallo de
+    oro - covers the same years without that claim. A future pass with
+    search access or a library copy of Gerald Martin's biography could
+    check it properly.
+  - >
+    Carried from both prior passes, still unresolved: the 1981
+    M-19-financing accusation and Mexican exile is real, dated and
+    high-impact but still one-sourced (Spanish Wikipedia) - unrelated to
+    this pass, still open.
+
+# --- Follow-up pass: wing-audit's press-archaeology findings, applied ---
+followUp:
+  stage: press-archaeology (wing-audit fixes)
+  summary: >
+    Applied wing-audit's three press-archaeology findings on branch
+    gabriel-garcia-marquez/audit-fixes-press. (1) blocking.septimus-
+    pseudonym-note-wrong-decade: the pseudonyms[0].note on
+    content/authors/gabriel-garcia-marquez.yaml dated the Septimus byline
+    to "the late 1940s ... before he wrote under his own name" - wrong on
+    both counts per the wing's own cited source (English Wikipedia: El
+    Universal 1948-1949 bylined, then Septimus at El Heraldo 1950-1952).
+    Corrected to 1950-1952 and reworded to state he was bylined at El
+    Universal FIRST, not after. This field renders directly to readers
+    (about-the-author.tsx:83); the pt-PT mirror is left for a separate
+    translation-stage pass, as instructed. (2) cleanup item 4: the author
+    file's header comment enumerated lifeEvents but skipped
+    garcia-marquez-vargas-llosa-punch-1976 - added it in its chronological
+    place, between the otoño-del-patriarca (1968-1975) and Pinochet-vow
+    (1981) mentions. (3) curatorsCall.translation-note: moved the Rabassa-
+    praised-the-translation anecdote off works.yaml's inert translationNote
+    field (confirmed by SCHEMA.md and a repo-wide grep to render nowhere)
+    onto a new franchise event, garcia-marquez-rabassa-translation-
+    praised-1970, dated 1970 (Harper & Row's first English edition), stated
+    honestly as a reported, secondhand anecdote (Rabassa's own English
+    Wikipedia entry + Paul Elie's history as quoted in The Paris Review's
+    2016 Rabassa obituary - the same two sources works.yaml's own note
+    already cited, re-verified: fetched Gregory Rabassa's English Wikipedia
+    raw wikitext directly and confirmed the sentence and its NYT-obituary
+    citation; theparisreview.org itself 403'd every fetch attempt this pass
+    (a bot-wall, same condition as the documented Bertrand case - host
+    alive, not reachable by an automated fetch), so that source is cited on
+    the strength of its already-verified use in works.yaml's own sources
+    list, not a fresh read of the page. Gave it organisation: diptych,
+    illustration_type: book-object (two book jackets, Spanish original vs
+    English translation - the wing's existing "two editions" pattern, as
+    used for the 1962 disowned edition and the 2007 thesis reissue), and
+    updated events.yaml's own header comment, which had stated the opposite
+    decision.
+  validation: >
+    python3 scripts/validate.py --slug gabriel-garcia-marquez: 0 errors, 27
+    warnings, all pre-existing (works.yaml era-coverage gaps + handoff
+    word-count soft caps - none new). aura_density.py gabriel-garcia-
+    marquez: 25 works, 29 aura (up from 28), 1.16/work (up from 1.12),
+    longest dark run unchanged at 4 years (1972-1975) - the new 1970 entry
+    only adds aura, it does not touch the 1972-1975 window.
+    art_rotation.py --check gabriel-garcia-marquez: 0 organisation-rotation
+    problems, 0 pacing problems (contour "#.==..===#===#.===#==.==#===",
+    one more mid cell than before between the two loud cells at 1967 and
+    1976, which pads that gap rather than tightening it - net effect on
+    pacing is neutral-to-better). The script's non-zero exit code is only
+    the pre-existing "0 of 29 assets could be read" composition-axis line,
+    the expected pre-art state per the wing's own baseline, not a real
+    gate.
+  produced:
+    - content/authors/gabriel-garcia-marquez.yaml (pseudonyms[0].note
+      corrected to 1950-1952 and re-sequenced; header comment gained the
+      1976 Vargas Llosa punch)
+    - content/franchises/gabriel-garcia-marquez/events.yaml (added
+      garcia-marquez-rabassa-translation-praised-1970; header comment
+      updated to Nine entries and to record the Rabassa anecdote now
+      living here)
+  footprint: >
+    Exactly the two files named above. works.yaml, orders.yaml,
+    franchise.yaml, eras.yaml and theme.yaml were read for context only
+    (a parallel agent is fixing works.yaml, including a possible trim to
+    the now-superseded translationNote field, in the same window) and not
+    touched.

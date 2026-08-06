@@ -1,0 +1,90 @@
+stage: completeness-auditor
+summary: >
+  25 works confirmed as 25 (no count change). Re-verified against
+  Wikipedia's English bibliography article, the Spanish "Anexo:
+  Bibliografía" annex, OpenLibrary, WorldCat and Internet Archive
+  catalogue metadata. One factual correction (Obra periodística vol. 5
+  covers 1961-1984, not 1980-1984) and one added story credit (El mar del
+  tiempo perdido belongs to the Eréndira collection, confirmed via two
+  independent sources). All five named open items resolved - see
+  resolutions below. validate.py --slug gabriel-garcia-marquez: 0 errors,
+  same 1 expected warning (no theme.art) as the scaffold left.
+
+produced:
+  newWorkIds: []
+  changedProse:
+    - gabriel-garcia-marquez/erendira
+    - gabriel-garcia-marquez/obra-periodistica
+  changedDates: []
+  changedNotes:
+    - gabriel-garcia-marquez/works.yaml (header: CONSIDERED AND LEFT OUT, SCOPE)
+
+resolutions:
+  press-cluster: >
+    Untangled rather than left as one blanket exclusion: amante-inconcluso/
+    nostalgia/gabo-contesta confirmed overlapping (annex's own account);
+    Chile-el-golpe-y-los-gringos is a multi-author pamphlet (Scope
+    exclusion, WorldCat contents list); the other 4 are real standalone
+    anthologies excluded because their content sits inside the span Obra
+    periodística already covers as one entry, not because unverifiable.
+    2 more third-party compilations found and added to the excluded list.
+  obra-periodistica: "Confirmed as one grouped entry; vol. 5 date range corrected (see summary)."
+  film-workshops: "2 of 3 confirmed via WorldCat (credited to the workshop, not him); 3rd shares the pattern but has no independent record."
+  el-mar-del-tiempo-perdido: "Resolved into erendira (two independent sources), not excluded."
+  la-soledad-de-america-latina: "Exclusion confirmed correct; its one standalone print appearance is itself a multi-author Nobel volume."
+
+newFinding: >
+  El año de la peste (1978), a produced film crediting García Márquez as
+  one of 3 screenplay writers (adapting Defoe), is in neither primary
+  source used here. Left uncatalogued (multi-author, adapts another
+  author's novel) but named in the header and raised as an open question.
+
+forStages:
+  press-archaeology: >
+    Unchanged from franchise-research. Add: the 1982 Nobel produced two
+    speeches, not one - the lecture "La soledad de América Latina" and a
+    separate banquet toast "Brindis por la poesía" - if the life event
+    wants the fuller story.
+  editions: "Unchanged from franchise-research. Add: Obra periodística vol. 5 is now 1961-1984, not 1980-1984."
+  eras: "Unchanged from franchise-research."
+  reading-orders: "Unchanged from franchise-research."
+  visual-language: "Unchanged from franchise-research."
+
+openQuestions:
+  - "Carried, not resolved per instruction: does En agosto nos vemos belong in core given publication against the author's explicit wishes?"
+  - "Carried, not resolved per instruction: is translationNote the right field for the Rabassa/Cien años de soledad anecdote?"
+  - "Carried: no formal name found for the tres-libros grouping; add one only if a real source supplies it."
+  - "NEW: El año de la peste is a real, produced screenplay credit missing from both primary sources. Viva Sandino is already apocrypha on weaker evidence (unconfirmed production, sole credit). Should this join it as a second apocrypha entry with withAuthorIds for its 2 co-writers, or is its multi-author/adapted-from-another-novel character out of scope? Scope call per CURATION.md."
+  - "NEW, lower stakes: the 4 press anthologies left out as subsumed by Obra periodística were judged by career-span overlap, not a page-by-page collation of contents. Worth a fuller check if a future pass has time."
+
+auditFixesApplied:
+  stage: audit-fixes-completeness
+  appliedAgainst: wing-audit.yaml
+  fixes:
+    - id: macondo-first-appearance-is-wrong (blocking)
+      action: >
+        la-hojarasca's note now separates composition (Macondo invented
+        there, drafted 1948-1949) from publication ("Un día después del
+        sábado", 1954, reached print first). ojos-de-perro-azul's note
+        drops "after La hojarasca"; Monólogo is now only a plausible
+        early appearance. Cited Centro Gabo on both. Synopsis untouched.
+    - id: erendira-aggregator-sources
+      action: "Dropped xpressenglish.com and supersummary.com; es.wikipedia already supports the claim."
+    - id: duas-solidoes-exclusion-undocumented
+      action: >
+        Added to CONSIDERED AND LEFT OUT: BNP record + 1968 first
+        publication (OL5721508M), same third-party/multi-author grounds
+        as Gabo periodista and Chile/Soledad, Guayaba named as the
+        adjacent case that differs. No work entry added.
+    - id: works-header-contradicts-eras
+      action: >
+        Dropped the false "eras.yaml names both shapes" parenthesis and
+        the same sentence's stale "La hojarasca is its first appearance"
+        claim; "this draft" -> "this catalogue"; translator paragraph now
+        says editions.yaml carries that field, not "once that stage runs".
+    - id: translation-note (curatorsCall, MOVE)
+      action: >
+        Trimmed translationNote to a one-line pointer - inert field, no
+        reader-choice bar met. Fuller anecdote moves to a 1970 event,
+        added by audit-fixes-press in a parallel worktree.
+  validated: "0 errors, 27 warnings (same 20 era warnings; +1 handoff-cap vs baseline is wing-audit.yaml's own handoff, unrelated to these fixes)."

@@ -1,0 +1,136 @@
+stage: eras
+wing: gabriel-garcia-marquez
+summary: >
+  [] to 1 era: macondo-cycle, "The Macondo Cycle", 1955-1967, provenance
+  author (upgraded from critical, see corrections below). Of the two candidate
+  shapes flagged upstream, one held and one did not. No named phase of the
+  later career recurs across sources, so 1968-2024 is left uncovered.
+
+produced:
+  - content/franchises/gabriel-garcia-marquez/eras.yaml
+
+verdicts:
+  macondo-cycle: >
+    RECEIVED, and now rung 1 rather than rung 2 (see corrections). Raymond
+    Leslie Williams, "Cien anos de soledad and the Macondo Cycle", chapter 2 of
+    A Companion to Gabriel Garcia Marquez (Boydell & Brewer; chapter published
+    online 26 May 2022, DOI 10.1017/9781800105331.003), names the term, dates
+    the cycle from the early 1950s to 1967, and counts "the five books of the
+    cycle of Macondo", which matches the five works this catalogue holds in
+    1955-1967. Gale's Literature and Its Times gives the same term and the
+    same two dates independently, and a 2013 dissertation enumerates the cycle
+    work by work. Eva Lukavska (1988) corroborates the Harss lead this stage
+    left open: Garcia Marquez himself coined "el ciclo de Macondo" for his own
+    first-period work, which is why provenance is now `author`, not
+    `critical`. All four URLs and the quotations are on the entry itself.
+  dictator-novels: >
+    INVENTED as a periodisation; the grouping itself is real. Both novels are
+    catalogued as novela del dictador alongside Valle-Inclan, Asturias,
+    Carpentier and Roa Bastos: a genre shared with other writers across 1926 to
+    the 2000s, not a phase of this career. No source in either language treats
+    1975 and 1989 as the ends of a period of his own work, and a span drawn
+    there would swallow Cronica de una muerte anunciada and El amor en los
+    tiempos del colera. The Companion citation in the file's header originally
+    misstated this chapter's own argument (wing-audit
+    missing.eras-misstates-what-the-companion-says); corrected in place, and
+    the ruling is stronger for it, not weaker - Williams's own political
+    thread starts at 1962, inside the Macondo Cycle era, so 1975-1989 fits his
+    grouping even worse than the subgenre reading argued. Full reasoning sits
+    in the content file's header.
+  tres-libros: >
+    No label exists, and none is needed: all three fall inside 1955-1967 and
+    the criticism defining the cycle counts them among its books, so the
+    author's grouping sits inside the era. The note stays on each work.
+  post-1967: >
+    No NAMED phase of the later career recurs across sources (wing-audit
+    missing.post-1967-claim-is-too-strong softened the header's original
+    absolute wording, which the same audit found refuted-on-a-technicality by
+    Eva Lukavska's 1988 article dividing the whole career into two NUMBERED
+    stages, second stage from 1975). The ruling is unchanged: one 1988 article
+    in one journal is below this catalogue's bar for a received period, and no
+    other source echoes it, so no era ships on it. Nick Caistor's Guardian
+    obituary, the fullest English retrospective reached, is chronological and
+    names no phase.
+    https://www.theguardian.com/books/2014/apr/17/gabriel-garcia-marquez-obituary
+
+corrections:
+  - >
+    The Wikipedia line flagged upstream ("It signals the end of the Macondo
+    period") is not used and not laundered: it is a bare assertion behind a
+    footnote, and full-text search of both Wikipedias returns 0 hits for
+    "Macondo cycle" and 0 for "ciclo de Macondo". The criticism cited instead
+    reaches the same boundary independently.
+  - >
+    Applied per wing-audit (missing.eras-misstates-what-the-companion-says,
+    missing.post-1967-claim-is-too-strong,
+    missing.macondo-cycle-provenance-can-be-upgraded,
+    missing.companion-citation-year), all against eras.yaml only. (1) The
+    DICTATOR NOVELS header paragraph misattributed the Companion chapter's own
+    argument - its abstract pairs El otono del patriarca WITH El general en su
+    laberinto in a 1962-1989 political thread, not against it; rewritten to
+    what the abstract says, rejection ruling kept and strengthened. (2)
+    "NOTHING AFTER 1967 IS PERIODISED" softened to "NO NAMED PHASE... RECURS
+    ACROSS SOURCES", with Eva Lukavska's 1988 two-stage periodisation recorded
+    as the one exception found and explicitly not adopted (single source,
+    below the received-period bar); ruling unchanged. (3) macondo-cycle's
+    `provenance` upgraded from `critical` to `author` (the SKILL.md enum value
+    - the wing-audit finding said "authorial", the catalogue's own term is
+    "author") on Lukavska's direct statement that Garcia Marquez himself
+    coined "el ciclo de Macondo"; Lukavska added to `sources`; the `note`
+    corrected to stop claiming "1955 and 1967 are the two dates the sources
+    name" (1955 is this catalogue's book-based start, not the period's true
+    beginning - Lukavska and Williams both trace construction to the late
+    1940s/early 1950s). Did NOT introduce a "Lukavska counts 4 books, Williams
+    5" discrepancy - re-reading her text confirms no such discrepancy exists
+    (checkedAndClean in the same audit). (4) The Companion citation's edition
+    pinned to "chapter published online 26 May 2022, DOI
+    10.1017/9781800105331.004" in place of the bare "(Boydell & Brewer, 2021)".
+    validate.py --slug gabriel-garcia-marquez stays at 0 errors after all four.
+
+languagesSearched:
+  - "English: reference works, criticism, dissertation catalogues, the Guardian obituary"
+  - "Spanish: es.wikipedia full-text, Spanish criticism and university sources, Centro Gabo site search (no hits)"
+
+sourcesThatRefused:
+  - "Google Books API 429; DuckDuckGo and Mojeek rate-limited or captcha'd after the first queries; Bing RSS unusable"
+  - "britannica.com 403; nytimes.com 403; elpais.com 404 on constructed obituary URLs"
+  - "Internet Archive search-inside for Harss, Into the Mainstream (1967): item intomainstreamco00hars exists, its text and search endpoints 403/404"
+
+forStages:
+  visual-language: >
+    The wing now has aura, which flips theme.yaml's missing `art:` block from a
+    warning to a validator ERROR. Only error in the catalogue; clears when the
+    art block lands.
+  art-rotation: "Era carries chapter-gate / atmospheric-motif-field / images_required 1."
+  translation: >
+    3 new translatable fields (title, description, note). Render the title as
+    the Portuguese form of "o ciclo de Macondo", not a new label; the two
+    English quotations stay quotations.
+  wing-audit: >
+    20 works sit outside every era (1970 onward). Answered, not an open gap:
+    no NAMED phase of the later career recurs across sources (one exception,
+    Lukavska 1988, found by wing-audit and recorded but not adopted - see
+    corrections above). Do not close it by adding a span.
+  reading-orders: "The five books of 1955-1967 are a named received grouping, so a sourced entry path is available where no publisher sequence is."
+
+openQuestions:
+  - >
+    Naming, a curator's call: shipped as "The Macondo Cycle", the form the two
+    reference works use, with "el ciclo de Macondo" glossed in the description.
+    The rival case is language-follows-the-author, which would title it in
+    Spanish as the Tordo wing does in Portuguese. Both forms are received, so
+    this is house style, not sourcing. The id is permanent either way.
+  - >
+    RESOLVED by wing-audit (missing.macondo-cycle-provenance-can-be-upgraded):
+    the Harss lead below was never itself confirmed (still unreached), but Eva
+    Lukavska's 1988 article independently corroborates its substance - Garcia
+    Marquez himself named his first-period work "el ciclo de Macondo". That
+    settled the open question in the lead's favour without needing Harss:
+    provenance is now `author` in the file. Original lead, left as the
+    record of what prompted the search: a Tecnologico de Monterrey lecture
+    page says Luis Harss's Los nuestros (1966) is "quiza el primer libro en
+    donde Garcia Marquez habla expresamente del final de algo que llamo el
+    'ciclo de Macondo'". Harss himself is still unreached and unused in the
+    file; Lukavska is the source actually cited.
+    https://convocatorias-internacionales.tec.mx/es/evento/ciclo-de-macondo-gabriel-garcia-marquez
+  - "Carried untouched, none an eras question: En agosto nos vemos's core tier, the Rabassa translationNote field, El ano de la peste's tier."
