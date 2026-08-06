@@ -961,12 +961,32 @@ def main():
             warn(rel(path), f"{a.get('id','?')}: no lifeEvent dated to born ({born}) - "
                             "the timeline opens mid-life, with no birthplace")
     gpath = os.path.join(ROOT, "content", "events", "global.yaml")
+    global_event_ids = set()
     if os.path.exists(gpath):
         g = load(gpath) or {}
         for e in g.get("events", []):
             check_event("events/global.yaml", e)
+            if e.get("id"):
+                global_event_ids.add(e["id"])
             if e.get("reach") != "global":
                 err("events/global.yaml", f"{e.get('id','?')}: global events must have reach: global")
+
+        # A franchise's globalEvents entries are ids from the shared file and
+        # nothing else resolves them, so an id that matches no global event
+        # renders nothing while reading like a ruling that was made. An
+        # exclusion is checked too: it is the record of a judgement, and a
+        # record of judging an event that does not exist is worse than silence.
+        for fdir in franchise_dirs:
+            if not os.path.isdir(fdir):
+                continue
+            floc = f"{os.path.basename(fdir)}/franchise.yaml"
+            ge = (load(os.path.join(fdir, "franchise.yaml")) or {}).get("globalEvents") or {}
+            for key in ("include", "exclude"):
+                for eid in ge.get(key) or []:
+                    if eid not in global_event_ids:
+                        err(floc, f"globalEvents.{key}: unknown global event '{eid}'")
+            for eid in sorted(set(ge.get("include") or []) & set(ge.get("exclude") or [])):
+                err(floc, f"globalEvents: '{eid}' is both included and excluded")
 
     # --- editions ---
     for fdir in franchise_dirs:
