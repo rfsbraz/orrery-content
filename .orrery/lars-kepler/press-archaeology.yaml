@@ -1,0 +1,80 @@
+stage: press-archaeology
+summary: >
+  Nine dated, sourced aura entries added across the three files this stage
+  owns: 2 lifeEvents each for Alexandra and Alexander (a birth plus one
+  pre-Kepler career event apiece), 5 franchise events. Aura density: 10 ->
+  19 entries, 0.77 -> 1.46 per work. Closed the reported 8-year dark run
+  (2012-2019) to 6, and fully closed the second, unreported one behind it
+  (2021-2026).
+
+  The pen-name origin is now two sourced, dated franchise events: invention
+  in 2008 (two failed joint attempts under their own names, then a third
+  invented author, Lars for Stieg Larsson, Kepler for Johannes Kepler) and
+  the August 2009 Aftonbladet unmasking, both primary-sourced against the
+  authors' own retelling on larskepler.com/about plus contemporary press
+  (Aftonbladet, 2009-08-11; Svenska Dagbladet's independent profile 17
+  days later). Alexandra's 2004 Katapult Prize and Alexander's 2006
+  Regissören/Bergman controversy cover each author's pre-Kepler career.
+  The 2012 Hallström film/Oscar-entry, a 2019 audiobook prize for Lazarus,
+  and the 2023-2026 Apple TV+ "Nocturne" adaptation (one production under
+  three working titles, not two) complete the franchise events.
+
+  One correction-by-omission: Swedish Wikipedia's uncited claim that
+  Kaninjägaren won a 2016 "Adlibris" bestseller prize conflicts with the
+  authors' own site, which dates the Adlibris Awards' founding to 2019 -
+  left out. A Polish "Golden Bullet" award and three vague, undated
+  Swedish Crime Writers' Academy nominations failed the same check
+  (absent from the Academy's own winners list and from Polish Wikipedia)
+  and were dropped too.
+
+produced:
+  authorFiles:
+    - content/authors/alexandra-coelho-ahndoril.yaml
+    - content/authors/alexander-ahndoril.yaml
+  franchiseFiles:
+    - content/franchises/lars-kepler/events.yaml
+  lifeEventsAdded:
+    alexandra-coelho-ahndoril: 2
+    alexander-ahndoril: 2
+  franchiseEventsAdded: 5
+  auraDensity:
+    before: "13 works, 10 aura, 0.77/work, span 2009-2026, dark run 8yrs (2012-2019)"
+    after: "13 works, 19 aura, 1.46/work, span 2009-2026, dark run 6yrs (2013-2018)"
+
+forStages:
+  eras: >
+    Still empty by judgement. The new franchise events (2008, 2009, 2012,
+    2019, 2023-2026) could seed a periodisation if eras wants one, but
+    nothing sourced names one outright.
+  visual-language: >
+    theme.yaml still has no `art:` block (unchanged, not this stage's
+    footprint). Neither author has `images.portrait` yet, so every event
+    above avoids `editorial-portrait` entirely (VISUAL.md §3): the
+    pseudonym's invention is drawn as the manuscript and its secret
+    submission (manuscript-proof), the unmasking and the Regissören
+    controversy as press response (press-media-collage), never as a
+    likeness of either author or of Bergman.
+  completeness-auditor: >
+    No bibliography changes. One more contemporary source (an archived
+    2009 Svenska Dagbladet review) is folded into
+    alexander-ahndoril.yaml's own sources list.
+
+openQuestions:
+  - "2013-2018 (Stalker, Playground, Kaninjägaren, the run-up to Lazarus)
+    has no event surviving the sourcing bar and is the one remaining 5+
+    year dark run (6 years). Checked and empty: Swedish/English Wikipedia,
+    the authors' site in full, Bonniers' catalogue, the CWA International
+    Dagger shortlist history, Deckarakademin's winners list. Two NYT
+    citations and one Deadline citation on Wikipedia's own reference list
+    were 403/paywalled and might hold more for someone with institutional
+    access."
+  - "A single 2009 SvD profile states Alexander took the surname Ahndoril
+    at eighteen, on his first marriage - implying one before Alexandra.
+    Single-sourced family history for a living person, held out under the
+    two-independent-source bar; noted on his file without repeating the
+    claim."
+  - "A Polish 'Golden Bullet' award and three unspecified Swedish Crime
+    Writers' Academy nominations (both from uncited Wikipedia lists)
+    could not be corroborated anywhere else, including the Academy's own
+    winners list - left out as a standing correction, not just for this
+    wing's dark-run purposes."

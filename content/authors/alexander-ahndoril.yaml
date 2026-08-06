@@ -9,13 +9,22 @@
 # shape this catalogue already uses for Andrew Child's solo Andrew Grant
 # novels relative to lee-child.
 #
-# Living person: lifeEvents: [] until a two-independent-source
-# press-archaeology pass is built. The couple's SHARED history - the 2009
-# debut, choosing the pen name, its unmasking, any screen adaptation - is
-# modelled as content/franchises/lars-kepler/events.yaml material rather
-# than a lifeEvent on either author (ruling, orrery-content#64: "a life
-# event belongs to a person; if no single person owns it, it is a franchise
-# event").
+# Living person: the two lifeEvents below are his own, individual,
+# pre-Kepler record - a birth and a literary controversy over his 2006
+# novel about Ingmar Bergman. Neither is health, family, finance or legal
+# for a living person (Bergman died in 2007, and the event is about the
+# novel's reception, not about Ahndoril's own private life), so the
+# standard sourcing bar applies rather than the two-independent-source one,
+# and both clear it on two sources apiece. The couple's SHARED history -
+# the 2009 debut, choosing the pen name, its unmasking, any screen
+# adaptation - is modelled as content/franchises/lars-kepler/events.yaml
+# material rather than a lifeEvent on either author (ruling,
+# orrery-content#64: "a life event belongs to a person; if no single
+# person owns it, it is a franchise event"). A detail of his pre-Alexandra
+# personal history appears in a single 2009 newspaper profile (SvD's "Rygg
+# mot rygg") and nowhere else checked; held out under the
+# two-independent-source family bar rather than added from that source
+# alone.
 id: alexander-ahndoril
 name: Alexander Ahndoril
 aka: ["Alexander Gustafson"]
@@ -52,8 +61,53 @@ pseudonyms:
       separate puzzle-mystery series about the private investigator Julia
       Stark, distinct from Lars Kepler and outside this catalogue's
       lars-kepler wing.
-lifeEvents: []
+lifeEvents:
+  - id: alexander-ahndoril-born-1967
+    organisation: full-bleed-vista
+    illustration_type: establishing-landscape
+    images_required: 1
+    date: 1967-01-20
+    title: Born Alexander Gustafson in Upplands Väsby
+    impact: low
+    description: >
+      Alexander Gustafson is born in Hammarby parish, Upplands Väsby, north
+      of Stockholm. He takes the surname Ahndoril as a young man, wants to be
+      a painter in his teens - producing large oil canvases inspired by
+      Caravaggio while working construction from the age of fourteen - and
+      turns to writing instead: his first novel, Den äkta kvinnan, is
+      accepted for publication before he turns twenty.
+    spoilerAfter: null
+    sources:
+      - "https://sv.wikipedia.org/wiki/Alexander_Ahndoril"
+      - "https://en.wikipedia.org/wiki/Alexander_Ahndoril"
+
+  - id: alexander-ahndoril-regissoren-controversy-2006
+    organisation: mosaic
+    illustration_type: press-media-collage
+    images_required: 1
+    date: 2006
+    title: A novel about Ingmar Bergman draws Bergman's own public condemnation
+    impact: high
+    description: >
+      Regissören (The Director), Ahndoril's best-known solo novel, fictionalises
+      the life of film director Ingmar Bergman - who had read and praised the
+      manuscript beforehand, then publicly condemned the published book,
+      opening a debate carried through the Swedish press about the ethics of
+      turning a living public figure into a fictional "I." The novel itself
+      draws strong critical praise alongside the controversy (Svenska
+      Dagbladet's Carl-Johan Malmberg calls it "one of the most exciting
+      contributions to the comedy of intelligence made in our country") and
+      is translated into eleven languages. Three years later, reviewing
+      Ahndoril's Diplomaten - a second novel built the same way around a
+      real, living Swede, the diplomat Hans Blix - Svenska Dagbladet recalls
+      the Regissören uproar directly, the same method proving itself twice.
+    spoilerAfter: null
+    sources:
+      - "https://sv.wikipedia.org/wiki/Alexander_Ahndoril"
+      - "https://web.archive.org/web/20091004023816/http://www.svd.se/kulturnoje/litteratur/artikel_3593577.svd"
 sources:
   - "https://en.wikipedia.org/wiki/Alexander_Ahndoril"
   - "https://en.wikipedia.org/wiki/Lars_Kepler"
   - "https://sv.wikipedia.org/wiki/Lars_Kepler"
+  - "https://sv.wikipedia.org/wiki/Alexander_Ahndoril"
+  - "https://www.svd.se/rygg-mot-rygg"
