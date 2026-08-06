@@ -1,0 +1,43 @@
+stage: franchise-research
+wing: isabel-allende
+summary: >
+  Scaffolded from scratch: franchise.yaml, works.yaml (36 works: 21 core,
+  13 extended, 2 apocrypha), the global author entity, theme.yaml
+  (preset/palette/displayFace/signature, no art). eras/events/orders ship
+  empty, documented. Sourced from English/Spanish Wikipedia (neither has
+  a dedicated bibliography page, unlike prior wings), her official site
+  (the only source for her 3 newest English-original picture books), and
+  Britannica, NPR, Penguin Random House's catalogue pages, and Chile's
+  Memoria Chilena library. validate.py --slug isabel-allende: 0 errors,
+  1 expected warning (no theme.art).
+
+produced:
+  - content/franchises/isabel-allende/franchise.yaml
+  - content/franchises/isabel-allende/works.yaml
+  - content/franchises/isabel-allende/eras.yaml
+  - content/franchises/isabel-allende/events.yaml
+  - content/franchises/isabel-allende/orders.yaml
+  - content/franchises/isabel-allende/theme.yaml
+  - content/authors/isabel-allende.yaml
+
+decisions:
+  - "canonTier by publication kind: core = 21 novels (incl. a thin, obscure 1984 novella, not downgraded for that); extended = 2 story/journalism collections, 6 memoirs, 3 pieces of 1974 juvenilia, 3 English-original picture books; apocrypha = 1 story-plus-essay chapbook, 1 self-compiled anthology of her own past love scenes."
+  - "The issue's own '~25 books since House of the Spirits' undercounts the verified total: 33 works from 1982 on, plus 3 more from 1974 under the complete-body-of-work ruling (her actual first book predates her first novel by 8 years)."
+  - "The issue's 'fits the model, main finding is negative' premise held: no pseudonym, no serialization, single author/language, confirmed. The one real structural finding is 2 settled subseries (Trilogía involuntaria; Las memorias del Águila y del Jaguar), sourced to Penguin Random House's own box-set/series pages, not invented."
+  - "A wrinkle NOT in the issue: her site's current title for a 1984 work is 'La ninfa de porcelana'; most sources still use its original title, 'La gorda de porcelana.' Used her site's current usage, documented on the work's own note."
+  - "No single translator assumed: Margaret Sayers Peden covers most of it from 1998 on (and the 1982 debut too), but 3 other translators share credit on 4 later titles - listed in works.yaml's header."
+  - "The del Valle surname recurs across 3 novels spanning 1982-2025 - a `note:`, not forced into `subseries` (a family-tree callback, not a marketed sequence)."
+  - "4 early staged plays and 1 anthologized story are left out in works.yaml's header - no source shows the plays as published scripts, which format:play requires."
+
+forStages:
+  completeness-auditor: "Confirm La ninfa de porcelana's literary form (novella vs. short story); confirm whether Los amantes del Guggenheim/El oficio de contar and Amor were ever issued in English; confirm the 4 plays were never published as scripts; verify El reino del dragón de oro's 2003-vs-2004 first-edition year."
+  press-archaeology: "0 lifeEvents by design; Lima birth, 1973 coup/1975 exile, the Jan 1981 letter that became her debut, Paula's 1991-1992 death, and the 2014 Medal of Freedom are sourced in bio prose as ready anchors. The Salvador Allende family-connection wrinkle is real, not fully resolved: her site + 2 Wikipedia-cited sources say 'father's first cousin,' but Spanish Wikipedia's own infobox says 'tío segundo' (second uncle) - full detail on the author entity's header. Living person: this and any family/political/health claim needs its own two-source check."
+  eras: "2 shapes named, not claimed: a 'Venezuelan exile' period (1975-1988, through Eva Luna) and a shift toward documented-historical-event fiction from 2006 on - neither sourced to a named periodisation."
+  reading-orders: "No publisher-numbered whole-bibliography order or startHere path found for a 21-novel core shelf with 2 subseries already settled; not deeply searched beyond that."
+  editions: "Translator credit is not uniform (Peden for most; 3 others on 4 later titles, listed in works.yaml's header) - do not assume one."
+  visual-language: "theme.yaml has preset/palette/displayFace/signature only (a 'recovered document' register - letters, notebooks, an old photograph - sourced to a cross-book pattern, not one novel); art block untouched."
+
+openQuestions:
+  - "RULING NEEDED: La ninfa de porcelana is tiered core (same discipline as every other standalone fiction book here), but is this bibliography's thinnest, least-documented item. Worth a second look once its literary form is confirmed."
+  - "Amor's own site says it was 'first published in Germany' - possibly composed/first issued in German rather than Spanish, the only such case here. Not corroborated beyond that one page."
+  - "Trilogía involuntaria numbering is inconsistent across retailers (Wikipedia + the PRH box set go 1-2-3 by publication year; one retailer orders House of the Spirits '#3'). `subseries` records the label only, not a position."

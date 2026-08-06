@@ -1,0 +1,733 @@
+# Bibliography (works) - the abstract books; editions/covers are separate
+# metadata. IDs are STABLE and permanent (user data references them). Dates
+# are year-precision (docs/SCHEMA.md); the default reading order (all
+# works, publication order) is DERIVED from this file, never written by
+# hand.
+#
+# SCOPE. Every book credited to Allende found across English and Spanish
+# Wikipedia's own articles (there is no single dedicated "bibliography"
+# page on either, unlike Gabriel García Márquez's or Haruki Murakami's
+# wings - the list here was assembled from Isabel_Allende's own "Works"
+# section on both languages, her fifteen individual work articles, and her
+# official site's own book list, isabelallende.com/en/books, cross-checked
+# against each other) plus her official site's book pages, which is also
+# the only source for her three most recent English-original children's
+# books - none of which yet has a Wikipedia article of its own. 36 works
+# total, running from her actual first published book (Civilice a Su
+# Troglodita, 1974, a satirical newspaper-column collection - not the
+# debut novel most sources open with) through a children's picture book
+# announced for 1 September 2026. The request issue's recollection of
+# "around 25 books since The House of the Spirits" undercounts the real,
+# verified total by design (it explicitly flags itself as unsourced
+# recollection): counting only from 1982 forward still comes to 33, and
+# the wing's own ruling is that a wing spans an author's COMPLETE
+# published work, so the three 1974 items are catalogued too.
+#
+# CANON TIER is a publication-kind judgment, not a fame or quality one
+# (SCHEMA.md, CURATION.md #7) - the same discipline this catalogue already
+# applies to Saramago and Grisham. CORE is the 21 novels: the
+# narrative-fiction spine every source checked builds from, including one
+# thin, little-documented 1984 novella (see its own note) tiered here on
+# the same publication-kind test as the other 20, not on how well-known it
+# is. EXTENDED is genuinely hers, off the novel-reading spine: the 2
+# story/journalism collections, the 6 memoirs, the 3 pieces of 1974
+# juvenilia/journalism, and the 3 English-original children's picture
+# books. APOCRYPHA is for the 2 items that fit neither: a slim
+# story-plus-essay chapbook and a compiled anthology of her own previously
+# published love scenes.
+#
+# TRANSLATORS. Margaret Sayers Peden translated most of her catalogue from
+# Daughter of Fortune (1998) onward into the mid-2010s and, per her own
+# English Wikipedia article, La casa de los espíritus itself - but not all
+# of it: Nick Caistor and Amanda Hopkinson share credit on The Japanese
+# Lover (2015) and A Long Petal of the Sea (2019), and Frances Riddle
+# translated Violeta (2022) and My Name Is Emilia del Valle (2025). No
+# single-translator assumption is made anywhere in this file; per-edition
+# translator credit belongs in editions.yaml once that stage runs.
+#
+# SUBSERIES - settled, both with publisher-level evidence, not guessed:
+# - "Trilogía involuntaria" ("Involuntary Trilogy") groups La casa de los
+#   espíritus, Hija de la fortuna and Retrato en sepia. Penguin Random
+#   House's own Spanish-market box set uses exactly this title ("Reunidas
+#   por primera vez bajo el título «Trilogía involuntaria»" - a retailer
+#   listing for that PRH-distributed set, iberiapapeleriatoys.com); the
+#   three are grouped this way on Goodreads and community sites too. Some
+#   retailer listings (e.g. romance.io) number La casa de los espíritus
+#   "#3" rather than "#1" - an ordering inconsistency, not a naming one -
+#   so `subseries` records the label only; the derived reading order
+#   still runs on each work's own `published` year.
+# - "Las memorias del Águila y del Jaguar" ("Memories of the Eagle and the
+#   Jaguar") groups the three Alexander Cold/Nadia Santos YA novels.
+#   Sourced to the publisher directly: Penguin Random House's own series
+#   page (penguinrandomhouse.com/series/MEJ) and English Wikipedia's own
+#   infobox on Forest of the Pygmies, which carries `series: Las memorias
+#   del águila y el jaguar` sourced to terra.org.
+#
+# CONSIDERED AND LEFT OUT:
+# - Four plays she wrote and saw staged in Santiago before going into
+#   exile - El embajador (1971), La balada del medio pelo (1973), Yo soy
+#   la Tránsito Soto (1973) and Los siete espejos (1975) - are documented
+#   everywhere as "estrenada" (premiered), never as published scripts; no
+#   source checked here shows any of the four issued as a book, which is
+#   what this catalogue requires of a work (the format:play definition in
+#   docs/SCHEMA.md is explicitly "a PUBLISHED stage script").
+# - "Dos Palabras" ("Two Words"), listed as its own line in English
+#   Wikipedia's Fiction table under 1989, is the opening and best-known
+#   story inside Cuentos de Eva Luna (catalogued below as one collection),
+#   not a separately published book - the same principle already applied
+#   to a title inside a collection on other wings in this catalogue.
+#
+# A NOTE ON TITLES. "La ninfa de porcelana" is this file's title for the
+# 1984 item Wikipedia's English Fiction list calls "The Porcelain Fat
+# Lady (La gorda de porcelana)": both her own official site
+# (isabelallende.com/en/book/ninfa, still active) and independent readers'
+# reviews confirm "La gorda de porcelana" was the title it received at its
+# 1984 first publication, later changed to "La ninfa de porcelana" - the
+# name Allende's own site currently uses, and so the one used here,
+# consistent with this catalogue's rule that a living author's own current
+# usage governs where sources disagree on a title.
+
+# --- 1974: journalism and children's juvenilia ---
+
+- id: isabel-allende/civilice-a-su-troglodita
+  title: "Civilice a Su Troglodita"
+  authorIds: [isabel-allende]
+  published: 1974
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    A collection of the satirical humor columns Allende wrote for Chilean
+    outlets in the early 1970s, illustrated by Ricardo Güiraldes.
+  note: >
+    By Allende's own account (English Wikipedia, sourced to her interview
+    record), this collection - not a novel - is her actual first
+    published book: she compiled it on the advice of poet Pablo Neruda,
+    whom she had gone to interview and who told her she had too much
+    imagination to be a journalist. Catalogued (National Library of
+    Chile's Memoria Chilena digital collection) as Editorial Lord
+    Cochrane, Santiago, 1974.
+  sources:
+    - https://en.wikipedia.org/wiki/Isabel_Allende
+    - https://www.memoriachilena.gob.cl/602/w3-article-65095.html
+
+- id: isabel-allende/la-abuela-panchita
+  title: "La Abuela Panchita"
+  authorIds: [isabel-allende]
+  published: 1974
+  subseries: null
+  canonTier: extended
+  format: picture-book
+  synopsis: >
+    An illustrated children's story, one of two Allende published while
+    on the editorial staff of the Chilean children's magazine Mampato.
+  note: >
+    Illustrated by Marta Carrasco, Editorial Lord Cochrane, Santiago -
+    per both English and Spanish Wikipedia's own Works sections.
+  sources:
+    - https://en.wikipedia.org/wiki/Isabel_Allende
+    - https://es.wikipedia.org/wiki/Isabel_Allende
+
+- id: isabel-allende/lauchas-y-lauchones-ratas-y-ratones
+  title: "Lauchas y Lauchones, Ratas y Ratones"
+  authorIds: [isabel-allende]
+  published: 1974
+  subseries: null
+  canonTier: extended
+  format: picture-book
+  synopsis: >
+    A second illustrated children's story from the same Mampato period as
+    La Abuela Panchita.
+  note: >
+    Editorial Lord Cochrane, Santiago - per both English and Spanish
+    Wikipedia's own Works sections.
+  sources:
+    - https://en.wikipedia.org/wiki/Isabel_Allende
+    - https://es.wikipedia.org/wiki/Isabel_Allende
+
+# --- Novels (core, 21) ---
+
+- id: isabel-allende/la-casa-de-los-espiritus
+  title: "La Casa de los Espíritus"
+  authorIds: [isabel-allende]
+  published: 1982
+  subseries: "Trilogía involuntaria"
+  canonTier: core
+  featured: true
+  synopsis: >
+    Across three generations of the Trueba family in an unnamed South
+    American country, a clairvoyant matriarch's gift for seeing the
+    future and a patriarch's iron will collide with land reform,
+    revolution and, in the end, a military coup that her granddaughter
+    survives to tell the story.
+  note: >
+    Allende's literary debut, begun in January 1981 as a letter to her
+    dying grandfather while she was in exile in Caracas; her own
+    long-standing writing ritual is to start a new book every 8 January
+    in its memory (isabelallende.com/en/timeline). First of the
+    "Trilogía involuntaria" grouping - see this file's own header.
+  sources:
+    - https://en.wikipedia.org/wiki/The_House_of_the_Spirits
+    - https://www.isabelallende.com/en/timeline
+
+- id: isabel-allende/de-amor-y-de-sombra
+  title: "De Amor y de Sombra"
+  authorIds: [isabel-allende]
+  published: 1984
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A magazine journalist and a photographer, investigating a massacre
+    hidden by a Latin American military dictatorship, uncover the
+    regime's atrocities and fall in love in the course of exposing them.
+  sources:
+    - https://en.wikipedia.org/wiki/Of_Love_and_Shadows
+    - https://es.wikipedia.org/wiki/Isabel_Allende
+
+- id: isabel-allende/la-ninfa-de-porcelana
+  title: "La Ninfa de Porcelana"
+  authorIds: [isabel-allende]
+  published: 1984
+  subseries: null
+  canonTier: core
+  format: novella
+  synopsis: >
+    A man who buys a porcelain figurine finds his life transformed after
+    the seller warns him it will change him.
+  note: >
+    Her thinnest, least-documented book: sourced only to a handful of
+    reader reviews and her own official site (which has never issued an
+    English translation of it), not to a dedicated encyclopedia article
+    the way every other work here is. See this file's header on the
+    title change from its 1984 name, "La gorda de porcelana." Tiered core
+    on the same publication-kind test as the rest of this list rather
+    than downgraded for being obscure (CURATION.md #7). Its exact form is
+    not settled here: several reader sources call it a "cuento," which
+    would make short-story the more accurate `format` than novella.
+  sources:
+    - https://www.isabelallende.com/en/book/ninfa
+    - https://en.wikipedia.org/wiki/Isabel_Allende
+
+- id: isabel-allende/eva-luna
+  title: "Eva Luna"
+  authorIds: [isabel-allende]
+  published: 1987
+  subseries: null
+  canonTier: core
+  synopsis: >
+    An orphaned, self-taught storyteller in an unnamed South American
+    country narrates her own life from an improvised childhood through
+    decades of the country's political upheaval, her voice interwoven
+    with that of Rolf Carlé, an Austrian immigrant filmmaker.
+  sources:
+    - https://en.wikipedia.org/wiki/Eva_Luna
+
+- id: isabel-allende/el-plan-infinito
+  title: "El Plan Infinito"
+  authorIds: [isabel-allende]
+  published: 1991
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Gregory Reeves, a North American man, is traced across five decades
+    from a childhood in Los Angeles through the Vietnam War to the
+    crises of his later life.
+  note: >
+    Her first novel with a male American protagonist rather than a South
+    American setting or narrator.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Infinite_Plan
+
+- id: isabel-allende/hija-de-la-fortuna
+  title: "Hija de la Fortuna"
+  authorIds: [isabel-allende]
+  published: 1998
+  subseries: "Trilogía involuntaria"
+  canonTier: core
+  synopsis: >
+    Eliza Sommers, a young Chilean woman raised by English expatriates in
+    1840s Valparaíso, disguises herself and stows away to California
+    during the Gold Rush in pursuit of the man she loves, and finds a
+    life she did not plan on the way.
+  note: >
+    Second of the "Trilogía involuntaria" grouping - see this file's own
+    header. An Oprah's Book Club selection, February 2000.
+  sources:
+    - https://en.wikipedia.org/wiki/Daughter_of_Fortune
+
+- id: isabel-allende/retrato-en-sepia
+  title: "Retrato en Sepia"
+  authorIds: [isabel-allende]
+  published: 2000
+  subseries: "Trilogía involuntaria"
+  canonTier: core
+  synopsis: >
+    Aurora del Valle, granddaughter of Daughter of Fortune's Eliza
+    Sommers, has no memory of her own first five years and spends the
+    book piecing her erased early childhood and her family's buried
+    history back together.
+  note: >
+    Third of the "Trilogía involuntaria" grouping - see this file's own
+    header. A direct sequel to Hija de la fortuna; its own family
+    connections (Paulina del Valle among them) resurface decades later in
+    Mi nombre es Emilia del Valle (2025) - see that work's own note.
+  sources:
+    - https://en.wikipedia.org/wiki/Portrait_in_Sepia
+
+- id: isabel-allende/la-ciudad-de-las-bestias
+  title: "La Ciudad de las Bestias"
+  authorIds: [isabel-allende]
+  published: 2002
+  subseries: "Las memorias del Águila y del Jaguar"
+  canonTier: core
+  synopsis: >
+    Alexander Cold, a teenage American boy, joins his journalist
+    grandmother's Amazon expedition and befriends Nadia Santos, a local
+    girl; each discovers a totemic animal spirit - jaguar and eagle - as
+    they uncover a hidden tribe's secret.
+  note: >
+    First of "Las memorias del Águila y del Jaguar" - see this file's own
+    header.
+  sources:
+    - https://en.wikipedia.org/wiki/City_of_the_Beasts
+
+- id: isabel-allende/el-reino-del-dragon-de-oro
+  title: "El Reino del Dragón de Oro"
+  authorIds: [isabel-allende]
+  published: 2003
+  subseries: "Las memorias del Águila y del Jaguar"
+  canonTier: core
+  synopsis: >
+    Alexander and Nadia travel to a hidden Himalayan kingdom to help its
+    young prince recover a sacred golden dragon statue stolen by
+    treasure hunters.
+  note: >
+    Second of "Las memorias del Águila y del Jaguar." English Wikipedia's
+    own infobox carries a 2004 Library of Congress deposit date against a
+    2003 Spanish first edition; `published` here follows the original
+    Spanish-language publication year, per this catalogue's standing rule
+    (SCHEMA.md).
+  sources:
+    - https://en.wikipedia.org/wiki/Kingdom_of_the_Golden_Dragon
+
+- id: isabel-allende/el-bosque-de-los-pigmeos
+  title: "El Bosque de los Pigmeos"
+  authorIds: [isabel-allende]
+  published: 2004
+  subseries: "Las memorias del Águila y del Jaguar"
+  canonTier: core
+  synopsis: >
+    Alexander and Nadia travel to a Central African rainforest and become
+    entangled in the enslavement of a Pygmy community by a corrupt local
+    strongman.
+  note: >
+    Third of "Las memorias del Águila y del Jaguar" - the entry whose own
+    Wikipedia infobox directly names the series (see this file's header).
+  sources:
+    - https://en.wikipedia.org/wiki/Forest_of_the_Pygmies
+
+- id: isabel-allende/el-zorro-comienza-la-leyenda
+  title: "El Zorro: Comienza la Leyenda"
+  authorIds: [isabel-allende]
+  published: 2005
+  subseries: null
+  canonTier: core
+  synopsis: >
+    An authorized origin story for the masked vigilante Zorro, following
+    Diego de la Vega from a childhood split between Spanish California
+    and his mother's Indigenous heritage, through training in Barcelona,
+    to the double life that makes him a legend.
+  note: >
+    Written with the cooperation of Zorro Productions, Inc., the rights
+    holder to the character created by Johnston McCulley in 1919 - an
+    authorized tie-in rather than an original Allende property, but a
+    full novel of her own prose, not a work-for-hire credit.
+  sources:
+    - https://en.wikipedia.org/wiki/Zorro_(novel)
+
+- id: isabel-allende/ines-del-alma-mia
+  title: "Inés del Alma Mía"
+  authorIds: [isabel-allende]
+  published: 2006
+  subseries: null
+  canonTier: core
+  synopsis: >
+    An elderly Inés Suárez, writing her own life story as a memoir
+    addressed to her adoptive daughter, recounts her journey from Spain
+    to the Americas and her role alongside conquistador Pedro de
+    Valdivia in founding Santiago and conquering Chile.
+  sources:
+    - https://en.wikipedia.org/wiki/In%C3%A9s_of_My_Soul
+
+- id: isabel-allende/la-isla-bajo-el-mar
+  title: "La Isla Bajo el Mar"
+  authorIds: [isabel-allende]
+  published: 2009
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Zarité, enslaved from birth on a Saint-Domingue sugar plantation,
+    lives through the Haitian Revolution and eventually finds freedom in
+    New Orleans.
+  sources:
+    - https://en.wikipedia.org/wiki/Island_Beneath_the_Sea
+
+- id: isabel-allende/el-cuaderno-de-maya
+  title: "El Cuaderno de Maya"
+  authorIds: [isabel-allende]
+  published: 2011
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Maya Vidal, a troubled American teenager, flees a criminal past
+    across Las Vegas and Berkeley for her late grandmother's native
+    island of Chiloé, Chile, to disappear and start over.
+  sources:
+    - https://en.wikipedia.org/wiki/Isabel_Allende
+
+- id: isabel-allende/el-juego-de-ripper
+  title: "El Juego de Ripper"
+  authorIds: [isabel-allende]
+  published: 2014
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Amanda, a brilliant, MIT-bound teenager, and the friends she plays an
+    online mystery game with turn amateur detectives to track a real
+    serial killer terrorizing San Francisco.
+  note: >
+    Originally conceived as a co-written detective novel with her
+    then-husband William C. Gordon, a mystery novelist himself; per
+    Allende's own account (El Clarín, quoted on Spanish Wikipedia), the
+    collaboration did not work out in practice and she kept the story as
+    her own - so no `withAuthorIds` credit is recorded here.
+  sources:
+    - https://es.wikipedia.org/wiki/Isabel_Allende
+    - https://www.britannica.com/topic/Ripper-by-Allende
+
+- id: isabel-allende/el-amante-japones
+  title: "El Amante Japonés"
+  authorIds: [isabel-allende]
+  published: 2015
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Alma Belasco, an elderly woman newly moved into a San Francisco
+    retirement home, reveals to her young caretaker a lifelong secret
+    love affair with Ichimei Fukuda, a Japanese-American gardener, begun
+    in 1939 and shadowed by his family's wartime internment.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Japanese_Lover
+
+- id: isabel-allende/mas-alla-del-invierno
+  title: "Más Allá del Invierno"
+  authorIds: [isabel-allende]
+  published: 2017
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Three strangers thrown together by a car accident during a Brooklyn
+    snowstorm spend one night untangling each other's pasts across Chile,
+    Guatemala and Brazil.
+  note: >
+    One of two Allende titles banned from Florida school libraries
+    (2017 book, per Spanish Wikipedia's "Censura" section, alongside La
+    casa de los espíritus).
+  sources:
+    - https://en.wikipedia.org/wiki/In_the_Midst_of_Winter
+    - https://es.wikipedia.org/wiki/Isabel_Allende
+
+- id: isabel-allende/largo-petalo-de-mar
+  title: "Largo Pétalo de Mar"
+  authorIds: [isabel-allende]
+  published: 2019
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Victor Dalmau, a doctor who fought for the Spanish Republic, and
+    Roser, his late brother's widow, flee Spain by refugee ship after the
+    Civil War and rebuild their lives together in Chile, only to live
+    through another country's descent into dictatorship decades later.
+  sources:
+    - https://en.wikipedia.org/wiki/A_Long_Petal_of_the_Sea
+
+- id: isabel-allende/violeta
+  title: "Violeta"
+  authorIds: [isabel-allende]
+  published: 2022
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Violeta del Valle, born in an unnamed South American country in 1920
+    and writing in old age as a letter to someone she loves, recounts a
+    hundred years of her own life set against a century of the
+    continent's upheavals.
+  sources:
+    - https://en.wikipedia.org/wiki/Violeta_(novel)
+
+- id: isabel-allende/el-viento-conoce-mi-nombre
+  title: "El Viento Conoce Mi Nombre"
+  authorIds: [isabel-allende]
+  published: 2023
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Two child refugees separated from their families eight decades
+    apart - a Jewish boy fleeing Vienna at the outset of the Holocaust,
+    and a Salvadoran girl separated from her mother at the present-day
+    U.S. border - are told in interwoven stories of loss and searching
+    for home.
+  sources:
+    - https://www.npr.org/2023/06/10/1180103464/book-review-isabel-allende-novel-the-wind-knows-my-name
+    - https://www.isabelallende.com/en/book/thewind
+
+- id: isabel-allende/mi-nombre-es-emilia-del-valle
+  title: "Mi Nombre Es Emilia del Valle"
+  authorIds: [isabel-allende]
+  published: 2025
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Emilia del Valle, an American journalist of Irish and Chilean
+    descent, travels to Chile to cover its 1891 civil war and is drawn
+    into the family - and the estranged father - she never knew.
+  note: >
+    Emilia is written into the del Valle family that already runs
+    through La casa de los espíritus and Retrato en sepia (Paulina del
+    Valle, a figure from Retrato en sepia, is named as Emilia's
+    great-aunt) - a genuine, sourced connective thread across decades of
+    the catalogue, recorded here as a note rather than as `subseries`,
+    since it is a single family-tree callback rather than a marketed or
+    publisher-numbered sequence.
+  sources:
+    - https://www.britannica.com/topic/My-Name-Is-Emilia-del-Valle
+    - https://historicalnovelsociety.org/reviews/my-name-is-emilia-del-valle/
+
+# --- Story and journalism collections, extended ---
+
+- id: isabel-allende/cuentos-de-eva-luna
+  title: "Cuentos de Eva Luna"
+  authorIds: [isabel-allende]
+  published: 1989
+  subseries: null
+  canonTier: extended
+  format: short-story-collection
+  synopsis: >
+    Twenty-three short stories narrated by Eva Luna, the storyteller
+    protagonist of the preceding novel, opening with "Dos Palabras" ("Two
+    Words"), the collection's best-known and most frequently
+    anthologized piece.
+  note: >
+    "Dos Palabras" is not catalogued separately - see this file's own
+    header.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Stories_of_Eva_Luna
+    - https://es.wikipedia.org/wiki/Isabel_Allende
+
+# --- Memoir and nonfiction, extended ---
+
+- id: isabel-allende/paula
+  title: "Paula"
+  authorIds: [isabel-allende]
+  published: 1994
+  subseries: null
+  canonTier: extended
+  format: memoir
+  synopsis: >
+    Written as a letter to her comatose daughter Paula Frías Allende, an
+    account of Allende's own childhood, exile and family history,
+    alongside the medical crisis that took Paula's life in December 1992.
+  sources:
+    - https://en.wikipedia.org/wiki/Paula_(memoir)
+
+- id: isabel-allende/afrodita
+  title: "Afrodita"
+  authorIds: [isabel-allende]
+  published: 1997
+  subseries: null
+  canonTier: extended
+  format: memoir
+  synopsis: >
+    A genre-blending memoir on food, aphrodisiacs and sensuality,
+    combining personal essay with recipes.
+  note: >
+    Spanish original 1997 (Plaza & Janés/Sudamericana); English
+    translation, "Aphrodite: A Memoir of the Senses," followed in 1998 -
+    `published` here is the Spanish year, per this catalogue's standing
+    rule.
+  sources:
+    - https://en.wikipedia.org/wiki/Isabel_Allende
+
+- id: isabel-allende/mi-pais-inventado
+  title: "Mi País Inventado"
+  authorIds: [isabel-allende]
+  published: 2003
+  subseries: null
+  canonTier: extended
+  format: memoir
+  synopsis: >
+    A memoir of Chile and Chilean identity, written after the September
+    11, 2001 attacks prompted a visit home that reopened her sense of
+    exile and belonging.
+  sources:
+    - https://en.wikipedia.org/wiki/Isabel_Allende
+
+- id: isabel-allende/la-suma-de-los-dias
+  title: "La Suma de los Días"
+  authorIds: [isabel-allende]
+  published: 2007
+  subseries: null
+  canonTier: extended
+  format: memoir
+  synopsis: >
+    A memoir of the years following Paula's death: Allende's life with
+    her extended family, her second husband William Gordon, and her
+    grandchildren.
+  note: >
+    Spanish original 2007; English translation "The Sum of Our Days"
+    followed in 2008 - `published` here is the Spanish year.
+  sources:
+    - https://en.wikipedia.org/wiki/Isabel_Allende
+
+- id: isabel-allende/mujeres-del-alma-mia
+  title: "Mujeres del Alma Mía"
+  authorIds: [isabel-allende]
+  published: 2020
+  subseries: null
+  canonTier: extended
+  format: memoir
+  synopsis: >
+    An essayistic memoir tracing Allende's lifelong feminism from a
+    self-described "feminist in kindergarten" to her reflections on
+    aging, in the context of the causes - reproductive rights, MeToo -
+    she has championed as an adult.
+  note: >
+    Spanish original 2020; English translation "The Soul of a Woman"
+    followed in 2021 - `published` here is the Spanish year.
+  sources:
+    - https://www.britannica.com/topic/The-Soul-of-a-Woman
+    - https://es.wikipedia.org/wiki/Isabel_Allende
+
+- id: isabel-allende/la-palabra-magica
+  title: "La Palabra Mágica"
+  authorIds: [isabel-allende]
+  published: 2026
+  subseries: null
+  canonTier: extended
+  format: memoir
+  synopsis: >
+    A reflection on nearly five decades of writing - her creative
+    process, her habits, and what she has learned from the triumphs and
+    mistakes of a long career - framed by her publisher as equal parts
+    memoir and masterclass.
+  note: >
+    Published in Spanish and English the same year (English title
+    "Story Telling: A Writing Life"); both editions share one page on
+    Allende's own official site (isabelallende.com/.../storytelling),
+    treated here as one work under its Spanish title.
+  sources:
+    - https://www.isabelallende.com/en/book/storytelling/summary
+    - https://archive.org/details/Isabel_Allende_-_La_palabra_magica
+
+# --- Children's picture books (English-original), extended ---
+
+- id: isabel-allende/perla-la-super-perrita
+  title: "Perla the Mighty Dog"
+  authorIds: [isabel-allende]
+  published: 2024
+  subseries: "Perla"
+  canonTier: extended
+  format: picture-book
+  synopsis: >
+    The first of an illustrated children's picture-book series about
+    Perla, a small dog with two unlikely superpowers: making everyone
+    love her, and roaring like a lion.
+  note: >
+    Written in English, illustrated by Sandy Rodríguez, published
+    simultaneously in a Spanish edition ("Perla, la súper perrita") -
+    unlike the rest of this bibliography, an English-original rather than
+    an English translation of a prior Spanish book. `title` is kept as
+    the English original per this catalogue's rule that title is the
+    language the work was actually composed in.
+  sources:
+    - https://www.isabelallende.com/en/book/perla
+    - https://es.wikipedia.org/wiki/Isabel_Allende
+
+- id: isabel-allende/perla-y-el-pirata
+  title: "Perla and the Pirate"
+  authorIds: [isabel-allende]
+  published: 2025
+  subseries: "Perla"
+  canonTier: extended
+  format: picture-book
+  synopsis: >
+    Second Perla picture book: Perla's superpowers are put to the test
+    when her human brother's adventure with a costumed "pirate" goes
+    wrong.
+  sources:
+    - https://www.isabelallende.com/en/book/pirata
+
+- id: isabel-allende/perla-y-la-princesa
+  title: "Perla and the Princess"
+  authorIds: [isabel-allende]
+  published: 2026
+  forthcoming: 2026-09-01
+  subseries: "Perla"
+  canonTier: extended
+  format: picture-book
+  synopsis: >
+    Third Perla picture book: Perla saves her human brother, Nico Rico,
+    and a little girl dressed as a princess after the two get lost during
+    a Cinco de Mayo party.
+  note: >
+    Announced U.S. release 1 September 2026 (Amazon.co.za pre-order
+    listing, cross-checked against the Penguin Random House catalogue
+    page for the same ISBN); not yet published as of this scaffold.
+  sources:
+    - https://www.penguinrandomhouse.com/books/726613/perla-and-the-princess-by-isabel-allende-illustrated-by-sandy-rodriguez/
+    - https://www.isabelallende.com/en/book/princesa
+
+# --- Apocrypha (2) ---
+
+- id: isabel-allende/los-amantes-del-guggenheim
+  title: "Los Amantes del Guggenheim / El Oficio de Contar"
+  authorIds: [isabel-allende]
+  published: 2007
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    A slim volume pairing a short story - two strangers found asleep
+    together at dawn in Bilbao's Guggenheim Museum - with a short essay
+    on her own creative process and motivations as a writer.
+  note: >
+    45 pages (Sudamericana, 2007/2008 printings both attested). No
+    `format` value in this catalogue's taxonomy cleanly covers a single
+    volume pairing one short story with one craft essay, so none is set
+    here. Not found on Allende's own English-language site or
+    bibliography - apparently never issued in English translation, a
+    finding rather than an assumption.
+  sources:
+    - https://archive.org/details/Isabel_Allende_-_Los_amantes_del_Guggenheim._El_oficio_de_contar
+
+- id: isabel-allende/amor
+  title: "Amor"
+  authorIds: [isabel-allende]
+  published: 2012
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    A compiled anthology of love and erotic scenes drawn from across her
+    own previously published books, organized by stage of life, opening
+    with a new essay on her own first experiences with sex.
+  note: >
+    Per its own official-site summary (isabelallende.com/en/book/amor,
+    Spanish-only text, no English edition), first published in Germany,
+    with editions in other languages following - so likely composed and
+    first issued in German translation rather than Spanish, an inversion
+    of every other item in this bibliography; not independently verified
+    beyond that one page. No `format` value in this catalogue's taxonomy
+    covers a self-compiled anthology of an author's own prior fiction
+    plus one new essay, so none is set here.
+  sources:
+    - https://www.isabelallende.com/en/book/amor/summary
+    - https://es.wikipedia.org/wiki/Isabel_Allende
