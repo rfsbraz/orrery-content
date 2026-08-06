@@ -1,0 +1,70 @@
+stage: event-resonance
+summary: >
+  Read content/events/global.yaml directly (19 entries) and listed every
+  entry whose year falls inside Isabel Allende's lifetime (born 1942,
+  living): 14 candidates. Ruled 1 include (covid-19-pandemic-2020), 13
+  exclude. aura_density.py isabel-allende: 27 -> 14 (0.75 -> 0.39/work);
+  worst dark run 4 yrs (1977-1980, pre-existing) -> 10 yrs (2004-2013).
+  Removing six events that were arithmetically padding real silences opened
+  two more runs at the 5-year flag line (1982-1986, 1997-2002) that the
+  script doesn't print (it reports only the worst). None patched here - see
+  forStages.press-archaeology. validate.py --slug isabel-allende: 0 errors,
+  1 expected pre-existing warning (no theme.art).
+decisions:
+  include:
+    - id: covid-19-pandemic-2020
+      why: "Violeta (2022) bookends its narrator's life between the 1920 flu she is born into and the COVID pandemic she dies in - the novel's own framing device, confirmed on en.wikipedia.org/wiki/Violeta_(novel)"
+  exclude:
+    - id: sept-11-2001
+      why: "a link to Mi país inventado (2003) was specifically sought, twice (press-archaeology and here), and not found in any fetchable source"
+    - id: financial-crisis-2008
+      why: "lived through it; no book answers it"
+    - id: armed-services-editions-1943
+      why: "US wartime paperback habit, different language and market, 31 years before her debut"
+    - id: comics-code-authority-1954
+      why: "she has never written comics"
+    - id: lady-chatterley-trial-1960
+      why: "a UK obscenity ruling; her own frank sexuality draws on a Latin American tradition it never touched"
+    - id: fantasy-paperback-boom-1965
+      why: "she does not write epic fantasy"
+    - id: carnation-revolution-1974
+      why: "Portuguese censorship history; her own exile/censorship story is Chilean, under Pinochet, already a lifeEvent"
+    - id: chain-bookshop-1982
+      why: "her 1982 breakout is sourced to translation deals and word of mouth, not shelf display, in every source checked"
+    - id: online-bookselling-1995
+      why: "backlist findability is generic to any prolific author; no source ties it to her"
+    - id: ebook-and-self-publishing-2007
+      why: "traditionally published throughout; no sourced ebook-native or self-publishing narrative"
+    - id: prestige-fantasy-adaptation-2011
+      why: "not her genre; her own screen history is a separate, already-recorded franchise event"
+    - id: portugal-bailout-2011
+      why: "Portuguese sovereign-debt crisis; no sourced tie to a Chilean-American author"
+    - id: booktok-2020
+      why: "no sourced BookTok-driven rediscovery; bestseller continuously since 1982"
+verification: >
+  Violeta's framing: fetched en.wikipedia.org/wiki/Violeta_(novel) directly.
+  Sept-11 link: fetched en.wikipedia.org/wiki/Isabel_Allende directly,
+  found no stated connection. WebSearch was unavailable this run (session
+  budget exhausted before this stage began); all checks used WebFetch
+  against known URLs plus the wing's own sourced files.
+forStages:
+  press-archaeology: >
+    Excluding chain-bookshop-1982, sept-11-2001, ebook-and-self-publishing-2007,
+    financial-crisis-2008, prestige-fantasy-adaptation-2011 and
+    portugal-bailout-2011 removed arithmetic padding over three real gaps in
+    the wing's OWN aura (life + franchise events only): 1982-1986 (5 yrs,
+    between the 1981 letter and the 1987 divorce - covers La casa de los
+    espíritus and De amor y de sombra), 1997-2002 (6 yrs, between the 1996
+    Foundation and 2003's My Invented Country - covers Hija de la Fortuna
+    and Retrato en Sepia), and 2004-2013 (10 yrs, the reported worst,
+    between My Invented Country and the 2014 Medal of Freedom - covers
+    Zorro, Inés del Alma Mía, La suma de los días, La isla bajo el mar and
+    El cuaderno de Maya). No global event survives the resonance test for
+    any of these years, so none is patched here. Not confirmed as
+    under-researched vs. genuinely quiet stretches - that judgment belongs
+    to this skill, per its own precedent on the accepted 1977-1980 gap.
+openQuestions:
+  - >
+    No further search was possible this run (budget exhausted); a second
+    pass with search access might source a real Mi país inventado / 9-11
+    link, which would flip sept-11-2001 to include if found.
