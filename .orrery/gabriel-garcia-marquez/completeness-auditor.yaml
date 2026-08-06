@@ -56,3 +56,35 @@ openQuestions:
   - "Carried: no formal name found for the tres-libros grouping; add one only if a real source supplies it."
   - "NEW: El año de la peste is a real, produced screenplay credit missing from both primary sources. Viva Sandino is already apocrypha on weaker evidence (unconfirmed production, sole credit). Should this join it as a second apocrypha entry with withAuthorIds for its 2 co-writers, or is its multi-author/adapted-from-another-novel character out of scope? Scope call per CURATION.md."
   - "NEW, lower stakes: the 4 press anthologies left out as subsumed by Obra periodística were judged by career-span overlap, not a page-by-page collation of contents. Worth a fuller check if a future pass has time."
+
+auditFixesApplied:
+  stage: audit-fixes-completeness
+  appliedAgainst: wing-audit.yaml
+  fixes:
+    - id: macondo-first-appearance-is-wrong (blocking)
+      action: >
+        la-hojarasca's note now separates composition (Macondo invented
+        there, drafted 1948-1949) from publication ("Un día después del
+        sábado", 1954, reached print first). ojos-de-perro-azul's note
+        drops "after La hojarasca"; Monólogo is now only a plausible
+        early appearance. Cited Centro Gabo on both. Synopsis untouched.
+    - id: erendira-aggregator-sources
+      action: "Dropped xpressenglish.com and supersummary.com; es.wikipedia already supports the claim."
+    - id: duas-solidoes-exclusion-undocumented
+      action: >
+        Added to CONSIDERED AND LEFT OUT: BNP record + 1968 first
+        publication (OL5721508M), same third-party/multi-author grounds
+        as Gabo periodista and Chile/Soledad, Guayaba named as the
+        adjacent case that differs. No work entry added.
+    - id: works-header-contradicts-eras
+      action: >
+        Dropped the false "eras.yaml names both shapes" parenthesis and
+        the same sentence's stale "La hojarasca is its first appearance"
+        claim; "this draft" -> "this catalogue"; translator paragraph now
+        says editions.yaml carries that field, not "once that stage runs".
+    - id: translation-note (curatorsCall, MOVE)
+      action: >
+        Trimmed translationNote to a one-line pointer - inert field, no
+        reader-choice bar met. Fuller anecdote moves to a 1970 event,
+        added by audit-fixes-press in a parallel worktree.
+  validated: "0 errors, 27 warnings (same 20 era warnings; +1 handoff-cap vs baseline is wing-audit.yaml's own handoff, unrelated to these fixes)."
