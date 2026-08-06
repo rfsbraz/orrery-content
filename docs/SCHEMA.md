@@ -192,6 +192,72 @@ lifeEvents:
 sources: [https://...]
 ```
 
+### heteronyms: literary personas with their own authored biography
+
+**Added 2026-08-06** (orrery-content#70, ruling on #68 Fernando Pessoa), resolving the
+"when does a persona get its own timeline?" question: **a pseudonym has a
+publishing history, not a life** (stays a flat `pseudonyms:` entry - Bachman,
+Westmacott); **a heteronym has an authored life**, invented by the real author
+down to a birth date, a death, a philosophy, and other heteronyms who react to
+it in print. That is content, not metadata, and `pseudonyms` (`name` + `note`)
+has no room for it. Deliberately a **new field, not a nested author entity**:
+`content/authors/<slug>.yaml` is documented above as one file per human being,
+and a heteronym is not a person Pessoa was - a separate author file would
+misstate that as literally as `pseudonyms` would understate it.
+
+```yaml
+heteronyms:
+  - id: alberto-caeiro                # stable forever, same rule as any id
+    name: "Alberto Caeiro"
+    authored: true                    # required: marks born/died/lifeEvents as
+                                       # written fiction, never biographical fact
+    born: 1889-04-16
+    died: 1915-11-04
+    bio: >
+      The persona's own philosophy, style and role among the heteronyms -
+      what makes this a distinct literary voice, not a pen name.
+    lifeEvents:
+      - id: caeiro-death-1915
+        date: 1915-11-04
+        title: "Alberto Caeiro dies of tuberculosis (authored)"
+        impact: high
+        description: >
+          A written event within Pessoa's fiction, not a real death - state
+          this plainly in the description itself, not only in `authored`.
+        spoilerAfter: null
+        sources: [https://...]
+```
+
+On a work, link it to the heteronym that "wrote" it:
+
+```yaml
+- id: fernando-pessoa/o-guardador-de-rebanhos
+  title: "O Guardador de Rebanhos"
+  authorIds: [fernando-pessoa]        # the real person - never the heteronym's id
+  heteronym: alberto-caeiro           # refs heteronyms[].id on an authorIds entity
+  publishedAs: "Alberto Caeiro"       # the byline the book actually carries
+```
+
+`authorIds` stays real-person-only everywhere in the catalogue; a heteronym is
+never valid there. `publishedAs` already existed for exactly this shape ("only
+when the cover name differs") and needs no change - Caeiro's poetry was
+published under "Alberto Caeiro" as literally as a Bachman novel was published
+under his name.
+
+**`authored: true` is not decorative.** Every consumer that reads a
+heteronym's `born`/`died`/`lifeEvents` must treat them as narrative content
+requiring the same framing a spoiler or an in-universe claim would, never as
+fact about a real person's life - the distinction this field exists to keep
+`aura_density.py` and any future timeline view from erasing by treating every
+dated entry the same way.
+
+> **Known limitation, app support is a follow-up.** Like `translationNote`,
+> this field renders nowhere in the app yet - no heteronym timeline or info
+> card exists to consume it. Safe to ship in content ahead of that, since an
+> unrendered field poses none of the biography-as-fact risk the `authored`
+> flag is guarding against; whether and how to surface it to a reader is a
+> separate, later decision.
+
 ## works.yaml
 
 ```yaml
@@ -205,6 +271,7 @@ sources: [https://...]
   format: novel                  # optional, defaults to novel; screenplay | play (see below)
   featured: true                 # optional; a work that changed the life (see below)
   publishedAs: "Richard Bachman" # optional; only when the cover name differs
+  heteronym: alberto-caeiro      # optional; refs an authorIds entity's heteronyms[].id (see above)
   withAuthorIds: [peter-straub]  # optional collaborators (global author ids)
   authorRole: author             # author | co-author | contributor | editor
   contributionTitle: "The Reach" # optional; the piece contributed, if not the whole book
