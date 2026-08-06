@@ -55,6 +55,82 @@ globalEvents:
     - booktok-2020               # marketing/social discovery, not page content
     - portugal-bailout-2011      # Alexandra's heritage country; no book answers it
 
+# STARTHERE. Three paths: one book to try the series without commitment, the
+# eleven-novel Joona Linna run for a reader who wants the case-file thread
+# alone (orders.yaml's lars-kepler/joona-linna-only), and everything. No path
+# claims the authors point new readers at Hypnotisören specifically - their
+# own FAQ (larskepler.com/keplers-universe/) says every book stands alone -
+# so the first path is named for what it verifiably is: the actual
+# beginning, not a claimed recommendation. No source checked (English or
+# Swedish - larskepler.com, orderofbooks.com, CrimeReads, Swedish and
+# English Wikipedia) argues for a different entry point, and nothing about
+# Hypnotisören matches this catalogue's usual reasons to steer a newcomer
+# elsewhere - it is not an unfinished cycle, not an atypical outlier next to
+# the rest of the shelf, and not a rough first outing later books outgrew:
+# it is the pseudonym's debut and, per its own publisher, one of the
+# best-selling Swedish crime novels ever written.
+startHere:
+  paths:
+    # Source: https://larskepler.com/keplers-universe/ - "Yes, every book
+    # can be read as a stand-alone. There is always a new case for Joona
+    # Linna to solve, a mystery that is given its explanation at the end.
+    # But if you chose to read the books in order you will also be able to
+    # follow the full story of Joona Linna and Saga Bauer." Nothing found
+    # recommends a different specific book as the entry point; this path
+    # claims no more than what the authors themselves state.
+    - id: where-it-begins
+      title: Where it begins
+      description: >
+        A hypnotist is asked to help police reach a murder witness who
+        cannot speak - Joona Linna's first case, and the book that created
+        the Lars Kepler name. The authors say every novel in the series
+        stands on its own, so this is simply the natural place to try one.
+      workIds:
+        - lars-kepler/hypnotisoren
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        If you go on afterwards, starting here also means meeting Joona
+        Linna and Saga Bauer at the actual beginning of their continuing
+        story - a bonus the authors say comes from reading in order, not a
+        requirement of reading this one book.
+
+    - id: joona-linna-front-to-back
+      title: The Joona Linna series, front to back
+      description: >
+        All eleven cases, from [[work:lars-kepler/hypnotisoren|Hypnotisören]]
+        to the forthcoming [[work:lars-kepler/medusa|Medusa]], with nothing
+        from outside the series breaking up the run.
+      workIds: null
+      orderId: lars-kepler/joona-linna-only
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        Eleven books is a real span before you know whether the voice is
+        for you - the trade this path makes for a clean run through the
+        case-file thread alone. It leaves out Playground and Sjömannen
+        entirely, not as lesser work, just a different shelf.
+
+    - id: everything-in-order
+      title: Everything, in order
+      description: >
+        All thirteen works - the eleven Joona Linna novels plus the
+        standalone [[work:lars-kepler/playground|Playground]] and the story
+        collection [[work:lars-kepler/sjomannen|Sjömannen]] - in publication
+        order.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+      note: >
+        Includes the two works published outside the Joona Linna series
+        proper, sitting where they were actually released rather than
+        grouped apart from it.
+
 sources:
   - "https://en.wikipedia.org/wiki/Lars_Kepler"
   - "https://sv.wikipedia.org/wiki/Lars_Kepler"

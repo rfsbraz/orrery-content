@@ -1,0 +1,89 @@
+stage: reading-orders
+summary: >
+  One order shipped, one rejected, three-path startHere added - all sourced
+  directly (re-fetched), not carried from eras' handoff unchecked.
+
+  ORDER lars-kepler/joona-linna-only (curated): the eleven Joona Linna
+  novels filtered from the derived default (not reordered), leaving out
+  Playground and Sjömannen. Sourced to sv.wikipedia's bibliography split
+  ("Joona Linna-serien" vs "Fristående verk") and Bonniers' own Medusa
+  ("den elfte boken...") and Playground ("Serie: Playground") pages. Same
+  shape as this catalogue's Discworld/Jo Nesbo thread orders.
+
+  REJECTED: a "Jurek Walter arc" order (Sandmannen-Lazarus). Confirmed
+  eras' finding - the connection is real but no source names or
+  recommends the subset, so it stays a rejection, recorded in orders.yaml's
+  header rather than shipped.
+
+  STARTHERE: "Where it begins" (hypnotisoren, new/taste), "The Joona Linna
+  series, front to back" (joona-linna-only, new+returning/arc),
+  "Everything, in order" (default, completionist/complete). The first path
+  claims only what the authors' FAQ states (every book stands alone;
+  reading in order adds the Joona/Saga throughline) - no source checked
+  recommends a different specific entry point, and the famous-book trap
+  does not apply (Hypnotisören is the actual debut and a sourced
+  bestseller, not an outlier or a rough opener). WebSearch was unavailable
+  all stage (budget exhausted, same as eras); Google/Bing/DuckDuckGo each
+  blocked on direct fetch too - see sourcesRefused.
+
+  BLACK EDITION: out of scope by design - the entry-point path targets the
+  work id, not an edition; which print edition to surface is an
+  editions-stage/curator call.
+
+produced:
+  contentFiles:
+    - content/franchises/lars-kepler/orders.yaml
+    - content/franchises/lars-kepler/franchise.yaml
+  ordersAdded:
+    - lars-kepler/joona-linna-only
+  ordersRejected:
+    - "Jurek Walter arc (Sandmannen-Lazarus): no source names or recommends the subset; see orders.yaml header"
+  startHerePaths:
+    - where-it-begins
+    - joona-linna-front-to-back
+    - everything-in-order
+
+sourcesUsed:
+  - "https://larskepler.com/keplers-universe/"
+  - "https://sv.wikipedia.org/wiki/Lars_Kepler"
+  - "https://www.albertbonniersforlag.se/bocker/269389/medusa/"
+  - "https://www.albertbonniersforlag.se/bocker/194815/playground/"
+  - "https://www.orderofbooks.com/authors/lars-kepler/"
+  - "https://crimereads.com/?s=Lars+Kepler"
+
+sourcesRefused:
+  - "WebSearch (the tool) was unavailable for this whole stage - session budget already spent (same condition eras reported)."
+  - "google.com/search redirected to a consent wall; html.duckduckgo.com/html returned its own captcha; bing.com/search returned unrelated results for the same query. None usable as a source or as a genuine negative-control test of 'nothing exists' beyond what larskepler.com, orderofbooks.com and CrimeReads' own search already showed directly."
+  - "fantasticfiction.com returned HTTP 405 on direct fetch."
+
+forStages:
+  spoiler-audit: >
+    Two findings, neither acted on here (outside this stage's footprint).
+    First: an ongoing Joona/Saga personal throughline sits underneath the
+    otherwise self-contained cases (the FAQ frames reading in order as how
+    a reader "follows the full story" of the two leads) - a reader taking
+    "every book stands alone" literally and skipping around risks meeting a
+    later personal-arc development early, even though no single case's
+    mystery depends on another. Second, an actual prequel-shaped case:
+    Sjömannen (2025) collects a Jurek Walter backstory story, published
+    seven years after Lazarus (2018), the last of the four novels where he
+    is the antagonist (Sandmannen 2012, Stalker 2014, Kaninjägaren 2016,
+    Lazarus 2018). The derived default naturally sequences Sjömannen after
+    all four, so no order or path here creates the risk - but check
+    Sjömannen's own synopsis in works.yaml for whether it names the
+    connection more than its existing note does.
+  editions: >
+    See "BLACK EDITION" above - the entry-point path targets the work id,
+    not an edition; which print edition an editions.yaml store link should
+    surface for a new reader following it is undecided here.
+  translation: >
+    No pt-PT overlay exists yet for any lars-kepler file (confirmed:
+    content/i18n/pt-PT/franchises/lars-kepler/ does not exist), consistent
+    with translation running once at the end of this wing's build rather
+    than per stage. orders.yaml and franchise.yaml's startHere block are
+    both new prose owed a pt-PT overlay (order name/rationale/debated; path
+    title/description/note) when that stage runs.
+
+openQuestions:
+  - "Whether an eventual editions.yaml should route the 'Where it begins' path's Hypnotisören to the original 2009 text or the 2019/2020 Black edition rewrite - an editions-stage/curator call, not resolved here."
+  - "General web search was unavailable throughout this stage (see sourcesRefused), same condition eras reported for its own research. The findings above rest on the authors' own site, one aggregator (orderofbooks.com) and one genre-press site's own search (CrimeReads), which is a real but not exhaustive corpus for 'does any English-language reading guide single out book one.'"
