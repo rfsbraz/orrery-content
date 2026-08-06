@@ -8,19 +8,44 @@
 # eleven series novels matches the publisher's own numbering (Bonniers'
 # catalogue lists Medusa as "den elfte boken i serien om Joona Linna och
 # Saga Bauer") and Wikipedia's usage; not asserted from community consensus
-# alone.
+# alone. The count of 13 is independently corroborated a third way: the
+# Swedish National Library's LIBRIS catalogue holds a bibliographic record
+# for each of the 13 titles below plus a separate one for the Black edition
+# (see the next paragraph), and Bonniers' own site lists exactly 13 "other
+# books by the author" on the Sjömannen product page, one of them the Black
+# edition, alongside Sjömannen itself as the 14th - i.e. 14 catalogued
+# products, 13 of them works in the sense this file means. English
+# Wikipedia's own bibliography section is three titles behind (missing
+# Sömngångaren, Medusa and Sjömannen entirely) - a live illustration of why
+# a non-anglophone author needs the publisher's own catalogue and the
+# national library, not an English-only sweep.
 #
 # STRUCTURAL CALL: "Hypnotisören - Black edition" (2019/2020, ISBN
-# 9789100186777) is not catalogued as a separate work. Publisher and
-# retailer copy agree it is a rewrite of the original novel for its tenth
-# anniversary - tightened chapters, rewritten dialogue, new scenes, a larger
-# role for Joona Linna - not a new story; it retells Hypnotisören rather
-# than continuing it. Recorded as a note on that work below, flagged for the
-# editions stage rather than given its own id.
+# 9789100186777, own catalogue page at albertbonniersforlag.se/bocker/267245)
+# is not catalogued as a separate work. The publisher's own news release
+# (albertbonniersforlag.se/nyheter/10-arsjubilerande-lars-kepler-firar-med-
+# ny-version-av-hypnotisoren/) and the edition's own catalogue-page copy
+# state directly that the authors rewrote Hypnotisören for its tenth
+# anniversary - tempo tightened, chapters compressed, dialogue rewritten,
+# new scenes added, Joona Linna given a bigger role - while "grundberättelsen
+# förstås är densamma" (the underlying story is of course the same); it
+# retells Hypnotisören rather than continuing or replacing it, and page
+# count and series position are unchanged. Recorded as a note on that work
+# below, flagged for the editions stage rather than given its own id.
 #
 # Titles are the Swedish originals throughout (see franchise.yaml's TITLE
 # RULING); synopses are paraphrased from each book's own publisher-catalogue
 # copy, kept spoiler-free at the setup rather than the resolution.
+#
+# Sjömannen's title carries a subtitle, "Sex spänningsberättelser" (six
+# suspense stories) - confirmed against the LIBRIS national-library record
+# for the hardcover edition (ISBN 9789100809584), which catalogues the
+# title-page title as "Sjömannen : sex spänningsberättelser" and separately
+# records a *variant* title, "Sjömannen : spänningsberättelser" (missing
+# "sex"), explicitly noted there as coming from the dust jacket rather than
+# the title page. That variant is what Bonniers' own marketing copy and
+# Swedish Wikipedia's bibliography both reproduce, which is why an
+# English-only or web-only check would miss the "sex."
 
 - id: lars-kepler/hypnotisoren
   title: "Hypnotisören"
@@ -227,7 +252,7 @@
     - "https://sv.wikipedia.org/wiki/Lars_Kepler"
 
 - id: lars-kepler/sjomannen
-  title: "Sjömannen: Spänningsberättelser"
+  title: "Sjömannen: Sex spänningsberättelser"
   authorIds: [alexandra-coelho-ahndoril, alexander-ahndoril]
   publishedAs: "Lars Kepler"
   published: 2025
@@ -247,3 +272,4 @@
   sources:
     - "https://www.albertbonniersforlag.se/bocker/296504/sjomannen/"
     - "https://sv.wikipedia.org/wiki/Lars_Kepler"
+    - "http://libris.kb.se/bib/m68d3bn8kdv86br2/data.jsonld"

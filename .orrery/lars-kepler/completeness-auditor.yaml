@@ -1,0 +1,72 @@
+stage: completeness-auditor
+summary: >
+  13 works confirmed as 13 (no additions, no removals), now corroborated a
+  third way beyond franchise-research's Wikipedia sweep: LIBRIS (Swedish
+  National Library) holds a record for every title, and Bonniers' own site
+  lists exactly 14 catalogued products under the author (13 "other books"
+  plus Sjömannen), one of them the Black edition - matching this file
+  exactly. All 13 years re-verified directly against Bonniers' own product
+  pages: zero corrections, no reordering.
+
+  One correction: Sjömannen's title was missing its subtitle's first word.
+  LIBRIS's record for the exact hardcover ISBN catalogues the title-page
+  title as "Sjömannen : sex spänningsberättelser"; the shorter
+  "spänningsberättelser" (what Bonniers' marketing copy, Swedish Wikipedia
+  and franchise-research all used) is recorded there as a dust-jacket
+  variant, not the title-page form. Corrected.
+
+  Resolved the Nocturne question: one production, not two. Wikipedia's
+  dedicated "Nocturne (TV series)" article gives an unbroken title lineage
+  (untitled "Lazarus" project, 2023, Tom Hardy; greenlit 2025 with Liev
+  Schreiber and Stephen Graham; cast filled out with Bill Camp, Rory Culkin,
+  Chrissy Metz, Gary Carr; shot as "Parallax"; retitled "Nocturne" for its
+  30 Oct 2026 premiere), same creator/showrunner (Joffé/Hlavin) and same
+  source novels (Lazarus, The Sandman) throughout - the exact cast the
+  authors' own site names. Recorded in events.yaml's header; no further
+  check needed on this point.
+
+  Re-confirmed, on primary-source wording rather than inference: the
+  Hypnotisören Black edition is a rewrite of the same story, not a new one
+  (publisher's own copy: "grundberättelsen förstås är densamma"); Medusa
+  (2026-09-21, book 11) is still the latest announced, nothing beyond it;
+  Alex Ahndoril/Julia Stark (2023-) is a genuinely separate pen name and
+  series, correctly out of scope.
+
+  validate.py --slug lars-kepler: 0 errors, same 1 expected warning
+  (theme.yaml has no `art:` block) as franchise-research left it.
+
+produced:
+  newWorkIds: []
+  changedTitles:
+    - id: lars-kepler/sjomannen
+      before: "Sjömannen: Spänningsberättelser"
+      after: "Sjömannen: Sex spänningsberättelser"
+  changedDates: []
+  changedTier: []
+  changedNotes:
+    - "content/franchises/lars-kepler/works.yaml header: strengthened Black edition sourcing with the publisher's direct quote and URLs, added the LIBRIS third-source count corroboration, added the Sjömannen title-page-vs-dust-jacket explanation"
+    - "content/franchises/lars-kepler/events.yaml header: resolved the Nocturne single-vs-two-productions question with the dedicated Wikipedia article's production history"
+
+forStages:
+  press-archaeology: >
+    The Apple TV+ adaptation question is resolved (events.yaml header) - use
+    it as one event. The other three candidate joint events
+    (name origin, 2009 Aftonbladet unmasking, 2012 Hallström film) are
+    unchanged and still need their own two-source pass. Both authors'
+    lifeEvents remain untouched by this stage.
+  eras: >
+    Unchanged from franchise-research: empty by judgement, nothing sourced
+    supplies a periodisation.
+  editions: >
+    Sjömannen's corrected title should carry into its editions.yaml entry.
+    The Black edition's own ISBNs are now on works.yaml's header directly
+    (Storpocket 9789100180447, E-bok 9789100181444, Ljudbok 9789178273034,
+    Pocket 9789100186777), ready to pick up without re-fetching.
+  reading-orders: Unchanged from franchise-research.
+  visual-language: >
+    Unchanged from franchise-research; hypnosis/liminal-sleep,
+    forensic-psychiatric and Stockholm/NOA/SÄPO candidates still stand.
+
+openQuestions:
+  - "themePreset 'hypnagogic-noir' is franchise-research's own read of the title pattern, not received - unchanged, still open to a stronger view from visual-language."
+  - "Whether Julia Stark / Alex Ahndoril earns its own future wing: still flagged, not decided - a curator call, not a completeness question about this wing."
