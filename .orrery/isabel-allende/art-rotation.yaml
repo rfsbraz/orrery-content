@@ -1,0 +1,85 @@
+stage: art-rotation
+wing: isabel-allende
+summary: >
+  Graded the whole merged timeline fresh: 14 lifeEvents + 4 franchise
+  events, 18 event sketches, none of which carried organisation/
+  illustration_type/images_required/modifier before this pass - a genuinely
+  fresh assignment, not a re-check. eras.yaml is empty (confirmed, left
+  untouched): no chapter-gate slot to grade. Read visual-language.yaml's
+  finalized art block (a sepia photograph on a hand-stitched notebook's
+  last written page, addressed to one named reader) before assigning, so
+  every choice grades against the shipped emblem, not a generic default.
+  Reserved `immersion` for Paula's death alone (1992), the wing's one
+  earned total stop: portrait-of-absence per VISUAL.md §3 ("draw the
+  absence, not the person"), modifier fold-reveal, echoing the emblem's own
+  photograph-under-page device. The 1973 coup, also high-impact, did NOT
+  get immersion or another loud cell: art.avoid bans staging it as
+  reenactment, so it is graded artifact-spread/document-facsimile (a
+  wanted-list record - evidence, not spectacle) and kept clear of the loud
+  cells either side of it. art_rotation.py --check: 0 organisation-rotation
+  problems, 0 pacing problems on the first pass, no re-balancing needed.
+  validate.py --slug isabel-allende: 0 errors, the same 3 pre-existing
+  handoff-word-cap warnings from earlier stages, none new.
+produced:
+  files:
+    - "content/authors/isabel-allende.yaml (14 lifeEvents: organisation/
+      illustration_type/images_required set on all; modifier added on 2 -
+      grandfather-letter-1981 pull-focus, paula-dies-1992 fold-reveal)"
+    - "content/franchises/isabel-allende/events.yaml (4 events: organisation/
+      illustration_type/images_required set on all; no modifiers - none
+      earned its place on these four)"
+  contour: "#==.===#===.#==.#= (18 event sketches; no era plate exists to exclude)"
+  distribution: >
+    beside 3/18 (17%, its own exempt ceiling, nowhere near it), artifact-
+    spread 2/18, diptych 2/18, medallion 2/18, marginalia 2/18, mosaic 2/18
+    (all 11%, well under the 40% cap), full-bleed-vista 1/18, passage 1/18,
+    floating-object 1/18, immersion 1/18 (within its 1-2/wing cap, spent
+    once, deliberately, on the death), split-counterpoint 1/18. No
+    organisation over its cap, no two consecutive events share one.
+  illustrationTypeSpread: >
+    isolated-object widest at 3/18 (divorce, the Academy election, the
+    Gordon separation - three genuinely minor-beat entries, not a
+    repetition risk); book-object, place-portrait and press-media-collage
+    each 2/18; the remaining nine types 1/18 each. No type near the ~third
+    cap (6/18).
+decisions:
+  - "immersion capped at exactly 1, spent on Paula's death (1992), not the
+    1973 coup or 1975 exile despite both being impact: high - the coup is
+    explicitly barred from spectacle treatment by art.avoid, and spending
+    the wing's one rupture on political catastrophe rather than the
+    personal one it is actually built around (the emblem's whole address-
+    to-one-reader logic comes from grief and the grandfather's death, not
+    the coup) would have mismatched the visual language this stage exists
+    to grade against."
+  - "modifier fold-reveal on paula-dies-1992, not breakout or pull-focus:
+    fold-reveal's own spec (\"an upper surface partially conceals a lower
+    one\") reads directly onto the wing's emblem (a photograph laid on a
+    notebook's last page) turned toward loss - the concealed layer readable
+    enough to register grief without inventing a likeness."
+  - "modifier pull-focus on grandfather-letter-1981 (not fold-reveal, which
+    is equally compatible with artifact-spread): the entry is the letter's
+    origin, not a concealment - a magnified detail of the final line's ink,
+    'still wet', is what the sourced description actually asks the art to
+    hold, and fold-reveal was kept for the one entry (Paula's death) where
+    something is being hidden rather than examined."
+  - "no epigraph used, despite two strong verbatim-sourced quotes on the
+    shelf (the marriage-reflection line on separates-gordon-2015, the
+    defiant 'es un honor' line on the 2023 Florida ban): epigraph's schema
+    requires new `quote`/`sources` fields beyond this stage's stated
+    footprint - both moments are graded marginalia and mosaic instead,
+    available to a future pass that owns that wider footprint."
+forStages:
+  asset-prompt: >
+    Every entry now has organisation + illustration_type + images_required
+    (+ modifier where set); diptych entries (house-of-spirits-english-1985,
+    national-prize-literature-2010) and split-counterpoint (my-invented-
+    country-2003) each need 2 complete prompts, one per slot, per LAYOUT.md's
+    n-images-means-n-prompts rule. grandfather-letter-1981's pull-focus and
+    paula-dies-1992's fold-reveal should be composed exactly per their specs
+    above, not as generic decoration.
+  wing-audit: >
+    Footprint is exactly the two files listed under produced, touching only
+    the four named fields - no lifeEvent/franchise-event text, date, or
+    sourcing changed, and eras.yaml was read and confirmed empty but not
+    written to.
+openQuestions: []
