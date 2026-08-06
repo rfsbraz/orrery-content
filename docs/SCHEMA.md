@@ -355,9 +355,11 @@ set where the *divergence between translations* is itself documented and
 consequential - sourced the same as any other claim, never a curator's
 personal preference among translators dressed up as a fact about the work.
 
-It renders nowhere in the app yet (a curator-facing field, like `debated` on
-`orders.yaml`); whether and how to surface it to a reader choosing an edition
-is a separate, later decision.
+It renders nowhere in the app yet; whether and how to surface it to a reader
+choosing an edition is a separate, later decision. (`debated` on
+`orders.yaml` is not the same case - that one does render, in the order
+selector's disclosure, and belongs in every locale's overlay same as any
+other reader-facing prose.)
 
 ### authorRole and canonTier: what belongs in a wing
 
