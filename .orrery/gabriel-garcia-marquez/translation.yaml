@@ -1,0 +1,38 @@
+stage: translation
+summary: >
+  Built the wing's first pt-PT locale from zero coverage: content/i18n/pt-PT
+  overlays for franchise.yaml, works.yaml (25 synopses), eras.yaml (the
+  Macondo Cycle era), events.yaml (8 events), orders.yaml (1 order) and
+  authors/gabriel-garcia-marquez.yaml (bio + 19 lifeEvents + one pseudonym
+  note). i18n_coverage.py --slug gabriel-garcia-marquez: 202/223 before (all
+  six of this wing's files MISSING) -> 208/223 after (all six now COMPLETE,
+  no PARTIAL), with zero change to the pre-existing PARTIAL list on other
+  wings (still the same nine franchises/authors, unrelated to this wing).
+  validate.py --slug gabriel-garcia-marquez: 0 errors both before and after
+  (two transient errors during drafting - literal `[[work:id|texto]]`
+  placeholder syntax inside two header comments, matched by the validator's
+  inline-reference regex even inside a comment - fixed by rephrasing the
+  comments without the literal brackets).
+
+produced:
+  - content/i18n/pt-PT/franchises/gabriel-garcia-marquez/franchise.yaml
+  - content/i18n/pt-PT/franchises/gabriel-garcia-marquez/works.yaml
+  - content/i18n/pt-PT/franchises/gabriel-garcia-marquez/eras.yaml
+  - content/i18n/pt-PT/franchises/gabriel-garcia-marquez/events.yaml
+  - content/i18n/pt-PT/franchises/gabriel-garcia-marquez/orders.yaml
+  - content/i18n/pt-PT/authors/gabriel-garcia-marquez.yaml
+
+decisions:
+  - "The wing's real wrinkle: García Márquez wrote in Spanish, so works.yaml's own `title` is already non-English, and the catalogue's title rule ('never translate a published title') means neither the Spanish original nor an English gloss is the right display text inside translated Portuguese prose - checked precedent in the two other wings that face the same problem. haruki-murakami/works.yaml's own overlay header states it explicitly: title is never overlaid, and an inline [[work:id|text]] reference uses the real published pt-PT edition title from editions.yaml when one exists (its own example: a-wild-sheep-chase referenced as 'Em Busca do Carneiro Selvagem', not the Japanese title), original-language title otherwise. miguel-de-cervantes/works.yaml's overlay confirms the same rule from the other direction, plus the character-name corollary (Dom Quixote/Sancho Pança, the Portuguese literary convention, not a transliteration)."
+  - "Applied that same rule throughout: every inline [[work:id|...]] reference and every plain-prose mention of a title in the translated franchise.yaml, eras.yaml, events.yaml, orders.yaml and author file uses the real Dom Quixote/BIS pt-PT edition title from editions.yaml (Cem Anos de Solidão, A Revoada, Ninguém Escreve ao Coronel, A Hora Má: O Veneno da Madrugada, O Outono do Patriarca, Crónica de uma Morte Anunciada, O Amor nos Tempos de Cólera, O General no Seu Labirinto, Os Funerais da Mamã Grande, Eu Não Venho Fazer um Discurso) for the sixteen works editions.yaml records a pt-PT edition for, and keeps the original Spanish (En agosto nos vemos, Vivir para contarla, Obra periodística) for the works editions.yaml documents as real market gaps, never inventing a title."
+  - "Never translated works.yaml's `note` or `translationNote` fields, matching the explicit, cross-checked precedent in both miguel-de-cervantes/works.yaml and haruki-murakami/works.yaml (neither field reaches the reader; translationNote 'renders nowhere in the app yet' per docs/SCHEMA.md itself) and eras.yaml's `note` field, matching miguel-de-cervantes/eras.yaml's own explicit statement that no pt-PT overlay in this catalogue translates it (i18n_coverage.py's PROSE map for eras.yaml also omits it, confirming the same reading independently)."
+  - "Did translate franchise.yaml's startHere path `note` (the one on early-and-short), which the schema explicitly documents as 'shown with the recommendation' and which miguel-de-cervantes/franchise.yaml's overlay does translate on every one of its own paths - a different field from era/work `note`, despite the shared name."
+  - "Translated the one pseudonym note (Septimus) even though scripts/i18n_coverage.py's slots() function never walks `pseudonyms` and no existing pt-PT author overlay in this catalogue translates one (checked: zero hits across every author file with a base `pseudonyms` block). docs/SCHEMA.md describes it as ordinary curated prose next to an `aka`, not a curator-only field like `note`/`translationNote`/`debated`, so it is translated here as a genuine (if uncounted) completeness gain - flagged for a native reviewer since it is a first for this catalogue, not a confirmed convention."
+  - "Direct quotations: where the base text itself preserves García Márquez's exact Spanish words (always paired with an English gloss in the base - 'en verdad un solo libro', 'Para qué, si yo lo he vivido', 'La mujer que creó al creador', 'Gabo se queda huérfano', 'Este pueblo de mierda'), kept the Spanish and translated only the gloss to Portuguese - the same treatment miguel-de-cervantes/eras.yaml gives Cervantes's own Spanish quotations. Where the base gives only an English rendering with no Spanish original recorded (the Nobel Foundation's 'a more or less compulsory exile', the disavowed-edition proofreader quotes, the El amor... courtship-interview line, the El Tiempo cancer quote, the Guardian obituary line, President Santos's line, Rodrigo García's 2024 statement) there is no original-language form to preserve, so these were translated into Portuguese like any other prose - initially left three of these in English by mistake inside events.yaml (the disavowed-edition, courtship, and 2024-publication quotes), caught on a second pass and fixed before this handoff."
+  - "Two named critics quoted in English inside eras.yaml's macondo-cycle description (Raymond Leslie Williams; Gale's Literature and Its Times) were left in English rather than translated - unlike the cases above, these ARE the critics' own original-language words (both wrote in English), so translating them would misattribute a paraphrase as a quotation. Flagged for a native reviewer as the one spot in this run where 'keep it foreign' and 'translate the base's only recorded form' point different ways from the pattern above; the call made here is that authorship of the exact words outranks the base's own English-only recording."
+
+forStages: {}
+
+openQuestions:
+  - "The pseudonym-note translation (Septimus) is genuinely uncounted by i18n_coverage.py and has no precedent elsewhere in this catalogue's pt-PT locale - worth a second opinion on whether it should become the standing convention (extend slots() to walk pseudonyms) or stay a one-off judgement call specific to this file."
+  - "The English-critic-quotation call in eras.yaml (Williams; Gale) is a genuine judgement call under a general rule (translate all prose) that does not explicitly address attributed critical quotations in the source language - worth a native reviewer's read on whether a Portuguese reader expects a translation with the English preserved parenthetically instead, the way the base itself glosses García Márquez's own Spanish."
