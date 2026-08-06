@@ -9,12 +9,21 @@ summary: >
   (the third composition axis reports "0 of 28 assets could be read", which
   is the expected pre-art state and not this gate); i18n_coverage all six
   pt-PT files COMPLETE; 36 editions / 0 suspect ISBNs; 23 of 25 works carry a
-  live cover, all 24 image URLs served a real image. Three defects reach a
-  reader and are BLOCKING: a false dated fact in a rendered pseudonym note,
-  reader-facing English prose in the pt-PT locale that every coverage check
-  reports green, and an unsourced precedence claim. Two open editorial
-  questions carried since completeness-auditor now have evidence behind them
-  and a recommendation each. Two tooling defects found outside this wing.
+  live cover, all 24 image URLs served a real image.
+  Three BLOCKING defects. Two reach a reader now: a false dated fact in a
+  rendered pseudonym note, and reader-facing English prose in the pt-PT
+  locale that every coverage check reports green. The third is a factual
+  claim contradicted by the author's own foundation, which currently sits in
+  curator-facing notes rather than rendered prose - listed blocking for
+  falsity, not for reach.
+  Three further corrections land on eras.yaml, one of them at blocking
+  priority: its Companion citation misstates what that chapter argues, its
+  "nothing after 1967 is periodised" claim is refuted by a source it did not
+  reach, and its own unverified Harss lead turns out to be CORROBORATED,
+  which upgrades the era's provenance rather than weakening it.
+  Both open editorial questions carried since completeness-auditor now have
+  hard evidence behind them and a recommendation each. Three tooling defects
+  found outside this wing, and one gap in the run's own tracking artefact.
 
 produced:
   - >
@@ -78,35 +87,171 @@ blocking:
       header's claim. Separately worth adding "debated" to i18n_coverage.py's
       PROSE map so the third instance is the last.
 
-  - id: macondo-precedence-unsourced
+  - id: macondo-first-appearance-is-wrong
     owner: completeness-auditor
     where: >
-      works.yaml - ojos-de-perro-azul note ("Macondo's second recorded
-      appearance in his fiction after La hojarasca") and la-hojarasca note
-      ("Macondo's first appearance in his fiction")
+      works.yaml - la-hojarasca note ("Macondo's first appearance in his
+      fiction") and ojos-de-perro-azul note ("Macondo's second recorded
+      appearance in his fiction after La hojarasca")
     checked: >
-      La hojarasca (book, 1955) and "Monologo de Isabel viendo llover en
-      Macondo" (Mito, 1955) are both 1955. Spanish Wikipedia's Macondo article
-      lists both and dates the Monologo 1955, and establishes no order between
-      them. No source consulted here orders the two within the year.
+      Read two sources in full, not via snippet. Centro Gabo, the Fundacion
+      Gabo's own site
+      (centrogabo.org/los-arboles-mueren-de-pie-historias-sobre-los-origenes-de-macondo):
+      "Macondo, que aparece por primera vez en el cuento 'Un dia despues del
+      sabado', publicado en 1954, es un escenario... Luego, en su primera
+      novela titulada La hojarasca, Garcia Marquez crea el ficticio Macondo..."
+      WMagazin, Diana M. Horta, "Genesis y presencia de la palabra Macondo en
+      la obra de Garcia Marquez", separates the two questions explicitly: "La
+      primera vez que utilizo ese nombre fue entre 1948 y 1949 cuando empezo a
+      escribir su primera novela, La hojarasca, que se publico en 1955... La
+      verdad es que como hasta 1955 no se publico La hojarasca el nombre
+      publico de Macondo se pudo leer por primera vez en el cuento Un dia
+      despues del sabado", quoting the passage where a boy enters a hotel "sin
+      ver la tablilla: Hotel Macondo". It then places the Monologo second: "La
+      segunda vez que la gente lo lee... es porque lo lleva en el mismo titulo
+      del cuento: Monologo de Isabel viendo llover en Macondo."
     found: >
-      Both notes assert a precedence the record does not carry. spoiler-audit
-      already flagged the synopsis/note mismatch on ojos-de-perro-azul; the
-      audit-fixes pass softened the SYNOPSIS to "one of the earliest" but left
-      the NOTE asserting "second", so the wing now hedges in the reader-facing
-      field and asserts in the curator field, which is backwards. The
-      audit-fixes commit (10ea372) states its own reasoning as "the
-      collection's own note and eras.yaml both hold La hojarasca as Macondo's
-      actual first appearance" - it resolved the contradiction by treating the
-      wing's own unsourced note as the evidence, which is circular. The edit
-      it made is still the right one; the note it deferred to is what needs a
-      source or a hedge.
+      Not merely unsourced - CONTRADICTED, by the author's own foundation.
+      Macondo was WRITTEN first in La hojarasca (drafted 1948-49) but
+      PUBLISHED first in "Un dia despues del sabado" (1954 per Centro Gabo;
+      also commonly dated 1955, and either way not later than La hojarasca's
+      1955 book). So la-hojarasca's note is true of composition and false of
+      publication, which is not what it says, and ojos-de-perro-azul's note is
+      wrong twice over: the Monologo is plausibly the second published
+      appearance, but after "Un dia despues del sabado", not after La
+      hojarasca.
+      Two mitigations worth stating. The rendered prose SURVIVES: the
+      ojos-de-perro-azul synopsis reads "one of the earliest stories to
+      feature his fictional town of Macondo", which stays true under the
+      corrected record - so nothing false currently reaches a reader, and
+      work.note is not rendered by the app. And the era is unaffected: "Un dia
+      despues del sabado" is one of the eight stories in Los funerales de la
+      Mama Grande, which works.yaml already lists and which already sits
+      inside the 1955-1967 span.
+      Note also that the audit-fixes commit (10ea372) states its reasoning as
+      "the collection's own note and eras.yaml both hold La hojarasca as
+      Macondo's actual first appearance" - it resolved the contradiction by
+      treating the wing's own unsourced note as evidence, which is circular.
+      The edit it made was still the right one; the note it deferred to is
+      what was wrong.
     action: >
-      Soften both notes to what the record supports (both 1955, order not
-      established), or cite a source that orders them. Cheap and safe either
-      way; the synopsis is already correct.
+      Rewrite la-hojarasca's note to distinguish composition from publication
+      (Macondo was invented here, drafted 1948-49, but reached print first in
+      "Un dia despues del sabado"), and rewrite ojos-de-perro-azul's note to
+      drop "after La hojarasca". Cite Centro Gabo. Do not touch the
+      ojos-de-perro-azul synopsis - it is already correct. This is a genuinely
+      nice fact for the wing rather than only a correction: the town that made
+      him famous reached readers first as an unread sign on a hotel.
 
 missing:
+  - id: eras-misstates-what-the-companion-says
+    owner: eras
+    severity: >
+      Not "blocking" only because it lives in a comment and comments are not
+      rendered. It is a misrepresented citation in a content file, which every
+      future pass will read as established. Treat it at blocking priority.
+    where: eras.yaml header, the DICTATOR NOVELS paragraph
+    checked: >
+      The comment claims: "A Companion to Gabriel Garcia Marquez (Boydell &
+      Brewer, 2021) reads the same way: its chapter on El otono del patriarca
+      pairs that novel with the political writings RATHER THAN with El general
+      en su laberinto." I pulled the chapter's own abstract (OpenAlex, DOI
+      10.1017/9781800105331.004, "El otono del patriarca and the Political
+      Writings"). It reads: "there is a continuity to be found in the
+      political themes of Los funerales de la mama grande (1962), El otono del
+      patriarca (1975), and El general en su laberinto (1989). This continuity
+      can be seen as an outline of Garcia Marquez's career as a political
+      writer concerned with issues such as autocratic rule, the nature of
+      power in general, and specific abuses of power in particular."
+    found: >
+      The chapter TITLE supports the claim; the chapter's own CONTENT refutes
+      it. Williams pairs El otono with El general explicitly, and calls the
+      grouping "an outline of Garcia Marquez's career as a political writer" -
+      which is closer to a career thread than the comment allows. The eras
+      stage read the table of contents and inferred the argument.
+      The CONCLUSION still holds, and is arguably strengthened: Williams's
+      thread starts at Los funerales (1962), which this catalogue already
+      places inside the Macondo Cycle era, so a span drawn at 1975-1989 fits
+      his grouping even worse than the comment argues. But the sentence as
+      written misstates a source and must not survive.
+    action: >
+      Rewrite the sentence to what the abstract actually says, and keep the
+      rejection on the corrected ground: the received grouping is a political
+      thread running 1962-1989 that crosses the era boundary, not a period.
+
+  - id: post-1967-claim-is-too-strong
+    owner: eras
+    where: eras.yaml header, "NOTHING AFTER 1967 IS PERIODISED"
+    checked: >
+      Read Eva Lukavska, "Gabriel Garcia Marquez: el «ciclo de Macondo» I",
+      Etudes romanes de Brno XIX (1988), pp. 51-60, PDF in full from Masaryk
+      University's digital library (digilib.phil.muni.cz/sites/default/files/
+      pdf/113439.pdf). Its opening sentence: "La obra del escritor colombiano
+      se puede dividir en dos etapas. La primera, hoy dia ya cerrada, abarca
+      un periodo de veinte anos que se extiende de su cuento primigenio «La
+      tercera resignacion» (1947) a la novela Cien anos de soledad (1967). La
+      segunda etapa comienza con la novela El otono del patriarca (1975),
+      continua por la Cronica de una muerte anunciada (novela, 1981) y El amor
+      en el tiempo del colera... (1985) la esta cerrando por el momento."
+    found: >
+      A real, explicit, published post-1967 periodisation exists. The
+      catalogue's literal wording survives on a technicality - Lukavska's
+      stages are NUMBERED, not named - but the header's absolute framing does
+      not.
+      The RULING should not change. One 1988 article in a Czech romance-studies
+      annual is a single source, and the eras skill's provenance bar asks for a
+      received periodisation, which one article is not. Shipping a 1975-onward
+      era on this alone would be exactly the coining the skill forbids.
+    action: >
+      Soften to what is true and cite the exception: no NAMED phase of the
+      later career recurs across sources; one scholar (Lukavska 1988) divides
+      the career in two with the second stage opening at El otono del
+      patriarca (1975), which is recorded and not adopted, a single source
+      being below this catalogue's bar for a received period.
+
+  - id: macondo-cycle-provenance-can-be-upgraded
+    owner: eras
+    where: "eras.yaml macondo-cycle, its `provenance` value and its `note`"
+    checked: >
+      The eras handoff carried an open question: an unverified lead that Luis
+      Harss's Los nuestros (1966) is where Garcia Marquez himself named the
+      "ciclo de Macondo", which would move the era to rung 1. Harss could not
+      be reached and the claim went unused. Lukavska (1988), the same article
+      above, states it directly: "Garcia Marquez califico sus obras del primer
+      periodo como el «ciclo de Macondo»", and adds his own later
+      qualification that Macondo is the actual setting only of La hojarasca,
+      Cien anos and some of the Los funerales stories.
+    found: >
+      The lead is corroborated by a peer-reviewed source that names the author
+      as the term's originator. The era is not merely critical, it is the
+      author's own label taken up by critics - which is a stronger provenance
+      than the file currently claims and settles the eras stage's own open
+      question in its favour.
+      Two qualifications to carry with it, both from sources read directly.
+      Lukavska dates the first period from "La tercera resignacion" (1947),
+      not 1955, so the catalogue's 1955 start is the first BOOK rather than
+      the period's start - and Williams's own abstract agrees, dating the
+      cycle's construction to "the early 1950s". The era's note currently says
+      "1955 and 1967 are the two dates the sources name", which is true of the
+      two sources it cites and not of the field.
+      Correcting one thing a research pass got wrong, so it is not propagated:
+      Lukavska does NOT count four books against Williams's five. She names
+      four earlier works whose parts are "esparcidas en" Cien anos and treats
+      Cien anos as the culmination and synthesis of the same first period. The
+      five-book count is not contradicted.
+    action: >
+      Consider provenance: authorial, cite Lukavska for the attribution, and
+      adjust the note to say the 1955 endpoint is the cycle's first book while
+      the sources date its construction to the late 1940s / early 1950s.
+
+  - id: companion-citation-year
+    owner: eras
+    found: >
+      eras.yaml cites A Companion to Gabriel Garcia Marquez as "Boydell &
+      Brewer, 2021". Cambridge Core gives online publication 26 May 2022 for
+      the chapter and the volume has an earlier print history. Defensible but
+      worth pinning to the edition actually consulted.
+
   - id: translation-note-is-inert
     owner: curator (schema), then press-archaeology
     checked: >
@@ -375,21 +520,21 @@ checkedAndClean:
     Macondo made that observation prophetic." The term, both endpoints and the
     count of five are the critic's, not this catalogue's.
   - >
-    THE DICTATOR-NOVEL REJECTION, confirmed from the same artefact. eras.yaml
-    claims the Companion "pairs that novel with the political writings rather
-    than with El general en su laberinto". The book's own contents list, read
-    off the same page, reads: "1 García Márquez, the Modernists, and the Boom
-    / 2 Cien años de soledad and the Macondo Cycle / 3 El otoño del patriarca
-    and the Political Writings / 4 ... cándida Eréndira y de su abuela
-    desalmada / 5 Recent Writing / 6 Epilogue". The claim is exact. One
-    honest nuance to record rather than route: that contents list DOES divide
-    the post-1967 career into three blocks, and chapter 5 is called "Recent
-    Writing". Under this catalogue's own rule that a book's chapter headings
-    are not a periodisation (CURATION §4, stated there for Wikipedia section
-    headings), none of that is a named, dated phase, so eras.yaml's conclusion
-    stands - but its wording, "no critic, reference work or obituary divides
-    the later career into named phases", is a shade stronger than the evidence.
-    "Names no dated phase" would be exactly true.
+    THE DICTATOR-NOVEL REJECTION, conclusion only. The RULING holds: no source
+    treats 1975-1989 as a period of this career, and Williams's own political
+    thread starts in 1962, which fits a 1975 boundary even worse. But I first
+    checked this against the Companion's table of contents and marked it
+    exact, and that was wrong - the chapter's own abstract pairs El otono with
+    El general explicitly. Corrected and routed under
+    missing.eras-misstates-what-the-companion-says. Recording the error here
+    rather than quietly deleting it: a contents list is not an argument, and I
+    treated it as one for the same reason the eras stage did.
+    Separately confirmed from the same contents list: the volume's chapters 3,
+    4 ("Postmodern Gestures") and 5 ("Recent Writing") DO divide the post-1967
+    career. Under this catalogue's own rule that chapter headings are not a
+    periodisation (CURATION §4, stated there for Wikipedia section headings),
+    they are not phases - but see the post-1967 finding, where a real
+    periodisation does turn up in a different source.
   - >
     THE GUARDIAN OBITUARY, checked directly rather than via the eras handoff.
     Nick Caistor's 17 April 2014 obituary uses "period" four times and every
@@ -406,10 +551,13 @@ checkedAndClean:
     "Innocent") are present on penguin.co.uk. Received, not coined.
   - >
     ERAS COVERAGE. 20 works fall outside every era and validate.py warns on
-    each. This is NOT APPLICABLE, not absent: eras.yaml's header states the
-    negative result and cites the Guardian obituary as a career retrospective
-    that names no phase. Per the eras skill's provenance rule, an honestly
-    uncovered career outranks tiling. Do not close it by adding a span.
+    each. Still NOT APPLICABLE, not absent, and the ruling survives the
+    Lukavska find: one 1988 article dividing the career in two is below this
+    catalogue's bar for a received periodisation, and no NAMED later phase
+    recurs anywhere. Per the eras skill's provenance rule, an honestly
+    uncovered career outranks tiling. Do not close it by adding a span - but
+    do soften the header's absolute wording per
+    missing.post-1967-claim-is-too-strong.
   - >
     PERIOD FORMAT. The one era's `period` is "1955-1967", a form the strata
     walk parses. One era means no overlap is possible.
@@ -614,6 +762,12 @@ forStages:
   visual-metadata: "la-mala-hora's cover comment credits a publisher the jacket contradicts."
   editions: "Two header sentences overstate (978-972 only; and attributing the Erendira translator to works.yaml)."
   reading-orders: "'early' is the wing's gloss on a guide that says 'start with the stories'; Erendira is 1972."
-  eras: "Nothing. The one era, its span, its count and its provenance were re-derived and hold."
+  eras: >
+    Four items, one of them at blocking priority: the Companion sentence
+    misstates its own source (the chapter abstract pairs El otono WITH El
+    general); "NOTHING AFTER 1967 IS PERIODISED" is refuted by Lukavska 1988
+    and needs softening without changing the ruling; the era's provenance can
+    be upgraded to authorial now that the Harss lead is corroborated; and the
+    1955 endpoint is the first book, not the period's start.
   art-rotation: "Nothing. Re-ran the checker; both gates clean."
   event-resonance: "Nothing on the ids - all 16 verified against global.yaml. Note only that the reasoning in the handoff is premised on an arithmetic lifetime default the app no longer implements; the rulings are unaffected."
