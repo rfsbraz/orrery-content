@@ -1,0 +1,31 @@
+# Português europeu (pt-PT) - tradução da prosa curada da ala Isabel
+# Allende. Só a `description` está aqui: `features`, `globalEvents` e o
+# facto de não haver `startHere` (ver o próprio cabeçalho da franchise.yaml
+# base) não são prosa.
+#
+# TÍTULOS DE OBRAS DENTRO DA PROSA. Allende escreve em espanhol; o `title`
+# de cada obra em works.yaml é sempre o original espanhol e nunca se
+# traduz aqui (docs/SCHEMA.md, "Never translate a published title" - o
+# mesmo princípio já seguido nas alas de Gabriel García Márquez e Miguel de
+# Cervantes, ambas com título original não-inglês). A questão que se põe é
+# outra: que forma usar quando a prosa - aqui, a referência interna a uma
+# obra - nomeia essa obra dentro de uma frase em português. Resposta,
+# seguindo exatamente o precedente já fixado em
+# gabriel-garcia-marquez/franchise.yaml (ver o cabeçalho desse ficheiro):
+# usa-se o título português publicado, tal como consta em editions.yaml,
+# sempre que existe uma edição pt-PT real ("A Casa dos Espíritos" para
+# la-casa-de-los-espiritus, usado abaixo); onde não existe edição pt-PT,
+# o título mantém-se no espanhol original, nunca inventado. Nunca se usa o
+# título inglês de tradução.
+
+- id: isabel-allende
+  description: >
+    A bestseller chileno-americana do realismo mágico e da ficção
+    histórica, sempre cotada para o Nobel: do seu debute de 1982,
+    [[work:isabel-allende/la-casa-de-los-espiritus|A Casa dos Espíritos]],
+    escrito no exílio venezuelano depois do golpe que derrubou o primo do
+    seu pai, o Presidente Salvador Allende, até trinta e seis obras que
+    atravessam romance, memórias, uma antologia exclusivamente em
+    espanhol e, mais recentemente, uma série de livros ilustrados
+    infantis com originais em inglês - lida esmagadoramente em tradução
+    fora do mundo hispanofalante.
