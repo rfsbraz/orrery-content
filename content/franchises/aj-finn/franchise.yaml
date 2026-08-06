@@ -20,9 +20,12 @@ description: >
 authorIds: [aj-finn]
 themePreset: brownstone-noir
 # Global events considered against Finn's 1979-birth, living lifetime window
-# (content/events/global.yaml, checked directly). All nine entries that fall
-# inside that window are excluded: none pass the one-sentence resonance test
-# for these two specific novels, as against the world or literature broadly.
+# (content/events/global.yaml, checked directly). Every one of the nine
+# entries whose year falls inside that window was weighed and left out of
+# `include` below: none pass the one-sentence resonance test for these two
+# specific novels, as against the world or literature broadly. `exclude`
+# below is the record of that judgment, not what keeps them off the page -
+# an event renders only if it is named in `include` (docs/SCHEMA.md).
 # No pre-lifetime event was found to be a genuine inheritance either (compare
 # fantasy-paperback-boom-1965 for an epic-fantasy author): nothing in the
 # catalogue created the domestic-suspense/Hitchcockian-thriller category
