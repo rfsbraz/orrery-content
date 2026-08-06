@@ -1,0 +1,64 @@
+# Overlay pt-PT: bio e os títulos e a prosa dos lifeEvents, aninhados e
+# fundidos por id. O nome nunca é traduzido, e nenhuma estrutura (datas,
+# impact) é restabelecida aqui.
+# `pseudonyms` não é traduzido pela mesma razão indicada em
+# alexandra-coelho-ahndoril.yaml: é um array de objetos, e o overlay só
+# copia escalares e listas de strings puras - fica descartado em silêncio
+# pelo merge da aplicação (lib/content/index.ts), não há como o traduzir por
+# este ficheiro enquanto isso não mudar. "Lars Kepler" é o pseudónimo em si
+# e nunca é traduzido. A referência inline [[franchise:lars-kepler|Joona
+# Linna]] usa "Joona Linna" como texto de exibição por ser o nome de uma
+# personagem, não um título de obra.
+# Regissören, o seu romance a solo mais conhecido, é glosado no texto de
+# base como "(The Director, 2006)"; não foi confirmada nenhuma edição
+# portuguesa deste romance (fora do âmbito desta ala, sem entrada em
+# editions.yaml), pelo que a glosa fica tal como no texto de base em vez de
+# se inventar um título.
+
+- id: alexander-ahndoril
+  bio: >
+    Romancista e dramaturgo sueco, nascido Alexander Gustafson em Upplands
+    Väsby, a norte de Estocolmo. Quis ser pintor na juventude e produziu
+    grandes telas a óleo inspiradas em Caravaggio antes de se dedicar à
+    escrita; o primeiro romance foi aceite para publicação quando tinha
+    dezanove anos. Publicara nove romances, cerca de vinte peças de teatro e
+    um libreto de ópera com o seu próprio nome antes de coescrever ficção
+    policial. O seu romance a solo mais conhecido, Regissören (The
+    Director, 2006), reimagina a vida do realizador de cinema Ingmar
+    Bergman e foi traduzido para onze línguas; o romance de 2009,
+    Diplomaten, ficciona a verdadeira missão de desarmamento no Iraque, em
+    2003, do diplomata sueco Hans Blix, com o prefácio e o posfácio a
+    afirmarem que a vida privada do diplomata no romance é tão inventada
+    quanto a sua vida pública é verdadeira. Desde 2009, ele e a mulher,
+    [[author:alexandra-coelho-ahndoril|Alexandra Coelho Ahndoril]],
+    coescrevem a série policial [[franchise:lars-kepler|Joona Linna]] em
+    conjunto, sob o pseudónimo Lars Kepler.
+  lifeEvents:
+    - id: alexander-ahndoril-born-1967
+      title: Nasce Alexander Gustafson, em Upplands Väsby
+      description: >
+        Alexander Gustafson nasce na paróquia de Hammarby, em Upplands
+        Väsby, a norte de Estocolmo. Adota o apelido Ahndoril já jovem
+        adulto, quer ser pintor na adolescência - produzindo grandes telas
+        a óleo inspiradas em Caravaggio enquanto trabalha na construção
+        civil desde os catorze anos - e opta pela escrita em vez disso: o
+        primeiro romance, Den äkta kvinnan, é aceite para publicação antes
+        de fazer vinte anos.
+
+    - id: alexander-ahndoril-regissoren-controversy-2006
+      title: Um romance sobre Ingmar Bergman atrai a condenação pública do próprio Bergman
+      description: >
+        Regissören (The Director), o romance a solo mais conhecido de
+        Ahndoril, ficciona a vida do realizador de cinema Ingmar Bergman -
+        que tinha lido e elogiado o manuscrito antecipadamente, e depois
+        condenou publicamente o livro já publicado, abrindo um debate que
+        percorreu a imprensa sueca sobre a ética de transformar uma figura
+        pública viva num "eu" ficcional. O romance em si recebe fortes
+        elogios da crítica a par da polémica (Carl-Johan Malmberg, do
+        Svenska Dagbladet, chama-lhe "um dos contributos mais excitantes
+        para a comédia da inteligência já feitos no nosso país") e é
+        traduzido para onze línguas. Três anos depois, ao recensear
+        Diplomaten, de Ahndoril - um segundo romance construído da mesma
+        forma em torno de um sueco real e vivo, o diplomata Hans Blix -, o
+        Svenska Dagbladet recorda diretamente a polémica de Regissören: o
+        mesmo método a revelar-se, pela segunda vez.
