@@ -91,3 +91,34 @@ openQuestions:
   - "Accuracy, not spoilers, for enrichment: Hypnotisören's synopsis says 'Only the son survives', while Bonniers' copy has Joona realising a sister is alive and needing to reach her first. Not wrong about the household, but it reads more final than the jacket."
   - "Same: Sjömannen's note says the other five stories 'stand outside the Joona Linna universe entirely', where Bonniers calls all six 'från Lars Keplers unika universum'. Curator-only, so nothing ships wrong."
   - "A future 'Jurek Walter arc' order would in practice be a Joona-standing arc as much as an antagonist arc (Sandmannen introduces Jurek, Stalker's ending imprisons Joona, Kaninjägaren opens there, Lazarus brings the past back). Recorded because it changes what such an order is about; the ordering call itself is the curator's."
+
+postAuditFix:
+  - id: hypnotisoren-boy-is-not-mute
+    date: 2026-08-06
+    owner: spoiler-audit (with translation, same commit)
+    what: >
+      wing-audit's blocking finding: Hypnotisören's synopsis described the
+      surviving son as "severely wounded and unable to speak". Re-fetched
+      both jackets - the Swedish (albertbonniersforlag.se/bocker/153581)
+      says he "svävar in och ut ur medvetslösheten" (drifts in and out of
+      consciousness), the English (larskepler.com/books/the-hypnotist)
+      says only that he "can't remember what happened". Neither supports
+      "unable to speak"; the detail was invented. It was live in three
+      places plus one comment this stage did not flag: works.yaml's
+      synopsis, franchise.yaml's where-it-begins path description, the
+      pt-PT mirror of both (works.yaml's synopsis and franchise.yaml's
+      path description), and pt-PT works.yaml's own header comment, which
+      restated "o filho sobrevive mas não fala" as a verified fact when
+      asserting the translation tracked the corrected base text.
+    fix: >
+      All four replaced with "severely wounded and drifting in and out of
+      consciousness" / "entre a consciência e a inconsciência" (pt-PT),
+      matching the Swedish jacket's own wording per this wing's TITLE
+      RULING preference for the Swedish original as authoritative.
+    corrects: >
+      This file's own checkedAndLeftAlone.hypnotisoren entry above called
+      the synopsis "Jacket copy near verbatim" - true of the passage as a
+      whole, but the "unable to speak" clause was not verbatim and was not
+      caught at the time. Treat that line as superseded by this entry.
+    validate: "--slug lars-kepler: 0 errors, unchanged from baseline (only pre-existing handoff word-count warnings)"
+    i18nCoverage: "pt-PT: lars-kepler absent from every PARTIAL entry, full coverage unchanged"
