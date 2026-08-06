@@ -46,6 +46,9 @@ lifeEvents:
   # trunk is the story of the shelf rather than of the man, and it lives in
   # content/franchises/fernando-pessoa/events.yaml.
   - id: pessoa-born-1888
+    organisation: full-bleed-vista
+    illustration_type: establishing-landscape
+    images_required: 1
     date: 1888-06-13
     title: Born opposite the opera house in Lisbon
     impact: low
@@ -58,6 +61,9 @@ lifeEvents:
     sources:
       - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
   - id: pessoa-durban-1896
+    organisation: diptych
+    illustration_type: place-portrait
+    images_required: 2
     date: 1896
     title: An English education in Durban
     impact: high
@@ -73,6 +79,9 @@ lifeEvents:
     sources:
       - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
   - id: pessoa-dia-triunfal-1914
+    organisation: immersion
+    illustration_type: symbolic-still-life
+    images_required: 1
     date: 1914-03-08
     title: The triumphal day
     impact: high
@@ -89,6 +98,10 @@ lifeEvents:
     sources:
       - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra/alberto-caeiro"
   - id: pessoa-english-books-1918
+    organisation: artifact-spread
+    illustration_type: book-object
+    images_required: 1
+    modifier: pull-focus
     date: 1918
     title: He prints two English books and posts them to London
     impact: med
@@ -106,6 +119,9 @@ lifeEvents:
       - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida/cronologia"
       - "https://en.wikipedia.org/wiki/Fernando_Pessoa"
   - id: pessoa-ofelia-1920
+    organisation: beside
+    illustration_type: relationship-tableau
+    images_required: 1
     date: 1920-03-01
     title: The only love affair on record
     impact: med
@@ -124,6 +140,9 @@ lifeEvents:
     sources:
       - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida/cronologia"
   - id: pessoa-olisipo-seizure-1923
+    organisation: mosaic
+    illustration_type: press-media-collage
+    images_required: 1
     date: 1923
     title: His own publishing house is raided
     impact: high
@@ -143,6 +162,9 @@ lifeEvents:
       - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida/cronologia"
       - "https://pt.wikipedia.org/wiki/Ant%C3%B3nio_Botto"
   - id: pessoa-interregno-1928
+    organisation: diptych
+    illustration_type: manuscript-proof
+    images_required: 2
     date: 1928
     title: He argues for the dictatorship in print
     impact: med
@@ -164,6 +186,9 @@ lifeEvents:
       - "https://en.wikipedia.org/wiki/Fernando_Pessoa"
       - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=interregno+pessoa"
   - id: pessoa-crowley-1930
+    organisation: strip
+    illustration_type: serial-contact-sheet
+    images_required: 1
     date: 1930-09-23
     title: He helps stage a magician's suicide
     impact: med
@@ -184,6 +209,10 @@ lifeEvents:
       - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida/cronologia"
       - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
   - id: pessoa-associacoes-secretas-1935
+    organisation: artifact-spread
+    illustration_type: document-facsimile
+    images_required: 1
+    modifier: fold-reveal
     date: 1935-02-04
     title: The last fight he picked
     impact: high
@@ -204,6 +233,9 @@ lifeEvents:
       - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
       - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=associacoes+secretas+outros+escritos+pessoa"
   - id: pessoa-mensagem-1934
+    organisation: medallion
+    illustration_type: book-object
+    images_required: 1
     date: 1934
     title: The only Portuguese book he lived to see
     impact: high
@@ -218,6 +250,9 @@ lifeEvents:
     sources:
       - "https://pt.wikipedia.org/wiki/Mensagem_(livro)"
   - id: pessoa-death-1935
+    organisation: immersion
+    illustration_type: portrait-of-absence
+    images_required: 1
     date: 1935-11-30
     title: The trunk is left behind
     impact: high
@@ -254,6 +289,12 @@ lifeEvents:
 # Parreira da Silva, Lisboa: Assírio & Alvim, 1999) and quoted at length by Casa
 # Fernando Pessoa. Dates that are not in that letter are marked as such on the
 # entry that carries them, with whatever does support them named.
+#
+# The nested lifeEvents below carry no `organisation` or `illustration_type`,
+# unlike the author lifeEvents above. Those two fields describe how an entry is
+# laid out on the timeline and what its artwork depicts, and no heteronym
+# timeline renders anywhere (docs/SCHEMA.md, heteronyms), so on these entries
+# there is no cell for them to describe.
 heteronyms:
   - id: alberto-caeiro
     name: "Alberto Caeiro"
