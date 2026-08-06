@@ -1,0 +1,87 @@
+stage: visual-language
+summary: >
+  Set theme.yaml's art block: a circular lens/viewfinder emblem held up from
+  inside a dark room against a windowpane, cropping the view down to one
+  distant lit window - Anna Fox's own telephoto-camera method in The Woman
+  in the Window, kept deliberately reversed from this catalogue's other two
+  window emblems (Robert Bryndza's sash window seen from outside in warm
+  lamplight; Jose Saramago's unlit window in a bare basalt wall), both of
+  which stage the window from without. Six further fields (motifs,
+  atmosphere, lineCharacter, backgroundTexture, accentUse, avoid) built
+  around the same interior-looking-out grammar plus the film-noir and
+  manuscript-margin motifs already named in theme.yaml's own notes. The
+  4 biographical lifeEvents (2 of them the fabrication scandal) are
+  explicitly carved out of the atmosphere field to stay on their existing
+  document-facsimile/portrait-of-absence register rather than the fiction's
+  night-glass mood, and avoid names the specific cliche this wing's real
+  biography invites (mask/unmasking/reveal imagery for a living person's
+  documented health crisis) and prohibits it outright. validate.py --slug
+  aj-finn: 0 errors (the art: block error is resolved); asset_audit.py
+  aj-finn now reports art:yes and lists 8 jobs (4 lifeEvents, 4 franchise
+  events).
+produced:
+  filesWritten:
+    - content/franchises/aj-finn/theme.yaml
+  fieldsSet: [art.emblem, art.motifs, art.atmosphere, art.lineCharacter,
+    art.backgroundTexture, art.accentUse, art.avoid]
+  untouched: [preset, palette, displayFace, signature, notes]
+adjacencyCheck: >
+  Ran theme_digest.py --exclude aj-finn (33 wings) before choosing anything.
+  Two direct hits on window-as-emblem: Robert Bryndza (a sash window seen
+  from outside in the dark, warm lamplight behind the glass, standing for an
+  English writer viewing his own country from abroad) and Jose Saramago (a
+  pale, unlit window in a black volcanic wall, no interior implied). Read
+  both theme.yaml files in full, plus Gillian Flynn's (the catalogue's other
+  journalist/editor-background thriller wing, sharing this wing's `rule`
+  signature and editorial territory but a warm-plum-on-newsprint daylight
+  register, ballpoint-precise line, entirely unlike this wing's near-black
+  night-glass one - no real overlap once compared directly). The emblem here
+  is built as the reverse of Bryndza's and Saramago's: viewer inside the dark
+  room doing the watching, not outside looking at a lit window - grounded in
+  the fact that Anna Fox's own method (a telephoto camera worked from inside
+  her brownstone) is that exact direction. avoid names both wings' specific
+  staging outright so a future prompt does not drift back toward either.
+sensitivityHandling: >
+  The wing covers a real living person's documented fabrication scandal
+  (2019 New Yorker/Guardian reporting) and a rebutted plot-similarity
+  allegation (2019). Neither is illustrated directly by the art block: the
+  central visual law (window/lens/glass) is built entirely from the
+  FICTION's own device (Anna Fox's surveillance, End of Story's
+  narrating-another's-life structure), never from the real biography. The
+  emblem's `why` gestures at curated/unreliable narrative only through the
+  novels' own unreliable narrators (Anna, and Nicky transcribing Trapp's
+  account), not through Mallory's own fabrications. The avoid list states
+  outright, by name, that Daniel Mallory's likeness and any
+  "unmasking"/mask/torn-photograph/mirror-double imagery are prohibited for
+  the 2013 and 2019 lifeEvents - those already carry press-archaeology's own
+  document-facsimile and portrait-of-absence illustration_types (sober,
+  paper- or absence-based), and the atmosphere field explicitly carves the
+  biographical rupture events out of the fiction's moody night-glass
+  register so a future asset-prompt pass does not apply it to them by
+  default.
+forStages:
+  asset-prompt: >
+    8 jobs ready per asset_audit.py: 4 lifeEvents (already carrying
+    illustration_type establishing-landscape, document-facsimile x2,
+    network-constellation, portrait-of-absence per press-archaeology) and 4
+    franchise events (press-media-collage x2, document-facsimile,
+    aftermath-scene). The two document-facsimile jobs (ajf-jake-surgery-
+    emails-2013, aj-finn-plot-similarity-allegations-2019) and the
+    portrait-of-absence job (ajf-new-yorker-trail-of-deceptions-2019) should
+    draw on the paper/absence register described in VISUAL.md's own
+    catalogue for those types, not on this wing's art.atmosphere - the
+    atmosphere field says so directly.
+  wing-audit: >
+    Re-check that no generated asset drifts into the avoid list's named
+    cliches, especially the "unmasking" prohibition on the two 2019 jobs and
+    the sash-window/unlit-window staging shared with Bryndza and Saramago.
+openQuestions:
+  - "The emblem's reversed viewer position (inside looking out) is this
+    stage's own reasoned differentiation from Bryndza and Saramago, not a
+    received ruling - open to review if a curator reads the palette's own
+    'seen from outside' phrasing on the accent color as intending the
+    opposite viewpoint. It is read here as describing the glow's quality
+    (soft, diffused, seen through glass or air) rather than fixing a camera
+    position, and the palette's own bg comment offers 'an unlit room' as a
+    valid surrounding-darkness option alongside 'a dark street', which the
+    interior reading is built on directly."
