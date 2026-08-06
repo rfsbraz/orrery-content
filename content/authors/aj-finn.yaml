@@ -1,0 +1,71 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds), so the same person resolves the same everywhere.
+# Author-LIFE events live here (they follow the person); franchise-specific
+# events belong in content/franchises/aj-finn/events.yaml.
+#
+# IDENTITY. This wing's id/name is the pen name, "A. J. Finn," not the legal
+# name behind it - the opposite of this catalogue's default shape for a
+# pseudonym (Stephen King/Richard Bachman, Agatha Christie/Mary Westmacott,
+# J.K. Rowling/Robert Galbraith all key on the real, publicly-dominant name,
+# with the pen name recorded underneath it). Checked rather than assumed:
+# English Wikipedia's own article is titled and infoboxed as "A. J. Finn"
+# (fields: name = A. J. Finn, pseudonym = A. J. Finn, birth_name = Daniel
+# Mallory); "Daniel Mallory" is not a redirect to that article but a bare
+# disambiguation page pointing three unrelated people, one of them described
+# as "Dan Mallory, an American author who writes under the pseudonym A.J.
+# Finn" - the encyclopedia's own name for the person is the pen name, not the
+# legal one. HarperCollins' own author page (harpercollins.com/blogs/authors/
+# a-j-finn) runs entirely under "A. J. Finn" and never states the legal name
+# once, in the bio or anywhere else on the page - the publisher of both
+# novels markets this identity as the byline itself, not as an alias of a
+# more prominent name the way an "also writes as" line would. Wikidata (item
+# Q56084685) carries the same shape: label "A. J. Finn," description
+# "American author," with "Dan Mallory" / "Daniel Mallory" filed only as
+# "also known as." This exact shape - a pen name so dominant that it, not the
+# legal name, is the identity a reader, a publisher and an encyclopedia all
+# resolve to - already has a precedent in this catalogue: Lee Child (legal
+# name James Dover Grant) is filed the same way, id/name on the pen name,
+# `aka` carrying the legal name, `pseudonyms: []` because the byline never
+# varies. That is the model followed here rather than the King/Bachman one.
+#
+# "Daniel Mallory" and the shorter "Dan Mallory" are both attested in
+# independent press (the Duke alumni magazine profile, the Los Angeles
+# Times, The Guardian) and are recorded in `aka` for search, not in
+# `pseudonyms` - that field is for an alternate byline a person publishes
+# under (a second identity that carries its own `publishedAs` on a work);
+# no work in this wing is published as "Daniel Mallory," so there is nothing
+# for `pseudonyms` to record.
+#
+# Living author. lifeEvents is empty: this file records only the plain,
+# undisputed career facts below (education, publishing employment, the two
+# novels, the film adaptation). He is a living person, and anything about
+# his health, finances, family, or legal or professional reputation would
+# need two independent sources before it belongs here.
+id: aj-finn
+name: A. J. Finn
+aka: ["Daniel Mallory", "Dan Mallory"]
+born: 1979
+died: null
+bio: >
+  Pen name of Daniel Mallory, American author of psychological thrillers.
+  Born in New York City in 1979 and raised in Charlotte, North Carolina,
+  where he attended Charlotte Latin School; majored in English at Duke
+  University and later completed a master's degree at the University of
+  Oxford. Worked for several years in publishing in New York and London,
+  including at Little, Brown and Company and at William Morrow, the
+  HarperCollins imprint that went on to publish his own novels. His debut,
+  [[work:aj-finn/the-woman-in-the-window|The Woman in the Window]] (2018),
+  draws explicitly on Hitchcock's Rear Window and the film Gaslight, debuted
+  at number one on the New York Times bestseller list, and was adapted into
+  a 2021 film starring Amy Adams, Julianne Moore and Gary Oldman. His second
+  novel, [[work:aj-finn/end-of-story|End of Story]] (2024), is set in San
+  Francisco. Openly gay; dedicated his first novel to his then-boyfriend.
+pseudonyms: []
+lifeEvents: []
+sources:
+  - "https://en.wikipedia.org/wiki/A._J._Finn"
+  - "https://en.wikipedia.org/wiki/Daniel_Mallory"
+  - "https://www.wikidata.org/wiki/Q56084685"
+  - "https://www.harpercollins.com/blogs/authors/a-j-finn"
+  - "https://en.wikipedia.org/wiki/The_Woman_in_the_Window_(novel)"
+  - "https://en.wikipedia.org/wiki/End_of_Story"
