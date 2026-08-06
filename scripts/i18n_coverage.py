@@ -84,6 +84,23 @@ def slots(path, fields):
             for f in ("title", "description", "quote"):
                 if nested.get(f):
                     out.add((f"{key}/lifeEvents/{nkey}", f))
+        # `heteronyms` (SCHEMA.md) is a list nested under an author entity,
+        # the same shape as lifeEvents - each one carries its own translatable
+        # `bio` and its own `lifeEvents`, and neither was walked here before,
+        # so a heteronym's prose scored as covered without ever being checked.
+        for het in (i.get("heteronyms") or []):
+            if not isinstance(het, dict):
+                continue
+            hkey = het.get("id") or "_"
+            if het.get("bio"):
+                out.add((f"{key}/heteronyms/{hkey}", "bio"))
+            for nested in (het.get("lifeEvents") or []):
+                if not isinstance(nested, dict):
+                    continue
+                nkey = nested.get("id") or "_"
+                for f in ("title", "description", "quote"):
+                    if nested.get(f):
+                        out.add((f"{key}/heteronyms/{hkey}/lifeEvents/{nkey}", f))
         sh = i.get("startHere")
         if isinstance(sh, dict):
             for path_ in (sh.get("paths") or []):
