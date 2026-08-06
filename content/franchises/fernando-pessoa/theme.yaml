@@ -146,6 +146,7 @@ notes: >
   A clerk's edition: violet-black ink paper, typing-paper type, one verdigris
   accent used only for links and markers, and a single hairline for the
   seventy-year spine. displayFace and signature are both chosen from the app's
-  actually-implemented sets (docs/SCHEMA.md); an invented value is accepted by
-  the validator and then silently swapped at render, which costs a wing its look
-  without failing anything.
+  actually-implemented sets (lib/theme.ts, listed in docs/SCHEMA.md); a value
+  outside those sets is not an error, it is silently swapped for the default at
+  render, so the wing would lose its look while the file went on documenting an
+  intent that never shipped.
