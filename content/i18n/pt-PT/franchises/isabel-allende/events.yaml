@@ -1,0 +1,70 @@
+# Português europeu (pt-PT) - eventos. `title` e `description`
+# (docs/SCHEMA.md; scripts/i18n_coverage.py). Nenhum dos quatro eventos
+# desta ala tem campo `quote` (organisation não é epigraph em nenhum), por
+# isso não há esse campo a traduzir aqui.
+#
+# TÍTULOS DE OBRAS - dois casos, duas respostas diferentes:
+#
+# 1. allende-florida-book-ban-2023 nomeia "La casa de los espíritus" e "Más
+#    allá del invierno" em prosa corrida, sem sintaxe [[work:]] (a própria
+#    base as deixa em espanhol, sem link) - uma referência genérica às duas
+#    obras, não a uma edição concreta. Aqui aplica-se a mesma regra do
+#    resto da ala (ver franchise.yaml): título português publicado quando
+#    existe edição pt-PT real - "A Casa dos Espíritos" e "Para Lá do
+#    Inverno", ambas confirmadas em editions.yaml.
+#
+# 2. allende-house-of-spirits-english-1985 e
+#    allende-daughter-of-fortune-oprah-2000 são sobre um objeto histórico
+#    concreto - a própria edição inglesa e o momento em que foi escolhida
+#    para o Oprah's Book Club, ambos ocorridos exclusivamente em mercado de
+#    língua inglesa. "The House of the Spirits" e "Daughter of Fortune"
+#    mantêm-se aqui em inglês, tal como na base: não são uma referência
+#    genérica à obra a substituir pelo título português, mas o nome real
+#    da edição inglesa que esteve fisicamente em causa nesses dois
+#    episódios.
+#
+# CITAÇÃO DIRETA. A frase de Allende em allende-florida-book-ban-2023 é
+# citada no espanhol original pela própria base, com glosa inglesa entre
+# parênteses - mantém-se aqui o espanhol verbatim e traduz-se apenas a
+# glosa, como no mesmo caso já resolvido em
+# gabriel-garcia-marquez/events.yaml.
+
+- id: allende-florida-book-ban-2023
+  title: Dois romances retirados das escolas da Florida
+  description: >
+    A Casa dos Espíritos (1982) e Para Lá do Inverno (2017) estão entre os
+    673 títulos retirados das salas de aula da Florida ao abrigo de leis
+    estaduais que visam representações de sexualidade, numa vaga que
+    também apanhou Márquez, Atwood e Dan Brown. A reação da própria
+    Allende, no registo: "Para mí es un honor que me hayan prohibido"
+    ("Para mim é uma honra terem-me proibido") - e que uma proibição só
+    faz os jovens leitores quererem ainda mais o livro.
+
+- id: allende-house-of-spirits-amazon-miniseries-2026
+  title: A Casa dos Espíritos volta aos ecrãs, 44 anos depois
+  description: >
+    Uma minissérie de 8 episódios da Amazon Prime Video adapta o romance,
+    com Alfonso Herrera no papel de Esteban Trueba, Dolores Fonzi no de
+    Clara del Valle Cortés e Rochi Hernández no de Alba Satigny Trueba - o
+    primeiro tratamento televisivo do livro que a tornou conhecida, depois
+    de uma tentativa da Hulu em 2018 que nunca chegou a estrear.
+
+- id: allende-house-of-spirits-english-1985
+  title: A Casa dos Espíritos chega aos leitores de língua inglesa
+  description: >
+    A Alfred A. Knopf publica a tradução inglesa de Magda Bogin, The House
+    of the Spirits, três anos depois de o original espanhol ter
+    consagrado o nome de Allende em toda a América Latina; a edição
+    britânica da Jonathan Cape segue-se em julho desse ano. É a edição
+    inglesa que a leva aos mercados norte-americano e britânico, e à
+    comparação com Gabriel García Márquez, para os leitores que não a
+    podiam ler em espanhol.
+
+- id: allende-daughter-of-fortune-oprah-2000
+  title: Daughter of Fortune é escolhido para o clube de leitura de Oprah
+  description: >
+    Oprah Winfrey escolhe Daughter of Fortune (Hija de la fortuna, 1998)
+    para o seu clube de leitura televisivo, e Allende participa no The
+    Oprah Winfrey Show para o discutir - o momento que leva um original em
+    espanhol para além do seu público de língua inglesa já existente, até
+    às listas de mais vendidos do mainstream americano.

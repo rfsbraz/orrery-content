@@ -1,0 +1,75 @@
+stage: editions
+wing: isabel-allende
+summary: >
+  content/franchises/isabel-allende/editions.yaml built from scratch: 57
+  entries covering 30 of 36 works (27 with an English edition, 30 with a
+  pt-PT edition). Sourced from a full sweep of the Biblioteca Nacional de
+  Portugal's ipac20 author catalogue (271 records across all 28 result
+  pages, via the browser-UA fetch this catalogue answers to) for every
+  Portuguese edition, and each English edition's own OpenLibrary edition
+  record (by_statement/contributions, not the aggregated work-level search)
+  cross-checked against English Wikipedia infoboxes and Margaret Sayers
+  Peden's own Wikipedia bibliography. lookup.py's markets sweep (no,en,pt)
+  found only 1 usable pt-PT candidate (Difel's O Reino do Dragão de Ouro)
+  and no,en rows mostly OpenLibrary/GoogleBooks junk or Norwegian
+  false-positives; the real research ran through BNP directly instead.
+  scripts/metadata/lookup.py --verify-isbns isabel-allende: 57 editions, 0
+  suspect. validate.py --slug isabel-allende: 0 errors, 3 pre-existing
+  handoff-length warnings on other stages' files, none on editions.yaml.
+
+boginResolution: >
+  Resolved in Magda Bogin's favour on four independent sources (full
+  citations in editions.yaml's own header): the work's own English
+  Wikipedia article, Bogin's own Wikipedia bibliography, OpenLibrary's
+  aggregated contributor list, and the 1985 Knopf edition's own OpenLibrary
+  by_statement. Peden's own "selected translations" bibliography opens with
+  Of Love and Shadows (1987) and never lists La casa de los espíritus.
+  events.yaml's 1985 event (Bogin) was already right; works.yaml's header
+  (Peden, for this one title) needs fixing - see forStages.
+
+isbnStatus: >
+  All 57 entries pass check-digit validation, by hand and via lookup.py
+  --verify-isbns. Two pt-PT ISBN-10s were hand-converted to 13 per the
+  documented rule (drop the old check digit, recompute fresh): Zorro and
+  Afrodite, each cross-checked against repeat BNP citations. Two editions
+  ship WITHOUT an isbn13 because BNP's own record fails its check digit
+  with no second source to correct it - Contos de Eva Luna and O Meu País
+  Inventado pt-PT; full arithmetic and the suspicious shared-root detail
+  are in editions.yaml's own header. Publisher/translator/year/title are
+  kept for both; only the number was dropped.
+
+editionCounts: >
+  57 entries: 27 English (all Margaret Sayers Peden except Magda Bogin on
+  the 1985 House of the Spirits, Anne McLean on Maya's Notebook, Ollie Brock
+  & Frank Wynne on Ripper, Nick Caistor & Amanda Hopkinson on 3 titles, and
+  Frances Riddle on 3 titles - see editions.yaml's own header for the exact
+  span, which is wider on both ends than works.yaml's header currently
+  states) and 30 pt-PT (Porto Editora, the active publisher since 2011,
+  covers 28; Difel covers the 2 titles - Zorro and Afrodite - it published
+  once and Porto Editora never reissued, both flagged as sole/out-of-print
+  editions per this skill's own precedent for that case).
+
+forStages:
+  wing-audit: >
+    Two works.yaml header corrections, sourced above and in
+    editions.yaml's own header comment, not made here because works.yaml is
+    outside this stage's footprint: (1) drop the claim that Margaret Sayers
+    Peden translated La casa de los espíritus into English - it was Magda
+    Bogin (four sources cited in editions.yaml and in this handoff's
+    boginResolution); (2) the TRANSLATORS paragraph's claim that Peden's
+    range runs "from Daughter of Fortune (1998) onward" undercounts her on
+    both ends - her own Wikipedia bibliography and/or each title's own
+    OpenLibrary edition record confirm she also translated Of Love and
+    Shadows (1987), Eva Luna (1988), The Stories of Eva Luna (1991), The
+    Infinite Plan (1993) and Aphrodite (1998) before Daughter of Fortune,
+    and the paragraph's claim that Nick Caistor/Amanda Hopkinson and Frances
+    Riddle are credited on only 2 titles each undercounts them too - both
+    pairs/individuals also translated one further title apiece (In the
+    Midst of Winter for Caistor/Hopkinson; The Wind Knows My Name for
+    Riddle), all sourced in editions.yaml.
+
+openQuestions:
+  - "Maya's Notebook's English translator (Anne McLean) rests on OpenLibrary's aggregated work-level contributor list, not a per-edition by_statement independently checked - the one translator credit in this file with a single-source basis."
+  - "The Soul of a Woman (mujeres-del-alma-mia's English edition, Ballantine/Random House 2021) has no translator credited in any library record checked; shipped without one rather than guessed."
+  - "Perla and the Pirate (2025) has a confirmed pt-PT edition but no English-language catalogue record was found anywhere checked, despite the work itself being English-original per works.yaml - likely just not yet indexed by OpenLibrary/Google Books; worth a re-check in a few months."
+  - "The 'O Meu País Inventado' / 'Filha da Fortuna' ISBN collision at BNP (both showing root 04675) was not resolved with a second source (Wook/Bertrand/Fnac all block automated fetches, Google Books was rate-limited throughout this session) - a human with a browser could likely settle O Meu País Inventado's true 2014 Porto Editora ISBN in one search."

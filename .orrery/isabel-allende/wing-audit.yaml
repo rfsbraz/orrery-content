@@ -1,0 +1,129 @@
+stage: wing-audit
+wing: isabel-allende
+summary: >
+  Gates re-derived, not inherited: validate.py --slug 0 errors (4 handoff
+  word-cap warnings only, all in .orrery/); aura_density 36 works / 19 aura
+  / 0.53 per work / worst dark run 4 yrs 1977-1980 - the final gate holds;
+  art_rotation --check 0 organisation and 0 pacing problems (the single
+  reported problem is the pre-art composition axis); i18n_coverage full,
+  isabel-allende absent from every PARTIAL list; event_density 19 globals,
+  2 of ~17 high budget, no decade over 3. 6 blocking, 5 missing, 6 stale.
+
+blocking:
+  - id: dangling-cross-reference-in-rendered-prose
+    owner: press-archaeology
+    what: >
+      Two rendered strings point the reader at a YAML comment. The author
+      bio ends "sources disagree on the year - see above"; the 1973 coup
+      lifeEvent reads "her father's first cousin (see this file's own
+      header on the exact degree)". Both render (bio via
+      app/[locale]/author/[id]/page.tsx and about-the-author; descriptions
+      via every river layout), and the pt-PT overlay mirrors both ("ver
+      acima", "ver o cabeçalho deste ficheiro"). Fix in both locales.
+  - id: sept-11-2001-wrongly-excluded
+    owner: event-resonance
+    what: >
+      franchise.yaml excludes it as having "no sourced link to Mi país
+      inventado or any other book despite a specific search for one", while
+      works.yaml's own synopsis for that book states the link. The book's
+      publisher settles it: "The book circles around two life-changing
+      moments... And the terrorist attacks of September 11, 2001, on her
+      adopted homeland, the United States, brought forth from Allende an
+      overdue acknowledgment that she had indeed left home"
+      (harpercollins.com/products/my-invented-country-isabel-allende).
+      Ruling: move to include, cite that page.
+  - id: unsourced-nobel-claim
+    owner: press-archaeology
+    what: >
+      franchise.yaml's description opens "The Chilean-American
+      Nobel-adjacent bestseller"; no source anywhere in the wing supports
+      it, and pt-PT resolves the ambiguity upward into "sempre cotada para
+      o Nobel". The wing's most-read string and its meta description. Cut
+      or source, both locales.
+  - id: ninfa-synopsis-beat-not-in-the-story
+    owner: completeness-auditor
+    what: >
+      "spends a month's wages to bring her home" - he cannot take her home.
+      Her English Wikipedia article: "Since he is not allowed to bring
+      Fantasía into his flat, he tries to hide her at work." The note also
+      claims the synopsis "stops where the publisher's own copy stops", but
+      that copy (isabelallende.com/es/book/ninfa/summary) has no shop
+      window, no wages and no home. The ending stays out; only this clause
+      needs correcting.
+  - id: translator-header-still-wrong
+    owner: editions
+    what: >
+      editions routed this to wing-audit and it is substantive, so it is
+      routed on. works.yaml's TRANSLATORS paragraph says Peden worked
+      "from Daughter of Fortune (1998) onward into the mid-2010s": her real
+      run in editions.yaml is Of Love and Shadows (1988) to The Sum of Our
+      Days (2008), 16 titles, nothing after 2008. It also gives
+      Caistor/Hopkinson 2 titles (3: add In the Midst of Winter) and Riddle
+      2 (3: add The Wind Knows My Name). The Bogin correction itself is
+      right, independently confirmed.
+  - id: national-prize-title-contradicts-its-own-description
+    owner: press-archaeology
+    what: >
+      Title says "after years of campaigning", description says "months of
+      open lobbying". Both locales.
+
+missing:
+  - owner: visual-metadata
+    what: "Two covers are thumbnail-grade at -L: de-amor-y-de-sombra 128x186, mi-nombre-es-emilia-del-valle 144x220. Right books, no watermarks, but they will render soft."
+  - owner: editions
+    what: "The Soul of a Woman (Ballantine 2021) ships with no translator; OL's record genuinely carries none, but the credit exists in the book. Also no English edition for la-palabra-magica, whose own note says an English edition (Story Telling: A Writing Life) published the same year."
+  - owner: press-archaeology
+    what: "Salvador Allende degree: the header presents three sources as agreeing on first cousin, but the Ojito NYT quote as reproduced ('the only relative on her father's side with whom Ms. Allende had remained close') states no degree at all. The fact is safe - her own timeline, English Wikipedia's infobox and HarperCollins' own jacket copy all say father's cousin - but the sourcing sentence overclaims and should name what each source actually supports."
+  - owner: press-archaeology
+    what: "The header calls es.wikipedia's 'tío segundo' the lone rival reading. The loose usage is far wider: her own site's interview page has the interviewer say 'your uncle, Salvador Allende' and she answers without correcting it, and HarperCollins' jacket copy also says 'her uncle'. Record why the loose term is everywhere so nobody reopens this."
+  - owner: press-archaeology
+    what: "The foundation's founding year is contested on her own site (1995 in the bio PDF, December 1996 on the timeline) per the eras handoff; the content states 1996-12 with no note."
+
+stale:
+  - "authors/isabel-allende.yaml header claims the 1996 foundation event states Paula's death 'in the clear'. It does not; it says only 'in her daughter's name'. Three ungated strings state the death (bio, Paula's synopsis, La suma de los días' synopsis), not four. The loosening still holds on those three; the sentence does not."
+  - "editions.yaml's header says Peden's span is 'wider than works.yaml's own header currently states' and Riddle has 'one title each beyond what works.yaml's header currently credits her with'. Once works.yaml is fixed these become false; they are also status journaling about another file (CURATION 2)."
+  - "editions.yaml, perla-y-el-pirata note: 'as of this research' - status journaling."
+  - "theme.yaml notes: 'a first, revisable pick... held once the art block below existed to check them against' - narrates the build order, not the data."
+  - "orders.yaml records that the Martin monograph 'refused an automated fetch'. Collapse to what is known: the book exists and whether it argues a reading sequence is not established."
+  - "eras.yaml quotes her bio as 'dates, events and achievements'; the site has the Oxford comma."
+
+mechanicalFixesMade:
+  - "theme.yaml: '100-year-old grandfather' -> '99-year-old', matching the bio and the 1981 lifeEvent, which both say 99 twice."
+
+checkedAndClean: >
+  eras: [] holds. The magic-realism quotes are verbatim on
+  isabelallende.com/en/interview, including the second half naming City of
+  the Beasts, so the mode alternates and draws no line. orders: [] holds;
+  the Severo del Valle prequel vector stays inert under publication order.
+  Retrato en sepia's rewritten synopsis is accurate to the real plot
+  (Wikipedia: Aurora is Eliza's granddaughter, raised by Paulina, betrayed
+  by Diego Domínguez) and to the publisher's own copy word for word, while
+  naming neither Eliza nor Tao Chi'en. La casa de los espíritus' synopsis
+  likewise stops exactly where the jacket does. The citizenship
+  discrepancy is honestly recorded and both sides are real: her timeline
+  says "1993 Isabel becomes an American citizen", and the archived DPA
+  wire fetches and reports 15 years in California as of June 2003.
+  globalEvents references 14 real ids, exactly the events inside her
+  lifetime; the other 5 predate her birth and the arithmetic filter drops
+  them - no fabricated ids this time. La ninfa's retiering is right (its
+  English Wikipedia article calls it "a children's story" and files it
+  under 1984 children's books). All 31 cover URLs 200 and all are /b/id/
+  so ?default=false does not apply; the two riskiest (Eva Luna and Cuentos
+  de Eva Luna share one OL work record) are the right books, checked by
+  eye. work.images.cover is read by lib/content/editions.ts:68;
+  franchise.images.header is still read by nothing. works[].note renders
+  nowhere and the wing-owning author redirects off the ungated author
+  page, so both spoiler-audit engine claims hold. Levine's Twayne 2002
+  biography is a real book. pt-PT is genuine European Portuguese, current
+  with the base, and its title rules are applied consistently.
+
+notApplicableNotAbsent:
+  - "eras 0, orders 0, startHere none - documented negatives, not gaps."
+  - "5 works with no cover and 6 with no edition - three 1974 Chilean juvenilia pieces, two apocrypha chapbooks, one unreleased 2026 picture book. The record does not hold them."
+  - "achievements: none. Correct - no era, no curated order, nothing specific to mark."
+  - "features: {} - 19 aura entries over 36 works carries the River; nothing is half-empty."
+  - "pseudonyms: [] - she has none."
+
+curatorsCall:
+  - "franchise.yaml's 'Nobel-adjacent'. Recommend cutting it rather than sourcing it."
+  - "Whether the Levine citation should keep a 20-page range for a genealogical fact it cannot be checked against."

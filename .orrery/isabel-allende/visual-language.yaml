@@ -1,0 +1,43 @@
+stage: visual-language
+wing: isabel-allende
+summary: >
+  theme.yaml's art block set: emblem (an old sepia photograph laid on the
+  last written page of a hand-stitched notebook, its final line still wet),
+  motifs, atmosphere, lineCharacter, backgroundTexture, accentUse and
+  avoid, all seven required keys present. Anchor is address, not a generic
+  notebook: Allende's own writing life began as a letter to her dying
+  grandfather on 8 January 1981 (isabel-allende-grandfather-letter-1981),
+  a private ritual she has kept every book since, and the same shape - one
+  hand, addressed to one named and often unreachable reader - repeats
+  across the shelf (Paula at a comatose daughter's bedside, Inés del alma
+  mía addressed to an adoptive daughter, Violeta "writing in old age as a
+  letter to someone she loves", El Cuaderno de Maya, Alma's one-listener
+  confession in El Amante Japonés). The photograph half of the emblem
+  pairs Retrato en Sepia's own device (Aurora del Valle becomes a
+  photographer to recover a past she cannot remember) rather than
+  treating address and photograph as competing anchors. Checked with
+  theme_digest.py --exclude isabel-allende for catalogue-wide adjacency,
+  then read in full: the not-yet-merged Gabriel García Márquez wing
+  (wing/gabriel-garcia-marquez branch, not yet on this branch's ancestor
+  `isabel-allende/spoiler-merged`), Cervantes, Tolkien, Rowling, Atwood
+  and Valter Hugo Mãe - every wing whose emblem is also a written or
+  found document. Differentiated explicitly in the theme.yaml header and
+  in art.avoid (full list of objects ruled out per neighbour: decisions
+  below). Did not touch works.yaml, eras.yaml (still `[]`, unaffected),
+  events.yaml, franchise.yaml, orders.yaml or the author file - only
+  theme.yaml's header comment, notes and new art block. validate.py
+  --slug isabel-allende: 0 errors, the standing theme.art gap is closed;
+  3 pre-existing handoff-word-cap warnings from earlier stages remain,
+  unrelated to this one. asset_audit.py isabel-allende now reports
+  art:yes and lists 18 real jobs (14 life, 4 franchise) where it
+  previously refused to list any.
+
+produced:
+  - content/franchises/isabel-allende/theme.yaml   # header comment, notes, and the new art block
+
+decisions:
+  - "Differentiated per neighbour, in both the theme.yaml header and art.avoid: García Márquez is public, printed, hand-corrected newsprint (this wing is private, handwritten from the first word); Cervantes is administrative paperwork on iron-gall/indigo (this wing is a personal letter, no ledgers); Tolkien is a tied bundle corrected across decades by a second hand (this wing's notebook is bound and single-authored); Rowling is a disposable spiral exercise book written fast for no one in particular (this wing's notebook is kept for one named reader); Atwood is a sealed parcel 'never shown opened' (this wing's letters are opened and reread until they go soft); Valter Hugo Mãe is the nearest neighbour on `signature: thread` and a quiet domestic atmosphere, separated by geography, a steady untrembling instrument, and the sepia photograph no other wing carries."
+  - "Emblem is a photograph-on-notebook pairing rather than either object alone, because the wing's own two sourced anchors (an addressed, handwritten document; a sepia photograph) both recur independently across the bibliography and neither subsumes the other - collapsing to just a notebook would have landed on Tolkien/Rowling's already-claimed territory, and just a photograph would have discarded the address pattern the theme.yaml header had already established as the through-line."
+  - "lineCharacter is a steady, unhurried, untrembling fountain-pen hand, explicitly not the tremulous dip-pen line already claimed by Valter Hugo Mãe (and, before him, by docs/SCHEMA.md's own worked example, which turns out to be Mãe's actual wing quoted near-verbatim) - checked by reading valter-hugo-mae/theme.yaml in full since theme_digest.py flagged it as the nearest neighbour on signature and atmosphere alike."
+  - "avoid explicitly names the other document-object wings' own objects (sealed parcel, tied corrected bundle, spiral exercise book, mechanically set newsprint, specimen jar) rather than leaving the differentiation only in the header prose, on the Atwood/Cervantes/Tolkien precedent that a real collision risk belongs in art.avoid in words, not just in a comment nobody re-reads at prompt time."
+  - "El Zorro: Comienza la Leyenda (an authorized tie-in, not an original Allende property) is named once in avoid (masked-vigilante/swashbuckling costume) rather than folded into the motifs - it is real canon but shares no object with the rest of the shelf's own established register, and the risk is a future asset reaching for cape-and-rapier imagery as an easy 'adventure' illustration."

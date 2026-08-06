@@ -1,0 +1,78 @@
+stage: visual-metadata
+wing: isabel-allende
+summary: >
+  Sourced covers for 31/36 works (20/20 core, 10/14 extended, 1/2
+  apocrypha), a portrait for the author entity, no header. lookup.py's
+  no,en,pt sweep (400 candidates/74 titles) covered every core novel and
+  all six memoirs; a follow-up batch of direct Open Library searches
+  (Spanish titles, the apocrypha, the 2026 memoir, both unreleased Perla
+  books) closed the rest. Every cover was fetched with ?default=false and
+  looked at, not just HTTP-checked. validate.py --slug isabel-allende: 0
+  errors, only pre-existing warnings from earlier stages.
+
+produced:
+  files:
+    - "content/franchises/isabel-allende/works.yaml (images block on 31/36
+      works; a documented no-cover comment/note on the other 5)"
+    - "content/authors/isabel-allende.yaml (images.portrait only)"
+  coverage:
+    core: "20/20 - every novel resolved to a real Open Library edition,
+      verified by title text on the jacket, not by work-id trust alone."
+    extended: "10/14 - the 6 memoirs, the story collection, the 1984
+      children's story, 1 of 3 Perla books. Absent: the two 1974
+      Mampato-era pieces and Civilice a Su Troglodita (a real Open
+      Library work with no cover on any edition - a publication-era gap,
+      not a search failure), plus Perla and the Pirate (2025) - not on
+      Open Library, no PRH search hit, 403 from Bloomsbury, and the
+      author's own book page serves its cover through a session-gated
+      path that returned the site's SPA shell to every request tried."
+    apocrypha: "1/2 - Amor got a real Vintage Español 2012 jacket; Los
+      amantes del Guggenheim has no Open Library record, and its only
+      scan (an Internet Archive item) was rejected as a source - an
+      unvetted single-uploader scan, not Open Library's curated CDN."
+  portrait: >
+    Isabel Allende at Frankfurt Book Fair, 15 October 2015 (already
+    English Wikipedia's own infobox image) - Commons file by
+    User:Lesekreis, CC BY-SA 4.0, "Restrictions: personality" noted
+    (editorial use on her own page is the intended case).
+  header: >
+    Not sourced. franchise.images.header is declared in schema but
+    rendered by zero app code, a finding already confirmed on prior
+    wings; left untouched rather than spending research time on a field
+    nothing displays.
+
+decisions:
+  - "eva-luna and cuentos-de-eva-luna share one Open Library work record
+    (OL1905263W, 157 editions, two different books - their error) whose
+    own default cover is a mismatched German edition of neither. Both
+    covers used here were picked because their own jacket text names the
+    right book, verified by eye, not because the shared id said so."
+  - "A Long Petal of the Sea and The Wind Knows My Name each returned a
+    second, 283-edition collision work (OL44112704W) alongside their real
+    one - the omnibus-shaped trap this skill warns about. Used the
+    dedicated work id for each and named the rejected one in a comment."
+  - "el-zorro-comienza-la-leyenda: 'Tales of Zorro' (Moonstone Books 2007)
+    surfaced in the same search - a different, multi-author anthology,
+    not this novel. Rejected and named in a comment."
+  - "la-ninfa-de-porcelana ships the 2017 Alfaguara reissue jacket
+    (illustrated by Ana de Luna), not Fernando Krahn's 1984 original - no
+    source checked had a cover for that edition. Confirmed the right
+    book regardless (same protagonist and figure per the work's own
+    note), the specific mismatch risk flagged into this stage. A same
+    OL search also surfaced a Turkish edition mismatched onto the record
+    filed under the original title - rejected."
+  - "perla-y-la-princesa (forthcoming) has no Open Library record yet; its
+    cover comes from Penguin Random House's own cover-image service,
+    keyed by ISBN and cross-checked against the same page's og:image -
+    the publisher's own first-party asset."
+  - "Swapped two Large-Print-badged covers (Kingdom of the Golden Dragon,
+    Forest of the Pygmies) and a barcode-stickered Paula scan for clean
+    trade editions once looked at, not just HTTP-checked."
+
+openQuestions:
+  - "Perla and the Pirate (2025): no cover found; the author's own site
+    looks session-gated against direct asset fetches. A future pass with
+    a working browser session against isabelallende.com could still find
+    it."
+  - "Los amantes del Guggenheim: closes on its own if Internet Archive's
+    scan is ever catalogued on Open Library proper."

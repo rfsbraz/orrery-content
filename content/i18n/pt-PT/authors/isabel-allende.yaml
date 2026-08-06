@@ -1,0 +1,206 @@
+# Overlay pt-PT do autor: bio + prosa dos lifeEvents (title + description).
+# Os lifeEvents ficam aninhados sob o autor e são fundidos por id (ver
+# SCHEMA.md, "Nested lists merge by id"); datas, impact, organisation e
+# sources nunca se traduzem, nem o nome do autor. `pseudonyms` está vazio
+# na base, pelo que não há aqui nada a traduzir nesse campo.
+#
+# TÍTULOS DE OBRAS DENTRO DA PROSA - mesma regra do resto da ala (ver
+# content/i18n/pt-PT/franchises/isabel-allende/franchise.yaml): título
+# português publicado quando existe edição pt-PT real, espanhol original
+# quando não existe. Isso dá "A Casa dos Espíritos" (referência interna na
+# bio e em isabel-allende-grandfather-letter-1981), "Paula" (já igual em
+# ambas as línguas) e "O Amante Japonês" (referência genérica em
+# isabel-allende-separates-gordon-2015, nunca sobre a edição inglesa em si)
+# - mas "Civilice a Su Troglodita" mantém-se no espanhol original: não tem
+# edição portuguesa em editions.yaml, um dos seis títulos desta ala sem
+# tradução publicada encontrada, não uma omissão.
+#
+# CITAÇÃO SEM ORIGINAL PRESERVADO. A frase de Allende sobre a separação de
+# William Gordon (isabel-allende-separates-gordon-2015) só existe na base
+# em inglês, sem espanhol original preservado - ao contrário da frase
+# "Para mí es un honor..." em events.yaml, que a base cita em espanhol.
+# Sem original a citar, traduz-se aqui como qualquer outra prosa relatada,
+# a mesma solução já aplicada ao equivalente caso em
+# gabriel-garcia-marquez/events.yaml.
+
+- id: isabel-allende
+  bio: >
+    Nasceu Isabel Angélica Allende Llona em Lima, no Peru, onde o pai,
+    Tomás Allende, servia como segundo secretário na embaixada chilena, e
+    cresceu sobretudo em Santiago do Chile depois de os pais se
+    separarem em 1945, com mais alguns anos de infância em La Paz, na
+    Bolívia, e em Beirute, no Líbano, durante o segundo casamento da mãe
+    com o diplomata Ramón Huidobro. Trabalhou para a Organização das
+    Nações Unidas para a Alimentação e a Agricultura em Santiago e,
+    depois, na Europa, até meados da década de 1960, altura em que passou
+    para o jornalismo e a televisão chilenos a partir de 1967: na redação
+    da revista Paula, como diretora da revista infantil Mampato, e autora
+    de uma coletânea de colunas satíricas de jornal,
+    [[work:isabel-allende/civilice-a-su-troglodita|Civilice a Su
+    Troglodita]] (1974) - por sua própria conta, o seu verdadeiro primeiro
+    livro publicado, escrito por conselho do poeta Pablo Neruda, a quem
+    tinha ido entrevistar e que lhe disse que tinha imaginação a mais para
+    o jornalismo. Foi também dramaturga em Santiago no início da década de
+    1970, com quatro peças levadas a cena entre 1971 e 1975 (nenhuma
+    confirmada como publicada em livro). Tinha casado com o estudante de
+    engenharia chileno Miguel Frías em 1962; os filhos do casal são Paula
+    e Nicolás Frías Allende. Depois do golpe de 11 de setembro de 1973 que
+    derrubou o primo do pai, o Presidente Salvador Allende, e trouxe o
+    General Augusto Pinochet ao poder, ajudou a organizar a fuga de
+    pessoas nas listas de procurados do novo regime, até ela própria ser
+    ameaçada e fugir com a família para a Venezuela em 1975, onde
+    trabalhou como jornalista e administradora escolar durante os treze
+    anos seguintes. Em Caracas, em janeiro de 1981, ao saber que o avô de
+    99 anos estava a morrer, começou-lhe uma carta que cresceu até se
+    tornar no manuscrito de
+    [[work:isabel-allende/la-casa-de-los-espiritus|A Casa dos
+    Espíritos]] (1982), o seu debute literário e o romance que a
+    consagrou, ao lado de Gabriel García Márquez, como uma das vozes
+    maiores do realismo mágico latino-americano. Desde então tem escrito
+    nesse registo e na ficção histórica, a par de memórias:
+    [[work:isabel-allende/paula|Paula]] (1994) foi começado junto à cama
+    da filha, Paula Frías Allende, e terminado depois da morte desta, em
+    dezembro de 1992. Ela e Frías tinham-se divorciado em 1987; mudou-se
+    para a Califórnia em 1988, depois de casar com o segundo marido, o
+    advogado William C. Gordon, e vive em San Rafael desde então, ainda
+    que o casamento tenha terminado numa separação em 2015, ao fim de 27
+    anos. Em honra de Paula fundou a Isabel Allende Foundation em 1996.
+    Mais tarde naturalizou-se cidadã dos Estados Unidos, mantendo a
+    cidadania chilena, nalgum momento entre a década de 1990 e o início da
+    de 2000 - o seu próprio cronograma oficial indica 1993, uma notícia de
+    agência da época indica 2003, e as duas fontes não coincidem. O
+    Chile atribuiu-lhe o Prémio Nacional de Literatura em 2010, e em 2014
+    recebeu a Medalha Presidencial da Liberdade dos Estados Unidos,
+    entregue por Barack Obama. Casou uma terceira vez, com o advogado
+    Roger Cukras, em 2019, e continua a publicar todos os anos, começando,
+    por sua própria descrição, um novo livro a cada 8 de janeiro - o
+    aniversário da carta que se tornou o seu primeiro romance.
+  lifeEvents:
+    - id: isabel-allende-born-1942
+      title: Nasce em Lima, cresce em três países
+      description: >
+        Nasce em Lima, no Peru, onde o pai, Tomás Allende, era diplomata
+        chileno; cresce sobretudo em Santiago depois da separação dos pais
+        em 1945, com mais alguns anos de infância em La Paz, na Bolívia, e
+        em Beirute, no Líbano, durante o segundo casamento da mãe. O
+        deslocamento repete-se ao longo da sua ficção, nos exílios e nas
+        travessias de fronteira.
+
+    - id: isabel-allende-coup-1973
+      title: O golpe contra o primo do pai
+      description: >
+        O golpe do General Augusto Pinochet derruba e mata o Presidente
+        Salvador Allende - primo direito do pai de Isabel, Tomás Allende,
+        o que faz de Salvador Allende primo em primeiro grau removido de
+        Isabel. Allende, então jornalista e figura da televisão em
+        Santiago, passa os meses seguintes a ajudar pessoas nas listas de
+        procurados do novo regime a chegar a lugar seguro, até ela própria
+        ser ameaçada.
+
+    - id: isabel-allende-exile-venezuela-1975
+      title: Colocada na lista negra, foge para a Venezuela
+      description: >
+        Incluída nas listas de procurados de Pinochet, foge do Chile com
+        o marido e os filhos para o que se torna treze anos de exílio em
+        Caracas. A perda do país - e o medo de nunca mais voltar - é a
+        ferida a que a sua ficção dos primeiros anos regressa.
+
+    - id: isabel-allende-caracas-journalism-1976
+      title: Reconstruir uma vida profissional no exílio
+      description: >
+        Sem uma via clara de regresso ao Chile, sustenta a família em
+        Caracas como colaboradora freelance do jornal El Nacional a partir
+        de 1976 e, desde 1979, como administradora na escola secundária
+        Colegio Marroco - os anos pouco gloriosos do exílio entre o golpe
+        e a carta que se torna o seu primeiro romance.
+
+    - id: isabel-allende-grandfather-letter-1981
+      title: A carta que se torna o seu primeiro romance
+      description: >
+        Ao saber que o avô de 99 anos está a morrer no Chile e sem poder
+        voltar junto dele, começa em Caracas uma carta que cresce até se
+        tornar no manuscrito de A Casa dos Espíritos, publicado no ano
+        seguinte. Guarda a data desde então, começando, por sua própria
+        conta, um novo livro a cada 8 de janeiro, por superstição.
+
+    - id: isabel-allende-divorces-frias-1987
+      title: Divorcia-se de Miguel Frías
+      description: >
+        Vinte e cinco anos depois de casar, e nove anos depois de uma
+        breve separação em 1978, Allende e Miguel Frías divorciam-se.
+        Conhece o segundo marido, o advogado californiano William Gordon,
+        numa digressão de promoção de livros no ano seguinte.
+
+    - id: isabel-allende-paula-dies-1992
+      title: A morte de Paula
+      description: >
+        A filha, Paula, hospitalizada em Madrid desde ter entrado em coma
+        por porfiria em dezembro de 1991, morre aos 29 anos em casa de
+        Isabel e William Gordon, em San Rafael, na Califórnia. O luto
+        transforma-se nas memórias Paula (1994) e, em 1996, na fundação
+        que Allende cria em nome dela.
+
+    - id: isabel-allende-foundation-1996
+      title: Funda a Isabel Allende Foundation
+      description: >
+        Em nome da filha, Allende lança a Isabel Allende Foundation,
+        financiando programas de apoio aos direitos das mulheres e das
+        crianças - um trabalho que descreve como separado da escrita, mas
+        não menos uma missão.
+
+    - id: isabel-allende-my-invented-country-2003
+      title: O Meu País Inventado e as duas pátrias de uma escritora
+      description: >
+        As suas memórias, O Meu País Inventado, sobre a tensão entre o
+        Chile e os Estados Unidos depois de quase três décadas dividida
+        entre os dois, atraem grande atenção da imprensa, incluindo uma
+        reportagem no programa NOW de Bill Moyers, na PBS - um raro
+        momento em que o tema da identidade imigrante, presente ao longo
+        da sua ficção posterior, é dito pela sua própria voz, em extensão,
+        fora de um romance.
+
+    - id: isabel-allende-academy-arts-letters-2004
+      title: Eleita para a American Academy of Arts and Letters
+      description: >
+        Allende é eleita para a American Academy of Arts and Letters, a
+        mais antiga sociedade honorífica dos Estados Unidos para
+        escritores, compositores e artistas, vinte e dois anos depois do
+        seu debute literário.
+
+    - id: isabel-allende-olympic-flagbearer-2006
+      title: Porta-bandeira olímpica na cerimónia de abertura de Turim
+      description: >
+        Allende é uma das oito mulheres que levam a bandeira olímpica ao
+        estádio na cerimónia de abertura dos Jogos de Inverno de 2006, em
+        Turim, representando a América Latina ao lado de Sophia Loren,
+        Susan Sarandon, a Nobel Wangari Maathai e outras - um papel
+        público e cerimonial para uma escritora que fugira do Chile como
+        exilada política três décadas antes.
+
+    - id: isabel-allende-national-prize-literature-2010
+      title: O Prémio Nacional de Literatura do Chile, depois de meses de campanha
+      description: >
+        O Chile atribui a Allende o Prémio Nacional de Literatura, a sua
+        mais alta distinção literária, depois do que a imprensa chilena
+        relata como meses de pressão pública a seu favor por parte de
+        escritores e figuras públicas, incluindo quatro antigos
+        presidentes; é apenas a quarta mulher a recebê-lo. Fora do país
+        quando o júri decide, sabe do prémio por videoconferência.
+
+    - id: isabel-allende-medal-of-freedom-2014
+      title: Medalha Presidencial da Liberdade
+      description: >
+        Barack Obama atribui a Allende a Medalha Presidencial da
+        Liberdade, a mais alta distinção civil dos Estados Unidos, numa
+        cerimónia na Casa Branca; o anúncio tinha sido feito duas semanas
+        antes.
+
+    - id: isabel-allende-separates-gordon-2015
+      title: Separa-se de William Gordon
+      description: >
+        Depois de 27 anos de casamento, Allende e William Gordon
+        separam-se. Allende disse estar a terminar O Amante Japonês,
+        escrito antes da separação, numa altura em que o casamento já
+        estava a acabar - "uma altura para refletir sobre o amor e as
+        relações, o romance e a paixão, o envelhecer, a memória, a
+        perda."

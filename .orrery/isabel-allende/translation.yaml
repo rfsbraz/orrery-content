@@ -1,0 +1,78 @@
+stage: translation
+wing: isabel-allende
+summary: >
+  Full first pt-PT locale build - the wing had zero coverage before this
+  run. i18n_coverage.py --slug isabel-allende: 202/221 files before (4
+  MISSING: franchise.yaml, works.yaml, events.yaml, authors/isabel-
+  allende.yaml), 206/221 after, no regression on any other wing. eras.yaml
+  and orders.yaml are both empty lists ([]) in the base with a documented
+  real-negative finding each (no creative periods on record; no curated
+  order clears the bar) - zero prose slots, so the coverage script does
+  not target them and no overlay file exists for either, same as every
+  other wing with an empty base list (verified against anna-sewell, which
+  ships no orders.yaml at all). theme.yaml is confirmed NOT in
+  scripts/i18n_coverage.py's PROSE map (checked the map directly rather
+  than assumed) and carries no reader-facing prose regardless - internal
+  art direction only, skipped. validate.py --slug isabel-allende: 0
+  errors, same 4 pre-existing handoff-length warnings from earlier stages.
+
+titleChoice: >
+  Allende writes in Spanish; base titles/synopses are themselves English
+  translations. Followed the precedent already fixed on the two prior
+  non-English-original wings (gabriel-garcia-marquez/works.yaml,
+  miguel-de-cervantes/works.yaml, both re-read in full before writing):
+  an inline work reference or a work named in translated prose uses the
+  real published pt-PT title from editions.yaml (30 real Difel/Porto
+  Editora titles, just built) when an edition exists, and the original
+  Spanish title otherwise, never the English translation title. Applied
+  at every site: franchise.yaml and the author bio's inline
+  [[work:...]] references (A Casa dos Espíritos, Paula; Civilice a Su
+  Troglodita kept Spanish - one of the 6 works with no edition in any
+  language) and events.yaml's two plain-text mentions of La casa de los
+  espíritus and Más allá del invierno (A Casa dos Espíritos, Para Lá do
+  Inverno). One deliberate exception, documented in events.yaml's own
+  header: allende-house-of-spirits-english-1985 and allende-daughter-of-
+  fortune-oprah-2000 are about the concrete historical English-market
+  edition/occasion itself (Knopf's 1985 Bogin translation; the 2000
+  Oprah's Book Club pick), so "The House of the Spirits" and "Daughter
+  of Fortune" stay in English there - not a generic reference to swap
+  for the pt title, but the real name of the English object the event is
+  about. Isabel-allende-separates-gordon-2015's mention of El amante
+  japonés (generic, not edition-specific) got the pt title, O Amante
+  Japonês.
+
+paulaPassage: >
+  Translated with the same deliberate register as the English (spoiler-
+  audit's own reworked framing, carried into works.yaml's synopsis,
+  authors/isabel-allende.yaml's bio, and the isabel-allende-paula-dies-
+  1992 lifeEvent): plain and dated, never clinical, never sentimental.
+  "posta por escrito para uma filha que não a podia ouvir, e continuada
+  para lá da morte dela, no ano seguinte" mirrors "set down for a
+  daughter who could not hear it, and carried on past her death the
+  following year" clause for clause, no softening and no added pathos.
+
+registerNotes: >
+  European Portuguese throughout - "está a ler" not "está lendo",
+  "banda desenhada" not "quadrinhos" register n/a here (no comics in this
+  bibliography) but the auxiliary+gerund check was run across every new
+  sentence and found clean. "rapariga" used twice (de-amor-y-de-sombra,
+  la-ciudad-de-las-bestias) deliberately - ordinary and neutral in pt-PT,
+  per the skill's own discriminator table. No Brazilian vocabulary traps
+  triggered (no ecrã/tela, casa de banho/banheiro, autocarro/ônibus
+  contexts arise in this bibliography). Proper institution/brand names
+  (Isabel Allende Foundation, American Academy of Arts and Letters,
+  Oprah's Book Club, The Oprah Winfrey Show) kept in English as their
+  real registered/trading names, matching how this catalogue's other
+  author overlays treat foreign institutions.
+
+verification: >
+  Rendered output not checked live (no dev server available in this
+  worktree); verified instead by re-reading every written field against
+  its English source line by line for register and completeness, and by
+  the two gating scripts above. Flagging for a native reviewer: the
+  isabel-allende-my-invented-country-2003 title swap (base itself uses
+  the English translation title "My Invented Country and a writer's two
+  countries" stylistically while its own description already sits in
+  Spanish; this overlay renders both in the pt-PT published title, "O
+  Meu País Inventado", consistent with the wing's generic-reference rule
+  but the closest call in this build).
