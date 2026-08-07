@@ -148,7 +148,7 @@ Parallel groups are parallel *because* their members touch different files.
 | `spoiler-audit` | cross-cutting: works, events, characters, authors, orders |
 | `visual-language` | `theme.yaml` (`art` only) |
 | `art-rotation` | `events.yaml`, `authors/<id>.yaml` (lifeEvents), `eras.yaml` - the `organisation` / `illustration_type` / `images_required` / `modifier` fields |
-| `visual-metadata` | `works.yaml` (images), `franchise.yaml` (header), `authors/<id>.yaml` |
+| `visual-metadata` | `works.yaml` (images), `authors/<id>.yaml` (portrait) |
 | `editions` | `editions.yaml` |
 | `translation` | `content/i18n/<locale>/**` only |
 | `whats-new` | read-only, plus repairing a rotted source URL in place |
