@@ -83,6 +83,19 @@ def audit(slug: str) -> dict:
 
     life = [e for a in authors for e in (a.get("lifeEvents") or []) if needs_art(e)]
 
+    # A heteronym (docs/SCHEMA.md) carries its own lifeEvents one level below
+    # the author's - Fernando Pessoa's Alberto Caeiro, Ricardo Reis and the
+    # others each have an authored biography with dated, illustratable
+    # moments. Missed entirely before this: the wing shipped nine such events
+    # and none of them ever appeared on this audit or generated a job.
+    heteronym_life = [
+        e
+        for a in authors
+        for h in (a.get("heteronyms") or [])
+        for e in (h.get("lifeEvents") or [])
+        if needs_art(e)
+    ]
+
     # Which shared events actually reach this wing: inside a lifetime, and not
     # excluded by the wing's own ruling. A global sketch is drawn once for the
     # catalogue, so this is coverage, not a job list for this wing alone.
@@ -118,6 +131,11 @@ def audit(slug: str) -> dict:
         "covers": (sum(1 for w in works if (w.get("images") or {}).get("cover")), len(works)),
         "eras": (sum(1 for e in eras if has_sketch(e)), len(eras), [e for e in eras if not has_sketch(e)]),
         "life": (sum(1 for e in life if has_sketch(e)), len(life), [e for e in life if not has_sketch(e)]),
+        "heteronym_life": (
+            sum(1 for e in heteronym_life if has_sketch(e)),
+            len(heteronym_life),
+            [e for e in heteronym_life if not has_sketch(e)],
+        ),
         "events": (sum(1 for e in events if has_sketch(e)), len(events), [e for e in events if not has_sketch(e)]),
         "globals": (sum(1 for e in reaching if has_sketch(e)), len(reaching), [e for e in reaching if not has_sketch(e)]),
     }
@@ -135,6 +153,8 @@ def jobs(r: dict) -> list[tuple[str, str, str]]:
         out.append(("era-plate", e.get("id", "?"), f"{e.get('title','?')} ({e.get('period','?')})"))
     for e in r["life"][2]:
         out.append(("life-event", e.get("id", "?"), e.get("title", "?")))
+    for e in r["heteronym_life"][2]:
+        out.append(("heteronym-life-event", e.get("id", "?"), e.get("title", "?")))
     for e in r["events"][2]:
         out.append(("franchise-event", e.get("id", "?"), e.get("title", "?")))
     for e in r["globals"][2]:
@@ -146,10 +166,15 @@ def jobs(r: dict) -> list[tuple[str, str, str]]:
 def line(r: dict) -> str:
     def frac(k):
         return f"{r[k][0]}/{r[k][1]}"
+    # heteronym_life is omitted when zero (no wing has any yet but
+    # fernando-pessoa) rather than printed as "0/0" on every other wing's
+    # line - the same "a check nobody reads is not a check" reasoning that
+    # keeps this report legible as the catalogue grows.
+    het = f"  heteronyms {frac('heteronym_life')}" if r["heteronym_life"][1] else ""
     return (f"{r['slug']:<20} art:{'yes' if r['art'] else 'NO ':<3} "
             f"portrait {frac('portraits')}  covers {frac('covers')}  "
             f"eras {frac('eras')}  life {frac('life')}  "
-            f"franchise {frac('events')}  world {frac('globals')}")
+            f"franchise {frac('events')}  world {frac('globals')}{het}")
 
 
 def main() -> int:

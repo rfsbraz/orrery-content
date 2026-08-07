@@ -109,11 +109,15 @@ def wings() -> list[str]:
 
 
 def life_event_home(wing: str) -> dict[str, str]:
-    """life-event id -> the author file that owns it.
+    """life-event AND heteronym-life-event id -> the author file that owns it.
 
     A life event lives on the AUTHOR, not the wing, and a wing can have several
     authors. Guessing the wing's first author would silently write a co-author's
-    event into the wrong file.
+    event into the wrong file. A heteronym's own lifeEvents (docs/SCHEMA.md)
+    live one level deeper on the same author file - same home, just nested -
+    so they are indexed into this same id -> file map rather than a parallel
+    one; every caller already asks "which file owns this id" without caring
+    how deep inside it the entry sits.
     """
     works = A.load("content", "franchises", wing, "works.yaml") or []
     out = {}
@@ -121,6 +125,9 @@ def life_event_home(wing: str) -> dict[str, str]:
         a = A.load("content", "authors", f"{aid}.yaml")
         for e in (a or {}).get("lifeEvents") or []:
             out[e.get("id")] = f"content/authors/{aid}.yaml"
+        for h in (a or {}).get("heteronyms") or []:
+            for e in h.get("lifeEvents") or []:
+                out[e.get("id")] = f"content/authors/{aid}.yaml"
     return out
 
 
@@ -135,13 +142,18 @@ def entity_for(wing: str, kind: str, aid: str, homes: dict[str, str]) -> dict:
         items = A.load("content", "franchises", wing, "eras.yaml") or []
     elif kind == "franchise-event":
         items = A.load("content", "franchises", wing, "events.yaml") or []
-    elif kind == "life-event":
+    elif kind in ("life-event", "heteronym-life-event"):
         home = homes.get(aid)
         if not home:
             return {}
         # A life event's home file is a mapping (the author), not a list.
         author = A.load(*home.split("/")) or {}
-        items = author.get("lifeEvents") or []
+        if kind == "life-event":
+            items = author.get("lifeEvents") or []
+        else:
+            items = [
+                e for h in (author.get("heteronyms") or []) for e in (h.get("lifeEvents") or [])
+            ]
     elif kind == "world-event":
         g = A.load("content", "events", "global.yaml") or {}
         items = (g.get("events") if isinstance(g, dict) else g) or []
@@ -436,7 +448,7 @@ def main() -> int:
             key = f"{owner}/{kind}/{aid}"
             if key in have:
                 continue
-            path = (homes.get(aid) if kind == "life-event"
+            path = (homes.get(aid) if kind in ("life-event", "heteronym-life-event")
                     else TYPE_FILE[kind].format(wing=wing))
             if not path:
                 print(f"  ?? no home for {key}, skipping")
