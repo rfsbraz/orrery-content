@@ -820,12 +820,6 @@ images:
   portraitCredit: "Luigi Novi, CC BY 3.0"
   portraitSource: "https://commons.wikimedia.org/wiki/File:..."
 
-# franchise.yaml
-images:
-  header: "https://..."            # a wide banner for the wing
-  headerCredit: "..."
-  headerSource: "https://..."
-
 # works.yaml (per work) - a cover the app can use when no edition cover exists
 images:
   cover: "https://covers.openlibrary.org/b/id/12345-L.jpg"
@@ -834,6 +828,15 @@ images:
 
 # editions.yaml already has coverUrl for a SPECIFIC edition's jacket
 ```
+
+**Removed 2026-08-07** (orrery#169): `franchise.images.header` and
+`author.images.header` (+ `headerCredit`/`headerSource`) used to be documented
+here. Confirmed dead across six separate wing builds - roughly two dozen wings
+set it, and no page in the app has ever read it. Dropped from the schema
+rather than left as a field curators keep being tempted to fill in; existing
+content that still carries the key is harmless (nothing enforces an
+allowlist), just genuinely unread. A real franchise-header treatment would be
+a fresh design decision, not a revival of this field.
 
 ### Image rights (hard rule)
 
@@ -874,7 +877,7 @@ Only reference images you can justify:
 - **Never** scrape a retailer's jacket image, never take an image with no
   discoverable licence, and never link something behind a paywall or hotlink
   ban. If you cannot establish the rights, **leave the field empty** - the app
-  degrades to typographic covers and text headers by design.
+  degrades to a typographic cover by design.
 
 **The rule is about the asset, not the hostname.** A retailer's jacket scan does
 not become usable by being uploaded to a permitted host. The João Tordo visual
@@ -966,8 +969,8 @@ images:
   sketchSource: docs/VISUAL.md#4-asset-specs          # optional: the spec it was made to
 ```
 
-Unlike `portrait`, `cover` and `header` - which are third-party images we link
-to and credit - **a sketch is ours and lives in this repo** under
+Unlike `portrait` and `cover` - third-party images we link to and credit -
+**a sketch is ours and lives in this repo** under
 `assets/<wing-slug>/<entity-id>.webp`, committed alongside the entry that
 references it. The app copies `assets/` into its `public/` at build time.
 

@@ -1,13 +1,19 @@
 ---
 name: visual-metadata
-description: Source and record the imagery a franchise wing needs - author portraits, franchise headers, and per-work covers - with defensible rights on every one. Use when adding or refreshing the images blocks in content/authors/<slug>.yaml, content/franchises/<slug>/franchise.yaml, or works.yaml.
+description: Source and record the imagery a franchise wing needs - author portraits and per-work covers - with defensible rights on every one. Use when adding or refreshing the images blocks in content/authors/<slug>.yaml or works.yaml.
 ---
 
 # visual-metadata
 
 Fill the `images` blocks that turn a franchise wing from a list into a shelf:
-one **portrait** per author, one **header** per franchise, one **cover** per
-work. Output is git YAML, reviewed by a curator via PR.
+one **portrait** per author, one **cover** per work. Output is git YAML,
+reviewed by a curator via PR.
+
+**No `franchise.images.header`.** It used to be a third deliverable here;
+removed 2026-08-07 (orrery#169) after six separate wing builds confirmed the
+same thing - roughly two dozen wings had one, and no page in the app has ever
+read it. Do not source or set one; docs/SCHEMA.md no longer documents the
+field.
 
 This skill runs under [`docs/CURATION.md`](../../../docs/CURATION.md) - the
 prime directives, comment policy, gates, shared trap registry and verification
@@ -114,7 +120,7 @@ Library hosts publisher jacket art and permits hot-linking; credit is
 otherwise answers 200 with a blank placeholder. Verify with the
 `?default=false` URL even if you write the plain URL into the YAML.
 
-**2. Wikimedia Commons** - the default for portraits and headers. Every file
+**2. Wikimedia Commons** - the default for portraits. Every file
 has a real, checkable licence. Never assume it: read the file's `extmetadata`
 and record what it says (see "Reading a Commons licence" below). Most usable
 files are CC BY, CC BY-SA, or public domain.
@@ -225,9 +231,9 @@ name. An image with no discoverable licence is not a candidate.
 - **Fetch every URL you write** and confirm it returns an image. A 404 in a
   content PR is a fabrication that happens to be honest (CURATION §1).
 - **Unclear rights means empty.** A missing cover is a design gap; a stolen
-  cover is a legal one. The app degrades to typographic covers and text
-  headers by design - that fallback exists precisely so you never have to
-  guess. Leave the field out and say so in the PR.
+  cover is a legal one. The app degrades to a typographic cover by design -
+  that fallback exists precisely so you never have to guess. Leave the field
+  out and say so in the PR.
 - **Attribution is a field, not a footnote.** `*Credit` must carry everything
   the licence demands - author and licence name at minimum
   (`"Kevin Payravi / WikiPortraits, CC BY-SA 4.0"`). `*Source` points at the
@@ -333,28 +339,22 @@ A **labelled contact sheet** makes this practical: download the candidates,
 tile them into one image with the slug under each, and read it in a single
 pass. Sixteen covers audit in one look instead of sixteen.
 
-## Portraits and headers: dimensions and framing
+## Portraits: dimensions and framing
 
 | Slot | Target ratio | Practical minimum | Notes |
 |---|---|---|---|
 | `portrait` | 2:3 to 3:4, tall | ~800px wide | Head and shoulders. A crop already framed as a portrait beats a wide press shot the app has to centre-crop blindly. |
-| `header` | 3:1 or wider when displayed | ~1600px wide source | Rarely will you find a true panorama. A 4:3 or 3:2 original at high resolution is fine - the app crops a horizontal band, so what matters is that **the subject sits in the middle third vertically** and the source has pixels to spare. |
 | `cover` | Whatever the jacket is | Open Library `-L` size | Do not crop or normalise. A cover is a document, not a design element. |
 
 **Look at the image before choosing it.** Download the thumbnail and actually
 view it. Metadata cannot tell you that the subject is jammed against the top
 edge, or that a tree is in front of the house.
 
-**What makes a good header:** something that reads as the *franchise*, not as
-one adaptation. An author's house, a landscape the books live in, a building
-that inspired a setting. Avoid film stills and movie logos - usually
-studio-owned, they date the wing and credit the wrong art form.
-
 **Take Wikimedia thumbnail URLs from the API, never hand-build them.**
 Wikimedia serves only bucketed widths; a hand-written `1600px-…` URL 400s
 while the API's `1920px-…` works. Request `iiurlwidth=1920` and copy the
 `thumburl` verbatim. Use the original file URL only when it is already
-modestly sized - a 5712x4284 original as a page header is a 10MB banner.
+modestly sized.
 
 ## Reading a Commons licence
 
@@ -456,8 +456,7 @@ field out.
    `?default=false`**, then **build a contact sheet and look at all of them**:
    reject retailer watermarks outright, replace degraded library scans from
    the work's other editions.
-4. Find the portrait and the header on Commons; read the licence metadata;
-   look at the images.
+4. Find the portrait on Commons; read the licence metadata; look at the image.
 5. Write the `images` blocks. Quote every URL. Comment any slot deliberately
    left bare, and any rights nuance that needs explaining.
 6. Run `python scripts/validate.py` until green. Check that the number of
