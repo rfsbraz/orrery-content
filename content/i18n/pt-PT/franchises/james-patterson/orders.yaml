@@ -1,0 +1,127 @@
+# Overlay pt-PT: name + rationale de cada ordem, mais `debated` (lista de
+# prosa que se funde por inteiro - docs/SCHEMA.md, PROSE_LISTS em
+# lib/content/index.ts). Nunca orderedWorkIds, type, source ou sources.
+#
+# Dentro de rationale e debated, os títulos de livros específicos ficam em
+# inglês mesmo quando existe edição portuguesa verificada (ao contrário do
+# critério usado em franchise.yaml/events.yaml para uma menção isolada em
+# destaque, como "A Conspiração da Aranha"). Aqui os títulos aparecem quase
+# sempre em listas de desambiguação por data de publicação (pares e grupos
+# do mesmo ano, ou séries numeradas) - substituir só alguns por títulos
+# portugueses reais partiria o paralelismo da lista, e em pelo menos um caso
+# (Women's Murder Club: "os números nos próprios títulos bastam para definir
+# qual vem primeiro") o próprio argumento do curador depende do número
+# aparecer no título INGLÊS. "Private", em concreto, é ao mesmo tempo o nome
+# da série e o título do primeiro romance - manter esta e as restantes
+# menções de título em inglês evita também colisões de texto sem sentido.
+
+- id: james-patterson/alex-cross
+  name: Alex Cross, os romances por ordem
+  rationale: >
+    O detetive de homicídios de Washington DC e psicólogo forense pelo qual
+    Patterson é mais conhecido, e a série que a sua própria FAQ nomeia em
+    primeiro lugar quando perguntam por que ordem o ler. Destacá-la do
+    catálogo mais vasto permite a um leitor seguir a carreira completa de um
+    só detetive, hoje trinta e seis romances ao longo de três décadas, sem
+    Women's Murder Club, Michael Bennett, Private e os thrillers avulsos com
+    que a ordem derivada os intercala todos os anos. A ordem de publicação
+    resolve três pares do mesmo ano que a precisão apenas anual da ordem
+    derivada não consegue: Alex Cross's Trial antes de I, Alex Cross (2009),
+    Alex Cross, Run antes de Cross My Heart (2013), e Cross Down antes de
+    Alex Cross Must Die (2023), cada um seguindo a sequência registada na
+    própria ficha da série na Wikipedia. O custo de ler toda a saga: o enredo
+    e o ritmo da estreia de 1993 leem-se de forma diferente dos capítulos
+    mais curtos e rápidos em que o modelo de colaboração assenta a partir de
+    meados da década de 2000, por isso comprometer-se com os trinta e seis
+    significa acompanhar essa mudança de estilo a par da personagem.
+  debated:
+    - "Alex Cross's Trial (2009) é uma história paralela de história familiar, passada entre os antepassados de Cross no Sul da era Jim Crow, e não um caso dos dias de hoje; está aqui na sua posição de publicação, que é também onde a lista de livros da série na Wikipedia a coloca, mas um leitor à procura apenas do encadeamento caso a caso pode saltá-lo sem perder continuidade de enredo."
+    - "Dois anúncios de 2026, Cross & Sampson e The Family Cross, partilham o ano sem que nenhuma fonte estabeleça ainda qual vem primeiro; listados aqui por ordem alfabética até haver uma."
+    - "Duas novelas da era BookShots com o nome Alex Cross ficam fora desta ordem por serem novelas, não romances, reunidas em coletâneas que cruzam séries: Cross Kill (2016, em Triple Threat, ao lado de uma história de Michael Bennett e de uma do detetive Luc Moncrief) e Detective Cross (2017, em Triple Homicide, ao lado de uma história de Michael Bennett e de uma de Women's Murder Club). O conto de 2014 Action é excluído pela mesma razão."
+
+- id: james-patterson/womens-murder-club
+  name: Women's Murder Club, os romances por ordem
+  rationale: >
+    Quatro mulheres profissionais a investigar crimes em conjunto em São
+    Francisco - uma detetive da polícia, uma médica-legista, uma procuradora
+    e uma jornalista de crime - e, com Alex Cross e Maximum Ride, uma das
+    três séries que a própria FAQ de Patterson nomeia quando perguntam por
+    que ordem o ler. Todos os títulos a partir de 1st to Die trazem a sua
+    própria posição no título, por isso a sequência não precisa de
+    reconstrução externa: 18th Abduction e 19th Christmas partilham o ano de
+    publicação de 2019, e os números nos próprios títulos bastam para
+    definir qual vem primeiro. Destacar os vinte e seis romances do catálogo
+    mais vasto permite a um leitor seguir o mesmo elenco e a mesma cidade sem
+    Alex Cross, Michael Bennett, Private e os livros avulsos com que a ordem
+    derivada os intercala. O custo: vinte e seis livros de um só elenco e uma
+    só cidade é uma leitura mais estreita do que o catálogo de Patterson no
+    seu todo, e um leitor à procura de variedade de tom ao longo da saga fica
+    melhor servido misturando séries ou lendo antes os livros avulsos.
+  debated:
+    - "Três entradas de nível apócrifo com o nome Women's Murder Club ficam fora desta ordem: The Trial (novela de 2016, em Kill or Be Killed), The Medical Examiner (novela de 2017, em Triple Homicide) e 23 1/2 Lies (2023), uma coletânea de três novelas sem relação entre si onde só a história-título pertence a esta série, e nenhuma das três foi alguma vez publicada em separado."
+
+- id: james-patterson/michael-bennett
+  name: Michael Bennett, os romances por ordem
+  rationale: >
+    Um detetive da polícia de Nova Iorque com uma família famosamente
+    numerosa, o terceiro grande protagonista policial de Patterson nos dias
+    de hoje, a par de Alex Cross e de Women's Murder Club. Destacar os
+    dezoito romances da mesma estante de quatrocentos e oitenta títulos serve
+    um leitor que queira seguir Bennett caso a caso sem as outras séries ou
+    os livros avulsos a interromper. Nenhuma entrada partilha ano de
+    publicação com outra, por isso esta ordem não acrescenta nada que um
+    leitor atento da ordem por omissão não conseguisse reconstruir
+    filtrando; o único valor está em não ter de fazer esse filtro à mão. O
+    custo é o mesmo de qualquer leitura de série única neste catálogo:
+    perder a variedade de registo entre os protagonistas de Patterson, e o
+    tom de Bennett, centrado na família, é mais discreto do que o de Cross
+    ou o de Women's Murder Club, por isso um leitor à espera de um deles vai
+    encontrar aqui um livro diferente e mais lento.
+  debated:
+    - "Duas novelas da era BookShots com o nome Michael Bennett ficam fora desta ordem: Chase (2016) e Manhunt (2017, reunida em Triple Homicide ao lado de uma história de Alex Cross e de uma de Women's Murder Club)."
+
+- id: james-patterson/private-novels
+  name: Os romances Private, por ordem
+  rationale: >
+    A agência internacional de investigação de Jack Morgan, a mais inquieta
+    geograficamente das séries de Patterson: um novo coautor e uma nova
+    cidade em quase todos os títulos (Londres, Berlim, Los Angeles, Mumbai,
+    Sydney, Paris, Deli, Moscovo e mais) em vez do território fixo de um só
+    detetive. Destacá-la da estante serve um leitor que queira
+    especificamente o fio condutor da agência, sem Alex Cross, Women's
+    Murder Club, Michael Bennett ou os livros avulsos a interromper a
+    sequência de cidades. O registo histórico não estabelece uma sequência
+    ao mês para dois agrupamentos do mesmo ano: Private, Private: #1 Suspect
+    e Private: Oz (todos de 2012), e Count to Ten, Private: Missing, Private
+    Paris e The Games (todos de 2016, com Private Games já fixado por
+    numeração dentro do primeiro grupo). Ambos os agrupamentos estão listados
+    por ordem alfabética de título até haver uma fonte melhor. O custo de a
+    ler do princípio ao fim é a mesma sensação de autoria rotativa que torna
+    a série distinta: a voz da prosa e o ritmo mudam mais de romance para
+    romance aqui do que nas outras séries de Patterson, porque cada título é
+    escrito por um coautor diferente, muitas vezes baseado na própria
+    cidade.
+  debated:
+    - "Private: #1 Suspect e Private Games (ambos de 2012) e o agrupamento de quatro títulos de 2016 (Count to Ten, Private: Missing, Private Paris, The Games) não têm sequência ao mês com fonte; listados por ordem alfabética de título dentro de cada ano até haver uma."
+    - "Duas novelas da era BookShots com o nome Private ficam fora desta ordem: Private Royals (2016) e Private Gold (2017), nenhuma delas reunida depois numa coletânea."
+
+- id: james-patterson/maximum-ride
+  name: Maximum Ride, os romances por ordem
+  rationale: >
+    Um bando de crianças geneticamente modificadas em fuga do laboratório
+    que as criou, a série juvenil emblemática de Patterson e, com Alex Cross
+    e Women's Murder Club, a terceira que a sua própria FAQ nomeia para uma
+    pergunta sobre ordem de leitura. Destacá-la dá a um leitor à procura do
+    registo juvenil de Patterson uma saga isolada de nove livros sem mais
+    nada misturado, um público diferente das séries policiais para adultos
+    que preenchem o resto deste catálogo. Nenhuma entrada partilha ano de
+    publicação com outra, por isso este é um puro destacar de fio narrativo,
+    sem empates a resolver. Exclui o spin-off Hawk, de dois livros
+    (2020-2021, uma nova protagonista no mesmo mundo), e a adaptação em
+    manga de dez volumes, ambos reais mas linhas à parte para onde um leitor
+    que acabe esta saga pode seguir a seguir. O custo de a ler como um bloco
+    isolado: a história do bando foi apresentada como fechada em Nevermore
+    (2012), e Maximum Ride Forever (2015) reabre-a três anos depois, como
+    uma continuação que alguns leitores da série tratam como opcional.
+  debated:
+    - "Maximum Ride: Forever (2015) reabre uma história que Nevermore (2012) foi vendida como tendo fechado; alguns leitores tratam-no como um epílogo opcional, e não como um nono livro obrigatório. Listado aqui pela ordem de publicação de qualquer forma."
