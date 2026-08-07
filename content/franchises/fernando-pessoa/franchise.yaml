@@ -1,0 +1,177 @@
+# A wing spans an author's complete published work. Pessoa's is unusual in
+# shape rather than in scope: five thin books in a lifetime, then a shelf that
+# keeps growing seventy years after the death, because the books are still
+# being made out of the 25,000 sheets he left in a trunk. The wing therefore
+# runs 1918 to 2015 and is not closed.
+#
+# The invented authors - Alberto Caeiro, Ricardo Reis, Álvaro de Campos and the
+# semi-heteronym Bernardo Soares - are NOT separate wings and not separate
+# author entities. They are heteronyms: literary personas with authored lives,
+# recorded on content/authors/fernando-pessoa.yaml under `heteronyms` and
+# linked from the works they signed. `authorIds` stays [fernando-pessoa]
+# throughout, because one man wrote all of it.
+id: fernando-pessoa
+name: Fernando Pessoa
+kind: author
+description: >
+  The complete published work of Fernando Pessoa, who published five slim books
+  in forty-seven years and left the rest of it in a trunk. Four of the five were
+  in English; the only Portuguese one,
+  [[work:fernando-pessoa/mensagem|Mensagem]] (1934), came out the year before he
+  died. Everything else on this shelf was made after 1935 by editors reading his
+  papers: the poetry of Alberto Caeiro, Ricardo Reis and Álvaro de Campos, three
+  invented poets with their own biographies and their own quarrels; the
+  fragmentary [[work:fernando-pessoa/livro-do-desassossego|Livro do
+  Desassossego]] ascribed to a Lisbon bookkeeper named Bernardo Soares; a Faust
+  he worked at for thirty years and never finished; detective stories,
+  aphorisms, political polemic, occult treatises and love letters. It is a
+  bibliography that runs seventy years past the life and is still not finished.
+authorIds: [fernando-pessoa]
+themePreset: arca-tipografica
+
+# Capabilities are auto-detected from the data (docs/SCHEMA.md). This wing ships
+# works.yaml (54 works: 16 core, 33 extended, 5 apocrypha), an author entity
+# carrying 11 life events and a 5-entry `heteronyms` block, and events.yaml (20
+# franchise events, 1936 to 2019, the history of the trunk being read), which
+# activates `river` and `companion`. eras.yaml is `[]`, a sourced negative
+# argued in that file. orders.yaml holds one order and `startHere` is set below,
+# so `wizard` is on. editions.yaml holds 58 entries across 42 of the 54 works,
+# so `editions` is on too. There is no achievements.yaml: the wing has no era to
+# read through and one curated order of seven volumes, so the badges it could
+# carry would all be counts.
+features: {}
+
+# "Where do I start?" - the paths the wizard scores at /f/fernando-pessoa/start.
+#
+# The default order is close to useless as advice on this shelf: forty-six of
+# the fifty-four works are posthumous, and their years record when an editor
+# made a book out of the trunk rather than anything about the writing. The one
+# entry route with a record behind it is the list the Portuguese state sets for
+# the final year of school, which is where essentially every Portuguese reader
+# actually meets Pessoa. It is quoted on the paths that rest on it.
+#
+# No reading guide recommending a first Pessoa book was found in either
+# language: not from Casa Fernando Pessoa, not from the publishers of the
+# poetry (Ática, Assírio & Alvim, Tinta-da-china), not in the Wook
+# "por onde começar" bookshop-guide series that carries entry advice for other
+# Portuguese authors on this catalogue, and not in the Portuguese web archive
+# at arquivo.pt, whose full-text index over "por onde começar" / "se nunca leu
+# Fernando Pessoa" returns personal blogs and nothing citable. So there is no
+# path here saying "start with Mensagem" or "start with the Desassossego",
+# however often those are named in conversation: the fame of a book is a fact
+# about the book, not somebody recommending it as a door.
+startHere:
+  paths:
+    # Source: Direção-Geral da Educação, "Aprendizagens Essenciais |
+    # Articulação com o Perfil dos Alunos, 12.º ano, Ensino Secundário,
+    # Português" (August 2018, in force), Anexo 1, "Lista de obras e textos
+    # para educação literária - 12.º ano":
+    #   OBRAS DE FERNANDO PESSOA
+    #   Poesia lírica: "Poesia do ortónimo (escolher seis poemas), poesia dos
+    #     heterónimos (escolher dois poemas de Alberto Caeiro, três poemas de
+    #     Ricardo Reis e três poemas de Álvaro de Campos)"
+    #   Poesia épica: "Mensagem (escolher seis poemas)"
+    # https://www.dge.mec.pt/sites/default/files/Curriculo/Aprendizagens_Essenciais/12_portugues.pdf
+    # The five works below are the volumes those prescribed poems come from.
+    - id: the-school-five
+      title: The five Portugal teaches
+      description: >
+        Portugal sets the same short list for the final year of school, and it
+        is where practically every Portuguese reader starts: poems Pessoa signed
+        with his own name, poems by each of the three invented poets, and
+        [[work:fernando-pessoa/mensagem|Mensagem]]. The five volumes here are
+        the books those poems come from, so between them you meet the shepherd
+        who refuses to think about what he sees, the classicist counselling
+        distance from a life that is going to end anyway, the engineer who wants
+        to feel everything in every way, and the coat-of-arms book of Portuguese
+        myth that took a national prize the year before he died. The cost: this
+        is the poetry only. It leaves out the prose entirely, and with it the
+        criticism, the politics, the occult writing and the letters, which is
+        most of the shelf.
+      workIds:
+        - fernando-pessoa/poesias
+        - fernando-pessoa/poemas-de-alberto-caeiro
+        - fernando-pessoa/odes-de-ricardo-reis
+        - fernando-pessoa/poesias-de-alvaro-de-campos
+        - fernando-pessoa/mensagem
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste, arc]
+      note: >
+        The syllabus asks for a handful of poems from each of these, not the
+        whole of any of them. Five doors rather than five obligations.
+    # The order this points at carries its own sources: the same syllabus, Casa
+    # Fernando Pessoa's five-name division of the work, and the publishers who
+    # have gathered the poetry one signature to a volume since 1942.
+    - id: by-signature
+      title: One name at a time
+      description: >
+        The arrangement Pessoa used himself and the one Portugal still reads him
+        by: each invented author taken whole, one after another, instead of
+        scattered across seventy years of posthumous publishing. It adds the two
+        prose books to the five above, and it is where
+        [[work:fernando-pessoa/livro-do-desassossego|Livro do Desassossego]]
+        sits, a factless autobiography in more than five hundred fragments kept
+        by a Lisbon bookkeeper who goes nowhere and does nothing. The cost:
+        seven volumes out of fifty-four, so the theatre, the fiction, the
+        criticism, the politics and the occult writing all stay on the shelf.
+      workIds: null
+      orderId: fernando-pessoa/by-signature
+      fit:
+        experience: [returning, completionist]
+        commitment: [arc]
+    - id: everything
+      title: Everything, in the year it appeared
+      description: >
+        All fifty-four volumes from 1918 onward, each in the year it first came
+        out. For Pessoa that is a stranger route than it sounds: he published
+        five thin books in a lifetime, and everything after 1935 is the record
+        of editors opening a trunk of twenty-five thousand sheets and making
+        books out of it for the next eighty years. Read this way the shelf is
+        the story of a writer being assembled in public rather than the story of
+        him writing. The cost is exactly that. The order tells you when each
+        book was manufactured, not when it was written or whose name is on it,
+        so the invented authors arrive in pieces decades apart, and the
+        forty-nine poems of
+        [[work:fernando-pessoa/o-guardador-de-rebanhos|O Guardador de
+        Rebanhos]] turn up twice, once in 1925 and again inside the 1946 volume
+        that collected them.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+
+globalEvents:
+  include:
+    # Álvaro de Campos's "Ultimatum" (Portugal Futurista, October 1917) is
+    # written out of the war and evicts the Allies and the Germans alike.
+    # Pessoa's own account of it: no ministry could have allowed the piece with
+    # the country at war, the issue escaped the wartime prior censorship by
+    # "sorte inexplicável", and the police seized it in November. It reaches
+    # this shelf as Ultimatum e Páginas de Sociologia Política (1980).
+    #   https://pt.wikipedia.org/wiki/Portugal_Futurista
+    - world-war-i-1914
+    # The dictatorship the 1926 coup installed is the one subject on which this
+    # bibliography argues both sides. O Interregno (1928) defends it as
+    # political science; the prose José Barreto gathered in 2015 turns against
+    # Salazar's Estado Novo, its corporatism and its censorship; and the
+    # February 1935 Diário de Lisboa article defending the initiatic orders
+    # against a bill outlawing them drew the regime's counter-attack in the
+    # last year of his life.
+    - portuguese-censorship-1926
+  # Considered and refused. Nothing renders unless it is in `include` above, so
+  # these change nothing; they are kept as the record of a judgement already
+  # made, so it is not re-litigated from scratch.
+  exclude:
+    - pulp-magazines-1926       # his detective fiction is armchair reasoning in the Poe and Conan Doyle line he read in English, written for no market and printed in 2008; nothing here was written into a genre-magazine category
+    - penguin-paperback-1935    # four months before his death; the five books of his lifetime were small runs he paid for himself, and the Penguin on this shelf is Zenith's Disquiet of 2001
+    - carnation-revolution-1974 # thirty-nine years after the death; the end of the censorship belongs to the publishing history of the trunk, not to anything he wrote
+
+sources:
+  - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra"
+  - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida"
+  - "http://arquivopessoa.net/info/bibliografia"
+  - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
+  - "https://en.wikipedia.org/wiki/Fernando_Pessoa"

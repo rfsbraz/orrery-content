@@ -1,0 +1,641 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds). Author-LIFE events live here (they follow the
+# person); franchise-specific events stay in the franchise.
+#
+# The life dates and the chronology below come from Portuguese Wikipedia's
+# infobox and "Primeiros anos em Lisboa" section (which cite the birth record
+# down to the hour and the address) and from the abbreviated chronology it
+# reproduces from Casa Fernando Pessoa's own "Cronologia da vida de Fernando
+# Pessoa". Everything about the heteronyms is sourced separately, on the
+# `heteronyms` block itself.
+id: fernando-pessoa
+name: Fernando Pessoa
+aka: ["Fernando António Nogueira Pessoa"]
+born: 1888-06-13
+died: 1935-11-30
+bio: >
+  Born in Lisbon in 1888 and raised largely in Durban, South Africa, where his
+  stepfather was Portuguese consul and where he was educated in English, Pessoa
+  returned to Lisbon alone at seventeen and never left it again. He earned his
+  living writing commercial correspondence in foreign languages for Baixa trading
+  houses and spent the rest of his time inventing writers. In a single day in
+  March 1914 he produced the poems of
+  [[work:fernando-pessoa/o-guardador-de-rebanhos|O Guardador de Rebanhos]] under
+  the name Alberto Caeiro, and around that voice built a coterie of invented
+  authors - Caeiro, Ricardo Reis, Álvaro de Campos, the semi-heteronym Bernardo
+  Soares and more than a hundred others - each with a biography, a philosophy and
+  a quarrel with the rest. He published five slim books of poetry in his
+  lifetime, four of them in English and one in Portuguese,
+  [[work:fernando-pessoa/mensagem|Mensagem]] (1934), plus a pamphlet defending
+  the military dictatorship and, in a magazine,
+  [[work:fernando-pessoa/o-banqueiro-anarquista|O Banqueiro Anarquista]]. At his
+  death in 1935 he left
+  a trunk holding more than 25,000 manuscript sheets, now in the Biblioteca
+  Nacional de Portugal; the work in it has been coming out in books since 1942
+  and is still not exhausted, which is why the shelf below runs seventy years
+  past the life.
+images:
+  # The 1914 studio photograph, head and shoulders, hat and round spectacles -
+  # the picture both the Portuguese and the English Wikipedia carry in their
+  # infoboxes. Commons licences it {{PD-old-70-1923}}: an anonymous photograph
+  # published before 1923, so out of copyright in Portugal and the EU (seventy
+  # years from publication for an anonymous work) and in the United States.
+  # The photographer is not recorded on the file and no source names one.
+  #
+  # Three better-known photographs were checked and not used. The 1928
+  # identity-card portrait (File:Fp40.jpg) and the 1929 shot at the Abel
+  # Pereira da Fonseca counter (File:Pessoacopo.jpg) are both tagged
+  # {{PD-Art}}, which covers a faithful reproduction of a two-dimensional
+  # artwork and says nothing about a photograph's own term; the last
+  # photograph, taken by Augusto Ferreira Gomes in 1935
+  # (File:Pessoa_ultima_foto.jpg), is tagged {{PD-old-100-expired}}, which
+  # asserts a photographer dead over a century - impossible for a 1935 picture,
+  # and Ferreira Gomes died in 1953. The file Wikidata's P18 points at
+  # (File:216_2310-Fernando-Pessoa.jpg) is tagged public domain while its own
+  # source line reads "© Livros Quetzal, S.A. e Maria José de Lencastre", and
+  # is 435px wide besides.
+  portrait: "https://upload.wikimedia.org/wikipedia/commons/3/32/Pessoa_chapeu.jpg"
+  portraitCredit: "Unknown photographer, 1914; public domain"
+  portraitSource: "https://commons.wikimedia.org/wiki/File:Pessoa_chapeu.jpg"
+lifeEvents:
+  # The life, which is short and almost entirely interior. The anchors that
+  # change how the books read: the English schooling, the day the heteronyms
+  # began, the three occasions this famously uneventful man was in a public
+  # fight (1923, 1928, 1935), the one Portuguese book, and the trunk left
+  # behind. Chronology from Casa Fernando Pessoa's own "Cronologia da vida de
+  # Fernando Pessoa" unless the entry names another source.
+  #
+  # What happened AFTER 1935 is not here. The posthumous publication of the
+  # trunk is the story of the shelf rather than of the man, and it lives in
+  # content/franchises/fernando-pessoa/events.yaml.
+  - id: pessoa-born-1888
+    organisation: full-bleed-vista
+    illustration_type: establishing-landscape
+    images_required: 1
+    date: 1888-06-13
+    title: Born opposite the opera house in Lisbon
+    impact: low
+    description: >
+      Born at 3.20pm on the fourth floor of no. 4, Largo de São Carlos, directly
+      across from the Teatro Nacional de São Carlos in the Chiado, then the
+      parish of Mártires. He would die forty-seven years later in the same city,
+      a few streets away.
+    spoilerAfter: null
+    sources:
+      - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
+  - id: pessoa-durban-1896
+    organisation: diptych
+    illustration_type: place-portrait
+    images_required: 2
+    date: 1896
+    title: An English education in Durban
+    impact: high
+    description: >
+      His father died of tuberculosis in 1893, when Pessoa was five; his mother
+      remarried the Portuguese consul in Durban and the family sailed for South
+      Africa in January 1896. He was schooled entirely in English, took the Cape
+      University admission examination in 1903 and won the Queen Victoria Prize
+      for the best English essay. English stayed a working language for life: the
+      first four books he published were in it, and so were his last written
+      words.
+    spoilerAfter: null
+    sources:
+      - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
+  - id: pessoa-dia-triunfal-1914
+    organisation: immersion
+    illustration_type: symbolic-still-life
+    images_required: 1
+    date: 1914-03-08
+    title: The triumphal day
+    impact: high
+    description: >
+      By his own account he set out to invent a bucolic poet as a joke on his
+      friend Mário de Sá-Carneiro, got nowhere for days, then on 8 March 1914
+      stood at a tall chest of drawers and wrote thirty-odd poems straight
+      through, opening with the title O Guardador de Rebanhos. "It was the
+      triumphal day of my life, and I shall never have another like it." What
+      followed, he said, was the appearance of someone inside him whom he
+      immediately named Alberto Caeiro: "my master had appeared in me." Every
+      other heteronym is positioned relative to that voice.
+    spoilerAfter: null
+    sources:
+      - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra/alberto-caeiro"
+  - id: pessoa-english-books-1918
+    organisation: artifact-spread
+    illustration_type: book-object
+    images_required: 1
+    modifier: pull-focus
+    date: 1918
+    title: He prints two English books and posts them to London
+    impact: med
+    description: >
+      In July 1918 he paid for [[work:fernando-pessoa/antinous|Antinous]] and
+      [[work:fernando-pessoa/35-sonnets|35 Sonnets]] himself, and sent copies to
+      British newspapers. Reviews came, and they were favourable with
+      reservations about how archaic his English was, which is the only
+      contemporary critical reception Pessoa got outside Portugal in his
+      lifetime and the reason the next three books he published were in English
+      too. He was thirty, four years past the day the heteronyms began, and none
+      of that work was in these volumes.
+    spoilerAfter: null
+    sources:
+      - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida/cronologia"
+      - "https://en.wikipedia.org/wiki/Fernando_Pessoa"
+  - id: pessoa-ofelia-1920
+    organisation: beside
+    illustration_type: relationship-tableau
+    images_required: 1
+    date: 1920-03-01
+    title: The only love affair on record
+    impact: med
+    description: >
+      He met Ophélia Queiroz on 8 October 1919 at Félix, Valladas & Freitas,
+      where he wrote commercial letters in foreign languages and she had just
+      been hired as a secretary. The first of his letters to her is dated 1
+      March 1920; he ended the relationship on 29 November of the same year,
+      resumed it in September 1929, and wrote the last letter on 11 January
+      1930. She is the only romantic attachment in his life anyone has
+      documented, and the letters, in a private baby-language and interrupted
+      by Álvaro de Campos writing to her himself, were published in 1978 as
+      [[work:fernando-pessoa/cartas-de-amor|Cartas de Amor]]. She outlived him
+      by fifty-six years.
+    spoilerAfter: null
+    sources:
+      - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida/cronologia"
+  - id: pessoa-olisipo-seizure-1923
+    organisation: mosaic
+    illustration_type: press-media-collage
+    images_required: 1
+    date: 1923
+    title: His own publishing house is raided
+    impact: high
+    description: >
+      Olisipo, the small press he founded in 1920, reissued António Botto's
+      Canções in 1922, a book by an openly homosexual poet, and published Raul
+      Leal's pamphlet Sodoma Divinizada in 1923. In February 1923 the Lisbon
+      student federation denounced the "literatura de Sodoma" in the newspaper
+      A Época; in March the Governo Civil de Lisboa ordered the seizure of the
+      Botto, the Leal and Judith Teixeira's book as immoral. Pessoa answered
+      with two manifestos in defence of the authors, one of them signed by
+      Álvaro de Campos and addressed to the students in his own register: study,
+      enjoy yourselves and shut up. It is the one time he took a public side at
+      cost to himself, and Olisipo did not survive it.
+    spoilerAfter: null
+    sources:
+      - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida/cronologia"
+      - "https://pt.wikipedia.org/wiki/Ant%C3%B3nio_Botto"
+  - id: pessoa-interregno-1928
+    organisation: diptych
+    illustration_type: manuscript-proof
+    images_required: 2
+    date: 1928
+    title: He argues for the dictatorship in print
+    impact: med
+    description: >
+      Two years after the military coup of 1926 he published
+      [[work:fernando-pessoa/o-interregno|O Interregno]], a pamphlet issued by
+      the Núcleo de Acção Nacional defending the military dictatorship as a
+      matter of political science: a country whose public opinion has
+      disintegrated cannot be governed by opinion. It is the hardest item in the
+      bibliography, and the record does not leave it there. The political prose
+      gathered from the same papers in 2015 by José Barreto,
+      [[work:fernando-pessoa/sobre-o-fascismo-a-ditadura-militar-e-salazar|Sobre
+      o Fascismo, a Ditadura Militar e Salazar]], shows him turning against
+      Salazar's Estado Novo, its corporatism and its censorship in the last
+      years of his life. Both belong to the same man and neither cancels the
+      other.
+    spoilerAfter: null
+    sources:
+      - "https://en.wikipedia.org/wiki/Fernando_Pessoa"
+      - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=interregno+pessoa"
+  - id: pessoa-crowley-1930
+    organisation: strip
+    illustration_type: serial-contact-sheet
+    images_required: 1
+    date: 1930-09-23
+    title: He helps stage a magician's suicide
+    impact: med
+    description: >
+      Aleister Crowley, with whom he had been corresponding since 1929, arrived
+      in Lisbon on 2 September 1930. On 23 September Crowley faked his own death
+      at the Boca do Inferno near Cascais after a row with his girlfriend, and
+      Pessoa and the journalist Augusto Ferreira Gomes helped stage it; on 5
+      October the Notícias Ilustrado ran an interview with Pessoa about the
+      disappearance which the two of them had fabricated. The man remembered as
+      a clerk who never did anything spent a fortnight running a hoax on the
+      Portuguese press, and the occult reading behind books like
+      [[work:fernando-pessoa/rosea-cruz|Rosea Cruz]] was not a private
+      eccentricity but a working correspondence with the most notorious occultist
+      alive.
+    spoilerAfter: null
+    sources:
+      - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida/cronologia"
+      - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
+  - id: pessoa-associacoes-secretas-1935
+    organisation: artifact-spread
+    illustration_type: document-facsimile
+    images_required: 1
+    modifier: fold-reveal
+    date: 1935-02-04
+    title: The last fight he picked
+    impact: high
+    description: >
+      On 4 February 1935, nine months before he died, he published an article in
+      the Diário de Lisboa defending the initiatic organisations against a bill
+      that would outlaw them, and the Estado Novo counter-attacked. He was not a
+      freemason and had spent his life keeping the occult reading private; this
+      is the one occasion he argued it in a newspaper, weeks after the Casais
+      Monteiro letter and weeks after
+      [[work:fernando-pessoa/mensagem|Mensagem]] had taken a prize from a body
+      of the same regime. The article and what surrounds it were gathered in
+      2011 as
+      [[work:fernando-pessoa/associacoes-secretas-e-outros-escritos|Associações
+      Secretas e Outros Escritos]].
+    spoilerAfter: null
+    sources:
+      - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
+      - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=associacoes+secretas+outros+escritos+pessoa"
+  - id: pessoa-mensagem-1934
+    organisation: medallion
+    illustration_type: book-object
+    images_required: 1
+    date: 1934
+    title: The only Portuguese book he lived to see
+    impact: high
+    description: >
+      [[work:fernando-pessoa/mensagem|Mensagem]], forty-four poems on Portuguese
+      myth and empire, was the single Portuguese-language book Pessoa published
+      in his lifetime. It took the Prémio Antero de Quental that same year, in
+      the "poem or single poetry" category, from the Secretariado Nacional de
+      Informação then run by António Ferro - the same Ferro who as a very young
+      man had been the publisher of Orpheu in 1915.
+    spoilerAfter: null
+    sources:
+      - "https://pt.wikipedia.org/wiki/Mensagem_(livro)"
+  - id: pessoa-death-1935
+    organisation: immersion
+    illustration_type: portrait-of-absence
+    images_required: 1
+    date: 1935-11-30
+    title: The trunk is left behind
+    impact: high
+    description: >
+      Admitted to hospital on 29 November 1935 with hepatic colic and dead the
+      next day of cirrhosis of the liver, at forty-seven. His last written words,
+      in pencil and in English, were "I know not what tomorrow will bring." He
+      left a trunk of more than 25,000 sheets, most of it unpublished; the slow
+      work of reading and ordering those papers is the reason his bibliography
+      keeps growing.
+    spoilerAfter: null
+    sources:
+      - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
+      - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra"
+
+# --- heteronyms -------------------------------------------------------------
+#
+# Pessoa drew the distinction himself, in the "Tábua Bibliográfica" he published
+# in Presença no. 17 (December 1928): a pseudonymous work "is the author's own,
+# save in the name it signs"; a heteronymous work "is the author outside his own
+# person, it is by a complete individuality manufactured by him, as the lines of
+# any character in any drama of his would be". So the five below are not pen
+# names and are not filed as `pseudonyms`. Their `born`, `died` and `lifeEvents`
+# are written fiction, which is what `authored: true` marks.
+#
+# Two of them, Bernardo Soares and the Barão de Teive, are semi-heteronyms:
+# prose writers whose personality is not another man's but Pessoa's own with the
+# reasoning and the feeling cut away. The term is Pessoa's, applied to Soares in
+# the Casais Monteiro letter; for Teive it is the classification his editors and
+# the criticism use, and the entry says so on itself.
+#
+# The single richest source for Caeiro, Reis, Campos and Soares is Pessoa's
+# letter to Adolfo Casais Monteiro of 13 January 1935, printed in
+# Correspondência 1923-1935 (ed. Manuela Parreira da Silva, Lisboa: Assírio &
+# Alvim, 1999) and quoted at length by Casa Fernando Pessoa. The Barão de Teive
+# is not in that letter at all, and his entry names what does carry him. Dates
+# that are not in the letter are likewise marked as such on the entry that
+# carries them, with whatever does support them named.
+#
+# The nested lifeEvents below carry no `organisation` or `illustration_type`,
+# unlike the author lifeEvents above. Those two fields describe how an entry is
+# laid out on the timeline and what its artwork depicts, and no heteronym
+# timeline renders anywhere (docs/SCHEMA.md, heteronyms), so on these entries
+# there is no cell for them to describe.
+heteronyms:
+  - id: alberto-caeiro
+    name: "Alberto Caeiro"
+    authored: true
+    born: 1889-04-16
+    # Day and month come from Pessoa's own papers as read by Jerónimo Pizarro
+    # (2017), not from the Casais Monteiro letter, which gives no date at all;
+    # Casa Fernando Pessoa gives only the year. A rival annotation in the papers
+    # dates him 1887 instead and gives him two suppressed middle names.
+    #
+    # No `died` key: the death year is fixed at 1915 by every source, but no
+    # source gives a day or a month, and the field takes a date. The death
+    # itself is recorded as a lifeEvent below.
+    bio: >
+      The shepherd poet: born in Lisbon, orphaned young, raised by an elderly
+      great-aunt on a farm in the Ribatejo, with a primary-school education, no
+      profession and, by his own boast, no reading. Blond, blue-eyed, frail.
+      He writes free verse of pure sensation, refusing metaphor and refusing to
+      think about what he sees: "the only thing a stone tells him is that it has
+      nothing at all to tell him." Pessoa called him his master, and so do the
+      other heteronyms - Reis, Campos and the orthonymous Pessoa are all
+      positioned as his pupils. Pessoa wrote as Caeiro, he said, "through sheer
+      and unexpected inspiration, without knowing or even suspecting that I was
+      going to write."
+    lifeEvents:
+      - id: caeiro-death-1915
+        date: 1915
+        title: "Caeiro dies of tuberculosis (an authored death)"
+        impact: high
+        description: >
+          Within Pessoa's fiction, Caeiro returns from the Ribatejo to Lisbon,
+          writes the Poemas Inconjuntos and dies of tuberculosis at twenty-six.
+          No real person died: this is a written event, dated by Pessoa inside
+          the invented biography, and 1915 is also the year Orpheu appeared and
+          the year Pessoa's own chronology records simply as "Pessoa kills
+          Alberto Caeiro". The death is load-bearing for the reading, because
+          the surviving heteronyms then write about their master in the past
+          tense, and Álvaro de Campos's memoir of him is written from it.
+        spoilerAfter: null
+        sources:
+          - "https://pt.wikipedia.org/wiki/Alberto_Caeiro"
+          - "https://en.wikipedia.org/wiki/Alberto_Caeiro"
+          - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
+      - id: caeiro-athena-debut-1925
+        date: 1925
+        title: "Caeiro reaches print, ten years after his written death"
+        impact: med
+        description: >
+          Alberto Caeiro does not exist and never did; what is real here is a
+          magazine. In March 1925 the fourth number of Athena, which Pessoa
+          edited, carried twenty-three poems of O Guardador de Rebanhos over the
+          shepherd's name, and the fifth number in June carried sixteen of the
+          Poemas Inconjuntos. So the master the other invented authors call
+          their teacher, and whom Pessoa had written into a grave in 1915,
+          published for the first time eleven years after the poems were
+          written and a decade after he was supposed to be dead. Portuguese
+          readers met the name in a magazine before they met the fiction that
+          explains it.
+        spoilerAfter: null
+        sources:
+          - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida/cronologia"
+          - "https://pt.wikipedia.org/wiki/O_Guardador_de_Rebanhos"
+    sources:
+      - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra/alberto-caeiro"
+      - "https://en.wikipedia.org/wiki/Alberto_Caeiro"
+      - "https://pt.wikipedia.org/wiki/Alberto_Caeiro"
+
+  - id: ricardo-reis
+    name: "Ricardo Reis"
+    authored: true
+    # No `born` key, deliberately. The Casais Monteiro letter gives the year
+    # 1887 and the city (Porto) and says plainly that Pessoa does not recall the
+    # day and month. A 19 September date circulates widely and is presented by
+    # Portuguese Wikipedia as his birth date; it does not come from the letter,
+    # and the only document that could carry it is the horoscope Pessoa cast for
+    # Reis, which is reproduced but not transcribed there. The year sits in the
+    # bio, where it can be stated with its qualification attached.
+    #
+    # No `died` key either: Reis's authored biography contains no death. José
+    # Saramago supplied one - 1936, the year after Pessoa's own - in his novel
+    # O Ano da Morte de Ricardo Reis, which is Saramago's invention about
+    # Pessoa's invention and belongs to that wing, not to this field.
+    bio: >
+      Born in Porto in 1887, educated by Jesuits, a physician who does not
+      practise, a Latinist by training and half a Hellenist by his own reading.
+      A monarchist: after the failure of the northern monarchist rising he
+      expatriated himself to Brazil in 1919 and stayed. He writes short,
+      metrically strict pagan odes in the manner of Horace - "a Greek Horace
+      writing in Portuguese", as Pessoa relayed the description - counselling
+      distance, moderation and acceptance of fate: see life from far off, ask it
+      nothing, there is nothing it can tell you. Pessoa said he wrote as Reis
+      "after an abstract deliberation which suddenly takes concrete shape in an
+      ode", and that Reis writes better Portuguese than he does, with a purism
+      he found excessive.
+    lifeEvents:
+      - id: reis-brazil-exile-1919
+        date: 1919
+        title: "Reis expatriates himself to Brazil (an authored exile)"
+        impact: med
+        description: >
+          Nobody emigrated. Ricardo Reis is a written character, and this is a
+          line in the biography Pessoa gave him: a monarchist who leaves
+          Portugal for Brazil after the failure of the northern monarchist
+          rising of 1919 and never comes back. It is load-bearing for the odes
+          rather than decorative, because it puts the poet who counsels
+          detachment permanently outside the country he is detached from, and
+          because Pessoa left the exile open. Reis has no authored death, only a
+          departure, which is the gap José Saramago walked into sixty-five years
+          later.
+        spoilerAfter: null
+        sources:
+          - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida/cronologia"
+          - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra/ricardo-reis"
+      - id: reis-athena-debut-1924
+        date: 1924
+        title: "Reis makes his public debut with twenty odes"
+        impact: med
+        description: >
+          There was no such physician and no such Latinist; what happened in
+          October 1924 is that the first number of Athena, the arts magazine
+          Pessoa ran with Rui Vaz, printed twenty odes under the name Ricardo
+          Reis. It was the first time the classical voice of the group appeared
+          in public at all, five months before Caeiro did in the same magazine,
+          and it happened without any of the invented biography attached: a
+          reader in 1924 had twenty Horatian odes and a name, and no way of
+          knowing there was one man behind them.
+        spoilerAfter: null
+        sources:
+          - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida/cronologia"
+    sources:
+      - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra/ricardo-reis"
+      - "https://pt.wikipedia.org/wiki/Ricardo_Reis"
+
+  - id: alvaro-de-campos
+    name: "Álvaro de Campos"
+    authored: true
+    born: 1890-10-15
+    # From the Casais Monteiro letter, which is unusually precise: born in
+    # Tavira on 15 October 1890 at 1.30 in the afternoon, a time Pessoa says he
+    # had checked against the horoscope. Portuguese Wikipedia's infobox offers
+    # "Tavira or Lisbon, 13 or 15 October" and closes the dash at 1935; the
+    # letter is the primary text and is preferred over all three variants.
+    #
+    # No `died` key: Pessoa never wrote Campos a death. The 1935 in that infobox
+    # is the year Pessoa himself died.
+    bio: >
+      Naval engineer, trained in Glasgow, born in the Algarve; a voyage east in
+      his student holidays produced "Opiário". Tall, thin, clean-shaven, stooping
+      slightly. The most volatile of the heteronyms and the one who feels most:
+      his motto is to feel everything in every way, and his poems swing between
+      Whitmanesque futurist exultation at machines and cities and a flat
+      nostalgic emptiness in which nothing has been worth doing. He is the one
+      who publishes provocations - the "Ultimatum" of 1917 - and the one who
+      writes "Tabacaria". Pessoa wrote as Campos "when I feel a sudden impulse to
+      write and don't know what."
+    lifeEvents:
+      - id: campos-orpheu-debut-1915
+        date: 1915-03-24
+        title: "Campos arrives in Orpheu 1"
+        impact: high
+        description: >
+          No naval engineer wrote these poems and none existed; the byline is an
+          invention of Pessoa's. What is real is the magazine: Orpheu 1 went on
+          sale on 24 March 1915 carrying "Opiário" and the "Ode Triunfal" over
+          the name Álvaro de Campos, and the second number in June carried the
+          "Ode Marítima". Orpheu scandalised literary Lisbon and folded after two
+          issues, and the loudest thing in it was signed by somebody who did not
+          exist. Campos is the only one of the invented authors who was a public
+          nuisance in his own right from the start.
+        spoilerAfter: null
+        sources:
+          - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida/cronologia"
+          - "https://pt.wikipedia.org/wiki/%C3%81lvaro_de_Campos"
+      - id: campos-ultimatum-seized-1917
+        date: 1917
+        title: "A magazine is seized by the police over a text signed Campos"
+        impact: high
+        description: >
+          Álvaro de Campos is a fiction and cannot be prosecuted, which is part
+          of the point. In October 1917 the single number of Portugal Futurista
+          printed his "Ultimatum", a broadside expelling the whole of
+          contemporary European culture by name, and in November the police
+          seized the magazine. A real censorship action was taken against a text
+          whose author was a character, at the height of the war and of
+          Portuguese futurism, and it is the reason the "Ultimatum" was not
+          collected in a book until 1980.
+        spoilerAfter: null
+        sources:
+          - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida/cronologia"
+          - "https://pt.wikipedia.org/wiki/%C3%81lvaro_de_Campos"
+      - id: campos-ofelia-letters-1929
+        date: 1929-09-25
+        title: "Campos writes to Pessoa's girlfriend, and she answers him"
+        impact: med
+        description: >
+          The only person in this exchange is Ophélia Queiroz. Álvaro de Campos
+          is Pessoa writing under an invented name, and on 25 September 1929,
+          days after the relationship resumed, he wrote to her as Campos, in
+          Campos's voice, about the affair; on 26 September she wrote back
+          addressed to Campos. That is the one documented case of an outsider
+          answering a heteronym on his own terms, in private correspondence
+          rather than in print, and it is why
+          [[work:fernando-pessoa/cartas-de-amor|Cartas de Amor]] reads as a
+          three-cornered courtship with two of the corners occupied by the same
+          man.
+        spoilerAfter: null
+        sources:
+          - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida/cronologia"
+    sources:
+      - "https://pt.wikipedia.org/wiki/%C3%81lvaro_de_Campos"
+      - "https://en.wikipedia.org/wiki/Fernando_Pessoa"
+
+  - id: bernardo-soares
+    name: "Bernardo Soares"
+    authored: true
+    # No dates at all. Soares is the one of the four to whom Pessoa gave a
+    # station, an address and a manner but no birth and no death; the letter
+    # calls him a semi-heteronym precisely because he is not a separate person -
+    # "not being my personality, it is not different from mine but a mere
+    # mutilation of it. It is me minus reasoning and affectivity."
+    bio: >
+      Assistant bookkeeper in a fabric firm on the Rua dos Douradores in Lisbon's
+      Baixa, and the ascribed author of
+      [[work:fernando-pessoa/livro-do-desassossego|Livro do Desassossego]], which
+      he is said to have handed to Fernando Pessoa in a cheap eating house the
+      two of them frequented. Pessoa classed him a semi-heteronym rather than a
+      heteronym: the personality is not Pessoa's own, but neither is it another
+      man's, only Pessoa with the reasoning and the feeling cut away. He appears,
+      Pessoa said, when he is tired or drowsy and his powers of inhibition are
+      suspended; his prose is "an endless reverie", and his book is offered as an
+      autobiography of a man to whom nothing has happened.
+    lifeEvents:
+      - id: soares-a-revista-1929
+        date: 1929
+        title: "The name Bernardo Soares appears over the Desassossego"
+        impact: med
+        description: >
+          There is no bookkeeper. Bernardo Soares is a name Pessoa signed with,
+          and February 1929 is when he started signing with it in public: A
+          Revista, in Lisbon, printed a fragment of the Livro do Desassossego
+          attributed to Soares, and ten more followed by 1932. Pessoa had
+          published under that title once before, in 1913, with no ascribed
+          author at all. The ascription therefore arrives sixteen years into the
+          writing of the book, which is a fair description of how the book was
+          made: the fragments came first and the man who was supposed to have
+          written them was fitted to them afterwards.
+        spoilerAfter: null
+        sources:
+          - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida/cronologia"
+          - "https://pt.wikipedia.org/wiki/Livro_do_Desassossego"
+    sources:
+      - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra"
+      - "https://pt.wikipedia.org/wiki/Bernardo_Soares"
+      - "https://en.wikipedia.org/wiki/The_Book_of_Disquiet"
+
+  - id: barao-de-teive
+    name: "Barão de Teive"
+    authored: true
+    died: 1920-07-12
+    # No `born` key: nothing in the papers gives him a birth date, and even the
+    # number on his title is unstable - twentieth Barão de Teive in the
+    # manuscripts, fourteenth in one typescript.
+    #
+    # The death date is the one given inside the fiction, on a newspaper notice
+    # of the suicide. Which edition reproduces that notice, and who established
+    # it, is not stated by any source reachable here: the date rests on the
+    # Portuguese Wikipedia entry alone, and an attribution of it to Richard
+    # Zenith's 1999 edition is not supported by anything checked.
+    #
+    # It falls eight years before the papers in which Pessoa wrote him, which is
+    # the fiction's own chronology rather than a slip: Teive is dead before the
+    # manuscript is found. Casa Fernando Pessoa's chronology dates those papers
+    # to August 1928, a black notebook of thirty-one pages, and calls Teive
+    # probably the last invented author Pessoa made.
+    bio: >
+      Álvaro Coelho de Athayde, twentieth Barão de Teive: a Portuguese nobleman
+      of the Quinta da Macieira outside Lisbon, a stoic by self-education, one
+      leg amputated and the anaesthetic refused, and the most lucid of Pessoa's
+      inventions in the precise sense that the lucidity kills him. He holds that
+      a rational conduct of life is impossible, that his pride will not let him
+      publish anything short of what his intelligence promised, and that the one
+      consistent act left is to end it. So he burns everything he wrote, writes
+      a last unfinished book explaining why - subtitled "the impossibility of
+      making superior art" - and leaves it in a hotel drawer for Fernando Pessoa
+      to find. He is classed with Bernardo Soares as a semi-heteronym, a
+      personality not Pessoa's own yet not another man's either; the term is
+      Pessoa's, used of Soares in the letter of January 1935 and extended to
+      Teive by his editors. The two books are twins seen from opposite ends: one
+      man who cannot stop writing about nothing, one who stops altogether.
+    lifeEvents:
+      - id: teive-suicide-1920
+        date: 1920-07-12
+        title: "Teive kills himself at the Quinta da Macieira (an authored death)"
+        impact: high
+        description: >
+          Within Pessoa's fiction the Barão de Teive takes his own life at his
+          estate outside Lisbon, having destroyed every manuscript he could not
+          finish. No real person died: the date comes from a newspaper notice of
+          the suicide printed inside the fiction of
+          [[work:fernando-pessoa/a-educacao-do-estoico|A Educação do Estóico]],
+          and Pessoa wrote the papers behind that book in August 1928, eight
+          years after the death he had dated. It matters for the reading,
+          because every surviving page of Teive's is written from inside a
+          decision already taken, by a man explaining a suicide rather than
+          debating one.
+        spoilerAfter: null
+        sources:
+          - "https://pt.wikipedia.org/wiki/%C3%81lvaro_Coelho_de_Athayde"
+          - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida/cronologia"
+    sources:
+      - "https://pt.wikipedia.org/wiki/%C3%81lvaro_Coelho_de_Athayde"
+      - "https://en.wikipedia.org/wiki/Heteronym_(literature)"
+
+sources:
+  - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
+  - "https://en.wikipedia.org/wiki/Fernando_Pessoa"
+  - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra"
+  - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida"
+  - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida/cronologia"

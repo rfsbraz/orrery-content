@@ -671,15 +671,37 @@ def main():
 
     # --- authors (global registry) ---
     author_ids = set()
+    # heteronym_ids[author_id] = set of that author's heteronyms[].id - a
+    # heteronym is not a real person (SCHEMA.md), so it lives nested under the
+    # real author rather than in author_ids, and a work's `heteronym:` field
+    # must resolve against the specific author(s) it names in authorIds, not
+    # the registry at large.
+    heteronym_ids = {}
     for path in glob.glob(os.path.join(ROOT, "content", "authors", "*.yaml")):
         a = load(path)
         if not a:
             continue
-        if not a.get("id"):
+        aid = a.get("id")
+        if not aid:
             err(rel(path), "author missing id")
         else:
-            author_ids.add(a["id"])
-        check_images(rel(path), a.get("id", "?"), a.get("images"))
+            author_ids.add(aid)
+        check_images(rel(path), aid or "?", a.get("images"))
+        het_ids = set()
+        for h in a.get("heteronyms", []) or []:
+            hid = h.get("id")
+            if not hid:
+                err(rel(path), f"{aid}: heteronym missing id")
+                continue
+            if hid in het_ids:
+                err(rel(path), f"{aid}: duplicate heteronym id '{hid}'")
+            het_ids.add(hid)
+            if h.get("authored") is not True:
+                err(rel(path), f"{aid}: heteronym '{hid}' must set authored: true "
+                                f"(SCHEMA.md - marks born/died/lifeEvents as fiction, "
+                                f"never biographical fact)")
+        if aid:
+            heteronym_ids[aid] = het_ids
 
     # --- works (per franchise) ---
     work_ids = set()
@@ -709,6 +731,21 @@ def main():
             for aid in w.get("withAuthorIds", []):
                 if aid not in author_ids:
                     err(loc, f"{wid}: unknown withAuthorId '{aid}'")
+            # heteronym: resolves against the heteronyms[] of an author this
+            # work actually credits (authorIds/withAuthorIds), never the
+            # registry at large - a typo here silently resolves to nothing,
+            # the same inert-data failure CURATION.md §5 names elsewhere.
+            het = w.get("heteronym")
+            if het is not None:
+                if het in w.get("authorIds", []) or het in w.get("withAuthorIds", []):
+                    err(loc, f"{wid}: heteronym '{het}' must not also appear in "
+                             f"authorIds/withAuthorIds - a heteronym is not a real "
+                             f"person (SCHEMA.md)")
+                else:
+                    credited = set(w.get("authorIds", [])) | set(w.get("withAuthorIds", []))
+                    if not any(het in heteronym_ids.get(aid, ()) for aid in credited):
+                        err(loc, f"{wid}: unknown heteronym '{het}' (not in any "
+                                 f"credited author's heteronyms[])")
             if w.get("canonTier") not in {"core", "extended", "apocrypha"}:
                 err(loc, f"{wid}: bad canonTier '{w.get('canonTier')}'")
             # `format` defaults to "novel"; it only needs stating when a work
@@ -924,12 +961,32 @@ def main():
             warn(rel(path), f"{a.get('id','?')}: no lifeEvent dated to born ({born}) - "
                             "the timeline opens mid-life, with no birthplace")
     gpath = os.path.join(ROOT, "content", "events", "global.yaml")
+    global_event_ids = set()
     if os.path.exists(gpath):
         g = load(gpath) or {}
         for e in g.get("events", []):
             check_event("events/global.yaml", e)
+            if e.get("id"):
+                global_event_ids.add(e["id"])
             if e.get("reach") != "global":
                 err("events/global.yaml", f"{e.get('id','?')}: global events must have reach: global")
+
+        # A franchise's globalEvents entries are ids from the shared file and
+        # nothing else resolves them, so an id that matches no global event
+        # renders nothing while reading like a ruling that was made. An
+        # exclusion is checked too: it is the record of a judgement, and a
+        # record of judging an event that does not exist is worse than silence.
+        for fdir in franchise_dirs:
+            if not os.path.isdir(fdir):
+                continue
+            floc = f"{os.path.basename(fdir)}/franchise.yaml"
+            ge = (load(os.path.join(fdir, "franchise.yaml")) or {}).get("globalEvents") or {}
+            for key in ("include", "exclude"):
+                for eid in ge.get(key) or []:
+                    if eid not in global_event_ids:
+                        err(floc, f"globalEvents.{key}: unknown global event '{eid}'")
+            for eid in sorted(set(ge.get("include") or []) & set(ge.get("exclude") or [])):
+                err(floc, f"globalEvents: '{eid}' is both included and excluded")
 
     # --- editions ---
     for fdir in franchise_dirs:

@@ -1,0 +1,993 @@
+# Editions - the concrete books behind the bibliography, in Portuguese and in
+# English. Works are abstract; these are objects with a publisher, a year and,
+# where one exists, an ISBN.
+#
+# TITLES. Almost everything on this shelf was written in Portuguese and is
+# bought in Portuguese, so the work title IS the published title and `title` is
+# omitted on every pt-PT entry, per SCHEMA.md. `title` appears only on the
+# English editions, where it records what is actually printed on the jacket
+# ("The Book of Disquiet", "Message", "The Keeper of Sheep"). One reversal is
+# worth knowing: Lisboa: O Que o Turista Deve Ver was written in English and
+# reached print in Portuguese first, so the Portuguese edition below carries a
+# translator (Maria Amélia Santos Gomes) and the English one does not.
+#
+# NO ISBN BEFORE 1970, AND NOT IN PORTUGAL FOR YEARS AFTER. The five books
+# Pessoa published in his lifetime (1918-1934) and the first waves out of the
+# trunk (Ática, 1942-1980) predate the ISBN entirely; the Biblioteca Nacional's
+# records for them carry no number, and neither do the entries here. Three
+# concrete cases, all confirmed against BNP records: the 1982 Ática first
+# edition of the Livro do Desassossego has no ISBN; the 1952 Ática Poemas
+# Dramáticos has none, and its 1997 reimpression is the first printing that
+# does; Da República (Ática, 1978) and Poesias Inéditas (1919-1930) are sold
+# today under bare 13-digit EANs (5600001250470, 0135000124997) that are not
+# ISBNs at all and are therefore not recorded. Where a work's only buyable
+# object is a later printing, that printing is what appears below, and the
+# first edition's imprint is named in the note.
+#
+# THE LIVRO DO DESASSOSSEGO, AND WHY ITS ENTRIES NAME AN EDITOR
+#
+# works.yaml dates this work to 1982, Jacinto do Prado Coelho's first full
+# edition for Ática, and rules that the rival reconstructions are editions of
+# one work rather than separate works. That ruling is what makes this file the
+# place where the difference between them has to be recorded, because there is
+# nowhere else for it to live. Every entry below therefore names its editor and
+# the Portuguese text it descends from. The differences are not cosmetic: the
+# editions disagree about which fragments belong in the book, in what order
+# they stand, and in one case who wrote them - Teresa Sobral Cunha splits the
+# book between two ascribed authors, Vicente Guedes for the early material and
+# Bernardo Soares for the rest.
+#
+# Restricting the file to the 1982 arrangement alone would leave the work with
+# no buyable object at all: the 1982 Ática two-volume first edition has no
+# ISBN, its 1997 second edition (Ática, ISBN 972-617-069-9 and 972-617-131-8)
+# is out of print, and no house has reprinted that arrangement since. The
+# reconstructions that are in print are therefore the ones listed, each labelled
+# with whose it is.
+#
+# The consequence for the English editions is the substantive part, and it is
+# documented rather than inferred. They do not descend from a single Portuguese
+# text:
+#
+#   Carcanet 1997, tr. Richard Zenith          -> Prado Coelho's 1982 Ática text
+#                                                 plus 48 further fragments and
+#                                                 some previously unpublished
+#                                                 (Carcanet's own catalogue)
+#   Serpent's Tail 1991, tr. Margaret Jull Costa -> Maria José de Lancastre's
+#                                                 1986 Italian Feltrinelli
+#                                                 edition, not a Portuguese one
+#   Allen Lane 2001 / Penguin Classics 2002,
+#     tr. Richard Zenith                       -> Zenith's OWN 1998 Assírio &
+#                                                 Alvim reordering
+#   New Directions 2017 / Serpent's Tail 2018,
+#     tr. Margaret Jull Costa                  -> Jerónimo Pizarro's 2013
+#                                                 Tinta-da-china edition
+#
+# So the two English editions in print are translations of different books. A
+# reader choosing between them is choosing an editor before they choose a
+# translator, and the notes below say which is which. The schema has no field
+# for this - there is no `textVariant` or `editorialArrangement` - so it lives
+# in the notes, which is the same accommodation the abridged-Christie cases get.
+#
+# SOURCES, in order of authority. Publisher catalogues where the
+# publisher still lists the book (New Directions, Carcanet, Shearsman); the
+# Biblioteca Nacional de Portugal's ipac20 catalogue for Portuguese imprints,
+# editors and first-edition years; Bertrand's per-product bibliographic records
+# for the ISBN, format and edition date of what is on sale now; and the
+# Library of Congress / Harvard / Columbia MARC records surfaced through Open
+# Library for a second reading of the Portuguese ISBNs. Project Gutenberg for
+# the public-domain English originals.
+#
+# Every ISBN-13 below passes its check digit. Every pt-PT entry carries a
+# Portuguese registrant prefix (978-972-*, 978-989-*); no Brazilian editions
+# (978-85-*, 978-65-*) are recorded, and Pessoa has a large Brazilian backlist
+# that would be wrong to offer a Lisbon reader.
+#
+# SINGLE-SOURCED ENTRIES. Most ISBNs below are corroborated twice. Eighteen of
+# the fifty-eight rest on Bertrand's product record alone, because the BNP holds
+# the volume without an ISBN and Open Library holds no edition record for it:
+#
+#   Livro do Desassossego  - Assírio & Alvim 2023 (paperback and hardcover) and
+#                            Tinta-da-china 2013
+#   Ática / Nova Ática     - Odes de Ricardo Reis, Poesias de Álvaro de Campos,
+#                            O Interregno, Páginas de Estética e de Teoria e
+#                            Crítica Literárias, Textos Filosóficos I and II,
+#                            Poemas Ingleses, Sobre Portugal, Associações
+#                            Secretas e Outros Escritos
+#   Assírio & Alvim        - Escritos Autobiográficos, Heróstrato, Crítica,
+#                            Teoria da Heteronímia, Correspondência 1923-1935
+#   Livros Horizonte       - Cartas a Armando Côrtes-Rodrigues
+#
+# Bertrand's records are per-product and structured, but Bertrand and WOOK are
+# the same house, so a WOOK agreement would not be an independent second reading
+# and was not treated as one.
+#
+# COVERAGE: 42 of 54 works have at least one edition; 58 entries in all. The
+# twelve without are the volumes with no separately buyable modern object:
+# Poesias (1942), Páginas de Doutrina Estética, both Poesias Inéditas volumes,
+# Cartas a João Gaspar Simões, Páginas Íntimas e de Auto-Interpretação, Da
+# República, Ultimatum e Páginas de Sociologia Política, and the four esoteric
+# volumes established by Pedro Teixeira da Mota in 1988-89 (A Grande Alma
+# Portuguesa; Moral, Regras de Vida; Rosea Cruz; Poesia Profética, Mágica e
+# Espiritual). Several are still printed by Ática under bare EANs rather than
+# ISBNs; the rest are out of print and carried by no Portuguese catalogue.
+# That is a fact about the market, not an omission.
+
+# --- Lifetime English books: public domain, free and complete ---
+
+- id: fernando-pessoa/antinous/gutenberg-en
+  workId: fernando-pessoa/antinous
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  readUrl: "https://www.gutenberg.org/ebooks/24262"
+  note: >
+    The 1918 pamphlet, transcribed from its own title page: Lisbon, Monteiro &
+    Co., 190 Rua do Ouro, 1918. No ISBN, and none is missing - the printing
+    predates the ISBN system by half a century, and Pessoa paid for it himself.
+    Pessoa died in 1935, so the text is in the public domain across the EU.
+  sources:
+    - "https://www.gutenberg.org/ebooks/24262"
+
+- id: fernando-pessoa/35-sonnets/gutenberg-en
+  workId: fernando-pessoa/35-sonnets
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2006
+  readUrl: "https://www.gutenberg.org/ebooks/19978"
+  note: >
+    The complete 1918 sequence. Pre-ISBN, like everything Pessoa printed in his
+    lifetime.
+  sources:
+    - "https://www.gutenberg.org/ebooks/19978"
+
+- id: fernando-pessoa/35-sonnets/standard-ebooks-en
+  workId: fernando-pessoa/35-sonnets
+  language: en
+  format: ebook
+  publisher: Standard Ebooks
+  readUrl: "https://standardebooks.org/ebooks/fernando-pessoa/poetry"
+  note: >
+    Filed here under its lead title, but the volume is wider than one work: it
+    gathers 35 Sonnets, both English Poems booklets and two poems Pessoa placed
+    in periodicals before 1929 - everything he published in English under his
+    own name. A proofread, re-typeset text where the Gutenberg entries are bare
+    transcriptions.
+  sources:
+    - "https://standardebooks.org/ebooks/fernando-pessoa/poetry"
+
+- id: fernando-pessoa/english-poems-i-ii/gutenberg-en
+  workId: fernando-pessoa/english-poems-i-ii
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2021
+  title: "English Poems, Volume 01 (of 2)"
+  readUrl: "https://www.gutenberg.org/ebooks/66039"
+  note: >
+    Transcribed from the Olisipo booklet of 1921: the revised Antinous and the
+    fourteen "Inscriptions". Gutenberg splits Pessoa's three English Poems parts
+    across two volumes, so its numbering and the bibliography's do not line up -
+    Volume 01 is parts I-II, Volume 02 is part III.
+  sources:
+    - "https://www.gutenberg.org/ebooks/66039"
+
+- id: fernando-pessoa/english-poems-iii/gutenberg-en
+  workId: fernando-pessoa/english-poems-iii
+  language: en
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2021
+  title: "English Poems, Volume 02 (of 2)"
+  readUrl: "https://www.gutenberg.org/ebooks/66040"
+  note: >
+    "Epithalamium", from the third Olisipo booklet of 1921.
+  sources:
+    - "https://www.gutenberg.org/ebooks/66040"
+
+# --- Mensagem ---
+
+- id: fernando-pessoa/mensagem/tinta-da-china-2020-pt
+  workId: fernando-pessoa/mensagem
+  isbn13: "9789896715823"
+  language: pt-PT
+  format: paperback
+  publisher: Tinta-da-china
+  year: 2020
+  note: >
+    The critical edition, established by Jerónimo Pizarro with readings of the
+    text by António Cirurgião, Onésimo T. Almeida, Helder Macedo and José
+    Barreto. The 1934 first edition (Parceria António Maria Pereira) has no
+    ISBN; the BNP record that appears to give it one is a slip, repeating the
+    number of a 2015 facsimile on the 1934 entry.
+  sources:
+    - "https://www.bertrand.pt/livro/mensagem-fernando-pessoa/24369985"
+    - "https://openlibrary.org/isbn/9789896715823.json"
+
+- id: fernando-pessoa/mensagem/assirio-alvim-pt
+  workId: fernando-pessoa/mensagem
+  isbn13: "9789723704365"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2010
+  note: >
+    Fernando Cabral Martins's edition, volume 1 of Assírio & Alvim's "Obras de
+    Fernando Pessoa. Poesia" - 116 pages, the plain reading text against
+    Tinta-da-china's apparatus. The same ISBN has carried the book across
+    printings since 1997.
+  sources:
+    - "https://openlibrary.org/isbn/9789723704365.json"
+
+- id: fernando-pessoa/mensagem/shearsman-2007-en
+  workId: fernando-pessoa/mensagem
+  isbn13: "9781905700271"
+  language: en
+  title: "Message"
+  translator: "Jonathan Griffin"
+  format: paperback
+  publisher: Shearsman Books
+  year: 2007
+  note: >
+    Second revised edition of Griffin's translation, with an introduction by
+    Helder Macedo. Griffin first published it with Menard Press in 1992, and
+    his remains the standard English Mensagem.
+  sources:
+    - "https://openlibrary.org/isbn/9781905700271.json"
+
+# --- The Livro do Desassossego: one work, rival reconstructions ---
+
+- id: fernando-pessoa/livro-do-desassossego/assirio-alvim-2023-pt
+  workId: fernando-pessoa/livro-do-desassossego
+  isbn13: "9789723723427"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2023
+  note: >
+    Richard Zenith's reconstruction, which Assírio & Alvim first published in
+    1998 and which this printing takes to a twelfth edition - enlarged over the
+    years with previously unread fragments and with dozens of corrected
+    readings of Pessoa's notoriously difficult hand. 544 pages. This is the
+    Portuguese Desassossego most readers hold.
+  sources:
+    - "https://www.bertrand.pt/livro/livro-do-desassossego-fernando-pessoa/11236978"
+
+- id: fernando-pessoa/livro-do-desassossego/assirio-alvim-2023-hb-pt
+  workId: fernando-pessoa/livro-do-desassossego
+  isbn13: "9789723723410"
+  language: pt-PT
+  format: hardcover
+  publisher: Assírio & Alvim
+  year: 2023
+  note: >
+    The same Zenith text in hardcover, 480 pages, with his preface on the single
+    word - desassossego, written on a loose sheet on 20 January 1913 - out of
+    which the whole book grew.
+  sources:
+    - "https://www.bertrand.pt/livro/livro-do-desassossego-fernando-pessoa/11237291"
+
+- id: fernando-pessoa/livro-do-desassossego/tinta-da-china-2013-pt
+  workId: fernando-pessoa/livro-do-desassossego
+  isbn13: "9789896711801"
+  language: pt-PT
+  format: hardcover
+  publisher: Tinta-da-china
+  year: 2013
+  note: >
+    Jerónimo Pizarro's reconstruction: a new corpus and a new order taken back
+    to the manuscript sources, the original spelling kept, and the book's
+    authorship canon redefined. 608 pages. Not a variant of the Zenith text but
+    a different book assembled from the same papers, and the text the English
+    Complete Edition translates.
+  sources:
+    - "https://www.bertrand.pt/livro/livro-do-desassossego-fernando-pessoa/15249698"
+
+- id: fernando-pessoa/livro-do-desassossego/tinta-da-china-2014-pt
+  workId: fernando-pessoa/livro-do-desassossego
+  isbn13: "9789896712075"
+  language: pt-PT
+  format: paperback
+  publisher: Tinta-da-china
+  year: 2014
+  note: >
+    The pocket edition of Pizarro's text, 576 pages.
+  sources:
+    - "https://www.bertrand.pt/livro/livro-do-desassossego-fernando-pessoa/15678585"
+    - "https://openlibrary.org/isbn/9789896712075.json"
+
+- id: fernando-pessoa/livro-do-desassossego/penguin-2002-en
+  workId: fernando-pessoa/livro-do-desassossego
+  isbn13: "9780141183046"
+  language: en
+  title: "The Book of Disquiet"
+  translator: "Richard Zenith"
+  format: paperback
+  publisher: Penguin Classics
+  year: 2002
+  note: >
+    Zenith translating his own Portuguese reconstruction - the Assírio & Alvim
+    text of 1998, not Prado Coelho's 1982 one. First published by Allen Lane in
+    2001. 544 pages, arranged for reading rather than for chronology, and the
+    version usually quoted in English.
+  sources:
+    - "https://openlibrary.org/isbn/9780141183046.json"
+
+- id: fernando-pessoa/livro-do-desassossego/new-directions-2017-en
+  workId: fernando-pessoa/livro-do-desassossego
+  isbn13: "9780811226936"
+  language: en
+  title: "The Book of Disquiet: The Complete Edition"
+  translator: "Margaret Jull Costa"
+  format: hardcover
+  publisher: New Directions
+  year: 2017
+  note: >
+    Jerónimo Pizarro's edition in English, complete and in chronological order,
+    printed in the two phases Pizarro divides the book into. 488 pages,
+    clothbound, published 29 August 2017. A different underlying text from the
+    Penguin/Zenith edition above, not a rival translation of the same one.
+  sources:
+    - "https://www.ndbooks.com/book/the-book-of-disquiet-the-complete-edition/"
+    - "https://openlibrary.org/isbn/9780811226936.json"
+
+- id: fernando-pessoa/livro-do-desassossego/serpents-tail-2018-en
+  workId: fernando-pessoa/livro-do-desassossego
+  isbn13: "9781781258644"
+  language: en
+  title: "The Book of Disquiet"
+  translator: "Margaret Jull Costa"
+  format: paperback
+  publisher: Serpent's Tail
+  year: 2018
+  note: >
+    The British paperback of the same Jull Costa translation of Pizarro's text.
+    Not to be confused with Serpent's Tail's 1991 Jull Costa volume, which was
+    a selection made from Maria José de Lancastre's Italian edition of 1986.
+  sources:
+    - "https://openlibrary.org/isbn/9781781258644.json"
+
+- id: fernando-pessoa/livro-do-desassossego/carcanet-1997-en
+  workId: fernando-pessoa/livro-do-desassossego
+  isbn13: "9781857543018"
+  language: en
+  title: "The Book of Disquietude"
+  translator: "Richard Zenith"
+  format: paperback
+  publisher: Carcanet Press
+  year: 1997
+  note: >
+    Out of print, and recorded because it is the only English book descending
+    from the reconstruction this work is dated to: Carcanet's own catalogue
+    says Zenith gives all the fragments of the 1982 Ática edition, 48 more, and
+    some never previously published. 320 pages, in the Aspects of Portugal
+    series; paperback 30 January 1997, hardback (9780856359514) 30 November
+    1995. Open Library dates it December 1996 at 240 pages and Wikipedia's
+    edition list dates a Carcanet Zenith to 1991 with a Penguin ISBN attached;
+    the publisher's own record is followed here over both.
+  sources:
+    - "https://www.carcanet.co.uk/cgi-bin/indexer?product=9781857543018"
+
+# --- The heteronym volumes ---
+
+- id: fernando-pessoa/poemas-de-alberto-caeiro/atica-pt
+  workId: fernando-pessoa/poemas-de-alberto-caeiro
+  isbn13: "9789726170044"
+  language: pt-PT
+  format: paperback
+  publisher: Ática
+  year: 1993
+  note: >
+    Ática's continuing printing of the 1946 volume, the house that first put
+    Caeiro between covers. The number was assigned to the ninth edition of 1991
+    and has carried the book since.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=poemas+de+alberto+caeiro"
+    - "https://www.bertrand.pt/livro/poemas-de-alberto-caeiro-fernando-pessoa/94938"
+
+- id: fernando-pessoa/poemas-de-alberto-caeiro/new-directions-2020-en
+  workId: fernando-pessoa/poemas-de-alberto-caeiro
+  isbn13: "9780811227803"
+  language: en
+  title: "The Complete Works of Alberto Caeiro"
+  translator: "Margaret Jull Costa and Patricio Ferrari"
+  format: paperback
+  publisher: New Directions
+  year: 2020
+  note: >
+    Bilingual, Portuguese facing English, edited by Jerónimo Pizarro and
+    Patricio Ferrari. 288 pages, published 28 July 2020. The current English
+    Caeiro.
+  sources:
+    - "https://www.ndbooks.com/book/the-complete-works-of-alberto-caeiro/"
+    - "https://openlibrary.org/isbn/9780811227803.json"
+
+- id: fernando-pessoa/poemas-de-alberto-caeiro/shearsman-2007-en
+  workId: fernando-pessoa/poemas-de-alberto-caeiro
+  isbn13: "9781905700240"
+  language: en
+  title: "The Collected Poems of Alberto Caeiro"
+  translator: "Chris Daniels"
+  format: paperback
+  publisher: Shearsman Books
+  year: 2007
+  note: >
+    The earlier complete English Caeiro, 200 pages, still the only one that is
+    not bilingual.
+  sources:
+    - "https://openlibrary.org/isbn/9781905700240.json"
+
+- id: fernando-pessoa/o-guardador-de-rebanhos/sheep-meadow-1986-en
+  workId: fernando-pessoa/o-guardador-de-rebanhos
+  isbn13: "9780935296617"
+  language: en
+  title: "The Keeper of Sheep"
+  translator: "Edwin Honig and Susan M. Brown"
+  format: paperback
+  publisher: Sheep Meadow Press
+  year: 1986
+  note: >
+    The 1925 sequence on its own, bylined on the title page exactly as Pessoa
+    would have wanted it - "by Alberto Caeiro (Fernando Pessoa)". 63 pages,
+    distributed by Persea. The Library of Congress record (LCCN 85031732)
+    carries two numbers for this first edition, 0-935296-60-3 and 0-935296-61-1;
+    the second, recorded here, is the paperback.
+  sources:
+    - "https://openlibrary.org/isbn/9780935296617.json"
+
+- id: fernando-pessoa/odes-de-ricardo-reis/atica-pt
+  workId: fernando-pessoa/odes-de-ricardo-reis
+  isbn13: "9789726171805"
+  language: pt-PT
+  format: paperback
+  publisher: Ática
+  year: 1994
+  note: >
+    Ática's printing of the 1946 volume. Bertrand's product record is the only
+    source that gives this number; the BNP holds the Ática Odes without one.
+  sources:
+    - "https://www.bertrand.pt/livro/odes-de-ricardo-reis-fernando-pessoa/94949"
+
+- id: fernando-pessoa/poesias-de-alvaro-de-campos/atica-2006-pt
+  workId: fernando-pessoa/poesias-de-alvaro-de-campos
+  isbn13: "9789726171744"
+  language: pt-PT
+  format: paperback
+  publisher: Ática
+  year: 2006
+  note: >
+    Ática's printing of the 1944 volume. Bertrand styles the title "Poesias de
+    Álvaro Campos", dropping the "de"; the volume itself is Poesias de Álvaro de
+    Campos, which is why no `title` is recorded here.
+  sources:
+    - "https://www.bertrand.pt/livro/poesias-de-alvaro-campos-fernando-pessoa/176212"
+
+- id: fernando-pessoa/poesias-de-alvaro-de-campos/new-directions-2023-en
+  workId: fernando-pessoa/poesias-de-alvaro-de-campos
+  isbn13: "9780811229883"
+  language: en
+  title: "The Complete Works of Álvaro de Campos"
+  translator: "Margaret Jull Costa and Patricio Ferrari"
+  format: paperback
+  publisher: New Directions
+  year: 2023
+  note: >
+    Edited by Jerónimo Pizarro and Antonio Cardiello, 480 pages, published 4
+    July 2023. The companion to the same team's Caeiro; between them, Jull
+    Costa and Ferrari are rebuilding the heteronyms in English one poet at a
+    time, and Ricardo Reis has not yet had his volume.
+  sources:
+    - "https://www.ndbooks.com/book/the-complete-works-of-alvaro-de-campos/"
+    - "https://openlibrary.org/isbn/9780811229883.json"
+
+- id: fernando-pessoa/a-educacao-do-estoico/assirio-alvim-2018-pt
+  workId: fernando-pessoa/a-educacao-do-estoico
+  isbn13: "9789723720440"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2018
+  note: >
+    Richard Zenith's edition of the Barão de Teive manuscript, under the full
+    title "A Educação do Estóico: o único manuscrito do Barão de Teive". Assírio
+    & Alvim's own earlier printing is 9789723705201 (2001).
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=educacao+do+estoico+teive"
+    - "https://www.bertrand.pt/livro/a-educacao-do-estoico-fernando-pessoa/21892016"
+
+- id: fernando-pessoa/a-educacao-do-estoico/exact-change-2005-en
+  workId: fernando-pessoa/a-educacao-do-estoico
+  isbn13: "9781878972408"
+  language: en
+  title: "The Education of the Stoic: The Only Manuscript of the Baron of Teive"
+  translator: "Richard Zenith"
+  format: paperback
+  publisher: Exact Change
+  year: 2005
+  note: >
+    Edited and translated by Zenith, with a preface by Françoise Laye and an
+    afterword by Antonio Tabucchi. 81 pages. The BNP dates it 2005 and Open
+    Library 2006; retail records say November 2004. The library record is
+    followed here.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=educacao+do+estoico+teive"
+    - "https://openlibrary.org/isbn/9781878972408.json"
+
+# --- Prose, theatre, fiction ---
+
+- id: fernando-pessoa/o-banqueiro-anarquista/assirio-alvim-pt
+  workId: fernando-pessoa/o-banqueiro-anarquista
+  isbn13: "9789723705430"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 1999
+  note: >
+    Manuela Parreira da Silva's edition - the first time the 1922 Contemporânea
+    novella was a book of its own. The same ISBN carries the second edition of
+    2007.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=banqueiro+anarquista+parreira+silva"
+
+- id: fernando-pessoa/a-hora-do-diabo/assirio-alvim-2004-pt
+  workId: fernando-pessoa/a-hora-do-diabo
+  isbn13: "9789723704358"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2004
+  note: >
+    Teresa Rita Lopes's edition. She established the text first for Rolim in
+    1988, which the BNP records as the first edition; Assírio & Alvim took it
+    over in 1997 and this number has carried it since.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=hora+do+diabo+pessoa"
+    - "https://www.bertrand.pt/livro/a-hora-do-diabo-fernando-pessoa/11236961"
+
+- id: fernando-pessoa/quaresma-decifrador/assirio-alvim-2008-pt
+  workId: fernando-pessoa/quaresma-decifrador
+  isbn13: "9789723713176"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2008
+  note: >
+    Ana Maria Freitas's edition, subtitled "as novelas policiárias", 477 pages,
+    volume 23 of the Obras de Fernando Pessoa. Second edition 2014, same ISBN.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=quaresma+decifrador+pessoa"
+    - "https://openlibrary.org/isbn/9789723713176.json"
+
+- id: fernando-pessoa/poemas-dramaticos/atica-1997-pt
+  workId: fernando-pessoa/poemas-dramaticos
+  isbn13: "9789726170860"
+  language: pt-PT
+  format: paperback
+  publisher: Ática
+  year: 1997
+  note: >
+    A reimpression of the first edition. Ática printed Poemas Dramáticos in
+    1952, 1956, 1966, 1972 and 1979 without an ISBN; 1997 is the first printing
+    to carry one.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=poemas+dramaticos+pessoa"
+    - "https://www.bertrand.pt/livro/poemas-dramaticos-fernando-pessoa/94953"
+
+- id: fernando-pessoa/fausto-tragedia-subjectiva/presenca-1988-pt
+  workId: fernando-pessoa/fausto-tragedia-subjectiva
+  isbn13: "9789722305396"
+  language: pt-PT
+  format: paperback
+  publisher: Editorial Presença
+  year: 1988
+  note: >
+    The first edition: Teresa Sobral Cunha's establishment and ordering of the
+    fragments, prefaced by Eduardo Lourenço, published as "Fausto: tragédia
+    subjectiva (fragmentos)".
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=fausto+tragedia+subjectiva+pessoa"
+    - "https://www.bertrand.pt/livro/fausto-tragedia-subjectiva-fernando-pessoa/224142"
+
+- id: fernando-pessoa/lisboa-o-que-o-turista-deve-ver/livros-horizonte-pt
+  workId: fernando-pessoa/lisboa-o-que-o-turista-deve-ver
+  isbn13: "9789722410007"
+  language: pt-PT
+  translator: "Maria Amélia Santos Gomes"
+  format: paperback
+  publisher: Livros Horizonte
+  year: 2007
+  note: >
+    Pessoa wrote this guidebook in English; Livros Horizonte published it in
+    1992 in Santos Gomes's Portuguese translation, prefaced by Richard Zenith,
+    and has reprinted it ever since - the fourth edition of 2007 onwards under
+    this number, with a preface by Richard Zimler. The first edition was
+    bilingual, printed as "Lisboa: o que o turista deve ver = Lisbon: what the
+    tourist should see".
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=lisboa+o+que+o+turista+deve+ver"
+    - "https://www.bertrand.pt/livro/lisboa-o-que-o-turista-deve-ver-fernando-pessoa/179313"
+
+- id: fernando-pessoa/lisboa-o-que-o-turista-deve-ver/shearsman-2008-en
+  workId: fernando-pessoa/lisboa-o-que-o-turista-deve-ver
+  isbn13: "9781905700752"
+  language: en
+  title: "Lisbon: What the Tourist Should See"
+  format: paperback
+  publisher: Shearsman Books
+  year: 2008
+  note: >
+    No translator, because there is nothing to translate: this is Pessoa's own
+    English text, printed on its own for the first time. 84 pages. Open
+    Library's record names Lightning Source, which is the printer, not the
+    publisher; the 978-1-905700 registrant is Shearsman's.
+  sources:
+    - "https://openlibrary.org/isbn/9781905700752.json"
+
+- id: fernando-pessoa/o-interregno/nova-atica-2007-pt
+  workId: fernando-pessoa/o-interregno
+  isbn13: "9789726171980"
+  language: pt-PT
+  format: paperback
+  publisher: Nova Ática
+  year: 2007
+  note: >
+    The modern reprint of the 1928 pamphlet, which the Núcleo de Acção Nacional
+    issued long before ISBNs and which survives at the BNP in three copies.
+  sources:
+    - "https://www.bertrand.pt/livro/o-interregno-fernando-pessoa/190143"
+
+- id: fernando-pessoa/ficcoes-do-interludio/assirio-alvim-1998-pt
+  workId: fernando-pessoa/ficcoes-do-interludio
+  isbn13: "9789723704747"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 1998
+  note: >
+    The first edition, Fernando Cabral Martins's, published as "Ficções do
+    interlúdio: 1914-1935". Reissued in 2007 as "poemas publicados em vida"
+    under 9789723712490, and again in 2018 under 9789723720655.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=ficcoes+do+interludio+pessoa"
+    - "https://www.bertrand.pt/livro/ficcoes-do-interludio-1914-1935-fernando-pessoa/11236976"
+
+# --- Letters ---
+
+- id: fernando-pessoa/cartas-de-amor/assirio-alvim-2012-pt
+  workId: fernando-pessoa/cartas-de-amor
+  isbn13: "9789720793102"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2012
+  note: >
+    Manuela Parreira da Silva's edition, published as "Cartas de amor de
+    Fernando Pessoa e Ofélia Queiroz" - both sides of the correspondence, where
+    the 1978 Ática volume gave only his. Third edition 2013, reprinted 2015,
+    all under this number.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=cartas+amor+ofelia+queiroz+pessoa"
+    - "https://www.bertrand.pt/livro/cartas-de-amor-de-fernando-pessoa-e-ofelia-queiroz-fernando-pessoa/13029623"
+
+- id: fernando-pessoa/correspondencia-1905-1922/assirio-alvim-1999-pt
+  workId: fernando-pessoa/correspondencia-1905-1922
+  isbn13: "9789723705058"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 1999
+  note: >
+    Manuela Parreira da Silva's edition, 491 pages, volume 6 of the Obras de
+    Fernando Pessoa.
+  sources:
+    - "https://openlibrary.org/isbn/9789723705058.json"
+    - "https://www.bertrand.pt/livro/correspondencia-1905-1922-fernando-pessoa/11236993"
+
+- id: fernando-pessoa/correspondencia-1923-1935/assirio-alvim-2011-pt
+  workId: fernando-pessoa/correspondencia-1923-1935
+  isbn13: "9789723705317"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2011
+  note: >
+    The second volume, carrying the letter of 13 January 1935 to Adolfo Casais
+    Monteiro. Bertrand's record is the only source found for this number.
+  sources:
+    - "https://www.bertrand.pt/livro/correspondencia-1923-1935-fernando-pessoa/11237010"
+
+- id: fernando-pessoa/cartas-a-armando-cortes-rodrigues/livros-horizonte-pt
+  workId: fernando-pessoa/cartas-a-armando-cortes-rodrigues
+  isbn13: "9789722400428"
+  language: pt-PT
+  format: paperback
+  publisher: Livros Horizonte
+  year: 1986
+  note: >
+    Joel Serrão's introduction, as in the 1944 Confluência first edition, which
+    predates ISBNs. The BNP dates the Livros Horizonte edition 1985 and records
+    no number for it; Bertrand dates it 1986 and supplies this one.
+  sources:
+    - "https://www.bertrand.pt/livro/cartas-a-armando-cortes-rodrigues-joel-serrao/80238"
+
+# --- Prose, essays and the critical editions ---
+
+- id: fernando-pessoa/a-lingua-portuguesa/assirio-alvim-1997-pt
+  workId: fernando-pessoa/a-lingua-portuguesa
+  isbn13: "9789723704341"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 1997
+  note: >
+    Luísa Medeiros's edition, 198 pages, volume 1 of the Obras de Fernando
+    Pessoa - the book that opened the series.
+  sources:
+    - "https://openlibrary.org/isbn/9789723704341.json"
+    - "https://www.bertrand.pt/livro/a-lingua-portuguesa-fernando-pessoa/11236960"
+
+- id: fernando-pessoa/aforismos-e-afins/assirio-alvim-2005-pt
+  workId: fernando-pessoa/aforismos-e-afins
+  isbn13: "9789723708622"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2005
+  note: >
+    Richard Zenith's edition, with Manuela Rocha translating the aphorisms
+    Pessoa wrote in English. Second, revised edition; the same number carries
+    the 2003 first.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=aforismos+e+afins+pessoa"
+    - "https://www.bertrand.pt/livro/aforismos-e-afins-fernando-pessoa/11237498"
+
+- id: fernando-pessoa/escritos-autobiograficos-automaticos-e-de-reflexao-pessoal/assirio-alvim-2003-pt
+  workId: fernando-pessoa/escritos-autobiograficos-automaticos-e-de-reflexao-pessoal
+  isbn13: "9789723707977"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2003
+  sources:
+    - "https://www.bertrand.pt/livro/escritos-autobiograficos-automaticos-e-de-reflexao-pessoal-fernando-pessoa/11236656"
+
+- id: fernando-pessoa/herostrato-e-a-busca-da-imortalidade/assirio-alvim-2000-pt
+  workId: fernando-pessoa/herostrato-e-a-busca-da-imortalidade
+  isbn13: "9789723705942"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2000
+  note: >
+    Sold as "Heróstrato" on the shelf; the volume is Heróstrato e a Busca da
+    Imortalidade.
+  sources:
+    - "https://www.bertrand.pt/livro/herostrato-fernando-pessoa/11237202"
+
+- id: fernando-pessoa/critica-ensaios-artigos-e-entrevistas/assirio-alvim-pt
+  workId: fernando-pessoa/critica-ensaios-artigos-e-entrevistas
+  isbn13: "9789723705928"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2000
+  note: >
+    Fernando Cabral Martins's edition, on the shelf simply as "Crítica".
+    Bertrand dates the printing December 2000, against the 2001 the
+    bibliography gives for the first edition.
+  sources:
+    - "https://www.bertrand.pt/livro/critica-fernando-pessoa/11237044"
+
+- id: fernando-pessoa/teoria-da-heteronimia/assirio-alvim-2012-pt
+  workId: fernando-pessoa/teoria-da-heteronimia
+  isbn13: "9789720793188"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2012
+  note: >
+    Fernando Cabral Martins and Richard Zenith's edition.
+  sources:
+    - "https://www.bertrand.pt/livro/teoria-da-heteronimia-fernando-pessoa/14039154"
+
+- id: fernando-pessoa/o-regresso-dos-deuses/assirio-alvim-2013-pt
+  workId: fernando-pessoa/o-regresso-dos-deuses
+  isbn13: "9789723716900"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2013
+  note: >
+    First edition, Manuela Parreira da Silva's, 325 pages, volume 26 of the
+    Obras de Fernando Pessoa.
+  sources:
+    - "https://openlibrary.org/isbn/9789723716900.json"
+    - "https://www.bertrand.pt/livro/o-regresso-dos-deuses-fernando-pessoa/14845622"
+
+- id: fernando-pessoa/sensacionismo-e-outros-ismos/incm-2009-pt
+  workId: fernando-pessoa/sensacionismo-e-outros-ismos
+  isbn13: "9789722716635"
+  language: pt-PT
+  format: paperback
+  publisher: Imprensa Nacional-Casa da Moeda
+  year: 2009
+  note: >
+    Volume 10 of the national critical edition, established by Jerónimo Pizarro.
+    696 pages.
+  sources:
+    - "https://openlibrary.org/isbn/9789722716635.json"
+    - "https://www.bertrand.pt/livro/sensacionismo-e-outros-ismos-vol-x-fernando-pessoa/2050925"
+
+- id: fernando-pessoa/associacoes-secretas-e-outros-escritos/atica-2011-pt
+  workId: fernando-pessoa/associacoes-secretas-e-outros-escritos
+  isbn13: "9789726172437"
+  language: pt-PT
+  format: paperback
+  publisher: Ática
+  year: 2011
+  note: >
+    José Barreto's edition, in the "Obras de Fernando Pessoa. Nova série".
+  sources:
+    - "https://www.bertrand.pt/livro/associacoes-secretas-fernando-pessoa/10996759"
+
+- id: fernando-pessoa/argumentos-para-filmes/atica-2011-pt
+  workId: fernando-pessoa/argumentos-para-filmes
+  isbn13: "9789726172444"
+  language: pt-PT
+  format: paperback
+  publisher: Ática
+  year: 2011
+  note: >
+    Edited, introduced and translated by Patrício Ferrari and Claudia J.
+    Fischer, with an afterword by Fernando Guerreiro. Half the treatments were
+    written in English, hence the translators on a Portuguese edition.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=argumentos+para+filmes+pessoa"
+    - "https://www.bertrand.pt/livro/argumentos-para-filmes-fernando-pessoa/10996760"
+
+- id: fernando-pessoa/iberia/atica-2012-pt
+  workId: fernando-pessoa/iberia
+  isbn13: "9789726172482"
+  language: pt-PT
+  format: paperback
+  publisher: Ática
+  year: 2012
+  note: >
+    Jerónimo Pizarro and Pablo Javier Pérez López's edition, with afterwords by
+    Humberto Brito and Antonio Sáez Delgado. 267 pages, in the "Obras de
+    Fernando Pessoa. Nova série".
+  sources:
+    - "https://openlibrary.org/isbn/9789726172482.json"
+    - "https://www.bertrand.pt/livro/iberia-introducao-a-um-imperialismo-futuro-fernando-pessoa/14304127"
+
+- id: fernando-pessoa/sobre-o-fascismo-a-ditadura-militar-e-salazar/tinta-da-china-2015-pt
+  workId: fernando-pessoa/sobre-o-fascismo-a-ditadura-militar-e-salazar
+  isbn13: "9789896712495"
+  language: pt-PT
+  format: paperback
+  publisher: Tinta-da-china
+  year: 2015
+  note: >
+    First edition, José Barreto's, 431 pages, in the Colecção Pessoa. Half the
+    texts had never been published; the volume prints them in Portuguese,
+    English and French with Portuguese translations.
+  sources:
+    - "https://openlibrary.org/isbn/9789896712495.json"
+    - "https://www.bertrand.pt/livro/sobre-o-fascismo-a-ditadura-militar-e-salazar-fernando-pessoa/16180024"
+
+# --- Ática's mid-century volumes, in their surviving printings ---
+
+- id: fernando-pessoa/quadras-ao-gosto-popular/atica-1992-pt
+  workId: fernando-pessoa/quadras-ao-gosto-popular
+  isbn13: "9789726170136"
+  language: pt-PT
+  format: paperback
+  publisher: Ática
+  year: 1992
+  note: >
+    Fifth edition. Georg Rudolf Lind and Jacinto do Prado Coelho established
+    the text for the 1965 first edition, which predates ISBNs, as do the third
+    (1975) and fourth (1979).
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=quadras+ao+gosto+popular+pessoa"
+    - "https://www.bertrand.pt/livro/quadras-ao-gosto-popular-fernando-pessoa/94944"
+
+- id: fernando-pessoa/textos-de-critica-e-intervencao/atica-1993-pt
+  workId: fernando-pessoa/textos-de-critica-e-intervencao
+  isbn13: "9789726170174"
+  language: pt-PT
+  format: paperback
+  publisher: Ática
+  year: 1993
+  note: >
+    The 1980 first edition has no ISBN. Both the BNP and Bertrand print the
+    title with the second preposition - "Textos de crítica e de intervenção".
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=textos+de+critica+e+de+intervencao+pessoa"
+    - "https://www.bertrand.pt/livro/textos-de-critica-e-de-intervencao-fernando-pessoa/95030"
+
+- id: fernando-pessoa/novas-poesias-ineditas/nova-atica-pt
+  workId: fernando-pessoa/novas-poesias-ineditas
+  isbn13: "9789726171782"
+  language: pt-PT
+  format: paperback
+  publisher: Nova Ática
+  year: 2006
+  note: >
+    Sixth edition, gathered and annotated by Maria do Rosário Marques Sabino and
+    Adelaide Maria Monteiro Sereno, as in the 1973 first. Bertrand dates the
+    printing on sale to 2009 under the same number.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=novas+poesias+ineditas+pessoa"
+    - "https://www.bertrand.pt/livro/novas-poesias-ineditas-fernando-pessoa/179242"
+
+- id: fernando-pessoa/paginas-de-estetica-e-de-teoria-e-critica-literarias/atica-1994-pt
+  workId: fernando-pessoa/paginas-de-estetica-e-de-teoria-e-critica-literarias
+  isbn13: "9789726171034"
+  language: pt-PT
+  format: paperback
+  publisher: Ática
+  year: 1994
+  note: >
+    Georg Rudolf Lind and Jacinto do Prado Coelho established the text, with
+    Jorge Rosa translating the pieces Pessoa wrote in English. The BNP holds
+    the 1967 first and 1973 second editions, neither with an ISBN.
+  sources:
+    - "https://www.bertrand.pt/livro/paginas-de-estetica-e-teoria-e-critica-literaria-fernando-pessoa/94960"
+
+- id: fernando-pessoa/textos-filosoficos/atica-2006-i-pt
+  workId: fernando-pessoa/textos-filosoficos
+  isbn13: "9789726171829"
+  language: pt-PT
+  format: paperback
+  publisher: Ática
+  year: 2006
+  note: >
+    Volume I. The work is two volumes and always has been; volume II is
+    9789726171836, same publisher and year.
+  sources:
+    - "https://www.bertrand.pt/livro/textos-filosoficos-volume-i-fernando-pessoa/182340"
+
+- id: fernando-pessoa/textos-filosoficos/atica-2006-ii-pt
+  workId: fernando-pessoa/textos-filosoficos
+  isbn13: "9789726171836"
+  language: pt-PT
+  format: paperback
+  publisher: Ática
+  year: 2006
+  note: >
+    Volume II.
+  sources:
+    - "https://www.bertrand.pt/livro/textos-filosoficos-volume-ii-fernando-pessoa/182341"
+
+- id: fernando-pessoa/poemas-ingleses/atica-1993-pt
+  workId: fernando-pessoa/poemas-ingleses
+  isbn13: "9789726170877"
+  language: pt-PT
+  format: paperback
+  publisher: Ática
+  year: 1993
+  note: >
+    Jorge de Sena's edition of 1974, still in Ática's printing: the English
+    verse faced with Portuguese translations. A parallel critical edition runs
+    at the Imprensa Nacional-Casa da Moeda (Tomo I, 9789722705141).
+  sources:
+    - "https://www.bertrand.pt/livro/poemas-ingleses-fernando-pessoa/94948"
+
+- id: fernando-pessoa/sobre-portugal/atica-pt
+  workId: fernando-pessoa/sobre-portugal
+  isbn13: "9789726171157"
+  language: pt-PT
+  format: paperback
+  publisher: Ática
+  year: 1979
+  note: >
+    Sold as "Sobre Portugal"; the volume is Sobre Portugal: Introdução ao
+    Problema Nacional. Bertrand's is the only record found carrying this number,
+    and it dates the edition to 1979, the year of first publication - so the
+    ISBN was assigned to the book later than the date beside it, as Ática's
+    972-617 numbers generally were. The year is the printing's, not the
+    number's.
+  sources:
+    - "https://www.bertrand.pt/livro/sobre-portugal-fernando-pessoa/95049"

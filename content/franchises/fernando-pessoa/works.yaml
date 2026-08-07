@@ -1,0 +1,1148 @@
+# Bibliography (Works) - the abstract books; editions/covers are separate.
+# IDs are STABLE and permanent (user data references them). Titles are the
+# ORIGINAL Portuguese or English as first published; prose/synopses are in
+# English.
+#
+# WHAT COUNTS AS A WORK HERE. Pessoa published five books in his lifetime and
+# left more than 25,000 sheets in a trunk. Almost everything else on this shelf
+# is a book an editor made after his death out of those papers, which forces a
+# rule this wing's spine depends on:
+#
+#   A work is a published VOLUME, dated to its first edition. Where several
+#   later editors reconstruct the SAME body of text differently (the Livro do
+#   Desassossego, the Caeiro and Campos and Reis poetry), those rival
+#   reconstructions are EDITIONS of the one work, not separate works. Where a
+#   volume gathers a body of text for the first time, it is a work.
+#
+# One deliberate exception: O Guardador de Rebanhos is listed as its own work at
+# its 1925 magazine publication as well as inside Poemas de Alberto Caeiro
+# (1946), because Portuguese bibliography catalogues it as a book of 1925 in its
+# own right and because it is the text Pessoa named on the day the heteronyms
+# began. Both entries carry a note pointing at the other.
+#
+# DATING. `published` is the year the text first appeared complete, not the year
+# of the volume that later carried it. Two entries below therefore sit at their
+# magazine dates: O Guardador de Rebanhos (Athena, 1925; in book form 1946) and
+# O Banqueiro Anarquista (Contemporânea, 1922; first standalone book 1999).
+#
+# NOT LISTED, and why. Periodical appearances are not works here: the Orpheu
+# odes (1915), the "Ultimatum" in Portugal Futurista (1917), "Tabacaria" in
+# presença (1933), O Marinheiro in A Águia (1915). They are the events of the
+# life, and they are named in the synopses of the volumes that later collected
+# them. Rival critical reconstructions of a body already listed are also absent:
+# Álvaro de Campos - Livro de Versos (ed. Teresa Rita Lopes, Estampa, 1993),
+# Poemas Completos de Alberto Caeiro (ed. Teresa Sobral Cunha, Presença, 1994),
+# Poemas de Álvaro de Campos and Poemas de Ricardo Reis (the INCM critical
+# editions of 1990 and 1994), and the several Europa-América and Lello
+# gatherings of the 1980s, which redistribute texts already published by Ática.
+#
+# SOURCE. The publisher, editor and year of the posthumous volumes below come
+# from the "Bibliografia geral de referência" of Arquivo Pessoa (the online form
+# of MultiPessoa, co-edited by Casa Fernando Pessoa), which lists first editions
+# with their editors. That bibliography closes in 2008: the volumes dated 2009
+# and later come from the catalogue of the Biblioteca Nacional de Portugal,
+# which is also the tiebreaker where two sources give different first-edition
+# years. Casa Fernando Pessoa's own page counts five books published in his
+# lifetime, all of them poetry, and names them; the 1928 pamphlet O Interregno
+# and the 1922 magazine novella O Banqueiro Anarquista sit outside that count
+# and are documented at the Biblioteca Nacional.
+#
+# HETERONYMS. Where a book carries an invented author's name on the cover, the
+# entry uses `heteronym:` (pointing at content/authors/fernando-pessoa.yaml's
+# heteronyms list) and `publishedAs:`. `authorIds` stays [fernando-pessoa]
+# everywhere, because the real person who wrote all of it is one man.
+#
+# SUBSERIES is null on every entry, deliberately. The natural grouping inside
+# this wing is by which invented author signed the book, and `heteronym` already
+# carries exactly that; a parallel `subseries` on the same axis would give the
+# wing two competing groupings of the same shelf.
+
+# --- Published in his lifetime ---
+
+- id: fernando-pessoa/antinous
+  title: "Antinous"
+  # No cover. Neither 1918 pamphlet is held with a jacket anywhere open, and
+  # the two Open Library candidates fail on their own terms: the Serbian
+  # Antinoj carries a bookseller's "RASPRODATO" banner burned into the image,
+  # and the 2014 print-on-demand Antinous & David and Jonathan pairs this poem
+  # with one by another writer.
+  authorIds: [fernando-pessoa]
+  published: 1918
+  subseries: null
+  canonTier: core
+  format: poem
+  synopsis: >
+    A long poem in English, published as a sixteen-page pamphlet: the emperor
+    Hadrian keeping vigil over the body of his drowned lover Antinous, and
+    talking himself out of the fact of the death. One of the first two things
+    Pessoa printed as a book, at his own expense.
+  sources:
+    - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra/fernando-pessoa"
+    - "https://en.wikipedia.org/wiki/Fernando_Pessoa"
+
+- id: fernando-pessoa/35-sonnets
+  title: "35 Sonnets"
+  authorIds: [fernando-pessoa]
+  published: 1918
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  synopsis: >
+    Thirty-five English sonnets in a deliberately Elizabethan register, printed
+    in Lisbon in the same year as Antinous and sent to the British press. The
+    Times Literary Supplement noticed them, which was the closest thing to
+    literary recognition Pessoa received outside Portugal in his lifetime.
+  sources:
+    - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra/fernando-pessoa"
+    - "https://en.wikipedia.org/wiki/Fernando_Pessoa"
+  images:
+    # The Siltolá bilingual edition of 2018, which carries the original
+    # English title on the jacket. Neither 1918 Lisbon printing is held with a
+    # cover anywhere open.
+    cover: "https://covers.openlibrary.org/b/id/14017195-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL847044W"
+
+- id: fernando-pessoa/english-poems-i-ii
+  title: "English Poems I-II"
+  authorIds: [fernando-pessoa]
+  published: 1921
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  synopsis: >
+    Part I a revised Antinous, part II the "Inscriptions", fourteen short
+    epitaphs in the manner of the Greek Anthology, spoken by the dead about
+    lives already finished. Published by Olisipo, the small press Pessoa
+    himself founded that year.
+  sources:
+    - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra/fernando-pessoa"
+    - "https://en.wikipedia.org/wiki/Fernando_Pessoa"
+
+- id: fernando-pessoa/english-poems-iii
+  title: "English Poems III"
+  authorIds: [fernando-pessoa]
+  published: 1921
+  subseries: null
+  canonTier: core
+  format: poem
+  synopsis: >
+    "Epithalamium", a wedding-night poem of frank and relentless physical
+    appetite, issued by Olisipo as the third of the English Poems booklets and
+    the strangest thing Pessoa ever put his own name to in print.
+  sources:
+    - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra/fernando-pessoa"
+    - "https://en.wikipedia.org/wiki/Fernando_Pessoa"
+
+- id: fernando-pessoa/o-banqueiro-anarquista
+  title: "O Banqueiro Anarquista"
+  authorIds: [fernando-pessoa]
+  published: 1922
+  subseries: null
+  canonTier: core
+  format: novella
+  synopsis: >
+    Over dinner, a rich banker proves to his companion, by pure logic and
+    without once raising his voice, that he is the only consistent anarchist
+    alive and that his fortune is the proof. A satire whose argument is airtight
+    and whose conclusion is monstrous.
+  # The whole novella ran in the first issue of the magazine Contemporânea in
+  # May 1922, which is the year here: it is the one substantial piece of fiction
+  # Pessoa published in his lifetime. Its first standalone book edition is 1999
+  # (ed. Manuela Parreira da Silva, Assírio & Alvim), the year most retail
+  # metadata carries. Casa Fernando Pessoa's chronology confirms the month and
+  # the issue: "Maio: Publica O Banqueiro Anarquista no primeiro numero da
+  # Contemporanea". The same first year of the magazine carried "Mar Portugues"
+  # in October, eleven of whose twelve poems ended up in Mensagem.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+    - "https://pt.wikipedia.org/wiki/Fernando_Pessoa"
+    - "https://casafernandopessoa.pt/pt/fernando-pessoa/vida/cronologia"
+  images:
+    # Projecto Adamastor's 2013 Portuguese ebook, the only open cover of the
+    # novella on its own. The 2014 Luso Livros jacket on the same record is
+    # for a seven-story collection; the German, French and Spanish editions
+    # carry the single text under their own titles.
+    cover: "https://covers.openlibrary.org/b/id/14821550-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL39307957W"
+
+- id: fernando-pessoa/o-guardador-de-rebanhos
+  title: "O Guardador de Rebanhos"
+  authorIds: [fernando-pessoa]
+  heteronym: alberto-caeiro
+  publishedAs: "Alberto Caeiro"
+  published: 1925
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  synopsis: >
+    Forty-nine poems by the shepherd Alberto Caeiro, written in a single day in
+    March 1914 and published eleven years later in the fourth and fifth issues
+    of Pessoa's magazine Athena. A poetry that refuses to think: things are
+    exactly as many as they are, a flower means nothing but itself, and the
+    only mystery is that anyone should look for one.
+  # Poem 8, the one in which the infant Christ comes down to live in Caeiro's
+  # village, was held back and appeared only in 1931, in presença. The whole
+  # sequence was collected in book form in
+  # [[work:fernando-pessoa/poemas-de-alberto-caeiro|Poemas de Alberto Caeiro]]
+  # (1946), which is listed separately below.
+  sources:
+    - "https://pt.wikipedia.org/wiki/O_Guardador_de_Rebanhos"
+    - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra/alberto-caeiro"
+  images:
+    # Sheep Meadow Press's 1997 bilingual edition, the Portuguese faced with
+    # the Honig and Brown translation.
+    cover: "https://covers.openlibrary.org/b/id/924852-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL847117W"
+
+- id: fernando-pessoa/o-interregno
+  title: "O Interregno: Defesa e Justificação da Ditadura Militar em Portugal"
+  authorIds: [fernando-pessoa]
+  published: 1928
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    A pamphlet arguing the military dictatorship installed in 1926 as a matter
+    of political science rather than of politics: a country whose public opinion
+    has disintegrated cannot be governed by opinion, so what it needs is an
+    interregnum, a suspended state held by force until a nation exists to be
+    consulted again. Issued by the Núcleo de Acção Nacional in Lisbon, and the
+    hardest single item in the bibliography to square with the writings against
+    Salazar that came out of the same drawer a few years later.
+  # Absent from the Arquivo Pessoa bibliography. The Biblioteca Nacional de
+  # Portugal holds three copies of the 1928 first edition, one catalogued as a
+  # manifesto, plus a later Nova Ática reprint; the imprint is Lisboa, Núcleo
+  # de Acção Nacional, 1928, printed at the Sociedade Nacional de Typographia,
+  # and the title page spells it "defeza ... da dictadura militar".
+  #
+  # No contemporary reception is recorded here because none was found. The
+  # pamphlet is absent from Casa Fernando Pessoa's chronology and from the
+  # Portuguese Wikipedia article on Pessoa, and the reachable record carries no
+  # review, rebuttal or press notice from 1928 or after. What the record does
+  # carry is the reversal: the political prose collected in 2015 by Jose Barreto
+  # has him turning against Salazar's Estado Novo in his last years.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=interregno+pessoa"
+    - "https://openlibrary.org/search?q=Interregno+Pessoa"
+
+- id: fernando-pessoa/mensagem
+  title: "Mensagem"
+  authorIds: [fernando-pessoa]
+  published: 1934
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  featured: true
+  synopsis: >
+    Forty-four short poems arranged as a coat of arms, a sea and a prophecy:
+    the founders of Portugal, the navigators, and a promised Fifth Empire that
+    is spiritual rather than territorial. The only Portuguese-language book
+    Pessoa published in his lifetime, and the one that won him a national prize
+    the year before he died.
+  sources:
+    - "https://pt.wikipedia.org/wiki/Mensagem_(livro)"
+    - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra/fernando-pessoa"
+  images:
+    # The 1934 first edition itself: the orange typographic wrapper of the
+    # Parceria Antonio Maria Pereira printing, Rua Augusta 44-54, Lisboa. It
+    # is only 202px wide, and it is the one cover on this shelf Pessoa saw.
+    cover: "https://covers.openlibrary.org/b/id/6812846-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL847128W"
+
+# --- Posthumous: the Ática Obras Completas and after ---
+
+- id: fernando-pessoa/poesias
+  title: "Poesias"
+  # No cover. Open Library files one Porto Editora jacket on both its Poesias
+  # and its Poesias: Heterónimos editions, and the jacket is the Heterónimos
+  # one, which is the wrong signature for a volume that is the orthonymous
+  # poetry on a shelf sorted by the name on the cover.
+  authorIds: [fernando-pessoa]
+  published: 1942
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  synopsis: >
+    The first volume out of the trunk, seven years after his death: the
+    orthonymous poetry, the poems signed Fernando Pessoa himself, gathered by
+    João Gaspar Simões and Luiz de Montalvor for Ática. Everything below this
+    line on the shelf exists because this book sold.
+  # Usually cited as "Poesias de Fernando Pessoa"; the volume itself is titled
+  # Poesias.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/poesias-de-alvaro-de-campos
+  title: "Poesias de Álvaro de Campos"
+  authorIds: [fernando-pessoa]
+  heteronym: alvaro-de-campos
+  publishedAs: "Álvaro de Campos"
+  published: 1944
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  synopsis: >
+    The naval engineer's poetry collected for the first time: the futurist
+    machine-drunk odes of 1914 and 1915, the eastern voyage of "Opiário", and
+    the late Lisbon poems in which the appetite for everything has curdled into
+    a man at a window watching a tobacconist across the street.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+  images:
+    # Fischer's 1991 bilingual Poesias / Dichtungen, the Campos poetry faced
+    # with German. No cover of the 1944 Ática volume is held open.
+    cover: "https://covers.openlibrary.org/b/id/3239108-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL847049W"
+
+- id: fernando-pessoa/cartas-a-armando-cortes-rodrigues
+  title: "Cartas de Fernando Pessoa a Armando Côrtes-Rodrigues"
+  authorIds: [fernando-pessoa]
+  published: 1944
+  subseries: null
+  canonTier: apocrypha
+  format: nonfiction
+  synopsis: >
+    Letters to a fellow Orpheu poet from the years the heteronyms were being
+    built, published with an introduction by Joel Serrão. The first of Pessoa's
+    correspondences to reach print, and the earliest place his own account of
+    what he was doing could be read.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/poemas-de-alberto-caeiro
+  title: "Poemas de Alberto Caeiro"
+  # The first of this volume's three parts, O Guardador de Rebanhos, is also
+  # listed on its own at its 1925 magazine date, twenty-one years earlier. That
+  # double listing is deliberate and argued at the head of this file; the two
+  # entries are not duplicates and neither is to be removed in favour of the
+  # other. Of Caeiro's 104 poems, 49 are in O Guardador de Rebanhos, 6 in O
+  # Pastor Amoroso and 49 in the Poemas Inconjuntos - the two forty-nines are
+  # not a slip.
+  #   https://pt.wikipedia.org/wiki/Alberto_Caeiro
+  authorIds: [fernando-pessoa]
+  heteronym: alberto-caeiro
+  publishedAs: "Alberto Caeiro"
+  published: 1946
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  synopsis: >
+    The master's complete poetry in one volume for the first time:
+    [[work:fernando-pessoa/o-guardador-de-rebanhos|O Guardador de Rebanhos]],
+    the six pieces of O Pastor Amoroso, and the forty-nine Poemas Inconjuntos
+    written, in the fiction, in the months before Caeiro's death.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/odes-de-ricardo-reis
+  title: "Odes de Ricardo Reis"
+  authorIds: [fernando-pessoa]
+  heteronym: ricardo-reis
+  publishedAs: "Ricardo Reis"
+  published: 1946
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  synopsis: >
+    Short pagan odes in strict classical measure, counselling distance from a
+    life that is going to end anyway: crown yourself with roses, ask nothing,
+    and let the river carry it. The first of the Odes had appeared in Athena in
+    1924; this is the volume that made Reis a poet with a book.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+  images:
+    # Quaderns Crema's bilingual edition of 2002, whose Catalan title is
+    # spelled the same as the Portuguese one.
+    cover: "https://covers.openlibrary.org/b/id/14255770-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL35229875W"
+
+- id: fernando-pessoa/paginas-de-doutrina-estetica
+  title: "Páginas de Doutrina Estética"
+  authorIds: [fernando-pessoa]
+  published: 1946
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    The first book of Pessoa's critical prose, selected, prefaced and annotated
+    by the poet Jorge de Sena: sensationism explained by its inventor, the case
+    against the literature of his moment, and the pages on what a poet is and
+    what Portugal was supposed to do with one. It put the theory in readers'
+    hands twenty years before Ática's Páginas volumes.
+  # Absent from the Arquivo Pessoa bibliography. Lisboa, Editorial Inquérito,
+  # 1946, with a second edition in 1962. The Biblioteca Nacional also holds
+  # copies of the Sena selection bearing 1944 and 1947 imprints; 1946 is the
+  # year on the four Library of Congress records and the year the volume is
+  # cited by in the literature.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=paginas+doutrina+estetica+pessoa"
+    - "https://openlibrary.org/search?q=%22doutrina+estetica%22"
+
+- id: fernando-pessoa/poemas-dramaticos
+  title: "Poemas Dramáticos"
+  authorIds: [fernando-pessoa]
+  published: 1952
+  subseries: null
+  canonTier: core
+  format: play
+  synopsis: >
+    Pessoa's theatre, such as it is: the static drama O Marinheiro, in which
+    three women keep vigil over a fourth through a night and tell each other
+    the story of a shipwrecked sailor who dreamed himself a homeland until he
+    could no longer remember the real one, alongside the first published
+    fragments of his lifelong Faust.
+  note: >
+    The synopsis carries the sailor's dream, which the second watcher tells at
+    length in the middle of the play, and stops there. O Marinheiro closes on
+    her asking whether the sailor is the only real thing and the watchers
+    themselves his dream; it is the last thing said before the day breaks and
+    the drama ends, so it is not stated here.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/poesias-ineditas-1930-1935
+  title: "Poesias Inéditas (1930-1935)"
+  authorIds: [fernando-pessoa]
+  published: 1955
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    Unpublished orthonymous poems from the last five years of his life, the
+    first supplement to the 1942 Poesias.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/poesias-ineditas-1919-1930
+  title: "Poesias Inéditas (1919-1930)"
+  authorIds: [fernando-pessoa]
+  published: 1956
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    The companion supplement, reaching back over the previous decade. The two
+    volumes were published out of chronological order, the later years first.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/cartas-a-joao-gaspar-simoes
+  title: "Cartas de Fernando Pessoa a João Gaspar Simões"
+  authorIds: [fernando-pessoa]
+  published: 1957
+  subseries: null
+  canonTier: apocrypha
+  format: nonfiction
+  synopsis: >
+    Letters to the presença critic who became Pessoa's first biographer,
+    published by the recipient with his own notes and appendix.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/quadras-ao-gosto-popular
+  title: "Quadras ao Gosto Popular"
+  # No cover. The dual-language critical edition is held at 128px, which is
+  # unreadable as a jacket.
+  authorIds: [fernando-pessoa]
+  published: 1965
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    Hundreds of four-line folk quatrains in the popular Portuguese manner,
+    written for his own amusement and never intended for a book. The plainest
+    thing in the trunk, from the most complicated writer in it.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/paginas-intimas-e-de-auto-interpretacao
+  title: "Páginas Íntimas e de Auto-Interpretação"
+  authorIds: [fernando-pessoa]
+  published: 1966
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Pessoa explaining Pessoa: the drafts, prefaces and self-analyses in which he
+    sets out what the heteronyms are, how they relate to each other and what he
+    thought he was doing. The primary evidence behind almost everything anyone
+    says about him.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/paginas-de-estetica-e-de-teoria-e-critica-literarias
+  title: "Páginas de Estética e de Teoria e Crítica Literárias"
+  authorIds: [fernando-pessoa]
+  # First edition: Lisboa, Ática, 1967 (Georg Rudolf Lind and Jacinto do
+  # Prado Coelho, English texts translated by Jorge Rosa; 2nd ed. 1973) -
+  # confirmed against the BNP catalogue record. A different, earlier book,
+  # Páginas de Doutrina Estética (Inquérito, 1946, ed. Jorge de Sena), is
+  # catalogued separately in this wing and is not this title despite the
+  # similar name.
+  published: 1967
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    The critical writings: sensationism, the case for a Portuguese
+    super-Camões, and a running argument with the literature of his own moment,
+    much of it written for magazines that folded before it could be printed.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/textos-filosoficos
+  title: "Textos Filosóficos"
+  # No cover. Contra Mundum's Philosophical Essays is a separate English
+  # critical edition of the philosophical papers, not this volume.
+  authorIds: [fernando-pessoa]
+  published: 1968
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Two volumes of philosophical notes and fragments in Portuguese and English,
+    on sensation, idealism and the reality of the self, several of them signed
+    by invented philosophers rather than by Pessoa.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/novas-poesias-ineditas
+  title: "Novas Poesias Inéditas"
+  authorIds: [fernando-pessoa]
+  published: 1973
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    A third gathering of previously unpublished poems, seventeen years after
+    the second, as the cataloguing of the trunk went deeper.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/poemas-ingleses
+  title: "Poemas Ingleses"
+  # No cover. Shearsman's Selected English Poems, which a title search offers,
+  # is a different selection rather than this bilingual gathering.
+  authorIds: [fernando-pessoa]
+  published: 1974
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    The English poetry gathered and faced with Portuguese translations, edited
+    by the poet Jorge de Sena with variants and notes: the four lifetime
+    booklets plus the unpublished English verse of the Durban years and after.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/cartas-de-amor
+  title: "Cartas de Amor"
+  authorIds: [fernando-pessoa]
+  published: 1978
+  subseries: null
+  # Correspondence is filed apocrypha throughout this wing, the same as the
+  # Côrtes-Rodrigues, Gaspar Simões and Correspondência volumes: letters Pessoa
+  # wrote, but not books he made.
+  canonTier: apocrypha
+  format: nonfiction
+  synopsis: >
+    The letters to Ophélia Queiroz, the office typist he courted in 1920 and
+    again in 1929 and left both times. Written in a private baby-language, and
+    interrupted by Álvaro de Campos, who writes to her as well, to tell her the
+    affair should end.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+  images:
+    # Libros del Zorro Rojo's Spanish Cartas a Ophélia, illustrated by Antonio
+    # Seguí with a preface by Antonio Tabucchi.
+    cover: "https://covers.openlibrary.org/b/id/12327512-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL26380795W"
+
+- id: fernando-pessoa/da-republica
+  title: "Da República (1910-1935)"
+  authorIds: [fernando-pessoa]
+  published: 1978
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Twenty-five years of political writing on the Portuguese First Republic,
+    gathered by Joel Serrão: the early monarchist scorn, the mystical
+    nationalism, and the late texts against Salazar and the Estado Novo that the
+    censorship stopped.
+  # The Arquivo Pessoa bibliography dates this 1979. The Biblioteca Nacional
+  # holds both an Ática 1978 printing, with Serrão's introduction and
+  # organisation named on it, and an Ática 1979 one; 1978 is the first.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=da+republica+pessoa+serrao"
+
+- id: fernando-pessoa/sobre-portugal
+  title: "Sobre Portugal: Introdução ao Problema Nacional"
+  authorIds: [fernando-pessoa]
+  published: 1979
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    The companion volume to Da República: Pessoa on what Portugal is for, the
+    Sebastianist myth, and the case for a national renaissance he spent his life
+    prophesying and never expected to see.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/ultimatum-e-paginas-de-sociologia-politica
+  title: "Ultimatum e Páginas de Sociologia Política"
+  authorIds: [fernando-pessoa]
+  published: 1980
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Álvaro de Campos's 1917 "Ultimatum", a broadside expelling the whole of
+    contemporary European culture by name, printed with the political and
+    sociological prose that surrounds it.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/textos-de-critica-e-intervencao
+  # Title carries the second preposition, "e DE Intervenção" - confirmed
+  # against the BNP catalogue record, which lists no variant without it.
+  title: "Textos de Crítica e de Intervenção"
+  authorIds: [fernando-pessoa]
+  published: 1980
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Polemics and interventions: the magazine pieces, open letters and
+    manifestos with which Pessoa kept picking fights with Portuguese literary
+    and public life from behind one name or another.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/livro-do-desassossego
+  title: "Livro do Desassossego"
+  authorIds: [fernando-pessoa]
+  heteronym: bernardo-soares
+  publishedAs: "Bernardo Soares"
+  published: 1982
+  subseries: null
+  canonTier: core
+  featured: true
+  synopsis: >
+    A "factless autobiography" in more than five hundred fragments, kept by an
+    assistant bookkeeper on the Rua dos Douradores who goes nowhere, does
+    nothing, and records the weather of a mind with terrible precision. Pessoa
+    wrote at it for two decades, finished nothing, ordered nothing, and left it
+    in the trunk.
+  # There is no single Livro do Desassossego. Pessoa left the fragments loose
+  # and unordered, so every edition is one editor's reconstruction, and they
+  # differ in which fragments are in the book and in what order they stand.
+  # The 1982 date here is the first full edition (Jacinto do Prado Coelho for
+  # Ática, in two volumes, from transcriptions by Maria Aliete Galhoz and
+  # Teresa Sobral Cunha), which is the earliest date the book can honestly
+  # carry; a selection edited by Pedro Veiga had appeared in 1961. The rival
+  # reconstructions - António Quadros (Europa-América, 1986), Teresa Sobral
+  # Cunha (Presença, 1990, and again Relógio d'Água, 2008), Richard Zenith
+  # (Assírio & Alvim, 1998) and Jerónimo Pizarro (INCM critical edition 2010,
+  # Tinta-da-china 2013) - are editions of this work, not other works. They
+  # disagree substantively: Sobral Cunha splits the book between two ascribed
+  # authors, Vicente Guedes for the 1910s and 1920s material and Bernardo
+  # Soares for the rest, while Quadros gives the first phase to Pessoa himself.
+  # `publishedAs` here follows the 1982 first edition and the book's own
+  # subtitle, "composto por Bernardo Soares, ajudante de guarda-livros na
+  # cidade de Lisboa".
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+    - "https://pt.wikipedia.org/wiki/Livro_do_Desassossego"
+    - "https://en.wikipedia.org/wiki/The_Book_of_Disquiet"
+  images:
+    # Tinta-da-china's 2014 printing of Jerónimo Pizarro's edition. Preferred
+    # over the Assírio & Alvim jacket on the same record, which is photographed
+    # through its shrink-wrap, and over the Companhia das Letras, Global and
+    # Companhia de Bolso jackets, which are Brazilian.
+    cover: "https://covers.openlibrary.org/b/id/10568999-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL847061W"
+
+- id: fernando-pessoa/fausto-tragedia-subjectiva
+  title: "Fausto: Tragédia Subjectiva"
+  authorIds: [fernando-pessoa]
+  published: 1988
+  subseries: null
+  canonTier: core
+  format: play
+  synopsis: >
+    The verse drama Pessoa worked at from his twenties to his death and never
+    finished: a Faust who makes no pact and gains no world, only the horror of
+    consciousness examining itself. Assembled from the manuscripts by Teresa
+    Sobral Cunha, with a preface by Eduardo Lourenço.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+  images:
+    # Relógio d'Água's 1994 Portuguese printing of Teresa Sobral Cunha's
+    # reading. The Presença first edition of 1988 sits on the same record and
+    # has no cover held open.
+    cover: "https://covers.openlibrary.org/b/id/11631025-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL847095W"
+
+- id: fernando-pessoa/a-hora-do-diabo
+  title: "A Hora do Diabo"
+  authorIds: [fernando-pessoa]
+  # First edition: Lisboa, Rolim, 1988 ("1a ed."), Teresa Rita Lopes's
+  # transcription and organisation - confirmed directly against the BNP
+  # catalogue record, which also holds the 1997 Assírio & Alvim printing as a
+  # separate, later entry.
+  published: 1988
+  subseries: null
+  canonTier: core
+  format: novella
+  synopsis: >
+    A pregnant woman walking home from a masked ball is escorted by the Devil,
+    who spends the night explaining that he creates nothing, only imagines, and
+    that this is why he is not evil but merely necessary. Established from the
+    manuscripts by Teresa Rita Lopes.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=Hora+do+Diabo+Pessoa"
+  images:
+    # The Assírio & Alvim edition of 1997, the second publisher after Rolim's
+    # 1988 first edition - not the cover of the book's actual first printing,
+    # which OpenLibrary does not hold an image of.
+    cover: "https://covers.openlibrary.org/b/id/14587984-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL847113W"
+
+- id: fernando-pessoa/a-grande-alma-portuguesa
+  title: "A Grande Alma Portuguesa"
+  authorIds: [fernando-pessoa]
+  published: 1988
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Writings on the destiny and character of Portugal, from the esoteric side of
+    the papers, established and presented by Pedro Teixeira da Mota.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/moral-regras-de-vida-condicoes-de-iniciacao
+  title: "Moral, Regras de Vida, Condições de Iniciação"
+  authorIds: [fernando-pessoa]
+  published: 1988
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Notes towards a practical ethics and towards the conditions of initiation
+    into an occult order, from the same Pedro Teixeira da Mota series of
+    esoteric papers.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+  images:
+    # The Edições Manuel Lencastre first edition of 1988.
+    cover: "https://covers.openlibrary.org/b/id/14588494-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL847133W"
+
+- id: fernando-pessoa/rosea-cruz
+  title: "Rosea Cruz"
+  authorIds: [fernando-pessoa]
+  published: 1989
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Pessoa on Rosicrucianism, Templar survival and the initiatic tradition he
+    read Portuguese history through, the material that also stands behind the
+    "Mar Português" and Fifth Empire sections of Mensagem.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+  images:
+    # The Edições Manuel Lencastre first edition of 1989.
+    cover: "https://covers.openlibrary.org/b/id/14588855-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL37899372W"
+
+- id: fernando-pessoa/poesia-profetica-magica-e-espiritual
+  title: "Poesia Profética, Mágica e Espiritual"
+  authorIds: [fernando-pessoa]
+  published: 1989
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    The occult verse: initiatic, prophetic and magical poems drawn from across
+    the papers and commented by their editor.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/lisboa-o-que-o-turista-deve-ver
+  title: "Lisboa: O Que o Turista Deve Ver"
+  authorIds: [fernando-pessoa]
+  published: 1992
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    A guidebook to Lisbon that Pessoa wrote in English in the 1920s and never
+    placed, taking an imagined visitor up the Tagus and through the city street
+    by street, monument by monument, in flat commercial prose. Published sixty
+    years later in Portuguese translation.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+  images:
+    # Livros Horizonte's 2014 printing, whose jacket carries the Portuguese
+    # title and Pessoa's own English one together.
+    cover: "https://covers.openlibrary.org/b/id/12972922-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL847120W"
+
+- id: fernando-pessoa/a-lingua-portuguesa
+  title: "A Língua Portuguesa"
+  authorIds: [fernando-pessoa]
+  published: 1997
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Pessoa on his own language: orthographic reform, the untranslatable, and
+    the sentence he is quoted for more than any other, that his homeland is the
+    Portuguese language.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/ficcoes-do-interludio
+  title: "Ficções do Interlúdio"
+  authorIds: [fernando-pessoa]
+  published: 1998
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    The poems Pessoa actually published in magazines during his lifetime,
+    reassembled under the title he had planned to give the heteronymous work as
+    a whole: interlude fictions, the drama in people rather than in acts.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+  images:
+    # Emecé's Spanish Ficciones del interludio (2004). The two 1998 jackets on
+    # the same record are Brazilian.
+    cover: "https://covers.openlibrary.org/b/id/3344582-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL847103W"
+
+- id: fernando-pessoa/a-educacao-do-estoico
+  title: "A Educação do Estóico"
+  authorIds: [fernando-pessoa]
+  heteronym: barao-de-teive
+  publishedAs: "Barão de Teive"
+  published: 1999
+  subseries: null
+  canonTier: extended
+  format: novella
+  synopsis: >
+    The only surviving manuscript of the Barão de Teive, an aristocrat who
+    burned everything else he wrote because he could not finish it, and who
+    sets out with total lucidity why he is about to kill himself. Edited by
+    Richard Zenith.
+  # The full title on the manuscript, and on the book, is "A Educação do
+  # Estóico: o único manuscrito do Barão de Teive". Excerpts signed by Teive had
+  # appeared in 1960, in Maria Aliete Galhoz's preface to the Rio de Janeiro
+  # Obra Poética; 1999 is the first edition of the text as a book of its own.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+    - "https://pt.wikipedia.org/wiki/%C3%81lvaro_Coelho_de_Athayde"
+  images:
+    # Assírio & Alvim's 2001 printing of Richard Zenith's edition, the jacket
+    # carrying the Barão de Teive byline the book was published under.
+    cover: "https://covers.openlibrary.org/b/id/13465238-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL847083W"
+
+- id: fernando-pessoa/correspondencia-1905-1922
+  title: "Correspondência 1905-1922"
+  authorIds: [fernando-pessoa]
+  published: 1999
+  subseries: null
+  canonTier: apocrypha
+  format: nonfiction
+  synopsis: >
+    The first volume of the collected letters, edited by Manuela Parreira da
+    Silva: the Durban aftermath, the founding of Orpheu, the death of
+    Sá-Carneiro, and the business schemes that kept failing.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/correspondencia-1923-1935
+  title: "Correspondência 1923-1935"
+  authorIds: [fernando-pessoa]
+  published: 1999
+  subseries: null
+  canonTier: apocrypha
+  format: nonfiction
+  synopsis: >
+    The second volume, which contains the single most-quoted document in
+    Pessoan studies: the letter of 13 January 1935 to Adolfo Casais Monteiro in
+    which Pessoa tells, in order and with dates, how the heteronyms were born.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+    - "https://casafernandopessoa.pt/pt/fernando-pessoa/obra"
+
+- id: fernando-pessoa/herostrato-e-a-busca-da-imortalidade
+  title: "Heróstrato e a Busca da Imortalidade"
+  authorIds: [fernando-pessoa]
+  published: 2000
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    An unfinished treatise, written in English, on literary fame: why some
+    reputations survive, why celebrity and greatness almost never coincide, and
+    what a writer nobody is reading can reasonably expect from posterity.
+    Written by a man with a trunk of unpublished work.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/critica-ensaios-artigos-e-entrevistas
+  title: "Crítica: Ensaios, Artigos e Entrevistas"
+  authorIds: [fernando-pessoa]
+  published: 2001
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Pessoa's published criticism gathered by Fernando Cabral Martins, from the
+    1912 Águia articles that announced a coming Portuguese super-poet to the
+    interviews he gave, and sometimes wrote himself, in the last years.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+  images:
+    # Acantilado's Spanish translation of this volume, 2003.
+    cover: "https://covers.openlibrary.org/b/id/14128107-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL35132917W"
+
+- id: fernando-pessoa/aforismos-e-afins
+  title: "Aforismos e Afins"
+  # No cover. Emecé's Aforismos y afines, the direct translation, is held at
+  # 105px on a photograph of three pipes, and Renacimiento's Aforismos is a
+  # different Spanish selection.
+  authorIds: [fernando-pessoa]
+  published: 2003
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    Aphorisms and one-line propositions scattered across the papers, collected
+    by Richard Zenith: the compressed form of a writer whose longest projects
+    all stayed unfinished.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+
+- id: fernando-pessoa/escritos-autobiograficos-automaticos-e-de-reflexao-pessoal
+  title: "Escritos Autobiográficos, Automáticos e de Reflexão Pessoal"
+  authorIds: [fernando-pessoa]
+  published: 2003
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    Diaries, self-diagnoses and automatic writing produced in trance, including
+    the mediumistic sessions of 1916, in which entities dictated to him and
+    commented on his private life.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+  images:
+    # The Assírio & Alvim first edition of 2003.
+    cover: "https://covers.openlibrary.org/b/id/14588142-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL847092W"
+
+- id: fernando-pessoa/quaresma-decifrador
+  title: "Quaresma, Decifrador"
+  authorIds: [fernando-pessoa]
+  published: 2008
+  subseries: null
+  canonTier: core
+  format: short-story-collection
+  synopsis: >
+    The detective stories: Abílio Quaresma, an unlicensed doctor who solves
+    crimes without leaving his chair, on the explicit principle that reasoning
+    beats evidence. Assembled from the papers by Ana Maria Freitas, seventy-three
+    years after Pessoa's death.
+  sources:
+    - "http://arquivopessoa.net/info/bibliografia"
+  images:
+    # Acantilado's Spanish Quaresma, descifrador, which prints Ana Maria
+    # Freitas's edition, the same one this volume established.
+    cover: "https://covers.openlibrary.org/b/id/7309674-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL17067418W"
+
+# --- Posthumous: the critical editions, 2009 onward ---
+#
+# Everything below this line is later than the Arquivo Pessoa bibliography and
+# is sourced from the Biblioteca Nacional de Portugal's catalogue: three
+# publishing programmes running in parallel on the same trunk of papers, the
+# INCM "Edição Crítica de Fernando Pessoa", the "Obras de Fernando Pessoa. Nova
+# série" at Ática and Assírio & Alvim, and Tinta-da-china's Pessoa series.
+
+- id: fernando-pessoa/sensacionismo-e-outros-ismos
+  title: "Sensacionismo e Outros Ismos"
+  # No cover. The one Open Library candidate for the INCM critical edition is
+  # a bookshop scrape with a WOOK corner flash burned into the jacket.
+  authorIds: [fernando-pessoa]
+  published: 2009
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Seven hundred pages on the movements Pessoa joined, invented or announced
+    and then abandoned: sensationism above all, and around it paulismo,
+    interseccionismo, futurism and the rest of the manifestos the Orpheu
+    generation ran on. Established from the papers by Jerónimo Pizarro as the
+    tenth volume of the national critical edition.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=sensacionismo+outros+ismos+pessoa"
+    - "https://openlibrary.org/search?q=Sensacionismo+e+outros+ismos"
+
+- id: fernando-pessoa/associacoes-secretas-e-outros-escritos
+  title: "Associações Secretas e Outros Escritos"
+  authorIds: [fernando-pessoa]
+  published: 2011
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Pessoa on freemasonry and the initiatic orders, gathered by José Barreto
+    around the article he published in the Diário de Lisboa in February 1935
+    against the bill that would outlaw them. The last public fight he picked,
+    nine months before he died, and the one time the private occultist argued
+    his case in a newspaper.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=associacoes+secretas+outros+escritos+pessoa"
+    - "https://openlibrary.org/search?q=Associa%C3%A7%C3%B5es+secretas+Pessoa"
+  images:
+    # The Ática first edition of 2011.
+    cover: "https://covers.openlibrary.org/b/id/14588127-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL16635917W"
+
+- id: fernando-pessoa/argumentos-para-filmes
+  title: "Argumentos para Filmes"
+  authorIds: [fernando-pessoa]
+  published: 2011
+  subseries: null
+  canonTier: extended
+  format: screenplay
+  synopsis: >
+    Film treatments written in Portuguese and English for a cinema Pessoa had no
+    way into: outlines, scenarios and pitches, some of them for competitions,
+    printed for the first time with translations by Patrício Ferrari and Claudia
+    J. Fischer. The man who published almost nothing was still drafting for
+    whatever new medium turned up.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=argumentos+para+filmes+pessoa"
+  images:
+    # La Umbría y la Solana's Spanish Argumentos para películas. Nothing of
+    # the 2011 Portuguese edition is held open.
+    cover: "https://covers.openlibrary.org/b/id/12327743-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL26380513W"
+
+- id: fernando-pessoa/iberia
+  title: "Ibéria: Introdução a um Imperialismo Futuro"
+  authorIds: [fernando-pessoa]
+  published: 2012
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    The unfinished book on Iberia: Portugal and Spain argued as one
+    civilisational unit whose future imperialism has to be cultural rather than
+    territorial, because the territorial kind is finished and was never what the
+    peninsula was for. The prose twin of the Fifth Empire that
+    [[work:fernando-pessoa/mensagem|Mensagem]] puts in verse. Established by
+    Jerónimo Pizarro and Pablo Javier Pérez López.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=iberia+introducao+imperialismo+futuro"
+    - "https://openlibrary.org/search?q=Ib%C3%A9ria+Pessoa+imperialismo"
+  images:
+    # Pre-Textos's Spanish Iberia (2013), Pizarro and Pérez López's text under
+    # its own translated title.
+    cover: "https://covers.openlibrary.org/b/id/13663949-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL34870547W"
+
+- id: fernando-pessoa/teoria-da-heteronimia
+  title: "Teoria da Heteronímia"
+  authorIds: [fernando-pessoa]
+  published: 2012
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Everything Pessoa wrote about how the invented authors worked, in one
+    volume: the prefaces he drafted and never used, the notes on a drama made of
+    people instead of acts, the bibliographical tables that sort pseudonym from
+    heteronym, and the letters where he explains the system to the few people
+    who asked. Edited by Fernando Cabral Martins and Richard Zenith.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=teoria+da+heteronimia+pessoa"
+    - "https://openlibrary.org/search?q=Teoria+da+heteronimia+Pessoa"
+
+- id: fernando-pessoa/o-regresso-dos-deuses
+  title: "O Regresso dos Deuses e Outros Escritos de António Mora"
+  # No cover. The INCM Obras de António Mora (volume VI) is a different
+  # editor's volume drawn from the same papers, not this one.
+  authorIds: [fernando-pessoa]
+  published: 2013
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    The writings of António Mora, the philosopher Pessoa invented to give
+    Caeiro's paganism a system: the gods argued back into existence as
+    metaphysics rather than as nostalgia, and Christianity treated as an
+    interruption Europe is about to finish with. Edited by Manuela Parreira da
+    Silva.
+  # The byline is Fernando Pessoa's, not Mora's, so no `publishedAs` and no
+  # `heteronym` key: this is a volume about and by an invented author, published
+  # under the real one's name.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=regresso+dos+deuses+mora+pessoa"
+    - "https://openlibrary.org/search?q=regresso+dos+deuses+Ant%C3%B3nio+Mora"
+
+- id: fernando-pessoa/sobre-o-fascismo-a-ditadura-militar-e-salazar
+  title: "Sobre o Fascismo, a Ditadura Militar e Salazar"
+  authorIds: [fernando-pessoa]
+  published: 2015
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    The political writing on the dictatorship, gathered and annotated by José
+    Barreto: the 1926 coup, the military dictatorship, Italian fascism, and the
+    slow turn against Salazar's Estado Novo, corporatism and the censorship in
+    the last years of Pessoa's life.
+  sources:
+    - "http://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?menu=search&profile=bn&index=.GW&term=sobre+fascismo+ditadura+militar+salazar+pessoa"
+    - "https://openlibrary.org/search?q=Sobre+o+fascismo+a+ditadura+militar+e+Salazar"
+  images:
+    # La Umbría y la Solana's Spanish translation, which keeps José Barreto's
+    # edition. The only jacket Open Library holds under a Portuguese title is
+    # a Brazilian printing retitled "a ditadura portuguesa"; the Tinta-da-china
+    # first edition has no cover held open.
+    cover: "https://covers.openlibrary.org/b/id/13668716-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL34873912W"
