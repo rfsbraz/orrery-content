@@ -1,0 +1,4350 @@
+# Editions of James Patterson: 432 English (en) editions over 431 of 480
+# works, plus 67 Portuguese (pt-PT) editions over 67 of 480 works (one work,
+# Virgin, carries two en editions - see below - which is where 432 and 431
+# diverge). 432 of the 480 works carry at least one edition.
+#
+# COVERAGE, BY TIER. core 196/220, extended 143/155, apocrypha 93/105. The 48
+# empty works skew heavily toward 2024-2026 titles too new for a source to
+# have indexed yet, and a long tail of 2016-2022 BookShots-era novellas and
+# Private/Alex Cross entries whose own OpenLibrary work record returned no
+# candidate at all. One is worth a second, human look rather than being
+# treated as settled: Black Market (1986) was reissued as Black Friday and
+# may be indexed only under that title.
+#
+# THE THREE MANGA SUB-SERIES (Maximum Ride: The Manga, Daniel X: The Manga,
+# Witch & Wizard: The Manga) resolve on OpenLibrary only when queried by
+# illustrator rather than by James Patterson's own name: NaRae Lee for
+# Maximum Ride, Seung-Hui Kye for Daniel X, Svetlana Chimakova for Witch &
+# Wizard. All 16 volumes carry a verified edition; Maximum Ride Vol. 2 and
+# Vol. 10, and Daniel X Vol. 2, have none with an uploaded cover (Vol. 10's
+# own OpenLibrary cover id resolves to a 60x40px placeholder rather than a
+# jacket scan), and the other 13 carry both.
+#
+# SOURCING (en). Every candidate came from one sweep of OpenLibrary's author
+# search (`scripts/metadata/lookup.py james-patterson --author "James
+# Patterson" --markets en,pt --limit 1000 --json`), which returned 6193
+# English-market rows; every ISBN kept here carries its own OpenLibrary
+# edition permalink (openlibrary.org/books/OL...M), not a search snippet, and
+# every isbn13 was re-derived from the check digit rather than trusted from
+# the record.
+#
+# THE SAME-SURNAME TRAP. 1263 of those 6193 rows were Henry Patterson (Jack
+# Higgins' legal name) under an author search that does not distinguish first
+# names well; every one was dropped on the row's own `same_author` flag
+# before anything else ran. A second, quieter trap survived that filter:
+# several of the oldest titles (Kiss the Girls, Cat & Mouse, The Thomas
+# Berryman Number, The Midnight Club and others) resolved by default to a
+# Book-of-the-Month-Club edition (OpenLibrary ISBNs in the 978-0-7394 block)
+# rather than the trade edition, because the BOMC record happened to carry
+# the work's first-publication year and the trade record did not. Every BOMC
+# ISBN found this way was deprioritized in favour of a real trade edition
+# once one existed among the candidates, per this file's own tiebreak rule
+# (trade beats book-club reprint); none is used unless it was the only
+# candidate.
+#
+# WHICH EDITION. For the large majority of works with several dozen
+# candidate SKUs (a full Patterson backlist title can carry a hardcover, a
+# same-year Limited/Signed edition, a Large Print edition, an ebook, an
+# audiobook, a UK edition and multiple later paperback printings, each its
+# own ISBN), the edition recorded is the one from Patterson's own continuous
+# US publisher family (Little, Brown and Company / Grand Central Publishing /
+# Warner Books / Warner Vision Books / Center Street / Jimmy Patterson Books,
+# all the same Hachette lineage) whose year matches the work's own first
+# publication year in works.yaml; large-print, library-binding, audio,
+# movie/TV tie-in, boxed-set/omnibus and signed/collector's SKUs were
+# excluded from consideration throughout. Where no candidate from that family
+# survives filtering (a UK-first title, a foreign co-edition, a novella-line
+# imprint with its own name), the earliest surviving candidate of any
+# publisher is used instead - this is the expected, not the exceptional,
+# case for a number of real bibliographic facts already on the shelf:
+# - The Private spinoffs Rome, Beijing, Monaco and Dublin (Penguin Random
+#   House/Century, 2022-2025) are recorded under their UK-first edition,
+#   because the UK reached them years ahead of the US, exactly as
+#   works.yaml's own header already documents for this series.
+# - Four Middle School titles (Escape to Australia, Going Bush, Hollywood
+#   101, How I Got Lost in London) are recorded under Random House
+#   Australia or Young Arrow (UK) editions for the same reason: works.yaml
+#   dates each by its non-American first edition.
+# - The BookShots-era novellas (Deadly Cargo, Airport: Code Red, Dead Heat,
+#   Kidnapped, Absolute Zero, The Hostage, The Verdict, Bloody Valentine and
+#   others) are recorded under the "BookShots" or UK "Arrow" novella-line
+#   imprints Patterson actually published them under; that is correct, not a
+#   fallback that failed.
+#
+# THREE EDITIONS THAT ARE NOT WHAT THEIR TITLE MATCH SUGGESTS, EACH VERIFIED
+# BY OPENING ITS OWN RECORD RATHER THAN TRUSTED FROM THE TITLE STRING:
+# - Virgin (1980) carries TWO entries. Patterson rewrote the novel and
+#   Little, Brown reissued it as Cradle and All in 2000; every "Virgin"
+#   candidate OpenLibrary's search actually returns under a matchable title
+#   is that rewritten text, so the current in-print Grand Central Publishing
+#   edition is recorded under Cradle and All with a note saying so, and the
+#   true 1980 McGraw-Hill first edition (out of print, its ISBN converted
+#   from OpenLibrary's 10-digit form) is recorded alongside it rather than
+#   silently dropped or silently substituted for the original.
+# - Operation Zero (2011) and Battle for Shadowland (2010), two Witch &
+#   Wizard apocrypha entries, resolve on OpenLibrary only to IDW's
+#   graphic-novel adaptations, noted as such on each entry below (the schema
+#   has no graphic-novel edition format, so `format` is left unset rather
+#   than mislabelled paperback or hardcover); no prose edition of either was
+#   found by this sweep, so the comic is what is recorded, flagged as such
+#   rather than passed off as a prose novella.
+# - Torn Apart (2008)'s OpenLibrary work record mixes a genuine Century (UK)
+#   hardcover with an ebook-flagged Random House Publishing Group record
+#   sharing the same year; the Century hardcover is recorded, the ebook is
+#   not.
+#
+# TWO SMALLER HONEST GAPS. The Day America Told the Truth (1991)'s only
+# OpenLibrary candidates carried no isbn13 at all; its isbn13 here is
+# converted from the Prentice Hall Press first edition's 10-digit ISBN,
+# 0134634802, and checked against the digit. The Great Mouse Escape (2025)
+# has only ever been indexed as a Hachette Audio audiobook so far; no print
+# ISBN exists in any source consulted, so format: audiobook is recorded
+# rather than guessing a print SKU that has not surfaced yet.
+#
+# Action (2014) and Boys Will Be Boys (2011) are real but unusual objects,
+# recorded with a note rather than silently treated as ordinary novels:
+# Action is a 9-page Kindle-exclusive short story co-written with a 2014
+# fan-writing-challenge winner, format: ebook; Boys Will Be Boys exists only
+# inside HarperCollins' multi-author "Guys Read" anthology of the same name,
+# whose ISBN is recorded because that anthology is the story's only
+# publication.
+#
+# SOURCING (pt-PT) AND THE PORTUGUESE PUBLISHING HISTORY. None of the four
+# pt-PT retail providers this catalogue's tooling queries (Bertrand, Wook,
+# Almedina, Presença's own storefront) returned a single Patterson hit, and
+# OpenLibrary's own 'por'-language sweep surfaced only 4 real candidates (of
+# 9 nominally 'pt' rows; the other 5 were, again, Henry Patterson editions
+# under Portuguese and Brazilian imprints). The pt-PT list below instead
+# comes from the Biblioteca Nacional de Portugal's own author index
+# (catalogo.bnportugal.gov.pt, index=AUTHOR, browser-UA reachable per
+# CURATION.md), which holds 108 catalogue records for "Patterson, James,
+# 1947-" once the same-surname noise (11 further Pattersons, none of them
+# this one) is excluded. Those 108 records collapse to 65 distinct
+# translations plus 2 Bill Clinton co-writes, spanning four publishing eras
+# confirmed record by record rather than assumed from the brief: Editorial
+# Presença published a handful of standalones and the opening Alex Cross
+# novel from 2001 to 2012; Quinta Essência (Alfragide) ran the Women's
+# Murder Club from 2009 to 2011; Topseller and its children's-list sibling
+# Booksmile (both Porto Editora group) carried the bulk of the run from 2012
+# to 2020, restarting the Alex Cross series mid-stream at Cross (2006, sold
+# generically as "Alex Cross") rather than continuing from Presença's
+# earlier Along Came a Spider; and after 2020 only Patterson's celebrity
+# co-writes have continued to appear, one publisher at a time (Bill Clinton
+# via Porto Editora, Dolly Parton via Casa das Letras, Michael Crichton via
+# Cultura, Viola Davis via Bertrand for 2026). Every translated title below
+# was matched to its work via the BNP record's own "Tít. orig." field, never
+# guessed from the Portuguese title, and every isbn13 was re-derived from its
+# check digit. Pre-2007 Presença titles carry only a 10-digit ISBN in the BNP
+# record; four of those (Along Came a Spider, Suzanne's Diary for Nicholas,
+# Sam's Letters to Jennifer, Pop Goes the Weasel) are converted to their
+# 13-digit form here.
+#
+# COVERAGE STOPS ARE MARKET FACTS, not research gaps. The Private series'
+# Portuguese run ends at Private, Paris (2017); none of Private London,
+# Berlin, India, Games, Missing, Royals, Gold, Oz, Vegas-adjacent sequels or
+# anything after 2017 has a Portuguese edition in the BNP catalogue. The
+# Middle School line stops at Middle School: Born to Rock (2019); Max
+# Einstein stops after its second volume (2020); no BookShots novella was
+# ever translated. Where a work has no pt-PT entry below, that silence is
+# this market fact, not an unfinished search.
+#
+# ONE MULTI-VOLUME EDITION. Topseller's 2012 "Maximum Ride" release is a
+# single BNP catalogue record covering two bound volumes under two ISBNs (1o
+# v.: O Resgate de Angel; 2o v., 2013: Adeus à Escola); each ISBN is recorded
+# against its own work (The Angel Experiment and School's Out - Forever
+# respectively), with a note on each explaining the split.
+#
+# ONE UNVERIFIABLE SOURCE NUMBER. The BNP record for Doidos à Solta! (2016,
+# House of Robots: Robots Go Wild!) prints its own ISBN as 989-989-8839-44-2,
+# which is not 13 digits under a real prefix and fails its check digit
+# outright. Every neighbouring Booksmile ISBN from the same 2016 batch sits
+# in the 978-989-8839-xx-x block, which makes 978-989-8839-44-2 (itself
+# check-digit valid) a plausible transposition - but no second source
+# confirms that specific number, so isbn13 is left unset here rather than
+# silently "corrected" on pattern-matching alone (see CURATION.md and the
+# editions skill's own Wee Free Men precedent for why a plausible fix still
+# needs a second source before it ships).
+#
+# THREE APPEARANCES DELIBERATELY EXCLUDED. The BNP catalogue also lists three
+# Reader's Digest Selecções condensed-book anthology volumes carrying a
+# Patterson story abridged alongside three or four other authors' unrelated
+# work: "Bjs." (2016, with a condensed "O Homicídio do Tutancâmon" /The
+# Murder of King Tut), "Gralhas" (2002, a condensed "Diário para o meu
+# filho"/Suzanne's Diary for Nicholas, redundant with Presença's full 2003
+# translation below) and "Nem um Adeus" (2007, a condensed "Juiz e Júri"/
+# Judge & Jury). None is recorded: each ISBN describes the multi-author bound
+# volume, not Patterson's story alone, the same reasoning the Harlan Coben
+# file already applies to its own Reader's Digest anthology finding. The
+# Murder of King Tut and Judge & Jury accordingly carry no pt-PT edition at
+# all in this file - a condensed multi-author excerpt is not a fact this
+# schema has a field for, and inventing one would misrepresent what a reader
+# could actually buy.
+#
+# Region-strict throughout: every pt-PT isbn13 below carries a 978-972 or
+# 978-989 prefix (Portugal); none is a pt-BR edition mislabeled pt-PT.
+
+- id: james-patterson/the-thomas-berryman-number/little-brown-book-group-1978-en
+  workId: james-patterson/the-thomas-berryman-number
+  isbn13: "9780722166871"
+  language: en
+  publisher: "Little, Brown Book Group"
+  year: 1978
+  sources: ["https://openlibrary.org/books/OL33379245M"]
+
+- id: james-patterson/season-of-the-machete/little-brown-book-group-1978-en
+  workId: james-patterson/season-of-the-machete
+  isbn13: "9780722167281"
+  language: en
+  publisher: "Little, Brown Book Group"
+  year: 1978
+  sources: ["https://openlibrary.org/books/OL33374407M"]
+
+- id: james-patterson/see-how-they-run/little-brown-and-company-1997-en
+  workId: james-patterson/see-how-they-run
+  isbn13: "9780316693820"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 1997
+  sources: ["https://openlibrary.org/books/OL44262805M"]
+
+- id: james-patterson/virgin/grand-central-2007-en
+  workId: james-patterson/virgin
+  isbn13: "9780446507615"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2007
+  note: >
+    The current in-print edition, under the title Cradle and All: Patterson
+    rewrote Virgin (1980) and Little, Brown reissued it under this new title in
+    2000; this is that rewritten text, not the original.
+  sources: ["https://openlibrary.org/books/OL40474147M"]
+
+- id: james-patterson/virgin/mcgraw-hill-1980-en
+  workId: james-patterson/virgin
+  isbn13: "9780070488205"
+  language: en
+  publisher: "McGraw-Hill"
+  year: 1980
+  note: >
+    The true first edition, under the original title Virgin, out of print; ISBN
+    converted from OpenLibrary's 10-digit form, 0070488207.
+  sources: ["https://openlibrary.org/books/OL4097248M"]
+
+- id: james-patterson/the-midnight-club/warner-vision-books-1999-en
+  workId: james-patterson/the-midnight-club
+  isbn13: "9780446606387"
+  language: en
+  publisher: "Warner Vision Books"
+  year: 1999
+  sources: ["https://openlibrary.org/books/OL24956702M"]
+
+- id: james-patterson/the-day-america-told-the-truth/prentice-hall-press-1991-en
+  workId: james-patterson/the-day-america-told-the-truth
+  isbn13: "9780134634807"
+  language: en
+  publisher: "Prentice Hall Press"
+  year: 1991
+  note: >
+    ISBN converted from the OpenLibrary record's 10-digit form, 0134634802
+    (checked against the check digit).
+  sources: ["https://openlibrary.org/books/OL21135264M"]
+
+- id: james-patterson/along-came-a-spider/grand-central-publishing-1993-en
+  workId: james-patterson/along-came-a-spider
+  isbn13: "9780446364195"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 1993
+  sources: ["https://openlibrary.org/books/OL7536271M"]
+
+- id: james-patterson/along-came-a-spider/presenca-2001-pt
+  workId: james-patterson/along-came-a-spider
+  isbn13: "9789722327541"
+  language: pt-PT
+  title: "A conspiração da aranha"
+  translator: "Maria Nóvoa"
+  publisher: "Presença"
+  year: 2001
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789722327541&profile=bn"]
+
+- id: james-patterson/the-second-american-revolution-the-peoples-plan-for-fixing-america-before-its-too-late/diane-books-publishing-company-1998-en
+  workId: james-patterson/the-second-american-revolution-the-peoples-plan-for-fixing-america-before-its-too-late
+  isbn13: "9780788152092"
+  language: en
+  publisher: "Diane Books Publishing Company"
+  year: 1998
+  sources: ["https://openlibrary.org/books/OL9698609M"]
+
+- id: james-patterson/kiss-the-girls/warner-books-1997-en
+  workId: james-patterson/kiss-the-girls
+  isbn13: "9780446601245"
+  language: en
+  publisher: "Warner Books"
+  year: 1997
+  sources: ["https://openlibrary.org/books/OL7537316M"]
+
+- id: james-patterson/hide-and-seek/little-brown-and-company-1996-en
+  workId: james-patterson/hide-and-seek
+  isbn13: "9780316693868"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 1996
+  sources: ["https://openlibrary.org/books/OL24747024M"]
+
+- id: james-patterson/jack-and-jill/little-brown-and-company-1996-en
+  workId: james-patterson/jack-and-jill
+  isbn13: "9780316693714"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 1996
+  sources: ["https://openlibrary.org/books/OL24211227M"]
+
+- id: james-patterson/miracle-on-the-17th-green/little-brown-and-company-1996-en
+  workId: james-patterson/miracle-on-the-17th-green
+  isbn13: "9780316693318"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 1996
+  sources: ["https://openlibrary.org/books/OL24832093M"]
+
+- id: james-patterson/cat-and-mouse/warner-books-1998-en
+  workId: james-patterson/cat-and-mouse
+  isbn13: "9780446606189"
+  language: en
+  publisher: "Warner Books"
+  year: 1998
+  sources: ["https://openlibrary.org/books/OL24938475M"]
+
+- id: james-patterson/when-the-wind-blows/little-brown-and-company-2003-en
+  workId: james-patterson/when-the-wind-blows
+  isbn13: "9780759587472"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2003
+  sources: ["https://openlibrary.org/books/OL44232209M"]
+
+- id: james-patterson/pop-goes-the-weasel/little-brown-and-company-1999-en
+  workId: james-patterson/pop-goes-the-weasel
+  isbn13: "9780446608817"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 1999
+  sources: ["https://openlibrary.org/books/OL23243567M"]
+
+- id: james-patterson/pop-goes-the-weasel/presenca-2004-pt
+  workId: james-patterson/pop-goes-the-weasel
+  isbn13: "9789722331968"
+  language: pt-PT
+  title: "Os crimes da doninha"
+  translator: "Saúl Dias Barata"
+  publisher: "Presença"
+  year: 2004
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789722331968&profile=bn"]
+
+- id: james-patterson/roses-are-red/little-brown-and-company-2000-en
+  workId: james-patterson/roses-are-red
+  isbn13: "9780316666206"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2000
+  sources: ["https://openlibrary.org/books/OL44212973M"]
+
+- id: james-patterson/1st-to-die/little-brown-and-company-2001-en
+  workId: james-patterson/1st-to-die
+  isbn13: "9780316666008"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2001
+  sources: ["https://openlibrary.org/books/OL6793725M"]
+
+- id: james-patterson/1st-to-die/quinta-essencia-2009-pt
+  workId: james-patterson/1st-to-die
+  isbn13: "9789898228116"
+  language: pt-PT
+  title: "Primeira a morrer"
+  translator: "Ana Lourenço"
+  publisher: "Quinta Essência"
+  year: 2009
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898228116&profile=bn"]
+
+- id: james-patterson/suzannes-diary-for-nicholas/little-brown-and-company-2001-en
+  workId: james-patterson/suzannes-diary-for-nicholas
+  isbn13: "9780759564886"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2001
+  sources: ["https://openlibrary.org/books/OL24260610M"]
+
+- id: james-patterson/suzannes-diary-for-nicholas/presenca-2003-pt
+  workId: james-patterson/suzannes-diary-for-nicholas
+  isbn13: "9789722329873"
+  language: pt-PT
+  title: "Diário de uma mãe"
+  translator: "Maria de Almeida"
+  publisher: "Presença"
+  year: 2003
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789722329873&profile=bn"]
+
+- id: james-patterson/violets-are-blue/little-brown-and-company-2001-en
+  workId: james-patterson/violets-are-blue
+  isbn13: "9780316686563"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2001
+  sources: ["https://openlibrary.org/books/OL9875103M"]
+
+- id: james-patterson/2nd-chance/little-brown-and-company-2002-en
+  workId: james-patterson/2nd-chance
+  isbn13: "9780759506749"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2002
+  sources: ["https://openlibrary.org/books/OL44234043M"]
+
+- id: james-patterson/2nd-chance/quinta-essencia-2010-pt
+  workId: james-patterson/2nd-chance
+  isbn13: "9789898228208"
+  language: pt-PT
+  title: "Segunda oportunidade : o clube das investigadoras"
+  translator: "Ana Lourenço"
+  publisher: "Quinta Essência"
+  year: 2010
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898228208&profile=bn"]
+
+- id: james-patterson/four-blind-mice/little-brown-and-company-2002-en
+  workId: james-patterson/four-blind-mice
+  isbn13: "9780316147866"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2002
+  sources: ["https://openlibrary.org/books/OL9623561M"]
+
+- id: james-patterson/the-beach-house/little-brown-and-company-2002-en
+  workId: james-patterson/the-beach-house
+  isbn13: "9780316733748"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2002
+  sources: ["https://openlibrary.org/books/OL9420348M"]
+
+- id: james-patterson/the-big-bad-wolf/little-brown-and-company-2003-en
+  workId: james-patterson/the-big-bad-wolf
+  isbn13: "9780316743846"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2003
+  sources: ["https://openlibrary.org/books/OL9652456M"]
+
+- id: james-patterson/the-jester/little-brown-and-company-2003-en
+  workId: james-patterson/the-jester
+  isbn13: "9780316147873"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2003
+  sources: ["https://openlibrary.org/books/OL9537386M"]
+
+- id: james-patterson/the-lake-house/little-brown-and-company-2003-en
+  workId: james-patterson/the-lake-house
+  isbn13: "9780316711135"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2003
+  sources: ["https://openlibrary.org/books/OL9668500M"]
+
+- id: james-patterson/3rd-degree/little-brown-and-company-2004-en
+  workId: james-patterson/3rd-degree
+  isbn13: "9780316603577"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2004
+  sources: ["https://openlibrary.org/books/OL3690125M"]
+
+- id: james-patterson/3rd-degree/quinta-essencia-2011-pt
+  workId: james-patterson/3rd-degree
+  isbn13: "9789898228550"
+  language: pt-PT
+  title: "3o Grau"
+  translator: "Dina Antunes"
+  publisher: "Quinta Essência"
+  year: 2011
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898228550&profile=bn"]
+
+- id: james-patterson/london-bridges/little-brown-and-company-2004-en
+  workId: james-patterson/london-bridges
+  isbn13: "9780316009577"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2004
+  sources: ["https://openlibrary.org/books/OL9803113M"]
+
+- id: james-patterson/sams-letters-to-jennifer/little-brown-and-company-2004-en
+  workId: james-patterson/sams-letters-to-jennifer
+  isbn13: "9780759511187"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2004
+  sources: ["https://openlibrary.org/books/OL24254280M"]
+
+- id: james-patterson/sams-letters-to-jennifer/presenca-2004-pt
+  workId: james-patterson/sams-letters-to-jennifer
+  isbn13: "9789722332750"
+  language: pt-PT
+  title: "Abre o teu coração"
+  translator: "Mercês Peixoto"
+  publisher: "Presença"
+  year: 2004
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789722332750&profile=bn"]
+
+- id: james-patterson/santakid/little-brown-and-company-2004-en
+  workId: james-patterson/santakid
+  isbn13: "9780316010498"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2004
+  sources: ["https://openlibrary.org/books/OL27925936M"]
+
+- id: james-patterson/4th-of-july/little-brown-and-company-2005-en
+  workId: james-patterson/4th-of-july
+  isbn13: "9780316058858"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2005
+  sources: ["https://openlibrary.org/books/OL9834657M"]
+
+- id: james-patterson/honeymoon/little-brown-and-company-2005-en
+  workId: james-patterson/honeymoon
+  isbn13: "9780316009560"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2005
+  sources: ["https://openlibrary.org/books/OL9826407M"]
+
+- id: james-patterson/honeymoon/presenca-2007-pt
+  workId: james-patterson/honeymoon
+  isbn13: "9789722336970"
+  language: pt-PT
+  title: "A noiva assassina"
+  translator: "Maria de Fátima Andrade"
+  publisher: "Presença"
+  year: 2007
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789722336970&profile=bn"]
+
+- id: james-patterson/lifeguard/little-brown-and-company-2005-en
+  workId: james-patterson/lifeguard
+  isbn13: "9780759514300"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2005
+  sources: ["https://openlibrary.org/books/OL24264204M"]
+
+- id: james-patterson/mary-mary/little-brown-and-company-2005-en
+  workId: james-patterson/mary-mary
+  isbn13: "9780316154765"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2005
+  sources: ["https://openlibrary.org/books/OL9869098M"]
+
+- id: james-patterson/the-angel-experiment/little-brown-and-company-2005-en
+  workId: james-patterson/the-angel-experiment
+  isbn13: "9780759514164"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2005
+  sources: ["https://openlibrary.org/books/OL51592165M"]
+
+- id: james-patterson/the-angel-experiment/topseller-2012-pt-vol1
+  workId: james-patterson/the-angel-experiment
+  isbn13: "9789898626004"
+  language: pt-PT
+  title: "Maximum Ride"
+  translator: "António Costa Santos"
+  publisher: "Topseller"
+  year: 2012
+  note: >
+    Volume 1 of Topseller's two-volume 'Maximum Ride' set (see file header): O
+    Resgate de Angel.
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898626004&profile=bn"]
+
+- id: james-patterson/beach-road/little-brown-and-company-2006-en
+  workId: james-patterson/beach-road
+  isbn13: "9780316159784"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2006
+  sources: ["https://openlibrary.org/books/OL24201183M"]
+
+- id: james-patterson/cross/little-brown-and-company-2006-en
+  workId: james-patterson/cross
+  isbn13: "9780316017749"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2006
+  sources: ["https://openlibrary.org/books/OL9556423M"]
+
+- id: james-patterson/cross/topseller-2015-pt
+  workId: james-patterson/cross
+  isbn13: "9789896683986"
+  language: pt-PT
+  title: "Alex Cross"
+  translator: "Maria João Freire de Andrade"
+  publisher: "Topseller"
+  year: 2015
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789896683986&profile=bn"]
+
+- id: james-patterson/judge-and-jury/little-brown-and-company-2006-en
+  workId: james-patterson/judge-and-jury
+  isbn13: "9780316013932"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2006
+  sources: ["https://openlibrary.org/books/OL9762516M"]
+
+- id: james-patterson/schools-out-forever/little-brown-and-company-2006-en
+  workId: james-patterson/schools-out-forever
+  isbn13: "9780759515772"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2006
+  sources: ["https://openlibrary.org/books/OL24302762M"]
+
+- id: james-patterson/schools-out-forever/topseller-2012-pt-vol2
+  workId: james-patterson/schools-out-forever
+  isbn13: "9789898626080"
+  language: pt-PT
+  title: "Maximum Ride"
+  translator: "António Costa Santos"
+  publisher: "Topseller"
+  year: 2012
+  note: >
+    Volume 2 of Topseller's two-volume 'Maximum Ride' set (see file header): Adeus
+    à Escola.
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898626080&profile=bn"]
+
+- id: james-patterson/the-5th-horseman/little-brown-and-company-2006-en
+  workId: james-patterson/the-5th-horseman
+  isbn13: "9780316159777"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2006
+  sources: ["https://openlibrary.org/books/OL46528712M"]
+
+- id: james-patterson/double-cross/little-brown-and-company-2007-en
+  workId: james-patterson/double-cross
+  isbn13: "9780316004312"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2007
+  sources: ["https://openlibrary.org/books/OL9684450M"]
+
+- id: james-patterson/double-cross/topseller-2015-pt
+  workId: james-patterson/double-cross
+  isbn13: "9789896684020"
+  language: pt-PT
+  title: "Alex Cross : perigo duplo"
+  translator: "Raquel Lopes"
+  publisher: "Topseller"
+  year: 2015
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789896684020&profile=bn"]
+
+- id: james-patterson/saving-the-world-and-other-extreme-sports/little-brown-and-company-2007-en
+  workId: james-patterson/saving-the-world-and-other-extreme-sports
+  isbn13: "9780316005463"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2007
+  sources: ["https://openlibrary.org/books/OL24276746M"]
+
+- id: james-patterson/saving-the-world-and-other-extreme-sports/topseller-2013-pt
+  workId: james-patterson/saving-the-world-and-other-extreme-sports
+  isbn13: "9789898626257"
+  language: pt-PT
+  title: "Maximum ride : salvar o mundo"
+  translator: "Rita Figueiredo"
+  publisher: "Topseller"
+  year: 2013
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898626257&profile=bn"]
+
+- id: james-patterson/step-on-a-crack/little-brown-and-company-2007-en
+  workId: james-patterson/step-on-a-crack
+  isbn13: "9780316013949"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2007
+  sources: ["https://openlibrary.org/books/OL9631185M"]
+
+- id: james-patterson/step-on-a-crack/presenca-2007-pt
+  workId: james-patterson/step-on-a-crack
+  isbn13: "9789722338370"
+  language: pt-PT
+  title: "Sequestro de alto risco"
+  translator: "Lucinda Santos Silva"
+  publisher: "Presença"
+  year: 2007
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789722338370&profile=bn"]
+
+- id: james-patterson/the-6th-target/little-brown-and-company-2007-en
+  workId: james-patterson/the-6th-target
+  isbn13: "9780316005135"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2007
+  sources: ["https://openlibrary.org/books/OL24279121M"]
+
+- id: james-patterson/the-quickie/little-brown-and-company-2007-en
+  workId: james-patterson/the-quickie
+  isbn13: "9780316007184"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2007
+  sources: ["https://openlibrary.org/books/OL24273823M"]
+
+- id: james-patterson/youve-been-warned/little-brown-and-company-2007-en
+  workId: james-patterson/youve-been-warned
+  isbn13: "9780316005005"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2007
+  note: >
+    Not to be confused with the same-titled 2017 BookShots novella (a different,
+    separately catalogued work).
+  sources: ["https://openlibrary.org/books/OL9447630M"]
+
+- id: james-patterson/7th-heaven/little-brown-and-company-2008-en
+  workId: james-patterson/7th-heaven
+  isbn13: "9780316004329"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2008
+  sources: ["https://openlibrary.org/books/OL9564306M"]
+
+- id: james-patterson/against-medical-advice-a-true-story/little-brown-and-company-2008-en
+  workId: james-patterson/against-medical-advice-a-true-story
+  isbn13: "9780316024754"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2008
+  sources: ["https://openlibrary.org/books/OL16773708M"]
+
+- id: james-patterson/against-medical-advice-a-true-story/quinta-assencia-2010-pt
+  workId: james-patterson/against-medical-advice-a-true-story
+  isbn13: "9789898228277"
+  language: pt-PT
+  title: "Força de vontade : a história verídica da luta de uma família contra um agonizante mistério clínico"
+  translator: "Raquel Lopes"
+  publisher: "Quinta Assência"
+  year: 2010
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898228277&profile=bn"]
+
+- id: james-patterson/cross-country/little-brown-and-company-2008-en
+  workId: james-patterson/cross-country
+  isbn13: "9780316018722"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2008
+  sources: ["https://openlibrary.org/books/OL46540048M"]
+
+- id: james-patterson/cross-country/topseller-2015-pt
+  workId: james-patterson/cross-country
+  isbn13: "9789896683535"
+  language: pt-PT
+  title: "Alex Cross : a caça"
+  translator: "Ana Beatriz Manso"
+  publisher: "Topseller"
+  year: 2015
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789896683535&profile=bn"]
+
+- id: james-patterson/daniel-x-alien-hunter/little-brown-and-company-2008-en
+  workId: james-patterson/daniel-x-alien-hunter
+  isbn13: "9780316004251"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2008
+  sources: ["https://openlibrary.org/books/OL23121056M"]
+
+- id: james-patterson/daniel-x-the-dangerous-days-of-daniel-x/little-brown-and-company-2008-en
+  workId: james-patterson/daniel-x-the-dangerous-days-of-daniel-x
+  isbn13: "9780316002929"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2008
+  sources: ["https://openlibrary.org/books/OL10426042M"]
+
+- id: james-patterson/sail/little-brown-and-company-2008-en
+  workId: james-patterson/sail
+  isbn13: "9780316018708"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2008
+  sources: ["https://openlibrary.org/books/OL24754308M"]
+
+- id: james-patterson/sundays-at-tiffanys/little-brown-and-company-2008-en
+  workId: james-patterson/sundays-at-tiffanys
+  isbn13: "9780316014779"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2008
+  sources: ["https://openlibrary.org/books/OL46541454M"]
+
+- id: james-patterson/sundays-at-tiffanys/topseller-2014-pt
+  workId: james-patterson/sundays-at-tiffanys
+  isbn13: "9789898626905"
+  language: pt-PT
+  title: "Um anjo da guarda"
+  translator: "Rita Figueiredo"
+  publisher: "Topseller"
+  year: 2014
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898626905&profile=bn"]
+
+- id: james-patterson/the-final-warning/little-brown-and-company-2008-en
+  workId: james-patterson/the-final-warning
+  isbn13: "9780316002868"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2008
+  sources: ["https://openlibrary.org/books/OL20947648M"]
+
+- id: james-patterson/torn-apart/century-2008-en
+  workId: james-patterson/torn-apart
+  isbn13: "9781846054037"
+  language: en
+  publisher: "Century"
+  year: 2008
+  sources: ["https://openlibrary.org/books/OL26343041M"]
+
+- id: james-patterson/alex-crosss-trial/little-brown-and-company-2009-en
+  workId: james-patterson/alex-crosss-trial
+  isbn13: "9780316070621"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2009
+  sources: ["https://openlibrary.org/books/OL23208068M"]
+
+- id: james-patterson/daniel-x-watch-the-skies/little-brown-and-company-2009-en
+  workId: james-patterson/daniel-x-watch-the-skies
+  isbn13: "9780316036184"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2009
+  sources: ["https://openlibrary.org/books/OL22658188M"]
+
+- id: james-patterson/i-alex-cross/little-brown-and-company-2009-en
+  workId: james-patterson/i-alex-cross
+  isbn13: "9780316018784"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2009
+  sources: ["https://openlibrary.org/books/OL23208069M"]
+
+- id: james-patterson/i-alex-cross/topseller-2015-pt
+  workId: james-patterson/i-alex-cross
+  isbn13: "9789896683566"
+  language: pt-PT
+  title: "Eu, Alex Cross"
+  translator: "Ana Beatriz Manso"
+  publisher: "Topseller"
+  year: 2015
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789896683566&profile=bn"]
+
+- id: james-patterson/max/little-brown-and-company-2009-en
+  workId: james-patterson/max
+  isbn13: "9780316002899"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2009
+  sources: ["https://openlibrary.org/books/OL22652872M"]
+
+- id: james-patterson/maximum-ride-vol-1/yen-press-2009-en
+  workId: james-patterson/maximum-ride-vol-1
+  isbn13: "9780759529519"
+  language: en
+  publisher: "Yen Press"
+  year: 2009
+  sources: ["https://openlibrary.org/books/OL23187237M"]
+
+- id: james-patterson/maximum-ride-vol-2/yen-press-2010-en
+  workId: james-patterson/maximum-ride-vol-2
+  isbn13: "9781484489093"
+  language: en
+  publisher: "Yen Press"
+  year: 2010
+  sources: ["https://openlibrary.org/books/OL39648396M"]
+
+- id: james-patterson/run-for-your-life/little-brown-and-company-2009-en
+  workId: james-patterson/run-for-your-life
+  isbn13: "9780316018746"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2009
+  sources: ["https://openlibrary.org/books/OL46528746M"]
+
+- id: james-patterson/swimsuit/little-brown-and-company-2009-en
+  workId: james-patterson/swimsuit
+  isbn13: "9780316018777"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2009
+  sources: ["https://openlibrary.org/books/OL24754734M"]
+
+- id: james-patterson/the-8th-confession/little-brown-and-company-2009-en
+  workId: james-patterson/the-8th-confession
+  isbn13: "9780316018760"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2009
+  sources: ["https://openlibrary.org/books/OL46541452M"]
+
+- id: james-patterson/the-murder-of-king-tut/little-brown-and-company-2009-en
+  workId: james-patterson/the-murder-of-king-tut
+  isbn13: "9780316034043"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2009
+  sources: ["https://openlibrary.org/books/OL23180967M"]
+
+- id: james-patterson/witch-and-wizard/little-brown-and-company-2009-en
+  workId: james-patterson/witch-and-wizard
+  isbn13: "9780316036245"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2009
+  sources: ["https://openlibrary.org/books/OL23851250M"]
+
+- id: james-patterson/battle-for-shadowland/idw-publishing-2010-en
+  workId: james-patterson/battle-for-shadowland
+  isbn13: "9781600107597"
+  language: en
+  publisher: "IDW Publishing"
+  year: 2010
+  note: >
+    The IDW graphic-novel adaptation, drawn by other hands; no separate prose
+    edition was found.
+  sources: ["https://openlibrary.org/books/OL26264674M"]
+
+- id: james-patterson/cross-fire/little-brown-and-company-2010-en
+  workId: james-patterson/cross-fire
+  isbn13: "9780316036177"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2010
+  sources: ["https://openlibrary.org/books/OL24879172M"]
+
+- id: james-patterson/cross-fire/topseller-2015-pt
+  workId: james-patterson/cross-fire
+  isbn13: "9789898800718"
+  language: pt-PT
+  title: "Alex Cross : fogo cruzado"
+  translator: "Ana Beatriz Manso"
+  publisher: "Topseller"
+  year: 2015
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898800718&profile=bn"]
+
+- id: james-patterson/daniel-x-the-manga-vol-1/yen-press-2010-en
+  workId: james-patterson/daniel-x-the-manga-vol-1
+  isbn13: "9780316077644"
+  language: en
+  publisher: "Yen Press"
+  year: 2010
+  sources: ["https://openlibrary.org/books/OL24645296M"]
+
+- id: james-patterson/demons-and-druids/little-brown-and-company-2010-en
+  workId: james-patterson/demons-and-druids
+  isbn13: "9780316036986"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2010
+  sources: ["https://openlibrary.org/books/OL24488842M"]
+
+- id: james-patterson/dont-blink/little-brown-and-company-2010-en
+  workId: james-patterson/dont-blink
+  isbn13: "9780316036238"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2010
+  sources: ["https://openlibrary.org/books/OL23688320M"]
+
+- id: james-patterson/fang/little-brown-and-company-2010-en
+  workId: james-patterson/fang
+  isbn13: "9780316036191"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2010
+  sources: ["https://openlibrary.org/books/OL24379476M"]
+
+- id: james-patterson/maximum-ride-vol-3/yen-press-2010-en
+  workId: james-patterson/maximum-ride-vol-3
+  isbn13: "9780759529694"
+  language: en
+  publisher: "Yen Press"
+  year: 2010
+  sources: ["https://openlibrary.org/books/OL24363639M"]
+
+- id: james-patterson/private/little-brown-and-company-2010-en
+  workId: james-patterson/private
+  isbn13: "9780316096157"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2010
+  sources: ["https://openlibrary.org/books/OL24490607M"]
+
+- id: james-patterson/private/topseller-2015-pt
+  workId: james-patterson/private
+  isbn13: "9789898491268"
+  language: pt-PT
+  title: "Private : Agência Internacional de Investigação"
+  translator: "José João Leiria"
+  publisher: "Topseller"
+  year: 2015
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898491268&profile=bn"]
+
+- id: james-patterson/the-9th-judgment/little-brown-and-company-2010-en
+  workId: james-patterson/the-9th-judgment
+  isbn13: "9780316036276"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2010
+  sources: ["https://openlibrary.org/books/OL24476644M"]
+
+- id: james-patterson/the-gift/little-brown-and-company-2010-en
+  workId: james-patterson/the-gift
+  isbn13: "9780316036252"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2010
+  sources: ["https://openlibrary.org/books/OL24880185M"]
+
+- id: james-patterson/the-postcard-killers/little-brown-and-company-2010-en
+  workId: james-patterson/the-postcard-killers
+  isbn13: "9780316089517"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2010
+  sources: ["https://openlibrary.org/books/OL23963242M"]
+
+- id: james-patterson/worst-case/little-brown-and-company-2010-en
+  workId: james-patterson/worst-case
+  isbn13: "9780316036221"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2010
+  sources: ["https://openlibrary.org/books/OL24128225M"]
+
+- id: james-patterson/10th-anniversary/little-brown-and-company-2011-en
+  workId: james-patterson/10th-anniversary
+  isbn13: "9780316036269"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2011
+  sources: ["https://openlibrary.org/books/OL46539486M"]
+
+- id: james-patterson/angel/little-brown-and-company-2011-en
+  workId: james-patterson/angel
+  isbn13: "9780316036207"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2011
+  sources: ["https://openlibrary.org/books/OL24913881M"]
+
+- id: james-patterson/bloody-valentine/arrow-books-2011-en
+  workId: james-patterson/bloody-valentine
+  isbn13: "9780099556756"
+  language: en
+  publisher: "Arrow Books"
+  year: 2011
+  sources: ["https://openlibrary.org/books/OL28180414M"]
+
+- id: james-patterson/boys-will-be-boys/harpercollins-2011-en
+  workId: james-patterson/boys-will-be-boys
+  isbn13: "9780062112156"
+  language: en
+  publisher: "HarperCollins"
+  year: 2011
+  note: >
+    Patterson's story appears in the HarperCollins "Guys Read" anthology volume of
+    the same name (edited by Jon Scieszka); the ISBN is the anthology's own, this
+    being its only publication.
+  sources: ["https://openlibrary.org/books/OL35767311M"]
+
+- id: james-patterson/daniel-x-game-over/little-brown-and-company-2011-en
+  workId: james-patterson/daniel-x-game-over
+  isbn13: "9780316101783"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2011
+  sources: ["https://openlibrary.org/books/OL46538926M"]
+
+- id: james-patterson/daniel-x-the-manga-vol-2/yen-press-2011-en
+  workId: james-patterson/daniel-x-the-manga-vol-2
+  isbn13: "9780316077651"
+  language: en
+  publisher: "Yen Press"
+  year: 2011
+  sources: ["https://openlibrary.org/books/OL25177791M"]
+
+- id: james-patterson/kill-alex-cross/little-brown-and-company-2011-en
+  workId: james-patterson/kill-alex-cross
+  isbn13: "9780316189255"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2011
+  sources: ["https://openlibrary.org/books/OL26336202M"]
+
+- id: james-patterson/kill-alex-cross/topseller-2016-pt
+  workId: james-patterson/kill-alex-cross
+  isbn13: "9789898849458"
+  language: pt-PT
+  title: "Morre, Alex Cross"
+  translator: "Ana Beatriz Manso"
+  publisher: "Topseller"
+  year: 2016
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898849458&profile=bn"]
+
+- id: james-patterson/kill-me-if-you-can/little-brown-and-company-2011-en
+  workId: james-patterson/kill-me-if-you-can
+  isbn13: "9780316097543"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2011
+  sources: ["https://openlibrary.org/books/OL46540059M"]
+
+- id: james-patterson/maximum-ride-vol-4/yen-press-2011-en
+  workId: james-patterson/maximum-ride-vol-4
+  isbn13: "9780759529700"
+  language: en
+  publisher: "Yen Press"
+  year: 2011
+  sources: ["https://openlibrary.org/books/OL25427368M"]
+
+- id: james-patterson/maximum-ride-vol-5/yen-press-2011-en
+  workId: james-patterson/maximum-ride-vol-5
+  isbn13: "9781536401073"
+  language: en
+  publisher: "Yen Press"
+  year: 2011
+  sources: ["https://openlibrary.org/books/OL39653020M"]
+
+- id: james-patterson/middle-school-the-worst-years-of-my-life/little-brown-and-company-2011-en
+  workId: james-patterson/middle-school-the-worst-years-of-my-life
+  isbn13: "9780316101691"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2011
+  sources: ["https://openlibrary.org/books/OL26495068M"]
+
+- id: james-patterson/middle-school-the-worst-years-of-my-life/booksmile-2016-pt
+  workId: james-patterson/middle-school-the-worst-years-of-my-life
+  isbn13: "9789897070204"
+  language: pt-PT
+  title: "Os piores anos da minha vida"
+  translator: "Isabel Souto Santos"
+  publisher: "Booksmile"
+  year: 2016
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897070204&profile=bn"]
+
+- id: james-patterson/now-you-see-her/little-brown-and-company-2011-en
+  workId: james-patterson/now-you-see-her
+  isbn13: "9780316036214"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2011
+  sources: ["https://openlibrary.org/books/OL25113731M"]
+
+- id: james-patterson/operation-zero/idw-publishing-2011-en
+  workId: james-patterson/operation-zero
+  isbn13: "9781600108907"
+  language: en
+  publisher: "IDW Publishing"
+  year: 2011
+  note: >
+    The IDW graphic-novel adaptation (Witch & Wizard: Operation Zero); no separate
+    prose edition was found.
+  sources: ["https://openlibrary.org/books/OL26147213M"]
+
+- id: james-patterson/private-london/grand-central-publishing-2012-en
+  workId: james-patterson/private-london
+  isbn13: "9781455545377"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2012
+  sources: ["https://openlibrary.org/books/OL29661226M"]
+
+- id: james-patterson/the-christmas-wedding/little-brown-and-company-2011-en
+  workId: james-patterson/the-christmas-wedding
+  isbn13: "9780316097390"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2011
+  sources: ["https://openlibrary.org/books/OL46539926M"]
+
+- id: james-patterson/the-christmas-wedding/presenca-2012-pt
+  workId: james-patterson/the-christmas-wedding
+  isbn13: "9789722348973"
+  language: pt-PT
+  title: "Um casamento no natal"
+  translator: "Manuela Madureira"
+  publisher: "Presença"
+  year: 2012
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789722348973&profile=bn"]
+
+- id: james-patterson/the-fire/little-brown-and-company-2011-en
+  workId: james-patterson/the-fire
+  isbn13: "9780316101905"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2011
+  sources: ["https://openlibrary.org/books/OL24906310M"]
+
+- id: james-patterson/tick-tock/little-brown-and-company-2011-en
+  workId: james-patterson/tick-tock
+  isbn13: "9780316037914"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2011
+  sources: ["https://openlibrary.org/books/OL24791766M"]
+
+- id: james-patterson/toys/little-brown-and-company-2011-en
+  workId: james-patterson/toys
+  isbn13: "9780316097369"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2011
+  sources: ["https://openlibrary.org/books/OL46541439M"]
+
+- id: james-patterson/witch-and-wizard-the-manga-vol-1/yen-press-2011-en
+  workId: james-patterson/witch-and-wizard-the-manga-vol-1
+  isbn13: "9780316119894"
+  language: en
+  publisher: "Yen Press"
+  year: 2011
+  sources: ["https://openlibrary.org/books/OL26069260M"]
+
+- id: james-patterson/11th-hour/little-brown-and-company-2012-en
+  workId: james-patterson/11th-hour
+  isbn13: "9780316097499"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2012
+  sources: ["https://openlibrary.org/books/OL25079147M"]
+
+- id: james-patterson/confessions-of-a-murder-suspect/little-brown-and-company-2012-en
+  workId: james-patterson/confessions-of-a-murder-suspect
+  isbn13: "9780316206983"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2012
+  sources: ["https://openlibrary.org/books/OL25376473M"]
+
+- id: james-patterson/confessions-of-a-murder-suspect/topseller-2015-pt
+  workId: james-patterson/confessions-of-a-murder-suspect
+  isbn13: "9789898800565"
+  language: pt-PT
+  title: "Confissões de uma suspeita de assassínio"
+  translator: "António Costa Santos"
+  publisher: "Topseller"
+  year: 2015
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898800565&profile=bn"]
+
+- id: james-patterson/daniel-x-the-manga-vol-3/yen-press-2012-en
+  workId: james-patterson/daniel-x-the-manga-vol-3
+  isbn13: "9780316077668"
+  language: en
+  publisher: "Yen Press"
+  year: 2012
+  sources: ["https://openlibrary.org/books/OL27144908M"]
+
+- id: james-patterson/guilty-wives/little-brown-and-company-2012-en
+  workId: james-patterson/guilty-wives
+  isbn13: "9780316189279"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2012
+  sources: ["https://openlibrary.org/books/OL27136421M"]
+
+- id: james-patterson/i-funny/little-brown-and-company-2012-en
+  workId: james-patterson/i-funny
+  isbn13: "9780316247696"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2012
+  sources: ["https://openlibrary.org/books/OL46632728M"]
+
+- id: james-patterson/i-funny/booksmile-2019-pt
+  workId: james-patterson/i-funny
+  isbn13: "9789897071249"
+  language: pt-PT
+  title: "Eu cómico : o maior maluco do riso!"
+  translator: "Rita Graña, Dulce Afonso"
+  publisher: "Booksmile"
+  year: 2019
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897071249&profile=bn"]
+
+- id: james-patterson/i-michael-bennett/little-brown-and-company-2012-en
+  workId: james-patterson/i-michael-bennett
+  isbn13: "9780316097468"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2012
+  sources: ["https://openlibrary.org/books/OL46545461M"]
+
+- id: james-patterson/maximum-ride-vol-6/yen-press-2012-en
+  workId: james-patterson/maximum-ride-vol-6
+  isbn13: "9780316229036"
+  language: en
+  publisher: "Yen Press"
+  year: 2012
+  sources: ["https://openlibrary.org/books/OL27621783M"]
+
+- id: james-patterson/merry-christmas-alex-cross/little-brown-and-company-2012-en
+  workId: james-patterson/merry-christmas-alex-cross
+  isbn13: "9780316224192"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2012
+  sources: ["https://openlibrary.org/books/OL46535237M"]
+
+- id: james-patterson/middle-school-get-me-out-of-here/little-brown-and-company-2012-en
+  workId: james-patterson/middle-school-get-me-out-of-here
+  isbn13: "9780316206716"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2012
+  sources: ["https://openlibrary.org/books/OL25383086M"]
+
+- id: james-patterson/middle-school-get-me-out-of-here/booksmile-2015-pt
+  workId: james-patterson/middle-school-get-me-out-of-here
+  isbn13: "9789897070860"
+  language: pt-PT
+  title: "O rebelde está de volta!"
+  translator: "Dulce Afonso"
+  publisher: "Booksmile"
+  year: 2015
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897070860&profile=bn"]
+
+- id: james-patterson/nevermore/little-brown-and-company-2012-en
+  workId: james-patterson/nevermore
+  isbn13: "9780316101844"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2012
+  sources: ["https://openlibrary.org/books/OL26345308M"]
+
+- id: james-patterson/nypd-red/little-brown-and-company-2012-en
+  workId: james-patterson/nypd-red
+  isbn13: "9780316199865"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2012
+  sources: ["https://openlibrary.org/books/OL46540064M"]
+
+- id: james-patterson/nypd-red/topseller-2015-pt
+  workId: james-patterson/nypd-red
+  isbn13: "9789898491299"
+  language: pt-PT
+  title: "NYPD Red"
+  translator: "António Costa Santos"
+  publisher: "Topseller"
+  year: 2015
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898491299&profile=bn"]
+
+- id: james-patterson/private-games/little-brown-and-company-2012-en
+  workId: james-patterson/private-games
+  isbn13: "9780316206808"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2012
+  sources: ["https://openlibrary.org/books/OL25374191M"]
+
+- id: james-patterson/private-number-1-suspect/little-brown-and-company-2012-en
+  workId: james-patterson/private-number-1-suspect
+  isbn13: "9780316097406"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2012
+  sources: ["https://openlibrary.org/books/OL46540119M"]
+
+- id: james-patterson/private-number-1-suspect/topseller-2015-pt
+  workId: james-patterson/private-number-1-suspect
+  isbn13: "9789898491275"
+  language: pt-PT
+  title: "Private : principal suspeito"
+  translator: "Ana Beatriz Manso"
+  publisher: "Topseller"
+  year: 2015
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898491275&profile=bn"]
+
+- id: james-patterson/witch-and-wizard-the-manga-vol-2/yen-press-2012-en
+  workId: james-patterson/witch-and-wizard-the-manga-vol-2
+  isbn13: "9780316119917"
+  language: en
+  publisher: "Yen Press"
+  year: 2012
+  sources: ["https://openlibrary.org/books/OL26042809M"]
+
+- id: james-patterson/zoo/little-brown-and-company-2012-en
+  workId: james-patterson/zoo
+  isbn13: "9780316097444"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2012
+  sources: ["https://openlibrary.org/books/OL46540109M"]
+
+- id: james-patterson/12th-of-never/little-brown-and-company-2013-en
+  workId: james-patterson/12th-of-never
+  isbn13: "9780316210829"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2013
+  sources: ["https://openlibrary.org/books/OL46539542M"]
+
+- id: james-patterson/alex-cross-run/little-brown-and-company-2013-en
+  workId: james-patterson/alex-cross-run
+  isbn13: "9780316097512"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2013
+  sources: ["https://openlibrary.org/books/OL46528653M"]
+
+- id: james-patterson/confessions-the-private-school-murders/little-brown-and-company-2013-en
+  workId: james-patterson/confessions-the-private-school-murders
+  isbn13: "9780316242639"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2013
+  sources: ["https://openlibrary.org/books/OL39588151M"]
+
+- id: james-patterson/confessions-the-private-school-murders/topseller-2015-pt
+  workId: james-patterson/confessions-the-private-school-murders
+  isbn13: "9789898800466"
+  language: pt-PT
+  title: "Confissões : os crimes dos colégios privados"
+  translator: "Ana Beatriz Manso"
+  publisher: "Topseller"
+  year: 2015
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898800466&profile=bn"]
+
+- id: james-patterson/cross-my-heart/little-brown-and-company-2013-en
+  workId: james-patterson/cross-my-heart
+  isbn13: "9780316210911"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2013
+  sources: ["https://openlibrary.org/books/OL25845273M"]
+
+- id: james-patterson/gone/little-brown-and-company-2013-en
+  workId: james-patterson/gone
+  isbn13: "9780316210980"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2013
+  sources: ["https://openlibrary.org/books/OL46539517M"]
+
+- id: james-patterson/i-even-funnier/little-brown-and-company-2013-en
+  workId: james-patterson/i-even-funnier
+  isbn13: "9780316206969"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2013
+  sources: ["https://openlibrary.org/books/OL39303326M"]
+
+- id: james-patterson/i-even-funnier/booksmile-2016-pt
+  workId: james-patterson/i-even-funnier
+  isbn13: "9789897072208"
+  language: pt-PT
+  title: "Eu bué cómico : o maior maluco do riso!"
+  translator: "Raquel Mouta"
+  publisher: "Booksmile"
+  year: 2016
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897072208&profile=bn"]
+
+- id: james-patterson/maximum-ride-vol-7/yen-press-2014-en
+  workId: james-patterson/maximum-ride-vol-7
+  isbn13: "9781484419847"
+  language: en
+  publisher: "Yen Press"
+  year: 2014
+  sources: ["https://openlibrary.org/books/OL39643645M"]
+
+- id: james-patterson/middle-school-how-i-survived-bullies-broccoli-and-snake-hill/little-brown-and-company-2013-en
+  workId: james-patterson/middle-school-how-i-survived-bullies-broccoli-and-snake-hill
+  isbn13: "9780316231756"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2013
+  sources: ["https://openlibrary.org/books/OL25620202M"]
+
+- id: james-patterson/middle-school-how-i-survived-bullies-broccoli-and-snake-hill/booksmile-2016-pt
+  workId: james-patterson/middle-school-how-i-survived-bullies-broccoli-and-snake-hill
+  isbn13: "9789897071324"
+  language: pt-PT
+  title: "As piores férias da minha vida"
+  translator: "Ana Beatriz Manso"
+  publisher: "Booksmile"
+  year: 2016
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897071324&profile=bn"]
+
+- id: james-patterson/middle-school-my-brother-is-a-big-fat-liar/little-brown-and-company-2013-en
+  workId: james-patterson/middle-school-my-brother-is-a-big-fat-liar
+  isbn13: "9780316232708"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2013
+  sources: ["https://openlibrary.org/books/OL43656011M"]
+
+- id: james-patterson/middle-school-my-brother-is-a-big-fat-liar/booksmile-2019-pt
+  workId: james-patterson/middle-school-my-brother-is-a-big-fat-liar
+  isbn13: "9789897071379"
+  language: pt-PT
+  title: "O meu irmão é um mentiroso do pior"
+  translator: "Rita Graña"
+  publisher: "Booksmile"
+  year: 2019
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897071379&profile=bn"]
+
+- id: james-patterson/mistress/little-brown-and-company-2013-en
+  workId: james-patterson/mistress
+  isbn13: "9780316211079"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2013
+  sources: ["https://openlibrary.org/books/OL25844938M"]
+
+- id: james-patterson/mistress/topseller-2015-pt
+  workId: james-patterson/mistress
+  isbn13: "9789898491282"
+  language: pt-PT
+  title: "A amante"
+  translator: "José Luís Costa"
+  publisher: "Topseller"
+  year: 2015
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898491282&profile=bn"]
+
+- id: james-patterson/private-berlin/little-brown-and-company-2013-en
+  workId: james-patterson/private-berlin
+  isbn13: "9780316211161"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2013
+  sources: ["https://openlibrary.org/books/OL46540043M"]
+
+- id: james-patterson/private-l-a/little-brown-and-company-2013-en
+  workId: james-patterson/private-l-a
+  isbn13: "9780316324649"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2013
+  sources: ["https://openlibrary.org/books/OL44262193M"]
+
+- id: james-patterson/private-l-a/topseller-2015-pt
+  workId: james-patterson/private-l-a
+  isbn13: "9789898800220"
+  language: pt-PT
+  title: "Private, Los Angeles : agência internacional de investigação"
+  translator: "Rui Azeredo"
+  publisher: "Topseller"
+  year: 2015
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898800220&profile=bn"]
+
+- id: james-patterson/second-honeymoon/little-brown-and-company-2013-en
+  workId: james-patterson/second-honeymoon
+  isbn13: "9780316211222"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2013
+  sources: ["https://openlibrary.org/books/OL26643989M"]
+
+- id: james-patterson/the-kiss/little-brown-and-company-2013-en
+  workId: james-patterson/the-kiss
+  isbn13: "9780316101769"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2013
+  sources: ["https://openlibrary.org/books/OL46540073M"]
+
+- id: james-patterson/treasure-hunters/little-brown-and-company-2013-en
+  workId: james-patterson/treasure-hunters
+  isbn13: "9780316207560"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2013
+  sources: ["https://openlibrary.org/books/OL27148589M"]
+
+- id: james-patterson/witch-and-wizard-the-manga-vol-3/yen-press-2013-en
+  workId: james-patterson/witch-and-wizard-the-manga-vol-3
+  isbn13: "9780316119849"
+  language: en
+  publisher: "Yen Press"
+  year: 2013
+  sources: ["https://openlibrary.org/books/OL25992982M"]
+
+- id: james-patterson/action/random-house-australia-2014-en
+  workId: james-patterson/action
+  isbn13: "9780857987242"
+  language: en
+  format: ebook
+  publisher: "Random House Australia"
+  year: 2014
+  note: >
+    A 9-page Kindle-exclusive short story co-written with contest winner Brent
+    Gargan for the 2014 James Patterson Heroes + Villains Writing Challenge; no
+    print edition exists.
+  sources: ["https://openlibrary.org/books/OL61413686M"]
+
+- id: james-patterson/burn/little-brown-and-company-2014-en
+  workId: james-patterson/burn
+  isbn13: "9780316211048"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2014
+  sources: ["https://openlibrary.org/books/OL46539495M"]
+
+- id: james-patterson/confessions-the-paris-mysteries/little-brown-and-company-2014-en
+  workId: james-patterson/confessions-the-paris-mysteries
+  isbn13: "9780316409636"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2014
+  sources: ["https://openlibrary.org/books/OL26753731M"]
+
+- id: james-patterson/first-love/little-brown-and-company-2014-en
+  workId: james-patterson/first-love
+  isbn13: "9780316207041"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2014
+  sources: ["https://openlibrary.org/books/OL46540061M"]
+
+- id: james-patterson/first-love/topseller-2014-pt
+  workId: james-patterson/first-love
+  isbn13: "9789898626295"
+  language: pt-PT
+  title: "Primeiro amor"
+  translator: "Rita Figueiredo"
+  publisher: "Topseller"
+  year: 2014
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898626295&profile=bn"]
+
+- id: james-patterson/homeroom-diaries/little-brown-and-company-2014-en
+  workId: james-patterson/homeroom-diaries
+  isbn13: "9780316207621"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2014
+  sources: ["https://openlibrary.org/books/OL46528774M"]
+
+- id: james-patterson/hope-to-die/little-brown-and-company-2014-en
+  workId: james-patterson/hope-to-die
+  isbn13: "9780316210966"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2014
+  sources: ["https://openlibrary.org/books/OL26446568M"]
+
+- id: james-patterson/house-of-robots/little-brown-and-company-2014-en
+  workId: james-patterson/house-of-robots
+  isbn13: "9780316405911"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2014
+  sources: ["https://openlibrary.org/books/OL26390787M"]
+
+- id: james-patterson/house-of-robots/booksmile-2015-pt
+  workId: james-patterson/house-of-robots
+  isbn13: "9789897073458"
+  language: pt-PT
+  title: "A casa dos robots"
+  translator: "Dulce Afonso"
+  publisher: "Booksmile"
+  year: 2015
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897073458&profile=bn"]
+
+- id: james-patterson/invisible/little-brown-and-company-2014-en
+  workId: james-patterson/invisible
+  isbn13: "9780316405348"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2014
+  sources: ["https://openlibrary.org/books/OL46545245M"]
+
+- id: james-patterson/invisible/topseller-2014-pt
+  workId: james-patterson/invisible
+  isbn13: "9789898626462"
+  language: pt-PT
+  title: "Invisível"
+  translator: "Rui Azeredo"
+  publisher: "Topseller"
+  year: 2014
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898626462&profile=bn"]
+
+- id: james-patterson/maximum-ride-vol-8/yen-press-2015-en
+  workId: james-patterson/maximum-ride-vol-8
+  isbn13: "9781484447031"
+  language: en
+  publisher: "Yen Press"
+  year: 2015
+  sources: ["https://openlibrary.org/books/OL39657278M"]
+
+- id: james-patterson/middle-school-how-i-got-lost-in-london/young-arrow-2014-en
+  workId: james-patterson/middle-school-how-i-got-lost-in-london
+  isbn13: "9780099568087"
+  language: en
+  publisher: "Young Arrow"
+  year: 2014
+  sources: ["https://openlibrary.org/books/OL43082193M"]
+
+- id: james-patterson/middle-school-save-rafe/little-brown-and-company-2014-en
+  workId: james-patterson/middle-school-save-rafe
+  isbn13: "9780316322126"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2014
+  sources: ["https://openlibrary.org/books/OL25650190M"]
+
+- id: james-patterson/middle-school-save-rafe/booksmile-2018-pt
+  workId: james-patterson/middle-school-save-rafe
+  isbn13: "9789897072741"
+  language: pt-PT
+  title: "Tou feito!"
+  translator: "Dulce Afonso"
+  publisher: "Booksmile"
+  year: 2018
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897072741&profile=bn"]
+
+- id: james-patterson/middle-school-ultimate-showdown/little-brown-and-company-2014-en
+  workId: james-patterson/middle-school-ultimate-showdown
+  isbn13: "9780316322119"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2014
+  sources: ["https://openlibrary.org/books/OL26923183M"]
+
+- id: james-patterson/middle-school-ultimate-showdown/booksmile-2018-pt
+  workId: james-patterson/middle-school-ultimate-showdown
+  isbn13: "9789897072529"
+  language: pt-PT
+  title: "A batalha final"
+  translator: "Dulce Afonso"
+  publisher: "Booksmile"
+  year: 2018
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897072529&profile=bn"]
+
+- id: james-patterson/nypd-red-2/little-brown-and-company-2014-en
+  workId: james-patterson/nypd-red-2
+  isbn13: "9780316211239"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2014
+  sources: ["https://openlibrary.org/books/OL46545463M"]
+
+- id: james-patterson/nypd-red-2/topseller-2015-pt
+  workId: james-patterson/nypd-red-2
+  isbn13: "9789898491305"
+  language: pt-PT
+  title: "NYPD Red : à margem da lei"
+  translator: "Rui Azeredo"
+  publisher: "Topseller"
+  year: 2015
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898491305&profile=bn"]
+
+- id: james-patterson/private-india/grand-central-publishing-2014-en
+  workId: james-patterson/private-india
+  isbn13: "9781455533299"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2014
+  sources: ["https://openlibrary.org/books/OL26500600M"]
+
+- id: james-patterson/the-lost/little-brown-and-company-2014-en
+  workId: james-patterson/the-lost
+  isbn13: "9781322496658"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2014
+  sources: ["https://openlibrary.org/books/OL48158261M"]
+
+- id: james-patterson/treasure-hunters-danger-down-the-nile/little-brown-and-company-2014-en
+  workId: james-patterson/treasure-hunters-danger-down-the-nile
+  isbn13: "9780316370868"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2014
+  sources: ["https://openlibrary.org/books/OL26424406M"]
+
+- id: james-patterson/unlucky-13/little-brown-and-company-2014-en
+  workId: james-patterson/unlucky-13
+  isbn13: "9780316211291"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2014
+  sources: ["https://openlibrary.org/books/OL25444043M"]
+
+- id: james-patterson/14th-deadly-sin/little-brown-and-company-2015-en
+  workId: james-patterson/14th-deadly-sin
+  isbn13: "9780316407021"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2015
+  sources: ["https://openlibrary.org/books/OL46540060M"]
+
+- id: james-patterson/alert/little-brown-and-company-2015-en
+  workId: james-patterson/alert
+  isbn13: "9780316407038"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2015
+  sources: ["https://openlibrary.org/books/OL27183931M"]
+
+- id: james-patterson/confessions-the-murder-of-an-angel/little-brown-and-company-2015-en
+  workId: james-patterson/confessions-the-murder-of-an-angel
+  isbn13: "9780316301022"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2015
+  sources: ["https://openlibrary.org/books/OL27189606M"]
+
+- id: james-patterson/cross-justice/little-brown-and-company-2015-en
+  workId: james-patterson/cross-justice
+  isbn13: "9781629535661"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2015
+  sources: ["https://openlibrary.org/books/OL43143420M"]
+
+- id: james-patterson/daniel-x-lights-out/little-brown-and-company-2015-en
+  workId: james-patterson/daniel-x-lights-out
+  isbn13: "9780316207461"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2015
+  sources: ["https://openlibrary.org/books/OL36309808M"]
+
+- id: james-patterson/house-of-robots-robots-go-wild/little-brown-and-company-2015-en
+  workId: james-patterson/house-of-robots-robots-go-wild
+  isbn13: "9780316284790"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2015
+  sources: ["https://openlibrary.org/books/OL26884391M"]
+
+- id: james-patterson/house-of-robots-robots-go-wild/booksmile-2016-pt
+  workId: james-patterson/house-of-robots-robots-go-wild
+  language: pt-PT
+  title: "Doidos à solta!"
+  translator: "Dulce Afonso"
+  publisher: "Booksmile"
+  year: 2016
+  note: >
+    BNP's own catalogue record misprints this ISBN as 989-989-8839-44-2, which
+    fails its check digit and is not independently confirmed by any second
+    record, so isbn13 is left unset.
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=AUTHOR&term=Patterson%2C+James&profile=bn"]
+
+- id: james-patterson/i-funny-tv/little-brown-and-company-2015-en
+  workId: james-patterson/i-funny-tv
+  isbn13: "9780316301107"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2015
+  sources: ["https://openlibrary.org/books/OL36313179M"]
+
+- id: james-patterson/i-funny-tv/booksmile-2018-pt
+  workId: james-patterson/i-funny-tv
+  isbn13: "9789898831675"
+  language: pt-PT
+  title: "Eu cómico na tv : o maior maluco do riso!"
+  translator: "Dulce Afonso"
+  publisher: "Booksmile"
+  year: 2018
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898831675&profile=bn"]
+
+- id: james-patterson/i-totally-funniest/little-brown-and-company-2015-en
+  workId: james-patterson/i-totally-funniest
+  isbn13: "9780316405935"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2015
+  sources: ["https://openlibrary.org/books/OL26885631M"]
+
+- id: james-patterson/i-totally-funniest/booksmile-2018-pt
+  workId: james-patterson/i-totally-funniest
+  isbn13: "9789897073489"
+  language: pt-PT
+  title: "Eu mega cómico : o maior maluco do riso!"
+  translator: "Dulce Afonso"
+  publisher: "Booksmile"
+  year: 2018
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897073489&profile=bn"]
+
+- id: james-patterson/maximum-ride-forever/little-brown-and-company-2015-en
+  workId: james-patterson/maximum-ride-forever
+  isbn13: "9780316207508"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2015
+  sources: ["https://openlibrary.org/books/OL28652504M"]
+
+- id: james-patterson/maximum-ride-vol-9/yen-press-2015-en
+  workId: james-patterson/maximum-ride-vol-9
+  isbn13: "9781484476888"
+  language: en
+  publisher: "Yen Press"
+  year: 2015
+  sources: ["https://openlibrary.org/books/OL39657532M"]
+
+- id: james-patterson/middle-school-escape-to-australia/little-brown-and-company-2017-en
+  workId: james-patterson/middle-school-escape-to-australia
+  isbn13: "9780316434089"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL36319674M"]
+
+- id: james-patterson/middle-school-escape-to-australia/booksmile-2017-pt
+  workId: james-patterson/middle-school-escape-to-australia
+  isbn13: "9789897074677"
+  language: pt-PT
+  title: "Escola 8 : Austrália, aqui vou eu!"
+  translator: "Dulce Afonso"
+  publisher: "Booksmile"
+  year: 2017
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897074677&profile=bn"]
+
+- id: james-patterson/middle-school-just-my-rotten-luck/little-brown-and-company-2015-en
+  workId: james-patterson/middle-school-just-my-rotten-luck
+  isbn13: "9780316284776"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2015
+  sources: ["https://openlibrary.org/books/OL27183230M"]
+
+- id: james-patterson/middle-school-just-my-rotten-luck/booksmile-2018-pt
+  workId: james-patterson/middle-school-just-my-rotten-luck
+  isbn13: "9789897073472"
+  language: pt-PT
+  title: "Um azar nunca vem só"
+  translator: "Dulce Afonso"
+  publisher: "Booksmile"
+  year: 2018
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897073472&profile=bn"]
+
+- id: james-patterson/miracle-at-augusta/little-brown-and-company-2015-en
+  workId: james-patterson/miracle-at-augusta
+  isbn13: "9780316410977"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2015
+  sources: ["https://openlibrary.org/books/OL46539514M"]
+
+- id: james-patterson/nypd-red-3/grand-central-publishing-2015-en
+  workId: james-patterson/nypd-red-3
+  isbn13: "9781455584925"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2015
+  sources: ["https://openlibrary.org/books/OL27950743M"]
+
+- id: james-patterson/private-vegas/little-brown-and-company-2015-en
+  workId: james-patterson/private-vegas
+  isbn13: "9781629533339"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2015
+  sources: ["https://openlibrary.org/books/OL40294146M"]
+
+- id: james-patterson/private-vegas/topseller-2016-pt
+  workId: james-patterson/private-vegas
+  isbn13: "9789898831781"
+  language: pt-PT
+  title: "Private Las Vegas : Agência Internacional de Investigação"
+  translator: "José João Leiria"
+  publisher: "Topseller"
+  year: 2016
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898831781&profile=bn"]
+
+- id: james-patterson/public-school-superhero/little-brown-and-company-2015-en
+  workId: james-patterson/public-school-superhero
+  isbn13: "9780316342315"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2015
+  sources: ["https://openlibrary.org/books/OL51605729M"]
+
+- id: james-patterson/the-murder-house/little-brown-and-company-2015-en
+  workId: james-patterson/the-murder-house
+  isbn13: "9780316410984"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2015
+  sources: ["https://openlibrary.org/books/OL46540142M"]
+
+- id: james-patterson/the-murder-house/topseller-2016-pt
+  workId: james-patterson/the-murder-house
+  isbn13: "9789898839800"
+  language: pt-PT
+  title: "A casa da morte"
+  translator: "Ana Beatriz Manso"
+  publisher: "Topseller"
+  year: 2016
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898839800&profile=bn"]
+
+- id: james-patterson/treasure-hunters-secret-of-the-forbidden-city/little-brown-and-company-2015-en
+  workId: james-patterson/treasure-hunters-secret-of-the-forbidden-city
+  isbn13: "9780316284806"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2015
+  sources: ["https://openlibrary.org/books/OL27187537M"]
+
+- id: james-patterson/truth-or-die/little-brown-and-company-2015-en
+  workId: james-patterson/truth-or-die
+  isbn13: "9780316407014"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2015
+  sources: ["https://openlibrary.org/books/OL46539541M"]
+
+- id: james-patterson/10-000-000-marriage-proposal/little-brown-and-company-2016-en
+  workId: james-patterson/10-000-000-marriage-proposal
+  isbn13: "9780316361354"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL36318162M"]
+
+- id: james-patterson/113-minutes/little-brown-and-company-2016-en
+  workId: james-patterson/113-minutes
+  isbn13: "9780316361521"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL29738145M"]
+
+- id: james-patterson/15th-affair/grand-central-publishing-2016-en
+  workId: james-patterson/15th-affair
+  isbn13: "9781455585274"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL27950050M"]
+
+- id: james-patterson/airport-code-red/bookshots-2016-en
+  workId: james-patterson/airport-code-red
+  isbn13: "9781786530370"
+  language: en
+  publisher: "BookShots"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL28714027M"]
+
+- id: james-patterson/black-and-blue/little-brown-and-company-2016-en
+  workId: james-patterson/black-and-blue
+  isbn13: "9780316399197"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL36319412M"]
+
+- id: james-patterson/break-point/little-brown-and-company-2020-en
+  workId: james-patterson/break-point
+  isbn13: "9780316464697"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL35948790M"]
+
+- id: james-patterson/bullseye/little-brown-and-company-2016-en
+  workId: james-patterson/bullseye
+  isbn13: "9780316407083"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL27210849M"]
+
+- id: james-patterson/chase/little-brown-and-company-2016-en
+  workId: james-patterson/chase
+  isbn13: "9780316361644"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL29736949M"]
+
+- id: james-patterson/come-and-get-us/little-brown-and-company-2016-en
+  workId: james-patterson/come-and-get-us
+  isbn13: "9780316505178"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL36319590M"]
+
+- id: james-patterson/count-to-ten-a-private-novel/grand-central-publishing-2017-en
+  workId: james-patterson/count-to-ten-a-private-novel
+  isbn13: "9781538759639"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL29762524M"]
+
+- id: james-patterson/cross-kill/little-brown-and-company-2016-en
+  workId: james-patterson/cross-kill
+  isbn13: "9780316360623"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL29736953M"]
+
+- id: james-patterson/cross-the-line/little-brown-and-company-2016-en
+  workId: james-patterson/cross-the-line
+  isbn13: "9780316407168"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL29737368M"]
+
+- id: james-patterson/dead-heat/bookshots-2016-en
+  workId: james-patterson/dead-heat
+  isbn13: "9781786530653"
+  language: en
+  publisher: "BookShots"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL37065907M"]
+
+- id: james-patterson/filthy-rich/little-brown-and-company-2016-en
+  workId: james-patterson/filthy-rich
+  isbn13: "9780316274050"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL27212918M"]
+
+- id: james-patterson/french-kiss/little-brown-and-company-2016-en
+  workId: james-patterson/french-kiss
+  isbn13: "9780316361552"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL34014961M"]
+
+- id: james-patterson/give-please-a-chance/little-brown-and-company-2016-en
+  workId: james-patterson/give-please-a-chance
+  isbn13: "9780316361736"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL29738144M"]
+
+- id: james-patterson/heist/little-brown-and-company-2016-en
+  workId: james-patterson/heist
+  isbn13: "9780316501248"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL29742757M"]
+
+- id: james-patterson/humans-bow-down/little-brown-and-company-2017-en
+  workId: james-patterson/humans-bow-down
+  isbn13: "9780316358927"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL36316269M"]
+
+- id: james-patterson/hunted/little-brown-and-company-2016-en
+  workId: james-patterson/hunted
+  isbn13: "9780316430890"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL34894302M"]
+
+- id: james-patterson/jacky-ha-ha/jimmy-patterson-books-little-brown-and-company-2016-en
+  workId: james-patterson/jacky-ha-ha
+  isbn13: "9780316262491"
+  language: en
+  publisher: "Jimmy Patterson Books/Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL27933748M"]
+
+- id: james-patterson/jacky-ha-ha/booksmile-2016-pt
+  workId: james-patterson/jacky-ha-ha
+  isbn13: "9789898839831"
+  language: pt-PT
+  title: "Jacky Ha-Ha"
+  translator: "Dulce Afonso"
+  publisher: "Booksmile"
+  year: 2016
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898839831&profile=bn"]
+
+- id: james-patterson/kidnapped/bookshots-2016-en
+  workId: james-patterson/kidnapped
+  isbn13: "9781786530783"
+  language: en
+  publisher: "BookShots"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL28729943M"]
+
+- id: james-patterson/kill-or-be-killed/little-brown-and-company-2016-en
+  workId: james-patterson/kill-or-be-killed
+  isbn13: "9780316431187"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL29742381M"]
+
+- id: james-patterson/killer-chef/little-brown-and-company-2016-en
+  workId: james-patterson/killer-chef
+  isbn13: "9780316361538"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL36318223M"]
+
+- id: james-patterson/lets-play-make-believe/little-brown-and-company-2016-en
+  workId: james-patterson/lets-play-make-believe
+  isbn13: "9780316360517"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL29736648M"]
+
+- id: james-patterson/little-black-dress/little-brown-and-company-2016-en
+  workId: james-patterson/little-black-dress
+  isbn13: "9780316276382"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL26539415M"]
+
+- id: james-patterson/middle-school-dogs-best-friend/little-brown-and-company-2016-en
+  workId: james-patterson/middle-school-dogs-best-friend
+  isbn13: "9780316551076"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL26215088M"]
+
+- id: james-patterson/middle-school-dogs-best-friend/booksmile-2016-pt
+  workId: james-patterson/middle-school-dogs-best-friend
+  isbn13: "9789898849366"
+  language: pt-PT
+  title: "O melhor amigo do cão"
+  translator: "Dulce Afonso"
+  publisher: "Booksmile"
+  year: 2016
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898849366&profile=bn"]
+
+- id: james-patterson/middle-school-going-bush/random-house-australia-2016-en
+  workId: james-patterson/middle-school-going-bush
+  isbn13: "9780143781219"
+  language: en
+  publisher: "Random House Australia"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL28598193M"]
+
+- id: james-patterson/middle-school-hollywood-101/young-arrow-2016-en
+  workId: james-patterson/middle-school-hollywood-101
+  isbn13: "9781784756819"
+  language: en
+  publisher: "Young Arrow"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL28614859M"]
+
+- id: james-patterson/never-never/grand-central-publishing-2017-en
+  workId: james-patterson/never-never
+  isbn13: "9781538713488"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL43443028M"]
+
+- id: james-patterson/nypd-red-4/little-brown-and-company-2016-en
+  workId: james-patterson/nypd-red-4
+  isbn13: "9780316407069"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL27198802M"]
+
+- id: james-patterson/private-paris/little-brown-and-company-2016-en
+  workId: james-patterson/private-paris
+  isbn13: "9780316407052"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL27193460M"]
+
+- id: james-patterson/private-paris/topseller-2017-pt
+  workId: james-patterson/private-paris
+  isbn13: "9789898855091"
+  language: pt-PT
+  title: "Private, Paris : agência internacional de investigação"
+  translator: "Ana Beatriz Manso"
+  publisher: "Topseller"
+  year: 2017
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898855091&profile=bn"]
+
+- id: james-patterson/private-royals/little-brown-and-company-2016-en
+  workId: james-patterson/private-royals
+  isbn13: "9780316505215"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL29744739M"]
+
+- id: james-patterson/taking-the-titanic/little-brown-and-company-2016-en
+  workId: james-patterson/taking-the-titanic
+  isbn13: "9780316504102"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL29746054M"]
+
+- id: james-patterson/the-christmas-mystery/little-brown-and-company-2016-en
+  workId: james-patterson/the-christmas-mystery
+  isbn13: "9780316319997"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL34037049M"]
+
+- id: james-patterson/the-hostage/bookshots-2016-en
+  workId: james-patterson/the-hostage
+  isbn13: "9781786530097"
+  language: en
+  publisher: "BookShots"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL37748786M"]
+
+- id: james-patterson/the-mating-season/little-brown-and-company-2016-en
+  workId: james-patterson/the-mating-season
+  isbn13: "9780316551632"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL36319130M"]
+
+- id: james-patterson/the-pretender/little-brown-and-company-2016-en
+  workId: james-patterson/the-pretender
+  isbn13: "9780316502122"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL29743980M"]
+
+- id: james-patterson/the-trial/little-brown-and-company-2016-en
+  workId: james-patterson/the-trial
+  isbn13: "9780316360593"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL36318053M"]
+
+- id: james-patterson/the-verdict/ed-2016-en
+  workId: james-patterson/the-verdict
+  isbn13: "9781786530318"
+  language: en
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL28291918M"]
+
+- id: james-patterson/the-womens-war/little-brown-and-company-2017-en
+  workId: james-patterson/the-womens-war
+  isbn13: "9780316503389"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL44268331M"]
+
+- id: james-patterson/treasure-hunters-peril-at-the-top-of-the-world/little-brown-and-company-2016-en
+  workId: james-patterson/treasure-hunters-peril-at-the-top-of-the-world
+  isbn13: "9780316346931"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL27211129M"]
+
+- id: james-patterson/triple-threat/little-brown-and-company-2016-en
+  workId: james-patterson/triple-threat
+  isbn13: "9780316317825"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL29736124M"]
+
+- id: james-patterson/woman-of-god/little-brown-and-company-2016-en
+  workId: james-patterson/woman-of-god
+  isbn13: "9780316274029"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL46545159M"]
+
+- id: james-patterson/word-of-mouse/little-brown-and-company-2016-en
+  workId: james-patterson/word-of-mouse
+  isbn13: "9780316349567"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2016
+  sources: ["https://openlibrary.org/books/OL46540038M"]
+
+- id: james-patterson/word-of-mouse/booksmile-2017-pt
+  workId: james-patterson/word-of-mouse
+  isbn13: "9789898855190"
+  language: pt-PT
+  title: "Palavra de rato"
+  translator: "Tiago Marques"
+  publisher: "Booksmile"
+  year: 2017
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898855190&profile=bn"]
+
+- id: james-patterson/16th-seduction/little-brown-and-company-2017-en
+  workId: james-patterson/16th-seduction
+  isbn13: "9780316274036"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL27233647M"]
+
+- id: james-patterson/absolute-zero/bookshots-2017-en
+  workId: james-patterson/absolute-zero
+  isbn13: "9781786531780"
+  language: en
+  publisher: "BookShots"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL28635152M"]
+
+- id: james-patterson/achilles/little-brown-and-company-2017-en
+  workId: james-patterson/achilles
+  isbn13: "9780316318600"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL44271783M"]
+
+- id: james-patterson/after-the-end/little-brown-and-company-2017-en
+  workId: james-patterson/after-the-end
+  isbn13: "9780316504256"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL44268608M"]
+
+- id: james-patterson/avalanche/little-brown-and-company-2017-en
+  workId: james-patterson/avalanche
+  isbn13: "9780316505604"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL36331194M"]
+
+- id: james-patterson/big-words-for-little-geniuses/little-brown-and-company-2017-en
+  workId: james-patterson/big-words-for-little-geniuses
+  isbn13: "9780316502931"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL26929136M"]
+
+- id: james-patterson/black-dress-affair/little-brown-and-company-2017-en
+  workId: james-patterson/black-dress-affair
+  isbn13: "9780316554404"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL44272944M"]
+
+- id: james-patterson/christmas-sanctuary/little-brown-and-company-2017-en
+  workId: james-patterson/christmas-sanctuary
+  isbn13: "9780316473583"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL29762899M"]
+
+- id: james-patterson/crazy-house/jimmy-patterson-books-little-brown-and-company-2017-en
+  workId: james-patterson/crazy-house
+  isbn13: "9780316431316"
+  language: en
+  publisher: "Jimmy Patterson Books/Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL27237442M"]
+
+- id: james-patterson/dead-man-running/little-brown-and-company-2017-en
+  workId: james-patterson/dead-man-running
+  isbn13: "9780316510974"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL36321786M"]
+
+- id: james-patterson/deadly-cargo/bookshots-2017-en
+  workId: james-patterson/deadly-cargo
+  isbn13: "9781786531766"
+  language: en
+  publisher: "BookShots"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL28635153M"]
+
+- id: james-patterson/detective-cross/little-brown-and-company-2017-en
+  workId: james-patterson/detective-cross
+  isbn13: "9780316469746"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL29756861M"]
+
+- id: james-patterson/diary-of-a-succubus/little-brown-and-company-2017-en
+  workId: james-patterson/diary-of-a-succubus
+  isbn13: "9780316360548"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL36318225M"]
+
+- id: james-patterson/expelled/jimmy-patterson-books-little-brown-and-company-2017-en
+  workId: james-patterson/expelled
+  isbn13: "9780316440394"
+  language: en
+  publisher: "Jimmy Patterson Books/Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL26930917M"]
+
+- id: james-patterson/fifty-fifty/little-brown-and-company-2018-en
+  workId: james-patterson/fifty-fifty
+  isbn13: "9780316513234"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL26808894M"]
+
+- id: james-patterson/french-twist/little-brown-and-company-2017-en
+  workId: james-patterson/french-twist
+  isbn13: "9780316469739"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL34058672M"]
+
+- id: james-patterson/give-thank-you-a-try/little-brown-and-company-2017-en
+  workId: james-patterson/give-thank-you-a-try
+  isbn13: "9780316440424"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL26934196M"]
+
+- id: james-patterson/haunted/little-brown-and-company-2017-en
+  workId: james-patterson/haunted
+  isbn13: "9780316273978"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL46540029M"]
+
+- id: james-patterson/hidden/little-brown-and-company-2017-en
+  workId: james-patterson/hidden
+  isbn13: "9780316317269"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL28878580M"]
+
+- id: james-patterson/house-of-robots-robot-revolution/little-brown-and-company-2017-en
+  workId: james-patterson/house-of-robots-robot-revolution
+  isbn13: "9780316349581"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL26226175M"]
+
+- id: james-patterson/i-funny-school-of-laughs/little-brown-and-company-2017-en
+  workId: james-patterson/i-funny-school-of-laughs
+  isbn13: "9780316349604"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL27232928M"]
+
+- id: james-patterson/i-funny-school-of-laughs/booksmile-2017-pt
+  workId: james-patterson/i-funny-school-of-laughs
+  isbn13: "9789897074936"
+  language: pt-PT
+  title: "Eu cómico : escola do riso"
+  translator: "Dulce Afonso"
+  publisher: "Booksmile"
+  year: 2017
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897074936&profile=bn"]
+
+- id: james-patterson/jacky-ha-ha-my-life-is-a-joke/little-brown-and-company-2017-en
+  workId: james-patterson/jacky-ha-ha-my-life-is-a-joke
+  isbn13: "9780316433761"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL46539528M"]
+
+- id: james-patterson/jacky-ha-ha-my-life-is-a-joke/booksmile-2018-pt
+  workId: james-patterson/jacky-ha-ha-my-life-is-a-joke
+  isbn13: "9789897076152"
+  language: pt-PT
+  title: "A minha vida é uma anedota"
+  translator: "Dulce Afonso"
+  publisher: "Booksmile"
+  year: 2018
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897076152&profile=bn"]
+
+- id: james-patterson/kill-and-tell/little-brown-and-company-2017-en
+  workId: james-patterson/kill-and-tell
+  isbn13: "9780316511063"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL36323717M"]
+
+- id: james-patterson/laugh-out-loud/little-brown-and-company-2017-en
+  workId: james-patterson/laugh-out-loud
+  isbn13: "9780316515368"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL43512403M"]
+
+- id: james-patterson/love-me-tender/little-brown-and-company-2017-en
+  workId: james-patterson/love-me-tender
+  isbn13: "9780316504126"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL44267702M"]
+
+- id: james-patterson/malicious/little-brown-and-company-2017-en
+  workId: james-patterson/malicious
+  isbn13: "9780316503464"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL36319161M"]
+
+- id: james-patterson/manhunt/little-brown-and-company-2017-en
+  workId: james-patterson/manhunt
+  isbn13: "9780316473514"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL36323686M"]
+
+- id: james-patterson/maximum-ride-vol-10/yen-press-2017-en
+  workId: james-patterson/maximum-ride-vol-10
+  isbn13: "9780759529762"
+  language: en
+  publisher: "Yen Press"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL34399593M"]
+
+- id: james-patterson/murder-games/little-brown-and-company-2017-en
+  workId: james-patterson/murder-games
+  isbn13: "9780316273961"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL46539963M"]
+
+- id: james-patterson/night-sniper/little-brown-and-company-2017-en
+  workId: james-patterson/night-sniper
+  isbn13: "9780316433082"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL44270866M"]
+
+- id: james-patterson/nooners/little-brown-and-company-2017-en
+  workId: james-patterson/nooners
+  isbn13: "9780316504300"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL36320390M"]
+
+- id: james-patterson/penguins-of-america/little-brown-book-group-2017-en
+  workId: james-patterson/penguins-of-america
+  isbn13: "9780316346993"
+  language: en
+  publisher: "Little, Brown Book Group"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL29311410M"]
+
+- id: james-patterson/pottymouth-and-stoopid/little-brown-and-company-2017-en
+  workId: james-patterson/pottymouth-and-stoopid
+  isbn13: "9780316545709"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL36320384M"]
+
+- id: james-patterson/pottymouth-and-stoopid/booksmile-2018-pt
+  workId: james-patterson/pottymouth-and-stoopid
+  isbn13: "9789897077012"
+  language: pt-PT
+  title: "Boca de trapo e túpido"
+  translator: "Dulce Afonso"
+  publisher: "Booksmile"
+  year: 2018
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897077012&profile=bn"]
+
+- id: james-patterson/private-gold/little-brown-and-company-2017-en
+  workId: james-patterson/private-gold
+  isbn13: "9780316438834"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL29756863M"]
+
+- id: james-patterson/scott-free/little-brown-and-company-2017-en
+  workId: james-patterson/scott-free
+  isbn13: "9780316556286"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL44270232M"]
+
+- id: james-patterson/stealing-gulfstreams/little-brown-and-company-2017-en
+  workId: james-patterson/stealing-gulfstreams
+  isbn13: "9780316465434"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL29744172M"]
+
+- id: james-patterson/steeplechase/little-brown-and-company-2017-en
+  workId: james-patterson/steeplechase
+  isbn13: "9780316438858"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL34059379M"]
+
+- id: james-patterson/stingrays/little-brown-and-company-2017-en
+  workId: james-patterson/stingrays
+  isbn13: "9780316469982"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL44271125M"]
+
+- id: james-patterson/the-black-book/little-brown-and-company-2017-en
+  workId: james-patterson/the-black-book
+  isbn13: "9780316273886"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL26502524M"]
+
+- id: james-patterson/the-candies-save-christmas/little-brown-and-company-2017-en
+  workId: james-patterson/the-candies-save-christmas
+  isbn13: "9780316435765"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL28874987M"]
+
+- id: james-patterson/the-dolls/little-brown-and-company-2017-en
+  workId: james-patterson/the-dolls
+  isbn13: "9780316469784"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL36320829M"]
+
+- id: james-patterson/the-end/little-brown-and-company-2017-en
+  workId: james-patterson/the-end
+  isbn13: "9780316276702"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL36319420M"]
+
+- id: james-patterson/the-exile/little-brown-and-company-2017-en
+  workId: james-patterson/the-exile
+  isbn13: "9780316411110"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL29766322M"]
+
+- id: james-patterson/the-family-lawyer/little-brown-and-company-2017-en
+  workId: james-patterson/the-family-lawyer
+  isbn13: "9780316506137"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL29759100M"]
+
+- id: james-patterson/the-house-husband/little-brown-and-company-2017-en
+  workId: james-patterson/the-house-husband
+  isbn13: "9780316361613"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL44271816M"]
+
+- id: james-patterson/the-housewife/little-brown-and-company-2017-en
+  workId: james-patterson/the-housewife
+  isbn13: "9780316470018"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL44271850M"]
+
+- id: james-patterson/the-lawyer-lifeguard/little-brown-and-company-2017-en
+  workId: james-patterson/the-lawyer-lifeguard
+  isbn13: "9780316554435"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL44266783M"]
+
+- id: james-patterson/the-medical-examiner/little-brown-and-company-2017-en
+  workId: james-patterson/the-medical-examiner
+  isbn13: "9780316504836"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL36321153M"]
+
+- id: james-patterson/the-moores-are-missing/little-brown-and-company-2017-en
+  workId: james-patterson/the-moores-are-missing
+  isbn13: "9780316506069"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL44270228M"]
+
+- id: james-patterson/the-people-vs-alex-cross/little-brown-and-company-2017-en
+  workId: james-patterson/the-people-vs-alex-cross
+  isbn13: "9780316273909"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL26933328M"]
+
+- id: james-patterson/the-shut-in/little-brown-and-company-2017-en
+  workId: james-patterson/the-shut-in
+  isbn13: "9780316466691"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL44269270M"]
+
+- id: james-patterson/the-store/little-brown-and-company-2017-en
+  workId: james-patterson/the-store
+  isbn13: "9780316395458"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL26605189M"]
+
+- id: james-patterson/the-witnesses/little-brown-and-company-2017-en
+  workId: james-patterson/the-witnesses
+  isbn13: "9780316418744"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL29783156M"]
+
+- id: james-patterson/treasure-hunters-quest-for-the-city-of-gold/little-brown-and-company-2018-en
+  workId: james-patterson/treasure-hunters-quest-for-the-city-of-gold
+  isbn13: "9780316463898"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL36329326M"]
+
+- id: james-patterson/two-from-the-heart/little-brown-and-company-2017-en
+  workId: james-patterson/two-from-the-heart
+  isbn13: "9780316468909"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL26245434M"]
+
+- id: james-patterson/17th-suspect/little-brown-and-company-2018-en
+  workId: james-patterson/17th-suspect
+  isbn13: "9780316274043"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL46541455M"]
+
+- id: james-patterson/all-american-murder-the-rise-and-fall-of-aaron-hernandez-the-superstar-whose-life-ended-on-murderers-row/little-brown-and-company-2018-en
+  workId: james-patterson/all-american-murder-the-rise-and-fall-of-aaron-hernandez-the-superstar-whose-life-ended-on-murderers-row
+  isbn13: "9780316412650"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL26940132M"]
+
+- id: james-patterson/ambush/little-brown-and-company-2018-en
+  workId: james-patterson/ambush
+  isbn13: "9780316273985"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL46539540M"]
+
+- id: james-patterson/cuddly-critters-for-little-geniuses/little-brown-and-company-2018-en
+  workId: james-patterson/cuddly-critters-for-little-geniuses
+  isbn13: "9780316486415"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL29787033M"]
+
+- id: james-patterson/dog-diaries/little-brown-and-company-2018-en
+  workId: james-patterson/dog-diaries
+  isbn13: "9780316424738"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL44283048M"]
+
+- id: james-patterson/dog-diaries-happy-howlidays/little-brown-and-company-2019-en
+  workId: james-patterson/dog-diaries-happy-howlidays
+  isbn13: "9780316456203"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL34097607M"]
+
+- id: james-patterson/home-sweet-murder/grand-central-publishing-2018-en
+  workId: james-patterson/home-sweet-murder
+  isbn13: "9781538744819"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL29764337M"]
+
+- id: james-patterson/juror-no-3/little-brown-and-company-2018-en
+  workId: james-patterson/juror-no-3
+  isbn13: "9780316419857"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL26974751M"]
+
+- id: james-patterson/juror-no-3/topseller-2019-pt
+  workId: james-patterson/juror-no-3
+  isbn13: "9789898917980"
+  language: pt-PT
+  title: "O jurado no 3"
+  translator: "José Remelhe"
+  publisher: "Topseller"
+  year: 2019
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789898917980&profile=bn"]
+
+- id: james-patterson/liar-liar/little-brown-and-company-2019-en
+  workId: james-patterson/liar-liar
+  isbn13: "9780316452175"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL29806229M"]
+
+- id: james-patterson/max-einstein-the-genius-experiment/little-brown-and-company-2018-en
+  workId: james-patterson/max-einstein-the-genius-experiment
+  isbn13: "9780316523967"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL26974557M"]
+
+- id: james-patterson/max-einstein-the-genius-experiment/booksmile-2019-pt
+  workId: james-patterson/max-einstein-the-genius-experiment
+  isbn13: "9789897079603"
+  language: pt-PT
+  title: "Max Einstein 1 : uma experiência de génio"
+  translator: "Rui Azeredo"
+  publisher: "Booksmile"
+  year: 2019
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897079603&profile=bn"]
+
+- id: james-patterson/middle-school-from-hero-to-zero/little-brown-and-company-2018-en
+  workId: james-patterson/middle-school-from-hero-to-zero
+  isbn13: "9780316346900"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL28833391M"]
+
+- id: james-patterson/middle-school-from-hero-to-zero/booksmile-2018-pt
+  workId: james-patterson/middle-school-from-hero-to-zero
+  isbn13: "9789897076695"
+  language: pt-PT
+  title: "De bestial a besta!"
+  translator: "Dulce Afonso"
+  publisher: "Booksmile"
+  year: 2018
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897076695&profile=bn"]
+
+- id: james-patterson/middle-school-gday-america/random-house-australia-2018-en
+  workId: james-patterson/middle-school-gday-america
+  isbn13: "9780143792475"
+  language: en
+  publisher: "Random House Australia"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL28647310M"]
+
+- id: james-patterson/murder-beyond-the-grave/grand-central-publishing-2018-en
+  workId: james-patterson/murder-beyond-the-grave
+  isbn13: "9781538744826"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL27950646M"]
+
+- id: james-patterson/murder-in-paradise/grand-central-publishing-2018-en
+  workId: james-patterson/murder-in-paradise
+  isbn13: "9781538730577"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL29783482M"]
+
+- id: james-patterson/murder-interrupted/grand-central-publishing-2018-en
+  workId: james-patterson/murder-interrupted
+  isbn13: "9781538744727"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL29764339M"]
+
+- id: james-patterson/not-so-normal-norbert/little-brown-and-company-2018-en
+  workId: james-patterson/not-so-normal-norbert
+  isbn13: "9780316465410"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL26960223M"]
+
+- id: james-patterson/nypd-red-5/century-2018-en
+  workId: james-patterson/nypd-red-5
+  isbn13: "9781780895277"
+  language: en
+  publisher: "Century"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL28198494M"]
+
+- id: james-patterson/revenge/grand-central-publishing-2020-en
+  workId: james-patterson/revenge
+  isbn13: "9781538700716"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL27935643M"]
+
+- id: james-patterson/texas-ranger/little-brown-and-company-2018-en
+  workId: james-patterson/texas-ranger
+  isbn13: "9780316556668"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL26962034M"]
+
+- id: james-patterson/the-13-minute-murder/grand-central-publishing-2019-en
+  workId: james-patterson/the-13-minute-murder
+  isbn13: "9781538749678"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL29811661M"]
+
+- id: james-patterson/the-candies-trick-or-treat/little-brown-and-company-2018-en
+  workId: james-patterson/the-candies-trick-or-treat
+  isbn13: "9780316477659"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL44273414M"]
+
+- id: james-patterson/the-first-lady/grand-central-publishing-2019-en
+  workId: james-patterson/the-first-lady
+  isbn13: "9781538714942"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL28920333M"]
+
+- id: james-patterson/the-nerdiest-wimpiest-dorkiest-i-funny-ever/little-brown-and-company-2018-en
+  workId: james-patterson/the-nerdiest-wimpiest-dorkiest-i-funny-ever
+  isbn13: "9780316349611"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL46541580M"]
+
+- id: james-patterson/the-nerdiest-wimpiest-dorkiest-i-funny-ever/booksmile-2018-pt
+  workId: james-patterson/the-nerdiest-wimpiest-dorkiest-i-funny-ever
+  isbn13: "9789897077807"
+  language: pt-PT
+  title: "Eu cómico, o mais cromo e divertido de sempre"
+  translator: "Dulce Afonso"
+  publisher: "Booksmile"
+  year: 2018
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789897077807&profile=bn"]
+
+- id: james-patterson/the-president-is-missing/little-brown-and-company-2018-en
+  workId: james-patterson/the-president-is-missing
+  isbn13: "9780316412698"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL26488708M"]
+
+- id: james-patterson/the-president-is-missing/porto-editora-2018-pt
+  workId: james-patterson/the-president-is-missing
+  isbn13: "9789720031358"
+  language: pt-PT
+  title: "O Presidente desapareceu"
+  translator: "Artur Lopes Cardoso"
+  publisher: "Porto Editora"
+  year: 2018
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720031358&profile=bn"]
+
+- id: james-patterson/triple-homicide/grand-central-publishing-2018-en
+  workId: james-patterson/triple-homicide
+  isbn13: "9781538714713"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL34060623M"]
+
+- id: james-patterson/unbelievably-boring-bart/little-brown-and-company-2018-en
+  workId: james-patterson/unbelievably-boring-bart
+  isbn13: "9780316411530"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2018
+  sources: ["https://openlibrary.org/books/OL26965488M"]
+
+- id: james-patterson/18th-abduction/little-brown-and-company-2019-en
+  workId: james-patterson/18th-abduction
+  isbn13: "9780316420266"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL26914020M"]
+
+- id: james-patterson/19th-christmas/little-brown-and-company-2019-en
+  workId: james-patterson/19th-christmas
+  isbn13: "9780316420273"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL27323732M"]
+
+- id: james-patterson/ali-cross/little-brown-and-company-2019-en
+  workId: james-patterson/ali-cross
+  isbn13: "9780316530415"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL27878056M"]
+
+- id: james-patterson/bigger-words-for-little-geniuses/little-brown-and-company-2019-en
+  workId: james-patterson/bigger-words-for-little-geniuses
+  isbn13: "9780316426770"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL36324621M"]
+
+- id: james-patterson/criss-cross/little-brown-and-company-2019-en
+  workId: james-patterson/criss-cross
+  isbn13: "9780316526883"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL27725747M"]
+
+- id: james-patterson/dog-diaries-curse-of-the-mystery-mutt/little-brown-and-company-2020-en
+  workId: james-patterson/dog-diaries-curse-of-the-mystery-mutt
+  isbn13: "9780316430074"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL29880004M"]
+
+- id: james-patterson/dog-diaries-mission-impawsible/little-brown-and-company-2020-en
+  workId: james-patterson/dog-diaries-mission-impawsible
+  isbn13: "9781544447780"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL44281776M"]
+
+- id: james-patterson/fall-of-crazy-house/little-brown-and-company-2019-en
+  workId: james-patterson/fall-of-crazy-house
+  isbn13: "9780316433747"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL27340385M"]
+
+- id: james-patterson/hush-hush/grand-central-publishing-2020-en
+  workId: james-patterson/hush-hush
+  isbn13: "9781538752258"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL42442175M"]
+
+- id: james-patterson/katt-vs-dogg/little-brown-and-company-2019-en
+  workId: james-patterson/katt-vs-dogg
+  isbn13: "9780316411561"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL27339770M"]
+
+- id: james-patterson/katt-vs-dogg/booksmile-2020-pt
+  workId: james-patterson/katt-vs-dogg
+  isbn13: "9789896689476"
+  language: pt-PT
+  title: "Gatta vs. kão"
+  translator: "Rui Azeredo"
+  publisher: "Booksmile"
+  year: 2020
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789896689476&profile=bn"]
+
+- id: james-patterson/max-einstein-rebels-with-a-cause/little-brown-and-company-2019-en
+  workId: james-patterson/max-einstein-rebels-with-a-cause
+  isbn13: "9780316452472"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL44275480M"]
+
+- id: james-patterson/max-einstein-rebels-with-a-cause/booksmile-2020-pt
+  workId: james-patterson/max-einstein-rebels-with-a-cause
+  isbn13: "9789896688486"
+  language: pt-PT
+  title: "O gangue dos rebeldes"
+  translator: "Rui Azeredo"
+  publisher: "Booksmile"
+  year: 2020
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789896688486&profile=bn"]
+
+- id: james-patterson/middle-school-born-to-rock/little-brown-and-company-2019-en
+  workId: james-patterson/middle-school-born-to-rock
+  isbn13: "9780316349529"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL28930610M"]
+
+- id: james-patterson/middle-school-born-to-rock/booksmile-2019-pt
+  workId: james-patterson/middle-school-born-to-rock
+  isbn13: "9789896685874"
+  language: pt-PT
+  title: "Estrela de rock"
+  translator: "Dulce Afonso"
+  publisher: "Booksmile"
+  year: 2019
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789896685874&profile=bn"]
+
+- id: james-patterson/miracle-at-st-andrews/little-brown-and-company-2019-en
+  workId: james-patterson/miracle-at-st-andrews
+  isbn13: "9780316519106"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL46541989M"]
+
+- id: james-patterson/sophia-princess-among-beasts/little-brown-and-company-2019-en
+  workId: james-patterson/sophia-princess-among-beasts
+  isbn13: "9780316417471"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL27264549M"]
+
+- id: james-patterson/the-chef/little-brown-and-company-2019-en
+  workId: james-patterson/the-chef
+  isbn13: "9780316453301"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL27052975M"]
+
+- id: james-patterson/the-cornwalls-are-gone/little-brown-and-company-2019-en
+  workId: james-patterson/the-cornwalls-are-gone
+  isbn13: "9780316454094"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL27340329M"]
+
+- id: james-patterson/the-house-next-door/grand-central-publishing-2019-en
+  workId: james-patterson/the-house-next-door
+  isbn13: "9781538713891"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL27330606M"]
+
+- id: james-patterson/the-inn/little-brown-and-company-2019-en
+  workId: james-patterson/the-inn
+  isbn13: "9780316454223"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL27259373M"]
+
+- id: james-patterson/the-killers-wife/little-brown-and-company-2017-en
+  workId: james-patterson/the-killers-wife
+  isbn13: "9780316558693"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2017
+  sources: ["https://openlibrary.org/books/OL44270261M"]
+
+- id: james-patterson/the-warning/grand-central-publishing-2019-en
+  workId: james-patterson/the-warning
+  isbn13: "9781538714966"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL28907067M"]
+
+- id: james-patterson/treasure-hunters-all-american-adventure/little-brown-and-company-2019-en
+  workId: james-patterson/treasure-hunters-all-american-adventure
+  isbn13: "9780316417440"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL36330090M"]
+
+- id: james-patterson/unsolved/little-brown-and-company-2019-en
+  workId: james-patterson/unsolved
+  isbn13: "9780316454155"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2019
+  sources: ["https://openlibrary.org/books/OL46539552M"]
+
+- id: james-patterson/1st-case/little-brown-and-company-2020-en
+  workId: james-patterson/1st-case
+  isbn13: "9780316418188"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL28329754M"]
+
+- id: james-patterson/20th-victim/little-brown-and-company-2020-en
+  workId: james-patterson/20th-victim
+  isbn13: "9780316420280"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL27998834M"]
+
+- id: james-patterson/becoming-muhammad-ali/little-brown-and-company-2020-en
+  workId: james-patterson/becoming-muhammad-ali
+  isbn13: "9780316498166"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL29872964M"]
+
+- id: james-patterson/blindside/little-brown-and-company-2020-en
+  workId: james-patterson/blindside
+  isbn13: "9780316420334"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL27917539M"]
+
+- id: james-patterson/cajun-justice/grand-central-publishing-2020-en
+  workId: james-patterson/cajun-justice
+  isbn13: "9781538752357"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL28313259M"]
+
+- id: james-patterson/deadly-cross/little-brown-and-company-2020-en
+  workId: james-patterson/deadly-cross
+  isbn13: "9780316420259"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL28922609M"]
+
+- id: james-patterson/dog-diaries-ruffing-it/little-brown-and-company-2021-en
+  workId: james-patterson/dog-diaries-ruffing-it
+  isbn13: "9780316500371"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL34156756M"]
+
+- id: james-patterson/hawk/little-brown-and-company-2020-en
+  workId: james-patterson/hawk
+  isbn13: "9780316494410"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL30199726M"]
+
+- id: james-patterson/house-of-kennedy/little-brown-and-company-2020-en
+  workId: james-patterson/house-of-kennedy
+  isbn13: "9780316454483"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL27950442M"]
+
+- id: james-patterson/lost/little-brown-and-company-2020-en
+  workId: james-patterson/lost
+  isbn13: "9780316420327"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL27891498M"]
+
+- id: james-patterson/max-einstein-saves-the-future/little-brown-and-company-2020-en
+  workId: james-patterson/max-einstein-saves-the-future
+  isbn13: "9780316121224"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL36006382M"]
+
+- id: james-patterson/middle-school-master-of-disaster/little-brown-and-company-2020-en
+  workId: james-patterson/middle-school-master-of-disaster
+  isbn13: "9780316420495"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL28896254M"]
+
+- id: james-patterson/middle-school-master-of-disaster/booksmile-2021-pt
+  workId: james-patterson/middle-school-master-of-disaster
+  isbn13: "9789895640638"
+  language: pt-PT
+  title: "Mestres do desastre"
+  translator: "Dulce Afonso"
+  publisher: "Booksmile"
+  year: 2021
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789895640638&profile=bn"]
+
+- id: james-patterson/murder-of-innocence/grand-central-publishing-2020-en
+  workId: james-patterson/murder-of-innocence
+  isbn13: "9781538719039"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL29879947M"]
+
+- id: james-patterson/nypd-red-6/grand-central-publishing-2020-en
+  workId: james-patterson/nypd-red-6
+  isbn13: "9781538703014"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL29887914M"]
+
+- id: james-patterson/private-moscow/grand-central-publishing-2023-en
+  workId: james-patterson/private-moscow
+  isbn13: "9781538710173"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2023
+  sources: ["https://openlibrary.org/books/OL42269747M"]
+
+- id: james-patterson/texas-outlaw/little-brown-and-company-2020-en
+  workId: james-patterson/texas-outlaw
+  isbn13: "9780316428163"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL27933467M"]
+
+- id: james-patterson/the-coast-to-coast-murders/little-brown-and-company-2020-en
+  workId: james-patterson/the-coast-to-coast-murders
+  isbn13: "9780316457422"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL29076610M"]
+
+- id: james-patterson/the-last-days-of-john-lennon/little-brown-and-company-2020-en
+  workId: james-patterson/the-last-days-of-john-lennon
+  isbn13: "9780316429061"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL29887859M"]
+
+- id: james-patterson/the-midwife-murders/grand-central-publishing-2020-en
+  workId: james-patterson/the-midwife-murders
+  isbn13: "9781538718889"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL28726362M"]
+
+- id: james-patterson/the-river-murders/grand-central-publishing-2020-en
+  workId: james-patterson/the-river-murders
+  isbn13: "9781538700754"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL27883556M"]
+
+- id: james-patterson/the-summer-house/little-brown-and-company-2020-en
+  workId: james-patterson/the-summer-house
+  isbn13: "9780316539555"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL28161814M"]
+
+- id: james-patterson/three-women-disappear/little-brown-and-company-2020-en
+  workId: james-patterson/three-women-disappear
+  isbn13: "9780316541602"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL29862714M"]
+
+- id: james-patterson/treasure-hunters-plunder-down-under/little-brown-and-company-2020-en
+  workId: james-patterson/treasure-hunters-plunder-down-under
+  isbn13: "9780316420594"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2020
+  sources: ["https://openlibrary.org/books/OL36002432M"]
+
+- id: james-patterson/2-sisters-detective-agency/grand-central-publishing-2021-en
+  workId: james-patterson/2-sisters-detective-agency
+  isbn13: "9781538704585"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL32685578M"]
+
+- id: james-patterson/21st-birthday/little-brown-and-company-2021-en
+  workId: james-patterson/21st-birthday
+  isbn13: "9780316300100"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL31976737M"]
+
+- id: james-patterson/ali-cross-like-father-like-son/little-brown-and-company-2021-en
+  workId: james-patterson/ali-cross-like-father-like-son
+  isbn13: "9780316500135"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL32182404M"]
+
+- id: james-patterson/best-nerds-forever/little-brown-and-company-2021-en
+  workId: james-patterson/best-nerds-forever
+  isbn13: "9780316500241"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL31990534M"]
+
+- id: james-patterson/dog-diaries-big-top-bonanza/little-brown-and-company-2023-en
+  workId: james-patterson/dog-diaries-big-top-bonanza
+  isbn13: "9780316411028"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2023
+  sources: ["https://openlibrary.org/books/OL39745053M"]
+
+- id: james-patterson/dog-diaries-dinosaur-disaster/little-brown-and-company-2022-en
+  workId: james-patterson/dog-diaries-dinosaur-disaster
+  isbn13: "9780316334730"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL34164385M"]
+
+- id: james-patterson/e-r-nurses/little-brown-and-company-2021-en
+  workId: james-patterson/e-r-nurses
+  isbn13: "9780759554269"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL34179538M"]
+
+- id: james-patterson/fear-no-evil/little-brown-and-company-2021-en
+  workId: james-patterson/fear-no-evil
+  isbn13: "9780316499149"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL32681947M"]
+
+- id: james-patterson/hawk-city-of-the-dead/little-brown-and-company-2021-en
+  workId: james-patterson/hawk-city-of-the-dead
+  isbn13: "9780316500159"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL32747244M"]
+
+- id: james-patterson/katt-loves-dogg/little-brown-and-company-2021-en
+  workId: james-patterson/katt-loves-dogg
+  isbn13: "9780316500173"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL34974444M"]
+
+- id: james-patterson/max-einstein-world-champions/little-brown-and-company-2021-en
+  workId: james-patterson/max-einstein-world-champions
+  isbn13: "9780759556928"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL34128638M"]
+
+- id: james-patterson/middle-school-field-trip-fiasco/little-brown-and-company-2021-en
+  workId: james-patterson/middle-school-field-trip-fiasco
+  isbn13: "9780316433778"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL30019812M"]
+
+- id: james-patterson/scaredy-cat/little-brown-and-company-2021-en
+  workId: james-patterson/scaredy-cat
+  isbn13: "9780316494434"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL31764016M"]
+
+- id: james-patterson/the-defense-lawyer/little-brown-and-company-2021-en
+  workId: james-patterson/the-defense-lawyer
+  isbn13: "9780316494373"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL34927374M"]
+
+- id: james-patterson/the-jailhouse-lawyer/little-brown-and-company-2021-en
+  workId: james-patterson/the-jailhouse-lawyer
+  isbn13: "9780316276627"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL33331980M"]
+
+- id: james-patterson/the-palm-beach-murders/grand-central-publishing-2021-en
+  workId: james-patterson/the-palm-beach-murders
+  isbn13: "9781538749982"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL31990569M"]
+
+- id: james-patterson/the-paris-detective/grand-central-publishing-2021-en
+  workId: james-patterson/the-paris-detective
+  isbn13: "9781538718858"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL34172011M"]
+
+- id: james-patterson/the-presidents-daughter/little-brown-and-company-2021-en
+  workId: james-patterson/the-presidents-daughter
+  isbn13: "9780316540711"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL28686748M"]
+
+- id: james-patterson/the-presidents-daughter/porto-editora-2022-pt
+  workId: james-patterson/the-presidents-daughter
+  isbn13: "9789720035110"
+  language: pt-PT
+  title: "A filha do Presidente"
+  translator: "Artur Lopes Cardoso"
+  publisher: "Porto Editora"
+  year: 2022
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720035110&profile=bn"]
+
+- id: james-patterson/the-red-book/little-brown-and-company-2021-en
+  workId: james-patterson/the-red-book
+  isbn13: "9780316499408"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL31990528M"]
+
+- id: james-patterson/the-russian/little-brown-and-company-2021-en
+  workId: james-patterson/the-russian
+  isbn13: "9780316420389"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL28300662M"]
+
+- id: james-patterson/the-shadow/grand-central-publishing-2021-en
+  workId: james-patterson/the-shadow
+  isbn13: "9781538703939"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL32791116M"]
+
+- id: james-patterson/till-murder-do-us-part/grand-central-publishing-2021-en
+  workId: james-patterson/till-murder-do-us-part
+  isbn13: "9781538719053"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL30061440M"]
+
+- id: james-patterson/walk-in-my-combat-boots-true-stories-from-americas-bravest-warriors/little-brown-and-company-2021-en
+  workId: james-patterson/walk-in-my-combat-boots-true-stories-from-americas-bravest-warriors
+  isbn13: "9780316429146"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2021
+  sources: ["https://openlibrary.org/books/OL28786028M"]
+
+- id: james-patterson/22-seconds/little-brown-and-company-2022-en
+  workId: james-patterson/22-seconds
+  isbn13: "9780316499378"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL36019235M"]
+
+- id: james-patterson/ali-cross-the-secret-detective/little-brown-and-company-2022-en
+  workId: james-patterson/ali-cross-the-secret-detective
+  isbn13: "9780316409919"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL36023103M"]
+
+- id: james-patterson/blowback/little-brown-and-company-2022-en
+  workId: james-patterson/blowback
+  isbn13: "9780316473439"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL37493514M"]
+
+- id: james-patterson/death-of-the-black-widow/grand-central-publishing-2022-en
+  workId: james-patterson/death-of-the-black-widow
+  isbn13: "9781538709825"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL34173171M"]
+
+- id: james-patterson/diana-william-and-harry/little-brown-and-company-2022-en
+  workId: james-patterson/diana-william-and-harry
+  isbn13: "9780759554221"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL36841342M"]
+
+- id: james-patterson/escape/little-brown-and-company-2022-en
+  workId: james-patterson/escape
+  isbn13: "9780316445511"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL36023137M"]
+
+- id: james-patterson/james-patterson-by-james-patterson-the-stories-of-my-life/little-brown-and-company-2022-en
+  workId: james-patterson/james-patterson-by-james-patterson-the-stories-of-my-life
+  isbn13: "9780316445214"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL36023190M"]
+
+- id: james-patterson/middle-school-its-a-zoo-in-here/little-brown-and-company-2022-en
+  workId: james-patterson/middle-school-its-a-zoo-in-here
+  isbn13: "9780316430081"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL34193863M"]
+
+- id: james-patterson/middle-school-winter-blunderland/little-brown-and-company-2022-en
+  workId: james-patterson/middle-school-winter-blunderland
+  isbn13: "9780316500203"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL36842622M"]
+
+- id: james-patterson/run-rose-run/little-brown-and-company-2022-en
+  workId: james-patterson/run-rose-run
+  isbn13: "9781638838920"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL36103242M"]
+
+- id: james-patterson/run-rose-run/casa-das-letras-2022-pt
+  workId: james-patterson/run-rose-run
+  isbn13: "9789896614959"
+  language: pt-PT
+  title: "Foge, Rose, foge"
+  translator: "Ana Lourenço"
+  publisher: "Casa das Letras"
+  year: 2022
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789896614959&profile=bn"]
+
+- id: james-patterson/shattered/little-brown-and-company-2022-en
+  workId: james-patterson/shattered
+  isbn13: "9780316445719"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL36421125M"]
+
+- id: james-patterson/steal/grand-central-publishing-2022-en
+  workId: james-patterson/steal
+  isbn13: "9781538703540"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL36434798M"]
+
+- id: james-patterson/the-elephant-girl/little-brown-and-company-2022-en
+  workId: james-patterson/the-elephant-girl
+  isbn13: "9780316316927"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL36371114M"]
+
+- id: james-patterson/the-girl-in-the-castle/little-brown-and-company-2022-en
+  workId: james-patterson/the-girl-in-the-castle
+  isbn13: "9780316411929"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL38942590M"]
+
+- id: james-patterson/the-horsewoman/little-brown-and-company-2022-en
+  workId: james-patterson/the-horsewoman
+  isbn13: "9780316301626"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL34129697M"]
+
+- id: james-patterson/the-ninth-month/grand-central-publishing-2022-en
+  workId: james-patterson/the-ninth-month
+  isbn13: "9781538720813"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL36842396M"]
+
+- id: james-patterson/the-perfect-assassin/grand-central-publishing-2022-en
+  workId: james-patterson/the-perfect-assassin
+  isbn13: "9781538721841"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL38058914M"]
+
+- id: james-patterson/the-runaways-diary/little-brown-and-company-2022-en
+  workId: james-patterson/the-runaways-diary
+  isbn13: "9780316395427"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL34988817M"]
+
+- id: james-patterson/treasure-hunters-the-ultimate-quest/little-brown-and-company-2022-en
+  workId: james-patterson/treasure-hunters-the-ultimate-quest
+  isbn13: "9780316500180"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL35992062M"]
+
+- id: james-patterson/triple-cross/little-brown-and-company-2022-en
+  workId: james-patterson/triple-cross
+  isbn13: "9780316499194"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2022
+  sources: ["https://openlibrary.org/books/OL38403940M"]
+
+- id: james-patterson/12-months-to-live/little-brown-and-company-2023-en
+  workId: james-patterson/12-months-to-live
+  isbn13: "9780316405690"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2023
+  sources: ["https://openlibrary.org/books/OL46674625M"]
+
+- id: james-patterson/23-and-a-half-lies/grand-central-publishing-2023-en
+  workId: james-patterson/23-and-a-half-lies
+  isbn13: "9781538752722"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2023
+  sources: ["https://openlibrary.org/books/OL46639270M"]
+
+- id: james-patterson/3-days-to-live/grand-central-publishing-2023-en
+  workId: james-patterson/3-days-to-live
+  isbn13: "9781538741863"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2023
+  sources: ["https://openlibrary.org/books/OL38943023M"]
+
+- id: james-patterson/alex-cross-must-die/little-brown-and-company-2023-en
+  workId: james-patterson/alex-cross-must-die
+  isbn13: "9780316402583"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2023
+  sources: ["https://openlibrary.org/books/OL48763307M"]
+
+- id: james-patterson/circle-of-death/grand-central-publishing-2023-en
+  workId: james-patterson/circle-of-death
+  isbn13: "9781538711101"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2023
+  sources: ["https://openlibrary.org/books/OL46107730M"]
+
+- id: james-patterson/countdown/little-brown-and-company-2023-en
+  workId: james-patterson/countdown
+  isbn13: "9780316457378"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2023
+  sources: ["https://openlibrary.org/books/OL38410104M"]
+
+- id: james-patterson/cross-down/little-brown-and-company-2023-en
+  workId: james-patterson/cross-down
+  isbn13: "9780316404594"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2023
+  sources: ["https://openlibrary.org/books/OL42690993M"]
+
+- id: james-patterson/elephant-goes-potty/little-brown-and-company-2023-en
+  workId: james-patterson/elephant-goes-potty
+  isbn13: "9780759555617"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2023
+  sources: ["https://openlibrary.org/books/OL39362602M"]
+
+- id: james-patterson/jacky-ha-ha-gets-the-last-laugh/little-brown-and-company-2023-en
+  workId: james-patterson/jacky-ha-ha-gets-the-last-laugh
+  isbn13: "9780316410090"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2023
+  sources: ["https://openlibrary.org/books/OL39366982M"]
+
+- id: james-patterson/lion-and-lamb/little-brown-and-company-2023-en
+  workId: james-patterson/lion-and-lamb
+  isbn13: "9780316404891"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2023
+  sources: ["https://openlibrary.org/books/OL46115741M"]
+
+- id: james-patterson/minerva-keens-detective-club/little-brown-and-company-2023-en
+  workId: james-patterson/minerva-keens-detective-club
+  isbn13: "9780316412230"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2023
+  sources: ["https://openlibrary.org/books/OL40183774M"]
+
+- id: james-patterson/obsessed/little-brown-and-company-2023-en
+  workId: james-patterson/obsessed
+  isbn13: "9780316499576"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2023
+  sources: ["https://openlibrary.org/books/OL46117552M"]
+
+- id: james-patterson/private-rome/penguin-random-house-2023-en
+  workId: james-patterson/private-rome
+  isbn13: "9781529902877"
+  language: en
+  publisher: "Penguin Random House"
+  year: 2023
+  sources: ["https://openlibrary.org/books/OL46062673M"]
+
+- id: james-patterson/the-23rd-midnight/little-brown-and-company-2023-en
+  workId: james-patterson/the-23rd-midnight
+  isbn13: "9780316402781"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2023
+  sources: ["https://openlibrary.org/books/OL40153438M"]
+
+- id: james-patterson/the-house-of-wolves/little-brown-and-company-2023-en
+  workId: james-patterson/the-house-of-wolves
+  isbn13: "9780316404297"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2023
+  sources: ["https://openlibrary.org/books/OL39420934M"]
+
+- id: james-patterson/things-i-wish-i-told-my-mother/grand-central-publishing-2024-en
+  workId: james-patterson/things-i-wish-i-told-my-mother
+  isbn13: "9781538710937"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2024
+  sources: ["https://openlibrary.org/books/OL50706681M"]
+
+- id: james-patterson/walk-the-blue-line/grand-central-publishing-2024-en
+  workId: james-patterson/walk-the-blue-line
+  isbn13: "9781538710869"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2024
+  sources: ["https://openlibrary.org/books/OL50705992M"]
+
+- id: james-patterson/what-really-happens-in-vegas/little-brown-and-company-2023-en
+  workId: james-patterson/what-really-happens-in-vegas
+  isbn13: "9780316407007"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2023
+  sources: ["https://openlibrary.org/books/OL48784890M"]
+
+- id: james-patterson/american-heroes/little-brown-and-company-2025-en
+  workId: james-patterson/american-heroes
+  isbn13: "9781538710906"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL60884888M"]
+
+- id: james-patterson/confessions-of-the-dead/grand-central-publishing-2024-en
+  workId: james-patterson/confessions-of-the-dead
+  isbn13: "9781538758922"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2024
+  sources: ["https://openlibrary.org/books/OL50715468M"]
+
+- id: james-patterson/crosshairs/little-brown-and-company-2024-en
+  workId: james-patterson/crosshairs
+  isbn13: "9780316577335"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2024
+  sources: ["https://openlibrary.org/books/OL50706655M"]
+
+- id: james-patterson/eruption/little-brown-and-company-2024-en
+  workId: james-patterson/eruption
+  isbn13: "9780316565073"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2024
+  sources: ["https://openlibrary.org/books/OL50726424M"]
+
+- id: james-patterson/eruption/cultura-2024-pt
+  workId: james-patterson/eruption
+  isbn13: "9789895772483"
+  language: pt-PT
+  title: "Erupção"
+  translator: "Rui Azeredo"
+  publisher: "Cultura"
+  year: 2024
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789895772483&profile=bn"]
+
+- id: james-patterson/hard-to-kill/little-brown-and-company-2024-en
+  workId: james-patterson/hard-to-kill
+  isbn13: "9780316569910"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2024
+  sources: ["https://openlibrary.org/books/OL50734733M"]
+
+- id: james-patterson/lies-he-told-me/little-brown-and-company-2024-en
+  workId: james-patterson/lies-he-told-me
+  isbn13: "9780316403894"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2024
+  sources: ["https://openlibrary.org/books/OL51099278M"]
+
+- id: james-patterson/mks-detective-club-the-poison-puzzle/little-brown-and-company-2024-en
+  workId: james-patterson/mks-detective-club-the-poison-puzzle
+  isbn13: "9780316412339"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2024
+  sources: ["https://openlibrary.org/books/OL50719091M"]
+
+- id: james-patterson/private-monaco/penguin-random-house-2024-en
+  workId: james-patterson/private-monaco
+  isbn13: "9781529912807"
+  language: en
+  publisher: "Penguin Random House"
+  year: 2024
+  sources: ["https://openlibrary.org/books/OL50620183M"]
+
+- id: james-patterson/raised-by-wolves/grand-central-publishing-2024-en
+  workId: james-patterson/raised-by-wolves
+  isbn13: "9781538767030"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2024
+  sources: ["https://openlibrary.org/books/OL51615432M"]
+
+- id: james-patterson/the-24th-hour/little-brown-and-company-2024-en
+  workId: james-patterson/the-24th-hour
+  isbn13: "9780316403085"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2024
+  sources: ["https://openlibrary.org/books/OL50706962M"]
+
+- id: james-patterson/the-house-of-cross/little-brown-and-company-2024-en
+  workId: james-patterson/the-house-of-cross
+  isbn13: "9780316402682"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2024
+  sources: ["https://openlibrary.org/books/OL51627768M"]
+
+- id: james-patterson/the-murder-inn/grand-central-publishing-2024-en
+  workId: james-patterson/the-murder-inn
+  isbn13: "9781538710944"
+  language: en
+  publisher: "Grand Central Publishing"
+  year: 2024
+  sources: ["https://openlibrary.org/books/OL50714052M"]
+
+- id: james-patterson/the-number-1-lawyer/little-brown-and-company-2024-en
+  workId: james-patterson/the-number-1-lawyer
+  isbn13: "9780316499699"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2024
+  sources: ["https://openlibrary.org/books/OL51108542M"]
+
+- id: james-patterson/the-time-travel-twins/little-brown-and-company-2024-en
+  workId: james-patterson/the-time-travel-twins
+  isbn13: "9780316447010"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2024
+  sources: ["https://openlibrary.org/books/OL51093965M"]
+
+- id: james-patterson/tiger-tiger/little-brown-and-company-2024-en
+  workId: james-patterson/tiger-tiger
+  isbn13: "9780316438605"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2024
+  sources: ["https://openlibrary.org/books/OL50713562M"]
+
+- id: james-patterson/2-sisters-murder-investigations-a-thriller/little-brown-and-company-2025-en
+  workId: james-patterson/2-sisters-murder-investigations-a-thriller
+  isbn13: "9781538758496"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL57568899M"]
+
+- id: james-patterson/25-alive/little-brown-and-company-2025-en
+  workId: james-patterson/25-alive
+  isbn13: "9780316569774"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL57565406M"]
+
+- id: james-patterson/disrupt-everything/penguin-random-house-2025-en
+  workId: james-patterson/disrupt-everything
+  isbn13: "9781529962673"
+  language: en
+  publisher: "Penguin Random House"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL60844153M"]
+
+- id: james-patterson/emma-on-fire/little-brown-and-company-2025-en
+  workId: james-patterson/emma-on-fire
+  isbn13: "9781538758717"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL57580450M"]
+
+- id: james-patterson/holmes-is-missing/little-brown-and-company-2025-en
+  workId: james-patterson/holmes-is-missing
+  isbn13: "9780316569965"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL57759187M"]
+
+- id: james-patterson/middle-school-too-uncool-for-school/little-brown-and-company-2025-en
+  workId: james-patterson/middle-school-too-uncool-for-school
+  isbn13: "9780316410922"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL57761088M"]
+
+- id: james-patterson/paranoia/little-brown-and-company-2025-en
+  workId: james-patterson/paranoia
+  isbn13: "9781529136456"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL57535467M"]
+
+- id: james-patterson/private-dublin/penguin-random-house-2025-en
+  workId: james-patterson/private-dublin
+  isbn13: "9781529936414"
+  language: en
+  publisher: "Penguin Random House"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL57536304M"]
+
+- id: james-patterson/return-of-the-spider/little-brown-and-company-2025-en
+  workId: james-patterson/return-of-the-spider
+  isbn13: "9780316569569"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL60768046M"]
+
+- id: james-patterson/the-billion-dollar-ransom/little-brown-and-company-2025-en
+  workId: james-patterson/the-billion-dollar-ransom
+  isbn13: "9780316570039"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL57761755M"]
+
+- id: james-patterson/the-first-gentleman/little-brown-and-company-2025-en
+  workId: james-patterson/the-first-gentleman
+  isbn13: "9780316565103"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL57591832M"]
+
+- id: james-patterson/the-great-mouse-escape/hachette-audio-2025-en
+  workId: james-patterson/the-great-mouse-escape
+  isbn13: "9780316412025"
+  language: en
+  format: audiobook
+  publisher: "Hachette Audio"
+  year: 2025
+  note: >
+    Only edition indexed so far is the audiobook; no print ISBN found for this
+    2025 title.
+  sources: ["https://openlibrary.org/books/OL57757787M"]
+
+- id: james-patterson/the-idaho-four/little-brown-and-company-2025-en
+  workId: james-patterson/the-idaho-four
+  isbn13: "9780316572859"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL57616511M"]
+
+- id: james-patterson/the-last-days-of-marilyn-monroe/little-brown-and-company-2025-en
+  workId: james-patterson/the-last-days-of-marilyn-monroe
+  isbn13: "9780316584630"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL57569621M"]
+
+- id: james-patterson/the-number-1-dad-book/little-brown-and-company-2025-en
+  workId: james-patterson/the-number-1-dad-book
+  isbn13: "9780316585101"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL57757787M"]
+
+- id: james-patterson/the-picasso-heist/little-brown-and-company-2025-en
+  workId: james-patterson/the-picasso-heist
+  isbn13: "9781538758434"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL60565592M"]
+
+- id: james-patterson/the-presidents-shadow/little-brown-and-company-2025-en
+  workId: james-patterson/the-presidents-shadow
+  isbn13: "9780316584647"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL57563537M"]
+
+- id: james-patterson/the-secret-lives-of-booksellers-and-librarians/little-brown-and-company-2025-en
+  workId: james-patterson/the-secret-lives-of-booksellers-and-librarians
+  isbn13: "9781538758984"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL57568351M"]
+
+- id: james-patterson/the-texas-murders/little-brown-and-company-2025-en
+  workId: james-patterson/the-texas-murders
+  isbn13: "9781538711002"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL57563001M"]
+
+- id: james-patterson/the-writer/little-brown-and-company-2025-en
+  workId: james-patterson/the-writer
+  isbn13: "9780316569996"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2025
+  sources: ["https://openlibrary.org/books/OL57567003M"]
+
+- id: james-patterson/26-beauties/little-brown-and-company-2026-en
+  workId: james-patterson/26-beauties
+  isbn13: "9780316607292"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2026
+  sources: ["https://openlibrary.org/books/OL61413679M"]
+
+- id: james-patterson/dr-zeus/little-brown-and-company-2024-en
+  workId: james-patterson/dr-zeus
+  isbn13: "9780316410328"
+  language: en
+  publisher: "Little, Brown and Company"
+  year: 2024
+  sources: ["https://openlibrary.org/books/OL51609722M"]
+
+- id: james-patterson/judge-stone/bertrand-2026-pt
+  workId: james-patterson/judge-stone
+  isbn13: "9789722551731"
+  language: pt-PT
+  title: "A juíza"
+  translator: "Rute Mota"
+  publisher: "Bertrand"
+  year: 2026
+  sources: ["https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789722551731&profile=bn"]

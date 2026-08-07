@@ -214,7 +214,7 @@ calls** at ~3.7k tokens each. The pages fetched were not the expense; fetching
 them one per call was. Shared docs are ~9k tokens all told and re-reading them
 is a rounding error - do not optimise there.
 
-Four rules follow, and they cut far more than trimming prompts does:
+Five rules follow, and they cut far more than trimming prompts does:
 
 1. **Batch the fetching.** `scripts/fetch.py` takes many URLs in one call,
    caches to `.cache/fetch/` so a later stage inherits what an earlier one paid
@@ -230,7 +230,18 @@ Four rules follow, and they cut far more than trimming prompts does:
    transcript: the two corrections on that build cost 434k, *more* than the
    original runs. Spawn a fresh, narrow agent with just the delta and the
    evidence, and say what not to reopen.
-4. **Prefer a constructed URL to a search.** Publisher product pages follow a
+4. **Never resume an agent to poll a background job it started.** A resume
+   replays the whole transcript just to hear "still running" - on the James
+   Patterson build, `visual-metadata`'s rate-limited `lookup.py` fetch (45+
+   minutes) got resumed nine separate times for that alone, at ~112k-192k
+   tokens each, before the session transcript was lost outright. Once an
+   agent reports it has launched a long background job, do not resume it:
+   watch the job yourself (the PID it reported, or the output file's
+   existence/mtime/size) and only resume - once - when it is actually done.
+   If the session is lost, a fresh agent can usually finish from the first
+   agent's on-disk scratch (already-fetched candidates, downloaded files)
+   without redoing the fetch.
+5. **Prefer a constructed URL to a search.** Publisher product pages follow a
    pattern. A WebSearch that only finds a URL you could have built costs
    several thousand tokens for nothing.
 
@@ -303,8 +314,15 @@ Within one run, stages that fire execute in this order:
    exist, so its exit code is not the gate - read those two lines), validator green.
 8. **Artefacts, parallel**: `visual-metadata` · `editions` - after the work
    list and all prose are final. Read stage 2's handoff: newly added works are
-   exactly what gets missed. Gate: validator green, every image URL fetched
-   and confirmed real.
+   exactly what gets missed. **Run `scripts/metadata/lookup.py <slug> --author
+   "<name>"` yourself, once, before dispatching either agent, and hand the
+   resulting TSV to both in their prompts.** Each stage's own worktree has its
+   own `.cache/metadata` - a cache that makes a second call *within* one
+   agent's session free but does nothing across two agents sweeping the same
+   providers for the same works from two different worktrees. One shared sweep
+   is also what removes the need for either agent to launch its own long
+   rate-limited fetch (see rule 4 above). Gate: validator green, every image
+   URL fetched and confirmed real.
 9. **`translation`**, one agent per locale - last, because it copies whatever
    the earlier stages settled. Gate: `i18n_coverage.py` shows no regression
    against the baseline, **and** every stale overlay named in a handoff was

@@ -1,0 +1,132 @@
+# A wing spans an author's complete published work. Patterson's is the
+# largest in this catalogue by some distance: 480 works across three
+# readerships and more than forty separately marketed series, and 109
+# credited collaborators. The wing is built as Patterson because he is the
+# throughline and the reason a reader opens it, and every collaborator is
+# recorded per book in `withAuthorIds` with `authorRole: co-author`, never
+# folded into an anonymous "and others" - the jacket says who, so the data
+# can too.
+id: james-patterson
+name: James Patterson
+kind: author
+description: >
+  The complete published work of James Patterson: the
+  [[work:james-patterson/along-came-a-spider|Alex Cross]] novels (1993 to
+  the present), the [[work:james-patterson/1st-to-die|Women's Murder Club]],
+  [[work:james-patterson/step-on-a-crack|Michael Bennett]],
+  [[work:james-patterson/private|Private]] and a dozen other thriller
+  series, some seventy standalone thrillers, the young-adult
+  [[work:james-patterson/the-angel-experiment|Maximum Ride]] and
+  [[work:james-patterson/witch-and-wizard|Witch & Wizard]] books, the
+  [[work:james-patterson/middle-school-the-worst-years-of-my-life|Middle
+  School]], [[work:james-patterson/i-funny|I Funny]] and
+  [[work:james-patterson/treasure-hunters|Treasure Hunters]] lines for
+  younger readers, the 2016-2018 BookShots novellas, picture books, true
+  crime and a memoir. From
+  [[work:james-patterson/miracle-on-the-17th-green|Miracle on the 17th
+  Green]] (1996) onward most of it carries a second name on the jacket in
+  smaller type, and this wing records all 109 of them.
+authorIds: [james-patterson]
+themePreset: paperback-rack
+
+# GLOBAL EVENTS. Patterson (b. 1947-03-22, living) overlaps thirteen entries in
+# content/events/global.yaml; two more predate him and were weighed as
+# inheritances. What earns a place here is a trade event this shelf can be shown
+# answering, either in a book or in how the books are sold: the five kept are
+# the commercial machinery the career actually runs on, plus the two crises a
+# specific title is written out of. Nothing is kept for having happened in his
+# lifetime.
+globalEvents:
+  include:
+    - chain-bookshop-1982             # the 1993 television commercial paid off in exactly this currency: a list placing that bought the table by the door
+    - online-bookselling-1995         # 480 titles is a backlist no shop can shelve and a catalogue with no shelf can
+    - ebook-and-self-publishing-2007  # first author past a million e-books, 1.14m units by July 2010, on Kindle and iPad
+    - financial-crisis-2008           # Worst Case (2010) quizzes the children of the rich on what their money costs
+    - covid-19-pandemic-2020          # reaches the shelf through the nonfiction: E.R. Nurses (2021) is built from frontline nurse accounts and carries pandemic-ward stories among them
+  exclude:
+    - sept-11-2001                    # the outsized threat was already the register (Jack & Jill, 1996); the post-2001 terror plots are one villain among many, and no book is about the day
+    - lady-chatterley-trial-1960      # nothing here tests an obscenity limit; the plainness of the prose is the selling point
+    - fantasy-paperback-boom-1965     # no secondary-world fantasy on the shelf; Maximum Ride and Witch & Wizard sell on thriller pace, not on the category this created
+    - carnation-revolution-1974       # Portuguese censorship history; no bearing on an American author who never wrote under a censor
+    - prestige-fantasy-adaptation-2011 # fantasy-specific; his own screen breakthrough is Cross (2024), crime television, and already a franchise event
+    - portugal-bailout-2011           # Portugal-specific; no Portuguese thread on this shelf
+    - booktok-2020                    # discovery here runs on bought advertising, retail placement and a brand name, not on readers recommending to each other
+    - comics-code-authority-1954      # the comics on this shelf are 2000s manga and graphic-novel adaptations of his own novels, published outside the code's reach and after its collapse
+    - penguin-paperback-1935          # the cheap reprint is the whole postwar trade's ground rather than this career's; the 1982 shop floor is what his marketing was aimed at
+    - armed-services-editions-1943    # same inheritance, one step further back; no title here answers it
+sources:
+  - "https://www.jamespatterson.com/landing-page/james-patterson-checklist/"
+  - "https://en.wikipedia.org/wiki/James_Patterson"
+  - "https://en.wikipedia.org/wiki/James_Patterson_bibliography"
+
+# startHere. Four paths: the author's own FAQ ("In what order should I read
+# James Patterson's books?") names Alex Cross, the Women's Murder Club and
+# Maximum Ride as the three series worth a reading-order check, so those
+# anchor the arc and completionist answers; the taste pick rests on the one
+# other sourced claim found, that Along Came a Spider (1993) remains his
+# best-selling book. No source was found for a "best of the standalones"
+# or a collaborator-based path, so neither is included.
+startHere:
+  paths:
+    # Source: https://web.archive.org/web/20201229113830/https://www.nytimes.com/2010/01/24/magazine/24patterson-t.html
+    # New York Times Magazine (2010): the self-funded 1993 television advert
+    # for Along Came a Spider "remains his best-selling title" and launched
+    # the Alex Cross series.
+    - id: essentials
+      title: Where he became a brand
+      description: >
+        One book: Along Came a Spider (1993), the debut of Alex Cross and the
+        thriller Patterson advertised on television with his own money when
+        his publisher would not. It is still his best-selling title, and it
+        stands alone with no series homework required.
+      workIds:
+        - james-patterson/along-came-a-spider
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        A 1993 book: the shorter chapters and the collaborator on nearly
+        everything followed from the mid-1990s on, so this reads a shade
+        denser than the Cross novels around it.
+
+    # Source: https://www.jamespatterson.com/landing-page/about-james-patterson-contact-faq/
+    # The author's own FAQ, "In what order should I read James Patterson's
+    # books?": "For the order of the books in the Alex Cross, The Women's
+    # Murder Club, and Maximum Ride series, visit their respective pages
+    # within the Books area."
+    - id: alex-cross
+      title: Follow one detective, start to finish
+      description: >
+        The Alex Cross novels in publication order, pulled out of a shelf
+        where the Women's Murder Club, Michael Bennett, Private and dozens of
+        standalones interleave with it every year.
+      workIds: null
+      orderId: james-patterson/alex-cross
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+
+    - id: maximum-ride
+      title: The young-adult run instead
+      description: >
+        A flock of genetically engineered kids on the run from the lab that
+        made them - Patterson's flagship young-adult series, and a different
+        readership and register from the adult crime series that otherwise
+        fill this catalogue.
+      workIds: null
+      orderId: james-patterson/maximum-ride
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+
+    - id: everything
+      title: The whole catalogue, in order
+      description: >
+        Publication order across the complete works: every series and every
+        standalone, collaborators included, exactly as it was written.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]

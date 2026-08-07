@@ -1,0 +1,157 @@
+# Branding for the James Patterson wing (see docs/SCHEMA.md#themeyaml).
+#
+# Every crime wing already in this catalogue commits to a near-black and a
+# weather: Harlan Coben's cool suburban teal-grey, Gillian Flynn's overcast
+# newsprint, Michael Connelly's warm LA sepia, Karin Slaughter's humid olive,
+# Tana French's peat, Jo Nesbo's blue-white winter, Lee Child's neutral
+# asphalt. This wing does the one thing none of them does: it is **light**.
+# Nothing about these books is nocturnal or atmospheric. They are sold off a
+# spinner rack in an airport at eleven in the morning, printed on cheap
+# cream stock, read in a single sitting, and their whole design argument is
+# legibility at four feet. A near-black would be borrowing a mood from
+# neighbours that this shelf has never had.
+#
+# The accent is the harder call and it is made with eyes open. This
+# catalogue already holds several reds: Grisham's legal red, Saramago's deep
+# crimson, John Gwynne's dried blood, Stephen King's oxblood, Lee Child's
+# flare-red. A seventh red is exactly the mistake the Lee Child theme warned
+# against when it refused a seventh amber. It is taken here anyway, because
+# this is the one wing in the catalogue whose accent is quoting a physical
+# object rather than choosing a mood: the solid red band with PATTERSON
+# reversed out of it in white, set larger than the title, is the single most
+# recognisable thing about this shelf and has been for thirty years. The
+# distinctness comes from the ground, not the hue - this is the only crime
+# wing here that is not dark, and a pillar-box red on cream reads nothing
+# like any of the six oxbloods on near-black.
+preset: paperback-rack
+palette:
+  bg: "#f5f2ec"        # mass-market paper stock, warm and slightly cheap -
+                       # not the cream of a fine press, the cream of a book
+                       # that cost eight dollars
+  surface: "#ebe7dd"   # a shade down, for cards
+  ink: "#1a1917"       # near-black text (15.6:1 on bg)
+  muted: "#6a655c"     # warm grey for metadata (5.2:1 on bg)
+  accent: "#b3241c"    # the jacket band's red, darkened only as far as
+                       # readability demands (5.9:1 on bg)
+displayFace: fraunces  # from the app's implemented set. The plain-prose
+                       # argument that put Lee Child and Michael Connelly on
+                       # sourceSerif would fit the sentences here too, but
+                       # the display face is not setting the sentences - it
+                       # is setting the titles, and the title on one of
+                       # these jackets is an enormous high-contrast display
+                       # serif. Fraunces is the closest thing in the set to
+                       # what is actually printed on the object.
+signature: beam        # the bold accent rail the works string along. Two
+                       # reasons: it is the red name-band itself, and it is
+                       # the only signature element in the closed set that
+                       # can carry 480 works down a page without the eye
+                       # losing the thread. A hairline would disappear under
+                       # this much volume.
+# ART. The palette's argument - light, warm and legible rather than
+# nocturnal - only holds if the line work makes the same argument. Two
+# adjacencies needed working through with eyes open rather than glossed
+# over. Lee Child's wing already draws the mass-market paperback as a
+# physical object (rough grey pulp stock, a red accent used sparingly, "sold
+# off a spinner rack, in an airport") - the closest wing in the whole
+# catalogue to this one's own stated argument. But Child's identity is a
+# drifter who owns nothing: one unvarying ballpoint line, matte interior
+# pulp, no gloss, no volume. This wing's identity is the opposite -
+# commercial abundance rather than austerity, several hundred titles under
+# one name built with collaborators rather than one man travelling light -
+# so where Child goes matte and rationed, this wing goes glossy and
+# plentiful: a laminated cover sheen rather than interior pulp paper, and a
+# line built for speed and output rather than for restraint. The other two
+# light-ground crime wings, Jo Nesbo (cold blue-white winter) and Gillian
+# Flynn (overcast Midwest newsprint), are each still a weather system, which
+# this wing's own header rules out entirely - there is no weather here at
+# all, only daylight doing nothing but letting the reader see. The
+# instrument comes from Patterson's own pre-fiction career rather than from
+# any of his characters: before he wrote full time he ran an advertising
+# agency (chairman of J. Walter Thompson's North American operation), and
+# the line below is a layout artist's, not a novelist's illustrator's.
+art:
+  emblem:
+    object: >
+      A single page from a chapter outline, not a page of prose - dense rows
+      of terse, numbered lines rendered as tight, illegible marks rather
+      than legible type - breaking off partway down the sheet, its last
+      line circled once in red pencil and nothing else marked or annotated.
+    why: >
+      Patterson has said in interview after interview that he writes a
+      detailed, scene-by-scene outline for every book before a page of
+      prose exists, then hands it to a collaborator to draft from - the
+      mechanism that lets one name carry several hundred titles across
+      series he no longer writes solo, and the reason so much of this wing
+      is co-authored rather than solo work. The same interviews describe
+      his chapters as famously short, built to end on a hook that pulls the
+      reader, and the collaborator, on to the next page. Circling a line is
+      an editor's mark, not a novelist's, and the red pencil is the same
+      pillar-box red as the jacket's own name-band.
+  motifs:
+    - a chapter-outline page, typed and numbered, breaking off mid-scene
+    - a precinct front desk or interview room under plain fluorescent light
+      - Washington DC, San Francisco or NYPD homicide depending on the
+      series it serves
+    - a stainless-steel examination table in a bright, scrupulously plain
+      lab, for the Women's Murder Club's medical examiner
+    - a family table laid with more places than one household usually needs
+      - Michael Bennett's ten children, Alex Cross's grandmother's rowhouse
+    - a hotel corridor, embassy waiting room or airport departure board,
+      for Private's branch offices in Los Angeles, London, Berlin, Rio,
+      Sydney
+    - a school hallway, gymnasium or treehouse workshop, for the
+      middle-grade and YA series (Middle School, I Funny, Treasure
+      Hunters, House of Robots)
+    - open sky seen through a high window or over a rooftop, plain and
+      wide, for Maximum Ride and Witch and Wizard's flight and escape
+      scenes
+  atmosphere: >
+    Bright, plain, present-tense light at any hour - never a mood, never
+    weather doing the storytelling. No dusk, no rain on glass, no single
+    lamp holding back a room: an interview room, a family table and a
+    rooftop at night all read in the same even, functional light. Every
+    scene is caught already in motion, one hook short of turning the page,
+    rather than a place to linger in - procedure, family and flight get the
+    same brisk, undramatic daylight, regardless of which series or reading
+    age it belongs to.
+  lineCharacter: >
+    A blunt, fast grease-pencil line, laid down once and not reworked - the
+    mark of a layout artist roughing out an advertising comp against a
+    deadline, not a considered illustrator's studied contour. Flat,
+    single-weight strokes carry the whole drawing; shading is a few quick
+    parallel strokes rather than built-up cross-hatching, because the
+    drawing has to read from four feet, not reward a close look.
+  backgroundTexture: >
+    The smooth, faintly glossy sheen of a mass-market paperback's printed
+    cover, not the matte grain of a hardback jacket or the rough pulp of an
+    interior page - bright and a little reflective under store light, the
+    way a cover is printed to catch an eye scanning a rack from across an
+    aisle.
+  accentUse: >
+    Pillar-box red on exactly one element per image, never as a fill: the
+    circled last line of an outline page, a police cruiser's light bar seen
+    at a distance and unlit up close, an exit sign, a fire hydrant, a
+    mailbox, or one paperback spine turned face-out on a rack.
+  avoid:
+    - moody or nocturnal noir lighting - rain-slicked streets, venetian-blind
+      shadow stripes, a single desk lamp holding back a dark room - the
+      generic crime-paperback cliche this wing's whole palette exists to
+      reject
+    - a lone trench-coated detective silhouette under a streetlamp
+    - gore, autopsy detail or violence staged for shock - injury and death
+      are consequence, never spectacle
+    - any actor's likeness from the Alex Cross film adaptations (Kiss the
+      Girls, Along Came a Spider, Alex Cross) or the Women's Murder Club,
+      Zoo or Maximum Ride screen adaptations, in character or out of it
+      (docs/VISUAL.md SS3 forbids a real person's likeness in any case)
+    - a cutesy children's-book palette or styling shift for the
+      middle-grade and YA series - the same plain register as every other
+      series on the shelf, not a costume change
+    - a conspiracy board of pinned photographs and red string
+    - glossy movie-poster action framing - guns drawn, explosions, a hero
+      pose
+notes: >
+  The catalogue's only light crime wing, on purpose: warm mass-market paper
+  stock rather than a near-black, near-black ink, warm grey metadata, and one
+  pillar-box red taken straight off the jacket's name-band. Fraunces for the
+  jacket-title display serif and a beam for the rail 480 works hang from.

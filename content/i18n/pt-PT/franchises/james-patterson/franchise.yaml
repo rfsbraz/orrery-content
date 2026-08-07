@@ -1,0 +1,72 @@
+# Overlay pt-PT: descrição da ala e a prosa dos quatro caminhos de startHere
+# (title/description/note), fundida por id (docs/SCHEMA.md, "Nested lists
+# merge by id") - nunca workIds/orderId/fit. `name` não se traduz.
+#
+# Nomes de séries e de personagens (Alex Cross, Women's Murder Club, Michael
+# Bennett, Private, Witch & Wizard, Middle School, I Funny, Treasure Hunters)
+# mantêm-se tal como no inglês quando designam a série ou a personagem, não um
+# livro específico: são marcas/nomes próprios, e nenhuma fonte consultada
+# regista uma tradução portuguesa dessas marcas em si (a edição portuguesa de
+# The Angel Experiment usa já "Maximum Ride" sem tradução - editions.yaml).
+# "Miracle on the 17th Green" não tem edição portuguesa e mantém-se em inglês.
+# Já a menção a "Along Came a Spider" no caminho `essentials` designa o livro
+# em concreto (não a série), por isso usa aqui o título da edição portuguesa
+# real, "A Conspiração da Aranha" (Presença, 2001, editions.yaml), mesmo sem
+# haver uma referência interna a obra marcada no original em inglês.
+
+- id: james-patterson
+  description: >
+    A obra publicada completa de James Patterson: os romances de
+    [[work:james-patterson/along-came-a-spider|Alex Cross]] (de 1993 até à
+    atualidade), as séries [[work:james-patterson/1st-to-die|Women's Murder
+    Club]], [[work:james-patterson/step-on-a-crack|Michael Bennett]],
+    [[work:james-patterson/private|Private]] e mais uma dúzia de outras séries
+    de thriller, cerca de setenta thrillers avulsos, os livros juvenis
+    [[work:james-patterson/the-angel-experiment|Maximum Ride]] e
+    [[work:james-patterson/witch-and-wizard|Witch & Wizard]], as coleções
+    [[work:james-patterson/middle-school-the-worst-years-of-my-life|Middle
+    School]], [[work:james-patterson/i-funny|I Funny]] e
+    [[work:james-patterson/treasure-hunters|Treasure Hunters]] para os
+    leitores mais novos, as novelas BookShots de 2016-2018, livros ilustrados,
+    true crime e um livro de memórias. A partir de
+    [[work:james-patterson/miracle-on-the-17th-green|Miracle on the 17th
+    Green]] (1996), a maior parte destes títulos passa a trazer um segundo
+    nome na capa, em letra mais pequena, e esta ala regista os 109
+    colaboradores.
+  startHere:
+    paths:
+      - id: essentials
+        title: Onde se tornou uma marca
+        description: >
+          Um livro: A Conspiração da Aranha (1993), a estreia de Alex Cross e
+          o thriller que Patterson anunciou na televisão com dinheiro do
+          próprio bolso, depois de a editora se recusar a fazê-lo. Continua a
+          ser o seu título mais vendido, e lê-se sozinho, sem exigir nenhum
+          trabalho de casa de série.
+        note: >
+          Um livro de 1993: os capítulos mais curtos e o colaborador em quase
+          tudo só surgem a partir de meados da década de 1990, por isso este
+          lê-se ligeiramente mais denso do que os romances de Cross à sua
+          volta.
+
+      - id: alex-cross
+        title: Seguir um detetive, do princípio ao fim
+        description: >
+          Os romances de Alex Cross por ordem de publicação, destacados de
+          uma estante onde Women's Murder Club, Michael Bennett, Private e
+          dezenas de livros avulsos se intercalam com eles todos os anos.
+
+      - id: maximum-ride
+        title: Ou antes, a série juvenil
+        description: >
+          Um bando de crianças geneticamente modificadas em fuga do
+          laboratório que as criou - a série juvenil emblemática de
+          Patterson, com um público e um registo bem diferentes das séries
+          policiais para adultos que preenchem o resto deste catálogo.
+
+      - id: everything
+        title: O catálogo inteiro, por ordem
+        description: >
+          Ordem de publicação de toda a obra: todas as séries e todos os
+          livros avulsos, colaboradores incluídos, exatamente como foram
+          escritos.
