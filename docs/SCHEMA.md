@@ -272,6 +272,9 @@ dated entry the same way.
   featured: true                 # optional; a work that changed the life (see below)
   publishedAs: "Richard Bachman" # optional; only when the cover name differs
   heteronym: alberto-caeiro      # optional; refs an authorIds entity's heteronyms[].id (see above)
+  containedIn: fernando-pessoa/poemas-de-alberto-caeiro  # optional; this
+                                  # work's text is reprinted whole inside that
+                                  # work id (see below)
   withAuthorIds: [peter-straub]  # optional collaborators (global author ids)
   authorRole: author             # author | co-author | contributor | editor
   contributionTitle: "The Reach" # optional; the piece contributed, if not the whole book
@@ -496,6 +499,40 @@ percentage of a 43-work wing would license eight.
 `featured` is not a quality judgement and not a recommendation, the same
 discipline as `canonTier`: it records that a book is a hinge in this author's
 story. If two people would argue about whether a book is a hinge, it is not one.
+
+### containedIn: when a work's text reappears whole inside another
+
+**Added 2026-08-07** (orrery#168). Fernando Pessoa's *O Guardador de Rebanhos*
+was first published complete in the magazine *Athena* in 1925, and again,
+whole, as the first third of the 1946 collection *Poemas de Alberto Caeiro*.
+Both are real, separately-dated, separately-sourced publication events, and
+this wing's own ruling keeps both as works - dropping either would lose a real
+fact (the 1925 periodical date; the 1946 collection's actual contents). But
+the app's derived default order is a flat sort with no dedup, so a reader
+walking it read the same 49 poems twice, six volumes and 21 years apart, with
+nothing telling them so.
+
+```yaml
+- id: fernando-pessoa/o-guardador-de-rebanhos
+  containedIn: fernando-pessoa/poemas-de-alberto-caeiro
+```
+
+On the **earlier, contained** work, name the id of the work whose text
+reprints it in full. The app's derived default order skips a work naming
+`containedIn` (it stays in the wing's bibliography - still browsable, still a
+real work - only the linear walk skips it) and completion tracking treats
+reading the container as covering it too.
+
+**Never on a curated order.** `orders.yaml` orders are hand-picked, and can
+include or omit either id exactly as their own rationale argues - Fernando
+Pessoa's own `by-signature` order already omits the 1925 entry by curator
+judgement, unrelated to this field. `containedIn` only changes the *derived*
+order and completion arithmetic.
+
+**Not for a mere reissue or a different translation of the same edition** -
+that is what `editions.yaml` is for. This field is for two entries in
+`works.yaml` itself: a genuinely separate publication event (a periodical
+appearance, a standalone booklet) whose text a later work reprints whole.
 
 ## editions.yaml (optional)
 
