@@ -28,6 +28,32 @@ description: >
   smaller type, and this wing records all 105 of them.
 authorIds: [james-patterson]
 themePreset: paperback-rack
+
+# GLOBAL EVENTS. Patterson (b. 1947-03-22, living) overlaps thirteen entries in
+# content/events/global.yaml; two more predate him and were weighed as
+# inheritances. What earns a place here is a trade event this shelf can be shown
+# answering, either in a book or in how the books are sold: the five kept are
+# the commercial machinery the career actually runs on, plus the two crises a
+# specific title is written out of. Nothing is kept for having happened in his
+# lifetime.
+globalEvents:
+  include:
+    - chain-bookshop-1982             # the 1993 television commercial paid off in exactly this currency: a list placing that bought the table by the door
+    - online-bookselling-1995         # 480 titles is a backlist no shop can shelve and a catalogue with no shelf can
+    - ebook-and-self-publishing-2007  # first author past a million e-books, 1.14m units by July 2010, on Kindle and iPad
+    - financial-crisis-2008           # Worst Case (2010) quizzes the children of the rich on what their money costs and ends at the New York Stock Exchange
+    - covid-19-pandemic-2020          # reaches the shelf through the nonfiction: E.R. Nurses (2021) opens on a nurse losing four patients in one shift of the first wave
+  exclude:
+    - sept-11-2001                    # the outsized threat was already the register (Jack & Jill, 1996); the post-2001 terror plots are one villain among many, and no book is about the day
+    - lady-chatterley-trial-1960      # nothing here tests an obscenity limit; the plainness of the prose is the selling point
+    - fantasy-paperback-boom-1965     # no secondary-world fantasy on the shelf; Maximum Ride and Witch & Wizard sell on thriller pace, not on the category this created
+    - carnation-revolution-1974       # Portuguese censorship history; no bearing on an American author who never wrote under a censor
+    - prestige-fantasy-adaptation-2011 # fantasy-specific; his own screen breakthrough is Cross (2024), crime television, and already a franchise event
+    - portugal-bailout-2011           # Portugal-specific; no Portuguese thread on this shelf
+    - booktok-2020                    # discovery here runs on bought advertising, retail placement and a brand name, not on readers recommending to each other
+    - comics-code-authority-1954      # the comics on this shelf are 2000s manga and graphic-novel adaptations of his own novels, published outside the code's reach and after its collapse
+    - penguin-paperback-1935          # the cheap reprint is the whole postwar trade's ground rather than this career's; the 1982 shop floor is what his marketing was aimed at
+    - armed-services-editions-1943    # same inheritance, one step further back; no title here answers it
 sources:
   - "https://www.jamespatterson.com/landing-page/james-patterson-checklist/"
   - "https://en.wikipedia.org/wiki/James_Patterson"
