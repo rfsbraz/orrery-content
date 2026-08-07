@@ -58,3 +58,75 @@ sources:
   - "https://www.jamespatterson.com/landing-page/james-patterson-checklist/"
   - "https://en.wikipedia.org/wiki/James_Patterson"
   - "https://en.wikipedia.org/wiki/James_Patterson_bibliography"
+
+# startHere. Four paths: the author's own FAQ ("In what order should I read
+# James Patterson's books?") names Alex Cross, the Women's Murder Club and
+# Maximum Ride as the three series worth a reading-order check, so those
+# anchor the arc and completionist answers; the taste pick rests on the one
+# other sourced claim found, that Along Came a Spider (1993) remains his
+# best-selling book. No source was found for a "best of the standalones"
+# or a collaborator-based path, so neither is included.
+startHere:
+  paths:
+    # Source: https://web.archive.org/web/20201229113830/https://www.nytimes.com/2010/01/24/magazine/24patterson-t.html
+    # New York Times Magazine (2010): the self-funded 1993 television advert
+    # for Along Came a Spider "remains his best-selling title" and launched
+    # the Alex Cross series.
+    - id: essentials
+      title: Where he became a brand
+      description: >
+        One book: Along Came a Spider (1993), the debut of Alex Cross and the
+        thriller Patterson advertised on television with his own money when
+        his publisher would not. It is still his best-selling title, and it
+        stands alone with no series homework required.
+      workIds:
+        - james-patterson/along-came-a-spider
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        A 1993 book: the shorter chapters and the collaborator on nearly
+        everything followed from the mid-1990s on, so this reads a shade
+        denser than the Cross novels around it.
+
+    # Source: https://www.jamespatterson.com/landing-page/about-james-patterson-contact-faq/
+    # The author's own FAQ, "In what order should I read James Patterson's
+    # books?": "For the order of the books in the Alex Cross, The Women's
+    # Murder Club, and Maximum Ride series, visit their respective pages
+    # within the Books area."
+    - id: alex-cross
+      title: Follow one detective, start to finish
+      description: >
+        The Alex Cross novels in publication order, pulled out of a shelf
+        where the Women's Murder Club, Michael Bennett, Private and dozens of
+        standalones interleave with it every year.
+      workIds: null
+      orderId: james-patterson/alex-cross
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+
+    - id: maximum-ride
+      title: The young-adult run instead
+      description: >
+        A flock of genetically engineered kids on the run from the lab that
+        made them - Patterson's flagship young-adult series, and a different
+        readership and register from the adult crime series that otherwise
+        fill this catalogue.
+      workIds: null
+      orderId: james-patterson/maximum-ride
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+
+    - id: everything
+      title: The whole catalogue, in order
+      description: >
+        Publication order across the complete works: every series and every
+        standalone, collaborators included, exactly as it was written.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
