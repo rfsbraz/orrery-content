@@ -1,0 +1,54 @@
+# Branding for the James Patterson wing (see docs/SCHEMA.md#themeyaml).
+#
+# Every crime wing already in this catalogue commits to a near-black and a
+# weather: Harlan Coben's cool suburban teal-grey, Gillian Flynn's overcast
+# newsprint, Michael Connelly's warm LA sepia, Karin Slaughter's humid olive,
+# Tana French's peat, Jo Nesbo's blue-white winter, Lee Child's neutral
+# asphalt. This wing does the one thing none of them does: it is **light**.
+# Nothing about these books is nocturnal or atmospheric. They are sold off a
+# spinner rack in an airport at eleven in the morning, printed on cheap
+# cream stock, read in a single sitting, and their whole design argument is
+# legibility at four feet. A near-black would be borrowing a mood from
+# neighbours that this shelf has never had.
+#
+# The accent is the harder call and it is made with eyes open. This
+# catalogue already holds several reds: Grisham's legal red, Saramago's deep
+# crimson, John Gwynne's dried blood, Stephen King's oxblood, Lee Child's
+# flare-red. A seventh red is exactly the mistake the Lee Child theme warned
+# against when it refused a seventh amber. It is taken here anyway, because
+# this is the one wing in the catalogue whose accent is quoting a physical
+# object rather than choosing a mood: the solid red band with PATTERSON
+# reversed out of it in white, set larger than the title, is the single most
+# recognisable thing about this shelf and has been for thirty years. The
+# distinctness comes from the ground, not the hue - this is the only crime
+# wing here that is not dark, and a pillar-box red on cream reads nothing
+# like any of the six oxbloods on near-black.
+preset: paperback-rack
+palette:
+  bg: "#f5f2ec"        # mass-market paper stock, warm and slightly cheap -
+                       # not the cream of a fine press, the cream of a book
+                       # that cost eight dollars
+  surface: "#ebe7dd"   # a shade down, for cards
+  ink: "#1a1917"       # near-black text (15.6:1 on bg)
+  muted: "#6a655c"     # warm grey for metadata (5.2:1 on bg)
+  accent: "#b3241c"    # the jacket band's red, darkened only as far as
+                       # readability demands (5.9:1 on bg)
+displayFace: fraunces  # from the app's implemented set. The plain-prose
+                       # argument that put Lee Child and Michael Connelly on
+                       # sourceSerif would fit the sentences here too, but
+                       # the display face is not setting the sentences - it
+                       # is setting the titles, and the title on one of
+                       # these jackets is an enormous high-contrast display
+                       # serif. Fraunces is the closest thing in the set to
+                       # what is actually printed on the object.
+signature: beam        # the bold accent rail the works string along. Two
+                       # reasons: it is the red name-band itself, and it is
+                       # the only signature element in the closed set that
+                       # can carry 465 works down a page without the eye
+                       # losing the thread. A hairline would disappear under
+                       # this much volume.
+notes: >
+  The catalogue's only light crime wing, on purpose: warm mass-market paper
+  stock rather than a near-black, near-black ink, warm grey metadata, and one
+  pillar-box red taken straight off the jacket's name-band. Fraunces for the
+  jacket-title display serif and a beam for the rail 465 books hang from.
