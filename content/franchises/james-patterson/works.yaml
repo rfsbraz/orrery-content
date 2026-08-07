@@ -2,20 +2,32 @@
 # metadata. IDs are STABLE and permanent (user data references them), and
 # `published` records first publication, under the title the book first
 # carried: Virgin (1980) rather than the rewritten Cradle and All (2000),
-# Black Market (1986) rather than Black Friday, Murder Games (2017) rather
+# Black Market (1986) rather than Black Friday, The Jericho Commandment
+# (1979) rather than the See How They Run reissue, Murder Games (2017) rather
 # than the television-tie-in reissue Instinct, NYPD Red 5 rather than the US
 # Red Alert. Where a title differs by market the alternate is recorded in a
 # note on the work.
 #
-# Two sources carry this list, and they disagree about its edges. The
-# author's own alphabetical checklist at jamespatterson.com is current and
-# authoritative on what is in print, on series membership (its By Series tab
-# is what settles every `subseries` value here) and on who is credited on the
-# jacket; Wikipedia's James Patterson bibliography reaches further back, is
-# the only list of the 2016-2018 BookShots novellas, and is the source of
-# first-publication years for everything before roughly 2023. Where the
-# checklist's own title page gives a co-author it is preferred over
-# Wikipedia's, because it is the jacket credit itself.
+# The single largest trap in dating this shelf is that a Patterson book often
+# reaches one market a year or more before another, and the American edition
+# is the one the bibliographies index. Six entries here are dated by a
+# non-American first edition: Count to Ten (Private Delhi, Century, 2016),
+# Private Rome, Private Beijing, Private Monaco and Private Dublin (Century,
+# 2022-2025, ahead of Little, Brown by two to seven years), Middle School:
+# Escape to Australia (Rafe's Aussie [Mis]Adventure, Random House Australia,
+# 2015) and three Dog Diaries titles (Arrow (Young), one to two years ahead of
+# JIMMY Patterson Books). Each says so in its own note.
+#
+# Three sources carry this list. The author's own alphabetical checklist at
+# jamespatterson.com is authoritative on what exists, on series membership
+# (its By Series tab is what settles every `subseries` value here) and on
+# which volumes a bindup collects; the publisher's individual title pages at
+# hachettebookgroup.com give the jacket credit and an on-sale date per format,
+# and are what every date here is checked against where the book is still
+# listed; Wikipedia's James Patterson bibliography reaches further back and is
+# the only list of several 2016-2018 BookShots novellas that are now out of
+# print. Where they disagree the publisher wins, because the publisher is
+# reporting its own record.
 #
 # Scope. Every book credited to James Patterson: novels for adults, for young
 # adults and for children, the BookShots novellas, picture books, nonfiction,
@@ -27,25 +39,37 @@
 #     they are not his work. Same for the three checklist entries whose own
 #     title pages credit somebody else outright (Burn It All Down, The Family
 #     That Cooks Together, The Radcliffes).
-#   - The BookShots Flames romance line. Those titles sit on the checklist's
-#     BookShots tab but carry other writers' bylines, and no independent
-#     source credits Patterson on them; the handful that Wikipedia does
-#     credit to him (Christmas Sanctuary, Love Me Tender, The Mating Season)
-#     are included.
-#   - Five Australian and British Middle School titles (How I Got Lost in
-#     London, Rafe's Aussie Adventure, Going Bush, Hollywood 101, G'day
-#     America). Neither source establishes whether these are separate books
-#     or retitled editions of ones already listed here.
-#   - The Family Cross, announced as the next Alex Cross novel with no
-#     release date on the publisher's record, so there is nothing to date it
-#     against.
+#   - The twenty BookShots Flames romance titles (Shopping for Love, Once
+#     Upon a Kiss, Dawn's Early Light, 50 Hidden Desires, Bedding the
+#     Highlander, Bodyguard, the three Diamond Trilogy volumes, The
+#     Experiment, Hot Winter Nights, Learning to Ride, the three McCullagh
+#     Inn stories, Radiant, The Return, Sabotage, Sacking the Quarterback,
+#     Sexy Summer Flings, The Weekend Wife) and their bindups Kisses at
+#     Midnight and The Radcliffes. They sit on the checklist's BookShots tab
+#     but carry other writers' bylines. Three Flames titles do carry a
+#     Patterson credit and are included: Christmas Sanctuary (with Lauren
+#     Hawkeye), Love Me Tender (with Laurie Horowitz) and The Mating Season.
+#   - Rafe's Aussie [Mis]Adventure, which is not a separate book: Random
+#     House Australia published it in 2015 and the same story reached the
+#     rest of the world in 2017 as Middle School: Escape to Australia, which
+#     carries the 2015 date here. The other four non-American Middle School
+#     titles are distinct books and are listed: How I Got Lost in London,
+#     Going Bush, Hollywood 101 and G'day, America.
+#   - Dog Diaries: Double-Dog Dare (2020) and Dog Diaries: Doggy
+#     Doubleheader (2022), two-in-one reissues of books already listed here.
+#     Unlike the bindups below they are not on the checklist, which numbers
+#     the series 01 to 07 and stops.
+#   - Books announced for 2027 and later: Bulldog (with Mike Lupica), Face
+#     Off (with J. D. Barker) and Animal Doctors (with Matt Eversmann and
+#     Chris Mooney).
 #
 # Bindups are kept where the checklist sells them as books (Triple Threat,
-# Kill or Be Killed, The Family Lawyer, Triple Homicide, Murder in Paradise,
-# The House Next Door, The River Murders, The Palm Beach Murders, The Paris
-# Detective, Two From the Heart, The Moores Are Missing). Their component
-# novellas are listed separately as well, because each was published on its
-# own first.
+# Kill or Be Killed, The Family Lawyer, The Moores Are Missing, Two From the
+# Heart, Triple Homicide, Murder in Paradise, The 13-Minute Murder, The House
+# Next Door, The River Murders, The Palm Beach Murders, The Paris Detective,
+# 3 Days to Live, 23 1/2 Lies). Their component novellas are listed separately
+# as well, because each was published on its own first - except in 3 Days to
+# Live and 23 1/2 Lies, whose stories have never appeared anywhere else.
 #
 # canonTier here records the shelf a book belongs to, not its quality:
 # `core` is the novels written for adults, `extended` the books for young
@@ -73,8 +97,14 @@
 # a different matter and is its own subseries: a separate middle-grade line
 # about Cross's son, separately numbered and separately marketed.
 #
-# Illustrators are not recorded in `withAuthorIds`; the credit recorded there
-# is the writing collaborator named on the jacket.
+# Illustrators are not recorded in `withAuthorIds`, which is why the picture
+# books mostly stand alone here even though the publisher's contributor list
+# names the artist alongside Patterson: Michael Garland, Hsinping Pan, Sydney
+# Hanson, Joe Kulka and the Middle School and I Funny illustrators drew books
+# somebody else wrote. What `withAuthorIds` records is whoever made the book
+# as a book - the writing collaborator for the prose, and for the manga and
+# graphic-novel adaptations the adapter and the artist, since the adaptation
+# is their work and not Patterson's.
 
 - id: james-patterson/the-thomas-berryman-number
   title: "The Thomas Berryman Number"
@@ -97,11 +127,15 @@
   canonTier: core
 
 - id: james-patterson/see-how-they-run
-  title: "See How They Run"
+  title: "The Jericho Commandment"
   authorIds: [james-patterson]
   published: 1979
   subseries: null
   canonTier: core
+  note: >
+    Published as The Jericho Commandment by Crown in 1979 and reissued under
+    the title See How They Run, which is the name the publisher's own
+    checklist still sells it under.
 
 - id: james-patterson/virgin
   title: "Virgin"
@@ -1309,6 +1343,17 @@
   withAuthorIds: [narae-lee]
   authorRole: co-author
 
+- id: james-patterson/middle-school-how-i-got-lost-in-london
+  title: "Middle School: How I Got Lost in London"
+  authorIds: [james-patterson]
+  published: 2014
+  subseries: "Middle School"
+  canonTier: extended
+  note: >
+    A short Middle School story published only in the United Kingdom, by
+    Young Arrow; it has never had a United States edition and is numbered
+    5.5 in the sequence.
+
 - id: james-patterson/middle-school-save-rafe
   title: "Middle School: Save Rafe!"
   authorIds: [james-patterson]
@@ -1459,6 +1504,20 @@
   withAuthorIds: [narae-lee]
   authorRole: co-author
 
+- id: james-patterson/middle-school-escape-to-australia
+  title: "Middle School: Escape to Australia"
+  authorIds: [james-patterson]
+  published: 2015
+  subseries: "Middle School"
+  canonTier: extended
+  withAuthorIds: [martin-chatterton]
+  authorRole: co-author
+  note: >
+    First published in Australia by Random House Australia on 1 May 2015 as
+    Middle School: Rafe's Aussie [Mis]Adventure; the same story reached the
+    United States and the United Kingdom as Escape to Australia on
+    6 March 2017.
+
 - id: james-patterson/middle-school-just-my-rotten-luck
   title: "Middle School: Just My Rotten Luck"
   authorIds: [james-patterson]
@@ -1574,11 +1633,14 @@
   title: "Black & Blue"
   authorIds: [james-patterson]
   published: 2016
-  subseries: null
+  subseries: "Harriet Blue"
   canonTier: apocrypha
   format: novella
   withAuthorIds: [candice-fox]
   authorRole: co-author
+  note: >
+    The Harriet Blue prequel, numbered 0.5 in the sequence and published
+    before Never Never.
 
 - id: james-patterson/break-point
   title: "Break Point"
@@ -1618,6 +1680,21 @@
   format: novella
   withAuthorIds: [shan-serafin]
   authorRole: co-author
+
+- id: james-patterson/count-to-ten-a-private-novel
+  title: "Count to Ten: A Private Novel"
+  authorIds: [james-patterson]
+  published: 2016
+  subseries: "Private"
+  canonTier: core
+  withAuthorIds: [ashwin-sanghi]
+  authorRole: co-author
+  note: >
+    First published in 2016 as Private Delhi by Century in India and the UK;
+    Little, Brown issued it in the United States as Count to Ten on
+    14 November 2017.
+  sources:
+    - "https://www.hachettebookgroup.com/titles/james-patterson/count-to-ten/9781538759622/"
 
 - id: james-patterson/cross-kill
   title: "Cross Kill"
@@ -1697,11 +1774,14 @@
   title: "Hunted"
   authorIds: [james-patterson]
   published: 2016
-  subseries: null
+  subseries: "David Shelley"
   canonTier: apocrypha
   format: novella
   withAuthorIds: [andrew-holmes]
   authorRole: co-author
+  note: >
+    The David Shelley prequel, numbered 0.5 in the sequence and published
+    before Revenge.
 
 - id: james-patterson/jacky-ha-ha
   title: "Jacky Ha-Ha"
@@ -1736,11 +1816,14 @@
   title: "Killer Chef"
   authorIds: [james-patterson]
   published: 2016
-  subseries: null
+  subseries: "Caleb Rooney"
   canonTier: apocrypha
   format: novella
   withAuthorIds: [jeffrey-j-keyes]
   authorRole: co-author
+  note: >
+    The Caleb Rooney prequel, numbered 0.5 in the sequence and published
+    before The Chef.
 
 - id: james-patterson/lets-play-make-believe
   title: "Let's Play Make-Believe"
@@ -1771,6 +1854,36 @@
   withAuthorIds: [chris-tebbetts]
   authorRole: co-author
 
+- id: james-patterson/middle-school-going-bush
+  title: "Middle School: Going Bush"
+  authorIds: [james-patterson]
+  published: 2016
+  subseries: "Middle School"
+  canonTier: extended
+  withAuthorIds: [martin-chatterton]
+  authorRole: co-author
+  note: >
+    Australian-only, from Random House Australia, 1 March 2016. It is a
+    sequel rather than a retitling: Rafe heads inland to a Cultural Campout
+    in the Northern Territory after the coastal trip of Escape to Australia,
+    which is a separate book in this file.
+
+- id: james-patterson/middle-school-hollywood-101
+  title: "Middle School: Hollywood 101"
+  authorIds: [james-patterson]
+  published: 2016
+  subseries: "Middle School"
+  canonTier: extended
+  withAuthorIds: [martin-chatterton]
+  authorRole: co-author
+  note: >
+    A short Middle School story published only in the United Kingdom, by
+    Young Arrow, 17 November 2016: a film crew comes to Hills Village and
+    Rafe falls into the movie business. No United States edition, and no
+    other book in the series tells this story. The publisher's own page
+    credits Patterson alone; the Martin Chatterton credit comes from the
+    bibliographies.
+
 - id: james-patterson/never-never
   title: "Never Never"
   authorIds: [james-patterson]
@@ -1788,13 +1901,6 @@
   canonTier: core
   withAuthorIds: [marshall-karp]
   authorRole: co-author
-
-- id: james-patterson/pottymouth-and-stoopid
-  title: "Pottymouth and Stoopid"
-  authorIds: [james-patterson]
-  published: 2016
-  subseries: null
-  canonTier: extended
 
 - id: james-patterson/private-missing
   title: "Private: Missing"
@@ -2048,17 +2154,6 @@
   withAuthorIds: [lauren-hawkeye]
   authorRole: co-author
 
-- id: james-patterson/count-to-ten-a-private-novel
-  title: "Count to Ten: A Private Novel"
-  authorIds: [james-patterson]
-  published: 2017
-  subseries: "Private"
-  canonTier: core
-  withAuthorIds: [ashwin-sanghi]
-  authorRole: co-author
-  note: >
-    Published in India as Private Delhi.
-
 - id: james-patterson/crazy-house
   title: "Crazy House"
   authorIds: [james-patterson]
@@ -2239,14 +2334,21 @@
   withAuthorIds: [james-o-born]
   authorRole: co-author
 
-- id: james-patterson/middle-school-escape-to-australia
-  title: "Middle School: Escape to Australia"
+- id: james-patterson/maximum-ride-vol-10
+  title: "Maximum Ride, Vol. 10"
   authorIds: [james-patterson]
   published: 2017
-  subseries: "Middle School"
-  canonTier: extended
-  withAuthorIds: [martin-chatterton]
+  subseries: "Maximum Ride: The Manga"
+  canonTier: apocrypha
+  format: graphic-novel
+  withAuthorIds: [narae-lee]
   authorRole: co-author
+  note: >
+    The manga closes at ten volumes. The publisher's own checklist runs
+    Volume 1 to Volume 10 and stops; Volume 10 is Yen Press
+    ISBN 9780759529762, with Penguin Random House issuing it in the United
+    Kingdom in 2017. The claim that a Volume 11 appeared in 2018 and a
+    Volume 10 was still expected in 2020 matches no edition anywhere.
 
 - id: james-patterson/murder-games
   title: "Murder Games"
@@ -2276,6 +2378,8 @@
   subseries: null
   canonTier: apocrypha
   format: novella
+  withAuthorIds: [tim-arnold]
+  authorRole: co-author
 
 - id: james-patterson/penguins-of-america
   title: "Penguins of America"
@@ -2284,6 +2388,20 @@
   subseries: null
   canonTier: extended
   format: picture-book
+
+- id: james-patterson/pottymouth-and-stoopid
+  title: "Pottymouth and Stoopid"
+  authorIds: [james-patterson]
+  published: 2017
+  subseries: null
+  canonTier: extended
+  withAuthorIds: [chris-grabenstein]
+  authorRole: co-author
+  note: >
+    Every format on the publisher's own record carries 12 June 2017; the 2016
+    year that circulates in secondary bibliographies matches no edition.
+  sources:
+    - "https://www.hachettebookgroup.com/titles/james-patterson/pottymouth-and-stoopid/9780316545709/"
 
 - id: james-patterson/private-gold
   title: "Private Gold"
@@ -2332,6 +2450,8 @@
   subseries: null
   canonTier: apocrypha
   format: novella
+  withAuthorIds: [duane-swierczynski]
+  authorRole: co-author
 
 - id: james-patterson/tell-me-your-best-story
   title: "Tell Me Your Best Story"
@@ -2515,16 +2635,6 @@
   withAuthorIds: [chris-grabenstein]
   authorRole: co-author
 
-- id: james-patterson/triple-homicide
-  title: "Triple Homicide"
-  authorIds: [james-patterson]
-  published: 2017
-  subseries: null
-  canonTier: apocrypha
-  format: short-story-collection
-  withAuthorIds: [maxine-paetro, james-o-born]
-  authorRole: co-author
-
 - id: james-patterson/two-from-the-heart
   title: "Two from the Heart"
   authorIds: [james-patterson]
@@ -2564,7 +2674,7 @@
   subseries: null
   canonTier: extended
   format: nonfiction
-  withAuthorIds: [alex-abramovich]
+  withAuthorIds: [alex-abramovich, mike-harvkey]
   authorRole: co-author
 
 - id: james-patterson/ambush
@@ -2604,15 +2714,6 @@
   withAuthorIds: [steven-butler]
   authorRole: co-author
 
-- id: james-patterson/fall-of-crazy-house
-  title: "Fall of Crazy House"
-  authorIds: [james-patterson]
-  published: 2018
-  subseries: "Crazy House"
-  canonTier: extended
-  withAuthorIds: [gabrielle-charbonnet]
-  authorRole: co-author
-
 - id: james-patterson/home-sweet-murder
   title: "Home Sweet Murder"
   authorIds: [james-patterson]
@@ -2648,16 +2749,6 @@
   withAuthorIds: [chris-grabenstein]
   authorRole: co-author
 
-- id: james-patterson/maximum-ride-vol-11
-  title: "Maximum Ride, Vol. 11"
-  authorIds: [james-patterson]
-  published: 2018
-  subseries: "Maximum Ride: The Manga"
-  canonTier: apocrypha
-  format: graphic-novel
-  withAuthorIds: [narae-lee]
-  authorRole: co-author
-
 - id: james-patterson/middle-school-from-hero-to-zero
   title: "Middle School: From Hero to Zero"
   authorIds: [james-patterson]
@@ -2666,6 +2757,21 @@
   canonTier: extended
   withAuthorIds: [chris-tebbetts]
   authorRole: co-author
+
+- id: james-patterson/middle-school-gday-america
+  title: "Middle School: G'day, America"
+  authorIds: [james-patterson]
+  published: 2018
+  subseries: "Middle School"
+  canonTier: extended
+  withAuthorIds: [martin-chatterton]
+  authorRole: co-author
+  note: >
+    Australian-only, from Random House Australia, 3 December 2018: Rafe is
+    back in Hills Village, his Australian friend Kasey visits, and he ends
+    up fronting Miller the Killer's band. Distinct from Born to Rock, which
+    is Georgia's book. The publisher's own page credits Patterson alone; the
+    Martin Chatterton credit comes from the bibliographies.
 
 - id: james-patterson/murder-beyond-the-grave
   title: "Murder Beyond the Grave"
@@ -2754,9 +2860,17 @@
   authorIds: [james-patterson]
   published: 2018
   subseries: null
-  canonTier: core
-  withAuthorIds: [shan-serafin]
+  canonTier: apocrypha
+  format: short-story-collection
+  withAuthorIds: [shan-serafin, max-dilallo, christopher-farnsworth]
   authorRole: co-author
+  note: >
+    Three thrillers in one volume: the title story with Shan Serafin,
+    113 Minutes with Max DiLallo and Dead Man Running with Christopher
+    Farnsworth. Century published it in the United Kingdom in 2018, Little,
+    Brown in the United States on 16 April 2019.
+  sources:
+    - "https://www.hachettebookgroup.com/titles/james-patterson/the-13-minute-murder/9781538733035/"
 
 - id: james-patterson/the-candies-trick-or-treat
   title: "The Candies Trick or Treat"
@@ -2802,6 +2916,21 @@
   canonTier: core
   withAuthorIds: [bill-clinton]
   authorRole: co-author
+
+- id: james-patterson/triple-homicide
+  title: "Triple Homicide"
+  authorIds: [james-patterson]
+  published: 2018
+  subseries: null
+  canonTier: apocrypha
+  format: short-story-collection
+  withAuthorIds: [maxine-paetro, james-o-born]
+  authorRole: co-author
+  note: >
+    Collects Detective Cross, The Medical Examiner and Manhunt, each first
+    published on its own in 2017.
+  sources:
+    - "https://www.hachettebookgroup.com/titles/james-patterson/triple-homicide/9781538730737/"
 
 - id: james-patterson/unbelievably-boring-bart
   title: "Unbelievably Boring Bart"
@@ -2871,6 +3000,17 @@
   canonTier: extended
   withAuthorIds: [steven-butler]
   authorRole: co-author
+
+- id: james-patterson/fall-of-crazy-house
+  title: "Fall of Crazy House"
+  authorIds: [james-patterson]
+  published: 2019
+  subseries: "Crazy House"
+  canonTier: extended
+  withAuthorIds: [gabrielle-charbonnet]
+  authorRole: co-author
+  sources:
+    - "https://www.hachettebookgroup.com/titles/james-patterson/the-fall-of-crazy-house/9780316433747/"
 
 - id: james-patterson/hush-hush
   title: "Hush Hush"
@@ -3076,6 +3216,21 @@
   subseries: "Alex Cross"
   canonTier: core
 
+- id: james-patterson/dog-diaries-ruffing-it
+  title: "Dog Diaries: Ruffing It"
+  authorIds: [james-patterson]
+  published: 2020
+  subseries: "Dog Diaries"
+  canonTier: extended
+  withAuthorIds: [steven-butler]
+  authorRole: co-author
+  note: >
+    Book five of the series, and the same story either side of the Atlantic:
+    Arrow (Young) published it in the United Kingdom on 14 May 2020 as
+    Dog Diaries: Camping Chaos!, JIMMY Patterson Books in the United States on
+    19 April 2021 as Ruffing It. Junior's camping trip, Iona Stricker and the
+    fugitive from the shelter are the same in both.
+
 - id: james-patterson/hawk
   title: "Hawk"
   authorIds: [james-patterson]
@@ -3194,6 +3349,18 @@
   withAuthorIds: [jd-barker]
   authorRole: co-author
 
+- id: james-patterson/the-last-days-of-john-lennon
+  title: "The Last Days of John Lennon"
+  authorIds: [james-patterson]
+  published: 2020
+  subseries: "The Last Days"
+  canonTier: extended
+  format: nonfiction
+  withAuthorIds: [casey-sherman, dave-wedge]
+  authorRole: co-author
+  sources:
+    - "https://www.hachettebookgroup.com/titles/james-patterson/the-last-days-of-john-lennon/9780316429078/"
+
 - id: james-patterson/the-midwife-murders
   title: "The Midwife Murders"
   authorIds: [james-patterson]
@@ -3274,12 +3441,29 @@
   withAuthorIds: [chris-grabenstein]
   authorRole: co-author
 
-- id: james-patterson/dog-diaries-ruffing-it
-  title: "Dog Diaries: Ruffing It"
+- id: james-patterson/dog-diaries-big-top-bonanza
+  title: "Dog Diaries: Big Top Bonanza"
   authorIds: [james-patterson]
   published: 2021
   subseries: "Dog Diaries"
   canonTier: extended
+  withAuthorIds: [steven-butler]
+  authorRole: co-author
+  note: >
+    Arrow (Young) published it in the United Kingdom on 28 October 2021,
+    JIMMY Patterson Books in the United States on 3 April 2023.
+
+- id: james-patterson/dog-diaries-dinosaur-disaster
+  title: "Dog Diaries: Dinosaur Disaster"
+  authorIds: [james-patterson]
+  published: 2021
+  subseries: "Dog Diaries"
+  canonTier: extended
+  withAuthorIds: [steven-butler]
+  authorRole: co-author
+  note: >
+    Arrow (Young) published it in the United Kingdom on 15 April 2021, JIMMY
+    Patterson Books in the United States on 11 April 2022.
 
 - id: james-patterson/e-r-nurses
   title: "E.R. Nurses"
@@ -3288,6 +3472,8 @@
   subseries: "Heroes Among Us"
   canonTier: extended
   format: nonfiction
+  withAuthorIds: [matt-eversmann, chris-mooney]
+  authorRole: co-author
 
 - id: james-patterson/fear-no-evil
   title: "Fear No Evil"
@@ -3379,16 +3565,6 @@
   withAuthorIds: [nancy-allen]
   authorRole: co-author
 
-- id: james-patterson/the-last-days-of-john-lennon
-  title: "The Last Days of John Lennon"
-  authorIds: [james-patterson]
-  published: 2021
-  subseries: "The Last Days"
-  canonTier: extended
-  format: nonfiction
-  withAuthorIds: [casey-sherman, dave-wedge]
-  authorRole: co-author
-
 - id: james-patterson/the-noise-a-thriller
   title: "The Noise: A Thriller"
   authorIds: [james-patterson]
@@ -3402,9 +3578,17 @@
   title: "The Palm Beach Murders"
   authorIds: [james-patterson]
   published: 2021
-  subseries: "Mitchum"
+  subseries: null
   canonTier: apocrypha
   format: short-story-collection
+  withAuthorIds: [james-o-born, tim-arnold, duane-swierczynski]
+  authorRole: co-author
+  note: >
+    Collects Let's Play Make-Believe, Nooners and Stingrays. None of the three
+    is a Mitchum story; the Mitchum novellas are gathered in The River
+    Murders.
+  sources:
+    - "https://www.hachettebookgroup.com/titles/james-patterson/the-palm-beach-murders/9781538750049/"
 
 - id: james-patterson/the-paris-detective
   title: "The Paris Detective"
@@ -3514,15 +3698,6 @@
   withAuthorIds: [chris-mooney]
   authorRole: co-author
 
-- id: james-patterson/dog-diaries-dinosaur-disaster
-  title: "Dog Diaries: Dinosaur Disaster"
-  authorIds: [james-patterson]
-  published: 2022
-  subseries: "Dog Diaries"
-  canonTier: extended
-  withAuthorIds: [steven-butler]
-  authorRole: co-author
-
 - id: james-patterson/escape
   title: "Escape"
   authorIds: [james-patterson]
@@ -3557,6 +3732,18 @@
   canonTier: extended
   withAuthorIds: [brian-sitts]
   authorRole: co-author
+
+- id: james-patterson/private-beijing
+  title: "Private Beijing"
+  authorIds: [james-patterson]
+  published: 2022
+  subseries: "Private"
+  canonTier: core
+  withAuthorIds: [adam-hamdy]
+  authorRole: co-author
+  note: >
+    Numbered Private 17 by Century, which published it in the United Kingdom
+    in 2022; Little, Brown has it scheduled for the United States in 2029.
 
 - id: james-patterson/run-rose-run
   title: "Run, Rose, Run"
@@ -3618,6 +3805,8 @@
   published: 2022
   subseries: null
   canonTier: core
+  withAuthorIds: [richard-dilallo]
+  authorRole: co-author
 
 - id: james-patterson/the-perfect-assassin
   title: "The Perfect Assassin"
@@ -3676,16 +3865,43 @@
   authorIds: [james-patterson]
   published: 2023
   subseries: "Women's Murder Club"
-  canonTier: core
+  canonTier: apocrypha
+  format: short-story-collection
   withAuthorIds: [maxine-paetro, andrew-bourelle, loren-d-estleman]
   authorRole: co-author
+  note: >
+    Three thrillers in one volume, none of them published separately: the
+    Lindsay Boxer title story with Maxine Paetro, the Rory Yates story Fallen
+    Ranger with Andrew Bourelle, and Watch Your Back with Loren D. Estleman.
+    Only the first belongs to the Women's Murder Club, which is where the
+    publisher files the volume.
+  sources:
+    - "https://www.hachettebookgroup.com/titles/james-patterson/23-1-2-lies/9781538752685/"
 
 - id: james-patterson/3-days-to-live
   title: "3 Days to Live"
   authorIds: [james-patterson]
   published: 2023
   subseries: null
+  canonTier: apocrypha
+  format: short-story-collection
+  withAuthorIds: [duane-swierczynski, bill-schweigart, julie-margaret-hogben]
+  authorRole: co-author
+  note: >
+    Three thrillers in one volume, none of them published separately: the
+    title story with Duane Swierczynski, Women and Children First with Bill
+    Schweigart and The Housekeepers with Julie Margaret Hogben.
+  sources:
+    - "https://www.hachettebookgroup.com/titles/james-patterson/3-days-to-live/9781538752746/"
+
+- id: james-patterson/alex-cross-must-die
+  title: "Alex Cross Must Die"
+  authorIds: [james-patterson]
+  published: 2023
+  subseries: "Alex Cross"
   canonTier: core
+  sources:
+    - "https://www.hachettebookgroup.com/titles/james-patterson/alex-cross-must-die/9780316567114/"
 
 - id: james-patterson/circle-of-death
   title: "Circle of Death"
@@ -3711,13 +3927,6 @@
   published: 2023
   subseries: "Alex Cross"
   canonTier: core
-
-- id: james-patterson/dog-diaries-big-top-bonanza
-  title: "Dog Diaries: Big Top Bonanza"
-  authorIds: [james-patterson]
-  published: 2023
-  subseries: "Dog Diaries"
-  canonTier: extended
 
 - id: james-patterson/elephant-goes-potty
   title: "Elephant Goes Potty"
@@ -3763,6 +3972,21 @@
   withAuthorIds: [james-o-born]
   authorRole: co-author
 
+- id: james-patterson/private-rome
+  title: "Private Rome"
+  authorIds: [james-patterson]
+  published: 2023
+  subseries: "Private"
+  canonTier: core
+  withAuthorIds: [adam-hamdy]
+  authorRole: co-author
+  note: >
+    The Adam Hamdy run of Private novels appears first in the United Kingdom
+    from Century and only later in the United States: Century published this
+    one in 2023, Little, Brown on 13 January 2026.
+  sources:
+    - "https://www.hachettebookgroup.com/titles/james-patterson/private-rome/9781538758564/"
+
 - id: james-patterson/the-23rd-midnight
   title: "The 23rd Midnight"
   authorIds: [james-patterson]
@@ -3780,6 +4004,11 @@
   canonTier: core
   withAuthorIds: [mike-lupica]
   authorRole: co-author
+  note: >
+    A standalone. The publisher files it under Stand-Alone Thrillers and no
+    second Wolfe-family book has followed; the "Murder Runs in the Family"
+    heading it sometimes carries elsewhere is a series of one, which is a
+    marketing line rather than a sequence.
 
 - id: james-patterson/things-i-wish-i-told-my-mother
   title: "Things I Wish I Told My Mother"
@@ -3806,7 +4035,7 @@
   subseries: "Heroes Among Us"
   canonTier: extended
   format: nonfiction
-  withAuthorIds: [matt-eversmann]
+  withAuthorIds: [matt-eversmann, chris-mooney]
   authorRole: co-author
 
 - id: james-patterson/what-really-happens-in-vegas
@@ -3819,13 +4048,6 @@
   withAuthorIds: [mark-seal]
   authorRole: co-author
 
-- id: james-patterson/alex-cross-must-die
-  title: "Alex Cross Must Die"
-  authorIds: [james-patterson]
-  published: 2024
-  subseries: "Alex Cross"
-  canonTier: core
-
 - id: james-patterson/ali-cross-the-graphic-novel
   title: "Ali Cross: The Graphic Novel"
   authorIds: [james-patterson]
@@ -3833,6 +4055,8 @@
   subseries: "Ali Cross"
   canonTier: apocrypha
   format: graphic-novel
+  withAuthorIds: [adam-rau, phillip-tajalle]
+  authorRole: co-author
 
 - id: james-patterson/american-heroes
   title: "American Heroes"
@@ -3884,8 +4108,6 @@
   subseries: null
   canonTier: extended
   format: picture-book
-  withAuthorIds: [joe-kulka]
-  authorRole: co-author
 
 - id: james-patterson/hard-to-kill
   title: "Hard to Kill"
@@ -3940,6 +4162,18 @@
   canonTier: core
   withAuthorIds: [brian-sitts]
   authorRole: co-author
+
+- id: james-patterson/private-monaco
+  title: "Private Monaco"
+  authorIds: [james-patterson]
+  published: 2024
+  subseries: "Private"
+  canonTier: core
+  withAuthorIds: [adam-hamdy]
+  authorRole: co-author
+  note: >
+    Published by Century in the United Kingdom in 2024; Little, Brown brings
+    it to the United States on 14 December 2026.
 
 - id: james-patterson/raised-by-wolves
   title: "Raised by Wolves"
@@ -4073,6 +4307,18 @@
   canonTier: core
   withAuthorIds: [james-o-born]
   authorRole: co-author
+
+- id: james-patterson/private-dublin
+  title: "Private Dublin"
+  authorIds: [james-patterson]
+  published: 2025
+  subseries: "Private"
+  canonTier: core
+  withAuthorIds: [adam-hamdy]
+  authorRole: co-author
+  note: >
+    Published by Century in the United Kingdom in 2025; Little, Brown brings
+    it to the United States on 1 March 2027.
 
 - id: james-patterson/return-of-the-spider
   title: "Return of the Spider"
@@ -4244,15 +4490,6 @@
   withAuthorIds: [viola-davis]
   authorRole: co-author
 
-- id: james-patterson/private-rome
-  title: "Private Rome"
-  authorIds: [james-patterson]
-  published: 2026
-  subseries: "Private"
-  canonTier: core
-  withAuthorIds: [adam-hamdy]
-  authorRole: co-author
-
 - id: james-patterson/rockets-red-glare
   title: "Rocket’s Red Glare"
   authorIds: [james-patterson]
@@ -4271,13 +4508,13 @@
   format: picture-book
 
 - id: james-patterson/thank-you-teacher
-  title: "Thank You, Teacher"
+  title: "Thank You, Teachers"
   authorIds: [james-patterson]
   published: 2026
   subseries: "Heroes Among Us"
   canonTier: extended
   format: nonfiction
-  withAuthorIds: [matt-eversmann]
+  withAuthorIds: [matt-eversmann, chris-mooney]
   authorRole: co-author
 
 - id: james-patterson/the-country-road-murders
@@ -4287,6 +4524,24 @@
   subseries: null
   canonTier: core
   withAuthorIds: [mike-lupica]
+  authorRole: co-author
+
+- id: james-patterson/the-family-cross
+  title: "The Family Cross"
+  authorIds: [james-patterson]
+  published: 2026
+  forthcoming: 2026-10-19
+  subseries: "Alex Cross"
+  canonTier: core
+
+- id: james-patterson/the-girl-in-the-lake
+  title: "The Girl in the Lake"
+  authorIds: [james-patterson]
+  published: 2026
+  forthcoming: 2026-10-06
+  subseries: null
+  canonTier: core
+  withAuthorIds: [brian-sitts]
   authorRole: co-author
 
 - id: james-patterson/the-invisible-woman
@@ -4305,6 +4560,26 @@
   subseries: null
   canonTier: core
   withAuthorIds: [susan-patterson]
+  authorRole: co-author
+
+- id: james-patterson/the-munich-affair
+  title: "The Munich Affair"
+  authorIds: [james-patterson]
+  published: 2026
+  forthcoming: 2026-09-21
+  subseries: null
+  canonTier: core
+  withAuthorIds: [david-ellis]
+  authorRole: co-author
+
+- id: james-patterson/the-murder-trial
+  title: "The Murder Trial"
+  authorIds: [james-patterson]
+  published: 2026
+  forthcoming: 2026-11-23
+  subseries: null
+  canonTier: core
+  withAuthorIds: [nancy-allen]
   authorRole: co-author
 
 - id: james-patterson/the-time-travel-twins-an-armada-of-trouble
