@@ -105,32 +105,27 @@ def main():
         wing_authors = [authors[i] for i in (fr.get("authorIds") or []) if i in authors]
         life = [e for a in wing_authors for e in (a.get("lifeEvents") or [])]
 
-        # Global events that actually reach this wing: the engine's lifetime
-        # filter, then the wing's own include/exclude ruling.
+        # Global events that actually reach this wing. Per docs/SCHEMA.md: "A
+        # global event renders on a wing if and only if that wing names it in
+        # `include`. There is no arithmetic default and no implicit
+        # membership: silence means absent." - matches the app's own
+        # relevantGlobalEvents (lib/content/index.ts), which filters purely
+        # on `include` and never consults author lifetimes. An earlier
+        # version of this script fell back to lifetime arithmetic when an
+        # event wasn't explicitly ruled on, which silently inflated the
+        # reported aura count for any wing whose event-resonance stage
+        # hadn't yet explicitly excluded every in-lifetime global event
+        # (caught live on both fernando-pessoa and james-patterson).
         ge = fr.get("globalEvents") or {}
-        excluded = set(ge.get("exclude") or [])
         included = set(ge.get("include") or [])
-        births = [
-            int(re.search(r"\d{4}", str(a.get("born"))).group())
-            for a in wing_authors
-            if re.search(r"\d{4}", str(a.get("born", "")))
-        ]
-        deaths = [
-            int(re.search(r"\d{4}", str(a.get("died"))).group())
-            for a in wing_authors
-            if re.search(r"\d{4}", str(a.get("died", "")))
-        ]
-        lo_life = min(births) if births else None
-        hi_life = max(deaths) if deaths and len(deaths) == len(wing_authors) else 9999
 
         reaching = []
         for e in globals_:
             y = year_of(e)
             eid = e.get("id") if isinstance(e, dict) else None
-            if not y or eid in excluded:
+            if not y or eid not in included:
                 continue
-            if eid in included or (lo_life is not None and lo_life <= y <= hi_life):
-                reaching.append(y)
+            reaching.append(y)
 
         by_year = collections.Counter()
         covered = set()
