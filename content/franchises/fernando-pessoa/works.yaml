@@ -18,7 +18,11 @@
 # its 1925 magazine publication as well as inside Poemas de Alberto Caeiro
 # (1946), because Portuguese bibliography catalogues it as a book of 1925 in its
 # own right and because it is the text Pessoa named on the day the heteronyms
-# began. Both entries carry a note pointing at the other.
+# began. Both entries carry a note pointing at the other, and the 1925 entry
+# carries containedIn: fernando-pessoa/poemas-de-alberto-caeiro (SCHEMA.md,
+# orrery#168), so the derived default order and completion tracking treat
+# reading the 1946 collection as covering it, rather than asking a reader to
+# walk the same 49 poems twice.
 #
 # DATING. `published` is the year the text first appeared complete, not the year
 # of the volume that later carried it. Two entries below therefore sit at their
@@ -172,6 +176,12 @@
   authorIds: [fernando-pessoa]
   heteronym: alberto-caeiro
   publishedAs: "Alberto Caeiro"
+  # SCHEMA.md's containedIn (orrery#168): this text is reprinted whole inside
+  # poemas-de-alberto-caeiro (1946), so the app's derived default order skips
+  # this entry rather than walking the same 49 poems twice. This id stays a
+  # real work in its own right - the 1925 date and the Athena publication are
+  # not restated anywhere else in the wing.
+  containedIn: fernando-pessoa/poemas-de-alberto-caeiro
   published: 1925
   subseries: null
   canonTier: core

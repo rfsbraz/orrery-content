@@ -705,6 +705,11 @@ def main():
 
     # --- works (per franchise) ---
     work_ids = set()
+    # containedIn (SCHEMA.md) can name a work appearing LATER in the same
+    # works.yaml (the contained, earlier-published entry usually comes first
+    # in file order), so it can't resolve inline the way heteronym does -
+    # collected here and resolved once every franchise's work_ids exist.
+    contained_in_refs = []
     franchise_dirs = glob.glob(os.path.join(ROOT, "content", "franchises", "*"))
     franchise_slugs = {os.path.basename(d) for d in franchise_dirs if os.path.isdir(d)}
     for fdir in franchise_dirs:
@@ -746,6 +751,21 @@ def main():
                     if not any(het in heteronym_ids.get(aid, ()) for aid in credited):
                         err(loc, f"{wid}: unknown heteronym '{het}' (not in any "
                                  f"credited author's heteronyms[])")
+            # containedIn (SCHEMA.md): this work's text is reprinted whole
+            # inside the named work id. Checked immediately for the two
+            # shapes that are wrong regardless of what work_ids ends up
+            # holding; resolved against the full id set afterward.
+            ci = w.get("containedIn")
+            if ci is not None:
+                if ci == wid:
+                    err(loc, f"{wid}: containedIn cannot name itself")
+                elif not ci.startswith(fslug + "/"):
+                    err(loc, f"{wid}: containedIn '{ci}' must be a work in this "
+                             f"same wing ('{fslug}/...') - a periodical or "
+                             f"booklet reprinted inside another author's book "
+                             f"is not this field")
+                else:
+                    contained_in_refs.append((loc, wid, ci))
             if w.get("canonTier") not in {"core", "extended", "apocrypha"}:
                 err(loc, f"{wid}: bad canonTier '{w.get('canonTier')}'")
             # `format` defaults to "novel"; it only needs stating when a work
@@ -847,6 +867,13 @@ def main():
                 f"{len(featured)} works marked featured ({', '.join(featured)}) - "
                 f"at most {FEATURED_MAX} per wing, or the hero treatment stops "
                 f"meaning anything (docs/SCHEMA.md)")
+
+    # containedIn resolved now that every franchise's work_ids exists - the
+    # contained (earlier) entry usually sits before its container in file
+    # order, so this can't be checked inline during the loop above.
+    for loc, wid, ci in contained_in_refs:
+        if ci not in work_ids:
+            err(loc, f"{wid}: containedIn '{ci}' does not resolve to a work")
 
     # --- franchise.yaml: authorIds, features, startHere ---
     order_ids_by_franchise = {}
