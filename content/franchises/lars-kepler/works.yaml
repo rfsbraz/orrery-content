@@ -1,0 +1,401 @@
+# The complete bibliography, cross-checked between English and Swedish
+# Wikipedia's "Lars Kepler" articles and Albert Bonniers Förlag's own
+# catalogue page for each title (the books' Swedish publisher). Shorter
+# lists of this authorship circulate widely: they stop at the first nine
+# novels and omit the tenth (Sömngångaren, 2024), the eleventh (Medusa,
+# forthcoming 2026), and both works standing outside the series
+# (Playground, 2015; Sjömannen, 2025). `subseries: "Joona Linna"` on the
+# eleven series novels matches the publisher's own numbering (Bonniers'
+# catalogue lists Medusa as "den elfte boken i serien om Joona Linna och
+# Saga Bauer") and Wikipedia's usage; not asserted from community consensus
+# alone. The count of 13 is independently corroborated a third way: the
+# Swedish National Library's LIBRIS catalogue holds a bibliographic record
+# for each of the 13 titles below plus a separate one for the Black edition
+# (see the next paragraph), and Bonniers' own site lists exactly 13 "other
+# books by the author" on the Sjömannen product page, one of them the Black
+# edition, alongside Sjömannen itself as the 14th - i.e. 14 catalogued
+# products, 13 of them works in the sense this file means. English
+# Wikipedia's own bibliography section is three titles behind (missing
+# Sömngångaren, Medusa and Sjömannen entirely) - a live illustration of why
+# a non-anglophone author needs the publisher's own catalogue and the
+# national library, not an English-only sweep.
+#
+# STRUCTURAL CALL: "Hypnotisören - Black edition" (2019/2020, ISBN
+# 9789100186777, own catalogue page at albertbonniersforlag.se/bocker/267245)
+# is not catalogued as a separate work. The publisher's own news release
+# (albertbonniersforlag.se/nyheter/10-arsjubilerande-lars-kepler-firar-med-
+# ny-version-av-hypnotisoren/) and the edition's own catalogue-page copy
+# state directly that the authors rewrote Hypnotisören for its tenth
+# anniversary - tempo tightened, chapters compressed, dialogue rewritten,
+# new scenes added, Joona Linna given a bigger role - while "grundberättelsen
+# förstås är densamma" (the underlying story is of course the same); it
+# retells Hypnotisören rather than continuing or replacing it, and page
+# count and series position are unchanged. Recorded as a note on that work
+# below, flagged for the editions stage rather than given its own id.
+#
+# Titles are the Swedish originals throughout (see franchise.yaml's TITLE
+# RULING); synopses are paraphrased from each book's own publisher-catalogue
+# copy, kept spoiler-free at the setup rather than the resolution.
+#
+# Sjömannen's title carries a subtitle, "Sex spänningsberättelser" (six
+# suspense stories) - confirmed against the LIBRIS national-library record
+# for the hardcover edition (ISBN 9789100809584), which catalogues the
+# title-page title as "Sjömannen : sex spänningsberättelser" and separately
+# records a *variant* title, "Sjömannen : spänningsberättelser" (missing
+# "sex"), explicitly noted there as coming from the dust jacket rather than
+# the title page. That variant is what Bonniers' own marketing copy and
+# Swedish Wikipedia's bibliography both reproduce, which is why an
+# English-only or web-only check would miss the "sex."
+
+- id: lars-kepler/hypnotisoren
+  title: "Hypnotisören"
+  authorIds: [alexandra-coelho-ahndoril, alexander-ahndoril]
+  publishedAs: "Lars Kepler"
+  published: 2009
+  subseries: "Joona Linna"
+  canonTier: core
+  featured: true
+  synopsis: >
+    A man is found brutally murdered in a changing room outside Stockholm;
+    his wife and daughter are then found killed with the same frenzy in the
+    family's own home, as if someone meant to wipe out the whole family.
+    The son survives, severely wounded and drifting in and out of
+    consciousness - but detective Joona Linna realizes one more family
+    member is still alive, a sister, and races to find her before the
+    killer does, turning to hypnotist Erik Maria Bark to reach the one
+    witness who might know where.
+  note: >
+    The debut that created the pseudonym: rights sold to publishers in
+    multiple countries before the book was even published in Sweden, per
+    Bonniers' own catalogue copy, and it went on to become one of the
+    best-selling Swedish crime novels of all time. A rewritten "Black
+    Edition" (2019/2020, ISBN 9789100186777) exists for the tenth
+    anniversary - see this file's header.
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/153581/hypnotisoren/"
+    - "https://en.wikipedia.org/wiki/Lars_Kepler"
+    - "https://sv.wikipedia.org/wiki/Lars_Kepler"
+  # Cover is the Bonnier 2010 Swedish paperback (ISBN 9789100124045,
+  # https://openlibrary.org/books/OL38238414M) - checked against this
+  # work's full Open Library edition list (37 editions) to confirm the
+  # Black Edition's own ISBN (9789100186777, see this file's header) is
+  # not among them, so this is unambiguously the original 2009 novel, not
+  # the 2019/2020 rewrite.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/15173368-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL19754844W"
+
+- id: lars-kepler/paganinikontraktet
+  title: "Paganinikontraktet"
+  authorIds: [alexandra-coelho-ahndoril, alexander-ahndoril]
+  publishedAs: "Lars Kepler"
+  published: 2010
+  subseries: "Joona Linna"
+  canonTier: core
+  synopsis: >
+    A woman's body is found adrift on a pleasure boat in the Stockholm
+    archipelago one summer night, her lungs full of brackish water though
+    nothing on her clothes or the rest of her body suggests she drowned
+    where she was found.
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/155847/paganinikontraktet/"
+    - "https://sv.wikipedia.org/wiki/Paganinikontraktet"
+  # Cover is the Bonnier 2010 Swedish hardcover (ISBN 9789100124694,
+  # https://openlibrary.org/books/OL24847010M). Open Library files this
+  # edition under its own sparse work record rather than merged with the
+  # English "The Nightmare" work (OL16489867W, 13 editions) - a translation
+  # split rather than a merge error, but worth knowing before assuming the
+  # low edition count means a weak match.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/15173378-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL15940940W"
+
+- id: lars-kepler/eldvittnet
+  title: "Eldvittnet"
+  authorIds: [alexandra-coelho-ahndoril, alexander-ahndoril]
+  publishedAs: "Lars Kepler"
+  published: 2011
+  subseries: "Joona Linna"
+  canonTier: core
+  synopsis: >
+    Flora Hansen calls herself a spiritualist medium, the kind of witness
+    police the world over quietly consult in difficult cases despite no
+    documented instance of a medium's testimony ever solving one - and a
+    murder investigation at a girls' home puts that contradiction to the
+    test.
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/167288/eldvittnet/"
+  # Cover is the Bonniers Swedish hardcover (ISBN 9789100126438,
+  # https://openlibrary.org/books/OL25269438M), same translation-split
+  # situation as Paganinikontraktet above.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/15173373-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL16584520W"
+
+- id: lars-kepler/sandmannen
+  title: "Sandmannen"
+  authorIds: [alexandra-coelho-ahndoril, alexander-ahndoril]
+  publishedAs: "Lars Kepler"
+  published: 2012
+  subseries: "Joona Linna"
+  canonTier: core
+  synopsis: >
+    A young man is found wandering a high railway bridge in Stockholm on a
+    freezing winter night, suffering from Legionnaires' disease and severe
+    hypothermia - and is discovered to have been legally declared dead seven
+    years earlier, one of serial killer Jurek Walter's presumed victims.
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/182783/sandmannen/"
+  # Cover is the Albert Bonniers förlag 2012 Swedish hardcover (ISBN
+  # 9789100130169, https://openlibrary.org/books/OL30718838M), one edition
+  # inside this work's own well-merged 19-edition Open Library record
+  # (unlike Paganinikontraktet/Eldvittnet above, this title's Swedish and
+  # translated editions share one work id).
+  images:
+    cover: "https://covers.openlibrary.org/b/id/15173370-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL16803046W"
+
+- id: lars-kepler/stalker
+  title: "Stalker"
+  authorIds: [alexandra-coelho-ahndoril, alexander-ahndoril]
+  publishedAs: "Lars Kepler"
+  published: 2014
+  subseries: "Joona Linna"
+  canonTier: core
+  synopsis: >
+    A video clip sent anonymously to national police shows someone filming a
+    woman through her own window; she is found murdered the next day, and a
+    second film arrives with no way to trace where either came from.
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/190412/stalker/"
+  # Cover is the Albert Bonniers Förlag 2015 Swedish edition (ISBN
+  # 9789100146320, https://openlibrary.org/books/OL31880626M), from this
+  # title's own well-merged 11-edition work record.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/10556628-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL17355119W"
+
+- id: lars-kepler/kaninjagaren
+  title: "Kaninjägaren"
+  authorIds: [alexandra-coelho-ahndoril, alexander-ahndoril]
+  publishedAs: "Lars Kepler"
+  published: 2016
+  subseries: "Joona Linna"
+  canonTier: core
+  synopsis: >
+    A masked figure watches a man through his own window and kills him
+    slowly; three more victims follow. The single thread joining them is that
+    each hears a child recite a rhyme about rabbits before the killer
+    arrives, and Joona Linna and Saga Bauer are left to untangle one of the
+    most complex cases of their careers - with the television chef Rex Müller
+    and his son Sammy caught in the middle of it.
+  note: >
+    The Swedish publisher's own copy opens instead on Joona Linna two years
+    into a sentence at Kumla prison. That situation is where the previous
+    novel, Stalker, leaves him - Bonniers' page for this book says outright
+    that Kaninjägaren "tar vid där den enorma succén Stalker slutade" - and
+    Stalker's own jacket, in Swedish and in English, says nothing about it,
+    so the premise above is taken from the case rather than from the
+    detective's standing. The English-language jacket copy for this title
+    (larskepler.com/books/the-rabbit-hunter) does the same, opening on the
+    masked figure at the window.
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/190415/kaninjagaren/"
+    - "https://larskepler.com/books/the-rabbit-hunter/"
+  # Cover is the Albert Bonniers Förlag 2016 Swedish edition (ISBN
+  # 9789100136772, https://openlibrary.org/books/OL45818580M). Open
+  # Library's own work title for this record ("Lars Kepler SCHWEDISCH -
+  # Kaninjägaren (Hasenjagd)") is a German import-listing label, not a
+  # mistranslation or a different book - "Hasenjagd" is simply the German
+  # for "Kaninjägaren"/"Rabbit Hunter", parenthesised by whoever catalogued
+  # the import; the ISBN and cover art are the genuine Swedish edition.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/15173371-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL33839232W"
+
+- id: lars-kepler/lazarus
+  title: "Lazarus"
+  authorIds: [alexandra-coelho-ahndoril, alexander-ahndoril]
+  publishedAs: "Lars Kepler"
+  published: 2018
+  subseries: "Joona Linna"
+  canonTier: core
+  synopsis: >
+    A dead man is found in an Oslo apartment, and what the police find in
+    his freezer reveals him as a previously unknown grave-robber and trophy
+    collector. Days later a German police superintendent contacts Joona
+    Linna for help, pulling him back into unfinished business.
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/197173/lazarus/"
+  # Cover is the Albert Bonniers Förlag 2018 Swedish edition (ISBN
+  # 9789100142698, https://openlibrary.org/books/OL60953586M).
+  images:
+    cover: "https://covers.openlibrary.org/b/id/15173379-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL44620443W"
+
+- id: lars-kepler/spegelmannen
+  title: "Spegelmannen"
+  authorIds: [alexandra-coelho-ahndoril, alexander-ahndoril]
+  publishedAs: "Lars Kepler"
+  published: 2020
+  subseries: "Joona Linna"
+  canonTier: core
+  synopsis: >
+    A young woman vanishes on her way home from school and is found murdered
+    five years later on a Stockholm playground. Security-camera footage
+    leads Joona Linna to a witness - a mentally ill man whose account may
+    hold more than anyone realises.
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/208564/spegelmannen/"
+  # No Swedish-edition cover: this title's own Swedish Open Library record
+  # (OL36746190W, ISBN 9789100191924) carries no cover image, and no other
+  # Swedish-language edition of Spegelmannen exists on Open Library.
+  # Cover is instead the Knopf Doubleday 2022 English translation, "Mirror
+  # Man" (ISBN 9780593315590, https://openlibrary.org/books/OL38067190M) -
+  # the same choice this file makes for Playground below (a translated
+  # edition's jacket, not the Swedish original, used because it is the
+  # only clean cover Open Library holds for this title).
+  images:
+    cover: "https://covers.openlibrary.org/b/id/14705437-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL25466922W"
+
+- id: lars-kepler/spindeln
+  title: "Spindeln"
+  authorIds: [alexandra-coelho-ahndoril, alexander-ahndoril]
+  publishedAs: "Lars Kepler"
+  published: 2022
+  subseries: "Joona Linna"
+  canonTier: core
+  synopsis: >
+    Three years after Saga Bauer received a postcard threatening her with a
+    gun loaded with nine white bullets, one of them marked for Joona Linna,
+    the countdown those bullets represent starts to catch up with them.
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/209875/spindeln/"
+  # No Swedish-edition cover found on Open Library (checked by title search
+  # in both spellings and via the author's works list; only a 2022
+  # Portuguese "A Aranha" cover turned up alongside this one). Cover is the
+  # Knopf Doubleday 2023 English translation, "Spider" (ISBN
+  # 9780593321041, https://openlibrary.org/books/OL42825657M) - same
+  # translated-edition tradeoff as Spegelmannen above.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/14382104-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL31175043W"
+
+- id: lars-kepler/somngangaren
+  title: "Sömngångaren"
+  authorIds: [alexandra-coelho-ahndoril, alexander-ahndoril]
+  publishedAs: "Lars Kepler"
+  published: 2024
+  subseries: "Joona Linna"
+  canonTier: core
+  synopsis: >
+    A midnight alarm reports a break-in at a winter-shuttered campsite
+    outside Stockholm. The nearest patrol car answers the call and finds one
+    caravan lit in the otherwise dark, deserted grounds.
+  note: >
+    Promoted by its Swedish publisher as one of 2024's major fiction
+    releases; the sources below are Albert Bonniers Förlag's own catalogue
+    page and larskepler.com, not an independent year-end bestseller list,
+    so this stops short of a verified "top-selling" ranking claim.
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/269387/somngangaren/"
+    - "https://www.larskepler.com/"
+  # No cover: despite the publisher's own strong-seller framing for 2024,
+  # Open Library has no record for it at all yet (checked by title search
+  # with and without diacritics, and by title-plus-author search) - a
+  # cataloguing lag rather than a licensing gap. No other freely licensed
+  # source hosts in-copyright cover art for it to hotlink.
+
+- id: lars-kepler/medusa
+  title: "Medusa"
+  authorIds: [alexandra-coelho-ahndoril, alexander-ahndoril]
+  publishedAs: "Lars Kepler"
+  published: 2026
+  forthcoming: 2026-09-21
+  subseries: "Joona Linna"
+  canonTier: core
+  synopsis: >
+    A doctor burns to death overnight inside Helix, a closed forensic-
+    psychiatric unit; a second death on the same ward leads Saga Bauer to
+    accept a covert assignment, placed as a patient among some of Sweden's
+    most dangerous offenders with Joona Linna as her only contact outside.
+  note: >
+    Announced with a firm release date and ISBN by Albert Bonniers Förlag,
+    the books' own Swedish publisher, which states directly that this is the
+    eleventh Joona Linna novel.
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/269389/medusa/"
+  # No cover: unpublished (forthcoming 2026-09-21), so no edition exists
+  # yet for any catalogue to hold a jacket image for. Revisit after
+  # release.
+
+- id: lars-kepler/playground
+  title: "Playground"
+  authorIds: [alexandra-coelho-ahndoril, alexander-ahndoril]
+  publishedAs: "Lars Kepler"
+  published: 2015
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    Lieutenant Jasmin Pascal-Anderson is shot during a deployment in Kosovo
+    and clinically dead for forty seconds. Back among the living, she cannot
+    stop describing a violent port city she saw in death - one she becomes
+    convinced is real, and where her son is now in danger.
+  note: >
+    A standalone thriller, no shared characters or setting with the Joona
+    Linna series found in any source checked; the original Swedish title is
+    itself the English word "Playground".
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/194815/playground/"
+    - "https://sv.wikipedia.org/wiki/Lars_Kepler"
+  # No Swedish-edition cover on Open Library (its Swedish ISBN has no
+  # record there). Cover is the Cargo 2015 Dutch translation - itself
+  # titled plainly "Playground" with no added subtitle, unlike the 2016
+  # German translation's "Playground - Leben oder Sterben" (a different,
+  # separate Open Library work, OL20236225W, rejected for carrying a
+  # subtitle this work's own title field does not) - ISBN 9789023495338,
+  # https://openlibrary.org/books/OL28120759M.
+  images:
+    cover: "https://covers.openlibrary.org/b/id/9863051-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL20778007W"
+
+- id: lars-kepler/sjomannen
+  title: "Sjömannen: Sex spänningsberättelser"
+  authorIds: [alexandra-coelho-ahndoril, alexander-ahndoril]
+  publishedAs: "Lars Kepler"
+  published: 2025
+  format: short-story-collection
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    Six suspense stories, kept locked away in a drawer for years by the
+    authors' own account, gathered here for the first time - among them a
+    father forced into a contract killing to save his son and a young
+    journalist who falls for a suspected serial killer.
+  note: >
+    One of the six stories tells the backstory of Jurek Walter, the Joona
+    Linna series' recurring serial killer, from childhood catastrophe to
+    infamy. Bonniers' own catalogue copy describes the collection as a whole
+    as drawn "from Lars Kepler's unique universe," without saying the other
+    five involve any series character or event - so the correct claim is
+    that Jurek's story is the only one confirmed tied to the main series,
+    not that the rest are confirmed unconnected to it.
+  sources:
+    - "https://www.albertbonniersforlag.se/bocker/296504/sjomannen/"
+    - "https://sv.wikipedia.org/wiki/Lars_Kepler"
+    - "http://libris.kb.se/bib/m68d3bn8kdv86br2/data.jsonld"
+  # No cover: no Open Library record exists yet for this 2025 title under
+  # any spelling of its title checked (with and without the subtitle, with
+  # and without diacritics). A cataloguing lag like Sömngångaren's above,
+  # not a licensing gap.

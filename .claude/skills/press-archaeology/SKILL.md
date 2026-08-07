@@ -300,6 +300,21 @@ right file: `content/authors/<id>.yaml` (`lifeEvents`) for the author's own life
 and nothing into `content/events/global.yaml` (that file is the `world-events`
 skill's, and its bar is higher).
 
+**Leave `organisation`, `illustration_type` and `images_required` unset.**
+Those three fields are `art-rotation`'s exclusive footprint (`.claude/commands/
+author.md`'s file-footprint table), and the pipeline's own safety property
+depends on an unrotated entry looking unrotated - `LAYOUT.md` defaults an unset
+`organisation` to a flat `beside`, which is precisely the visible signal that
+tells a later pass "this has not been graded yet." A plausible-looking value
+filled in here defeats that signal: it ships something that *reads* as rotated
+without ever having been checked against the wing's finished art law (which
+does not exist yet when you run) or the wing's full timeline (which is still
+being written). Confirmed live on a real wing: every one of ten events this
+stage created shipped with all three fields pre-filled, and `art-rotation`
+only actually touched two of them - the other eight were never truly graded,
+they just looked like they had been. If a fact's likely pacing is worth
+flagging, say so in the findings report's prose, not in the content fields.
+
 **2. The findings report** - the deliverable doctrine (CURATION §7) applied to
 press work: each fact added, with its source and why it passes the aura
 standard; each correction, with the wrong version, the right version and the

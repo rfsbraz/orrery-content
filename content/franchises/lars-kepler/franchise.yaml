@@ -1,0 +1,141 @@
+# A wing spans an author's complete published work; here the "author" is a
+# shared pen name rather than a single person. Alexandra Coelho Ahndoril and
+# Alexander Ahndoril write every book under Lars Kepler jointly, both from
+# the first page, and have done so since their 2009 debut - a different
+# shape from this catalogue's other multi-author wings, where one author is
+# joined by a second partway through (see the TITLE RULING comment below and
+# works.yaml's header for how the bibliography itself is scoped). Ruling on
+# the identity question: two global author entities, jointly credited,
+# rather than a single "Lars Kepler" entity -
+# content/authors/alexandra-coelho-ahndoril.yaml and
+# content/authors/alexander-ahndoril.yaml - because a pen name has a
+# publishing history, not a life to hang lifeEvents on. Each author's solo
+# bibliography under their own name, and their second joint pen name since
+# 2023, Alex Ahndoril (a puzzle-mystery series about private investigator
+# Julia Stark, unrelated to Joona Linna), sits outside this wing - the same
+# shape this catalogue already uses for Andrew Child's solo Andrew Grant
+# novels relative to lee-child.
+id: lars-kepler
+name: Lars Kepler
+kind: author
+description: >
+  The complete published body of work under the joint pen name Lars Kepler:
+  eleven novels of the Joona Linna series, from the 2009 debut
+  [[work:lars-kepler/hypnotisoren|Hypnotisören]] to the forthcoming
+  [[work:lars-kepler/medusa|Medusa]] (2026), following National Operations
+  Department detective Joona Linna and Swedish Security Service officer Saga
+  Bauer through an otherwise-ordinary contemporary Stockholm. Outside the
+  series sit a standalone 2015 novel, [[work:lars-kepler/playground|Playground]],
+  and a 2025 collection of short fiction,
+  [[work:lars-kepler/sjomannen|Sjömannen]]. Unlike this catalogue's other
+  multi-author wings, Lars Kepler was never a single author later joined by
+  a co-author: Alexandra Coelho Ahndoril and Alexander Ahndoril have written
+  every book under the name jointly, from its first page in 2009 on.
+authorIds: [alexandra-coelho-ahndoril, alexander-ahndoril]
+themePreset: hypnagogic-noir
+
+# TITLE RULING FOR THIS WING (applied throughout works.yaml, not re-derived
+# per entry): `title` is the Swedish original; `published` is the Swedish
+# first-publication year, sourced to Albert Bonniers Förlag's own catalogue
+# (the books' Swedish publisher) rather than to any translated edition's
+# release date. English and other translated titles are edition data, not
+# recorded here - see docs/SCHEMA.md's editions.yaml section.
+
+globalEvents:
+  include: []
+  exclude:
+    - sept-11-2001               # lived through it; no book answers it
+    - financial-crisis-2008      # lived through it; no book answers it
+    - covid-19-pandemic-2020     # lived through it; no book answers it
+    - carnation-revolution-1974  # Alexandra's heritage; no book answers it
+    - chain-bookshop-1982        # industry event, not page content
+    - online-bookselling-1995    # industry event, not page content
+    - ebook-and-self-publishing-2007  # industry event, not page content
+    - prestige-fantasy-adaptation-2011  # different genre entirely
+    - booktok-2020               # marketing/social discovery, not page content
+    - portugal-bailout-2011      # Alexandra's heritage country; no book answers it
+
+# STARTHERE. Three paths: one book to try the series without commitment, the
+# eleven-novel Joona Linna run for a reader who wants the case-file thread
+# alone (orders.yaml's lars-kepler/joona-linna-only), and everything. No path
+# claims the authors point new readers at Hypnotisören specifically - their
+# own FAQ (larskepler.com/keplers-universe/) says every book stands alone -
+# so the first path is named for what it verifiably is: the actual
+# beginning, not a claimed recommendation. No source checked (English or
+# Swedish - larskepler.com, orderofbooks.com, CrimeReads, Swedish and
+# English Wikipedia) argues for a different entry point, and nothing about
+# Hypnotisören matches this catalogue's usual reasons to steer a newcomer
+# elsewhere - it is not an unfinished cycle, not an atypical outlier next to
+# the rest of the shelf, and not a rough first outing later books outgrew:
+# it is the pseudonym's debut and, per its own publisher, one of the
+# best-selling Swedish crime novels ever written.
+startHere:
+  paths:
+    # Source: https://larskepler.com/keplers-universe/ - "Yes, every book
+    # can be read as a stand-alone. There is always a new case for Joona
+    # Linna to solve, a mystery that is given its explanation at the end.
+    # But if you chose to read the books in order you will also be able to
+    # follow the full story of Joona Linna and Saga Bauer." Nothing found
+    # recommends a different specific book as the entry point; this path
+    # claims no more than what the authors themselves state.
+    - id: where-it-begins
+      title: Where it begins
+      description: >
+        A hypnotist is asked to help police reach a murder witness who is
+        drifting in and out of consciousness - Joona Linna's first case,
+        and the book that created the Lars Kepler name. The authors say
+        every novel in the series stands on its own, so this is simply the
+        natural place to try one.
+      workIds:
+        - lars-kepler/hypnotisoren
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        If you go on afterwards, starting here also means meeting Joona
+        Linna and Saga Bauer at the actual beginning of their continuing
+        story - a bonus the authors say comes from reading in order, not a
+        requirement of reading this one book.
+
+    - id: joona-linna-front-to-back
+      title: The Joona Linna series, front to back
+      description: >
+        All eleven cases, from [[work:lars-kepler/hypnotisoren|Hypnotisören]]
+        to the forthcoming [[work:lars-kepler/medusa|Medusa]], with nothing
+        from outside the series breaking up the run.
+      workIds: null
+      orderId: lars-kepler/joona-linna-only
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+      note: >
+        Eleven books is a real span before you know whether the voice is
+        for you - the trade this path makes for a clean run through the
+        case-file thread alone. It leaves out Playground and Sjömannen
+        entirely, not as lesser work, just a different shelf.
+
+    - id: everything-in-order
+      title: Everything, in order
+      description: >
+        All thirteen works - the eleven Joona Linna novels plus the
+        standalone [[work:lars-kepler/playground|Playground]] and the story
+        collection [[work:lars-kepler/sjomannen|Sjömannen]] - in publication
+        order.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+      note: >
+        Includes the two works published outside the Joona Linna series
+        proper, sitting where they were actually released rather than
+        grouped apart from it.
+
+sources:
+  - "https://en.wikipedia.org/wiki/Lars_Kepler"
+  - "https://sv.wikipedia.org/wiki/Lars_Kepler"
+  - "https://en.wikipedia.org/wiki/Alexandra_Coelho_Ahndoril"
+  - "https://en.wikipedia.org/wiki/Alexander_Ahndoril"
+  - "https://www.larskepler.com/"
+  - "https://www.albertbonniersforlag.se/forfattare/lars-kepler/"
