@@ -1410,6 +1410,31 @@ def main():
         r"|\bflagged rather than\b|\bleft (?:to|for) the\b",
         re.IGNORECASE,
     )
+    # A translation overlay narrates in its own language, not English - a pt-PT
+    # comment reading "sem acesso a pesquisa na web nesta sessão" ("no web
+    # search access this session") is the same leak as its English equivalent,
+    # and PROCESS_COMMENT above cannot see it. Confirmed live: this exact
+    # phrase sat in content/i18n/pt-PT/franchises/james-patterson/events.yaml
+    # and validate ran green on it (orrery-content#1048). One arm per overlay
+    # locale that exists; add the next one here when a second locale ships
+    # rather than inventing a generic multi-language matcher nobody can read.
+    PROCESS_COMMENT_PT = re.compile(
+        r"\bcurador(?:a)?\b|\bauditor(?:a)?\b|agente de (?:pesquisa|curadoria)"
+        r"|est[aá]gio de curadoria|\beste (?:est[aá]gio|agente)\b"
+        r"|\bevent-resonance\b|\breading-orders\b|\bspoiler-audit\b|\bvisual-metadata\b"
+        r"|\bwing-audit\b|\bwhats-new\b|\bquest(?:[oõ]es?) em aberto\b"
+        r"|\bpipeline\b|\bhandoff\b|\b(?:primeira|segunda|outra|pr[oó]pria) passagem\b"
+        r"|\besta (?:passagem|execu[cç][aã]o|sess[aã]o)\b|\bnunca (?:correu|executou)\b"
+        r"|\bainda n[aã]o (?:finalizad[oa]|completo)\b"
+        r"|\bdesde ent[aã]o (?:foi|ficou)\b"
+        r"|\bfoi (?:inicialmente|originalmente) (?:constru[ií]d[oa]|escrit[oa]|redigid[oa])\b"
+        r"|\bainda (?:em aberto|precisa|permanece)\b|\bpara uma (?:futura|posterior) passagem\b"
+        r"|or[cç]amento de pesquisa|sem acesso a pesquisa|\best[aá]gio \d\b|\.claude|skills/"
+        r"|(?-i:\bTODO\b)|\b(?:executar|correr) novamente\b"
+        r"|\bem vez de (?:branquead[oa]|adivinhad[oa]|inventad[oa]|forjad[oa])\b"
+        r"|\bassinalad[oa] em vez de\b|\bdeixad[oa] (?:para|ao) cargo d[oa]\b",
+        re.IGNORECASE,
+    )
     # Comments are not the only place this leaks: `note:` is curator-only prose
     # and collects the same "a curator should decide" addressing. Reader-facing
     # prose is NOT scanned - a Cosmere synopsis legitimately describes librarians
@@ -1417,6 +1442,7 @@ def main():
     # tell that from coordination would train everyone to ignore it.
     in_note = False
     for path in glob.glob(os.path.join(ROOT, "content", "**", "*.yaml"), recursive=True):
+        is_pt = os.sep.join(["content", "i18n", "pt-PT"]) in path
         try:
             with open(path, encoding="utf-8") as f:
                 for n, line in enumerate(f, 1):
@@ -1426,6 +1452,8 @@ def main():
                     if not stripped.startswith("#") and not in_note:
                         continue
                     m = PROCESS_COMMENT.search(stripped)
+                    if not m and is_pt:
+                        m = PROCESS_COMMENT_PT.search(stripped)
                     if m:
                         warn(
                             rel(path),
