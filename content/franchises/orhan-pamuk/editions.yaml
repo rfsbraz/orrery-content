@@ -1,0 +1,853 @@
+# Concrete published editions - the buyable objects behind works.yaml's 24
+# abstract works. COVERAGE: 24/24 works carry a Turkish-original edition
+# (full coverage); 18/24 also carry at least one English edition; 1/24 (My
+# Name Is Red) carries a verified pt-PT edition. 55 editions total.
+#
+# SOURCING. Three tiers, cross-checked against each other wherever more than
+# one existed: (1) dr.com.tr (D&R), a major Turkish retailer whose per-product
+# pages expose a `gtin13` field plus "İlk Baskı Yılı" (first-printed-year for
+# that ISBN)/page-count/format spec table - reachable where the publisher's
+# own yapikrediyayinlari.com.tr (Cloudflare-gated) and the usual Turkish
+# retailers (kitapyurdu.com, wook.pt, bertrand.pt, fnac.pt) were not; (2)
+# Turkish Wikipedia's own per-book infobox, which independently corroborated
+# the D&R ISBN outright for four titles (Cevdet Bey ve Oğulları, Beyaz Kale,
+# Kafamda Bir Tuhaflık, Kırmızı Saçlı Kadın) and named the superseded original
+# publisher/ISBN for seven more (Sessiz Ev, Kara Kitap, Yeni Hayat, Benim Adım
+# Kırmızı, Kar, Masumiyet Müzesi, Şeylerin Masumiyeti); (3) OpenLibrary's per-ISBN
+# records (Amazon- and MARC-sourced), which corroborated most of the
+# remaining D&R ISBNs and supplied every English-language ISBN via
+# openlibrary.org/search.json, cross-checked in turn against
+# orhanpamuk.net, Knopf/Penguin Random House's own product pages, and
+# Turkish Wikipedia as noted per entry. Every isbn13 below was independently
+# recomputed for its EAN-13 check digit (script, not eyeballed) and every
+# `tr` ISBN begins 978-975 (Turkey's registrant range for these publishers);
+# no ISBN is duplicated across two entries.
+#
+# THE BACKLIST-CONSOLIDATION PATTERN. Pamuk's Turkish backlist was originally
+# split across several publishers - Can Yayınları (Sessiz Ev, the first Kara
+# Kitap), İletişim Yayınları (Kar, Yeni Hayat, Benim Adım Kırmızı, Masumiyet
+# Müzesi, Şeylerin Masumiyeti, Babamın Bavulu, Saf ve Düşünceli Romancı,
+# Manzaradan Parçalar) - now consolidated under Yapı Kredi Yayınları (YKY),
+# which holds new ISBNs for its current print runs distinct
+# from the original first-edition ISBNs Turkish Wikipedia's infoboxes still
+# cite. Every Turkish edition below is the current YKY ISBN (the one a reader
+# can actually buy today); the superseded original ISBN is named in the note
+# wherever a second source supplied it, purely as bibliographic history.
+#
+# TWO EXPANDED-REISSUE PAIRS, recorded as distinct editions because their
+# titles and page counts genuinely differ from the plain work even within
+# Turkish: İstanbul: Hatıralar ve Şehir / Resimli İstanbul (the photograph-
+# enriched reissue, with its English counterpart "Illustrated Istanbul"), and
+# Şeylerin Masumiyeti / Şeylerin Masumiyeti - 6 Yeni Vitrin İle (the current
+# in-print reissue adding six new museum display cases; the original 2012
+# İletişim first edition is out of print and not recorded).
+#
+# THE ONE REVERSED-LANGUAGE CASE: The Naive and the Sentimental Novelist is
+# the sole work in this bibliography whose `title` in works.yaml is already
+# English (Harvard University Press published it before any Turkish
+# edition). An edition carries a `title` only where the published title
+# differs from the work's own; repeating an identical one would manufacture
+# a translation event that never happened. So it is the TURKISH edition
+# below that carries a `title` ("Saf ve Düşünceli Romancı"), not the
+# English one.
+#
+# PORTUGUESE: only one genuine pt-PT edition was found anywhere in this
+# bibliography - My Name Is Red / O Meu Nome É Vermelho (Editorial Presença,
+# 2007). Snow and Istanbul both turned up only pt-BR editions (Companhia das
+# Letras); per this catalogue's region-strict rule a pt-BR ISBN is never
+# recorded as pt-PT, so those two are simply absent rather than mistagged.
+#
+# NO ENGLISH EDITION FOUND for six works, each a market fact rather than a
+# research gap: Kara Kitap'ın Sırları and Manzaradan Parçalar (absent from
+# every English-language source checked, per works.yaml's own notes),
+# Gizli Yüz (the screenplay was never published in English), Kelimeler ve
+# Resimler (June 2026 release, too recent for a translation to exist yet),
+# Babamın Bavulu (the Nobel lecture's English translation appeared in The New
+# Yorker and the Nobel Foundation's archive, neither of them a book with an
+# ISBN), and Balkon (even its Turkish printing carries Steidl's own
+# 978-3 registration; no separate English-language object exists).
+# Manzaradan Parçalar's Turkish edition (İletişim Yayınları, 2010) is also
+# the one Turkish edition in this file NOT confirmed as currently in print -
+# it does not appear on D&R's live catalogue, unlike every Yapı Kredi-era
+# title here - but it is recorded regardless as the sole edition found.
+#
+# THE FORTHCOMING EDITION: Cevdet Bey and His Sons (Knopf, translated by
+# Robert Finn, announced for 2027-03-30) is recorded with its real,
+# check-digit-valid pre-order ISBN sourced directly from Penguin Random
+# House's own product page, following this catalogue's standing convention
+# for an announced-but-unpublished book (see e.g. john-gwynne/editions.yaml
+# and lars-kepler/editions.yaml) - the schema's `forthcoming` field lives on
+# the work, not the edition, so the announced status is carried in this
+# entry's `note` instead.
+
+- id: orhan-pamuk/cevdet-bey-ve-ogullari/yky-2013-tr
+  workId: orhan-pamuk/cevdet-bey-ve-ogullari
+  isbn13: "9789750826313"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2013
+  note: >
+    Current Yapı Kredi Yayınları backlist paperback (608pp per Turkish Wikipedia's
+    own infobox, which cites this exact ISBN). Originally published 1982; like
+    most of the Turkish backlist below, the novel changed publisher and ISBN when
+    Yapı Kredi Yayınları consolidated Pamuk's catalogue (see file header).
+  sources:
+    - "https://www.dr.com.tr/kitap/cevdet-bey-ve-ogullari/orhan-pamuk/edebiyat/roman/turk-romani/urunno=0000000562853"
+    - "https://tr.wikipedia.org/wiki/Cevdet_Bey_ve_O%C4%9Fullar%C4%B1"
+
+- id: orhan-pamuk/cevdet-bey-ve-ogullari/knopf-2027-en
+  workId: orhan-pamuk/cevdet-bey-ve-ogullari
+  isbn13: "9780525656913"
+  language: en
+  title: "Cevdet Bey and His Sons"
+  translator: "Robert Finn"
+  format: hardcover
+  publisher: Knopf
+  year: 2027
+  note: >
+    Forthcoming (2027-03-30, per works.yaml's own `note`; this schema has no
+    `forthcoming` field on an edition, only on a work). Knopf's own product page
+    gives ISBN, format (hardcover, 608pp) and translator directly, matching
+    works.yaml's citation exactly - a real, check-digit-valid pre-order
+    registration for an announced object, not a shipped book yet.
+  sources: ["https://www.penguinrandomhouse.com/books/609188/cevdet-bey-and-his-sons-by-orhan-pamuk/"]
+
+- id: orhan-pamuk/sessiz-ev/yky-2013-tr
+  workId: orhan-pamuk/sessiz-ev
+  isbn13: "9789750826702"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2013
+  note: >
+    Turkish Wikipedia's infobox cites the original 1. Basım publisher (Can, ISBN
+    975-510-215-9, out of print); this is the current Yapı Kredi Yayınları
+    backlist ISBN, independently confirmed via OpenLibrary's own record
+    (Amazon-sourced, publish_date Jan 2013).
+  sources:
+    - "https://www.dr.com.tr/kitap/sessiz-ev/orhan-pamuk/edebiyat/roman/turk-romani/urunno=0000000576653"
+    - "https://tr.wikipedia.org/wiki/Sessiz_Ev"
+    - "https://openlibrary.org/isbn/9789750826702.json"
+
+- id: orhan-pamuk/sessiz-ev/knopf-2012-en
+  workId: orhan-pamuk/sessiz-ev
+  isbn13: "9780307700285"
+  language: en
+  title: "Silent House"
+  translator: "Robert Finn"
+  format: hardcover
+  publisher: Alfred A. Knopf
+  year: 2012
+  sources: ["https://openlibrary.org/isbn/9780307700285.json"]
+
+- id: orhan-pamuk/sessiz-ev/faber-2012-en
+  workId: orhan-pamuk/sessiz-ev
+  isbn13: "9780571275922"
+  language: en
+  title: "Silent House"
+  translator: "Robert Finn"
+  format: paperback
+  publisher: Faber & Faber
+  year: 2012
+  sources: ["https://openlibrary.org/isbn/9780571275922.json"]
+
+- id: orhan-pamuk/beyaz-kale/yky-2013-tr
+  workId: orhan-pamuk/beyaz-kale
+  isbn13: "9789750826306"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2013
+  note: >
+    Turkish Wikipedia's own infobox cites this exact ISBN for the current Yapı
+    Kredi Yayınları edition.
+  sources:
+    - "https://www.dr.com.tr/kitap/beyaz-kale/orhan-pamuk/edebiyat/roman/turk-romani/urunno=0000000550638"
+    - "https://tr.wikipedia.org/wiki/Beyaz_Kale"
+
+- id: orhan-pamuk/beyaz-kale/faber-2015-en
+  workId: orhan-pamuk/beyaz-kale
+  isbn13: "9780571309696"
+  language: en
+  title: "The White Castle"
+  translator: "Victoria Holbrook"
+  format: paperback
+  publisher: Faber & Faber
+  year: 2015
+  note: >
+    The current Faber & Faber paperback. The 1990 Carcanet Press first English
+    edition (ISBN 9780856358821, also translated by Holbrook, the one that won the
+    1990 Independent Award for Foreign Fiction per works.yaml) is long out of
+    print and not recorded here since Faber's edition is readily in print; see
+    works.yaml's own note for that publishing history.
+  sources: ["https://openlibrary.org/isbn/9780571309696.json"]
+
+- id: orhan-pamuk/kara-kitap/yky-2013-tr
+  workId: orhan-pamuk/kara-kitap
+  isbn13: "9789750826139"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2013
+  note: >
+    Turkish Wikipedia's infobox instead cites the original 1990 Can Yayınları ISBN
+    (975-470-453-8, out of print, since reissued by İletişim before moving to Yapı
+    Kredi); this is the current Yapı Kredi backlist ISBN, cross-checked against
+    OpenLibrary's own record.
+  sources:
+    - "https://www.dr.com.tr/kitap/kara-kitap/orhan-pamuk/edebiyat/roman/turk-romani/urunno=0000000550644"
+    - "https://tr.wikipedia.org/wiki/Kara_Kitap"
+    - "https://openlibrary.org/isbn/9789750826139.json"
+
+- id: orhan-pamuk/kara-kitap/fsg-2014-en
+  workId: orhan-pamuk/kara-kitap
+  isbn13: "9781466887633"
+  language: en
+  title: "The Black Book"
+  translator: "Güneli Gün"
+  format: ebook
+  publisher: Farrar, Straus and Giroux
+  year: 2014
+  note: >
+    Current ebook reprint of Gün's original 1994 FSG translation (works.yaml's own
+    note: the first of the novel's two complete English translations).
+  sources: ["https://openlibrary.org/isbn/9781466887633.json"]
+
+- id: orhan-pamuk/kara-kitap/faber-2015-en
+  workId: orhan-pamuk/kara-kitap
+  isbn13: "9780571326099"
+  language: en
+  title: "The Black Book"
+  translator: "Maureen Freely"
+  format: paperback
+  publisher: Faber & Faber
+  year: 2015
+  note: >
+    Freely's 2006 retranslation, the one Pamuk's current English-language
+    publishers keep in print (works.yaml's own note); this is the current Faber &
+    Faber paperback printing.
+  sources: ["https://openlibrary.org/isbn/9780571326099.json"]
+
+- id: orhan-pamuk/yeni-hayat/yky-2016-tr
+  workId: orhan-pamuk/yeni-hayat
+  isbn13: "9789750826481"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2016
+  note: >
+    Turkish Wikipedia's infobox cites the original 1994 İletişim Yayınları ISBN
+    (975-470-445-7, out of print); this is the current Yapı Kredi backlist ISBN,
+    confirmed via OpenLibrary.
+  sources:
+    - "https://www.dr.com.tr/kitap/yeni-hayat/orhan-pamuk/edebiyat/roman/turk-romani/urunno=0000000565833"
+    - "https://tr.wikipedia.org/wiki/Yeni_Hayat_(roman)"
+    - "https://openlibrary.org/isbn/9789750826481.json"
+
+- id: orhan-pamuk/yeni-hayat/faber-2011-en
+  workId: orhan-pamuk/yeni-hayat
+  isbn13: "9780571268375"
+  language: en
+  title: "The New Life"
+  translator: "Güneli Gün"
+  format: paperback
+  publisher: Faber & Faber
+  year: 2011
+  note: >
+    One of the three Faber & Faber paperbacks reissued together in 2011 on
+    consecutive ISBNs (9780571268375/82/99, this one, My Name Is Red and Snow);
+    OpenLibrary's record for this ISBN gives the year directly.
+  sources: ["https://openlibrary.org/isbn/9780571268375.json"]
+
+- id: orhan-pamuk/yeni-hayat/fsg-2014-en
+  workId: orhan-pamuk/yeni-hayat
+  isbn13: "9781466887640"
+  language: en
+  title: "The New Life"
+  translator: "Güneli Gün"
+  format: ebook
+  publisher: Farrar, Straus and Giroux
+  year: 2014
+  sources: ["https://openlibrary.org/isbn/9781466887640.json"]
+
+- id: orhan-pamuk/benim-adim-kirmizi/yky-2013-tr
+  workId: orhan-pamuk/benim-adim-kirmizi
+  isbn13: "9789750825927"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2013
+  note: >
+    Turkish Wikipedia's infobox cites the original 1998 İletişim Yayınları ISBN
+    (975-470-711-1, out of print); this is the current Yapı Kredi backlist ISBN,
+    confirmed via OpenLibrary.
+  sources:
+    - "https://www.dr.com.tr/kitap/benim-adim-kirmizi/orhan-pamuk/edebiyat/roman/turk-romani/urunno=0000000451871"
+    - "https://tr.wikipedia.org/wiki/Benim_Ad%C4%B1m_K%C4%B1rm%C4%B1z%C4%B1"
+    - "https://openlibrary.org/isbn/9789750825927.json"
+
+- id: orhan-pamuk/benim-adim-kirmizi/knopf-2001-en
+  workId: orhan-pamuk/benim-adim-kirmizi
+  isbn13: "9780375406959"
+  language: en
+  title: "My Name Is Red"
+  translator: "Erdağ M. Göknar"
+  format: hardcover
+  publisher: Alfred A. Knopf
+  year: 2001
+  note: >
+    OpenLibrary's own catalogue record for this ISBN (the First American Edition)
+    explicitly credits the contributor as translator, confirming works.yaml's
+    claim independently.
+  sources: ["https://openlibrary.org/isbn/9780375406959.json"]
+
+- id: orhan-pamuk/benim-adim-kirmizi/faber-2011-en
+  workId: orhan-pamuk/benim-adim-kirmizi
+  isbn13: "9780571268382"
+  language: en
+  title: "My Name Is Red"
+  translator: "Erdağ M. Göknar"
+  format: paperback
+  publisher: Faber & Faber
+  year: 2011
+  sources: ["https://openlibrary.org/isbn/9780571268382.json"]
+
+- id: orhan-pamuk/benim-adim-kirmizi/presenca-2007-pt
+  workId: orhan-pamuk/benim-adim-kirmizi
+  isbn13: "9789722338349"
+  language: pt-PT
+  title: "O Meu Nome É Vermelho"
+  format: paperback
+  publisher: Editorial Presença
+  year: 2007
+  note: >
+    The only Pamuk title located with a genuine pt-PT edition; Snow and Istanbul
+    both turned up only pt-BR (Companhia das Letras) editions in every source
+    checked, and are not recorded here (never substitute a pt-BR ISBN for pt-PT).
+  sources: ["https://openlibrary.org/books/OL25884713M"]
+
+- id: orhan-pamuk/kar/yky-2013-tr
+  workId: orhan-pamuk/kar
+  isbn13: "9789750825910"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2013
+  note: >
+    Turkish Wikipedia's infobox cites the original 2002 İletişim Yayınları first
+    edition (ISBN-10 9754709610, OCLC 52091232, out of print); this is the current
+    Yapı Kredi backlist ISBN, confirmed via OpenLibrary.
+  sources:
+    - "https://www.dr.com.tr/kitap/kar/orhan-pamuk/edebiyat/roman/turk-romani/urunno=0000000451872"
+    - "https://tr.wikipedia.org/wiki/Kar_(roman)"
+    - "https://openlibrary.org/isbn/9789750825910.json"
+
+- id: orhan-pamuk/kar/faber-2011-en
+  workId: orhan-pamuk/kar
+  isbn13: "9780571268399"
+  language: en
+  title: "Snow"
+  translator: "Maureen Freely"
+  format: paperback
+  publisher: Faber & Faber
+  year: 2011
+  sources: ["https://openlibrary.org/isbn/9780571268399.json"]
+
+- id: orhan-pamuk/kar/vintage-2005-en
+  workId: orhan-pamuk/kar
+  isbn13: "9780375706868"
+  language: en
+  title: "Snow"
+  translator: "Maureen Freely"
+  format: paperback
+  publisher: Vintage International
+  year: 2005
+  sources: ["https://openlibrary.org/isbn/9780375706868.json"]
+
+- id: orhan-pamuk/masumiyet-muzesi/yky-2013-tr
+  workId: orhan-pamuk/masumiyet-muzesi
+  isbn13: "9789750826146"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2013
+  note: >
+    Original 2008 first edition was İletişim Yayınları (29 Aug 2008, ISBN
+    978-975-05-0609-3, per Turkish Wikipedia); this is the current Yapı Kredi
+    backlist ISBN, confirmed via OpenLibrary.
+  sources:
+    - "https://www.dr.com.tr/kitap/masumiyet-muzesi/orhan-pamuk/edebiyat/roman/turk-romani/urunno=0000000550626"
+    - "https://openlibrary.org/isbn/9789750826146.json"
+
+- id: orhan-pamuk/masumiyet-muzesi/faber-2010-en
+  workId: orhan-pamuk/masumiyet-muzesi
+  isbn13: "9780571237029"
+  language: en
+  title: "The Museum of Innocence"
+  translator: "Maureen Freely"
+  format: paperback
+  publisher: Faber & Faber
+  year: 2010
+  sources: ["https://openlibrary.org/isbn/9780571237029.json"]
+
+- id: orhan-pamuk/masumiyet-muzesi/vintage-2010-en
+  workId: orhan-pamuk/masumiyet-muzesi
+  isbn13: "9780307386243"
+  language: en
+  title: "The Museum of Innocence"
+  translator: "Maureen Freely"
+  format: paperback
+  publisher: Vintage International
+  year: 2010
+  sources: ["https://openlibrary.org/isbn/9780307386243.json"]
+
+- id: orhan-pamuk/kafamda-bir-tuhaflik/yky-2014-tr
+  workId: orhan-pamuk/kafamda-bir-tuhaflik
+  isbn13: "9789750830884"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2014
+  note: Turkish Wikipedia's own infobox cites this exact ISBN (490pp).
+  sources:
+    - "https://www.dr.com.tr/kitap/kafamda-bir-tuhaflik/orhan-pamuk/edebiyat/roman/turk-romani/urunno=0000000624702"
+    - "https://tr.wikipedia.org/wiki/Kafamda_Bir_Tuhafl%C4%B1k"
+
+- id: orhan-pamuk/kafamda-bir-tuhaflik/faber-2016-en
+  workId: orhan-pamuk/kafamda-bir-tuhaflik
+  isbn13: "9780571275991"
+  language: en
+  title: "A Strangeness in My Mind"
+  translator: "Ekin Oklap"
+  format: paperback
+  publisher: Faber & Faber
+  year: 2016
+  sources: ["https://openlibrary.org/isbn/9780571275991.json"]
+
+- id: orhan-pamuk/kafamda-bir-tuhaflik/vintage-2016-en
+  workId: orhan-pamuk/kafamda-bir-tuhaflik
+  isbn13: "9780307744845"
+  language: en
+  title: "A Strangeness in My Mind"
+  translator: "Ekin Oklap"
+  format: paperback
+  publisher: Vintage
+  year: 2016
+  sources: ["https://openlibrary.org/isbn/9780307744845.json"]
+
+- id: orhan-pamuk/kirmizi-sacli-kadin/yky-2016-tr
+  workId: orhan-pamuk/kirmizi-sacli-kadin
+  isbn13: "9789750835605"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2016
+  note: >
+    Turkish Wikipedia's own infobox cites this exact ISBN and page count (204pp),
+    matching D&R exactly.
+  sources:
+    - "https://www.dr.com.tr/kitap/kirmizi-sacli-kadin/edebiyat/roman/turkiye-roman/urunno=0000000679924"
+    - "https://tr.wikipedia.org/wiki/K%C4%B1rm%C4%B1z%C4%B1_Sa%C3%A7l%C4%B1_Kad%C4%B1n"
+
+- id: orhan-pamuk/kirmizi-sacli-kadin/faber-2018-en
+  workId: orhan-pamuk/kirmizi-sacli-kadin
+  isbn13: "9780571330317"
+  language: en
+  title: "The Red-Haired Woman"
+  translator: "Ekin Oklap"
+  format: paperback
+  publisher: Faber & Faber
+  year: 2018
+  sources: ["https://openlibrary.org/isbn/9780571330317.json"]
+
+- id: orhan-pamuk/kirmizi-sacli-kadin/knopf-2017-en
+  workId: orhan-pamuk/kirmizi-sacli-kadin
+  isbn13: "9780735272705"
+  language: en
+  title: "The Red-Haired Woman"
+  translator: "Ekin Oklap"
+  format: hardcover
+  publisher: Alfred A. Knopf
+  year: 2017
+  sources: ["https://openlibrary.org/isbn/9780735272705.json"]
+
+- id: orhan-pamuk/veba-geceleri/yky-2021-tr
+  workId: orhan-pamuk/veba-geceleri
+  isbn13: "9789750849282"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2021
+  note: >
+    OpenLibrary's own record (544pp) matches works.yaml's characterisation of this
+    as his second-longest novel.
+  sources:
+    - "https://www.dr.com.tr/kitap/veba-geceleri/orhan-pamuk/edebiyat/roman/turk-romani/urunno=0001911676001"
+    - "https://openlibrary.org/isbn/9789750849282.json"
+
+- id: orhan-pamuk/veba-geceleri/faber-2023-en
+  workId: orhan-pamuk/veba-geceleri
+  isbn13: "9780571352951"
+  language: en
+  title: "Nights of Plague"
+  translator: "Ekin Oklap"
+  format: paperback
+  publisher: Faber & Faber
+  year: 2023
+  sources: ["https://openlibrary.org/isbn/9780571352951.json"]
+
+- id: orhan-pamuk/veba-geceleri/knopf-2022-en
+  workId: orhan-pamuk/veba-geceleri
+  isbn13: "9780525656890"
+  language: en
+  title: "Nights of Plague"
+  translator: "Ekin Oklap"
+  format: hardcover
+  publisher: Knopf
+  year: 2022
+  sources: ["https://openlibrary.org/isbn/9780525656890.json"]
+
+- id: orhan-pamuk/istanbul-hatiralar-ve-sehir/yky-2003-tr
+  workId: orhan-pamuk/istanbul-hatiralar-ve-sehir
+  isbn13: "9789750807169"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2003
+  note: >
+    OpenLibrary's MARC-derived catalogue record dates this ISBN to the original
+    2003 first printing (1. baskı, 361pp); D&R's own current listing carries a
+    later print-run date for the same ISBN, so 2003 (the better-attested, original
+    figure, and the one that agrees with works.yaml's own `published`) is recorded
+    here rather than D&R's reprint year.
+  sources:
+    - "https://www.dr.com.tr/kitap/istanbul-hatiralar-ve-sehir/orhan-pamuk/edebiyat/turk-gunluk-ani/urunno=0000000451873"
+    - "https://openlibrary.org/isbn/9789750807169.json"
+
+- id: orhan-pamuk/istanbul-hatiralar-ve-sehir/resimli-yky-2015-tr
+  workId: orhan-pamuk/istanbul-hatiralar-ve-sehir
+  isbn13: "9789750834585"
+  language: tr
+  title: "Resimli İstanbul: Hatıralar ve Şehir"
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2015
+  note: >
+    A genuinely different object from the plain edition above: an enriched reissue
+    adding photographs (532pp vs 368pp), published in Turkish as 'Resimli
+    İstanbul' ('Illustrated Istanbul') - the direct counterpart of the English
+    'Illustrated Istanbul' edition below. Title recorded because it differs from
+    the plain edition's title even within Turkish.
+  sources:
+    - "https://www.dr.com.tr/kitap/resimli-istanbul-hatiralar-ve-sehir/prestij-kitaplari/fotograf-prestij/urunno=0000000669431"
+    - "https://openlibrary.org/isbn/9789750834585.json"
+
+- id: orhan-pamuk/istanbul-hatiralar-ve-sehir/faber-2011-en
+  workId: orhan-pamuk/istanbul-hatiralar-ve-sehir
+  isbn13: "9780571266197"
+  language: en
+  title: "Istanbul: Memories and the City"
+  translator: "Maureen Freely"
+  format: paperback
+  publisher: Faber & Faber
+  year: 2011
+  sources: ["https://openlibrary.org/isbn/9780571266197.json"]
+
+- id: orhan-pamuk/istanbul-hatiralar-ve-sehir/vintage-2006-en
+  workId: orhan-pamuk/istanbul-hatiralar-ve-sehir
+  isbn13: "9781400033881"
+  language: en
+  title: "Istanbul: Memories and the City"
+  translator: "Maureen Freely"
+  format: paperback
+  publisher: Vintage International
+  year: 2006
+  sources: ["https://openlibrary.org/isbn/9781400033881.json"]
+
+- id: orhan-pamuk/istanbul-hatiralar-ve-sehir/faber-2017-illustrated-en
+  workId: orhan-pamuk/istanbul-hatiralar-ve-sehir
+  isbn13: "9780571330348"
+  language: en
+  title: "Illustrated Istanbul"
+  translator: "Maureen Freely"
+  format: hardcover
+  publisher: Faber & Faber
+  year: 2017
+  note: >
+    The English counterpart of the Turkish 'Resimli İstanbul' enriched edition
+    above: 450 black-and-white photographs curated by Pamuk, per its own publisher
+    description.
+  sources: ["https://openlibrary.org/isbn/9780571330348.json"]
+
+- id: orhan-pamuk/oteki-renkler/yky-2013-tr
+  workId: orhan-pamuk/oteki-renkler
+  isbn13: "9789750825934"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2013
+  sources:
+    - "https://www.dr.com.tr/kitap/oteki-renkler/orhan-pamuk/edebiyat/deneme-yazin/urunno=0000000451874"
+    - "https://openlibrary.org/isbn/9789750825934.json"
+
+- id: orhan-pamuk/oteki-renkler/knopf-2007-en
+  workId: orhan-pamuk/oteki-renkler
+  isbn13: "9780307266750"
+  language: en
+  title: "Other Colors: Essays and a Story"
+  translator: "Maureen Freely"
+  format: hardcover
+  publisher: Alfred A. Knopf
+  year: 2007
+  note: >
+    Knopf's own catalogue record (via OpenLibrary) explicitly credits Freely as
+    translator, confirmed independently rather than trusted from works.yaml alone
+    - useful because OpenLibrary's own aggregated author-list data for this work
+    misattributes the translation to Nazim Dikbas (a real Pamuk translator, but
+    not of this book; likely a merged multi-language work record, not a citable
+    fact).
+  sources: ["https://openlibrary.org/isbn/9780307266750.json"]
+
+- id: orhan-pamuk/gizli-yuz/yky-2016-tr
+  workId: orhan-pamuk/gizli-yuz
+  isbn13: "9789750832048"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2016
+  note: >
+    No English-language publication of this screenplay was found in any source
+    checked; the 1991 film 'Gizli Yüz' ('Secret Face') itself was never released
+    in English-subtitled or English-dubbed distribution that would carry a
+    separate print object here.
+  sources:
+    - "https://www.dr.com.tr/kitap/gizli-yuz/orhan-pamuk/sanat-tasarim/senaryo/urunno=0000000710482"
+    - "https://openlibrary.org/isbn/9789750832048.json"
+
+- id: orhan-pamuk/babamin-bavulu/yky-2016-tr
+  workId: orhan-pamuk/babamin-bavulu
+  isbn13: "9789750837586"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2016
+  note: >
+    This 88-page standalone Turkish edition of the Nobel lecture followed the
+    English translation into print (works.yaml: lecture delivered and first
+    published in English translation, December 2006; standalone Turkish book,
+    İletişim Yayınları, 2007 - since moved to the current Yapı Kredi backlist ISBN
+    recorded here). No dedicated English book edition was found; the lecture's
+    English translation (by Maureen Freely) was published in The New Yorker as 'My
+    Father's Suitcase' and in the Nobel Foundation's own lecture archive, neither
+    of which is a book with an ISBN.
+  sources:
+    - "https://www.dr.com.tr/kitap/babamin-bavulu/orhan-pamuk/edebiyat/roman/turk-romani/urunno=0000000718942"
+    - "https://openlibrary.org/isbn/9789750837586.json"
+
+- id: orhan-pamuk/the-naive-and-the-sentimental-novelist/yky-2016-tr
+  workId: orhan-pamuk/the-naive-and-the-sentimental-novelist
+  isbn13: "9789750836800"
+  language: tr
+  title: "Saf ve Düşünceli Romancı"
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2016
+  note: >
+    A reversed case: this is the one work in the bibliography whose
+    original-language `title` (works.yaml) is already English, so the English
+    edition below carries no `title` of its own - the work title already is the
+    published title there - while this Turkish TRANSLATION is the one that needs
+    one. Originally İletişim Yayınları, 2011 (works.yaml); this is the current
+    Yapı Kredi backlist ISBN.
+  sources:
+    - "https://www.dr.com.tr/kitap/saf-ve-dusunceli-romanci/edebiyat/edebiyat-inceleme/urunno=0000000697138"
+    - "https://openlibrary.org/isbn/9789750836800.json"
+
+- id: orhan-pamuk/the-naive-and-the-sentimental-novelist/faber-2016-en
+  workId: orhan-pamuk/the-naive-and-the-sentimental-novelist
+  isbn13: "9780571326136"
+  language: en
+  format: paperback
+  publisher: Faber & Faber
+  year: 2016
+  note: >
+    No `title` recorded: the work's own original-language title (works.yaml) is
+    already this English title, since Harvard University Press published the
+    Norton Lectures in English first (2010, ISBN 9780674050761) ahead of any
+    Turkish edition.
+  sources: ["https://openlibrary.org/isbn/9780571326136.json"]
+
+- id: orhan-pamuk/seylerin-masumiyeti/yky-2025-tr
+  workId: orhan-pamuk/seylerin-masumiyeti
+  isbn13: "9789750865589"
+  language: tr
+  title: "Şeylerin Masumiyeti - 6 Yeni Vitrin İle"
+  format: hardcover
+  publisher: Yapı Kredi Yayınları
+  year: 2025
+  note: >
+    The current in-print edition is an expanded reissue adding six new display
+    cases from the real museum ('6 Yeni Vitrin İle'), 272pp, superseding the
+    original 2012 İletişim Yayıncılık first edition (264pp, ISBN 9789750510366,
+    per Turkish Wikipedia's infobox) which is not recorded here since it is out of
+    print. Title recorded because the reissue's title differs from the plain work
+    title even within Turkish.
+  sources: ["https://www.dr.com.tr/kitap/seylerin-masumiyeti-6-yeni-vitrin-ile/orhan-pamuk/sanat-tasarim/sanat-tarihi-ve-kurami/urunno=0002175483001"]
+
+- id: orhan-pamuk/seylerin-masumiyeti/abrams-2012-en
+  workId: orhan-pamuk/seylerin-masumiyeti
+  isbn13: "9781419704567"
+  language: en
+  title: "The Innocence of Objects"
+  format: hardcover
+  publisher: Abrams
+  year: 2012
+  note: >
+    No translator credit was found for the English edition; it may be
+    substantially Pamuk's own English-language text rather than a translation from
+    the 2012 Turkish original, but this was not established from the sources
+    checked.
+  sources: ["https://openlibrary.org/books/OL25252818M"]
+
+- id: orhan-pamuk/kara-kitabin-sirlari/yky-2013-tr
+  workId: orhan-pamuk/kara-kitabin-sirlari
+  isbn13: "9789750826504"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2013
+  note: >
+    ISBN and publisher per works.yaml's own sourcing (kitapi.net's catalogue
+    record, cross-checked against nadirkitap.com and 1000kitap.com); no
+    English-language edition was found in any source checked (works.yaml: absent
+    from both Wikipedia bibliographies, confirmed only via orhanpamuk.net's
+    Turkish-site listing and Yapı Kredi's own catalogue).
+  sources:
+    - "https://www.orhanpamuk.net/book.aspx?id=106&lng=eng"
+    - "https://kitapi.net/en/books/kara-kitabin-sirlari-05676b1cff"
+
+- id: orhan-pamuk/manzaradan-parcalar/iletisim-2010-tr
+  workId: orhan-pamuk/manzaradan-parcalar
+  isbn13: "9789750507984"
+  language: tr
+  format: paperback
+  publisher: İletişim Yayınları
+  year: 2010
+  note: >
+    The only edition found anywhere for this work, and it does not appear in D&R's
+    current catalogue (unlike every other Yapı Kredi-era title in this file), so
+    it may now be out of print; recorded regardless since it is the sole edition,
+    the same treatment this catalogue already gives a title with no other edition
+    (e.g. the 1987 Europa-America O Talismã elsewhere in this catalogue). No
+    English-language edition was located (works.yaml).
+  sources: ["https://tr.wikipedia.org/wiki/Manzaradan_Par%C3%A7alar"]
+
+- id: orhan-pamuk/hatiralarin-masumiyeti/yky-2016-tr
+  workId: orhan-pamuk/hatiralarin-masumiyeti
+  isbn13: "9789750836299"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2016
+  sources:
+    - "https://www.dr.com.tr/kitap/hatiralarin-masumiyeti/edebiyat/anlati/urunno=0000000686434"
+    - "https://openlibrary.org/isbn/9789750836299.json"
+
+- id: orhan-pamuk/hatiralarin-masumiyeti/faber-2019-en
+  workId: orhan-pamuk/hatiralarin-masumiyeti
+  isbn13: "9780571338665"
+  language: en
+  title: "The Innocence of Memories"
+  translator: "Ekin Oklap"
+  format: paperback
+  publisher: Faber & Faber
+  year: 2019
+  note: >
+    works.yaml cites an NYPL research-catalogue record (dated 2018) for this
+    English edition but without an ISBN; this ISBN is sourced instead from
+    OpenLibrary, cross-checked against a second, nearly-identical OpenLibrary
+    record (9780571338672, same publisher and year, likely a different binding) -
+    this one was preferred because it carries a corroborating page count (136pp)
+    the other record lacks.
+  sources: ["https://openlibrary.org/isbn/9780571338665.json"]
+
+- id: orhan-pamuk/balkon/steidl-2019-tr
+  workId: orhan-pamuk/balkon
+  isbn13: "9783958293991"
+  language: tr
+  format: hardcover
+  publisher: Steidl
+  year: 2019
+  note: >
+    Unlike Turuncu below, no separate Turkish-registrant (978-975) ISBN was found
+    for this title in any source checked: even its Turkish-language printing
+    carries a Steidl-registrant (978-3) ISBN, the international art-book publisher
+    handling worldwide production and registration directly rather than licensing
+    a domestic edition. Not on D&R's current catalogue and no dedicated
+    tr.wikipedia article exists for it, unlike every other title in this file.
+  sources: ["https://openlibrary.org/isbn/9783958293991.json"]
+
+- id: orhan-pamuk/turuncu/yky-2020-tr
+  workId: orhan-pamuk/turuncu
+  isbn13: "9789750847165"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2020
+  sources: ["https://openlibrary.org/isbn/9789750847165.json"]
+
+- id: orhan-pamuk/turuncu/steidl-2020-en
+  workId: orhan-pamuk/turuncu
+  isbn13: "9783958296534"
+  language: en
+  title: "Orange"
+  format: hardcover
+  publisher: Steidl
+  year: 2020
+  note: >
+    No translator credit found; Steidl's own description reads as Pamuk's own
+    introduction rather than a translated critical text, but this was not
+    independently confirmed.
+  sources: ["https://openlibrary.org/isbn/9783958296534.json"]
+
+- id: orhan-pamuk/uzak-daglar-ve-hatiralar/yky-2022-tr
+  workId: orhan-pamuk/uzak-daglar-ve-hatiralar
+  isbn13: "9789750854446"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2022
+  sources: ["https://openlibrary.org/isbn/9789750854446.json"]
+
+- id: orhan-pamuk/uzak-daglar-ve-hatiralar/knopf-2024-en
+  workId: orhan-pamuk/uzak-daglar-ve-hatiralar
+  isbn13: "9780593801246"
+  language: en
+  title: "Memories of Distant Mountains: Illustrated Notebooks, 2009-2022"
+  translator: "Ekin Oklap"
+  format: hardcover
+  publisher: Knopf
+  year: 2024
+  note: >
+    Fills a gap works.yaml itself flags ('the exact English publication year is
+    not established by the sources checked here'): this OpenLibrary record
+    establishes it as 2024, Knopf.
+  sources: ["https://openlibrary.org/isbn/9780593801246.json"]
+
+- id: orhan-pamuk/kelimeler-ve-resimler/yky-2026-tr
+  workId: orhan-pamuk/kelimeler-ve-resimler
+  isbn13: "9789750868153"
+  language: tr
+  format: paperback
+  publisher: Yapı Kredi Yayınları
+  year: 2026
+  note: >
+    ISBN matches works.yaml's own citation of Turkish Wikipedia's bibliography
+    table exactly (978-975-08-6815-3), now corroborated by a third source, D&R's
+    live product listing. No English edition exists yet for this June 2026
+    release.
+  sources:
+    - "https://www.dr.com.tr/kitap/kelimeler-ve-resimler-secme-hatiralar-yazilar-ve-bir-hikaye/orhan-pamuk/edebiyat/turk-gunluk-ani/urunno=0002227952001"
+    - "https://kitap.ykykultur.com.tr/basin-odasi/basin-bultenleri/orhan-pamuktan-yeni-kitap-kelimeler-ve-resimler"
+

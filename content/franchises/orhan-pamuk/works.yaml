@@ -1,0 +1,818 @@
+# Bibliography (Works) - the abstract books; editions/covers are separate.
+# IDs are STABLE and permanent (user data references them).
+#
+# TITLE SCRIPT AND ORTHOGRAPHY. Turkish is Latin-script, so `title` is the
+# original Turkish title unaltered, the same rule this catalogue already
+# applies to Saramago's Portuguese, Nesbo's Norwegian and Cervantes's
+# Spanish. Turkish has a real trap a naive case-fold or ASCII-normalization
+# step falls into: it distinguishes a dotted İ/i pair from a dotless I/ı
+# pair, so "İstanbul" (capital, dotted) and "Kırmızı" (dotless ı) are not
+# interchangeable with a plain ASCII "I"/"i" substitution the way a French
+# or Spanish accent might tolerate one. Every title below is transcribed
+# character-for-character from Turkish-language sources (Turkish Wikipedia's
+# own bibliography table, Yapı Kredi Yayınları / İletişim Yayınları catalogue
+# listings) rather than from an English secondary source's romanization.
+# Work ids are a separate, plain-ASCII, accents-and-dots-stripped slug of the
+# same title, per this catalogue's id convention - ids are never the display
+# title and carry no orthographic claim of their own.
+#
+# CROSS-CHECKED against English Wikipedia's "Orhan Pamuk" article and its
+# per-book articles (individually cited per entry below), Turkish
+# Wikipedia's "Orhan Pamuk" bibliography table (fuller and more current on
+# Turkish publication years, particularly for the post-2010 nonfiction),
+# orhanpamuk.net's own English-language book list, and, for the two titles
+# absent from both Wikipedias entirely (Kara Kitabın Sırları and the 2026
+# Kelimeler ve Resimler), Yapı Kredi Yayınları's own catalogue page and press
+# release plus independent secondhand-market listings (kitapi.net's
+# catalogue record, nadirkitap.com and 1000kitap.com) that corroborate one
+# another on publisher, year and ISBN.
+#
+# canonTier convention for this franchise:
+#   core      - the eleven novels: the fiction spine every source checked
+#               (English and Turkish Wikipedia's own infobox and navbox,
+#               his publishers' own backlists) builds from, including
+#               Cevdet Bey ve Oğulları, the last of the eleven to reach
+#               English: Robert Finn's translation, "Cevdet Bey and His
+#               Sons," is announced by Knopf for 2027-03-30 and recorded in
+#               editions.yaml. English Wikipedia still carries the older
+#               line that every novel but this one has been translated;
+#               that sentence predates the announcement. Its tier never
+#               rested on the translation either way - the same treatment
+#               this catalogue already gives Murakami's two Japan-only
+#               early novels.
+#   extended  - memoir, essay collections, the Nobel lecture, the Norton
+#               Lectures book, the Museum of Innocence's own object
+#               catalogue, a study of the making of Kara Kitap built from
+#               Pamuk's own notebooks and drawings, two photography books
+#               with his own introduction text, a diary-and-illustration
+#               volume, a further volume of selected memories and writings,
+#               and the one screenplay he wrote himself (adapted from his
+#               own novel) - genuinely his, off the novel-reading spine.
+#   apocrypha - none found. No multi-author anthology contribution, edited
+#               volume, or introduction-only credit under his name turned up
+#               in either Wikipedia bibliography or his own site's book list.
+#
+# EXCLUDED FROM THIS BIBLIOGRAPHY, checked and set aside rather than missed:
+#   - "Ben Bir Ağacım" ("I Am a Tree", Yapı Kredi Yayınları, 2013): described
+#     on orhanpamuk.net's own English book page as "a selection of Pamuk's
+#     favorite pieces from his own books: Selections from The Black Book, My
+#     Name is Red, Snow, and Istanbul" - entirely excerpts of works already
+#     catalogued below under their own ids, with no new material of its own.
+#     "Kelimeler ve Resimler: Seçme Hatıralar, Yazılar ve Bir Hikâye" (2026)
+#     was checked against the same "selection" reading and rejected: Yapı
+#     Kredi's own 3 June 2026 press release (kitap.ykykultur.com.tr) states
+#     Pamuk "for the first time" recounts his military service and the
+#     difficulty of publishing his first book, plus previously-unpublished
+#     photographs and drawings from his personal archive - genuinely new
+#     material, not a reprint selection, so it is catalogued below rather
+#     than excluded.
+#   - "Three Historical Novels" (The White Castle / My Name Is Red / Nights
+#     of Plague) and "Three Istanbul Novels" (The Black Book / The Museum of
+#     Innocence / A Strangeness in My Mind), both orhanpamuk.net omnibus
+#     listings, and "Fathers, Mothers and Sons" (Cevdet Bey ve Oğulları /
+#     Silent House / The Red-Haired Woman, the first volume of a "Delta"
+#     collected-works omnibus, 2018): three repackagings of novels already
+#     catalogued below under their own ids, bundled by his publisher on a
+#     loose thematic basis (historical setting; Istanbul setting; father-son
+#     throughline) rather than a continuous narrative - see the subseries
+#     note below.
+#   - "Innocence of Memories" (2015), the documentary film by Grant Gee made
+#     with Pamuk about Istanbul and the Museum of Innocence: a film, not a
+#     published book, and outside this bibliography's scope. The separate
+#     Faber & Faber companion volume of (almost) the same English name is a
+#     real book and is catalogued below under its Turkish title,
+#     [[work:orhan-pamuk/hatiralarin-masumiyeti|Hatıraların Masumiyeti]].
+#   - "Orhan Pamuk'un Edebi Dünyası" ("Orhan Pamuk's Literary World," Yapı
+#     Kredi Yayınları): per Yapı Kredi's own catalogue listing, the
+#     proceedings of the first international academic symposium held on
+#     Pamuk after his 2006 Nobel win - papers about him by other scholars,
+#     not a book of his own authorship.
+#
+# "The Secrets of the Black Book," orhanpamuk.net's English name for "Kara
+# Kitap'ın Sırları" (2013), is absent from both Wikipedia bibliographies but
+# real and independently sourced - see that entry below for the detail.
+#
+# SUBSERIES: none found. Each novel is a standalone story with its own cast
+# and period; there is no recurring protagonist or continued narrative
+# thread the way Grisham's Jake Brigance or King's Dark Tower runs through
+# otherwise-separate books. The publisher's own "Three Historical Novels" /
+# "Three Istanbul Novels" / "Delta" omnibus groupings (see exclusions above)
+# bundle books by shared setting or theme for marketing, not by a
+# continuing story, so none of them is recorded as a `subseries` here.
+#
+# TRANSLATOR-PER-BOOK. No single translator covers the catalogue, and the
+# two names most often cited as "his" translators are not evenly matched:
+# Erdağ M. Göknar translated exactly one book (My Name Is Red, 2001);
+# Maureen Freely, by contrast, has translated five - the Black Book
+# retranslation (2006), Snow (2004), The Museum of Innocence (2009),
+# Istanbul: Memories and the City (2005) and Other Colors (2007), and is
+# also credited with the Nobel lecture's English translation. Ekin Oklap
+# matches that five: every novel from A Strangeness in My Mind (2015)
+# onward (Kırmızı Saçlı Kadın, 2017; Veba Geceleri, 2022), plus the 2022
+# diary volume Uzak Dağlar ve Hatıralar and the 2016 film book Hatıraların
+# Masumiyeti. The remaining three cover one or two each: Victoria Holbrook
+# (The White Castle, 1990), Güneli Gün (The Black Book's first translation,
+# 1994, and The New Life, 1997), and Robert Finn (Silent House, 2012, and
+# the forthcoming Cevdet Bey and His Sons, 2027).
+# This per-edition detail belongs properly in editions.yaml's own
+# `translator` field; it is recorded here, per work, as a first-draft
+# scaffold only, the same convention this catalogue already uses on
+# haruki-murakami/works.yaml.
+
+# --- Novels (11) ---
+
+- id: orhan-pamuk/cevdet-bey-ve-ogullari
+  title: "Cevdet Bey ve Oğulları"
+  authorIds: [orhan-pamuk]
+  published: 1982
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Three generations of a wealthy Istanbul merchant family in the
+    Nişantaşı district, from the last years of Sultan Abdülhamid II's reign
+    into the early Turkish republic, follow the shopkeeper Cevdet Bey and
+    his descendants through the century's slow modernization of the city.
+  note: >
+    Co-winner of the 1979 Milliyet Press Novel Contest under the title
+    "Karanlık ve Işık" ("Darkness and Light"); published in book form under
+    this title in 1982, and won the Orhan Kemal Novel Prize in 1983. Kept
+    core tier as his debut and prize-winning novel the same way Murakami's
+    two Japan-only early novels are kept core in this catalogue - though
+    unlike those two, an English translation is now forthcoming: "Cevdet
+    Bey and His Sons," translated by Robert Finn, Knopf, announced for
+    2027-03-30 (English Wikipedia's "every novel but this one" claim, cited
+    here until now, predates the announcement and is stale). Knopf's own
+    jacket copy narrates Cevdet Bey's death and the 1970 closing section in
+    full, so a future synopsis should not be lifted from it wholesale.
+  sources:
+    - https://en.wikipedia.org/wiki/Orhan_Pamuk
+    - https://tr.wikipedia.org/wiki/Orhan_Pamuk
+    - https://www.penguinrandomhouse.com/books/609188/cevdet-bey-and-his-sons-by-orhan-pamuk/
+  images:
+    cover: "https://covers.openlibrary.org/b/id/5548503-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL10641823W"
+
+- id: orhan-pamuk/sessiz-ev
+  title: "Sessiz Ev"
+  authorIds: [orhan-pamuk]
+  published: 1983
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Three siblings spend a week in the summer of 1980 visiting their
+    grandmother in the seaside town of Cennethisar, each carrying a
+    different reading of Turkey's political turmoil on the eve of that
+    year's military coup.
+  note: >
+    Won the 1984 Madaralı Roman Ödülü and, for its French translation, the
+    1991 Prix de la Découverte Européenne. Translated into English by
+    Robert Finn as "Silent House," published 2012 (Alfred A. Knopf), nearly
+    three decades after the Turkish original - one of the last two of his
+    novels to reach English.
+  sources:
+    - https://en.wikipedia.org/wiki/Silent_House_(novel)
+    - https://en.wikipedia.org/wiki/Orhan_Pamuk
+  images:
+    cover: "https://covers.openlibrary.org/b/id/5548502-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL1019578W"
+
+- id: orhan-pamuk/beyaz-kale
+  title: "Beyaz Kale"
+  authorIds: [orhan-pamuk]
+  published: 1985
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A young Venetian scholar, captured by the Ottoman fleet in the 17th
+    century, is bound into years of intellectual partnership and rivalry
+    with a Turkish scholar named Hoja who looks uncannily like him, the two
+    men's identities gradually blurring as they collaborate on science and
+    on a spectacular royal firework display.
+  note: >
+    Translated into English by Victoria Holbrook as "The White Castle,"
+    published 1990 (Carcanet Press, UK; George Braziller, US), won the 1990
+    Independent Award for Foreign Fiction, and was the novel that first
+    extended Pamuk's reputation outside Turkey - The New York Times Book
+    Review's 19 May 1991 review opened, "A new star has risen in the
+    east - Orhan Pamuk."
+  sources:
+    - https://en.wikipedia.org/wiki/The_White_Castle
+    - https://en.wikipedia.org/wiki/Orhan_Pamuk
+  images:
+    cover: "https://covers.openlibrary.org/b/id/5548501-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL1019597W"
+
+- id: orhan-pamuk/kara-kitap
+  title: "Kara Kitap"
+  authorIds: [orhan-pamuk]
+  published: 1990
+  subseries: null
+  canonTier: core
+  featured: true
+  synopsis: >
+    An Istanbul lawyer named Galip searches the city for his missing wife
+    Rüya and her half-brother, a celebrated newspaper columnist, in a novel
+    that interleaves his search with reprints of the columnist's own dense,
+    labyrinthine essays on Istanbul's Ottoman past and present.
+  note: >
+    Became, per English Wikipedia's own account, "one of the most
+    controversial and popular books in Turkish literature" on its 1990
+    release. Has two complete, separately published English translations,
+    an unusual case this catalogue otherwise reserves for a translationNote:
+    Güneli Gün's 1994 translation (Farrar, Straus and Giroux) was the first;
+    Maureen Freely's fresh 2006 translation (Faber & Faber) is the one
+    Pamuk's current English-language publishers keep in print. Featured as
+    the novel English Wikipedia and this bibliography's own sourcing agree
+    was his breakthrough with the Turkish reading public, and the direct
+    basis for the 1992 screenplay "Gizli Yüz."
+  sources:
+    - https://en.wikipedia.org/wiki/The_Black_Book_(Pamuk_novel)
+    - https://en.wikipedia.org/wiki/Orhan_Pamuk
+    - https://www.theguardian.com/books/2006/aug/06/shopping.orhanpamuk
+  images:
+    cover: "https://covers.openlibrary.org/b/id/6878773-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL1019601W"
+
+- id: orhan-pamuk/yeni-hayat
+  title: "Yeni Hayat"
+  authorIds: [orhan-pamuk]
+  published: 1994
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A young engineering student in Istanbul reads a book that he says
+    changes his whole life, and sets out on a series of surreal bus journeys
+    across Anatolia chasing the world it describes and the woman, Janan, who
+    shares his obsession with it.
+  note: >
+    Translated into English by Güneli Gün as "The New Life," published
+    1997 (Farrar, Straus and Giroux). Became, on its 1994 release, the
+    fastest-selling book in Turkish publishing history at that point,
+    reportedly over 200,000 copies by 1997.
+  sources:
+    - https://en.wikipedia.org/wiki/The_New_Life_(Pamuk_novel)
+    - https://en.wikipedia.org/wiki/Orhan_Pamuk
+  images:
+    cover: "https://covers.openlibrary.org/b/id/1054457-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL1019600W"
+
+- id: orhan-pamuk/benim-adim-kirmizi
+  title: "Benim Adım Kırmızı"
+  authorIds: [orhan-pamuk]
+  published: 1998
+  subseries: null
+  canonTier: core
+  featured: true
+  synopsis: >
+    Over nine snowbound days in 1591 Istanbul, the murder of a court
+    miniaturist working in secret on a manuscript for Sultan Murad III
+    unfolds through a rotating cast of narrators - including, in turns, a
+    corpse, a coin, a dog and the color red itself - each voicing a
+    different stake in the Ottoman court's argument over Western-style
+    perspective painting.
+  note: >
+    Translated into English by Erdağ M. Göknar, published 2001 (Alfred A.
+    Knopf) - Göknar's only translation credit in this bibliography, despite
+    being one of the two translators most often named alongside Pamuk's
+    English-language career. Won the 2002 Prix du Meilleur Livre Étranger,
+    the 2002 Premio Grinzane Cavour, and the 2003 International Dublin
+    Literary Award; translated into 24 languages by the time of that Dublin
+    award. Featured as the novel this bibliography's own sourcing (English
+    and Turkish Wikipedia alike) treats as the point his international
+    reputation became a major one.
+  sources:
+    - https://en.wikipedia.org/wiki/My_Name_Is_Red
+    - https://en.wikipedia.org/wiki/Orhan_Pamuk
+  images:
+    cover: "https://covers.openlibrary.org/b/id/1054460-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL1019598W"
+
+- id: orhan-pamuk/kar
+  title: "Kar"
+  authorIds: [orhan-pamuk]
+  published: 2002
+  subseries: null
+  canonTier: core
+  synopsis: >
+    An exiled Turkish poet returns from Germany to investigate a wave of
+    suicides among young women barred from school over the Islamic
+    headscarf, and finds himself snowed into the remote city of Kars for
+    three days of coup, courtship and competing political factions.
+  note: >
+    Translated into English by Maureen Freely - his first collaboration
+    with her - published 2004 (Alfred A. Knopf). Named one of The New York
+    Times's Ten Best Books of 2004; won the 2005 Prix Médicis étranger and
+    the 2006 Prix Méditerranée Étranger.
+  sources:
+    - https://en.wikipedia.org/wiki/Snow_(Pamuk_novel)
+    - https://en.wikipedia.org/wiki/Orhan_Pamuk
+  images:
+    cover: "https://covers.openlibrary.org/b/id/11246263-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL16064734W"
+
+- id: orhan-pamuk/masumiyet-muzesi
+  title: "Masumiyet Müzesi"
+  authorIds: [orhan-pamuk]
+  published: 2008
+  subseries: null
+  canonTier: core
+  featured: true
+  synopsis: >
+    A wealthy Istanbul businessman's obsessive, decade-long attachment to a
+    poorer, distant relative he loved briefly in 1975 leads him to hoard
+    objects that once belonged to her, assembling, object by object, the
+    private museum the novel is named for.
+  note: >
+    Translated into English by Maureen Freely, published 20 October 2009
+    (Alfred A. Knopf). Featured because the novel is the direct basis for a
+    real building: Pamuk opened an actual Museum of Innocence in Istanbul's
+    Çukurcuma neighbourhood in 2012, filled with objects staged to match the
+    novel's own chapters, and later published its catalogue as
+    [[work:orhan-pamuk/seylerin-masumiyeti|Şeylerin Masumiyeti]] - a
+    novel-to-building relationship with no equivalent elsewhere in this
+    bibliography.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Museum_of_Innocence
+    - https://en.wikipedia.org/wiki/Orhan_Pamuk
+  images:
+    cover: "https://covers.openlibrary.org/b/id/14657080-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL1019581W"
+
+- id: orhan-pamuk/kafamda-bir-tuhaflik
+  title: "Kafamda Bir Tuhaflık"
+  authorIds: [orhan-pamuk]
+  published: 2014
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A boza seller and street vendor in Istanbul, Mevlut, and his relations
+    and in-laws live through the city's transformation from 1969 to 2012, a
+    family saga told against decades of migration, urban sprawl and
+    political upheaval.
+  note: >
+    His ninth novel. Translated into English by Ekin Oklap - his first
+    translation credit in this bibliography - published 2015 (Knopf
+    Doubleday in the US, Faber & Faber in the UK) as "A Strangeness in My
+    Mind." Shortlisted for the 2016 Man Booker International Prize and the
+    2017 International Dublin Literary Award.
+  sources:
+    - https://en.wikipedia.org/wiki/A_Strangeness_in_My_Mind
+    - https://en.wikipedia.org/wiki/Orhan_Pamuk
+  images:
+    cover: "https://covers.openlibrary.org/b/id/10156280-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL17204101W"
+
+- id: orhan-pamuk/kirmizi-sacli-kadin
+  title: "Kırmızı Saçlı Kadın"
+  authorIds: [orhan-pamuk]
+  published: 2016
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A high-school boy takes a summer job as a master well-digger's
+    apprentice on a barren plain outside Istanbul, forms a filial bond with
+    him over weeks of digging that find no water, and is drawn to a
+    travelling actress with red hair whose notice marks the thirty years of
+    his life that follow.
+  note: >
+    Translated into English by Ekin Oklap, published 2017. Won the 2017
+    Lampedusa Literary Award (Italy). Neither jacket names the two myths
+    the novel is built on. Yapı Kredi's own copy goes no further than
+    "efsanelerin gücü" (the power of legends) and "büyük bir insani suç" (a
+    great human crime); Knopf's calls it "a fable of fathers and sons and
+    the desires that come between them" and "a beguiling mystery," and
+    gives the premise this synopsis follows - the well-digging apprentice,
+    the filial bond, the red-haired woman, the thirty years after. Naming
+    Sophocles' Oedipus and the Rostam-and-Sohrab episode of Ferdowsi's
+    Shahnameh side by side, as the frame the story plays out over a
+    lifetime, hands a reader the ending both publishers withhold, so the
+    synopsis holds to the premise they print.
+  sources:
+    - https://en.wikipedia.org/wiki/The_Red-Haired_Woman
+    - https://en.wikipedia.org/wiki/Orhan_Pamuk
+  images:
+    cover: "https://covers.openlibrary.org/b/id/10864394-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL19711754W"
+
+- id: orhan-pamuk/veba-geceleri
+  title: "Veba Geceleri"
+  authorIds: [orhan-pamuk]
+  published: 2021
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A plague outbreak on the fictional Ottoman island of Mingheria in 1901
+    triggers quarantine, quackery, a locked-room murder investigation and,
+    eventually, a revolution - a historical epic several early reviewers
+    read alongside Camus's "The Plague."
+  note: >
+    His eleventh and, per its own English Wikipedia article, second-longest
+    novel. Translated into English by Ekin Oklap, published 4 October 2022
+    (Knopf Doubleday in the US, Faber & Faber in the UK). Won the 2021 Sedat
+    Simavi Edebiyat Ödülü in Turkey.
+  sources:
+    - https://en.wikipedia.org/wiki/Nights_of_Plague
+    - https://en.wikipedia.org/wiki/Orhan_Pamuk
+  images:
+    cover: "https://covers.openlibrary.org/b/id/10848796-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL24328158W"
+
+# --- Nonfiction, memoir and essays (10) ---
+
+- id: orhan-pamuk/istanbul-hatiralar-ve-sehir
+  title: "İstanbul: Hatıralar ve Şehir"
+  authorIds: [orhan-pamuk]
+  published: 2003
+  subseries: null
+  canonTier: extended
+  format: memoir
+  synopsis: >
+    A memoir of growing up in Nişantaşı braided with a history of Istanbul
+    itself, centred on "hüzün" - the specific, collectively-felt melancholy
+    Pamuk argues defines the city - and illustrated throughout with
+    black-and-white photographs of Istanbul, many by Ara Güler, alongside
+    pictures of Pamuk and his family.
+  note: >
+    Translated into English by Maureen Freely as "Istanbul: Memories and
+    the City," published 2005. The closest thing in
+    this bibliography to an authorial key: Pamuk describes elsewhere
+    treating his own upbringing and this same wealthy, declining Nişantaşı
+    family in passing in "Kara Kitap" and directly in
+    [[work:orhan-pamuk/cevdet-bey-ve-ogullari|Cevdet Bey ve Oğulları]], and
+    "hüzün" is named repeatedly across his fiction rather than confined to
+    this one book.
+  sources:
+    - https://en.wikipedia.org/wiki/Istanbul:_Memories_and_the_City
+    - https://en.wikipedia.org/wiki/Orhan_Pamuk
+  images:
+    # No Turkish-language edition on Open Library carries a cover (the sole
+    # tur-tagged record, OL19199268M, has none); this is the 2005 Faber &
+    # Faber English first edition instead.
+    cover: "https://covers.openlibrary.org/b/id/378726-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL1019596W"
+
+- id: orhan-pamuk/oteki-renkler
+  title: "Öteki Renkler"
+  authorIds: [orhan-pamuk]
+  published: 1999
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    A gathering of Pamuk's essays, interviews and occasional writing,
+    ranging across his childhood, his working habits and his reading, first
+    published in Turkish in 1999.
+  note: >
+    Translated into English by Maureen Freely as "Other Colors: Essays and
+    a Story," published 2007 (Alfred A. Knopf); the English edition adds a
+    short story, "To Look Out the Window," not present in the 1999 Turkish
+    original, which this catalogue would otherwise record as its own work -
+    it is not, since it has no independent Turkish-language publication
+    history of its own and exists only inside this collection.
+  sources:
+    - https://en.wikipedia.org/wiki/Orhan_Pamuk
+  images:
+    cover: "https://covers.openlibrary.org/b/id/1054461-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL1019595W"
+
+- id: orhan-pamuk/gizli-yuz
+  title: "Gizli Yüz"
+  authorIds: [orhan-pamuk]
+  published: 1992
+  subseries: null
+  canonTier: extended
+  format: screenplay
+  synopsis: >
+    An architect obsessively searches Istanbul for a woman he glimpsed only
+    once, in a screenplay Pamuk wrote himself, developed out of a passage in
+    his own novel "Kara Kitap."
+  note: >
+    Directed by Ömer Kavur as the film "Gizli Yüz" ("Secret Face," 1991);
+    Pamuk's own screenplay was published as a book by Can Yayınları in
+    1992. His only screen-credited work.
+  sources:
+    - https://en.wikipedia.org/wiki/Orhan_Pamuk
+  images:
+    # The 1992 Can Yayınları first edition has no Open Library cover; this
+    # is a later Yapı Kredi Yayınları reissue's jacket, filed by Open
+    # Library as its own single-edition work record (OL26352510W) rather
+    # than folded into the two-edition Can/İletişim work (OL1019592W),
+    # whose editions carry no cover of their own.
+    cover: "https://covers.openlibrary.org/b/id/12297663-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL26352510W"
+
+- id: orhan-pamuk/babamin-bavulu
+  title: "Babamın Bavulu"
+  authorIds: [orhan-pamuk]
+  published: 2006
+  subseries: null
+  canonTier: extended
+  format: essay
+  synopsis: >
+    Pamuk's Nobel lecture, built around the small suitcase of his own
+    unpublished writing his father gave him two years before his death, and
+    what it means to write while measuring oneself against a father who
+    also once wanted to write.
+  note: >
+    Delivered in Stockholm in December 2006 and published in English
+    translation (by Maureen Freely) in The New Yorker that same month as
+    "My Father's Suitcase"; a standalone illustrated Turkish edition
+    followed from İletişim Yayınları in 2007. `published` here records 2006,
+    the year the lecture itself was delivered and first appeared in print,
+    ahead of the 2007 standalone Turkish book.
+  sources:
+    - https://en.wikipedia.org/wiki/Orhan_Pamuk
+    - https://www.nobelprize.org/prizes/literature/2006/pamuk/lecture/
+  images:
+    cover: "https://covers.openlibrary.org/b/id/10849226-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL17100365W"
+
+- id: orhan-pamuk/the-naive-and-the-sentimental-novelist
+  title: "The Naive and the Sentimental Novelist"
+  authorIds: [orhan-pamuk]
+  published: 2010
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Six essays on what happens inside a reader and a writer over the course
+    of a novel - character, plot, the visual imagination, the sense of a
+    novel's "center" - developed from the 2009-2010 Charles Eliot Norton
+    Lectures Pamuk delivered at Harvard University.
+  note: >
+    An orthography and sourcing exception worth stating plainly: `title`
+    above is the English title, not a Turkish one, because English is
+    where this work was actually first published. Harvard University
+    Press published the lectures as this book in 2010; the Turkish
+    edition, "Saf ve Düşünceli Romancı" (İletişim Yayınları), followed in
+    2011. Every other work in this bibliography has its Turkish edition
+    first; this is the one confirmed exception, sourced from the Charles
+    Eliot Norton Lectures' own record of the 2009-2010 series and from
+    Turkish Wikipedia's bibliography table (which dates the Turkish edition
+    2011, a year after the English).
+  sources:
+    - https://en.wikipedia.org/wiki/Charles_Eliot_Norton_Lectures
+    - https://tr.wikipedia.org/wiki/Orhan_Pamuk
+  images:
+    # English cover, not a fallback here: this is the one work whose
+    # `title` is itself English, since Harvard University Press published
+    # it before any Turkish edition existed. Cover is that 2010 first
+    # edition's own jacket.
+    cover: "https://covers.openlibrary.org/b/id/8292336-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL15507623W"
+
+- id: orhan-pamuk/seylerin-masumiyeti
+  title: "Şeylerin Masumiyeti"
+  authorIds: [orhan-pamuk]
+  published: 2012
+  subseries: null
+  canonTier: extended
+  format: reference
+  synopsis: >
+    The catalogue of the real Museum of Innocence Pamuk built in Istanbul's
+    Çukurcuma district, keyed chapter by chapter to the novel
+    [[work:orhan-pamuk/masumiyet-muzesi|Masumiyet Müzesi]] that the museum's
+    own collection illustrates.
+  note: >
+    Published by İletişim Yayınları in 2012, with an English edition (as
+    "The Innocence of Objects") the same year. Won the 2014 Mary Lynn Kotz
+    Award for Art Book of the Year in the United States, and the physical
+    museum itself won the European Museum of the Year Award in 2014.
+  sources:
+    - https://tr.wikipedia.org/wiki/Orhan_Pamuk
+    - https://en.wikipedia.org/wiki/Orhan_Pamuk
+  images:
+    cover: "https://covers.openlibrary.org/b/id/12298312-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL26355995W"
+
+- id: orhan-pamuk/kara-kitabin-sirlari
+  title: "Kara Kitap'ın Sırları - Orhan Pamuk'un Yazı ve Resimleriyle"
+  authorIds: [orhan-pamuk]
+  published: 2013
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    A study of how [[work:orhan-pamuk/kara-kitap|Kara Kitap]] was written,
+    built from Pamuk's own working notebooks, sketches, interview excerpts
+    and the traces left in the novel's draft manuscript, showing that the
+    making of the book was, in its own way, as full of secrets, games and
+    riddles as the novel itself.
+  note: >
+    Absent from both the English and Turkish Wikipedia "Orhan Pamuk"
+    bibliographies, including Turkish Wikipedia's own full-ISBN works table -
+    it is real nonetheless, confirmed independently by orhanpamuk.net's own
+    English-language book page (as "The Secrets of the Black Book," id 106)
+    and by Yapı Kredi Yayınları's own catalogue listing, cross-checked
+    against kitapi.net's library-catalogue record (Yapı Kredi Yayınları,
+    2013, ISBN 9789750826504) and secondhand-market listings
+    (nadirkitap.com, 1000kitap.com) that independently agree on publisher,
+    year and title. Credited on the cover as "hazırlayan" (prepared for
+    publication/compiled by) Darmin Hadzibegovic, who assembled and wrote
+    the connecting text
+    around Pamuk's own previously-unpublished notebook pages, drawings and
+    photographs; Pamuk supplies the primary material the book is built from
+    rather than co-authoring Hadzibegovic's connecting prose, so
+    `authorRole` here stays the default `author` rather than `contributor` -
+    the book is fundamentally made of Pamuk's own archive, not a piece
+    inside someone else's. No English-language edition found.
+  sources:
+    - https://www.orhanpamuk.net/book.aspx?id=106&lng=eng
+    - https://kitapi.net/en/books/kara-kitabin-sirlari-05676b1cff
+  # No cover: absent from Open Library entirely (checked by title search,
+  # both the exact Turkish title and the "Secrets of the Black Book"
+  # English name), consistent with it being absent from both Wikipedia
+  # bibliographies too. Nothing else licensable was found.
+
+- id: orhan-pamuk/manzaradan-parcalar
+  title: "Manzaradan Parçalar: Hayat, Sokaklar, Edebiyat"
+  authorIds: [orhan-pamuk]
+  published: 2010
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    A further collection of essays on life, city streets and literature,
+    published by İletişim Yayınları in 2010.
+  note: >
+    No English-language edition was located: a Goodreads search returns
+    only the single 2010 Turkish edition, with no English translation
+    indexed, despite an English descriptive title ("Fragments of the
+    Landscape") appearing among Pamuk's current titles on the
+    English-language pages of his own site - that site page describes
+    every one of his books, in English, regardless of whether an English
+    edition actually exists, so its wording alone does not establish one.
+  sources:
+    - https://tr.wikipedia.org/wiki/Orhan_Pamuk
+  images:
+    cover: "https://covers.openlibrary.org/b/id/13493203-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL16663010W"
+
+- id: orhan-pamuk/hatiralarin-masumiyeti
+  title: "Hatıraların Masumiyeti"
+  authorIds: [orhan-pamuk]
+  published: 2016
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    Built around the 2015 Grant Gee documentary of the same English name,
+    this "film book" pairs the film's screenplay and a transcript of Pamuk
+    in conversation with Gee with a new prose piece in which Pamuk revisits
+    Kemal and Füsun's love story from
+    [[work:orhan-pamuk/masumiyet-muzesi|Masumiyet Müzesi]] through the eyes
+    of Ayla, a character introduced here, alongside the film's own images
+    and Pamuk's own reflections on the novel, the real Museum of Innocence
+    and the film itself.
+  note: >
+    Published by Yapı Kredi Yayınları in 2016. Has a real English edition,
+    "The Innocence of Memories," translated by Ekin Oklap and published in
+    London by Faber & Faber - confirmed via the New York Public Library's
+    own research catalogue record (dated 2018) and independently via
+    Goodreads and Amazon.co.uk listings crediting Oklap as translator. A
+    trap for the next reader: Goodreads merges both editions into one work
+    record whose displayed "first published" date is the 2016 Turkish
+    original, so a search that stops at Goodreads without opening the
+    edition list reads as "Turkish only" when an English edition is in fact
+    listed underneath it. Distinct from the documentary film "Innocence of
+    Memories" itself, which is not a book and is outside this
+    bibliography's scope (see the exclusions above).
+  sources:
+    - https://www.orhanpamuk.net/book.aspx?id=112&lng=eng
+    - https://www.nypl.org/research/research-catalog/bib/b21833664
+    - https://www.goodreads.com/en/book/show/39868444-the-innocence-of-memories
+    - https://tr.wikipedia.org/wiki/Orhan_Pamuk
+  images:
+    cover: "https://covers.openlibrary.org/b/id/12297792-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL26352927W"
+
+- id: orhan-pamuk/balkon
+  title: "Balkon"
+  authorIds: [orhan-pamuk]
+  published: 2018
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    Around 600 of the roughly 8,500 colour photographs Pamuk took from his
+    own Istanbul balcony over five months in the winter of 2012-2013,
+    looking out over the Bosphorus, the old town and the surrounding hills,
+    with his own introductory text.
+  note: >
+    Published by Yapı Kredi Yayınları (Turkish) and Steidl (international
+    edition) in 2018, and exhibited the same year. Kept its Turkish title,
+    "Balkon," even on orhanpamuk.net's own English-language book page,
+    unlike "Turuncu" below.
+  sources:
+    - https://en.wikipedia.org/wiki/Orhan_Pamuk
+    - https://www.orhanpamuk.net/books.aspx?id=6&lng=eng
+  images:
+    cover: "https://covers.openlibrary.org/b/id/12109276-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL26151184W"
+
+- id: orhan-pamuk/turuncu
+  title: "Turuncu"
+  authorIds: [orhan-pamuk]
+  published: 2020
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    A further collection of Pamuk's own Istanbul photographs, taken, by his
+    own account, on walks through the city's overlooked backstreets after a
+    day's writing, with his own introductory text.
+  note: >
+    Published by Yapı Kredi Yayınları in 2020; Pamuk's own English-language
+    site lists the international Steidl edition under the English title
+    "Orange," so the English title is recorded here in this note rather
+    than as `title`, which stays the original Turkish per this catalogue's
+    rule that a work's title is never translated on the work record itself.
+  sources:
+    - https://tr.wikipedia.org/wiki/Orhan_Pamuk
+    - https://www.orhanpamuk.net/books.aspx?id=6&lng=eng
+  images:
+    cover: "https://covers.openlibrary.org/b/id/12298386-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL26356426W"
+
+- id: orhan-pamuk/uzak-daglar-ve-hatiralar
+  title: "Uzak Dağlar ve Hatıralar"
+  authorIds: [orhan-pamuk]
+  published: 2022
+  subseries: null
+  canonTier: extended
+  format: memoir
+  synopsis: >
+    Selections from Pamuk's personal notebooks and photographs, kept
+    between 2009 and 2022, combining diary entries with his own
+    illustrations.
+  note: >
+    Published by Yapı Kredi Yayınları in 2022. Translated into English by
+    Ekin Oklap as "Memories of Distant Mountains: Illustrated Notebooks,
+    2009-2022" - confirmed via a Goodreads record crediting Oklap as
+    translator; the exact English publication year is not established by
+    the sources checked here.
+  sources:
+    - https://tr.wikipedia.org/wiki/Orhan_Pamuk
+  images:
+    cover: "https://covers.openlibrary.org/b/id/13824235-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL31915582W"
+
+- id: orhan-pamuk/kelimeler-ve-resimler
+  title: "Kelimeler ve Resimler: Seçme Hatıralar, Yazılar ve Bir Hikâye"
+  authorIds: [orhan-pamuk]
+  published: 2026
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Personal memories and writings on literature and art, gathering pieces
+    on his friendships with Ara Güler, Umberto Eco, Paul Auster and Anselm
+    Kiefer, family history involving his father Gündüz Pamuk and his aunt,
+    the law professor Türkân Rado, and a retrospective account of how the
+    novel and the real Museum of Innocence originated and developed,
+    alongside previously unpublished photographs and drawings from his own
+    archive.
+  note: >
+    Published 4 June 2026 by Yapı Kredi Yayınları, absent from both English
+    and Turkish Wikipedia's per-book articles at the time this was checked,
+    but confirmed by Yapı Kredi's own 3 June 2026 press release
+    (kitap.ykykultur.com.tr) and its own catalogue listing, cross-checked
+    against Turkish Wikipedia's own bibliography table, which lists it at
+    ISBN 978-975-08-6815-3. This is not merely a "seçme" (selection) of
+    previously-published material: the press release states Pamuk recounts
+    his military service and the difficulties of publishing his first book
+    "for the first time" in writing composed for this volume, alongside
+    archive photographs and drawings never published before, so it is
+    catalogued as a genuine work rather than excluded as a reader. The
+    subtitle's "bir hikâye" (a story) is not named or excerpted separately
+    by any source checked, so it is not split into its own entry; the new
+    material stays folded into this one book, which the publisher describes
+    as also reworking previously scattered magazine pieces into a single
+    coherent whole alongside it.
+  sources:
+    - https://kitap.ykykultur.com.tr/basin-odasi/basin-bultenleri/orhan-pamuktan-yeni-kitap-kelimeler-ve-resimler
+    - https://tr.wikipedia.org/wiki/Orhan_Pamuk
+  # No cover: a June 2026 release with no Open Library record yet (checked
+  # by title search), too recent for any cataloguing to have caught up.

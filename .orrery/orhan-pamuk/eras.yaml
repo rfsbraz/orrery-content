@@ -1,0 +1,79 @@
+stage: eras
+summary: >
+  One era ships, and one only: "The Family Sagas" (1982-1983, Cevdet Bey ve
+  Oğulları + Sessiz Ev). Of the three-phase shape franchise-research floated,
+  only the first third survived. Everything from 1985 on sits outside every
+  era; the reasons are in eras.yaml's header. Searched in Turkish (the
+  language of his criticism) and English.
+verdicts:
+  - candidate: early realist/modern period (the two first novels)
+    verdict: RECEIVED shape, neutral label ours, rung 2
+    boundary: >
+      SOURCED. Beyaz Kale (1985) is named as the break by TEİS ("bir geçiş
+      eseri", "yazarın ilk postmodern anlatısıdır"), by the Gale Biographical
+      Encyclopedia of the Modern Middle East and North Africa ("an important
+      turning point ... he broke with the realist tradition"), and by Demir
+      ("Postmodernizme Geçiş"). Pamuk dates his own voice to Kara Kitap.
+    shipped: true
+  - candidate: postmodern period from 1985
+    verdict: INVENTED as a period
+    why: >
+      Start given as 1985 or 1990 depending on source; contents disputed (TEİS
+      counts Kar among the postmodern novels, Demir puts Kar in a later
+      period); no end, the technique runs to Veba Geceleri (2021). A manner of
+      writing, not a span with two ends.
+    shipped: false
+  - candidate: contemporary-Istanbul / international period from Kar (2002)
+    verdict: INVENTED, refuted by the author and the shelf
+    why: >
+      Pamuk calls Kar "my first and last political novel". The four novels
+      after it are a love story, a street vendor's Istanbul, a conte
+      philosophique, and a 1901 Ottoman historical novel. The Nobel (2006)
+      falls between books and cuts nothing.
+    shipped: false
+  - candidate: Fethi Demir's five-part classification
+    verdict: first period corroborated and shipped; second and third not
+    why: >
+      The only full periodisation in any source consulted, one scholar's, and
+      TEİS reports it as his rather than adopting it. He renamed his own third
+      period from "tematik romanlar" to "küresel romanlar" in 2025. A plate
+      cannot assert as received a label its only author has revised. Same bar
+      the García Márquez file applied to Lukavská.
+    shipped: partially
+sources:
+  - "https://www.nobelprize.org/prizes/literature/2006/pamuk/biographical/"
+  - "https://teis.yesevi.edu.tr/madde-detay/pamuk-orhan"
+  - "https://www.encyclopedia.com/international/encyclopedias-almanacs-transcripts-and-maps/pamuk-orhan-1952"
+  - "https://www.sosyalarastirmalar.com/articles/a-transition-novel-of-orhan-pamuk-in-his-novelist-career-my-name-is-red.pdf"
+  - "https://dergipark.org.tr/tr/download/article-file/3940519"
+  - "https://www.orhanpamuk.net/biography.aspx"
+  - "https://www.routledge.com/Orhan-Pamuk-Secularism-and-Blasphemy-The-Politics-of-the-Turkish-Novel/Goknar/p/book/9780415505383"
+  - "https://www.newyorker.com/magazine/2022/10/31/outbreaks-and-uprisings-in-orhan-pamuks-nights-of-plague"
+gates:
+  validate: >
+    Same single pre-existing error (theme.yaml has no `art:` block). Wing
+    warnings 0 -> 22, all era-coverage on works from 1985 on, all expected and
+    answered in the file header. Closing them would mean inventing periods.
+  i18n_coverage: >
+    pt-PT 346/366 files fully covered; the whole wing is still in MISSING and
+    has no overlay, so nothing regressed.
+filesWritten:
+  - content/franchises/orhan-pamuk/eras.yaml
+forStages:
+  translation: >
+    3 translatable fields (title, description, note). "The Family Sagas"
+    renders a phrase Pamuk wrote in English; the Turkish quotations inside the
+    description are received forms and stay untranslated, glossed as they are.
+  visual-language: >
+    One era plate, `chapter-gate` / `atmospheric-motif-field` / 1 image. Its
+    register is the pre-1985 Nişantaşı apartment world: three generations
+    under one roof, an Istanbul family watching the Ottoman century end.
+  wing-audit: >
+    The 22 era-coverage warnings are not a defect to close; the eras skill
+    supersedes the coverage finding and this wing is the case for it.
+  achievements: >
+    An `era_reader` badge on `the-family-sagas` could count at most 2, below
+    the useful threshold. None written.
+openQuestions:
+  - "Whether a 2-of-24 era earns a full-bleed plate is the one curatorial call. The alternative, eras: [], would under-report a periodisation Turkish criticism does make. Ruling: ship it."
+  - "Demir's second and third periods are recoverable if another scholar takes them up. Nothing in Turkish or English currently does."

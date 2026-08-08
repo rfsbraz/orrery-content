@@ -1,0 +1,73 @@
+# A wing spans an author's complete published work, not one genre or
+# period. Pamuk's shelf has no recurring series or shared universe at all -
+# eleven standalone novels plus memoir, essays and photography - so this
+# wing is the plainest possible case of the rule: everything he has
+# published, in one place, no subseries. See works.yaml's own header for the
+# sourced tiering, the translator-per-book breakdown, and what was checked
+# and excluded (omnibus repackagings, a documentary film, a "selections"
+# reader).
+id: orhan-pamuk
+name: Orhan Pamuk
+kind: author
+description: >
+  The complete published work of Orhan Pamuk, the first Turkish Nobel
+  laureate (2006): eleven novels from his 1982 debut
+  [[work:orhan-pamuk/cevdet-bey-ve-ogullari|Cevdet Bey ve Oğulları]] through
+  his 2021 plague epic [[work:orhan-pamuk/veba-geceleri|Veba Geceleri]],
+  turning from realist family saga through postmodern historical fiction
+  ([[work:orhan-pamuk/beyaz-kale|Beyaz Kale]],
+  [[work:orhan-pamuk/benim-adim-kirmizi|Benim Adım Kırmızı]]) to the
+  contemporary Istanbul of
+  [[work:orhan-pamuk/kar|Kar]] and
+  [[work:orhan-pamuk/masumiyet-muzesi|Masumiyet Müzesi]]; his memoir of the
+  city, [[work:orhan-pamuk/istanbul-hatiralar-ve-sehir|İstanbul: Hatıralar
+  ve Şehir]]; two essay collections and his Nobel lecture; the Norton
+  Lectures book he delivered and first published in English; the object
+  catalogue of the real Museum of Innocence he built in Istanbul from his
+  own novel; two photography collections; a screenplay; and a volume of
+  personal notebooks. No recurring series or shared universe runs through
+  it - each novel stands alone.
+authorIds: [orhan-pamuk]
+themePreset: istanbul-huzun
+
+# Capabilities (docs/SCHEMA.md) are auto-detected from the data and left
+# auto here on purpose. Three of the four are active: events.yaml carries 6
+# franchise events beside the author's own 10 lifeEvents, which activates
+# both `river` and `companion`, and editions.yaml carries 55 editions
+# covering all 24 works, which activates `editions`.
+# No orders.yaml and no startHere: no publisher-numbered sequence
+# or named grouping exists across the eleven standalone novels beyond three
+# publisher marketing omnibuses (already excluded from works.yaml, and
+# each already in publication order internally), and no author, publisher,
+# critic or bookseller "where to start" guide for Pamuk was found in
+# English or Turkish (orders.yaml's own header has the sources checked), so
+# `wizard` stays auto with nothing to activate it. Nothing else needs
+# forcing off in the meantime.
+features:
+  river: auto
+  wizard: auto
+  companion: auto
+  editions: auto
+
+globalEvents:
+  include:
+    - covid-19-pandemic-2020  # Veba Geceleri (2021) is a plague epic written during lockdowns; the pandemic shaped the work directly
+  exclude:
+    - lady-chatterley-trial-1960  # Literary obscenity-defense precedent; Pamuk's work doesn't engage with this censorship boundary
+    - fantasy-paperback-boom-1965  # Pamuk doesn't write fantasy
+    - carnation-revolution-1974  # Portuguese censorship end; not Turkish experience (different system, different country)
+    - chain-bookshop-1982  # Distribution shift; his work is not about bookshop mechanics
+    - online-bookselling-1995  # Backlist discovery; doesn't reach his novels thematically
+    - comics-code-authority-1954  # American comics regulation; not relevant to Turkish literary fiction
+    - ebook-and-self-publishing-2007  # Self-publishing; Pamuk is traditionally published and doesn't engage with this
+    - prestige-fantasy-adaptation-2011  # Fantasy on TV; Pamuk doesn't write fantasy
+    - booktok-2020  # TikTok discovery; established author, not integrated into his work
+    - portugal-bailout-2011  # Portuguese financial crisis; not Turkish context
+    - sept-11-2001  # Western geopolitical anxiety; Snow (2002) addresses Turkish political violence, not American-focused concerns
+    - financial-crisis-2008  # Economic precarity; Pamuk's post-Nobel work doesn't engage with this theme
+    - satanic-verses-fatwa-1989  # Precedent for author-prosecution, but one Pamuk does not engage with in his published work; his own 2005-2011 Article 301 prosecution is the lived equivalent, not a response to Rushdie's case
+
+sources:
+  - https://en.wikipedia.org/wiki/Orhan_Pamuk
+  - https://tr.wikipedia.org/wiki/Orhan_Pamuk
+  - https://www.orhanpamuk.net/
