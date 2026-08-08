@@ -9,7 +9,14 @@
 # full list of titles and years), Portuguese Wikipedia's own navigation
 # template for his books (a second, independently-edited list that stops at
 # A Tragédia da Rua das Flores, 1980), and the dedicated Portuguese Wikipedia
-# article for each title named below where one exists.
+# article for each title named below where one exists. Also cross-checked
+# against the publishers' own catalogues: the Universidade de Coimbra Centro
+# de Literatura Portuguesa's dated publication list for the "Edição Crítica
+# das Obras de Eça de Queirós" (the ongoing scholarly critical edition,
+# coordinated by Carlos Reis and published by Imprensa Nacional-Casa da
+# Moeda since 1992), the Fundação Eça de Queirós's own shop descriptions,
+# and period bookseller listings (bibliographias.blogspot.com, a Porto
+# antiquarian dealer, for the 1925 first edition of Correspondência).
 #
 # POSTHUMOUS WORKS get an ordinary work entry plus a `note:` recording it,
 # the same treatment this catalogue already gives José Saramago's posthumous
@@ -42,6 +49,19 @@
 # relationship as much as bare `authorIds` would. Rather than force a value
 # the schema does not offer, the translation is left out here: not a hole in
 # Eça's own bibliography, but a hole in the schema's vocabulary for one.
+# A second, later instance of the same gap: Philidor, an 1863 Joseph
+# Bouchardy play Eça translated into Portuguese for the stage (staged and
+# published in Lisbon; critically re-edited in the "Edição Crítica" series,
+# 2021), is excluded for the identical reason - a translated stage script by
+# another author, not a book of Eça's own.
+#
+# ALSO NOT LISTED, as a caution rather than a finding. Between 1992 and 2021
+# the "Edição Crítica" series also produced new scholarly editions of most
+# of the novels already listed below (O Mandarim, A Capital, O Crime do
+# Padre Amaro, A Ilustre Casa de Ramires, Alves & Companhia, Contos [Vol.
+# I], A Correspondência de Fradique Mendes, Os Maias, O Mistério da Estrada
+# de Sintra, A Relíquia) - these are re-editions of works already in this
+# file, not new works, and belong in `editions.yaml`, not here.
 #
 # SUBSERIES is null throughout: nothing here is a publisher-numbered or
 # author-grouped sequence. Carlos Fradique Mendes, the satirical persona Eça
@@ -52,16 +72,39 @@
 # series, per this catalogue's own rule; each of the three notes the other
 # two instead of a shared `subseries` value.
 #
-# THIN ENTRIES. Four entries (Dicionário de Milagres, Contos Vol. II,
-# Almanaques e Outros Dispersos, Lendas de Santos) rest on a title and year
-# from the two Wikipedia bibliographies alone - no dedicated article,
-# publisher record or review was found for any of the four. They are
-# included, honestly thin, rather than dropped: a documented gap is more
-# useful than a silent absence. A fifth item Portuguese Wikipedia lists,
-# Textos de Imprensa (six volumes, 1995-2024, a modern critical edition of
-# Eça's journalism), is left out entirely rather than given one guessed date
-# spanning 29 years; it is really some number of separately-dated volumes,
-# not yet resolved into which.
+# FOUR TITLES THAT LOOKED THIN, RESOLVED. Dicionário de Milagres, Contos
+# Vol. II, Almanaques e Outros Dispersos and Lendas de Santos rested on a
+# title and year from the two Wikipedia bibliographies alone. Each now has a
+# sourced description in its own entry below (bookseller/publisher copy for
+# Dicionário de Milagres; the "Edição Crítica" volume descriptions,
+# corroborated across the Fundação Eça de Queirós shop and the Universidade
+# de Coimbra research centre that runs the series, for the other three).
+# None turned out to be wrong; all four are real, and none needed a tier
+# change except Lendas de Santos (see its own note).
+#
+# TEXTOS DE IMPRENSA, RESOLVED. Six real, separately-dated volumes exist -
+# Da Revista de Portugal (1995), Da Gazeta de Notícias (2002), Da Gazeta de
+# Portugal (2004), Da Revista Moderna (2005), Do Distrito de Évora (2019)
+# and a second Da Revista de Portugal volume (2024), each gathering
+# previously-uncollected journalism from a different periodical Eça wrote
+# for - confirmed against the Universidade de Coimbra Centro de Literatura
+# Portuguesa's own dated publication list, the primary source for the
+# series it runs. Grouped as ONE entry below rather than six or zero, the
+# same call this catalogue already made for J. R. R. Tolkien's twelve-volume
+# The History of Middle-earth: a single decades-spanning scholarly project
+# assembling previously unseen material, not a series a reader picks
+# individual volumes of. See that entry's own note for the twelve-volume
+# precedent this follows.
+#
+# TWO WORKS ABSENT FROM THE WIKIPEDIA-BIBLIOGRAPHIES OVERLAP ABOVE.
+# Correspondência (1925) - 84 of Eça's personal letters, mostly to Ramalho
+# Ortigão and Oliveira Martins, selected and prefaced by his son José Maria
+# - does appear on the main Portuguese Wikipedia article's own works list,
+# distinct from its dedicated-article bibliography this file leans on
+# elsewhere. Cartas Públicas (2009), his public press-published open
+# letters, appears on neither Wikipedia bibliography at all and is sourced
+# instead to the "Edição Crítica" series' own publication record. Both are
+# real and both are added below.
 
 # --- Published in his lifetime ---
 
@@ -430,10 +473,17 @@
     advantageous once the scandal is priced in. Written in 1884.
   note: >
     Published posthumously, 41 years after it was written; translated into
-    English as both "The Yellow Sofa" and "Alves & Co."
+    English as both "The Yellow Sofa" and "Alves & Co." The 1884 composition
+    date is corroborated independently in the main Portuguese Wikipedia
+    biography's own works list ("escrito 1884"), not just the dedicated
+    article - two separately-edited pages agreeing rather than one citing
+    the other. Its three English translations (1993, 1996, 2012) against
+    none found for O Conde de Abranhos support this file's `core` tier
+    against that novella's `extended`.
   sources:
     - https://pt.wikipedia.org/wiki/Alves_%26_Companhia
     - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
 
 - id: eca-de-queiros/o-egipto
   title: "O Egipto"
@@ -452,7 +502,34 @@
     - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
     - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
 
-# --- Apocrypha: further Fradique material and private correspondence ---
+# --- Apocrypha: private correspondence and further Fradique material ---
+
+- id: eca-de-queiros/correspondencia
+  title: "Correspondência"
+  authorIds: [eca-de-queiros]
+  published: 1925
+  subseries: null
+  canonTier: apocrypha
+  format: nonfiction
+  synopsis: >
+    84 of Eça's personal letters - most to Ramalho Ortigão and to Oliveira
+    Martins, with others to the condes de Arnoso, Ficalho and Sabugosa,
+    Luís de Magalhães, Mariano Pina, Alberto de Oliveira and Camilo Castelo
+    Branco - selected "for the elegance of their form or the subjects they
+    treat" and prefaced by his son José Maria.
+  note: >
+    Appears on the main Portuguese Wikipedia article's own works list,
+    separately from the dedicated-article bibliography this file otherwise
+    leans on. First edition: Porto, Livraria Chardron (Lello & Irmão), 1925.
+    Distinct from both
+    [[work:eca-de-queiros/eca-de-queiros-entre-os-seus-cartas-intimas|Eça de
+    Queirós Entre os Seus - Cartas Íntimas]] (1949, a later and separate
+    gathering of family letters) and the Fradique Mendes correspondence
+    below - this volume is Eça's own voice, to real correspondents, not the
+    Fradique persona's.
+  sources:
+    - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://bibliographias.blogspot.com/2017/06/eca-de-queiros-correspondencia_24.html
 
 - id: eca-de-queiros/cartas-ineditas-de-fradique-mendes
   title: "Cartas Inéditas de Fradique Mendes"
@@ -494,17 +571,62 @@
   subseries: null
   canonTier: apocrypha
   synopsis: >
-    Listed on both Wikipedias' bibliographies as a posthumous 1900
-    publication; no dedicated source describing its actual contents was
-    found.
+    An alphabetical reference of Christian miracle legends that Eça planned
+    and left unfinished at his death - only the entries for the letters A
+    and B exist. He negotiated the manuscript directly with publisher A. M.
+    Pereira before he died; the "Parceria" published what material there was
+    posthumously.
   note: >
-    Thinly sourced - title and year only, from the Portuguese Wikipedia
-    bibliography list; no dedicated article, publisher record or review
-    was found to confirm or describe it further.
+    Genuinely unfinished (two letters of a planned alphabetical dictionary),
+    which is why it sits in `apocrypha` rather than `extended` alongside
+    this file's other posthumous nonfiction gatherings - the same basis as
+    Lendas de Santos below, a text Eça likewise never completed or
+    published himself.
   sources:
     - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://be.ae2serpa.pt/ficheirosbiblioteca/livrosdodominiopublico/Autores.Portugueses/Eca.de.Queiros/obras/Dicionario.de.Milagres.pdf
+    - https://gugol-livreiros.pt/produto/dicionario-de-milagres-eca-de-queiros/
 
-# --- Modern editorial gatherings (2003-) ---
+# --- Modern editorial gatherings (1995-) ---
+# All five entries in this section belong to the "Edição Crítica das Obras
+# de Eça de Queirós," the ongoing scholarly critical edition coordinated by
+# Carlos Reis and published by Imprensa Nacional-Casa da Moeda since 1992 -
+# the source of every "not thin any more" note below. The series also
+# re-edited most of the novels already listed earlier in this file; only
+# the volumes below are first publications of previously-uncollected
+# material, so only they get their own entry (see this file's own header).
+
+- id: eca-de-queiros/textos-de-imprensa
+  title: "Textos de Imprensa"
+  authorIds: [eca-de-queiros]
+  published: 1995
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    Eça's journalism, gathered volume by volume - one per periodical he
+    wrote for - decades after it first ran in the press: for the Revista de
+    Portugal (1995, and again 2024), the Gazeta de Notícias (2002), the
+    Gazeta de Portugal (2004), the Revista Moderna (2005) and the press of
+    the Distrito de Évora (2019).
+  note: >
+    ONE ENTRY for a six-volume, 1995-2024 project, the same call this file
+    already makes for J. R. R. Tolkien's twelve-volume The History of
+    Middle-earth (see that wing's works.yaml for the fuller reasoning): a
+    single decades-spanning scholarly project recovering previously unseen
+    material source by source, not a series a reader picks individual
+    volumes of. published is set to 1995, the first volume's year. The six
+    constituent volumes, by the periodical each recovers and the year its
+    critical edition appeared: Da Revista de Portugal (1995); Da Gazeta de
+    Notícias (2002); Da Gazeta de Portugal (2004); Da Revista Moderna
+    (2005); Do Distrito de Évora (2019); a second Da Revista de Portugal
+    volume (2024) - six volumes for "Vols. I-VI" on Portuguese Wikipedia's
+    own bibliography, confirmed here against the dated publication list of
+    the Universidade de Coimbra research centre that runs the series, the
+    primary source for its own project.
+  sources:
+    - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://www.uc.pt/fluc/clp/livros-edicao-critica-das-obras-de-eca-de-queiros/
 
 - id: eca-de-queiros/contos-vol-ii
   title: "Contos Vol. II"
@@ -514,16 +636,45 @@
   canonTier: extended
   format: short-story-collection
   synopsis: >
-    A second gathering of short fiction, over a century after the first
-    [[work:eca-de-queiros/contos|Contos]] (1902); no source describing its
-    specific contents beyond the title and year was found in the time this
-    pass had.
+    Four further stories left in the workshop at different stages of
+    completion - "A Catástrofe," "Um Dia de Chuva," "Enghelberto" and "Sir
+    Galahad" - gathered as a second volume alongside the first
+    [[work:eca-de-queiros/contos|Contos]] (1902). Three had already appeared
+    piecemeal in editions his sons prepared (1925, 1929, 1966); this volume
+    re-edits all four from the manuscripts.
   note: >
-    Thinly sourced - title and year only, from the Portuguese Wikipedia
-    bibliography list; no dedicated article, publisher record or review
-    was found to confirm or describe it further.
+    Not thin: a scholarly critical edition (part of the "Edição Crítica das
+    Obras de Eça de Queirós" series) exists for this exact volume, naming
+    all four stories and its own editorial rationale.
   sources:
     - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://loja.feq.pt/loja-online/edicao-critica-contos-ii/
+    - https://www.uc.pt/fluc/clp/livros-edicao-critica-das-obras-de-eca-de-queiros/liv25/
+
+- id: eca-de-queiros/cartas-publicas
+  title: "Cartas Públicas"
+  authorIds: [eca-de-queiros]
+  published: 2009
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    Texts Eça deliberately gave epistolary form for publication in the
+    press, in Portugal and abroad, across his whole writing life - his
+    public "open letters," gathered for the first time and distinct from
+    his private correspondence.
+  note: >
+    Absent from both Wikipedias' bibliographies; sourced instead to the
+    "Edição Crítica" series' own publication list. Distinct from
+    [[work:eca-de-queiros/cartas-de-inglaterra|Cartas de Inglaterra]] and
+    [[work:eca-de-queiros/ecos-de-paris|Ecos de Paris]] (his own consular
+    reportage columns, already collected into books by 1905) and from
+    [[work:eca-de-queiros/correspondencia|Correspondência]] above (private
+    letters to named friends) - this volume is letters written *for* the
+    press, on public matters.
+  sources:
+    - https://www.uc.pt/fluc/clp/livros-edicao-critica-das-obras-de-eca-de-queiros/liv30/
+    - https://www.wook.pt/livro/cartas-publicas-eca-de-queiroz/3501658
 
 - id: eca-de-queiros/almanaques-e-outros-dispersos
   title: "Almanaques e Outros Dispersos"
@@ -533,34 +684,44 @@
   canonTier: extended
   format: nonfiction
   synopsis: >
-    A modern scholarly gathering of Eça's scattered almanac and periodical
-    writing; no source describing its specific contents beyond the title and
-    year was found.
+    Texts hidden, lost or forgotten across almanacs and periodicals Eça
+    wrote for over his career, gathered into one volume by researcher Irene
+    Fialho as part of the "Edição Crítica das Obras de Eça de Queirós"
+    critical edition.
   note: >
-    Thinly sourced - title and year only, from the Portuguese Wikipedia
-    bibliography list; no dedicated article, publisher record or review
-    was found to confirm or describe it further.
+    Not thin: a scholarly critical edition exists (Imprensa Nacional-Casa da
+    Moeda, 2011, 365pp, ed. Irene Fialho, coord. Carlos Reis) with its own
+    published description of scope and editorial method.
   sources:
     - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://loja.feq.pt/loja-online/edicao-critica-almanaques-e-outros-dispersos/
+    - https://imprensanacional.pt/?w3n_bib_digital=almanaques-e-outros-dispersos
 
 - id: eca-de-queiros/lendas-de-santos
   title: "Lendas de Santos"
   authorIds: [eca-de-queiros]
   published: 2023
   subseries: null
-  canonTier: extended
+  canonTier: apocrypha
   synopsis: >
-    A posthumous gathering published in 2023, 123 years after Eça's death; no
-    source describing its specific contents beyond the title and year was
-    found.
+    Three narratives about saints that Eça left unpublished and, by the
+    editors' own account, unfinished in intent - reconstructed as closely as
+    the surviving drafts allow, 123 years after his death, as the 21st
+    volume of the "Edição Crítica das Obras de Eça de Queirós."
   note: >
-    Thinly sourced - title and year only, from the Portuguese Wikipedia
-    bibliography list, which is also the only evidence found that this
-    bibliography is still being added to as recently as 2023; no dedicated
-    article, publisher record or review was found to confirm or describe
-    it further.
+    Not thin: a dated, sourced scholarly edition exists (Imprensa Nacional,
+    November 2023, ed. Anna Luiza Bauer and Eliane Hosokawa Imayuki, coord.
+    Carlos Reis), which is also where "an unfinished intention" comes from
+    directly. Retiered from `extended` to `apocrypha` on that basis - three
+    texts the author himself never finished or published belong with this
+    file's other genuinely unfinished/limited work (Dicionário de Milagres),
+    not with its completed minor collections. Textos de Imprensa's 2024
+    volume postdates this by three months, making it the newer item in the
+    bibliography.
   sources:
     - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://www.uc.pt/fluc/clp/2023/lendas-de-santos/
+    - https://imprensanacional.pt/?w3n_bib_digital=lendas-de-santos
 
 # --- Published in his lifetime, discovered and printed only in 1980 ---
 
@@ -579,7 +740,11 @@
   note: >
     Written 1877-78; first published only in 1980, eighty years after Eça's
     death. Adapted for Portuguese television in 1981 and for the stage in
-    1982.
+    1982. The 1877-78 composition date is corroborated independently in the
+    main Portuguese Wikipedia biography's own works list ("escrito
+    1877-78"), not just the dedicated article - two separately-edited pages
+    agreeing rather than one citing the other.
   sources:
     - https://pt.wikipedia.org/wiki/A_Trag%C3%A9dia_da_Rua_das_Flores
     - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
