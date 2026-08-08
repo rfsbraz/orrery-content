@@ -1,0 +1,90 @@
+stage: franchise-research
+summary: >
+  Scaffolded from scratch: franchise.yaml, works.yaml (22 works: 11 core
+  novels, 11 extended), theme.yaml's non-art fields, orhan-pamuk.yaml.
+  Translator framing corrected: Freely translated five books, Göknar
+  exactly one (My Name Is Red), not evenly-matched "two principal
+  translators" as the request issue guessed. Turkish titles transcribed
+  character-for-character from Turkish sources (İ/ı preserved). validate.py
+  clean except the expected missing theme.art (visual-language's job).
+produced:
+  newWorkIds:
+    - orhan-pamuk/cevdet-bey-ve-ogullari
+    - orhan-pamuk/sessiz-ev
+    - orhan-pamuk/beyaz-kale
+    - orhan-pamuk/kara-kitap
+    - orhan-pamuk/yeni-hayat
+    - orhan-pamuk/benim-adim-kirmizi
+    - orhan-pamuk/kar
+    - orhan-pamuk/masumiyet-muzesi
+    - orhan-pamuk/kafamda-bir-tuhaflik
+    - orhan-pamuk/kirmizi-sacli-kadin
+    - orhan-pamuk/veba-geceleri
+    - orhan-pamuk/istanbul-hatiralar-ve-sehir
+    - orhan-pamuk/oteki-renkler
+    - orhan-pamuk/gizli-yuz
+    - orhan-pamuk/babamin-bavulu
+    - orhan-pamuk/the-naive-and-the-sentimental-novelist
+    - orhan-pamuk/seylerin-masumiyeti
+    - orhan-pamuk/manzaradan-parcalar
+    - orhan-pamuk/hatiralarin-masumiyeti
+    - orhan-pamuk/balkon
+    - orhan-pamuk/turuncu
+    - orhan-pamuk/uzak-daglar-ve-hatiralar
+  newAuthorIds:
+    - orhan-pamuk
+  filesWritten:
+    - content/franchises/orhan-pamuk/franchise.yaml
+    - content/franchises/orhan-pamuk/works.yaml
+    - content/franchises/orhan-pamuk/theme.yaml
+    - content/authors/orhan-pamuk.yaml
+  filesDeliberatelyNotWritten:
+    - content/franchises/orhan-pamuk/events.yaml (no franchise-level events scaffolded; the two strongest candidates, the 2005 Article 301 prosecution and the 2006 Nobel Prize, are AUTHOR life events and live on content/authors/orhan-pamuk.yaml instead)
+    - content/franchises/orhan-pamuk/eras.yaml (not scaffolded; a 40-year, standalone-novel-by-standalone-novel career has no publisher- or community-sourced periodization this pass could find - needs real discovery, not a guess)
+    - content/franchises/orhan-pamuk/orders.yaml (explicitly out of scope for this stage; also moot without subseries - see below)
+    - content/franchises/orhan-pamuk/editions.yaml (explicitly out of scope for this stage)
+    - content/franchises/orhan-pamuk/achievements.yaml (none earned yet; premature before eras/aura exist)
+    - theme.yaml's art block (explicitly out of scope for this stage; visual-language owns it)
+    - franchise.yaml's images/startHere/globalEvents (owned by visual-metadata/reading-orders/event-resonance respectively)
+forStages:
+  completeness-auditor: >
+    Verify against primary sources, not Wikipedia alone. Three unresolved:
+    "The Secrets of the Black Book" (named on orhanpamuk.net, absent from
+    both Wikipedias and the Turkish bibliography table, no `published` year
+    found); "Kelimeler ve Resimler..." (2026, Yapı Kredi) - a selections
+    volume whose subtitle hints at one possibly-new story, excluded as a
+    reader pending confirmation; whether "Hatıraların Masumiyeti" (2016) and
+    "Manzaradan Parçalar" (2010) have real English editions (Goodreads shows
+    Turkish only, despite English blurb titles on Pamuk's own site).
+  press-archaeology: >
+    Aura deliberately thin (3 lifeEvents: 1952 birth, 2005 Article 301
+    prosecution, 2006 Nobel). 23-year dark run 1982-2004 needs real
+    research: candidates are his unpublished-apprenticeship twenties, the
+    1995 trial of writers over essays on Turkey's treatment of the Kurds,
+    the 2007 death threats/period abroad following journalist Hrant Dink's
+    murder (also Article-301-prosecuted), and his Columbia teaching career
+    since the mid-2000s. Living person - health/finances/family need two
+    independent sources each.
+  eras: >
+    Not scaffolded. Visible but unsourced shape: realist early period
+    (Cevdet Bey ve Oğulları, Sessiz Ev) to postmodern/historical from Beyaz
+    Kale (1985), to contemporary-Istanbul/international from Kar (2002,
+    pre-Nobel). Candidate hinge, not a conclusion.
+  reading-orders: >
+    No subseries, no recurring characters across the 11 novels - each
+    stands alone (publisher omnibuses bundle by setting/theme, not
+    narrative, excluded as non-works). A start-here path likely leads with
+    Benim Adım Kırmızı (My Name Is Red) and Kar (Snow) - no citable
+    "where to start" source checked yet.
+  visual-language: >
+    Palette/displayFace/signature scaffolded (pale near-monochrome grey
+    echoing his "hüzün"/b&w-photograph register, near-black ink, one hot
+    vermilion sourced from Benim Adım Kırmızı's own miniaturist-pigment
+    premise, spectral face, thread signature) - `art` block untouched.
+    Sourced motif candidates: the Bosphorus as the East-West line his Nobel
+    citation names; the real physical Museum of Innocence in Çukurcuma; the
+    b&w archival-photograph register his memoir uses throughout.
+openQuestions:
+  - "The Naive and the Sentimental Novelist is titled in English (Harvard UP, 2010, a year before the Turkish edition Saf ve Düşünceli Romancı, 2011) - the one work here where English, not Turkish, was the first-publication language, departing from the catalogue's usual rule in the opposite direction from every other wing's exceptions."
+  - "Şeylerin Masumiyeti's translator and Balkon/Turuncu's Steidl publication details rest only on orhanpamuk.net + Turkish Wikipedia - want a firmer publisher-catalogue source before editions.yaml."
+  - "themePreset (istanbul-huzun) and palette are first-draft, not final - see theme.yaml's own notes; press-archaeology/visual-language should confirm once the fuller aura and art register exist."

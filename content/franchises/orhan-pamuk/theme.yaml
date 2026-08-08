@@ -1,0 +1,70 @@
+# Branding for the Orhan Pamuk wing (see docs/SCHEMA.md#themeyaml). Non-art
+# fields only - the `art` block (motifs, emblem, line, etc.) is scaffolded
+# separately by the visual-language stage, once the bibliography and any
+# eras are settled. Checked against every existing wing's palette before
+# choosing (python scripts/theme_digest.py).
+#
+# Pamuk's own writing names its own palette directly: his memoir
+# "İstanbul: Hatıralar ve Şehir" devotes a chapter to "hüzün," the
+# collective, specifically Istanbul melancholy he argues the whole city
+# feels, and illustrates the book throughout with black-and-white
+# photographs (many by Ara Güler) of a grey, wintry, fog-bound Bosphorus and
+# fading Ottoman wooden houses - a documented, sourced palette rather than a
+# reading of the prose. So this wing takes a pale, overcast, near-monochrome
+# grey as its ground (old silver-gelatin print paper, winter daylight over
+# the strait), rather than the near-black most of this catalogue's serious
+# literary wings default to.
+#
+# The accent breaks that monochrome deliberately, and is sourced the same
+# way: red is not a critic's reading of Pamuk's palette, it is literally two
+# of his own titles - "Benim Adım Kırmızı" ("My Name Is Red," a novel
+# structured around Ottoman miniaturists and the ground cinnabar/vermilion
+# pigment their red paint was made from) and "Kırmızı Saçlı Kadın" ("The Red-
+# Haired Woman"). The accent below is pitched as that pigment - hot,
+# saturated, slightly orange - rather than the wound-dark or brick reds
+# already in the catalogue: distinct from Stephen King's oxblood (#b04a34),
+# Cormac McCarthy's rust (#c1662c), Valter Hugo Mãe's terracotta (#a8461f),
+# John Gwynne's dark oxblood (#7a2420), JK Rowling's and José Rodrigues dos
+# Santos's brick (#a1392b / #b23327), and Lee Child's pink-leaning flare
+# (#c62f57). It sits closest to John Grisham's pure rubber-stamp red
+# (#c0272c) of anything in the catalogue, but on an entirely different
+# ground and for a different reason - Grisham's is ink stamped on a pale
+# legal pad, this is pigment ground for a miniaturist's brush - and is
+# tuned brighter and slightly more orange than Grisham's to read as paint
+# rather than ink.
+preset: istanbul-huzun
+palette:
+  bg: "#e6e3dc"       # pale, cool-neutral grey - old photograph paper and
+                      # winter Bosphorus daylight, not Agatha Christie's
+                      # warmer interwar cream (#f3ecdf) or Jo Nesbo's colder
+                      # blue-white (#e6ebee)
+  surface: "#dad6cc"  # a shade deeper, for cards
+  ink: "#221f1c"      # near-black warm charcoal, for maximum contrast on
+                      # the pale ground
+  muted: "#54503f"    # dulled warm grey, for metadata (AA-checked against
+                      # bg and surface: 6.31:1 and 5.57:1)
+  accent: "#d1401f"   # one hot, slightly orange vermilion - the miniaturist's
+                      # pigment, used only for links and markers
+displayFace: spectral  # from the app's implemented set (fraunces | spectral
+                       # | sourceSerif | instrument-serif); a quiet, exact
+                       # literary serif rather than fraunces's warmer
+                       # ornament, in the same register this catalogue
+                       # already gives Murakami, Pessoa and García Márquez -
+                       # other Nobel-adjacent, internationally-translated
+                       # literary wings
+signature: thread     # a fine, quiet hairline - already this catalogue's
+                       # most common choice, and deliberately so here: it
+                       # stands for a single grey thread of memory running
+                       # through decades of black-and-white photographs and
+                       # recollection, never a bold rail or a firm
+                       # architectural edge, which would overstate a body of
+                       # work built on understatement and melancholy rather
+                       # than drama
+notes: >
+  A pale, overcast, near-monochrome register - grey winter light over the
+  Bosphorus, old photograph paper - broken by exactly one hot vermilion
+  accent standing for the ground pigment his own title "My Name Is Red"
+  names outright. First-draft branding: this is a scaffold pass, not a
+  final ruling. The `art` block (motifs, emblem, line character) is
+  intentionally left for the visual-language stage once the fuller
+  bibliography and any eras are settled.
