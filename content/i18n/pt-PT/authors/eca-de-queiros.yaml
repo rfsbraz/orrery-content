@@ -1,0 +1,164 @@
+# Português europeu (pt-PT) - bio + prosa dos lifeEvents (title + description).
+# Os lifeEvents ficam aninhados sob o autor e fundem-se por id; datas, impact,
+# organisation, illustration_type, images_required e sources nunca se
+# traduzem, nem o nome do autor. `pseudonyms[].note` não é traduzido: não
+# conta para a cobertura (i18n_coverage.py só regista `bio`) e nenhuma ala já
+# traduzida nesta coleção lhe dá sobreposição (ver umberto-eco.yaml, com
+# Aliàs Reis, ou stephen-king.yaml, com Richard Bachman).
+#
+# CITAÇÃO ORIGINAL RECUPERADA. A frase de eca-de-queiros-casino-conferences-1871
+# ("the first time that revolution, in its scientific form, had a platform in
+# Portugal") é a tradução inglesa de uma frase do próprio Eça nas Farpas; o
+# original - «era a primeira vez que a revolução sob a sua forma científica
+# tinha em Portugal a sua tribuna» - está citado em pt.wikipedia.org/wiki/
+# Conferências_do_Casino e é usado abaixo em vez de retraduzir a paráfrase
+# inglesa. A citação de eca-de-queiros-newcastle-bristol-1874 ("I detest
+# England...") não tem original português localizável nas fontes consultadas
+# e foi traduzida como qualquer outra prosa.
+
+- id: eca-de-queiros
+  bio: >
+    Nasceu na Póvoa de Varzim, filho ilegítimo de um magistrado e de uma
+    jovem senhora que não pôde casar com ele até à morte da própria mãe os
+    libertar para o fazerem; criado pelos avós paternos em Aveiro e no
+    Colégio da Lapa, no Porto, até aos dezasseis anos. Formou-se em Direito
+    na Universidade de Coimbra (1866), onde travou amizade com o poeta
+    Antero de Quental; os dois, com Jaime Batalha Reis, reuniram-se em
+    1868-1869 em casa de Batalha Reis, em Lisboa (um círculo mais tarde
+    chamado o Cenáculo), a inventar um poeta fictício, Carlos Fradique
+    Mendes, como persona satírica coletiva. Trabalhou brevemente como
+    jornalista em Évora e depois em Lisboa, onde a partir de 1871 escreveu
+    com o antigo professor Ramalho Ortigão o mensário satírico As Farpas;
+    nesse mesmo ano, enquanto administrador do concelho de Leiria, escreveu
+    o seu primeiro romance realista,
+    [[work:eca-de-queiros/o-crime-do-padre-amaro|O Crime do Padre Amaro]]
+    (1875). Entrou na carreira consular em 1872 (Havana), servindo depois em
+    Newcastle upon Tyne (1874-1879) e em Bristol (1879-1888) - por sua
+    própria conta, os anos mais produtivos da carreira, em que produziu o
+    texto definitivo de O Crime do Padre Amaro,
+    [[work:eca-de-queiros/o-primo-basilio|O Primo Basílio]] (1878) e a maior
+    parte de [[work:eca-de-queiros/os-maias|Os Maias]] (1888) - antes de um
+    último posto como cônsul-geral em Paris a partir de 1888, que manteve
+    pelo resto da vida. Casou com Emília de Castro no Porto em fevereiro de
+    1886; tiveram quatro filhos. Adoeceu gravemente no início de 1900 com
+    sintomas que o seu médico, Dr. Charles Bouchard, diagnosticou como
+    enterocolite; morreu em sua casa em Neuilly-sur-Seine a 16 de agosto de
+    1900, morte que médicos posteriores têm atribuído alternadamente à
+    tuberculose ou à doença de Crohn. Sepultado em Lisboa após funeral de
+    Estado; os seus restos mortais foram trasladados mais duas vezes pelos
+    descendentes (1989, para uma jazigo de família em Baião) e, depois de um
+    recurso legal de uma minoria dos bisnetos ter sido rejeitado pelo
+    Supremo Tribunal Administrativo, transferidos uma terceira vez para o
+    Panteão Nacional, em Lisboa, a 8 de janeiro de 2025.
+  lifeEvents:
+    - id: eca-de-queiros-born-1845
+      title: Nasce na Póvoa de Varzim, filho de pais não casados
+      description: >
+        Nasceu na Póvoa de Varzim a 25 de novembro de 1845, filho de José
+        Maria de Almeida Teixeira de Queirós, magistrado, e de Carolina
+        Augusta Pereira d'Eça; o casal não pôde casar até à morte da mãe
+        dela, que se opunha à união, e a criança foi baptizada como filho de
+        mãe incógnita para evitar o escândalo. Criado sobretudo pelos avós
+        paternos em Aveiro e num colégio interno no Porto, vendo
+        relativamente pouco de qualquer dos pais até à adolescência.
+
+    - id: eca-de-queiros-coimbra-evora-1866
+      title: Forma-se em Coimbra, depois uma primeira redação em Évora
+      description: >
+        Formou-se em Direito na Universidade de Coimbra em 1866, onde
+        travara amizade com o poeta Antero de Quental; os seus primeiros
+        escritos, uma série de prosas poéticas impressionistas para a Gazeta
+        de Portugal, datam desses anos de estudante e só foram reunidos em
+        livro muito depois da sua morte, como
+        [[work:eca-de-queiros/prosas-barbaras|Prosas Bárbaras]] (1903).
+        Trabalhou como jornalista em Évora, dirigindo o jornal O Distrito de
+        Évora, antes de se mudar para Lisboa para exercer advocacia e
+        jornalismo nos anos imediatamente anteriores ao Cenáculo.
+
+    - id: eca-de-queiros-cenaculo-fradique-1868
+      title: O círculo do Cenáculo inventa Carlos Fradique Mendes
+      description: >
+        Entre o bacharelato em Coimbra de 1866 e o primeiro posto consular,
+        Eça fez parte de um círculo informal lisboeta - mais tarde chamado o
+        Cenáculo, centrado em casa de Jaime Batalha Reis - com o poeta
+        Antero de Quental e outros. Por volta de 1868-1869, os três
+        inventaram em conjunto Carlos Fradique Mendes, um poeta satírico
+        fictício ao modo baudelairiano, e publicaram poemas sob o seu nome;
+        Eça voltou sozinho à personagem mais duas vezes, em prosa, ao longo
+        das três décadas seguintes (ver `pseudonyms` acima).
+
+    - id: eca-de-queiros-casino-conferences-1871
+      title: Profere a proibida conferência do Casino sobre o Realismo
+      description: >
+        Na primavera de 1871, Eça foi um dos doze signatários, ao lado de
+        Antero de Quental, Teófilo Braga e Jaime Batalha Reis, de um
+        manifesto que lançava as Conferências Democráticas do Casino
+        Lisbonense, um ciclo de conferências públicas numa sala alugada em
+        Lisboa que se propunha confrontar Portugal com as novas ideias
+        sociais e científicas da Europa. A própria intervenção de Eça,
+        anunciada como "A Literatura Nova" e "O Realismo como Nova Expressão
+        da Arte", defendia o realismo que passaria as três décadas seguintes
+        a escrever. Antes de se realizar uma sexta conferência, o governo
+        proibiu o ciclo por completo, considerando que as intervenções
+        "atacavam a religião e as instituições do Estado" - a mesma acusação
+        que jornais católicos fariam a
+        [[work:eca-de-queiros/o-crime-do-padre-amaro|O Crime do Padre
+        Amaro]] quatro anos depois. Eça escreveria mais tarde, nas Farpas,
+        que as conferências tinham sido «a primeira vez que a revolução sob
+        a sua forma científica tinha em Portugal a sua tribuna».
+
+    - id: eca-de-queiros-newcastle-bristol-1874
+      title: Cônsul em Newcastle, depois em Bristol - os seus anos mais produtivos
+      description: >
+        Colocado no consulado português em Newcastle upon Tyne a partir do
+        final de 1874, depois de dois anos (1872-1874) como cônsul de
+        Portugal em Havana, e depois em Bristol de 1879 a 1888. Achava a
+        sociedade inglesa pouco agradável mas o país em si admirável
+        ("detesto a Inglaterra, mas isso não me impede de declarar que,
+        como nação pensadora, é provavelmente a primeira"), e viria a
+        chamar a estes anos os mais produtivos da sua carreira: terminou o
+        texto definitivo de
+        [[work:eca-de-queiros/o-crime-do-padre-amaro|O Crime do Padre
+        Amaro]], escreveu [[work:eca-de-queiros/o-primo-basilio|O Primo
+        Basílio]] (1878) e [[work:eca-de-queiros/o-mandarim|O Mandarim]]
+        (1880), e redigiu a maior parte de
+        [[work:eca-de-queiros/os-maias|Os Maias]] (1888), enquanto enviava a
+        Lisboa relatórios consulares sobre as bacias carboníferas de
+        Northumberland e Durham.
+
+    - id: eca-de-queiros-marriage-1886
+      title: Casa com Emília de Castro aos quarenta anos
+      description: >
+        Casou com Emília de Castro Pamplona, filha do 4.º Conde de Resende,
+        na Quinta de Santo Ovídio, no Porto, a 10 de fevereiro de 1886, um
+        ano antes de Os Maias ser publicado. Tiveram quatro filhos: Maria
+        (1887), José Maria (1888), António (1889) e Alberto (1894). A
+        Wikipédia inglesa situa o casamento em Lisboa; a Wikipédia
+        portuguesa indica o local no Porto e cita um registo genealógico de
+        1933, que esta entrada segue por ser a afirmação mais específica e
+        fundamentada de forma independente.
+
+    - id: eca-de-queiros-death-1900
+      title: Morre em Neuilly-sur-Seine, como cônsul-geral em Paris
+      description: >
+        Adoeceu gravemente em fevereiro de 1900, com dores de estômago,
+        febre e inchaço que o seu médico, Dr. Charles Bouchard, diagnosticou
+        como enterocolite; médicos posteriores têm disputado o diagnóstico
+        entre tuberculose e doença de Crohn. Morreu em sua casa em
+        Neuilly-sur-Seine a 16 de agosto de 1900, ainda como cônsul-geral de
+        Portugal em Paris, cargo que ocupava desde 1888.
+        [[work:eca-de-queiros/a-ilustre-casa-de-ramires|A Ilustre Casa de
+        Ramires]] e
+        [[work:eca-de-queiros/a-correspondencia-de-fradique-mendes|A
+        Correspondência de Fradique Mendes]] estavam já terminados e
+        apareceram poucos meses depois;
+        [[work:eca-de-queiros/a-cidade-e-as-serras|A Cidade e as Serras]],
+        em que trabalhava desde 1892, seguiu-se no ano seguinte - o início
+        de uma bibliografia de volumes póstumos que se prolongou por mais de
+        um século (ver works.yaml). O seu corpo foi trazido de volta a
+        Lisboa a bordo do navio de guerra África, a 17 de setembro de 1900,
+        para um funeral de Estado: as principais ruas da cidade cobertas de
+        panos negros oferecidos pelo comerciante Grandela, o carro fúnebre
+        decorado pelo amigo caricaturista Rafael Bordalo Pinheiro, e o
+        cortejo do Terreiro do Paço até ao cemitério do Alto de São João
+        seguido por milhares de pessoas.
