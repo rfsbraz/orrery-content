@@ -1,0 +1,178 @@
+# Concrete published editions, sparse by design (SCHEMA.md: "Sparse is fine").
+# Eleven current, in-print editions across eleven of the wing's nine lifetime
+# and two earliest-posthumous works - every ISBN below resolves on
+# OpenLibrary against the title and publisher recorded here, each checked
+# individually rather than taken on an aggregator's word. The other twenty,
+# mostly scholarly critical-edition volumes with no discoverable
+# individual ISBN, carry none; the app falls back to search links and a
+# typographic cover for those; see docs/SCHEMA.md's "expect low coverage
+# outside the anglophone canon, and do not pad it."
+#
+# No coverUrl on any entry: SCHEMA.md's image-rights rule requires looking at
+# a candidate image for a burned-in watermark before writing it down (the
+# João Tordo wing found 4 of 6 OpenLibrary covers it checked were retailer
+# scrapes with a bookseller's watermark on them), and no candidate here has
+# been inspected against that bar. The app degrades to a typographic cover by
+# design for every slot left empty.
+#
+# TRANSLATOR CREDITS ARE PER-EDITION, NOT ASSUMED. Margaret Jull Costa is
+# credited on the four Dedalus editions below where a source names her
+# directly (Dedalus's own book pages, or the jacket of a checked cover); the
+# modern Dedalus reissues of Eça
+# are overwhelmingly her work as a body of translation, but this file credits
+# only the specific titles checked rather than extending that pattern to the
+# rest by inference.
+
+- id: eca-de-queiros/os-maias/dedalus-2016-en
+  workId: eca-de-queiros/os-maias
+  isbn13: "9781910213445"
+  language: en
+  title: "The Maias"
+  translator: "Margaret Jull Costa"
+  format: paperback
+  publisher: Dedalus
+  year: 2016
+  sources:
+    - "https://www.dedalusbooks.com/our-books/book.php?id=00000186"
+    - "https://openlibrary.org/isbn/9781910213445"
+
+- id: eca-de-queiros/o-crime-do-padre-amaro/dedalus-2011-en
+  workId: eca-de-queiros/o-crime-do-padre-amaro
+  isbn13: "9781907650451"
+  language: en
+  title: "The Crime of Father Amaro"
+  translator: "Margaret Jull Costa"
+  format: paperback
+  publisher: Dedalus
+  year: 2011
+  sources:
+    - "https://openlibrary.org/isbn/9781907650451"
+
+- id: eca-de-queiros/o-primo-basilio/dedalus-2016-en
+  workId: eca-de-queiros/o-primo-basilio
+  isbn13: "9781910213377"
+  language: en
+  title: "Cousin Basilio"
+  format: paperback
+  publisher: Dedalus
+  year: 2016
+  sources:
+    - "https://openlibrary.org/isbn/9781910213377"
+
+- id: eca-de-queiros/o-mandarim/dedalus-2011-en
+  workId: eca-de-queiros/o-mandarim
+  isbn13: "9781907650345"
+  language: en
+  title: "Mandarin and Other Stories"
+  format: paperback
+  publisher: Dedalus
+  year: 2011
+  sources:
+    - "https://openlibrary.org/isbn/9781907650345"
+
+- id: eca-de-queiros/a-reliquia/dedalus-2020-en
+  workId: eca-de-queiros/a-reliquia
+  isbn13: "9781912868407"
+  language: en
+  title: "The Relic"
+  translator: "Margaret Jull Costa"
+  format: paperback
+  publisher: Dedalus
+  year: 2020
+  sources:
+    - "https://www.dedalusbooks.com/our-books/book.php?id=00000198"
+    - "https://openlibrary.org/isbn/9781912868407"
+
+- id: eca-de-queiros/a-ilustre-casa-de-ramires/new-directions-2017-en
+  workId: eca-de-queiros/a-ilustre-casa-de-ramires
+  isbn13: "9780811226981"
+  language: en
+  title: "The Illustrious House of Ramires"
+  format: paperback
+  publisher: New Directions
+  year: 2017
+  sources:
+    - "https://openlibrary.org/isbn/9780811226981"
+
+- id: eca-de-queiros/a-cidade-e-as-serras/dedalus-2012-en
+  workId: eca-de-queiros/a-cidade-e-as-serras
+  isbn13: "9781907650925"
+  language: en
+  title: "The City and the Mountains"
+  translator: "Margaret Jull Costa"
+  format: paperback
+  publisher: Dedalus
+  year: 2012
+  note: >
+    Jull Costa's translation was runner-up for the 2009 Portuguese
+    Translation Prize (the prize year predates this paperback's 2012
+    Dedalus printing).
+  sources:
+    - "https://www.dedalusbooks.com/our-books/book.php?id=00000198"
+    - "https://openlibrary.org/isbn/9781907650925"
+
+- id: eca-de-queiros/alves-e-companhia/dedalus-2012-en
+  workId: eca-de-queiros/alves-e-companhia
+  isbn13: "9781909232228"
+  language: en
+  title: "Alves and Co"
+  format: paperback
+  publisher: Dedalus
+  year: 2012
+  sources:
+    - "https://openlibrary.org/isbn/9781909232228"
+
+- id: eca-de-queiros/a-tragedia-da-rua-das-flores/dedalus-2012-en
+  workId: eca-de-queiros/a-tragedia-da-rua-das-flores
+  isbn13: "9781907650253"
+  language: en
+  title: "The Tragedy of the Street of Flowers"
+  format: paperback
+  publisher: Dedalus
+  year: 2012
+  sources:
+    - "https://openlibrary.org/isbn/9781907650253"
+
+- id: eca-de-queiros/o-misterio-da-estrada-de-sintra/dedalus-2013-en
+  workId: eca-de-queiros/o-misterio-da-estrada-de-sintra
+  isbn13: "9781909232600"
+  language: en
+  title: "The Mystery of the Sintra Road"
+  format: paperback
+  publisher: Dedalus
+  year: 2013
+  sources:
+    - "https://openlibrary.org/isbn/9781909232600"
+
+- id: eca-de-queiros/a-correspondencia-de-fradique-mendes/umass-dartmouth-2010-en
+  workId: eca-de-queiros/a-correspondencia-de-fradique-mendes
+  isbn13: "9781933227320"
+  language: en
+  title: "The Correspondence of Fradique Mendes"
+  translator: "Gregory Rabassa"
+  format: paperback
+  publisher: University of Massachusetts Dartmouth
+  year: 2010
+  note: >
+    Adamastor book series no. 6. Translated by Gregory Rabassa, better known
+    for his English Gabriel García Márquez and Julio Cortázar - one of very
+    few points in this catalogue where a single translator's name connects
+    two otherwise unrelated wings.
+  sources:
+    - "https://openlibrary.org/isbn/9781933227320"
+
+- id: eca-de-queiros/a-correspondencia-de-fradique-mendes/incm-2014-pt
+  workId: eca-de-queiros/a-correspondencia-de-fradique-mendes
+  isbn13: "9789722720854"
+  language: pt-PT
+  title: "A Correspondência de Fradique Mendes (Memórias e Notas)"
+  format: paperback
+  publisher: Imprensa Nacional-Casa da Moeda
+  year: 2014
+  note: >
+    Volume of the "Edição Crítica das Obras de Eça de Queirós" series edited
+    by Carlos Reis, Irene Fialho and Maria João Simões - the same critical
+    edition already cited across this wing's works.yaml (Contos Vol. II,
+    Almanaques e Outros Dispersos, Lendas de Santos).
+  sources:
+    - "https://openlibrary.org/isbn/9789722720854"
