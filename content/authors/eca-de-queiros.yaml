@@ -1,0 +1,159 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds); author-LIFE events live here, never on the
+# franchise's own events.yaml.
+#
+# NAME. "Eça de Queirós" (accented, ending -ós) is used here as the `name` -
+# the spelling the Fundação/família itself and most current English-language
+# publishers (Dedalus, New Directions) use, and the one the request issue
+# uses throughout. "Eça de Queiroz" (ending -oz) is an equally real, widely
+# attested spelling from before Portugal's 1911 orthographic reform - it is
+# in fact the title of Portuguese Wikipedia's own article - and is recorded
+# below in `aka` rather than treated as an error. Neither spelling is a typo
+# for the other; this is a genuine, unsettled orthographic variation, not a
+# single misspelling to correct.
+#
+# SPINE. Cross-checked against English and Portuguese Wikipedia's "Eça de
+# Queirós"/"Eça de Queiroz" articles (birth/death, consular postings,
+# marriage, cause of death) and the Ramalho Ortigão and Carlos Fradique
+# Mendes articles for the collaborations. A living-family legal dispute over
+# his remains (resolved 2024, reburial January 2025) postdates his life by
+# 125 years and is recorded in `bio` as a factual coda, not as a lifeEvent -
+# nothing that happens to a body after death belongs in a record of what the
+# person did while alive.
+id: eca-de-queiros
+name: Eça de Queirós
+aka: ["José Maria de Eça de Queirós", "Eça de Queiroz"]
+born: 1845-11-25
+died: 1900-08-16
+bio: >
+  Born in Póvoa de Varzim, the illegitimate son of a magistrate and a young
+  gentlewoman who could not marry until her own mother's death freed them to;
+  raised by his paternal grandparents in Aveiro and at the Colégio da Lapa in
+  Porto until sixteen. Read law at the University of Coimbra (graduated
+  1866), where he befriended the poet Antero de Quental; the two, with Jaime
+  Batalha Reis, spent 1868-1869 gathered at Batalha Reis's house in Lisbon (a
+  circle later called the Cenáculo) inventing a fictional poet, Carlos
+  Fradique Mendes, as a collective satirical persona. Worked briefly as a
+  journalist in Évora, then in Lisbon, where from 1871 he and his former
+  schoolmaster Ramalho Ortigão co-wrote the satirical monthly As Farpas; that
+  same year, as a municipal administrator in Leiria, he wrote his first
+  realist novel, [[work:eca-de-queiros/o-crime-do-padre-amaro|O Crime do
+  Padre Amaro]] (1875). Entered the consular service in 1872 (Havana), then
+  served in Newcastle upon Tyne (1874-1879) and Bristol (1879-1888) - by his
+  own account the most productive years of his career, producing the
+  definitive text of O Crime do Padre Amaro, [[work:eca-de-queiros/o-primo-basilio|O
+  Primo Basílio]] (1878) and most of [[work:eca-de-queiros/os-maias|Os
+  Maias]] (1888) - before a final posting as consul-general in Paris from
+  1888, which he held for the rest of his life. Married Emília de Castro in
+  Porto in February 1886; they had four children. Fell seriously ill in
+  early 1900 with symptoms his physician, Dr. Charles Bouchard, diagnosed as
+  enterocolitis; he died at his home in Neuilly-sur-Seine on 16 August 1900,
+  a death later physicians have alternately attributed to tuberculosis or
+  Crohn's disease. Buried in Lisbon after a state funeral; his remains were
+  moved twice more by his descendants (1989, to a family vault in Baião) and,
+  after a legal challenge from a minority of his great-grandchildren was
+  rejected by Portugal's Supreme Administrative Court, transferred a third
+  time, to the National Pantheon in Lisbon, on 8 January 2025.
+pseudonyms:
+  - name: "Carlos Fradique Mendes"
+    note: >
+      Not solely Eça's own: Fradique Mendes was invented collectively around
+      1868-1869 by Eça, Antero de Quental and Jaime Batalha Reis as a
+      Baudelairean satirical poet, and early poems signed with the name
+      appeared in the newspaper A Revolução de Setembro. Eça later developed
+      Fradique into a full fictional character rather than a shared byline:
+      he appears in [[work:eca-de-queiros/o-misterio-da-estrada-de-sintra|O
+      Mistério da Estrada de Sintra]] (1870, written with Ramalho Ortigão)
+      and is the subject of [[work:eca-de-queiros/a-correspondencia-de-fradique-mendes|A
+      Correspondência de Fradique Mendes]] (1900) - both published under
+      Eça's own name, never as if written by Fradique himself. No sourced
+      birth or death date for the character was found in the course of this
+      pass, and the character was never a solo invention with an authored
+      biography the way Fernando Pessoa's heteronyms were (see SCHEMA.md);
+      recorded here as a pseudonym/recurring character rather than a
+      heteronym for that reason.
+lifeEvents:
+  - id: eca-de-queiros-born-1845
+    date: 1845-11-25
+    title: Born in Póvoa de Varzim to unmarried parents
+    impact: low
+    description: >
+      Born in Póvoa de Varzim on 25 November 1845 to José Maria de Almeida
+      Teixeira de Queirós, a magistrate, and Carolina Augusta Pereira d'Eça;
+      the couple could not marry until the death of her mother, who had
+      opposed the match, and the child was baptised as the son of an unknown
+      mother to avoid scandal. Raised mostly by his paternal grandparents in
+      Aveiro and at a boarding school in Porto, seeing relatively little of
+      either parent until his teens.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+      - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+  - id: eca-de-queiros-cenaculo-fradique-1868
+    date: 1868
+    title: The Cenáculo circle invents Carlos Fradique Mendes
+    impact: med
+    description: >
+      Between his 1866 Coimbra law degree and his first consular posting, Eça
+      was part of an informal Lisbon circle - later named the Cenáculo,
+      centred on Jaime Batalha Reis's house - with the poet Antero de Quental
+      and others. Around 1868-1869 the three of them jointly invented Carlos
+      Fradique Mendes, a fictional satirical poet in the Baudelairean mode,
+      and published poems under his name; Eça returned to the character
+      alone twice more, in prose, over the following three decades (see
+      `pseudonyms` above).
+    spoilerAfter: null
+    sources:
+      - https://pt.wikipedia.org/wiki/Fradique_Mendes
+      - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+  - id: eca-de-queiros-newcastle-bristol-1874
+    date: 1874
+    title: Consul in Newcastle, then Bristol - his most productive years
+    impact: high
+    description: >
+      Posted to the Portuguese consulate in Newcastle upon Tyne from late
+      1874 (after an earlier posting to Havana), then to Bristol from 1879
+      to 1888. He found English society disagreeable but the country itself
+      admirable ("I detest England, but this does not stop me from declaring
+      that as a thinking nation, she is probably the foremost"), and he later
+      called
+      these years the most productive of his career: he finished the
+      definitive text of [[work:eca-de-queiros/o-crime-do-padre-amaro|O
+      Crime do Padre Amaro]], wrote [[work:eca-de-queiros/o-primo-basilio|O
+      Primo Basílio]] (1878) and [[work:eca-de-queiros/o-mandarim|O
+      Mandarim]] (1880), and drafted most of
+      [[work:eca-de-queiros/os-maias|Os Maias]] (1888), while filing consular
+      reports to Lisbon on the Northumberland and Durham coalfields.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+      - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+  - id: eca-de-queiros-death-1900
+    date: 1900-08-16
+    title: Dies in Neuilly-sur-Seine, as Paris consul-general
+    impact: high
+    description: >
+      Fell seriously ill in February 1900 with stomach pain, fever and
+      swelling his physician Dr. Charles Bouchard diagnosed as enterocolitis;
+      later physicians have disputed the diagnosis between tuberculosis and
+      Crohn's disease. Died at his home in Neuilly-sur-Seine on 16 August
+      1900, still serving as Portugal's consul-general in Paris, a post he
+      had held since 1888. [[work:eca-de-queiros/a-ilustre-casa-de-ramires|A
+      Ilustre Casa de Ramires]] and
+      [[work:eca-de-queiros/a-correspondencia-de-fradique-mendes|A
+      Correspondência de Fradique Mendes]] were both already finished and
+      appeared within months; [[work:eca-de-queiros/a-cidade-e-as-serras|A
+      Cidade e as Serras]], on which he had worked since 1892, followed the
+      next year - the start of a bibliography of posthumous volumes that
+      continued for well over a century (see works.yaml).
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+      - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+sources:
+  - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+  - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+  - https://pt.wikipedia.org/wiki/Fradique_Mendes

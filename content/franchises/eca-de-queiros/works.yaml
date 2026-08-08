@@ -1,0 +1,585 @@
+# Bibliography (Works) - the abstract books; editions/covers are separate.
+# IDs are STABLE and permanent (user data references them). Titles are the
+# ORIGINAL Portuguese as first published (see franchise.yaml's own note: Eça
+# wrote in Portuguese throughout, so this never conflicts with an
+# English-first exception the way it does on some other wings).
+#
+# SOURCES. Cross-checked against English and Portuguese Wikipedia's "Eça de
+# Queirós"/"Eça de Queiroz" articles (which carry, and largely agree on, a
+# full list of titles and years), Portuguese Wikipedia's own navigation
+# template for his books (a second, independently-edited list that stops at
+# A Tragédia da Rua das Flores, 1980), and the dedicated Portuguese Wikipedia
+# article for each title named below where one exists.
+#
+# POSTHUMOUS WORKS get an ordinary work entry plus a `note:` recording it,
+# the same treatment this catalogue already gives José Saramago's posthumous
+# volumes - no separate section, no special field. Two 1900 books
+# (A Correspondência de Fradique Mendes, A Ilustre Casa de Ramires) were
+# finished before Eça's death that August but reached print only weeks or
+# months later; Portuguese Wikipedia's own article on the former calls this
+# "semipóstumo" ("semi-posthumous"), and both are noted as such rather than
+# folded silently into either the "lifetime" or "posthumous" bucket.
+#
+# WHAT COUNTS AS A WORK HERE. A short story that only ever appeared in a
+# periodical and was then gathered into a collection is not listed
+# separately - the same rule this catalogue's Fernando Pessoa wing states for
+# periodical poems, applied here to periodical fiction. Checked directly:
+# Singularidades de uma Rapariga Loura (1874), Um Poeta Lírico and No Moinho
+# (1880), Civilização, O Tesouro and Frei Genebro (1892-93), A Aia (1894), O
+# Defunto (1895), José Matias, A Perfeição and Adão e Eva no Paraíso (1897)
+# and O Suave Milagre (1898) were all first printed in newspapers or
+# magazines (Gazeta de Notícias, Revista Moderna, the Almanaque
+# Enciclopédico) and only gathered into a book, Contos, after his death in
+# 1902; none is a separate entry below, and the most-cited among them are
+# named in Contos's own synopsis instead.
+#
+# NOT LISTED, and why. As Minas de Salomão (1885-91), Eça's own Portuguese
+# translation of H. Rider Haggard's King Solomon's Mines, is absent
+# deliberately. It appears on both Wikipedias' bibliographies, but it is not
+# a book he wrote, and `authorRole` (SCHEMA.md: author | co-author |
+# contributor | editor) has no value for "sole translator of someone else's
+# novel" - the closest fits (`contributor`, `editor`) would misstate the
+# relationship as much as bare `authorIds` would. Rather than force a value
+# the schema does not offer, the translation is left out here: not a hole in
+# Eça's own bibliography, but a hole in the schema's vocabulary for one.
+#
+# SUBSERIES is null throughout: nothing here is a publisher-numbered or
+# author-grouped sequence. Carlos Fradique Mendes, the satirical persona Eça
+# co-invented with Antero de Quental and Jaime Batalha Reis (see
+# content/authors/eca-de-queiros.yaml's `pseudonyms`), appears across three
+# works below (O Mistério da Estrada de Sintra, A Correspondência de Fradique
+# Mendes, Cartas Inéditas de Fradique Mendes) - a recurring character, not a
+# series, per this catalogue's own rule; each of the three notes the other
+# two instead of a shared `subseries` value.
+#
+# THIN ENTRIES. Four entries (Dicionário de Milagres, Contos Vol. II,
+# Almanaques e Outros Dispersos, Lendas de Santos) rest on a title and year
+# from the two Wikipedia bibliographies alone - no dedicated article,
+# publisher record or review was found for any of the four. They are
+# included, honestly thin, rather than dropped: a documented gap is more
+# useful than a silent absence. A fifth item Portuguese Wikipedia lists,
+# Textos de Imprensa (six volumes, 1995-2024, a modern critical edition of
+# Eça's journalism), is left out entirely rather than given one guessed date
+# spanning 29 years; it is really some number of separately-dated volumes,
+# not yet resolved into which.
+
+# --- Published in his lifetime ---
+
+- id: eca-de-queiros/o-misterio-da-estrada-de-sintra
+  title: "O Mistério da Estrada de Sintra"
+  authorIds: [eca-de-queiros]
+  withAuthorIds: [ramalho-ortigao]
+  authorRole: co-author
+  published: 1870
+  subseries: null
+  canonTier: core
+  synopsis: >
+    Two friends are kidnapped on the road back from Sintra and wake in a
+    house with a corpse. Serialised in Diário de Notícias as 66 real "letters
+    to the editor," with the paper's own editor in on the hoax, it convinced
+    much of Lisbon it was reading a true crime as it happened; considered the
+    first Portuguese detective novel. Carlos Fradique Mendes, the satirical
+    persona Eça had co-invented two years earlier, appears as a character.
+  note: >
+    Written jointly with Ramalho Ortigão, who was billed first in the 1870
+    newspaper serial; Eça reworked the text extensively for the 1884 third
+    edition, after which he was credited as the lead author of the book
+    version.
+  sources:
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://en.wikipedia.org/wiki/The_Mystery_of_the_Sintra_Road
+    - https://pt.wikipedia.org/wiki/Fradique_Mendes
+
+- id: eca-de-queiros/o-crime-do-padre-amaro
+  title: "O Crime do Padre Amaro"
+  authorIds: [eca-de-queiros]
+  published: 1875
+  subseries: null
+  canonTier: core
+  featured: true
+  synopsis: >
+    A young priest posted to provincial Leiria falls into an affair with a
+    devout parishioner, and the small-town Church closes around the
+    consequences. Eça's first novel and the founding text of Portuguese
+    literary realism, written while he was a municipal administrator in the
+    same city the book is set in.
+  note: >
+    Substantially rewritten twice after its 1875 first edition (1876, then a
+    definitive 1880 text); the 1880 version is the one now read and
+    translated.
+  sources:
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+- id: eca-de-queiros/o-primo-basilio
+  title: "O Primo Basílio"
+  authorIds: [eca-de-queiros]
+  published: 1878
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A bored Lisbon wife takes up with her visiting cousin while her husband
+    is away on business, and the affair is exposed by a scheming maid. Gave
+    Portuguese the word "acaciano," from the novel's Conselheiro Acácio, for
+    speech that is pompous, ornate and empty of content.
+  sources:
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+- id: eca-de-queiros/o-mandarim
+  title: "O Mandarim"
+  authorIds: [eca-de-queiros]
+  published: 1880
+  subseries: null
+  canonTier: core
+  format: novella
+  synopsis: >
+    A poor clerk is told that ringing a bell will kill an unseen mandarin in
+    China and hand him the dead man's fortune - and rings it. A fantastical
+    fable, written in Bristol, about the corrupting weightlessness of money
+    that costs its owner nothing to obtain.
+  sources:
+    - https://pt.wikipedia.org/wiki/O_Mandarim
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+- id: eca-de-queiros/a-reliquia
+  title: "A Relíquia"
+  authorIds: [eca-de-queiros]
+  published: 1887
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A young hypocrite travels to the Holy Land hoping to inherit from his
+    devout aunt, and dreams his way into a blasphemous, comic version of the
+    Passion he can pass off as piety. Drafted after Eça's own 1869-70 journey
+    to Egypt and Palestine but held back seventeen years before publication.
+  note: >
+    Its resemblance to Ferdinando Petruccelli della Gattina's earlier
+    "Memorie di Giuda" led some critics to accuse Eça of plagiarism.
+  sources:
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+- id: eca-de-queiros/os-maias
+  title: "Os Maias"
+  authorIds: [eca-de-queiros]
+  published: 1888
+  subseries: null
+  canonTier: core
+  featured: true
+  synopsis: >
+    Three generations of a Lisbon family unravel across old money, faded
+    Romanticism and a love affair between the grandson Carlos and a woman he
+    does not yet know is his sister. Conceived as early as 1878, written
+    largely during Eça's Bristol consulship and published the year he left
+    for Paris; widely called the greatest Portuguese realist novel.
+  sources:
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+- id: eca-de-queiros/uma-campanha-alegre
+  title: "Uma Campanha Alegre"
+  authorIds: [eca-de-queiros]
+  published: 1890
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Two volumes of the satirical columns Eça himself wrote for As Farpas in
+    1871-72, on religion, journalism, politics and literature - his own share
+    of the co-written monthly, collected under his sole name eighteen years
+    after he stopped writing it.
+  note: >
+    As Farpas continued as Ramalho Ortigão's own magazine alone until 1882;
+    this volume gathers only Eça's contribution, not the full run.
+  sources:
+    - https://pt.wikipedia.org/wiki/Uma_Campanha_Alegre
+    - https://pt.wikipedia.org/wiki/As_Farpas
+
+- id: eca-de-queiros/a-correspondencia-de-fradique-mendes
+  title: "A Correspondência de Fradique Mendes"
+  authorIds: [eca-de-queiros]
+  published: 1900
+  subseries: null
+  canonTier: core
+  synopsis: >
+    An admiring biography and seventeen letters, presented as if edited by a
+    friend, giving a full life to Carlos Fradique Mendes: wealthy Azorean
+    poet, tireless traveller, and the satirical persona Eça, Antero de
+    Quental and Jaime Batalha Reis had first invented as a joke thirty years
+    earlier. Eça worked at the character from 1885 as "a novel of a special,
+    didactic, non-dramatic kind."
+  note: >
+    Published under Eça's own name in 1900, a few months after his death in
+    August that year - Portuguese Wikipedia's own article on the book calls
+    it "semipóstumo" (semi-posthumous). Fradique also appears in
+    [[work:eca-de-queiros/o-misterio-da-estrada-de-sintra|O Mistério da
+    Estrada de Sintra]] (1870) and in the later
+    [[work:eca-de-queiros/cartas-ineditas-de-fradique-mendes|Cartas Inéditas
+    de Fradique Mendes]] (1929).
+  sources:
+    - https://pt.wikipedia.org/wiki/A_Correspond%C3%AAncia_de_Fradique_Mendes
+    - https://pt.wikipedia.org/wiki/Fradique_Mendes
+
+- id: eca-de-queiros/a-ilustre-casa-de-ramires
+  title: "A Ilustre Casa de Ramires"
+  authorIds: [eca-de-queiros]
+  published: 1900
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A financially strapped country nobleman writes a historical romance
+    glorifying his own medieval ancestors while brokering his sister's
+    marriage for political advantage back home - a portrait, through one
+    family, of the compromises Eça saw underneath Portugal's own decline.
+  note: >
+    Published in 1900, the year of Eça's death in August that year.
+  sources:
+    - https://pt.wikipedia.org/wiki/A_Ilustre_Casa_de_Ramires
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+# --- Posthumous (1901-) ---
+
+- id: eca-de-queiros/a-cidade-e-as-serras
+  title: "A Cidade e as Serras"
+  authorIds: [eca-de-queiros]
+  published: 1901
+  subseries: null
+  canonTier: core
+  featured: true
+  synopsis: >
+    A wealthy Portuguese expatriate, sated on every mechanical convenience
+    1890s Paris can supply, retreats to his family's rustic mountain estate
+    at Tormes and finds a life he did not know he was missing. Eça's own last
+    finished book, written between 1892 and his death in 1900.
+  note: >
+    Published posthumously, the year after his death.
+  sources:
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+- id: eca-de-queiros/contos
+  title: "Contos"
+  authorIds: [eca-de-queiros]
+  published: 1902
+  subseries: null
+  canonTier: core
+  format: short-story-collection
+  synopsis: >
+    Eça's short fiction, written for newspapers and magazines between 1874
+    and 1898 and gathered into one volume after his death: among them
+    Singularidades de uma Rapariga Loura, a young man's disillusioning
+    courtship; José Matias, a tragicomic study of Platonic love recounted
+    entirely through what a dinner-party audience keeps interrupting; O
+    Defunto and A Perfeição; and O Suave Milagre, a legend in which Christ
+    steps down from the cross to save a stranger's honest lie.
+  note: >
+    Published posthumously; every story in it first appeared in a periodical
+    (see this file's own header) and none is listed here as a separate work.
+  sources:
+    - https://pt.wikipedia.org/wiki/Contos_(E%C3%A7a_de_Queiroz)
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+- id: eca-de-queiros/prosas-barbaras
+  title: "Prosas Bárbaras"
+  authorIds: [eca-de-queiros]
+  published: 1903
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Eça's earliest writing: impressionistic, lyrical prose poems published in
+    the Gazeta de Portugal during his Coimbra years and gathered into a book,
+    long after his death, by his Cenáculo friend Jaime Batalha Reis.
+  note: >
+    Published posthumously. Tagged `essay-collection` for lack of a closer
+    fit in this catalogue's `format` list (SCHEMA.md); the pieces are closer
+    to prose poems than to essays proper.
+  sources:
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+- id: eca-de-queiros/cartas-de-inglaterra
+  title: "Cartas de Inglaterra"
+  authorIds: [eca-de-queiros]
+  published: 1905
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    Eça's "Cartas de Londres" newspaper column for the Diário de Notícias,
+    filed during his English consular years, gathered into a book after his
+    death.
+  note: >
+    Published posthumously.
+  sources:
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+- id: eca-de-queiros/ecos-de-paris
+  title: "Ecos de Paris"
+  authorIds: [eca-de-queiros]
+  published: 1905
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    Journalism written from Paris during Eça's final consular posting,
+    collected into a book after his death.
+  note: >
+    Published posthumously.
+  sources:
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+- id: eca-de-queiros/cartas-familiares-e-bilhetes-de-paris
+  title: "Cartas Familiares e Bilhetes de Paris"
+  authorIds: [eca-de-queiros]
+  published: 1907
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    Further Paris letters and short notices, collected into a book after his
+    death.
+  note: >
+    Published posthumously.
+  sources:
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+- id: eca-de-queiros/notas-contemporaneas
+  title: "Notas Contemporâneas"
+  authorIds: [eca-de-queiros]
+  published: 1909
+  subseries: null
+  canonTier: extended
+  format: essay-collection
+  synopsis: >
+    Essays and critical pieces on Portuguese politics, culture and public
+    life, collected into a book after his death.
+  note: >
+    Published posthumously.
+  sources:
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+- id: eca-de-queiros/ultimas-paginas
+  title: "Últimas Páginas"
+  authorIds: [eca-de-queiros]
+  published: 1912
+  subseries: null
+  canonTier: extended
+  format: short-story-collection
+  synopsis: >
+    Fragments and unfinished pieces gathered after his death, chief among
+    them "São Cristóvão," an unfinished legend of the giant who carries
+    travellers across a river and one day carries Christ himself, translated
+    into English only in 2015 as "Saint Christopher."
+  note: >
+    Published posthumously.
+  sources:
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+- id: eca-de-queiros/a-capital
+  title: "A Capital"
+  authorIds: [eca-de-queiros]
+  published: 1925
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A provincial young man arrives in Lisbon to make his fortune and finds
+    the capital as morally compromising as anywhere he left. Written in
+    1877-78 and left unfinished; prepared for print by Eça's son decades
+    after his death.
+  note: >
+    Published posthumously, 47 years after it was written.
+  sources:
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+- id: eca-de-queiros/o-conde-de-abranhos
+  title: "O Conde de Abranhos"
+  authorIds: [eca-de-queiros]
+  published: 1925
+  subseries: null
+  canonTier: extended
+  format: novella
+  synopsis: >
+    A fawning fictional biography, "written" by the dead politician's own
+    devoted secretary Z. Zagalo, of Alípio Abranhos - a caricature that folds
+    the vices of every 19th-century Portuguese politician into one invented
+    career. Written in 1879.
+  note: >
+    Published posthumously, 46 years after it was written.
+  sources:
+    - https://pt.wikipedia.org/wiki/O_Conde_de_Abranhos
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+- id: eca-de-queiros/alves-e-companhia
+  title: "Alves & Companhia"
+  authorIds: [eca-de-queiros]
+  published: 1925
+  subseries: null
+  canonTier: core
+  format: novella
+  synopsis: >
+    A Lisbon merchant discovers his wife's adultery, works himself into a
+    fury, and then - once ruining the affair proves more inconvenient than
+    ignoring it - talks himself into forgiveness instead. A small, precise
+    satire of a "country of mild habits" that finds the ridiculous
+    advantageous once the scandal is priced in. Written in 1884.
+  note: >
+    Published posthumously, 41 years after it was written; translated into
+    English as both "The Yellow Sofa" and "Alves & Co."
+  sources:
+    - https://pt.wikipedia.org/wiki/Alves_%26_Companhia
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+- id: eca-de-queiros/o-egipto
+  title: "O Egipto"
+  authorIds: [eca-de-queiros]
+  published: 1926
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    Travel notes and journalism from Eça's 1869 journey to Egypt for the
+    opening of the Suez Canal, collected into a book after his death.
+  note: >
+    Published posthumously. Titled with the pre-1911 spelling "Egipto"
+    (modern Portuguese: "Egito"), kept here as the original published title.
+  sources:
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+# --- Apocrypha: further Fradique material and private correspondence ---
+
+- id: eca-de-queiros/cartas-ineditas-de-fradique-mendes
+  title: "Cartas Inéditas de Fradique Mendes"
+  authorIds: [eca-de-queiros]
+  published: 1929
+  subseries: null
+  canonTier: apocrypha
+  format: nonfiction
+  synopsis: >
+    Further unpublished letters and pages in the voice of Carlos Fradique
+    Mendes, gathered into a book after Eça's death.
+  note: >
+    Published posthumously; the third and last of the Fradique works (see
+    [[work:eca-de-queiros/a-correspondencia-de-fradique-mendes|A
+    Correspondência de Fradique Mendes]]'s own note for the other two).
+  sources:
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+    - https://pt.wikipedia.org/wiki/Fradique_Mendes
+
+- id: eca-de-queiros/eca-de-queiros-entre-os-seus-cartas-intimas
+  title: "Eça de Queirós Entre os Seus - Cartas Íntimas"
+  authorIds: [eca-de-queiros]
+  published: 1949
+  subseries: null
+  canonTier: apocrypha
+  format: nonfiction
+  synopsis: >
+    Eça's own private, personal correspondence with family and friends,
+    edited into a book by others just under half a century after his death.
+  note: >
+    Published posthumously.
+  sources:
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+- id: eca-de-queiros/dicionario-de-milagres
+  title: "Dicionário de Milagres"
+  authorIds: [eca-de-queiros]
+  published: 1900
+  subseries: null
+  canonTier: apocrypha
+  synopsis: >
+    Listed on both Wikipedias' bibliographies as a posthumous 1900
+    publication; no dedicated source describing its actual contents was
+    found.
+  note: >
+    Thinly sourced - title and year only, from the Portuguese Wikipedia
+    bibliography list; no dedicated article, publisher record or review
+    was found to confirm or describe it further.
+  sources:
+    - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+# --- Modern editorial gatherings (2003-) ---
+
+- id: eca-de-queiros/contos-vol-ii
+  title: "Contos Vol. II"
+  authorIds: [eca-de-queiros]
+  published: 2003
+  subseries: null
+  canonTier: extended
+  format: short-story-collection
+  synopsis: >
+    A second gathering of short fiction, over a century after the first
+    [[work:eca-de-queiros/contos|Contos]] (1902); no source describing its
+    specific contents beyond the title and year was found in the time this
+    pass had.
+  note: >
+    Thinly sourced - title and year only, from the Portuguese Wikipedia
+    bibliography list; no dedicated article, publisher record or review
+    was found to confirm or describe it further.
+  sources:
+    - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+- id: eca-de-queiros/almanaques-e-outros-dispersos
+  title: "Almanaques e Outros Dispersos"
+  authorIds: [eca-de-queiros]
+  published: 2011
+  subseries: null
+  canonTier: extended
+  format: nonfiction
+  synopsis: >
+    A modern scholarly gathering of Eça's scattered almanac and periodical
+    writing; no source describing its specific contents beyond the title and
+    year was found.
+  note: >
+    Thinly sourced - title and year only, from the Portuguese Wikipedia
+    bibliography list; no dedicated article, publisher record or review
+    was found to confirm or describe it further.
+  sources:
+    - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+- id: eca-de-queiros/lendas-de-santos
+  title: "Lendas de Santos"
+  authorIds: [eca-de-queiros]
+  published: 2023
+  subseries: null
+  canonTier: extended
+  synopsis: >
+    A posthumous gathering published in 2023, 123 years after Eça's death; no
+    source describing its specific contents beyond the title and year was
+    found.
+  note: >
+    Thinly sourced - title and year only, from the Portuguese Wikipedia
+    bibliography list, which is also the only evidence found that this
+    bibliography is still being added to as recently as 2023; no dedicated
+    article, publisher record or review was found to confirm or describe
+    it further.
+  sources:
+    - https://pt.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s
+
+# --- Published in his lifetime, discovered and printed only in 1980 ---
+
+- id: eca-de-queiros/a-tragedia-da-rua-das-flores
+  title: "A Tragédia da Rua das Flores"
+  authorIds: [eca-de-queiros]
+  published: 1980
+  subseries: null
+  canonTier: core
+  synopsis: >
+    A young man falls for an older woman without knowing she is his own
+    mother, abandoned to him as a newborn decades earlier. Written in
+    1877-78, before O Crime do Padre Amaro reached print, and left in
+    manuscript for over a century - the incest plot is the likeliest reason
+    Eça himself never published it.
+  note: >
+    Written 1877-78; first published only in 1980, eighty years after Eça's
+    death. Adapted for Portuguese television in 1981 and for the stage in
+    1982.
+  sources:
+    - https://pt.wikipedia.org/wiki/A_Trag%C3%A9dia_da_Rua_das_Flores
+    - https://en.wikipedia.org/wiki/E%C3%A7a_de_Queir%C3%B3s

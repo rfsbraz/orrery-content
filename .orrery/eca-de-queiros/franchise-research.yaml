@@ -1,0 +1,102 @@
+stage: franchise-research
+summary: >
+  Scaffolded from scratch: franchise.yaml, works.yaml (28 works: 12 core, 13
+  extended, 3 apocrypha), theme.yaml's non-art fields, eca-de-queiros.yaml
+  (4 lifeEvents), plus a minimal ramalho-ortigao.yaml stub for the
+  O Mistério da Estrada de Sintra co-authorship. Request issue's bibliography
+  (4 titles) confirmed but far from complete; real count is 28. Posthumous
+  handling follows the existing Saramago precedent (ordinary work + note),
+  not a new structure - the issue's own named precedent (Cesário
+  Verde/Florbela Espanca) does not exist in this catalogue yet, so Saramago
+  is the actual model checked. Portuguese-original-title convention followed
+  per Pessoa's wing; moot in practice since nothing here was first published
+  in another language.
+produced:
+  newWorkIds:
+    - eca-de-queiros/o-misterio-da-estrada-de-sintra
+    - eca-de-queiros/o-crime-do-padre-amaro
+    - eca-de-queiros/o-primo-basilio
+    - eca-de-queiros/o-mandarim
+    - eca-de-queiros/a-reliquia
+    - eca-de-queiros/os-maias
+    - eca-de-queiros/uma-campanha-alegre
+    - eca-de-queiros/a-correspondencia-de-fradique-mendes
+    - eca-de-queiros/a-ilustre-casa-de-ramires
+    - eca-de-queiros/a-cidade-e-as-serras
+    - eca-de-queiros/contos
+    - eca-de-queiros/prosas-barbaras
+    - eca-de-queiros/cartas-de-inglaterra
+    - eca-de-queiros/ecos-de-paris
+    - eca-de-queiros/cartas-familiares-e-bilhetes-de-paris
+    - eca-de-queiros/notas-contemporaneas
+    - eca-de-queiros/ultimas-paginas
+    - eca-de-queiros/a-capital
+    - eca-de-queiros/o-conde-de-abranhos
+    - eca-de-queiros/alves-e-companhia
+    - eca-de-queiros/o-egipto
+    - eca-de-queiros/cartas-ineditas-de-fradique-mendes
+    - eca-de-queiros/eca-de-queiros-entre-os-seus-cartas-intimas
+    - eca-de-queiros/dicionario-de-milagres
+    - eca-de-queiros/contos-vol-ii
+    - eca-de-queiros/almanaques-e-outros-dispersos
+    - eca-de-queiros/lendas-de-santos
+    - eca-de-queiros/a-tragedia-da-rua-das-flores
+  newAuthorIds: [eca-de-queiros, ramalho-ortigao]
+  filesWritten:
+    - content/franchises/eca-de-queiros/franchise.yaml
+    - content/franchises/eca-de-queiros/works.yaml
+    - content/franchises/eca-de-queiros/theme.yaml
+    - content/authors/eca-de-queiros.yaml
+    - content/authors/ramalho-ortigao.yaml
+  filesDeliberatelyNotWritten:
+    - events.yaml (no franchise-level events scaffolded this pass)
+    - eras.yaml (no sourced periodisation found; a real discovery job, not a guess - eras stage)
+    - orders.yaml, startHere (reading-orders' job)
+    - editions.yaml (editions' job)
+    - achievements.yaml (premature before aura/eras exist)
+    - theme.yaml's art block (visual-language's job)
+forStages:
+  completeness-auditor: >
+    Highest-priority open item: As Minas de Salomão (his translation of
+    Rider Haggard's King Solomon's Mines) was deliberately excluded because
+    `authorRole` has no "translator" value - propose a schema addition or
+    rule on how to record it, don't just add it back as `author`. Also
+    verify the four thinly-sourced late entries (Dicionário de Milagres,
+    Contos Vol. II, Almanaques e Outros Dispersos, Lendas de Santos - title
+    and year only, no confirmed contents), and resolve Textos de Imprensa
+    (six volumes, 1995-2024) into real, separately-dated volumes rather than
+    the placeholder this pass deliberately left out.
+  press-archaeology: >
+    Aura deliberately thin (4 lifeEvents: 1845 birth, 1868 Cenáculo/Fradique
+    invention, 1874 Newcastle-Bristol years, 1900 death). Real gaps: the
+    1886 marriage and four children; the 1888 Paris consul-general
+    appointment held until death; his politics and the "Vencidos da Vida"
+    circle; and the 1900-2025 afterlife of his remains (three reburials, a
+    2020-2024 family legal dispute, 2025 transfer to the National Pantheon)
+    - sourced, but posthumous, so left off lifeEvents; may suit a franchise
+    event instead.
+  eras: >
+    Not scaffolded; no sourced periodisation found. A visible but unsourced
+    shape: pre-Newcastle apprenticeship (1870-73), the English consular years
+    (1874-88, his most productive per his own account), the Paris years
+    (1888-1900), then the century-plus of posthumous publication. Candidate
+    only, not a conclusion.
+  reading-orders: >
+    No subseries; no publisher-numbered sequence found. A start-here path
+    likely leads with O Crime do Padre Amaro (the realist debut) and Os
+    Maias (the acknowledged masterpiece) - no citable "where to start"
+    source checked yet.
+  visual-language: >
+    Palette/displayFace/signature scaffolded (mauveine violet grounded in
+    the actual 1856-discovered dye fashionable across his bourgeois
+    milieu, near-black wine-maroon ground, fraunces face, thread signature)
+    - `art` block untouched. Sourced motif candidates: gaslit bourgeois
+    parlours and provincial rectories (Padre Amaro, Primo Basílio); consular
+    wax seals and dispatch correspondence (his 28-year diplomatic career);
+    the Tormes mountain estate vs. gadget-filled Paris apartment duality
+    that structures A Cidade e as Serras.
+openQuestions:
+  - "authorRole has no 'translator' value - As Minas de Salomão (Haggard translation) excluded rather than misfiled; needs a curator ruling or a schema change, not a silent default."
+  - "Carlos Fradique Mendes ruled a pseudonym/character, not a SCHEMA.md heteronym: no sourced authored birth/death date exists for him, and he was invented jointly by three people (Eça, Antero de Quental, Batalha Reis), not solely by Eça the way Pessoa's heteronyms were. Revisit if press-archaeology finds a fuller invented biography."
+  - "The request issue's own precedent for 'low-drama posthumous publication' (Cesário Verde, Florbela Espanca) does not exist in this catalogue - neither has a wing yet. The real, checked precedent is José Saramago's wing, which the posthumous handling here follows."
+  - "'Eça de Queirós' vs 'Eça de Queiroz': both are real, attested spellings (pre/post-1911 orthography), not a typo either way. Used Queirós as `name` per the request issue and current Fundação usage; recorded Queiroz in `aka`."
