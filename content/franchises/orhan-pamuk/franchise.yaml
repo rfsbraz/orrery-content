@@ -1,0 +1,48 @@
+# A wing spans an author's complete published work, not one genre or
+# period. Pamuk's shelf has no recurring series or shared universe at all -
+# eleven standalone novels plus memoir, essays and photography - so this
+# wing is the plainest possible case of the rule: everything he has
+# published, in one place, no subseries. See works.yaml's own header for the
+# sourced tiering, the translator-per-book breakdown, and what was checked
+# and excluded (omnibus repackagings, a documentary film, a "selections"
+# reader).
+id: orhan-pamuk
+name: Orhan Pamuk
+kind: author
+description: >
+  The complete published work of Orhan Pamuk, the first Turkish Nobel
+  laureate (2006): eleven novels from his 1982 debut
+  [[work:orhan-pamuk/cevdet-bey-ve-ogullari|Cevdet Bey ve Oğulları]] through
+  his 2021 plague epic [[work:orhan-pamuk/veba-geceleri|Veba Geceleri]],
+  turning from realist family saga through postmodern historical fiction
+  ([[work:orhan-pamuk/beyaz-kale|Beyaz Kale]],
+  [[work:orhan-pamuk/benim-adim-kirmizi|Benim Adım Kırmızı]]) to the
+  contemporary Istanbul of
+  [[work:orhan-pamuk/kar|Kar]] and
+  [[work:orhan-pamuk/masumiyet-muzesi|Masumiyet Müzesi]]; his memoir of the
+  city, [[work:orhan-pamuk/istanbul-hatiralar-ve-sehir|İstanbul: Hatıralar
+  ve Şehir]]; two essay collections and his Nobel lecture; the Norton
+  Lectures book he delivered and first published in English; the object
+  catalogue of the real Museum of Innocence he built in Istanbul from his
+  own novel; two photography collections; a screenplay; and a volume of
+  personal notebooks. No recurring series or shared universe runs through
+  it - each novel stands alone.
+authorIds: [orhan-pamuk]
+themePreset: istanbul-huzun
+
+# Capabilities (docs/SCHEMA.md) are auto-detected from the data and left
+# auto here on purpose: with no theme.art, no events.yaml and no eras.yaml
+# yet, `river` and `companion` will not activate until those exist;
+# `wizard` will not activate until a startHere is written; `editions` will
+# not activate until editions.yaml exists. Nothing needs forcing off in the
+# meantime.
+features:
+  river: auto
+  wizard: auto
+  companion: auto
+  editions: auto
+
+sources:
+  - https://en.wikipedia.org/wiki/Orhan_Pamuk
+  - https://tr.wikipedia.org/wiki/Orhan_Pamuk
+  - https://www.orhanpamuk.net/
