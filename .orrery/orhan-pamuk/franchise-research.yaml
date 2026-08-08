@@ -1,17 +1,12 @@
 stage: franchise-research
 summary: >
-  Scaffolded the Orhan Pamuk wing from scratch: franchise.yaml, works.yaml
-  (22 works: 11 core novels, 11 extended), theme.yaml's non-art fields, and
-  the orhan-pamuk global author entity. Verified rather than trusted the
-  request issue's translator framing: Maureen Freely and Erdağ Göknar are
-  not evenly matched "two principal translators" - Freely has translated
-  five books, Göknar exactly one (My Name Is Red). Confirmed the İ/I
-  dotting trap is real and transcribed every Turkish title
-  character-for-character from Turkish-language sources rather than from an
-  English secondary source's romanization. validate.py --slug orhan-pamuk is
-  clean except for the expected missing theme.art block, which is explicitly
-  out of this stage's scope (the error fires because the author entity
-  already carries 3 scaffolded lifeEvents - see forStages.visual-language).
+  Scaffolded from scratch: franchise.yaml, works.yaml (22 works: 11 core
+  novels, 11 extended), theme.yaml's non-art fields, orhan-pamuk.yaml.
+  Translator framing corrected: Freely translated five books, Göknar
+  exactly one (My Name Is Red), not evenly-matched "two principal
+  translators" as the request issue guessed. Turkish titles transcribed
+  character-for-character from Turkish sources (İ/ı preserved). validate.py
+  clean except the expected missing theme.art (visual-language's job).
 produced:
   newWorkIds:
     - orhan-pamuk/cevdet-bey-ve-ogullari
@@ -53,67 +48,43 @@ produced:
     - franchise.yaml's images/startHere/globalEvents (owned by visual-metadata/reading-orders/event-resonance respectively)
 forStages:
   completeness-auditor: >
-    Verify the 11-novel core spine and 11-work extended tier against primary
-    sources (publisher catalogues, jacket copy) rather than Wikipedia alone.
-    Three items flagged rather than resolved in works.yaml's own header and
-    below: "The Secrets of the Black Book" (named on orhanpamuk.net's English
-    book page, absent from both language Wikipedias and the Turkish
-    bibliography table - could not source a `published` year); "Kelimeler ve
-    Resimler: Seçme Hatıralar, Yazılar ve Bir Hikâye" (2026, Yapı Kredi
-    Yayınları) - a brand-new "selections" volume whose own subtitle names one
-    possibly-new story among reprinted pieces, excluded here as a reader
-    rather than confirmed to contain nothing new; and whether "Hatıraların
-    Masumiyeti" (2016) and "Manzaradan Parçalar" (2010) have English editions
-    this pass could not locate (Goodreads shows only Turkish editions for
-    both, despite English-language blurb titles on Pamuk's own site's
-    English-language pages).
+    Verify against primary sources, not Wikipedia alone. Three unresolved:
+    "The Secrets of the Black Book" (named on orhanpamuk.net, absent from
+    both Wikipedias and the Turkish bibliography table, no `published` year
+    found); "Kelimeler ve Resimler..." (2026, Yapı Kredi) - a selections
+    volume whose subtitle hints at one possibly-new story, excluded as a
+    reader pending confirmation; whether "Hatıraların Masumiyeti" (2016) and
+    "Manzaradan Parçalar" (2010) have real English editions (Goodreads shows
+    Turkish only, despite English blurb titles on Pamuk's own site).
   press-archaeology: >
-    The aura is deliberately thin (3 lifeEvents on orhan-pamuk.yaml: birth,
-    the 2005 Article 301 prosecution for "denigrating Turkishness," and the
-    2006 Nobel Prize - all well-sourced, high or defining anchors, left as
-    the only scaffolded ones on purpose). aura_density.py reports a 23-year
-    dark run, 1982-2004, with no aura at all across his entire early career -
-    that gap needs real research, not padding: candidates worth checking are
-    his decade-long unpublished apprenticeship in his twenties living with
-    his mother, the 1995 trial of writers (including Pamuk) for essays
-    criticizing Turkey's treatment of the Kurds, the 2007 death threats and
-    period living partly outside Turkey following the murder of Hrant Dink
-    (an Armenian-Turkish journalist who, like Pamuk, had been prosecuted
-    under Article 301), and his ongoing Columbia University teaching career
-    since the mid-2000s. Since he is a living person, health/finances/family
-    stay out unless two independent sources exist for anything specific.
+    Aura deliberately thin (3 lifeEvents: 1952 birth, 2005 Article 301
+    prosecution, 2006 Nobel). 23-year dark run 1982-2004 needs real
+    research: candidates are his unpublished-apprenticeship twenties, the
+    1995 trial of writers over essays on Turkey's treatment of the Kurds,
+    the 2007 death threats/period abroad following journalist Hrant Dink's
+    murder (also Article-301-prosecuted), and his Columbia teaching career
+    since the mid-2000s. Living person - health/finances/family need two
+    independent sources each.
   eras: >
-    No eras.yaml was scaffolded. A rough shape is visible but unsourced as a
-    periodization: a realist early period (Cevdet Bey ve Oğulları, Sessiz
-    Ev) giving way to postmodern/historical form from Beyaz Kale (1985)
-    onward, and a turn toward contemporary Istanbul and internationally-
-    aimed fiction from Kar (2002) on, after the Nobel. Worth investigating as
-    a candidate hinge, not a conclusion.
+    Not scaffolded. Visible but unsourced shape: realist early period
+    (Cevdet Bey ve Oğulları, Sessiz Ev) to postmodern/historical from Beyaz
+    Kale (1985), to contemporary-Istanbul/international from Kar (2002,
+    pre-Nobel). Candidate hinge, not a conclusion.
   reading-orders: >
-    No subseries and no recurring characters were found across the eleven
-    novels - each stands alone (see works.yaml's own header for what was
-    checked: the publisher's own omnibus repackagings bundle by shared
-    setting or theme, not continuous narrative, and are excluded from this
-    bibliography as non-works). A start-here path likely wants to lead with
-    the internationally best-known pair, Benim Adım Kırmızı (My Name Is Red)
-    and Kar (Snow), but no publisher-numbered or citable community "where to
-    start" source was checked at this stage.
+    No subseries, no recurring characters across the 11 novels - each
+    stands alone (publisher omnibuses bundle by setting/theme, not
+    narrative, excluded as non-works). A start-here path likely leads with
+    Benim Adım Kırmızı (My Name Is Red) and Kar (Snow) - no citable
+    "where to start" source checked yet.
   visual-language: >
-    theme.yaml's palette/displayFace/signature are scaffolded (a pale,
-    near-monochrome grey ground echoing his own "hüzün"/black-and-white-
-    photograph register, ink near-black, one hot vermilion accent sourced
-    directly from "Benim Adım Kırmızı"'s own miniaturist-pigment premise,
-    spectral display face, signature: thread) but the `art` block is
-    untouched - this is what trips validate.py's hard error for this wing
-    (it has aura via the author's 3 lifeEvents, so asset_audit.py would have
-    something to draw with no visual law to draw it by). The strongest
-    sourced motifs available: the Bosphorus strait itself as the literal
-    East-West line his Nobel citation names; the real, physical Museum of
-    Innocence in Çukurcuma as a built object no other wing in this catalogue
-    has an equivalent of; and the black-and-white archival-photograph
-    register his own memoir uses throughout.
+    Palette/displayFace/signature scaffolded (pale near-monochrome grey
+    echoing his "hüzün"/b&w-photograph register, near-black ink, one hot
+    vermilion sourced from Benim Adım Kırmızı's own miniaturist-pigment
+    premise, spectral face, thread signature) - `art` block untouched.
+    Sourced motif candidates: the Bosphorus as the East-West line his Nobel
+    citation names; the real physical Museum of Innocence in Çukurcuma; the
+    b&w archival-photograph register his memoir uses throughout.
 openQuestions:
-  - "The Naive and the Sentimental Novelist is titled here in English, not Turkish, because Harvard University Press published it in English in 2010, a year before the Turkish edition (Saf ve Düşünceli Romancı, İletişim Yayınları, 2011) - the sole confirmed case in this bibliography where English, not Turkish, was the language of first publication. Flagging for a second opinion since it is the one work in this wing that departs from the catalogue's 'title is the original-language title' rule in the direction of English rather than the author's native language."
-  - "Şeylerin Masumiyeti's English translator and Balkon/Turuncu's exact international (Steidl) publication details were not independently confirmed beyond orhanpamuk.net's own English-language book-list page and Turkish Wikipedia's bibliography table - worth a firmer publisher-catalogue source before editions.yaml is built."
-  - "No subseries were found and none are recorded - flagging the negative explicitly since 'settle it' is this stage's own call to make, not the curator's, and a later pass should not need to re-run the same check from zero."
-  - "themePreset (istanbul-huzun) and the palette are a first-draft branding choice, not a final ruling - see theme.yaml's own notes and header comment for the reasoning (a pale, overcast grey register with one vermilion accent, checked against the whole catalogue's existing reds and greys) and press-archaeology/visual-language's job to confirm it holds up once the fuller aura and art register exist."
+  - "The Naive and the Sentimental Novelist is titled in English (Harvard UP, 2010, a year before the Turkish edition Saf ve Düşünceli Romancı, 2011) - the one work here where English, not Turkish, was the first-publication language, departing from the catalogue's usual rule in the opposite direction from every other wing's exceptions."
+  - "Şeylerin Masumiyeti's translator and Balkon/Turuncu's Steidl publication details rest only on orhanpamuk.net + Turkish Wikipedia - want a firmer publisher-catalogue source before editions.yaml."
+  - "themePreset (istanbul-huzun) and palette are first-draft, not final - see theme.yaml's own notes; press-archaeology/visual-language should confirm once the fuller aura and art register exist."
