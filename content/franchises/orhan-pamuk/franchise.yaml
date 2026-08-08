@@ -33,9 +33,15 @@ themePreset: istanbul-huzun
 # Capabilities (docs/SCHEMA.md) are auto-detected from the data and left
 # auto here on purpose. events.yaml now exists (6 franchise events plus
 # the author's own lifeEvents), so `river` has what it needs; `companion`
-# still wants theme.art; `wizard` will not activate until a startHere is
-# written; `editions` will not activate until editions.yaml exists. Nothing
-# needs forcing off in the meantime.
+# still wants theme.art; `editions` will not activate until editions.yaml
+# exists. No orders.yaml and no startHere: no publisher-numbered sequence
+# or named grouping exists across the eleven standalone novels beyond three
+# publisher marketing omnibuses (already excluded from works.yaml, and
+# each already in publication order internally), and no author, publisher,
+# critic or bookseller "where to start" guide for Pamuk was found in
+# English or Turkish (orders.yaml's own header has the sources checked), so
+# `wizard` stays auto with nothing to activate it. Nothing else needs
+# forcing off in the meantime.
 features:
   river: auto
   wizard: auto
