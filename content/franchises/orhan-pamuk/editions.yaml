@@ -10,10 +10,10 @@
 # own yapikrediyayinlari.com.tr (Cloudflare-gated) and the usual Turkish
 # retailers (kitapyurdu.com, wook.pt, bertrand.pt, fnac.pt) were not; (2)
 # Turkish Wikipedia's own per-book infobox, which independently corroborated
-# the D&R ISBN outright for six titles (Cevdet Bey ve Oğulları, Beyaz Kale,
-# Kafamda Bir Tuhaflık, Kırmızı Saçlı Kadın) or named the superseded original
-# publisher/ISBN for five more (Kar, Kara Kitap, Yeni Hayat, Benim Adım
-# Kırmızı, Masumiyet Müzesi, Şeylerin Masumiyeti); (3) OpenLibrary's per-ISBN
+# the D&R ISBN outright for four titles (Cevdet Bey ve Oğulları, Beyaz Kale,
+# Kafamda Bir Tuhaflık, Kırmızı Saçlı Kadın) and named the superseded original
+# publisher/ISBN for seven more (Sessiz Ev, Kara Kitap, Yeni Hayat, Benim Adım
+# Kırmızı, Kar, Masumiyet Müzesi, Şeylerin Masumiyeti); (3) OpenLibrary's per-ISBN
 # records (Amazon- and MARC-sourced), which corroborated most of the
 # remaining D&R ISBNs and supplied every English-language ISBN via
 # openlibrary.org/search.json, cross-checked in turn against
@@ -45,9 +45,11 @@
 # THE ONE REVERSED-LANGUAGE CASE: The Naive and the Sentimental Novelist is
 # the sole work in this bibliography whose `title` in works.yaml is already
 # English (Harvard University Press published it before any Turkish
-# edition), so per SCHEMA.md's "omit title entirely when the work is already
-# in that language" it is the TURKISH edition below that carries a `title`
-# ("Saf ve Düşünceli Romancı"), not the English one.
+# edition). An edition carries a `title` only where the published title
+# differs from the work's own; repeating an identical one would manufacture
+# a translation event that never happened. So it is the TURKISH edition
+# below that carries a `title` ("Saf ve Düşünceli Romancı"), not the
+# English one.
 #
 # PORTUGUESE: only one genuine pt-PT edition was found anywhere in this
 # bibliography - My Name Is Red / O Meu Nome É Vermelho (Editorial Presença,
@@ -55,11 +57,15 @@
 # Letras); per this catalogue's region-strict rule a pt-BR ISBN is never
 # recorded as pt-PT, so those two are simply absent rather than mistagged.
 #
-# NO ENGLISH EDITION FOUND for four works, each a market fact rather than a
+# NO ENGLISH EDITION FOUND for six works, each a market fact rather than a
 # research gap: Kara Kitap'ın Sırları and Manzaradan Parçalar (absent from
 # every English-language source checked, per works.yaml's own notes),
-# Gizli Yüz (the screenplay was never published in English), and Kelimeler ve
-# Resimler (June 2026 release, too recent for a translation to exist yet).
+# Gizli Yüz (the screenplay was never published in English), Kelimeler ve
+# Resimler (June 2026 release, too recent for a translation to exist yet),
+# Babamın Bavulu (the Nobel lecture's English translation appeared in The New
+# Yorker and the Nobel Foundation's archive, neither of them a book with an
+# ISBN), and Balkon (even its Turkish printing carries Steidl's own
+# 978-3 registration; no separate English-language object exists).
 # Manzaradan Parçalar's Turkish edition (İletişim Yayınları, 2010) is also
 # the one Turkish edition in this file NOT confirmed as currently in print -
 # it does not appear on D&R's live catalogue, unlike every Yapı Kredi-era
@@ -239,7 +245,7 @@
     - "https://tr.wikipedia.org/wiki/Yeni_Hayat_(roman)"
     - "https://openlibrary.org/isbn/9789750826481.json"
 
-- id: orhan-pamuk/yeni-hayat/faber-2016-en
+- id: orhan-pamuk/yeni-hayat/faber-2011-en
   workId: orhan-pamuk/yeni-hayat
   isbn13: "9780571268375"
   language: en
@@ -248,6 +254,10 @@
   format: paperback
   publisher: Faber & Faber
   year: 2011
+  note: >
+    One of the three Faber & Faber paperbacks reissued together in 2011 on
+    consecutive ISBNs (9780571268375/82/99, this one, My Name Is Red and Snow);
+    OpenLibrary's record for this ISBN gives the year directly.
   sources: ["https://openlibrary.org/isbn/9780571268375.json"]
 
 - id: orhan-pamuk/yeni-hayat/fsg-2014-en
@@ -645,11 +655,11 @@
   year: 2016
   note: >
     A reversed case: this is the one work in the bibliography whose
-    original-language `title` (works.yaml) is already English, so per SCHEMA.md
-    'omit title entirely when the work is already in that language' the English
-    edition below carries no `title`, while this Turkish TRANSLATION is the one
-    that needs one. Originally İletişim Yayınları, 2011 (works.yaml); this is the
-    current Yapı Kredi backlist ISBN.
+    original-language `title` (works.yaml) is already English, so the English
+    edition below carries no `title` of its own - the work title already is the
+    published title there - while this Turkish TRANSLATION is the one that needs
+    one. Originally İletişim Yayınları, 2011 (works.yaml); this is the current
+    Yapı Kredi backlist ISBN.
   sources:
     - "https://www.dr.com.tr/kitap/saf-ve-dusunceli-romanci/edebiyat/edebiyat-inceleme/urunno=0000000697138"
     - "https://openlibrary.org/isbn/9789750836800.json"

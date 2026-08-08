@@ -31,10 +31,11 @@ authorIds: [orhan-pamuk]
 themePreset: istanbul-huzun
 
 # Capabilities (docs/SCHEMA.md) are auto-detected from the data and left
-# auto here on purpose. events.yaml now exists (6 franchise events plus
-# the author's own lifeEvents), so `river` has what it needs; `companion`
-# still wants theme.art; `editions` will not activate until editions.yaml
-# exists. No orders.yaml and no startHere: no publisher-numbered sequence
+# auto here on purpose. Three of the four are active: events.yaml carries 6
+# franchise events beside the author's own 10 lifeEvents, which activates
+# both `river` and `companion`, and editions.yaml carries 55 editions
+# covering all 24 works, which activates `editions`.
+# No orders.yaml and no startHere: no publisher-numbered sequence
 # or named grouping exists across the eleven standalone novels beyond three
 # publisher marketing omnibuses (already excluded from works.yaml, and
 # each already in publication order internally), and no author, publisher,
