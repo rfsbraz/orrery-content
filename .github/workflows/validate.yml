@@ -9,6 +9,7 @@ name: Validate content
 # thing.
 on:
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
   push:
     branches: [main]
 
@@ -18,6 +19,12 @@ concurrency:
 
 jobs:
   validate:
+    # A wing build pushes to its own PR dozens of times while still draft -
+    # the pipeline's own worktree-merge-push cycle per stage. None of that is
+    # ready for anyone to read yet, so don't burn CI minutes on it; the
+    # ready_for_review type above means the real run still fires the moment
+    # the PR actually opens for review, with no extra push needed to wake it.
+    if: github.event_name != 'pull_request' || !github.event.pull_request.draft
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -60,7 +67,7 @@ jobs:
     # added upstream and the translation delta is left for later and forgotten.
     # That happened today: four wings gained aura entries and coverage fell
     # from 82/82 to 74/82 with nothing complaining.
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' && !github.event.pull_request.draft
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -89,7 +96,7 @@ jobs:
   report:
     # Never gates. These are the numbers someone would otherwise ask an agent
     # for, printed where they are free to read.
-    if: github.event_name == 'pull_request'
+    if: github.event_name == 'pull_request' && !github.event.pull_request.draft
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

@@ -13,6 +13,7 @@ name: ISBN check
 # is a comment to look at, not a red X.
 on:
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - "content/franchises/**/editions.yaml"
 
@@ -26,6 +27,10 @@ concurrency:
 
 jobs:
   verify:
+    # Skip while the PR is still a draft (a wing build pushes to it dozens of
+    # times before it's ready for anyone to read) - ready_for_review above is
+    # what wakes this up for real once it is, no extra push required.
+    if: ${{ !github.event.pull_request.draft }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:

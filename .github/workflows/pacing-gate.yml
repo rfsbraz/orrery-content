@@ -19,6 +19,7 @@ name: Pacing gate
 # fail every pre-art wing.
 on:
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - "content/franchises/**"
 
@@ -33,6 +34,10 @@ concurrency:
 
 jobs:
   pacing:
+    # Skip while the PR is still a draft (a wing build pushes to it dozens of
+    # times before it's ready for anyone to read) - ready_for_review above is
+    # what wakes this up for real once it is, no extra push required.
+    if: ${{ !github.event.pull_request.draft }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
