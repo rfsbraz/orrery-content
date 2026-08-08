@@ -61,6 +61,14 @@ def gh_json(*args: str):
 
 
 def slugify(name: str) -> str:
+    # Python's str.lower() maps U+0130 (LATIN CAPITAL LETTER I WITH DOT ABOVE,
+    # the Turkish "dotted I") to "i" + a COMBINING DOT ABOVE, not plain "i" -
+    # the well-known dotless-i/dotted-I trap. That combining mark isn't
+    # [a-z0-9], so it becomes a spurious hyphen ("Istanbul" -> "istanbul" but
+    # "İstanbul" -> "i-stanbul") instead of collapsing cleanly like every
+    # other accented character already does here. Normalize it first so both
+    # spellings of the same word produce the same slug.
+    name = name.replace("İ", "i")
     return re.sub(r"[^a-z0-9]+", "-", name.strip().lower()).strip("-")
 
 
