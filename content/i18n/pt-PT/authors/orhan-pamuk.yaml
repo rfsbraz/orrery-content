@@ -1,0 +1,216 @@
+# Português europeu (pt-PT) - bio + prosa dos lifeEvents (title + description).
+# Os lifeEvents ficam aninhados sob o autor e fundem-se por id (ver
+# SCHEMA.md, "Nested lists merge by id"); datas, dateRange, impact,
+# organisation, illustration_type, images_required, spoilerAfter e sources
+# nunca se traduzem, nem o nome do autor.
+#
+# CITAÇÕES VERBATIM: onde a description de base cita as palavras exatas de
+# Pamuk ou de terceiros entre aspas - o site da Fundação Nobel em
+# pamuk-columbia-butler-library-1985, a entrevista à Das Magazin em
+# pamuk-article-301-prosecution-2005, o próprio a descrever a escrita das
+# memórias em pamuk-father-death-2002, a citação do comité do Nobel em
+# pamuk-nobel-prize-2006, e o ensaio de 2022 sobre os anos de segurança
+# pessoal em pamuk-hrant-dink-threats-2007 - essas citações ficam em inglês,
+# verbatim, dentro da prosa traduzida: sem tradução portuguesa publicada
+# localizável, e não se inventa uma para uma citação atribuída a uma pessoa
+# real (mesma regra já registada em haruki-murakami.yaml, hp-lovecraft.yaml,
+# anna-sewell.yaml e miguel-de-cervantes.yaml).
+#
+# TÍTULOS DE OBRAS citados inline mantêm o turco original: nenhum dos quatro
+# aqui referidos ([[work:orhan-pamuk/cevdet-bey-ve-ogullari|...]],
+# [[work:orhan-pamuk/istanbul-hatiralar-ve-sehir|...]],
+# [[work:orhan-pamuk/kara-kitap|...]]) tem edição pt-PT verificada
+# (editions.yaml desta ala). A bio de base usa os títulos ingleses "My Name
+# Is Red" e "Snow" para
+# [[work:orhan-pamuk/benim-adim-kirmizi|...]] e
+# [[work:orhan-pamuk/kar|...]]; aqui usam-se antes os títulos turcos
+# originais, tal como no resto desta ala, já que aparecem lado a lado numa
+# lista e Kar não tem edição portuguesa - "O Meu Nome É Vermelho" fica
+# reservado, nesta ala, à menção isolada em events.yaml sobre o prémio que
+# esse livro por si só venceu (ver a nota ali).
+# "Robert Yik-Fong Tam Professor in the Humanities" é o nome oficial de uma
+# cátedra e mantém-se em inglês, sem tradução, tal como os nomes de
+# instituições próprias no resto do catálogo.
+
+- id: orhan-pamuk
+  bio: >
+    Romancista turco, nascido em Istambul numa família burguesa alargada,
+    secularizada e outrora rica, que tinha feito fortuna na construção
+    ferroviária e que, na infância de Pamuk, já estava em visível declínio -
+    o mundo a que regressa diretamente no seu romance de estreia
+    [[work:orhan-pamuk/cevdet-bey-ve-ogullari|Cevdet Bey ve Oğulları]] e no
+    seu próprio livro de memórias
+    [[work:orhan-pamuk/istanbul-hatiralar-ve-sehir|İstanbul: Hatıralar ve
+    Şehir]]. Cresceu em Nişantaşı, um bairro abastado e ocidentalizado de
+    Istambul, numa casa que descreveu como cheia de família alargada e da
+    vasta biblioteca do pai, de romances europeus e russos. Estudou no
+    Robert College, de ensino em língua inglesa, depois arquitetura durante
+    três anos na Universidade Técnica de Istambul, antes de mudar para o
+    Instituto de Jornalismo da Universidade de Istambul, onde se licenciou
+    em 1976. Decidiu em 1974 tornar-se romancista e, vivendo com a mãe
+    durante a maior parte da casa dos vinte anos, trabalhou anos sem editor
+    antes de o seu primeiro romance aparecer em 1982. Casou com a
+    historiadora Aylin Türegün em 1982 (a filha de ambos, Rüya, nasceu em
+    1991; divorciaram-se em 2002); casou com Aslı Akyavaş em 2022. A avó
+    paterna de Pamuk era circassiana. Os seus romances viraram-se cada vez
+    mais para a forma histórica e pós-moderna ao longo das décadas de 1980
+    e 1990, e o reconhecimento internacional seguiu-se a
+    [[work:orhan-pamuk/benim-adim-kirmizi|Benim Adım Kırmızı]] (1998) e a
+    [[work:orhan-pamuk/kar|Kar]] (2002); recebeu o Prémio Nobel da
+    Literatura em 2006, o primeiro escritor turco a fazê-lo. Regressou a
+    Columbia como professor visitante em 2006 e, a partir do ano letivo de
+    2007-08, lecionou ali literatura comparada em conjunto com Andreas
+    Huyssen e David Damrosch; tem desde então um lugar permanente, mais
+    recentemente como Robert Yik-Fong Tam Professor in the Humanities,
+    dividindo o seu tempo entre Nova Iorque e Istambul, e continua a
+    publicar ficção e não-ficção novas a partir de ambas as cidades.
+  lifeEvents:
+    - id: pamuk-born-1952
+      title: Nasce Ferit Orhan Pamuk em Istambul, cresce em Nişantaşı
+      description: >
+        Nasceu em Istambul, a 7 de junho de 1952, numa família alargada e
+        secularizada que tinha enriquecido a construir caminhos-de-ferro e
+        que, segundo o próprio, já vivia visivelmente de uma herança a
+        encolher na sua infância. Cresceu em Nişantaşı, então um bairro
+        abastado e ocidentalizado do lado europeu da cidade, numa casa
+        apinhada de família alargada sob o mesmo teto - o cenário a que
+        regressa diretamente no seu romance de estreia e que descreve
+        longamente no seu próprio livro de memórias da cidade.
+
+    - id: pamuk-milliyet-contest-debut-1979
+      title: Um manuscrito ainda inédito vence um prémio de ficção e torna-se o seu romance de estreia
+      description: >
+        Decidiu em 1974 tornar-se romancista e passou a maior parte da casa
+        dos vinte anos a viver com a mãe, a escrever sem editor. Em 1979, o
+        seu primeiro manuscrito, ainda inédito, Karanlık ve Işık ("Darkness
+        and Light"), foi declarado vencedor ex aequo (com Mehmet Eroğlu) do
+        Concurso de Romance do Milliyet, o principal prémio da Turquia para
+        um romance inédito. Encontrou editor três anos depois e apareceu em
+        1982 como
+        [[work:orhan-pamuk/cevdet-bey-ve-ogullari|Cevdet Bey ve Oğulları]],
+        que viria a vencer o Prémio de Romance Orhan Kemal no ano seguinte -
+        o momento em que uma década de aprendizagem não paga se tornou uma
+        carreira.
+
+    - id: pamuk-columbia-butler-library-1985
+      title: Escreve Kara Kitap em Nova Iorque, na Butler Library de Columbia
+      description: >
+        Passou de 1985 a 1988 em Nova Iorque como investigador visitante na
+        Universidade de Columbia, enquanto a mulher, Aylin Türegün, fazia
+        ali o doutoramento, com uma passagem também pela Universidade de
+        Iowa. Nas suas próprias palavras, no site da Fundação Nobel:
+        "Between 1985 and 1988, I was a visiting scholar at Columbia
+        University in New York, while my wife was working on her doctorate
+        at the same university. I was greatly impressed by the richness of
+        America's libraries, bookstores, and museums." Escreveu a maior
+        parte de [[work:orhan-pamuk/kara-kitap|Kara Kitap]] - o seu romance
+        mais radical na forma, e aquele que o tornou conhecido na Turquia -
+        na Butler Library de Columbia, um oceano longe das ruas de Istambul
+        que o romance reconstrói de memória.
+
+    - id: pamuk-daughter-ruya-born-1991
+      title: Nasce a filha Rüya, um nome que já tinha dado à mulher desaparecida de um romance
+      description: >
+        A única filha do casal com Aylin Türegün nasceu em 1991 e recebeu o
+        nome de Rüya - "sonho," em turco. Um ano antes,
+        [[work:orhan-pamuk/kara-kitap|Kara Kitap]] tinha girado em torno da
+        busca de um advogado de Istambul pela sua própria mulher
+        desaparecida, também chamada Rüya. O nome volta a surgir mais uma
+        vez, já não na ficção mas numa dedicatória:
+        [[work:orhan-pamuk/benim-adim-kirmizi|Benim Adım Kırmızı]] (1998) é
+        dedicado a ela.
+
+    - id: pamuk-pen-solidarity-1997
+      title: Junta-se ao encontro do PEN em Istambul, em solidariedade com os escritores turcos processados
+      description: >
+        Em meados da década de 1990, dezenas de escritores, editores e
+        responsáveis editoriais turcos enfrentavam processos judiciais ao
+        abrigo de leis que restringiam comentários sobre o conflito curdo,
+        entre eles o amigo de Pamuk e antigo presidente do PEN turco, Yaşar
+        Kemal, julgado e condenado em 1996 por dois ensaios reproduzidos no
+        volume coletivo Turkey and Freedom of Expression. Em março de 1997,
+        Pamuk foi um dos escritores turcos presentes no primeiro encontro do
+        PEN Internacional em Istambul, da Iniciativa pela Liberdade de
+        Expressão, ao lado de Kemal e de uma delegação vinda de uma dezena
+        de países, pressionando o procurador do Estado sobre o caso - oito
+        anos antes de ele próprio vir a enfrentar uma acusação quase
+        idêntica.
+
+    - id: pamuk-father-death-2002
+      title: O pai morre enquanto começa a escrever as memórias de Istambul, em plena crise pessoal
+      description: >
+        Gündüz Pamuk - engenheiro civil que tinha sido o primeiro
+        diretor-geral da IBM na Turquia e, segundo o filho, a origem da
+        biblioteca familiar com que Pamuk cresceu a ler - morreu em Istambul
+        a 21 de dezembro de 2002, aos 77 anos, no mesmo ano em que o
+        casamento de Pamuk com Aylin Türegün terminou em divórcio.
+        Questionado mais tarde sobre até que ponto o seu livro de memórias
+        [[work:orhan-pamuk/istanbul-hatiralar-ve-sehir|İstanbul: Hatıralar
+        ve Şehir]] era pessoal, Pamuk descreveu tê-lo escrito no meio dessa
+        crise: "divorce, father dying, professional problems with this,
+        problems with that, everything was bad. I thought if I were to be
+        weak I would have a depression. But every day I would wake up and
+        have a cold shower and sit down and remember and write, always
+        paying attention to the beauty of the book."
+
+    - id: pamuk-article-301-prosecution-2005
+      title: "Processado ao abrigo do Artigo 301 por \"insultar a turquidade\""
+      description: >
+        Disse à revista suíça Das Magazin, em fevereiro de 2005: "Thirty
+        thousand Kurds have been killed here, and a million Armenians. And
+        almost nobody dares to mention that. So I do" - uma referência
+        direta ao conflito curdo e ao genocídio arménio, dois temas que a
+        lei turca tratava como tabu. Grupos nacionalistas apresentaram
+        queixas, exemplares dos seus livros foram queimados em protestos
+        públicos, e o Ministério Público acusou-o ao abrigo do Artigo 301 do
+        Código Penal turco por "insultar a turquidade," uma acusação que
+        podia valer até três anos de prisão. O julgamento abriu em Istambul
+        em dezembro de 2005, sob intensa atenção internacional - a UE, o
+        PEN e uma longa lista de escritores de relevo manifestaram-lhe apoio
+        público - e o processo foi arquivado em janeiro de 2006 por uma
+        questão processual (o Ministério da Justiça reteve a autorização
+        necessária para prosseguir), e não quanto ao mérito. Recebeu o
+        Prémio Nobel da Literatura no mesmo ano em que o processo foi
+        arquivado. O advogado dos queixosos, Kemal Kerinçsiz, recorreu ao
+        Supremo Tribunal de Recurso, que ordenou ao tribunal de Şişli que
+        reabrisse o caso como processo cível; a 27 de março de 2011, mais de
+        seis anos depois da entrevista original, Pamuk foi considerado
+        culpado e condenado a pagar 6000 liras de indemnização por ofender a
+        honra dos queixosos - o desfecho final do caso.
+
+    - id: pamuk-nobel-prize-2006
+      title: Recebe o Prémio Nobel da Literatura, o primeiro laureado turco
+      description: >
+        Recebeu o Prémio Nobel da Literatura a 12 de outubro de 2006,
+        distinguido por uma obra em que, "in the quest for the melancholic
+        soul of his native city, he has discovered new symbols for the
+        clash and interlacing of cultures." O primeiro escritor turco a
+        receber o prémio, atribuído apenas meses depois de um tribunal turco
+        ter arquivado o processo que movia contra ele ao abrigo do Artigo
+        301, por declarações sobre o genocídio arménio e o conflito curdo -
+        uma justaposição que a imprensa internacional assinalou na altura.
+
+    - id: pamuk-hrant-dink-threats-2007
+      title: Ameaçado após o assassínio de Hrant Dink, cancela uma digressão e parte para os Estados Unidos
+      description: >
+        O jornalista turco-arménio Hrant Dink, outro escritor processado ao
+        abrigo do Artigo 301, foi morto a tiro em Istambul a 19 de janeiro
+        de 2007; o homem mais tarde condenado por orquestrar o assassínio
+        nomeou Pamuk em tribunal como mais um alvo. Pamuk cancelou, por
+        conselho da sua equipa de segurança, uma viagem à Alemanha, onde lhe
+        seria atribuído um doutoramento honoris causa, no final desse mês, e
+        em meados de fevereiro vários órgãos de comunicação social
+        noticiavam que tinha partido para os Estados Unidos sem planos de
+        regressar. Escrevendo sobre isso quinze anos depois, descreveu os
+        seguranças que o acompanharam nesse período como "a suffocating
+        ordeal" que corta um escritor da própria vida "normal" do quotidiano
+        de que a ficção é feita - e que, uma vez marcado como alvo, "even
+        people who have no connection to the matter will start to see you
+        as such."
+
+    - id: pamuk-marries-asli-akyavas-2022
+      title: Casa com Aslı Akyavaş
+      description: >
+        Casou com Aslı Akyavaş a 6 de abril de 2022, depois de uma relação
+        com ela desde 2011 - o seu segundo casamento, onze anos depois do
+        divórcio de Aylin Türegün.
