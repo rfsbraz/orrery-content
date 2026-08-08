@@ -1,0 +1,52 @@
+# Branding for the Eça de Queirós wing (see docs/SCHEMA.md#themeyaml). Non-art
+# fields only - the `art` block is scaffolded separately by the
+# visual-language stage, once the bibliography and any eras are settled.
+# Checked against every existing wing's palette (python scripts/theme_digest.py)
+# before choosing, including this catalogue's five other Lusophone wings:
+# joao-tordo (Atlantic blue-grey), jose-luis-peixoto (wheat-gold, sunbaked),
+# jose-rodrigues-dos-santos (newsroom cardinal red), jose-saramago
+# (volcanic basalt black + carmine) and valter-hugo-mae (warm umber
+# terracotta). None of the five uses violet, and Eça's own milieu supports
+# one directly rather than by elimination (below) - so this wing does not
+# repeat blue, gold, red, black or umber a sixth time.
+#
+# GROUND. Eça's realist novels are set almost entirely in the drawing rooms,
+# provincial parlours and rented Lisbon apartments of the 1870s-1890s
+# Portuguese bourgeoisie he spent his career satirising - the very class
+# whose vanity gave Portuguese the word "acaciano" (from O Primo Basílio's
+# Conselheiro Acácio). That milieu's own defining colour is a real,
+# documented historical fact rather than a reading of the prose: mauveine,
+# the first synthetic aniline dye (William Perkin, 1856), made a violet-mauve
+# shade a fashionable, expensive status colour across bourgeois Europe for
+# the following three decades - precisely the years and the class Eça wrote
+# about. The palette below is built on that dye colour and on lamp-black
+# wallpaper and velvet rather than on a "Portuguese literary" costume.
+preset: parlour-mauveine
+palette:
+  bg: "#160e12"        # near-black with a warm wine-maroon cast - faded
+                       # bourgeois velvet and papered walls by gaslight, not
+                       # Saramago's volcanic basalt or Valter Hugo Mãe's
+                       # umber
+  surface: "#20161a"   # a shade lifted, for cards
+  ink: "#efe4d8"       # warm aged-paper ivory, for maximum readability
+  muted: "#96837f"     # dulled rose-taupe, for metadata (AA-checked: 4.91:1
+                       # on surface, 5.29:1 on bg)
+  accent: "#8a5f7a"    # one dusty mauveine violet, for links and markers
+                       # only - closer to pink than any of this catalogue's
+                       # three existing violets (hue ~322°, against Miguel de
+                       # Cervantes's blue-leaning indigo #5c4fae at ~248° and
+                       # two colder violets at ~272° and ~296° on other wings)
+displayFace: fraunces  # from the app's implemented set (fraunces | spectral |
+                       # sourceSerif | instrument-serif); a warm, ornamented
+                       # literary serif, in the register this catalogue
+                       # already gives other 19th-century realist prose
+                       # stylists (Saramago, Cervantes, McCarthy) rather than
+                       # the quieter spectral/sourceSerif used for its more
+                       # restrained or modernist wings
+signature: thread      # a fine, continuous line - not yet used by any of
+                       # this catalogue's other five Lusophone wings - standing
+                       # for the correspondence and consular dispatches that
+                       # run through Eça's own career (Havana, Newcastle,
+                       # Bristol, Paris) and for the thread of posthumous
+                       # editorial work still adding to this bibliography as
+                       # recently as 2023
