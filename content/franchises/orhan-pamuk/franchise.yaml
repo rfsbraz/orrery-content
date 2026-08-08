@@ -31,11 +31,11 @@ authorIds: [orhan-pamuk]
 themePreset: istanbul-huzun
 
 # Capabilities (docs/SCHEMA.md) are auto-detected from the data and left
-# auto here on purpose: with no theme.art, no events.yaml and no eras.yaml
-# yet, `river` and `companion` will not activate until those exist;
-# `wizard` will not activate until a startHere is written; `editions` will
-# not activate until editions.yaml exists. Nothing needs forcing off in the
-# meantime.
+# auto here on purpose. events.yaml now exists (6 franchise events plus
+# the author's own lifeEvents), so `river` has what it needs; `companion`
+# still wants theme.art; `wizard` will not activate until a startHere is
+# written; `editions` will not activate until editions.yaml exists. Nothing
+# needs forcing off in the meantime.
 features:
   river: auto
   wizard: auto

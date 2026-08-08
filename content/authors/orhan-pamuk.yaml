@@ -1,7 +1,8 @@
 # Global author entity. Authors are referenced by id from franchises and works
 # (authorIds / withAuthorIds), so the same person resolves the same everywhere.
-# Author-LIFE events live here; franchise-specific events would stay in
-# content/franchises/orhan-pamuk/events.yaml (none yet).
+# Author-LIFE events live here; franchise-specific events (prizes and
+# reception tied to one book, the real Museum of Innocence, the Norton
+# Lectures) live on content/franchises/orhan-pamuk/events.yaml.
 #
 # NAME. Full birth name Ferit Orhan Pamuk; publishes and is known everywhere
 # as Orhan Pamuk. No pseudonym or pen name found in any source checked
@@ -40,11 +41,13 @@ bio: >
   1990s, and international recognition followed
   [[work:orhan-pamuk/benim-adim-kirmizi|My Name Is Red]] (1998) and
   [[work:orhan-pamuk/kar|Snow]] (2002); he was awarded the Nobel Prize in
-  Literature in 2006, the first Turkish writer to receive it. He has taught
-  at Columbia University since the mid-2000s, latterly as the Robert
-  Yik-Fong Tam Professor in the Humanities, dividing his time between New
-  York and Istanbul, and continues to publish new fiction and nonfiction
-  from both cities.
+  Literature in 2006, the first Turkish writer to receive it. Returned to
+  Columbia as a visiting professor in 2006 and, from the 2007-08 academic
+  year, taught comparative literature there jointly with Andreas Huyssen
+  and David Damrosch; has held a permanent appointment since, latterly as
+  the Robert Yik-Fong Tam Professor in the Humanities, dividing his time
+  between New York and Istanbul, and continues to publish new fiction and
+  nonfiction from both cities.
 pseudonyms: []
 lifeEvents:
   - id: pamuk-born-1952
@@ -64,9 +67,110 @@ lifeEvents:
       - https://en.wikipedia.org/wiki/Orhan_Pamuk
       - https://en.wikipedia.org/wiki/Istanbul:_Memories_and_the_City
 
+  - id: pamuk-milliyet-contest-debut-1979
+    date: 1979
+    dateRange: "1979-1983"
+    title: An unpublished manuscript wins a fiction prize, then becomes his debut novel
+    impact: med
+    description: >
+      Decided in 1974 to become a novelist and spent most of his twenties
+      living with his mother, writing without a publisher. In 1979 his
+      still-unpublished first manuscript, Karanlık ve Işık ("Darkness and
+      Light"), was named co-winner (with Mehmet Eroğlu) of the Milliyet
+      Press Novel Contest, Turkey's leading award for an unpublished novel.
+      It found a publisher three years later and appeared in 1982 as
+      [[work:orhan-pamuk/cevdet-bey-ve-ogullari|Cevdet Bey ve Oğulları]],
+      which went on to win the Orhan Kemal Novel Prize the following year -
+      the moment a decade of unpaid apprenticeship became a career.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Orhan_Pamuk
+      - https://tr.wikipedia.org/wiki/Orhan_Pamuk
+
+  - id: pamuk-columbia-butler-library-1985
+    date: 1985
+    dateRange: "1985-1988"
+    title: Writes Kara Kitap in New York, at Columbia's own Butler Library
+    impact: med
+    description: >
+      Spent 1985 to 1988 in New York as a visiting scholar at Columbia
+      University while his wife Aylin Türegün worked on her doctorate there,
+      with a spell at the University of Iowa besides. In his own words, on
+      the Nobel Foundation's site: "Between 1985 and 1988, I was a visiting
+      scholar at Columbia University in New York, while my wife was working
+      on her doctorate at the same university. I was greatly impressed by
+      the richness of America's libraries, bookstores, and museums." He
+      wrote most of [[work:orhan-pamuk/kara-kitap|Kara Kitap]] - his most
+      formally radical novel, and the one that made his name in Turkey - at
+      Columbia's Butler Library, an ocean away from the Istanbul streets it
+      reconstructs from memory.
+    spoilerAfter: null
+    sources:
+      - https://www.nobelprize.org/prizes/literature/2006/pamuk/biographical/
+      - https://en.wikipedia.org/wiki/Orhan_Pamuk
+
+  - id: pamuk-daughter-ruya-born-1991
+    date: 1991
+    title: Daughter Rüya is born, a name he had already given a novel's missing wife
+    impact: med
+    description: >
+      His and Aylin Türegün's only child, a daughter, was born in 1991 and
+      named Rüya - Turkish for "dream." A year earlier,
+      [[work:orhan-pamuk/kara-kitap|Kara Kitap]] had centered on an Istanbul
+      lawyer's search for his own missing wife, also named Rüya. The name
+      recurs once more in dedication rather than fiction:
+      [[work:orhan-pamuk/benim-adim-kirmizi|Benim Adım Kırmızı]] (1998) is
+      dedicated to her.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Orhan_Pamuk
+      - https://en.wikipedia.org/wiki/The_Black_Book_(Pamuk_novel)
+
+  - id: pamuk-pen-solidarity-1997
+    date: 1997-03
+    title: Joins PEN's Istanbul gathering in solidarity with Turkey's prosecuted writers
+    impact: med
+    description: >
+      By the mid-1990s, dozens of Turkish writers, editors and publishers
+      faced prosecution under laws restricting comment on the Kurdish
+      conflict, among them Pamuk's friend and former Turkish PEN president
+      Yaşar Kemal, tried and convicted in 1996 over two essays reprinted in
+      the collective volume Turkey and Freedom of Expression. In March 1997
+      Pamuk was one of the Turkish writers present at International PEN's
+      first Istanbul gathering of the Initiative for Freedom of Expression,
+      standing with Kemal and a delegation from a dozen countries as they
+      pressed the state prosecutor over the case - eight years before he
+      would face a near-identical charge himself.
+    spoilerAfter: null
+    sources:
+      - https://joanneleedom-ackerman.com/2020/02/12/pen-journey-19-prison-police-and-courts-in-turkey-initiative-for-freedom-of-expression/
+      - https://www.upi.com/Archives/1996/03/07/Turkish-author-Yasar-Kemal-convicted/5721826174800/
+
+  - id: pamuk-father-death-2002
+    date: 2002-12-21
+    title: His father dies as he begins writing his Istanbul memoir amid a personal crisis
+    impact: high
+    description: >
+      Gündüz Pamuk - a civil engineer who had been IBM's first general
+      manager in Turkey, and by his son's account the source of the family
+      library Pamuk grew up reading - died in Istanbul on 21 December 2002,
+      aged 77, the same year Pamuk's marriage to Aylin Türegün ended in
+      divorce. Asked later how personal his memoir
+      [[work:orhan-pamuk/istanbul-hatiralar-ve-sehir|İstanbul: Hatıralar ve
+      Şehir]] was, Pamuk described writing it inside that crisis: "divorce,
+      father dying, professional problems with this, problems with that,
+      everything was bad. I thought if I were to be weak I would have a
+      depression. But every day I would wake up and have a cold shower and
+      sit down and remember and write, always paying attention to the
+      beauty of the book."
+    spoilerAfter: null
+    sources:
+      - https://www.hurriyet.com.tr/ekonomi/turk-bilgisayar-dunyasi-duayeni-pamuk-u-kaybetti-117185
+      - https://en.wikipedia.org/wiki/Orhan_Pamuk
+
   - id: pamuk-article-301-prosecution-2005
     date: 2005-02-05
-    dateRange: "2005-2006"
+    dateRange: "2005-2011"
     title: Prosecuted under Article 301 for "denigrating Turkishness"
     impact: high
     description: >
@@ -82,11 +186,13 @@ lifeEvents:
       attention - the EU, PEN and a long list of prominent writers publicly
       backed him - and the case was dropped in January 2006 on a procedural
       technicality (the justice ministry withheld the authorization required
-      to proceed) rather than on the merits; a later civil suit still
-      required him to pay compensation in 2011. He was awarded the Nobel
-      Prize in Literature the same year the case was dropped, and has faced
-      recurring nationalist hostility and credible threats to his safety
-      since, at times living outside Turkey for his own security.
+      to proceed) rather than on the merits. He was awarded the Nobel Prize
+      in Literature the same year the case was dropped. The plaintiffs'
+      lawyer, Kemal Kerinçsiz, appealed to the Supreme Court of Appeal,
+      which ordered the Şişli court to reopen the case as a civil matter;
+      on 27 March 2011, more than six years after the original interview,
+      Pamuk was found guilty and ordered to pay 6,000 lira in compensation
+      for insulting the plaintiffs' honour - the case's final coda.
     spoilerAfter: null
     sources:
       - https://en.wikipedia.org/wiki/Orhan_Pamuk
@@ -109,6 +215,43 @@ lifeEvents:
     sources:
       - https://en.wikipedia.org/wiki/Orhan_Pamuk
       - https://www.nytimes.com/2006/10/12/world/europe/12iht-nobel.3142293.html
+
+  - id: pamuk-hrant-dink-threats-2007
+    date: 2007-01
+    dateRange: "2007-2008"
+    title: Threatened after Hrant Dink's murder, cancels a tour and leaves for the US
+    impact: high
+    description: >
+      Turkish-Armenian journalist Hrant Dink, another writer prosecuted
+      under Article 301, was shot dead in Istanbul on 19 January 2007; the
+      man later convicted of orchestrating the killing named Pamuk in court
+      as a further target. Pamuk cancelled a trip to Germany, where he was
+      due an honorary doctorate, at the end of that month on his security
+      team's advice, and by mid-February multiple outlets reported he had
+      left for the United States and had no plan to return. Writing about
+      it fifteen years later, he described the bodyguards who followed
+      that period as "a suffocating ordeal" that cuts a writer off from
+      the very "normal" daily life fiction is made from - and that once you
+      are marked as a target, "even people who have no connection to the
+      matter will start to see you as such."
+    spoilerAfter: null
+    sources:
+      - https://www.upi.com/Defense-News/2007/01/31/Death-threats-cancel-Pamuk-Germany-trip/24181170250183/
+      - https://www.theguardian.com/books/2007/feb/14/nobelprize.awardsandprizes
+      - https://www.theatlantic.com/ideas/archive/2022/09/writers-targets-of-violence-state-protective-surveillance-rushdie-attack/671378/
+
+  - id: pamuk-marries-asli-akyavas-2022
+    date: 2022-04-06
+    title: Marries Aslı Akyavaş
+    impact: low
+    description: >
+      Married Aslı Akyavaş on 6 April 2022, having been in a relationship
+      with her since 2011 - his second marriage, eleven years after his
+      divorce from Aylin Türegün.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Orhan_Pamuk
+      - https://tr.wikipedia.org/wiki/Orhan_Pamuk
 sources:
   - https://en.wikipedia.org/wiki/Orhan_Pamuk
   - https://tr.wikipedia.org/wiki/Orhan_Pamuk
