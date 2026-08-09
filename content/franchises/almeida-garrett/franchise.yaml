@@ -1,0 +1,34 @@
+# A wing spans an author's complete published body of work (standing ruling,
+# 2026-07-21). Garrett wrote across poetry, theatre,
+# prose fiction and a large body of political/occasional prose in one career,
+# and none of it forms a separate universe or numbered series - see
+# works.yaml's own header for why `subseries` is null throughout and how
+# `format` (SCHEMA.md), not a genre-scoped wing boundary, is this catalogue's
+# actual answer to a bibliography that spans a dramatist, a poet and a prose
+# writer under one author.
+id: almeida-garrett
+name: Almeida Garrett
+kind: author
+description: >
+  The founder of Portuguese literary Romanticism: poet, playwright, novelist,
+  soldier of the Liberal cause and the parliamentary orator who built
+  Portugal's national theatre. [[work:almeida-garrett/camoes|Camões]] (1825),
+  written in French exile, is usually credited as the first Romantic poem in
+  Portuguese; [[work:almeida-garrett/frei-luis-de-sousa|Frei Luís de Sousa]]
+  (1844) and [[work:almeida-garrett/viagens-na-minha-terra|Viagens na Minha
+  Terra]] (1846) remain his two most-read works.
+authorIds: [almeida-garrett]
+themePreset: proscenium-gaslight
+
+# Capabilities are auto-detected from the data (docs/SCHEMA.md). This wing
+# ships works.yaml (a first-draft, honestly-tiered bibliography) and an
+# 8-lifeEvent author entity - the timeline data the River and companion
+# capabilities read. No franchise events.yaml, orders.yaml or editions.yaml
+# exist yet: no franchise-specific events, curated reading orders or verified
+# ISBNs have been sourced for this wing, and CURATION.md is explicit that
+# their absence is a complete, correct state rather than a gap to be padded,
+# so `wizard` and `editions` stay off by the app's own auto-detection without
+# needing to be forced here. `eras.yaml` exists but is empty (`eras: []`)
+# with its own header explaining why - no sourced periodisation has been
+# found and cited yet.
+features: {}

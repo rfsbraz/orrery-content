@@ -1,0 +1,260 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds); author-LIFE events live here, never on the
+# franchise's own events.yaml.
+#
+# NAME. "Almeida Garrett" is the name he settled on for himself in 1818
+# (Almeida from his maternal grandmother, Garrett from his paternal
+# grandmother, born in Madrid) and signed for the rest of his life; it is
+# also the franchise slug and the name the request issue uses throughout.
+# His full birth-registered and later ennobled names are recorded in `aka`.
+#
+# SPINE. Cross-checked against Portuguese and English Wikipedia's "Almeida
+# Garrett" articles - the two substantially agree on the outline (birth,
+# exiles, marriage, the Liberal Wars, the ennoblement, death) with one
+# specific disagreement recorded below (the monarch who ennobled him).
+# English Wikipedia's own article is a redirect target for several of his
+# individual works (e.g. "Viagens na Minha Terra" resolves to this same
+# page), so its infobox "notable works" line - Viagens na Minha Terra,
+# Camões, Frei Luís de Sousa - is treated here as a real received signal
+# about which three works are his hinge works (see `featured` on those
+# entries in works.yaml).
+#
+# THE ENNOBLEMENT DATE/MONARCH DISCREPANCY. Portuguese Wikipedia's
+# "Resumo Biográfico" section dates his viscountcy to a decree "do Rei D.
+# Pedro V de Portugal, datado de 25 de junho de 1851." This cannot be
+# correct as written: Pedro V did not become king until his mother's death
+# on 15 November 1853, so he could not have signed a decree in 1851. English
+# Wikipedia states plainly that he "was ennobled by Dona Maria II of
+# Portugal in 1852" (Maria II reigned until 1853), which is also consistent
+# with his brief tenure as Foreign Affairs minister in 1852 under her
+# government. This entry follows the internally consistent claim (Maria II,
+# 1852) and flags the Portuguese article's monarch/date as an apparent
+# error rather than a second real fact to reconcile.
+#
+# DEATH CAUSE. Portuguese Wikipedia specifies "cancro do fígado" (liver
+# cancer); English Wikipedia says only "cancer," corroborated by its own
+# "Deaths from cancer in Portugal" category. The liver-specific claim rests
+# on the Portuguese article alone, so `bio` states the general "cancer" and
+# keeps the liver detail here as a single-sourced addition rather than
+# folding it in as settled.
+id: almeida-garrett
+name: Almeida Garrett
+aka:
+  - "João Baptista da Silva Leitão de Almeida Garrett"
+  - "1.º Visconde de Almeida Garrett (1st Viscount of Almeida Garrett)"
+born: 1799-02-04
+died: 1854-12-09
+bio: >
+  Born João Leitão da Silva in Porto on 4 February 1799, the second son of a
+  customs official; raised mostly at his maternal grandfather's Quinta do
+  Sardão across the river in Vila Nova de Gaia ("Nasci no Porto, mas
+  criei-me em Gaia," he later wrote), then, from 1809, in the Azores, where
+  his family fled the second French invasion and where his uncle, the
+  future Bishop of Angra, tutored him. Read law at the University of
+  Coimbra from 1816, joined a student Masonic lodge there, and in 1818
+  settled permanently on the surname Almeida Garrett (Almeida from his
+  maternal grandmother, Garrett from his paternal grandmother, born in
+  Madrid). Prosecuted, and acquitted, in 1822 over the libertine poem
+  [[work:almeida-garrett/o-retrato-de-venus|O Retrato de Vénus]] (1821).
+  Married the fourteen-year-old Luísa Midosi in November 1822; the marriage
+  ended in separation in 1836. Exiled to England after the 1823
+  Vilafrancada coup, he encountered Shakespeare, Walter Scott and Gothic
+  ruins there before moving on to France, where he wrote
+  [[work:almeida-garrett/camoes|Camões]] (1825) and
+  [[work:almeida-garrett/dona-branca|Dona Branca]] (1826), usually
+  considered the first works of Portuguese literary Romanticism. Exiled a
+  second time in 1828 under the absolutist King Miguel, he joined the
+  Liberal cause under arms: alongside Alexandre Herculano, he took part in
+  the 1832 Landing of Mindelo and the Siege of Porto as a volunteer in the
+  Batalhão Académico. With the Liberal victory he entered public life,
+  campaigning for and winning the creation of a national theatre and
+  drama conservatory (the institution now the Teatro Nacional D. Maria II)
+  and serving repeatedly as a deputy, becoming one of the era's most noted
+  parliamentary orators. His partner from 1836, Adelaide Deville Pastor,
+  died in 1841 after the birth of their daughter Maria Adelaide, whose
+  illegitimacy under Portuguese law directly inspired
+  [[work:almeida-garrett/frei-luis-de-sousa|Frei Luís de Sousa]] (1844).
+  Ennobled 1st Viscount of Almeida Garrett by Queen Maria II in 1852 (see
+  this file's own header note on a Portuguese-language source's apparent
+  error over which monarch), he served a few months that year as Minister
+  of Foreign Affairs. His last completed book of poems,
+  [[work:almeida-garrett/folhas-caidas|Folhas Caídas]] (1853), was written
+  for Rosa de Montúfar, a Spanish noblewoman who became his companion late
+  in life. Died of cancer in Lisbon on 9 December 1854; buried at the
+  Cemitério dos Prazeres, his remains were moved in 1903 to the Jerónimos
+  Monastery, where they rest near those of Alexandre Herculano and Luís de
+  Camões.
+pseudonyms:
+  - name: "F. E."
+    note: >
+      Initials credited on the 1826 Paris first edition of
+      [[work:almeida-garrett/dona-branca|Dona Branca ou a Conquista do
+      Algarve]]. Portuguese Wikipedia's own bibliography records the
+      initials but does not expand them; no source checked identifies what
+      they stand for.
+  - name: "Múcio Cévola"
+    note: >
+      Used on Carta de M. Cévola ao Futuro Editor do Primeiro Jornal
+      Liberal que em Português se Publicar (London, 1830), a political
+      pamphlet addressed to the future editor of the first Portuguese
+      Liberal newspaper - a Roman senatorial name for a piece of exile
+      pamphleteering.
+  - name: "Josino Duriense"
+    note: >
+      Credited on Afonseida, ou Fundação do Império Lusitano, an epic poem
+      drafted in the Azores in 1815-16 when Garrett was sixteen and not
+      published until 1985. A schoolboy pen name on a juvenile manuscript,
+      not a mature literary identity.
+lifeEvents:
+  - id: almeida-garrett-born-1799
+    date: 1799-02-04
+    title: Born in Porto, raised across the river in Gaia
+    impact: low
+    description: >
+      Born João Leitão da Silva on 4 February 1799 in Porto's Vitória
+      parish, the second son of a customs official. Spent his childhood not
+      in the city but at his maternal grandfather's Quinta do Sardão across
+      the Douro in Vila Nova de Gaia, later writing of the distinction
+      himself: "Nasci no Porto, mas criei-me em Gaia" ("I was born in
+      Porto, but I was raised in Gaia").
+    spoilerAfter: null
+    sources:
+      - https://pt.wikipedia.org/wiki/Almeida_Garrett
+      - https://en.wikipedia.org/wiki/Almeida_Garrett
+
+  - id: almeida-garrett-retrato-de-venus-trial-1821
+    date: 1821
+    title: Prosecuted over a censored poem at twenty-two
+    impact: med
+    description: >
+      Having fled to the Azores as a boy during the 1809 French invasion
+      and returned to study law at Coimbra in 1816 - joining a student
+      Masonic lodge and, in 1818, permanently adopting the name Almeida
+      Garrett - he published the libertine poem
+      [[work:almeida-garrett/o-retrato-de-venus|O Retrato de Vénus]] in
+      1821 and was prosecuted for it as "materialist, atheist and immoral."
+      He was acquitted in 1822, but the pattern - a young writer's work
+      drawing the attention of the state - recurred throughout his career.
+    spoilerAfter: null
+    sources:
+      - https://pt.wikipedia.org/wiki/Almeida_Garrett
+      - https://en.wikipedia.org/wiki/Almeida_Garrett
+
+  - id: almeida-garrett-first-exile-writes-camoes-1823
+    date: 1823
+    title: Exiled to England and France, and writes the first Romantic poems in Portuguese
+    impact: high
+    description: >
+      Already married, at not-quite-twenty-four, to the fourteen-year-old
+      Luísa Midosi (married November 1822; the marriage ended in separation
+      in 1836), Garrett fled to England after the 1823 Vilafrancada coup
+      restored absolutist rule. In England, in Edgbaston, he read
+      Shakespeare and Walter Scott and visited Gothic ruins for the first
+      time; moving on to France in 1824-25, he wrote
+      [[work:almeida-garrett/camoes|Camões]] (1825) and
+      [[work:almeida-garrett/dona-branca|Dona Branca]] (1826), poems
+      generally credited as the first works of Portuguese literary
+      Romanticism.
+    spoilerAfter: null
+    sources:
+      - https://pt.wikipedia.org/wiki/Almeida_Garrett
+      - https://en.wikipedia.org/wiki/Almeida_Garrett
+
+  - id: almeida-garrett-liberal-wars-soldier-1832
+    date: 1832
+    title: Fights in the Liberal Wars alongside Alexandre Herculano
+    impact: high
+    description: >
+      Exiled a second time in 1828 under the absolutist King Miguel,
+      Garrett spent the years to 1832 mostly in England and France before
+      joining the Liberal expeditionary force gathering in the Azores. In
+      July 1832 he took part in the Landing of Mindelo and the Siege of
+      Porto as a volunteer in the Batalhão Académico, alongside fellow
+      writer-soldier Alexandre Herculano and future minister Joaquim
+      António de Aguiar - not a metaphorical fight for the Liberal cause he
+      wrote about, but an actual one, fought under fire before he ever held
+      elected office.
+    spoilerAfter: null
+    sources:
+      - https://pt.wikipedia.org/wiki/Almeida_Garrett
+      - https://en.wikipedia.org/wiki/Almeida_Garrett
+      - https://en.wikipedia.org/wiki/Alexandre_Herculano
+
+  - id: almeida-garrett-founds-national-theatre-1836
+    date: 1836-09-28
+    title: Proposes the institutions of a Portuguese national theatre
+    impact: med
+    description: >
+      With the Liberal victory secured, Garrett returned to Portugal by way
+      of a brief posting as consul-general in Brussels and entered
+      parliamentary life, becoming one of the era's most noted orators. On
+      28 September 1836 he was tasked with proposing a plan for the
+      national theatre, and the following years saw the creation, on his
+      initiative, of the Inspecção-Geral dos Teatros, the Conservatório de
+      Arte Dramática and the Teatro Normal - the institution now the Teatro
+      Nacional D. Maria II - the civic project alongside which he wrote his
+      own historical plays for the Portuguese stage he had just built.
+    spoilerAfter: null
+    sources:
+      - https://pt.wikipedia.org/wiki/Almeida_Garrett
+      - https://en.wikipedia.org/wiki/Almeida_Garrett
+
+  - id: almeida-garrett-adelaide-death-inspires-frei-luis-de-sousa-1841
+    date: 1841-07-26
+    title: Adelaide Deville Pastor dies, and Frei Luís de Sousa follows
+    impact: high
+    description: >
+      Garrett's partner from 1836, Adelaide Deville Pastor, died on 26 July
+      1841 of complications from childbirth, leaving their daughter Maria
+      Adelaide - baptised, like her father's earlier son, as a child of
+      unknown parents, and only legitimated the following year. Her
+      illegitimacy under Portuguese civil and canon law, and the grief of
+      raising her alone, fed directly into
+      [[work:almeida-garrett/frei-luis-de-sousa|Frei Luís de Sousa]],
+      first read publicly in 1843 and published in 1844: a drama built
+      around a marriage that Church law retroactively voids and a daughter
+      it renders illegitimate.
+    spoilerAfter: null
+    sources:
+      - https://pt.wikipedia.org/wiki/Almeida_Garrett
+      - https://en.wikipedia.org/wiki/Almeida_Garrett
+
+  - id: almeida-garrett-viscount-and-foreign-minister-1852
+    date: 1852
+    title: Ennobled Viscount, and briefly Minister of Foreign Affairs
+    impact: med
+    description: >
+      Ennobled 1st Viscount of Almeida Garrett by Queen Maria II in 1852
+      (see this file's own header note on a Portuguese-language source's
+      apparent error naming a different, chronologically impossible
+      monarch), he served a few months that same year as Minister and
+      Secretary of State of Foreign Affairs in the cabinet of the Duke of
+      Saldanha, from 4 March to 17 August. His last completed book,
+      [[work:almeida-garrett/folhas-caidas|Folhas Caídas]] (1853), was
+      written in these final years for Rosa de Montúfar, a Spanish
+      noblewoman who became his companion late in life.
+    spoilerAfter: null
+    sources:
+      - https://pt.wikipedia.org/wiki/Almeida_Garrett
+      - https://en.wikipedia.org/wiki/Almeida_Garrett
+
+  - id: almeida-garrett-death-1854
+    date: 1854-12-09
+    title: Dies in Lisbon, later reburied among Camões and Herculano
+    impact: high
+    description: >
+      Died of cancer at his home in Lisbon's Campo de Ourique on 9 December
+      1854, aged fifty-five. Buried at the Cemitério dos Prazeres; on 3 May
+      1903 his remains were moved to the Jerónimos Monastery's national
+      pantheon, where they rest today near those of Alexandre Herculano,
+      his comrade from the Siege of Porto, and Luís de Camões, the poet
+      whose name he had given his own first Romantic poem thirty years
+      earlier.
+    spoilerAfter: null
+    sources:
+      - https://pt.wikipedia.org/wiki/Almeida_Garrett
+      - https://en.wikipedia.org/wiki/Almeida_Garrett
+sources:
+  - https://pt.wikipedia.org/wiki/Almeida_Garrett
+  - https://en.wikipedia.org/wiki/Almeida_Garrett
+  - https://en.wikipedia.org/wiki/Alexandre_Herculano

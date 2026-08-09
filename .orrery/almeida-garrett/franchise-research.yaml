@@ -1,0 +1,60 @@
+stage: franchise-research
+summary: >
+  Scaffolded the Almeida Garrett wing from scratch: 39 works (11 core, 16
+  extended, 12 apocrypha, 4 of which are grouped multi-item bundles), a
+  global author entity with 8 lifeEvents, franchise identity, and a theme
+  (palette + displayFace + signature only). eras.yaml is a deliberately
+  empty scaffold. No events.yaml, orders.yaml, editions.yaml or
+  achievements.yaml were created - nothing sourced yet belongs in any of
+  them (CURATION.md #1: absence is a valid state, not an oversight).
+produced:
+  authorId: almeida-garrett
+  workCount: 39
+  tierBreakdown: {core: 11, extended: 16, apocrypha: 12}
+  groupedApocryphaEntries:
+    - almeida-garrett/discursos-memorias-e-opusculos-politicos  # ~24 political/ceremonial pamphlets, 1821-1916
+    - almeida-garrett/diarios-e-correspondencia                 # 4 diary/letter volumes, 1881-1995
+    - almeida-garrett/teatro-de-juventude-inedito                # 10 juvenile plays, published 1898-1974
+    - almeida-garrett/poesia-dispersa-e-postuma                  # 7 scattered/posthumous poems, 1877-1985
+  featured: [almeida-garrett/camoes, almeida-garrett/frei-luis-de-sousa, almeida-garrett/viagens-na-minha-terra]
+  subseries: "null throughout - none exist; ruling in works.yaml's own header"
+forStages:
+  completeness-auditor: >
+    First-draft spine from Portuguese Wikipedia's own detailed bibliography
+    + milestone chronology; Infopédia was unreachable (403/404) and unused.
+    The 4 grouped apocrypha entries are this stage's own consolidation of
+    ~45 individually-titled minor items (each entry's `note:` lists every
+    constituent) - split any item judged load-bearing. O Alfageme de
+    Santarém has an unresolved 1841-vs-1842 first-edition date, noted on
+    the entry itself.
+  press-archaeology: >
+    8 lifeEvents (sourced anchors only). aura_density.py flags a 133-year
+    dark run, 1855-1987. Two flagged discrepancies in the author file's own
+    header: the ennoblement monarch (pt-wiki names Pedro V in 1851, which
+    is chronologically impossible; this file follows en-wiki's Maria
+    II/1852 instead) and death cause (liver cancer is pt-wiki only,
+    single-sourced).
+  world-events: >
+    Garrett fought directly in the Liberal Wars/Portuguese Civil War
+    (1828-1834) - a strong candidate if global.yaml lacks it; not checked.
+  eras: "eras.yaml is []. A plausible outline exists but no cited source for it; 39 works clears the 1-2-work skip threshold, route to this skill."
+  reading-orders: >
+    No startHere/orders.yaml. En-wiki's infobox names exactly 3 "notable
+    works," already spent on `featured`; check independently whether a
+    publisher/academic start-here recommendation exists.
+  visual-language: >
+    theme.yaml stops at palette/displayFace/signature by design; `art:` is
+    deliberately absent, so validate.py's one failing error ("no art:
+    block") is expected, not a defect. Palette concept (gaslit proscenium
+    stage) reasoned out in theme.yaml's own comments.
+  editions: "No editions.yaml. Viagens na Minha Terra and Frei Luís de Sousa are the obvious first ISBN targets; check pt Standard Ebooks/Gutenberg readUrl coverage."
+openQuestions:
+  - >
+    Grouping call (weakest decision): 4 apocrypha entries each bundle
+    ~10 individually-titled minor items, on the Textos-de-Imprensa/
+    Middle-earth precedent - but unlike those, none of Garrett's groups was
+    itself published as a unified project. Defensible and reversible (each
+    note lists every constituent), but a curator call, not a settled one.
+  - "O Alfageme de Santarém: 1841 vs 1842 first-edition year, sources disagree; recorded on the entry, not resolved."
+  - "Ennoblement monarch/date: pt-wiki names Pedro V (impossible in 1851); this file follows en-wiki's Maria II/1852 instead."
+  - "validate.py's one error (no theme.art) is the expected pre-visual-language state, not an oversight."
