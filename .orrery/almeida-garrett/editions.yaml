@@ -1,0 +1,60 @@
+stage: editions
+summary: >
+  Wrote content/franchises/almeida-garrett/editions.yaml (new file, 0 -> 9
+  edition entries across 7 of the wing's 44 works). Used the pre-run shared
+  metadata sweep (268 candidate rows) to shortlist, then verified every
+  ISBN by opening a real record myself - publisher sites first
+  (imprensanacional.pt, portoeditora.pt, guerraepaz.pt,
+  projectoadamastor.org), BNP's bibliografia.bnportugal.gov.pt second, a
+  retailer's structured product page third - never taking an aggregator or
+  an AI search summary on its word (one gave a false "this ISBN belongs to
+  a different author" claim that a direct publisher-site fetch disproved).
+  Coverage is 7/44 by market fact, not research gap: Garrett predates
+  ISBNs entirely (died 1854), and only two modern channels reissue him -
+  INCM's "Edição Crítica" scholarly series and Porto Editora's "Clássicos
+  Porto Editora" trade line. validate.py --slug almeida-garrett stays OK,
+  0 errors, 0 warnings on the new file (an initial pipeline-narration
+  warning on 5 header lines was fixed).
+produced:
+  editionsByWork:
+    - "viagens-na-minha-terra: 4 (INCM critical 2010, Livros do Brasil trade
+      2020, Peter Owen English translation 2007, Gutenberg readUrl)"
+    - "frei-luis-de-sousa: 3 (Porto Editora 2010, Guerra & Paz 2018,
+      Gutenberg readUrl)"
+    - "falar-verdade-a-mentir: 1 (Porto Editora 2010)"
+    - "um-auto-de-gil-vicente: 1 (Porto Editora 2011)"
+    - "folhas-caidas: 1 (Projecto Adamastor free ebook 2013)"
+    - "da-educacao: 1 (INCM critical 2009)"
+    - "miragaia: 1 (Gutenberg readUrl only, no paid edition found)"
+  excludedFindings:
+    - "Porto Editora 9789720042262 is a Folhas Caídas + Flores sem Fruto
+      omnibus - excluded per the catalogue's standing anti-omnibus rule,
+      not filed under either work."
+    - "Two more INCM critical-edition ISBNs are real and confirmed
+      (Correspondência familiar 9789722719919; Correspondência para
+      Rodrigo da Fonseca Magalhães 9789722724609) but neither is one of
+      the 4 constituent items works.yaml's diarios-e-correspondencia note
+      enumerates - a works.yaml gap for a future pass, not touched here."
+    - "3 of 9 Gutenberg Garrett ebooks are themselves omnibuses (one binds
+      Lírica de João Mínimo + Folhas Caídas; one bundles ~10 works under
+      'O Retrato de Venus e Estudos de Historia Litteraria') or a 2-of-3
+      partial volume set (Romanceiro I + III, no Volume II found) -
+      excluded from readUrl for the same reasons as print omnibuses."
+    - "'Um Governo em África' (Creative Media Partners) is by a different,
+      unrelated person also named Almeida Garrett (Thomaz de Almeida
+      Garrett, colonial administrator, d. 20th c.) - confirmed and
+      excluded, not this author."
+    - "'Memórias da Ilustre Fidalguia' (Fronteira do Caos, 2006) is
+      credited to Garrett by exactly one retailer and nowhere else
+      checked, and is not in works.yaml's Wikipedia-sourced bibliography -
+      left unconfirmed rather than recorded or ruled out with confidence."
+    - "Caixotim 2004 Viagens edition, EDUFRN 2008 Folhas caídas (Brazil),
+      Luso-Brazilian Books 2004/2005 Viagens+Frei Luís, and a Porto Editora
+      'Edição didática' 2017 Viagens are each real per secondary citation
+      but could not be traced to a record I opened myself, so per the
+      no-guessing rule none shipped."
+  nextStageNotes: >
+    editions and visual-metadata ran from the same metadata sweep on
+    disjoint files; visual-metadata still owns coverUrl sourcing for every
+    work here (none set in editions.yaml). No other open items for
+    downstream stages.
