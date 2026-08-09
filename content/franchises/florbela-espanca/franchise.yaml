@@ -16,10 +16,38 @@
 # not the intimate sonnets she composed. Living through events is not the
 # same as writing out of them.
 #
-# No startHere block. This wing holds too few works for a recommended
-# door to mean much on its own; naming one needs a citable basis (a prize,
-# a critic's or publisher's own recommendation), which no source checked
-# here supplies.
+# startHere: one path exists, sourced to Vogue Portugal's book club
+# (22 Mar 2022, Pedro Vasconcelos,
+# https://www.vogue.pt/voguebookclub-sonetos-florbela-espanca), which calls
+# the "Sonetos" compilation - gathering Livro de Mágoas, Livro de Sóror
+# Saudade, Charneca em Flor and the posthumous Reliquiae appendix (folded
+# into Charneca em Flor's own entry in works.yaml, not catalogued
+# separately) - "certamente a melhor forma de iniciar uma relação com a
+# poesia de Florbela Espanca" (certainly the best way to begin a
+# relationship with Florbela Espanca's poetry), naming this explicitly
+# despite the compilation being posthumous rather than one of her own
+# books. That maps almost exactly onto the three lifetime-or-near-finished
+# poetry collections this catalogue already tiers apart from the
+# posthumous prose/letters/notebook miscellany, which is what the
+# "the-sonnets" path below points at. No source found recommends Charneca
+# em Flor alone as the door, despite it being by far her most-cited and
+# most-taught work (RTP Ensina calls it her "obra-prima" with no
+# entry-point claim attached) - the one source with an actual entry-point
+# recommendation recommends the three collections together, not the
+# famous one alone. The official secondary-school curriculum (DGE,
+# "Programa e Metas Curriculares de Português - Ensino Secundário", Jan
+# 2014) names her only once, in the 11th-year free-reading list, as
+# "Espanca, Florbela - Sonetos" - the same generic compiled-sonnets
+# reference, naming no single title of hers either.
+#
+# No order in orders.yaml. The derived default already sequences the
+# three poetry collections first by their own publication years (1919,
+# 1923, 1931) ahead of the posthumous prose; the only structure a curated
+# order could add is breaking Charneca em Flor's tie with three other
+# 1931 works (As Máscaras do Destino, Juvenília, Cartas), whose relative
+# months this catalogue's sources do not fix. On a nine-work shelf read in
+# one sitting either way, that tie-break would be the order's entire
+# content - short of the actionable-reason bar.
 id: florbela-espanca
 name: Florbela Espanca
 kind: author
@@ -33,11 +61,10 @@ authorIds: [florbela-espanca]
 themePreset: charred-heath-bloom
 
 # Capabilities are auto-detected from the data (docs/SCHEMA.md); nothing is
-# forced here. As scaffolded, the wing carries an 8-work bibliography and a
-# 4-lifeEvent author entity - enough for a thin river, not yet enough for a
-# wizard (no startHere) or curated editions (no editions.yaml). No
-# characters.yaml and no work connections, so the connections map stays
-# dark by design.
+# forced here. The wing carries a 4-lifeEvent author entity and now one
+# startHere path (below) - enough for a thin river and a wizard, not yet
+# enough for curated editions (no editions.yaml). No characters.yaml and no
+# work connections, so the connections map stays dark by design.
 features: {}
 
 globalEvents:
@@ -46,6 +73,56 @@ globalEvents:
     - world-war-i-1914  # lived through it (age 19-24); no book answers it
     - pulp-magazines-1926  # English-language genre phenomenon; unconnected to her Portuguese sonnets
     - portuguese-censorship-1926  # targeted political/social writing, not her intimate confessional voice
+
+startHere:
+  paths:
+    # Source: Vogue Portugal book club, 22 Mar 2022, Pedro Vasconcelos -
+    # https://www.vogue.pt/voguebookclub-sonetos-florbela-espanca. On the
+    # "Sonetos" compilation (Livro de Mágoas + Livro de Sóror Saudade +
+    # Charneca em Flor + the posthumous Reliquiae appendix, folded into
+    # Charneca em Flor's own works.yaml entry): "é com certeza a melhor
+    # forma de iniciar uma relação com a poesia de Florbela Espanca"
+    # ("certainly the best way to begin a relationship with Florbela
+    # Espanca's poetry"), stated despite the compilation being posthumous
+    # rather than one of her own three books.
+    - id: the-sonnets
+      title: The three sonnet collections
+      description: >
+        Her sonnets, the spine of the shelf: Livro de Mágoas, Livro de
+        Sóror Saudade, and Charneca em Flor, read in the order she wrote
+        them. The voice moves from a young law student's grief and
+        longing, through a nun's-cell renunciation of the world, to an
+        open, sensual rebirth in the last book she finished.
+      workIds:
+        - florbela-espanca/livro-de-magoas
+        - florbela-espanca/livro-de-soror-saudade
+        - florbela-espanca/charneca-em-flor
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        The cost is the posthumous material this leaves out: her two
+        short-story collections, her letters, her diary, and the notebook
+        of early poems - all real and hers, but shaped for print by
+        others after her death rather than by her.
+    - id: everything
+      title: Everything, in order
+      description: >
+        All nine works in publication order: the three sonnet collections
+        she saw finished or near-finished, then the stories, letters,
+        diary and early-poems notebook a series of editors assembled and
+        published across the six decades after her death.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+      note: >
+        The cost is exactly what the sonnets path avoids: the posthumous
+        prose sits alongside books she prepared herself, so nothing here
+        marks which pages she actually chose to publish and which an
+        editor chose for her - only each work's own note does that.
 
 sources:
   - "https://en.wikipedia.org/wiki/Florbela_Espanca"
