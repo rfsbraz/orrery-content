@@ -1,0 +1,44 @@
+stage: reading-orders
+summary: >
+  orders.yaml ships zero additional orders (a genre-thread "historical
+  theatre" trio and five same-year tie-breaks were both researched and
+  rejected - neither clears the divergence test; see the file's own header).
+  startHere gained two paths, both citing the DGE's official 11th-year
+  Português curriculum: Frei Luís de Sousa (compulsory) and Viagens na Minha
+  Terra (the Garrett option in a three-way school choice) as the entry
+  point, plus the standard completionist path (orderId: default). Both
+  mirrored into the pt-PT overlay (new file, franchise.yaml only - orders.yaml
+  has nothing to translate since it ships no orders).
+produced:
+  ordersAdded: []
+  ordersRejected:
+    - candidate: "historical-theatre trio (Um Auto de Gil Vicente, Frei Luís de Sousa, D. Filipa de Vilhena)"
+      reason: "real per en-wiki's own account, but already exactly the derived default's order for these 3/44 works - nothing to reshuffle"
+    - candidate: "same-year tie-break order (1821, 1826, 1829, 1845, 1846 each carry 2-4 works)"
+      reason: "no shared thread across any cluster (each mixes unrelated genres/tiers), unlike agatha-christie/poirot-novels' already-a-series case; no source sequences any cluster finer than year"
+  startHerePaths:
+    - id: classroom-canon
+      workIds: [almeida-garrett/frei-luis-de-sousa, almeida-garrett/viagens-na-minha-terra]
+      sourceType: official-curriculum
+      source: "DGE, Aprendizagens Essenciais - Português 11.º Ano (Aug 2018), Anexo 1 - https://www.dge.mec.pt/sites/default/files/Curriculo/Aprendizagens_Essenciais/11_portugues.pdf"
+    - id: everything
+      orderId: default
+  i18n: "content/i18n/pt-PT/franchises/almeida-garrett/franchise.yaml created (startHere paths only - franchise.yaml's own `description` and eras.yaml remain untranslated, outside this stage's footprint)"
+forStages:
+  visual-language: "Unaffected by this pass; theme.yaml's missing art: block remains the sole expected validate.py error."
+  editions: "Unaffected. Viagens na Minha Terra and Frei Luís de Sousa were already the flagged first ISBN targets before this pass; this pass's sourcing independently reinforces both as the two works most worth an edition first, since they are now also the two startHere works."
+openQuestions:
+  - >
+    i18n coverage delta: franchise.yaml's own `description` field and all of
+    eras.yaml's prose (title/description/note) have no pt-PT overlay yet -
+    this pass only added the startHere paths it owns. A future i18n sweep of
+    this wing should close that gap in one pass rather than piecemeal.
+  - >
+    DGE's Anexo 1 gives Viagens na Minha Terra as one of three options
+    (against Alexandre Herculano's "A Abóbada" and Camilo Castelo Branco's
+    Amor de Perdição) that individual schools choose between, not a universal
+    mandate the way Frei Luís de Sousa is. The path's prose is written to
+    reflect that distinction honestly rather than overstate it; a curator
+    who disagrees with how much weight that distinction should carry should
+    revisit the path's fit tags before its wording.
+  - "validate.py's one error (no theme.art) is the expected pre-visual-language state, unchanged by this pass."

@@ -21,14 +21,77 @@ authorIds: [almeida-garrett]
 themePreset: proscenium-gaslight
 
 # Capabilities are auto-detected from the data (docs/SCHEMA.md). This wing
-# ships works.yaml (a first-draft, honestly-tiered bibliography) and an
+# ships works.yaml (a first-draft, honestly-tiered bibliography), an
 # 8-lifeEvent author entity - the timeline data the River and companion
-# capabilities read. No franchise events.yaml, orders.yaml or editions.yaml
-# exist yet: no franchise-specific events, curated reading orders or verified
-# ISBNs have been sourced for this wing, and CURATION.md is explicit that
-# their absence is a complete, correct state rather than a gap to be padded,
-# so `wizard` and `editions` stay off by the app's own auto-detection without
-# needing to be forced here. `eras.yaml` exists but is empty (`eras: []`)
-# with its own header explaining why - no sourced periodisation has been
-# found and cited yet.
+# capabilities read - and eras.yaml's two sourced creative periods. No
+# franchise events.yaml or editions.yaml exist yet: no franchise-specific
+# events or verified ISBNs have been sourced for this wing, and CURATION.md
+# is explicit that their absence is a complete, correct state rather than a
+# gap to be padded, so `editions` stays off by the app's own auto-detection
+# without needing to be forced here. orders.yaml exists and ships zero
+# additional orders (its own header explains why: no internal series, no
+# publisher-numbered grouping, no tie worth a curated order); `wizard`
+# activates from the two startHere paths below.
 features: {}
+
+# "Where to start" - powers the guided wizard. Both paths rest on the
+# strongest kind of source this catalogue can cite for an entry point: not a
+# critic's opinion but the Portuguese state's own secondary-school
+# curriculum, the door nearly every literate Portuguese reader walks through
+# to meet Garrett, whether or not they ever go further. Source: Direção-Geral
+# da Educação, "Aprendizagens Essenciais - Português, 11.º Ano" (Agosto
+# 2018), Anexo 1, "Lista de obras e textos para Educação Literária - 11.º
+# ano"
+# (https://www.dge.mec.pt/sites/default/files/Curriculo/Aprendizagens_Essenciais/11_portugues.pdf):
+# Frei Luís de Sousa is listed as compulsory full-text reading ("leitura
+# integral") with no alternative; Viagens na Minha Terra is the Garrett
+# option in a three-way school choice against Alexandre Herculano's "A
+# Abóbada" and Camilo Castelo Branco's Amor de Perdição - not universally
+# assigned the way the play is, but independently the most-cited "most-read"
+# Garrett work among the sources already checked elsewhere on this wing
+# (Viagens na Minha Terra's own dedicated Portuguese-Wikipedia article calls
+# it the starting point of modern Portuguese prose; English Wikipedia's
+# infobox names it one of exactly three "notable works" for Garrett, already
+# marked `featured: true` in works.yaml alongside Camões). No third path was
+# added: no source recommends any other single work or grouping as an entry
+# point in either language (see orders.yaml's own header for what was
+# checked), and inventing one to round the count to three would be padding.
+startHere:
+  paths:
+    - id: classroom-canon
+      title: Start where the curriculum does
+      description: >
+        Frei Luís de Sousa and Viagens na Minha Terra are the two works
+        almost every Portuguese secondary-school reader meets: the play is
+        compulsory, full-text reading in the Ministry of Education's own
+        11th-year Portuguese syllabus, and the novel is the Garrett option
+        on that same year's reading list. A short domestic tragedy and a
+        light, digressive travel-novel between them cover his two strongest
+        modes without asking for the whole shelf. The cost: for a Portuguese
+        reader who was assigned them at school, neither is a discovery, and
+        starting with the two most-taught books postpones meeting the young
+        exile-poet of Camões and Dona Branca.
+      workIds:
+        - almeida-garrett/frei-luis-de-sousa
+        - almeida-garrett/viagens-na-minha-terra
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+    - id: everything
+      title: Everything, in order
+      description: >
+        The complete bibliography in publication order: exile poetry, the
+        historical and domestic plays behind the national theatre he
+        rebuilt, the picaresque and historical novels, the ballad-collecting
+        scholarship, and the political prose and diaries recovered after his
+        death. The cost: there is no single thread pulling a reader from one
+        work to the next - genre and register change work to work - and a
+        real share of the shelf is occasional or posthumous material
+        (speeches, letters, juvenilia) rather than the handful of works his
+        reputation actually rests on.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
