@@ -1,0 +1,75 @@
+stage: wing-audit
+summary: >
+  Audited the finished wing against re-derived numbers, not prior reports.
+  Every baseline confirmed: validate green (1 warning, on a handoff's length,
+  not content), i18n full for this wing, art_rotation 0 organisation and 0
+  pacing problems, aura 4 entries / 0.44 per work, editions 6/9, covers 6/9 +
+  portrait 1/1, eras [] deliberate, no achievements. No blocking finding: no
+  false fact, no unprotected reveal, no dead image, no unearnable badge. Four
+  real gaps found, all next-round. Three stale comments fixed in place.
+produced:
+  changedFiles:
+    - "content/franchises/florbela-espanca/franchise.yaml (features comment:
+      said one startHere path and no editions.yaml; two paths and a 10-entry
+      editions.yaml now exist, so the editions capability auto-activates)"
+    - "content/franchises/florbela-espanca/theme.yaml (header said `theme.art`
+      is absent - it is present; also dropped a tooling reference the comment
+      policy bars)"
+    - "content/i18n/pt-PT/franchises/florbela-espanca/works.yaml (agreement
+      typo, 'o glosa' -> 'a glosa')"
+findings:
+  art-rotation:
+    - "born-1894 carries illustration_type establishing-landscape, whose
+      prompt module mandates foreground/middle/distance, a horizon and the
+      open environment as subject. theme.art.atmosphere says 'never open
+      country seen from a distance' and theme.art.avoid bars Alentejo views
+      'at landscape scale'. The charneca is open Alentejo country, so the
+      graded type asks for the one image the wing's own law forbids. beside
+      holds every non-artifact type; atmospheric-motif-field or
+      place-portrait satisfies both. Organisation, contour and gate are
+      unaffected."
+  press-archaeology:
+    - "4 aura entries is the lowest absolute count of 44 wings (Cervantes,
+      8 works, carries 9). Her 1917 admission to Lisbon law - one of the first
+      women, and the exact frame the franchise description leans on - sits in
+      bio prose with no dated event. So do the 1948 paternity edict, the 1985
+      appearance of the Kamenezki poem among Pessoa's papers and its
+      reattribution, and the 1994 Dal Farra critical edition. All four are
+      already sourced in this wing."
+    - "Infopedia (Porto Editora) dates her birth to 1895, twice, with no 1894
+      anywhere on the page - the civil-registration year against the 8 Dec
+      1894 birth every other source and the 'thirty-sixth birthday' framing
+      require. The wing carries the resolving fact (baptism 20 June 1895)
+      without connecting it. Record the variant."
+    - "aka carries 'Florbela d'Alma' with no explanation anywhere in the wing,
+      and aka is typed in the app but read by no component - only pseudonyms
+      renders. If it is a signing name with a story it belongs in pseudonyms
+      with a note; if not, it is invisible either way."
+  editions:
+    - "The stated blocker for Juvenilia's missing ISBN - 'Wook and Bertrand
+      both refuse automated fetches' - is over-broad. scripts/fetch.py reads
+      wook.pt product pages live (verified twice, 200); only search and author
+      listing pages 403. The gap is more closable than the file claims."
+    - "wook.pt lists a standalone As Mascaras do Destino printing not recorded
+      here (Calcada das Letras 2010, 9789898352095, 96 p.). The work is
+      already covered, so this is corroboration, not a gap."
+  translation:
+    - "The works overlay writes 'em Redondo' twice where the author overlay
+      writes 'no Redondo'. Reader-facing prose, so left untouched."
+  curator:
+    - "The El Gallo de Oro 2023 pt/es Diario do Ultimo Ano edition
+      (9788412699616) is a genuinely open call. Check digit and 978-84 Spanish
+      prefix both verified here; the question is scope, not arithmetic."
+    - "The Kamenezki attribution rests on Pizarro's identification reported in
+      Dal Farra's essay, not on a print-published correction. Both the base
+      and pt-PT bios state it plainly. Sourcing verified live; the bar is the
+      curator's."
+verification: >
+  validate.py --slug florbela-espanca green after the edits. All 16 sampled
+  source URLs live. All 8 edition ISBNs, the ISBN-10, its conversion and the
+  set-aside Spanish ISBN check out. All 6 covers and the portrait fetched and
+  looked at: real jackets, no watermarks, no retailer marks. wook.pt's own
+  synopsis quotes the Apeles dedication, so spoilerAfter: null holds.
+  displayFace fraunces and signature filament both in lib/theme.ts.
+forStages: {}
+openQuestions: []
