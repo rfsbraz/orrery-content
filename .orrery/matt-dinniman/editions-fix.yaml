@@ -1,0 +1,40 @@
+stage: editions-fix
+summary: >
+  Targeted follow-up on wing-audit's blocking finding: the Spanish (`es`)
+  program was under-recorded, with the lone existing entry (book 5) wrongly
+  noting "no earlier Spanish volume (books 1-4) turned up on any source
+  checked, so a Spanish program starting at book 5 is recorded as a real
+  market fact." Verified directly against mattdinniman.com's own book pages
+  and Penguin Random House Grupo Editorial's own catalogue: the real program
+  is Nova (a PRH Grupo Editorial imprint) publishing all of books 1-5,
+  roughly in sequence. Books 1-3 are released (Nov 18 2025, Feb 17 2026,
+  May 19 2026); books 4 and 5 are open preorders (Sep 22 2026, Nov 17 2026)
+  not yet linked from mattdinniman.com's translation menu, which explains why
+  the earlier pass and wing-audit's own re-check both missed them - the
+  author's site only adds a translation link once a book ships, not at
+  preorder. Cross-checked against PRH's own author-page carousel ("Books by
+  Matt Dinniman published by PRH Grupo Editorial"), which lists exactly these
+  five titles and no others - confirms the program does not extend past book
+  5 yet.
+
+whatChanged:
+  - "Added 3 new es entries: dungeon-crawler-carl (9788410466135), carls-doomsday-scenario (9788410466081), the-dungeon-anarchists-cookbook (9788410466166) - all released, all sourced to mattdinniman.com's own translation link plus Nova's own PRH product page."
+  - "Added 1 new es entry not asked for in the routed finding but found during verification: the-gate-of-the-feral-gods (9788410466364, book 4) - an open preorder for Sep 22 2026, found only via PRH's own author-page carousel (not linked from mattdinniman.com yet)."
+  - "Corrected the existing book-5 entry (the-butchers-masquerade): id renamed ediciones-b-2026-es -> nova-2026-es, publisher Ediciones B -> Nova (per the publisher's own product page, a better source than the thin single-source OpenLibrary bwb-import record the old entry cited), title \"Mascarada Del Carnicero\" -> \"La mascarada del carnicero\" (matches the publisher's own current listing), format paperback added, note rewritten to state it is an open preorder for Nov 17 2026, not yet released, rather than a released edition."
+  - "Rewrote the editions.yaml header's FOREIGN LANGUAGES paragraph to state the Spanish program's real shape (Nova, books 1-5, 1-3 out / 4-5 preordering) instead of the false 'book 5 only, program starts at book 5' claim."
+
+notMisassigned: >
+  The existing book-5 entry's workId and title were correctly matched to
+  The Butcher's Masquerade throughout - it was not attached to the wrong
+  volume, only mis-dated (recorded as a current release when it is a
+  preorder) and mis-attributed by publisher name.
+
+isbnVerification: >
+  All 5 Spanish ISBNs (978-84 Spain prefix) had their check digits
+  recomputed by hand and cross-checked against scripts/metadata/lookup.py
+  --verify-isbns (50 editions total in the file post-fix, 0 suspect).
+
+validate: "green - 0 errors, 3 inherited handoff-length warnings, unchanged from before this fix"
+
+openQuestions:
+  - "Books 6-8 (the-eye-of-the-bedlam-bride, this-inevitable-ruin, a-parade-of-horribles) carry no translation menu at all on mattdinniman.com (no French, no Spanish) and do not appear on Nova's author-page carousel - correctly recorded as no edition, not a gap."
