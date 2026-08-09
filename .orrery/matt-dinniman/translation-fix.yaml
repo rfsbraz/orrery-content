@@ -1,0 +1,43 @@
+stage: translation-fix
+summary: >
+  Follow-up to the wing-audit blocking finding: two pt-PT sentences named
+  the 2020 self-published edition of Dungeon Crawler Carl using the 2026
+  Kathartika translated title, which did not exist yet at that point in the
+  story. Both fixed to the book's actual 2020 title, kept in English per
+  the untranslated-title convention. Nothing else in the wing's pt-PT tree
+  carried the same mistake (swept authors/matt-dinniman.yaml in full and
+  franchises/matt-dinniman/{franchise,works,orders}.yaml; franchise.yaml's
+  self-pub-period reference already used the English name).
+
+fixed:
+  - file: content/i18n/pt-PT/authors/matt-dinniman.yaml
+    field: bio
+    before: >
+      ...autopublicou o romance terminado na Amazon com o título
+      [[work:matt-dinniman/dungeon-crawler-carl|Carl, o Herói das
+      Masmorras]].
+    after: >
+      ...autopublicou o romance terminado na Amazon com o título
+      [[work:matt-dinniman/dungeon-crawler-carl|Dungeon Crawler Carl]].
+  - file: content/i18n/pt-PT/authors/matt-dinniman.yaml
+    field: "lifeEvents[matt-dinniman-pandemic-ends-income-2020].description"
+    before: >
+      ...autopublica-a na Amazon nesse setembro com o título Carl, o Herói
+      das Masmorras.
+    after: >
+      ...autopublica-a na Amazon nesse setembro com o título Dungeon
+      Crawler Carl.
+  - file: content/i18n/pt-PT/authors/matt-dinniman.yaml
+    field: "header comment"
+    note: >
+      Updated the file-level comment that states the published-title rule
+      to name the exception explicitly, so the next translator sees why
+      these two spots differ from the rest of the file rather than
+      rediscovering it.
+
+coverage:
+  before: "pt-PT 374/390 files fully covered"
+  after: "pt-PT 374/390 files fully covered, no regression"
+  command: python3 scripts/i18n_coverage.py
+
+validator: "python3 scripts/validate.py --slug matt-dinniman: green, 0 errors, only the 3 pre-existing handoff-length warnings."
