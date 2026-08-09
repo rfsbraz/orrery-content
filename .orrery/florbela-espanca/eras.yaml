@@ -1,0 +1,98 @@
+stage: eras
+summary: >
+  Verdict: NO RECEIVED PERIODISATION. eras.yaml stays [], now on independent
+  Portuguese-language sourcing instead of on absence of evidence. Two further
+  candidate divisions were found and rejected on the record, and the file's
+  note was rewritten to carry them. No era ships: no ids, achievements, i18n
+  overlay or art created or invalidated.
+produced:
+  newWorkIds: []
+  changedProse: []
+  changedDates: []
+verdicts:
+  - era: "(none written)"
+    verdict: none found
+    rung: >
+      None holds. R1: she names no period of her own work. R2: the specialist
+      literature puts her whole output in one movement matrix and calls the
+      book-to-book change a continuous evolution, never dated phases. R3: not
+      applicable. R4: two real editorial divisions, neither fits (below).
+    sources:
+      - "https://www.infopedia.pt/artigos/$florbela-espanca"
+      - "https://www.instituto-camoes.pt/activity/centro-virtual/bases-tematicas/figuras-da-cultura-portuguesa/florbela-espanca"
+      - "https://www.florbelaespanca.uevora.pt/?page_id=11"
+      - "https://www.florbelaespanca.uevora.pt/?page_id=115"
+  - boundary: "1917/1918 - Obras Completas (Dom Quixote, 1985-86): Poesia
+      (1903-1917) / Poesia (1918-1930), both prefaced by Seabra Pereira"
+    verdict: INVENTED as an era boundary, real as a bibliographic fact
+    rung: 4
+    reasoning: >
+      Fit, not truth; the file's own note carries the full case. The same
+      edition splits her letters at a different year, and as spans these
+      dates would carry zero works then two, orphaning seven.
+    sources:
+      - "https://castroesilva.com/store/sku/2101MA458/viewItem.asp?idProduct=50440"
+      - "https://www.florbelaespanca.uevora.pt/?page_id=11"
+  - boundary: "authorial sanction - Obras (Presença, 2009-11), organised by
+      Seabra Pereira: vol. I the three books she prepared, vol. II notebook,
+      dispersos and Reliquiae"
+    verdict: real division, not a periodisation
+    rung: 4
+    reasoning: >
+      Not temporal at all: a canon judgement, already carried here as
+      canonTier. It cannot become an era without inventing dates.
+    sources:
+      - "https://www.presenca.pt/products/obras-de-florbela-espanca-obra-poetica"
+      - "https://www.presenca.pt/products/obras-de-florbela-espanca-obra-poetica-1"
+  - boundary: "June 1927, Apeles Espanca's fatal plane crash"
+    verdict: INVENTED as a poetry boundary, real for the prose
+    rung: "n/a, biographical; no critic periodises the poetry by it"
+    reasoning: >
+      Confirmed and kept in the file. Charneca em Flor was finished in
+      manuscript by May 1927.
+languagesSearched: >
+  Portuguese (pt-PT and pt-BR) throughout, English as a secondary check.
+  Infopédia, Instituto Camões, DGLB, Univ. de Évora's Florbela project, Casa
+  Florbela Espanca, RTP Ensina, Visão/JL, Observador, Colóquio/Letras,
+  pt.wikipedia, Brazilian repositories, publisher and antiquarian catalogues.
+  Terms: fases da obra, primeira/segunda fase, periodização,
+  percurso/trajetória poética, primeiro/segundo momento, trilogia, and Seabra
+  Pereira against each of his prefaces.
+notFound: >
+  No named phase of her career: no first/second-phase scheme, no "trilogia"
+  for the three collections, no periodising retrospective in the press.
+  Nothing in Seabra Pereira attributable to a periodisation: Infopédia cites
+  his 1985 preface for a stylistic affiliation ("epígono de António Nobre"),
+  and his titled thesis "Evolução neo-romântica e pulsão libertadora" names
+  no stages in any source quoting it. "Neo-romantismo vitalista" and José
+  Régio's decadentism/neo-romanticism placement are movement labels for the
+  whole output, the weaker claim rule 1 warns about.
+refusedOrUnreachable:
+  - "infopedia.pt and wook.pt 403 the default fetcher, read via fetch.py's
+     browser User-Agent. Not a gap. visao.pt read fine, names no phases."
+  - "Colóquio/Letras (Gulbenkian) is page images with no extractable text:
+     Silvina Rodrigues Lopes's review of Seabra Pereira's preface (n.º 92,
+     Jun 1986) and the centenary issue (n.º 132/133, 1994) went unread."
+  - "casaflorbelaespanca.com/a-obra: 404."
+  - "The 1930-31 obituary notices (Celestino David, Diário de Notícias, 14
+     Dec 1930; dozens more) are catalogued at Univ. de Évora, texts not
+     online. The one unchecked tier."
+  - "Seabra Pereira's four prefaces are print-only, read through what
+     Infopédia, the Évora bibliography and the publishers quote."
+forStages:
+  press-archaeology: >
+    No era spans exist, so no lifeEvent must align to one. Apeles's June 1927
+    death is a prose boundary only; if it becomes a lifeEvent, its framing
+    must not imply a turn in the poetry.
+  visual-language: >
+    No era plate will ever be requested here, so `art` needs no chapter-gate
+    law on their account. The aura budget rests on lifeEvents and globals.
+  wing-audit: >
+    eras: [] is deliberate and sourced; per the eras skill this overrides any
+    "era coverage gap" finding. Works outside all eras are expected and warn
+    nothing, since the orphan check only runs when spans exist.
+openQuestions:
+  - "Two unread tiers if anyone reopens this: the Dec 1930 / early 1931 press
+    notices catalogued at Univ. de Évora, and Seabra Pereira's four print
+    prefaces. Nothing in the digitised literature citing them shows a sign of
+    a periodisation."
