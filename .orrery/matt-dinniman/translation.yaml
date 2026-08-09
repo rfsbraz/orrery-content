@@ -1,0 +1,57 @@
+stage: translation
+summary: >
+  Full pt-PT overlay coverage for the wing: franchise.yaml (description +
+  both startHere paths), works.yaml (synopsis + note for all 18 works that
+  carry prose - apocalypse and the-last-yong-shi have neither in the base
+  and correctly get no entry), orders.yaml (name/rationale/debated for
+  dungeon-crawler-carl-in-order), and the author file (bio + all 9
+  lifeEvents). No shared file was touched by any earlier stage on this
+  wing, so there was no cross-wing i18n debt to pick up.
+
+coverage:
+  before: "pt-PT 370/390 files fully covered; matt-dinniman MISSING on all 4 files"
+  after: "pt-PT 374/390 files fully covered; all 4 matt-dinniman files now fully covered, nothing else regressed"
+  command: python3 scripts/i18n_coverage.py
+
+filesCreated:
+  - content/i18n/pt-PT/franchises/matt-dinniman/franchise.yaml
+  - content/i18n/pt-PT/franchises/matt-dinniman/works.yaml
+  - content/i18n/pt-PT/franchises/matt-dinniman/orders.yaml
+  - content/i18n/pt-PT/authors/matt-dinniman.yaml
+
+surfacesRendered: >
+  Real build (npx next dev), not just the coverage script: pointed orrery's
+  orrery-content submodule at this branch, curled /pt/f/matt-dinniman,
+  /pt/f/matt-dinniman/start and /pt/author/matt-dinniman, grepped for
+  translated Portuguese strings and confirmed the English source strings
+  ("Everything, in order", "Start with Dungeon Crawler Carl") do not leak
+  through. Submodule restored to its original pinned commit afterward;
+  `git status` on the orrery app repo confirmed clean. No account-only
+  surface checked (none applies - this wing has no reader activity yet).
+
+titlesLeftInEnglish: >
+  Every work except book 1 of Dungeon Crawler Carl: no pt-PT edition exists
+  for Operation Bounce House, Dominion of Blades, The Hobgoblin Riot,
+  Trailer Park Fairy Tales, The Grinding, Kaiju: Battlefield Surgeon, all
+  three Shivered Sky volumes, or Dungeon Crawler Carl books 2-8 plus
+  Backstage at the Pineapple Cabaret (Kathartika's pt-PT program covers
+  only book 1 so far - see editions.yaml). As always, `title` itself is
+  never set in the works.yaml overlay for any work, per the hard rule.
+
+registerCalls: >
+  See PR body / run report for full detail and sourcing. Summary: "nível"
+  for dungeon floors and "masmorra" for dungeon are sourced to Kathartika's
+  own published pt-PT translation of book 1, not guessed. "Crawler" and the
+  in-world proper nouns Over City / Faction Wars / the Spiral / the Grinder
+  stay untranslated (no sourced PT equivalent anywhere) - flagged for a
+  native reviewer. "The System"/"System AI" -> "o Sistema"/"IA do Sistema"
+  (standard cross-work LitRPG vocabulary, not a coinage). RPG/VR/MMORPG/
+  top 10/puzzle/reality show kept as loanwords, matching PT-PT gaming
+  register. The dungeon-crawler-carl inline-link display text uses the
+  published title "Carl, o Herói das Masmorras" only where the prose names
+  that specific book (2 spots); mentions of the ongoing multi-book saga
+  keep the English series name, since no PT series name is published.
+
+proseNotExpressed: "None - every prose field this wing's base carries now has a pt-PT counterpart."
+
+validator: "python3 scripts/validate.py --slug matt-dinniman green, 0 errors, only pre-existing handoff-length warnings."
