@@ -1,0 +1,70 @@
+stage: reading-orders
+summary: >
+  orders.yaml ships zero additional orders (a "three comedies as a trilogy"
+  candidate and a Filodemo/Anfitriões 1587 tie-break were both researched
+  and rejected - neither clears the bar; see the file's own header).
+  startHere gained three paths: Os Lusíadas alone as the entry point (the
+  epic is why this wing exists), the Rimas as the sourced next step for a
+  returning reader, and the standard completionist path (orderId: default).
+  The English-translation question works.yaml's translationNote already
+  raises is resolved here with an actual recommendation (Landeg White's 1997
+  Oxford World's Classics translation), restated in reader-facing prose on
+  the first path since translationNote itself renders nowhere in the app.
+  A Portuguese-curriculum-sourced classroom path, the shape Almeida
+  Garrett's wing used, was checked for and does not transfer: the DGE's
+  10.º ano Português curriculum assigns Camões, but in excerpts of both Os
+  Lusíadas and the Rimas, not full-text reading of either work, so it
+  corroborates the two-work entry point rather than sourcing a distinct
+  path. All three paths mirrored into a new pt-PT overlay.
+produced:
+  ordersAdded: []
+  ordersRejected:
+    - candidate: "the three comedies as a set (Filodemo, Anfitriões, El-Rei Seleuco)"
+      reason: "one theatre company's 2024 'trilogia dramática' staging label, not a converged reading-order practice; no source sequences the three beyond publication year, and folding in El-Rei Seleuco would understate its own live authorship dispute"
+    - candidate: "curated tie-break between Filodemo and Anfitriões (both published 1587)"
+      reason: "a real intra-year tie, and one physical fact is even known (Anfitriões starts p.86, Filodemo p.144, in their shared 1587 first printing) - but that is a printer's page order in a multi-author miscellany, not a documented reading recommendation, so encoding it as an order would manufacture a claim the source doesn't make"
+  startHerePaths:
+    - id: start-with-os-lusiadas
+      workIds: [luis-de-camoes/os-lusiadas]
+      sourceType: curated
+      source: >
+        Translation recommendation sourced to
+        https://landegwhite.com/books-translations/the-lusiads/ (Portuguese
+        Studies: "the best translation of Os Lusíadas in English"; TLS
+        comparison to Fanshawe) and
+        https://press.princeton.edu/books/paperback/9780691136622/the-collected-lyric-poems-of-luis-de-camoes
+        (1998 Teixeira-Gomes Prize for translation). Atkinson's "deeply
+        unpoetic" characterization is inherited from works.yaml's own
+        already-sourced translationNote, not newly sourced here.
+    - id: beyond-os-lusiadas
+      workIds: [luis-de-camoes/rimas]
+      sourceType: curated
+      source: >
+        https://press.princeton.edu/books/paperback/9780691136622/the-collected-lyric-poems-of-luis-de-camoes
+        - "world famous... epic" vs "almost completely unknown outside his
+        native Portugal" lyric poetry, the explicit epic-first/lyric-second
+        contrast; corroborated by the DGE 10.º ano curriculum
+        (https://www.dge.mec.pt/sites/default/files/Curriculo/Aprendizagens_Essenciais/10_portugues.pdf,
+        Anexo 1) assigning excerpts of both works in the same school year.
+    - id: everything
+      orderId: default
+  i18n: "content/i18n/pt-PT/franchises/luis-de-camoes/franchise.yaml created (startHere paths only, new file - franchise.yaml's own top-level `description` remains untranslated, outside this stage's footprint)"
+forStages:
+  visual-language: "Unaffected by this pass; theme.yaml's missing art: block remains the sole expected validate.py error."
+  editions: "Os Lusíadas and Rimas were already the wing's two core-tier works before this pass; this pass's sourcing independently reinforces Landeg White's two translations (Lusíadas, Oxford 1997; Rimas, Princeton 2008) as the English editions worth verifying first if this wing ever ships editions.yaml."
+openQuestions:
+  - >
+    i18n coverage delta: franchise.yaml's own top-level `description` field
+    has no pt-PT overlay yet - this pass only added the startHere paths it
+    owns. A future i18n sweep of this wing should close that gap.
+  - >
+    The DGE 10.º ano curriculum requires only excerpts (specific stanzas
+    from Os Lusíadas' "reflexões do Poeta," a subset of sonnets/redondilhas
+    from the Rimas), never full-text reading of either work - a materially
+    weaker curriculum claim than Almeida Garrett's compulsory leitura
+    integral of Frei Luís de Sousa. It was used as corroborating evidence
+    for which two works this wing's core-tier startHere paths already point
+    at, not as its own path or its own workIds; a curator who reads this
+    differently should reconsider whether that corroboration belongs in the
+    path comments at all rather than add a fourth path.
+  - "validate.py's one error (no theme.art) is the expected pre-visual-language state, unchanged by this pass."
