@@ -5,12 +5,16 @@
 # and a private diary sit off it, all posthumous. See works.yaml's own
 # header for the full sourcing on each.
 #
-# No globalEvents block. Espanca's 1894-1930 lifetime overlaps the First
-# World War (1914-1918, when she was 19-24) and the start of Portuguese
-# press censorship (28 May 1926, four years before her death). No source
-# checked for this wing connects either to her work: her poetry stays
-# intensely private and confessional throughout, never political or
-# war-facing.
+# globalEvents block below: Espanca's 1894-1930 lifetime overlaps three
+# shared events - the First World War (1914-1918, when she was 19-24),
+# the genre-magazine boom of 1926, and Portuguese press censorship
+# (28 May 1926, four years before her death). Ruled: all excluded. Her
+# poetry stays intensely private and confessional throughout, never
+# engaging politics or war; the pulp-magazine phenomenon was an
+# English-language cultural movement unconnected to her work; and while
+# censorship was real and Portuguese, it targeted political/social writing,
+# not the intimate sonnets she composed. Living through events is not the
+# same as writing out of them.
 #
 # No startHere block. This wing holds too few works for a recommended
 # door to mean much on its own; naming one needs a citable basis (a prize,
@@ -35,6 +39,13 @@ themePreset: charred-heath-bloom
 # characters.yaml and no work connections, so the connections map stays
 # dark by design.
 features: {}
+
+globalEvents:
+  include: []
+  exclude:
+    - world-war-i-1914  # lived through it (age 19-24); no book answers it
+    - pulp-magazines-1926  # English-language genre phenomenon; unconnected to her Portuguese sonnets
+    - portuguese-censorship-1926  # targeted political/social writing, not her intimate confessional voice
 
 sources:
   - "https://en.wikipedia.org/wiki/Florbela_Espanca"
