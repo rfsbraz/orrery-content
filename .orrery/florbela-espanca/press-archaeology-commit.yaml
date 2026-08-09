@@ -1,0 +1,39 @@
+stage: press-archaeology-commit
+summary: >
+  Pasted press-archaeology's four preparedLifeEvents into
+  content/authors/florbela-espanca.yaml now that visual-language has set
+  theme.art (born-1894, first-divorce-1921, brother-apeles-death-1927,
+  death-1930), in the drafted order, with none of them carrying
+  organisation/illustration_type/images_required (art-rotation's fields,
+  correctly left unset by press-archaeology). Converted the drafted
+  inline-bracket sources into this catalogue's canonical multi-line
+  sources: list, matching almeida-garrett.yaml's format. Applied
+  spoiler-audit's one correction: brother-apeles-death-1927's
+  spoilerAfter changed from florbela-espanca/as-mascaras-do-destino to
+  null - the bookseller copy for that book quotes the Apeles dedication
+  on the page a buyer sees before purchase, and the same fact already
+  renders ungated in that work's own synopsis and in this author's bio
+  prose beside it, so the gate protected nothing while mislabeling a
+  real bereavement as a plot spoiler. The other three events keep the
+  drafted spoilerAfter: null unchanged. Rewrote the top-of-file comment,
+  which previously explained the empty lifeEvents/no-art-block
+  situation, to state what's true now: four real dated lifeEvents exist,
+  sourced inline on each event.
+produced:
+  changedFiles:
+    - content/authors/florbela-espanca.yaml (lifeEvents: [] -> 4 events;
+      top comment rewritten)
+  corrections:
+    - "brother-apeles-death-1927 spoilerAfter: florbela-espanca/as-mascaras-do-destino
+      -> null, per spoiler-audit's ruling (publisher-test + audit-by-entity
+      failure)."
+  aura_density:
+    before: "0 entries, ratio 0.00, worst dark run 76 yrs (1919-1994)"
+    after: "4 entries, ratio 0.44, span 1919-1994, longest dark run 64 yrs
+      (1931-1994) - matches press-archaeology's prediction; 1931-1994 stays
+      dark because every work there is posthumous archival material."
+validate: "python scripts/validate.py --slug florbela-espanca -> OK, 0 errors,
+  0 warnings for this wing (250 warnings shown are catalogue-wide, on other
+  wings)."
+forStages: {}
+openQuestions: []
