@@ -1,0 +1,56 @@
+stage: completeness-auditor
+summary: >
+  Targeted follow-up on wing-audit's two blocking findings routed to this
+  stage. Both were self-contradictions within works.yaml (or against
+  editions.yaml), not new research; both resolved with a live re-check
+  rather than taking wing-audit's suggested resolution on faith.
+  validate.py --slug matt-dinniman: 0 errors, same 3 inherited warnings.
+counts:
+  before: { works: 20, core: 9, extended: 8, apocrypha: 3 }
+  after: { works: 20, core: 9, extended: 8, apocrypha: 3 }
+added: []
+corrected:
+  - work: matt-dinniman/the-dungeon-anarchists-cookbook
+    change: >
+      `note:` said the Ace reissue was Aug 22, 2024, contradicting the
+      file's own comment below it (Oct 22, 2024). Re-verified live:
+      mattdinniman.com's own book-3 page does read "RePublished Aug 22,
+      2024" - the note wasn't a stray typo, it matched the site - but Open
+      Library's record for that reissue's ISBN (9780593820285) gives
+      publish_date 2024-10-22. Checked the cadence directly rather than
+      trusting wing-audit's framing: Open Library independently dates book
+      one's reissue (9780593820247) 2024-08-27 and book two's (9780593820261)
+      September 24, 2024, both matching mattdinniman.com exactly. Aug 27 ->
+      Sep 24 -> Oct 22 is a clean 28-day cadence; Aug 22 would put book
+      three's reissue five days before book one's own release, which is
+      impossible for a sequential program. Concluded the author's site has
+      a one-character slip (Aug/Oct) on this one page and Open Library's Oct
+      22 is correct. `note:` now reads Oct 22, 2024; the pre-existing
+      comment (already correct) expanded to record the cadence evidence and
+      name the site's Aug 22 as an error rather than leaving the two
+      dates merely matching by silent coincidence. No reorder (year
+      unchanged, 2021; this is a reissue date in a `note:`, not `published`).
+  - work: matt-dinniman/this-inevitable-ruin
+    change: >
+      `note:` flatly asserted "no separate self-published edition or later
+      reissue", which editions.yaml's own entries disprove: a real,
+      separately-cataloged "Independently published" paperback (ISBN
+      9798344591230) dated Nov 3, 2024 - the exact day mattdinniman.com
+      gives as this book's sole "Published" date - plus the Ace hardcover
+      (ISBN 9798217190041) independently dated Sept 23, 2025 by both Open
+      Library and isbnsearch.org, roughly ten months later. Did not attempt
+      to resolve which is "true" first publication - wing-audit already
+      flagged this as a genuine curator's call needing a human on pages
+      that 403 fetchers, and editions.yaml's own note says the same. Fixed
+      only the contradiction: `note:` now states the author's site names no
+      self-pub predecessor and no reissue, states what Open Library
+      independently shows instead, and calls it an unresolved discrepancy
+      rather than denying it exists. `published: 2024` unchanged (both the
+      site's date and the self-pub paperback's date are Nov 3, 2024, so the
+      year isn't in question, only the "no other edition" claim was).
+rejected: []
+reorders: []
+curatorsCall:
+  - "This Inevitable Ruin's self-pub-vs-Ace-direct discrepancy stays open, as wing-audit and editions.yaml already flagged - not resolved here, only stopped from contradicting editions.yaml."
+forStages:
+  wing-audit: "Both blocking findings routed here are closed; the note/comment for the-dungeon-anarchists-cookbook and the note for this-inevitable-ruin no longer contradict themselves or editions.yaml."
