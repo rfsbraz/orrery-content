@@ -1,0 +1,118 @@
+stage: reading-orders
+summary: >
+  Audited the one pre-existing startHere path and found it violated the
+  ~5-work path/order line (8 DCC volumes in `workIds`). Moved that list into
+  a new orders.yaml as a curated order and pointed the path at it via
+  `orderId`. Added a second, completionist startHere path (`orderId:
+  default`) that the one-path bundle was missing. No order or path added for
+  Shivered Sky or Dominion of Blades - researched and rejected, both real
+  negatives, not oversights.
+produced:
+  ordersAdded: [matt-dinniman/dungeon-crawler-carl-in-order]
+  ordersChanged: []
+  pathsAdded: [everything-in-order]
+  pathsChanged: [start-with-dungeon-crawler-carl]
+  filesCreated: [content/franchises/matt-dinniman/orders.yaml]
+
+verdicts:
+  q1_second_path: >
+    YES, added. 20 works across 6 series/standalones with only a DCC-only
+    path was a redirect wearing a wizard's clothes - it had no answer for a
+    completionist who already read DCC and wants the rest of the shelf, a
+    normal request for an author with one hit series and a real back
+    catalogue. This is not the sparse-author exception (that is for a dozen
+    books with no subseries); Dinniman has six named groupings. Added
+    `everything-in-order` -> `orderId: default`, fit
+    completionist/complete, with a note naming its cost (Shivered Sky and
+    Dominion of Blades arrive interleaved by year rather than as their own
+    runs, so the tonal jump between LitRPG comedy and 2003-vintage
+    afterlife-war epic lands mid-read).
+  q2_dcc_own_order: >
+    YES, moved. 8 works in a path's `workIds` is past the skill's "~5 means
+    it's an order" line. Created `matt-dinniman/dungeon-crawler-carl-in-order`
+    (type: curated, source: canon) holding the 8-book list, sourced to
+    mattdinniman.com/books/ and Wikipedia's bibliography table (both already
+    the wing's own sourcing for the publisher's #1-#8 numbering). Used
+    `type: curated`, not `official-publication`: the sequence does not
+    diverge from first-publication dates, it only breaks the one tie the
+    derived year-precision default cannot (three DCC volumes published in
+    2021) - same shape and same type as this catalogue's
+    karin-slaughter/grant-county-in-order and stephen-king/dark-tower's
+    thread orders. The startHere path now points at it via `orderId` with
+    `workIds: null`.
+  q3_other_series_entry_advice: >
+    NONE FOUND for either Shivered Sky or Dominion of Blades, and that is the
+    finding, not a gap. Checked FictionDB, FantasticFiction, Goodreads,
+    mostrecommendedbooks.com, inorderbookseries.com, bookseriesinorder.com,
+    gotbookseriesinorder.com and mattdinniman.com's own book pages: every
+    source that discusses either series gives plain publication order
+    ("start with Every Grain of Sand", "Dominion of Blades then The Hobgoblin
+    Riot") with no alternative entry point, no "start elsewhere" advice, and
+    no named grouping beyond the series itself. No order or path was written
+    for either - a hand-copy of a tie-free 2- or 3-book publication sequence
+    carries no information the derived default does not already give, and
+    there is no entry-point advice to receipt into a path.
+  q4_famous_book_trap_inverted: >
+    CONFIRMED, not just assumed. Every reading-order aggregator and guide
+    surfaced (see q3's list, plus gamerant, pocket-lint, litrpgcritic,
+    bookorder.org, thebookbaddiediaries) treats Dungeon Crawler Carl as both
+    the obvious and the correct door - none suggests starting with Dominion
+    of Blades, Shivered Sky, or any standalone instead, and several call out
+    that DCC has no prequels or side-entry points, only publication order.
+    No inversion of the famous-book trap applies here; DCC is the door.
+
+pathAudit:
+  - id: start-with-dungeon-crawler-carl
+    verdict: SOURCED (existing sourcing carried into orders.yaml)
+    note: >
+      Was previously a workIds-based path citing mattdinniman.com/Wikipedia
+      in a franchise.yaml comment; that citation now lives as the order's
+      `sources:` field instead, which is the correct home for it now that
+      an order exists.
+  - id: everything-in-order
+    verdict: >
+      SOURCED (structurally, via the derived default - no external citation
+      needed or claimed; the bar for a completionist "orderId: default" path
+      is the derived order itself, same as karin-slaughter/everything-in-order
+      and stephen-king/the-long-walk)
+
+orderAudit:
+  - id: matt-dinniman/dungeon-crawler-carl-in-order
+    scope: "the 8 numbered DCC novels"
+    omissions: >
+      "Backstage at the Pineapple Cabaret" (the DCC-subseries backmatter
+      novella) is named and explained in `debated`, not silently dropped:
+      it ships as fragments bound into specific Ace print editions rather
+      than as a book a reader chooses to read next.
+    divergenceFromDefault: >
+      Matches publication order everywhere except the 2021 tie (3 volumes),
+      which it resolves via the publisher's own numbering; otherwise its
+      whole contribution is isolating the 8-book thread from the other 12
+      works on the shelf.
+
+candidatesRejected:
+  - candidate: "Shivered Sky order (curated or chronological)"
+    reason: >
+      3 tie-free works already correctly sequenced by the derived default;
+      no source proposes a different order or entry point; a hand-copy
+      would only restate the default under a different name.
+  - candidate: "Dominion of Blades order"
+    reason: "Same reasoning, 2 tie-free works."
+  - candidate: "Per-series startHere paths for Shivered Sky / Dominion of Blades"
+    reason: >
+      No source recommends either as an entry point on its own (both are
+      minor next to the flagship); a manufactured path would be padding,
+      not a real door - the completionist path already reaches both.
+
+i18nDelta: >
+  None. This wing has no pt-PT overlay yet (translation has not run); no
+  overlay mirroring was owed this stage per the brief.
+
+validator: >
+  `python3 scripts/validate.py --slug matt-dinniman` green except the one
+  pre-existing, out-of-scope error (matt-dinniman/theme.yaml: no `art:`
+  block) and one pre-existing, out-of-scope warning on .orrery/matt-dinniman/
+  eras.yaml (handoff length, from the eras stage). One warning this stage
+  introduced and then fixed: a franchise.yaml comment named this catalogue's
+  reading-orders skill by name (sanctuary-rule violation) - reworded to
+  state the finding without naming the process.

@@ -1,0 +1,69 @@
+# ADDITIONAL canon orders only. The DEFAULT order - all 20 works, publication-
+# chronological - is derived from works.yaml and is NOT listed here.
+#
+# One order only. The Dungeon Crawler Carl subseries is the one grouping on
+# this shelf with more than five works (eight novels) - past the point where
+# a startHere path may restate the list in its own `workIds` rather than
+# point at an order, since a duplicated list drifts the moment a ninth volume
+# publishes and nothing notices. This order exists to hold that list, not to
+# reshuffle anything: its sequence matches the derived default's publication-
+# year sort except where the derived sort cannot settle a tie (three volumes
+# published in 2021), and there it follows the publisher's own numbering
+# (#1-#8, both on mattdinniman.com's own book pages and in Wikipedia's
+# bibliography table).
+#
+# No order was built for the other two series. The Shivered Sky trilogy
+# (three volumes, one shared 2003 origin, staggered only by their 2020
+# republication dates) and the Dominion of Blades duology (two volumes) are
+# both short and already tie-free in the derived default, so a hand-written
+# copy of either one's publication order would carry no information the
+# default does not already give for free - the same reasoning this
+# catalogue's valter-hugo-mae file gives for not ordering its own untitled
+# two-book pairing. No reading-order guide found for either series proposes
+# anything but publication order (checked: FictionDB, FantasticFiction,
+# mostrecommendedbooks.com, inorderbookseries.com, bookseriesinorder.com -
+# all converge on "book one, then book two[, then book three]" with no
+# alternative entry point or grouping named).
+
+- id: matt-dinniman/dungeon-crawler-carl-in-order
+  name: Dungeon Crawler Carl, in order
+  type: curated
+  source: canon
+  rationale: >
+    The eight-novel flagship series, isolated from the shorter and far
+    less-known trilogy, duology and standalones that interleave with it when
+    the shelf is read strictly by publication year. For a reader who has
+    heard of exactly this book and wants it, and only it, in the sequence
+    the publisher numbers on its own site (#1-#8). The sequence otherwise
+    matches publication order; its one real contribution is settling the
+    2021 tie the derived, year-precision default cannot resolve - three
+    volumes published that year, ordered below as the publisher orders
+    them. The cost is the scope: this order excludes the rest of the
+    author's catalogue entirely, including the multi-part backmatter
+    novella "Backstage at the Pineapple Cabaret", which is not a book of
+    its own - it ships as bonus fragments bound into the Ace print
+    reissues of these same eight novels, so a reader following this order
+    in the Ace editions meets it automatically and a reader following it
+    in the original self-published or ebook editions does not meet it at
+    all.
+  orderedWorkIds:
+    - matt-dinniman/dungeon-crawler-carl
+    - matt-dinniman/carls-doomsday-scenario
+    - matt-dinniman/the-dungeon-anarchists-cookbook
+    - matt-dinniman/the-gate-of-the-feral-gods
+    - matt-dinniman/the-butchers-masquerade
+    - matt-dinniman/the-eye-of-the-bedlam-bride
+    - matt-dinniman/this-inevitable-ruin
+    - matt-dinniman/a-parade-of-horribles
+  debated:
+    - >
+      Whether "Backstage at the Pineapple Cabaret" belongs inside this order
+      at all: ISFDB catalogues its eight published fragments (2024-2026) as
+      separate titles under the Dungeon Crawler Carl series name, which
+      would argue for interleaving them here, but each fragment is
+      backmatter bound into one specific Ace print edition rather than a
+      book a reader picks up next, so it is left out here rather than
+      assigned a guessed position.
+  sources:
+    - https://mattdinniman.com/books/
+    - https://en.wikipedia.org/wiki/Dungeon_Crawler_Carl
