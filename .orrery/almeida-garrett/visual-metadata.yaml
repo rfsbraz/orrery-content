@@ -1,0 +1,49 @@
+stage: visual-metadata
+summary: >
+  Sourced the author portrait and 14/44 work covers. Portrait: an 1844
+  lithograph by Pedro Augusto Guglielmi, scanned from the Biblioteca
+  Nacional de Portugal, public domain (PD-old-100) - also Wikidata's own
+  P18 image for the Almeida Garrett entity (Q316806). Covers favoured the
+  actual first edition wherever Open Library had a scan of one (7 of the
+  14: Camões 1825, Dona Branca 1826, Catão 1830, O Alfageme de Santarém
+  1842, A Sobrinha do Marquês 1848, Portugal na Balança da Europa 1830,
+  Viagens na Minha Terra 1846, Folhas Caídas 1853 - 8 total, all matching
+  works.yaml's own `published` year); the rest use the best later edition
+  Open Library holds. validate.py --slug almeida-garrett stays OK (0
+  errors); wing_digest covers 0/44 -> 14/44.
+produced:
+  portrait:
+    subject: almeida-garrett
+    credit: "Pedro Augusto Guglielmi, public domain (PD-old-100)"
+    source: "https://commons.wikimedia.org/wiki/File:Almeida_Garrett_por_Guglielmi.jpg"
+  covers:
+    added: 14
+    list: >
+      camoes, dona-branca, adozinda, flores-sem-fruto, folhas-caidas,
+      catao, o-alfageme-de-santarem, frei-luis-de-sousa,
+      falar-verdade-a-mentir, a-sobrinha-do-marques, o-arco-de-santana,
+      viagens-na-minha-terra, romanceiro-e-cancioneiro-geral,
+      portugal-na-balanca-da-europa
+    rejected: >
+      um-auto-de-gil-vicente (only cover on Open Library is a two-work
+      omnibus bundled with Frei Luís de Sousa, OL1241715W - rejected, and
+      that same omnibus cover was also rejected as Frei Luís de Sousa's
+      own cover); o-retrato-de-venus (every Open Library record for it,
+      including the one search surfaces as a bare "O retrato de Venus"
+      title, is actually the combined "e Estudos de historia litteraria"
+      volume - no standalone cover exists); d-filipa-de-vilhena (no cover
+      on Open Library under either title, "Filipa de Vilhena" or
+      "D. Filipa de Vilhena"); flores-sem-fruto's OL1241710W
+      ("Flores sem fruto ; Folhas caídas") rejected as a two-work omnibus
+      in favour of the standalone OL18057937W edition used instead.
+  emptyRemaining: >
+    30 works left uncovered - the grouped entries (occasional political
+    prose, diaries/correspondence, scattered minor poetry, juvenile
+    unperformed plays - each already a multi-item bundle by this wing's
+    own editorial choice, not a single publishable object), several
+    posthumous fragments and juvenilia first printed decades to a century
+    after Garrett's death with no edition ever illustrated, and a handful
+    of minor 1820s-1840s poems/plays Open Library never scanned a cover
+    for. All checked by direct title search (and, for the trio above,
+    checked and rejected on rights/omnibus grounds, not merely unsearched).
+  toolCalls: "~55 (batched OpenLibrary/Wikidata/Commons fetches + verification HEADs, no per-URL sequential fetching)"
