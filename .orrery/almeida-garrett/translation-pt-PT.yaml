@@ -1,0 +1,93 @@
+stage: translation-pt-PT
+summary: >
+  Full pt-PT coverage for the almeida-garrett wing: 44 work synopses, both
+  eras (title/description/themes), both franchise events (title/description),
+  the author bio, all 16 lifeEvents (title/description, including the one
+  gated lifeEvent) and franchise.yaml's description. franchise.yaml's
+  startHere paths already had a pt-PT overlay from the reading-orders stage
+  and were left untouched; only description was added to that file. Almost
+  the entire base catalogue for this author is itself already in Portuguese
+  (titles, era names, quoted primary sources), so the actual work was
+  translating the editorial English prose around it, not titles - and
+  leaving every already-Portuguese title, era name and quoted primary source
+  to carry through unchanged rather than double-translating it.
+coverageBefore: >
+  pt-PT: 358/379 files fully covered. Missing entirely: works.yaml (44),
+  eras.yaml (6), events.yaml (4), authors/almeida-garrett.yaml (33). Partial:
+  franchise.yaml 4/5 (missing description). All four numbers match the
+  spoiler-audit handoff's own i18n delta note exactly.
+coverageAfter: >
+  pt-PT: 363/379 files fully covered. almeida-garrett does not appear in
+  either the MISSING or PARTIAL list for any file. The five extra files
+  (358->363) are works.yaml, eras.yaml, events.yaml, authors/almeida-
+  garrett.yaml and franchise.yaml - no regression anywhere else in the
+  catalogue; the remaining PARTIAL entries in the report all belong to other
+  wings and predate this run (agatha-christie, harlan-coben, lee-child,
+  robert-jordan, stephen-king, terry-pratchett, anna-sewell, fernando-pessoa,
+  haruki-murakami, hp-lovecraft, joao-tordo, miguel-de-cervantes).
+filesWritten:
+  - content/i18n/pt-PT/franchises/almeida-garrett/works.yaml (new, 44 synopses)
+  - content/i18n/pt-PT/franchises/almeida-garrett/eras.yaml (new, 2 eras)
+  - content/i18n/pt-PT/franchises/almeida-garrett/events.yaml (new, 2 events)
+  - content/i18n/pt-PT/authors/almeida-garrett.yaml (new, bio + 16 lifeEvents)
+  - content/i18n/pt-PT/franchises/almeida-garrett/franchise.yaml (extended -
+    added description, the pre-existing startHere.paths from reading-orders
+    left byte-for-byte as found)
+titlesLeftInBase: >
+  Every work title, both era titles, and every quoted primary source
+  (Garrett's own "Nasci no Porto, mas criei-me em Gaia", Buescu's "os anos de
+  formação", Santana's "a fase da maturidade", the Biblioteca Nacional's "A
+  literatura ganhou com este ócio involuntário", Eça de Queirós's
+  "reaportuguesar Portugal") were already Portuguese in the base file and
+  are reproduced unchanged - none is a translated title in the sense
+  SCHEMA.md's translation rules forbid (no edition exists to publish a
+  translated title against; these are the author's own original-language
+  text, not a translation candidate at all).
+registerCalls:
+  - >
+    almeida-garrett-born-1799 (author lifeEvent): base description glosses
+    Garrett's own Portuguese quote with a parenthetical English translation.
+    Dropped rather than translated back, since a pt-PT reader needs no gloss
+    of an already-Portuguese quote sitting right next to it - the one place
+    this overlay is intentionally shorter than a literal field rendering.
+  - >
+    frei-luis-de-sousa (synopsis + both lifeEvents) keeps "rapariga" for
+    "the girl" - neutral and ordinary in Portugal per the translation
+    skill's own discriminator table, not the Brazilian sense; deliberate.
+  - >
+    romanceiro-e-cancioneiro-geral (synopsis): base prose explains its own
+    `format: reference` schema tag to the reader. Translated literally,
+    field name and file reference kept as code tokens, matching the base.
+  - >
+    "estante" (bookshelf) reused for two unrelated shelf-metaphor spots -
+    franchise.yaml's existing pt-PT startHere prose and the new Teófilo
+    Braga 1904 lifeEvent title - so the wing stays consistent on that image.
+spoilerHandling: >
+  The gated lifeEvent (almeida-garrett-frei-luis-de-sousa-own-household-1843,
+  spoilerAfter: almeida-garrett/frei-luis-de-sousa) was translated like any
+  other prose - spoilerAfter is structure and needs no overlay entry of its
+  own, only the title/description fields do. Did not re-import a Portuguese
+  retailer synopsis for Frei Luís de Sousa while translating: the work
+  synopsis and both lifeEvents stop at the same point the base (post
+  spoiler-audit) does - the second marriage, the daughter, the forebodings,
+  Telmo still waiting - never the pilgrim's identity, the annulment or the
+  deaths, matching spoiler-audit.yaml's own publisherTest warning that
+  current Portuguese retailer copy for this play does give the ending away.
+validate: >
+  0 errors both before and after this run's own comment fix. First pass
+  added a warning on this stage's own works.yaml overlay comment
+  ("reads as pipeline narration ('spoiler-audit')" - the comment named the
+  spoiler-audit stage instead of just stating the resulting fact); reworded
+  to state the revelation boundary directly (stops at the school-edition
+  synopsis, names neither the pilgrim's identity nor the third act) with no
+  process reference, and the warning cleared. Final state: 17 warnings, all
+  pre-existing and unrelated to this stage (14 posthumous-works-outside-era,
+  matching eras.yaml's own header on deliberately excluded posthumous
+  works; 3 handoff word-count soft-caps on other stages' own handoffs).
+toolCalls: 24
+forStages:
+  wing-audit: >
+    Read-only from here. i18n_coverage.py reports full pt-PT coverage for
+    every almeida-garrett file; no open translation gap to flag.
+  pipeline-audit: >
+    Same - nothing outstanding on the i18n side for this wing.
