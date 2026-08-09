@@ -1,0 +1,69 @@
+stage: completeness-auditor
+summary: >
+  Re-verified all 20 works against primary sources: every published year
+  re-checked directly against mattdinniman.com's own book pages (all 20
+  match, day-level), the current shelf swept against mattdinniman.com/books/,
+  Wikipedia and ISFDB for anything new since the scaffold, and all five
+  franchise-research open questions resolved or re-confirmed with stronger
+  sourcing. 20 -> 20 works: no additions, one correction (sourcing, not a
+  date/tier change). validate.py --slug matt-dinniman clean (same one
+  pre-existing warning: no theme.art block yet).
+counts:
+  before: { works: 20, core: 9, extended: 8, apocrypha: 3 }
+  after: { works: 20, core: 9, extended: 8, apocrypha: 3 }
+added: []
+corrected:
+  - work: matt-dinniman/backstage-at-the-pineapple-cabaret
+    change: >
+      Note/sources rewritten: the split-by-part question is now sourced to
+      Dinniman's own words (Grimdark Magazine interview) - "I have written a
+      novella ... broken up into short story-sized fragments added at the end
+      of each book" - replacing the earlier "not independently confirmed"
+      hedge. ISFDB citation swapped from the generic author page to the
+      actual series record. canonTier, published year and subseries all
+      unchanged; no reorder.
+rejected:
+  - item: "DCC book 9 (\"The Beautiful Place\", per one fan site)"
+    why: >
+      Dinniman himself, Variety interview Feb 2026: "I think 9 is the last
+      book, but it'll be split into two books ... this isn't set in stone."
+      No official title/date anywhere. The fan-site title rests on a Patreon
+      post not independently checkable here. Not catalogued.
+  - item: "Unbroken anthology story"
+    why: >
+      Contribution now confirmed by two more sources (fellow contributors
+      Sullivan and George on their own sites) plus Goodreads, which now
+      shows an expected date (Sep 3, 2026). Still no story title anywhere.
+      Also a multi-author anthology, a curator scope call regardless. Not
+      catalogued.
+  - item: "The Thieves of Grandeur"
+    why: "Re-confirmed unchanged: still undated everywhere checked, own page still 404s."
+  - item: "ISFDB Essays/Interior Art entries (author's notes, illustrations)"
+    why: "Paratext inside already-catalogued DCC volumes, not separate publications."
+  - item: "Webtoon / Vault Comics graphic novel adaptation"
+    why: "Adapted by other credited creators; same status this file already gives audiobooks/translations."
+datingReverification: >
+  All 20 mattdinniman.com book pages re-fetched directly; every
+  Published/RePublished string matches the file exactly. Trap flagged in the
+  works.yaml header for future passes: Wikipedia's own DCC article table
+  (sourced to BookScouter resale listings) gives different day-level dates
+  for six of eight DCC volumes, weeks off the author's site, never a
+  different year - not used, and now documented so nobody "corrects" toward it.
+openQuestions:
+  resolved:
+    - "Backstage split-by-part: resolved, one novella - see corrected above."
+    - "Trailer Park Fairy Tales 12 vs 6: not a contradiction - ISFDB's own record says its contents are partial and the publisher's blurb claims twelve. Already correctly noted; unchanged."
+  stillOpen:
+    - "DCC book 9 title/date: still none, now backed by a direct author quote instead of Wikipedia's paraphrase of it."
+    - "Unbroken story: contribution confirmed twice over, anthology now dated (Sep 3 2026), title still nowhere."
+    - "Birth date: checked anyway (not this stage's job) - Seattle Met and Grimdark Magazine both read in full, neither states an age or year. No new lead for press-archaeology."
+forStages:
+  press-archaeology: >
+    Grimdark Magazine interview now read in full
+    (grimdarkmagazine.com/an-interview-with-matt-dinniman/, live site blocks
+    automated fetch, use web.archive.org) - career/craft detail but nothing
+    new on the birth-date gap.
+  reading-orders: "No change; book 9 stays outside the #1-#8 startHere path until it has a title."
+  eras: no change.
+  visual-language: no change.
+  visual-metadata: no change.
