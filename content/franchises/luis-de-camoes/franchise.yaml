@@ -1,0 +1,179 @@
+id: luis-de-camoes
+name: Luís de Camões
+kind: author
+description: >
+  A soldier who lost an eye at Ceuta, a poet who by tradition swam ashore
+  from a shipwreck near the Mekong holding the only manuscript of the poem
+  that made him Portugal's national voice, and, by his death in poverty in
+  1580, the reason Portuguese is sometimes called "the language of Camões".
+authorIds: [luis-de-camoes]
+themePreset: sun-bleached-carta
+features: {}
+
+# Every event in content/events/global.yaml postdates Camões's death by at
+# least 290 years (the earliest, elementary-education-act-1870, by 290; most
+# by well over 300). None reaches this timeline; nothing to include.
+globalEvents:
+  include: []
+  exclude:
+    - sept-11-2001                     # postdates his death by 421 years
+    - financial-crisis-2008            # postdates his death by 428 years
+    - covid-19-pandemic-2020           # postdates his death by 440 years
+    - world-war-i-1914                 # postdates his death by 334 years
+    - world-war-ii-1939                # postdates his death by 359 years
+    - pulp-magazines-1926              # postdates his death by 346 years
+    - penguin-paperback-1935           # postdates his death by 355 years
+    - armed-services-editions-1943     # postdates his death by 363 years
+    - lady-chatterley-trial-1960       # postdates his death by 380 years
+    - fantasy-paperback-boom-1965      # postdates his death by 385 years
+    - carnation-revolution-1974        # postdates his death by 394 years
+    - chain-bookshop-1982              # postdates his death by 402 years
+    - online-bookselling-1995          # postdates his death by 415 years
+    - ebook-and-self-publishing-2007   # postdates his death by 427 years
+    - prestige-fantasy-adaptation-2011 # postdates his death by 431 years
+    - booktok-2020                     # postdates his death by 440 years
+    - portugal-bailout-2011            # postdates his death by 431 years
+    - elementary-education-act-1870    # postdates his death by 290 years
+    - comics-code-authority-1954       # postdates his death by 374 years
+    - portuguese-censorship-1926       # postdates his death by 346 years
+    - berne-convention-1886            # postdates his death by 306 years
+    - satanic-verses-fatwa-1989        # postdates his death by 409 years
+
+# "Where to start" - powers the guided wizard. Two honest paths plus the
+# completionist walk, the same shape Miguel de Cervantes's wing uses for
+# the same reason: almost every reader's door into this author is one
+# overwhelming work, and the sourced second step for someone who wants more
+# is a specific, named next work, not a third path invented to round the
+# count.
+#
+# A Portuguese-curriculum-sourced classroom path - the shape Almeida
+# Garrett's wing uses, a compulsory full-text play plus a curriculum-elective
+# novel mapping cleanly onto two workIds - was checked for and does not
+# transfer here. The DGE's official 10.º ano Português curriculum does assign
+# Camões (see the sourcing comment on beyond-os-lusiadas below), but in
+# excerpts of both Os Lusíadas and the Rimas, not full-text reading of
+# either - so it corroborates which two works are this wing's entry point
+# rather than naming a different, curriculum-specific path. No separate
+# Portuguese-language path was added on that basis.
+startHere:
+  paths:
+    # Source: https://landegwhite.com/books-translations/the-lusiads/ -
+    # reviews quoted on the translator's own page: Portuguese Studies calls
+    # White's 1997 Oxford World's Classics translation "the best translation
+    # of Os Lusíadas in English... a major literary event"; the Times
+    # Literary Supplement calls it "as fine an example of rendering for our
+    # time as Fanshawe's was for his. A great European poem is at last
+    # available to us." Corroborating, on the prize and the translator's own
+    # standing: https://press.princeton.edu/books/paperback/9780691136622/the-collected-lyric-poems-of-luis-de-camoes
+    # names White "the award-winning translator of The Lusíads" and dates the
+    # award (Teixeira-Gomes Prize for translation) to 1998. Atkinson's
+    # "deeply unpoetic" reputation is already recorded and sourced on
+    # works.yaml's own translationNote for this work; restated here in
+    # reader-facing prose since translationNote itself renders nowhere in
+    # the app (SCHEMA.md).
+    - id: start-with-os-lusiadas
+      title: Start with Os Lusíadas
+      description: >
+        The epic is the reason Camões has a shelf at all: ten cantos of
+        ottava rima following Vasco da Gama's voyage to India, framed as the
+        whole sweep of Portuguese history and fought over by the gods of
+        Olympus. It is Portugal's national epic, and the reason "the
+        language of Camões" is sometimes used for Portuguese itself. Nothing
+        else here needs to come first.
+      workIds:
+        - luis-de-camoes/os-lusiadas
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        The real choice here isn't which work but which translation: almost
+        no reader meets this poem in its original 16th-century Portuguese,
+        and English has no single standard Lusíadas. Landeg White's 1997
+        Oxford World's Classics translation, in blank verse, is the one
+        current critical editions and reviewers point new readers toward -
+        it won the 1998 Teixeira-Gomes Prize for translation, and the
+        journal Portuguese Studies called it "the best translation of Os
+        Lusíadas in English." William Atkinson's older Penguin prose
+        version, read by generations, is by later assessment "deeply
+        unpoetic" next to the original; Richard Fanshawe's 1655 version, the
+        historic first into English, holds up well but reads, honestly, as
+        1655 verse. The cost of stopping at the epic alone is everything
+        else Camões wrote: none of the lyric poetry, letters or plays.
+
+    # Source: https://press.princeton.edu/books/paperback/9780691136622/the-collected-lyric-poems-of-luis-de-camoes
+    # - Princeton's own description of the standard English Rimas
+    # translation: "Luís de Camões is world famous as the author of the
+    # great Renaissance epic The Lusíads, but his large and equally great
+    # body of lyric poetry is still almost completely unknown outside his
+    # native Portugal." That is the explicit epic-first, lyric-second
+    # contrast that makes the Rimas a sourced next stop rather than a
+    # parallel pick - and it corroborates works.yaml's own header note that
+    # the two are already named as the definitional pair in Portuguese
+    # Wikipedia's opening sentence on Camões. Landeg White, recommended
+    # above for the epic, produced this collection too (2008).
+    #
+    # Also checked: the DGE's official "Aprendizagens Essenciais -
+    # Português, 10.º Ano" (Agosto 2018), Anexo 1, "Lista de obras e textos
+    # para Educação Literária - 10.º ano"
+    # (https://www.dge.mec.pt/sites/default/files/Curriculo/Aprendizagens_Essenciais/10_portugues.pdf) -
+    # assigns Portuguese secondary students excerpts of BOTH works in the
+    # same school year: four redondilhas and eight sonnets from the Rimas,
+    # and three of six listed "reflexões do Poeta" passages from Os
+    # Lusíadas. It corroborates that these are the two works nearly every
+    # Portuguese reader meets, but only as excerpts, never full-text reading
+    # of either - unlike Almeida Garrett's 11.º ano curriculum, this doesn't
+    # map onto a distinct Portuguese-language startHere path (see this
+    # file's own startHere header comment).
+    - id: beyond-os-lusiadas
+      title: "Beyond Os Lusíadas: the Rimas"
+      description: >
+        For a reader who has read the epic and wants more of the same poet,
+        not the whole shelf. The Rimas gather Camões's lyric verse - sonnets,
+        elegies, odes and the redondilhas he wrote out of his own years of
+        exile and shipwreck - the second half of the pair standard accounts
+        of Camões name together, even though almost none of it travelled
+        with his fame the way the epic did.
+      workIds:
+        - luis-de-camoes/rimas
+      orderId: null
+      fit:
+        experience: [returning]
+        commitment: [taste]
+      note: >
+        The cost is everything the epic's fame crowds out: this collection
+        was itself gathered from manuscript only after Camões's death, its
+        authentic text unsettled for centuries (works.yaml's own note on the
+        Rimas), and it still reaches a fraction of the epic's readership -
+        Princeton's own edition calls it "almost completely unknown outside
+        his native Portugal" next to a "world famous" epic. Landeg White,
+        recommended above for the epic, also produced the standard English
+        Rimas translation, so the same voice carries over. Stopping here
+        still skips the plays and the letters entirely.
+
+    - id: everything
+      title: Everything, in order
+      description: >
+        All six works in publication order: the epic, the collected lyric
+        poetry, the two undisputed comedies from early in his career, the
+        disputed third comedy, and the letters recovered piecemeal centuries
+        after his death. For a reader who already knows Os Lusíadas and wants
+        the rest of the shelf, or one who wants the full range of a
+        soldier-poet who worked in epic, lyric, drama and prose alike.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+      note: >
+        Publication order here means print date, not composition date:
+        every work but the epic itself reached print years or decades after
+        it was written - the two undisputed comedies not until 1587, the
+        disputed third not until 1645, and the Cartas not gathered into a
+        dedicated edition until 2011 (see each work's own note). "Everything,
+        in order" therefore runs well past Camões's own 1580 death before
+        it's done.
+
+sources:
+  - https://en.wikipedia.org/wiki/Lu%C3%ADs_de_Cam%C3%B5es
+  - https://en.wikipedia.org/wiki/Os_Lus%C3%ADadas

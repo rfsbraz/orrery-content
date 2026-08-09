@@ -1,0 +1,261 @@
+# Global author entity. Authors are referenced by id from franchises and works
+# (authorIds / withAuthorIds). Author-LIFE events live here (lifeEvents);
+# franchise-specific events stay in the franchise.
+#
+# `born` is null rather than a chosen year, following the precedent set on
+# john-tiffany.yaml (contested date, no register entry to build it back from).
+# The record does not clear even that low bar: the standard modern estimate
+# is "1524 or 1525", built from a 1550 enlistment document giving his age as
+# "25 anos" and worked backward, not from a baptismal or birth register (none
+# survives). Camões's own first biographers, Severim de Faria and Manoel
+# Correa, originally gave 1517; later researchers (Manuel de Faria e Sousa,
+# consulting the Casa da Índia lists) moved this to 1524, which most modern
+# references now use, and a minority argument for 23 January 1524 (Julian),
+# built by Mário Sá from a sonnet's eclipse reference, has been rejected by
+# other Camões scholars (Hernâni Cidade among them) as over-reading the poem.
+# The birthplace is conventionally given as Lisbon, itself only a "probably"
+# in the sources - a 2023 hypothesis (Isabel Rio Novo) has argued for Porto
+# instead, on evidence both Portuguese Wikipedia and its own proponents treat
+# as weak rather than settled. Even his death carries a residual variant in
+# some tertiary sources (1579 rather than 1580); `died` below follows the
+# overwhelming consensus, the date fixed as Portugal's national day.
+id: luis-de-camoes
+name: Luís de Camões
+aka: ["Luís Vaz de Camões", "Camoens", "Camoëns"]
+born: null
+died: 1580-06-10
+# No portrait: no image of Camões made from life is verifiable. Wikidata's
+# own entity (Q590, P18) and both the English and Portuguese Wikipedia
+# infoboxes all use the same file, "Camões, por Fernão Gomes.jpg" (the
+# so-called Retrato a Vermelho) - but that file is a copy, made 1819-1844 by
+# Luís José Pereira de Resende, of an original said to be signed and dated
+# by Fernão Gomes around 1573-1575. The original itself has no continuous
+# documented history: it is unknown to Camões's own earliest biographers
+# (Pedro de Mariz, Manuel Severim de Faria), and its first appearance on
+# record is a 1755 discovery among earthquake-salvaged papers, identified
+# only by an attached note whose own writer hedges the claim ("isto ouvi, e
+# julgo provável" - "this I heard, and believe probable"). No stronger
+# candidate exists either: a 1720 "Anonimo - Camoes" drawing on Commons
+# postdates him by 140 years with an unknown author, and every other
+# portrait or engraving checked (Gérard, Meunier, Legrand, Pauwels, an 1854
+# engraving) is an explicit later imagining, not a claim of a life likeness.
+bio: >
+  Born, by the best surviving reckoning, around 1524 or 1525, probably in
+  Lisbon, into minor fidalgo (gentry) stock: his father's line traced back to
+  a Galician troubadour-soldier who settled in Portugal in the 14th century,
+  and his mother, Ana de Sá e Macedo, came from a noble Santarém family. Next
+  to nothing about his early life is documented - a Coimbra University
+  education is often assumed but appears in no surviving register - and the
+  reliable record only firms up in his mid-twenties. A frustrated court love
+  affair is traditionally blamed for a self-imposed exile that put him in
+  military service at Ceuta, on the North African coast, where he lost the
+  sight of his right eye in a naval skirmish in the Strait of Gibraltar
+  around 1549-1551; sources differ on whether the wound came from an enemy
+  weapon or an accident with his own side's artillery. Back in Lisbon he
+  wounded a palace official, Gonçalo Borges, in a swordfight, was jailed, and
+  was released by royal pardon on the condition that he serve the crown in
+  India. He sailed from Lisbon on Palm Sunday, 24 March 1553, aboard the
+  carrack São Bento, surviving a storm off the Cape of Good Hope that sank
+  three of the fleet's other four ships, and reached Goa in 1554.
+
+  The following decade in Portuguese Asia supplied most of what became
+  [[work:luis-de-camoes/os-lusiadas|Os Lusíadas]]'s material and most of its
+  poet's misfortune in roughly equal measure. He fought in expeditions
+  against the "king of Chembé" and, in 1555, toward the Red Sea, wintering in
+  Ormuz on the Persian Gulf; probably began drafting the epic around this
+  time; returned to Goa in 1556 and wrote
+  [[work:luis-de-camoes/filodemo|Filodemo]] for the governor, Francisco
+  Barreto; was possibly jailed for several years over either a satire
+  attributed to him or unpaid debts, the record does not settle which; and in
+  1562 was appointed Superintendent for the Dead and Missing at the young,
+  barely-settled Portuguese trading post of Macau, serving there from around
+  1563 to 1564 or 1565. Tradition holds that he wrote part of the epic in a
+  Macau cave later named for him - a legend, not a documented fact. On the
+  voyage back to Goa he was shipwrecked, by tradition near the mouth of the
+  Mekong River; the same tradition holds that he saved nothing but himself
+  and the poem's manuscript, an episode later generations read into the epic
+  itself and into the redondilha "Sôbolos rios que vão". Sources cannot agree
+  on the year (accounts place it anywhere from 1559 to 1566) or even on
+  whether he swam ashore or reached land on a raft, and a companion's death
+  in the wreck, later named "Dinamene" by early biographers, is treated by
+  modern scholarship as more likely a poetic invention than a documented
+  person - the whole episode belongs in the record as legend, sourced to
+  what later biographers and the poet's own allusive verse claim, not as
+  verified biography. A further arrest, this time for the assets of the dead
+  he had been charged with administering, followed in Malacca before he
+  eventually made his way back to Goa.
+
+  Sailing to catch a ride home, he was left stranded for over two years on
+  Mozambique Island by its newly appointed governor, Pedro Barreto, who early
+  biographers say strung him along with empty promises of onward passage; his
+  friend, the historian Diogo do Couto, found him there in 1568-69 in dire
+  poverty, still perfecting the epic's manuscript, and recorded that a
+  separate collection Camões called "Parnaso de Luís de Camões" was stolen
+  from him there and never recovered. He returned to Lisbon on 7 April 1570,
+  aboard the carrack Santa Clara. Two years later, having recited the finished
+  epic to the young King
+  Sebastian, he saw [[work:luis-de-camoes/os-lusiadas|Os Lusíadas]] into
+  print, and was granted a modest royal pension for his service in India -
+  paid, by most accounts, irregularly. He spent his final years in Lisbon in
+  straitened circumstances traditionally described as outright poverty,
+  though at least one modern biographer (Le Gentil) has called the harshest
+  version of that tradition exaggerated, noting Camões still had the means to
+  keep a servant, Jau, brought back with him from the East. Portugal's 1578
+  military catastrophe at Alcácer-Quibir, which cost King Sebastian his life
+  and set up the country's loss of independence to Spain two years later,
+  is said to have embittered his last years further. He died in Lisbon on 10
+  June 1580 - the date since fixed as Portugal's national day - leaving his
+  lyric poetry uncollected; it was gathered and published posthumously,
+  under the title [[work:luis-de-camoes/rimas|Rimas]], in 1595.
+lifeEvents:
+  - id: camoes-ceuta-eye-1549
+    organisation: full-bleed-vista
+    illustration_type: establishing-landscape
+    images_required: 1
+    date: 1549
+    dateRange: "1549-1551"
+    title: "Loses the sight of his right eye at Ceuta"
+    impact: med
+    description: >
+      Serving roughly two years in the North African garrison at Ceuta - by
+      tradition a self-imposed exile after a frustrated court love affair,
+      though the record only firmly establishes the posting itself - Camões
+      loses the sight of his right eye in a skirmish near the Strait of
+      Gibraltar. The near-contemporary biographer Manuel Severim de Faria
+      (born four years after Camões's death) records a shot to the eye taken
+      in an encounter with Moorish forces; other accounts describe an
+      accident with his own side's artillery instead, and the two versions
+      have never been reconciled. The injury becomes his most visible
+      physical mark for the rest of his life and shapes his surviving
+      portraiture (the "Retrato a Vermelho") and the enduring popular image
+      of the "one-eyed poet."
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Lu%C3%ADs_de_Cam%C3%B5es
+      - https://pt.wikipedia.org/wiki/Lu%C3%ADs_de_Cam%C3%B5es
+      - https://www.mitologia.pt/como-e-que-luis-de-camoes-perdeu-o-olho-314157/
+      - https://spoftalmologia.pt/noticias/camoes-perda-de-um-olho-visao-modernidade/
+
+  - id: camoes-departs-for-india-1553
+    organisation: beside
+    illustration_type: journey-transit
+    images_required: 1
+    date: 1553-03-24
+    title: "Sails for India under a pardon's condition"
+    impact: med
+    description: >
+      Freshly released from a Lisbon jail over a swordfight with a palace
+      official, Camões sails for Goa on Palm Sunday, 24 March 1553, aboard
+      the carrack São Bento - the price of his royal pardon was a term of
+      service in India. A letter he later wrote gives his parting words as
+      Scipio Africanus's line, "Ingrata patria, non possidebis ossa mea"
+      ("Ungrateful fatherland, you will not possess my bones"). The fleet
+      loses three of its other four ships to a storm off the Cape of Good
+      Hope before he reaches Goa in 1554.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Lu%C3%ADs_de_Cam%C3%B5es
+      - https://pt.wikipedia.org/wiki/Lu%C3%ADs_de_Cam%C3%B5es
+
+  - id: camoes-macau-appointment-1562
+    organisation: artifact-spread
+    illustration_type: document-facsimile
+    images_required: 1
+    date: 1562
+    dateRange: "1562-1565"
+    title: "Appointed Provedor-mor dos Defuntos e Ausentes in Macau"
+    impact: med
+    description: >
+      Freed, employed and protected by the incoming Goa governor, D.
+      Francisco Coutinho, after an earlier prison term, Camões is named
+      Provedor-mor dos Defuntos e Ausentes (chief keeper of the estates of
+      the dead and absent) for Macau in 1562 - a judicial-administrative post
+      responsible for collecting and safeguarding the goods of merchants who
+      died at sea and guaranteeing their heirs' claims. He serves there in
+      fact from around 1563 until 1564 or 1565, in what was then still a
+      barely-settled Portuguese trading post. Tradition holds he wrote part
+      of [[work:luis-de-camoes/os-lusiadas|Os Lusíadas]] in a Macau grotto
+      later named for him - a legend, not a documented fact, unlike the
+      appointment itself.
+    spoilerAfter: null
+    sources:
+      - https://pt.wikipedia.org/wiki/Lu%C3%ADs_de_Cam%C3%B5es
+      - https://www.parlamento.pt/VisitaParlamento/Paginas/BiogLuisdeCamoes.aspx
+
+  - id: camoes-returns-to-lisbon-1570
+    organisation: immersion
+    illustration_type: portrait-of-absence
+    images_required: 1
+    date: 1570-04-07
+    dateRange: "1567-1570"
+    title: "Stranded in Mozambique, then returns to Lisbon after seventeen years"
+    impact: high
+    description: >
+      Sailing to catch a ride home, Camões is left stranded on Mozambique
+      Island for over two years from December 1567 by Pedro Barreto, its
+      newly appointed governor, who early biographers say strung him along
+      with empty promises of onward passage. His friend, the historian Diogo
+      do Couto, finds him there in 1568-69 in dire poverty - "so poor he ate
+      off friends' charity" - still perfecting the manuscript of
+      [[work:luis-de-camoes/os-lusiadas|Os Lusíadas]] for print, and records
+      that a separate manuscript, a miscellany Camões called "Parnaso de
+      Luís de Camões," is stolen from him there and never recovered despite
+      Couto's own later inquiries. Couto and other friends raise the money
+      to cover a debt Barreto holds him to and get him aboard ship; Camões
+      reaches Lisbon on 7 April 1570 aboard the carrack Santa Clara, seventeen
+      years after he first sailed for India under pardon. Between them lay
+      the Macau posting and the shipwreck tradition says cost him nearly
+      everything but the epic's own manuscript, and a further arrest in
+      Malacca. He brings the finished poem home with him.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Lu%C3%ADs_de_Cam%C3%B5es
+      - https://pt.wikipedia.org/wiki/Lu%C3%ADs_de_Cam%C3%B5es
+
+  - id: camoes-lusiadas-published-1572
+    organisation: artifact-spread
+    illustration_type: book-object
+    images_required: 1
+    date: 1572
+    title: "Os Lusíadas is published, and the crown grants a small pension"
+    impact: high
+    description: >
+      Camões recites the completed [[work:luis-de-camoes/os-lusiadas|Os
+      Lusíadas]] to the young King Sebastian, who orders it printed in 1572
+      and grants its author a modest pension - fifteen thousand réis a year,
+      roughly what a lady-in-waiting at court received, honorable for a
+      veteran soldier but not generous - in payment for his service in India.
+      The grant was renewable but seems to have been paid irregularly, and it
+      lapsed after three years; the epic that made Camões's name did not, in
+      itself, make him secure.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Lu%C3%ADs_de_Cam%C3%B5es
+      - https://en.wikipedia.org/wiki/Os_Lus%C3%ADadas
+
+  - id: camoes-death-1580
+    organisation: immersion
+    illustration_type: symbolic-still-life
+    images_required: 1
+    date: 1580-06-10
+    title: "Dies in Lisbon, embittered by Alcácer-Quibir"
+    impact: high
+    description: >
+      Camões dies in Lisbon on 10 June 1580, in straitened final years that
+      tradition remembers as outright poverty - though he still kept a
+      servant brought back from the East, which at least one modern
+      biographer takes as reason to doubt the harshest version of that
+      tradition. He is said to have been embittered by Portugal's catastrophic
+      1578 defeat at Alcácer-Quibir, which killed King Sebastian and set up
+      the country's loss of independence to Spain within two years of his own
+      death. His lyric poetry remained uncollected at his death; it reached
+      print only in 1595, as [[work:luis-de-camoes/rimas|Rimas]]. His death
+      date is now fixed as Portugal's national day.
+    spoilerAfter: null
+    sources:
+      - https://en.wikipedia.org/wiki/Lu%C3%ADs_de_Cam%C3%B5es
+      - https://pt.wikipedia.org/wiki/Lu%C3%ADs_de_Cam%C3%B5es
+sources:
+  - https://en.wikipedia.org/wiki/Lu%C3%ADs_de_Cam%C3%B5es
+  - https://pt.wikipedia.org/wiki/Lu%C3%ADs_de_Cam%C3%B5es
+  - https://en.wikipedia.org/wiki/Os_Lus%C3%ADadas

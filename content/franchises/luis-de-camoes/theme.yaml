@@ -1,0 +1,174 @@
+# Branding for the Luís de Camões wing (see Orrery CONCEPT SS6 - the design
+# law, and docs/SCHEMA.md#themeyaml). Non-art fields only - `art` is left
+# entirely for the visual-language layer, once the bibliography and any eras
+# are settled. Checked against every existing wing's palette
+# (scripts/theme_digest.py) before choosing, including this catalogue's
+# seven other Lusophone wings: joao-tordo (Atlantic blue-grey near-black),
+# jose-luis-peixoto (wheat-gold, sunbaked, near-black), jose-saramago
+# (volcanic basalt near-black, deep carmine), valter-hugo-mae (warm umber
+# and terracotta, near-black), fernando-pessoa (muted teal-green,
+# near-black), eca-de-queiros (parlour mauve, near-black) and
+# jose-rodrigues-dos-santos (newsroom cardinal red, near-black). Every one of
+# them commits to a dark ground - understandably, since night and interior
+# light suit a study, a desk, a village at dusk. Camões's own record does
+# not: two decades of it happened at sea and on tropical coasts, and its
+# most famous single image, sourced above every other candidate, is a
+# manuscript that came out of the ocean legible at all - saved, by tradition,
+# by being held above the water through a shipwreck near the Mekong. That is
+# a story about salt, sun and paper surviving exposure, not about a shuttered
+# room, so this wing breaks with all seven of the others and opens the
+# palette out into daylight instead: a pale, warm, salt-bleached driftwood
+# ground rather than another near-black. Not a "maritime" costume of rope and
+# rigging - the register is the material outcome of the maritime life
+# (sun-worn paper, weathered wood, oxidized metal fittings), read the same
+# way the design law asks any wing's palette to be read: as material fact
+# rather than genre furniture.
+#
+# The single accent carries that same idea: verdigris, the blue-green patina
+# salt air raises on exposed bronze and brass - ship's fittings, a navigator's
+# instruments - rather than a literal ocean blue. Blue was ruled out
+# deliberately: joao-tordo (hue ~202) and jo-nesbo (hue ~228, outside this
+# language cluster but still an accent this catalogue already owns) between
+# them already claim most of the blue range a maritime idea would reach for.
+# Verdigris sits at hue ~128, in the catalogue's widest untouched span (the
+# nearest accents on either side are anna-sewell's sage green at ~105 and
+# agatha-christie's forest green at ~148, each roughly 20-25 degrees away and
+# both lower-saturation, cooler-toned choices than this one).
+preset: sun-bleached-carta
+palette:
+  bg: "#dfdacd"        # salt-bleached driftwood / sun-worn parchment, not
+                        # another near-black - see the header note
+  surface: "#eae6dc"   # a shade lifted, for cards
+  ink: "#2d241b"        # dark warm brown-black text, high contrast on the
+                        # pale ground
+  muted: "#705943"    # warm dark brown-grey, chosen to clear the 4.5:1 AA
+                        # contrast floor for metadata text against both bg
+                        # and surface
+  accent: "#367d3f"     # verdigris - oxidized bronze/brass patina, not a
+                        # literal ocean blue (see header note)
+displayFace: fraunces
+signature: rule
+notes: >
+  A pale, sun-bleached register rather than the near-black every other
+  wing in this language cluster commits to, because Camões's own record is
+  the one that actually happened outdoors and at sea rather than at a desk.
+  One verdigris accent - salt-air patina on bronze, not a literal ocean blue,
+  which this catalogue's Atlantic- and Nordic-set wings already hold.
+  `signature: rule` reads as the fixed, ruled line of a course drawn across a
+  chart, or the margin of a manuscript page - a firm architectural line,
+  restrained rather than decorative. Readability first throughout; no rope,
+  no rigging, no compass-rose kitsch.
+
+# ART. Composed against the finished bibliography and the tested-negative
+# eras (eras.yaml): six works spanning epic, lyric, drama and letters, and a
+# life record that is bureaucratic-colonial and administrative as often as
+# it is nautical - a soldier who lost an eye to garrison duty, a court
+# clerk-poet, a Provedor-mor dos Defuntos e Ausentes (the crown official
+# who catalogued and sealed the estates of colonists who died or went
+# missing at sea) as much as a castaway. The header's own warning against
+# "rope and rigging" is taken literally below: no motif here is a ship
+# fitting for its own sake, only paper, stone, ledgers and metal read as
+# material fact. Checked against every adjacent wing (theme_digest.py):
+# closest is joao-tordo (Atlantic-editorial), which this wing shares no
+# register with beyond "the sea is somewhere in the record" - Tordo is
+# near-black, wet, nocturnal, rain-bled ink over Lisbon in winter; this wing
+# is pale, dry, sun-bleached, tropical daylight. Almeida Garrett
+# (proscenium-gaslight, dark gaslit theatre interior) and this catalogue's
+# other five Lusophone wings (parlour mauve, teal desk, volcanic basalt,
+# umber village, sunbaked wheat-gold) are all interior or landscape
+# registers with no daylight-open-sea equivalent in the catalogue at all -
+# the actual point of difference this wing's palette committed to.
+art:
+  emblem:
+    object: >
+      A single quire of manuscript pages, salt-crusted and cockled -
+      rippled and slightly warped, the way paper dries after having been
+      wet more than once - held shut by one small tarnished brass clasp
+      gone green at its hinge.
+    why: >
+      States the wing's own founding image (theme.yaml header) as one
+      object: the Lusíadas manuscript that tradition holds Camões carried
+      above the water through the Mekong shipwreck, and that survived two
+      further exposures - the Mozambique stranding and the theft of the
+      separate "Parnaso" miscellany he never recovered. Paper that outlasts
+      the sea it was dropped in, rather than a ship, a sail or a compass,
+      is the object this wing is actually about. The one clasp is where the
+      verdigris accent belongs on this emblem - patina on the metal that
+      held the paper shut, never on the paper itself.
+  motifs:
+    - salt-crusted, sun-bleached manuscript quires - cockled pages, ink
+      diluted and feathered at a corner that was once wet, never a full
+      untouched page
+    - a colonial administrator's ledger and wax-sealed inventory papers -
+      the Provedor-mor dos Defuntos e Ausentes cataloguing a dead or
+      missing colonist's estate - ruled columns, a seal, a listing hand,
+      not a captain's log
+    - weathered ship's timber and tarnished brass or bronze fittings gone
+      green at a rivet, a cleat, a hinge - fixtures and hull, never full
+      rigging or sail
+    - a fragment of classical statuary or carved pediment stone, chipped
+      and salt-worn, half-settled in coral sand or tropical undergrowth -
+      the Lusíadas's Olympian machinery landed as broken masonry in a
+      material world, not staged as a mythological tableau
+    - a monsoon coastline - mangrove roots at low tide, white coral grit,
+      a heavy cloud bank, glare rather than blue-postcard water - Goa,
+      Macau, the Mekong mouth, Mozambique Island, never a generic
+      "age of sail" Atlantic
+    - a shuttered or latticed courtyard interior holding the heat out
+      rather than in - a colonial court's antechamber, a Lisbon
+      demi-monde room, a hospital ward - for the plays and the letters,
+      which happen indoors and off the water entirely
+  atmosphere: >
+    Glare and dry heat rather than gothic dark or a shuttered European
+    study: open horizon, hard equatorial or Atlantic light, salt-bleached
+    surfaces, air that has dried something out rather than let it rot.
+    Exposure, not refuge - most of this wing's record happens outdoors, in
+    transit, or administered from a colonial desk with the shutters open,
+    never in a lamplit room at night. Weather and bureaucracy carry the
+    register in equal measure: a storm off the Cape is one register, a
+    ledger closed and sealed in a tropical customs house is another, and
+    both belong here before a single sail does. Never picturesque or
+    postcard-tropical (palm-and-parrot paradise), never swashbuckling
+    adventure, and never the wet, nocturnal, rain-bled Atlantic this
+    catalogue already holds on joao-tordo.
+  lineCharacter: >
+    A firm dip-pen line, straightedge-disciplined for anything built,
+    charted or administrative - a ledger's ruled column, a ship's timber,
+    a courtyard lattice - the same architectural confidence the wing's
+    `signature: rule` already commits to. But the ink itself is sun-worn:
+    a stroke that starts full and dark near its origin runs dry and breaks
+    into a broken, granular stipple toward its far end rather than holding
+    one weight throughout, as if the pen itself were running short in
+    strong equatorial light. Paper visibly wins back through the ink. This
+    is a dry, disciplined fading, never the wet bleeding wash of
+    joao-tordo's line or the single unmodulated fill of jose-saramago's.
+  backgroundTexture: >
+    Warm, sun-bleached laid paper with visible fibre and a faint pale
+    mineral bloom - salt crystallising at a sheet's edge and in patches
+    across the field, as if the paper had dried after being wet with
+    seawater more than once. Dry and mineral throughout: no wash, no wet
+    pooling or bleeding at the grain (that register is joao-tordo's), just
+    paper that has been out in weather.
+  accentUse: >
+    Verdigris (palette.accent, #367d3f) touches exactly one small oxidised
+    bronze or brass element per image, and never floods a surface: a
+    single ship's fitting, hinge, clasp, rivet, wax-seal press or
+    instrument housing gone green with salt-air patina. It marks one place
+    metal has met salt air over time - never a wash, never a sky, sea or
+    stretch of foliage tinted verdigris to stand in for the accent.
+  avoid:
+    - ship-in-a-bottle framing, and any full-rigging or full-sail tableau
+      staged as decoration rather than material fact
+    - generic "age of sail" costume drama - frock coats, tricorn hats,
+      cutlasses, a captain-at-the-wheel silhouette
+    - azulejo tiling, fado or saudade cliches, guitarra-and-shawl shorthand
+    - compass-rose kitsch, a sextant or astrolabe posed as a decorative
+      centrepiece rather than a working instrument in use
+    - postcard-tropical paradise imagery - palm fronds, parrots, turquoise
+      lagoon water lit like a travel brochure
+    - a bandage, patch or wound standing in for the author's own lost eye,
+      or any other prop implying his likeness (docs/VISUAL.md §3) - a
+      life event is its place, its object or its consequence, never a
+      stand-in body part
+    - the wet, rain-bled, nocturnal Atlantic register already held by
+      joao-tordo in this catalogue
