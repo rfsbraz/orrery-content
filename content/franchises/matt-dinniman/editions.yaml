@@ -53,16 +53,22 @@
 # publishers and are tagged accordingly (978-989 and 978-655 prefixes
 # respectively, both checked against the registrant-prefix table): Kathartika
 # (Portugal, book 1 only, confirmed on the publisher's own catalogue page)
-# and HarperCollins Brasil (Brazil, book 2 only so far). French is the
-# furthest along: Lorestone has released books 1-5 (2024-2026), all
-# corroborated on OpenLibrary with `translated_from: eng` and French cover
-# art. German (FISCHER Tor, books 1-2, book 1's own publisher page names
-# translator Ruggero Leo and lists books 3-4 as "Zukünftig"/forthcoming) and
-# Spanish (Ediciones B, book 5 only so far - an unusual place for a Spanish
-# program to start; no earlier Spanish volume was found anywhere searched,
-# so this is recorded as a real, if odd, market fact) round out what a
-# targeted search turned up. No Italian, Polish, Dutch or Japanese edition of
-# anything in this wing was found.
+# and HarperCollins Brasil (Brazil, book 2 only so far). Two programs run the
+# length of the series so far. French, via Lorestone, has released books 1-5
+# (2024-2026), all corroborated on OpenLibrary with `translated_from: eng`
+# and French cover art. Spanish, via Penguin Random House Grupo Editorial's
+# Nova imprint, covers the same five books: 1-3 are released (Nov 2025, Feb
+# 2026, May 2026) and 4-5 are open preorders (Sep 22, 2026 and Nov 17, 2026),
+# all confirmed on Nova's own per-book catalogue pages and cross-checked
+# against the publisher's "Books by Matt Dinniman published by PRH Grupo
+# Editorial" author-page carousel, which lists exactly these five and no
+# others. mattdinniman.com's own translation menu lags the Nova program: it
+# links books 1-3 but not yet 4 or 5, consistent with the site only adding a
+# translation link once a book ships rather than at preorder. German
+# (FISCHER Tor, books 1-2, book 1's own publisher page names translator
+# Ruggero Leo and lists books 3-4 as "Zukünftig"/forthcoming) rounds out what
+# a targeted search turned up. No Italian, Polish, Dutch or Japanese edition
+# of anything in this wing was found.
 #
 # EXCLUDED, DELIBERATELY:
 #   - Two "Diversified Publishing" OpenLibrary records (Dungeon Anarchist's
@@ -193,6 +199,19 @@
     - https://www.fischerverlage.de/buch/matt-dinniman-dungeon-crawler-carl-9783596712489
     - https://openlibrary.org/isbn/9783596712489.json
 
+- id: matt-dinniman/dungeon-crawler-carl/nova-2025-es
+  workId: matt-dinniman/dungeon-crawler-carl
+  isbn13: "9788410466135"
+  language: es
+  title: "Carl el Mazmorrero"
+  format: paperback
+  publisher: Nova
+  year: 2025
+  note: The first release in Nova's ongoing Spanish program for this series (books 1-3 out, books 4-5 preordering as of this catalogue).
+  sources:
+    - https://mattdinniman.com/books/dungeon-crawler-carl/
+    - https://www.penguinrandomhouse.com/books/816309/carl-el-mazmorrero--dungeon-crawler-carl-by-matt-dinniman/
+
 - id: matt-dinniman/carls-doomsday-scenario/ace-2024-en
   workId: matt-dinniman/carls-doomsday-scenario
   isbn13: "9780593820261"
@@ -254,6 +273,18 @@
   sources:
     - https://openlibrary.org/isbn/9783596712496.json
 
+- id: matt-dinniman/carls-doomsday-scenario/nova-2026-es
+  workId: matt-dinniman/carls-doomsday-scenario
+  isbn13: "9788410466081"
+  language: es
+  title: "El juicio final de Carl"
+  format: paperback
+  publisher: Nova
+  year: 2026
+  sources:
+    - https://mattdinniman.com/books/carls-doomsday-scenario/
+    - https://www.penguinrandomhouse.com/books/825873/el-juicio-final-de-carl--carls-doomsday-scenario-by-matt-dinniman/
+
 - id: matt-dinniman/the-dungeon-anarchists-cookbook/ace-2024-en
   workId: matt-dinniman/the-dungeon-anarchists-cookbook
   isbn13: "9780593820285"
@@ -294,6 +325,18 @@
   sources:
     - https://openlibrary.org/isbn/9782487700178.json
 
+- id: matt-dinniman/the-dungeon-anarchists-cookbook/nova-2026-es
+  workId: matt-dinniman/the-dungeon-anarchists-cookbook
+  isbn13: "9788410466166"
+  language: es
+  title: "El libro de cocina del anarquista de la mazmorra (Carl el Mazmorrero 3)"
+  format: paperback
+  publisher: Nova
+  year: 2026
+  sources:
+    - https://mattdinniman.com/books/the-dungeon-anarchists-cookbook/
+    - https://www.penguinrandomhouse.com/books/833451/el-libro-de-cocina-del-anarquista-de-la-mazmorra-carl-el-mazmorrero-3--the-dungeon-anarchists-cookbook-by-matt-dinniman/
+
 - id: matt-dinniman/the-gate-of-the-feral-gods/ace-2025-en
   workId: matt-dinniman/the-gate-of-the-feral-gods
   isbn13: "9780593955970"
@@ -323,6 +366,23 @@
   year: 2025
   sources:
     - https://openlibrary.org/isbn/9782487700376.json
+
+- id: matt-dinniman/the-gate-of-the-feral-gods/nova-2026-es
+  workId: matt-dinniman/the-gate-of-the-feral-gods
+  isbn13: "9788410466364"
+  language: es
+  title: "El portal de los dioses ferales"
+  format: paperback
+  publisher: Nova
+  year: 2026
+  note: >
+    An open preorder for Sep 22, 2026 on the publisher's own catalogue page,
+    not yet released; not yet linked from mattdinniman.com's own
+    translations menu for this volume, which lists only the French edition
+    so far.
+  sources:
+    - https://www.penguinrandomhouse.com/authors/2309250/matt-dinniman/
+    - https://www.penguinrandomhouse.com/books/843324/el-portal-de-los-dioses-ferales--the-gate-of-the-feral-gods-by-matt-dinniman/
 
 - id: matt-dinniman/the-butchers-masquerade/ace-2025-en
   workId: matt-dinniman/the-butchers-masquerade
@@ -364,20 +424,23 @@
   sources:
     - https://openlibrary.org/isbn/9782487700383.json
 
-- id: matt-dinniman/the-butchers-masquerade/ediciones-b-2026-es
+- id: matt-dinniman/the-butchers-masquerade/nova-2026-es
   workId: matt-dinniman/the-butchers-masquerade
   isbn13: "9788410466388"
   language: es
-  title: "Mascarada Del Carnicero"
-  publisher: Ediciones B
+  title: "La mascarada del carnicero"
+  format: paperback
+  publisher: Nova
   year: 2026
   note: >
-    The only Spanish-language edition found anywhere in this series - no
-    earlier Spanish volume (books 1-4) turned up on any source checked, so a
-    Spanish program starting at book 5 is recorded as a real market fact
-    rather than assumed to be a gap in the search.
+    An open preorder for Nov 17, 2026 on the publisher's own catalogue page,
+    not yet released - the fifth and, so far, final volume in Nova's Spanish
+    program for this series; not yet linked from mattdinniman.com's own
+    translations menu for this volume, which lists only the French edition
+    so far.
   sources:
-    - https://openlibrary.org/isbn/9788410466388.json
+    - https://www.penguinrandomhouse.com/authors/2309250/matt-dinniman/
+    - https://www.penguinrandomhouse.com/books/853245/la-mascarada-del-carnicero--the-butchers-masquerade-by-matt-dinniman/
 
 - id: matt-dinniman/the-eye-of-the-bedlam-bride/ace-2025-en
   workId: matt-dinniman/the-eye-of-the-bedlam-bride
