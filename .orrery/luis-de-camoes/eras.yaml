@@ -1,112 +1,48 @@
 stage: eras
 summary: >
-  eras: [] - the correct, complete outcome. Camões scholarship does not
-  periodise his career, and the wing's own bibliography could not carry such a
-  periodisation even if it did: only Os Lusíadas (1572) was printed in his
-  lifetime, so every phase a biography of Camões marks out closes before the
-  first work's published year. The empty file was inherited from
-  franchise-research; this stage tested the assumption against Portuguese and
-  English scholarship rather than accepting it, and rewrote the header comment
-  with the sourced reasoning and the two near misses.
+  eras: [] - the correct, complete outcome, now tested rather than inherited.
+  Camões scholarship does not periodise his career, and the bibliography could
+  not carry such a periodisation even if it did: only Os Lusíadas (1572) was
+  printed in his lifetime, so every phase a biography marks out closes before
+  the first work's published year. The array was already empty; the header
+  comment was rewritten with the sourced reasoning and the near misses.
 produced:
   eras: []
   changedFiles:
-    - content/franchises/luis-de-camoes/eras.yaml (header comment rewritten; array still empty)
-verdicts:
-  - era: "(none proposed)"
-    verdict: INVENTED-IF-WRITTEN
-    rung: "no rung holds - author framing, critical consensus, fandom and the publishing record were each tested"
-    boundary: "n/a - no boundary could be drawn that both has provenance and contains a work"
-checked:
+    - content/franchises/luis-de-camoes/eras.yaml (header comment only; array unchanged)
+verdict:
+  proposed: "(none)"
+  rung: "no rung holds - author framing, critical consensus, fandom and the publishing record each tested"
+  boundary: "n/a - no boundary both has provenance and contains a work"
+  reasons:
+    - "Published years are 1572, 1587, 1587, 1595, 1645, 2011; he died 1580. Any life-derived era (Ceuta, the seventeen years in Portuguese Asia, the 1570 return) spans years holding zero works."
+    - "The lyric is undatable and its canon unfixed by scholarly disagreement: Berardinelli (1980) gathers the ~400 poems ever attributed and declines to say which are his; Azevedo Filho (1985-2001) admits a 'corpus minimo' of 133 sonnets. Neither yields a composition chronology."
+    - "The one received division of the lyric is formal, not temporal: medida velha vs medida nova, both worked across his whole life, and internal to a single work entry (Rimas)."
+    - "Rung 4 rejected on fit, not truth: 'one work in his lifetime, five posthumous' is real, but nobody calls the posthumous printings a period, and the span would run 1587-2011."
+  nearMisses:
+    - "Landeg White's Collected Lyric Poems (Princeton) orders the poems by Camões's travels - the translator's arrangement of one volume, presented as a reading, not a received periodisation."
+    - "pt.wikipedia's 'fase inicial tipicamente clássica' turning manneirist belongs to the Renaissance-vs-Maneirismo argument; no date, no named period, and a live critical position we cannot assert."
   languages: [pt-PT, pt-BR, en]
-  findings:
-    - >
-      Bibliographic arithmetic is decisive on its own. Published years in this
-      wing are 1572, 1587, 1587, 1595, 1645, 2011; Camões died 1580. Any era
-      derived from his life (Lisbon/court, Ceuta 1549-51, the seventeen years
-      in Portuguese Asia 1553-1570, the 1570 return) spans years in which the
-      wing holds zero works. Era membership is computed from `published`, so
-      such an era would render a full-bleed plate over an empty shelf.
-    - >
-      The lyric corpus is undatable and its canon unfixed, by scholarly
-      disagreement rather than neglect. Berardinelli's 1980 edition gathers
-      the ~400 poems ever attributed to Camões and explicitly declines to say
-      which are his ("ela nao tenta definir o que Camoes realmente escreveu
-      por saber que isso e impossivel", Revista Pesquisa FAPESP quoting
-      Sheila Hue); Azevedo Filho's Lirica de Camoes (7 vols, 1985-2001)
-      admits only a "corpus minimo" of 133 sonnets on double 16th-century
-      manuscript testimony. Neither produces a chronology of composition.
-    - >
-      The one received division of the lyric is formal, not chronological:
-      medida velha (redondilhas) against medida nova (sonnet, cancao, ode,
-      elegia, ecloga). Camoes worked in both across his whole writing life, so
-      it cuts across every candidate boundary instead of falling on one. It is
-      also internal to a single work entry (Rimas) and could not be expressed
-      as era spans regardless.
-    - >
-      Two near misses, both recorded in the content file so a later pass does
-      not mistake them for periodisations. (1) Landeg White's Collected Lyric
-      Poems (Princeton) arranges the poems in the order of Camoes's travels;
-      Princeton's own jacket copy and its blurbing scholar (Jose Luiz Passos)
-      present this as the translator's arrangement and "a provocative vision",
-      i.e. a reading of one volume, not a received career periodisation.
-      (2) pt.wikipedia's Obra/Contexto section says Camoes moved on "depois de
-      uma fase inicial tipicamente classica" toward a manneirist style; that
-      belongs to the wider Renaissance-vs-Maneirismo argument in Portuguese
-      literary history, carries no date, names no period of his career, and is
-      a live critical position Orrery has no standing to assert.
-    - >
-      Rung 4 (publishing-historical fact) was tested last and rejected on fit,
-      not on truth. "One work printed in his lifetime, five posthumously" is a
-      real, sourced bibliographic fact, but nobody calls the posthumous
-      printings a period of Camoes's career, and the resulting span would run
-      1587-2011 and swallow a modern letter compilation. A true publishing
-      fact that makes a useless era.
-  sourcesConsulted:
-    - https://revistapesquisa.fapesp.br/o-folego-da-obra-de-luis-vaz-de-camoes/
-    - https://press.princeton.edu/books/paperback/9780691136622/the-collected-lyric-poems-of-luis-de-camoes
-    - https://www.ronslate.com/on-the-collected-lyric-poems-of-luis-de-camoes-tr-by-landeg-white-princeton-university-press/
-    - https://pt.wikipedia.org/wiki/Lu%C3%ADs_de_Cam%C3%B5es
-    - https://www.infopedia.pt/artigos/$luis-de-camoes
-    - https://ensina.rtp.pt/explicador/poesia-lirica-de-luis-de-camoes/
-    - https://estudoautonomo.dge.mec.pt/recurso/lirica-camoniana-contextualizacao-historico-literaria
-    - https://periodicos.fclar.unesp.br/letras/article/download/5102/4198/12449
-    - https://www.iscap.pt/cei/e-rei/e-rei/n9vol2/artigos/Miguel%20Correia_O%20Complexo%20Problema%20do%20C%C3%A2none%20L%C3%ADrico%20de%20Cam%C3%B5es.pdf
   sourcesThatRefused:
-    - "britannica.com/biography/Luis-de-Camoes and .../Literary-works - 403 to both fetch.py and WebFetch"
-    - "luisdecamoes.pt (Diretorio de Camonistica) - TLS hostname mismatch, certificate invalid"
-    - "aedah.pt PDF 'Vida e obra de Luis de Camoes' - 403"
-    - "aeaveiro.pt copy of Azevedo Filho, 'Introducao a Lirica de Camoes' (Biblioteca Breve) - 404; consulted at second hand via the FAPESP piece instead"
-    - "pt.wikipedia has no 'Lirica de Luis de Camoes' or 'Rimas (Camoes)' article (both 404); the lyric is covered inside the main biography"
-  notAttempted:
-    - >
-      Saraiva & Lopes, Historia da Literatura Portuguesa, and Hernani Cidade's
-      Licoes de Cultura e Literaturas Portuguesas are print-only and were not
-      reachable in full text. Both were probed through secondary academic
-      citation, which cites them on canon and letter-attribution disputes
-      (Cidade admits five letters, Costa Pimpao two) and never on a
-      periodisation of the career.
+    - "britannica.com Camões biography and Literary-works - 403 to fetch.py and WebFetch"
+    - "luisdecamoes.pt (Diretório de Camonística) - TLS hostname mismatch"
+    - "aedah.pt 'Vida e obra de Luís de Camões' PDF - 403"
+    - "aeaveiro.pt copy of Azevedo Filho's Introdução à Lírica de Camões - 404 (used at second hand)"
+    - "pt.wikipedia has no 'Lírica de Luís de Camões' or 'Rimas (Camões)' article; the lyric sits inside the main biography"
+  notReachable:
+    - "Saraiva & Lopes and Hernâni Cidade are print-only; probed via academic citation, which cites them on canon and letter attribution, never on a periodisation."
 forStages:
-  art-rotation: >
-    eras.yaml holds an empty array, so there are no era plates to rotate here.
-    Rotation for this wing is the four author lifeEvents only.
-  visual-language: >
-    No eras to describe. The art language has to carry the whole wing's shape
-    from the six works and the lifeEvents.
+  art-rotation: "No era plates exist to rotate. Rotation for this wing is the four author lifeEvents only."
+  visual-language: "No eras to describe; the art language carries the wing from the six works and the lifeEvents alone."
   wing-audit: >
     Do not read "no eras" as a coverage gap. The eras skill's rule 4 overrides
-    wing-audit's "era coverage gaps" finding: provenance outranks tidiness, and
-    an era invented to fill this hole would be worse than the hole. The
-    reasoning and its sources are in the content file's header comment; the
-    evidence trail is above.
-  translation: >
-    eras.yaml has no translatable strings (empty array, comment only). No
-    pt-PT overlay is needed or affected.
+    wing-audit's "era coverage gaps" finding - provenance outranks tidiness,
+    and an era invented to fill this hole would be worse than the hole. The
+    reasoning and sources are in the content file's header comment.
+  translation: "eras.yaml has no translatable strings; no pt-PT overlay is needed or affected."
 openQuestions:
   - >
-    Britannica's Camoes article refused every fetch. It is the single
-    highest-value tertiary reference not read here, and it is the kind of
-    source that would periodise if anyone did. Nothing found in the Portuguese
-    scholarship suggests it would, but a future pass with working access
-    should check its "Literary works" section before treating the negative as
-    final.
+    Britannica refused every fetch, and it is the one high-value tertiary
+    reference unread here. Nothing in the Portuguese scholarship suggests it
+    periodises, but a pass with working access should check its Literary works
+    section before treating the negative as final.
