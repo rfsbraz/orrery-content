@@ -1,0 +1,87 @@
+stage: pipeline-audit
+summary: >
+  Read-only audit of the run, not the wing. Total across all 15 agent calls:
+  2,630,026 tokens, 916 tool calls, ~11.5M ms of agent wall-clock (partly
+  parallelized: press-archaeology/world-events/eras ran concurrently, as did
+  visual-metadata/editions). Top three stages by tokens (franchise-research
+  291,542; wing-audit 269,669; press-archaeology 249,740) account for 810,951
+  tokens, 30.8% of the run. No footprint violations found. No duplicated
+  settled-fact re-research found. No silent stage skips found - every
+  zero-output stage (event-resonance zero candidates, world-events
+  defended zero-diff, reading-orders zero orders) left a commit naming the
+  zero outcome, which is exactly the recorded-skip shape the skill asks for.
+costTable:
+  rankedByTokens:
+    - "franchise-research: 291,542 tok, 67 calls, 4,351 tok/call, 11.1%"
+    - "wing-audit: 269,669 tok, 103 calls, 2,618 tok/call, 10.3%"
+    - "press-archaeology: 249,740 tok, 118 calls, 2,116 tok/call, 9.5%"
+    - "editions: 239,064 tok, 127 calls, 1,882 tok/call, 9.1%"
+    - "visual-metadata: 225,931 tok, 80 calls, 2,824 tok/call, 8.6%"
+    - "completeness-auditor: 188,719 tok, 56 calls, 3,370 tok/call, 7.2%"
+    - "translation-pt-PT: 184,500 tok, 49 calls, 3,765 tok/call, 7.0%"
+    - "reading-orders: 163,690 tok, 52 calls, 3,148 tok/call, 6.2%"
+    - "spoiler-audit: 146,985 tok, 41 calls, 3,585 tok/call, 5.6%"
+    - "eras: 146,144 tok, 49 calls, 2,983 tok/call, 5.6%"
+    - "audit-fixes: 141,897 tok, 73 calls, 1,944 tok/call, 5.4%"
+    - "art-rotation: 141,137 tok, 46 calls, 3,068 tok/call, 5.4%"
+    - "visual-language: 111,480 tok, 32 calls, 3,484 tok/call, 4.2%"
+    - "world-events: 82,827 tok, 13 calls, 6,371 tok/call, 3.1%"
+    - "event-resonance: 46,701 tok, 10 calls, 4,670 tok/call, 1.8%"
+  lowestTokensPerCall:
+    - "editions: 1,882 tok/call on 127 calls - highest call count of any stage this run, the purest death-by-fetches shape."
+    - "audit-fixes: 1,944 tok/call on 73 calls - targeted follow-up, expected to be call-heavy."
+    - "press-archaeology: 2,116 tok/call on 118 calls - second-highest call count; same shape as editions, not called out by the orchestrator brief but worth the same scrutiny next run."
+findings:
+  footprintViolations:
+    verdict: none_found
+    evidence:
+      - "art-rotation commit a978743 adds 56 lines matching organisation:/illustration_type:/images_required:/modifier: - its own declared field per author.md's footprint table, not a violation."
+      - "visual-metadata commit 7044e9d adds 2 portrait: lines on authors/<id>.yaml - its own declared field (portrait sourcing), disjoint from art-rotation's lifeEvents organisation writes on the same file."
+      - "translation commit 4c1f085 touches only content/i18n/pt-PT/franchises/almeida-garrett/{eras,events,franchise,works}.yaml plus its own handoff yaml - stayed inside its declared content/i18n/<locale>/** footprint."
+  duplicatedWork:
+    verdict: none_found
+    evidence:
+      - "Every explicit validate.py invocation named across the 15 handoff yamls is scoped (--slug almeida-garrett); found no evidence of a catalogue-wide sweep this run, unlike the John Shirley baseline's eleven unscoped runs. The --slug discipline from that earlier finding appears to have stuck."
+      - "Repeated cross-stage mentions of \"validate.py's one error (no theme.art) is the expected pre-visual-language state\" (franchise-research, eras, completeness-auditor, press-archaeology, reading-orders) are each stage certifying it did not regress the known-error count, a few tokens each - a legitimate handoff check, not re-derivation of a settled fact."
+      - "press-archaeology settled the ennoblement date (25 June 1851, Maria II) and burial site (Panteão Nacional since 1966) with named sources; no later stage re-derives either."
+  editionsAnd403s:
+    verdict: pattern_confirmed_but_not_editions_specific_in_the_record
+    evidence:
+      - "editions.yaml (the stage's own handoff) and its commit message cb21f57 do not name Bertrand or Fnac, or mention 403s, directly - so the specific claim in the orchestrator brief could not be verified from the artifacts this worktree carries."
+      - "editions.yaml does describe a three-tier verification order (publisher site first, BNP's bibliografia.bnportugal.gov.pt second, a retailer's structured product page third, \"never taking an aggregator or an AI search summary on its word\") consistent with a stage that fell back to fetching retailer pages one at a time after higher-priority sources came up short - and its 127 calls at 1,882 tok/call is exactly the death-by-fetches shape the skill's Cheap-tools section warns about."
+      - "This wing did hit named 403 bot-blocks elsewhere, on record: franchise-research (Infopédia, unreachable, unused), audit-fixes (PORBASE's search UI, session/JS-gated), wing-audit (HathiTrust catalog, \"bot-blocks rather than dead pages\"). Portuguese-market institutional/retail sites returning 403 to automated fetches is a repeating shape across at least 3 stages in this single wing, not a one-off."
+    recommendation:
+      file: ".claude/skills/editions/SKILL.md (or the shared Cheap-tools block / scripts/metadata/providers.py source ordering)"
+      change: >
+        Record the known-blocked Portuguese-market sources (Infopédia, PORBASE's
+        search UI, HathiTrust catalog, and per this run's brief, Bertrand/Fnac)
+        as expected-403 rather than retry targets, and state the preferred
+        fallback order explicitly: publisher's own site -> BNP
+        bibliografia.bnportugal.gov.pt -> a retailer page that does not
+        bot-block (e.g. Wook) -> Gutenberg/public-domain readUrl. This turns a
+        blind retry loop into a known skip, which is where editions' 127 calls
+        most likely came from.
+      expectedSaving: >
+        Not estimated - could not confirm from this run's own artifacts how
+        many of the 127 calls were retries against blocked sources versus
+        genuine per-ISBN verification fetches (which the stage's job requires
+        and should not be cut). Flagging for the next wing's pipeline-audit to
+        confirm with a clearer per-call breakdown, or for editions itself to
+        log skipped/blocked sources by name in its handoff next time.
+  tierFit:
+    verdict: no_changes_proposed
+    note: >
+      Every stage's model/effort in author.md's table matches its actual
+      output this run (opus on eras' first-build and on spoiler-audit and
+      wing-audit for their permanent/asymmetric-error stages; haiku on
+      event-resonance's narrow zero-candidate call; sonnet/low on
+      visual-metadata's mostly-mechanical fetching). Nothing here argues for
+      a tier move in either direction.
+  whatIsAlreadyFine:
+    - "franchise-research: highest single-stage token count, but it is the only stage that runs alone and scaffolds everything - expected shape, not examined further."
+    - "wing-audit: second-highest tokens (269,669) but that is its declared job at opus/xhigh (cross-cutting read-only audit of the whole wing); 103 calls at 2,618 tok/call is mid-pack, not a fetch-loop shape."
+    - "world-events, event-resonance, reading-orders: all recorded a zero/defended-zero outcome with a named commit rather than a silent skip - exactly what the skill asks for."
+    - "art-rotation / visual-metadata footprint boundary on authors/<id>.yaml: held correctly this run despite being flagged as an easy-to-miss collision in author.md."
+notReached:
+  - "Could not confirm the editions-stage 403/Bertrand/Fnac claim against a raw tool-call transcript (not available to a subagent per the skill's own limits) - only against the stage's written handoff, which does not name the blocked sources."
+  - "Did not cross-reference this run against more than the John Shirley baseline (the skill asks for 3+ runs before treating a pattern as always-expensive); only two wings' numbers exist to compare as of this run."
