@@ -1,10 +1,25 @@
-# GLOBAL author entity (docs/SCHEMA.md). Four lifeEvents mark her birth, her
-# first divorce, her brother Apeles's death and her own death, each dated
-# and sourced inline on the event. The facts below - the three marriages,
-# the brother's death, her illness and suicide - are also verified and
-# sourced in this bio's own prose. The once-repeated Pessoa "twin soul" line
-# is corrected here rather than dropped, since the correction is itself the
+# GLOBAL author entity (docs/SCHEMA.md). Eight lifeEvents mark her birth,
+# her 1917 law-school enrollment, her first divorce, her brother Apeles's
+# death, her own death, her father's 1948 paternity edict, the 1985
+# discovery of a poem misattributed to Pessoa in his own papers, and Dal
+# Farra's 1994 critical edition of Trocando Olhares - each dated and
+# sourced inline on the event. The facts below - the three marriages, the
+# brother's death, her illness and suicide - are also verified and sourced
+# in this bio's own prose. The once-repeated Pessoa "twin soul" line is
+# corrected here rather than dropped, since the correction is itself the
 # more interesting fact: the poem is not his.
+#
+# aka: "Flor Bela Lobo" is her baptismal name (see the born event).
+# "Florbela d'Alma" is a fragment of "Florbela d'Alma da Conceição
+# Espanca," the fuller name Portuguese Wikipedia says she chose for
+# herself ("optou por se autonomear") over the baptismal one; Treccani's
+# own authority record for her independently uses that same full form as
+# its entry id, corroborating it as a real, standing name rather than a
+# one-off. She is on record signing an earlier version, "Flor d'Alma da
+# Conceição," during her 1899-1908 primary-school years, but no source
+# checked dates the fuller self-naming to a specific moment or gives a
+# reason beyond her own choice, so it stays here rather than in
+# pseudonyms, which needs a dated adoption moment or a stated motive.
 
 id: florbela-espanca
 name: Florbela Espanca
@@ -55,11 +70,14 @@ bio: >
   recorded the cause as pulmonary edema. A typewritten, unsigned poem
   addressed "to the memory of Florbela Espanca" and calling her "alma
   sonhadora, irmã gémea da minha" (dreaming soul, my twin sister) turned up
-  among Fernando Pessoa's own papers in 1985 and was published as his by
-  Maria Lúcia Dal Farra, the scholar who found it; Dal Farra has since
-  credited Pessoa textual editor Jerónimo Pizarro's identification of the
-  poem as one of Eliezer Kamenezki's, from the 1932 collection Alma
-  Errante, for which Pessoa wrote only the preface.
+  among Fernando Pessoa's own papers in 1985, found by scholar Teresa
+  Sobral Cunha, and was published in 1994 as the epigraph to Maria Lúcia
+  Dal Farra's critical edition of
+  [[work:florbela-espanca/trocando-olhares|Trocando Olhares]], taken at
+  the time for Pessoa's own; Dal Farra has since credited Pessoa textual
+  editor Jerónimo Pizarro's identification of the poem as one of Eliezer
+  Kamenezki's, from the 1932 collection Alma Errante, for which Pessoa
+  wrote only the preface.
 images:
   # Wikidata's P18 claim (File:Espanca Florbela.jpg) is a full-length
   # standing shot, not head-and-shoulders; pt.wikipedia's own infobox uses
@@ -86,6 +104,32 @@ lifeEvents:
       alongside her birth mother. Grew up in Vila Viçosa - the charneca
       (heath) that gives Charneca em Flor its title - until the 1907
       move to Évora for secondary school.
+    spoilerAfter: null
+    # Porto Editora's Infopédia (infopedia.pt) gives her birth year as
+    # 1895, twice, with no 1894 anywhere on the page - fetched and
+    # confirmed live. Every other source checked uses 8 December 1894,
+    # as does this wing's own "died on her own thirty-sixth birthday"
+    # framing below, which only holds for an 1894 birth. The discrepancy
+    # resolves against the baptism date already on this event: 20 June
+    # 1895 is seven months after 8 Dec 1894, an ordinary baptism lag, and
+    # Infopédia reads as dating her by that registration rather than by
+    # the birth itself.
+    sources:
+      - https://pt.wikipedia.org/wiki/Florbela_Espanca
+      - http://livro.dglab.gov.pt/sites/DGLB/Portugues/autores/Paginas/PesquisaAutores1.aspx?autorid=10386
+
+  - id: florbela-espanca-lisbon-law-1917
+    date: 1917
+    title: Enrolls in the University of Lisbon's law course
+    impact: med
+    description: >
+      Returns to Lisbon in 1917, completes her final year of the Curso
+      Complementar de Letras and enrolls at the Faculdade de Direito da
+      Universidade de Lisboa, one of a small number of women admitted that
+      year - a break from what a woman of her time and place was expected
+      to study. Classmates include the writers Américo Durão and Mário
+      Beirão. Her marriage to Alberto Moutinho, left behind in Vila Viçosa,
+      does not survive the move.
     spoilerAfter: null
     sources:
       - https://pt.wikipedia.org/wiki/Florbela_Espanca
@@ -147,6 +191,54 @@ lifeEvents:
       - https://en.wikipedia.org/wiki/Florbela_Espanca
       - https://pt.wikipedia.org/wiki/Florbela_Espanca
       - https://www.cm-matosinhos.pt/servicos-municipais/cultura/figuras-de-matosinhos/poi/florbela-espanca-1894-1930
+
+  - id: florbela-espanca-paternity-edict-1948
+    date: 1948-07-19
+    title: Her father formally acknowledges her as his daughter
+    impact: low
+    description: >
+      João Maria Espanca registers her as his daughter by municipal edict
+      of the Câmara Municipal de Lisboa, 19 July 1948 - eighteen years
+      after her death, and decades after he raised her in his own home
+      without ever giving her his name; she and Apeles had always been
+      registered as her mother Antónia's children by an unlisted father.
+    spoilerAfter: null
+    sources:
+      - https://pt.wikipedia.org/wiki/Florbela_Espanca
+
+  - id: florbela-espanca-pessoa-poem-found-1985
+    date: 1985
+    title: A poem "to the memory of Florbela Espanca" surfaces in Pessoa's papers
+    impact: med
+    description: >
+      Scholar Teresa Sobral Cunha finds a typewritten, unsigned poem in
+      Fernando Pessoa's own papers, dated after 1930 and dedicated "to the
+      memory of Florbela Espanca," calling her "alma sonhadora, irmã
+      gémea da minha" (dreaming soul, my twin sister). Read for decades as
+      Pessoa's own tribute to a poet he may never have met, it is later
+      identified as Eliezer Kamenezki's, from his 1932 collection Alma
+      Errante, which Pessoa had only prefaced - a copy of which, inscribed
+      to Pessoa, sits in his own library.
+    spoilerAfter: null
+    sources:
+      - http://arcagulharevistadecultura.blogspot.com/2017/05/maria-lucia-dal-farra-duas-vezes.html
+      - https://bibliotecaparticular.casafernandopessoa.pt/8-628
+
+  - id: florbela-espanca-trocando-olhares-1994
+    date: 1994
+    title: Dal Farra's critical edition of Trocando Olhares is published
+    impact: med
+    description: >
+      Maria Lúcia Dal Farra's critical edition of the unfinished Trocando
+      Olhares - the only pt-PT edition this fragmentary late work has ever
+      had - is published by Imprensa Nacional-Casa da Moeda, with the
+      "twin sister" poem found in Pessoa's papers printed as its epigraph
+      and, at the time, taken for his. The edition arrives in Florbela's
+      centenary year.
+    spoilerAfter: null
+    sources:
+      - https://pt.wikipedia.org/wiki/Trocando_Olhares
+      - http://arcagulharevistadecultura.blogspot.com/2017/05/maria-lucia-dal-farra-duas-vezes.html
 sources:
   - "https://en.wikipedia.org/wiki/Florbela_Espanca"
   - "https://pt.wikipedia.org/wiki/Florbela_Espanca"
@@ -158,3 +250,4 @@ sources:
   - "http://arcagulharevistadecultura.blogspot.com/2017/05/maria-lucia-dal-farra-duas-vezes.html"
   - "https://bibliotecaparticular.casafernandopessoa.pt/8-628"
   - "https://aviagemdosargonautas.net/2013/08/24/florbela-espanca-2-historias-de-suicidios-famosos-em-portugal-por-jose-brandao/"
+  - "https://pt.wikipedia.org/wiki/Trocando_Olhares"
