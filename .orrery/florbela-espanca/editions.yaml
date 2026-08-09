@@ -1,0 +1,80 @@
+stage: editions
+summary: >
+  6 of 9 works carry a verified pt-PT edition (10 entries total, 8 ISBNs + 2
+  Gutenberg readUrls). Three works ship with none: Juvenília (a real 2007
+  Colares Editora printing exists but its ISBN is unverifiable from here -
+  Wook/Bertrand block automated fetches and no second source surfaced it),
+  Cartas (only current printing bundles it with Diário under one ISBN - an
+  omnibus, not a single-work edition), Diário do Último Ano (same omnibus
+  problem, plus a 2023 bilingual pt/es edition set aside on a Spanish ISBN
+  prefix rather than recorded - see openQuestions). validate.py is green
+  (0 errors, 0 new warnings) and --verify-isbns reports 10/10 clean.
+produced:
+  editionsAdded: 10
+  worksCovered: [livro-de-magoas, livro-de-soror-saudade, charneca-em-flor,
+    as-mascaras-do-destino, o-domino-preto, trocando-olhares]
+  worksWithNoEdition: [juvenilia, cartas, diario-do-ultimo-ano]
+  readUrlsAdded: 2
+verified:
+  - "Livro de Mágoas: Estampa 2012, 9789723326703 (BNP collection query +
+     academia.edu citation, both opened). Plus Gutenberg 17610 readUrl,
+     digitised from BNP page images of the 1919 original."
+  - "Livro de Sóror Saudade: Estampa 2013, 9789723326840 (coimbrabooks.pt +
+     livapolo.pt, both opened). Plus Projecto Adamastor ebook 2013,
+     9789898698018 (publisher's own page opened). Plus Gutenberg 68691
+     readUrl."
+  - "Charneca em Flor: Estampa 2013, 9789723327168 (BNP query + livapolo.pt,
+     both opened). Plus Projecto Adamastor ebook 2013, 9789898698032
+     (publisher's own page opened)."
+  - "As Máscaras do Destino: Estampa 2015, 9789723327311 (BNP query +
+     livapolo.pt, both opened)."
+  - "O Dominó Preto: Book Cover Editora 2023, 9789899067912 (mbooks.pt
+     opened, corroborated by independent search hits on the same ISBN/page
+     count/date before that fetch)."
+  - "Trocando Olhares: Imprensa Nacional-Casa da Moeda 1994, converted
+     9789722707510 from ISBN-10 972-27-0751-5 (valid by its own check
+     digit). Sourced to pt.wikipedia and independently to OpenLibrary,
+     which already carries the identical converted ISBN-13 - two sources
+     agreeing on the number, not just the ISBN-10. Publisher's own current
+     catalogue confirms out of print (\"apenas divulgação\"); recorded
+     anyway as the only pt-PT edition this work has had."
+rejected:
+  - "Every \"Sonetos\"/\"Sonetos Completos\" printing found (dozens,
+     1971-2021, many publishers): confirmed as anthologies across her
+     sonnet collections, not single-work editions - directly verified
+     against Guerra & Paz's 2023 \"E Dizê-lo Cantando a Toda a Gente\",
+     which spells out Livro de Mágoas + Livro de Sóror Saudade + Charneca
+     em Flor + Reliquiae as one volume's contents."
+  - "Presença's rival \"Obras de Florbela Espanca\" series: Obra Poética
+     vol. I/II and Contos each bundle 2-3 works under one ISBN (contents
+     confirmed per-volume via retailer descriptions); none usable as a
+     single-work edition."
+  - "\"Perdidamente\" (Quasi Edições 2008, 9789895523252): a different,
+     later-discovered correspondence (1920-25 letters to her second
+     husband), not the Cartas work's own 1931 content. Not recorded against
+     either work."
+  - "All \"Independently Published\"/CreateSpace \"(Ilustrado)\" self-pub
+     listings (dozens): no verifiable editor, publisher legitimacy or
+     source behind any of them."
+  - "Projecto Adamastor was not used for readUrl despite two of its ebooks
+     being recorded as regular editions: no explicit free/public-domain
+     licence statement found on either product page, only EPUB/MOBI
+     downloads beside a Kobo purchase link."
+openQuestions:
+  - "Diário do Último Ano: a 2023 pt/es bilingual edition exists (El Gallo
+     de Oro, sold via edicoesmiosotis.pt, ISBN 9788412699616, valid check
+     digit) and was the only standalone-looking current printing found for
+     this work. Set aside rather than recorded because its ISBN prefix
+     (978-84) registers in Spain and the press's standing as an established
+     publisher could not be corroborated here. A human call: include it
+     with the region flagged, or leave the work with no edition."
+  - "Juvenília: Wook lists a real December 2007 Colares Editora printing
+     with no ISBN reachable from here (Wook and Bertrand both 403 automated
+     fetches). A human with a Wook/Bertrand login or browser session could
+     likely close this in one lookup."
+forStages:
+  visual-metadata: >
+    coverUrl already set on 4 entries (2 Estampa, 1 Adamastor ebook, 1
+    Gutenberg), all from OpenLibrary and HEAD-verified live. The other 6
+    entries have no coverUrl - none was found that wasn't a retailer-scraped
+    image, which this file's rules forbid.
