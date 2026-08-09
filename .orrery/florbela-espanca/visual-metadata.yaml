@@ -1,0 +1,57 @@
+stage: visual-metadata
+summary: >
+  Sourced covers for 6/9 works (67%) and an author portrait, all Open Library
+  or Wikimedia Commons with a read licence. Started from the orchestrator's
+  shared lookup.py TSV, then resolved every title to an Open Library work id
+  via one author works.json sweep (44 works) plus per-work search.json/
+  editions.json calls, batched not sequential. Every cover candidate was
+  fetched with ?default=false and looked at (7 images downloaded and
+  viewed); two of Open Library's own work-level picks were rejected on
+  inspection and replaced with better real-edition covers found by reading
+  the full editions.json rather than trusting the representative cover_i
+  alone. validate.py --slug florbela-espanca is green (0 errors, 1
+  pre-existing unrelated warning); 6 unique cover URLs for 6 covered works,
+  no duplicates.
+coverage:
+  covers: "6/9 (67%)"
+  portrait: "1/1, authors/florbela-espanca.yaml"
+rejectedOnInspection:
+  - "livro-de-magoas: OL's work-level cover_i (13778151) is a generic Project Gutenberg auto-cover template, no real jacket art - confirmed by viewing it. Replaced with the Neolivros 2008 edition's real cover (13778134)."
+  - "charneca-em-flor: rejected 13756210 (a Spanish-language anthology, wrong language entirely) and 13787873 (a real Portuguese edition but branded 'Obras Completas' on its face, reads as an omnibus). Used the Projecto Adamastor 2013 edition (15238864, credited cover designer) instead - stylistically consistent with Livro de Sóror Saudade's own Adamastor cover."
+  - "as-mascaras-do-destino: OL carries two duplicate work records both titled 'As máscaras do destino' (OL37359830W, no cover; OL1680074W, cover 7257887, described by OL as 'first posthumous book'). Used OL1680074W - its edition list holds the actual 1931 Maranus first printing the cover depicts."
+  - "juvenilia: OL files this title inside a merged 'Poems' work (OL1680076W) bundling the 1949 Juvenilia edition with unrelated Sonetos/Antologia poética selections - moot for the cover call since none of its 8 editions has one, but a trap for any future stage reading that record."
+portraitRejected:
+  - "Wikidata's P18 (File:Espanca Florbela.jpg) is a full-length standing shot, not head-and-shoulders. Rejected for framing in favour of pt.wikipedia's own infobox photo."
+  - "File:Retrato de Florbela Espanca.jpg is a marble bust sculpture, not a photograph of her."
+  - "File:Florbela por Apeles Espanca.jpg: despite the filename, its own ImageDescription calls it a drawing by 'uma amiga de Apeles Espanca', not a photo by her brother; also small and not clearly head-and-shoulders."
+gaps: >
+  3 works ship without a cover, each with a one-line reason on the entry:
+  juvenilia (OL's own record for it is a merged, untrustworthy work with no
+  cover on any edition), diario-do-ultimo-ano (both 1981 Bertrand facsimile
+  editions lack one), trocando-olhares (its single 1994 Imprensa
+  Nacional-Casa da Moeda edition has none). All three are genuinely sparse
+  posthumous/scholarly editions, confirmed by sweeping the full author
+  record, not a search failure.
+notableChoices:
+  cartasProvenance: >
+    cartas' cover (7257888) sits at the OL work level (OL14987810W), whose
+    only catalogued editions are the 1985/1986 Dom Quixote volumes - but the
+    art itself (aged paper, cursive title) reads as period design and shares
+    a numeric image-id run with the confirmed 1931 As Máscaras cover. Likely
+    the 1931 Livraria Gonçalves first edition; the entry's own comment says
+    "consistent with, not confirmed as."
+  portrait: >
+    Used pt.wikipedia's infobox photo over Wikidata's P18 pick: same
+    public-domain licence read independently via Commons extmetadata, better
+    (head-and-shoulders) framing. Photographer unrecorded; credited
+    "Unknown photographer, public domain."
+forStages:
+  editions: >
+    OL holds a duplicate work record for "As máscaras do destino"
+    (OL1680074W used here vs OL37359830W, unmerged, holds the 2015 critical
+    edition and 1979 Bessa-Luís preface edition) - worth reconciling.
+    "Juvenília" has no clean OL work id; its real editions live inside the
+    merged "Poems" record (OL1680076W).
+  translation: >
+    No prose touched; only images blocks and in-place data-decision YAML
+    comments - no overlay impact.

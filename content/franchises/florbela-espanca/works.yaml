@@ -91,6 +91,14 @@
     - "https://pt.wikipedia.org/wiki/Florbela_Espanca"
     - "http://livro.dglab.gov.pt/sites/DGLB/Portugues/autores/Paginas/PesquisaAutores1.aspx?autorid=10386"
     - "https://www.florbelaespanca.uevora.pt/?page_id=11"
+  images:
+    # Open Library's own work-level pick (cover_i on OL27628537W) is a
+    # generic Project Gutenberg auto-cover (geometric shapes, no jacket
+    # art) - this is the Neolivros 2008 edition's cover instead, a real
+    # designed jacket for this specific work.
+    cover: "https://covers.openlibrary.org/b/id/13778134-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL27628537W"
 
 - id: florbela-espanca/livro-de-soror-saudade
   title: "Livro de Sóror Saudade"
@@ -117,6 +125,10 @@
     - "http://livro.dglab.gov.pt/sites/DGLB/Portugues/autores/Paginas/PesquisaAutores1.aspx?autorid=10386"
     - "https://pt.wikipedia.org/wiki/Livro_de_Soror_Saudade"
     - "https://www.florbelaespanca.uevora.pt/?page_id=11"
+  images:
+    cover: "https://covers.openlibrary.org/b/id/13008260-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL23292791W"
 
 - id: florbela-espanca/charneca-em-flor
   title: "Charneca em Flor"
@@ -152,6 +164,17 @@
     - "https://pt.wikipedia.org/wiki/Charneca_em_Flor"
     - "https://pt.wikipedia.org/wiki/Florbela_Espanca"
     - "https://www.florbelaespanca.uevora.pt/?page_id=11"
+  images:
+    # Open Library's work-level covers are a Spanish-language anthology
+    # ("Charneca en flor [antología esencial]", Editora Regional de
+    # Extremadura - wrong language, rejected) and an "Obras Completas"
+    # series volume (Estampa) whose cover leads with the omnibus branding.
+    # This is a cleaner alternative: the Projecto Adamastor 2013 digital
+    # edition (ISBN 9789898698032), a standalone Charneca em Flor cover
+    # with a credited cover designer (Ana Ferreira).
+    cover: "https://covers.openlibrary.org/b/id/15238864-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL29573269W"
 
 - id: florbela-espanca/as-mascaras-do-destino
   title: "As Máscaras do Destino"
@@ -193,6 +216,16 @@
     - "https://en.wikipedia.org/wiki/Florbela_Espanca"
     - "https://pt.wikipedia.org/wiki/As_M%C3%A1scaras_do_Destino"
     - "https://www.florbelaespanca.uevora.pt/?page_id=11"
+  images:
+    # Open Library carries two separate work records titled "As máscaras
+    # do destino" (OL1680074W and OL37359830W, an uncorrected duplicate);
+    # this cover belongs to OL1680074W, whose own description names it
+    # "Florbela Espanca's first posthumous book" and whose edition list
+    # holds the original 1931 Maranus printing - the jacket photographed
+    # here.
+    cover: "https://covers.openlibrary.org/b/id/7257887-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL1680074W"
 
 - id: florbela-espanca/juvenilia
   title: "Juvenília"
@@ -215,6 +248,12 @@
   sources:
     - "https://www.florbelaespanca.uevora.pt/?page_id=11"
     - "http://livro.dglab.gov.pt/sites/DGLB/Portugues/autores/Paginas/PesquisaAutores1.aspx?autorid=10386"
+  # No cover: Open Library's own record for this title (OL1680076W) is a
+  # merged "Poems" work bundling the 1949 Juvenilia edition together with
+  # unrelated Sonetos and Antologia poética selections under one work id -
+  # itself a reason not to trust any cover it carried - and none of its
+  # eight catalogued editions has a cover image regardless. Checked by
+  # title search and by sweeping the full 44-work author record.
 
 - id: florbela-espanca/cartas
   title: "Cartas"
@@ -242,6 +281,18 @@
   sources:
     - "https://www.florbelaespanca.uevora.pt/?page_id=11"
     - "https://pt.wikipedia.org/wiki/Charneca_em_Flor"
+  images:
+    # Open Library files this cover at the work level (OL14987810W) rather
+    # than tied to a specific edition; the two catalogued editions on that
+    # record are both the 1985/1986 "Obras Completas" Dom Quixote volumes,
+    # but the cover art itself (aged paper, cursive title, no Dom Quixote
+    # branding) reads as a period design rather than a 1980s one, and its
+    # Open Library image id sits in the same numeric run as the 1931
+    # Maranus "As Máscaras do Destino" cover - consistent with, but not
+    # confirmed as, the 1931 Livraria Gonçalves first edition.
+    cover: "https://covers.openlibrary.org/b/id/7257888-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL14987810W"
 
 - id: florbela-espanca/diario-do-ultimo-ano
   title: "Diário do Último Ano"
@@ -264,6 +315,9 @@
     - "https://en.wikipedia.org/wiki/Florbela_Espanca"
     - "https://www.cm-matosinhos.pt/servicos-municipais/cultura/figuras-de-matosinhos/poi/florbela-espanca-1894-1930"
     - "https://www.florbelaespanca.uevora.pt/?page_id=11"
+  # No cover: Open Library's record (OL1680075W) holds two catalogued
+  # editions of the 1981 Bertrand facsimile, neither carrying a cover
+  # image. Checked by title search and by sweeping the full author record.
 
 - id: florbela-espanca/o-domino-preto
   title: "O Dominó Preto"
@@ -290,6 +344,10 @@
   sources:
     - "https://pt.wikipedia.org/wiki/O_Domin%C3%B3_Preto"
     - "https://www.florbelaespanca.uevora.pt/?page_id=11"
+  images:
+    cover: "https://covers.openlibrary.org/b/id/13126471-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/works/OL1680068W"
 
 - id: florbela-espanca/trocando-olhares
   title: "Trocando Olhares"
@@ -327,3 +385,5 @@
     - "https://pt.wikipedia.org/wiki/Trocando_Olhares"
     - "https://www.florbelaespanca.uevora.pt/?page_id=11"
     - "http://purl.pt/272/2/n10/n10_item9/index.html"
+  # No cover: Open Library's record (OL1680072W) holds a single 1994
+  # Imprensa Nacional-Casa da Moeda edition, no cover image attached.
