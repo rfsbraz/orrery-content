@@ -1,14 +1,115 @@
-# Creative periods. Empty, deliberately.
+# Creative periods - the narrative spine of the aura. Inline references use
+# [[type:id|text]] and must resolve.
 #
-# Garrett's career has an obvious shape in outline - two spells of political
-# exile (1823-1826, 1828-1832) that produced his founding Romantic poems,
-# then two decades in Portugal building the national theatre and writing
-# most of his plays and prose, then a final, more personal stretch closing
-# with Folhas Caídas (1853) - but this file does not turn that outline into
-# `eras` entries. An era is a received, sourced periodisation, not a reading
-# of the biography by whoever last touched this file, and no
-# literary-historical source establishing named creative periods for
-# Garrett's work has been found and cited here. `eras: []` is the honest,
-# complete state the schema allows (CURATION.md #1) until a source is found
-# that either supplies a real periodisation or confirms none exists to cite.
-[]
+# Portuguese criticism cuts Garrett's own career in two, on his definitive
+# return from exile in June 1836. Three independent sources draw the same
+# line, two of them naming the periods:
+#   - Helena Carvalhão Buescu, in the biography written for the Imprensa
+#     Nacional-Casa da Moeda (the publisher of the critical edition of his
+#     works), calls everything up to that return "os anos de formação", and
+#     again "este período de formação, exemplarmente estudado por Ofélia
+#     Paiva Monteiro"; she then takes the whole remainder as a single unit,
+#     "os cerca de 20 anos que medeiam entre o seu regresso a Portugal depois
+#     do exílio e a sua morte em 1854".
+#   - Ofélia Paiva Monteiro, the Garrett specialist who coordinates the
+#     Edição Crítica das Obras de Almeida Garrett, gave the first period its
+#     name in the title of her doctoral thesis, "A Formação de Almeida
+#     Garrett. Experiência e criação".
+#   - Maria Helena Santana, writing for the Instituto Camões, divides the
+#     same career in the same place in different words: "a primeira fase da
+#     sua carreira", dominated by lyric and narrative poetry and "ainda
+#     oscilante entre a lição do neoclassicismo convencional e a nova
+#     corrente romântica", then "a fase da maturidade (década de 40,
+#     sobretudo)".
+#
+# BOUNDARY. A single dated event carries both spans: Garrett comes home from
+# the Brussels legation in mid-June 1836 and never leaves again. Buescu calls
+# it the "regresso definitivo do exílio, em 1836"; the Biblioteca Nacional's
+# bicentenary chronology dates it precisely ("Volta a Portugal,
+# definitivamente, em meados de Junho"). No work is dated 1831-1837, so the
+# cut falls in an empty stretch of the bibliography and moves nothing.
+#
+# The 1820 start is his first published work, [[work:almeida-garrett/hino-patriotico|Hino Patriótico]],
+# not a periodising claim; Buescu and Monteiro both open the formation years
+# earlier still, at his 1816 matriculation in Coimbra, before anything of his
+# was in print.
+#
+# WHAT SITS OUTSIDE, DELIBERATELY. Everything published from 1855 onward is
+# posthumous: juvenilia, diaries, letters, scattered poems and unfinished
+# manuscripts issued by other hands between 1857 and 1987. It is not part of
+# a period Garrett lived through, and no era covers it. Two of those items
+# are plays of his mature years held back from print
+# ([[work:almeida-garrett/um-noivado-no-dafundo|Um Noivado no Dafundo]], 1857,
+# and [[work:almeida-garrett/as-profecias-do-bandarra|As Profecias do Bandarra]],
+# 1877) - the app assigns era membership by published year, so they fall
+# outside the era in which they were written. Stretching a span across the
+# intervening decades to catch them would misdate the period rather than fix
+# the pair.
+
+- id: os-anos-de-formacao
+  organisation: chapter-gate
+  illustration_type: atmospheric-motif-field
+  images_required: 1
+  title: "Os Anos de Formação"
+  period: "1820-1835"
+  themes: [neoclassical apprenticeship, exile in England and France, the founding of Portuguese Romanticism, the popular romanceiro, liberal pamphleteering]
+  provenance: critical
+  description: >
+    The formation years, "os anos de formação" in Helena Carvalhão Buescu's
+    account for the Imprensa Nacional and the period Ofélia Paiva Monteiro
+    named in the title of her thesis on Garrett. Maria Helena Santana
+    describes the same stretch as a first phase dominated by lyric and
+    narrative poetry, still oscillating between conventional neoclassicism
+    and the new Romantic current. It runs from the student verses of
+    [[work:almeida-garrett/hino-patriotico|Hino Patriótico]] and the scandal
+    of [[work:almeida-garrett/o-retrato-de-venus|O Retrato de Vénus]] through
+    two political exiles, which is where the writing changes:
+    [[work:almeida-garrett/camoes|Camões]] (1825) and
+    [[work:almeida-garrett/dona-branca|Dona Branca]] (1826), both written and
+    printed abroad, are the founding texts of Portuguese Romanticism, and
+    [[work:almeida-garrett/adozinda|Adozinda]] begins the collection of oral
+    tradition that becomes the Romanceiro. The exile also produces the essays,
+    [[work:almeida-garrett/da-educacao|Da Educação]] and
+    [[work:almeida-garrett/portugal-na-balanca-da-europa|Portugal na Balança
+    da Europa]].
+  sources:
+    - https://imprensanacional.pt/almeida-garrett/
+    - http://dp.uc.pt/apresentacao/colaboradores/item/21-ofeliapaivamonteiro
+    - https://www.instituto-camoes.pt/activity/centro-virtual/bases-tematicas/figuras-da-cultura-portuguesa/almeida-garrett
+    - https://purl.pt/96/1/bio/bio_03.html
+
+- id: a-fase-da-maturidade
+  organisation: chapter-gate
+  illustration_type: symbolic-still-life
+  images_required: 1
+  title: "A Fase da Maturidade"
+  period: "1836-1854"
+  themes: [the national theatre, historical drama, modern Portuguese prose, the intimate lyric, political disenchantment]
+  provenance: critical
+  description: >
+    The twenty years Buescu counts "between his return to Portugal after the
+    exile and his death in 1854", and which Maria Helena Santana calls "a
+    fase da maturidade": the period that produces, in her words, the author's
+    major works, across lyric, narrative and drama alike. Back in Lisbon,
+    Garrett is charged with rebuilding the Portuguese stage and writes a
+    national repertory for it, from
+    [[work:almeida-garrett/um-auto-de-gil-vicente|Um Auto de Gil Vicente]]
+    (1838) to [[work:almeida-garrett/frei-luis-de-sousa|Frei Luís de Sousa]].
+    Driven out of his public offices in July 1841, he turns to the work the
+    Biblioteca Nacional's chronology heads "A literatura ganhou com este ócio
+    involuntário": [[work:almeida-garrett/o-arco-de-santana|O Arco de
+    Sant'Ana]], [[work:almeida-garrett/viagens-na-minha-terra|Viagens na Minha
+    Terra]], taken as the first modern Portuguese prose narrative, and the
+    late lyric of [[work:almeida-garrett/flores-sem-fruto|Flores sem Fruto]]
+    and [[work:almeida-garrett/folhas-caidas|Folhas Caídas]].
+  note: >
+    Santana centres the mature phase on the 1840s ("década de 40, sobretudo",
+    above all rather than only); the span here is Buescu's, running from the
+    1836 return to Garrett's death, which is the wider of the two readings
+    and the one that keeps the theatre of 1838-1840 inside the period the
+    theatre belongs to.
+  sources:
+    - https://www.instituto-camoes.pt/activity/centro-virtual/bases-tematicas/figuras-da-cultura-portuguesa/almeida-garrett
+    - https://imprensanacional.pt/almeida-garrett/
+    - https://purl.pt/96/1/bio/bio_05.html
+    - https://purl.pt/96/1/bio/bio_06.html

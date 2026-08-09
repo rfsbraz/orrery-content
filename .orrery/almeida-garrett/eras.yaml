@@ -1,0 +1,68 @@
+stage: eras
+summary: "0 eras -> 2, both RECEIVED, both provenance: critical"
+produced:
+  eraIds:
+    - os-anos-de-formacao   # "1820-1835"
+    - a-fase-da-maturidade  # "1836-1854"
+  scheme: >
+    Portuguese criticism does periodise Garrett's own career, and it cuts it
+    in two on his definitive return from exile in June 1836. Buescu (Imprensa
+    Nacional), Monteiro (Edição Crítica; thesis title "A Formação de Almeida
+    Garrett") and Santana (Instituto Camões) all draw that line; the first
+    two name the opening period, Santana names the second. Full citations,
+    quoted phrases and the boundary reasoning are in eras.yaml's own header.
+  languagesSearched: >
+    Portuguese first and throughout (Instituto Camões, Imprensa Nacional,
+    Infopédia, Biblioteca Nacional purl.pt, Universidade de Coimbra), English
+    as a cross-check. cvc.instituto-camoes.pt/seculo-xix/ refused every
+    request with a 503; the same author page on www.instituto-camoes.pt
+    served fine and is the one cited.
+forStages:
+  visual-language: >
+    2 chapter-gate plates now need art: os-anos-de-formacao
+    (atmospheric-motif-field) and a-fase-da-maturidade (symbolic-still-life).
+    Both types are keyed, which an era plate requires; establishing-landscape
+    is in the chapter-gate Holds list but is an OPAQUE_TYPE and would file
+    the plate wrong.
+  translation: >
+    eras.yaml is new and content/i18n/pt-PT/franchises/almeida-garrett/ does
+    not exist yet. Both era titles are already the received Portuguese terms
+    and stay verbatim in the overlay; the descriptions and the note are
+    English and need translating.
+  press-archaeology: >
+    art_rotation.py --check reports 8 of 8 lifeEvents on the default 'beside'
+    organisation (cap 6), 7 consecutive neighbour repeats and one 8-cell
+    'mid' pacing plateau. Untouched by this file (eras are not counted in
+    that report), but it is the lifeEvents' layout grammar that has to fix it.
+  reading-orders: >
+    The two eras are a usable spine for a chronological path: the formation
+    years run poetry-first (Hino Patriótico, O Retrato de Vénus, Camões, Dona
+    Branca, Adozinda, then the exile essays), the mature period
+    theatre-first (Um Auto de Gil Vicente, O Alfageme, Frei Luís de Sousa)
+    before the prose and the late lyric.
+  wing-audit: >
+    validate.py's 14 era-coverage warnings are all works published 1857-1987,
+    every one posthumous, and are answered in eras.yaml's header. Not gaps to
+    close: closing them means stretching a span across decades in which
+    Garrett was dead.
+openQuestions:
+  - >
+    Era 2's label and span come from different sources. Santana supplies the
+    name "a fase da maturidade" and centres it on the 1840s ("sobretudo",
+    above all rather than only); Buescu supplies the 1836-1854 span without
+    naming it. The wider span keeps the theatre of 1838-1840, which both
+    sources treat as the start of the mature output, inside the period it
+    belongs to. Recorded as a note on the era itself.
+  - >
+    "Maturidade" is mildly evaluative and its partner "formação" implies the
+    early work is apprentice work. Both are used because both are the
+    received Portuguese terms for this career, and each description
+    attributes rather than asserts. A flatter alternative for era 2 is a
+    neutral label such as "Depois do Exílio", at the cost of dropping the one
+    name the sources give the period.
+  - >
+    Two mature-period plays print posthumously and so fall outside both eras:
+    Um Noivado no Dafundo (1857) and As Profecias do Bandarra (1877), both
+    written in the 1840s. Era membership keys off the published year, so this
+    is structural rather than a boundary defect.
+  - "validate.py's one error (no theme.art) is the expected pre-visual-language state, not an oversight."
