@@ -1,0 +1,65 @@
+stage: art-rotation
+summary: >
+  Graded all 9 lifeEvents on content/authors/matt-dinniman.yaml (events.yaml
+  and eras.yaml are both empty for this wing, so lifeEvents is the whole
+  footprint). Contour before: `=========` (9/9 beside, flat). After:
+  `#.==#===#` - loud open (birth), a quiet aside, two mid, the wing's one
+  true rupture as immersion, three mid, a loud mosaic close on the Peacock
+  order. `art_rotation.py --check` reports 0 organisation-rotation and 0
+  pacing problems (its exit code stays 1 only on the composition axis - 9/9
+  no issue yet, expected pre-asset-prompt, not this stage's to fix).
+  `validate.py --slug matt-dinniman` stays 0 errors.
+produced:
+  organisations:
+    matt-dinniman-born-1975: full-bleed-vista / journey-transit
+    matt-dinniman-dominion-of-blades-addiction-2017: marginalia / isolated-object
+    matt-dinniman-meets-jeff-hays-2019: beside / symbolic-still-life
+    matt-dinniman-starts-dcc-2019: floating-object / isolated-object
+    matt-dinniman-pandemic-ends-income-2020: immersion / portrait-of-absence (modifier anchor-with-satellites)
+    matt-dinniman-ace-books-deal-2024: artifact-spread / book-object (modifier pull-focus)
+    matt-dinniman-tv-rights-2024: beside / network-constellation
+    matt-dinniman-clarke-award-shortlist-2026: medallion / emblem-seal
+    matt-dinniman-peacock-series-order-2026: mosaic / press-media-collage
+  contourBefore: "========="
+  contourAfter: "#.==#===#"
+judgementCalls: >
+  Birth event names no confirmed birthplace (the wing's own comment rejects
+  SF Encyclopedia's "Gig Harbor?" - childhood was a moving target across Army
+  postings until Tucson). So the birth convention's full-bleed-vista default
+  is kept but paired with `journey-transit`, not `place-portrait` or
+  `establishing-landscape`, neither of which this record can support.
+  pandemic-ends-income-2020 is the wing's only impact:high event, so it took
+  the sole `immersion`; full-bleed-vista (birth) and mosaic (Peacock order,
+  "a wild seven-year journey", fits mosaic's own "adaptations, many voices"
+  brief) are the other two loud beats, each 4 events from its nearest loud
+  neighbour - checked by hand against VIEWPORT_SHARE, then confirmed by
+  --check. Ace Books and TV rights (2024, 6 days apart) read as a real
+  two-step escalation, so each keeps its own entry/organisation rather than
+  being forced into one diptych. illustration_type self-capped at 3/type
+  (isolated-object is the only repeat, used twice) though the tool does not
+  enforce that axis yet on content fields.
+livingPersonCheck: >
+  5 of 9 events are about Dinniman directly; none got a face. born-1975
+  draws the journey between postings; dominion-of-blades-addiction-2017
+  draws an isolated hatch/gate with no way back through it (this wing's own
+  threshold-plate motif), not him writing; meets-jeff-hays-2019 draws
+  festival ephemera, not either man; starts-dcc-2019 draws the real
+  tortoiseshell Persian behind Princess Donut - an animal, not a person, and
+  named in theme.art's own motif list; pandemic-ends-income-2020 draws the
+  emptied pet-show booth his income left behind (anchor-with-satellites
+  carries income/manuscript/self-publish as objects around it, never him).
+  The 2024/2026 industry events draw the deal's evidence (hardcover,
+  production web, award seal, press) not a signing or ceremony. Princess
+  Donut's silhouette is the one recognisable figure anywhere and is
+  fictional (VISUAL.md §3c), not a §3 concern.
+forStages:
+  asset-prompt: >
+    9 life-event slots, all images_required: 1 (no diptych/split-
+    counterpoint on this wing) - order and organisation/type above. Ground
+    every prompt in theme.art's actual motifs (welded gauge, stamped
+    threshold plate, wreckage-as-shelter, spotlight/observation-window with
+    the audience outside frame, Donut's silhouette or a show rosette,
+    fortified gauntlet checkpoint) and the ruled-vs-scored line split
+    (mechanical for anything the System made, gouged for flesh/wreckage/
+    weather). No likeness of Dinniman on any of the 9.
+openQuestions: []
