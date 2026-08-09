@@ -1,0 +1,103 @@
+stage: reading-orders
+summary: >
+  Checked the earlier scaffolding's "no startHere, no citable basis" note
+  instead of trusting it - it was wrong. Vogue Portugal's book club
+  (22 Mar 2022) recommends an entry point, and it is not the famous book.
+  Shipped startHere with 2 paths (the-sonnets, sourced; everything,
+  orderId default). Shipped zero orders - orders.yaml not created, the
+  divergence test fails on a 9-work shelf read in one sitting either way.
+  Mirrored both paths' prose into pt-PT, same commit. validate.py and
+  i18n_coverage.py both clean (only pre-existing, unrelated warnings:
+  theme.art unset; franchise.yaml top-level description untranslated).
+produced:
+  changedProse:
+    - florbela-espanca (franchise.yaml header + features comments)
+  startHere:
+    paths: [the-sonnets, everything]
+  ordersFile: not created
+
+orders:
+  - candidate: all 9 works, publication-chronological
+    verdict: REJECTED - this is the derived default, never hand-write it
+  - candidate: 3 poetry collections first, posthumous prose after
+    verdict: REJECTED - fails divergence test
+    reasoning: >
+      Default already puts the 3 poetry collections first by their own
+      years (1919, 1923, 1931); the only addable content is breaking
+      Charneca em Flor's 4-way 1931 tie (vs As Máscaras do Destino,
+      Juvenília, Cartas), and works.yaml doesn't source those 3 works'
+      months. That tie-break would be the order's entire content on a
+      shelf a reader gets through in one sitting - no actionable reason
+      survives naming it.
+  - candidate: the Vogue "Sonetos" anthology as an order
+    verdict: REJECTED - not a catalogue work
+    reasoning: >
+      Cross-collection editorial anthology (Mágoas + Sóror Saudade +
+      Charneca em Flor + Reliquiae, the last already folded into Charneca
+      em Flor's own entry) - nothing to sequence the default doesn't
+      already sequence. The real finding is path-shaped; see the-sonnets.
+
+startHerePaths:
+  - path: the-sonnets
+    verdict: SOURCED
+    source: >
+      Vogue Portugal book club, 22 Mar 2022, Pedro Vasconcelos,
+      https://www.vogue.pt/voguebookclub-sonetos-florbela-espanca -
+      "é com certeza a melhor forma de iniciar uma relação com a poesia de
+      Florbela Espanca" ("certainly the best way to begin a relationship
+      with Florbela Espanca's poetry"), said of the compiled sonnets,
+      explicitly despite the compilation being posthumous.
+    mapping: >
+      Source's volume maps onto the 3 core-tier poetry works once
+      Reliquiae is recognised as already folded into Charneca em Flor.
+      workIds: the 3, in writing order (a subset, not a reshuffle).
+    cost: >
+      Stated in the path's note: leaves out both short-story collections,
+      the letters, the diary, the early-poems notebook - real and hers,
+      none shaped for print by her own hand.
+  - path: everything
+    verdict: >
+      SOURCED (structural - orderId default is the always-included
+      completionist path per SKILL.md section 10, not itself researched)
+    cost: >
+      Stated in the path's note: posthumous prose sits beside books she
+      prepared herself with nothing marking which is which except each
+      work's own note in works.yaml.
+
+famousBookTrap:
+  candidate: florbela-espanca/charneca-em-flor
+  verdict: >
+    Checked, trap avoided by construction rather than by omission. She is
+    by far most-cited/anthologized/taught for this book (RTP Ensina calls
+    it her "obra-prima"), and no source found recommends it alone as the
+    door - the one real "start here" claim (Vogue, above) recommends it
+    only as the third of three, never solo. the-sonnets path includes it
+    but never singles it out.
+  searched: >
+    RTP Ensina's Florbela article (biographical, no entry-point claim);
+    DGE's "Programa e Metas Curriculares de Português - Ensino
+    Secundário" (Jan 2014 PDF, fetched and grepped directly, not summarised
+    - she appears once, 11th-year free-reading list, as "Espanca, Florbela
+    - Sonetos", no specific collection named, not in the smaller Educação
+    Literária canon - corroborates Vogue's generic "Sonetos" framing but
+    names no title, so isn't itself cited as a source); Univ. Évora
+    Florbela project (existing source); Porto Editora/Bertrand/Wook/
+    Goodreads/Amazon listings for both Mágoas and Charneca em Flor
+    (marketing copy, no directional claim); a personal blog
+    (emocoesaflordapele.com, Jun 2020) independently recommending a
+    *different* compiled anthology over any single book - corroborating
+    the pattern, not itself cited (one post isn't a community, and its
+    anthology differs from Vogue's).
+
+forStages:
+  wing-audit: >
+    startHere: 2 paths, both fit-tagged, both cost-stated, i18n-mirrored.
+    orders.yaml not created - confirm nothing downstream assumes it.
+  translation: >
+    pt-PT written this stage for both new paths (prose only). No other
+    locale exists for this wing yet.
+
+openQuestions:
+  - "franchise.yaml top-level `description` has no pt-PT (i18n_coverage.py:
+    4/5, missing description) - pre-existing, outside this stage's
+    footprint (general prose belongs to translation), flagged forward."
