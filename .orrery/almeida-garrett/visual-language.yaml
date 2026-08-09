@@ -1,0 +1,67 @@
+stage: visual-language
+summary: >
+  Wrote theme.yaml's art: block (emblem, 8 motifs, atmosphere, lineCharacter,
+  backgroundTexture, accentUse, avoid), the wing's only remaining validate.py
+  error. Grounded in the fact franchise-research's palette comments already
+  identified but left for this stage to draw out: Garrett is the one
+  Lusophone author in the catalogue who personally lobbied for and built a
+  theatre (the Conservatório de Arte Dramática / Teatro Nacional D. Maria
+  II), so the art language stages a *working* theatre - backstage,
+  pre-curtain, under construction - rather than costume-drama Portugal or a
+  gala audience's view. validate.py --slug almeida-garrett now exits 0 (OK);
+  asset_audit.py reports art:yes and lists 20 jobs (2 era plates, 16
+  life-events, 2 franchise-events) that were previously blocked.
+produced:
+  emblem: >
+    A row of small gaslight footlight globes on an empty stage's bare lip -
+    one lit, the rest dark, curtain not yet risen. Drawn as a straight
+    stage-lip line, never an arc, so it cannot be mistaken for the shared
+    orrery rings (per docs/VISUAL.md §1a's own warning about this exact
+    confusion). Literalises the "gaslit proscenium" ground the palette stage
+    already set, and doubles as the two-eras pivot: one lamp lit among
+    several dark is the formation years' unresolved oscillation between
+    neoclassical convention and the new Romantic current.
+  motifsCount: 8
+  lineCharacter: >
+    The load-bearing field. A dip-pen line ruled by a straightedge for
+    anything built or institutional (proscenium, pediment, parliamentary
+    bench), loosening into free gestural strokes for weather/drapery/ruin -
+    both registers in the same drawing, one breaking into the other
+    mid-stroke. This is the neoclassical-to-Romantic pivot rendered as a
+    mark rather than described as one, and it is the explicit differentiator
+    from eca-de-queiros's uniformly poised steel-nib line and
+    jose-saramago's single flat unmodulated dip-pen fill - both committed
+    neighbours this wing had to be read against (theme_digest.py --exclude
+    almeida-garrett), both sharing the catalogue's gaslit/dark-ground
+    register.
+  collisionCheck: >
+    Read eca-de-queiros and jose-saramago's theme.yaml in full (both
+    Lusophone, both dark-ground, both already using the word "gaslight" or
+    a dip-pen line); fernando-pessoa skimmed for its trunk-of-papers emblem,
+    avoided entirely as a motif here since it is that wing's own load-bearing
+    image. No accent/face/signature collision:
+    instrument-serif+beam is unused by any other wing per theme_digest.py's
+    "already claimed" list.
+forStages:
+  editions: "Unaffected by this pass. Viagens na Minha Terra and Frei Luís de Sousa remain the flagged first ISBN targets."
+  asset-prompt: >
+    20 jobs now unblocked (2 era-plate, 16 life-event, 2 franchise-event).
+    The two era plates are the natural first jobs: os-anos-de-formacao is
+    atmospheric-motif-field (keyed, low-information tone layer - lean on the
+    Gothic-ruin/harbour/broadside motifs) and a-fase-da-maturidade is
+    symbolic-still-life (2-5 objects - the footlight row or proscenium
+    architecture is the natural anchor).
+openQuestions:
+  - >
+    The emblem doubles as a two-era visual pun (one lamp lit, rest dark).
+    That is a deliberate single load-bearing image, not a claim that every
+    future asset should restage a row of footlights - `avoid` only bans the
+    arc-shaped misread, not reuse of the object itself, so a curator who
+    wants the footlight row reserved strictly for the emblem-seal type
+    should say so explicitly before /asset-prompt runs across the wing.
+  - >
+    lineCharacter's "two registers in one stroke" is more instruction to an
+    illustrator than a checkable rule - unlike a fixed instrument or texture,
+    a generated image can't be graded pass/fail against it. Worth a look
+    after the first 2-3 assets generate, to confirm gpt-image-1 actually
+    renders the ruled/loose mix rather than defaulting to one register.
