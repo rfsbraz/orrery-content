@@ -1,0 +1,639 @@
+# Editions of Matt Dinniman. COVERAGE: 17 of 20 works carry at least one
+# edition. The three gaps (backstage-at-the-pineapple-cabaret, apocalypse,
+# the-last-yong-shi) are explained below, not unsearched.
+#
+# THE SELF-PUB-TO-ACE TRANSITION (Dungeon Crawler Carl, books 1-6). Dinniman
+# originally self-published these six under his own imprint "Dandy House"
+# (2020-2023). Ace Books (Penguin Random House) then acquired PRINT rights
+# only, starting Aug 2024, and issued new hardcover editions with new cover
+# art; Dinniman kept ebook and audiobook rights. mattdinniman.com's own book
+# pages carry this exactly as two dates, "Published" (the Dandy House
+# original) and "RePublished" (the Ace edition), for every one of the six.
+# Consequently, for books 1-6, the Dandy House PRINT editions found on
+# OpenLibrary (paperback/hardcover SKUs from 2020-2023) are now superseded by
+# Ace's own print run and are not recorded here; the Dandy House EBOOK stays
+# a live, distinct, currently-buyable object (Dinniman never sold ebook
+# rights), so it is recorded alongside the Ace print edition on every volume
+# where a Dandy House ebook edition/ASIN could be found. Book 1's ebook was
+# reissued under a fresh 2025 ISBN (Dandy House re-lists periodically); books
+# 2-6 still carry their original 2020/2021/2022/2023 self-pub ebook ASINs,
+# with no equivalent refresh found - an asymmetry in the source data itself,
+# not a gap in coverage.
+#
+# Books 7 (This Inevitable Ruin, 2024) and 8 (A Parade of Horribles, 2026)
+# were announced on mattdinniman.com as published directly by Ace, with no
+# "RePublished" line and no self-pub predecessor claimed. For book 8 that
+# holds up under an independent OpenLibrary check. For book 7 it does NOT:
+# OpenLibrary carries a real, separately-cataloged "Independently published"
+# paperback (ISBN 9798344591230, 722pp, Amazon ASIN B0DLTHPBQJ) dated Nov 3
+# 2024 - the exact day mattdinniman.com gives as the book's only publication
+# date - alongside Ace's own hardcover (ISBN 9798217190041, 880pp), whose
+# OpenLibrary record separately dates it Sept 23 2025 and is independently
+# corroborated at that date by isbnsearch.org and matching Amazon/AbeBooks/
+# Walmart/eBay listings. Both are recorded below, Ace first as the current
+# flagship print edition; the self-pub paperback's existence, on the date the
+# author's own site claims for the single "Published" release, is a real
+# discrepancy with that site's own claim of no separate self-pub edition, not
+# an invention here.
+#
+# AUDIOBOOKS. This series' audiobooks (Jeff Hays narrating almost every
+# volume, per mattdinniman.com's own audio previews) are, by the author's own
+# public account, its single largest sales channel, so they are catalogued
+# with the same rigor as the print editions rather than as an afterthought.
+# Every audiobook `isbn13` below (where present) or Amazon-identifier
+# `sources` link (where absent, since Audible editions are ASIN-based, not
+# ISBN-based - the schema's own documented no-ISBN case) is traced to a named
+# OpenLibrary edition record. One candidate ASIN, for a "Kaiju: Battlefield
+# Surgeon" audiobook, does not resolve on its own Audible product page (a
+# live 404) and is not recorded; Kaiju's own mattdinniman.com page still
+# reads "Audiobook (coming soon)", consistent with no real edition existing
+# yet.
+#
+# FOREIGN LANGUAGES. pt-PT and pt-BR are different translations by different
+# publishers and are tagged accordingly (978-989 and 978-655 prefixes
+# respectively, both checked against the registrant-prefix table): Kathartika
+# (Portugal, book 1 only, confirmed on the publisher's own catalogue page)
+# and HarperCollins Brasil (Brazil, book 2 only so far). French is the
+# furthest along: Lorestone has released books 1-5 (2024-2026), all
+# corroborated on OpenLibrary with `translated_from: eng` and French cover
+# art. German (FISCHER Tor, books 1-2, book 1's own publisher page names
+# translator Ruggero Leo and lists books 3-4 as "Zukünftig"/forthcoming) and
+# Spanish (Ediciones B, book 5 only so far - an unusual place for a Spanish
+# program to start; no earlier Spanish volume was found anywhere searched,
+# so this is recorded as a real, if odd, market fact) round out what a
+# targeted search turned up. No Italian, Polish, Dutch or Japanese edition of
+# anything in this wing was found.
+#
+# EXCLUDED, DELIBERATELY:
+#   - Two "Diversified Publishing" OpenLibrary records (Dungeon Anarchist's
+#     Cookbook, ISBN 9798217287185; Gate of the Feral Gods, ISBN
+#     9798217287192) are thin, single-source, Better-World-Books-imported
+#     records with no format and no cover; a second lookup on the same two
+#     ISBNs returned a different publisher ("Random House") for both. Real
+#     PRH paperback reprints likely sit behind these numbers, but the
+#     publisher-name conflict between the two sources consulted was not
+#     resolved, so neither ISBN is recorded rather than shipping a publisher
+#     name that might be wrong.
+#   - A second UK "Penguin Books, Limited" ISBN exists alongside the one
+#     recorded for several volumes (e.g. Dungeon Crawler Carl: both
+#     9780241816271 and 9780241816264, identical page count, identical year,
+#     no distinguishing format field on either record) - almost certainly a
+#     hardback/paperback pair, but which is which could not be confirmed, so
+#     only the Ace US edition is recorded for the plain "en" market; nothing
+#     about the text differs between the US and UK printings regardless.
+#   - "Backstage at the Pineapple Cabaret" has no edition here: it is
+#     published only as serialized backmatter fragments inside the Ace
+#     hardcover editions of the main series (works.yaml's own account),
+#     confirmed by zero results on an OpenLibrary title search, an empty
+#     Audible catalogue search, and ISFDB listing all eight fragments with no
+#     standalone ISBN/ASIN on any of them.
+#   - "Apocalypse" (2010) and "The Last Yong-Shi" (2013) have no edition
+#     here. Both are real, ISFDB-attested short stories, but each survives
+#     only inside a now-defunct small-press MULTI-AUTHOR venue (Necrotic
+#     Tissue, a horror magazine that ceased circa 2011, ISBN
+#     978-0-9824969-2-3; and the anthology Clockwork Chaos, ISBN
+#     978-1-937051-56-3) - recording either ISBN here would misattribute a
+#     book with a dozen other names on it to a single Dinniman story, the
+#     same reasoning this catalogue applies to anthology-only short fiction
+#     elsewhere, and no standalone single-author printing of either story was
+#     found.
+#
+# SOURCING. Every ISBN below was opened at a named OpenLibrary edition record
+# (per-ISBN or per-work JSON, not the search index alone) and its check
+# digit recomputed by hand; three (Kathartika's pt-PT edition, the two
+# Necro/Elastic-Press-descended small-press numbers used only in the header
+# above) were additionally cross-checked against the publisher's own
+# catalogue page or ISFDB directly. Worked example, Kathartika's "Carl, o
+# Herói das Masmorras" (9789895626762):
+#   digits   9 7 8 9 8 9 5 6 2 6 7 6
+#   weights  1 3 1 3 1 3 1 3 1 3 1 3
+#   products 9 21 8 27 8 27 5 18 2 18 7 18   sum = 168
+#   168 mod 10 = 8  ->  check digit = 10 - 8 = 2  ->  ...762  OK
+
+# --- Dungeon Crawler Carl ---
+
+- id: matt-dinniman/dungeon-crawler-carl/ace-2024-en
+  workId: matt-dinniman/dungeon-crawler-carl
+  isbn13: "9780593820247"
+  language: en
+  format: hardcover
+  publisher: Ace
+  year: 2024
+  note: The current US print edition ("First Ace Edition" per its own OpenLibrary record); the original Aug 27, 2024 print reissue.
+  sources:
+    - https://openlibrary.org/isbn/9780593820247.json
+
+- id: matt-dinniman/dungeon-crawler-carl/dandy-house-2025-en
+  workId: matt-dinniman/dungeon-crawler-carl
+  isbn13: "9798232923594"
+  language: en
+  format: ebook
+  publisher: Dandy House
+  year: 2025
+  note: Dinniman's own self-pub ebook, the format he kept when Ace took over print; this is a 2025 re-listing of the original Sept 2020 ebook, not a new edition of the text.
+  sources:
+    - https://openlibrary.org/isbn/9798232923594.json
+
+- id: matt-dinniman/dungeon-crawler-carl/audible-studios-2021-en
+  workId: matt-dinniman/dungeon-crawler-carl
+  language: en
+  format: audiobook
+  publisher: Audible Studios
+  year: 2021
+  note: Narrated by Jeff Hays. No ISBN; Audible editions are ASIN-based (Amazon B08V8877BY).
+  sources:
+    - https://openlibrary.org/books/OL60483643M.json
+
+- id: matt-dinniman/dungeon-crawler-carl/random-house-large-print-2025-en
+  workId: matt-dinniman/dungeon-crawler-carl
+  isbn13: "9798217287161"
+  language: en
+  format: paperback
+  publisher: Random House Large Print
+  year: 2025
+  note: Large-print edition, a distinct accessibility format from the standard Ace print run.
+  sources:
+    - https://openlibrary.org/isbn/9798217287161.json
+
+- id: matt-dinniman/dungeon-crawler-carl/kathartika-2026-pt
+  workId: matt-dinniman/dungeon-crawler-carl
+  isbn13: "9789895626762"
+  language: pt-PT
+  title: "Carl, o Herói das Masmorras"
+  format: paperback
+  publisher: Kathartika
+  year: 2026
+  note: The only Dinniman title Kathartika has published so far, per the publisher's own author page.
+  sources:
+    - https://kathartika.pt/produto/carl-o-heroi-das-masmorras/
+    - https://kathartika.pt/autor/matt-dinniman/
+
+- id: matt-dinniman/dungeon-crawler-carl/lorestone-2024-fr
+  workId: matt-dinniman/dungeon-crawler-carl
+  isbn13: "9782487700031"
+  language: fr
+  format: paperback
+  publisher: Lorestone
+  year: 2024
+  note: Title kept in English on the French edition itself.
+  sources:
+    - https://openlibrary.org/isbn/9782487700031.json
+
+- id: matt-dinniman/dungeon-crawler-carl/fischer-tor-2026-de
+  workId: matt-dinniman/dungeon-crawler-carl
+  isbn13: "9783596712489"
+  language: de
+  title: "Dungeon Crawler Carl: Entertainment ist Pflicht. Überleben nicht."
+  translator: "Ruggero Leo"
+  format: paperback
+  publisher: FISCHER Tor
+  year: 2026
+  note: The publisher's own product page lists books 3 (Butcher's Masquerade) and 4 (Gate of the Feral Gods) as forthcoming, so this German program is ongoing past what is recorded here.
+  sources:
+    - https://www.fischerverlage.de/buch/matt-dinniman-dungeon-crawler-carl-9783596712489
+    - https://openlibrary.org/isbn/9783596712489.json
+
+- id: matt-dinniman/carls-doomsday-scenario/ace-2024-en
+  workId: matt-dinniman/carls-doomsday-scenario
+  isbn13: "9780593820261"
+  language: en
+  publisher: Penguin Publishing Group
+  year: 2024
+  note: The Ace print reissue (Ace is a Penguin Publishing Group imprint; that is the name on this edition's own OpenLibrary record).
+  sources:
+    - https://openlibrary.org/isbn/9780593820261.json
+
+- id: matt-dinniman/carls-doomsday-scenario/dandy-house-2021-en
+  workId: matt-dinniman/carls-doomsday-scenario
+  language: en
+  format: ebook
+  publisher: Dandy House
+  year: 2021
+  note: Original self-pub ebook. No ISBN found; Amazon ASIN B08PBCD9Y7 only.
+  sources:
+    - https://openlibrary.org/books/OL62207678M.json
+
+- id: matt-dinniman/carls-doomsday-scenario/audible-studios-2021-en
+  workId: matt-dinniman/carls-doomsday-scenario
+  language: en
+  format: audiobook
+  publisher: Audible Studios
+  year: 2021
+  note: Narrated by Jeff Hays. No ISBN; Amazon ASIN B09345T1HY.
+  sources:
+    - https://openlibrary.org/books/OL60487296M.json
+
+- id: matt-dinniman/carls-doomsday-scenario/harpercollins-brasil-2025-pt
+  workId: matt-dinniman/carls-doomsday-scenario
+  isbn13: "9786555117714"
+  language: pt-BR
+  title: "Carl e o Cenário Apocalíptico"
+  publisher: HarperCollins Brasil
+  year: 2025
+  note: Prefix 978-655 confirms Brazil, not Portugal; a different translation and publisher from Kathartika's Portuguese line.
+  sources:
+    - https://openlibrary.org/isbn/9786555117714.json
+
+- id: matt-dinniman/carls-doomsday-scenario/lorestone-2025-fr
+  workId: matt-dinniman/carls-doomsday-scenario
+  isbn13: "9782487700154"
+  language: fr
+  title: "L'Ogive du jugement dernier"
+  publisher: Lorestone
+  year: 2025
+  sources:
+    - https://openlibrary.org/isbn/9782487700154.json
+
+- id: matt-dinniman/carls-doomsday-scenario/fischer-tor-2026-de
+  workId: matt-dinniman/carls-doomsday-scenario
+  isbn13: "9783596712496"
+  language: de
+  publisher: FISCHER Tor
+  year: 2026
+  note: Title kept in English on this edition's own OpenLibrary record.
+  sources:
+    - https://openlibrary.org/isbn/9783596712496.json
+
+- id: matt-dinniman/the-dungeon-anarchists-cookbook/ace-2024-en
+  workId: matt-dinniman/the-dungeon-anarchists-cookbook
+  isbn13: "9780593820285"
+  language: en
+  publisher: Ace
+  year: 2024
+  sources:
+    - https://openlibrary.org/isbn/9780593820285.json
+
+- id: matt-dinniman/the-dungeon-anarchists-cookbook/dandy-house-2021-en
+  workId: matt-dinniman/the-dungeon-anarchists-cookbook
+  language: en
+  format: ebook
+  publisher: Dandy House
+  year: 2021
+  note: Original self-pub ebook. No ISBN found; Amazon ASIN B08V4QSV6W only.
+  sources:
+    - https://openlibrary.org/works/OL24848242W/editions.json
+
+- id: matt-dinniman/the-dungeon-anarchists-cookbook/audible-studios-2021-en
+  workId: matt-dinniman/the-dungeon-anarchists-cookbook
+  language: en
+  format: audiobook
+  publisher: Audible Studios
+  year: 2021
+  note: Narrated by Jeff Hays and The Critical Drinker. No ISBN; Amazon ASIN B094X214V9.
+  sources:
+    - https://openlibrary.org/books/OL60487312M.json
+
+- id: matt-dinniman/the-dungeon-anarchists-cookbook/lorestone-2025-fr
+  workId: matt-dinniman/the-dungeon-anarchists-cookbook
+  isbn13: "9782487700178"
+  language: fr
+  title: "Le Livre de recettes de l'Anarchiste"
+  format: paperback
+  publisher: Lorestone
+  year: 2025
+  sources:
+    - https://openlibrary.org/isbn/9782487700178.json
+
+- id: matt-dinniman/the-gate-of-the-feral-gods/ace-2025-en
+  workId: matt-dinniman/the-gate-of-the-feral-gods
+  isbn13: "9780593955970"
+  language: en
+  publisher: Ace
+  year: 2025
+  note: Matches mattdinniman.com's own "RePublished Mar 11, 2025" date for this volume.
+  sources:
+    - https://openlibrary.org/isbn/9780593955970.json
+
+- id: matt-dinniman/the-gate-of-the-feral-gods/audible-studios-2021-en
+  workId: matt-dinniman/the-gate-of-the-feral-gods
+  language: en
+  format: audiobook
+  publisher: Audible Studios
+  year: 2021
+  note: Narrated by Jeff Hays. No ISBN; Amazon ASIN B09GD882BQ.
+  sources:
+    - https://openlibrary.org/books/OL57658357M.json
+
+- id: matt-dinniman/the-gate-of-the-feral-gods/lorestone-2025-fr
+  workId: matt-dinniman/the-gate-of-the-feral-gods
+  isbn13: "9782487700376"
+  language: fr
+  title: "Le Portail des dieux infernaux"
+  publisher: Lorestone
+  year: 2025
+  sources:
+    - https://openlibrary.org/isbn/9782487700376.json
+
+- id: matt-dinniman/the-butchers-masquerade/ace-2025-en
+  workId: matt-dinniman/the-butchers-masquerade
+  isbn13: "9780593955994"
+  language: en
+  publisher: Penguin Publishing Group
+  year: 2025
+  sources:
+    - https://openlibrary.org/isbn/9780593955994.json
+
+- id: matt-dinniman/the-butchers-masquerade/dandy-house-2022-en
+  workId: matt-dinniman/the-butchers-masquerade
+  language: en
+  format: ebook
+  publisher: Dandy House
+  year: 2022
+  note: Original self-pub ebook. No ISBN found; Amazon ASIN B09R6C5X88 only.
+  sources:
+    - https://openlibrary.org/works/OL34721292W/editions.json
+
+- id: matt-dinniman/the-butchers-masquerade/audible-studios-2022-en
+  workId: matt-dinniman/the-butchers-masquerade
+  language: en
+  format: audiobook
+  publisher: Audible Studios
+  year: 2022
+  note: Narrated by Jeff Hays and Annie Ellicott. No ISBN; Amazon ASIN B09ZJ84HC2.
+  sources:
+    - https://openlibrary.org/books/OL60487335M.json
+
+- id: matt-dinniman/the-butchers-masquerade/lorestone-2026-fr
+  workId: matt-dinniman/the-butchers-masquerade
+  isbn13: "9782487700383"
+  language: fr
+  title: "La Mascarade du boucher"
+  format: paperback
+  publisher: Lorestone
+  year: 2026
+  sources:
+    - https://openlibrary.org/isbn/9782487700383.json
+
+- id: matt-dinniman/the-butchers-masquerade/ediciones-b-2026-es
+  workId: matt-dinniman/the-butchers-masquerade
+  isbn13: "9788410466388"
+  language: es
+  title: "Mascarada Del Carnicero"
+  publisher: Ediciones B
+  year: 2026
+  note: >
+    The only Spanish-language edition found anywhere in this series - no
+    earlier Spanish volume (books 1-4) turned up on any source checked, so a
+    Spanish program starting at book 5 is recorded as a real market fact
+    rather than assumed to be a gap in the search.
+  sources:
+    - https://openlibrary.org/isbn/9788410466388.json
+
+- id: matt-dinniman/the-eye-of-the-bedlam-bride/ace-2025-en
+  workId: matt-dinniman/the-eye-of-the-bedlam-bride
+  isbn13: "9780593956014"
+  language: en
+  publisher: Penguin Publishing Group
+  year: 2025
+  sources:
+    - https://openlibrary.org/isbn/9780593956014.json
+
+- id: matt-dinniman/the-eye-of-the-bedlam-bride/dandy-house-2023-en
+  workId: matt-dinniman/the-eye-of-the-bedlam-bride
+  language: en
+  format: ebook
+  publisher: Dandy House
+  year: 2023
+  note: Original self-pub ebook. No ISBN found; Amazon ASIN B0C1R52V2J only.
+  sources:
+    - https://openlibrary.org/works/OL36748104W/editions.json
+
+- id: matt-dinniman/the-eye-of-the-bedlam-bride/audible-studios-2023-en
+  workId: matt-dinniman/the-eye-of-the-bedlam-bride
+  language: en
+  format: audiobook
+  publisher: Audible Studios
+  year: 2023
+  note: Narrated by Jeff Hays, Travis Baldree, Patrick Warburton and Annie Ellicott. No ISBN; Amazon ASIN B0CDXVN7BB.
+  sources:
+    - https://openlibrary.org/books/OL60487341M.json
+
+- id: matt-dinniman/this-inevitable-ruin/ace-2025-en
+  workId: matt-dinniman/this-inevitable-ruin
+  isbn13: "9798217190041"
+  language: en
+  format: hardcover
+  publisher: Ace
+  year: 2025
+  note: >
+    The current Ace print edition; OpenLibrary and isbnsearch.org both date
+    this specific printing Sept 23, 2025, roughly ten months after the
+    book's own "Published Nov 3, 2024" date on mattdinniman.com and after the
+    self-published paperback below.
+  sources:
+    - https://openlibrary.org/isbn/9798217190041.json
+
+- id: matt-dinniman/this-inevitable-ruin/independently-published-2024-en
+  workId: matt-dinniman/this-inevitable-ruin
+  isbn13: "9798344591230"
+  language: en
+  format: paperback
+  publisher: Independently published
+  year: 2024
+  note: >
+    A real, separately-cataloged self-pub paperback dated Nov 3, 2024 - the
+    exact date mattdinniman.com gives as this book's sole "Published" date,
+    even though that page names no self-pub edition and shows no
+    "RePublished" line the way books 1-6 do. Recorded because it is real and
+    verifiable (Amazon ASIN B0DLTHPBQJ), not because the discrepancy with the
+    author's own site has been resolved.
+  sources:
+    - https://openlibrary.org/isbn/9798344591230.json
+
+- id: matt-dinniman/this-inevitable-ruin/audible-studios-2025-en
+  workId: matt-dinniman/this-inevitable-ruin
+  language: en
+  format: audiobook
+  publisher: Audible Studios
+  year: 2025
+  note: Narrated by Jeff Hays and Travis Baldree. No ISBN; Amazon ASIN B0DK29VYL1.
+  sources:
+    - https://openlibrary.org/books/OL60487343M.json
+
+- id: matt-dinniman/a-parade-of-horribles/ace-books-2026-en
+  workId: matt-dinniman/a-parade-of-horribles
+  isbn13: "9798217190065"
+  language: en
+  format: hardcover
+  publisher: Ace Books
+  year: 2026
+  sources:
+    - https://openlibrary.org/isbn/9798217190065.json
+
+- id: matt-dinniman/a-parade-of-horribles/audible-studios-2026-en
+  workId: matt-dinniman/a-parade-of-horribles
+  language: en
+  format: audiobook
+  publisher: Audible Studios
+  year: 2026
+  note: >
+    Narrated by Jeff Hays. No ISBN; Amazon ASIN B0FXY2JG27. OpenLibrary
+    carries this ASIN under two edition records, "original" and "corrected"
+    (the corrected release fixed an audio glitch at the very end of the
+    closing credits) - both point at the same real Audible product.
+  sources:
+    - https://openlibrary.org/books/OL61932789M.json
+
+# --- The Shivered Sky ---
+# All three volumes are Kindle-exclusive self-published ebooks with no ISBN
+# (KDP does not require one). mattdinniman.com's own page for each offers
+# only a print+ebook "Omnibus Edition" and a "Single Book" link; the Single
+# Book link resolves to a Kindle-only ebook with no separate single-volume
+# print edition existing anywhere checked. The omnibus itself ("The Shivered
+# Sky: Complete Series: Books 1-3") is edition-level data for a title not
+# catalogued as its own work here (per works.yaml's own header) and is not
+# recorded under any one of the three volumes for that reason.
+
+- id: matt-dinniman/every-grain-of-sand/dandy-house-2020-en
+  workId: matt-dinniman/every-grain-of-sand
+  language: en
+  format: ebook
+  publisher: Dandy House
+  year: 2020
+  note: Kindle-exclusive; no ISBN, deliberately (Amazon ASIN B0847CMKWW).
+  sources:
+    - https://mattdinniman.com/books/every-grain-of-sand/
+    - https://www.amazon.com/Every-Grain-Sand-Shivered-Book-ebook/dp/B0847CMKWW
+
+- id: matt-dinniman/in-the-city-of-demons/dandy-house-2020-en
+  workId: matt-dinniman/in-the-city-of-demons
+  language: en
+  format: ebook
+  publisher: Dandy House
+  year: 2020
+  note: Kindle-exclusive; no ISBN, deliberately (Amazon ASIN B0847CRF98).
+  sources:
+    - https://mattdinniman.com/books/in-the-city-of-demons/
+
+- id: matt-dinniman/the-great-devouring-darkness/dandy-house-2020-en
+  workId: matt-dinniman/the-great-devouring-darkness
+  language: en
+  format: ebook
+  publisher: Dandy House
+  year: 2020
+  note: Kindle-exclusive; no ISBN, deliberately (Amazon ASIN B084C5R9G4).
+  sources:
+    - https://mattdinniman.com/books/the-great-devouring-darkness/
+
+# --- Dominion of Blades ---
+
+- id: matt-dinniman/dominion-of-blades/createspace-2017-en
+  workId: matt-dinniman/dominion-of-blades
+  isbn13: "9781544614212"
+  language: en
+  publisher: CreateSpace Independent Publishing Platform
+  year: 2017
+  sources:
+    - https://openlibrary.org/isbn/9781544614212.json
+
+- id: matt-dinniman/dominion-of-blades/audible-2017-en
+  workId: matt-dinniman/dominion-of-blades
+  language: en
+  format: audiobook
+  publisher: Audible
+  year: 2017
+  note: Narrated by Andrea Parsneau, per both Wikipedia and this product page. No ISBN; Amazon ASIN B072XTFXLG.
+  sources:
+    - https://www.audible.com/pd/Dominion-of-Blades-Audiobook/B072XTFXLG
+
+- id: matt-dinniman/the-hobgoblin-riot/independently-published-2018-en
+  workId: matt-dinniman/the-hobgoblin-riot
+  isbn13: "9781980762980"
+  language: en
+  format: paperback
+  publisher: Independently published
+  year: 2018
+  sources:
+    - https://openlibrary.org/isbn/9781980762980.json
+
+- id: matt-dinniman/the-hobgoblin-riot/audible-2018-en
+  workId: matt-dinniman/the-hobgoblin-riot
+  language: en
+  format: audiobook
+  publisher: Audible
+  year: 2018
+  note: Narrated by Andrea Parsneau and Hays McGee. No ISBN; Amazon ASIN B07FCRJFDP.
+  sources:
+    - https://www.audible.com/pd/The-Hobgoblin-Riot-Audiobook/B07FCRJFDP
+
+# --- Standalones ---
+
+- id: matt-dinniman/trailer-park-fairy-tales/elastic-press-2005-en
+  workId: matt-dinniman/trailer-park-fairy-tales
+  isbn13: "9780954881238"
+  language: en
+  format: paperback
+  publisher: Elastic Press
+  year: 2005
+  note: >
+    Converted from the ISFDB-recorded ISBN-10 (0-9548812-3-0); check digit
+    recomputed, not carried over. The only edition of this collection ever
+    printed - mattdinniman.com's own page for it reads "EDITIONS: Not
+    Available" and the author's own note there tells readers to check eBay,
+    so this is recorded as the sole, now out-of-print, edition rather than
+    a live store link.
+  sources:
+    - https://www.isfdb.org/cgi-bin/title.cgi?1002447
+    - https://mattdinniman.com/books/trailer-park-fairy-tales/
+
+- id: matt-dinniman/the-grinding/dandy-house-2023-en
+  workId: matt-dinniman/the-grinding
+  isbn13: "9798988744412"
+  language: en
+  publisher: Dandy House
+  year: 2023
+  note: >
+    Originally published 2013 by Necro Publications (ebook ISBN
+    978-1-939065-34-6, paperback 978-1-939065-33-9, per ISFDB); this Dandy
+    House ISBN is the current listing under the author's own imprint.
+    `format` is deliberately left unset: mattdinniman.com's own page for this
+    book lists its current EDITIONS as "Audiobook" only, with neither
+    "Print" nor "eBook" shown, while this OpenLibrary record carries no
+    physical_format field of its own - genuinely unclear whether this ISBN
+    denotes a print/ebook SKU or the audiobook itself, and nothing found
+    resolves it either way.
+  sources:
+    - https://openlibrary.org/isbn/9798988744412.json
+    - https://www.isfdb.org/cgi-bin/title.cgi?1702893
+    - https://mattdinniman.com/books/the-grinding/
+
+- id: matt-dinniman/kaiju-battlefield-surgeon/independently-published-2019-en
+  workId: matt-dinniman/kaiju-battlefield-surgeon
+  isbn13: "9781705612194"
+  language: en
+  format: paperback
+  publisher: Independently published
+  year: 2019
+  sources:
+    - https://openlibrary.org/isbn/9781705612194.json
+
+- id: matt-dinniman/operation-bounce-house/ace-2026-en
+  workId: matt-dinniman/operation-bounce-house
+  isbn13: "9780593820308"
+  language: en
+  publisher: Ace
+  year: 2026
+  sources:
+    - https://openlibrary.org/isbn/9780593820308.json
+
+- id: matt-dinniman/operation-bounce-house/penguin-random-house-audio-2026-en
+  workId: matt-dinniman/operation-bounce-house
+  isbn13: "9798217017270"
+  language: en
+  format: audiobook
+  publisher: Penguin Random House Audio
+  year: 2026
+  note: Narrated by Travis Baldree and Jeff Hays. Distributed via Libro.fm; this audiobook, unusually for this wing, carries its own real ISBN rather than only an ASIN.
+  sources:
+    - https://openlibrary.org/isbn/9798217017270.json
+
+- id: matt-dinniman/operation-bounce-house/penguin-random-house-uk-2026-en
+  workId: matt-dinniman/operation-bounce-house
+  isbn13: "9780241804049"
+  language: en
+  format: hardcover
+  publisher: Penguin Random House UK
+  year: 2026
+  note: A "Waterstones Exclusive Edition" - a genuinely different, separately-bound UK collector's object rather than a duplicate of the US Ace print run.
+  sources:
+    - https://openlibrary.org/isbn/9780241804049.json
