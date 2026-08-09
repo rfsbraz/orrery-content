@@ -1,0 +1,77 @@
+stage: press-archaeology
+summary: >
+  Fixed both header discrepancies (ennoblement monarch/date; a burial claim
+  nobody had checked), added 7 lifeEvents and a new events.yaml (2 franchise
+  events), all directly-fetched-sourced. aura_density.py's worst dark run
+  fell from 133 yrs (1855-1987) to 45 yrs (1905-1949).
+produced:
+  correctedFacts:
+    - >
+      Ennoblement: Maria II, 25 June 1851 - not "Maria II, 1852" (prior
+      text) and not pt-wiki's literal "D. Pedro V, 1851" (chronologically
+      impossible). BNP's own 1999 chronology (purl.pt/96/1/bio/bio_07.html)
+      independently gives 25 June under a run of June-1851 events, settling
+      both. Fixed in header, `bio`, and the renamed/redated lifeEvent
+      (`almeida-garrett-viscount-1851`, date 1851-06-25, dateRange
+      "1851-1852" to still cover the 1852 Foreign Affairs ministry).
+    - >
+      Burial: he does NOT rest at Jerónimos "near Herculano and Camões"
+      (still English Wikipedia's claim, and until this pass this file's
+      too). Moved to Jerónimos in 1903, moved AGAIN 1-5 Dec 1966 to the
+      newly-completed Panteão Nacional (Igreja de Santa Engrácia) with five
+      others - three independent sources agree (pt-wiki's own Garrett
+      article, pt-wiki's Panteão Nacional article, panteaonacional.gov.pt
+      itself). Herculano only reached Jerónimos in 1978, after Garrett had
+      already left it, so the two were never buried together at either
+      site. Fixed in header, `bio`, the death lifeEvent (trimmed to just
+      death + Prazeres burial), plus two new lifeEvents (1903, 1966) that
+      carry the corrected story.
+  newLifeEvents:
+    - "almeida-garrett-hino-patriotico-1820: his real literary debut (BNP
+      chronology), the item completeness-auditor's forStages note flagged."
+    - "almeida-garrett-jeronimos-transfer-1903"
+    - "almeida-garrett-panteao-nacional-1966: also closes the loop that
+      Garrett co-promoted the Panteão's founding 1836 decree himself."
+    - "almeida-garrett-teofilo-braga-obras-completas-1904: the popular
+      edition that shaped 20th-c reception (archive.org catalogue metadata
+      + HathiTrust)."
+    - "almeida-garrett-neogarrettismo-1894: strongest find - Alberto de
+      Oliveira's Palavras Loucas mythologises Garrett as founder of a real
+      nationalist revival, in reaction to the 1890 Ultimatum (2 Infopédia
+      articles + pt-wiki)."
+    - "almeida-garrett-death-centenary-1954: bronze monument (pt-wiki,
+      DGPC-sourced) + Ateneu Comercial do Porto's Prémio Almeida Garrett
+      poetry prize, won by Miguel Torga (Ateneu's own page via Wayback +
+      Google Books)."
+    - "almeida-garrett-bicentenary-1999: falls after works.yaml's last work
+      (1987) so doesn't move the dark-run number, but real and
+      well-sourced (BNP's own 1999 site + RTP Arquivos)."
+  newFranchiseEvents:
+    - >
+      New content/franchises/almeida-garrett/events.yaml (none existed):
+      two Frei Luís de Sousa screen adaptations, 1950 (António Lopes
+      Ribeiro) and 2001 ("Quem És Tu?", João Botelho, made per the
+      director's stated purpose for students with the play as set
+      reading). organisation/illustration_type/images_required left unset.
+  auraDensity: "8 lifeEvents/0 franchise events, dark run 133 yrs -> 15 lifeEvents/2 franchise events, dark run 45 yrs (1905-1949)"
+forStages:
+  art-rotation: >
+    The 1966 Panteão and 1954 centenary entries read as full-bleed-vista or
+    artifact-spread candidates (monument, ceremony), not graded here.
+openQuestions:
+  - >
+    Worst run (45 yrs, 1905-1949) was searched specifically (First
+    Republic/early Estado Novo reception, curriculum, stamps, Pessoa's own
+    opinion) and came up thin: Pessoa owned and signed a copy of Garrett's
+    Lyrica (Casa Fernando Pessoa's own library catalogue) but that's
+    ownership, not a reading - held out under the aura bar. Genuinely
+    under-documented in what was checked, not unsearched; a future pass
+    needs Portuguese periodical archives (Hemeroteca Digital de Lisboa) for
+    this window specifically.
+  - >
+    Manual scan past the tool's single reported number found five smaller
+    flagged gaps still open: 1824-1831, 1842-1850 (both inside an
+    already-dense active-life stretch, read as genuinely quiet),
+    1855-1893, 1895-1902, 1955-1965, 1967-1986. None force-filled. A future
+    pass could target 1855-1893 or 1967-1986 specifically.
+  - "validate.py's one error (no theme.art) remains the expected pre-visual-language state."

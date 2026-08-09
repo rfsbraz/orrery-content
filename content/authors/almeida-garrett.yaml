@@ -10,8 +10,9 @@
 #
 # SPINE. Cross-checked against Portuguese and English Wikipedia's "Almeida
 # Garrett" articles - the two substantially agree on the outline (birth,
-# exiles, marriage, the Liberal Wars, the ennoblement, death) with one
-# specific disagreement recorded below (the monarch who ennobled him).
+# exiles, marriage, the Liberal Wars, the ennoblement, death), with two
+# disagreements resolved against a third, independent source below (the
+# ennoblement's date/monarch pairing, and where he is actually buried).
 # English Wikipedia's own article is a redirect target for several of his
 # individual works (e.g. "Viagens na Minha Terra" resolves to this same
 # page), so its infobox "notable works" line - Viagens na Minha Terra,
@@ -19,24 +20,47 @@
 # about which three works are his hinge works (see `featured` on those
 # entries in works.yaml).
 #
-# THE ENNOBLEMENT DATE/MONARCH DISCREPANCY. Portuguese Wikipedia's
-# "Resumo Biográfico" section dates his viscountcy to a decree "do Rei D.
-# Pedro V de Portugal, datado de 25 de junho de 1851." This cannot be
-# correct as written: Pedro V did not become king until his mother's death
-# on 15 November 1853, so he could not have signed a decree in 1851. English
-# Wikipedia states plainly that he "was ennobled by Dona Maria II of
-# Portugal in 1852" (Maria II reigned until 1853), which is also consistent
-# with his brief tenure as Foreign Affairs minister in 1852 under her
-# government. This entry follows the internally consistent claim (Maria II,
-# 1852) and flags the Portuguese article's monarch/date as an apparent
-# error rather than a second real fact to reconcile.
+# THE ENNOBLEMENT DATE/MONARCH, RESOLVED. Portuguese Wikipedia's "Resumo
+# Biográfico" section already had the right date - a decree "datado de 25
+# de junho de 1851" - but pairs it with the wrong monarch, "o Rei D. Pedro
+# V de Portugal": Pedro V did not become king until his mother's death on
+# 15 November 1853, so he could not have signed anything in 1851. English
+# Wikipedia has the right monarch but the wrong year ("ennobled by Dona
+# Maria II of Portugal in 1852"). The Biblioteca Nacional de Portugal's own
+# 1999 bicentenary day-by-day chronology (purl.pt/96/1/bio/bio_07.html)
+# independently settles it: under its "1851" entry, in a run of June-dated
+# events, "a 25, agraciado com o título de visconde" - the same 25 June
+# date as the Portuguese article, placed under Maria II's reign (she ruled
+# until November 1853, so no other monarch fits). The correct pair is Maria II
+# and 25 June 1851; his brief Foreign Affairs ministry followed the next
+# year, 1852, under the same queen - the two events are eight-plus months
+# apart, not one.
 #
 # DEATH CAUSE. Portuguese Wikipedia specifies "cancro do fígado" (liver
-# cancer); English Wikipedia says only "cancer," corroborated by its own
-# "Deaths from cancer in Portugal" category. The liver-specific claim rests
-# on the Portuguese article alone, so `bio` states the general "cancer" and
-# keeps the liver detail here as a single-sourced addition rather than
-# folding it in as settled.
+# cancer); English Wikipedia says only "cancer." The BNP's own chronology
+# corroborates the specific claim independently: its 1854 entry records him
+# dying "vítima de cancro generalizado com origem hepática" (generalised
+# cancer of hepatic origin), citing Gomes de Amorim's contemporary account.
+# Two independent sources now agree on the liver origin, so `bio` states it
+# directly rather than holding it back as single-sourced.
+#
+# BURIAL AND THE NATIONAL PANTHEON, CORRECTED. English Wikipedia's article
+# (still, as read) says his remains rest at the Mosteiro dos Jerónimos "near
+# to those of Alexandre Herculano and Luís Vaz de Camões" - true only for
+# 1903-1966. Portuguese Wikipedia's own prose and reference list, the
+# Panteão Nacional's own article (its 1966 history timeline and its tombs
+# table alike), and the Panteão Nacional's own official site
+# (panteaonacional.gov.pt/homenageados/almeida-garrett) agree: he was moved
+# from the Cemitério dos Prazeres to the Mosteiro dos Jerónimos on 3 May
+# 1903, then moved AGAIN, solemnly and with five other honourees, between
+# 1 and 5 December 1966, to the newly-completed Panteão Nacional at the
+# Igreja de Santa Engrácia - where he rests today. Herculano is not part of
+# that second move: he was transferred to Jerónimos only in 1978 (per
+# Portuguese Wikipedia's own Herculano article), so the two men were never
+# actually reburied together at either site. `bio` and the death lifeEvent
+# below now follow the three-source version; the 1966 move gets its own
+# lifeEvent since it is a dated, sourced, posthumous event in its own
+# right, not just a coda to 1854.
 id: almeida-garrett
 name: Almeida Garrett
 aka:
@@ -74,16 +98,19 @@ bio: >
   died in 1841 after the birth of their daughter Maria Adelaide, whose
   illegitimacy under Portuguese law directly inspired
   [[work:almeida-garrett/frei-luis-de-sousa|Frei Luís de Sousa]] (1844).
-  Ennobled 1st Viscount of Almeida Garrett by Queen Maria II in 1852 (see
-  this file's own header note on a Portuguese-language source's apparent
-  error over which monarch), he served a few months that year as Minister
-  of Foreign Affairs. His last completed book of poems,
+  Ennobled 1st Viscount of Almeida Garrett by Queen Maria II on 25 June
+  1851 (see this file's own header note resolving the date/monarch pairing
+  against the Biblioteca Nacional's own chronology), he served a few
+  months the following year, 1852, as Minister of Foreign Affairs. His
+  last completed book of poems,
   [[work:almeida-garrett/folhas-caidas|Folhas Caídas]] (1853), was written
   for Rosa de Montúfar, a Spanish noblewoman who became his companion late
-  in life. Died of cancer in Lisbon on 9 December 1854; buried at the
-  Cemitério dos Prazeres, his remains were moved in 1903 to the Jerónimos
-  Monastery, where they rest near those of Alexandre Herculano and Luís de
-  Camões.
+  in life. Died of generalised cancer of hepatic origin in Lisbon on 9
+  December 1854; buried at the Cemitério dos Prazeres, his remains were
+  moved in 1903 to the Mosteiro dos Jerónimos, then moved again in
+  December 1966 to the newly-completed Panteão Nacional at the Igreja de
+  Santa Engrácia, where they rest today (see this file's own header note
+  on the correction).
 pseudonyms:
   - name: "F. E."
     note: >
@@ -121,6 +148,26 @@ lifeEvents:
     sources:
       - https://pt.wikipedia.org/wiki/Almeida_Garrett
       - https://en.wikipedia.org/wiki/Almeida_Garrett
+
+  - id: almeida-garrett-hino-patriotico-1820
+    date: 1820-08-24
+    title: Writes his first published work the week of a real revolution
+    impact: med
+    description: >
+      A twenty-one-year-old law student at Coimbra, Garrett heard the news
+      of the 24 August 1820 Liberal Revolution in Porto and, within days,
+      had written the lyrics for a
+      [[work:almeida-garrett/hino-patriotico|Hino Patriótico]]: printed as
+      a leaflet in Porto almost immediately and sung publicly at the
+      Teatro de São João on the 27th, set to music by J. A. Ribas. It was
+      not a private literary debut but an immediate, performed response to
+      a live political event - a pattern that would recur across his
+      career, from the 1821 prosecution below to the years he spent
+      fighting, not just writing, for the Liberal cause.
+    spoilerAfter: null
+    sources:
+      - "https://purl.pt/96/1/bio/bio_02.html"
+      - https://pt.wikipedia.org/wiki/Almeida_Garrett
 
   - id: almeida-garrett-retrato-de-venus-trial-1821
     date: 1821
@@ -219,42 +266,179 @@ lifeEvents:
       - https://pt.wikipedia.org/wiki/Almeida_Garrett
       - https://en.wikipedia.org/wiki/Almeida_Garrett
 
-  - id: almeida-garrett-viscount-and-foreign-minister-1852
-    date: 1852
+  - id: almeida-garrett-viscount-1851
+    date: 1851-06-25
+    dateRange: "1851-1852"
     title: Ennobled Viscount, and briefly Minister of Foreign Affairs
     impact: med
     description: >
-      Ennobled 1st Viscount of Almeida Garrett by Queen Maria II in 1852
-      (see this file's own header note on a Portuguese-language source's
-      apparent error naming a different, chronologically impossible
-      monarch), he served a few months that same year as Minister and
-      Secretary of State of Foreign Affairs in the cabinet of the Duke of
-      Saldanha, from 4 March to 17 August. His last completed book,
-      [[work:almeida-garrett/folhas-caidas|Folhas Caídas]] (1853), was
-      written in these final years for Rosa de Montúfar, a Spanish
-      noblewoman who became his companion late in life.
+      Ennobled 1st Viscount of Almeida Garrett by Queen Maria II on 25 June
+      1851 (see this file's own header note resolving the date and monarch
+      against the Biblioteca Nacional's own chronology, which corrects both
+      Wikipedia articles), he served a few months the following year, from
+      4 March to 17 August 1852, as Minister and Secretary of State of
+      Foreign Affairs in the cabinet of the Duke of Saldanha. His last
+      completed book, [[work:almeida-garrett/folhas-caidas|Folhas Caídas]]
+      (1853), was written in these final years for Rosa de Montúfar, a
+      Spanish noblewoman who became his companion late in life.
     spoilerAfter: null
     sources:
+      - "https://purl.pt/96/1/bio/bio_07.html"
       - https://pt.wikipedia.org/wiki/Almeida_Garrett
       - https://en.wikipedia.org/wiki/Almeida_Garrett
 
   - id: almeida-garrett-death-1854
     date: 1854-12-09
-    title: Dies in Lisbon, later reburied among Camões and Herculano
+    title: Dies in Lisbon, buried at the Prazeres
     impact: high
     description: >
-      Died of cancer at his home in Lisbon's Campo de Ourique on 9 December
-      1854, aged fifty-five. Buried at the Cemitério dos Prazeres; on 3 May
-      1903 his remains were moved to the Jerónimos Monastery's national
-      pantheon, where they rest today near those of Alexandre Herculano,
-      his comrade from the Siege of Porto, and Luís de Camões, the poet
-      whose name he had given his own first Romantic poem thirty years
-      earlier.
+      Died of generalised cancer of hepatic origin at his home in Lisbon's
+      Campo de Ourique on 9 December 1854, aged fifty-five, and was buried
+      at the Cemitério dos Prazeres. His remains did not stay there: see
+      the 1903 and 1966 lifeEvents below for where they actually rest
+      today, and this file's own header note for a correction to the
+      received story about it.
+    spoilerAfter: null
+    sources:
+      - "https://purl.pt/96/1/bio/bio_07.html"
+      - https://pt.wikipedia.org/wiki/Almeida_Garrett
+      - https://en.wikipedia.org/wiki/Almeida_Garrett
+
+  - id: almeida-garrett-jeronimos-transfer-1903
+    date: 1903-05-03
+    title: Remains moved to the Mosteiro dos Jerónimos
+    impact: low
+    description: >
+      Half a century after his death, Garrett's remains were moved from
+      the Cemitério dos Prazeres to the Mosteiro dos Jerónimos on 3 May
+      1903 - not their final stop (see 1966 below), but their first move
+      into a building already carrying the informal weight of a national
+      pantheon, alongside the tombs of Vasco da Gama and Luís de Camões,
+      the poet whose name Garrett had given his own first Romantic poem
+      eighty years earlier.
     spoilerAfter: null
     sources:
       - https://pt.wikipedia.org/wiki/Almeida_Garrett
       - https://en.wikipedia.org/wiki/Almeida_Garrett
+
+  - id: almeida-garrett-panteao-nacional-1966
+    date: 1966-12-01
+    title: Moved again, to the Panteão Nacional he had once helped propose
+    impact: med
+    description: >
+      In 1836, pushing for a national theatre in the same weeks (see
+      above), Garrett had also been, with Passos Manuel, one of the
+      promoters of the very idea of a Portuguese national pantheon - the
+      decree creating one is dated 26 September 1836, two days before his
+      own theatre proposal. It took until 1966 for the Igreja de Santa
+      Engrácia, under construction on and off since 1682, to actually open
+      as that pantheon: between 1 and 5 December 1966, his remains were
+      moved there from the Mosteiro dos Jerónimos in a solemn ceremony
+      alongside those of Guerra Junqueiro, João de Deus, Óscar Carmona,
+      Sidónio Pais and Teófilo Braga (who had, as it happens, edited
+      Garrett's own posthumous collected works six decades earlier - see
+      1904 below). He rests there today, not at Jerónimos: English
+      Wikipedia's claim that he lies "near to Alexandre Herculano and Luís
+      Vaz de Camões" describes the 1903-1966 window only, and Herculano
+      himself was not moved to Jerónimos until 1978, so the two comrades
+      from the Siege of Porto were in fact never buried together at either
+      site.
+    spoilerAfter: null
+    sources:
+      - "https://www.panteaonacional.gov.pt/homenageados/almeida-garrett"
+      - "https://pt.wikipedia.org/wiki/Pante%C3%A3o_Nacional"
+      - https://pt.wikipedia.org/wiki/Almeida_Garrett
+
+  - id: almeida-garrett-teofilo-braga-obras-completas-1904
+    date: 1904
+    title: Teófilo Braga edits the popular edition that shaped the shelf
+    impact: low
+    description: >
+      Fifty years after Garrett's death, historian and critic Teófilo
+      Braga - within seven years of becoming the first President of the
+      Portuguese Republic - prefaced, revised and directed a two-volume
+      "Grande Edição Popular, Illustrada" of Garrett's complete works,
+      published in Lisbon by H. Antunes. Aimed at a broad readership rather
+      than a scholarly one, it was the edition through which most
+      twentieth-century Portuguese readers actually met the bulk of his
+      output, prose and verse together.
+    spoilerAfter: null
+    sources:
+      - "https://archive.org/details/obrascompletasde02alme"
+      - "https://catalog.hathitrust.org/Record/006106707"
+
+  - id: almeida-garrett-neogarrettismo-1894
+    date: 1894
+    title: Becomes the founding myth of a literary revival he never saw
+    impact: med
+    description: >
+      Forty years after his death, and four years after the humiliating
+      1890 British Ultimatum shook Portuguese national confidence, critic
+      Alberto de Oliveira published the essay collection Palavras Loucas,
+      programmatically naming and launching "Neogarrettismo": a revivalist
+      call, explicitly invoking Garrett (one piece is titled "O Tio
+      Garrett" - "Uncle Garrett") as a totemic guardian of authentic
+      Portuguese culture, urging poets to rediscover the rural, the
+      popular and the historical - the exact material of Garrett's own
+      [[work:almeida-garrett/romanceiro-e-cancioneiro-geral|Romanceiro e
+      Cancioneiro Geral]] and
+      [[work:almeida-garrett/viagens-na-minha-terra|Viagens na Minha
+      Terra]]. The movement drew in poets of the "geração de 90" - António
+      Nobre, Guerra Junqueiro, Afonso Lopes Vieira, Manuel da Silva Gaio -
+      and, per Eça de Queirós's own phrase for its goal in a letter to
+      Oliveira Martins, sought to "reaportuguesar Portugal."
+    spoilerAfter: null
+    sources:
+      - "https://www.infopedia.pt/artigos/$neogarrettismo-e-neorromantismo"
+      - "https://www.infopedia.pt/artigos/$palavras-loucas"
+      - "https://www.infopedia.pt/dicionarios/lingua-portuguesa/neogarrettismo"
+      - https://pt.wikipedia.org/wiki/Neogarrettismo
+
+  - id: almeida-garrett-death-centenary-1954
+    date: 1954-11-11
+    title: The death centenary turns into a bronze statue and a poetry prize
+    impact: med
+    description: >
+      A century after his death, Porto marked the centenary with a bronze
+      monument by sculptor Salvador Barata Feyo, unveiled 11 November 1954
+      in front of the city council on what is now Praça General Humberto
+      Delgado. The Ateneu Comercial do Porto, the writer's native-city
+      cultural institution, ran the occasion further: it created the
+      Prémio Almeida Garrett poetry prize for the centenary, with entrants
+      including Sofia de Mello Breyner and José Carlos Ary dos Santos and
+      the prize itself won by Miguel Torga, the whole competition later
+      anthologised by critic João Gaspar Simões.
+    spoilerAfter: null
+    sources:
+      - "https://pt.wikipedia.org/wiki/Monumento_Almeida_Garrett"
+      - "http://web.archive.org/web/20260112230016/https://ateneucomercialporto.pt/2025/01/19/almeida-garrett-o-portuense-e-o-ateneu-comercial/"
+      - "https://books.google.com/books/about/Antologia_do_Pr%C3%A9mio_Almeida_Garrett_de.html?id=zvhNHQAACAAJ"
+
+  - id: almeida-garrett-bicentenary-1999
+    date: 1999
+    title: The bicentenary turns the national library into his archive
+    impact: low
+    description: >
+      For the bicentenary of his birth, the Biblioteca Nacional de Portugal
+      coordinated a nationwide programme - an international congress, a
+      bibliographic and iconographic exhibition that toured Coimbra, Porto
+      and Lisbon, school activities, a dedicated issue of the Revista da
+      Biblioteca Nacional, and further exhibitions at Porto's Ateneu
+      Comercial and the Museu Romântico. On Portuguese public television,
+      historian José Hermano Saraiva marked the same anniversary with the
+      documentary "O Romantismo de Garrett" (RTP2, 14 November 1999),
+      built around a visit to the Biblioteca Nacional's own exhibitions.
+    spoilerAfter: null
+    sources:
+      - "https://purl.pt/96/1/programa/garrett04.html"
+      - "https://arquivos.rtp.pt/conteudos/o-romantismo-de-garrett/"
 sources:
   - https://pt.wikipedia.org/wiki/Almeida_Garrett
   - https://en.wikipedia.org/wiki/Almeida_Garrett
   - https://en.wikipedia.org/wiki/Alexandre_Herculano
+  - "https://pt.wikipedia.org/wiki/Alexandre_Herculano"
+  - "https://purl.pt/96/1/bio/bio_02.html"
+  - "https://purl.pt/96/1/bio/bio_07.html"
+  - "https://purl.pt/96/1/programa/garrett04.html"
+  - "https://www.panteaonacional.gov.pt/homenageados/almeida-garrett"
+  - "https://pt.wikipedia.org/wiki/Pante%C3%A3o_Nacional"
