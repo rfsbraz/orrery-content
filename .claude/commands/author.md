@@ -163,6 +163,16 @@ needs the final order set to point at), **`spoiler-audit` and
 `organisation`, visual-metadata the portrait) - so art-rotation runs before the
 artefact group, never in parallel with it. Never pair any of these.
 
+**A post-wing-audit follow-up that adds or changes an event is not exempt from
+this table.** On the Luís de Camões build, an audit-fixes pass added three
+franchise events and set `organisation`/`illustration_type`/`images_required`
+on all three itself - outside its own footprint, and wrong: it broke both a
+neighbour-repeat and the pacing contour, and cost a full second dispatched
+agent (~100k tokens) to re-grade. Any stage or follow-up pass that adds an
+event either leaves those four fields unset for a fresh `art-rotation` pass, or
+runs `art_rotation.py --check <slug>` itself before calling the work done -
+the same obligation the scheduled stage already carries.
+
 ## Model and effort per stage
 
 Set these on the `Agent` call. **Skill frontmatter carries no model field and
