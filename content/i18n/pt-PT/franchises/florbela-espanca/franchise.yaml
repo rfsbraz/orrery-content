@@ -1,0 +1,47 @@
+# Português europeu (pt-PT) - sobreposição de prosa curada.
+# Traduz-se apenas prosa. Nunca ids, slugs, nomes de autor, títulos de obra
+# (já são portugueses) nem URLs de fontes.
+#
+# As listas encaixadas fundem-se item a item pelo id (ver SCHEMA.md, "Nested
+# lists merge by id"), pelo que os percursos de startHere trazem apenas o id e a
+# prosa, nunca a estrutura (workIds, orderId, fit).
+
+- id: florbela-espanca
+  description: >
+    A poetisa portuguesa mais conhecida do início do século XX: três
+    coletâneas de sonetos de voz cada vez mais aberta, erótica e
+    confessional, escritas contra a reserva esperada de uma mulher poeta na
+    década de 1920 em Portugal, a última delas,
+    [[work:florbela-espanca/charneca-em-flor|Charneca em Flor]], chegada às
+    livrarias semanas depois de morrer por suicídio, no seu próprio
+    trigésimo sexto aniversário.
+  startHere:
+    paths:
+      - id: the-sonnets
+        title: Os três livros de sonetos
+        description: >
+          Os seus sonetos, a espinha dorsal desta estante: Livro de Mágoas,
+          Livro de Sóror Saudade e Charneca em Flor, lidos pela ordem em que
+          os escreveu. A voz percorre a mágoa e a saudade de uma jovem
+          estudante de Direito, passa pela renúncia ao mundo de uma freira de
+          convento, e chega ao renascimento aberto e sensual do último livro
+          que deu por terminado.
+        note: >
+          O custo é o material póstumo que fica de fora: os dois livros de
+          contos, as cartas, o diário e o caderno de poemas de juventude -
+          tudo real e dela, mas moldado para a publicação por outros depois
+          da sua morte, não por ela própria.
+      - id: everything
+        title: Tudo, por ordem
+        description: >
+          As nove obras por ordem de publicação: primeiro os três livros de
+          sonetos que ela viu terminados ou quase terminados, depois os
+          contos, as cartas, o diário e o caderno de poemas de juventude que
+          uma série de editores reuniu e publicou ao longo das seis décadas
+          seguintes à sua morte.
+        note: >
+          O custo é exatamente o que o percurso dos sonetos evita: a prosa
+          póstuma fica lado a lado com os livros que ela própria preparou,
+          sem nada aqui a assinalar quais as páginas que ela escolheu
+          publicar e quais um editor escolheu por ela - só a nota de cada
+          obra faz essa distinção.
