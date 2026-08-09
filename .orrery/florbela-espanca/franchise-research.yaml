@@ -1,0 +1,79 @@
+stage: franchise-research
+summary: >
+  Scaffolded the Florbela Espanca wing from scratch: franchise.yaml,
+  works.yaml (8 works), the global author entity, theme.yaml (palette +
+  displayFace + signature only, no art). eras.yaml is a sourced empty list.
+  No events.yaml, orders.yaml, editions.yaml, achievements.yaml. validate.py
+  --slug florbela-espanca is clean (one expected warning: no theme.art).
+produced:
+  newWorkIds:
+    - florbela-espanca/livro-de-magoas
+    - florbela-espanca/livro-de-soror-saudade
+    - florbela-espanca/charneca-em-flor
+    - florbela-espanca/as-mascaras-do-destino
+    - florbela-espanca/juvenilia
+    - florbela-espanca/cartas
+    - florbela-espanca/diario-do-ultimo-ano
+    - florbela-espanca/o-domino-preto
+  correctedFromIssue:
+    - "Issue #107 says 'born 1894-12-08 Lisbon'. She was born in Vila
+      Viçosa, Alentejo (all sources agree). Fixed on the author entity."
+  rejected:
+    - "Trocando Olhares (archival manuscript notebook, BN Lisboa): never
+      assembled/offered by her; its poems already ship inside Livro de
+      Mágoas / Livro de Sóror Saudade. Possible 9th work if
+      completeness-auditor judges its 1994/2009 scholarly editions earn one."
+    - "Pre-1919 abandoned working titles (O livro d'ele, Minha Terra, O Meu
+      Amor, Alma de Portugal, Primeiros Passos, Claustro das Quimeras): none
+      a separate published or lost work. Reasoning in works.yaml's header."
+    - "Two periodical items ('Vão orgulho', 'Nostalgia', both Jan 1931):
+      left out as uncatalogued stray appearances; not settled whether
+      uncollected or already reprinted in one of the 8 works."
+forStages:
+  completeness-auditor: >
+    Verify the 8-work spine against a primary/critical source (used only
+    Univ. Évora's bibliography page + the DGLB bio). Settle the 3 rejected
+    items above. As Máscaras do Destino's 8-story list rests on one
+    secondary source (Goodreads), worth a second check.
+  press-archaeology: >
+    lifeEvents: [] is deliberate (theme.yaml has no art block; validate.py
+    errors on real lifeEvents with no visual law). The bio prose already
+    holds 4 sourced anchors ready to become lifeEvents: birth (Vila Viçosa,
+    NOT Lisbon), the 1921 divorce, brother Apeles's 1927 plane-crash death,
+    her 1930-12-08 suicide. Two things need real (not just formatting) work:
+    (1) the Pessoa "irmã gémea" claim is sourced only to secondary
+    Portuguese cultural-press coverage, never traced to a primary edition of
+    Pessoa's papers or dated - do not add without that; (2) Charneca em
+    Flor's editorial-authorship note (in works.yaml) rests on two Wikipedia
+    articles citing Dal Farra's critical edition secondhand - reading that
+    edition (or Pazos Alonso's Obras Completas) directly would firm up
+    where Battelli's 28 added sonnets actually came from.
+  eras: >
+    eras.yaml is [] with one candidate boundary considered and rejected
+    (brother's 1927 death periodises the short stories, not the poetry -
+    Charneca em Flor's manuscript predates it). Not an exhaustive pass;
+    José Carlos Seabra Pereira's critical prefaces (Obras Completas /
+    Obras de Florbela Espanca) are the likely place to check for a settled
+    periodisation this scaffold didn't find.
+  event-resonance: >
+    No globalEvents block at all. Two candidates checked and left unruled:
+    WWI (1914-1918, no source ties her work to it) and the start of
+    Portuguese press censorship (28 May 1926).
+  visual-language: >
+    Palette/displayFace/signature set (ground: burnt heath, one wine-rose
+    bloom, from her own "Sob as urzes queimadas nascem rosas"); `art` is
+    absent on purpose - compose only once the work list and aura are final.
+openQuestions:
+  - "Correction to issue #107: she was born in Vila Viçosa, not Lisbon."
+  - "Charneca em Flor carries this wing's one featured:true (cap 3). Ruling:
+    it is the collection every source calls most acclaimed/autobiographical
+    and the one that frames her death; Livro de Mágoas (the debut) was
+    considered and left unfeatured as the weaker claim."
+  - "As Máscaras do Destino tiered extended (real, dedicated, apparently
+    self-prepared); O Dominó Preto tiered apocrypha (her own manuscript note
+    calls it 'Tolices!', unsigned, undated, abandoned mid-project). A
+    judgement call from the sourcing found, not a settled consensus."
+  - "Cartas and Diário do Último Ano both tiered apocrypha (posthumously
+    assembled, not authored for publication), following this catalogue's
+    existing Luís de Camões letters precedent. No source argues against it,
+    but it wasn't a settled question anywhere checked either."

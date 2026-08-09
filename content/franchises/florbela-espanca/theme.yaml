@@ -1,0 +1,66 @@
+# Branding for the Florbela Espanca wing (see docs/SCHEMA.md#themeyaml).
+# PALETTE + displayFace + signature ONLY - `theme.art` is left entirely
+# absent, to be composed once the bibliography and any eras have stopped
+# moving. A visual law written any earlier is discovery done blind: on the
+# Fernando Pessoa wing, an early art block covered barely a third of the
+# eventual bibliography and had to be rewritten from scratch.
+#
+# Checked against every existing wing's palette (python scripts/theme_digest.py)
+# before choosing, including this catalogue's eight other Lusophone wings:
+# almeida-garrett (gaslit theatre amber), eca-de-queiros (violet-mauve
+# parlour), fernando-pessoa (teal-green typographer's desk), joao-tordo
+# (Atlantic blue-grey), jose-luis-peixoto (wheat-gold sunbaked Alentejo
+# plains), jose-rodrigues-dos-santos (cardinal-red newsroom), jose-saramago
+# (basalt black + carmine) and valter-hugo-mae (umber terracotta). Espanca
+# is also an Alentejo author (born Vila Viçosa, raised there and in Évora),
+# which jose-luis-peixoto's wing already claims with a sunbaked golden
+# register - this wing deliberately does not repeat that ground, and grounds
+# itself instead in her own most-quoted image rather than the region in
+# general.
+#
+# GROUND. Her own recurring figure, named in the sonnet that gives
+# [[work:florbela-espanca/charneca-em-flor|Charneca em Flor]] its title:
+# "Sob as urzes queimadas nascem rosas" (under the burnt heather, roses are
+# born) - urze (heather/heath scrub) that grows wild and low across the
+# Alentejo, its small flowers a dusty wine-pink, set against ground scorched
+# black. A single bloom breaking through char, not a sunlit plain: this
+# wing's palette is that contrast held close, dark ground and one warm
+# rose-wine accent, rather than Peixoto's wide sunbaked daylight.
+preset: charred-heath-bloom
+palette:
+  bg: "#150c11"        # near-black, purple-leaning burnt umber - scorched
+                       # heath rather than jose-saramago's cooler volcanic
+                       # basalt (#141311) or eca-de-queiros's wine-maroon
+                       # parlour (#160e12)
+  surface: "#201319"   # a shade lifted, for cards
+  ink: "#f0dfe1"        # warm pale rose-cream, for maximum readability
+  muted: "#9c7e86"      # dusty mauve-brown for metadata
+  accent: "#9c2f4a"     # a deep wine-rose, the single bloom breaking
+                       # through burnt heath - kept darker and more wine-red
+                       # than this catalogue's brighter pinks (lee-child's
+                       # hitchhiker-noir #c62f57, robert-bryndza's harbour
+                       # #c4587a) and further from its several oranges and
+                       # reds (stephen-king #b04a34, jose-rodrigues-dos-santos
+                       # #b23327, jk-rowling #a1392b) that a scorched-ground
+                       # concept could easily have drifted toward instead
+displayFace: fraunces  # from the app's implemented set (fraunces | spectral
+                       # | sourceSerif | instrument-serif); fraunces's warm
+                       # old-style register suits a poet working entirely
+                       # in the classical sonnet form, and is shared with
+                       # this catalogue's other two closest-in-register
+                       # Lusophone wings (eca-de-queiros, jose-saramago)
+                       # rather than reaching for novelty in a four-value set
+signature: filament    # from the app's implemented set (beam | thread |
+                       # rule | filament | none); a single lit thread
+                       # running the length of the wing, for the one
+                       # recurring image (the urze, scorched then blooming)
+                       # that runs unbroken from her first book to her last
+                       # - picked over the catalogue's much more common
+                       # beam (9 wings already) for exactly that thread
+                       # quality rather than a bold accent rail
+notes: >
+  A scorched heath with one bloom breaking through, not a sunlit Alentejo
+  plain (already this catalogue's jose-luis-peixoto) and not a drawing-room
+  or newsroom register. Personality through palette plus one display face
+  plus one signature, readability first, no genre costume; both displayFace
+  and signature are drawn only from the app's currently implemented sets.
