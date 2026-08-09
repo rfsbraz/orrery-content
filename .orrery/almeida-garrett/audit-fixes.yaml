@@ -1,0 +1,84 @@
+stage: audit-fixes
+summary: >
+  Narrow follow-up to wing-audit.yaml's three routed findings that named a
+  concrete next action rather than a scope question. All three closed;
+  validate.py and i18n_coverage.py unchanged apart from the intended diff.
+
+fixed:
+  - id: frei-luis-cover-is-a-thumbnail
+    what: >
+      Replaced works.yaml's frei-luis-de-sousa cover. Fetched OpenLibrary
+      work record OL1241700W.json directly: it lists three cover ids, not
+      the single one wing-audit inspected. 3904404 (shipped) confirmed
+      still a 128x210, 4 KB thumbnail with no larger filename at any size
+      suffix. 6501960 (up to 305x500 as served) is archive.org item
+      freiluizdesouzes00alme, whose own Dublin Core title reads "Frei Luiz
+      de Souze; A sobrinha do marquez" - a two-work Obras Completas Vol.
+      XIV omnibus (confirmed by viewing it: "THEATRO / VOLUME VI / Frei
+      Luiz de Souza / A Sobrinha do Marquez"), rejected under the rule that
+      already excludes OL1241715W elsewhere in this file. 647508 (333x500,
+      matching the wing's other ~300x500 covers) is real, single-work,
+      non-omnibus: viewed, it is a 2005 Luso-Brazilian Books "Classicos da
+      Literatura Portuguesa" edition (ISBN 9780850515107), confirmed
+      against Amazon's own listing as a 116-page standalone Frei Luís de
+      Sousa. Shipped this cover and rewrote the credit comment to state
+      what was checked, replacing the "1993 Instituto da Biblioteca
+      Nacional e do Livro" credit that no longer matched the served image
+      anyway.
+    editionsNote: >
+      Not added to editions.yaml - out of this task's scope (works.yaml's
+      cover field only) and a separate curatorial call (new edition entry,
+      market, ISBN coverage table).
+  - id: pseudonym-notes-render-in-english-on-the-pt-pt-page
+    what: >
+      Added a pseudonyms block to content/i18n/pt-PT/authors/almeida-garrett.yaml,
+      following the one existing precedent in the catalogue
+      (content/i18n/pt-PT/authors/gabriel-garcia-marquez.yaml, which documents
+      why the field is translated even though i18n_coverage.py does not
+      count it). Three entries, matched by name to the base file's F. E.,
+      Múcio Cévola and Josino Duriense, genuine pt-PT editorial prose (not
+      mechanical), register checked against the rest of the wing's overlay
+      (aio, domínio filipino, etc.). i18n_coverage.py re-run: still
+      363/379, almeida-garrett in neither MISSING nor PARTIAL, unchanged -
+      confirms the routed tooling finding (i18n-coverage-does-not-walk-pseudonyms)
+      still stands and is out of this task's scope (script change).
+  - id: proclamacoes-academicos-held-out-on-contradictory-grounds
+    what: >
+      Fetched https://pt.wikipedia.org/wiki/Almeida_Garrett directly
+      (scripts/fetch.py --save) and read the raw section structure, not a
+      rendered summary. Confirmed: "Proclamações Académicos, Coimbra, 1820,
+      folhetos" is the first entry of section 13, "Artigos, ensaios,
+      biografias e folhetos" - the exact section discursos-memorias-e-opusculos-politicos'
+      own note already cites for its enumeration and for "Aos Mortos no
+      Campo da Honra de Madrid". Section 9, "Publicações periódicas", holds
+      only "Memórias de uma África sofrida" (1830) - confirms that
+      exclusion holds separately and correctly, as wing-audit found.
+      completeness-auditor's "closer to the periodicals rule" reasoning
+      does not match pt-wiki's own sectioning. Added "Proclamações
+      Académicos (1820)" to the bundle's note enumeration, matching the
+      list's plain "Title (Year[, note])" citation style, and trimmed it
+      from the note's trailing "further pamphlets" sentence since it is no
+      longer one of the un-enumerated ones (only "Aos Mortos no Campo da
+      Honra de Madrid" remains there).
+    bnpCheck: >
+      PORBASE's own search UI is session/JS-gated (403 on a bare query URL);
+      no stable catalogue permalink for this specific title surfaced.
+      Opened directly instead (pdftotext on the actual PDF, not a
+      search-result summary): a scholarly citation
+      (cidp.pt/revistas/ridb/2013/05/2013_05_03521_03579.pdf) footnoting
+      "Proclamações Académicas [nos 1, 2, 4]", O Patriota (Coimbra), 67
+      (15/12/1820) - consistent with completeness-auditor's "reproduced in
+      a periodical" without contradicting pt-wiki's classification of the
+      item as a folheto grouped with the bundle (issued as a pamphlet, also
+      reprinted in a periodical, is not the same as being a periodical
+      piece). Not added to the note: it would deviate from the
+      enumeration's plain citation style.
+    heldOut: >
+      Did not change discursos-memorias-e-opusculos-politicos' `published`
+      field (1821). wing-audit's own finding and curatorsCall list pair the
+      enumeration addition with "moving that entry's published from 1821 to
+      1820" as one combined curatorial question; this task's instructions
+      asked only for the note addition. Flagging here rather than deciding
+      it: the bundle's note now lists an item a year earlier than the
+      work's own `published` value, which is the curator's call, not
+      resolved by this pass.
