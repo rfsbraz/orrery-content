@@ -20,8 +20,16 @@
 # received signal this file follows for `featured`, capped at three by the
 # validator) and, for the two most-read works individually, their own
 # dedicated Portuguese Wikipedia articles (Viagens na Minha Terra; Frei Luís
-# de Sousa, the play). Infopédia (infopedia.pt) returned HTTP 403/404 on
-# every URL pattern tried and was not reachable as a source.
+# de Sousa, the play; O Alfageme de Santarém). Infopédia (infopedia.pt) is
+# reachable with a `$`-prefixed path (`/$almeida-garrett`, not the
+# `/apoio/...` patterns that 403/404) and its own Garrett biography is used
+# below, alongside the Biblioteca Nacional de Portugal's dedicated 1999
+# Bicentenário bio-bibliography (purl.pt/96/1/bio/), a day-by-day
+# chronology and edition-by-edition bibliography more granular than either
+# Wikipedia article, and the source for five minor works below (a hymn, two
+# occasional poems, a leaflet poem and a posthumous farce) that Portuguese
+# Wikipedia's own bibliography names but its higher-level "Cronologia das
+# obras" milestone list does not.
 #
 # WHAT COUNTS AS A WORK HERE, AND WHAT DOES NOT. Garrett founded and directed
 # several periodicals across his career (O Toucador, O Português, O
@@ -77,6 +85,47 @@
 # lists every constituent title and date to work from.
 
 # --- Poetry ---
+
+- id: almeida-garrett/hino-patriotico
+  title: "Hino Patriótico"
+  authorIds: [almeida-garrett]
+  published: 1820
+  subseries: null
+  canonTier: extended
+  format: poem
+  synopsis: >
+    A patriotic hymn written on news of the 24 August 1820 Liberal Revolution
+    in Porto, printed as a leaflet in the city within days and sung at the
+    Teatro de São João on the 27th with music by J. A. Ribas - Garrett's
+    first published work, a year before
+    [[work:almeida-garrett/o-retrato-de-venus|O Retrato de Vénus]] and Catão
+    brought him his first real notice.
+  note: >
+    Absent from Portuguese Wikipedia's own "Cronologia das obras" milestone
+    list despite appearing in its detailed bibliography; the Biblioteca
+    Nacional de Portugal's dedicated bicentenary bio-bibliography (cited
+    below) gives the fuller performance and print context.
+  sources:
+    - https://pt.wikipedia.org/wiki/Almeida_Garrett
+    - https://purl.pt/96/1/bio/bio_02.html
+    - https://purl.pt/96/1/bio/bibliografia01.html
+
+- id: almeida-garrett/ao-corpo-academico
+  title: "Ao Corpo Académico"
+  authorIds: [almeida-garrett]
+  published: 1821
+  subseries: null
+  canonTier: apocrypha
+  format: poem
+  synopsis: >
+    A poem printed in a multi-author collection of verse recited at the
+    University of Coimbra's Sala dos Actos Grandes in 1821 - one of several
+    short occasional pieces from Garrett's Coimbra years, recovered and
+    reprinted by Martins de Carvalho in the newspaper O Conimbricense in
+    1874.
+  sources:
+    - https://pt.wikipedia.org/wiki/Almeida_Garrett
+    - https://purl.pt/96/1/bio/bibliografia01.html
 
 - id: almeida-garrett/o-retrato-de-venus
   title: "O Retrato de Vénus"
@@ -166,6 +215,23 @@
     - https://pt.wikipedia.org/wiki/Almeida_Garrett
     - https://en.wikipedia.org/wiki/Almeida_Garrett
 
+- id: almeida-garrett/lealdade-ou-a-vitoria-da-terceira
+  title: "Lealdade, ou a Vitória da Terceira"
+  authorIds: [almeida-garrett]
+  published: 1829
+  subseries: null
+  canonTier: extended
+  format: poem
+  synopsis: >
+    A song published as a leaflet in London in 1829, the same year as
+    [[work:almeida-garrett/lirica-de-joao-minimo|Lírica de João Mínimo]],
+    honouring the Liberal resistance on Terceira - the Azorean island where
+    Garrett's own family had taken refuge from the second French invasion in
+    1809 and that anchored the Liberal cause through his exile years.
+  sources:
+    - https://pt.wikipedia.org/wiki/Almeida_Garrett
+    - https://purl.pt/96/1/bio/bibliografia01.html
+
 - id: almeida-garrett/miragaia
   title: "Miragaia"
   authorIds: [almeida-garrett]
@@ -174,11 +240,33 @@
   canonTier: extended
   format: poem
   synopsis: >
-    A shorter poem published in Lisbon in 1844, between
-    [[work:almeida-garrett/flores-sem-fruto|Flores sem Fruto]] and
-    [[work:almeida-garrett/folhas-caidas|Folhas Caídas]].
+    A shorter poem published in Lisbon in 1844, the year before
+    [[work:almeida-garrett/flores-sem-fruto|Flores sem Fruto]] and nearly a
+    decade before [[work:almeida-garrett/folhas-caidas|Folhas Caídas]].
   sources:
     - https://pt.wikipedia.org/wiki/Almeida_Garrett
+
+- id: almeida-garrett/os-exilados-a-senhora-rossi-caccia
+  title: "Os Exilados, À Senhora Rossi Caccia"
+  authorIds: [almeida-garrett]
+  published: 1845
+  subseries: null
+  canonTier: apocrypha
+  format: poem
+  synopsis: >
+    A poem written for a charity ball raising funds for political exiles,
+    first published anonymously on 31 March 1845 in the newspaper Revolução
+    de Setembro (as "A Madame Rossi Caccia") and the same day as its own
+    leaflet, honouring the singer Rossi-Caccia who performed at the event.
+  note: >
+    Later folded into expanded editions of
+    [[work:almeida-garrett/folhas-caidas|Folhas Caídas]]; its own leaflet and
+    newspaper printing, eight years earlier, is the first publication
+    recorded here.
+  sources:
+    - https://pt.wikipedia.org/wiki/Almeida_Garrett
+    - https://purl.pt/96/1/bio/bibliografia01.html
+    - https://purl.pt/96/1/bio/bio_06.html
 
 - id: almeida-garrett/flores-sem-fruto
   title: "Flores sem Fruto"
@@ -282,12 +370,19 @@
     written in the same theatre-building years as
     [[work:almeida-garrett/um-auto-de-gil-vicente|Um Auto de Gil Vicente]].
   note: >
-    Portuguese Wikipedia's detailed bibliography dates the first edition
-    1842; its separate "Cronologia das obras" milestone list gives 1841,
-    noting some sources place it there instead. Both years are recorded
-    here rather than silently picking one.
+    1842 is corroborated by three independent sources: Portuguese
+    Wikipedia's own detailed bibliography, its dedicated article on the play
+    itself (infobox "Lançamento 1842," sourced to Infopédia), and Infopédia's
+    own Garrett biography. The "1841" that appears in Portuguese Wikipedia's
+    separate "Cronologia das obras" milestone list, hedged there as "1842
+    segundo algumas fontes," names the year the play was staged at the
+    Teatro Nacional da Rua dos Condes rather than the year it was printed -
+    the same premiere/print gap already recorded on
+    [[work:almeida-garrett/frei-luis-de-sousa|Frei Luís de Sousa]] below.
   sources:
     - https://pt.wikipedia.org/wiki/Almeida_Garrett
+    - https://pt.wikipedia.org/wiki/O_Alfageme_de_Santar%C3%A9m
+    - https://www.infopedia.pt/$almeida-garrett
 
 - id: almeida-garrett/frei-luis-de-sousa
   title: "Frei Luís de Sousa"
@@ -450,6 +545,28 @@
     future pass to split out if any is judged load-bearing on its own.
   sources:
     - https://pt.wikipedia.org/wiki/Almeida_Garrett
+
+- id: almeida-garrett/entremez-dos-velhos-namorados
+  title: "Entremez dos Velhos Namorados que Ficaram Logrados, Bem Logrados"
+  authorIds: [almeida-garrett]
+  published: 1954
+  subseries: null
+  canonTier: apocrypha
+  format: play
+  synopsis: >
+    A comic one-act interlude written in 1841, the same year as
+    [[work:almeida-garrett/o-alfageme-de-santarem|O Alfageme de
+    Santarém]], and not published until 1954, a century after Garrett's
+    death - recovered by Damien Saunal for his critical edition of
+    previously unpublished Garrett texts.
+  note: >
+    Distinct from the Coimbra-Azores-Sintra juvenilia grouped in
+    [[work:almeida-garrett/teatro-de-juventude-inedito|Teatro de juventude
+    inédito]]: written when Garrett was forty-two, not as a teenager, so it
+    stands as its own entry rather than joining that group.
+  sources:
+    - https://pt.wikipedia.org/wiki/Almeida_Garrett
+    - https://purl.pt/96/1/bio/bibliografia04.html
 
 # --- Prose fiction ---
 
