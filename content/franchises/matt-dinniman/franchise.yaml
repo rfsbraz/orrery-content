@@ -55,10 +55,20 @@ startHere:
         experience: [new, returning]
         commitment: [arc]
 
-# globalEvents left unruled (no `include`/`exclude` at all): no shared event
-# reaching this author's writing decades (the early 2000s and 2019-present)
-# has been weighed against his shelf yet, so nothing here should be read as
-# "considered and refused" the way jim-butcher's exclude list is.
+globalEvents:
+  include:
+    - fantasy-paperback-boom-1965  # Created the mass-market fantasy category his LitRPG series depends on
+    - online-bookselling-1995  # Amazon's direct-to-reader channel enabled the self-publishing path he chose for Dungeon Crawler Carl
+    - ebook-and-self-publishing-2007  # Kindle and Amazon KDP created the exact platform he used to self-publish Dungeon Crawler Carl in 2020
+    - covid-19-pandemic-2020  # Shut down the pet-show circuit in March 2020, eliminating his income and compelling him to finalize and publish Dungeon Crawler Carl in September 2020
+  exclude:
+    - sept-11-2001  # No published work engages with the event or its cultural aftermath
+    - financial-crisis-2008  # Lived through it as a working artist but no published work addresses it
+    - chain-bookshop-1982  # His self-publishing path emerged independent of the physical bookshop retail model
+    - satanic-verses-fatwa-1989  # Published before his career began; had no bearing on his work
+    - prestige-fantasy-adaptation-2011  # While Game of Thrones normalized fantasy adaptation, his published books predate this shift and their content does not engage with it
+    - booktok-2020  # Dungeon Crawler Carl found its audience through Royal Road serialization and Amazon self-publishing (2019-2020), not through BookTok
+    - portugal-bailout-2011  # An American author living in the US; this European economic event had no bearing on his work
 
 sources:
   - https://en.wikipedia.org/wiki/Matt_Dinniman

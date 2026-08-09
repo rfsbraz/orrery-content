@@ -1,0 +1,38 @@
+# event-resonance handoff for matt-dinniman
+# Completed 2026-08-09
+
+include:
+  - fantasy-paperback-boom-1965  # Created the mass-market fantasy category his LitRPG series depends on
+  - online-bookselling-1995  # Amazon's direct-to-reader channel enabled the self-publishing path he chose for Dungeon Crawler Carl
+  - ebook-and-self-publishing-2007  # Kindle and Amazon KDP created the exact platform he used to self-publish Dungeon Crawler Carl in 2020
+  - covid-19-pandemic-2020  # Shut down the pet-show circuit in March 2020, eliminating his income and compelling him to finalize and publish Dungeon Crawler Carl in September 2020
+
+exclude:
+  - sept-11-2001  # No published work engages with the event or its cultural aftermath
+  - financial-crisis-2008  # Lived through it as a working artist but no published work addresses it
+  - chain-bookshop-1982  # His self-publishing path emerged independent of the physical bookshop retail model
+  - satanic-verses-fatwa-1989  # Published before his career began; had no bearing on his work
+  - prestige-fantasy-adaptation-2011  # While Game of Thrones normalized fantasy adaptation, his published books predate this shift and their content does not engage with it
+  - booktok-2020  # Dungeon Crawler Carl found its audience through Royal Road serialization and Amazon self-publishing (2019-2020), not through BookTok
+  - portugal-bailout-2011  # An American author living in the US; this European economic event had no bearing on his work
+
+leftToDefault: []
+
+reasoning:
+  strongest: >
+    The COVID-19 pandemic (March 2020) is the strongest, most specific resonance case in the whole catalogue for this author. His own biography and lifeEvents document an explicit causal chain: the pandemic shut down the pet-show circuit that was his primary income, forcing him to finalize and self-publish Dungeon Crawler Carl in September 2020. This is not "he lived through it"—this is "the event directly caused the creation of his breakthrough work."
+
+  infrastructure:
+    The three infrastructure events (fantasy-paperback-boom-1965, online-bookselling-1995, ebook-and-self-publishing-2007) all created conditions his work depends on. Fantasy paperback boom created the genre category. Online bookselling created the Amazon sales channel. Kindle and KDP created the self-publishing infrastructure. All three are inherited conditions that made his career path possible; all three are specific enough to justify inclusion.
+
+  exclusions:
+    sept-11-2001 and financial-crisis-2008 are excluded per the skill's guidance on weak global events—he lived through both as a working artist, but no published work engages with them. prestige-fantasy-adaptation-2011 is excluded because while it normalized fantasy TV, his books predate this cultural shift and their content does not speak to it; the TV deal came as an adaptation of already-successful work, not as a factor shaping the books themselves. booktok-2020 came too late—his book found its initial audience through Royal Road serialization and Amazon KDP, not through BookTok. The American-specific exclusions (chain-bookshop-1982 because he bypassed that retail model; portugal-bailout-2011 because he was never affected; satanic-verses-fatwa-1989 because it predated his career) are clear on their face.
+
+aura:
+  before: 0.45 entries per work; 14-year dark run (2003-2016)
+  after: 0.65 entries per work; 9-year dark run (2008-2016)
+  note: Aura density improved significantly. A dark run persists (2008-2016), but this stretch falls between his early works and the breakthrough. This is a candidate for press-archaeology if future curation finds franchise-specific events that can illuminate it.
+
+pressArchaeology:
+  - window: 2008-2016
+    note: A 9-year stretch with no aura. Dinniman published The Grinding and Dominion of Blades during this period (2010s/2017-2018), but no franchise-specific or global events currently light them. If these works have documented cultural or life context (reviews, interviews, correspondence), press-archaeology may uncover franchise-specific events that belong in events.yaml rather than the global layer.
