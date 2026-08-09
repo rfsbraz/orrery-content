@@ -1,0 +1,73 @@
+# Branding for the Almeida Garrett wing (see docs/SCHEMA.md#themeyaml).
+# Non-art fields only - `theme.art` is left out entirely, to be composed
+# later against the finished bibliography and eras rather than against a
+# first-draft spine that has not stopped moving yet.
+#
+# Checked against every existing wing's palette (python scripts/theme_digest.py)
+# before choosing, including this catalogue's seven other Lusophone wings:
+# eca-de-queiros (violet-mauve parlour), fernando-pessoa (teal-green,
+# typographer's desk), joao-tordo (Atlantic blue-grey), jose-luis-peixoto
+# (wheat-gold, sunbaked), jose-rodrigues-dos-santos (cardinal-red newsroom),
+# jose-saramago (basalt black + carmine) and valter-hugo-mae (umber
+# terracotta). None grounds itself in the stage; Garrett is the one Lusophone
+# author in this catalogue who built one - literally lobbied for and won the
+# Conservatório de Arte Dramática and the theatre now called Teatro Nacional
+# D. Maria II - and wrote a third of his own bibliography for it, so this
+# wing draws on that fact directly rather than on the drawing-room, coastal
+# or newsroom registers the other seven already hold.
+#
+# GROUND. A gaslit proscenium stage, not a text on a page: the deep,
+# near-black red-brown of a theatre interior once the house lights are down,
+# with a single warm accent standing for the gaslight footlights his own
+# theatre would have used (gas lighting reached Lisbon's Teatro D. Maria II
+# in the 1840s, the same years Garrett was writing for it). Distinct from
+# jose-saramago's harder, geological "volcanic basalt + carmine" (an
+# exposed, outdoor register) and from eca-de-queiros's violet-leaning parlour
+# mauveine - this ground is warmer, browner and indoor-theatrical rather
+# than either drawing-room or landscape.
+preset: proscenium-gaslight
+palette:
+  bg: "#170f0b"        # near-black warm brown-red, a darkened house/backstage,
+                       # not jose-saramago's cooler black-basalt (#141311) or
+                       # eca-de-queiros's wine-maroon parlour (#160e12)
+  surface: "#221712"   # a shade lifted, for cards
+  ink: "#efe3cf"       # warm playbill-cream, for maximum readability
+  muted: "#9c8468"     # dulled parchment-brown for metadata (AA-checked:
+                       # 4.86:1 on surface, 5.35:1 on bg)
+  accent: "#c07a2e"    # a tarnished brass-gaslight amber for the footlights -
+                       # deliberately duller and browner than this
+                       # catalogue's brighter theatrical/adventure golds
+                       # (terry-pratchett's warm-vellum #d9a441, jrr-tolkien's
+                       # scholar's-desk brass #8f6a2e, jose-luis-peixoto's
+                       # sunbaked #c2952a) and further still from its several
+                       # reds (jose-saramago #8a1f24, jose-rodrigues-dos-santos
+                       # #b23327, jk-rowling #a1392b) that a stage-lighting
+                       # concept could easily have drifted toward instead
+displayFace: instrument-serif  # from the app's implemented set (fraunces |
+                       # spectral | sourceSerif | instrument-serif); used
+                       # elsewhere in this catalogue only by terry-pratchett,
+                       # and not yet by any Lusophone wing. Chosen for its
+                       # high-contrast, engraved-broadside letterforms - the
+                       # actual display-type register of a 19th-century
+                       # playbill or political pamphlet, which is literally
+                       # what a large share of this wing's own bibliography
+                       # is (theatre bills, exile broadsides, parliamentary
+                       # pamphlets) - rather than fraunces's warmer
+                       # old-style register (already carried by three other
+                       # Lusophone wings) or spectral's cooler modern one
+                       # (already carried by two)
+signature: beam        # from the app's implemented set (beam | thread | rule
+                       # | filament | none); a spotlight/footlight beam for
+                       # the one Lusophone author in this catalogue who
+                       # built the stage his own plays were lit on. Used
+                       # nine times elsewhere in the catalogue but never yet
+                       # paired with instrument-serif, and never on a
+                       # Lusophone wing (which cluster instead on thread and
+                       # rule) - picked here for the strength of the fit to
+                       # this specific author over novelty for its own sake
+notes: >
+  A gaslit stage rather than a drawing room, a landscape or a newsroom - the
+  one Lusophone wing in this catalogue grounded in the theatre its own
+  author built. Personality through palette plus one display face plus one
+  signature, readability first, no genre costume; both displayFace and
+  signature are drawn only from the app's currently implemented sets.
