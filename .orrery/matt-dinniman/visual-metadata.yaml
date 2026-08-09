@@ -1,0 +1,99 @@
+stage: visual-metadata
+summary: >
+  Portrait found (Commons/WikiPortraits, CC BY 4.0). Covers: 13/20 works,
+  all Open Library, all fetched with ?default=false and looked at. 8/8
+  Dungeon Crawler Carl novels covered; 4 of those 8 needed a substitution
+  because Open Library's record for the correct Ace ISBN carries the
+  wrong (self-published) jacket image - a real, repeated Open Library data
+  error on this wing, documented per-work in works.yaml.
+coverage:
+  worksTotal: 20
+  worksWithCover: 13
+  fraction: "13/20"
+portrait:
+  found: true
+  url: "https://upload.wikimedia.org/wikipedia/commons/6/6f/Matt_Dinniman_at_San_Diego_Comic_Con_2026-1.jpg"
+  credit: "Kevin Paul / WikiPortraits, CC BY 4.0"
+  source: "https://commons.wikimedia.org/wiki/File:Matt_Dinniman_at_San_Diego_Comic_Con_2026-1.jpg"
+  foundVia: >
+    Wikidata P18 on Q134731703 (not the English Wikipedia infobox, which
+    carries no image) - a WikiPortraits photo from San Diego Comic-Con
+    2026. Personality-rights flagged on Commons, the ordinary caveat for a
+    living subject; editorial use on his own author page is the intended
+    case.
+  rejected: >
+    Did not find or use anything from mattdinniman.com (no /press or
+    /media page exists, both 404), Penguin Random House's own author page
+    (404), or the Arthur C. Clarke Award shortlist announcement (no
+    dedicated author photography with press terms located). Commons/
+    Wikidata resolved it before those became necessary.
+sourceBreakdown:
+  openLibrary: 13
+  commons: 1 (portrait)
+licenceBreakdown:
+  "Open Library (publisher jacket, no separate licence statement required by OL's own hotlinking terms)": 13
+  "CC BY 4.0 (Commons)": 1
+rejectedOnRightsGrounds: []
+mismatchedOpenLibraryCovers:
+  summary: >
+    Real, repeated finding on this wing, not a one-off: for 4 of the 6
+    Ace-reissued DCC volumes with a distinct redesigned jacket (carls-
+    doomsday-scenario, the-dungeon-anarchists-cookbook, the-butchers-
+    masquerade, the-eye-of-the-bedlam-bride), Open Library's edition
+    record for the correct Ace ISBN carries the original self-published
+    jacket image instead of the Ace pop-art redesign - confirmed by
+    fetching the publisher's own product photography (via a collector's-
+    guide site cataloguing every edition by ISBN) and comparing pixel
+    content, not just checking that the ISBN/date matched. The other two
+    Ace-redesigned volumes (dungeon-crawler-carl, the-gate-of-the-feral-
+    gods) and both later Ace-direct volumes (this-inevitable-ruin, a-
+    parade-of-horribles) DO carry the correct art on Open Library. No
+    edition of the 4 mismatched works carries the Ace art anywhere on
+    Open Library (checked every edition on each work record, including
+    Audible and French Lorestone editions) - not a search miss, a real
+    upload gap. Substituted each with that same book's own real, cleanly
+    licensed self-published/independently-published cover instead of
+    leaving it bare or using the wrong jacket. Comments on each work in
+    works.yaml carry the specifics and ISBNs.
+  affectedWorks:
+    - matt-dinniman/carls-doomsday-scenario
+    - matt-dinniman/the-dungeon-anarchists-cookbook
+    - matt-dinniman/the-butchers-masquerade
+    - matt-dinniman/the-eye-of-the-bedlam-bride
+  alsoNote: >
+    operation-bounce-house has a related but milder issue: Open Library's
+    cover for the Ace ISBN (9780593820308) carries a "Random House Large
+    Print" badge baked into the image though the edition is marked
+    Hardcover. Used the Penguin Random House UK edition's clean copy of
+    the same art instead.
+bareSlots:
+  - id: matt-dinniman/backstage-at-the-pineapple-cabaret
+    reason: >
+      Published only as backmatter fragments inside the Ace hardcovers,
+      never as its own book; no standalone Open Library record.
+  - id: matt-dinniman/every-grain-of-sand
+    reason: >
+      Open Library has only the original 2003 omnibus "The Shivered Sky"
+      (cover id 955981); the 2020 three-volume split has no per-volume
+      record, so there is no cover specific to this book rather than the
+      combined original novel.
+  - id: matt-dinniman/in-the-city-of-demons
+    reason: "Same as every-grain-of-sand."
+  - id: matt-dinniman/the-great-devouring-darkness
+    reason: "Same as every-grain-of-sand."
+  - id: matt-dinniman/the-grinding
+    reason: >
+      Open Library's only two editions (Dandy House 2023, and the 2014
+      German translation) carry no cover image at all.
+  - id: matt-dinniman/apocalypse
+    reason: "Uncollected short story, no standalone book edition."
+  - id: matt-dinniman/the-last-yong-shi
+    reason: "Uncollected short story, no standalone book edition."
+forStages:
+  wing-audit: >
+    13/20 covers, 1/1 portrait. The 4 mismatched-Ace-cover substitutions
+    and the operation-bounce-house badge substitution are load-bearing
+    findings, not just gap-filling - worth a second look if Open Library's
+    data changes later (the correct Ace art could get uploaded and should
+    replace the self-pub fallback then).
+openQuestions: []
