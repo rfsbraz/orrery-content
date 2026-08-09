@@ -1,0 +1,101 @@
+stage: art-rotation-fix
+summary: >
+  Two changes to content/authors/florbela-espanca.yaml's lifeEvents. (1)
+  Fixed born-1894: illustration_type establishing-landscape violated this
+  wing's own visual law (art.atmosphere bars "open country seen from a
+  distance"; art.avoid bars wide Alentejo plains at landscape scale by
+  name) - changed to place-portrait, organisation kept at beside. (2)
+  Graded the 4 lifeEvents a prior pass added with no organisation set:
+  lisbon-law-1917, paternity-edict-1948, pessoa-poem-found-1985,
+  trocando-olhares-1994. Contour went from before "====#===" (3 of the 4
+  new events defaulting to beside, repeating their beside neighbours; the
+  4th repeated its own neighbour too) to after "====#.==" - 0
+  organisation-rotation problems, 0 pacing problems, across all 8 events.
+  validate.py --slug florbela-espanca: 0 errors (2 pre-existing unrelated
+  handoff-length warnings only).
+produced:
+  bornFix:
+    id: florbela-espanca-born-1894
+    organisation: beside
+    illustration_type: place-portrait
+    why: >
+      A close, oblique view of one place in Vila Viçosa (a wall, a
+      courtyard) reads as "grounded in a specific place" the way an
+      ordinary opening beat should, without the horizon establishing-
+      landscape mandates (PROMPT-MODULES.md) and this wing's atmosphere
+      explicitly forbids. place-portrait over the audit's other candidate,
+      atmospheric-motif-field: that type's own essence ("a low-information
+      tone layer for gates/overlays") is built for immersion/passage/
+      chapter-gate, not a standalone beside card about a specific
+      childhood place. organisation stays beside; nothing about the
+      defect was in the layout, only the subject.
+  gradedLifeEvents:
+    - id: florbela-espanca-lisbon-law-1917
+      organisation: diptych
+      illustration_type: place-portrait
+      images_required: 2
+      why: >
+        theme.art.motifs names this exact pairing - "two terrains held in
+        tension - whitewashed low Alentejo walls... against Lisbon's
+        lamplit stone streets and law-school corridors." The event is
+        that pairing at a single date: the Vila Viçosa marriage left
+        behind (private) against the law faculty entered, one of few
+        women admitted (public) - diptych's own stated use is "genuine
+        before/after... private then public."
+    - id: florbela-espanca-paternity-edict-1948
+      organisation: marginalia
+      illustration_type: emblem-seal
+      why: >
+        impact: low, a civil-registry footnote filed 18 years after her
+        death - marginalia's own use ("minor honours... small contextual
+        details") names exactly this register. emblem-seal over
+        isolated-object (marginalia's only other holding): an official
+        municipal edict is closer to a seal/stamp than a generic object.
+    - id: florbela-espanca-pessoa-poem-found-1985
+      organisation: artifact-spread
+      illustration_type: document-facsimile
+      why: >
+        A scholar's find in an archive is the page itself, not a scene -
+        artifact-spread's stated use ("court record, publication proof.
+        Evidence") fits a manuscript find as much as it fits a court
+        judgment. document-facsimile draws the typewritten poem, not
+        either poet - no likeness of Florbela ships anywhere on this
+        wing, and Pessoa is not hers to draw.
+    - id: florbela-espanca-trocando-olhares-1994
+      organisation: medallion
+      illustration_type: book-object
+      why: >
+        The critical edition arriving in her centenary year is a legacy/
+        remembrance beat (medallion's stated use), not further evidence -
+        artifact-spread already carries the wing's two document moments
+        (the divorce judgment, the Pessoa-papers find) and a third would
+        flatten the distinction between "proof" and "honour." book-object
+        closes the wing on the physical volume itself.
+  contour:
+    before: "====#=== (4 new events ungraded, defaulting to beside; 3
+      organisation-rotation problems: 3 beside repeats against neighbours)"
+    after: "====#.== (0 organisation-rotation problems, 0 pacing problems,
+      across all 8 events)"
+verification:
+  art_rotation_check: >
+    Before: organisation types beside 5/8 62%, artifact-spread 1/8,
+    medallion 1/8, immersion 1/8; 3 organisation-rotation problems (each a
+    beside repeating its neighbour); contour "====#===". After:
+    artifact-spread 2/8 25%, medallion 2/8 25%, beside 1/8 12%, diptych
+    1/8 12%, immersion 1/8 12%, marginalia 1/8 12%; "organisation rotation
+    holds across all 8 events: no organisation over its cap, no neighbour
+    repeats"; contour "====#.=="; "pacing holds: no two loud cells
+    touching or sharing a screenful, no plateau." The composition axis
+    still reports 8 assets with no GitHub issue and keeps the script's
+    exit code at 1 - the expected, un-owned third axis per the skill.
+  validate: "0 errors for --slug florbela-espanca (2 pre-existing
+    handoff-length warnings, both on other stages' files, unrelated)"
+forStages:
+  asset-prompt: >
+    All 8 lifeEvents are graded and ready for prompt-writing. The
+    lisbon-law-1917 diptych needs two prompts, one per panel (place-
+    portrait, Vila Viçosa then Lisbon) - never one image describing both.
+    No likeness of Florbela, her husbands, or her brother anywhere on this
+    wing; pessoa-poem-found-1985's document-facsimile draws the
+    typewritten page, not either poet.
+openQuestions: []
