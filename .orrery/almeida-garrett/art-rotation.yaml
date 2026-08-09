@@ -1,0 +1,89 @@
+stage: art-rotation
+summary: >
+  Graded all 18 event sketches (16 author lifeEvents + 2 franchise events;
+  the 2 era plates were already chapter-gate by construction from the
+  eras.yaml stage and untouched here) onto organisation/illustration_type/
+  images_required/modifier. Fixed the flat-wing failure the wing shipped
+  with: all 18 defaulted to beside (18/18, over the then-cap), 17 neighbour
+  repeats, and an 18-cell mid plateau. art_rotation.py --check almeida-garrett
+  now reports 0 organisation-rotation problems and 0 pacing problems;
+  validate.py --slug almeida-garrett stays OK (0 errors, only pre-existing
+  works-outside-eras warnings the eras.yaml stage already flagged as
+  deliberate).
+produced:
+  distribution: >
+    beside 4 (22%), full-bleed-vista 3 (16%), artifact-spread 3 (16%),
+    immersion 2 (11%, at its 1-2 cap), medallion 2 (11%), diptych 1 (5%),
+    marginalia 1 (5%), floating-object 1 (5%), layered-stack 1 (5%). No
+    organisation over cap, no neighbour repeats.
+  contour: "#===#=#==#=.===#==  (loud at the 1799 birth, the 1832 Liberal Wars, both deaths - Adelaide 1841 and Garrett 1854, the 1966 Panteão reburial; one quiet beat at the 1903 Jerónimos waypoint)"
+  contentFitCalls:
+    - >
+      immersion spent on exactly the wing's two deaths and nothing else:
+      Adelaide Deville Pastor's 1841 death (portrait-of-absence - she is
+      shown by what she left, never a generated likeness of a real person,
+      and the loss that directly produced Frei Luís de Sousa) and Garrett's
+      own 1854 death (symbolic-still-life, not repeating Adelaide's type).
+      Both are the immersion cap (2); no third rupture competes with them.
+    - >
+      Three artifact-spread/document-facsimile entries (the 1821 Retrato de
+      Vénus prosecution, the 1836 national-theatre founding decree, the 1843
+      household/legitimation record) read as repetition on paper but are
+      each a real, distinct document in Garrett's own paper trail - a court
+      record, a founding decree, a civil legitimation - not a convenience
+      reach. The 1836 pick doubles as a content-fit link to visual-language's
+      dip-pen/straightedge-for-institutional-subjects finding: a founding
+      decree drawn in that register carries the institutional-subject brief
+      more directly than a peopled theatre scene would.
+    - >
+      The 1832 Liberal Wars (Landing of Mindelo, Siege of Porto - real
+      combat, impact: high) is full-bleed-vista rather than immersion.
+      impact: high already renders it as a rupture card at greater scale
+      regardless of organisation (VISUAL.md §4-impact), so organisation was
+      free to be judged on fit alone, and reserving immersion for the two
+      deaths only (not every high-impact entry) keeps the total stop meaning
+      something. This full-bleed-vista also sits right before the 1841
+      immersion; the intervening 1836 artifact-spread was chosen partly to
+      buy enough viewport share that the two loud cells don't land in the
+      same screenful (checked against VIEWPORT_SHARE in art_rotation.py, not
+      guessed).
+    - >
+      The 1966 Panteão Nacional reburial got full-bleed-vista with
+      illustration_type journey-transit rather than establishing-landscape -
+      it closes a 130-year thread (Garrett co-proposed the pantheon in 1836,
+      two days before his own theatre proposal; his remains arrive there in
+      1966 via two moves, 1903 then 1966) and journey-transit's "movement
+      between places, biographical" is literally what the event is.
+    - >
+      The 1851 viscount ennoblement and 1954 death centenary both use
+      medallion/emblem-seal (a heraldic seal for the title; a
+      commemorative-medal reading for the centenary prize) rather than any
+      organisation that would imply a generated likeness of Garrett himself
+      (the centenary's actual bronze statue is a real-world image of him,
+      not something to draw - see VISUAL.md §3).
+    - >
+      The 1903 Jerónimos transfer is the wing's one quiet beat (marginalia,
+      isolated-object) - it is explicitly a waypoint, not the real resting
+      place (that's 1966), and impact: low plus "half a century after his
+      death... not their final stop" in its own description argue for a
+      footnote-scale treatment rather than competing with 1966 for weight.
+forStages:
+  asset-prompt: >
+    All 18 event jobs plus the 2 already-set era plates are unblocked for
+    prompting. Diptych at almeida-garrett-first-exile-writes-camoes-1823
+    needs 2 full prompts (slot 1 and slot 2, England vs France/first
+    Romantic poems), each its own complete image per docs/LAYOUT.md, not one
+    prompt describing both panels. The fold-reveal modifier there and the
+    breakout modifier on almeida-garrett-viscount-1851's medallion are the
+    wing's only two modifiers - deliberately sparse, not a full sweep.
+openQuestions:
+  - >
+    almeida-garrett-founds-national-theatre-1836 as artifact-spread
+    (document-facsimile, the theatre-founding decree) versus a beside/
+    workplace-workshop peopled-theatre scene was a genuine judgement call in
+    both directions; the decree reading was preferred for the institutional-
+    register tie-in to visual-language's dip-pen/straightedge finding, but a
+    later stage that wants a warmer, more peopled register for this entry
+    would not be wrong to revisit it (it would need a different neighbour
+    reshuffle to keep the 1832/1841 loud cells out of one screenful, per
+    art_rotation.py's VIEWPORT_SHARE table - not just a field swap).
