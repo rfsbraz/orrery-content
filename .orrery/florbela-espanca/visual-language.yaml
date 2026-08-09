@@ -1,0 +1,62 @@
+stage: visual-language
+summary: >
+  Wrote theme.yaml's art: block (emblem, motifs, atmosphere, lineCharacter,
+  backgroundTexture, accentUse, avoid) - the last missing piece the palette's
+  own scaffold note flagged as deliberately absent. Grounded every field in
+  the wing's own sourced material (works.yaml synopses/notes, the author bio,
+  eras.yaml's continuous-span ruling) rather than genre or period cliche.
+  Ran theme_digest.py --exclude florbela-espanca and opened
+  jose-luis-peixoto/theme.yaml in full, since both wings are Alentejo-born
+  authors and the palette comment already names that as this wing's real
+  collision risk. Distinctness is pushed into the drawing instructions
+  themselves, not left to palette alone: this wing stays close and
+  body-scaled (a cell, a bedroom, a shoreline path) where Peixoto stays wide
+  and landscape-scaled (flat horizons dwarfing the figure); this wing's line
+  carries two disciplines in one hand (ruled for anything built/codified,
+  free for anything organic/bodily) where Peixoto's line holds one uniform
+  dry pressure throughout; this wing's paper is already-burnt near-black
+  char where Peixoto's is bleached limestone-dust. avoid: names the gothic
+  mourning-shrine/death-cult risk explicitly (real given the suicide, and
+  wrong: her own last book, Charneca em Flor, reads as rebirth and open
+  desire per her own critics), the generic Victorian "sad woman poet"
+  cliche, the Peixoto sunbaked-plains collision, and real-person likeness
+  for Florbela, her three husbands and her brother Apeles.
+produced:
+  changedFields:
+    - florbela-espanca/theme.yaml (added the art block only - palette,
+      preset, displayFace, signature, notes untouched)
+distinctnessSentence: >
+  Where jose-luis-peixoto draws the Alentejo wide, flat and sunbaked with a
+  human figure dwarfed by open horizon and a single uniform dry-graphite
+  line, florbela-espanca draws it close and body-scaled - a cell, a
+  shoreline, a ruled sonnet page an inch from the eye - on already-burnt
+  near-black paper, in a line that switches between straightedge discipline
+  and open-handed feeling within the same drawing, because her subject is
+  the sonnet's fixed form straining against a confessional, physically
+  direct desire, not the land itself.
+verification:
+  asset_audit: "art:yes, life 0/0 (lifeEvents not yet pasted - see forStages)"
+  validate: "0 errors, 0 warnings for --slug florbela-espanca (was 1 warning:
+    'no art: block yet')"
+forStages:
+  art-rotation: >
+    theme.art is now set, so the gate press-archaeology and event-resonance
+    both flagged is clear. Four sourced, dated lifeEvents are drafted and
+    ready to paste verbatim from
+    .orrery/florbela-espanca/press-archaeology.yaml's
+    produced.preparedLifeEvents (born 1894, first divorce 1921, brother
+    Apeles's death 1927, her own death 1930) - organisation/
+    illustration_type/images_required were deliberately left absent there
+    for this stage to grade. Two life events (brother's death, her own
+    death) are impact: high and should read as place/consequence per
+    VISUAL.md §3, never a likeness - this wing's motifs give concrete
+    non-portrait ground for both (open estuary water at dusk for the
+    brother's death in the Tejo; the scorched-heath-blooming image already
+    the wing's own ground, not a deathbed, for hers). Re-run
+    validate.py --slug florbela-espanca after pasting to confirm still
+    clean.
+  visual-metadata: >
+    No portrait or cover constraint from this stage - art.avoid already
+    bars any generated likeness of Florbela, so images.portrait stays a
+    sourced photograph per VISUAL.md §3, not a generated one.
+openQuestions: []
