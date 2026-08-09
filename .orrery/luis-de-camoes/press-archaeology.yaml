@@ -1,0 +1,137 @@
+stage: press-archaeology
+summary: >
+  Aura 4 -> 11 (ratio 0.67 -> 1.83). Added 2 new lifeEvents (Ceuta eye loss,
+  Macau appointment) and enriched a third (the 1570 return, now carrying the
+  Mozambique stranding and the theft of the lost O Parnaso manuscript) on
+  content/authors/luis-de-camoes.yaml. Added 5 franchise events on
+  content/franchises/luis-de-camoes/events.yaml (was empty): Fanshawe's 1655
+  first English translation, the 1867-1880 statue-then-tricentenary arc that
+  built the national myth, the 1932 Rimas edition that overclaimed its own
+  rigor, the 1978 renaming of the death-day holiday away from its Estado Novo
+  framing, and the 2024-2026 state quincentenary. One correction to an
+  existing note: works.yaml's O Parnaso exclusion now records how it was
+  lost (stolen from Camões in Mozambique, per his friend Diogo do Couto's
+  own eyewitness account), and the Rimas note's claim that the 1932 edition
+  worked "back toward the 1595/1598 originals" is corrected - pt.wikipedia's
+  dedicated Rimas article states plainly that edition still leaned on large
+  parts of the corrupted Faria e Sousa text despite its own claim otherwise.
+  Legend-vs-fact discipline held throughout: the shipwreck/Dinamene episode
+  stays exactly as franchise-research left it, prose-only; the Ceuta and
+  Macau additions only cleared the bar once corroboration (a near-contemporary
+  biographer's testimony for Ceuta, an official Parliament biography for
+  Macau) went beyond the single-source starting point.
+produced:
+  newLifeEvents:
+    - camoes-ceuta-eye-1549 (dateRange 1549-1551, med)
+    - camoes-macau-appointment-1562 (dateRange 1562-1565, med)
+  enrichedLifeEvents:
+    - camoes-returns-to-lisbon-1570 (dateRange added 1567-1570, impact
+      med -> high, retitled to name the Mozambique stranding; new detail
+      also folded into the bio prose paragraph, which previously jumped
+      straight from Malacca to the Lisbon return with no Mozambique episode
+      at all)
+  newFranchiseEvents:
+    - luis-de-camoes-fanshawe-1655 (med)
+    - luis-de-camoes-national-myth-1880 (dateRange 1867-1880, high)
+    - luis-de-camoes-rimas-1932-critical-edition (med)
+    - luis-de-camoes-dia-de-portugal-1978 (med)
+    - luis-de-camoes-quincentenary-2024 (dateRange 2024-2026, low)
+  corrections:
+    - works.yaml: O Parnaso de Luís Vaz exclusion note now explains the loss
+      (stolen in Mozambique, 1568-69, per Diogo do Couto's own testimony)
+      instead of stating only that it was "lost."
+    - works.yaml: Rimas note's 1932-edition claim corrected from "working
+      back toward the 1595/1598 originals" to reflect that the edition
+      still leaned on Faria e Sousa's corrupted text despite its own
+      "critical" label and stated intent - sourced to pt.wikipedia's
+      dedicated Rimas article, a source not previously used in this wing.
+  rejected:
+    - "Dia de Camões as a franchise event: yes, it made the cut, but as the
+      1880 tricentenary and the 1978 renaming - the two moments in the
+      holiday's own history that actually change a reading - rather than as
+      a single generic 'here is a national holiday' entry. The 1911/1925/
+      1929/1952/1963 legislative waypoints in between are real (sourced,
+      dated) but are mechanics of a holiday's paperwork, not aura; the two
+      entries kept are the ones with an actual rupture in what the day
+      means."
+    - "El-Rei Seleuco's 1645 emergence, as its own events.yaml entry - real,
+      dated, and interesting (a Craesbeeck printer's dedication, a
+      last-minute transcription, an authorship dispute pointing at Gil
+      Vicente), but it is already carried in full in works.yaml's own note
+      with primary-source citations (Vanda Anastácio's 2005 journal
+      article). A second entry restating the same material would not add
+      anything a reader does not already have; noted explicitly in
+      events.yaml's own header so a later pass does not treat the 1581-1654
+      dark stretch as unexamined."
+    - "Salazar's 1944 coining of the 'Dia da Raça' epithet at the Estádio
+      Nacional do Jamor, and the 1980 IV Centenário (400th anniversary of
+      the death, exhibitions plus a commemorative coin) - both real and
+      dated, both considered as ways to further split the 1656-1866 and
+      1933-1977 dark stretches, both left out. Neither changes a reading on
+      its own beyond what the adjacent 1978 and 1880/1932 entries already
+      say; adding them would have been splitting a number, not adding a
+      fact."
+    - "Ceuta and Macau were franchise-research's two explicitly-flagged
+      candidates for promotion from bio prose to a dated lifeEvent, held
+      back originally only for year uncertainty. Both cleared the bar this
+      run: Ceuta via a near-contemporary biographer (Severim de Faria, born
+      four years after Camões died) whose testimony narrows the fact
+      pattern even though the mechanism (shot vs. friendly-fire artillery)
+      stays genuinely disputed; Macau via convergent official (Parliament)
+      and encyclopedic sourcing on both the year and the post's real title.
+      Both use dateRange rather than a single false-precision date, since
+      the uncertainty is real and the mechanism this exists to model."
+    - "The shipwreck/Dinamene episode was re-checked, not just left alone by
+      default: no new source surfaced that narrows the 1559-1566 range,
+      resolves swam-vs-raft, or settles whether Dinamene was a real person.
+      It stays prose-only exactly as franchise-research left it - the one
+      place in this run where the record still does not clear the bar."
+  aura_density:
+    before: "4 entries, ratio 0.67, worst dark run 431 yrs (1581-2011)"
+    after: "11 entries, ratio 1.83, worst dark run 211 yrs (1656-1866)"
+    fullGapScan: >
+      The tool reports only the single worst run; scanned the whole
+      1572-2011 span by hand (not just the reported window) per this
+      skill's own warning about haruki-murakami. Five stretches clear the
+      5-year flag: 1573-1579 (7), 1581-1654 (74), 1656-1866 (211, the
+      reported worst), 1881-1931 (51), 1933-1977 (45), 1979-2011 (33).
+      1573-1579 sits between the epic's 1572 printing and Camões's own 1580
+      death and is already covered by the adjacent death lifeEvent's own
+      mention of Alcácer-Quibir (1578); the rest are addressed in the
+      corrections/rejected notes above. None of the five remaining
+      stretches is a miss - each was checked and left dark deliberately.
+forStages:
+  eras: >
+    Still empty by design per franchise-research's own header comment; this
+    stage's additions (Ceuta, Macau, the Mozambique enrichment, the five
+    reception events) are dated single moments, not decade-scale creative
+    periods, and don't change that reasoning.
+  visual-language: >
+    theme.art block is still unset (visual-language hasn't run yet). All 7
+    new/changed entries deliberately leave organisation/illustration_type/
+    images_required unset per this skill's own instruction, so art-rotation
+    sees them as genuinely ungraded rather than pre-filled.
+  reading-orders: no change to this wing's translationNote-carries-the-
+    real-question approach; the new 1655 Fanshawe event references it but
+    doesn't replace it.
+  completeness-auditor: >
+    No new works found or proposed this run; press-archaeology only touches
+    lifeEvents, events.yaml and two works.yaml notes (not the bibliography
+    itself).
+openQuestions:
+  - "The 211-year 1656-1866 dark stretch is real and, on the sourcing
+    reachable this run, appears to be a genuinely quiet stretch rather than
+    an unsearched one - but the sourcing here leaned heavily on Portuguese
+    and English Wikipedia plus a handful of institutional pages (Parliament,
+    National Library, Sociedade Portuguesa de Oftalmologia). Infopédia and
+    PORBASE both blocked automated fetches this run, matching the pattern
+    flagged in the completeness-auditor handoff; a human with library access
+    to 18th-century Portuguese literary-history scholarship (the Arcádia
+    Lusitana's use of Camões as a stylistic model against 'gongorismo,'
+    floated but not pursued for lack of a citable source in the time
+    available) might find something this pass could not reach."
+  - "The 1932 Rimas-edition correction rests on one source (pt.wikipedia's
+    dedicated Rimas article) not previously used anywhere in this wing. It
+    is specific and unambiguous ('embora não merecesse o nome'), but a
+    second independent source would strengthen it if a curator wants to
+    push past encyclopedic sourcing on this particular claim."
