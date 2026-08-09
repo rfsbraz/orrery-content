@@ -1,0 +1,101 @@
+stage: eras
+verdict: "none found - `eras: []` confirmed"
+erasWritten: 0
+summary: >
+  Re-ran the whole legitimacy ladder independently. No received periodisation
+  of this career exists in any reachable source. eras.yaml stays `[]`, its
+  comment rewritten from a one-source hedge into a sourced negative finding
+  naming what was checked and why the one real candidate boundary is wrong
+  (source URLs live there). validate --slug matt-dinniman unchanged: one
+  pre-existing theme.art warning, and an empty era list orphans nothing.
+languagesSearched: >
+  English only, which is the whole corpus for him - an American writing in
+  English, US imprint, reviewed in the US/UK genre press. The German and
+  Portuguese editions are trade editions, not a second critical conversation.
+
+ladder:
+  rung1_author: >
+    NONE FOUND. He never names a phase. His own site splits the shelf by
+    series and genre ("The Dungeon Crawler Carl Series" / "Matt's Other
+    Books", tagged Horror, Fantasy, LitRPG...), never chronologically.
+    Grimdark asks directly how his writing changed between The Shivered Sky
+    (2003) and The Eye of the Bedlam Bride (2023); he answers "greatly" and
+    names no period. Same in the Audible, Anime Herald, Popverse, West Sound
+    and Seattle Met interviews. His one dated line is about readership, not
+    the work: "around August 2024 when the Penguin Random House version hit
+    bookstores, and TikTok discovered it" (West Sound).
+  rung2_critical: >
+    NONE FOUND, and chronological-not-periodising across the board, itself
+    the strong negative signal. SF Encyclopedia (Clute, upd. 3 Aug 2026), the
+    reference work most likely to periodise, names the two sequences and no
+    phases; Wikipedia has one undivided "Career" section over a
+    series-grouped bibliography. Laura Miller's Slate essay (7 Feb 2026)
+    covers DCC alone and never mentions the earlier books. Locus reviewed two
+    books at book level (Iglesias 2024; Di Filippo Mar 2026, who opens by
+    saying he had no prior familiarity). Oakland Review of Books (Corley
+    Miller, 24 Jun 2026) is real criticism of the series and the genre, not of
+    a career with parts. PW's "LitRPG Goes Mainstream" (11 Oct 2024) narrates
+    the Ace deal inside a genre survey.
+  rung3_fandom: >
+    NONE FOUND, partly blocked (see refusedSources). No fan term for a phase
+    of the career or of DCC itself; the series is discussed as one continuous
+    escalating arc, the pre-DCC books by series name. The only career division
+    in reachable fan writing is one newsletter's own headings ("The Dinniman
+    Backstory / Early Books / Publishing Timeline", conquerbooks.substack.com)
+    - the skill's "one blogger's scheme", and loose on fact (dates The
+    Grinding to 2007 against a 2013 publication). No independent second use of
+    any term exists, so nothing is settled.
+  rung4_publishing: >
+    REAL FACTS, WRONG FIT - not written. (a) The 2024 Ace acquisition is fully
+    sourced (print-only rights, digital retained, first three books April
+    2024, books 1-6 in all, the imprint's first LitRPG buy, first hardcover 27
+    Aug 2024) and still the wrong line, inverted relative to the Colin Smythe
+    trap: era membership follows first-publication year, all six acquired
+    books were first published 2020-2023, so a 2024 era would hold 4 of 20
+    works and exclude every book the deal was about. Those reissue dates
+    already sit per-work in works.yaml as edition data. (b) Dandy House, his
+    own imprint (SFE checklist), bounds nothing: it starts mid-shelf in 2020,
+    leaves 2003-2019 outside it (The Shivered Sky was Silver Lake Publishing,
+    2003), and has not ended - the digital editions still carry it alongside
+    the Ace print run.
+
+boundaryVerdict: >
+  Reported separately: no boundary here is sourceable. The three candidate
+  lines answer three different questions and land in three different years -
+  the LitRPG turn is 2017 (Dominion of Blades), the serial/COVID pivot is Dec
+  2019-Oct 2020, mass readership is Aug 2024. Each is a real dateable event,
+  none is presented anywhere as the edge of a creative period, and the
+  criterion deciding the year is itself evidence the cut would be ours.
+
+refusedSources: >
+  reddit.com (403 to the fetcher, blocked to the search tool) and four redlib
+  mirrors (all behind Anubis); dungeon-crawler-carl.fandom.com (403);
+  dungeoncrawlercarlwiki.com has no author page (404); beforewegoblog.com and
+  gigharbornow.org (403); the NYT Dec 2025 profile (paywalled, ResetEra
+  reprint 403); DuckDuckGo HTML/lite and Mojeek (captcha/JS gated, so no
+  engine-side reddit trawl either). Blocked is not absent: read rung 3 as
+  "none found in reachable sources". A fandom term settled enough to qualify
+  would leak into the blogs, wikis and press that ARE reachable, and does not.
+
+forStages:
+  press-archaeology: >
+    Two finds outside this stage's footprint. (1) The open birth-date gap has
+    a source: SFE gives "(1975- )" and "born Gig Harbor, Washington?: May
+    1975". Take the year; keep SFE's own question mark on the birthplace, which
+    sits badly against the military-brat childhood and the father retiring to
+    Tucson. (2) Two profiles read in full here carry quotable life-event
+    detail not yet used anywhere: seattlemet.com (11 May 2026) and wsmag.net
+    (17 Jul 2026) - the newspaper obituary desks, the Photoshop lie that
+    started the cat-art career, the six-figure cat-show income, Emerald City
+    Comic Con cancelled under COVID as the trigger.
+  reading-orders: "No eras, so no era-anchored path is available."
+  visual-language: "No era plates to design; theme.art stays the open item."
+  wing-audit: >
+    `eras: []` is the finished state, not a gap - "year N has no era" is not a
+    defect to close here. The file comment records what was checked so a later
+    pass neither re-derives it nor closes it by inventing a period.
+
+openQuestions:
+  - "r/dungeoncrawlercarl and the NYT Dec 2025 profile were unreachable - the
+    only two candidates not ruled out by direct reading. Everything quoted
+    from the NYT elsewhere is narrative rather than periodising."
