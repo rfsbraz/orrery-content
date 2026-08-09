@@ -1,0 +1,87 @@
+stage: wing-audit
+summary: >
+  Six findings, one fixed directly. The wing's four negative findings (no
+  eras, no portrait, zero spoiler gates, 3/6 works without editions) were
+  re-verified from primary artefacts: three hold, the editions one does not.
+  Baseline re-derived: validate.py 0 errors, i18n_coverage full pt-PT, aura
+  11 over 6 works, art_rotation holds, 9 ISBN check digits valid, both
+  covers looked at.
+blocking:
+  - id: ptpt-inline-refs-dropped
+    owner: translation
+    finding: >
+      The pt-PT overlay drops every inline reference. Base carries 8
+      [[work:...]] links in the author bio and lifeEvents and 2 in
+      events.yaml descriptions; the overlay carries 0, so the Portuguese
+      reader gets plain text where the English reader gets ten links to work
+      pages. Every other Lusophone wing carries them through (saramago
+      21/21, peixoto 11/11, joao-tordo 10/10, cervantes 10/10, pessoa
+      15->12, eca 14->12); this one is 8->0. i18n_coverage counts fields,
+      not markup, so it reports full coverage.
+missing:
+  - id: no-birth-event
+    owner: press-archaeology (+ curator)
+    finding: >
+      The timeline opens on Ceuta 1549, at roughly age 25, and the aura
+      layer never names a birthplace. CURATION 6 makes a birth event a
+      floor; validate.py's guard is `if life and born` (line 987), so
+      `born: null` silently disables it on the wings most likely to need it.
+      art-rotation worked around this rather than routing it.
+  - id: dark-run-1656-1866
+    owner: press-archaeology
+    finding: >
+      The 211-year run was declared quiet, but three dated reception moments
+      inside it are already sourced in this wing's own files: Faria e
+      Sousa's 1685 rewritten text (works.yaml calls it the corrupted text
+      that shaped two centuries of reading, and the 1932 event exists to
+      correct it), Mickle's 1776 translation (translationNote calls it long
+      the most read English Lusiadas, while 1655 has an event), and the 1861
+      Juromenha edition. None is in the rejected list, and events.yaml's
+      header names three other stretches as examined, never this one.
+  - id: standalone-filodemo-edition-exists
+    owner: editions
+    finding: >
+      "Filodemo", Livros Cotovia, Lisboa, 2004, ISBN 978-972-795-088-1
+      (check digit verified; records on casadellibro, abebooks, iberlibro,
+      agapea) is a genuine single-play edition, against editions.yaml's
+      claim that no single-work edition of any of the three plays was found
+      in print anywhere checked. Availability needs checking before it
+      ships. Separately, the Caixotim 2005 book is "Teatro completo"
+      (pref./notes/text Vanda Anastacio), a three-play omnibus, so it
+      belongs in the omnibus list, not the unverified-standalone slot.
+stale:
+  - id: portrait-rejection-one-sided
+    owner: visual-metadata (the decision is the curator's)
+    finding: >
+      Every provenance fact in the author-file comment checks out against
+      Wikidata P18 and pt.wikipedia's Retrato a Vermelho article. What the
+      comment omits is the rival position that same article carries: Vasco
+      Graca Moura (Oceanos 1, 1989) calls it the one reliable record of the
+      poet's features taken from life, Vitor Serrao reads the original as a
+      Lusiadas frontispiece study, the copy carries the signature "fernando
+      gomez fez em Lx.a", and the state bought it in 1988 and has held it in
+      the Torre do Tombo since 1991. Related: the Ceuta lifeEvent tells
+      readers the wound shaped his surviving portraiture, naming that same
+      picture, in both languages.
+  - id: unanswered-open-questions
+    owner: press-archaeology / eras / curator
+    finding: >
+      Never answered and invisible in the content: the 1553 departure's
+      sourced Latin quote is an unspent epigraph art-rotation could not take
+      (the schema repurposes `title`); the 1932 Rimas correction rests on
+      one source and is asserted in reader-facing prose in two languages;
+      Britannica refused every fetch, leaving the no-eras negative's one
+      high-value tertiary reference unread; Cartas' 2011 date versus the
+      2024 Madamu edition. luisdecamoes.pt was retested and its TLS mismatch
+      still holds, so that negative is current.
+fixedDirectly:
+  - >
+    Re-wrapped the two folded scalars the `everything` startHere edit left
+    ragged (franchise.yaml and its pt-PT overlay). Whitespace inside `>`
+    blocks only; parsed before and after, string-identical.
+notApplicableNotAbsent:
+  - "eras [], orders [], no achievements.yaml, features {} - correct states"
+  - "0 global events reach the wing - the earliest postdates his death by 290 years"
+  - "0 spoiler gates - verified against Filodemo's printed Argumento"
+  - "4/6 works without a cover - the real ceiling for 16th-17th century first printings"
+  - "born: null holds - Wikidata carries 1524-12 and 1525-01 with no preferred rank, and nothing in the wing asserts a settled year"
