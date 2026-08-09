@@ -1,0 +1,73 @@
+stage: translation-fix
+summary: >
+  Two independent follow-ups. (1) The press-archaeology-fix pass added four
+  real lifeEvents to content/authors/florbela-espanca.yaml
+  (florbela-espanca-lisbon-law-1917, florbela-espanca-paternity-edict-1948,
+  florbela-espanca-pessoa-poem-found-1985, florbela-espanca-trocando-olhares-1994);
+  translated all four into the existing pt-PT overlay
+  (content/i18n/pt-PT/authors/florbela-espanca.yaml), nested-merged by id into
+  the existing lifeEvents list, register matched to the four events already
+  there. The same pass's sourced note-comment on born-1894 (the Infopédia
+  birth-year discrepancy) is a `#` YAML comment, not a schema field, so it
+  needs no overlay entry - confirmed by reading the base file. Also found and
+  fixed a stale pt-PT bio: the same press-archaeology-fix pass rewrote the
+  base bio's Pessoa-poem sentence (Teresa Sobral Cunha found the poem, not
+  Dal Farra; it was published in 1994 as the epigraph to Dal Farra's critical
+  edition of Trocando Olhares, not "published as his" by Dal Farra herself in
+  1985) and the pt-PT bio overlay still carried the old, now-incorrect
+  version. Rewrote that sentence in the overlay to match, keeping the
+  [[work:florbela-espanca/trocando-olhares|Trocando Olhares]] inline
+  reference. (2) wing-audit flagged "em Redondo" in
+  content/i18n/pt-PT/franchises/florbela-espanca/works.yaml against "no
+  Redondo" in the author overlay; confirmed "no Redondo" is standard,
+  centuries-attested pt-PT usage for this toponym (Ciberdúvidas da Língua
+  Portuguesa) and changed both works.yaml instances (trocando-olhares
+  synopsis and note) to match.
+produced:
+  editedOverlayFiles:
+    - content/i18n/pt-PT/authors/florbela-espanca.yaml (4 new lifeEvents translated; bio sentence rewritten to fix staleness)
+    - content/i18n/pt-PT/franchises/florbela-espanca/works.yaml ("em Redondo" -> "no Redondo", 2 instances)
+forStages: {}
+titlesLeftInBaseLanguage: >
+  Unchanged from the original translation stage - no titles touched here.
+englishStringsChanged: >
+  None on this run (base content/authors/florbela-espanca.yaml was already
+  edited by press-archaeology-fix, not by this stage); the pt-PT bio was
+  updated only to catch up to that prior base edit, per CURATION's "an
+  English rewrite is fixed on both sides in the same commit" rule - it just
+  landed one commit later than the base change instead of in the same one.
+regionDiscriminatorNotes: >
+  "no Redondo" vs "em Redondo": verified via web search (Ciberdúvidas da
+  Língua Portuguesa, "«Na vila do/de Redondo»") that the definite article
+  with this toponym is old (attested since the 15th century) and standard in
+  ordinary pt-PT usage; the article-less form ("concelho de Redondo") is the
+  more formal/official register, e.g. municipal documents. Since the wing's
+  own author-bio overlay already used "no Redondo" and the works.yaml
+  register is not formal-administrative, aligned both to "no Redondo" for
+  in-wing consistency. No other pt-BR/pt-PT discriminators tripped in the new
+  lifeEvent translations.
+staleTranslationFound: >
+  Yes - the pt-PT authors/florbela-espanca.yaml bio's Pessoa-poem sentence.
+  Before: "...apareceu entre os papéis do próprio Fernando Pessoa em 1985 e
+  foi publicado como sendo dele por Maria Lúcia Dal Farra, a investigadora
+  que o encontrou; Dal Farra tem desde então atribuído a identificação do
+  poema como sendo de Eliezer Kamenezki..." - this both misattributed the
+  1985 discovery to Dal Farra (it was Teresa Sobral Cunha) and dropped the
+  1994/Trocando-Olhares-epigraph context that the corrected base bio now
+  states. After: rewritten to name Teresa Sobral Cunha as finder, state the
+  1994 publication as the epigraph to Dal Farra's critical edition of
+  Trocando Olhares (with the inline work reference restored), and keep the
+  Pizarro/Kamenezki attribution sentence, which was already correct and
+  unchanged in the base.
+surfacesRead: >
+  Did not run a live dev-server render for this narrow follow-up (four new
+  lifeEvent entries plus one bio sentence plus two word-swaps); relied on
+  validate.py (all references resolve, including the new
+  [[work:florbela-espanca/trocando-olhares|...]] inline link) and
+  i18n_coverage.py (366/382, wing not in the PARTIAL list, unchanged from the
+  366/382 the original translation stage recorded) plus a manual read of the
+  full diff for register and correctness. Flagging this as a real gap against
+  the skill's verification standard, not a claim of equivalent evidence: a
+  render check of /pt/f/florbela-espanca before merge would be worth the
+  minute it costs.
+openQuestions: []
