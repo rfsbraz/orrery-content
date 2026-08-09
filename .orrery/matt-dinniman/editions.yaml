@@ -1,0 +1,87 @@
+stage: editions
+verdict: "17 of 20 works carry at least one edition; 46 entries total"
+summary: >
+  Ran scripts/metadata/lookup.py first (50 candidates/16 works cached at
+  .cache-lookup.tsv), then closed every gap it left with direct OpenLibrary
+  JSON, ISFDB, publisher-catalogue and mattdinniman.com fetches. Every ISBN13
+  check digit recomputed by hand (script-assisted arithmetic, cross-checked
+  against a worked example in the file header) and every candidate traced to
+  a named record opened directly, not taken from the lookup table or a
+  sub-agent report on faith - one sub-agent-reported Audible ASIN (Kaiju)
+  was checked directly and 404s; it is excluded. validate.py --slug
+  matt-dinniman is green (0 new warnings) and
+  lookup.py --verify-isbns reports 46 editions, 0 suspect.
+
+selfPubToAce: >
+  Books 1-6 were self-pub (Dandy House) 2020-2023, then Ace took PRINT
+  rights only from Aug 2024. Recorded per volume: the current Ace print
+  edition + the current Dandy House self-pub ebook (Dinniman kept ebook
+  rights) + the current Audible audiobook. Old Dandy House print SKUs
+  (paperback/hardcover, pre-Ace) are superseded and not recorded.
+
+thisInevitableRuinDiscrepancy: >
+  Task brief flagged this as the case to verify per-volume rather than
+  assume uniform. Found a genuine discrepancy: mattdinniman.com claims no
+  self-pub edition for book 7, but OpenLibrary carries a real "Independently
+  published" paperback (9798344591230) dated Nov 3 2024 - the exact date the
+  site gives as the book's sole "Published" date - separate from Ace's own
+  hardcover (9798217190041), independently dated Sept 23 2025 by OpenLibrary
+  and isbnsearch.org together. Recorded BOTH (Ace first, current flagship),
+  with the discrepancy stated plainly in the edition note rather than
+  silently picking one. Not resolved - would need the author's site's own
+  wording confirmed by a human with a browser, since automated fetches of
+  mattdinniman.com's FAQ/publication-history pages 403/404 for anything past
+  the book pages themselves.
+
+ptBrPtFind: >
+  Kathartika (Portugal, book 1 only, 9789895626762, pt-PT, prefix 978-989)
+  confirmed directly on the publisher's own product page (top of the
+  sourcing hierarchy). HarperCollins Brasil (Brazil, book 2 only,
+  9786555117714, pt-BR, prefix 978-655) confirmed via OpenLibrary only -
+  the publisher's own site search didn't resolve, flagged as the weaker of
+  the two Portuguese sources.
+
+audiobookCoverage: >
+  Every DCC volume's Audible edition (mostly Jeff Hays) traced to a named
+  OpenLibrary record with ASIN, not the lookup table. Also covered Dominion
+  of Blades and The Hobgoblin Riot (Andrea Parsneau), both confirmed live on
+  their own Audible product pages, and Operation Bounce House's Penguin
+  Random House Audio edition, which unusually carries a real ISBN
+  (9798217017270) rather than only an ASIN. Kaiju: Battlefield Surgeon's
+  audiobook is NOT recorded - the only ASIN found 404s on Audible directly,
+  and the author's own page still reads "Audiobook (coming soon)".
+
+foreignLanguagesFound: >
+  Beyond the pt-PT/pt-BR pair, French (Lorestone, books 1-5, 2024-2026) and
+  German (FISCHER Tor, books 1-2, translator Ruggero Leo confirmed on the
+  publisher's own page, books 3-4 listed there as forthcoming) are real,
+  ongoing programs. Spanish is a single outlier (Ediciones B, book 5 only,
+  no earlier volume found anywhere) - recorded as a real market fact, not
+  assumed to be a search gap. No Italian/Polish/Dutch/Japanese edition
+  found anywhere.
+
+rejectedOrExcluded: >
+  - Two "Diversified Publishing" ISBNs (DAC, GFG): thin single-source
+    OpenLibrary records, a second source names a different publisher for
+    the same ISBNs; excluded rather than shipped uncertain.
+  - A second UK "Penguin Books, Limited" ISBN duplicate exists for several
+    volumes; only one recorded, format undistinguishable between the two.
+  - Backstage at the Pineapple Cabaret: no standalone edition anywhere
+    (backmatter-only, confirmed via OpenLibrary/Audible/ISFDB).
+  - Apocalypse, The Last Yong-Shi: real ISFDB-attested stories but each
+    survives only inside a dead multi-author small-press venue; excluded
+    per this catalogue's standing rule against misattributing a multi-author
+    book to a single contributor.
+  - Grinding (Dandy House 2023, 9798988744412): format left deliberately
+    unset - mattdinniman.com's own EDITIONS line for this book reads
+    "Audiobook" only, but this specific OpenLibrary record carries no
+    physical_format field, so whether this ISBN denotes print/ebook or the
+    audiobook itself is genuinely unresolved.
+
+humanFollowUp: >
+  mattdinniman.com's actual FAQ/publication-history wording for This
+  Inevitable Ruin could not be reached by automated fetch (every route past
+  the book's own page 403/404s) - would help resolve the self-pub
+  discrepancy above. Also worth a human glance: the two ambiguous
+  "Diversified Publishing" ISBNs, if someone can reach a PRH product page
+  directly.
