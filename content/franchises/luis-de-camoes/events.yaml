@@ -1,10 +1,11 @@
 # FRANCHISE-SPECIFIC events only (things that happen to the books and to his
 # reputation, not to the author himself - those are lifeEvents on
 # content/authors/luis-de-camoes.yaml). Camões died in 1580 and this wing's
-# newest work (Cartas) is dated 2011: a 431-year posthumous span. The five
+# newest work (Cartas) is dated 2011: a 431-year posthumous span. The eight
 # entries below are the real, single-year (or tightly bounded) anchors found
-# in it - 1655, 1867-1880, 1932, 1978 and 2024-2026 - tracing how a
-# 16th-century soldier-poet reached English readers and then became
+# in it - 1655, 1685, 1776, 1861, 1867-1880, 1932, 1978 and 2024-2026 -
+# tracing how a 16th-century soldier-poet reached English readers, had his
+# lyric text corrupted and then re-inflated twice over, and then became
 # Portugal's national symbol.
 #
 # Real years remain dark between them, on purpose rather than by omission.
@@ -13,11 +14,16 @@
 # that resolves it are already carried in full, with primary-source rigor,
 # in that work's own note in works.yaml, and restating the same material
 # here as a dated event would pad the count rather than add anything a
-# reader does not already have. The 1881-1931 and 1979-2011 stretches hold
-# nothing beyond what the adjacent 1880, 1932 and 1978 entries already cover
-# (the critical-edition project spanning into the 1930s; the Estado Novo
-# framing spanning to 1974) that clears its own single-year bar rather than
-# restating a neighbour's.
+# reader does not already have. The 1656-1866 stretch - the longest run in
+# the whole 431-year span - was examined and is not actually dark: it holds
+# three already-sourced reception moments, now the three events below (Faria
+# e Sousa's 1685 rewritten Rimas, Mickle's 1776 translation, Juromenha's
+# 1861 edition), leaving only the narrower gaps between and around them
+# (1686-1775, 1777-1860, 1862-1866) genuinely quiet. The 1881-1931 and
+# 1979-2011 stretches hold nothing beyond what the adjacent 1880, 1932 and
+# 1978 entries already cover (the critical-edition project spanning into
+# the 1930s; the Estado Novo framing spanning to 1974) that clears its own
+# single-year bar rather than restating a neighbour's.
 
 - id: luis-de-camoes-fanshawe-1655
   organisation: beside
@@ -42,6 +48,87 @@
   sources:
     - "https://en.wikipedia.org/wiki/Os_Lus%C3%ADadas"
     - "https://en.wikipedia.org/wiki/Lu%C3%ADs_de_Cam%C3%B5es"
+
+- id: luis-de-camoes-faria-e-sousa-1685
+  organisation: beside
+  illustration_type: book-object
+  images_required: 1
+  date: 1685
+  title: "Faria e Sousa's rewritten Rimas becomes the corrupted standard text"
+  scope: industry
+  reach: franchise
+  impact: med
+  description: >
+    Manuel de Faria e Sousa, a Portuguese-born scholar who spent his career
+    in Habsburg Madrid, dies in 1649 leaving a massive commentary on
+    [[work:luis-de-camoes/rimas|Rimas]] unpublished; his son Pedro brings it
+    to press in Lisbon in 1685. Faria e Sousa says himself that he "repaired"
+    the printed text against manuscripts of his own choosing, reorganising
+    the poems thematically and folding in verse - some of it later judged to
+    be other poets' work, including devotional sonnets that do not fit
+    Camões's own known biography - that modern scholarship no longer accepts
+    as his. Portuguese sources today call him bluntly "um grande
+    falsificador," a major falsifier: his rewritten, expanded Rimas becomes
+    the base text later editors copy for two centuries, corruption included.
+  spoilerAfter: null
+  sources:
+    - "https://en.wikipedia.org/wiki/Manuel_de_Faria_e_Sousa"
+    - "https://pt.wikipedia.org/wiki/Manuel_de_Faria_e_Sousa"
+    - "https://pt.wikipedia.org/wiki/Rimas"
+
+- id: luis-de-camoes-mickle-1776
+  organisation: floating-object
+  illustration_type: book-object
+  images_required: 1
+  date: 1776
+  title: "Mickle's free \"Epic of Commerce\" becomes the most-read English Lusíadas"
+  scope: industry
+  reach: franchise
+  impact: med
+  description: >
+    The Scottish poet William Julius Mickle publishes "The Lusiad; or, the
+    Discovery of India" in Oxford, 121 years after Fanshawe's first English
+    version and deliberately freer: Mickle puts Horace's warning against
+    word-for-word translation on his own title page and calls his own
+    approach "the Epic of Commerce," expanding
+    [[work:luis-de-camoes/os-lusiadas|Os Lusíadas]] with interpolations that
+    serve Britain's own imperial self-image rather than Camões's. The
+    liberties did not hurt its reception: the edition ran through at least
+    five further printings by 1877, and by scholarly consensus it remains
+    the most read and cited English translation of the poem, eclipsing the
+    more literal versions that came after it.
+  spoilerAfter: null
+  sources:
+    - "https://en.wikipedia.org/wiki/William_Julius_Mickle"
+    - "https://en.wikisource.org/wiki/The_Lusiads_(tr._Mickle)"
+    - "https://www.scielo.br/j/tla/a/SrPZKQ9VWb5LqccYypKpyjb/abstract/?lang=pt"
+
+- id: luis-de-camoes-juromenha-1861
+  organisation: artifact-spread
+  illustration_type: document-facsimile
+  images_required: 1
+  date: 1861
+  dateRange: "1860-1869"
+  title: "Juromenha's edition swells the Rimas to 352 poems"
+  scope: industry
+  reach: franchise
+  impact: med
+  description: >
+    The Visconde de Juromenha, João António de Lemos Pereira de Lacerda,
+    publishes a six-volume edition of Camões's complete works through
+    Lisbon's Imprensa Nacional between 1860 and 1869; the sonnets volume
+    appears in 1861. Drawing on manuscript songbooks barely studied before,
+    Juromenha grows [[work:luis-de-camoes/rimas|Rimas]]'s sonnet count from
+    65 in the 1595 first edition to 352, attributing to Camões, as one
+    modern editor puts it, "pretty well any poem he admired from the
+    period." Later scholarship - the corrective work the 1932 "critical"
+    edition claims and only partly delivers - spends the next century
+    trying to unwind the inflation Juromenha's own edition set in motion.
+  spoilerAfter: null
+  sources:
+    - "https://pt.wikipedia.org/wiki/Rimas"
+    - "https://purl.pt/42825"
+    - "https://www.arqnet.pt/dicionario/juromenha2v.html"
 
 - id: luis-de-camoes-national-myth-1880
   organisation: medallion
