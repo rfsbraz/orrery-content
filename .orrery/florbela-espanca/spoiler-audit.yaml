@@ -1,0 +1,89 @@
+stage: spoiler-audit
+summary: >
+  Verified the gate table against the app, not the skill doc:
+  spoilerAfter is declared once, on AuraEvent (lib/content/types.ts:80),
+  the type behind franchise events, global events, Author.lifeEvents and
+  - which the skill's table omits - Heteronym.lifeEvents. Work carries
+  neither field, so works[].note is loader-invisible.
+  This wing has no events, eras: [] and lifeEvents: [], so nothing could
+  be gated: the audit ran entirely on ungated prose, where rewriting is
+  the only lever. Two rewrites shipped, seven synopses and both
+  startHere paths clean. Both gates green, coverage unchanged.
+changed:
+  - file: works.yaml, as-mascaras-do-destino synopsis
+    was: '"...death, aviators and the dead who do not stay dead..."'
+    why: >
+      That clause glosses "Os Mortos não Voltam" and asserts the inverse
+      of its title, which is the position the story argues to in its
+      most-quoted passage - resolving, for every reader, a question the
+      story opens and closes. Rewritten down to the dedication and the
+      table of contents; the work's note records why it stops there and
+      names the two story-level traps.
+  - file: franchise.yaml description
+    was: 'Fernando Pessoa called her his "twin soul".'
+    why: >
+      Not a spoiler - a contradiction found by the entity sweep. The bio
+      committed one stage earlier credits that poem to Eliezer
+      Kamenezki, and both strings render on the same page. Clause
+      dropped for one already carried in the bio; a comment above the
+      description records the correction. Outside this stage's strict
+      remit, fixed because it misattributes a poem to a named real
+      person in the wing's most-read sentence.
+rulings:
+  as-mascaras-do-destino: >
+    The brother's death and the dedication are JACKET COPY and stay
+    ungated: the bookseller SINOPSE (Calçada das Letras 2010, wook.pt
+    9856541) quotes the dedication verbatim and names the loss as the
+    book's occasion, and it is printed on the book's first page.
+  o-domino-preto: >
+    CLEAN, untouched. The synopsis states no plot and names no
+    character. Two bookseller blurbs go further than we do: bookcover.pt
+    gives the six-story count plus a per-story thematic breakdown, and
+    alfarrabistaterramedia.pt names the title story's premise then stops
+    at "Ela virá?". Ours resolves nothing the publisher preserves.
+  the-other-seven-works: >
+    CLEAN, untouched: register, biography and publication history, no
+    withheld outcome a sonnet sequence or a letters corpus could hold.
+    Her suicide is in the standard bookseller author note and stays
+    plain. Both startHere paths and their notes CLEAN too - they sell on
+    the movement of a voice and on what each path costs, never a payoff.
+  global-events: >
+    NON-VECTOR: relevantGlobalEvents is include-only
+    (lib/content/index.ts:286-289) and this wing's include is [].
+forStages:
+  whoever-commits-the-lifeEvents: >
+    press-archaeology's four preparedLifeEvents are drafted with
+    spoilerAfter already set and one is wrong. Keep null on born-1894,
+    first-divorce-1921 and death-1930. CHANGE
+    brother-apeles-death-1927 from
+    spoilerAfter: florbela-espanca/as-mascaras-do-destino to null. It
+    fails the publisher test - the bookseller copy for the very book it
+    gates behind quotes the dedication to Apeles - and fails the
+    audit-by-entity rule twice, since the same fact renders ungated in
+    that work's synopsis and in the bio beside it. It would protect
+    nothing while rendering "Hidden until you finish As Máscaras do
+    Destino" over a real bereavement. This wing ships with no spoiler
+    boundaries at all: the honest outcome for a poet with no plotted
+    fiction, not a gap.
+  translation: >
+    Two English strings changed with no pt-PT counterpart to go stale.
+    The only overlay carries the two startHere paths; the franchise
+    description, works.yaml and the author entity are untranslated, so a
+    pt-PT reader gets the base string and both fixes reach them now.
+  enrichment: >
+    Read as-mascaras-do-destino's note before touching its synopsis.
+uncertainties:
+  - >
+    The "Os Mortos não Voltam" ruling rests on the story's most-quoted
+    passage and on the publisher copy's silence, not on a full read. The
+    rewrite removes a claim rather than adding one, so nothing here is
+    loosenable in the risky direction.
+  - >
+    No 1931 Marânus back cover was findable; the publisher-test evidence
+    is the 2010 Calçada das Letras copy, which is what a reader meets
+    today. Its own 1917/1927 misdating is recorded on the work.
+engineCouldNotExpress: >
+  A short-story collection is one work id with one ungated synopsis, so
+  nothing can be said about one story without saying it to every reader
+  of the book.
+openQuestions: []
