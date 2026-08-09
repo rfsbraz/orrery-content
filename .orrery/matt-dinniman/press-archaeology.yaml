@@ -1,0 +1,80 @@
+stage: press-archaeology
+summary: >
+  Added 8 lifeEvents (2017-2026): the 2019 Independent Audiobook Awards
+  meeting with narrator Jeff Hays, the Dec 26 2019 start of Dungeon Crawler
+  Carl, the March 2020 pandemic income collapse that forced its self-
+  publication, the 2024 Ace Books print deal, the Aug 2024 Universal/Fuzzy
+  Door TV option, the Jun 2026 Clarke Award shortlist, the Jun 2026 Peacock
+  series order, plus one 2017 entry (Dominion of Blades) tying his
+  self-described MMO wariness to its premise - the only pre-2019 anchor real
+  effort turned up. One bio correction (Peacock status brought current:
+  "in development" -> a real straight-to-series order, confirmed by
+  Wikipedia's own current text, Deadline and Variety). Birth date searched
+  again, hard: genuinely not there, not a shortcut.
+  aura_density.py: 0 -> 8 entries, 0.40/work, worst dark run 24yr -> 14yr
+  (2003-2016). validate.py --slug matt-dinniman: same one pre-existing error
+  (no theme.art - visual-language's job).
+produced:
+  correctedFacts:
+    - >
+      bio's Peacock clause updated from "in development" to "given a
+      straight-to-series order... produced by Seth MacFarlane's Fuzzy Door" -
+      Wikipedia's own DCC article now says "greenlit" (checked directly, July
+      2026 dateline), matching Deadline/Variety's June 18 2026 reporting.
+  newLifeEvents:
+    - matt-dinniman-dominion-of-blades-addiction-2017
+    - matt-dinniman-meets-jeff-hays-2019
+    - matt-dinniman-starts-dcc-2019
+    - matt-dinniman-pandemic-ends-income-2020
+    - matt-dinniman-ace-books-deal-2024
+    - matt-dinniman-tv-rights-2024
+    - matt-dinniman-clarke-award-shortlist-2026
+    - matt-dinniman-peacock-series-order-2026
+  newFranchiseEvents: []
+auraDensity: "0 lifeEvents/0.00 per work, dark run 24yr -> 8 lifeEvents/0.40 per work, dark run 14yr (2003-2016)"
+rejected:
+  - item: "Exact/estimated birth date or year"
+    why: >
+      Re-checked his own site, Wikipedia (still "ca. 1970s"/missing-year
+      category), Seattle Met + Gig Harbor Now (only "early 50s," a bracket),
+      Grimdark + Audible interviews, a KOLD Tucson profile, Goodreads/Amazon/
+      OpenLibrary author pages, a Sabino HS class-of-1989 alumni list (no
+      match). Not estimated from his own loose "late 20s"/"just a kid" lines
+      - that's the exact speculation this stage was told not to launder.
+  - item: "'Sold about 50 copies' (2003 debut The Shivered Sky)"
+    why: "One source only (a Substack blog paraphrasing an unread NYT profile) - held out under the never-launder-a-citation rule."
+  - item: "Ace deal: 'first three books April 2024, expanded to six'"
+    why: "Aggregated coverage only; Publishers Weekly's own Oct 2024 piece, read directly, just says 'books one through six,' no month. lifeEvent states the rights structure only."
+  - item: "'Dandy House' self-pub imprint name"
+    why: "Real (Locus's Clarke shortlist listing confirms it) but trivia - no bearing on how any book reads."
+  - item: "Gig Harbor move year: 2012 (Seattle Met) vs. 2013 (Gig Harbor Now)"
+    why: "Real 1-year discrepancy; bio already only says 'during the 2010s' - neither source contradicts it. Geography texture, not aura."
+forStages:
+  event-resonance: >
+    matt-dinniman-pandemic-ends-income-2020 (2020-03) is a strong candidate
+    for content/events/global.yaml's covid-19-pandemic-2020 (exists, checked)
+    - the textbook case: the pandemic isn't background, it's the specific
+    mechanism that forced the self-publication the whole rest of the arc
+    hangs off. None of the other 7 new entries plausibly reach a global event.
+  art-rotation: >
+    Prose only, fields left unset. matt-dinniman-pandemic-ends-income-2020
+    (impact: high) is the one loud/full-bleed candidate. meets-jeff-hays-2019
+    and starts-dcc-2019 sit six months apart, both DCC-origin - worth
+    checking they don't grade as two full-bleed interruptions back to back.
+    The 2024/2026 industry-deal entries are more clustered in real time and
+    read quieter (mechanism-of-the-shelf), consistent with impact: med.
+  eras: "No change to the standing 2003-2019/2019-present read; this pass's one 2017 anchor doesn't add or remove shape."
+openQuestions:
+  - >
+    2003-2016 dark run (14yr, current worst) checked specifically this pass:
+    Yakima Herald-Republic (no accessible byline archive), Tucson Weekly (one
+    dead-end hit), ISFDB (nothing at 1999 for the "first story in a national
+    magazine" his Audible account mentions), and a Substack's undated-to-2007
+    claim on The Grinding that conflicts with mattdinniman.com/ISFDB's own
+    2013 dating (not used, flagged so a future pass doesn't resolve toward
+    the weaker source). Reads as a genuinely quiet working decade, not an
+    unsearched one; a Yakima Herald-Republic newsroom-archive-level search is
+    the most likely place left to find something real here.
+  - "Manually scanned the full 2003-2026 span past aura_density.py's single reported number: no other 5+-year gap hides behind this one, confirmed."
+  - "Ace 2024 book-count progression (3 then 6) unresolved - see rejected; doesn't block anything since the lifeEvent added doesn't depend on the answer."
+  - "validate.py's one error (no theme.art) remains the expected pre-visual-language state."
