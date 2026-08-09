@@ -1,0 +1,47 @@
+# Português europeu (pt-PT) - sobreposição de prosa curada.
+# Traduz-se apenas prosa. Nunca ids, slugs, nomes de autor, títulos de obra
+# (já são portugueses) nem URLs de fontes.
+#
+# As listas encaixadas fundem-se item a item pelo id (ver SCHEMA.md, "Nested
+# lists merge by id"), pelo que os percursos de startHere trazem apenas o id
+# e a prosa, nunca a estrutura (workIds, orderId, fit).
+
+- id: almeida-garrett
+  description: >
+    O fundador do Romantismo literário português: poeta, dramaturgo,
+    romancista, soldado da causa liberal e o orador parlamentar que
+    construiu o teatro nacional de Portugal.
+    [[work:almeida-garrett/camoes|Camões]] (1825), escrito no exílio em
+    França, é geralmente tido como o primeiro poema romântico em
+    português; [[work:almeida-garrett/frei-luis-de-sousa|Frei Luís de
+    Sousa]] (1844) e
+    [[work:almeida-garrett/viagens-na-minha-terra|Viagens na Minha
+    Terra]] (1846) continuam a ser as suas duas obras mais lidas.
+  startHere:
+    paths:
+      - id: classroom-canon
+        title: Comece pelo cânone escolar
+        description: >
+          Frei Luís de Sousa e Viagens na Minha Terra são as duas obras que
+          quase todos os leitores portugueses do ensino secundário encontram:
+          a peça é leitura integral obrigatória no programa de Português do
+          11.º ano do Ministério da Educação, e o romance é a opção de
+          Garrett nesse mesmo ano letivo. Uma tragédia doméstica breve e um
+          romance de viagem leve e digressivo cobrem, entre os dois, os seus
+          registos mais fortes, sem exigir a estante completa. O custo: para
+          um leitor português a quem estas obras já foram atribuídas na
+          escola, nenhuma delas é uma descoberta, e começar pelos dois livros
+          mais ensinados adia o encontro com o jovem poeta exilado de Camões
+          e Dona Branca.
+      - id: everything
+        title: Tudo, por ordem
+        description: >
+          A bibliografia completa por ordem de publicação: a poesia do
+          exílio, as peças históricas e domésticas por trás do teatro
+          nacional que reconstruiu, os romances picarescos e históricos, a
+          recolha de romanceiro, e a prosa política e os diários recuperados
+          após a sua morte. O custo: não há um único fio a puxar o leitor de
+          uma obra para a seguinte - género e registo mudam de livro para
+          livro - e uma parte real da estante é material ocasional ou
+          póstumo (discursos, cartas, juvenília), não o punhado de obras em
+          que a sua reputação assenta.

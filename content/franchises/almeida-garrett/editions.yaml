@@ -1,0 +1,292 @@
+# Concrete published editions - real ISBNs, individually opened and verified,
+# never guessed. Coverage: 7 of the wing's 44 works (viagens-na-minha-terra,
+# frei-luis-de-sousa, falar-verdade-a-mentir, um-auto-de-gil-vicente,
+# folhas-caidas, da-educacao, miragaia).
+#
+# THAT FRACTION IS THE PORTUGUESE MARKET, NOT A RESEARCH GAP. Garrett died in
+# 1854; the ISBN system starts around 1970, so nothing he wrote has a
+# first-edition ISBN, and the great majority of his ~44 works have never had a
+# standalone commercial reissue since. What does exist runs through two
+# channels: Imprensa Nacional-Casa da Moeda's ongoing scholarly "Edição
+# Crítica das Obras de Almeida Garrett" (two volumes below carry a verified
+# ISBN, out of a series considerably larger - Frei Luís de Sousa, Lírica de
+# João Mínimo, Teatro Póstumo, Um Auto de Gil Vicente and others are named on
+# the series' own imprensanacional.pt catalogue page with no ISBN recoverable
+# for any of them), and Porto Editora's "Clássicos Porto Editora"
+# schoolbook-adjacent trade line, which covers his three or four most-taught
+# works. A 19th-century Portuguese classic simply is not reissued at Stephen
+# King or Agatha Christie volume.
+#
+# SOURCING. Every ISBN below was opened directly - never taken on an
+# aggregator's or an AI search summary's word alone, both of which produced a
+# false hit on this wing (see exclusions). Ranked as used: the
+# publisher's own site (imprensanacional.pt, portoeditora.pt, guerraepaz.pt,
+# projectoadamastor.org) first; the Biblioteca Nacional de Portugal's own
+# bibliografia.bnportugal.gov.pt catalogue (permalinks under
+# id.bnportugal.gov.pt) second; a retailer's structured product record
+# (agapea.com, Bertrand's own JSON-LD-backed pages) third, and only where a
+# publisher/library record could not be reached directly. All Portuguese
+# editions carry 978-972-* or 978-989-* prefixes (Portugal); none carry
+# 978-85-*/978-65-* (Brazil) or bare "pt" - every `language` below is the
+# verified region-specific code.
+#
+# NO coverUrl ON ANY ENTRY. Cover sourcing is out of scope for this file, and
+# none of the candidate cover images turned up against SCHEMA.md's
+# image-rights bar have been inspected for a retailer watermark, so none are
+# written down (same rule the Eça de Queirós file states for itself).
+#
+# EXCLUDED - VERIFIED REAL BUT NOT RECORDED:
+# - Porto Editora 9789720042262 is "Folhas Caídas e Flores sem Fruto" (Fnac,
+#   Porto Editora's own product page, and agapea.com's own "other books by
+#   this author" list all give that exact two-work title) - a bind-up of
+#   folhas-caidas and flores-sem-fruto under one ISBN. This catalogue's
+#   standing rule is that an omnibus ISBN never stands in for one of the
+#   works it contains (see jim-butcher, john-shirley, margaret-atwood
+#   editions.yaml headers), and the schema has no field for "two workIds, one
+#   edition," so neither work gets an entry from it.
+# - Two INCM critical-edition volumes are real and confirmed on
+#   imprensanacional.pt's own "Edição Crítica das Obras de Almeida Garrett"
+#   catalogue page - "Correspondência familiar" (9789722719919, 2012) and
+#   "Correspondência para Rodrigo da Fonseca Magalhães" (9789722724609,
+#   2016) - but works.yaml's diarios-e-correspondencia entry enumerates
+#   exactly four constituent items in its own note (Diário da Minha Viagem a
+#   Inglaterra, Cartas a Agostinho José Freire, Cartas Íntimas, Correspondência
+#   do Conservatório) and neither of these two titles is one of them. Filing
+#   an edition against that workId would misrepresent what the grouped work
+#   covers; a fifth constituent item belongs in works.yaml's own bibliography,
+#   not invented here as a new work id.
+#
+# EXCLUDED - COULD NOT BE INDEPENDENTLY VERIFIED (found in the metadata
+# sweep, no second source traced to a record actually opened, so per the
+# no-guessing rule they do not ship):
+# - Ediçoes Caixotim, 9789728651176, "Viagens na Minha Terra", 2004, 368p -
+#   real per secondary citations, but Caixotim's own site could not be
+#   reached and no library/retailer record was opened directly. Superseded
+#   in this file by two verified, currently in-stock pt-PT editions anyway.
+# - EDUFRN (Editora da UFRN, Brazil), 9788572733670, "Folhas caídas", 2008 -
+#   no independent source could confirm this ISBN maps to this book at all;
+#   it is also 978-85-* (Brazil), a different market from every other entry
+#   here.
+# - Luso-Brazilian Books, 9780850515114 ("Viagens Na Minha Terra") and
+#   9780850515107 ("Frei Luís de Sousa"), 2004/2005, "Clássicos da Literatura
+#   Portuguesa" - a real US-distributed series for the Portuguese-studies
+#   classroom (Amazon/AbeBooks confirm both), but neither record was opened
+#   directly, and both are redundant with verified, more current pt-PT
+#   editions of the same two works already below.
+# - Porto Editora 9789720000736, "Viagens na Minha Terra (Edição didática)",
+#   2017 - every fetch attempt against it returned blocked; not recorded
+#   without a record actually opened.
+#
+# EXCLUDED - FALSE POSITIVES FROM THE SWEEP (title/author string matches that
+# are not this author's work):
+# - "Um Governo em África: Imhambane 1905-1906" (Creative Media Partners
+#   reprint) is credited to "Thomaz de Almeida Garrett" - a different,
+#   early-20th-century person (a colonial administrator; this Garrett died in
+#   1854) who happens to share the family name.
+# - "Inquérito Criminal e Prova em Julgamento" and "Sujeição do Arguido a
+#   Diligências de Prova e Outros Temas" (Fronteira do Caos) are modern legal
+#   treatises on criminal procedure, evidently matched by publisher-name
+#   coincidence (Fronteira do Caos also publishes the "Memórias" title below).
+# - "Memórias da Ilustre Fidalguia" (Fronteira do Caos, 2006) is credited to
+#   Almeida Garrett by exactly one retailer (Fnac) and nowhere else checked;
+#   it is not part of the detailed, dated Portuguese Wikipedia bibliography
+#   works.yaml is built from, and the title (an "illustrious gentry" memoir)
+#   does not match anything in it. Its attribution to this author rests on
+#   that single retailer listing alone: unconfirmed, not disproved, and not
+#   to be recorded from that listing on its own.
+#
+# readUrl (free, legal, complete texts). Garrett died in 1854, so every work
+# is public domain; Project Gutenberg holds 9 Garrett ebooks, no Standard
+# Ebooks edition exists. Three are clean, single-work transcriptions and are
+# used below (viagens-na-minha-terra, frei-luis-de-sousa, miragaia). The
+# other six were checked and excluded for the same omnibus reason as the
+# print exclusions above:
+# - "Fábulas—Folhas Cahidas" (gutenberg.org/ebooks/71330) is itself the
+#   1853 second-edition volume binding the second edition of Lírica de João
+#   Mínimo together with Folhas Caídas under one cover (its own front matter
+#   says so) - not a clean digitisation of Folhas Caídas alone.
+# - "O Retrato de Venus e Estudos de Historia Litteraria"
+#   (gutenberg.org/ebooks/69423) bundles the Retrato de Vénus poem with two
+#   essays and six further tomes of collected plays (Catão; Mérope and Um
+#   Auto de Gil Vicente; Frei Luís de Sousa; D. Filipa de Vilhena; A Sobrinha
+#   do Marquês, As Profecias do Bandarra and Um Noivado no Dafundo; O
+#   Alfageme de Santarém) - roughly ten works under one cover.
+# - "Romanceiro I: Romances da Renascença" (ebooks/63438) and "Romanceiro
+#   III: Romances Cavalherescos Antigos" (ebooks/63439) are two of the three
+#   tomes of romanceiro-e-cancioneiro-geral; no Volume II/Cancioneiro was
+#   found on Gutenberg, so this is a two-thirds text, not a complete one, and
+#   a partial digitisation reads as more verified than it is.
+
+# --- Poetry ---
+
+- id: almeida-garrett/miragaia/gutenberg-2008-pt
+  workId: almeida-garrett/miragaia
+  language: pt-PT
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  readUrl: "https://www.gutenberg.org/ebooks/24411"
+  note: >
+    A clean standalone transcription of the 1844 first edition ("Miragaia.
+    Romance Popular. Pelo A. de Adozinda, Bernal Francez, etc."), confirmed
+    against the scanned title page and the author's own 1844 preface
+    describing it as a reconstruction of an old ballad - not bundled with
+    any other Garrett text.
+  sources:
+    - "https://www.gutenberg.org/ebooks/24411"
+    - "https://www.gutenberg.org/files/24411/24411-h/24411-h.htm"
+
+- id: almeida-garrett/folhas-caidas/projecto-adamastor-2013-pt
+  workId: almeida-garrett/folhas-caidas
+  isbn13: "9789898698148"
+  language: pt-PT
+  format: ebook
+  publisher: Projecto Adamastor
+  year: 2013
+  readUrl: "https://projectoadamastor.org/folhas-caidas-almeida-garrett/"
+  note: >
+    A free ebook with its own ISBN, read directly off the publisher's product
+    page (cover by Ana Ferreira, revision by Ricardo Lourenço). Porto
+    Editora's only current print ISBN for this title (9789720042262) is
+    "Folhas Caídas e Flores sem Fruto," a two-work omnibus, so this is the
+    only edition of Folhas Caídas alone recorded here.
+  sources:
+    - "https://projectoadamastor.org/folhas-caidas-almeida-garrett/"
+
+# --- Theatre ---
+
+- id: almeida-garrett/frei-luis-de-sousa/porto-editora-2010-pt
+  workId: almeida-garrett/frei-luis-de-sousa
+  isbn13: "9789720049599"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2010
+  note: "Clássicos Porto Editora collection; in stock, 9,99€."
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/frei-luis-de-sousa/4299483"
+    - "https://www.bertrand.pt/pesquisa/9789720049599"
+
+- id: almeida-garrett/frei-luis-de-sousa/guerra-e-paz-2018-pt
+  workId: almeida-garrett/frei-luis-de-sousa
+  isbn13: "9789897024306"
+  language: pt-PT
+  format: paperback
+  publisher: Guerra & Paz
+  year: 2018
+  note: "Clássicos Guerra e Paz collection, 184p, 15x23cm."
+  sources:
+    - "https://www.guerraepaz.pt/produto/frei-luis-de-sousa/"
+
+- id: almeida-garrett/frei-luis-de-sousa/gutenberg-2006-pt
+  workId: almeida-garrett/frei-luis-de-sousa
+  language: pt-PT
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2006
+  readUrl: "https://www.gutenberg.org/ebooks/17591"
+  note: A clean standalone transcription, not bundled with any other text.
+  sources:
+    - "https://www.gutenberg.org/ebooks/17591"
+
+- id: almeida-garrett/falar-verdade-a-mentir/porto-editora-2010-pt
+  workId: almeida-garrett/falar-verdade-a-mentir
+  isbn13: "9789720049582"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2010
+  note: >
+    Clássicos Porto Editora collection. A separate eBook edition exists
+    under its own ISBN (9789720680488, 11-2011) and is not recorded here to
+    avoid padding two entries for the same text.
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/falar-verdade-a-mentir/3091197"
+    - "https://www.agapea.com/Almeida-Garrett/Falar-Verdade-a-Mentir-9789720049582-i.htm"
+
+- id: almeida-garrett/um-auto-de-gil-vicente/porto-editora-2011-pt
+  workId: almeida-garrett/um-auto-de-gil-vicente
+  isbn13: "9789720049704"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2011
+  note: "Clássicos Porto Editora collection; in stock, 7,75€."
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/um-auto-de-gil-vicente/10333812"
+    - "https://www.bertrand.pt/pesquisa/9789720049704"
+
+# --- Prose ---
+
+- id: almeida-garrett/viagens-na-minha-terra/incm-2010-pt
+  workId: almeida-garrett/viagens-na-minha-terra
+  isbn13: "9789722716697"
+  language: pt-PT
+  format: paperback
+  publisher: Imprensa Nacional-Casa da Moeda
+  year: 2010
+  note: >
+    "Edição Crítica das Obras de Almeida Garrett," edited by Ofélia Paiva
+    Monteiro; 536p. The scholarly critical text, distinct from the plain
+    trade reading edition below.
+  sources:
+    - "https://imprensanacional.pt/edicoes/viagens-na-minha-terra/"
+
+- id: almeida-garrett/viagens-na-minha-terra/livros-do-brasil-2020-pt
+  workId: almeida-garrett/viagens-na-minha-terra
+  isbn13: "9789897111013"
+  language: pt-PT
+  format: paperback
+  publisher: Livros do Brasil
+  year: 2020
+  note: "Coleção Clássicos Portugueses; in stock, 9,99€."
+  sources:
+    - "https://www.portoeditora.pt/produtos/ficha/viagens-na-minha-terra/24061579"
+
+- id: almeida-garrett/viagens-na-minha-terra/peter-owen-2007-en
+  workId: almeida-garrett/viagens-na-minha-terra
+  isbn13: "9780720612578"
+  language: en
+  title: "Travels in My Homeland"
+  translator: "John M. Parker"
+  format: paperback
+  publisher: Peter Owen Publishers
+  year: 2007
+  note: >
+    Translation first published by Peter Owen in 1987 (UNESCO Collection of
+    Representative Works, ISBN 9780720606638, not recorded separately here);
+    this is the later paperback printing under its own ISBN. The only
+    English translation of this work found.
+  sources:
+    - "https://www.abebooks.com/9780720612578/Travels-Homeland-Garrett-Almeida-0720612578/plp"
+    - "https://www.nli.org.il/en/books/NNL_ALEPH990010328650205171/NLI"
+
+- id: almeida-garrett/viagens-na-minha-terra/gutenberg-2008-pt
+  workId: almeida-garrett/viagens-na-minha-terra
+  language: pt-PT
+  format: ebook
+  publisher: Project Gutenberg
+  year: 2008
+  readUrl: "https://www.gutenberg.org/ebooks/24401"
+  note: >
+    "(Completo)" - the complete text in one file, transcribed from the 1846
+    first edition; Gutenberg also splits it into two separate-volume ebooks
+    (24164, 24319), not used here in favour of the complete single file.
+  sources:
+    - "https://www.gutenberg.org/ebooks/24401"
+
+# --- Essays ---
+
+- id: almeida-garrett/da-educacao/incm-2009-pt
+  workId: almeida-garrett/da-educacao
+  isbn13: "9789722716703"
+  language: pt-PT
+  format: paperback
+  publisher: Imprensa Nacional-Casa da Moeda
+  year: 2009
+  note: >
+    "Edição Crítica das Obras de Almeida Garrett," edited by Fernando Augusto
+    Machado, coordinated by Ofélia Paiva Monteiro; 276p.
+  sources:
+    - "https://bibliografia.bnportugal.gov.pt/bnp/bnp.exe/registo?mfn=81630"
+    - "https://loja.incm.pt/en/products/livros-da-educacao-1016421"

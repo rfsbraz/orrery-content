@@ -1,0 +1,102 @@
+# A wing spans an author's complete published body of work (standing ruling,
+# 2026-07-21). Garrett wrote across poetry, theatre,
+# prose fiction and a large body of political/occasional prose in one career,
+# and none of it forms a separate universe or numbered series - see
+# works.yaml's own header for why `subseries` is null throughout and how
+# `format` (SCHEMA.md), not a genre-scoped wing boundary, is this catalogue's
+# actual answer to a bibliography that spans a dramatist, a poet and a prose
+# writer under one author.
+id: almeida-garrett
+name: Almeida Garrett
+kind: author
+description: >
+  The founder of Portuguese literary Romanticism: poet, playwright, novelist,
+  soldier of the Liberal cause and the parliamentary orator who built
+  Portugal's national theatre. [[work:almeida-garrett/camoes|Camões]] (1825),
+  written in French exile, is usually credited as the first Romantic poem in
+  Portuguese; [[work:almeida-garrett/frei-luis-de-sousa|Frei Luís de Sousa]]
+  (1844) and [[work:almeida-garrett/viagens-na-minha-terra|Viagens na Minha
+  Terra]] (1846) remain his two most-read works.
+authorIds: [almeida-garrett]
+themePreset: proscenium-gaslight
+
+# Capabilities are auto-detected from the data (docs/SCHEMA.md) and nothing
+# is forced here. The wing carries a 44-work bibliography; a 16-lifeEvent
+# author entity and a 2-event events.yaml, 18 timeline entries between them,
+# which is what activates `river` and `companion`; eras.yaml's two sourced
+# creative periods; and editions.yaml's 9 verified ISBNs across 7 works,
+# which activates `editions`. `wizard` activates from the two startHere
+# paths below. orders.yaml exists and ships zero additional orders (its own
+# header explains why: no internal series, no publisher-numbered grouping,
+# no tie worth a curated order).
+#
+# NO globalEvents BLOCK. A shared event renders on a wing only when named in
+# `include` (docs/SCHEMA.md), and no entry in content/events/global.yaml
+# falls inside Garrett's 1799-1854 lifetime: the earliest is dated 1870,
+# sixteen years after his death. There is nothing for an include list to
+# hold, so the block is absent rather than empty - the same state as
+# edgar-allan-poe (1809-1849), the catalogue's only other author who died
+# before the shared timeline begins.
+features: {}
+
+# "Where to start" - powers the guided wizard. Both paths rest on the
+# strongest kind of source this catalogue can cite for an entry point: not a
+# critic's opinion but the Portuguese state's own secondary-school
+# curriculum, the door nearly every literate Portuguese reader walks through
+# to meet Garrett, whether or not they ever go further. Source: Direção-Geral
+# da Educação, "Aprendizagens Essenciais - Português, 11.º Ano" (Agosto
+# 2018), Anexo 1, "Lista de obras e textos para Educação Literária - 11.º
+# ano"
+# (https://www.dge.mec.pt/sites/default/files/Curriculo/Aprendizagens_Essenciais/11_portugues.pdf):
+# Frei Luís de Sousa is listed as compulsory full-text reading ("leitura
+# integral") with no alternative; Viagens na Minha Terra is the Garrett
+# option in a three-way school choice against Alexandre Herculano's "A
+# Abóbada" and Camilo Castelo Branco's Amor de Perdição - not universally
+# assigned the way the play is, but independently the most-cited "most-read"
+# Garrett work among the sources already checked elsewhere on this wing
+# (Viagens na Minha Terra's own dedicated Portuguese-Wikipedia article calls
+# it the starting point of modern Portuguese prose; English Wikipedia's
+# infobox names it one of exactly three "notable works" for Garrett, already
+# marked `featured: true` in works.yaml alongside Camões). No third path was
+# added: no source recommends any other single work or grouping as an entry
+# point in either language (see orders.yaml's own header for what was
+# checked), and inventing one to round the count to three would be padding.
+startHere:
+  paths:
+    - id: classroom-canon
+      title: Start where the curriculum does
+      description: >
+        Frei Luís de Sousa and Viagens na Minha Terra are the two works
+        almost every Portuguese secondary-school reader meets: the play is
+        compulsory, full-text reading in the Ministry of Education's own
+        11th-year Portuguese syllabus, and the novel is the Garrett option
+        on that same year's reading list. A short domestic tragedy and a
+        light, digressive travel-novel between them cover his two strongest
+        modes without asking for the whole shelf. The cost: for a Portuguese
+        reader who was assigned them at school, neither is a discovery, and
+        starting with the two most-taught books postpones meeting the young
+        exile-poet of Camões and Dona Branca.
+      workIds:
+        - almeida-garrett/frei-luis-de-sousa
+        - almeida-garrett/viagens-na-minha-terra
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+    - id: everything
+      title: Everything, in order
+      description: >
+        The complete bibliography in publication order: exile poetry, the
+        historical and domestic plays behind the national theatre he
+        rebuilt, the picaresque and historical novels, the ballad-collecting
+        scholarship, and the political prose and diaries recovered after his
+        death. The cost: there is no single thread pulling a reader from one
+        work to the next - genre and register change work to work - and a
+        real share of the shelf is occasional or posthumous material
+        (speeches, letters, juvenilia) rather than the handful of works his
+        reputation actually rests on.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]

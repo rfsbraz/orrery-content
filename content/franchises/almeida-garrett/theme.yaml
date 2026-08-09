@@ -1,0 +1,166 @@
+# Branding for the Almeida Garrett wing (see docs/SCHEMA.md#themeyaml).
+# `theme.art` (bottom of this file) was composed once the bibliography and
+# eras below had stopped moving - the visual-language stage's whole reason
+# for running last.
+#
+# Checked against every existing wing's palette (python scripts/theme_digest.py)
+# before choosing, including this catalogue's seven other Lusophone wings:
+# eca-de-queiros (violet-mauve parlour), fernando-pessoa (teal-green,
+# typographer's desk), joao-tordo (Atlantic blue-grey), jose-luis-peixoto
+# (wheat-gold, sunbaked), jose-rodrigues-dos-santos (cardinal-red newsroom),
+# jose-saramago (basalt black + carmine) and valter-hugo-mae (umber
+# terracotta). None grounds itself in the stage; Garrett is the one Lusophone
+# author in this catalogue who built one - literally lobbied for and won the
+# Conservatório de Arte Dramática and the theatre now called Teatro Nacional
+# D. Maria II - and wrote a third of his own bibliography for it, so this
+# wing draws on that fact directly rather than on the drawing-room, coastal
+# or newsroom registers the other seven already hold.
+#
+# GROUND. A gaslit proscenium stage, not a text on a page: the deep,
+# near-black red-brown of a theatre interior once the house lights are down,
+# with a single warm accent standing for the gaslight footlights his own
+# theatre would have used (gas lighting reached Lisbon's Teatro D. Maria II
+# in the 1840s, the same years Garrett was writing for it). Distinct from
+# jose-saramago's harder, geological "volcanic basalt + carmine" (an
+# exposed, outdoor register) and from eca-de-queiros's violet-leaning parlour
+# mauveine - this ground is warmer, browner and indoor-theatrical rather
+# than either drawing-room or landscape.
+preset: proscenium-gaslight
+palette:
+  bg: "#170f0b"        # near-black warm brown-red, a darkened house/backstage,
+                       # not jose-saramago's cooler black-basalt (#141311) or
+                       # eca-de-queiros's wine-maroon parlour (#160e12)
+  surface: "#221712"   # a shade lifted, for cards
+  ink: "#efe3cf"       # warm playbill-cream, for maximum readability
+  muted: "#9c8468"     # dulled parchment-brown for metadata (AA-checked:
+                       # 4.86:1 on surface, 5.35:1 on bg)
+  accent: "#c07a2e"    # a tarnished brass-gaslight amber for the footlights -
+                       # deliberately duller and browner than this
+                       # catalogue's brighter theatrical/adventure golds
+                       # (terry-pratchett's warm-vellum #d9a441, jrr-tolkien's
+                       # scholar's-desk brass #8f6a2e, jose-luis-peixoto's
+                       # sunbaked #c2952a) and further still from its several
+                       # reds (jose-saramago #8a1f24, jose-rodrigues-dos-santos
+                       # #b23327, jk-rowling #a1392b) that a stage-lighting
+                       # concept could easily have drifted toward instead
+displayFace: instrument-serif  # from the app's implemented set (fraunces |
+                       # spectral | sourceSerif | instrument-serif); used
+                       # elsewhere in this catalogue only by terry-pratchett,
+                       # and not yet by any Lusophone wing. Chosen for its
+                       # high-contrast, engraved-broadside letterforms - the
+                       # actual display-type register of a 19th-century
+                       # playbill or political pamphlet, which is literally
+                       # what a large share of this wing's own bibliography
+                       # is (theatre bills, exile broadsides, parliamentary
+                       # pamphlets) - rather than fraunces's warmer
+                       # old-style register (already carried by three other
+                       # Lusophone wings) or spectral's cooler modern one
+                       # (already carried by two)
+signature: beam        # from the app's implemented set (beam | thread | rule
+                       # | filament | none); a spotlight/footlight beam for
+                       # the one Lusophone author in this catalogue who
+                       # built the stage his own plays were lit on. Used
+                       # nine times elsewhere in the catalogue but never yet
+                       # paired with instrument-serif, and never on a
+                       # Lusophone wing (which cluster instead on thread and
+                       # rule) - picked here for the strength of the fit to
+                       # this specific author over novelty for its own sake
+#
+# ART. Composed against the finished shape below: two eras that pivot on his
+# 1836 return from exile (the formation years oscillating between
+# neoclassical convention and the new Romantic current, then the two decades
+# in which he built and wrote for the national stage), 44 works spanning
+# poetry, historical and domestic theatre, one novel and political prose,
+# and a life that runs exile - Liberal Wars soldier - theatre founder -
+# orator - bereaved father - viscount. The stage is the one fact every
+# register below can be hung from without straining: he did not just write
+# for a theatre, he lobbied for and built the institution, so an emblem, a
+# line and a mood grounded in a *working* theatre (backstage, pre-curtain,
+# under construction) rather than a gala audience's view earns its keep the
+# way a generic "19th-century Portugal" costume register would not.
+art:
+  emblem:
+    object: >
+      A row of small gaslight footlight globes set into the bare lip of an
+      empty stage - one lit, the rest still dark, the curtain not yet risen
+      behind them. Drawn as a straight line along the stage edge, never an
+      arc or a ring, so it is never mistaken for the shared orrery motif
+      (docs/VISUAL.md §1a).
+    why: >
+      States this file's own ground (above) as one object rather than
+      restating its reasoning. Gas lighting reached Lisbon's Teatro
+      Nacional D. Maria II - the theatre and drama conservatory Garrett
+      personally lobbied for and won (lifeEvent
+      almeida-garrett-founds-national-theatre-1836) - in the same 1840s
+      decade he was writing Frei Luís de Sousa for that stage. One lamp lit
+      among several still dark, curtain not yet up, is his own career's
+      unresolved oscillation between neoclassical convention and the new
+      Romantic current, caught at the exact moment before either one wins.
+  motifs:
+    - the gaslit proscenium arch and a stage curtain caught mid-rise or mid-fall, never fully open on a lit house
+    - backstage ropes, pulleys and sandbag counterweights, coiled or paid out for a scene change
+    - a playbill or political broadside pasted or pinned to bare wood, its lettering the wing's own engraved-broadside display face
+    - the neoclassical pediment and columns of a theatre or public building, gas-lit from below rather than sunlit
+    - a Gothic ruin or crumbling arch glimpsed through fog (the English exile that turned him Romantic)
+    - a harbour at dusk, a ship at anchor or just cast off (the two exiles, and the 1836 return that never reverses)
+    - an empty parliamentary bench or lectern with papers left on it (the orator, off the stage but still performing)
+    - a worn ballad broadsheet or chapbook page, a hand-copied verse in its margin (the popular romanceiro he collected rather than invented)
+  atmosphere: >
+    Backstage and pre-curtain rather than gala: the specific hush of a
+    working theatre before the house opens or after it closes - ropes
+    coiled, a gas jet being lit or trimmed, a script open on a prompt
+    stand - anticipation and craft, not a seated audience's plush view of
+    a lit stage from the stalls. Warm and interior wherever the theatre
+    itself is the setting, but never domestic-cosy: a stage is a public
+    institution under construction and administration, which is exactly
+    what this author spent his return from exile doing, not just what he
+    wrote plays for. Where exile or political risk enters instead - the
+    1821 prosecution, the two exiles, the Liberal Wars - the same warm
+    gaslight tightens into something more exposed and provisional: a
+    single source of light in an otherwise unlit room, tent or ship's
+    cabin, rather than a switch to a colder register. Never gala or
+    premiere glitter, never red-velvet audience seating or a chandeliered
+    full house, and never the domestic parlour warmth eca-de-queiros
+    already holds in this catalogue.
+  lineCharacter: >
+    A dip-pen line disciplined by a straightedge for anything built or
+    institutional - the proscenium arch, a pediment, a parliamentary
+    bench, a playbill's ruled border - the record of a formation spent
+    absorbing neoclassical convention. The same pen loosens into freer,
+    unruled, more gestural strokes wherever the subject is weather,
+    drapery, ruin or feeling: a curtain's fall, fog over a harbour, a
+    Gothic arch met in exile. Both registers usually appear in the same
+    drawing, one discipline breaking into the other partway through a
+    stroke rather than being cleanly split scene by scene - a ruled hand
+    that keeps sliding toward expression and not quite holding, which is
+    this specific author's own oscillating formation years rendered as a
+    mark rather than described as one. That mix is what keeps a Garrett
+    drawing from reading as either eca-de-queiros's uniformly poised
+    steel-nib line or jose-saramago's single flat, unmodulated dip-pen
+    fill: both neighbours commit to one hand throughout, and this wing's
+    whole premise is that its author's did not, yet.
+  backgroundTexture: >
+    Rough, unsized paper with a visible canvas weave under a warm
+    umber-brown ground wash - closer to a scene-painter's primed backdrop
+    flat than a bound page - distinct from eca-de-queiros's
+    damask-ghosted parlour-wall laid paper and jose-saramago's near-black
+    volcanic-ash ground.
+  accentUse: >
+    The tarnished brass-gaslight amber (palette.accent, #c07a2e) touches
+    exactly one footlight-adjacent element per image - a single stage-lamp
+    flame, one length of gilt proscenium moulding, one braid or button on
+    a uniform or academic gown - and never floods a whole light source, a
+    whole curtain, or a whole wall. It marks where the gas is actually
+    burning, not where a scene is generally warm.
+  avoid:
+    - generic 19th-century costume-drama ballroom or salon staging, and any gala/premiere glamour - red velvet audience seating, a chandeliered full house, an evening-dress crowd - none of which this wing's own working-theatre register earns
+    - azulejo tiling, fado and maritime-sardine-cobblestone Portugal-tourist cliches
+    - the footlight-globe emblem drawn as an even arc of dots rather than a straight stage-lip line - an arc reads as the shared orrery rings, which this emblem must never be mistaken for
+    - a literal togas-versus-cloaks costume dichotomy standing in for the neoclassical/Romantic pivot - the pivot lives in the line (lineCharacter above) and the architecture, not in what a figure is wearing
+    - a courtroom-melodrama staging for the 1821 prosecution or any exile scene - draw the room, the light and the papers, never a trial tableau
+notes: >
+  A gaslit stage rather than a drawing room, a landscape or a newsroom - the
+  one Lusophone wing in this catalogue grounded in the theatre its own
+  author built. Personality through palette plus one display face plus one
+  signature, readability first, no genre costume; both displayFace and
+  signature are drawn only from the app's currently implemented sets.
