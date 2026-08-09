@@ -1,0 +1,62 @@
+stage: completeness-auditor
+summary: >
+  8 works -> 9. Added Trocando Olhares (1994, apocrypha). Verified the
+  8-work spine against the University of Évora's own "bibliografia ativa"
+  (independent of the DGLB bio franchise-research used) - every date,
+  publisher, preface and editor already in works.yaml matches, work for
+  work. Settled all 3 items franchise-research left open. Fixed a stale
+  count in the header comment. validate.py --slug florbela-espanca clean:
+  2258 works catalogue-wide (was 2257), same one pre-existing warning.
+produced:
+  newWorkIds:
+    - florbela-espanca/trocando-olhares
+  changedProse:
+    - florbela-espanca/charneca-em-flor
+  changedDates: []
+forStages:
+  press-archaeology: >
+    Publication span is now 1919-1994 (was 1919-1982); no change to the
+    named lifeEvent anchors otherwise.
+  eras: >
+    Trocando Olhares (1994) is early-career content by subject despite
+    being the latest print date; no new periodisation boundary, eras.yaml
+    can stay [] as before.
+  visual-metadata: >
+    Trocando Olhares needs a cover (1994 Imprensa Nacional-Casa da Moeda,
+    ISBN 972-27-0751-5, or the 2009 Martin Claret reissue).
+  translation: >
+    Trocando Olhares' synopsis and note are new English prose, need pt-PT
+    (and any other wing locale) before merge.
+openQuestions:
+  - "RULING: Trocando Olhares added as a 9th work, apocrypha, not escalated.
+    Same shape as Cartas/Diário do Último Ano already in this file (archival
+    material, never prepared for publication by her, first printed via a
+    posthumous editor): a real 346p book, ISBN, 2009 reissue, and it is the
+    one item on franchise-research's exclusion list that UÉ's own
+    bibliography actually lists as 'bibliografia ativa' alongside every
+    other work here. Lands at the chronological tail (1994, after O Dominó
+    Preto), so no reorder of the derived reading order."
+  - "Settled: pre-1919 working titles stay excluded, confirmed against a
+    second primary source. One addition: 'Primeiros Versos' (1917), a
+    second failed publishing attempt alongside Primeiros Passos, now named
+    next to it with the same exclusion reasoning."
+  - "Settled: the two 1931 periodical poems (Vão orgulho, Nostalgia) stay
+    excluded. UÉ credits Dal Farra with archival retrieval/digitization of
+    each specific text, which argues against either being a reprint inside
+    an existing collection, though no full table of contents was found to
+    rule that out with certainty. Moot for work-status either way: a single
+    periodical poem isn't a book here."
+  - "Settled: Reliquiae is not a missing work, it is Battelli's own name for
+    the 28 sonnets appended to Charneca em Flor's 2nd/3rd editions -
+    already accounted for on that entry, now named there explicitly."
+  - "Verified unchanged: As Máscaras do Destino's 8-story contents
+    (cross-checked against pt.wikipedia, not just Goodreads - matches
+    exactly), canonTier assignments (internally consistent, extended tier
+    for As Máscaras left as the open call franchise-research already
+    flagged), and no co-authorship anywhere in the 9 works."
+  - "Obras Completas editorship (research-only, no existing claim was
+    wrong): Dom Quixote 1986-92 = Rui Guedes/Seabra Pereira (matches
+    Cartas's existing citation); Presença 2009-11 = Seabra Pereira; Estampa
+    2012-15 (3 vols only) = Cláudia Pazos Alonso/Fabio Mario da Silva.
+    Neither Anastácio nor Chaves turned up editing any Florbela Espanca
+    critical edition."
