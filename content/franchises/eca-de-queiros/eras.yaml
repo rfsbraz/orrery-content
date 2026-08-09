@@ -1,0 +1,78 @@
+# Creative periods - the narrative spine of the aura. Inline references use
+# [[type:id|text]] and must resolve.
+#
+# Eça's bibliography carries exactly one named critical period, used
+# independently across at least five academic sources spanning 1999-2021:
+#   - A. N. Piedade, "Fradiquismo e modernidade no último Eça (1888-1900)"
+#     (UAB, 1999; cited 41 times) - the source of both the term and its years.
+#   - R. Loureiro, "A trilogia do último Eça", Palimpsesto - Revista do
+#     Programa de Pós-Graduação em Letras (UERJ, 2009) - independent use,
+#     naming a "trilogy" of his final prose (Correspondência de Fradique
+#     Mendes, A Ilustre Casa de Ramires, A Cidade e as Serras).
+#   - S. C. Alves & B. Góes, in C. N. Tolomei (ed.), "Iniciação à Eça..."
+#     (2021) - attributes the framing to name-brand Eça scholar Carlos Reis
+#     directly: Reis calls it the "deriva post-naturalista" ("post-naturalist
+#     drift") of the "último Eça".
+#   - J. C. Siqueira, "O ensaísmo do último Eça" (USP/UFC, 2016).
+#   - L. D. O. P. Freitas, "Filosofia e Antifilosofia no Último Eça"
+#     (academia.edu).
+# This clears the fandom-consensus bar several times over and carries a named
+# scholarly attribution (Reis), so provenance is critical rather than fandom.
+#
+# BOUNDARY, ROUNDED BY ONE YEAR. Piedade's title cites "(1888-1900)" - 1888
+# for [[work:eca-de-queiros/os-maias|Os Maias]], his last completed realist
+# novel, after which his fiction visibly redirects toward Fradique and
+# journalism; 1900 for his death. Taken literally, that end year orphans
+# [[work:eca-de-queiros/a-cidade-e-as-serras|A Cidade e as Serras]] - written
+# through his death in August 1900 but published in 1901 by his son - which
+# is exactly the novel Loureiro's "trilogia do último Eça" names as this
+# period's culmination. The app assigns era membership by each work's
+# published year (see lib/content/river.ts), so a literal 1900 cutoff would
+# silently drop the period's own paradigmatic book. The span here runs
+# 1888-1901 to keep it; the extension is one year past a source that is
+# itself citing a death date rather than a publication date, not an invented
+# boundary.
+#
+# Everything published from 1902 onward (Contos through Lendas de Santos,
+# 2023) sits outside this era ON PURPOSE - all of it is posthumous
+# journalism, letters and compilations assembled by others after 1900,
+# not part of a creative period Eça himself lived through. See the
+# posthumous-work handling note in works.yaml for the same principle applied
+# there.
+
+- id: o-ultimo-eca
+  organisation: chapter-gate
+  illustration_type: symbolic-still-life
+  images_required: 1
+  title: "O Último Eça"
+  period: "1888-1901"
+  themes: [fradiquismo, post-naturalist drift, philosophical idealism, a valedictory late style]
+  provenance: critical
+  description: >
+    The final twelve years of Eça's life, named "o último Eça" ("the last
+    Eça") by a dedicated line of Portuguese-language scholarship and
+    described by Carlos Reis, quoted in Tolomei's Iniciação à Eça, as a
+    "deriva post-naturalista" - a post-naturalist drift away from the social
+    satire of his earlier fiction. It opens after
+    [[work:eca-de-queiros/os-maias|Os Maias]] (1888), his last completed
+    realist novel, and runs through the "trilogy of the last Eça" that closes
+    his career: [[work:eca-de-queiros/a-correspondencia-de-fradique-mendes|A
+    Correspondência de Fradique Mendes]] and
+    [[work:eca-de-queiros/a-ilustre-casa-de-ramires|A Ilustre Casa de
+    Ramires]] (both 1900), and
+    [[work:eca-de-queiros/a-cidade-e-as-serras|A Cidade e as Serras]],
+    finished at his death and published in 1901. Across the decade between,
+    Fradique Mendes himself was reinvented as a fictional persona from around
+    1885, and the satirist of [[work:eca-de-queiros/o-primo-basilio|O Primo
+    Basílio]] gives way to something closer to idealism.
+  note: >
+    RECEIVED LABEL, ROUNDED BOUNDARY. "O último Eça" and its 1888 opening are
+    both as sourced (Piedade 1999). The 1900 end year in that same source's
+    title is his death date, not a publication date; taken literally it
+    orphans A Cidade e as Serras (published 1901) from the very period a
+    second source names it the culmination of. The span is extended to 1901
+    to keep it, per the sourced-boundary handling in the eras skill - this is
+    a one-year rounding against a death date, not an invented cutoff.
+  sources:
+    - https://repositorioaberto.uab.pt/bitstream/10400.2/2202/1/Tese%20de%20Mestrado.pdf
+    - https://www.e-publicacoes.uerj.br/palimpsesto/article/download/35680/25292

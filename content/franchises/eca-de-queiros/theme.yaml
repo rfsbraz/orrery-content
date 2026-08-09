@@ -1,0 +1,96 @@
+# Branding for the Eça de Queirós wing (see docs/SCHEMA.md#themeyaml). Non-art
+# fields only - the `art` block is scaffolded separately by the
+# visual-language stage, once the bibliography and any eras are settled.
+# Checked against every existing wing's palette (python scripts/theme_digest.py)
+# before choosing, including this catalogue's five other Lusophone wings:
+# joao-tordo (Atlantic blue-grey), jose-luis-peixoto (wheat-gold, sunbaked),
+# jose-rodrigues-dos-santos (newsroom cardinal red), jose-saramago
+# (volcanic basalt black + carmine) and valter-hugo-mae (warm umber
+# terracotta). None of the five uses violet, and Eça's own milieu supports
+# one directly rather than by elimination (below) - so this wing does not
+# repeat blue, gold, red, black or umber a sixth time.
+#
+# GROUND. Eça's realist novels are set almost entirely in the drawing rooms,
+# provincial parlours and rented Lisbon apartments of the 1870s-1890s
+# Portuguese bourgeoisie he spent his career satirising - the very class
+# whose vanity gave Portuguese the word "acaciano" (from O Primo Basílio's
+# Conselheiro Acácio). That milieu's own defining colour is a real,
+# documented historical fact rather than a reading of the prose: mauveine,
+# the first synthetic aniline dye (William Perkin, 1856), made a violet-mauve
+# shade a fashionable, expensive status colour across bourgeois Europe for
+# the following three decades - precisely the years and the class Eça wrote
+# about. The palette below is built on that dye colour and on lamp-black
+# wallpaper and velvet rather than on a "Portuguese literary" costume.
+preset: parlour-mauveine
+palette:
+  bg: "#160e12"        # near-black with a warm wine-maroon cast - faded
+                       # bourgeois velvet and papered walls by gaslight, not
+                       # Saramago's volcanic basalt or Valter Hugo Mãe's
+                       # umber
+  surface: "#20161a"   # a shade lifted, for cards
+  ink: "#efe4d8"       # warm aged-paper ivory, for maximum readability
+  muted: "#96837f"     # dulled rose-taupe, for metadata (AA-checked: 4.91:1
+                       # on surface, 5.29:1 on bg)
+  accent: "#8a5f7a"    # one dusty mauveine violet, for links and markers
+                       # only - closer to pink than any of this catalogue's
+                       # three existing violets (hue ~322°, against Miguel de
+                       # Cervantes's blue-leaning indigo #5c4fae at ~248° and
+                       # two colder violets at ~272° and ~296° on other wings)
+displayFace: fraunces  # from the app's implemented set (fraunces | spectral |
+                       # sourceSerif | instrument-serif); a warm, ornamented
+                       # literary serif, in the register this catalogue
+                       # already gives other 19th-century realist prose
+                       # stylists (Saramago, Cervantes, McCarthy) rather than
+                       # the quieter spectral/sourceSerif used for its more
+                       # restrained or modernist wings
+signature: thread      # a fine, continuous line - not yet used by any of
+                       # this catalogue's other five Lusophone wings - standing
+                       # for the correspondence and consular dispatches that
+                       # run through Eça's own career (Havana, Newcastle,
+                       # Bristol, Paris) and for the thread of posthumous
+                       # editorial work still adding to this bibliography as
+                       # recently as 2023
+
+# Checked against the two wings sharing both fraunces and thread (Miguel de
+# Cervantes) or sharing thread and the same country (Fernando Pessoa,
+# José Saramago) via `theme_digest.py`, since a shared face or signature is
+# where two wings actually converge. Cervantes's line is described as
+# itinerant period ink browning at a stroke's edge, for a picaresque world of
+# roads and inns; Pessoa's is a clerk's steady hand over ruled or typed
+# ground, for a record kept in fragments under several names; Saramago's is
+# a firm, unmodulated line against exposed volcanic rock and open sky. None
+# of the three is a bourgeois interior drawn by an ironist who never leaves
+# the room, which is Eça's own territory and this wing's line below.
+art:
+  emblem:
+    object: >
+      An ornate gilt picture frame hanging empty above a mantelpiece, set
+      as if for a portrait that was never painted.
+    why: >
+      Carlos Fradique Mendes - the wealthy Azorean poet and traveller Eça,
+      Antero de Quental and Jaime Batalha Reis first invented as a joke in
+      1868 - was eventually given a complete biography, a body of letters
+      and a literary reputation (A Correspondência de Fradique Mendes,
+      1900) without ever existing. A fully furnished room built around a
+      man with no face states that plainly, and it is a fact unique to
+      this wing rather than a container-of-papers image shared with the
+      catalogue's other posthumous-heavy bibliographies.
+  motifs: [gaslit parlours, potted aspidistras and ferns, gilt-framed mirrors, sealed letters and calling cards, a violet ribbon or cravat as the one worn ornament, a rented apartment window onto a wet Lisbon street]
+  atmosphere: >
+    Interior and artificial-lit rather than sunlit - gaslight, not daylight,
+    with the outside world visible only through a window or a half-open
+    door. A performed elegance that is slightly too careful, the way a
+    fashionable phrase can be pompous rather than sincere ("acaciano"): the
+    furniture is well-appointed and just a little airless. Not heroic,
+    tragic or grand - domestic and socially exact, the way a satirist
+    watches a room rather than a battlefield.
+  lineCharacter: >
+    A fine steel-nib line, drawn with the careful, faintly self-conscious
+    precision of someone composing a letter they already suspect will be
+    read as literature - poised rather than rustic (contrast Cervantes's
+    road-worn iron-gall ink) and personal rather than clerical (contrast
+    Pessoa's typed, filed hand). Controlled, slightly ornamented flourishes
+    at the ends of strokes; no tremor, no haste.
+  backgroundTexture: a dark, damask-ghosted laid paper, as if drawn straight onto a papered parlour wall rather than a blank page
+  accentUse: the dusty mauveine violet on exactly one worn accessory per image - a ribbon, a glove, a cravat pin, a fan - never a fill and never the room itself
+  avoid: [generic Belle Époque costume-drama ballroom staging that could belong to any 19th-century European realist, wide-open austere landscape or exposed rock (Saramago's ground, not this wing's), maritime and fado and azulejo-tile Portugal-tourist cliches, present-day or electrically-lit Lisbon]

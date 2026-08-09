@@ -1,0 +1,63 @@
+# A wing spans an author's complete published work. Eça de Queirós published
+# nine books in his lifetime and left roughly
+# twenty more for his executors, his son and, a century on, academic editors
+# to bring out - a shape this catalogue has already modelled once, on José
+# Saramago's wing, where posthumous volumes are ordinary works carrying a
+# `note: Published posthumously.` rather than any special structure. That is
+# the model followed here too: no separate posthumous section, no invented
+# schema, just the fact recorded on each entry it applies to (works.yaml's
+# own header explains the handful of works still short of a firm source).
+#
+# Two of the nine lifetime books - A Correspondência de Fradique Mendes and
+# A Ilustre Casa de Ramires, both dated 1900 - were finished before his death
+# in August that year but reached print only weeks or months after it; PT
+# Wikipedia's own article on the Fradique Mendes book calls this
+# "semipóstumo". Both are recorded as `published: 1900` (the true first-print
+# year) with a `note:` on the fact, the same treatment as any other
+# posthumous work here.
+#
+# PORTUGUESE AS THE ORIGINAL LANGUAGE. Eça wrote in Portuguese throughout; no
+# work in this bibliography was first published in English or any other
+# language, so there is no first-publication-language exception to record
+# (contrast Fernando Pessoa's wing, most of whose lifetime books were
+# English, or Orhan Pamuk's one English-first title). `title` below is
+# therefore always the original Portuguese, per this catalogue's standing
+# rule (SCHEMA.md) - never a translated title, whether or not an English
+# edition exists.
+id: eca-de-queiros
+name: Eça de Queirós
+kind: author
+description: >
+  Portugal's leading 19th-century realist novelist: nine books in a
+  twenty-eight-year writing life, from the 1870 mock-hoax detective serial
+  [[work:eca-de-queiros/o-misterio-da-estrada-de-sintra|O Mistério da Estrada
+  de Sintra]] through
+  [[work:eca-de-queiros/os-maias|Os Maias]] (1888), written largely from a
+  Portuguese consul's desk in Newcastle, Bristol and finally Paris - and then
+  a second, much longer bibliography assembled from his papers by his son and
+  by scholarly editors, running from
+  [[work:eca-de-queiros/a-cidade-e-as-serras|A Cidade e as Serras]] (1901) to
+  a volume of previously uncollected work still appearing in 2023.
+authorIds: [eca-de-queiros]
+themePreset: parlour-mauveine
+
+# Capabilities are auto-detected from the data (docs/SCHEMA.md). This wing
+# ships works.yaml, a 7-lifeEvent author entity, a 5-entry events.yaml
+# anchoring the posthumous bibliography at 1875-1880, 1878, 1925, 1980-1982
+# and 2007, and one sourced era (o-ultimo-eca, 1888-1901). The
+# century-and-a-quarter between Eça's 1900 death and the 2023 Lendas de
+# Santos still carries no context beyond those five event anchors; real
+# years remain uncovered between them, a documented state rather than a
+# finished one. One additional order (the sourced trilogia-do-ultimo-eca
+# thread; see orders.yaml's own header), but no startHere - the searches
+# that would justify a wizard turned up no converged "where to start"
+# practice, only a single video and disagreeing SEO listicles. No
+# editions.yaml (no ISBN verified yet) and no achievements.yaml (none earned
+# while the aura is this thin).
+features: {}
+
+globalEvents:
+  include:
+    - berne-convention-1886  # signed midway through his Bristol (1879-1888) and Paris (1888-1900) consular years; every translated edition of his work reaching a foreign reader from 1886 on does so under the licensing regime it created
+  exclude:
+    - elementary-education-act-1870  # English and Welsh schooling law; he wrote in Portuguese for a Portuguese and Brazilian readership, not the Victorian mass reading public this Act created
