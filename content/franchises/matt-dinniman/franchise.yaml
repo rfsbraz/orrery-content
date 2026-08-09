@@ -1,0 +1,67 @@
+# A wing spans an author's complete published work, not just the series that
+# made them famous. Matt Dinniman is best known for the ongoing Dungeon
+# Crawler Carl LitRPG saga, but
+# his own site and Wikipedia both list a real shelf around it: a teenage-
+# written fantasy-horror trilogy first published in 2003 and revised in 2020,
+# an unfinished 2017-2018 progression-fantasy series, a 2005 story collection,
+# two standalone horror/thriller novels, and a 2026 standalone science-fiction
+# satire. Dungeon Crawler Carl is modelled as a `subseries` on works.yaml,
+# never as the wing's boundary.
+id: matt-dinniman
+name: Matt Dinniman
+kind: author
+description: >
+  An American LitRPG/science-fantasy writer who serialized his way from a
+  cat-show portrait artist's downtime to a NYT-bestselling shelf: the ongoing
+  [[work:matt-dinniman/dungeon-crawler-carl|Dungeon Crawler Carl]] saga
+  (self-published on Royal Road and Amazon from 2019-2020, later acquired for
+  print by Ace Books), the 2026 standalone science-fiction satire
+  [[work:matt-dinniman/operation-bounce-house|Operation Bounce House]], an
+  unfinished progression-fantasy series begun in 2017, a 2005 story
+  collection, two earlier standalone horror/thriller novels, and the
+  fantasy-horror trilogy he started writing as a high-school senior in the
+  early 2000s.
+authorIds: [matt-dinniman]
+themePreset: hazard-broadcast
+features: {}
+
+# No startHere path beyond the one below: no source recommends an entry point
+# into the wing's other series or standalones (they are minor, mostly
+# out-of-print side shelf next to the flagship), so there is nothing to weigh
+# a second path against. This one path is receipted rather than curated
+# invention - it is Dungeon Crawler Carl's own publisher numbering (#1-#8, per
+# mattdinniman.com/books/ and Wikipedia), which is also, in practice, the only
+# entry point any reader of this author is actually looking for.
+startHere:
+  paths:
+    - id: start-with-dungeon-crawler-carl
+      title: Start with Dungeon Crawler Carl
+      description: >
+        The flagship series from book one: a Coast Guard veteran and his
+        ex-girlfriend's show cat, thrown into an alien-built dungeon
+        broadcast across the galaxy as a reality show, in the order the
+        publisher numbers them (#1-#8 so far, ongoing).
+      workIds:
+        - matt-dinniman/dungeon-crawler-carl
+        - matt-dinniman/carls-doomsday-scenario
+        - matt-dinniman/the-dungeon-anarchists-cookbook
+        - matt-dinniman/the-gate-of-the-feral-gods
+        - matt-dinniman/the-butchers-masquerade
+        - matt-dinniman/the-eye-of-the-bedlam-bride
+        - matt-dinniman/this-inevitable-ruin
+        - matt-dinniman/a-parade-of-horribles
+      orderId: null
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+
+# globalEvents left unruled (no `include`/`exclude` at all): no shared event
+# reaching this author's writing decades (the early 2000s and 2019-present)
+# has been weighed against his shelf yet, so nothing here should be read as
+# "considered and refused" the way jim-butcher's exclude list is.
+
+sources:
+  - https://en.wikipedia.org/wiki/Matt_Dinniman
+  - https://en.wikipedia.org/wiki/Dungeon_Crawler_Carl
+  - https://mattdinniman.com/books/
+  - https://mattdinniman.com/about/
