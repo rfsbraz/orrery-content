@@ -1,0 +1,118 @@
+stage: art-rotation
+summary: >
+  Graded organisation/illustration_type/images_required/modifier on all 4
+  lifeEvents in content/authors/florbela-espanca.yaml (events.yaml and
+  eras.yaml are both empty on this wing - no franchise events, no eras, so
+  there was nothing else in this stage's footprint to grade). Contour went
+  from a flat "====" (beside 4/4, over the cap of 3, zero variety) to
+  "===#" - three mid-intensity workhorse cells building to one earned
+  rupture at the very end of the sequence, her own death. Both gate axes
+  clean: art_rotation.py --check reports 0 organisation-rotation problems
+  and 0 pacing problems (the composition axis stays flagged, as expected -
+  no GitHub art issues exist yet on this freshly built wing); validate.py
+  --slug florbela-espanca is 0 errors, 0 warnings.
+produced:
+  gradedLifeEvents:
+    - id: florbela-espanca-born-1894
+      organisation: beside
+      illustration_type: establishing-landscape
+      images_required: 1
+      why: >
+        Ordinary, low-impact opening beat - the workhorse organisation for
+        an ordinary event. illustration_type grounds the wing's own primary
+        motif (urze on scorched ground, from theme.art.motifs) in the place
+        it actually names: Vila Viçosa's charneca, which gives Charneca em
+        Flor its title. Sets up the char/bloom pairing the death event
+        closes at the other end of the timeline.
+    - id: florbela-espanca-first-divorce-1921
+      organisation: artifact-spread
+      illustration_type: document-facsimile
+      images_required: 1
+      why: >
+        The divorce is a dated court judgment (Comarca de Vila Viçosa, 30
+        April 1921) - a textbook match for artifact-spread's own stated use
+        ("court record... Evidence"), and a clean break from the preceding
+        beside so no two consecutive events repeat an organisation.
+    - id: florbela-espanca-brother-apeles-death-1927
+      organisation: medallion
+      illustration_type: portrait-of-absence
+      images_required: 1
+      modifier: breakout
+      why: >
+        The judgment call - see below. Kept at mid intensity (not
+        immersion) despite impact: high, framed as a memorial keepsake
+        (medallion's own stated use: "memorials... legacy, symbolic
+        remembrance") for the book dedicated to him, As Máscaras do
+        Destino. portrait-of-absence over any likeness, per theme.art.avoid
+        and visual-language's own handoff note pointing at the Tejo/water
+        ground rather than his face: an object the water gave back or
+        withheld (a naval instrument, a life vest) rather than the man.
+        breakout lets one such object - something naval or aviation-shaped -
+        cross the medallion's rim, a single restrained gesture toward how
+        he died without staging the crash itself.
+    - id: florbela-espanca-death-1930
+      organisation: immersion
+      illustration_type: symbolic-still-life
+      images_required: 1
+      why: >
+        The judgment call - see below. This is the wing's one genuine
+        rupture and the only immersion spent on this wing. illustration_type
+        symbolic-still-life carries the proofs of Charneca em Flor she was
+        correcting when she died (published a month later) beside the
+        wine-rose bloom breaking through char that is the wing's own ground
+        image - "under the burnt heath, roses are born" - so the picture the
+        reader stops at is the flowering the theme explicitly calls for
+        (art.atmosphere: "a scorched ground that flowers, not a deathbed"),
+        not a body or a bed.
+  contour:
+    before: "==== (beside 4/4, OVER THE CAP; organisation-rotation FAILED)"
+    after: "===# (0 organisation-rotation problems, 0 pacing problems)"
+judgementCall: >
+  Two of the four lifeEvents carry impact: high (brother Apeles's death in
+  1927, her own death in 1930), only three years and zero events apart, and
+  theme.art is unusually explicit that this wing must not read as a gothic
+  mourning-shrine despite both deaths - art.atmosphere names "a scorched
+  ground that flowers, not a deathbed" and art.avoid bars "gothic
+  mourning-shrine imagery" and "generic sad woman poet... mourning-dress
+  iconography" by name. Giving both deaths `immersion` would have stacked
+  two ruptures back to back in every sense that matters here - not just the
+  hard "no two loud touching" gate, but the actual reading experience of a
+  four-entry wing where the last two of four cells would both stop the
+  reader cold. That is a death-cult shrine by construction, independent of
+  what either image depicts.
+  So only one event gets `immersion`: her own death, because it is the
+  wing's actual ending - the story has nowhere further to go after it, and
+  the "rebirth not elegy" claim the theme stakes out only has weight if it
+  is spent at the single moment the whole book is finally in print. The
+  brother's death is graded `medallion` instead: impact and organisation
+  are deliberately allowed to diverge here, because organisation is the
+  pacing call and impact is the narrative-weight rating, not the same
+  field twice. Medallion still marks 1927 as consequential (a physical,
+  framed keepsake, not a passing `beside`) without spending the wing's one
+  rupture on a moment that is not, itself, the ending - the bio's own prose
+  treats it as a shadow over her last two years, not the wing's final beat.
+  This also gives the two-images-apart spacing "no two loud cells in one
+  screenful" wants for free, rather than needing to rely on it.
+verification:
+  art_rotation_check: >
+    Before: "beside 4/4 100% OVER THE CAP"; 4 organisation-rotation
+    problems (cap + 3 neighbour repeats); contour "====". After:
+    "organisation rotation holds across all 4 events: no organisation over
+    its cap, no neighbour repeats."; 0 organisation-rotation problems;
+    contour "===#"; "pacing holds: no two loud cells touching or sharing a
+    screenful, no plateau." The composition axis still reports "1 rotation
+    problem(s)" (0 of 4 assets read - no GitHub art issues exist yet) and
+    keeps the script's exit code at 1; that is the expected, un-owned third
+    axis per the skill, not an organisation or pacing problem.
+  validate: "0 errors, 0 warnings for --slug florbela-espanca"
+forStages:
+  asset-prompt: >
+    All 4 lifeEvents are graded and ready for prompt-writing. Two hard
+    constraints to carry forward from theme.art.avoid: no likeness of
+    Florbela, her three husbands, or her brother Apeles in any image -
+    the brother's medallion (portrait-of-absence + breakout) and her own
+    immersion (symbolic-still-life) are both built to be drawable without
+    one. The immersion prompt should lean on theme.art's own named objects
+    (the ruled sonnet manuscript page, the wine-rose bloom breaking
+    scorched ground) rather than any deathbed staging.
+openQuestions: []
