@@ -1,0 +1,48 @@
+stage: completeness-auditor
+summary: >
+  Read Joel Serrão's "Tábua biobibliográfica de Cesário Verde" (Revista
+  Colóquio/Letras n.º 93, Setembro de 1986) directly at
+  coloquio.gulbenkian.pt's own digital archive - the primary source
+  franchise-research had only reached via secondary citation - and
+  cross-checked the BNP catalogue for Joel Serrão's "Obra Completa" edition
+  history. Resolved all three open questions. 2 -> 4 works (core 1
+  unchanged, extended 1 -> 3). validate.py --slug cesario-verde clean except
+  the expected missing theme.art block.
+counts:
+  before: { works: 2, core: 1, extended: 1, apocrypha: 0 }
+  after: { works: 4, core: 1, extended: 3, apocrypha: 0 }
+added:
+  - { work: cesario-verde/obra-completa-de-cesario-verde, year: 1964, tier: extended, source: "BNP catbnp/1847701 + catbnp/213088 (Portugália, 'Poetas de hoje' n.15) - resolves openQuestion 1", reorder: "appended after O Livro (1887); nothing reorders" }
+  - { work: cesario-verde/o-sentimento-dum-ocidental, year: 1880, tier: extended, containedIn: cesario-verde/o-livro-de-cesario-verde, source: "Tábua p.14 (Jornal de Viagens, Porto, 10 Jun 1880) - resolves openQuestion 2", reorder: "none, containedIn works are skipped by the derived order" }
+corrected:
+  - { work: cesario-verde/nos, change: "note rewritten with the Tábua's own facts: probably begun 1881 (p.14), first published A Ilustração, Paris, 5 Sep 1884 (p.16) - resolves openQuestion 3; published year unchanged; no reorder" }
+  - { work: cesario-verde/o-livro-de-cesario-verde, change: "verified against the Tábua p.18 directly, matches prior note exactly; Serrão-edition paragraph trimmed and cross-linked to the new obra-completa entry instead of restating inline" }
+rejected:
+  - item: "Pedro da Silveira, 'A Obra Completa de Cesário Verde' (Coimbra, 1964, 34p., BNP catbnp/1245756)"
+    why: "a corrections pamphlet responding to Serrão's edition - criticism about Verde, not a work of Verde's"
+  - item: "Joel Serrão, 'Cesário Verde: Interpretação, Poesias Dispersas e Cartas' (Minerva 1957 / Delfos 1961)"
+    why: "primarily Serrão's own critical interpretation with Verde's poems/letters as supporting material, not clearly a Verde-authored book"
+  - item: "'Poesia Completa e Cartas Escolhidas' (Brazil, org. Carlos Felipe Moisés), reviewed Colóquio/Letras n.69 (1982)"
+    why: "publisher and first-edition year not independently established here"
+  - item: "Teresa Sobral Cunha (ed.), 'Cânticos do Realismo e Outros Poemas: 32 Cartas' (Relógio d'Água, 2006, BNP catbnp/1697342)"
+    why: "real modern edition of 32 of Verde's letters plus a Fernando Pessoa critical study, but whether letters belong in this bibliography (as Florbela Espanca's and Camões's apocrypha Cartas do) and which of 3 letters-editions found (1957/1982/2006) is the first publication is unsettled - see contestedCases"
+  - item: "8 further individually-dated poems from the Tábua (Num Bairro Moderno, Merina, Sardenta 1878; Cristalizações, Noite Fechada, Num Álbum, Em Petiz 1879)"
+    why: "real sourced dates, but none singled out in the criticism the way Nós/O Sentimento are; named by date in works.yaml's own header so a future pass need not re-derive them"
+contestedCases:
+  - "The Verde letters question (3 editions found, no settled first publication, authorship-attribution ambiguity on the 1957 Serrão volume) is the one item this pass could not close; flagged in works.yaml's own header rather than guessed at."
+forStages:
+  press-archaeology: >
+    Same Tábua (pp.10-18) gives day precision the 7 lifeEvents lack -
+    brother Joaquim Tomás died 20 March 1882 (p.15, currently just "1882") -
+    and independently corroborates the 1874 announced-but-unpublished volume
+    (p.10) without naming a title; no link to "Cânticos do Realismo" should
+    be assumed.
+  eras: >
+    Now-dated poems run 1878-1884 (10 total, up from a handful). David
+    Mourão-Ferreira's essay in the same issue (p.74-81, on the shift from
+    decassílabo to alexandrino across Verde's dated poems) may be the
+    periodisation eras.yaml previously ruled out for lack of one - worth a
+    look before re-confirming eras: [].
+  reading-orders: No change to the no-startHere ruling.
+  visual-language: >
+    No change; theme.yaml's missing art block is unrelated to this stage.
