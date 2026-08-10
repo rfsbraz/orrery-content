@@ -1,0 +1,215 @@
+# Branding for the Cesário Verde wing (see docs/SCHEMA.md#themeyaml and
+# Orrery CONCEPT SS6 - the design law). Palette, face and signature below are
+# non-art fields; the `art` block at the end of this file is composed
+# separately, against the now-finished bibliography, eras and franchise
+# events.
+#
+# Checked against every existing wing's palette (scripts/theme_digest.py)
+# before choosing, including this catalogue's ten other Lusophone wings:
+# almeida-garrett (gaslit theatre amber, hue ~31), eca-de-queiros
+# (violet-mauve parlour, hue ~322), fernando-pessoa (muted teal-green, hue
+# ~162), joao-tordo (Atlantic blue-grey, hue ~202), jose-luis-peixoto
+# (wheat-gold sunbaked plains, hue ~42), jose-rodrigues-dos-santos (cardinal
+# newsroom red, hue ~5), jose-saramago (basalt black + carmine, hue ~357),
+# valter-hugo-mae (umber terracotta, hue ~17), florbela-espanca (charred
+# heath bloom, wine-rose, hue ~345) and luis-de-camoes (verdigris green,
+# hue ~128).
+#
+# GROUND. Verde's own name is literally "green", and his most anthologised
+# single image turns the whole natural world green on purpose - "Se eu
+# transformasse os simples vegetais... Num ser humano que se mova e exista"
+# ("if I turned the simple vegetables... into a human being that moves and
+# exists") - but Camões already holds this catalogue's best, widest green
+# (verdigris, hue ~128, a ship-fitting's oxidized patina), and the wider
+# green band either side of it (matt-dinniman ~72, umberto-eco ~74,
+# karin-slaughter ~80, anna-sewell ~105, agatha-christie ~148,
+# fernando-pessoa ~162) leaves no clean gap a Verde-green could claim without
+# reading as a diminished echo of one of them. So the ground here is not
+# pastoral green at all: it is the OTHER half of Verde's own recurring
+# duality, the city he actually wrote most often and most originally about -
+# a hardware merchant's son's Lisbon of macadamized streets ("a larga rua
+# macadamizada"), gaslit dusk, and the pale, cold light of "noites gélidas"
+# and "manhãs brumosas". A single dusty bottle-green accent stands in for
+# the other half of the duality instead: not a lush countryside green but
+# the flat, functional green of an old Lisbon shopfront's woodwork or an
+# account ledger's binding - the register of a shopkeeper's son who worked
+# the family ironmongery counter his whole short life, not of a poet who
+# only ever left the city for the fields.
+preset: fanqueiros-ledger
+palette:
+  bg: "#111310"         # near-black, neutral cool-warm stone - macadam and
+                        # gaslit dusk, not Saramago's warmer basalt (#141311)
+                        # or Tordo's cooler Atlantic blue-grey (#141a1e)
+  surface: "#1c1e17"    # a shade lifted, for cards
+  ink: "#e9e6da"         # pale warm bone-white, for maximum readability
+                        # (14.9:1 against bg)
+  muted: "#948f7a"      # desaturated grey-olive for metadata; clears the
+                        # 4.5:1 AA floor against both bg (5.8:1) and surface
+                        # (5.2:1)
+  accent: "#3d5c28"      # dusty bottle-green, hue ~96 - sitting in the one
+                        # real gap this catalogue's green band still has
+                        # (karin-slaughter's kudzu at ~80, anna-sewell's
+                        # pasture sage at ~105), but kept meaningfully darker
+                        # and more desaturated than either (v=0.36 against
+                        # their 0.6 and 0.48) so it reads as old shopfront
+                        # paint rather than a paler echo of one neighbour or
+                        # the other; see GROUND above for why it is a
+                        # commerce green, not a countryside one
+displayFace: sourceSerif  # from the app's implemented set (fraunces |
+                        # spectral | sourceSerif | instrument-serif); this
+                        # catalogue's four other closest-in-register
+                        # Lusophone wings (eca-de-queiros, florbela-espanca,
+                        # jose-saramago, luis-de-camoes) all already use
+                        # fraunces's warm classical register, which suits
+                        # their own more ornate or epic diction. Verde's own
+                        # innovation was the opposite - a plain,
+                        # newspaper-exact "vocabulário objectivo" (Infopedia's
+                        # own phrase) that brought a reporter's precision
+                        # into verse - so the plainer, more exact sourceSerif
+                        # fits his register better than reaching for fraunces
+                        # by default
+signature: filament    # from the app's implemented set (beam | thread |
+                        # rule | filament | none); roughly forty poems,
+                        # scattered across Lisbon's newspapers for thirteen
+                        # years with no book behind them, resolving into one
+                        # continuous thread only once Silva Pinto gathered
+                        # them after his death - the single lit thread
+                        # filament is built for, picked over the catalogue's
+                        # much more common beam or rule for that specific
+                        # gathering-together quality rather than a bold
+                        # accent rail or an architectural line
+notes: >
+  Not a pastoral green (Luís de Camões already holds this catalogue's best
+  green, and the band around it is otherwise full) but the flat commerce
+  green of an old Lisbon shopfront, held against a near-black macadam-and-dusk
+  ground - the city half of Verde's own city/country duality, since that is
+  the half he actually wrote most of his poetry from. Personality through
+  palette plus one display face plus one signature, readability first, no
+  genre costume; both displayFace and signature are drawn only from the
+  app's currently implemented sets.
+
+# ART. Composed against the finished bibliography (works.yaml - a hardware
+# merchant's son whose ~40 poems only ever existed scattered across Lisbon
+# and Porto newspapers for a decade, gathered into one book only after his
+# death), the tested-negative eras (eras.yaml - the city/country duality runs
+# his whole career simultaneously, read in opposite directions by different
+# critics, never as sequential phases) and the two franchise events (the 1901
+# second edition, the 1919 Linda-a-Pastora fire that destroyed what remained
+# of his papers). Checked against every adjacent wing (theme_digest.py):
+# closest is luis-de-camoes (verdigris, hue ~128, this catalogue's nearest
+# other green accent), read in full. Camões is pale, dry and outdoor:
+# sun-bleached daylight, tropical glare, salt-worn paper, exposure. This wing
+# commits to the opposite half of that same register - near-black, urban,
+# gaslit dusk and cold misted night, indoor commercial precision rather than
+# open horizon - so the two greens never draw the same weather, the same
+# paper or the same object even where the hue sits close. Camões's accent is
+# patina raised on bronze by decades of salt air; this wing's is paint a
+# shopkeeper chose, on wood and cloth, never on metal gone green with age.
+art:
+  emblem:
+    object: >
+      A single narrow column of Lisbon newspaper print, curling slightly
+      where damp evening air has softened the sheet, laid across the ruled
+      page of a hardware shop's account ledger beneath it - the newsprint
+      overlapping the ledger's exact, hand-ruled columns without quite
+      covering them.
+    why: >
+      States the wing's own founding image (this file's header) as one
+      object: the roughly forty poems that only ever existed as newspaper
+      columns, scattered across a decade of Lisbon and Porto periodicals,
+      set directly against the family ledger that was his other, steadier
+      trade - the fanqueiros-ledger the palette preset is named for. Print
+      that will not survive intact laid over commerce that keeps exact
+      accounts is the whole duality in one object, not a pen, an inkwell or
+      a portrait. The ledger's cloth spine tape, dyed the same dusty
+      bottle-green as the palette's shopfront accent, is the one place the
+      accent belongs on this emblem.
+  motifs:
+    - a hardware shop's stock and fittings, ruled inventory pages - nails,
+      hinges, scale weights, coiled rope or wire sold by the length, an
+      account book's exact hand-ruled columns - the family ironmongery on
+      Rua dos Fanqueiros, read as commerce, never as folk-craft texture
+    - macadamized street paving, its individual stones and joints rendered
+      with the same exactness as the ledger's columns - Verde's own "a
+      larga rua macadamizada", not a generic cobbled lane
+    - gaslight - a street lamp being lit or already lit at dusk, its glass
+      and iron fitting drawn as exact hardware rather than atmosphere, the
+      fact his own fourth movement of "O Sentimento dum Ocidental" names
+      outright, "Ao gás" - a fact of the street, not a mood
+    - a solitary walking figure, seen from behind or at a distance, never
+      posed toward the viewer - the recurring vantage of a poem that is
+      itself a walk from dusk to the small hours, an observer's back and
+      gait rather than a face
+    - the urban/rural threshold - where macadam gives way to open field or
+      farm track at the city's edge, the exact seam between Lisbon and
+      Linda-a-Pastora rather than either side alone
+    - an empty chair at a family table, or a closed shutter on a farmhouse
+      window - the oblique correlate for the two tuberculosis deaths "Nós"
+      names directly; never a sickbed, a bandage or any staging of illness
+      as aesthetic
+  atmosphere: >
+    A reporter's precision, not a mood: overcast city light, gaslit dusk,
+    the specific hours Verde himself names - "noites gélidas" (cold nights),
+    "manhãs brumosas" (misty mornings) - rendered as observed weather and a
+    named time of day, never as soft-focus atmosphere standing in for
+    feeling. What this wing is not: misty, wistful Romantic-poet nostalgia -
+    Verde's own critics call his vocabulary "objectivo", the opposite
+    instinct from mood-first Romanticism, and a hazy, dreamlike treatment
+    would draw the poet his own generation accused him of not being. Also
+    not: a dying-young-poet's aestheticised melancholy - his tuberculosis is
+    a fact of his life, never a visual register to work in. Held equally
+    against the daylight glare of luis-de-camoes: this wing's register is
+    interior-scaled and low-lit even outdoors, dusk and gaslamp rather than
+    open sun.
+  lineCharacter: >
+    Two registers for one hand, both held to the plain "objectivo"
+    precision Verde's own critics name. For anything commercial or urban -
+    the ledger's columns, the shop's stock, macadam joints, a lamp's
+    ironwork - a plain steel-nib pen, not a dip-pen's calligraphic swell,
+    ruled against a straightedge wherever a line is meant to be counted
+    rather than felt, held to one even weight throughout: a clerk's hand,
+    not an illustrator's. For the remembered countryside - Linda-a-Pastora,
+    the urban/rural threshold, the empty-chair motif - the same nib is
+    lifted from the straightedge and drawn freehand with a worn, blunter
+    pencil stub instead, looser and less certain, the mark of memory rather
+    than direct observation. The two registers sit in the same drawing when
+    a subject calls for both, exact ruled ink beside loose unruled
+    graphite, never blended into one uniform line - the two-register line
+    is the formal expression of the city/country duality itself.
+  backgroundTexture: >
+    Grey-toned newsprint stock rather than parchment or laid paper: matte,
+    absorbent, faintly toothy, with the ghost of a printed column rule
+    running down it at hairline weight, as if the sheet had once carried
+    type. Where a ledger page is the surface instead, the same stock
+    tightens into a ruled account-book grid, its columns evenly spaced and
+    slightly indented from repeated use. Dry throughout, no wash, no wet
+    pooling or bleeding at the grain - never Camões's salt-bleached fibre
+    with its mineral bloom, never a wet-ink wash.
+  accentUse: >
+    The dusty bottle-green (palette.accent, #3d5c28) touches exactly one
+    small painted or bound element per image, and never floods a surface: a
+    shopfront's door or window frame, a ledger's cloth spine tape, a
+    shutter slat, a lamp-post's repainted iron collar, a scale's
+    counterweight. It marks a place where paint or binding cloth carries a
+    shopkeeper's or clerk's colour choice - never a wash over sky, foliage,
+    water or any open expanse, and never patina on bare or oxidised metal
+    (that register belongs to luis-de-camoes).
+  avoid:
+    - misty, wistful Romantic-poet nostalgia - soft-focus mood standing in
+      for the reportorial exactness Verde's own critics name "objectivo"
+    - a dying-young-poet's aestheticised melancholy - tuberculosis and
+      sickbed imagery treated as visual register rather than biographical
+      fact; the oblique motifs above (an empty chair, a closed shutter) are
+      as close as this wing comes
+    - any new invented likeness of Verde beyond the one sourced Columbano
+      Bordalo Pinheiro lithograph already used as his author portrait
+      (docs/VISUAL.md §3) - no face in a life-event or franchise-event
+      sketch
+    - generic nineteenth-century Lisbon postcard or azulejo-tourism imagery
+      - tiled facades, fado shorthand, picturesque hillside trams
+    - the salt-bleached daylight, bronze-patina register already held by
+      luis-de-camoes in this catalogue - no open sea, no tropical glare, no
+      oxidised metal fittings
+    - pastoral idyll played straight - the remembered countryside is one
+      half of a duality, never a self-sufficient bucolic scene without the
+      city half implied or adjacent

@@ -1,0 +1,124 @@
+# A wing spans an author's complete published body of work (standing ruling,
+# 2026-07-21). For Cesário Verde that is, by any strict standard, one book:
+# see works.yaml's own header for the full accounting of what that book is,
+# what it grew to include across later editions, and what is documented
+# there as a known gap rather than an invented fact.
+#
+# globalEvents block below: every event in content/events/global.yaml
+# postdates Verde's 1886 death - the nearest, the Berne Convention
+# (9 September 1886), by about seven weeks, and he died before international
+# copyright protection existed for authors publishing the way he did, in
+# uncollected newspaper print. Ruled: all excluded, none reach a life and
+# career that closes in 1886, before the modern publishing-industry history
+# this catalogue's global events track even begins.
+
+id: cesario-verde
+name: Cesário Verde
+kind: author
+description: >
+  A Lisbon shopkeeper's son who brought a newspaperman's exactness to
+  Portuguese verse - the city's poverty and vanity, the countryside's
+  vitality, rendered with a precision his own critics called photographic -
+  and who died of tuberculosis at 31 having published almost nothing as a
+  book; his friend Silva Pinto gathered his scattered poems into
+  [[work:cesario-verde/o-livro-de-cesario-verde|O Livro de Cesário Verde]]
+  the following year, and Fernando Pessoa's own generation would go on to
+  claim him as modern Portuguese poetry's first voice.
+authorIds: [cesario-verde]
+themePreset: fanqueiros-ledger
+
+# Capabilities are auto-detected from the data (docs/SCHEMA.md); nothing is
+# forced here. The wing carries a 7-lifeEvent author entity (enough for a
+# thin river) and four works, one of them featured; no editions.yaml (no
+# usable cover found - see works.yaml), no orders.yaml (the derived default -
+# O Livro de Cesário Verde, then the 1964 critical edition, since both
+# individually catalogued poems carry containedIn and drop out of the linear
+# walk - is two works with an unambiguous chronological order and no
+# same-year tie to break: nothing left to curate), no achievements.yaml, no
+# characters.yaml. eras.yaml is present and empty; see that file's own header
+# for why. startHere carries two paths - see below.
+features: {}
+
+globalEvents:
+  include: []
+  exclude:
+    - sept-11-2001                     # postdates his death by 115 years
+    - financial-crisis-2008            # postdates his death by 122 years
+    - covid-19-pandemic-2020           # postdates his death by 134 years
+    - world-war-i-1914                 # postdates his death by 28 years
+    - world-war-ii-1939                # postdates his death by 53 years
+    - pulp-magazines-1926              # postdates his death by 40 years
+    - penguin-paperback-1935           # postdates his death by 49 years
+    - armed-services-editions-1943     # postdates his death by 57 years
+    - lady-chatterley-trial-1960       # postdates his death by 74 years
+    - fantasy-paperback-boom-1965      # postdates his death by 79 years
+    - carnation-revolution-1974        # postdates his death by 88 years
+    - chain-bookshop-1982              # postdates his death by 96 years
+    - online-bookselling-1995          # postdates his death by 109 years
+    - ebook-and-self-publishing-2007   # postdates his death by 121 years
+    - prestige-fantasy-adaptation-2011 # postdates his death by 125 years
+    - booktok-2020                     # postdates his death by 134 years
+    - portugal-bailout-2011            # postdates his death by 125 years
+    - elementary-education-act-1870    # English schooling market; Verde published in Portuguese
+                                        # periodicals in an independent context with no demonstrable link
+    - comics-code-authority-1954       # postdates his death by 68 years
+    - portuguese-censorship-1926       # postdates his death by 40 years
+    - berne-convention-1886            # postdates his death by about 7 weeks;
+                                        # he died before it existed
+    - satanic-verses-fatwa-1989        # postdates his death by 103 years
+
+startHere:
+  paths:
+    # Source: DGE (Direção-Geral da Educação), Aprendizagens Essenciais,
+    # Português, 11.º ano (dge.mec.pt/sites/default/files/Curriculo/
+    # Aprendizagens_Essenciais/11_portugues.pdf), Anexo 1, "Lista de Obras e
+    # Textos para Educação Literária - 11.º ano", fetched and read directly:
+    # "Cesário Verde - Cânticos do Realismo (O Livro de Cesário Verde)
+    # (leitura integral de 'O Sentimento dum Ocidental')" - the only work of
+    # his the national syllabus sets, and the only poem it requires read in
+    # full. Independently corroborated in the criticism: that poem's own
+    # works.yaml note records Joel Serrão's "Tábua biobibliográfica" calling
+    # it Verde's "obra-prima", and three separate essays in the same
+    # Colóquio/Letras centenary issue give it sustained individual
+    # discussion apart from general studies of his work.
+    - id: classroom-canon
+      title: Start with O Livro de Cesário Verde
+      description: >
+        O Livro de Cesário Verde is the whole of his published reputation -
+        one slim posthumous collection, gathered by his friend Silva Pinto
+        the year after Verde's death. Read it start to finish, and give your
+        closest attention to "O Sentimento dum Ocidental": the poem
+        literally every Portuguese secondary-school reader meets, required
+        reading in full under the Ministry of Education's 11th-year
+        Português syllabus, and independently singled out by critics who
+        never taught a classroom as his masterpiece. The cost: it leaves out
+        the further poems Joel Serrão's 1964 critical edition later
+        recovered from periodicals - and for a Portuguese reader who studied
+        Verde at school, none of this is a fresh discovery.
+      workIds:
+        - cesario-verde/o-livro-de-cesario-verde
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+    - id: everything
+      title: Everything, in order
+      description: >
+        The complete published record: O Livro de Cesário Verde (1887),
+        then Joel Serrão's 1964 critical edition, which recovered the poems
+        Silva Pinto's original selection left out and established the wider
+        canon now read as Verde's collected work. The cost: the 1964 book is
+        a scholarly apparatus assembled seventy-eight years after his
+        death - editorial notes and poems reconstructed from periodicals -
+        rather than a second creative achievement in its own right.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+
+sources:
+  - "https://pt.wikipedia.org/wiki/Ces%C3%A1rio_Verde"
+  - "https://en.wikipedia.org/wiki/Ces%C3%A1rio_Verde"
+  - "https://www.infopedia.pt/%24cesario-verde"
+  - "https://www.infopedia.pt/%24o-livro-de-cesario-verde"

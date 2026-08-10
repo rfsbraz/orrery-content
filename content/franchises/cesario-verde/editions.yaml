@@ -1,0 +1,199 @@
+# Concrete published editions. Coverage: 3 of the wing's 4 works carry a
+# verified edition (o-livro-de-cesario-verde, obra-completa-de-cesario-verde,
+# o-sentimento-dum-ocidental); nos has none - no standalone publication of
+# that individual poem was found anywhere checked, only Helder Macedo's 1975
+# critical study "Nós, uma leitura de Cesário Verde" (a book about the poem,
+# not an edition of it, correctly not recorded here).
+#
+# No `title` field on any pt-PT entry below except the Dom Quixote reissue:
+# Verde wrote in Portuguese, so a same-language edition carrying the work's
+# own title would only duplicate it. The Dom Quixote entry is the one real
+# exception - the jacket says "Poesia Completa," not "Obra Completa de
+# Cesário Verde," a different published title for the same underlying text,
+# which SCHEMA.md's title rule exists to record rather than normalise away.
+#
+# SOURCING, ranked as used: the Biblioteca Nacional de Portugal's own
+# catalogo.bnportugal.gov.pt (ISBN and keyword search; permalinks cited as
+# id.bnportugal.gov.pt/bib/catbnp/<n>) for records it holds; a publisher's own
+# site (projectoadamastor.org) where reachable; OpenLibrary ISBN records where
+# they carry a MARC source_record from a real library catalogue (Library of
+# Congress, Harvard, University of Toronto) rather than bare user-contributed
+# data - the distinction matters and is noted per entry. Every ISBN-13 below
+# was checked against its digit and, where the source only gave an ISBN-10,
+# converted and rechecked from scratch.
+#
+# NO coverUrl ON ANY ENTRY. No candidate cover image found for this wing has
+# been inspected against SCHEMA.md's image-rights bar, so none is recorded;
+# the app falls back to a typographic cover for every slot.
+#
+# THE 1887/1901/1964 PRE-ISBN PROBLEM, handled per work:
+# - O Livro de Cesário Verde's own true first edition (Typographia
+#   Elzeviriana, Lisboa, 1887, 200 copies, never offered for sale - see
+#   works.yaml's own note) is not recorded here as its own entry. It was never
+#   a buyable object, and two later reissues of that exact text (below) already
+#   cover both the "read it free" and "own a copy" cases a reader has.
+# - The 1901 second edition - the one that, per Joel Serrão's own
+#   bibliographic table (cited on the franchise's segunda-edicao-1901 event),
+#   first reached general readers - is real but its publisher/imprint could
+#   not be independently identified: not in the Biblioteca Nacional de
+#   Portugal catalogue (checked by ISBN-less keyword and title search; no
+#   record surfaced), and OpenLibrary's edition list for this work has
+#   nothing dated 1901 either. An OpenLibrary record dated "1900" and
+#   attributed to "Editora Ulisseia" is not it - Ulisseia did not exist as a
+#   publisher until decades later, and the same introduction credit (Maria
+#   Ema Tarracha Ferreira) already belongs, correctly, to Ulisseia's own 1981
+#   printing recorded twice elsewhere in that same edition list; "1900" reads
+#   as a cataloguing artefact (LOC's own publish_country code for that record
+#   is "xx", unknown) rather than a real date. So: a real edition with no
+#   locatable imprint is a genuine research gap, left for a human with
+#   archival access rather than shipped with an invented publisher.
+# - Obra Completa de Cesário Verde's 1964 first edition (Portugália) is
+#   pre-ISBN by nine years and is recorded below with no isbn13, deliberately -
+#   see that entry's own note.
+#
+# EXCLUDED - A REAL ISBN THAT NOW POINTS AT A DIFFERENT BOOK. Works.yaml's own
+# note for Obra Completa records a 6th (Livros Horizonte, 1992), 7th (1999)
+# and 8th (2003) printing, all under ISBN 972-24-0829-1 (978972240829 5 in
+# 13-digit form) per pt.wikipedia's bibliografia section, and OpenLibrary
+# repeats the same number. Checking it directly against the Biblioteca
+# Nacional de Portugal catalogue instead of trusting either secondary source
+# turned up five records under that ISBN, not three: the three Obra Completa
+# printings above, plus a 3rd (1999) and 4th (2005) printing of an unrelated
+# book, Jorge Correia Jesuíno's "Processos de liderança" - also Livros
+# Horizonte. The publisher evidently reused the number once the Verde title
+# went out of active print. The most recent live record under that ISBN
+# (2005) is the leadership book, not this one, so recording it here would
+# send a reader to the wrong object - exactly the failure mode SCHEMA.md's
+# editions section warns is worse than no edition at all. Not recorded.
+#
+# EXCLUDED - SELF-PUBLISHED / PRINT-ON-DEMAND NOISE, no established publisher
+# behind any of them and no library or retailer record opened for any: three
+# "Independently Published" (KDP) listings of O Livro de Cesário Verde
+# (9781549688522, 2017, "(Ilustrado)"; 9798585377617 and 9798719561325, both
+# 2021 - the 979-8 prefix on the last two is Amazon's own KDP self-publishing
+# block, not a real Portuguese registrant), and a 2015 "The Perfect Library"
+# reprint (9781512370928) - a US print-on-demand operation, not a Portuguese
+# publisher.
+#
+# EXCLUDED - FOUND, REAL, NOT RECORDED FOR LACK OF ROOM TO ADD OVER WHAT'S
+# ALREADY COVERED: a 1926 "edição definitiva" of O Livro de Cesário Verde
+# (J. Rodrigues, Lisboa, 130p, "reimpressão textual" of Silva Pinto's original,
+# per a University of Toronto library MARC record) and Editora Ulisseia's 1981
+# printing (Lisboa, introduction by Maria Ema Tarracha Ferreira, no ISBN
+# found for it). Both are real historical reprints of the same 1887 text the
+# Caixotim 2004 entry below already reissues and documents; recording either
+# would duplicate that slot rather than add a genuinely different object.
+
+- id: cesario-verde/o-livro-de-cesario-verde/projecto-adamastor-2013-pt
+  workId: cesario-verde/o-livro-de-cesario-verde
+  isbn13: "9789898698056"
+  language: pt-PT
+  format: ebook
+  publisher: Projecto Adamastor
+  year: 2013
+  readUrl: "https://projectoadamastor.org/o-livro-de-cesario-verde-cesario-verde/"
+  note: >
+    A free ebook with its own ISBN, read directly off the publisher's product
+    page: cover art by Ana Ferreira using José Malhoa's "Praia das Maçãs,"
+    revision by Ricardo Lourenço, EPUB/MOBI/Kobo formats. The page itself
+    states the eBook's own 2013 publication date against the book's 1887
+    original.
+  sources:
+    - "https://projectoadamastor.org/o-livro-de-cesario-verde-cesario-verde/"
+
+- id: cesario-verde/o-livro-de-cesario-verde/oficina-do-livro-2007-pt
+  workId: cesario-verde/o-livro-de-cesario-verde
+  isbn13: "9789895553259"
+  language: pt-PT
+  format: paperback
+  publisher: Oficina do Livro
+  year: 2007
+  note: "Illustrated edition (il. Pedro Sousa Pereira), 171p, Cruz Quebrada."
+  sources:
+    - "https://id.bnportugal.gov.pt/bib/catbnp/1731332"
+
+- id: cesario-verde/o-livro-de-cesario-verde/caixotim-2004-pt
+  workId: cesario-verde/o-livro-de-cesario-verde
+  isbn13: "9789728651602"
+  language: pt-PT
+  format: paperback
+  publisher: Caixotim Edições
+  year: 2004
+  note: >
+    "Coleção Caixotim Áureo," preface by Annabela Rita, 103p, published to
+    mark the 150th anniversary of Verde's birth (25 February 1855); an
+    OpenLibrary/Harvard-catalogue record (not the Biblioteca Nacional de
+    Portugal, which has no entry for this ISBN) states it explicitly
+    reprints the 1887 Typographia Elzeviriana text with new introductory
+    matter. A second ISBN, 9789728651619, is recorded for what the same
+    source treats as the same edition (likely a binding variant); not
+    duplicated here.
+  sources:
+    - "https://openlibrary.org/isbn/9789728651602"
+
+- id: cesario-verde/obra-completa-de-cesario-verde/dom-quixote-2001-pt
+  workId: cesario-verde/obra-completa-de-cesario-verde
+  isbn13: "9789722019514"
+  language: pt-PT
+  title: "Poesia Completa"
+  format: paperback
+  publisher: Publicações Dom Quixote
+  year: 2001
+  note: >
+    "Fixação de texto e nota introdutória" by Joel Serrão - the same
+    established text as his 1964 Obra Completa, reissued under this title in
+    Dom Quixote's "Poesia do Século XX" collection (no. 42), 166p. isbn13
+    converted from the Biblioteca Nacional de Portugal's own 972-20-1951-1
+    and rechecked digit by digit.
+  sources:
+    - "https://id.bnportugal.gov.pt/bib/catbnp/1040226"
+
+- id: cesario-verde/obra-completa-de-cesario-verde/portugalia-1964-pt
+  workId: cesario-verde/obra-completa-de-cesario-verde
+  language: pt-PT
+  format: paperback
+  publisher: Portugália
+  year: 1964
+  note: >
+    Deliberately has no isbn13: the true first edition, nine years before the
+    ISBN system existed. "Poetas de hoje" no. 15, 254p, illustrated - the
+    same printing already cited in works.yaml's own note (catbnp/1847701 and
+    catbnp/213088, the Biblioteca Nacional de Portugal's two catalogue
+    records for it).
+  sources:
+    - "https://id.bnportugal.gov.pt/bib/catbnp/1847701"
+    - "https://id.bnportugal.gov.pt/bib/catbnp/213088"
+
+- id: cesario-verde/o-sentimento-dum-ocidental/campo-das-letras-2005-pt
+  workId: cesario-verde/o-sentimento-dum-ocidental
+  isbn13: "9789896250133"
+  language: pt-PT
+  format: paperback
+  publisher: Campo das Letras
+  year: 2005
+  note: >
+    A standalone chapbook of this one poem, "seguido de uma leitura do poema
+    por Rosa Maria Martelo" (a critical reading appended after the text),
+    "Campo da Poesia" no. 71, 67p, Porto. isbn13 converted from OpenLibrary's
+    isbn10 9896250138, itself sourced to a Library of Congress MARC record,
+    and rechecked digit by digit.
+  sources:
+    - "https://openlibrary.org/isbn/9789896250133"
+
+- id: cesario-verde/o-sentimento-dum-ocidental/umass-dartmouth-2011-en
+  workId: cesario-verde/o-sentimento-dum-ocidental
+  isbn13: "9780981458014"
+  language: en
+  title: "The Feeling of a Westerner"
+  translator: "Richard Zenith"
+  format: paperback
+  publisher: University of Massachusetts Dartmouth
+  year: 2011
+  note: >
+    A standalone chapbook translation, preface by Anna M. Klobucka, in the
+    "Luso-Asio-Afro-Brazilian Studies & Theory" series (no. 2), 39p,
+    Dartmouth, Mass. Zenith is the same translator known for his Pessoa work;
+    sourced to an OpenLibrary record carrying a Library of Congress MARC
+    source record (LCCN 2011035854).
+  sources:
+    - "https://openlibrary.org/isbn/9780981458014"
