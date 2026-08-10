@@ -1,0 +1,147 @@
+# Overlay pt-PT do autor: bio + prosa dos lifeEvents. Os lifeEvents ficam
+# aninhados sob o autor e são fundidos por id (ver SCHEMA.md, "Nested lists
+# merge by id"): título + descrição, nunca datas, impact, sources,
+# organisation, illustration_type, images_required ou modifier.
+# A referência a Dungeon Crawler Carl (o livro) usa o título publicado em
+# português, "Carl, o Herói das Masmorras" (ver editions.yaml), exceto nas
+# duas passagens que descrevem a autopublicação de setembro de 2020 - seis
+# anos antes de essa edição existir - onde se mantém o título sob o qual o
+# livro foi de facto publicado nessa altura, "Dungeon Crawler Carl". The
+# Grinding e Dominion of Blades não têm edição portuguesa e mantêm-se em
+# inglês.
+- id: matt-dinniman
+  bio: >
+    Escritor e artista norte-americano. O pai serviu no Exército dos EUA e a
+    família mudava-se com frequência enquanto ele crescia, uma infância que
+    descreve como a de um "military brat"; quando o pai se reformou em
+    Tucson, no Arizona, frequentou e concluiu ali o ensino secundário na
+    Sabino High School, estudando depois na University of Arizona e no
+    Prescott College e frequentando aulas de escrita criativa no Pima
+    Community College. Começou o primeiro romance, a base da trilogia The
+    Shivered Sky, no último ano do secundário. Depois da faculdade trabalhou
+    num jornal em Yakima, no estado de Washington, a escrever obituários, e
+    descobriu um jeito para a ilustração que o levou a percorrer exposições
+    de cães e gatos a desenhar retratos dos animais dos donos para ganhar a
+    vida. Ao longo da década de 2010, a trabalhar nessas bancas de arte,
+    publicou [[work:matt-dinniman/the-grinding|The Grinding]] e os dois
+    primeiros livros da série inacabada
+    [[work:matt-dinniman/dominion-of-blades|Dominion of Blades]]. Em 2019
+    começou a serializar um novo projeto na plataforma de ficção web Royal
+    Road, em parte inspirado por uma gata persa tartaruga que tinha esboçado
+    numa exposição; quando a pandemia de COVID-19 encerrou o circuito das
+    exposições de animais em 2020, autopublicou o romance terminado na
+    Amazon com o título
+    [[work:matt-dinniman/dungeon-crawler-carl|Dungeon Crawler Carl]].
+    Seguiu-se em 2021 um audiolivro narrado por Jeff Hays, e a série foi
+    adquirida para edição impressa pela Ace Books, da Penguin Random House,
+    em 2024, ficando Dinniman com os direitos de e-book e audiolivro. Em
+    2026 a série vai já em oito volumes, com mais de catorze milhões de
+    exemplares vendidos, foi finalista do Arthur C. Clarke Award de 2026 e
+    recebeu uma encomenda direta de série pela Peacock, produzida pela Fuzzy
+    Door de Seth MacFarlane. Toca baixo numa banda. Ele e a mulher
+    instalaram-se no Pacific Northwest durante a década de 2010, primeiro em
+    Bainbridge Island e depois em Gig Harbor, no estado de Washington, onde
+    vivem com os quatro filhos; por volta de 2026 começou a mudar-se de
+    volta para Tucson, para ficar mais perto da mãe e da família da mulher.
+  lifeEvents:
+    - id: matt-dinniman-born-1975
+      title: Nasce em 1975, criado ao longo das colocações do pai no Exército
+      description: >
+        Nasceu em 1975, a meio da carreira do pai no Exército dos EUA; a
+        família mudava-se a cada nova colocação, uma infância que descreve
+        como a de um "military brat". Quando o pai se reformou em Tucson,
+        no Arizona, as mudanças pararam - frequentou e concluiu ali o
+        ensino secundário na Sabino High School, estudou na University of
+        Arizona e no Prescott College, e fez aulas de escrita criativa no
+        Pima Community College. "Sempre considerei Tucson a minha casa",
+        disse já, "e é aqui que sempre soube que iria acabar."
+
+    - id: matt-dinniman-dominion-of-blades-addiction-2017
+      title: Um jogo mortal sobre o vício que evita na vida real
+      description: >
+        Por sua própria conta, evitou deliberadamente os MMORPGs mais
+        viciantes - nunca jogou World of Warcraft, sabendo que a sua
+        "personalidade aditiva" lhe custaria um ano de vida. Dominion of
+        Blades, o seu primeiro romance sobre jogadores presos dentro de um
+        jogo de imersão total letal sem forma de sair, canaliza exatamente
+        esse medo para personagens que nunca têm a escolha que ele deu a si
+        próprio.
+
+    - id: matt-dinniman-meets-jeff-hays-2019
+      title: Conhece o futuro narrador Jeff Hays em Kansas City
+      description: >
+        The Hobgoblin Riot, o seu segundo romance de Dominion of Blades,
+        vence a categoria Game-Lit nos Independent Audiobook Awards, nesse
+        ano realizados em Kansas City como parte do HEAR Now Festival.
+        Também presente está Jeff Hays, narrador sediado em Kansas City com
+        quem nunca tinha trabalhado; os dois conhecem-se e tornam-se amigos.
+        Quando começa a escrever Dungeon Crawler Carl seis meses depois, já
+        tem em mente a voz de Hays, e os audiolivros resultantes - não as
+        edições impressas nem os e-books - tornam-se a maior fonte de
+        vendas da série.
+
+    - id: matt-dinniman-starts-dcc-2019
+      title: Começa a escrever Dungeon Crawler Carl
+      description: >
+        Começa a 26 de dezembro de 2019 o livro que se torna Dungeon
+        Crawler Carl, puramente como passatempo e sem esperar que alguém o
+        lesse, e publica-o gratuitamente na plataforma de ficção web Royal
+        Road. A personagem da gata baseia-se numa persa tartaruga que tinha
+        esboçado numa exposição de gatos anos antes, cujo olhar o fez
+        pensar: "um dia hei de escrever um livro com essa gata."
+
+    - id: matt-dinniman-pandemic-ends-income-2020
+      title: A pandemia acaba com o seu rendimento das exposições de gatos
+      description: >
+        Quando a pandemia encerra os eventos públicos em março de 2020, o
+        circuito de exposições de animais que vinha sustentando
+        discretamente a família - retratos de gatos e cães por encomenda
+        nas mostras da Cat Fanciers' Association, um ofício a que chegou
+        depois de um emprego a escrever obituários num jornal o ter
+        obrigado a aprender Adobe Photoshop - desaparece da noite para o
+        dia, juntamente com o resto do seu rendimento. Sem mais nada a
+        perder, termina a história que vinha publicando por diversão e
+        autopublica-a na Amazon nesse setembro com o título Dungeon Crawler
+        Carl.
+
+    - id: matt-dinniman-ace-books-deal-2024
+      title: A Ace Books adquire Dungeon Crawler Carl para edição impressa
+      description: >
+        A Ace Books, da Penguin Random House, assina com ele um contrato de
+        edição impressa em 2024, com a condição pouco habitual de manter os
+        direitos de e-book e audiolivro em vez de os vender junto com os
+        direitos de papel - os dois formatos que, juntos, já respondiam
+        pela maioria dos leitores da série. O primeiro volume de capa dura
+        da Ace, com nova capa e um capítulo exclusivo de Backstage at the
+        Pineapple Cabaret como material adicional, chega às livrarias a 27
+        de agosto.
+
+    - id: matt-dinniman-tv-rights-2024
+      title: A Universal adquire os direitos televisivos de Dungeon Crawler Carl
+      description: >
+        A Universal International Studios compra os direitos televisivos
+        de Dungeon Crawler Carl numa situação descrita como altamente
+        competitiva, associando a Fuzzy Door de Seth MacFarlane como
+        produtora e Chris Yost (Thor: Ragnarok, The Mandalorian) como
+        argumentista da adaptação - seis dias antes de o primeiro volume de
+        capa dura da Ace chegar às livrarias.
+
+    - id: matt-dinniman-clarke-award-shortlist-2026
+      title: Dungeon Crawler Carl é finalista do Arthur C. Clarke Award
+      description: >
+        O Arthur C. Clarke Award britânico, a assinalar o seu 40º
+        aniversário, coloca Dungeon Crawler Carl na lista de finalistas a
+        livro de ficção científica do ano, escolhido de um recorde de 132
+        candidaturas em 52 chancelas editoriais - o reconhecimento mais
+        claro até agora, por parte do establishment do género, de uma série
+        que começou como um folhetim gratuito na internet.
+
+    - id: matt-dinniman-peacock-series-order-2026
+      title: A Peacock encomenda a série de Dungeon Crawler Carl
+      description: >
+        A Peacock dá a Dungeon Crawler Carl uma encomenda direta de série,
+        com a Fuzzy Door e a Universal Global Television como produtoras,
+        Chris Yost como argumentista e Dinniman creditado como coprodutor
+        executivo sem funções de escrita - a luz verde da série a coroar
+        aquilo a que a Deadline chama "uma viagem louca de sete anos" de
+        folhetim gratuito na internet a série aprovada.

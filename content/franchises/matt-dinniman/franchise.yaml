@@ -1,0 +1,99 @@
+# A wing spans an author's complete published work, not just the series that
+# made them famous. Matt Dinniman is best known for the ongoing Dungeon
+# Crawler Carl LitRPG saga, but
+# his own site and Wikipedia both list a real shelf around it: a teenage-
+# written fantasy-horror trilogy first published in 2003 and revised in 2020,
+# an unfinished 2017-2018 progression-fantasy series, a 2005 story collection,
+# two standalone horror/thriller novels, and a 2026 standalone science-fiction
+# satire. Dungeon Crawler Carl is modelled as a `subseries` on works.yaml,
+# never as the wing's boundary.
+id: matt-dinniman
+name: Matt Dinniman
+kind: author
+description: >
+  An American LitRPG/science-fantasy writer who serialized his way from a
+  cat-show portrait artist's downtime to a NYT-bestselling shelf: the ongoing
+  [[work:matt-dinniman/dungeon-crawler-carl|Dungeon Crawler Carl]] saga
+  (self-published on Royal Road and Amazon from 2019-2020, later acquired for
+  print by Ace Books), the 2026 standalone science-fiction satire
+  [[work:matt-dinniman/operation-bounce-house|Operation Bounce House]], an
+  unfinished progression-fantasy series begun in 2017, a 2005 story
+  collection, two earlier standalone horror/thriller novels, and the
+  fantasy-horror trilogy he started writing as a high-school senior in the
+  early 2000s.
+authorIds: [matt-dinniman]
+themePreset: hazard-broadcast
+features: {}
+
+# Two paths. The flagship path is still Dungeon Crawler Carl's own publisher
+# numbering (#1-#8, per mattdinniman.com/books/ and Wikipedia) - the only
+# entry point any reader of this author is actually looking for - but it now
+# points at matt-dinniman/dungeon-crawler-carl-in-order in orders.yaml rather
+# than restating the eight-book list here: past about five works a path's own
+# `workIds` drifts out of sync with what it duplicates the moment a ninth
+# volume publishes.
+#
+# The second path is the completionist door a one-path bundle was missing.
+# With 20 works across six series and standalones, a reader who has already
+# read all of Dungeon Crawler Carl and wants the rest of the shelf too has a
+# real, ordinary request and, until now, nowhere to be pointed. No source
+# recommends any entry point into the other series beyond plain publication
+# order (checked: FictionDB, FantasticFiction, mostrecommendedbooks.com,
+# inorderbookseries.com, bookseriesinorder.com), so there is no third,
+# per-series path to add for them - the completionist path already carries
+# them via the derived default, and inventing a "start with Shivered Sky"
+# path with no reader behind it would only pad the count with a false door.
+startHere:
+  paths:
+    - id: start-with-dungeon-crawler-carl
+      title: Start with Dungeon Crawler Carl
+      description: >
+        The flagship series from book one: a Coast Guard veteran and his
+        ex-girlfriend's show cat, thrown into an alien-built dungeon
+        broadcast across the galaxy as a reality show, in the order the
+        publisher numbers them (#1-#8 so far, ongoing).
+      workIds: null
+      orderId: matt-dinniman/dungeon-crawler-carl-in-order
+      fit:
+        experience: [new, returning]
+        commitment: [arc]
+
+    - id: everything-in-order
+      title: Everything, in order
+      description: >
+        Every published work in publication order: the ongoing Dungeon
+        Crawler Carl saga, the shorter Shivered Sky trilogy and Dominion of
+        Blades duology, the standalone novels and story collection, and the
+        short fiction ISFDB records outside them.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [completionist]
+        commitment: [complete]
+      note: >
+        The 2003-vintage Shivered Sky trilogy and the 2017-2018 Dominion of
+        Blades duology arrive interleaved with Dungeon Crawler Carl by year
+        rather than grouped as their own runs, so the tonal jump between
+        them - a reality-show LitRPG next to an early-2000s afterlife war
+        epic - lands mid-read rather than at a chosen break.
+
+globalEvents:
+  include:
+    - ebook-and-self-publishing-2007  # Kindle and KDP are the literal mechanism he used: no publisher agreed first, he uploaded Dungeon Crawler Carl to Amazon himself in September 2020
+    - covid-19-pandemic-2020  # Shut down the pet-show circuit in March 2020, eliminating his income and compelling him to finalize and publish Dungeon Crawler Carl in September 2020
+  exclude:
+    - fantasy-paperback-boom-1965  # LitRPG's lineage runs through web-serial fiction (Royal Road) and game-mechanic conventions, not the mass-market epic-fantasy paperback category this event created; sharing the word "fantasy" is not an inheritance
+    - online-bookselling-1995  # This event's actual content is catalogue depth and backlist rediscovery, neither of which describes his path; the self-publishing resonance it gets credited for belongs to ebook-and-self-publishing-2007 and would double-count it here
+    - sept-11-2001  # No published work engages with the event or its cultural aftermath
+    - financial-crisis-2008  # Lived through it as a working artist but no published work addresses it
+    - chain-bookshop-1982  # His self-publishing path emerged independent of the physical bookshop retail model
+    - satanic-verses-fatwa-1989  # Published before his career began; had no bearing on his work
+    - prestige-fantasy-adaptation-2011  # While Game of Thrones normalized fantasy adaptation, his published books predate this shift and their content does not engage with it
+    - booktok-2020  # Dungeon Crawler Carl found its audience through Royal Road serialization and Amazon self-publishing (2019-2020), not through BookTok
+    - portugal-bailout-2011  # An American author living in the US; this European economic event had no bearing on his work
+
+sources:
+  - https://en.wikipedia.org/wiki/Matt_Dinniman
+  - https://en.wikipedia.org/wiki/Dungeon_Crawler_Carl
+  - https://mattdinniman.com/books/
+  - https://mattdinniman.com/about/
