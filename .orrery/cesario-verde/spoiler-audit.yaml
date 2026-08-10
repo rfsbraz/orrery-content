@@ -1,0 +1,299 @@
+stage: spoiler-audit
+summary: >
+  Two ungated synopses rewritten in works.yaml; zero `spoilerAfter`
+  boundaries set, zero loosened, none present before. The wing's whole
+  reveal surface is lyric poetry by a poet dead since 1886, so there is no
+  plot to protect; the one real finding was a synopsis that presented a
+  quoted line as the poem's closing image, and it turned out to be both a
+  spoiler-shaped harm and a factual error - the line stands near the
+  poem's opening. Death lifeEvent reviewed in detail under CURATION §6 and
+  kept as written; reasoning below.
+
+engineVerification: >
+  Verified against the app rather than the skill's table
+  (/home/rfsbraz/apps/orrery). `spoilerAfter` appears exactly once in
+  lib/content/types.ts, on `AuraEvent` (line 80), and `AuraEvent` is
+  reached only by `Author.lifeEvents`, `Heteronym.lifeEvents` and
+  `Franchise.timeline` (franchise + global events). `Work`, `Era`,
+  `Order`, `StartHerePath` and the franchise `description` carry no such
+  field, so the skill's table is correct as written for this catalogue:
+  rewriting is the only lever on synopses and startHere prose.
+  Two corrections to the skill's own text, neither affecting this wing:
+  (1) the "canonical shape" failure it describes - an event's `title`
+  rendering ungated beside a gated `description` - is not reachable in the
+  current app. Every one of the 16 river cells and the timeline wrap
+  `EventTitle`/`event.title` INSIDE `<SpoilerGate>`; checked mechanically
+  across components/river/*.tsx and components/timeline.tsx, zero cells
+  render the title before the gate opens.
+  (2) `works[].note` is curator-only as the skill says, and stronger than
+  it says: the field does not exist on the app's `Work` type at all, so it
+  cannot reach a reader by any route. `startHere[].note` is the opposite -
+  it DOES render (components/wizard/start-wizard.tsx), and is ungated
+  prose. This wing's two paths carry no `note`, so nothing turns on it.
+
+inventory: >
+  works.yaml (4 works), franchise.yaml (description + 2 startHere paths +
+  globalEvents include/exclude), events.yaml (2 franchise events),
+  eras.yaml (empty list, header comment only), theme.yaml (branding prose),
+  content/authors/cesario-verde.yaml (bio + 7 lifeEvents),
+  content/events/global.yaml (every entry excluded by franchise.yaml - all
+  postdate 1886), content/i18n/pt-PT/franchises/cesario-verde/franchise.yaml
+  (startHere overlay). No orders.yaml, no characters.yaml, no editions.yaml.
+
+spoilersFound:
+  loadBearing: []
+  incidentalRewritten:
+    - where: works.yaml, cesario-verde/o-sentimento-dum-ocidental, synopsis
+      was: >
+        "...closing on a longing to escape to 'Madrid, Paris, Berlim, S.
+        Petersburgo, o mundo'."
+      finding: >
+        The synopsis handed a newcomer what it called the poem's closing
+        image, in the poem's own words. Checked against the primary text
+        (pt.wikisource.org's 1887 text, fetched and read in full): the line
+        is the third stanza of the FIRST of four movements, "Ave-Marias" -
+        one of the poem's opening gestures, not its close. The poem in fact
+        ends on the human-pain image of "Horas mortas", which the entry
+        never stated and still does not.
+      severity: >
+        Low as a spoiler once located (an opening-movement line, in a poem
+        every Portuguese 11th-year reader is set, is premise by the skill's
+        taxonomy - incidental), but the FRAMING was the harm: telling a
+        first reader "here is how it ends" flattens the read whether or not
+        the quoted line is where the claim puts it, and here it also
+        shipped a false fact.
+      fix: >
+        Rewritten. The synopsis now names the poem's four-movement shape
+        and places the quotation where it belongs - "Its opening movement
+        already names the cities the walker would rather be in" - and
+        states nothing about the ending. Quotation trimmed to "Madrid,
+        Paris, Berlim, S. Petersburgo". Not deleted: the line is jacket-copy
+        equivalent for this poem (syllabus-set, universally anthologised),
+        and redacting what a reader meets in every school edition is the
+        over-redaction failure the skill warns disarms the mechanism.
+      noteAdded: >
+        The work's `note` (curator-only, unrendered) now records the four
+        movement titles, that the quoted line sits in the third stanza of
+        the first movement and not at the close, and the "no mundo!" /
+        "o mundo!" variant between the wikisource text and common citation.
+        This is the landmine-disarming the skill asks for: without it the
+        next enrichment pass re-derives "closing on..." from the same
+        half-memory that produced it.
+    - where: works.yaml, cesario-verde/nos, synopsis
+      was: >
+        "...written in the shadow of the tuberculosis that had already
+        killed one sibling and would shortly kill another..."
+      finding: >
+        Not a spoiler; a factual contradiction inside the wing's own
+        ungated prose, which is the sweep item this audit was asked to run.
+        The synopsis put the brother's death in the poem's future. The same
+        file's note says both losses "the poem names directly", and the
+        author entity's own lifeEvent says the poem "is written out of"
+        both. Checked against the primary text: section II is the elegy for
+        the sister, section III narrates the brother's illness and death
+        outright ("Uma tuberculose abria-lhe cavernas!"). The poem was
+        begun in 1881 and published in 1884, so the writing straddles the
+        March 1882 death - the synopsis was describing only the earlier
+        half of that span.
+      fix: >
+        Rewritten to "...set against the tuberculosis that took his sister
+        and then his brother and was by then working on Verde himself."
+        Adds nothing a reader does not already meet in the bio, the two
+        sibling lifeEvents and works.yaml's own header, and still leaves
+        the poem's actual turn (the closing renunciation of literature)
+        unstated.
+      noteFixed: >
+        The same note said 1881 was "two years after his brother's 1882
+        death" (it is a year before) and labelled the poem's own closing
+        quatrain a dedicatory quotation without saying so. Both corrected;
+        the quatrain is now identified as the poem's closing lines, so a
+        future pass cannot promote it into the rendered synopsis believing
+        it to be front matter. The word "dedicatory" is kept: Serrão's
+        table is behind an image viewer that will not give up its text to
+        scripts/fetch.py, so the attribution stands unverified rather than
+        contradicted.
+  checkedNotASpoiler:
+    - id: cesario-verde/o-livro-de-cesario-verde
+      basis: >
+        The synopsis describes the collection's subject and its city/country
+        division and the fact of Silva Pinto's posthumous gathering. No
+        poem's ending, no single line, no turn. The city/country reading is
+        the wing's own sourced critical frame (Helder Macedo's "antinomia
+        estruturante", quoted in eras.yaml), not a plot disclosure, and it
+        is the first thing any edition's preface says. Clean, unchanged.
+    - id: cesario-verde/obra-completa-de-cesario-verde
+      basis: >
+        Pure publication history - editor, publisher, year, printings, what
+        it recovered. Publication facts are explicitly not plot and take no
+        boundary. Clean, unchanged.
+    - id: cesario-verde/o-sentimento-dum-ocidental
+      basis: >
+        After the rewrite: names the poem's four-movement shape, its
+        premise (a walk through a Lisbon evening), its central opposition
+        (present squalor against the voyages and Camões) and its critical
+        afterlife. Verified against the full primary text that it now
+        states nothing from the closing movement.
+    - id: cesario-verde/nos
+      basis: >
+        After the rewrite: premise and biographical frame only. The poem's
+        structural turn - section III's death, and the final renunciation
+        of his own verse - is stated nowhere a reader can reach. Verified
+        against the full primary text.
+    - id: franchise.yaml startHere/classroom-canon
+      basis: >
+        Read cold as an anonymous newcomer. It names WHICH poem to attend
+        to and WHY it is the one (DGE syllabus, critical consensus) and
+        says nothing whatever about what the poem contains. This is the
+        shape the skill wants from a startHere path - it sells the door,
+        not the room. Clean, unchanged, so its pt-PT overlay needed no
+        mirroring.
+    - id: franchise.yaml startHere/everything
+      basis: >
+        Bibliographic only: two books, in order, with an honest cost
+        stated about the 1964 apparatus. Nothing about content. Clean.
+    - id: franchise.yaml description
+      basis: >
+        Biography and reception. Verde's death is in it, as it is in
+        essentially every sentence written about him since 1887 - it is not
+        a reveal in any work, and no work's experience is damaged by it.
+        Clean.
+    - id: events.yaml (both franchise events)
+      basis: >
+        1901 second edition and the 1919 Linda-a-Pastora fire. Both are
+        publication and estate history, both postdate every work in the
+        wing, both already `spoilerAfter: null`. Anchoring a publication
+        fact is an error the skill names outright. Correctly ungated.
+    - id: authors/cesario-verde.yaml (7 lifeEvents + bio)
+      basis: >
+        Birth, sister's death, Curso Superior de Letras, the Ortigão jab,
+        tuberculosis onset, brother's death, his own death. None reveals
+        anything about a work: this is lyric poetry with no narrative to
+        give away, and the two sibling deaths are the declared SUBJECT of
+        "Nós" rather than a twist inside it - a reader who learns them
+        early has been given the poem's premise, which is what the poem's
+        own title and first section announce. All seven correctly
+        `spoilerAfter: null`.
+    - id: eras.yaml
+      basis: >
+        Empty list; the header comment argues why no periodisation exists
+        and quotes criticism about the poems' structure, not their content.
+        The one poem line quoted ("E apuro-me em lançar, originais e
+        exactos, / Os meus alexandrinos") is a claim about metre. Clean.
+    - id: theme.yaml
+      basis: >
+        Branding prose. Quotes one anthologised image about vegetables
+        becoming human, in service of a palette argument. No work's
+        experience touched. Clean.
+    - id: content/events/global.yaml
+      basis: >
+        Every entry is excluded by franchise.yaml - all postdate his 1886
+        death, the nearest (Berne Convention) by about seven weeks. Nothing
+        from the shared file renders on this wing, so it cannot leak into
+        it. Not applicable rather than clean.
+
+boundariesSet: []
+boundariesLoosened: []
+boundariesDeleted: []
+falsePositiveSweep: >
+  No `spoilerAfter` in this wing is set to anything but null, and none sits
+  on a field that cannot carry one. Nothing to loosen or delete. The
+  entity sweep the skill asks for (read everything that renders near a
+  boundary) was run anyway on all nine events, since a wing with zero
+  gates is the case where a future stage is most likely to add one
+  carelessly: were a gate ever wanted here it would be defeated
+  immediately, because Verde's death is stated in the franchise
+  description, the bio, three lifeEvents, two work synopses, both
+  startHere paths, works.yaml's header and eras.yaml's header.
+
+deathDetailJudgement:
+  event: cesario-verde-death-1886
+  ruling: KEPT AS WRITTEN, deliberately, not by default.
+  reasoning: >
+    CURATION §6 puts illness, grief and fear in tier one - the material
+    most likely to change how the books read - and then bounds it:
+    factual, humane, never ghoulish, and "distress is not content".
+    I read the entry element by element against that.
+    The Sousa Martins diagnosis ("irremediavelmente perdido", May 1886)
+    earns its place: it establishes that the last poems and letters are
+    written by a man who has been told there is no hope, which is exactly
+    the frame the wing's other entries assume. The 16 June letter
+    ("Curo-me? Sim, talvez.") is the strongest keep of the three - it is
+    his own sentence, in his own framing, quoted rather than restated,
+    and fear in the subject's own words is the case §6 is written FOR
+    rather than against.
+    The death itself is the call the brief asked me to make. What the
+    entry actually contains is a register: the hour, the address, the
+    parish, the weeks at Caneças, one quoted sentence, the near-silence of
+    the obituaries, the burial. What it contains nowhere is the dying - no
+    symptom, no body, no suffering described, no scene lingered over. That
+    distinction is the whole of my ruling: detail ABOUT a death is not the
+    same as detail OF one, and it is only the second that §6's "without
+    appetite" is aimed at. The last words themselves ("Não quero nada,
+    deixa-me dormir") are the least sensational sentence a deathbed could
+    produce - exhaustion, not drama - and they land against the wing's own
+    material with real force, since the poet asking "Se eu não morresse,
+    nunca!" in "O Sentimento dum Ocidental" and still asking "Curo-me?"
+    five weeks earlier ends by wanting nothing. That changes how the poems
+    read, which is the admission test.
+    The prose carries no appetite either: short flat sentences, and the
+    paragraph closes on the obituaries and the book that followed rather
+    than on the death.
+    Two elements I examined and kept with less certainty, recorded so a
+    curator can trim them deliberately rather than re-litigate the whole
+    entry: (a) the street address, Largo de São Sebastião 64 - a private
+    residence's number, though of a man 140 years dead and long in the
+    public biographical record, and the birth event gives a parish in the
+    same register; (b) the clause naming Jorge as "by then the only one of
+    Anastácio Verde's children still living", which totals the family's
+    losses in an aside about a witness. It adds no distress the three
+    preceding lifeEvents do not already carry separately, and it is the
+    fact that makes the 1887 edition's distribution legible, so it stays -
+    but it is the one sentence in the entry I would cut first if anyone
+    wants the register lighter.
+    The living-person restraint does not apply (died 1886, no living
+    descendant named), but I applied the same bar anyway as instructed,
+    and the entry clears it.
+
+factualLeakSweep: >
+  Swept per the skill's process. One real hit, in works.yaml's `nos`
+  synopsis, recorded above: ungated prose that contradicted the same
+  file's note and the author entity's lifeEvent about when the poem was
+  written relative to the brother's death. Nothing else conflicts - the
+  Ortigão material in works.yaml's header and the 1874 lifeEvent agree;
+  the Silva Pinto/1887 story is told consistently in the franchise
+  description, the bio, the death event and two synopses; the eras.yaml
+  header's account of the Crise Romanesca/Naturais split does not clash
+  with the o-livro synopsis's thematic city/country division, which is a
+  different claim.
+
+i18n: >
+  Zero locale strings invalidated. i18n_coverage.py confirms
+  franchises/cesario-verde/works.yaml has NO pt-PT overlay at all (listed
+  under MISSING, 4 untranslated strings), so both rewritten synopses have
+  no locale twin to go stale. franchise.yaml's existing overlay covers the
+  two startHere paths, neither of which was touched. Coverage delta: zero
+  (374/394 files fully covered before and after).
+
+gates: >
+  validate.py --slug cesario-verde: 1 error, the pre-existing
+  theme.yaml missing `art:` block, unchanged and not this stage's to fix.
+  Zero warnings on this wing. i18n_coverage.py unchanged.
+
+whatTheEngineCouldNotExpress: >
+  Nothing was blocked here, but the shape is worth recording: the only
+  lever this wing could ever have is prose, because a poetry wing's works
+  cannot carry a boundary and its poems have no anchor work to gate
+  behind - "O Sentimento dum Ocidental" is `containedIn` the very book a
+  reader would have to have finished to unlock it. For a poet, the
+  spoiler engine is structurally inert and the synopsis is the whole
+  protection.
+
+forStages:
+  translation: >
+    Both rewritten synopses are new English strings needing a first pt-PT
+    translation, not a re-translation - works.yaml has no overlay yet.
+  wing-audit: >
+    Zero boundaries in this wing is a ruling, not an omission; see
+    checkedNotASpoiler for the per-entity basis before adding any.
+
+openQuestions: []
