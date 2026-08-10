@@ -1,0 +1,88 @@
+# Branding for the Cesário Verde wing (see docs/SCHEMA.md#themeyaml and
+# Orrery CONCEPT SS6 - the design law). Non-art fields only - `art` is left
+# entirely absent: it is discovery work composed against a finished
+# bibliography, eras and aura, none of which this wing has settled yet.
+#
+# Checked against every existing wing's palette (scripts/theme_digest.py)
+# before choosing, including this catalogue's ten other Lusophone wings:
+# almeida-garrett (gaslit theatre amber, hue ~31), eca-de-queiros
+# (violet-mauve parlour, hue ~322), fernando-pessoa (muted teal-green, hue
+# ~162), joao-tordo (Atlantic blue-grey, hue ~202), jose-luis-peixoto
+# (wheat-gold sunbaked plains, hue ~42), jose-rodrigues-dos-santos (cardinal
+# newsroom red, hue ~5), jose-saramago (basalt black + carmine, hue ~357),
+# valter-hugo-mae (umber terracotta, hue ~17), florbela-espanca (charred
+# heath bloom, wine-rose, hue ~345) and luis-de-camoes (verdigris green,
+# hue ~128).
+#
+# GROUND. Verde's own name is literally "green", and his most anthologised
+# single image turns the whole natural world green on purpose - "Se eu
+# transformasse os simples vegetais... Num ser humano que se mova e exista"
+# ("if I turned the simple vegetables... into a human being that moves and
+# exists") - but Camões already holds this catalogue's best, widest green
+# (verdigris, hue ~128, a ship-fitting's oxidized patina), and the wider
+# green band either side of it (matt-dinniman ~72, umberto-eco ~74,
+# karin-slaughter ~80, anna-sewell ~105, agatha-christie ~148,
+# fernando-pessoa ~162) leaves no clean gap a Verde-green could claim without
+# reading as a diminished echo of one of them. So the ground here is not
+# pastoral green at all: it is the OTHER half of Verde's own recurring
+# duality, the city he actually wrote most often and most originally about -
+# a hardware merchant's son's Lisbon of macadamized streets ("a larga rua
+# macadamizada"), gaslit dusk, and the pale, cold light of "noites gélidas"
+# and "manhãs brumosas". A single dusty bottle-green accent stands in for
+# the other half of the duality instead: not a lush countryside green but
+# the flat, functional green of an old Lisbon shopfront's woodwork or an
+# account ledger's binding - the register of a shopkeeper's son who worked
+# the family ironmongery counter his whole short life, not of a poet who
+# only ever left the city for the fields.
+preset: fanqueiros-ledger
+palette:
+  bg: "#111310"         # near-black, neutral cool-warm stone - macadam and
+                        # gaslit dusk, not Saramago's warmer basalt (#141311)
+                        # or Tordo's cooler Atlantic blue-grey (#141a1e)
+  surface: "#1c1e17"    # a shade lifted, for cards
+  ink: "#e9e6da"         # pale warm bone-white, for maximum readability
+                        # (14.9:1 against bg)
+  muted: "#948f7a"      # desaturated grey-olive for metadata; clears the
+                        # 4.5:1 AA floor against both bg (5.8:1) and surface
+                        # (5.2:1)
+  accent: "#3d5c28"      # dusty bottle-green, hue ~96 - sitting in the one
+                        # real gap this catalogue's green band still has
+                        # (karin-slaughter's kudzu at ~80, anna-sewell's
+                        # pasture sage at ~105), but kept meaningfully darker
+                        # and more desaturated than either (v=0.36 against
+                        # their 0.6 and 0.48) so it reads as old shopfront
+                        # paint rather than a paler echo of one neighbour or
+                        # the other; see GROUND above for why it is a
+                        # commerce green, not a countryside one
+displayFace: sourceSerif  # from the app's implemented set (fraunces |
+                        # spectral | sourceSerif | instrument-serif); this
+                        # catalogue's four other closest-in-register
+                        # Lusophone wings (eca-de-queiros, florbela-espanca,
+                        # jose-saramago, luis-de-camoes) all already use
+                        # fraunces's warm classical register, which suits
+                        # their own more ornate or epic diction. Verde's own
+                        # innovation was the opposite - a plain,
+                        # newspaper-exact "vocabulário objectivo" (Infopedia's
+                        # own phrase) that brought a reporter's precision
+                        # into verse - so the plainer, more exact sourceSerif
+                        # fits his register better than reaching for fraunces
+                        # by default
+signature: filament    # from the app's implemented set (beam | thread |
+                        # rule | filament | none); roughly forty poems,
+                        # scattered across Lisbon's newspapers for thirteen
+                        # years with no book behind them, resolving into one
+                        # continuous thread only once Silva Pinto gathered
+                        # them after his death - the single lit thread
+                        # filament is built for, picked over the catalogue's
+                        # much more common beam or rule for that specific
+                        # gathering-together quality rather than a bold
+                        # accent rail or an architectural line
+notes: >
+  Not a pastoral green (Luís de Camões already holds this catalogue's best
+  green, and the band around it is otherwise full) but the flat commerce
+  green of an old Lisbon shopfront, held against a near-black macadam-and-dusk
+  ground - the city half of Verde's own city/country duality, since that is
+  the half he actually wrote most of his poetry from. Personality through
+  palette plus one display face plus one signature, readability first, no
+  genre costume; both displayFace and signature are drawn only from the
+  app's currently implemented sets.

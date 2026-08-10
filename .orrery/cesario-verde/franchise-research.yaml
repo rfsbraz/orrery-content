@@ -1,0 +1,61 @@
+stage: franchise-research
+summary: >
+  New wing scaffolded from scratch: 2 works (one core+featured book, one
+  contained poem), a 7-lifeEvent author entity, palette+face+signature theme
+  (no art block), eras.yaml ruled empty with sourced reasoning, globalEvents
+  all excluded. validate.py --slug cesario-verde is clean except the one
+  expected error (no theme.art block - visual-language's footprint).
+produced:
+  newWorkIds:
+    - cesario-verde/o-livro-de-cesario-verde
+    - cesario-verde/nos
+  newAuthorIds:
+    - cesario-verde
+  files:
+    - content/authors/cesario-verde.yaml
+    - content/franchises/cesario-verde/franchise.yaml
+    - content/franchises/cesario-verde/works.yaml
+    - content/franchises/cesario-verde/theme.yaml
+    - content/franchises/cesario-verde/eras.yaml
+forStages:
+  completeness-auditor: >
+    Real gaps flagged in works.yaml's own header, not guessed at: (1) the
+    poem-by-poem chronology rests on the "Tábua bibliográfica de Cesário
+    Verde" (Revista Colóquio/Letras n.93, 1986), cited but not read here -
+    it would let more poems be dated and catalogued with containedIn, per
+    issue #108's own ask; (2) whether Joel Serrão's critical edition (Livros
+    Horizonte "Obra Completa", 4th ed. by 1983; republished as "Poesia
+    Completa 1855-1886", Dom Quixote 2001) earns its own entry - it is the
+    actual source of the ~40-poem canon now in circulation versus Silva
+    Pinto's 22, held out only because its first-edition year is unresolved;
+    (3) confirm no other standalone book exists beyond the one catalogued.
+  press-archaeology: >
+    7 lifeEvents (birth, sister's/brother's TB deaths, 1873 enrollment,
+    Ortigão's 1874 review, 1877 TB onset, 1886 death) - real and sourced but
+    thin against the 6-12 range; check João Pinto de Figueiredo's "A vida de
+    Cesário Verde" (Presença, 1986) for more. Two unconfirmed leads: no
+    unrequited-love anchor or dated grounding for "O Sentimento dum
+    Ocidental" (his most-cited poem) found here; and Pessoa's heteronyms
+    (Caeiro, Soares) citing Verde directly, Álvaro de Campos read as
+    continuing his line - sourced (en.wikipedia, citing Mariana Gray de
+    Castro) but not dated or turned into an event, and may belong on the
+    Fernando Pessoa wing's side instead.
+  eras: >
+    eras.yaml ships `[]` as a sourced ruling (13-year career, one posthumous
+    book, no periodisation found, critics describe simultaneous currents not
+    phases) - re-open only if the 1986 bibliographic table above ends up
+    dating enough poems to show real movement.
+  visual-language: >
+    theme.yaml intentionally has no `art:` block; the validate.py error is
+    expected at this handoff, not a defect. The palette's accent (dusty
+    bottle-green, hue ~96, standing for the commerce/shopkeeping half of
+    Verde's city/country duality rather than a pastoral green, since Luís de
+    Camões already holds this catalogue's best green at hue ~128) is
+    reasoned in theme.yaml's own comments.
+  reading-orders: >
+    No startHere scaffolded - nothing to choose between on a two-work shelf.
+    Worth revisiting once completeness-auditor expands the bibliography.
+openQuestions:
+  - "Does Joel Serrão's critical edition earn its own works.yaml entry once its first-edition year is established? It is the real source of the ~40-poem canon, not a stylistic choice to leave out."
+  - "Should more individually significant poems ('O Sentimento dum Ocidental' above all) get their own containedIn entries alongside 'Nós' once the 1986 Colóquio/Letras table supplies dates?"
+  - "Is a commerce-green palette (deliberately not pastoral, since Camões already holds this catalogue's best green) the right call, or should visual-language revisit it once drafting the art block?"
