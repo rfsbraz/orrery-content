@@ -1,0 +1,79 @@
+stage: translation
+summary: >
+  pt-PT overlay brought to full coverage for this wing. Created
+  content/i18n/pt-PT/authors/cesario-verde.yaml (bio + all 7 lifeEvents,
+  did not exist before), content/i18n/pt-PT/franchises/cesario-verde/works.yaml
+  (all 4 synopses, did not exist before), and
+  content/i18n/pt-PT/franchises/cesario-verde/events.yaml (both franchise
+  events, did not exist before). Filled the one gap in the pre-existing
+  franchise.yaml overlay (top-level `description`; its startHere paths were
+  already translated by the reading-orders stage and left untouched).
+  theme.yaml was not overlaid: no wing in this catalogue carries a
+  content/i18n/<locale>/franchises/<slug>/theme.yaml, confirming the skill's
+  presentation-only reading for that file. eras.yaml is `[]` on this wing
+  (no creative periods established), so it has no prose to translate and no
+  overlay was created for it.
+alreadyPortugueseQuotes: >
+  This wing's English base already quotes extensively in Portuguese - poem
+  titles, and direct lines from Ramalho Ortigão, Teófilo Braga, Sousa
+  Martins, and Verde's own letters and verse - each with an English gloss
+  for the English reader. Every one of those Portuguese quotes is kept
+  verbatim in the pt-PT overlay, most visibly the two phrases in
+  cesario-verde-ortigao-review-1874: the real "seja menos verde e mais
+  cesário" and the paraphrase "mais Cesário, menos Verde" in the same
+  entry's title. Only the English scaffolding around them was translated.
+editorialCall: >
+  The parenthetical English glosses that follow an already-Portuguese quote
+  in the base ("(be less verde and more cesário...)", "(did not get a look,
+  a smile, a remark)", "(looks like the corpse of a city)", "(I want
+  nothing, let me sleep)", "(Cesário Verde dies almost unknown)") were
+  dropped rather than translated: they exist in the base purely to gloss a
+  Portuguese quote for an English reader, and translating them back into
+  Portuguese would just repeat the quote a second time to a reader who
+  already read it once. Where the parenthetical carries actual
+  information beyond a gloss (the "seja menos verde/mais cesário" double
+  pun on his surname and given name), that explanation was kept, translated.
+  Flagged here for a native reviewer to confirm this reads as intended
+  rather than as a dropped sentence.
+noteFieldsNotTranslated: >
+  `note:` fields in works.yaml stay in the base language, per the
+  precedent already set on this catalogue's eca-de-queiros wing: they are
+  editorial/bibliographic annotation, not reader-facing prose (i18n_coverage.py
+  does not count `note` either). Documented in works.yaml's own overlay
+  header comment.
+coverage: >
+  Before this stage: franchise.yaml PARTIAL 4/5 (startHere only), no
+  authors/cesario-verde.yaml, no franchises/cesario-verde/{works,events}.yaml
+  overlay files at all - so those three files counted as fully MISSING.
+  After: python scripts/i18n_coverage.py --json reports all four
+  cesario-verde files "complete" -
+  pt-PT/authors/cesario-verde.yaml, pt-PT/franchises/cesario-verde/events.yaml,
+  pt-PT/franchises/cesario-verde/franchise.yaml,
+  pt-PT/franchises/cesario-verde/works.yaml. No regression elsewhere (the
+  --strict run's PARTIAL list is unchanged pre-existing gaps on other wings:
+  agatha-christie, harlan-coben, lee-child, robert-jordan, stephen-king,
+  terry-pratchett, anna-sewell, fernando-pessoa, haruki-murakami,
+  hp-lovecraft, joao-tordo, miguel-de-cervantes).
+gates: >
+  python scripts/validate.py --slug cesario-verde: 0 errors, 1 pre-existing
+  warning unrelated to this stage (spoiler-audit.yaml handoff over the
+  700-word soft cap). python scripts/i18n_coverage.py --strict: cesario-verde
+  fully covered in pt-PT, exit reflects only pre-existing gaps on other
+  wings (see coverage above).
+verification: >
+  This is a content-only checkout with no app/render tooling
+  (scripts/render-check.mjs and the live site both live in a separate repo),
+  so the skill's "open the rendered page" step could not be performed from
+  here. What was checked instead: every overlay id resolves against the base
+  files it targets (validate.py, 0 errors); every quoted Portuguese string
+  in the overlay was diffed by eye against the base file's own quote to
+  confirm it was carried over unchanged, not retyped; a grep for common
+  mojibake markers (Ã, Â outside legitimate words like "NÃO") found nothing.
+  A native pt-PT read of the rendered pages is still worth doing once this
+  merges into a checkout with the app attached.
+forStages:
+  wing-audit: >
+    pt-PT overlay is new/complete for this wing; the editorialCall note
+    above (dropped English glosses on already-Portuguese quotes) is the one
+    judgement call worth a second look.
+openQuestions: []
