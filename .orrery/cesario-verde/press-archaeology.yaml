@@ -1,0 +1,191 @@
+stage: press-archaeology
+summary: >
+  Verified all 7 scaffolded lifeEvents against Joel Serrão's "Tábua
+  biobibliográfica de Cesário Verde" (Revista Colóquio/Letras n.º 93,
+  Setembro de 1986), read via the page scans at coloquio.gulbenkian.pt
+  (the site's HTML shell has no OCR text; fetched the underlying page
+  JPEGs directly - grafica/cl/revistas/93/lg_93_p<N>.jpg - and read them
+  as images). One correction (the Ortigão jab's real wording), one
+  day-precision upgrade (brother's death), and real new texture on 3 of
+  the 7 events. Opened content/franchises/cesario-verde/events.yaml (new
+  file) with 2 entries closing most of the 1887-1964 dark run. Aura
+  1.75->2.25 per work (7->9 entries); dark run 78yrs (1887-1964) ->
+  45yrs (1920-1964). validate.py --slug cesario-verde clean except the
+  expected missing theme.art block.
+verified:
+  - "All 7 scaffolded lifeEvents check out against the Tábua's primary-source
+    page images, not just the secondary wikis already cited - dates, ages and
+    relationships all hold."
+added:
+  - fact: "Family's move into Linda-a-Pastora traces to 1857: fled Lisbon
+      cholera-morbo and yellow-fever outbreaks. Folded into the birth
+      lifeEvent - gives the farm/city split a dated origin instead of just
+      asserting it existed."
+    source: "Tábua p.6"
+  - fact: "'Esplêndida' (the poem that drew Ortigão's jab) has an exact
+      publication record: Diário de Notícias, 22 March 1874, under the
+      umbrella title 'Fantasias do Impossível', and set off a real
+      contemporary scandal over its 'baudelairianismo' - not just one
+      critic's dig. Fialho de Almeida (a later admirer) and Teófilo Braga
+      also weighed in publicly at the time. Folded into the Ortigão
+      lifeEvent."
+    source: "Tábua pp.9-10"
+  - fact: "The 1874 announced-but-never-published volume has a venue and
+      date: announced in the newspaper A República, 27 December 1874.
+      Folded into the Ortigão lifeEvent (same paragraph the scaffold already
+      had, now dated)."
+    source: "Tábua p.10"
+  - fact: "1880 primary-source quote on his own disillusionment: writing to
+      Macedo Papança after 'O Sentimento dum Ocidental' passed almost
+      unnoticed, Verde calls Lisbon 'um cadáver de cidade' (a corpse of a
+      city) next to its own glorious past, and says the poem 'não obteve um
+      olhar, um sorriso, uma observação'. Folded into the 1877 TB-onset
+      lifeEvent as direct evidence for the 'growing disillusionment' the
+      scaffold already asserted but did not source with his own words."
+    source: "Tábua p.14"
+  - fact: "Brother Joaquim Tomás's death has a day: 20 March 1882, aged 24.
+      Corrects the lifeEvent's date field from bare '1882' to
+      '1882-03-20' (completeness-auditor flagged this page in its own
+      handoff; confirmed here by reading the actual page scan, not just
+      taking the pointer on trust)."
+    source: "Tábua p.15"
+  - fact: "The death lifeEvent was thin on texture for the single highest-
+      impact entry in the wing. Added, in sequence: Sousa Martins (the
+      well-documented Lisbon physician) telling Silva Pinto in May 1886 the
+      poet was 'irremediavelmente perdido'; Verde's own 16 June 1886 letter
+      to Macedo Papança admitting his fear plainly ('terrores do futuro.
+      Curo-me? Sim, talvez.'); the exact death scene (5am, 19 July, Largo de
+      São Sebastião 64, Lumiar, after weeks at Caneças hoping for a cure);
+      his last words as recorded by his brother Jorge Verde ('Não quero
+      nada, deixa-me dormir'); and the press's own near-indifference at his
+      death (Jornal do Comércio's obituary states outright 'Cesário Verde
+      morre quase ignorado', only Correio da Manhã and A Imprensa ran
+      anything of length)."
+    source: "Tábua pp.17-18"
+  - fact: "1901: a second edition of O Livro de Cesário Verde, textually
+      identical to Silva Pinto's 1887 text, is 'primeira lançada ao público
+      em geral' - the first time the book that made his reputation actually
+      reached general readers, 14 years after his death and his own gift
+      edition of 200 copies. New franchise event
+      (content/franchises/cesario-verde/events.yaml, new file) - this was
+      explicitly flagged by the task as worth checking, and the works.yaml
+      note that already mentioned it in prose now has a dated, sourced
+      event to match."
+    source: "Tábua p.19"
+  - fact: "1919: a fire at the Linda-a-Pastora house burns papers and books
+      that may have been what remained of Cesário's own estate. New
+      franchise event - this is the single biggest find of the pass: it is
+      the actual, dated, sourced reason nothing beyond the printed record
+      (the book plus the periodicals it drew from) was ever recovered,
+      Joel Serrão's 1964 'poesias dispersas' included. Without this fact the
+      1887-1964 gap reads as an unexplained silence; with it, it reads as an
+      explained one - the record simply stopped existing to be found."
+    source: "Tábua p.19"
+corrected:
+  - claim: "The Ortigão jab is commonly rendered (and was in the scaffold's
+      own lifeEvent and bio prose) as 'mais Cesário, menos Verde'."
+    correction: "Ortigão's actual words, per the Tábua's own quotation, are
+      'seja menos verde e mais cesário' (be less verde and more cesário) -
+      same two clauses, reversed order, and playing on both his surname AND
+      his given name rather than just the surname. The commonly-quoted
+      version is a paraphrase, not what Ortigão wrote. Both the lifeEvent
+      description and the author bio prose now carry the real quote, with
+      the popular paraphrase named as such rather than presented as the
+      primary source."
+    evidence: "Tábua pp.9-10 (the quote spans the page break: '...pedindo-lhe
+      que «seja menos verde e mais cesá-' / 'rio».')"
+rejected:
+  - item: "A dated, single moment of Fernando Pessoa (or a named heteronym)
+      citing or claiming Cesário Verde - the specific ask in the brief."
+    why: "Checked en.wikipedia (citing Mariana Gray de Castro's 'Fernando
+      Pessoa's Modernity Without Frontiers', 2013 - itself a modern academic
+      study OF the influence, not a dated primary instance of it),
+      pt.wikipedia, and Alberto Caeiro's own pt.wikipedia page directly.
+      All three independently describe the same thing: Verde is 'citado
+      muitas vezes nos poemas de Caeiro' (cited many times across Caeiro's
+      poems) and read as Álvaro de Campos's predecessor - a diffuse,
+      career-long influence spread across many poems, not one dateable essay,
+      dedication or declaration. Infopedia's own Cesário Verde article
+      (fetched directly, teaser paywalled but the visible portion checked)
+      does not mention Pessoa at all. Held out under the same-day-precision
+      bar an event needs; the bio prose already states the influence
+      correctly and that is where it belongs unless a single dated moment
+      surfaces. WebSearch was unavailable this session (session budget
+      exhausted before this stage started) - a fresh search pass, or a read
+      of the Gray de Castro book itself, is the next place to look."
+  - item: "An unrequited-love anchor for 'O Sentimento dum Ocidental' (the
+      scaffold's other open lead)."
+    why: "Not found in the Tábua's own entry for the poem (p.14) or anywhere
+      else checked. completeness-auditor's dating of the poem via the 1880
+      Camões-tricentenary occasion (Jornal de Viagens) is the real, better-
+      sourced answer and needs no love-story supplement. Lead closed, not
+      just left open."
+  - item: "A third sibling death: Adelaide Eugénia/Eufémia Verde, an infant
+      sister who died in 1859."
+    why: "Real and dated (Tábua p.6: 'Falecimento da irmã Adelaide Eugénia',
+      1859; independently, pt.wikipedia's own infobox gives 'Adelaide
+      Eufémia Verde (1856-1859), falecida de anginas'), but the two sources
+      disagree on her middle name (Eugénia vs Eufémia) and neither is
+      corroborated by a third. She died of anginas (a throat illness), not
+      tuberculosis, and is not named in any poem the way Maria Júlia and
+      Joaquim Tomás are in 'Nós'. Held out for the name conflict and the low
+      individual stakes; flagged here so a future pass does not have to
+      re-find the discrepancy from scratch."
+  - item: "Cesário's own 1885 quip on Victor Hugo's death ('era o avozinho
+      de nós todos!') and his August 1885 letter to a rude customer
+      asserting he is 'um homem de letras antes de ser negociante'."
+    why: "Real, sourced (Tábua p.17), and good color, but neither recolors a
+      specific work or marks a rupture - closer to texture than aura per the
+      skill's own ranking. Left out of the file; noted here in case a later
+      pass judges differently."
+darkRun:
+  before: "78 years, 1887-1964 (the entire span between Silva Pinto's gift
+    edition and Serrão's critical edition)."
+  after: "45 years, 1920-1964. The 1901 and 1919 franchise events close
+    1887-1900 and 1902-1918 outright."
+  whatStaysDark: >
+    1920-1964 stays dark, and it is an honest dark, not an unlooked-at one.
+    Checked directly: the Tábua itself (Colóquio/Letras n.93) is a 1986
+    retrospective and names nothing from this window; Infopedia's Cesário
+    Verde article is silent on it; en/pt.wikipedia describe the Pessoa-era
+    embrace only in general, undated terms (see rejected, above) and name no
+    other reception milestone - no centenary marked, no school-curriculum
+    date, no named 'rediscovery' - in this stretch. The honest reading is
+    that Verde's canonization ran on the diffuse, cumulative weight of the
+    modernist generation's citations rather than on any single reported
+    event, which does not produce a dateable press fact even where it
+    produces a real cultural shift. A human researcher could still do better
+    here than this pass did: the full run of Colóquio/Letras beyond n.93,
+    the Hemeroteca Municipal de Lisboa's own digitized press archive, or a
+    physical read of Mariana Gray de Castro's book (cited but not read
+    directly here) are the concrete next places to look, in roughly that
+    order.
+eventResonance: >
+  Nothing in the wing's lifeEvents or the two new franchise events reads as
+  resonating with a global event to flag - the 1857 cholera/yellow-fever
+  flight and the tuberculosis deaths are personal/family-scale illness, not
+  a named epidemic year with its own global.yaml entry; the 1919 fire is a
+  private domestic accident with no wider referent. None of this needs
+  event-resonance's attention.
+artRotation: >
+  Left `organisation`, `illustration_type`, `images_required` and `modifier`
+  unset on every entry touched or added, per the skill's footprint rule - all
+  of it is still ungraded. In prose only: the 1886 death lifeEvent is now the
+  loudest single cell in the wing by a wide margin (physician's diagnosis,
+  his own fear in his own words, the exact death scene, last words, the
+  press's indifference) and will want a spacious treatment, not a cramped
+  one - it is doing more narrative work than any other entry here. The 1874
+  Ortigão event is next loudest (a real scandal plus three named critics'
+  reactions). The two new franchise events (1901, 1919) are comparatively
+  quiet, single-fact entries - closer in weight to a simple `beside` than to
+  anything spread-worthy. The 1880 TB-onset addition and the 1857 birth-event
+  addition are quiet texture folded into already-existing cells, not new
+  loud material.
+openQuestions:
+  - "Is the 1919 fire event correctly scoped as scope: culture rather than
+    scope: world? It reads as a private/family-estate loss rather than a
+    named world event, which is why it was not routed to global.yaml, but
+    the call is arguable."
+  - "Should Adelaide Eugénia/Eufémia's 1859 death get a lifeEvent once the
+    name conflict between the Tábua and pt.wikipedia is resolved by a source
+    that can adjudicate it? Left out this pass (see rejected)."
