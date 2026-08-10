@@ -1,0 +1,80 @@
+stage: eras
+verdict: >
+  eras: [] confirmed, on far stronger evidence than the scaffolding pass had.
+  The negative is now positive knowledge: the city/country duality IS read
+  chronologically by major critics, in mutually exclusive directions, and the
+  standard retrospective refuses the arrow altogether. Joel Serrão
+  reads a "jornada poética" from the country to the city (Interpretação,
+  Poesias Dispersas e Cartas, 1957; 2.ª ed. 1961); David Mourão-Ferreira reads
+  the reverse, city to country, turning on "O Sentimento dum Ocidental"
+  ("Notas sobre Cesário Verde: III. Da Cidade para o Campo", 1949, in Hospital
+  das Letras); Helder Macedo quotes both, notes they point opposite ways, and
+  holds the contrast to be a structuring antinomy present from the juvenile
+  poems on. All are quoted with full citations in the content file's comment.
+rung: >
+  1 (author's own): absent - no book assembled, 1874 volume never issued, no
+  self-periodisation in the Tábua or the quoted letters. 2 (critical): reached
+  and negative in the strict sense - real chronological claims exist and
+  contradict each other. 3 (education): negative - the national syllabus (DGE,
+  Aprendizagens Essenciais, Português 11.º ano) sets one book and one poem, no
+  phase. 4 (publishing-historical): two real divisions exist, neither an era -
+  see boundaryVerdict.
+boundaryVerdict: >
+  Negative on its own terms, every candidate failing independently. 1880 ("O
+  Sentimento dum Ocidental" as the turn) is Mourão-Ferreira's boundary and
+  points the wrong way for Serrão's. 1877 (tuberculosis onset) is biographical
+  and no critic turns it into a division of the work. Serrão's
+  Obra Completa files the poems in dated bands, of which three are named in
+  the criticism (1875-1876, 1877-1880, 1881-1886) and the one covering
+  1873-1874 is not established; Mourão-Ferreira argues "Humilhações" and "De
+  Verão" sit in the wrong band, and four poems in O Livro have no known date
+  at all and are placed by editorial judgement - a dating apparatus, not a
+  periodisation of a career. The 1887
+  princeps' "Crise Romanesca"/"Naturais" split is demonstrably not
+  chronological ("Ironias do Desgosto", Lisboa 1874, in the first; "A Débil",
+  Lisboa 1875, in the second). The 1887-versus-1964 boundary is reception
+  history: both fall after Verde stopped writing, so the pair carves his
+  1873-1886 career into nothing. Fit check, had a band survived: of four
+  catalogued works only the two poems (1880, 1884) fall inside one; the 1887
+  book and the 1964 edition fall outside every band.
+languages: >
+  Portuguese throughout, the standard for this poet; English only for a
+  Wikipedia cross-check. No finding rests on an English source.
+sourcesRefused: >
+  WebSearch budget (200 calls) was spent before this stage, and every
+  fetchable search front-end refused: duckduckgo html/lite (CAPTCHA), bing
+  (challenge), mojeek and ecosia (403), startpage and qwant (JS-only),
+  searx.be (antibot), brave and Google Books API (429). Everything was
+  therefore reached by constructing URLs. Serrão's Obra Completa could not be
+  inspected first-hand (nothing on archive.org, no contents note on BNP
+  catbnp/1847701), so its bands are known only via Mourão-Ferreira.
+sourcesReached: >
+  Colóquio/Letras n.º 93 (Set. 1986) at coloquio.gulbenkian.pt - full contents
+  recovered from the viewer's per-page references
+  (issueContentDisplay?n=93&o=p), pages read as scans at
+  grafica/cl/revistas/93/lg_93_p<N>.jpg (Serrão's Tábua pp.5-19, Macedo
+  pp.20-27, Lind p.29, Margarido p.57, Mourão-Ferreira pp.74-81, Seabra
+  Pereira p.82, p.129). Plus Infopedia, pt.wikipedia, pt.wikisource, the DGE
+  syllabus PDF, BNP catbnp/1847701.
+changes: >
+  content/franchises/cesario-verde/eras.yaml - `[]` unchanged, reasoning
+  comment replaced: the scaffolding version rested on absence of evidence,
+  the new one on named, dated, quoted sources.
+gates: >
+  validate.py --slug cesario-verde identical before and after: 1 error
+  (theme.yaml has no `art:` block, visual-language's footprint), no work
+  orphaned. No pt-PT overlay exists yet; `[]` has no translatable strings.
+forStages:
+  wing-audit: >
+    An "era coverage gap" finding here is not a defect; rule 4 supersedes it
+    and the sourced reasoning is in the file. Do not close it.
+  press-archaeology: >
+    Mourão-Ferreira (pp.78-79) dates Verde's first five signed poems to 12
+    November and 3 December 1873, in the Diário de Notícias (Lisboa) and
+    Diário da Tarde (Porto), and records 16 compositions across 1874, Serrão's
+    "ano de juvenil facúndia poética". The 1874 lifeEvent carries only the
+    Ortigão review and the abandoned volume.
+  completeness-auditor: >
+    The issue's full contents list a "Carta inédita de Cesário Verde para
+    Silva Pinto" (p.113), a datapoint for the unsettled letters question.
+  i18n: eras.yaml has no translatable content.
