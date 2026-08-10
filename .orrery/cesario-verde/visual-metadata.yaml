@@ -1,0 +1,34 @@
+stage: visual-metadata
+summary: >
+  Author portrait was already set by an earlier stage and left untouched.
+  Ran scripts/metadata/lookup.py's pre-fetched TSV (61 rows) against the 4
+  works. One real cover found and set: the 1887 O Livro de Cesário Verde
+  (core/featured) now carries its own first-edition wrapper scan
+  (Typographia Elzeviriana, verified as edition OL24922229M of work
+  OL4037879W, matching the work's own note on publisher/year/title exactly).
+  The 1964 Obra Completa critical edition has no cover on any of its eight
+  printings on Open Library; a differently-titled 1998 anthology cover was
+  found and rejected as the wrong record. Both containedIn poems
+  (o-sentimento-dum-ocidental, nos) were never independently published as
+  books, have no cover candidates in the TSV, and were left bare per the
+  skill's guidance for a contained work with no independent publication
+  history. Coverage: 1/4 works (the 1887 book); 2/4 structurally out of
+  scope (poems); 1/4 a genuine gap (1964 edition). validate.py --slug
+  cesario-verde: 0 errors.
+produced:
+  coversSet:
+    - work: cesario-verde/o-livro-de-cesario-verde
+      cover: "https://covers.openlibrary.org/b/id/6868596-L.jpg"
+      source: "https://openlibrary.org/books/OL24922229M"
+      credit: "Open Library"
+  files:
+    - content/franchises/cesario-verde/works.yaml
+forStages:
+  - >
+    Nothing pending for a future stage. The 1964 edition's missing cover is
+    a real absence (no OL record has one), not an unfinished search, and is
+    commented in place on works.yaml. If a future OL upload adds a cover to
+    one of the Portugália/Livros Horizonte/Dom Quixote printings of the 1964
+    edition, it would be worth a re-check, but nothing currently points to
+    one existing.
+openQuestions: []

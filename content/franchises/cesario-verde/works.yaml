@@ -122,11 +122,17 @@
     - "https://coloquio.gulbenkian.pt/cat/sirius.exe/issueContentDisplay?n=93&p=18&o=p"
   images:
     # The lithograph frontispiece (Columbano Bordalo Pinheiro) is used as the
-    # author portrait on content/authors/cesario-verde.yaml instead of here;
-    # no separate period cover scan or modern-edition jacket has a clear,
-    # checked licence. Checked OpenLibrary by title (multiple mixed-language
-    # editions and reprints, no usable cover image attached to any of them)
-    # and by the author's own OpenLibrary record.
+    # author portrait on content/authors/cesario-verde.yaml instead of here.
+    # Cover is the 1887 first-edition wrapper itself: Typographia Elzeviriana,
+    # Lisboa, "O livro de Cesário Verde: 1873-1886" - the exact publisher,
+    # year and title this work's own note describes, digitized from the
+    # Internet Archive copy (ocaid OLivroDeCesrioVerde1873-1886) and hosted on
+    # Open Library as edition OL24922229M of this work (OL4037879W). A second
+    # OL scan of the same 1887 printing exists (cover id 8070086) but is more
+    # heavily foxed/stained; this one was chosen as the cleaner of the two.
+    cover: "https://covers.openlibrary.org/b/id/6868596-L.jpg"
+    coverCredit: "Open Library"
+    coverSource: "https://openlibrary.org/books/OL24922229M"
 
 - id: cesario-verde/obra-completa-de-cesario-verde
   title: "Obra Completa de Cesário Verde"
@@ -167,6 +173,14 @@
     - "https://id.bnportugal.gov.pt/bib/catbnp/213088"
     - "https://id.bnportugal.gov.pt/bib/catbnp/1245756"
     - "https://pt.wikipedia.org/wiki/Ces%C3%A1rio_Verde"
+  images:
+    # No cover: Open Library carries no cover image for any of the eight
+    # Portugália/Livros Horizonte printings (1964-2003) or the Dom Quixote
+    # "Poesia Completa 1855-1886" reissue (checked by title search). A 1998
+    # Europa-América anthology under the different title "O Livro de Cesário
+    # Verde e Poesias Dispersas" does have a cover (id 13445738) but is a
+    # separate edition under a separate title from a separate publisher, not
+    # one of this work's own named printings, so it is not used here.
 
 - id: cesario-verde/o-sentimento-dum-ocidental
   title: "O Sentimento dum Ocidental"
@@ -218,6 +232,13 @@
     - "https://pt.wikisource.org/wiki/O_Livro_de_Ces%C3%A1rio_Verde"
     - "https://en.wikipedia.org/wiki/Ces%C3%A1rio_Verde"
     - "https://pt.wikipedia.org/wiki/Ces%C3%A1rio_Verde"
+  images:
+    # No cover: this poem was never published as its own standalone book -
+    # first in a magazine (Jornal de Viagens, 1880), then folded whole into
+    # O Livro de Cesário Verde (1887), whose cover already stands for it. The
+    # only editions Open Library lists under this title are a 2005 Campo das
+    # Letras printing and a 2011 English scholarly translation ("The Feeling
+    # of a Westerner"), neither with a cover attached.
 
 - id: cesario-verde/nos
   title: "Nós"
@@ -257,3 +278,8 @@
     - "https://pt.wikipedia.org/wiki/Ces%C3%A1rio_Verde"
     - "https://en.wikipedia.org/wiki/Ces%C3%A1rio_Verde"
     - "https://pt.wikisource.org/wiki/O_Livro_de_Ces%C3%A1rio_Verde"
+  images:
+    # No cover: this poem was never published as its own standalone book -
+    # first in the magazine A Ilustração (1884), then collected whole into
+    # O Livro de Cesário Verde (1887), whose cover already stands for it. No
+    # Open Library edition is filed under this title on its own.
