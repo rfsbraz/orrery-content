@@ -1,0 +1,68 @@
+stage: visual-language
+verdict: >
+  art: block written on content/franchises/sophia-de-mello-breyner-andresen/
+  theme.yaml - all seven keys (emblem, motifs, atmosphere, lineCharacter,
+  backgroundTexture, accentUse, avoid).
+distinctness: >
+  The real risk was luis-de-camoes, not the other five Portuguese-poet
+  wings: every source calls the sea "probably the most central theme" of
+  this author's work, and Camões's own wing already built this catalogue's
+  sea-and-daylight register in detail (salt-crusted manuscript paper,
+  verdigris patina on ship's bronze, a monsoon coastline, a colonial
+  ledger). Drawing this wing as "a sea poet" without a sharper claim would
+  only redraw his territory in a paler palette. The bibliography supplies
+  the sharper claim: her sea is named as Aegean, not Atlantic or Indian
+  Ocean - "O Rei de Ítaca" and "Cíclades" in O Nome das Coisas (1977), "Os
+  Gregos" in Dual (1972), and her last book's title, O Búzio de Cós e
+  Outros Poemas (1997), a shell named for Kos. Camões's record is two
+  decades actually spent at sea and on colonial coasts, administered and
+  crossed; hers is a Lisbon-trained classicist's inherited horizon, looked
+  at from a fixed place (a window, a garden, a held shell), never a voyage
+  or a colonial desk. Concretely: this line stays one steady weight
+  throughout where Camões's dries into a broken stipple; this
+  backgroundTexture is cool stone, not paper at all, where his is warm
+  sun-bleached laid paper with a salt bloom; this accent only ever touches
+  a shell's interior or painted wood, where his only ever touches oxidised
+  bronze - and both avoid lists name the other wing for that boundary, the
+  pattern Camões's own avoid list uses for joao-tordo. Fernando Pessoa
+  (sharing displayFace spectral) rules the coast out of his own wing on
+  purpose ("enters only at a remove"), so no collision there. Cesário
+  Verde and Florbela Espanca share signature filament but neither register
+  overlaps (near-black gaslit Lisbon commerce; a scorched Alentejo heath).
+  Almeida Garrett and Eça de Queirós are both gaslit interior-nocturnal
+  registers this wing does not touch.
+changes: >
+  content/franchises/sophia-de-mello-breyner-andresen/theme.yaml - added
+  the `art:` block plus the ART comment above it, and tightened the
+  header's opening sentence (which previously said art was "left entirely
+  unset" - now stale) to point at that comment instead. palette, preset,
+  displayFace and signature values are untouched from scaffold, per the
+  skill's own restriction.
+gates: >
+  Before: theme.art absent, validate.py --slug
+  sophia-de-mello-breyner-andresen failed 1 error (no art block);
+  asset_audit.py reported art:NO and listed exactly 1 job (settle
+  theme.art first). After: 0 errors (2340 works, 200 authors, 11
+  achievements, all references resolve; 1 pre-existing warning on a
+  different handoff's word count, not this file). asset_audit.py: art:yes,
+  18 jobs listed (14 life-event, 3 franchise-event, 1 world-event).
+forStages:
+  asset-prompt: >
+    The emblem (a held spiral seashell, for O Búzio de Cós) and the
+    classical/Aegean motifs (Ítaca, Cíclades, "Os Gregos") only become
+    literally available from Dual (1972) and O Nome das Coisas (1977)
+    onward per works.yaml's own synopses - earlier life events (the 1919
+    birth, the 1944 debut, the 1946 marriage) should draw from the garden/
+    house-of-memory and domestic motifs instead, not retroject the Hellenic
+    material backward. The prison-code (1959) and political (1969, 1975,
+    1982, 1969-CNSPP) life events are the wing's hardest cases for §4a
+    variety within the "no cell, no podium, no likeness" constraint the
+    avoid list sets - lean on the folded/illegible-page and closed-door
+    motifs, and vary which object (page, door, bench, table) carries each
+    one so five political events do not converge on the same still life.
+    14 life events + 3 franchise events + 1 world event is enough assets
+    that the composition-type rotation (§4a) needs to be tracked across all
+    18, not just the life events.
+  wing-audit: >
+    theme.art is now present; the one validate.py error this stage existed
+    to close is gone. No other gaps were touched.
