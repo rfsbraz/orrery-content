@@ -1,0 +1,145 @@
+stage: spoiler-audit
+summary: >
+  ENGINE RE-VERIFIED FIRST, not assumed. app lib/spoilers/index.ts +
+  lib/content/types.ts: spoilerAfter lives only on AuraEvent (franchise
+  events, global events, author lifeEvents); every river cell and
+  timeline.tsx wraps only event content in SpoilerGate. Nothing else in
+  the schema carries a boundary, so works[].synopsis, works[].note,
+  startHere descriptions and notes, era descriptions and order rationale
+  are ungated prose that ships to every reader signed in or not. On this
+  wing that is decisive: eras.yaml and orders.yaml are both empty, all 17
+  event/lifeEvent entries are publication, biography or reception facts
+  with spoilerAfter: null, and none of them narrates the inside of a book.
+  So no boundary was set, none was loosened, and the entire audit came
+  down to ungated prose, where rewriting is the only lever.
+
+  THE READER-PATH READ. This wing sends a first-time reader down one of
+  two doors written by two different stages: start-with-poesia (the 1944
+  debut, then chronological) and classroom-canon (O Cavaleiro da
+  Dinamarca, the DGE 7th-year set text). Poetry collections cannot
+  really be spoiled and her 52-work shelf is 30 poetry titles, so the
+  exposure sits entirely in the narrative works: eight children's books,
+  two tale collections and their extracted single tales, five plays. Two
+  of those synopses resolved their book's ending in the open. Both were
+  ruled against the publisher's own current jacket copy, fetched, not
+  recalled, and both were fixed by rewriting to what the publisher itself
+  prints.
+
+  LOAD-BEARING, FIXED (1): O CAVALEIRO DA DINAMARCA. The synopsis and the
+  classroom-canon startHere description (near-identical prose, written by
+  two different stages) both ended "back through a snow-filled,
+  wolf-haunted forest to reach his family in time". That states the
+  outcome of the last chapter, which is the whole suspense of the book,
+  on the very landing page whose job is to send an 11-to-13-year-old to
+  read it, and it names perils (the snow, the wolves) the jacket never
+  mentions. Porto Editora's own SINOPSE for the current edition
+  (portoeditora.pt/produtos/ficha/o-cavaleiro-da-dinamarca/15270904,
+  fetched) names the pilgrimage, Venice and Florence and the single wish
+  to be home for Christmas, then deliberately stops soft: "Sao muitas as
+  dificuldades com que se depara, mas uma forca inabalavel parece ajuda-lo
+  a passar essa noite tao especial com aqueles que mais ama...". Both
+  strings rewritten to the jacket's own shape (the wish, not the
+  achievement; no wolves), and pt.wikipedia's full plot summary used only
+  to confirm what was being given away. LOOSENABLE, FLAGGED: the jacket
+  does gesture at the arrival, so a curator who reads "parece ajuda-lo" as
+  publisher copy for the ending can restore it; what should not come back
+  is the final chapter's specifics.
+
+  LOAD-BEARING, FIXED (2): A FADA ORIANA. The synopsis ended "earning
+  them back only when she chooses to save a stranger without reward",
+  which is the resolution of a book Portuguese schools set for guided
+  reading at 5th year. Porto Editora's own SINOPSE
+  (portoeditora.pt/produtos/ficha/a-fada-oriana/13167749, fetched) is
+  purely thematic and carries no plot at all; en.wikipedia's summary stops
+  at the punishment and "begins a journey of self-consciousness to repair
+  the evils caused by her omission". So the resolution was ours alone, on
+  no jacket anywhere. Rewritten to the setup only (the charge over the
+  forest, the reflection in the river, the lost wings), all of which is
+  first-act material carried by the school editions and the encyclopedia.
+
+  BOTH FIXES CARRY A note: SO THEY DO NOT REGRESS. works[].note is
+  curator-only and never rendered, which makes it the right place to
+  record that the publisher copy stops where it stops. Each note now
+  quotes the jacket and states that the ending is deliberately not given,
+  without repeating it: an enrichment pass pulling a school plot summary
+  wholesale is exactly how both spoilers would come back.
+
+  RULED CHECKED-AND-LEFT (each verified against a source, not memory):
+  - Quatro Contos Dispersos and its four extracted tales (O Carrasco, Era
+    Uma Vez Uma Praia Atlantica, Leitura no Comboio, O Cego): all four
+    synopses track the cited review's own descriptions and stop at premise.
+    O Carrasco's is the one worth naming: the review records that the tale
+    has an open ending, so the synopsis's "a small city readies itself to
+    witness a death sentence carried out" states the setup and could not
+    resolve it even if it tried.
+  - Os Ciganos: "discovers freedom outside his rule-bound home" is the
+    press framing of the whole book at publication (Lusa/SOL 2012, quoting
+    the co-author: "uma historia de liberdade e de compreensao daquele que
+    e diferente"). Its two-part blue/black structure is printed in the book
+    itself and was the news story. Left.
+  - A Menina do Mar, O Rapaz de Bronze, A Floresta, A Arvore, O Tesouro,
+    A Noite de Natal: premise or setup only; none states an ending. Left.
+  - Contos Exemplares, Historias da Terra e do Mar: title lists plus
+    critical framing, no plot beats. Left.
+  - O Colar, O Bojador, Nao Chores Minha Querida, Filho de Alma e Sangue,
+    O Azeiteiro: setting and premise only. Checked specifically whether O
+    Colar's Venice romance gives away the inset tale a classroom-canon
+    reader meets inside O Cavaleiro da Dinamarca: it names characters and
+    period, no outcome. Left.
+  - All 30 poetry entries: publication facts, prizes, named poems and
+    received critical framing. Nothing to spoil. Left.
+  - All 14 author lifeEvents and 3 franchise events: read in full for the
+    inverse failure (a biographical entry pre-narrating how a later book
+    resolves). None does. The nearest thing is mar-novo-origin-1958, which
+    explains where a 1958 title came from, which is aura doing its job.
+  - global.yaml portuguese-censorship-1926 (the wing's one included global
+    event): regime history, spoilerAfter null, references no work.
+  - Sibling-prose sweep, the failure that looks like diligence: since no
+    boundary exists anywhere on this wing there is no gate for adjacent
+    prose to defeat, and the two entities edited were re-read whole
+    (title, synopsis, note, sources) after the rewrite.
+
+  TRANSLATIONS. The only pt-PT overlay this wing has is
+  franchise.yaml, and it carried a faithful translation of the spoiling
+  sentence ("regressa atraves de uma floresta coberta de neve e rondada
+  por lobos para chegar a tempo junto da familia"), i.e. the Portuguese
+  reader, the one most likely to be a Portuguese schoolchild, was getting
+  the same spoiler. Mirrored in the same commit. works.yaml has no overlay
+  yet, so the two synopsis rewrites need no mirror.
+
+  NOT A SPOILER FINDING, PASSED ON: works.yaml gives O Colar as "centred
+  on the characters Vanina and Pietro", while pt.wikipedia's summary of O
+  Cavaleiro da Dinamarca names the Venice inset tale as "a historia de
+  amor de Vanina e Guidobaldo". Both may be right (the play need not
+  reuse the tale's names) but one pairing is worth confirming against the
+  Porto Editora reading guide already cited on that entry.
+
+  GATES. validate.py --slug sophia-de-mello-breyner-andresen: clean, only
+  the expected pre-existing theme.art error, no warnings on this wing.
+  i18n_coverage.py: franchise.yaml pt-PT unchanged at 6/7 (the wing-level
+  `description` was already the one missing field), no regression, since
+  both sides of the one overlaid string moved together.
+produced:
+  newWorkIds: []
+  newAuthorIds: []
+  spoilerAfterSet: []
+  spoilerAfterLoosened: []
+  changedProse:
+    - {file: works.yaml, change: "o-cavaleiro-da-dinamarca synopsis rewritten to publisher jacket copy (ending removed); note records the jacket's stopping point"}
+    - {file: works.yaml, change: "a-fada-oriana synopsis rewritten to setup only (resolution removed); note records that the publisher sinopse carries no plot"}
+    - {file: franchise.yaml, change: "startHere classroom-canon description rewritten, same fix as the o-cavaleiro-da-dinamarca synopsis"}
+    - {file: "i18n/pt-PT/franchise.yaml", change: "classroom-canon description mirrored, same commit"}
+  files:
+    - content/franchises/sophia-de-mello-breyner-andresen/works.yaml
+    - content/franchises/sophia-de-mello-breyner-andresen/franchise.yaml
+    - content/i18n/pt-PT/franchises/sophia-de-mello-breyner-andresen/franchise.yaml
+verdict: >
+  Two load-bearing spoilers found and rewritten away, both in the
+  children's literature and both aimed straight at the school-age reader
+  this wing's second door exists to serve; one of them shipped in
+  duplicate across a work synopsis and a startHere path, in two languages.
+  No spoilerAfter boundary was needed anywhere: this author's shelf is
+  poetry, biography and prizes, and the engine has nothing to gate. Both
+  rewrites follow Porto Editora's own current jacket copy rather than our
+  reading, and both leave a note so the next enrichment pass does not put
+  the endings back.
