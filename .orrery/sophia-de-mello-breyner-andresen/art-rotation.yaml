@@ -1,0 +1,72 @@
+stage: art-rotation
+verdict: >
+  organisation, illustration_type, images_required (and modifier where it
+  earns its place) set on all 17 event sketches: 14 lifeEvents on
+  content/authors/sophia-de-mello-breyner-andresen.yaml and 3 franchise
+  events on content/franchises/sophia-de-mello-breyner-andresen/events.yaml.
+  eras.yaml is empty (no periodisation the sources support) so no era plates
+  to grade.
+contour: >
+  #====.===.===.=#=  (# loud, = mid, . quiet). Two loud cells, both
+  conventional bookends: full-bleed-vista/establishing-landscape on the 1919
+  birth (the opening breath) and immersion/portrait-of-absence on the 2004
+  death - the wing's one deliberate rupture, echoing how Cesário Verde spent
+  its own single immersion. Nine of fourteen lifeEvents already carry
+  impact: high from press-archaeology, so loud was rationed by judgement,
+  not by impact tier: the other eight get mid-tier treatment, spread out
+  rather than stacked. Three quiet beats (two marginalia, one epigraph) split
+  the run into three unequal mid stretches (4, 3, 3 events) so no plateau
+  forms. grande-premio-1964 and vida-literaria-1994 both get marginalia (a
+  first minor prize; a lesser career prize 15 years before the Camões),
+  leaving camoes-prize-1999 (layered-stack/press-media-collage - the
+  accumulated late acclaim of Camões, Max Jacob, Reina Sofía) visibly
+  heavier than either. The middle quiet beat is writing-as-politics-1982 as
+  an epigraph - her own verbatim 1982 line naming writing as her "true
+  political participation" - which turns the loudest-looking material into
+  the wing's most intimate, textless moment instead of another rupture, and
+  gives the four political high-impact events a real escalating rhyme rather
+  than four flat repeats: layered-stack/archive-stack + pull-focus (the
+  coded prison letters, magnified) for the 1959 arrest, split-counterpoint
+  (WRITING / ACTIVISM, simultaneous) for the 1969 CNSPP founding,
+  artifact-spread/document-facsimile + breakout (the constitution preamble
+  itself) for the 1975 Assembly, medallion/portrait-of-absence (the
+  marriage's absence, not a face) for the 1986 separation - four different
+  devices, none repeating its neighbour, none a face (theme.art bans any
+  likeness of Sophia, Francisco or the children throughout, ruling out
+  editorial-portrait wing-wide). diptych/symbolic-still-life covers the 1958
+  Mar Novo franchise event (a killed monument repurposed as a book title -
+  genuine before/after); medallion/emblem-seal and floating-object/
+  book-object cover the two later franchise prizes (1977, 1989), echoing the
+  lifeEvents' own prize-medallion pattern at franchise scale. beside stays
+  eligible for the plurality but was kept light here (2 of 17: marriage-1946,
+  gulbenkian-children-1992) since this material is unusually eventful for a
+  poetry wing and mostly earned a more specific device; nothing forces
+  beside toward its ~50% target and no cap was at risk. panteao-2014 closes
+  on strip/serial-contact-sheet - the cortège's three stops (Carnide, the
+  Assembleia, the Panteão) read as a sequence, not one static tableau.
+gates: >
+  Before: art_rotation.py --check reported 'beside' 17/17 (100%, OVER THE
+  CAP), 16 neighbour-repeat problems, and a pacing contour of 17 flat '='.
+  After: organisation rotation holds across all 17 events (no cap breach, no
+  neighbour repeats; heaviest single organisation 2/17) and pacing holds (no
+  two loud cells touching or sharing a screenful, no plateau) - both read
+  directly off the script's two lines. Exit code stays 1 on the separate
+  composition axis (0 of 17 assets have an art issue yet), expected on a
+  wing this stage doesn't touch. validate.py --slug
+  sophia-de-mello-breyner-andresen: 0 errors, all references resolve;
+  grepping the full unscoped output for this slug returns nothing, so no new
+  warnings either.
+forStages:
+  asset-prompt: >
+    illustration_type is set but no prompt language is written yet -
+    theme.art's avoid list still governs every image: no likeness of Sophia,
+    Francisco or the five children, no prison cell/courtroom/podium (closed
+    door, folded page, empty chamber bench instead), no ship/voyage staging.
+    The four political lifeEvents (1959, 1969, 1975, 1986) each got a
+    different organisation and carrying object on purpose - keep that
+    variety in the actual prompts. split-counterpoint (cnspp-1969) and
+    diptych (mar-novo-origin-1958) each need 2 full prompts, one per slot.
+  wing-audit: >
+    Every choice above is a judgement call - if any reads wrong against the
+    prose, the epigraph swap on writing-as-politics-1982 changes that
+    entry's rendered shape most and is worth a second look first.

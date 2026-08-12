@@ -93,6 +93,9 @@ bio: >
   that honour.
 lifeEvents:
   - id: sophia-de-mello-breyner-andresen-born-1919
+    organisation: full-bleed-vista
+    illustration_type: establishing-landscape
+    images_required: 1
     date: 1919-11-06
     title: Born in Porto, into a Danish-descended merchant family
     impact: low
@@ -111,6 +114,9 @@ lifeEvents:
       - "https://pt.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
 
   - id: sophia-de-mello-breyner-andresen-poesia-debut-1944
+    organisation: artifact-spread
+    illustration_type: book-object
+    images_required: 1
     date: 1944
     title: Publishes Poesia, her first book, at 24
     impact: high
@@ -128,6 +134,9 @@ lifeEvents:
       - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
 
   - id: sophia-de-mello-breyner-andresen-marriage-1946
+    organisation: beside
+    illustration_type: domestic-interior
+    images_required: 1
     date: 1946
     title: Marries Francisco Sousa Tavares; motherhood turns her to children's books
     impact: med
@@ -146,6 +155,10 @@ lifeEvents:
       - "https://pt.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
 
   - id: sophia-de-mello-breyner-andresen-husband-arrested-1959
+    organisation: layered-stack
+    illustration_type: archive-stack
+    images_required: 1
+    modifier: pull-focus
     date: 1959-03-11
     title: Husband jailed in the failed Revolta da Sé; the couple invent a code the PIDE never broke
     impact: high
@@ -168,6 +181,9 @@ lifeEvents:
       - "https://www.publico.pt/2026/03/31/politica/noticia/sophia-mello-breyner-francisco-sousa-tavares-criaram-codigo-pide-descobriu-miguel-sousa-tavares-ira-revelar-2169745"
 
   - id: sophia-de-mello-breyner-andresen-grande-premio-1964
+    organisation: marginalia
+    illustration_type: emblem-seal
+    images_required: 1
     date: 1964
     title: Wins the Portuguese Writers' Society Grand Prize for Poetry
     impact: med
@@ -185,6 +201,9 @@ lifeEvents:
       - "https://pt.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
 
   - id: sophia-de-mello-breyner-andresen-cnspp-1969
+    organisation: split-counterpoint
+    illustration_type: symbolic-still-life
+    images_required: 2
     date: 1969-12-31
     title: Co-founds the National Commission for Support of Political Prisoners
     impact: high
@@ -205,6 +224,10 @@ lifeEvents:
       - "https://en.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
 
   - id: sophia-de-mello-breyner-andresen-constituent-assembly-1975
+    organisation: artifact-spread
+    illustration_type: document-facsimile
+    images_required: 1
+    modifier: breakout
     date: 1975
     title: Elected to the Constituent Assembly; coins "A Poesia está na rua"
     impact: high
@@ -238,8 +261,16 @@ lifeEvents:
       - "https://observador.pt/especiais/a-mae-desatenta-a-preocupacao-doentia-com-as-doencas-e-o-divorcio-de-francisco-pre-publicacao-da-primeira-biografia-de-sophia/"
 
   - id: sophia-de-mello-breyner-andresen-writing-as-politics-1982
+    organisation: epigraph
+    quote: >
+      Fiquei a conversar com as crianças - e pensei, de repente, que
+      escrever era a minha verdadeira participação política.
+    images_required: 0
     date: 1982-02-16
-    title: "In a 1982 interview, names writing as her 'true political participation'"
+    # An epigraph's `title` is the attribution, not a second copy of the
+    # quotation (docs/LAYOUT.md): the quote renders large and this line sits
+    # beneath it saying where the words come from.
+    title: "Jornal de Letras interview, 16 February 1982 (interviewer Maria Armanda Passos)"
     impact: high
     description: >
       Never re-elected after the Constituent Assembly dissolves, she tells
@@ -262,6 +293,9 @@ lifeEvents:
       - "https://especiais.rr.pt/sophia-100-anos/"
 
   - id: sophia-de-mello-breyner-andresen-separation-divorce-1986
+    organisation: medallion
+    illustration_type: portrait-of-absence
+    images_required: 1
     date: 1986
     title: Separates from Francisco Sousa Tavares after politics widens the rift
     impact: high
@@ -281,6 +315,9 @@ lifeEvents:
       - "https://observador.pt/especiais/a-mae-desatenta-a-preocupacao-doentia-com-as-doencas-e-o-divorcio-de-francisco-pre-publicacao-da-primeira-biografia-de-sophia/"
 
   - id: sophia-de-mello-breyner-andresen-gulbenkian-children-1992
+    organisation: beside
+    illustration_type: book-object
+    images_required: 1
     date: 1992
     title: Wins the Gulbenkian children's-literature prize
     impact: med
@@ -300,6 +337,9 @@ lifeEvents:
   # bibliography) and a Diário de Notícias centenary retrospective both
   # date this 1994; a Wikipedia-maintained awards list gives 1993.
   - id: sophia-de-mello-breyner-andresen-vida-literaria-1994
+    organisation: marginalia
+    illustration_type: emblem-seal
+    images_required: 1
     date: 1994
     title: Receives the Portuguese Writers' Association's career prize
     impact: low
@@ -317,6 +357,9 @@ lifeEvents:
       - "https://www.dn.pt/cultura/centenario-de-sophia-de-mello-breyner-e-10138353.html"
 
   - id: sophia-de-mello-breyner-andresen-camoes-prize-1999
+    organisation: layered-stack
+    illustration_type: press-media-collage
+    images_required: 1
     date: 1999
     title: First woman awarded the Prémio Camões
     impact: high
@@ -337,6 +380,9 @@ lifeEvents:
   # next) all give Hospital da Cruz Vermelha instead. The contemporary
   # press is used here.
   - id: sophia-de-mello-breyner-andresen-death-2004
+    organisation: immersion
+    illustration_type: portrait-of-absence
+    images_required: 1
     date: 2004-07-02
     title: Dies in Lisbon, aged 84, ten days short of a Chilean honour
     impact: high
@@ -355,6 +401,9 @@ lifeEvents:
       - "https://www.cmjornal.pt/cultura/detalhe/a-honra-de-sophia"
 
   - id: sophia-de-mello-breyner-andresen-panteao-2014
+    organisation: strip
+    illustration_type: serial-contact-sheet
+    images_required: 1
     date: 2014-07-02
     title: Reburied in the National Pantheon, ten years to the day after her death
     impact: high
