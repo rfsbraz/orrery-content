@@ -6,7 +6,7 @@
 # SHAPE OF THIS WING: a sixty-year career across four real genres she worked
 # in seriously - poetry, short tales, children's literature, and theatre -
 # plus a handful of essays and (excluded below) her translation work. The
-# spine below tiers 45 works: the fourteen poetry collections en.wikipedia's
+# spine below tiers 52 works: the fourteen poetry collections en.wikipedia's
 # own summary counts ("published fourteen poetry books between 1944 and
 # 1997") sit `core`, cross-checked title-by-title and year-by-year against
 # the Biblioteca Nacional de Portugal's own dedicated bibliography
@@ -16,9 +16,10 @@
 # books (written for and largely because of her own five children, mostly
 # 1950s-1960s), and five stage plays (all much later, 1993-2001) - all
 # `core`, all real distinct genres rather than miscellany. `extended` and
-# `apocrypha` below are anthologies, selections and posthumous
-# compilations: real books, catalogued honestly, but not new creative work
-# in the way the fourteen collections are.
+# `apocrypha` below are anthologies, selections, standalone periodical
+# pieces later folded into a catalogued book, and posthumous compilations:
+# real books, catalogued honestly, but not new creative work in the way
+# the fourteen collections are.
 #
 # EXCLUDED FROM THIS FILE ENTIRELY, and why:
 #   - Her translations of other authors (Dante's Purgatorio, Shakespeare's
@@ -31,15 +32,43 @@
 #     Purgatorio as a Sophia work would misstate whose book it is. Recorded
 #     in the author entity's bio prose instead.
 #   - OBRA POETICA I, II, III (Editorial Caminho, 1990-1991, multiple later
-#     editions) - a three-volume collected-poems reissue gathering the
+#     editions) and the later single-volume OBRA POÉTICA (ed. Carlos Mendes
+#     de Sousa, 2010-2011) - collected-poems reissues gathering the
 #     fourteen collections already catalogued below, not a new book with
 #     new content. Same treatment this catalogue gives any collected-works
 #     reprint (see editions.yaml's own scope note pattern on other wings).
 #   - Individually uncollected periodical poems and essays (the BNP
 #     bibliography's own "Poemas não incluídos na Obra Poética" section
-#     lists roughly a dozen, 1950-1999, in small literary magazines) - real
-#     and hers, but never gathered into a book, the same standard Florbela
-#     Espanca's wing applies to her own uncollected periodical poems.
+#     lists roughly a dozen, 1950-1999, in small literary magazines; the
+#     ENSAIO section separately lists three periodical essays, 1956-1965,
+#     never gathered into a book) - real and hers, but never gathered into
+#     a book, the same standard Florbela Espanca's wing applies to her own
+#     uncollected periodical poems.
+#   - SINGRADURAS (1991, Lisboa, Galeria 111, six engravings by David de
+#     Almeida) - a limited-edition fine-press print of a single poem
+#     (poem VI of the "As Ilhas" sequence inside
+#     [[work:sophia-de-mello-breyner-andresen/navegacoes|Navegações]],
+#     1983), not a book of new content and not later reprinted whole
+#     inside a further catalogued work, so it clears neither this
+#     catalogue's bar for a standalone work nor the `containedIn`
+#     mechanism (which requires the earlier work's text to be reprinted
+#     WHOLE in a later one, not one poem excerpted from an already-larger
+#     book into a smaller print run).
+#   - Correspondence volumes with fellow poet Jorge de Sena ("Sophia de
+#     Mello Breyner e Jorge de Sena", Guerra e Paz, 2006 and 2010) -
+#     jointly-authored letters between the two, assembled posthumously;
+#     absent from the BNP bibliography's own dedicated Sophia page (this
+#     wing's primary source), and a two-way correspondence is not a work
+#     she authored any more than an interview transcript would be.
+#   - POESIA SEMPRE I (1964, Lisboa, Livraria Sampedro Editora, "em
+#     colaboração com Alberto de Lacerda") and POESIA SEMPRE II (1964,
+#     same publisher) - real, BNP-listed titles under "Antologias
+#     Organizadas pela Autora". Whether either volume anthologises her own
+#     poems alone or gathers multiple Portuguese poets under her and
+#     Alberto de Lacerda's joint editorship was not established by the
+#     sources checked here, and that distinction decides whether either
+#     title belongs in a bibliography of her own work at all - left out on
+#     that unresolved uncertainty rather than catalogued as a guess.
 #
 # A NOTE ON WHAT "PUBLISHED" MEANS HERE: this catalogue's `published` is
 # always the first print year of the BOOK, not of an individual poem's
@@ -126,11 +155,35 @@
     loneliness, fear and lies, bound up with the city as a negative,
     exiled space.
   note: >
-    1st ed. 1954, Lisbon, Guimarães Editores. Later editions absorb the
-    separately-printed sequence "Poemas de um Livro Destruído" (1972),
-    per the BNP bibliography's own cross-reference.
+    1st ed. 1954, Lisbon, Guimarães Editores. Its 2nd ed. (1985, in No
+    Tempo Dividido e Mar Novo, Lisbon, Edições Salamandra) absorbs the
+    separately-printed sequence
+    [[work:sophia-de-mello-breyner-andresen/poemas-de-um-livro-destruido|Poemas
+    de um Livro Destruído]] (1972) as a new first part.
   sources:
     - "https://pt.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/poemas-de-um-livro-destruido
+  title: "Poemas de um Livro Destruído"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1972
+  subseries: null
+  canonTier: apocrypha
+  format: poetry-collection
+  containedIn: sophia-de-mello-breyner-andresen/no-tempo-dividido
+  synopsis: >
+    A sequence of nine poems, written in the early-to-mid 1950s between
+    Coral and No Tempo Dividido, first printed as their own sequence
+    before being folded into a later edition of the earlier book.
+  note: >
+    1st ed. 1972, in the periodical Fevereiro - Textos de Poesia, Lisbon.
+    Per the BNP bibliography's own note, "[Incluído em No Tempo Dividido,
+    a partir da 2.ª ed.]" - its text is reprinted whole, as a new first
+    part, inside
+    [[work:sophia-de-mello-breyner-andresen/no-tempo-dividido|No Tempo
+    Dividido]] from that book's 1985 second edition onward.
+  sources:
     - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
 
 - id: sophia-de-mello-breyner-andresen/mar-novo
@@ -366,9 +419,34 @@
   synopsis: >
     A slim, 28-page chapbook published between Geografia and Dual.
   note: >
-    1st ed. 1971, Lisbon, Movimento. Whether its eleven poems are new work
-    or drawn from elsewhere is not established by the sources checked here; held at `extended` rather
-    than folded into the fourteen-book core spine on that uncertainty.
+    1st ed. 1971, Lisbon, Movimento, a slim plaquette. Whether its eleven
+    poems are new work or drawn from elsewhere is not established by any
+    source checked here, BNP included - primary Portuguese bibliographic
+    sources, the author's own publisher pages and academic treatments of
+    her work were all searched without finding a description of its
+    contents. Held at `extended` rather than folded into the fourteen-book
+    core spine on that unresolved uncertainty; en.wikipedia's own
+    "fourteen poetry books, 1944-1997" framing (used above to define the
+    core spine) does not count this title among them either.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/poemas-escolhidos-1981
+  title: "Poemas Escolhidos"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1981
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    A selected-poems volume published by the Círculo de Leitores book
+    club, between O Nome das Coisas and Navegações.
+  note: >
+    1st ed. 1981, Lisboa, Círculo de Leitores. A selection from her
+    existing collections rather than new poems, the same treatment this
+    catalogue gives Antologia and Mar. Distinct from a same-titled 2004
+    Brazilian selection (Companhia das Letras, São Paulo) found only in
+    editions-level research, not catalogued here as a separate work.
   sources:
     - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
 
@@ -459,6 +537,25 @@
     [[work:sophia-de-mello-breyner-andresen/ilhas|Ilhas]] (1989) from a
     later edition onward, this catalogue's `containedIn` mechanism for
     exactly that shape.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/ilhas-poemas-escolhidos
+  title: "Ilhas - Poemas Escolhidos/Islands - Selected Poems"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1995
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    A bilingual Portuguese/English selected-poems volume built around
+    photographs by Daniel Blaufuks, produced for Expo '98 and including
+    at least one poem never printed before.
+  note: >
+    1st ed. 1995, Lisboa, Texto Editora/Expo' 98, English version by
+    Richard Zenith, photographs by Daniel Blaufuks. A themed selection
+    across her body of work rather than an edition of the 1989 book Ilhas
+    itself, the same treatment this catalogue gives Antologia and Mar.
   sources:
     - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
 
@@ -596,6 +693,89 @@
   sources:
     - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
 
+- id: sophia-de-mello-breyner-andresen/o-carrasco
+  title: "O Carrasco"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1991
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  containedIn: sophia-de-mello-breyner-andresen/quatro-contos-dispersos
+  synopsis: >
+    A small city readies itself to witness a death sentence carried out -
+    the earliest of the four tales later gathered into Quatro Contos
+    Dispersos.
+  note: >
+    1st ed. 1991, in As Escadas não Têm Degraus no. 5, Lisboa, Edições
+    Cotovia, per the BNP bibliography. Matched to its later collection by
+    title and plot against an independent review of Quatro Contos
+    Dispersos rather than an explicit BNP cross-reference (the other three
+    tales below carry the same sourcing).
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+    - "https://abagfullofstories.wordpress.com/2020/07/10/quatro-contos-dispersos-by-sophia-de-mello-breyner-andresen/"
+
+- id: sophia-de-mello-breyner-andresen/era-uma-vez-uma-praia-atlantica
+  title: "Era Uma Vez Uma Praia Atlântica"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1997
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  containedIn: sophia-de-mello-breyner-andresen/quatro-contos-dispersos
+  synopsis: >
+    A story of grief set in a small seaside town, later gathered into
+    Quatro Contos Dispersos.
+  note: >
+    1st ed. 1997, Lisboa, Expo' 98, per the BNP bibliography. Matched to
+    its later collection by title and plot against an independent review
+    of Quatro Contos Dispersos rather than an explicit BNP
+    cross-reference.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+    - "https://abagfullofstories.wordpress.com/2020/07/10/quatro-contos-dispersos-by-sophia-de-mello-breyner-andresen/"
+
+- id: sophia-de-mello-breyner-andresen/leitura-no-comboio
+  title: "Leitura no Comboio"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 2002
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  containedIn: sophia-de-mello-breyner-andresen/quatro-contos-dispersos
+  synopsis: >
+    A woman reading on a train is repeatedly interrupted by a stranger's
+    questions - later gathered into Quatro Contos Dispersos.
+  note: >
+    1st ed. 2002, in Colóquio/Letras no. 159-160, illustrated by Tiago
+    Manuel, alongside "O Cego" below. Matched to its later collection by
+    title and plot against an independent review of Quatro Contos
+    Dispersos rather than an explicit BNP cross-reference.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+    - "https://abagfullofstories.wordpress.com/2020/07/10/quatro-contos-dispersos-by-sophia-de-mello-breyner-andresen/"
+
+- id: sophia-de-mello-breyner-andresen/o-cego
+  title: "O Cego"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 2002
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  containedIn: sophia-de-mello-breyner-andresen/quatro-contos-dispersos
+  synopsis: >
+    A blind street musician in post-revolutionary Lisbon, and how the
+    Carnation Revolution's aftermath shapes what he plays - later gathered
+    into Quatro Contos Dispersos.
+  note: >
+    1st ed. 2002, in Colóquio/Letras no. 159-160, illustrated by Tiago
+    Manuel, alongside "Leitura no Comboio" above. Matched to its later
+    collection by title and plot against an independent review of Quatro
+    Contos Dispersos rather than an explicit BNP cross-reference.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+    - "https://abagfullofstories.wordpress.com/2020/07/10/quatro-contos-dispersos-by-sophia-de-mello-breyner-andresen/"
+
 - id: sophia-de-mello-breyner-andresen/quatro-contos-dispersos
   title: "Quatro Contos Dispersos"
   authorIds: [sophia-de-mello-breyner-andresen]
@@ -604,12 +784,15 @@
   canonTier: apocrypha
   format: short-story-collection
   synopsis: >
-    Four uncollected tales gathered into a book four years after her
-    death, edited by her daughter Maria Andresen Sousa Tavares.
+    Four tales - O Carrasco (1991), Era Uma Vez Uma Praia Atlântica
+    (1997), Leitura no Comboio and O Cego (2002) - each first published
+    separately, gathered into a book four years after her death, edited by
+    her daughter Maria Andresen Sousa Tavares.
   note: >
     1st ed. 2008, Porto, Figueirinhas, illustrated by Diogo Vaz.
   sources:
     - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+    - "https://abagfullofstories.wordpress.com/2020/07/10/quatro-contos-dispersos-by-sophia-de-mello-breyner-andresen/"
 
 # ========================= CHILDREN'S BOOKS: CORE ===========================
 # Begun in the mid-1950s, motivated by her own five children (see the
@@ -725,10 +908,15 @@
   synopsis: >
     Her seventh children's book.
   note: >
-    1st ed. 1970, per the BNP bibliography's own listing. A detailed
-    plot summary was not established by the sources checked here.
+    1st ed. 1970. Absent from the BNP bibliography's own CONTOS PARA
+    CRIANÇAS listing, which otherwise names every other title in this
+    section - a real gap in that source rather than evidence against the
+    book, since pt.wikipedia corroborates the 1970 date independently,
+    both in its running biography text and in its own "Livros de Sophia"
+    infobox template. A detailed plot summary was not established by any
+    source checked here.
   sources:
-    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+    - "https://pt.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
 
 - id: sophia-de-mello-breyner-andresen/a-arvore
   title: "A Árvore"
@@ -751,22 +939,27 @@
 - id: sophia-de-mello-breyner-andresen/os-ciganos
   title: "Os Ciganos"
   authorIds: [sophia-de-mello-breyner-andresen]
+  withAuthorIds: [pedro-sousa-tavares]
   published: 2012
   subseries: null
   canonTier: apocrypha
   format: picture-book
   synopsis: >
-    A children's book credited jointly to Sophia and her grandson Pedro
-    Sousa Tavares, published eight years after her death.
+    A boy climbs his garden wall to follow a band of Roma travellers and
+    discovers freedom outside his rule-bound home - an unfinished
+    fragment found in Sophia's papers in 2009 and completed by her
+    grandson, published eight years after her death.
   note: >
     1st ed. 2012, Porto, Porto Editora, illustrated by Danuta
-    Wojciechowska. Credited on the BNP bibliography as "Sophia de Mello
-    Breyner Andresen, Pedro Sousa Tavares" with no further detail on how
-    the two contributions divide; Pedro Sousa Tavares has no author entity
-    in this catalogue yet, so `withAuthorIds` is left unset here rather
-    than pointing at an id that does not exist.
+    Wojciechowska. The book's first part, printed in blue, is Sophia's own
+    unfinished draft, found in her estate in spring 2009; its second part,
+    printed in black, was written by journalist Pedro Sousa Tavares, her
+    grandson, at the invitation of his aunt Maria Andresen de Sousa
+    Tavares - his literary debut.
   sources:
     - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+    - "https://sol.sapo.pt/2012/10/14/conto-os-ciganos-de-sophia-de-mello-breyner-foi-acabada-pelo-seu-neto/"
+    - "https://www.rtp.pt/noticias/cultura/conto-inedito-de-sophia-de-mello-breyner-andresen-publicado-pela-porto-editora_n591869"
 
 # ================================ THEATRE: CORE ==============================
 # All five plays are late work, 1993-2001, decades after her prose and most
