@@ -1,0 +1,76 @@
+stage: reading-orders
+summary: >
+  orders.yaml: shipped empty, with all four candidates considered and
+  rejected documented in the file's own header. The 1958 and 2001
+  same-year ties are real but every cluster mixes unrelated genres and
+  tiers with no shared reading practice a tie-break could serve. A
+  poetry-only, children's-books-only or theatre-only chronological thread
+  each reproduces the derived default's own relative order for that
+  subset - already chronological, nothing to reorder - and no publisher,
+  critic or school source treats any of the three as a walked unit apart
+  from the rest of the shelf. The publisher's OBRA POETICA I/II/III and
+  single-volume OBRA POETICA reissues carry no order to encode: works.yaml
+  already excludes them as non-new-content.
+
+  startHere: three paths. Researched the two real candidate entry points
+  this wing raises given its genuinely large, four-genre shape (poetry,
+  tales, children's books, theatre) - Portuguese secondary curriculum
+  (DGE's "Aprendizagens Essenciais" Anexo 1 lists, checked at every grade
+  5-12 for a Sophia mention: found at 6, 7 and 9, none at 10-12) and
+  independent critical/encyclopedic framing of her poetry. Two sourced
+  entry points survive, deliberately kept separate rather than folded into
+  one "family/school" path, because they serve genuinely different
+  readers: start-with-poesia (her 1944 debut, sourced by Infopedia's own
+  account of her poetics dating from that book, corroborating the
+  featured:true note already in works.yaml) for a reader who wants Sophia
+  the poet, and classroom-canon (O Cavaleiro da Dinamarca, sourced by
+  DGE's 7th-year Literatura Juvenil list plus BNP's independently-verified
+  56th-edition-by-2001 print run) for a reader who wants Sophia the
+  children's author. Plus everything (orderId: default) for the
+  completionist walk. Both new paths and the completionist path's note
+  carry pt-PT overlays in the same commit
+  (content/i18n/pt-PT/franchises/sophia-de-mello-breyner-andresen/franchise.yaml,
+  a new file - no prior overlay existed for this wing).
+
+  REJECTED AS A STARTHERE BASIS: DGE's 6th-year Portugues list sets
+  "Primeiro Livro de Poesia" (1991) to introduce her poetry to
+  schoolchildren - a real curriculum fact, checked and quoted directly
+  from the fetched PDF - but that work is itself an editorially curated
+  selection assembled from her existing collections for younger readers,
+  not a book she wrote as a reading experience; used instead as sourcing
+  context (recorded as a comment above start-with-poesia) for why that
+  path points at her actual first collection rather than an assembled
+  best-of. Also checked and rejected: the 9th-year list's four Sophia
+  poems, drawn from two different books (Livro Sexto, Dual) under "Obra
+  Poetica" rather than naming one - scattered excerpts, not a
+  whole-work recommendation, the same shape the Camoes wing already
+  ruled does not map to a startHere path. The 12th-year "poetas
+  portugueses contemporaneos" list (Miguel Torga, Jorge de Sena, Eugenio
+  de Andrade, Alexandre O'Neill and eight others) does NOT include her -
+  checked directly against the fetched PDF, a real and mildly surprising
+  negative worth flagging since she is otherwise DGE-listed at three
+  other grades. SEO listicles (Brazilian book blogs ranking her "melhores
+  livros") were found and discounted per the sourcing bar; no publisher,
+  bookshop or literary-press source recommending a single poetry
+  collection as her entry point was found anywhere.
+
+  validate.py --slug sophia-de-mello-breyner-andresen: clean except the
+  one pre-existing, expected missing-theme.art error. No new warnings.
+  i18n_coverage.py: franchise.yaml pt-PT moved from no overlay to 6/7
+  (only the pre-existing, out-of-scope franchise `description` still
+  missing) - no regression, net improvement.
+produced:
+  newWorkIds: []
+  newAuthorIds: []
+  changedProse:
+    - {file: franchise.yaml, change: "added startHere (3 paths: start-with-poesia, classroom-canon, everything)"}
+    - {file: orders.yaml, change: "created, empty, with documented rejections"}
+    - {file: "i18n/pt-PT/franchise.yaml", change: "created, startHere path prose only"}
+  files:
+    - content/franchises/sophia-de-mello-breyner-andresen/orders.yaml
+    - content/franchises/sophia-de-mello-breyner-andresen/franchise.yaml
+    - content/i18n/pt-PT/franchises/sophia-de-mello-breyner-andresen/franchise.yaml
+verdict: >
+  Wing now has a wizard. Two sourced doors for a new reader (poet vs
+  children's author) plus the completionist walk; no additional reading
+  order earned a slot. Both new prose fields ship pt-PT same-commit.
