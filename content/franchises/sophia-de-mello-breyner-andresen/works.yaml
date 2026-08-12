@@ -1,0 +1,875 @@
+# Bibliography (Works) - the abstract books; editions/covers are separate
+# metadata. IDs are STABLE and permanent. `title` is the original Portuguese
+# title (this catalogue's rule for a Portuguese author writing in
+# Portuguese; see also Cesário Verde, Florbela Espanca, Eca de Queiros).
+#
+# SHAPE OF THIS WING: a sixty-year career across four real genres she worked
+# in seriously - poetry, short tales, children's literature, and theatre -
+# plus a handful of essays and (excluded below) her translation work. The
+# spine below tiers 45 works: the fourteen poetry collections en.wikipedia's
+# own summary counts ("published fourteen poetry books between 1944 and
+# 1997") sit `core`, cross-checked title-by-title and year-by-year against
+# the Biblioteca Nacional de Portugal's own dedicated bibliography
+# (purl.pt/19841/1/bibliografia/bibliografia.html) and pt.wikipedia's
+# bibliography section - all three agree on the same fourteen titles and
+# years. Around that spine sit two tale collections, eight children's
+# books (written for and largely because of her own five children, mostly
+# 1950s-1960s), and five stage plays (all much later, 1993-2001) - all
+# `core`, all real distinct genres rather than miscellany. `extended` and
+# `apocrypha` below are anthologies, selections and posthumous
+# compilations: real books, catalogued honestly, but not new creative work
+# in the way the fourteen collections are.
+#
+# EXCLUDED FROM THIS FILE ENTIRELY, and why:
+#   - Her translations of other authors (Dante's Purgatorio, Shakespeare's
+#     Hamlet and Much Ado About Nothing, Euripides' Medea, Paul Claudel,
+#     Emile Mireaux, Leif Kristiansson, a four-poet French-language
+#     anthology of Camões/Cesário Verde/Sá-Carneiro/Pessoa) are real and
+#     substantial - the BNP bibliography's own TRADUÇÕES section lists
+#     seven items - but they are not works she authored; this catalogue's
+#     `works.yaml` has no field for "translated by" and cataloguing Dante's
+#     Purgatorio as a Sophia work would misstate whose book it is. Recorded
+#     in the author entity's bio prose instead.
+#   - OBRA POETICA I, II, III (Editorial Caminho, 1990-1991, multiple later
+#     editions) - a three-volume collected-poems reissue gathering the
+#     fourteen collections already catalogued below, not a new book with
+#     new content. Same treatment this catalogue gives any collected-works
+#     reprint (see editions.yaml's own scope note pattern on other wings).
+#   - Individually uncollected periodical poems and essays (the BNP
+#     bibliography's own "Poemas não incluídos na Obra Poética" section
+#     lists roughly a dozen, 1950-1999, in small literary magazines) - real
+#     and hers, but never gathered into a book, the same standard Florbela
+#     Espanca's wing applies to her own uncollected periodical poems.
+#
+# A NOTE ON WHAT "PUBLISHED" MEANS HERE: this catalogue's `published` is
+# always the first print year of the BOOK, not of an individual poem's
+# earlier magazine appearance - stated once here rather than repeated on
+# every entry, per this catalogue's standing convention (see also Cesário
+# Verde and Luís de Camões).
+#
+# FEATURED: capped at 3 by the validator; only `poesia` is marked here.
+# Every source checked treats it as the unambiguous start of everything
+# that follows - the book the "fourteen poetry books, 1944-1997" framing
+# itself begins counting from. A second or third hinge is not marked: her
+# most-taught children's book is genuinely contested between A Menina do
+# Mar and O Cavaleiro da Dinamarca in the sources checked here, and no
+# single tale collection or late poetry landmark stood out clearly enough
+# in those same sources to name as a hinge rather than a guess.
+
+# ============================== POETRY: CORE ==============================
+
+- id: sophia-de-mello-breyner-andresen/poesia
+  title: "Poesia"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1944
+  subseries: null
+  canonTier: core
+  featured: true
+  format: poetry-collection
+  synopsis: >
+    Her first book, published through the Cadernos de Poesia imprint while
+    she was in her mid-twenties: the garden and house of childhood, the sea,
+    and a demand for moral and formal clarity that the rest of her sixty-year
+    body of work keeps returning to.
+  note: >
+    1st ed. 1944, Coimbra, Cadernos de Poesia no.1, edição da autora. Later
+    editions (Editorial Caminho, then Assírio & Alvim's 2013 7th ed. with a
+    preface by Pedro Eiras) are reissues of the same book, not new content.
+  sources:
+    - "https://en.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/o-dia-do-mar
+  title: "O Dia do Mar"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1947
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  synopsis: >
+    Her second collection, deepening the sea as the book's central figure -
+    already, this early, the theme every later source names as the most
+    recurrent in her whole body of work.
+  note: >
+    1st ed. 1947, Lisbon, Edições Ática.
+  sources:
+    - "https://en.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/coral
+  title: "Coral"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1950
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  synopsis: >
+    Her third collection, published in Porto rather than Lisbon; she later
+    named a Picasso painting, "Mulheres a Beira-Mar", among this book's
+    acknowledged influences, alongside Lorca's poetry.
+  note: >
+    1st ed. 1950, Porto, Livraria Simões Lopes.
+  sources:
+    - "https://pt.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/no-tempo-dividido
+  title: "No Tempo Dividido"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1954
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  synopsis: >
+    Introduces the "divided time" against which her later "absolute time"
+    is opposed throughout her work - divided time as the time of
+    loneliness, fear and lies, bound up with the city as a negative,
+    exiled space.
+  note: >
+    1st ed. 1954, Lisbon, Guimarães Editores. Later editions absorb the
+    separately-printed sequence "Poemas de um Livro Destruído" (1972),
+    per the BNP bibliography's own cross-reference.
+  sources:
+    - "https://pt.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/mar-novo
+  title: "Mar Novo"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1958
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  synopsis: >
+    Her fifth collection, its title poem, "Este é o Tempo", among the
+    sources' own examples of her absolute-time poems - the same year she
+    published her first children's books.
+  note: >
+    1st ed. 1958, Lisbon, Guimarães Editores.
+  sources:
+    - "https://pt.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/o-cristo-cigano
+  title: "O Cristo Cigano"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1961
+  subseries: null
+  canonTier: core
+  format: poem
+  synopsis: >
+    A single long narrative poem, drawn from an Andalusian legend the
+    Brazilian poet João Cabral de Melo Neto told her in Seville, written in
+    a Baroque register she herself set apart from the rest of her poetic
+    work.
+  note: >
+    Full title "O Cristo Cigano ou A Lenda do Cristo Cachorro". 1st ed.
+    1961, Lisbon, Estúdios Cor/Minotauro, illustrated by Júlio Pomar - a
+    numbered, author-signed print run of 400 copies. Catalogued by the BNP
+    bibliography under POESIA alongside the fourteen collections rather than
+    under PROSA, and by a peer-reviewed article on its Baroque form
+    (Revista Decifrar) as a distinct narrative-poem "special case" within
+    her lyric, which is why `format: poem` rather than
+    `poetry-collection` here.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+    - "https://www.periodicos.ufam.edu.br/index.php/Decifrar/article/view/13916"
+
+- id: sophia-de-mello-breyner-andresen/livro-sexto
+  title: "Livro Sexto"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1962
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  synopsis: >
+    Her sixth collection and, at the time, her most decorated: the
+    Sociedade Portuguesa de Escritores' Grande Prémio de Poesia in 1964,
+    the first major literary prize of her career.
+  note: >
+    1st ed. 1962, Lisbon, Livraria Morais Editora.
+  sources:
+    - "https://en.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/geografia
+  title: "Geografia"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1967
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  synopsis: >
+    Includes "Casa", one of the sources' own recurring examples of the
+    house-as-memory theme that runs through her work from her earliest
+    poems onward.
+  note: >
+    1st ed. 1967, Lisbon, Edições Ática.
+  sources:
+    - "https://pt.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/dual
+  title: "Dual"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1972
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  synopsis: >
+    Carries several of her clearest classical-antiquity poems ("Os Gregos")
+    and a direct homage to Fernando Pessoa's heteronym Ricardo Reis.
+  note: >
+    1st ed. 1972, Lisbon (BNP gives the printer as Coimbra, Moraes
+    Editores; en.wikipedia gives Lisbon - both name Moraes Editores as
+    publisher and 1972 as the year, the only points that matter here).
+  sources:
+    - "https://pt.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/o-nome-das-coisas
+  title: "O Nome das Coisas"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1977
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  synopsis: >
+    Won the 1977 Teixeira de Pascoaes Prize; carries several of her
+    best-known Hellenic poems, including "O Rei de Ítaca" and "Cíclades
+    (evocando Fernando Pessoa)".
+  note: >
+    1st ed. 1977, Lisbon, Moraes Editores.
+  sources:
+    - "https://en.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/navegacoes
+  title: "Navegações"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1983
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  synopsis: >
+    A collection built around the figure of the sea voyage, first published
+    with English and French translations facing the Portuguese text and a
+    recording of the poems in the author's own voice.
+  note: >
+    1st ed. 1983, Lisbon, Imprensa Nacional-Casa da Moeda, "Musarum
+    officia" series, English version by Ruth Fainlight, French version by
+    Joaquim Vital, with an accompanying spoken-word disc.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/ilhas
+  title: "Ilhas"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1989
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  synopsis: >
+    Won both the Casa de Mateus Foundation's King Dinis Prize and a joint
+    Inasset/Inapa-PEN Club Grand Prize for Poetry the following year.
+    Carries "Furias", one of her clearest late poems on the city as
+    negative space.
+  note: >
+    1st ed. 1989, Lisbon, Texto Editora, illustrated by her son Xavier
+    Sousa Tavares. The 1984 photo portfolio
+    [[work:sophia-de-mello-breyner-andresen/o-sol-o-muro-o-mar|O Sol o
+    Muro o Mar]] is folded into this book from a later edition onward; see
+    that work's own entry.
+  sources:
+    - "https://en.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/musa
+  title: "Musa"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1994
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  synopsis: >
+    Her thirteenth collection, published in her mid-seventies, five years
+    before the Camões Prize.
+  note: >
+    1st ed. 1994, Lisbon, Editorial Caminho.
+  sources:
+    - "https://en.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/o-buzio-de-cos
+  title: "O Búzio de Cós e Outros Poemas"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1997
+  subseries: null
+  canonTier: core
+  format: poetry-collection
+  synopsis: >
+    Her fourteenth and last new poetry collection, winner of the Luis
+    Miguel Nava Foundation Prize the following year, closing a sequence
+    that runs unbroken from 1944.
+  note: >
+    1st ed. 1997, Lisbon, Editorial Caminho. Full title "O Búzio de Cós e
+    Outros Poemas"; commonly shortened to "O Búzio de Cós".
+  sources:
+    - "https://en.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+# ============================ POETRY: EXTENDED =============================
+# Real, standalone published books - anthologies and selections rather than
+# new collections of new poems, which is why they sit off the fourteen-book
+# spine above rather than folded into it.
+
+- id: sophia-de-mello-breyner-andresen/antologia
+  title: "Antologia"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1968
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    A self-selected anthology drawing on her first six poetry collections,
+    later reissued with a preface by the critic Eduardo Lourenco.
+  note: >
+    1st ed. 1968, Lisbon, Portugália Editora; 4th ed. (1978) adds Lourenco's
+    preface.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/grades
+  title: "Grades"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1970
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    An anthology of her own poems of resistance to the Estado Novo
+    dictatorship, gathered under a single title the year before she stood
+    as an opposition candidate.
+  note: >
+    Full BNP title "Grades [Antologia de Poemas de Resistência]". 1st ed.
+    1970, Lisbon, Publicações Dom Quixote.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/11-poemas
+  title: "11 Poemas"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1971
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    A slim, 28-page chapbook published between Geografia and Dual.
+  note: >
+    1st ed. 1971, Lisbon, Movimento. Whether its eleven poems are new work
+    or drawn from elsewhere is not established by the sources checked here; held at `extended` rather
+    than folded into the fourteen-book core spine on that uncertainty.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/signo
+  title: "Signo"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1994
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    A poetry selection published jointly with the Casa Fernando Pessoa,
+    accompanied by a CD of the poems read by actor Luis Miguel Cintra.
+  note: >
+    Full BNP title "Signo (Escolha de Poemas)". 1st ed. 1994, Lisbon,
+    Editorial Presença/Casa Fernando Pessoa.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/primeiro-livro-de-poesia
+  title: "Primeiro Livro de Poesia"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1991
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    A selection of her poems curated for younger readers, illustrated by
+    Júlio Resende.
+  note: >
+    1st ed. 1991, Lisbon, Editorial Caminho. A selection from her existing
+    collections rather than new poems.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/mar-antologia
+  title: "Mar"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 2001
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    A sea-themed selection of her poems, organised by her daughter Maria
+    Andresen de Sousa Tavares rather than by Sophia herself.
+  note: >
+    1st ed. 2001, Lisbon, Editorial Caminho, "[Antologia organizada por
+    Maria Andresen de Sousa Tavares]" per the BNP bibliography's own
+    subtitle.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/orpheu-e-eurydice
+  title: "Orpheu e Eurydice"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 2001
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  synopsis: >
+    Eighteen poems on the myth of Orpheus and Eurydice paired with
+    eighteen paintings by Graça Morais, in a large-format limited edition
+    that grew out of the two artists showing each other their work.
+  note: >
+    1st ed. 2001, Lisbon, Galeria 111. Thirteen of the eighteen poems had
+    appeared in her earlier collections; five are new, per Graça Morais's
+    own account of the collaboration - a real mix of new and prior work,
+    which is why this sits at `extended` alongside the wing's other
+    selections rather than the core spine.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+    - "http://gracamorais.blogspot.com/2007/06/orpheu-e-eurydice.html"
+
+- id: sophia-de-mello-breyner-andresen/o-sol-o-muro-o-mar
+  title: "O Sol o Muro o Mar"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1984
+  subseries: null
+  canonTier: extended
+  format: poetry-collection
+  containedIn: sophia-de-mello-breyner-andresen/ilhas
+  synopsis: >
+    A limited-edition portfolio pairing six of her poems with six
+    photographs by Eduardo Gageiro.
+  note: >
+    1st ed. 1984, Lisbon. Per the BNP bibliography's own note,
+    "[Incluído em Ilhas]" - its text is reprinted whole inside
+    [[work:sophia-de-mello-breyner-andresen/ilhas|Ilhas]] (1989) from a
+    later edition onward, this catalogue's `containedIn` mechanism for
+    exactly that shape.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+# =========================== POETRY: APOCRYPHA ==============================
+# Posthumous compilations, assembled and introduced by someone other than
+# Sophia herself.
+
+- id: sophia-de-mello-breyner-andresen/cem-poemas-de-sophia
+  title: "Cem Poemas de Sophia"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  authorRole: author
+  published: 2004
+  subseries: null
+  canonTier: apocrypha
+  format: poetry-collection
+  synopsis: >
+    A hundred-poem selection published the year of her death, selected and
+    introduced by journalist Jose Carlos de Vasconcelos rather than by
+    Sophia herself.
+  note: >
+    1st ed. 2004, Lisbon, Visao/JL - Jornal de Letras, Artes e Ideias.
+    Whether it appeared before or after her 2 July 2004 death is not
+    established by the sources checked here.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/poemas-sobre-pessoa
+  title: "Poemas Sobre Pessoa"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 2012
+  subseries: null
+  canonTier: apocrypha
+  format: poetry-collection
+  synopsis: >
+    A selection of her poems that engage Fernando Pessoa, organised eight
+    years after her death by her daughter Maria Andresen de Sousa Tavares.
+  note: >
+    1st ed. 2012, Alfragide, Editorial Caminho.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+# ================================ TALES: CORE ================================
+
+- id: sophia-de-mello-breyner-andresen/contos-exemplares
+  title: "Contos Exemplares"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1962
+  subseries: null
+  canonTier: core
+  format: short-story-collection
+  synopsis: >
+    Seven tales - among them "O Jantar do Bispo", "Os Três Reis do Oriente"
+    and "Homero" - staging exemplary situations of human life beyond good
+    and evil, God and the Devil; its title nods openly to Cervantes's own
+    Novelas Ejemplares.
+  note: >
+    1st ed. 1962, Lisbon, Livraria Morais Editora. The tale "Os Três Reis
+    do Oriente" was also issued as its own illustrated booklet in 1965 (see
+    that entry below); folded back into this collection from its 3rd
+    edition onward, per the BNP bibliography.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+    - "https://www.wook.pt/livro/contos-exemplares-sophia-de-mello-breyner-andresen/14875026"
+
+- id: sophia-de-mello-breyner-andresen/os-tres-reis-do-oriente
+  title: "Os Três Reis do Oriente"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1965
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  containedIn: sophia-de-mello-breyner-andresen/contos-exemplares
+  synopsis: >
+    A single tale from Contos Exemplares, first issued on its own as an
+    illustrated booklet before being folded back into the parent
+    collection.
+  note: >
+    1st ed. 1965, Lisbon, Estúdios Cor, illustrated by Manuel Lapa. Per the
+    BNP bibliography, "[Incluído em Contos Exemplares, a partir da 3.a
+    ed.]" - its text is reprinted whole inside
+    [[work:sophia-de-mello-breyner-andresen/contos-exemplares|Contos
+    Exemplares]].
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/historias-da-terra-e-do-mar
+  title: "Histórias da Terra e do Mar"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1984
+  subseries: null
+  canonTier: core
+  format: short-story-collection
+  synopsis: >
+    Five tales of land and sea - "História da Gata Borralheira", "O
+    Silêncio", "A Casa do Mar", "Saga" and "Vila d'Arcos" - in which
+    characters find their true lives revealed in silence, in the night, in
+    the sound of the sea.
+  note: >
+    1st ed. 1984, Lisbon, Edições Salamandra.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+    - "https://www.goodreads.com/pt/book/show/1812559.Hist_rias_da_Terra_e_do_Mar"
+
+- id: sophia-de-mello-breyner-andresen/a-casa-do-mar
+  title: "A Casa do Mar"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1979
+  subseries: null
+  canonTier: apocrypha
+  format: short-story
+  containedIn: sophia-de-mello-breyner-andresen/historias-da-terra-e-do-mar
+  synopsis: >
+    A single tale, first issued as its own illustrated volume five years
+    before it took its place inside Histórias da Terra e do Mar.
+  note: >
+    1st ed. 1979, Lisbon, Galeria S. Mamede, illustrated by Maria Helena
+    Vieira da Silva. Per the BNP bibliography, "[Incluído em Histórias da
+    Terra e do Mar]" - its text is reprinted whole inside that book, which
+    lists it fifth among the five tales its own synopsis names.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/o-anjo-de-timor
+  title: "O Anjo de Timor"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 2003
+  subseries: null
+  canonTier: extended
+  format: short-story
+  synopsis: >
+    A late, standalone tale, published the year before her death.
+  note: >
+    1st ed. 2003, Marco de Canaveses, Cenateca (Associação Teatro e
+    Cultura), illustrated by Graça Morais.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/quatro-contos-dispersos
+  title: "Quatro Contos Dispersos"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 2008
+  subseries: null
+  canonTier: apocrypha
+  format: short-story-collection
+  synopsis: >
+    Four uncollected tales gathered into a book four years after her
+    death, edited by her daughter Maria Andresen Sousa Tavares.
+  note: >
+    1st ed. 2008, Porto, Figueirinhas, illustrated by Diogo Vaz.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+# ========================= CHILDREN'S BOOKS: CORE ===========================
+# Begun in the mid-1950s, motivated by her own five children (see the
+# author entity's own 1946 marriage lifeEvent).
+
+- id: sophia-de-mello-breyner-andresen/a-menina-do-mar
+  title: "A Menina do Mar"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1958
+  subseries: null
+  canonTier: core
+  format: picture-book
+  synopsis: >
+    A friendship between a fisherman's son and a girl who lives beneath the
+    sea - one of the two 1958 books, alongside A Fada Oriana, that opened
+    her career as a children's author.
+  note: >
+    1st ed. 1958, Lisbon, Edições Ática, illustrated by Sarah Affonso.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/a-fada-oriana
+  title: "A Fada Oriana"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1958
+  subseries: null
+  canonTier: core
+  format: picture-book
+  synopsis: >
+    A fairy charged with protecting a forest neglects her duty out of
+    vanity and loses her powers, earning them back only when she chooses to
+    save a stranger without reward - a story of responsibility, vanity and
+    consequence.
+  note: >
+    1st ed. 1958, Lisbon, Edições Ática, illustrated by "Bio", cover by
+    Quito after a painting by Nuno de Siqueira.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+    - "https://en.wikipedia.org/wiki/A_Fada_Oriana"
+
+- id: sophia-de-mello-breyner-andresen/a-noite-de-natal
+  title: "A Noite de Natal"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1959
+  subseries: null
+  canonTier: core
+  format: picture-book
+  synopsis: >
+    A Christmas Eve story, her third children's book.
+  note: >
+    1st ed. 1959, Lisbon, Edições Ática, illustrated by Maria Keil.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/o-cavaleiro-da-dinamarca
+  title: "O Cavaleiro da Dinamarca"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1964
+  subseries: null
+  canonTier: core
+  format: picture-book
+  synopsis: >
+    A knight leaves his forest home determined to spend next Christmas Eve
+    in the Bethlehem grotto, journeying through Venice and Florence and
+    back through a snow-filled, wolf-haunted forest to reach his family in
+    time - among the books most consistently recommended by Portugal's
+    National Reading Plan for early secondary school.
+  note: >
+    1st ed. 1964, Porto, Figueirinhas, illustrated by Armando Alves;
+    reached a 56th edition by 2001.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+    - "https://pt.wikipedia.org/wiki/O_Cavaleiro_da_Dinamarca"
+
+- id: sophia-de-mello-breyner-andresen/o-rapaz-de-bronze
+  title: "O Rapaz de Bronze"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1966
+  subseries: null
+  canonTier: core
+  format: picture-book
+  synopsis: >
+    A garden statue that comes alive by night and rules justly over its
+    plants befriends Florinda, the young daughter of the garden's own
+    gardener.
+  note: >
+    1st ed. 1966, Lisbon, Minotauro, illustrated by Fernando de Azevedo.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/a-floresta
+  title: "A Floresta"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1968
+  subseries: null
+  canonTier: core
+  format: picture-book
+  synopsis: >
+    A girl discovers a dwarf living in her garden, and together they
+    explore a hidden forest treasure.
+  note: >
+    1st ed. 1968, Porto, Figueirinhas, illustrated by Armando Alves.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/o-tesouro
+  title: "O Tesouro"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1970
+  subseries: null
+  canonTier: core
+  format: picture-book
+  synopsis: >
+    Her seventh children's book.
+  note: >
+    1st ed. 1970, per the BNP bibliography's own listing. A detailed
+    plot summary was not established by the sources checked here.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/a-arvore
+  title: "A Árvore"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1985
+  subseries: null
+  canonTier: core
+  format: picture-book
+  synopsis: >
+    Two stories reworked from traditional Japanese tales: the title story,
+    of an island tree grown so vast its shade sickens the people living
+    under it, and "O Espelho ou o Retrato Vivo", on family bonds - nature,
+    harmony and kinship in an explicitly non-Portuguese setting, unusual
+    among her children's books.
+  note: >
+    1st ed. 1985, Porto, Figueirinhas.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/os-ciganos
+  title: "Os Ciganos"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 2012
+  subseries: null
+  canonTier: apocrypha
+  format: picture-book
+  synopsis: >
+    A children's book credited jointly to Sophia and her grandson Pedro
+    Sousa Tavares, published eight years after her death.
+  note: >
+    1st ed. 2012, Porto, Porto Editora, illustrated by Danuta
+    Wojciechowska. Credited on the BNP bibliography as "Sophia de Mello
+    Breyner Andresen, Pedro Sousa Tavares" with no further detail on how
+    the two contributions divide; Pedro Sousa Tavares has no author entity
+    in this catalogue yet, so `withAuthorIds` is left unset here rather
+    than pointing at an id that does not exist.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+# ================================ THEATRE: CORE ==============================
+# All five plays are late work, 1993-2001, decades after her prose and most
+# of her poetry.
+
+- id: sophia-de-mello-breyner-andresen/nao-chores-minha-querida
+  title: "Não Chores Minha Querida"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1993
+  subseries: null
+  canonTier: core
+  format: play
+  synopsis: >
+    Her first published stage play.
+  note: >
+    1st ed. 1993, Lisbon, Editorial Caminho.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/filho-de-alma-e-sangue
+  title: "Filho de Alma e Sangue"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1998
+  subseries: null
+  canonTier: core
+  format: play
+  synopsis: >
+    Her second published stage play, the year before the Camões Prize.
+  note: >
+    1st ed. 1998, Lisbon, Editorial Caminho. A detailed plot summary was
+    not established by the sources checked here.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/o-azeiteiro
+  title: "O Azeiteiro"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 2000
+  subseries: null
+  canonTier: core
+  format: play
+  synopsis: >
+    Her third published stage play.
+  note: >
+    1st ed. 2000, Lisbon, Editorial Caminho. A detailed plot summary was
+    not established by the sources checked here.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+
+- id: sophia-de-mello-breyner-andresen/o-bojador
+  title: "O Bojador"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 2000
+  subseries: null
+  canonTier: core
+  format: play
+  synopsis: >
+    A play built around Cape Bojador as both a real navigational barrier
+    and a figure for fear of the unknown - the sea legends that kept
+    Portuguese sailors from rounding it, and those who dared to anyway.
+  note: >
+    First separately printed s/d [1961], Lisbon, as a supplement to Escola
+    Portuguesa; its first standalone trade edition is 2000, Lisbon,
+    Editorial Caminho, illustrated by Henrique Cayatte - `published` here
+    follows this catalogue's rule (the book's own first print year) rather
+    than the earlier institutional offprint.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+    - "https://www.cardapio.pt/teatro/51398-teatro-do-nordeste-apresenta-o-bojador-em-almada/"
+
+- id: sophia-de-mello-breyner-andresen/o-colar
+  title: "O Colar"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 2001
+  subseries: null
+  canonTier: core
+  format: play
+  synopsis: >
+    A romantic drama set in Venice in the first quarter of the nineteenth
+    century, centred on the characters Vanina and Pietro - her last
+    published play.
+  note: >
+    1st ed. 2001, Lisbon, Editorial Caminho.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+    - "https://www.portoeditora.pt/espacoprofessor/assets/newsletters/Sophia/ocolarguioesdeleiturapt8.pdf"
+
+# ================================ ESSAY: EXTENDED =============================
+
+- id: sophia-de-mello-breyner-andresen/o-nu-na-antiguidade-classica
+  title: "O Nu na Antiguidade Clássica"
+  authorIds: [sophia-de-mello-breyner-andresen]
+  published: 1975
+  subseries: null
+  canonTier: extended
+  format: essay
+  synopsis: >
+    An essay on the nude in classical antiquity, her Hellenic scholarship
+    turned to art criticism.
+  note: >
+    First appeared 1975 as a chapter within the multi-author volume "O Nu
+    e a Arte" (Estúdios Cor); reached its own standalone 3rd edition in
+    1992 (Lisbon, Editorial Caminho), which is why it is catalogued here as
+    her own work rather than excluded as a mere contribution.
+  sources:
+    - "https://purl.pt/19841/1/bibliografia/bibliografia.html"

@@ -1,0 +1,119 @@
+stage: franchise-research
+summary: >
+  New wing scaffolded from scratch: 45 works (29 core, 16 extended/apocrypha)
+  across four genres - 14 lifetime poetry collections (1944-1997), 2 tale
+  collections plus 4 individually catalogued tales (2 containedIn their
+  parent), 8 core children's books plus 1 posthumous co-credited one, 5
+  late stage plays (1993-2001), 1 essay - cross-checked title-by-title
+  against the Biblioteca Nacional de Portugal's own dedicated bibliography
+  and both Wikipedias. An 8-lifeEvent author entity (birth, 1944 debut,
+  1946 marriage, 1964 Grande Premio, 1969 CNSPP co-founding, 1975
+  Constituent Assembly election, 1999 Camoes Prize, 2004 death). A
+  luminous light-background theme (palette + displayFace + signature only,
+  no art block), grounded in the sea/Hellenic-light register every source
+  names as her defining voice. eras.yaml ruled empty with sourced
+  reasoning; globalEvents all excluded, two flagged as close calls.
+  validate.py --slug sophia-de-mello-breyner-andresen is clean except the
+  one expected error (no theme.art block).
+produced:
+  newWorkIds:
+    - sophia-de-mello-breyner-andresen/poesia
+    - sophia-de-mello-breyner-andresen/o-dia-do-mar
+    - sophia-de-mello-breyner-andresen/coral
+    - sophia-de-mello-breyner-andresen/no-tempo-dividido
+    - sophia-de-mello-breyner-andresen/mar-novo
+    - sophia-de-mello-breyner-andresen/o-cristo-cigano
+    - sophia-de-mello-breyner-andresen/livro-sexto
+    - sophia-de-mello-breyner-andresen/geografia
+    - sophia-de-mello-breyner-andresen/dual
+    - sophia-de-mello-breyner-andresen/o-nome-das-coisas
+    - sophia-de-mello-breyner-andresen/navegacoes
+    - sophia-de-mello-breyner-andresen/ilhas
+    - sophia-de-mello-breyner-andresen/musa
+    - sophia-de-mello-breyner-andresen/o-buzio-de-cos
+    - sophia-de-mello-breyner-andresen/antologia
+    - sophia-de-mello-breyner-andresen/grades
+    - sophia-de-mello-breyner-andresen/11-poemas
+    - sophia-de-mello-breyner-andresen/signo
+    - sophia-de-mello-breyner-andresen/primeiro-livro-de-poesia
+    - sophia-de-mello-breyner-andresen/mar-antologia
+    - sophia-de-mello-breyner-andresen/orpheu-e-eurydice
+    - sophia-de-mello-breyner-andresen/o-sol-o-muro-o-mar
+    - sophia-de-mello-breyner-andresen/cem-poemas-de-sophia
+    - sophia-de-mello-breyner-andresen/poemas-sobre-pessoa
+    - sophia-de-mello-breyner-andresen/contos-exemplares
+    - sophia-de-mello-breyner-andresen/os-tres-reis-do-oriente
+    - sophia-de-mello-breyner-andresen/historias-da-terra-e-do-mar
+    - sophia-de-mello-breyner-andresen/a-casa-do-mar
+    - sophia-de-mello-breyner-andresen/o-anjo-de-timor
+    - sophia-de-mello-breyner-andresen/quatro-contos-dispersos
+    - sophia-de-mello-breyner-andresen/a-menina-do-mar
+    - sophia-de-mello-breyner-andresen/a-fada-oriana
+    - sophia-de-mello-breyner-andresen/a-noite-de-natal
+    - sophia-de-mello-breyner-andresen/o-cavaleiro-da-dinamarca
+    - sophia-de-mello-breyner-andresen/o-rapaz-de-bronze
+    - sophia-de-mello-breyner-andresen/a-floresta
+    - sophia-de-mello-breyner-andresen/o-tesouro
+    - sophia-de-mello-breyner-andresen/a-arvore
+    - sophia-de-mello-breyner-andresen/os-ciganos
+    - sophia-de-mello-breyner-andresen/nao-chores-minha-querida
+    - sophia-de-mello-breyner-andresen/filho-de-alma-e-sangue
+    - sophia-de-mello-breyner-andresen/o-azeiteiro
+    - sophia-de-mello-breyner-andresen/o-bojador
+    - sophia-de-mello-breyner-andresen/o-colar
+    - sophia-de-mello-breyner-andresen/o-nu-na-antiguidade-classica
+  newAuthorIds:
+    - sophia-de-mello-breyner-andresen
+  files:
+    - content/authors/sophia-de-mello-breyner-andresen.yaml
+    - content/franchises/sophia-de-mello-breyner-andresen/franchise.yaml
+    - content/franchises/sophia-de-mello-breyner-andresen/works.yaml
+    - content/franchises/sophia-de-mello-breyner-andresen/theme.yaml
+    - content/franchises/sophia-de-mello-breyner-andresen/eras.yaml
+forStages:
+  completeness-auditor: >
+    Gaps flagged in works.yaml itself: (1) is 11 Poemas (1971) new work or
+    a selection; (2) O Tesouro, Filho de Alma e Sangue, O Azeiteiro have no
+    plot detail, only bibliographic facts; (3) Os Ciganos (2012)'s
+    co-credit with grandson Pedro Sousa Tavares has no author id to link
+    to; (4) BNP's own "uncollected poems" section lists ~12 periodical
+    poems, 1950-1999, held out as never gathered into a book - worth a
+    second look; (5) no other Portuguese bibliographic authority was
+    cross-checked against BNP for a missed standalone book.
+  press-archaeology: >
+    8 lifeEvents, real and sourced but under the 6-12 range. Strong
+    unconfirmed leads: her 1986/1988 separation and divorce (named in bio,
+    not yet an event); the 1926 coup and Estado Novo's rise, which she
+    later spent her life opposing; her 2014 reburial in the National
+    Pantheon; any documented illness or personal cost behind sixty years of
+    continuous output.
+  eras: >
+    eras.yaml ships `[]`, sourced: continuous 1944-1997 poetry output, no
+    gap over six years; the only hinge found is a late turn to theatre
+    (1993-2001), a single hinge not a periodisation scheme; no named
+    critical periodisation of her career found. Re-open only if one
+    surfaces.
+  visual-language: >
+    theme.yaml has no `art:` block by design (the validate.py error is
+    expected). Palette reasoning (a luminous light ground, distinct from
+    joao-tordo's Atlantic dusk-grey and luis-de-camoes's aged parchment) is
+    in theme.yaml's own comments. Sea + Hellenic light/clarity is the
+    obvious motif direction; the art block itself is untouched.
+  reading-orders: >
+    No startHere, no orders.yaml. The 45-work default has real same-year
+    ties (three works each in 1958 and 2001). No sourced entry-point
+    citation (a DGE curriculum reference, as found for Cesario Verde and
+    Florbela Espanca) was pinned down, though her presence in Portuguese
+    school curricula is well-attested generally - worth a dedicated DGE
+    Aprendizagens Essenciais search.
+  event-resonance: >
+    Two close calls named in franchise.yaml rather than pre-ruled, both
+    currently excluded: carnation-revolution-1974 (elected to the
+    Constituent Assembly the year after) and portuguese-censorship-1926
+    (the coup behind the dictatorship she spent her life opposing, founding
+    the CNSPP in 1969). Stronger candidates than anything else on the list.
+openQuestions:
+  - "Is 11 Poemas (1971) new work or a selection? Held at extended on that uncertainty."
+  - "Should carnation-revolution-1974 and/or portuguese-censorship-1926 move to include? Both are close calls, not clean negatives."
+  - "Os Ciganos (2012) co-credits grandson Pedro Sousa Tavares, who has no author entity yet - add one and link withAuthorIds, or keep the current note-only treatment?"
+  - "No portrait set: the only candidate found (a 135x201 public-domain crop of a two-person group photo, commons.wikimedia.org/wiki/File:Sophia_de_Mello_Breyner_(cropped).png) was rejected as too small and not a dedicated portrait."

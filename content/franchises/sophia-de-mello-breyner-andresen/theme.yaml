@@ -1,0 +1,63 @@
+# Branding for the Sophia de Mello Breyner Andresen wing (see
+# docs/SCHEMA.md#themeyaml). Palette, displayFace and signature only - `art`
+# is left entirely unset for visual-language, per this catalogue's standing
+# rule that the visual language is composed against a finished bibliography,
+# eras and any heteronym layer, none of which this scaffold pass settles.
+#
+# GROUND. Every source checked for this wing names the same two things as
+# her defining register: the sea, overwhelmingly (en.wikipedia calls it
+# "probably the most central theme in her poetical works"; pt.wikipedia's
+# own account of her language style calls out "luminosity", "transparency
+# of the word", "clarifying vision"), and classical antiquity, Hellenic
+# light and geometry rather than Roman weight. This wing already sits
+# alongside joao-tordo's "deep Atlantic blue-grey, near-black - ocean at
+# dusk" - the wrong ground to repeat, both because it is taken and because
+# its mood (dusk, grey, moody Atlantic weather) is close to the opposite of
+# what her own critics keep naming in her: clarity, brightness, noon rather
+# than dusk. This wing's palette goes light instead - a pale, luminous
+# ground rather than another near-black - which puts it alongside
+# luis-de-camoes's "salt-bleached driftwood / sun-worn parchment" as this
+# catalogue's second light-background Lusophone wing, but in a distinctly
+# different key: Camões's is warm, aged, brown-toned paper (an old
+# document, sun-worn); this is cool, clean, blue-white (noon light on
+# marble and open water, nothing aged about it).
+preset: meridian-light
+palette:
+  bg: "#eef3f1"        # pale, luminous blue-white - marble and midday
+                       # Aegean light, not another near-black and not
+                       # luis-de-camoes's warm aged parchment
+  surface: "#e1e9e5"   # a shade darker, for cards
+  ink: "#132a2c"       # deep marine near-black ink, for maximum readability
+                       # against the light ground
+  muted: "#3c5a57"     # muted sea-grey-green for metadata (AA-checked:
+                       # 6.71:1 on bg, 6.08:1 on surface - the lighter
+                       # #5f7c79 first drafted here read fine by eye but
+                       # cleared neither pairing at the 4.5:1 floor)
+  accent: "#0a6270"    # a clear cobalt-aquamarine - the single sea accent,
+                       # kept saturated and cool rather than joao-tordo's
+                       # duller muted azulejo blue (#3d6f8c), since this
+                       # wing's sea is bright and central rather than a
+                       # backdrop (AA-checked: 6.25:1 on bg, 5.67:1 on
+                       # surface, though the validator does not gate accent)
+displayFace: spectral  # from the app's implemented set (fraunces | spectral
+                       # | sourceSerif | instrument-serif); a modern,
+                       # scholarly-calm literary serif, in keeping with her
+                       # own hieratic, clarified diction rather than a
+                       # warmer historical register - and distinct from this
+                       # catalogue's other Lusophone poets already on
+                       # fraunces (florbela-espanca, eca-de-queiros,
+                       # jose-saramago)
+signature: filament    # from the app's implemented set (beam | thread |
+                       # rule | filament | none); a single lit thread the
+                       # works string along - the closest structural
+                       # analogue to the "luminosity" and "transparency of
+                       # the word" her own critics name, and to the sea's
+                       # unbroken line at the horizon that recurs across her
+                       # work from her first book to her last
+notes: >
+  A luminous, clear-blue noon rather than another near-black dusk or an aged
+  parchment brown - the sea and Hellenic light her own critics keep naming,
+  held at maximum readability rather than mood. Personality through palette
+  plus one display face plus one signature, readability first, no genre
+  costume; both displayFace and signature are drawn only from the app's
+  currently implemented sets.
