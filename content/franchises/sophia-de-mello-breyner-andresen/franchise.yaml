@@ -35,13 +35,119 @@ themePreset: meridian-light
 # Capabilities are auto-detected from the data (docs/SCHEMA.md); nothing is
 # forced here. The wing carries a 52-work bibliography (29 core across four
 # genres, 23 extended/apocrypha) and an 8-lifeEvent author entity - enough
-# for a thin river. No editions.yaml: no ISBN verified. No orders.yaml: the
-# derived default over 52 works has real same-year ties (three works each
-# in 1958 and in 2001, plus others among the apocrypha and extended
-# entries) that a curated order could break, none resolved here. No
-# startHere: no sourced entry-point recommendation established. No
-# achievements.yaml, no characters.yaml.
+# for a thin river. No editions.yaml: no ISBN verified. orders.yaml is
+# present but empty: the derived default's same-year ties (1958, 2001) and
+# three candidate genre-thread orders were all checked and rejected, see
+# that file's own header. startHere below covers the one real curatorial
+# question this wing raises - poetry and the children's-book line are very
+# different doors for very different readers - with two sourced entry
+# paths plus the completionist walk. No achievements.yaml, no
+# characters.yaml.
 features: {}
+
+startHere:
+  paths:
+    # Source: Infopédia (Porto Editora's reference encyclopedia), entry
+    # "Sophia de Mello Breyner Andresen": "Desde a publicação de Poesia, em
+    # 1944, Sophia afirma-se no panorama da literatura nacional com uma
+    # conceção de poesia que, sem deixar de dar continuidade a uma tradição
+    # lírica que passa por autores como Camões ou Teixeira de Pascoaes,
+    # recupera valores da cultura clássica, funde-os com um humanismo
+    # cristão, para contrapor um tempo absoluto a um 'tempo dividido'..." -
+    # the whole ethical, classical and Christian-humanist project the rest
+    # of the encyclopedia entry describes is dated from this book onward.
+    # https://www.infopedia.pt/%24sophia-de-mello-breyner-andresen
+    # Corroborates works.yaml's own sourced note on this work (en.wikipedia
+    # + the BNP bibliography): every source checked counts the "fourteen
+    # poetry books, 1944-1997" from here.
+    #
+    # Considered and not used instead: Portugal's own school introduction to
+    # her poetry is itself a curated selection assembled from her existing
+    # books for younger readers (DGE's 6th-year Português list sets
+    # "Primeiro Livro de Poesia", a 1991 selection - see that work's own
+    # works.yaml entry), never one of the fourteen collections read whole;
+    # no grade sets a full original collection either (the 9th-year list
+    # draws four individual poems from two different books, Livro Sexto and
+    # Dual, under the heading "Obra Poética" rather than naming one). With
+    # no single collection that Portuguese schooling or criticism converges
+    # on as the whole-book entry point, this path uses her own first book
+    # instead of an editorially assembled one.
+    - id: start-with-poesia
+      title: Start with Poesia
+      description: >
+        Her first book, published through the Cadernos de Poesia imprint in
+        1944 when she was in her mid-twenties, already carries the garden
+        and house of childhood, the sea, and the demand for moral clarity
+        that the rest of her sixty-year body of work keeps returning to -
+        not an apprentice book she later outgrew, but the one every account
+        of her poetry counts as where it begins. Fourteen more collections
+        follow it across the next fifty-three years, unbroken, right up to
+        O Búzio de Cós in 1997.
+      workIds:
+        - sophia-de-mello-breyner-andresen/poesia
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        The cost is everything a debut cannot yet hold: no Hellenic poems
+        (those come later, from Dual onward), none of the tales, children's
+        books or plays, and none of the political urgency Livro Sexto and
+        the Estado Novo years bring. One book, not the range.
+
+    # Source: Direção-Geral da Educação, "Aprendizagens Essenciais |
+    # Articulação com o Perfil dos Alunos, 7.º Ano, 3.º Ciclo do Ensino
+    # Básico, Português" (julho de 2018, em vigor), Anexo 1, "Lista de Obras
+    # e Textos para Educação Literária - 7.º ano", secção "LITERATURA
+    # JUVENIL": one of four works offered there, alongside Irene Lisboa's
+    # "Uma Mão Cheia de Nada, Outra de Coisa Nenhuma", Agustina Bessa-Luís's
+    # "Dentes de Rato", and an adaptation of the Odyssey for young readers.
+    # https://www.dge.mec.pt/sites/default/files/Curriculo/Aprendizagens_Essenciais/3_ciclo/portugues_3c_7a_ff.pdf
+    # Longevity corroborated independently: the Biblioteca Nacional de
+    # Portugal's own Sophia bibliography records a 56th edition by 2001
+    # (1st ed. 1964, Porto, Figueirinhas).
+    # https://purl.pt/19841/1/bibliografia/bibliografia.html
+    - id: classroom-canon
+      title: Start with O Cavaleiro da Dinamarca
+      description: >
+        A knight leaves his forest home determined to spend next Christmas
+        Eve in the Bethlehem grotto, travels through Venice and Florence,
+        and returns through a snow-filled, wolf-haunted forest to reach his
+        family in time. Sophia wrote eight books for children; this is the
+        one the Ministry of Education actually offers Portuguese
+        seventh-graders, and by far her steadiest seller, a 56th edition
+        within four decades of its first.
+      workIds:
+        - sophia-de-mello-breyner-andresen/o-cavaleiro-da-dinamarca
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        The cost: this is not the poet the Camões Prize was for. A reader
+        who stops here has met the Sophia read aloud to Portuguese children
+        for sixty years, not the one who spent that same sixty years
+        building the poetry the rest of this shelf holds.
+
+    - id: everything
+      title: Everything, in order
+      description: >
+        All 52 works in publication order: the fourteen poetry collections
+        unbroken from 1944 to 1997, the two collections of tales, the eight
+        children's books, the five late stage plays, and the anthologies,
+        selections and posthumous compilations gathered around them. For a
+        reader who wants the full range of a sixty-year career across four
+        genres, or who already knows one corner of it and wants the rest.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+      note: >
+        The cost is scale, not quality: fourteen collections, two tale
+        books, eight children's stories and five plays is a lot of shelf to
+        commit to before knowing whether her voice is for you - the two
+        paths above exist because most readers want a door first.
 
 globalEvents:
   include:
