@@ -1,0 +1,54 @@
+stage: editions
+summary: >
+  Wrote editions.yaml from scratch: 31 entries, 29 of 52 works covered (2
+  works - Contos Exemplares, Histórias da Terra e do Mar - carry two genuinely
+  different objects each). Core poetry spine is complete, 14 of 14, all still
+  in print under Assírio & Alvim's 2013-2019 "Obras de Sophia de Mello
+  Breyner Andresen" reissue series. Every ISBN-13 recomputed digit by digit
+  and cross-checked against a Biblioteca Nacional de Portugal record actually
+  opened (batch-fetched via catalogo.bnportugal.gov.pt/ipac20, plain ISBN
+  query, no dashes needed). Did not run scripts/metadata/lookup.py; started
+  from the pre-supplied .orrery-lookup.tsv (124 candidates), verified or
+  discarded every row in it, then filled real gaps in the core poetry spine
+  the sweep had missed (8 of 14 titles) via targeted BNP lookups. Two ISBN
+  hazards found and resolved without silent correction, both written into the
+  file's own header per CURATION's doctrine: (1) O Colar's number,
+  978-972-37-1716-7, is ALSO attributed by a second BNP record to Histórias
+  da Terra e do Mar's 2013 printing - a live BNP cataloguing duplicate, not a
+  reason to drop O Colar's own number, which three independent retailer
+  records corroborate; Histórias already has its own separately-confirmed
+  ISBN recorded. (2) O Nu na Antiguidade Clássica's 2019 edition (224p) looked
+  suspicious for a 1975 essay until the publisher's own synopsis confirmed it
+  bundles the reissued essay with a new poetry anthology - genuine, recorded.
+  wook.pt, bertrand.pt and assirio.pt all 403 an automated fetch; verification
+  for candidates only found there ran through BNP and portoeditora.pt
+  (same publishing group, reachable) instead.
+produced:
+  editionIds: 31
+  worksCovered: 29
+  isbn13Count: 31
+  uniqueIsbn13: 30
+  note: "31/30 split is deliberate: Musa and O Buzio de Cos share one ISBN, a real combined single volume."
+  files:
+    - content/franchises/sophia-de-mello-breyner-andresen/editions.yaml
+counts:
+  totalWorks: 52
+  withEdition: 29
+  withoutEdition: 23
+rejected:
+  - item: "Prosa (Assirio & Alvim, 2021, 9789723721294, 512p)"
+    why: "collected-prose omnibus gathering Contos Exemplares, Historias da Terra e do Mar, Quatro Contos Dispersos and more, already catalogued individually. Same treatment as Obra Poetica."
+  - item: "Marine Rose (Black Swan, 1988), Log Book (Carcanet, 1997), shores horizons voyages (Orchid Press, 2005)"
+    why: "career-spanning English selected-poems anthologies, no single workId to attach to."
+  - item: "The Girl from the Sea & Other Stories (Dedalus, 2020, 9781912868032)"
+    why: "eight children's tales translated together across several works (A Fada Oriana, A Floresta, O Rapaz de Bronze...), not a translation of the single picture book its title echoes."
+  - item: "Coral e outros poemas / Poemas Escolhidos (Companhia das Letras, Brazil, 9788535930795 / 9788535905519)"
+    why: "978-85 prefix, pt-BR themed selections, different objects from the pt-PT works of the same near-title. Poemas Escolhidos already flagged in works.yaml's own note."
+  - item: "lookup.tsv's 2015 Obra Poetica ISBNs (9789723718249, 9789722121491)"
+    why: "collected-works reissues, already excluded by works.yaml's own header."
+openQuestions:
+  - "O Colar / Historias da Terra e do Mar share an ISBN at BNP - resolved in favour of both works' own independently-corroborated numbers; see file header. Not escalating further, both entries ship correct."
+  - "Quatro Contos Dispersos' 2008 Figueirinhas first edition (978-972-661-214-8) is confirmed real but not recorded as a second entry, to keep to one edition where the two aren't genuinely different objects (both plain trade paperbacks). A curator wanting the historical first edition on record can add it; the ISBN is in this file's note on the current entry."
+  - "10 extended-tier poetry anthologies/selections (Antologia, Grades, 11 Poemas, the 1981 Poemas Escolhidos, Signo, Primeiro Livro de Poesia, Mar, Orpheu e Eurydice, Ilhas - Poemas Escolhidos) plus O Anjo de Timor, O Tesouro and three unproduced/small-press plays (Nao Chores Minha Querida, Filho de Alma e Sangue, O Azeiteiro) have no ISBN-bearing edition findable in any source checked. Real market gaps, not a research shortfall - these are small-press, out-of-print, or never-reissued objects."
+forStages:
+  visual-metadata: "No overlap touched - coverUrl left null everywhere per SCHEMA's image-rights rule; every cover candidate surfaced was a retailer scrape (img.bertrand.pt / img.wook.pt)."
