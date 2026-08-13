@@ -1,0 +1,465 @@
+# Concrete published editions. Coverage: 29 of the wing's 52 works carry a
+# verified edition (two of those, Contos Exemplares and Histórias da Terra e
+# do Mar, carry two - a literary paperback and a separately illustrated
+# edition, genuinely different objects). The other 23 are real gaps: no
+# ISBN-bearing edition was found for them in any source checked here, which
+# for a mid-century Portuguese poet is the expected shape rather than a
+# research failure - see SCHEMA.md's own coverage table for comparable
+# franchises. The gap concentrates in one place: the ten "extended" poetry
+# anthologies and selections (Antologia, Grades, 11 Poemas, the 1981 Poemas
+# Escolhidos, Signo, Primeiro Livro de Poesia, Mar, Orpheu e Eurydice, Ilhas -
+# Poemas Escolhidos, and the posthumous Cem Poemas de Sophia) never resurfaced
+# in a current ISBN-bearing edition anywhere checked; the fourteen-book core
+# poetry spine, by contrast, has 14 of 14 covered, all still in print under
+# Assírio & Alvim's "Obras de Sophia de Mello Breyner Andresen" reissue
+# series (2013-2019, marking her 2019 birth centenary).
+#
+# No `title` field on any pt-PT entry below: Sophia wrote in Portuguese, so a
+# same-language edition carrying the work's own title would only duplicate
+# it. Two combined-volume entries (Musa and O Búzio de Cós e Outros Poemas)
+# are the one exception, because the physical object's own printed title,
+# "Musa : O Búzio de Cós e Outros Poemas," differs from either individual
+# work's own title - see their entries.
+#
+# SOURCING, ranked as used: the Biblioteca Nacional de Portugal's own
+# catalogo.bnportugal.gov.pt (ISBN search, cited as a re-runnable
+# ?index=ISBN&term=<isbn> query) for the physical record - publisher,
+# edition statement, page count and legal-deposit number; Porto Editora's own
+# product pages (portoeditora.pt, part of the same publishing group as
+# Assírio & Alvim since 2013) where a direct ISBN was needed and BNP had
+# indexed only the eBook SKU; retailer listings (Wook, Bertrand, Fnac,
+# Amazon) only as a second, corroborating source, never as the sole basis for
+# a number. wook.pt, bertrand.pt and assirio.pt all return HTTP 403 to an
+# automated fetch, so those three were never fetched directly - only read via
+# search-engine result summaries and cross-checked against the BNP record
+# actually opened. Every ISBN-13 below was recomputed digit by digit; every
+# one is a real, arithmetically valid check digit tied to a title read at
+# the source, not copied from a lookup table on trust.
+#
+# NO coverUrl ON ANY ENTRY. The only cover-image candidates surfaced anywhere
+# in this wing's research were retailer jacket scans (img.bertrand.pt,
+# img.wook.pt) - excluded per SCHEMA.md's image-rights rule, not evaluated
+# further. The app falls back to a typographic cover for every slot.
+#
+# EXCLUDED - COLLECTED-WORKS OMNIBUSES, same treatment works.yaml already
+# gives Obra Poética I/II/III and the 2010-2011 Obra Poética: Assírio & Alvim's
+# "Prosa" (2021, 9789723721294, 512p) "groups all of Sophia's prose in a
+# single volume" per its own publisher copy - Contos Exemplares, Histórias da
+# Terra e do Mar, Quatro Contos Dispersos and more, already catalogued
+# individually below and in works.yaml. Not recorded as an edition of any one
+# of them; recording it under any single workId would misstate what the
+# object is.
+#
+# EXCLUDED - REAL ENGLISH-LANGUAGE SELECTIONS THAT DO NOT MAP TO ANY SINGLE
+# WORK: four real English-language books exist, and are deliberately not
+# recorded, because each gathers material from several of this catalogue's
+# works (or from her whole career) under one cover, and this file records
+# editions of ONE work, never a multi-work anthology with no
+# Portuguese-language counterpart in works.yaml: "Marine Rose: Selected
+# Poems" (Black Swan Books, 1988, tr. Ruth Fainlight, 9780933806375,
+# bilingual, spans her whole poetic career from 1944 on); "Log Book: Selected
+# Poems" (Carcanet/Gulbenkian, 1997, tr. Richard Zenith, no ISBN found,
+# likewise a career-spanning selection); "shores, horizons, voyages: selected
+# poems" (Orchid Press, tr. Rui Cascais Parada, 42 poems, actually published
+# 2005 - a "2019" date attached to this title elsewhere is wrong); and "The
+# Girl from the Sea & Other Stories" (Dedalus, 2020, tr. Margaret Jull Costa
+# and Robin Patterson, 9781912868032) - eight children's tales translated
+# together, drawn from A Fada Oriana, A Floresta, O Rapaz de Bronze and
+# others, not a translation of the single picture book A Menina do Mar its
+# title borrows.
+#
+# EXCLUDED - A BRAZILIAN EDITION OF A DIFFERENT OBJECT: "Coral e outros
+# poemas" (Companhia das Letras, São Paulo, 2018, 9788535930795, 978-85
+# prefix confirms Brazil) is a themed Brazilian selection, not a pt-BR
+# printing of Coral itself - its own title already says so. The same
+# publisher's 2004 "Poemas Escolhidos" (9788535905519) is excluded on the
+# identical basis works.yaml's own note for poemas-escolhidos-1981 already
+# states.
+#
+# A LIVE BNP CATALOGUING ERROR, found and not silently corrected: the
+# Biblioteca Nacional de Portugal's ISBN index carries THREE records under
+# 978-972-37-1716-7, two for O Colar (1st ed. 2013, reimp. 2014) and one for
+# Histórias da Terra e do Mar (1st ed. 2013) - the same number attributed to
+# two different books. Histórias da Terra e do Mar already has its own,
+# separately confirmed ISBN (978-972-37-1715-0, one digit-block off, both
+# from the same autumn 2013 publishing batch - the likely source of the
+# clerical slip) recorded under that work below. O Colar's own number is
+# corroborated independently by Porto Editora's, Bertrand's and Wook's
+# separate product listings (title, 136p, preface by Luís Miguel Cintra, the
+# Vanina/Pietro synopsis works.yaml already carries) and recorded there.
+#
+# A LIVE ISBN OWNERSHIP, checked and confirmed genuine rather than assumed:
+# the 2019 Assírio & Alvim edition of O Nu na Antiguidade Clássica
+# (9789723720235, 224p) reads as suspicious on its face - the catalogued work
+# is a 1975 essay, and 224 pages is long for one - because the object is a
+# 2019 centenary reissue of that same essay bound together with a NEW poetry
+# anthology on classical antiquity curated by Maria Andresen de Sousa
+# Tavares, per the publisher's own synopsis ("a Assírio & Alvim volta a
+# publicá-lo agora... em conjunto com uma antologia significativa de
+# poemas..."). The essay is genuinely inside this object, so it is recorded
+# under o-nu-na-antiguidade-classica; the bundled anthology is not itself
+# catalogued as a work.
+
+- id: sophia-de-mello-breyner-andresen/poesia/assirio-alvim-2013-pt
+  workId: sophia-de-mello-breyner-andresen/poesia
+  isbn13: "9789723717013"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2013
+  note: "Obras de Sophia de Mello Breyner Andresen series; preface by Pedro Eiras. Reimp. 2014."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789723717013&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/o-dia-do-mar/assirio-alvim-2014-pt
+  workId: sophia-de-mello-breyner-andresen/o-dia-do-mar
+  isbn13: "9789723717464"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2014
+  note: "Obras de Sophia de Mello Breyner Andresen series; preface by Gastão Cruz."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789723717464&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/coral/assirio-alvim-2013-pt
+  workId: sophia-de-mello-breyner-andresen/coral
+  isbn13: "9789723717020"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2013
+  note: "Obras de Sophia de Mello Breyner Andresen series; preface by Manuel Gusmão."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789723717020&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/no-tempo-dividido/assirio-alvim-2013-pt
+  workId: sophia-de-mello-breyner-andresen/no-tempo-dividido
+  isbn13: "9789723717068"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2013
+  note: "Obras de Sophia de Mello Breyner Andresen series; preface by Federico Bertolazzi."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789723717068&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/mar-novo/assirio-alvim-2013-pt
+  workId: sophia-de-mello-breyner-andresen/mar-novo
+  isbn13: "9789723717051"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2013
+  note: "Obras de Sophia de Mello Breyner Andresen series; preface by Fernando J. B. Martinho."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789723717051&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/o-cristo-cigano/assirio-alvim-2014-pt
+  workId: sophia-de-mello-breyner-andresen/o-cristo-cigano
+  isbn13: "9789723717488"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2014
+  note: "Obras de Sophia de Mello Breyner Andresen series; preface by Rosa Maria Martelo."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789723717488&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/livro-sexto/assirio-alvim-2014-pt
+  workId: sophia-de-mello-breyner-andresen/livro-sexto
+  isbn13: "9789723717839"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2014
+  note: "Obras de Sophia de Mello Breyner Andresen series; preface by Gustavo Rubim."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789723717839&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/geografia/assirio-alvim-2014-pt
+  workId: sophia-de-mello-breyner-andresen/geografia
+  isbn13: "9789723717853"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2014
+  note: "Obras de Sophia de Mello Breyner Andresen series; preface by Frederico Lourenço. BNP's own record notes it as the work's 5th edition overall, 1st under this publisher."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789723717853&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/dual/assirio-alvim-2014-pt
+  workId: sophia-de-mello-breyner-andresen/dual
+  isbn13: "9789723717990"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2014
+  note: "Obras de Sophia de Mello Breyner Andresen series; preface by Eduardo Lourenço."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789723717990&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/o-nome-das-coisas/assirio-alvim-2015-pt
+  workId: sophia-de-mello-breyner-andresen/o-nome-das-coisas
+  isbn13: "9789723718553"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2015
+  note: "Obras de Sophia de Mello Breyner Andresen series; preface by Fernando Cabral Martins."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789723718553&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/navegacoes/assirio-alvim-2015-pt
+  workId: sophia-de-mello-breyner-andresen/navegacoes
+  isbn13: "9789723718546"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2015
+  note: "Obras de Sophia de Mello Breyner Andresen series; preface by Eucanaã Ferraz. Porto Editora's storefront lists this ISBN under an eBook product page, but the Biblioteca Nacional de Portugal catalogues it as the physical print edition (66p)."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789723718546&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/ilhas/assirio-alvim-2016-pt
+  workId: sophia-de-mello-breyner-andresen/ilhas
+  isbn13: "9789723719246"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2016
+  note: "Obras de Sophia de Mello Breyner Andresen series; preface by Fátima Freitas Morna."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789723719246&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/musa/assirio-alvim-2016-pt
+  workId: sophia-de-mello-breyner-andresen/musa
+  isbn13: "9789723719260"
+  language: pt-PT
+  title: "Musa - O Búzio de Cós e Outros Poemas"
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2016
+  note: >
+    A single physical volume binding Musa and O Búzio de Cós e Outros Poemas
+    together under one ISBN, preface by Carlos Mendes de Sousa; recorded here
+    and, identically, under sophia-de-mello-breyner-andresen/o-buzio-de-cos,
+    since both works genuinely live inside this one object.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789723719260&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/o-buzio-de-cos/assirio-alvim-2016-pt
+  workId: sophia-de-mello-breyner-andresen/o-buzio-de-cos
+  isbn13: "9789723719260"
+  language: pt-PT
+  title: "Musa - O Búzio de Cós e Outros Poemas"
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2016
+  note: >
+    The same combined volume recorded under
+    sophia-de-mello-breyner-andresen/musa - see that entry's note.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789723719260&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/poemas-sobre-pessoa/caminho-2012-pt
+  workId: sophia-de-mello-breyner-andresen/poemas-sobre-pessoa
+  isbn13: "9789722126014"
+  language: pt-PT
+  format: paperback
+  publisher: Editorial Caminho
+  year: 2012
+  note: "\"Os poemas sobre Pessoa: antologia\"; preface by Fernando Cabral Martins, selection and editing by Maria Andresen de Sousa Tavares. \"Poesia\" collection, 55p."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789722126014&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/contos-exemplares/assirio-alvim-2014-pt
+  workId: sophia-de-mello-breyner-andresen/contos-exemplares
+  isbn13: "9789723717136"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2014
+  note: "Obras de Sophia de Mello Breyner Andresen series; preface by Federico Bertolazzi."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789723717136&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/contos-exemplares/tagus-press-2015-en
+  workId: sophia-de-mello-breyner-andresen/contos-exemplares
+  isbn13: "9781933227665"
+  language: en
+  title: "Exemplary Tales"
+  translator: "Alexis Levitin"
+  format: paperback
+  publisher: Tagus Press / UMass Dartmouth
+  year: 2015
+  note: "Adamastor Series; introduction by Cláudia Pazos-Alonso. All seven tales, matched by content against the Portuguese contents list (The Bishop's Dinner, The Journey, Portrait of Monica, Beach, Homer, The Man, The Three Kings)."
+  sources:
+    - "https://franklin.library.upenn.edu/catalog/FRANKLIN_9967551513503681"
+    - "https://www.amazon.com/Exemplary-Adamastor-Sophia-Breyner-Andresen/dp/1933227664"
+
+- id: sophia-de-mello-breyner-andresen/historias-da-terra-e-do-mar/assirio-alvim-2013-pt
+  workId: sophia-de-mello-breyner-andresen/historias-da-terra-e-do-mar
+  isbn13: "9789723717150"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2013
+  note: "Obras de Sophia de Mello Breyner Andresen series; preface by Gustavo Rubim, 129p. The literary trade edition; see the separate Porto Editora illustrated edition below, a genuinely different object aimed at younger readers."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789723717150&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/historias-da-terra-e-do-mar/porto-editora-2013-pt
+  workId: sophia-de-mello-breyner-andresen/historias-da-terra-e-do-mar
+  isbn13: "9789720726322"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2013
+  note: "Illustrated edition (il. Jorge Nesbitt), Plano Nacional de Leitura school programme. The illustrated edition; see the separate Assírio & Alvim literary paperback above."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720726322&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/quatro-contos-dispersos/porto-editora-2012-pt
+  workId: sophia-de-mello-breyner-andresen/quatro-contos-dispersos
+  isbn13: "9789720726230"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2012
+  note: "The true first edition (Porto, Figueirinhas, 2008, 978-972-661-214-8) is confirmed at the Biblioteca Nacional de Portugal but not separately recorded here; this Porto Editora printing is the current in-print edition."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720726230&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/a-menina-do-mar/porto-editora-2021-pt
+  workId: sophia-de-mello-breyner-andresen/a-menina-do-mar
+  isbn13: "9789720726407"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2021
+  note: "Illustrated by Sarah Affonso (the book's own original 1958 illustrator). 2nd ed. under this ISBN, 39p."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720726407&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/a-fada-oriana/porto-editora-2012-pt
+  workId: sophia-de-mello-breyner-andresen/a-fada-oriana
+  isbn13: "9789720726223"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2012
+  note: "Illustrated by Teresa Calem; reprinted through at least a 39th edition (2015) under this same ISBN."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720726223&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/a-noite-de-natal/porto-editora-2013-pt
+  workId: sophia-de-mello-breyner-andresen/a-noite-de-natal
+  isbn13: "9789720726346"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2013
+  note: "Illustrated by Jorge Nesbitt. BNP's earliest record under this ISBN is the work's own 5th edition; the ISBN itself is not older than 2013."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720726346&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/o-cavaleiro-da-dinamarca/porto-editora-2013-pt
+  workId: sophia-de-mello-breyner-andresen/o-cavaleiro-da-dinamarca
+  isbn13: "9789720726353"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2013
+  note: "Illustrated by Henrique Cayatte; reached at least a 3rd reimpressão by 2015 under this same ISBN. BNP's earliest record under this ISBN is the work's own 57th edition overall; the ISBN itself is not older than 2013."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720726353&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/o-rapaz-de-bronze/porto-editora-2013-pt
+  workId: sophia-de-mello-breyner-andresen/o-rapaz-de-bronze
+  isbn13: "9789720726261"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2013
+  note: "Illustrated by Inês do Carmo; reprinted through at least a 23rd edition (2015) under this same ISBN."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720726261&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/a-floresta/porto-editora-2013-pt
+  workId: sophia-de-mello-breyner-andresen/a-floresta
+  isbn13: "9789720726254"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2013
+  note: "Illustrated by Sofia Arez; reprinted through at least a 37th edition (2015) under this same ISBN."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720726254&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/a-arvore/porto-editora-2013-pt
+  workId: sophia-de-mello-breyner-andresen/a-arvore
+  isbn13: "9789720726292"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2013
+  note: "Illustrated by Teresa Lima; reprinted through at least a 16th edition (2015) under this same ISBN."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720726292&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/os-ciganos/porto-editora-2013-pt
+  workId: sophia-de-mello-breyner-andresen/os-ciganos
+  isbn13: "9789720726247"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2013
+  note: "Illustrated by Danuta Wojciechowska; reprinted through at least a 3rd edition (2013) and a further reimpressão (2019) under this same ISBN."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720726247&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/o-bojador/porto-editora-2014-pt
+  workId: sophia-de-mello-breyner-andresen/o-bojador
+  isbn13: "9789720726360"
+  language: pt-PT
+  format: paperback
+  publisher: Porto Editora
+  year: 2014
+  note: "Illustrated by João Catarino. Plano Nacional de Leitura school programme."
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789720726360&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/o-colar/assirio-alvim-2013-pt
+  workId: sophia-de-mello-breyner-andresen/o-colar
+  isbn13: "9789723717167"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2013
+  note: >
+    Obras de Sophia de Mello Breyner Andresen series; preface by Luís Miguel
+    Cintra, 136p, reimp. 2014. The Biblioteca Nacional de Portugal's own ISBN
+    index carries a second, apparently erroneous record under this same
+    number for Histórias da Terra e do Mar's 2013 Assírio & Alvim printing -
+    see this file's header note. Corroborated independently here by Porto
+    Editora's and Bertrand's separate product records, both agreeing on
+    title, page count and the Vanina/Pietro synopsis.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789723717167&profile=bn"
+
+- id: sophia-de-mello-breyner-andresen/o-nu-na-antiguidade-classica/assirio-alvim-2019-pt
+  workId: sophia-de-mello-breyner-andresen/o-nu-na-antiguidade-classica
+  isbn13: "9789723720235"
+  language: pt-PT
+  format: paperback
+  publisher: Assírio & Alvim
+  year: 2019
+  note: >
+    A centenary reissue (224p) of the 1975/1992 essay text, preface by José
+    Pedro Serra, bound in the same volume with a new anthology of poems on
+    classical antiquity selected by Maria Andresen de Sousa Tavares - see
+    this file's header note on why this ISBN is genuinely the essay and not
+    a different, same-titled book.
+  sources:
+    - "https://catalogo.bnportugal.gov.pt/ipac20/ipac.jsp?index=ISBN&term=9789723720235&profile=bn"

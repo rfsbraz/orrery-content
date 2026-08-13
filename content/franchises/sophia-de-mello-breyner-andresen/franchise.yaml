@@ -1,0 +1,206 @@
+# A wing spans an author's complete published body of work (standing
+# ruling, 2026-07-21). Sophia de Mello Breyner Andresen worked seriously in
+# four genres across sixty years - poetry (fourteen lifetime collections,
+# 1944-1997), short tales, children's literature, and, very late, theatre -
+# so this is a genuinely large wing rather than the single-book or
+# few-collection shape of this catalogue's other Portuguese poets so far
+# (Cesário Verde, Florbela Espanca). See works.yaml's own header for the
+# full tiering and what was excluded and why.
+#
+# globalEvents block below rules on all 22 entries in
+# content/events/global.yaml, thirteen of which fall inside her 1919-2004
+# lifetime. One is included (portuguese-censorship-1926, the Estado Novo's
+# censorship regime that shaped her entire adult writing life and made
+# opposition central to her identity), the remaining twenty-one excluded -
+# nine of those because they predate her birth or postdate her death, and
+# so could not have reached her at all.
+# The Carnation Revolution was a close call - it freed her from censorship
+# and brought her briefly into politics - but her published works don't show
+# a response; she had already written her major work under censorship and
+# ultimately chose writing as her true political participation.
+
+id: sophia-de-mello-breyner-andresen
+name: Sophia de Mello Breyner Andresen
+kind: author
+description: >
+  A Porto-born poet who became, in 1999, the first woman to receive the
+  Prémio Camões, Portuguese-language literature's highest honour: sixty
+  years and fourteen poetry collections built around the sea, ancient
+  Greece, and a demand for moral clarity, alongside two collections of
+  short tales, eight children's books written for her own five children,
+  and, in her seventies and eighties, five stage plays. A committed
+  opponent of the Estado Novo dictatorship, she co-founded the Comissão
+  Nacional de Socorro aos Presos Políticos in 1969 and sat in the
+  Constituent Assembly that wrote Portugal's post-1974 constitution.
+authorIds: [sophia-de-mello-breyner-andresen]
+themePreset: meridian-light
+
+# Capabilities are auto-detected from the data (docs/SCHEMA.md); nothing is
+# forced here. The wing carries a 52-work bibliography (29 core across four
+# genres, 23 extended/apocrypha) and a 14-lifeEvent author entity, which
+# with three franchise events gives a river of 18 entries. editions.yaml
+# carries 31 verified editions over 29 of the 52 works, the fourteen-book
+# core poetry spine complete at 14 of 14, so the editions capability
+# activates too. orders.yaml is present but empty: the derived default's
+# same-year ties (1958, 2001) and three candidate genre-thread orders were
+# all checked and rejected, see
+# that file's own header. startHere below covers the one real curatorial
+# question this wing raises - poetry and the children's-book line are very
+# different doors for very different readers - with two sourced entry
+# paths plus the completionist walk. No achievements.yaml, no
+# characters.yaml.
+features: {}
+
+startHere:
+  paths:
+    # Source: Infopédia (Porto Editora's reference encyclopedia), entry
+    # "Sophia de Mello Breyner Andresen": "Desde a publicação de Poesia, em
+    # 1944, Sophia afirma-se no panorama da literatura nacional com uma
+    # conceção de poesia que, sem deixar de dar continuidade a uma tradição
+    # lírica que passa por autores como Camões ou Teixeira de Pascoaes,
+    # recupera valores da cultura clássica, funde-os com um humanismo
+    # cristão, para contrapor um tempo absoluto a um 'tempo dividido'..." -
+    # the whole ethical, classical and Christian-humanist project the rest
+    # of the encyclopedia entry describes is dated from this book onward.
+    # https://www.infopedia.pt/%24sophia-de-mello-breyner-andresen
+    # Corroborates works.yaml's own sourced note on this work (en.wikipedia
+    # + the BNP bibliography): every source checked counts the "fourteen
+    # poetry books, 1944-1997" from here.
+    #
+    # Considered and not used instead: Portugal's own school introduction to
+    # her poetry is itself a curated selection assembled from her existing
+    # books for younger readers (DGE's 6th-year Português list sets
+    # "Primeiro Livro de Poesia", a 1991 selection - see that work's own
+    # works.yaml entry), never one of the fourteen collections read whole;
+    # no grade sets a full original collection either (the 9th-year list
+    # draws four individual poems from two different books, Livro Sexto and
+    # Dual, under the heading "Obra Poética" rather than naming one). With
+    # no single collection that Portuguese schooling or criticism converges
+    # on as the whole-book entry point, this path uses her own first book
+    # instead of an editorially assembled one.
+    - id: start-with-poesia
+      title: Start with Poesia
+      description: >
+        Her first book, published through the Cadernos de Poesia imprint in
+        1944 when she was in her mid-twenties, already carries the garden
+        and house of childhood, the sea, and the demand for moral clarity
+        that the rest of her sixty-year body of work keeps returning to -
+        not an apprentice book she later outgrew, but the one every account
+        of her poetry counts as where it begins. Fourteen more collections
+        follow it across the next fifty-three years, unbroken, right up to
+        O Búzio de Cós in 1997.
+      workIds:
+        - sophia-de-mello-breyner-andresen/poesia
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        The cost is everything a debut cannot yet hold: no Hellenic poems
+        (those come later, from Dual onward), none of the tales, children's
+        books or plays, and none of the political urgency Livro Sexto and
+        the Estado Novo years bring. One book, not the range.
+
+    # Source: Direção-Geral da Educação, "Aprendizagens Essenciais |
+    # Articulação com o Perfil dos Alunos, 7.º Ano, 3.º Ciclo do Ensino
+    # Básico, Português" (julho de 2018, em vigor), Anexo 1, "Lista de Obras
+    # e Textos para Educação Literária - 7.º ano", secção "LITERATURA
+    # JUVENIL": one of four works offered there, alongside Irene Lisboa's
+    # "Uma Mão Cheia de Nada, Outra de Coisa Nenhuma", Agustina Bessa-Luís's
+    # "Dentes de Rato", and an adaptation of the Odyssey for young readers.
+    # https://www.dge.mec.pt/sites/default/files/Curriculo/Aprendizagens_Essenciais/3_ciclo/portugues_3c_7a_ff.pdf
+    # Longevity corroborated independently: the Biblioteca Nacional de
+    # Portugal's own Sophia bibliography records a 56th edition by 2001
+    # (1st ed. 1964, Porto, Figueirinhas).
+    # https://purl.pt/19841/1/bibliografia/bibliografia.html
+    - id: classroom-canon
+      title: Start with O Cavaleiro da Dinamarca
+      description: >
+        A knight announces at the Christmas supper that he is leaving his
+        forest home in Denmark to pray in the Bethlehem grotto, and spends
+        the long way back held up among the storytellers of Venice,
+        Florence and Antwerp, with one wish left: to be with his family
+        again for Christmas Eve. Sophia wrote eight books for children;
+        this is the one the Ministry of Education actually offers
+        Portuguese seventh-graders, and by far her steadiest seller, a
+        56th edition within four decades of its first.
+      workIds:
+        - sophia-de-mello-breyner-andresen/o-cavaleiro-da-dinamarca
+      orderId: null
+      fit:
+        experience: [new]
+        commitment: [taste]
+      note: >
+        The cost: this is not the poet the Camões Prize was for. A reader
+        who stops here has met the Sophia read aloud to Portuguese children
+        for sixty years, not the one who spent that same sixty years
+        building the poetry the rest of this shelf holds.
+
+    - id: everything
+      title: Everything, in order
+      description: >
+        All 52 works in publication order: the fourteen poetry collections
+        unbroken from 1944 to 1997, the two collections of tales, the eight
+        children's books, the five late stage plays, and the anthologies,
+        selections and posthumous compilations gathered around them. For a
+        reader who wants the full range of a sixty-year career across four
+        genres, or who already knows one corner of it and wants the rest.
+      workIds: null
+      orderId: default
+      fit:
+        experience: [returning, completionist]
+        commitment: [complete]
+      note: >
+        The cost is scale, not quality: fourteen collections, two tale
+        books, eight children's stories and five plays is a lot of shelf to
+        commit to before knowing whether her voice is for you - the two
+        paths above exist because most readers want a door first.
+
+globalEvents:
+  include:
+    - portuguese-censorship-1926       # the Estado Novo's censorship regime directly constrained her writing practice across her entire adult life and made opposition to it central to her political identity
+  exclude:
+    - world-war-ii-1939               # lived through it, age 19-24; no
+                                       # sourced engagement found
+    - pulp-magazines-1926              # English-language genre-magazine
+                                       # phenomenon, unconnected
+    - penguin-paperback-1935           # English-language mass-market
+                                       # paperback publishing, unconnected
+    - armed-services-editions-1943     # US WWII military-book program,
+                                       # unconnected
+    - lady-chatterley-trial-1960       # UK obscenity trial, unconnected to
+                                       # her own work or censorship history
+    - fantasy-paperback-boom-1965      # English-language genre-publishing
+                                       # phenomenon, unconnected
+    - carnation-revolution-1974        # ended censorship and brought her into
+                                       # politics briefly, but her published
+                                       # works don't show a response; she had
+                                       # already written her major poetry
+                                       # under censorship and ultimately chose
+                                       # writing as her true political
+                                       # participation
+    - chain-bookshop-1982              # English-language retail-industry
+                                       # shift, unconnected
+    - online-bookselling-1995          # she died in 2004; no sourced
+                                       # engagement found
+    - comics-code-authority-1954       # US comics industry, unconnected
+    - satanic-verses-fatwa-1989        # no sourced connection found
+    - sept-11-2001                     # she was 81-82, near the end of her
+                                       # writing life; no sourced engagement
+                                       # found
+    - world-war-i-1914                 # predates her birth by 5 years
+    - elementary-education-act-1870    # predates her birth by 49 years
+    - berne-convention-1886            # predates her birth by 33 years
+    - financial-crisis-2008            # postdates her death by 4 years
+    - ebook-and-self-publishing-2007   # postdates her death by 3 years
+    - prestige-fantasy-adaptation-2011 # postdates her death by 7 years
+    - portugal-bailout-2011            # postdates her death by 7 years
+    - booktok-2020                     # postdates her death by 16 years
+    - covid-19-pandemic-2020           # postdates her death by 16 years
+
+sources:
+  - "https://en.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
+  - "https://pt.wikipedia.org/wiki/Sophia_de_Mello_Breyner_Andresen"
+  - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
+  - "https://www.infopedia.pt/%24sophia-de-mello-breyner-andresen"
+  - "https://panteaonacional.gov.pt/en/homenageados/sophia-de-mello-breyner-andresen"
