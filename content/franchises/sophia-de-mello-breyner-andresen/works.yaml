@@ -608,7 +608,10 @@
   sources:
     - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
 
-# ================================ TALES: CORE ================================
+# =================================== TALES ===================================
+# Mixed tier (2 core, 1 extended, 7 apocrypha) - the seven apocrypha entries
+# are single tales later folded via containedIn into a core collection, kept
+# adjacent to their parent rather than sorted to a separate section.
 
 - id: sophia-de-mello-breyner-andresen/contos-exemplares
   title: "Contos Exemplares"
@@ -819,7 +822,8 @@
     - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
     - "https://abagfullofstories.wordpress.com/2020/07/10/quatro-contos-dispersos-by-sophia-de-mello-breyner-andresen/"
 
-# ========================= CHILDREN'S BOOKS: CORE ===========================
+# ============================ CHILDREN'S BOOKS ===============================
+# 8 core, 1 apocrypha (Os Ciganos, completed posthumously by her grandson).
 # Begun in the mid-1950s, motivated by her own five children (see the
 # author entity's own 1946 marriage lifeEvent).
 
@@ -925,9 +929,11 @@
     - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
     - "https://pt.wikipedia.org/wiki/O_Cavaleiro_da_Dinamarca"
   images:
-    # The 1964 Figueirinhas first edition's own jacket art (Armando Alves's
-    # forest illustration) - hosted on Open Library, no watermark, the exact
-    # publisher and year this work's own note gives.
+    # Open Library's record for this cover carries publish_date 1964 (this
+    # work's own first edition, Figueirinhas, Armando Alves's forest
+    # illustration) but also an ISBN-10, anachronistic for that year - OL's
+    # own metadata is internally inconsistent, so this is the best-attributed
+    # candidate rather than a confirmed first-edition jacket. No watermark.
     cover: "https://covers.openlibrary.org/b/id/15146451-L.jpg"
     coverCredit: "Open Library"
     coverSource: "https://openlibrary.org/books/OL60695927M"
@@ -949,10 +955,9 @@
     - "https://purl.pt/19841/1/bibliografia/bibliografia.html"
   images:
     # A later Figueirinhas edition's jacket (illustrated by Pedro Santos,
-    # cover id 13122928, ISBN 9789726890201) - hosted on Open Library, no
-    # watermark. No cover exists on Open Library for the 1966 Minotauro
-    # first edition itself; the printing year of this ISBN is not stated in
-    # the record.
+    # cover id 13122928, ISBN 9789726890201, OL record dated 1 Jan 1996 -
+    # hosted on Open Library, no watermark. No cover exists on Open Library
+    # for the 1966 Minotauro first edition itself.
     cover: "https://covers.openlibrary.org/b/id/13122928-L.jpg"
     coverCredit: "Open Library"
     coverSource: "https://openlibrary.org/books/OL45155560M"
