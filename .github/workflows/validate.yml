@@ -51,6 +51,11 @@ jobs:
         # nothing measured its output. This test fails against the old formula.
         run: python scripts/test_prepare_asset.py
 
+      - name: Enrich fills openLibrary without duplicating it
+        # The weekly enrich run wrote a second `openLibrary:` under works whose
+        # placeholder was `null`, and validation rejected the wings every Monday.
+        run: python scripts/test_enrich.py
+
       - name: Skill blocks are in sync
         # The sanctuary and tooling blocks are duplicated verbatim into every
         # SKILL.md. Editing one copy and not the rest is silent: the agent

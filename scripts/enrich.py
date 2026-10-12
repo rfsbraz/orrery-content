@@ -10,8 +10,10 @@ directly, and only ever *adds* metadata:
 - High-confidence matches only: a result must match on normalized title AND
   author AND publication year (+/- 2). Anything less is FLAGGED for a human,
   not written - a wrong match means a wrong cover/ID later.
-- Writes are surgical line insertions, so the diff contains ONLY the added
-  `externalIds` lines - nothing else in the file is reformatted or moved.
+- Writes are driven by the parsed YAML structure but splice only the affected
+  lines, so the diff contains ONLY the `externalIds` change - nothing else is
+  reformatted or moved. An existing `openLibrary` key (e.g. a `null`
+  placeholder) is filled in place, never duplicated; re-running is a no-op.
 
 Reading uses yaml.safe_load (no code execution). Writes `.enrichment-report.md`
 (git-ignored) for the PR body.
@@ -100,47 +102,130 @@ def load_authors():
     return m
 
 
-def insert_external_ids(path, enrichments):
-    """Surgically add `externalIds.openLibrary` to each work block.
+class EnrichWriteError(Exception):
+    """The file's layout isn't one the surgical writer can safely edit."""
 
-    enrichments: {work_id: olid}. Only inserts; never rewrites other lines.
-    Works are top-level list items (`- id: <wid>`) with 2-space fields.
+
+def _scalar(node):
+    return node.value if isinstance(node, yaml.ScalarNode) else None
+
+
+def _is_null(node):
+    return isinstance(node, yaml.ScalarNode) and node.tag == "tag:yaml.org,2002:null"
+
+
+def _find(mapping, key):
+    for k, v in mapping.value:
+        if _scalar(k) == key:
+            return k, v
+    return None, None
+
+
+def _plan_edit(lines, work, olid):
+    """Return (start, end, replacement_lines) for one work, or None if no-op.
+
+    Merges into the parsed structure instead of appending text, so an existing
+    `openLibrary` key (e.g. the `null` placeholder) is filled in place and a
+    second key is never written.
+    """
+    ext_key, ext = _find(work, "externalIds")
+    if ext is None:
+        # Append an externalIds block after the work's last value.
+        indent = " " * work.value[0][0].start_mark.column
+        last_value = work.value[-1][1]
+        last = last_value.end_mark.line - (1 if last_value.end_mark.column == 0 else 0)
+        first = work.start_mark.line
+        while last > first and lines[last].strip() == "":
+            last -= 1
+        pos = last + 1
+        return pos, pos, [f"{indent}externalIds:\n", f"{indent}  openLibrary: {olid}\n"]
+
+    if _is_null(ext) or (isinstance(ext, yaml.MappingNode) and not ext.value):
+        # `externalIds:` / `externalIds: null` / `externalIds: {}` -> block mapping.
+        line = ext_key.start_mark.line
+        if ext.end_mark.line != line and not _is_null(ext):
+            raise EnrichWriteError("multi-line empty externalIds")
+        indent = " " * ext_key.start_mark.column
+        return line, line + 1, [f"{indent}externalIds:\n", f"{indent}  openLibrary: {olid}\n"]
+
+    if not isinstance(ext, yaml.MappingNode) or ext.flow_style:
+        raise EnrichWriteError("externalIds is not a block mapping")
+
+    ol_key, ol = _find(ext, "openLibrary")
+    if ol_key is None:
+        indent = " " * ext.value[0][0].start_mark.column
+        pos = ext.value[0][0].start_mark.line
+        return pos, pos, [f"{indent}openLibrary: {olid}\n"]
+
+    if not _is_null(ol) and (_scalar(ol) or "").strip():
+        return None  # additive: never overwrite an existing ID
+
+    # Fill the placeholder in place, keeping indentation and any trailing comment.
+    line_no = ol_key.start_mark.line
+    text = lines[line_no]
+    colon = text.index(":", ol_key.end_mark.column)
+    if ol.start_mark.line == line_no and ol.end_mark.column > ol.start_mark.column:
+        rest = text[ol.end_mark.column:]
+    else:  # bare `openLibrary:` with an implicit null
+        rest = text[colon + 1:].lstrip(" ")
+        rest = (" " + rest) if rest.strip() else "\n"
+    return line_no, line_no + 1, [f"{text[:colon]}: {olid}{rest}"]
+
+
+def insert_external_ids(path, enrichments):
+    """Set `externalIds.openLibrary` on each work in `enrichments` ({work_id: olid}).
+
+    Locates each work through the parsed YAML node tree (yaml.compose, so the
+    edit is driven by structure, not by regexes over text) and splices only the
+    affected lines: comments, ordering and formatting elsewhere are untouched.
+    An existing `openLibrary` key is filled in place; a non-empty value is never
+    overwritten. Idempotent. The result is re-parsed with the validator's
+    duplicate-key-rejecting loader before writing; on any surprise the file is
+    left unchanged and the affected works are returned for flagging.
     """
     with open(path, encoding="utf-8") as f:
-        lines = f.readlines()
+        original = f.read()
+    lines = original.splitlines(keepends=True)
+    root = yaml.compose(original)
+    if not isinstance(root, yaml.SequenceNode):
+        raise EnrichWriteError(f"{path}: expected a list of works")
 
-    # Find the line index of each work's `- id:` and the end of its block.
-    starts = []  # (index, work_id)
-    for i, ln in enumerate(lines):
-        m = re.match(r"^- id:\s*(\S+)\s*$", ln)
-        if m:
-            starts.append((i, m.group(1)))
-
-    # Build insertions as (position, text) then apply back-to-front.
-    inserts = []
-    for n, (idx, wid) in enumerate(starts):
+    edits, failed = [], {}
+    for work in root.value:
+        if not isinstance(work, yaml.MappingNode):
+            continue
+        _, id_node = _find(work, "id")
+        wid = _scalar(id_node) if id_node is not None else None
         if wid not in enrichments:
             continue
-        block_end = starts[n + 1][0] if n + 1 < len(starts) else len(lines)
-        block = lines[idx:block_end]
-        olid = enrichments[wid]
-        # If the block already has an externalIds: key, add openLibrary under it.
-        ext_line = next((idx + j for j, bl in enumerate(block)
-                         if re.match(r"^  externalIds:\s*$", bl)), None)
-        if ext_line is not None:
-            inserts.append((ext_line + 1, f"    openLibrary: {olid}\n"))
-        else:
-            # Insert after the last non-blank line of the block.
-            last = block_end - 1
-            while last > idx and lines[last].strip() == "":
-                last -= 1
-            inserts.append((last + 1, f"  externalIds:\n    openLibrary: {olid}\n"))
+        try:
+            edit = _plan_edit(lines, work, enrichments[wid])
+        except EnrichWriteError as e:
+            failed[wid] = str(e)
+            continue
+        if edit:
+            edits.append(edit)
 
-    for pos, text in sorted(inserts, reverse=True):
-        lines[pos:pos] = [text]
+    for start, end, repl in sorted(edits, reverse=True):
+        lines[start:end] = repl
+    result = "".join(lines)
 
-    with open(path, "w", encoding="utf-8", newline="\n") as f:
-        f.writelines(lines)
+    # Never write a file the app (or validate.py) would reject.
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from validate import StrictLoader  # noqa: E402
+    works = yaml.load(result, Loader=StrictLoader) or []
+    by_id = {w.get("id"): w for w in works if isinstance(w, dict)}
+    for wid, olid in enrichments.items():
+        if wid in failed:
+            continue
+        got = ((by_id.get(wid) or {}).get("externalIds") or {}).get("openLibrary")
+        if got is None:
+            raise EnrichWriteError(f"{path}: {wid} did not receive openLibrary")
+
+    if result != original:
+        with open(path, "w", encoding="utf-8", newline="\n") as f:
+            f.write(result)
+    return failed
 
 
 def main():
@@ -173,7 +258,13 @@ def main():
             else:
                 flagged.append((w["id"], reason))
         if enrichments:
-            insert_external_ids(wpath, enrichments)
+            try:
+                failed = insert_external_ids(wpath, enrichments)
+            except (EnrichWriteError, yaml.YAMLError) as e:
+                failed = {wid: f"write skipped: {e}" for wid in enrichments}
+            for wid, why in failed.items():
+                enriched[:] = [e for e in enriched if e[0] != wid]
+                flagged.append((wid, f"could not write safely ({why})"))
 
     lines = ["# Enrichment report", ""]
     lines.append(f"- **Enriched:** {len(enriched)} work(s) with `externalIds.openLibrary`")
