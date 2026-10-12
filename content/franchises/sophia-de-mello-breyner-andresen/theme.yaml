@@ -1,0 +1,202 @@
+# Branding for the Sophia de Mello Breyner Andresen wing (see
+# docs/SCHEMA.md#themeyaml). Palette, displayFace and signature below; the
+# `art` block near the end of this file was composed once the 52-work
+# bibliography, the tested-negative eras.yaml and the author's 14-lifeEvent
+# record had all stopped moving - see the ART comment there for that
+# reasoning.
+#
+# GROUND. Every source checked for this wing names the same two things as
+# her defining register: the sea, overwhelmingly (en.wikipedia calls it
+# "probably the most central theme in her poetical works"; pt.wikipedia's
+# own account of her language style calls out "luminosity", "transparency
+# of the word", "clarifying vision"), and classical antiquity, Hellenic
+# light and geometry rather than Roman weight. This wing already sits
+# alongside joao-tordo's "deep Atlantic blue-grey, near-black - ocean at
+# dusk" - the wrong ground to repeat, both because it is taken and because
+# its mood (dusk, grey, moody Atlantic weather) is close to the opposite of
+# what her own critics keep naming in her: clarity, brightness, noon rather
+# than dusk. This wing's palette goes light instead - a pale, luminous
+# ground rather than another near-black - which puts it alongside
+# luis-de-camoes's "salt-bleached driftwood / sun-worn parchment" as this
+# catalogue's second light-background Lusophone wing, but in a distinctly
+# different key: Camões's is warm, aged, brown-toned paper (an old
+# document, sun-worn); this is cool, clean, blue-white (noon light on
+# marble and open water, nothing aged about it).
+preset: meridian-light
+palette:
+  bg: "#eef3f1"        # pale, luminous blue-white - marble and midday
+                       # Aegean light, not another near-black and not
+                       # luis-de-camoes's warm aged parchment
+  surface: "#e1e9e5"   # a shade darker, for cards
+  ink: "#132a2c"       # deep marine near-black ink, for maximum readability
+                       # against the light ground
+  muted: "#3c5a57"     # muted sea-grey-green for metadata (AA-checked:
+                       # 6.71:1 on bg, 6.08:1 on surface - the lighter
+                       # #5f7c79 first drafted here read fine by eye but
+                       # cleared neither pairing at the 4.5:1 floor)
+  accent: "#0a6270"    # a clear cobalt-aquamarine - the single sea accent,
+                       # kept saturated and cool rather than joao-tordo's
+                       # duller muted azulejo blue (#3d6f8c), since this
+                       # wing's sea is bright and central rather than a
+                       # backdrop (AA-checked: 6.25:1 on bg, 5.67:1 on
+                       # surface, though the validator does not gate accent)
+displayFace: spectral  # from the app's implemented set (fraunces | spectral
+                       # | sourceSerif | instrument-serif); a modern,
+                       # scholarly-calm literary serif, in keeping with her
+                       # own hieratic, clarified diction rather than a
+                       # warmer historical register - and distinct from this
+                       # catalogue's other Lusophone poets already on
+                       # fraunces (florbela-espanca, eca-de-queiros,
+                       # jose-saramago)
+signature: filament    # from the app's implemented set (beam | thread |
+                       # rule | filament | none); a single lit thread the
+                       # works string along - the closest structural
+                       # analogue to the "luminosity" and "transparency of
+                       # the word" her own critics name, and to the sea's
+                       # unbroken line at the horizon that recurs across her
+                       # work from her first book to her last
+notes: >
+  A luminous, clear-blue noon rather than another near-black dusk or an aged
+  parchment brown - the sea and Hellenic light her own critics keep naming,
+  held at maximum readability rather than mood. Personality through palette
+  plus one display face plus one signature, readability first, no genre
+  costume; both displayFace and signature are drawn only from the app's
+  currently implemented sets.
+
+# ART. Composed against the finished 52-work bibliography (works.yaml - a
+# sixty-year, four-genre career), the tested-negative eras.yaml (no
+# periodisation the sources support) and the author's 14-lifeEvent record.
+# Checked against every adjacent wing (theme_digest.py) and, in full, this
+# catalogue's other five Portuguese-poet wings (fernando-pessoa,
+# almeida-garrett, florbela-espanca, cesario-verde, eca-de-queiros) plus
+# luis-de-camoes, the light-background Lusophone wing this one's palette
+# header already checked itself against.
+#
+# The real risk is Camões, not the other five: every source calls the sea
+# "probably the most central theme" of this author's work, and Camões's own
+# wing has already built this catalogue's sea-and-daylight register in
+# detail - salt-crusted, cockled manuscript paper; verdigris patina raised
+# on ship's bronze and brass by decades of salt air; a monsoon or tropical
+# coastline; a colonial administrator's ledger; glare and exposure. Drawing
+# this wing as "a sea poet" without a sharper claim would only redraw his
+# territory in a paler palette. The bibliography itself supplies the sharper
+# claim: her sea is named as Aegean, not Atlantic or Indian Ocean - "O Rei
+# de Ítaca" and "Cíclades (evocando Fernando Pessoa)" in O Nome das Coisas
+# (1977), "Os Gregos" in Dual (1972), and her own last book's title, O
+# Búzio de Cós e Outros Poemas (1997), a shell named for Kos, the Greek
+# island of Hippocrates. Camões's record is two decades actually spent at
+# sea and on colonial coasts, administered and crossed; hers is a
+# Lisbon-trained classicist's inherited horizon, looked at from a fixed
+# place - a window, a garden, a held shell - never a voyage, a crossing or
+# a colonial desk. So where Camões is salt-worn paper, tropical glare and
+# bronze gone green, this wing is dry pale stone, noon light and a spiral
+# shell held still in the hand: the same sea, read as a philologist's
+# inherited horizon rather than a navigator's record.
+#
+# Fernando Pessoa, this wing's other closest neighbour by displayFace
+# (spectral), rules the sea and the coast out of his own wing on purpose
+# ("becoming a rural or coastal wing... enters only at a remove") - no
+# collision there; his register is interior, urban and clerical where this
+# one is exterior and luminous. Cesario Verde and Florbela Espanca share
+# this wing's `signature: filament` but neither register overlaps: Verde is
+# near-black gaslit-dusk Lisbon commerce, Espanca a scorched, body-scaled
+# Alentejo heath. Almeida Garrett (a gaslit working theatre) and Eca de
+# Queiros (a gaslit bourgeois parlour) are both interior-nocturnal registers
+# this wing does not touch at all.
+art:
+  emblem:
+    object: >
+      A single spiral seashell (a búzio), its outer ridges chalky and
+      pale, set alone on a plain stone sill or held open-mouth-up in one
+      cupped hand, its pale interior curve catching the light.
+    why: >
+      Titles her own last book, O Búzio de Cós e Outros Poemas (1997) - a
+      shell named for Kos, the Greek island of Hippocrates - closing the
+      fourteen-collection sequence that runs unbroken from Poesia (1944).
+      One small, complete, portable object states what this wing's sea
+      actually is: not a crossing or a coastline but a found thing held
+      still and looked into, Aegean rather than Atlantic by the name she
+      herself gave it.
+  motifs:
+    - a spiral seashell held in one hand or set alone on a sill or plain
+      table, never scattered across a whole beach
+    - a fragment of pale stone architecture in noon light - a low garden
+      wall, a masonry threshold, a single column or lintel - read as her
+      own domestic ground (the Quinta do Campo Alegre garden of her
+      childhood) rather than a ruin in a landscape
+    - a walled garden or orchard, clipped and ordered - olive, fig, box
+      hedge - for the house-and-garden-of-memory theme her sources name
+      around the poem "Casa"
+    - a single flat line of sea seen through an open window, door or
+      archway from inside a room, never a shore, a boat or a crossing
+    - a folded or closely written sheet of paper, its text held
+      illegible, for the private prison-code correspondence with her
+      husband and the political years that follow it - never the cell,
+      the courtroom or a face
+    - a plain wooden writing table holding very few things - one book,
+      one pen, one sheet - lit by daylight rather than a lamp
+  atmosphere: >
+    Noon rather than dusk: a high, clear, unclouded light with hard-edged
+    shadow - the clarity, luminosity and "transparency of the word" her
+    own critics keep naming, held as an actual quality of light rather
+    than a mood. Still and contemplative rather than in transit: the sea
+    is a line looked at from a fixed place, never a distance crossed by
+    ship, storm or voyage, and never staged as an Age-of-Discovery
+    departure or arrival. Classical antiquity enters the same way - as
+    one plain stone shape standing in daylight, not a peopled myth-scene
+    or a temple tableau. Domestic and enclosed as often as it is open: a
+    walled garden, a room with a single window, because the house and
+    garden of memory run through this work as constantly as the water
+    does. Where the record turns political - the prison years, the
+    Constituent Assembly - the same clear, dry noon light holds,
+    tightened rather than darkened into gothic shadow: a closed door, a
+    folded page, an empty chamber bench, never a cell, a podium or a
+    crowd.
+  lineCharacter: >
+    A fine, evenly weighted contour line, closer to a mark cut into stone
+    than ink laid on paper - taut and continuous, unmodulated from the
+    start of a stroke to its end, with none of a dip pen's tremor or
+    swelling and none of a wash's bleed. Geometric restraint throughout:
+    a curve is drawn as a true arc, a wall or a doorway as a straight,
+    ruled edge, in keeping with the architectural clarity her own critics
+    name in the verse itself. Never fading or breaking into a dry,
+    granular stipple partway through a stroke, which is this catalogue's
+    other light-ground Lusophone wing's register (luis-de-camoes); this
+    line holds one steady weight from its first mark to its last.
+  backgroundTexture: >
+    A pale, cool stone ground rather than paper at all - the faint
+    striation of a quarried or polished marble block, mineral and matte,
+    with none of laid paper's warm fibre and none of a parchment's
+    foxing or salt bloom. Where a scene is domestic rather than
+    architectural, the same cool pale ground carries a very faint dry
+    wash, never a wash bleeding wet into the grain.
+  accentUse: >
+    The clear cobalt-aquamarine (palette.accent, #0a6270) touches exactly
+    one small water-adjacent element per image, never a fill and never a
+    wash over the sea, the sky or any open expanse: the pale interior
+    curve of a held shell, a single ribbon or bookmark, one painted sill
+    or shutter slat, the one visible strip of water seen through a
+    window or doorway. Never patina or corrosion on metal, which is
+    another wing's register in this catalogue (luis-de-camoes).
+  avoid:
+    - ship's fittings, rigging, sails, a captain's or navigator's
+      instruments, or any Age-of-Discovery departure-and-voyage staging -
+      this catalogue's sea-crossing register belongs to luis-de-camoes
+    - salt-crusted, cockled or water-warped paper, and verdigris patina
+      on bronze or brass - also luis-de-camoes's register
+    - a Greek-temple-and-toga costume tableau, or any staged mythological
+      scene with figures acting out a myth - classical antiquity appears
+      only as a plain stone shape or a held object in daylight
+    - azulejo tiling, fado and saudade shorthand, souvenir Alfama and
+      postcard-Lisbon framing
+    - any likeness of Sophia herself, Francisco Sousa Tavares, or their
+      five children - draw the object, the room, the page or the place,
+      never the face
+    - a prison cell, courtroom or podium staged for the drama - the
+      political years are drawn as a closed door, a folded page or an
+      empty chamber bench, never the scene of the event
+    - gothic candlelight, gaslit interiors or any nocturnal mood - this
+      wing stays in daylight throughout
+    - a whole beach, shoreline crowd or display of shells - the sea and
+      the shell appear singly, small and held, never as a picturesque
+      vista
