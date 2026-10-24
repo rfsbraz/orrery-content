@@ -15,7 +15,7 @@ from `main`, and there are no release branches.
 **Please do not open a public issue for a security problem.**
 
 Use [GitHub Security Advisories](https://github.com/rfsbraz/orrery-content/security/advisories/new)
-to report privately. If that is unavailable to you, email rfsbraz@gmail.com with
+to report privately. If that is unavailable to you, email rfsbraz@proton.me with
 "orrery-content security" in the subject.
 
 Expect a first response within 7 days. If the report is valid you will be kept
