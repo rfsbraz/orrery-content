@@ -5,7 +5,7 @@ This repo is the **canon** for [Orrery](https://github.com/rfsbraz/orrery). Cano
 ## The three ways in
 
 - **Report** something wrong or missing → open an issue (Content error / Missing work / Reading order / New franchise). Blank issues are off; the forms ask for what a curator needs, including a **source**.
-- **Propose** a change → open a pull request. The PR template is a checklist; unsourced changes are not merged.
+- **Propose** a change → open a pull request. The PR template asks for sources; unsourced changes are not merged.
 - **Research** a franchise from scratch → use the `franchise-research` skill (`.claude/skills/franchise-research/`), which drafts a full bundle for review, or `/author <name>` to run the whole pipeline.
 - **Offer art** → open an issue with the `art:human-offer` label. Human art replaces the generated placeholder and carries your credit. See the README.
 
@@ -22,10 +22,22 @@ This repo is the **canon** for [Orrery](https://github.com/rfsbraz/orrery). Cano
 
 This project is openly AI-assisted, and you are welcome to work the same way. The tools that built it ship in the repo (`.claude/skills/`, `scripts/`), and [`docs/TOOLING.md`](docs/TOOLING.md) explains how to use them and, more usefully, where they fail.
 
-Saying how you produced a change is encouraged, not held against you. What is not acceptable is submitting output nobody read: unsourced claims, invented dates, or a diff you have not checked yourself. The rules above are the whole bar, and they apply identically to hand-written and agent-drafted work.
+Say how you produced a change in the AI use section of the PR template. It is encouraged, not held against you. What is not acceptable is submitting output nobody read: unsourced claims, invented dates, or a diff you have not checked yourself. The rules above are the whole bar, and they apply identically to hand-written and agent-drafted work.
+
+## Low-effort and automated PRs
+
+Orrery is maintained in my spare time, and every PR takes real time to review. I'm happy to get contributions from people who read with Orrery and want the canon to be better.
+
+I will close, without review, PRs that look like contribution farming: accounts opening many PRs across unrelated projects, or changes made mainly to collect contributions rather than to fix something you ran into. This applies even when the change itself is correct.
+
+The easiest way to get a PR merged is to start with an issue, agree on the approach there, and then open the PR.
 
 ## Review and merge
 
 A curator reviews for accuracy, sourcing, schema, and stable-ID discipline. **Nothing is canon until a curator merges it.** Merged content is picked up by the app's sync into its database on the next deploy.
 
 Full schema and authoring guidance: [`.claude/skills/franchise-research/SKILL.md`](.claude/skills/franchise-research/SKILL.md).
+
+## Conduct and security
+
+By participating you agree to follow the [Code of Conduct](CODE_OF_CONDUCT.md). Report security problems as described in [SECURITY.md](SECURITY.md), not in a public issue.

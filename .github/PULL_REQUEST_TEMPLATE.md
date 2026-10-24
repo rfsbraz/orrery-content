@@ -1,41 +1,21 @@
-<!--
-Canon content PR. Everything here becomes canon only after a curator merges it.
-Fill in the summary, tick the checklist, and cite sources - unsourced changes are not merged.
--->
+<!-- Nothing here is canon until a curator merges it. Unsourced changes are not merged. -->
 
-## Summary
+## What and why
 
-<!-- What franchise(s) and what changes. Link any issue it resolves (Fixes #123). -->
+<!-- Which franchise, what changes, and what you found wrong or missing. -->
 
-## Type of change
+Closes #<!-- Please agree on a new franchise or a reading order change in an issue first. Typo fixes can skip this. -->
 
-- [ ] New franchise
-- [ ] Add / complete works (bibliography)
-- [ ] Fix a factual error (date, attribution, synopsis)
-- [ ] New or changed reading order
-- [ ] Aura events (author-life / world / culture)
-- [ ] Theme / branding
-- [ ] Other:
+## Sources
 
-## Sources (auditability)
-
-<!-- Every non-obvious claim needs a citation. List the URLs backing this change.
-     If any item is uncertain, say so and mark it confidence: low in the content. -->
+<!-- The URLs behind every non-obvious claim. Flag anything uncertain with `confidence: low` in the content and name it here, with any judgment calls. -->
 
 -
 
-## Checklist (trackability)
+## How you checked it
 
-- [ ] YAML is valid and follows the schema in `franchise-research/SKILL.md`
-- [ ] **No existing Work ID was renamed** (IDs are permanent - user data references them)
-- [ ] New Work IDs follow `<franchise-slug>/<work-slug>`
-- [ ] Every non-obvious claim is sourced; uncertain items flagged `confidence: low`
-- [ ] Works added toward **completeness** (the default order is chronological + ALL published works)
-- [ ] `publishedAs` set for any pen-name works
-- [ ] Orders reference only real Work IDs; contested placements noted in `debated:`
-- [ ] Global (shared) events went to `content/events/global.yaml`, not a franchise
-- [ ] Spoilers tagged with `spoilerAfter:` where relevant
+<!-- `python scripts/validate.py` passes. The rules in CONTRIBUTING.md apply: no Work ID renamed, `publishedAs` on pen-name works, `spoilerAfter:` on spoilers, shared events in `content/events/global.yaml`. -->
 
-## Curator notes
+## AI use
 
-<!-- Anything the reviewer should weigh: judgment calls, gaps, low-confidence items. -->
+<!-- Fine to use, just say so and confirm you checked every claim yourself. -->
