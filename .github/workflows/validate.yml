@@ -56,6 +56,12 @@ jobs:
         # placeholder was `null`, and validation rejected the wings every Monday.
         run: python scripts/test_enrich.py
 
+      - name: Content facts stay internally consistent
+        # Narrow regressions for prose claims that validate.py cannot see,
+        # such as stacked "favourite" attributions or mutually contradictory
+        # dates. Added when a content-error issue needs a failing check first.
+        run: python scripts/test_content_facts.py
+
       - name: Skill blocks are in sync
         # The sanctuary and tooling blocks are duplicated verbatim into every
         # SKILL.md. Editing one copy and not the rest is silent: the agent
