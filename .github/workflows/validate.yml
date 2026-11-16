@@ -62,6 +62,12 @@ jobs:
         # reading the stale copy simply behaves by the old rule.
         run: python scripts/sync_skill_blocks.py
 
+      - name: Wheel of Time succession facts agree
+        # The franchise event and the Sanderson life event once disagreed on
+        # which Mistborn book Harriet McDougal had read in 2007. The trilogy
+        # ending was not published until 2008.
+        run: python scripts/test_wot_succession.py
+
       - name: Translation coverage
         run: python scripts/i18n_coverage.py
 
