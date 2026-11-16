@@ -46,6 +46,7 @@ UNSCOPED_FAVOURITE = re.compile(
     r"|among her own favourites"
     r"|counted among her favourites"
     r"|named as one of her own favourites"
+    r"|named as favourites"
     r"|A Christie personal favourite"
     r")",
     re.IGNORECASE,
